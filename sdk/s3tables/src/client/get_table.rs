@@ -11,6 +11,7 @@ impl super::Client {
     ///   - [`r#type(TableType)`](crate::operation::get_table::GetTableOutput::type): <p>The type of the table.</p>
     ///   - [`table_arn(String)`](crate::operation::get_table::GetTableOutput::table_arn): <p>The Amazon Resource Name (ARN) of the table.</p>
     ///   - [`namespace(Vec::<String>)`](crate::operation::get_table::GetTableOutput::namespace): <p>The namespace associated with the table.</p>
+    ///   - [`namespace_id(Option<String>)`](crate::operation::get_table::GetTableOutput::namespace_id): <p>The unique identifier of the namespace containing this table.</p>
     ///   - [`version_token(String)`](crate::operation::get_table::GetTableOutput::version_token): <p>The version token of the table.</p>
     ///   - [`metadata_location(Option<String>)`](crate::operation::get_table::GetTableOutput::metadata_location): <p>The metadata location of the table.</p>
     ///   - [`warehouse_location(String)`](crate::operation::get_table::GetTableOutput::warehouse_location): <p>The warehouse location of the table.</p>
@@ -21,6 +22,7 @@ impl super::Client {
     ///   - [`modified_by(String)`](crate::operation::get_table::GetTableOutput::modified_by): <p>The ID of the account that last modified the table.</p>
     ///   - [`owner_account_id(String)`](crate::operation::get_table::GetTableOutput::owner_account_id): <p>The ID of the account that owns the table.</p>
     ///   - [`format(OpenTableFormat)`](crate::operation::get_table::GetTableOutput::format): <p>The format of the table.</p>
+    ///   - [`table_bucket_id(Option<String>)`](crate::operation::get_table::GetTableOutput::table_bucket_id): <p>The unique identifier of the table bucket containing this table.</p>
     /// - On failure, responds with [`SdkError<GetTableError>`](crate::operation::get_table::GetTableError)
     pub fn get_table(&self) -> crate::operation::get_table::builders::GetTableFluentBuilder {
         crate::operation::get_table::builders::GetTableFluentBuilder::new(self.handle.clone())

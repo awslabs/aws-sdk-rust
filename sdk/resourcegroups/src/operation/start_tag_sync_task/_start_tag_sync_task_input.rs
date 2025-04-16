@@ -6,9 +6,19 @@ pub struct StartTagSyncTaskInput {
     /// <p>The Amazon resource name (ARN) or name of the application group for which you want to create a tag-sync task.</p>
     pub group: ::std::option::Option<::std::string::String>,
     /// <p>The tag key. Resources tagged with this tag key-value pair will be added to the application. If a resource with this tag is later untagged, the tag-sync task removes the resource from the application.</p>
+    /// <p>When using the <code>TagKey</code> parameter, you must also specify the <code>TagValue</code> parameter. If you specify a tag key-value pair, you can't use the <code>ResourceQuery</code> parameter.</p>
     pub tag_key: ::std::option::Option<::std::string::String>,
     /// <p>The tag value. Resources tagged with this tag key-value pair will be added to the application. If a resource with this tag is later untagged, the tag-sync task removes the resource from the application.</p>
+    /// <p>When using the <code>TagValue</code> parameter, you must also specify the <code>TagKey</code> parameter. If you specify a tag key-value pair, you can't use the <code>ResourceQuery</code> parameter.</p>
     pub tag_value: ::std::option::Option<::std::string::String>,
+    /// <p>The query you can use to create the tag-sync task. With this method, all resources matching the query are added to the specified application group. A <code>ResourceQuery</code> specifies both a query <code>Type</code> and a <code>Query</code> string as JSON string objects. For more information on defining a resource query for a tag-sync task, see the tag-based query type in <a href="https://docs.aws.amazon.com/ARG/latest/userguide/gettingstarted-query.html#getting_started-query_types"> Types of resource group queries</a> in <i>Resource Groups User Guide</i>.</p>
+    /// <p>When using the <code>ResourceQuery</code> parameter, you cannot use the <code>TagKey</code> and <code>TagValue</code> parameters.</p>
+    /// <p>When you combine all of the elements together into a single string, any double quotes that are embedded inside another double quote pair must be escaped by preceding the embedded double quote with a backslash character (\). For example, a complete <code>ResourceQuery</code> parameter must be formatted like the following CLI parameter example:</p>
+    /// <p><code>--resource-query '{"Type":"TAG_FILTERS_1_0","Query":"{\"ResourceTypeFilters\":\[\"AWS::AllSupported\"\],\"TagFilters\":\[{\"Key\":\"Stage\",\"Values\":\[\"Test\"\]}\]}"}'</code></p>
+    /// <p>In the preceding example, all of the double quote characters in the value part of the <code>Query</code> element must be escaped because the value itself is surrounded by double quotes. For more information, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-parameters-quoting-strings.html">Quoting strings</a> in the <i>Command Line Interface User Guide</i>.</p>
+    /// <p>For the complete list of resource types that you can use in the array value for <code>ResourceTypeFilters</code>, see <a href="https://docs.aws.amazon.com/ARG/latest/userguide/supported-resources.html">Resources you can use with Resource Groups and Tag Editor</a> in the <i>Resource Groups User Guide</i>. For example:</p>
+    /// <p><code>"ResourceTypeFilters":\["AWS::S3::Bucket", "AWS::EC2::Instance"\]</code></p>
+    pub resource_query: ::std::option::Option<crate::types::ResourceQuery>,
     /// <p>The Amazon resource name (ARN) of the role assumed by the service to tag and untag resources on your behalf.</p>
     pub role_arn: ::std::option::Option<::std::string::String>,
 }
@@ -18,12 +28,24 @@ impl StartTagSyncTaskInput {
         self.group.as_deref()
     }
     /// <p>The tag key. Resources tagged with this tag key-value pair will be added to the application. If a resource with this tag is later untagged, the tag-sync task removes the resource from the application.</p>
+    /// <p>When using the <code>TagKey</code> parameter, you must also specify the <code>TagValue</code> parameter. If you specify a tag key-value pair, you can't use the <code>ResourceQuery</code> parameter.</p>
     pub fn tag_key(&self) -> ::std::option::Option<&str> {
         self.tag_key.as_deref()
     }
     /// <p>The tag value. Resources tagged with this tag key-value pair will be added to the application. If a resource with this tag is later untagged, the tag-sync task removes the resource from the application.</p>
+    /// <p>When using the <code>TagValue</code> parameter, you must also specify the <code>TagKey</code> parameter. If you specify a tag key-value pair, you can't use the <code>ResourceQuery</code> parameter.</p>
     pub fn tag_value(&self) -> ::std::option::Option<&str> {
         self.tag_value.as_deref()
+    }
+    /// <p>The query you can use to create the tag-sync task. With this method, all resources matching the query are added to the specified application group. A <code>ResourceQuery</code> specifies both a query <code>Type</code> and a <code>Query</code> string as JSON string objects. For more information on defining a resource query for a tag-sync task, see the tag-based query type in <a href="https://docs.aws.amazon.com/ARG/latest/userguide/gettingstarted-query.html#getting_started-query_types"> Types of resource group queries</a> in <i>Resource Groups User Guide</i>.</p>
+    /// <p>When using the <code>ResourceQuery</code> parameter, you cannot use the <code>TagKey</code> and <code>TagValue</code> parameters.</p>
+    /// <p>When you combine all of the elements together into a single string, any double quotes that are embedded inside another double quote pair must be escaped by preceding the embedded double quote with a backslash character (\). For example, a complete <code>ResourceQuery</code> parameter must be formatted like the following CLI parameter example:</p>
+    /// <p><code>--resource-query '{"Type":"TAG_FILTERS_1_0","Query":"{\"ResourceTypeFilters\":\[\"AWS::AllSupported\"\],\"TagFilters\":\[{\"Key\":\"Stage\",\"Values\":\[\"Test\"\]}\]}"}'</code></p>
+    /// <p>In the preceding example, all of the double quote characters in the value part of the <code>Query</code> element must be escaped because the value itself is surrounded by double quotes. For more information, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-parameters-quoting-strings.html">Quoting strings</a> in the <i>Command Line Interface User Guide</i>.</p>
+    /// <p>For the complete list of resource types that you can use in the array value for <code>ResourceTypeFilters</code>, see <a href="https://docs.aws.amazon.com/ARG/latest/userguide/supported-resources.html">Resources you can use with Resource Groups and Tag Editor</a> in the <i>Resource Groups User Guide</i>. For example:</p>
+    /// <p><code>"ResourceTypeFilters":\["AWS::S3::Bucket", "AWS::EC2::Instance"\]</code></p>
+    pub fn resource_query(&self) -> ::std::option::Option<&crate::types::ResourceQuery> {
+        self.resource_query.as_ref()
     }
     /// <p>The Amazon resource name (ARN) of the role assumed by the service to tag and untag resources on your behalf.</p>
     pub fn role_arn(&self) -> ::std::option::Option<&str> {
@@ -44,6 +66,7 @@ pub struct StartTagSyncTaskInputBuilder {
     pub(crate) group: ::std::option::Option<::std::string::String>,
     pub(crate) tag_key: ::std::option::Option<::std::string::String>,
     pub(crate) tag_value: ::std::option::Option<::std::string::String>,
+    pub(crate) resource_query: ::std::option::Option<crate::types::ResourceQuery>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
 }
 impl StartTagSyncTaskInputBuilder {
@@ -63,34 +86,70 @@ impl StartTagSyncTaskInputBuilder {
         &self.group
     }
     /// <p>The tag key. Resources tagged with this tag key-value pair will be added to the application. If a resource with this tag is later untagged, the tag-sync task removes the resource from the application.</p>
-    /// This field is required.
+    /// <p>When using the <code>TagKey</code> parameter, you must also specify the <code>TagValue</code> parameter. If you specify a tag key-value pair, you can't use the <code>ResourceQuery</code> parameter.</p>
     pub fn tag_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.tag_key = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The tag key. Resources tagged with this tag key-value pair will be added to the application. If a resource with this tag is later untagged, the tag-sync task removes the resource from the application.</p>
+    /// <p>When using the <code>TagKey</code> parameter, you must also specify the <code>TagValue</code> parameter. If you specify a tag key-value pair, you can't use the <code>ResourceQuery</code> parameter.</p>
     pub fn set_tag_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.tag_key = input;
         self
     }
     /// <p>The tag key. Resources tagged with this tag key-value pair will be added to the application. If a resource with this tag is later untagged, the tag-sync task removes the resource from the application.</p>
+    /// <p>When using the <code>TagKey</code> parameter, you must also specify the <code>TagValue</code> parameter. If you specify a tag key-value pair, you can't use the <code>ResourceQuery</code> parameter.</p>
     pub fn get_tag_key(&self) -> &::std::option::Option<::std::string::String> {
         &self.tag_key
     }
     /// <p>The tag value. Resources tagged with this tag key-value pair will be added to the application. If a resource with this tag is later untagged, the tag-sync task removes the resource from the application.</p>
-    /// This field is required.
+    /// <p>When using the <code>TagValue</code> parameter, you must also specify the <code>TagKey</code> parameter. If you specify a tag key-value pair, you can't use the <code>ResourceQuery</code> parameter.</p>
     pub fn tag_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.tag_value = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The tag value. Resources tagged with this tag key-value pair will be added to the application. If a resource with this tag is later untagged, the tag-sync task removes the resource from the application.</p>
+    /// <p>When using the <code>TagValue</code> parameter, you must also specify the <code>TagKey</code> parameter. If you specify a tag key-value pair, you can't use the <code>ResourceQuery</code> parameter.</p>
     pub fn set_tag_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.tag_value = input;
         self
     }
     /// <p>The tag value. Resources tagged with this tag key-value pair will be added to the application. If a resource with this tag is later untagged, the tag-sync task removes the resource from the application.</p>
+    /// <p>When using the <code>TagValue</code> parameter, you must also specify the <code>TagKey</code> parameter. If you specify a tag key-value pair, you can't use the <code>ResourceQuery</code> parameter.</p>
     pub fn get_tag_value(&self) -> &::std::option::Option<::std::string::String> {
         &self.tag_value
+    }
+    /// <p>The query you can use to create the tag-sync task. With this method, all resources matching the query are added to the specified application group. A <code>ResourceQuery</code> specifies both a query <code>Type</code> and a <code>Query</code> string as JSON string objects. For more information on defining a resource query for a tag-sync task, see the tag-based query type in <a href="https://docs.aws.amazon.com/ARG/latest/userguide/gettingstarted-query.html#getting_started-query_types"> Types of resource group queries</a> in <i>Resource Groups User Guide</i>.</p>
+    /// <p>When using the <code>ResourceQuery</code> parameter, you cannot use the <code>TagKey</code> and <code>TagValue</code> parameters.</p>
+    /// <p>When you combine all of the elements together into a single string, any double quotes that are embedded inside another double quote pair must be escaped by preceding the embedded double quote with a backslash character (\). For example, a complete <code>ResourceQuery</code> parameter must be formatted like the following CLI parameter example:</p>
+    /// <p><code>--resource-query '{"Type":"TAG_FILTERS_1_0","Query":"{\"ResourceTypeFilters\":\[\"AWS::AllSupported\"\],\"TagFilters\":\[{\"Key\":\"Stage\",\"Values\":\[\"Test\"\]}\]}"}'</code></p>
+    /// <p>In the preceding example, all of the double quote characters in the value part of the <code>Query</code> element must be escaped because the value itself is surrounded by double quotes. For more information, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-parameters-quoting-strings.html">Quoting strings</a> in the <i>Command Line Interface User Guide</i>.</p>
+    /// <p>For the complete list of resource types that you can use in the array value for <code>ResourceTypeFilters</code>, see <a href="https://docs.aws.amazon.com/ARG/latest/userguide/supported-resources.html">Resources you can use with Resource Groups and Tag Editor</a> in the <i>Resource Groups User Guide</i>. For example:</p>
+    /// <p><code>"ResourceTypeFilters":\["AWS::S3::Bucket", "AWS::EC2::Instance"\]</code></p>
+    pub fn resource_query(mut self, input: crate::types::ResourceQuery) -> Self {
+        self.resource_query = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The query you can use to create the tag-sync task. With this method, all resources matching the query are added to the specified application group. A <code>ResourceQuery</code> specifies both a query <code>Type</code> and a <code>Query</code> string as JSON string objects. For more information on defining a resource query for a tag-sync task, see the tag-based query type in <a href="https://docs.aws.amazon.com/ARG/latest/userguide/gettingstarted-query.html#getting_started-query_types"> Types of resource group queries</a> in <i>Resource Groups User Guide</i>.</p>
+    /// <p>When using the <code>ResourceQuery</code> parameter, you cannot use the <code>TagKey</code> and <code>TagValue</code> parameters.</p>
+    /// <p>When you combine all of the elements together into a single string, any double quotes that are embedded inside another double quote pair must be escaped by preceding the embedded double quote with a backslash character (\). For example, a complete <code>ResourceQuery</code> parameter must be formatted like the following CLI parameter example:</p>
+    /// <p><code>--resource-query '{"Type":"TAG_FILTERS_1_0","Query":"{\"ResourceTypeFilters\":\[\"AWS::AllSupported\"\],\"TagFilters\":\[{\"Key\":\"Stage\",\"Values\":\[\"Test\"\]}\]}"}'</code></p>
+    /// <p>In the preceding example, all of the double quote characters in the value part of the <code>Query</code> element must be escaped because the value itself is surrounded by double quotes. For more information, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-parameters-quoting-strings.html">Quoting strings</a> in the <i>Command Line Interface User Guide</i>.</p>
+    /// <p>For the complete list of resource types that you can use in the array value for <code>ResourceTypeFilters</code>, see <a href="https://docs.aws.amazon.com/ARG/latest/userguide/supported-resources.html">Resources you can use with Resource Groups and Tag Editor</a> in the <i>Resource Groups User Guide</i>. For example:</p>
+    /// <p><code>"ResourceTypeFilters":\["AWS::S3::Bucket", "AWS::EC2::Instance"\]</code></p>
+    pub fn set_resource_query(mut self, input: ::std::option::Option<crate::types::ResourceQuery>) -> Self {
+        self.resource_query = input;
+        self
+    }
+    /// <p>The query you can use to create the tag-sync task. With this method, all resources matching the query are added to the specified application group. A <code>ResourceQuery</code> specifies both a query <code>Type</code> and a <code>Query</code> string as JSON string objects. For more information on defining a resource query for a tag-sync task, see the tag-based query type in <a href="https://docs.aws.amazon.com/ARG/latest/userguide/gettingstarted-query.html#getting_started-query_types"> Types of resource group queries</a> in <i>Resource Groups User Guide</i>.</p>
+    /// <p>When using the <code>ResourceQuery</code> parameter, you cannot use the <code>TagKey</code> and <code>TagValue</code> parameters.</p>
+    /// <p>When you combine all of the elements together into a single string, any double quotes that are embedded inside another double quote pair must be escaped by preceding the embedded double quote with a backslash character (\). For example, a complete <code>ResourceQuery</code> parameter must be formatted like the following CLI parameter example:</p>
+    /// <p><code>--resource-query '{"Type":"TAG_FILTERS_1_0","Query":"{\"ResourceTypeFilters\":\[\"AWS::AllSupported\"\],\"TagFilters\":\[{\"Key\":\"Stage\",\"Values\":\[\"Test\"\]}\]}"}'</code></p>
+    /// <p>In the preceding example, all of the double quote characters in the value part of the <code>Query</code> element must be escaped because the value itself is surrounded by double quotes. For more information, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-parameters-quoting-strings.html">Quoting strings</a> in the <i>Command Line Interface User Guide</i>.</p>
+    /// <p>For the complete list of resource types that you can use in the array value for <code>ResourceTypeFilters</code>, see <a href="https://docs.aws.amazon.com/ARG/latest/userguide/supported-resources.html">Resources you can use with Resource Groups and Tag Editor</a> in the <i>Resource Groups User Guide</i>. For example:</p>
+    /// <p><code>"ResourceTypeFilters":\["AWS::S3::Bucket", "AWS::EC2::Instance"\]</code></p>
+    pub fn get_resource_query(&self) -> &::std::option::Option<crate::types::ResourceQuery> {
+        &self.resource_query
     }
     /// <p>The Amazon resource name (ARN) of the role assumed by the service to tag and untag resources on your behalf.</p>
     /// This field is required.
@@ -115,6 +174,7 @@ impl StartTagSyncTaskInputBuilder {
             group: self.group,
             tag_key: self.tag_key,
             tag_value: self.tag_value,
+            resource_query: self.resource_query,
             role_arn: self.role_arn,
         })
     }

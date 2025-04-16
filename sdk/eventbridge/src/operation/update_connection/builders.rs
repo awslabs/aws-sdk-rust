@@ -181,4 +181,24 @@ impl UpdateConnectionFluentBuilder {
     pub fn get_invocation_connectivity_parameters(&self) -> &::std::option::Option<crate::types::ConnectivityResourceParameters> {
         self.inner.get_invocation_connectivity_parameters()
     }
+    /// <p>The identifier of the KMS customer managed key for EventBridge to use, if you choose to use a customer managed key to encrypt this connection. The identifier can be the key Amazon Resource Name (ARN), KeyId, key alias, or key alias ARN.</p>
+    /// <p>If you do not specify a customer managed key identifier, EventBridge uses an Amazon Web Services owned key to encrypt the connection.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/viewing-keys.html">Identify and view keys</a> in the <i>Key Management Service Developer Guide</i>.</p>
+    pub fn kms_key_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.kms_key_identifier(input.into());
+        self
+    }
+    /// <p>The identifier of the KMS customer managed key for EventBridge to use, if you choose to use a customer managed key to encrypt this connection. The identifier can be the key Amazon Resource Name (ARN), KeyId, key alias, or key alias ARN.</p>
+    /// <p>If you do not specify a customer managed key identifier, EventBridge uses an Amazon Web Services owned key to encrypt the connection.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/viewing-keys.html">Identify and view keys</a> in the <i>Key Management Service Developer Guide</i>.</p>
+    pub fn set_kms_key_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_kms_key_identifier(input);
+        self
+    }
+    /// <p>The identifier of the KMS customer managed key for EventBridge to use, if you choose to use a customer managed key to encrypt this connection. The identifier can be the key Amazon Resource Name (ARN), KeyId, key alias, or key alias ARN.</p>
+    /// <p>If you do not specify a customer managed key identifier, EventBridge uses an Amazon Web Services owned key to encrypt the connection.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/viewing-keys.html">Identify and view keys</a> in the <i>Key Management Service Developer Guide</i>.</p>
+    pub fn get_kms_key_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_kms_key_identifier()
+    }
 }

@@ -6,14 +6,20 @@ pub fn ser_start_tag_sync_task_input_input(
     if let Some(var_1) = &input.group {
         object.key("Group").string(var_1.as_str());
     }
-    if let Some(var_2) = &input.role_arn {
-        object.key("RoleArn").string(var_2.as_str());
+    if let Some(var_2) = &input.resource_query {
+        #[allow(unused_mut)]
+        let mut object_3 = object.key("ResourceQuery").start_object();
+        crate::protocol_serde::shape_resource_query::ser_resource_query(&mut object_3, var_2)?;
+        object_3.finish();
     }
-    if let Some(var_3) = &input.tag_key {
-        object.key("TagKey").string(var_3.as_str());
+    if let Some(var_4) = &input.role_arn {
+        object.key("RoleArn").string(var_4.as_str());
     }
-    if let Some(var_4) = &input.tag_value {
-        object.key("TagValue").string(var_4.as_str());
+    if let Some(var_5) = &input.tag_key {
+        object.key("TagKey").string(var_5.as_str());
+    }
+    if let Some(var_6) = &input.tag_value {
+        object.key("TagValue").string(var_6.as_str());
     }
     Ok(())
 }

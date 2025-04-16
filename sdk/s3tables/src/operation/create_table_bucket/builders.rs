@@ -28,7 +28,12 @@ impl crate::operation::create_table_bucket::builders::CreateTableBucketInputBuil
 /// Permissions
 /// </dt>
 /// <dd>
-/// <p>You must have the <code>s3tables:CreateTableBucket</code> permission to use this operation.</p>
+/// <ul>
+/// <li>
+/// <p>You must have the <code>s3tables:CreateTableBucket</code> permission to use this operation.</p></li>
+/// <li>
+/// <p>If you use this operation with the optional <code>encryptionConfiguration</code> parameter you must have the <code>s3tables:PutTableBucketEncryption</code> permission.</p></li>
+/// </ul>
 /// </dd>
 /// </dl>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
@@ -129,5 +134,19 @@ impl CreateTableBucketFluentBuilder {
     /// <p>The name for the table bucket.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_name()
+    }
+    /// <p>The encryption configuration to use for the table bucket. This configuration specifies the default encryption settings that will be applied to all tables created in this bucket unless overridden at the table level. The configuration includes the encryption algorithm and, if using SSE-KMS, the KMS key to use.</p>
+    pub fn encryption_configuration(mut self, input: crate::types::EncryptionConfiguration) -> Self {
+        self.inner = self.inner.encryption_configuration(input);
+        self
+    }
+    /// <p>The encryption configuration to use for the table bucket. This configuration specifies the default encryption settings that will be applied to all tables created in this bucket unless overridden at the table level. The configuration includes the encryption algorithm and, if using SSE-KMS, the KMS key to use.</p>
+    pub fn set_encryption_configuration(mut self, input: ::std::option::Option<crate::types::EncryptionConfiguration>) -> Self {
+        self.inner = self.inner.set_encryption_configuration(input);
+        self
+    }
+    /// <p>The encryption configuration to use for the table bucket. This configuration specifies the default encryption settings that will be applied to all tables created in this bucket unless overridden at the table level. The configuration includes the encryption algorithm and, if using SSE-KMS, the KMS key to use.</p>
+    pub fn get_encryption_configuration(&self) -> &::std::option::Option<crate::types::EncryptionConfiguration> {
+        self.inner.get_encryption_configuration()
     }
 }

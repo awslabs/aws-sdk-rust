@@ -109,6 +109,12 @@ pub use crate::types::_audit_event_type::AuditEventType;
 
 pub use crate::types::_related_item_input_content::RelatedItemInputContent;
 
+pub use crate::types::_sla_input_content::SlaInputContent;
+
+pub use crate::types::_sla_input_configuration::SlaInputConfiguration;
+
+pub use crate::types::_sla_type::SlaType;
+
 pub use crate::types::_file_content::FileContent;
 
 pub use crate::types::_comment_content::CommentContent;
@@ -121,9 +127,17 @@ pub use crate::types::_search_related_items_response_item::SearchRelatedItemsRes
 
 pub use crate::types::_related_item_content::RelatedItemContent;
 
+pub use crate::types::_sla_content::SlaContent;
+
+pub use crate::types::_sla_configuration::SlaConfiguration;
+
+pub use crate::types::_sla_status::SlaStatus;
+
 pub use crate::types::_contact_content::ContactContent;
 
 pub use crate::types::_related_item_type_filter::RelatedItemTypeFilter;
+
+pub use crate::types::_sla_filter::SlaFilter;
 
 pub use crate::types::_file_filter::FileFilter;
 
@@ -252,6 +266,20 @@ mod _search_cases_response_item;
 mod _search_related_items_response_item;
 
 mod _section;
+
+mod _sla_configuration;
+
+mod _sla_content;
+
+mod _sla_filter;
+
+mod _sla_input_configuration;
+
+mod _sla_input_content;
+
+mod _sla_status;
+
+mod _sla_type;
 
 mod _sort;
 

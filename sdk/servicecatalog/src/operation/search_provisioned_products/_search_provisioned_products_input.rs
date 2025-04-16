@@ -11,7 +11,7 @@ pub struct SearchProvisionedProductsInput {
     /// <p><code>zh</code> - Chinese</p></li>
     /// </ul>
     pub accept_language: ::std::option::Option<::std::string::String>,
-    /// <p>The access level to use to obtain results. The default is <code>User</code>.</p>
+    /// <p>The access level to use to obtain results. The default is <code>Account</code>.</p>
     pub access_level_filter: ::std::option::Option<crate::types::AccessLevelFilter>,
     /// <p>The search filters.</p>
     /// <p>When the key is <code>SearchQuery</code>, the searchable fields are <code>arn</code>, <code>createdTime</code>, <code>id</code>, <code>lastRecordId</code>, <code>idempotencyToken</code>, <code>name</code>, <code>physicalId</code>, <code>productId</code>, <code>provisioningArtifactId</code>, <code>type</code>, <code>status</code>, <code>tags</code>, <code>userArn</code>, <code>userArnSession</code>, <code>lastProvisioningRecordId</code>, <code>lastSuccessfulProvisioningRecordId</code>, <code>productName</code>, and <code>provisioningArtifactName</code>.</p>
@@ -38,7 +38,7 @@ impl SearchProvisionedProductsInput {
     pub fn accept_language(&self) -> ::std::option::Option<&str> {
         self.accept_language.as_deref()
     }
-    /// <p>The access level to use to obtain results. The default is <code>User</code>.</p>
+    /// <p>The access level to use to obtain results. The default is <code>Account</code>.</p>
     pub fn access_level_filter(&self) -> ::std::option::Option<&crate::types::AccessLevelFilter> {
         self.access_level_filter.as_ref()
     }
@@ -121,17 +121,17 @@ impl SearchProvisionedProductsInputBuilder {
     pub fn get_accept_language(&self) -> &::std::option::Option<::std::string::String> {
         &self.accept_language
     }
-    /// <p>The access level to use to obtain results. The default is <code>User</code>.</p>
+    /// <p>The access level to use to obtain results. The default is <code>Account</code>.</p>
     pub fn access_level_filter(mut self, input: crate::types::AccessLevelFilter) -> Self {
         self.access_level_filter = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The access level to use to obtain results. The default is <code>User</code>.</p>
+    /// <p>The access level to use to obtain results. The default is <code>Account</code>.</p>
     pub fn set_access_level_filter(mut self, input: ::std::option::Option<crate::types::AccessLevelFilter>) -> Self {
         self.access_level_filter = input;
         self
     }
-    /// <p>The access level to use to obtain results. The default is <code>User</code>.</p>
+    /// <p>The access level to use to obtain results. The default is <code>Account</code>.</p>
     pub fn get_access_level_filter(&self) -> &::std::option::Option<crate::types::AccessLevelFilter> {
         &self.access_level_filter
     }

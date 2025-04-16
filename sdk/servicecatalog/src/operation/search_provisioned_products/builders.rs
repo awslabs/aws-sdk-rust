@@ -146,17 +146,17 @@ impl SearchProvisionedProductsFluentBuilder {
     pub fn get_accept_language(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_accept_language()
     }
-    /// <p>The access level to use to obtain results. The default is <code>User</code>.</p>
+    /// <p>The access level to use to obtain results. The default is <code>Account</code>.</p>
     pub fn access_level_filter(mut self, input: crate::types::AccessLevelFilter) -> Self {
         self.inner = self.inner.access_level_filter(input);
         self
     }
-    /// <p>The access level to use to obtain results. The default is <code>User</code>.</p>
+    /// <p>The access level to use to obtain results. The default is <code>Account</code>.</p>
     pub fn set_access_level_filter(mut self, input: ::std::option::Option<crate::types::AccessLevelFilter>) -> Self {
         self.inner = self.inner.set_access_level_filter(input);
         self
     }
-    /// <p>The access level to use to obtain results. The default is <code>User</code>.</p>
+    /// <p>The access level to use to obtain results. The default is <code>Account</code>.</p>
     pub fn get_access_level_filter(&self) -> &::std::option::Option<crate::types::AccessLevelFilter> {
         self.inner.get_access_level_filter()
     }

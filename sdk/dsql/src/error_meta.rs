@@ -232,6 +232,45 @@ impl From<crate::operation::get_cluster::GetClusterError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_vpc_endpoint_service_name::GetVpcEndpointServiceNameError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_vpc_endpoint_service_name::GetVpcEndpointServiceNameError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_vpc_endpoint_service_name::GetVpcEndpointServiceNameError> for Error {
+    fn from(err: crate::operation::get_vpc_endpoint_service_name::GetVpcEndpointServiceNameError) -> Self {
+        match err {
+            crate::operation::get_vpc_endpoint_service_name::GetVpcEndpointServiceNameError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::get_vpc_endpoint_service_name::GetVpcEndpointServiceNameError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_vpc_endpoint_service_name::GetVpcEndpointServiceNameError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::get_vpc_endpoint_service_name::GetVpcEndpointServiceNameError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::get_vpc_endpoint_service_name::GetVpcEndpointServiceNameError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::get_vpc_endpoint_service_name::GetVpcEndpointServiceNameError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_clusters::ListClustersError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,

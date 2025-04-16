@@ -110,6 +110,18 @@ pub(crate) fn get_table_bucket_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn get_table_bucket_encryption_output_output_correct_errors(
+    mut builder: crate::operation::get_table_bucket_encryption::builders::GetTableBucketEncryptionOutputBuilder,
+) -> crate::operation::get_table_bucket_encryption::builders::GetTableBucketEncryptionOutputBuilder {
+    if builder.encryption_configuration.is_none() {
+        builder.encryption_configuration = {
+            let builder = crate::types::builders::EncryptionConfigurationBuilder::default();
+            crate::serde_util::encryption_configuration_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
 pub(crate) fn get_table_bucket_maintenance_configuration_output_output_correct_errors(
     mut builder: crate::operation::get_table_bucket_maintenance_configuration::builders::GetTableBucketMaintenanceConfigurationOutputBuilder,
 ) -> crate::operation::get_table_bucket_maintenance_configuration::builders::GetTableBucketMaintenanceConfigurationOutputBuilder {
@@ -127,6 +139,18 @@ pub(crate) fn get_table_bucket_policy_output_output_correct_errors(
 ) -> crate::operation::get_table_bucket_policy::builders::GetTableBucketPolicyOutputBuilder {
     if builder.resource_policy.is_none() {
         builder.resource_policy = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn get_table_encryption_output_output_correct_errors(
+    mut builder: crate::operation::get_table_encryption::builders::GetTableEncryptionOutputBuilder,
+) -> crate::operation::get_table_encryption::builders::GetTableEncryptionOutputBuilder {
+    if builder.encryption_configuration.is_none() {
+        builder.encryption_configuration = {
+            let builder = crate::types::builders::EncryptionConfigurationBuilder::default();
+            crate::serde_util::encryption_configuration_correct_errors(builder).build().ok()
+        }
     }
     builder
 }
@@ -220,6 +244,15 @@ pub(crate) fn update_table_metadata_location_output_output_correct_errors(
     }
     if builder.metadata_location.is_none() {
         builder.metadata_location = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn encryption_configuration_correct_errors(
+    mut builder: crate::types::builders::EncryptionConfigurationBuilder,
+) -> crate::types::builders::EncryptionConfigurationBuilder {
+    if builder.sse_algorithm.is_none() {
+        builder.sse_algorithm = "no value was set".parse::<crate::types::SseAlgorithm>().ok()
     }
     builder
 }

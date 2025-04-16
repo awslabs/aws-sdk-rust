@@ -5,11 +5,17 @@
 pub struct CreateTableBucketInput {
     /// <p>The name for the table bucket.</p>
     pub name: ::std::option::Option<::std::string::String>,
+    /// <p>The encryption configuration to use for the table bucket. This configuration specifies the default encryption settings that will be applied to all tables created in this bucket unless overridden at the table level. The configuration includes the encryption algorithm and, if using SSE-KMS, the KMS key to use.</p>
+    pub encryption_configuration: ::std::option::Option<crate::types::EncryptionConfiguration>,
 }
 impl CreateTableBucketInput {
     /// <p>The name for the table bucket.</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
+    }
+    /// <p>The encryption configuration to use for the table bucket. This configuration specifies the default encryption settings that will be applied to all tables created in this bucket unless overridden at the table level. The configuration includes the encryption algorithm and, if using SSE-KMS, the KMS key to use.</p>
+    pub fn encryption_configuration(&self) -> ::std::option::Option<&crate::types::EncryptionConfiguration> {
+        self.encryption_configuration.as_ref()
     }
 }
 impl CreateTableBucketInput {
@@ -24,6 +30,7 @@ impl CreateTableBucketInput {
 #[non_exhaustive]
 pub struct CreateTableBucketInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) encryption_configuration: ::std::option::Option<crate::types::EncryptionConfiguration>,
 }
 impl CreateTableBucketInputBuilder {
     /// <p>The name for the table bucket.</p>
@@ -41,10 +48,27 @@ impl CreateTableBucketInputBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
+    /// <p>The encryption configuration to use for the table bucket. This configuration specifies the default encryption settings that will be applied to all tables created in this bucket unless overridden at the table level. The configuration includes the encryption algorithm and, if using SSE-KMS, the KMS key to use.</p>
+    pub fn encryption_configuration(mut self, input: crate::types::EncryptionConfiguration) -> Self {
+        self.encryption_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The encryption configuration to use for the table bucket. This configuration specifies the default encryption settings that will be applied to all tables created in this bucket unless overridden at the table level. The configuration includes the encryption algorithm and, if using SSE-KMS, the KMS key to use.</p>
+    pub fn set_encryption_configuration(mut self, input: ::std::option::Option<crate::types::EncryptionConfiguration>) -> Self {
+        self.encryption_configuration = input;
+        self
+    }
+    /// <p>The encryption configuration to use for the table bucket. This configuration specifies the default encryption settings that will be applied to all tables created in this bucket unless overridden at the table level. The configuration includes the encryption algorithm and, if using SSE-KMS, the KMS key to use.</p>
+    pub fn get_encryption_configuration(&self) -> &::std::option::Option<crate::types::EncryptionConfiguration> {
+        &self.encryption_configuration
+    }
     /// Consumes the builder and constructs a [`CreateTableBucketInput`](crate::operation::create_table_bucket::CreateTableBucketInput).
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::create_table_bucket::CreateTableBucketInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_table_bucket::CreateTableBucketInput { name: self.name })
+        ::std::result::Result::Ok(crate::operation::create_table_bucket::CreateTableBucketInput {
+            name: self.name,
+            encryption_configuration: self.encryption_configuration,
+        })
     }
 }

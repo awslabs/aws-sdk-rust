@@ -22,6 +22,12 @@ pub fn ser_related_item_type_filter(
             crate::protocol_serde::shape_file_filter::ser_file_filter(&mut object_3, inner)?;
             object_3.finish();
         }
+        crate::types::RelatedItemTypeFilter::Sla(inner) => {
+            #[allow(unused_mut)]
+            let mut object_4 = object_4.key("sla").start_object();
+            crate::protocol_serde::shape_sla_filter::ser_sla_filter(&mut object_4, inner)?;
+            object_4.finish();
+        }
         crate::types::RelatedItemTypeFilter::Unknown => {
             return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant(
                 "RelatedItemTypeFilter",

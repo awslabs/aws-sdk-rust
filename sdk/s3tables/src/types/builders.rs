@@ -9,6 +9,8 @@ pub use crate::types::_table_summary::TableSummaryBuilder;
 
 pub use crate::types::_table_maintenance_job_status_value::TableMaintenanceJobStatusValueBuilder;
 
+pub use crate::types::_encryption_configuration::EncryptionConfigurationBuilder;
+
 pub use crate::types::_iceberg_metadata::IcebergMetadataBuilder;
 
 pub use crate::types::_iceberg_schema::IcebergSchemaBuilder;

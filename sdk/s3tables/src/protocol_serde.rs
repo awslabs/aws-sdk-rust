@@ -35,6 +35,8 @@ pub(crate) mod shape_delete_table;
 
 pub(crate) mod shape_delete_table_bucket;
 
+pub(crate) mod shape_delete_table_bucket_encryption;
+
 pub(crate) mod shape_delete_table_bucket_policy;
 
 pub(crate) mod shape_delete_table_policy;
@@ -45,9 +47,13 @@ pub(crate) mod shape_get_table;
 
 pub(crate) mod shape_get_table_bucket;
 
+pub(crate) mod shape_get_table_bucket_encryption;
+
 pub(crate) mod shape_get_table_bucket_maintenance_configuration;
 
 pub(crate) mod shape_get_table_bucket_policy;
+
+pub(crate) mod shape_get_table_encryption;
 
 pub(crate) mod shape_get_table_maintenance_configuration;
 
@@ -62,6 +68,8 @@ pub(crate) mod shape_list_namespaces;
 pub(crate) mod shape_list_table_buckets;
 
 pub(crate) mod shape_list_tables;
+
+pub(crate) mod shape_put_table_bucket_encryption;
 
 pub(crate) mod shape_put_table_bucket_maintenance_configuration;
 
@@ -101,6 +109,8 @@ pub(crate) mod shape_internal_server_error_exception;
 
 pub(crate) mod shape_not_found_exception;
 
+pub(crate) mod shape_put_table_bucket_encryption_input;
+
 pub(crate) mod shape_put_table_bucket_maintenance_configuration_input;
 
 pub(crate) mod shape_put_table_bucket_policy_input;
@@ -114,6 +124,8 @@ pub(crate) mod shape_rename_table_input;
 pub(crate) mod shape_too_many_requests_exception;
 
 pub(crate) mod shape_update_table_metadata_location_input;
+
+pub(crate) mod shape_encryption_configuration;
 
 pub(crate) mod shape_namespace_list;
 

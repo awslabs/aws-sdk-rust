@@ -11,6 +11,8 @@ pub struct GetTableOutput {
     pub table_arn: ::std::string::String,
     /// <p>The namespace associated with the table.</p>
     pub namespace: ::std::vec::Vec<::std::string::String>,
+    /// <p>The unique identifier of the namespace containing this table.</p>
+    pub namespace_id: ::std::option::Option<::std::string::String>,
     /// <p>The version token of the table.</p>
     pub version_token: ::std::string::String,
     /// <p>The metadata location of the table.</p>
@@ -31,6 +33,8 @@ pub struct GetTableOutput {
     pub owner_account_id: ::std::string::String,
     /// <p>The format of the table.</p>
     pub format: crate::types::OpenTableFormat,
+    /// <p>The unique identifier of the table bucket containing this table.</p>
+    pub table_bucket_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetTableOutput {
@@ -52,6 +56,10 @@ impl GetTableOutput {
     pub fn namespace(&self) -> &[::std::string::String] {
         use std::ops::Deref;
         self.namespace.deref()
+    }
+    /// <p>The unique identifier of the namespace containing this table.</p>
+    pub fn namespace_id(&self) -> ::std::option::Option<&str> {
+        self.namespace_id.as_deref()
     }
     /// <p>The version token of the table.</p>
     pub fn version_token(&self) -> &str {
@@ -98,6 +106,10 @@ impl GetTableOutput {
     pub fn format(&self) -> &crate::types::OpenTableFormat {
         &self.format
     }
+    /// <p>The unique identifier of the table bucket containing this table.</p>
+    pub fn table_bucket_id(&self) -> ::std::option::Option<&str> {
+        self.table_bucket_id.as_deref()
+    }
 }
 impl ::aws_types::request_id::RequestId for GetTableOutput {
     fn request_id(&self) -> Option<&str> {
@@ -119,6 +131,7 @@ pub struct GetTableOutputBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::TableType>,
     pub(crate) table_arn: ::std::option::Option<::std::string::String>,
     pub(crate) namespace: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) namespace_id: ::std::option::Option<::std::string::String>,
     pub(crate) version_token: ::std::option::Option<::std::string::String>,
     pub(crate) metadata_location: ::std::option::Option<::std::string::String>,
     pub(crate) warehouse_location: ::std::option::Option<::std::string::String>,
@@ -129,6 +142,7 @@ pub struct GetTableOutputBuilder {
     pub(crate) modified_by: ::std::option::Option<::std::string::String>,
     pub(crate) owner_account_id: ::std::option::Option<::std::string::String>,
     pub(crate) format: ::std::option::Option<crate::types::OpenTableFormat>,
+    pub(crate) table_bucket_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetTableOutputBuilder {
@@ -196,6 +210,20 @@ impl GetTableOutputBuilder {
     /// <p>The namespace associated with the table.</p>
     pub fn get_namespace(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.namespace
+    }
+    /// <p>The unique identifier of the namespace containing this table.</p>
+    pub fn namespace_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.namespace_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The unique identifier of the namespace containing this table.</p>
+    pub fn set_namespace_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.namespace_id = input;
+        self
+    }
+    /// <p>The unique identifier of the namespace containing this table.</p>
+    pub fn get_namespace_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.namespace_id
     }
     /// <p>The version token of the table.</p>
     /// This field is required.
@@ -345,6 +373,20 @@ impl GetTableOutputBuilder {
     pub fn get_format(&self) -> &::std::option::Option<crate::types::OpenTableFormat> {
         &self.format
     }
+    /// <p>The unique identifier of the table bucket containing this table.</p>
+    pub fn table_bucket_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.table_bucket_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The unique identifier of the table bucket containing this table.</p>
+    pub fn set_table_bucket_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.table_bucket_id = input;
+        self
+    }
+    /// <p>The unique identifier of the table bucket containing this table.</p>
+    pub fn get_table_bucket_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.table_bucket_id
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -394,6 +436,7 @@ impl GetTableOutputBuilder {
                     "namespace was not specified but it is required when building GetTableOutput",
                 )
             })?,
+            namespace_id: self.namespace_id,
             version_token: self.version_token.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "version_token",
@@ -444,6 +487,7 @@ impl GetTableOutputBuilder {
                     "format was not specified but it is required when building GetTableOutput",
                 )
             })?,
+            table_bucket_id: self.table_bucket_id,
             _request_id: self._request_id,
         })
     }

@@ -238,6 +238,52 @@ impl From<crate::operation::delete_table_bucket::DeleteTableBucketError> for Err
         }
     }
 }
+impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_table_bucket_encryption::DeleteTableBucketEncryptionError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::delete_table_bucket_encryption::DeleteTableBucketEncryptionError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_table_bucket_encryption::DeleteTableBucketEncryptionError> for Error {
+    fn from(err: crate::operation::delete_table_bucket_encryption::DeleteTableBucketEncryptionError) -> Self {
+        match err {
+            crate::operation::delete_table_bucket_encryption::DeleteTableBucketEncryptionError::BadRequestException(inner) => {
+                Error::BadRequestException(inner)
+            }
+            crate::operation::delete_table_bucket_encryption::DeleteTableBucketEncryptionError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::delete_table_bucket_encryption::DeleteTableBucketEncryptionError::ForbiddenException(inner) => {
+                Error::ForbiddenException(inner)
+            }
+            crate::operation::delete_table_bucket_encryption::DeleteTableBucketEncryptionError::InternalServerErrorException(inner) => {
+                Error::InternalServerErrorException(inner)
+            }
+            crate::operation::delete_table_bucket_encryption::DeleteTableBucketEncryptionError::NotFoundException(inner) => {
+                Error::NotFoundException(inner)
+            }
+            crate::operation::delete_table_bucket_encryption::DeleteTableBucketEncryptionError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::delete_table_bucket_encryption::DeleteTableBucketEncryptionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_table_bucket_policy::DeleteTableBucketPolicyError, R>>
     for Error
 where
@@ -389,6 +435,46 @@ impl From<crate::operation::get_table_bucket::GetTableBucketError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_table_bucket_encryption::GetTableBucketEncryptionError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_table_bucket_encryption::GetTableBucketEncryptionError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_table_bucket_encryption::GetTableBucketEncryptionError> for Error {
+    fn from(err: crate::operation::get_table_bucket_encryption::GetTableBucketEncryptionError) -> Self {
+        match err {
+            crate::operation::get_table_bucket_encryption::GetTableBucketEncryptionError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::get_table_bucket_encryption::GetTableBucketEncryptionError::BadRequestException(inner) => {
+                Error::BadRequestException(inner)
+            }
+            crate::operation::get_table_bucket_encryption::GetTableBucketEncryptionError::ForbiddenException(inner) => {
+                Error::ForbiddenException(inner)
+            }
+            crate::operation::get_table_bucket_encryption::GetTableBucketEncryptionError::InternalServerErrorException(inner) => {
+                Error::InternalServerErrorException(inner)
+            }
+            crate::operation::get_table_bucket_encryption::GetTableBucketEncryptionError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::get_table_bucket_encryption::GetTableBucketEncryptionError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::get_table_bucket_encryption::GetTableBucketEncryptionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R>
     From<
         ::aws_smithy_runtime_api::client::result::SdkError<
@@ -457,6 +543,37 @@ impl From<crate::operation::get_table_bucket_policy::GetTableBucketPolicyError> 
                 Error::TooManyRequestsException(inner)
             }
             crate::operation::get_table_bucket_policy::GetTableBucketPolicyError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_table_encryption::GetTableEncryptionError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_table_encryption::GetTableEncryptionError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_table_encryption::GetTableEncryptionError> for Error {
+    fn from(err: crate::operation::get_table_encryption::GetTableEncryptionError) -> Self {
+        match err {
+            crate::operation::get_table_encryption::GetTableEncryptionError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_table_encryption::GetTableEncryptionError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::get_table_encryption::GetTableEncryptionError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::get_table_encryption::GetTableEncryptionError::InternalServerErrorException(inner) => {
+                Error::InternalServerErrorException(inner)
+            }
+            crate::operation::get_table_encryption::GetTableEncryptionError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::get_table_encryption::GetTableEncryptionError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::get_table_encryption::GetTableEncryptionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -705,6 +822,44 @@ impl From<crate::operation::list_tables::ListTablesError> for Error {
             crate::operation::list_tables::ListTablesError::NotFoundException(inner) => Error::NotFoundException(inner),
             crate::operation::list_tables::ListTablesError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
             crate::operation::list_tables::ListTablesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::put_table_bucket_encryption::PutTableBucketEncryptionError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::put_table_bucket_encryption::PutTableBucketEncryptionError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::put_table_bucket_encryption::PutTableBucketEncryptionError> for Error {
+    fn from(err: crate::operation::put_table_bucket_encryption::PutTableBucketEncryptionError) -> Self {
+        match err {
+            crate::operation::put_table_bucket_encryption::PutTableBucketEncryptionError::BadRequestException(inner) => {
+                Error::BadRequestException(inner)
+            }
+            crate::operation::put_table_bucket_encryption::PutTableBucketEncryptionError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::put_table_bucket_encryption::PutTableBucketEncryptionError::ForbiddenException(inner) => {
+                Error::ForbiddenException(inner)
+            }
+            crate::operation::put_table_bucket_encryption::PutTableBucketEncryptionError::InternalServerErrorException(inner) => {
+                Error::InternalServerErrorException(inner)
+            }
+            crate::operation::put_table_bucket_encryption::PutTableBucketEncryptionError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::put_table_bucket_encryption::PutTableBucketEncryptionError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::put_table_bucket_encryption::PutTableBucketEncryptionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

@@ -12,6 +12,8 @@ pub struct TableBucketSummary {
     pub owner_account_id: ::std::string::String,
     /// <p>The date and time the table bucket was created at.</p>
     pub created_at: ::aws_smithy_types::DateTime,
+    /// <p>The system-assigned unique identifier for the table bucket.</p>
+    pub table_bucket_id: ::std::option::Option<::std::string::String>,
 }
 impl TableBucketSummary {
     /// <p>The Amazon Resource Name (ARN) of the table bucket.</p>
@@ -33,6 +35,10 @@ impl TableBucketSummary {
     pub fn created_at(&self) -> &::aws_smithy_types::DateTime {
         &self.created_at
     }
+    /// <p>The system-assigned unique identifier for the table bucket.</p>
+    pub fn table_bucket_id(&self) -> ::std::option::Option<&str> {
+        self.table_bucket_id.as_deref()
+    }
 }
 impl TableBucketSummary {
     /// Creates a new builder-style object to manufacture [`TableBucketSummary`](crate::types::TableBucketSummary).
@@ -49,6 +55,7 @@ pub struct TableBucketSummaryBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) owner_account_id: ::std::option::Option<::std::string::String>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) table_bucket_id: ::std::option::Option<::std::string::String>,
 }
 impl TableBucketSummaryBuilder {
     /// <p>The Amazon Resource Name (ARN) of the table bucket.</p>
@@ -111,6 +118,20 @@ impl TableBucketSummaryBuilder {
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.created_at
     }
+    /// <p>The system-assigned unique identifier for the table bucket.</p>
+    pub fn table_bucket_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.table_bucket_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The system-assigned unique identifier for the table bucket.</p>
+    pub fn set_table_bucket_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.table_bucket_id = input;
+        self
+    }
+    /// <p>The system-assigned unique identifier for the table bucket.</p>
+    pub fn get_table_bucket_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.table_bucket_id
+    }
     /// Consumes the builder and constructs a [`TableBucketSummary`](crate::types::TableBucketSummary).
     /// This method will fail if any of the following fields are not set:
     /// - [`arn`](crate::types::builders::TableBucketSummaryBuilder::arn)
@@ -143,6 +164,7 @@ impl TableBucketSummaryBuilder {
                     "created_at was not specified but it is required when building TableBucketSummary",
                 )
             })?,
+            table_bucket_id: self.table_bucket_id,
         })
     }
 }

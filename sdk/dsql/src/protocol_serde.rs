@@ -33,6 +33,8 @@ pub(crate) mod shape_delete_multi_region_clusters;
 
 pub(crate) mod shape_get_cluster;
 
+pub(crate) mod shape_get_vpc_endpoint_service_name;
+
 pub(crate) mod shape_list_clusters;
 
 pub(crate) mod shape_list_tags_for_resource;

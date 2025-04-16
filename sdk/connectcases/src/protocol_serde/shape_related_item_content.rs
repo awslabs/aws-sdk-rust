@@ -43,6 +43,10 @@ where
                             crate::protocol_serde::shape_file_content::de_file_content(tokens)?
                                 .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'file' cannot be null"))?,
                         )),
+                        "sla" => Some(crate::types::RelatedItemContent::Sla(
+                            crate::protocol_serde::shape_sla_content::de_sla_content(tokens)?
+                                .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'sla' cannot be null"))?,
+                        )),
                         _ => {
                             ::aws_smithy_json::deserialize::token::skip_value(tokens)?;
                             Some(crate::types::RelatedItemContent::Unknown)

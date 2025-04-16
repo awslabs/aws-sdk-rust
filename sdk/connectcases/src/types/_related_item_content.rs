@@ -10,6 +10,8 @@ pub enum RelatedItemContent {
     Contact(crate::types::ContactContent),
     /// <p>Represents the content of a File to be returned to agents.</p>
     File(crate::types::FileContent),
+    /// <p>Represents the content of an SLA to be returned to agents.</p>
+    Sla(crate::types::SlaContent),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
     /// An unknown enum variant
     ///
@@ -59,6 +61,19 @@ impl RelatedItemContent {
     /// Returns true if this is a [`File`](crate::types::RelatedItemContent::File).
     pub fn is_file(&self) -> bool {
         self.as_file().is_ok()
+    }
+    /// Tries to convert the enum instance into [`Sla`](crate::types::RelatedItemContent::Sla), extracting the inner [`SlaContent`](crate::types::SlaContent).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_sla(&self) -> ::std::result::Result<&crate::types::SlaContent, &Self> {
+        if let RelatedItemContent::Sla(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`Sla`](crate::types::RelatedItemContent::Sla).
+    pub fn is_sla(&self) -> bool {
+        self.as_sla().is_ok()
     }
     /// Returns true if the enum instance is the `Unknown` variant.
     pub fn is_unknown(&self) -> bool {

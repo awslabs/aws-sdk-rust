@@ -12,6 +12,7 @@
 /// ```text
 /// # let amitypes = unimplemented!();
 /// match amitypes {
+///     AmiTypes::Al2023Arm64Nvidia => { /* ... */ },
 ///     AmiTypes::Al2023Arm64Standard => { /* ... */ },
 ///     AmiTypes::Al2023X8664Neuron => { /* ... */ },
 ///     AmiTypes::Al2023X8664Nvidia => { /* ... */ },
@@ -59,6 +60,8 @@
 )]
 pub enum AmiTypes {
     #[allow(missing_docs)] // documentation missing in model
+    Al2023Arm64Nvidia,
+    #[allow(missing_docs)] // documentation missing in model
     Al2023Arm64Standard,
     #[allow(missing_docs)] // documentation missing in model
     Al2023X8664Neuron,
@@ -101,6 +104,7 @@ pub enum AmiTypes {
 impl ::std::convert::From<&str> for AmiTypes {
     fn from(s: &str) -> Self {
         match s {
+            "AL2023_ARM_64_NVIDIA" => AmiTypes::Al2023Arm64Nvidia,
             "AL2023_ARM_64_STANDARD" => AmiTypes::Al2023Arm64Standard,
             "AL2023_x86_64_NEURON" => AmiTypes::Al2023X8664Neuron,
             "AL2023_x86_64_NVIDIA" => AmiTypes::Al2023X8664Nvidia,
@@ -134,6 +138,7 @@ impl AmiTypes {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            AmiTypes::Al2023Arm64Nvidia => "AL2023_ARM_64_NVIDIA",
             AmiTypes::Al2023Arm64Standard => "AL2023_ARM_64_STANDARD",
             AmiTypes::Al2023X8664Neuron => "AL2023_x86_64_NEURON",
             AmiTypes::Al2023X8664Nvidia => "AL2023_x86_64_NVIDIA",
@@ -158,6 +163,7 @@ impl AmiTypes {
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
+            "AL2023_ARM_64_NVIDIA",
             "AL2023_ARM_64_STANDARD",
             "AL2023_x86_64_NEURON",
             "AL2023_x86_64_NVIDIA",
@@ -199,6 +205,7 @@ impl AmiTypes {
 impl ::std::fmt::Display for AmiTypes {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            AmiTypes::Al2023Arm64Nvidia => write!(f, "AL2023_ARM_64_NVIDIA"),
             AmiTypes::Al2023Arm64Standard => write!(f, "AL2023_ARM_64_STANDARD"),
             AmiTypes::Al2023X8664Neuron => write!(f, "AL2023_x86_64_NEURON"),
             AmiTypes::Al2023X8664Nvidia => write!(f, "AL2023_x86_64_NVIDIA"),

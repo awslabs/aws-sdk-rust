@@ -23,6 +23,10 @@ pub use crate::types::_table_maintenance_job_type::TableMaintenanceJobType;
 
 pub use crate::types::_open_table_format::OpenTableFormat;
 
+pub use crate::types::_encryption_configuration::EncryptionConfiguration;
+
+pub use crate::types::_sse_algorithm::SseAlgorithm;
+
 pub use crate::types::_table_metadata::TableMetadata;
 
 pub use crate::types::_iceberg_metadata::IcebergMetadata;
@@ -43,6 +47,8 @@ pub use crate::types::_table_bucket_summary::TableBucketSummary;
 
 pub use crate::types::_namespace_summary::NamespaceSummary;
 
+mod _encryption_configuration;
+
 mod _iceberg_compaction_settings;
 
 mod _iceberg_metadata;
@@ -62,6 +68,8 @@ mod _namespace_summary;
 mod _open_table_format;
 
 mod _schema_field;
+
+mod _sse_algorithm;
 
 mod _table_bucket_maintenance_configuration_value;
 

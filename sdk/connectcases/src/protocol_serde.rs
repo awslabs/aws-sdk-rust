@@ -283,6 +283,10 @@ pub(crate) mod shape_search_cases_response_item;
 
 pub(crate) mod shape_search_related_items_response_item;
 
+pub(crate) mod shape_sla_filter;
+
+pub(crate) mod shape_sla_input_content;
+
 pub(crate) mod shape_template_summary;
 
 pub(crate) mod shape_audit_event_field_list;
@@ -301,6 +305,8 @@ pub(crate) mod shape_related_item_content;
 
 pub(crate) mod shape_related_item_event_included_data;
 
+pub(crate) mod shape_sla_input_configuration;
+
 pub(crate) mod shape_audit_event_field;
 
 pub(crate) mod shape_boolean_operands;
@@ -313,6 +319,8 @@ pub(crate) mod shape_section;
 
 pub(crate) mod shape_sections_list;
 
+pub(crate) mod shape_sla_content;
+
 pub(crate) mod shape_audit_event_field_value_union;
 
 pub(crate) mod shape_boolean_condition_list;
@@ -323,8 +331,12 @@ pub(crate) mod shape_operand_one;
 
 pub(crate) mod shape_operand_two;
 
+pub(crate) mod shape_sla_configuration;
+
 pub(crate) mod shape_empty_operand_value;
 
 pub(crate) mod shape_field_item;
+
+pub(crate) mod shape_sla_field_value_union_list;
 
 pub(crate) mod shape_field_list;

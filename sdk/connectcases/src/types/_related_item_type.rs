@@ -15,6 +15,7 @@
 ///     RelatedItemType::Comment => { /* ... */ },
 ///     RelatedItemType::Contact => { /* ... */ },
 ///     RelatedItemType::File => { /* ... */ },
+///     RelatedItemType::Sla => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -49,6 +50,8 @@ pub enum RelatedItemType {
     Contact,
     #[allow(missing_docs)] // documentation missing in model
     File,
+    #[allow(missing_docs)] // documentation missing in model
+    Sla,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -59,6 +62,7 @@ impl ::std::convert::From<&str> for RelatedItemType {
             "Comment" => RelatedItemType::Comment,
             "Contact" => RelatedItemType::Contact,
             "File" => RelatedItemType::File,
+            "Sla" => RelatedItemType::Sla,
             other => RelatedItemType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -77,12 +81,13 @@ impl RelatedItemType {
             RelatedItemType::Comment => "Comment",
             RelatedItemType::Contact => "Contact",
             RelatedItemType::File => "File",
+            RelatedItemType::Sla => "Sla",
             RelatedItemType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["Comment", "Contact", "File"]
+        &["Comment", "Contact", "File", "Sla"]
     }
 }
 impl ::std::convert::AsRef<str> for RelatedItemType {
@@ -108,6 +113,7 @@ impl ::std::fmt::Display for RelatedItemType {
             RelatedItemType::Comment => write!(f, "Comment"),
             RelatedItemType::Contact => write!(f, "Contact"),
             RelatedItemType::File => write!(f, "File"),
+            RelatedItemType::Sla => write!(f, "Sla"),
             RelatedItemType::Unknown(value) => write!(f, "{}", value),
         }
     }

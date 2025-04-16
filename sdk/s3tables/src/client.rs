@@ -175,6 +175,8 @@ mod delete_table;
 
 mod delete_table_bucket;
 
+mod delete_table_bucket_encryption;
+
 mod delete_table_bucket_policy;
 
 mod delete_table_policy;
@@ -185,9 +187,13 @@ mod get_table;
 
 mod get_table_bucket;
 
+mod get_table_bucket_encryption;
+
 mod get_table_bucket_maintenance_configuration;
 
 mod get_table_bucket_policy;
+
+mod get_table_encryption;
 
 mod get_table_maintenance_configuration;
 
@@ -202,6 +208,8 @@ mod list_namespaces;
 mod list_table_buckets;
 
 mod list_tables;
+
+mod put_table_bucket_encryption;
 
 mod put_table_bucket_maintenance_configuration;
 

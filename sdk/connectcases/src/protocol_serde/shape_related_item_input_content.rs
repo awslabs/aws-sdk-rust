@@ -22,6 +22,12 @@ pub fn ser_related_item_input_content(
             crate::protocol_serde::shape_file_content::ser_file_content(&mut object_3, inner)?;
             object_3.finish();
         }
+        crate::types::RelatedItemInputContent::Sla(inner) => {
+            #[allow(unused_mut)]
+            let mut object_4 = object_2.key("sla").start_object();
+            crate::protocol_serde::shape_sla_input_content::ser_sla_input_content(&mut object_4, inner)?;
+            object_4.finish();
+        }
         crate::types::RelatedItemInputContent::Unknown => {
             return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant(
                 "RelatedItemInputContent",

@@ -15,7 +15,7 @@ pub struct ListGroupsInput {
     /// <li>
     /// <p><code>AWS::AppRegistry::Application</code></p></li>
     /// <li>
-    /// <p><code>AWS::AppRegistry::ApplicationResourceGroups</code></p></li>
+    /// <p><code>AWS::AppRegistry::ApplicationResourceGroup</code></p></li>
     /// <li>
     /// <p><code>AWS::CloudFormation::Stack</code></p></li>
     /// <li>
@@ -45,7 +45,7 @@ impl ListGroupsInput {
     /// <li>
     /// <p><code>AWS::AppRegistry::Application</code></p></li>
     /// <li>
-    /// <p><code>AWS::AppRegistry::ApplicationResourceGroups</code></p></li>
+    /// <p><code>AWS::AppRegistry::ApplicationResourceGroup</code></p></li>
     /// <li>
     /// <p><code>AWS::CloudFormation::Stack</code></p></li>
     /// <li>
@@ -102,7 +102,7 @@ impl ListGroupsInputBuilder {
     /// <li>
     /// <p><code>AWS::AppRegistry::Application</code></p></li>
     /// <li>
-    /// <p><code>AWS::AppRegistry::ApplicationResourceGroups</code></p></li>
+    /// <p><code>AWS::AppRegistry::ApplicationResourceGroup</code></p></li>
     /// <li>
     /// <p><code>AWS::CloudFormation::Stack</code></p></li>
     /// <li>
@@ -131,7 +131,7 @@ impl ListGroupsInputBuilder {
     /// <li>
     /// <p><code>AWS::AppRegistry::Application</code></p></li>
     /// <li>
-    /// <p><code>AWS::AppRegistry::ApplicationResourceGroups</code></p></li>
+    /// <p><code>AWS::AppRegistry::ApplicationResourceGroup</code></p></li>
     /// <li>
     /// <p><code>AWS::CloudFormation::Stack</code></p></li>
     /// <li>
@@ -158,7 +158,7 @@ impl ListGroupsInputBuilder {
     /// <li>
     /// <p><code>AWS::AppRegistry::Application</code></p></li>
     /// <li>
-    /// <p><code>AWS::AppRegistry::ApplicationResourceGroups</code></p></li>
+    /// <p><code>AWS::AppRegistry::ApplicationResourceGroup</code></p></li>
     /// <li>
     /// <p><code>AWS::CloudFormation::Stack</code></p></li>
     /// <li>

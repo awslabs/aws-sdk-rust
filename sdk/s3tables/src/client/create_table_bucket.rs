@@ -4,6 +4,7 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`name(impl Into<String>)`](crate::operation::create_table_bucket::builders::CreateTableBucketFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::create_table_bucket::builders::CreateTableBucketFluentBuilder::set_name):<br>required: **true**<br><p>The name for the table bucket.</p><br>
+    ///   - [`encryption_configuration(EncryptionConfiguration)`](crate::operation::create_table_bucket::builders::CreateTableBucketFluentBuilder::encryption_configuration) / [`set_encryption_configuration(Option<EncryptionConfiguration>)`](crate::operation::create_table_bucket::builders::CreateTableBucketFluentBuilder::set_encryption_configuration):<br>required: **false**<br><p>The encryption configuration to use for the table bucket. This configuration specifies the default encryption settings that will be applied to all tables created in this bucket unless overridden at the table level. The configuration includes the encryption algorithm and, if using SSE-KMS, the KMS key to use.</p><br>
     /// - On success, responds with [`CreateTableBucketOutput`](crate::operation::create_table_bucket::CreateTableBucketOutput) with field(s):
     ///   - [`arn(String)`](crate::operation::create_table_bucket::CreateTableBucketOutput::arn): <p>The Amazon Resource Name (ARN) of the table bucket.</p>
     /// - On failure, responds with [`SdkError<CreateTableBucketError>`](crate::operation::create_table_bucket::CreateTableBucketError)

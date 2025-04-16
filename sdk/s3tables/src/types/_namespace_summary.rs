@@ -12,6 +12,10 @@ pub struct NamespaceSummary {
     pub created_by: ::std::string::String,
     /// <p>The ID of the account that owns the namespace.</p>
     pub owner_account_id: ::std::string::String,
+    /// <p>The system-assigned unique identifier for the namespace.</p>
+    pub namespace_id: ::std::option::Option<::std::string::String>,
+    /// <p>The system-assigned unique identifier for the table bucket that contains this namespace.</p>
+    pub table_bucket_id: ::std::option::Option<::std::string::String>,
 }
 impl NamespaceSummary {
     /// <p>The name of the namespace.</p>
@@ -33,6 +37,14 @@ impl NamespaceSummary {
         use std::ops::Deref;
         self.owner_account_id.deref()
     }
+    /// <p>The system-assigned unique identifier for the namespace.</p>
+    pub fn namespace_id(&self) -> ::std::option::Option<&str> {
+        self.namespace_id.as_deref()
+    }
+    /// <p>The system-assigned unique identifier for the table bucket that contains this namespace.</p>
+    pub fn table_bucket_id(&self) -> ::std::option::Option<&str> {
+        self.table_bucket_id.as_deref()
+    }
 }
 impl NamespaceSummary {
     /// Creates a new builder-style object to manufacture [`NamespaceSummary`](crate::types::NamespaceSummary).
@@ -49,6 +61,8 @@ pub struct NamespaceSummaryBuilder {
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) created_by: ::std::option::Option<::std::string::String>,
     pub(crate) owner_account_id: ::std::option::Option<::std::string::String>,
+    pub(crate) namespace_id: ::std::option::Option<::std::string::String>,
+    pub(crate) table_bucket_id: ::std::option::Option<::std::string::String>,
 }
 impl NamespaceSummaryBuilder {
     /// Appends an item to `namespace`.
@@ -116,6 +130,34 @@ impl NamespaceSummaryBuilder {
     pub fn get_owner_account_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.owner_account_id
     }
+    /// <p>The system-assigned unique identifier for the namespace.</p>
+    pub fn namespace_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.namespace_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The system-assigned unique identifier for the namespace.</p>
+    pub fn set_namespace_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.namespace_id = input;
+        self
+    }
+    /// <p>The system-assigned unique identifier for the namespace.</p>
+    pub fn get_namespace_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.namespace_id
+    }
+    /// <p>The system-assigned unique identifier for the table bucket that contains this namespace.</p>
+    pub fn table_bucket_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.table_bucket_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The system-assigned unique identifier for the table bucket that contains this namespace.</p>
+    pub fn set_table_bucket_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.table_bucket_id = input;
+        self
+    }
+    /// <p>The system-assigned unique identifier for the table bucket that contains this namespace.</p>
+    pub fn get_table_bucket_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.table_bucket_id
+    }
     /// Consumes the builder and constructs a [`NamespaceSummary`](crate::types::NamespaceSummary).
     /// This method will fail if any of the following fields are not set:
     /// - [`namespace`](crate::types::builders::NamespaceSummaryBuilder::namespace)
@@ -148,6 +190,8 @@ impl NamespaceSummaryBuilder {
                     "owner_account_id was not specified but it is required when building NamespaceSummary",
                 )
             })?,
+            namespace_id: self.namespace_id,
+            table_bucket_id: self.table_bucket_id,
         })
     }
 }

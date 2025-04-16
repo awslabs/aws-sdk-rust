@@ -24,5 +24,8 @@ pub fn ser_update_connection_input_input(
         crate::protocol_serde::shape_connectivity_resource_parameters::ser_connectivity_resource_parameters(&mut object_7, var_6)?;
         object_7.finish();
     }
+    if let Some(var_8) = &input.kms_key_identifier {
+        object.key("KmsKeyIdentifier").string(var_8.as_str());
+    }
     Ok(())
 }

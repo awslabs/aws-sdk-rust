@@ -13,6 +13,10 @@ pub struct CreateTableInput {
     pub format: ::std::option::Option<crate::types::OpenTableFormat>,
     /// <p>The metadata for the table.</p>
     pub metadata: ::std::option::Option<crate::types::TableMetadata>,
+    /// <p>The encryption configuration to use for the table. This configuration specifies the encryption algorithm and, if using SSE-KMS, the KMS key to use for encrypting the table.</p><note>
+    /// <p>If you choose SSE-KMS encryption you must grant the S3 Tables maintenance principal access to your KMS key. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-tables-kms-permissions.html">Permissions requirements for S3 Tables SSE-KMS encryption</a>.</p>
+    /// </note>
+    pub encryption_configuration: ::std::option::Option<crate::types::EncryptionConfiguration>,
 }
 impl CreateTableInput {
     /// <p>The Amazon Resource Name (ARN) of the table bucket to create the table in.</p>
@@ -35,6 +39,12 @@ impl CreateTableInput {
     pub fn metadata(&self) -> ::std::option::Option<&crate::types::TableMetadata> {
         self.metadata.as_ref()
     }
+    /// <p>The encryption configuration to use for the table. This configuration specifies the encryption algorithm and, if using SSE-KMS, the KMS key to use for encrypting the table.</p><note>
+    /// <p>If you choose SSE-KMS encryption you must grant the S3 Tables maintenance principal access to your KMS key. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-tables-kms-permissions.html">Permissions requirements for S3 Tables SSE-KMS encryption</a>.</p>
+    /// </note>
+    pub fn encryption_configuration(&self) -> ::std::option::Option<&crate::types::EncryptionConfiguration> {
+        self.encryption_configuration.as_ref()
+    }
 }
 impl CreateTableInput {
     /// Creates a new builder-style object to manufacture [`CreateTableInput`](crate::operation::create_table::CreateTableInput).
@@ -52,6 +62,7 @@ pub struct CreateTableInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) format: ::std::option::Option<crate::types::OpenTableFormat>,
     pub(crate) metadata: ::std::option::Option<crate::types::TableMetadata>,
+    pub(crate) encryption_configuration: ::std::option::Option<crate::types::EncryptionConfiguration>,
 }
 impl CreateTableInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the table bucket to create the table in.</p>
@@ -128,6 +139,26 @@ impl CreateTableInputBuilder {
     pub fn get_metadata(&self) -> &::std::option::Option<crate::types::TableMetadata> {
         &self.metadata
     }
+    /// <p>The encryption configuration to use for the table. This configuration specifies the encryption algorithm and, if using SSE-KMS, the KMS key to use for encrypting the table.</p><note>
+    /// <p>If you choose SSE-KMS encryption you must grant the S3 Tables maintenance principal access to your KMS key. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-tables-kms-permissions.html">Permissions requirements for S3 Tables SSE-KMS encryption</a>.</p>
+    /// </note>
+    pub fn encryption_configuration(mut self, input: crate::types::EncryptionConfiguration) -> Self {
+        self.encryption_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The encryption configuration to use for the table. This configuration specifies the encryption algorithm and, if using SSE-KMS, the KMS key to use for encrypting the table.</p><note>
+    /// <p>If you choose SSE-KMS encryption you must grant the S3 Tables maintenance principal access to your KMS key. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-tables-kms-permissions.html">Permissions requirements for S3 Tables SSE-KMS encryption</a>.</p>
+    /// </note>
+    pub fn set_encryption_configuration(mut self, input: ::std::option::Option<crate::types::EncryptionConfiguration>) -> Self {
+        self.encryption_configuration = input;
+        self
+    }
+    /// <p>The encryption configuration to use for the table. This configuration specifies the encryption algorithm and, if using SSE-KMS, the KMS key to use for encrypting the table.</p><note>
+    /// <p>If you choose SSE-KMS encryption you must grant the S3 Tables maintenance principal access to your KMS key. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-tables-kms-permissions.html">Permissions requirements for S3 Tables SSE-KMS encryption</a>.</p>
+    /// </note>
+    pub fn get_encryption_configuration(&self) -> &::std::option::Option<crate::types::EncryptionConfiguration> {
+        &self.encryption_configuration
+    }
     /// Consumes the builder and constructs a [`CreateTableInput`](crate::operation::create_table::CreateTableInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::create_table::CreateTableInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_table::CreateTableInput {
@@ -136,6 +167,7 @@ impl CreateTableInputBuilder {
             name: self.name,
             format: self.format,
             metadata: self.metadata,
+            encryption_configuration: self.encryption_configuration,
         })
     }
 }

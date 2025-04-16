@@ -11,6 +11,10 @@ pub struct GetNamespaceOutput {
     pub created_by: ::std::string::String,
     /// <p>The ID of the account that owns the namespcace.</p>
     pub owner_account_id: ::std::string::String,
+    /// <p>The unique identifier of the namespace.</p>
+    pub namespace_id: ::std::option::Option<::std::string::String>,
+    /// <p>The unique identifier of the table bucket containing this namespace.</p>
+    pub table_bucket_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetNamespaceOutput {
@@ -33,6 +37,14 @@ impl GetNamespaceOutput {
         use std::ops::Deref;
         self.owner_account_id.deref()
     }
+    /// <p>The unique identifier of the namespace.</p>
+    pub fn namespace_id(&self) -> ::std::option::Option<&str> {
+        self.namespace_id.as_deref()
+    }
+    /// <p>The unique identifier of the table bucket containing this namespace.</p>
+    pub fn table_bucket_id(&self) -> ::std::option::Option<&str> {
+        self.table_bucket_id.as_deref()
+    }
 }
 impl ::aws_types::request_id::RequestId for GetNamespaceOutput {
     fn request_id(&self) -> Option<&str> {
@@ -54,6 +66,8 @@ pub struct GetNamespaceOutputBuilder {
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) created_by: ::std::option::Option<::std::string::String>,
     pub(crate) owner_account_id: ::std::option::Option<::std::string::String>,
+    pub(crate) namespace_id: ::std::option::Option<::std::string::String>,
+    pub(crate) table_bucket_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetNamespaceOutputBuilder {
@@ -122,6 +136,34 @@ impl GetNamespaceOutputBuilder {
     pub fn get_owner_account_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.owner_account_id
     }
+    /// <p>The unique identifier of the namespace.</p>
+    pub fn namespace_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.namespace_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The unique identifier of the namespace.</p>
+    pub fn set_namespace_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.namespace_id = input;
+        self
+    }
+    /// <p>The unique identifier of the namespace.</p>
+    pub fn get_namespace_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.namespace_id
+    }
+    /// <p>The unique identifier of the table bucket containing this namespace.</p>
+    pub fn table_bucket_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.table_bucket_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The unique identifier of the table bucket containing this namespace.</p>
+    pub fn set_table_bucket_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.table_bucket_id = input;
+        self
+    }
+    /// <p>The unique identifier of the table bucket containing this namespace.</p>
+    pub fn get_table_bucket_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.table_bucket_id
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -165,6 +207,8 @@ impl GetNamespaceOutputBuilder {
                     "owner_account_id was not specified but it is required when building GetNamespaceOutput",
                 )
             })?,
+            namespace_id: self.namespace_id,
+            table_bucket_id: self.table_bucket_id,
             _request_id: self._request_id,
         })
     }

@@ -16,6 +16,9 @@ pub mod delete_multi_region_clusters;
 /// Types for the `GetCluster` operation.
 pub mod get_cluster;
 
+/// Types for the `GetVpcEndpointServiceName` operation.
+pub mod get_vpc_endpoint_service_name;
+
 /// Types for the `ListClusters` operation.
 pub mod list_clusters;
 

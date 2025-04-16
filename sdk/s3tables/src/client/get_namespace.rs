@@ -10,6 +10,8 @@ impl super::Client {
     ///   - [`created_at(DateTime)`](crate::operation::get_namespace::GetNamespaceOutput::created_at): <p>The date and time the namespace was created at.</p>
     ///   - [`created_by(String)`](crate::operation::get_namespace::GetNamespaceOutput::created_by): <p>The ID of the account that created the namespace.</p>
     ///   - [`owner_account_id(String)`](crate::operation::get_namespace::GetNamespaceOutput::owner_account_id): <p>The ID of the account that owns the namespcace.</p>
+    ///   - [`namespace_id(Option<String>)`](crate::operation::get_namespace::GetNamespaceOutput::namespace_id): <p>The unique identifier of the namespace.</p>
+    ///   - [`table_bucket_id(Option<String>)`](crate::operation::get_namespace::GetNamespaceOutput::table_bucket_id): <p>The unique identifier of the table bucket containing this namespace.</p>
     /// - On failure, responds with [`SdkError<GetNamespaceError>`](crate::operation::get_namespace::GetNamespaceError)
     pub fn get_namespace(&self) -> crate::operation::get_namespace::builders::GetNamespaceFluentBuilder {
         crate::operation::get_namespace::builders::GetNamespaceFluentBuilder::new(self.handle.clone())

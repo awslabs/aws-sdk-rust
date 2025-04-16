@@ -900,6 +900,9 @@ impl From<crate::operation::put_case_event_configuration::PutCaseEventConfigurat
             crate::operation::put_case_event_configuration::PutCaseEventConfigurationError::AccessDeniedException(inner) => {
                 Error::AccessDeniedException(inner)
             }
+            crate::operation::put_case_event_configuration::PutCaseEventConfigurationError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
             crate::operation::put_case_event_configuration::PutCaseEventConfigurationError::InternalServerException(inner) => {
                 Error::InternalServerException(inner)
             }

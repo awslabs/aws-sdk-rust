@@ -153,6 +153,13 @@ pub(crate) fn de_describe_connection(
                             .transpose()?,
                     );
                 }
+                "KmsKeyIdentifier" => {
+                    builder = builder.set_kms_key_identifier(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
                 "AuthParameters" => {
                     builder = builder.set_auth_parameters(
                         crate::protocol_serde::shape_connection_auth_response_parameters::de_connection_auth_response_parameters(tokens)?,

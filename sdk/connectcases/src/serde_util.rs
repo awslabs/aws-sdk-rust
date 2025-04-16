@@ -706,11 +706,39 @@ pub(crate) fn required_case_rule_correct_errors(
     builder
 }
 
+pub(crate) fn sla_content_correct_errors(mut builder: crate::types::builders::SlaContentBuilder) -> crate::types::builders::SlaContentBuilder {
+    if builder.sla_configuration.is_none() {
+        builder.sla_configuration = {
+            let builder = crate::types::builders::SlaConfigurationBuilder::default();
+            crate::serde_util::sla_configuration_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
 pub(crate) fn field_identifier_correct_errors(
     mut builder: crate::types::builders::FieldIdentifierBuilder,
 ) -> crate::types::builders::FieldIdentifierBuilder {
     if builder.id.is_none() {
         builder.id = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn sla_configuration_correct_errors(
+    mut builder: crate::types::builders::SlaConfigurationBuilder,
+) -> crate::types::builders::SlaConfigurationBuilder {
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.r#type.is_none() {
+        builder.r#type = "no value was set".parse::<crate::types::SlaType>().ok()
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::SlaStatus>().ok()
+    }
+    if builder.target_time.is_none() {
+        builder.target_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
     }
     builder
 }

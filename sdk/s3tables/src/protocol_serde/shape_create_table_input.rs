@@ -3,17 +3,23 @@ pub fn ser_create_table_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::create_table::CreateTableInput,
 ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
-    if let Some(var_1) = &input.format {
-        object.key("format").string(var_1.as_str());
-    }
-    if let Some(var_2) = &input.metadata {
+    if let Some(var_1) = &input.encryption_configuration {
         #[allow(unused_mut)]
-        let mut object_3 = object.key("metadata").start_object();
-        crate::protocol_serde::shape_table_metadata::ser_table_metadata(&mut object_3, var_2)?;
-        object_3.finish();
+        let mut object_2 = object.key("encryptionConfiguration").start_object();
+        crate::protocol_serde::shape_encryption_configuration::ser_encryption_configuration(&mut object_2, var_1)?;
+        object_2.finish();
     }
-    if let Some(var_4) = &input.name {
-        object.key("name").string(var_4.as_str());
+    if let Some(var_3) = &input.format {
+        object.key("format").string(var_3.as_str());
+    }
+    if let Some(var_4) = &input.metadata {
+        #[allow(unused_mut)]
+        let mut object_5 = object.key("metadata").start_object();
+        crate::protocol_serde::shape_table_metadata::ser_table_metadata(&mut object_5, var_4)?;
+        object_5.finish();
+    }
+    if let Some(var_6) = &input.name {
+        object.key("name").string(var_6.as_str());
     }
     Ok(())
 }

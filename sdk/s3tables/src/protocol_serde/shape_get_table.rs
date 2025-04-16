@@ -213,6 +213,13 @@ pub(crate) fn de_get_table(
                 "namespace" => {
                     builder = builder.set_namespace(crate::protocol_serde::shape_namespace_list::de_namespace_list(tokens)?);
                 }
+                "namespaceId" => {
+                    builder = builder.set_namespace_id(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
                 "ownerAccountId" => {
                     builder = builder.set_owner_account_id(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
@@ -222,6 +229,13 @@ pub(crate) fn de_get_table(
                 }
                 "tableARN" => {
                     builder = builder.set_table_arn(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
+                "tableBucketId" => {
+                    builder = builder.set_table_bucket_id(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                             .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                             .transpose()?,

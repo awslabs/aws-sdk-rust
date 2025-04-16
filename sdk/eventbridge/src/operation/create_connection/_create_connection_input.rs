@@ -17,6 +17,10 @@ pub struct CreateConnectionInput {
     /// <p>For connections to private APIs, the parameters to use for invoking the API.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/connection-private.html">Connecting to private APIs</a> in the <i> <i>Amazon EventBridge User Guide</i> </i>.</p>
     pub invocation_connectivity_parameters: ::std::option::Option<crate::types::ConnectivityResourceParameters>,
+    /// <p>The identifier of the KMS customer managed key for EventBridge to use, if you choose to use a customer managed key to encrypt this connection. The identifier can be the key Amazon Resource Name (ARN), KeyId, key alias, or key alias ARN.</p>
+    /// <p>If you do not specify a customer managed key identifier, EventBridge uses an Amazon Web Services owned key to encrypt the connection.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/viewing-keys.html">Identify and view keys</a> in the <i>Key Management Service Developer Guide</i>.</p>
+    pub kms_key_identifier: ::std::option::Option<::std::string::String>,
 }
 impl CreateConnectionInput {
     /// <p>The name for the connection to create.</p>
@@ -43,6 +47,12 @@ impl CreateConnectionInput {
     pub fn invocation_connectivity_parameters(&self) -> ::std::option::Option<&crate::types::ConnectivityResourceParameters> {
         self.invocation_connectivity_parameters.as_ref()
     }
+    /// <p>The identifier of the KMS customer managed key for EventBridge to use, if you choose to use a customer managed key to encrypt this connection. The identifier can be the key Amazon Resource Name (ARN), KeyId, key alias, or key alias ARN.</p>
+    /// <p>If you do not specify a customer managed key identifier, EventBridge uses an Amazon Web Services owned key to encrypt the connection.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/viewing-keys.html">Identify and view keys</a> in the <i>Key Management Service Developer Guide</i>.</p>
+    pub fn kms_key_identifier(&self) -> ::std::option::Option<&str> {
+        self.kms_key_identifier.as_deref()
+    }
 }
 impl CreateConnectionInput {
     /// Creates a new builder-style object to manufacture [`CreateConnectionInput`](crate::operation::create_connection::CreateConnectionInput).
@@ -60,6 +70,7 @@ pub struct CreateConnectionInputBuilder {
     pub(crate) authorization_type: ::std::option::Option<crate::types::ConnectionAuthorizationType>,
     pub(crate) auth_parameters: ::std::option::Option<crate::types::CreateConnectionAuthRequestParameters>,
     pub(crate) invocation_connectivity_parameters: ::std::option::Option<crate::types::ConnectivityResourceParameters>,
+    pub(crate) kms_key_identifier: ::std::option::Option<::std::string::String>,
 }
 impl CreateConnectionInputBuilder {
     /// <p>The name for the connection to create.</p>
@@ -147,6 +158,26 @@ impl CreateConnectionInputBuilder {
     pub fn get_invocation_connectivity_parameters(&self) -> &::std::option::Option<crate::types::ConnectivityResourceParameters> {
         &self.invocation_connectivity_parameters
     }
+    /// <p>The identifier of the KMS customer managed key for EventBridge to use, if you choose to use a customer managed key to encrypt this connection. The identifier can be the key Amazon Resource Name (ARN), KeyId, key alias, or key alias ARN.</p>
+    /// <p>If you do not specify a customer managed key identifier, EventBridge uses an Amazon Web Services owned key to encrypt the connection.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/viewing-keys.html">Identify and view keys</a> in the <i>Key Management Service Developer Guide</i>.</p>
+    pub fn kms_key_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.kms_key_identifier = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The identifier of the KMS customer managed key for EventBridge to use, if you choose to use a customer managed key to encrypt this connection. The identifier can be the key Amazon Resource Name (ARN), KeyId, key alias, or key alias ARN.</p>
+    /// <p>If you do not specify a customer managed key identifier, EventBridge uses an Amazon Web Services owned key to encrypt the connection.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/viewing-keys.html">Identify and view keys</a> in the <i>Key Management Service Developer Guide</i>.</p>
+    pub fn set_kms_key_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.kms_key_identifier = input;
+        self
+    }
+    /// <p>The identifier of the KMS customer managed key for EventBridge to use, if you choose to use a customer managed key to encrypt this connection. The identifier can be the key Amazon Resource Name (ARN), KeyId, key alias, or key alias ARN.</p>
+    /// <p>If you do not specify a customer managed key identifier, EventBridge uses an Amazon Web Services owned key to encrypt the connection.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/viewing-keys.html">Identify and view keys</a> in the <i>Key Management Service Developer Guide</i>.</p>
+    pub fn get_kms_key_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.kms_key_identifier
+    }
     /// Consumes the builder and constructs a [`CreateConnectionInput`](crate::operation::create_connection::CreateConnectionInput).
     pub fn build(
         self,
@@ -157,6 +188,7 @@ impl CreateConnectionInputBuilder {
             authorization_type: self.authorization_type,
             auth_parameters: self.auth_parameters,
             invocation_connectivity_parameters: self.invocation_connectivity_parameters,
+            kms_key_identifier: self.kms_key_identifier,
         })
     }
 }

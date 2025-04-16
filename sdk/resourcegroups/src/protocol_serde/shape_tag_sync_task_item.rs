@@ -49,6 +49,9 @@ where
                                     .transpose()?,
                             );
                         }
+                        "ResourceQuery" => {
+                            builder = builder.set_resource_query(crate::protocol_serde::shape_resource_query::de_resource_query(tokens)?);
+                        }
                         "RoleArn" => {
                             builder = builder.set_role_arn(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

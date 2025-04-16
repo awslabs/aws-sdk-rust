@@ -13,6 +13,13 @@ pub struct StartTagSyncTaskOutput {
     pub tag_key: ::std::option::Option<::std::string::String>,
     /// <p>The tag value of the tag-sync task.</p>
     pub tag_value: ::std::option::Option<::std::string::String>,
+    /// <p>The query you can use to define a resource group or a search for resources. A <code>ResourceQuery</code> specifies both a query <code>Type</code> and a <code>Query</code> string as JSON string objects. See the examples section for example JSON strings. For more information about creating a resource group with a resource query, see <a href="https://docs.aws.amazon.com/ARG/latest/userguide/gettingstarted-query.html">Build queries and groups in Resource Groups</a> in the <i>Resource Groups User Guide</i></p>
+    /// <p>When you combine all of the elements together into a single string, any double quotes that are embedded inside another double quote pair must be escaped by preceding the embedded double quote with a backslash character (\). For example, a complete <code>ResourceQuery</code> parameter must be formatted like the following CLI parameter example:</p>
+    /// <p><code>--resource-query '{"Type":"TAG_FILTERS_1_0","Query":"{\"ResourceTypeFilters\":\[\"AWS::AllSupported\"\],\"TagFilters\":\[{\"Key\":\"Stage\",\"Values\":\[\"Test\"\]}\]}"}'</code></p>
+    /// <p>In the preceding example, all of the double quote characters in the value part of the <code>Query</code> element must be escaped because the value itself is surrounded by double quotes. For more information, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-parameters-quoting-strings.html">Quoting strings</a> in the <i>Command Line Interface User Guide</i>.</p>
+    /// <p>For the complete list of resource types that you can use in the array value for <code>ResourceTypeFilters</code>, see <a href="https://docs.aws.amazon.com/ARG/latest/userguide/supported-resources.html">Resources you can use with Resource Groups and Tag Editor</a> in the <i>Resource Groups User Guide</i>. For example:</p>
+    /// <p><code>"ResourceTypeFilters":\["AWS::S3::Bucket", "AWS::EC2::Instance"\]</code></p>
+    pub resource_query: ::std::option::Option<crate::types::ResourceQuery>,
     /// <p>The Amazon resource name (ARN) of the role assumed by the service to tag and untag resources on your behalf.</p>
     pub role_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
@@ -37,6 +44,15 @@ impl StartTagSyncTaskOutput {
     /// <p>The tag value of the tag-sync task.</p>
     pub fn tag_value(&self) -> ::std::option::Option<&str> {
         self.tag_value.as_deref()
+    }
+    /// <p>The query you can use to define a resource group or a search for resources. A <code>ResourceQuery</code> specifies both a query <code>Type</code> and a <code>Query</code> string as JSON string objects. See the examples section for example JSON strings. For more information about creating a resource group with a resource query, see <a href="https://docs.aws.amazon.com/ARG/latest/userguide/gettingstarted-query.html">Build queries and groups in Resource Groups</a> in the <i>Resource Groups User Guide</i></p>
+    /// <p>When you combine all of the elements together into a single string, any double quotes that are embedded inside another double quote pair must be escaped by preceding the embedded double quote with a backslash character (\). For example, a complete <code>ResourceQuery</code> parameter must be formatted like the following CLI parameter example:</p>
+    /// <p><code>--resource-query '{"Type":"TAG_FILTERS_1_0","Query":"{\"ResourceTypeFilters\":\[\"AWS::AllSupported\"\],\"TagFilters\":\[{\"Key\":\"Stage\",\"Values\":\[\"Test\"\]}\]}"}'</code></p>
+    /// <p>In the preceding example, all of the double quote characters in the value part of the <code>Query</code> element must be escaped because the value itself is surrounded by double quotes. For more information, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-parameters-quoting-strings.html">Quoting strings</a> in the <i>Command Line Interface User Guide</i>.</p>
+    /// <p>For the complete list of resource types that you can use in the array value for <code>ResourceTypeFilters</code>, see <a href="https://docs.aws.amazon.com/ARG/latest/userguide/supported-resources.html">Resources you can use with Resource Groups and Tag Editor</a> in the <i>Resource Groups User Guide</i>. For example:</p>
+    /// <p><code>"ResourceTypeFilters":\["AWS::S3::Bucket", "AWS::EC2::Instance"\]</code></p>
+    pub fn resource_query(&self) -> ::std::option::Option<&crate::types::ResourceQuery> {
+        self.resource_query.as_ref()
     }
     /// <p>The Amazon resource name (ARN) of the role assumed by the service to tag and untag resources on your behalf.</p>
     pub fn role_arn(&self) -> ::std::option::Option<&str> {
@@ -64,6 +80,7 @@ pub struct StartTagSyncTaskOutputBuilder {
     pub(crate) task_arn: ::std::option::Option<::std::string::String>,
     pub(crate) tag_key: ::std::option::Option<::std::string::String>,
     pub(crate) tag_value: ::std::option::Option<::std::string::String>,
+    pub(crate) resource_query: ::std::option::Option<crate::types::ResourceQuery>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -138,6 +155,35 @@ impl StartTagSyncTaskOutputBuilder {
     pub fn get_tag_value(&self) -> &::std::option::Option<::std::string::String> {
         &self.tag_value
     }
+    /// <p>The query you can use to define a resource group or a search for resources. A <code>ResourceQuery</code> specifies both a query <code>Type</code> and a <code>Query</code> string as JSON string objects. See the examples section for example JSON strings. For more information about creating a resource group with a resource query, see <a href="https://docs.aws.amazon.com/ARG/latest/userguide/gettingstarted-query.html">Build queries and groups in Resource Groups</a> in the <i>Resource Groups User Guide</i></p>
+    /// <p>When you combine all of the elements together into a single string, any double quotes that are embedded inside another double quote pair must be escaped by preceding the embedded double quote with a backslash character (\). For example, a complete <code>ResourceQuery</code> parameter must be formatted like the following CLI parameter example:</p>
+    /// <p><code>--resource-query '{"Type":"TAG_FILTERS_1_0","Query":"{\"ResourceTypeFilters\":\[\"AWS::AllSupported\"\],\"TagFilters\":\[{\"Key\":\"Stage\",\"Values\":\[\"Test\"\]}\]}"}'</code></p>
+    /// <p>In the preceding example, all of the double quote characters in the value part of the <code>Query</code> element must be escaped because the value itself is surrounded by double quotes. For more information, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-parameters-quoting-strings.html">Quoting strings</a> in the <i>Command Line Interface User Guide</i>.</p>
+    /// <p>For the complete list of resource types that you can use in the array value for <code>ResourceTypeFilters</code>, see <a href="https://docs.aws.amazon.com/ARG/latest/userguide/supported-resources.html">Resources you can use with Resource Groups and Tag Editor</a> in the <i>Resource Groups User Guide</i>. For example:</p>
+    /// <p><code>"ResourceTypeFilters":\["AWS::S3::Bucket", "AWS::EC2::Instance"\]</code></p>
+    pub fn resource_query(mut self, input: crate::types::ResourceQuery) -> Self {
+        self.resource_query = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The query you can use to define a resource group or a search for resources. A <code>ResourceQuery</code> specifies both a query <code>Type</code> and a <code>Query</code> string as JSON string objects. See the examples section for example JSON strings. For more information about creating a resource group with a resource query, see <a href="https://docs.aws.amazon.com/ARG/latest/userguide/gettingstarted-query.html">Build queries and groups in Resource Groups</a> in the <i>Resource Groups User Guide</i></p>
+    /// <p>When you combine all of the elements together into a single string, any double quotes that are embedded inside another double quote pair must be escaped by preceding the embedded double quote with a backslash character (\). For example, a complete <code>ResourceQuery</code> parameter must be formatted like the following CLI parameter example:</p>
+    /// <p><code>--resource-query '{"Type":"TAG_FILTERS_1_0","Query":"{\"ResourceTypeFilters\":\[\"AWS::AllSupported\"\],\"TagFilters\":\[{\"Key\":\"Stage\",\"Values\":\[\"Test\"\]}\]}"}'</code></p>
+    /// <p>In the preceding example, all of the double quote characters in the value part of the <code>Query</code> element must be escaped because the value itself is surrounded by double quotes. For more information, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-parameters-quoting-strings.html">Quoting strings</a> in the <i>Command Line Interface User Guide</i>.</p>
+    /// <p>For the complete list of resource types that you can use in the array value for <code>ResourceTypeFilters</code>, see <a href="https://docs.aws.amazon.com/ARG/latest/userguide/supported-resources.html">Resources you can use with Resource Groups and Tag Editor</a> in the <i>Resource Groups User Guide</i>. For example:</p>
+    /// <p><code>"ResourceTypeFilters":\["AWS::S3::Bucket", "AWS::EC2::Instance"\]</code></p>
+    pub fn set_resource_query(mut self, input: ::std::option::Option<crate::types::ResourceQuery>) -> Self {
+        self.resource_query = input;
+        self
+    }
+    /// <p>The query you can use to define a resource group or a search for resources. A <code>ResourceQuery</code> specifies both a query <code>Type</code> and a <code>Query</code> string as JSON string objects. See the examples section for example JSON strings. For more information about creating a resource group with a resource query, see <a href="https://docs.aws.amazon.com/ARG/latest/userguide/gettingstarted-query.html">Build queries and groups in Resource Groups</a> in the <i>Resource Groups User Guide</i></p>
+    /// <p>When you combine all of the elements together into a single string, any double quotes that are embedded inside another double quote pair must be escaped by preceding the embedded double quote with a backslash character (\). For example, a complete <code>ResourceQuery</code> parameter must be formatted like the following CLI parameter example:</p>
+    /// <p><code>--resource-query '{"Type":"TAG_FILTERS_1_0","Query":"{\"ResourceTypeFilters\":\[\"AWS::AllSupported\"\],\"TagFilters\":\[{\"Key\":\"Stage\",\"Values\":\[\"Test\"\]}\]}"}'</code></p>
+    /// <p>In the preceding example, all of the double quote characters in the value part of the <code>Query</code> element must be escaped because the value itself is surrounded by double quotes. For more information, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-parameters-quoting-strings.html">Quoting strings</a> in the <i>Command Line Interface User Guide</i>.</p>
+    /// <p>For the complete list of resource types that you can use in the array value for <code>ResourceTypeFilters</code>, see <a href="https://docs.aws.amazon.com/ARG/latest/userguide/supported-resources.html">Resources you can use with Resource Groups and Tag Editor</a> in the <i>Resource Groups User Guide</i>. For example:</p>
+    /// <p><code>"ResourceTypeFilters":\["AWS::S3::Bucket", "AWS::EC2::Instance"\]</code></p>
+    pub fn get_resource_query(&self) -> &::std::option::Option<crate::types::ResourceQuery> {
+        &self.resource_query
+    }
     /// <p>The Amazon resource name (ARN) of the role assumed by the service to tag and untag resources on your behalf.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
@@ -169,6 +215,7 @@ impl StartTagSyncTaskOutputBuilder {
             task_arn: self.task_arn,
             tag_key: self.tag_key,
             tag_value: self.tag_value,
+            resource_query: self.resource_query,
             role_arn: self.role_arn,
             _request_id: self._request_id,
         }

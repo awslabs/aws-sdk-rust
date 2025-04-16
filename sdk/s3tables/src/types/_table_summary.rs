@@ -16,6 +16,10 @@ pub struct TableSummary {
     pub created_at: ::aws_smithy_types::DateTime,
     /// <p>The date and time the table was last modified at.</p>
     pub modified_at: ::aws_smithy_types::DateTime,
+    /// <p>The unique identifier for the namespace that contains this table.</p>
+    pub namespace_id: ::std::option::Option<::std::string::String>,
+    /// <p>The unique identifier for the table bucket that contains this table.</p>
+    pub table_bucket_id: ::std::option::Option<::std::string::String>,
 }
 impl TableSummary {
     /// <p>The name of the namespace.</p>
@@ -45,6 +49,14 @@ impl TableSummary {
     pub fn modified_at(&self) -> &::aws_smithy_types::DateTime {
         &self.modified_at
     }
+    /// <p>The unique identifier for the namespace that contains this table.</p>
+    pub fn namespace_id(&self) -> ::std::option::Option<&str> {
+        self.namespace_id.as_deref()
+    }
+    /// <p>The unique identifier for the table bucket that contains this table.</p>
+    pub fn table_bucket_id(&self) -> ::std::option::Option<&str> {
+        self.table_bucket_id.as_deref()
+    }
 }
 impl TableSummary {
     /// Creates a new builder-style object to manufacture [`TableSummary`](crate::types::TableSummary).
@@ -63,6 +75,8 @@ pub struct TableSummaryBuilder {
     pub(crate) table_arn: ::std::option::Option<::std::string::String>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) modified_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) namespace_id: ::std::option::Option<::std::string::String>,
+    pub(crate) table_bucket_id: ::std::option::Option<::std::string::String>,
 }
 impl TableSummaryBuilder {
     /// Appends an item to `namespace`.
@@ -160,6 +174,34 @@ impl TableSummaryBuilder {
     pub fn get_modified_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.modified_at
     }
+    /// <p>The unique identifier for the namespace that contains this table.</p>
+    pub fn namespace_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.namespace_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The unique identifier for the namespace that contains this table.</p>
+    pub fn set_namespace_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.namespace_id = input;
+        self
+    }
+    /// <p>The unique identifier for the namespace that contains this table.</p>
+    pub fn get_namespace_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.namespace_id
+    }
+    /// <p>The unique identifier for the table bucket that contains this table.</p>
+    pub fn table_bucket_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.table_bucket_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The unique identifier for the table bucket that contains this table.</p>
+    pub fn set_table_bucket_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.table_bucket_id = input;
+        self
+    }
+    /// <p>The unique identifier for the table bucket that contains this table.</p>
+    pub fn get_table_bucket_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.table_bucket_id
+    }
     /// Consumes the builder and constructs a [`TableSummary`](crate::types::TableSummary).
     /// This method will fail if any of the following fields are not set:
     /// - [`namespace`](crate::types::builders::TableSummaryBuilder::namespace)
@@ -206,6 +248,8 @@ impl TableSummaryBuilder {
                     "modified_at was not specified but it is required when building TableSummary",
                 )
             })?,
+            namespace_id: self.namespace_id,
+            table_bucket_id: self.table_bucket_id,
         })
     }
 }

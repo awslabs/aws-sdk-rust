@@ -207,6 +207,8 @@ mod delete_multi_region_clusters;
 
 mod get_cluster;
 
+mod get_vpc_endpoint_service_name;
+
 mod list_clusters;
 
 mod list_tags_for_resource;

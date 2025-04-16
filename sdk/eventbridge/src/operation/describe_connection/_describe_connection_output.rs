@@ -20,6 +20,9 @@ pub struct DescribeConnectionOutput {
     pub authorization_type: ::std::option::Option<crate::types::ConnectionAuthorizationType>,
     /// <p>The ARN of the secret created from the authorization parameters specified for the connection.</p>
     pub secret_arn: ::std::option::Option<::std::string::String>,
+    /// <p>The identifier of the KMS customer managed key for EventBridge to use to encrypt the connection, if one has been specified.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/encryption-connections.html">Encrypting connections</a> in the <i>Amazon EventBridge User Guide</i>.</p>
+    pub kms_key_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The parameters to use for authorization for the connection.</p>
     pub auth_parameters: ::std::option::Option<crate::types::ConnectionAuthResponseParameters>,
     /// <p>A time stamp for the time that the connection was created.</p>
@@ -64,6 +67,11 @@ impl DescribeConnectionOutput {
     pub fn secret_arn(&self) -> ::std::option::Option<&str> {
         self.secret_arn.as_deref()
     }
+    /// <p>The identifier of the KMS customer managed key for EventBridge to use to encrypt the connection, if one has been specified.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/encryption-connections.html">Encrypting connections</a> in the <i>Amazon EventBridge User Guide</i>.</p>
+    pub fn kms_key_identifier(&self) -> ::std::option::Option<&str> {
+        self.kms_key_identifier.as_deref()
+    }
     /// <p>The parameters to use for authorization for the connection.</p>
     pub fn auth_parameters(&self) -> ::std::option::Option<&crate::types::ConnectionAuthResponseParameters> {
         self.auth_parameters.as_ref()
@@ -105,6 +113,7 @@ pub struct DescribeConnectionOutputBuilder {
     pub(crate) state_reason: ::std::option::Option<::std::string::String>,
     pub(crate) authorization_type: ::std::option::Option<crate::types::ConnectionAuthorizationType>,
     pub(crate) secret_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) kms_key_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) auth_parameters: ::std::option::Option<crate::types::ConnectionAuthResponseParameters>,
     pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -230,6 +239,23 @@ impl DescribeConnectionOutputBuilder {
     pub fn get_secret_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.secret_arn
     }
+    /// <p>The identifier of the KMS customer managed key for EventBridge to use to encrypt the connection, if one has been specified.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/encryption-connections.html">Encrypting connections</a> in the <i>Amazon EventBridge User Guide</i>.</p>
+    pub fn kms_key_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.kms_key_identifier = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The identifier of the KMS customer managed key for EventBridge to use to encrypt the connection, if one has been specified.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/encryption-connections.html">Encrypting connections</a> in the <i>Amazon EventBridge User Guide</i>.</p>
+    pub fn set_kms_key_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.kms_key_identifier = input;
+        self
+    }
+    /// <p>The identifier of the KMS customer managed key for EventBridge to use to encrypt the connection, if one has been specified.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/encryption-connections.html">Encrypting connections</a> in the <i>Amazon EventBridge User Guide</i>.</p>
+    pub fn get_kms_key_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.kms_key_identifier
+    }
     /// <p>The parameters to use for authorization for the connection.</p>
     pub fn auth_parameters(mut self, input: crate::types::ConnectionAuthResponseParameters) -> Self {
         self.auth_parameters = ::std::option::Option::Some(input);
@@ -306,6 +332,7 @@ impl DescribeConnectionOutputBuilder {
             state_reason: self.state_reason,
             authorization_type: self.authorization_type,
             secret_arn: self.secret_arn,
+            kms_key_identifier: self.kms_key_identifier,
             auth_parameters: self.auth_parameters,
             creation_time: self.creation_time,
             last_modified_time: self.last_modified_time,
