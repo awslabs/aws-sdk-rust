@@ -11,6 +11,16 @@ pub use crate::types::_workspace_status_code::WorkspaceStatusCode;
 
 pub use crate::types::_workspace_summary::WorkspaceSummary;
 
+pub use crate::types::_workspace_configuration_status::WorkspaceConfigurationStatus;
+
+pub use crate::types::_workspace_configuration_status_code::WorkspaceConfigurationStatusCode;
+
+pub use crate::types::_limits_per_label_set::LimitsPerLabelSet;
+
+pub use crate::types::_limits_per_label_set_entry::LimitsPerLabelSetEntry;
+
+pub use crate::types::_workspace_configuration_description::WorkspaceConfigurationDescription;
+
 pub use crate::types::_rule_groups_namespace_status::RuleGroupsNamespaceStatus;
 
 pub use crate::types::_rule_groups_namespace_status_code::RuleGroupsNamespaceStatusCode;
@@ -63,6 +73,10 @@ mod _destination;
 
 mod _eks_configuration;
 
+mod _limits_per_label_set;
+
+mod _limits_per_label_set_entry;
+
 mod _logging_configuration_metadata;
 
 mod _logging_configuration_status;
@@ -94,6 +108,12 @@ mod _source;
 mod _validation_exception_field;
 
 mod _validation_exception_reason;
+
+mod _workspace_configuration_description;
+
+mod _workspace_configuration_status;
+
+mod _workspace_configuration_status_code;
 
 mod _workspace_description;
 

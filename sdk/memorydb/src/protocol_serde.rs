@@ -397,6 +397,8 @@ pub(crate) mod shape_engine_version_info;
 
 pub(crate) mod shape_event;
 
+pub(crate) mod shape_network_type_list;
+
 pub(crate) mod shape_parameter;
 
 pub(crate) mod shape_recurring_charge_list;

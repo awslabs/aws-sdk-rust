@@ -180,17 +180,23 @@ impl SendOutboundEmailFluentBuilder {
     pub fn get_email_message(&self) -> &::std::option::Option<crate::types::OutboundEmailContent> {
         self.inner.get_email_message()
     }
-    /// <p>Denotes the class of traffic.</p>
+    /// <p>Denotes the class of traffic.</p><note>
+    /// <p>Only the CAMPAIGN traffic type is supported.</p>
+    /// </note>
     pub fn traffic_type(mut self, input: crate::types::TrafficType) -> Self {
         self.inner = self.inner.traffic_type(input);
         self
     }
-    /// <p>Denotes the class of traffic.</p>
+    /// <p>Denotes the class of traffic.</p><note>
+    /// <p>Only the CAMPAIGN traffic type is supported.</p>
+    /// </note>
     pub fn set_traffic_type(mut self, input: ::std::option::Option<crate::types::TrafficType>) -> Self {
         self.inner = self.inner.set_traffic_type(input);
         self
     }
-    /// <p>Denotes the class of traffic.</p>
+    /// <p>Denotes the class of traffic.</p><note>
+    /// <p>Only the CAMPAIGN traffic type is supported.</p>
+    /// </note>
     pub fn get_traffic_type(&self) -> &::std::option::Option<crate::types::TrafficType> {
         self.inner.get_traffic_type()
     }

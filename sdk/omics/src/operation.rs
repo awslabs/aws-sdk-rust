@@ -52,6 +52,9 @@ pub mod create_variant_store;
 /// Types for the `CreateWorkflow` operation.
 pub mod create_workflow;
 
+/// Types for the `CreateWorkflowVersion` operation.
+pub mod create_workflow_version;
+
 /// Types for the `DeleteAnnotationStore` operation.
 pub mod delete_annotation_store;
 
@@ -87,6 +90,9 @@ pub mod delete_variant_store;
 
 /// Types for the `DeleteWorkflow` operation.
 pub mod delete_workflow;
+
+/// Types for the `DeleteWorkflowVersion` operation.
+pub mod delete_workflow_version;
 
 /// Types for the `GetAnnotationImportJob` operation.
 pub mod get_annotation_import_job;
@@ -154,6 +160,9 @@ pub mod get_variant_store;
 /// Types for the `GetWorkflow` operation.
 pub mod get_workflow;
 
+/// Types for the `GetWorkflowVersion` operation.
+pub mod get_workflow_version;
+
 /// Types for the `ListAnnotationImportJobs` operation.
 pub mod list_annotation_import_jobs;
 
@@ -217,6 +226,9 @@ pub mod list_variant_import_jobs;
 /// Types for the `ListVariantStores` operation.
 pub mod list_variant_stores;
 
+/// Types for the `ListWorkflowVersions` operation.
+pub mod list_workflow_versions;
+
 /// Types for the `ListWorkflows` operation.
 pub mod list_workflows;
 
@@ -270,6 +282,9 @@ pub mod update_variant_store;
 
 /// Types for the `UpdateWorkflow` operation.
 pub mod update_workflow;
+
+/// Types for the `UpdateWorkflowVersion` operation.
+pub mod update_workflow_version;
 
 /// Types for the `UploadReadSetPart` operation.
 pub mod upload_read_set_part;

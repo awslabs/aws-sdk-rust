@@ -706,6 +706,47 @@ impl From<crate::operation::create_workflow::CreateWorkflowError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_workflow_version::CreateWorkflowVersionError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_workflow_version::CreateWorkflowVersionError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_workflow_version::CreateWorkflowVersionError> for Error {
+    fn from(err: crate::operation::create_workflow_version::CreateWorkflowVersionError) -> Self {
+        match err {
+            crate::operation::create_workflow_version::CreateWorkflowVersionError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::create_workflow_version::CreateWorkflowVersionError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::create_workflow_version::CreateWorkflowVersionError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::create_workflow_version::CreateWorkflowVersionError::RequestTimeoutException(inner) => {
+                Error::RequestTimeoutException(inner)
+            }
+            crate::operation::create_workflow_version::CreateWorkflowVersionError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::create_workflow_version::CreateWorkflowVersionError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::create_workflow_version::CreateWorkflowVersionError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::create_workflow_version::CreateWorkflowVersionError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::create_workflow_version::CreateWorkflowVersionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_annotation_store::DeleteAnnotationStoreError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1098,6 +1139,47 @@ impl From<crate::operation::delete_workflow::DeleteWorkflowError> for Error {
             crate::operation::delete_workflow::DeleteWorkflowError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::delete_workflow::DeleteWorkflowError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::delete_workflow::DeleteWorkflowError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_workflow_version::DeleteWorkflowVersionError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_workflow_version::DeleteWorkflowVersionError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_workflow_version::DeleteWorkflowVersionError> for Error {
+    fn from(err: crate::operation::delete_workflow_version::DeleteWorkflowVersionError) -> Self {
+        match err {
+            crate::operation::delete_workflow_version::DeleteWorkflowVersionError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::delete_workflow_version::DeleteWorkflowVersionError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::delete_workflow_version::DeleteWorkflowVersionError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::delete_workflow_version::DeleteWorkflowVersionError::RequestTimeoutException(inner) => {
+                Error::RequestTimeoutException(inner)
+            }
+            crate::operation::delete_workflow_version::DeleteWorkflowVersionError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::delete_workflow_version::DeleteWorkflowVersionError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::delete_workflow_version::DeleteWorkflowVersionError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::delete_workflow_version::DeleteWorkflowVersionError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::delete_workflow_version::DeleteWorkflowVersionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1784,6 +1866,39 @@ impl From<crate::operation::get_workflow::GetWorkflowError> for Error {
             crate::operation::get_workflow::GetWorkflowError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::get_workflow::GetWorkflowError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::get_workflow::GetWorkflowError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_workflow_version::GetWorkflowVersionError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_workflow_version::GetWorkflowVersionError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_workflow_version::GetWorkflowVersionError> for Error {
+    fn from(err: crate::operation::get_workflow_version::GetWorkflowVersionError) -> Self {
+        match err {
+            crate::operation::get_workflow_version::GetWorkflowVersionError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_workflow_version::GetWorkflowVersionError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::get_workflow_version::GetWorkflowVersionError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::get_workflow_version::GetWorkflowVersionError::RequestTimeoutException(inner) => Error::RequestTimeoutException(inner),
+            crate::operation::get_workflow_version::GetWorkflowVersionError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_workflow_version::GetWorkflowVersionError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::get_workflow_version::GetWorkflowVersionError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_workflow_version::GetWorkflowVersionError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_workflow_version::GetWorkflowVersionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -2543,6 +2658,43 @@ impl From<crate::operation::list_workflows::ListWorkflowsError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_workflow_versions::ListWorkflowVersionsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_workflow_versions::ListWorkflowVersionsError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_workflow_versions::ListWorkflowVersionsError> for Error {
+    fn from(err: crate::operation::list_workflow_versions::ListWorkflowVersionsError) -> Self {
+        match err {
+            crate::operation::list_workflow_versions::ListWorkflowVersionsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_workflow_versions::ListWorkflowVersionsError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::list_workflow_versions::ListWorkflowVersionsError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::list_workflow_versions::ListWorkflowVersionsError::RequestTimeoutException(inner) => {
+                Error::RequestTimeoutException(inner)
+            }
+            crate::operation::list_workflow_versions::ListWorkflowVersionsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::list_workflow_versions::ListWorkflowVersionsError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::list_workflow_versions::ListWorkflowVersionsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_workflow_versions::ListWorkflowVersionsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_workflow_versions::ListWorkflowVersionsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::put_s3_access_policy::PutS3AccessPolicyError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -3140,6 +3292,47 @@ impl From<crate::operation::update_workflow::UpdateWorkflowError> for Error {
             crate::operation::update_workflow::UpdateWorkflowError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::update_workflow::UpdateWorkflowError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::update_workflow::UpdateWorkflowError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_workflow_version::UpdateWorkflowVersionError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_workflow_version::UpdateWorkflowVersionError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_workflow_version::UpdateWorkflowVersionError> for Error {
+    fn from(err: crate::operation::update_workflow_version::UpdateWorkflowVersionError) -> Self {
+        match err {
+            crate::operation::update_workflow_version::UpdateWorkflowVersionError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::update_workflow_version::UpdateWorkflowVersionError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::update_workflow_version::UpdateWorkflowVersionError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::update_workflow_version::UpdateWorkflowVersionError::RequestTimeoutException(inner) => {
+                Error::RequestTimeoutException(inner)
+            }
+            crate::operation::update_workflow_version::UpdateWorkflowVersionError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::update_workflow_version::UpdateWorkflowVersionError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::update_workflow_version::UpdateWorkflowVersionError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::update_workflow_version::UpdateWorkflowVersionError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::update_workflow_version::UpdateWorkflowVersionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

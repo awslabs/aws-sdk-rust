@@ -621,6 +621,53 @@ impl From<crate::operation::describe_workspace::DescribeWorkspaceError> for Erro
 impl<R>
     From<
         ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::describe_workspace_configuration::DescribeWorkspaceConfigurationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::describe_workspace_configuration::DescribeWorkspaceConfigurationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::describe_workspace_configuration::DescribeWorkspaceConfigurationError> for Error {
+    fn from(err: crate::operation::describe_workspace_configuration::DescribeWorkspaceConfigurationError) -> Self {
+        match err {
+            crate::operation::describe_workspace_configuration::DescribeWorkspaceConfigurationError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::describe_workspace_configuration::DescribeWorkspaceConfigurationError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::describe_workspace_configuration::DescribeWorkspaceConfigurationError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::describe_workspace_configuration::DescribeWorkspaceConfigurationError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::describe_workspace_configuration::DescribeWorkspaceConfigurationError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::describe_workspace_configuration::DescribeWorkspaceConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::get_default_scraper_configuration::GetDefaultScraperConfigurationError,
             R,
         >,
@@ -1012,6 +1059,55 @@ impl From<crate::operation::update_workspace_alias::UpdateWorkspaceAliasError> f
             crate::operation::update_workspace_alias::UpdateWorkspaceAliasError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::update_workspace_alias::UpdateWorkspaceAliasError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::update_workspace_alias::UpdateWorkspaceAliasError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_workspace_configuration::UpdateWorkspaceConfigurationError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::update_workspace_configuration::UpdateWorkspaceConfigurationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_workspace_configuration::UpdateWorkspaceConfigurationError> for Error {
+    fn from(err: crate::operation::update_workspace_configuration::UpdateWorkspaceConfigurationError) -> Self {
+        match err {
+            crate::operation::update_workspace_configuration::UpdateWorkspaceConfigurationError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::update_workspace_configuration::UpdateWorkspaceConfigurationError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::update_workspace_configuration::UpdateWorkspaceConfigurationError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::update_workspace_configuration::UpdateWorkspaceConfigurationError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::update_workspace_configuration::UpdateWorkspaceConfigurationError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::update_workspace_configuration::UpdateWorkspaceConfigurationError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::update_workspace_configuration::UpdateWorkspaceConfigurationError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::update_workspace_configuration::UpdateWorkspaceConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

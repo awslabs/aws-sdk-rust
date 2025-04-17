@@ -15,7 +15,7 @@ pub struct UpdateMultiRegionClusterInput {
     pub shard_configuration: ::std::option::Option<crate::types::ShardConfigurationRequest>,
     /// <p>The new multi-Region parameter group to be associated with the cluster.</p>
     pub multi_region_parameter_group_name: ::std::option::Option<::std::string::String>,
-    /// <p>Whether to force the update even if it may cause data loss.</p>
+    /// <p>The strategy to use for the update operation. Supported values are "coordinated" or "uncoordinated".</p>
     pub update_strategy: ::std::option::Option<crate::types::UpdateStrategy>,
 }
 impl UpdateMultiRegionClusterInput {
@@ -43,7 +43,7 @@ impl UpdateMultiRegionClusterInput {
     pub fn multi_region_parameter_group_name(&self) -> ::std::option::Option<&str> {
         self.multi_region_parameter_group_name.as_deref()
     }
-    /// <p>Whether to force the update even if it may cause data loss.</p>
+    /// <p>The strategy to use for the update operation. Supported values are "coordinated" or "uncoordinated".</p>
     pub fn update_strategy(&self) -> ::std::option::Option<&crate::types::UpdateStrategy> {
         self.update_strategy.as_ref()
     }
@@ -153,17 +153,17 @@ impl UpdateMultiRegionClusterInputBuilder {
     pub fn get_multi_region_parameter_group_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.multi_region_parameter_group_name
     }
-    /// <p>Whether to force the update even if it may cause data loss.</p>
+    /// <p>The strategy to use for the update operation. Supported values are "coordinated" or "uncoordinated".</p>
     pub fn update_strategy(mut self, input: crate::types::UpdateStrategy) -> Self {
         self.update_strategy = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Whether to force the update even if it may cause data loss.</p>
+    /// <p>The strategy to use for the update operation. Supported values are "coordinated" or "uncoordinated".</p>
     pub fn set_update_strategy(mut self, input: ::std::option::Option<crate::types::UpdateStrategy>) -> Self {
         self.update_strategy = input;
         self
     }
-    /// <p>Whether to force the update even if it may cause data loss.</p>
+    /// <p>The strategy to use for the update operation. Supported values are "coordinated" or "uncoordinated".</p>
     pub fn get_update_strategy(&self) -> &::std::option::Option<crate::types::UpdateStrategy> {
         &self.update_strategy
     }

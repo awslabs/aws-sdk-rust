@@ -10,7 +10,7 @@ pub struct AssociatedContactSummary {
     pub contact_arn: ::std::option::Option<::std::string::String>,
     /// <p>The date and time this contact was initiated, in UTC time.</p>
     pub initiation_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>The timestamp when the customer endpoint disconnected from Amazon Connect.</p>
+    /// <p>The date and time that the customer endpoint disconnected from the current contact, in UTC time. In transfer scenarios, the DisconnectTimestamp of the previous contact indicates the date and time when that contact ended.</p>
     pub disconnect_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>If this contact is related to other contacts, this is the ID of the initial contact.</p>
     pub initial_contact_id: ::std::option::Option<::std::string::String>,
@@ -36,7 +36,7 @@ impl AssociatedContactSummary {
     pub fn initiation_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.initiation_timestamp.as_ref()
     }
-    /// <p>The timestamp when the customer endpoint disconnected from Amazon Connect.</p>
+    /// <p>The date and time that the customer endpoint disconnected from the current contact, in UTC time. In transfer scenarios, the DisconnectTimestamp of the previous contact indicates the date and time when that contact ended.</p>
     pub fn disconnect_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.disconnect_timestamp.as_ref()
     }
@@ -125,17 +125,17 @@ impl AssociatedContactSummaryBuilder {
     pub fn get_initiation_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.initiation_timestamp
     }
-    /// <p>The timestamp when the customer endpoint disconnected from Amazon Connect.</p>
+    /// <p>The date and time that the customer endpoint disconnected from the current contact, in UTC time. In transfer scenarios, the DisconnectTimestamp of the previous contact indicates the date and time when that contact ended.</p>
     pub fn disconnect_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.disconnect_timestamp = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The timestamp when the customer endpoint disconnected from Amazon Connect.</p>
+    /// <p>The date and time that the customer endpoint disconnected from the current contact, in UTC time. In transfer scenarios, the DisconnectTimestamp of the previous contact indicates the date and time when that contact ended.</p>
     pub fn set_disconnect_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.disconnect_timestamp = input;
         self
     }
-    /// <p>The timestamp when the customer endpoint disconnected from Amazon Connect.</p>
+    /// <p>The date and time that the customer endpoint disconnected from the current contact, in UTC time. In transfer scenarios, the DisconnectTimestamp of the previous contact indicates the date and time when that contact ended.</p>
     pub fn get_disconnect_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.disconnect_timestamp
     }

@@ -25,7 +25,7 @@ pub struct GetWorkflowOutput {
     pub digest: ::std::option::Option<::std::string::String>,
     /// <p>The workflow's parameter template.</p>
     pub parameter_template: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::WorkflowParameter>>,
-    /// <p>The workflow's default run storage capacity in gibibytes.</p>
+    /// <p>The default static storage capacity (in gibibytes) for runs that use this workflow or workflow version.</p>
     pub storage_capacity: ::std::option::Option<i32>,
     /// <p>When the workflow was created.</p>
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -33,10 +33,14 @@ pub struct GetWorkflowOutput {
     pub status_message: ::std::option::Option<::std::string::String>,
     /// <p>The workflow's tags.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    /// <p>Gets metadata for workflow.</p>
+    /// <p>Gets metadata for the workflow.</p>
     pub metadata: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The computational accelerator specified to run the workflow.</p>
     pub accelerators: ::std::option::Option<crate::types::Accelerators>,
+    /// <p>The default storage type for runs using this workflow.</p>
+    pub storage_type: ::std::option::Option<crate::types::StorageType>,
+    /// <p>The universally unique identifier (UUID) value for this workflow.</p>
+    pub uuid: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetWorkflowOutput {
@@ -84,7 +88,7 @@ impl GetWorkflowOutput {
     pub fn parameter_template(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::WorkflowParameter>> {
         self.parameter_template.as_ref()
     }
-    /// <p>The workflow's default run storage capacity in gibibytes.</p>
+    /// <p>The default static storage capacity (in gibibytes) for runs that use this workflow or workflow version.</p>
     pub fn storage_capacity(&self) -> ::std::option::Option<i32> {
         self.storage_capacity
     }
@@ -100,13 +104,21 @@ impl GetWorkflowOutput {
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
-    /// <p>Gets metadata for workflow.</p>
+    /// <p>Gets metadata for the workflow.</p>
     pub fn metadata(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.metadata.as_ref()
     }
     /// <p>The computational accelerator specified to run the workflow.</p>
     pub fn accelerators(&self) -> ::std::option::Option<&crate::types::Accelerators> {
         self.accelerators.as_ref()
+    }
+    /// <p>The default storage type for runs using this workflow.</p>
+    pub fn storage_type(&self) -> ::std::option::Option<&crate::types::StorageType> {
+        self.storage_type.as_ref()
+    }
+    /// <p>The universally unique identifier (UUID) value for this workflow.</p>
+    pub fn uuid(&self) -> ::std::option::Option<&str> {
+        self.uuid.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetWorkflowOutput {
@@ -142,6 +154,8 @@ pub struct GetWorkflowOutputBuilder {
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) metadata: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) accelerators: ::std::option::Option<crate::types::Accelerators>,
+    pub(crate) storage_type: ::std::option::Option<crate::types::StorageType>,
+    pub(crate) uuid: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetWorkflowOutputBuilder {
@@ -310,17 +324,17 @@ impl GetWorkflowOutputBuilder {
     ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::WorkflowParameter>> {
         &self.parameter_template
     }
-    /// <p>The workflow's default run storage capacity in gibibytes.</p>
+    /// <p>The default static storage capacity (in gibibytes) for runs that use this workflow or workflow version.</p>
     pub fn storage_capacity(mut self, input: i32) -> Self {
         self.storage_capacity = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The workflow's default run storage capacity in gibibytes.</p>
+    /// <p>The default static storage capacity (in gibibytes) for runs that use this workflow or workflow version.</p>
     pub fn set_storage_capacity(mut self, input: ::std::option::Option<i32>) -> Self {
         self.storage_capacity = input;
         self
     }
-    /// <p>The workflow's default run storage capacity in gibibytes.</p>
+    /// <p>The default static storage capacity (in gibibytes) for runs that use this workflow or workflow version.</p>
     pub fn get_storage_capacity(&self) -> &::std::option::Option<i32> {
         &self.storage_capacity
     }
@@ -376,19 +390,19 @@ impl GetWorkflowOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_metadata`](Self::set_metadata).
     ///
-    /// <p>Gets metadata for workflow.</p>
+    /// <p>Gets metadata for the workflow.</p>
     pub fn metadata(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.metadata.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.metadata = ::std::option::Option::Some(hash_map);
         self
     }
-    /// <p>Gets metadata for workflow.</p>
+    /// <p>Gets metadata for the workflow.</p>
     pub fn set_metadata(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.metadata = input;
         self
     }
-    /// <p>Gets metadata for workflow.</p>
+    /// <p>Gets metadata for the workflow.</p>
     pub fn get_metadata(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.metadata
     }
@@ -405,6 +419,34 @@ impl GetWorkflowOutputBuilder {
     /// <p>The computational accelerator specified to run the workflow.</p>
     pub fn get_accelerators(&self) -> &::std::option::Option<crate::types::Accelerators> {
         &self.accelerators
+    }
+    /// <p>The default storage type for runs using this workflow.</p>
+    pub fn storage_type(mut self, input: crate::types::StorageType) -> Self {
+        self.storage_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The default storage type for runs using this workflow.</p>
+    pub fn set_storage_type(mut self, input: ::std::option::Option<crate::types::StorageType>) -> Self {
+        self.storage_type = input;
+        self
+    }
+    /// <p>The default storage type for runs using this workflow.</p>
+    pub fn get_storage_type(&self) -> &::std::option::Option<crate::types::StorageType> {
+        &self.storage_type
+    }
+    /// <p>The universally unique identifier (UUID) value for this workflow.</p>
+    pub fn uuid(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.uuid = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The universally unique identifier (UUID) value for this workflow.</p>
+    pub fn set_uuid(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.uuid = input;
+        self
+    }
+    /// <p>The universally unique identifier (UUID) value for this workflow.</p>
+    pub fn get_uuid(&self) -> &::std::option::Option<::std::string::String> {
+        &self.uuid
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
@@ -435,6 +477,8 @@ impl GetWorkflowOutputBuilder {
             tags: self.tags,
             metadata: self.metadata,
             accelerators: self.accelerators,
+            storage_type: self.storage_type,
+            uuid: self.uuid,
             _request_id: self._request_id,
         }
     }

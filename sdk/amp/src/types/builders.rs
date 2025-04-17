@@ -7,6 +7,14 @@ pub use crate::types::_workspace_status::WorkspaceStatusBuilder;
 
 pub use crate::types::_workspace_summary::WorkspaceSummaryBuilder;
 
+pub use crate::types::_workspace_configuration_status::WorkspaceConfigurationStatusBuilder;
+
+pub use crate::types::_limits_per_label_set::LimitsPerLabelSetBuilder;
+
+pub use crate::types::_limits_per_label_set_entry::LimitsPerLabelSetEntryBuilder;
+
+pub use crate::types::_workspace_configuration_description::WorkspaceConfigurationDescriptionBuilder;
+
 pub use crate::types::_rule_groups_namespace_status::RuleGroupsNamespaceStatusBuilder;
 
 pub use crate::types::_rule_groups_namespace_description::RuleGroupsNamespaceDescriptionBuilder;

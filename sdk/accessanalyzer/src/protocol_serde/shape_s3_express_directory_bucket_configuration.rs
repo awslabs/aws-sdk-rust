@@ -6,6 +6,22 @@ pub fn ser_s3_express_directory_bucket_configuration(
     if let Some(var_1) = &input.bucket_policy {
         object.key("bucketPolicy").string(var_1.as_str());
     }
+    if let Some(var_2) = &input.access_points {
+        #[allow(unused_mut)]
+        let mut object_3 = object.key("accessPoints").start_object();
+        for (key_4, value_5) in var_2 {
+            {
+                #[allow(unused_mut)]
+                let mut object_6 = object_3.key(key_4.as_str()).start_object();
+                crate::protocol_serde::shape_s3_express_directory_access_point_configuration::ser_s3_express_directory_access_point_configuration(
+                    &mut object_6,
+                    value_5,
+                )?;
+                object_6.finish();
+            }
+        }
+        object_3.finish();
+    }
     Ok(())
 }
 
@@ -30,6 +46,11 @@ where
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
                             );
+                        }
+                        "accessPoints" => {
+                            builder = builder.set_access_points(
+                                    crate::protocol_serde::shape_s3_express_directory_access_point_configurations_map::de_s3_express_directory_access_point_configurations_map(tokens)?
+                                );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

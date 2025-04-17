@@ -9,6 +9,10 @@ pub struct UpdateWorkflowInput {
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A description for the workflow.</p>
     pub description: ::std::option::Option<::std::string::String>,
+    /// <p>The default storage type for runs that use this workflow. STATIC storage allocates a fixed amount of storage. DYNAMIC storage dynamically scales the storage up or down, based on file system utilization. For more information about static and dynamic storage, see <a href="https://docs.aws.amazon.com/omics/latest/dev/Using-workflows.html">Running workflows</a> in the <i>Amazon Web Services HealthOmics User Guide</i>.</p>
+    pub storage_type: ::std::option::Option<crate::types::StorageType>,
+    /// <p>The default static storage capacity (in gibibytes) for runs that use this workflow or workflow version.</p>
+    pub storage_capacity: ::std::option::Option<i32>,
 }
 impl UpdateWorkflowInput {
     /// <p>The workflow's ID.</p>
@@ -22,6 +26,14 @@ impl UpdateWorkflowInput {
     /// <p>A description for the workflow.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
+    }
+    /// <p>The default storage type for runs that use this workflow. STATIC storage allocates a fixed amount of storage. DYNAMIC storage dynamically scales the storage up or down, based on file system utilization. For more information about static and dynamic storage, see <a href="https://docs.aws.amazon.com/omics/latest/dev/Using-workflows.html">Running workflows</a> in the <i>Amazon Web Services HealthOmics User Guide</i>.</p>
+    pub fn storage_type(&self) -> ::std::option::Option<&crate::types::StorageType> {
+        self.storage_type.as_ref()
+    }
+    /// <p>The default static storage capacity (in gibibytes) for runs that use this workflow or workflow version.</p>
+    pub fn storage_capacity(&self) -> ::std::option::Option<i32> {
+        self.storage_capacity
     }
 }
 impl UpdateWorkflowInput {
@@ -38,6 +50,8 @@ pub struct UpdateWorkflowInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
+    pub(crate) storage_type: ::std::option::Option<crate::types::StorageType>,
+    pub(crate) storage_capacity: ::std::option::Option<i32>,
 }
 impl UpdateWorkflowInputBuilder {
     /// <p>The workflow's ID.</p>
@@ -83,6 +97,34 @@ impl UpdateWorkflowInputBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
+    /// <p>The default storage type for runs that use this workflow. STATIC storage allocates a fixed amount of storage. DYNAMIC storage dynamically scales the storage up or down, based on file system utilization. For more information about static and dynamic storage, see <a href="https://docs.aws.amazon.com/omics/latest/dev/Using-workflows.html">Running workflows</a> in the <i>Amazon Web Services HealthOmics User Guide</i>.</p>
+    pub fn storage_type(mut self, input: crate::types::StorageType) -> Self {
+        self.storage_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The default storage type for runs that use this workflow. STATIC storage allocates a fixed amount of storage. DYNAMIC storage dynamically scales the storage up or down, based on file system utilization. For more information about static and dynamic storage, see <a href="https://docs.aws.amazon.com/omics/latest/dev/Using-workflows.html">Running workflows</a> in the <i>Amazon Web Services HealthOmics User Guide</i>.</p>
+    pub fn set_storage_type(mut self, input: ::std::option::Option<crate::types::StorageType>) -> Self {
+        self.storage_type = input;
+        self
+    }
+    /// <p>The default storage type for runs that use this workflow. STATIC storage allocates a fixed amount of storage. DYNAMIC storage dynamically scales the storage up or down, based on file system utilization. For more information about static and dynamic storage, see <a href="https://docs.aws.amazon.com/omics/latest/dev/Using-workflows.html">Running workflows</a> in the <i>Amazon Web Services HealthOmics User Guide</i>.</p>
+    pub fn get_storage_type(&self) -> &::std::option::Option<crate::types::StorageType> {
+        &self.storage_type
+    }
+    /// <p>The default static storage capacity (in gibibytes) for runs that use this workflow or workflow version.</p>
+    pub fn storage_capacity(mut self, input: i32) -> Self {
+        self.storage_capacity = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The default static storage capacity (in gibibytes) for runs that use this workflow or workflow version.</p>
+    pub fn set_storage_capacity(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.storage_capacity = input;
+        self
+    }
+    /// <p>The default static storage capacity (in gibibytes) for runs that use this workflow or workflow version.</p>
+    pub fn get_storage_capacity(&self) -> &::std::option::Option<i32> {
+        &self.storage_capacity
+    }
     /// Consumes the builder and constructs a [`UpdateWorkflowInput`](crate::operation::update_workflow::UpdateWorkflowInput).
     pub fn build(
         self,
@@ -91,6 +133,8 @@ impl UpdateWorkflowInputBuilder {
             id: self.id,
             name: self.name,
             description: self.description,
+            storage_type: self.storage_type,
+            storage_capacity: self.storage_capacity,
         })
     }
 }

@@ -21,6 +21,7 @@
 ///     EventSourceName::OnRealTimeCallAnalysisAvailable => { /* ... */ },
 ///     EventSourceName::OnRealTimeChatAnalysisAvailable => { /* ... */ },
 ///     EventSourceName::OnSalesforceCaseCreate => { /* ... */ },
+///     EventSourceName::OnSlaBreach => { /* ... */ },
 ///     EventSourceName::OnZendeskTicketCreate => { /* ... */ },
 ///     EventSourceName::OnZendeskTicketStatusUpdate => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -70,6 +71,8 @@ pub enum EventSourceName {
     #[allow(missing_docs)] // documentation missing in model
     OnSalesforceCaseCreate,
     #[allow(missing_docs)] // documentation missing in model
+    OnSlaBreach,
+    #[allow(missing_docs)] // documentation missing in model
     OnZendeskTicketCreate,
     #[allow(missing_docs)] // documentation missing in model
     OnZendeskTicketStatusUpdate,
@@ -89,6 +92,7 @@ impl ::std::convert::From<&str> for EventSourceName {
             "OnRealTimeCallAnalysisAvailable" => EventSourceName::OnRealTimeCallAnalysisAvailable,
             "OnRealTimeChatAnalysisAvailable" => EventSourceName::OnRealTimeChatAnalysisAvailable,
             "OnSalesforceCaseCreate" => EventSourceName::OnSalesforceCaseCreate,
+            "OnSlaBreach" => EventSourceName::OnSlaBreach,
             "OnZendeskTicketCreate" => EventSourceName::OnZendeskTicketCreate,
             "OnZendeskTicketStatusUpdate" => EventSourceName::OnZendeskTicketStatusUpdate,
             other => EventSourceName::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -115,6 +119,7 @@ impl EventSourceName {
             EventSourceName::OnRealTimeCallAnalysisAvailable => "OnRealTimeCallAnalysisAvailable",
             EventSourceName::OnRealTimeChatAnalysisAvailable => "OnRealTimeChatAnalysisAvailable",
             EventSourceName::OnSalesforceCaseCreate => "OnSalesforceCaseCreate",
+            EventSourceName::OnSlaBreach => "OnSlaBreach",
             EventSourceName::OnZendeskTicketCreate => "OnZendeskTicketCreate",
             EventSourceName::OnZendeskTicketStatusUpdate => "OnZendeskTicketStatusUpdate",
             EventSourceName::Unknown(value) => value.as_str(),
@@ -132,6 +137,7 @@ impl EventSourceName {
             "OnRealTimeCallAnalysisAvailable",
             "OnRealTimeChatAnalysisAvailable",
             "OnSalesforceCaseCreate",
+            "OnSlaBreach",
             "OnZendeskTicketCreate",
             "OnZendeskTicketStatusUpdate",
         ]
@@ -166,6 +172,7 @@ impl ::std::fmt::Display for EventSourceName {
             EventSourceName::OnRealTimeCallAnalysisAvailable => write!(f, "OnRealTimeCallAnalysisAvailable"),
             EventSourceName::OnRealTimeChatAnalysisAvailable => write!(f, "OnRealTimeChatAnalysisAvailable"),
             EventSourceName::OnSalesforceCaseCreate => write!(f, "OnSalesforceCaseCreate"),
+            EventSourceName::OnSlaBreach => write!(f, "OnSlaBreach"),
             EventSourceName::OnZendeskTicketCreate => write!(f, "OnZendeskTicketCreate"),
             EventSourceName::OnZendeskTicketStatusUpdate => write!(f, "OnZendeskTicketStatusUpdate"),
             EventSourceName::Unknown(value) => write!(f, "{}", value),

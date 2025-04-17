@@ -108,5 +108,11 @@ pub fn ser_create_cluster_input_input(
     if let Some(var_31) = &input.data_tiering {
         object.key("DataTiering").boolean(*var_31);
     }
+    if let Some(var_32) = &input.network_type {
+        object.key("NetworkType").string(var_32.as_str());
+    }
+    if let Some(var_33) = &input.ip_discovery {
+        object.key("IpDiscovery").string(var_33.as_str());
+    }
     Ok(())
 }

@@ -11,6 +11,8 @@ pub struct CreateWorkflowOutput {
     pub status: ::std::option::Option<crate::types::WorkflowStatus>,
     /// <p>The workflow's tags.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    /// <p>The universally unique identifier (UUID) value for this workflow.</p>
+    pub uuid: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CreateWorkflowOutput {
@@ -29,6 +31,10 @@ impl CreateWorkflowOutput {
     /// <p>The workflow's tags.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
+    }
+    /// <p>The universally unique identifier (UUID) value for this workflow.</p>
+    pub fn uuid(&self) -> ::std::option::Option<&str> {
+        self.uuid.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateWorkflowOutput {
@@ -51,6 +57,7 @@ pub struct CreateWorkflowOutputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::WorkflowStatus>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) uuid: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CreateWorkflowOutputBuilder {
@@ -116,6 +123,20 @@ impl CreateWorkflowOutputBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
+    /// <p>The universally unique identifier (UUID) value for this workflow.</p>
+    pub fn uuid(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.uuid = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The universally unique identifier (UUID) value for this workflow.</p>
+    pub fn set_uuid(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.uuid = input;
+        self
+    }
+    /// <p>The universally unique identifier (UUID) value for this workflow.</p>
+    pub fn get_uuid(&self) -> &::std::option::Option<::std::string::String> {
+        &self.uuid
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -132,6 +153,7 @@ impl CreateWorkflowOutputBuilder {
             id: self.id,
             status: self.status,
             tags: self.tags,
+            uuid: self.uuid,
             _request_id: self._request_id,
         }
     }

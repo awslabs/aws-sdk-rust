@@ -11,6 +11,8 @@ pub use crate::types::_input_authentication_type::InputAuthenticationType;
 
 pub use crate::types::_subnet_group::SubnetGroup;
 
+pub use crate::types::_network_type::NetworkType;
+
 pub use crate::types::_subnet::Subnet;
 
 pub use crate::types::_availability_zone::AvailabilityZone;
@@ -28,6 +30,8 @@ pub use crate::types::_update_strategy::UpdateStrategy;
 pub use crate::types::_shard_configuration_request::ShardConfigurationRequest;
 
 pub use crate::types::_cluster::Cluster;
+
+pub use crate::types::_ip_discovery::IpDiscovery;
 
 pub use crate::types::_data_tiering_status::DataTieringStatus;
 
@@ -127,7 +131,11 @@ mod _filter;
 
 mod _input_authentication_type;
 
+mod _ip_discovery;
+
 mod _multi_region_cluster;
+
+mod _network_type;
 
 mod _node;
 

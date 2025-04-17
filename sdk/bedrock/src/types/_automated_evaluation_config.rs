@@ -8,6 +8,8 @@ pub struct AutomatedEvaluationConfig {
     pub dataset_metric_configs: ::std::vec::Vec<crate::types::EvaluationDatasetMetricConfig>,
     /// <p>Contains the evaluator model configuration details. <code>EvaluatorModelConfig</code> is required for evaluation jobs that use a knowledge base or in model evaluation job that use a model as judge. This model computes all evaluation related metrics.</p>
     pub evaluator_model_config: ::std::option::Option<crate::types::EvaluatorModelConfig>,
+    /// <p>Defines the configuration of custom metrics to be used in an evaluation job.</p>
+    pub custom_metric_config: ::std::option::Option<crate::types::AutomatedEvaluationCustomMetricConfig>,
 }
 impl AutomatedEvaluationConfig {
     /// <p>Configuration details of the prompt datasets and metrics you want to use for your evaluation job.</p>
@@ -18,6 +20,10 @@ impl AutomatedEvaluationConfig {
     /// <p>Contains the evaluator model configuration details. <code>EvaluatorModelConfig</code> is required for evaluation jobs that use a knowledge base or in model evaluation job that use a model as judge. This model computes all evaluation related metrics.</p>
     pub fn evaluator_model_config(&self) -> ::std::option::Option<&crate::types::EvaluatorModelConfig> {
         self.evaluator_model_config.as_ref()
+    }
+    /// <p>Defines the configuration of custom metrics to be used in an evaluation job.</p>
+    pub fn custom_metric_config(&self) -> ::std::option::Option<&crate::types::AutomatedEvaluationCustomMetricConfig> {
+        self.custom_metric_config.as_ref()
     }
 }
 impl AutomatedEvaluationConfig {
@@ -33,6 +39,7 @@ impl AutomatedEvaluationConfig {
 pub struct AutomatedEvaluationConfigBuilder {
     pub(crate) dataset_metric_configs: ::std::option::Option<::std::vec::Vec<crate::types::EvaluationDatasetMetricConfig>>,
     pub(crate) evaluator_model_config: ::std::option::Option<crate::types::EvaluatorModelConfig>,
+    pub(crate) custom_metric_config: ::std::option::Option<crate::types::AutomatedEvaluationCustomMetricConfig>,
 }
 impl AutomatedEvaluationConfigBuilder {
     /// Appends an item to `dataset_metric_configs`.
@@ -69,6 +76,20 @@ impl AutomatedEvaluationConfigBuilder {
     pub fn get_evaluator_model_config(&self) -> &::std::option::Option<crate::types::EvaluatorModelConfig> {
         &self.evaluator_model_config
     }
+    /// <p>Defines the configuration of custom metrics to be used in an evaluation job.</p>
+    pub fn custom_metric_config(mut self, input: crate::types::AutomatedEvaluationCustomMetricConfig) -> Self {
+        self.custom_metric_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Defines the configuration of custom metrics to be used in an evaluation job.</p>
+    pub fn set_custom_metric_config(mut self, input: ::std::option::Option<crate::types::AutomatedEvaluationCustomMetricConfig>) -> Self {
+        self.custom_metric_config = input;
+        self
+    }
+    /// <p>Defines the configuration of custom metrics to be used in an evaluation job.</p>
+    pub fn get_custom_metric_config(&self) -> &::std::option::Option<crate::types::AutomatedEvaluationCustomMetricConfig> {
+        &self.custom_metric_config
+    }
     /// Consumes the builder and constructs a [`AutomatedEvaluationConfig`](crate::types::AutomatedEvaluationConfig).
     /// This method will fail if any of the following fields are not set:
     /// - [`dataset_metric_configs`](crate::types::builders::AutomatedEvaluationConfigBuilder::dataset_metric_configs)
@@ -81,6 +102,7 @@ impl AutomatedEvaluationConfigBuilder {
                 )
             })?,
             evaluator_model_config: self.evaluator_model_config,
+            custom_metric_config: self.custom_metric_config,
         })
     }
 }

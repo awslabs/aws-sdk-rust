@@ -163,6 +163,14 @@ pub use crate::types::_dynamodb_stream_configuration::DynamodbStreamConfiguratio
 
 pub use crate::types::_s3_express_directory_bucket_configuration::S3ExpressDirectoryBucketConfiguration;
 
+pub use crate::types::_s3_express_directory_access_point_configuration::S3ExpressDirectoryAccessPointConfiguration;
+
+pub use crate::types::_network_origin_configuration::NetworkOriginConfiguration;
+
+pub use crate::types::_internet_configuration::InternetConfiguration;
+
+pub use crate::types::_vpc_configuration::VpcConfiguration;
+
 pub use crate::types::_sqs_queue_configuration::SqsQueueConfiguration;
 
 pub use crate::types::_sns_topic_configuration::SnsTopicConfiguration;
@@ -170,12 +178,6 @@ pub use crate::types::_sns_topic_configuration::SnsTopicConfiguration;
 pub use crate::types::_s3_bucket_configuration::S3BucketConfiguration;
 
 pub use crate::types::_s3_access_point_configuration::S3AccessPointConfiguration;
-
-pub use crate::types::_network_origin_configuration::NetworkOriginConfiguration;
-
-pub use crate::types::_internet_configuration::InternetConfiguration;
-
-pub use crate::types::_vpc_configuration::VpcConfiguration;
 
 pub use crate::types::_s3_public_access_block_configuration::S3PublicAccessBlockConfiguration;
 
@@ -394,6 +396,8 @@ mod _s3_access_point_configuration;
 mod _s3_bucket_acl_grant_configuration;
 
 mod _s3_bucket_configuration;
+
+mod _s3_express_directory_access_point_configuration;
 
 mod _s3_express_directory_bucket_configuration;
 

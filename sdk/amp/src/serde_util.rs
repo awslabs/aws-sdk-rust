@@ -244,6 +244,18 @@ pub(crate) fn describe_workspace_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn describe_workspace_configuration_output_output_correct_errors(
+    mut builder: crate::operation::describe_workspace_configuration::builders::DescribeWorkspaceConfigurationOutputBuilder,
+) -> crate::operation::describe_workspace_configuration::builders::DescribeWorkspaceConfigurationOutputBuilder {
+    if builder.workspace_configuration.is_none() {
+        builder.workspace_configuration = {
+            let builder = crate::types::builders::WorkspaceConfigurationDescriptionBuilder::default();
+            Some(crate::serde_util::workspace_configuration_description_correct_errors(builder).build())
+        }
+    }
+    builder
+}
+
 pub(crate) fn get_default_scraper_configuration_output_output_correct_errors(
     mut builder: crate::operation::get_default_scraper_configuration::builders::GetDefaultScraperConfigurationOutputBuilder,
 ) -> crate::operation::get_default_scraper_configuration::builders::GetDefaultScraperConfigurationOutputBuilder {
@@ -335,6 +347,18 @@ pub(crate) fn update_scraper_output_output_correct_errors(
         builder.status = {
             let builder = crate::types::builders::ScraperStatusBuilder::default();
             crate::serde_util::scraper_status_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
+pub(crate) fn update_workspace_configuration_output_output_correct_errors(
+    mut builder: crate::operation::update_workspace_configuration::builders::UpdateWorkspaceConfigurationOutputBuilder,
+) -> crate::operation::update_workspace_configuration::builders::UpdateWorkspaceConfigurationOutputBuilder {
+    if builder.status.is_none() {
+        builder.status = {
+            let builder = crate::types::builders::WorkspaceConfigurationStatusBuilder::default();
+            crate::serde_util::workspace_configuration_status_correct_errors(builder).build().ok()
         }
     }
     builder
@@ -514,6 +538,27 @@ pub(crate) fn workspace_description_correct_errors(
     builder
 }
 
+pub(crate) fn workspace_configuration_description_correct_errors(
+    mut builder: crate::types::builders::WorkspaceConfigurationDescriptionBuilder,
+) -> crate::types::builders::WorkspaceConfigurationDescriptionBuilder {
+    if builder.status.is_none() {
+        builder.status = {
+            let builder = crate::types::builders::WorkspaceConfigurationStatusBuilder::default();
+            crate::serde_util::workspace_configuration_status_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
+pub(crate) fn workspace_configuration_status_correct_errors(
+    mut builder: crate::types::builders::WorkspaceConfigurationStatusBuilder,
+) -> crate::types::builders::WorkspaceConfigurationStatusBuilder {
+    if builder.status_code.is_none() {
+        builder.status_code = "no value was set".parse::<crate::types::WorkspaceConfigurationStatusCode>().ok()
+    }
+    builder
+}
+
 pub(crate) fn rule_groups_namespace_summary_correct_errors(
     mut builder: crate::types::builders::RuleGroupsNamespaceSummaryBuilder,
 ) -> crate::types::builders::RuleGroupsNamespaceSummaryBuilder {
@@ -621,6 +666,21 @@ pub(crate) fn eks_configuration_correct_errors(
     }
     if builder.subnet_ids.is_none() {
         builder.subnet_ids = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn limits_per_label_set_correct_errors(
+    mut builder: crate::types::builders::LimitsPerLabelSetBuilder,
+) -> crate::types::builders::LimitsPerLabelSetBuilder {
+    if builder.limits.is_none() {
+        builder.limits = {
+            let builder = crate::types::builders::LimitsPerLabelSetEntryBuilder::default();
+            Some(builder.build())
+        }
+    }
+    if builder.label_set.is_none() {
+        builder.label_set = Some(Default::default())
     }
     builder
 }

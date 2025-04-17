@@ -24,6 +24,10 @@ where
                         "AvailabilityZone" => {
                             builder = builder.set_availability_zone(crate::protocol_serde::shape_availability_zone::de_availability_zone(tokens)?);
                         }
+                        "SupportedNetworkTypes" => {
+                            builder =
+                                builder.set_supported_network_types(crate::protocol_serde::shape_network_type_list::de_network_type_list(tokens)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

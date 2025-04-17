@@ -5,7 +5,7 @@
 pub struct GetS3AccessPolicyOutput {
     /// <p>The S3 access point ARN that has the access policy.</p>
     pub s3_access_point_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The AWS-generated Sequence Store or Reference Store ID.</p>
+    /// <p>The Amazon Web Services-generated Sequence Store or Reference Store ID.</p>
     pub store_id: ::std::option::Option<::std::string::String>,
     /// <p>The type of store associated with the access point.</p>
     pub store_type: ::std::option::Option<crate::types::StoreType>,
@@ -20,7 +20,7 @@ impl GetS3AccessPolicyOutput {
     pub fn s3_access_point_arn(&self) -> ::std::option::Option<&str> {
         self.s3_access_point_arn.as_deref()
     }
-    /// <p>The AWS-generated Sequence Store or Reference Store ID.</p>
+    /// <p>The Amazon Web Services-generated Sequence Store or Reference Store ID.</p>
     pub fn store_id(&self) -> ::std::option::Option<&str> {
         self.store_id.as_deref()
     }
@@ -76,17 +76,17 @@ impl GetS3AccessPolicyOutputBuilder {
     pub fn get_s3_access_point_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.s3_access_point_arn
     }
-    /// <p>The AWS-generated Sequence Store or Reference Store ID.</p>
+    /// <p>The Amazon Web Services-generated Sequence Store or Reference Store ID.</p>
     pub fn store_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.store_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The AWS-generated Sequence Store or Reference Store ID.</p>
+    /// <p>The Amazon Web Services-generated Sequence Store or Reference Store ID.</p>
     pub fn set_store_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.store_id = input;
         self
     }
-    /// <p>The AWS-generated Sequence Store or Reference Store ID.</p>
+    /// <p>The Amazon Web Services-generated Sequence Store or Reference Store ID.</p>
     pub fn get_store_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.store_id
     }

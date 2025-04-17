@@ -13,7 +13,9 @@ pub struct SendOutboundEmailInput {
     pub additional_recipients: ::std::option::Option<crate::types::OutboundAdditionalRecipients>,
     /// <p>The email message body to be sent to the newly created email.</p>
     pub email_message: ::std::option::Option<crate::types::OutboundEmailContent>,
-    /// <p>Denotes the class of traffic.</p>
+    /// <p>Denotes the class of traffic.</p><note>
+    /// <p>Only the CAMPAIGN traffic type is supported.</p>
+    /// </note>
     pub traffic_type: ::std::option::Option<crate::types::TrafficType>,
     /// <p>A Campaign object need for Campaign traffic type.</p>
     pub source_campaign: ::std::option::Option<crate::types::SourceCampaign>,
@@ -41,7 +43,9 @@ impl SendOutboundEmailInput {
     pub fn email_message(&self) -> ::std::option::Option<&crate::types::OutboundEmailContent> {
         self.email_message.as_ref()
     }
-    /// <p>Denotes the class of traffic.</p>
+    /// <p>Denotes the class of traffic.</p><note>
+    /// <p>Only the CAMPAIGN traffic type is supported.</p>
+    /// </note>
     pub fn traffic_type(&self) -> ::std::option::Option<&crate::types::TrafficType> {
         self.traffic_type.as_ref()
     }
@@ -149,18 +153,24 @@ impl SendOutboundEmailInputBuilder {
     pub fn get_email_message(&self) -> &::std::option::Option<crate::types::OutboundEmailContent> {
         &self.email_message
     }
-    /// <p>Denotes the class of traffic.</p>
+    /// <p>Denotes the class of traffic.</p><note>
+    /// <p>Only the CAMPAIGN traffic type is supported.</p>
+    /// </note>
     /// This field is required.
     pub fn traffic_type(mut self, input: crate::types::TrafficType) -> Self {
         self.traffic_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Denotes the class of traffic.</p>
+    /// <p>Denotes the class of traffic.</p><note>
+    /// <p>Only the CAMPAIGN traffic type is supported.</p>
+    /// </note>
     pub fn set_traffic_type(mut self, input: ::std::option::Option<crate::types::TrafficType>) -> Self {
         self.traffic_type = input;
         self
     }
-    /// <p>Denotes the class of traffic.</p>
+    /// <p>Denotes the class of traffic.</p><note>
+    /// <p>Only the CAMPAIGN traffic type is supported.</p>
+    /// </note>
     pub fn get_traffic_type(&self) -> &::std::option::Option<crate::types::TrafficType> {
         &self.traffic_type
     }

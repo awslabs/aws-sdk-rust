@@ -19,12 +19,14 @@ impl super::Client {
     ///   - [`main(Option<String>)`](crate::operation::get_workflow::GetWorkflowOutput::main): <p>The path of the main definition file for the workflow.</p>
     ///   - [`digest(Option<String>)`](crate::operation::get_workflow::GetWorkflowOutput::digest): <p>The workflow's digest.</p>
     ///   - [`parameter_template(Option<HashMap::<String, WorkflowParameter>>)`](crate::operation::get_workflow::GetWorkflowOutput::parameter_template): <p>The workflow's parameter template.</p>
-    ///   - [`storage_capacity(Option<i32>)`](crate::operation::get_workflow::GetWorkflowOutput::storage_capacity): <p>The workflow's default run storage capacity in gibibytes.</p>
+    ///   - [`storage_capacity(Option<i32>)`](crate::operation::get_workflow::GetWorkflowOutput::storage_capacity): <p>The default static storage capacity (in gibibytes) for runs that use this workflow or workflow version.</p>
     ///   - [`creation_time(Option<DateTime>)`](crate::operation::get_workflow::GetWorkflowOutput::creation_time): <p>When the workflow was created.</p>
     ///   - [`status_message(Option<String>)`](crate::operation::get_workflow::GetWorkflowOutput::status_message): <p>The workflow's status message.</p>
     ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::get_workflow::GetWorkflowOutput::tags): <p>The workflow's tags.</p>
-    ///   - [`metadata(Option<HashMap::<String, String>>)`](crate::operation::get_workflow::GetWorkflowOutput::metadata): <p>Gets metadata for workflow.</p>
+    ///   - [`metadata(Option<HashMap::<String, String>>)`](crate::operation::get_workflow::GetWorkflowOutput::metadata): <p>Gets metadata for the workflow.</p>
     ///   - [`accelerators(Option<Accelerators>)`](crate::operation::get_workflow::GetWorkflowOutput::accelerators): <p>The computational accelerator specified to run the workflow.</p>
+    ///   - [`storage_type(Option<StorageType>)`](crate::operation::get_workflow::GetWorkflowOutput::storage_type): <p>The default storage type for runs using this workflow.</p>
+    ///   - [`uuid(Option<String>)`](crate::operation::get_workflow::GetWorkflowOutput::uuid): <p>The universally unique identifier (UUID) value for this workflow.</p>
     /// - On failure, responds with [`SdkError<GetWorkflowError>`](crate::operation::get_workflow::GetWorkflowError)
     pub fn get_workflow(&self) -> crate::operation::get_workflow::builders::GetWorkflowFluentBuilder {
         crate::operation::get_workflow::builders::GetWorkflowFluentBuilder::new(self.handle.clone())

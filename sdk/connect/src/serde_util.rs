@@ -1062,6 +1062,15 @@ pub(crate) fn action_summary_correct_errors(
     builder
 }
 
+pub(crate) fn assign_sla_action_definition_correct_errors(
+    mut builder: crate::types::builders::AssignSlaActionDefinitionBuilder,
+) -> crate::types::builders::AssignSlaActionDefinitionBuilder {
+    if builder.sla_assignment_type.is_none() {
+        builder.sla_assignment_type = "no value was set".parse::<crate::types::SlaAssignmentType>().ok()
+    }
+    builder
+}
+
 pub(crate) fn create_case_action_definition_correct_errors(
     mut builder: crate::types::builders::CreateCaseActionDefinitionBuilder,
 ) -> crate::types::builders::CreateCaseActionDefinitionBuilder {
@@ -1193,6 +1202,21 @@ pub(crate) fn update_case_action_definition_correct_errors(
 ) -> crate::types::builders::UpdateCaseActionDefinitionBuilder {
     if builder.fields.is_none() {
         builder.fields = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn case_sla_configuration_correct_errors(
+    mut builder: crate::types::builders::CaseSlaConfigurationBuilder,
+) -> crate::types::builders::CaseSlaConfigurationBuilder {
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.r#type.is_none() {
+        builder.r#type = "no value was set".parse::<crate::types::SlaType>().ok()
+    }
+    if builder.target_sla_minutes.is_none() {
+        builder.target_sla_minutes = Some(Default::default())
     }
     builder
 }

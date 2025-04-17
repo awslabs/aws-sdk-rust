@@ -171,17 +171,17 @@ impl UpdateScraperFluentBuilder {
     pub fn get_destination(&self) -> &::std::option::Option<crate::types::Destination> {
         self.inner.get_destination()
     }
-    /// <p>The scraper role configuration for the workspace.</p>
+    /// <p>Use this structure to enable cross-account access, so that you can use a target account to access Prometheus metrics from source accounts.</p>
     pub fn role_configuration(mut self, input: crate::types::RoleConfiguration) -> Self {
         self.inner = self.inner.role_configuration(input);
         self
     }
-    /// <p>The scraper role configuration for the workspace.</p>
+    /// <p>Use this structure to enable cross-account access, so that you can use a target account to access Prometheus metrics from source accounts.</p>
     pub fn set_role_configuration(mut self, input: ::std::option::Option<crate::types::RoleConfiguration>) -> Self {
         self.inner = self.inner.set_role_configuration(input);
         self
     }
-    /// <p>The scraper role configuration for the workspace.</p>
+    /// <p>Use this structure to enable cross-account access, so that you can use a target account to access Prometheus metrics from source accounts.</p>
     pub fn get_role_configuration(&self) -> &::std::option::Option<crate::types::RoleConfiguration> {
         self.inner.get_role_configuration()
     }

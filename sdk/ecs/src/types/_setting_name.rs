@@ -15,6 +15,7 @@
 ///     SettingName::AwsvpcTrunking => { /* ... */ },
 ///     SettingName::ContainerInsights => { /* ... */ },
 ///     SettingName::ContainerInstanceLongArnFormat => { /* ... */ },
+///     SettingName::DefaultLogDriverMode => { /* ... */ },
 ///     SettingName::FargateFipsMode => { /* ... */ },
 ///     SettingName::FargateTaskRetirementWaitPeriod => { /* ... */ },
 ///     SettingName::GuardDutyActivate => { /* ... */ },
@@ -56,6 +57,8 @@ pub enum SettingName {
     #[allow(missing_docs)] // documentation missing in model
     ContainerInstanceLongArnFormat,
     #[allow(missing_docs)] // documentation missing in model
+    DefaultLogDriverMode,
+    #[allow(missing_docs)] // documentation missing in model
     FargateFipsMode,
     #[allow(missing_docs)] // documentation missing in model
     FargateTaskRetirementWaitPeriod,
@@ -77,6 +80,7 @@ impl ::std::convert::From<&str> for SettingName {
             "awsvpcTrunking" => SettingName::AwsvpcTrunking,
             "containerInsights" => SettingName::ContainerInsights,
             "containerInstanceLongArnFormat" => SettingName::ContainerInstanceLongArnFormat,
+            "defaultLogDriverMode" => SettingName::DefaultLogDriverMode,
             "fargateFIPSMode" => SettingName::FargateFipsMode,
             "fargateTaskRetirementWaitPeriod" => SettingName::FargateTaskRetirementWaitPeriod,
             "guardDutyActivate" => SettingName::GuardDutyActivate,
@@ -101,6 +105,7 @@ impl SettingName {
             SettingName::AwsvpcTrunking => "awsvpcTrunking",
             SettingName::ContainerInsights => "containerInsights",
             SettingName::ContainerInstanceLongArnFormat => "containerInstanceLongArnFormat",
+            SettingName::DefaultLogDriverMode => "defaultLogDriverMode",
             SettingName::FargateFipsMode => "fargateFIPSMode",
             SettingName::FargateTaskRetirementWaitPeriod => "fargateTaskRetirementWaitPeriod",
             SettingName::GuardDutyActivate => "guardDutyActivate",
@@ -116,6 +121,7 @@ impl SettingName {
             "awsvpcTrunking",
             "containerInsights",
             "containerInstanceLongArnFormat",
+            "defaultLogDriverMode",
             "fargateFIPSMode",
             "fargateTaskRetirementWaitPeriod",
             "guardDutyActivate",
@@ -148,6 +154,7 @@ impl ::std::fmt::Display for SettingName {
             SettingName::AwsvpcTrunking => write!(f, "awsvpcTrunking"),
             SettingName::ContainerInsights => write!(f, "containerInsights"),
             SettingName::ContainerInstanceLongArnFormat => write!(f, "containerInstanceLongArnFormat"),
+            SettingName::DefaultLogDriverMode => write!(f, "defaultLogDriverMode"),
             SettingName::FargateFipsMode => write!(f, "fargateFIPSMode"),
             SettingName::FargateTaskRetirementWaitPeriod => write!(f, "fargateTaskRetirementWaitPeriod"),
             SettingName::GuardDutyActivate => write!(f, "guardDutyActivate"),

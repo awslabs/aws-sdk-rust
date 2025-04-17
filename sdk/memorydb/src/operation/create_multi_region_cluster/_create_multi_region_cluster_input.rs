@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateMultiRegionClusterInput {
-    /// <p>A suffix to be added to the multi-Region cluster name.</p>
+    /// <p>A suffix to be added to the Multi-Region cluster name. Amazon MemoryDB automatically applies a prefix to the Multi-Region cluster Name when it is created. Each Amazon Region has its own prefix. For instance, a Multi-Region cluster Name created in the US-West-1 region will begin with "virxk", along with the suffix name you provide. The suffix guarantees uniqueness of the Multi-Region cluster name across multiple regions.</p>
     pub multi_region_cluster_name_suffix: ::std::option::Option<::std::string::String>,
     /// <p>A description for the multi-Region cluster.</p>
     pub description: ::std::option::Option<::std::string::String>,
@@ -23,7 +23,7 @@ pub struct CreateMultiRegionClusterInput {
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateMultiRegionClusterInput {
-    /// <p>A suffix to be added to the multi-Region cluster name.</p>
+    /// <p>A suffix to be added to the Multi-Region cluster name. Amazon MemoryDB automatically applies a prefix to the Multi-Region cluster Name when it is created. Each Amazon Region has its own prefix. For instance, a Multi-Region cluster Name created in the US-West-1 region will begin with "virxk", along with the suffix name you provide. The suffix guarantees uniqueness of the Multi-Region cluster name across multiple regions.</p>
     pub fn multi_region_cluster_name_suffix(&self) -> ::std::option::Option<&str> {
         self.multi_region_cluster_name_suffix.as_deref()
     }
@@ -84,18 +84,18 @@ pub struct CreateMultiRegionClusterInputBuilder {
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateMultiRegionClusterInputBuilder {
-    /// <p>A suffix to be added to the multi-Region cluster name.</p>
+    /// <p>A suffix to be added to the Multi-Region cluster name. Amazon MemoryDB automatically applies a prefix to the Multi-Region cluster Name when it is created. Each Amazon Region has its own prefix. For instance, a Multi-Region cluster Name created in the US-West-1 region will begin with "virxk", along with the suffix name you provide. The suffix guarantees uniqueness of the Multi-Region cluster name across multiple regions.</p>
     /// This field is required.
     pub fn multi_region_cluster_name_suffix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.multi_region_cluster_name_suffix = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A suffix to be added to the multi-Region cluster name.</p>
+    /// <p>A suffix to be added to the Multi-Region cluster name. Amazon MemoryDB automatically applies a prefix to the Multi-Region cluster Name when it is created. Each Amazon Region has its own prefix. For instance, a Multi-Region cluster Name created in the US-West-1 region will begin with "virxk", along with the suffix name you provide. The suffix guarantees uniqueness of the Multi-Region cluster name across multiple regions.</p>
     pub fn set_multi_region_cluster_name_suffix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.multi_region_cluster_name_suffix = input;
         self
     }
-    /// <p>A suffix to be added to the multi-Region cluster name.</p>
+    /// <p>A suffix to be added to the Multi-Region cluster name. Amazon MemoryDB automatically applies a prefix to the Multi-Region cluster Name when it is created. Each Amazon Region has its own prefix. For instance, a Multi-Region cluster Name created in the US-West-1 region will begin with "virxk", along with the suffix name you provide. The suffix guarantees uniqueness of the Multi-Region cluster name across multiple regions.</p>
     pub fn get_multi_region_cluster_name_suffix(&self) -> &::std::option::Option<::std::string::String> {
         &self.multi_region_cluster_name_suffix
     }

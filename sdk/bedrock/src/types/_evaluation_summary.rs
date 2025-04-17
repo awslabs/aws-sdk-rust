@@ -24,6 +24,8 @@ pub struct EvaluationSummary {
     pub rag_identifiers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The Amazon Resource Names (ARNs) of the models used to compute the metrics for a knowledge base evaluation job.</p>
     pub evaluator_model_identifiers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>The Amazon Resource Names (ARNs) of the models used to compute custom metrics in an Amazon Bedrock evaluation job.</p>
+    pub custom_metrics_evaluator_model_identifiers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Identifies the models, Knowledge Bases, or other RAG sources evaluated in a model or Knowledge Base evaluation job.</p>
     pub inference_config_summary: ::std::option::Option<crate::types::EvaluationInferenceConfigSummary>,
     /// <p>Specifies whether the evaluation job is for evaluating a model or evaluating a knowledge base (retrieval and response generation).</p>
@@ -76,6 +78,12 @@ impl EvaluationSummary {
     pub fn evaluator_model_identifiers(&self) -> &[::std::string::String] {
         self.evaluator_model_identifiers.as_deref().unwrap_or_default()
     }
+    /// <p>The Amazon Resource Names (ARNs) of the models used to compute custom metrics in an Amazon Bedrock evaluation job.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.custom_metrics_evaluator_model_identifiers.is_none()`.
+    pub fn custom_metrics_evaluator_model_identifiers(&self) -> &[::std::string::String] {
+        self.custom_metrics_evaluator_model_identifiers.as_deref().unwrap_or_default()
+    }
     /// <p>Identifies the models, Knowledge Bases, or other RAG sources evaluated in a model or Knowledge Base evaluation job.</p>
     pub fn inference_config_summary(&self) -> ::std::option::Option<&crate::types::EvaluationInferenceConfigSummary> {
         self.inference_config_summary.as_ref()
@@ -105,6 +113,7 @@ pub struct EvaluationSummaryBuilder {
     pub(crate) model_identifiers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) rag_identifiers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) evaluator_model_identifiers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) custom_metrics_evaluator_model_identifiers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) inference_config_summary: ::std::option::Option<crate::types::EvaluationInferenceConfigSummary>,
     pub(crate) application_type: ::std::option::Option<crate::types::ApplicationType>,
 }
@@ -270,6 +279,26 @@ impl EvaluationSummaryBuilder {
     pub fn get_evaluator_model_identifiers(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.evaluator_model_identifiers
     }
+    /// Appends an item to `custom_metrics_evaluator_model_identifiers`.
+    ///
+    /// To override the contents of this collection use [`set_custom_metrics_evaluator_model_identifiers`](Self::set_custom_metrics_evaluator_model_identifiers).
+    ///
+    /// <p>The Amazon Resource Names (ARNs) of the models used to compute custom metrics in an Amazon Bedrock evaluation job.</p>
+    pub fn custom_metrics_evaluator_model_identifiers(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.custom_metrics_evaluator_model_identifiers.unwrap_or_default();
+        v.push(input.into());
+        self.custom_metrics_evaluator_model_identifiers = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The Amazon Resource Names (ARNs) of the models used to compute custom metrics in an Amazon Bedrock evaluation job.</p>
+    pub fn set_custom_metrics_evaluator_model_identifiers(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.custom_metrics_evaluator_model_identifiers = input;
+        self
+    }
+    /// <p>The Amazon Resource Names (ARNs) of the models used to compute custom metrics in an Amazon Bedrock evaluation job.</p>
+    pub fn get_custom_metrics_evaluator_model_identifiers(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.custom_metrics_evaluator_model_identifiers
+    }
     /// <p>Identifies the models, Knowledge Bases, or other RAG sources evaluated in a model or Knowledge Base evaluation job.</p>
     pub fn inference_config_summary(mut self, input: crate::types::EvaluationInferenceConfigSummary) -> Self {
         self.inference_config_summary = ::std::option::Option::Some(input);
@@ -347,6 +376,7 @@ impl EvaluationSummaryBuilder {
             model_identifiers: self.model_identifiers.unwrap_or_default(),
             rag_identifiers: self.rag_identifiers,
             evaluator_model_identifiers: self.evaluator_model_identifiers,
+            custom_metrics_evaluator_model_identifiers: self.custom_metrics_evaluator_model_identifiers,
             inference_config_summary: self.inference_config_summary,
             application_type: self.application_type,
         })

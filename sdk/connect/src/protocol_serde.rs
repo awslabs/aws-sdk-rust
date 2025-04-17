@@ -1409,6 +1409,8 @@ pub(crate) mod shape_analytics_data_sets_result;
 
 pub(crate) mod shape_assign_contact_category_action_definition;
 
+pub(crate) mod shape_assign_sla_action_definition;
+
 pub(crate) mod shape_associated_contact_summary;
 
 pub(crate) mod shape_associated_queue_id_list;
@@ -1709,6 +1711,8 @@ pub(crate) mod shape_attachment_reference;
 
 pub(crate) mod shape_attribute_and_condition;
 
+pub(crate) mod shape_case_sla_configuration;
+
 pub(crate) mod shape_channel_to_count_map;
 
 pub(crate) mod shape_common_attribute_and_condition;
@@ -1916,6 +1920,8 @@ pub(crate) mod shape_real_time_contact_analysis_character_interval;
 pub(crate) mod shape_real_time_contact_analysis_points_of_interest;
 
 pub(crate) mod shape_real_time_contact_analysis_transcript_items_with_content;
+
+pub(crate) mod shape_sla_field_value_union_list;
 
 pub(crate) mod shape_threshold_collections;
 

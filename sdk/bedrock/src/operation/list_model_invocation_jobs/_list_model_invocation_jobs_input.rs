@@ -33,7 +33,7 @@ pub struct ListModelInvocationJobsInput {
     /// <li>
     /// <p>PartiallyCompleted – This job has partially completed. Not all of your records could be processed in time. View the output files in the output S3 location.</p></li>
     /// <li>
-    /// <p>Failed – This job has failed. Check the failure message for any further details. For further assistance, reach out to the <a href="https://console.aws.amazon.com/support/home/">Amazon Web Services Support Center</a>.</p></li>
+    /// <p>Failed – This job has failed. Check the failure message for any further details. For further assistance, reach out to the <a href="https://console.aws.amazon.com/support/home/">Amazon Web ServicesSupport Center</a>.</p></li>
     /// <li>
     /// <p>Stopped – This job was stopped by a user.</p></li>
     /// <li>
@@ -86,7 +86,7 @@ impl ListModelInvocationJobsInput {
     /// <li>
     /// <p>PartiallyCompleted – This job has partially completed. Not all of your records could be processed in time. View the output files in the output S3 location.</p></li>
     /// <li>
-    /// <p>Failed – This job has failed. Check the failure message for any further details. For further assistance, reach out to the <a href="https://console.aws.amazon.com/support/home/">Amazon Web Services Support Center</a>.</p></li>
+    /// <p>Failed – This job has failed. Check the failure message for any further details. For further assistance, reach out to the <a href="https://console.aws.amazon.com/support/home/">Amazon Web ServicesSupport Center</a>.</p></li>
     /// <li>
     /// <p>Stopped – This job was stopped by a user.</p></li>
     /// <li>
@@ -191,7 +191,7 @@ impl ListModelInvocationJobsInputBuilder {
     /// <li>
     /// <p>PartiallyCompleted – This job has partially completed. Not all of your records could be processed in time. View the output files in the output S3 location.</p></li>
     /// <li>
-    /// <p>Failed – This job has failed. Check the failure message for any further details. For further assistance, reach out to the <a href="https://console.aws.amazon.com/support/home/">Amazon Web Services Support Center</a>.</p></li>
+    /// <p>Failed – This job has failed. Check the failure message for any further details. For further assistance, reach out to the <a href="https://console.aws.amazon.com/support/home/">Amazon Web ServicesSupport Center</a>.</p></li>
     /// <li>
     /// <p>Stopped – This job was stopped by a user.</p></li>
     /// <li>
@@ -227,7 +227,7 @@ impl ListModelInvocationJobsInputBuilder {
     /// <li>
     /// <p>PartiallyCompleted – This job has partially completed. Not all of your records could be processed in time. View the output files in the output S3 location.</p></li>
     /// <li>
-    /// <p>Failed – This job has failed. Check the failure message for any further details. For further assistance, reach out to the <a href="https://console.aws.amazon.com/support/home/">Amazon Web Services Support Center</a>.</p></li>
+    /// <p>Failed – This job has failed. Check the failure message for any further details. For further assistance, reach out to the <a href="https://console.aws.amazon.com/support/home/">Amazon Web ServicesSupport Center</a>.</p></li>
     /// <li>
     /// <p>Stopped – This job was stopped by a user.</p></li>
     /// <li>
@@ -263,7 +263,7 @@ impl ListModelInvocationJobsInputBuilder {
     /// <li>
     /// <p>PartiallyCompleted – This job has partially completed. Not all of your records could be processed in time. View the output files in the output S3 location.</p></li>
     /// <li>
-    /// <p>Failed – This job has failed. Check the failure message for any further details. For further assistance, reach out to the <a href="https://console.aws.amazon.com/support/home/">Amazon Web Services Support Center</a>.</p></li>
+    /// <p>Failed – This job has failed. Check the failure message for any further details. For further assistance, reach out to the <a href="https://console.aws.amazon.com/support/home/">Amazon Web ServicesSupport Center</a>.</p></li>
     /// <li>
     /// <p>Stopped – This job was stopped by a user.</p></li>
     /// <li>

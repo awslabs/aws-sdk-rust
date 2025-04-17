@@ -327,6 +327,8 @@ pub(crate) mod shape_s3_access_point_configuration;
 
 pub(crate) mod shape_s3_bucket_acl_grant_configuration;
 
+pub(crate) mod shape_s3_express_directory_access_point_configuration;
+
 pub(crate) mod shape_s3_public_access_block_configuration;
 
 pub(crate) mod shape_unused_access_findings_statistics;
@@ -390,6 +392,8 @@ pub(crate) mod shape_resource_type_details;
 pub(crate) mod shape_s3_access_point_configurations_map;
 
 pub(crate) mod shape_s3_bucket_acl_grant_configurations_list;
+
+pub(crate) mod shape_s3_express_directory_access_point_configurations_map;
 
 pub(crate) mod shape_span;
 

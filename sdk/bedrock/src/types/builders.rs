@@ -185,6 +185,16 @@ pub use crate::types::_human_workflow_config::HumanWorkflowConfigBuilder;
 
 pub use crate::types::_automated_evaluation_config::AutomatedEvaluationConfigBuilder;
 
+pub use crate::types::_automated_evaluation_custom_metric_config::AutomatedEvaluationCustomMetricConfigBuilder;
+
+pub use crate::types::_custom_metric_evaluator_model_config::CustomMetricEvaluatorModelConfigBuilder;
+
+pub use crate::types::_custom_metric_bedrock_evaluator_model::CustomMetricBedrockEvaluatorModelBuilder;
+
+pub use crate::types::_custom_metric_definition::CustomMetricDefinitionBuilder;
+
+pub use crate::types::_rating_scale_item::RatingScaleItemBuilder;
+
 pub use crate::types::_bedrock_evaluator_model::BedrockEvaluatorModelBuilder;
 
 pub use crate::types::_batch_delete_evaluation_job_item::BatchDeleteEvaluationJobItemBuilder;

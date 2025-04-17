@@ -13,6 +13,7 @@
 /// # let actiontype = unimplemented!();
 /// match actiontype {
 ///     ActionType::AssignContactCategory => { /* ... */ },
+///     ActionType::AssignSla => { /* ... */ },
 ///     ActionType::CreateCase => { /* ... */ },
 ///     ActionType::CreateTask => { /* ... */ },
 ///     ActionType::EndAssociatedTasks => { /* ... */ },
@@ -51,6 +52,8 @@ pub enum ActionType {
     #[allow(missing_docs)] // documentation missing in model
     AssignContactCategory,
     #[allow(missing_docs)] // documentation missing in model
+    AssignSla,
+    #[allow(missing_docs)] // documentation missing in model
     CreateCase,
     #[allow(missing_docs)] // documentation missing in model
     CreateTask,
@@ -72,6 +75,7 @@ impl ::std::convert::From<&str> for ActionType {
     fn from(s: &str) -> Self {
         match s {
             "ASSIGN_CONTACT_CATEGORY" => ActionType::AssignContactCategory,
+            "ASSIGN_SLA" => ActionType::AssignSla,
             "CREATE_CASE" => ActionType::CreateCase,
             "CREATE_TASK" => ActionType::CreateTask,
             "END_ASSOCIATED_TASKS" => ActionType::EndAssociatedTasks,
@@ -95,6 +99,7 @@ impl ActionType {
     pub fn as_str(&self) -> &str {
         match self {
             ActionType::AssignContactCategory => "ASSIGN_CONTACT_CATEGORY",
+            ActionType::AssignSla => "ASSIGN_SLA",
             ActionType::CreateCase => "CREATE_CASE",
             ActionType::CreateTask => "CREATE_TASK",
             ActionType::EndAssociatedTasks => "END_ASSOCIATED_TASKS",
@@ -109,6 +114,7 @@ impl ActionType {
     pub const fn values() -> &'static [&'static str] {
         &[
             "ASSIGN_CONTACT_CATEGORY",
+            "ASSIGN_SLA",
             "CREATE_CASE",
             "CREATE_TASK",
             "END_ASSOCIATED_TASKS",
@@ -140,6 +146,7 @@ impl ::std::fmt::Display for ActionType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             ActionType::AssignContactCategory => write!(f, "ASSIGN_CONTACT_CATEGORY"),
+            ActionType::AssignSla => write!(f, "ASSIGN_SLA"),
             ActionType::CreateCase => write!(f, "CREATE_CASE"),
             ActionType::CreateTask => write!(f, "CREATE_TASK"),
             ActionType::EndAssociatedTasks => write!(f, "END_ASSOCIATED_TASKS"),

@@ -46,15 +46,18 @@ pub fn ser_create_workflow_input_input(
             ::aws_smithy_types::Number::NegInt((*var_14).into()),
         );
     }
-    if let Some(var_15) = &input.tags {
+    if let Some(var_15) = &input.storage_type {
+        object.key("storageType").string(var_15.as_str());
+    }
+    if let Some(var_16) = &input.tags {
         #[allow(unused_mut)]
-        let mut object_16 = object.key("tags").start_object();
-        for (key_17, value_18) in var_15 {
+        let mut object_17 = object.key("tags").start_object();
+        for (key_18, value_19) in var_16 {
             {
-                object_16.key(key_17.as_str()).string(value_18.as_str());
+                object_17.key(key_18.as_str()).string(value_19.as_str());
             }
         }
-        object_16.finish();
+        object_17.finish();
     }
     Ok(())
 }

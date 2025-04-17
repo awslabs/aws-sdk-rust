@@ -180,6 +180,8 @@ pub trait Waiters {
     fn wait_until_variant_store_deleted(&self) -> crate::waiters::variant_store_deleted::VariantStoreDeletedFluentBuilder;
     /// Wait until a workflow is active.
     fn wait_until_workflow_active(&self) -> crate::waiters::workflow_active::WorkflowActiveFluentBuilder;
+    /// Wait until a workflow version is active.
+    fn wait_until_workflow_version_active(&self) -> crate::waiters::workflow_version_active::WorkflowVersionActiveFluentBuilder;
 }
 impl Waiters for Client {
     fn wait_until_annotation_import_job_created(&self) -> crate::waiters::annotation_import_job_created::AnnotationImportJobCreatedFluentBuilder {
@@ -239,6 +241,9 @@ impl Waiters for Client {
     fn wait_until_workflow_active(&self) -> crate::waiters::workflow_active::WorkflowActiveFluentBuilder {
         crate::waiters::workflow_active::WorkflowActiveFluentBuilder::new(self.handle.clone())
     }
+    fn wait_until_workflow_version_active(&self) -> crate::waiters::workflow_version_active::WorkflowVersionActiveFluentBuilder {
+        crate::waiters::workflow_version_active::WorkflowVersionActiveFluentBuilder::new(self.handle.clone())
+    }
 }
 
 impl Client {
@@ -291,6 +296,8 @@ mod create_variant_store;
 
 mod create_workflow;
 
+mod create_workflow_version;
+
 /// Operation customization and supporting types.
 ///
 /// The underlying HTTP requests made during an operation can be customized
@@ -342,6 +349,8 @@ mod delete_variant_store;
 
 mod delete_workflow;
 
+mod delete_workflow_version;
+
 mod get_annotation_import_job;
 
 mod get_annotation_store;
@@ -386,6 +395,8 @@ mod get_variant_store;
 
 mod get_workflow;
 
+mod get_workflow_version;
+
 mod list_annotation_import_jobs;
 
 mod list_annotation_store_versions;
@@ -428,6 +439,8 @@ mod list_variant_import_jobs;
 
 mod list_variant_stores;
 
+mod list_workflow_versions;
+
 mod list_workflows;
 
 mod put_s3_access_policy;
@@ -463,5 +476,7 @@ mod update_sequence_store;
 mod update_variant_store;
 
 mod update_workflow;
+
+mod update_workflow_version;
 
 mod upload_read_set_part;

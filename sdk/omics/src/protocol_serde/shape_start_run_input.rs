@@ -70,5 +70,8 @@ pub fn ser_start_run_input_input(
     if let Some(var_21) = &input.workflow_type {
         object.key("workflowType").string(var_21.as_str());
     }
+    if let Some(var_22) = &input.workflow_version_name {
+        object.key("workflowVersionName").string(var_22.as_str());
+    }
     Ok(())
 }

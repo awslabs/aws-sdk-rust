@@ -237,6 +237,8 @@ mod describe_scraper;
 
 mod describe_workspace;
 
+mod describe_workspace_configuration;
+
 mod get_default_scraper_configuration;
 
 mod list_rule_groups_namespaces;
@@ -260,3 +262,5 @@ mod update_logging_configuration;
 mod update_scraper;
 
 mod update_workspace_alias;
+
+mod update_workspace_configuration;

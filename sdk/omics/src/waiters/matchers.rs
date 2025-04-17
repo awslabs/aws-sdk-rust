@@ -1878,3 +1878,107 @@ pub(crate) fn match_get_workflow_f9c483f08ce8cb218(
         })
         .unwrap_or_default()
 }
+
+/// Matcher union: {"output":{"path":"status","expected":"ACTIVE","comparator":"stringEquals"}}
+pub(crate) fn match_get_workflow_version_a0b9c099115634691(
+    _result: ::std::result::Result<
+        &crate::operation::get_workflow_version::GetWorkflowVersionOutput,
+        &crate::operation::get_workflow_version::GetWorkflowVersionError,
+    >,
+) -> bool {
+    fn path_traversal<'a>(
+        _output: &'a crate::operation::get_workflow_version::GetWorkflowVersionOutput,
+    ) -> ::std::option::Option<&'a crate::types::WorkflowStatus> {
+        let _fld_1 = _output.status.as_ref()?;
+        ::std::option::Option::Some(_fld_1)
+    }
+    _result
+        .as_ref()
+        .ok()
+        .and_then(|output| path_traversal(output))
+        .map(|value| {
+            let _tmp_2 = value.as_str();
+            let right = "ACTIVE";
+            let _cmp_1 = _tmp_2 == right;
+            _cmp_1
+        })
+        .unwrap_or_default()
+}
+
+/// Matcher union: {"output":{"path":"status","expected":"CREATING","comparator":"stringEquals"}}
+pub(crate) fn match_get_workflow_version_ab538ef2e7cb9d2b4(
+    _result: ::std::result::Result<
+        &crate::operation::get_workflow_version::GetWorkflowVersionOutput,
+        &crate::operation::get_workflow_version::GetWorkflowVersionError,
+    >,
+) -> bool {
+    fn path_traversal<'a>(
+        _output: &'a crate::operation::get_workflow_version::GetWorkflowVersionOutput,
+    ) -> ::std::option::Option<&'a crate::types::WorkflowStatus> {
+        let _fld_1 = _output.status.as_ref()?;
+        ::std::option::Option::Some(_fld_1)
+    }
+    _result
+        .as_ref()
+        .ok()
+        .and_then(|output| path_traversal(output))
+        .map(|value| {
+            let _tmp_2 = value.as_str();
+            let right = "CREATING";
+            let _cmp_1 = _tmp_2 == right;
+            _cmp_1
+        })
+        .unwrap_or_default()
+}
+
+/// Matcher union: {"output":{"path":"status","expected":"UPDATING","comparator":"stringEquals"}}
+pub(crate) fn match_get_workflow_version_45c85fb7765d90d16(
+    _result: ::std::result::Result<
+        &crate::operation::get_workflow_version::GetWorkflowVersionOutput,
+        &crate::operation::get_workflow_version::GetWorkflowVersionError,
+    >,
+) -> bool {
+    fn path_traversal<'a>(
+        _output: &'a crate::operation::get_workflow_version::GetWorkflowVersionOutput,
+    ) -> ::std::option::Option<&'a crate::types::WorkflowStatus> {
+        let _fld_1 = _output.status.as_ref()?;
+        ::std::option::Option::Some(_fld_1)
+    }
+    _result
+        .as_ref()
+        .ok()
+        .and_then(|output| path_traversal(output))
+        .map(|value| {
+            let _tmp_2 = value.as_str();
+            let right = "UPDATING";
+            let _cmp_1 = _tmp_2 == right;
+            _cmp_1
+        })
+        .unwrap_or_default()
+}
+
+/// Matcher union: {"output":{"path":"status","expected":"FAILED","comparator":"stringEquals"}}
+pub(crate) fn match_get_workflow_version_f9c483f08ce8cb218(
+    _result: ::std::result::Result<
+        &crate::operation::get_workflow_version::GetWorkflowVersionOutput,
+        &crate::operation::get_workflow_version::GetWorkflowVersionError,
+    >,
+) -> bool {
+    fn path_traversal<'a>(
+        _output: &'a crate::operation::get_workflow_version::GetWorkflowVersionOutput,
+    ) -> ::std::option::Option<&'a crate::types::WorkflowStatus> {
+        let _fld_1 = _output.status.as_ref()?;
+        ::std::option::Option::Some(_fld_1)
+    }
+    _result
+        .as_ref()
+        .ok()
+        .and_then(|output| path_traversal(output))
+        .map(|value| {
+            let _tmp_2 = value.as_str();
+            let right = "FAILED";
+            let _cmp_1 = _tmp_2 == right;
+            _cmp_1
+        })
+        .unwrap_or_default()
+}

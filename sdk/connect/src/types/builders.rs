@@ -51,13 +51,17 @@ pub use crate::types::_submit_auto_evaluation_action_definition::SubmitAutoEvalu
 
 pub use crate::types::_end_associated_tasks_action_definition::EndAssociatedTasksActionDefinitionBuilder;
 
-pub use crate::types::_update_case_action_definition::UpdateCaseActionDefinitionBuilder;
+pub use crate::types::_assign_sla_action_definition::AssignSlaActionDefinitionBuilder;
 
-pub use crate::types::_field_value::FieldValueBuilder;
+pub use crate::types::_case_sla_configuration::CaseSlaConfigurationBuilder;
 
 pub use crate::types::_field_value_union::FieldValueUnionBuilder;
 
 pub use crate::types::_empty_field_value::EmptyFieldValueBuilder;
+
+pub use crate::types::_update_case_action_definition::UpdateCaseActionDefinitionBuilder;
+
+pub use crate::types::_field_value::FieldValueBuilder;
 
 pub use crate::types::_create_case_action_definition::CreateCaseActionDefinitionBuilder;
 

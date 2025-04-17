@@ -75,13 +75,21 @@ pub use crate::types::_submit_auto_evaluation_action_definition::SubmitAutoEvalu
 
 pub use crate::types::_end_associated_tasks_action_definition::EndAssociatedTasksActionDefinition;
 
-pub use crate::types::_update_case_action_definition::UpdateCaseActionDefinition;
+pub use crate::types::_assign_sla_action_definition::AssignSlaActionDefinition;
 
-pub use crate::types::_field_value::FieldValue;
+pub use crate::types::_case_sla_configuration::CaseSlaConfiguration;
 
 pub use crate::types::_field_value_union::FieldValueUnion;
 
 pub use crate::types::_empty_field_value::EmptyFieldValue;
+
+pub use crate::types::_sla_type::SlaType;
+
+pub use crate::types::_sla_assignment_type::SlaAssignmentType;
+
+pub use crate::types::_update_case_action_definition::UpdateCaseActionDefinition;
+
+pub use crate::types::_field_value::FieldValue;
 
 pub use crate::types::_create_case_action_definition::CreateCaseActionDefinition;
 
@@ -963,6 +971,8 @@ mod _artifact_status;
 
 mod _assign_contact_category_action_definition;
 
+mod _assign_sla_action_definition;
+
 mod _associated_contact_summary;
 
 mod _attached_file;
@@ -996,6 +1006,8 @@ mod _available_number_summary;
 mod _behavior_type;
 
 mod _campaign;
+
+mod _case_sla_configuration;
 
 mod _channel;
 
@@ -1666,6 +1678,10 @@ mod _sign_in_distribution;
 mod _single_select_question_rule_category_automation;
 
 mod _single_select_question_rule_category_automation_condition;
+
+mod _sla_assignment_type;
+
+mod _sla_type;
 
 mod _sort;
 

@@ -301,6 +301,20 @@ pub use crate::types::_human_workflow_config::HumanWorkflowConfig;
 
 pub use crate::types::_automated_evaluation_config::AutomatedEvaluationConfig;
 
+pub use crate::types::_automated_evaluation_custom_metric_config::AutomatedEvaluationCustomMetricConfig;
+
+pub use crate::types::_custom_metric_evaluator_model_config::CustomMetricEvaluatorModelConfig;
+
+pub use crate::types::_custom_metric_bedrock_evaluator_model::CustomMetricBedrockEvaluatorModel;
+
+pub use crate::types::_automated_evaluation_custom_metric_source::AutomatedEvaluationCustomMetricSource;
+
+pub use crate::types::_custom_metric_definition::CustomMetricDefinition;
+
+pub use crate::types::_rating_scale_item::RatingScaleItem;
+
+pub use crate::types::_rating_scale_item_value::RatingScaleItemValue;
+
 pub use crate::types::_evaluator_model_config::EvaluatorModelConfig;
 
 pub use crate::types::_bedrock_evaluator_model::BedrockEvaluatorModel;
@@ -323,6 +337,10 @@ mod _application_type;
 
 mod _automated_evaluation_config;
 
+mod _automated_evaluation_custom_metric_config;
+
+mod _automated_evaluation_custom_metric_source;
+
 mod _batch_delete_evaluation_job_error;
 
 mod _batch_delete_evaluation_job_item;
@@ -334,6 +352,12 @@ mod _byte_content_doc;
 mod _cloud_watch_config;
 
 mod _commitment_duration;
+
+mod _custom_metric_bedrock_evaluator_model;
+
+mod _custom_metric_definition;
+
+mod _custom_metric_evaluator_model_config;
 
 mod _custom_model_summary;
 
@@ -584,6 +608,10 @@ mod _query_transformation_configuration;
 mod _query_transformation_type;
 
 mod _rag_config;
+
+mod _rating_scale_item;
+
+mod _rating_scale_item_value;
 
 mod _request_metadata_base_filters;
 

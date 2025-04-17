@@ -108,17 +108,17 @@ impl CreateMultiRegionClusterFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>A suffix to be added to the multi-Region cluster name.</p>
+    /// <p>A suffix to be added to the Multi-Region cluster name. Amazon MemoryDB automatically applies a prefix to the Multi-Region cluster Name when it is created. Each Amazon Region has its own prefix. For instance, a Multi-Region cluster Name created in the US-West-1 region will begin with "virxk", along with the suffix name you provide. The suffix guarantees uniqueness of the Multi-Region cluster name across multiple regions.</p>
     pub fn multi_region_cluster_name_suffix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.multi_region_cluster_name_suffix(input.into());
         self
     }
-    /// <p>A suffix to be added to the multi-Region cluster name.</p>
+    /// <p>A suffix to be added to the Multi-Region cluster name. Amazon MemoryDB automatically applies a prefix to the Multi-Region cluster Name when it is created. Each Amazon Region has its own prefix. For instance, a Multi-Region cluster Name created in the US-West-1 region will begin with "virxk", along with the suffix name you provide. The suffix guarantees uniqueness of the Multi-Region cluster name across multiple regions.</p>
     pub fn set_multi_region_cluster_name_suffix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_multi_region_cluster_name_suffix(input);
         self
     }
-    /// <p>A suffix to be added to the multi-Region cluster name.</p>
+    /// <p>A suffix to be added to the Multi-Region cluster name. Amazon MemoryDB automatically applies a prefix to the Multi-Region cluster Name when it is created. Each Amazon Region has its own prefix. For instance, a Multi-Region cluster Name created in the US-West-1 region will begin with "virxk", along with the suffix name you provide. The suffix guarantees uniqueness of the Multi-Region cluster name across multiple regions.</p>
     pub fn get_multi_region_cluster_name_suffix(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_multi_region_cluster_name_suffix()
     }

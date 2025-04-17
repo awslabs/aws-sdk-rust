@@ -46,6 +46,9 @@ pub mod describe_scraper;
 /// Types for the `DescribeWorkspace` operation.
 pub mod describe_workspace;
 
+/// Types for the `DescribeWorkspaceConfiguration` operation.
+pub mod describe_workspace_configuration;
+
 /// Types for the `GetDefaultScraperConfiguration` operation.
 pub mod get_default_scraper_configuration;
 
@@ -81,3 +84,6 @@ pub mod update_scraper;
 
 /// Types for the `UpdateWorkspaceAlias` operation.
 pub mod update_workspace_alias;
+
+/// Types for the `UpdateWorkspaceConfiguration` operation.
+pub mod update_workspace_configuration;

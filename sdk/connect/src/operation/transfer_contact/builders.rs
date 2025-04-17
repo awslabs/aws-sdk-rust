@@ -26,7 +26,7 @@ impl crate::operation::transfer_contact::builders::TransferContactInputBuilder {
 /// <p>Note the following requirements:</p>
 /// <ul>
 /// <li>
-/// <p>Transfer is supported for only <code>TASK</code> and <code>EMAIL</code> contacts.</p></li>
+/// <p>Transfer is only supported for <code>TASK</code> and <code>EMAIL</code> contacts.</p></li>
 /// <li>
 /// <p>Do not use both <code>QueueId</code> and <code>UserId</code> in the same call.</p></li>
 /// <li>

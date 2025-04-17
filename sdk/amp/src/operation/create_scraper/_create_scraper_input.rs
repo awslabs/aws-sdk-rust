@@ -12,7 +12,7 @@ pub struct CreateScraperInput {
     pub source: ::std::option::Option<crate::types::Source>,
     /// <p>The Amazon Managed Service for Prometheus workspace to send metrics to.</p>
     pub destination: ::std::option::Option<crate::types::Destination>,
-    /// <p>The scraper role configuration for the workspace.</p>
+    /// <p>Use this structure to enable cross-account access, so that you can use a target account to access Prometheus metrics from source accounts.</p>
     pub role_configuration: ::std::option::Option<crate::types::RoleConfiguration>,
     /// <p>(Optional) A unique, case-sensitive identifier that you can provide to ensure the idempotency of the request.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
@@ -36,7 +36,7 @@ impl CreateScraperInput {
     pub fn destination(&self) -> ::std::option::Option<&crate::types::Destination> {
         self.destination.as_ref()
     }
-    /// <p>The scraper role configuration for the workspace.</p>
+    /// <p>Use this structure to enable cross-account access, so that you can use a target account to access Prometheus metrics from source accounts.</p>
     pub fn role_configuration(&self) -> ::std::option::Option<&crate::types::RoleConfiguration> {
         self.role_configuration.as_ref()
     }
@@ -128,17 +128,17 @@ impl CreateScraperInputBuilder {
     pub fn get_destination(&self) -> &::std::option::Option<crate::types::Destination> {
         &self.destination
     }
-    /// <p>The scraper role configuration for the workspace.</p>
+    /// <p>Use this structure to enable cross-account access, so that you can use a target account to access Prometheus metrics from source accounts.</p>
     pub fn role_configuration(mut self, input: crate::types::RoleConfiguration) -> Self {
         self.role_configuration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The scraper role configuration for the workspace.</p>
+    /// <p>Use this structure to enable cross-account access, so that you can use a target account to access Prometheus metrics from source accounts.</p>
     pub fn set_role_configuration(mut self, input: ::std::option::Option<crate::types::RoleConfiguration>) -> Self {
         self.role_configuration = input;
         self
     }
-    /// <p>The scraper role configuration for the workspace.</p>
+    /// <p>Use this structure to enable cross-account access, so that you can use a target account to access Prometheus metrics from source accounts.</p>
     pub fn get_role_configuration(&self) -> &::std::option::Option<crate::types::RoleConfiguration> {
         &self.role_configuration
     }

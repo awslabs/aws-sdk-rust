@@ -199,6 +199,16 @@ pub(crate) fn reflens_list_variant_stores_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_workflow_versions_output_output_next_token(
+    input: &crate::operation::list_workflow_versions::ListWorkflowVersionsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_workflows_output_output_next_token(
     input: &crate::operation::list_workflows::ListWorkflowsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -388,6 +398,16 @@ pub(crate) fn lens_list_variant_stores_output_output_variant_stores(
     input: crate::operation::list_variant_stores::ListVariantStoresOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::VariantStoreItem>> {
     let input = match input.variant_stores {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_workflow_versions_output_output_items(
+    input: crate::operation::list_workflow_versions::ListWorkflowVersionsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::WorkflowVersionListItem>> {
+    let input = match input.items {
         ::std::option::Option::None => return ::std::option::Option::None,
         ::std::option::Option::Some(t) => t,
     };

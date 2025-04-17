@@ -11,7 +11,7 @@ pub struct GetRunTaskOutput {
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The task's CPU usage.</p>
     pub cpus: ::std::option::Option<i32>,
-    /// <p>Set to true if AWS HealthOmics found a matching entry in the run cache for this task.</p>
+    /// <p>Set to true if Amazon Web Services HealthOmics found a matching entry in the run cache for this task.</p>
     pub cache_hit: ::std::option::Option<bool>,
     /// <p>The S3 URI of the cache location.</p>
     pub cache_s3_uri: ::std::option::Option<::std::string::String>,
@@ -52,7 +52,7 @@ impl GetRunTaskOutput {
     pub fn cpus(&self) -> ::std::option::Option<i32> {
         self.cpus
     }
-    /// <p>Set to true if AWS HealthOmics found a matching entry in the run cache for this task.</p>
+    /// <p>Set to true if Amazon Web Services HealthOmics found a matching entry in the run cache for this task.</p>
     pub fn cache_hit(&self) -> ::std::option::Option<bool> {
         self.cache_hit
     }
@@ -187,17 +187,17 @@ impl GetRunTaskOutputBuilder {
     pub fn get_cpus(&self) -> &::std::option::Option<i32> {
         &self.cpus
     }
-    /// <p>Set to true if AWS HealthOmics found a matching entry in the run cache for this task.</p>
+    /// <p>Set to true if Amazon Web Services HealthOmics found a matching entry in the run cache for this task.</p>
     pub fn cache_hit(mut self, input: bool) -> Self {
         self.cache_hit = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Set to true if AWS HealthOmics found a matching entry in the run cache for this task.</p>
+    /// <p>Set to true if Amazon Web Services HealthOmics found a matching entry in the run cache for this task.</p>
     pub fn set_cache_hit(mut self, input: ::std::option::Option<bool>) -> Self {
         self.cache_hit = input;
         self
     }
-    /// <p>Set to true if AWS HealthOmics found a matching entry in the run cache for this task.</p>
+    /// <p>Set to true if Amazon Web Services HealthOmics found a matching entry in the run cache for this task.</p>
     pub fn get_cache_hit(&self) -> &::std::option::Option<bool> {
         &self.cache_hit
     }

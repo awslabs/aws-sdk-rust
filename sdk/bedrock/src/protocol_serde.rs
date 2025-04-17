@@ -421,6 +421,8 @@ pub(crate) mod shape_validator_metric;
 
 pub(crate) mod shape_validators;
 
+pub(crate) mod shape_automated_evaluation_custom_metric_config;
+
 pub(crate) mod shape_evaluation_bedrock_knowledge_base_identifiers;
 
 pub(crate) mod shape_evaluation_bedrock_model;
@@ -471,9 +473,15 @@ pub(crate) mod shape_request_metadata_filters;
 
 pub(crate) mod shape_teacher_model_config;
 
+pub(crate) mod shape_automated_evaluation_custom_metric_source;
+
+pub(crate) mod shape_automated_evaluation_custom_metrics;
+
 pub(crate) mod shape_bedrock_evaluator_model;
 
 pub(crate) mod shape_bedrock_evaluator_models;
+
+pub(crate) mod shape_custom_metric_evaluator_model_config;
 
 pub(crate) mod shape_evaluation_dataset;
 
@@ -501,6 +509,12 @@ pub(crate) mod shape_retrieve_and_generate_configuration;
 
 pub(crate) mod shape_retrieve_config;
 
+pub(crate) mod shape_custom_metric_bedrock_evaluator_model;
+
+pub(crate) mod shape_custom_metric_bedrock_evaluator_models;
+
+pub(crate) mod shape_custom_metric_definition;
+
 pub(crate) mod shape_evaluation_dataset_location;
 
 pub(crate) mod shape_evaluation_metric_names;
@@ -525,6 +539,8 @@ pub(crate) mod shape_knowledge_base_vector_search_configuration;
 
 pub(crate) mod shape_orchestration_configuration;
 
+pub(crate) mod shape_rating_scale_item;
+
 pub(crate) mod shape_byte_content_doc;
 
 pub(crate) mod shape_external_sources;
@@ -536,6 +552,10 @@ pub(crate) mod shape_kb_inference_config;
 pub(crate) mod shape_prompt_template;
 
 pub(crate) mod shape_query_transformation_configuration;
+
+pub(crate) mod shape_rating_scale;
+
+pub(crate) mod shape_rating_scale_item_value;
 
 pub(crate) mod shape_retrieval_filter;
 

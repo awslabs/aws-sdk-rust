@@ -67,6 +67,11 @@ where
                                 crate::protocol_serde::shape_evaluator_model_identifiers::de_evaluator_model_identifiers(tokens)?,
                             );
                         }
+                        "customMetricsEvaluatorModelIdentifiers" => {
+                            builder = builder.set_custom_metrics_evaluator_model_identifiers(
+                                crate::protocol_serde::shape_evaluator_model_identifiers::de_evaluator_model_identifiers(tokens)?,
+                            );
+                        }
                         "inferenceConfigSummary" => {
                             builder = builder.set_inference_config_summary(
                                 crate::protocol_serde::shape_evaluation_inference_config_summary::de_evaluation_inference_config_summary(tokens)?,

@@ -262,6 +262,13 @@ pub(crate) fn de_get_workflow(
                             .transpose()?,
                     );
                 }
+                "storageType" => {
+                    builder = builder.set_storage_type(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| crate::types::StorageType::from(u.as_ref())))
+                            .transpose()?,
+                    );
+                }
                 "tags" => {
                     builder = builder.set_tags(crate::protocol_serde::shape_tag_map::de_tag_map(tokens)?);
                 }
@@ -269,6 +276,13 @@ pub(crate) fn de_get_workflow(
                     builder = builder.set_type(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                             .map(|s| s.to_unescaped().map(|u| crate::types::WorkflowType::from(u.as_ref())))
+                            .transpose()?,
+                    );
+                }
+                "uuid" => {
+                    builder = builder.set_uuid(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                             .transpose()?,
                     );
                 }

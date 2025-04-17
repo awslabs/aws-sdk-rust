@@ -51,6 +51,9 @@ pub mod variant_store_deleted;
 /// Supporting types for the `workflow_active` waiter.
 pub mod workflow_active;
 
+/// Supporting types for the `workflow_version_active` waiter.
+pub mod workflow_version_active;
+
 #[allow(clippy::needless_lifetimes)]
 #[allow(clippy::let_and_return)]
 pub(crate) mod matchers;

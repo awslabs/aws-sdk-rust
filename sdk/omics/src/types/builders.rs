@@ -3,6 +3,8 @@ pub use crate::types::_workflow_parameter::WorkflowParameterBuilder;
 
 pub use crate::types::_workflow_list_item::WorkflowListItemBuilder;
 
+pub use crate::types::_workflow_version_list_item::WorkflowVersionListItemBuilder;
+
 pub use crate::types::_sse_config::SseConfigBuilder;
 
 pub use crate::types::_variant_store_item::VariantStoreItemBuilder;

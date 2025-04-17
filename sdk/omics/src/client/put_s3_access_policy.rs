@@ -7,7 +7,7 @@ impl super::Client {
     ///   - [`s3_access_policy(impl Into<String>)`](crate::operation::put_s3_access_policy::builders::PutS3AccessPolicyFluentBuilder::s3_access_policy) / [`set_s3_access_policy(Option<String>)`](crate::operation::put_s3_access_policy::builders::PutS3AccessPolicyFluentBuilder::set_s3_access_policy):<br>required: **true**<br><p>The resource policy that controls S3 access to the store.</p><br>
     /// - On success, responds with [`PutS3AccessPolicyOutput`](crate::operation::put_s3_access_policy::PutS3AccessPolicyOutput) with field(s):
     ///   - [`s3_access_point_arn(Option<String>)`](crate::operation::put_s3_access_policy::PutS3AccessPolicyOutput::s3_access_point_arn): <p>The S3 access point ARN that now has the access policy.</p>
-    ///   - [`store_id(Option<String>)`](crate::operation::put_s3_access_policy::PutS3AccessPolicyOutput::store_id): <p>The AWS-generated Sequence Store or Reference Store ID.</p>
+    ///   - [`store_id(Option<String>)`](crate::operation::put_s3_access_policy::PutS3AccessPolicyOutput::store_id): <p>The Amazon Web Services-generated Sequence Store or Reference Store ID.</p>
     ///   - [`store_type(Option<StoreType>)`](crate::operation::put_s3_access_policy::PutS3AccessPolicyOutput::store_type): <p>The type of store associated with the access point.</p>
     /// - On failure, responds with [`SdkError<PutS3AccessPolicyError>`](crate::operation::put_s3_access_policy::PutS3AccessPolicyError)
     pub fn put_s3_access_policy(&self) -> crate::operation::put_s3_access_policy::builders::PutS3AccessPolicyFluentBuilder {

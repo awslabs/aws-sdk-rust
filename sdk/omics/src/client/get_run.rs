@@ -10,7 +10,7 @@ impl super::Client {
     ///   - [`id(Option<String>)`](crate::operation::get_run::GetRunOutput::id): <p>The run's ID.</p>
     ///   - [`cache_id(Option<String>)`](crate::operation::get_run::GetRunOutput::cache_id): <p>The run cache associated with the run.</p>
     ///   - [`cache_behavior(Option<CacheBehavior>)`](crate::operation::get_run::GetRunOutput::cache_behavior): <p>The run cache behavior for the run.</p>
-    ///   - [`engine_version(Option<String>)`](crate::operation::get_run::GetRunOutput::engine_version): <p>The workflow engine version.</p>
+    ///   - [`engine_version(Option<String>)`](crate::operation::get_run::GetRunOutput::engine_version): <p>The actual Nextflow engine version that Amazon Web Services HealthOmics used for the run. The other workflow definition languages don't provide a value for this field.</p>
     ///   - [`status(Option<RunStatus>)`](crate::operation::get_run::GetRunOutput::status): <p>The run's status.</p>
     ///   - [`workflow_id(Option<String>)`](crate::operation::get_run::GetRunOutput::workflow_id): <p>The run's workflow ID.</p>
     ///   - [`workflow_type(Option<WorkflowType>)`](crate::operation::get_run::GetRunOutput::workflow_type): <p>The run's workflow type.</p>
@@ -40,6 +40,8 @@ impl super::Client {
     ///   - [`run_output_uri(Option<String>)`](crate::operation::get_run::GetRunOutput::run_output_uri): <p>The destination for workflow outputs.</p>
     ///   - [`storage_type(Option<StorageType>)`](crate::operation::get_run::GetRunOutput::storage_type): <p>The run's storage type.</p>
     ///   - [`workflow_owner_id(Option<String>)`](crate::operation::get_run::GetRunOutput::workflow_owner_id): <p>The ID of the workflow owner.</p>
+    ///   - [`workflow_version_name(Option<String>)`](crate::operation::get_run::GetRunOutput::workflow_version_name): <p>The workflow version name.</p>
+    ///   - [`workflow_uuid(Option<String>)`](crate::operation::get_run::GetRunOutput::workflow_uuid): <p>The universally unique identifier (UUID) value for the workflow.</p>
     /// - On failure, responds with [`SdkError<GetRunError>`](crate::operation::get_run::GetRunError)
     pub fn get_run(&self) -> crate::operation::get_run::builders::GetRunFluentBuilder {
         crate::operation::get_run::builders::GetRunFluentBuilder::new(self.handle.clone())

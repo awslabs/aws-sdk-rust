@@ -29,7 +29,7 @@ pub struct ScraperDescription {
     pub source: ::std::option::Option<crate::types::Source>,
     /// <p>The Amazon Managed Service for Prometheus workspace the scraper sends metrics to.</p>
     pub destination: ::std::option::Option<crate::types::Destination>,
-    /// <p>To configure roles that allows users to write to an Amazon Managed Service for Prometheus workspace in a different account.</p>
+    /// <p>This structure displays information about the IAM roles used for cross-account scraping configuration.</p>
     pub role_configuration: ::std::option::Option<crate::types::RoleConfiguration>,
 }
 impl ScraperDescription {
@@ -85,7 +85,7 @@ impl ScraperDescription {
     pub fn destination(&self) -> ::std::option::Option<&crate::types::Destination> {
         self.destination.as_ref()
     }
-    /// <p>To configure roles that allows users to write to an Amazon Managed Service for Prometheus workspace in a different account.</p>
+    /// <p>This structure displays information about the IAM roles used for cross-account scraping configuration.</p>
     pub fn role_configuration(&self) -> ::std::option::Option<&crate::types::RoleConfiguration> {
         self.role_configuration.as_ref()
     }
@@ -302,17 +302,17 @@ impl ScraperDescriptionBuilder {
     pub fn get_destination(&self) -> &::std::option::Option<crate::types::Destination> {
         &self.destination
     }
-    /// <p>To configure roles that allows users to write to an Amazon Managed Service for Prometheus workspace in a different account.</p>
+    /// <p>This structure displays information about the IAM roles used for cross-account scraping configuration.</p>
     pub fn role_configuration(mut self, input: crate::types::RoleConfiguration) -> Self {
         self.role_configuration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>To configure roles that allows users to write to an Amazon Managed Service for Prometheus workspace in a different account.</p>
+    /// <p>This structure displays information about the IAM roles used for cross-account scraping configuration.</p>
     pub fn set_role_configuration(mut self, input: ::std::option::Option<crate::types::RoleConfiguration>) -> Self {
         self.role_configuration = input;
         self
     }
-    /// <p>To configure roles that allows users to write to an Amazon Managed Service for Prometheus workspace in a different account.</p>
+    /// <p>This structure displays information about the IAM roles used for cross-account scraping configuration.</p>
     pub fn get_role_configuration(&self) -> &::std::option::Option<crate::types::RoleConfiguration> {
         &self.role_configuration
     }

@@ -7,7 +7,7 @@ pub struct CreateContactInput {
     pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
-    /// <p>The unique identifier for an Amazon Connect contact. This identifier is related to the contact starting.</p>
+    /// <p>The identifier of the contact in this instance of Amazon Connect.</p>
     pub related_contact_id: ::std::option::Option<::std::string::String>,
     /// <p>A custom key-value pair using an attribute map. The attributes are standard Amazon Connect attributes, and can be accessed in flows just like any other contact attributes.</p>
     /// <p>There can be up to 32,768 UTF-8 bytes across all key-value pairs per contact. Attribute keys can include only alphanumeric, dash, and underscore characters.</p>
@@ -15,11 +15,18 @@ pub struct CreateContactInput {
     /// <p>A formatted URL that is shown to an agent in the Contact Control Panel (CCP). Tasks can have the following reference types at the time of creation: URL | NUMBER | STRING | DATE | EMAIL | ATTACHMENT.</p>
     pub references: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::Reference>>,
     /// <p>The channel for the contact</p><important>
-    /// <p>CreateContact only supports the EMAIL channel. The following information that states other channels are supported is incorrect. We are working to update this topic.</p>
+    /// <p>CreateContact only supports the EMAIL and VOICE channels. The following information that states other channels are supported is incorrect. We are working to update this topic.</p>
     /// </important>
     pub channel: ::std::option::Option<crate::types::Channel>,
     /// <p>Indicates how the contact was initiated.</p><important>
-    /// <p>CreateContact only supports the following initiation methods: OUTBOUND, AGENT_REPLY, and FLOW. The following information that states other initiation methods are supported is incorrect. We are working to update this topic.</p>
+    /// <p>CreateContact only supports the following initiation methods:</p>
+    /// <ul>
+    /// <li>
+    /// <p>For EMAIL: OUTBOUND, AGENT_REPLY, and FLOW.</p></li>
+    /// <li>
+    /// <p>For VOICE: TRANSFER and the subtype connect:ExternalAudio.</p></li>
+    /// </ul>
+    /// <p>The following information that states other initiation methods are supported is incorrect. We are working to update this topic.</p>
     /// </important>
     pub initiation_method: ::std::option::Option<crate::types::ContactInitiationMethod>,
     /// <p>Number of minutes the contact will be active for before expiring</p>
@@ -50,7 +57,7 @@ impl CreateContactInput {
     pub fn client_token(&self) -> ::std::option::Option<&str> {
         self.client_token.as_deref()
     }
-    /// <p>The unique identifier for an Amazon Connect contact. This identifier is related to the contact starting.</p>
+    /// <p>The identifier of the contact in this instance of Amazon Connect.</p>
     pub fn related_contact_id(&self) -> ::std::option::Option<&str> {
         self.related_contact_id.as_deref()
     }
@@ -64,13 +71,20 @@ impl CreateContactInput {
         self.references.as_ref()
     }
     /// <p>The channel for the contact</p><important>
-    /// <p>CreateContact only supports the EMAIL channel. The following information that states other channels are supported is incorrect. We are working to update this topic.</p>
+    /// <p>CreateContact only supports the EMAIL and VOICE channels. The following information that states other channels are supported is incorrect. We are working to update this topic.</p>
     /// </important>
     pub fn channel(&self) -> ::std::option::Option<&crate::types::Channel> {
         self.channel.as_ref()
     }
     /// <p>Indicates how the contact was initiated.</p><important>
-    /// <p>CreateContact only supports the following initiation methods: OUTBOUND, AGENT_REPLY, and FLOW. The following information that states other initiation methods are supported is incorrect. We are working to update this topic.</p>
+    /// <p>CreateContact only supports the following initiation methods:</p>
+    /// <ul>
+    /// <li>
+    /// <p>For EMAIL: OUTBOUND, AGENT_REPLY, and FLOW.</p></li>
+    /// <li>
+    /// <p>For VOICE: TRANSFER and the subtype connect:ExternalAudio.</p></li>
+    /// </ul>
+    /// <p>The following information that states other initiation methods are supported is incorrect. We are working to update this topic.</p>
     /// </important>
     pub fn initiation_method(&self) -> ::std::option::Option<&crate::types::ContactInitiationMethod> {
         self.initiation_method.as_ref()
@@ -186,17 +200,17 @@ impl CreateContactInputBuilder {
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }
-    /// <p>The unique identifier for an Amazon Connect contact. This identifier is related to the contact starting.</p>
+    /// <p>The identifier of the contact in this instance of Amazon Connect.</p>
     pub fn related_contact_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.related_contact_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The unique identifier for an Amazon Connect contact. This identifier is related to the contact starting.</p>
+    /// <p>The identifier of the contact in this instance of Amazon Connect.</p>
     pub fn set_related_contact_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.related_contact_id = input;
         self
     }
-    /// <p>The unique identifier for an Amazon Connect contact. This identifier is related to the contact starting.</p>
+    /// <p>The identifier of the contact in this instance of Amazon Connect.</p>
     pub fn get_related_contact_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.related_contact_id
     }
@@ -247,7 +261,7 @@ impl CreateContactInputBuilder {
         &self.references
     }
     /// <p>The channel for the contact</p><important>
-    /// <p>CreateContact only supports the EMAIL channel. The following information that states other channels are supported is incorrect. We are working to update this topic.</p>
+    /// <p>CreateContact only supports the EMAIL and VOICE channels. The following information that states other channels are supported is incorrect. We are working to update this topic.</p>
     /// </important>
     /// This field is required.
     pub fn channel(mut self, input: crate::types::Channel) -> Self {
@@ -255,20 +269,27 @@ impl CreateContactInputBuilder {
         self
     }
     /// <p>The channel for the contact</p><important>
-    /// <p>CreateContact only supports the EMAIL channel. The following information that states other channels are supported is incorrect. We are working to update this topic.</p>
+    /// <p>CreateContact only supports the EMAIL and VOICE channels. The following information that states other channels are supported is incorrect. We are working to update this topic.</p>
     /// </important>
     pub fn set_channel(mut self, input: ::std::option::Option<crate::types::Channel>) -> Self {
         self.channel = input;
         self
     }
     /// <p>The channel for the contact</p><important>
-    /// <p>CreateContact only supports the EMAIL channel. The following information that states other channels are supported is incorrect. We are working to update this topic.</p>
+    /// <p>CreateContact only supports the EMAIL and VOICE channels. The following information that states other channels are supported is incorrect. We are working to update this topic.</p>
     /// </important>
     pub fn get_channel(&self) -> &::std::option::Option<crate::types::Channel> {
         &self.channel
     }
     /// <p>Indicates how the contact was initiated.</p><important>
-    /// <p>CreateContact only supports the following initiation methods: OUTBOUND, AGENT_REPLY, and FLOW. The following information that states other initiation methods are supported is incorrect. We are working to update this topic.</p>
+    /// <p>CreateContact only supports the following initiation methods:</p>
+    /// <ul>
+    /// <li>
+    /// <p>For EMAIL: OUTBOUND, AGENT_REPLY, and FLOW.</p></li>
+    /// <li>
+    /// <p>For VOICE: TRANSFER and the subtype connect:ExternalAudio.</p></li>
+    /// </ul>
+    /// <p>The following information that states other initiation methods are supported is incorrect. We are working to update this topic.</p>
     /// </important>
     /// This field is required.
     pub fn initiation_method(mut self, input: crate::types::ContactInitiationMethod) -> Self {
@@ -276,14 +297,28 @@ impl CreateContactInputBuilder {
         self
     }
     /// <p>Indicates how the contact was initiated.</p><important>
-    /// <p>CreateContact only supports the following initiation methods: OUTBOUND, AGENT_REPLY, and FLOW. The following information that states other initiation methods are supported is incorrect. We are working to update this topic.</p>
+    /// <p>CreateContact only supports the following initiation methods:</p>
+    /// <ul>
+    /// <li>
+    /// <p>For EMAIL: OUTBOUND, AGENT_REPLY, and FLOW.</p></li>
+    /// <li>
+    /// <p>For VOICE: TRANSFER and the subtype connect:ExternalAudio.</p></li>
+    /// </ul>
+    /// <p>The following information that states other initiation methods are supported is incorrect. We are working to update this topic.</p>
     /// </important>
     pub fn set_initiation_method(mut self, input: ::std::option::Option<crate::types::ContactInitiationMethod>) -> Self {
         self.initiation_method = input;
         self
     }
     /// <p>Indicates how the contact was initiated.</p><important>
-    /// <p>CreateContact only supports the following initiation methods: OUTBOUND, AGENT_REPLY, and FLOW. The following information that states other initiation methods are supported is incorrect. We are working to update this topic.</p>
+    /// <p>CreateContact only supports the following initiation methods:</p>
+    /// <ul>
+    /// <li>
+    /// <p>For EMAIL: OUTBOUND, AGENT_REPLY, and FLOW.</p></li>
+    /// <li>
+    /// <p>For VOICE: TRANSFER and the subtype connect:ExternalAudio.</p></li>
+    /// </ul>
+    /// <p>The following information that states other initiation methods are supported is incorrect. We are working to update this topic.</p>
     /// </important>
     pub fn get_initiation_method(&self) -> &::std::option::Option<crate::types::ContactInitiationMethod> {
         &self.initiation_method

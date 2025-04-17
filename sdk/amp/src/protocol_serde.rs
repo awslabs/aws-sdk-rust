@@ -53,6 +53,8 @@ pub(crate) mod shape_describe_scraper;
 
 pub(crate) mod shape_describe_workspace;
 
+pub(crate) mod shape_describe_workspace_configuration;
+
 pub(crate) mod shape_get_default_scraper_configuration;
 
 pub(crate) mod shape_list_rule_groups_namespaces;
@@ -76,6 +78,8 @@ pub(crate) mod shape_update_logging_configuration;
 pub(crate) mod shape_update_scraper;
 
 pub(crate) mod shape_update_workspace_alias;
+
+pub(crate) mod shape_update_workspace_configuration;
 
 pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
     if data.is_empty() {
@@ -119,6 +123,8 @@ pub(crate) mod shape_update_scraper_input;
 
 pub(crate) mod shape_update_workspace_alias_input;
 
+pub(crate) mod shape_update_workspace_configuration_input;
+
 pub(crate) mod shape_validation_exception;
 
 pub(crate) mod shape_alert_manager_definition_description;
@@ -126,6 +132,8 @@ pub(crate) mod shape_alert_manager_definition_description;
 pub(crate) mod shape_alert_manager_definition_status;
 
 pub(crate) mod shape_destination;
+
+pub(crate) mod shape_limits_per_label_set;
 
 pub(crate) mod shape_logging_configuration_metadata;
 
@@ -153,6 +161,10 @@ pub(crate) mod shape_tag_map;
 
 pub(crate) mod shape_validation_exception_field_list;
 
+pub(crate) mod shape_workspace_configuration_description;
+
+pub(crate) mod shape_workspace_configuration_status;
+
 pub(crate) mod shape_workspace_description;
 
 pub(crate) mod shape_workspace_status;
@@ -163,6 +175,10 @@ pub(crate) mod shape_amp_configuration;
 
 pub(crate) mod shape_eks_configuration;
 
+pub(crate) mod shape_limits_per_label_set_entry;
+
+pub(crate) mod shape_limits_per_label_set_list;
+
 pub(crate) mod shape_rule_groups_namespace_summary;
 
 pub(crate) mod shape_scraper_summary;
@@ -170,6 +186,8 @@ pub(crate) mod shape_scraper_summary;
 pub(crate) mod shape_validation_exception_field;
 
 pub(crate) mod shape_workspace_summary;
+
+pub(crate) mod shape_label_set;
 
 pub(crate) mod shape_security_group_ids;
 

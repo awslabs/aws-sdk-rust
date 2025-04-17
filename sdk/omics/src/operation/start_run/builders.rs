@@ -22,10 +22,10 @@ impl crate::operation::start_run::builders::StartRunInputBuilder {
 }
 /// Fluent builder constructing a request to `StartRun`.
 ///
-/// <p>Starts a workflow run. To duplicate a run, specify the run's ID and a role ARN. The remaining parameters are copied from the previous run.</p>
-/// <p>StartRun will not support re-run for a workflow that is shared with you.</p>
-/// <p>HealthOmics stores a fixed number of runs that are available to the console and API. By default, HealthOmics doesn't any remove any runs. If HealthOmics reaches the maximum number of runs, you must manually remove runs. To have older runs removed automatically, set the retention mode to <code>REMOVE</code>.</p>
-/// <p>By default, the run uses STATIC storage. For STATIC storage, set the <code>storageCapacity</code> field. You can set the storage type to DYNAMIC. You do not set <code>storageCapacity</code>, because HealthOmics dynamically scales the storage up or down as required. For more information about static and dynamic storage, see <a href="https://docs.aws.amazon.com/omics/latest/dev/Using-workflows.html">Running workflows</a> in the <i>AWS HealthOmics User Guide</i>.</p>
+/// <p>Starts a new run or duplicates an existing run.</p>
+/// <p>For a new run, specify a unique <code>requestId</code>, the <code>workflowId</code>, and a role ARN. If you're using static run storage (the default), specify the required <code>storageCapacity</code>.</p>
+/// <p>You duplicate a run by specifing a unique <code>requestId</code>, the <code>runID</code> of the run to duplicate, and a role ARN.</p>
+/// <p>For more information about the optional parameters in the StartRun request, see <a href="https://docs.aws.amazon.com/omics/latest/dev/starting-a-run.html">Starting a run</a> in the <i>Amazon Web Services HealthOmics User Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StartRunFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -186,17 +186,17 @@ impl StartRunFluentBuilder {
     pub fn get_cache_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_cache_id()
     }
-    /// <p>The cache behavior for the run. You specify this value if you want to override the default behavior for the cache. You had set the default value when you created the cache. For more information, see <a href="https://docs.aws.amazon.com/omics/latest/dev/how-run-cache.html#run-cache-behavior">Run cache behavior</a> in the AWS HealthOmics User Guide.</p>
+    /// <p>The cache behavior for the run. You specify this value if you want to override the default behavior for the cache. You had set the default value when you created the cache. For more information, see <a href="https://docs.aws.amazon.com/omics/latest/dev/how-run-cache.html#run-cache-behavior">Run cache behavior</a> in the Amazon Web Services HealthOmics User Guide.</p>
     pub fn cache_behavior(mut self, input: crate::types::CacheBehavior) -> Self {
         self.inner = self.inner.cache_behavior(input);
         self
     }
-    /// <p>The cache behavior for the run. You specify this value if you want to override the default behavior for the cache. You had set the default value when you created the cache. For more information, see <a href="https://docs.aws.amazon.com/omics/latest/dev/how-run-cache.html#run-cache-behavior">Run cache behavior</a> in the AWS HealthOmics User Guide.</p>
+    /// <p>The cache behavior for the run. You specify this value if you want to override the default behavior for the cache. You had set the default value when you created the cache. For more information, see <a href="https://docs.aws.amazon.com/omics/latest/dev/how-run-cache.html#run-cache-behavior">Run cache behavior</a> in the Amazon Web Services HealthOmics User Guide.</p>
     pub fn set_cache_behavior(mut self, input: ::std::option::Option<crate::types::CacheBehavior>) -> Self {
         self.inner = self.inner.set_cache_behavior(input);
         self
     }
-    /// <p>The cache behavior for the run. You specify this value if you want to override the default behavior for the cache. You had set the default value when you created the cache. For more information, see <a href="https://docs.aws.amazon.com/omics/latest/dev/how-run-cache.html#run-cache-behavior">Run cache behavior</a> in the AWS HealthOmics User Guide.</p>
+    /// <p>The cache behavior for the run. You specify this value if you want to override the default behavior for the cache. You had set the default value when you created the cache. For more information, see <a href="https://docs.aws.amazon.com/omics/latest/dev/how-run-cache.html#run-cache-behavior">Run cache behavior</a> in the Amazon Web Services HealthOmics User Guide.</p>
     pub fn get_cache_behavior(&self) -> &::std::option::Option<crate::types::CacheBehavior> {
         self.inner.get_cache_behavior()
     }
@@ -242,17 +242,17 @@ impl StartRunFluentBuilder {
     pub fn get_parameters(&self) -> &::std::option::Option<::aws_smithy_types::Document> {
         self.inner.get_parameters()
     }
-    /// <p>A storage capacity for the run in gibibytes. This field is not required if the storage type is dynamic (the system ignores any value that you enter).</p>
+    /// <p>The static storage capacity (in gibibytes) for this run. This field is not required if the storage type is dynamic (the system ignores any value that you enter).</p>
     pub fn storage_capacity(mut self, input: i32) -> Self {
         self.inner = self.inner.storage_capacity(input);
         self
     }
-    /// <p>A storage capacity for the run in gibibytes. This field is not required if the storage type is dynamic (the system ignores any value that you enter).</p>
+    /// <p>The static storage capacity (in gibibytes) for this run. This field is not required if the storage type is dynamic (the system ignores any value that you enter).</p>
     pub fn set_storage_capacity(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_storage_capacity(input);
         self
     }
-    /// <p>A storage capacity for the run in gibibytes. This field is not required if the storage type is dynamic (the system ignores any value that you enter).</p>
+    /// <p>The static storage capacity (in gibibytes) for this run. This field is not required if the storage type is dynamic (the system ignores any value that you enter).</p>
     pub fn get_storage_capacity(&self) -> &::std::option::Option<i32> {
         self.inner.get_storage_capacity()
     }
@@ -318,36 +318,36 @@ impl StartRunFluentBuilder {
         self.inner.get_request_id()
     }
     /// <p>The retention mode for the run. The default value is RETAIN.</p>
-    /// <p>HealthOmics stores a fixed number of runs that are available to the console and API. In the default mode (RETAIN), you need to remove runs manually when the number of run exceeds the maximum. If you set the retention mode to <code>REMOVE</code>, HealthOmics automatically removes runs (that have mode set to REMOVE) when the number of run exceeds the maximum. All run logs are available in CloudWatch logs, if you need information about a run that is no longer available to the API.</p>
-    /// <p>For more information about retention mode, see <a href="https://docs.aws.amazon.com/omics/latest/dev/starting-a-run.html">Specifying run retention mode</a> in the <i>AWS HealthOmics User Guide</i>.</p>
+    /// <p>Amazon Web Services HealthOmics stores a fixed number of runs that are available to the console and API. In the default mode (RETAIN), you need to remove runs manually when the number of run exceeds the maximum. If you set the retention mode to <code>REMOVE</code>, Amazon Web Services HealthOmics automatically removes runs (that have mode set to REMOVE) when the number of run exceeds the maximum. All run logs are available in CloudWatch logs, if you need information about a run that is no longer available to the API.</p>
+    /// <p>For more information about retention mode, see <a href="https://docs.aws.amazon.com/omics/latest/dev/starting-a-run.html">Specifying run retention mode</a> in the <i>Amazon Web Services HealthOmics User Guide</i>.</p>
     pub fn retention_mode(mut self, input: crate::types::RunRetentionMode) -> Self {
         self.inner = self.inner.retention_mode(input);
         self
     }
     /// <p>The retention mode for the run. The default value is RETAIN.</p>
-    /// <p>HealthOmics stores a fixed number of runs that are available to the console and API. In the default mode (RETAIN), you need to remove runs manually when the number of run exceeds the maximum. If you set the retention mode to <code>REMOVE</code>, HealthOmics automatically removes runs (that have mode set to REMOVE) when the number of run exceeds the maximum. All run logs are available in CloudWatch logs, if you need information about a run that is no longer available to the API.</p>
-    /// <p>For more information about retention mode, see <a href="https://docs.aws.amazon.com/omics/latest/dev/starting-a-run.html">Specifying run retention mode</a> in the <i>AWS HealthOmics User Guide</i>.</p>
+    /// <p>Amazon Web Services HealthOmics stores a fixed number of runs that are available to the console and API. In the default mode (RETAIN), you need to remove runs manually when the number of run exceeds the maximum. If you set the retention mode to <code>REMOVE</code>, Amazon Web Services HealthOmics automatically removes runs (that have mode set to REMOVE) when the number of run exceeds the maximum. All run logs are available in CloudWatch logs, if you need information about a run that is no longer available to the API.</p>
+    /// <p>For more information about retention mode, see <a href="https://docs.aws.amazon.com/omics/latest/dev/starting-a-run.html">Specifying run retention mode</a> in the <i>Amazon Web Services HealthOmics User Guide</i>.</p>
     pub fn set_retention_mode(mut self, input: ::std::option::Option<crate::types::RunRetentionMode>) -> Self {
         self.inner = self.inner.set_retention_mode(input);
         self
     }
     /// <p>The retention mode for the run. The default value is RETAIN.</p>
-    /// <p>HealthOmics stores a fixed number of runs that are available to the console and API. In the default mode (RETAIN), you need to remove runs manually when the number of run exceeds the maximum. If you set the retention mode to <code>REMOVE</code>, HealthOmics automatically removes runs (that have mode set to REMOVE) when the number of run exceeds the maximum. All run logs are available in CloudWatch logs, if you need information about a run that is no longer available to the API.</p>
-    /// <p>For more information about retention mode, see <a href="https://docs.aws.amazon.com/omics/latest/dev/starting-a-run.html">Specifying run retention mode</a> in the <i>AWS HealthOmics User Guide</i>.</p>
+    /// <p>Amazon Web Services HealthOmics stores a fixed number of runs that are available to the console and API. In the default mode (RETAIN), you need to remove runs manually when the number of run exceeds the maximum. If you set the retention mode to <code>REMOVE</code>, Amazon Web Services HealthOmics automatically removes runs (that have mode set to REMOVE) when the number of run exceeds the maximum. All run logs are available in CloudWatch logs, if you need information about a run that is no longer available to the API.</p>
+    /// <p>For more information about retention mode, see <a href="https://docs.aws.amazon.com/omics/latest/dev/starting-a-run.html">Specifying run retention mode</a> in the <i>Amazon Web Services HealthOmics User Guide</i>.</p>
     pub fn get_retention_mode(&self) -> &::std::option::Option<crate::types::RunRetentionMode> {
         self.inner.get_retention_mode()
     }
-    /// <p>The run's storage type. By default, the run uses STATIC storage type, which allocates a fixed amount of storage. If you set the storage type to DYNAMIC, HealthOmics dynamically scales the storage up or down, based on file system utilization.</p>
+    /// <p>The storage type for the run. By default, the run uses STATIC storage type, which allocates a fixed amount of storage. If you set the storage type to DYNAMIC, Amazon Web Services HealthOmics dynamically scales the storage up or down, based on file system utilization. For more information about static and dynamic storage, see <a href="https://docs.aws.amazon.com/omics/latest/dev/Using-workflows.html">Running workflows</a> in the <i>Amazon Web Services HealthOmics User Guide</i>.</p>
     pub fn storage_type(mut self, input: crate::types::StorageType) -> Self {
         self.inner = self.inner.storage_type(input);
         self
     }
-    /// <p>The run's storage type. By default, the run uses STATIC storage type, which allocates a fixed amount of storage. If you set the storage type to DYNAMIC, HealthOmics dynamically scales the storage up or down, based on file system utilization.</p>
+    /// <p>The storage type for the run. By default, the run uses STATIC storage type, which allocates a fixed amount of storage. If you set the storage type to DYNAMIC, Amazon Web Services HealthOmics dynamically scales the storage up or down, based on file system utilization. For more information about static and dynamic storage, see <a href="https://docs.aws.amazon.com/omics/latest/dev/Using-workflows.html">Running workflows</a> in the <i>Amazon Web Services HealthOmics User Guide</i>.</p>
     pub fn set_storage_type(mut self, input: ::std::option::Option<crate::types::StorageType>) -> Self {
         self.inner = self.inner.set_storage_type(input);
         self
     }
-    /// <p>The run's storage type. By default, the run uses STATIC storage type, which allocates a fixed amount of storage. If you set the storage type to DYNAMIC, HealthOmics dynamically scales the storage up or down, based on file system utilization.</p>
+    /// <p>The storage type for the run. By default, the run uses STATIC storage type, which allocates a fixed amount of storage. If you set the storage type to DYNAMIC, Amazon Web Services HealthOmics dynamically scales the storage up or down, based on file system utilization. For more information about static and dynamic storage, see <a href="https://docs.aws.amazon.com/omics/latest/dev/Using-workflows.html">Running workflows</a> in the <i>Amazon Web Services HealthOmics User Guide</i>.</p>
     pub fn get_storage_type(&self) -> &::std::option::Option<crate::types::StorageType> {
         self.inner.get_storage_type()
     }
@@ -364,5 +364,19 @@ impl StartRunFluentBuilder {
     /// <p>The ID of the workflow owner.</p>
     pub fn get_workflow_owner_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_workflow_owner_id()
+    }
+    /// <p>The name of the workflow version.</p>
+    pub fn workflow_version_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.workflow_version_name(input.into());
+        self
+    }
+    /// <p>The name of the workflow version.</p>
+    pub fn set_workflow_version_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_workflow_version_name(input);
+        self
+    }
+    /// <p>The name of the workflow version.</p>
+    pub fn get_workflow_version_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_workflow_version_name()
     }
 }

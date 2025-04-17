@@ -23,7 +23,7 @@ impl crate::operation::get_run_cache::builders::GetRunCacheInputBuilder {
 /// Fluent builder constructing a request to `GetRunCache`.
 ///
 /// <p>Retrieve the details for the specified run cache.</p>
-/// <p>For more information, see <a href="https://docs.aws.amazon.com/omics/latest/dev/workflow-call-caching.html">Call caching for HealthOmics runs</a> in the AWS HealthOmics User Guide.</p>
+/// <p>For more information, see <a href="https://docs.aws.amazon.com/omics/latest/dev/workflow-call-caching.html">Call caching for Amazon Web Services HealthOmics runs</a> in the Amazon Web Services HealthOmics User Guide.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetRunCacheFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

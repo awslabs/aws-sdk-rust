@@ -12,6 +12,11 @@
 /// ```text
 /// # let accesscheckresourcetype = unimplemented!();
 /// match accesscheckresourcetype {
+///     AccessCheckResourceType::ApiGatewayRestApi => { /* ... */ },
+///     AccessCheckResourceType::BackupVault => { /* ... */ },
+///     AccessCheckResourceType::CloudtrailDashboard => { /* ... */ },
+///     AccessCheckResourceType::CloudtrailEventDataStore => { /* ... */ },
+///     AccessCheckResourceType::CodeArtifactDomain => { /* ... */ },
 ///     AccessCheckResourceType::DynamodbStream => { /* ... */ },
 ///     AccessCheckResourceType::DynamodbTable => { /* ... */ },
 ///     AccessCheckResourceType::EfsFilesystem => { /* ... */ },
@@ -24,9 +29,12 @@
 ///     AccessCheckResourceType::S3AccessPoint => { /* ... */ },
 ///     AccessCheckResourceType::S3Bucket => { /* ... */ },
 ///     AccessCheckResourceType::S3Glacier => { /* ... */ },
+///     AccessCheckResourceType::S3ExpressAccessPoint => { /* ... */ },
 ///     AccessCheckResourceType::S3ExpressDirectorybucket => { /* ... */ },
 ///     AccessCheckResourceType::S3OutpostsAccessPoint => { /* ... */ },
 ///     AccessCheckResourceType::S3OutpostsBucket => { /* ... */ },
+///     AccessCheckResourceType::S3Table => { /* ... */ },
+///     AccessCheckResourceType::S3TableBucket => { /* ... */ },
 ///     AccessCheckResourceType::SnsTopic => { /* ... */ },
 ///     AccessCheckResourceType::SqsQueue => { /* ... */ },
 ///     AccessCheckResourceType::SecretsmanagerSecret => { /* ... */ },
@@ -59,6 +67,16 @@
 )]
 pub enum AccessCheckResourceType {
     #[allow(missing_docs)] // documentation missing in model
+    ApiGatewayRestApi,
+    #[allow(missing_docs)] // documentation missing in model
+    BackupVault,
+    #[allow(missing_docs)] // documentation missing in model
+    CloudtrailDashboard,
+    #[allow(missing_docs)] // documentation missing in model
+    CloudtrailEventDataStore,
+    #[allow(missing_docs)] // documentation missing in model
+    CodeArtifactDomain,
+    #[allow(missing_docs)] // documentation missing in model
     DynamodbStream,
     #[allow(missing_docs)] // documentation missing in model
     DynamodbTable,
@@ -83,11 +101,17 @@ pub enum AccessCheckResourceType {
     #[allow(missing_docs)] // documentation missing in model
     S3Glacier,
     #[allow(missing_docs)] // documentation missing in model
+    S3ExpressAccessPoint,
+    #[allow(missing_docs)] // documentation missing in model
     S3ExpressDirectorybucket,
     #[allow(missing_docs)] // documentation missing in model
     S3OutpostsAccessPoint,
     #[allow(missing_docs)] // documentation missing in model
     S3OutpostsBucket,
+    #[allow(missing_docs)] // documentation missing in model
+    S3Table,
+    #[allow(missing_docs)] // documentation missing in model
+    S3TableBucket,
     #[allow(missing_docs)] // documentation missing in model
     SnsTopic,
     #[allow(missing_docs)] // documentation missing in model
@@ -101,6 +125,11 @@ pub enum AccessCheckResourceType {
 impl ::std::convert::From<&str> for AccessCheckResourceType {
     fn from(s: &str) -> Self {
         match s {
+            "AWS::ApiGateway::RestApi" => AccessCheckResourceType::ApiGatewayRestApi,
+            "AWS::Backup::BackupVault" => AccessCheckResourceType::BackupVault,
+            "AWS::CloudTrail::Dashboard" => AccessCheckResourceType::CloudtrailDashboard,
+            "AWS::CloudTrail::EventDataStore" => AccessCheckResourceType::CloudtrailEventDataStore,
+            "AWS::CodeArtifact::Domain" => AccessCheckResourceType::CodeArtifactDomain,
             "AWS::DynamoDB::Stream" => AccessCheckResourceType::DynamodbStream,
             "AWS::DynamoDB::Table" => AccessCheckResourceType::DynamodbTable,
             "AWS::EFS::FileSystem" => AccessCheckResourceType::EfsFilesystem,
@@ -113,9 +142,12 @@ impl ::std::convert::From<&str> for AccessCheckResourceType {
             "AWS::S3::AccessPoint" => AccessCheckResourceType::S3AccessPoint,
             "AWS::S3::Bucket" => AccessCheckResourceType::S3Bucket,
             "AWS::S3::Glacier" => AccessCheckResourceType::S3Glacier,
+            "AWS::S3Express::AccessPoint" => AccessCheckResourceType::S3ExpressAccessPoint,
             "AWS::S3Express::DirectoryBucket" => AccessCheckResourceType::S3ExpressDirectorybucket,
             "AWS::S3Outposts::AccessPoint" => AccessCheckResourceType::S3OutpostsAccessPoint,
             "AWS::S3Outposts::Bucket" => AccessCheckResourceType::S3OutpostsBucket,
+            "AWS::S3Tables::Table" => AccessCheckResourceType::S3Table,
+            "AWS::S3Tables::TableBucket" => AccessCheckResourceType::S3TableBucket,
             "AWS::SNS::Topic" => AccessCheckResourceType::SnsTopic,
             "AWS::SQS::Queue" => AccessCheckResourceType::SqsQueue,
             "AWS::SecretsManager::Secret" => AccessCheckResourceType::SecretsmanagerSecret,
@@ -134,6 +166,11 @@ impl AccessCheckResourceType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            AccessCheckResourceType::ApiGatewayRestApi => "AWS::ApiGateway::RestApi",
+            AccessCheckResourceType::BackupVault => "AWS::Backup::BackupVault",
+            AccessCheckResourceType::CloudtrailDashboard => "AWS::CloudTrail::Dashboard",
+            AccessCheckResourceType::CloudtrailEventDataStore => "AWS::CloudTrail::EventDataStore",
+            AccessCheckResourceType::CodeArtifactDomain => "AWS::CodeArtifact::Domain",
             AccessCheckResourceType::DynamodbStream => "AWS::DynamoDB::Stream",
             AccessCheckResourceType::DynamodbTable => "AWS::DynamoDB::Table",
             AccessCheckResourceType::EfsFilesystem => "AWS::EFS::FileSystem",
@@ -146,9 +183,12 @@ impl AccessCheckResourceType {
             AccessCheckResourceType::S3AccessPoint => "AWS::S3::AccessPoint",
             AccessCheckResourceType::S3Bucket => "AWS::S3::Bucket",
             AccessCheckResourceType::S3Glacier => "AWS::S3::Glacier",
+            AccessCheckResourceType::S3ExpressAccessPoint => "AWS::S3Express::AccessPoint",
             AccessCheckResourceType::S3ExpressDirectorybucket => "AWS::S3Express::DirectoryBucket",
             AccessCheckResourceType::S3OutpostsAccessPoint => "AWS::S3Outposts::AccessPoint",
             AccessCheckResourceType::S3OutpostsBucket => "AWS::S3Outposts::Bucket",
+            AccessCheckResourceType::S3Table => "AWS::S3Tables::Table",
+            AccessCheckResourceType::S3TableBucket => "AWS::S3Tables::TableBucket",
             AccessCheckResourceType::SnsTopic => "AWS::SNS::Topic",
             AccessCheckResourceType::SqsQueue => "AWS::SQS::Queue",
             AccessCheckResourceType::SecretsmanagerSecret => "AWS::SecretsManager::Secret",
@@ -158,6 +198,11 @@ impl AccessCheckResourceType {
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
+            "AWS::ApiGateway::RestApi",
+            "AWS::Backup::BackupVault",
+            "AWS::CloudTrail::Dashboard",
+            "AWS::CloudTrail::EventDataStore",
+            "AWS::CodeArtifact::Domain",
             "AWS::DynamoDB::Stream",
             "AWS::DynamoDB::Table",
             "AWS::EFS::FileSystem",
@@ -170,9 +215,12 @@ impl AccessCheckResourceType {
             "AWS::S3::AccessPoint",
             "AWS::S3::Bucket",
             "AWS::S3::Glacier",
+            "AWS::S3Express::AccessPoint",
             "AWS::S3Express::DirectoryBucket",
             "AWS::S3Outposts::AccessPoint",
             "AWS::S3Outposts::Bucket",
+            "AWS::S3Tables::Table",
+            "AWS::S3Tables::TableBucket",
             "AWS::SNS::Topic",
             "AWS::SQS::Queue",
             "AWS::SecretsManager::Secret",
@@ -199,6 +247,11 @@ impl AccessCheckResourceType {
 impl ::std::fmt::Display for AccessCheckResourceType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            AccessCheckResourceType::ApiGatewayRestApi => write!(f, "AWS::ApiGateway::RestApi"),
+            AccessCheckResourceType::BackupVault => write!(f, "AWS::Backup::BackupVault"),
+            AccessCheckResourceType::CloudtrailDashboard => write!(f, "AWS::CloudTrail::Dashboard"),
+            AccessCheckResourceType::CloudtrailEventDataStore => write!(f, "AWS::CloudTrail::EventDataStore"),
+            AccessCheckResourceType::CodeArtifactDomain => write!(f, "AWS::CodeArtifact::Domain"),
             AccessCheckResourceType::DynamodbStream => write!(f, "AWS::DynamoDB::Stream"),
             AccessCheckResourceType::DynamodbTable => write!(f, "AWS::DynamoDB::Table"),
             AccessCheckResourceType::EfsFilesystem => write!(f, "AWS::EFS::FileSystem"),
@@ -211,9 +264,12 @@ impl ::std::fmt::Display for AccessCheckResourceType {
             AccessCheckResourceType::S3AccessPoint => write!(f, "AWS::S3::AccessPoint"),
             AccessCheckResourceType::S3Bucket => write!(f, "AWS::S3::Bucket"),
             AccessCheckResourceType::S3Glacier => write!(f, "AWS::S3::Glacier"),
+            AccessCheckResourceType::S3ExpressAccessPoint => write!(f, "AWS::S3Express::AccessPoint"),
             AccessCheckResourceType::S3ExpressDirectorybucket => write!(f, "AWS::S3Express::DirectoryBucket"),
             AccessCheckResourceType::S3OutpostsAccessPoint => write!(f, "AWS::S3Outposts::AccessPoint"),
             AccessCheckResourceType::S3OutpostsBucket => write!(f, "AWS::S3Outposts::Bucket"),
+            AccessCheckResourceType::S3Table => write!(f, "AWS::S3Tables::Table"),
+            AccessCheckResourceType::S3TableBucket => write!(f, "AWS::S3Tables::TableBucket"),
             AccessCheckResourceType::SnsTopic => write!(f, "AWS::SNS::Topic"),
             AccessCheckResourceType::SqsQueue => write!(f, "AWS::SQS::Queue"),
             AccessCheckResourceType::SecretsmanagerSecret => write!(f, "AWS::SecretsManager::Secret"),

@@ -23,7 +23,7 @@ impl crate::operation::describe_service_deployments::builders::DescribeServiceDe
 /// Fluent builder constructing a request to `DescribeServiceDeployments`.
 ///
 /// <p>Describes one or more of your service deployments.</p>
-/// <p>A service deployment happens when you release a software update for the service. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-deployments.html">Amazon ECS service deployments</a>.</p>
+/// <p>A service deployment happens when you release a software update for the service. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-deployment.html">View service history using Amazon ECS service deployments</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeServiceDeploymentsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

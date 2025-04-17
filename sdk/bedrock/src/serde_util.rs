@@ -987,6 +987,23 @@ pub(crate) fn tag_correct_errors(mut builder: crate::types::builders::TagBuilder
     builder
 }
 
+pub(crate) fn automated_evaluation_custom_metric_config_correct_errors(
+    mut builder: crate::types::builders::AutomatedEvaluationCustomMetricConfigBuilder,
+) -> crate::types::builders::AutomatedEvaluationCustomMetricConfigBuilder {
+    if builder.custom_metrics.is_none() {
+        builder.custom_metrics = Some(Default::default())
+    }
+    if builder.evaluator_model_config.is_none() {
+        builder.evaluator_model_config = {
+            let builder = crate::types::builders::CustomMetricEvaluatorModelConfigBuilder::default();
+            crate::serde_util::custom_metric_evaluator_model_config_correct_errors(builder)
+                .build()
+                .ok()
+        }
+    }
+    builder
+}
+
 pub(crate) fn guardrail_content_filter_correct_errors(
     mut builder: crate::types::builders::GuardrailContentFilterBuilder,
 ) -> crate::types::builders::GuardrailContentFilterBuilder {
@@ -1111,6 +1128,15 @@ pub(crate) fn validator_correct_errors(mut builder: crate::types::builders::Vali
     builder
 }
 
+pub(crate) fn custom_metric_evaluator_model_config_correct_errors(
+    mut builder: crate::types::builders::CustomMetricEvaluatorModelConfigBuilder,
+) -> crate::types::builders::CustomMetricEvaluatorModelConfigBuilder {
+    if builder.bedrock_evaluator_models.is_none() {
+        builder.bedrock_evaluator_models = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn evaluation_bedrock_model_correct_errors(
     mut builder: crate::types::builders::EvaluationBedrockModelBuilder,
 ) -> crate::types::builders::EvaluationBedrockModelBuilder {
@@ -1219,6 +1245,27 @@ pub(crate) fn retrieve_config_correct_errors(
     builder
 }
 
+pub(crate) fn custom_metric_bedrock_evaluator_model_correct_errors(
+    mut builder: crate::types::builders::CustomMetricBedrockEvaluatorModelBuilder,
+) -> crate::types::builders::CustomMetricBedrockEvaluatorModelBuilder {
+    if builder.model_identifier.is_none() {
+        builder.model_identifier = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn custom_metric_definition_correct_errors(
+    mut builder: crate::types::builders::CustomMetricDefinitionBuilder,
+) -> crate::types::builders::CustomMetricDefinitionBuilder {
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.instructions.is_none() {
+        builder.instructions = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn external_sources_retrieve_and_generate_configuration_correct_errors(
     mut builder: crate::types::builders::ExternalSourcesRetrieveAndGenerateConfigurationBuilder,
 ) -> crate::types::builders::ExternalSourcesRetrieveAndGenerateConfigurationBuilder {
@@ -1293,6 +1340,18 @@ pub(crate) fn query_transformation_configuration_correct_errors(
 ) -> crate::types::builders::QueryTransformationConfigurationBuilder {
     if builder.r#type.is_none() {
         builder.r#type = "no value was set".parse::<crate::types::QueryTransformationType>().ok()
+    }
+    builder
+}
+
+pub(crate) fn rating_scale_item_correct_errors(
+    mut builder: crate::types::builders::RatingScaleItemBuilder,
+) -> crate::types::builders::RatingScaleItemBuilder {
+    if builder.definition.is_none() {
+        builder.definition = Some(Default::default())
+    }
+    if builder.value.is_none() {
+        builder.value = Some(crate::types::RatingScaleItemValue::Unknown)
     }
     builder
 }

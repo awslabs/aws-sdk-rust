@@ -42,17 +42,23 @@ pub fn ser_rule_action(
         crate::protocol_serde::shape_update_case_action_definition::ser_update_case_action_definition(&mut object_12, var_11)?;
         object_12.finish();
     }
-    if let Some(var_13) = &input.end_associated_tasks_action {
+    if let Some(var_13) = &input.assign_sla_action {
         #[allow(unused_mut)]
-        let mut object_14 = object.key("EndAssociatedTasksAction").start_object();
-        crate::protocol_serde::shape_end_associated_tasks_action_definition::ser_end_associated_tasks_action_definition(&mut object_14, var_13)?;
+        let mut object_14 = object.key("AssignSlaAction").start_object();
+        crate::protocol_serde::shape_assign_sla_action_definition::ser_assign_sla_action_definition(&mut object_14, var_13)?;
         object_14.finish();
     }
-    if let Some(var_15) = &input.submit_auto_evaluation_action {
+    if let Some(var_15) = &input.end_associated_tasks_action {
         #[allow(unused_mut)]
-        let mut object_16 = object.key("SubmitAutoEvaluationAction").start_object();
-        crate::protocol_serde::shape_submit_auto_evaluation_action_definition::ser_submit_auto_evaluation_action_definition(&mut object_16, var_15)?;
+        let mut object_16 = object.key("EndAssociatedTasksAction").start_object();
+        crate::protocol_serde::shape_end_associated_tasks_action_definition::ser_end_associated_tasks_action_definition(&mut object_16, var_15)?;
         object_16.finish();
+    }
+    if let Some(var_17) = &input.submit_auto_evaluation_action {
+        #[allow(unused_mut)]
+        let mut object_18 = object.key("SubmitAutoEvaluationAction").start_object();
+        crate::protocol_serde::shape_submit_auto_evaluation_action_definition::ser_submit_auto_evaluation_action_definition(&mut object_18, var_17)?;
+        object_18.finish();
     }
     Ok(())
 }
@@ -107,6 +113,11 @@ where
                             "UpdateCaseAction" => {
                                 builder = builder.set_update_case_action(
                                     crate::protocol_serde::shape_update_case_action_definition::de_update_case_action_definition(tokens)?,
+                                );
+                            }
+                            "AssignSlaAction" => {
+                                builder = builder.set_assign_sla_action(
+                                    crate::protocol_serde::shape_assign_sla_action_definition::de_assign_sla_action_definition(tokens)?,
                                 );
                             }
                             "EndAssociatedTasksAction" => {

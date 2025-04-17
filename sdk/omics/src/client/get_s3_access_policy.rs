@@ -6,7 +6,7 @@ impl super::Client {
     ///   - [`s3_access_point_arn(impl Into<String>)`](crate::operation::get_s3_access_policy::builders::GetS3AccessPolicyFluentBuilder::s3_access_point_arn) / [`set_s3_access_point_arn(Option<String>)`](crate::operation::get_s3_access_policy::builders::GetS3AccessPolicyFluentBuilder::set_s3_access_point_arn):<br>required: **true**<br><p>The S3 access point ARN that has the access policy.</p><br>
     /// - On success, responds with [`GetS3AccessPolicyOutput`](crate::operation::get_s3_access_policy::GetS3AccessPolicyOutput) with field(s):
     ///   - [`s3_access_point_arn(Option<String>)`](crate::operation::get_s3_access_policy::GetS3AccessPolicyOutput::s3_access_point_arn): <p>The S3 access point ARN that has the access policy.</p>
-    ///   - [`store_id(Option<String>)`](crate::operation::get_s3_access_policy::GetS3AccessPolicyOutput::store_id): <p>The AWS-generated Sequence Store or Reference Store ID.</p>
+    ///   - [`store_id(Option<String>)`](crate::operation::get_s3_access_policy::GetS3AccessPolicyOutput::store_id): <p>The Amazon Web Services-generated Sequence Store or Reference Store ID.</p>
     ///   - [`store_type(Option<StoreType>)`](crate::operation::get_s3_access_policy::GetS3AccessPolicyOutput::store_type): <p>The type of store associated with the access point.</p>
     ///   - [`update_time(Option<DateTime>)`](crate::operation::get_s3_access_policy::GetS3AccessPolicyOutput::update_time): <p>The time when the policy was last updated.</p>
     ///   - [`s3_access_policy(String)`](crate::operation::get_s3_access_policy::GetS3AccessPolicyOutput::s3_access_policy): <p>The current resource policy that controls S3 access on the store.</p>

@@ -21,6 +21,8 @@ pub struct SubnetGroup {
     pub subnets: ::std::option::Option<::std::vec::Vec<crate::types::Subnet>>,
     /// <p>The ARN (Amazon Resource Name) of the subnet group.</p>
     pub arn: ::std::option::Option<::std::string::String>,
+    /// <p>The network types supported by this subnet group. Returns an array of strings that can include 'ipv4', 'ipv6', or both, indicating the IP address types that can be used for clusters deployed in this subnet group.</p>
+    pub supported_network_types: ::std::option::Option<::std::vec::Vec<crate::types::NetworkType>>,
 }
 impl SubnetGroup {
     /// <p>The name of the subnet group</p>
@@ -45,6 +47,12 @@ impl SubnetGroup {
     pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
     }
+    /// <p>The network types supported by this subnet group. Returns an array of strings that can include 'ipv4', 'ipv6', or both, indicating the IP address types that can be used for clusters deployed in this subnet group.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.supported_network_types.is_none()`.
+    pub fn supported_network_types(&self) -> &[crate::types::NetworkType] {
+        self.supported_network_types.as_deref().unwrap_or_default()
+    }
 }
 impl SubnetGroup {
     /// Creates a new builder-style object to manufacture [`SubnetGroup`](crate::types::SubnetGroup).
@@ -62,6 +70,7 @@ pub struct SubnetGroupBuilder {
     pub(crate) vpc_id: ::std::option::Option<::std::string::String>,
     pub(crate) subnets: ::std::option::Option<::std::vec::Vec<crate::types::Subnet>>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
+    pub(crate) supported_network_types: ::std::option::Option<::std::vec::Vec<crate::types::NetworkType>>,
 }
 impl SubnetGroupBuilder {
     /// <p>The name of the subnet group</p>
@@ -140,6 +149,26 @@ impl SubnetGroupBuilder {
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.arn
     }
+    /// Appends an item to `supported_network_types`.
+    ///
+    /// To override the contents of this collection use [`set_supported_network_types`](Self::set_supported_network_types).
+    ///
+    /// <p>The network types supported by this subnet group. Returns an array of strings that can include 'ipv4', 'ipv6', or both, indicating the IP address types that can be used for clusters deployed in this subnet group.</p>
+    pub fn supported_network_types(mut self, input: crate::types::NetworkType) -> Self {
+        let mut v = self.supported_network_types.unwrap_or_default();
+        v.push(input);
+        self.supported_network_types = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The network types supported by this subnet group. Returns an array of strings that can include 'ipv4', 'ipv6', or both, indicating the IP address types that can be used for clusters deployed in this subnet group.</p>
+    pub fn set_supported_network_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::NetworkType>>) -> Self {
+        self.supported_network_types = input;
+        self
+    }
+    /// <p>The network types supported by this subnet group. Returns an array of strings that can include 'ipv4', 'ipv6', or both, indicating the IP address types that can be used for clusters deployed in this subnet group.</p>
+    pub fn get_supported_network_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::NetworkType>> {
+        &self.supported_network_types
+    }
     /// Consumes the builder and constructs a [`SubnetGroup`](crate::types::SubnetGroup).
     pub fn build(self) -> crate::types::SubnetGroup {
         crate::types::SubnetGroup {
@@ -148,6 +177,7 @@ impl SubnetGroupBuilder {
             vpc_id: self.vpc_id,
             subnets: self.subnets,
             arn: self.arn,
+            supported_network_types: self.supported_network_types,
         }
     }
 }

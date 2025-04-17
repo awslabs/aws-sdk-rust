@@ -63,5 +63,8 @@ pub fn ser_update_cluster_input_input(
     if let Some(var_19) = &input.acl_name {
         object.key("ACLName").string(var_19.as_str());
     }
+    if let Some(var_20) = &input.ip_discovery {
+        object.key("IpDiscovery").string(var_20.as_str());
+    }
     Ok(())
 }

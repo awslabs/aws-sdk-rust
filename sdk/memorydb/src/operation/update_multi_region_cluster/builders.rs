@@ -192,17 +192,17 @@ impl UpdateMultiRegionClusterFluentBuilder {
     pub fn get_multi_region_parameter_group_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_multi_region_parameter_group_name()
     }
-    /// <p>Whether to force the update even if it may cause data loss.</p>
+    /// <p>The strategy to use for the update operation. Supported values are "coordinated" or "uncoordinated".</p>
     pub fn update_strategy(mut self, input: crate::types::UpdateStrategy) -> Self {
         self.inner = self.inner.update_strategy(input);
         self
     }
-    /// <p>Whether to force the update even if it may cause data loss.</p>
+    /// <p>The strategy to use for the update operation. Supported values are "coordinated" or "uncoordinated".</p>
     pub fn set_update_strategy(mut self, input: ::std::option::Option<crate::types::UpdateStrategy>) -> Self {
         self.inner = self.inner.set_update_strategy(input);
         self
     }
-    /// <p>Whether to force the update even if it may cause data loss.</p>
+    /// <p>The strategy to use for the update operation. Supported values are "coordinated" or "uncoordinated".</p>
     pub fn get_update_strategy(&self) -> &::std::option::Option<crate::types::UpdateStrategy> {
         self.inner.get_update_strategy()
     }

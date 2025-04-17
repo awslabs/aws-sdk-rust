@@ -11,7 +11,7 @@ pub struct GetRunOutput {
     pub cache_id: ::std::option::Option<::std::string::String>,
     /// <p>The run cache behavior for the run.</p>
     pub cache_behavior: ::std::option::Option<crate::types::CacheBehavior>,
-    /// <p>The workflow engine version.</p>
+    /// <p>The actual Nextflow engine version that Amazon Web Services HealthOmics used for the run. The other workflow definition languages don't provide a value for this field.</p>
     pub engine_version: ::std::option::Option<::std::string::String>,
     /// <p>The run's status.</p>
     pub status: ::std::option::Option<crate::types::RunStatus>,
@@ -71,6 +71,10 @@ pub struct GetRunOutput {
     pub storage_type: ::std::option::Option<crate::types::StorageType>,
     /// <p>The ID of the workflow owner.</p>
     pub workflow_owner_id: ::std::option::Option<::std::string::String>,
+    /// <p>The workflow version name.</p>
+    pub workflow_version_name: ::std::option::Option<::std::string::String>,
+    /// <p>The universally unique identifier (UUID) value for the workflow.</p>
+    pub workflow_uuid: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetRunOutput {
@@ -90,7 +94,7 @@ impl GetRunOutput {
     pub fn cache_behavior(&self) -> ::std::option::Option<&crate::types::CacheBehavior> {
         self.cache_behavior.as_ref()
     }
-    /// <p>The workflow engine version.</p>
+    /// <p>The actual Nextflow engine version that Amazon Web Services HealthOmics used for the run. The other workflow definition languages don't provide a value for this field.</p>
     pub fn engine_version(&self) -> ::std::option::Option<&str> {
         self.engine_version.as_deref()
     }
@@ -210,6 +214,14 @@ impl GetRunOutput {
     pub fn workflow_owner_id(&self) -> ::std::option::Option<&str> {
         self.workflow_owner_id.as_deref()
     }
+    /// <p>The workflow version name.</p>
+    pub fn workflow_version_name(&self) -> ::std::option::Option<&str> {
+        self.workflow_version_name.as_deref()
+    }
+    /// <p>The universally unique identifier (UUID) value for the workflow.</p>
+    pub fn workflow_uuid(&self) -> ::std::option::Option<&str> {
+        self.workflow_uuid.as_deref()
+    }
 }
 impl ::aws_types::request_id::RequestId for GetRunOutput {
     fn request_id(&self) -> Option<&str> {
@@ -261,6 +273,8 @@ pub struct GetRunOutputBuilder {
     pub(crate) run_output_uri: ::std::option::Option<::std::string::String>,
     pub(crate) storage_type: ::std::option::Option<crate::types::StorageType>,
     pub(crate) workflow_owner_id: ::std::option::Option<::std::string::String>,
+    pub(crate) workflow_version_name: ::std::option::Option<::std::string::String>,
+    pub(crate) workflow_uuid: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetRunOutputBuilder {
@@ -320,17 +334,17 @@ impl GetRunOutputBuilder {
     pub fn get_cache_behavior(&self) -> &::std::option::Option<crate::types::CacheBehavior> {
         &self.cache_behavior
     }
-    /// <p>The workflow engine version.</p>
+    /// <p>The actual Nextflow engine version that Amazon Web Services HealthOmics used for the run. The other workflow definition languages don't provide a value for this field.</p>
     pub fn engine_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.engine_version = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The workflow engine version.</p>
+    /// <p>The actual Nextflow engine version that Amazon Web Services HealthOmics used for the run. The other workflow definition languages don't provide a value for this field.</p>
     pub fn set_engine_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.engine_version = input;
         self
     }
-    /// <p>The workflow engine version.</p>
+    /// <p>The actual Nextflow engine version that Amazon Web Services HealthOmics used for the run. The other workflow definition languages don't provide a value for this field.</p>
     pub fn get_engine_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.engine_version
     }
@@ -759,6 +773,34 @@ impl GetRunOutputBuilder {
     pub fn get_workflow_owner_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.workflow_owner_id
     }
+    /// <p>The workflow version name.</p>
+    pub fn workflow_version_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.workflow_version_name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The workflow version name.</p>
+    pub fn set_workflow_version_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.workflow_version_name = input;
+        self
+    }
+    /// <p>The workflow version name.</p>
+    pub fn get_workflow_version_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.workflow_version_name
+    }
+    /// <p>The universally unique identifier (UUID) value for the workflow.</p>
+    pub fn workflow_uuid(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.workflow_uuid = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The universally unique identifier (UUID) value for the workflow.</p>
+    pub fn set_workflow_uuid(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.workflow_uuid = input;
+        self
+    }
+    /// <p>The universally unique identifier (UUID) value for the workflow.</p>
+    pub fn get_workflow_uuid(&self) -> &::std::option::Option<::std::string::String> {
+        &self.workflow_uuid
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -805,6 +847,8 @@ impl GetRunOutputBuilder {
             run_output_uri: self.run_output_uri,
             storage_type: self.storage_type,
             workflow_owner_id: self.workflow_owner_id,
+            workflow_version_name: self.workflow_version_name,
+            workflow_uuid: self.workflow_uuid,
             _request_id: self._request_id,
         }
     }

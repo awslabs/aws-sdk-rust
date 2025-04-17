@@ -22,7 +22,20 @@ impl crate::operation::create_workflow::builders::CreateWorkflowInputBuilder {
 }
 /// Fluent builder constructing a request to `CreateWorkflow`.
 ///
-/// <p>Creates a workflow.</p>
+/// <p>Creates a private workflow.Private workflows depend on a variety of resources that you create and configure before creating the workflow:</p>
+/// <ul>
+/// <li>
+/// <p><i>Input data</i>: Input data for the workflow, stored in an S3 bucket or a Amazon Web Services HealthOmics sequence store.</p></li>
+/// <li>
+/// <p><i>Workflow definition files</i>: Define your workflow in one or more workflow definition files, written in WDL, Nextflow, or CWL. The workflow definition specifies the inputs and outputs for runs that use the workflow. It also includes specifications for the runs and run tasks for your workflow, including compute and memory requirements.</p></li>
+/// <li>
+/// <p><i>Parameter template files</i>: Define run parameters using a parameter template file (written in JSON).</p></li>
+/// <li>
+/// <p><i>ECR container images</i>: Create one or more container images for the workflow. Store the images in a private ECR repository.</p></li>
+/// <li>
+/// <p>(Optional) <i>Sentieon licenses</i>: Request a Sentieon license if you plan to use Sentieon software in a private workflow.</p></li>
+/// </ul>
+/// <p>For more information, see <a href="https://docs.aws.amazon.com/omics/latest/dev/creating-private-workflows.html">Creating or updating a private workflow in Amazon Web Services HealthOmics</a> in the Amazon Web Services HealthOmics User Guide.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateWorkflowFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -136,17 +149,17 @@ impl CreateWorkflowFluentBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_description()
     }
-    /// <p>An engine for the workflow.</p>
+    /// <p>The workflow engine for the workflow.</p>
     pub fn engine(mut self, input: crate::types::WorkflowEngine) -> Self {
         self.inner = self.inner.engine(input);
         self
     }
-    /// <p>An engine for the workflow.</p>
+    /// <p>The workflow engine for the workflow.</p>
     pub fn set_engine(mut self, input: ::std::option::Option<crate::types::WorkflowEngine>) -> Self {
         self.inner = self.inner.set_engine(input);
         self
     }
-    /// <p>An engine for the workflow.</p>
+    /// <p>The workflow engine for the workflow.</p>
     pub fn get_engine(&self) -> &::std::option::Option<crate::types::WorkflowEngine> {
         self.inner.get_engine()
     }
@@ -216,17 +229,17 @@ impl CreateWorkflowFluentBuilder {
     ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::WorkflowParameter>> {
         self.inner.get_parameter_template()
     }
-    /// <p>The default storage capacity for the workflow runs, in gibibytes.</p>
+    /// <p>The default static storage capacity (in gibibytes) for runs that use this workflow or workflow version.</p>
     pub fn storage_capacity(mut self, input: i32) -> Self {
         self.inner = self.inner.storage_capacity(input);
         self
     }
-    /// <p>The default storage capacity for the workflow runs, in gibibytes.</p>
+    /// <p>The default static storage capacity (in gibibytes) for runs that use this workflow or workflow version.</p>
     pub fn set_storage_capacity(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_storage_capacity(input);
         self
     }
-    /// <p>The default storage capacity for the workflow runs, in gibibytes.</p>
+    /// <p>The default static storage capacity (in gibibytes) for runs that use this workflow or workflow version.</p>
     pub fn get_storage_capacity(&self) -> &::std::option::Option<i32> {
         self.inner.get_storage_capacity()
     }
@@ -276,5 +289,19 @@ impl CreateWorkflowFluentBuilder {
     /// <p>The computational accelerator specified to run the workflow.</p>
     pub fn get_accelerators(&self) -> &::std::option::Option<crate::types::Accelerators> {
         self.inner.get_accelerators()
+    }
+    /// <p>The default storage type for runs that use this workflow. STATIC storage allocates a fixed amount of storage. DYNAMIC storage dynamically scales the storage up or down, based on file system utilization. For more information about static and dynamic storage, see <a href="https://docs.aws.amazon.com/omics/latest/dev/Using-workflows.html">Running workflows</a> in the <i>Amazon Web Services HealthOmics User Guide</i>.</p>
+    pub fn storage_type(mut self, input: crate::types::StorageType) -> Self {
+        self.inner = self.inner.storage_type(input);
+        self
+    }
+    /// <p>The default storage type for runs that use this workflow. STATIC storage allocates a fixed amount of storage. DYNAMIC storage dynamically scales the storage up or down, based on file system utilization. For more information about static and dynamic storage, see <a href="https://docs.aws.amazon.com/omics/latest/dev/Using-workflows.html">Running workflows</a> in the <i>Amazon Web Services HealthOmics User Guide</i>.</p>
+    pub fn set_storage_type(mut self, input: ::std::option::Option<crate::types::StorageType>) -> Self {
+        self.inner = self.inner.set_storage_type(input);
+        self
+    }
+    /// <p>The default storage type for runs that use this workflow. STATIC storage allocates a fixed amount of storage. DYNAMIC storage dynamically scales the storage up or down, based on file system utilization. For more information about static and dynamic storage, see <a href="https://docs.aws.amazon.com/omics/latest/dev/Using-workflows.html">Running workflows</a> in the <i>Amazon Web Services HealthOmics User Guide</i>.</p>
+    pub fn get_storage_type(&self) -> &::std::option::Option<crate::types::StorageType> {
+        self.inner.get_storage_type()
     }
 }

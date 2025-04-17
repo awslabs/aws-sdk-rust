@@ -51,6 +51,8 @@ pub struct UpdateClusterInput {
     pub shard_configuration: ::std::option::Option<crate::types::ShardConfigurationRequest>,
     /// <p>The Access Control List that is associated with the cluster.</p>
     pub acl_name: ::std::option::Option<::std::string::String>,
+    /// <p>The mechanism for discovering IP addresses for the cluster discovery protocol. Valid values are 'ipv4' or 'ipv6'. When set to 'ipv4', cluster discovery functions such as cluster slots, cluster shards, and cluster nodes will return IPv4 addresses for cluster nodes. When set to 'ipv6', the cluster discovery functions return IPv6 addresses for cluster nodes. The value must be compatible with the NetworkType parameter. If not specified, the default is 'ipv4'.</p>
+    pub ip_discovery: ::std::option::Option<crate::types::IpDiscovery>,
 }
 impl UpdateClusterInput {
     /// <p>The name of the cluster to update.</p>
@@ -133,6 +135,10 @@ impl UpdateClusterInput {
     pub fn acl_name(&self) -> ::std::option::Option<&str> {
         self.acl_name.as_deref()
     }
+    /// <p>The mechanism for discovering IP addresses for the cluster discovery protocol. Valid values are 'ipv4' or 'ipv6'. When set to 'ipv4', cluster discovery functions such as cluster slots, cluster shards, and cluster nodes will return IPv4 addresses for cluster nodes. When set to 'ipv6', the cluster discovery functions return IPv6 addresses for cluster nodes. The value must be compatible with the NetworkType parameter. If not specified, the default is 'ipv4'.</p>
+    pub fn ip_discovery(&self) -> ::std::option::Option<&crate::types::IpDiscovery> {
+        self.ip_discovery.as_ref()
+    }
 }
 impl UpdateClusterInput {
     /// Creates a new builder-style object to manufacture [`UpdateClusterInput`](crate::operation::update_cluster::UpdateClusterInput).
@@ -160,6 +166,7 @@ pub struct UpdateClusterInputBuilder {
     pub(crate) replica_configuration: ::std::option::Option<crate::types::ReplicaConfigurationRequest>,
     pub(crate) shard_configuration: ::std::option::Option<crate::types::ShardConfigurationRequest>,
     pub(crate) acl_name: ::std::option::Option<::std::string::String>,
+    pub(crate) ip_discovery: ::std::option::Option<crate::types::IpDiscovery>,
 }
 impl UpdateClusterInputBuilder {
     /// <p>The name of the cluster to update.</p>
@@ -433,6 +440,20 @@ impl UpdateClusterInputBuilder {
     pub fn get_acl_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.acl_name
     }
+    /// <p>The mechanism for discovering IP addresses for the cluster discovery protocol. Valid values are 'ipv4' or 'ipv6'. When set to 'ipv4', cluster discovery functions such as cluster slots, cluster shards, and cluster nodes will return IPv4 addresses for cluster nodes. When set to 'ipv6', the cluster discovery functions return IPv6 addresses for cluster nodes. The value must be compatible with the NetworkType parameter. If not specified, the default is 'ipv4'.</p>
+    pub fn ip_discovery(mut self, input: crate::types::IpDiscovery) -> Self {
+        self.ip_discovery = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The mechanism for discovering IP addresses for the cluster discovery protocol. Valid values are 'ipv4' or 'ipv6'. When set to 'ipv4', cluster discovery functions such as cluster slots, cluster shards, and cluster nodes will return IPv4 addresses for cluster nodes. When set to 'ipv6', the cluster discovery functions return IPv6 addresses for cluster nodes. The value must be compatible with the NetworkType parameter. If not specified, the default is 'ipv4'.</p>
+    pub fn set_ip_discovery(mut self, input: ::std::option::Option<crate::types::IpDiscovery>) -> Self {
+        self.ip_discovery = input;
+        self
+    }
+    /// <p>The mechanism for discovering IP addresses for the cluster discovery protocol. Valid values are 'ipv4' or 'ipv6'. When set to 'ipv4', cluster discovery functions such as cluster slots, cluster shards, and cluster nodes will return IPv4 addresses for cluster nodes. When set to 'ipv6', the cluster discovery functions return IPv6 addresses for cluster nodes. The value must be compatible with the NetworkType parameter. If not specified, the default is 'ipv4'.</p>
+    pub fn get_ip_discovery(&self) -> &::std::option::Option<crate::types::IpDiscovery> {
+        &self.ip_discovery
+    }
     /// Consumes the builder and constructs a [`UpdateClusterInput`](crate::operation::update_cluster::UpdateClusterInput).
     pub fn build(
         self,
@@ -453,6 +474,7 @@ impl UpdateClusterInputBuilder {
             replica_configuration: self.replica_configuration,
             shard_configuration: self.shard_configuration,
             acl_name: self.acl_name,
+            ip_discovery: self.ip_discovery,
         })
     }
 }

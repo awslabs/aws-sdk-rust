@@ -60,6 +60,10 @@ pub struct Cluster {
     pub auto_minor_version_upgrade: ::std::option::Option<bool>,
     /// <p>Enables data tiering. Data tiering is only supported for clusters using the r6gd node type. This parameter must be set when using r6gd nodes. For more information, see <a href="https://docs.aws.amazon.com/memorydb/latest/devguide/data-tiering.html">Data tiering</a>.</p>
     pub data_tiering: ::std::option::Option<crate::types::DataTieringStatus>,
+    /// <p>The IP address type for the cluster. Returns 'ipv4' for IPv4 only, 'ipv6' for IPv6 only, or 'dual-stack' if the cluster supports both IPv4 and IPv6 addressing.</p>
+    pub network_type: ::std::option::Option<crate::types::NetworkType>,
+    /// <p>The mechanism that the cluster uses to discover IP addresses. Returns 'ipv4' when DNS endpoints resolve to IPv4 addresses, or 'ipv6' when DNS endpoints resolve to IPv6 addresses.</p>
+    pub ip_discovery: ::std::option::Option<crate::types::IpDiscovery>,
 }
 impl Cluster {
     /// <p>The user-supplied name of the cluster. This identifier is a unique key that identifies a cluster.</p>
@@ -178,6 +182,14 @@ impl Cluster {
     pub fn data_tiering(&self) -> ::std::option::Option<&crate::types::DataTieringStatus> {
         self.data_tiering.as_ref()
     }
+    /// <p>The IP address type for the cluster. Returns 'ipv4' for IPv4 only, 'ipv6' for IPv6 only, or 'dual-stack' if the cluster supports both IPv4 and IPv6 addressing.</p>
+    pub fn network_type(&self) -> ::std::option::Option<&crate::types::NetworkType> {
+        self.network_type.as_ref()
+    }
+    /// <p>The mechanism that the cluster uses to discover IP addresses. Returns 'ipv4' when DNS endpoints resolve to IPv4 addresses, or 'ipv6' when DNS endpoints resolve to IPv6 addresses.</p>
+    pub fn ip_discovery(&self) -> ::std::option::Option<&crate::types::IpDiscovery> {
+        self.ip_discovery.as_ref()
+    }
 }
 impl Cluster {
     /// Creates a new builder-style object to manufacture [`Cluster`](crate::types::Cluster).
@@ -218,6 +230,8 @@ pub struct ClusterBuilder {
     pub(crate) acl_name: ::std::option::Option<::std::string::String>,
     pub(crate) auto_minor_version_upgrade: ::std::option::Option<bool>,
     pub(crate) data_tiering: ::std::option::Option<crate::types::DataTieringStatus>,
+    pub(crate) network_type: ::std::option::Option<crate::types::NetworkType>,
+    pub(crate) ip_discovery: ::std::option::Option<crate::types::IpDiscovery>,
 }
 impl ClusterBuilder {
     /// <p>The user-supplied name of the cluster. This identifier is a unique key that identifies a cluster.</p>
@@ -624,6 +638,34 @@ impl ClusterBuilder {
     pub fn get_data_tiering(&self) -> &::std::option::Option<crate::types::DataTieringStatus> {
         &self.data_tiering
     }
+    /// <p>The IP address type for the cluster. Returns 'ipv4' for IPv4 only, 'ipv6' for IPv6 only, or 'dual-stack' if the cluster supports both IPv4 and IPv6 addressing.</p>
+    pub fn network_type(mut self, input: crate::types::NetworkType) -> Self {
+        self.network_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The IP address type for the cluster. Returns 'ipv4' for IPv4 only, 'ipv6' for IPv6 only, or 'dual-stack' if the cluster supports both IPv4 and IPv6 addressing.</p>
+    pub fn set_network_type(mut self, input: ::std::option::Option<crate::types::NetworkType>) -> Self {
+        self.network_type = input;
+        self
+    }
+    /// <p>The IP address type for the cluster. Returns 'ipv4' for IPv4 only, 'ipv6' for IPv6 only, or 'dual-stack' if the cluster supports both IPv4 and IPv6 addressing.</p>
+    pub fn get_network_type(&self) -> &::std::option::Option<crate::types::NetworkType> {
+        &self.network_type
+    }
+    /// <p>The mechanism that the cluster uses to discover IP addresses. Returns 'ipv4' when DNS endpoints resolve to IPv4 addresses, or 'ipv6' when DNS endpoints resolve to IPv6 addresses.</p>
+    pub fn ip_discovery(mut self, input: crate::types::IpDiscovery) -> Self {
+        self.ip_discovery = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The mechanism that the cluster uses to discover IP addresses. Returns 'ipv4' when DNS endpoints resolve to IPv4 addresses, or 'ipv6' when DNS endpoints resolve to IPv6 addresses.</p>
+    pub fn set_ip_discovery(mut self, input: ::std::option::Option<crate::types::IpDiscovery>) -> Self {
+        self.ip_discovery = input;
+        self
+    }
+    /// <p>The mechanism that the cluster uses to discover IP addresses. Returns 'ipv4' when DNS endpoints resolve to IPv4 addresses, or 'ipv6' when DNS endpoints resolve to IPv6 addresses.</p>
+    pub fn get_ip_discovery(&self) -> &::std::option::Option<crate::types::IpDiscovery> {
+        &self.ip_discovery
+    }
     /// Consumes the builder and constructs a [`Cluster`](crate::types::Cluster).
     pub fn build(self) -> crate::types::Cluster {
         crate::types::Cluster {
@@ -655,6 +697,8 @@ impl ClusterBuilder {
             acl_name: self.acl_name,
             auto_minor_version_upgrade: self.auto_minor_version_upgrade,
             data_tiering: self.data_tiering,
+            network_type: self.network_type,
+            ip_discovery: self.ip_discovery,
         }
     }
 }

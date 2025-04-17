@@ -57,6 +57,8 @@ pub(crate) mod shape_create_variant_store;
 
 pub(crate) mod shape_create_workflow;
 
+pub(crate) mod shape_create_workflow_version;
+
 pub(crate) mod shape_delete_annotation_store;
 
 pub(crate) mod shape_delete_annotation_store_versions;
@@ -80,6 +82,8 @@ pub(crate) mod shape_delete_share;
 pub(crate) mod shape_delete_variant_store;
 
 pub(crate) mod shape_delete_workflow;
+
+pub(crate) mod shape_delete_workflow_version;
 
 pub(crate) mod shape_get_annotation_import_job;
 
@@ -125,6 +129,8 @@ pub(crate) mod shape_get_variant_store;
 
 pub(crate) mod shape_get_workflow;
 
+pub(crate) mod shape_get_workflow_version;
+
 pub(crate) mod shape_list_annotation_import_jobs;
 
 pub(crate) mod shape_list_annotation_store_versions;
@@ -167,6 +173,8 @@ pub(crate) mod shape_list_variant_import_jobs;
 
 pub(crate) mod shape_list_variant_stores;
 
+pub(crate) mod shape_list_workflow_versions;
+
 pub(crate) mod shape_list_workflows;
 
 pub(crate) mod shape_put_s3_access_policy;
@@ -202,6 +210,8 @@ pub(crate) mod shape_update_sequence_store;
 pub(crate) mod shape_update_variant_store;
 
 pub(crate) mod shape_update_workflow;
+
+pub(crate) mod shape_update_workflow_version;
 
 pub(crate) mod shape_upload_read_set_part;
 
@@ -242,6 +252,8 @@ pub(crate) mod shape_create_share_input;
 pub(crate) mod shape_create_variant_store_input;
 
 pub(crate) mod shape_create_workflow_input;
+
+pub(crate) mod shape_create_workflow_version_input;
 
 pub(crate) mod shape_delete_annotation_store_versions_input;
 
@@ -324,6 +336,8 @@ pub(crate) mod shape_update_sequence_store_input;
 pub(crate) mod shape_update_variant_store_input;
 
 pub(crate) mod shape_update_workflow_input;
+
+pub(crate) mod shape_update_workflow_version_input;
 
 pub(crate) mod shape_validation_exception;
 
@@ -469,6 +483,8 @@ pub(crate) mod shape_workflow_parameter;
 
 pub(crate) mod shape_workflow_parameter_template;
 
+pub(crate) mod shape_workflow_version_list;
+
 pub(crate) mod shape_activate_read_set_job_item;
 
 pub(crate) mod shape_activate_read_set_source_item;
@@ -536,6 +552,8 @@ pub(crate) mod shape_vcf_options;
 pub(crate) mod shape_version_delete_error;
 
 pub(crate) mod shape_workflow_list_item;
+
+pub(crate) mod shape_workflow_version_list_item;
 
 pub(crate) mod shape_format_to_header;
 

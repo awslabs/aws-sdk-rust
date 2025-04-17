@@ -190,6 +190,20 @@ where
                                     .transpose()?,
                             );
                         }
+                        "NetworkType" => {
+                            builder = builder.set_network_type(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::NetworkType::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "IpDiscovery" => {
+                            builder = builder.set_ip_discovery(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::IpDiscovery::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

@@ -23,6 +23,8 @@ pub struct RuleAction {
     /// <p>Information about the update case action.</p>
     /// <p>Supported only for <code>TriggerEventSource</code> values: <code>OnCaseCreate</code> | <code>OnCaseUpdate</code>.</p>
     pub update_case_action: ::std::option::Option<crate::types::UpdateCaseActionDefinition>,
+    /// <p>Information about the assign SLA action.</p>
+    pub assign_sla_action: ::std::option::Option<crate::types::AssignSlaActionDefinition>,
     /// <p>Information about the end associated tasks action.</p>
     /// <p>Supported only for <code>TriggerEventSource</code> values: <code>OnCaseUpdate</code>.</p>
     pub end_associated_tasks_action: ::std::option::Option<crate::types::EndAssociatedTasksActionDefinition>,
@@ -63,6 +65,10 @@ impl RuleAction {
     pub fn update_case_action(&self) -> ::std::option::Option<&crate::types::UpdateCaseActionDefinition> {
         self.update_case_action.as_ref()
     }
+    /// <p>Information about the assign SLA action.</p>
+    pub fn assign_sla_action(&self) -> ::std::option::Option<&crate::types::AssignSlaActionDefinition> {
+        self.assign_sla_action.as_ref()
+    }
     /// <p>Information about the end associated tasks action.</p>
     /// <p>Supported only for <code>TriggerEventSource</code> values: <code>OnCaseUpdate</code>.</p>
     pub fn end_associated_tasks_action(&self) -> ::std::option::Option<&crate::types::EndAssociatedTasksActionDefinition> {
@@ -91,6 +97,7 @@ pub struct RuleActionBuilder {
     pub(crate) send_notification_action: ::std::option::Option<crate::types::SendNotificationActionDefinition>,
     pub(crate) create_case_action: ::std::option::Option<crate::types::CreateCaseActionDefinition>,
     pub(crate) update_case_action: ::std::option::Option<crate::types::UpdateCaseActionDefinition>,
+    pub(crate) assign_sla_action: ::std::option::Option<crate::types::AssignSlaActionDefinition>,
     pub(crate) end_associated_tasks_action: ::std::option::Option<crate::types::EndAssociatedTasksActionDefinition>,
     pub(crate) submit_auto_evaluation_action: ::std::option::Option<crate::types::SubmitAutoEvaluationActionDefinition>,
 }
@@ -209,6 +216,20 @@ impl RuleActionBuilder {
     pub fn get_update_case_action(&self) -> &::std::option::Option<crate::types::UpdateCaseActionDefinition> {
         &self.update_case_action
     }
+    /// <p>Information about the assign SLA action.</p>
+    pub fn assign_sla_action(mut self, input: crate::types::AssignSlaActionDefinition) -> Self {
+        self.assign_sla_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Information about the assign SLA action.</p>
+    pub fn set_assign_sla_action(mut self, input: ::std::option::Option<crate::types::AssignSlaActionDefinition>) -> Self {
+        self.assign_sla_action = input;
+        self
+    }
+    /// <p>Information about the assign SLA action.</p>
+    pub fn get_assign_sla_action(&self) -> &::std::option::Option<crate::types::AssignSlaActionDefinition> {
+        &self.assign_sla_action
+    }
     /// <p>Information about the end associated tasks action.</p>
     /// <p>Supported only for <code>TriggerEventSource</code> values: <code>OnCaseUpdate</code>.</p>
     pub fn end_associated_tasks_action(mut self, input: crate::types::EndAssociatedTasksActionDefinition) -> Self {
@@ -257,6 +278,7 @@ impl RuleActionBuilder {
             send_notification_action: self.send_notification_action,
             create_case_action: self.create_case_action,
             update_case_action: self.update_case_action,
+            assign_sla_action: self.assign_sla_action,
             end_associated_tasks_action: self.end_associated_tasks_action,
             submit_auto_evaluation_action: self.submit_auto_evaluation_action,
         })

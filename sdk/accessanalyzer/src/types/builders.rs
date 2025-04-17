@@ -105,6 +105,12 @@ pub use crate::types::_dynamodb_stream_configuration::DynamodbStreamConfiguratio
 
 pub use crate::types::_s3_express_directory_bucket_configuration::S3ExpressDirectoryBucketConfigurationBuilder;
 
+pub use crate::types::_s3_express_directory_access_point_configuration::S3ExpressDirectoryAccessPointConfigurationBuilder;
+
+pub use crate::types::_internet_configuration::InternetConfigurationBuilder;
+
+pub use crate::types::_vpc_configuration::VpcConfigurationBuilder;
+
 pub use crate::types::_sqs_queue_configuration::SqsQueueConfigurationBuilder;
 
 pub use crate::types::_sns_topic_configuration::SnsTopicConfigurationBuilder;
@@ -112,10 +118,6 @@ pub use crate::types::_sns_topic_configuration::SnsTopicConfigurationBuilder;
 pub use crate::types::_s3_bucket_configuration::S3BucketConfigurationBuilder;
 
 pub use crate::types::_s3_access_point_configuration::S3AccessPointConfigurationBuilder;
-
-pub use crate::types::_internet_configuration::InternetConfigurationBuilder;
-
-pub use crate::types::_vpc_configuration::VpcConfigurationBuilder;
 
 pub use crate::types::_s3_public_access_block_configuration::S3PublicAccessBlockConfigurationBuilder;
 
