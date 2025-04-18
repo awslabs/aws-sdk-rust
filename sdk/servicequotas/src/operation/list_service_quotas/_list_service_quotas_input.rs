@@ -13,7 +13,7 @@ pub struct ListServiceQuotasInput {
     pub max_results: ::std::option::Option<i32>,
     /// <p>Specifies the quota identifier. To find the quota code for a specific quota, use the <code>ListServiceQuotas</code> operation, and look for the <code>QuotaCode</code> response in the output for the quota you want.</p>
     pub quota_code: ::std::option::Option<::std::string::String>,
-    /// <p>Specifies at which level of granularity that the quota value is applied.</p>
+    /// <p>Filters the response to return applied quota values for the <code>ACCOUNT</code>, <code>RESOURCE</code>, or <code>ALL</code> levels. <code>ACCOUNT</code> is the default.</p>
     pub quota_applied_at_level: ::std::option::Option<crate::types::AppliedLevelEnum>,
 }
 impl ListServiceQuotasInput {
@@ -35,7 +35,7 @@ impl ListServiceQuotasInput {
     pub fn quota_code(&self) -> ::std::option::Option<&str> {
         self.quota_code.as_deref()
     }
-    /// <p>Specifies at which level of granularity that the quota value is applied.</p>
+    /// <p>Filters the response to return applied quota values for the <code>ACCOUNT</code>, <code>RESOURCE</code>, or <code>ALL</code> levels. <code>ACCOUNT</code> is the default.</p>
     pub fn quota_applied_at_level(&self) -> ::std::option::Option<&crate::types::AppliedLevelEnum> {
         self.quota_applied_at_level.as_ref()
     }
@@ -121,17 +121,17 @@ impl ListServiceQuotasInputBuilder {
     pub fn get_quota_code(&self) -> &::std::option::Option<::std::string::String> {
         &self.quota_code
     }
-    /// <p>Specifies at which level of granularity that the quota value is applied.</p>
+    /// <p>Filters the response to return applied quota values for the <code>ACCOUNT</code>, <code>RESOURCE</code>, or <code>ALL</code> levels. <code>ACCOUNT</code> is the default.</p>
     pub fn quota_applied_at_level(mut self, input: crate::types::AppliedLevelEnum) -> Self {
         self.quota_applied_at_level = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies at which level of granularity that the quota value is applied.</p>
+    /// <p>Filters the response to return applied quota values for the <code>ACCOUNT</code>, <code>RESOURCE</code>, or <code>ALL</code> levels. <code>ACCOUNT</code> is the default.</p>
     pub fn set_quota_applied_at_level(mut self, input: ::std::option::Option<crate::types::AppliedLevelEnum>) -> Self {
         self.quota_applied_at_level = input;
         self
     }
-    /// <p>Specifies at which level of granularity that the quota value is applied.</p>
+    /// <p>Filters the response to return applied quota values for the <code>ACCOUNT</code>, <code>RESOURCE</code>, or <code>ALL</code> levels. <code>ACCOUNT</code> is the default.</p>
     pub fn get_quota_applied_at_level(&self) -> &::std::option::Option<crate::types::AppliedLevelEnum> {
         &self.quota_applied_at_level
     }

@@ -20,6 +20,8 @@ pub struct SessionData {
     pub tag_filter: ::std::option::Option<crate::types::TagFilter>,
     /// <p>The configuration of the AI Agents (mapped by AI Agent Type to AI Agent version) that should be used by Amazon Q in Connect for this Session.</p>
     pub ai_agent_configuration: ::std::option::Option<::std::collections::HashMap<crate::types::AiAgentType, crate::types::AiAgentConfigurationData>>,
+    /// <p>The origin of the Session to be listed. <code>SYSTEM</code> for a default Session created by Amazon Q in Connect or <code>CUSTOMER</code> for a Session created by calling <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_amazon-q-connect_CreateSession.html">CreateSession</a> API.</p>
+    pub origin: ::std::option::Option<crate::types::Origin>,
 }
 impl SessionData {
     /// <p>The Amazon Resource Name (ARN) of the session.</p>
@@ -59,6 +61,10 @@ impl SessionData {
     ) -> ::std::option::Option<&::std::collections::HashMap<crate::types::AiAgentType, crate::types::AiAgentConfigurationData>> {
         self.ai_agent_configuration.as_ref()
     }
+    /// <p>The origin of the Session to be listed. <code>SYSTEM</code> for a default Session created by Amazon Q in Connect or <code>CUSTOMER</code> for a Session created by calling <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_amazon-q-connect_CreateSession.html">CreateSession</a> API.</p>
+    pub fn origin(&self) -> ::std::option::Option<&crate::types::Origin> {
+        self.origin.as_ref()
+    }
 }
 impl SessionData {
     /// Creates a new builder-style object to manufacture [`SessionData`](crate::types::SessionData).
@@ -80,6 +86,7 @@ pub struct SessionDataBuilder {
     pub(crate) tag_filter: ::std::option::Option<crate::types::TagFilter>,
     pub(crate) ai_agent_configuration:
         ::std::option::Option<::std::collections::HashMap<crate::types::AiAgentType, crate::types::AiAgentConfigurationData>>,
+    pub(crate) origin: ::std::option::Option<crate::types::Origin>,
 }
 impl SessionDataBuilder {
     /// <p>The Amazon Resource Name (ARN) of the session.</p>
@@ -214,6 +221,20 @@ impl SessionDataBuilder {
     ) -> &::std::option::Option<::std::collections::HashMap<crate::types::AiAgentType, crate::types::AiAgentConfigurationData>> {
         &self.ai_agent_configuration
     }
+    /// <p>The origin of the Session to be listed. <code>SYSTEM</code> for a default Session created by Amazon Q in Connect or <code>CUSTOMER</code> for a Session created by calling <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_amazon-q-connect_CreateSession.html">CreateSession</a> API.</p>
+    pub fn origin(mut self, input: crate::types::Origin) -> Self {
+        self.origin = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The origin of the Session to be listed. <code>SYSTEM</code> for a default Session created by Amazon Q in Connect or <code>CUSTOMER</code> for a Session created by calling <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_amazon-q-connect_CreateSession.html">CreateSession</a> API.</p>
+    pub fn set_origin(mut self, input: ::std::option::Option<crate::types::Origin>) -> Self {
+        self.origin = input;
+        self
+    }
+    /// <p>The origin of the Session to be listed. <code>SYSTEM</code> for a default Session created by Amazon Q in Connect or <code>CUSTOMER</code> for a Session created by calling <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_amazon-q-connect_CreateSession.html">CreateSession</a> API.</p>
+    pub fn get_origin(&self) -> &::std::option::Option<crate::types::Origin> {
+        &self.origin
+    }
     /// Consumes the builder and constructs a [`SessionData`](crate::types::SessionData).
     /// This method will fail if any of the following fields are not set:
     /// - [`session_arn`](crate::types::builders::SessionDataBuilder::session_arn)
@@ -244,6 +265,7 @@ impl SessionDataBuilder {
             integration_configuration: self.integration_configuration,
             tag_filter: self.tag_filter,
             ai_agent_configuration: self.ai_agent_configuration,
+            origin: self.origin,
         })
     }
 }

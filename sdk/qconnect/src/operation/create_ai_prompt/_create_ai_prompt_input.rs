@@ -17,9 +17,12 @@ pub struct CreateAiPromptInput {
     pub visibility_status: ::std::option::Option<crate::types::VisibilityStatus>,
     /// <p>The type of the prompt template for this AI Prompt.</p>
     pub template_type: ::std::option::Option<crate::types::AiPromptTemplateType>,
-    /// <p>The identifier of the model used for this AI Prompt. Model Ids supported are: <code>anthropic.claude-3-haiku-20240307-v1:0</code></p>
+    /// <p>The identifier of the model used for this AI Prompt.</p>
     pub model_id: ::std::option::Option<::std::string::String>,
     /// <p>The API Format of the AI Prompt.</p>
+    /// <p>Recommended values: <code>MESSAGES | TEXT_COMPLETIONS</code></p><note>
+    /// <p>The values <code>ANTHROPIC_CLAUDE_MESSAGES | ANTHROPIC_CLAUDE_TEXT_COMPLETIONS</code> will be deprecated.</p>
+    /// </note>
     pub api_format: ::std::option::Option<crate::types::AiPromptApiFormat>,
     /// <p>The tags used to organize, track, or control access for this resource.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
@@ -55,11 +58,14 @@ impl CreateAiPromptInput {
     pub fn template_type(&self) -> ::std::option::Option<&crate::types::AiPromptTemplateType> {
         self.template_type.as_ref()
     }
-    /// <p>The identifier of the model used for this AI Prompt. Model Ids supported are: <code>anthropic.claude-3-haiku-20240307-v1:0</code></p>
+    /// <p>The identifier of the model used for this AI Prompt.</p>
     pub fn model_id(&self) -> ::std::option::Option<&str> {
         self.model_id.as_deref()
     }
     /// <p>The API Format of the AI Prompt.</p>
+    /// <p>Recommended values: <code>MESSAGES | TEXT_COMPLETIONS</code></p><note>
+    /// <p>The values <code>ANTHROPIC_CLAUDE_MESSAGES | ANTHROPIC_CLAUDE_TEXT_COMPLETIONS</code> will be deprecated.</p>
+    /// </note>
     pub fn api_format(&self) -> ::std::option::Option<&crate::types::AiPromptApiFormat> {
         self.api_format.as_ref()
     }
@@ -200,33 +206,42 @@ impl CreateAiPromptInputBuilder {
     pub fn get_template_type(&self) -> &::std::option::Option<crate::types::AiPromptTemplateType> {
         &self.template_type
     }
-    /// <p>The identifier of the model used for this AI Prompt. Model Ids supported are: <code>anthropic.claude-3-haiku-20240307-v1:0</code></p>
+    /// <p>The identifier of the model used for this AI Prompt.</p>
     /// This field is required.
     pub fn model_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The identifier of the model used for this AI Prompt. Model Ids supported are: <code>anthropic.claude-3-haiku-20240307-v1:0</code></p>
+    /// <p>The identifier of the model used for this AI Prompt.</p>
     pub fn set_model_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.model_id = input;
         self
     }
-    /// <p>The identifier of the model used for this AI Prompt. Model Ids supported are: <code>anthropic.claude-3-haiku-20240307-v1:0</code></p>
+    /// <p>The identifier of the model used for this AI Prompt.</p>
     pub fn get_model_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.model_id
     }
     /// <p>The API Format of the AI Prompt.</p>
+    /// <p>Recommended values: <code>MESSAGES | TEXT_COMPLETIONS</code></p><note>
+    /// <p>The values <code>ANTHROPIC_CLAUDE_MESSAGES | ANTHROPIC_CLAUDE_TEXT_COMPLETIONS</code> will be deprecated.</p>
+    /// </note>
     /// This field is required.
     pub fn api_format(mut self, input: crate::types::AiPromptApiFormat) -> Self {
         self.api_format = ::std::option::Option::Some(input);
         self
     }
     /// <p>The API Format of the AI Prompt.</p>
+    /// <p>Recommended values: <code>MESSAGES | TEXT_COMPLETIONS</code></p><note>
+    /// <p>The values <code>ANTHROPIC_CLAUDE_MESSAGES | ANTHROPIC_CLAUDE_TEXT_COMPLETIONS</code> will be deprecated.</p>
+    /// </note>
     pub fn set_api_format(mut self, input: ::std::option::Option<crate::types::AiPromptApiFormat>) -> Self {
         self.api_format = input;
         self
     }
     /// <p>The API Format of the AI Prompt.</p>
+    /// <p>Recommended values: <code>MESSAGES | TEXT_COMPLETIONS</code></p><note>
+    /// <p>The values <code>ANTHROPIC_CLAUDE_MESSAGES | ANTHROPIC_CLAUDE_TEXT_COMPLETIONS</code> will be deprecated.</p>
+    /// </note>
     pub fn get_api_format(&self) -> &::std::option::Option<crate::types::AiPromptApiFormat> {
         &self.api_format
     }

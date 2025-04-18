@@ -22,7 +22,7 @@ impl crate::operation::list_services::builders::ListServicesInputBuilder {
 }
 /// Fluent builder constructing a request to `ListServices`.
 ///
-/// <p>Lists the names and codes for the Amazon Web Services integrated with Service Quotas.</p>
+/// <p>Lists the names and codes for the Amazon Web Services services integrated with Service Quotas.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListServicesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

@@ -11,6 +11,8 @@ pub struct GetRecommendationsInput {
     pub max_results: ::std::option::Option<i32>,
     /// <p>The duration (in seconds) for which the call waits for a recommendation to be made available before returning. If a recommendation is available, the call returns sooner than <code>WaitTimeSeconds</code>. If no messages are available and the wait time expires, the call returns successfully with an empty list.</p>
     pub wait_time_seconds: ::std::option::Option<i32>,
+    /// <p>The token for the next set of chunks. Use the value returned in the previous response in the next request to retrieve the next set of chunks.</p>
+    pub next_chunk_token: ::std::option::Option<::std::string::String>,
 }
 impl GetRecommendationsInput {
     /// <p>The identifier of the Amazon Q in Connect assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
@@ -29,6 +31,10 @@ impl GetRecommendationsInput {
     pub fn wait_time_seconds(&self) -> ::std::option::Option<i32> {
         self.wait_time_seconds
     }
+    /// <p>The token for the next set of chunks. Use the value returned in the previous response in the next request to retrieve the next set of chunks.</p>
+    pub fn next_chunk_token(&self) -> ::std::option::Option<&str> {
+        self.next_chunk_token.as_deref()
+    }
 }
 impl GetRecommendationsInput {
     /// Creates a new builder-style object to manufacture [`GetRecommendationsInput`](crate::operation::get_recommendations::GetRecommendationsInput).
@@ -45,6 +51,7 @@ pub struct GetRecommendationsInputBuilder {
     pub(crate) session_id: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) wait_time_seconds: ::std::option::Option<i32>,
+    pub(crate) next_chunk_token: ::std::option::Option<::std::string::String>,
 }
 impl GetRecommendationsInputBuilder {
     /// <p>The identifier of the Amazon Q in Connect assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
@@ -105,6 +112,20 @@ impl GetRecommendationsInputBuilder {
     pub fn get_wait_time_seconds(&self) -> &::std::option::Option<i32> {
         &self.wait_time_seconds
     }
+    /// <p>The token for the next set of chunks. Use the value returned in the previous response in the next request to retrieve the next set of chunks.</p>
+    pub fn next_chunk_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.next_chunk_token = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The token for the next set of chunks. Use the value returned in the previous response in the next request to retrieve the next set of chunks.</p>
+    pub fn set_next_chunk_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.next_chunk_token = input;
+        self
+    }
+    /// <p>The token for the next set of chunks. Use the value returned in the previous response in the next request to retrieve the next set of chunks.</p>
+    pub fn get_next_chunk_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_chunk_token
+    }
     /// Consumes the builder and constructs a [`GetRecommendationsInput`](crate::operation::get_recommendations::GetRecommendationsInput).
     pub fn build(
         self,
@@ -114,6 +135,7 @@ impl GetRecommendationsInputBuilder {
             session_id: self.session_id,
             max_results: self.max_results,
             wait_time_seconds: self.wait_time_seconds,
+            next_chunk_token: self.next_chunk_token,
         })
     }
 }

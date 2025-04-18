@@ -6,6 +6,8 @@
 pub enum DataDetails {
     /// <p>Details about the content data.</p>
     ContentData(crate::types::ContentDataDetails),
+    /// <p>Details about the generative chunk data.</p>
+    GenerativeChunkData(crate::types::GenerativeChunkDataDetails),
     /// <p>Details about the generative data.</p>
     GenerativeData(crate::types::GenerativeDataDetails),
     /// <p>Details about the intent data.</p>
@@ -35,6 +37,19 @@ impl DataDetails {
     /// Returns true if this is a [`ContentData`](crate::types::DataDetails::ContentData).
     pub fn is_content_data(&self) -> bool {
         self.as_content_data().is_ok()
+    }
+    /// Tries to convert the enum instance into [`GenerativeChunkData`](crate::types::DataDetails::GenerativeChunkData), extracting the inner [`GenerativeChunkDataDetails`](crate::types::GenerativeChunkDataDetails).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_generative_chunk_data(&self) -> ::std::result::Result<&crate::types::GenerativeChunkDataDetails, &Self> {
+        if let DataDetails::GenerativeChunkData(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`GenerativeChunkData`](crate::types::DataDetails::GenerativeChunkData).
+    pub fn is_generative_chunk_data(&self) -> bool {
+        self.as_generative_chunk_data().is_ok()
     }
     /// Tries to convert the enum instance into [`GenerativeData`](crate::types::DataDetails::GenerativeData), extracting the inner [`GenerativeDataDetails`](crate::types::GenerativeDataDetails).
     /// Returns `Err(&Self)` if it can't be converted.

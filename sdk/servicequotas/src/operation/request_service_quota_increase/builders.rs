@@ -22,7 +22,7 @@ impl crate::operation::request_service_quota_increase::builders::RequestServiceQ
 }
 /// Fluent builder constructing a request to `RequestServiceQuotaIncrease`.
 ///
-/// <p>Submits a quota increase request for the specified quota.</p>
+/// <p>Submits a quota increase request for the specified quota at the account or resource level.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct RequestServiceQuotaIncreaseFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -150,18 +150,35 @@ impl RequestServiceQuotaIncreaseFluentBuilder {
     pub fn get_desired_value(&self) -> &::std::option::Option<f64> {
         self.inner.get_desired_value()
     }
-    /// <p>Specifies the Amazon Web Services account or resource to which the quota applies. The value in this field depends on the context scope associated with the specified service quota.</p>
+    /// <p>Specifies the resource with an Amazon Resource Name (ARN).</p>
     pub fn context_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.context_id(input.into());
         self
     }
-    /// <p>Specifies the Amazon Web Services account or resource to which the quota applies. The value in this field depends on the context scope associated with the specified service quota.</p>
+    /// <p>Specifies the resource with an Amazon Resource Name (ARN).</p>
     pub fn set_context_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_context_id(input);
         self
     }
-    /// <p>Specifies the Amazon Web Services account or resource to which the quota applies. The value in this field depends on the context scope associated with the specified service quota.</p>
+    /// <p>Specifies the resource with an Amazon Resource Name (ARN).</p>
     pub fn get_context_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_context_id()
+    }
+    /// <p>Specifies if an Amazon Web Services Support case can be opened for the quota increase request. This parameter is optional.</p>
+    /// <p>By default, this flag is set to <code>True</code> and Amazon Web Services may create a support case for some quota increase requests. You can set this flag to <code>False</code> if you do not want a support case created when you request a quota increase. If you set the flag to <code>False</code>, Amazon Web Services does not open a support case and updates the request status to <code>Not approved</code>.</p>
+    pub fn support_case_allowed(mut self, input: bool) -> Self {
+        self.inner = self.inner.support_case_allowed(input);
+        self
+    }
+    /// <p>Specifies if an Amazon Web Services Support case can be opened for the quota increase request. This parameter is optional.</p>
+    /// <p>By default, this flag is set to <code>True</code> and Amazon Web Services may create a support case for some quota increase requests. You can set this flag to <code>False</code> if you do not want a support case created when you request a quota increase. If you set the flag to <code>False</code>, Amazon Web Services does not open a support case and updates the request status to <code>Not approved</code>.</p>
+    pub fn set_support_case_allowed(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_support_case_allowed(input);
+        self
+    }
+    /// <p>Specifies if an Amazon Web Services Support case can be opened for the quota increase request. This parameter is optional.</p>
+    /// <p>By default, this flag is set to <code>True</code> and Amazon Web Services may create a support case for some quota increase requests. You can set this flag to <code>False</code> if you do not want a support case created when you request a quota increase. If you set the flag to <code>False</code>, Amazon Web Services does not open a support case and updates the request status to <code>Not approved</code>.</p>
+    pub fn get_support_case_allowed(&self) -> &::std::option::Option<bool> {
+        self.inner.get_support_case_allowed()
     }
 }

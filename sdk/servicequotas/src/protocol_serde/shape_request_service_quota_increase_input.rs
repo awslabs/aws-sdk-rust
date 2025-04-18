@@ -18,5 +18,8 @@ pub fn ser_request_service_quota_increase_input_input(
     if let Some(var_4) = &input.context_id {
         object.key("ContextId").string(var_4.as_str());
     }
+    if let Some(var_5) = &input.support_case_allowed {
+        object.key("SupportCaseAllowed").boolean(*var_5);
+    }
     Ok(())
 }

@@ -22,7 +22,7 @@ impl crate::operation::list_aws_default_service_quotas::builders::ListAwsDefault
 }
 /// Fluent builder constructing a request to `ListAWSDefaultServiceQuotas`.
 ///
-/// <p>Lists the default values for the quotas for the specified Amazon Web Service. A default value does not reflect any quota increases.</p>
+/// <p>Lists the default values for the quotas for the specified Amazon Web Services service. A default value does not reflect any quota increases.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListAWSDefaultServiceQuotasFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

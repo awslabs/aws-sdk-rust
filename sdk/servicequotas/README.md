@@ -2,6 +2,8 @@
 
 With Service Quotas, you can view and manage your quotas easily as your Amazon Web Services workloads grow. Quotas, also referred to as limits, are the maximum number of resources that you can create in your Amazon Web Services account. For more information, see the [Service Quotas User Guide](https://docs.aws.amazon.com/servicequotas/latest/userguide/).
 
+You need Amazon Web Services CLI version 2.13.20 or higher to view and manage resource-level quotas such as Instances per domain for Amazon OpenSearch Service.
+
 ## Getting Started
 
 > Examples are available for many services and operations, check out the
@@ -14,7 +16,7 @@ your project, add the following to your **Cargo.toml** file:
 ```toml
 [dependencies]
 aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-aws-sdk-servicequotas = "1.64.0"
+aws-sdk-servicequotas = "1.65.0"
 tokio = { version = "1", features = ["full"] }
 ```
 

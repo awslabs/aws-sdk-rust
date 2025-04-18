@@ -22,7 +22,7 @@ impl crate::operation::list_requested_service_quota_change_history::builders::Li
 }
 /// Fluent builder constructing a request to `ListRequestedServiceQuotaChangeHistory`.
 ///
-/// <p>Retrieves the quota increase requests for the specified Amazon Web Service.</p>
+/// <p>Retrieves the quota increase requests for the specified Amazon Web Services service. Filter responses to return quota requests at either the account level, resource level, or all levels. Responses include any open or closed requests within 90 days.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListRequestedServiceQuotaChangeHistoryFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -185,17 +185,17 @@ impl ListRequestedServiceQuotaChangeHistoryFluentBuilder {
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_results()
     }
-    /// <p>Specifies at which level within the Amazon Web Services account the quota request applies to.</p>
+    /// <p>Filters the response to return quota requests for the <code>ACCOUNT</code>, <code>RESOURCE</code>, or <code>ALL</code> levels. <code>ACCOUNT</code> is the default.</p>
     pub fn quota_requested_at_level(mut self, input: crate::types::AppliedLevelEnum) -> Self {
         self.inner = self.inner.quota_requested_at_level(input);
         self
     }
-    /// <p>Specifies at which level within the Amazon Web Services account the quota request applies to.</p>
+    /// <p>Filters the response to return quota requests for the <code>ACCOUNT</code>, <code>RESOURCE</code>, or <code>ALL</code> levels. <code>ACCOUNT</code> is the default.</p>
     pub fn set_quota_requested_at_level(mut self, input: ::std::option::Option<crate::types::AppliedLevelEnum>) -> Self {
         self.inner = self.inner.set_quota_requested_at_level(input);
         self
     }
-    /// <p>Specifies at which level within the Amazon Web Services account the quota request applies to.</p>
+    /// <p>Filters the response to return quota requests for the <code>ACCOUNT</code>, <code>RESOURCE</code>, or <code>ALL</code> levels. <code>ACCOUNT</code> is the default.</p>
     pub fn get_quota_requested_at_level(&self) -> &::std::option::Option<crate::types::AppliedLevelEnum> {
         self.inner.get_quota_requested_at_level()
     }

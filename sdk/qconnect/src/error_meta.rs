@@ -946,6 +946,7 @@ impl From<crate::operation::delete_content::DeleteContentError> for Error {
     fn from(err: crate::operation::delete_content::DeleteContentError) -> Self {
         match err {
             crate::operation::delete_content::DeleteContentError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::delete_content::DeleteContentError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::delete_content::DeleteContentError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::delete_content::DeleteContentError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::delete_content::DeleteContentError::Unhandled(inner) => Error::Unhandled(inner),

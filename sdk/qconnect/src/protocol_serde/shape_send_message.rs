@@ -151,6 +151,9 @@ pub(crate) fn de_send_message(
         match tokens.next().transpose()? {
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                "configuration" => {
+                    builder = builder.set_configuration(crate::protocol_serde::shape_message_configuration::de_message_configuration(tokens)?);
+                }
                 "nextMessageToken" => {
                     builder = builder.set_next_message_token(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

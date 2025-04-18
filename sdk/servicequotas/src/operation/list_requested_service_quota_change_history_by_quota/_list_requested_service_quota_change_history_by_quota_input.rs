@@ -15,7 +15,7 @@ pub struct ListRequestedServiceQuotaChangeHistoryByQuotaInput {
     /// <p>An API operation can return fewer results than the maximum even when there are more results available. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.</p>
     /// </note>
     pub max_results: ::std::option::Option<i32>,
-    /// <p>Specifies at which level within the Amazon Web Services account the quota request applies to.</p>
+    /// <p>Filters the response to return quota requests for the <code>ACCOUNT</code>, <code>RESOURCE</code>, or <code>ALL</code> levels. <code>ACCOUNT</code> is the default.</p>
     pub quota_requested_at_level: ::std::option::Option<crate::types::AppliedLevelEnum>,
 }
 impl ListRequestedServiceQuotaChangeHistoryByQuotaInput {
@@ -41,7 +41,7 @@ impl ListRequestedServiceQuotaChangeHistoryByQuotaInput {
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
-    /// <p>Specifies at which level within the Amazon Web Services account the quota request applies to.</p>
+    /// <p>Filters the response to return quota requests for the <code>ACCOUNT</code>, <code>RESOURCE</code>, or <code>ALL</code> levels. <code>ACCOUNT</code> is the default.</p>
     pub fn quota_requested_at_level(&self) -> ::std::option::Option<&crate::types::AppliedLevelEnum> {
         self.quota_requested_at_level.as_ref()
     }
@@ -145,17 +145,17 @@ impl ListRequestedServiceQuotaChangeHistoryByQuotaInputBuilder {
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
-    /// <p>Specifies at which level within the Amazon Web Services account the quota request applies to.</p>
+    /// <p>Filters the response to return quota requests for the <code>ACCOUNT</code>, <code>RESOURCE</code>, or <code>ALL</code> levels. <code>ACCOUNT</code> is the default.</p>
     pub fn quota_requested_at_level(mut self, input: crate::types::AppliedLevelEnum) -> Self {
         self.quota_requested_at_level = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies at which level within the Amazon Web Services account the quota request applies to.</p>
+    /// <p>Filters the response to return quota requests for the <code>ACCOUNT</code>, <code>RESOURCE</code>, or <code>ALL</code> levels. <code>ACCOUNT</code> is the default.</p>
     pub fn set_quota_requested_at_level(mut self, input: ::std::option::Option<crate::types::AppliedLevelEnum>) -> Self {
         self.quota_requested_at_level = input;
         self
     }
-    /// <p>Specifies at which level within the Amazon Web Services account the quota request applies to.</p>
+    /// <p>Filters the response to return quota requests for the <code>ACCOUNT</code>, <code>RESOURCE</code>, or <code>ALL</code> levels. <code>ACCOUNT</code> is the default.</p>
     pub fn get_quota_requested_at_level(&self) -> &::std::option::Option<crate::types::AppliedLevelEnum> {
         &self.quota_requested_at_level
     }

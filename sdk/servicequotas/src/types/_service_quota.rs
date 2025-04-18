@@ -28,10 +28,12 @@ pub struct ServiceQuota {
     pub period: ::std::option::Option<crate::types::QuotaPeriod>,
     /// <p>The error code and error reason.</p>
     pub error_reason: ::std::option::Option<crate::types::ErrorReason>,
-    /// <p>Specifies at which level of granularity that the quota value is applied.</p>
+    /// <p>Filters the response to return applied quota values for the <code>ACCOUNT</code>, <code>RESOURCE</code>, or <code>ALL</code> levels. <code>ACCOUNT</code> is the default.</p>
     pub quota_applied_at_level: ::std::option::Option<crate::types::AppliedLevelEnum>,
     /// <p>The context for this service quota.</p>
     pub quota_context: ::std::option::Option<crate::types::QuotaContextInfo>,
+    /// <p>The quota description.</p>
+    pub description: ::std::option::Option<::std::string::String>,
 }
 impl ServiceQuota {
     /// <p>Specifies the service identifier. To find the service code value for an Amazon Web Services service, use the <code>ListServices</code> operation.</p>
@@ -82,13 +84,17 @@ impl ServiceQuota {
     pub fn error_reason(&self) -> ::std::option::Option<&crate::types::ErrorReason> {
         self.error_reason.as_ref()
     }
-    /// <p>Specifies at which level of granularity that the quota value is applied.</p>
+    /// <p>Filters the response to return applied quota values for the <code>ACCOUNT</code>, <code>RESOURCE</code>, or <code>ALL</code> levels. <code>ACCOUNT</code> is the default.</p>
     pub fn quota_applied_at_level(&self) -> ::std::option::Option<&crate::types::AppliedLevelEnum> {
         self.quota_applied_at_level.as_ref()
     }
     /// <p>The context for this service quota.</p>
     pub fn quota_context(&self) -> ::std::option::Option<&crate::types::QuotaContextInfo> {
         self.quota_context.as_ref()
+    }
+    /// <p>The quota description.</p>
+    pub fn description(&self) -> ::std::option::Option<&str> {
+        self.description.as_deref()
     }
 }
 impl ServiceQuota {
@@ -116,6 +122,7 @@ pub struct ServiceQuotaBuilder {
     pub(crate) error_reason: ::std::option::Option<crate::types::ErrorReason>,
     pub(crate) quota_applied_at_level: ::std::option::Option<crate::types::AppliedLevelEnum>,
     pub(crate) quota_context: ::std::option::Option<crate::types::QuotaContextInfo>,
+    pub(crate) description: ::std::option::Option<::std::string::String>,
 }
 impl ServiceQuotaBuilder {
     /// <p>Specifies the service identifier. To find the service code value for an Amazon Web Services service, use the <code>ListServices</code> operation.</p>
@@ -286,17 +293,17 @@ impl ServiceQuotaBuilder {
     pub fn get_error_reason(&self) -> &::std::option::Option<crate::types::ErrorReason> {
         &self.error_reason
     }
-    /// <p>Specifies at which level of granularity that the quota value is applied.</p>
+    /// <p>Filters the response to return applied quota values for the <code>ACCOUNT</code>, <code>RESOURCE</code>, or <code>ALL</code> levels. <code>ACCOUNT</code> is the default.</p>
     pub fn quota_applied_at_level(mut self, input: crate::types::AppliedLevelEnum) -> Self {
         self.quota_applied_at_level = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies at which level of granularity that the quota value is applied.</p>
+    /// <p>Filters the response to return applied quota values for the <code>ACCOUNT</code>, <code>RESOURCE</code>, or <code>ALL</code> levels. <code>ACCOUNT</code> is the default.</p>
     pub fn set_quota_applied_at_level(mut self, input: ::std::option::Option<crate::types::AppliedLevelEnum>) -> Self {
         self.quota_applied_at_level = input;
         self
     }
-    /// <p>Specifies at which level of granularity that the quota value is applied.</p>
+    /// <p>Filters the response to return applied quota values for the <code>ACCOUNT</code>, <code>RESOURCE</code>, or <code>ALL</code> levels. <code>ACCOUNT</code> is the default.</p>
     pub fn get_quota_applied_at_level(&self) -> &::std::option::Option<crate::types::AppliedLevelEnum> {
         &self.quota_applied_at_level
     }
@@ -313,6 +320,20 @@ impl ServiceQuotaBuilder {
     /// <p>The context for this service quota.</p>
     pub fn get_quota_context(&self) -> &::std::option::Option<crate::types::QuotaContextInfo> {
         &self.quota_context
+    }
+    /// <p>The quota description.</p>
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.description = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The quota description.</p>
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.description = input;
+        self
+    }
+    /// <p>The quota description.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Consumes the builder and constructs a [`ServiceQuota`](crate::types::ServiceQuota).
     pub fn build(self) -> crate::types::ServiceQuota {
@@ -331,6 +352,7 @@ impl ServiceQuotaBuilder {
             error_reason: self.error_reason,
             quota_applied_at_level: self.quota_applied_at_level,
             quota_context: self.quota_context,
+            description: self.description,
         }
     }
 }

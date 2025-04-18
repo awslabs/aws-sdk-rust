@@ -12,9 +12,13 @@
 /// ```text
 /// # let recommendationtype = unimplemented!();
 /// match recommendationtype {
+///     RecommendationType::BlockedGenerativeAnswerChunk => { /* ... */ },
+///     RecommendationType::BlockedIntentAnswerChunk => { /* ... */ },
 ///     RecommendationType::DetectedIntent => { /* ... */ },
 ///     RecommendationType::GenerativeAnswer => { /* ... */ },
+///     RecommendationType::GenerativeAnswerChunk => { /* ... */ },
 ///     RecommendationType::GenerativeResponse => { /* ... */ },
+///     RecommendationType::IntentAnswerChunk => { /* ... */ },
 ///     RecommendationType::KnowledgeContent => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -45,11 +49,19 @@
 )]
 pub enum RecommendationType {
     #[allow(missing_docs)] // documentation missing in model
+    BlockedGenerativeAnswerChunk,
+    #[allow(missing_docs)] // documentation missing in model
+    BlockedIntentAnswerChunk,
+    #[allow(missing_docs)] // documentation missing in model
     DetectedIntent,
     #[allow(missing_docs)] // documentation missing in model
     GenerativeAnswer,
     #[allow(missing_docs)] // documentation missing in model
+    GenerativeAnswerChunk,
+    #[allow(missing_docs)] // documentation missing in model
     GenerativeResponse,
+    #[allow(missing_docs)] // documentation missing in model
+    IntentAnswerChunk,
     #[allow(missing_docs)] // documentation missing in model
     KnowledgeContent,
     /// `Unknown` contains new variants that have been added since this code was generated.
@@ -59,9 +71,13 @@ pub enum RecommendationType {
 impl ::std::convert::From<&str> for RecommendationType {
     fn from(s: &str) -> Self {
         match s {
+            "BLOCKED_GENERATIVE_ANSWER_CHUNK" => RecommendationType::BlockedGenerativeAnswerChunk,
+            "BLOCKED_INTENT_ANSWER_CHUNK" => RecommendationType::BlockedIntentAnswerChunk,
             "DETECTED_INTENT" => RecommendationType::DetectedIntent,
             "GENERATIVE_ANSWER" => RecommendationType::GenerativeAnswer,
+            "GENERATIVE_ANSWER_CHUNK" => RecommendationType::GenerativeAnswerChunk,
             "GENERATIVE_RESPONSE" => RecommendationType::GenerativeResponse,
+            "INTENT_ANSWER_CHUNK" => RecommendationType::IntentAnswerChunk,
             "KNOWLEDGE_CONTENT" => RecommendationType::KnowledgeContent,
             other => RecommendationType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -78,16 +94,29 @@ impl RecommendationType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            RecommendationType::BlockedGenerativeAnswerChunk => "BLOCKED_GENERATIVE_ANSWER_CHUNK",
+            RecommendationType::BlockedIntentAnswerChunk => "BLOCKED_INTENT_ANSWER_CHUNK",
             RecommendationType::DetectedIntent => "DETECTED_INTENT",
             RecommendationType::GenerativeAnswer => "GENERATIVE_ANSWER",
+            RecommendationType::GenerativeAnswerChunk => "GENERATIVE_ANSWER_CHUNK",
             RecommendationType::GenerativeResponse => "GENERATIVE_RESPONSE",
+            RecommendationType::IntentAnswerChunk => "INTENT_ANSWER_CHUNK",
             RecommendationType::KnowledgeContent => "KNOWLEDGE_CONTENT",
             RecommendationType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["DETECTED_INTENT", "GENERATIVE_ANSWER", "GENERATIVE_RESPONSE", "KNOWLEDGE_CONTENT"]
+        &[
+            "BLOCKED_GENERATIVE_ANSWER_CHUNK",
+            "BLOCKED_INTENT_ANSWER_CHUNK",
+            "DETECTED_INTENT",
+            "GENERATIVE_ANSWER",
+            "GENERATIVE_ANSWER_CHUNK",
+            "GENERATIVE_RESPONSE",
+            "INTENT_ANSWER_CHUNK",
+            "KNOWLEDGE_CONTENT",
+        ]
     }
 }
 impl ::std::convert::AsRef<str> for RecommendationType {
@@ -110,9 +139,13 @@ impl RecommendationType {
 impl ::std::fmt::Display for RecommendationType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            RecommendationType::BlockedGenerativeAnswerChunk => write!(f, "BLOCKED_GENERATIVE_ANSWER_CHUNK"),
+            RecommendationType::BlockedIntentAnswerChunk => write!(f, "BLOCKED_INTENT_ANSWER_CHUNK"),
             RecommendationType::DetectedIntent => write!(f, "DETECTED_INTENT"),
             RecommendationType::GenerativeAnswer => write!(f, "GENERATIVE_ANSWER"),
+            RecommendationType::GenerativeAnswerChunk => write!(f, "GENERATIVE_ANSWER_CHUNK"),
             RecommendationType::GenerativeResponse => write!(f, "GENERATIVE_RESPONSE"),
+            RecommendationType::IntentAnswerChunk => write!(f, "INTENT_ANSWER_CHUNK"),
             RecommendationType::KnowledgeContent => write!(f, "KNOWLEDGE_CONTENT"),
             RecommendationType::Unknown(value) => write!(f, "{}", value),
         }

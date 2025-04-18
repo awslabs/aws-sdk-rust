@@ -13,6 +13,8 @@ pub struct SendMessageInput {
     pub message: ::std::option::Option<crate::types::MessageInput>,
     /// <p>The conversation context before the Amazon Q in Connect session.</p>
     pub conversation_context: ::std::option::Option<crate::types::ConversationContext>,
+    /// <p>The configuration of the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_amazon-q-connect_SendMessage.html">SendMessage</a> request.</p>
+    pub configuration: ::std::option::Option<crate::types::MessageConfiguration>,
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the AWS SDK populates this field.For more information about idempotency, see Making retries safe with idempotent APIs.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
 }
@@ -37,6 +39,10 @@ impl SendMessageInput {
     pub fn conversation_context(&self) -> ::std::option::Option<&crate::types::ConversationContext> {
         self.conversation_context.as_ref()
     }
+    /// <p>The configuration of the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_amazon-q-connect_SendMessage.html">SendMessage</a> request.</p>
+    pub fn configuration(&self) -> ::std::option::Option<&crate::types::MessageConfiguration> {
+        self.configuration.as_ref()
+    }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the AWS SDK populates this field.For more information about idempotency, see Making retries safe with idempotent APIs.</p>
     pub fn client_token(&self) -> ::std::option::Option<&str> {
         self.client_token.as_deref()
@@ -58,6 +64,7 @@ pub struct SendMessageInputBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::MessageType>,
     pub(crate) message: ::std::option::Option<crate::types::MessageInput>,
     pub(crate) conversation_context: ::std::option::Option<crate::types::ConversationContext>,
+    pub(crate) configuration: ::std::option::Option<crate::types::MessageConfiguration>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
 }
 impl SendMessageInputBuilder {
@@ -135,6 +142,20 @@ impl SendMessageInputBuilder {
     pub fn get_conversation_context(&self) -> &::std::option::Option<crate::types::ConversationContext> {
         &self.conversation_context
     }
+    /// <p>The configuration of the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_amazon-q-connect_SendMessage.html">SendMessage</a> request.</p>
+    pub fn configuration(mut self, input: crate::types::MessageConfiguration) -> Self {
+        self.configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The configuration of the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_amazon-q-connect_SendMessage.html">SendMessage</a> request.</p>
+    pub fn set_configuration(mut self, input: ::std::option::Option<crate::types::MessageConfiguration>) -> Self {
+        self.configuration = input;
+        self
+    }
+    /// <p>The configuration of the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_amazon-q-connect_SendMessage.html">SendMessage</a> request.</p>
+    pub fn get_configuration(&self) -> &::std::option::Option<crate::types::MessageConfiguration> {
+        &self.configuration
+    }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the AWS SDK populates this field.For more information about idempotency, see Making retries safe with idempotent APIs.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
@@ -157,6 +178,7 @@ impl SendMessageInputBuilder {
             r#type: self.r#type,
             message: self.message,
             conversation_context: self.conversation_context,
+            configuration: self.configuration,
             client_token: self.client_token,
         })
     }

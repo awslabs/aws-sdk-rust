@@ -178,6 +178,20 @@ impl SendMessageFluentBuilder {
     pub fn get_conversation_context(&self) -> &::std::option::Option<crate::types::ConversationContext> {
         self.inner.get_conversation_context()
     }
+    /// <p>The configuration of the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_amazon-q-connect_SendMessage.html">SendMessage</a> request.</p>
+    pub fn configuration(mut self, input: crate::types::MessageConfiguration) -> Self {
+        self.inner = self.inner.configuration(input);
+        self
+    }
+    /// <p>The configuration of the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_amazon-q-connect_SendMessage.html">SendMessage</a> request.</p>
+    pub fn set_configuration(mut self, input: ::std::option::Option<crate::types::MessageConfiguration>) -> Self {
+        self.inner = self.inner.set_configuration(input);
+        self
+    }
+    /// <p>The configuration of the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_amazon-q-connect_SendMessage.html">SendMessage</a> request.</p>
+    pub fn get_configuration(&self) -> &::std::option::Option<crate::types::MessageConfiguration> {
+        self.inner.get_configuration()
+    }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the AWS SDK populates this field.For more information about idempotency, see Making retries safe with idempotent APIs.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());

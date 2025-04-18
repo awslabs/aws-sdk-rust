@@ -28,6 +28,8 @@ pub struct ModelPackageSummary {
     /// <p><code>PENDING_MANUAL_APPROVAL</code> - The model is waiting for manual approval.</p></li>
     /// </ul>
     pub model_approval_status: ::std::option::Option<crate::types::ModelApprovalStatus>,
+    /// <p>A structure describing the current state of the model in its life cycle.</p>
+    pub model_life_cycle: ::std::option::Option<crate::types::ModelLifeCycle>,
 }
 impl ModelPackageSummary {
     /// <p>The name of the model package.</p>
@@ -70,6 +72,10 @@ impl ModelPackageSummary {
     pub fn model_approval_status(&self) -> ::std::option::Option<&crate::types::ModelApprovalStatus> {
         self.model_approval_status.as_ref()
     }
+    /// <p>A structure describing the current state of the model in its life cycle.</p>
+    pub fn model_life_cycle(&self) -> ::std::option::Option<&crate::types::ModelLifeCycle> {
+        self.model_life_cycle.as_ref()
+    }
 }
 impl ModelPackageSummary {
     /// Creates a new builder-style object to manufacture [`ModelPackageSummary`](crate::types::ModelPackageSummary).
@@ -90,6 +96,7 @@ pub struct ModelPackageSummaryBuilder {
     pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) model_package_status: ::std::option::Option<crate::types::ModelPackageStatus>,
     pub(crate) model_approval_status: ::std::option::Option<crate::types::ModelApprovalStatus>,
+    pub(crate) model_life_cycle: ::std::option::Option<crate::types::ModelLifeCycle>,
 }
 impl ModelPackageSummaryBuilder {
     /// <p>The name of the model package.</p>
@@ -231,6 +238,20 @@ impl ModelPackageSummaryBuilder {
     pub fn get_model_approval_status(&self) -> &::std::option::Option<crate::types::ModelApprovalStatus> {
         &self.model_approval_status
     }
+    /// <p>A structure describing the current state of the model in its life cycle.</p>
+    pub fn model_life_cycle(mut self, input: crate::types::ModelLifeCycle) -> Self {
+        self.model_life_cycle = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>A structure describing the current state of the model in its life cycle.</p>
+    pub fn set_model_life_cycle(mut self, input: ::std::option::Option<crate::types::ModelLifeCycle>) -> Self {
+        self.model_life_cycle = input;
+        self
+    }
+    /// <p>A structure describing the current state of the model in its life cycle.</p>
+    pub fn get_model_life_cycle(&self) -> &::std::option::Option<crate::types::ModelLifeCycle> {
+        &self.model_life_cycle
+    }
     /// Consumes the builder and constructs a [`ModelPackageSummary`](crate::types::ModelPackageSummary).
     pub fn build(self) -> crate::types::ModelPackageSummary {
         crate::types::ModelPackageSummary {
@@ -242,6 +263,7 @@ impl ModelPackageSummaryBuilder {
             creation_time: self.creation_time,
             model_package_status: self.model_package_status,
             model_approval_status: self.model_approval_status,
+            model_life_cycle: self.model_life_cycle,
         }
     }
 }

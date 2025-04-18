@@ -69,6 +69,9 @@ where
                                     .transpose()?,
                             );
                         }
+                        "ModelLifeCycle" => {
+                            builder = builder.set_model_life_cycle(crate::protocol_serde::shape_model_life_cycle::de_model_life_cycle(tokens)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

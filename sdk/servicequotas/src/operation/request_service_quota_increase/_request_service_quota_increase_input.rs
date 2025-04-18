@@ -9,8 +9,11 @@ pub struct RequestServiceQuotaIncreaseInput {
     pub quota_code: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the new, increased value for the quota.</p>
     pub desired_value: ::std::option::Option<f64>,
-    /// <p>Specifies the Amazon Web Services account or resource to which the quota applies. The value in this field depends on the context scope associated with the specified service quota.</p>
+    /// <p>Specifies the resource with an Amazon Resource Name (ARN).</p>
     pub context_id: ::std::option::Option<::std::string::String>,
+    /// <p>Specifies if an Amazon Web Services Support case can be opened for the quota increase request. This parameter is optional.</p>
+    /// <p>By default, this flag is set to <code>True</code> and Amazon Web Services may create a support case for some quota increase requests. You can set this flag to <code>False</code> if you do not want a support case created when you request a quota increase. If you set the flag to <code>False</code>, Amazon Web Services does not open a support case and updates the request status to <code>Not approved</code>.</p>
+    pub support_case_allowed: ::std::option::Option<bool>,
 }
 impl RequestServiceQuotaIncreaseInput {
     /// <p>Specifies the service identifier. To find the service code value for an Amazon Web Services service, use the <code>ListServices</code> operation.</p>
@@ -25,9 +28,14 @@ impl RequestServiceQuotaIncreaseInput {
     pub fn desired_value(&self) -> ::std::option::Option<f64> {
         self.desired_value
     }
-    /// <p>Specifies the Amazon Web Services account or resource to which the quota applies. The value in this field depends on the context scope associated with the specified service quota.</p>
+    /// <p>Specifies the resource with an Amazon Resource Name (ARN).</p>
     pub fn context_id(&self) -> ::std::option::Option<&str> {
         self.context_id.as_deref()
+    }
+    /// <p>Specifies if an Amazon Web Services Support case can be opened for the quota increase request. This parameter is optional.</p>
+    /// <p>By default, this flag is set to <code>True</code> and Amazon Web Services may create a support case for some quota increase requests. You can set this flag to <code>False</code> if you do not want a support case created when you request a quota increase. If you set the flag to <code>False</code>, Amazon Web Services does not open a support case and updates the request status to <code>Not approved</code>.</p>
+    pub fn support_case_allowed(&self) -> ::std::option::Option<bool> {
+        self.support_case_allowed
     }
 }
 impl RequestServiceQuotaIncreaseInput {
@@ -45,6 +53,7 @@ pub struct RequestServiceQuotaIncreaseInputBuilder {
     pub(crate) quota_code: ::std::option::Option<::std::string::String>,
     pub(crate) desired_value: ::std::option::Option<f64>,
     pub(crate) context_id: ::std::option::Option<::std::string::String>,
+    pub(crate) support_case_allowed: ::std::option::Option<bool>,
 }
 impl RequestServiceQuotaIncreaseInputBuilder {
     /// <p>Specifies the service identifier. To find the service code value for an Amazon Web Services service, use the <code>ListServices</code> operation.</p>
@@ -92,19 +101,36 @@ impl RequestServiceQuotaIncreaseInputBuilder {
     pub fn get_desired_value(&self) -> &::std::option::Option<f64> {
         &self.desired_value
     }
-    /// <p>Specifies the Amazon Web Services account or resource to which the quota applies. The value in this field depends on the context scope associated with the specified service quota.</p>
+    /// <p>Specifies the resource with an Amazon Resource Name (ARN).</p>
     pub fn context_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.context_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Specifies the Amazon Web Services account or resource to which the quota applies. The value in this field depends on the context scope associated with the specified service quota.</p>
+    /// <p>Specifies the resource with an Amazon Resource Name (ARN).</p>
     pub fn set_context_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.context_id = input;
         self
     }
-    /// <p>Specifies the Amazon Web Services account or resource to which the quota applies. The value in this field depends on the context scope associated with the specified service quota.</p>
+    /// <p>Specifies the resource with an Amazon Resource Name (ARN).</p>
     pub fn get_context_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.context_id
+    }
+    /// <p>Specifies if an Amazon Web Services Support case can be opened for the quota increase request. This parameter is optional.</p>
+    /// <p>By default, this flag is set to <code>True</code> and Amazon Web Services may create a support case for some quota increase requests. You can set this flag to <code>False</code> if you do not want a support case created when you request a quota increase. If you set the flag to <code>False</code>, Amazon Web Services does not open a support case and updates the request status to <code>Not approved</code>.</p>
+    pub fn support_case_allowed(mut self, input: bool) -> Self {
+        self.support_case_allowed = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies if an Amazon Web Services Support case can be opened for the quota increase request. This parameter is optional.</p>
+    /// <p>By default, this flag is set to <code>True</code> and Amazon Web Services may create a support case for some quota increase requests. You can set this flag to <code>False</code> if you do not want a support case created when you request a quota increase. If you set the flag to <code>False</code>, Amazon Web Services does not open a support case and updates the request status to <code>Not approved</code>.</p>
+    pub fn set_support_case_allowed(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.support_case_allowed = input;
+        self
+    }
+    /// <p>Specifies if an Amazon Web Services Support case can be opened for the quota increase request. This parameter is optional.</p>
+    /// <p>By default, this flag is set to <code>True</code> and Amazon Web Services may create a support case for some quota increase requests. You can set this flag to <code>False</code> if you do not want a support case created when you request a quota increase. If you set the flag to <code>False</code>, Amazon Web Services does not open a support case and updates the request status to <code>Not approved</code>.</p>
+    pub fn get_support_case_allowed(&self) -> &::std::option::Option<bool> {
+        &self.support_case_allowed
     }
     /// Consumes the builder and constructs a [`RequestServiceQuotaIncreaseInput`](crate::operation::request_service_quota_increase::RequestServiceQuotaIncreaseInput).
     pub fn build(
@@ -118,6 +144,7 @@ impl RequestServiceQuotaIncreaseInputBuilder {
             quota_code: self.quota_code,
             desired_value: self.desired_value,
             context_id: self.context_id,
+            support_case_allowed: self.support_case_allowed,
         })
     }
 }

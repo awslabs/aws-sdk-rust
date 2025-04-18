@@ -5,7 +5,7 @@
 pub struct ListServicesOutput {
     /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
-    /// <p>The list of the Amazon Web Service names and service codes.</p>
+    /// <p>The list of the Amazon Web Services service names and service codes.</p>
     pub services: ::std::option::Option<::std::vec::Vec<crate::types::ServiceInfo>>,
     _request_id: Option<String>,
 }
@@ -14,7 +14,7 @@ impl ListServicesOutput {
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The list of the Amazon Web Service names and service codes.</p>
+    /// <p>The list of the Amazon Web Services service names and service codes.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.services.is_none()`.
     pub fn services(&self) -> &[crate::types::ServiceInfo] {
@@ -60,19 +60,19 @@ impl ListServicesOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_services`](Self::set_services).
     ///
-    /// <p>The list of the Amazon Web Service names and service codes.</p>
+    /// <p>The list of the Amazon Web Services service names and service codes.</p>
     pub fn services(mut self, input: crate::types::ServiceInfo) -> Self {
         let mut v = self.services.unwrap_or_default();
         v.push(input);
         self.services = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The list of the Amazon Web Service names and service codes.</p>
+    /// <p>The list of the Amazon Web Services service names and service codes.</p>
     pub fn set_services(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ServiceInfo>>) -> Self {
         self.services = input;
         self
     }
-    /// <p>The list of the Amazon Web Service names and service codes.</p>
+    /// <p>The list of the Amazon Web Services service names and service codes.</p>
     pub fn get_services(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ServiceInfo>> {
         &self.services
     }

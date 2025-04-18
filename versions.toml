@@ -1840,9 +1840,9 @@ model_hash = 'b7b664e4cc23ab246cb8aa9ba9410598fa1c1b0576180bc9183d54cf08007da8'
 
 [crates.aws-sdk-qconnect]
 category = 'AwsSdk'
-version = '1.71.0'
-source_hash = '41fc14a6f88bc9d70ee8504895410cfd05b248e6c883a5ac67fd9fb61030edd1'
-model_hash = '71e6a430fc3ec139fa4b7959e0cf7e64dd195ce504da2bc2cb57ba106a5dff56'
+version = '1.72.0'
+source_hash = 'a3740d57c595f817c20854a10c91136a06f676b9737c75f9773349613d645a83'
+model_hash = 'ae8c44db34dab4a957377bcb20d7da11aa08a38c93db507fed78e57afd128e65'
 
 [crates.aws-sdk-qldb]
 category = 'AwsSdk'
@@ -2026,9 +2026,9 @@ model_hash = 'deff5309d4d198438ec26ad0aa92211492a3e08b5a09cc1707dbca702c6dd0a0'
 
 [crates.aws-sdk-sagemaker]
 category = 'AwsSdk'
-version = '1.118.0'
-source_hash = '361db3390574abe4c355915d8cc4bbda8edb0e052682aa117d746c26ce15a157'
-model_hash = 'd16fb80fd291aef9ca5e099637dd3369785bfea51d7706ec7be92ef81a066f10'
+version = '1.119.0'
+source_hash = 'f8e9317d7b3f2bbd57935d7450d5c0bd7d324c03d2d9fce6c15e7e318ea49e83'
+model_hash = 'eb3ee194ba57d4c779cc85d4677015d8aab5d08956ba875ad24b40f05bc34048'
 
 [crates.aws-sdk-sagemakera2iruntime]
 category = 'AwsSdk'
@@ -2134,9 +2134,9 @@ model_hash = 'f89d144a106e79a93f2f7a19aa2c21a98a32e972af2bc604ae950df44c403799'
 
 [crates.aws-sdk-servicequotas]
 category = 'AwsSdk'
-version = '1.64.0'
-source_hash = '11b279712c093ef2532ba2445402651211f37220f56863e6601b7a4cb93847ea'
-model_hash = '13b9bfd192ebff6750f9102a2a9dbae7ef3727afff2326c2b21a547e96d91285'
+version = '1.65.0'
+source_hash = 'b6b23b960083efaea32ff2faeb114679b86bd77ead4cc1abd4da63ecafb765c6'
+model_hash = '868c286ebec6883a9f61310d4ca3eb0f30b379862bea3e86cfd1263c3dc4d21e'
 
 [crates.aws-sdk-ses]
 category = 'AwsSdk'
@@ -2610,17 +2610,7 @@ source_hash = '6be256fa6379fd9811a47e311ac9821b016a2ca57a7cfed9b0f49352caa37390'
 category = 'AwsRuntime'
 version = '0.0.0'
 source_hash = '9d60ffec7d4b70f12914eda9ff963ff6a757dada06c4539caf523fa6003f8485'
-
-[release]
-tag = 'release-2025-04-17'
-
 [release.crates]
-aws-sdk-accessanalyzer = '1.70.0'
-aws-sdk-amp = '1.66.0'
-aws-sdk-autoscaling = '1.72.1'
-aws-sdk-bedrock = '1.85.0'
-aws-sdk-connect = '1.99.0'
-aws-sdk-ecs = '1.73.0'
-aws-sdk-iotfleetwise = '1.71.0'
-aws-sdk-memorydb = '1.67.0'
-aws-sdk-omics = '1.70.0'
+aws-sdk-qconnect = '1.72.0'
+aws-sdk-sagemaker = '1.119.0'
+aws-sdk-servicequotas = '1.65.0'

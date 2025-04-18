@@ -203,6 +203,8 @@ pub use crate::types::_data_summary::DataSummary;
 
 pub use crate::types::_data_details::DataDetails;
 
+pub use crate::types::_generative_chunk_data_details::GenerativeChunkDataDetails;
+
 pub use crate::types::_source_content_data_details::SourceContentDataDetails;
 
 pub use crate::types::_citation_span::CitationSpan;
@@ -283,6 +285,8 @@ pub use crate::types::_runtime_session_data_value::RuntimeSessionDataValue;
 
 pub use crate::types::_session_data_namespace::SessionDataNamespace;
 
+pub use crate::types::_message_configuration::MessageConfiguration;
+
 pub use crate::types::_conversation_context::ConversationContext;
 
 pub use crate::types::_self_service_conversation_history::SelfServiceConversationHistory;
@@ -306,6 +310,8 @@ pub use crate::types::_conversation_status_reason::ConversationStatusReason;
 pub use crate::types::_conversation_status::ConversationStatus;
 
 pub use crate::types::_session_data::SessionData;
+
+pub use crate::types::_origin::Origin;
 
 pub use crate::types::_tag_filter::TagFilter;
 
@@ -332,8 +338,6 @@ pub use crate::types::_ai_prompt_version_summary::AiPromptVersionSummary;
 pub use crate::types::_ai_prompt_summary::AiPromptSummary;
 
 pub use crate::types::_status::Status;
-
-pub use crate::types::_origin::Origin;
 
 pub use crate::types::_visibility_status::VisibilityStatus;
 
@@ -571,6 +575,8 @@ mod _filter_operator;
 
 mod _fixed_size_chunking_configuration;
 
+mod _generative_chunk_data_details;
+
 mod _generative_content_feedback_data;
 
 mod _generative_data_details;
@@ -642,6 +648,8 @@ mod _knowledge_base_type;
 mod _managed_source_configuration;
 
 mod _manual_search_ai_agent_configuration;
+
+mod _message_configuration;
 
 mod _message_data;
 

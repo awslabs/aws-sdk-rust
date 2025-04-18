@@ -14,6 +14,8 @@
 /// match aipromptapiformat {
 ///     AiPromptApiFormat::AnthropicClaudeMessages => { /* ... */ },
 ///     AiPromptApiFormat::AnthropicClaudeTextCompletions => { /* ... */ },
+///     AiPromptApiFormat::Messages => { /* ... */ },
+///     AiPromptApiFormat::TextCompletions => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -46,6 +48,10 @@ pub enum AiPromptApiFormat {
     AnthropicClaudeMessages,
     #[allow(missing_docs)] // documentation missing in model
     AnthropicClaudeTextCompletions,
+    #[allow(missing_docs)] // documentation missing in model
+    Messages,
+    #[allow(missing_docs)] // documentation missing in model
+    TextCompletions,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -55,6 +61,8 @@ impl ::std::convert::From<&str> for AiPromptApiFormat {
         match s {
             "ANTHROPIC_CLAUDE_MESSAGES" => AiPromptApiFormat::AnthropicClaudeMessages,
             "ANTHROPIC_CLAUDE_TEXT_COMPLETIONS" => AiPromptApiFormat::AnthropicClaudeTextCompletions,
+            "MESSAGES" => AiPromptApiFormat::Messages,
+            "TEXT_COMPLETIONS" => AiPromptApiFormat::TextCompletions,
             other => AiPromptApiFormat::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -72,12 +80,19 @@ impl AiPromptApiFormat {
         match self {
             AiPromptApiFormat::AnthropicClaudeMessages => "ANTHROPIC_CLAUDE_MESSAGES",
             AiPromptApiFormat::AnthropicClaudeTextCompletions => "ANTHROPIC_CLAUDE_TEXT_COMPLETIONS",
+            AiPromptApiFormat::Messages => "MESSAGES",
+            AiPromptApiFormat::TextCompletions => "TEXT_COMPLETIONS",
             AiPromptApiFormat::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ANTHROPIC_CLAUDE_MESSAGES", "ANTHROPIC_CLAUDE_TEXT_COMPLETIONS"]
+        &[
+            "ANTHROPIC_CLAUDE_MESSAGES",
+            "ANTHROPIC_CLAUDE_TEXT_COMPLETIONS",
+            "MESSAGES",
+            "TEXT_COMPLETIONS",
+        ]
     }
 }
 impl ::std::convert::AsRef<str> for AiPromptApiFormat {
@@ -102,6 +117,8 @@ impl ::std::fmt::Display for AiPromptApiFormat {
         match self {
             AiPromptApiFormat::AnthropicClaudeMessages => write!(f, "ANTHROPIC_CLAUDE_MESSAGES"),
             AiPromptApiFormat::AnthropicClaudeTextCompletions => write!(f, "ANTHROPIC_CLAUDE_TEXT_COMPLETIONS"),
+            AiPromptApiFormat::Messages => write!(f, "MESSAGES"),
+            AiPromptApiFormat::TextCompletions => write!(f, "TEXT_COMPLETIONS"),
             AiPromptApiFormat::Unknown(value) => write!(f, "{}", value),
         }
     }

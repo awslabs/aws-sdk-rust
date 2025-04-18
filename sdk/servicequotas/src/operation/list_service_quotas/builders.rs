@@ -22,7 +22,7 @@ impl crate::operation::list_service_quotas::builders::ListServiceQuotasInputBuil
 }
 /// Fluent builder constructing a request to `ListServiceQuotas`.
 ///
-/// <p>Lists the applied quota values for the specified Amazon Web Service. For some quotas, only the default values are available. If the applied quota value is not available for a quota, the quota is not retrieved.</p>
+/// <p>Lists the applied quota values for the specified Amazon Web Services service. For some quotas, only the default values are available. If the applied quota value is not available for a quota, the quota is not retrieved. Filter responses to return applied quota values at either the account level, resource level, or all levels.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListServiceQuotasFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -176,17 +176,17 @@ impl ListServiceQuotasFluentBuilder {
     pub fn get_quota_code(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_quota_code()
     }
-    /// <p>Specifies at which level of granularity that the quota value is applied.</p>
+    /// <p>Filters the response to return applied quota values for the <code>ACCOUNT</code>, <code>RESOURCE</code>, or <code>ALL</code> levels. <code>ACCOUNT</code> is the default.</p>
     pub fn quota_applied_at_level(mut self, input: crate::types::AppliedLevelEnum) -> Self {
         self.inner = self.inner.quota_applied_at_level(input);
         self
     }
-    /// <p>Specifies at which level of granularity that the quota value is applied.</p>
+    /// <p>Filters the response to return applied quota values for the <code>ACCOUNT</code>, <code>RESOURCE</code>, or <code>ALL</code> levels. <code>ACCOUNT</code> is the default.</p>
     pub fn set_quota_applied_at_level(mut self, input: ::std::option::Option<crate::types::AppliedLevelEnum>) -> Self {
         self.inner = self.inner.set_quota_applied_at_level(input);
         self
     }
-    /// <p>Specifies at which level of granularity that the quota value is applied.</p>
+    /// <p>Filters the response to return applied quota values for the <code>ACCOUNT</code>, <code>RESOURCE</code>, or <code>ALL</code> levels. <code>ACCOUNT</code> is the default.</p>
     pub fn get_quota_applied_at_level(&self) -> &::std::option::Option<crate::types::AppliedLevelEnum> {
         self.inner.get_quota_applied_at_level()
     }

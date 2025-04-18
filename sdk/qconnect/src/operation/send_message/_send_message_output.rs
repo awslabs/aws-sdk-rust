@@ -5,6 +5,8 @@
 pub struct SendMessageOutput {
     /// <p>The identifier of the submitted message.</p>
     pub request_message_id: ::std::string::String,
+    /// <p>The configuration of the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_amazon-q-connect_SendMessage.html">SendMessage</a> request.</p>
+    pub configuration: ::std::option::Option<crate::types::MessageConfiguration>,
     /// <p>The token for the next message, used by GetNextMessage.</p>
     pub next_message_token: ::std::string::String,
     _request_id: Option<String>,
@@ -14,6 +16,10 @@ impl SendMessageOutput {
     pub fn request_message_id(&self) -> &str {
         use std::ops::Deref;
         self.request_message_id.deref()
+    }
+    /// <p>The configuration of the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_amazon-q-connect_SendMessage.html">SendMessage</a> request.</p>
+    pub fn configuration(&self) -> ::std::option::Option<&crate::types::MessageConfiguration> {
+        self.configuration.as_ref()
     }
     /// <p>The token for the next message, used by GetNextMessage.</p>
     pub fn next_message_token(&self) -> &str {
@@ -38,6 +44,7 @@ impl SendMessageOutput {
 #[non_exhaustive]
 pub struct SendMessageOutputBuilder {
     pub(crate) request_message_id: ::std::option::Option<::std::string::String>,
+    pub(crate) configuration: ::std::option::Option<crate::types::MessageConfiguration>,
     pub(crate) next_message_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -56,6 +63,20 @@ impl SendMessageOutputBuilder {
     /// <p>The identifier of the submitted message.</p>
     pub fn get_request_message_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.request_message_id
+    }
+    /// <p>The configuration of the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_amazon-q-connect_SendMessage.html">SendMessage</a> request.</p>
+    pub fn configuration(mut self, input: crate::types::MessageConfiguration) -> Self {
+        self.configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The configuration of the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_amazon-q-connect_SendMessage.html">SendMessage</a> request.</p>
+    pub fn set_configuration(mut self, input: ::std::option::Option<crate::types::MessageConfiguration>) -> Self {
+        self.configuration = input;
+        self
+    }
+    /// <p>The configuration of the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_amazon-q-connect_SendMessage.html">SendMessage</a> request.</p>
+    pub fn get_configuration(&self) -> &::std::option::Option<crate::types::MessageConfiguration> {
+        &self.configuration
     }
     /// <p>The token for the next message, used by GetNextMessage.</p>
     /// This field is required.
@@ -93,6 +114,7 @@ impl SendMessageOutputBuilder {
                     "request_message_id was not specified but it is required when building SendMessageOutput",
                 )
             })?,
+            configuration: self.configuration,
             next_message_token: self.next_message_token.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "next_message_token",

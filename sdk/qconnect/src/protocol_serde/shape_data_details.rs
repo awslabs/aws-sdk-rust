@@ -49,6 +49,11 @@ where
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'sourceContentData' cannot be null")
                             })?,
                         )),
+                        "generativeChunkData" => Some(crate::types::DataDetails::GenerativeChunkData(
+                            crate::protocol_serde::shape_generative_chunk_data_details::de_generative_chunk_data_details(tokens)?.ok_or_else(
+                                || ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'generativeChunkData' cannot be null"),
+                            )?,
+                        )),
                         _ => {
                             ::aws_smithy_json::deserialize::token::skip_value(tokens)?;
                             Some(crate::types::DataDetails::Unknown)

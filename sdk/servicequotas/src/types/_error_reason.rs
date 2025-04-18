@@ -7,11 +7,11 @@ pub struct ErrorReason {
     /// <p>Service Quotas returns the following error values:</p>
     /// <ul>
     /// <li>
-    /// <p><code>DEPENDENCY_ACCESS_DENIED_ERROR</code> - The caller does not have the required permissions to complete the action. To resolve the error, you must have permission to access the Amazon Web Service or quota.</p></li>
+    /// <p><code>DEPENDENCY_ACCESS_DENIED_ERROR</code> - The caller does not have the required permissions to complete the action. To resolve the error, you must have permission to access the Amazon Web Services service or quota.</p></li>
     /// <li>
-    /// <p><code>DEPENDENCY_THROTTLING_ERROR</code> - The Amazon Web Service is throttling Service Quotas.</p></li>
+    /// <p><code>DEPENDENCY_THROTTLING_ERROR</code> - The Amazon Web Services service is throttling Service Quotas.</p></li>
     /// <li>
-    /// <p><code>DEPENDENCY_SERVICE_ERROR</code> - The Amazon Web Service is not available.</p></li>
+    /// <p><code>DEPENDENCY_SERVICE_ERROR</code> - The Amazon Web Services service is not available.</p></li>
     /// <li>
     /// <p><code>SERVICE_QUOTA_NOT_AVAILABLE_ERROR</code> - There was an error in Service Quotas.</p></li>
     /// </ul>
@@ -23,11 +23,11 @@ impl ErrorReason {
     /// <p>Service Quotas returns the following error values:</p>
     /// <ul>
     /// <li>
-    /// <p><code>DEPENDENCY_ACCESS_DENIED_ERROR</code> - The caller does not have the required permissions to complete the action. To resolve the error, you must have permission to access the Amazon Web Service or quota.</p></li>
+    /// <p><code>DEPENDENCY_ACCESS_DENIED_ERROR</code> - The caller does not have the required permissions to complete the action. To resolve the error, you must have permission to access the Amazon Web Services service or quota.</p></li>
     /// <li>
-    /// <p><code>DEPENDENCY_THROTTLING_ERROR</code> - The Amazon Web Service is throttling Service Quotas.</p></li>
+    /// <p><code>DEPENDENCY_THROTTLING_ERROR</code> - The Amazon Web Services service is throttling Service Quotas.</p></li>
     /// <li>
-    /// <p><code>DEPENDENCY_SERVICE_ERROR</code> - The Amazon Web Service is not available.</p></li>
+    /// <p><code>DEPENDENCY_SERVICE_ERROR</code> - The Amazon Web Services service is not available.</p></li>
     /// <li>
     /// <p><code>SERVICE_QUOTA_NOT_AVAILABLE_ERROR</code> - There was an error in Service Quotas.</p></li>
     /// </ul>
@@ -57,11 +57,11 @@ impl ErrorReasonBuilder {
     /// <p>Service Quotas returns the following error values:</p>
     /// <ul>
     /// <li>
-    /// <p><code>DEPENDENCY_ACCESS_DENIED_ERROR</code> - The caller does not have the required permissions to complete the action. To resolve the error, you must have permission to access the Amazon Web Service or quota.</p></li>
+    /// <p><code>DEPENDENCY_ACCESS_DENIED_ERROR</code> - The caller does not have the required permissions to complete the action. To resolve the error, you must have permission to access the Amazon Web Services service or quota.</p></li>
     /// <li>
-    /// <p><code>DEPENDENCY_THROTTLING_ERROR</code> - The Amazon Web Service is throttling Service Quotas.</p></li>
+    /// <p><code>DEPENDENCY_THROTTLING_ERROR</code> - The Amazon Web Services service is throttling Service Quotas.</p></li>
     /// <li>
-    /// <p><code>DEPENDENCY_SERVICE_ERROR</code> - The Amazon Web Service is not available.</p></li>
+    /// <p><code>DEPENDENCY_SERVICE_ERROR</code> - The Amazon Web Services service is not available.</p></li>
     /// <li>
     /// <p><code>SERVICE_QUOTA_NOT_AVAILABLE_ERROR</code> - There was an error in Service Quotas.</p></li>
     /// </ul>
@@ -72,11 +72,11 @@ impl ErrorReasonBuilder {
     /// <p>Service Quotas returns the following error values:</p>
     /// <ul>
     /// <li>
-    /// <p><code>DEPENDENCY_ACCESS_DENIED_ERROR</code> - The caller does not have the required permissions to complete the action. To resolve the error, you must have permission to access the Amazon Web Service or quota.</p></li>
+    /// <p><code>DEPENDENCY_ACCESS_DENIED_ERROR</code> - The caller does not have the required permissions to complete the action. To resolve the error, you must have permission to access the Amazon Web Services service or quota.</p></li>
     /// <li>
-    /// <p><code>DEPENDENCY_THROTTLING_ERROR</code> - The Amazon Web Service is throttling Service Quotas.</p></li>
+    /// <p><code>DEPENDENCY_THROTTLING_ERROR</code> - The Amazon Web Services service is throttling Service Quotas.</p></li>
     /// <li>
-    /// <p><code>DEPENDENCY_SERVICE_ERROR</code> - The Amazon Web Service is not available.</p></li>
+    /// <p><code>DEPENDENCY_SERVICE_ERROR</code> - The Amazon Web Services service is not available.</p></li>
     /// <li>
     /// <p><code>SERVICE_QUOTA_NOT_AVAILABLE_ERROR</code> - There was an error in Service Quotas.</p></li>
     /// </ul>
@@ -87,11 +87,11 @@ impl ErrorReasonBuilder {
     /// <p>Service Quotas returns the following error values:</p>
     /// <ul>
     /// <li>
-    /// <p><code>DEPENDENCY_ACCESS_DENIED_ERROR</code> - The caller does not have the required permissions to complete the action. To resolve the error, you must have permission to access the Amazon Web Service or quota.</p></li>
+    /// <p><code>DEPENDENCY_ACCESS_DENIED_ERROR</code> - The caller does not have the required permissions to complete the action. To resolve the error, you must have permission to access the Amazon Web Services service or quota.</p></li>
     /// <li>
-    /// <p><code>DEPENDENCY_THROTTLING_ERROR</code> - The Amazon Web Service is throttling Service Quotas.</p></li>
+    /// <p><code>DEPENDENCY_THROTTLING_ERROR</code> - The Amazon Web Services service is throttling Service Quotas.</p></li>
     /// <li>
-    /// <p><code>DEPENDENCY_SERVICE_ERROR</code> - The Amazon Web Service is not available.</p></li>
+    /// <p><code>DEPENDENCY_SERVICE_ERROR</code> - The Amazon Web Services service is not available.</p></li>
     /// <li>
     /// <p><code>SERVICE_QUOTA_NOT_AVAILABLE_ERROR</code> - There was an error in Service Quotas.</p></li>
     /// </ul>

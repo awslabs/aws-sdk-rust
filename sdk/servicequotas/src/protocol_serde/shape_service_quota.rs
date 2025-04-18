@@ -85,6 +85,13 @@ where
                         "QuotaContext" => {
                             builder = builder.set_quota_context(crate::protocol_serde::shape_quota_context_info::de_quota_context_info(tokens)?);
                         }
+                        "Description" => {
+                            builder = builder.set_description(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

@@ -19,6 +19,22 @@ pub struct RequestedServiceQuotaChange {
     /// <p>The new, increased value for the quota.</p>
     pub desired_value: ::std::option::Option<f64>,
     /// <p>The state of the quota increase request.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>PENDING</code>: The quota increase request is under review by Amazon Web Services.</p></li>
+    /// <li>
+    /// <p><code>CASE_OPENED</code>: Service Quotas opened a support case to process the quota increase request. Follow-up on the support case for more information.</p></li>
+    /// <li>
+    /// <p><code>APPROVED</code>: The quota increase request is approved.</p></li>
+    /// <li>
+    /// <p><code>DENIED</code>: The quota increase request can't be approved by Service Quotas. Contact Amazon Web Services Support for more details.</p></li>
+    /// <li>
+    /// <p><code>NOT APPROVED</code>: The quota increase request can't be approved by Service Quotas. Contact Amazon Web Services Support for more details.</p></li>
+    /// <li>
+    /// <p><code>CASE_CLOSED</code>: The support case associated with this quota increase request was closed. Check the support case correspondence for the outcome of your quota request.</p></li>
+    /// <li>
+    /// <p><code>INVALID_REQUEST</code>: Service Quotas couldn't process your resource-level quota increase request because the Amazon Resource Name (ARN) specified as part of the <code>ContextId</code> is invalid.</p></li>
+    /// </ul>
     pub status: ::std::option::Option<crate::types::RequestStatus>,
     /// <p>The date and time when the quota increase request was received and the case ID was created.</p>
     pub created: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -32,7 +48,7 @@ pub struct RequestedServiceQuotaChange {
     pub global_quota: bool,
     /// <p>The unit of measurement.</p>
     pub unit: ::std::option::Option<::std::string::String>,
-    /// <p>Specifies at which level within the Amazon Web Services account the quota request applies to.</p>
+    /// <p>Filters the response to return quota requests for the <code>ACCOUNT</code>, <code>RESOURCE</code>, or <code>ALL</code> levels. <code>ACCOUNT</code> is the default.</p>
     pub quota_requested_at_level: ::std::option::Option<crate::types::AppliedLevelEnum>,
     /// <p>The context for this service quota.</p>
     pub quota_context: ::std::option::Option<crate::types::QuotaContextInfo>,
@@ -67,6 +83,22 @@ impl RequestedServiceQuotaChange {
         self.desired_value
     }
     /// <p>The state of the quota increase request.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>PENDING</code>: The quota increase request is under review by Amazon Web Services.</p></li>
+    /// <li>
+    /// <p><code>CASE_OPENED</code>: Service Quotas opened a support case to process the quota increase request. Follow-up on the support case for more information.</p></li>
+    /// <li>
+    /// <p><code>APPROVED</code>: The quota increase request is approved.</p></li>
+    /// <li>
+    /// <p><code>DENIED</code>: The quota increase request can't be approved by Service Quotas. Contact Amazon Web Services Support for more details.</p></li>
+    /// <li>
+    /// <p><code>NOT APPROVED</code>: The quota increase request can't be approved by Service Quotas. Contact Amazon Web Services Support for more details.</p></li>
+    /// <li>
+    /// <p><code>CASE_CLOSED</code>: The support case associated with this quota increase request was closed. Check the support case correspondence for the outcome of your quota request.</p></li>
+    /// <li>
+    /// <p><code>INVALID_REQUEST</code>: Service Quotas couldn't process your resource-level quota increase request because the Amazon Resource Name (ARN) specified as part of the <code>ContextId</code> is invalid.</p></li>
+    /// </ul>
     pub fn status(&self) -> ::std::option::Option<&crate::types::RequestStatus> {
         self.status.as_ref()
     }
@@ -94,7 +126,7 @@ impl RequestedServiceQuotaChange {
     pub fn unit(&self) -> ::std::option::Option<&str> {
         self.unit.as_deref()
     }
-    /// <p>Specifies at which level within the Amazon Web Services account the quota request applies to.</p>
+    /// <p>Filters the response to return quota requests for the <code>ACCOUNT</code>, <code>RESOURCE</code>, or <code>ALL</code> levels. <code>ACCOUNT</code> is the default.</p>
     pub fn quota_requested_at_level(&self) -> ::std::option::Option<&crate::types::AppliedLevelEnum> {
         self.quota_requested_at_level.as_ref()
     }
@@ -231,16 +263,64 @@ impl RequestedServiceQuotaChangeBuilder {
         &self.desired_value
     }
     /// <p>The state of the quota increase request.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>PENDING</code>: The quota increase request is under review by Amazon Web Services.</p></li>
+    /// <li>
+    /// <p><code>CASE_OPENED</code>: Service Quotas opened a support case to process the quota increase request. Follow-up on the support case for more information.</p></li>
+    /// <li>
+    /// <p><code>APPROVED</code>: The quota increase request is approved.</p></li>
+    /// <li>
+    /// <p><code>DENIED</code>: The quota increase request can't be approved by Service Quotas. Contact Amazon Web Services Support for more details.</p></li>
+    /// <li>
+    /// <p><code>NOT APPROVED</code>: The quota increase request can't be approved by Service Quotas. Contact Amazon Web Services Support for more details.</p></li>
+    /// <li>
+    /// <p><code>CASE_CLOSED</code>: The support case associated with this quota increase request was closed. Check the support case correspondence for the outcome of your quota request.</p></li>
+    /// <li>
+    /// <p><code>INVALID_REQUEST</code>: Service Quotas couldn't process your resource-level quota increase request because the Amazon Resource Name (ARN) specified as part of the <code>ContextId</code> is invalid.</p></li>
+    /// </ul>
     pub fn status(mut self, input: crate::types::RequestStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The state of the quota increase request.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>PENDING</code>: The quota increase request is under review by Amazon Web Services.</p></li>
+    /// <li>
+    /// <p><code>CASE_OPENED</code>: Service Quotas opened a support case to process the quota increase request. Follow-up on the support case for more information.</p></li>
+    /// <li>
+    /// <p><code>APPROVED</code>: The quota increase request is approved.</p></li>
+    /// <li>
+    /// <p><code>DENIED</code>: The quota increase request can't be approved by Service Quotas. Contact Amazon Web Services Support for more details.</p></li>
+    /// <li>
+    /// <p><code>NOT APPROVED</code>: The quota increase request can't be approved by Service Quotas. Contact Amazon Web Services Support for more details.</p></li>
+    /// <li>
+    /// <p><code>CASE_CLOSED</code>: The support case associated with this quota increase request was closed. Check the support case correspondence for the outcome of your quota request.</p></li>
+    /// <li>
+    /// <p><code>INVALID_REQUEST</code>: Service Quotas couldn't process your resource-level quota increase request because the Amazon Resource Name (ARN) specified as part of the <code>ContextId</code> is invalid.</p></li>
+    /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::RequestStatus>) -> Self {
         self.status = input;
         self
     }
     /// <p>The state of the quota increase request.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>PENDING</code>: The quota increase request is under review by Amazon Web Services.</p></li>
+    /// <li>
+    /// <p><code>CASE_OPENED</code>: Service Quotas opened a support case to process the quota increase request. Follow-up on the support case for more information.</p></li>
+    /// <li>
+    /// <p><code>APPROVED</code>: The quota increase request is approved.</p></li>
+    /// <li>
+    /// <p><code>DENIED</code>: The quota increase request can't be approved by Service Quotas. Contact Amazon Web Services Support for more details.</p></li>
+    /// <li>
+    /// <p><code>NOT APPROVED</code>: The quota increase request can't be approved by Service Quotas. Contact Amazon Web Services Support for more details.</p></li>
+    /// <li>
+    /// <p><code>CASE_CLOSED</code>: The support case associated with this quota increase request was closed. Check the support case correspondence for the outcome of your quota request.</p></li>
+    /// <li>
+    /// <p><code>INVALID_REQUEST</code>: Service Quotas couldn't process your resource-level quota increase request because the Amazon Resource Name (ARN) specified as part of the <code>ContextId</code> is invalid.</p></li>
+    /// </ul>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::RequestStatus> {
         &self.status
     }
@@ -328,17 +408,17 @@ impl RequestedServiceQuotaChangeBuilder {
     pub fn get_unit(&self) -> &::std::option::Option<::std::string::String> {
         &self.unit
     }
-    /// <p>Specifies at which level within the Amazon Web Services account the quota request applies to.</p>
+    /// <p>Filters the response to return quota requests for the <code>ACCOUNT</code>, <code>RESOURCE</code>, or <code>ALL</code> levels. <code>ACCOUNT</code> is the default.</p>
     pub fn quota_requested_at_level(mut self, input: crate::types::AppliedLevelEnum) -> Self {
         self.quota_requested_at_level = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies at which level within the Amazon Web Services account the quota request applies to.</p>
+    /// <p>Filters the response to return quota requests for the <code>ACCOUNT</code>, <code>RESOURCE</code>, or <code>ALL</code> levels. <code>ACCOUNT</code> is the default.</p>
     pub fn set_quota_requested_at_level(mut self, input: ::std::option::Option<crate::types::AppliedLevelEnum>) -> Self {
         self.quota_requested_at_level = input;
         self
     }
-    /// <p>Specifies at which level within the Amazon Web Services account the quota request applies to.</p>
+    /// <p>Filters the response to return quota requests for the <code>ACCOUNT</code>, <code>RESOURCE</code>, or <code>ALL</code> levels. <code>ACCOUNT</code> is the default.</p>
     pub fn get_quota_requested_at_level(&self) -> &::std::option::Option<crate::types::AppliedLevelEnum> {
         &self.quota_requested_at_level
     }

@@ -391,6 +391,8 @@ pub(crate) mod shape_knowledge_base_data;
 
 pub(crate) mod shape_knowledge_base_list;
 
+pub(crate) mod shape_message_configuration;
+
 pub(crate) mod shape_message_input;
 
 pub(crate) mod shape_message_list;
@@ -688,6 +690,8 @@ pub(crate) mod shape_url_configuration;
 pub(crate) mod shape_web_crawler_limits;
 
 pub(crate) mod shape_content_data_details;
+
+pub(crate) mod shape_generative_chunk_data_details;
 
 pub(crate) mod shape_generative_data_details;
 

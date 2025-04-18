@@ -80,6 +80,17 @@ pub struct ProductionVariant {
     /// <p>NVIDIA Container Toolkit with disabled CUDA-compat mounting</p></li>
     /// </ul>
     /// </dd>
+    /// <dt>
+    /// al2-ami-sagemaker-inference-neuron-2
+    /// </dt>
+    /// <dd>
+    /// <ul>
+    /// <li>
+    /// <p>Accelerator: Inferentia2 and Trainium</p></li>
+    /// <li>
+    /// <p>Neuron driver version: 2.19</p></li>
+    /// </ul>
+    /// </dd>
     /// </dl>
     pub inference_ami_version: ::std::option::Option<crate::types::ProductionVariantInferenceAmiVersion>,
 }
@@ -186,6 +197,17 @@ impl ProductionVariant {
     /// <p>CUDA version: 12.4</p></li>
     /// <li>
     /// <p>NVIDIA Container Toolkit with disabled CUDA-compat mounting</p></li>
+    /// </ul>
+    /// </dd>
+    /// <dt>
+    /// al2-ami-sagemaker-inference-neuron-2
+    /// </dt>
+    /// <dd>
+    /// <ul>
+    /// <li>
+    /// <p>Accelerator: Inferentia2 and Trainium</p></li>
+    /// <li>
+    /// <p>Neuron driver version: 2.19</p></li>
     /// </ul>
     /// </dd>
     /// </dl>
@@ -468,6 +490,17 @@ impl ProductionVariantBuilder {
     /// <p>NVIDIA Container Toolkit with disabled CUDA-compat mounting</p></li>
     /// </ul>
     /// </dd>
+    /// <dt>
+    /// al2-ami-sagemaker-inference-neuron-2
+    /// </dt>
+    /// <dd>
+    /// <ul>
+    /// <li>
+    /// <p>Accelerator: Inferentia2 and Trainium</p></li>
+    /// <li>
+    /// <p>Neuron driver version: 2.19</p></li>
+    /// </ul>
+    /// </dd>
     /// </dl>
     pub fn inference_ami_version(mut self, input: crate::types::ProductionVariantInferenceAmiVersion) -> Self {
         self.inference_ami_version = ::std::option::Option::Some(input);
@@ -520,6 +553,17 @@ impl ProductionVariantBuilder {
     /// <p>NVIDIA Container Toolkit with disabled CUDA-compat mounting</p></li>
     /// </ul>
     /// </dd>
+    /// <dt>
+    /// al2-ami-sagemaker-inference-neuron-2
+    /// </dt>
+    /// <dd>
+    /// <ul>
+    /// <li>
+    /// <p>Accelerator: Inferentia2 and Trainium</p></li>
+    /// <li>
+    /// <p>Neuron driver version: 2.19</p></li>
+    /// </ul>
+    /// </dd>
     /// </dl>
     pub fn set_inference_ami_version(mut self, input: ::std::option::Option<crate::types::ProductionVariantInferenceAmiVersion>) -> Self {
         self.inference_ami_version = input;
@@ -570,6 +614,17 @@ impl ProductionVariantBuilder {
     /// <p>CUDA version: 12.4</p></li>
     /// <li>
     /// <p>NVIDIA Container Toolkit with disabled CUDA-compat mounting</p></li>
+    /// </ul>
+    /// </dd>
+    /// <dt>
+    /// al2-ami-sagemaker-inference-neuron-2
+    /// </dt>
+    /// <dd>
+    /// <ul>
+    /// <li>
+    /// <p>Accelerator: Inferentia2 and Trainium</p></li>
+    /// <li>
+    /// <p>Neuron driver version: 2.19</p></li>
     /// </ul>
     /// </dd>
     /// </dl>

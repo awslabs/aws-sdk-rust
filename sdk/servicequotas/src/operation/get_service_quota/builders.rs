@@ -22,7 +22,7 @@ impl crate::operation::get_service_quota::builders::GetServiceQuotaInputBuilder 
 }
 /// Fluent builder constructing a request to `GetServiceQuota`.
 ///
-/// <p>Retrieves the applied quota value for the specified quota. For some quotas, only the default values are available. If the applied quota value is not available for a quota, the quota is not retrieved.</p>
+/// <p>Retrieves the applied quota value for the specified account-level or resource-level quota. For some quotas, only the default values are available. If the applied quota value is not available for a quota, the quota is not retrieved.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetServiceQuotaFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -136,17 +136,17 @@ impl GetServiceQuotaFluentBuilder {
     pub fn get_quota_code(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_quota_code()
     }
-    /// <p>Specifies the Amazon Web Services account or resource to which the quota applies. The value in this field depends on the context scope associated with the specified service quota.</p>
+    /// <p>Specifies the resource with an Amazon Resource Name (ARN).</p>
     pub fn context_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.context_id(input.into());
         self
     }
-    /// <p>Specifies the Amazon Web Services account or resource to which the quota applies. The value in this field depends on the context scope associated with the specified service quota.</p>
+    /// <p>Specifies the resource with an Amazon Resource Name (ARN).</p>
     pub fn set_context_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_context_id(input);
         self
     }
-    /// <p>Specifies the Amazon Web Services account or resource to which the quota applies. The value in this field depends on the context scope associated with the specified service quota.</p>
+    /// <p>Specifies the resource with an Amazon Resource Name (ARN).</p>
     pub fn get_context_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_context_id()
     }

@@ -18,7 +18,43 @@ pub struct AiPromptData {
     pub r#type: crate::types::AiPromptType,
     /// <p>The type of the prompt template for this AI Prompt.</p>
     pub template_type: crate::types::AiPromptTemplateType,
-    /// <p>The identifier of the model used for this AI Prompt. Model Ids supported are: <code>anthropic.claude-3-haiku-20240307-v1:0</code>.</p>
+    /// <p>The identifier of the model used for this AI Prompt. The following model Ids are supported:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>anthropic.claude-3-haiku--v1:0</code></p></li>
+    /// <li>
+    /// <p><code>apac.amazon.nova-lite-v1:0</code></p></li>
+    /// <li>
+    /// <p><code>apac.amazon.nova-micro-v1:0</code></p></li>
+    /// <li>
+    /// <p><code>apac.amazon.nova-pro-v1:0</code></p></li>
+    /// <li>
+    /// <p><code>apac.anthropic.claude-3-5-sonnet--v2:0</code></p></li>
+    /// <li>
+    /// <p><code>apac.anthropic.claude-3-haiku-20240307-v1:0</code></p></li>
+    /// <li>
+    /// <p><code>eu.amazon.nova-lite-v1:0</code></p></li>
+    /// <li>
+    /// <p><code>eu.amazon.nova-micro-v1:0</code></p></li>
+    /// <li>
+    /// <p><code>eu.amazon.nova-pro-v1:0</code></p></li>
+    /// <li>
+    /// <p><code>eu.anthropic.claude-3-7-sonnet-20250219-v1:0</code></p></li>
+    /// <li>
+    /// <p><code>eu.anthropic.claude-3-haiku-20240307-v1:0</code></p></li>
+    /// <li>
+    /// <p><code>us.amazon.nova-lite-v1:0</code></p></li>
+    /// <li>
+    /// <p><code>us.amazon.nova-micro-v1:0</code></p></li>
+    /// <li>
+    /// <p><code>us.amazon.nova-pro-v1:0</code></p></li>
+    /// <li>
+    /// <p><code>us.anthropic.claude-3-5-haiku-20241022-v1:0</code></p></li>
+    /// <li>
+    /// <p><code>us.anthropic.claude-3-7-sonnet-20250219-v1:0</code></p></li>
+    /// <li>
+    /// <p><code>us.anthropic.claude-3-haiku-20240307-v1:0</code></p></li>
+    /// </ul>
     pub model_id: ::std::string::String,
     /// <p>The API format used for this AI Prompt.</p>
     pub api_format: crate::types::AiPromptApiFormat,
@@ -71,7 +107,43 @@ impl AiPromptData {
     pub fn template_type(&self) -> &crate::types::AiPromptTemplateType {
         &self.template_type
     }
-    /// <p>The identifier of the model used for this AI Prompt. Model Ids supported are: <code>anthropic.claude-3-haiku-20240307-v1:0</code>.</p>
+    /// <p>The identifier of the model used for this AI Prompt. The following model Ids are supported:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>anthropic.claude-3-haiku--v1:0</code></p></li>
+    /// <li>
+    /// <p><code>apac.amazon.nova-lite-v1:0</code></p></li>
+    /// <li>
+    /// <p><code>apac.amazon.nova-micro-v1:0</code></p></li>
+    /// <li>
+    /// <p><code>apac.amazon.nova-pro-v1:0</code></p></li>
+    /// <li>
+    /// <p><code>apac.anthropic.claude-3-5-sonnet--v2:0</code></p></li>
+    /// <li>
+    /// <p><code>apac.anthropic.claude-3-haiku-20240307-v1:0</code></p></li>
+    /// <li>
+    /// <p><code>eu.amazon.nova-lite-v1:0</code></p></li>
+    /// <li>
+    /// <p><code>eu.amazon.nova-micro-v1:0</code></p></li>
+    /// <li>
+    /// <p><code>eu.amazon.nova-pro-v1:0</code></p></li>
+    /// <li>
+    /// <p><code>eu.anthropic.claude-3-7-sonnet-20250219-v1:0</code></p></li>
+    /// <li>
+    /// <p><code>eu.anthropic.claude-3-haiku-20240307-v1:0</code></p></li>
+    /// <li>
+    /// <p><code>us.amazon.nova-lite-v1:0</code></p></li>
+    /// <li>
+    /// <p><code>us.amazon.nova-micro-v1:0</code></p></li>
+    /// <li>
+    /// <p><code>us.amazon.nova-pro-v1:0</code></p></li>
+    /// <li>
+    /// <p><code>us.anthropic.claude-3-5-haiku-20241022-v1:0</code></p></li>
+    /// <li>
+    /// <p><code>us.anthropic.claude-3-7-sonnet-20250219-v1:0</code></p></li>
+    /// <li>
+    /// <p><code>us.anthropic.claude-3-haiku-20240307-v1:0</code></p></li>
+    /// </ul>
     pub fn model_id(&self) -> &str {
         use std::ops::Deref;
         self.model_id.deref()
@@ -243,18 +315,126 @@ impl AiPromptDataBuilder {
     pub fn get_template_type(&self) -> &::std::option::Option<crate::types::AiPromptTemplateType> {
         &self.template_type
     }
-    /// <p>The identifier of the model used for this AI Prompt. Model Ids supported are: <code>anthropic.claude-3-haiku-20240307-v1:0</code>.</p>
+    /// <p>The identifier of the model used for this AI Prompt. The following model Ids are supported:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>anthropic.claude-3-haiku--v1:0</code></p></li>
+    /// <li>
+    /// <p><code>apac.amazon.nova-lite-v1:0</code></p></li>
+    /// <li>
+    /// <p><code>apac.amazon.nova-micro-v1:0</code></p></li>
+    /// <li>
+    /// <p><code>apac.amazon.nova-pro-v1:0</code></p></li>
+    /// <li>
+    /// <p><code>apac.anthropic.claude-3-5-sonnet--v2:0</code></p></li>
+    /// <li>
+    /// <p><code>apac.anthropic.claude-3-haiku-20240307-v1:0</code></p></li>
+    /// <li>
+    /// <p><code>eu.amazon.nova-lite-v1:0</code></p></li>
+    /// <li>
+    /// <p><code>eu.amazon.nova-micro-v1:0</code></p></li>
+    /// <li>
+    /// <p><code>eu.amazon.nova-pro-v1:0</code></p></li>
+    /// <li>
+    /// <p><code>eu.anthropic.claude-3-7-sonnet-20250219-v1:0</code></p></li>
+    /// <li>
+    /// <p><code>eu.anthropic.claude-3-haiku-20240307-v1:0</code></p></li>
+    /// <li>
+    /// <p><code>us.amazon.nova-lite-v1:0</code></p></li>
+    /// <li>
+    /// <p><code>us.amazon.nova-micro-v1:0</code></p></li>
+    /// <li>
+    /// <p><code>us.amazon.nova-pro-v1:0</code></p></li>
+    /// <li>
+    /// <p><code>us.anthropic.claude-3-5-haiku-20241022-v1:0</code></p></li>
+    /// <li>
+    /// <p><code>us.anthropic.claude-3-7-sonnet-20250219-v1:0</code></p></li>
+    /// <li>
+    /// <p><code>us.anthropic.claude-3-haiku-20240307-v1:0</code></p></li>
+    /// </ul>
     /// This field is required.
     pub fn model_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The identifier of the model used for this AI Prompt. Model Ids supported are: <code>anthropic.claude-3-haiku-20240307-v1:0</code>.</p>
+    /// <p>The identifier of the model used for this AI Prompt. The following model Ids are supported:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>anthropic.claude-3-haiku--v1:0</code></p></li>
+    /// <li>
+    /// <p><code>apac.amazon.nova-lite-v1:0</code></p></li>
+    /// <li>
+    /// <p><code>apac.amazon.nova-micro-v1:0</code></p></li>
+    /// <li>
+    /// <p><code>apac.amazon.nova-pro-v1:0</code></p></li>
+    /// <li>
+    /// <p><code>apac.anthropic.claude-3-5-sonnet--v2:0</code></p></li>
+    /// <li>
+    /// <p><code>apac.anthropic.claude-3-haiku-20240307-v1:0</code></p></li>
+    /// <li>
+    /// <p><code>eu.amazon.nova-lite-v1:0</code></p></li>
+    /// <li>
+    /// <p><code>eu.amazon.nova-micro-v1:0</code></p></li>
+    /// <li>
+    /// <p><code>eu.amazon.nova-pro-v1:0</code></p></li>
+    /// <li>
+    /// <p><code>eu.anthropic.claude-3-7-sonnet-20250219-v1:0</code></p></li>
+    /// <li>
+    /// <p><code>eu.anthropic.claude-3-haiku-20240307-v1:0</code></p></li>
+    /// <li>
+    /// <p><code>us.amazon.nova-lite-v1:0</code></p></li>
+    /// <li>
+    /// <p><code>us.amazon.nova-micro-v1:0</code></p></li>
+    /// <li>
+    /// <p><code>us.amazon.nova-pro-v1:0</code></p></li>
+    /// <li>
+    /// <p><code>us.anthropic.claude-3-5-haiku-20241022-v1:0</code></p></li>
+    /// <li>
+    /// <p><code>us.anthropic.claude-3-7-sonnet-20250219-v1:0</code></p></li>
+    /// <li>
+    /// <p><code>us.anthropic.claude-3-haiku-20240307-v1:0</code></p></li>
+    /// </ul>
     pub fn set_model_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.model_id = input;
         self
     }
-    /// <p>The identifier of the model used for this AI Prompt. Model Ids supported are: <code>anthropic.claude-3-haiku-20240307-v1:0</code>.</p>
+    /// <p>The identifier of the model used for this AI Prompt. The following model Ids are supported:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>anthropic.claude-3-haiku--v1:0</code></p></li>
+    /// <li>
+    /// <p><code>apac.amazon.nova-lite-v1:0</code></p></li>
+    /// <li>
+    /// <p><code>apac.amazon.nova-micro-v1:0</code></p></li>
+    /// <li>
+    /// <p><code>apac.amazon.nova-pro-v1:0</code></p></li>
+    /// <li>
+    /// <p><code>apac.anthropic.claude-3-5-sonnet--v2:0</code></p></li>
+    /// <li>
+    /// <p><code>apac.anthropic.claude-3-haiku-20240307-v1:0</code></p></li>
+    /// <li>
+    /// <p><code>eu.amazon.nova-lite-v1:0</code></p></li>
+    /// <li>
+    /// <p><code>eu.amazon.nova-micro-v1:0</code></p></li>
+    /// <li>
+    /// <p><code>eu.amazon.nova-pro-v1:0</code></p></li>
+    /// <li>
+    /// <p><code>eu.anthropic.claude-3-7-sonnet-20250219-v1:0</code></p></li>
+    /// <li>
+    /// <p><code>eu.anthropic.claude-3-haiku-20240307-v1:0</code></p></li>
+    /// <li>
+    /// <p><code>us.amazon.nova-lite-v1:0</code></p></li>
+    /// <li>
+    /// <p><code>us.amazon.nova-micro-v1:0</code></p></li>
+    /// <li>
+    /// <p><code>us.amazon.nova-pro-v1:0</code></p></li>
+    /// <li>
+    /// <p><code>us.anthropic.claude-3-5-haiku-20241022-v1:0</code></p></li>
+    /// <li>
+    /// <p><code>us.anthropic.claude-3-7-sonnet-20250219-v1:0</code></p></li>
+    /// <li>
+    /// <p><code>us.anthropic.claude-3-haiku-20240307-v1:0</code></p></li>
+    /// </ul>
     pub fn get_model_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.model_id
     }

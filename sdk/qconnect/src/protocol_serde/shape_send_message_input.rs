@@ -6,20 +6,26 @@ pub fn ser_send_message_input_input(
     if let Some(var_1) = &input.client_token {
         object.key("clientToken").string(var_1.as_str());
     }
-    if let Some(var_2) = &input.conversation_context {
+    if let Some(var_2) = &input.configuration {
         #[allow(unused_mut)]
-        let mut object_3 = object.key("conversationContext").start_object();
-        crate::protocol_serde::shape_conversation_context::ser_conversation_context(&mut object_3, var_2)?;
+        let mut object_3 = object.key("configuration").start_object();
+        crate::protocol_serde::shape_message_configuration::ser_message_configuration(&mut object_3, var_2)?;
         object_3.finish();
     }
-    if let Some(var_4) = &input.message {
+    if let Some(var_4) = &input.conversation_context {
         #[allow(unused_mut)]
-        let mut object_5 = object.key("message").start_object();
-        crate::protocol_serde::shape_message_input::ser_message_input(&mut object_5, var_4)?;
+        let mut object_5 = object.key("conversationContext").start_object();
+        crate::protocol_serde::shape_conversation_context::ser_conversation_context(&mut object_5, var_4)?;
         object_5.finish();
     }
-    if let Some(var_6) = &input.r#type {
-        object.key("type").string(var_6.as_str());
+    if let Some(var_6) = &input.message {
+        #[allow(unused_mut)]
+        let mut object_7 = object.key("message").start_object();
+        crate::protocol_serde::shape_message_input::ser_message_input(&mut object_7, var_6)?;
+        object_7.finish();
+    }
+    if let Some(var_8) = &input.r#type {
+        object.key("type").string(var_8.as_str());
     }
     Ok(())
 }

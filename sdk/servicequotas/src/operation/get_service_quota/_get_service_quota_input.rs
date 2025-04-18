@@ -7,7 +7,7 @@ pub struct GetServiceQuotaInput {
     pub service_code: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the quota identifier. To find the quota code for a specific quota, use the <code>ListServiceQuotas</code> operation, and look for the <code>QuotaCode</code> response in the output for the quota you want.</p>
     pub quota_code: ::std::option::Option<::std::string::String>,
-    /// <p>Specifies the Amazon Web Services account or resource to which the quota applies. The value in this field depends on the context scope associated with the specified service quota.</p>
+    /// <p>Specifies the resource with an Amazon Resource Name (ARN).</p>
     pub context_id: ::std::option::Option<::std::string::String>,
 }
 impl GetServiceQuotaInput {
@@ -19,7 +19,7 @@ impl GetServiceQuotaInput {
     pub fn quota_code(&self) -> ::std::option::Option<&str> {
         self.quota_code.as_deref()
     }
-    /// <p>Specifies the Amazon Web Services account or resource to which the quota applies. The value in this field depends on the context scope associated with the specified service quota.</p>
+    /// <p>Specifies the resource with an Amazon Resource Name (ARN).</p>
     pub fn context_id(&self) -> ::std::option::Option<&str> {
         self.context_id.as_deref()
     }
@@ -70,17 +70,17 @@ impl GetServiceQuotaInputBuilder {
     pub fn get_quota_code(&self) -> &::std::option::Option<::std::string::String> {
         &self.quota_code
     }
-    /// <p>Specifies the Amazon Web Services account or resource to which the quota applies. The value in this field depends on the context scope associated with the specified service quota.</p>
+    /// <p>Specifies the resource with an Amazon Resource Name (ARN).</p>
     pub fn context_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.context_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Specifies the Amazon Web Services account or resource to which the quota applies. The value in this field depends on the context scope associated with the specified service quota.</p>
+    /// <p>Specifies the resource with an Amazon Resource Name (ARN).</p>
     pub fn set_context_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.context_id = input;
         self
     }
-    /// <p>Specifies the Amazon Web Services account or resource to which the quota applies. The value in this field depends on the context scope associated with the specified service quota.</p>
+    /// <p>Specifies the resource with an Amazon Resource Name (ARN).</p>
     pub fn get_context_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.context_id
     }

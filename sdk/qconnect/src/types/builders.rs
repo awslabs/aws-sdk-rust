@@ -129,6 +129,8 @@ pub use crate::types::_result_data::ResultDataBuilder;
 
 pub use crate::types::_data_summary::DataSummaryBuilder;
 
+pub use crate::types::_generative_chunk_data_details::GenerativeChunkDataDetailsBuilder;
+
 pub use crate::types::_source_content_data_details::SourceContentDataDetailsBuilder;
 
 pub use crate::types::_citation_span::CitationSpanBuilder;
@@ -172,6 +174,8 @@ pub use crate::types::_recommendation_data::RecommendationDataBuilder;
 pub use crate::types::_assistant_summary::AssistantSummaryBuilder;
 
 pub use crate::types::_runtime_session_data::RuntimeSessionDataBuilder;
+
+pub use crate::types::_message_configuration::MessageConfigurationBuilder;
 
 pub use crate::types::_conversation_context::ConversationContextBuilder;
 
