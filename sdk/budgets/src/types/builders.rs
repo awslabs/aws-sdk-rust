@@ -17,6 +17,14 @@ pub use crate::types::_action_threshold::ActionThresholdBuilder;
 
 pub use crate::types::_budget::BudgetBuilder;
 
+pub use crate::types::_expression::ExpressionBuilder;
+
+pub use crate::types::_cost_category_values::CostCategoryValuesBuilder;
+
+pub use crate::types::_tag_values::TagValuesBuilder;
+
+pub use crate::types::_expression_dimension_values::ExpressionDimensionValuesBuilder;
+
 pub use crate::types::_auto_adjust_data::AutoAdjustDataBuilder;
 
 pub use crate::types::_historical_options::HistoricalOptionsBuilder;

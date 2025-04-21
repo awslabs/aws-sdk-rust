@@ -76,6 +76,21 @@ pub fn ser_budget(
         crate::protocol_serde::shape_auto_adjust_data::ser_auto_adjust_data(&mut object_22, var_21)?;
         object_22.finish();
     }
+    if let Some(var_23) = &input.filter_expression {
+        #[allow(unused_mut)]
+        let mut object_24 = object.key("FilterExpression").start_object();
+        crate::protocol_serde::shape_expression::ser_expression(&mut object_24, var_23)?;
+        object_24.finish();
+    }
+    if let Some(var_25) = &input.metrics {
+        let mut array_26 = object.key("Metrics").start_array();
+        for item_27 in var_25 {
+            {
+                array_26.value().string(item_27.as_str());
+            }
+        }
+        array_26.finish();
+    }
     Ok(())
 }
 
@@ -142,6 +157,12 @@ where
                         }
                         "AutoAdjustData" => {
                             builder = builder.set_auto_adjust_data(crate::protocol_serde::shape_auto_adjust_data::de_auto_adjust_data(tokens)?);
+                        }
+                        "FilterExpression" => {
+                            builder = builder.set_filter_expression(crate::protocol_serde::shape_expression::de_expression(tokens)?);
+                        }
+                        "Metrics" => {
+                            builder = builder.set_metrics(crate::protocol_serde::shape_metrics::de_metrics(tokens)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

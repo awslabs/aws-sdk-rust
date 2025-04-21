@@ -34,13 +34,21 @@ pub struct Budget {
     /// <li>
     /// <p>Amazon OpenSearch Service</p></li>
     /// </ul>
+    #[deprecated(
+        note = "CostFilters lack support for newer dimensions and filtering options. Please consider using the new 'FilterExpression' field.",
+        since = "2025-04-18"
+    )]
     pub cost_filters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
     /// <p>The types of costs that are included in this <code>COST</code> budget.</p>
     /// <p><code>USAGE</code>, <code>RI_UTILIZATION</code>, <code>RI_COVERAGE</code>, <code>SAVINGS_PLANS_UTILIZATION</code>, and <code>SAVINGS_PLANS_COVERAGE</code> budgets do not have <code>CostTypes</code>.</p>
+    #[deprecated(
+        note = "CostTypes lack support for newer record type dimensions and filtering options. Please consider using the new 'Metrics' field.",
+        since = "2025-04-18"
+    )]
     pub cost_types: ::std::option::Option<crate::types::CostTypes>,
     /// <p>The length of time until a budget resets the actual and forecasted spend.</p>
     pub time_unit: crate::types::TimeUnit,
-    /// <p>The period of time that's covered by a budget. You setthe start date and end date. The start date must come before the end date. The end date must come before <code>06/15/87 00:00 UTC</code>.</p>
+    /// <p>The period of time that's covered by a budget. You set the start date and end date. The start date must come before the end date. The end date must come before <code>06/15/87 00:00 UTC</code>.</p>
     /// <p>If you create your budget and don't specify a start date, Amazon Web Services defaults to the start of your chosen time period (DAILY, MONTHLY, QUARTERLY, or ANNUALLY). For example, if you created your budget on January 24, 2018, chose <code>DAILY</code>, and didn't set a start date, Amazon Web Services set your start date to <code>01/24/18 00:00 UTC</code>. If you chose <code>MONTHLY</code>, Amazon Web Services set your start date to <code>01/01/18 00:00 UTC</code>. If you didn't specify an end date, Amazon Web Services set your end date to <code>06/15/87 00:00 UTC</code>. The defaults are the same for the Billing and Cost Management console and the API.</p>
     /// <p>You can change either date with the <code>UpdateBudget</code> operation.</p>
     /// <p>After the end date, Amazon Web Services deletes the budget and all the associated notifications and subscribers.</p>
@@ -53,6 +61,10 @@ pub struct Budget {
     pub last_updated_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The parameters that determine the budget amount for an auto-adjusting budget.</p>
     pub auto_adjust_data: ::std::option::Option<crate::types::AutoAdjustData>,
+    /// <p>The filtering dimensions for the budget and their corresponding values.</p>
+    pub filter_expression: ::std::option::Option<crate::types::Expression>,
+    /// <p>The definition for how the budget data is aggregated.</p>
+    pub metrics: ::std::option::Option<::std::vec::Vec<crate::types::Metric>>,
 }
 impl Budget {
     /// <p>The name of a budget. The name must be unique within an account. The <code>:</code> and <code>\</code> characters, and the "/action/" substring, aren't allowed in <code>BudgetName</code>.</p>
@@ -90,11 +102,19 @@ impl Budget {
     /// <li>
     /// <p>Amazon OpenSearch Service</p></li>
     /// </ul>
+    #[deprecated(
+        note = "CostFilters lack support for newer dimensions and filtering options. Please consider using the new 'FilterExpression' field.",
+        since = "2025-04-18"
+    )]
     pub fn cost_filters(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>> {
         self.cost_filters.as_ref()
     }
     /// <p>The types of costs that are included in this <code>COST</code> budget.</p>
     /// <p><code>USAGE</code>, <code>RI_UTILIZATION</code>, <code>RI_COVERAGE</code>, <code>SAVINGS_PLANS_UTILIZATION</code>, and <code>SAVINGS_PLANS_COVERAGE</code> budgets do not have <code>CostTypes</code>.</p>
+    #[deprecated(
+        note = "CostTypes lack support for newer record type dimensions and filtering options. Please consider using the new 'Metrics' field.",
+        since = "2025-04-18"
+    )]
     pub fn cost_types(&self) -> ::std::option::Option<&crate::types::CostTypes> {
         self.cost_types.as_ref()
     }
@@ -102,7 +122,7 @@ impl Budget {
     pub fn time_unit(&self) -> &crate::types::TimeUnit {
         &self.time_unit
     }
-    /// <p>The period of time that's covered by a budget. You setthe start date and end date. The start date must come before the end date. The end date must come before <code>06/15/87 00:00 UTC</code>.</p>
+    /// <p>The period of time that's covered by a budget. You set the start date and end date. The start date must come before the end date. The end date must come before <code>06/15/87 00:00 UTC</code>.</p>
     /// <p>If you create your budget and don't specify a start date, Amazon Web Services defaults to the start of your chosen time period (DAILY, MONTHLY, QUARTERLY, or ANNUALLY). For example, if you created your budget on January 24, 2018, chose <code>DAILY</code>, and didn't set a start date, Amazon Web Services set your start date to <code>01/24/18 00:00 UTC</code>. If you chose <code>MONTHLY</code>, Amazon Web Services set your start date to <code>01/01/18 00:00 UTC</code>. If you didn't specify an end date, Amazon Web Services set your end date to <code>06/15/87 00:00 UTC</code>. The defaults are the same for the Billing and Cost Management console and the API.</p>
     /// <p>You can change either date with the <code>UpdateBudget</code> operation.</p>
     /// <p>After the end date, Amazon Web Services deletes the budget and all the associated notifications and subscribers.</p>
@@ -124,6 +144,16 @@ impl Budget {
     /// <p>The parameters that determine the budget amount for an auto-adjusting budget.</p>
     pub fn auto_adjust_data(&self) -> ::std::option::Option<&crate::types::AutoAdjustData> {
         self.auto_adjust_data.as_ref()
+    }
+    /// <p>The filtering dimensions for the budget and their corresponding values.</p>
+    pub fn filter_expression(&self) -> ::std::option::Option<&crate::types::Expression> {
+        self.filter_expression.as_ref()
+    }
+    /// <p>The definition for how the budget data is aggregated.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.metrics.is_none()`.
+    pub fn metrics(&self) -> &[crate::types::Metric] {
+        self.metrics.as_deref().unwrap_or_default()
     }
 }
 impl Budget {
@@ -148,6 +178,8 @@ pub struct BudgetBuilder {
     pub(crate) budget_type: ::std::option::Option<crate::types::BudgetType>,
     pub(crate) last_updated_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) auto_adjust_data: ::std::option::Option<crate::types::AutoAdjustData>,
+    pub(crate) filter_expression: ::std::option::Option<crate::types::Expression>,
+    pub(crate) metrics: ::std::option::Option<::std::vec::Vec<crate::types::Metric>>,
 }
 impl BudgetBuilder {
     /// <p>The name of a budget. The name must be unique within an account. The <code>:</code> and <code>\</code> characters, and the "/action/" substring, aren't allowed in <code>BudgetName</code>.</p>
@@ -244,6 +276,10 @@ impl BudgetBuilder {
     /// <li>
     /// <p>Amazon OpenSearch Service</p></li>
     /// </ul>
+    #[deprecated(
+        note = "CostFilters lack support for newer dimensions and filtering options. Please consider using the new 'FilterExpression' field.",
+        since = "2025-04-18"
+    )]
     pub fn cost_filters(mut self, k: impl ::std::convert::Into<::std::string::String>, v: ::std::vec::Vec<::std::string::String>) -> Self {
         let mut hash_map = self.cost_filters.unwrap_or_default();
         hash_map.insert(k.into(), v);
@@ -264,6 +300,10 @@ impl BudgetBuilder {
     /// <li>
     /// <p>Amazon OpenSearch Service</p></li>
     /// </ul>
+    #[deprecated(
+        note = "CostFilters lack support for newer dimensions and filtering options. Please consider using the new 'FilterExpression' field.",
+        since = "2025-04-18"
+    )]
     pub fn set_cost_filters(
         mut self,
         input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
@@ -285,6 +325,10 @@ impl BudgetBuilder {
     /// <li>
     /// <p>Amazon OpenSearch Service</p></li>
     /// </ul>
+    #[deprecated(
+        note = "CostFilters lack support for newer dimensions and filtering options. Please consider using the new 'FilterExpression' field.",
+        since = "2025-04-18"
+    )]
     pub fn get_cost_filters(
         &self,
     ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>> {
@@ -292,18 +336,30 @@ impl BudgetBuilder {
     }
     /// <p>The types of costs that are included in this <code>COST</code> budget.</p>
     /// <p><code>USAGE</code>, <code>RI_UTILIZATION</code>, <code>RI_COVERAGE</code>, <code>SAVINGS_PLANS_UTILIZATION</code>, and <code>SAVINGS_PLANS_COVERAGE</code> budgets do not have <code>CostTypes</code>.</p>
+    #[deprecated(
+        note = "CostTypes lack support for newer record type dimensions and filtering options. Please consider using the new 'Metrics' field.",
+        since = "2025-04-18"
+    )]
     pub fn cost_types(mut self, input: crate::types::CostTypes) -> Self {
         self.cost_types = ::std::option::Option::Some(input);
         self
     }
     /// <p>The types of costs that are included in this <code>COST</code> budget.</p>
     /// <p><code>USAGE</code>, <code>RI_UTILIZATION</code>, <code>RI_COVERAGE</code>, <code>SAVINGS_PLANS_UTILIZATION</code>, and <code>SAVINGS_PLANS_COVERAGE</code> budgets do not have <code>CostTypes</code>.</p>
+    #[deprecated(
+        note = "CostTypes lack support for newer record type dimensions and filtering options. Please consider using the new 'Metrics' field.",
+        since = "2025-04-18"
+    )]
     pub fn set_cost_types(mut self, input: ::std::option::Option<crate::types::CostTypes>) -> Self {
         self.cost_types = input;
         self
     }
     /// <p>The types of costs that are included in this <code>COST</code> budget.</p>
     /// <p><code>USAGE</code>, <code>RI_UTILIZATION</code>, <code>RI_COVERAGE</code>, <code>SAVINGS_PLANS_UTILIZATION</code>, and <code>SAVINGS_PLANS_COVERAGE</code> budgets do not have <code>CostTypes</code>.</p>
+    #[deprecated(
+        note = "CostTypes lack support for newer record type dimensions and filtering options. Please consider using the new 'Metrics' field.",
+        since = "2025-04-18"
+    )]
     pub fn get_cost_types(&self) -> &::std::option::Option<crate::types::CostTypes> {
         &self.cost_types
     }
@@ -322,7 +378,7 @@ impl BudgetBuilder {
     pub fn get_time_unit(&self) -> &::std::option::Option<crate::types::TimeUnit> {
         &self.time_unit
     }
-    /// <p>The period of time that's covered by a budget. You setthe start date and end date. The start date must come before the end date. The end date must come before <code>06/15/87 00:00 UTC</code>.</p>
+    /// <p>The period of time that's covered by a budget. You set the start date and end date. The start date must come before the end date. The end date must come before <code>06/15/87 00:00 UTC</code>.</p>
     /// <p>If you create your budget and don't specify a start date, Amazon Web Services defaults to the start of your chosen time period (DAILY, MONTHLY, QUARTERLY, or ANNUALLY). For example, if you created your budget on January 24, 2018, chose <code>DAILY</code>, and didn't set a start date, Amazon Web Services set your start date to <code>01/24/18 00:00 UTC</code>. If you chose <code>MONTHLY</code>, Amazon Web Services set your start date to <code>01/01/18 00:00 UTC</code>. If you didn't specify an end date, Amazon Web Services set your end date to <code>06/15/87 00:00 UTC</code>. The defaults are the same for the Billing and Cost Management console and the API.</p>
     /// <p>You can change either date with the <code>UpdateBudget</code> operation.</p>
     /// <p>After the end date, Amazon Web Services deletes the budget and all the associated notifications and subscribers.</p>
@@ -330,7 +386,7 @@ impl BudgetBuilder {
         self.time_period = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The period of time that's covered by a budget. You setthe start date and end date. The start date must come before the end date. The end date must come before <code>06/15/87 00:00 UTC</code>.</p>
+    /// <p>The period of time that's covered by a budget. You set the start date and end date. The start date must come before the end date. The end date must come before <code>06/15/87 00:00 UTC</code>.</p>
     /// <p>If you create your budget and don't specify a start date, Amazon Web Services defaults to the start of your chosen time period (DAILY, MONTHLY, QUARTERLY, or ANNUALLY). For example, if you created your budget on January 24, 2018, chose <code>DAILY</code>, and didn't set a start date, Amazon Web Services set your start date to <code>01/24/18 00:00 UTC</code>. If you chose <code>MONTHLY</code>, Amazon Web Services set your start date to <code>01/01/18 00:00 UTC</code>. If you didn't specify an end date, Amazon Web Services set your end date to <code>06/15/87 00:00 UTC</code>. The defaults are the same for the Billing and Cost Management console and the API.</p>
     /// <p>You can change either date with the <code>UpdateBudget</code> operation.</p>
     /// <p>After the end date, Amazon Web Services deletes the budget and all the associated notifications and subscribers.</p>
@@ -338,7 +394,7 @@ impl BudgetBuilder {
         self.time_period = input;
         self
     }
-    /// <p>The period of time that's covered by a budget. You setthe start date and end date. The start date must come before the end date. The end date must come before <code>06/15/87 00:00 UTC</code>.</p>
+    /// <p>The period of time that's covered by a budget. You set the start date and end date. The start date must come before the end date. The end date must come before <code>06/15/87 00:00 UTC</code>.</p>
     /// <p>If you create your budget and don't specify a start date, Amazon Web Services defaults to the start of your chosen time period (DAILY, MONTHLY, QUARTERLY, or ANNUALLY). For example, if you created your budget on January 24, 2018, chose <code>DAILY</code>, and didn't set a start date, Amazon Web Services set your start date to <code>01/24/18 00:00 UTC</code>. If you chose <code>MONTHLY</code>, Amazon Web Services set your start date to <code>01/01/18 00:00 UTC</code>. If you didn't specify an end date, Amazon Web Services set your end date to <code>06/15/87 00:00 UTC</code>. The defaults are the same for the Billing and Cost Management console and the API.</p>
     /// <p>You can change either date with the <code>UpdateBudget</code> operation.</p>
     /// <p>After the end date, Amazon Web Services deletes the budget and all the associated notifications and subscribers.</p>
@@ -402,6 +458,40 @@ impl BudgetBuilder {
     pub fn get_auto_adjust_data(&self) -> &::std::option::Option<crate::types::AutoAdjustData> {
         &self.auto_adjust_data
     }
+    /// <p>The filtering dimensions for the budget and their corresponding values.</p>
+    pub fn filter_expression(mut self, input: crate::types::Expression) -> Self {
+        self.filter_expression = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The filtering dimensions for the budget and their corresponding values.</p>
+    pub fn set_filter_expression(mut self, input: ::std::option::Option<crate::types::Expression>) -> Self {
+        self.filter_expression = input;
+        self
+    }
+    /// <p>The filtering dimensions for the budget and their corresponding values.</p>
+    pub fn get_filter_expression(&self) -> &::std::option::Option<crate::types::Expression> {
+        &self.filter_expression
+    }
+    /// Appends an item to `metrics`.
+    ///
+    /// To override the contents of this collection use [`set_metrics`](Self::set_metrics).
+    ///
+    /// <p>The definition for how the budget data is aggregated.</p>
+    pub fn metrics(mut self, input: crate::types::Metric) -> Self {
+        let mut v = self.metrics.unwrap_or_default();
+        v.push(input);
+        self.metrics = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The definition for how the budget data is aggregated.</p>
+    pub fn set_metrics(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Metric>>) -> Self {
+        self.metrics = input;
+        self
+    }
+    /// <p>The definition for how the budget data is aggregated.</p>
+    pub fn get_metrics(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Metric>> {
+        &self.metrics
+    }
     /// Consumes the builder and constructs a [`Budget`](crate::types::Budget).
     /// This method will fail if any of the following fields are not set:
     /// - [`budget_name`](crate::types::builders::BudgetBuilder::budget_name)
@@ -435,6 +525,8 @@ impl BudgetBuilder {
             })?,
             last_updated_time: self.last_updated_time,
             auto_adjust_data: self.auto_adjust_data,
+            filter_expression: self.filter_expression,
+            metrics: self.metrics,
         })
     }
 }

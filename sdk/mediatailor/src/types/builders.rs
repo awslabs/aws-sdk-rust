@@ -17,11 +17,19 @@ pub use crate::types::_secrets_manager_access_token_configuration::SecretsManage
 
 pub use crate::types::_source_location::SourceLocationBuilder;
 
+pub use crate::types::_recurring_prefetch_configuration::RecurringPrefetchConfigurationBuilder;
+
+pub use crate::types::_recurring_retrieval::RecurringRetrievalBuilder;
+
+pub use crate::types::_traffic_shaping_retrieval_window::TrafficShapingRetrievalWindowBuilder;
+
+pub use crate::types::_recurring_consumption::RecurringConsumptionBuilder;
+
+pub use crate::types::_avail_matching_criteria::AvailMatchingCriteriaBuilder;
+
 pub use crate::types::_prefetch_retrieval::PrefetchRetrievalBuilder;
 
 pub use crate::types::_prefetch_consumption::PrefetchConsumptionBuilder;
-
-pub use crate::types::_avail_matching_criteria::AvailMatchingCriteriaBuilder;
 
 pub use crate::types::_prefetch_schedule::PrefetchScheduleBuilder;
 

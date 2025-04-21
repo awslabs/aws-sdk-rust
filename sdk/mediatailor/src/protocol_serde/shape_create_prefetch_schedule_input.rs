@@ -9,14 +9,23 @@ pub fn ser_create_prefetch_schedule_input_input(
         crate::protocol_serde::shape_prefetch_consumption::ser_prefetch_consumption(&mut object_2, var_1)?;
         object_2.finish();
     }
-    if let Some(var_3) = &input.retrieval {
+    if let Some(var_3) = &input.recurring_prefetch_configuration {
         #[allow(unused_mut)]
-        let mut object_4 = object.key("Retrieval").start_object();
-        crate::protocol_serde::shape_prefetch_retrieval::ser_prefetch_retrieval(&mut object_4, var_3)?;
+        let mut object_4 = object.key("RecurringPrefetchConfiguration").start_object();
+        crate::protocol_serde::shape_recurring_prefetch_configuration::ser_recurring_prefetch_configuration(&mut object_4, var_3)?;
         object_4.finish();
     }
-    if let Some(var_5) = &input.stream_id {
-        object.key("StreamId").string(var_5.as_str());
+    if let Some(var_5) = &input.retrieval {
+        #[allow(unused_mut)]
+        let mut object_6 = object.key("Retrieval").start_object();
+        crate::protocol_serde::shape_prefetch_retrieval::ser_prefetch_retrieval(&mut object_6, var_5)?;
+        object_6.finish();
+    }
+    if let Some(var_7) = &input.schedule_type {
+        object.key("ScheduleType").string(var_7.as_str());
+    }
+    if let Some(var_8) = &input.stream_id {
+        object.key("StreamId").string(var_8.as_str());
     }
     Ok(())
 }

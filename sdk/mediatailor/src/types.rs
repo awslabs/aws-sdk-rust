@@ -21,15 +21,29 @@ pub use crate::types::_access_type::AccessType;
 
 pub use crate::types::_source_location::SourceLocation;
 
-pub use crate::types::_prefetch_retrieval::PrefetchRetrieval;
+pub use crate::types::_recurring_prefetch_configuration::RecurringPrefetchConfiguration;
 
-pub use crate::types::_prefetch_consumption::PrefetchConsumption;
+pub use crate::types::_recurring_retrieval::RecurringRetrieval;
+
+pub use crate::types::_traffic_shaping_retrieval_window::TrafficShapingRetrievalWindow;
+
+pub use crate::types::_traffic_shaping_type::TrafficShapingType;
+
+pub use crate::types::_recurring_consumption::RecurringConsumption;
 
 pub use crate::types::_avail_matching_criteria::AvailMatchingCriteria;
 
 pub use crate::types::_operator::Operator;
 
+pub use crate::types::_prefetch_schedule_type::PrefetchScheduleType;
+
+pub use crate::types::_prefetch_retrieval::PrefetchRetrieval;
+
+pub use crate::types::_prefetch_consumption::PrefetchConsumption;
+
 pub use crate::types::_prefetch_schedule::PrefetchSchedule;
+
+pub use crate::types::_list_prefetch_schedule_type::ListPrefetchScheduleType;
 
 pub use crate::types::_ad_conditioning_configuration::AdConditioningConfiguration;
 
@@ -207,6 +221,8 @@ mod _insertion_mode;
 
 mod _key_value_pair;
 
+mod _list_prefetch_schedule_type;
+
 mod _live_pre_roll_configuration;
 
 mod _live_source;
@@ -243,6 +259,14 @@ mod _prefetch_retrieval;
 
 mod _prefetch_schedule;
 
+mod _prefetch_schedule_type;
+
+mod _recurring_consumption;
+
+mod _recurring_prefetch_configuration;
+
+mod _recurring_retrieval;
+
 mod _relative_position;
 
 mod _request_output_item;
@@ -276,6 +300,10 @@ mod _tier;
 mod _time_shift_configuration;
 
 mod _time_signal_message;
+
+mod _traffic_shaping_retrieval_window;
+
+mod _traffic_shaping_type;
 
 mod _transition;
 

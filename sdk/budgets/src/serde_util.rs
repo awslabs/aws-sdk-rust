@@ -284,6 +284,18 @@ pub(crate) fn action_history_details_correct_errors(
     builder
 }
 
+pub(crate) fn expression_dimension_values_correct_errors(
+    mut builder: crate::types::builders::ExpressionDimensionValuesBuilder,
+) -> crate::types::builders::ExpressionDimensionValuesBuilder {
+    if builder.key.is_none() {
+        builder.key = "no value was set".parse::<crate::types::Dimension>().ok()
+    }
+    if builder.values.is_none() {
+        builder.values = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn historical_options_correct_errors(
     mut builder: crate::types::builders::HistoricalOptionsBuilder,
 ) -> crate::types::builders::HistoricalOptionsBuilder {

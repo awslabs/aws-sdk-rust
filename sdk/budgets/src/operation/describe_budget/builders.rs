@@ -138,4 +138,18 @@ impl DescribeBudgetFluentBuilder {
     pub fn get_budget_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_budget_name()
     }
+    /// <p>Specifies whether the response includes the filter expression associated with the budget. By showing the filter expression, you can see detailed filtering logic applied to the budget, such as Amazon Web Services services or tags that are being tracked.</p>
+    pub fn show_filter_expression(mut self, input: bool) -> Self {
+        self.inner = self.inner.show_filter_expression(input);
+        self
+    }
+    /// <p>Specifies whether the response includes the filter expression associated with the budget. By showing the filter expression, you can see detailed filtering logic applied to the budget, such as Amazon Web Services services or tags that are being tracked.</p>
+    pub fn set_show_filter_expression(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_show_filter_expression(input);
+        self
+    }
+    /// <p>Specifies whether the response includes the filter expression associated with the budget. By showing the filter expression, you can see detailed filtering logic applied to the budget, such as Amazon Web Services services or tags that are being tracked.</p>
+    pub fn get_show_filter_expression(&self) -> &::std::option::Option<bool> {
+        self.inner.get_show_filter_expression()
+    }
 }

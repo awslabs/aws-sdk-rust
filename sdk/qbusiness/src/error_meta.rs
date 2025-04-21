@@ -259,6 +259,36 @@ impl From<crate::operation::chat_sync::ChatSyncError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::check_document_access::CheckDocumentAccessError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::check_document_access::CheckDocumentAccessError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::check_document_access::CheckDocumentAccessError> for Error {
+    fn from(err: crate::operation::check_document_access::CheckDocumentAccessError) -> Self {
+        match err {
+            crate::operation::check_document_access::CheckDocumentAccessError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::check_document_access::CheckDocumentAccessError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::check_document_access::CheckDocumentAccessError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::check_document_access::CheckDocumentAccessError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::check_document_access::CheckDocumentAccessError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::check_document_access::CheckDocumentAccessError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_application::CreateApplicationError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,

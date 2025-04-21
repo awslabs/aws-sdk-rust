@@ -9,5 +9,8 @@ pub fn ser_describe_budget_input_input(
     if let Some(var_2) = &input.budget_name {
         object.key("BudgetName").string(var_2.as_str());
     }
+    if let Some(var_3) = &input.show_filter_expression {
+        object.key("ShowFilterExpression").boolean(*var_3);
+    }
     Ok(())
 }

@@ -83,8 +83,20 @@ pub(crate) fn de_create_prefetch_schedule(
                             .transpose()?,
                     );
                 }
+                "RecurringPrefetchConfiguration" => {
+                    builder = builder.set_recurring_prefetch_configuration(
+                        crate::protocol_serde::shape_recurring_prefetch_configuration::de_recurring_prefetch_configuration(tokens)?,
+                    );
+                }
                 "Retrieval" => {
                     builder = builder.set_retrieval(crate::protocol_serde::shape_prefetch_retrieval::de_prefetch_retrieval(tokens)?);
+                }
+                "ScheduleType" => {
+                    builder = builder.set_schedule_type(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| crate::types::PrefetchScheduleType::from(u.as_ref())))
+                            .transpose()?,
+                    );
                 }
                 "StreamId" => {
                     builder = builder.set_stream_id(

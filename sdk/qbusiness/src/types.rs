@@ -319,6 +319,22 @@ pub use crate::types::_blocked_phrases_configuration::BlockedPhrasesConfiguratio
 
 pub use crate::types::_applied_orchestration_configuration::AppliedOrchestrationConfiguration;
 
+pub use crate::types::_document_acl::DocumentAcl;
+
+pub use crate::types::_document_acl_membership::DocumentAclMembership;
+
+pub use crate::types::_document_acl_condition::DocumentAclCondition;
+
+pub use crate::types::_document_acl_group::DocumentAclGroup;
+
+pub use crate::types::_document_acl_user::DocumentAclUser;
+
+pub use crate::types::_member_relation::MemberRelation;
+
+pub use crate::types::_associated_user::AssociatedUser;
+
+pub use crate::types::_associated_group::AssociatedGroup;
+
 pub use crate::types::_auth_challenge_request::AuthChallengeRequest;
 
 pub use crate::types::_chat_mode_configuration::ChatModeConfiguration;
@@ -364,8 +380,6 @@ pub use crate::types::_failed_document::FailedDocument;
 pub use crate::types::_document::Document;
 
 pub use crate::types::_access_configuration::AccessConfiguration;
-
-pub use crate::types::_member_relation::MemberRelation;
 
 pub use crate::types::_access_control::AccessControl;
 
@@ -422,6 +436,10 @@ mod _applied_attachments_configuration;
 mod _applied_creator_mode_configuration;
 
 mod _applied_orchestration_configuration;
+
+mod _associated_group;
+
+mod _associated_user;
 
 mod _attachment;
 
@@ -524,6 +542,16 @@ mod _date_attribute_boosting_configuration;
 mod _delete_document;
 
 mod _document;
+
+mod _document_acl;
+
+mod _document_acl_condition;
+
+mod _document_acl_group;
+
+mod _document_acl_membership;
+
+mod _document_acl_user;
 
 mod _document_attribute;
 

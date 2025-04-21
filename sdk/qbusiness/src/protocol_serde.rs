@@ -35,6 +35,8 @@ pub(crate) mod shape_chat;
 
 pub(crate) mod shape_chat_sync;
 
+pub(crate) mod shape_check_document_access;
+
 pub(crate) mod shape_create_application;
 
 pub(crate) mod shape_create_data_accessor;
@@ -285,6 +287,10 @@ pub(crate) mod shape_applied_creator_mode_configuration;
 
 pub(crate) mod shape_applied_orchestration_configuration;
 
+pub(crate) mod shape_associated_groups;
+
+pub(crate) mod shape_associated_users;
+
 pub(crate) mod shape_attachment_input;
 
 pub(crate) mod shape_attachment_input_event;
@@ -338,6 +344,8 @@ pub(crate) mod shape_data_sources;
 pub(crate) mod shape_delete_document;
 
 pub(crate) mod shape_document;
+
+pub(crate) mod shape_document_acl;
 
 pub(crate) mod shape_document_attribute_configuration;
 
@@ -445,6 +453,10 @@ pub(crate) mod shape_api_schema;
 
 pub(crate) mod shape_application;
 
+pub(crate) mod shape_associated_group;
+
+pub(crate) mod shape_associated_user;
+
 pub(crate) mod shape_attachment;
 
 pub(crate) mod shape_attachment_output;
@@ -468,6 +480,8 @@ pub(crate) mod shape_data_accessor;
 pub(crate) mod shape_data_source;
 
 pub(crate) mod shape_data_source_sync_job;
+
+pub(crate) mod shape_document_acl_membership;
 
 pub(crate) mod shape_document_attribute;
 
@@ -557,6 +571,8 @@ pub(crate) mod shape_conversation_source;
 
 pub(crate) mod shape_data_source_sync_job_metrics;
 
+pub(crate) mod shape_document_acl_conditions;
+
 pub(crate) mod shape_document_attribute_boosting_configuration;
 
 pub(crate) mod shape_document_attribute_boosting_override_map;
@@ -591,6 +607,8 @@ pub(crate) mod shape_content_retrieval_rule;
 
 pub(crate) mod shape_date_attribute_boosting_configuration;
 
+pub(crate) mod shape_document_acl_condition;
+
 pub(crate) mod shape_number_attribute_boosting_configuration;
 
 pub(crate) mod shape_principal;
@@ -605,6 +623,10 @@ pub(crate) mod shape_action_review_payload_field_allowed_value;
 
 pub(crate) mod shape_attribute_filters;
 
+pub(crate) mod shape_document_acl_groups;
+
+pub(crate) mod shape_document_acl_users;
+
 pub(crate) mod shape_document_attribute_string_list_value;
 
 pub(crate) mod shape_eligible_data_source;
@@ -618,6 +640,10 @@ pub(crate) mod shape_snippet_excerpt;
 pub(crate) mod shape_source_details;
 
 pub(crate) mod shape_audio_source_details;
+
+pub(crate) mod shape_document_acl_group;
+
+pub(crate) mod shape_document_acl_user;
 
 pub(crate) mod shape_image_source_details;
 

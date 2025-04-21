@@ -12,8 +12,11 @@ pub fn ser_list_prefetch_schedules_input_input(
     if let Some(var_2) = &input.next_token {
         object.key("NextToken").string(var_2.as_str());
     }
-    if let Some(var_3) = &input.stream_id {
-        object.key("StreamId").string(var_3.as_str());
+    if let Some(var_3) = &input.schedule_type {
+        object.key("ScheduleType").string(var_3.as_str());
+    }
+    if let Some(var_4) = &input.stream_id {
+        object.key("StreamId").string(var_4.as_str());
     }
     Ok(())
 }

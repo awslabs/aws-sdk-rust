@@ -195,6 +195,20 @@ pub use crate::types::_blocked_phrases_configuration::BlockedPhrasesConfiguratio
 
 pub use crate::types::_applied_orchestration_configuration::AppliedOrchestrationConfigurationBuilder;
 
+pub use crate::types::_document_acl::DocumentAclBuilder;
+
+pub use crate::types::_document_acl_membership::DocumentAclMembershipBuilder;
+
+pub use crate::types::_document_acl_condition::DocumentAclConditionBuilder;
+
+pub use crate::types::_document_acl_group::DocumentAclGroupBuilder;
+
+pub use crate::types::_document_acl_user::DocumentAclUserBuilder;
+
+pub use crate::types::_associated_user::AssociatedUserBuilder;
+
+pub use crate::types::_associated_group::AssociatedGroupBuilder;
+
 pub use crate::types::_auth_challenge_request::AuthChallengeRequestBuilder;
 
 pub use crate::types::_plugin_configuration::PluginConfigurationBuilder;

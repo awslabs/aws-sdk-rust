@@ -11,7 +11,7 @@ pub struct HookConfiguration {
     /// <p>The condition used for when a Lambda function should be invoked.</p>
     /// <p>For example, you can specify a condition that if there are empty date-time values, then Amazon Q Business should invoke a function that inserts the current date-time.</p>
     pub invocation_condition: ::std::option::Option<crate::types::DocumentAttributeCondition>,
-    /// <p>The Amazon Resource Name (ARN) of a role with permission to run a Lambda function during ingestion. For more information, see <a href="https://docs.aws.amazon.com/amazonq/latest/business-use-dg/iam-roles.html#cde-iam-role">IAM roles for Custom Document Enrichment (CDE)</a>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Lambda function sduring ingestion. For more information, see <a href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/cde-lambda-operations.html">Using Lambda functions for Amazon Q Business document enrichment</a>.</p>
     pub lambda_arn: ::std::option::Option<::std::string::String>,
     /// <p>Stores the original, raw documents or the structured, parsed documents before and after altering them. For more information, see <a href="https://docs.aws.amazon.com/amazonq/latest/business-use-dg/cde-lambda-operations.html#cde-lambda-operations-data-contracts">Data contracts for Lambda functions</a>.</p>
     pub s3_bucket_name: ::std::option::Option<::std::string::String>,
@@ -24,7 +24,7 @@ impl HookConfiguration {
     pub fn invocation_condition(&self) -> ::std::option::Option<&crate::types::DocumentAttributeCondition> {
         self.invocation_condition.as_ref()
     }
-    /// <p>The Amazon Resource Name (ARN) of a role with permission to run a Lambda function during ingestion. For more information, see <a href="https://docs.aws.amazon.com/amazonq/latest/business-use-dg/iam-roles.html#cde-iam-role">IAM roles for Custom Document Enrichment (CDE)</a>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Lambda function sduring ingestion. For more information, see <a href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/cde-lambda-operations.html">Using Lambda functions for Amazon Q Business document enrichment</a>.</p>
     pub fn lambda_arn(&self) -> ::std::option::Option<&str> {
         self.lambda_arn.as_deref()
     }
@@ -71,17 +71,17 @@ impl HookConfigurationBuilder {
     pub fn get_invocation_condition(&self) -> &::std::option::Option<crate::types::DocumentAttributeCondition> {
         &self.invocation_condition
     }
-    /// <p>The Amazon Resource Name (ARN) of a role with permission to run a Lambda function during ingestion. For more information, see <a href="https://docs.aws.amazon.com/amazonq/latest/business-use-dg/iam-roles.html#cde-iam-role">IAM roles for Custom Document Enrichment (CDE)</a>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Lambda function sduring ingestion. For more information, see <a href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/cde-lambda-operations.html">Using Lambda functions for Amazon Q Business document enrichment</a>.</p>
     pub fn lambda_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.lambda_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of a role with permission to run a Lambda function during ingestion. For more information, see <a href="https://docs.aws.amazon.com/amazonq/latest/business-use-dg/iam-roles.html#cde-iam-role">IAM roles for Custom Document Enrichment (CDE)</a>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Lambda function sduring ingestion. For more information, see <a href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/cde-lambda-operations.html">Using Lambda functions for Amazon Q Business document enrichment</a>.</p>
     pub fn set_lambda_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.lambda_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of a role with permission to run a Lambda function during ingestion. For more information, see <a href="https://docs.aws.amazon.com/amazonq/latest/business-use-dg/iam-roles.html#cde-iam-role">IAM roles for Custom Document Enrichment (CDE)</a>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Lambda function sduring ingestion. For more information, see <a href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/cde-lambda-operations.html">Using Lambda functions for Amazon Q Business document enrichment</a>.</p>
     pub fn get_lambda_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.lambda_arn
     }

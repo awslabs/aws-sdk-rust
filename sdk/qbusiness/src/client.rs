@@ -148,6 +148,8 @@ mod chat;
 
 mod chat_sync;
 
+mod check_document_access;
+
 mod create_application;
 
 mod create_data_accessor;

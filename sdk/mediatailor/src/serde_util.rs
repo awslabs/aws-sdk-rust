@@ -65,6 +65,27 @@ pub(crate) fn prefetch_retrieval_correct_errors(
     builder
 }
 
+pub(crate) fn recurring_prefetch_configuration_correct_errors(
+    mut builder: crate::types::builders::RecurringPrefetchConfigurationBuilder,
+) -> crate::types::builders::RecurringPrefetchConfigurationBuilder {
+    if builder.end_time.is_none() {
+        builder.end_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.recurring_consumption.is_none() {
+        builder.recurring_consumption = {
+            let builder = crate::types::builders::RecurringConsumptionBuilder::default();
+            Some(builder.build())
+        }
+    }
+    if builder.recurring_retrieval.is_none() {
+        builder.recurring_retrieval = {
+            let builder = crate::types::builders::RecurringRetrievalBuilder::default();
+            Some(builder.build())
+        }
+    }
+    builder
+}
+
 pub(crate) fn time_shift_configuration_correct_errors(
     mut builder: crate::types::builders::TimeShiftConfigurationBuilder,
 ) -> crate::types::builders::TimeShiftConfigurationBuilder {
@@ -174,23 +195,11 @@ pub(crate) fn prefetch_schedule_correct_errors(
     if builder.arn.is_none() {
         builder.arn = Some(Default::default())
     }
-    if builder.consumption.is_none() {
-        builder.consumption = {
-            let builder = crate::types::builders::PrefetchConsumptionBuilder::default();
-            crate::serde_util::prefetch_consumption_correct_errors(builder).build().ok()
-        }
-    }
     if builder.name.is_none() {
         builder.name = Some(Default::default())
     }
     if builder.playback_configuration_name.is_none() {
         builder.playback_configuration_name = Some(Default::default())
-    }
-    if builder.retrieval.is_none() {
-        builder.retrieval = {
-            let builder = crate::types::builders::PrefetchRetrievalBuilder::default();
-            crate::serde_util::prefetch_retrieval_correct_errors(builder).build().ok()
-        }
     }
     builder
 }

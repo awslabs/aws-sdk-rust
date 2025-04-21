@@ -15,5 +15,8 @@ pub fn ser_describe_budgets_input_input(
     if let Some(var_3) = &input.next_token {
         object.key("NextToken").string(var_3.as_str());
     }
+    if let Some(var_4) = &input.show_filter_expression {
+        object.key("ShowFilterExpression").boolean(*var_4);
+    }
     Ok(())
 }

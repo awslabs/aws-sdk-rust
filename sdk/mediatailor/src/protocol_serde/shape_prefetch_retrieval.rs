@@ -29,6 +29,18 @@ where
                                 ::aws_smithy_types::date_time::Format::EpochSeconds,
                             )?);
                         }
+                        "TrafficShapingType" => {
+                            builder = builder.set_traffic_shaping_type(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::TrafficShapingType::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "TrafficShapingRetrievalWindow" => {
+                            builder = builder.set_traffic_shaping_retrieval_window(
+                                crate::protocol_serde::shape_traffic_shaping_retrieval_window::de_traffic_shaping_retrieval_window(tokens)?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {
@@ -72,6 +84,15 @@ pub fn ser_prefetch_retrieval(
         object
             .key("StartTime")
             .date_time(var_5, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
+    }
+    if let Some(var_6) = &input.traffic_shaping_type {
+        object.key("TrafficShapingType").string(var_6.as_str());
+    }
+    if let Some(var_7) = &input.traffic_shaping_retrieval_window {
+        #[allow(unused_mut)]
+        let mut object_8 = object.key("TrafficShapingRetrievalWindow").start_object();
+        crate::protocol_serde::shape_traffic_shaping_retrieval_window::ser_traffic_shaping_retrieval_window(&mut object_8, var_7)?;
+        object_8.finish();
     }
     Ok(())
 }

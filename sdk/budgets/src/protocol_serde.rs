@@ -205,7 +205,11 @@ pub(crate) mod shape_cost_filters;
 
 pub(crate) mod shape_cost_types;
 
+pub(crate) mod shape_expression;
+
 pub(crate) mod shape_iam_action_definition;
+
+pub(crate) mod shape_metrics;
 
 pub(crate) mod shape_planned_budget_limits;
 
@@ -219,16 +223,28 @@ pub(crate) mod shape_action_history_details;
 
 pub(crate) mod shape_budgeted_and_actual_amounts;
 
+pub(crate) mod shape_cost_category_values;
+
 pub(crate) mod shape_dimension_values;
 
+pub(crate) mod shape_expression_dimension_values;
+
+pub(crate) mod shape_expressions;
+
 pub(crate) mod shape_historical_options;
+
+pub(crate) mod shape_tag_values;
 
 pub(crate) mod shape_groups;
 
 pub(crate) mod shape_instance_ids;
+
+pub(crate) mod shape_match_options;
 
 pub(crate) mod shape_roles;
 
 pub(crate) mod shape_target_ids;
 
 pub(crate) mod shape_users;
+
+pub(crate) mod shape_values;

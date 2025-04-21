@@ -19,6 +19,9 @@ pub mod chat;
 /// Types for the `ChatSync` operation.
 pub mod chat_sync;
 
+/// Types for the `CheckDocumentAccess` operation.
+pub mod check_document_access;
+
 /// Types for the `CreateApplication` operation.
 pub mod create_application;
 

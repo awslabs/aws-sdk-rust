@@ -12,6 +12,8 @@ pub struct ListPrefetchSchedulesInput {
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Retrieves the prefetch schedule(s) for a specific playback configuration.</p>
     pub playback_configuration_name: ::std::option::Option<::std::string::String>,
+    /// <p>The type of prefetch schedules that you want to list. <code>SINGLE</code> indicates that you want to list the configured single prefetch schedules. <code>RECURRING</code> indicates that you want to list the configured recurring prefetch schedules. <code>ALL</code> indicates that you want to list all configured prefetch schedules.</p>
+    pub schedule_type: ::std::option::Option<crate::types::ListPrefetchScheduleType>,
     /// <p>An optional filtering parameter whereby MediaTailor filters the prefetch schedules to include only specific streams.</p>
     pub stream_id: ::std::option::Option<::std::string::String>,
 }
@@ -30,6 +32,10 @@ impl ListPrefetchSchedulesInput {
     /// <p>Retrieves the prefetch schedule(s) for a specific playback configuration.</p>
     pub fn playback_configuration_name(&self) -> ::std::option::Option<&str> {
         self.playback_configuration_name.as_deref()
+    }
+    /// <p>The type of prefetch schedules that you want to list. <code>SINGLE</code> indicates that you want to list the configured single prefetch schedules. <code>RECURRING</code> indicates that you want to list the configured recurring prefetch schedules. <code>ALL</code> indicates that you want to list all configured prefetch schedules.</p>
+    pub fn schedule_type(&self) -> ::std::option::Option<&crate::types::ListPrefetchScheduleType> {
+        self.schedule_type.as_ref()
     }
     /// <p>An optional filtering parameter whereby MediaTailor filters the prefetch schedules to include only specific streams.</p>
     pub fn stream_id(&self) -> ::std::option::Option<&str> {
@@ -50,6 +56,7 @@ pub struct ListPrefetchSchedulesInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) playback_configuration_name: ::std::option::Option<::std::string::String>,
+    pub(crate) schedule_type: ::std::option::Option<crate::types::ListPrefetchScheduleType>,
     pub(crate) stream_id: ::std::option::Option<::std::string::String>,
 }
 impl ListPrefetchSchedulesInputBuilder {
@@ -105,6 +112,20 @@ impl ListPrefetchSchedulesInputBuilder {
     pub fn get_playback_configuration_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.playback_configuration_name
     }
+    /// <p>The type of prefetch schedules that you want to list. <code>SINGLE</code> indicates that you want to list the configured single prefetch schedules. <code>RECURRING</code> indicates that you want to list the configured recurring prefetch schedules. <code>ALL</code> indicates that you want to list all configured prefetch schedules.</p>
+    pub fn schedule_type(mut self, input: crate::types::ListPrefetchScheduleType) -> Self {
+        self.schedule_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The type of prefetch schedules that you want to list. <code>SINGLE</code> indicates that you want to list the configured single prefetch schedules. <code>RECURRING</code> indicates that you want to list the configured recurring prefetch schedules. <code>ALL</code> indicates that you want to list all configured prefetch schedules.</p>
+    pub fn set_schedule_type(mut self, input: ::std::option::Option<crate::types::ListPrefetchScheduleType>) -> Self {
+        self.schedule_type = input;
+        self
+    }
+    /// <p>The type of prefetch schedules that you want to list. <code>SINGLE</code> indicates that you want to list the configured single prefetch schedules. <code>RECURRING</code> indicates that you want to list the configured recurring prefetch schedules. <code>ALL</code> indicates that you want to list all configured prefetch schedules.</p>
+    pub fn get_schedule_type(&self) -> &::std::option::Option<crate::types::ListPrefetchScheduleType> {
+        &self.schedule_type
+    }
     /// <p>An optional filtering parameter whereby MediaTailor filters the prefetch schedules to include only specific streams.</p>
     pub fn stream_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stream_id = ::std::option::Option::Some(input.into());
@@ -128,6 +149,7 @@ impl ListPrefetchSchedulesInputBuilder {
             max_results: self.max_results,
             next_token: self.next_token,
             playback_configuration_name: self.playback_configuration_name,
+            schedule_type: self.schedule_type,
             stream_id: self.stream_id,
         })
     }

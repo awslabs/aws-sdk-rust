@@ -6,7 +6,7 @@
 pub struct PrefetchSchedule {
     /// <p>The Amazon Resource Name (ARN) of the prefetch schedule.</p>
     pub arn: ::std::string::String,
-    /// <p>Consumption settings determine how, and when, MediaTailor places the prefetched ads into ad breaks. Ad consumption occurs within a span of time that you define, called a <i>consumption window</i>. You can designate which ad breaks that MediaTailor fills with prefetch ads by setting avail matching criteria.</p>
+    /// <p>Consumption settings determine how, and when, MediaTailor places the prefetched ads into ad breaks for single prefetch schedules. Ad consumption occurs within a span of time that you define, called a <i>consumption window</i>. You can designate which ad breaks that MediaTailor fills with prefetch ads by setting avail matching criteria.</p>
     pub consumption: ::std::option::Option<crate::types::PrefetchConsumption>,
     /// <p>The name of the prefetch schedule. The name must be unique among all prefetch schedules that are associated with the specified playback configuration.</p>
     pub name: ::std::string::String,
@@ -14,6 +14,11 @@ pub struct PrefetchSchedule {
     pub playback_configuration_name: ::std::string::String,
     /// <p>A complex type that contains settings for prefetch retrieval from the ad decision server (ADS).</p>
     pub retrieval: ::std::option::Option<crate::types::PrefetchRetrieval>,
+    /// <p>The frequency that MediaTailor creates prefetch schedules. <code>SINGLE</code> indicates that this schedule applies to one ad break. <code>RECURRING</code> indicates that MediaTailor automatically creates a schedule for each ad avail in a live event.</p>
+    /// <p>For more information about the prefetch types and when you might use each, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/prefetching-ads.html">Prefetching ads in Elemental MediaTailor.</a></p>
+    pub schedule_type: ::std::option::Option<crate::types::PrefetchScheduleType>,
+    /// <p>The settings that determine how and when MediaTailor prefetches ads and inserts them into ad breaks.</p>
+    pub recurring_prefetch_configuration: ::std::option::Option<crate::types::RecurringPrefetchConfiguration>,
     /// <p>An optional stream identifier that you can specify in order to prefetch for multiple streams that use the same playback configuration.</p>
     pub stream_id: ::std::option::Option<::std::string::String>,
 }
@@ -23,7 +28,7 @@ impl PrefetchSchedule {
         use std::ops::Deref;
         self.arn.deref()
     }
-    /// <p>Consumption settings determine how, and when, MediaTailor places the prefetched ads into ad breaks. Ad consumption occurs within a span of time that you define, called a <i>consumption window</i>. You can designate which ad breaks that MediaTailor fills with prefetch ads by setting avail matching criteria.</p>
+    /// <p>Consumption settings determine how, and when, MediaTailor places the prefetched ads into ad breaks for single prefetch schedules. Ad consumption occurs within a span of time that you define, called a <i>consumption window</i>. You can designate which ad breaks that MediaTailor fills with prefetch ads by setting avail matching criteria.</p>
     pub fn consumption(&self) -> ::std::option::Option<&crate::types::PrefetchConsumption> {
         self.consumption.as_ref()
     }
@@ -40,6 +45,15 @@ impl PrefetchSchedule {
     /// <p>A complex type that contains settings for prefetch retrieval from the ad decision server (ADS).</p>
     pub fn retrieval(&self) -> ::std::option::Option<&crate::types::PrefetchRetrieval> {
         self.retrieval.as_ref()
+    }
+    /// <p>The frequency that MediaTailor creates prefetch schedules. <code>SINGLE</code> indicates that this schedule applies to one ad break. <code>RECURRING</code> indicates that MediaTailor automatically creates a schedule for each ad avail in a live event.</p>
+    /// <p>For more information about the prefetch types and when you might use each, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/prefetching-ads.html">Prefetching ads in Elemental MediaTailor.</a></p>
+    pub fn schedule_type(&self) -> ::std::option::Option<&crate::types::PrefetchScheduleType> {
+        self.schedule_type.as_ref()
+    }
+    /// <p>The settings that determine how and when MediaTailor prefetches ads and inserts them into ad breaks.</p>
+    pub fn recurring_prefetch_configuration(&self) -> ::std::option::Option<&crate::types::RecurringPrefetchConfiguration> {
+        self.recurring_prefetch_configuration.as_ref()
     }
     /// <p>An optional stream identifier that you can specify in order to prefetch for multiple streams that use the same playback configuration.</p>
     pub fn stream_id(&self) -> ::std::option::Option<&str> {
@@ -62,6 +76,8 @@ pub struct PrefetchScheduleBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) playback_configuration_name: ::std::option::Option<::std::string::String>,
     pub(crate) retrieval: ::std::option::Option<crate::types::PrefetchRetrieval>,
+    pub(crate) schedule_type: ::std::option::Option<crate::types::PrefetchScheduleType>,
+    pub(crate) recurring_prefetch_configuration: ::std::option::Option<crate::types::RecurringPrefetchConfiguration>,
     pub(crate) stream_id: ::std::option::Option<::std::string::String>,
 }
 impl PrefetchScheduleBuilder {
@@ -80,18 +96,17 @@ impl PrefetchScheduleBuilder {
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.arn
     }
-    /// <p>Consumption settings determine how, and when, MediaTailor places the prefetched ads into ad breaks. Ad consumption occurs within a span of time that you define, called a <i>consumption window</i>. You can designate which ad breaks that MediaTailor fills with prefetch ads by setting avail matching criteria.</p>
-    /// This field is required.
+    /// <p>Consumption settings determine how, and when, MediaTailor places the prefetched ads into ad breaks for single prefetch schedules. Ad consumption occurs within a span of time that you define, called a <i>consumption window</i>. You can designate which ad breaks that MediaTailor fills with prefetch ads by setting avail matching criteria.</p>
     pub fn consumption(mut self, input: crate::types::PrefetchConsumption) -> Self {
         self.consumption = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Consumption settings determine how, and when, MediaTailor places the prefetched ads into ad breaks. Ad consumption occurs within a span of time that you define, called a <i>consumption window</i>. You can designate which ad breaks that MediaTailor fills with prefetch ads by setting avail matching criteria.</p>
+    /// <p>Consumption settings determine how, and when, MediaTailor places the prefetched ads into ad breaks for single prefetch schedules. Ad consumption occurs within a span of time that you define, called a <i>consumption window</i>. You can designate which ad breaks that MediaTailor fills with prefetch ads by setting avail matching criteria.</p>
     pub fn set_consumption(mut self, input: ::std::option::Option<crate::types::PrefetchConsumption>) -> Self {
         self.consumption = input;
         self
     }
-    /// <p>Consumption settings determine how, and when, MediaTailor places the prefetched ads into ad breaks. Ad consumption occurs within a span of time that you define, called a <i>consumption window</i>. You can designate which ad breaks that MediaTailor fills with prefetch ads by setting avail matching criteria.</p>
+    /// <p>Consumption settings determine how, and when, MediaTailor places the prefetched ads into ad breaks for single prefetch schedules. Ad consumption occurs within a span of time that you define, called a <i>consumption window</i>. You can designate which ad breaks that MediaTailor fills with prefetch ads by setting avail matching criteria.</p>
     pub fn get_consumption(&self) -> &::std::option::Option<crate::types::PrefetchConsumption> {
         &self.consumption
     }
@@ -126,7 +141,6 @@ impl PrefetchScheduleBuilder {
         &self.playback_configuration_name
     }
     /// <p>A complex type that contains settings for prefetch retrieval from the ad decision server (ADS).</p>
-    /// This field is required.
     pub fn retrieval(mut self, input: crate::types::PrefetchRetrieval) -> Self {
         self.retrieval = ::std::option::Option::Some(input);
         self
@@ -139,6 +153,37 @@ impl PrefetchScheduleBuilder {
     /// <p>A complex type that contains settings for prefetch retrieval from the ad decision server (ADS).</p>
     pub fn get_retrieval(&self) -> &::std::option::Option<crate::types::PrefetchRetrieval> {
         &self.retrieval
+    }
+    /// <p>The frequency that MediaTailor creates prefetch schedules. <code>SINGLE</code> indicates that this schedule applies to one ad break. <code>RECURRING</code> indicates that MediaTailor automatically creates a schedule for each ad avail in a live event.</p>
+    /// <p>For more information about the prefetch types and when you might use each, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/prefetching-ads.html">Prefetching ads in Elemental MediaTailor.</a></p>
+    pub fn schedule_type(mut self, input: crate::types::PrefetchScheduleType) -> Self {
+        self.schedule_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The frequency that MediaTailor creates prefetch schedules. <code>SINGLE</code> indicates that this schedule applies to one ad break. <code>RECURRING</code> indicates that MediaTailor automatically creates a schedule for each ad avail in a live event.</p>
+    /// <p>For more information about the prefetch types and when you might use each, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/prefetching-ads.html">Prefetching ads in Elemental MediaTailor.</a></p>
+    pub fn set_schedule_type(mut self, input: ::std::option::Option<crate::types::PrefetchScheduleType>) -> Self {
+        self.schedule_type = input;
+        self
+    }
+    /// <p>The frequency that MediaTailor creates prefetch schedules. <code>SINGLE</code> indicates that this schedule applies to one ad break. <code>RECURRING</code> indicates that MediaTailor automatically creates a schedule for each ad avail in a live event.</p>
+    /// <p>For more information about the prefetch types and when you might use each, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/prefetching-ads.html">Prefetching ads in Elemental MediaTailor.</a></p>
+    pub fn get_schedule_type(&self) -> &::std::option::Option<crate::types::PrefetchScheduleType> {
+        &self.schedule_type
+    }
+    /// <p>The settings that determine how and when MediaTailor prefetches ads and inserts them into ad breaks.</p>
+    pub fn recurring_prefetch_configuration(mut self, input: crate::types::RecurringPrefetchConfiguration) -> Self {
+        self.recurring_prefetch_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The settings that determine how and when MediaTailor prefetches ads and inserts them into ad breaks.</p>
+    pub fn set_recurring_prefetch_configuration(mut self, input: ::std::option::Option<crate::types::RecurringPrefetchConfiguration>) -> Self {
+        self.recurring_prefetch_configuration = input;
+        self
+    }
+    /// <p>The settings that determine how and when MediaTailor prefetches ads and inserts them into ad breaks.</p>
+    pub fn get_recurring_prefetch_configuration(&self) -> &::std::option::Option<crate::types::RecurringPrefetchConfiguration> {
+        &self.recurring_prefetch_configuration
     }
     /// <p>An optional stream identifier that you can specify in order to prefetch for multiple streams that use the same playback configuration.</p>
     pub fn stream_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -181,6 +226,8 @@ impl PrefetchScheduleBuilder {
                 )
             })?,
             retrieval: self.retrieval,
+            schedule_type: self.schedule_type,
+            recurring_prefetch_configuration: self.recurring_prefetch_configuration,
             stream_id: self.stream_id,
         })
     }

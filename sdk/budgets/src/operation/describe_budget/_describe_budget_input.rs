@@ -8,6 +8,8 @@ pub struct DescribeBudgetInput {
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the budget that you want a description of.</p>
     pub budget_name: ::std::option::Option<::std::string::String>,
+    /// <p>Specifies whether the response includes the filter expression associated with the budget. By showing the filter expression, you can see detailed filtering logic applied to the budget, such as Amazon Web Services services or tags that are being tracked.</p>
+    pub show_filter_expression: ::std::option::Option<bool>,
 }
 impl DescribeBudgetInput {
     /// <p>The <code>accountId</code> that is associated with the budget that you want a description of.</p>
@@ -17,6 +19,10 @@ impl DescribeBudgetInput {
     /// <p>The name of the budget that you want a description of.</p>
     pub fn budget_name(&self) -> ::std::option::Option<&str> {
         self.budget_name.as_deref()
+    }
+    /// <p>Specifies whether the response includes the filter expression associated with the budget. By showing the filter expression, you can see detailed filtering logic applied to the budget, such as Amazon Web Services services or tags that are being tracked.</p>
+    pub fn show_filter_expression(&self) -> ::std::option::Option<bool> {
+        self.show_filter_expression
     }
 }
 impl DescribeBudgetInput {
@@ -32,6 +38,7 @@ impl DescribeBudgetInput {
 pub struct DescribeBudgetInputBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) budget_name: ::std::option::Option<::std::string::String>,
+    pub(crate) show_filter_expression: ::std::option::Option<bool>,
 }
 impl DescribeBudgetInputBuilder {
     /// <p>The <code>accountId</code> that is associated with the budget that you want a description of.</p>
@@ -64,6 +71,20 @@ impl DescribeBudgetInputBuilder {
     pub fn get_budget_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.budget_name
     }
+    /// <p>Specifies whether the response includes the filter expression associated with the budget. By showing the filter expression, you can see detailed filtering logic applied to the budget, such as Amazon Web Services services or tags that are being tracked.</p>
+    pub fn show_filter_expression(mut self, input: bool) -> Self {
+        self.show_filter_expression = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies whether the response includes the filter expression associated with the budget. By showing the filter expression, you can see detailed filtering logic applied to the budget, such as Amazon Web Services services or tags that are being tracked.</p>
+    pub fn set_show_filter_expression(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.show_filter_expression = input;
+        self
+    }
+    /// <p>Specifies whether the response includes the filter expression associated with the budget. By showing the filter expression, you can see detailed filtering logic applied to the budget, such as Amazon Web Services services or tags that are being tracked.</p>
+    pub fn get_show_filter_expression(&self) -> &::std::option::Option<bool> {
+        &self.show_filter_expression
+    }
     /// Consumes the builder and constructs a [`DescribeBudgetInput`](crate::operation::describe_budget::DescribeBudgetInput).
     pub fn build(
         self,
@@ -71,6 +92,7 @@ impl DescribeBudgetInputBuilder {
         ::std::result::Result::Ok(crate::operation::describe_budget::DescribeBudgetInput {
             account_id: self.account_id,
             budget_name: self.budget_name,
+            show_filter_expression: self.show_filter_expression,
         })
     }
 }

@@ -23,7 +23,7 @@ impl crate::operation::create_delivery_stream::builders::CreateDeliveryStreamInp
 /// Fluent builder constructing a request to `CreateDeliveryStream`.
 ///
 /// <p>Creates a Firehose stream.</p>
-/// <p>By default, you can create up to 50 Firehose streams per Amazon Web Services Region.</p>
+/// <p>By default, you can create up to 5,000 Firehose streams per Amazon Web Services Region.</p>
 /// <p>This is an asynchronous operation that immediately returns. The initial status of the Firehose stream is <code>CREATING</code>. After the Firehose stream is created, its status is <code>ACTIVE</code> and it now accepts data. If the Firehose stream creation fails, the status transitions to <code>CREATING_FAILED</code>. Attempts to send data to a delivery stream that is not in the <code>ACTIVE</code> state cause an exception. To check the state of a Firehose stream, use <code>DescribeDeliveryStream</code>.</p>
 /// <p>If the status of a Firehose stream is <code>CREATING_FAILED</code>, this status doesn't change, and you can't invoke <code>CreateDeliveryStream</code> again on it. However, you can invoke the <code>DeleteDeliveryStream</code> operation to delete it.</p>
 /// <p>A Firehose stream can be configured to receive records directly from providers using <code>PutRecord</code> or <code>PutRecordBatch</code>, or it can be configured to use an existing Kinesis stream as its source. To specify a Kinesis data stream as input, set the <code>DeliveryStreamType</code> parameter to <code>KinesisStreamAsSource</code>, and provide the Kinesis stream Amazon Resource Name (ARN) and role ARN in the <code>KinesisStreamSourceConfiguration</code> parameter.</p>

@@ -235,6 +235,8 @@ pub(crate) mod shape_prefetch_consumption;
 
 pub(crate) mod shape_prefetch_retrieval;
 
+pub(crate) mod shape_recurring_prefetch_configuration;
+
 pub(crate) mod shape_request_output_item;
 
 pub(crate) mod shape_response_outputs;
@@ -281,6 +283,10 @@ pub(crate) mod shape_playback_configuration;
 
 pub(crate) mod shape_prefetch_schedule;
 
+pub(crate) mod shape_recurring_consumption;
+
+pub(crate) mod shape_recurring_retrieval;
+
 pub(crate) mod shape_response_output_item;
 
 pub(crate) mod shape_schedule_entry;
@@ -292,6 +298,8 @@ pub(crate) mod shape_source_location;
 pub(crate) mod shape_splice_insert_message;
 
 pub(crate) mod shape_time_signal_message;
+
+pub(crate) mod shape_traffic_shaping_retrieval_window;
 
 pub(crate) mod shape_transition;
 

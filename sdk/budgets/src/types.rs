@@ -35,6 +35,20 @@ pub use crate::types::_action_type::ActionType;
 
 pub use crate::types::_budget::Budget;
 
+pub use crate::types::_metric::Metric;
+
+pub use crate::types::_expression::Expression;
+
+pub use crate::types::_cost_category_values::CostCategoryValues;
+
+pub use crate::types::_match_option::MatchOption;
+
+pub use crate::types::_tag_values::TagValues;
+
+pub use crate::types::_expression_dimension_values::ExpressionDimensionValues;
+
+pub use crate::types::_dimension::Dimension;
+
 pub use crate::types::_auto_adjust_data::AutoAdjustData;
 
 pub use crate::types::_historical_options::HistoricalOptions;
@@ -105,17 +119,29 @@ mod _calculated_spend;
 
 mod _comparison_operator;
 
+mod _cost_category_values;
+
 mod _cost_types;
 
 mod _definition;
+
+mod _dimension;
 
 mod _event_type;
 
 mod _execution_type;
 
+mod _expression;
+
+mod _expression_dimension_values;
+
 mod _historical_options;
 
 mod _iam_action_definition;
+
+mod _match_option;
+
+mod _metric;
 
 mod _notification;
 
@@ -136,6 +162,8 @@ mod _ssm_action_definition;
 mod _subscriber;
 
 mod _subscription_type;
+
+mod _tag_values;
 
 mod _threshold_type;
 

@@ -165,6 +165,20 @@ impl ListPrefetchSchedulesFluentBuilder {
     pub fn get_playback_configuration_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_playback_configuration_name()
     }
+    /// <p>The type of prefetch schedules that you want to list. <code>SINGLE</code> indicates that you want to list the configured single prefetch schedules. <code>RECURRING</code> indicates that you want to list the configured recurring prefetch schedules. <code>ALL</code> indicates that you want to list all configured prefetch schedules.</p>
+    pub fn schedule_type(mut self, input: crate::types::ListPrefetchScheduleType) -> Self {
+        self.inner = self.inner.schedule_type(input);
+        self
+    }
+    /// <p>The type of prefetch schedules that you want to list. <code>SINGLE</code> indicates that you want to list the configured single prefetch schedules. <code>RECURRING</code> indicates that you want to list the configured recurring prefetch schedules. <code>ALL</code> indicates that you want to list all configured prefetch schedules.</p>
+    pub fn set_schedule_type(mut self, input: ::std::option::Option<crate::types::ListPrefetchScheduleType>) -> Self {
+        self.inner = self.inner.set_schedule_type(input);
+        self
+    }
+    /// <p>The type of prefetch schedules that you want to list. <code>SINGLE</code> indicates that you want to list the configured single prefetch schedules. <code>RECURRING</code> indicates that you want to list the configured recurring prefetch schedules. <code>ALL</code> indicates that you want to list all configured prefetch schedules.</p>
+    pub fn get_schedule_type(&self) -> &::std::option::Option<crate::types::ListPrefetchScheduleType> {
+        self.inner.get_schedule_type()
+    }
     /// <p>An optional filtering parameter whereby MediaTailor filters the prefetch schedules to include only specific streams.</p>
     pub fn stream_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.stream_id(input.into());

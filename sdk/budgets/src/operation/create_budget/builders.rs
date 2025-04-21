@@ -23,7 +23,8 @@ impl crate::operation::create_budget::builders::CreateBudgetInputBuilder {
 /// Fluent builder constructing a request to `CreateBudget`.
 ///
 /// <p>Creates a budget and, if included, notifications and subscribers.</p><important>
-/// <p>Only one of <code>BudgetLimit</code> or <code>PlannedBudgetLimits</code> can be present in the syntax at one time. Use the syntax that matches your case. The Request Syntax section shows the <code>BudgetLimit</code> syntax. For <code>PlannedBudgetLimits</code>, see the <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_budgets_CreateBudget.html#API_CreateBudget_Examples">Examples</a> section.</p>
+/// <p>Only one of <code>BudgetLimit</code> or <code>PlannedBudgetLimits</code> can be present in the syntax at one time. Use the syntax that matches your use case. The Request Syntax section shows the <code>BudgetLimit</code> syntax. For <code>PlannedBudgetLimits</code>, see the <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_budgets_CreateBudget.html#API_CreateBudget_Examples">Examples</a> section.</p>
+/// <p>Similarly, only one set of filter and metric selections can be present in the syntax at one time. Either <code>FilterExpression</code> and <code>Metrics</code> or <code>CostFilters</code> and <code>CostTypes</code>, not both or a different combination. We recommend using <code>FilterExpression</code> and <code>Metrics</code> as they provide more flexible and powerful filtering capabilities. The Request Syntax section shows the <code>FilterExpression</code>/<code>Metrics</code> syntax.</p>
 /// </important>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateBudgetFluentBuilder {
