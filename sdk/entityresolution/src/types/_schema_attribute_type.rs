@@ -22,6 +22,9 @@
 ///     SchemaAttributeType::AddressStreet3 => { /* ... */ },
 ///     SchemaAttributeType::Date => { /* ... */ },
 ///     SchemaAttributeType::EmailAddress => { /* ... */ },
+///     SchemaAttributeType::Ipv4 => { /* ... */ },
+///     SchemaAttributeType::Ipv6 => { /* ... */ },
+///     SchemaAttributeType::Maid => { /* ... */ },
 ///     SchemaAttributeType::Name => { /* ... */ },
 ///     SchemaAttributeType::NameFirst => { /* ... */ },
 ///     SchemaAttributeType::NameLast => { /* ... */ },
@@ -81,6 +84,12 @@ pub enum SchemaAttributeType {
     #[allow(missing_docs)] // documentation missing in model
     EmailAddress,
     #[allow(missing_docs)] // documentation missing in model
+    Ipv4,
+    #[allow(missing_docs)] // documentation missing in model
+    Ipv6,
+    #[allow(missing_docs)] // documentation missing in model
+    Maid,
+    #[allow(missing_docs)] // documentation missing in model
     Name,
     #[allow(missing_docs)] // documentation missing in model
     NameFirst,
@@ -117,6 +126,9 @@ impl ::std::convert::From<&str> for SchemaAttributeType {
             "ADDRESS_STREET3" => SchemaAttributeType::AddressStreet3,
             "DATE" => SchemaAttributeType::Date,
             "EMAIL_ADDRESS" => SchemaAttributeType::EmailAddress,
+            "IPV4" => SchemaAttributeType::Ipv4,
+            "IPV6" => SchemaAttributeType::Ipv6,
+            "MAID" => SchemaAttributeType::Maid,
             "NAME" => SchemaAttributeType::Name,
             "NAME_FIRST" => SchemaAttributeType::NameFirst,
             "NAME_LAST" => SchemaAttributeType::NameLast,
@@ -152,6 +164,9 @@ impl SchemaAttributeType {
             SchemaAttributeType::AddressStreet3 => "ADDRESS_STREET3",
             SchemaAttributeType::Date => "DATE",
             SchemaAttributeType::EmailAddress => "EMAIL_ADDRESS",
+            SchemaAttributeType::Ipv4 => "IPV4",
+            SchemaAttributeType::Ipv6 => "IPV6",
+            SchemaAttributeType::Maid => "MAID",
             SchemaAttributeType::Name => "NAME",
             SchemaAttributeType::NameFirst => "NAME_FIRST",
             SchemaAttributeType::NameLast => "NAME_LAST",
@@ -178,6 +193,9 @@ impl SchemaAttributeType {
             "ADDRESS_STREET3",
             "DATE",
             "EMAIL_ADDRESS",
+            "IPV4",
+            "IPV6",
+            "MAID",
             "NAME",
             "NAME_FIRST",
             "NAME_LAST",
@@ -221,6 +239,9 @@ impl ::std::fmt::Display for SchemaAttributeType {
             SchemaAttributeType::AddressStreet3 => write!(f, "ADDRESS_STREET3"),
             SchemaAttributeType::Date => write!(f, "DATE"),
             SchemaAttributeType::EmailAddress => write!(f, "EMAIL_ADDRESS"),
+            SchemaAttributeType::Ipv4 => write!(f, "IPV4"),
+            SchemaAttributeType::Ipv6 => write!(f, "IPV6"),
+            SchemaAttributeType::Maid => write!(f, "MAID"),
             SchemaAttributeType::Name => write!(f, "NAME"),
             SchemaAttributeType::NameFirst => write!(f, "NAME_FIRST"),
             SchemaAttributeType::NameLast => write!(f, "NAME_LAST"),

@@ -20,6 +20,24 @@ pub fn de_delete_user_pool_domain_http_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
+        "ConcurrentModificationException" => crate::operation::delete_user_pool_domain::DeleteUserPoolDomainError::ConcurrentModificationException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ConcurrentModificationExceptionBuilder::default();
+                output = crate::protocol_serde::shape_concurrent_modification_exception::de_concurrent_modification_exception_json_err(
+                    _response_body,
+                    output,
+                )
+                .map_err(crate::operation::delete_user_pool_domain::DeleteUserPoolDomainError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "InternalErrorException" => crate::operation::delete_user_pool_domain::DeleteUserPoolDomainError::InternalErrorException({
             #[allow(unused_mut)]
             let mut tmp = {

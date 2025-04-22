@@ -31,6 +31,8 @@ pub(crate) mod shape_disable_region;
 
 pub(crate) mod shape_enable_region;
 
+pub(crate) mod shape_get_account_information;
+
 pub(crate) mod shape_get_alternate_contact;
 
 pub(crate) mod shape_get_contact_information;
@@ -40,6 +42,8 @@ pub(crate) mod shape_get_primary_email;
 pub(crate) mod shape_get_region_opt_status;
 
 pub(crate) mod shape_list_regions;
+
+pub(crate) mod shape_put_account_name;
 
 pub(crate) mod shape_put_alternate_contact;
 
@@ -67,6 +71,8 @@ pub(crate) mod shape_disable_region_input;
 
 pub(crate) mod shape_enable_region_input;
 
+pub(crate) mod shape_get_account_information_input;
+
 pub(crate) mod shape_get_alternate_contact_input;
 
 pub(crate) mod shape_get_contact_information_input;
@@ -78,6 +84,8 @@ pub(crate) mod shape_get_region_opt_status_input;
 pub(crate) mod shape_internal_server_exception;
 
 pub(crate) mod shape_list_regions_input;
+
+pub(crate) mod shape_put_account_name_input;
 
 pub(crate) mod shape_put_alternate_contact_input;
 

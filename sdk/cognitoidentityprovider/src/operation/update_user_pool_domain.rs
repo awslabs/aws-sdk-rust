@@ -266,6 +266,8 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for UpdateUserPoo
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum UpdateUserPoolDomainError {
+    /// <p>This exception is thrown if two or more modifications are happening concurrently.</p>
+    ConcurrentModificationException(crate::types::error::ConcurrentModificationException),
     /// <p>This exception is thrown when a feature you attempted to configure isn't available in your current feature plan.</p>
     FeatureUnavailableInTierException(crate::types::error::FeatureUnavailableInTierException),
     /// <p>This exception is thrown when Amazon Cognito encounters an internal error.</p>
@@ -311,6 +313,7 @@ impl UpdateUserPoolDomainError {
     ///
     pub fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
+            Self::ConcurrentModificationException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::FeatureUnavailableInTierException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InternalErrorException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidParameterException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
@@ -319,6 +322,10 @@ impl UpdateUserPoolDomainError {
             Self::TooManyRequestsException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::Unhandled(e) => &e.meta,
         }
+    }
+    /// Returns `true` if the error kind is `UpdateUserPoolDomainError::ConcurrentModificationException`.
+    pub fn is_concurrent_modification_exception(&self) -> bool {
+        matches!(self, Self::ConcurrentModificationException(_))
     }
     /// Returns `true` if the error kind is `UpdateUserPoolDomainError::FeatureUnavailableInTierException`.
     pub fn is_feature_unavailable_in_tier_exception(&self) -> bool {
@@ -348,6 +355,7 @@ impl UpdateUserPoolDomainError {
 impl ::std::error::Error for UpdateUserPoolDomainError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
+            Self::ConcurrentModificationException(_inner) => ::std::option::Option::Some(_inner),
             Self::FeatureUnavailableInTierException(_inner) => ::std::option::Option::Some(_inner),
             Self::InternalErrorException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidParameterException(_inner) => ::std::option::Option::Some(_inner),
@@ -361,6 +369,7 @@ impl ::std::error::Error for UpdateUserPoolDomainError {
 impl ::std::fmt::Display for UpdateUserPoolDomainError {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         match self {
+            Self::ConcurrentModificationException(_inner) => _inner.fmt(f),
             Self::FeatureUnavailableInTierException(_inner) => _inner.fmt(f),
             Self::InternalErrorException(_inner) => _inner.fmt(f),
             Self::InvalidParameterException(_inner) => _inner.fmt(f),
@@ -388,6 +397,7 @@ impl ::aws_smithy_types::retry::ProvideErrorKind for UpdateUserPoolDomainError {
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for UpdateUserPoolDomainError {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
+            Self::ConcurrentModificationException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::FeatureUnavailableInTierException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InternalErrorException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidParameterException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),

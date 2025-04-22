@@ -122,6 +122,30 @@ pub(crate) fn get_namespace_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn get_reservation_output_output_correct_errors(
+    mut builder: crate::operation::get_reservation::builders::GetReservationOutputBuilder,
+) -> crate::operation::get_reservation::builders::GetReservationOutputBuilder {
+    if builder.reservation.is_none() {
+        builder.reservation = {
+            let builder = crate::types::builders::ReservationBuilder::default();
+            Some(builder.build())
+        }
+    }
+    builder
+}
+
+pub(crate) fn get_reservation_offering_output_output_correct_errors(
+    mut builder: crate::operation::get_reservation_offering::builders::GetReservationOfferingOutputBuilder,
+) -> crate::operation::get_reservation_offering::builders::GetReservationOfferingOutputBuilder {
+    if builder.reservation_offering.is_none() {
+        builder.reservation_offering = {
+            let builder = crate::types::builders::ReservationOfferingBuilder::default();
+            Some(builder.build())
+        }
+    }
+    builder
+}
+
 pub(crate) fn get_workgroup_output_output_correct_errors(
     mut builder: crate::operation::get_workgroup::builders::GetWorkgroupOutputBuilder,
 ) -> crate::operation::get_workgroup::builders::GetWorkgroupOutputBuilder {
@@ -157,6 +181,24 @@ pub(crate) fn list_namespaces_output_output_correct_errors(
 ) -> crate::operation::list_namespaces::builders::ListNamespacesOutputBuilder {
     if builder.namespaces.is_none() {
         builder.namespaces = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn list_reservation_offerings_output_output_correct_errors(
+    mut builder: crate::operation::list_reservation_offerings::builders::ListReservationOfferingsOutputBuilder,
+) -> crate::operation::list_reservation_offerings::builders::ListReservationOfferingsOutputBuilder {
+    if builder.reservation_offerings_list.is_none() {
+        builder.reservation_offerings_list = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn list_reservations_output_output_correct_errors(
+    mut builder: crate::operation::list_reservations::builders::ListReservationsOutputBuilder,
+) -> crate::operation::list_reservations::builders::ListReservationsOutputBuilder {
+    if builder.reservations_list.is_none() {
+        builder.reservations_list = Some(Default::default())
     }
     builder
 }

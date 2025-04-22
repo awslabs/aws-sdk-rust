@@ -135,5 +135,11 @@ pub fn ser_update_user_pool_client_input_input(
             ::aws_smithy_types::Number::NegInt((*var_40).into()),
         );
     }
+    if let Some(var_41) = &input.refresh_token_rotation {
+        #[allow(unused_mut)]
+        let mut object_42 = object.key("RefreshTokenRotation").start_object();
+        crate::protocol_serde::shape_refresh_token_rotation_type::ser_refresh_token_rotation_type(&mut object_42, var_41)?;
+        object_42.finish();
+    }
     Ok(())
 }

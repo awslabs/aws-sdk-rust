@@ -38,6 +38,26 @@ pub fn de_update_user_pool_client_http_error(
             }
             tmp
         }),
+        "FeatureUnavailableInTierException" => {
+            crate::operation::update_user_pool_client::UpdateUserPoolClientError::FeatureUnavailableInTierException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::FeatureUnavailableInTierExceptionBuilder::default();
+                    output = crate::protocol_serde::shape_feature_unavailable_in_tier_exception::de_feature_unavailable_in_tier_exception_json_err(
+                        _response_body,
+                        output,
+                    )
+                    .map_err(crate::operation::update_user_pool_client::UpdateUserPoolClientError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
         "InternalErrorException" => crate::operation::update_user_pool_client::UpdateUserPoolClientError::InternalErrorException({
             #[allow(unused_mut)]
             let mut tmp = {

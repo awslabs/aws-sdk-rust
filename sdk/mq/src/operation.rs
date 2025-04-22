@@ -16,6 +16,9 @@ pub mod create_user;
 /// Types for the `DeleteBroker` operation.
 pub mod delete_broker;
 
+/// Types for the `DeleteConfiguration` operation.
+pub mod delete_configuration;
+
 /// Types for the `DeleteTags` operation.
 pub mod delete_tags;
 

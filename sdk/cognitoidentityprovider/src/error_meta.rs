@@ -57,6 +57,8 @@ pub enum Error {
     PasswordResetRequiredException(crate::types::error::PasswordResetRequiredException),
     /// <p>This exception is thrown when a precondition is not met.</p>
     PreconditionNotMetException(crate::types::error::PreconditionNotMetException),
+    /// <p>This exception is throw when your application requests token refresh with a refresh token that has been invalidated by refresh-token rotation.</p>
+    RefreshTokenReuseException(crate::types::error::RefreshTokenReuseException),
     /// <p>This exception is thrown when the Amazon Cognito service can't find the requested resource.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
     /// <p>This exception is thrown when the specified scope doesn't exist.</p>
@@ -148,6 +150,7 @@ impl ::std::fmt::Display for Error {
             Error::PasswordHistoryPolicyViolationException(inner) => inner.fmt(f),
             Error::PasswordResetRequiredException(inner) => inner.fmt(f),
             Error::PreconditionNotMetException(inner) => inner.fmt(f),
+            Error::RefreshTokenReuseException(inner) => inner.fmt(f),
             Error::ResourceNotFoundException(inner) => inner.fmt(f),
             Error::ScopeDoesNotExistException(inner) => inner.fmt(f),
             Error::SoftwareTokenMfaNotFoundException(inner) => inner.fmt(f),
@@ -222,6 +225,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
             Self::PasswordHistoryPolicyViolationException(inner) => inner.meta(),
             Self::PasswordResetRequiredException(inner) => inner.meta(),
             Self::PreconditionNotMetException(inner) => inner.meta(),
+            Self::RefreshTokenReuseException(inner) => inner.meta(),
             Self::ResourceNotFoundException(inner) => inner.meta(),
             Self::ScopeDoesNotExistException(inner) => inner.meta(),
             Self::SoftwareTokenMfaNotFoundException(inner) => inner.meta(),
@@ -732,6 +736,9 @@ impl From<crate::operation::admin_initiate_auth::AdminInitiateAuthError> for Err
             crate::operation::admin_initiate_auth::AdminInitiateAuthError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
             crate::operation::admin_initiate_auth::AdminInitiateAuthError::UnexpectedLambdaException(inner) => {
                 Error::UnexpectedLambdaException(inner)
+            }
+            crate::operation::admin_initiate_auth::AdminInitiateAuthError::UnsupportedOperationException(inner) => {
+                Error::UnsupportedOperationException(inner)
             }
             crate::operation::admin_initiate_auth::AdminInitiateAuthError::UserLambdaValidationException(inner) => {
                 Error::UserLambdaValidationException(inner)
@@ -1984,6 +1991,9 @@ where
 impl From<crate::operation::create_user_pool_client::CreateUserPoolClientError> for Error {
     fn from(err: crate::operation::create_user_pool_client::CreateUserPoolClientError) -> Self {
         match err {
+            crate::operation::create_user_pool_client::CreateUserPoolClientError::FeatureUnavailableInTierException(inner) => {
+                Error::FeatureUnavailableInTierException(inner)
+            }
             crate::operation::create_user_pool_client::CreateUserPoolClientError::InternalErrorException(inner) => {
                 Error::InternalErrorException(inner)
             }
@@ -2031,6 +2041,9 @@ where
 impl From<crate::operation::create_user_pool_domain::CreateUserPoolDomainError> for Error {
     fn from(err: crate::operation::create_user_pool_domain::CreateUserPoolDomainError) -> Self {
         match err {
+            crate::operation::create_user_pool_domain::CreateUserPoolDomainError::ConcurrentModificationException(inner) => {
+                Error::ConcurrentModificationException(inner)
+            }
             crate::operation::create_user_pool_domain::CreateUserPoolDomainError::FeatureUnavailableInTierException(inner) => {
                 Error::FeatureUnavailableInTierException(inner)
             }
@@ -2364,6 +2377,9 @@ where
 impl From<crate::operation::delete_user_pool_domain::DeleteUserPoolDomainError> for Error {
     fn from(err: crate::operation::delete_user_pool_domain::DeleteUserPoolDomainError) -> Self {
         match err {
+            crate::operation::delete_user_pool_domain::DeleteUserPoolDomainError::ConcurrentModificationException(inner) => {
+                Error::ConcurrentModificationException(inner)
+            }
             crate::operation::delete_user_pool_domain::DeleteUserPoolDomainError::InternalErrorException(inner) => {
                 Error::InternalErrorException(inner)
             }
@@ -3056,6 +3072,63 @@ impl From<crate::operation::get_signing_certificate::GetSigningCertificateError>
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_tokens_from_refresh_token::GetTokensFromRefreshTokenError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_tokens_from_refresh_token::GetTokensFromRefreshTokenError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_tokens_from_refresh_token::GetTokensFromRefreshTokenError> for Error {
+    fn from(err: crate::operation::get_tokens_from_refresh_token::GetTokensFromRefreshTokenError) -> Self {
+        match err {
+            crate::operation::get_tokens_from_refresh_token::GetTokensFromRefreshTokenError::ForbiddenException(inner) => {
+                Error::ForbiddenException(inner)
+            }
+            crate::operation::get_tokens_from_refresh_token::GetTokensFromRefreshTokenError::InternalErrorException(inner) => {
+                Error::InternalErrorException(inner)
+            }
+            crate::operation::get_tokens_from_refresh_token::GetTokensFromRefreshTokenError::InvalidLambdaResponseException(inner) => {
+                Error::InvalidLambdaResponseException(inner)
+            }
+            crate::operation::get_tokens_from_refresh_token::GetTokensFromRefreshTokenError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::get_tokens_from_refresh_token::GetTokensFromRefreshTokenError::NotAuthorizedException(inner) => {
+                Error::NotAuthorizedException(inner)
+            }
+            crate::operation::get_tokens_from_refresh_token::GetTokensFromRefreshTokenError::RefreshTokenReuseException(inner) => {
+                Error::RefreshTokenReuseException(inner)
+            }
+            crate::operation::get_tokens_from_refresh_token::GetTokensFromRefreshTokenError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_tokens_from_refresh_token::GetTokensFromRefreshTokenError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::get_tokens_from_refresh_token::GetTokensFromRefreshTokenError::UnexpectedLambdaException(inner) => {
+                Error::UnexpectedLambdaException(inner)
+            }
+            crate::operation::get_tokens_from_refresh_token::GetTokensFromRefreshTokenError::UserLambdaValidationException(inner) => {
+                Error::UserLambdaValidationException(inner)
+            }
+            crate::operation::get_tokens_from_refresh_token::GetTokensFromRefreshTokenError::UserNotFoundException(inner) => {
+                Error::UserNotFoundException(inner)
+            }
+            crate::operation::get_tokens_from_refresh_token::GetTokensFromRefreshTokenError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_ui_customization::GetUICustomizationError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -3314,6 +3387,7 @@ impl From<crate::operation::initiate_auth::InitiateAuthError> for Error {
             crate::operation::initiate_auth::InitiateAuthError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::initiate_auth::InitiateAuthError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
             crate::operation::initiate_auth::InitiateAuthError::UnexpectedLambdaException(inner) => Error::UnexpectedLambdaException(inner),
+            crate::operation::initiate_auth::InitiateAuthError::UnsupportedOperationException(inner) => Error::UnsupportedOperationException(inner),
             crate::operation::initiate_auth::InitiateAuthError::UserLambdaValidationException(inner) => Error::UserLambdaValidationException(inner),
             crate::operation::initiate_auth::InitiateAuthError::UserNotConfirmedException(inner) => Error::UserNotConfirmedException(inner),
             crate::operation::initiate_auth::InitiateAuthError::UserNotFoundException(inner) => Error::UserNotFoundException(inner),
@@ -4672,6 +4746,9 @@ impl From<crate::operation::update_user_pool_client::UpdateUserPoolClientError> 
             crate::operation::update_user_pool_client::UpdateUserPoolClientError::ConcurrentModificationException(inner) => {
                 Error::ConcurrentModificationException(inner)
             }
+            crate::operation::update_user_pool_client::UpdateUserPoolClientError::FeatureUnavailableInTierException(inner) => {
+                Error::FeatureUnavailableInTierException(inner)
+            }
             crate::operation::update_user_pool_client::UpdateUserPoolClientError::InternalErrorException(inner) => {
                 Error::InternalErrorException(inner)
             }
@@ -4716,6 +4793,9 @@ where
 impl From<crate::operation::update_user_pool_domain::UpdateUserPoolDomainError> for Error {
     fn from(err: crate::operation::update_user_pool_domain::UpdateUserPoolDomainError) -> Self {
         match err {
+            crate::operation::update_user_pool_domain::UpdateUserPoolDomainError::ConcurrentModificationException(inner) => {
+                Error::ConcurrentModificationException(inner)
+            }
             crate::operation::update_user_pool_domain::UpdateUserPoolDomainError::FeatureUnavailableInTierException(inner) => {
                 Error::FeatureUnavailableInTierException(inner)
             }
@@ -4862,6 +4942,7 @@ impl ::std::error::Error for Error {
             Error::PasswordHistoryPolicyViolationException(inner) => inner.source(),
             Error::PasswordResetRequiredException(inner) => inner.source(),
             Error::PreconditionNotMetException(inner) => inner.source(),
+            Error::RefreshTokenReuseException(inner) => inner.source(),
             Error::ResourceNotFoundException(inner) => inner.source(),
             Error::ScopeDoesNotExistException(inner) => inner.source(),
             Error::SoftwareTokenMfaNotFoundException(inner) => inner.source(),
@@ -4922,6 +5003,7 @@ impl ::aws_types::request_id::RequestId for Error {
             Self::PasswordHistoryPolicyViolationException(e) => e.request_id(),
             Self::PasswordResetRequiredException(e) => e.request_id(),
             Self::PreconditionNotMetException(e) => e.request_id(),
+            Self::RefreshTokenReuseException(e) => e.request_id(),
             Self::ResourceNotFoundException(e) => e.request_id(),
             Self::ScopeDoesNotExistException(e) => e.request_id(),
             Self::SoftwareTokenMfaNotFoundException(e) => e.request_id(),

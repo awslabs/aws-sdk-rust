@@ -2751,6 +2751,8 @@ pub(crate) mod shape_client_data;
 
 pub(crate) mod shape_client_login_banner_options;
 
+pub(crate) mod shape_client_route_enforcement_options;
+
 pub(crate) mod shape_client_vpn_authentication_request;
 
 pub(crate) mod shape_connection_log_options;
@@ -4526,6 +4528,8 @@ pub(crate) mod shape_classic_load_balancer;
 pub(crate) mod shape_client_connect_response_options;
 
 pub(crate) mod shape_client_login_banner_response_options;
+
+pub(crate) mod shape_client_route_enforcement_response_options;
 
 pub(crate) mod shape_client_vpn_authentication_list;
 

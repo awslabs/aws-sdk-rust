@@ -29,6 +29,10 @@ pub use crate::types::_create_snapshot_schedule_action_parameters::CreateSnapsho
 
 pub use crate::types::_scheduled_action_association::ScheduledActionAssociationBuilder;
 
+pub use crate::types::_reservation::ReservationBuilder;
+
+pub use crate::types::_reservation_offering::ReservationOfferingBuilder;
+
 pub use crate::types::_recovery_point::RecoveryPointBuilder;
 
 pub use crate::types::_managed_workgroup_list_item::ManagedWorkgroupListItemBuilder;

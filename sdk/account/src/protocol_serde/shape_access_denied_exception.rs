@@ -17,6 +17,13 @@ pub(crate) fn de_access_denied_exception_json_err(
                             .transpose()?,
                     );
                 }
+                "errorType" => {
+                    builder = builder.set_error_type(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },
             other => {
@@ -33,4 +40,11 @@ pub(crate) fn de_access_denied_exception_json_err(
         ));
     }
     Ok(builder)
+}
+
+pub(crate) fn de_error_type_header(
+    header_map: &::aws_smithy_runtime_api::http::Headers,
+) -> ::std::result::Result<::std::option::Option<::std::string::String>, ::aws_smithy_http::header::ParseError> {
+    let headers = header_map.get_all("x-amzn-ErrorType");
+    ::aws_smithy_http::header::one_or_none(headers)
 }

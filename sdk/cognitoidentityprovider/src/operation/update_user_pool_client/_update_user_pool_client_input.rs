@@ -126,6 +126,8 @@ pub struct UpdateUserPoolClientInput {
     pub enable_propagate_additional_user_context_data: ::std::option::Option<bool>,
     /// <p>Amazon Cognito creates a session token for each API request in an authentication flow. <code>AuthSessionValidity</code> is the duration, in minutes, of that session token. Your user pool native user must respond to each authentication challenge before the session expires.</p>
     pub auth_session_validity: ::std::option::Option<i32>,
+    /// <p>The configuration of your app client for refresh token rotation. When enabled, your app client issues new ID, access, and refresh tokens when users renew their sessions with refresh tokens. When disabled, token refresh issues only ID and access tokens.</p>
+    pub refresh_token_rotation: ::std::option::Option<crate::types::RefreshTokenRotationType>,
 }
 impl UpdateUserPoolClientInput {
     /// <p>The ID of the user pool where you want to update the app client.</p>
@@ -310,6 +312,10 @@ impl UpdateUserPoolClientInput {
     pub fn auth_session_validity(&self) -> ::std::option::Option<i32> {
         self.auth_session_validity
     }
+    /// <p>The configuration of your app client for refresh token rotation. When enabled, your app client issues new ID, access, and refresh tokens when users renew their sessions with refresh tokens. When disabled, token refresh issues only ID and access tokens.</p>
+    pub fn refresh_token_rotation(&self) -> ::std::option::Option<&crate::types::RefreshTokenRotationType> {
+        self.refresh_token_rotation.as_ref()
+    }
 }
 impl ::std::fmt::Debug for UpdateUserPoolClientInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -339,6 +345,7 @@ impl ::std::fmt::Debug for UpdateUserPoolClientInput {
             &self.enable_propagate_additional_user_context_data,
         );
         formatter.field("auth_session_validity", &self.auth_session_validity);
+        formatter.field("refresh_token_rotation", &self.refresh_token_rotation);
         formatter.finish()
     }
 }
@@ -375,6 +382,7 @@ pub struct UpdateUserPoolClientInputBuilder {
     pub(crate) enable_token_revocation: ::std::option::Option<bool>,
     pub(crate) enable_propagate_additional_user_context_data: ::std::option::Option<bool>,
     pub(crate) auth_session_validity: ::std::option::Option<i32>,
+    pub(crate) refresh_token_rotation: ::std::option::Option<crate::types::RefreshTokenRotationType>,
 }
 impl UpdateUserPoolClientInputBuilder {
     /// <p>The ID of the user pool where you want to update the app client.</p>
@@ -969,6 +977,20 @@ impl UpdateUserPoolClientInputBuilder {
     pub fn get_auth_session_validity(&self) -> &::std::option::Option<i32> {
         &self.auth_session_validity
     }
+    /// <p>The configuration of your app client for refresh token rotation. When enabled, your app client issues new ID, access, and refresh tokens when users renew their sessions with refresh tokens. When disabled, token refresh issues only ID and access tokens.</p>
+    pub fn refresh_token_rotation(mut self, input: crate::types::RefreshTokenRotationType) -> Self {
+        self.refresh_token_rotation = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The configuration of your app client for refresh token rotation. When enabled, your app client issues new ID, access, and refresh tokens when users renew their sessions with refresh tokens. When disabled, token refresh issues only ID and access tokens.</p>
+    pub fn set_refresh_token_rotation(mut self, input: ::std::option::Option<crate::types::RefreshTokenRotationType>) -> Self {
+        self.refresh_token_rotation = input;
+        self
+    }
+    /// <p>The configuration of your app client for refresh token rotation. When enabled, your app client issues new ID, access, and refresh tokens when users renew their sessions with refresh tokens. When disabled, token refresh issues only ID and access tokens.</p>
+    pub fn get_refresh_token_rotation(&self) -> &::std::option::Option<crate::types::RefreshTokenRotationType> {
+        &self.refresh_token_rotation
+    }
     /// Consumes the builder and constructs a [`UpdateUserPoolClientInput`](crate::operation::update_user_pool_client::UpdateUserPoolClientInput).
     pub fn build(
         self,
@@ -997,6 +1019,7 @@ impl UpdateUserPoolClientInputBuilder {
             enable_token_revocation: self.enable_token_revocation,
             enable_propagate_additional_user_context_data: self.enable_propagate_additional_user_context_data,
             auth_session_validity: self.auth_session_validity,
+            refresh_token_rotation: self.refresh_token_rotation,
         })
     }
 }
@@ -1028,6 +1051,7 @@ impl ::std::fmt::Debug for UpdateUserPoolClientInputBuilder {
             &self.enable_propagate_additional_user_context_data,
         );
         formatter.field("auth_session_validity", &self.auth_session_validity);
+        formatter.field("refresh_token_rotation", &self.refresh_token_rotation);
         formatter.finish()
     }
 }

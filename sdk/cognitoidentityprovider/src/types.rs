@@ -5,6 +5,10 @@ pub use crate::types::_custom_domain_config_type::CustomDomainConfigType;
 
 pub use crate::types::_user_pool_client_type::UserPoolClientType;
 
+pub use crate::types::_refresh_token_rotation_type::RefreshTokenRotationType;
+
+pub use crate::types::_feature_type::FeatureType;
+
 pub use crate::types::_prevent_user_existence_error_types::PreventUserExistenceErrorTypes;
 
 pub use crate::types::_analytics_configuration_type::AnalyticsConfigurationType;
@@ -367,6 +371,8 @@ mod _event_type;
 
 mod _explicit_auth_flows_type;
 
+mod _feature_type;
+
 mod _feedback_value_type;
 
 mod _firehose_configuration_type;
@@ -420,6 +426,8 @@ mod _provider_user_identifier_type;
 mod _recovery_option_name_type;
 
 mod _recovery_option_type;
+
+mod _refresh_token_rotation_type;
 
 mod _resource_server_scope_type;
 

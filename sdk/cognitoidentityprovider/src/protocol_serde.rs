@@ -159,6 +159,8 @@ pub(crate) mod shape_get_log_delivery_configuration;
 
 pub(crate) mod shape_get_signing_certificate;
 
+pub(crate) mod shape_get_tokens_from_refresh_token;
+
 pub(crate) mod shape_get_ui_customization;
 
 pub(crate) mod shape_get_user;
@@ -413,6 +415,8 @@ pub(crate) mod shape_get_log_delivery_configuration_input;
 
 pub(crate) mod shape_get_signing_certificate_input;
 
+pub(crate) mod shape_get_tokens_from_refresh_token_input;
+
 pub(crate) mod shape_get_ui_customization_input;
 
 pub(crate) mod shape_get_user_attribute_verification_code_input;
@@ -482,6 +486,8 @@ pub(crate) mod shape_password_history_policy_violation_exception;
 pub(crate) mod shape_password_reset_required_exception;
 
 pub(crate) mod shape_precondition_not_met_exception;
+
+pub(crate) mod shape_refresh_token_reuse_exception;
 
 pub(crate) mod shape_resend_confirmation_code_input;
 
@@ -664,6 +670,8 @@ pub(crate) mod shape_mfa_option_type;
 pub(crate) mod shape_provider_user_identifier_type;
 
 pub(crate) mod shape_providers_list_type;
+
+pub(crate) mod shape_refresh_token_rotation_type;
 
 pub(crate) mod shape_resource_server_scope_type;
 

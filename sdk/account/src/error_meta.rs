@@ -5,7 +5,7 @@
 pub enum Error {
     /// <p>The operation failed because the calling identity doesn't have the minimum required permissions.</p>
     AccessDeniedException(crate::types::error::AccessDeniedException),
-    /// <p>The request could not be processed because of a conflict in the current status of the resource. For example, this happens if you try to enable a Region that is currently being disabled (in a status of DISABLING).</p>
+    /// <p>The request could not be processed because of a conflict in the current status of the resource. For example, this happens if you try to enable a Region that is currently being disabled (in a status of DISABLING) or if you try to change an account’s root user email to an email address which is already in use.</p>
     ConflictException(crate::types::error::ConflictException),
     /// <p>The operation failed because of an error internal to Amazon Web Services. Try your operation again later.</p>
     InternalServerException(crate::types::error::InternalServerException),
@@ -192,6 +192,39 @@ impl From<crate::operation::enable_region::EnableRegionError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_account_information::GetAccountInformationError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_account_information::GetAccountInformationError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_account_information::GetAccountInformationError> for Error {
+    fn from(err: crate::operation::get_account_information::GetAccountInformationError) -> Self {
+        match err {
+            crate::operation::get_account_information::GetAccountInformationError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::get_account_information::GetAccountInformationError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::get_account_information::GetAccountInformationError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::get_account_information::GetAccountInformationError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_account_information::GetAccountInformationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_alternate_contact::GetAlternateContactError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -335,6 +368,31 @@ impl From<crate::operation::list_regions::ListRegionsError> for Error {
             crate::operation::list_regions::ListRegionsError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
             crate::operation::list_regions::ListRegionsError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::list_regions::ListRegionsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::put_account_name::PutAccountNameError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::put_account_name::PutAccountNameError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::put_account_name::PutAccountNameError> for Error {
+    fn from(err: crate::operation::put_account_name::PutAccountNameError) -> Self {
+        match err {
+            crate::operation::put_account_name::PutAccountNameError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::put_account_name::PutAccountNameError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::put_account_name::PutAccountNameError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::put_account_name::PutAccountNameError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::put_account_name::PutAccountNameError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

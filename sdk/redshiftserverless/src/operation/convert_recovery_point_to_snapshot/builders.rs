@@ -22,7 +22,7 @@ impl crate::operation::convert_recovery_point_to_snapshot::builders::ConvertReco
 }
 /// Fluent builder constructing a request to `ConvertRecoveryPointToSnapshot`.
 ///
-/// <p>Converts a recovery point to a snapshot. For more information about recovery points and snapshots, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/serverless-snapshots-recovery.html">Working with snapshots and recovery points</a>.</p>
+/// <p>Converts a recovery point to a snapshot. For more information about recovery points and snapshots, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/serverless-snapshots-recovery-points.html">Working with snapshots and recovery points</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ConvertRecoveryPointToSnapshotFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

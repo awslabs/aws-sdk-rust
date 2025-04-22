@@ -257,7 +257,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for StartPrimaryE
 pub enum StartPrimaryEmailUpdateError {
     /// <p>The operation failed because the calling identity doesn't have the minimum required permissions.</p>
     AccessDeniedException(crate::types::error::AccessDeniedException),
-    /// <p>The request could not be processed because of a conflict in the current status of the resource. For example, this happens if you try to enable a Region that is currently being disabled (in a status of DISABLING).</p>
+    /// <p>The request could not be processed because of a conflict in the current status of the resource. For example, this happens if you try to enable a Region that is currently being disabled (in a status of DISABLING) or if you try to change an account’s root user email to an email address which is already in use.</p>
     ConflictException(crate::types::error::ConflictException),
     /// <p>The operation failed because of an error internal to Amazon Web Services. Try your operation again later.</p>
     InternalServerException(crate::types::error::InternalServerException),

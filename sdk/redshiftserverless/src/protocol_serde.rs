@@ -31,6 +31,8 @@ pub(crate) mod shape_create_endpoint_access;
 
 pub(crate) mod shape_create_namespace;
 
+pub(crate) mod shape_create_reservation;
+
 pub(crate) mod shape_create_scheduled_action;
 
 pub(crate) mod shape_create_snapshot;
@@ -69,6 +71,10 @@ pub(crate) mod shape_get_namespace;
 
 pub(crate) mod shape_get_recovery_point;
 
+pub(crate) mod shape_get_reservation;
+
+pub(crate) mod shape_get_reservation_offering;
+
 pub(crate) mod shape_get_resource_policy;
 
 pub(crate) mod shape_get_scheduled_action;
@@ -92,6 +98,10 @@ pub(crate) mod shape_list_managed_workgroups;
 pub(crate) mod shape_list_namespaces;
 
 pub(crate) mod shape_list_recovery_points;
+
+pub(crate) mod shape_list_reservation_offerings;
+
+pub(crate) mod shape_list_reservations;
 
 pub(crate) mod shape_list_scheduled_actions;
 
@@ -159,6 +169,8 @@ pub(crate) mod shape_create_endpoint_access_input;
 
 pub(crate) mod shape_create_namespace_input;
 
+pub(crate) mod shape_create_reservation_input;
+
 pub(crate) mod shape_create_scheduled_action_input;
 
 pub(crate) mod shape_create_snapshot_copy_configuration_input;
@@ -197,6 +209,10 @@ pub(crate) mod shape_get_namespace_input;
 
 pub(crate) mod shape_get_recovery_point_input;
 
+pub(crate) mod shape_get_reservation_input;
+
+pub(crate) mod shape_get_reservation_offering_input;
+
 pub(crate) mod shape_get_resource_policy_input;
 
 pub(crate) mod shape_get_scheduled_action_input;
@@ -228,6 +244,10 @@ pub(crate) mod shape_list_managed_workgroups_input;
 pub(crate) mod shape_list_namespaces_input;
 
 pub(crate) mod shape_list_recovery_points_input;
+
+pub(crate) mod shape_list_reservation_offerings_input;
+
+pub(crate) mod shape_list_reservations_input;
 
 pub(crate) mod shape_list_scheduled_actions_input;
 
@@ -304,6 +324,14 @@ pub(crate) mod shape_performance_target;
 pub(crate) mod shape_recovery_point;
 
 pub(crate) mod shape_recovery_point_list;
+
+pub(crate) mod shape_reservation;
+
+pub(crate) mod shape_reservation_offering;
+
+pub(crate) mod shape_reservation_offerings_list;
+
+pub(crate) mod shape_reservations_list;
 
 pub(crate) mod shape_resource_policy;
 

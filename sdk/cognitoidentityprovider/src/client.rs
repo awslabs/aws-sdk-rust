@@ -299,6 +299,8 @@ mod get_log_delivery_configuration;
 
 mod get_signing_certificate;
 
+mod get_tokens_from_refresh_token;
+
 mod get_ui_customization;
 
 mod get_user;

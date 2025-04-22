@@ -3,6 +3,8 @@ pub use crate::types::_custom_domain_config_type::CustomDomainConfigTypeBuilder;
 
 pub use crate::types::_user_pool_client_type::UserPoolClientTypeBuilder;
 
+pub use crate::types::_refresh_token_rotation_type::RefreshTokenRotationTypeBuilder;
+
 pub use crate::types::_analytics_configuration_type::AnalyticsConfigurationTypeBuilder;
 
 pub use crate::types::_token_validity_units_type::TokenValidityUnitsTypeBuilder;

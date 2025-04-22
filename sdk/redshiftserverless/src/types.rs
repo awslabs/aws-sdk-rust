@@ -51,6 +51,12 @@ pub use crate::types::_schedule::Schedule;
 
 pub use crate::types::_scheduled_action_association::ScheduledActionAssociation;
 
+pub use crate::types::_reservation::Reservation;
+
+pub use crate::types::_reservation_offering::ReservationOffering;
+
+pub use crate::types::_offering_type::OfferingType;
+
 pub use crate::types::_recovery_point::RecoveryPoint;
 
 pub use crate::types::_managed_workgroup_list_item::ManagedWorkgroupListItem;
@@ -91,11 +97,17 @@ mod _namespace_status;
 
 mod _network_interface;
 
+mod _offering_type;
+
 mod _performance_target;
 
 mod _performance_target_status;
 
 mod _recovery_point;
+
+mod _reservation;
+
+mod _reservation_offering;
 
 mod _resource_policy;
 

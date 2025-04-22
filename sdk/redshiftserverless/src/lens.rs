@@ -49,6 +49,26 @@ pub(crate) fn reflens_list_recovery_points_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_reservation_offerings_output_output_next_token(
+    input: &crate::operation::list_reservation_offerings::ListReservationOfferingsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_reservations_output_output_next_token(
+    input: &crate::operation::list_reservations::ListReservationsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_scheduled_actions_output_output_next_token(
     input: &crate::operation::list_scheduled_actions::ListScheduledActionsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -160,6 +180,20 @@ pub(crate) fn lens_list_recovery_points_output_output_recovery_points(
         ::std::option::Option::None => return ::std::option::Option::None,
         ::std::option::Option::Some(t) => t,
     };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_reservation_offerings_output_output_reservation_offerings_list(
+    input: crate::operation::list_reservation_offerings::ListReservationOfferingsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::ReservationOffering>> {
+    let input = input.reservation_offerings_list;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_reservations_output_output_reservations_list(
+    input: crate::operation::list_reservations::ListReservationsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::Reservation>> {
+    let input = input.reservations_list;
     ::std::option::Option::Some(input)
 }
 

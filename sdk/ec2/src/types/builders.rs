@@ -651,6 +651,8 @@ pub use crate::types::_fleet_launch_template_specification_request::FleetLaunchT
 
 pub use crate::types::_instance_family_credit_specification::InstanceFamilyCreditSpecificationBuilder;
 
+pub use crate::types::_client_route_enforcement_options::ClientRouteEnforcementOptionsBuilder;
+
 pub use crate::types::_client_login_banner_options::ClientLoginBannerOptionsBuilder;
 
 pub use crate::types::_client_connect_options::ClientConnectOptionsBuilder;
@@ -1386,6 +1388,8 @@ pub use crate::types::_client_vpn_route::ClientVpnRouteBuilder;
 pub use crate::types::_client_vpn_route_status::ClientVpnRouteStatusBuilder;
 
 pub use crate::types::_client_vpn_endpoint::ClientVpnEndpointBuilder;
+
+pub use crate::types::_client_route_enforcement_response_options::ClientRouteEnforcementResponseOptionsBuilder;
 
 pub use crate::types::_client_login_banner_response_options::ClientLoginBannerResponseOptionsBuilder;
 

@@ -173,6 +173,8 @@ pub mod customize;
 
 mod delete_broker;
 
+mod delete_configuration;
+
 mod delete_tags;
 
 mod delete_user;

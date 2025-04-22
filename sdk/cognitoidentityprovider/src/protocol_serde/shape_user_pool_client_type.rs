@@ -154,6 +154,11 @@ where
                                     .transpose()?,
                             );
                         }
+                        "RefreshTokenRotation" => {
+                            builder = builder.set_refresh_token_rotation(
+                                crate::protocol_serde::shape_refresh_token_rotation_type::de_refresh_token_rotation_type(tokens)?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

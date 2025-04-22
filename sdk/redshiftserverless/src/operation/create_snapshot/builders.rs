@@ -22,7 +22,7 @@ impl crate::operation::create_snapshot::builders::CreateSnapshotInputBuilder {
 }
 /// Fluent builder constructing a request to `CreateSnapshot`.
 ///
-/// <p>Creates a snapshot of all databases in a namespace. For more information about snapshots, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/serverless-snapshots-recovery.html"> Working with snapshots and recovery points</a>.</p>
+/// <p>Creates a snapshot of all databases in a namespace. For more information about snapshots, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/serverless-snapshots-recovery-points.html"> Working with snapshots and recovery points</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateSnapshotFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

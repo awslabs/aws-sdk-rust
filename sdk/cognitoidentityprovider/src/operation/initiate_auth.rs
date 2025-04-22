@@ -281,6 +281,8 @@ pub enum InitiateAuthError {
     TooManyRequestsException(crate::types::error::TooManyRequestsException),
     /// <p>This exception is thrown when Amazon Cognito encounters an unexpected exception with Lambda.</p>
     UnexpectedLambdaException(crate::types::error::UnexpectedLambdaException),
+    /// <p>Exception that is thrown when you attempt to perform an operation that isn't enabled for the user pool client.</p>
+    UnsupportedOperationException(crate::types::error::UnsupportedOperationException),
     /// <p>This exception is thrown when the Amazon Cognito service encounters a user validation exception with the Lambda service.</p>
     UserLambdaValidationException(crate::types::error::UserLambdaValidationException),
     /// <p>This exception is thrown when a user isn't confirmed successfully.</p>
@@ -333,6 +335,7 @@ impl InitiateAuthError {
             Self::ResourceNotFoundException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::TooManyRequestsException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::UnexpectedLambdaException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::UnsupportedOperationException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::UserLambdaValidationException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::UserNotConfirmedException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::UserNotFoundException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
@@ -391,6 +394,10 @@ impl InitiateAuthError {
     pub fn is_unexpected_lambda_exception(&self) -> bool {
         matches!(self, Self::UnexpectedLambdaException(_))
     }
+    /// Returns `true` if the error kind is `InitiateAuthError::UnsupportedOperationException`.
+    pub fn is_unsupported_operation_exception(&self) -> bool {
+        matches!(self, Self::UnsupportedOperationException(_))
+    }
     /// Returns `true` if the error kind is `InitiateAuthError::UserLambdaValidationException`.
     pub fn is_user_lambda_validation_exception(&self) -> bool {
         matches!(self, Self::UserLambdaValidationException(_))
@@ -420,6 +427,7 @@ impl ::std::error::Error for InitiateAuthError {
             Self::ResourceNotFoundException(_inner) => ::std::option::Option::Some(_inner),
             Self::TooManyRequestsException(_inner) => ::std::option::Option::Some(_inner),
             Self::UnexpectedLambdaException(_inner) => ::std::option::Option::Some(_inner),
+            Self::UnsupportedOperationException(_inner) => ::std::option::Option::Some(_inner),
             Self::UserLambdaValidationException(_inner) => ::std::option::Option::Some(_inner),
             Self::UserNotConfirmedException(_inner) => ::std::option::Option::Some(_inner),
             Self::UserNotFoundException(_inner) => ::std::option::Option::Some(_inner),
@@ -443,6 +451,7 @@ impl ::std::fmt::Display for InitiateAuthError {
             Self::ResourceNotFoundException(_inner) => _inner.fmt(f),
             Self::TooManyRequestsException(_inner) => _inner.fmt(f),
             Self::UnexpectedLambdaException(_inner) => _inner.fmt(f),
+            Self::UnsupportedOperationException(_inner) => _inner.fmt(f),
             Self::UserLambdaValidationException(_inner) => _inner.fmt(f),
             Self::UserNotConfirmedException(_inner) => _inner.fmt(f),
             Self::UserNotFoundException(_inner) => _inner.fmt(f),
@@ -480,6 +489,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for InitiateAuthE
             Self::ResourceNotFoundException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::TooManyRequestsException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::UnexpectedLambdaException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::UnsupportedOperationException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::UserLambdaValidationException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::UserNotConfirmedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::UserNotFoundException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),

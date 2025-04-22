@@ -13,6 +13,9 @@ pub mod disable_region;
 /// Types for the `EnableRegion` operation.
 pub mod enable_region;
 
+/// Types for the `GetAccountInformation` operation.
+pub mod get_account_information;
+
 /// Types for the `GetAlternateContact` operation.
 pub mod get_alternate_contact;
 
@@ -27,6 +30,9 @@ pub mod get_region_opt_status;
 
 /// Types for the `ListRegions` operation.
 pub mod list_regions;
+
+/// Types for the `PutAccountName` operation.
+pub mod put_account_name;
 
 /// Types for the `PutAlternateContact` operation.
 pub mod put_alternate_contact;

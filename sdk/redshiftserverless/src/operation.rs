@@ -13,6 +13,9 @@ pub mod create_endpoint_access;
 /// Types for the `CreateNamespace` operation.
 pub mod create_namespace;
 
+/// Types for the `CreateReservation` operation.
+pub mod create_reservation;
+
 /// Types for the `CreateScheduledAction` operation.
 pub mod create_scheduled_action;
 
@@ -70,6 +73,12 @@ pub mod get_namespace;
 /// Types for the `GetRecoveryPoint` operation.
 pub mod get_recovery_point;
 
+/// Types for the `GetReservation` operation.
+pub mod get_reservation;
+
+/// Types for the `GetReservationOffering` operation.
+pub mod get_reservation_offering;
+
 /// Types for the `GetResourcePolicy` operation.
 pub mod get_resource_policy;
 
@@ -105,6 +114,12 @@ pub mod list_namespaces;
 
 /// Types for the `ListRecoveryPoints` operation.
 pub mod list_recovery_points;
+
+/// Types for the `ListReservationOfferings` operation.
+pub mod list_reservation_offerings;
+
+/// Types for the `ListReservations` operation.
+pub mod list_reservations;
 
 /// Types for the `ListScheduledActions` operation.
 pub mod list_scheduled_actions;

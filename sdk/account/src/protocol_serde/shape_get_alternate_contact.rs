@@ -27,6 +27,13 @@ pub fn de_get_alternate_contact_http_error(
                 let mut output = crate::types::error::builders::AccessDeniedExceptionBuilder::default();
                 output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(_response_body, output)
                     .map_err(crate::operation::get_alternate_contact::GetAlternateContactError::unhandled)?;
+                output = output.set_error_type(
+                    crate::protocol_serde::shape_access_denied_exception::de_error_type_header(_response_headers).map_err(|_| {
+                        crate::operation::get_alternate_contact::GetAlternateContactError::unhandled(
+                            "Failed to parse errorType from header `x-amzn-ErrorType",
+                        )
+                    })?,
+                );
                 let output = output.meta(generic);
                 crate::serde_util::access_denied_exception_correct_errors(output)
                     .build()
@@ -41,6 +48,13 @@ pub fn de_get_alternate_contact_http_error(
                 let mut output = crate::types::error::builders::InternalServerExceptionBuilder::default();
                 output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(_response_body, output)
                     .map_err(crate::operation::get_alternate_contact::GetAlternateContactError::unhandled)?;
+                output = output.set_error_type(
+                    crate::protocol_serde::shape_internal_server_exception::de_error_type_header(_response_headers).map_err(|_| {
+                        crate::operation::get_alternate_contact::GetAlternateContactError::unhandled(
+                            "Failed to parse errorType from header `x-amzn-ErrorType",
+                        )
+                    })?,
+                );
                 let output = output.meta(generic);
                 crate::serde_util::internal_server_exception_correct_errors(output)
                     .build()
@@ -55,6 +69,13 @@ pub fn de_get_alternate_contact_http_error(
                 let mut output = crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
                 output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(_response_body, output)
                     .map_err(crate::operation::get_alternate_contact::GetAlternateContactError::unhandled)?;
+                output = output.set_error_type(
+                    crate::protocol_serde::shape_resource_not_found_exception::de_error_type_header(_response_headers).map_err(|_| {
+                        crate::operation::get_alternate_contact::GetAlternateContactError::unhandled(
+                            "Failed to parse errorType from header `x-amzn-ErrorType",
+                        )
+                    })?,
+                );
                 let output = output.meta(generic);
                 crate::serde_util::resource_not_found_exception_correct_errors(output)
                     .build()
@@ -69,6 +90,13 @@ pub fn de_get_alternate_contact_http_error(
                 let mut output = crate::types::error::builders::TooManyRequestsExceptionBuilder::default();
                 output = crate::protocol_serde::shape_too_many_requests_exception::de_too_many_requests_exception_json_err(_response_body, output)
                     .map_err(crate::operation::get_alternate_contact::GetAlternateContactError::unhandled)?;
+                output = output.set_error_type(
+                    crate::protocol_serde::shape_too_many_requests_exception::de_error_type_header(_response_headers).map_err(|_| {
+                        crate::operation::get_alternate_contact::GetAlternateContactError::unhandled(
+                            "Failed to parse errorType from header `x-amzn-ErrorType",
+                        )
+                    })?,
+                );
                 let output = output.meta(generic);
                 crate::serde_util::too_many_requests_exception_correct_errors(output)
                     .build()

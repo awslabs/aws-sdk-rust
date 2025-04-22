@@ -239,6 +239,36 @@ impl From<crate::operation::create_namespace::CreateNamespaceError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_reservation::CreateReservationError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_reservation::CreateReservationError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_reservation::CreateReservationError> for Error {
+    fn from(err: crate::operation::create_reservation::CreateReservationError) -> Self {
+        match err {
+            crate::operation::create_reservation::CreateReservationError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::create_reservation::CreateReservationError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::create_reservation::CreateReservationError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::create_reservation::CreateReservationError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::create_reservation::CreateReservationError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::create_reservation::CreateReservationError::TooManyTagsException(inner) => Error::TooManyTagsException(inner),
+            crate::operation::create_reservation::CreateReservationError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::create_reservation::CreateReservationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_scheduled_action::CreateScheduledActionError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -832,6 +862,62 @@ impl From<crate::operation::get_recovery_point::GetRecoveryPointError> for Error
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_reservation::GetReservationError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_reservation::GetReservationError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_reservation::GetReservationError> for Error {
+    fn from(err: crate::operation::get_reservation::GetReservationError) -> Self {
+        match err {
+            crate::operation::get_reservation::GetReservationError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::get_reservation::GetReservationError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_reservation::GetReservationError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_reservation::GetReservationError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_reservation::GetReservationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_reservation_offering::GetReservationOfferingError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_reservation_offering::GetReservationOfferingError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_reservation_offering::GetReservationOfferingError> for Error {
+    fn from(err: crate::operation::get_reservation_offering::GetReservationOfferingError) -> Self {
+        match err {
+            crate::operation::get_reservation_offering::GetReservationOfferingError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::get_reservation_offering::GetReservationOfferingError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_reservation_offering::GetReservationOfferingError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_reservation_offering::GetReservationOfferingError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_reservation_offering::GetReservationOfferingError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_resource_policy::GetResourcePolicyError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1153,6 +1239,63 @@ impl From<crate::operation::list_recovery_points::ListRecoveryPointsError> for E
             crate::operation::list_recovery_points::ListRecoveryPointsError::InternalServerException(inner) => Error::InternalServerException(inner),
             crate::operation::list_recovery_points::ListRecoveryPointsError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::list_recovery_points::ListRecoveryPointsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_reservation_offerings::ListReservationOfferingsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_reservation_offerings::ListReservationOfferingsError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_reservation_offerings::ListReservationOfferingsError> for Error {
+    fn from(err: crate::operation::list_reservation_offerings::ListReservationOfferingsError) -> Self {
+        match err {
+            crate::operation::list_reservation_offerings::ListReservationOfferingsError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::list_reservation_offerings::ListReservationOfferingsError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::list_reservation_offerings::ListReservationOfferingsError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::list_reservation_offerings::ListReservationOfferingsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_reservations::ListReservationsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_reservations::ListReservationsError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_reservations::ListReservationsError> for Error {
+    fn from(err: crate::operation::list_reservations::ListReservationsError) -> Self {
+        match err {
+            crate::operation::list_reservations::ListReservationsError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_reservations::ListReservationsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_reservations::ListReservationsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_reservations::ListReservationsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

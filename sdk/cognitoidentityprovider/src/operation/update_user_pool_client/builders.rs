@@ -702,4 +702,18 @@ impl UpdateUserPoolClientFluentBuilder {
     pub fn get_auth_session_validity(&self) -> &::std::option::Option<i32> {
         self.inner.get_auth_session_validity()
     }
+    /// <p>The configuration of your app client for refresh token rotation. When enabled, your app client issues new ID, access, and refresh tokens when users renew their sessions with refresh tokens. When disabled, token refresh issues only ID and access tokens.</p>
+    pub fn refresh_token_rotation(mut self, input: crate::types::RefreshTokenRotationType) -> Self {
+        self.inner = self.inner.refresh_token_rotation(input);
+        self
+    }
+    /// <p>The configuration of your app client for refresh token rotation. When enabled, your app client issues new ID, access, and refresh tokens when users renew their sessions with refresh tokens. When disabled, token refresh issues only ID and access tokens.</p>
+    pub fn set_refresh_token_rotation(mut self, input: ::std::option::Option<crate::types::RefreshTokenRotationType>) -> Self {
+        self.inner = self.inner.set_refresh_token_rotation(input);
+        self
+    }
+    /// <p>The configuration of your app client for refresh token rotation. When enabled, your app client issues new ID, access, and refresh tokens when users renew their sessions with refresh tokens. When disabled, token refresh issues only ID and access tokens.</p>
+    pub fn get_refresh_token_rotation(&self) -> &::std::option::Option<crate::types::RefreshTokenRotationType> {
+        self.inner.get_refresh_token_rotation()
+    }
 }

@@ -144,6 +144,8 @@ mod create_endpoint_access;
 
 mod create_namespace;
 
+mod create_reservation;
+
 mod create_scheduled_action;
 
 mod create_snapshot;
@@ -209,6 +211,10 @@ mod get_namespace;
 
 mod get_recovery_point;
 
+mod get_reservation;
+
+mod get_reservation_offering;
+
 mod get_resource_policy;
 
 mod get_scheduled_action;
@@ -232,6 +238,10 @@ mod list_managed_workgroups;
 mod list_namespaces;
 
 mod list_recovery_points;
+
+mod list_reservation_offerings;
+
+mod list_reservations;
 
 mod list_scheduled_actions;
 

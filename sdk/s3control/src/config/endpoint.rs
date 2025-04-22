@@ -2831,7 +2831,7 @@ mod test {
     #[test]
     fn test_94() {
         let params = crate::config::endpoint::Params::builder()
-            .account_id("0123456789012".to_string())
+            .account_id("012345678912".to_string())
             .outpost_id("op-123".to_string())
             .region("cn-north-1".to_string())
             .requires_account_id(true)
@@ -2849,7 +2849,7 @@ mod test {
     #[test]
     fn test_95() {
         let params = crate::config::endpoint::Params::builder()
-            .account_id("0123456789012".to_string())
+            .account_id("012345678912".to_string())
             .outpost_id("?outpost/invalid+".to_string())
             .region("us-west-1".to_string())
             .requires_account_id(true)
@@ -2869,7 +2869,7 @@ mod test {
     fn test_96() {
         let params = crate::config::endpoint::Params::builder()
             .bucket("arn:aws:s3-outposts:us-west-2:999999:outpost:op-01234567890123456:bucket:mybucket".to_string())
-            .account_id("0123456789012".to_string())
+            .account_id("012345678912".to_string())
             .region("us-west-2".to_string())
             .requires_account_id(true)
             .use_dual_stack(false)
@@ -2878,10 +2878,10 @@ mod test {
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let error = endpoint.expect_err("expected error: Invalid ARN: the accountId specified in the ARN (`999999`) does not match the parameter (`0123456789012`) [bucket ARN with mismatched accountId]");
+        let error = endpoint.expect_err("expected error: Invalid ARN: the accountId specified in the ARN (`999999`) does not match the parameter (`012345678912`) [bucket ARN with mismatched accountId]");
         assert_eq!(
             format!("{}", error),
-            "Invalid ARN: the accountId specified in the ARN (`999999`) does not match the parameter (`0123456789012`)"
+            "Invalid ARN: the accountId specified in the ARN (`999999`) does not match the parameter (`012345678912`)"
         )
     }
 

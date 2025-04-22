@@ -267,6 +267,8 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for CreateUserPoo
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum CreateUserPoolClientError {
+    /// <p>This exception is thrown when a feature you attempted to configure isn't available in your current feature plan.</p>
+    FeatureUnavailableInTierException(crate::types::error::FeatureUnavailableInTierException),
     /// <p>This exception is thrown when Amazon Cognito encounters an internal error.</p>
     InternalErrorException(crate::types::error::InternalErrorException),
     /// <p>This exception is thrown when the specified OAuth flow is not valid.</p>
@@ -316,6 +318,7 @@ impl CreateUserPoolClientError {
     ///
     pub fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
+            Self::FeatureUnavailableInTierException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InternalErrorException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidOAuthFlowException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidParameterException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
@@ -326,6 +329,10 @@ impl CreateUserPoolClientError {
             Self::TooManyRequestsException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::Unhandled(e) => &e.meta,
         }
+    }
+    /// Returns `true` if the error kind is `CreateUserPoolClientError::FeatureUnavailableInTierException`.
+    pub fn is_feature_unavailable_in_tier_exception(&self) -> bool {
+        matches!(self, Self::FeatureUnavailableInTierException(_))
     }
     /// Returns `true` if the error kind is `CreateUserPoolClientError::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
@@ -363,6 +370,7 @@ impl CreateUserPoolClientError {
 impl ::std::error::Error for CreateUserPoolClientError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
+            Self::FeatureUnavailableInTierException(_inner) => ::std::option::Option::Some(_inner),
             Self::InternalErrorException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidOAuthFlowException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidParameterException(_inner) => ::std::option::Option::Some(_inner),
@@ -378,6 +386,7 @@ impl ::std::error::Error for CreateUserPoolClientError {
 impl ::std::fmt::Display for CreateUserPoolClientError {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         match self {
+            Self::FeatureUnavailableInTierException(_inner) => _inner.fmt(f),
             Self::InternalErrorException(_inner) => _inner.fmt(f),
             Self::InvalidOAuthFlowException(_inner) => _inner.fmt(f),
             Self::InvalidParameterException(_inner) => _inner.fmt(f),
@@ -407,6 +416,7 @@ impl ::aws_smithy_types::retry::ProvideErrorKind for CreateUserPoolClientError {
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for CreateUserPoolClientError {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
+            Self::FeatureUnavailableInTierException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InternalErrorException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidOAuthFlowException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidParameterException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),

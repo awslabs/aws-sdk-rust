@@ -289,6 +289,15 @@ pub(crate) fn custom_domain_config_type_correct_errors(
     builder
 }
 
+pub(crate) fn refresh_token_rotation_type_correct_errors(
+    mut builder: crate::types::builders::RefreshTokenRotationTypeBuilder,
+) -> crate::types::builders::RefreshTokenRotationTypeBuilder {
+    if builder.feature.is_none() {
+        builder.feature = "no value was set".parse::<crate::types::FeatureType>().ok()
+    }
+    builder
+}
+
 pub(crate) fn sms_configuration_type_correct_errors(
     mut builder: crate::types::builders::SmsConfigurationTypeBuilder,
 ) -> crate::types::builders::SmsConfigurationTypeBuilder {

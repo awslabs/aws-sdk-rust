@@ -14,6 +14,7 @@
 /// match servicemanaged {
 ///     ServiceManaged::Alb => { /* ... */ },
 ///     ServiceManaged::Nlb => { /* ... */ },
+///     ServiceManaged::Rnat => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -46,6 +47,8 @@ pub enum ServiceManaged {
     Alb,
     #[allow(missing_docs)] // documentation missing in model
     Nlb,
+    #[allow(missing_docs)] // documentation missing in model
+    Rnat,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -55,6 +58,7 @@ impl ::std::convert::From<&str> for ServiceManaged {
         match s {
             "alb" => ServiceManaged::Alb,
             "nlb" => ServiceManaged::Nlb,
+            "rnat" => ServiceManaged::Rnat,
             other => ServiceManaged::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -72,12 +76,13 @@ impl ServiceManaged {
         match self {
             ServiceManaged::Alb => "alb",
             ServiceManaged::Nlb => "nlb",
+            ServiceManaged::Rnat => "rnat",
             ServiceManaged::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["alb", "nlb"]
+        &["alb", "nlb", "rnat"]
     }
 }
 impl ::std::convert::AsRef<str> for ServiceManaged {
@@ -102,6 +107,7 @@ impl ::std::fmt::Display for ServiceManaged {
         match self {
             ServiceManaged::Alb => write!(f, "alb"),
             ServiceManaged::Nlb => write!(f, "nlb"),
+            ServiceManaged::Rnat => write!(f, "rnat"),
             ServiceManaged::Unknown(value) => write!(f, "{}", value),
         }
     }

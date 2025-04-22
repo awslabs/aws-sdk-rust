@@ -287,8 +287,18 @@ pub fn de_client_vpn_endpoint(
                 builder = builder.set_client_login_banner_options(var_23);
             }
             ,
-            s if s.matches("disconnectOnSessionTimeout") /* DisconnectOnSessionTimeout com.amazonaws.ec2#ClientVpnEndpoint$DisconnectOnSessionTimeout */ =>  {
+            s if s.matches("clientRouteEnforcementOptions") /* ClientRouteEnforcementOptions com.amazonaws.ec2#ClientVpnEndpoint$ClientRouteEnforcementOptions */ =>  {
                 let var_24 =
+                    Some(
+                        crate::protocol_serde::shape_client_route_enforcement_response_options::de_client_route_enforcement_response_options(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_client_route_enforcement_options(var_24);
+            }
+            ,
+            s if s.matches("disconnectOnSessionTimeout") /* DisconnectOnSessionTimeout com.amazonaws.ec2#ClientVpnEndpoint$DisconnectOnSessionTimeout */ =>  {
+                let var_25 =
                     Some(
                          {
                             <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -299,7 +309,7 @@ pub fn de_client_vpn_endpoint(
                         ?
                     )
                 ;
-                builder = builder.set_disconnect_on_session_timeout(var_24);
+                builder = builder.set_disconnect_on_session_timeout(var_25);
             }
             ,
             _ => {}

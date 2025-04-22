@@ -205,6 +205,9 @@ pub mod get_log_delivery_configuration;
 /// Types for the `GetSigningCertificate` operation.
 pub mod get_signing_certificate;
 
+/// Types for the `GetTokensFromRefreshToken` operation.
+pub mod get_tokens_from_refresh_token;
+
 /// Types for the `GetUICustomization` operation.
 pub mod get_ui_customization;
 

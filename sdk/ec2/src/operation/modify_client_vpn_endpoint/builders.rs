@@ -357,6 +357,23 @@ impl ModifyClientVpnEndpointFluentBuilder {
     pub fn get_client_login_banner_options(&self) -> &::std::option::Option<crate::types::ClientLoginBannerOptions> {
         self.inner.get_client_login_banner_options()
     }
+    /// <p>Client route enforcement is a feature of the Client VPN service that helps enforce administrator defined routes on devices connected through the VPN. T his feature helps improve your security posture by ensuring that network traffic originating from a connected client is not inadvertently sent outside the VPN tunnel.</p>
+    /// <p>Client route enforcement works by monitoring the route table of a connected device for routing policy changes to the VPN connection. If the feature detects any VPN routing policy modifications, it will automatically force an update to the route table, reverting it back to the expected route configurations.</p>
+    pub fn client_route_enforcement_options(mut self, input: crate::types::ClientRouteEnforcementOptions) -> Self {
+        self.inner = self.inner.client_route_enforcement_options(input);
+        self
+    }
+    /// <p>Client route enforcement is a feature of the Client VPN service that helps enforce administrator defined routes on devices connected through the VPN. T his feature helps improve your security posture by ensuring that network traffic originating from a connected client is not inadvertently sent outside the VPN tunnel.</p>
+    /// <p>Client route enforcement works by monitoring the route table of a connected device for routing policy changes to the VPN connection. If the feature detects any VPN routing policy modifications, it will automatically force an update to the route table, reverting it back to the expected route configurations.</p>
+    pub fn set_client_route_enforcement_options(mut self, input: ::std::option::Option<crate::types::ClientRouteEnforcementOptions>) -> Self {
+        self.inner = self.inner.set_client_route_enforcement_options(input);
+        self
+    }
+    /// <p>Client route enforcement is a feature of the Client VPN service that helps enforce administrator defined routes on devices connected through the VPN. T his feature helps improve your security posture by ensuring that network traffic originating from a connected client is not inadvertently sent outside the VPN tunnel.</p>
+    /// <p>Client route enforcement works by monitoring the route table of a connected device for routing policy changes to the VPN connection. If the feature detects any VPN routing policy modifications, it will automatically force an update to the route table, reverting it back to the expected route configurations.</p>
+    pub fn get_client_route_enforcement_options(&self) -> &::std::option::Option<crate::types::ClientRouteEnforcementOptions> {
+        self.inner.get_client_route_enforcement_options()
+    }
     /// <p>Indicates whether the client VPN session is disconnected after the maximum timeout specified in <code>sessionTimeoutHours</code> is reached. If <code>true</code>, users are prompted to reconnect client VPN. If <code>false</code>, client VPN attempts to reconnect automatically. The default value is <code>false</code>.</p>
     pub fn disconnect_on_session_timeout(mut self, input: bool) -> Self {
         self.inner = self.inner.disconnect_on_session_timeout(input);

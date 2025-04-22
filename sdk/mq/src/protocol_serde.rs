@@ -33,6 +33,8 @@ pub(crate) mod shape_create_user;
 
 pub(crate) mod shape_delete_broker;
 
+pub(crate) mod shape_delete_configuration;
+
 pub(crate) mod shape_delete_tags;
 
 pub(crate) mod shape_delete_user;

@@ -22,7 +22,7 @@ impl crate::operation::describe_vpc_endpoint_service_permissions::builders::Desc
 }
 /// Fluent builder constructing a request to `DescribeVpcEndpointServicePermissions`.
 ///
-/// <p>Describes the principals (service consumers) that are permitted to discover your VPC endpoint service.</p>
+/// <p>Describes the principals (service consumers) that are permitted to discover your VPC endpoint service. Principal ARNs with path components aren't supported.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeVpcEndpointServicePermissionsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

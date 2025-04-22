@@ -999,6 +999,8 @@ pub use crate::types::_instance_family_credit_specification::InstanceFamilyCredi
 
 pub use crate::types::_unlimited_supported_instance_family::UnlimitedSupportedInstanceFamily;
 
+pub use crate::types::_client_route_enforcement_options::ClientRouteEnforcementOptions;
+
 pub use crate::types::_client_login_banner_options::ClientLoginBannerOptions;
 
 pub use crate::types::_client_connect_options::ClientConnectOptions;
@@ -2077,6 +2079,8 @@ pub use crate::types::_client_vpn_route_status_code::ClientVpnRouteStatusCode;
 
 pub use crate::types::_client_vpn_endpoint::ClientVpnEndpoint;
 
+pub use crate::types::_client_route_enforcement_response_options::ClientRouteEnforcementResponseOptions;
+
 pub use crate::types::_client_login_banner_response_options::ClientLoginBannerResponseOptions;
 
 pub use crate::types::_client_connect_response_options::ClientConnectResponseOptions;
@@ -2666,6 +2670,10 @@ mod _client_data;
 mod _client_login_banner_options;
 
 mod _client_login_banner_response_options;
+
+mod _client_route_enforcement_options;
+
+mod _client_route_enforcement_response_options;
 
 mod _client_vpn_authentication;
 

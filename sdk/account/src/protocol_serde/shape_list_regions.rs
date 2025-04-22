@@ -24,6 +24,11 @@ pub fn de_list_regions_http_error(
                 let mut output = crate::types::error::builders::AccessDeniedExceptionBuilder::default();
                 output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(_response_body, output)
                     .map_err(crate::operation::list_regions::ListRegionsError::unhandled)?;
+                output = output.set_error_type(
+                    crate::protocol_serde::shape_access_denied_exception::de_error_type_header(_response_headers).map_err(|_| {
+                        crate::operation::list_regions::ListRegionsError::unhandled("Failed to parse errorType from header `x-amzn-ErrorType")
+                    })?,
+                );
                 let output = output.meta(generic);
                 crate::serde_util::access_denied_exception_correct_errors(output)
                     .build()
@@ -38,6 +43,11 @@ pub fn de_list_regions_http_error(
                 let mut output = crate::types::error::builders::InternalServerExceptionBuilder::default();
                 output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(_response_body, output)
                     .map_err(crate::operation::list_regions::ListRegionsError::unhandled)?;
+                output = output.set_error_type(
+                    crate::protocol_serde::shape_internal_server_exception::de_error_type_header(_response_headers).map_err(|_| {
+                        crate::operation::list_regions::ListRegionsError::unhandled("Failed to parse errorType from header `x-amzn-ErrorType")
+                    })?,
+                );
                 let output = output.meta(generic);
                 crate::serde_util::internal_server_exception_correct_errors(output)
                     .build()
@@ -52,6 +62,11 @@ pub fn de_list_regions_http_error(
                 let mut output = crate::types::error::builders::TooManyRequestsExceptionBuilder::default();
                 output = crate::protocol_serde::shape_too_many_requests_exception::de_too_many_requests_exception_json_err(_response_body, output)
                     .map_err(crate::operation::list_regions::ListRegionsError::unhandled)?;
+                output = output.set_error_type(
+                    crate::protocol_serde::shape_too_many_requests_exception::de_error_type_header(_response_headers).map_err(|_| {
+                        crate::operation::list_regions::ListRegionsError::unhandled("Failed to parse errorType from header `x-amzn-ErrorType")
+                    })?,
+                );
                 let output = output.meta(generic);
                 crate::serde_util::too_many_requests_exception_correct_errors(output)
                     .build()

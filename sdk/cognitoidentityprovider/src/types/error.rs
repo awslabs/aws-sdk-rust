@@ -33,11 +33,11 @@ pub use crate::types::error::_enable_software_token_mfa_exception::EnableSoftwar
 
 pub use crate::types::error::_feature_unavailable_in_tier_exception::FeatureUnavailableInTierException;
 
+pub use crate::types::error::_concurrent_modification_exception::ConcurrentModificationException;
+
 pub use crate::types::error::_scope_does_not_exist_exception::ScopeDoesNotExistException;
 
 pub use crate::types::error::_invalid_o_auth_flow_exception::InvalidOAuthFlowException;
-
-pub use crate::types::error::_concurrent_modification_exception::ConcurrentModificationException;
 
 pub use crate::types::error::_user_pool_tagging_exception::UserPoolTaggingException;
 
@@ -82,6 +82,8 @@ pub use crate::types::error::_unauthorized_exception::UnauthorizedException;
 pub use crate::types::error::_password_history_policy_violation_exception::PasswordHistoryPolicyViolationException;
 
 pub use crate::types::error::_mfa_method_not_found_exception::MfaMethodNotFoundException;
+
+pub use crate::types::error::_refresh_token_reuse_exception::RefreshTokenReuseException;
 
 pub use crate::types::error::_managed_login_branding_exists_exception::ManagedLoginBrandingExistsException;
 
@@ -158,6 +160,8 @@ mod _password_history_policy_violation_exception;
 mod _password_reset_required_exception;
 
 mod _precondition_not_met_exception;
+
+mod _refresh_token_reuse_exception;
 
 mod _resource_not_found_exception;
 
