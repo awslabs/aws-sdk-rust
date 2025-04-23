@@ -31,6 +31,8 @@ pub use crate::types::error::_no_update_available_exception::NoUpdateAvailableEx
 
 pub use crate::types::error::_missing_version_exception::MissingVersionException;
 
+pub use crate::types::error::_service_deployment_not_found_exception::ServiceDeploymentNotFoundException;
+
 pub use crate::types::error::_conflict_exception::ConflictException;
 
 pub use crate::types::error::_blocked_exception::BlockedException;
@@ -88,6 +90,8 @@ mod _resource_in_use_exception;
 mod _resource_not_found_exception;
 
 mod _server_exception;
+
+mod _service_deployment_not_found_exception;
 
 mod _service_not_active_exception;
 

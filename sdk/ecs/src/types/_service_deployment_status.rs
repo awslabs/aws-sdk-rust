@@ -16,6 +16,7 @@
 ///     ServiceDeploymentStatus::Pending => { /* ... */ },
 ///     ServiceDeploymentStatus::RollbackFailed => { /* ... */ },
 ///     ServiceDeploymentStatus::RollbackInProgress => { /* ... */ },
+///     ServiceDeploymentStatus::RollbackRequested => { /* ... */ },
 ///     ServiceDeploymentStatus::RollbackSuccessful => { /* ... */ },
 ///     ServiceDeploymentStatus::Stopped => { /* ... */ },
 ///     ServiceDeploymentStatus::StopRequested => { /* ... */ },
@@ -57,6 +58,8 @@ pub enum ServiceDeploymentStatus {
     #[allow(missing_docs)] // documentation missing in model
     RollbackInProgress,
     #[allow(missing_docs)] // documentation missing in model
+    RollbackRequested,
+    #[allow(missing_docs)] // documentation missing in model
     RollbackSuccessful,
     #[allow(missing_docs)] // documentation missing in model
     Stopped,
@@ -75,6 +78,7 @@ impl ::std::convert::From<&str> for ServiceDeploymentStatus {
             "PENDING" => ServiceDeploymentStatus::Pending,
             "ROLLBACK_FAILED" => ServiceDeploymentStatus::RollbackFailed,
             "ROLLBACK_IN_PROGRESS" => ServiceDeploymentStatus::RollbackInProgress,
+            "ROLLBACK_REQUESTED" => ServiceDeploymentStatus::RollbackRequested,
             "ROLLBACK_SUCCESSFUL" => ServiceDeploymentStatus::RollbackSuccessful,
             "STOPPED" => ServiceDeploymentStatus::Stopped,
             "STOP_REQUESTED" => ServiceDeploymentStatus::StopRequested,
@@ -98,6 +102,7 @@ impl ServiceDeploymentStatus {
             ServiceDeploymentStatus::Pending => "PENDING",
             ServiceDeploymentStatus::RollbackFailed => "ROLLBACK_FAILED",
             ServiceDeploymentStatus::RollbackInProgress => "ROLLBACK_IN_PROGRESS",
+            ServiceDeploymentStatus::RollbackRequested => "ROLLBACK_REQUESTED",
             ServiceDeploymentStatus::RollbackSuccessful => "ROLLBACK_SUCCESSFUL",
             ServiceDeploymentStatus::Stopped => "STOPPED",
             ServiceDeploymentStatus::StopRequested => "STOP_REQUESTED",
@@ -112,6 +117,7 @@ impl ServiceDeploymentStatus {
             "PENDING",
             "ROLLBACK_FAILED",
             "ROLLBACK_IN_PROGRESS",
+            "ROLLBACK_REQUESTED",
             "ROLLBACK_SUCCESSFUL",
             "STOPPED",
             "STOP_REQUESTED",
@@ -143,6 +149,7 @@ impl ::std::fmt::Display for ServiceDeploymentStatus {
             ServiceDeploymentStatus::Pending => write!(f, "PENDING"),
             ServiceDeploymentStatus::RollbackFailed => write!(f, "ROLLBACK_FAILED"),
             ServiceDeploymentStatus::RollbackInProgress => write!(f, "ROLLBACK_IN_PROGRESS"),
+            ServiceDeploymentStatus::RollbackRequested => write!(f, "ROLLBACK_REQUESTED"),
             ServiceDeploymentStatus::RollbackSuccessful => write!(f, "ROLLBACK_SUCCESSFUL"),
             ServiceDeploymentStatus::Stopped => write!(f, "STOPPED"),
             ServiceDeploymentStatus::StopRequested => write!(f, "STOP_REQUESTED"),

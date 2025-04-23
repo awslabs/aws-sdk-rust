@@ -484,9 +484,9 @@ model_hash = 'b4b741370ba8961708abf7da89928b5db646fa8d605805dbd8d0138d0ff1955f'
 
 [crates.aws-sdk-codebuild]
 category = 'AwsSdk'
-version = '1.85.0'
-source_hash = '3a7f314a14174655be829425551199f1d39966d40364091d56d87dd7ce291c85'
-model_hash = '5fdaa1a6361e866a1360545511216f7e3fdfed7e6fc4ff12e5e4829e38aac565'
+version = '1.86.0'
+source_hash = '59cee4eda13cdd9f0f1e392b2a14b84d5750177a42ece50b8574b31a6e32b031'
+model_hash = 'cc014c5e8670d7d13520da0663f1eb19f37c7b8ef7b01bcc903a0f679630a049'
 
 [crates.aws-sdk-codecatalyst]
 category = 'AwsSdk'
@@ -820,9 +820,9 @@ model_hash = 'b6e23be351cb44f9f2b57d80f227604694a8bac84ed1467add8d019c824ac349'
 
 [crates.aws-sdk-ecs]
 category = 'AwsSdk'
-version = '1.73.0'
-source_hash = 'e3250a38670a39fe83c1434967dac90f3b69e66ab0a044f5c2e992550191eff4'
-model_hash = '93ae1f2d2ddfd15c6ca00d9ac12afeeb7977f95b6a7ca938d6b96f4474603400'
+version = '1.74.0'
+source_hash = '980e69e48f8b47bf8e886ba7bdcb10f6fc805e1bb3fc9ade48da767cd312936b'
+model_hash = '4beb818b4e6e9c26e087d2f1cb3ea557f3740a544d9ea6403d6e375589dcc936'
 
 [crates.aws-sdk-efs]
 category = 'AwsSdk'
@@ -1924,9 +1924,9 @@ model_hash = 'cfff9aa838b536e58c8e4a9e33efdfb47400fbd99589092a1d6c78fd20971f58'
 
 [crates.aws-sdk-resourceexplorer2]
 category = 'AwsSdk'
-version = '1.67.0'
-source_hash = '6502691baf4658368dedd0133e4f5d665edbd0095d26ea2f99890aac37f30fe8'
-model_hash = 'df377aa0d4299e88b340e6d0c4156bf9e5e742e05a55b5ad2c60a86dfe1f7880'
+version = '1.67.1'
+source_hash = 'b55719e8402bf1493e463dadbb6a77a6c0d37f5f0a70788d570f0af58edd8d79'
+model_hash = '92892fc96f923d030e538495a816fe2bd8fbaf7830d20c678650f4fbc71944f2'
 
 [crates.aws-sdk-resourcegroups]
 category = 'AwsSdk'
@@ -2610,15 +2610,7 @@ source_hash = '6be256fa6379fd9811a47e311ac9821b016a2ca57a7cfed9b0f49352caa37390'
 category = 'AwsRuntime'
 version = '0.0.0'
 source_hash = '9d60ffec7d4b70f12914eda9ff963ff6a757dada06c4539caf523fa6003f8485'
-
-[release]
-tag = 'release-2025-04-22'
-
 [release.crates]
-aws-sdk-account = '1.67.0'
-aws-sdk-cognitoidentityprovider = '1.76.0'
-aws-sdk-ec2 = '1.122.0'
-aws-sdk-entityresolution = '1.70.0'
-aws-sdk-mq = '1.66.0'
-aws-sdk-redshiftserverless = '1.69.0'
-aws-sdk-s3control = '1.73.0'
+aws-sdk-codebuild = '1.86.0'
+aws-sdk-ecs = '1.74.0'
+aws-sdk-resourceexplorer2 = '1.67.1'

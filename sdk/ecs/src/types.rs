@@ -203,6 +203,8 @@ pub use crate::types::_network_interface::NetworkInterface;
 
 pub use crate::types::_connectivity::Connectivity;
 
+pub use crate::types::_stop_service_deployment_stop_type::StopServiceDeploymentStopType;
+
 pub use crate::types::_task_volume_configuration::TaskVolumeConfiguration;
 
 pub use crate::types::_task_managed_ebs_volume_configuration::TaskManagedEbsVolumeConfiguration;
@@ -646,6 +648,8 @@ mod _setting_type;
 mod _sort_order;
 
 mod _stability_status;
+
+mod _stop_service_deployment_stop_type;
 
 mod _system_control;
 

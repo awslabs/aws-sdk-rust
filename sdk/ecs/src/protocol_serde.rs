@@ -111,6 +111,8 @@ pub(crate) mod shape_run_task;
 
 pub(crate) mod shape_start_task;
 
+pub(crate) mod shape_stop_service_deployment;
+
 pub(crate) mod shape_stop_task;
 
 pub(crate) mod shape_submit_attachment_state_changes;
@@ -273,11 +275,15 @@ pub(crate) mod shape_run_task_input;
 
 pub(crate) mod shape_server_exception;
 
+pub(crate) mod shape_service_deployment_not_found_exception;
+
 pub(crate) mod shape_service_not_active_exception;
 
 pub(crate) mod shape_service_not_found_exception;
 
 pub(crate) mod shape_start_task_input;
+
+pub(crate) mod shape_stop_service_deployment_input;
 
 pub(crate) mod shape_stop_task_input;
 

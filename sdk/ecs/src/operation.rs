@@ -133,6 +133,9 @@ pub mod run_task;
 /// Types for the `StartTask` operation.
 pub mod start_task;
 
+/// Types for the `StopServiceDeployment` operation.
+pub mod stop_service_deployment;
+
 /// Types for the `StopTask` operation.
 pub mod stop_task;
 

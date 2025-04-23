@@ -295,6 +295,8 @@ mod run_task;
 
 mod start_task;
 
+mod stop_service_deployment;
+
 mod stop_task;
 
 mod submit_attachment_state_changes;

@@ -54,6 +54,8 @@ pub enum Error {
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
     /// <p>These errors are usually caused by a server issue.</p>
     ServerException(crate::types::error::ServerException),
+    /// <p>The service deploy ARN that you specified in the <code>StopServiceDeployment</code> doesn't exist. You can use <code>ListServiceDeployments</code> to retrieve the service deployment ARNs.</p>
+    ServiceDeploymentNotFoundException(crate::types::error::ServiceDeploymentNotFoundException),
     /// <p>The specified service isn't active. You can't update a service that's inactive. If you have previously deleted a service, you can re-create it with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_CreateService.html">CreateService</a>.</p>
     ServiceNotActiveException(crate::types::error::ServiceNotActiveException),
     /// <p>The specified service wasn't found. You can view your available services with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListServices.html">ListServices</a>. Amazon ECS services are cluster specific and Region specific.</p>
@@ -108,6 +110,7 @@ impl ::std::fmt::Display for Error {
             Error::ResourceInUseException(inner) => inner.fmt(f),
             Error::ResourceNotFoundException(inner) => inner.fmt(f),
             Error::ServerException(inner) => inner.fmt(f),
+            Error::ServiceDeploymentNotFoundException(inner) => inner.fmt(f),
             Error::ServiceNotActiveException(inner) => inner.fmt(f),
             Error::ServiceNotFoundException(inner) => inner.fmt(f),
             Error::TargetNotConnectedException(inner) => inner.fmt(f),
@@ -155,6 +158,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
             Self::ResourceInUseException(inner) => inner.meta(),
             Self::ResourceNotFoundException(inner) => inner.meta(),
             Self::ServerException(inner) => inner.meta(),
+            Self::ServiceDeploymentNotFoundException(inner) => inner.meta(),
             Self::ServiceNotActiveException(inner) => inner.meta(),
             Self::ServiceNotFoundException(inner) => inner.meta(),
             Self::TargetNotConnectedException(inner) => inner.meta(),
@@ -1466,6 +1470,44 @@ impl From<crate::operation::start_task::StartTaskError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::stop_service_deployment::StopServiceDeploymentError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::stop_service_deployment::StopServiceDeploymentError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::stop_service_deployment::StopServiceDeploymentError> for Error {
+    fn from(err: crate::operation::stop_service_deployment::StopServiceDeploymentError) -> Self {
+        match err {
+            crate::operation::stop_service_deployment::StopServiceDeploymentError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::stop_service_deployment::StopServiceDeploymentError::ClientException(inner) => Error::ClientException(inner),
+            crate::operation::stop_service_deployment::StopServiceDeploymentError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::stop_service_deployment::StopServiceDeploymentError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::stop_service_deployment::StopServiceDeploymentError::ServerException(inner) => Error::ServerException(inner),
+            crate::operation::stop_service_deployment::StopServiceDeploymentError::ServiceDeploymentNotFoundException(inner) => {
+                Error::ServiceDeploymentNotFoundException(inner)
+            }
+            crate::operation::stop_service_deployment::StopServiceDeploymentError::UnsupportedFeatureException(inner) => {
+                Error::UnsupportedFeatureException(inner)
+            }
+            crate::operation::stop_service_deployment::StopServiceDeploymentError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::stop_task::StopTaskError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1996,6 +2038,7 @@ impl ::std::error::Error for Error {
             Error::ResourceInUseException(inner) => inner.source(),
             Error::ResourceNotFoundException(inner) => inner.source(),
             Error::ServerException(inner) => inner.source(),
+            Error::ServiceDeploymentNotFoundException(inner) => inner.source(),
             Error::ServiceNotActiveException(inner) => inner.source(),
             Error::ServiceNotFoundException(inner) => inner.source(),
             Error::TargetNotConnectedException(inner) => inner.source(),
@@ -2029,6 +2072,7 @@ impl ::aws_types::request_id::RequestId for Error {
             Self::ResourceInUseException(e) => e.request_id(),
             Self::ResourceNotFoundException(e) => e.request_id(),
             Self::ServerException(e) => e.request_id(),
+            Self::ServiceDeploymentNotFoundException(e) => e.request_id(),
             Self::ServiceNotActiveException(e) => e.request_id(),
             Self::ServiceNotFoundException(e) => e.request_id(),
             Self::TargetNotConnectedException(e) => e.request_id(),

@@ -23,6 +23,7 @@
 ///     ComputeType::BuildLambda2Gb => { /* ... */ },
 ///     ComputeType::BuildLambda4Gb => { /* ... */ },
 ///     ComputeType::BuildLambda8Gb => { /* ... */ },
+///     ComputeType::CustomInstanceType => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -73,6 +74,8 @@ pub enum ComputeType {
     BuildLambda4Gb,
     #[allow(missing_docs)] // documentation missing in model
     BuildLambda8Gb,
+    #[allow(missing_docs)] // documentation missing in model
+    CustomInstanceType,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -91,6 +94,7 @@ impl ::std::convert::From<&str> for ComputeType {
             "BUILD_LAMBDA_2GB" => ComputeType::BuildLambda2Gb,
             "BUILD_LAMBDA_4GB" => ComputeType::BuildLambda4Gb,
             "BUILD_LAMBDA_8GB" => ComputeType::BuildLambda8Gb,
+            "CUSTOM_INSTANCE_TYPE" => ComputeType::CustomInstanceType,
             other => ComputeType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -117,6 +121,7 @@ impl ComputeType {
             ComputeType::BuildLambda2Gb => "BUILD_LAMBDA_2GB",
             ComputeType::BuildLambda4Gb => "BUILD_LAMBDA_4GB",
             ComputeType::BuildLambda8Gb => "BUILD_LAMBDA_8GB",
+            ComputeType::CustomInstanceType => "CUSTOM_INSTANCE_TYPE",
             ComputeType::Unknown(value) => value.as_str(),
         }
     }
@@ -134,6 +139,7 @@ impl ComputeType {
             "BUILD_LAMBDA_2GB",
             "BUILD_LAMBDA_4GB",
             "BUILD_LAMBDA_8GB",
+            "CUSTOM_INSTANCE_TYPE",
         ]
     }
 }
@@ -168,6 +174,7 @@ impl ::std::fmt::Display for ComputeType {
             ComputeType::BuildLambda2Gb => write!(f, "BUILD_LAMBDA_2GB"),
             ComputeType::BuildLambda4Gb => write!(f, "BUILD_LAMBDA_4GB"),
             ComputeType::BuildLambda8Gb => write!(f, "BUILD_LAMBDA_8GB"),
+            ComputeType::CustomInstanceType => write!(f, "CUSTOM_INSTANCE_TYPE"),
             ComputeType::Unknown(value) => write!(f, "{}", value),
         }
     }

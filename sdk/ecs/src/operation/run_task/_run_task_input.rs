@@ -9,6 +9,7 @@ pub struct RunTaskInput {
     /// <p>A capacity provider strategy can contain a maximum of 20 capacity providers.</p>
     pub capacity_provider_strategy: ::std::option::Option<::std::vec::Vec<crate::types::CapacityProviderStrategyItem>>,
     /// <p>The short name or full Amazon Resource Name (ARN) of the cluster to run your task on. If you do not specify a cluster, the default cluster is assumed.</p>
+    /// <p>Each account receives a default cluster the first time you use the service, but you may also create other clusters.</p>
     pub cluster: ::std::option::Option<::std::string::String>,
     /// <p>The number of instantiations of the specified task to place on your cluster. You can specify up to 10 tasks for each call.</p>
     pub count: ::std::option::Option<i32>,
@@ -90,6 +91,7 @@ impl RunTaskInput {
         self.capacity_provider_strategy.as_deref().unwrap_or_default()
     }
     /// <p>The short name or full Amazon Resource Name (ARN) of the cluster to run your task on. If you do not specify a cluster, the default cluster is assumed.</p>
+    /// <p>Each account receives a default cluster the first time you use the service, but you may also create other clusters.</p>
     pub fn cluster(&self) -> ::std::option::Option<&str> {
         self.cluster.as_deref()
     }
@@ -269,16 +271,19 @@ impl RunTaskInputBuilder {
         &self.capacity_provider_strategy
     }
     /// <p>The short name or full Amazon Resource Name (ARN) of the cluster to run your task on. If you do not specify a cluster, the default cluster is assumed.</p>
+    /// <p>Each account receives a default cluster the first time you use the service, but you may also create other clusters.</p>
     pub fn cluster(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The short name or full Amazon Resource Name (ARN) of the cluster to run your task on. If you do not specify a cluster, the default cluster is assumed.</p>
+    /// <p>Each account receives a default cluster the first time you use the service, but you may also create other clusters.</p>
     pub fn set_cluster(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cluster = input;
         self
     }
     /// <p>The short name or full Amazon Resource Name (ARN) of the cluster to run your task on. If you do not specify a cluster, the default cluster is assumed.</p>
+    /// <p>Each account receives a default cluster the first time you use the service, but you may also create other clusters.</p>
     pub fn get_cluster(&self) -> &::std::option::Option<::std::string::String> {
         &self.cluster
     }

@@ -146,16 +146,19 @@ impl RunTaskFluentBuilder {
         self.inner.get_capacity_provider_strategy()
     }
     /// <p>The short name or full Amazon Resource Name (ARN) of the cluster to run your task on. If you do not specify a cluster, the default cluster is assumed.</p>
+    /// <p>Each account receives a default cluster the first time you use the service, but you may also create other clusters.</p>
     pub fn cluster(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.cluster(input.into());
         self
     }
     /// <p>The short name or full Amazon Resource Name (ARN) of the cluster to run your task on. If you do not specify a cluster, the default cluster is assumed.</p>
+    /// <p>Each account receives a default cluster the first time you use the service, but you may also create other clusters.</p>
     pub fn set_cluster(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_cluster(input);
         self
     }
     /// <p>The short name or full Amazon Resource Name (ARN) of the cluster to run your task on. If you do not specify a cluster, the default cluster is assumed.</p>
+    /// <p>Each account receives a default cluster the first time you use the service, but you may also create other clusters.</p>
     pub fn get_cluster(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_cluster()
     }

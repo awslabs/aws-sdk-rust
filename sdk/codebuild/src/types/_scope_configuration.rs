@@ -8,7 +8,7 @@ pub struct ScopeConfiguration {
     pub name: ::std::string::String,
     /// <p>The domain of the GitHub Enterprise organization or the GitLab Self Managed group. Note that this parameter is only required if your project's source type is GITHUB_ENTERPRISE or GITLAB_SELF_MANAGED.</p>
     pub domain: ::std::option::Option<::std::string::String>,
-    /// <p>The type of scope for a GitHub or GitLab webhook.</p>
+    /// <p>The type of scope for a GitHub or GitLab webhook. The scope default is GITHUB_ORGANIZATION.</p>
     pub scope: crate::types::WebhookScopeType,
 }
 impl ScopeConfiguration {
@@ -21,7 +21,7 @@ impl ScopeConfiguration {
     pub fn domain(&self) -> ::std::option::Option<&str> {
         self.domain.as_deref()
     }
-    /// <p>The type of scope for a GitHub or GitLab webhook.</p>
+    /// <p>The type of scope for a GitHub or GitLab webhook. The scope default is GITHUB_ORGANIZATION.</p>
     pub fn scope(&self) -> &crate::types::WebhookScopeType {
         &self.scope
     }
@@ -71,18 +71,18 @@ impl ScopeConfigurationBuilder {
     pub fn get_domain(&self) -> &::std::option::Option<::std::string::String> {
         &self.domain
     }
-    /// <p>The type of scope for a GitHub or GitLab webhook.</p>
+    /// <p>The type of scope for a GitHub or GitLab webhook. The scope default is GITHUB_ORGANIZATION.</p>
     /// This field is required.
     pub fn scope(mut self, input: crate::types::WebhookScopeType) -> Self {
         self.scope = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The type of scope for a GitHub or GitLab webhook.</p>
+    /// <p>The type of scope for a GitHub or GitLab webhook. The scope default is GITHUB_ORGANIZATION.</p>
     pub fn set_scope(mut self, input: ::std::option::Option<crate::types::WebhookScopeType>) -> Self {
         self.scope = input;
         self
     }
-    /// <p>The type of scope for a GitHub or GitLab webhook.</p>
+    /// <p>The type of scope for a GitHub or GitLab webhook. The scope default is GITHUB_ORGANIZATION.</p>
     pub fn get_scope(&self) -> &::std::option::Option<crate::types::WebhookScopeType> {
         &self.scope
     }

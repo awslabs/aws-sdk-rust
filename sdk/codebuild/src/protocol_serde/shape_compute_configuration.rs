@@ -24,6 +24,9 @@ pub fn ser_compute_configuration(
     if let Some(var_4) = &input.machine_type {
         object.key("machineType").string(var_4.as_str());
     }
+    if let Some(var_5) = &input.instance_type {
+        object.key("instanceType").string(var_5.as_str());
+    }
     Ok(())
 }
 
@@ -67,6 +70,13 @@ where
                             builder = builder.set_machine_type(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| crate::types::MachineType::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "instanceType" => {
+                            builder = builder.set_instance_type(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
                             );
                         }
