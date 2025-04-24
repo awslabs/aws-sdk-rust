@@ -27,17 +27,7 @@ impl GetEC2InstanceRecommendations {
                     .expect("correct error type")
             })
         };
-        use ::tracing::Instrument;
         let context = Self::orchestrate_with_stop_point(runtime_plugins, input, ::aws_smithy_runtime::client::orchestrator::StopPoint::None)
-            // Create a parent span for the entire operation. Includes a random, internal-only,
-            // seven-digit ID for the operation orchestration so that it can be correlated in the logs.
-            .instrument(::tracing::debug_span!(
-                "Compute Optimizer.GetEC2InstanceRecommendations",
-                "rpc.service" = "Compute Optimizer",
-                "rpc.method" = "GetEC2InstanceRecommendations",
-                "sdk_invocation_id" = ::fastrand::u32(1_000_000..10_000_000),
-                "rpc.system" = "aws-api",
-            ))
             .await
             .map_err(map_err)?;
         let output = context.finalize().map_err(map_err)?;
@@ -60,6 +50,7 @@ impl GetEC2InstanceRecommendations {
         >,
     > {
         let input = ::aws_smithy_runtime_api::client::interceptors::context::Input::erase(input);
+        use ::tracing::Instrument;
         ::aws_smithy_runtime::client::orchestrator::invoke_with_stop_point(
             "Compute Optimizer",
             "GetEC2InstanceRecommendations",
@@ -67,6 +58,15 @@ impl GetEC2InstanceRecommendations {
             runtime_plugins,
             stop_point,
         )
+        // Create a parent span for the entire operation. Includes a random, internal-only,
+        // seven-digit ID for the operation orchestration so that it can be correlated in the logs.
+        .instrument(::tracing::debug_span!(
+            "Compute Optimizer.GetEC2InstanceRecommendations",
+            "rpc.service" = "Compute Optimizer",
+            "rpc.method" = "GetEC2InstanceRecommendations",
+            "sdk_invocation_id" = ::fastrand::u32(1_000_000..10_000_000),
+            "rpc.system" = "aws-api",
+        ))
         .await
     }
 

@@ -43,6 +43,7 @@ use aws_smithy_types::timeout::TimeoutConfig;
 use std::borrow::Cow;
 use std::fmt;
 use std::marker::PhantomData;
+use tracing::{debug_span, Instrument};
 
 struct FnSerializer<F, I> {
     f: F,
@@ -150,6 +151,11 @@ where
             input,
             &self.runtime_plugins,
         )
+        .instrument(debug_span!(
+            "invoke",
+            "rpc.service" = &self.service_name.as_ref(),
+            "rpc.method" = &self.operation_name.as_ref()
+        ))
         .await
         .map_err(|err| err.map_service_error(|e| e.downcast().expect("correct type")))?;
 

@@ -41,7 +41,7 @@ version = "0.1.0"
 [dev-dependencies.aws-smithy-runtime]
 path = "../../sdk/aws-smithy-runtime"
 features = ["client", "test-util"]
-version = "1.8.1"
+version = "1.8.2"
 
 [dev-dependencies.aws-smithy-types]
 path = "../../sdk/aws-smithy-types"

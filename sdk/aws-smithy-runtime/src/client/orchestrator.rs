@@ -133,8 +133,11 @@ pub enum StopPoint {
 ///
 /// See the docs on [`invoke`] for more details.
 pub async fn invoke_with_stop_point(
-    service_name: &str,
-    operation_name: &str,
+    // NOTE: service_name and operation_name were at one point used for instrumentation that is now
+    // handled as part of codegen. Manually constructed operations (e.g. via Operation::builder())
+    // are handled as part of Operation::invoke
+    _service_name: &str,
+    _operation_name: &str,
     input: Input,
     runtime_plugins: &RuntimePlugins,
     stop_point: StopPoint,
@@ -168,11 +171,6 @@ pub async fn invoke_with_stop_point(
         .maybe_timeout(operation_timeout_config)
         .await
     }
-    .instrument(debug_span!(
-        "invoke",
-        "rpc.service" = service_name,
-        "rpc.method" = operation_name
-    ))
     .await
 }
 

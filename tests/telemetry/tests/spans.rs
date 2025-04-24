@@ -62,7 +62,6 @@ async fn all_expected_operation_spans_emitted_with_correct_nesting() {
     let _guard = tracing::subscriber::set_default(subscriber);
 
     const OPERATION_NAME: &str = "S3.GetObject";
-    const INVOKE: &str = "invoke";
     const TRY_OP: &str = "try_op";
     const TRY_ATTEMPT: &str = "try_attempt";
 
@@ -70,7 +69,6 @@ async fn all_expected_operation_spans_emitted_with_correct_nesting() {
         .build()
         .with_name("apply_configuration")
         .with_parent_name(OPERATION_NAME)
-        .with_parent_name(INVOKE)
         .was_closed_exactly(1)
         .finalize();
 
@@ -78,7 +76,6 @@ async fn all_expected_operation_spans_emitted_with_correct_nesting() {
         .build()
         .with_name("serialization")
         .with_parent_name(OPERATION_NAME)
-        .with_parent_name(INVOKE)
         .with_parent_name(TRY_OP)
         .was_closed_exactly(1)
         .finalize();
@@ -87,7 +84,6 @@ async fn all_expected_operation_spans_emitted_with_correct_nesting() {
         .build()
         .with_name("orchestrate_endpoint")
         .with_parent_name(OPERATION_NAME)
-        .with_parent_name(INVOKE)
         .with_parent_name(TRY_OP)
         .with_parent_name(TRY_ATTEMPT)
         .was_closed_exactly(1)
@@ -97,7 +93,6 @@ async fn all_expected_operation_spans_emitted_with_correct_nesting() {
         .build()
         .with_name("lazy_load_identity")
         .with_parent_name(OPERATION_NAME)
-        .with_parent_name(INVOKE)
         .with_parent_name(TRY_OP)
         .with_parent_name(TRY_ATTEMPT)
         .was_closed_exactly(1)
@@ -107,7 +102,6 @@ async fn all_expected_operation_spans_emitted_with_correct_nesting() {
         .build()
         .with_name("deserialize_streaming")
         .with_parent_name(OPERATION_NAME)
-        .with_parent_name(INVOKE)
         .with_parent_name(TRY_OP)
         .with_parent_name(TRY_ATTEMPT)
         .was_closed_exactly(1)
@@ -117,7 +111,6 @@ async fn all_expected_operation_spans_emitted_with_correct_nesting() {
         .build()
         .with_name("deserialization")
         .with_parent_name(OPERATION_NAME)
-        .with_parent_name(INVOKE)
         .with_parent_name(TRY_OP)
         .with_parent_name(TRY_ATTEMPT)
         .was_closed_exactly(1)
@@ -128,7 +121,6 @@ async fn all_expected_operation_spans_emitted_with_correct_nesting() {
         .with_name(TRY_ATTEMPT)
         .with_span_field("attempt")
         .with_parent_name(OPERATION_NAME)
-        .with_parent_name(INVOKE)
         .with_parent_name(TRY_OP)
         .was_closed_exactly(1)
         .finalize();
@@ -137,7 +129,6 @@ async fn all_expected_operation_spans_emitted_with_correct_nesting() {
         .build()
         .with_name("finally_attempt")
         .with_parent_name(OPERATION_NAME)
-        .with_parent_name(INVOKE)
         .with_parent_name(TRY_OP)
         .was_closed_exactly(1)
         .finalize();
@@ -146,21 +137,12 @@ async fn all_expected_operation_spans_emitted_with_correct_nesting() {
         .build()
         .with_name(TRY_OP)
         .with_parent_name(OPERATION_NAME)
-        .with_parent_name(INVOKE)
         .was_closed_exactly(1)
         .finalize();
 
     let finally_op = assertion_registry
         .build()
         .with_name("finally_op")
-        .with_parent_name(OPERATION_NAME)
-        .with_parent_name(INVOKE)
-        .was_closed_exactly(1)
-        .finalize();
-
-    let invoke = assertion_registry
-        .build()
-        .with_name(INVOKE)
         .with_parent_name(OPERATION_NAME)
         .was_closed_exactly(1)
         .finalize();
@@ -184,7 +166,6 @@ async fn all_expected_operation_spans_emitted_with_correct_nesting() {
     finally_attempt.assert();
     try_op.assert();
     finally_op.assert();
-    invoke.assert();
     operation.assert();
 }
 

@@ -23,17 +23,7 @@ impl GetTile {
                 ::aws_smithy_runtime_api::client::interceptors::context::Error,
                 ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
             >| { err.map_service_error(|err| err.downcast::<crate::operation::get_tile::GetTileError>().expect("correct error type")) };
-        use ::tracing::Instrument;
         let context = Self::orchestrate_with_stop_point(runtime_plugins, input, ::aws_smithy_runtime::client::orchestrator::StopPoint::None)
-            // Create a parent span for the entire operation. Includes a random, internal-only,
-            // seven-digit ID for the operation orchestration so that it can be correlated in the logs.
-            .instrument(::tracing::debug_span!(
-                "SageMaker Geospatial.GetTile",
-                "rpc.service" = "SageMaker Geospatial",
-                "rpc.method" = "GetTile",
-                "sdk_invocation_id" = ::fastrand::u32(1_000_000..10_000_000),
-                "rpc.system" = "aws-api",
-            ))
             .await
             .map_err(map_err)?;
         let output = context.finalize().map_err(map_err)?;
@@ -56,7 +46,17 @@ impl GetTile {
         >,
     > {
         let input = ::aws_smithy_runtime_api::client::interceptors::context::Input::erase(input);
+        use ::tracing::Instrument;
         ::aws_smithy_runtime::client::orchestrator::invoke_with_stop_point("SageMaker Geospatial", "GetTile", input, runtime_plugins, stop_point)
+            // Create a parent span for the entire operation. Includes a random, internal-only,
+            // seven-digit ID for the operation orchestration so that it can be correlated in the logs.
+            .instrument(::tracing::debug_span!(
+                "SageMaker Geospatial.GetTile",
+                "rpc.service" = "SageMaker Geospatial",
+                "rpc.method" = "GetTile",
+                "sdk_invocation_id" = ::fastrand::u32(1_000_000..10_000_000),
+                "rpc.system" = "aws-api",
+            ))
             .await
     }
 
