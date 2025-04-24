@@ -6,15 +6,15 @@
 use aws_smithy_runtime_api::client::identity::Identity;
 use bytes::{BufMut, BytesMut};
 use crypto_bigint::{CheckedAdd, CheckedSub, Encoding, U256};
-use once_cell::sync::Lazy;
 use p256::ecdsa::signature::Signer;
 use p256::ecdsa::{Signature, SigningKey};
 use std::io::Write;
+use std::sync::LazyLock;
 use std::time::SystemTime;
 use zeroize::Zeroizing;
 
 const ALGORITHM: &[u8] = b"AWS4-ECDSA-P256-SHA256";
-static BIG_N_MINUS_2: Lazy<U256> = Lazy::new(|| {
+static BIG_N_MINUS_2: LazyLock<U256> = LazyLock::new(|| {
     // The N value from section 3.2.1.3 of https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-186.pdf
     // Used as the N value for the algorithm described in section A.2.2 of https://nvlpubs.nist.gov/nistpubs/FIPS/NIST.FIPS.186-5.pdf
     // *(Basically a prime number blessed by the NSA for use in p256)*

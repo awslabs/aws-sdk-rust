@@ -5,10 +5,10 @@
 
 use crate::sdk_feature::AwsSdkFeature;
 use aws_smithy_runtime::client::sdk_feature::SmithySdkFeature;
-use once_cell::sync::Lazy;
 use std::borrow::Cow;
 use std::collections::HashMap;
 use std::fmt;
+use std::sync::LazyLock;
 
 const MAX_COMMA_SEPARATED_METRICS_VALUES_LENGTH: usize = 1024;
 #[allow(dead_code)]
@@ -92,8 +92,8 @@ impl Iterator for Base64Iterator {
     }
 }
 
-pub(super) static FEATURE_ID_TO_METRIC_VALUE: Lazy<HashMap<BusinessMetric, Cow<'static, str>>> =
-    Lazy::new(|| {
+pub(super) static FEATURE_ID_TO_METRIC_VALUE: LazyLock<HashMap<BusinessMetric, Cow<'static, str>>> =
+    LazyLock::new(|| {
         let mut m = HashMap::new();
         for (metric, value) in BusinessMetric::iter()
             .cloned()

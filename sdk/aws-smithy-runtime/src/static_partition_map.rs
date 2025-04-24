@@ -3,10 +3,9 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-use once_cell::sync::OnceCell;
 use std::collections::HashMap;
 use std::hash::Hash;
-use std::sync::{Mutex, MutexGuard};
+use std::sync::{Mutex, MutexGuard, OnceLock};
 
 /// A data structure for persisting and sharing state between multiple clients.
 ///
@@ -73,14 +72,14 @@ use std::sync::{Mutex, MutexGuard};
 /// ```
 #[derive(Debug, Default)]
 pub struct StaticPartitionMap<K, V> {
-    inner: OnceCell<Mutex<HashMap<K, V>>>,
+    inner: OnceLock<Mutex<HashMap<K, V>>>,
 }
 
 impl<K, V> StaticPartitionMap<K, V> {
     /// Creates a new `StaticPartitionMap`.
     pub const fn new() -> Self {
         Self {
-            inner: OnceCell::new(),
+            inner: OnceLock::new(),
         }
     }
 }

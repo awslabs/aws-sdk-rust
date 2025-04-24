@@ -5,12 +5,12 @@
 
 //! Utilities for testing the User-Agent header
 
-use once_cell::sync::Lazy;
 use regex_lite::Regex;
+use std::sync::LazyLock;
 
 // regular expression pattern for base64 numeric values
 #[allow(dead_code)]
-static RE: Lazy<Regex> = Lazy::new(|| Regex::new(r"m/([A-Za-z0-9+/=_,-]+)").unwrap());
+static RE: LazyLock<Regex> = LazyLock::new(|| Regex::new(r"m/([A-Za-z0-9+/=_,-]+)").unwrap());
 
 /// Asserts `user_agent` contains all metric values `values`
 ///

@@ -4,16 +4,17 @@
  *  SPDX-License-Identifier: Apache-2.0
  */
 
+use std::sync::LazyLock;
+
 use crate::endpoint_lib::diagnostic::DiagnosticCollector;
 use crate::endpoint_lib::host::is_valid_host_label;
-use once_cell::sync::Lazy;
 use regex_lite::Regex;
 
-static VIRTUAL_HOSTABLE_SEGMENT: Lazy<Regex> = Lazy::new(|| Regex::new("^[a-z\\d][a-z\\d\\-.]{1,61}[a-z\\d]$").unwrap());
+static VIRTUAL_HOSTABLE_SEGMENT: LazyLock<Regex> = LazyLock::new(|| Regex::new("^[a-z\\d][a-z\\d\\-.]{1,61}[a-z\\d]$").unwrap());
 
-static IPV4: Lazy<Regex> = Lazy::new(|| Regex::new("^(\\d+\\.){3}\\d+$").unwrap());
+static IPV4: LazyLock<Regex> = LazyLock::new(|| Regex::new("^(\\d+\\.){3}\\d+$").unwrap());
 
-static DOTS_AND_DASHES: Lazy<Regex> = Lazy::new(|| Regex::new(r"^.*((\.-)|(-\.)).*$").unwrap());
+static DOTS_AND_DASHES: LazyLock<Regex> = LazyLock::new(|| Regex::new(r"^.*((\.-)|(-\.)).*$").unwrap());
 
 /// Evaluates whether a string is a DNS-compatible bucket name that can be used with virtual hosted-style addressing.
 pub(crate) fn is_virtual_hostable_s3_bucket(host_label: &str, allow_subdomains: bool, e: &mut DiagnosticCollector) -> bool {

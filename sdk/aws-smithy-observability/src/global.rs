@@ -5,10 +5,9 @@
 
 //! Utilities for interacting with the currently set `GlobalTelemetryProvider`
 
-use once_cell::sync::Lazy;
 use std::{
     mem,
-    sync::{Arc, RwLock},
+    sync::{Arc, LazyLock, RwLock},
 };
 
 use crate::{
@@ -18,8 +17,8 @@ use crate::{
 };
 
 // Statically store the global provider
-static GLOBAL_TELEMETRY_PROVIDER: Lazy<RwLock<GlobalTelemetryProvider>> =
-    Lazy::new(|| RwLock::new(GlobalTelemetryProvider::new(TelemetryProvider::default())));
+static GLOBAL_TELEMETRY_PROVIDER: LazyLock<RwLock<GlobalTelemetryProvider>> =
+    LazyLock::new(|| RwLock::new(GlobalTelemetryProvider::new(TelemetryProvider::default())));
 
 /// Set the current global [TelemetryProvider].
 ///

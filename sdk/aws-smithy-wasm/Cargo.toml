@@ -26,7 +26,7 @@ version = "1.7.4"
 
 [dependencies.aws-smithy-http]
 path = "../aws-smithy-http"
-version = "0.62.0"
+version = "0.62.1"
 
 [dependencies.aws-smithy-types]
 path = "../aws-smithy-types"
