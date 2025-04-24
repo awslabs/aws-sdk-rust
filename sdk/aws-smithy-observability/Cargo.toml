@@ -14,7 +14,7 @@ cargo-args = ["-Zunstable-options", "-Zrustdoc-scrape-examples"]
 rustdoc-args = ["--cfg", "docsrs"]
 [dependencies.aws-smithy-runtime-api]
 path = "../aws-smithy-runtime-api"
-version = "1.7.4"
+version = "1.8.0"
 
 [dev-dependencies]
 serial_test = "3.1.1"

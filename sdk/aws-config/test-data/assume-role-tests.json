@@ -9,7 +9,8 @@
         },
         "B": {
           "aws_access_key_id": "abc123",
-          "aws_secret_access_key": "def456"
+          "aws_secret_access_key": "def456",
+          "aws_account_id": "123456789001"
         }
       },
       "selected_profile": "A"
@@ -19,7 +20,8 @@
         {
           "AccessKey": {
             "access_key_id": "abc123",
-            "secret_access_key": "def456"
+            "secret_access_key": "def456",
+            "account_id": "123456789001"
           }
         },
         {

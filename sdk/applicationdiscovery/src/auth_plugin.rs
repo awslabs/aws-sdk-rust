@@ -11,6 +11,7 @@ use aws_smithy_runtime_api::client::auth::AuthSchemeId;
 use aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder;
 use aws_smithy_runtime_api::client::runtime_plugin::{Order, RuntimePlugin};
 
+// A runtime plugin that registers `StaticAuthSchemeOptionResolver` with `RuntimeComponents`.
 #[derive(Debug)]
 pub(crate) struct DefaultAuthOptionsPlugin {
     runtime_components: RuntimeComponentsBuilder,

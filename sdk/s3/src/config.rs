@@ -26,7 +26,7 @@ pub struct Config {
     cloneable: ::aws_smithy_types::config_bag::CloneableLayer,
     pub(crate) runtime_components: crate::config::RuntimeComponentsBuilder,
     pub(crate) runtime_plugins: ::std::vec::Vec<crate::config::SharedRuntimePlugin>,
-    behavior_version: ::std::option::Option<crate::config::BehaviorVersion>,
+    pub(crate) behavior_version: ::std::option::Option<crate::config::BehaviorVersion>,
 }
 impl Config {
     ///
@@ -1245,7 +1245,11 @@ pub(crate) struct ServiceRuntimePlugin {
 
 impl ServiceRuntimePlugin {
     pub fn new(_service_config: crate::config::Config) -> Self {
-        let config = { None };
+        let config = {
+            let mut cfg = ::aws_smithy_types::config_bag::Layer::new("AmazonS3");
+            cfg.store_put(::aws_smithy_runtime::client::orchestrator::AuthSchemeAndEndpointOrchestrationV2);
+            ::std::option::Option::Some(cfg.freeze())
+        };
         let mut runtime_components = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("ServiceRuntimePlugin");
         runtime_components.set_endpoint_resolver(Some({
             use crate::config::endpoint::ResolveEndpoint;
@@ -1271,10 +1275,6 @@ impl ServiceRuntimePlugin {
         runtime_components.push_auth_scheme(::aws_smithy_runtime_api::client::auth::SharedAuthScheme::new(
             crate::s3_express::auth::S3ExpressAuthScheme::new(),
         ));
-        runtime_components.set_identity_resolver(crate::s3_express::auth::SCHEME_ID, crate::s3_express::identity_provider::DefaultS3ExpressIdentityProvider::builder()
-                                    .behavior_version(_service_config.behavior_version.expect("Invalid client configuration: A behavior version must be set when creating an inner S3 client. A behavior version should be set in the outer S3 client, so it needs to be passed down to the inner client."))
-                                    .time_source(_service_config.time_source().unwrap_or_default())
-                                    .build());
         Self { config, runtime_components }
     }
 }
@@ -1469,9 +1469,7 @@ pub(crate) fn base_client_runtime_plugins(mut config: crate::Config) -> ::aws_sm
                                 .expect("All required fields have been set")
                         );
 
-    plugins = plugins.with_client_plugin(crate::s3_express::runtime_plugin::S3ExpressRuntimePlugin::new(
-        config.config.load::<crate::config::DisableS3ExpressSessionAuth>().cloned(),
-    ));
+    plugins = plugins.with_client_plugin(crate::s3_express::runtime_plugin::S3ExpressRuntimePlugin::new(config.clone()));
 
     for plugin in configured_plugins {
         plugins = plugins.with_client_plugin(plugin);

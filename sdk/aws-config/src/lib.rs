@@ -235,15 +235,16 @@ mod loader {
     use aws_smithy_types::timeout::TimeoutConfig;
     use aws_types::app_name::AppName;
     use aws_types::docs_for;
+    use aws_types::endpoint_config::AccountIdEndpointMode;
     use aws_types::origin::Origin;
     use aws_types::os_shim_internal::{Env, Fs};
     use aws_types::sdk_config::SharedHttpClient;
     use aws_types::SdkConfig;
 
     use crate::default_provider::{
-        app_name, checksums, credentials, disable_request_compression, endpoint_url,
-        ignore_configured_endpoint_urls as ignore_ep, region, request_min_compression_size_bytes,
-        retry_config, timeout_config, use_dual_stack, use_fips,
+        account_id_endpoint_mode, app_name, checksums, credentials, disable_request_compression,
+        endpoint_url, ignore_configured_endpoint_urls as ignore_ep, region,
+        request_min_compression_size_bytes, retry_config, timeout_config, use_dual_stack, use_fips,
     };
     use crate::meta::region::ProvideRegion;
     #[allow(deprecated)]
@@ -273,6 +274,7 @@ mod loader {
         identity_cache: Option<SharedIdentityCache>,
         credentials_provider: TriStateOption<SharedCredentialsProvider>,
         token_provider: Option<SharedTokenProvider>,
+        account_id_endpoint_mode: Option<AccountIdEndpointMode>,
         endpoint_url: Option<String>,
         region: Option<Box<dyn ProvideRegion>>,
         retry_config: Option<RetryConfig>,
@@ -626,6 +628,15 @@ mod loader {
             self
         }
 
+        #[doc = docs_for!(account_id_endpoint_mode)]
+        pub fn account_id_endpoint_mode(
+            mut self,
+            account_id_endpoint_mode: AccountIdEndpointMode,
+        ) -> Self {
+            self.account_id_endpoint_mode = Some(account_id_endpoint_mode);
+            self
+        }
+
         /// Override the endpoint URL used for **all** AWS services.
         ///
         /// This method will override the endpoint URL used for **all** AWS services. This primarily
@@ -944,6 +955,13 @@ mod loader {
                     checksums::response_checksum_validation_provider(&conf).await
                 };
 
+            let account_id_endpoint_mode =
+                if let Some(acccount_id_endpoint_mode) = self.account_id_endpoint_mode {
+                    Some(acccount_id_endpoint_mode)
+                } else {
+                    account_id_endpoint_mode::account_id_endpoint_mode_provider(&conf).await
+                };
+
             builder.set_request_checksum_calculation(request_checksum_calculation);
             builder.set_response_checksum_validation(response_checksum_validation);
             builder.set_identity_cache(identity_cache);
@@ -955,6 +973,7 @@ mod loader {
             builder.set_disable_request_compression(disable_request_compression);
             builder.set_request_min_compression_size_bytes(request_min_compression_size_bytes);
             builder.set_stalled_stream_protection(self.stalled_stream_protection_config);
+            builder.set_account_id_endpoint_mode(account_id_endpoint_mode);
             builder.build()
         }
     }

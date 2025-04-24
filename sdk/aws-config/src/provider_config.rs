@@ -39,6 +39,7 @@ pub struct ProviderConfig {
     fs: Fs,
     time_source: SharedTimeSource,
     http_client: Option<SharedHttpClient>,
+    retry_config: Option<RetryConfig>,
     sleep_impl: Option<SharedAsyncSleep>,
     region: Option<Region>,
     use_fips: Option<bool>,
@@ -59,6 +60,7 @@ impl Debug for ProviderConfig {
             .field("fs", &self.fs)
             .field("time_source", &self.time_source)
             .field("http_client", &self.http_client)
+            .field("retry_config", &self.retry_config)
             .field("sleep_impl", &self.sleep_impl)
             .field("region", &self.region)
             .field("use_fips", &self.use_fips)
@@ -75,6 +77,7 @@ impl Default for ProviderConfig {
             fs: Fs::default(),
             time_source: SharedTimeSource::default(),
             http_client: None,
+            retry_config: None,
             sleep_impl: default_async_sleep(),
             region: None,
             use_fips: None,
@@ -107,6 +110,7 @@ impl ProviderConfig {
             fs,
             time_source: SharedTimeSource::new(StaticTimeSource::new(UNIX_EPOCH)),
             http_client: None,
+            retry_config: None,
             sleep_impl: None,
             region: None,
             use_fips: None,
@@ -149,6 +153,7 @@ impl ProviderConfig {
             fs: Fs::default(),
             time_source: SharedTimeSource::default(),
             http_client: None,
+            retry_config: None,
             sleep_impl: None,
             region: None,
             use_fips: None,
@@ -173,6 +178,7 @@ impl ProviderConfig {
             fs: Fs::default(),
             time_source,
             http_client: None,
+            retry_config: None,
             sleep_impl,
             region: None,
             use_fips: None,
@@ -211,7 +217,11 @@ impl ProviderConfig {
         };
 
         let mut builder = SdkConfig::builder()
-            .retry_config(RetryConfig::standard())
+            .retry_config(
+                self.retry_config
+                    .as_ref()
+                    .map_or(RetryConfig::standard(), |config| config.clone()),
+            )
             .region(self.region())
             .time_source(self.time_source())
             .use_fips(self.use_fips().unwrap_or_default())
@@ -243,6 +253,11 @@ impl ProviderConfig {
     #[allow(dead_code)]
     pub(crate) fn http_client(&self) -> Option<SharedHttpClient> {
         self.http_client.clone()
+    }
+
+    #[allow(dead_code)]
+    pub(crate) fn retry_config(&self) -> Option<RetryConfig> {
+        self.retry_config.clone()
     }
 
     #[allow(dead_code)]
@@ -380,6 +395,14 @@ impl ProviderConfig {
     pub fn with_sleep_impl(self, sleep_impl: impl AsyncSleep + 'static) -> Self {
         ProviderConfig {
             sleep_impl: Some(sleep_impl.into_shared()),
+            ..self
+        }
+    }
+
+    /// Override the retry config for this configuration
+    pub fn with_retry_config(self, retry_config: RetryConfig) -> Self {
+        ProviderConfig {
+            retry_config: Some(retry_config),
             ..self
         }
     }

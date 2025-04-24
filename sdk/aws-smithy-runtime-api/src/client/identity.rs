@@ -8,7 +8,9 @@ use crate::client::runtime_components::sealed::ValidateConfig;
 use crate::client::runtime_components::{RuntimeComponents, RuntimeComponentsBuilder};
 use crate::impl_shared_conversions;
 use aws_smithy_types::config_bag::ConfigBag;
-use std::any::Any;
+use aws_smithy_types::type_erasure::TypeErasedBox;
+use std::any::{Any, TypeId};
+use std::collections::HashMap;
 use std::fmt;
 use std::fmt::Debug;
 use std::sync::atomic::{AtomicUsize, Ordering};
@@ -244,6 +246,8 @@ impl ResolveIdentity for SharedIdentityResolver {
 
 impl_shared_conversions!(convert SharedIdentityResolver from ResolveIdentity using SharedIdentityResolver::new);
 
+type DataDebug = Arc<dyn (Fn(&Arc<dyn Any + Send + Sync>) -> &dyn Debug) + Send + Sync>;
+
 /// An identity that can be used for authentication.
 ///
 /// The [`Identity`] is a container for any arbitrary identity data that may be used
@@ -258,9 +262,9 @@ impl_shared_conversions!(convert SharedIdentityResolver from ResolveIdentity usi
 #[derive(Clone)]
 pub struct Identity {
     data: Arc<dyn Any + Send + Sync>,
-    #[allow(clippy::type_complexity)]
-    data_debug: Arc<dyn (Fn(&Arc<dyn Any + Send + Sync>) -> &dyn Debug) + Send + Sync>,
+    data_debug: DataDebug,
     expiration: Option<SystemTime>,
+    properties: HashMap<TypeId, Arc<TypeErasedBox>>,
 }
 
 impl Identity {
@@ -273,7 +277,13 @@ impl Identity {
             data: Arc::new(data),
             data_debug: Arc::new(|d| d.downcast_ref::<T>().expect("type-checked") as _),
             expiration,
+            properties: HashMap::default(),
         }
+    }
+
+    /// Returns [`Builder`] for [`Identity`].
+    pub fn builder() -> Builder {
+        Builder::default()
     }
 
     /// Returns the raw identity data.
@@ -285,14 +295,118 @@ impl Identity {
     pub fn expiration(&self) -> Option<SystemTime> {
         self.expiration
     }
+
+    /// Returns arbitrary property associated with this `Identity`.
+    pub fn property<T: Any + Debug + Send + Sync + 'static>(&self) -> Option<&T> {
+        self.properties
+            .get(&TypeId::of::<T>())
+            .and_then(|b| b.downcast_ref())
+    }
 }
 
 impl Debug for Identity {
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
-        f.debug_struct("Identity")
+        let mut debug_struct = f.debug_struct("Identity");
+        debug_struct
             .field("data", (self.data_debug)(&self.data))
-            .field("expiration", &self.expiration)
-            .finish()
+            .field("expiration", &self.expiration);
+        for (i, prop) in self.properties.values().enumerate() {
+            debug_struct.field(&format!("property_{i}"), prop);
+        }
+        debug_struct.finish()
+    }
+}
+
+#[derive(Debug)]
+enum ErrorKind {
+    /// Field required to build the target type is missing.
+    MissingRequiredField(&'static str),
+}
+
+/// Error constructing [`Identity`].
+#[derive(Debug)]
+pub struct BuildError {
+    kind: ErrorKind,
+}
+
+impl BuildError {
+    fn missing_required_field(field_name: &'static str) -> Self {
+        BuildError {
+            kind: ErrorKind::MissingRequiredField(field_name),
+        }
+    }
+}
+
+impl fmt::Display for BuildError {
+    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> std::fmt::Result {
+        use ErrorKind::*;
+        match self.kind {
+            MissingRequiredField(field_name) => write!(f, "missing required field: `{field_name}`"),
+        }
+    }
+}
+
+impl std::error::Error for BuildError {}
+
+/// Builder for [`Identity`]
+#[derive(Default)]
+pub struct Builder {
+    data: Option<Arc<dyn Any + Send + Sync>>,
+    data_debug: Option<DataDebug>,
+    expiration: Option<SystemTime>,
+    properties: HashMap<TypeId, Arc<TypeErasedBox>>,
+}
+
+impl Builder {
+    /// Set raw identity data for the builder.
+    pub fn data<T: Any + Debug + Send + Sync + 'static>(mut self, data: T) -> Self {
+        self.set_data(data);
+        self
+    }
+
+    /// Set raw identity data for the builder.
+    pub fn set_data<T: Any + Debug + Send + Sync + 'static>(&mut self, data: T) {
+        self.data = Some(Arc::new(data));
+        self.data_debug = Some(Arc::new(|d| {
+            d.downcast_ref::<T>().expect("type-checked") as _
+        }));
+    }
+
+    /// Set expiration for the builder.
+    pub fn expiration(mut self, expiration: SystemTime) -> Self {
+        self.set_expiration(Some(expiration));
+        self
+    }
+
+    /// Set expiration for the builder.
+    pub fn set_expiration(&mut self, expiration: Option<SystemTime>) {
+        self.expiration = expiration;
+    }
+
+    /// Set arbitrary property for the builder.
+    pub fn property<T: Any + Debug + Send + Sync + 'static>(mut self, prop: T) -> Self {
+        self.set_property(prop);
+        self
+    }
+
+    /// Set arbitrary property for the builder.
+    pub fn set_property<T: Any + Debug + Send + Sync + 'static>(&mut self, prop: T) {
+        self.properties
+            .insert(TypeId::of::<T>(), Arc::new(TypeErasedBox::new(prop)));
+    }
+
+    /// Build [`Identity`].
+    pub fn build(self) -> Result<Identity, BuildError> {
+        Ok(Identity {
+            data: self
+                .data
+                .ok_or_else(|| BuildError::missing_required_field("data"))?,
+            data_debug: self
+                .data_debug
+                .expect("should always be set when `data` is set"),
+            expiration: self.expiration,
+            properties: self.properties,
+        })
     }
 }
 
@@ -328,5 +442,37 @@ mod tests {
         assert_eq!("foo", identity.data::<MyIdentityData>().unwrap().first);
         assert_eq!("bar", identity.data::<MyIdentityData>().unwrap().last);
         assert_eq!(Some(expiration), identity.expiration());
+    }
+
+    #[test]
+    fn insert_get_identity_properties() {
+        #[derive(Debug)]
+        struct MyIdentityData {
+            first: String,
+            last: String,
+        }
+        #[derive(Debug)]
+        struct PropertyAlpha;
+        #[derive(Debug)]
+        struct PropertyBeta;
+
+        let ts = SystemTimeSource::new();
+        let expiration = ts.now();
+        let identity = Identity::builder()
+            .data(MyIdentityData {
+                first: "foo".into(),
+                last: "bar".into(),
+            })
+            .expiration(expiration)
+            .property(PropertyAlpha)
+            .property(PropertyBeta)
+            .build()
+            .unwrap();
+
+        assert_eq!("foo", identity.data::<MyIdentityData>().unwrap().first);
+        assert_eq!("bar", identity.data::<MyIdentityData>().unwrap().last);
+        assert_eq!(Some(expiration), identity.expiration());
+        assert!(identity.property::<PropertyAlpha>().is_some());
+        assert!(identity.property::<PropertyBeta>().is_some());
     }
 }

@@ -572,7 +572,7 @@ impl ConfigBag {
         self
     }
 
-    /// Return a reference to the mutable interceptor state.
+    /// Return a mutable reference to the interceptor state.
     pub fn interceptor_state(&mut self) -> &mut Layer {
         &mut self.interceptor_state
     }
@@ -582,14 +582,34 @@ impl ConfigBag {
         self.sourced_get::<T::Storer>()
     }
 
-    /// Return a mutable reference to `T` if it is stored in the top layer of the bag
+    /// Return a mutable reference to `T` if found within the interceptor state.
+    ///
+    /// This method does not search the tail of the config bag (i.e., the collection of frozen layers).
+    ///
+    /// If the caller is unsure whether `T` exists in the interceptor state,
+    /// consider using [`Self::get_mut`] instead, which requires `T` to implement `Clone`, however.
+    pub fn get_mut_from_interceptor_state<T>(&mut self) -> Option<&mut T>
+    where
+        T: Storable<Storer = StoreReplace<T>> + Send + Sync + Debug + 'static,
+    {
+        match self.interceptor_state.get_mut::<StoreReplace<T>>() {
+            Some(Value::ExplicitlyUnset(_)) => None,
+            Some(Value::Set(t)) => Some(t),
+            None => None,
+        }
+    }
+
+    /// Return a mutable reference to `T` if found within the config bag
+    ///
+    /// This method requires `T` to implement `Clone` because, if the requested item is found in the tail of the config bag,
+    /// it will be cloned and moved to the head (i.e., the interceptor state).
+    ///
+    /// If the caller is certain that `T` already exists in the interceptor state,
+    /// consider using [`Self::get_mut_from_interceptor_state`] instead, which does not require `T` to be `Clone`.
     pub fn get_mut<T>(&mut self) -> Option<&mut T>
     where
         T: Storable<Storer = StoreReplace<T>> + Send + Sync + Debug + Clone + 'static,
     {
-        // this code looks weird to satisfy the borrow checker—we can't keep the result of `get_mut`
-        // alive (even in a returned branch) and then call `store_put`. So: drop the borrow immediately
-        // store, the value, then pull it right back
         if self
             .interceptor_state
             .get_mut::<StoreReplace<T>>()
@@ -600,17 +620,8 @@ impl ConfigBag {
                 None => return None,
             };
             self.interceptor_state.store_put(new_item);
-            self.get_mut()
-        } else if matches!(
-            self.interceptor_state.get::<StoreReplace<T>>(),
-            Some(Value::ExplicitlyUnset(_))
-        ) {
-            None
-        } else if let Some(Value::Set(t)) = self.interceptor_state.get_mut::<StoreReplace<T>>() {
-            Some(t)
-        } else {
-            unreachable!()
         }
+        self.get_mut_from_interceptor_state()
     }
 
     /// Returns a mutable reference to `T` if it is stored in the top layer of the bag
@@ -979,6 +990,39 @@ mod test {
         // if it was unset, we can't clone the current one, that would be wrong
         assert_eq!(bag.get_mut::<Foo>(), None);
         assert_eq!(bag.get_mut_or_default::<Foo>(), &Foo(0));
+    }
+
+    #[test]
+    fn get_mut_from_interceptor_state() {
+        // excludes `Clone` to verify `get_mut_from_interceptor_state` works with types without the `Clone` trait
+        #[derive(Debug, PartialEq, Eq, Default)]
+        struct Foo(usize);
+        impl Storable for Foo {
+            type Storer = StoreReplace<Self>;
+        }
+
+        #[derive(Clone, Debug, PartialEq, Eq, Default)]
+        struct Bar(usize);
+        impl Storable for Bar {
+            type Storer = StoreReplace<Self>;
+        }
+
+        let mut bag = ConfigBag::base();
+        assert!(bag.get_mut_from_interceptor_state::<Foo>().is_none());
+
+        bag.interceptor_state().store_put(Foo(1));
+        assert_eq!(
+            bag.get_mut_from_interceptor_state::<Foo>(),
+            Some(&mut Foo(1))
+        );
+
+        // `Bar` is stored in the tail of the config bag.
+        let mut layer = Layer::new("test");
+        layer.store_put(Bar(1));
+        bag.push_layer(layer);
+
+        // the method under test should not find `Bar`, as it does not reside in the interceptor state.
+        assert!(bag.get_mut_from_interceptor_state::<Bar>().is_none());
     }
 
     #[test]

@@ -7,7 +7,7 @@ edition = "2021"
 publish = false
 
 [dependencies]
-aws-config= { version = "1.6.1", path = "../../../sdk/aws-config", features = ["behavior-version-latest"] }
+aws-config= { version = "1.6.2", path = "../../../sdk/aws-config", features = ["behavior-version-latest"] }
 aws-sdk-mediapackage= { version = "1.65.0", path = "../../../sdk/mediapackage" }
 
 [dependencies.tokio]

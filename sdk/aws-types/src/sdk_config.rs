@@ -11,6 +11,7 @@
 
 use crate::app_name::AppName;
 use crate::docs_for;
+use crate::endpoint_config::AccountIdEndpointMode;
 use crate::origin::Origin;
 use crate::region::Region;
 use crate::service_config::LoadServiceConfig;
@@ -70,6 +71,17 @@ This is useful for request bodies because, for small request bodies, compression
 **Only some services support request compression.** For services
 that don't support request compression, this setting does nothing.
 " };
+        (account_id_endpoint_mode) => {
+"Controls the account ID-based routing behavior.
+
+By default, the routing behavior is set to `preferred`.
+Customers can adjust this setting to other values to switch between different routing patterns or temporarily disable the feature.
+
+See the developer guide on [account-based endpoints](https://docs.aws.amazon.com/sdkref/latest/guide/feature-account-endpoints.html)
+for more information.
+
+For services that do not use the account-based endpoints, this setting does nothing.
+" };
     }
 }
 
@@ -81,6 +93,7 @@ pub struct SdkConfig {
     credentials_provider: Option<SharedCredentialsProvider>,
     token_provider: Option<SharedTokenProvider>,
     region: Option<Region>,
+    account_id_endpoint_mode: Option<AccountIdEndpointMode>,
     endpoint_url: Option<String>,
     retry_config: Option<RetryConfig>,
     sleep_impl: Option<SharedAsyncSleep>,
@@ -111,6 +124,7 @@ pub struct Builder {
     credentials_provider: Option<SharedCredentialsProvider>,
     token_provider: Option<SharedTokenProvider>,
     region: Option<Region>,
+    account_id_endpoint_mode: Option<AccountIdEndpointMode>,
     endpoint_url: Option<String>,
     retry_config: Option<RetryConfig>,
     sleep_impl: Option<SharedAsyncSleep>,
@@ -161,6 +175,24 @@ impl Builder {
     /// ```
     pub fn set_region(&mut self, region: impl Into<Option<Region>>) -> &mut Self {
         self.region = region.into();
+        self
+    }
+
+    #[doc = docs_for!(account_id_endpoint_mode)]
+    pub fn account_id_endpoint_mode(
+        mut self,
+        account_id_endpoint_mode: AccountIdEndpointMode,
+    ) -> Self {
+        self.set_account_id_endpoint_mode(Some(account_id_endpoint_mode));
+        self
+    }
+
+    #[doc = docs_for!(account_id_endpoint_mode)]
+    pub fn set_account_id_endpoint_mode(
+        &mut self,
+        account_id_endpoint_mode: Option<AccountIdEndpointMode>,
+    ) -> &mut Self {
+        self.account_id_endpoint_mode = account_id_endpoint_mode;
         self
     }
 
@@ -761,6 +793,7 @@ impl Builder {
             credentials_provider: self.credentials_provider,
             token_provider: self.token_provider,
             region: self.region,
+            account_id_endpoint_mode: self.account_id_endpoint_mode,
             endpoint_url: self.endpoint_url,
             retry_config: self.retry_config,
             sleep_impl: self.sleep_impl,
@@ -856,6 +889,11 @@ impl SdkConfig {
     /// Configured region
     pub fn region(&self) -> Option<&Region> {
         self.region.as_ref()
+    }
+
+    /// Configured account ID endpoint mode
+    pub fn account_id_endpoint_mode(&self) -> Option<&AccountIdEndpointMode> {
+        self.account_id_endpoint_mode.as_ref()
     }
 
     /// Configured endpoint URL
@@ -986,6 +1024,7 @@ impl SdkConfig {
             credentials_provider: self.credentials_provider,
             token_provider: self.token_provider,
             region: self.region,
+            account_id_endpoint_mode: self.account_id_endpoint_mode,
             endpoint_url: self.endpoint_url,
             retry_config: self.retry_config,
             sleep_impl: self.sleep_impl,

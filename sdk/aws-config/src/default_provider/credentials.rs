@@ -278,6 +278,7 @@ mod test {
     make_test!(web_identity_token_profile);
     make_test!(profile_name);
     make_test!(profile_overrides_web_identity);
+    make_test!(environment_variables);
     make_test!(environment_variables_blank);
     make_test!(imds_token_fail);
 
@@ -315,6 +316,12 @@ mod test {
     // TODO(https://github.com/awslabs/aws-sdk-rust/issues/1117) This test is disabled on Windows because it uses Unix-style paths
     #[cfg(all(feature = "sso", not(windows)))]
     make_test!(sso_no_token_file);
+
+    #[cfg(feature = "sso")]
+    make_test!(sso_server_error, builder: |config| {
+        // disable retry to simplify traffic recording
+        config.with_retry_config(crate::retry::RetryConfig::disabled())
+    });
 
     #[cfg(feature = "sso")]
     make_test!(e2e_fips_and_dual_stack_sso);

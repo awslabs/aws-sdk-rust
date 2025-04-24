@@ -1,0 +1,57 @@
+{
+  "events": [
+    {
+      "connection_id": 0,
+      "action": {
+        "Request": {
+          "request": {
+            "uri": "https://portal.sso.us-east-2.amazonaws.com/federation/credentials?account_id=123456789&role_name=MySsoRole",
+            "headers": {
+              "x-amz-sso_bearer_token": [
+                "a-token"
+              ],
+              "Host": [
+                "portal.sso.us-east-2.amazonaws.com"
+              ]
+            },
+            "method": "GET"
+          }
+        }
+      }
+    },
+    {
+      "connection_id": 0,
+      "action": {
+        "Eof": {
+          "ok": true,
+          "direction": "Request"
+        }
+      }
+    },
+    {
+      "connection_id": 0,
+      "action": {
+        "Response": {
+          "response": {
+            "Ok": {
+              "status": 503,
+              "version": "HTTP/1.1",
+              "headers": {}
+            }
+          }
+        }
+      }
+  },
+    {
+      "connection_id": 0,
+      "action": {
+        "Eof": {
+          "ok": true,
+          "direction": "Response"
+        }
+      }
+    }
+  ],
+  "docs": "Server error prevents credentials from being loaded",
+  "version": "V0"
+}

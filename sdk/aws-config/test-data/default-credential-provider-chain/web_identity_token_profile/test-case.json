@@ -6,6 +6,7 @@
       "access_key_id": "ASIARABCDEFGHIJKLMNOP",
       "secret_access_key": "TESTSECRET",
       "session_token": "TESTSESSIONTOKEN",
+      "account_id": "123456789012",
       "expiry": 1629233704
     }
   }

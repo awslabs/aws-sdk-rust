@@ -1,0 +1,11 @@
+{
+    "name": "environment_variables",
+    "docs": "credentials are sourced from environment",
+    "result": {
+        "Ok": {
+            "access_key_id": "foo",
+            "secret_access_key": "bar",
+            "account_id": "123456789001"
+        }
+    }
+}

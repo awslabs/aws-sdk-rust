@@ -3,7 +3,6 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-use self::auth::orchestrate_auth;
 use crate::client::interceptors::Interceptors;
 use crate::client::orchestrator::http::{log_response_body, read_body};
 use crate::client::timeout::{MaybeTimeout, MaybeTimeoutConfig, TimeoutKind};
@@ -11,6 +10,7 @@ use crate::client::{
     http::body::minimum_throughput::MaybeUploadThroughputCheckFuture,
     orchestrator::endpoints::orchestrate_endpoint,
 };
+use auth::{resolve_identity, sign_request};
 use aws_smithy_async::rt::sleep::AsyncSleep;
 use aws_smithy_runtime_api::box_error::BoxError;
 use aws_smithy_runtime_api::client::http::{HttpClient, HttpConnector, HttpConnectorSettings};
@@ -31,10 +31,12 @@ use aws_smithy_types::body::SdkBody;
 use aws_smithy_types::byte_stream::ByteStream;
 use aws_smithy_types::config_bag::ConfigBag;
 use aws_smithy_types::timeout::{MergeTimeoutConfig, TimeoutConfig};
+use endpoints::apply_endpoint;
 use std::mem;
 use tracing::{debug, debug_span, instrument, trace, Instrument};
 
 mod auth;
+pub use auth::AuthSchemeAndEndpointOrchestrationV2;
 
 /// Defines types that implement a trait for endpoint resolution
 pub mod endpoints;
@@ -354,17 +356,30 @@ async fn try_attempt(
 ) {
     run_interceptors!(halt_on_err: read_before_attempt(ctx, runtime_components, cfg));
 
-    halt_on_err!([ctx] => orchestrate_endpoint(ctx, runtime_components, cfg)
-                            .instrument(debug_span!("orchestrate_endpoint"))
-                            .await
-                            .map_err(OrchestratorError::other));
+    let (scheme_id, identity, endpoint) = halt_on_err!([ctx] => resolve_identity(runtime_components, cfg).await.map_err(OrchestratorError::other));
+
+    match endpoint {
+        Some(endpoint) => {
+            // This branch is for backward compatibility when `AuthSchemeAndEndpointOrchestrationV2` is not present in the config bag.
+            // `resolve_identity` internally resolved an endpoint to determine the most suitable scheme ID, and returned that endpoint.
+            halt_on_err!([ctx] => apply_endpoint(&endpoint, ctx, cfg).map_err(OrchestratorError::other));
+            // Make the endpoint config available to interceptors
+            cfg.interceptor_state().store_put(endpoint);
+        }
+        None => {
+            halt_on_err!([ctx] => orchestrate_endpoint(identity.clone(), ctx, runtime_components, cfg)
+				    .instrument(debug_span!("orchestrate_endpoint"))
+				    .await
+				    .map_err(OrchestratorError::other));
+        }
+    }
 
     run_interceptors!(halt_on_err: {
         modify_before_signing(ctx, runtime_components, cfg);
         read_before_signing(ctx, runtime_components, cfg);
     });
 
-    halt_on_err!([ctx] => orchestrate_auth(ctx, runtime_components, cfg).await.map_err(OrchestratorError::other));
+    halt_on_err!([ctx] => sign_request(&scheme_id, &identity, ctx, runtime_components, cfg).map_err(OrchestratorError::other));
 
     run_interceptors!(halt_on_err: {
         read_after_signing(ctx, runtime_components, cfg);

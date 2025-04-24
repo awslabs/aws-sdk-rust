@@ -9,7 +9,7 @@ publish = false
 
 [dependencies]
 tracing = "0.1.37"
-aws-config= { version = "1.6.1", path = "../../../../sdk/aws-config" }
+aws-config= { version = "1.6.2", path = "../../../../sdk/aws-config" }
 aws-sdk-dynamodb= { version = "1.72.0", path = "../../../../sdk/dynamodb" }
 aws-sdk-rekognition= { version = "1.68.0", path = "../../../../sdk/rekognition" }
 

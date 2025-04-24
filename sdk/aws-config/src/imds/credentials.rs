@@ -234,9 +234,12 @@ impl ImdsCredentialsProvider {
                 access_key_id,
                 secret_access_key,
                 session_token,
+                account_id,
                 expiration,
                 ..
             })) => {
+                // TODO(IMDSv2.X): Use `account_id` once the design is finalized
+                let _ = account_id;
                 let expiration = self.maybe_extend_expiration(expiration);
                 let creds = Credentials::new(
                     access_key_id,

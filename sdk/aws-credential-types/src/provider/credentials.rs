@@ -183,7 +183,11 @@ impl ResolveIdentity for SharedCredentialsProvider {
 
 #[cfg(test)]
 mod tests {
-    use aws_smithy_runtime_api::client::identity::SharedIdentityResolver;
+    use aws_smithy_runtime_api::client::{
+        identity::SharedIdentityResolver, runtime_components::RuntimeComponentsBuilder,
+    };
+
+    use crate::attributes::AccountId;
 
     use super::*;
 
@@ -198,5 +202,26 @@ mod tests {
         let identity_partition = identity_resolver.cache_partition();
 
         assert!(partition.unwrap() == identity_partition);
+    }
+
+    #[tokio::test]
+    async fn account_id_can_be_retrieved_from_identity() {
+        let expected_account_id = "012345678901";
+        let creds = Credentials::builder()
+            .access_key_id("AKID")
+            .secret_access_key("SECRET")
+            .account_id(expected_account_id)
+            .provider_name("test")
+            .build();
+        let provider = SharedCredentialsProvider::new(creds);
+        let identity = provider
+            .resolve_identity(
+                &RuntimeComponentsBuilder::for_tests().build().unwrap(),
+                &ConfigBag::base(),
+            )
+            .await
+            .unwrap();
+        let actual = identity.property::<AccountId>().unwrap();
+        assert_eq!(expected_account_id, actual.as_str());
     }
 }

@@ -8281,6 +8281,40 @@ where
         };
         ep
     }
+    fn finalize_params<'a>(
+        &'a self,
+        params: &'a mut ::aws_smithy_runtime_api::client::endpoint::EndpointResolverParams,
+    ) -> ::std::result::Result<(), ::aws_smithy_runtime_api::box_error::BoxError> {
+        // This is required to satisfy the borrow checker. By obtaining an `Option<Identity>`,
+        // `params` is no longer mutably borrowed in the match expression below.
+        // Furthermore, by using `std::mem::replace` with an empty `Identity`, we avoid
+        // leaving the sensitive `Identity` inside `params` within `EndpointResolverParams`.
+        let identity = params
+            .get_property_mut::<::aws_smithy_runtime_api::client::identity::Identity>()
+            .map(|id| {
+                std::mem::replace(
+                    id,
+                    ::aws_smithy_runtime_api::client::identity::Identity::new((), ::std::option::Option::None),
+                )
+            });
+        match (
+            params.get_mut::<crate::config::endpoint::Params>(),
+            identity
+                .as_ref()
+                .and_then(|id| id.property::<::aws_credential_types::attributes::AccountId>()),
+        ) {
+            (::std::option::Option::Some(concrete_params), ::std::option::Option::Some(account_id)) => {
+                concrete_params.account_id = ::std::option::Option::Some(account_id.as_str().to_string());
+            }
+            (::std::option::Option::Some(_), ::std::option::Option::None) => {
+                // No account ID; nothing to do.
+            }
+            (::std::option::Option::None, _) => {
+                return ::std::result::Result::Err("service-specific endpoint params was not present".into());
+            }
+        }
+        ::std::result::Result::Ok(())
+    }
 }
 
 /// The default endpoint resolver

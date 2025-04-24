@@ -11,7 +11,7 @@ use crate::client::orchestrator::HttpRequest;
 use crate::client::runtime_components::sealed::ValidateConfig;
 use crate::client::runtime_components::{GetIdentityResolver, RuntimeComponents};
 use crate::impl_shared_conversions;
-use aws_smithy_types::config_bag::{ConfigBag, Storable, StoreReplace};
+use aws_smithy_types::config_bag::{ConfigBag, FrozenLayer, Storable, StoreReplace};
 use aws_smithy_types::type_erasure::TypeErasedBox;
 use aws_smithy_types::Document;
 use std::borrow::Cow;
@@ -25,31 +25,161 @@ pub mod http;
 /// Static auth scheme option resolver.
 pub mod static_resolver;
 
+/// The output type from the [`ResolveAuthSchemeOptions::resolve_auth_scheme_options_v2`]
+///
+/// The resolver returns a list of these, in the order the auth scheme resolver wishes to use them.
+#[derive(Clone, Debug)]
+pub struct AuthSchemeOption {
+    scheme_id: AuthSchemeId,
+    properties: Option<FrozenLayer>,
+}
+
+impl AuthSchemeOption {
+    /// Builder struct for [`AuthSchemeOption`]
+    pub fn builder() -> AuthSchemeOptionBuilder {
+        AuthSchemeOptionBuilder::default()
+    }
+
+    /// Returns [`AuthSchemeId`], the ID of the scheme
+    pub fn scheme_id(&self) -> &AuthSchemeId {
+        &self.scheme_id
+    }
+
+    /// Returns optional properties for identity resolution or signing
+    ///
+    /// This config layer is applied to the [`ConfigBag`] to ensure the information is
+    /// available during both the identity resolution and signature generation processes.
+    pub fn properties(&self) -> Option<FrozenLayer> {
+        self.properties.clone()
+    }
+}
+
+/// Builder struct for [`AuthSchemeOption`]
+#[derive(Debug, Default)]
+pub struct AuthSchemeOptionBuilder {
+    scheme_id: Option<AuthSchemeId>,
+    properties: Option<FrozenLayer>,
+}
+
+impl AuthSchemeOptionBuilder {
+    /// Sets [`AuthSchemeId`] for the builder
+    pub fn scheme_id(mut self, auth_scheme_id: AuthSchemeId) -> Self {
+        self.set_scheme_id(Some(auth_scheme_id));
+        self
+    }
+
+    /// Sets [`AuthSchemeId`] for the builder
+    pub fn set_scheme_id(&mut self, auth_scheme_id: Option<AuthSchemeId>) {
+        self.scheme_id = auth_scheme_id;
+    }
+
+    /// Sets the properties for the builder
+    pub fn properties(mut self, properties: FrozenLayer) -> Self {
+        self.set_properties(Some(properties));
+        self
+    }
+
+    /// Sets the properties for the builder
+    pub fn set_properties(&mut self, properties: Option<FrozenLayer>) {
+        self.properties = properties;
+    }
+
+    /// Builds an [`AuthSchemeOption`], otherwise returns an [`AuthSchemeOptionBuilderError`] in the case of error
+    pub fn build(self) -> Result<AuthSchemeOption, AuthSchemeOptionBuilderError> {
+        let scheme_id = self
+            .scheme_id
+            .ok_or(ErrorKind::MissingRequiredField("auth_scheme_id"))?;
+        Ok(AuthSchemeOption {
+            scheme_id,
+            properties: self.properties,
+        })
+    }
+}
+
+#[derive(Debug)]
+enum ErrorKind {
+    MissingRequiredField(&'static str),
+}
+
+impl From<ErrorKind> for AuthSchemeOptionBuilderError {
+    fn from(kind: ErrorKind) -> Self {
+        Self { kind }
+    }
+}
+
+/// The error type returned when failing to build [`AuthSchemeOption`] from the builder
+#[derive(Debug)]
+pub struct AuthSchemeOptionBuilderError {
+    kind: ErrorKind,
+}
+
+impl fmt::Display for AuthSchemeOptionBuilderError {
+    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
+        match self.kind {
+            ErrorKind::MissingRequiredField(name) => {
+                write!(f, "`{name}` is required")
+            }
+        }
+    }
+}
+
+impl std::error::Error for AuthSchemeOptionBuilderError {}
+
 /// New type around an auth scheme ID.
 ///
 /// Each auth scheme must have a unique string identifier associated with it,
 /// which is used to refer to auth schemes by the auth scheme option resolver, and
 /// also used to select an identity resolver to use.
-#[derive(Copy, Clone, Debug, Eq, PartialEq, Hash, Ord, PartialOrd)]
+#[derive(Clone, Debug, Eq, PartialEq, Hash, Ord, PartialOrd)]
 pub struct AuthSchemeId {
-    scheme_id: &'static str,
+    scheme_id: Cow<'static, str>,
+}
+
+// See: https://doc.rust-lang.org/std/convert/trait.AsRef.html#reflexivity
+impl AsRef<AuthSchemeId> for AuthSchemeId {
+    fn as_ref(&self) -> &AuthSchemeId {
+        self
+    }
 }
 
 impl AuthSchemeId {
     /// Creates a new auth scheme ID.
     pub const fn new(scheme_id: &'static str) -> Self {
-        Self { scheme_id }
+        Self {
+            scheme_id: Cow::Borrowed(scheme_id),
+        }
     }
 
     /// Returns the string equivalent of this auth scheme ID.
+    #[deprecated(
+        note = "This function is no longer functional. Use `inner` instead",
+        since = "1.8.0"
+    )]
     pub const fn as_str(&self) -> &'static str {
-        self.scheme_id
+        match self.scheme_id {
+            Cow::Borrowed(val) => val,
+            Cow::Owned(_) => {
+                // cannot obtain `&'static str` from `String` unless we use `Box::leak`
+                ""
+            }
+        }
+    }
+
+    /// Returns the string equivalent of this auth scheme ID.
+    pub fn inner(&self) -> &str {
+        &self.scheme_id
     }
 }
 
 impl From<&'static str> for AuthSchemeId {
     fn from(scheme_id: &'static str) -> Self {
         Self::new(scheme_id)
+    }
+}
+
+impl From<Cow<'static, str>> for AuthSchemeId {
+    fn from(scheme_id: Cow<'static, str>) -> Self {
+        Self { scheme_id }
     }
 }
 
@@ -81,6 +211,11 @@ impl Storable for AuthSchemeOptionResolverParams {
     type Storer = StoreReplace<Self>;
 }
 
+new_type_future! {
+    #[doc = "Future for [`ResolveAuthSchemeOptions::resolve_auth_scheme_options_v2`]."]
+    pub struct AuthSchemeOptionsFuture<'a, Vec<AuthSchemeOption>, BoxError>;
+}
+
 /// Resolver for auth scheme options.
 ///
 /// The orchestrator needs to select an auth scheme to sign requests with, and potentially
@@ -95,11 +230,41 @@ impl Storable for AuthSchemeOptionResolverParams {
 /// or it can be a complex code generated resolver that incorporates parameters from both
 /// the model and the resolved endpoint.
 pub trait ResolveAuthSchemeOptions: Send + Sync + fmt::Debug {
+    #[deprecated(
+        note = "This method is deprecated, use `resolve_auth_scheme_options_v2` instead.",
+        since = "1.8.0"
+    )]
     /// Returns a list of available auth scheme options to choose from.
     fn resolve_auth_scheme_options(
         &self,
-        params: &AuthSchemeOptionResolverParams,
-    ) -> Result<Cow<'_, [AuthSchemeId]>, BoxError>;
+        _params: &AuthSchemeOptionResolverParams,
+    ) -> Result<Cow<'_, [AuthSchemeId]>, BoxError> {
+        unimplemented!("This method is deprecated, use `resolve_auth_scheme_options_v2` instead.");
+    }
+
+    #[allow(deprecated)]
+    /// Returns a list of available auth scheme options to choose from.
+    fn resolve_auth_scheme_options_v2<'a>(
+        &'a self,
+        params: &'a AuthSchemeOptionResolverParams,
+        _cfg: &'a ConfigBag,
+        _runtime_components: &'a RuntimeComponents,
+    ) -> AuthSchemeOptionsFuture<'a> {
+        AuthSchemeOptionsFuture::ready({
+            self.resolve_auth_scheme_options(params).map(|options| {
+                options
+                    .iter()
+                    .cloned()
+                    .map(|scheme_id| {
+                        AuthSchemeOption::builder()
+                            .scheme_id(scheme_id)
+                            .build()
+                            .expect("required fields set")
+                    })
+                    .collect::<Vec<_>>()
+            })
+        })
+    }
 }
 
 /// A shared auth scheme option resolver.
@@ -114,11 +279,21 @@ impl SharedAuthSchemeOptionResolver {
 }
 
 impl ResolveAuthSchemeOptions for SharedAuthSchemeOptionResolver {
+    #[allow(deprecated)]
     fn resolve_auth_scheme_options(
         &self,
         params: &AuthSchemeOptionResolverParams,
     ) -> Result<Cow<'_, [AuthSchemeId]>, BoxError> {
         (*self.0).resolve_auth_scheme_options(params)
+    }
+
+    fn resolve_auth_scheme_options_v2<'a>(
+        &'a self,
+        params: &'a AuthSchemeOptionResolverParams,
+        cfg: &'a ConfigBag,
+        runtime_components: &'a RuntimeComponents,
+    ) -> AuthSchemeOptionsFuture<'a> {
+        (*self.0).resolve_auth_scheme_options_v2(params, cfg, runtime_components)
     }
 }
 

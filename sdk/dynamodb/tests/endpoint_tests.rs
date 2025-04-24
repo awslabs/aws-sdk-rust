@@ -20,8 +20,12 @@ async fn operation_input_test_list_tables_1() {
         let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
         let builder = builder.use_fips(true);
         let builder = builder.use_dual_stack(true);
-        let builder = builder.account_id("111111111111");
-        let builder = builder.account_id_endpoint_mode("preferred");
+        let builder = builder.credentials_provider(::aws_credential_types::provider::SharedCredentialsProvider::new(
+            ::aws_credential_types::CredentialsBuilder::for_tests().account_id("111111111111").build(),
+        ));
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("preferred").expect("should parse"),
+        );
         builder.build()
     };
     let client = aws_sdk_dynamodb::Client::from_conf(conf);
@@ -55,8 +59,12 @@ async fn operation_input_test_list_tables_2() {
         let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
         let builder = builder.use_fips(true);
         let builder = builder.use_dual_stack(false);
-        let builder = builder.account_id("111111111111");
-        let builder = builder.account_id_endpoint_mode("preferred");
+        let builder = builder.credentials_provider(::aws_credential_types::provider::SharedCredentialsProvider::new(
+            ::aws_credential_types::CredentialsBuilder::for_tests().account_id("111111111111").build(),
+        ));
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("preferred").expect("should parse"),
+        );
         builder.build()
     };
     let client = aws_sdk_dynamodb::Client::from_conf(conf);
@@ -90,8 +98,12 @@ async fn operation_input_test_list_tables_3() {
         let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
         let builder = builder.use_fips(false);
         let builder = builder.use_dual_stack(true);
-        let builder = builder.account_id("111111111111");
-        let builder = builder.account_id_endpoint_mode("preferred");
+        let builder = builder.credentials_provider(::aws_credential_types::provider::SharedCredentialsProvider::new(
+            ::aws_credential_types::CredentialsBuilder::for_tests().account_id("111111111111").build(),
+        ));
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("preferred").expect("should parse"),
+        );
         builder.build()
     };
     let client = aws_sdk_dynamodb::Client::from_conf(conf);
@@ -125,8 +137,12 @@ async fn operation_input_test_list_tables_4() {
         let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
         let builder = builder.use_fips(false);
         let builder = builder.use_dual_stack(false);
-        let builder = builder.account_id("111111111111");
-        let builder = builder.account_id_endpoint_mode("preferred");
+        let builder = builder.credentials_provider(::aws_credential_types::provider::SharedCredentialsProvider::new(
+            ::aws_credential_types::CredentialsBuilder::for_tests().account_id("111111111111").build(),
+        ));
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("preferred").expect("should parse"),
+        );
         builder.build()
     };
     let client = aws_sdk_dynamodb::Client::from_conf(conf);
@@ -160,8 +176,12 @@ async fn operation_input_test_batch_get_item_5() {
         let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
         let builder = builder.use_fips(false);
         let builder = builder.use_dual_stack(false);
-        let builder = builder.account_id("111111111111");
-        let builder = builder.account_id_endpoint_mode("preferred");
+        let builder = builder.credentials_provider(::aws_credential_types::provider::SharedCredentialsProvider::new(
+            ::aws_credential_types::CredentialsBuilder::for_tests().account_id("111111111111").build(),
+        ));
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("preferred").expect("should parse"),
+        );
         builder.build()
     };
     let client = aws_sdk_dynamodb::Client::from_conf(conf);
@@ -215,8 +235,12 @@ async fn operation_input_test_list_tables_6() {
         let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
         let builder = builder.use_fips(false);
         let builder = builder.use_dual_stack(false);
-        let builder = builder.account_id("");
-        let builder = builder.account_id_endpoint_mode("preferred");
+        let builder = builder.credentials_provider(::aws_credential_types::provider::SharedCredentialsProvider::new(
+            ::aws_credential_types::CredentialsBuilder::for_tests().account_id("").build(),
+        ));
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("preferred").expect("should parse"),
+        );
         builder.build()
     };
     let client = aws_sdk_dynamodb::Client::from_conf(conf);
@@ -249,7 +273,9 @@ async fn operation_input_test_describe_table_7() {
         let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
         let builder = builder.use_fips(true);
         let builder = builder.use_dual_stack(true);
-        let builder = builder.account_id_endpoint_mode("preferred");
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("preferred").expect("should parse"),
+        );
         builder.build()
     };
     let client = aws_sdk_dynamodb::Client::from_conf(conf);
@@ -290,7 +316,9 @@ async fn operation_input_test_describe_table_8() {
         let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
         let builder = builder.use_fips(true);
         let builder = builder.use_dual_stack(false);
-        let builder = builder.account_id_endpoint_mode("preferred");
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("preferred").expect("should parse"),
+        );
         builder.build()
     };
     let client = aws_sdk_dynamodb::Client::from_conf(conf);
@@ -331,7 +359,9 @@ async fn operation_input_test_describe_table_9() {
         let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
         let builder = builder.use_fips(false);
         let builder = builder.use_dual_stack(true);
-        let builder = builder.account_id_endpoint_mode("preferred");
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("preferred").expect("should parse"),
+        );
         builder.build()
     };
     let client = aws_sdk_dynamodb::Client::from_conf(conf);
@@ -372,7 +402,9 @@ async fn operation_input_test_describe_table_10() {
         let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
         let builder = builder.use_fips(false);
         let builder = builder.use_dual_stack(false);
-        let builder = builder.account_id_endpoint_mode("preferred");
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("preferred").expect("should parse"),
+        );
         builder.build()
     };
     let client = aws_sdk_dynamodb::Client::from_conf(conf);
@@ -413,7 +445,9 @@ async fn operation_input_test_describe_table_11() {
         let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
         let builder = builder.use_fips(false);
         let builder = builder.use_dual_stack(false);
-        let builder = builder.account_id_endpoint_mode("preferred");
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("preferred").expect("should parse"),
+        );
         builder.build()
     };
     let client = aws_sdk_dynamodb::Client::from_conf(conf);
@@ -454,7 +488,9 @@ async fn operation_input_test_describe_table_12() {
         let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
         let builder = builder.use_fips(false);
         let builder = builder.use_dual_stack(false);
-        let builder = builder.account_id_endpoint_mode("preferred");
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("preferred").expect("should parse"),
+        );
         builder.build()
     };
     let client = aws_sdk_dynamodb::Client::from_conf(conf);
@@ -495,7 +531,9 @@ async fn operation_input_test_batch_get_item_13() {
         let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
         let builder = builder.use_fips(true);
         let builder = builder.use_dual_stack(true);
-        let builder = builder.account_id_endpoint_mode("preferred");
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("preferred").expect("should parse"),
+        );
         builder.build()
     };
     let client = aws_sdk_dynamodb::Client::from_conf(conf);
@@ -548,7 +586,9 @@ async fn operation_input_test_batch_get_item_14() {
         let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
         let builder = builder.use_fips(true);
         let builder = builder.use_dual_stack(false);
-        let builder = builder.account_id_endpoint_mode("preferred");
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("preferred").expect("should parse"),
+        );
         builder.build()
     };
     let client = aws_sdk_dynamodb::Client::from_conf(conf);
@@ -601,7 +641,9 @@ async fn operation_input_test_batch_get_item_15() {
         let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
         let builder = builder.use_fips(false);
         let builder = builder.use_dual_stack(true);
-        let builder = builder.account_id_endpoint_mode("preferred");
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("preferred").expect("should parse"),
+        );
         builder.build()
     };
     let client = aws_sdk_dynamodb::Client::from_conf(conf);
@@ -654,7 +696,9 @@ async fn operation_input_test_batch_get_item_16() {
         let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
         let builder = builder.use_fips(false);
         let builder = builder.use_dual_stack(false);
-        let builder = builder.account_id_endpoint_mode("preferred");
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("preferred").expect("should parse"),
+        );
         builder.build()
     };
     let client = aws_sdk_dynamodb::Client::from_conf(conf);
@@ -708,8 +752,12 @@ async fn operation_input_test_list_tables_17() {
         let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
         let builder = builder.use_fips(true);
         let builder = builder.use_dual_stack(true);
-        let builder = builder.account_id("111111111111");
-        let builder = builder.account_id_endpoint_mode("disabled");
+        let builder = builder.credentials_provider(::aws_credential_types::provider::SharedCredentialsProvider::new(
+            ::aws_credential_types::CredentialsBuilder::for_tests().account_id("111111111111").build(),
+        ));
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("disabled").expect("should parse"),
+        );
         builder.build()
     };
     let client = aws_sdk_dynamodb::Client::from_conf(conf);
@@ -743,8 +791,12 @@ async fn operation_input_test_list_tables_18() {
         let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
         let builder = builder.use_fips(true);
         let builder = builder.use_dual_stack(false);
-        let builder = builder.account_id("111111111111");
-        let builder = builder.account_id_endpoint_mode("disabled");
+        let builder = builder.credentials_provider(::aws_credential_types::provider::SharedCredentialsProvider::new(
+            ::aws_credential_types::CredentialsBuilder::for_tests().account_id("111111111111").build(),
+        ));
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("disabled").expect("should parse"),
+        );
         builder.build()
     };
     let client = aws_sdk_dynamodb::Client::from_conf(conf);
@@ -778,8 +830,12 @@ async fn operation_input_test_list_tables_19() {
         let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
         let builder = builder.use_fips(false);
         let builder = builder.use_dual_stack(true);
-        let builder = builder.account_id("111111111111");
-        let builder = builder.account_id_endpoint_mode("disabled");
+        let builder = builder.credentials_provider(::aws_credential_types::provider::SharedCredentialsProvider::new(
+            ::aws_credential_types::CredentialsBuilder::for_tests().account_id("111111111111").build(),
+        ));
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("disabled").expect("should parse"),
+        );
         builder.build()
     };
     let client = aws_sdk_dynamodb::Client::from_conf(conf);
@@ -813,8 +869,12 @@ async fn operation_input_test_list_tables_20() {
         let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
         let builder = builder.use_fips(false);
         let builder = builder.use_dual_stack(false);
-        let builder = builder.account_id("111111111111");
-        let builder = builder.account_id_endpoint_mode("disabled");
+        let builder = builder.credentials_provider(::aws_credential_types::provider::SharedCredentialsProvider::new(
+            ::aws_credential_types::CredentialsBuilder::for_tests().account_id("111111111111").build(),
+        ));
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("disabled").expect("should parse"),
+        );
         builder.build()
     };
     let client = aws_sdk_dynamodb::Client::from_conf(conf);
@@ -848,8 +908,12 @@ async fn operation_input_test_batch_get_item_21() {
         let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
         let builder = builder.use_fips(false);
         let builder = builder.use_dual_stack(false);
-        let builder = builder.account_id("111111111111");
-        let builder = builder.account_id_endpoint_mode("disabled");
+        let builder = builder.credentials_provider(::aws_credential_types::provider::SharedCredentialsProvider::new(
+            ::aws_credential_types::CredentialsBuilder::for_tests().account_id("111111111111").build(),
+        ));
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("disabled").expect("should parse"),
+        );
         builder.build()
     };
     let client = aws_sdk_dynamodb::Client::from_conf(conf);
@@ -903,8 +967,12 @@ async fn operation_input_test_list_tables_22() {
         let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
         let builder = builder.use_fips(false);
         let builder = builder.use_dual_stack(false);
-        let builder = builder.account_id("");
-        let builder = builder.account_id_endpoint_mode("disabled");
+        let builder = builder.credentials_provider(::aws_credential_types::provider::SharedCredentialsProvider::new(
+            ::aws_credential_types::CredentialsBuilder::for_tests().account_id("").build(),
+        ));
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("disabled").expect("should parse"),
+        );
         builder.build()
     };
     let client = aws_sdk_dynamodb::Client::from_conf(conf);
@@ -937,7 +1005,9 @@ async fn operation_input_test_describe_table_23() {
         let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
         let builder = builder.use_fips(true);
         let builder = builder.use_dual_stack(true);
-        let builder = builder.account_id_endpoint_mode("disabled");
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("disabled").expect("should parse"),
+        );
         builder.build()
     };
     let client = aws_sdk_dynamodb::Client::from_conf(conf);
@@ -978,7 +1048,9 @@ async fn operation_input_test_describe_table_24() {
         let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
         let builder = builder.use_fips(true);
         let builder = builder.use_dual_stack(false);
-        let builder = builder.account_id_endpoint_mode("disabled");
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("disabled").expect("should parse"),
+        );
         builder.build()
     };
     let client = aws_sdk_dynamodb::Client::from_conf(conf);
@@ -1019,7 +1091,9 @@ async fn operation_input_test_describe_table_25() {
         let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
         let builder = builder.use_fips(false);
         let builder = builder.use_dual_stack(true);
-        let builder = builder.account_id_endpoint_mode("disabled");
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("disabled").expect("should parse"),
+        );
         builder.build()
     };
     let client = aws_sdk_dynamodb::Client::from_conf(conf);
@@ -1060,7 +1134,9 @@ async fn operation_input_test_describe_table_26() {
         let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
         let builder = builder.use_fips(false);
         let builder = builder.use_dual_stack(false);
-        let builder = builder.account_id_endpoint_mode("disabled");
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("disabled").expect("should parse"),
+        );
         builder.build()
     };
     let client = aws_sdk_dynamodb::Client::from_conf(conf);
@@ -1101,7 +1177,9 @@ async fn operation_input_test_describe_table_27() {
         let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
         let builder = builder.use_fips(false);
         let builder = builder.use_dual_stack(false);
-        let builder = builder.account_id_endpoint_mode("disabled");
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("disabled").expect("should parse"),
+        );
         builder.build()
     };
     let client = aws_sdk_dynamodb::Client::from_conf(conf);
@@ -1142,7 +1220,9 @@ async fn operation_input_test_describe_table_28() {
         let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
         let builder = builder.use_fips(false);
         let builder = builder.use_dual_stack(false);
-        let builder = builder.account_id_endpoint_mode("disabled");
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("disabled").expect("should parse"),
+        );
         builder.build()
     };
     let client = aws_sdk_dynamodb::Client::from_conf(conf);
@@ -1183,7 +1263,9 @@ async fn operation_input_test_batch_get_item_29() {
         let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
         let builder = builder.use_fips(true);
         let builder = builder.use_dual_stack(true);
-        let builder = builder.account_id_endpoint_mode("disabled");
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("disabled").expect("should parse"),
+        );
         builder.build()
     };
     let client = aws_sdk_dynamodb::Client::from_conf(conf);
@@ -1236,7 +1318,9 @@ async fn operation_input_test_batch_get_item_30() {
         let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
         let builder = builder.use_fips(true);
         let builder = builder.use_dual_stack(false);
-        let builder = builder.account_id_endpoint_mode("disabled");
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("disabled").expect("should parse"),
+        );
         builder.build()
     };
     let client = aws_sdk_dynamodb::Client::from_conf(conf);
@@ -1289,7 +1373,9 @@ async fn operation_input_test_batch_get_item_31() {
         let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
         let builder = builder.use_fips(false);
         let builder = builder.use_dual_stack(true);
-        let builder = builder.account_id_endpoint_mode("disabled");
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("disabled").expect("should parse"),
+        );
         builder.build()
     };
     let client = aws_sdk_dynamodb::Client::from_conf(conf);
@@ -1342,7 +1428,9 @@ async fn operation_input_test_batch_get_item_32() {
         let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
         let builder = builder.use_fips(false);
         let builder = builder.use_dual_stack(false);
-        let builder = builder.account_id_endpoint_mode("disabled");
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("disabled").expect("should parse"),
+        );
         builder.build()
     };
     let client = aws_sdk_dynamodb::Client::from_conf(conf);
@@ -1396,8 +1484,12 @@ async fn operation_input_test_list_tables_33() {
         let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
         let builder = builder.use_fips(true);
         let builder = builder.use_dual_stack(true);
-        let builder = builder.account_id("111111111111");
-        let builder = builder.account_id_endpoint_mode("required");
+        let builder = builder.credentials_provider(::aws_credential_types::provider::SharedCredentialsProvider::new(
+            ::aws_credential_types::CredentialsBuilder::for_tests().account_id("111111111111").build(),
+        ));
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("required").expect("should parse"),
+        );
         builder.build()
     };
     let client = aws_sdk_dynamodb::Client::from_conf(conf);
@@ -1431,8 +1523,12 @@ async fn operation_input_test_list_tables_34() {
         let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
         let builder = builder.use_fips(true);
         let builder = builder.use_dual_stack(false);
-        let builder = builder.account_id("111111111111");
-        let builder = builder.account_id_endpoint_mode("required");
+        let builder = builder.credentials_provider(::aws_credential_types::provider::SharedCredentialsProvider::new(
+            ::aws_credential_types::CredentialsBuilder::for_tests().account_id("111111111111").build(),
+        ));
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("required").expect("should parse"),
+        );
         builder.build()
     };
     let client = aws_sdk_dynamodb::Client::from_conf(conf);
@@ -1466,8 +1562,12 @@ async fn operation_input_test_list_tables_35() {
         let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
         let builder = builder.use_fips(false);
         let builder = builder.use_dual_stack(true);
-        let builder = builder.account_id("111111111111");
-        let builder = builder.account_id_endpoint_mode("required");
+        let builder = builder.credentials_provider(::aws_credential_types::provider::SharedCredentialsProvider::new(
+            ::aws_credential_types::CredentialsBuilder::for_tests().account_id("111111111111").build(),
+        ));
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("required").expect("should parse"),
+        );
         builder.build()
     };
     let client = aws_sdk_dynamodb::Client::from_conf(conf);
@@ -1501,8 +1601,12 @@ async fn operation_input_test_list_tables_36() {
         let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
         let builder = builder.use_fips(false);
         let builder = builder.use_dual_stack(false);
-        let builder = builder.account_id("111111111111");
-        let builder = builder.account_id_endpoint_mode("required");
+        let builder = builder.credentials_provider(::aws_credential_types::provider::SharedCredentialsProvider::new(
+            ::aws_credential_types::CredentialsBuilder::for_tests().account_id("111111111111").build(),
+        ));
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("required").expect("should parse"),
+        );
         builder.build()
     };
     let client = aws_sdk_dynamodb::Client::from_conf(conf);
@@ -1536,8 +1640,12 @@ async fn operation_input_test_batch_get_item_37() {
         let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
         let builder = builder.use_fips(false);
         let builder = builder.use_dual_stack(false);
-        let builder = builder.account_id("111111111111");
-        let builder = builder.account_id_endpoint_mode("required");
+        let builder = builder.credentials_provider(::aws_credential_types::provider::SharedCredentialsProvider::new(
+            ::aws_credential_types::CredentialsBuilder::for_tests().account_id("111111111111").build(),
+        ));
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("required").expect("should parse"),
+        );
         builder.build()
     };
     let client = aws_sdk_dynamodb::Client::from_conf(conf);
@@ -1591,8 +1699,12 @@ async fn operation_input_test_list_tables_38() {
         let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
         let builder = builder.use_fips(false);
         let builder = builder.use_dual_stack(false);
-        let builder = builder.account_id("");
-        let builder = builder.account_id_endpoint_mode("required");
+        let builder = builder.credentials_provider(::aws_credential_types::provider::SharedCredentialsProvider::new(
+            ::aws_credential_types::CredentialsBuilder::for_tests().account_id("").build(),
+        ));
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("required").expect("should parse"),
+        );
         builder.build()
     };
     let client = aws_sdk_dynamodb::Client::from_conf(conf);
@@ -1625,7 +1737,9 @@ async fn operation_input_test_describe_table_39() {
         let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
         let builder = builder.use_fips(true);
         let builder = builder.use_dual_stack(true);
-        let builder = builder.account_id_endpoint_mode("required");
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("required").expect("should parse"),
+        );
         builder.build()
     };
     let client = aws_sdk_dynamodb::Client::from_conf(conf);
@@ -1666,7 +1780,9 @@ async fn operation_input_test_describe_table_40() {
         let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
         let builder = builder.use_fips(true);
         let builder = builder.use_dual_stack(false);
-        let builder = builder.account_id_endpoint_mode("required");
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("required").expect("should parse"),
+        );
         builder.build()
     };
     let client = aws_sdk_dynamodb::Client::from_conf(conf);
@@ -1707,7 +1823,9 @@ async fn operation_input_test_describe_table_41() {
         let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
         let builder = builder.use_fips(false);
         let builder = builder.use_dual_stack(true);
-        let builder = builder.account_id_endpoint_mode("required");
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("required").expect("should parse"),
+        );
         builder.build()
     };
     let client = aws_sdk_dynamodb::Client::from_conf(conf);
@@ -1748,7 +1866,9 @@ async fn operation_input_test_describe_table_42() {
         let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
         let builder = builder.use_fips(false);
         let builder = builder.use_dual_stack(false);
-        let builder = builder.account_id_endpoint_mode("required");
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("required").expect("should parse"),
+        );
         builder.build()
     };
     let client = aws_sdk_dynamodb::Client::from_conf(conf);
@@ -1789,7 +1909,9 @@ async fn operation_input_test_describe_table_43() {
         let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
         let builder = builder.use_fips(false);
         let builder = builder.use_dual_stack(false);
-        let builder = builder.account_id_endpoint_mode("required");
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("required").expect("should parse"),
+        );
         builder.build()
     };
     let client = aws_sdk_dynamodb::Client::from_conf(conf);
@@ -1830,7 +1952,9 @@ async fn operation_input_test_describe_table_44() {
         let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
         let builder = builder.use_fips(false);
         let builder = builder.use_dual_stack(false);
-        let builder = builder.account_id_endpoint_mode("required");
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("required").expect("should parse"),
+        );
         builder.build()
     };
     let client = aws_sdk_dynamodb::Client::from_conf(conf);
@@ -1871,7 +1995,9 @@ async fn operation_input_test_batch_get_item_45() {
         let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
         let builder = builder.use_fips(true);
         let builder = builder.use_dual_stack(true);
-        let builder = builder.account_id_endpoint_mode("required");
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("required").expect("should parse"),
+        );
         builder.build()
     };
     let client = aws_sdk_dynamodb::Client::from_conf(conf);
@@ -1924,7 +2050,9 @@ async fn operation_input_test_batch_get_item_46() {
         let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
         let builder = builder.use_fips(true);
         let builder = builder.use_dual_stack(false);
-        let builder = builder.account_id_endpoint_mode("required");
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("required").expect("should parse"),
+        );
         builder.build()
     };
     let client = aws_sdk_dynamodb::Client::from_conf(conf);
@@ -1977,7 +2105,9 @@ async fn operation_input_test_batch_get_item_47() {
         let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
         let builder = builder.use_fips(false);
         let builder = builder.use_dual_stack(true);
-        let builder = builder.account_id_endpoint_mode("required");
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("required").expect("should parse"),
+        );
         builder.build()
     };
     let client = aws_sdk_dynamodb::Client::from_conf(conf);
@@ -2030,7 +2160,9 @@ async fn operation_input_test_batch_get_item_48() {
         let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
         let builder = builder.use_fips(false);
         let builder = builder.use_dual_stack(false);
-        let builder = builder.account_id_endpoint_mode("required");
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("required").expect("should parse"),
+        );
         builder.build()
     };
     let client = aws_sdk_dynamodb::Client::from_conf(conf);
@@ -2082,8 +2214,12 @@ async fn operation_input_test_list_tables_49() {
         let builder = builder.region(::aws_types::region::Region::new("local"));
         let builder = builder.use_fips(false);
         let builder = builder.use_dual_stack(false);
-        let builder = builder.account_id("111111111111");
-        let builder = builder.account_id_endpoint_mode("preferred");
+        let builder = builder.credentials_provider(::aws_credential_types::provider::SharedCredentialsProvider::new(
+            ::aws_credential_types::CredentialsBuilder::for_tests().account_id("111111111111").build(),
+        ));
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("preferred").expect("should parse"),
+        );
         builder.build()
     };
     let client = aws_sdk_dynamodb::Client::from_conf(conf);
@@ -2115,8 +2251,12 @@ async fn operation_input_test_batch_get_item_50() {
         let builder = builder.region(::aws_types::region::Region::new("local"));
         let builder = builder.use_fips(false);
         let builder = builder.use_dual_stack(false);
-        let builder = builder.account_id("111111111111");
-        let builder = builder.account_id_endpoint_mode("preferred");
+        let builder = builder.credentials_provider(::aws_credential_types::provider::SharedCredentialsProvider::new(
+            ::aws_credential_types::CredentialsBuilder::for_tests().account_id("111111111111").build(),
+        ));
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("preferred").expect("should parse"),
+        );
         builder.build()
     };
     let client = aws_sdk_dynamodb::Client::from_conf(conf);
@@ -2168,8 +2308,12 @@ async fn operation_input_test_list_tables_51() {
         let builder = builder.region(::aws_types::region::Region::new("local"));
         let builder = builder.use_fips(false);
         let builder = builder.use_dual_stack(false);
-        let builder = builder.account_id("");
-        let builder = builder.account_id_endpoint_mode("preferred");
+        let builder = builder.credentials_provider(::aws_credential_types::provider::SharedCredentialsProvider::new(
+            ::aws_credential_types::CredentialsBuilder::for_tests().account_id("").build(),
+        ));
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("preferred").expect("should parse"),
+        );
         builder.build()
     };
     let client = aws_sdk_dynamodb::Client::from_conf(conf);
@@ -2200,7 +2344,9 @@ async fn operation_input_test_describe_table_52() {
         let builder = builder.region(::aws_types::region::Region::new("local"));
         let builder = builder.use_fips(false);
         let builder = builder.use_dual_stack(false);
-        let builder = builder.account_id_endpoint_mode("preferred");
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("preferred").expect("should parse"),
+        );
         builder.build()
     };
     let client = aws_sdk_dynamodb::Client::from_conf(conf);
@@ -2239,7 +2385,9 @@ async fn operation_input_test_describe_table_53() {
         let builder = builder.region(::aws_types::region::Region::new("local"));
         let builder = builder.use_fips(false);
         let builder = builder.use_dual_stack(false);
-        let builder = builder.account_id_endpoint_mode("preferred");
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("preferred").expect("should parse"),
+        );
         builder.build()
     };
     let client = aws_sdk_dynamodb::Client::from_conf(conf);
@@ -2278,7 +2426,9 @@ async fn operation_input_test_describe_table_54() {
         let builder = builder.region(::aws_types::region::Region::new("local"));
         let builder = builder.use_fips(false);
         let builder = builder.use_dual_stack(false);
-        let builder = builder.account_id_endpoint_mode("preferred");
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("preferred").expect("should parse"),
+        );
         builder.build()
     };
     let client = aws_sdk_dynamodb::Client::from_conf(conf);
@@ -2317,7 +2467,9 @@ async fn operation_input_test_batch_get_item_55() {
         let builder = builder.region(::aws_types::region::Region::new("local"));
         let builder = builder.use_fips(false);
         let builder = builder.use_dual_stack(false);
-        let builder = builder.account_id_endpoint_mode("preferred");
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("preferred").expect("should parse"),
+        );
         builder.build()
     };
     let client = aws_sdk_dynamodb::Client::from_conf(conf);
@@ -2369,8 +2521,12 @@ async fn operation_input_test_list_tables_56() {
         let builder = builder.region(::aws_types::region::Region::new("local"));
         let builder = builder.use_fips(false);
         let builder = builder.use_dual_stack(false);
-        let builder = builder.account_id("111111111111");
-        let builder = builder.account_id_endpoint_mode("disabled");
+        let builder = builder.credentials_provider(::aws_credential_types::provider::SharedCredentialsProvider::new(
+            ::aws_credential_types::CredentialsBuilder::for_tests().account_id("111111111111").build(),
+        ));
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("disabled").expect("should parse"),
+        );
         builder.build()
     };
     let client = aws_sdk_dynamodb::Client::from_conf(conf);
@@ -2402,8 +2558,12 @@ async fn operation_input_test_batch_get_item_57() {
         let builder = builder.region(::aws_types::region::Region::new("local"));
         let builder = builder.use_fips(false);
         let builder = builder.use_dual_stack(false);
-        let builder = builder.account_id("111111111111");
-        let builder = builder.account_id_endpoint_mode("disabled");
+        let builder = builder.credentials_provider(::aws_credential_types::provider::SharedCredentialsProvider::new(
+            ::aws_credential_types::CredentialsBuilder::for_tests().account_id("111111111111").build(),
+        ));
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("disabled").expect("should parse"),
+        );
         builder.build()
     };
     let client = aws_sdk_dynamodb::Client::from_conf(conf);
@@ -2455,8 +2615,12 @@ async fn operation_input_test_list_tables_58() {
         let builder = builder.region(::aws_types::region::Region::new("local"));
         let builder = builder.use_fips(false);
         let builder = builder.use_dual_stack(false);
-        let builder = builder.account_id("");
-        let builder = builder.account_id_endpoint_mode("disabled");
+        let builder = builder.credentials_provider(::aws_credential_types::provider::SharedCredentialsProvider::new(
+            ::aws_credential_types::CredentialsBuilder::for_tests().account_id("").build(),
+        ));
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("disabled").expect("should parse"),
+        );
         builder.build()
     };
     let client = aws_sdk_dynamodb::Client::from_conf(conf);
@@ -2487,7 +2651,9 @@ async fn operation_input_test_describe_table_59() {
         let builder = builder.region(::aws_types::region::Region::new("local"));
         let builder = builder.use_fips(false);
         let builder = builder.use_dual_stack(false);
-        let builder = builder.account_id_endpoint_mode("disabled");
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("disabled").expect("should parse"),
+        );
         builder.build()
     };
     let client = aws_sdk_dynamodb::Client::from_conf(conf);
@@ -2526,7 +2692,9 @@ async fn operation_input_test_describe_table_60() {
         let builder = builder.region(::aws_types::region::Region::new("local"));
         let builder = builder.use_fips(false);
         let builder = builder.use_dual_stack(false);
-        let builder = builder.account_id_endpoint_mode("disabled");
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("disabled").expect("should parse"),
+        );
         builder.build()
     };
     let client = aws_sdk_dynamodb::Client::from_conf(conf);
@@ -2565,7 +2733,9 @@ async fn operation_input_test_describe_table_61() {
         let builder = builder.region(::aws_types::region::Region::new("local"));
         let builder = builder.use_fips(false);
         let builder = builder.use_dual_stack(false);
-        let builder = builder.account_id_endpoint_mode("disabled");
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("disabled").expect("should parse"),
+        );
         builder.build()
     };
     let client = aws_sdk_dynamodb::Client::from_conf(conf);
@@ -2604,7 +2774,9 @@ async fn operation_input_test_batch_get_item_62() {
         let builder = builder.region(::aws_types::region::Region::new("local"));
         let builder = builder.use_fips(false);
         let builder = builder.use_dual_stack(false);
-        let builder = builder.account_id_endpoint_mode("disabled");
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("disabled").expect("should parse"),
+        );
         builder.build()
     };
     let client = aws_sdk_dynamodb::Client::from_conf(conf);
@@ -2656,8 +2828,12 @@ async fn operation_input_test_list_tables_63() {
         let builder = builder.region(::aws_types::region::Region::new("local"));
         let builder = builder.use_fips(false);
         let builder = builder.use_dual_stack(false);
-        let builder = builder.account_id("111111111111");
-        let builder = builder.account_id_endpoint_mode("required");
+        let builder = builder.credentials_provider(::aws_credential_types::provider::SharedCredentialsProvider::new(
+            ::aws_credential_types::CredentialsBuilder::for_tests().account_id("111111111111").build(),
+        ));
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("required").expect("should parse"),
+        );
         builder.build()
     };
     let client = aws_sdk_dynamodb::Client::from_conf(conf);
@@ -2689,8 +2865,12 @@ async fn operation_input_test_batch_get_item_64() {
         let builder = builder.region(::aws_types::region::Region::new("local"));
         let builder = builder.use_fips(false);
         let builder = builder.use_dual_stack(false);
-        let builder = builder.account_id("111111111111");
-        let builder = builder.account_id_endpoint_mode("required");
+        let builder = builder.credentials_provider(::aws_credential_types::provider::SharedCredentialsProvider::new(
+            ::aws_credential_types::CredentialsBuilder::for_tests().account_id("111111111111").build(),
+        ));
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("required").expect("should parse"),
+        );
         builder.build()
     };
     let client = aws_sdk_dynamodb::Client::from_conf(conf);
@@ -2742,8 +2922,12 @@ async fn operation_input_test_list_tables_65() {
         let builder = builder.region(::aws_types::region::Region::new("local"));
         let builder = builder.use_fips(false);
         let builder = builder.use_dual_stack(false);
-        let builder = builder.account_id("");
-        let builder = builder.account_id_endpoint_mode("required");
+        let builder = builder.credentials_provider(::aws_credential_types::provider::SharedCredentialsProvider::new(
+            ::aws_credential_types::CredentialsBuilder::for_tests().account_id("").build(),
+        ));
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("required").expect("should parse"),
+        );
         builder.build()
     };
     let client = aws_sdk_dynamodb::Client::from_conf(conf);
@@ -2774,7 +2958,9 @@ async fn operation_input_test_describe_table_66() {
         let builder = builder.region(::aws_types::region::Region::new("local"));
         let builder = builder.use_fips(false);
         let builder = builder.use_dual_stack(false);
-        let builder = builder.account_id_endpoint_mode("required");
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("required").expect("should parse"),
+        );
         builder.build()
     };
     let client = aws_sdk_dynamodb::Client::from_conf(conf);
@@ -2813,7 +2999,9 @@ async fn operation_input_test_describe_table_67() {
         let builder = builder.region(::aws_types::region::Region::new("local"));
         let builder = builder.use_fips(false);
         let builder = builder.use_dual_stack(false);
-        let builder = builder.account_id_endpoint_mode("required");
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("required").expect("should parse"),
+        );
         builder.build()
     };
     let client = aws_sdk_dynamodb::Client::from_conf(conf);
@@ -2852,7 +3040,9 @@ async fn operation_input_test_describe_table_68() {
         let builder = builder.region(::aws_types::region::Region::new("local"));
         let builder = builder.use_fips(false);
         let builder = builder.use_dual_stack(false);
-        let builder = builder.account_id_endpoint_mode("required");
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("required").expect("should parse"),
+        );
         builder.build()
     };
     let client = aws_sdk_dynamodb::Client::from_conf(conf);
@@ -2891,7 +3081,9 @@ async fn operation_input_test_batch_get_item_69() {
         let builder = builder.region(::aws_types::region::Region::new("local"));
         let builder = builder.use_fips(false);
         let builder = builder.use_dual_stack(false);
-        let builder = builder.account_id_endpoint_mode("required");
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("required").expect("should parse"),
+        );
         builder.build()
     };
     let client = aws_sdk_dynamodb::Client::from_conf(conf);
@@ -2943,8 +3135,12 @@ async fn operation_input_test_list_tables_70() {
         let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
         let builder = builder.use_fips(true);
         let builder = builder.use_dual_stack(true);
-        let builder = builder.account_id("111111111111");
-        let builder = builder.account_id_endpoint_mode("preferred");
+        let builder = builder.credentials_provider(::aws_credential_types::provider::SharedCredentialsProvider::new(
+            ::aws_credential_types::CredentialsBuilder::for_tests().account_id("111111111111").build(),
+        ));
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("preferred").expect("should parse"),
+        );
         builder.build()
     };
     let client = aws_sdk_dynamodb::Client::from_conf(conf);
@@ -2976,8 +3172,12 @@ async fn operation_input_test_list_tables_71() {
         let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
         let builder = builder.use_fips(true);
         let builder = builder.use_dual_stack(false);
-        let builder = builder.account_id("111111111111");
-        let builder = builder.account_id_endpoint_mode("preferred");
+        let builder = builder.credentials_provider(::aws_credential_types::provider::SharedCredentialsProvider::new(
+            ::aws_credential_types::CredentialsBuilder::for_tests().account_id("111111111111").build(),
+        ));
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("preferred").expect("should parse"),
+        );
         builder.build()
     };
     let client = aws_sdk_dynamodb::Client::from_conf(conf);
@@ -3009,8 +3209,12 @@ async fn operation_input_test_list_tables_72() {
         let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
         let builder = builder.use_fips(false);
         let builder = builder.use_dual_stack(true);
-        let builder = builder.account_id("111111111111");
-        let builder = builder.account_id_endpoint_mode("preferred");
+        let builder = builder.credentials_provider(::aws_credential_types::provider::SharedCredentialsProvider::new(
+            ::aws_credential_types::CredentialsBuilder::for_tests().account_id("111111111111").build(),
+        ));
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("preferred").expect("should parse"),
+        );
         builder.build()
     };
     let client = aws_sdk_dynamodb::Client::from_conf(conf);
@@ -3042,8 +3246,12 @@ async fn operation_input_test_list_tables_73() {
         let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
         let builder = builder.use_fips(false);
         let builder = builder.use_dual_stack(false);
-        let builder = builder.account_id("111111111111");
-        let builder = builder.account_id_endpoint_mode("preferred");
+        let builder = builder.credentials_provider(::aws_credential_types::provider::SharedCredentialsProvider::new(
+            ::aws_credential_types::CredentialsBuilder::for_tests().account_id("111111111111").build(),
+        ));
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("preferred").expect("should parse"),
+        );
         builder.build()
     };
     let client = aws_sdk_dynamodb::Client::from_conf(conf);
@@ -3075,8 +3283,12 @@ async fn operation_input_test_batch_get_item_74() {
         let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
         let builder = builder.use_fips(false);
         let builder = builder.use_dual_stack(false);
-        let builder = builder.account_id("111111111111");
-        let builder = builder.account_id_endpoint_mode("preferred");
+        let builder = builder.credentials_provider(::aws_credential_types::provider::SharedCredentialsProvider::new(
+            ::aws_credential_types::CredentialsBuilder::for_tests().account_id("111111111111").build(),
+        ));
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("preferred").expect("should parse"),
+        );
         builder.build()
     };
     let client = aws_sdk_dynamodb::Client::from_conf(conf);
@@ -3128,8 +3340,12 @@ async fn operation_input_test_list_tables_75() {
         let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
         let builder = builder.use_fips(false);
         let builder = builder.use_dual_stack(false);
-        let builder = builder.account_id("");
-        let builder = builder.account_id_endpoint_mode("preferred");
+        let builder = builder.credentials_provider(::aws_credential_types::provider::SharedCredentialsProvider::new(
+            ::aws_credential_types::CredentialsBuilder::for_tests().account_id("").build(),
+        ));
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("preferred").expect("should parse"),
+        );
         builder.build()
     };
     let client = aws_sdk_dynamodb::Client::from_conf(conf);
@@ -3160,7 +3376,9 @@ async fn operation_input_test_describe_table_76() {
         let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
         let builder = builder.use_fips(true);
         let builder = builder.use_dual_stack(true);
-        let builder = builder.account_id_endpoint_mode("preferred");
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("preferred").expect("should parse"),
+        );
         builder.build()
     };
     let client = aws_sdk_dynamodb::Client::from_conf(conf);
@@ -3199,7 +3417,9 @@ async fn operation_input_test_describe_table_77() {
         let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
         let builder = builder.use_fips(true);
         let builder = builder.use_dual_stack(false);
-        let builder = builder.account_id_endpoint_mode("preferred");
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("preferred").expect("should parse"),
+        );
         builder.build()
     };
     let client = aws_sdk_dynamodb::Client::from_conf(conf);
@@ -3238,7 +3458,9 @@ async fn operation_input_test_describe_table_78() {
         let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
         let builder = builder.use_fips(false);
         let builder = builder.use_dual_stack(true);
-        let builder = builder.account_id_endpoint_mode("preferred");
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("preferred").expect("should parse"),
+        );
         builder.build()
     };
     let client = aws_sdk_dynamodb::Client::from_conf(conf);
@@ -3277,7 +3499,9 @@ async fn operation_input_test_describe_table_79() {
         let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
         let builder = builder.use_fips(false);
         let builder = builder.use_dual_stack(false);
-        let builder = builder.account_id_endpoint_mode("preferred");
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("preferred").expect("should parse"),
+        );
         builder.build()
     };
     let client = aws_sdk_dynamodb::Client::from_conf(conf);
@@ -3316,7 +3540,9 @@ async fn operation_input_test_describe_table_80() {
         let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
         let builder = builder.use_fips(false);
         let builder = builder.use_dual_stack(false);
-        let builder = builder.account_id_endpoint_mode("preferred");
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("preferred").expect("should parse"),
+        );
         builder.build()
     };
     let client = aws_sdk_dynamodb::Client::from_conf(conf);
@@ -3355,7 +3581,9 @@ async fn operation_input_test_describe_table_81() {
         let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
         let builder = builder.use_fips(false);
         let builder = builder.use_dual_stack(false);
-        let builder = builder.account_id_endpoint_mode("preferred");
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("preferred").expect("should parse"),
+        );
         builder.build()
     };
     let client = aws_sdk_dynamodb::Client::from_conf(conf);
@@ -3394,7 +3622,9 @@ async fn operation_input_test_batch_get_item_82() {
         let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
         let builder = builder.use_fips(true);
         let builder = builder.use_dual_stack(true);
-        let builder = builder.account_id_endpoint_mode("preferred");
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("preferred").expect("should parse"),
+        );
         builder.build()
     };
     let client = aws_sdk_dynamodb::Client::from_conf(conf);
@@ -3445,7 +3675,9 @@ async fn operation_input_test_batch_get_item_83() {
         let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
         let builder = builder.use_fips(true);
         let builder = builder.use_dual_stack(false);
-        let builder = builder.account_id_endpoint_mode("preferred");
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("preferred").expect("should parse"),
+        );
         builder.build()
     };
     let client = aws_sdk_dynamodb::Client::from_conf(conf);
@@ -3496,7 +3728,9 @@ async fn operation_input_test_batch_get_item_84() {
         let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
         let builder = builder.use_fips(false);
         let builder = builder.use_dual_stack(true);
-        let builder = builder.account_id_endpoint_mode("preferred");
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("preferred").expect("should parse"),
+        );
         builder.build()
     };
     let client = aws_sdk_dynamodb::Client::from_conf(conf);
@@ -3547,7 +3781,9 @@ async fn operation_input_test_batch_get_item_85() {
         let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
         let builder = builder.use_fips(false);
         let builder = builder.use_dual_stack(false);
-        let builder = builder.account_id_endpoint_mode("preferred");
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("preferred").expect("should parse"),
+        );
         builder.build()
     };
     let client = aws_sdk_dynamodb::Client::from_conf(conf);
@@ -3599,8 +3835,12 @@ async fn operation_input_test_list_tables_86() {
         let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
         let builder = builder.use_fips(true);
         let builder = builder.use_dual_stack(true);
-        let builder = builder.account_id("111111111111");
-        let builder = builder.account_id_endpoint_mode("required");
+        let builder = builder.credentials_provider(::aws_credential_types::provider::SharedCredentialsProvider::new(
+            ::aws_credential_types::CredentialsBuilder::for_tests().account_id("111111111111").build(),
+        ));
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("required").expect("should parse"),
+        );
         builder.build()
     };
     let client = aws_sdk_dynamodb::Client::from_conf(conf);
@@ -3631,8 +3871,12 @@ async fn operation_input_test_list_tables_87() {
         let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
         let builder = builder.use_fips(true);
         let builder = builder.use_dual_stack(false);
-        let builder = builder.account_id("111111111111");
-        let builder = builder.account_id_endpoint_mode("required");
+        let builder = builder.credentials_provider(::aws_credential_types::provider::SharedCredentialsProvider::new(
+            ::aws_credential_types::CredentialsBuilder::for_tests().account_id("111111111111").build(),
+        ));
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("required").expect("should parse"),
+        );
         builder.build()
     };
     let client = aws_sdk_dynamodb::Client::from_conf(conf);
@@ -3663,8 +3907,12 @@ async fn operation_input_test_list_tables_88() {
         let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
         let builder = builder.use_fips(false);
         let builder = builder.use_dual_stack(true);
-        let builder = builder.account_id("111111111111");
-        let builder = builder.account_id_endpoint_mode("required");
+        let builder = builder.credentials_provider(::aws_credential_types::provider::SharedCredentialsProvider::new(
+            ::aws_credential_types::CredentialsBuilder::for_tests().account_id("111111111111").build(),
+        ));
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("required").expect("should parse"),
+        );
         builder.build()
     };
     let client = aws_sdk_dynamodb::Client::from_conf(conf);
@@ -3695,8 +3943,12 @@ async fn operation_input_test_list_tables_89() {
         let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
         let builder = builder.use_fips(false);
         let builder = builder.use_dual_stack(false);
-        let builder = builder.account_id("111111111111");
-        let builder = builder.account_id_endpoint_mode("required");
+        let builder = builder.credentials_provider(::aws_credential_types::provider::SharedCredentialsProvider::new(
+            ::aws_credential_types::CredentialsBuilder::for_tests().account_id("111111111111").build(),
+        ));
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("required").expect("should parse"),
+        );
         builder.build()
     };
     let client = aws_sdk_dynamodb::Client::from_conf(conf);
@@ -3728,8 +3980,12 @@ async fn operation_input_test_batch_get_item_90() {
         let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
         let builder = builder.use_fips(false);
         let builder = builder.use_dual_stack(false);
-        let builder = builder.account_id("111111111111");
-        let builder = builder.account_id_endpoint_mode("required");
+        let builder = builder.credentials_provider(::aws_credential_types::provider::SharedCredentialsProvider::new(
+            ::aws_credential_types::CredentialsBuilder::for_tests().account_id("111111111111").build(),
+        ));
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("required").expect("should parse"),
+        );
         builder.build()
     };
     let client = aws_sdk_dynamodb::Client::from_conf(conf);
@@ -3781,8 +4037,12 @@ async fn operation_input_test_list_tables_91() {
         let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
         let builder = builder.use_fips(false);
         let builder = builder.use_dual_stack(false);
-        let builder = builder.account_id("");
-        let builder = builder.account_id_endpoint_mode("required");
+        let builder = builder.credentials_provider(::aws_credential_types::provider::SharedCredentialsProvider::new(
+            ::aws_credential_types::CredentialsBuilder::for_tests().account_id("").build(),
+        ));
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("required").expect("should parse"),
+        );
         builder.build()
     };
     let client = aws_sdk_dynamodb::Client::from_conf(conf);
@@ -3813,7 +4073,9 @@ async fn operation_input_test_describe_table_92() {
         let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
         let builder = builder.use_fips(true);
         let builder = builder.use_dual_stack(true);
-        let builder = builder.account_id_endpoint_mode("required");
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("required").expect("should parse"),
+        );
         builder.build()
     };
     let client = aws_sdk_dynamodb::Client::from_conf(conf);
@@ -3851,7 +4113,9 @@ async fn operation_input_test_describe_table_93() {
         let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
         let builder = builder.use_fips(true);
         let builder = builder.use_dual_stack(false);
-        let builder = builder.account_id_endpoint_mode("required");
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("required").expect("should parse"),
+        );
         builder.build()
     };
     let client = aws_sdk_dynamodb::Client::from_conf(conf);
@@ -3889,7 +4153,9 @@ async fn operation_input_test_describe_table_94() {
         let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
         let builder = builder.use_fips(false);
         let builder = builder.use_dual_stack(true);
-        let builder = builder.account_id_endpoint_mode("required");
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("required").expect("should parse"),
+        );
         builder.build()
     };
     let client = aws_sdk_dynamodb::Client::from_conf(conf);
@@ -3927,7 +4193,9 @@ async fn operation_input_test_describe_table_95() {
         let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
         let builder = builder.use_fips(false);
         let builder = builder.use_dual_stack(false);
-        let builder = builder.account_id_endpoint_mode("required");
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("required").expect("should parse"),
+        );
         builder.build()
     };
     let client = aws_sdk_dynamodb::Client::from_conf(conf);
@@ -3966,7 +4234,9 @@ async fn operation_input_test_describe_table_96() {
         let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
         let builder = builder.use_fips(false);
         let builder = builder.use_dual_stack(false);
-        let builder = builder.account_id_endpoint_mode("required");
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("required").expect("should parse"),
+        );
         builder.build()
     };
     let client = aws_sdk_dynamodb::Client::from_conf(conf);
@@ -4005,7 +4275,9 @@ async fn operation_input_test_describe_table_97() {
         let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
         let builder = builder.use_fips(false);
         let builder = builder.use_dual_stack(false);
-        let builder = builder.account_id_endpoint_mode("required");
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("required").expect("should parse"),
+        );
         builder.build()
     };
     let client = aws_sdk_dynamodb::Client::from_conf(conf);
@@ -4044,7 +4316,9 @@ async fn operation_input_test_batch_get_item_98() {
         let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
         let builder = builder.use_fips(true);
         let builder = builder.use_dual_stack(true);
-        let builder = builder.account_id_endpoint_mode("required");
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("required").expect("should parse"),
+        );
         builder.build()
     };
     let client = aws_sdk_dynamodb::Client::from_conf(conf);
@@ -4094,7 +4368,9 @@ async fn operation_input_test_batch_get_item_99() {
         let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
         let builder = builder.use_fips(true);
         let builder = builder.use_dual_stack(false);
-        let builder = builder.account_id_endpoint_mode("required");
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("required").expect("should parse"),
+        );
         builder.build()
     };
     let client = aws_sdk_dynamodb::Client::from_conf(conf);
@@ -4144,7 +4420,9 @@ async fn operation_input_test_batch_get_item_100() {
         let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
         let builder = builder.use_fips(false);
         let builder = builder.use_dual_stack(true);
-        let builder = builder.account_id_endpoint_mode("required");
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("required").expect("should parse"),
+        );
         builder.build()
     };
     let client = aws_sdk_dynamodb::Client::from_conf(conf);
@@ -4194,7 +4472,9 @@ async fn operation_input_test_batch_get_item_101() {
         let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
         let builder = builder.use_fips(false);
         let builder = builder.use_dual_stack(false);
-        let builder = builder.account_id_endpoint_mode("required");
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("required").expect("should parse"),
+        );
         builder.build()
     };
     let client = aws_sdk_dynamodb::Client::from_conf(conf);
@@ -4246,8 +4526,12 @@ async fn operation_input_test_list_tables_102() {
         let builder = builder.region(::aws_types::region::Region::new("cn-north-1"));
         let builder = builder.use_fips(false);
         let builder = builder.use_dual_stack(false);
-        let builder = builder.account_id("111111111111");
-        let builder = builder.account_id_endpoint_mode("required");
+        let builder = builder.credentials_provider(::aws_credential_types::provider::SharedCredentialsProvider::new(
+            ::aws_credential_types::CredentialsBuilder::for_tests().account_id("111111111111").build(),
+        ));
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("required").expect("should parse"),
+        );
         builder.build()
     };
     let client = aws_sdk_dynamodb::Client::from_conf(conf);
@@ -4278,8 +4562,12 @@ async fn operation_input_test_batch_get_item_103() {
         let builder = builder.region(::aws_types::region::Region::new("cn-north-1"));
         let builder = builder.use_fips(false);
         let builder = builder.use_dual_stack(false);
-        let builder = builder.account_id("111111111111");
-        let builder = builder.account_id_endpoint_mode("required");
+        let builder = builder.credentials_provider(::aws_credential_types::provider::SharedCredentialsProvider::new(
+            ::aws_credential_types::CredentialsBuilder::for_tests().account_id("111111111111").build(),
+        ));
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("required").expect("should parse"),
+        );
         builder.build()
     };
     let client = aws_sdk_dynamodb::Client::from_conf(conf);
@@ -4330,8 +4618,12 @@ async fn operation_input_test_list_tables_104() {
         let builder = builder.region(::aws_types::region::Region::new("cn-north-1"));
         let builder = builder.use_fips(false);
         let builder = builder.use_dual_stack(false);
-        let builder = builder.account_id("");
-        let builder = builder.account_id_endpoint_mode("required");
+        let builder = builder.credentials_provider(::aws_credential_types::provider::SharedCredentialsProvider::new(
+            ::aws_credential_types::CredentialsBuilder::for_tests().account_id("").build(),
+        ));
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("required").expect("should parse"),
+        );
         builder.build()
     };
     let client = aws_sdk_dynamodb::Client::from_conf(conf);
@@ -4361,7 +4653,9 @@ async fn operation_input_test_describe_table_105() {
         let builder = builder.region(::aws_types::region::Region::new("cn-north-1"));
         let builder = builder.use_fips(false);
         let builder = builder.use_dual_stack(false);
-        let builder = builder.account_id_endpoint_mode("required");
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("required").expect("should parse"),
+        );
         builder.build()
     };
     let client = aws_sdk_dynamodb::Client::from_conf(conf);
@@ -4399,7 +4693,9 @@ async fn operation_input_test_describe_table_106() {
         let builder = builder.region(::aws_types::region::Region::new("cn-north-1"));
         let builder = builder.use_fips(false);
         let builder = builder.use_dual_stack(false);
-        let builder = builder.account_id_endpoint_mode("required");
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("required").expect("should parse"),
+        );
         builder.build()
     };
     let client = aws_sdk_dynamodb::Client::from_conf(conf);
@@ -4437,7 +4733,9 @@ async fn operation_input_test_describe_table_107() {
         let builder = builder.region(::aws_types::region::Region::new("cn-north-1"));
         let builder = builder.use_fips(false);
         let builder = builder.use_dual_stack(false);
-        let builder = builder.account_id_endpoint_mode("required");
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("required").expect("should parse"),
+        );
         builder.build()
     };
     let client = aws_sdk_dynamodb::Client::from_conf(conf);
@@ -4475,7 +4773,9 @@ async fn operation_input_test_batch_get_item_108() {
         let builder = builder.region(::aws_types::region::Region::new("cn-north-1"));
         let builder = builder.use_fips(false);
         let builder = builder.use_dual_stack(false);
-        let builder = builder.account_id_endpoint_mode("required");
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("required").expect("should parse"),
+        );
         builder.build()
     };
     let client = aws_sdk_dynamodb::Client::from_conf(conf);
@@ -4526,8 +4826,12 @@ async fn operation_input_test_list_tables_109() {
         let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
         let builder = builder.use_fips(true);
         let builder = builder.use_dual_stack(true);
-        let builder = builder.account_id("111111111111");
-        let builder = builder.account_id_endpoint_mode("disabled");
+        let builder = builder.credentials_provider(::aws_credential_types::provider::SharedCredentialsProvider::new(
+            ::aws_credential_types::CredentialsBuilder::for_tests().account_id("111111111111").build(),
+        ));
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("disabled").expect("should parse"),
+        );
         builder.build()
     };
     let client = aws_sdk_dynamodb::Client::from_conf(conf);
@@ -4559,8 +4863,12 @@ async fn operation_input_test_list_tables_110() {
         let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
         let builder = builder.use_fips(true);
         let builder = builder.use_dual_stack(false);
-        let builder = builder.account_id("111111111111");
-        let builder = builder.account_id_endpoint_mode("disabled");
+        let builder = builder.credentials_provider(::aws_credential_types::provider::SharedCredentialsProvider::new(
+            ::aws_credential_types::CredentialsBuilder::for_tests().account_id("111111111111").build(),
+        ));
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("disabled").expect("should parse"),
+        );
         builder.build()
     };
     let client = aws_sdk_dynamodb::Client::from_conf(conf);
@@ -4592,8 +4900,12 @@ async fn operation_input_test_list_tables_111() {
         let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
         let builder = builder.use_fips(false);
         let builder = builder.use_dual_stack(true);
-        let builder = builder.account_id("111111111111");
-        let builder = builder.account_id_endpoint_mode("disabled");
+        let builder = builder.credentials_provider(::aws_credential_types::provider::SharedCredentialsProvider::new(
+            ::aws_credential_types::CredentialsBuilder::for_tests().account_id("111111111111").build(),
+        ));
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("disabled").expect("should parse"),
+        );
         builder.build()
     };
     let client = aws_sdk_dynamodb::Client::from_conf(conf);
@@ -4625,8 +4937,12 @@ async fn operation_input_test_list_tables_112() {
         let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
         let builder = builder.use_fips(false);
         let builder = builder.use_dual_stack(false);
-        let builder = builder.account_id("111111111111");
-        let builder = builder.account_id_endpoint_mode("disabled");
+        let builder = builder.credentials_provider(::aws_credential_types::provider::SharedCredentialsProvider::new(
+            ::aws_credential_types::CredentialsBuilder::for_tests().account_id("111111111111").build(),
+        ));
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("disabled").expect("should parse"),
+        );
         builder.build()
     };
     let client = aws_sdk_dynamodb::Client::from_conf(conf);
@@ -4658,8 +4974,12 @@ async fn operation_input_test_batch_get_item_113() {
         let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
         let builder = builder.use_fips(false);
         let builder = builder.use_dual_stack(false);
-        let builder = builder.account_id("111111111111");
-        let builder = builder.account_id_endpoint_mode("disabled");
+        let builder = builder.credentials_provider(::aws_credential_types::provider::SharedCredentialsProvider::new(
+            ::aws_credential_types::CredentialsBuilder::for_tests().account_id("111111111111").build(),
+        ));
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("disabled").expect("should parse"),
+        );
         builder.build()
     };
     let client = aws_sdk_dynamodb::Client::from_conf(conf);
@@ -4711,8 +5031,12 @@ async fn operation_input_test_list_tables_114() {
         let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
         let builder = builder.use_fips(false);
         let builder = builder.use_dual_stack(false);
-        let builder = builder.account_id("");
-        let builder = builder.account_id_endpoint_mode("disabled");
+        let builder = builder.credentials_provider(::aws_credential_types::provider::SharedCredentialsProvider::new(
+            ::aws_credential_types::CredentialsBuilder::for_tests().account_id("").build(),
+        ));
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("disabled").expect("should parse"),
+        );
         builder.build()
     };
     let client = aws_sdk_dynamodb::Client::from_conf(conf);
@@ -4743,7 +5067,9 @@ async fn operation_input_test_describe_table_115() {
         let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
         let builder = builder.use_fips(true);
         let builder = builder.use_dual_stack(true);
-        let builder = builder.account_id_endpoint_mode("disabled");
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("disabled").expect("should parse"),
+        );
         builder.build()
     };
     let client = aws_sdk_dynamodb::Client::from_conf(conf);
@@ -4782,7 +5108,9 @@ async fn operation_input_test_describe_table_116() {
         let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
         let builder = builder.use_fips(true);
         let builder = builder.use_dual_stack(false);
-        let builder = builder.account_id_endpoint_mode("disabled");
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("disabled").expect("should parse"),
+        );
         builder.build()
     };
     let client = aws_sdk_dynamodb::Client::from_conf(conf);
@@ -4821,7 +5149,9 @@ async fn operation_input_test_describe_table_117() {
         let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
         let builder = builder.use_fips(false);
         let builder = builder.use_dual_stack(true);
-        let builder = builder.account_id_endpoint_mode("disabled");
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("disabled").expect("should parse"),
+        );
         builder.build()
     };
     let client = aws_sdk_dynamodb::Client::from_conf(conf);
@@ -4860,7 +5190,9 @@ async fn operation_input_test_describe_table_118() {
         let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
         let builder = builder.use_fips(false);
         let builder = builder.use_dual_stack(false);
-        let builder = builder.account_id_endpoint_mode("disabled");
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("disabled").expect("should parse"),
+        );
         builder.build()
     };
     let client = aws_sdk_dynamodb::Client::from_conf(conf);
@@ -4899,7 +5231,9 @@ async fn operation_input_test_describe_table_119() {
         let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
         let builder = builder.use_fips(false);
         let builder = builder.use_dual_stack(false);
-        let builder = builder.account_id_endpoint_mode("disabled");
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("disabled").expect("should parse"),
+        );
         builder.build()
     };
     let client = aws_sdk_dynamodb::Client::from_conf(conf);
@@ -4938,7 +5272,9 @@ async fn operation_input_test_describe_table_120() {
         let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
         let builder = builder.use_fips(false);
         let builder = builder.use_dual_stack(false);
-        let builder = builder.account_id_endpoint_mode("disabled");
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("disabled").expect("should parse"),
+        );
         builder.build()
     };
     let client = aws_sdk_dynamodb::Client::from_conf(conf);
@@ -4977,7 +5313,9 @@ async fn operation_input_test_batch_get_item_121() {
         let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
         let builder = builder.use_fips(true);
         let builder = builder.use_dual_stack(true);
-        let builder = builder.account_id_endpoint_mode("disabled");
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("disabled").expect("should parse"),
+        );
         builder.build()
     };
     let client = aws_sdk_dynamodb::Client::from_conf(conf);
@@ -5028,7 +5366,9 @@ async fn operation_input_test_batch_get_item_122() {
         let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
         let builder = builder.use_fips(true);
         let builder = builder.use_dual_stack(false);
-        let builder = builder.account_id_endpoint_mode("disabled");
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("disabled").expect("should parse"),
+        );
         builder.build()
     };
     let client = aws_sdk_dynamodb::Client::from_conf(conf);
@@ -5079,7 +5419,9 @@ async fn operation_input_test_batch_get_item_123() {
         let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
         let builder = builder.use_fips(false);
         let builder = builder.use_dual_stack(true);
-        let builder = builder.account_id_endpoint_mode("disabled");
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("disabled").expect("should parse"),
+        );
         builder.build()
     };
     let client = aws_sdk_dynamodb::Client::from_conf(conf);
@@ -5130,7 +5472,9 @@ async fn operation_input_test_batch_get_item_124() {
         let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
         let builder = builder.use_fips(false);
         let builder = builder.use_dual_stack(false);
-        let builder = builder.account_id_endpoint_mode("disabled");
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("disabled").expect("should parse"),
+        );
         builder.build()
     };
     let client = aws_sdk_dynamodb::Client::from_conf(conf);
@@ -5182,8 +5526,12 @@ async fn operation_input_test_list_tables_125() {
         let builder = builder.region(::aws_types::region::Region::new("cn-north-1"));
         let builder = builder.use_fips(false);
         let builder = builder.use_dual_stack(false);
-        let builder = builder.account_id("111111111111");
-        let builder = builder.account_id_endpoint_mode("preferred");
+        let builder = builder.credentials_provider(::aws_credential_types::provider::SharedCredentialsProvider::new(
+            ::aws_credential_types::CredentialsBuilder::for_tests().account_id("111111111111").build(),
+        ));
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("preferred").expect("should parse"),
+        );
         builder.build()
     };
     let client = aws_sdk_dynamodb::Client::from_conf(conf);
@@ -5215,8 +5563,12 @@ async fn operation_input_test_batch_get_item_126() {
         let builder = builder.region(::aws_types::region::Region::new("cn-north-1"));
         let builder = builder.use_fips(false);
         let builder = builder.use_dual_stack(false);
-        let builder = builder.account_id("111111111111");
-        let builder = builder.account_id_endpoint_mode("preferred");
+        let builder = builder.credentials_provider(::aws_credential_types::provider::SharedCredentialsProvider::new(
+            ::aws_credential_types::CredentialsBuilder::for_tests().account_id("111111111111").build(),
+        ));
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("preferred").expect("should parse"),
+        );
         builder.build()
     };
     let client = aws_sdk_dynamodb::Client::from_conf(conf);
@@ -5268,8 +5620,12 @@ async fn operation_input_test_list_tables_127() {
         let builder = builder.region(::aws_types::region::Region::new("cn-north-1"));
         let builder = builder.use_fips(false);
         let builder = builder.use_dual_stack(false);
-        let builder = builder.account_id("");
-        let builder = builder.account_id_endpoint_mode("preferred");
+        let builder = builder.credentials_provider(::aws_credential_types::provider::SharedCredentialsProvider::new(
+            ::aws_credential_types::CredentialsBuilder::for_tests().account_id("").build(),
+        ));
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("preferred").expect("should parse"),
+        );
         builder.build()
     };
     let client = aws_sdk_dynamodb::Client::from_conf(conf);
@@ -5300,7 +5656,9 @@ async fn operation_input_test_describe_table_128() {
         let builder = builder.region(::aws_types::region::Region::new("cn-north-1"));
         let builder = builder.use_fips(false);
         let builder = builder.use_dual_stack(false);
-        let builder = builder.account_id_endpoint_mode("preferred");
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("preferred").expect("should parse"),
+        );
         builder.build()
     };
     let client = aws_sdk_dynamodb::Client::from_conf(conf);
@@ -5339,7 +5697,9 @@ async fn operation_input_test_describe_table_129() {
         let builder = builder.region(::aws_types::region::Region::new("cn-north-1"));
         let builder = builder.use_fips(false);
         let builder = builder.use_dual_stack(false);
-        let builder = builder.account_id_endpoint_mode("preferred");
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("preferred").expect("should parse"),
+        );
         builder.build()
     };
     let client = aws_sdk_dynamodb::Client::from_conf(conf);
@@ -5378,7 +5738,9 @@ async fn operation_input_test_describe_table_130() {
         let builder = builder.region(::aws_types::region::Region::new("cn-north-1"));
         let builder = builder.use_fips(false);
         let builder = builder.use_dual_stack(false);
-        let builder = builder.account_id_endpoint_mode("preferred");
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("preferred").expect("should parse"),
+        );
         builder.build()
     };
     let client = aws_sdk_dynamodb::Client::from_conf(conf);
@@ -5417,7 +5779,9 @@ async fn operation_input_test_batch_get_item_131() {
         let builder = builder.region(::aws_types::region::Region::new("cn-north-1"));
         let builder = builder.use_fips(false);
         let builder = builder.use_dual_stack(false);
-        let builder = builder.account_id_endpoint_mode("preferred");
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("preferred").expect("should parse"),
+        );
         builder.build()
     };
     let client = aws_sdk_dynamodb::Client::from_conf(conf);
@@ -5469,8 +5833,12 @@ async fn operation_input_test_list_tables_132() {
         let builder = builder.region(::aws_types::region::Region::new("us-iso-east-1"));
         let builder = builder.use_fips(false);
         let builder = builder.use_dual_stack(false);
-        let builder = builder.account_id("111111111111");
-        let builder = builder.account_id_endpoint_mode("preferred");
+        let builder = builder.credentials_provider(::aws_credential_types::provider::SharedCredentialsProvider::new(
+            ::aws_credential_types::CredentialsBuilder::for_tests().account_id("111111111111").build(),
+        ));
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("preferred").expect("should parse"),
+        );
         builder.build()
     };
     let client = aws_sdk_dynamodb::Client::from_conf(conf);
@@ -5502,8 +5870,12 @@ async fn operation_input_test_batch_get_item_133() {
         let builder = builder.region(::aws_types::region::Region::new("us-iso-east-1"));
         let builder = builder.use_fips(false);
         let builder = builder.use_dual_stack(false);
-        let builder = builder.account_id("111111111111");
-        let builder = builder.account_id_endpoint_mode("preferred");
+        let builder = builder.credentials_provider(::aws_credential_types::provider::SharedCredentialsProvider::new(
+            ::aws_credential_types::CredentialsBuilder::for_tests().account_id("111111111111").build(),
+        ));
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("preferred").expect("should parse"),
+        );
         builder.build()
     };
     let client = aws_sdk_dynamodb::Client::from_conf(conf);
@@ -5555,8 +5927,12 @@ async fn operation_input_test_list_tables_134() {
         let builder = builder.region(::aws_types::region::Region::new("us-iso-east-1"));
         let builder = builder.use_fips(false);
         let builder = builder.use_dual_stack(false);
-        let builder = builder.account_id("");
-        let builder = builder.account_id_endpoint_mode("preferred");
+        let builder = builder.credentials_provider(::aws_credential_types::provider::SharedCredentialsProvider::new(
+            ::aws_credential_types::CredentialsBuilder::for_tests().account_id("").build(),
+        ));
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("preferred").expect("should parse"),
+        );
         builder.build()
     };
     let client = aws_sdk_dynamodb::Client::from_conf(conf);
@@ -5587,7 +5963,9 @@ async fn operation_input_test_describe_table_135() {
         let builder = builder.region(::aws_types::region::Region::new("us-iso-east-1"));
         let builder = builder.use_fips(false);
         let builder = builder.use_dual_stack(false);
-        let builder = builder.account_id_endpoint_mode("preferred");
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("preferred").expect("should parse"),
+        );
         builder.build()
     };
     let client = aws_sdk_dynamodb::Client::from_conf(conf);
@@ -5626,7 +6004,9 @@ async fn operation_input_test_describe_table_136() {
         let builder = builder.region(::aws_types::region::Region::new("us-iso-east-1"));
         let builder = builder.use_fips(false);
         let builder = builder.use_dual_stack(false);
-        let builder = builder.account_id_endpoint_mode("preferred");
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("preferred").expect("should parse"),
+        );
         builder.build()
     };
     let client = aws_sdk_dynamodb::Client::from_conf(conf);
@@ -5665,7 +6045,9 @@ async fn operation_input_test_describe_table_137() {
         let builder = builder.region(::aws_types::region::Region::new("us-iso-east-1"));
         let builder = builder.use_fips(false);
         let builder = builder.use_dual_stack(false);
-        let builder = builder.account_id_endpoint_mode("preferred");
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("preferred").expect("should parse"),
+        );
         builder.build()
     };
     let client = aws_sdk_dynamodb::Client::from_conf(conf);
@@ -5704,7 +6086,9 @@ async fn operation_input_test_batch_get_item_138() {
         let builder = builder.region(::aws_types::region::Region::new("us-iso-east-1"));
         let builder = builder.use_fips(false);
         let builder = builder.use_dual_stack(false);
-        let builder = builder.account_id_endpoint_mode("preferred");
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("preferred").expect("should parse"),
+        );
         builder.build()
     };
     let client = aws_sdk_dynamodb::Client::from_conf(conf);
@@ -5756,8 +6140,12 @@ async fn operation_input_test_list_tables_139() {
         let builder = builder.region(::aws_types::region::Region::new("us-gov-east-1"));
         let builder = builder.use_fips(false);
         let builder = builder.use_dual_stack(false);
-        let builder = builder.account_id("111111111111");
-        let builder = builder.account_id_endpoint_mode("preferred");
+        let builder = builder.credentials_provider(::aws_credential_types::provider::SharedCredentialsProvider::new(
+            ::aws_credential_types::CredentialsBuilder::for_tests().account_id("111111111111").build(),
+        ));
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("preferred").expect("should parse"),
+        );
         builder.build()
     };
     let client = aws_sdk_dynamodb::Client::from_conf(conf);
@@ -5789,8 +6177,12 @@ async fn operation_input_test_batch_get_item_140() {
         let builder = builder.region(::aws_types::region::Region::new("us-gov-east-1"));
         let builder = builder.use_fips(false);
         let builder = builder.use_dual_stack(false);
-        let builder = builder.account_id("111111111111");
-        let builder = builder.account_id_endpoint_mode("preferred");
+        let builder = builder.credentials_provider(::aws_credential_types::provider::SharedCredentialsProvider::new(
+            ::aws_credential_types::CredentialsBuilder::for_tests().account_id("111111111111").build(),
+        ));
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("preferred").expect("should parse"),
+        );
         builder.build()
     };
     let client = aws_sdk_dynamodb::Client::from_conf(conf);
@@ -5842,8 +6234,12 @@ async fn operation_input_test_list_tables_141() {
         let builder = builder.region(::aws_types::region::Region::new("us-gov-east-1"));
         let builder = builder.use_fips(false);
         let builder = builder.use_dual_stack(false);
-        let builder = builder.account_id("");
-        let builder = builder.account_id_endpoint_mode("preferred");
+        let builder = builder.credentials_provider(::aws_credential_types::provider::SharedCredentialsProvider::new(
+            ::aws_credential_types::CredentialsBuilder::for_tests().account_id("").build(),
+        ));
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("preferred").expect("should parse"),
+        );
         builder.build()
     };
     let client = aws_sdk_dynamodb::Client::from_conf(conf);
@@ -5874,7 +6270,9 @@ async fn operation_input_test_describe_table_142() {
         let builder = builder.region(::aws_types::region::Region::new("us-gov-east-1"));
         let builder = builder.use_fips(false);
         let builder = builder.use_dual_stack(false);
-        let builder = builder.account_id_endpoint_mode("preferred");
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("preferred").expect("should parse"),
+        );
         builder.build()
     };
     let client = aws_sdk_dynamodb::Client::from_conf(conf);
@@ -5913,7 +6311,9 @@ async fn operation_input_test_describe_table_143() {
         let builder = builder.region(::aws_types::region::Region::new("us-gov-east-1"));
         let builder = builder.use_fips(false);
         let builder = builder.use_dual_stack(false);
-        let builder = builder.account_id_endpoint_mode("preferred");
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("preferred").expect("should parse"),
+        );
         builder.build()
     };
     let client = aws_sdk_dynamodb::Client::from_conf(conf);
@@ -5952,7 +6352,9 @@ async fn operation_input_test_describe_table_144() {
         let builder = builder.region(::aws_types::region::Region::new("us-gov-east-1"));
         let builder = builder.use_fips(false);
         let builder = builder.use_dual_stack(false);
-        let builder = builder.account_id_endpoint_mode("preferred");
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("preferred").expect("should parse"),
+        );
         builder.build()
     };
     let client = aws_sdk_dynamodb::Client::from_conf(conf);
@@ -5991,7 +6393,9 @@ async fn operation_input_test_batch_get_item_145() {
         let builder = builder.region(::aws_types::region::Region::new("us-gov-east-1"));
         let builder = builder.use_fips(false);
         let builder = builder.use_dual_stack(false);
-        let builder = builder.account_id_endpoint_mode("preferred");
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("preferred").expect("should parse"),
+        );
         builder.build()
     };
     let client = aws_sdk_dynamodb::Client::from_conf(conf);

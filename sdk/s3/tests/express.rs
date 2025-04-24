@@ -453,3 +453,28 @@ async fn s3_express_auth_flow_should_not_be_reached_with_no_auth_schemes() {
     // If s3 Express auth flow were exercised, no request would be received, most likely due to `TimeoutError`.
     let _ = request.expect_request();
 }
+
+#[tracing_test::traced_test]
+#[tokio::test]
+async fn no_auth_should_be_selected_when_no_credentials_is_configured() {
+    let (http_client, _) = capture_request(None);
+    let config = aws_config::from_env()
+        .http_client(http_client)
+        .region(Region::new("us-east-2"))
+        .no_credentials()
+        .load()
+        .await;
+
+    let client = Client::new(&config);
+    let _ = dbg!(
+        client
+            .list_objects_v2()
+            .bucket("doesnotmatter")
+            .send()
+            .await
+    );
+
+    assert!(logs_contain(
+        "resolving identity scheme_id=AuthSchemeId { scheme_id: \"no_auth\" }"
+    ));
+}

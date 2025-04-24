@@ -1,0 +1,13 @@
+{
+  "name": "credential-process-account-id-fallback",
+  "docs": "credential process loads credentials that lack the account ID, which is populated via config file",
+  "result": {
+    "Ok": {
+      "access_key_id": "ASIARTESTID",
+      "secret_access_key": "TESTSECRETKEY",
+      "session_token": "TESTSESSIONTOKEN",
+      "account_id": "123456789001",
+      "expiry": 1651516560
+    }
+  }
+}

@@ -10,6 +10,7 @@
 
 use crate::json_credentials::{parse_json_credentials, JsonCredentials, RefreshableCredentials};
 use crate::provider_config::ProviderConfig;
+use aws_credential_types::attributes::AccountId;
 use aws_credential_types::provider::{self, error::CredentialsError};
 use aws_credential_types::Credentials;
 use aws_smithy_runtime::client::metrics::MetricsRuntimePlugin;
@@ -178,14 +179,18 @@ fn parse_response(
             access_key_id,
             secret_access_key,
             session_token,
+            account_id,
             expiration,
-        }) => Ok(Credentials::new(
-            access_key_id,
-            secret_access_key,
-            Some(session_token.to_string()),
-            Some(expiration),
-            provider_name,
-        )),
+        }) => {
+            let mut builder = Credentials::builder()
+                .access_key_id(access_key_id)
+                .secret_access_key(secret_access_key)
+                .session_token(session_token)
+                .expiry(expiration)
+                .provider_name(provider_name);
+            builder.set_account_id(account_id.map(AccountId::from));
+            Ok(builder.build())
+        }
         JsonCredentials::Error { code, message } => Err(OrchestratorError::operation(
             CredentialsError::provider_error(format!(
                 "failed to load credentials [{}]: {}",

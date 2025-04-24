@@ -281,11 +281,12 @@ async fn load_sso_credentials(
                 err
             ))
         })?;
-    Ok(Credentials::new(
-        akid,
-        secret_key,
-        credentials.session_token,
-        Some(expiration),
-        "SSO",
-    ))
+    let mut builder = Credentials::builder()
+        .access_key_id(akid)
+        .secret_access_key(secret_key)
+        .account_id(&sso_provider_config.account_id)
+        .expiry(expiration)
+        .provider_name("SSO");
+    builder.set_session_token(credentials.session_token);
+    Ok(builder.build())
 }

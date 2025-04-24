@@ -66,7 +66,7 @@
       "action": {
         "Data": {
           "data": {
-            "Utf8": "{\"RoleArn\":\"arn:aws:iam::123456789:role/ecs-task-role\",\"AccessKeyId\":\"ASIARCORRECT\",\"SecretAccessKey\":\"secretkeycorrect\",\"Token\":\"tokencorrect\",\"Expiration\" : \"2009-02-13T23:31:30Z\"}"
+            "Utf8": "{\"RoleArn\":\"arn:aws:iam::123456789:role/ecs-task-role\",\"AccessKeyId\":\"ASIARCORRECT\",\"SecretAccessKey\":\"secretkeycorrect\",\"Token\":\"tokencorrect\",\"AccountId\":\"012345678901\",\"Expiration\" : \"2009-02-13T23:31:30Z\"}"
           },
           "direction": "Response"
         }

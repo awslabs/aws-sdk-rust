@@ -9,9 +9,11 @@
 
 use crate::json_credentials::{json_parse_loop, InvalidJsonCredentials};
 use crate::sensitive_command::CommandWithSensitiveArgs;
+use aws_credential_types::attributes::AccountId;
 use aws_credential_types::provider::{self, error::CredentialsError, future, ProvideCredentials};
 use aws_credential_types::Credentials;
 use aws_smithy_json::deserialize::Token;
+use std::borrow::Cow;
 use std::process::Command;
 use std::time::SystemTime;
 use time::format_description::well_known::Rfc3339;
@@ -53,6 +55,7 @@ use time::OffsetDateTime;
 #[derive(Debug)]
 pub struct CredentialProcessProvider {
     command: CommandWithSensitiveArgs<String>,
+    profile_account_id: Option<AccountId>,
 }
 
 impl ProvideCredentials for CredentialProcessProvider {
@@ -69,13 +72,12 @@ impl CredentialProcessProvider {
     pub fn new(command: String) -> Self {
         Self {
             command: CommandWithSensitiveArgs::new(command),
+            profile_account_id: None,
         }
     }
 
-    pub(crate) fn from_command(command: &CommandWithSensitiveArgs<&str>) -> Self {
-        Self {
-            command: command.to_owned_string(),
-        }
+    pub(crate) fn builder() -> Builder {
+        Builder::default()
     }
 
     async fn credentials(&self) -> provider::Result {
@@ -120,12 +122,44 @@ impl CredentialProcessProvider {
             ))
         })?;
 
-        parse_credential_process_json_credentials(output).map_err(|invalid| {
-            CredentialsError::provider_error(format!(
+        parse_credential_process_json_credentials(output, self.profile_account_id.as_ref()).map_err(
+            |invalid| {
+                CredentialsError::provider_error(format!(
                 "Error retrieving credentials from external process, could not parse response: {}",
                 invalid
             ))
-        })
+            },
+        )
+    }
+}
+
+#[derive(Debug, Default)]
+pub(crate) struct Builder {
+    command: Option<CommandWithSensitiveArgs<String>>,
+    profile_account_id: Option<AccountId>,
+}
+
+impl Builder {
+    pub(crate) fn command(mut self, command: CommandWithSensitiveArgs<String>) -> Self {
+        self.command = Some(command);
+        self
+    }
+
+    #[allow(dead_code)] // only used in unit tests
+    pub(crate) fn account_id(mut self, account_id: impl Into<AccountId>) -> Self {
+        self.set_account_id(Some(account_id.into()));
+        self
+    }
+
+    pub(crate) fn set_account_id(&mut self, account_id: Option<AccountId>) {
+        self.profile_account_id = account_id;
+    }
+
+    pub(crate) fn build(self) -> CredentialProcessProvider {
+        CredentialProcessProvider {
+            command: self.command.expect("should be set"),
+            profile_account_id: self.profile_account_id,
+        }
     }
 }
 
@@ -134,14 +168,20 @@ impl CredentialProcessProvider {
 /// Returns an error if the response cannot be successfully parsed or is missing keys.
 ///
 /// Keys are case insensitive.
+/// The function optionally takes `profile_account_id` that originates from the profile section.
+/// If process execution result does not contain an account ID, the function uses it as a fallback.
 pub(crate) fn parse_credential_process_json_credentials(
     credentials_response: &str,
+    profile_account_id: Option<&AccountId>,
 ) -> Result<Credentials, InvalidJsonCredentials> {
     let mut version = None;
     let mut access_key_id = None;
     let mut secret_access_key = None;
     let mut session_token = None;
     let mut expiration = None;
+    let mut account_id = profile_account_id
+        .as_ref()
+        .map(|id| Cow::Borrowed(id.as_str()));
     json_parse_loop(credentials_response.as_bytes(), |key, value| {
         match (key, value) {
             /*
@@ -149,7 +189,8 @@ pub(crate) fn parse_credential_process_json_credentials(
              "AccessKeyId": "ASIARTESTID",
              "SecretAccessKey": "TESTSECRETKEY",
              "SessionToken": "TESTSESSIONTOKEN",
-             "Expiration": "2022-05-02T18:36:00+00:00"
+             "Expiration": "2022-05-02T18:36:00+00:00",
+             "AccountId": "111122223333"
             */
             (key, Token::ValueNumber { value, .. }) if key.eq_ignore_ascii_case("Version") => {
                 version = Some(i32::try_from(*value).map_err(|err| {
@@ -172,6 +213,9 @@ pub(crate) fn parse_credential_process_json_credentials(
             }
             (key, Token::ValueString { value, .. }) if key.eq_ignore_ascii_case("Expiration") => {
                 expiration = Some(value.to_unescaped()?)
+            }
+            (key, Token::ValueString { value, .. }) if key.eq_ignore_ascii_case("AccountId") => {
+                account_id = Some(value.to_unescaped()?)
             }
 
             _ => {}
@@ -197,13 +241,14 @@ pub(crate) fn parse_credential_process_json_credentials(
     if expiration.is_none() {
         tracing::debug!("no expiration provided for credentials provider credentials. these credentials will never be refreshed.")
     }
-    Ok(Credentials::new(
-        access_key_id,
-        secret_access_key,
-        session_token.map(|tok| tok.to_string()),
-        expiration,
-        "CredentialProcess",
-    ))
+    let mut builder = Credentials::builder()
+        .access_key_id(access_key_id)
+        .secret_access_key(secret_access_key)
+        .provider_name("CredentialProcess");
+    builder.set_session_token(session_token.map(String::from));
+    builder.set_expiry(expiration);
+    builder.set_account_id(account_id.map(AccountId::from));
+    Ok(builder.build())
 }
 
 fn parse_expiration(expiration: impl AsRef<str>) -> Result<SystemTime, InvalidJsonCredentials> {
@@ -218,6 +263,7 @@ fn parse_expiration(expiration: impl AsRef<str>) -> Result<SystemTime, InvalidJs
 #[cfg(test)]
 mod test {
     use crate::credential_process::CredentialProcessProvider;
+    use crate::sensitive_command::CommandWithSensitiveArgs;
     use aws_credential_types::provider::ProvideCredentials;
     use std::time::{Duration, SystemTime};
     use time::format_description::well_known::Rfc3339;
@@ -229,12 +275,13 @@ mod test {
     #[cfg_attr(windows, ignore)]
     async fn test_credential_process() {
         let provider = CredentialProcessProvider::new(String::from(
-            r#"echo '{ "Version": 1, "AccessKeyId": "ASIARTESTID", "SecretAccessKey": "TESTSECRETKEY", "SessionToken": "TESTSESSIONTOKEN", "Expiration": "2022-05-02T18:36:00+00:00" }'"#,
+            r#"echo '{ "Version": 1, "AccessKeyId": "ASIARTESTID", "SecretAccessKey": "TESTSECRETKEY", "SessionToken": "TESTSESSIONTOKEN", "AccountId": "123456789001", "Expiration": "2022-05-02T18:36:00+00:00" }'"#,
         ));
         let creds = provider.provide_credentials().await.expect("valid creds");
         assert_eq!(creds.access_key_id(), "ASIARTESTID");
         assert_eq!(creds.secret_access_key(), "TESTSECRETKEY");
         assert_eq!(creds.session_token(), Some("TESTSESSIONTOKEN"));
+        assert_eq!(creds.account_id().unwrap().as_str(), "123456789001");
         assert_eq!(
             creds.expiry(),
             Some(
@@ -267,5 +314,29 @@ mod test {
         let _creds = timeout(Duration::from_millis(1), provider.provide_credentials())
             .await
             .expect_err("timeout forced");
+    }
+
+    #[tokio::test]
+    async fn credentials_with_fallback_account_id() {
+        let provider = CredentialProcessProvider::builder()
+            .command(CommandWithSensitiveArgs::new(String::from(
+                r#"echo '{ "Version": 1, "AccessKeyId": "ASIARTESTID", "SecretAccessKey": "TESTSECRETKEY" }'"#,
+            )))
+            .account_id("012345678901")
+            .build();
+        let creds = provider.provide_credentials().await.unwrap();
+        assert_eq!("012345678901", creds.account_id().unwrap().as_str());
+    }
+
+    #[tokio::test]
+    async fn fallback_account_id_shadowed_by_account_id_in_process_output() {
+        let provider = CredentialProcessProvider::builder()
+            .command(CommandWithSensitiveArgs::new(String::from(
+                r#"echo '{ "Version": 1, "AccessKeyId": "ASIARTESTID", "SecretAccessKey": "TESTSECRETKEY", "AccountId": "111122223333" }'"#,
+            )))
+            .account_id("012345678901")
+            .build();
+        let creds = provider.provide_credentials().await.unwrap();
+        assert_eq!("111122223333", creds.account_id().unwrap().as_str());
     }
 }

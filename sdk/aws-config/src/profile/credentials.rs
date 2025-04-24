@@ -605,6 +605,9 @@ mod test {
     // TODO(https://github.com/awslabs/aws-sdk-rust/issues/1117) This test is disabled on Windows because it uses Unix-style paths
     #[cfg(all(feature = "credentials-process", not(windows)))]
     make_test!(credential_process_failure);
+    // TODO(https://github.com/awslabs/aws-sdk-rust/issues/1117) This test is disabled on Windows because it uses Unix-style paths
+    #[cfg(all(feature = "credentials-process", not(windows)))]
+    make_test!(credential_process_account_id_fallback);
     #[cfg(feature = "credentials-process")]
     make_test!(credential_process_invalid);
     #[cfg(feature = "sso")]

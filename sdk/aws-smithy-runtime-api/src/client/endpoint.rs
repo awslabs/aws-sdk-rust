@@ -13,12 +13,14 @@ use aws_smithy_types::endpoint::Endpoint;
 use aws_smithy_types::type_erasure::TypeErasedBox;
 use error::InvalidEndpointError;
 use http_02x::uri::Authority;
+use std::any::TypeId;
+use std::collections::HashMap;
 use std::fmt;
 use std::str::FromStr;
 use std::sync::Arc;
 
 new_type_future! {
-    #[doc = "Future for [`EndpointResolver::resolve_endpoint`]."]
+    #[doc = "Future for [`ResolveEndpoint::resolve_endpoint`]."]
     pub struct EndpointFuture<'a, Endpoint, BoxError>;
 }
 
@@ -27,18 +29,53 @@ new_type_future! {
 /// The actual endpoint parameters are code generated from the Smithy model, and thus,
 /// are not known to the runtime crates. Hence, this struct is really a new-type around
 /// a [`TypeErasedBox`] that holds the actual concrete parameters in it.
+///
+/// This struct allows the caller to store and retrieve properties of arbitrary types.
+/// These arbitrary properties are intended to be incorporated into the concrete parameters
+/// by [`ResolveEndpoint::finalize_params`].
 #[derive(Debug)]
-pub struct EndpointResolverParams(TypeErasedBox);
+pub struct EndpointResolverParams {
+    inner: TypeErasedBox,
+    property: HashMap<TypeId, TypeErasedBox>,
+}
 
 impl EndpointResolverParams {
     /// Creates a new [`EndpointResolverParams`] from a concrete parameters instance.
     pub fn new<T: fmt::Debug + Send + Sync + 'static>(params: T) -> Self {
-        Self(TypeErasedBox::new(params))
+        Self {
+            inner: TypeErasedBox::new(params),
+            property: HashMap::new(),
+        }
     }
 
     /// Attempts to downcast the underlying concrete parameters to `T` and return it as a reference.
     pub fn get<T: fmt::Debug + Send + Sync + 'static>(&self) -> Option<&T> {
-        self.0.downcast_ref()
+        self.inner.downcast_ref()
+    }
+
+    /// Attempts to downcast the underlying concrete parameters to `T` and return it as a mutable reference.
+    pub fn get_mut<T: fmt::Debug + Send + Sync + 'static>(&mut self) -> Option<&mut T> {
+        self.inner.downcast_mut()
+    }
+
+    /// Sets property of an arbitrary type `T` for the endpoint resolver params.
+    pub fn set_property<T: fmt::Debug + Send + Sync + 'static>(&mut self, t: T) {
+        self.property
+            .insert(TypeId::of::<T>(), TypeErasedBox::new(t));
+    }
+
+    /// Attempts to retrieve a reference to property of a given type `T`.
+    pub fn get_property<T: fmt::Debug + Send + Sync + 'static>(&self) -> Option<&T> {
+        self.property
+            .get(&TypeId::of::<T>())
+            .and_then(|b| b.downcast_ref())
+    }
+
+    /// Attempts to retrieve a mutable reference to property of a given type `T`.
+    pub fn get_property_mut<T: fmt::Debug + Send + Sync + 'static>(&mut self) -> Option<&mut T> {
+        self.property
+            .get_mut(&TypeId::of::<T>())
+            .and_then(|b| b.downcast_mut())
     }
 }
 
@@ -50,6 +87,22 @@ impl Storable for EndpointResolverParams {
 pub trait ResolveEndpoint: Send + Sync + fmt::Debug {
     /// Asynchronously resolves an endpoint to use from the given endpoint parameters.
     fn resolve_endpoint<'a>(&'a self, params: &'a EndpointResolverParams) -> EndpointFuture<'a>;
+
+    /// Finalize the service-specific concrete parameters in `_params`.
+    ///
+    /// The `EndpointResolverParams` may need to include additional data at a later point,
+    /// after its creation in the `read_before_execution` method of an endpoint parameters interceptor.
+    /// Modifying it directly within the [`ResolveEndpoint::resolve_endpoint`] method is not feasible,
+    /// as `params` is passed by reference. This means that incorporating extra data would require
+    /// cloning `params` within the method. However, the return type `EndpointFuture` has a lifetime
+    /// tied to the input argument, making it impossible to return the cloned `params`, as its lifetime
+    /// is scoped to the method.
+    fn finalize_params<'a>(
+        &'a self,
+        _params: &'a mut EndpointResolverParams,
+    ) -> Result<(), BoxError> {
+        Ok(())
+    }
 }
 
 /// Shared endpoint resolver.
@@ -68,6 +121,13 @@ impl SharedEndpointResolver {
 impl ResolveEndpoint for SharedEndpointResolver {
     fn resolve_endpoint<'a>(&'a self, params: &'a EndpointResolverParams) -> EndpointFuture<'a> {
         self.0.resolve_endpoint(params)
+    }
+
+    fn finalize_params<'a>(
+        &'a self,
+        params: &'a mut EndpointResolverParams,
+    ) -> Result<(), BoxError> {
+        self.0.finalize_params(params)
     }
 }
 

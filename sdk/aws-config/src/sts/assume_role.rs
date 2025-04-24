@@ -291,7 +291,11 @@ impl Inner {
                     access_key_id = ?assumed.credentials.as_ref().map(|c| &c.access_key_id),
                     "obtained assumed credentials"
                 );
-                super::util::into_credentials(assumed.credentials, "AssumeRoleProvider")
+                super::util::into_credentials(
+                    assumed.credentials,
+                    assumed.assumed_role_user,
+                    "AssumeRoleProvider",
+                )
             }
             Err(SdkError::ServiceError(ref context))
                 if matches!(

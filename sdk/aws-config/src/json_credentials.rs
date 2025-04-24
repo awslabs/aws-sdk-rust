@@ -67,17 +67,21 @@ pub(crate) struct RefreshableCredentials<'a> {
     pub(crate) access_key_id: Cow<'a, str>,
     pub(crate) secret_access_key: Cow<'a, str>,
     pub(crate) session_token: Cow<'a, str>,
+    pub(crate) account_id: Option<Cow<'a, str>>,
     pub(crate) expiration: SystemTime,
 }
 
 impl<'a> fmt::Debug for RefreshableCredentials<'a> {
     fn fmt(&self, f: &mut Formatter<'_>) -> fmt::Result {
-        f.debug_struct("RefreshableCredentials")
+        let mut debug = f.debug_struct("RefreshableCredentials");
+        debug
             .field("access_key_id", &self.access_key_id)
             .field("secret_access_key", &"** redacted **")
-            .field("session_token", &"** redacted **")
-            .field("expiration", &self.expiration)
-            .finish()
+            .field("session_token", &"** redacted **");
+        if let Some(account_id) = &self.account_id {
+            debug.field("account_id", account_id);
+        }
+        debug.field("expiration", &self.expiration).finish()
     }
 }
 
@@ -125,6 +129,7 @@ pub(crate) fn parse_json_credentials(
     let mut access_key_id = None;
     let mut secret_access_key = None;
     let mut session_token = None;
+    let mut account_id = None;
     let mut expiration = None;
     let mut message = None;
     json_parse_loop(credentials_response.as_bytes(), |key, value| {
@@ -135,6 +140,7 @@ pub(crate) fn parse_json_credentials(
              "AccessKeyId" : "accessKey",
              "SecretAccessKey" : "secret",
              "Token" : "token",
+             "AccountId" : "111122223333",
              "Expiration" : "....",
              "LastUpdated" : "2009-11-23T00:00:00Z"
             */
@@ -151,6 +157,9 @@ pub(crate) fn parse_json_credentials(
             }
             (key, Token::ValueString { value, .. }) if key.eq_ignore_ascii_case("Token") => {
                 session_token = Some(value.to_unescaped()?);
+            }
+            (key, Token::ValueString { value, .. }) if key.eq_ignore_ascii_case("AccountId") => {
+                account_id = Some(value.to_unescaped()?);
             }
             (key, Token::ValueString { value, .. }) if key.eq_ignore_ascii_case("Expiration") => {
                 expiration = Some(value.to_unescaped()?);
@@ -194,6 +203,7 @@ pub(crate) fn parse_json_credentials(
                     access_key_id,
                     secret_access_key,
                     session_token,
+                    account_id,
                     expiration,
                 },
             ))
@@ -257,6 +267,7 @@ mod test {
           "AccessKeyId" : "ASIARTEST",
           "SecretAccessKey" : "xjtest",
           "Token" : "IQote///test",
+          "AccountID" : "111122223333",
           "Expiration" : "2021-09-18T03:31:56Z"
         }"#;
         let parsed = parse_json_credentials(response).expect("valid JSON");
@@ -266,6 +277,7 @@ mod test {
                 access_key_id: "ASIARTEST".into(),
                 secret_access_key: "xjtest".into(),
                 session_token: "IQote///test".into(),
+                account_id: Some("111122223333".into()),
                 expiration: UNIX_EPOCH + Duration::from_secs(1631935916),
             })
         )
@@ -297,6 +309,7 @@ mod test {
             "AccessKeyId" : "ASIARTEST",
             "SecretAccessKey" : "xjtest",
             "Token" : "IQote///test",
+            "AccountID" : "111122223333",
             "Expiration" : "2021-09-18T03:31:56Z"
         }"#;
         let parsed = parse_json_credentials(resp).expect("code not required");
@@ -306,6 +319,7 @@ mod test {
                 access_key_id: "ASIARTEST".into(),
                 secret_access_key: "xjtest".into(),
                 session_token: "IQote///test".into(),
+                account_id: Some("111122223333".into()),
                 expiration: UNIX_EPOCH + Duration::from_secs(1631935916),
             })
         )
@@ -318,6 +332,7 @@ mod test {
             "Type" : "AWS-HMAC",
             "AccessKeyId" : "ASIARTEST",
             "SecretAccessKey" : "xjtest",
+            "AccountID" : "111122223333",
             "Expiration" : "2021-09-18T03:31:56Z"
         }"#;
         let parsed = parse_json_credentials(resp).expect_err("token missing");
@@ -335,6 +350,7 @@ mod test {
             "Type" : "AWS-HMAC",
             "SecretAccessKey" : "xjtest",
             "Token" : "IQote///test",
+            "AccountID" : "111122223333",
             "Expiration" : "2021-09-18T03:31:56Z"
         }"#;
         match parse_json_credentials(resp).expect_err("no code") {
@@ -369,6 +385,7 @@ mod test {
             "AccessKeyId":"ASIARTEST",
             "SecretAccessKey":"SECRETTEST",
             "Token":"tokenEaCXVzLXdlc3QtMiJGMEQCIHt47W18eF4dYfSlmKGiwuJnqmIS3LMXNYfODBCEhcnaAiAnuhGOpcdIDxin4QFzhtgaCR2MpcVqR8NFJdMgOt0/xyrnAwhhEAEaDDEzNDA5NTA2NTg1NiIM9M9GT+c5UfV/8r7PKsQDUa9xE9Eprz5N+jgxbFSD2aJR2iyXCcP9Q1cOh4fdZhyw2WNmq9XnIa2tkzrreiQ5R2t+kzergJHO1KRZPfesarfJ879aWJCSocsEKh7xXwwzTsVXrNo5eWkpwTh64q+Ksz15eoaBhtrvnGvPx6SmXv7SToi/DTHFafJlT/T9jITACZvZXSE9zfLka26Rna3rI4g0ugowha//j1f/c1XuKloqshpZvMKc561om9Y5fqBv1fRiS2KhetGTcmz3wUqNQAk8Dq9oINS7cCtdIO0atqCK69UaKeJ9uKY8mzY9dFWw2IrkpOoXmA9r955iU0NOz/95jVJiPZ/8aE8vb0t67gQfzBUCfky+mGSGWAfPRXQlFa5AEulCTHPd7IcTVCtasG033oKEKgB8QnTxvM2LaPlwaaHo7MHGYXeUKbn9NRKd8m1ShwmAlr4oKp1vQp6cPHDTsdTfPTzh/ZAjUPs+ljQbAwqXbPQdUUPpOk0vltY8k6Im9EA0pf80iUNoqrixpmPsR2hzI/ybUwdh+QhvCSBx+J8KHqF6X92u4qAVYIxLy/LGZKT9YC6Kr9Gywn+Ro+EK/xl3axHPzNpbjRDJnbW3HrMw5LmmiwY6pgGWgmD6IOq4QYUtu1uhaLQZyoI5o5PWn+d3kqqxifu8D0ykldB3lQGdlJ2rjKJjCdx8fce1SoXao9cc4hiwn39hUPuTqzVwv2zbzCKmNggIpXP6gqyRtUCakf6tI7ZwqTb2S8KF3t4ElIP8i4cPdNoI0JHSC+sT4LDPpUcX1CjGxfvo55mBHJedW3LXve8TRj4UckFXT1gLuTnzqPMrC5AHz4TAt+uv",
+            "AccountID" : "111122223333",
             "Expiration" : "2009-02-13T23:31:30Z"
         }"#;
         let parsed = parse_json_credentials(response).expect("valid JSON");
@@ -380,6 +397,7 @@ mod test {
                     access_key_id: Cow::Borrowed("ASIARTEST"),
                     secret_access_key: Cow::Borrowed("SECRETTEST"),
                     session_token,
+                    account_id: Some(Cow::Borrowed("111122223333")),
                     expiration
                 }) if session_token.starts_with("token") && *expiration == UNIX_EPOCH + Duration::from_secs(1234567890)
             ),

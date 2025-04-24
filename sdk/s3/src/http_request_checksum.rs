@@ -329,7 +329,9 @@ fn wrap_streaming_request_body_in_checksum_calculating_body(
         http::header::HeaderName::from_static("x-amz-decoded-content-length"),
         HeaderValue::from(original_body_size),
     );
-    headers.insert(
+    // The target service does not depend on where `aws-chunked` appears in the `Content-Encoding` header,
+    // as it will ultimately be stripped.
+    headers.append(
         http::header::CONTENT_ENCODING,
         HeaderValue::from_str(AWS_CHUNKED)
             .map_err(BuildError::other)

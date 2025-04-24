@@ -193,6 +193,7 @@ async fn test_checksum_on_streaming_request<'a>(
         .put_object()
         .bucket("test-bucket")
         .key("test.txt")
+        .content_encoding("custom")
         .body(body)
         .checksum_algorithm(checksum_algorithm)
         .send()
@@ -214,9 +215,7 @@ async fn test_checksum_on_streaming_request<'a>(
     let content_length = headers
         .get("Content-Length")
         .expect("Content-Length header exists");
-    let content_encoding = headers
-        .get("Content-Encoding")
-        .expect("Content-Encoding header exists");
+    let content_encoding = headers.get_all("Content-Encoding").collect::<Vec<_>>();
 
     assert_eq!(
         HeaderValue::from_static("STREAMING-UNSIGNED-PAYLOAD-TRAILER"),
@@ -228,11 +227,9 @@ async fn test_checksum_on_streaming_request<'a>(
         x_amz_trailer,
         "x-amz-trailer is incorrect"
     );
-    assert_eq!(
-        HeaderValue::from_static(aws_runtime::content_encoding::header_value::AWS_CHUNKED),
-        content_encoding,
-        "content-encoding wasn't set to aws-chunked"
-    );
+    // The position for `aws-chunked` in `content_encoding` doesn't matter for the target service.
+    // The expected here just reflects the current behavior of appending `aws-chunked` to the header.
+    assert_eq!(vec!["custom", "aws-chunked"], content_encoding);
 
     // The length of the string "Hello world"
     assert_eq!(

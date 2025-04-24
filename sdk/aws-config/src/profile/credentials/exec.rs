@@ -42,16 +42,19 @@ impl AssumeRoleProvider {
         let session_name = &self.session_name.as_ref().cloned().unwrap_or_else(|| {
             sts::util::default_session_name("assume-role-from-profile", self.time_source.now())
         });
-        let assume_role_creds = client
+        let assume_role_output = client
             .assume_role()
             .role_arn(&self.role_arn)
             .set_external_id(self.external_id.clone())
             .role_session_name(session_name)
             .send()
             .await
-            .map_err(CredentialsError::provider_error)?
-            .credentials;
-        sts::util::into_credentials(assume_role_creds, "AssumeRoleProvider")
+            .map_err(CredentialsError::provider_error)?;
+        sts::util::into_credentials(
+            assume_role_output.credentials,
+            assume_role_output.assumed_role_user,
+            "AssumeRoleProvider",
+        )
     }
 }
 
@@ -86,13 +89,24 @@ impl ProviderChain {
                     })?
             }
             BaseProvider::AccessKey(key) => Arc::new(key.clone()),
-            BaseProvider::CredentialProcess(_credential_process) => {
+            BaseProvider::CredentialProcess {
+                command_with_sensitive_args,
+                account_id,
+            } => {
                 #[cfg(feature = "credentials-process")]
                 {
-                    Arc::new(CredentialProcessProvider::from_command(_credential_process))
+                    Arc::new({
+                        let mut builder = CredentialProcessProvider::builder()
+                            .command(command_with_sensitive_args.to_owned_string());
+                        builder.set_account_id(
+                            account_id.map(aws_credential_types::attributes::AccountId::from),
+                        );
+                        builder.build()
+                    })
                 }
                 #[cfg(not(feature = "credentials-process"))]
                 {
+                    let _ = (command_with_sensitive_args, account_id);
                     Err(ProfileFileError::FeatureNotEnabled {
                         feature: "credentials-process".into(),
                         message: Some(

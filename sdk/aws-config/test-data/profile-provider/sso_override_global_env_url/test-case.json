@@ -6,6 +6,7 @@
       "access_key_id": "ASIARTESTID",
       "secret_access_key": "TESTSECRETKEY",
       "session_token": "TESTSESSIONTOKEN",
+      "account_id": "012345678901",
       "expiry": 1651516560
     }
   }

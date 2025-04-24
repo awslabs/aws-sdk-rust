@@ -66,3 +66,6 @@ pub mod request_min_compression_size_bytes;
 
 /// Default provider chains for request/response checksum configuration
 pub mod checksums;
+
+/// Default provider chain for account-based endpoint mode
+pub mod account_id_endpoint_mode;

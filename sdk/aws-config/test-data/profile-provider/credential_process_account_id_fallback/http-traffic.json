@@ -1,0 +1,5 @@
+{
+  "docs": "test case uses credential process, no network requests",
+  "version": "V0",
+  "events": []
+}

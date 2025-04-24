@@ -1,0 +1,7 @@
+{
+  "name": "sso-server-error",
+  "docs": "When calling GetRoleCredentials unsuccessfully, it does not find account ID, not to mention credentials themselves",
+  "result": {
+    "ErrorContains": "an error occurred while loading credentials"
+  }
+}

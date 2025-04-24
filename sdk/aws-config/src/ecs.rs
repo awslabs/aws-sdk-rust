@@ -724,6 +724,7 @@ mod test {
                        "AccessKeyId" : "AKID",
                        "SecretAccessKey" : "SECRET",
                        "Token" : "TOKEN....=",
+                       "AccountId" : "AID",
                        "Expiration" : "2009-02-13T23:31:30Z"
                      }"#,
             ))
@@ -734,6 +735,7 @@ mod test {
     fn assert_correct(creds: Credentials) {
         assert_eq!(creds.access_key_id(), "AKID");
         assert_eq!(creds.secret_access_key(), "SECRET");
+        assert_eq!(creds.account_id().unwrap().as_str(), "AID");
         assert_eq!(creds.session_token().unwrap(), "TOKEN....=");
         assert_eq!(
             creds.expiry().unwrap(),

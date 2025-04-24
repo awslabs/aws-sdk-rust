@@ -25,7 +25,7 @@ pub struct Config {
     cloneable: ::aws_smithy_types::config_bag::CloneableLayer,
     pub(crate) runtime_components: crate::config::RuntimeComponentsBuilder,
     pub(crate) runtime_plugins: ::std::vec::Vec<crate::config::SharedRuntimePlugin>,
-    behavior_version: ::std::option::Option<crate::config::BehaviorVersion>,
+    pub(crate) behavior_version: ::std::option::Option<crate::config::BehaviorVersion>,
 }
 impl Config {
     ///
@@ -1136,6 +1136,7 @@ impl ServiceRuntimePlugin {
         let config = {
             let mut cfg = ::aws_smithy_types::config_bag::Layer::new("GuardDutyAPIService");
             cfg.store_put(crate::idempotency_token::default_provider());
+            cfg.store_put(::aws_smithy_runtime::client::orchestrator::AuthSchemeAndEndpointOrchestrationV2);
             ::std::option::Option::Some(cfg.freeze())
         };
         let mut runtime_components = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("ServiceRuntimePlugin");

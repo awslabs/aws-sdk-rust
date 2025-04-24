@@ -76,7 +76,7 @@ const ENV_VAR_TOKEN_FILE: &str = "AWS_WEB_IDENTITY_TOKEN_FILE";
 const ENV_VAR_ROLE_ARN: &str = "AWS_ROLE_ARN";
 const ENV_VAR_SESSION_NAME: &str = "AWS_ROLE_SESSION_NAME";
 
-/// Credential provider to load credentials from Web Identity  Tokens
+/// Credential provider to load credentials from Web Identity Tokens
 ///
 /// See Module documentation for more details
 #[derive(Debug)]
@@ -273,7 +273,7 @@ async fn load_credentials(
             tracing::warn!(error = %DisplayErrorContext(&sdk_error), "STS returned an error assuming web identity role");
             CredentialsError::provider_error(sdk_error)
         })?;
-    sts::util::into_credentials(resp.credentials, "WebIdentityToken")
+    sts::util::into_credentials(resp.credentials, resp.assumed_role_user, "WebIdentityToken")
 }
 
 #[cfg(test)]
