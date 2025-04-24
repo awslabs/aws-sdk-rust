@@ -32,8 +32,8 @@ impl ListDatasetLabels {
             // Create a parent span for the entire operation. Includes a random, internal-only,
             // seven-digit ID for the operation orchestration so that it can be correlated in the logs.
             .instrument(::tracing::debug_span!(
-                "rekognition.ListDatasetLabels",
-                "rpc.service" = "rekognition",
+                "Rekognition.ListDatasetLabels",
+                "rpc.service" = "Rekognition",
                 "rpc.method" = "ListDatasetLabels",
                 "sdk_invocation_id" = ::fastrand::u32(1_000_000..10_000_000),
                 "rpc.system" = "aws-api",
@@ -60,7 +60,7 @@ impl ListDatasetLabels {
         >,
     > {
         let input = ::aws_smithy_runtime_api::client::interceptors::context::Input::erase(input);
-        ::aws_smithy_runtime::client::orchestrator::invoke_with_stop_point("rekognition", "ListDatasetLabels", input, runtime_plugins, stop_point)
+        ::aws_smithy_runtime::client::orchestrator::invoke_with_stop_point("Rekognition", "ListDatasetLabels", input, runtime_plugins, stop_point)
             .await
     }
 
@@ -103,7 +103,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for ListDat
 
         cfg.store_put(::aws_smithy_runtime_api::client::orchestrator::Metadata::new(
             "ListDatasetLabels",
-            "rekognition",
+            "Rekognition",
         ));
         let mut signing_options = ::aws_runtime::auth::SigningOptions::default();
         signing_options.double_uri_encode = true;

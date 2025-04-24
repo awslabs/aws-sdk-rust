@@ -32,8 +32,8 @@ impl GetProgrammaticAccessCredentials {
             // Create a parent span for the entire operation. Includes a random, internal-only,
             // seven-digit ID for the operation orchestration so that it can be correlated in the logs.
             .instrument(::tracing::debug_span!(
-                "finspacedata.GetProgrammaticAccessCredentials",
-                "rpc.service" = "finspacedata",
+                "finspace data.GetProgrammaticAccessCredentials",
+                "rpc.service" = "finspace data",
                 "rpc.method" = "GetProgrammaticAccessCredentials",
                 "sdk_invocation_id" = ::fastrand::u32(1_000_000..10_000_000),
                 "rpc.system" = "aws-api",
@@ -61,7 +61,7 @@ impl GetProgrammaticAccessCredentials {
     > {
         let input = ::aws_smithy_runtime_api::client::interceptors::context::Input::erase(input);
         ::aws_smithy_runtime::client::orchestrator::invoke_with_stop_point(
-            "finspacedata",
+            "finspace data",
             "GetProgrammaticAccessCredentials",
             input,
             runtime_plugins,
@@ -110,7 +110,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for GetProg
         cfg.store_put(::aws_smithy_runtime_api::client::orchestrator::SensitiveOutput);
         cfg.store_put(::aws_smithy_runtime_api::client::orchestrator::Metadata::new(
             "GetProgrammaticAccessCredentials",
-            "finspacedata",
+            "finspace data",
         ));
         let mut signing_options = ::aws_runtime::auth::SigningOptions::default();
         signing_options.double_uri_encode = true;

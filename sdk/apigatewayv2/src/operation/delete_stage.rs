@@ -32,8 +32,8 @@ impl DeleteStage {
             // Create a parent span for the entire operation. Includes a random, internal-only,
             // seven-digit ID for the operation orchestration so that it can be correlated in the logs.
             .instrument(::tracing::debug_span!(
-                "apigatewayv2.DeleteStage",
-                "rpc.service" = "apigatewayv2",
+                "ApiGatewayV2.DeleteStage",
+                "rpc.service" = "ApiGatewayV2",
                 "rpc.method" = "DeleteStage",
                 "sdk_invocation_id" = ::fastrand::u32(1_000_000..10_000_000),
                 "rpc.system" = "aws-api",
@@ -60,7 +60,7 @@ impl DeleteStage {
         >,
     > {
         let input = ::aws_smithy_runtime_api::client::interceptors::context::Input::erase(input);
-        ::aws_smithy_runtime::client::orchestrator::invoke_with_stop_point("apigatewayv2", "DeleteStage", input, runtime_plugins, stop_point).await
+        ::aws_smithy_runtime::client::orchestrator::invoke_with_stop_point("ApiGatewayV2", "DeleteStage", input, runtime_plugins, stop_point).await
     }
 
     pub(crate) fn operation_runtime_plugins(
@@ -102,7 +102,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for DeleteS
 
         cfg.store_put(::aws_smithy_runtime_api::client::orchestrator::Metadata::new(
             "DeleteStage",
-            "apigatewayv2",
+            "ApiGatewayV2",
         ));
         let mut signing_options = ::aws_runtime::auth::SigningOptions::default();
         signing_options.double_uri_encode = true;

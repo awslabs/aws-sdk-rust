@@ -32,8 +32,8 @@ impl CreateIndex {
             // Create a parent span for the entire operation. Includes a random, internal-only,
             // seven-digit ID for the operation orchestration so that it can be correlated in the logs.
             .instrument(::tracing::debug_span!(
-                "resourceexplorer2.CreateIndex",
-                "rpc.service" = "resourceexplorer2",
+                "Resource Explorer 2.CreateIndex",
+                "rpc.service" = "Resource Explorer 2",
                 "rpc.method" = "CreateIndex",
                 "sdk_invocation_id" = ::fastrand::u32(1_000_000..10_000_000),
                 "rpc.system" = "aws-api",
@@ -60,7 +60,7 @@ impl CreateIndex {
         >,
     > {
         let input = ::aws_smithy_runtime_api::client::interceptors::context::Input::erase(input);
-        ::aws_smithy_runtime::client::orchestrator::invoke_with_stop_point("resourceexplorer2", "CreateIndex", input, runtime_plugins, stop_point)
+        ::aws_smithy_runtime::client::orchestrator::invoke_with_stop_point("Resource Explorer 2", "CreateIndex", input, runtime_plugins, stop_point)
             .await
     }
 
@@ -112,7 +112,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for CreateI
 
         cfg.store_put(::aws_smithy_runtime_api::client::orchestrator::Metadata::new(
             "CreateIndex",
-            "resourceexplorer2",
+            "Resource Explorer 2",
         ));
         let mut signing_options = ::aws_runtime::auth::SigningOptions::default();
         signing_options.double_uri_encode = true;

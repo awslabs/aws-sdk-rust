@@ -32,8 +32,8 @@ impl PutTableBucketEncryption {
             // Create a parent span for the entire operation. Includes a random, internal-only,
             // seven-digit ID for the operation orchestration so that it can be correlated in the logs.
             .instrument(::tracing::debug_span!(
-                "s3tables.PutTableBucketEncryption",
-                "rpc.service" = "s3tables",
+                "S3Tables.PutTableBucketEncryption",
+                "rpc.service" = "S3Tables",
                 "rpc.method" = "PutTableBucketEncryption",
                 "sdk_invocation_id" = ::fastrand::u32(1_000_000..10_000_000),
                 "rpc.system" = "aws-api",
@@ -60,7 +60,7 @@ impl PutTableBucketEncryption {
         >,
     > {
         let input = ::aws_smithy_runtime_api::client::interceptors::context::Input::erase(input);
-        ::aws_smithy_runtime::client::orchestrator::invoke_with_stop_point("s3tables", "PutTableBucketEncryption", input, runtime_plugins, stop_point)
+        ::aws_smithy_runtime::client::orchestrator::invoke_with_stop_point("S3Tables", "PutTableBucketEncryption", input, runtime_plugins, stop_point)
             .await
     }
 
@@ -103,7 +103,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for PutTabl
 
         cfg.store_put(::aws_smithy_runtime_api::client::orchestrator::Metadata::new(
             "PutTableBucketEncryption",
-            "s3tables",
+            "S3Tables",
         ));
         let mut signing_options = ::aws_runtime::auth::SigningOptions::default();
         signing_options.double_uri_encode = true;

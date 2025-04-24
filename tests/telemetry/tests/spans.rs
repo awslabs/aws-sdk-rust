@@ -23,8 +23,8 @@ async fn top_level_spans_exist_with_correct_attributes() {
     let ddb_top_level: fn() -> Box<dyn Visit + 'static> = || Box::new(DdbTestVisitor);
     let subscriber = tracing_subscriber::registry::Registry::default().with(TestLayer {
         visitor_factories: HashMap::from([
-            ("s3.GetObject", s3_top_level),
-            ("dynamodb.GetItem", ddb_top_level),
+            ("S3.GetObject", s3_top_level),
+            ("DynamoDB.GetItem", ddb_top_level),
         ]),
     });
     let _guard = tracing::subscriber::set_default(subscriber);
@@ -61,7 +61,7 @@ async fn all_expected_operation_spans_emitted_with_correct_nesting() {
     let subscriber = base_subscriber.with(AssertionsLayer::new(&assertion_registry));
     let _guard = tracing::subscriber::set_default(subscriber);
 
-    const OPERATION_NAME: &str = "s3.GetObject";
+    const OPERATION_NAME: &str = "S3.GetObject";
     const INVOKE: &str = "invoke";
     const TRY_OP: &str = "try_op";
     const TRY_ATTEMPT: &str = "try_attempt";
@@ -311,7 +311,7 @@ impl Visit for S3TestVisitor {
         if field_name == "rpc.system" {
             assert_eq!("aws-api".to_string(), field_value);
         } else if field_name == "rpc.service" {
-            assert_eq!("s3".to_string(), field_value);
+            assert_eq!("S3".to_string(), field_value);
         } else if field_name == "rpc.method" {
             assert_eq!("GetObject".to_string(), field_value);
         } else if field_name == "sdk_invocation_id" {
@@ -333,7 +333,7 @@ impl Visit for DdbTestVisitor {
         if field_name == "rpc.system" {
             assert_eq!("aws-api".to_string(), field_value);
         } else if field_name == "rpc.service" {
-            assert_eq!("dynamodb".to_string(), field_value);
+            assert_eq!("DynamoDB".to_string(), field_value);
         } else if field_name == "rpc.method" {
             assert_eq!("GetItem".to_string(), field_value);
         } else if field_name == "sdk_invocation_id" {

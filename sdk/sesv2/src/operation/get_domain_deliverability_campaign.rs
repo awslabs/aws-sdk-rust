@@ -32,8 +32,8 @@ impl GetDomainDeliverabilityCampaign {
             // Create a parent span for the entire operation. Includes a random, internal-only,
             // seven-digit ID for the operation orchestration so that it can be correlated in the logs.
             .instrument(::tracing::debug_span!(
-                "sesv2.GetDomainDeliverabilityCampaign",
-                "rpc.service" = "sesv2",
+                "SESv2.GetDomainDeliverabilityCampaign",
+                "rpc.service" = "SESv2",
                 "rpc.method" = "GetDomainDeliverabilityCampaign",
                 "sdk_invocation_id" = ::fastrand::u32(1_000_000..10_000_000),
                 "rpc.system" = "aws-api",
@@ -61,7 +61,7 @@ impl GetDomainDeliverabilityCampaign {
     > {
         let input = ::aws_smithy_runtime_api::client::interceptors::context::Input::erase(input);
         ::aws_smithy_runtime::client::orchestrator::invoke_with_stop_point(
-            "sesv2",
+            "SESv2",
             "GetDomainDeliverabilityCampaign",
             input,
             runtime_plugins,
@@ -113,7 +113,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for GetDoma
 
         cfg.store_put(::aws_smithy_runtime_api::client::orchestrator::Metadata::new(
             "GetDomainDeliverabilityCampaign",
-            "sesv2",
+            "SESv2",
         ));
         let mut signing_options = ::aws_runtime::auth::SigningOptions::default();
         signing_options.double_uri_encode = true;

@@ -32,8 +32,8 @@ impl CreateMediaLiveConnectorPipeline {
             // Create a parent span for the entire operation. Includes a random, internal-only,
             // seven-digit ID for the operation orchestration so that it can be correlated in the logs.
             .instrument(::tracing::debug_span!(
-                "chimesdkmediapipelines.CreateMediaLiveConnectorPipeline",
-                "rpc.service" = "chimesdkmediapipelines",
+                "Chime SDK Media Pipelines.CreateMediaLiveConnectorPipeline",
+                "rpc.service" = "Chime SDK Media Pipelines",
                 "rpc.method" = "CreateMediaLiveConnectorPipeline",
                 "sdk_invocation_id" = ::fastrand::u32(1_000_000..10_000_000),
                 "rpc.system" = "aws-api",
@@ -61,7 +61,7 @@ impl CreateMediaLiveConnectorPipeline {
     > {
         let input = ::aws_smithy_runtime_api::client::interceptors::context::Input::erase(input);
         ::aws_smithy_runtime::client::orchestrator::invoke_with_stop_point(
-            "chimesdkmediapipelines",
+            "Chime SDK Media Pipelines",
             "CreateMediaLiveConnectorPipeline",
             input,
             runtime_plugins,
@@ -120,7 +120,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for CreateM
         cfg.store_put(::aws_smithy_runtime_api::client::orchestrator::SensitiveOutput);
         cfg.store_put(::aws_smithy_runtime_api::client::orchestrator::Metadata::new(
             "CreateMediaLiveConnectorPipeline",
-            "chimesdkmediapipelines",
+            "Chime SDK Media Pipelines",
         ));
         let mut signing_options = ::aws_runtime::auth::SigningOptions::default();
         signing_options.double_uri_encode = true;

@@ -32,8 +32,8 @@ impl AssociateSoftwareToken {
             // Create a parent span for the entire operation. Includes a random, internal-only,
             // seven-digit ID for the operation orchestration so that it can be correlated in the logs.
             .instrument(::tracing::debug_span!(
-                "cognitoidentityprovider.AssociateSoftwareToken",
-                "rpc.service" = "cognitoidentityprovider",
+                "Cognito Identity Provider.AssociateSoftwareToken",
+                "rpc.service" = "Cognito Identity Provider",
                 "rpc.method" = "AssociateSoftwareToken",
                 "sdk_invocation_id" = ::fastrand::u32(1_000_000..10_000_000),
                 "rpc.system" = "aws-api",
@@ -61,7 +61,7 @@ impl AssociateSoftwareToken {
     > {
         let input = ::aws_smithy_runtime_api::client::interceptors::context::Input::erase(input);
         ::aws_smithy_runtime::client::orchestrator::invoke_with_stop_point(
-            "cognitoidentityprovider",
+            "Cognito Identity Provider",
             "AssociateSoftwareToken",
             input,
             runtime_plugins,
@@ -110,7 +110,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for Associa
         cfg.store_put(::aws_smithy_runtime_api::client::orchestrator::SensitiveOutput);
         cfg.store_put(::aws_smithy_runtime_api::client::orchestrator::Metadata::new(
             "AssociateSoftwareToken",
-            "cognitoidentityprovider",
+            "Cognito Identity Provider",
         ));
 
         ::std::option::Option::Some(cfg.freeze())

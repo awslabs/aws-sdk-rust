@@ -32,8 +32,8 @@ impl TransferDomain {
             // Create a parent span for the entire operation. Includes a random, internal-only,
             // seven-digit ID for the operation orchestration so that it can be correlated in the logs.
             .instrument(::tracing::debug_span!(
-                "route53domains.TransferDomain",
-                "rpc.service" = "route53domains",
+                "Route 53 Domains.TransferDomain",
+                "rpc.service" = "Route 53 Domains",
                 "rpc.method" = "TransferDomain",
                 "sdk_invocation_id" = ::fastrand::u32(1_000_000..10_000_000),
                 "rpc.system" = "aws-api",
@@ -60,7 +60,7 @@ impl TransferDomain {
         >,
     > {
         let input = ::aws_smithy_runtime_api::client::interceptors::context::Input::erase(input);
-        ::aws_smithy_runtime::client::orchestrator::invoke_with_stop_point("route53domains", "TransferDomain", input, runtime_plugins, stop_point)
+        ::aws_smithy_runtime::client::orchestrator::invoke_with_stop_point("Route 53 Domains", "TransferDomain", input, runtime_plugins, stop_point)
             .await
     }
 
@@ -103,7 +103,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for Transfe
 
         cfg.store_put(::aws_smithy_runtime_api::client::orchestrator::Metadata::new(
             "TransferDomain",
-            "route53domains",
+            "Route 53 Domains",
         ));
         let mut signing_options = ::aws_runtime::auth::SigningOptions::default();
         signing_options.double_uri_encode = true;

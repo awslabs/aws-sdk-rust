@@ -32,8 +32,8 @@ impl InitiateAuth {
             // Create a parent span for the entire operation. Includes a random, internal-only,
             // seven-digit ID for the operation orchestration so that it can be correlated in the logs.
             .instrument(::tracing::debug_span!(
-                "cognitoidentityprovider.InitiateAuth",
-                "rpc.service" = "cognitoidentityprovider",
+                "Cognito Identity Provider.InitiateAuth",
+                "rpc.service" = "Cognito Identity Provider",
                 "rpc.method" = "InitiateAuth",
                 "sdk_invocation_id" = ::fastrand::u32(1_000_000..10_000_000),
                 "rpc.system" = "aws-api",
@@ -61,7 +61,7 @@ impl InitiateAuth {
     > {
         let input = ::aws_smithy_runtime_api::client::interceptors::context::Input::erase(input);
         ::aws_smithy_runtime::client::orchestrator::invoke_with_stop_point(
-            "cognitoidentityprovider",
+            "Cognito Identity Provider",
             "InitiateAuth",
             input,
             runtime_plugins,
@@ -110,7 +110,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for Initiat
         cfg.store_put(::aws_smithy_runtime_api::client::orchestrator::SensitiveOutput);
         cfg.store_put(::aws_smithy_runtime_api::client::orchestrator::Metadata::new(
             "InitiateAuth",
-            "cognitoidentityprovider",
+            "Cognito Identity Provider",
         ));
 
         ::std::option::Option::Some(cfg.freeze())

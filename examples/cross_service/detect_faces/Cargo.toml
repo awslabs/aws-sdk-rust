@@ -7,8 +7,8 @@ publish = false
 
 [dependencies]
 aws-config= { version = "1.6.1", path = "../../../sdk/aws-config" }
-aws-sdk-rekognition= { version = "1.67.0", path = "../../../sdk/rekognition" }
-aws-sdk-s3= { version = "1.82.0", path = "../../../sdk/s3" }
+aws-sdk-rekognition= { version = "1.68.0", path = "../../../sdk/rekognition" }
+aws-sdk-s3= { version = "1.83.0", path = "../../../sdk/s3" }
 aws-smithy-types= { version = "1.3.0", path = "../../../sdk/aws-smithy-types", features = ["rt-tokio"] }
 
 [dependencies.tokio]

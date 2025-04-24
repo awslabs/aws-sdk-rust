@@ -1288,7 +1288,7 @@ pub use ::aws_types::app_name::AppName;
 #[allow(dead_code)]
 fn service_config_key<'a>(env: &'a str, profile: &'a str) -> aws_types::service_config::ServiceConfigKey<'a> {
     ::aws_types::service_config::ServiceConfigKey::builder()
-        .service_id("ssoadmin")
+        .service_id("SSO Admin")
         .env(env)
         .profile(profile)
         .build()

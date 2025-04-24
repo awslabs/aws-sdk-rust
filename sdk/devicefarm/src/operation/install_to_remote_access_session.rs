@@ -32,8 +32,8 @@ impl InstallToRemoteAccessSession {
             // Create a parent span for the entire operation. Includes a random, internal-only,
             // seven-digit ID for the operation orchestration so that it can be correlated in the logs.
             .instrument(::tracing::debug_span!(
-                "devicefarm.InstallToRemoteAccessSession",
-                "rpc.service" = "devicefarm",
+                "Device Farm.InstallToRemoteAccessSession",
+                "rpc.service" = "Device Farm",
                 "rpc.method" = "InstallToRemoteAccessSession",
                 "sdk_invocation_id" = ::fastrand::u32(1_000_000..10_000_000),
                 "rpc.system" = "aws-api",
@@ -61,7 +61,7 @@ impl InstallToRemoteAccessSession {
     > {
         let input = ::aws_smithy_runtime_api::client::interceptors::context::Input::erase(input);
         ::aws_smithy_runtime::client::orchestrator::invoke_with_stop_point(
-            "devicefarm",
+            "Device Farm",
             "InstallToRemoteAccessSession",
             input,
             runtime_plugins,
@@ -110,7 +110,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for Install
         cfg.store_put(::aws_smithy_runtime_api::client::orchestrator::SensitiveOutput);
         cfg.store_put(::aws_smithy_runtime_api::client::orchestrator::Metadata::new(
             "InstallToRemoteAccessSession",
-            "devicefarm",
+            "Device Farm",
         ));
         let mut signing_options = ::aws_runtime::auth::SigningOptions::default();
         signing_options.double_uri_encode = true;

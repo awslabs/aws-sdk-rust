@@ -31,7 +31,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-//! aws-sdk-opensearch = "1.77.1"
+//! aws-sdk-opensearch = "1.78.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!

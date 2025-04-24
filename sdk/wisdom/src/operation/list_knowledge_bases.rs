@@ -32,8 +32,8 @@ impl ListKnowledgeBases {
             // Create a parent span for the entire operation. Includes a random, internal-only,
             // seven-digit ID for the operation orchestration so that it can be correlated in the logs.
             .instrument(::tracing::debug_span!(
-                "wisdom.ListKnowledgeBases",
-                "rpc.service" = "wisdom",
+                "Wisdom.ListKnowledgeBases",
+                "rpc.service" = "Wisdom",
                 "rpc.method" = "ListKnowledgeBases",
                 "sdk_invocation_id" = ::fastrand::u32(1_000_000..10_000_000),
                 "rpc.system" = "aws-api",
@@ -60,7 +60,7 @@ impl ListKnowledgeBases {
         >,
     > {
         let input = ::aws_smithy_runtime_api::client::interceptors::context::Input::erase(input);
-        ::aws_smithy_runtime::client::orchestrator::invoke_with_stop_point("wisdom", "ListKnowledgeBases", input, runtime_plugins, stop_point).await
+        ::aws_smithy_runtime::client::orchestrator::invoke_with_stop_point("Wisdom", "ListKnowledgeBases", input, runtime_plugins, stop_point).await
     }
 
     pub(crate) fn operation_runtime_plugins(
@@ -102,7 +102,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for ListKno
 
         cfg.store_put(::aws_smithy_runtime_api::client::orchestrator::Metadata::new(
             "ListKnowledgeBases",
-            "wisdom",
+            "Wisdom",
         ));
         let mut signing_options = ::aws_runtime::auth::SigningOptions::default();
         signing_options.double_uri_encode = true;

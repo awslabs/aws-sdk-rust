@@ -32,8 +32,8 @@ impl DeleteAccountAlias {
             // Create a parent span for the entire operation. Includes a random, internal-only,
             // seven-digit ID for the operation orchestration so that it can be correlated in the logs.
             .instrument(::tracing::debug_span!(
-                "supportapp.DeleteAccountAlias",
-                "rpc.service" = "supportapp",
+                "Support App.DeleteAccountAlias",
+                "rpc.service" = "Support App",
                 "rpc.method" = "DeleteAccountAlias",
                 "sdk_invocation_id" = ::fastrand::u32(1_000_000..10_000_000),
                 "rpc.system" = "aws-api",
@@ -60,7 +60,7 @@ impl DeleteAccountAlias {
         >,
     > {
         let input = ::aws_smithy_runtime_api::client::interceptors::context::Input::erase(input);
-        ::aws_smithy_runtime::client::orchestrator::invoke_with_stop_point("supportapp", "DeleteAccountAlias", input, runtime_plugins, stop_point)
+        ::aws_smithy_runtime::client::orchestrator::invoke_with_stop_point("Support App", "DeleteAccountAlias", input, runtime_plugins, stop_point)
             .await
     }
 
@@ -103,7 +103,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for DeleteA
 
         cfg.store_put(::aws_smithy_runtime_api::client::orchestrator::Metadata::new(
             "DeleteAccountAlias",
-            "supportapp",
+            "Support App",
         ));
         let mut signing_options = ::aws_runtime::auth::SigningOptions::default();
         signing_options.double_uri_encode = true;

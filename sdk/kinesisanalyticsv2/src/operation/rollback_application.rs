@@ -32,8 +32,8 @@ impl RollbackApplication {
             // Create a parent span for the entire operation. Includes a random, internal-only,
             // seven-digit ID for the operation orchestration so that it can be correlated in the logs.
             .instrument(::tracing::debug_span!(
-                "kinesisanalyticsv2.RollbackApplication",
-                "rpc.service" = "kinesisanalyticsv2",
+                "Kinesis Analytics V2.RollbackApplication",
+                "rpc.service" = "Kinesis Analytics V2",
                 "rpc.method" = "RollbackApplication",
                 "sdk_invocation_id" = ::fastrand::u32(1_000_000..10_000_000),
                 "rpc.system" = "aws-api",
@@ -61,7 +61,7 @@ impl RollbackApplication {
     > {
         let input = ::aws_smithy_runtime_api::client::interceptors::context::Input::erase(input);
         ::aws_smithy_runtime::client::orchestrator::invoke_with_stop_point(
-            "kinesisanalyticsv2",
+            "Kinesis Analytics V2",
             "RollbackApplication",
             input,
             runtime_plugins,
@@ -109,7 +109,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for Rollbac
 
         cfg.store_put(::aws_smithy_runtime_api::client::orchestrator::Metadata::new(
             "RollbackApplication",
-            "kinesisanalyticsv2",
+            "Kinesis Analytics V2",
         ));
         let mut signing_options = ::aws_runtime::auth::SigningOptions::default();
         signing_options.double_uri_encode = true;

@@ -86,12 +86,12 @@ async fn metrics_have_expected_attributes() {
     let call_duration_attributes =
         extract_metric_attributes(&finished_metrics, "smithy.client.call.duration");
     assert!(call_duration_attributes[0].contains(&KeyValue::new("rpc.method", "GetObject")));
-    assert!(call_duration_attributes[0].contains(&KeyValue::new("rpc.service", "s3")));
+    assert!(call_duration_attributes[0].contains(&KeyValue::new("rpc.service", "S3")));
 
     let attempt_duration_attributes =
         extract_metric_attributes(&finished_metrics, "smithy.client.call.attempt.duration");
     assert!(attempt_duration_attributes[0].contains(&KeyValue::new("rpc.method", "GetObject")));
-    assert!(attempt_duration_attributes[0].contains(&KeyValue::new("rpc.service", "s3")));
+    assert!(attempt_duration_attributes[0].contains(&KeyValue::new("rpc.service", "S3")));
 
     // The attempt metric contains an attempt counter attribute that correctly increments
     assert!(attempt_duration_attributes

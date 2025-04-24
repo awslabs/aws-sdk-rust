@@ -32,8 +32,8 @@ impl DescribeRecommendationFeedback {
             // Create a parent span for the entire operation. Includes a random, internal-only,
             // seven-digit ID for the operation orchestration so that it can be correlated in the logs.
             .instrument(::tracing::debug_span!(
-                "codegurureviewer.DescribeRecommendationFeedback",
-                "rpc.service" = "codegurureviewer",
+                "CodeGuru Reviewer.DescribeRecommendationFeedback",
+                "rpc.service" = "CodeGuru Reviewer",
                 "rpc.method" = "DescribeRecommendationFeedback",
                 "sdk_invocation_id" = ::fastrand::u32(1_000_000..10_000_000),
                 "rpc.system" = "aws-api",
@@ -61,7 +61,7 @@ impl DescribeRecommendationFeedback {
     > {
         let input = ::aws_smithy_runtime_api::client::interceptors::context::Input::erase(input);
         ::aws_smithy_runtime::client::orchestrator::invoke_with_stop_point(
-            "codegurureviewer",
+            "CodeGuru Reviewer",
             "DescribeRecommendationFeedback",
             input,
             runtime_plugins,
@@ -109,7 +109,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for Describ
 
         cfg.store_put(::aws_smithy_runtime_api::client::orchestrator::Metadata::new(
             "DescribeRecommendationFeedback",
-            "codegurureviewer",
+            "CodeGuru Reviewer",
         ));
         let mut signing_options = ::aws_runtime::auth::SigningOptions::default();
         signing_options.double_uri_encode = true;

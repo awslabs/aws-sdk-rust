@@ -32,8 +32,8 @@ impl GetThirdPartyJobDetails {
             // Create a parent span for the entire operation. Includes a random, internal-only,
             // seven-digit ID for the operation orchestration so that it can be correlated in the logs.
             .instrument(::tracing::debug_span!(
-                "codepipeline.GetThirdPartyJobDetails",
-                "rpc.service" = "codepipeline",
+                "CodePipeline.GetThirdPartyJobDetails",
+                "rpc.service" = "CodePipeline",
                 "rpc.method" = "GetThirdPartyJobDetails",
                 "sdk_invocation_id" = ::fastrand::u32(1_000_000..10_000_000),
                 "rpc.system" = "aws-api",
@@ -61,7 +61,7 @@ impl GetThirdPartyJobDetails {
     > {
         let input = ::aws_smithy_runtime_api::client::interceptors::context::Input::erase(input);
         ::aws_smithy_runtime::client::orchestrator::invoke_with_stop_point(
-            "codepipeline",
+            "CodePipeline",
             "GetThirdPartyJobDetails",
             input,
             runtime_plugins,
@@ -110,7 +110,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for GetThir
         cfg.store_put(::aws_smithy_runtime_api::client::orchestrator::SensitiveOutput);
         cfg.store_put(::aws_smithy_runtime_api::client::orchestrator::Metadata::new(
             "GetThirdPartyJobDetails",
-            "codepipeline",
+            "CodePipeline",
         ));
         let mut signing_options = ::aws_runtime::auth::SigningOptions::default();
         signing_options.double_uri_encode = true;

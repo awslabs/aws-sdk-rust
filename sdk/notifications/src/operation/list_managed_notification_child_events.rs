@@ -32,8 +32,8 @@ impl ListManagedNotificationChildEvents {
             // Create a parent span for the entire operation. Includes a random, internal-only,
             // seven-digit ID for the operation orchestration so that it can be correlated in the logs.
             .instrument(::tracing::debug_span!(
-                "notifications.ListManagedNotificationChildEvents",
-                "rpc.service" = "notifications",
+                "Notifications.ListManagedNotificationChildEvents",
+                "rpc.service" = "Notifications",
                 "rpc.method" = "ListManagedNotificationChildEvents",
                 "sdk_invocation_id" = ::fastrand::u32(1_000_000..10_000_000),
                 "rpc.system" = "aws-api",
@@ -61,7 +61,7 @@ impl ListManagedNotificationChildEvents {
     > {
         let input = ::aws_smithy_runtime_api::client::interceptors::context::Input::erase(input);
         ::aws_smithy_runtime::client::orchestrator::invoke_with_stop_point(
-            "notifications",
+            "Notifications",
             "ListManagedNotificationChildEvents",
             input,
             runtime_plugins,
@@ -109,7 +109,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for ListMan
 
         cfg.store_put(::aws_smithy_runtime_api::client::orchestrator::Metadata::new(
             "ListManagedNotificationChildEvents",
-            "notifications",
+            "Notifications",
         ));
         let mut signing_options = ::aws_runtime::auth::SigningOptions::default();
         signing_options.double_uri_encode = true;

@@ -32,8 +32,8 @@ impl DeleteStorageLensGroup {
             // Create a parent span for the entire operation. Includes a random, internal-only,
             // seven-digit ID for the operation orchestration so that it can be correlated in the logs.
             .instrument(::tracing::debug_span!(
-                "s3control.DeleteStorageLensGroup",
-                "rpc.service" = "s3control",
+                "S3 Control.DeleteStorageLensGroup",
+                "rpc.service" = "S3 Control",
                 "rpc.method" = "DeleteStorageLensGroup",
                 "sdk_invocation_id" = ::fastrand::u32(1_000_000..10_000_000),
                 "rpc.system" = "aws-api",
@@ -60,7 +60,7 @@ impl DeleteStorageLensGroup {
         >,
     > {
         let input = ::aws_smithy_runtime_api::client::interceptors::context::Input::erase(input);
-        ::aws_smithy_runtime::client::orchestrator::invoke_with_stop_point("s3control", "DeleteStorageLensGroup", input, runtime_plugins, stop_point)
+        ::aws_smithy_runtime::client::orchestrator::invoke_with_stop_point("S3 Control", "DeleteStorageLensGroup", input, runtime_plugins, stop_point)
             .await
     }
 
@@ -103,7 +103,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for DeleteS
 
         cfg.store_put(::aws_smithy_runtime_api::client::orchestrator::Metadata::new(
             "DeleteStorageLensGroup",
-            "s3control",
+            "S3 Control",
         ));
         let mut signing_options = ::aws_runtime::auth::SigningOptions::default();
         signing_options.double_uri_encode = true;

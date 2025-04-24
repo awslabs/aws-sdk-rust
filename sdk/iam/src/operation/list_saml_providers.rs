@@ -32,8 +32,8 @@ impl ListSAMLProviders {
             // Create a parent span for the entire operation. Includes a random, internal-only,
             // seven-digit ID for the operation orchestration so that it can be correlated in the logs.
             .instrument(::tracing::debug_span!(
-                "iam.ListSAMLProviders",
-                "rpc.service" = "iam",
+                "IAM.ListSAMLProviders",
+                "rpc.service" = "IAM",
                 "rpc.method" = "ListSAMLProviders",
                 "sdk_invocation_id" = ::fastrand::u32(1_000_000..10_000_000),
                 "rpc.system" = "aws-api",
@@ -60,7 +60,7 @@ impl ListSAMLProviders {
         >,
     > {
         let input = ::aws_smithy_runtime_api::client::interceptors::context::Input::erase(input);
-        ::aws_smithy_runtime::client::orchestrator::invoke_with_stop_point("iam", "ListSAMLProviders", input, runtime_plugins, stop_point).await
+        ::aws_smithy_runtime::client::orchestrator::invoke_with_stop_point("IAM", "ListSAMLProviders", input, runtime_plugins, stop_point).await
     }
 
     pub(crate) fn operation_runtime_plugins(
@@ -100,7 +100,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for ListSAM
             ::aws_smithy_runtime_api::client::auth::static_resolver::StaticAuthSchemeOptionResolverParams::new(),
         ));
 
-        cfg.store_put(::aws_smithy_runtime_api::client::orchestrator::Metadata::new("ListSAMLProviders", "iam"));
+        cfg.store_put(::aws_smithy_runtime_api::client::orchestrator::Metadata::new("ListSAMLProviders", "IAM"));
         let mut signing_options = ::aws_runtime::auth::SigningOptions::default();
         signing_options.double_uri_encode = true;
         signing_options.content_sha256_header = false;

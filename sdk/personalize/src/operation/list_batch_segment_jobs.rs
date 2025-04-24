@@ -32,8 +32,8 @@ impl ListBatchSegmentJobs {
             // Create a parent span for the entire operation. Includes a random, internal-only,
             // seven-digit ID for the operation orchestration so that it can be correlated in the logs.
             .instrument(::tracing::debug_span!(
-                "personalize.ListBatchSegmentJobs",
-                "rpc.service" = "personalize",
+                "Personalize.ListBatchSegmentJobs",
+                "rpc.service" = "Personalize",
                 "rpc.method" = "ListBatchSegmentJobs",
                 "sdk_invocation_id" = ::fastrand::u32(1_000_000..10_000_000),
                 "rpc.system" = "aws-api",
@@ -60,7 +60,7 @@ impl ListBatchSegmentJobs {
         >,
     > {
         let input = ::aws_smithy_runtime_api::client::interceptors::context::Input::erase(input);
-        ::aws_smithy_runtime::client::orchestrator::invoke_with_stop_point("personalize", "ListBatchSegmentJobs", input, runtime_plugins, stop_point)
+        ::aws_smithy_runtime::client::orchestrator::invoke_with_stop_point("Personalize", "ListBatchSegmentJobs", input, runtime_plugins, stop_point)
             .await
     }
 
@@ -103,7 +103,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for ListBat
 
         cfg.store_put(::aws_smithy_runtime_api::client::orchestrator::Metadata::new(
             "ListBatchSegmentJobs",
-            "personalize",
+            "Personalize",
         ));
         let mut signing_options = ::aws_runtime::auth::SigningOptions::default();
         signing_options.double_uri_encode = true;

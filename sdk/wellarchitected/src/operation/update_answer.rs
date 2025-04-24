@@ -32,8 +32,8 @@ impl UpdateAnswer {
             // Create a parent span for the entire operation. Includes a random, internal-only,
             // seven-digit ID for the operation orchestration so that it can be correlated in the logs.
             .instrument(::tracing::debug_span!(
-                "wellarchitected.UpdateAnswer",
-                "rpc.service" = "wellarchitected",
+                "WellArchitected.UpdateAnswer",
+                "rpc.service" = "WellArchitected",
                 "rpc.method" = "UpdateAnswer",
                 "sdk_invocation_id" = ::fastrand::u32(1_000_000..10_000_000),
                 "rpc.system" = "aws-api",
@@ -60,7 +60,7 @@ impl UpdateAnswer {
         >,
     > {
         let input = ::aws_smithy_runtime_api::client::interceptors::context::Input::erase(input);
-        ::aws_smithy_runtime::client::orchestrator::invoke_with_stop_point("wellarchitected", "UpdateAnswer", input, runtime_plugins, stop_point)
+        ::aws_smithy_runtime::client::orchestrator::invoke_with_stop_point("WellArchitected", "UpdateAnswer", input, runtime_plugins, stop_point)
             .await
     }
 
@@ -103,7 +103,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for UpdateA
 
         cfg.store_put(::aws_smithy_runtime_api::client::orchestrator::Metadata::new(
             "UpdateAnswer",
-            "wellarchitected",
+            "WellArchitected",
         ));
         let mut signing_options = ::aws_runtime::auth::SigningOptions::default();
         signing_options.double_uri_encode = true;

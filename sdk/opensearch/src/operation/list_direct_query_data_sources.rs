@@ -32,8 +32,8 @@ impl ListDirectQueryDataSources {
             // Create a parent span for the entire operation. Includes a random, internal-only,
             // seven-digit ID for the operation orchestration so that it can be correlated in the logs.
             .instrument(::tracing::debug_span!(
-                "opensearch.ListDirectQueryDataSources",
-                "rpc.service" = "opensearch",
+                "OpenSearch.ListDirectQueryDataSources",
+                "rpc.service" = "OpenSearch",
                 "rpc.method" = "ListDirectQueryDataSources",
                 "sdk_invocation_id" = ::fastrand::u32(1_000_000..10_000_000),
                 "rpc.system" = "aws-api",
@@ -61,7 +61,7 @@ impl ListDirectQueryDataSources {
     > {
         let input = ::aws_smithy_runtime_api::client::interceptors::context::Input::erase(input);
         ::aws_smithy_runtime::client::orchestrator::invoke_with_stop_point(
-            "opensearch",
+            "OpenSearch",
             "ListDirectQueryDataSources",
             input,
             runtime_plugins,
@@ -109,7 +109,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for ListDir
 
         cfg.store_put(::aws_smithy_runtime_api::client::orchestrator::Metadata::new(
             "ListDirectQueryDataSources",
-            "opensearch",
+            "OpenSearch",
         ));
         let mut signing_options = ::aws_runtime::auth::SigningOptions::default();
         signing_options.double_uri_encode = true;

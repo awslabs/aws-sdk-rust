@@ -32,8 +32,8 @@ impl SetTaskStatus {
             // Create a parent span for the entire operation. Includes a random, internal-only,
             // seven-digit ID for the operation orchestration so that it can be correlated in the logs.
             .instrument(::tracing::debug_span!(
-                "datapipeline.SetTaskStatus",
-                "rpc.service" = "datapipeline",
+                "Data Pipeline.SetTaskStatus",
+                "rpc.service" = "Data Pipeline",
                 "rpc.method" = "SetTaskStatus",
                 "sdk_invocation_id" = ::fastrand::u32(1_000_000..10_000_000),
                 "rpc.system" = "aws-api",
@@ -60,7 +60,7 @@ impl SetTaskStatus {
         >,
     > {
         let input = ::aws_smithy_runtime_api::client::interceptors::context::Input::erase(input);
-        ::aws_smithy_runtime::client::orchestrator::invoke_with_stop_point("datapipeline", "SetTaskStatus", input, runtime_plugins, stop_point).await
+        ::aws_smithy_runtime::client::orchestrator::invoke_with_stop_point("Data Pipeline", "SetTaskStatus", input, runtime_plugins, stop_point).await
     }
 
     pub(crate) fn operation_runtime_plugins(
@@ -102,7 +102,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for SetTask
 
         cfg.store_put(::aws_smithy_runtime_api::client::orchestrator::Metadata::new(
             "SetTaskStatus",
-            "datapipeline",
+            "Data Pipeline",
         ));
         let mut signing_options = ::aws_runtime::auth::SigningOptions::default();
         signing_options.double_uri_encode = true;

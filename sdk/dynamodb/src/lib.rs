@@ -35,7 +35,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-//! aws-sdk-dynamodb = "1.71.2"
+//! aws-sdk-dynamodb = "1.72.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!

@@ -32,8 +32,8 @@ impl DisassociateResourceFromProfile {
             // Create a parent span for the entire operation. Includes a random, internal-only,
             // seven-digit ID for the operation orchestration so that it can be correlated in the logs.
             .instrument(::tracing::debug_span!(
-                "route53profiles.DisassociateResourceFromProfile",
-                "rpc.service" = "route53profiles",
+                "Route53Profiles.DisassociateResourceFromProfile",
+                "rpc.service" = "Route53Profiles",
                 "rpc.method" = "DisassociateResourceFromProfile",
                 "sdk_invocation_id" = ::fastrand::u32(1_000_000..10_000_000),
                 "rpc.system" = "aws-api",
@@ -61,7 +61,7 @@ impl DisassociateResourceFromProfile {
     > {
         let input = ::aws_smithy_runtime_api::client::interceptors::context::Input::erase(input);
         ::aws_smithy_runtime::client::orchestrator::invoke_with_stop_point(
-            "route53profiles",
+            "Route53Profiles",
             "DisassociateResourceFromProfile",
             input,
             runtime_plugins,
@@ -109,7 +109,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for Disasso
 
         cfg.store_put(::aws_smithy_runtime_api::client::orchestrator::Metadata::new(
             "DisassociateResourceFromProfile",
-            "route53profiles",
+            "Route53Profiles",
         ));
         let mut signing_options = ::aws_runtime::auth::SigningOptions::default();
         signing_options.double_uri_encode = true;

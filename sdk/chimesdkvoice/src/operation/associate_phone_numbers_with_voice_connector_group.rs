@@ -31,8 +31,8 @@ impl AssociatePhoneNumbersWithVoiceConnectorGroup {
             // Create a parent span for the entire operation. Includes a random, internal-only,
             // seven-digit ID for the operation orchestration so that it can be correlated in the logs.
             .instrument(::tracing::debug_span!(
-                "chimesdkvoice.AssociatePhoneNumbersWithVoiceConnectorGroup",
-                "rpc.service" = "chimesdkvoice",
+                "Chime SDK Voice.AssociatePhoneNumbersWithVoiceConnectorGroup",
+                "rpc.service" = "Chime SDK Voice",
                 "rpc.method" = "AssociatePhoneNumbersWithVoiceConnectorGroup",
                 "sdk_invocation_id" = ::fastrand::u32(1_000_000..10_000_000),
                 "rpc.system" = "aws-api",
@@ -61,7 +61,7 @@ impl AssociatePhoneNumbersWithVoiceConnectorGroup {
     > {
         let input = ::aws_smithy_runtime_api::client::interceptors::context::Input::erase(input);
         ::aws_smithy_runtime::client::orchestrator::invoke_with_stop_point(
-            "chimesdkvoice",
+            "Chime SDK Voice",
             "AssociatePhoneNumbersWithVoiceConnectorGroup",
             input,
             runtime_plugins,
@@ -110,7 +110,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for Associa
         cfg.store_put(::aws_smithy_runtime_api::client::orchestrator::SensitiveOutput);
         cfg.store_put(::aws_smithy_runtime_api::client::orchestrator::Metadata::new(
             "AssociatePhoneNumbersWithVoiceConnectorGroup",
-            "chimesdkvoice",
+            "Chime SDK Voice",
         ));
         let mut signing_options = ::aws_runtime::auth::SigningOptions::default();
         signing_options.double_uri_encode = true;

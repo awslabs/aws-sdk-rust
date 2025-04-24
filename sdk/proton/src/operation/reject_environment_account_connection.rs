@@ -32,8 +32,8 @@ impl RejectEnvironmentAccountConnection {
             // Create a parent span for the entire operation. Includes a random, internal-only,
             // seven-digit ID for the operation orchestration so that it can be correlated in the logs.
             .instrument(::tracing::debug_span!(
-                "proton.RejectEnvironmentAccountConnection",
-                "rpc.service" = "proton",
+                "Proton.RejectEnvironmentAccountConnection",
+                "rpc.service" = "Proton",
                 "rpc.method" = "RejectEnvironmentAccountConnection",
                 "sdk_invocation_id" = ::fastrand::u32(1_000_000..10_000_000),
                 "rpc.system" = "aws-api",
@@ -61,7 +61,7 @@ impl RejectEnvironmentAccountConnection {
     > {
         let input = ::aws_smithy_runtime_api::client::interceptors::context::Input::erase(input);
         ::aws_smithy_runtime::client::orchestrator::invoke_with_stop_point(
-            "proton",
+            "Proton",
             "RejectEnvironmentAccountConnection",
             input,
             runtime_plugins,
@@ -109,7 +109,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for RejectE
 
         cfg.store_put(::aws_smithy_runtime_api::client::orchestrator::Metadata::new(
             "RejectEnvironmentAccountConnection",
-            "proton",
+            "Proton",
         ));
         let mut signing_options = ::aws_runtime::auth::SigningOptions::default();
         signing_options.double_uri_encode = true;

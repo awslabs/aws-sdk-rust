@@ -32,8 +32,8 @@ impl CreateEnvironmentEC2 {
             // Create a parent span for the entire operation. Includes a random, internal-only,
             // seven-digit ID for the operation orchestration so that it can be correlated in the logs.
             .instrument(::tracing::debug_span!(
-                "cloud9.CreateEnvironmentEC2",
-                "rpc.service" = "cloud9",
+                "Cloud9.CreateEnvironmentEC2",
+                "rpc.service" = "Cloud9",
                 "rpc.method" = "CreateEnvironmentEC2",
                 "sdk_invocation_id" = ::fastrand::u32(1_000_000..10_000_000),
                 "rpc.system" = "aws-api",
@@ -60,7 +60,7 @@ impl CreateEnvironmentEC2 {
         >,
     > {
         let input = ::aws_smithy_runtime_api::client::interceptors::context::Input::erase(input);
-        ::aws_smithy_runtime::client::orchestrator::invoke_with_stop_point("cloud9", "CreateEnvironmentEC2", input, runtime_plugins, stop_point).await
+        ::aws_smithy_runtime::client::orchestrator::invoke_with_stop_point("Cloud9", "CreateEnvironmentEC2", input, runtime_plugins, stop_point).await
     }
 
     pub(crate) fn operation_runtime_plugins(
@@ -102,7 +102,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for CreateE
 
         cfg.store_put(::aws_smithy_runtime_api::client::orchestrator::Metadata::new(
             "CreateEnvironmentEC2",
-            "cloud9",
+            "Cloud9",
         ));
         let mut signing_options = ::aws_runtime::auth::SigningOptions::default();
         signing_options.double_uri_encode = true;

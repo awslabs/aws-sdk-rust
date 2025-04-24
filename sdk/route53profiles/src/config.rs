@@ -1288,7 +1288,7 @@ pub use ::aws_types::app_name::AppName;
 #[allow(dead_code)]
 fn service_config_key<'a>(env: &'a str, profile: &'a str) -> aws_types::service_config::ServiceConfigKey<'a> {
     ::aws_types::service_config::ServiceConfigKey::builder()
-        .service_id("route53_profiles")
+        .service_id("Route53Profiles")
         .env(env)
         .profile(profile)
         .build()

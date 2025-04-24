@@ -32,8 +32,8 @@ impl GetChannelMessageStatus {
             // Create a parent span for the entire operation. Includes a random, internal-only,
             // seven-digit ID for the operation orchestration so that it can be correlated in the logs.
             .instrument(::tracing::debug_span!(
-                "chimesdkmessaging.GetChannelMessageStatus",
-                "rpc.service" = "chimesdkmessaging",
+                "Chime SDK Messaging.GetChannelMessageStatus",
+                "rpc.service" = "Chime SDK Messaging",
                 "rpc.method" = "GetChannelMessageStatus",
                 "sdk_invocation_id" = ::fastrand::u32(1_000_000..10_000_000),
                 "rpc.system" = "aws-api",
@@ -61,7 +61,7 @@ impl GetChannelMessageStatus {
     > {
         let input = ::aws_smithy_runtime_api::client::interceptors::context::Input::erase(input);
         ::aws_smithy_runtime::client::orchestrator::invoke_with_stop_point(
-            "chimesdkmessaging",
+            "Chime SDK Messaging",
             "GetChannelMessageStatus",
             input,
             runtime_plugins,
@@ -109,7 +109,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for GetChan
 
         cfg.store_put(::aws_smithy_runtime_api::client::orchestrator::Metadata::new(
             "GetChannelMessageStatus",
-            "chimesdkmessaging",
+            "Chime SDK Messaging",
         ));
         let mut signing_options = ::aws_runtime::auth::SigningOptions::default();
         signing_options.double_uri_encode = true;

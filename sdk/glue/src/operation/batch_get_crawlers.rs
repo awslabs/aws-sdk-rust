@@ -32,8 +32,8 @@ impl BatchGetCrawlers {
             // Create a parent span for the entire operation. Includes a random, internal-only,
             // seven-digit ID for the operation orchestration so that it can be correlated in the logs.
             .instrument(::tracing::debug_span!(
-                "glue.BatchGetCrawlers",
-                "rpc.service" = "glue",
+                "Glue.BatchGetCrawlers",
+                "rpc.service" = "Glue",
                 "rpc.method" = "BatchGetCrawlers",
                 "sdk_invocation_id" = ::fastrand::u32(1_000_000..10_000_000),
                 "rpc.system" = "aws-api",
@@ -60,7 +60,7 @@ impl BatchGetCrawlers {
         >,
     > {
         let input = ::aws_smithy_runtime_api::client::interceptors::context::Input::erase(input);
-        ::aws_smithy_runtime::client::orchestrator::invoke_with_stop_point("glue", "BatchGetCrawlers", input, runtime_plugins, stop_point).await
+        ::aws_smithy_runtime::client::orchestrator::invoke_with_stop_point("Glue", "BatchGetCrawlers", input, runtime_plugins, stop_point).await
     }
 
     pub(crate) fn operation_runtime_plugins(
@@ -100,7 +100,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for BatchGe
             ::aws_smithy_runtime_api::client::auth::static_resolver::StaticAuthSchemeOptionResolverParams::new(),
         ));
 
-        cfg.store_put(::aws_smithy_runtime_api::client::orchestrator::Metadata::new("BatchGetCrawlers", "glue"));
+        cfg.store_put(::aws_smithy_runtime_api::client::orchestrator::Metadata::new("BatchGetCrawlers", "Glue"));
         let mut signing_options = ::aws_runtime::auth::SigningOptions::default();
         signing_options.double_uri_encode = true;
         signing_options.content_sha256_header = false;

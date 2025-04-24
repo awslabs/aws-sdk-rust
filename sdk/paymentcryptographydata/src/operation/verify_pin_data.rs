@@ -32,8 +32,8 @@ impl VerifyPinData {
             // Create a parent span for the entire operation. Includes a random, internal-only,
             // seven-digit ID for the operation orchestration so that it can be correlated in the logs.
             .instrument(::tracing::debug_span!(
-                "paymentcryptographydata.VerifyPinData",
-                "rpc.service" = "paymentcryptographydata",
+                "Payment Cryptography Data.VerifyPinData",
+                "rpc.service" = "Payment Cryptography Data",
                 "rpc.method" = "VerifyPinData",
                 "sdk_invocation_id" = ::fastrand::u32(1_000_000..10_000_000),
                 "rpc.system" = "aws-api",
@@ -61,7 +61,7 @@ impl VerifyPinData {
     > {
         let input = ::aws_smithy_runtime_api::client::interceptors::context::Input::erase(input);
         ::aws_smithy_runtime::client::orchestrator::invoke_with_stop_point(
-            "paymentcryptographydata",
+            "Payment Cryptography Data",
             "VerifyPinData",
             input,
             runtime_plugins,
@@ -109,7 +109,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for VerifyP
 
         cfg.store_put(::aws_smithy_runtime_api::client::orchestrator::Metadata::new(
             "VerifyPinData",
-            "paymentcryptographydata",
+            "Payment Cryptography Data",
         ));
         let mut signing_options = ::aws_runtime::auth::SigningOptions::default();
         signing_options.double_uri_encode = true;
