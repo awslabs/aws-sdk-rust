@@ -25,6 +25,21 @@ pub fn ser_modify_tenant_database_input_input_input(
     if let Some(var_8) = &input.new_tenant_db_name {
         scope_7.string(var_8);
     }
+    #[allow(unused_mut)]
+    let mut scope_9 = writer.prefix("ManageMasterUserPassword");
+    if let Some(var_10) = &input.manage_master_user_password {
+        scope_9.boolean(*var_10);
+    }
+    #[allow(unused_mut)]
+    let mut scope_11 = writer.prefix("RotateMasterUserPassword");
+    if let Some(var_12) = &input.rotate_master_user_password {
+        scope_11.boolean(*var_12);
+    }
+    #[allow(unused_mut)]
+    let mut scope_13 = writer.prefix("MasterUserSecretKmsKeyId");
+    if let Some(var_14) = &input.master_user_secret_kms_key_id {
+        scope_13.string(var_14);
+    }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

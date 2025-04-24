@@ -38,6 +38,14 @@ impl crate::operation::run_task::builders::RunTaskInputBuilder {
 /// <li>
 /// <p>Add wait time between subsequent commands, even if the DescribeTasks command returns an accurate response. Apply an exponential backoff algorithm starting with a couple of seconds of wait time, and increase gradually up to about five minutes of wait time.</p></li>
 /// </ul>
+/// <p>If you get a <code>ConflictException</code> error, the <code>RunTask</code> request could not be processed due to conflicts. The provided <code>clientToken</code> is already in use with a different <code>RunTask</code> request. The <code>resourceIds</code> are the existing task ARNs which are already associated with the <code>clientToken</code>.</p>
+/// <p>To fix this issue:</p>
+/// <ul>
+/// <li>
+/// <p>Run <code>RunTask</code> with a unique <code>clientToken</code>.</p></li>
+/// <li>
+/// <p>Run <code>RunTask</code> with the <code>clientToken</code> and the original set of parameters</p></li>
+/// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct RunTaskFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

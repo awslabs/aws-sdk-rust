@@ -184,6 +184,8 @@ impl CreateTenantDatabaseFluentBuilder {
     /// <p>Must be 8 to 30 characters.</p></li>
     /// <li>
     /// <p>Can include any printable ASCII character except forward slash (<code>/</code>), double quote (<code>"</code>), at symbol (<code>@</code>), ampersand (<code>&amp;</code>), or single quote (<code>'</code>).</p></li>
+    /// <li>
+    /// <p>Can't be specified when <code>ManageMasterUserPassword</code> is enabled.</p></li>
     /// </ul>
     pub fn master_user_password(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.master_user_password(input.into());
@@ -196,6 +198,8 @@ impl CreateTenantDatabaseFluentBuilder {
     /// <p>Must be 8 to 30 characters.</p></li>
     /// <li>
     /// <p>Can include any printable ASCII character except forward slash (<code>/</code>), double quote (<code>"</code>), at symbol (<code>@</code>), ampersand (<code>&amp;</code>), or single quote (<code>'</code>).</p></li>
+    /// <li>
+    /// <p>Can't be specified when <code>ManageMasterUserPassword</code> is enabled.</p></li>
     /// </ul>
     pub fn set_master_user_password(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_master_user_password(input);
@@ -208,6 +212,8 @@ impl CreateTenantDatabaseFluentBuilder {
     /// <p>Must be 8 to 30 characters.</p></li>
     /// <li>
     /// <p>Can include any printable ASCII character except forward slash (<code>/</code>), double quote (<code>"</code>), at symbol (<code>@</code>), ampersand (<code>&amp;</code>), or single quote (<code>'</code>).</p></li>
+    /// <li>
+    /// <p>Can't be specified when <code>ManageMasterUserPassword</code> is enabled.</p></li>
     /// </ul>
     pub fn get_master_user_password(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_master_user_password()
@@ -239,6 +245,64 @@ impl CreateTenantDatabaseFluentBuilder {
     /// <p>The <code>NCHAR</code> value for the tenant database.</p>
     pub fn get_nchar_character_set_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_nchar_character_set_name()
+    }
+    /// <p>Specifies whether to manage the master user password with Amazon Web Services Secrets Manager.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS User Guide.</i></p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Can't manage the master user password with Amazon Web Services Secrets Manager if <code>MasterUserPassword</code> is specified.</p></li>
+    /// </ul>
+    pub fn manage_master_user_password(mut self, input: bool) -> Self {
+        self.inner = self.inner.manage_master_user_password(input);
+        self
+    }
+    /// <p>Specifies whether to manage the master user password with Amazon Web Services Secrets Manager.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS User Guide.</i></p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Can't manage the master user password with Amazon Web Services Secrets Manager if <code>MasterUserPassword</code> is specified.</p></li>
+    /// </ul>
+    pub fn set_manage_master_user_password(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_manage_master_user_password(input);
+        self
+    }
+    /// <p>Specifies whether to manage the master user password with Amazon Web Services Secrets Manager.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS User Guide.</i></p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Can't manage the master user password with Amazon Web Services Secrets Manager if <code>MasterUserPassword</code> is specified.</p></li>
+    /// </ul>
+    pub fn get_manage_master_user_password(&self) -> &::std::option::Option<bool> {
+        self.inner.get_manage_master_user_password()
+    }
+    /// <p>The Amazon Web Services KMS key identifier to encrypt a secret that is automatically generated and managed in Amazon Web Services Secrets Manager.</p>
+    /// <p>This setting is valid only if the master user password is managed by RDS in Amazon Web Services Secrets Manager for the DB instance.</p>
+    /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key. To use a KMS key in a different Amazon Web Services account, specify the key ARN or alias ARN.</p>
+    /// <p>If you don't specify <code>MasterUserSecretKmsKeyId</code>, then the <code>aws/secretsmanager</code> KMS key is used to encrypt the secret. If the secret is in a different Amazon Web Services account, then you can't use the <code>aws/secretsmanager</code> KMS key to encrypt the secret, and you must use a customer managed KMS key.</p>
+    /// <p>There is a default KMS key for your Amazon Web Services account. Your Amazon Web Services account has a different default KMS key for each Amazon Web Services Region.</p>
+    pub fn master_user_secret_kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.master_user_secret_kms_key_id(input.into());
+        self
+    }
+    /// <p>The Amazon Web Services KMS key identifier to encrypt a secret that is automatically generated and managed in Amazon Web Services Secrets Manager.</p>
+    /// <p>This setting is valid only if the master user password is managed by RDS in Amazon Web Services Secrets Manager for the DB instance.</p>
+    /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key. To use a KMS key in a different Amazon Web Services account, specify the key ARN or alias ARN.</p>
+    /// <p>If you don't specify <code>MasterUserSecretKmsKeyId</code>, then the <code>aws/secretsmanager</code> KMS key is used to encrypt the secret. If the secret is in a different Amazon Web Services account, then you can't use the <code>aws/secretsmanager</code> KMS key to encrypt the secret, and you must use a customer managed KMS key.</p>
+    /// <p>There is a default KMS key for your Amazon Web Services account. Your Amazon Web Services account has a different default KMS key for each Amazon Web Services Region.</p>
+    pub fn set_master_user_secret_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_master_user_secret_kms_key_id(input);
+        self
+    }
+    /// <p>The Amazon Web Services KMS key identifier to encrypt a secret that is automatically generated and managed in Amazon Web Services Secrets Manager.</p>
+    /// <p>This setting is valid only if the master user password is managed by RDS in Amazon Web Services Secrets Manager for the DB instance.</p>
+    /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key. To use a KMS key in a different Amazon Web Services account, specify the key ARN or alias ARN.</p>
+    /// <p>If you don't specify <code>MasterUserSecretKmsKeyId</code>, then the <code>aws/secretsmanager</code> KMS key is used to encrypt the secret. If the secret is in a different Amazon Web Services account, then you can't use the <code>aws/secretsmanager</code> KMS key to encrypt the secret, and you must use a customer managed KMS key.</p>
+    /// <p>There is a default KMS key for your Amazon Web Services account. Your Amazon Web Services account has a different default KMS key for each Amazon Web Services Region.</p>
+    pub fn get_master_user_secret_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_master_user_secret_kms_key_id()
     }
     ///
     /// Appends an item to `Tags`.

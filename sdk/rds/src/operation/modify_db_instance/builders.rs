@@ -361,9 +361,13 @@ impl ModifyDBInstanceFluentBuilder {
     /// <p>This setting doesn't apply to the following DB instances:</p>
     /// <ul>
     /// <li>
-    /// <p>Amazon Aurora (The password for the master user is managed by the DB cluster. For more information, see <code>ModifyDBCluster</code>.)</p></li>
+    /// <p>Amazon Aurora</p>
+    /// <p>The password for the master user is managed by the DB cluster. For more information, see <code>ModifyDBCluster</code>.</p></li>
     /// <li>
     /// <p>RDS Custom</p></li>
+    /// <li>
+    /// <p>RDS for Oracle CDBs in the multi-tenant configuration</p>
+    /// <p>Specify the master password in <code>ModifyTenantDatabase</code> instead.</p></li>
     /// </ul>
     /// <p>Default: Uses existing setting</p>
     /// <p>Constraints:</p>
@@ -399,9 +403,13 @@ impl ModifyDBInstanceFluentBuilder {
     /// <p>This setting doesn't apply to the following DB instances:</p>
     /// <ul>
     /// <li>
-    /// <p>Amazon Aurora (The password for the master user is managed by the DB cluster. For more information, see <code>ModifyDBCluster</code>.)</p></li>
+    /// <p>Amazon Aurora</p>
+    /// <p>The password for the master user is managed by the DB cluster. For more information, see <code>ModifyDBCluster</code>.</p></li>
     /// <li>
     /// <p>RDS Custom</p></li>
+    /// <li>
+    /// <p>RDS for Oracle CDBs in the multi-tenant configuration</p>
+    /// <p>Specify the master password in <code>ModifyTenantDatabase</code> instead.</p></li>
     /// </ul>
     /// <p>Default: Uses existing setting</p>
     /// <p>Constraints:</p>
@@ -437,9 +445,13 @@ impl ModifyDBInstanceFluentBuilder {
     /// <p>This setting doesn't apply to the following DB instances:</p>
     /// <ul>
     /// <li>
-    /// <p>Amazon Aurora (The password for the master user is managed by the DB cluster. For more information, see <code>ModifyDBCluster</code>.)</p></li>
+    /// <p>Amazon Aurora</p>
+    /// <p>The password for the master user is managed by the DB cluster. For more information, see <code>ModifyDBCluster</code>.</p></li>
     /// <li>
     /// <p>RDS Custom</p></li>
+    /// <li>
+    /// <p>RDS for Oracle CDBs in the multi-tenant configuration</p>
+    /// <p>Specify the master password in <code>ModifyTenantDatabase</code> instead.</p></li>
     /// </ul>
     /// <p>Default: Uses existing setting</p>
     /// <p>Constraints:</p>
@@ -771,6 +783,7 @@ impl ModifyDBInstanceFluentBuilder {
     /// </ul>
     /// <p>If any of the preceding conditions isn't met, Amazon RDS applies the change as soon as possible and doesn't cause an outage.</p>
     /// <p>For an RDS Custom DB instance, don't enable this setting. Otherwise, the operation returns an error.</p>
+    /// <p>For more information about automatic minor version upgrades, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Upgrading.html#USER_UpgradeDBInstance.Upgrading.AutoMinorVersionUpgrades">Automatically upgrading the minor engine version</a>.</p>
     pub fn auto_minor_version_upgrade(mut self, input: bool) -> Self {
         self.inner = self.inner.auto_minor_version_upgrade(input);
         self
@@ -786,6 +799,7 @@ impl ModifyDBInstanceFluentBuilder {
     /// </ul>
     /// <p>If any of the preceding conditions isn't met, Amazon RDS applies the change as soon as possible and doesn't cause an outage.</p>
     /// <p>For an RDS Custom DB instance, don't enable this setting. Otherwise, the operation returns an error.</p>
+    /// <p>For more information about automatic minor version upgrades, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Upgrading.html#USER_UpgradeDBInstance.Upgrading.AutoMinorVersionUpgrades">Automatically upgrading the minor engine version</a>.</p>
     pub fn set_auto_minor_version_upgrade(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_auto_minor_version_upgrade(input);
         self
@@ -801,6 +815,7 @@ impl ModifyDBInstanceFluentBuilder {
     /// </ul>
     /// <p>If any of the preceding conditions isn't met, Amazon RDS applies the change as soon as possible and doesn't cause an outage.</p>
     /// <p>For an RDS Custom DB instance, don't enable this setting. Otherwise, the operation returns an error.</p>
+    /// <p>For more information about automatic minor version upgrades, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Upgrading.html#USER_UpgradeDBInstance.Upgrading.AutoMinorVersionUpgrades">Automatically upgrading the minor engine version</a>.</p>
     pub fn get_auto_minor_version_upgrade(&self) -> &::std::option::Option<bool> {
         self.inner.get_auto_minor_version_upgrade()
     }
@@ -1932,6 +1947,10 @@ impl ModifyDBInstanceFluentBuilder {
     /// <ul>
     /// <li>
     /// <p>Can't manage the master user password with Amazon Web Services Secrets Manager if <code>MasterUserPassword</code> is specified.</p></li>
+    /// <li>
+    /// <p>Can't specify for RDS for Oracle CDB instances in the multi-tenant configuration. Use <code>ModifyTenantDatabase</code> instead.</p></li>
+    /// <li>
+    /// <p>Can't specify the parameters <code>ManageMasterUserPassword</code> and <code>MultiTenant</code> in the same operation.</p></li>
     /// </ul>
     pub fn manage_master_user_password(mut self, input: bool) -> Self {
         self.inner = self.inner.manage_master_user_password(input);
@@ -1945,6 +1964,10 @@ impl ModifyDBInstanceFluentBuilder {
     /// <ul>
     /// <li>
     /// <p>Can't manage the master user password with Amazon Web Services Secrets Manager if <code>MasterUserPassword</code> is specified.</p></li>
+    /// <li>
+    /// <p>Can't specify for RDS for Oracle CDB instances in the multi-tenant configuration. Use <code>ModifyTenantDatabase</code> instead.</p></li>
+    /// <li>
+    /// <p>Can't specify the parameters <code>ManageMasterUserPassword</code> and <code>MultiTenant</code> in the same operation.</p></li>
     /// </ul>
     pub fn set_manage_master_user_password(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_manage_master_user_password(input);
@@ -1958,12 +1981,16 @@ impl ModifyDBInstanceFluentBuilder {
     /// <ul>
     /// <li>
     /// <p>Can't manage the master user password with Amazon Web Services Secrets Manager if <code>MasterUserPassword</code> is specified.</p></li>
+    /// <li>
+    /// <p>Can't specify for RDS for Oracle CDB instances in the multi-tenant configuration. Use <code>ModifyTenantDatabase</code> instead.</p></li>
+    /// <li>
+    /// <p>Can't specify the parameters <code>ManageMasterUserPassword</code> and <code>MultiTenant</code> in the same operation.</p></li>
     /// </ul>
     pub fn get_manage_master_user_password(&self) -> &::std::option::Option<bool> {
         self.inner.get_manage_master_user_password()
     }
     /// <p>Specifies whether to rotate the secret managed by Amazon Web Services Secrets Manager for the master user password.</p>
-    /// <p>This setting is valid only if the master user password is managed by RDS in Amazon Web Services Secrets Manager for the DB cluster. The secret value contains the updated password.</p>
+    /// <p>This setting is valid only if the master user password is managed by RDS in Amazon Web Services Secrets Manager for the DB instance. The secret value contains the updated password.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS User Guide.</i></p>
     /// <p>Constraints:</p>
     /// <ul>
@@ -1975,7 +2002,7 @@ impl ModifyDBInstanceFluentBuilder {
         self
     }
     /// <p>Specifies whether to rotate the secret managed by Amazon Web Services Secrets Manager for the master user password.</p>
-    /// <p>This setting is valid only if the master user password is managed by RDS in Amazon Web Services Secrets Manager for the DB cluster. The secret value contains the updated password.</p>
+    /// <p>This setting is valid only if the master user password is managed by RDS in Amazon Web Services Secrets Manager for the DB instance. The secret value contains the updated password.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS User Guide.</i></p>
     /// <p>Constraints:</p>
     /// <ul>
@@ -1987,7 +2014,7 @@ impl ModifyDBInstanceFluentBuilder {
         self
     }
     /// <p>Specifies whether to rotate the secret managed by Amazon Web Services Secrets Manager for the master user password.</p>
-    /// <p>This setting is valid only if the master user password is managed by RDS in Amazon Web Services Secrets Manager for the DB cluster. The secret value contains the updated password.</p>
+    /// <p>This setting is valid only if the master user password is managed by RDS in Amazon Web Services Secrets Manager for the DB instance. The secret value contains the updated password.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS User Guide.</i></p>
     /// <p>Constraints:</p>
     /// <ul>

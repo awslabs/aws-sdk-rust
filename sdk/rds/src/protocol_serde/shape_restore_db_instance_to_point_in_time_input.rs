@@ -280,6 +280,16 @@ pub fn ser_restore_db_instance_to_point_in_time_input_input_input(
     if let Some(var_107) = &input.engine_lifecycle_support {
         scope_106.string(var_107);
     }
+    #[allow(unused_mut)]
+    let mut scope_108 = writer.prefix("ManageMasterUserPassword");
+    if let Some(var_109) = &input.manage_master_user_password {
+        scope_108.boolean(*var_109);
+    }
+    #[allow(unused_mut)]
+    let mut scope_110 = writer.prefix("MasterUserSecretKmsKeyId");
+    if let Some(var_111) = &input.master_user_secret_kms_key_id {
+        scope_110.string(var_111);
+    }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

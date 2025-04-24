@@ -20,6 +20,7 @@
 ///     Runtime::Nodejs14 => { /* ... */ },
 ///     Runtime::Nodejs16 => { /* ... */ },
 ///     Runtime::Nodejs18 => { /* ... */ },
+///     Runtime::Nodejs22 => { /* ... */ },
 ///     Runtime::Php81 => { /* ... */ },
 ///     Runtime::Python3 => { /* ... */ },
 ///     Runtime::Python311 => { /* ... */ },
@@ -69,6 +70,8 @@ pub enum Runtime {
     #[allow(missing_docs)] // documentation missing in model
     Nodejs18,
     #[allow(missing_docs)] // documentation missing in model
+    Nodejs22,
+    #[allow(missing_docs)] // documentation missing in model
     Php81,
     #[allow(missing_docs)] // documentation missing in model
     Python3,
@@ -91,6 +94,7 @@ impl ::std::convert::From<&str> for Runtime {
             "NODEJS_14" => Runtime::Nodejs14,
             "NODEJS_16" => Runtime::Nodejs16,
             "NODEJS_18" => Runtime::Nodejs18,
+            "NODEJS_22" => Runtime::Nodejs22,
             "PHP_81" => Runtime::Php81,
             "PYTHON_3" => Runtime::Python3,
             "PYTHON_311" => Runtime::Python311,
@@ -118,6 +122,7 @@ impl Runtime {
             Runtime::Nodejs14 => "NODEJS_14",
             Runtime::Nodejs16 => "NODEJS_16",
             Runtime::Nodejs18 => "NODEJS_18",
+            Runtime::Nodejs22 => "NODEJS_22",
             Runtime::Php81 => "PHP_81",
             Runtime::Python3 => "PYTHON_3",
             Runtime::Python311 => "PYTHON_311",
@@ -136,6 +141,7 @@ impl Runtime {
             "NODEJS_14",
             "NODEJS_16",
             "NODEJS_18",
+            "NODEJS_22",
             "PHP_81",
             "PYTHON_3",
             "PYTHON_311",
@@ -171,6 +177,7 @@ impl ::std::fmt::Display for Runtime {
             Runtime::Nodejs14 => write!(f, "NODEJS_14"),
             Runtime::Nodejs16 => write!(f, "NODEJS_16"),
             Runtime::Nodejs18 => write!(f, "NODEJS_18"),
+            Runtime::Nodejs22 => write!(f, "NODEJS_22"),
             Runtime::Php81 => write!(f, "PHP_81"),
             Runtime::Python3 => write!(f, "PYTHON_3"),
             Runtime::Python311 => write!(f, "PYTHON_311"),

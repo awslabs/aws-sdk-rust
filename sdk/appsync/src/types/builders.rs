@@ -69,6 +69,14 @@ pub use crate::types::_delta_sync_config::DeltaSyncConfigBuilder;
 
 pub use crate::types::_channel_namespace::ChannelNamespaceBuilder;
 
+pub use crate::types::_handler_configs::HandlerConfigsBuilder;
+
+pub use crate::types::_handler_config::HandlerConfigBuilder;
+
+pub use crate::types::_integration::IntegrationBuilder;
+
+pub use crate::types::_lambda_config::LambdaConfigBuilder;
+
 pub use crate::types::_auth_mode::AuthModeBuilder;
 
 pub use crate::types::_api_key::ApiKeyBuilder;

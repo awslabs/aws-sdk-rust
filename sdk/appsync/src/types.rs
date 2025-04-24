@@ -113,6 +113,18 @@ pub use crate::types::_data_source_type::DataSourceType;
 
 pub use crate::types::_channel_namespace::ChannelNamespace;
 
+pub use crate::types::_handler_configs::HandlerConfigs;
+
+pub use crate::types::_handler_config::HandlerConfig;
+
+pub use crate::types::_integration::Integration;
+
+pub use crate::types::_lambda_config::LambdaConfig;
+
+pub use crate::types::_invoke_type::InvokeType;
+
+pub use crate::types::_handler_behavior::HandlerBehavior;
+
 pub use crate::types::_auth_mode::AuthMode;
 
 pub use crate::types::_api_key::ApiKey;
@@ -279,9 +291,21 @@ mod _graph_ql_api_visibility;
 
 mod _graphql_api;
 
+mod _handler_behavior;
+
+mod _handler_config;
+
+mod _handler_configs;
+
 mod _http_data_source_config;
 
+mod _integration;
+
+mod _invoke_type;
+
 mod _lambda_authorizer_config;
+
+mod _lambda_config;
 
 mod _lambda_conflict_handler_config;
 

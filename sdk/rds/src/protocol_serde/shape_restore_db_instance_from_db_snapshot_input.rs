@@ -257,6 +257,16 @@ pub fn ser_restore_db_instance_from_db_snapshot_input_input_input(
     if let Some(var_99) = &input.engine_lifecycle_support {
         scope_98.string(var_99);
     }
+    #[allow(unused_mut)]
+    let mut scope_100 = writer.prefix("ManageMasterUserPassword");
+    if let Some(var_101) = &input.manage_master_user_password {
+        scope_100.boolean(*var_101);
+    }
+    #[allow(unused_mut)]
+    let mut scope_102 = writer.prefix("MasterUserSecretKmsKeyId");
+    if let Some(var_103) = &input.master_user_secret_kms_key_id {
+        scope_102.string(var_103);
+    }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

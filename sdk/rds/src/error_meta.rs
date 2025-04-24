@@ -1895,6 +1895,9 @@ impl From<crate::operation::create_tenant_database::CreateTenantDatabaseError> f
             crate::operation::create_tenant_database::CreateTenantDatabaseError::InvalidDbInstanceStateFault(inner) => {
                 Error::InvalidDbInstanceStateFault(inner)
             }
+            crate::operation::create_tenant_database::CreateTenantDatabaseError::KmsKeyNotAccessibleFault(inner) => {
+                Error::KmsKeyNotAccessibleFault(inner)
+            }
             crate::operation::create_tenant_database::CreateTenantDatabaseError::TenantDatabaseAlreadyExistsFault(inner) => {
                 Error::TenantDatabaseAlreadyExistsFault(inner)
             }
@@ -4845,6 +4848,9 @@ impl From<crate::operation::modify_tenant_database::ModifyTenantDatabaseError> f
             }
             crate::operation::modify_tenant_database::ModifyTenantDatabaseError::InvalidDbInstanceStateFault(inner) => {
                 Error::InvalidDbInstanceStateFault(inner)
+            }
+            crate::operation::modify_tenant_database::ModifyTenantDatabaseError::KmsKeyNotAccessibleFault(inner) => {
+                Error::KmsKeyNotAccessibleFault(inner)
             }
             crate::operation::modify_tenant_database::ModifyTenantDatabaseError::TenantDatabaseAlreadyExistsFault(inner) => {
                 Error::TenantDatabaseAlreadyExistsFault(inner)

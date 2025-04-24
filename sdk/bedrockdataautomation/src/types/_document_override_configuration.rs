@@ -6,11 +6,17 @@
 pub struct DocumentOverrideConfiguration {
     /// Configuration of Splitter
     pub splitter: ::std::option::Option<crate::types::SplitterConfiguration>,
+    /// Configuration to enable/disable processing of modality
+    pub modality_processing: ::std::option::Option<crate::types::ModalityProcessingConfiguration>,
 }
 impl DocumentOverrideConfiguration {
     /// Configuration of Splitter
     pub fn splitter(&self) -> ::std::option::Option<&crate::types::SplitterConfiguration> {
         self.splitter.as_ref()
+    }
+    /// Configuration to enable/disable processing of modality
+    pub fn modality_processing(&self) -> ::std::option::Option<&crate::types::ModalityProcessingConfiguration> {
+        self.modality_processing.as_ref()
     }
 }
 impl DocumentOverrideConfiguration {
@@ -25,6 +31,7 @@ impl DocumentOverrideConfiguration {
 #[non_exhaustive]
 pub struct DocumentOverrideConfigurationBuilder {
     pub(crate) splitter: ::std::option::Option<crate::types::SplitterConfiguration>,
+    pub(crate) modality_processing: ::std::option::Option<crate::types::ModalityProcessingConfiguration>,
 }
 impl DocumentOverrideConfigurationBuilder {
     /// Configuration of Splitter
@@ -41,8 +48,25 @@ impl DocumentOverrideConfigurationBuilder {
     pub fn get_splitter(&self) -> &::std::option::Option<crate::types::SplitterConfiguration> {
         &self.splitter
     }
+    /// Configuration to enable/disable processing of modality
+    pub fn modality_processing(mut self, input: crate::types::ModalityProcessingConfiguration) -> Self {
+        self.modality_processing = ::std::option::Option::Some(input);
+        self
+    }
+    /// Configuration to enable/disable processing of modality
+    pub fn set_modality_processing(mut self, input: ::std::option::Option<crate::types::ModalityProcessingConfiguration>) -> Self {
+        self.modality_processing = input;
+        self
+    }
+    /// Configuration to enable/disable processing of modality
+    pub fn get_modality_processing(&self) -> &::std::option::Option<crate::types::ModalityProcessingConfiguration> {
+        &self.modality_processing
+    }
     /// Consumes the builder and constructs a [`DocumentOverrideConfiguration`](crate::types::DocumentOverrideConfiguration).
     pub fn build(self) -> crate::types::DocumentOverrideConfiguration {
-        crate::types::DocumentOverrideConfiguration { splitter: self.splitter }
+        crate::types::DocumentOverrideConfiguration {
+            splitter: self.splitter,
+            modality_processing: self.modality_processing,
+        }
     }
 }

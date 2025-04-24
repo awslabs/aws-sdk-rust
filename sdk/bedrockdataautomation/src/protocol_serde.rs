@@ -123,6 +123,8 @@ pub(crate) mod shape_tag_list;
 
 pub(crate) mod shape_validation_exception_field_list;
 
+pub(crate) mod shape_audio_override_configuration;
+
 pub(crate) mod shape_audio_standard_output_configuration;
 
 pub(crate) mod shape_blueprint_item;
@@ -135,11 +137,17 @@ pub(crate) mod shape_document_override_configuration;
 
 pub(crate) mod shape_document_standard_output_configuration;
 
+pub(crate) mod shape_image_override_configuration;
+
 pub(crate) mod shape_image_standard_output_configuration;
 
 pub(crate) mod shape_kms_encryption_context;
 
+pub(crate) mod shape_modality_routing_configuration;
+
 pub(crate) mod shape_validation_exception_field;
+
+pub(crate) mod shape_video_override_configuration;
 
 pub(crate) mod shape_video_standard_output_configuration;
 
@@ -158,6 +166,8 @@ pub(crate) mod shape_document_standard_generative_field;
 pub(crate) mod shape_image_standard_extraction;
 
 pub(crate) mod shape_image_standard_generative_field;
+
+pub(crate) mod shape_modality_processing_configuration;
 
 pub(crate) mod shape_splitter_configuration;
 

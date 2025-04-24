@@ -15,6 +15,8 @@ pub struct CreateChannelNamespaceInput {
     pub code_handlers: ::std::option::Option<::std::string::String>,
     /// <p>A map with keys of <code>TagKey</code> objects and values of <code>TagValue</code> objects.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    /// <p>The configuration for the <code>OnPublish</code> and <code>OnSubscribe</code> handlers.</p>
+    pub handler_configs: ::std::option::Option<crate::types::HandlerConfigs>,
 }
 impl CreateChannelNamespaceInput {
     /// <p>The <code>Api</code> ID.</p>
@@ -45,6 +47,10 @@ impl CreateChannelNamespaceInput {
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
+    /// <p>The configuration for the <code>OnPublish</code> and <code>OnSubscribe</code> handlers.</p>
+    pub fn handler_configs(&self) -> ::std::option::Option<&crate::types::HandlerConfigs> {
+        self.handler_configs.as_ref()
+    }
 }
 impl CreateChannelNamespaceInput {
     /// Creates a new builder-style object to manufacture [`CreateChannelNamespaceInput`](crate::operation::create_channel_namespace::CreateChannelNamespaceInput).
@@ -63,6 +69,7 @@ pub struct CreateChannelNamespaceInputBuilder {
     pub(crate) publish_auth_modes: ::std::option::Option<::std::vec::Vec<crate::types::AuthMode>>,
     pub(crate) code_handlers: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) handler_configs: ::std::option::Option<crate::types::HandlerConfigs>,
 }
 impl CreateChannelNamespaceInputBuilder {
     /// <p>The <code>Api</code> ID.</p>
@@ -169,6 +176,20 @@ impl CreateChannelNamespaceInputBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
+    /// <p>The configuration for the <code>OnPublish</code> and <code>OnSubscribe</code> handlers.</p>
+    pub fn handler_configs(mut self, input: crate::types::HandlerConfigs) -> Self {
+        self.handler_configs = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The configuration for the <code>OnPublish</code> and <code>OnSubscribe</code> handlers.</p>
+    pub fn set_handler_configs(mut self, input: ::std::option::Option<crate::types::HandlerConfigs>) -> Self {
+        self.handler_configs = input;
+        self
+    }
+    /// <p>The configuration for the <code>OnPublish</code> and <code>OnSubscribe</code> handlers.</p>
+    pub fn get_handler_configs(&self) -> &::std::option::Option<crate::types::HandlerConfigs> {
+        &self.handler_configs
+    }
     /// Consumes the builder and constructs a [`CreateChannelNamespaceInput`](crate::operation::create_channel_namespace::CreateChannelNamespaceInput).
     pub fn build(
         self,
@@ -183,6 +204,7 @@ impl CreateChannelNamespaceInputBuilder {
             publish_auth_modes: self.publish_auth_modes,
             code_handlers: self.code_handlers,
             tags: self.tags,
+            handler_configs: self.handler_configs,
         })
     }
 }

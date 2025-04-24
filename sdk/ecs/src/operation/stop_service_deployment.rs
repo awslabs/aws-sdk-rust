@@ -269,14 +269,7 @@ pub enum StopServiceDeploymentError {
     /// <p>The <code>RunTask</code> could not be processed because you use managed scaling and there is a capacity error because the quota of tasks in the <code>PROVISIONING</code> per cluster has been reached. For information about the service quotas, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-quotas.html">Amazon ECS service quotas</a>.</p></li>
     /// </ul>
     ClientException(crate::types::error::ClientException),
-    /// <p>The <code>RunTask</code> request could not be processed due to conflicts. The provided <code>clientToken</code> is already in use with a different <code>RunTask</code> request. The <code>resourceIds</code> are the existing task ARNs which are already associated with the <code>clientToken</code>.</p>
-    /// <p>To fix this issue:</p>
-    /// <ul>
-    /// <li>
-    /// <p>Run <code>RunTask</code> with a unique <code>clientToken</code>.</p></li>
-    /// <li>
-    /// <p>Run <code>RunTask</code> with the <code>clientToken</code> and the original set of parameters</p></li>
-    /// </ul>
+    /// <p>The request could not be processed because of conflict in the current state of the resource.</p>
     ConflictException(crate::types::error::ConflictException),
     /// <p>The specified parameter isn't valid. Review the available parameters for the API request.</p>
     /// <p>For more information about service event errors, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-event-messages-list.html">Amazon ECS service event messages</a>.</p>

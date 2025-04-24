@@ -6,42 +6,48 @@ pub fn ser_create_channel_namespace_input_input(
     if let Some(var_1) = &input.code_handlers {
         object.key("codeHandlers").string(var_1.as_str());
     }
-    if let Some(var_2) = &input.name {
-        object.key("name").string(var_2.as_str());
-    }
-    if let Some(var_3) = &input.publish_auth_modes {
-        let mut array_4 = object.key("publishAuthModes").start_array();
-        for item_5 in var_3 {
-            {
-                #[allow(unused_mut)]
-                let mut object_6 = array_4.value().start_object();
-                crate::protocol_serde::shape_auth_mode::ser_auth_mode(&mut object_6, item_5)?;
-                object_6.finish();
-            }
-        }
-        array_4.finish();
-    }
-    if let Some(var_7) = &input.subscribe_auth_modes {
-        let mut array_8 = object.key("subscribeAuthModes").start_array();
-        for item_9 in var_7 {
-            {
-                #[allow(unused_mut)]
-                let mut object_10 = array_8.value().start_object();
-                crate::protocol_serde::shape_auth_mode::ser_auth_mode(&mut object_10, item_9)?;
-                object_10.finish();
-            }
-        }
-        array_8.finish();
-    }
-    if let Some(var_11) = &input.tags {
+    if let Some(var_2) = &input.handler_configs {
         #[allow(unused_mut)]
-        let mut object_12 = object.key("tags").start_object();
-        for (key_13, value_14) in var_11 {
+        let mut object_3 = object.key("handlerConfigs").start_object();
+        crate::protocol_serde::shape_handler_configs::ser_handler_configs(&mut object_3, var_2)?;
+        object_3.finish();
+    }
+    if let Some(var_4) = &input.name {
+        object.key("name").string(var_4.as_str());
+    }
+    if let Some(var_5) = &input.publish_auth_modes {
+        let mut array_6 = object.key("publishAuthModes").start_array();
+        for item_7 in var_5 {
             {
-                object_12.key(key_13.as_str()).string(value_14.as_str());
+                #[allow(unused_mut)]
+                let mut object_8 = array_6.value().start_object();
+                crate::protocol_serde::shape_auth_mode::ser_auth_mode(&mut object_8, item_7)?;
+                object_8.finish();
             }
         }
-        object_12.finish();
+        array_6.finish();
+    }
+    if let Some(var_9) = &input.subscribe_auth_modes {
+        let mut array_10 = object.key("subscribeAuthModes").start_array();
+        for item_11 in var_9 {
+            {
+                #[allow(unused_mut)]
+                let mut object_12 = array_10.value().start_object();
+                crate::protocol_serde::shape_auth_mode::ser_auth_mode(&mut object_12, item_11)?;
+                object_12.finish();
+            }
+        }
+        array_10.finish();
+    }
+    if let Some(var_13) = &input.tags {
+        #[allow(unused_mut)]
+        let mut object_14 = object.key("tags").start_object();
+        for (key_15, value_16) in var_13 {
+            {
+                object_14.key(key_15.as_str()).string(value_16.as_str());
+            }
+        }
+        object_14.finish();
     }
     Ok(())
 }

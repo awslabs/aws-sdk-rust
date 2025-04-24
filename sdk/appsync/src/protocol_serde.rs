@@ -327,6 +327,8 @@ pub(crate) mod shape_graphql_api;
 
 pub(crate) mod shape_graphql_apis;
 
+pub(crate) mod shape_handler_configs;
+
 pub(crate) mod shape_http_data_source_config;
 
 pub(crate) mod shape_lambda_authorizer_config;
@@ -385,6 +387,8 @@ pub(crate) mod shape_delta_sync_config;
 
 pub(crate) mod shape_event_log_config;
 
+pub(crate) mod shape_handler_config;
+
 pub(crate) mod shape_lambda_conflict_handler_config;
 
 pub(crate) mod shape_map_of_string_to_string;
@@ -407,6 +411,8 @@ pub(crate) mod shape_data_source_introspection_model;
 
 pub(crate) mod shape_functions_ids;
 
+pub(crate) mod shape_integration;
+
 pub(crate) mod shape_code_error_location;
 
 pub(crate) mod shape_data_source_introspection_model_fields;
@@ -414,6 +420,8 @@ pub(crate) mod shape_data_source_introspection_model_fields;
 pub(crate) mod shape_data_source_introspection_model_index;
 
 pub(crate) mod shape_data_source_introspection_model_indexes;
+
+pub(crate) mod shape_lambda_config;
 
 pub(crate) mod shape_data_source_introspection_model_field;
 

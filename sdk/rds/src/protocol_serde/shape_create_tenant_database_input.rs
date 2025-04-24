@@ -36,15 +36,25 @@ pub fn ser_create_tenant_database_input_input_input(
         scope_11.string(var_12);
     }
     #[allow(unused_mut)]
-    let mut scope_13 = writer.prefix("Tags");
-    if let Some(var_14) = &input.tags {
-        let mut list_16 = scope_13.start_list(false, Some("Tag"));
-        for item_15 in var_14 {
+    let mut scope_13 = writer.prefix("ManageMasterUserPassword");
+    if let Some(var_14) = &input.manage_master_user_password {
+        scope_13.boolean(*var_14);
+    }
+    #[allow(unused_mut)]
+    let mut scope_15 = writer.prefix("MasterUserSecretKmsKeyId");
+    if let Some(var_16) = &input.master_user_secret_kms_key_id {
+        scope_15.string(var_16);
+    }
+    #[allow(unused_mut)]
+    let mut scope_17 = writer.prefix("Tags");
+    if let Some(var_18) = &input.tags {
+        let mut list_20 = scope_17.start_list(false, Some("Tag"));
+        for item_19 in var_18 {
             #[allow(unused_mut)]
-            let mut entry_17 = list_16.entry();
-            crate::protocol_serde::shape_tag::ser_tag(entry_17, item_15)?;
+            let mut entry_21 = list_20.entry();
+            crate::protocol_serde::shape_tag::ser_tag(entry_21, item_19)?;
         }
-        list_16.finish();
+        list_20.finish();
     }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))

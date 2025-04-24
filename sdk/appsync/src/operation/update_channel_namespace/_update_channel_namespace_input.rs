@@ -13,6 +13,8 @@ pub struct UpdateChannelNamespaceInput {
     pub publish_auth_modes: ::std::option::Option<::std::vec::Vec<crate::types::AuthMode>>,
     /// <p>The event handler functions that run custom business logic to process published events and subscribe requests.</p>
     pub code_handlers: ::std::option::Option<::std::string::String>,
+    /// <p>The configuration for the <code>OnPublish</code> and <code>OnSubscribe</code> handlers.</p>
+    pub handler_configs: ::std::option::Option<crate::types::HandlerConfigs>,
 }
 impl UpdateChannelNamespaceInput {
     /// <p>The <code>Api</code> ID.</p>
@@ -39,6 +41,10 @@ impl UpdateChannelNamespaceInput {
     pub fn code_handlers(&self) -> ::std::option::Option<&str> {
         self.code_handlers.as_deref()
     }
+    /// <p>The configuration for the <code>OnPublish</code> and <code>OnSubscribe</code> handlers.</p>
+    pub fn handler_configs(&self) -> ::std::option::Option<&crate::types::HandlerConfigs> {
+        self.handler_configs.as_ref()
+    }
 }
 impl UpdateChannelNamespaceInput {
     /// Creates a new builder-style object to manufacture [`UpdateChannelNamespaceInput`](crate::operation::update_channel_namespace::UpdateChannelNamespaceInput).
@@ -56,6 +62,7 @@ pub struct UpdateChannelNamespaceInputBuilder {
     pub(crate) subscribe_auth_modes: ::std::option::Option<::std::vec::Vec<crate::types::AuthMode>>,
     pub(crate) publish_auth_modes: ::std::option::Option<::std::vec::Vec<crate::types::AuthMode>>,
     pub(crate) code_handlers: ::std::option::Option<::std::string::String>,
+    pub(crate) handler_configs: ::std::option::Option<crate::types::HandlerConfigs>,
 }
 impl UpdateChannelNamespaceInputBuilder {
     /// <p>The <code>Api</code> ID.</p>
@@ -142,6 +149,20 @@ impl UpdateChannelNamespaceInputBuilder {
     pub fn get_code_handlers(&self) -> &::std::option::Option<::std::string::String> {
         &self.code_handlers
     }
+    /// <p>The configuration for the <code>OnPublish</code> and <code>OnSubscribe</code> handlers.</p>
+    pub fn handler_configs(mut self, input: crate::types::HandlerConfigs) -> Self {
+        self.handler_configs = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The configuration for the <code>OnPublish</code> and <code>OnSubscribe</code> handlers.</p>
+    pub fn set_handler_configs(mut self, input: ::std::option::Option<crate::types::HandlerConfigs>) -> Self {
+        self.handler_configs = input;
+        self
+    }
+    /// <p>The configuration for the <code>OnPublish</code> and <code>OnSubscribe</code> handlers.</p>
+    pub fn get_handler_configs(&self) -> &::std::option::Option<crate::types::HandlerConfigs> {
+        &self.handler_configs
+    }
     /// Consumes the builder and constructs a [`UpdateChannelNamespaceInput`](crate::operation::update_channel_namespace::UpdateChannelNamespaceInput).
     pub fn build(
         self,
@@ -155,6 +176,7 @@ impl UpdateChannelNamespaceInputBuilder {
             subscribe_auth_modes: self.subscribe_auth_modes,
             publish_auth_modes: self.publish_auth_modes,
             code_handlers: self.code_handlers,
+            handler_configs: self.handler_configs,
         })
     }
 }

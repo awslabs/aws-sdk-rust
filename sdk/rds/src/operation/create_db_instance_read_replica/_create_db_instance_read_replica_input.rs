@@ -42,6 +42,7 @@ pub struct CreateDbInstanceReadReplicaInput {
     /// <p>Specifies whether to automatically apply minor engine upgrades to the read replica during the maintenance window.</p>
     /// <p>This setting doesn't apply to RDS Custom DB instances.</p>
     /// <p>Default: Inherits the value from the source DB instance.</p>
+    /// <p>For more information about automatic minor version upgrades, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Upgrading.html#USER_UpgradeDBInstance.Upgrading.AutoMinorVersionUpgrades">Automatically upgrading the minor engine version</a>.</p>
     pub auto_minor_version_upgrade: ::std::option::Option<bool>,
     /// <p>The amount of Provisioned IOPS (input/output operations per second) to initially allocate for the DB instance.</p>
     pub iops: ::std::option::Option<i32>,
@@ -335,6 +336,7 @@ impl CreateDbInstanceReadReplicaInput {
     /// <p>Specifies whether to automatically apply minor engine upgrades to the read replica during the maintenance window.</p>
     /// <p>This setting doesn't apply to RDS Custom DB instances.</p>
     /// <p>Default: Inherits the value from the source DB instance.</p>
+    /// <p>For more information about automatic minor version upgrades, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Upgrading.html#USER_UpgradeDBInstance.Upgrading.AutoMinorVersionUpgrades">Automatically upgrading the minor engine version</a>.</p>
     pub fn auto_minor_version_upgrade(&self) -> ::std::option::Option<bool> {
         self.auto_minor_version_upgrade
     }
@@ -885,6 +887,7 @@ impl CreateDbInstanceReadReplicaInputBuilder {
     /// <p>Specifies whether to automatically apply minor engine upgrades to the read replica during the maintenance window.</p>
     /// <p>This setting doesn't apply to RDS Custom DB instances.</p>
     /// <p>Default: Inherits the value from the source DB instance.</p>
+    /// <p>For more information about automatic minor version upgrades, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Upgrading.html#USER_UpgradeDBInstance.Upgrading.AutoMinorVersionUpgrades">Automatically upgrading the minor engine version</a>.</p>
     pub fn auto_minor_version_upgrade(mut self, input: bool) -> Self {
         self.auto_minor_version_upgrade = ::std::option::Option::Some(input);
         self
@@ -892,6 +895,7 @@ impl CreateDbInstanceReadReplicaInputBuilder {
     /// <p>Specifies whether to automatically apply minor engine upgrades to the read replica during the maintenance window.</p>
     /// <p>This setting doesn't apply to RDS Custom DB instances.</p>
     /// <p>Default: Inherits the value from the source DB instance.</p>
+    /// <p>For more information about automatic minor version upgrades, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Upgrading.html#USER_UpgradeDBInstance.Upgrading.AutoMinorVersionUpgrades">Automatically upgrading the minor engine version</a>.</p>
     pub fn set_auto_minor_version_upgrade(mut self, input: ::std::option::Option<bool>) -> Self {
         self.auto_minor_version_upgrade = input;
         self
@@ -899,6 +903,7 @@ impl CreateDbInstanceReadReplicaInputBuilder {
     /// <p>Specifies whether to automatically apply minor engine upgrades to the read replica during the maintenance window.</p>
     /// <p>This setting doesn't apply to RDS Custom DB instances.</p>
     /// <p>Default: Inherits the value from the source DB instance.</p>
+    /// <p>For more information about automatic minor version upgrades, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Upgrading.html#USER_UpgradeDBInstance.Upgrading.AutoMinorVersionUpgrades">Automatically upgrading the minor engine version</a>.</p>
     pub fn get_auto_minor_version_upgrade(&self) -> &::std::option::Option<bool> {
         &self.auto_minor_version_upgrade
     }

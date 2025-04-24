@@ -22,6 +22,8 @@ pub struct ChannelNamespace {
     pub created: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time that the <code>ChannelNamespace</code> was last changed.</p>
     pub last_modified: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>The configuration for the <code>OnPublish</code> and <code>OnSubscribe</code> handlers.</p>
+    pub handler_configs: ::std::option::Option<crate::types::HandlerConfigs>,
 }
 impl ChannelNamespace {
     /// <p>The <code>Api</code> ID.</p>
@@ -64,6 +66,10 @@ impl ChannelNamespace {
     pub fn last_modified(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_modified.as_ref()
     }
+    /// <p>The configuration for the <code>OnPublish</code> and <code>OnSubscribe</code> handlers.</p>
+    pub fn handler_configs(&self) -> ::std::option::Option<&crate::types::HandlerConfigs> {
+        self.handler_configs.as_ref()
+    }
 }
 impl ChannelNamespace {
     /// Creates a new builder-style object to manufacture [`ChannelNamespace`](crate::types::ChannelNamespace).
@@ -85,6 +91,7 @@ pub struct ChannelNamespaceBuilder {
     pub(crate) channel_namespace_arn: ::std::option::Option<::std::string::String>,
     pub(crate) created: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_modified: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) handler_configs: ::std::option::Option<crate::types::HandlerConfigs>,
 }
 impl ChannelNamespaceBuilder {
     /// <p>The <code>Api</code> ID.</p>
@@ -231,6 +238,20 @@ impl ChannelNamespaceBuilder {
     pub fn get_last_modified(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_modified
     }
+    /// <p>The configuration for the <code>OnPublish</code> and <code>OnSubscribe</code> handlers.</p>
+    pub fn handler_configs(mut self, input: crate::types::HandlerConfigs) -> Self {
+        self.handler_configs = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The configuration for the <code>OnPublish</code> and <code>OnSubscribe</code> handlers.</p>
+    pub fn set_handler_configs(mut self, input: ::std::option::Option<crate::types::HandlerConfigs>) -> Self {
+        self.handler_configs = input;
+        self
+    }
+    /// <p>The configuration for the <code>OnPublish</code> and <code>OnSubscribe</code> handlers.</p>
+    pub fn get_handler_configs(&self) -> &::std::option::Option<crate::types::HandlerConfigs> {
+        &self.handler_configs
+    }
     /// Consumes the builder and constructs a [`ChannelNamespace`](crate::types::ChannelNamespace).
     pub fn build(self) -> crate::types::ChannelNamespace {
         crate::types::ChannelNamespace {
@@ -243,6 +264,7 @@ impl ChannelNamespaceBuilder {
             channel_namespace_arn: self.channel_namespace_arn,
             created: self.created,
             last_modified: self.last_modified,
+            handler_configs: self.handler_configs,
         }
     }
 }

@@ -63,6 +63,9 @@ where
                                 ::aws_smithy_types::date_time::Format::EpochSeconds,
                             )?);
                         }
+                        "handlerConfigs" => {
+                            builder = builder.set_handler_configs(crate::protocol_serde::shape_handler_configs::de_handler_configs(tokens)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

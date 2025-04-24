@@ -163,14 +163,24 @@ pub fn de_tenant_database(
                 builder = builder.set_pending_modified_values(var_12);
             }
             ,
-            s if s.matches("TagList") /* TagList com.amazonaws.rds#TenantDatabase$TagList */ =>  {
+            s if s.matches("MasterUserSecret") /* MasterUserSecret com.amazonaws.rds#TenantDatabase$MasterUserSecret */ =>  {
                 let var_13 =
+                    Some(
+                        crate::protocol_serde::shape_master_user_secret::de_master_user_secret(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_master_user_secret(var_13);
+            }
+            ,
+            s if s.matches("TagList") /* TagList com.amazonaws.rds#TenantDatabase$TagList */ =>  {
+                let var_14 =
                     Some(
                         crate::protocol_serde::shape_tag_list::de_tag_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_tag_list(var_13);
+                builder = builder.set_tag_list(var_14);
             }
             ,
             _ => {}

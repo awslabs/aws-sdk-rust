@@ -188,4 +188,18 @@ impl UpdateChannelNamespaceFluentBuilder {
     pub fn get_code_handlers(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_code_handlers()
     }
+    /// <p>The configuration for the <code>OnPublish</code> and <code>OnSubscribe</code> handlers.</p>
+    pub fn handler_configs(mut self, input: crate::types::HandlerConfigs) -> Self {
+        self.inner = self.inner.handler_configs(input);
+        self
+    }
+    /// <p>The configuration for the <code>OnPublish</code> and <code>OnSubscribe</code> handlers.</p>
+    pub fn set_handler_configs(mut self, input: ::std::option::Option<crate::types::HandlerConfigs>) -> Self {
+        self.inner = self.inner.set_handler_configs(input);
+        self
+    }
+    /// <p>The configuration for the <code>OnPublish</code> and <code>OnSubscribe</code> handlers.</p>
+    pub fn get_handler_configs(&self) -> &::std::option::Option<crate::types::HandlerConfigs> {
+        self.inner.get_handler_configs()
+    }
 }

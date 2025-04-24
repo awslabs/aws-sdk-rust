@@ -260,6 +260,8 @@ pub enum CreateTenantDatabaseError {
     DbInstanceNotFoundFault(crate::types::error::DbInstanceNotFoundFault),
     /// <p>The DB instance isn't in a valid state.</p>
     InvalidDbInstanceStateFault(crate::types::error::InvalidDbInstanceStateFault),
+    /// <p>An error occurred accessing an Amazon Web Services KMS key.</p>
+    KmsKeyNotAccessibleFault(crate::types::error::KmsKeyNotAccessibleFault),
     /// <p>You attempted to either create a tenant database that already exists or modify a tenant database to use the name of an existing tenant database.</p>
     TenantDatabaseAlreadyExistsFault(crate::types::error::TenantDatabaseAlreadyExistsFault),
     /// <p>You attempted to create more tenant databases than are permitted in your Amazon Web Services account.</p>
@@ -299,6 +301,7 @@ impl CreateTenantDatabaseError {
         match self {
             Self::DbInstanceNotFoundFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidDbInstanceStateFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::KmsKeyNotAccessibleFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::TenantDatabaseAlreadyExistsFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::TenantDatabaseQuotaExceededFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::Unhandled(e) => &e.meta,
@@ -311,6 +314,10 @@ impl CreateTenantDatabaseError {
     /// Returns `true` if the error kind is `CreateTenantDatabaseError::InvalidDbInstanceStateFault`.
     pub fn is_invalid_db_instance_state_fault(&self) -> bool {
         matches!(self, Self::InvalidDbInstanceStateFault(_))
+    }
+    /// Returns `true` if the error kind is `CreateTenantDatabaseError::KmsKeyNotAccessibleFault`.
+    pub fn is_kms_key_not_accessible_fault(&self) -> bool {
+        matches!(self, Self::KmsKeyNotAccessibleFault(_))
     }
     /// Returns `true` if the error kind is `CreateTenantDatabaseError::TenantDatabaseAlreadyExistsFault`.
     pub fn is_tenant_database_already_exists_fault(&self) -> bool {
@@ -326,6 +333,7 @@ impl ::std::error::Error for CreateTenantDatabaseError {
         match self {
             Self::DbInstanceNotFoundFault(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidDbInstanceStateFault(_inner) => ::std::option::Option::Some(_inner),
+            Self::KmsKeyNotAccessibleFault(_inner) => ::std::option::Option::Some(_inner),
             Self::TenantDatabaseAlreadyExistsFault(_inner) => ::std::option::Option::Some(_inner),
             Self::TenantDatabaseQuotaExceededFault(_inner) => ::std::option::Option::Some(_inner),
             Self::Unhandled(_inner) => ::std::option::Option::Some(&*_inner.source),
@@ -337,6 +345,7 @@ impl ::std::fmt::Display for CreateTenantDatabaseError {
         match self {
             Self::DbInstanceNotFoundFault(_inner) => _inner.fmt(f),
             Self::InvalidDbInstanceStateFault(_inner) => _inner.fmt(f),
+            Self::KmsKeyNotAccessibleFault(_inner) => _inner.fmt(f),
             Self::TenantDatabaseAlreadyExistsFault(_inner) => _inner.fmt(f),
             Self::TenantDatabaseQuotaExceededFault(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => {
@@ -362,6 +371,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for CreateTenantD
         match self {
             Self::DbInstanceNotFoundFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidDbInstanceStateFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::KmsKeyNotAccessibleFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::TenantDatabaseAlreadyExistsFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::TenantDatabaseQuotaExceededFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::Unhandled(_inner) => &_inner.meta,

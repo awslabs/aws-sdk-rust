@@ -28,6 +28,9 @@ pub struct TenantDatabase {
     pub deletion_protection: ::std::option::Option<bool>,
     /// <p>Information about pending changes for a tenant database.</p>
     pub pending_modified_values: ::std::option::Option<crate::types::TenantDatabasePendingModifiedValues>,
+    /// <p>Contains the secret managed by RDS in Amazon Web Services Secrets Manager for the master user password.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon Aurora User Guide.</i></p>
+    pub master_user_secret: ::std::option::Option<crate::types::MasterUserSecret>,
     /// <p>A list of tags.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS resources</a> in the <i>Amazon RDS User Guide</i> or <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_Tagging.html">Tagging Amazon Aurora and Amazon RDS resources</a> in the <i>Amazon Aurora User Guide</i>.</p>
     pub tag_list: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
@@ -81,6 +84,11 @@ impl TenantDatabase {
     pub fn pending_modified_values(&self) -> ::std::option::Option<&crate::types::TenantDatabasePendingModifiedValues> {
         self.pending_modified_values.as_ref()
     }
+    /// <p>Contains the secret managed by RDS in Amazon Web Services Secrets Manager for the master user password.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon Aurora User Guide.</i></p>
+    pub fn master_user_secret(&self) -> ::std::option::Option<&crate::types::MasterUserSecret> {
+        self.master_user_secret.as_ref()
+    }
     /// <p>A list of tags.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS resources</a> in the <i>Amazon RDS User Guide</i> or <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_Tagging.html">Tagging Amazon Aurora and Amazon RDS resources</a> in the <i>Amazon Aurora User Guide</i>.</p>
     ///
@@ -112,6 +120,7 @@ pub struct TenantDatabaseBuilder {
     pub(crate) nchar_character_set_name: ::std::option::Option<::std::string::String>,
     pub(crate) deletion_protection: ::std::option::Option<bool>,
     pub(crate) pending_modified_values: ::std::option::Option<crate::types::TenantDatabasePendingModifiedValues>,
+    pub(crate) master_user_secret: ::std::option::Option<crate::types::MasterUserSecret>,
     pub(crate) tag_list: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl TenantDatabaseBuilder {
@@ -283,6 +292,23 @@ impl TenantDatabaseBuilder {
     pub fn get_pending_modified_values(&self) -> &::std::option::Option<crate::types::TenantDatabasePendingModifiedValues> {
         &self.pending_modified_values
     }
+    /// <p>Contains the secret managed by RDS in Amazon Web Services Secrets Manager for the master user password.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon Aurora User Guide.</i></p>
+    pub fn master_user_secret(mut self, input: crate::types::MasterUserSecret) -> Self {
+        self.master_user_secret = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Contains the secret managed by RDS in Amazon Web Services Secrets Manager for the master user password.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon Aurora User Guide.</i></p>
+    pub fn set_master_user_secret(mut self, input: ::std::option::Option<crate::types::MasterUserSecret>) -> Self {
+        self.master_user_secret = input;
+        self
+    }
+    /// <p>Contains the secret managed by RDS in Amazon Web Services Secrets Manager for the master user password.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon Aurora User Guide.</i></p>
+    pub fn get_master_user_secret(&self) -> &::std::option::Option<crate::types::MasterUserSecret> {
+        &self.master_user_secret
+    }
     /// Appends an item to `tag_list`.
     ///
     /// To override the contents of this collection use [`set_tag_list`](Self::set_tag_list).
@@ -321,6 +347,7 @@ impl TenantDatabaseBuilder {
             nchar_character_set_name: self.nchar_character_set_name,
             deletion_protection: self.deletion_protection,
             pending_modified_values: self.pending_modified_values,
+            master_user_secret: self.master_user_secret,
             tag_list: self.tag_list,
         }
     }

@@ -14,7 +14,15 @@ pub struct UserAuthConfig {
     pub secret_arn: ::std::option::Option<::std::string::String>,
     /// <p>A value that indicates whether to require or disallow Amazon Web Services Identity and Access Management (IAM) authentication for connections to the proxy. The <code>ENABLED</code> value is valid only for proxies with RDS for Microsoft SQL Server.</p>
     pub iam_auth: ::std::option::Option<crate::types::IamAuthMode>,
-    /// <p>The type of authentication the proxy uses for connections from clients.</p>
+    /// <p>The type of authentication the proxy uses for connections from clients. The following values are defaults for the corresponding engines:</p>
+    /// <ul>
+    /// <li>
+    /// <p>RDS for MySQL: <code>MYSQL_CACHING_SHA2_PASSWORD</code></p></li>
+    /// <li>
+    /// <p>RDS for SQL Server: <code>SQL_SERVER_AUTHENTICATION</code></p></li>
+    /// <li>
+    /// <p>RDS for PostgreSQL: <code>POSTGRES_SCRAM_SHA2_256</code></p></li>
+    /// </ul>
     pub client_password_auth_type: ::std::option::Option<crate::types::ClientPasswordAuthType>,
 }
 impl UserAuthConfig {
@@ -38,7 +46,15 @@ impl UserAuthConfig {
     pub fn iam_auth(&self) -> ::std::option::Option<&crate::types::IamAuthMode> {
         self.iam_auth.as_ref()
     }
-    /// <p>The type of authentication the proxy uses for connections from clients.</p>
+    /// <p>The type of authentication the proxy uses for connections from clients. The following values are defaults for the corresponding engines:</p>
+    /// <ul>
+    /// <li>
+    /// <p>RDS for MySQL: <code>MYSQL_CACHING_SHA2_PASSWORD</code></p></li>
+    /// <li>
+    /// <p>RDS for SQL Server: <code>SQL_SERVER_AUTHENTICATION</code></p></li>
+    /// <li>
+    /// <p>RDS for PostgreSQL: <code>POSTGRES_SCRAM_SHA2_256</code></p></li>
+    /// </ul>
     pub fn client_password_auth_type(&self) -> ::std::option::Option<&crate::types::ClientPasswordAuthType> {
         self.client_password_auth_type.as_ref()
     }
@@ -132,17 +148,41 @@ impl UserAuthConfigBuilder {
     pub fn get_iam_auth(&self) -> &::std::option::Option<crate::types::IamAuthMode> {
         &self.iam_auth
     }
-    /// <p>The type of authentication the proxy uses for connections from clients.</p>
+    /// <p>The type of authentication the proxy uses for connections from clients. The following values are defaults for the corresponding engines:</p>
+    /// <ul>
+    /// <li>
+    /// <p>RDS for MySQL: <code>MYSQL_CACHING_SHA2_PASSWORD</code></p></li>
+    /// <li>
+    /// <p>RDS for SQL Server: <code>SQL_SERVER_AUTHENTICATION</code></p></li>
+    /// <li>
+    /// <p>RDS for PostgreSQL: <code>POSTGRES_SCRAM_SHA2_256</code></p></li>
+    /// </ul>
     pub fn client_password_auth_type(mut self, input: crate::types::ClientPasswordAuthType) -> Self {
         self.client_password_auth_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The type of authentication the proxy uses for connections from clients.</p>
+    /// <p>The type of authentication the proxy uses for connections from clients. The following values are defaults for the corresponding engines:</p>
+    /// <ul>
+    /// <li>
+    /// <p>RDS for MySQL: <code>MYSQL_CACHING_SHA2_PASSWORD</code></p></li>
+    /// <li>
+    /// <p>RDS for SQL Server: <code>SQL_SERVER_AUTHENTICATION</code></p></li>
+    /// <li>
+    /// <p>RDS for PostgreSQL: <code>POSTGRES_SCRAM_SHA2_256</code></p></li>
+    /// </ul>
     pub fn set_client_password_auth_type(mut self, input: ::std::option::Option<crate::types::ClientPasswordAuthType>) -> Self {
         self.client_password_auth_type = input;
         self
     }
-    /// <p>The type of authentication the proxy uses for connections from clients.</p>
+    /// <p>The type of authentication the proxy uses for connections from clients. The following values are defaults for the corresponding engines:</p>
+    /// <ul>
+    /// <li>
+    /// <p>RDS for MySQL: <code>MYSQL_CACHING_SHA2_PASSWORD</code></p></li>
+    /// <li>
+    /// <p>RDS for SQL Server: <code>SQL_SERVER_AUTHENTICATION</code></p></li>
+    /// <li>
+    /// <p>RDS for PostgreSQL: <code>POSTGRES_SCRAM_SHA2_256</code></p></li>
+    /// </ul>
     pub fn get_client_password_auth_type(&self) -> &::std::option::Option<crate::types::ClientPasswordAuthType> {
         &self.client_password_auth_type
     }

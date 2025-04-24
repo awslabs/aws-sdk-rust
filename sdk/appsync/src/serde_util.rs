@@ -176,6 +176,21 @@ pub(crate) fn event_log_config_correct_errors(
     builder
 }
 
+pub(crate) fn handler_config_correct_errors(
+    mut builder: crate::types::builders::HandlerConfigBuilder,
+) -> crate::types::builders::HandlerConfigBuilder {
+    if builder.behavior.is_none() {
+        builder.behavior = "no value was set".parse::<crate::types::HandlerBehavior>().ok()
+    }
+    if builder.integration.is_none() {
+        builder.integration = {
+            let builder = crate::types::builders::IntegrationBuilder::default();
+            crate::serde_util::integration_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
 pub(crate) fn auth_provider_correct_errors(mut builder: crate::types::builders::AuthProviderBuilder) -> crate::types::builders::AuthProviderBuilder {
     if builder.auth_type.is_none() {
         builder.auth_type = "no value was set".parse::<crate::types::AuthenticationType>().ok()
@@ -191,6 +206,13 @@ pub(crate) fn cognito_user_pool_config_correct_errors(
     }
     if builder.aws_region.is_none() {
         builder.aws_region = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn integration_correct_errors(mut builder: crate::types::builders::IntegrationBuilder) -> crate::types::builders::IntegrationBuilder {
+    if builder.data_source_name.is_none() {
+        builder.data_source_name = Some(Default::default())
     }
     builder
 }

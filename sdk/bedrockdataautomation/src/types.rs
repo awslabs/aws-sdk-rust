@@ -9,11 +9,23 @@ pub use crate::types::_encryption_configuration::EncryptionConfiguration;
 
 pub use crate::types::_override_configuration::OverrideConfiguration;
 
+pub use crate::types::_modality_routing_configuration::ModalityRoutingConfiguration;
+
+pub use crate::types::_desired_modality::DesiredModality;
+
+pub use crate::types::_audio_override_configuration::AudioOverrideConfiguration;
+
+pub use crate::types::_modality_processing_configuration::ModalityProcessingConfiguration;
+
+pub use crate::types::_state::State;
+
+pub use crate::types::_video_override_configuration::VideoOverrideConfiguration;
+
+pub use crate::types::_image_override_configuration::ImageOverrideConfiguration;
+
 pub use crate::types::_document_override_configuration::DocumentOverrideConfiguration;
 
 pub use crate::types::_splitter_configuration::SplitterConfiguration;
-
-pub use crate::types::_state::State;
 
 pub use crate::types::_custom_output_configuration::CustomOutputConfiguration;
 
@@ -109,6 +121,8 @@ mod _audio_extraction_category;
 
 mod _audio_extraction_category_type;
 
+mod _audio_override_configuration;
+
 mod _audio_standard_extraction;
 
 mod _audio_standard_generative_field;
@@ -143,6 +157,8 @@ mod _data_automation_project_status;
 
 mod _data_automation_project_summary;
 
+mod _desired_modality;
+
 mod _document_bounding_box;
 
 mod _document_extraction_granularity;
@@ -173,6 +189,8 @@ mod _image_extraction_category;
 
 mod _image_extraction_category_type;
 
+mod _image_override_configuration;
+
 mod _image_standard_extraction;
 
 mod _image_standard_generative_field;
@@ -180,6 +198,10 @@ mod _image_standard_generative_field;
 mod _image_standard_generative_field_type;
 
 mod _image_standard_output_configuration;
+
+mod _modality_processing_configuration;
+
+mod _modality_routing_configuration;
 
 mod _override_configuration;
 
@@ -202,6 +224,8 @@ mod _video_bounding_box;
 mod _video_extraction_category;
 
 mod _video_extraction_category_type;
+
+mod _video_override_configuration;
 
 mod _video_standard_extraction;
 

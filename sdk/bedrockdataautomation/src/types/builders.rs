@@ -5,6 +5,16 @@ pub use crate::types::_encryption_configuration::EncryptionConfigurationBuilder;
 
 pub use crate::types::_override_configuration::OverrideConfigurationBuilder;
 
+pub use crate::types::_modality_routing_configuration::ModalityRoutingConfigurationBuilder;
+
+pub use crate::types::_audio_override_configuration::AudioOverrideConfigurationBuilder;
+
+pub use crate::types::_modality_processing_configuration::ModalityProcessingConfigurationBuilder;
+
+pub use crate::types::_video_override_configuration::VideoOverrideConfigurationBuilder;
+
+pub use crate::types::_image_override_configuration::ImageOverrideConfigurationBuilder;
+
 pub use crate::types::_document_override_configuration::DocumentOverrideConfigurationBuilder;
 
 pub use crate::types::_splitter_configuration::SplitterConfigurationBuilder;

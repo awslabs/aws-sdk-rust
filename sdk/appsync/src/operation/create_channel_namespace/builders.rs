@@ -207,4 +207,18 @@ impl CreateChannelNamespaceFluentBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }
+    /// <p>The configuration for the <code>OnPublish</code> and <code>OnSubscribe</code> handlers.</p>
+    pub fn handler_configs(mut self, input: crate::types::HandlerConfigs) -> Self {
+        self.inner = self.inner.handler_configs(input);
+        self
+    }
+    /// <p>The configuration for the <code>OnPublish</code> and <code>OnSubscribe</code> handlers.</p>
+    pub fn set_handler_configs(mut self, input: ::std::option::Option<crate::types::HandlerConfigs>) -> Self {
+        self.inner = self.inner.set_handler_configs(input);
+        self
+    }
+    /// <p>The configuration for the <code>OnPublish</code> and <code>OnSubscribe</code> handlers.</p>
+    pub fn get_handler_configs(&self) -> &::std::option::Option<crate::types::HandlerConfigs> {
+        self.inner.get_handler_configs()
+    }
 }

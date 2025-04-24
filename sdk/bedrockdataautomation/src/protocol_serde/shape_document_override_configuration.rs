@@ -9,6 +9,12 @@ pub fn ser_document_override_configuration(
         crate::protocol_serde::shape_splitter_configuration::ser_splitter_configuration(&mut object_2, var_1)?;
         object_2.finish();
     }
+    if let Some(var_3) = &input.modality_processing {
+        #[allow(unused_mut)]
+        let mut object_4 = object.key("modalityProcessing").start_object();
+        crate::protocol_serde::shape_modality_processing_configuration::ser_modality_processing_configuration(&mut object_4, var_3)?;
+        object_4.finish();
+    }
     Ok(())
 }
 
@@ -29,6 +35,11 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "splitter" => {
                             builder = builder.set_splitter(crate::protocol_serde::shape_splitter_configuration::de_splitter_configuration(tokens)?);
+                        }
+                        "modalityProcessing" => {
+                            builder = builder.set_modality_processing(
+                                crate::protocol_serde::shape_modality_processing_configuration::de_modality_processing_configuration(tokens)?,
+                            );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

@@ -257,6 +257,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for TransactWrite
                     .unwrap_or_default()
                     .to_string(),
             ))
+            .set_resource_arn_list(get_resource_arn_list(_input).map(|v| v.into_iter().cloned().collect::<Vec<_>>()))
             .build()
             .map_err(|err| {
                 ::aws_smithy_runtime_api::client::interceptors::error::ContextAttachedError::new("endpoint params could not be built", err)
@@ -269,6 +270,33 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for TransactWrite
 
 // The get_* functions below are generated from JMESPath expressions in the
 // operationContextParams trait. They target the operation's input shape.
+
+// Generated from JMESPath Expression: TransactItems[*].[ConditionCheck.TableName, Put.TableName, Delete.TableName, Update.TableName][]
+fn get_resource_arn_list(input: &crate::operation::transact_write_items::TransactWriteItemsInput) -> Option<::std::vec::Vec<&::std::string::String>> {
+    let _fld_1 = input.transact_items.as_ref()?;
+    let _prj_11 = _fld_1
+        .iter()
+        .flat_map(|v| {
+            #[allow(clippy::let_and_return)]
+            fn map(_v: &crate::types::TransactWriteItem) -> ::std::option::Option<::std::vec::Vec<::std::option::Option<&::std::string::String>>> {
+                let _fld_2 = _v.condition_check.as_ref();
+                let _fld_3 = _fld_2.map(|v| &v.table_name);
+                let _fld_4 = _v.put.as_ref();
+                let _fld_5 = _fld_4.map(|v| &v.table_name);
+                let _fld_6 = _v.delete.as_ref();
+                let _fld_7 = _fld_6.map(|v| &v.table_name);
+                let _fld_8 = _v.update.as_ref();
+                let _fld_9 = _fld_8.map(|v| &v.table_name);
+                let _msl_10 = vec![_fld_3, _fld_5, _fld_7, _fld_9];
+                ::std::option::Option::Some(_msl_10)
+            }
+            map(v)
+        })
+        .flatten()
+        .flatten()
+        .collect::<::std::vec::Vec<_>>();
+    Some(_prj_11)
+}
 
 /// Error type for the `TransactWriteItemsError` operation.
 #[non_exhaustive]

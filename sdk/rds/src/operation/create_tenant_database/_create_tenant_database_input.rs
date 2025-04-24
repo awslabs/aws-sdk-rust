@@ -25,12 +25,28 @@ pub struct CreateTenantDatabaseInput {
     /// <p>Must be 8 to 30 characters.</p></li>
     /// <li>
     /// <p>Can include any printable ASCII character except forward slash (<code>/</code>), double quote (<code>"</code>), at symbol (<code>@</code>), ampersand (<code>&amp;</code>), or single quote (<code>'</code>).</p></li>
+    /// <li>
+    /// <p>Can't be specified when <code>ManageMasterUserPassword</code> is enabled.</p></li>
     /// </ul>
     pub master_user_password: ::std::option::Option<::std::string::String>,
     /// <p>The character set for your tenant database. If you don't specify a value, the character set name defaults to <code>AL32UTF8</code>.</p>
     pub character_set_name: ::std::option::Option<::std::string::String>,
     /// <p>The <code>NCHAR</code> value for the tenant database.</p>
     pub nchar_character_set_name: ::std::option::Option<::std::string::String>,
+    /// <p>Specifies whether to manage the master user password with Amazon Web Services Secrets Manager.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS User Guide.</i></p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Can't manage the master user password with Amazon Web Services Secrets Manager if <code>MasterUserPassword</code> is specified.</p></li>
+    /// </ul>
+    pub manage_master_user_password: ::std::option::Option<bool>,
+    /// <p>The Amazon Web Services KMS key identifier to encrypt a secret that is automatically generated and managed in Amazon Web Services Secrets Manager.</p>
+    /// <p>This setting is valid only if the master user password is managed by RDS in Amazon Web Services Secrets Manager for the DB instance.</p>
+    /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key. To use a KMS key in a different Amazon Web Services account, specify the key ARN or alias ARN.</p>
+    /// <p>If you don't specify <code>MasterUserSecretKmsKeyId</code>, then the <code>aws/secretsmanager</code> KMS key is used to encrypt the secret. If the secret is in a different Amazon Web Services account, then you can't use the <code>aws/secretsmanager</code> KMS key to encrypt the secret, and you must use a customer managed KMS key.</p>
+    /// <p>There is a default KMS key for your Amazon Web Services account. Your Amazon Web Services account has a different default KMS key for each Amazon Web Services Region.</p>
+    pub master_user_secret_kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>A list of tags.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS resources</a> in the <i>Amazon RDS User Guide</i> or <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_Tagging.html">Tagging Amazon Aurora and Amazon RDS resources</a> in the <i>Amazon Aurora User Guide</i>.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
@@ -64,6 +80,8 @@ impl CreateTenantDatabaseInput {
     /// <p>Must be 8 to 30 characters.</p></li>
     /// <li>
     /// <p>Can include any printable ASCII character except forward slash (<code>/</code>), double quote (<code>"</code>), at symbol (<code>@</code>), ampersand (<code>&amp;</code>), or single quote (<code>'</code>).</p></li>
+    /// <li>
+    /// <p>Can't be specified when <code>ManageMasterUserPassword</code> is enabled.</p></li>
     /// </ul>
     pub fn master_user_password(&self) -> ::std::option::Option<&str> {
         self.master_user_password.as_deref()
@@ -75,6 +93,24 @@ impl CreateTenantDatabaseInput {
     /// <p>The <code>NCHAR</code> value for the tenant database.</p>
     pub fn nchar_character_set_name(&self) -> ::std::option::Option<&str> {
         self.nchar_character_set_name.as_deref()
+    }
+    /// <p>Specifies whether to manage the master user password with Amazon Web Services Secrets Manager.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS User Guide.</i></p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Can't manage the master user password with Amazon Web Services Secrets Manager if <code>MasterUserPassword</code> is specified.</p></li>
+    /// </ul>
+    pub fn manage_master_user_password(&self) -> ::std::option::Option<bool> {
+        self.manage_master_user_password
+    }
+    /// <p>The Amazon Web Services KMS key identifier to encrypt a secret that is automatically generated and managed in Amazon Web Services Secrets Manager.</p>
+    /// <p>This setting is valid only if the master user password is managed by RDS in Amazon Web Services Secrets Manager for the DB instance.</p>
+    /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key. To use a KMS key in a different Amazon Web Services account, specify the key ARN or alias ARN.</p>
+    /// <p>If you don't specify <code>MasterUserSecretKmsKeyId</code>, then the <code>aws/secretsmanager</code> KMS key is used to encrypt the secret. If the secret is in a different Amazon Web Services account, then you can't use the <code>aws/secretsmanager</code> KMS key to encrypt the secret, and you must use a customer managed KMS key.</p>
+    /// <p>There is a default KMS key for your Amazon Web Services account. Your Amazon Web Services account has a different default KMS key for each Amazon Web Services Region.</p>
+    pub fn master_user_secret_kms_key_id(&self) -> ::std::option::Option<&str> {
+        self.master_user_secret_kms_key_id.as_deref()
     }
     /// <p>A list of tags.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS resources</a> in the <i>Amazon RDS User Guide</i> or <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_Tagging.html">Tagging Amazon Aurora and Amazon RDS resources</a> in the <i>Amazon Aurora User Guide</i>.</p>
@@ -93,6 +129,8 @@ impl ::std::fmt::Debug for CreateTenantDatabaseInput {
         formatter.field("master_user_password", &"*** Sensitive Data Redacted ***");
         formatter.field("character_set_name", &self.character_set_name);
         formatter.field("nchar_character_set_name", &self.nchar_character_set_name);
+        formatter.field("manage_master_user_password", &self.manage_master_user_password);
+        formatter.field("master_user_secret_kms_key_id", &self.master_user_secret_kms_key_id);
         formatter.field("tags", &self.tags);
         formatter.finish()
     }
@@ -114,6 +152,8 @@ pub struct CreateTenantDatabaseInputBuilder {
     pub(crate) master_user_password: ::std::option::Option<::std::string::String>,
     pub(crate) character_set_name: ::std::option::Option<::std::string::String>,
     pub(crate) nchar_character_set_name: ::std::option::Option<::std::string::String>,
+    pub(crate) manage_master_user_password: ::std::option::Option<bool>,
+    pub(crate) master_user_secret_kms_key_id: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateTenantDatabaseInputBuilder {
@@ -196,8 +236,9 @@ impl CreateTenantDatabaseInputBuilder {
     /// <p>Must be 8 to 30 characters.</p></li>
     /// <li>
     /// <p>Can include any printable ASCII character except forward slash (<code>/</code>), double quote (<code>"</code>), at symbol (<code>@</code>), ampersand (<code>&amp;</code>), or single quote (<code>'</code>).</p></li>
+    /// <li>
+    /// <p>Can't be specified when <code>ManageMasterUserPassword</code> is enabled.</p></li>
     /// </ul>
-    /// This field is required.
     pub fn master_user_password(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.master_user_password = ::std::option::Option::Some(input.into());
         self
@@ -209,6 +250,8 @@ impl CreateTenantDatabaseInputBuilder {
     /// <p>Must be 8 to 30 characters.</p></li>
     /// <li>
     /// <p>Can include any printable ASCII character except forward slash (<code>/</code>), double quote (<code>"</code>), at symbol (<code>@</code>), ampersand (<code>&amp;</code>), or single quote (<code>'</code>).</p></li>
+    /// <li>
+    /// <p>Can't be specified when <code>ManageMasterUserPassword</code> is enabled.</p></li>
     /// </ul>
     pub fn set_master_user_password(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.master_user_password = input;
@@ -221,6 +264,8 @@ impl CreateTenantDatabaseInputBuilder {
     /// <p>Must be 8 to 30 characters.</p></li>
     /// <li>
     /// <p>Can include any printable ASCII character except forward slash (<code>/</code>), double quote (<code>"</code>), at symbol (<code>@</code>), ampersand (<code>&amp;</code>), or single quote (<code>'</code>).</p></li>
+    /// <li>
+    /// <p>Can't be specified when <code>ManageMasterUserPassword</code> is enabled.</p></li>
     /// </ul>
     pub fn get_master_user_password(&self) -> &::std::option::Option<::std::string::String> {
         &self.master_user_password
@@ -252,6 +297,64 @@ impl CreateTenantDatabaseInputBuilder {
     /// <p>The <code>NCHAR</code> value for the tenant database.</p>
     pub fn get_nchar_character_set_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.nchar_character_set_name
+    }
+    /// <p>Specifies whether to manage the master user password with Amazon Web Services Secrets Manager.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS User Guide.</i></p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Can't manage the master user password with Amazon Web Services Secrets Manager if <code>MasterUserPassword</code> is specified.</p></li>
+    /// </ul>
+    pub fn manage_master_user_password(mut self, input: bool) -> Self {
+        self.manage_master_user_password = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies whether to manage the master user password with Amazon Web Services Secrets Manager.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS User Guide.</i></p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Can't manage the master user password with Amazon Web Services Secrets Manager if <code>MasterUserPassword</code> is specified.</p></li>
+    /// </ul>
+    pub fn set_manage_master_user_password(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.manage_master_user_password = input;
+        self
+    }
+    /// <p>Specifies whether to manage the master user password with Amazon Web Services Secrets Manager.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS User Guide.</i></p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Can't manage the master user password with Amazon Web Services Secrets Manager if <code>MasterUserPassword</code> is specified.</p></li>
+    /// </ul>
+    pub fn get_manage_master_user_password(&self) -> &::std::option::Option<bool> {
+        &self.manage_master_user_password
+    }
+    /// <p>The Amazon Web Services KMS key identifier to encrypt a secret that is automatically generated and managed in Amazon Web Services Secrets Manager.</p>
+    /// <p>This setting is valid only if the master user password is managed by RDS in Amazon Web Services Secrets Manager for the DB instance.</p>
+    /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key. To use a KMS key in a different Amazon Web Services account, specify the key ARN or alias ARN.</p>
+    /// <p>If you don't specify <code>MasterUserSecretKmsKeyId</code>, then the <code>aws/secretsmanager</code> KMS key is used to encrypt the secret. If the secret is in a different Amazon Web Services account, then you can't use the <code>aws/secretsmanager</code> KMS key to encrypt the secret, and you must use a customer managed KMS key.</p>
+    /// <p>There is a default KMS key for your Amazon Web Services account. Your Amazon Web Services account has a different default KMS key for each Amazon Web Services Region.</p>
+    pub fn master_user_secret_kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.master_user_secret_kms_key_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Web Services KMS key identifier to encrypt a secret that is automatically generated and managed in Amazon Web Services Secrets Manager.</p>
+    /// <p>This setting is valid only if the master user password is managed by RDS in Amazon Web Services Secrets Manager for the DB instance.</p>
+    /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key. To use a KMS key in a different Amazon Web Services account, specify the key ARN or alias ARN.</p>
+    /// <p>If you don't specify <code>MasterUserSecretKmsKeyId</code>, then the <code>aws/secretsmanager</code> KMS key is used to encrypt the secret. If the secret is in a different Amazon Web Services account, then you can't use the <code>aws/secretsmanager</code> KMS key to encrypt the secret, and you must use a customer managed KMS key.</p>
+    /// <p>There is a default KMS key for your Amazon Web Services account. Your Amazon Web Services account has a different default KMS key for each Amazon Web Services Region.</p>
+    pub fn set_master_user_secret_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.master_user_secret_kms_key_id = input;
+        self
+    }
+    /// <p>The Amazon Web Services KMS key identifier to encrypt a secret that is automatically generated and managed in Amazon Web Services Secrets Manager.</p>
+    /// <p>This setting is valid only if the master user password is managed by RDS in Amazon Web Services Secrets Manager for the DB instance.</p>
+    /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key. To use a KMS key in a different Amazon Web Services account, specify the key ARN or alias ARN.</p>
+    /// <p>If you don't specify <code>MasterUserSecretKmsKeyId</code>, then the <code>aws/secretsmanager</code> KMS key is used to encrypt the secret. If the secret is in a different Amazon Web Services account, then you can't use the <code>aws/secretsmanager</code> KMS key to encrypt the secret, and you must use a customer managed KMS key.</p>
+    /// <p>There is a default KMS key for your Amazon Web Services account. Your Amazon Web Services account has a different default KMS key for each Amazon Web Services Region.</p>
+    pub fn get_master_user_secret_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.master_user_secret_kms_key_id
     }
     /// Appends an item to `tags`.
     ///
@@ -288,6 +391,8 @@ impl CreateTenantDatabaseInputBuilder {
             master_user_password: self.master_user_password,
             character_set_name: self.character_set_name,
             nchar_character_set_name: self.nchar_character_set_name,
+            manage_master_user_password: self.manage_master_user_password,
+            master_user_secret_kms_key_id: self.master_user_secret_kms_key_id,
             tags: self.tags,
         })
     }
@@ -301,6 +406,8 @@ impl ::std::fmt::Debug for CreateTenantDatabaseInputBuilder {
         formatter.field("master_user_password", &"*** Sensitive Data Redacted ***");
         formatter.field("character_set_name", &self.character_set_name);
         formatter.field("nchar_character_set_name", &self.nchar_character_set_name);
+        formatter.field("manage_master_user_password", &self.manage_master_user_password);
+        formatter.field("master_user_secret_kms_key_id", &self.master_user_secret_kms_key_id);
         formatter.field("tags", &self.tags);
         formatter.finish()
     }

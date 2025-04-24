@@ -40,6 +40,49 @@ pub struct ModifyTenantDatabaseInput {
     /// <p>Can't be longer than 8 characters.</p></li>
     /// </ul>
     pub new_tenant_db_name: ::std::option::Option<::std::string::String>,
+    /// <p>Specifies whether to manage the master user password with Amazon Web Services Secrets Manager.</p>
+    /// <p>If the tenant database doesn't manage the master user password with Amazon Web Services Secrets Manager, you can turn on this management. In this case, you can't specify <code>MasterUserPassword</code>.</p>
+    /// <p>If the tenant database already manages the master user password with Amazon Web Services Secrets Manager, and you specify that the master user password is not managed with Amazon Web Services Secrets Manager, then you must specify <code>MasterUserPassword</code>. In this case, Amazon RDS deletes the secret and uses the new password for the master user specified by <code>MasterUserPassword</code>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS User Guide.</i></p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Can't manage the master user password with Amazon Web Services Secrets Manager if <code>MasterUserPassword</code> is specified.</p></li>
+    /// </ul>
+    pub manage_master_user_password: ::std::option::Option<bool>,
+    /// <p>Specifies whether to rotate the secret managed by Amazon Web Services Secrets Manager for the master user password.</p>
+    /// <p>This setting is valid only if the master user password is managed by RDS in Amazon Web Services Secrets Manager for the DB instance. The secret value contains the updated password.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS User Guide.</i></p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>You must apply the change immediately when rotating the master user password.</p></li>
+    /// </ul>
+    pub rotate_master_user_password: ::std::option::Option<bool>,
+    /// <p>The Amazon Web Services KMS key identifier to encrypt a secret that is automatically generated and managed in Amazon Web Services Secrets Manager.</p>
+    /// <p>This setting is valid only if both of the following conditions are met:</p>
+    /// <ul>
+    /// <li>
+    /// <p>The tenant database doesn't manage the master user password in Amazon Web Services Secrets Manager.</p>
+    /// <p>If the tenant database already manages the master user password in Amazon Web Services Secrets Manager, you can't change the KMS key used to encrypt the secret.</p></li>
+    /// <li>
+    /// <p>You're turning on <code>ManageMasterUserPassword</code> to manage the master user password in Amazon Web Services Secrets Manager.</p>
+    /// <p>If you're turning on <code>ManageMasterUserPassword</code> and don't specify <code>MasterUserSecretKmsKeyId</code>, then the <code>aws/secretsmanager</code> KMS key is used to encrypt the secret. If the secret is in a different Amazon Web Services account, then you can't use the <code>aws/secretsmanager</code> KMS key to encrypt the secret, and you must use a self-managed KMS key.</p></li>
+    /// </ul>
+    /// <p>The Amazon Web Services KMS key identifier is any of the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Key ARN</p></li>
+    /// <li>
+    /// <p>Key ID</p></li>
+    /// <li>
+    /// <p>Alias ARN</p></li>
+    /// <li>
+    /// <p>Alias name for the KMS key</p></li>
+    /// </ul>
+    /// <p>To use a KMS key in a different Amazon Web Services account, specify the key ARN or alias ARN.</p>
+    /// <p>A default KMS key exists for your Amazon Web Services account. Your Amazon Web Services account has a different default KMS key for each Amazon Web Services Region.</p>
+    pub master_user_secret_kms_key_id: ::std::option::Option<::std::string::String>,
 }
 impl ModifyTenantDatabaseInput {
     /// <p>The identifier of the DB instance that contains the tenant database that you are modifying. This parameter isn't case-sensitive.</p>
@@ -87,6 +130,55 @@ impl ModifyTenantDatabaseInput {
     pub fn new_tenant_db_name(&self) -> ::std::option::Option<&str> {
         self.new_tenant_db_name.as_deref()
     }
+    /// <p>Specifies whether to manage the master user password with Amazon Web Services Secrets Manager.</p>
+    /// <p>If the tenant database doesn't manage the master user password with Amazon Web Services Secrets Manager, you can turn on this management. In this case, you can't specify <code>MasterUserPassword</code>.</p>
+    /// <p>If the tenant database already manages the master user password with Amazon Web Services Secrets Manager, and you specify that the master user password is not managed with Amazon Web Services Secrets Manager, then you must specify <code>MasterUserPassword</code>. In this case, Amazon RDS deletes the secret and uses the new password for the master user specified by <code>MasterUserPassword</code>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS User Guide.</i></p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Can't manage the master user password with Amazon Web Services Secrets Manager if <code>MasterUserPassword</code> is specified.</p></li>
+    /// </ul>
+    pub fn manage_master_user_password(&self) -> ::std::option::Option<bool> {
+        self.manage_master_user_password
+    }
+    /// <p>Specifies whether to rotate the secret managed by Amazon Web Services Secrets Manager for the master user password.</p>
+    /// <p>This setting is valid only if the master user password is managed by RDS in Amazon Web Services Secrets Manager for the DB instance. The secret value contains the updated password.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS User Guide.</i></p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>You must apply the change immediately when rotating the master user password.</p></li>
+    /// </ul>
+    pub fn rotate_master_user_password(&self) -> ::std::option::Option<bool> {
+        self.rotate_master_user_password
+    }
+    /// <p>The Amazon Web Services KMS key identifier to encrypt a secret that is automatically generated and managed in Amazon Web Services Secrets Manager.</p>
+    /// <p>This setting is valid only if both of the following conditions are met:</p>
+    /// <ul>
+    /// <li>
+    /// <p>The tenant database doesn't manage the master user password in Amazon Web Services Secrets Manager.</p>
+    /// <p>If the tenant database already manages the master user password in Amazon Web Services Secrets Manager, you can't change the KMS key used to encrypt the secret.</p></li>
+    /// <li>
+    /// <p>You're turning on <code>ManageMasterUserPassword</code> to manage the master user password in Amazon Web Services Secrets Manager.</p>
+    /// <p>If you're turning on <code>ManageMasterUserPassword</code> and don't specify <code>MasterUserSecretKmsKeyId</code>, then the <code>aws/secretsmanager</code> KMS key is used to encrypt the secret. If the secret is in a different Amazon Web Services account, then you can't use the <code>aws/secretsmanager</code> KMS key to encrypt the secret, and you must use a self-managed KMS key.</p></li>
+    /// </ul>
+    /// <p>The Amazon Web Services KMS key identifier is any of the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Key ARN</p></li>
+    /// <li>
+    /// <p>Key ID</p></li>
+    /// <li>
+    /// <p>Alias ARN</p></li>
+    /// <li>
+    /// <p>Alias name for the KMS key</p></li>
+    /// </ul>
+    /// <p>To use a KMS key in a different Amazon Web Services account, specify the key ARN or alias ARN.</p>
+    /// <p>A default KMS key exists for your Amazon Web Services account. Your Amazon Web Services account has a different default KMS key for each Amazon Web Services Region.</p>
+    pub fn master_user_secret_kms_key_id(&self) -> ::std::option::Option<&str> {
+        self.master_user_secret_kms_key_id.as_deref()
+    }
 }
 impl ::std::fmt::Debug for ModifyTenantDatabaseInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -95,6 +187,9 @@ impl ::std::fmt::Debug for ModifyTenantDatabaseInput {
         formatter.field("tenant_db_name", &self.tenant_db_name);
         formatter.field("master_user_password", &"*** Sensitive Data Redacted ***");
         formatter.field("new_tenant_db_name", &self.new_tenant_db_name);
+        formatter.field("manage_master_user_password", &self.manage_master_user_password);
+        formatter.field("rotate_master_user_password", &self.rotate_master_user_password);
+        formatter.field("master_user_secret_kms_key_id", &self.master_user_secret_kms_key_id);
         formatter.finish()
     }
 }
@@ -113,6 +208,9 @@ pub struct ModifyTenantDatabaseInputBuilder {
     pub(crate) tenant_db_name: ::std::option::Option<::std::string::String>,
     pub(crate) master_user_password: ::std::option::Option<::std::string::String>,
     pub(crate) new_tenant_db_name: ::std::option::Option<::std::string::String>,
+    pub(crate) manage_master_user_password: ::std::option::Option<bool>,
+    pub(crate) rotate_master_user_password: ::std::option::Option<bool>,
+    pub(crate) master_user_secret_kms_key_id: ::std::option::Option<::std::string::String>,
 }
 impl ModifyTenantDatabaseInputBuilder {
     /// <p>The identifier of the DB instance that contains the tenant database that you are modifying. This parameter isn't case-sensitive.</p>
@@ -260,6 +358,159 @@ impl ModifyTenantDatabaseInputBuilder {
     pub fn get_new_tenant_db_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.new_tenant_db_name
     }
+    /// <p>Specifies whether to manage the master user password with Amazon Web Services Secrets Manager.</p>
+    /// <p>If the tenant database doesn't manage the master user password with Amazon Web Services Secrets Manager, you can turn on this management. In this case, you can't specify <code>MasterUserPassword</code>.</p>
+    /// <p>If the tenant database already manages the master user password with Amazon Web Services Secrets Manager, and you specify that the master user password is not managed with Amazon Web Services Secrets Manager, then you must specify <code>MasterUserPassword</code>. In this case, Amazon RDS deletes the secret and uses the new password for the master user specified by <code>MasterUserPassword</code>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS User Guide.</i></p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Can't manage the master user password with Amazon Web Services Secrets Manager if <code>MasterUserPassword</code> is specified.</p></li>
+    /// </ul>
+    pub fn manage_master_user_password(mut self, input: bool) -> Self {
+        self.manage_master_user_password = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies whether to manage the master user password with Amazon Web Services Secrets Manager.</p>
+    /// <p>If the tenant database doesn't manage the master user password with Amazon Web Services Secrets Manager, you can turn on this management. In this case, you can't specify <code>MasterUserPassword</code>.</p>
+    /// <p>If the tenant database already manages the master user password with Amazon Web Services Secrets Manager, and you specify that the master user password is not managed with Amazon Web Services Secrets Manager, then you must specify <code>MasterUserPassword</code>. In this case, Amazon RDS deletes the secret and uses the new password for the master user specified by <code>MasterUserPassword</code>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS User Guide.</i></p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Can't manage the master user password with Amazon Web Services Secrets Manager if <code>MasterUserPassword</code> is specified.</p></li>
+    /// </ul>
+    pub fn set_manage_master_user_password(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.manage_master_user_password = input;
+        self
+    }
+    /// <p>Specifies whether to manage the master user password with Amazon Web Services Secrets Manager.</p>
+    /// <p>If the tenant database doesn't manage the master user password with Amazon Web Services Secrets Manager, you can turn on this management. In this case, you can't specify <code>MasterUserPassword</code>.</p>
+    /// <p>If the tenant database already manages the master user password with Amazon Web Services Secrets Manager, and you specify that the master user password is not managed with Amazon Web Services Secrets Manager, then you must specify <code>MasterUserPassword</code>. In this case, Amazon RDS deletes the secret and uses the new password for the master user specified by <code>MasterUserPassword</code>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS User Guide.</i></p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Can't manage the master user password with Amazon Web Services Secrets Manager if <code>MasterUserPassword</code> is specified.</p></li>
+    /// </ul>
+    pub fn get_manage_master_user_password(&self) -> &::std::option::Option<bool> {
+        &self.manage_master_user_password
+    }
+    /// <p>Specifies whether to rotate the secret managed by Amazon Web Services Secrets Manager for the master user password.</p>
+    /// <p>This setting is valid only if the master user password is managed by RDS in Amazon Web Services Secrets Manager for the DB instance. The secret value contains the updated password.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS User Guide.</i></p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>You must apply the change immediately when rotating the master user password.</p></li>
+    /// </ul>
+    pub fn rotate_master_user_password(mut self, input: bool) -> Self {
+        self.rotate_master_user_password = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies whether to rotate the secret managed by Amazon Web Services Secrets Manager for the master user password.</p>
+    /// <p>This setting is valid only if the master user password is managed by RDS in Amazon Web Services Secrets Manager for the DB instance. The secret value contains the updated password.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS User Guide.</i></p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>You must apply the change immediately when rotating the master user password.</p></li>
+    /// </ul>
+    pub fn set_rotate_master_user_password(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.rotate_master_user_password = input;
+        self
+    }
+    /// <p>Specifies whether to rotate the secret managed by Amazon Web Services Secrets Manager for the master user password.</p>
+    /// <p>This setting is valid only if the master user password is managed by RDS in Amazon Web Services Secrets Manager for the DB instance. The secret value contains the updated password.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS User Guide.</i></p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>You must apply the change immediately when rotating the master user password.</p></li>
+    /// </ul>
+    pub fn get_rotate_master_user_password(&self) -> &::std::option::Option<bool> {
+        &self.rotate_master_user_password
+    }
+    /// <p>The Amazon Web Services KMS key identifier to encrypt a secret that is automatically generated and managed in Amazon Web Services Secrets Manager.</p>
+    /// <p>This setting is valid only if both of the following conditions are met:</p>
+    /// <ul>
+    /// <li>
+    /// <p>The tenant database doesn't manage the master user password in Amazon Web Services Secrets Manager.</p>
+    /// <p>If the tenant database already manages the master user password in Amazon Web Services Secrets Manager, you can't change the KMS key used to encrypt the secret.</p></li>
+    /// <li>
+    /// <p>You're turning on <code>ManageMasterUserPassword</code> to manage the master user password in Amazon Web Services Secrets Manager.</p>
+    /// <p>If you're turning on <code>ManageMasterUserPassword</code> and don't specify <code>MasterUserSecretKmsKeyId</code>, then the <code>aws/secretsmanager</code> KMS key is used to encrypt the secret. If the secret is in a different Amazon Web Services account, then you can't use the <code>aws/secretsmanager</code> KMS key to encrypt the secret, and you must use a self-managed KMS key.</p></li>
+    /// </ul>
+    /// <p>The Amazon Web Services KMS key identifier is any of the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Key ARN</p></li>
+    /// <li>
+    /// <p>Key ID</p></li>
+    /// <li>
+    /// <p>Alias ARN</p></li>
+    /// <li>
+    /// <p>Alias name for the KMS key</p></li>
+    /// </ul>
+    /// <p>To use a KMS key in a different Amazon Web Services account, specify the key ARN or alias ARN.</p>
+    /// <p>A default KMS key exists for your Amazon Web Services account. Your Amazon Web Services account has a different default KMS key for each Amazon Web Services Region.</p>
+    pub fn master_user_secret_kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.master_user_secret_kms_key_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Web Services KMS key identifier to encrypt a secret that is automatically generated and managed in Amazon Web Services Secrets Manager.</p>
+    /// <p>This setting is valid only if both of the following conditions are met:</p>
+    /// <ul>
+    /// <li>
+    /// <p>The tenant database doesn't manage the master user password in Amazon Web Services Secrets Manager.</p>
+    /// <p>If the tenant database already manages the master user password in Amazon Web Services Secrets Manager, you can't change the KMS key used to encrypt the secret.</p></li>
+    /// <li>
+    /// <p>You're turning on <code>ManageMasterUserPassword</code> to manage the master user password in Amazon Web Services Secrets Manager.</p>
+    /// <p>If you're turning on <code>ManageMasterUserPassword</code> and don't specify <code>MasterUserSecretKmsKeyId</code>, then the <code>aws/secretsmanager</code> KMS key is used to encrypt the secret. If the secret is in a different Amazon Web Services account, then you can't use the <code>aws/secretsmanager</code> KMS key to encrypt the secret, and you must use a self-managed KMS key.</p></li>
+    /// </ul>
+    /// <p>The Amazon Web Services KMS key identifier is any of the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Key ARN</p></li>
+    /// <li>
+    /// <p>Key ID</p></li>
+    /// <li>
+    /// <p>Alias ARN</p></li>
+    /// <li>
+    /// <p>Alias name for the KMS key</p></li>
+    /// </ul>
+    /// <p>To use a KMS key in a different Amazon Web Services account, specify the key ARN or alias ARN.</p>
+    /// <p>A default KMS key exists for your Amazon Web Services account. Your Amazon Web Services account has a different default KMS key for each Amazon Web Services Region.</p>
+    pub fn set_master_user_secret_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.master_user_secret_kms_key_id = input;
+        self
+    }
+    /// <p>The Amazon Web Services KMS key identifier to encrypt a secret that is automatically generated and managed in Amazon Web Services Secrets Manager.</p>
+    /// <p>This setting is valid only if both of the following conditions are met:</p>
+    /// <ul>
+    /// <li>
+    /// <p>The tenant database doesn't manage the master user password in Amazon Web Services Secrets Manager.</p>
+    /// <p>If the tenant database already manages the master user password in Amazon Web Services Secrets Manager, you can't change the KMS key used to encrypt the secret.</p></li>
+    /// <li>
+    /// <p>You're turning on <code>ManageMasterUserPassword</code> to manage the master user password in Amazon Web Services Secrets Manager.</p>
+    /// <p>If you're turning on <code>ManageMasterUserPassword</code> and don't specify <code>MasterUserSecretKmsKeyId</code>, then the <code>aws/secretsmanager</code> KMS key is used to encrypt the secret. If the secret is in a different Amazon Web Services account, then you can't use the <code>aws/secretsmanager</code> KMS key to encrypt the secret, and you must use a self-managed KMS key.</p></li>
+    /// </ul>
+    /// <p>The Amazon Web Services KMS key identifier is any of the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Key ARN</p></li>
+    /// <li>
+    /// <p>Key ID</p></li>
+    /// <li>
+    /// <p>Alias ARN</p></li>
+    /// <li>
+    /// <p>Alias name for the KMS key</p></li>
+    /// </ul>
+    /// <p>To use a KMS key in a different Amazon Web Services account, specify the key ARN or alias ARN.</p>
+    /// <p>A default KMS key exists for your Amazon Web Services account. Your Amazon Web Services account has a different default KMS key for each Amazon Web Services Region.</p>
+    pub fn get_master_user_secret_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.master_user_secret_kms_key_id
+    }
     /// Consumes the builder and constructs a [`ModifyTenantDatabaseInput`](crate::operation::modify_tenant_database::ModifyTenantDatabaseInput).
     pub fn build(
         self,
@@ -270,6 +521,9 @@ impl ModifyTenantDatabaseInputBuilder {
             tenant_db_name: self.tenant_db_name,
             master_user_password: self.master_user_password,
             new_tenant_db_name: self.new_tenant_db_name,
+            manage_master_user_password: self.manage_master_user_password,
+            rotate_master_user_password: self.rotate_master_user_password,
+            master_user_secret_kms_key_id: self.master_user_secret_kms_key_id,
         })
     }
 }
@@ -280,6 +534,9 @@ impl ::std::fmt::Debug for ModifyTenantDatabaseInputBuilder {
         formatter.field("tenant_db_name", &self.tenant_db_name);
         formatter.field("master_user_password", &"*** Sensitive Data Redacted ***");
         formatter.field("new_tenant_db_name", &self.new_tenant_db_name);
+        formatter.field("manage_master_user_password", &self.manage_master_user_password);
+        formatter.field("rotate_master_user_password", &self.rotate_master_user_password);
+        formatter.field("master_user_secret_kms_key_id", &self.master_user_secret_kms_key_id);
         formatter.finish()
     }
 }
