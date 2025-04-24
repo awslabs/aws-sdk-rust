@@ -17,16 +17,13 @@ use aws_smithy_runtime::assert_str_contains;
 use aws_smithy_runtime_api::http::Response;
 use aws_types::endpoint_config::AccountIdEndpointMode;
 
-fn test_client<F>(update_builder: F) -> (Client, CaptureRequestReceiver)
-where
-    F: Fn(Builder) -> Builder,
-{
+fn test_client(update_builder: fn(Builder) -> Builder) -> (Client, CaptureRequestReceiver) {
     let (http_client, request) = capture_request(None);
     let builder = Config::builder()
         .region(Region::new("us-east-1"))
         .credentials_provider(
             Credentials::builder()
-                .account_id("333333333333")
+                .account_id("123456789012")
                 .access_key_id("ANOTREAL")
                 .secret_access_key("notrealrnrELgWzOk3IfjzDKtFBhDby")
                 .provider_name("test")
@@ -38,6 +35,7 @@ where
 
 async fn call_operation(
     client: Client,
+    table_name: &str,
 ) -> Result<BatchGetItemOutput, SdkError<BatchGetItemError, Response>> {
     let mut attr_v = std::collections::HashMap::new();
     attr_v.insert(":s".to_string(), AttributeValue::S("value".into()));
@@ -46,7 +44,7 @@ async fn call_operation(
     client
         .batch_get_item()
         .request_items(
-            "arn:aws:dynamodb:us-east-1:333333333333:table/table_name",
+            table_name,
             KeysAndAttributes::builder().keys(kv).build().unwrap(),
         )
         .send()
@@ -54,58 +52,60 @@ async fn call_operation(
 }
 
 #[tokio::test]
-async fn account_id_should_be_included_in_request_uri() {
-    // With the default `AccountIdEndpointMode::Preferred`
-    {
-        let (client, rx) = test_client(std::convert::identity);
-        let _ = call_operation(client).await;
-        let req = rx.expect_request();
-        assert_eq!(
+async fn basic_positive_cases() {
+    let test_cases: &[(fn(Builder) -> Builder, &str, &str)] = &[
+        (
+            std::convert::identity,
+            "arn:aws:dynamodb:us-east-1:333333333333:table/table_name",
             "https://333333333333.ddb.us-east-1.amazonaws.com/",
-            req.uri()
-        )
-    }
+        ),
+        (
+            std::convert::identity,
+            "table_name", // doesn't specify ARN for the table name
+            "https://123456789012.ddb.us-east-1.amazonaws.com/", // the account ID should come from credentials
+        ),
+        (
+            |b: Builder| b.credentials_provider(Credentials::for_tests()), // credentials do not provide an account ID
+            "arn:aws:dynamodb:us-east-1:333333333333:table/table_name",
+            "https://333333333333.ddb.us-east-1.amazonaws.com/",
+        ),
+        (
+            |b: Builder| b.account_id_endpoint_mode(AccountIdEndpointMode::Preferred), // sets the default mode `Preferred` explicitly
+            "arn:aws:dynamodb:us-east-1:333333333333:table/table_name",
+            "https://333333333333.ddb.us-east-1.amazonaws.com/",
+        ),
+        (
+            |b: Builder| b.account_id_endpoint_mode(AccountIdEndpointMode::Disabled),
+            "arn:aws:dynamodb:us-east-1:333333333333:table/table_name",
+            "https://dynamodb.us-east-1.amazonaws.com/",
+        ),
+        (
+            |b: Builder| b.account_id_endpoint_mode(AccountIdEndpointMode::Required),
+            "arn:aws:dynamodb:us-east-1:333333333333:table/table_name",
+            "https://333333333333.ddb.us-east-1.amazonaws.com/",
+        ),
+    ];
 
-    // With `AccountIdEndpointMode::Required`
-    {
-        let (client, rx) =
-            test_client(|b| b.account_id_endpoint_mode(AccountIdEndpointMode::Required));
-        let _ = call_operation(client).await;
+    for (i, (update_builder, table_name, expected_uri)) in test_cases.into_iter().enumerate() {
+        let (client, rx) = test_client(*update_builder);
+        let _ = call_operation(client, table_name).await;
         let req = rx.expect_request();
         assert_eq!(
-            "https://333333333333.ddb.us-east-1.amazonaws.com/",
-            req.uri()
-        )
+            *expected_uri,
+            req.uri(),
+            "on the {i}th test case where table name is `{table_name}`"
+        );
     }
 }
 
 #[tokio::test]
-async fn account_id_should_not_be_included_in_request_uri() {
-    // If we disable the account-based endpoints, the resulting URI should not include the account ID.
-    {
-        let (client, rx) =
-            test_client(|b| b.account_id_endpoint_mode(AccountIdEndpointMode::Disabled));
-        let _ = call_operation(client).await;
-        let req = rx.expect_request();
-        assert_eq!("https://dynamodb.us-east-1.amazonaws.com/", req.uri());
-    }
-
-    // If credentials do not include the account ID, neither should the resulting URI.
-    {
-        let (client, rx) = test_client(|b| b.credentials_provider(Credentials::for_tests()));
-        let _ = call_operation(client).await;
-        let req = rx.expect_request();
-        assert_eq!("https://dynamodb.us-east-1.amazonaws.com/", req.uri());
-    }
-}
-
-#[tokio::test]
-async fn error_should_be_raised_when_account_id_is_expected_but_not_provided() {
+async fn error_should_be_raised_when_account_id_is_expected_but_not_resolved() {
     let (client, _) = test_client(|b| {
         b.account_id_endpoint_mode(AccountIdEndpointMode::Required)
             .credentials_provider(Credentials::for_tests())
     });
-    let err = call_operation(client)
+    // doesn't specify ARN for the table name
+    let err = call_operation(client, "table_name")
         .await
         .err()
         .expect("request should fail");
