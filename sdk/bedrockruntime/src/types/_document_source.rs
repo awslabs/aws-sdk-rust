@@ -6,6 +6,8 @@
 pub enum DocumentSource {
     /// <p>The raw bytes for the document. If you use an Amazon Web Services SDK, you don't need to encode the bytes in base64.</p>
     Bytes(::aws_smithy_types::Blob),
+    /// <p>The location of a document object in an Amazon S3 bucket. To see which models support S3 uploads, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/conversation-inference-supported-models-features.html">Supported models and features for Converse</a>.</p>
+    S3Location(crate::types::S3Location),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
     /// An unknown enum variant
     ///
@@ -17,7 +19,6 @@ pub enum DocumentSource {
     Unknown,
 }
 impl DocumentSource {
-    #[allow(irrefutable_let_patterns)]
     /// Tries to convert the enum instance into [`Bytes`](crate::types::DocumentSource::Bytes), extracting the inner [`Blob`](::aws_smithy_types::Blob).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_bytes(&self) -> ::std::result::Result<&::aws_smithy_types::Blob, &Self> {
@@ -30,6 +31,19 @@ impl DocumentSource {
     /// Returns true if this is a [`Bytes`](crate::types::DocumentSource::Bytes).
     pub fn is_bytes(&self) -> bool {
         self.as_bytes().is_ok()
+    }
+    /// Tries to convert the enum instance into [`S3Location`](crate::types::DocumentSource::S3Location), extracting the inner [`S3Location`](crate::types::S3Location).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_s3_location(&self) -> ::std::result::Result<&crate::types::S3Location, &Self> {
+        if let DocumentSource::S3Location(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`S3Location`](crate::types::DocumentSource::S3Location).
+    pub fn is_s3_location(&self) -> bool {
+        self.as_s3_location().is_ok()
     }
     /// Returns true if the enum instance is the `Unknown` variant.
     pub fn is_unknown(&self) -> bool {

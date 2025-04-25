@@ -6,7 +6,7 @@
 pub enum VideoSource {
     /// <p>Video content encoded in base64.</p>
     Bytes(::aws_smithy_types::Blob),
-    /// <p>The location of a video object in an S3 bucket.</p>
+    /// <p>The location of a video object in an Amazon S3 bucket. To see which models support S3 uploads, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/conversation-inference-supported-models-features.html">Supported models and features for Converse</a>.</p>
     S3Location(crate::types::S3Location),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
     /// An unknown enum variant

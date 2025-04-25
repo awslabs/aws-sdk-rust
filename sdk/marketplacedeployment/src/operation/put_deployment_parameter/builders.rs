@@ -108,17 +108,17 @@ impl PutDeploymentParameterFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The catalog related to the request. Fixed value: <code>AWS Marketplace</code></p>
+    /// <p>The catalog related to the request. Fixed value: <code>AWSMarketplace</code></p>
     pub fn catalog(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.catalog(input.into());
         self
     }
-    /// <p>The catalog related to the request. Fixed value: <code>AWS Marketplace</code></p>
+    /// <p>The catalog related to the request. Fixed value: <code>AWSMarketplace</code></p>
     pub fn set_catalog(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_catalog(input);
         self
     }
-    /// <p>The catalog related to the request. Fixed value: <code>AWS Marketplace</code></p>
+    /// <p>The catalog related to the request. Fixed value: <code>AWSMarketplace</code></p>
     pub fn get_catalog(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_catalog()
     }
@@ -197,17 +197,23 @@ impl PutDeploymentParameterFluentBuilder {
     pub fn get_expiration_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         self.inner.get_expiration_date()
     }
-    /// <p>The idempotency token for deployment parameters. A unique identifier for the new version.</p>
+    /// <p>The idempotency token for deployment parameters. A unique identifier for the new version.</p><note>
+    /// <p>This field is not required if you're calling using an AWS SDK. Otherwise, a <code>clientToken</code> must be provided with the request.</p>
+    /// </note>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
         self
     }
-    /// <p>The idempotency token for deployment parameters. A unique identifier for the new version.</p>
+    /// <p>The idempotency token for deployment parameters. A unique identifier for the new version.</p><note>
+    /// <p>This field is not required if you're calling using an AWS SDK. Otherwise, a <code>clientToken</code> must be provided with the request.</p>
+    /// </note>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
     }
-    /// <p>The idempotency token for deployment parameters. A unique identifier for the new version.</p>
+    /// <p>The idempotency token for deployment parameters. A unique identifier for the new version.</p><note>
+    /// <p>This field is not required if you're calling using an AWS SDK. Otherwise, a <code>clientToken</code> must be provided with the request.</p>
+    /// </note>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_client_token()
     }

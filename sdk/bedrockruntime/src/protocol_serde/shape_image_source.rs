@@ -7,6 +7,12 @@ pub fn ser_image_source(
         crate::types::ImageSource::Bytes(inner) => {
             object_2.key("bytes").string_unchecked(&::aws_smithy_types::base64::encode(inner));
         }
+        crate::types::ImageSource::S3Location(inner) => {
+            #[allow(unused_mut)]
+            let mut object_1 = object_2.key("s3Location").start_object();
+            crate::protocol_serde::shape_s3_location::ser_s3_location(&mut object_1, inner)?;
+            object_1.finish();
+        }
         crate::types::ImageSource::Unknown => return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant("ImageSource")),
     }
     Ok(())
@@ -45,6 +51,11 @@ where
                         "bytes" => Some(crate::types::ImageSource::Bytes(
                             ::aws_smithy_json::deserialize::token::expect_blob_or_null(tokens.next())?
                                 .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'bytes' cannot be null"))?,
+                        )),
+                        "s3Location" => Some(crate::types::ImageSource::S3Location(
+                            crate::protocol_serde::shape_s3_location::de_s3_location(tokens)?.ok_or_else(|| {
+                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 's3Location' cannot be null")
+                            })?,
                         )),
                         _ => {
                             ::aws_smithy_json::deserialize::token::skip_value(tokens)?;
