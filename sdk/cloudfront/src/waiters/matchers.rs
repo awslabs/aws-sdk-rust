@@ -54,6 +54,33 @@ pub(crate) fn match_get_invalidation_e85099646f732f880(
         .unwrap_or_default()
 }
 
+/// Matcher union: {"output":{"path":"Invalidation.Status","expected":"Completed","comparator":"stringEquals"}}
+pub(crate) fn match_get_invalidation_for_distribution_tenant_e85099646f732f880(
+    _result: ::std::result::Result<
+        &crate::operation::get_invalidation_for_distribution_tenant::GetInvalidationForDistributionTenantOutput,
+        &crate::operation::get_invalidation_for_distribution_tenant::GetInvalidationForDistributionTenantError,
+    >,
+) -> bool {
+    fn path_traversal<'a>(
+        _output: &'a crate::operation::get_invalidation_for_distribution_tenant::GetInvalidationForDistributionTenantOutput,
+    ) -> ::std::option::Option<&'a ::std::string::String> {
+        let _fld_1 = _output.invalidation.as_ref()?;
+        let _fld_2 = &_fld_1.status;
+        ::std::option::Option::Some(_fld_2)
+    }
+    _result
+        .as_ref()
+        .ok()
+        .and_then(|output| path_traversal(output))
+        .map(|value| {
+            let _tmp_2 = value.as_str();
+            let right = "Completed";
+            let _cmp_1 = _tmp_2 == right;
+            _cmp_1
+        })
+        .unwrap_or_default()
+}
+
 /// Matcher union: {"output":{"path":"StreamingDistribution.Status","expected":"Deployed","comparator":"stringEquals"}}
 pub(crate) fn match_get_streaming_distribution_e9846c8f152728727(
     _result: ::std::result::Result<

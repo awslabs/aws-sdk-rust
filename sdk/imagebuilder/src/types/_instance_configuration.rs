@@ -4,13 +4,15 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InstanceConfiguration {
-    /// <p>The AMI ID to use as the base image for a container build and test instance. If not specified, Image Builder will use the appropriate ECS-optimized AMI as a base image.</p>
+    /// <p>The base image for a container build and test instance. This can contain an AMI ID or it can specify an Amazon Web Services Systems Manager (SSM) Parameter Store Parameter, prefixed by <code>ssm:</code>, followed by the parameter name or ARN.</p>
+    /// <p>If not specified, Image Builder uses the appropriate ECS-optimized AMI as a base image.</p>
     pub image: ::std::option::Option<::std::string::String>,
     /// <p>Defines the block devices to attach for building an instance from this Image Builder AMI.</p>
     pub block_device_mappings: ::std::option::Option<::std::vec::Vec<crate::types::InstanceBlockDeviceMapping>>,
 }
 impl InstanceConfiguration {
-    /// <p>The AMI ID to use as the base image for a container build and test instance. If not specified, Image Builder will use the appropriate ECS-optimized AMI as a base image.</p>
+    /// <p>The base image for a container build and test instance. This can contain an AMI ID or it can specify an Amazon Web Services Systems Manager (SSM) Parameter Store Parameter, prefixed by <code>ssm:</code>, followed by the parameter name or ARN.</p>
+    /// <p>If not specified, Image Builder uses the appropriate ECS-optimized AMI as a base image.</p>
     pub fn image(&self) -> ::std::option::Option<&str> {
         self.image.as_deref()
     }
@@ -36,17 +38,20 @@ pub struct InstanceConfigurationBuilder {
     pub(crate) block_device_mappings: ::std::option::Option<::std::vec::Vec<crate::types::InstanceBlockDeviceMapping>>,
 }
 impl InstanceConfigurationBuilder {
-    /// <p>The AMI ID to use as the base image for a container build and test instance. If not specified, Image Builder will use the appropriate ECS-optimized AMI as a base image.</p>
+    /// <p>The base image for a container build and test instance. This can contain an AMI ID or it can specify an Amazon Web Services Systems Manager (SSM) Parameter Store Parameter, prefixed by <code>ssm:</code>, followed by the parameter name or ARN.</p>
+    /// <p>If not specified, Image Builder uses the appropriate ECS-optimized AMI as a base image.</p>
     pub fn image(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.image = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The AMI ID to use as the base image for a container build and test instance. If not specified, Image Builder will use the appropriate ECS-optimized AMI as a base image.</p>
+    /// <p>The base image for a container build and test instance. This can contain an AMI ID or it can specify an Amazon Web Services Systems Manager (SSM) Parameter Store Parameter, prefixed by <code>ssm:</code>, followed by the parameter name or ARN.</p>
+    /// <p>If not specified, Image Builder uses the appropriate ECS-optimized AMI as a base image.</p>
     pub fn set_image(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.image = input;
         self
     }
-    /// <p>The AMI ID to use as the base image for a container build and test instance. If not specified, Image Builder will use the appropriate ECS-optimized AMI as a base image.</p>
+    /// <p>The base image for a container build and test instance. This can contain an AMI ID or it can specify an Amazon Web Services Systems Manager (SSM) Parameter Store Parameter, prefixed by <code>ssm:</code>, followed by the parameter name or ARN.</p>
+    /// <p>If not specified, Image Builder uses the appropriate ECS-optimized AMI as a base image.</p>
     pub fn get_image(&self) -> &::std::option::Option<::std::string::String> {
         &self.image
     }

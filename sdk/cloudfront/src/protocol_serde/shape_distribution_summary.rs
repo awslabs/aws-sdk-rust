@@ -33,7 +33,7 @@ pub fn de_distribution_summary(
                 builder = builder.set_arn(var_2);
             }
             ,
-            s if s.matches("Status") /* Status com.amazonaws.cloudfront#DistributionSummary$Status */ =>  {
+            s if s.matches("ETag") /* ETag com.amazonaws.cloudfront#DistributionSummary$ETag */ =>  {
                 let var_3 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -43,11 +43,24 @@ pub fn de_distribution_summary(
                         ?
                     )
                 ;
-                builder = builder.set_status(var_3);
+                builder = builder.set_e_tag(var_3);
+            }
+            ,
+            s if s.matches("Status") /* Status com.amazonaws.cloudfront#DistributionSummary$Status */ =>  {
+                let var_4 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_status(var_4);
             }
             ,
             s if s.matches("LastModifiedTime") /* LastModifiedTime com.amazonaws.cloudfront#DistributionSummary$LastModifiedTime */ =>  {
-                let var_4 =
+                let var_5 =
                     Some(
                         ::aws_smithy_types::DateTime::from_str(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -57,11 +70,11 @@ pub fn de_distribution_summary(
                         ?
                     )
                 ;
-                builder = builder.set_last_modified_time(var_4);
+                builder = builder.set_last_modified_time(var_5);
             }
             ,
             s if s.matches("DomainName") /* DomainName com.amazonaws.cloudfront#DistributionSummary$DomainName */ =>  {
-                let var_5 =
+                let var_6 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -70,71 +83,71 @@ pub fn de_distribution_summary(
                         ?
                     )
                 ;
-                builder = builder.set_domain_name(var_5);
+                builder = builder.set_domain_name(var_6);
             }
             ,
             s if s.matches("Aliases") /* Aliases com.amazonaws.cloudfront#DistributionSummary$Aliases */ =>  {
-                let var_6 =
+                let var_7 =
                     Some(
                         crate::protocol_serde::shape_aliases::de_aliases(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_aliases(var_6);
+                builder = builder.set_aliases(var_7);
             }
             ,
             s if s.matches("Origins") /* Origins com.amazonaws.cloudfront#DistributionSummary$Origins */ =>  {
-                let var_7 =
+                let var_8 =
                     Some(
                         crate::protocol_serde::shape_origins::de_origins(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_origins(var_7);
+                builder = builder.set_origins(var_8);
             }
             ,
             s if s.matches("OriginGroups") /* OriginGroups com.amazonaws.cloudfront#DistributionSummary$OriginGroups */ =>  {
-                let var_8 =
+                let var_9 =
                     Some(
                         crate::protocol_serde::shape_origin_groups::de_origin_groups(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_origin_groups(var_8);
+                builder = builder.set_origin_groups(var_9);
             }
             ,
             s if s.matches("DefaultCacheBehavior") /* DefaultCacheBehavior com.amazonaws.cloudfront#DistributionSummary$DefaultCacheBehavior */ =>  {
-                let var_9 =
+                let var_10 =
                     Some(
                         crate::protocol_serde::shape_default_cache_behavior::de_default_cache_behavior(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_default_cache_behavior(var_9);
+                builder = builder.set_default_cache_behavior(var_10);
             }
             ,
             s if s.matches("CacheBehaviors") /* CacheBehaviors com.amazonaws.cloudfront#DistributionSummary$CacheBehaviors */ =>  {
-                let var_10 =
+                let var_11 =
                     Some(
                         crate::protocol_serde::shape_cache_behaviors::de_cache_behaviors(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_cache_behaviors(var_10);
+                builder = builder.set_cache_behaviors(var_11);
             }
             ,
             s if s.matches("CustomErrorResponses") /* CustomErrorResponses com.amazonaws.cloudfront#DistributionSummary$CustomErrorResponses */ =>  {
-                let var_11 =
+                let var_12 =
                     Some(
                         crate::protocol_serde::shape_custom_error_responses::de_custom_error_responses(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_custom_error_responses(var_11);
+                builder = builder.set_custom_error_responses(var_12);
             }
             ,
             s if s.matches("Comment") /* Comment com.amazonaws.cloudfront#DistributionSummary$Comment */ =>  {
-                let var_12 =
+                let var_13 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -143,11 +156,11 @@ pub fn de_distribution_summary(
                         ?
                     )
                 ;
-                builder = builder.set_comment(var_12);
+                builder = builder.set_comment(var_13);
             }
             ,
             s if s.matches("PriceClass") /* PriceClass com.amazonaws.cloudfront#DistributionSummary$PriceClass */ =>  {
-                let var_13 =
+                let var_14 =
                     Some(
                         Result::<crate::types::PriceClass, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             crate::types::PriceClass::from(
@@ -157,11 +170,11 @@ pub fn de_distribution_summary(
                         ?
                     )
                 ;
-                builder = builder.set_price_class(var_13);
+                builder = builder.set_price_class(var_14);
             }
             ,
             s if s.matches("Enabled") /* Enabled com.amazonaws.cloudfront#DistributionSummary$Enabled */ =>  {
-                let var_14 =
+                let var_15 =
                     Some(
                          {
                             <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -172,31 +185,31 @@ pub fn de_distribution_summary(
                         ?
                     )
                 ;
-                builder = builder.set_enabled(var_14);
+                builder = builder.set_enabled(var_15);
             }
             ,
             s if s.matches("ViewerCertificate") /* ViewerCertificate com.amazonaws.cloudfront#DistributionSummary$ViewerCertificate */ =>  {
-                let var_15 =
+                let var_16 =
                     Some(
                         crate::protocol_serde::shape_viewer_certificate::de_viewer_certificate(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_viewer_certificate(var_15);
+                builder = builder.set_viewer_certificate(var_16);
             }
             ,
             s if s.matches("Restrictions") /* Restrictions com.amazonaws.cloudfront#DistributionSummary$Restrictions */ =>  {
-                let var_16 =
+                let var_17 =
                     Some(
                         crate::protocol_serde::shape_restrictions::de_restrictions(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_restrictions(var_16);
+                builder = builder.set_restrictions(var_17);
             }
             ,
             s if s.matches("WebACLId") /* WebACLId com.amazonaws.cloudfront#DistributionSummary$WebACLId */ =>  {
-                let var_17 =
+                let var_18 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -205,11 +218,11 @@ pub fn de_distribution_summary(
                         ?
                     )
                 ;
-                builder = builder.set_web_acl_id(var_17);
+                builder = builder.set_web_acl_id(var_18);
             }
             ,
             s if s.matches("HttpVersion") /* HttpVersion com.amazonaws.cloudfront#DistributionSummary$HttpVersion */ =>  {
-                let var_18 =
+                let var_19 =
                     Some(
                         Result::<crate::types::HttpVersion, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             crate::types::HttpVersion::from(
@@ -219,11 +232,11 @@ pub fn de_distribution_summary(
                         ?
                     )
                 ;
-                builder = builder.set_http_version(var_18);
+                builder = builder.set_http_version(var_19);
             }
             ,
             s if s.matches("IsIPV6Enabled") /* IsIPV6Enabled com.amazonaws.cloudfront#DistributionSummary$IsIPV6Enabled */ =>  {
-                let var_19 =
+                let var_20 =
                     Some(
                          {
                             <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -234,21 +247,21 @@ pub fn de_distribution_summary(
                         ?
                     )
                 ;
-                builder = builder.set_is_ipv6_enabled(var_19);
+                builder = builder.set_is_ipv6_enabled(var_20);
             }
             ,
             s if s.matches("AliasICPRecordals") /* AliasICPRecordals com.amazonaws.cloudfront#DistributionSummary$AliasICPRecordals */ =>  {
-                let var_20 =
+                let var_21 =
                     Some(
                         crate::protocol_serde::shape_alias_icp_recordals::de_alias_icp_recordals(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_alias_icp_recordals(var_20);
+                builder = builder.set_alias_icp_recordals(var_21);
             }
             ,
             s if s.matches("Staging") /* Staging com.amazonaws.cloudfront#DistributionSummary$Staging */ =>  {
-                let var_21 =
+                let var_22 =
                     Some(
                          {
                             <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -259,11 +272,25 @@ pub fn de_distribution_summary(
                         ?
                     )
                 ;
-                builder = builder.set_staging(var_21);
+                builder = builder.set_staging(var_22);
+            }
+            ,
+            s if s.matches("ConnectionMode") /* ConnectionMode com.amazonaws.cloudfront#DistributionSummary$ConnectionMode */ =>  {
+                let var_23 =
+                    Some(
+                        Result::<crate::types::ConnectionMode, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::ConnectionMode::from(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_connection_mode(var_23);
             }
             ,
             s if s.matches("AnycastIpListId") /* AnycastIpListId com.amazonaws.cloudfront#DistributionSummary$AnycastIpListId */ =>  {
-                let var_22 =
+                let var_24 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -272,7 +299,7 @@ pub fn de_distribution_summary(
                         ?
                     )
                 ;
-                builder = builder.set_anycast_ip_list_id(var_22);
+                builder = builder.set_anycast_ip_list_id(var_24);
             }
             ,
             _ => {}

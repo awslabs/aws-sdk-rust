@@ -159,6 +159,33 @@ pub(crate) fn cloud_front_origin_access_identity_list_correct_errors(
     builder
 }
 
+pub(crate) fn connection_group_summary_correct_errors(
+    mut builder: crate::types::builders::ConnectionGroupSummaryBuilder,
+) -> crate::types::builders::ConnectionGroupSummaryBuilder {
+    if builder.id.is_none() {
+        builder.id = Some(Default::default())
+    }
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
+    }
+    if builder.routing_endpoint.is_none() {
+        builder.routing_endpoint = Some(Default::default())
+    }
+    if builder.created_time.is_none() {
+        builder.created_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.last_modified_time.is_none() {
+        builder.last_modified_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.e_tag.is_none() {
+        builder.e_tag = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn continuous_deployment_policy_correct_errors(
     mut builder: crate::types::builders::ContinuousDeploymentPolicyBuilder,
 ) -> crate::types::builders::ContinuousDeploymentPolicyBuilder {
@@ -293,6 +320,66 @@ pub(crate) fn distribution_list_correct_errors(
     }
     if builder.quantity.is_none() {
         builder.quantity = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn distribution_tenant_summary_correct_errors(
+    mut builder: crate::types::builders::DistributionTenantSummaryBuilder,
+) -> crate::types::builders::DistributionTenantSummaryBuilder {
+    if builder.id.is_none() {
+        builder.id = Some(Default::default())
+    }
+    if builder.distribution_id.is_none() {
+        builder.distribution_id = Some(Default::default())
+    }
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
+    }
+    if builder.domains.is_none() {
+        builder.domains = Some(Default::default())
+    }
+    if builder.created_time.is_none() {
+        builder.created_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.last_modified_time.is_none() {
+        builder.last_modified_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.e_tag.is_none() {
+        builder.e_tag = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn dns_configuration_correct_errors(
+    mut builder: crate::types::builders::DnsConfigurationBuilder,
+) -> crate::types::builders::DnsConfigurationBuilder {
+    if builder.domain.is_none() {
+        builder.domain = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::DnsConfigurationStatus>().ok()
+    }
+    builder
+}
+
+pub(crate) fn domain_conflict_correct_errors(
+    mut builder: crate::types::builders::DomainConflictBuilder,
+) -> crate::types::builders::DomainConflictBuilder {
+    if builder.domain.is_none() {
+        builder.domain = Some(Default::default())
+    }
+    if builder.resource_type.is_none() {
+        builder.resource_type = "no value was set".parse::<crate::types::DistributionResourceType>().ok()
+    }
+    if builder.resource_id.is_none() {
+        builder.resource_id = Some(Default::default())
+    }
+    if builder.account_id.is_none() {
+        builder.account_id = Some(Default::default())
     }
     builder
 }
@@ -1289,6 +1376,13 @@ pub(crate) fn cache_policy_summary_correct_errors(
     builder
 }
 
+pub(crate) fn certificate_correct_errors(mut builder: crate::types::builders::CertificateBuilder) -> crate::types::builders::CertificateBuilder {
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn cloud_front_origin_access_identity_summary_correct_errors(
     mut builder: crate::types::builders::CloudFrontOriginAccessIdentitySummaryBuilder,
 ) -> crate::types::builders::CloudFrontOriginAccessIdentitySummaryBuilder {
@@ -1437,6 +1531,13 @@ pub(crate) fn distribution_summary_correct_errors(
     builder
 }
 
+pub(crate) fn domain_result_correct_errors(mut builder: crate::types::builders::DomainResultBuilder) -> crate::types::builders::DomainResultBuilder {
+    if builder.domain.is_none() {
+        builder.domain = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn field_level_encryption_profile_summary_correct_errors(
     mut builder: crate::types::builders::FieldLevelEncryptionProfileSummaryBuilder,
 ) -> crate::types::builders::FieldLevelEncryptionProfileSummaryBuilder {
@@ -1502,6 +1603,15 @@ pub(crate) fn geo_restriction_correct_errors(
     }
     if builder.quantity.is_none() {
         builder.quantity = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn geo_restriction_customization_correct_errors(
+    mut builder: crate::types::builders::GeoRestrictionCustomizationBuilder,
+) -> crate::types::builders::GeoRestrictionCustomizationBuilder {
+    if builder.restriction_type.is_none() {
+        builder.restriction_type = "no value was set".parse::<crate::types::GeoRestrictionType>().ok()
     }
     builder
 }
@@ -1624,6 +1734,16 @@ pub(crate) fn origin_ssl_protocols_correct_errors(
     }
     if builder.items.is_none() {
         builder.items = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn parameter_correct_errors(mut builder: crate::types::builders::ParameterBuilder) -> crate::types::builders::ParameterBuilder {
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.value.is_none() {
+        builder.value = Some(Default::default())
     }
     builder
 }
@@ -1867,6 +1987,15 @@ pub(crate) fn trusted_key_groups_correct_errors(
     builder
 }
 
+pub(crate) fn validation_token_detail_correct_errors(
+    mut builder: crate::types::builders::ValidationTokenDetailBuilder,
+) -> crate::types::builders::ValidationTokenDetailBuilder {
+    if builder.domain.is_none() {
+        builder.domain = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn vpc_origin_summary_correct_errors(
     mut builder: crate::types::builders::VpcOriginSummaryBuilder,
 ) -> crate::types::builders::VpcOriginSummaryBuilder {
@@ -1890,6 +2019,15 @@ pub(crate) fn vpc_origin_summary_correct_errors(
     }
     if builder.origin_endpoint_arn.is_none() {
         builder.origin_endpoint_arn = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn web_acl_customization_correct_errors(
+    mut builder: crate::types::builders::WebAclCustomizationBuilder,
+) -> crate::types::builders::WebAclCustomizationBuilder {
+    if builder.action.is_none() {
+        builder.action = "no value was set".parse::<crate::types::CustomizationActionType>().ok()
     }
     builder
 }
@@ -1981,6 +2119,21 @@ pub(crate) fn origin_group_correct_errors(mut builder: crate::types::builders::O
         builder.members = {
             let builder = crate::types::builders::OriginGroupMembersBuilder::default();
             crate::serde_util::origin_group_members_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
+pub(crate) fn parameter_definition_correct_errors(
+    mut builder: crate::types::builders::ParameterDefinitionBuilder,
+) -> crate::types::builders::ParameterDefinitionBuilder {
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.definition.is_none() {
+        builder.definition = {
+            let builder = crate::types::builders::ParameterDefinitionSchemaBuilder::default();
+            Some(builder.build())
         }
     }
     builder
@@ -2183,6 +2336,15 @@ pub(crate) fn status_codes_correct_errors(mut builder: crate::types::builders::S
     }
     if builder.items.is_none() {
         builder.items = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn string_schema_config_correct_errors(
+    mut builder: crate::types::builders::StringSchemaConfigBuilder,
+) -> crate::types::builders::StringSchemaConfigBuilder {
+    if builder.required.is_none() {
+        builder.required = Some(Default::default())
     }
     builder
 }

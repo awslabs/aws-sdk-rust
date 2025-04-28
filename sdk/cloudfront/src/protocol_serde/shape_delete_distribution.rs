@@ -95,6 +95,21 @@ pub fn de_delete_distribution_http_error(
             }
             tmp
         }),
+        "ResourceInUse" => crate::operation::delete_distribution::DeleteDistributionError::ResourceInUse({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ResourceInUseBuilder::default();
+                output = crate::protocol_serde::shape_resource_in_use::de_resource_in_use_xml_err(_response_body, output)
+                    .map_err(crate::operation::delete_distribution::DeleteDistributionError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::operation::delete_distribution::DeleteDistributionError::generic(generic),
     })
 }

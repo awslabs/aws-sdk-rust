@@ -6,6 +6,9 @@ pub mod distribution_deployed;
 /// Supporting types for the `invalidation_completed` waiter.
 pub mod invalidation_completed;
 
+/// Supporting types for the `invalidation_for_distribution_tenant_completed` waiter.
+pub mod invalidation_for_distribution_tenant_completed;
+
 /// Supporting types for the `streaming_distribution_deployed` waiter.
 pub mod streaming_distribution_deployed;
 

@@ -67,6 +67,8 @@ pub enum Error {
     InconsistentQuantities(crate::types::error::InconsistentQuantities),
     /// <p>An argument is invalid.</p>
     InvalidArgument(crate::types::error::InvalidArgument),
+    /// <p>The specified CloudFront resource can't be associated.</p>
+    InvalidAssociation(crate::types::error::InvalidAssociation),
     /// <p>The default root object file name is too big or contains an invalid character.</p>
     InvalidDefaultRootObject(crate::types::error::InvalidDefaultRootObject),
     /// <p>An origin access control is associated with an origin whose domain name is not supported.</p>
@@ -181,6 +183,8 @@ pub enum Error {
     RealtimeLogConfigOwnerMismatch(crate::types::error::RealtimeLogConfigOwnerMismatch),
     /// <p>Cannot delete this resource because it is in use.</p>
     ResourceInUse(crate::types::error::ResourceInUse),
+    /// <p>The specified CloudFront resource hasn't been disabled yet.</p>
+    ResourceNotDisabled(crate::types::error::ResourceNotDisabled),
     /// <p>A response headers policy with this name already exists. You must provide a unique name. To modify an existing response headers policy, use <code>UpdateResponseHeadersPolicy</code>.</p>
     ResponseHeadersPolicyAlreadyExists(crate::types::error::ResponseHeadersPolicyAlreadyExists),
     /// <p>Cannot delete the response headers policy because it is attached to one or more cache behaviors in a CloudFront distribution.</p>
@@ -354,6 +358,7 @@ impl ::std::fmt::Display for Error {
             Error::IllegalUpdate(inner) => inner.fmt(f),
             Error::InconsistentQuantities(inner) => inner.fmt(f),
             Error::InvalidArgument(inner) => inner.fmt(f),
+            Error::InvalidAssociation(inner) => inner.fmt(f),
             Error::InvalidDefaultRootObject(inner) => inner.fmt(f),
             Error::InvalidDomainNameForOriginAccessControl(inner) => inner.fmt(f),
             Error::InvalidErrorCode(inner) => inner.fmt(f),
@@ -411,6 +416,7 @@ impl ::std::fmt::Display for Error {
             Error::RealtimeLogConfigInUse(inner) => inner.fmt(f),
             Error::RealtimeLogConfigOwnerMismatch(inner) => inner.fmt(f),
             Error::ResourceInUse(inner) => inner.fmt(f),
+            Error::ResourceNotDisabled(inner) => inner.fmt(f),
             Error::ResponseHeadersPolicyAlreadyExists(inner) => inner.fmt(f),
             Error::ResponseHeadersPolicyInUse(inner) => inner.fmt(f),
             Error::StagingDistributionInUse(inner) => inner.fmt(f),
@@ -525,6 +531,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
             Self::IllegalUpdate(inner) => inner.meta(),
             Self::InconsistentQuantities(inner) => inner.meta(),
             Self::InvalidArgument(inner) => inner.meta(),
+            Self::InvalidAssociation(inner) => inner.meta(),
             Self::InvalidDefaultRootObject(inner) => inner.meta(),
             Self::InvalidDomainNameForOriginAccessControl(inner) => inner.meta(),
             Self::InvalidErrorCode(inner) => inner.meta(),
@@ -582,6 +589,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
             Self::RealtimeLogConfigInUse(inner) => inner.meta(),
             Self::RealtimeLogConfigOwnerMismatch(inner) => inner.meta(),
             Self::ResourceInUse(inner) => inner.meta(),
+            Self::ResourceNotDisabled(inner) => inner.meta(),
             Self::ResponseHeadersPolicyAlreadyExists(inner) => inner.meta(),
             Self::ResponseHeadersPolicyInUse(inner) => inner.meta(),
             Self::StagingDistributionInUse(inner) => inner.meta(),
@@ -670,6 +678,94 @@ impl From<crate::operation::associate_alias::AssociateAliasError> for Error {
             crate::operation::associate_alias::AssociateAliasError::NoSuchDistribution(inner) => Error::NoSuchDistribution(inner),
             crate::operation::associate_alias::AssociateAliasError::TooManyDistributionCnamEs(inner) => Error::TooManyDistributionCnamEs(inner),
             crate::operation::associate_alias::AssociateAliasError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::associate_distribution_tenant_web_acl::AssociateDistributionTenantWebACLError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::associate_distribution_tenant_web_acl::AssociateDistributionTenantWebACLError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::associate_distribution_tenant_web_acl::AssociateDistributionTenantWebACLError> for Error {
+    fn from(err: crate::operation::associate_distribution_tenant_web_acl::AssociateDistributionTenantWebACLError) -> Self {
+        match err {
+            crate::operation::associate_distribution_tenant_web_acl::AssociateDistributionTenantWebACLError::AccessDenied(inner) => {
+                Error::AccessDenied(inner)
+            }
+            crate::operation::associate_distribution_tenant_web_acl::AssociateDistributionTenantWebACLError::EntityNotFound(inner) => {
+                Error::EntityNotFound(inner)
+            }
+            crate::operation::associate_distribution_tenant_web_acl::AssociateDistributionTenantWebACLError::InvalidArgument(inner) => {
+                Error::InvalidArgument(inner)
+            }
+            crate::operation::associate_distribution_tenant_web_acl::AssociateDistributionTenantWebACLError::InvalidIfMatchVersion(inner) => {
+                Error::InvalidIfMatchVersion(inner)
+            }
+            crate::operation::associate_distribution_tenant_web_acl::AssociateDistributionTenantWebACLError::PreconditionFailed(inner) => {
+                Error::PreconditionFailed(inner)
+            }
+            crate::operation::associate_distribution_tenant_web_acl::AssociateDistributionTenantWebACLError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::associate_distribution_web_acl::AssociateDistributionWebACLError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::associate_distribution_web_acl::AssociateDistributionWebACLError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::associate_distribution_web_acl::AssociateDistributionWebACLError> for Error {
+    fn from(err: crate::operation::associate_distribution_web_acl::AssociateDistributionWebACLError) -> Self {
+        match err {
+            crate::operation::associate_distribution_web_acl::AssociateDistributionWebACLError::AccessDenied(inner) => Error::AccessDenied(inner),
+            crate::operation::associate_distribution_web_acl::AssociateDistributionWebACLError::EntityNotFound(inner) => Error::EntityNotFound(inner),
+            crate::operation::associate_distribution_web_acl::AssociateDistributionWebACLError::InvalidArgument(inner) => {
+                Error::InvalidArgument(inner)
+            }
+            crate::operation::associate_distribution_web_acl::AssociateDistributionWebACLError::InvalidIfMatchVersion(inner) => {
+                Error::InvalidIfMatchVersion(inner)
+            }
+            crate::operation::associate_distribution_web_acl::AssociateDistributionWebACLError::PreconditionFailed(inner) => {
+                Error::PreconditionFailed(inner)
+            }
+            crate::operation::associate_distribution_web_acl::AssociateDistributionWebACLError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -911,6 +1007,35 @@ impl From<crate::operation::create_cloud_front_origin_access_identity::CreateClo
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_connection_group::CreateConnectionGroupError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_connection_group::CreateConnectionGroupError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_connection_group::CreateConnectionGroupError> for Error {
+    fn from(err: crate::operation::create_connection_group::CreateConnectionGroupError) -> Self {
+        match err {
+            crate::operation::create_connection_group::CreateConnectionGroupError::AccessDenied(inner) => Error::AccessDenied(inner),
+            crate::operation::create_connection_group::CreateConnectionGroupError::EntityAlreadyExists(inner) => Error::EntityAlreadyExists(inner),
+            crate::operation::create_connection_group::CreateConnectionGroupError::EntityLimitExceeded(inner) => Error::EntityLimitExceeded(inner),
+            crate::operation::create_connection_group::CreateConnectionGroupError::EntityNotFound(inner) => Error::EntityNotFound(inner),
+            crate::operation::create_connection_group::CreateConnectionGroupError::InvalidArgument(inner) => Error::InvalidArgument(inner),
+            crate::operation::create_connection_group::CreateConnectionGroupError::InvalidTagging(inner) => Error::InvalidTagging(inner),
+            crate::operation::create_connection_group::CreateConnectionGroupError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R>
     From<
         ::aws_smithy_runtime_api::client::result::SdkError<
@@ -986,6 +1111,7 @@ impl From<crate::operation::create_distribution::CreateDistributionError> for Er
             crate::operation::create_distribution::CreateDistributionError::DistributionAlreadyExists(inner) => {
                 Error::DistributionAlreadyExists(inner)
             }
+            crate::operation::create_distribution::CreateDistributionError::EntityLimitExceeded(inner) => Error::EntityLimitExceeded(inner),
             crate::operation::create_distribution::CreateDistributionError::EntityNotFound(inner) => Error::EntityNotFound(inner),
             crate::operation::create_distribution::CreateDistributionError::IllegalFieldLevelEncryptionConfigAssociationWithCacheBehavior(inner) => {
                 Error::IllegalFieldLevelEncryptionConfigAssociationWithCacheBehavior(inner)
@@ -1123,6 +1249,46 @@ impl From<crate::operation::create_distribution::CreateDistributionError> for Er
                 Error::TrustedSignerDoesNotExist(inner)
             }
             crate::operation::create_distribution::CreateDistributionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_distribution_tenant::CreateDistributionTenantError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_distribution_tenant::CreateDistributionTenantError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_distribution_tenant::CreateDistributionTenantError> for Error {
+    fn from(err: crate::operation::create_distribution_tenant::CreateDistributionTenantError) -> Self {
+        match err {
+            crate::operation::create_distribution_tenant::CreateDistributionTenantError::AccessDenied(inner) => Error::AccessDenied(inner),
+            crate::operation::create_distribution_tenant::CreateDistributionTenantError::CnameAlreadyExists(inner) => {
+                Error::CnameAlreadyExists(inner)
+            }
+            crate::operation::create_distribution_tenant::CreateDistributionTenantError::EntityAlreadyExists(inner) => {
+                Error::EntityAlreadyExists(inner)
+            }
+            crate::operation::create_distribution_tenant::CreateDistributionTenantError::EntityLimitExceeded(inner) => {
+                Error::EntityLimitExceeded(inner)
+            }
+            crate::operation::create_distribution_tenant::CreateDistributionTenantError::EntityNotFound(inner) => Error::EntityNotFound(inner),
+            crate::operation::create_distribution_tenant::CreateDistributionTenantError::InvalidArgument(inner) => Error::InvalidArgument(inner),
+            crate::operation::create_distribution_tenant::CreateDistributionTenantError::InvalidAssociation(inner) => {
+                Error::InvalidAssociation(inner)
+            }
+            crate::operation::create_distribution_tenant::CreateDistributionTenantError::InvalidTagging(inner) => Error::InvalidTagging(inner),
+            crate::operation::create_distribution_tenant::CreateDistributionTenantError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1350,6 +1516,45 @@ impl From<crate::operation::create_invalidation::CreateInvalidationError> for Er
                 Error::TooManyInvalidationsInProgress(inner)
             }
             crate::operation::create_invalidation::CreateInvalidationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::create_invalidation_for_distribution_tenant::CreateInvalidationForDistributionTenantError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::create_invalidation_for_distribution_tenant::CreateInvalidationForDistributionTenantError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_invalidation_for_distribution_tenant::CreateInvalidationForDistributionTenantError> for Error {
+    fn from(err: crate::operation::create_invalidation_for_distribution_tenant::CreateInvalidationForDistributionTenantError) -> Self {
+        match err {
+            crate::operation::create_invalidation_for_distribution_tenant::CreateInvalidationForDistributionTenantError::AccessDenied(inner) => Error::AccessDenied(inner),
+            crate::operation::create_invalidation_for_distribution_tenant::CreateInvalidationForDistributionTenantError::BatchTooLarge(inner) => Error::BatchTooLarge(inner),
+            crate::operation::create_invalidation_for_distribution_tenant::CreateInvalidationForDistributionTenantError::EntityNotFound(inner) => Error::EntityNotFound(inner),
+            crate::operation::create_invalidation_for_distribution_tenant::CreateInvalidationForDistributionTenantError::InconsistentQuantities(inner) => Error::InconsistentQuantities(inner),
+            crate::operation::create_invalidation_for_distribution_tenant::CreateInvalidationForDistributionTenantError::InvalidArgument(inner) => Error::InvalidArgument(inner),
+            crate::operation::create_invalidation_for_distribution_tenant::CreateInvalidationForDistributionTenantError::MissingBody(inner) => Error::MissingBody(inner),
+            crate::operation::create_invalidation_for_distribution_tenant::CreateInvalidationForDistributionTenantError::TooManyInvalidationsInProgress(inner) => Error::TooManyInvalidationsInProgress(inner),
+            crate::operation::create_invalidation_for_distribution_tenant::CreateInvalidationForDistributionTenantError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1852,6 +2057,39 @@ impl From<crate::operation::delete_cloud_front_origin_access_identity::DeleteClo
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_connection_group::DeleteConnectionGroupError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_connection_group::DeleteConnectionGroupError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_connection_group::DeleteConnectionGroupError> for Error {
+    fn from(err: crate::operation::delete_connection_group::DeleteConnectionGroupError) -> Self {
+        match err {
+            crate::operation::delete_connection_group::DeleteConnectionGroupError::AccessDenied(inner) => Error::AccessDenied(inner),
+            crate::operation::delete_connection_group::DeleteConnectionGroupError::CannotDeleteEntityWhileInUse(inner) => {
+                Error::CannotDeleteEntityWhileInUse(inner)
+            }
+            crate::operation::delete_connection_group::DeleteConnectionGroupError::EntityNotFound(inner) => Error::EntityNotFound(inner),
+            crate::operation::delete_connection_group::DeleteConnectionGroupError::InvalidIfMatchVersion(inner) => {
+                Error::InvalidIfMatchVersion(inner)
+            }
+            crate::operation::delete_connection_group::DeleteConnectionGroupError::PreconditionFailed(inner) => Error::PreconditionFailed(inner),
+            crate::operation::delete_connection_group::DeleteConnectionGroupError::ResourceNotDisabled(inner) => Error::ResourceNotDisabled(inner),
+            crate::operation::delete_connection_group::DeleteConnectionGroupError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R>
     From<
         ::aws_smithy_runtime_api::client::result::SdkError<
@@ -1924,7 +2162,43 @@ impl From<crate::operation::delete_distribution::DeleteDistributionError> for Er
             crate::operation::delete_distribution::DeleteDistributionError::InvalidIfMatchVersion(inner) => Error::InvalidIfMatchVersion(inner),
             crate::operation::delete_distribution::DeleteDistributionError::NoSuchDistribution(inner) => Error::NoSuchDistribution(inner),
             crate::operation::delete_distribution::DeleteDistributionError::PreconditionFailed(inner) => Error::PreconditionFailed(inner),
+            crate::operation::delete_distribution::DeleteDistributionError::ResourceInUse(inner) => Error::ResourceInUse(inner),
             crate::operation::delete_distribution::DeleteDistributionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_distribution_tenant::DeleteDistributionTenantError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_distribution_tenant::DeleteDistributionTenantError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_distribution_tenant::DeleteDistributionTenantError> for Error {
+    fn from(err: crate::operation::delete_distribution_tenant::DeleteDistributionTenantError) -> Self {
+        match err {
+            crate::operation::delete_distribution_tenant::DeleteDistributionTenantError::AccessDenied(inner) => Error::AccessDenied(inner),
+            crate::operation::delete_distribution_tenant::DeleteDistributionTenantError::EntityNotFound(inner) => Error::EntityNotFound(inner),
+            crate::operation::delete_distribution_tenant::DeleteDistributionTenantError::InvalidIfMatchVersion(inner) => {
+                Error::InvalidIfMatchVersion(inner)
+            }
+            crate::operation::delete_distribution_tenant::DeleteDistributionTenantError::PreconditionFailed(inner) => {
+                Error::PreconditionFailed(inner)
+            }
+            crate::operation::delete_distribution_tenant::DeleteDistributionTenantError::ResourceNotDisabled(inner) => {
+                Error::ResourceNotDisabled(inner)
+            }
+            crate::operation::delete_distribution_tenant::DeleteDistributionTenantError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -2437,6 +2711,102 @@ impl From<crate::operation::describe_key_value_store::DescribeKeyValueStoreError
         }
     }
 }
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::disassociate_distribution_tenant_web_acl::DisassociateDistributionTenantWebACLError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::disassociate_distribution_tenant_web_acl::DisassociateDistributionTenantWebACLError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::disassociate_distribution_tenant_web_acl::DisassociateDistributionTenantWebACLError> for Error {
+    fn from(err: crate::operation::disassociate_distribution_tenant_web_acl::DisassociateDistributionTenantWebACLError) -> Self {
+        match err {
+            crate::operation::disassociate_distribution_tenant_web_acl::DisassociateDistributionTenantWebACLError::AccessDenied(inner) => {
+                Error::AccessDenied(inner)
+            }
+            crate::operation::disassociate_distribution_tenant_web_acl::DisassociateDistributionTenantWebACLError::EntityNotFound(inner) => {
+                Error::EntityNotFound(inner)
+            }
+            crate::operation::disassociate_distribution_tenant_web_acl::DisassociateDistributionTenantWebACLError::InvalidArgument(inner) => {
+                Error::InvalidArgument(inner)
+            }
+            crate::operation::disassociate_distribution_tenant_web_acl::DisassociateDistributionTenantWebACLError::InvalidIfMatchVersion(inner) => {
+                Error::InvalidIfMatchVersion(inner)
+            }
+            crate::operation::disassociate_distribution_tenant_web_acl::DisassociateDistributionTenantWebACLError::PreconditionFailed(inner) => {
+                Error::PreconditionFailed(inner)
+            }
+            crate::operation::disassociate_distribution_tenant_web_acl::DisassociateDistributionTenantWebACLError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::disassociate_distribution_web_acl::DisassociateDistributionWebACLError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::disassociate_distribution_web_acl::DisassociateDistributionWebACLError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::disassociate_distribution_web_acl::DisassociateDistributionWebACLError> for Error {
+    fn from(err: crate::operation::disassociate_distribution_web_acl::DisassociateDistributionWebACLError) -> Self {
+        match err {
+            crate::operation::disassociate_distribution_web_acl::DisassociateDistributionWebACLError::AccessDenied(inner) => {
+                Error::AccessDenied(inner)
+            }
+            crate::operation::disassociate_distribution_web_acl::DisassociateDistributionWebACLError::EntityNotFound(inner) => {
+                Error::EntityNotFound(inner)
+            }
+            crate::operation::disassociate_distribution_web_acl::DisassociateDistributionWebACLError::InvalidArgument(inner) => {
+                Error::InvalidArgument(inner)
+            }
+            crate::operation::disassociate_distribution_web_acl::DisassociateDistributionWebACLError::InvalidIfMatchVersion(inner) => {
+                Error::InvalidIfMatchVersion(inner)
+            }
+            crate::operation::disassociate_distribution_web_acl::DisassociateDistributionWebACLError::PreconditionFailed(inner) => {
+                Error::PreconditionFailed(inner)
+            }
+            crate::operation::disassociate_distribution_web_acl::DisassociateDistributionWebACLError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_anycast_ip_list::GetAnycastIpListError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -2578,6 +2948,69 @@ impl From<crate::operation::get_cloud_front_origin_access_identity_config::GetCl
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_connection_group::GetConnectionGroupError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_connection_group::GetConnectionGroupError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_connection_group::GetConnectionGroupError> for Error {
+    fn from(err: crate::operation::get_connection_group::GetConnectionGroupError) -> Self {
+        match err {
+            crate::operation::get_connection_group::GetConnectionGroupError::AccessDenied(inner) => Error::AccessDenied(inner),
+            crate::operation::get_connection_group::GetConnectionGroupError::EntityNotFound(inner) => Error::EntityNotFound(inner),
+            crate::operation::get_connection_group::GetConnectionGroupError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_connection_group_by_routing_endpoint::GetConnectionGroupByRoutingEndpointError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_connection_group_by_routing_endpoint::GetConnectionGroupByRoutingEndpointError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_connection_group_by_routing_endpoint::GetConnectionGroupByRoutingEndpointError> for Error {
+    fn from(err: crate::operation::get_connection_group_by_routing_endpoint::GetConnectionGroupByRoutingEndpointError) -> Self {
+        match err {
+            crate::operation::get_connection_group_by_routing_endpoint::GetConnectionGroupByRoutingEndpointError::AccessDenied(inner) => {
+                Error::AccessDenied(inner)
+            }
+            crate::operation::get_connection_group_by_routing_endpoint::GetConnectionGroupByRoutingEndpointError::EntityNotFound(inner) => {
+                Error::EntityNotFound(inner)
+            }
+            crate::operation::get_connection_group_by_routing_endpoint::GetConnectionGroupByRoutingEndpointError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
 impl<R>
     From<
         ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_continuous_deployment_policy::GetContinuousDeploymentPolicyError, R>,
@@ -2696,6 +3129,69 @@ impl From<crate::operation::get_distribution_config::GetDistributionConfigError>
             crate::operation::get_distribution_config::GetDistributionConfigError::AccessDenied(inner) => Error::AccessDenied(inner),
             crate::operation::get_distribution_config::GetDistributionConfigError::NoSuchDistribution(inner) => Error::NoSuchDistribution(inner),
             crate::operation::get_distribution_config::GetDistributionConfigError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_distribution_tenant::GetDistributionTenantError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_distribution_tenant::GetDistributionTenantError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_distribution_tenant::GetDistributionTenantError> for Error {
+    fn from(err: crate::operation::get_distribution_tenant::GetDistributionTenantError) -> Self {
+        match err {
+            crate::operation::get_distribution_tenant::GetDistributionTenantError::AccessDenied(inner) => Error::AccessDenied(inner),
+            crate::operation::get_distribution_tenant::GetDistributionTenantError::EntityNotFound(inner) => Error::EntityNotFound(inner),
+            crate::operation::get_distribution_tenant::GetDistributionTenantError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_distribution_tenant_by_domain::GetDistributionTenantByDomainError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_distribution_tenant_by_domain::GetDistributionTenantByDomainError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_distribution_tenant_by_domain::GetDistributionTenantByDomainError> for Error {
+    fn from(err: crate::operation::get_distribution_tenant_by_domain::GetDistributionTenantByDomainError) -> Self {
+        match err {
+            crate::operation::get_distribution_tenant_by_domain::GetDistributionTenantByDomainError::AccessDenied(inner) => {
+                Error::AccessDenied(inner)
+            }
+            crate::operation::get_distribution_tenant_by_domain::GetDistributionTenantByDomainError::EntityNotFound(inner) => {
+                Error::EntityNotFound(inner)
+            }
+            crate::operation::get_distribution_tenant_by_domain::GetDistributionTenantByDomainError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -2884,6 +3380,49 @@ impl From<crate::operation::get_invalidation::GetInvalidationError> for Error {
         }
     }
 }
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_invalidation_for_distribution_tenant::GetInvalidationForDistributionTenantError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_invalidation_for_distribution_tenant::GetInvalidationForDistributionTenantError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_invalidation_for_distribution_tenant::GetInvalidationForDistributionTenantError> for Error {
+    fn from(err: crate::operation::get_invalidation_for_distribution_tenant::GetInvalidationForDistributionTenantError) -> Self {
+        match err {
+            crate::operation::get_invalidation_for_distribution_tenant::GetInvalidationForDistributionTenantError::AccessDenied(inner) => {
+                Error::AccessDenied(inner)
+            }
+            crate::operation::get_invalidation_for_distribution_tenant::GetInvalidationForDistributionTenantError::EntityNotFound(inner) => {
+                Error::EntityNotFound(inner)
+            }
+            crate::operation::get_invalidation_for_distribution_tenant::GetInvalidationForDistributionTenantError::NoSuchInvalidation(inner) => {
+                Error::NoSuchInvalidation(inner)
+            }
+            crate::operation::get_invalidation_for_distribution_tenant::GetInvalidationForDistributionTenantError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_key_group::GetKeyGroupError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -2925,6 +3464,38 @@ impl From<crate::operation::get_key_group_config::GetKeyGroupConfigError> for Er
         match err {
             crate::operation::get_key_group_config::GetKeyGroupConfigError::NoSuchResource(inner) => Error::NoSuchResource(inner),
             crate::operation::get_key_group_config::GetKeyGroupConfigError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_managed_certificate_details::GetManagedCertificateDetailsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_managed_certificate_details::GetManagedCertificateDetailsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_managed_certificate_details::GetManagedCertificateDetailsError> for Error {
+    fn from(err: crate::operation::get_managed_certificate_details::GetManagedCertificateDetailsError) -> Self {
+        match err {
+            crate::operation::get_managed_certificate_details::GetManagedCertificateDetailsError::AccessDenied(inner) => Error::AccessDenied(inner),
+            crate::operation::get_managed_certificate_details::GetManagedCertificateDetailsError::EntityNotFound(inner) => {
+                Error::EntityNotFound(inner)
+            }
+            crate::operation::get_managed_certificate_details::GetManagedCertificateDetailsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -3424,6 +3995,30 @@ impl From<crate::operation::list_conflicting_aliases::ListConflictingAliasesErro
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_connection_groups::ListConnectionGroupsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_connection_groups::ListConnectionGroupsError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_connection_groups::ListConnectionGroupsError> for Error {
+    fn from(err: crate::operation::list_connection_groups::ListConnectionGroupsError) -> Self {
+        match err {
+            crate::operation::list_connection_groups::ListConnectionGroupsError::AccessDenied(inner) => Error::AccessDenied(inner),
+            crate::operation::list_connection_groups::ListConnectionGroupsError::EntityNotFound(inner) => Error::EntityNotFound(inner),
+            crate::operation::list_connection_groups::ListConnectionGroupsError::InvalidArgument(inner) => Error::InvalidArgument(inner),
+            crate::operation::list_connection_groups::ListConnectionGroupsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R>
     From<
         ::aws_smithy_runtime_api::client::result::SdkError<
@@ -3571,6 +4166,46 @@ impl From<crate::operation::list_distributions_by_cache_policy_id::ListDistribut
                 Error::NoSuchCachePolicy(inner)
             }
             crate::operation::list_distributions_by_cache_policy_id::ListDistributionsByCachePolicyIdError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_distributions_by_connection_mode::ListDistributionsByConnectionModeError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_distributions_by_connection_mode::ListDistributionsByConnectionModeError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_distributions_by_connection_mode::ListDistributionsByConnectionModeError> for Error {
+    fn from(err: crate::operation::list_distributions_by_connection_mode::ListDistributionsByConnectionModeError) -> Self {
+        match err {
+            crate::operation::list_distributions_by_connection_mode::ListDistributionsByConnectionModeError::AccessDenied(inner) => {
+                Error::AccessDenied(inner)
+            }
+            crate::operation::list_distributions_by_connection_mode::ListDistributionsByConnectionModeError::InvalidArgument(inner) => {
+                Error::InvalidArgument(inner)
+            }
+            crate::operation::list_distributions_by_connection_mode::ListDistributionsByConnectionModeError::Unhandled(inner) => {
                 Error::Unhandled(inner)
             }
         }
@@ -3795,6 +4430,100 @@ impl From<crate::operation::list_distributions_by_web_acl_id::ListDistributionsB
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_distribution_tenants::ListDistributionTenantsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_distribution_tenants::ListDistributionTenantsError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_distribution_tenants::ListDistributionTenantsError> for Error {
+    fn from(err: crate::operation::list_distribution_tenants::ListDistributionTenantsError) -> Self {
+        match err {
+            crate::operation::list_distribution_tenants::ListDistributionTenantsError::AccessDenied(inner) => Error::AccessDenied(inner),
+            crate::operation::list_distribution_tenants::ListDistributionTenantsError::EntityNotFound(inner) => Error::EntityNotFound(inner),
+            crate::operation::list_distribution_tenants::ListDistributionTenantsError::InvalidArgument(inner) => Error::InvalidArgument(inner),
+            crate::operation::list_distribution_tenants::ListDistributionTenantsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_distribution_tenants_by_customization::ListDistributionTenantsByCustomizationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_distribution_tenants_by_customization::ListDistributionTenantsByCustomizationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_distribution_tenants_by_customization::ListDistributionTenantsByCustomizationError> for Error {
+    fn from(err: crate::operation::list_distribution_tenants_by_customization::ListDistributionTenantsByCustomizationError) -> Self {
+        match err {
+            crate::operation::list_distribution_tenants_by_customization::ListDistributionTenantsByCustomizationError::AccessDenied(inner) => {
+                Error::AccessDenied(inner)
+            }
+            crate::operation::list_distribution_tenants_by_customization::ListDistributionTenantsByCustomizationError::EntityNotFound(inner) => {
+                Error::EntityNotFound(inner)
+            }
+            crate::operation::list_distribution_tenants_by_customization::ListDistributionTenantsByCustomizationError::InvalidArgument(inner) => {
+                Error::InvalidArgument(inner)
+            }
+            crate::operation::list_distribution_tenants_by_customization::ListDistributionTenantsByCustomizationError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_domain_conflicts::ListDomainConflictsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_domain_conflicts::ListDomainConflictsError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_domain_conflicts::ListDomainConflictsError> for Error {
+    fn from(err: crate::operation::list_domain_conflicts::ListDomainConflictsError) -> Self {
+        match err {
+            crate::operation::list_domain_conflicts::ListDomainConflictsError::AccessDenied(inner) => Error::AccessDenied(inner),
+            crate::operation::list_domain_conflicts::ListDomainConflictsError::EntityNotFound(inner) => Error::EntityNotFound(inner),
+            crate::operation::list_domain_conflicts::ListDomainConflictsError::InvalidArgument(inner) => Error::InvalidArgument(inner),
+            crate::operation::list_domain_conflicts::ListDomainConflictsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R>
     From<
         ::aws_smithy_runtime_api::client::result::SdkError<
@@ -3911,6 +4640,49 @@ impl From<crate::operation::list_invalidations::ListInvalidationsError> for Erro
             crate::operation::list_invalidations::ListInvalidationsError::InvalidArgument(inner) => Error::InvalidArgument(inner),
             crate::operation::list_invalidations::ListInvalidationsError::NoSuchDistribution(inner) => Error::NoSuchDistribution(inner),
             crate::operation::list_invalidations::ListInvalidationsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_invalidations_for_distribution_tenant::ListInvalidationsForDistributionTenantError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_invalidations_for_distribution_tenant::ListInvalidationsForDistributionTenantError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_invalidations_for_distribution_tenant::ListInvalidationsForDistributionTenantError> for Error {
+    fn from(err: crate::operation::list_invalidations_for_distribution_tenant::ListInvalidationsForDistributionTenantError) -> Self {
+        match err {
+            crate::operation::list_invalidations_for_distribution_tenant::ListInvalidationsForDistributionTenantError::AccessDenied(inner) => {
+                Error::AccessDenied(inner)
+            }
+            crate::operation::list_invalidations_for_distribution_tenant::ListInvalidationsForDistributionTenantError::EntityNotFound(inner) => {
+                Error::EntityNotFound(inner)
+            }
+            crate::operation::list_invalidations_for_distribution_tenant::ListInvalidationsForDistributionTenantError::InvalidArgument(inner) => {
+                Error::InvalidArgument(inner)
+            }
+            crate::operation::list_invalidations_for_distribution_tenant::ListInvalidationsForDistributionTenantError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
         }
     }
 }
@@ -4355,6 +5127,39 @@ impl From<crate::operation::update_cloud_front_origin_access_identity::UpdateClo
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_connection_group::UpdateConnectionGroupError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_connection_group::UpdateConnectionGroupError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_connection_group::UpdateConnectionGroupError> for Error {
+    fn from(err: crate::operation::update_connection_group::UpdateConnectionGroupError) -> Self {
+        match err {
+            crate::operation::update_connection_group::UpdateConnectionGroupError::AccessDenied(inner) => Error::AccessDenied(inner),
+            crate::operation::update_connection_group::UpdateConnectionGroupError::EntityAlreadyExists(inner) => Error::EntityAlreadyExists(inner),
+            crate::operation::update_connection_group::UpdateConnectionGroupError::EntityLimitExceeded(inner) => Error::EntityLimitExceeded(inner),
+            crate::operation::update_connection_group::UpdateConnectionGroupError::EntityNotFound(inner) => Error::EntityNotFound(inner),
+            crate::operation::update_connection_group::UpdateConnectionGroupError::InvalidArgument(inner) => Error::InvalidArgument(inner),
+            crate::operation::update_connection_group::UpdateConnectionGroupError::InvalidIfMatchVersion(inner) => {
+                Error::InvalidIfMatchVersion(inner)
+            }
+            crate::operation::update_connection_group::UpdateConnectionGroupError::PreconditionFailed(inner) => Error::PreconditionFailed(inner),
+            crate::operation::update_connection_group::UpdateConnectionGroupError::ResourceInUse(inner) => Error::ResourceInUse(inner),
+            crate::operation::update_connection_group::UpdateConnectionGroupError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R>
     From<
         ::aws_smithy_runtime_api::client::result::SdkError<
@@ -4572,6 +5377,51 @@ impl From<crate::operation::update_distribution::UpdateDistributionError> for Er
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_distribution_tenant::UpdateDistributionTenantError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_distribution_tenant::UpdateDistributionTenantError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_distribution_tenant::UpdateDistributionTenantError> for Error {
+    fn from(err: crate::operation::update_distribution_tenant::UpdateDistributionTenantError) -> Self {
+        match err {
+            crate::operation::update_distribution_tenant::UpdateDistributionTenantError::AccessDenied(inner) => Error::AccessDenied(inner),
+            crate::operation::update_distribution_tenant::UpdateDistributionTenantError::CnameAlreadyExists(inner) => {
+                Error::CnameAlreadyExists(inner)
+            }
+            crate::operation::update_distribution_tenant::UpdateDistributionTenantError::EntityAlreadyExists(inner) => {
+                Error::EntityAlreadyExists(inner)
+            }
+            crate::operation::update_distribution_tenant::UpdateDistributionTenantError::EntityLimitExceeded(inner) => {
+                Error::EntityLimitExceeded(inner)
+            }
+            crate::operation::update_distribution_tenant::UpdateDistributionTenantError::EntityNotFound(inner) => Error::EntityNotFound(inner),
+            crate::operation::update_distribution_tenant::UpdateDistributionTenantError::InvalidArgument(inner) => Error::InvalidArgument(inner),
+            crate::operation::update_distribution_tenant::UpdateDistributionTenantError::InvalidAssociation(inner) => {
+                Error::InvalidAssociation(inner)
+            }
+            crate::operation::update_distribution_tenant::UpdateDistributionTenantError::InvalidIfMatchVersion(inner) => {
+                Error::InvalidIfMatchVersion(inner)
+            }
+            crate::operation::update_distribution_tenant::UpdateDistributionTenantError::PreconditionFailed(inner) => {
+                Error::PreconditionFailed(inner)
+            }
+            crate::operation::update_distribution_tenant::UpdateDistributionTenantError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R>
     From<
         ::aws_smithy_runtime_api::client::result::SdkError<
@@ -4663,6 +5513,38 @@ impl From<crate::operation::update_distribution_with_staging_config::UpdateDistr
             crate::operation::update_distribution_with_staging_config::UpdateDistributionWithStagingConfigError::TrustedKeyGroupDoesNotExist(inner) => Error::TrustedKeyGroupDoesNotExist(inner),
             crate::operation::update_distribution_with_staging_config::UpdateDistributionWithStagingConfigError::TrustedSignerDoesNotExist(inner) => Error::TrustedSignerDoesNotExist(inner),
             crate::operation::update_distribution_with_staging_config::UpdateDistributionWithStagingConfigError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_domain_association::UpdateDomainAssociationError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_domain_association::UpdateDomainAssociationError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_domain_association::UpdateDomainAssociationError> for Error {
+    fn from(err: crate::operation::update_domain_association::UpdateDomainAssociationError) -> Self {
+        match err {
+            crate::operation::update_domain_association::UpdateDomainAssociationError::AccessDenied(inner) => Error::AccessDenied(inner),
+            crate::operation::update_domain_association::UpdateDomainAssociationError::EntityNotFound(inner) => Error::EntityNotFound(inner),
+            crate::operation::update_domain_association::UpdateDomainAssociationError::IllegalUpdate(inner) => Error::IllegalUpdate(inner),
+            crate::operation::update_domain_association::UpdateDomainAssociationError::InvalidArgument(inner) => Error::InvalidArgument(inner),
+            crate::operation::update_domain_association::UpdateDomainAssociationError::InvalidIfMatchVersion(inner) => {
+                Error::InvalidIfMatchVersion(inner)
+            }
+            crate::operation::update_domain_association::UpdateDomainAssociationError::PreconditionFailed(inner) => Error::PreconditionFailed(inner),
+            crate::operation::update_domain_association::UpdateDomainAssociationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -5134,6 +6016,32 @@ impl From<crate::operation::update_vpc_origin::UpdateVpcOriginError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::verify_dns_configuration::VerifyDnsConfigurationError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::verify_dns_configuration::VerifyDnsConfigurationError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::verify_dns_configuration::VerifyDnsConfigurationError> for Error {
+    fn from(err: crate::operation::verify_dns_configuration::VerifyDnsConfigurationError) -> Self {
+        match err {
+            crate::operation::verify_dns_configuration::VerifyDnsConfigurationError::AccessDenied(inner) => Error::AccessDenied(inner),
+            crate::operation::verify_dns_configuration::VerifyDnsConfigurationError::EntityNotFound(inner) => Error::EntityNotFound(inner),
+            crate::operation::verify_dns_configuration::VerifyDnsConfigurationError::InvalidArgument(inner) => Error::InvalidArgument(inner),
+            crate::operation::verify_dns_configuration::VerifyDnsConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<O, E> ::std::convert::From<::aws_smithy_runtime_api::client::waiters::error::WaiterError<O, E>> for Error
 where
     O: ::std::fmt::Debug + ::std::marker::Send + ::std::marker::Sync + 'static,
@@ -5181,6 +6089,7 @@ impl ::std::error::Error for Error {
             Error::IllegalUpdate(inner) => inner.source(),
             Error::InconsistentQuantities(inner) => inner.source(),
             Error::InvalidArgument(inner) => inner.source(),
+            Error::InvalidAssociation(inner) => inner.source(),
             Error::InvalidDefaultRootObject(inner) => inner.source(),
             Error::InvalidDomainNameForOriginAccessControl(inner) => inner.source(),
             Error::InvalidErrorCode(inner) => inner.source(),
@@ -5238,6 +6147,7 @@ impl ::std::error::Error for Error {
             Error::RealtimeLogConfigInUse(inner) => inner.source(),
             Error::RealtimeLogConfigOwnerMismatch(inner) => inner.source(),
             Error::ResourceInUse(inner) => inner.source(),
+            Error::ResourceNotDisabled(inner) => inner.source(),
             Error::ResponseHeadersPolicyAlreadyExists(inner) => inner.source(),
             Error::ResponseHeadersPolicyInUse(inner) => inner.source(),
             Error::StagingDistributionInUse(inner) => inner.source(),
@@ -5338,6 +6248,7 @@ impl ::aws_types::request_id::RequestId for Error {
             Self::IllegalUpdate(e) => e.request_id(),
             Self::InconsistentQuantities(e) => e.request_id(),
             Self::InvalidArgument(e) => e.request_id(),
+            Self::InvalidAssociation(e) => e.request_id(),
             Self::InvalidDefaultRootObject(e) => e.request_id(),
             Self::InvalidDomainNameForOriginAccessControl(e) => e.request_id(),
             Self::InvalidErrorCode(e) => e.request_id(),
@@ -5395,6 +6306,7 @@ impl ::aws_types::request_id::RequestId for Error {
             Self::RealtimeLogConfigInUse(e) => e.request_id(),
             Self::RealtimeLogConfigOwnerMismatch(e) => e.request_id(),
             Self::ResourceInUse(e) => e.request_id(),
+            Self::ResourceNotDisabled(e) => e.request_id(),
             Self::ResponseHeadersPolicyAlreadyExists(e) => e.request_id(),
             Self::ResponseHeadersPolicyInUse(e) => e.request_id(),
             Self::StagingDistributionInUse(e) => e.request_id(),

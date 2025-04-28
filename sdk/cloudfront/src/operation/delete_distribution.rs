@@ -271,6 +271,8 @@ pub enum DeleteDistributionError {
     NoSuchDistribution(crate::types::error::NoSuchDistribution),
     /// <p>The precondition in one or more of the request fields evaluated to <code>false</code>.</p>
     PreconditionFailed(crate::types::error::PreconditionFailed),
+    /// <p>Cannot delete this resource because it is in use.</p>
+    ResourceInUse(crate::types::error::ResourceInUse),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \
     variable wildcard pattern and check `.code()`:
@@ -309,6 +311,7 @@ impl DeleteDistributionError {
             Self::InvalidIfMatchVersion(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::NoSuchDistribution(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::PreconditionFailed(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::ResourceInUse(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::Unhandled(e) => &e.meta,
         }
     }
@@ -332,6 +335,10 @@ impl DeleteDistributionError {
     pub fn is_precondition_failed(&self) -> bool {
         matches!(self, Self::PreconditionFailed(_))
     }
+    /// Returns `true` if the error kind is `DeleteDistributionError::ResourceInUse`.
+    pub fn is_resource_in_use(&self) -> bool {
+        matches!(self, Self::ResourceInUse(_))
+    }
 }
 impl ::std::error::Error for DeleteDistributionError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
@@ -341,6 +348,7 @@ impl ::std::error::Error for DeleteDistributionError {
             Self::InvalidIfMatchVersion(_inner) => ::std::option::Option::Some(_inner),
             Self::NoSuchDistribution(_inner) => ::std::option::Option::Some(_inner),
             Self::PreconditionFailed(_inner) => ::std::option::Option::Some(_inner),
+            Self::ResourceInUse(_inner) => ::std::option::Option::Some(_inner),
             Self::Unhandled(_inner) => ::std::option::Option::Some(&*_inner.source),
         }
     }
@@ -353,6 +361,7 @@ impl ::std::fmt::Display for DeleteDistributionError {
             Self::InvalidIfMatchVersion(_inner) => _inner.fmt(f),
             Self::NoSuchDistribution(_inner) => _inner.fmt(f),
             Self::PreconditionFailed(_inner) => _inner.fmt(f),
+            Self::ResourceInUse(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => {
                 if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self) {
                     write!(f, "unhandled error ({code})")
@@ -379,6 +388,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for DeleteDistrib
             Self::InvalidIfMatchVersion(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::NoSuchDistribution(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::PreconditionFailed(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::ResourceInUse(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::Unhandled(_inner) => &_inner.meta,
         }
     }

@@ -14,6 +14,7 @@
 /// match validationmethod {
 ///     ValidationMethod::Dns => { /* ... */ },
 ///     ValidationMethod::Email => { /* ... */ },
+///     ValidationMethod::Http => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -46,6 +47,8 @@ pub enum ValidationMethod {
     Dns,
     #[allow(missing_docs)] // documentation missing in model
     Email,
+    #[allow(missing_docs)] // documentation missing in model
+    Http,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -55,6 +58,7 @@ impl ::std::convert::From<&str> for ValidationMethod {
         match s {
             "DNS" => ValidationMethod::Dns,
             "EMAIL" => ValidationMethod::Email,
+            "HTTP" => ValidationMethod::Http,
             other => ValidationMethod::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -72,12 +76,13 @@ impl ValidationMethod {
         match self {
             ValidationMethod::Dns => "DNS",
             ValidationMethod::Email => "EMAIL",
+            ValidationMethod::Http => "HTTP",
             ValidationMethod::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["DNS", "EMAIL"]
+        &["DNS", "EMAIL", "HTTP"]
     }
 }
 impl ::std::convert::AsRef<str> for ValidationMethod {
@@ -102,6 +107,7 @@ impl ::std::fmt::Display for ValidationMethod {
         match self {
             ValidationMethod::Dns => write!(f, "DNS"),
             ValidationMethod::Email => write!(f, "EMAIL"),
+            ValidationMethod::Http => write!(f, "HTTP"),
             ValidationMethod::Unknown(value) => write!(f, "{}", value),
         }
     }

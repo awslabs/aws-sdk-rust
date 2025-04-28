@@ -74,6 +74,10 @@ pub struct DistributionConfig {
     pub staging: ::std::option::Option<bool>,
     /// <p>ID of the Anycast static IP list that is associated with the distribution.</p>
     pub anycast_ip_list_id: ::std::option::Option<::std::string::String>,
+    /// <p>A distribution tenant configuration.</p>
+    pub tenant_config: ::std::option::Option<crate::types::TenantConfig>,
+    /// <p>The connection mode to filter distributions by.</p>
+    pub connection_mode: ::std::option::Option<crate::types::ConnectionMode>,
 }
 impl DistributionConfig {
     /// <p>A unique value (for example, a date-time stamp) that ensures that the request can't be replayed.</p>
@@ -188,6 +192,14 @@ impl DistributionConfig {
     pub fn anycast_ip_list_id(&self) -> ::std::option::Option<&str> {
         self.anycast_ip_list_id.as_deref()
     }
+    /// <p>A distribution tenant configuration.</p>
+    pub fn tenant_config(&self) -> ::std::option::Option<&crate::types::TenantConfig> {
+        self.tenant_config.as_ref()
+    }
+    /// <p>The connection mode to filter distributions by.</p>
+    pub fn connection_mode(&self) -> ::std::option::Option<&crate::types::ConnectionMode> {
+        self.connection_mode.as_ref()
+    }
 }
 impl ::std::fmt::Debug for DistributionConfig {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -212,6 +224,8 @@ impl ::std::fmt::Debug for DistributionConfig {
         formatter.field("continuous_deployment_policy_id", &self.continuous_deployment_policy_id);
         formatter.field("staging", &self.staging);
         formatter.field("anycast_ip_list_id", &self.anycast_ip_list_id);
+        formatter.field("tenant_config", &self.tenant_config);
+        formatter.field("connection_mode", &self.connection_mode);
         formatter.finish()
     }
 }
@@ -246,6 +260,8 @@ pub struct DistributionConfigBuilder {
     pub(crate) continuous_deployment_policy_id: ::std::option::Option<::std::string::String>,
     pub(crate) staging: ::std::option::Option<bool>,
     pub(crate) anycast_ip_list_id: ::std::option::Option<::std::string::String>,
+    pub(crate) tenant_config: ::std::option::Option<crate::types::TenantConfig>,
+    pub(crate) connection_mode: ::std::option::Option<crate::types::ConnectionMode>,
 }
 impl DistributionConfigBuilder {
     /// <p>A unique value (for example, a date-time stamp) that ensures that the request can't be replayed.</p>
@@ -623,6 +639,34 @@ impl DistributionConfigBuilder {
     pub fn get_anycast_ip_list_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.anycast_ip_list_id
     }
+    /// <p>A distribution tenant configuration.</p>
+    pub fn tenant_config(mut self, input: crate::types::TenantConfig) -> Self {
+        self.tenant_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>A distribution tenant configuration.</p>
+    pub fn set_tenant_config(mut self, input: ::std::option::Option<crate::types::TenantConfig>) -> Self {
+        self.tenant_config = input;
+        self
+    }
+    /// <p>A distribution tenant configuration.</p>
+    pub fn get_tenant_config(&self) -> &::std::option::Option<crate::types::TenantConfig> {
+        &self.tenant_config
+    }
+    /// <p>The connection mode to filter distributions by.</p>
+    pub fn connection_mode(mut self, input: crate::types::ConnectionMode) -> Self {
+        self.connection_mode = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The connection mode to filter distributions by.</p>
+    pub fn set_connection_mode(mut self, input: ::std::option::Option<crate::types::ConnectionMode>) -> Self {
+        self.connection_mode = input;
+        self
+    }
+    /// <p>The connection mode to filter distributions by.</p>
+    pub fn get_connection_mode(&self) -> &::std::option::Option<crate::types::ConnectionMode> {
+        &self.connection_mode
+    }
     /// Consumes the builder and constructs a [`DistributionConfig`](crate::types::DistributionConfig).
     /// This method will fail if any of the following fields are not set:
     /// - [`caller_reference`](crate::types::builders::DistributionConfigBuilder::caller_reference)
@@ -665,6 +709,8 @@ impl DistributionConfigBuilder {
             continuous_deployment_policy_id: self.continuous_deployment_policy_id,
             staging: self.staging,
             anycast_ip_list_id: self.anycast_ip_list_id,
+            tenant_config: self.tenant_config,
+            connection_mode: self.connection_mode,
         })
     }
 }
@@ -691,6 +737,8 @@ impl ::std::fmt::Debug for DistributionConfigBuilder {
         formatter.field("continuous_deployment_policy_id", &self.continuous_deployment_policy_id);
         formatter.field("staging", &self.staging);
         formatter.field("anycast_ip_list_id", &self.anycast_ip_list_id);
+        formatter.field("tenant_config", &self.tenant_config);
+        formatter.field("connection_mode", &self.connection_mode);
         formatter.finish()
     }
 }

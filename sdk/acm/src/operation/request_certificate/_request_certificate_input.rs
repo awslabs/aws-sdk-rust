@@ -46,6 +46,8 @@ pub struct RequestCertificateInput {
     /// </note>
     /// <p>Default: RSA_2048</p>
     pub key_algorithm: ::std::option::Option<crate::types::KeyAlgorithm>,
+    /// <p>Identifies the Amazon Web Services service that manages the certificate issued by ACM.</p>
+    pub managed_by: ::std::option::Option<crate::types::CertificateManagedBy>,
 }
 impl RequestCertificateInput {
     /// <p>Fully qualified domain name (FQDN), such as www.example.com, that you want to secure with an ACM certificate. Use an asterisk (*) to create a wildcard certificate that protects several sites in the same domain. For example, *.example.com protects www.example.com, site.example.com, and images.example.com.</p>
@@ -115,6 +117,10 @@ impl RequestCertificateInput {
     pub fn key_algorithm(&self) -> ::std::option::Option<&crate::types::KeyAlgorithm> {
         self.key_algorithm.as_ref()
     }
+    /// <p>Identifies the Amazon Web Services service that manages the certificate issued by ACM.</p>
+    pub fn managed_by(&self) -> ::std::option::Option<&crate::types::CertificateManagedBy> {
+        self.managed_by.as_ref()
+    }
 }
 impl RequestCertificateInput {
     /// Creates a new builder-style object to manufacture [`RequestCertificateInput`](crate::operation::request_certificate::RequestCertificateInput).
@@ -136,6 +142,7 @@ pub struct RequestCertificateInputBuilder {
     pub(crate) certificate_authority_arn: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     pub(crate) key_algorithm: ::std::option::Option<crate::types::KeyAlgorithm>,
+    pub(crate) managed_by: ::std::option::Option<crate::types::CertificateManagedBy>,
 }
 impl RequestCertificateInputBuilder {
     /// <p>Fully qualified domain name (FQDN), such as www.example.com, that you want to secure with an ACM certificate. Use an asterisk (*) to create a wildcard certificate that protects several sites in the same domain. For example, *.example.com protects www.example.com, site.example.com, and images.example.com.</p>
@@ -358,6 +365,20 @@ impl RequestCertificateInputBuilder {
     pub fn get_key_algorithm(&self) -> &::std::option::Option<crate::types::KeyAlgorithm> {
         &self.key_algorithm
     }
+    /// <p>Identifies the Amazon Web Services service that manages the certificate issued by ACM.</p>
+    pub fn managed_by(mut self, input: crate::types::CertificateManagedBy) -> Self {
+        self.managed_by = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Identifies the Amazon Web Services service that manages the certificate issued by ACM.</p>
+    pub fn set_managed_by(mut self, input: ::std::option::Option<crate::types::CertificateManagedBy>) -> Self {
+        self.managed_by = input;
+        self
+    }
+    /// <p>Identifies the Amazon Web Services service that manages the certificate issued by ACM.</p>
+    pub fn get_managed_by(&self) -> &::std::option::Option<crate::types::CertificateManagedBy> {
+        &self.managed_by
+    }
     /// Consumes the builder and constructs a [`RequestCertificateInput`](crate::operation::request_certificate::RequestCertificateInput).
     pub fn build(
         self,
@@ -372,6 +393,7 @@ impl RequestCertificateInputBuilder {
             certificate_authority_arn: self.certificate_authority_arn,
             tags: self.tags,
             key_algorithm: self.key_algorithm,
+            managed_by: self.managed_by,
         })
     }
 }

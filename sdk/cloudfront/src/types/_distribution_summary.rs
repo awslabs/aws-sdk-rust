@@ -8,6 +8,8 @@ pub struct DistributionSummary {
     pub id: ::std::string::String,
     /// <p>The ARN (Amazon Resource Name) for the distribution. For example: <code>arn:aws:cloudfront::123456789012:distribution/EDFDVBD632BHDS5</code>, where <code>123456789012</code> is your Amazon Web Services account ID.</p>
     pub arn: ::std::string::String,
+    /// <p>The current version of the distribution.</p>
+    pub e_tag: ::std::option::Option<::std::string::String>,
     /// <p>The current status of the distribution. When the status is <code>Deployed</code>, the distribution's information is propagated to all CloudFront edge locations.</p>
     pub status: ::std::string::String,
     /// <p>The date and time the distribution was last modified.</p>
@@ -47,6 +49,8 @@ pub struct DistributionSummary {
     pub alias_icp_recordals: ::std::option::Option<::std::vec::Vec<crate::types::AliasIcpRecordal>>,
     /// <p>A Boolean that indicates whether this is a staging distribution. When this value is <code>true</code>, this is a staging distribution. When this value is <code>false</code>, this is not a staging distribution.</p>
     pub staging: bool,
+    /// <p>The connection mode to filter distributions by.</p>
+    pub connection_mode: ::std::option::Option<crate::types::ConnectionMode>,
     /// <p>ID of the Anycast static IP list that is associated with the distribution.</p>
     pub anycast_ip_list_id: ::std::option::Option<::std::string::String>,
 }
@@ -60,6 +64,10 @@ impl DistributionSummary {
     pub fn arn(&self) -> &str {
         use std::ops::Deref;
         self.arn.deref()
+    }
+    /// <p>The current version of the distribution.</p>
+    pub fn e_tag(&self) -> ::std::option::Option<&str> {
+        self.e_tag.as_deref()
     }
     /// <p>The current status of the distribution. When the status is <code>Deployed</code>, the distribution's information is propagated to all CloudFront edge locations.</p>
     pub fn status(&self) -> &str {
@@ -144,6 +152,10 @@ impl DistributionSummary {
     pub fn staging(&self) -> bool {
         self.staging
     }
+    /// <p>The connection mode to filter distributions by.</p>
+    pub fn connection_mode(&self) -> ::std::option::Option<&crate::types::ConnectionMode> {
+        self.connection_mode.as_ref()
+    }
     /// <p>ID of the Anycast static IP list that is associated with the distribution.</p>
     pub fn anycast_ip_list_id(&self) -> ::std::option::Option<&str> {
         self.anycast_ip_list_id.as_deref()
@@ -162,6 +174,7 @@ impl DistributionSummary {
 pub struct DistributionSummaryBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
+    pub(crate) e_tag: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<::std::string::String>,
     pub(crate) last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
@@ -181,6 +194,7 @@ pub struct DistributionSummaryBuilder {
     pub(crate) is_ipv6_enabled: ::std::option::Option<bool>,
     pub(crate) alias_icp_recordals: ::std::option::Option<::std::vec::Vec<crate::types::AliasIcpRecordal>>,
     pub(crate) staging: ::std::option::Option<bool>,
+    pub(crate) connection_mode: ::std::option::Option<crate::types::ConnectionMode>,
     pub(crate) anycast_ip_list_id: ::std::option::Option<::std::string::String>,
 }
 impl DistributionSummaryBuilder {
@@ -213,6 +227,20 @@ impl DistributionSummaryBuilder {
     /// <p>The ARN (Amazon Resource Name) for the distribution. For example: <code>arn:aws:cloudfront::123456789012:distribution/EDFDVBD632BHDS5</code>, where <code>123456789012</code> is your Amazon Web Services account ID.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.arn
+    }
+    /// <p>The current version of the distribution.</p>
+    pub fn e_tag(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.e_tag = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The current version of the distribution.</p>
+    pub fn set_e_tag(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.e_tag = input;
+        self
+    }
+    /// <p>The current version of the distribution.</p>
+    pub fn get_e_tag(&self) -> &::std::option::Option<::std::string::String> {
+        &self.e_tag
     }
     /// <p>The current status of the distribution. When the status is <code>Deployed</code>, the distribution's information is propagated to all CloudFront edge locations.</p>
     /// This field is required.
@@ -506,6 +534,20 @@ impl DistributionSummaryBuilder {
     pub fn get_staging(&self) -> &::std::option::Option<bool> {
         &self.staging
     }
+    /// <p>The connection mode to filter distributions by.</p>
+    pub fn connection_mode(mut self, input: crate::types::ConnectionMode) -> Self {
+        self.connection_mode = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The connection mode to filter distributions by.</p>
+    pub fn set_connection_mode(mut self, input: ::std::option::Option<crate::types::ConnectionMode>) -> Self {
+        self.connection_mode = input;
+        self
+    }
+    /// <p>The connection mode to filter distributions by.</p>
+    pub fn get_connection_mode(&self) -> &::std::option::Option<crate::types::ConnectionMode> {
+        &self.connection_mode
+    }
     /// <p>ID of the Anycast static IP list that is associated with the distribution.</p>
     pub fn anycast_ip_list_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.anycast_ip_list_id = ::std::option::Option::Some(input.into());
@@ -548,6 +590,7 @@ impl DistributionSummaryBuilder {
                     "arn was not specified but it is required when building DistributionSummary",
                 )
             })?,
+            e_tag: self.e_tag,
             status: self.status.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "status",
@@ -617,6 +660,7 @@ impl DistributionSummaryBuilder {
                     "staging was not specified but it is required when building DistributionSummary",
                 )
             })?,
+            connection_mode: self.connection_mode,
             anycast_ip_list_id: self.anycast_ip_list_id,
         })
     }

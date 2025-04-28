@@ -18,6 +18,8 @@ pub struct Distribution {
     pub s3_export_configuration: ::std::option::Option<crate::types::S3ExportConfiguration>,
     /// <p>The Windows faster-launching configurations to use for AMI distribution.</p>
     pub fast_launch_configurations: ::std::option::Option<::std::vec::Vec<crate::types::FastLaunchConfiguration>>,
+    /// <p>Contains settings to update Amazon Web Services Systems Manager (SSM) Parameter Store Parameters with output AMI IDs from the build by target Region.</p>
+    pub ssm_parameter_configurations: ::std::option::Option<::std::vec::Vec<crate::types::SsmParameterConfiguration>>,
 }
 impl Distribution {
     /// <p>The target Region.</p>
@@ -55,6 +57,12 @@ impl Distribution {
     pub fn fast_launch_configurations(&self) -> &[crate::types::FastLaunchConfiguration] {
         self.fast_launch_configurations.as_deref().unwrap_or_default()
     }
+    /// <p>Contains settings to update Amazon Web Services Systems Manager (SSM) Parameter Store Parameters with output AMI IDs from the build by target Region.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ssm_parameter_configurations.is_none()`.
+    pub fn ssm_parameter_configurations(&self) -> &[crate::types::SsmParameterConfiguration] {
+        self.ssm_parameter_configurations.as_deref().unwrap_or_default()
+    }
 }
 impl Distribution {
     /// Creates a new builder-style object to manufacture [`Distribution`](crate::types::Distribution).
@@ -74,6 +82,7 @@ pub struct DistributionBuilder {
     pub(crate) launch_template_configurations: ::std::option::Option<::std::vec::Vec<crate::types::LaunchTemplateConfiguration>>,
     pub(crate) s3_export_configuration: ::std::option::Option<crate::types::S3ExportConfiguration>,
     pub(crate) fast_launch_configurations: ::std::option::Option<::std::vec::Vec<crate::types::FastLaunchConfiguration>>,
+    pub(crate) ssm_parameter_configurations: ::std::option::Option<::std::vec::Vec<crate::types::SsmParameterConfiguration>>,
 }
 impl DistributionBuilder {
     /// <p>The target Region.</p>
@@ -199,6 +208,29 @@ impl DistributionBuilder {
     pub fn get_fast_launch_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FastLaunchConfiguration>> {
         &self.fast_launch_configurations
     }
+    /// Appends an item to `ssm_parameter_configurations`.
+    ///
+    /// To override the contents of this collection use [`set_ssm_parameter_configurations`](Self::set_ssm_parameter_configurations).
+    ///
+    /// <p>Contains settings to update Amazon Web Services Systems Manager (SSM) Parameter Store Parameters with output AMI IDs from the build by target Region.</p>
+    pub fn ssm_parameter_configurations(mut self, input: crate::types::SsmParameterConfiguration) -> Self {
+        let mut v = self.ssm_parameter_configurations.unwrap_or_default();
+        v.push(input);
+        self.ssm_parameter_configurations = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Contains settings to update Amazon Web Services Systems Manager (SSM) Parameter Store Parameters with output AMI IDs from the build by target Region.</p>
+    pub fn set_ssm_parameter_configurations(
+        mut self,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::SsmParameterConfiguration>>,
+    ) -> Self {
+        self.ssm_parameter_configurations = input;
+        self
+    }
+    /// <p>Contains settings to update Amazon Web Services Systems Manager (SSM) Parameter Store Parameters with output AMI IDs from the build by target Region.</p>
+    pub fn get_ssm_parameter_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SsmParameterConfiguration>> {
+        &self.ssm_parameter_configurations
+    }
     /// Consumes the builder and constructs a [`Distribution`](crate::types::Distribution).
     /// This method will fail if any of the following fields are not set:
     /// - [`region`](crate::types::builders::DistributionBuilder::region)
@@ -216,6 +248,7 @@ impl DistributionBuilder {
             launch_template_configurations: self.launch_template_configurations,
             s3_export_configuration: self.s3_export_configuration,
             fast_launch_configurations: self.fast_launch_configurations,
+            ssm_parameter_configurations: self.ssm_parameter_configurations,
         })
     }
 }

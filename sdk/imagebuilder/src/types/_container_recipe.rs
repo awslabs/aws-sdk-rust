@@ -60,7 +60,7 @@ pub struct ContainerRecipe {
     pub kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>A flag that indicates if the target container is encrypted.</p>
     pub encrypted: ::std::option::Option<bool>,
-    /// <p>The base image for the container recipe.</p>
+    /// <p>The base image for customizations specified in the container recipe. This can contain an Image Builder image resource ARN or a container image URI, for example <code>amazonlinux:latest</code>.</p>
     pub parent_image: ::std::option::Option<::std::string::String>,
     /// <p>The date when this container recipe was created.</p>
     pub date_created: ::std::option::Option<::std::string::String>,
@@ -154,7 +154,7 @@ impl ContainerRecipe {
     pub fn encrypted(&self) -> ::std::option::Option<bool> {
         self.encrypted
     }
-    /// <p>The base image for the container recipe.</p>
+    /// <p>The base image for customizations specified in the container recipe. This can contain an Image Builder image resource ARN or a container image URI, for example <code>amazonlinux:latest</code>.</p>
     pub fn parent_image(&self) -> ::std::option::Option<&str> {
         self.parent_image.as_deref()
     }
@@ -475,17 +475,17 @@ impl ContainerRecipeBuilder {
     pub fn get_encrypted(&self) -> &::std::option::Option<bool> {
         &self.encrypted
     }
-    /// <p>The base image for the container recipe.</p>
+    /// <p>The base image for customizations specified in the container recipe. This can contain an Image Builder image resource ARN or a container image URI, for example <code>amazonlinux:latest</code>.</p>
     pub fn parent_image(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.parent_image = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The base image for the container recipe.</p>
+    /// <p>The base image for customizations specified in the container recipe. This can contain an Image Builder image resource ARN or a container image URI, for example <code>amazonlinux:latest</code>.</p>
     pub fn set_parent_image(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.parent_image = input;
         self
     }
-    /// <p>The base image for the container recipe.</p>
+    /// <p>The base image for customizations specified in the container recipe. This can contain an Image Builder image resource ARN or a container image URI, for example <code>amazonlinux:latest</code>.</p>
     pub fn get_parent_image(&self) -> &::std::option::Option<::std::string::String> {
         &self.parent_image
     }

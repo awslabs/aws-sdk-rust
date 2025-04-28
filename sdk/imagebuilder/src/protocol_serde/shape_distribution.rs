@@ -57,6 +57,18 @@ pub fn ser_distribution(
         }
         array_15.finish();
     }
+    if let Some(var_18) = &input.ssm_parameter_configurations {
+        let mut array_19 = object.key("ssmParameterConfigurations").start_array();
+        for item_20 in var_18 {
+            {
+                #[allow(unused_mut)]
+                let mut object_21 = array_19.value().start_object();
+                crate::protocol_serde::shape_ssm_parameter_configuration::ser_ssm_parameter_configuration(&mut object_21, item_20)?;
+                object_21.finish();
+            }
+        }
+        array_19.finish();
+    }
     Ok(())
 }
 
@@ -110,6 +122,11 @@ where
                         "fastLaunchConfigurations" => {
                             builder = builder.set_fast_launch_configurations(
                                 crate::protocol_serde::shape_fast_launch_configuration_list::de_fast_launch_configuration_list(tokens)?,
+                            );
+                        }
+                        "ssmParameterConfigurations" => {
+                            builder = builder.set_ssm_parameter_configurations(
+                                crate::protocol_serde::shape_ssm_parameter_configuration_list::de_ssm_parameter_configuration_list(tokens)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

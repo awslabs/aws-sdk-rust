@@ -4,6 +4,12 @@ pub use ::aws_types::request_id::RequestId;
 /// Types for the `AssociateAlias` operation.
 pub mod associate_alias;
 
+/// Types for the `AssociateDistributionTenantWebACL` operation.
+pub mod associate_distribution_tenant_web_acl;
+
+/// Types for the `AssociateDistributionWebACL` operation.
+pub mod associate_distribution_web_acl;
+
 /// Types for the `CopyDistribution` operation.
 pub mod copy_distribution;
 
@@ -16,11 +22,17 @@ pub mod create_cache_policy;
 /// Types for the `CreateCloudFrontOriginAccessIdentity` operation.
 pub mod create_cloud_front_origin_access_identity;
 
+/// Types for the `CreateConnectionGroup` operation.
+pub mod create_connection_group;
+
 /// Types for the `CreateContinuousDeploymentPolicy` operation.
 pub mod create_continuous_deployment_policy;
 
 /// Types for the `CreateDistribution` operation.
 pub mod create_distribution;
+
+/// Types for the `CreateDistributionTenant` operation.
+pub mod create_distribution_tenant;
 
 /// Types for the `CreateDistributionWithTags` operation.
 pub mod create_distribution_with_tags;
@@ -36,6 +48,9 @@ pub mod create_function;
 
 /// Types for the `CreateInvalidation` operation.
 pub mod create_invalidation;
+
+/// Types for the `CreateInvalidationForDistributionTenant` operation.
+pub mod create_invalidation_for_distribution_tenant;
 
 /// Types for the `CreateKeyGroup` operation.
 pub mod create_key_group;
@@ -79,11 +94,17 @@ pub mod delete_cache_policy;
 /// Types for the `DeleteCloudFrontOriginAccessIdentity` operation.
 pub mod delete_cloud_front_origin_access_identity;
 
+/// Types for the `DeleteConnectionGroup` operation.
+pub mod delete_connection_group;
+
 /// Types for the `DeleteContinuousDeploymentPolicy` operation.
 pub mod delete_continuous_deployment_policy;
 
 /// Types for the `DeleteDistribution` operation.
 pub mod delete_distribution;
+
+/// Types for the `DeleteDistributionTenant` operation.
+pub mod delete_distribution_tenant;
 
 /// Types for the `DeleteFieldLevelEncryptionConfig` operation.
 pub mod delete_field_level_encryption_config;
@@ -130,6 +151,12 @@ pub mod describe_function;
 /// Types for the `DescribeKeyValueStore` operation.
 pub mod describe_key_value_store;
 
+/// Types for the `DisassociateDistributionTenantWebACL` operation.
+pub mod disassociate_distribution_tenant_web_acl;
+
+/// Types for the `DisassociateDistributionWebACL` operation.
+pub mod disassociate_distribution_web_acl;
+
 /// Types for the `GetAnycastIpList` operation.
 pub mod get_anycast_ip_list;
 
@@ -145,6 +172,12 @@ pub mod get_cloud_front_origin_access_identity;
 /// Types for the `GetCloudFrontOriginAccessIdentityConfig` operation.
 pub mod get_cloud_front_origin_access_identity_config;
 
+/// Types for the `GetConnectionGroup` operation.
+pub mod get_connection_group;
+
+/// Types for the `GetConnectionGroupByRoutingEndpoint` operation.
+pub mod get_connection_group_by_routing_endpoint;
+
 /// Types for the `GetContinuousDeploymentPolicy` operation.
 pub mod get_continuous_deployment_policy;
 
@@ -156,6 +189,12 @@ pub mod get_distribution;
 
 /// Types for the `GetDistributionConfig` operation.
 pub mod get_distribution_config;
+
+/// Types for the `GetDistributionTenant` operation.
+pub mod get_distribution_tenant;
+
+/// Types for the `GetDistributionTenantByDomain` operation.
+pub mod get_distribution_tenant_by_domain;
 
 /// Types for the `GetFieldLevelEncryption` operation.
 pub mod get_field_level_encryption;
@@ -175,11 +214,17 @@ pub mod get_function;
 /// Types for the `GetInvalidation` operation.
 pub mod get_invalidation;
 
+/// Types for the `GetInvalidationForDistributionTenant` operation.
+pub mod get_invalidation_for_distribution_tenant;
+
 /// Types for the `GetKeyGroup` operation.
 pub mod get_key_group;
 
 /// Types for the `GetKeyGroupConfig` operation.
 pub mod get_key_group_config;
+
+/// Types for the `GetManagedCertificateDetails` operation.
+pub mod get_managed_certificate_details;
 
 /// Types for the `GetMonitoringSubscription` operation.
 pub mod get_monitoring_subscription;
@@ -232,8 +277,17 @@ pub mod list_cloud_front_origin_access_identities;
 /// Types for the `ListConflictingAliases` operation.
 pub mod list_conflicting_aliases;
 
+/// Types for the `ListConnectionGroups` operation.
+pub mod list_connection_groups;
+
 /// Types for the `ListContinuousDeploymentPolicies` operation.
 pub mod list_continuous_deployment_policies;
+
+/// Types for the `ListDistributionTenants` operation.
+pub mod list_distribution_tenants;
+
+/// Types for the `ListDistributionTenantsByCustomization` operation.
+pub mod list_distribution_tenants_by_customization;
 
 /// Types for the `ListDistributions` operation.
 pub mod list_distributions;
@@ -243,6 +297,9 @@ pub mod list_distributions_by_anycast_ip_list_id;
 
 /// Types for the `ListDistributionsByCachePolicyId` operation.
 pub mod list_distributions_by_cache_policy_id;
+
+/// Types for the `ListDistributionsByConnectionMode` operation.
+pub mod list_distributions_by_connection_mode;
 
 /// Types for the `ListDistributionsByKeyGroup` operation.
 pub mod list_distributions_by_key_group;
@@ -262,6 +319,9 @@ pub mod list_distributions_by_vpc_origin_id;
 /// Types for the `ListDistributionsByWebACLId` operation.
 pub mod list_distributions_by_web_acl_id;
 
+/// Types for the `ListDomainConflicts` operation.
+pub mod list_domain_conflicts;
+
 /// Types for the `ListFieldLevelEncryptionConfigs` operation.
 pub mod list_field_level_encryption_configs;
 
@@ -273,6 +333,9 @@ pub mod list_functions;
 
 /// Types for the `ListInvalidations` operation.
 pub mod list_invalidations;
+
+/// Types for the `ListInvalidationsForDistributionTenant` operation.
+pub mod list_invalidations_for_distribution_tenant;
 
 /// Types for the `ListKeyGroups` operation.
 pub mod list_key_groups;
@@ -322,14 +385,23 @@ pub mod update_cache_policy;
 /// Types for the `UpdateCloudFrontOriginAccessIdentity` operation.
 pub mod update_cloud_front_origin_access_identity;
 
+/// Types for the `UpdateConnectionGroup` operation.
+pub mod update_connection_group;
+
 /// Types for the `UpdateContinuousDeploymentPolicy` operation.
 pub mod update_continuous_deployment_policy;
 
 /// Types for the `UpdateDistribution` operation.
 pub mod update_distribution;
 
+/// Types for the `UpdateDistributionTenant` operation.
+pub mod update_distribution_tenant;
+
 /// Types for the `UpdateDistributionWithStagingConfig` operation.
 pub mod update_distribution_with_staging_config;
+
+/// Types for the `UpdateDomainAssociation` operation.
+pub mod update_domain_association;
 
 /// Types for the `UpdateFieldLevelEncryptionConfig` operation.
 pub mod update_field_level_encryption_config;
@@ -366,3 +438,6 @@ pub mod update_streaming_distribution;
 
 /// Types for the `UpdateVpcOrigin` operation.
 pub mod update_vpc_origin;
+
+/// Types for the `VerifyDnsConfiguration` operation.
+pub mod verify_dns_configuration;

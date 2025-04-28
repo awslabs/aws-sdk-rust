@@ -57,5 +57,8 @@ pub fn ser_request_certificate_input_input(
     if let Some(var_18) = &input.key_algorithm {
         object.key("KeyAlgorithm").string(var_18.as_str());
     }
+    if let Some(var_19) = &input.managed_by {
+        object.key("ManagedBy").string(var_19.as_str());
+    }
     Ok(())
 }

@@ -11,9 +11,9 @@ pub struct CertificateSummary {
     /// <p>Fully qualified domain name (FQDN), such as www.example.com or example.com, for the certificate.</p>
     pub domain_name: ::std::option::Option<::std::string::String>,
     /// <p>One or more domain names (subject alternative names) included in the certificate. This list contains the domain names that are bound to the public key that is contained in the certificate. The subject alternative names include the canonical domain name (CN) of the certificate and additional domain names that can be used to connect to the website.</p>
-    /// <p>When called by <code>ListCertificates</code>, this parameter will only return the first 100 subject alternative names included in the certificate. To display the full list of subject alternative names, use <code>DescribeCertificate</code>.</p>
+    /// <p>When called by <a href="https://docs.aws.amazon.com/acm/latestAPIReference/API_ListCertificates.html">ListCertificates</a>, this parameter will only return the first 100 subject alternative names included in the certificate. To display the full list of subject alternative names, use <a href="https://docs.aws.amazon.com/acm/latestAPIReference/API_DescribeCertificate.html">DescribeCertificate</a>.</p>
     pub subject_alternative_name_summaries: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>When called by <code>ListCertificates</code>, indicates whether the full list of subject alternative names has been included in the response. If false, the response includes all of the subject alternative names included in the certificate. If true, the response only includes the first 100 subject alternative names included in the certificate. To display the full list of subject alternative names, use <code>DescribeCertificate</code>.</p>
+    /// <p>When called by <a href="https://docs.aws.amazon.com/acm/latestAPIReference/API_ListCertificates.html">ListCertificates</a>, indicates whether the full list of subject alternative names has been included in the response. If false, the response includes all of the subject alternative names included in the certificate. If true, the response only includes the first 100 subject alternative names included in the certificate. To display the full list of subject alternative names, use <a href="https://docs.aws.amazon.com/acm/latestAPIReference/API_DescribeCertificate.html">DescribeCertificate</a>.</p>
     pub has_additional_subject_alternative_names: ::std::option::Option<bool>,
     /// <p>The status of the certificate.</p>
     /// <p>A certificate enters status PENDING_VALIDATION upon being requested, unless it fails for any of the reasons given in the troubleshooting topic <a href="https://docs.aws.amazon.com/acm/latest/userguide/troubleshooting-failed.html">Certificate request fails</a>. ACM makes repeated attempts to validate a certificate for 72 hours and then times out. If a certificate shows status FAILED or VALIDATION_TIMED_OUT, delete the request, correct the issue with <a href="https://docs.aws.amazon.com/acm/latest/userguide/dns-validation.html">DNS validation</a> or <a href="https://docs.aws.amazon.com/acm/latest/userguide/email-validation.html">Email validation</a>, and try again. If validation succeeds, the certificate enters status ISSUED.</p>
@@ -44,6 +44,8 @@ pub struct CertificateSummary {
     pub imported_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time at which the certificate was revoked. This value exists only when the certificate status is <code>REVOKED</code>.</p>
     pub revoked_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>Identifies the Amazon Web Services service that manages the certificate issued by ACM.</p>
+    pub managed_by: ::std::option::Option<crate::types::CertificateManagedBy>,
 }
 impl CertificateSummary {
     /// <p>Amazon Resource Name (ARN) of the certificate. This is of the form:</p>
@@ -57,13 +59,13 @@ impl CertificateSummary {
         self.domain_name.as_deref()
     }
     /// <p>One or more domain names (subject alternative names) included in the certificate. This list contains the domain names that are bound to the public key that is contained in the certificate. The subject alternative names include the canonical domain name (CN) of the certificate and additional domain names that can be used to connect to the website.</p>
-    /// <p>When called by <code>ListCertificates</code>, this parameter will only return the first 100 subject alternative names included in the certificate. To display the full list of subject alternative names, use <code>DescribeCertificate</code>.</p>
+    /// <p>When called by <a href="https://docs.aws.amazon.com/acm/latestAPIReference/API_ListCertificates.html">ListCertificates</a>, this parameter will only return the first 100 subject alternative names included in the certificate. To display the full list of subject alternative names, use <a href="https://docs.aws.amazon.com/acm/latestAPIReference/API_DescribeCertificate.html">DescribeCertificate</a>.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.subject_alternative_name_summaries.is_none()`.
     pub fn subject_alternative_name_summaries(&self) -> &[::std::string::String] {
         self.subject_alternative_name_summaries.as_deref().unwrap_or_default()
     }
-    /// <p>When called by <code>ListCertificates</code>, indicates whether the full list of subject alternative names has been included in the response. If false, the response includes all of the subject alternative names included in the certificate. If true, the response only includes the first 100 subject alternative names included in the certificate. To display the full list of subject alternative names, use <code>DescribeCertificate</code>.</p>
+    /// <p>When called by <a href="https://docs.aws.amazon.com/acm/latestAPIReference/API_ListCertificates.html">ListCertificates</a>, indicates whether the full list of subject alternative names has been included in the response. If false, the response includes all of the subject alternative names included in the certificate. If true, the response only includes the first 100 subject alternative names included in the certificate. To display the full list of subject alternative names, use <a href="https://docs.aws.amazon.com/acm/latestAPIReference/API_DescribeCertificate.html">DescribeCertificate</a>.</p>
     pub fn has_additional_subject_alternative_names(&self) -> ::std::option::Option<bool> {
         self.has_additional_subject_alternative_names
     }
@@ -128,6 +130,10 @@ impl CertificateSummary {
     pub fn revoked_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.revoked_at.as_ref()
     }
+    /// <p>Identifies the Amazon Web Services service that manages the certificate issued by ACM.</p>
+    pub fn managed_by(&self) -> ::std::option::Option<&crate::types::CertificateManagedBy> {
+        self.managed_by.as_ref()
+    }
 }
 impl CertificateSummary {
     /// Creates a new builder-style object to manufacture [`CertificateSummary`](crate::types::CertificateSummary).
@@ -158,6 +164,7 @@ pub struct CertificateSummaryBuilder {
     pub(crate) issued_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) imported_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) revoked_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) managed_by: ::std::option::Option<crate::types::CertificateManagedBy>,
 }
 impl CertificateSummaryBuilder {
     /// <p>Amazon Resource Name (ARN) of the certificate. This is of the form:</p>
@@ -199,7 +206,7 @@ impl CertificateSummaryBuilder {
     /// To override the contents of this collection use [`set_subject_alternative_name_summaries`](Self::set_subject_alternative_name_summaries).
     ///
     /// <p>One or more domain names (subject alternative names) included in the certificate. This list contains the domain names that are bound to the public key that is contained in the certificate. The subject alternative names include the canonical domain name (CN) of the certificate and additional domain names that can be used to connect to the website.</p>
-    /// <p>When called by <code>ListCertificates</code>, this parameter will only return the first 100 subject alternative names included in the certificate. To display the full list of subject alternative names, use <code>DescribeCertificate</code>.</p>
+    /// <p>When called by <a href="https://docs.aws.amazon.com/acm/latestAPIReference/API_ListCertificates.html">ListCertificates</a>, this parameter will only return the first 100 subject alternative names included in the certificate. To display the full list of subject alternative names, use <a href="https://docs.aws.amazon.com/acm/latestAPIReference/API_DescribeCertificate.html">DescribeCertificate</a>.</p>
     pub fn subject_alternative_name_summaries(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.subject_alternative_name_summaries.unwrap_or_default();
         v.push(input.into());
@@ -207,27 +214,27 @@ impl CertificateSummaryBuilder {
         self
     }
     /// <p>One or more domain names (subject alternative names) included in the certificate. This list contains the domain names that are bound to the public key that is contained in the certificate. The subject alternative names include the canonical domain name (CN) of the certificate and additional domain names that can be used to connect to the website.</p>
-    /// <p>When called by <code>ListCertificates</code>, this parameter will only return the first 100 subject alternative names included in the certificate. To display the full list of subject alternative names, use <code>DescribeCertificate</code>.</p>
+    /// <p>When called by <a href="https://docs.aws.amazon.com/acm/latestAPIReference/API_ListCertificates.html">ListCertificates</a>, this parameter will only return the first 100 subject alternative names included in the certificate. To display the full list of subject alternative names, use <a href="https://docs.aws.amazon.com/acm/latestAPIReference/API_DescribeCertificate.html">DescribeCertificate</a>.</p>
     pub fn set_subject_alternative_name_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.subject_alternative_name_summaries = input;
         self
     }
     /// <p>One or more domain names (subject alternative names) included in the certificate. This list contains the domain names that are bound to the public key that is contained in the certificate. The subject alternative names include the canonical domain name (CN) of the certificate and additional domain names that can be used to connect to the website.</p>
-    /// <p>When called by <code>ListCertificates</code>, this parameter will only return the first 100 subject alternative names included in the certificate. To display the full list of subject alternative names, use <code>DescribeCertificate</code>.</p>
+    /// <p>When called by <a href="https://docs.aws.amazon.com/acm/latestAPIReference/API_ListCertificates.html">ListCertificates</a>, this parameter will only return the first 100 subject alternative names included in the certificate. To display the full list of subject alternative names, use <a href="https://docs.aws.amazon.com/acm/latestAPIReference/API_DescribeCertificate.html">DescribeCertificate</a>.</p>
     pub fn get_subject_alternative_name_summaries(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.subject_alternative_name_summaries
     }
-    /// <p>When called by <code>ListCertificates</code>, indicates whether the full list of subject alternative names has been included in the response. If false, the response includes all of the subject alternative names included in the certificate. If true, the response only includes the first 100 subject alternative names included in the certificate. To display the full list of subject alternative names, use <code>DescribeCertificate</code>.</p>
+    /// <p>When called by <a href="https://docs.aws.amazon.com/acm/latestAPIReference/API_ListCertificates.html">ListCertificates</a>, indicates whether the full list of subject alternative names has been included in the response. If false, the response includes all of the subject alternative names included in the certificate. If true, the response only includes the first 100 subject alternative names included in the certificate. To display the full list of subject alternative names, use <a href="https://docs.aws.amazon.com/acm/latestAPIReference/API_DescribeCertificate.html">DescribeCertificate</a>.</p>
     pub fn has_additional_subject_alternative_names(mut self, input: bool) -> Self {
         self.has_additional_subject_alternative_names = ::std::option::Option::Some(input);
         self
     }
-    /// <p>When called by <code>ListCertificates</code>, indicates whether the full list of subject alternative names has been included in the response. If false, the response includes all of the subject alternative names included in the certificate. If true, the response only includes the first 100 subject alternative names included in the certificate. To display the full list of subject alternative names, use <code>DescribeCertificate</code>.</p>
+    /// <p>When called by <a href="https://docs.aws.amazon.com/acm/latestAPIReference/API_ListCertificates.html">ListCertificates</a>, indicates whether the full list of subject alternative names has been included in the response. If false, the response includes all of the subject alternative names included in the certificate. If true, the response only includes the first 100 subject alternative names included in the certificate. To display the full list of subject alternative names, use <a href="https://docs.aws.amazon.com/acm/latestAPIReference/API_DescribeCertificate.html">DescribeCertificate</a>.</p>
     pub fn set_has_additional_subject_alternative_names(mut self, input: ::std::option::Option<bool>) -> Self {
         self.has_additional_subject_alternative_names = input;
         self
     }
-    /// <p>When called by <code>ListCertificates</code>, indicates whether the full list of subject alternative names has been included in the response. If false, the response includes all of the subject alternative names included in the certificate. If true, the response only includes the first 100 subject alternative names included in the certificate. To display the full list of subject alternative names, use <code>DescribeCertificate</code>.</p>
+    /// <p>When called by <a href="https://docs.aws.amazon.com/acm/latestAPIReference/API_ListCertificates.html">ListCertificates</a>, indicates whether the full list of subject alternative names has been included in the response. If false, the response includes all of the subject alternative names included in the certificate. If true, the response only includes the first 100 subject alternative names included in the certificate. To display the full list of subject alternative names, use <a href="https://docs.aws.amazon.com/acm/latestAPIReference/API_DescribeCertificate.html">DescribeCertificate</a>.</p>
     pub fn get_has_additional_subject_alternative_names(&self) -> &::std::option::Option<bool> {
         &self.has_additional_subject_alternative_names
     }
@@ -442,6 +449,20 @@ impl CertificateSummaryBuilder {
     pub fn get_revoked_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.revoked_at
     }
+    /// <p>Identifies the Amazon Web Services service that manages the certificate issued by ACM.</p>
+    pub fn managed_by(mut self, input: crate::types::CertificateManagedBy) -> Self {
+        self.managed_by = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Identifies the Amazon Web Services service that manages the certificate issued by ACM.</p>
+    pub fn set_managed_by(mut self, input: ::std::option::Option<crate::types::CertificateManagedBy>) -> Self {
+        self.managed_by = input;
+        self
+    }
+    /// <p>Identifies the Amazon Web Services service that manages the certificate issued by ACM.</p>
+    pub fn get_managed_by(&self) -> &::std::option::Option<crate::types::CertificateManagedBy> {
+        &self.managed_by
+    }
     /// Consumes the builder and constructs a [`CertificateSummary`](crate::types::CertificateSummary).
     pub fn build(self) -> crate::types::CertificateSummary {
         crate::types::CertificateSummary {
@@ -463,6 +484,7 @@ impl CertificateSummaryBuilder {
             issued_at: self.issued_at,
             imported_at: self.imported_at,
             revoked_at: self.revoked_at,
+            managed_by: self.managed_by,
         }
     }
 }

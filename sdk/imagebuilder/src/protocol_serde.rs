@@ -499,6 +499,8 @@ pub(crate) mod shape_s3_logs;
 
 pub(crate) mod shape_security_group_ids;
 
+pub(crate) mod shape_ssm_parameter_configuration;
+
 pub(crate) mod shape_systems_manager_agent;
 
 pub(crate) mod shape_workflow_configuration_list;
@@ -590,6 +592,8 @@ pub(crate) mod shape_non_empty_string_list;
 pub(crate) mod shape_remediation_recommendation;
 
 pub(crate) mod shape_severity_counts;
+
+pub(crate) mod shape_ssm_parameter_configuration_list;
 
 pub(crate) mod shape_vulnerability_id_list;
 

@@ -122,17 +122,17 @@ impl CreateAnycastIpListFluentBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_name()
     }
-    /// <p>The number of static IP addresses that are allocated to the Anycast static IP list.</p>
+    /// <p>The number of static IP addresses that are allocated to the Anycast static IP list. Valid values: 21 or 3.</p>
     pub fn ip_count(mut self, input: i32) -> Self {
         self.inner = self.inner.ip_count(input);
         self
     }
-    /// <p>The number of static IP addresses that are allocated to the Anycast static IP list.</p>
+    /// <p>The number of static IP addresses that are allocated to the Anycast static IP list. Valid values: 21 or 3.</p>
     pub fn set_ip_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_ip_count(input);
         self
     }
-    /// <p>The number of static IP addresses that are allocated to the Anycast static IP list.</p>
+    /// <p>The number of static IP addresses that are allocated to the Anycast static IP list. Valid values: 21 or 3.</p>
     pub fn get_ip_count(&self) -> &::std::option::Option<i32> {
         self.inner.get_ip_count()
     }

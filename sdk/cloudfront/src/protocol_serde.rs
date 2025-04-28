@@ -25,6 +25,10 @@ pub fn parse_http_error_metadata(
 
 pub(crate) mod shape_associate_alias;
 
+pub(crate) mod shape_associate_distribution_tenant_web_acl;
+
+pub(crate) mod shape_associate_distribution_web_acl;
+
 pub(crate) mod shape_copy_distribution;
 
 pub(crate) mod shape_create_anycast_ip_list;
@@ -41,6 +45,8 @@ pub(crate) mod shape_create_cloud_front_origin_access_identity;
 
 pub(crate) mod shape_create_cloud_front_origin_access_identity_input;
 
+pub(crate) mod shape_create_connection_group;
+
 pub(crate) mod shape_create_continuous_deployment_policy;
 
 pub(crate) mod shape_create_continuous_deployment_policy_input;
@@ -48,6 +54,8 @@ pub(crate) mod shape_create_continuous_deployment_policy_input;
 pub(crate) mod shape_create_distribution;
 
 pub(crate) mod shape_create_distribution_input;
+
+pub(crate) mod shape_create_distribution_tenant;
 
 pub(crate) mod shape_create_distribution_with_tags;
 
@@ -64,6 +72,10 @@ pub(crate) mod shape_create_field_level_encryption_profile_input;
 pub(crate) mod shape_create_function;
 
 pub(crate) mod shape_create_invalidation;
+
+pub(crate) mod shape_create_invalidation_for_distribution_tenant;
+
+pub(crate) mod shape_create_invalidation_for_distribution_tenant_input;
 
 pub(crate) mod shape_create_invalidation_input;
 
@@ -111,9 +123,13 @@ pub(crate) mod shape_delete_cache_policy;
 
 pub(crate) mod shape_delete_cloud_front_origin_access_identity;
 
+pub(crate) mod shape_delete_connection_group;
+
 pub(crate) mod shape_delete_continuous_deployment_policy;
 
 pub(crate) mod shape_delete_distribution;
+
+pub(crate) mod shape_delete_distribution_tenant;
 
 pub(crate) mod shape_delete_field_level_encryption_config;
 
@@ -145,6 +161,10 @@ pub(crate) mod shape_describe_function;
 
 pub(crate) mod shape_describe_key_value_store;
 
+pub(crate) mod shape_disassociate_distribution_tenant_web_acl;
+
+pub(crate) mod shape_disassociate_distribution_web_acl;
+
 pub(crate) mod shape_get_anycast_ip_list;
 
 pub(crate) mod shape_get_cache_policy;
@@ -155,6 +175,10 @@ pub(crate) mod shape_get_cloud_front_origin_access_identity;
 
 pub(crate) mod shape_get_cloud_front_origin_access_identity_config;
 
+pub(crate) mod shape_get_connection_group;
+
+pub(crate) mod shape_get_connection_group_by_routing_endpoint;
+
 pub(crate) mod shape_get_continuous_deployment_policy;
 
 pub(crate) mod shape_get_continuous_deployment_policy_config;
@@ -162,6 +186,10 @@ pub(crate) mod shape_get_continuous_deployment_policy_config;
 pub(crate) mod shape_get_distribution;
 
 pub(crate) mod shape_get_distribution_config;
+
+pub(crate) mod shape_get_distribution_tenant;
+
+pub(crate) mod shape_get_distribution_tenant_by_domain;
 
 pub(crate) mod shape_get_field_level_encryption;
 
@@ -175,9 +203,13 @@ pub(crate) mod shape_get_function;
 
 pub(crate) mod shape_get_invalidation;
 
+pub(crate) mod shape_get_invalidation_for_distribution_tenant;
+
 pub(crate) mod shape_get_key_group;
 
 pub(crate) mod shape_get_key_group_config;
+
+pub(crate) mod shape_get_managed_certificate_details;
 
 pub(crate) mod shape_get_monitoring_subscription;
 
@@ -213,13 +245,21 @@ pub(crate) mod shape_list_cloud_front_origin_access_identities;
 
 pub(crate) mod shape_list_conflicting_aliases;
 
+pub(crate) mod shape_list_connection_groups;
+
 pub(crate) mod shape_list_continuous_deployment_policies;
+
+pub(crate) mod shape_list_distribution_tenants;
+
+pub(crate) mod shape_list_distribution_tenants_by_customization;
 
 pub(crate) mod shape_list_distributions;
 
 pub(crate) mod shape_list_distributions_by_anycast_ip_list_id;
 
 pub(crate) mod shape_list_distributions_by_cache_policy_id;
+
+pub(crate) mod shape_list_distributions_by_connection_mode;
 
 pub(crate) mod shape_list_distributions_by_key_group;
 
@@ -233,6 +273,8 @@ pub(crate) mod shape_list_distributions_by_vpc_origin_id;
 
 pub(crate) mod shape_list_distributions_by_web_acl_id;
 
+pub(crate) mod shape_list_domain_conflicts;
+
 pub(crate) mod shape_list_field_level_encryption_configs;
 
 pub(crate) mod shape_list_field_level_encryption_profiles;
@@ -240,6 +282,8 @@ pub(crate) mod shape_list_field_level_encryption_profiles;
 pub(crate) mod shape_list_functions;
 
 pub(crate) mod shape_list_invalidations;
+
+pub(crate) mod shape_list_invalidations_for_distribution_tenant;
 
 pub(crate) mod shape_list_key_groups;
 
@@ -281,6 +325,8 @@ pub(crate) mod shape_update_cloud_front_origin_access_identity;
 
 pub(crate) mod shape_update_cloud_front_origin_access_identity_input;
 
+pub(crate) mod shape_update_connection_group;
+
 pub(crate) mod shape_update_continuous_deployment_policy;
 
 pub(crate) mod shape_update_continuous_deployment_policy_input;
@@ -289,7 +335,11 @@ pub(crate) mod shape_update_distribution;
 
 pub(crate) mod shape_update_distribution_input;
 
+pub(crate) mod shape_update_distribution_tenant;
+
 pub(crate) mod shape_update_distribution_with_staging_config;
+
+pub(crate) mod shape_update_domain_association;
 
 pub(crate) mod shape_update_field_level_encryption_config;
 
@@ -333,7 +383,17 @@ pub(crate) mod shape_update_vpc_origin;
 
 pub(crate) mod shape_update_vpc_origin_input;
 
+pub(crate) mod shape_verify_dns_configuration;
+
 pub(crate) mod shape_access_denied;
+
+pub(crate) mod shape_associate_distribution_tenant_web_acl_input;
+
+pub(crate) mod shape_associate_distribution_tenant_web_acl_output;
+
+pub(crate) mod shape_associate_distribution_web_acl_input;
+
+pub(crate) mod shape_associate_distribution_web_acl_output;
 
 pub(crate) mod shape_batch_too_large;
 
@@ -369,9 +429,17 @@ pub(crate) mod shape_create_cache_policy_output;
 
 pub(crate) mod shape_create_cloud_front_origin_access_identity_output;
 
+pub(crate) mod shape_create_connection_group_input;
+
+pub(crate) mod shape_create_connection_group_output;
+
 pub(crate) mod shape_create_continuous_deployment_policy_output;
 
 pub(crate) mod shape_create_distribution_output;
+
+pub(crate) mod shape_create_distribution_tenant_input;
+
+pub(crate) mod shape_create_distribution_tenant_output;
 
 pub(crate) mod shape_create_distribution_with_tags_output;
 
@@ -382,6 +450,8 @@ pub(crate) mod shape_create_field_level_encryption_profile_output;
 pub(crate) mod shape_create_function_input;
 
 pub(crate) mod shape_create_function_output;
+
+pub(crate) mod shape_create_invalidation_for_distribution_tenant_output;
 
 pub(crate) mod shape_create_invalidation_output;
 
@@ -418,6 +488,10 @@ pub(crate) mod shape_delete_vpc_origin_output;
 pub(crate) mod shape_describe_function_output;
 
 pub(crate) mod shape_describe_key_value_store_output;
+
+pub(crate) mod shape_disassociate_distribution_tenant_web_acl_output;
+
+pub(crate) mod shape_disassociate_distribution_web_acl_output;
 
 pub(crate) mod shape_distribution_already_exists;
 
@@ -457,6 +531,10 @@ pub(crate) mod shape_get_cloud_front_origin_access_identity_config_output;
 
 pub(crate) mod shape_get_cloud_front_origin_access_identity_output;
 
+pub(crate) mod shape_get_connection_group_by_routing_endpoint_output;
+
+pub(crate) mod shape_get_connection_group_output;
+
 pub(crate) mod shape_get_continuous_deployment_policy_config_output;
 
 pub(crate) mod shape_get_continuous_deployment_policy_output;
@@ -464,6 +542,10 @@ pub(crate) mod shape_get_continuous_deployment_policy_output;
 pub(crate) mod shape_get_distribution_config_output;
 
 pub(crate) mod shape_get_distribution_output;
+
+pub(crate) mod shape_get_distribution_tenant_by_domain_output;
+
+pub(crate) mod shape_get_distribution_tenant_output;
 
 pub(crate) mod shape_get_field_level_encryption_config_output;
 
@@ -475,11 +557,15 @@ pub(crate) mod shape_get_field_level_encryption_profile_output;
 
 pub(crate) mod shape_get_function_output;
 
+pub(crate) mod shape_get_invalidation_for_distribution_tenant_output;
+
 pub(crate) mod shape_get_invalidation_output;
 
 pub(crate) mod shape_get_key_group_config_output;
 
 pub(crate) mod shape_get_key_group_output;
+
+pub(crate) mod shape_get_managed_certificate_details_output;
 
 pub(crate) mod shape_get_monitoring_subscription_output;
 
@@ -518,6 +604,8 @@ pub(crate) mod shape_illegal_update;
 pub(crate) mod shape_inconsistent_quantities;
 
 pub(crate) mod shape_invalid_argument;
+
+pub(crate) mod shape_invalid_association;
 
 pub(crate) mod shape_invalid_default_root_object;
 
@@ -579,11 +667,19 @@ pub(crate) mod shape_list_cloud_front_origin_access_identities_output;
 
 pub(crate) mod shape_list_conflicting_aliases_output;
 
+pub(crate) mod shape_list_connection_groups_input;
+
 pub(crate) mod shape_list_continuous_deployment_policies_output;
+
+pub(crate) mod shape_list_distribution_tenants_by_customization_input;
+
+pub(crate) mod shape_list_distribution_tenants_input;
 
 pub(crate) mod shape_list_distributions_by_anycast_ip_list_id_output;
 
 pub(crate) mod shape_list_distributions_by_cache_policy_id_output;
+
+pub(crate) mod shape_list_distributions_by_connection_mode_output;
 
 pub(crate) mod shape_list_distributions_by_key_group_output;
 
@@ -601,11 +697,15 @@ pub(crate) mod shape_list_distributions_by_web_acl_id_output;
 
 pub(crate) mod shape_list_distributions_output;
 
+pub(crate) mod shape_list_domain_conflicts_input;
+
 pub(crate) mod shape_list_field_level_encryption_configs_output;
 
 pub(crate) mod shape_list_field_level_encryption_profiles_output;
 
 pub(crate) mod shape_list_functions_output;
+
+pub(crate) mod shape_list_invalidations_for_distribution_tenant_output;
 
 pub(crate) mod shape_list_invalidations_output;
 
@@ -692,6 +792,8 @@ pub(crate) mod shape_realtime_log_config_in_use;
 pub(crate) mod shape_realtime_log_config_owner_mismatch;
 
 pub(crate) mod shape_resource_in_use;
+
+pub(crate) mod shape_resource_not_disabled;
 
 pub(crate) mod shape_response_headers_policy_already_exists;
 
@@ -823,11 +925,23 @@ pub(crate) mod shape_update_cache_policy_output;
 
 pub(crate) mod shape_update_cloud_front_origin_access_identity_output;
 
+pub(crate) mod shape_update_connection_group_input;
+
+pub(crate) mod shape_update_connection_group_output;
+
 pub(crate) mod shape_update_continuous_deployment_policy_output;
 
 pub(crate) mod shape_update_distribution_output;
 
+pub(crate) mod shape_update_distribution_tenant_input;
+
+pub(crate) mod shape_update_distribution_tenant_output;
+
 pub(crate) mod shape_update_distribution_with_staging_config_output;
+
+pub(crate) mod shape_update_domain_association_input;
+
+pub(crate) mod shape_update_domain_association_output;
 
 pub(crate) mod shape_update_field_level_encryption_config_output;
 
@@ -857,15 +971,35 @@ pub(crate) mod shape_update_streaming_distribution_output;
 
 pub(crate) mod shape_update_vpc_origin_output;
 
+pub(crate) mod shape_verify_dns_configuration_input;
+
 pub(crate) mod shape_cache_policy_config;
 
 pub(crate) mod shape_cloud_front_origin_access_identity_config;
 
+pub(crate) mod shape_connection_group_association_filter;
+
+pub(crate) mod shape_connection_group_summary_list;
+
 pub(crate) mod shape_continuous_deployment_policy_config;
+
+pub(crate) mod shape_customizations;
 
 pub(crate) mod shape_distribution_config;
 
 pub(crate) mod shape_distribution_config_with_tags;
+
+pub(crate) mod shape_distribution_resource_id;
+
+pub(crate) mod shape_distribution_tenant_association_filter;
+
+pub(crate) mod shape_distribution_tenant_list;
+
+pub(crate) mod shape_dns_configuration_list;
+
+pub(crate) mod shape_domain_conflicts_list;
+
+pub(crate) mod shape_domain_item;
 
 pub(crate) mod shape_end_point;
 
@@ -881,11 +1015,15 @@ pub(crate) mod shape_invalidation_batch;
 
 pub(crate) mod shape_key_group_config;
 
+pub(crate) mod shape_managed_certificate_request;
+
 pub(crate) mod shape_monitoring_subscription;
 
 pub(crate) mod shape_origin_access_control_config;
 
 pub(crate) mod shape_origin_request_policy_config;
+
+pub(crate) mod shape_parameter;
 
 pub(crate) mod shape_public_key_config;
 
@@ -915,11 +1053,17 @@ pub(crate) mod shape_cache_policy;
 
 pub(crate) mod shape_cache_policy_list;
 
+pub(crate) mod shape_certificate;
+
 pub(crate) mod shape_cloud_front_origin_access_identity;
 
 pub(crate) mod shape_cloud_front_origin_access_identity_list;
 
 pub(crate) mod shape_conflicting_aliases_list;
+
+pub(crate) mod shape_connection_group;
+
+pub(crate) mod shape_connection_group_summary;
 
 pub(crate) mod shape_content_type_profile_config;
 
@@ -936,6 +1080,14 @@ pub(crate) mod shape_distribution;
 pub(crate) mod shape_distribution_id_list;
 
 pub(crate) mod shape_distribution_list;
+
+pub(crate) mod shape_distribution_tenant;
+
+pub(crate) mod shape_distribution_tenant_summary;
+
+pub(crate) mod shape_dns_configuration;
+
+pub(crate) mod shape_domain_conflict;
 
 pub(crate) mod shape_encryption_entities;
 
@@ -955,6 +1107,8 @@ pub(crate) mod shape_function_list;
 
 pub(crate) mod shape_function_summary;
 
+pub(crate) mod shape_geo_restriction_customization;
+
 pub(crate) mod shape_invalidation;
 
 pub(crate) mod shape_invalidation_list;
@@ -972,6 +1126,8 @@ pub(crate) mod shape_key_value_store_list;
 pub(crate) mod shape_kinesis_stream_config;
 
 pub(crate) mod shape_logging_config;
+
+pub(crate) mod shape_managed_certificate_details;
 
 pub(crate) mod shape_origin_access_control;
 
@@ -1035,6 +1191,8 @@ pub(crate) mod shape_streaming_logging_config;
 
 pub(crate) mod shape_tag;
 
+pub(crate) mod shape_tenant_config;
+
 pub(crate) mod shape_test_result;
 
 pub(crate) mod shape_traffic_config;
@@ -1046,6 +1204,8 @@ pub(crate) mod shape_viewer_certificate;
 pub(crate) mod shape_vpc_origin;
 
 pub(crate) mod shape_vpc_origin_list;
+
+pub(crate) mod shape_web_acl_customization;
 
 pub(crate) mod shape_active_trusted_key_groups;
 
@@ -1089,6 +1249,8 @@ pub(crate) mod shape_distribution_id_list_summary;
 
 pub(crate) mod shape_distribution_summary_list;
 
+pub(crate) mod shape_domain_result_list;
+
 pub(crate) mod shape_encryption_entity;
 
 pub(crate) mod shape_field_level_encryption_profile_summary_list;
@@ -1128,6 +1290,10 @@ pub(crate) mod shape_origin_access_control_summary_list;
 pub(crate) mod shape_origin_group;
 
 pub(crate) mod shape_origin_request_policy_summary_list;
+
+pub(crate) mod shape_parameter_definition;
+
+pub(crate) mod shape_parameters;
 
 pub(crate) mod shape_public_key_id_list;
 
@@ -1171,6 +1337,8 @@ pub(crate) mod shape_tag_list;
 
 pub(crate) mod shape_trusted_key_groups;
 
+pub(crate) mod shape_validation_token_detail_list;
+
 pub(crate) mod shape_vpc_origin_summary_list;
 
 pub(crate) mod shape_alias_icp_recordal;
@@ -1205,6 +1373,8 @@ pub(crate) mod shape_custom_origin_config;
 
 pub(crate) mod shape_distribution_summary;
 
+pub(crate) mod shape_domain_result;
+
 pub(crate) mod shape_encryption_entity_list;
 
 pub(crate) mod shape_field_level_encryption_profile_summary;
@@ -1237,6 +1407,10 @@ pub(crate) mod shape_origin_request_policy_summary;
 
 pub(crate) mod shape_origin_shield;
 
+pub(crate) mod shape_parameter_definition_schema;
+
+pub(crate) mod shape_parameter_definitions;
+
 pub(crate) mod shape_public_key_summary;
 
 pub(crate) mod shape_query_arg_profile;
@@ -1258,6 +1432,8 @@ pub(crate) mod shape_signer_list;
 pub(crate) mod shape_staging_distribution_dns_name_list;
 
 pub(crate) mod shape_streaming_distribution_summary;
+
+pub(crate) mod shape_validation_token_detail;
 
 pub(crate) mod shape_vpc_origin_config;
 
@@ -1304,6 +1480,8 @@ pub(crate) mod shape_signer;
 pub(crate) mod shape_ssl_protocols_list;
 
 pub(crate) mod shape_status_codes;
+
+pub(crate) mod shape_string_schema_config;
 
 pub(crate) mod shape_trusted_key_group_id_list;
 

@@ -17,6 +17,8 @@ pub use crate::types::error::_invalid_tag_exception::InvalidTagException;
 
 pub use crate::types::error::_invalid_parameter_exception::InvalidParameterException;
 
+pub use crate::types::error::_request_in_progress_exception::RequestInProgressException;
+
 pub use crate::types::error::_throttling_exception::ThrottlingException;
 
 pub use crate::types::error::_validation_exception::ValidationException;
@@ -26,8 +28,6 @@ pub use crate::types::error::_conflict_exception::ConflictException;
 pub use crate::types::error::_access_denied_exception::AccessDeniedException;
 
 pub use crate::types::error::_invalid_args_exception::InvalidArgsException;
-
-pub use crate::types::error::_request_in_progress_exception::RequestInProgressException;
 
 pub use crate::types::error::_resource_in_use_exception::ResourceInUseException;
 

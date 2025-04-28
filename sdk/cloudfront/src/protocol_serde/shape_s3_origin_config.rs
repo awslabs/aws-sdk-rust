@@ -37,7 +37,5 @@ pub fn de_s3_origin_config(
             _ => {}
         }
     }
-    Ok(crate::serde_util::s3_origin_config_correct_errors(builder)
-        .build()
-        .map_err(|_| ::aws_smithy_xml::decode::XmlDecodeError::custom("missing field"))?)
+    Ok(crate::serde_util::s3_origin_config_correct_errors(builder).build())
 }

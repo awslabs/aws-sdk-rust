@@ -15,14 +15,16 @@ pub struct DomainValidation {
     /// <li>
     /// <p><code>PENDING_VALIDATION</code></p></li>
     /// <li>
-    /// <p><code>SUCCESS</code></p></li>
+    /// <p><code></code>SUCCESS</p></li>
     /// <li>
-    /// <p><code>FAILED</code></p></li>
+    /// <p><code></code>FAILED</p></li>
     /// </ul>
     pub validation_status: ::std::option::Option<crate::types::DomainStatus>,
     /// <p>Contains the CNAME record that you add to your DNS database for domain validation. For more information, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-dns.html">Use DNS to Validate Domain Ownership</a>.</p>
-    /// <p>Note: The CNAME information that you need does not include the name of your domain. If you include  your domain name in the DNS database CNAME record, validation fails.  For example, if the name is "_a79865eb4cd1a6ab990a45779b4e0b96.yourdomain.com", only "_a79865eb4cd1a6ab990a45779b4e0b96" must be used.</p>
+    /// <p>Note: The CNAME information that you need does not include the name of your domain. If you include your domain name in the DNS database CNAME record, validation fails. For example, if the name is "_a79865eb4cd1a6ab990a45779b4e0b96.yourdomain.com", only "_a79865eb4cd1a6ab990a45779b4e0b96" must be used.</p>
     pub resource_record: ::std::option::Option<crate::types::ResourceRecord>,
+    /// <p>Contains information for HTTP-based domain validation of certificates requested through CloudFront and issued by ACM. This field exists only when the certificate type is <code>AMAZON_ISSUED</code> and the validation method is <code>HTTP</code>.</p>
+    pub http_redirect: ::std::option::Option<crate::types::HttpRedirect>,
     /// <p>Specifies the domain validation method.</p>
     pub validation_method: ::std::option::Option<crate::types::ValidationMethod>,
 }
@@ -47,17 +49,21 @@ impl DomainValidation {
     /// <li>
     /// <p><code>PENDING_VALIDATION</code></p></li>
     /// <li>
-    /// <p><code>SUCCESS</code></p></li>
+    /// <p><code></code>SUCCESS</p></li>
     /// <li>
-    /// <p><code>FAILED</code></p></li>
+    /// <p><code></code>FAILED</p></li>
     /// </ul>
     pub fn validation_status(&self) -> ::std::option::Option<&crate::types::DomainStatus> {
         self.validation_status.as_ref()
     }
     /// <p>Contains the CNAME record that you add to your DNS database for domain validation. For more information, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-dns.html">Use DNS to Validate Domain Ownership</a>.</p>
-    /// <p>Note: The CNAME information that you need does not include the name of your domain. If you include  your domain name in the DNS database CNAME record, validation fails.  For example, if the name is "_a79865eb4cd1a6ab990a45779b4e0b96.yourdomain.com", only "_a79865eb4cd1a6ab990a45779b4e0b96" must be used.</p>
+    /// <p>Note: The CNAME information that you need does not include the name of your domain. If you include your domain name in the DNS database CNAME record, validation fails. For example, if the name is "_a79865eb4cd1a6ab990a45779b4e0b96.yourdomain.com", only "_a79865eb4cd1a6ab990a45779b4e0b96" must be used.</p>
     pub fn resource_record(&self) -> ::std::option::Option<&crate::types::ResourceRecord> {
         self.resource_record.as_ref()
+    }
+    /// <p>Contains information for HTTP-based domain validation of certificates requested through CloudFront and issued by ACM. This field exists only when the certificate type is <code>AMAZON_ISSUED</code> and the validation method is <code>HTTP</code>.</p>
+    pub fn http_redirect(&self) -> ::std::option::Option<&crate::types::HttpRedirect> {
+        self.http_redirect.as_ref()
     }
     /// <p>Specifies the domain validation method.</p>
     pub fn validation_method(&self) -> ::std::option::Option<&crate::types::ValidationMethod> {
@@ -80,6 +86,7 @@ pub struct DomainValidationBuilder {
     pub(crate) validation_domain: ::std::option::Option<::std::string::String>,
     pub(crate) validation_status: ::std::option::Option<crate::types::DomainStatus>,
     pub(crate) resource_record: ::std::option::Option<crate::types::ResourceRecord>,
+    pub(crate) http_redirect: ::std::option::Option<crate::types::HttpRedirect>,
     pub(crate) validation_method: ::std::option::Option<crate::types::ValidationMethod>,
 }
 impl DomainValidationBuilder {
@@ -137,9 +144,9 @@ impl DomainValidationBuilder {
     /// <li>
     /// <p><code>PENDING_VALIDATION</code></p></li>
     /// <li>
-    /// <p><code>SUCCESS</code></p></li>
+    /// <p><code></code>SUCCESS</p></li>
     /// <li>
-    /// <p><code>FAILED</code></p></li>
+    /// <p><code></code>FAILED</p></li>
     /// </ul>
     pub fn validation_status(mut self, input: crate::types::DomainStatus) -> Self {
         self.validation_status = ::std::option::Option::Some(input);
@@ -150,9 +157,9 @@ impl DomainValidationBuilder {
     /// <li>
     /// <p><code>PENDING_VALIDATION</code></p></li>
     /// <li>
-    /// <p><code>SUCCESS</code></p></li>
+    /// <p><code></code>SUCCESS</p></li>
     /// <li>
-    /// <p><code>FAILED</code></p></li>
+    /// <p><code></code>FAILED</p></li>
     /// </ul>
     pub fn set_validation_status(mut self, input: ::std::option::Option<crate::types::DomainStatus>) -> Self {
         self.validation_status = input;
@@ -163,29 +170,43 @@ impl DomainValidationBuilder {
     /// <li>
     /// <p><code>PENDING_VALIDATION</code></p></li>
     /// <li>
-    /// <p><code>SUCCESS</code></p></li>
+    /// <p><code></code>SUCCESS</p></li>
     /// <li>
-    /// <p><code>FAILED</code></p></li>
+    /// <p><code></code>FAILED</p></li>
     /// </ul>
     pub fn get_validation_status(&self) -> &::std::option::Option<crate::types::DomainStatus> {
         &self.validation_status
     }
     /// <p>Contains the CNAME record that you add to your DNS database for domain validation. For more information, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-dns.html">Use DNS to Validate Domain Ownership</a>.</p>
-    /// <p>Note: The CNAME information that you need does not include the name of your domain. If you include  your domain name in the DNS database CNAME record, validation fails.  For example, if the name is "_a79865eb4cd1a6ab990a45779b4e0b96.yourdomain.com", only "_a79865eb4cd1a6ab990a45779b4e0b96" must be used.</p>
+    /// <p>Note: The CNAME information that you need does not include the name of your domain. If you include your domain name in the DNS database CNAME record, validation fails. For example, if the name is "_a79865eb4cd1a6ab990a45779b4e0b96.yourdomain.com", only "_a79865eb4cd1a6ab990a45779b4e0b96" must be used.</p>
     pub fn resource_record(mut self, input: crate::types::ResourceRecord) -> Self {
         self.resource_record = ::std::option::Option::Some(input);
         self
     }
     /// <p>Contains the CNAME record that you add to your DNS database for domain validation. For more information, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-dns.html">Use DNS to Validate Domain Ownership</a>.</p>
-    /// <p>Note: The CNAME information that you need does not include the name of your domain. If you include  your domain name in the DNS database CNAME record, validation fails.  For example, if the name is "_a79865eb4cd1a6ab990a45779b4e0b96.yourdomain.com", only "_a79865eb4cd1a6ab990a45779b4e0b96" must be used.</p>
+    /// <p>Note: The CNAME information that you need does not include the name of your domain. If you include your domain name in the DNS database CNAME record, validation fails. For example, if the name is "_a79865eb4cd1a6ab990a45779b4e0b96.yourdomain.com", only "_a79865eb4cd1a6ab990a45779b4e0b96" must be used.</p>
     pub fn set_resource_record(mut self, input: ::std::option::Option<crate::types::ResourceRecord>) -> Self {
         self.resource_record = input;
         self
     }
     /// <p>Contains the CNAME record that you add to your DNS database for domain validation. For more information, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-dns.html">Use DNS to Validate Domain Ownership</a>.</p>
-    /// <p>Note: The CNAME information that you need does not include the name of your domain. If you include  your domain name in the DNS database CNAME record, validation fails.  For example, if the name is "_a79865eb4cd1a6ab990a45779b4e0b96.yourdomain.com", only "_a79865eb4cd1a6ab990a45779b4e0b96" must be used.</p>
+    /// <p>Note: The CNAME information that you need does not include the name of your domain. If you include your domain name in the DNS database CNAME record, validation fails. For example, if the name is "_a79865eb4cd1a6ab990a45779b4e0b96.yourdomain.com", only "_a79865eb4cd1a6ab990a45779b4e0b96" must be used.</p>
     pub fn get_resource_record(&self) -> &::std::option::Option<crate::types::ResourceRecord> {
         &self.resource_record
+    }
+    /// <p>Contains information for HTTP-based domain validation of certificates requested through CloudFront and issued by ACM. This field exists only when the certificate type is <code>AMAZON_ISSUED</code> and the validation method is <code>HTTP</code>.</p>
+    pub fn http_redirect(mut self, input: crate::types::HttpRedirect) -> Self {
+        self.http_redirect = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Contains information for HTTP-based domain validation of certificates requested through CloudFront and issued by ACM. This field exists only when the certificate type is <code>AMAZON_ISSUED</code> and the validation method is <code>HTTP</code>.</p>
+    pub fn set_http_redirect(mut self, input: ::std::option::Option<crate::types::HttpRedirect>) -> Self {
+        self.http_redirect = input;
+        self
+    }
+    /// <p>Contains information for HTTP-based domain validation of certificates requested through CloudFront and issued by ACM. This field exists only when the certificate type is <code>AMAZON_ISSUED</code> and the validation method is <code>HTTP</code>.</p>
+    pub fn get_http_redirect(&self) -> &::std::option::Option<crate::types::HttpRedirect> {
+        &self.http_redirect
     }
     /// <p>Specifies the domain validation method.</p>
     pub fn validation_method(mut self, input: crate::types::ValidationMethod) -> Self {
@@ -216,6 +237,7 @@ impl DomainValidationBuilder {
             validation_domain: self.validation_domain,
             validation_status: self.validation_status,
             resource_record: self.resource_record,
+            http_redirect: self.http_redirect,
             validation_method: self.validation_method,
         })
     }

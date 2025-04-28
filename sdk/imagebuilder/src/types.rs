@@ -57,6 +57,10 @@ pub use crate::types::_image_tests_configuration::ImageTestsConfiguration;
 
 pub use crate::types::_distribution::Distribution;
 
+pub use crate::types::_ssm_parameter_configuration::SsmParameterConfiguration;
+
+pub use crate::types::_ssm_parameter_data_type::SsmParameterDataType;
+
 pub use crate::types::_fast_launch_configuration::FastLaunchConfiguration;
 
 pub use crate::types::_fast_launch_launch_template_specification::FastLaunchLaunchTemplateSpecification;
@@ -484,6 +488,10 @@ mod _s3_logs;
 mod _schedule;
 
 mod _severity_counts;
+
+mod _ssm_parameter_configuration;
+
+mod _ssm_parameter_data_type;
 
 mod _systems_manager_agent;
 

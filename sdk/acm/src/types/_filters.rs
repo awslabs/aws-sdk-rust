@@ -11,6 +11,8 @@ pub struct Filters {
     /// <p>Specify one or more algorithms that can be used to generate key pairs.</p>
     /// <p>Default filtering returns only <code>RSA_1024</code> and <code>RSA_2048</code> certificates that have at least one domain. To return other certificate types, provide the desired type signatures in a comma-separated list. For example, <code>"keyTypes": \["RSA_2048","RSA_4096"\]</code> returns both <code>RSA_2048</code> and <code>RSA_4096</code> certificates.</p>
     pub key_types: ::std::option::Option<::std::vec::Vec<crate::types::KeyAlgorithm>>,
+    /// <p>Identifies the Amazon Web Services service that manages the certificate issued by ACM.</p>
+    pub managed_by: ::std::option::Option<crate::types::CertificateManagedBy>,
 }
 impl Filters {
     /// <p>Specify one or more <code>ExtendedKeyUsage</code> extension values.</p>
@@ -32,6 +34,10 @@ impl Filters {
     pub fn key_types(&self) -> &[crate::types::KeyAlgorithm] {
         self.key_types.as_deref().unwrap_or_default()
     }
+    /// <p>Identifies the Amazon Web Services service that manages the certificate issued by ACM.</p>
+    pub fn managed_by(&self) -> ::std::option::Option<&crate::types::CertificateManagedBy> {
+        self.managed_by.as_ref()
+    }
 }
 impl Filters {
     /// Creates a new builder-style object to manufacture [`Filters`](crate::types::Filters).
@@ -47,6 +53,7 @@ pub struct FiltersBuilder {
     pub(crate) extended_key_usage: ::std::option::Option<::std::vec::Vec<crate::types::ExtendedKeyUsageName>>,
     pub(crate) key_usage: ::std::option::Option<::std::vec::Vec<crate::types::KeyUsageName>>,
     pub(crate) key_types: ::std::option::Option<::std::vec::Vec<crate::types::KeyAlgorithm>>,
+    pub(crate) managed_by: ::std::option::Option<crate::types::CertificateManagedBy>,
 }
 impl FiltersBuilder {
     /// Appends an item to `extended_key_usage`.
@@ -112,12 +119,27 @@ impl FiltersBuilder {
     pub fn get_key_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::KeyAlgorithm>> {
         &self.key_types
     }
+    /// <p>Identifies the Amazon Web Services service that manages the certificate issued by ACM.</p>
+    pub fn managed_by(mut self, input: crate::types::CertificateManagedBy) -> Self {
+        self.managed_by = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Identifies the Amazon Web Services service that manages the certificate issued by ACM.</p>
+    pub fn set_managed_by(mut self, input: ::std::option::Option<crate::types::CertificateManagedBy>) -> Self {
+        self.managed_by = input;
+        self
+    }
+    /// <p>Identifies the Amazon Web Services service that manages the certificate issued by ACM.</p>
+    pub fn get_managed_by(&self) -> &::std::option::Option<crate::types::CertificateManagedBy> {
+        &self.managed_by
+    }
     /// Consumes the builder and constructs a [`Filters`](crate::types::Filters).
     pub fn build(self) -> crate::types::Filters {
         crate::types::Filters {
             extended_key_usage: self.extended_key_usage,
             key_usage: self.key_usage,
             key_types: self.key_types,
+            managed_by: self.managed_by,
         }
     }
 }

@@ -21,6 +21,7 @@
 ///     RevocationReason::PrivilegeWithdrawn => { /* ... */ },
 ///     RevocationReason::RemoveFromCrl => { /* ... */ },
 ///     RevocationReason::Superceded => { /* ... */ },
+///     RevocationReason::Superseded => { /* ... */ },
 ///     RevocationReason::Unspecified => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -69,6 +70,8 @@ pub enum RevocationReason {
     #[allow(missing_docs)] // documentation missing in model
     Superceded,
     #[allow(missing_docs)] // documentation missing in model
+    Superseded,
+    #[allow(missing_docs)] // documentation missing in model
     Unspecified,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
@@ -86,6 +89,7 @@ impl ::std::convert::From<&str> for RevocationReason {
             "PRIVILEGE_WITHDRAWN" => RevocationReason::PrivilegeWithdrawn,
             "REMOVE_FROM_CRL" => RevocationReason::RemoveFromCrl,
             "SUPERCEDED" => RevocationReason::Superceded,
+            "SUPERSEDED" => RevocationReason::Superseded,
             "UNSPECIFIED" => RevocationReason::Unspecified,
             other => RevocationReason::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -111,6 +115,7 @@ impl RevocationReason {
             RevocationReason::PrivilegeWithdrawn => "PRIVILEGE_WITHDRAWN",
             RevocationReason::RemoveFromCrl => "REMOVE_FROM_CRL",
             RevocationReason::Superceded => "SUPERCEDED",
+            RevocationReason::Superseded => "SUPERSEDED",
             RevocationReason::Unspecified => "UNSPECIFIED",
             RevocationReason::Unknown(value) => value.as_str(),
         }
@@ -127,6 +132,7 @@ impl RevocationReason {
             "PRIVILEGE_WITHDRAWN",
             "REMOVE_FROM_CRL",
             "SUPERCEDED",
+            "SUPERSEDED",
             "UNSPECIFIED",
         ]
     }
@@ -160,6 +166,7 @@ impl ::std::fmt::Display for RevocationReason {
             RevocationReason::PrivilegeWithdrawn => write!(f, "PRIVILEGE_WITHDRAWN"),
             RevocationReason::RemoveFromCrl => write!(f, "REMOVE_FROM_CRL"),
             RevocationReason::Superceded => write!(f, "SUPERCEDED"),
+            RevocationReason::Superseded => write!(f, "SUPERSEDED"),
             RevocationReason::Unspecified => write!(f, "UNSPECIFIED"),
             RevocationReason::Unknown(value) => write!(f, "{}", value),
         }

@@ -3,6 +3,8 @@ pub use crate::types::_certificate_options::CertificateOptions;
 
 pub use crate::types::_certificate_transparency_logging_preference::CertificateTransparencyLoggingPreference;
 
+pub use crate::types::_certificate_managed_by::CertificateManagedBy;
+
 pub use crate::types::_key_algorithm::KeyAlgorithm;
 
 pub use crate::types::_tag::Tag;
@@ -43,6 +45,8 @@ pub use crate::types::_failure_reason::FailureReason;
 
 pub use crate::types::_domain_validation::DomainValidation;
 
+pub use crate::types::_http_redirect::HttpRedirect;
+
 pub use crate::types::_resource_record::ResourceRecord;
 
 pub use crate::types::_record_type::RecordType;
@@ -54,6 +58,8 @@ pub use crate::types::_renewal_status::RenewalStatus;
 pub use crate::types::_revocation_reason::RevocationReason;
 
 mod _certificate_detail;
+
+mod _certificate_managed_by;
 
 mod _certificate_options;
 
@@ -80,6 +86,8 @@ mod _extended_key_usage_name;
 mod _failure_reason;
 
 mod _filters;
+
+mod _http_redirect;
 
 mod _key_algorithm;
 

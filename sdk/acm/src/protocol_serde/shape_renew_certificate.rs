@@ -32,6 +32,22 @@ pub fn de_renew_certificate_http_error(
             }
             tmp
         }),
+        "RequestInProgressException" => crate::operation::renew_certificate::RenewCertificateError::RequestInProgressException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::RequestInProgressExceptionBuilder::default();
+                output =
+                    crate::protocol_serde::shape_request_in_progress_exception::de_request_in_progress_exception_json_err(_response_body, output)
+                        .map_err(crate::operation::renew_certificate::RenewCertificateError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "ResourceNotFoundException" => crate::operation::renew_certificate::RenewCertificateError::ResourceNotFoundException({
             #[allow(unused_mut)]
             let mut tmp = {

@@ -443,6 +443,7 @@ impl From<crate::operation::renew_certificate::RenewCertificateError> for Error 
     fn from(err: crate::operation::renew_certificate::RenewCertificateError) -> Self {
         match err {
             crate::operation::renew_certificate::RenewCertificateError::InvalidArnException(inner) => Error::InvalidArnException(inner),
+            crate::operation::renew_certificate::RenewCertificateError::RequestInProgressException(inner) => Error::RequestInProgressException(inner),
             crate::operation::renew_certificate::RenewCertificateError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::renew_certificate::RenewCertificateError::Unhandled(inner) => Error::Unhandled(inner),
         }

@@ -42,6 +42,9 @@ where
                         "ResourceRecord" => {
                             builder = builder.set_resource_record(crate::protocol_serde::shape_resource_record::de_resource_record(tokens)?);
                         }
+                        "HttpRedirect" => {
+                            builder = builder.set_http_redirect(crate::protocol_serde::shape_http_redirect::de_http_redirect(tokens)?);
+                        }
                         "ValidationMethod" => {
                             builder = builder.set_validation_method(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

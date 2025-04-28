@@ -10,6 +10,8 @@ pub struct CertificateDetail {
     pub domain_name: ::std::option::Option<::std::string::String>,
     /// <p>One or more domain names (subject alternative names) included in the certificate. This list contains the domain names that are bound to the public key that is contained in the certificate. The subject alternative names include the canonical domain name (CN) of the certificate and additional domain names that can be used to connect to the website.</p>
     pub subject_alternative_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>Identifies the Amazon Web Services service that manages the certificate issued by ACM.</p>
+    pub managed_by: ::std::option::Option<crate::types::CertificateManagedBy>,
     /// <p>Contains information about the initial validation of each domain name that occurs as a result of the <code>RequestCertificate</code> request. This field exists only when the certificate type is <code>AMAZON_ISSUED</code>.</p>
     pub domain_validation_options: ::std::option::Option<::std::vec::Vec<crate::types::DomainValidation>>,
     /// <p>The serial number of the certificate.</p>
@@ -73,6 +75,10 @@ impl CertificateDetail {
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.subject_alternative_names.is_none()`.
     pub fn subject_alternative_names(&self) -> &[::std::string::String] {
         self.subject_alternative_names.as_deref().unwrap_or_default()
+    }
+    /// <p>Identifies the Amazon Web Services service that manages the certificate issued by ACM.</p>
+    pub fn managed_by(&self) -> ::std::option::Option<&crate::types::CertificateManagedBy> {
+        self.managed_by.as_ref()
     }
     /// <p>Contains information about the initial validation of each domain name that occurs as a result of the <code>RequestCertificate</code> request. This field exists only when the certificate type is <code>AMAZON_ISSUED</code>.</p>
     ///
@@ -191,6 +197,7 @@ pub struct CertificateDetailBuilder {
     pub(crate) certificate_arn: ::std::option::Option<::std::string::String>,
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
     pub(crate) subject_alternative_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) managed_by: ::std::option::Option<crate::types::CertificateManagedBy>,
     pub(crate) domain_validation_options: ::std::option::Option<::std::vec::Vec<crate::types::DomainValidation>>,
     pub(crate) serial: ::std::option::Option<::std::string::String>,
     pub(crate) subject: ::std::option::Option<::std::string::String>,
@@ -263,6 +270,20 @@ impl CertificateDetailBuilder {
     /// <p>One or more domain names (subject alternative names) included in the certificate. This list contains the domain names that are bound to the public key that is contained in the certificate. The subject alternative names include the canonical domain name (CN) of the certificate and additional domain names that can be used to connect to the website.</p>
     pub fn get_subject_alternative_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.subject_alternative_names
+    }
+    /// <p>Identifies the Amazon Web Services service that manages the certificate issued by ACM.</p>
+    pub fn managed_by(mut self, input: crate::types::CertificateManagedBy) -> Self {
+        self.managed_by = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Identifies the Amazon Web Services service that manages the certificate issued by ACM.</p>
+    pub fn set_managed_by(mut self, input: ::std::option::Option<crate::types::CertificateManagedBy>) -> Self {
+        self.managed_by = input;
+        self
+    }
+    /// <p>Identifies the Amazon Web Services service that manages the certificate issued by ACM.</p>
+    pub fn get_managed_by(&self) -> &::std::option::Option<crate::types::CertificateManagedBy> {
+        &self.managed_by
     }
     /// Appends an item to `domain_validation_options`.
     ///
@@ -622,6 +643,7 @@ impl CertificateDetailBuilder {
             certificate_arn: self.certificate_arn,
             domain_name: self.domain_name,
             subject_alternative_names: self.subject_alternative_names,
+            managed_by: self.managed_by,
             domain_validation_options: self.domain_validation_options,
             serial: self.serial,
             subject: self.subject,

@@ -12,6 +12,7 @@
 /// ```text
 /// # let priceclass = unimplemented!();
 /// match priceclass {
+///     PriceClass::None => { /* ... */ },
 ///     PriceClass::PriceClass100 => { /* ... */ },
 ///     PriceClass::PriceClass200 => { /* ... */ },
 ///     PriceClass::PriceClassAll => { /* ... */ },
@@ -44,6 +45,8 @@
 )]
 pub enum PriceClass {
     #[allow(missing_docs)] // documentation missing in model
+    None,
+    #[allow(missing_docs)] // documentation missing in model
     PriceClass100,
     #[allow(missing_docs)] // documentation missing in model
     PriceClass200,
@@ -56,6 +59,7 @@ pub enum PriceClass {
 impl ::std::convert::From<&str> for PriceClass {
     fn from(s: &str) -> Self {
         match s {
+            "None" => PriceClass::None,
             "PriceClass_100" => PriceClass::PriceClass100,
             "PriceClass_200" => PriceClass::PriceClass200,
             "PriceClass_All" => PriceClass::PriceClassAll,
@@ -74,6 +78,7 @@ impl PriceClass {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            PriceClass::None => "None",
             PriceClass::PriceClass100 => "PriceClass_100",
             PriceClass::PriceClass200 => "PriceClass_200",
             PriceClass::PriceClassAll => "PriceClass_All",
@@ -82,7 +87,7 @@ impl PriceClass {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["PriceClass_100", "PriceClass_200", "PriceClass_All"]
+        &["None", "PriceClass_100", "PriceClass_200", "PriceClass_All"]
     }
 }
 impl ::std::convert::AsRef<str> for PriceClass {
@@ -105,6 +110,7 @@ impl PriceClass {
 impl ::std::fmt::Display for PriceClass {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            PriceClass::None => write!(f, "None"),
             PriceClass::PriceClass100 => write!(f, "PriceClass_100"),
             PriceClass::PriceClass200 => write!(f, "PriceClass_200"),
             PriceClass::PriceClassAll => write!(f, "PriceClass_All"),

@@ -144,6 +144,10 @@ pub trait Waiters {
     fn wait_until_distribution_deployed(&self) -> crate::waiters::distribution_deployed::DistributionDeployedFluentBuilder;
     /// Wait until an invalidation has completed.
     fn wait_until_invalidation_completed(&self) -> crate::waiters::invalidation_completed::InvalidationCompletedFluentBuilder;
+    /// Wait until an invalidation for distribution tenant has completed.
+    fn wait_until_invalidation_for_distribution_tenant_completed(
+        &self,
+    ) -> crate::waiters::invalidation_for_distribution_tenant_completed::InvalidationForDistributionTenantCompletedFluentBuilder;
     /// Wait until a streaming distribution is deployed.
     fn wait_until_streaming_distribution_deployed(
         &self,
@@ -155,6 +159,13 @@ impl Waiters for Client {
     }
     fn wait_until_invalidation_completed(&self) -> crate::waiters::invalidation_completed::InvalidationCompletedFluentBuilder {
         crate::waiters::invalidation_completed::InvalidationCompletedFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_invalidation_for_distribution_tenant_completed(
+        &self,
+    ) -> crate::waiters::invalidation_for_distribution_tenant_completed::InvalidationForDistributionTenantCompletedFluentBuilder {
+        crate::waiters::invalidation_for_distribution_tenant_completed::InvalidationForDistributionTenantCompletedFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
     fn wait_until_streaming_distribution_deployed(
         &self,
@@ -181,6 +192,10 @@ impl Client {
 
 mod associate_alias;
 
+mod associate_distribution_tenant_web_acl;
+
+mod associate_distribution_web_acl;
+
 mod copy_distribution;
 
 mod create_anycast_ip_list;
@@ -189,9 +204,13 @@ mod create_cache_policy;
 
 mod create_cloud_front_origin_access_identity;
 
+mod create_connection_group;
+
 mod create_continuous_deployment_policy;
 
 mod create_distribution;
+
+mod create_distribution_tenant;
 
 mod create_distribution_with_tags;
 
@@ -202,6 +221,8 @@ mod create_field_level_encryption_profile;
 mod create_function;
 
 mod create_invalidation;
+
+mod create_invalidation_for_distribution_tenant;
 
 mod create_key_group;
 
@@ -258,9 +279,13 @@ mod delete_cache_policy;
 
 mod delete_cloud_front_origin_access_identity;
 
+mod delete_connection_group;
+
 mod delete_continuous_deployment_policy;
 
 mod delete_distribution;
+
+mod delete_distribution_tenant;
 
 mod delete_field_level_encryption_config;
 
@@ -292,6 +317,10 @@ mod describe_function;
 
 mod describe_key_value_store;
 
+mod disassociate_distribution_tenant_web_acl;
+
+mod disassociate_distribution_web_acl;
+
 mod get_anycast_ip_list;
 
 mod get_cache_policy;
@@ -302,6 +331,10 @@ mod get_cloud_front_origin_access_identity;
 
 mod get_cloud_front_origin_access_identity_config;
 
+mod get_connection_group;
+
+mod get_connection_group_by_routing_endpoint;
+
 mod get_continuous_deployment_policy;
 
 mod get_continuous_deployment_policy_config;
@@ -309,6 +342,10 @@ mod get_continuous_deployment_policy_config;
 mod get_distribution;
 
 mod get_distribution_config;
+
+mod get_distribution_tenant;
+
+mod get_distribution_tenant_by_domain;
 
 mod get_field_level_encryption;
 
@@ -322,9 +359,13 @@ mod get_function;
 
 mod get_invalidation;
 
+mod get_invalidation_for_distribution_tenant;
+
 mod get_key_group;
 
 mod get_key_group_config;
+
+mod get_managed_certificate_details;
 
 mod get_monitoring_subscription;
 
@@ -360,13 +401,21 @@ mod list_cloud_front_origin_access_identities;
 
 mod list_conflicting_aliases;
 
+mod list_connection_groups;
+
 mod list_continuous_deployment_policies;
+
+mod list_distribution_tenants;
+
+mod list_distribution_tenants_by_customization;
 
 mod list_distributions;
 
 mod list_distributions_by_anycast_ip_list_id;
 
 mod list_distributions_by_cache_policy_id;
+
+mod list_distributions_by_connection_mode;
 
 mod list_distributions_by_key_group;
 
@@ -380,6 +429,8 @@ mod list_distributions_by_vpc_origin_id;
 
 mod list_distributions_by_web_acl_id;
 
+mod list_domain_conflicts;
+
 mod list_field_level_encryption_configs;
 
 mod list_field_level_encryption_profiles;
@@ -387,6 +438,8 @@ mod list_field_level_encryption_profiles;
 mod list_functions;
 
 mod list_invalidations;
+
+mod list_invalidations_for_distribution_tenant;
 
 mod list_key_groups;
 
@@ -420,11 +473,17 @@ mod update_cache_policy;
 
 mod update_cloud_front_origin_access_identity;
 
+mod update_connection_group;
+
 mod update_continuous_deployment_policy;
 
 mod update_distribution;
 
+mod update_distribution_tenant;
+
 mod update_distribution_with_staging_config;
+
+mod update_domain_association;
 
 mod update_field_level_encryption_config;
 
@@ -449,3 +508,5 @@ mod update_response_headers_policy;
 mod update_streaming_distribution;
 
 mod update_vpc_origin;
+
+mod verify_dns_configuration;

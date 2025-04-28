@@ -21,4 +21,6 @@ pub use crate::types::_renewal_summary::RenewalSummaryBuilder;
 
 pub use crate::types::_domain_validation::DomainValidationBuilder;
 
+pub use crate::types::_http_redirect::HttpRedirectBuilder;
+
 pub use crate::types::_resource_record::ResourceRecordBuilder;

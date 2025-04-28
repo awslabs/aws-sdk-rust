@@ -39,6 +39,8 @@ pub use crate::types::_image_tests_configuration::ImageTestsConfigurationBuilder
 
 pub use crate::types::_distribution::DistributionBuilder;
 
+pub use crate::types::_ssm_parameter_configuration::SsmParameterConfigurationBuilder;
+
 pub use crate::types::_fast_launch_configuration::FastLaunchConfigurationBuilder;
 
 pub use crate::types::_fast_launch_launch_template_specification::FastLaunchLaunchTemplateSpecificationBuilder;

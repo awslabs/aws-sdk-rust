@@ -161,6 +161,8 @@ pub(crate) mod shape_key_usage;
 
 pub(crate) mod shape_key_usage_names;
 
+pub(crate) mod shape_http_redirect;
+
 pub(crate) mod shape_resource_record;
 
 pub(crate) mod shape_validation_email_list;

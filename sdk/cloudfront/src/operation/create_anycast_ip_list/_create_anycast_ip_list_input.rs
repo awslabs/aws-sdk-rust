@@ -5,7 +5,7 @@
 pub struct CreateAnycastIpListInput {
     /// <p>Name of the Anycast static IP list.</p>
     pub name: ::std::option::Option<::std::string::String>,
-    /// <p>The number of static IP addresses that are allocated to the Anycast static IP list.</p>
+    /// <p>The number of static IP addresses that are allocated to the Anycast static IP list. Valid values: 21 or 3.</p>
     pub ip_count: ::std::option::Option<i32>,
     /// <p>A complex type that contains zero or more <code>Tag</code> elements.</p>
     pub tags: ::std::option::Option<crate::types::Tags>,
@@ -15,7 +15,7 @@ impl CreateAnycastIpListInput {
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The number of static IP addresses that are allocated to the Anycast static IP list.</p>
+    /// <p>The number of static IP addresses that are allocated to the Anycast static IP list. Valid values: 21 or 3.</p>
     pub fn ip_count(&self) -> ::std::option::Option<i32> {
         self.ip_count
     }
@@ -55,18 +55,18 @@ impl CreateAnycastIpListInputBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
-    /// <p>The number of static IP addresses that are allocated to the Anycast static IP list.</p>
+    /// <p>The number of static IP addresses that are allocated to the Anycast static IP list. Valid values: 21 or 3.</p>
     /// This field is required.
     pub fn ip_count(mut self, input: i32) -> Self {
         self.ip_count = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The number of static IP addresses that are allocated to the Anycast static IP list.</p>
+    /// <p>The number of static IP addresses that are allocated to the Anycast static IP list. Valid values: 21 or 3.</p>
     pub fn set_ip_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.ip_count = input;
         self
     }
-    /// <p>The number of static IP addresses that are allocated to the Anycast static IP list.</p>
+    /// <p>The number of static IP addresses that are allocated to the Anycast static IP list. Valid values: 21 or 3.</p>
     pub fn get_ip_count(&self) -> &::std::option::Option<i32> {
         &self.ip_count
     }

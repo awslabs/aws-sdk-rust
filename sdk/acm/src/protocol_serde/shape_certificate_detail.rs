@@ -31,6 +31,13 @@ where
                         "SubjectAlternativeNames" => {
                             builder = builder.set_subject_alternative_names(crate::protocol_serde::shape_domain_list::de_domain_list(tokens)?);
                         }
+                        "ManagedBy" => {
+                            builder = builder.set_managed_by(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CertificateManagedBy::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
                         "DomainValidationOptions" => {
                             builder = builder.set_domain_validation_options(
                                 crate::protocol_serde::shape_domain_validation_list::de_domain_validation_list(tokens)?,

@@ -264,6 +264,8 @@ pub enum CreateDistributionError {
     ContinuousDeploymentPolicyInUse(crate::types::error::ContinuousDeploymentPolicyInUse),
     /// <p>The caller reference you attempted to create the distribution with is associated with another distribution.</p>
     DistributionAlreadyExists(crate::types::error::DistributionAlreadyExists),
+    /// <p>The entity limit has been exceeded.</p>
+    EntityLimitExceeded(crate::types::error::EntityLimitExceeded),
     /// <p>The entity was not found.</p>
     EntityNotFound(crate::types::error::EntityNotFound),
     /// <p>The specified configuration for field-level encryption can't be associated with the specified cache behavior.</p>
@@ -427,6 +429,7 @@ impl CreateDistributionError {
             Self::CnameAlreadyExists(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ContinuousDeploymentPolicyInUse(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::DistributionAlreadyExists(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::EntityLimitExceeded(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::EntityNotFound(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::IllegalFieldLevelEncryptionConfigAssociationWithCacheBehavior(e) => {
                 ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e)
@@ -509,6 +512,10 @@ impl CreateDistributionError {
     /// Returns `true` if the error kind is `CreateDistributionError::DistributionAlreadyExists`.
     pub fn is_distribution_already_exists(&self) -> bool {
         matches!(self, Self::DistributionAlreadyExists(_))
+    }
+    /// Returns `true` if the error kind is `CreateDistributionError::EntityLimitExceeded`.
+    pub fn is_entity_limit_exceeded(&self) -> bool {
+        matches!(self, Self::EntityLimitExceeded(_))
     }
     /// Returns `true` if the error kind is `CreateDistributionError::EntityNotFound`.
     pub fn is_entity_not_found(&self) -> bool {
@@ -766,6 +773,7 @@ impl ::std::error::Error for CreateDistributionError {
             Self::CnameAlreadyExists(_inner) => ::std::option::Option::Some(_inner),
             Self::ContinuousDeploymentPolicyInUse(_inner) => ::std::option::Option::Some(_inner),
             Self::DistributionAlreadyExists(_inner) => ::std::option::Option::Some(_inner),
+            Self::EntityLimitExceeded(_inner) => ::std::option::Option::Some(_inner),
             Self::EntityNotFound(_inner) => ::std::option::Option::Some(_inner),
             Self::IllegalFieldLevelEncryptionConfigAssociationWithCacheBehavior(_inner) => ::std::option::Option::Some(_inner),
             Self::IllegalOriginAccessConfiguration(_inner) => ::std::option::Option::Some(_inner),
@@ -839,6 +847,7 @@ impl ::std::fmt::Display for CreateDistributionError {
             Self::CnameAlreadyExists(_inner) => _inner.fmt(f),
             Self::ContinuousDeploymentPolicyInUse(_inner) => _inner.fmt(f),
             Self::DistributionAlreadyExists(_inner) => _inner.fmt(f),
+            Self::EntityLimitExceeded(_inner) => _inner.fmt(f),
             Self::EntityNotFound(_inner) => _inner.fmt(f),
             Self::IllegalFieldLevelEncryptionConfigAssociationWithCacheBehavior(_inner) => _inner.fmt(f),
             Self::IllegalOriginAccessConfiguration(_inner) => _inner.fmt(f),
@@ -926,6 +935,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for CreateDistrib
             Self::CnameAlreadyExists(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ContinuousDeploymentPolicyInUse(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::DistributionAlreadyExists(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::EntityLimitExceeded(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::EntityNotFound(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::IllegalFieldLevelEncryptionConfigAssociationWithCacheBehavior(_inner) => {
                 ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)

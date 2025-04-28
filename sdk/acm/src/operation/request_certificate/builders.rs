@@ -328,4 +328,18 @@ impl RequestCertificateFluentBuilder {
     pub fn get_key_algorithm(&self) -> &::std::option::Option<crate::types::KeyAlgorithm> {
         self.inner.get_key_algorithm()
     }
+    /// <p>Identifies the Amazon Web Services service that manages the certificate issued by ACM.</p>
+    pub fn managed_by(mut self, input: crate::types::CertificateManagedBy) -> Self {
+        self.inner = self.inner.managed_by(input);
+        self
+    }
+    /// <p>Identifies the Amazon Web Services service that manages the certificate issued by ACM.</p>
+    pub fn set_managed_by(mut self, input: ::std::option::Option<crate::types::CertificateManagedBy>) -> Self {
+        self.inner = self.inner.set_managed_by(input);
+        self
+    }
+    /// <p>Identifies the Amazon Web Services service that manages the certificate issued by ACM.</p>
+    pub fn get_managed_by(&self) -> &::std::option::Option<crate::types::CertificateManagedBy> {
+        self.inner.get_managed_by()
+    }
 }

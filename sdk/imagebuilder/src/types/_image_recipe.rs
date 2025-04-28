@@ -20,7 +20,17 @@ pub struct ImageRecipe {
     pub version: ::std::option::Option<::std::string::String>,
     /// <p>The components that are included in the image recipe. Recipes require a minimum of one build component, and can have a maximum of 20 build and test components in any combination.</p>
     pub components: ::std::option::Option<::std::vec::Vec<crate::types::ComponentConfiguration>>,
-    /// <p>The base image of the image recipe.</p>
+    /// <p>The base image for customizations specified in the image recipe. You can specify the parent image using one of the following options:</p>
+    /// <ul>
+    /// <li>
+    /// <p>AMI ID</p></li>
+    /// <li>
+    /// <p>Image Builder image Amazon Resource Name (ARN)</p></li>
+    /// <li>
+    /// <p>Amazon Web Services Systems Manager (SSM) Parameter Store Parameter, prefixed by <code>ssm:</code>, followed by the parameter name or ARN.</p></li>
+    /// <li>
+    /// <p>Amazon Web Services Marketplace product ID</p></li>
+    /// </ul>
     pub parent_image: ::std::option::Option<::std::string::String>,
     /// <p>The block device mappings to apply when creating images from this recipe.</p>
     pub block_device_mappings: ::std::option::Option<::std::vec::Vec<crate::types::InstanceBlockDeviceMapping>>,
@@ -68,7 +78,17 @@ impl ImageRecipe {
     pub fn components(&self) -> &[crate::types::ComponentConfiguration] {
         self.components.as_deref().unwrap_or_default()
     }
-    /// <p>The base image of the image recipe.</p>
+    /// <p>The base image for customizations specified in the image recipe. You can specify the parent image using one of the following options:</p>
+    /// <ul>
+    /// <li>
+    /// <p>AMI ID</p></li>
+    /// <li>
+    /// <p>Image Builder image Amazon Resource Name (ARN)</p></li>
+    /// <li>
+    /// <p>Amazon Web Services Systems Manager (SSM) Parameter Store Parameter, prefixed by <code>ssm:</code>, followed by the parameter name or ARN.</p></li>
+    /// <li>
+    /// <p>Amazon Web Services Marketplace product ID</p></li>
+    /// </ul>
     pub fn parent_image(&self) -> ::std::option::Option<&str> {
         self.parent_image.as_deref()
     }
@@ -240,17 +260,47 @@ impl ImageRecipeBuilder {
     pub fn get_components(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ComponentConfiguration>> {
         &self.components
     }
-    /// <p>The base image of the image recipe.</p>
+    /// <p>The base image for customizations specified in the image recipe. You can specify the parent image using one of the following options:</p>
+    /// <ul>
+    /// <li>
+    /// <p>AMI ID</p></li>
+    /// <li>
+    /// <p>Image Builder image Amazon Resource Name (ARN)</p></li>
+    /// <li>
+    /// <p>Amazon Web Services Systems Manager (SSM) Parameter Store Parameter, prefixed by <code>ssm:</code>, followed by the parameter name or ARN.</p></li>
+    /// <li>
+    /// <p>Amazon Web Services Marketplace product ID</p></li>
+    /// </ul>
     pub fn parent_image(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.parent_image = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The base image of the image recipe.</p>
+    /// <p>The base image for customizations specified in the image recipe. You can specify the parent image using one of the following options:</p>
+    /// <ul>
+    /// <li>
+    /// <p>AMI ID</p></li>
+    /// <li>
+    /// <p>Image Builder image Amazon Resource Name (ARN)</p></li>
+    /// <li>
+    /// <p>Amazon Web Services Systems Manager (SSM) Parameter Store Parameter, prefixed by <code>ssm:</code>, followed by the parameter name or ARN.</p></li>
+    /// <li>
+    /// <p>Amazon Web Services Marketplace product ID</p></li>
+    /// </ul>
     pub fn set_parent_image(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.parent_image = input;
         self
     }
-    /// <p>The base image of the image recipe.</p>
+    /// <p>The base image for customizations specified in the image recipe. You can specify the parent image using one of the following options:</p>
+    /// <ul>
+    /// <li>
+    /// <p>AMI ID</p></li>
+    /// <li>
+    /// <p>Image Builder image Amazon Resource Name (ARN)</p></li>
+    /// <li>
+    /// <p>Amazon Web Services Systems Manager (SSM) Parameter Store Parameter, prefixed by <code>ssm:</code>, followed by the parameter name or ARN.</p></li>
+    /// <li>
+    /// <p>Amazon Web Services Marketplace product ID</p></li>
+    /// </ul>
     pub fn get_parent_image(&self) -> &::std::option::Option<::std::string::String> {
         &self.parent_image
     }

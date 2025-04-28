@@ -13,6 +13,36 @@ pub(crate) fn reflens_list_cloud_front_origin_access_identities_output_output_cl
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_connection_groups_output_output_next_marker(
+    input: &crate::operation::list_connection_groups::ListConnectionGroupsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_marker {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_distribution_tenants_output_output_next_marker(
+    input: &crate::operation::list_distribution_tenants::ListDistributionTenantsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_marker {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_distribution_tenants_by_customization_output_output_next_marker(
+    input: &crate::operation::list_distribution_tenants_by_customization::ListDistributionTenantsByCustomizationOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_marker {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_distributions_output_output_distribution_list_next_marker(
     input: &crate::operation::list_distributions::ListDistributionsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -27,8 +57,46 @@ pub(crate) fn reflens_list_distributions_output_output_distribution_list_next_ma
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_distributions_by_connection_mode_output_output_distribution_list_next_marker(
+    input: &crate::operation::list_distributions_by_connection_mode::ListDistributionsByConnectionModeOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.distribution_list {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    let input = match &input.next_marker {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_domain_conflicts_output_output_next_marker(
+    input: &crate::operation::list_domain_conflicts::ListDomainConflictsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_marker {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_invalidations_output_output_invalidation_list_next_marker(
     input: &crate::operation::list_invalidations::ListInvalidationsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.invalidation_list {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    let input = match &input.next_marker {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_invalidations_for_distribution_tenant_output_output_invalidation_list_next_marker(
+    input: &crate::operation::list_invalidations_for_distribution_tenant::ListInvalidationsForDistributionTenantOutput,
 ) -> ::std::option::Option<&::std::string::String> {
     let input = match &input.invalidation_list {
         ::std::option::Option::None => return ::std::option::Option::None,
@@ -97,6 +165,36 @@ pub(crate) fn lens_list_cloud_front_origin_access_identities_output_output_cloud
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn lens_list_connection_groups_output_output_connection_groups(
+    input: crate::operation::list_connection_groups::ListConnectionGroupsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::ConnectionGroupSummary>> {
+    let input = match input.connection_groups {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_distribution_tenants_output_output_distribution_tenant_list(
+    input: crate::operation::list_distribution_tenants::ListDistributionTenantsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::DistributionTenantSummary>> {
+    let input = match input.distribution_tenant_list {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_distribution_tenants_by_customization_output_output_distribution_tenant_list(
+    input: crate::operation::list_distribution_tenants_by_customization::ListDistributionTenantsByCustomizationOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::DistributionTenantSummary>> {
+    let input = match input.distribution_tenant_list {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn lens_list_distributions_output_output_distribution_list_items(
     input: crate::operation::list_distributions::ListDistributionsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::DistributionSummary>> {
@@ -111,8 +209,46 @@ pub(crate) fn lens_list_distributions_output_output_distribution_list_items(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn lens_list_distributions_by_connection_mode_output_output_distribution_list_items(
+    input: crate::operation::list_distributions_by_connection_mode::ListDistributionsByConnectionModeOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::DistributionSummary>> {
+    let input = match input.distribution_list {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    let input = match input.items {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_domain_conflicts_output_output_domain_conflicts(
+    input: crate::operation::list_domain_conflicts::ListDomainConflictsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::DomainConflict>> {
+    let input = match input.domain_conflicts {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn lens_list_invalidations_output_output_invalidation_list_items(
     input: crate::operation::list_invalidations::ListInvalidationsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::InvalidationSummary>> {
+    let input = match input.invalidation_list {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    let input = match input.items {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_invalidations_for_distribution_tenant_output_output_invalidation_list_items(
+    input: crate::operation::list_invalidations_for_distribution_tenant::ListInvalidationsForDistributionTenantOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::InvalidationSummary>> {
     let input = match input.invalidation_list {
         ::std::option::Option::None => return ::std::option::Option::None,
