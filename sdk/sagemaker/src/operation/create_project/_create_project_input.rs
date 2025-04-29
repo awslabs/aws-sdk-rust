@@ -79,7 +79,6 @@ impl CreateProjectInputBuilder {
         &self.project_description
     }
     /// <p>The product ID and provisioning artifact ID to provision a service catalog. The provisioning artifact ID will default to the latest provisioning artifact ID of the product, if you don't provide the provisioning artifact ID. For more information, see <a href="https://docs.aws.amazon.com/servicecatalog/latest/adminguide/introduction.html">What is Amazon Web Services Service Catalog</a>.</p>
-    /// This field is required.
     pub fn service_catalog_provisioning_details(mut self, input: crate::types::ServiceCatalogProvisioningDetails) -> Self {
         self.service_catalog_provisioning_details = ::std::option::Option::Some(input);
         self

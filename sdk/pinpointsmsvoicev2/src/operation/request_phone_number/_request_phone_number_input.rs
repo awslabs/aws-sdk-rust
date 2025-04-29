@@ -5,11 +5,12 @@
 pub struct RequestPhoneNumberInput {
     /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region.</p>
     pub iso_country_code: ::std::option::Option<::std::string::String>,
-    /// <p>The type of message. Valid values are TRANSACTIONAL for messages that are critical or time-sensitive and PROMOTIONAL for messages that aren't critical or time-sensitive.</p>
+    /// <p>The type of message. Valid values are <code>TRANSACTIONAL</code> for messages that are critical or time-sensitive and <code>PROMOTIONAL</code> for messages that aren't critical or time-sensitive.</p>
     pub message_type: ::std::option::Option<crate::types::MessageType>,
     /// <p>Indicates if the phone number will be used for text messages, voice messages, or both.</p>
     pub number_capabilities: ::std::option::Option<::std::vec::Vec<crate::types::NumberCapability>>,
     /// <p>The type of phone number to request.</p>
+    /// <p>When you request a <code>SIMULATOR</code> phone number, you must set <b>MessageType</b> as <code>TRANSACTIONAL</code>.</p>
     pub number_type: ::std::option::Option<crate::types::RequestableNumberType>,
     /// <p>The name of the OptOutList to associate with the phone number. You can use the OptOutListName or OptOutListArn.</p><important>
     /// <p>If you are using a shared AWS End User Messaging SMS and Voice resource then you must use the full Amazon Resource Name(ARN).</p>
@@ -33,7 +34,7 @@ impl RequestPhoneNumberInput {
     pub fn iso_country_code(&self) -> ::std::option::Option<&str> {
         self.iso_country_code.as_deref()
     }
-    /// <p>The type of message. Valid values are TRANSACTIONAL for messages that are critical or time-sensitive and PROMOTIONAL for messages that aren't critical or time-sensitive.</p>
+    /// <p>The type of message. Valid values are <code>TRANSACTIONAL</code> for messages that are critical or time-sensitive and <code>PROMOTIONAL</code> for messages that aren't critical or time-sensitive.</p>
     pub fn message_type(&self) -> ::std::option::Option<&crate::types::MessageType> {
         self.message_type.as_ref()
     }
@@ -44,6 +45,7 @@ impl RequestPhoneNumberInput {
         self.number_capabilities.as_deref().unwrap_or_default()
     }
     /// <p>The type of phone number to request.</p>
+    /// <p>When you request a <code>SIMULATOR</code> phone number, you must set <b>MessageType</b> as <code>TRANSACTIONAL</code>.</p>
     pub fn number_type(&self) -> ::std::option::Option<&crate::types::RequestableNumberType> {
         self.number_type.as_ref()
     }
@@ -116,18 +118,18 @@ impl RequestPhoneNumberInputBuilder {
     pub fn get_iso_country_code(&self) -> &::std::option::Option<::std::string::String> {
         &self.iso_country_code
     }
-    /// <p>The type of message. Valid values are TRANSACTIONAL for messages that are critical or time-sensitive and PROMOTIONAL for messages that aren't critical or time-sensitive.</p>
+    /// <p>The type of message. Valid values are <code>TRANSACTIONAL</code> for messages that are critical or time-sensitive and <code>PROMOTIONAL</code> for messages that aren't critical or time-sensitive.</p>
     /// This field is required.
     pub fn message_type(mut self, input: crate::types::MessageType) -> Self {
         self.message_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The type of message. Valid values are TRANSACTIONAL for messages that are critical or time-sensitive and PROMOTIONAL for messages that aren't critical or time-sensitive.</p>
+    /// <p>The type of message. Valid values are <code>TRANSACTIONAL</code> for messages that are critical or time-sensitive and <code>PROMOTIONAL</code> for messages that aren't critical or time-sensitive.</p>
     pub fn set_message_type(mut self, input: ::std::option::Option<crate::types::MessageType>) -> Self {
         self.message_type = input;
         self
     }
-    /// <p>The type of message. Valid values are TRANSACTIONAL for messages that are critical or time-sensitive and PROMOTIONAL for messages that aren't critical or time-sensitive.</p>
+    /// <p>The type of message. Valid values are <code>TRANSACTIONAL</code> for messages that are critical or time-sensitive and <code>PROMOTIONAL</code> for messages that aren't critical or time-sensitive.</p>
     pub fn get_message_type(&self) -> &::std::option::Option<crate::types::MessageType> {
         &self.message_type
     }
@@ -152,17 +154,20 @@ impl RequestPhoneNumberInputBuilder {
         &self.number_capabilities
     }
     /// <p>The type of phone number to request.</p>
+    /// <p>When you request a <code>SIMULATOR</code> phone number, you must set <b>MessageType</b> as <code>TRANSACTIONAL</code>.</p>
     /// This field is required.
     pub fn number_type(mut self, input: crate::types::RequestableNumberType) -> Self {
         self.number_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type of phone number to request.</p>
+    /// <p>When you request a <code>SIMULATOR</code> phone number, you must set <b>MessageType</b> as <code>TRANSACTIONAL</code>.</p>
     pub fn set_number_type(mut self, input: ::std::option::Option<crate::types::RequestableNumberType>) -> Self {
         self.number_type = input;
         self
     }
     /// <p>The type of phone number to request.</p>
+    /// <p>When you request a <code>SIMULATOR</code> phone number, you must set <b>MessageType</b> as <code>TRANSACTIONAL</code>.</p>
     pub fn get_number_type(&self) -> &::std::option::Option<crate::types::RequestableNumberType> {
         &self.number_type
     }

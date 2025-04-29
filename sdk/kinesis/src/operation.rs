@@ -58,6 +58,9 @@ pub mod list_stream_consumers;
 /// Types for the `ListStreams` operation.
 pub mod list_streams;
 
+/// Types for the `ListTagsForResource` operation.
+pub mod list_tags_for_resource;
+
 /// Types for the `ListTagsForStream` operation.
 pub mod list_tags_for_stream;
 
@@ -90,6 +93,12 @@ pub mod stop_stream_encryption;
 
 /// Types for the `SubscribeToShard` operation.
 pub mod subscribe_to_shard;
+
+/// Types for the `TagResource` operation.
+pub mod tag_resource;
+
+/// Types for the `UntagResource` operation.
+pub mod untag_resource;
 
 /// Types for the `UpdateShardCount` operation.
 pub mod update_shard_count;

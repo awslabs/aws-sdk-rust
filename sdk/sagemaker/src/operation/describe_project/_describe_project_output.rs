@@ -163,7 +163,6 @@ impl DescribeProjectOutputBuilder {
         &self.project_description
     }
     /// <p>Information used to provision a service catalog product. For information, see <a href="https://docs.aws.amazon.com/servicecatalog/latest/adminguide/introduction.html">What is Amazon Web Services Service Catalog</a>.</p>
-    /// This field is required.
     pub fn service_catalog_provisioning_details(mut self, input: crate::types::ServiceCatalogProvisioningDetails) -> Self {
         self.service_catalog_provisioning_details = ::std::option::Option::Some(input);
         self

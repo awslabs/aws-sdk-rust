@@ -289,6 +289,56 @@ impl From<crate::operation::check_document_access::CheckDocumentAccessError> for
         }
     }
 }
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::create_anonymous_web_experience_url::CreateAnonymousWebExperienceUrlError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::create_anonymous_web_experience_url::CreateAnonymousWebExperienceUrlError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_anonymous_web_experience_url::CreateAnonymousWebExperienceUrlError> for Error {
+    fn from(err: crate::operation::create_anonymous_web_experience_url::CreateAnonymousWebExperienceUrlError) -> Self {
+        match err {
+            crate::operation::create_anonymous_web_experience_url::CreateAnonymousWebExperienceUrlError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::create_anonymous_web_experience_url::CreateAnonymousWebExperienceUrlError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::create_anonymous_web_experience_url::CreateAnonymousWebExperienceUrlError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::create_anonymous_web_experience_url::CreateAnonymousWebExperienceUrlError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::create_anonymous_web_experience_url::CreateAnonymousWebExperienceUrlError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::create_anonymous_web_experience_url::CreateAnonymousWebExperienceUrlError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::create_anonymous_web_experience_url::CreateAnonymousWebExperienceUrlError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_application::CreateApplicationError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,

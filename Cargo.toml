@@ -1,14 +1,14 @@
 [workspace]
 resolver = "2"
 exclude = [
+    "examples/webassembly",
     "examples/cross_service",
     "examples/test-utils",
-    "examples/webassembly",
     "examples/lambda",
     "examples/examples",
-    "tests/webassembly",
+    "tests/no-default-features",
     "tests/telemetry",
-    "tests/no-default-features"
+    "tests/webassembly"
 ]
 members = [
     "sdk/accessanalyzer",
@@ -408,6 +408,7 @@ members = [
     "sdk/sqs",
     "sdk/ssm",
     "sdk/ssmcontacts",
+    "sdk/ssmguiconnect",
     "sdk/ssmincidents",
     "sdk/ssmquicksetup",
     "sdk/ssmsap",

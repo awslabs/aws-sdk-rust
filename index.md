@@ -139,6 +139,7 @@ The AWS SDK for Rust contains one crate for each AWS service, as well as [aws-co
 | AWS Route53 Recovery Control Config | [aws-sdk-route53recoverycontrolconfig](https://crates.io/crates/aws-sdk-route53recoverycontrolconfig) ([docs](https://docs.rs/aws-sdk-route53recoverycontrolconfig)) |
 | AWS Route53 Recovery Readiness | [aws-sdk-route53recoveryreadiness](https://crates.io/crates/aws-sdk-route53recoveryreadiness) ([docs](https://docs.rs/aws-sdk-route53recoveryreadiness)) |
 | AWS S3 Control | [aws-sdk-s3control](https://crates.io/crates/aws-sdk-s3control) ([docs](https://docs.rs/aws-sdk-s3control)) |
+| AWS SSM-GUIConnect | [aws-sdk-ssmguiconnect](https://crates.io/crates/aws-sdk-ssmguiconnect) ([docs](https://docs.rs/aws-sdk-ssmguiconnect)) |
 | AWS SSO Identity Store | [aws-sdk-identitystore](https://crates.io/crates/aws-sdk-identitystore) ([docs](https://docs.rs/aws-sdk-identitystore)) |
 | AWS SSO OIDC | [aws-sdk-ssooidc](https://crates.io/crates/aws-sdk-ssooidc) ([docs](https://docs.rs/aws-sdk-ssooidc)) |
 | AWS Savings Plans | [aws-sdk-savingsplans](https://crates.io/crates/aws-sdk-savingsplans) ([docs](https://docs.rs/aws-sdk-savingsplans)) |

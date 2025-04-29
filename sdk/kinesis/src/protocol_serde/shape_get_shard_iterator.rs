@@ -17,6 +17,21 @@ pub fn de_get_shard_iterator_http_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
+        "InternalFailureException" => crate::operation::get_shard_iterator::GetShardIteratorError::InternalFailureException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::InternalFailureExceptionBuilder::default();
+                output = crate::protocol_serde::shape_internal_failure_exception::de_internal_failure_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::get_shard_iterator::GetShardIteratorError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "AccessDeniedException" => crate::operation::get_shard_iterator::GetShardIteratorError::AccessDeniedException({
             #[allow(unused_mut)]
             let mut tmp = {

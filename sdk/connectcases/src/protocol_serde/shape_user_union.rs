@@ -7,6 +7,9 @@ pub fn ser_user_union(
         crate::types::UserUnion::UserArn(inner) => {
             object_7.key("userArn").string(inner.as_str());
         }
+        crate::types::UserUnion::CustomEntity(inner) => {
+            object_7.key("customEntity").string(inner.as_str());
+        }
         crate::types::UserUnion::Unknown => return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant("UserUnion")),
     }
     Ok(())
@@ -48,6 +51,14 @@ where
                                 .transpose()?
                                 .ok_or_else(|| {
                                     ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'userArn' cannot be null")
+                                })?,
+                        )),
+                        "customEntity" => Some(crate::types::UserUnion::CustomEntity(
+                            ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                .transpose()?
+                                .ok_or_else(|| {
+                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'customEntity' cannot be null")
                                 })?,
                         )),
                         _ => {

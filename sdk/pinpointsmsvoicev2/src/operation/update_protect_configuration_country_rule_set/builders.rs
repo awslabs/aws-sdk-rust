@@ -22,7 +22,7 @@ impl crate::operation::update_protect_configuration_country_rule_set::builders::
 }
 /// Fluent builder constructing a request to `UpdateProtectConfigurationCountryRuleSet`.
 ///
-/// <p>Update a country rule set to <code>ALLOW</code> or <code>BLOCK</code> messages to be sent to the specified destination counties. You can update one or multiple countries at a time. The updates are only applied to the specified NumberCapability type.</p>
+/// <p>Update a country rule set to <code>ALLOW</code>, <code>BLOCK</code>, <code>MONITOR</code>, or <code>FILTER</code> messages to be sent to the specified destination counties. You can update one or multiple countries at a time. The updates are only applied to the specified NumberCapability type.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateProtectConfigurationCountryRuleSetFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -149,6 +149,7 @@ impl UpdateProtectConfigurationCountryRuleSetFluentBuilder {
     /// To override the contents of this collection use [`set_country_rule_set_updates`](Self::set_country_rule_set_updates).
     ///
     /// <p>A map of ProtectConfigurationCountryRuleSetInformation objects that contain the details for the requested NumberCapability. The Key is the two-letter ISO country code. For a list of supported ISO country codes, see <a href="https://docs.aws.amazon.com/sms-voice/latest/userguide/phone-numbers-sms-by-country.html">Supported countries and regions (SMS channel)</a> in the AWS End User Messaging SMS User Guide.</p>
+    /// <p>For example, to set the United States as allowed and Canada as blocked, the <code>CountryRuleSetUpdates</code> would be formatted as: <code>"CountryRuleSetUpdates": { "US" : { "ProtectStatus": "ALLOW" } "CA" : { "ProtectStatus": "BLOCK" } }</code></p>
     pub fn country_rule_set_updates(
         mut self,
         k: impl ::std::convert::Into<::std::string::String>,
@@ -158,6 +159,7 @@ impl UpdateProtectConfigurationCountryRuleSetFluentBuilder {
         self
     }
     /// <p>A map of ProtectConfigurationCountryRuleSetInformation objects that contain the details for the requested NumberCapability. The Key is the two-letter ISO country code. For a list of supported ISO country codes, see <a href="https://docs.aws.amazon.com/sms-voice/latest/userguide/phone-numbers-sms-by-country.html">Supported countries and regions (SMS channel)</a> in the AWS End User Messaging SMS User Guide.</p>
+    /// <p>For example, to set the United States as allowed and Canada as blocked, the <code>CountryRuleSetUpdates</code> would be formatted as: <code>"CountryRuleSetUpdates": { "US" : { "ProtectStatus": "ALLOW" } "CA" : { "ProtectStatus": "BLOCK" } }</code></p>
     pub fn set_country_rule_set_updates(
         mut self,
         input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ProtectConfigurationCountryRuleSetInformation>>,
@@ -166,6 +168,7 @@ impl UpdateProtectConfigurationCountryRuleSetFluentBuilder {
         self
     }
     /// <p>A map of ProtectConfigurationCountryRuleSetInformation objects that contain the details for the requested NumberCapability. The Key is the two-letter ISO country code. For a list of supported ISO country codes, see <a href="https://docs.aws.amazon.com/sms-voice/latest/userguide/phone-numbers-sms-by-country.html">Supported countries and regions (SMS channel)</a> in the AWS End User Messaging SMS User Guide.</p>
+    /// <p>For example, to set the United States as allowed and Canada as blocked, the <code>CountryRuleSetUpdates</code> would be formatted as: <code>"CountryRuleSetUpdates": { "US" : { "ProtectStatus": "ALLOW" } "CA" : { "ProtectStatus": "BLOCK" } }</code></p>
     pub fn get_country_rule_set_updates(
         &self,
     ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ProtectConfigurationCountryRuleSetInformation>> {

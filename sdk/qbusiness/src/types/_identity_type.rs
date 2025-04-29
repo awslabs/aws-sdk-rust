@@ -12,6 +12,7 @@
 /// ```text
 /// # let identitytype = unimplemented!();
 /// match identitytype {
+///     IdentityType::Anonymous => { /* ... */ },
 ///     IdentityType::AwsIamIdc => { /* ... */ },
 ///     IdentityType::AwsIamIdpOidc => { /* ... */ },
 ///     IdentityType::AwsIamIdpSaml => { /* ... */ },
@@ -45,6 +46,8 @@
 )]
 pub enum IdentityType {
     #[allow(missing_docs)] // documentation missing in model
+    Anonymous,
+    #[allow(missing_docs)] // documentation missing in model
     AwsIamIdc,
     #[allow(missing_docs)] // documentation missing in model
     AwsIamIdpOidc,
@@ -59,6 +62,7 @@ pub enum IdentityType {
 impl ::std::convert::From<&str> for IdentityType {
     fn from(s: &str) -> Self {
         match s {
+            "ANONYMOUS" => IdentityType::Anonymous,
             "AWS_IAM_IDC" => IdentityType::AwsIamIdc,
             "AWS_IAM_IDP_OIDC" => IdentityType::AwsIamIdpOidc,
             "AWS_IAM_IDP_SAML" => IdentityType::AwsIamIdpSaml,
@@ -78,6 +82,7 @@ impl IdentityType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            IdentityType::Anonymous => "ANONYMOUS",
             IdentityType::AwsIamIdc => "AWS_IAM_IDC",
             IdentityType::AwsIamIdpOidc => "AWS_IAM_IDP_OIDC",
             IdentityType::AwsIamIdpSaml => "AWS_IAM_IDP_SAML",
@@ -87,7 +92,7 @@ impl IdentityType {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["AWS_IAM_IDC", "AWS_IAM_IDP_OIDC", "AWS_IAM_IDP_SAML", "AWS_QUICKSIGHT_IDP"]
+        &["ANONYMOUS", "AWS_IAM_IDC", "AWS_IAM_IDP_OIDC", "AWS_IAM_IDP_SAML", "AWS_QUICKSIGHT_IDP"]
     }
 }
 impl ::std::convert::AsRef<str> for IdentityType {
@@ -110,6 +115,7 @@ impl IdentityType {
 impl ::std::fmt::Display for IdentityType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            IdentityType::Anonymous => write!(f, "ANONYMOUS"),
             IdentityType::AwsIamIdc => write!(f, "AWS_IAM_IDC"),
             IdentityType::AwsIamIdpOidc => write!(f, "AWS_IAM_IDP_OIDC"),
             IdentityType::AwsIamIdpSaml => write!(f, "AWS_IAM_IDP_SAML"),

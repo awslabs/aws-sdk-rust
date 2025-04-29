@@ -12,6 +12,15 @@
 /// ```text
 /// # let opsitemfilterkey = unimplemented!();
 /// match opsitemfilterkey {
+///     OpsItemFilterKey::AccessRequestApproverArn => { /* ... */ },
+///     OpsItemFilterKey::AccessRequestApproverId => { /* ... */ },
+///     OpsItemFilterKey::AccessRequestIsReplica => { /* ... */ },
+///     OpsItemFilterKey::AccessRequestRequesterArn => { /* ... */ },
+///     OpsItemFilterKey::AccessRequestRequesterId => { /* ... */ },
+///     OpsItemFilterKey::AccessRequestSourceAccountId => { /* ... */ },
+///     OpsItemFilterKey::AccessRequestSourceOpsItemId => { /* ... */ },
+///     OpsItemFilterKey::AccessRequestSourceRegion => { /* ... */ },
+///     OpsItemFilterKey::AccessRequestTargetResourceId => { /* ... */ },
 ///     OpsItemFilterKey::AccountId => { /* ... */ },
 ///     OpsItemFilterKey::ActualEndTime => { /* ... */ },
 ///     OpsItemFilterKey::ActualStartTime => { /* ... */ },
@@ -68,6 +77,24 @@
     ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum OpsItemFilterKey {
+    #[allow(missing_docs)] // documentation missing in model
+    AccessRequestApproverArn,
+    #[allow(missing_docs)] // documentation missing in model
+    AccessRequestApproverId,
+    #[allow(missing_docs)] // documentation missing in model
+    AccessRequestIsReplica,
+    #[allow(missing_docs)] // documentation missing in model
+    AccessRequestRequesterArn,
+    #[allow(missing_docs)] // documentation missing in model
+    AccessRequestRequesterId,
+    #[allow(missing_docs)] // documentation missing in model
+    AccessRequestSourceAccountId,
+    #[allow(missing_docs)] // documentation missing in model
+    AccessRequestSourceOpsItemId,
+    #[allow(missing_docs)] // documentation missing in model
+    AccessRequestSourceRegion,
+    #[allow(missing_docs)] // documentation missing in model
+    AccessRequestTargetResourceId,
     #[allow(missing_docs)] // documentation missing in model
     AccountId,
     #[allow(missing_docs)] // documentation missing in model
@@ -131,6 +158,15 @@ pub enum OpsItemFilterKey {
 impl ::std::convert::From<&str> for OpsItemFilterKey {
     fn from(s: &str) -> Self {
         match s {
+            "AccessRequestByApproverArn" => OpsItemFilterKey::AccessRequestApproverArn,
+            "AccessRequestByApproverId" => OpsItemFilterKey::AccessRequestApproverId,
+            "AccessRequestByIsReplica" => OpsItemFilterKey::AccessRequestIsReplica,
+            "AccessRequestByRequesterArn" => OpsItemFilterKey::AccessRequestRequesterArn,
+            "AccessRequestByRequesterId" => OpsItemFilterKey::AccessRequestRequesterId,
+            "AccessRequestBySourceAccountId" => OpsItemFilterKey::AccessRequestSourceAccountId,
+            "AccessRequestBySourceOpsItemId" => OpsItemFilterKey::AccessRequestSourceOpsItemId,
+            "AccessRequestBySourceRegion" => OpsItemFilterKey::AccessRequestSourceRegion,
+            "AccessRequestByTargetResourceId" => OpsItemFilterKey::AccessRequestTargetResourceId,
             "AccountId" => OpsItemFilterKey::AccountId,
             "ActualEndTime" => OpsItemFilterKey::ActualEndTime,
             "ActualStartTime" => OpsItemFilterKey::ActualStartTime,
@@ -174,6 +210,15 @@ impl OpsItemFilterKey {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            OpsItemFilterKey::AccessRequestApproverArn => "AccessRequestByApproverArn",
+            OpsItemFilterKey::AccessRequestApproverId => "AccessRequestByApproverId",
+            OpsItemFilterKey::AccessRequestIsReplica => "AccessRequestByIsReplica",
+            OpsItemFilterKey::AccessRequestRequesterArn => "AccessRequestByRequesterArn",
+            OpsItemFilterKey::AccessRequestRequesterId => "AccessRequestByRequesterId",
+            OpsItemFilterKey::AccessRequestSourceAccountId => "AccessRequestBySourceAccountId",
+            OpsItemFilterKey::AccessRequestSourceOpsItemId => "AccessRequestBySourceOpsItemId",
+            OpsItemFilterKey::AccessRequestSourceRegion => "AccessRequestBySourceRegion",
+            OpsItemFilterKey::AccessRequestTargetResourceId => "AccessRequestByTargetResourceId",
             OpsItemFilterKey::AccountId => "AccountId",
             OpsItemFilterKey::ActualEndTime => "ActualEndTime",
             OpsItemFilterKey::ActualStartTime => "ActualStartTime",
@@ -208,6 +253,15 @@ impl OpsItemFilterKey {
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
+            "AccessRequestByApproverArn",
+            "AccessRequestByApproverId",
+            "AccessRequestByIsReplica",
+            "AccessRequestByRequesterArn",
+            "AccessRequestByRequesterId",
+            "AccessRequestBySourceAccountId",
+            "AccessRequestBySourceOpsItemId",
+            "AccessRequestBySourceRegion",
+            "AccessRequestByTargetResourceId",
             "AccountId",
             "ActualEndTime",
             "ActualStartTime",
@@ -259,6 +313,15 @@ impl OpsItemFilterKey {
 impl ::std::fmt::Display for OpsItemFilterKey {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            OpsItemFilterKey::AccessRequestApproverArn => write!(f, "AccessRequestByApproverArn"),
+            OpsItemFilterKey::AccessRequestApproverId => write!(f, "AccessRequestByApproverId"),
+            OpsItemFilterKey::AccessRequestIsReplica => write!(f, "AccessRequestByIsReplica"),
+            OpsItemFilterKey::AccessRequestRequesterArn => write!(f, "AccessRequestByRequesterArn"),
+            OpsItemFilterKey::AccessRequestRequesterId => write!(f, "AccessRequestByRequesterId"),
+            OpsItemFilterKey::AccessRequestSourceAccountId => write!(f, "AccessRequestBySourceAccountId"),
+            OpsItemFilterKey::AccessRequestSourceOpsItemId => write!(f, "AccessRequestBySourceOpsItemId"),
+            OpsItemFilterKey::AccessRequestSourceRegion => write!(f, "AccessRequestBySourceRegion"),
+            OpsItemFilterKey::AccessRequestTargetResourceId => write!(f, "AccessRequestByTargetResourceId"),
             OpsItemFilterKey::AccountId => write!(f, "AccountId"),
             OpsItemFilterKey::ActualEndTime => write!(f, "ActualEndTime"),
             OpsItemFilterKey::ActualStartTime => write!(f, "ActualStartTime"),

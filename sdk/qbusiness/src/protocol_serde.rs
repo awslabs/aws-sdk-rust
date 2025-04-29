@@ -37,6 +37,8 @@ pub(crate) mod shape_chat_sync;
 
 pub(crate) mod shape_check_document_access;
 
+pub(crate) mod shape_create_anonymous_web_experience_url;
+
 pub(crate) mod shape_create_application;
 
 pub(crate) mod shape_create_data_accessor;
@@ -198,6 +200,8 @@ pub(crate) mod shape_chat_output;
 pub(crate) mod shape_chat_sync_input;
 
 pub(crate) mod shape_conflict_exception;
+
+pub(crate) mod shape_create_anonymous_web_experience_url_input;
 
 pub(crate) mod shape_create_application_input;
 

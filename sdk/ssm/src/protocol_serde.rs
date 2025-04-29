@@ -149,6 +149,8 @@ pub(crate) mod shape_describe_sessions;
 
 pub(crate) mod shape_disassociate_ops_item_related_item;
 
+pub(crate) mod shape_get_access_token;
+
 pub(crate) mod shape_get_automation_execution;
 
 pub(crate) mod shape_get_calendar_state;
@@ -267,6 +269,8 @@ pub(crate) mod shape_send_automation_signal;
 
 pub(crate) mod shape_send_command;
 
+pub(crate) mod shape_start_access_request;
+
 pub(crate) mod shape_start_associations_once;
 
 pub(crate) mod shape_start_automation_execution;
@@ -311,8 +315,6 @@ pub(crate) mod shape_update_resource_data_sync;
 
 pub(crate) mod shape_update_service_setting;
 
-pub(crate) mod shape_add_tags_to_resource_input;
-
 pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
     if data.is_empty() {
         b"{}"
@@ -320,6 +322,10 @@ pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
         data
     }
 }
+
+pub(crate) mod shape_access_denied_exception;
+
+pub(crate) mod shape_add_tags_to_resource_input;
 
 pub(crate) mod shape_already_exists_exception;
 
@@ -492,6 +498,8 @@ pub(crate) mod shape_duplicate_document_version_name;
 pub(crate) mod shape_duplicate_instance_id;
 
 pub(crate) mod shape_feature_not_available_exception;
+
+pub(crate) mod shape_get_access_token_input;
 
 pub(crate) mod shape_get_automation_execution_input;
 
@@ -799,7 +807,11 @@ pub(crate) mod shape_send_automation_signal_input;
 
 pub(crate) mod shape_send_command_input;
 
+pub(crate) mod shape_service_quota_exceeded_exception;
+
 pub(crate) mod shape_service_setting_not_found;
+
+pub(crate) mod shape_start_access_request_input;
 
 pub(crate) mod shape_start_associations_once_input;
 
@@ -822,6 +834,8 @@ pub(crate) mod shape_target_in_use_exception;
 pub(crate) mod shape_target_not_connected;
 
 pub(crate) mod shape_terminate_session_input;
+
+pub(crate) mod shape_throttling_exception;
 
 pub(crate) mod shape_too_many_tags_error;
 
@@ -940,6 +954,8 @@ pub(crate) mod shape_compliance_string_filter;
 pub(crate) mod shape_compliance_summary_item_list;
 
 pub(crate) mod shape_create_association_batch_request_entry;
+
+pub(crate) mod shape_credentials;
 
 pub(crate) mod shape_describe_activations_filter;
 

@@ -128,6 +128,7 @@
 ///     AppInstanceType::MlP4D24Xlarge => { /* ... */ },
 ///     AppInstanceType::MlP4De24Xlarge => { /* ... */ },
 ///     AppInstanceType::MlP548Xlarge => { /* ... */ },
+///     AppInstanceType::MlP5En48Xlarge => { /* ... */ },
 ///     AppInstanceType::MlR512Xlarge => { /* ... */ },
 ///     AppInstanceType::MlR516Xlarge => { /* ... */ },
 ///     AppInstanceType::MlR524Xlarge => { /* ... */ },
@@ -434,6 +435,8 @@ pub enum AppInstanceType {
     #[allow(missing_docs)] // documentation missing in model
     MlP548Xlarge,
     #[allow(missing_docs)] // documentation missing in model
+    MlP5En48Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
     MlR512Xlarge,
     #[allow(missing_docs)] // documentation missing in model
     MlR516Xlarge,
@@ -646,6 +649,7 @@ impl ::std::convert::From<&str> for AppInstanceType {
             "ml.p4d.24xlarge" => AppInstanceType::MlP4D24Xlarge,
             "ml.p4de.24xlarge" => AppInstanceType::MlP4De24Xlarge,
             "ml.p5.48xlarge" => AppInstanceType::MlP548Xlarge,
+            "ml.p5en.48xlarge" => AppInstanceType::MlP5En48Xlarge,
             "ml.r5.12xlarge" => AppInstanceType::MlR512Xlarge,
             "ml.r5.16xlarge" => AppInstanceType::MlR516Xlarge,
             "ml.r5.24xlarge" => AppInstanceType::MlR524Xlarge,
@@ -822,6 +826,7 @@ impl AppInstanceType {
             AppInstanceType::MlP4D24Xlarge => "ml.p4d.24xlarge",
             AppInstanceType::MlP4De24Xlarge => "ml.p4de.24xlarge",
             AppInstanceType::MlP548Xlarge => "ml.p5.48xlarge",
+            AppInstanceType::MlP5En48Xlarge => "ml.p5en.48xlarge",
             AppInstanceType::MlR512Xlarge => "ml.r5.12xlarge",
             AppInstanceType::MlR516Xlarge => "ml.r5.16xlarge",
             AppInstanceType::MlR524Xlarge => "ml.r5.24xlarge",
@@ -989,6 +994,7 @@ impl AppInstanceType {
             "ml.p4d.24xlarge",
             "ml.p4de.24xlarge",
             "ml.p5.48xlarge",
+            "ml.p5en.48xlarge",
             "ml.r5.12xlarge",
             "ml.r5.16xlarge",
             "ml.r5.24xlarge",
@@ -1173,6 +1179,7 @@ impl ::std::fmt::Display for AppInstanceType {
             AppInstanceType::MlP4D24Xlarge => write!(f, "ml.p4d.24xlarge"),
             AppInstanceType::MlP4De24Xlarge => write!(f, "ml.p4de.24xlarge"),
             AppInstanceType::MlP548Xlarge => write!(f, "ml.p5.48xlarge"),
+            AppInstanceType::MlP5En48Xlarge => write!(f, "ml.p5en.48xlarge"),
             AppInstanceType::MlR512Xlarge => write!(f, "ml.r5.12xlarge"),
             AppInstanceType::MlR516Xlarge => write!(f, "ml.r5.16xlarge"),
             AppInstanceType::MlR524Xlarge => write!(f, "ml.r5.24xlarge"),

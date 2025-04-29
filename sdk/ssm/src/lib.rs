@@ -39,7 +39,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-//! aws-sdk-ssm = "1.72.0"
+//! aws-sdk-ssm = "1.73.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!
@@ -223,14 +223,14 @@ mod endpoint_lib;
 
 mod lens;
 
+mod serde_util;
+
 /// Supporting types for waiters.
 ///
 /// Note: to use waiters, import the [`Waiters`](crate::client::Waiters) trait, which adds methods prefixed with `wait_until` to the client.
 pub mod waiters;
 
 mod json_errors;
-
-mod serde_util;
 
 #[doc(inline)]
 pub use client::Client;

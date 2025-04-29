@@ -22,6 +22,9 @@ pub mod chat_sync;
 /// Types for the `CheckDocumentAccess` operation.
 pub mod check_document_access;
 
+/// Types for the `CreateAnonymousWebExperienceUrl` operation.
+pub mod create_anonymous_web_experience_url;
+
 /// Types for the `CreateApplication` operation.
 pub mod create_application;
 

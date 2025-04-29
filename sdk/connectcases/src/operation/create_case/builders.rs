@@ -179,17 +179,17 @@ impl CreateCaseFluentBuilder {
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_client_token()
     }
-    /// <p>Represents the identity of the person who performed the action.</p>
+    /// <p>Represents the entity that performed the action.</p>
     pub fn performed_by(mut self, input: crate::types::UserUnion) -> Self {
         self.inner = self.inner.performed_by(input);
         self
     }
-    /// <p>Represents the identity of the person who performed the action.</p>
+    /// <p>Represents the entity that performed the action.</p>
     pub fn set_performed_by(mut self, input: ::std::option::Option<crate::types::UserUnion>) -> Self {
         self.inner = self.inner.set_performed_by(input);
         self
     }
-    /// <p>Represents the identity of the person who performed the action.</p>
+    /// <p>Represents the entity that performed the action.</p>
     pub fn get_performed_by(&self) -> &::std::option::Option<crate::types::UserUnion> {
         self.inner.get_performed_by()
     }

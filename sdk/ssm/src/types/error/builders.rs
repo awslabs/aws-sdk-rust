@@ -99,6 +99,14 @@ pub use crate::types::error::_automation_definition_not_approved_exception::Auto
 
 pub use crate::types::error::_invalid_association::InvalidAssociationBuilder;
 
+pub use crate::types::error::_throttling_exception::ThrottlingExceptionBuilder;
+
+pub use crate::types::error::_service_quota_exceeded_exception::ServiceQuotaExceededExceptionBuilder;
+
+pub use crate::types::error::_resource_not_found_exception::ResourceNotFoundExceptionBuilder;
+
+pub use crate::types::error::_access_denied_exception::AccessDeniedExceptionBuilder;
+
 pub use crate::types::error::_unsupported_platform_type::UnsupportedPlatformTypeBuilder;
 
 pub use crate::types::error::_invalid_role::InvalidRoleBuilder;
@@ -130,8 +138,6 @@ pub use crate::types::error::_resource_policy_limit_exceeded_exception::Resource
 pub use crate::types::error::_resource_policy_invalid_parameter_exception::ResourcePolicyInvalidParameterExceptionBuilder;
 
 pub use crate::types::error::_resource_policy_conflict_exception::ResourcePolicyConflictExceptionBuilder;
-
-pub use crate::types::error::_resource_not_found_exception::ResourceNotFoundExceptionBuilder;
 
 pub use crate::types::error::_malformed_resource_policy_document_exception::MalformedResourcePolicyDocumentExceptionBuilder;
 

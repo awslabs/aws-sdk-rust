@@ -15,6 +15,7 @@
 ///     SignalType::Approve => { /* ... */ },
 ///     SignalType::Reject => { /* ... */ },
 ///     SignalType::Resume => { /* ... */ },
+///     SignalType::Revoke => { /* ... */ },
 ///     SignalType::StartStep => { /* ... */ },
 ///     SignalType::StopStep => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -52,6 +53,8 @@ pub enum SignalType {
     #[allow(missing_docs)] // documentation missing in model
     Resume,
     #[allow(missing_docs)] // documentation missing in model
+    Revoke,
+    #[allow(missing_docs)] // documentation missing in model
     StartStep,
     #[allow(missing_docs)] // documentation missing in model
     StopStep,
@@ -65,6 +68,7 @@ impl ::std::convert::From<&str> for SignalType {
             "Approve" => SignalType::Approve,
             "Reject" => SignalType::Reject,
             "Resume" => SignalType::Resume,
+            "Revoke" => SignalType::Revoke,
             "StartStep" => SignalType::StartStep,
             "StopStep" => SignalType::StopStep,
             other => SignalType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -85,6 +89,7 @@ impl SignalType {
             SignalType::Approve => "Approve",
             SignalType::Reject => "Reject",
             SignalType::Resume => "Resume",
+            SignalType::Revoke => "Revoke",
             SignalType::StartStep => "StartStep",
             SignalType::StopStep => "StopStep",
             SignalType::Unknown(value) => value.as_str(),
@@ -92,7 +97,7 @@ impl SignalType {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["Approve", "Reject", "Resume", "StartStep", "StopStep"]
+        &["Approve", "Reject", "Resume", "Revoke", "StartStep", "StopStep"]
     }
 }
 impl ::std::convert::AsRef<str> for SignalType {
@@ -118,6 +123,7 @@ impl ::std::fmt::Display for SignalType {
             SignalType::Approve => write!(f, "Approve"),
             SignalType::Reject => write!(f, "Reject"),
             SignalType::Resume => write!(f, "Resume"),
+            SignalType::Revoke => write!(f, "Revoke"),
             SignalType::StartStep => write!(f, "StartStep"),
             SignalType::StopStep => write!(f, "StopStep"),
             SignalType::Unknown(value) => write!(f, "{}", value),

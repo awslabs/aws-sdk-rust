@@ -14,6 +14,8 @@
 /// match protectstatus {
 ///     ProtectStatus::Allow => { /* ... */ },
 ///     ProtectStatus::Block => { /* ... */ },
+///     ProtectStatus::Filter => { /* ... */ },
+///     ProtectStatus::Monitor => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -46,6 +48,10 @@ pub enum ProtectStatus {
     Allow,
     #[allow(missing_docs)] // documentation missing in model
     Block,
+    #[allow(missing_docs)] // documentation missing in model
+    Filter,
+    #[allow(missing_docs)] // documentation missing in model
+    Monitor,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -55,6 +61,8 @@ impl ::std::convert::From<&str> for ProtectStatus {
         match s {
             "ALLOW" => ProtectStatus::Allow,
             "BLOCK" => ProtectStatus::Block,
+            "FILTER" => ProtectStatus::Filter,
+            "MONITOR" => ProtectStatus::Monitor,
             other => ProtectStatus::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -72,12 +80,14 @@ impl ProtectStatus {
         match self {
             ProtectStatus::Allow => "ALLOW",
             ProtectStatus::Block => "BLOCK",
+            ProtectStatus::Filter => "FILTER",
+            ProtectStatus::Monitor => "MONITOR",
             ProtectStatus::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ALLOW", "BLOCK"]
+        &["ALLOW", "BLOCK", "FILTER", "MONITOR"]
     }
 }
 impl ::std::convert::AsRef<str> for ProtectStatus {
@@ -102,6 +112,8 @@ impl ::std::fmt::Display for ProtectStatus {
         match self {
             ProtectStatus::Allow => write!(f, "ALLOW"),
             ProtectStatus::Block => write!(f, "BLOCK"),
+            ProtectStatus::Filter => write!(f, "FILTER"),
+            ProtectStatus::Monitor => write!(f, "MONITOR"),
             ProtectStatus::Unknown(value) => write!(f, "{}", value),
         }
     }

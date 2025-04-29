@@ -190,6 +190,9 @@ pub mod describe_sessions;
 /// Types for the `DisassociateOpsItemRelatedItem` operation.
 pub mod disassociate_ops_item_related_item;
 
+/// Types for the `GetAccessToken` operation.
+pub mod get_access_token;
+
 /// Types for the `GetAutomationExecution` operation.
 pub mod get_automation_execution;
 
@@ -366,6 +369,9 @@ pub mod send_automation_signal;
 
 /// Types for the `SendCommand` operation.
 pub mod send_command;
+
+/// Types for the `StartAccessRequest` operation.
+pub mod start_access_request;
 
 /// Types for the `StartAssociationsOnce` operation.
 pub mod start_associations_once;

@@ -28,6 +28,7 @@
 ///     OpsItemStatus::PendingChangeCalendarOverride => { /* ... */ },
 ///     OpsItemStatus::Rejected => { /* ... */ },
 ///     OpsItemStatus::Resolved => { /* ... */ },
+///     OpsItemStatus::Revoked => { /* ... */ },
 ///     OpsItemStatus::RunbookInProgress => { /* ... */ },
 ///     OpsItemStatus::Scheduled => { /* ... */ },
 ///     OpsItemStatus::TimedOut => { /* ... */ },
@@ -92,6 +93,8 @@ pub enum OpsItemStatus {
     #[allow(missing_docs)] // documentation missing in model
     Resolved,
     #[allow(missing_docs)] // documentation missing in model
+    Revoked,
+    #[allow(missing_docs)] // documentation missing in model
     RunbookInProgress,
     #[allow(missing_docs)] // documentation missing in model
     Scheduled,
@@ -120,6 +123,7 @@ impl ::std::convert::From<&str> for OpsItemStatus {
             "PendingChangeCalendarOverride" => OpsItemStatus::PendingChangeCalendarOverride,
             "Rejected" => OpsItemStatus::Rejected,
             "Resolved" => OpsItemStatus::Resolved,
+            "Revoked" => OpsItemStatus::Revoked,
             "RunbookInProgress" => OpsItemStatus::RunbookInProgress,
             "Scheduled" => OpsItemStatus::Scheduled,
             "TimedOut" => OpsItemStatus::TimedOut,
@@ -154,6 +158,7 @@ impl OpsItemStatus {
             OpsItemStatus::PendingChangeCalendarOverride => "PendingChangeCalendarOverride",
             OpsItemStatus::Rejected => "Rejected",
             OpsItemStatus::Resolved => "Resolved",
+            OpsItemStatus::Revoked => "Revoked",
             OpsItemStatus::RunbookInProgress => "RunbookInProgress",
             OpsItemStatus::Scheduled => "Scheduled",
             OpsItemStatus::TimedOut => "TimedOut",
@@ -179,6 +184,7 @@ impl OpsItemStatus {
             "PendingChangeCalendarOverride",
             "Rejected",
             "Resolved",
+            "Revoked",
             "RunbookInProgress",
             "Scheduled",
             "TimedOut",
@@ -221,6 +227,7 @@ impl ::std::fmt::Display for OpsItemStatus {
             OpsItemStatus::PendingChangeCalendarOverride => write!(f, "PendingChangeCalendarOverride"),
             OpsItemStatus::Rejected => write!(f, "Rejected"),
             OpsItemStatus::Resolved => write!(f, "Resolved"),
+            OpsItemStatus::Revoked => write!(f, "Revoked"),
             OpsItemStatus::RunbookInProgress => write!(f, "RunbookInProgress"),
             OpsItemStatus::Scheduled => write!(f, "Scheduled"),
             OpsItemStatus::TimedOut => write!(f, "TimedOut"),

@@ -316,6 +316,9 @@ impl From<crate::operation::create_protect_configuration::CreateProtectConfigura
             crate::operation::create_protect_configuration::CreateProtectConfigurationError::AccessDeniedException(inner) => {
                 Error::AccessDeniedException(inner)
             }
+            crate::operation::create_protect_configuration::CreateProtectConfigurationError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
             crate::operation::create_protect_configuration::CreateProtectConfigurationError::InternalServerException(inner) => {
                 Error::InternalServerException(inner)
             }

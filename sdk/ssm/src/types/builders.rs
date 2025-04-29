@@ -223,6 +223,8 @@ pub use crate::types::_parent_step_details::ParentStepDetailsBuilder;
 
 pub use crate::types::_failure_details::FailureDetailsBuilder;
 
+pub use crate::types::_credentials::CredentialsBuilder;
+
 pub use crate::types::_session::SessionBuilder;
 
 pub use crate::types::_session_manager_output_url::SessionManagerOutputUrlBuilder;

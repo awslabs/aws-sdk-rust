@@ -9,7 +9,7 @@ pub struct UpdateCaseInput {
     pub case_id: ::std::option::Option<::std::string::String>,
     /// <p>An array of objects with <code>fieldId</code> (matching ListFields/DescribeField) and value union data, structured identical to <code>CreateCase</code>.</p>
     pub fields: ::std::option::Option<::std::vec::Vec<crate::types::FieldValue>>,
-    /// <p>Represents the identity of the person who performed the action.</p>
+    /// <p>Represents the entity that performed the action.</p>
     pub performed_by: ::std::option::Option<crate::types::UserUnion>,
 }
 impl UpdateCaseInput {
@@ -27,7 +27,7 @@ impl UpdateCaseInput {
     pub fn fields(&self) -> &[crate::types::FieldValue] {
         self.fields.as_deref().unwrap_or_default()
     }
-    /// <p>Represents the identity of the person who performed the action.</p>
+    /// <p>Represents the entity that performed the action.</p>
     pub fn performed_by(&self) -> ::std::option::Option<&crate::types::UserUnion> {
         self.performed_by.as_ref()
     }
@@ -99,17 +99,17 @@ impl UpdateCaseInputBuilder {
     pub fn get_fields(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FieldValue>> {
         &self.fields
     }
-    /// <p>Represents the identity of the person who performed the action.</p>
+    /// <p>Represents the entity that performed the action.</p>
     pub fn performed_by(mut self, input: crate::types::UserUnion) -> Self {
         self.performed_by = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Represents the identity of the person who performed the action.</p>
+    /// <p>Represents the entity that performed the action.</p>
     pub fn set_performed_by(mut self, input: ::std::option::Option<crate::types::UserUnion>) -> Self {
         self.performed_by = input;
         self
     }
-    /// <p>Represents the identity of the person who performed the action.</p>
+    /// <p>Represents the entity that performed the action.</p>
     pub fn get_performed_by(&self) -> &::std::option::Option<crate::types::UserUnion> {
         &self.performed_by
     }

@@ -365,6 +365,10 @@ pub use crate::types::_failure_details::FailureDetails;
 
 pub use crate::types::_automation_execution_status::AutomationExecutionStatus;
 
+pub use crate::types::_access_request_status::AccessRequestStatus;
+
+pub use crate::types::_credentials::Credentials;
+
 pub use crate::types::_session::Session;
 
 pub use crate::types::_session_manager_output_url::SessionManagerOutputUrl;
@@ -527,6 +531,8 @@ pub use crate::types::_create_association_batch_request_entry::CreateAssociation
 
 pub use crate::types::_registration_metadata_item::RegistrationMetadataItem;
 
+mod _access_request_status;
+
 mod _account_sharing_info;
 
 mod _activation;
@@ -644,6 +650,8 @@ mod _compliant_summary;
 mod _connection_status;
 
 mod _create_association_batch_request_entry;
+
+mod _credentials;
 
 mod _describe_activations_filter;
 

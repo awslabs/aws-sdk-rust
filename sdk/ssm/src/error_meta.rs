@@ -3,6 +3,8 @@
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum Error {
+    /// <p>The requester doesn't have permissions to perform the requested operation.</p>
+    AccessDeniedException(crate::types::error::AccessDeniedException),
     /// <p>Error returned if an attempt is made to register a patch group with a patch baseline that is already registered with a different patch baseline.</p>
     AlreadyExistsException(crate::types::error::AlreadyExistsException),
     /// <p>You must disassociate a document from all managed nodes before you can delete it.</p>
@@ -257,6 +259,8 @@ pub enum Error {
     ResourcePolicyLimitExceededException(crate::types::error::ResourcePolicyLimitExceededException),
     /// <p>No policies with the specified policy ID and hash could be found.</p>
     ResourcePolicyNotFoundException(crate::types::error::ResourcePolicyNotFoundException),
+    /// <p>The request exceeds the service quota. Service quotas, also referred to as limits, are the maximum number of service resources or operations for your Amazon Web Services account.</p>
+    ServiceQuotaExceededException(crate::types::error::ServiceQuotaExceededException),
     /// <p>The specified service setting wasn't found. Either the service name or the setting hasn't been provisioned by the Amazon Web Services service team.</p>
     ServiceSettingNotFound(crate::types::error::ServiceSettingNotFound),
     /// <p>The updated status is the same as the current status.</p>
@@ -267,6 +271,8 @@ pub enum Error {
     TargetInUseException(crate::types::error::TargetInUseException),
     /// <p>The specified target managed node for the session isn't fully configured for use with Session Manager. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/session-manager-getting-started.html">Setting up Session Manager</a> in the <i>Amazon Web Services Systems Manager User Guide</i>. This error is also returned if you attempt to start a session on a managed node that is located in a different account or Region</p>
     TargetNotConnected(crate::types::error::TargetNotConnected),
+    /// <p>The request or operation couldn't be performed because the service is throttling requests.</p>
+    ThrottlingException(crate::types::error::ThrottlingException),
     /// <p>The <code>Targets</code> parameter includes too many tags. Remove one or more tags and try the command again.</p>
     TooManyTagsError(crate::types::error::TooManyTagsError),
     /// <p>There are concurrent updates for a resource that supports one update at a time.</p>
@@ -303,6 +309,7 @@ pub enum Error {
 impl ::std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match self {
+            Error::AccessDeniedException(inner) => inner.fmt(f),
             Error::AlreadyExistsException(inner) => inner.fmt(f),
             Error::AssociatedInstances(inner) => inner.fmt(f),
             Error::AssociationAlreadyExists(inner) => inner.fmt(f),
@@ -421,11 +428,13 @@ impl ::std::fmt::Display for Error {
             Error::ResourcePolicyInvalidParameterException(inner) => inner.fmt(f),
             Error::ResourcePolicyLimitExceededException(inner) => inner.fmt(f),
             Error::ResourcePolicyNotFoundException(inner) => inner.fmt(f),
+            Error::ServiceQuotaExceededException(inner) => inner.fmt(f),
             Error::ServiceSettingNotFound(inner) => inner.fmt(f),
             Error::StatusUnchanged(inner) => inner.fmt(f),
             Error::SubTypeCountLimitExceededException(inner) => inner.fmt(f),
             Error::TargetInUseException(inner) => inner.fmt(f),
             Error::TargetNotConnected(inner) => inner.fmt(f),
+            Error::ThrottlingException(inner) => inner.fmt(f),
             Error::TooManyTagsError(inner) => inner.fmt(f),
             Error::TooManyUpdates(inner) => inner.fmt(f),
             Error::TotalSizeLimitExceededException(inner) => inner.fmt(f),
@@ -459,6 +468,7 @@ impl From<::aws_smithy_types::error::operation::BuildError> for Error {
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
     fn meta(&self) -> &::aws_smithy_types::error::metadata::ErrorMetadata {
         match self {
+            Self::AccessDeniedException(inner) => inner.meta(),
             Self::AlreadyExistsException(inner) => inner.meta(),
             Self::AssociatedInstances(inner) => inner.meta(),
             Self::AssociationAlreadyExists(inner) => inner.meta(),
@@ -577,11 +587,13 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
             Self::ResourcePolicyInvalidParameterException(inner) => inner.meta(),
             Self::ResourcePolicyLimitExceededException(inner) => inner.meta(),
             Self::ResourcePolicyNotFoundException(inner) => inner.meta(),
+            Self::ServiceQuotaExceededException(inner) => inner.meta(),
             Self::ServiceSettingNotFound(inner) => inner.meta(),
             Self::StatusUnchanged(inner) => inner.meta(),
             Self::SubTypeCountLimitExceededException(inner) => inner.meta(),
             Self::TargetInUseException(inner) => inner.meta(),
             Self::TargetNotConnected(inner) => inner.meta(),
+            Self::ThrottlingException(inner) => inner.meta(),
             Self::TooManyTagsError(inner) => inner.meta(),
             Self::TooManyUpdates(inner) => inner.meta(),
             Self::TotalSizeLimitExceededException(inner) => inner.meta(),
@@ -2655,6 +2667,32 @@ impl From<crate::operation::disassociate_ops_item_related_item::DisassociateOpsI
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_access_token::GetAccessTokenError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_access_token::GetAccessTokenError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_access_token::GetAccessTokenError> for Error {
+    fn from(err: crate::operation::get_access_token::GetAccessTokenError) -> Self {
+        match err {
+            crate::operation::get_access_token::GetAccessTokenError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_access_token::GetAccessTokenError::InternalServerError(inner) => Error::InternalServerError(inner),
+            crate::operation::get_access_token::GetAccessTokenError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_access_token::GetAccessTokenError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_access_token::GetAccessTokenError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_access_token::GetAccessTokenError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_automation_execution::GetAutomationExecutionError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -4447,6 +4485,37 @@ impl From<crate::operation::send_command::SendCommandError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_access_request::StartAccessRequestError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_access_request::StartAccessRequestError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::start_access_request::StartAccessRequestError> for Error {
+    fn from(err: crate::operation::start_access_request::StartAccessRequestError) -> Self {
+        match err {
+            crate::operation::start_access_request::StartAccessRequestError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::start_access_request::StartAccessRequestError::InternalServerError(inner) => Error::InternalServerError(inner),
+            crate::operation::start_access_request::StartAccessRequestError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::start_access_request::StartAccessRequestError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::start_access_request::StartAccessRequestError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::start_access_request::StartAccessRequestError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::start_access_request::StartAccessRequestError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_associations_once::StartAssociationsOnceError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -5169,6 +5238,7 @@ where
 impl ::std::error::Error for Error {
     fn source(&self) -> std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
+            Error::AccessDeniedException(inner) => inner.source(),
             Error::AlreadyExistsException(inner) => inner.source(),
             Error::AssociatedInstances(inner) => inner.source(),
             Error::AssociationAlreadyExists(inner) => inner.source(),
@@ -5287,11 +5357,13 @@ impl ::std::error::Error for Error {
             Error::ResourcePolicyInvalidParameterException(inner) => inner.source(),
             Error::ResourcePolicyLimitExceededException(inner) => inner.source(),
             Error::ResourcePolicyNotFoundException(inner) => inner.source(),
+            Error::ServiceQuotaExceededException(inner) => inner.source(),
             Error::ServiceSettingNotFound(inner) => inner.source(),
             Error::StatusUnchanged(inner) => inner.source(),
             Error::SubTypeCountLimitExceededException(inner) => inner.source(),
             Error::TargetInUseException(inner) => inner.source(),
             Error::TargetNotConnected(inner) => inner.source(),
+            Error::ThrottlingException(inner) => inner.source(),
             Error::TooManyTagsError(inner) => inner.source(),
             Error::TooManyUpdates(inner) => inner.source(),
             Error::TotalSizeLimitExceededException(inner) => inner.source(),
@@ -5311,6 +5383,7 @@ impl ::std::error::Error for Error {
 impl ::aws_types::request_id::RequestId for Error {
     fn request_id(&self) -> Option<&str> {
         match self {
+            Self::AccessDeniedException(e) => e.request_id(),
             Self::AlreadyExistsException(e) => e.request_id(),
             Self::AssociatedInstances(e) => e.request_id(),
             Self::AssociationAlreadyExists(e) => e.request_id(),
@@ -5429,11 +5502,13 @@ impl ::aws_types::request_id::RequestId for Error {
             Self::ResourcePolicyInvalidParameterException(e) => e.request_id(),
             Self::ResourcePolicyLimitExceededException(e) => e.request_id(),
             Self::ResourcePolicyNotFoundException(e) => e.request_id(),
+            Self::ServiceQuotaExceededException(e) => e.request_id(),
             Self::ServiceSettingNotFound(e) => e.request_id(),
             Self::StatusUnchanged(e) => e.request_id(),
             Self::SubTypeCountLimitExceededException(e) => e.request_id(),
             Self::TargetInUseException(e) => e.request_id(),
             Self::TargetNotConnected(e) => e.request_id(),
+            Self::ThrottlingException(e) => e.request_id(),
             Self::TooManyTagsError(e) => e.request_id(),
             Self::TooManyUpdates(e) => e.request_id(),
             Self::TotalSizeLimitExceededException(e) => e.request_id(),

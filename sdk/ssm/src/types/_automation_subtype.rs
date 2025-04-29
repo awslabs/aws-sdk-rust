@@ -12,6 +12,7 @@
 /// ```text
 /// # let automationsubtype = unimplemented!();
 /// match automationsubtype {
+///     AutomationSubtype::AccessRequest => { /* ... */ },
 ///     AutomationSubtype::ChangeRequest => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -42,6 +43,8 @@
 )]
 pub enum AutomationSubtype {
     #[allow(missing_docs)] // documentation missing in model
+    AccessRequest,
+    #[allow(missing_docs)] // documentation missing in model
     ChangeRequest,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
@@ -50,6 +53,7 @@ pub enum AutomationSubtype {
 impl ::std::convert::From<&str> for AutomationSubtype {
     fn from(s: &str) -> Self {
         match s {
+            "AccessRequest" => AutomationSubtype::AccessRequest,
             "ChangeRequest" => AutomationSubtype::ChangeRequest,
             other => AutomationSubtype::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -66,13 +70,14 @@ impl AutomationSubtype {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            AutomationSubtype::AccessRequest => "AccessRequest",
             AutomationSubtype::ChangeRequest => "ChangeRequest",
             AutomationSubtype::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ChangeRequest"]
+        &["AccessRequest", "ChangeRequest"]
     }
 }
 impl ::std::convert::AsRef<str> for AutomationSubtype {
@@ -95,6 +100,7 @@ impl AutomationSubtype {
 impl ::std::fmt::Display for AutomationSubtype {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            AutomationSubtype::AccessRequest => write!(f, "AccessRequest"),
             AutomationSubtype::ChangeRequest => write!(f, "ChangeRequest"),
             AutomationSubtype::Unknown(value) => write!(f, "{}", value),
         }

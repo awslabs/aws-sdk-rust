@@ -11,7 +11,7 @@ pub struct CreateCaseInput {
     pub fields: ::std::option::Option<::std::vec::Vec<crate::types::FieldValue>>,
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
-    /// <p>Represents the identity of the person who performed the action.</p>
+    /// <p>Represents the entity that performed the action.</p>
     pub performed_by: ::std::option::Option<crate::types::UserUnion>,
 }
 impl CreateCaseInput {
@@ -33,7 +33,7 @@ impl CreateCaseInput {
     pub fn client_token(&self) -> ::std::option::Option<&str> {
         self.client_token.as_deref()
     }
-    /// <p>Represents the identity of the person who performed the action.</p>
+    /// <p>Represents the entity that performed the action.</p>
     pub fn performed_by(&self) -> ::std::option::Option<&crate::types::UserUnion> {
         self.performed_by.as_ref()
     }
@@ -120,17 +120,17 @@ impl CreateCaseInputBuilder {
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }
-    /// <p>Represents the identity of the person who performed the action.</p>
+    /// <p>Represents the entity that performed the action.</p>
     pub fn performed_by(mut self, input: crate::types::UserUnion) -> Self {
         self.performed_by = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Represents the identity of the person who performed the action.</p>
+    /// <p>Represents the entity that performed the action.</p>
     pub fn set_performed_by(mut self, input: ::std::option::Option<crate::types::UserUnion>) -> Self {
         self.performed_by = input;
         self
     }
-    /// <p>Represents the identity of the person who performed the action.</p>
+    /// <p>Represents the entity that performed the action.</p>
     pub fn get_performed_by(&self) -> &::std::option::Option<crate::types::UserUnion> {
         &self.performed_by
     }

@@ -4,13 +4,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AuditEventPerformedBy {
-    /// <p>Represents the identity of the person who performed the action.</p>
+    /// <p>Represents the entity that performed the action.</p>
     pub user: ::std::option::Option<crate::types::UserUnion>,
     /// <p>Unique identifier of an IAM role.</p>
     pub iam_principal_arn: ::std::string::String,
 }
 impl AuditEventPerformedBy {
-    /// <p>Represents the identity of the person who performed the action.</p>
+    /// <p>Represents the entity that performed the action.</p>
     pub fn user(&self) -> ::std::option::Option<&crate::types::UserUnion> {
         self.user.as_ref()
     }
@@ -35,17 +35,17 @@ pub struct AuditEventPerformedByBuilder {
     pub(crate) iam_principal_arn: ::std::option::Option<::std::string::String>,
 }
 impl AuditEventPerformedByBuilder {
-    /// <p>Represents the identity of the person who performed the action.</p>
+    /// <p>Represents the entity that performed the action.</p>
     pub fn user(mut self, input: crate::types::UserUnion) -> Self {
         self.user = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Represents the identity of the person who performed the action.</p>
+    /// <p>Represents the entity that performed the action.</p>
     pub fn set_user(mut self, input: ::std::option::Option<crate::types::UserUnion>) -> Self {
         self.user = input;
         self
     }
-    /// <p>Represents the identity of the person who performed the action.</p>
+    /// <p>Represents the entity that performed the action.</p>
     pub fn get_user(&self) -> &::std::option::Option<crate::types::UserUnion> {
         &self.user
     }

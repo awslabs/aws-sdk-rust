@@ -14,6 +14,7 @@
 /// match documenttype {
 ///     DocumentType::ApplicationConfiguration => { /* ... */ },
 ///     DocumentType::ApplicationConfigurationSchema => { /* ... */ },
+///     DocumentType::AutoApprovalPolicy => { /* ... */ },
 ///     DocumentType::Automation => { /* ... */ },
 ///     DocumentType::ChangeTemplate => { /* ... */ },
 ///     DocumentType::ChangeCalendar => { /* ... */ },
@@ -21,6 +22,7 @@
 ///     DocumentType::Command => { /* ... */ },
 ///     DocumentType::ConformancePackTemplate => { /* ... */ },
 ///     DocumentType::DeploymentStrategy => { /* ... */ },
+///     DocumentType::ManualApprovalPolicy => { /* ... */ },
 ///     DocumentType::Package => { /* ... */ },
 ///     DocumentType::Policy => { /* ... */ },
 ///     DocumentType::ProblemAnalysis => { /* ... */ },
@@ -60,6 +62,8 @@ pub enum DocumentType {
     #[allow(missing_docs)] // documentation missing in model
     ApplicationConfigurationSchema,
     #[allow(missing_docs)] // documentation missing in model
+    AutoApprovalPolicy,
+    #[allow(missing_docs)] // documentation missing in model
     Automation,
     #[allow(missing_docs)] // documentation missing in model
     ChangeTemplate,
@@ -73,6 +77,8 @@ pub enum DocumentType {
     ConformancePackTemplate,
     #[allow(missing_docs)] // documentation missing in model
     DeploymentStrategy,
+    #[allow(missing_docs)] // documentation missing in model
+    ManualApprovalPolicy,
     #[allow(missing_docs)] // documentation missing in model
     Package,
     #[allow(missing_docs)] // documentation missing in model
@@ -94,6 +100,7 @@ impl ::std::convert::From<&str> for DocumentType {
         match s {
             "ApplicationConfiguration" => DocumentType::ApplicationConfiguration,
             "ApplicationConfigurationSchema" => DocumentType::ApplicationConfigurationSchema,
+            "AutoApprovalPolicy" => DocumentType::AutoApprovalPolicy,
             "Automation" => DocumentType::Automation,
             "Automation.ChangeTemplate" => DocumentType::ChangeTemplate,
             "ChangeCalendar" => DocumentType::ChangeCalendar,
@@ -101,6 +108,7 @@ impl ::std::convert::From<&str> for DocumentType {
             "Command" => DocumentType::Command,
             "ConformancePackTemplate" => DocumentType::ConformancePackTemplate,
             "DeploymentStrategy" => DocumentType::DeploymentStrategy,
+            "ManualApprovalPolicy" => DocumentType::ManualApprovalPolicy,
             "Package" => DocumentType::Package,
             "Policy" => DocumentType::Policy,
             "ProblemAnalysis" => DocumentType::ProblemAnalysis,
@@ -124,6 +132,7 @@ impl DocumentType {
         match self {
             DocumentType::ApplicationConfiguration => "ApplicationConfiguration",
             DocumentType::ApplicationConfigurationSchema => "ApplicationConfigurationSchema",
+            DocumentType::AutoApprovalPolicy => "AutoApprovalPolicy",
             DocumentType::Automation => "Automation",
             DocumentType::ChangeTemplate => "Automation.ChangeTemplate",
             DocumentType::ChangeCalendar => "ChangeCalendar",
@@ -131,6 +140,7 @@ impl DocumentType {
             DocumentType::Command => "Command",
             DocumentType::ConformancePackTemplate => "ConformancePackTemplate",
             DocumentType::DeploymentStrategy => "DeploymentStrategy",
+            DocumentType::ManualApprovalPolicy => "ManualApprovalPolicy",
             DocumentType::Package => "Package",
             DocumentType::Policy => "Policy",
             DocumentType::ProblemAnalysis => "ProblemAnalysis",
@@ -145,6 +155,7 @@ impl DocumentType {
         &[
             "ApplicationConfiguration",
             "ApplicationConfigurationSchema",
+            "AutoApprovalPolicy",
             "Automation",
             "Automation.ChangeTemplate",
             "ChangeCalendar",
@@ -152,6 +163,7 @@ impl DocumentType {
             "Command",
             "ConformancePackTemplate",
             "DeploymentStrategy",
+            "ManualApprovalPolicy",
             "Package",
             "Policy",
             "ProblemAnalysis",
@@ -183,6 +195,7 @@ impl ::std::fmt::Display for DocumentType {
         match self {
             DocumentType::ApplicationConfiguration => write!(f, "ApplicationConfiguration"),
             DocumentType::ApplicationConfigurationSchema => write!(f, "ApplicationConfigurationSchema"),
+            DocumentType::AutoApprovalPolicy => write!(f, "AutoApprovalPolicy"),
             DocumentType::Automation => write!(f, "Automation"),
             DocumentType::ChangeTemplate => write!(f, "Automation.ChangeTemplate"),
             DocumentType::ChangeCalendar => write!(f, "ChangeCalendar"),
@@ -190,6 +203,7 @@ impl ::std::fmt::Display for DocumentType {
             DocumentType::Command => write!(f, "Command"),
             DocumentType::ConformancePackTemplate => write!(f, "ConformancePackTemplate"),
             DocumentType::DeploymentStrategy => write!(f, "DeploymentStrategy"),
+            DocumentType::ManualApprovalPolicy => write!(f, "ManualApprovalPolicy"),
             DocumentType::Package => write!(f, "Package"),
             DocumentType::Policy => write!(f, "Policy"),
             DocumentType::ProblemAnalysis => write!(f, "ProblemAnalysis"),

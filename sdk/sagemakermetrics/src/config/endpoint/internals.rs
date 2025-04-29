@@ -63,6 +63,18 @@ pub(super) fn resolve_endpoint(
             }
             if (*use_fips) == (true) {
                 if (partition_result.supports_fips()) == (true) {
+                    if (partition_result.name()) == ("aws") {
+                        return Ok(::aws_smithy_types::endpoint::Endpoint::builder()
+                            .url({
+                                let mut out = String::new();
+                                out.push_str("https://metrics-fips.sagemaker.");
+                                #[allow(clippy::needless_borrow)]
+                                out.push_str(&region.as_ref() as &str);
+                                out.push_str(".amazonaws.com");
+                                out
+                            })
+                            .build());
+                    }
                     return Ok(::aws_smithy_types::endpoint::Endpoint::builder()
                         .url({
                             let mut out = String::new();

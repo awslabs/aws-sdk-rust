@@ -99,6 +99,14 @@ pub use crate::types::error::_automation_definition_not_approved_exception::Auto
 
 pub use crate::types::error::_invalid_association::InvalidAssociation;
 
+pub use crate::types::error::_throttling_exception::ThrottlingException;
+
+pub use crate::types::error::_service_quota_exceeded_exception::ServiceQuotaExceededException;
+
+pub use crate::types::error::_resource_not_found_exception::ResourceNotFoundException;
+
+pub use crate::types::error::_access_denied_exception::AccessDeniedException;
+
 pub use crate::types::error::_unsupported_platform_type::UnsupportedPlatformType;
 
 pub use crate::types::error::_invalid_role::InvalidRole;
@@ -130,8 +138,6 @@ pub use crate::types::error::_resource_policy_limit_exceeded_exception::Resource
 pub use crate::types::error::_resource_policy_invalid_parameter_exception::ResourcePolicyInvalidParameterException;
 
 pub use crate::types::error::_resource_policy_conflict_exception::ResourcePolicyConflictException;
-
-pub use crate::types::error::_resource_not_found_exception::ResourceNotFoundException;
 
 pub use crate::types::error::_malformed_resource_policy_document_exception::MalformedResourcePolicyDocumentException;
 
@@ -268,6 +274,8 @@ pub use crate::types::error::_association_already_exists::AssociationAlreadyExis
 pub use crate::types::error::_ops_item_related_item_already_exists_exception::OpsItemRelatedItemAlreadyExistsException;
 
 pub use crate::types::error::_too_many_tags_error::TooManyTagsError;
+
+mod _access_denied_exception;
 
 mod _already_exists_exception;
 
@@ -505,6 +513,8 @@ mod _resource_policy_limit_exceeded_exception;
 
 mod _resource_policy_not_found_exception;
 
+mod _service_quota_exceeded_exception;
+
 mod _service_setting_not_found;
 
 mod _status_unchanged;
@@ -514,6 +524,8 @@ mod _sub_type_count_limit_exceeded_exception;
 mod _target_in_use_exception;
 
 mod _target_not_connected;
+
+mod _throttling_exception;
 
 mod _too_many_tags_error;
 

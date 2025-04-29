@@ -22,7 +22,7 @@ impl crate::operation::put_protect_configuration_rule_set_number_override::build
 }
 /// Fluent builder constructing a request to `PutProtectConfigurationRuleSetNumberOverride`.
 ///
-/// <p>Create or update a RuleSetNumberOverride and associate it with a protect configuration.</p>
+/// <p>Create or update a phone number rule override and associate it with a protect configuration.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutProtectConfigurationRuleSetNumberOverrideFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

@@ -122,17 +122,17 @@ impl RequestPhoneNumberFluentBuilder {
     pub fn get_iso_country_code(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_iso_country_code()
     }
-    /// <p>The type of message. Valid values are TRANSACTIONAL for messages that are critical or time-sensitive and PROMOTIONAL for messages that aren't critical or time-sensitive.</p>
+    /// <p>The type of message. Valid values are <code>TRANSACTIONAL</code> for messages that are critical or time-sensitive and <code>PROMOTIONAL</code> for messages that aren't critical or time-sensitive.</p>
     pub fn message_type(mut self, input: crate::types::MessageType) -> Self {
         self.inner = self.inner.message_type(input);
         self
     }
-    /// <p>The type of message. Valid values are TRANSACTIONAL for messages that are critical or time-sensitive and PROMOTIONAL for messages that aren't critical or time-sensitive.</p>
+    /// <p>The type of message. Valid values are <code>TRANSACTIONAL</code> for messages that are critical or time-sensitive and <code>PROMOTIONAL</code> for messages that aren't critical or time-sensitive.</p>
     pub fn set_message_type(mut self, input: ::std::option::Option<crate::types::MessageType>) -> Self {
         self.inner = self.inner.set_message_type(input);
         self
     }
-    /// <p>The type of message. Valid values are TRANSACTIONAL for messages that are critical or time-sensitive and PROMOTIONAL for messages that aren't critical or time-sensitive.</p>
+    /// <p>The type of message. Valid values are <code>TRANSACTIONAL</code> for messages that are critical or time-sensitive and <code>PROMOTIONAL</code> for messages that aren't critical or time-sensitive.</p>
     pub fn get_message_type(&self) -> &::std::option::Option<crate::types::MessageType> {
         self.inner.get_message_type()
     }
@@ -156,16 +156,19 @@ impl RequestPhoneNumberFluentBuilder {
         self.inner.get_number_capabilities()
     }
     /// <p>The type of phone number to request.</p>
+    /// <p>When you request a <code>SIMULATOR</code> phone number, you must set <b>MessageType</b> as <code>TRANSACTIONAL</code>.</p>
     pub fn number_type(mut self, input: crate::types::RequestableNumberType) -> Self {
         self.inner = self.inner.number_type(input);
         self
     }
     /// <p>The type of phone number to request.</p>
+    /// <p>When you request a <code>SIMULATOR</code> phone number, you must set <b>MessageType</b> as <code>TRANSACTIONAL</code>.</p>
     pub fn set_number_type(mut self, input: ::std::option::Option<crate::types::RequestableNumberType>) -> Self {
         self.inner = self.inner.set_number_type(input);
         self
     }
     /// <p>The type of phone number to request.</p>
+    /// <p>When you request a <code>SIMULATOR</code> phone number, you must set <b>MessageType</b> as <code>TRANSACTIONAL</code>.</p>
     pub fn get_number_type(&self) -> &::std::option::Option<crate::types::RequestableNumberType> {
         self.inner.get_number_type()
     }

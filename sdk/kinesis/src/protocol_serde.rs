@@ -61,6 +61,8 @@ pub(crate) mod shape_list_stream_consumers;
 
 pub(crate) mod shape_list_streams;
 
+pub(crate) mod shape_list_tags_for_resource;
+
 pub(crate) mod shape_list_tags_for_stream;
 
 pub(crate) mod shape_merge_shards;
@@ -82,6 +84,10 @@ pub(crate) mod shape_start_stream_encryption;
 pub(crate) mod shape_stop_stream_encryption;
 
 pub(crate) mod shape_subscribe_to_shard;
+
+pub(crate) mod shape_tag_resource;
+
+pub(crate) mod shape_untag_resource;
 
 pub(crate) mod shape_update_shard_count;
 
@@ -155,6 +161,8 @@ pub(crate) mod shape_list_stream_consumers_input;
 
 pub(crate) mod shape_list_streams_input;
 
+pub(crate) mod shape_list_tags_for_resource_input;
+
 pub(crate) mod shape_list_tags_for_stream_input;
 
 pub(crate) mod shape_merge_shards_input;
@@ -184,6 +192,10 @@ pub(crate) mod shape_stop_stream_encryption_input;
 pub(crate) mod shape_subscribe_to_shard_input;
 
 pub(crate) mod shape_subscribe_to_shard_output;
+
+pub(crate) mod shape_tag_resource_input;
+
+pub(crate) mod shape_untag_resource_input;
 
 pub(crate) mod shape_update_shard_count_input;
 

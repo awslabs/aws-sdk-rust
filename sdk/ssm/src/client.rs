@@ -318,6 +318,8 @@ mod describe_sessions;
 
 mod disassociate_ops_item_related_item;
 
+mod get_access_token;
+
 mod get_automation_execution;
 
 mod get_calendar_state;
@@ -435,6 +437,8 @@ mod resume_session;
 mod send_automation_signal;
 
 mod send_command;
+
+mod start_access_request;
 
 mod start_associations_once;
 

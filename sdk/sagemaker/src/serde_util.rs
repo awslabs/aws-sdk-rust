@@ -1484,12 +1484,6 @@ pub(crate) fn describe_project_output_output_correct_errors(
     if builder.project_id.is_none() {
         builder.project_id = Some(Default::default())
     }
-    if builder.service_catalog_provisioning_details.is_none() {
-        builder.service_catalog_provisioning_details = {
-            let builder = crate::types::builders::ServiceCatalogProvisioningDetailsBuilder::default();
-            Some(crate::serde_util::service_catalog_provisioning_details_correct_errors(builder).build())
-        }
-    }
     if builder.project_status.is_none() {
         builder.project_status = "no value was set".parse::<crate::types::ProjectStatus>().ok()
     }
@@ -2632,15 +2626,6 @@ pub(crate) fn app_specification_correct_errors(
     builder
 }
 
-pub(crate) fn service_catalog_provisioning_details_correct_errors(
-    mut builder: crate::types::builders::ServiceCatalogProvisioningDetailsBuilder,
-) -> crate::types::builders::ServiceCatalogProvisioningDetailsBuilder {
-    if builder.product_id.is_none() {
-        builder.product_id = Some(Default::default())
-    }
-    builder
-}
-
 pub(crate) fn subscribed_workteam_correct_errors(
     mut builder: crate::types::builders::SubscribedWorkteamBuilder,
 ) -> crate::types::builders::SubscribedWorkteamBuilder {
@@ -3295,6 +3280,15 @@ pub(crate) fn selective_execution_config_correct_errors(
 ) -> crate::types::builders::SelectiveExecutionConfigBuilder {
     if builder.selected_steps.is_none() {
         builder.selected_steps = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn service_catalog_provisioning_details_correct_errors(
+    mut builder: crate::types::builders::ServiceCatalogProvisioningDetailsBuilder,
+) -> crate::types::builders::ServiceCatalogProvisioningDetailsBuilder {
+    if builder.product_id.is_none() {
+        builder.product_id = Some(Default::default())
     }
     builder
 }
