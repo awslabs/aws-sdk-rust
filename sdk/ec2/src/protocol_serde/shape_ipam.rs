@@ -230,6 +230,20 @@ pub fn de_ipam(
                 builder = builder.set_enable_private_gua(var_17);
             }
             ,
+            s if s.matches("meteredAccount") /* MeteredAccount com.amazonaws.ec2#Ipam$MeteredAccount */ =>  {
+                let var_18 =
+                    Some(
+                        Result::<crate::types::IpamMeteredAccount, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::IpamMeteredAccount::from(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_metered_account(var_18);
+            }
+            ,
             _ => {}
         }
     }

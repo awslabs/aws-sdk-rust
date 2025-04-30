@@ -8,8 +8,10 @@ pub enum FlowNodeConfiguration {
     Agent(crate::types::AgentFlowNodeConfiguration),
     /// <p>Contains configurations for a collector node in your flow. Collects an iteration of inputs and consolidates them into an array of outputs.</p>
     Collector(crate::types::CollectorFlowNodeConfiguration),
-    /// <p>Contains configurations for a Condition node in your flow. Defines conditions that lead to different branches of the flow.</p>
+    /// <p>Contains configurations for a condition node in your flow. Defines conditions that lead to different branches of the flow.</p>
     Condition(crate::types::ConditionFlowNodeConfiguration),
+    /// <p>Contains configurations for an inline code node in your flow. Inline code nodes let you write and execute code directly within your flow, enabling data transformations, custom logic, and integrations without needing an external Lambda function.</p>
+    InlineCode(crate::types::InlineCodeFlowNodeConfiguration),
     /// <p>Contains configurations for an input flow node in your flow. The first node in the flow. <code>inputs</code> can't be specified for this node.</p>
     Input(crate::types::InputFlowNodeConfiguration),
     /// <p>Contains configurations for an iterator node in your flow. Takes an input that is an array and iteratively sends each item of the array as an output to the following node. The size of the array is also returned in the output.</p>
@@ -25,9 +27,9 @@ pub enum FlowNodeConfiguration {
     Output(crate::types::OutputFlowNodeConfiguration),
     /// <p>Contains configurations for a prompt node in your flow. Runs a prompt and generates the model response as the output. You can use a prompt from Prompt management or you can configure one in this node.</p>
     Prompt(crate::types::PromptFlowNodeConfiguration),
-    /// <p>Contains configurations for a Retrieval node in your flow. Retrieves data from an Amazon S3 location and returns it as the output.</p>
+    /// <p>Contains configurations for a retrieval node in your flow. Retrieves data from an Amazon S3 location and returns it as the output.</p>
     Retrieval(crate::types::RetrievalFlowNodeConfiguration),
-    /// <p>Contains configurations for a Storage node in your flow. Stores an input in an Amazon S3 location.</p>
+    /// <p>Contains configurations for a storage node in your flow. Stores an input in an Amazon S3 location.</p>
     Storage(crate::types::StorageFlowNodeConfiguration),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
     /// An unknown enum variant
@@ -78,6 +80,19 @@ impl FlowNodeConfiguration {
     /// Returns true if this is a [`Condition`](crate::types::FlowNodeConfiguration::Condition).
     pub fn is_condition(&self) -> bool {
         self.as_condition().is_ok()
+    }
+    /// Tries to convert the enum instance into [`InlineCode`](crate::types::FlowNodeConfiguration::InlineCode), extracting the inner [`InlineCodeFlowNodeConfiguration`](crate::types::InlineCodeFlowNodeConfiguration).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_inline_code(&self) -> ::std::result::Result<&crate::types::InlineCodeFlowNodeConfiguration, &Self> {
+        if let FlowNodeConfiguration::InlineCode(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`InlineCode`](crate::types::FlowNodeConfiguration::InlineCode).
+    pub fn is_inline_code(&self) -> bool {
+        self.as_inline_code().is_ok()
     }
     /// Tries to convert the enum instance into [`Input`](crate::types::FlowNodeConfiguration::Input), extracting the inner [`InputFlowNodeConfiguration`](crate::types::InputFlowNodeConfiguration).
     /// Returns `Err(&Self)` if it can't be converted.

@@ -57,9 +57,15 @@ pub use crate::types::_rule::Rule;
 
 pub use crate::types::_rule_action::RuleAction;
 
-pub use crate::types::_deliver_to_q_business_action::DeliverToQBusinessAction;
+pub use crate::types::_sns_action::SnsAction;
+
+pub use crate::types::_sns_notification_payload_type::SnsNotificationPayloadType;
+
+pub use crate::types::_sns_notification_encoding::SnsNotificationEncoding;
 
 pub use crate::types::_action_failure_policy::ActionFailurePolicy;
+
+pub use crate::types::_deliver_to_q_business_action::DeliverToQBusinessAction;
 
 pub use crate::types::_deliver_to_mailbox_action::DeliverToMailboxAction;
 
@@ -466,6 +472,12 @@ mod _search_status;
 mod _search_summary;
 
 mod _send_action;
+
+mod _sns_action;
+
+mod _sns_notification_encoding;
+
+mod _sns_notification_payload_type;
 
 mod _tag;
 

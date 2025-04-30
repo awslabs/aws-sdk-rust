@@ -56,6 +56,11 @@ pub fn ser_create_ipam_input_input_input(
     if let Some(var_20) = &input.enable_private_gua {
         scope_19.boolean(*var_20);
     }
+    #[allow(unused_mut)]
+    let mut scope_21 = writer.prefix("MeteredAccount");
+    if let Some(var_22) = &input.metered_account {
+        scope_21.string(var_22.as_str());
+    }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

@@ -10,12 +10,14 @@ pub struct CreateLogGroupInput {
     /// <p>The key-value pairs to use for the tags.</p>
     /// <p>You can grant users access to certain log groups while preventing them from accessing other log groups. To do so, tag your groups and use IAM policies that refer to those tags. To assign tags when you create a log group, you must have either the <code>logs:TagResource</code> or <code>logs:TagLogGroup</code> permission. For more information about tagging, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a>. For more information about using tags to control access, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_tags.html">Controlling access to Amazon Web Services resources using tags</a>.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    /// <p>Use this parameter to specify the log group class for this log group. There are two classes:</p>
+    /// <p>Use this parameter to specify the log group class for this log group. There are three classes:</p>
     /// <ul>
     /// <li>
     /// <p>The <code>Standard</code> log class supports all CloudWatch Logs features.</p></li>
     /// <li>
     /// <p>The <code>Infrequent Access</code> log class supports a subset of CloudWatch Logs features and incurs lower costs.</p></li>
+    /// <li>
+    /// <p>Use the <code>Delivery</code> log class only for delivering Lambda logs to store in Amazon S3 or Amazon Data Firehose. Log events in log groups in the Delivery class are kept in CloudWatch Logs for only one day. This log class doesn't offer rich CloudWatch Logs capabilities such as CloudWatch Logs Insights queries.</p></li>
     /// </ul>
     /// <p>If you omit this parameter, the default of <code>STANDARD</code> is used.</p><important>
     /// <p>The value of <code>logGroupClass</code> can't be changed after a log group is created.</p>
@@ -37,12 +39,14 @@ impl CreateLogGroupInput {
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
-    /// <p>Use this parameter to specify the log group class for this log group. There are two classes:</p>
+    /// <p>Use this parameter to specify the log group class for this log group. There are three classes:</p>
     /// <ul>
     /// <li>
     /// <p>The <code>Standard</code> log class supports all CloudWatch Logs features.</p></li>
     /// <li>
     /// <p>The <code>Infrequent Access</code> log class supports a subset of CloudWatch Logs features and incurs lower costs.</p></li>
+    /// <li>
+    /// <p>Use the <code>Delivery</code> log class only for delivering Lambda logs to store in Amazon S3 or Amazon Data Firehose. Log events in log groups in the Delivery class are kept in CloudWatch Logs for only one day. This log class doesn't offer rich CloudWatch Logs capabilities such as CloudWatch Logs Insights queries.</p></li>
     /// </ul>
     /// <p>If you omit this parameter, the default of <code>STANDARD</code> is used.</p><important>
     /// <p>The value of <code>logGroupClass</code> can't be changed after a log group is created.</p>
@@ -121,12 +125,14 @@ impl CreateLogGroupInputBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
-    /// <p>Use this parameter to specify the log group class for this log group. There are two classes:</p>
+    /// <p>Use this parameter to specify the log group class for this log group. There are three classes:</p>
     /// <ul>
     /// <li>
     /// <p>The <code>Standard</code> log class supports all CloudWatch Logs features.</p></li>
     /// <li>
     /// <p>The <code>Infrequent Access</code> log class supports a subset of CloudWatch Logs features and incurs lower costs.</p></li>
+    /// <li>
+    /// <p>Use the <code>Delivery</code> log class only for delivering Lambda logs to store in Amazon S3 or Amazon Data Firehose. Log events in log groups in the Delivery class are kept in CloudWatch Logs for only one day. This log class doesn't offer rich CloudWatch Logs capabilities such as CloudWatch Logs Insights queries.</p></li>
     /// </ul>
     /// <p>If you omit this parameter, the default of <code>STANDARD</code> is used.</p><important>
     /// <p>The value of <code>logGroupClass</code> can't be changed after a log group is created.</p>
@@ -136,12 +142,14 @@ impl CreateLogGroupInputBuilder {
         self.log_group_class = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Use this parameter to specify the log group class for this log group. There are two classes:</p>
+    /// <p>Use this parameter to specify the log group class for this log group. There are three classes:</p>
     /// <ul>
     /// <li>
     /// <p>The <code>Standard</code> log class supports all CloudWatch Logs features.</p></li>
     /// <li>
     /// <p>The <code>Infrequent Access</code> log class supports a subset of CloudWatch Logs features and incurs lower costs.</p></li>
+    /// <li>
+    /// <p>Use the <code>Delivery</code> log class only for delivering Lambda logs to store in Amazon S3 or Amazon Data Firehose. Log events in log groups in the Delivery class are kept in CloudWatch Logs for only one day. This log class doesn't offer rich CloudWatch Logs capabilities such as CloudWatch Logs Insights queries.</p></li>
     /// </ul>
     /// <p>If you omit this parameter, the default of <code>STANDARD</code> is used.</p><important>
     /// <p>The value of <code>logGroupClass</code> can't be changed after a log group is created.</p>
@@ -151,12 +159,14 @@ impl CreateLogGroupInputBuilder {
         self.log_group_class = input;
         self
     }
-    /// <p>Use this parameter to specify the log group class for this log group. There are two classes:</p>
+    /// <p>Use this parameter to specify the log group class for this log group. There are three classes:</p>
     /// <ul>
     /// <li>
     /// <p>The <code>Standard</code> log class supports all CloudWatch Logs features.</p></li>
     /// <li>
     /// <p>The <code>Infrequent Access</code> log class supports a subset of CloudWatch Logs features and incurs lower costs.</p></li>
+    /// <li>
+    /// <p>Use the <code>Delivery</code> log class only for delivering Lambda logs to store in Amazon S3 or Amazon Data Firehose. Log events in log groups in the Delivery class are kept in CloudWatch Logs for only one day. This log class doesn't offer rich CloudWatch Logs capabilities such as CloudWatch Logs Insights queries.</p></li>
     /// </ul>
     /// <p>If you omit this parameter, the default of <code>STANDARD</code> is used.</p><important>
     /// <p>The value of <code>logGroupClass</code> can't be changed after a log group is created.</p>

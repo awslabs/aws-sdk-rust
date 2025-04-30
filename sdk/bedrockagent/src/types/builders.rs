@@ -183,6 +183,8 @@ pub use crate::types::_flow_node_output::FlowNodeOutputBuilder;
 
 pub use crate::types::_flow_node_input::FlowNodeInputBuilder;
 
+pub use crate::types::_inline_code_flow_node_configuration::InlineCodeFlowNodeConfigurationBuilder;
+
 pub use crate::types::_collector_flow_node_configuration::CollectorFlowNodeConfigurationBuilder;
 
 pub use crate::types::_iterator_flow_node_configuration::IteratorFlowNodeConfigurationBuilder;

@@ -8,18 +8,18 @@ pub struct TracePart {
     pub session_id: ::std::option::Option<::std::string::String>,
     /// <p>Contains one part of the agent's reasoning process and results from calling API actions and querying knowledge bases. You can use the trace to understand how the agent arrived at the response it provided the customer. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/agents-test.html#trace-enablement">Trace enablement</a>.</p>
     pub trace: ::std::option::Option<crate::types::Trace>,
-    /// <p>The unique identifier of the agent.</p>
-    pub agent_id: ::std::option::Option<::std::string::String>,
-    /// <p>The unique identifier of the alias of the agent.</p>
-    pub agent_alias_id: ::std::option::Option<::std::string::String>,
-    /// <p>The version of the agent.</p>
-    pub agent_version: ::std::option::Option<::std::string::String>,
     /// <p>The part's caller chain.</p>
     pub caller_chain: ::std::option::Option<::std::vec::Vec<crate::types::Caller>>,
     /// <p>The time of the trace.</p>
     pub event_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The part's collaborator name.</p>
     pub collaborator_name: ::std::option::Option<::std::string::String>,
+    /// <p>The unique identifier of the agent.</p>
+    pub agent_id: ::std::option::Option<::std::string::String>,
+    /// <p>The unique identifier of the alias of the agent.</p>
+    pub agent_alias_id: ::std::option::Option<::std::string::String>,
+    /// <p>The version of the agent.</p>
+    pub agent_version: ::std::option::Option<::std::string::String>,
 }
 impl TracePart {
     /// <p>The unique identifier of the session with the agent.</p>
@@ -29,18 +29,6 @@ impl TracePart {
     /// <p>Contains one part of the agent's reasoning process and results from calling API actions and querying knowledge bases. You can use the trace to understand how the agent arrived at the response it provided the customer. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/agents-test.html#trace-enablement">Trace enablement</a>.</p>
     pub fn trace(&self) -> ::std::option::Option<&crate::types::Trace> {
         self.trace.as_ref()
-    }
-    /// <p>The unique identifier of the agent.</p>
-    pub fn agent_id(&self) -> ::std::option::Option<&str> {
-        self.agent_id.as_deref()
-    }
-    /// <p>The unique identifier of the alias of the agent.</p>
-    pub fn agent_alias_id(&self) -> ::std::option::Option<&str> {
-        self.agent_alias_id.as_deref()
-    }
-    /// <p>The version of the agent.</p>
-    pub fn agent_version(&self) -> ::std::option::Option<&str> {
-        self.agent_version.as_deref()
     }
     /// <p>The part's caller chain.</p>
     ///
@@ -56,18 +44,30 @@ impl TracePart {
     pub fn collaborator_name(&self) -> ::std::option::Option<&str> {
         self.collaborator_name.as_deref()
     }
+    /// <p>The unique identifier of the agent.</p>
+    pub fn agent_id(&self) -> ::std::option::Option<&str> {
+        self.agent_id.as_deref()
+    }
+    /// <p>The unique identifier of the alias of the agent.</p>
+    pub fn agent_alias_id(&self) -> ::std::option::Option<&str> {
+        self.agent_alias_id.as_deref()
+    }
+    /// <p>The version of the agent.</p>
+    pub fn agent_version(&self) -> ::std::option::Option<&str> {
+        self.agent_version.as_deref()
+    }
 }
 impl ::std::fmt::Debug for TracePart {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("TracePart");
         formatter.field("session_id", &"*** Sensitive Data Redacted ***");
         formatter.field("trace", &"*** Sensitive Data Redacted ***");
-        formatter.field("agent_id", &"*** Sensitive Data Redacted ***");
-        formatter.field("agent_alias_id", &"*** Sensitive Data Redacted ***");
-        formatter.field("agent_version", &"*** Sensitive Data Redacted ***");
         formatter.field("caller_chain", &"*** Sensitive Data Redacted ***");
         formatter.field("event_time", &"*** Sensitive Data Redacted ***");
         formatter.field("collaborator_name", &"*** Sensitive Data Redacted ***");
+        formatter.field("agent_id", &"*** Sensitive Data Redacted ***");
+        formatter.field("agent_alias_id", &"*** Sensitive Data Redacted ***");
+        formatter.field("agent_version", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }
@@ -84,12 +84,12 @@ impl TracePart {
 pub struct TracePartBuilder {
     pub(crate) session_id: ::std::option::Option<::std::string::String>,
     pub(crate) trace: ::std::option::Option<crate::types::Trace>,
-    pub(crate) agent_id: ::std::option::Option<::std::string::String>,
-    pub(crate) agent_alias_id: ::std::option::Option<::std::string::String>,
-    pub(crate) agent_version: ::std::option::Option<::std::string::String>,
     pub(crate) caller_chain: ::std::option::Option<::std::vec::Vec<crate::types::Caller>>,
     pub(crate) event_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) collaborator_name: ::std::option::Option<::std::string::String>,
+    pub(crate) agent_id: ::std::option::Option<::std::string::String>,
+    pub(crate) agent_alias_id: ::std::option::Option<::std::string::String>,
+    pub(crate) agent_version: ::std::option::Option<::std::string::String>,
 }
 impl TracePartBuilder {
     /// <p>The unique identifier of the session with the agent.</p>
@@ -119,48 +119,6 @@ impl TracePartBuilder {
     /// <p>Contains one part of the agent's reasoning process and results from calling API actions and querying knowledge bases. You can use the trace to understand how the agent arrived at the response it provided the customer. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/agents-test.html#trace-enablement">Trace enablement</a>.</p>
     pub fn get_trace(&self) -> &::std::option::Option<crate::types::Trace> {
         &self.trace
-    }
-    /// <p>The unique identifier of the agent.</p>
-    pub fn agent_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.agent_id = ::std::option::Option::Some(input.into());
-        self
-    }
-    /// <p>The unique identifier of the agent.</p>
-    pub fn set_agent_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.agent_id = input;
-        self
-    }
-    /// <p>The unique identifier of the agent.</p>
-    pub fn get_agent_id(&self) -> &::std::option::Option<::std::string::String> {
-        &self.agent_id
-    }
-    /// <p>The unique identifier of the alias of the agent.</p>
-    pub fn agent_alias_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.agent_alias_id = ::std::option::Option::Some(input.into());
-        self
-    }
-    /// <p>The unique identifier of the alias of the agent.</p>
-    pub fn set_agent_alias_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.agent_alias_id = input;
-        self
-    }
-    /// <p>The unique identifier of the alias of the agent.</p>
-    pub fn get_agent_alias_id(&self) -> &::std::option::Option<::std::string::String> {
-        &self.agent_alias_id
-    }
-    /// <p>The version of the agent.</p>
-    pub fn agent_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.agent_version = ::std::option::Option::Some(input.into());
-        self
-    }
-    /// <p>The version of the agent.</p>
-    pub fn set_agent_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.agent_version = input;
-        self
-    }
-    /// <p>The version of the agent.</p>
-    pub fn get_agent_version(&self) -> &::std::option::Option<::std::string::String> {
-        &self.agent_version
     }
     /// Appends an item to `caller_chain`.
     ///
@@ -210,17 +168,59 @@ impl TracePartBuilder {
     pub fn get_collaborator_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.collaborator_name
     }
+    /// <p>The unique identifier of the agent.</p>
+    pub fn agent_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.agent_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The unique identifier of the agent.</p>
+    pub fn set_agent_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.agent_id = input;
+        self
+    }
+    /// <p>The unique identifier of the agent.</p>
+    pub fn get_agent_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.agent_id
+    }
+    /// <p>The unique identifier of the alias of the agent.</p>
+    pub fn agent_alias_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.agent_alias_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The unique identifier of the alias of the agent.</p>
+    pub fn set_agent_alias_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.agent_alias_id = input;
+        self
+    }
+    /// <p>The unique identifier of the alias of the agent.</p>
+    pub fn get_agent_alias_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.agent_alias_id
+    }
+    /// <p>The version of the agent.</p>
+    pub fn agent_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.agent_version = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The version of the agent.</p>
+    pub fn set_agent_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.agent_version = input;
+        self
+    }
+    /// <p>The version of the agent.</p>
+    pub fn get_agent_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.agent_version
+    }
     /// Consumes the builder and constructs a [`TracePart`](crate::types::TracePart).
     pub fn build(self) -> crate::types::TracePart {
         crate::types::TracePart {
             session_id: self.session_id,
             trace: self.trace,
-            agent_id: self.agent_id,
-            agent_alias_id: self.agent_alias_id,
-            agent_version: self.agent_version,
             caller_chain: self.caller_chain,
             event_time: self.event_time,
             collaborator_name: self.collaborator_name,
+            agent_id: self.agent_id,
+            agent_alias_id: self.agent_alias_id,
+            agent_version: self.agent_version,
         }
     }
 }
@@ -229,12 +229,12 @@ impl ::std::fmt::Debug for TracePartBuilder {
         let mut formatter = f.debug_struct("TracePartBuilder");
         formatter.field("session_id", &"*** Sensitive Data Redacted ***");
         formatter.field("trace", &"*** Sensitive Data Redacted ***");
-        formatter.field("agent_id", &"*** Sensitive Data Redacted ***");
-        formatter.field("agent_alias_id", &"*** Sensitive Data Redacted ***");
-        formatter.field("agent_version", &"*** Sensitive Data Redacted ***");
         formatter.field("caller_chain", &"*** Sensitive Data Redacted ***");
         formatter.field("event_time", &"*** Sensitive Data Redacted ***");
         formatter.field("collaborator_name", &"*** Sensitive Data Redacted ***");
+        formatter.field("agent_id", &"*** Sensitive Data Redacted ***");
+        formatter.field("agent_alias_id", &"*** Sensitive Data Redacted ***");
+        formatter.field("agent_version", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }

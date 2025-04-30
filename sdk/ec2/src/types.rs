@@ -887,6 +887,8 @@ pub use crate::types::_request_ipam_resource_tag::RequestIpamResourceTag;
 
 pub use crate::types::_ipam::Ipam;
 
+pub use crate::types::_ipam_metered_account::IpamMeteredAccount;
+
 pub use crate::types::_ipam_tier::IpamTier;
 
 pub use crate::types::_ipam_state::IpamState;
@@ -3404,6 +3406,8 @@ mod _ipam_external_resource_verification_token;
 mod _ipam_external_resource_verification_token_state;
 
 mod _ipam_management_state;
+
+mod _ipam_metered_account;
 
 mod _ipam_network_interface_attachment_status;
 

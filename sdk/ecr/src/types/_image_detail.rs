@@ -14,7 +14,7 @@ pub struct ImageDetail {
     pub image_tags: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The size, in bytes, of the image in the repository.</p>
     /// <p>If the image is a manifest list, this will be the max size of all manifests in the list.</p><note>
-    /// <p>Starting with Docker version 1.9, the Docker client compresses image layers before pushing them to a V2 Docker registry. The output of the <code>docker images</code> command shows the uncompressed image size. Therefore, Docker might return a larger image than the image shown in the Amazon Web Services Management Console.</p>
+    /// <p>Starting with Docker version 1.9, the Docker client compresses image layers before pushing them to a V2 Docker registry. The output of the <code>docker images</code> command shows the uncompressed image size. Therefore, Docker might return a larger image than the image sizes returned by <code>DescribeImages</code>.</p>
     /// </note>
     pub image_size_in_bytes: ::std::option::Option<i64>,
     /// <p>The date and time, expressed in standard JavaScript date format, at which the current image was pushed to the repository.</p>
@@ -53,7 +53,7 @@ impl ImageDetail {
     }
     /// <p>The size, in bytes, of the image in the repository.</p>
     /// <p>If the image is a manifest list, this will be the max size of all manifests in the list.</p><note>
-    /// <p>Starting with Docker version 1.9, the Docker client compresses image layers before pushing them to a V2 Docker registry. The output of the <code>docker images</code> command shows the uncompressed image size. Therefore, Docker might return a larger image than the image shown in the Amazon Web Services Management Console.</p>
+    /// <p>Starting with Docker version 1.9, the Docker client compresses image layers before pushing them to a V2 Docker registry. The output of the <code>docker images</code> command shows the uncompressed image size. Therefore, Docker might return a larger image than the image sizes returned by <code>DescribeImages</code>.</p>
     /// </note>
     pub fn image_size_in_bytes(&self) -> ::std::option::Option<i64> {
         self.image_size_in_bytes
@@ -173,7 +173,7 @@ impl ImageDetailBuilder {
     }
     /// <p>The size, in bytes, of the image in the repository.</p>
     /// <p>If the image is a manifest list, this will be the max size of all manifests in the list.</p><note>
-    /// <p>Starting with Docker version 1.9, the Docker client compresses image layers before pushing them to a V2 Docker registry. The output of the <code>docker images</code> command shows the uncompressed image size. Therefore, Docker might return a larger image than the image shown in the Amazon Web Services Management Console.</p>
+    /// <p>Starting with Docker version 1.9, the Docker client compresses image layers before pushing them to a V2 Docker registry. The output of the <code>docker images</code> command shows the uncompressed image size. Therefore, Docker might return a larger image than the image sizes returned by <code>DescribeImages</code>.</p>
     /// </note>
     pub fn image_size_in_bytes(mut self, input: i64) -> Self {
         self.image_size_in_bytes = ::std::option::Option::Some(input);
@@ -181,7 +181,7 @@ impl ImageDetailBuilder {
     }
     /// <p>The size, in bytes, of the image in the repository.</p>
     /// <p>If the image is a manifest list, this will be the max size of all manifests in the list.</p><note>
-    /// <p>Starting with Docker version 1.9, the Docker client compresses image layers before pushing them to a V2 Docker registry. The output of the <code>docker images</code> command shows the uncompressed image size. Therefore, Docker might return a larger image than the image shown in the Amazon Web Services Management Console.</p>
+    /// <p>Starting with Docker version 1.9, the Docker client compresses image layers before pushing them to a V2 Docker registry. The output of the <code>docker images</code> command shows the uncompressed image size. Therefore, Docker might return a larger image than the image sizes returned by <code>DescribeImages</code>.</p>
     /// </note>
     pub fn set_image_size_in_bytes(mut self, input: ::std::option::Option<i64>) -> Self {
         self.image_size_in_bytes = input;
@@ -189,7 +189,7 @@ impl ImageDetailBuilder {
     }
     /// <p>The size, in bytes, of the image in the repository.</p>
     /// <p>If the image is a manifest list, this will be the max size of all manifests in the list.</p><note>
-    /// <p>Starting with Docker version 1.9, the Docker client compresses image layers before pushing them to a V2 Docker registry. The output of the <code>docker images</code> command shows the uncompressed image size. Therefore, Docker might return a larger image than the image shown in the Amazon Web Services Management Console.</p>
+    /// <p>Starting with Docker version 1.9, the Docker client compresses image layers before pushing them to a V2 Docker registry. The output of the <code>docker images</code> command shows the uncompressed image size. Therefore, Docker might return a larger image than the image sizes returned by <code>DescribeImages</code>.</p>
     /// </note>
     pub fn get_image_size_in_bytes(&self) -> &::std::option::Option<i64> {
         &self.image_size_in_bytes

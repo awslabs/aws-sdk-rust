@@ -3,6 +3,16 @@ pub use crate::types::_model_customization_job_summary::ModelCustomizationJobSum
 
 pub use crate::types::_customization_type::CustomizationType;
 
+pub use crate::types::_status_details::StatusDetails;
+
+pub use crate::types::_training_details::TrainingDetails;
+
+pub use crate::types::_job_status_details::JobStatusDetails;
+
+pub use crate::types::_data_processing_details::DataProcessingDetails;
+
+pub use crate::types::_validation_details::ValidationDetails;
+
 pub use crate::types::_model_customization_job_status::ModelCustomizationJobStatus;
 
 pub use crate::types::_sort_order::SortOrder;
@@ -367,6 +377,8 @@ mod _customization_config;
 
 mod _customization_type;
 
+mod _data_processing_details;
+
 mod _distillation_config;
 
 mod _endpoint_config;
@@ -535,6 +547,8 @@ mod _invocation_log_source;
 
 mod _invocation_logs_config;
 
+mod _job_status_details;
+
 mod _kb_inference_config;
 
 mod _knowledge_base_config;
@@ -649,6 +663,8 @@ mod _sort_order;
 
 mod _status;
 
+mod _status_details;
+
 mod _tag;
 
 mod _teacher_model_config;
@@ -657,9 +673,13 @@ mod _text_inference_config;
 
 mod _training_data_config;
 
+mod _training_details;
+
 mod _training_metrics;
 
 mod _validation_data_config;
+
+mod _validation_details;
 
 mod _validator;
 

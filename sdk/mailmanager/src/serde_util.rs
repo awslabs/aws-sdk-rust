@@ -693,6 +693,16 @@ pub(crate) fn send_action_correct_errors(mut builder: crate::types::builders::Se
     builder
 }
 
+pub(crate) fn sns_action_correct_errors(mut builder: crate::types::builders::SnsActionBuilder) -> crate::types::builders::SnsActionBuilder {
+    if builder.topic_arn.is_none() {
+        builder.topic_arn = Some(Default::default())
+    }
+    if builder.role_arn.is_none() {
+        builder.role_arn = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn analysis_correct_errors(mut builder: crate::types::builders::AnalysisBuilder) -> crate::types::builders::AnalysisBuilder {
     if builder.analyzer.is_none() {
         builder.analyzer = Some(Default::default())

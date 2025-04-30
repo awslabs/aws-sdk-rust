@@ -14,6 +14,8 @@ pub enum RuleAction {
     DeliverToQBusiness(crate::types::DeliverToQBusinessAction),
     /// <p>This action terminates the evaluation of rules in the rule set.</p>
     Drop(crate::types::DropAction),
+    /// <p>This action publishes the email content to an Amazon SNS topic.</p>
+    PublishToSns(crate::types::SnsAction),
     /// <p>This action relays the email to another SMTP server.</p>
     Relay(crate::types::RelayAction),
     /// <p>The action replaces certain or all recipients with a different set of recipients.</p>
@@ -97,6 +99,19 @@ impl RuleAction {
     /// Returns true if this is a [`Drop`](crate::types::RuleAction::Drop).
     pub fn is_drop(&self) -> bool {
         self.as_drop().is_ok()
+    }
+    /// Tries to convert the enum instance into [`PublishToSns`](crate::types::RuleAction::PublishToSns), extracting the inner [`SnsAction`](crate::types::SnsAction).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_publish_to_sns(&self) -> ::std::result::Result<&crate::types::SnsAction, &Self> {
+        if let RuleAction::PublishToSns(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`PublishToSns`](crate::types::RuleAction::PublishToSns).
+    pub fn is_publish_to_sns(&self) -> bool {
+        self.as_publish_to_sns().is_ok()
     }
     /// Tries to convert the enum instance into [`Relay`](crate::types::RuleAction::Relay), extracting the inner [`RelayAction`](crate::types::RelayAction).
     /// Returns `Err(&Self)` if it can't be converted.

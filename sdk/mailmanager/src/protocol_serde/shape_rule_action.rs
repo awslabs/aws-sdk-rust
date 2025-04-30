@@ -58,6 +58,12 @@ pub fn ser_rule_action(
             crate::protocol_serde::shape_deliver_to_q_business_action::ser_deliver_to_q_business_action(&mut object_9, inner)?;
             object_9.finish();
         }
+        crate::types::RuleAction::PublishToSns(inner) => {
+            #[allow(unused_mut)]
+            let mut object_10 = object_12.key("PublishToSns").start_object();
+            crate::protocol_serde::shape_sns_action::ser_sns_action(&mut object_10, inner)?;
+            object_10.finish();
+        }
         crate::types::RuleAction::Unknown => return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant("RuleAction")),
     }
     Ok(())
@@ -133,6 +139,11 @@ where
                         "DeliverToQBusiness" => Some(crate::types::RuleAction::DeliverToQBusiness(
                             crate::protocol_serde::shape_deliver_to_q_business_action::de_deliver_to_q_business_action(tokens)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'DeliverToQBusiness' cannot be null")
+                            })?,
+                        )),
+                        "PublishToSns" => Some(crate::types::RuleAction::PublishToSns(
+                            crate::protocol_serde::shape_sns_action::de_sns_action(tokens)?.ok_or_else(|| {
+                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'PublishToSns' cannot be null")
                             })?,
                         )),
                         _ => {

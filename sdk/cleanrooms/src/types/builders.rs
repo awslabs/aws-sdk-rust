@@ -23,6 +23,8 @@ pub use crate::types::_protected_query_error::ProtectedQueryErrorBuilder;
 
 pub use crate::types::_protected_query_result::ProtectedQueryResultBuilder;
 
+pub use crate::types::_protected_query_distribute_output::ProtectedQueryDistributeOutputBuilder;
+
 pub use crate::types::_protected_query_single_member_output::ProtectedQuerySingleMemberOutputBuilder;
 
 pub use crate::types::_protected_query_s3_output::ProtectedQueryS3OutputBuilder;
@@ -32,6 +34,8 @@ pub use crate::types::_protected_query_statistics::ProtectedQueryStatisticsBuild
 pub use crate::types::_billed_resource_utilization::BilledResourceUtilizationBuilder;
 
 pub use crate::types::_protected_query_result_configuration::ProtectedQueryResultConfigurationBuilder;
+
+pub use crate::types::_protected_query_distribute_output_configuration::ProtectedQueryDistributeOutputConfigurationBuilder;
 
 pub use crate::types::_protected_query_member_output_configuration::ProtectedQueryMemberOutputConfigurationBuilder;
 

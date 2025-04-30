@@ -18,6 +18,15 @@ pub struct ModifyIpamInput {
     pub tier: ::std::option::Option<crate::types::IpamTier>,
     /// <p>Enable this option to use your own GUA ranges as private IPv6 addresses. This option is disabled by default.</p>
     pub enable_private_gua: ::std::option::Option<bool>,
+    /// <p>A metered account is an Amazon Web Services account that is charged for active IP addresses managed in IPAM. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/ipam-enable-cost-distro.html">Enable cost distribution</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
+    /// <p>Possible values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>ipam-owner</code> (default): The Amazon Web Services account which owns the IPAM is charged for all active IP addresses managed in IPAM.</p></li>
+    /// <li>
+    /// <p><code>resource-owner</code>: The Amazon Web Services account that owns the IP address is charged for the active IP address.</p></li>
+    /// </ul>
+    pub metered_account: ::std::option::Option<crate::types::IpamMeteredAccount>,
 }
 impl ModifyIpamInput {
     /// <p>A check for whether you have the required permissions for the action without actually making the request and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -53,6 +62,17 @@ impl ModifyIpamInput {
     pub fn enable_private_gua(&self) -> ::std::option::Option<bool> {
         self.enable_private_gua
     }
+    /// <p>A metered account is an Amazon Web Services account that is charged for active IP addresses managed in IPAM. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/ipam-enable-cost-distro.html">Enable cost distribution</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
+    /// <p>Possible values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>ipam-owner</code> (default): The Amazon Web Services account which owns the IPAM is charged for all active IP addresses managed in IPAM.</p></li>
+    /// <li>
+    /// <p><code>resource-owner</code>: The Amazon Web Services account that owns the IP address is charged for the active IP address.</p></li>
+    /// </ul>
+    pub fn metered_account(&self) -> ::std::option::Option<&crate::types::IpamMeteredAccount> {
+        self.metered_account.as_ref()
+    }
 }
 impl ModifyIpamInput {
     /// Creates a new builder-style object to manufacture [`ModifyIpamInput`](crate::operation::modify_ipam::ModifyIpamInput).
@@ -72,6 +92,7 @@ pub struct ModifyIpamInputBuilder {
     pub(crate) remove_operating_regions: ::std::option::Option<::std::vec::Vec<crate::types::RemoveIpamOperatingRegion>>,
     pub(crate) tier: ::std::option::Option<crate::types::IpamTier>,
     pub(crate) enable_private_gua: ::std::option::Option<bool>,
+    pub(crate) metered_account: ::std::option::Option<crate::types::IpamMeteredAccount>,
 }
 impl ModifyIpamInputBuilder {
     /// <p>A check for whether you have the required permissions for the action without actually making the request and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -188,6 +209,41 @@ impl ModifyIpamInputBuilder {
     pub fn get_enable_private_gua(&self) -> &::std::option::Option<bool> {
         &self.enable_private_gua
     }
+    /// <p>A metered account is an Amazon Web Services account that is charged for active IP addresses managed in IPAM. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/ipam-enable-cost-distro.html">Enable cost distribution</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
+    /// <p>Possible values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>ipam-owner</code> (default): The Amazon Web Services account which owns the IPAM is charged for all active IP addresses managed in IPAM.</p></li>
+    /// <li>
+    /// <p><code>resource-owner</code>: The Amazon Web Services account that owns the IP address is charged for the active IP address.</p></li>
+    /// </ul>
+    pub fn metered_account(mut self, input: crate::types::IpamMeteredAccount) -> Self {
+        self.metered_account = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>A metered account is an Amazon Web Services account that is charged for active IP addresses managed in IPAM. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/ipam-enable-cost-distro.html">Enable cost distribution</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
+    /// <p>Possible values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>ipam-owner</code> (default): The Amazon Web Services account which owns the IPAM is charged for all active IP addresses managed in IPAM.</p></li>
+    /// <li>
+    /// <p><code>resource-owner</code>: The Amazon Web Services account that owns the IP address is charged for the active IP address.</p></li>
+    /// </ul>
+    pub fn set_metered_account(mut self, input: ::std::option::Option<crate::types::IpamMeteredAccount>) -> Self {
+        self.metered_account = input;
+        self
+    }
+    /// <p>A metered account is an Amazon Web Services account that is charged for active IP addresses managed in IPAM. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/ipam-enable-cost-distro.html">Enable cost distribution</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
+    /// <p>Possible values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>ipam-owner</code> (default): The Amazon Web Services account which owns the IPAM is charged for all active IP addresses managed in IPAM.</p></li>
+    /// <li>
+    /// <p><code>resource-owner</code>: The Amazon Web Services account that owns the IP address is charged for the active IP address.</p></li>
+    /// </ul>
+    pub fn get_metered_account(&self) -> &::std::option::Option<crate::types::IpamMeteredAccount> {
+        &self.metered_account
+    }
     /// Consumes the builder and constructs a [`ModifyIpamInput`](crate::operation::modify_ipam::ModifyIpamInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::modify_ipam::ModifyIpamInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::modify_ipam::ModifyIpamInput {
@@ -198,6 +254,7 @@ impl ModifyIpamInputBuilder {
             remove_operating_regions: self.remove_operating_regions,
             tier: self.tier,
             enable_private_gua: self.enable_private_gua,
+            metered_account: self.metered_account,
         })
     }
 }

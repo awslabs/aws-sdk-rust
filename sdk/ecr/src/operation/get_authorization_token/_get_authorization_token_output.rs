@@ -3,16 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetAuthorizationTokenOutput {
-    /// <p>A list of authorization token data objects that correspond to the <code>registryIds</code> values in the request.</p><note>
-    /// <p>The size of the authorization token returned by Amazon ECR is not fixed. We recommend that you don't make assumptions about the maximum size.</p>
-    /// </note>
+    /// <p>A list of authorization token data objects that correspond to the <code>registryIds</code> values in the request.</p>
     pub authorization_data: ::std::option::Option<::std::vec::Vec<crate::types::AuthorizationData>>,
     _request_id: Option<String>,
 }
 impl GetAuthorizationTokenOutput {
-    /// <p>A list of authorization token data objects that correspond to the <code>registryIds</code> values in the request.</p><note>
-    /// <p>The size of the authorization token returned by Amazon ECR is not fixed. We recommend that you don't make assumptions about the maximum size.</p>
-    /// </note>
+    /// <p>A list of authorization token data objects that correspond to the <code>registryIds</code> values in the request.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.authorization_data.is_none()`.
     pub fn authorization_data(&self) -> &[crate::types::AuthorizationData] {
@@ -43,25 +39,19 @@ impl GetAuthorizationTokenOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_authorization_data`](Self::set_authorization_data).
     ///
-    /// <p>A list of authorization token data objects that correspond to the <code>registryIds</code> values in the request.</p><note>
-    /// <p>The size of the authorization token returned by Amazon ECR is not fixed. We recommend that you don't make assumptions about the maximum size.</p>
-    /// </note>
+    /// <p>A list of authorization token data objects that correspond to the <code>registryIds</code> values in the request.</p>
     pub fn authorization_data(mut self, input: crate::types::AuthorizationData) -> Self {
         let mut v = self.authorization_data.unwrap_or_default();
         v.push(input);
         self.authorization_data = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of authorization token data objects that correspond to the <code>registryIds</code> values in the request.</p><note>
-    /// <p>The size of the authorization token returned by Amazon ECR is not fixed. We recommend that you don't make assumptions about the maximum size.</p>
-    /// </note>
+    /// <p>A list of authorization token data objects that correspond to the <code>registryIds</code> values in the request.</p>
     pub fn set_authorization_data(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AuthorizationData>>) -> Self {
         self.authorization_data = input;
         self
     }
-    /// <p>A list of authorization token data objects that correspond to the <code>registryIds</code> values in the request.</p><note>
-    /// <p>The size of the authorization token returned by Amazon ECR is not fixed. We recommend that you don't make assumptions about the maximum size.</p>
-    /// </note>
+    /// <p>A list of authorization token data objects that correspond to the <code>registryIds</code> values in the request.</p>
     pub fn get_authorization_data(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AuthorizationData>> {
         &self.authorization_data
     }

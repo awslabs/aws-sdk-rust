@@ -39,6 +39,12 @@ where
                                     ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'memberList' cannot be null")
                                 })?,
                         )),
+                        "distribute" => Some(crate::types::ProtectedQueryOutput::Distribute(
+                            crate::protocol_serde::shape_protected_query_distribute_output::de_protected_query_distribute_output(tokens)?
+                                .ok_or_else(|| {
+                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'distribute' cannot be null")
+                                })?,
+                        )),
                         _ => {
                             ::aws_smithy_json::deserialize::token::skip_value(tokens)?;
                             Some(crate::types::ProtectedQueryOutput::Unknown)

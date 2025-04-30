@@ -29,7 +29,7 @@ pub struct PerformanceFactorReference {
     /// <p><code>u-12tb1</code> | <code>u-18tb1</code> | <code>u-24tb1</code> | <code>u-3tb1</code> | <code>u-6tb1</code> | <code>u-9tb1</code> | <code>u7i-12tb</code> | <code>u7in-16tb</code> | <code>u7in-24tb</code> | <code>u7in-32tb</code></p></li>
     /// </ul>
     /// <p>If you enable performance protection by specifying a supported instance family, the returned instance types will exclude the above unsupported instance families.</p>
-    /// <p>If you specify an unsupported instance family as a value for baseline performance, the API returns an empty response for and an exception for , , , and .</p>
+    /// <p>If you specify an unsupported instance family as a value for baseline performance, the API returns an empty response for <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetInstanceTypesFromInstanceRequirements">GetInstanceTypesFromInstanceRequirements</a> and an exception for <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateFleet">CreateFleet</a>, <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RequestSpotFleet">RequestSpotFleet</a>, <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyFleet">ModifyFleet</a>, and <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifySpotFleetRequest">ModifySpotFleetRequest</a>.</p>
     pub instance_family: ::std::option::Option<::std::string::String>,
 }
 impl PerformanceFactorReference {
@@ -56,7 +56,7 @@ impl PerformanceFactorReference {
     /// <p><code>u-12tb1</code> | <code>u-18tb1</code> | <code>u-24tb1</code> | <code>u-3tb1</code> | <code>u-6tb1</code> | <code>u-9tb1</code> | <code>u7i-12tb</code> | <code>u7in-16tb</code> | <code>u7in-24tb</code> | <code>u7in-32tb</code></p></li>
     /// </ul>
     /// <p>If you enable performance protection by specifying a supported instance family, the returned instance types will exclude the above unsupported instance families.</p>
-    /// <p>If you specify an unsupported instance family as a value for baseline performance, the API returns an empty response for and an exception for , , , and .</p>
+    /// <p>If you specify an unsupported instance family as a value for baseline performance, the API returns an empty response for <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetInstanceTypesFromInstanceRequirements">GetInstanceTypesFromInstanceRequirements</a> and an exception for <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateFleet">CreateFleet</a>, <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RequestSpotFleet">RequestSpotFleet</a>, <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyFleet">ModifyFleet</a>, and <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifySpotFleetRequest">ModifySpotFleetRequest</a>.</p>
     pub fn instance_family(&self) -> ::std::option::Option<&str> {
         self.instance_family.as_deref()
     }
@@ -98,7 +98,7 @@ impl PerformanceFactorReferenceBuilder {
     /// <p><code>u-12tb1</code> | <code>u-18tb1</code> | <code>u-24tb1</code> | <code>u-3tb1</code> | <code>u-6tb1</code> | <code>u-9tb1</code> | <code>u7i-12tb</code> | <code>u7in-16tb</code> | <code>u7in-24tb</code> | <code>u7in-32tb</code></p></li>
     /// </ul>
     /// <p>If you enable performance protection by specifying a supported instance family, the returned instance types will exclude the above unsupported instance families.</p>
-    /// <p>If you specify an unsupported instance family as a value for baseline performance, the API returns an empty response for and an exception for , , , and .</p>
+    /// <p>If you specify an unsupported instance family as a value for baseline performance, the API returns an empty response for <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetInstanceTypesFromInstanceRequirements">GetInstanceTypesFromInstanceRequirements</a> and an exception for <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateFleet">CreateFleet</a>, <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RequestSpotFleet">RequestSpotFleet</a>, <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyFleet">ModifyFleet</a>, and <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifySpotFleetRequest">ModifySpotFleetRequest</a>.</p>
     pub fn instance_family(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_family = ::std::option::Option::Some(input.into());
         self
@@ -126,7 +126,7 @@ impl PerformanceFactorReferenceBuilder {
     /// <p><code>u-12tb1</code> | <code>u-18tb1</code> | <code>u-24tb1</code> | <code>u-3tb1</code> | <code>u-6tb1</code> | <code>u-9tb1</code> | <code>u7i-12tb</code> | <code>u7in-16tb</code> | <code>u7in-24tb</code> | <code>u7in-32tb</code></p></li>
     /// </ul>
     /// <p>If you enable performance protection by specifying a supported instance family, the returned instance types will exclude the above unsupported instance families.</p>
-    /// <p>If you specify an unsupported instance family as a value for baseline performance, the API returns an empty response for and an exception for , , , and .</p>
+    /// <p>If you specify an unsupported instance family as a value for baseline performance, the API returns an empty response for <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetInstanceTypesFromInstanceRequirements">GetInstanceTypesFromInstanceRequirements</a> and an exception for <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateFleet">CreateFleet</a>, <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RequestSpotFleet">RequestSpotFleet</a>, <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyFleet">ModifyFleet</a>, and <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifySpotFleetRequest">ModifySpotFleetRequest</a>.</p>
     pub fn set_instance_family(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.instance_family = input;
         self
@@ -154,7 +154,7 @@ impl PerformanceFactorReferenceBuilder {
     /// <p><code>u-12tb1</code> | <code>u-18tb1</code> | <code>u-24tb1</code> | <code>u-3tb1</code> | <code>u-6tb1</code> | <code>u-9tb1</code> | <code>u7i-12tb</code> | <code>u7in-16tb</code> | <code>u7in-24tb</code> | <code>u7in-32tb</code></p></li>
     /// </ul>
     /// <p>If you enable performance protection by specifying a supported instance family, the returned instance types will exclude the above unsupported instance families.</p>
-    /// <p>If you specify an unsupported instance family as a value for baseline performance, the API returns an empty response for and an exception for , , , and .</p>
+    /// <p>If you specify an unsupported instance family as a value for baseline performance, the API returns an empty response for <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetInstanceTypesFromInstanceRequirements">GetInstanceTypesFromInstanceRequirements</a> and an exception for <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateFleet">CreateFleet</a>, <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RequestSpotFleet">RequestSpotFleet</a>, <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyFleet">ModifyFleet</a>, and <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifySpotFleetRequest">ModifySpotFleetRequest</a>.</p>
     pub fn get_instance_family(&self) -> &::std::option::Option<::std::string::String> {
         &self.instance_family
     }

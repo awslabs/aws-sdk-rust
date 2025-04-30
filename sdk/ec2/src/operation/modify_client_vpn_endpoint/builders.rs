@@ -374,17 +374,17 @@ impl ModifyClientVpnEndpointFluentBuilder {
     pub fn get_client_route_enforcement_options(&self) -> &::std::option::Option<crate::types::ClientRouteEnforcementOptions> {
         self.inner.get_client_route_enforcement_options()
     }
-    /// <p>Indicates whether the client VPN session is disconnected after the maximum timeout specified in <code>sessionTimeoutHours</code> is reached. If <code>true</code>, users are prompted to reconnect client VPN. If <code>false</code>, client VPN attempts to reconnect automatically. The default value is <code>false</code>.</p>
+    /// <p>Indicates whether the client VPN session is disconnected after the maximum timeout specified in <code>sessionTimeoutHours</code> is reached. If <code>true</code>, users are prompted to reconnect client VPN. If <code>false</code>, client VPN attempts to reconnect automatically. The default value is <code>true</code>.</p>
     pub fn disconnect_on_session_timeout(mut self, input: bool) -> Self {
         self.inner = self.inner.disconnect_on_session_timeout(input);
         self
     }
-    /// <p>Indicates whether the client VPN session is disconnected after the maximum timeout specified in <code>sessionTimeoutHours</code> is reached. If <code>true</code>, users are prompted to reconnect client VPN. If <code>false</code>, client VPN attempts to reconnect automatically. The default value is <code>false</code>.</p>
+    /// <p>Indicates whether the client VPN session is disconnected after the maximum timeout specified in <code>sessionTimeoutHours</code> is reached. If <code>true</code>, users are prompted to reconnect client VPN. If <code>false</code>, client VPN attempts to reconnect automatically. The default value is <code>true</code>.</p>
     pub fn set_disconnect_on_session_timeout(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_disconnect_on_session_timeout(input);
         self
     }
-    /// <p>Indicates whether the client VPN session is disconnected after the maximum timeout specified in <code>sessionTimeoutHours</code> is reached. If <code>true</code>, users are prompted to reconnect client VPN. If <code>false</code>, client VPN attempts to reconnect automatically. The default value is <code>false</code>.</p>
+    /// <p>Indicates whether the client VPN session is disconnected after the maximum timeout specified in <code>sessionTimeoutHours</code> is reached. If <code>true</code>, users are prompted to reconnect client VPN. If <code>false</code>, client VPN attempts to reconnect automatically. The default value is <code>true</code>.</p>
     pub fn get_disconnect_on_session_timeout(&self) -> &::std::option::Option<bool> {
         self.inner.get_disconnect_on_session_timeout()
     }

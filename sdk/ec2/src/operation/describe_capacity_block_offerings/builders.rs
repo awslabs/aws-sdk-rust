@@ -23,13 +23,7 @@ impl crate::operation::describe_capacity_block_offerings::builders::DescribeCapa
 /// Fluent builder constructing a request to `DescribeCapacityBlockOfferings`.
 ///
 /// <p>Describes Capacity Block offerings available for purchase in the Amazon Web Services Region that you're currently using. With Capacity Blocks, you purchase a specific instance type for a period of time.</p>
-/// <p>To search for an available Capacity Block offering, you specify a reservation duration and instance count. You must select one of the following options.</p>
-/// <ul>
-/// <li>
-/// <p>For reservation durations<b> 1-day increments up 14 days and 7-day increments up to 182 days total</b></p></li>
-/// <li>
-/// <p>For instance count<b> 1, 2, 4, 8, 16, 32, or 64 instances</b></p></li>
-/// </ul>
+/// <p>To search for an available Capacity Block offering, you specify a reservation duration and instance count.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeCapacityBlockOfferingsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -149,17 +143,17 @@ impl DescribeCapacityBlockOfferingsFluentBuilder {
     pub fn get_instance_type(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_instance_type()
     }
-    /// <p>The number of instances for which to reserve capacity.</p>
+    /// <p>The number of instances for which to reserve capacity. Each Capacity Block can have up to 64 instances, and you can have up to 256 instances across Capacity Blocks.</p>
     pub fn instance_count(mut self, input: i32) -> Self {
         self.inner = self.inner.instance_count(input);
         self
     }
-    /// <p>The number of instances for which to reserve capacity.</p>
+    /// <p>The number of instances for which to reserve capacity. Each Capacity Block can have up to 64 instances, and you can have up to 256 instances across Capacity Blocks.</p>
     pub fn set_instance_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_instance_count(input);
         self
     }
-    /// <p>The number of instances for which to reserve capacity.</p>
+    /// <p>The number of instances for which to reserve capacity. Each Capacity Block can have up to 64 instances, and you can have up to 256 instances across Capacity Blocks.</p>
     pub fn get_instance_count(&self) -> &::std::option::Option<i32> {
         self.inner.get_instance_count()
     }
@@ -191,17 +185,17 @@ impl DescribeCapacityBlockOfferingsFluentBuilder {
     pub fn get_end_date_range(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         self.inner.get_end_date_range()
     }
-    /// <p>The number of hours for which to reserve Capacity Block.</p>
+    /// <p>The reservation duration for the Capacity Block, in hours. You must specify the duration in 1-day increments up 14 days, and in 7-day increments up to 182 days.</p>
     pub fn capacity_duration_hours(mut self, input: i32) -> Self {
         self.inner = self.inner.capacity_duration_hours(input);
         self
     }
-    /// <p>The number of hours for which to reserve Capacity Block.</p>
+    /// <p>The reservation duration for the Capacity Block, in hours. You must specify the duration in 1-day increments up 14 days, and in 7-day increments up to 182 days.</p>
     pub fn set_capacity_duration_hours(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_capacity_duration_hours(input);
         self
     }
-    /// <p>The number of hours for which to reserve Capacity Block.</p>
+    /// <p>The reservation duration for the Capacity Block, in hours. You must specify the duration in 1-day increments up 14 days, and in 7-day increments up to 182 days.</p>
     pub fn get_capacity_duration_hours(&self) -> &::std::option::Option<i32> {
         self.inner.get_capacity_duration_hours()
     }

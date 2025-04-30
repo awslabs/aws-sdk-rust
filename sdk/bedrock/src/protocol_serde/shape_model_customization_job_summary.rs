@@ -48,6 +48,9 @@ where
                                 ::aws_smithy_types::date_time::Format::DateTimeWithOffset,
                             )?);
                         }
+                        "statusDetails" => {
+                            builder = builder.set_status_details(crate::protocol_serde::shape_status_details::de_status_details(tokens)?);
+                        }
                         "creationTime" => {
                             builder = builder.set_creation_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                                 tokens.next(),

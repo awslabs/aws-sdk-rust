@@ -2549,6 +2549,18 @@ pub(crate) fn flow_node_output_correct_errors(
     builder
 }
 
+pub(crate) fn inline_code_flow_node_configuration_correct_errors(
+    mut builder: crate::types::builders::InlineCodeFlowNodeConfigurationBuilder,
+) -> crate::types::builders::InlineCodeFlowNodeConfigurationBuilder {
+    if builder.code.is_none() {
+        builder.code = Some(Default::default())
+    }
+    if builder.language.is_none() {
+        builder.language = "no value was set".parse::<crate::types::SupportedLanguages>().ok()
+    }
+    builder
+}
+
 pub(crate) fn knowledge_base_flow_node_configuration_correct_errors(
     mut builder: crate::types::builders::KnowledgeBaseFlowNodeConfigurationBuilder,
 ) -> crate::types::builders::KnowledgeBaseFlowNodeConfigurationBuilder {

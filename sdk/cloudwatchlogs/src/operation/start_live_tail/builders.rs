@@ -37,7 +37,9 @@ impl crate::operation::start_live_tail::builders::StartLiveTailInputBuilder {
 /// <p>A <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_StartLiveTailResponseStream.html#CWL-Type-StartLiveTailResponseStream-SessionStreamingException">SessionStreamingException</a> object is returned if an unknown error occurs on the server side.</p></li>
 /// <li>
 /// <p>A <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_StartLiveTailResponseStream.html#CWL-Type-StartLiveTailResponseStream-SessionTimeoutException">SessionTimeoutException</a> object is returned when the session times out, after it has been kept open for three hours.</p></li>
-/// </ul><important>
+/// </ul><note>
+/// <p>The <code>StartLiveTail</code> API routes requests to <code>streaming-logs.<i>Region</i>.amazonaws.com</code> using SDK host prefix injection. VPC endpoint support is not available for this API.</p>
+/// </note> <important>
 /// <p>You can end a session before it times out by closing the session stream or by closing the client that is receiving the stream. The session also ends if the established connection between the client and the server breaks.</p>
 /// </important>
 /// <p>For examples of using an SDK to start a Live Tail session, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/example_cloudwatch-logs_StartLiveTail_section.html"> Start a Live Tail session using an Amazon Web Services SDK</a>.</p>

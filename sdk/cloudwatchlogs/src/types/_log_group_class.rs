@@ -12,6 +12,7 @@
 /// ```text
 /// # let loggroupclass = unimplemented!();
 /// match loggroupclass {
+///     LogGroupClass::Delivery => { /* ... */ },
 ///     LogGroupClass::InfrequentAccess => { /* ... */ },
 ///     LogGroupClass::Standard => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -43,6 +44,8 @@
 )]
 pub enum LogGroupClass {
     #[allow(missing_docs)] // documentation missing in model
+    Delivery,
+    #[allow(missing_docs)] // documentation missing in model
     InfrequentAccess,
     #[allow(missing_docs)] // documentation missing in model
     Standard,
@@ -53,6 +56,7 @@ pub enum LogGroupClass {
 impl ::std::convert::From<&str> for LogGroupClass {
     fn from(s: &str) -> Self {
         match s {
+            "DELIVERY" => LogGroupClass::Delivery,
             "INFREQUENT_ACCESS" => LogGroupClass::InfrequentAccess,
             "STANDARD" => LogGroupClass::Standard,
             other => LogGroupClass::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -70,6 +74,7 @@ impl LogGroupClass {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            LogGroupClass::Delivery => "DELIVERY",
             LogGroupClass::InfrequentAccess => "INFREQUENT_ACCESS",
             LogGroupClass::Standard => "STANDARD",
             LogGroupClass::Unknown(value) => value.as_str(),
@@ -77,7 +82,7 @@ impl LogGroupClass {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["INFREQUENT_ACCESS", "STANDARD"]
+        &["DELIVERY", "INFREQUENT_ACCESS", "STANDARD"]
     }
 }
 impl ::std::convert::AsRef<str> for LogGroupClass {
@@ -100,6 +105,7 @@ impl LogGroupClass {
 impl ::std::fmt::Display for LogGroupClass {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            LogGroupClass::Delivery => write!(f, "DELIVERY"),
             LogGroupClass::InfrequentAccess => write!(f, "INFREQUENT_ACCESS"),
             LogGroupClass::Standard => write!(f, "STANDARD"),
             LogGroupClass::Unknown(value) => write!(f, "{}", value),

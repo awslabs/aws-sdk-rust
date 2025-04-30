@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum CustomizationConfig {
-    /// <p>The distillation configuration for the custom model.</p>
+    /// <p>The Distillation configuration for the custom model.</p>
     DistillationConfig(crate::types::DistillationConfig),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
     /// An unknown enum variant

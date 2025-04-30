@@ -39,6 +39,15 @@ pub struct Ipam {
     pub tier: ::std::option::Option<crate::types::IpamTier>,
     /// <p>Enable this option to use your own GUA ranges as private IPv6 addresses. This option is disabled by default.</p>
     pub enable_private_gua: ::std::option::Option<bool>,
+    /// <p>A metered account is an Amazon Web Services account that is charged for active IP addresses managed in IPAM. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/ipam-enable-cost-distro.html">Enable cost distribution</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
+    /// <p>Possible values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>ipam-owner</code> (default): The Amazon Web Services account which owns the IPAM is charged for all active IP addresses managed in IPAM.</p></li>
+    /// <li>
+    /// <p><code>resource-owner</code>: The Amazon Web Services account that owns the IP address is charged for the active IP address.</p></li>
+    /// </ul>
+    pub metered_account: ::std::option::Option<crate::types::IpamMeteredAccount>,
 }
 impl Ipam {
     /// <p>The Amazon Web Services account ID of the owner of the IPAM.</p>
@@ -114,6 +123,17 @@ impl Ipam {
     pub fn enable_private_gua(&self) -> ::std::option::Option<bool> {
         self.enable_private_gua
     }
+    /// <p>A metered account is an Amazon Web Services account that is charged for active IP addresses managed in IPAM. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/ipam-enable-cost-distro.html">Enable cost distribution</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
+    /// <p>Possible values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>ipam-owner</code> (default): The Amazon Web Services account which owns the IPAM is charged for all active IP addresses managed in IPAM.</p></li>
+    /// <li>
+    /// <p><code>resource-owner</code>: The Amazon Web Services account that owns the IP address is charged for the active IP address.</p></li>
+    /// </ul>
+    pub fn metered_account(&self) -> ::std::option::Option<&crate::types::IpamMeteredAccount> {
+        self.metered_account.as_ref()
+    }
 }
 impl Ipam {
     /// Creates a new builder-style object to manufacture [`Ipam`](crate::types::Ipam).
@@ -143,6 +163,7 @@ pub struct IpamBuilder {
     pub(crate) state_message: ::std::option::Option<::std::string::String>,
     pub(crate) tier: ::std::option::Option<crate::types::IpamTier>,
     pub(crate) enable_private_gua: ::std::option::Option<bool>,
+    pub(crate) metered_account: ::std::option::Option<crate::types::IpamMeteredAccount>,
 }
 impl IpamBuilder {
     /// <p>The Amazon Web Services account ID of the owner of the IPAM.</p>
@@ -398,6 +419,41 @@ impl IpamBuilder {
     pub fn get_enable_private_gua(&self) -> &::std::option::Option<bool> {
         &self.enable_private_gua
     }
+    /// <p>A metered account is an Amazon Web Services account that is charged for active IP addresses managed in IPAM. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/ipam-enable-cost-distro.html">Enable cost distribution</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
+    /// <p>Possible values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>ipam-owner</code> (default): The Amazon Web Services account which owns the IPAM is charged for all active IP addresses managed in IPAM.</p></li>
+    /// <li>
+    /// <p><code>resource-owner</code>: The Amazon Web Services account that owns the IP address is charged for the active IP address.</p></li>
+    /// </ul>
+    pub fn metered_account(mut self, input: crate::types::IpamMeteredAccount) -> Self {
+        self.metered_account = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>A metered account is an Amazon Web Services account that is charged for active IP addresses managed in IPAM. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/ipam-enable-cost-distro.html">Enable cost distribution</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
+    /// <p>Possible values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>ipam-owner</code> (default): The Amazon Web Services account which owns the IPAM is charged for all active IP addresses managed in IPAM.</p></li>
+    /// <li>
+    /// <p><code>resource-owner</code>: The Amazon Web Services account that owns the IP address is charged for the active IP address.</p></li>
+    /// </ul>
+    pub fn set_metered_account(mut self, input: ::std::option::Option<crate::types::IpamMeteredAccount>) -> Self {
+        self.metered_account = input;
+        self
+    }
+    /// <p>A metered account is an Amazon Web Services account that is charged for active IP addresses managed in IPAM. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/ipam-enable-cost-distro.html">Enable cost distribution</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
+    /// <p>Possible values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>ipam-owner</code> (default): The Amazon Web Services account which owns the IPAM is charged for all active IP addresses managed in IPAM.</p></li>
+    /// <li>
+    /// <p><code>resource-owner</code>: The Amazon Web Services account that owns the IP address is charged for the active IP address.</p></li>
+    /// </ul>
+    pub fn get_metered_account(&self) -> &::std::option::Option<crate::types::IpamMeteredAccount> {
+        &self.metered_account
+    }
     /// Consumes the builder and constructs a [`Ipam`](crate::types::Ipam).
     pub fn build(self) -> crate::types::Ipam {
         crate::types::Ipam {
@@ -418,6 +474,7 @@ impl IpamBuilder {
             state_message: self.state_message,
             tier: self.tier,
             enable_private_gua: self.enable_private_gua,
+            metered_account: self.metered_account,
         }
     }
 }

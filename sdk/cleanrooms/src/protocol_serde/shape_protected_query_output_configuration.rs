@@ -19,6 +19,15 @@ pub fn ser_protected_query_output_configuration(
             )?;
             object_2.finish();
         }
+        crate::types::ProtectedQueryOutputConfiguration::Distribute(inner) => {
+            #[allow(unused_mut)]
+            let mut object_3 = object_2.key("distribute").start_object();
+            crate::protocol_serde::shape_protected_query_distribute_output_configuration::ser_protected_query_distribute_output_configuration(
+                &mut object_3,
+                inner,
+            )?;
+            object_3.finish();
+        }
         crate::types::ProtectedQueryOutputConfiguration::Unknown => {
             return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant(
                 "ProtectedQueryOutputConfiguration",
@@ -58,21 +67,29 @@ where
                         ));
                     }
                     variant = match key.as_ref() {
-                        "s3" => Some(crate::types::ProtectedQueryOutputConfiguration::S3(
-                            crate::protocol_serde::shape_protected_query_s3_output_configuration::de_protected_query_s3_output_configuration(tokens)?
-                                .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 's3' cannot be null"))?,
-                        )),
-                        "member" => Some(crate::types::ProtectedQueryOutputConfiguration::Member(
-                            crate::protocol_serde::shape_protected_query_member_output_configuration::de_protected_query_member_output_configuration(
-                                tokens,
-                            )?
-                            .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'member' cannot be null"))?,
-                        )),
-                        _ => {
-                            ::aws_smithy_json::deserialize::token::skip_value(tokens)?;
-                            Some(crate::types::ProtectedQueryOutputConfiguration::Unknown)
-                        }
-                    };
+                            "s3" => {
+                                Some(crate::types::ProtectedQueryOutputConfiguration::S3(
+                                    crate::protocol_serde::shape_protected_query_s3_output_configuration::de_protected_query_s3_output_configuration(tokens)?
+                                    .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 's3' cannot be null"))?
+                                ))
+                            }
+                            "member" => {
+                                Some(crate::types::ProtectedQueryOutputConfiguration::Member(
+                                    crate::protocol_serde::shape_protected_query_member_output_configuration::de_protected_query_member_output_configuration(tokens)?
+                                    .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'member' cannot be null"))?
+                                ))
+                            }
+                            "distribute" => {
+                                Some(crate::types::ProtectedQueryOutputConfiguration::Distribute(
+                                    crate::protocol_serde::shape_protected_query_distribute_output_configuration::de_protected_query_distribute_output_configuration(tokens)?
+                                    .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'distribute' cannot be null"))?
+                                ))
+                            }
+                            _ => {
+                                                                              ::aws_smithy_json::deserialize::token::skip_value(tokens)?;
+                                                                              Some(crate::types::ProtectedQueryOutputConfiguration::Unknown)
+                                                                            }
+                        };
                 }
                 other => {
                     return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(

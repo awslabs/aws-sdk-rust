@@ -131,12 +131,9 @@ impl CreatePullThroughCacheRuleFluentBuilder {
     /// <p>The registry URL of the upstream public registry to use as the source for the pull through cache rule. The following is the syntax to use for each supported upstream registry.</p>
     /// <ul>
     /// <li>
-    /// <p>Amazon ECR (<code>ecr</code>) – <code><accountid>
-    /// .dkr.ecr.
-    /// <region>
+    /// <p>Amazon ECR (<code>ecr</code>) – <code>dkr.ecr.<region>
     /// .amazonaws.com
-    /// </region>
-    /// </accountid></code></p></li>
+    /// </region></code></p></li>
     /// <li>
     /// <p>Amazon ECR Public (<code>ecr-public</code>) – <code>public.ecr.aws</code></p></li>
     /// <li>
@@ -161,12 +158,9 @@ impl CreatePullThroughCacheRuleFluentBuilder {
     /// <p>The registry URL of the upstream public registry to use as the source for the pull through cache rule. The following is the syntax to use for each supported upstream registry.</p>
     /// <ul>
     /// <li>
-    /// <p>Amazon ECR (<code>ecr</code>) – <code><accountid>
-    /// .dkr.ecr.
-    /// <region>
+    /// <p>Amazon ECR (<code>ecr</code>) – <code>dkr.ecr.<region>
     /// .amazonaws.com
-    /// </region>
-    /// </accountid></code></p></li>
+    /// </region></code></p></li>
     /// <li>
     /// <p>Amazon ECR Public (<code>ecr-public</code>) – <code>public.ecr.aws</code></p></li>
     /// <li>
@@ -191,12 +185,9 @@ impl CreatePullThroughCacheRuleFluentBuilder {
     /// <p>The registry URL of the upstream public registry to use as the source for the pull through cache rule. The following is the syntax to use for each supported upstream registry.</p>
     /// <ul>
     /// <li>
-    /// <p>Amazon ECR (<code>ecr</code>) – <code><accountid>
-    /// .dkr.ecr.
-    /// <region>
+    /// <p>Amazon ECR (<code>ecr</code>) – <code>dkr.ecr.<region>
     /// .amazonaws.com
-    /// </region>
-    /// </accountid></code></p></li>
+    /// </region></code></p></li>
     /// <li>
     /// <p>Amazon ECR Public (<code>ecr-public</code>) – <code>public.ecr.aws</code></p></li>
     /// <li>

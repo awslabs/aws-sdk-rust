@@ -257,6 +257,8 @@ pub use crate::types::_inline_agent_payload_part::InlineAgentPayloadPartBuilder;
 
 pub use crate::types::_attribution::AttributionBuilder;
 
+pub use crate::types::_custom_orchestration::CustomOrchestrationBuilder;
+
 pub use crate::types::_inline_bedrock_model_configurations::InlineBedrockModelConfigurationsBuilder;
 
 pub use crate::types::_collaborator::CollaboratorBuilder;

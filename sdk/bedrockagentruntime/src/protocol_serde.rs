@@ -159,6 +159,8 @@ pub(crate) mod shape_collaborator;
 
 pub(crate) mod shape_collaborator_configuration;
 
+pub(crate) mod shape_custom_orchestration;
+
 pub(crate) mod shape_flow_input;
 
 pub(crate) mod shape_generated_queries;
@@ -286,6 +288,8 @@ pub(crate) mod shape_knowledge_base_vector_search_configuration;
 pub(crate) mod shape_memory;
 
 pub(crate) mod shape_optimized_prompt_event;
+
+pub(crate) mod shape_orchestration_executor;
 
 pub(crate) mod shape_payload_part;
 

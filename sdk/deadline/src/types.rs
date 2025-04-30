@@ -193,6 +193,8 @@ pub use crate::types::_v_cpu_count_range::VCpuCountRange;
 
 pub use crate::types::_customer_managed_fleet_configuration::CustomerManagedFleetConfiguration;
 
+pub use crate::types::_tag_propagation_mode::TagPropagationMode;
+
 pub use crate::types::_customer_managed_worker_capabilities::CustomerManagedWorkerCapabilities;
 
 pub use crate::types::_customer_managed_fleet_operating_system_family::CustomerManagedFleetOperatingSystemFamily;
@@ -674,6 +676,8 @@ mod _string_filter_expression;
 mod _sync_input_job_attachments_session_action_definition;
 
 mod _sync_input_job_attachments_session_action_definition_summary;
+
+mod _tag_propagation_mode;
 
 mod _task_parameter_value;
 

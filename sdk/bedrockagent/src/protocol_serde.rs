@@ -603,6 +603,8 @@ pub(crate) mod shape_hierarchical_chunking_level_configuration;
 
 pub(crate) mod shape_incompatible_connection_data_type_flow_validation_details;
 
+pub(crate) mod shape_inline_code_flow_node_configuration;
+
 pub(crate) mod shape_inline_content;
 
 pub(crate) mod shape_input_flow_node_configuration;

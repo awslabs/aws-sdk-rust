@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub struct InvokeInlineAgentOutput {
-    /// <p></p>
+    /// <p>The inline agent's response to the user prompt.</p>
     pub completion:
         crate::event_receiver::EventReceiver<crate::types::InlineAgentResponseStream, crate::types::error::InlineAgentResponseStreamError>,
     /// <p>The MIME type of the input data in the request. The default value is application/json.</p>
@@ -13,7 +13,7 @@ pub struct InvokeInlineAgentOutput {
     _request_id: Option<String>,
 }
 impl InvokeInlineAgentOutput {
-    /// <p></p>
+    /// <p>The inline agent's response to the user prompt.</p>
     pub fn completion(
         &self,
     ) -> &crate::event_receiver::EventReceiver<crate::types::InlineAgentResponseStream, crate::types::error::InlineAgentResponseStreamError> {
@@ -54,7 +54,7 @@ pub struct InvokeInlineAgentOutputBuilder {
     _request_id: Option<String>,
 }
 impl InvokeInlineAgentOutputBuilder {
-    /// <p></p>
+    /// <p>The inline agent's response to the user prompt.</p>
     /// This field is required.
     pub fn completion(
         mut self,
@@ -63,7 +63,7 @@ impl InvokeInlineAgentOutputBuilder {
         self.completion = ::std::option::Option::Some(input);
         self
     }
-    /// <p></p>
+    /// <p>The inline agent's response to the user prompt.</p>
     pub fn set_completion(
         mut self,
         input: ::std::option::Option<
@@ -73,7 +73,7 @@ impl InvokeInlineAgentOutputBuilder {
         self.completion = input;
         self
     }
-    /// <p></p>
+    /// <p>The inline agent's response to the user prompt.</p>
     pub fn get_completion(
         &self,
     ) -> &::std::option::Option<

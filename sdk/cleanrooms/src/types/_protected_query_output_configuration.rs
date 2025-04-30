@@ -4,6 +4,8 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum ProtectedQueryOutputConfiguration {
+    /// <p>Required configuration for a protected query with a <code>distribute</code> output type.</p>
+    Distribute(crate::types::ProtectedQueryDistributeOutputConfiguration),
     /// <p>Required configuration for a protected query with a <code>member</code> output type.</p>
     Member(crate::types::ProtectedQueryMemberOutputConfiguration),
     /// <p>Required configuration for a protected query with an <code>s3</code> output type.</p>
@@ -19,6 +21,19 @@ pub enum ProtectedQueryOutputConfiguration {
     Unknown,
 }
 impl ProtectedQueryOutputConfiguration {
+    /// Tries to convert the enum instance into [`Distribute`](crate::types::ProtectedQueryOutputConfiguration::Distribute), extracting the inner [`ProtectedQueryDistributeOutputConfiguration`](crate::types::ProtectedQueryDistributeOutputConfiguration).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_distribute(&self) -> ::std::result::Result<&crate::types::ProtectedQueryDistributeOutputConfiguration, &Self> {
+        if let ProtectedQueryOutputConfiguration::Distribute(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`Distribute`](crate::types::ProtectedQueryOutputConfiguration::Distribute).
+    pub fn is_distribute(&self) -> bool {
+        self.as_distribute().is_ok()
+    }
     /// Tries to convert the enum instance into [`Member`](crate::types::ProtectedQueryOutputConfiguration::Member), extracting the inner [`ProtectedQueryMemberOutputConfiguration`](crate::types::ProtectedQueryMemberOutputConfiguration).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_member(&self) -> ::std::result::Result<&crate::types::ProtectedQueryMemberOutputConfiguration, &Self> {

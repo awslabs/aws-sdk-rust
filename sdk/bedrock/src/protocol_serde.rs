@@ -301,6 +301,8 @@ pub(crate) mod shape_provisioned_model_summaries;
 
 pub(crate) mod shape_routing_criteria;
 
+pub(crate) mod shape_status_details;
+
 pub(crate) mod shape_tag;
 
 pub(crate) mod shape_tag_list;
@@ -324,6 +326,8 @@ pub(crate) mod shape_batch_delete_evaluation_job_item;
 pub(crate) mod shape_cloud_watch_config;
 
 pub(crate) mod shape_custom_model_summary;
+
+pub(crate) mod shape_data_processing_details;
 
 pub(crate) mod shape_distillation_config;
 
@@ -414,6 +418,10 @@ pub(crate) mod shape_sage_maker_endpoint;
 pub(crate) mod shape_security_group_ids;
 
 pub(crate) mod shape_subnet_ids;
+
+pub(crate) mod shape_training_details;
+
+pub(crate) mod shape_validation_details;
 
 pub(crate) mod shape_validator;
 

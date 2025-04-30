@@ -24,6 +24,8 @@ pub struct InvokeInlineAgentInput {
     pub agent_collaboration: ::std::option::Option<crate::types::AgentCollaboration>,
     /// <p>Settings for an inline agent collaborator called with <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_InvokeInlineAgent.html">InvokeInlineAgent</a>.</p>
     pub collaborator_configurations: ::std::option::Option<::std::vec::Vec<crate::types::CollaboratorConfiguration>>,
+    /// <p>The name for the agent.</p>
+    pub agent_name: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of the session. Use the same value across requests to continue the same conversation.</p>
     pub session_id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether to end the session with the inline agent or not.</p>
@@ -46,6 +48,10 @@ pub struct InvokeInlineAgentInput {
     pub collaborators: ::std::option::Option<::std::vec::Vec<crate::types::Collaborator>>,
     /// <p>Model settings for the request.</p>
     pub bedrock_model_configurations: ::std::option::Option<crate::types::InlineBedrockModelConfigurations>,
+    /// <p>Specifies the type of orchestration strategy for the agent. This is set to DEFAULT orchestration type, by default.</p>
+    pub orchestration_type: ::std::option::Option<crate::types::OrchestrationType>,
+    /// <p>Contains details of the custom orchestration configured for the agent.</p>
+    pub custom_orchestration: ::std::option::Option<crate::types::CustomOrchestration>,
 }
 impl InvokeInlineAgentInput {
     /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services KMS key to use to encrypt your inline agent.</p>
@@ -95,6 +101,10 @@ impl InvokeInlineAgentInput {
     pub fn collaborator_configurations(&self) -> &[crate::types::CollaboratorConfiguration] {
         self.collaborator_configurations.as_deref().unwrap_or_default()
     }
+    /// <p>The name for the agent.</p>
+    pub fn agent_name(&self) -> ::std::option::Option<&str> {
+        self.agent_name.as_deref()
+    }
     /// <p>The unique identifier of the session. Use the same value across requests to continue the same conversation.</p>
     pub fn session_id(&self) -> ::std::option::Option<&str> {
         self.session_id.as_deref()
@@ -135,6 +145,14 @@ impl InvokeInlineAgentInput {
     pub fn bedrock_model_configurations(&self) -> ::std::option::Option<&crate::types::InlineBedrockModelConfigurations> {
         self.bedrock_model_configurations.as_ref()
     }
+    /// <p>Specifies the type of orchestration strategy for the agent. This is set to DEFAULT orchestration type, by default.</p>
+    pub fn orchestration_type(&self) -> ::std::option::Option<&crate::types::OrchestrationType> {
+        self.orchestration_type.as_ref()
+    }
+    /// <p>Contains details of the custom orchestration configured for the agent.</p>
+    pub fn custom_orchestration(&self) -> ::std::option::Option<&crate::types::CustomOrchestration> {
+        self.custom_orchestration.as_ref()
+    }
 }
 impl ::std::fmt::Debug for InvokeInlineAgentInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -149,6 +167,7 @@ impl ::std::fmt::Debug for InvokeInlineAgentInput {
         formatter.field("prompt_override_configuration", &"*** Sensitive Data Redacted ***");
         formatter.field("agent_collaboration", &self.agent_collaboration);
         formatter.field("collaborator_configurations", &self.collaborator_configurations);
+        formatter.field("agent_name", &"*** Sensitive Data Redacted ***");
         formatter.field("session_id", &self.session_id);
         formatter.field("end_session", &self.end_session);
         formatter.field("enable_trace", &self.enable_trace);
@@ -157,6 +176,8 @@ impl ::std::fmt::Debug for InvokeInlineAgentInput {
         formatter.field("inline_session_state", &self.inline_session_state);
         formatter.field("collaborators", &self.collaborators);
         formatter.field("bedrock_model_configurations", &self.bedrock_model_configurations);
+        formatter.field("orchestration_type", &self.orchestration_type);
+        formatter.field("custom_orchestration", &self.custom_orchestration);
         formatter.finish()
     }
 }
@@ -181,6 +202,7 @@ pub struct InvokeInlineAgentInputBuilder {
     pub(crate) prompt_override_configuration: ::std::option::Option<crate::types::PromptOverrideConfiguration>,
     pub(crate) agent_collaboration: ::std::option::Option<crate::types::AgentCollaboration>,
     pub(crate) collaborator_configurations: ::std::option::Option<::std::vec::Vec<crate::types::CollaboratorConfiguration>>,
+    pub(crate) agent_name: ::std::option::Option<::std::string::String>,
     pub(crate) session_id: ::std::option::Option<::std::string::String>,
     pub(crate) end_session: ::std::option::Option<bool>,
     pub(crate) enable_trace: ::std::option::Option<bool>,
@@ -189,6 +211,8 @@ pub struct InvokeInlineAgentInputBuilder {
     pub(crate) inline_session_state: ::std::option::Option<crate::types::InlineSessionState>,
     pub(crate) collaborators: ::std::option::Option<::std::vec::Vec<crate::types::Collaborator>>,
     pub(crate) bedrock_model_configurations: ::std::option::Option<crate::types::InlineBedrockModelConfigurations>,
+    pub(crate) orchestration_type: ::std::option::Option<crate::types::OrchestrationType>,
+    pub(crate) custom_orchestration: ::std::option::Option<crate::types::CustomOrchestration>,
 }
 impl InvokeInlineAgentInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services KMS key to use to encrypt your inline agent.</p>
@@ -354,6 +378,20 @@ impl InvokeInlineAgentInputBuilder {
     pub fn get_collaborator_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CollaboratorConfiguration>> {
         &self.collaborator_configurations
     }
+    /// <p>The name for the agent.</p>
+    pub fn agent_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.agent_name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The name for the agent.</p>
+    pub fn set_agent_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.agent_name = input;
+        self
+    }
+    /// <p>The name for the agent.</p>
+    pub fn get_agent_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.agent_name
+    }
     /// <p>The unique identifier of the session. Use the same value across requests to continue the same conversation.</p>
     /// This field is required.
     pub fn session_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -491,6 +529,34 @@ impl InvokeInlineAgentInputBuilder {
     pub fn get_bedrock_model_configurations(&self) -> &::std::option::Option<crate::types::InlineBedrockModelConfigurations> {
         &self.bedrock_model_configurations
     }
+    /// <p>Specifies the type of orchestration strategy for the agent. This is set to DEFAULT orchestration type, by default.</p>
+    pub fn orchestration_type(mut self, input: crate::types::OrchestrationType) -> Self {
+        self.orchestration_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies the type of orchestration strategy for the agent. This is set to DEFAULT orchestration type, by default.</p>
+    pub fn set_orchestration_type(mut self, input: ::std::option::Option<crate::types::OrchestrationType>) -> Self {
+        self.orchestration_type = input;
+        self
+    }
+    /// <p>Specifies the type of orchestration strategy for the agent. This is set to DEFAULT orchestration type, by default.</p>
+    pub fn get_orchestration_type(&self) -> &::std::option::Option<crate::types::OrchestrationType> {
+        &self.orchestration_type
+    }
+    /// <p>Contains details of the custom orchestration configured for the agent.</p>
+    pub fn custom_orchestration(mut self, input: crate::types::CustomOrchestration) -> Self {
+        self.custom_orchestration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Contains details of the custom orchestration configured for the agent.</p>
+    pub fn set_custom_orchestration(mut self, input: ::std::option::Option<crate::types::CustomOrchestration>) -> Self {
+        self.custom_orchestration = input;
+        self
+    }
+    /// <p>Contains details of the custom orchestration configured for the agent.</p>
+    pub fn get_custom_orchestration(&self) -> &::std::option::Option<crate::types::CustomOrchestration> {
+        &self.custom_orchestration
+    }
     /// Consumes the builder and constructs a [`InvokeInlineAgentInput`](crate::operation::invoke_inline_agent::InvokeInlineAgentInput).
     pub fn build(
         self,
@@ -506,6 +572,7 @@ impl InvokeInlineAgentInputBuilder {
             prompt_override_configuration: self.prompt_override_configuration,
             agent_collaboration: self.agent_collaboration,
             collaborator_configurations: self.collaborator_configurations,
+            agent_name: self.agent_name,
             session_id: self.session_id,
             end_session: self.end_session,
             enable_trace: self.enable_trace,
@@ -514,6 +581,8 @@ impl InvokeInlineAgentInputBuilder {
             inline_session_state: self.inline_session_state,
             collaborators: self.collaborators,
             bedrock_model_configurations: self.bedrock_model_configurations,
+            orchestration_type: self.orchestration_type,
+            custom_orchestration: self.custom_orchestration,
         })
     }
 }
@@ -530,6 +599,7 @@ impl ::std::fmt::Debug for InvokeInlineAgentInputBuilder {
         formatter.field("prompt_override_configuration", &"*** Sensitive Data Redacted ***");
         formatter.field("agent_collaboration", &self.agent_collaboration);
         formatter.field("collaborator_configurations", &self.collaborator_configurations);
+        formatter.field("agent_name", &"*** Sensitive Data Redacted ***");
         formatter.field("session_id", &self.session_id);
         formatter.field("end_session", &self.end_session);
         formatter.field("enable_trace", &self.enable_trace);
@@ -538,6 +608,8 @@ impl ::std::fmt::Debug for InvokeInlineAgentInputBuilder {
         formatter.field("inline_session_state", &self.inline_session_state);
         formatter.field("collaborators", &self.collaborators);
         formatter.field("bedrock_model_configurations", &self.bedrock_model_configurations);
+        formatter.field("orchestration_type", &self.orchestration_type);
+        formatter.field("custom_orchestration", &self.custom_orchestration);
         formatter.finish()
     }
 }

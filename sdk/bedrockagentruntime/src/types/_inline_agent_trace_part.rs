@@ -8,6 +8,12 @@ pub struct InlineAgentTracePart {
     pub session_id: ::std::option::Option<::std::string::String>,
     /// <p>Contains one part of the agent's reasoning process and results from calling API actions and querying knowledge bases. You can use the trace to understand how the agent arrived at the response it provided the customer. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/agents-test.html#trace-enablement">Trace enablement</a>.</p>
     pub trace: ::std::option::Option<crate::types::Trace>,
+    /// <p>The caller chain for the trace part.</p>
+    pub caller_chain: ::std::option::Option<::std::vec::Vec<crate::types::Caller>>,
+    /// <p>The time that trace occurred.</p>
+    pub event_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>The collaborator name for the trace part.</p>
+    pub collaborator_name: ::std::option::Option<::std::string::String>,
 }
 impl InlineAgentTracePart {
     /// <p>The unique identifier of the session with the agent.</p>
@@ -18,12 +24,29 @@ impl InlineAgentTracePart {
     pub fn trace(&self) -> ::std::option::Option<&crate::types::Trace> {
         self.trace.as_ref()
     }
+    /// <p>The caller chain for the trace part.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.caller_chain.is_none()`.
+    pub fn caller_chain(&self) -> &[crate::types::Caller] {
+        self.caller_chain.as_deref().unwrap_or_default()
+    }
+    /// <p>The time that trace occurred.</p>
+    pub fn event_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+        self.event_time.as_ref()
+    }
+    /// <p>The collaborator name for the trace part.</p>
+    pub fn collaborator_name(&self) -> ::std::option::Option<&str> {
+        self.collaborator_name.as_deref()
+    }
 }
 impl ::std::fmt::Debug for InlineAgentTracePart {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("InlineAgentTracePart");
         formatter.field("session_id", &"*** Sensitive Data Redacted ***");
         formatter.field("trace", &"*** Sensitive Data Redacted ***");
+        formatter.field("caller_chain", &"*** Sensitive Data Redacted ***");
+        formatter.field("event_time", &"*** Sensitive Data Redacted ***");
+        formatter.field("collaborator_name", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }
@@ -40,6 +63,9 @@ impl InlineAgentTracePart {
 pub struct InlineAgentTracePartBuilder {
     pub(crate) session_id: ::std::option::Option<::std::string::String>,
     pub(crate) trace: ::std::option::Option<crate::types::Trace>,
+    pub(crate) caller_chain: ::std::option::Option<::std::vec::Vec<crate::types::Caller>>,
+    pub(crate) event_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) collaborator_name: ::std::option::Option<::std::string::String>,
 }
 impl InlineAgentTracePartBuilder {
     /// <p>The unique identifier of the session with the agent.</p>
@@ -70,11 +96,62 @@ impl InlineAgentTracePartBuilder {
     pub fn get_trace(&self) -> &::std::option::Option<crate::types::Trace> {
         &self.trace
     }
+    /// Appends an item to `caller_chain`.
+    ///
+    /// To override the contents of this collection use [`set_caller_chain`](Self::set_caller_chain).
+    ///
+    /// <p>The caller chain for the trace part.</p>
+    pub fn caller_chain(mut self, input: crate::types::Caller) -> Self {
+        let mut v = self.caller_chain.unwrap_or_default();
+        v.push(input);
+        self.caller_chain = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The caller chain for the trace part.</p>
+    pub fn set_caller_chain(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Caller>>) -> Self {
+        self.caller_chain = input;
+        self
+    }
+    /// <p>The caller chain for the trace part.</p>
+    pub fn get_caller_chain(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Caller>> {
+        &self.caller_chain
+    }
+    /// <p>The time that trace occurred.</p>
+    pub fn event_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.event_time = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The time that trace occurred.</p>
+    pub fn set_event_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.event_time = input;
+        self
+    }
+    /// <p>The time that trace occurred.</p>
+    pub fn get_event_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.event_time
+    }
+    /// <p>The collaborator name for the trace part.</p>
+    pub fn collaborator_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.collaborator_name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The collaborator name for the trace part.</p>
+    pub fn set_collaborator_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.collaborator_name = input;
+        self
+    }
+    /// <p>The collaborator name for the trace part.</p>
+    pub fn get_collaborator_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.collaborator_name
+    }
     /// Consumes the builder and constructs a [`InlineAgentTracePart`](crate::types::InlineAgentTracePart).
     pub fn build(self) -> crate::types::InlineAgentTracePart {
         crate::types::InlineAgentTracePart {
             session_id: self.session_id,
             trace: self.trace,
+            caller_chain: self.caller_chain,
+            event_time: self.event_time,
+            collaborator_name: self.collaborator_name,
         }
     }
 }
@@ -83,6 +160,9 @@ impl ::std::fmt::Debug for InlineAgentTracePartBuilder {
         let mut formatter = f.debug_struct("InlineAgentTracePartBuilder");
         formatter.field("session_id", &"*** Sensitive Data Redacted ***");
         formatter.field("trace", &"*** Sensitive Data Redacted ***");
+        formatter.field("caller_chain", &"*** Sensitive Data Redacted ***");
+        formatter.field("event_time", &"*** Sensitive Data Redacted ***");
+        formatter.field("collaborator_name", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }

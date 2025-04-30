@@ -449,6 +449,8 @@ pub(crate) mod shape_s3_action;
 
 pub(crate) mod shape_send_action;
 
+pub(crate) mod shape_sns_action;
+
 pub(crate) mod shape_archive_boolean_to_evaluate;
 
 pub(crate) mod shape_archive_string_to_evaluate;

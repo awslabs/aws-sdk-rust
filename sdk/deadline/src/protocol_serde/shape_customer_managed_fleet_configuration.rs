@@ -15,6 +15,9 @@ pub fn ser_customer_managed_fleet_configuration(
     if let Some(var_3) = &input.storage_profile_id {
         object.key("storageProfileId").string(var_3.as_str());
     }
+    if let Some(var_4) = &input.tag_propagation_mode {
+        object.key("tagPropagationMode").string(var_4.as_str());
+    }
     Ok(())
 }
 
@@ -49,6 +52,13 @@ where
                             builder = builder.set_storage_profile_id(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "tagPropagationMode" => {
+                            builder = builder.set_tag_propagation_mode(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::TagPropagationMode::from(u.as_ref())))
                                     .transpose()?,
                             );
                         }

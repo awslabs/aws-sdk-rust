@@ -219,6 +219,8 @@ pub use crate::types::_api_parameter::ApiParameter;
 
 pub use crate::types::_inline_agent_trace_part::InlineAgentTracePart;
 
+pub use crate::types::_caller::Caller;
+
 pub use crate::types::_trace::Trace;
 
 pub use crate::types::_custom_orchestration_trace::CustomOrchestrationTrace;
@@ -377,6 +379,12 @@ pub use crate::types::_inline_agent_payload_part::InlineAgentPayloadPart;
 
 pub use crate::types::_attribution::Attribution;
 
+pub use crate::types::_custom_orchestration::CustomOrchestration;
+
+pub use crate::types::_orchestration_executor::OrchestrationExecutor;
+
+pub use crate::types::_orchestration_type::OrchestrationType;
+
 pub use crate::types::_inline_bedrock_model_configurations::InlineBedrockModelConfigurations;
 
 pub use crate::types::_collaborator::Collaborator;
@@ -448,8 +456,6 @@ pub use crate::types::_response_stream::ResponseStream;
 pub use crate::types::_file_part::FilePart;
 
 pub use crate::types::_trace_part::TracePart;
-
-pub use crate::types::_caller::Caller;
 
 pub use crate::types::_payload_part::PayloadPart;
 
@@ -598,6 +604,8 @@ mod _conversation_role;
 mod _creation_mode;
 
 mod _custom_control_method;
+
+mod _custom_orchestration;
 
 mod _custom_orchestration_trace;
 
@@ -841,9 +849,13 @@ mod _optimized_prompt_stream;
 
 mod _orchestration_configuration;
 
+mod _orchestration_executor;
+
 mod _orchestration_model_invocation_output;
 
 mod _orchestration_trace;
+
+mod _orchestration_type;
 
 mod _output_file;
 

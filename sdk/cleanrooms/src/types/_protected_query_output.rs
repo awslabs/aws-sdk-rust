@@ -4,9 +4,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum ProtectedQueryOutput {
+    /// <p>Contains output information for protected queries that use a <code>distribute</code> output type. This output type lets you send query results to multiple locations - either to S3 or to collaboration members.</p><note>
+    /// <p>You can only use the <code>distribute</code> output type with the Spark analytics engine.</p>
+    /// </note>
+    Distribute(crate::types::ProtectedQueryDistributeOutput),
     /// <p>The list of member Amazon Web Services account(s) that received the results of the query.</p>
     MemberList(::std::vec::Vec<crate::types::ProtectedQuerySingleMemberOutput>),
-    /// <p>If present, the output for a protected query with an `S3` output type.</p>
+    /// <p>If present, the output for a protected query with an <code>S3</code> output type.</p>
     S3(crate::types::ProtectedQueryS3Output),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
     /// An unknown enum variant
@@ -19,6 +23,19 @@ pub enum ProtectedQueryOutput {
     Unknown,
 }
 impl ProtectedQueryOutput {
+    /// Tries to convert the enum instance into [`Distribute`](crate::types::ProtectedQueryOutput::Distribute), extracting the inner [`ProtectedQueryDistributeOutput`](crate::types::ProtectedQueryDistributeOutput).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_distribute(&self) -> ::std::result::Result<&crate::types::ProtectedQueryDistributeOutput, &Self> {
+        if let ProtectedQueryOutput::Distribute(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`Distribute`](crate::types::ProtectedQueryOutput::Distribute).
+    pub fn is_distribute(&self) -> bool {
+        self.as_distribute().is_ok()
+    }
     /// Tries to convert the enum instance into [`MemberList`](crate::types::ProtectedQueryOutput::MemberList), extracting the inner [`Vec`](::std::vec::Vec).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_member_list(&self) -> ::std::result::Result<&::std::vec::Vec<crate::types::ProtectedQuerySingleMemberOutput>, &Self> {

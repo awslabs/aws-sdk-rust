@@ -11,6 +11,8 @@ pub struct CreateWorkerInput {
     pub host_properties: ::std::option::Option<crate::types::HostPropertiesRequest>,
     /// <p>The unique token which the server uses to recognize retries of the same request.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
+    /// <p>Each tag consists of a tag key and a tag value. Tag keys and values are both required, but tag values can be empty strings.</p>
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateWorkerInput {
     /// <p>The farm ID of the farm to connect to the worker.</p>
@@ -29,6 +31,10 @@ impl CreateWorkerInput {
     pub fn client_token(&self) -> ::std::option::Option<&str> {
         self.client_token.as_deref()
     }
+    /// <p>Each tag consists of a tag key and a tag value. Tag keys and values are both required, but tag values can be empty strings.</p>
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        self.tags.as_ref()
+    }
 }
 impl CreateWorkerInput {
     /// Creates a new builder-style object to manufacture [`CreateWorkerInput`](crate::operation::create_worker::CreateWorkerInput).
@@ -45,6 +51,7 @@ pub struct CreateWorkerInputBuilder {
     pub(crate) fleet_id: ::std::option::Option<::std::string::String>,
     pub(crate) host_properties: ::std::option::Option<crate::types::HostPropertiesRequest>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateWorkerInputBuilder {
     /// <p>The farm ID of the farm to connect to the worker.</p>
@@ -105,6 +112,26 @@ impl CreateWorkerInputBuilder {
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }
+    /// Adds a key-value pair to `tags`.
+    ///
+    /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+    ///
+    /// <p>Each tag consists of a tag key and a tag value. Tag keys and values are both required, but tag values can be empty strings.</p>
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut hash_map = self.tags.unwrap_or_default();
+        hash_map.insert(k.into(), v.into());
+        self.tags = ::std::option::Option::Some(hash_map);
+        self
+    }
+    /// <p>Each tag consists of a tag key and a tag value. Tag keys and values are both required, but tag values can be empty strings.</p>
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input;
+        self
+    }
+    /// <p>Each tag consists of a tag key and a tag value. Tag keys and values are both required, but tag values can be empty strings.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        &self.tags
+    }
     /// Consumes the builder and constructs a [`CreateWorkerInput`](crate::operation::create_worker::CreateWorkerInput).
     pub fn build(
         self,
@@ -114,6 +141,7 @@ impl CreateWorkerInputBuilder {
             fleet_id: self.fleet_id,
             host_properties: self.host_properties,
             client_token: self.client_token,
+            tags: self.tags,
         })
     }
 }

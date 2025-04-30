@@ -7,13 +7,13 @@ pub struct DescribeCapacityBlockOfferingsInput {
     pub dry_run: ::std::option::Option<bool>,
     /// <p>The type of instance for which the Capacity Block offering reserves capacity.</p>
     pub instance_type: ::std::option::Option<::std::string::String>,
-    /// <p>The number of instances for which to reserve capacity.</p>
+    /// <p>The number of instances for which to reserve capacity. Each Capacity Block can have up to 64 instances, and you can have up to 256 instances across Capacity Blocks.</p>
     pub instance_count: ::std::option::Option<i32>,
     /// <p>The earliest start date for the Capacity Block offering.</p>
     pub start_date_range: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The latest end date for the Capacity Block offering.</p>
     pub end_date_range: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>The number of hours for which to reserve Capacity Block.</p>
+    /// <p>The reservation duration for the Capacity Block, in hours. You must specify the duration in 1-day increments up 14 days, and in 7-day increments up to 182 days.</p>
     pub capacity_duration_hours: ::std::option::Option<i32>,
     /// <p>The token to use to retrieve the next page of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -29,7 +29,7 @@ impl DescribeCapacityBlockOfferingsInput {
     pub fn instance_type(&self) -> ::std::option::Option<&str> {
         self.instance_type.as_deref()
     }
-    /// <p>The number of instances for which to reserve capacity.</p>
+    /// <p>The number of instances for which to reserve capacity. Each Capacity Block can have up to 64 instances, and you can have up to 256 instances across Capacity Blocks.</p>
     pub fn instance_count(&self) -> ::std::option::Option<i32> {
         self.instance_count
     }
@@ -41,7 +41,7 @@ impl DescribeCapacityBlockOfferingsInput {
     pub fn end_date_range(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.end_date_range.as_ref()
     }
-    /// <p>The number of hours for which to reserve Capacity Block.</p>
+    /// <p>The reservation duration for the Capacity Block, in hours. You must specify the duration in 1-day increments up 14 days, and in 7-day increments up to 182 days.</p>
     pub fn capacity_duration_hours(&self) -> ::std::option::Option<i32> {
         self.capacity_duration_hours
     }
@@ -103,17 +103,17 @@ impl DescribeCapacityBlockOfferingsInputBuilder {
     pub fn get_instance_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.instance_type
     }
-    /// <p>The number of instances for which to reserve capacity.</p>
+    /// <p>The number of instances for which to reserve capacity. Each Capacity Block can have up to 64 instances, and you can have up to 256 instances across Capacity Blocks.</p>
     pub fn instance_count(mut self, input: i32) -> Self {
         self.instance_count = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The number of instances for which to reserve capacity.</p>
+    /// <p>The number of instances for which to reserve capacity. Each Capacity Block can have up to 64 instances, and you can have up to 256 instances across Capacity Blocks.</p>
     pub fn set_instance_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.instance_count = input;
         self
     }
-    /// <p>The number of instances for which to reserve capacity.</p>
+    /// <p>The number of instances for which to reserve capacity. Each Capacity Block can have up to 64 instances, and you can have up to 256 instances across Capacity Blocks.</p>
     pub fn get_instance_count(&self) -> &::std::option::Option<i32> {
         &self.instance_count
     }
@@ -145,18 +145,18 @@ impl DescribeCapacityBlockOfferingsInputBuilder {
     pub fn get_end_date_range(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.end_date_range
     }
-    /// <p>The number of hours for which to reserve Capacity Block.</p>
+    /// <p>The reservation duration for the Capacity Block, in hours. You must specify the duration in 1-day increments up 14 days, and in 7-day increments up to 182 days.</p>
     /// This field is required.
     pub fn capacity_duration_hours(mut self, input: i32) -> Self {
         self.capacity_duration_hours = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The number of hours for which to reserve Capacity Block.</p>
+    /// <p>The reservation duration for the Capacity Block, in hours. You must specify the duration in 1-day increments up 14 days, and in 7-day increments up to 182 days.</p>
     pub fn set_capacity_duration_hours(mut self, input: ::std::option::Option<i32>) -> Self {
         self.capacity_duration_hours = input;
         self
     }
-    /// <p>The number of hours for which to reserve Capacity Block.</p>
+    /// <p>The reservation duration for the Capacity Block, in hours. You must specify the duration in 1-day increments up 14 days, and in 7-day increments up to 182 days.</p>
     pub fn get_capacity_duration_hours(&self) -> &::std::option::Option<i32> {
         &self.capacity_duration_hours
     }

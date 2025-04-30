@@ -15,6 +15,7 @@
 ///     FlowNodeType::Agent => { /* ... */ },
 ///     FlowNodeType::Collector => { /* ... */ },
 ///     FlowNodeType::Condition => { /* ... */ },
+///     FlowNodeType::InlineCode => { /* ... */ },
 ///     FlowNodeType::Input => { /* ... */ },
 ///     FlowNodeType::Iterator => { /* ... */ },
 ///     FlowNodeType::KnowledgeBase => { /* ... */ },
@@ -59,6 +60,8 @@ pub enum FlowNodeType {
     #[allow(missing_docs)] // documentation missing in model
     Condition,
     #[allow(missing_docs)] // documentation missing in model
+    InlineCode,
+    #[allow(missing_docs)] // documentation missing in model
     Input,
     #[allow(missing_docs)] // documentation missing in model
     Iterator,
@@ -86,6 +89,7 @@ impl ::std::convert::From<&str> for FlowNodeType {
             "Agent" => FlowNodeType::Agent,
             "Collector" => FlowNodeType::Collector,
             "Condition" => FlowNodeType::Condition,
+            "InlineCode" => FlowNodeType::InlineCode,
             "Input" => FlowNodeType::Input,
             "Iterator" => FlowNodeType::Iterator,
             "KnowledgeBase" => FlowNodeType::KnowledgeBase,
@@ -113,6 +117,7 @@ impl FlowNodeType {
             FlowNodeType::Agent => "Agent",
             FlowNodeType::Collector => "Collector",
             FlowNodeType::Condition => "Condition",
+            FlowNodeType::InlineCode => "InlineCode",
             FlowNodeType::Input => "Input",
             FlowNodeType::Iterator => "Iterator",
             FlowNodeType::KnowledgeBase => "KnowledgeBase",
@@ -131,6 +136,7 @@ impl FlowNodeType {
             "Agent",
             "Collector",
             "Condition",
+            "InlineCode",
             "Input",
             "Iterator",
             "KnowledgeBase",
@@ -166,6 +172,7 @@ impl ::std::fmt::Display for FlowNodeType {
             FlowNodeType::Agent => write!(f, "Agent"),
             FlowNodeType::Collector => write!(f, "Collector"),
             FlowNodeType::Condition => write!(f, "Condition"),
+            FlowNodeType::InlineCode => write!(f, "InlineCode"),
             FlowNodeType::Input => write!(f, "Input"),
             FlowNodeType::Iterator => write!(f, "Iterator"),
             FlowNodeType::KnowledgeBase => write!(f, "KnowledgeBase"),

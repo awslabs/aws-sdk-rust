@@ -2825,6 +2825,15 @@ pub(crate) fn protected_job_s3_output_configuration_output_correct_errors(
     builder
 }
 
+pub(crate) fn protected_query_distribute_output_configuration_correct_errors(
+    mut builder: crate::types::builders::ProtectedQueryDistributeOutputConfigurationBuilder,
+) -> crate::types::builders::ProtectedQueryDistributeOutputConfigurationBuilder {
+    if builder.locations.is_none() {
+        builder.locations = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn protected_query_member_output_configuration_correct_errors(
     mut builder: crate::types::builders::ProtectedQueryMemberOutputConfigurationBuilder,
 ) -> crate::types::builders::ProtectedQueryMemberOutputConfigurationBuilder {

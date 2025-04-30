@@ -10,6 +10,10 @@ pub struct CustomerManagedFleetConfiguration {
     pub worker_capabilities: ::std::option::Option<crate::types::CustomerManagedWorkerCapabilities>,
     /// <p>The storage profile ID.</p>
     pub storage_profile_id: ::std::option::Option<::std::string::String>,
+    /// <p>Specifies whether tags associated with a fleet are attached to workers when the worker is launched.</p>
+    /// <p>When the <code>tagPropagationMode</code> is set to <code>PROPAGATE_TAGS_TO_WORKERS_AT_LAUNCH</code> any tag associated with a fleet is attached to workers when they launch. If the tags for a fleet change, the tags associated with running workers <b>do not</b> change.</p>
+    /// <p>If you don't specify <code>tagPropagationMode</code>, the default is <code>NO_PROPAGATION</code>.</p>
+    pub tag_propagation_mode: ::std::option::Option<crate::types::TagPropagationMode>,
 }
 impl CustomerManagedFleetConfiguration {
     /// <p>The Auto Scaling mode for the customer managed fleet configuration.</p>
@@ -23,6 +27,12 @@ impl CustomerManagedFleetConfiguration {
     /// <p>The storage profile ID.</p>
     pub fn storage_profile_id(&self) -> ::std::option::Option<&str> {
         self.storage_profile_id.as_deref()
+    }
+    /// <p>Specifies whether tags associated with a fleet are attached to workers when the worker is launched.</p>
+    /// <p>When the <code>tagPropagationMode</code> is set to <code>PROPAGATE_TAGS_TO_WORKERS_AT_LAUNCH</code> any tag associated with a fleet is attached to workers when they launch. If the tags for a fleet change, the tags associated with running workers <b>do not</b> change.</p>
+    /// <p>If you don't specify <code>tagPropagationMode</code>, the default is <code>NO_PROPAGATION</code>.</p>
+    pub fn tag_propagation_mode(&self) -> ::std::option::Option<&crate::types::TagPropagationMode> {
+        self.tag_propagation_mode.as_ref()
     }
 }
 impl CustomerManagedFleetConfiguration {
@@ -39,6 +49,7 @@ pub struct CustomerManagedFleetConfigurationBuilder {
     pub(crate) mode: ::std::option::Option<crate::types::AutoScalingMode>,
     pub(crate) worker_capabilities: ::std::option::Option<crate::types::CustomerManagedWorkerCapabilities>,
     pub(crate) storage_profile_id: ::std::option::Option<::std::string::String>,
+    pub(crate) tag_propagation_mode: ::std::option::Option<crate::types::TagPropagationMode>,
 }
 impl CustomerManagedFleetConfigurationBuilder {
     /// <p>The Auto Scaling mode for the customer managed fleet configuration.</p>
@@ -85,6 +96,26 @@ impl CustomerManagedFleetConfigurationBuilder {
     pub fn get_storage_profile_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.storage_profile_id
     }
+    /// <p>Specifies whether tags associated with a fleet are attached to workers when the worker is launched.</p>
+    /// <p>When the <code>tagPropagationMode</code> is set to <code>PROPAGATE_TAGS_TO_WORKERS_AT_LAUNCH</code> any tag associated with a fleet is attached to workers when they launch. If the tags for a fleet change, the tags associated with running workers <b>do not</b> change.</p>
+    /// <p>If you don't specify <code>tagPropagationMode</code>, the default is <code>NO_PROPAGATION</code>.</p>
+    pub fn tag_propagation_mode(mut self, input: crate::types::TagPropagationMode) -> Self {
+        self.tag_propagation_mode = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies whether tags associated with a fleet are attached to workers when the worker is launched.</p>
+    /// <p>When the <code>tagPropagationMode</code> is set to <code>PROPAGATE_TAGS_TO_WORKERS_AT_LAUNCH</code> any tag associated with a fleet is attached to workers when they launch. If the tags for a fleet change, the tags associated with running workers <b>do not</b> change.</p>
+    /// <p>If you don't specify <code>tagPropagationMode</code>, the default is <code>NO_PROPAGATION</code>.</p>
+    pub fn set_tag_propagation_mode(mut self, input: ::std::option::Option<crate::types::TagPropagationMode>) -> Self {
+        self.tag_propagation_mode = input;
+        self
+    }
+    /// <p>Specifies whether tags associated with a fleet are attached to workers when the worker is launched.</p>
+    /// <p>When the <code>tagPropagationMode</code> is set to <code>PROPAGATE_TAGS_TO_WORKERS_AT_LAUNCH</code> any tag associated with a fleet is attached to workers when they launch. If the tags for a fleet change, the tags associated with running workers <b>do not</b> change.</p>
+    /// <p>If you don't specify <code>tagPropagationMode</code>, the default is <code>NO_PROPAGATION</code>.</p>
+    pub fn get_tag_propagation_mode(&self) -> &::std::option::Option<crate::types::TagPropagationMode> {
+        &self.tag_propagation_mode
+    }
     /// Consumes the builder and constructs a [`CustomerManagedFleetConfiguration`](crate::types::CustomerManagedFleetConfiguration).
     /// This method will fail if any of the following fields are not set:
     /// - [`mode`](crate::types::builders::CustomerManagedFleetConfigurationBuilder::mode)
@@ -98,6 +129,7 @@ impl CustomerManagedFleetConfigurationBuilder {
             })?,
             worker_capabilities: self.worker_capabilities,
             storage_profile_id: self.storage_profile_id,
+            tag_propagation_mode: self.tag_propagation_mode,
         })
     }
 }

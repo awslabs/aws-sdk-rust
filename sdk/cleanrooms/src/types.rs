@@ -49,6 +49,8 @@ pub use crate::types::_protected_query_result::ProtectedQueryResult;
 
 pub use crate::types::_protected_query_output::ProtectedQueryOutput;
 
+pub use crate::types::_protected_query_distribute_output::ProtectedQueryDistributeOutput;
+
 pub use crate::types::_protected_query_single_member_output::ProtectedQuerySingleMemberOutput;
 
 pub use crate::types::_protected_query_s3_output::ProtectedQueryS3Output;
@@ -60,6 +62,10 @@ pub use crate::types::_billed_resource_utilization::BilledResourceUtilization;
 pub use crate::types::_protected_query_result_configuration::ProtectedQueryResultConfiguration;
 
 pub use crate::types::_protected_query_output_configuration::ProtectedQueryOutputConfiguration;
+
+pub use crate::types::_protected_query_distribute_output_configuration::ProtectedQueryDistributeOutputConfiguration;
+
+pub use crate::types::_protected_query_distribute_output_configuration_location::ProtectedQueryDistributeOutputConfigurationLocation;
 
 pub use crate::types::_protected_query_member_output_configuration::ProtectedQueryMemberOutputConfiguration;
 
@@ -768,6 +774,12 @@ mod _protected_job_summary;
 mod _protected_job_type;
 
 mod _protected_query;
+
+mod _protected_query_distribute_output;
+
+mod _protected_query_distribute_output_configuration;
+
+mod _protected_query_distribute_output_configuration_location;
 
 mod _protected_query_error;
 

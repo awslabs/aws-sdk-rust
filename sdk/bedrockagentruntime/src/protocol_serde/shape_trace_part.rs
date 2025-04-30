@@ -39,6 +39,22 @@ where
                         "trace" => {
                             builder = builder.set_trace(crate::protocol_serde::shape_trace::de_trace(tokens)?);
                         }
+                        "callerChain" => {
+                            builder = builder.set_caller_chain(crate::protocol_serde::shape_caller_chain::de_caller_chain(tokens)?);
+                        }
+                        "eventTime" => {
+                            builder = builder.set_event_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
+                                tokens.next(),
+                                ::aws_smithy_types::date_time::Format::DateTimeWithOffset,
+                            )?);
+                        }
+                        "collaboratorName" => {
+                            builder = builder.set_collaborator_name(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         "agentId" => {
                             builder = builder.set_agent_id(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
@@ -55,22 +71,6 @@ where
                         }
                         "agentVersion" => {
                             builder = builder.set_agent_version(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
-                        }
-                        "callerChain" => {
-                            builder = builder.set_caller_chain(crate::protocol_serde::shape_caller_chain::de_caller_chain(tokens)?);
-                        }
-                        "eventTime" => {
-                            builder = builder.set_event_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
-                                tokens.next(),
-                                ::aws_smithy_types::date_time::Format::DateTimeWithOffset,
-                            )?);
-                        }
-                        "collaboratorName" => {
-                            builder = builder.set_collaborator_name(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,

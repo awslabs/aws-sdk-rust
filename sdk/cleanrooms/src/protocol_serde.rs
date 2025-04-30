@@ -623,6 +623,8 @@ pub(crate) mod shape_protected_job_receiver_configurations;
 
 pub(crate) mod shape_protected_job_s3_output_configuration_input;
 
+pub(crate) mod shape_protected_query_distribute_output_configuration;
+
 pub(crate) mod shape_protected_query_member_output_configuration;
 
 pub(crate) mod shape_protected_query_output;
@@ -677,6 +679,10 @@ pub(crate) mod shape_protected_job_s3_output;
 
 pub(crate) mod shape_protected_job_s3_output_configuration_output;
 
+pub(crate) mod shape_protected_query_distribute_output;
+
+pub(crate) mod shape_protected_query_distribute_output_configuration_location;
+
 pub(crate) mod shape_protected_query_member_output_list;
 
 pub(crate) mod shape_protected_query_s3_output;
@@ -718,6 +724,8 @@ pub(crate) mod shape_join_operators_list;
 pub(crate) mod shape_protected_job_configuration_details;
 
 pub(crate) mod shape_protected_job_single_member_output;
+
+pub(crate) mod shape_protected_query_distribute_output_configuration_locations;
 
 pub(crate) mod shape_protected_query_single_member_output;
 

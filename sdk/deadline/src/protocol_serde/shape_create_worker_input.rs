@@ -9,5 +9,15 @@ pub fn ser_create_worker_input_input(
         crate::protocol_serde::shape_host_properties_request::ser_host_properties_request(&mut object_2, var_1)?;
         object_2.finish();
     }
+    if let Some(var_3) = &input.tags {
+        #[allow(unused_mut)]
+        let mut object_4 = object.key("tags").start_object();
+        for (key_5, value_6) in var_3 {
+            {
+                object_4.key(key_5.as_str()).string(value_6.as_str());
+            }
+        }
+        object_4.finish();
+    }
     Ok(())
 }

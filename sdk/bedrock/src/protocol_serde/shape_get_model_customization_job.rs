@@ -244,6 +244,9 @@ pub(crate) fn de_get_model_customization_job(
                             .transpose()?,
                     );
                 }
+                "statusDetails" => {
+                    builder = builder.set_status_details(crate::protocol_serde::shape_status_details::de_status_details(tokens)?);
+                }
                 "trainingDataConfig" => {
                     builder = builder.set_training_data_config(crate::protocol_serde::shape_training_data_config::de_training_data_config(tokens)?);
                 }

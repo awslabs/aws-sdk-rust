@@ -76,6 +76,12 @@ pub fn ser_flow_node_configuration(
             crate::protocol_serde::shape_collector_flow_node_configuration::ser_collector_flow_node_configuration(&mut object_12, inner)?;
             object_12.finish();
         }
+        crate::types::FlowNodeConfiguration::InlineCode(inner) => {
+            #[allow(unused_mut)]
+            let mut object_13 = object_2.key("inlineCode").start_object();
+            crate::protocol_serde::shape_inline_code_flow_node_configuration::ser_inline_code_flow_node_configuration(&mut object_13, inner)?;
+            object_13.finish();
+        }
         crate::types::FlowNodeConfiguration::Unknown => {
             return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant(
                 "FlowNodeConfiguration",
@@ -175,6 +181,12 @@ where
                             crate::protocol_serde::shape_collector_flow_node_configuration::de_collector_flow_node_configuration(tokens)?
                                 .ok_or_else(|| {
                                     ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'collector' cannot be null")
+                                })?,
+                        )),
+                        "inlineCode" => Some(crate::types::FlowNodeConfiguration::InlineCode(
+                            crate::protocol_serde::shape_inline_code_flow_node_configuration::de_inline_code_flow_node_configuration(tokens)?
+                                .ok_or_else(|| {
+                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'inlineCode' cannot be null")
                                 })?,
                         )),
                         _ => {

@@ -281,6 +281,20 @@ impl InvokeInlineAgentFluentBuilder {
     pub fn get_collaborator_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CollaboratorConfiguration>> {
         self.inner.get_collaborator_configurations()
     }
+    /// <p>The name for the agent.</p>
+    pub fn agent_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.agent_name(input.into());
+        self
+    }
+    /// <p>The name for the agent.</p>
+    pub fn set_agent_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_agent_name(input);
+        self
+    }
+    /// <p>The name for the agent.</p>
+    pub fn get_agent_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_agent_name()
+    }
     /// <p>The unique identifier of the session. Use the same value across requests to continue the same conversation.</p>
     pub fn session_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.session_id(input.into());
@@ -415,5 +429,33 @@ impl InvokeInlineAgentFluentBuilder {
     /// <p>Model settings for the request.</p>
     pub fn get_bedrock_model_configurations(&self) -> &::std::option::Option<crate::types::InlineBedrockModelConfigurations> {
         self.inner.get_bedrock_model_configurations()
+    }
+    /// <p>Specifies the type of orchestration strategy for the agent. This is set to DEFAULT orchestration type, by default.</p>
+    pub fn orchestration_type(mut self, input: crate::types::OrchestrationType) -> Self {
+        self.inner = self.inner.orchestration_type(input);
+        self
+    }
+    /// <p>Specifies the type of orchestration strategy for the agent. This is set to DEFAULT orchestration type, by default.</p>
+    pub fn set_orchestration_type(mut self, input: ::std::option::Option<crate::types::OrchestrationType>) -> Self {
+        self.inner = self.inner.set_orchestration_type(input);
+        self
+    }
+    /// <p>Specifies the type of orchestration strategy for the agent. This is set to DEFAULT orchestration type, by default.</p>
+    pub fn get_orchestration_type(&self) -> &::std::option::Option<crate::types::OrchestrationType> {
+        self.inner.get_orchestration_type()
+    }
+    /// <p>Contains details of the custom orchestration configured for the agent.</p>
+    pub fn custom_orchestration(mut self, input: crate::types::CustomOrchestration) -> Self {
+        self.inner = self.inner.custom_orchestration(input);
+        self
+    }
+    /// <p>Contains details of the custom orchestration configured for the agent.</p>
+    pub fn set_custom_orchestration(mut self, input: ::std::option::Option<crate::types::CustomOrchestration>) -> Self {
+        self.inner = self.inner.set_custom_orchestration(input);
+        self
+    }
+    /// <p>Contains details of the custom orchestration configured for the agent.</p>
+    pub fn get_custom_orchestration(&self) -> &::std::option::Option<crate::types::CustomOrchestration> {
+        self.inner.get_custom_orchestration()
     }
 }

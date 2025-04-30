@@ -273,6 +273,10 @@ pub use crate::types::_flow_node_input::FlowNodeInput;
 
 pub use crate::types::_flow_node_configuration::FlowNodeConfiguration;
 
+pub use crate::types::_inline_code_flow_node_configuration::InlineCodeFlowNodeConfiguration;
+
+pub use crate::types::_supported_languages::SupportedLanguages;
+
 pub use crate::types::_collector_flow_node_configuration::CollectorFlowNodeConfiguration;
 
 pub use crate::types::_iterator_flow_node_configuration::IteratorFlowNodeConfiguration;
@@ -783,6 +787,8 @@ mod _ingestion_job_status;
 
 mod _ingestion_job_summary;
 
+mod _inline_code_flow_node_configuration;
+
 mod _inline_content;
 
 mod _inline_content_type;
@@ -1042,6 +1048,8 @@ mod _supplemental_data_storage_configuration;
 mod _supplemental_data_storage_location;
 
 mod _supplemental_data_storage_location_type;
+
+mod _supported_languages;
 
 mod _system_content_block;
 
