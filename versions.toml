@@ -2616,6 +2616,10 @@ source_hash = '80ec4ac438cda0bc74755e6b3c466dee894170885c393c986c8378a658eecec7'
 category = 'AwsRuntime'
 version = '0.0.0'
 source_hash = '581fa5a6136071d17e02c13dc52a51b6625056c3ab90d6e921e6352bcab5e0ba'
+
+[release]
+tag = 'release-2025-05-01'
+
 [release.crates]
 aws-sdk-appconfig = '1.70.0'
 aws-sdk-connect = '1.101.0'
