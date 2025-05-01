@@ -60,5 +60,11 @@ pub fn ser_cluster_instance_group_specification(
         crate::protocol_serde::shape_vpc_config::ser_vpc_config(&mut object_17, var_16)?;
         object_17.finish();
     }
+    if let Some(var_18) = &input.scheduled_update_config {
+        #[allow(unused_mut)]
+        let mut object_19 = object.key("ScheduledUpdateConfig").start_object();
+        crate::protocol_serde::shape_scheduled_update_config::ser_scheduled_update_config(&mut object_19, var_18)?;
+        object_19.finish();
+    }
     Ok(())
 }

@@ -11,7 +11,7 @@ pub struct BatchIsAuthorizedWithTokenInput {
     /// <p>Specifies an access token for the principal that you want to authorize in each request. This token is provided to you by the identity provider (IdP) associated with the specified identity source. You must specify either an <code>accessToken</code>, an <code>identityToken</code>, or both.</p>
     /// <p>Must be an access token. Verified Permissions returns an error if the <code>token_use</code> claim in the submitted token isn't <code>access</code>.</p>
     pub access_token: ::std::option::Option<::std::string::String>,
-    /// <p>Specifies the list of resources and their associated attributes that Verified Permissions can examine when evaluating the policies.</p><important>
+    /// <p>(Optional) Specifies the list of resources and their associated attributes that Verified Permissions can examine when evaluating the policies. These additional entities and their attributes can be referenced and checked by conditional elements in the policies in the specified policy store.</p><important>
     /// <p>You can't include principals in this parameter, only resource and action entities. This parameter can't include any entities of a type that matches the user or group entity types that you defined in your identity source.</p>
     /// <ul>
     /// <li>
@@ -39,7 +39,7 @@ impl BatchIsAuthorizedWithTokenInput {
     pub fn access_token(&self) -> ::std::option::Option<&str> {
         self.access_token.as_deref()
     }
-    /// <p>Specifies the list of resources and their associated attributes that Verified Permissions can examine when evaluating the policies.</p><important>
+    /// <p>(Optional) Specifies the list of resources and their associated attributes that Verified Permissions can examine when evaluating the policies. These additional entities and their attributes can be referenced and checked by conditional elements in the policies in the specified policy store.</p><important>
     /// <p>You can't include principals in this parameter, only resource and action entities. This parameter can't include any entities of a type that matches the user or group entity types that you defined in your identity source.</p>
     /// <ul>
     /// <li>
@@ -136,7 +136,7 @@ impl BatchIsAuthorizedWithTokenInputBuilder {
     pub fn get_access_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.access_token
     }
-    /// <p>Specifies the list of resources and their associated attributes that Verified Permissions can examine when evaluating the policies.</p><important>
+    /// <p>(Optional) Specifies the list of resources and their associated attributes that Verified Permissions can examine when evaluating the policies. These additional entities and their attributes can be referenced and checked by conditional elements in the policies in the specified policy store.</p><important>
     /// <p>You can't include principals in this parameter, only resource and action entities. This parameter can't include any entities of a type that matches the user or group entity types that you defined in your identity source.</p>
     /// <ul>
     /// <li>
@@ -149,7 +149,7 @@ impl BatchIsAuthorizedWithTokenInputBuilder {
         self.entities = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies the list of resources and their associated attributes that Verified Permissions can examine when evaluating the policies.</p><important>
+    /// <p>(Optional) Specifies the list of resources and their associated attributes that Verified Permissions can examine when evaluating the policies. These additional entities and their attributes can be referenced and checked by conditional elements in the policies in the specified policy store.</p><important>
     /// <p>You can't include principals in this parameter, only resource and action entities. This parameter can't include any entities of a type that matches the user or group entity types that you defined in your identity source.</p>
     /// <ul>
     /// <li>
@@ -162,7 +162,7 @@ impl BatchIsAuthorizedWithTokenInputBuilder {
         self.entities = input;
         self
     }
-    /// <p>Specifies the list of resources and their associated attributes that Verified Permissions can examine when evaluating the policies.</p><important>
+    /// <p>(Optional) Specifies the list of resources and their associated attributes that Verified Permissions can examine when evaluating the policies. These additional entities and their attributes can be referenced and checked by conditional elements in the policies in the specified policy store.</p><important>
     /// <p>You can't include principals in this parameter, only resource and action entities. This parameter can't include any entities of a type that matches the user or group entity types that you defined in your identity source.</p>
     /// <ul>
     /// <li>

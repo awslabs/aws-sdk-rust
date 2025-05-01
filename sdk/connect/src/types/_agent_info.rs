@@ -16,6 +16,16 @@ pub struct AgentInfo {
     pub device_info: ::std::option::Option<crate::types::DeviceInfo>,
     /// <p>The configuration for the allowed video and screen sharing capabilities for participants present over the call. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/inapp-calling.html">Set up in-app, web, video calling, and screen sharing capabilities</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
     pub capabilities: ::std::option::Option<crate::types::ParticipantCapabilities>,
+    /// <p>The difference in time, in whole seconds, between <code>AfterContactWorkStartTimestamp</code> and <code>AfterContactWorkEndTimestamp</code>.</p>
+    pub after_contact_work_duration: ::std::option::Option<i32>,
+    /// <p>The date and time when the agent started doing After Contact Work for the contact, in UTC time.</p>
+    pub after_contact_work_start_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>The date and time when the agent ended After Contact Work for the contact, in UTC time. In cases when agent finishes doing <code>AfterContactWork</code> for chat contacts and switches their activity status to offline or equivalent without clearing the contact in CCP, discrepancies may be noticed for <code>AfterContactWorkEndTimestamp</code>.</p>
+    pub after_contact_work_end_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>The total hold duration in seconds initiated by the agent.</p>
+    pub agent_initiated_hold_duration: ::std::option::Option<i32>,
+    /// <p>List of <code>StateTransition</code> for a supervisor.</p>
+    pub state_transitions: ::std::option::Option<::std::vec::Vec<crate::types::StateTransition>>,
 }
 impl AgentInfo {
     /// <p>The identifier of the agent who accepted the contact.</p>
@@ -42,6 +52,28 @@ impl AgentInfo {
     pub fn capabilities(&self) -> ::std::option::Option<&crate::types::ParticipantCapabilities> {
         self.capabilities.as_ref()
     }
+    /// <p>The difference in time, in whole seconds, between <code>AfterContactWorkStartTimestamp</code> and <code>AfterContactWorkEndTimestamp</code>.</p>
+    pub fn after_contact_work_duration(&self) -> ::std::option::Option<i32> {
+        self.after_contact_work_duration
+    }
+    /// <p>The date and time when the agent started doing After Contact Work for the contact, in UTC time.</p>
+    pub fn after_contact_work_start_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+        self.after_contact_work_start_timestamp.as_ref()
+    }
+    /// <p>The date and time when the agent ended After Contact Work for the contact, in UTC time. In cases when agent finishes doing <code>AfterContactWork</code> for chat contacts and switches their activity status to offline or equivalent without clearing the contact in CCP, discrepancies may be noticed for <code>AfterContactWorkEndTimestamp</code>.</p>
+    pub fn after_contact_work_end_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+        self.after_contact_work_end_timestamp.as_ref()
+    }
+    /// <p>The total hold duration in seconds initiated by the agent.</p>
+    pub fn agent_initiated_hold_duration(&self) -> ::std::option::Option<i32> {
+        self.agent_initiated_hold_duration
+    }
+    /// <p>List of <code>StateTransition</code> for a supervisor.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.state_transitions.is_none()`.
+    pub fn state_transitions(&self) -> &[crate::types::StateTransition] {
+        self.state_transitions.as_deref().unwrap_or_default()
+    }
 }
 impl AgentInfo {
     /// Creates a new builder-style object to manufacture [`AgentInfo`](crate::types::AgentInfo).
@@ -60,6 +92,11 @@ pub struct AgentInfoBuilder {
     pub(crate) hierarchy_groups: ::std::option::Option<crate::types::HierarchyGroups>,
     pub(crate) device_info: ::std::option::Option<crate::types::DeviceInfo>,
     pub(crate) capabilities: ::std::option::Option<crate::types::ParticipantCapabilities>,
+    pub(crate) after_contact_work_duration: ::std::option::Option<i32>,
+    pub(crate) after_contact_work_start_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) after_contact_work_end_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) agent_initiated_hold_duration: ::std::option::Option<i32>,
+    pub(crate) state_transitions: ::std::option::Option<::std::vec::Vec<crate::types::StateTransition>>,
 }
 impl AgentInfoBuilder {
     /// <p>The identifier of the agent who accepted the contact.</p>
@@ -146,6 +183,82 @@ impl AgentInfoBuilder {
     pub fn get_capabilities(&self) -> &::std::option::Option<crate::types::ParticipantCapabilities> {
         &self.capabilities
     }
+    /// <p>The difference in time, in whole seconds, between <code>AfterContactWorkStartTimestamp</code> and <code>AfterContactWorkEndTimestamp</code>.</p>
+    pub fn after_contact_work_duration(mut self, input: i32) -> Self {
+        self.after_contact_work_duration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The difference in time, in whole seconds, between <code>AfterContactWorkStartTimestamp</code> and <code>AfterContactWorkEndTimestamp</code>.</p>
+    pub fn set_after_contact_work_duration(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.after_contact_work_duration = input;
+        self
+    }
+    /// <p>The difference in time, in whole seconds, between <code>AfterContactWorkStartTimestamp</code> and <code>AfterContactWorkEndTimestamp</code>.</p>
+    pub fn get_after_contact_work_duration(&self) -> &::std::option::Option<i32> {
+        &self.after_contact_work_duration
+    }
+    /// <p>The date and time when the agent started doing After Contact Work for the contact, in UTC time.</p>
+    pub fn after_contact_work_start_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.after_contact_work_start_timestamp = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The date and time when the agent started doing After Contact Work for the contact, in UTC time.</p>
+    pub fn set_after_contact_work_start_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.after_contact_work_start_timestamp = input;
+        self
+    }
+    /// <p>The date and time when the agent started doing After Contact Work for the contact, in UTC time.</p>
+    pub fn get_after_contact_work_start_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.after_contact_work_start_timestamp
+    }
+    /// <p>The date and time when the agent ended After Contact Work for the contact, in UTC time. In cases when agent finishes doing <code>AfterContactWork</code> for chat contacts and switches their activity status to offline or equivalent without clearing the contact in CCP, discrepancies may be noticed for <code>AfterContactWorkEndTimestamp</code>.</p>
+    pub fn after_contact_work_end_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.after_contact_work_end_timestamp = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The date and time when the agent ended After Contact Work for the contact, in UTC time. In cases when agent finishes doing <code>AfterContactWork</code> for chat contacts and switches their activity status to offline or equivalent without clearing the contact in CCP, discrepancies may be noticed for <code>AfterContactWorkEndTimestamp</code>.</p>
+    pub fn set_after_contact_work_end_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.after_contact_work_end_timestamp = input;
+        self
+    }
+    /// <p>The date and time when the agent ended After Contact Work for the contact, in UTC time. In cases when agent finishes doing <code>AfterContactWork</code> for chat contacts and switches their activity status to offline or equivalent without clearing the contact in CCP, discrepancies may be noticed for <code>AfterContactWorkEndTimestamp</code>.</p>
+    pub fn get_after_contact_work_end_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.after_contact_work_end_timestamp
+    }
+    /// <p>The total hold duration in seconds initiated by the agent.</p>
+    pub fn agent_initiated_hold_duration(mut self, input: i32) -> Self {
+        self.agent_initiated_hold_duration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The total hold duration in seconds initiated by the agent.</p>
+    pub fn set_agent_initiated_hold_duration(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.agent_initiated_hold_duration = input;
+        self
+    }
+    /// <p>The total hold duration in seconds initiated by the agent.</p>
+    pub fn get_agent_initiated_hold_duration(&self) -> &::std::option::Option<i32> {
+        &self.agent_initiated_hold_duration
+    }
+    /// Appends an item to `state_transitions`.
+    ///
+    /// To override the contents of this collection use [`set_state_transitions`](Self::set_state_transitions).
+    ///
+    /// <p>List of <code>StateTransition</code> for a supervisor.</p>
+    pub fn state_transitions(mut self, input: crate::types::StateTransition) -> Self {
+        let mut v = self.state_transitions.unwrap_or_default();
+        v.push(input);
+        self.state_transitions = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>List of <code>StateTransition</code> for a supervisor.</p>
+    pub fn set_state_transitions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StateTransition>>) -> Self {
+        self.state_transitions = input;
+        self
+    }
+    /// <p>List of <code>StateTransition</code> for a supervisor.</p>
+    pub fn get_state_transitions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StateTransition>> {
+        &self.state_transitions
+    }
     /// Consumes the builder and constructs a [`AgentInfo`](crate::types::AgentInfo).
     pub fn build(self) -> crate::types::AgentInfo {
         crate::types::AgentInfo {
@@ -155,6 +268,11 @@ impl AgentInfoBuilder {
             hierarchy_groups: self.hierarchy_groups,
             device_info: self.device_info,
             capabilities: self.capabilities,
+            after_contact_work_duration: self.after_contact_work_duration,
+            after_contact_work_start_timestamp: self.after_contact_work_start_timestamp,
+            after_contact_work_end_timestamp: self.after_contact_work_end_timestamp,
+            agent_initiated_hold_duration: self.agent_initiated_hold_duration,
+            state_transitions: self.state_transitions,
         }
     }
 }

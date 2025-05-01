@@ -5772,6 +5772,15 @@ pub(crate) fn s3_model_data_source_correct_errors(
     builder
 }
 
+pub(crate) fn scheduled_update_config_correct_errors(
+    mut builder: crate::types::builders::ScheduledUpdateConfigBuilder,
+) -> crate::types::builders::ScheduledUpdateConfigBuilder {
+    if builder.schedule_expression.is_none() {
+        builder.schedule_expression = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn selected_step_correct_errors(mut builder: crate::types::builders::SelectedStepBuilder) -> crate::types::builders::SelectedStepBuilder {
     if builder.step_name.is_none() {
         builder.step_name = Some(Default::default())
@@ -6331,6 +6340,37 @@ pub(crate) fn model_dashboard_endpoint_correct_errors(
     }
     if builder.endpoint_status.is_none() {
         builder.endpoint_status = "no value was set".parse::<crate::types::EndpointStatus>().ok()
+    }
+    builder
+}
+
+pub(crate) fn rolling_deployment_policy_correct_errors(
+    mut builder: crate::types::builders::RollingDeploymentPolicyBuilder,
+) -> crate::types::builders::RollingDeploymentPolicyBuilder {
+    if builder.maximum_batch_size.is_none() {
+        builder.maximum_batch_size = {
+            let builder = crate::types::builders::CapacitySizeConfigBuilder::default();
+            Some(crate::serde_util::capacity_size_config_correct_errors(builder).build())
+        }
+    }
+    builder
+}
+
+pub(crate) fn alarm_details_correct_errors(mut builder: crate::types::builders::AlarmDetailsBuilder) -> crate::types::builders::AlarmDetailsBuilder {
+    if builder.alarm_name.is_none() {
+        builder.alarm_name = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn capacity_size_config_correct_errors(
+    mut builder: crate::types::builders::CapacitySizeConfigBuilder,
+) -> crate::types::builders::CapacitySizeConfigBuilder {
+    if builder.r#type.is_none() {
+        builder.r#type = "no value was set".parse::<crate::types::NodeUnavailabilityType>().ok()
+    }
+    if builder.value.is_none() {
+        builder.value = Some(Default::default())
     }
     builder
 }

@@ -41,6 +41,12 @@ where
                                 ::aws_smithy_types::date_time::Format::EpochSeconds,
                             )?);
                         }
+                        "LastSoftwareUpdateTime" => {
+                            builder = builder.set_last_software_update_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
+                                tokens.next(),
+                                ::aws_smithy_types::date_time::Format::EpochSeconds,
+                            )?);
+                        }
                         "InstanceStatus" => {
                             builder = builder.set_instance_status(
                                 crate::protocol_serde::shape_cluster_instance_status_details::de_cluster_instance_status_details(tokens)?,

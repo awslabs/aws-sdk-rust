@@ -849,6 +849,20 @@ pub use crate::types::_evaluation_metadata::EvaluationMetadata;
 
 pub use crate::types::_contact::Contact;
 
+pub use crate::types::_contact_details::ContactDetails;
+
+pub use crate::types::_contact_evaluation::ContactEvaluation;
+
+pub use crate::types::_status::Status;
+
+pub use crate::types::_recording_info::RecordingInfo;
+
+pub use crate::types::_recording_status::RecordingStatus;
+
+pub use crate::types::_participant_type::ParticipantType;
+
+pub use crate::types::_media_stream_type::MediaStreamType;
+
 pub use crate::types::_additional_email_recipients::AdditionalEmailRecipients;
 
 pub use crate::types::_email_recipient::EmailRecipient;
@@ -886,6 +900,10 @@ pub use crate::types::_endpoint_info::EndpointInfo;
 pub use crate::types::_wisdom_info::WisdomInfo;
 
 pub use crate::types::_agent_info::AgentInfo;
+
+pub use crate::types::_state_transition::StateTransition;
+
+pub use crate::types::_participant_state::ParticipantState;
 
 pub use crate::types::_hierarchy_groups::HierarchyGroups;
 
@@ -1038,6 +1056,10 @@ mod _contact_analysis;
 mod _contact_configuration;
 
 mod _contact_data_request;
+
+mod _contact_details;
+
+mod _contact_evaluation;
 
 mod _contact_filter;
 
@@ -1381,6 +1403,8 @@ mod _media_concurrency;
 
 mod _media_placement;
 
+mod _media_stream_type;
+
 mod _meeting;
 
 mod _meeting_feature_status;
@@ -1443,6 +1467,8 @@ mod _participant_details_to_add;
 
 mod _participant_role;
 
+mod _participant_state;
+
 mod _participant_timer_action;
 
 mod _participant_timer_configuration;
@@ -1452,6 +1478,8 @@ mod _participant_timer_type;
 mod _participant_timer_value;
 
 mod _participant_token_credentials;
+
+mod _participant_type;
 
 mod _persistent_chat;
 
@@ -1575,6 +1603,10 @@ mod _real_time_contact_analysis_transcript_item_with_content;
 
 mod _realtime_contact_analysis_segment;
 
+mod _recording_info;
+
+mod _recording_status;
+
 mod _reference;
 
 mod _reference_status;
@@ -1693,7 +1725,11 @@ mod _source_campaign;
 
 mod _source_type;
 
+mod _state_transition;
+
 mod _statistic;
+
+mod _status;
 
 mod _step;
 

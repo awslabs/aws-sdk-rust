@@ -1431,6 +1431,10 @@ pub(crate) mod shape_chat_participant_role_config;
 
 pub(crate) mod shape_contact_analysis;
 
+pub(crate) mod shape_contact_details;
+
+pub(crate) mod shape_contact_evaluations;
+
 pub(crate) mod shape_contact_filter;
 
 pub(crate) mod shape_contact_flow_module_summary;
@@ -1599,6 +1603,8 @@ pub(crate) mod shape_read_only_task_template_fields;
 
 pub(crate) mod shape_realtime_contact_analysis_segment;
 
+pub(crate) mod shape_recordings;
+
 pub(crate) mod shape_reference_summary;
 
 pub(crate) mod shape_replication_status_summary_list;
@@ -1719,6 +1725,8 @@ pub(crate) mod shape_common_attribute_and_condition;
 
 pub(crate) mod shape_condition;
 
+pub(crate) mod shape_contact_evaluation;
+
 pub(crate) mod shape_contact_search_summary_agent_info;
 
 pub(crate) mod shape_contact_search_summary_queue_info;
@@ -1791,6 +1799,8 @@ pub(crate) mod shape_real_time_contact_analysis_segment_post_contact_summary;
 
 pub(crate) mod shape_real_time_contact_analysis_segment_transcript;
 
+pub(crate) mod shape_recording_info;
+
 pub(crate) mod shape_replication_status_summary;
 
 pub(crate) mod shape_routing_criteria_input_step_expiry;
@@ -1802,6 +1812,8 @@ pub(crate) mod shape_searchable_contact_attributes_criteria;
 pub(crate) mod shape_searchable_segment_attributes_criteria;
 
 pub(crate) mod shape_single_select_options;
+
+pub(crate) mod shape_state_transitions;
 
 pub(crate) mod shape_steps;
 
@@ -1870,6 +1882,8 @@ pub(crate) mod shape_real_time_contact_analysis_time_data;
 pub(crate) mod shape_real_time_contact_analysis_transcript_item_redaction;
 
 pub(crate) mod shape_segment_attribute_value_map;
+
+pub(crate) mod shape_state_transition;
 
 pub(crate) mod shape_step;
 

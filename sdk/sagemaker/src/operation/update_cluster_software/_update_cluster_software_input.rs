@@ -5,11 +5,25 @@
 pub struct UpdateClusterSoftwareInput {
     /// <p>Specify the name or the Amazon Resource Name (ARN) of the SageMaker HyperPod cluster you want to update for security patching.</p>
     pub cluster_name: ::std::option::Option<::std::string::String>,
+    /// <p>The array of instance groups for which to update AMI versions.</p>
+    pub instance_groups: ::std::option::Option<::std::vec::Vec<crate::types::UpdateClusterSoftwareInstanceGroupSpecification>>,
+    /// <p>The configuration to use when updating the AMI versions.</p>
+    pub deployment_config: ::std::option::Option<crate::types::DeploymentConfiguration>,
 }
 impl UpdateClusterSoftwareInput {
     /// <p>Specify the name or the Amazon Resource Name (ARN) of the SageMaker HyperPod cluster you want to update for security patching.</p>
     pub fn cluster_name(&self) -> ::std::option::Option<&str> {
         self.cluster_name.as_deref()
+    }
+    /// <p>The array of instance groups for which to update AMI versions.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.instance_groups.is_none()`.
+    pub fn instance_groups(&self) -> &[crate::types::UpdateClusterSoftwareInstanceGroupSpecification] {
+        self.instance_groups.as_deref().unwrap_or_default()
+    }
+    /// <p>The configuration to use when updating the AMI versions.</p>
+    pub fn deployment_config(&self) -> ::std::option::Option<&crate::types::DeploymentConfiguration> {
+        self.deployment_config.as_ref()
     }
 }
 impl UpdateClusterSoftwareInput {
@@ -24,6 +38,8 @@ impl UpdateClusterSoftwareInput {
 #[non_exhaustive]
 pub struct UpdateClusterSoftwareInputBuilder {
     pub(crate) cluster_name: ::std::option::Option<::std::string::String>,
+    pub(crate) instance_groups: ::std::option::Option<::std::vec::Vec<crate::types::UpdateClusterSoftwareInstanceGroupSpecification>>,
+    pub(crate) deployment_config: ::std::option::Option<crate::types::DeploymentConfiguration>,
 }
 impl UpdateClusterSoftwareInputBuilder {
     /// <p>Specify the name or the Amazon Resource Name (ARN) of the SageMaker HyperPod cluster you want to update for security patching.</p>
@@ -41,6 +57,43 @@ impl UpdateClusterSoftwareInputBuilder {
     pub fn get_cluster_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.cluster_name
     }
+    /// Appends an item to `instance_groups`.
+    ///
+    /// To override the contents of this collection use [`set_instance_groups`](Self::set_instance_groups).
+    ///
+    /// <p>The array of instance groups for which to update AMI versions.</p>
+    pub fn instance_groups(mut self, input: crate::types::UpdateClusterSoftwareInstanceGroupSpecification) -> Self {
+        let mut v = self.instance_groups.unwrap_or_default();
+        v.push(input);
+        self.instance_groups = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The array of instance groups for which to update AMI versions.</p>
+    pub fn set_instance_groups(
+        mut self,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::UpdateClusterSoftwareInstanceGroupSpecification>>,
+    ) -> Self {
+        self.instance_groups = input;
+        self
+    }
+    /// <p>The array of instance groups for which to update AMI versions.</p>
+    pub fn get_instance_groups(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UpdateClusterSoftwareInstanceGroupSpecification>> {
+        &self.instance_groups
+    }
+    /// <p>The configuration to use when updating the AMI versions.</p>
+    pub fn deployment_config(mut self, input: crate::types::DeploymentConfiguration) -> Self {
+        self.deployment_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The configuration to use when updating the AMI versions.</p>
+    pub fn set_deployment_config(mut self, input: ::std::option::Option<crate::types::DeploymentConfiguration>) -> Self {
+        self.deployment_config = input;
+        self
+    }
+    /// <p>The configuration to use when updating the AMI versions.</p>
+    pub fn get_deployment_config(&self) -> &::std::option::Option<crate::types::DeploymentConfiguration> {
+        &self.deployment_config
+    }
     /// Consumes the builder and constructs a [`UpdateClusterSoftwareInput`](crate::operation::update_cluster_software::UpdateClusterSoftwareInput).
     pub fn build(
         self,
@@ -48,6 +101,8 @@ impl UpdateClusterSoftwareInputBuilder {
     {
         ::std::result::Result::Ok(crate::operation::update_cluster_software::UpdateClusterSoftwareInput {
             cluster_name: self.cluster_name,
+            instance_groups: self.instance_groups,
+            deployment_config: self.deployment_config,
         })
     }
 }

@@ -67,7 +67,13 @@ pub(crate) mod shape_list_policy_stores;
 
 pub(crate) mod shape_list_policy_templates;
 
+pub(crate) mod shape_list_tags_for_resource;
+
 pub(crate) mod shape_put_schema;
+
+pub(crate) mod shape_tag_resource;
+
+pub(crate) mod shape_untag_resource;
 
 pub(crate) mod shape_update_identity_source;
 
@@ -137,13 +143,21 @@ pub(crate) mod shape_list_policy_stores_input;
 
 pub(crate) mod shape_list_policy_templates_input;
 
+pub(crate) mod shape_list_tags_for_resource_input;
+
 pub(crate) mod shape_put_schema_input;
 
 pub(crate) mod shape_resource_not_found_exception;
 
 pub(crate) mod shape_service_quota_exceeded_exception;
 
+pub(crate) mod shape_tag_resource_input;
+
 pub(crate) mod shape_throttling_exception;
+
+pub(crate) mod shape_too_many_tags_exception;
+
+pub(crate) mod shape_untag_resource_input;
 
 pub(crate) mod shape_update_identity_source_input;
 
@@ -210,6 +224,8 @@ pub(crate) mod shape_policy_templates_list;
 pub(crate) mod shape_resource_conflict_list;
 
 pub(crate) mod shape_schema_definition;
+
+pub(crate) mod shape_tag_map;
 
 pub(crate) mod shape_update_configuration;
 

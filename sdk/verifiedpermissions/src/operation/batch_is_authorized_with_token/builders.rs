@@ -160,7 +160,7 @@ impl BatchIsAuthorizedWithTokenFluentBuilder {
     pub fn get_access_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_access_token()
     }
-    /// <p>Specifies the list of resources and their associated attributes that Verified Permissions can examine when evaluating the policies.</p><important>
+    /// <p>(Optional) Specifies the list of resources and their associated attributes that Verified Permissions can examine when evaluating the policies. These additional entities and their attributes can be referenced and checked by conditional elements in the policies in the specified policy store.</p><important>
     /// <p>You can't include principals in this parameter, only resource and action entities. This parameter can't include any entities of a type that matches the user or group entity types that you defined in your identity source.</p>
     /// <ul>
     /// <li>
@@ -173,7 +173,7 @@ impl BatchIsAuthorizedWithTokenFluentBuilder {
         self.inner = self.inner.entities(input);
         self
     }
-    /// <p>Specifies the list of resources and their associated attributes that Verified Permissions can examine when evaluating the policies.</p><important>
+    /// <p>(Optional) Specifies the list of resources and their associated attributes that Verified Permissions can examine when evaluating the policies. These additional entities and their attributes can be referenced and checked by conditional elements in the policies in the specified policy store.</p><important>
     /// <p>You can't include principals in this parameter, only resource and action entities. This parameter can't include any entities of a type that matches the user or group entity types that you defined in your identity source.</p>
     /// <ul>
     /// <li>
@@ -186,7 +186,7 @@ impl BatchIsAuthorizedWithTokenFluentBuilder {
         self.inner = self.inner.set_entities(input);
         self
     }
-    /// <p>Specifies the list of resources and their associated attributes that Verified Permissions can examine when evaluating the policies.</p><important>
+    /// <p>(Optional) Specifies the list of resources and their associated attributes that Verified Permissions can examine when evaluating the policies. These additional entities and their attributes can be referenced and checked by conditional elements in the policies in the specified policy store.</p><important>
     /// <p>You can't include principals in this parameter, only resource and action entities. This parameter can't include any entities of a type that matches the user or group entity types that you defined in your identity source.</p>
     /// <ul>
     /// <li>

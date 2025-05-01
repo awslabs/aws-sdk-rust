@@ -78,6 +78,16 @@ pub struct Contact {
     pub additional_email_recipients: ::std::option::Option<crate::types::AdditionalEmailRecipients>,
     /// <p>A set of system defined key-value pairs stored on individual contact segments using an attribute map. The attributes are standard Amazon Connect attributes and can be accessed in flows. Attribute keys can include only alphanumeric, -, and _ characters. This field can be used to show channel subtype. For example, <code>connect:Guide</code> or <code>connect:SMS</code>.</p>
     pub segment_attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::SegmentAttributeValue>>,
+    /// <p>If recording was enabled, this is information about the recordings.</p>
+    pub recordings: ::std::option::Option<::std::vec::Vec<crate::types::RecordingInfo>>,
+    /// <p>The disconnect reason for the contact.</p>
+    pub disconnect_reason: ::std::option::Option<::std::string::String>,
+    /// <p>Information about the contact evaluations where the key is the FormId, which is a unique identifier for the form.</p>
+    pub contact_evaluations: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ContactEvaluation>>,
+    /// <p>A map of string key/value pairs that contain user-defined attributes which are lightly typed within the contact. This object is used only for task contacts.</p>
+    pub contact_details: ::std::option::Option<crate::types::ContactDetails>,
+    /// <p>The attributes of the contact.</p>
+    pub attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl Contact {
     /// <p>The Amazon Resource Name (ARN) for the contact.</p>
@@ -230,6 +240,28 @@ impl Contact {
     ) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::SegmentAttributeValue>> {
         self.segment_attributes.as_ref()
     }
+    /// <p>If recording was enabled, this is information about the recordings.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.recordings.is_none()`.
+    pub fn recordings(&self) -> &[crate::types::RecordingInfo] {
+        self.recordings.as_deref().unwrap_or_default()
+    }
+    /// <p>The disconnect reason for the contact.</p>
+    pub fn disconnect_reason(&self) -> ::std::option::Option<&str> {
+        self.disconnect_reason.as_deref()
+    }
+    /// <p>Information about the contact evaluations where the key is the FormId, which is a unique identifier for the form.</p>
+    pub fn contact_evaluations(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::ContactEvaluation>> {
+        self.contact_evaluations.as_ref()
+    }
+    /// <p>A map of string key/value pairs that contain user-defined attributes which are lightly typed within the contact. This object is used only for task contacts.</p>
+    pub fn contact_details(&self) -> ::std::option::Option<&crate::types::ContactDetails> {
+        self.contact_details.as_ref()
+    }
+    /// <p>The attributes of the contact.</p>
+    pub fn attributes(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        self.attributes.as_ref()
+    }
 }
 impl ::std::fmt::Debug for Contact {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -271,6 +303,11 @@ impl ::std::fmt::Debug for Contact {
         formatter.field("disconnect_details", &self.disconnect_details);
         formatter.field("additional_email_recipients", &self.additional_email_recipients);
         formatter.field("segment_attributes", &self.segment_attributes);
+        formatter.field("recordings", &self.recordings);
+        formatter.field("disconnect_reason", &self.disconnect_reason);
+        formatter.field("contact_evaluations", &self.contact_evaluations);
+        formatter.field("contact_details", &self.contact_details);
+        formatter.field("attributes", &self.attributes);
         formatter.finish()
     }
 }
@@ -322,6 +359,11 @@ pub struct ContactBuilder {
     pub(crate) disconnect_details: ::std::option::Option<crate::types::DisconnectDetails>,
     pub(crate) additional_email_recipients: ::std::option::Option<crate::types::AdditionalEmailRecipients>,
     pub(crate) segment_attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::SegmentAttributeValue>>,
+    pub(crate) recordings: ::std::option::Option<::std::vec::Vec<crate::types::RecordingInfo>>,
+    pub(crate) disconnect_reason: ::std::option::Option<::std::string::String>,
+    pub(crate) contact_evaluations: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ContactEvaluation>>,
+    pub(crate) contact_details: ::std::option::Option<crate::types::ContactDetails>,
+    pub(crate) attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl ContactBuilder {
     /// <p>The Amazon Resource Name (ARN) for the contact.</p>
@@ -859,6 +901,99 @@ impl ContactBuilder {
     ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::SegmentAttributeValue>> {
         &self.segment_attributes
     }
+    /// Appends an item to `recordings`.
+    ///
+    /// To override the contents of this collection use [`set_recordings`](Self::set_recordings).
+    ///
+    /// <p>If recording was enabled, this is information about the recordings.</p>
+    pub fn recordings(mut self, input: crate::types::RecordingInfo) -> Self {
+        let mut v = self.recordings.unwrap_or_default();
+        v.push(input);
+        self.recordings = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>If recording was enabled, this is information about the recordings.</p>
+    pub fn set_recordings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RecordingInfo>>) -> Self {
+        self.recordings = input;
+        self
+    }
+    /// <p>If recording was enabled, this is information about the recordings.</p>
+    pub fn get_recordings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RecordingInfo>> {
+        &self.recordings
+    }
+    /// <p>The disconnect reason for the contact.</p>
+    pub fn disconnect_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.disconnect_reason = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The disconnect reason for the contact.</p>
+    pub fn set_disconnect_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.disconnect_reason = input;
+        self
+    }
+    /// <p>The disconnect reason for the contact.</p>
+    pub fn get_disconnect_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.disconnect_reason
+    }
+    /// Adds a key-value pair to `contact_evaluations`.
+    ///
+    /// To override the contents of this collection use [`set_contact_evaluations`](Self::set_contact_evaluations).
+    ///
+    /// <p>Information about the contact evaluations where the key is the FormId, which is a unique identifier for the form.</p>
+    pub fn contact_evaluations(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::ContactEvaluation) -> Self {
+        let mut hash_map = self.contact_evaluations.unwrap_or_default();
+        hash_map.insert(k.into(), v);
+        self.contact_evaluations = ::std::option::Option::Some(hash_map);
+        self
+    }
+    /// <p>Information about the contact evaluations where the key is the FormId, which is a unique identifier for the form.</p>
+    pub fn set_contact_evaluations(
+        mut self,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ContactEvaluation>>,
+    ) -> Self {
+        self.contact_evaluations = input;
+        self
+    }
+    /// <p>Information about the contact evaluations where the key is the FormId, which is a unique identifier for the form.</p>
+    pub fn get_contact_evaluations(
+        &self,
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ContactEvaluation>> {
+        &self.contact_evaluations
+    }
+    /// <p>A map of string key/value pairs that contain user-defined attributes which are lightly typed within the contact. This object is used only for task contacts.</p>
+    pub fn contact_details(mut self, input: crate::types::ContactDetails) -> Self {
+        self.contact_details = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>A map of string key/value pairs that contain user-defined attributes which are lightly typed within the contact. This object is used only for task contacts.</p>
+    pub fn set_contact_details(mut self, input: ::std::option::Option<crate::types::ContactDetails>) -> Self {
+        self.contact_details = input;
+        self
+    }
+    /// <p>A map of string key/value pairs that contain user-defined attributes which are lightly typed within the contact. This object is used only for task contacts.</p>
+    pub fn get_contact_details(&self) -> &::std::option::Option<crate::types::ContactDetails> {
+        &self.contact_details
+    }
+    /// Adds a key-value pair to `attributes`.
+    ///
+    /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
+    ///
+    /// <p>The attributes of the contact.</p>
+    pub fn attributes(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut hash_map = self.attributes.unwrap_or_default();
+        hash_map.insert(k.into(), v.into());
+        self.attributes = ::std::option::Option::Some(hash_map);
+        self
+    }
+    /// <p>The attributes of the contact.</p>
+    pub fn set_attributes(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
+        self.attributes = input;
+        self
+    }
+    /// <p>The attributes of the contact.</p>
+    pub fn get_attributes(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        &self.attributes
+    }
     /// Consumes the builder and constructs a [`Contact`](crate::types::Contact).
     pub fn build(self) -> crate::types::Contact {
         crate::types::Contact {
@@ -899,6 +1034,11 @@ impl ContactBuilder {
             disconnect_details: self.disconnect_details,
             additional_email_recipients: self.additional_email_recipients,
             segment_attributes: self.segment_attributes,
+            recordings: self.recordings,
+            disconnect_reason: self.disconnect_reason,
+            contact_evaluations: self.contact_evaluations,
+            contact_details: self.contact_details,
+            attributes: self.attributes,
         }
     }
 }
@@ -942,6 +1082,11 @@ impl ::std::fmt::Debug for ContactBuilder {
         formatter.field("disconnect_details", &self.disconnect_details);
         formatter.field("additional_email_recipients", &self.additional_email_recipients);
         formatter.field("segment_attributes", &self.segment_attributes);
+        formatter.field("recordings", &self.recordings);
+        formatter.field("disconnect_reason", &self.disconnect_reason);
+        formatter.field("contact_evaluations", &self.contact_evaluations);
+        formatter.field("contact_details", &self.contact_details);
+        formatter.field("attributes", &self.attributes);
         formatter.finish()
     }
 }

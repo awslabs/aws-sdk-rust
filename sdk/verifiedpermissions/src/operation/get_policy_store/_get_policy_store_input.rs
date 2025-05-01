@@ -5,11 +5,21 @@
 pub struct GetPolicyStoreInput {
     /// <p>Specifies the ID of the policy store that you want information about.</p>
     pub policy_store_id: ::std::option::Option<::std::string::String>,
+    /// <p>Specifies whether to return the tags that are attached to the policy store. If this parameter is included in the API call, the tags are returned, otherwise they are not returned.</p><note>
+    /// <p>If this parameter is included in the API call but there are no tags attached to the policy store, the <code>tags</code> response parameter is omitted from the response.</p>
+    /// </note>
+    pub tags: ::std::option::Option<bool>,
 }
 impl GetPolicyStoreInput {
     /// <p>Specifies the ID of the policy store that you want information about.</p>
     pub fn policy_store_id(&self) -> ::std::option::Option<&str> {
         self.policy_store_id.as_deref()
+    }
+    /// <p>Specifies whether to return the tags that are attached to the policy store. If this parameter is included in the API call, the tags are returned, otherwise they are not returned.</p><note>
+    /// <p>If this parameter is included in the API call but there are no tags attached to the policy store, the <code>tags</code> response parameter is omitted from the response.</p>
+    /// </note>
+    pub fn tags(&self) -> ::std::option::Option<bool> {
+        self.tags
     }
 }
 impl GetPolicyStoreInput {
@@ -24,6 +34,7 @@ impl GetPolicyStoreInput {
 #[non_exhaustive]
 pub struct GetPolicyStoreInputBuilder {
     pub(crate) policy_store_id: ::std::option::Option<::std::string::String>,
+    pub(crate) tags: ::std::option::Option<bool>,
 }
 impl GetPolicyStoreInputBuilder {
     /// <p>Specifies the ID of the policy store that you want information about.</p>
@@ -41,12 +52,33 @@ impl GetPolicyStoreInputBuilder {
     pub fn get_policy_store_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.policy_store_id
     }
+    /// <p>Specifies whether to return the tags that are attached to the policy store. If this parameter is included in the API call, the tags are returned, otherwise they are not returned.</p><note>
+    /// <p>If this parameter is included in the API call but there are no tags attached to the policy store, the <code>tags</code> response parameter is omitted from the response.</p>
+    /// </note>
+    pub fn tags(mut self, input: bool) -> Self {
+        self.tags = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies whether to return the tags that are attached to the policy store. If this parameter is included in the API call, the tags are returned, otherwise they are not returned.</p><note>
+    /// <p>If this parameter is included in the API call but there are no tags attached to the policy store, the <code>tags</code> response parameter is omitted from the response.</p>
+    /// </note>
+    pub fn set_tags(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.tags = input;
+        self
+    }
+    /// <p>Specifies whether to return the tags that are attached to the policy store. If this parameter is included in the API call, the tags are returned, otherwise they are not returned.</p><note>
+    /// <p>If this parameter is included in the API call but there are no tags attached to the policy store, the <code>tags</code> response parameter is omitted from the response.</p>
+    /// </note>
+    pub fn get_tags(&self) -> &::std::option::Option<bool> {
+        &self.tags
+    }
     /// Consumes the builder and constructs a [`GetPolicyStoreInput`](crate::operation::get_policy_store::GetPolicyStoreInput).
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::get_policy_store::GetPolicyStoreInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_policy_store::GetPolicyStoreInput {
             policy_store_id: self.policy_store_id,
+            tags: self.tags,
         })
     }
 }

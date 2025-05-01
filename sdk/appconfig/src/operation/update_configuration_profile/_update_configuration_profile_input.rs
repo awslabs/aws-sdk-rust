@@ -11,7 +11,9 @@ pub struct UpdateConfigurationProfileInput {
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A description of the configuration profile.</p>
     pub description: ::std::option::Option<::std::string::String>,
-    /// <p>The ARN of an IAM role with permission to access the configuration at the specified <code>LocationUri</code>.</p>
+    /// <p>The ARN of an IAM role with permission to access the configuration at the specified <code>LocationUri</code>.</p><important>
+    /// <p>A retrieval role ARN is not required for configurations stored in CodePipeline or the AppConfig hosted configuration store. It is required for all other sources that store your configuration.</p>
+    /// </important>
     pub retrieval_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>A list of methods for validating the configuration.</p>
     pub validators: ::std::option::Option<::std::vec::Vec<crate::types::Validator>>,
@@ -35,7 +37,9 @@ impl UpdateConfigurationProfileInput {
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The ARN of an IAM role with permission to access the configuration at the specified <code>LocationUri</code>.</p>
+    /// <p>The ARN of an IAM role with permission to access the configuration at the specified <code>LocationUri</code>.</p><important>
+    /// <p>A retrieval role ARN is not required for configurations stored in CodePipeline or the AppConfig hosted configuration store. It is required for all other sources that store your configuration.</p>
+    /// </important>
     pub fn retrieval_role_arn(&self) -> ::std::option::Option<&str> {
         self.retrieval_role_arn.as_deref()
     }
@@ -128,17 +132,23 @@ impl UpdateConfigurationProfileInputBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
-    /// <p>The ARN of an IAM role with permission to access the configuration at the specified <code>LocationUri</code>.</p>
+    /// <p>The ARN of an IAM role with permission to access the configuration at the specified <code>LocationUri</code>.</p><important>
+    /// <p>A retrieval role ARN is not required for configurations stored in CodePipeline or the AppConfig hosted configuration store. It is required for all other sources that store your configuration.</p>
+    /// </important>
     pub fn retrieval_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.retrieval_role_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ARN of an IAM role with permission to access the configuration at the specified <code>LocationUri</code>.</p>
+    /// <p>The ARN of an IAM role with permission to access the configuration at the specified <code>LocationUri</code>.</p><important>
+    /// <p>A retrieval role ARN is not required for configurations stored in CodePipeline or the AppConfig hosted configuration store. It is required for all other sources that store your configuration.</p>
+    /// </important>
     pub fn set_retrieval_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.retrieval_role_arn = input;
         self
     }
-    /// <p>The ARN of an IAM role with permission to access the configuration at the specified <code>LocationUri</code>.</p>
+    /// <p>The ARN of an IAM role with permission to access the configuration at the specified <code>LocationUri</code>.</p><important>
+    /// <p>A retrieval role ARN is not required for configurations stored in CodePipeline or the AppConfig hosted configuration store. It is required for all other sources that store your configuration.</p>
+    /// </important>
     pub fn get_retrieval_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.retrieval_role_arn
     }

@@ -7,7 +7,7 @@ pub struct DeleteConfigurationProfileInput {
     pub application_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the configuration profile you want to delete.</p>
     pub configuration_profile_id: ::std::option::Option<::std::string::String>,
-    /// <p>A parameter to configure deletion protection. If enabled, deletion protection prevents a user from deleting a configuration profile if your application has called either <a href="https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_appconfigdata_GetLatestConfiguration.html">GetLatestConfiguration</a> or for the configuration profile during the specified interval.</p>
+    /// <p>A parameter to configure deletion protection. Deletion protection prevents a user from deleting a configuration profile if your application has called either <a href="https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_appconfigdata_GetLatestConfiguration.html">GetLatestConfiguration</a> or for the configuration profile during the specified interval.</p>
     /// <p>This parameter supports the following values:</p>
     /// <ul>
     /// <li>
@@ -28,7 +28,7 @@ impl DeleteConfigurationProfileInput {
     pub fn configuration_profile_id(&self) -> ::std::option::Option<&str> {
         self.configuration_profile_id.as_deref()
     }
-    /// <p>A parameter to configure deletion protection. If enabled, deletion protection prevents a user from deleting a configuration profile if your application has called either <a href="https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_appconfigdata_GetLatestConfiguration.html">GetLatestConfiguration</a> or for the configuration profile during the specified interval.</p>
+    /// <p>A parameter to configure deletion protection. Deletion protection prevents a user from deleting a configuration profile if your application has called either <a href="https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_appconfigdata_GetLatestConfiguration.html">GetLatestConfiguration</a> or for the configuration profile during the specified interval.</p>
     /// <p>This parameter supports the following values:</p>
     /// <ul>
     /// <li>
@@ -88,7 +88,7 @@ impl DeleteConfigurationProfileInputBuilder {
     pub fn get_configuration_profile_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.configuration_profile_id
     }
-    /// <p>A parameter to configure deletion protection. If enabled, deletion protection prevents a user from deleting a configuration profile if your application has called either <a href="https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_appconfigdata_GetLatestConfiguration.html">GetLatestConfiguration</a> or for the configuration profile during the specified interval.</p>
+    /// <p>A parameter to configure deletion protection. Deletion protection prevents a user from deleting a configuration profile if your application has called either <a href="https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_appconfigdata_GetLatestConfiguration.html">GetLatestConfiguration</a> or for the configuration profile during the specified interval.</p>
     /// <p>This parameter supports the following values:</p>
     /// <ul>
     /// <li>
@@ -102,7 +102,7 @@ impl DeleteConfigurationProfileInputBuilder {
         self.deletion_protection_check = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A parameter to configure deletion protection. If enabled, deletion protection prevents a user from deleting a configuration profile if your application has called either <a href="https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_appconfigdata_GetLatestConfiguration.html">GetLatestConfiguration</a> or for the configuration profile during the specified interval.</p>
+    /// <p>A parameter to configure deletion protection. Deletion protection prevents a user from deleting a configuration profile if your application has called either <a href="https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_appconfigdata_GetLatestConfiguration.html">GetLatestConfiguration</a> or for the configuration profile during the specified interval.</p>
     /// <p>This parameter supports the following values:</p>
     /// <ul>
     /// <li>
@@ -116,7 +116,7 @@ impl DeleteConfigurationProfileInputBuilder {
         self.deletion_protection_check = input;
         self
     }
-    /// <p>A parameter to configure deletion protection. If enabled, deletion protection prevents a user from deleting a configuration profile if your application has called either <a href="https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_appconfigdata_GetLatestConfiguration.html">GetLatestConfiguration</a> or for the configuration profile during the specified interval.</p>
+    /// <p>A parameter to configure deletion protection. Deletion protection prevents a user from deleting a configuration profile if your application has called either <a href="https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_appconfigdata_GetLatestConfiguration.html">GetLatestConfiguration</a> or for the configuration profile during the specified interval.</p>
     /// <p>This parameter supports the following values:</p>
     /// <ul>
     /// <li>

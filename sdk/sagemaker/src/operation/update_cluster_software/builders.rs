@@ -124,4 +124,40 @@ impl UpdateClusterSoftwareFluentBuilder {
     pub fn get_cluster_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_cluster_name()
     }
+    ///
+    /// Appends an item to `InstanceGroups`.
+    ///
+    /// To override the contents of this collection use [`set_instance_groups`](Self::set_instance_groups).
+    ///
+    /// <p>The array of instance groups for which to update AMI versions.</p>
+    pub fn instance_groups(mut self, input: crate::types::UpdateClusterSoftwareInstanceGroupSpecification) -> Self {
+        self.inner = self.inner.instance_groups(input);
+        self
+    }
+    /// <p>The array of instance groups for which to update AMI versions.</p>
+    pub fn set_instance_groups(
+        mut self,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::UpdateClusterSoftwareInstanceGroupSpecification>>,
+    ) -> Self {
+        self.inner = self.inner.set_instance_groups(input);
+        self
+    }
+    /// <p>The array of instance groups for which to update AMI versions.</p>
+    pub fn get_instance_groups(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UpdateClusterSoftwareInstanceGroupSpecification>> {
+        self.inner.get_instance_groups()
+    }
+    /// <p>The configuration to use when updating the AMI versions.</p>
+    pub fn deployment_config(mut self, input: crate::types::DeploymentConfiguration) -> Self {
+        self.inner = self.inner.deployment_config(input);
+        self
+    }
+    /// <p>The configuration to use when updating the AMI versions.</p>
+    pub fn set_deployment_config(mut self, input: ::std::option::Option<crate::types::DeploymentConfiguration>) -> Self {
+        self.inner = self.inner.set_deployment_config(input);
+        self
+    }
+    /// <p>The configuration to use when updating the AMI versions.</p>
+    pub fn get_deployment_config(&self) -> &::std::option::Option<crate::types::DeploymentConfiguration> {
+        self.inner.get_deployment_config()
+    }
 }

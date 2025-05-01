@@ -214,6 +214,26 @@ where
                         "SegmentAttributes" => {
                             builder = builder.set_segment_attributes(crate::protocol_serde::shape_segment_attributes::de_segment_attributes(tokens)?);
                         }
+                        "Recordings" => {
+                            builder = builder.set_recordings(crate::protocol_serde::shape_recordings::de_recordings(tokens)?);
+                        }
+                        "DisconnectReason" => {
+                            builder = builder.set_disconnect_reason(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "ContactEvaluations" => {
+                            builder =
+                                builder.set_contact_evaluations(crate::protocol_serde::shape_contact_evaluations::de_contact_evaluations(tokens)?);
+                        }
+                        "ContactDetails" => {
+                            builder = builder.set_contact_details(crate::protocol_serde::shape_contact_details::de_contact_details(tokens)?);
+                        }
+                        "Attributes" => {
+                            builder = builder.set_attributes(crate::protocol_serde::shape_attributes::de_attributes(tokens)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

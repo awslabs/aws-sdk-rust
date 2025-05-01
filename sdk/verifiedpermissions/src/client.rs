@@ -207,7 +207,13 @@ mod list_policy_stores;
 
 mod list_policy_templates;
 
+mod list_tags_for_resource;
+
 mod put_schema;
+
+mod tag_resource;
+
+mod untag_resource;
 
 mod update_identity_source;
 

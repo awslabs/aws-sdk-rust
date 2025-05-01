@@ -6,5 +6,8 @@ pub fn ser_get_policy_store_input_input(
     if let Some(var_1) = &input.policy_store_id {
         object.key("policyStoreId").string(var_1.as_str());
     }
+    if let Some(var_2) = &input.tags {
+        object.key("tags").boolean(*var_2);
+    }
     Ok(())
 }

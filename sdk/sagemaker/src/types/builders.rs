@@ -293,11 +293,23 @@ pub use crate::types::_compute_quota_resource_config::ComputeQuotaResourceConfig
 
 pub use crate::types::_git_config_for_update::GitConfigForUpdateBuilder;
 
+pub use crate::types::_deployment_configuration::DeploymentConfigurationBuilder;
+
+pub use crate::types::_alarm_details::AlarmDetailsBuilder;
+
+pub use crate::types::_rolling_deployment_policy::RollingDeploymentPolicyBuilder;
+
+pub use crate::types::_capacity_size_config::CapacitySizeConfigBuilder;
+
+pub use crate::types::_update_cluster_software_instance_group_specification::UpdateClusterSoftwareInstanceGroupSpecificationBuilder;
+
 pub use crate::types::_scheduler_config::SchedulerConfigBuilder;
 
 pub use crate::types::_priority_class::PriorityClassBuilder;
 
 pub use crate::types::_cluster_instance_group_specification::ClusterInstanceGroupSpecificationBuilder;
+
+pub use crate::types::_scheduled_update_config::ScheduledUpdateConfigBuilder;
 
 pub use crate::types::_cluster_ebs_volume_config::ClusterEbsVolumeConfigBuilder;
 

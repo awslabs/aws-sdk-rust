@@ -18,6 +18,8 @@ pub struct CreatePolicyStoreInput {
     /// <p>Specifies whether the policy store can be deleted. If enabled, the policy store can't be deleted.</p>
     /// <p>The default state is <code>DISABLED</code>.</p>
     pub deletion_protection: ::std::option::Option<crate::types::DeletionProtection>,
+    /// <p>The list of key-value pairs to associate with the policy store.</p>
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreatePolicyStoreInput {
     /// <p>Specifies a unique, case-sensitive ID that you provide to ensure the idempotency of the request. This lets you safely retry the request without accidentally performing the same operation a second time. Passing the same value to a later call to an operation requires that you also pass the same value for all other parameters. We recommend that you use a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of value.</a>.</p>
@@ -43,6 +45,10 @@ impl CreatePolicyStoreInput {
     pub fn deletion_protection(&self) -> ::std::option::Option<&crate::types::DeletionProtection> {
         self.deletion_protection.as_ref()
     }
+    /// <p>The list of key-value pairs to associate with the policy store.</p>
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        self.tags.as_ref()
+    }
 }
 impl ::std::fmt::Debug for CreatePolicyStoreInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -51,6 +57,7 @@ impl ::std::fmt::Debug for CreatePolicyStoreInput {
         formatter.field("validation_settings", &self.validation_settings);
         formatter.field("description", &"*** Sensitive Data Redacted ***");
         formatter.field("deletion_protection", &self.deletion_protection);
+        formatter.field("tags", &self.tags);
         formatter.finish()
     }
 }
@@ -69,6 +76,7 @@ pub struct CreatePolicyStoreInputBuilder {
     pub(crate) validation_settings: ::std::option::Option<crate::types::ValidationSettings>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) deletion_protection: ::std::option::Option<crate::types::DeletionProtection>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreatePolicyStoreInputBuilder {
     /// <p>Specifies a unique, case-sensitive ID that you provide to ensure the idempotency of the request. This lets you safely retry the request without accidentally performing the same operation a second time. Passing the same value to a later call to an operation requires that you also pass the same value for all other parameters. We recommend that you use a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of value.</a>.</p>
@@ -149,6 +157,26 @@ impl CreatePolicyStoreInputBuilder {
     pub fn get_deletion_protection(&self) -> &::std::option::Option<crate::types::DeletionProtection> {
         &self.deletion_protection
     }
+    /// Adds a key-value pair to `tags`.
+    ///
+    /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+    ///
+    /// <p>The list of key-value pairs to associate with the policy store.</p>
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut hash_map = self.tags.unwrap_or_default();
+        hash_map.insert(k.into(), v.into());
+        self.tags = ::std::option::Option::Some(hash_map);
+        self
+    }
+    /// <p>The list of key-value pairs to associate with the policy store.</p>
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input;
+        self
+    }
+    /// <p>The list of key-value pairs to associate with the policy store.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        &self.tags
+    }
     /// Consumes the builder and constructs a [`CreatePolicyStoreInput`](crate::operation::create_policy_store::CreatePolicyStoreInput).
     pub fn build(
         self,
@@ -158,6 +186,7 @@ impl CreatePolicyStoreInputBuilder {
             validation_settings: self.validation_settings,
             description: self.description,
             deletion_protection: self.deletion_protection,
+            tags: self.tags,
         })
     }
 }
@@ -168,6 +197,7 @@ impl ::std::fmt::Debug for CreatePolicyStoreInputBuilder {
         formatter.field("validation_settings", &self.validation_settings);
         formatter.field("description", &"*** Sensitive Data Redacted ***");
         formatter.field("deletion_protection", &self.deletion_protection);
+        formatter.field("tags", &self.tags);
         formatter.finish()
     }
 }

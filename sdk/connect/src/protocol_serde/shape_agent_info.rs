@@ -45,6 +45,36 @@ where
                                 tokens,
                             )?);
                         }
+                        "AfterContactWorkDuration" => {
+                            builder = builder.set_after_contact_work_duration(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
+                            );
+                        }
+                        "AfterContactWorkStartTimestamp" => {
+                            builder =
+                                builder.set_after_contact_work_start_timestamp(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
+                                    tokens.next(),
+                                    ::aws_smithy_types::date_time::Format::EpochSeconds,
+                                )?);
+                        }
+                        "AfterContactWorkEndTimestamp" => {
+                            builder = builder.set_after_contact_work_end_timestamp(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
+                                tokens.next(),
+                                ::aws_smithy_types::date_time::Format::EpochSeconds,
+                            )?);
+                        }
+                        "AgentInitiatedHoldDuration" => {
+                            builder = builder.set_agent_initiated_hold_duration(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
+                            );
+                        }
+                        "StateTransitions" => {
+                            builder = builder.set_state_transitions(crate::protocol_serde::shape_state_transitions::de_state_transitions(tokens)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

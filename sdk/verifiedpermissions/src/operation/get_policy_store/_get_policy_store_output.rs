@@ -18,6 +18,10 @@ pub struct GetPolicyStoreOutput {
     /// <p>Specifies whether the policy store can be deleted. If enabled, the policy store can't be deleted.</p>
     /// <p>The default state is <code>DISABLED</code>.</p>
     pub deletion_protection: ::std::option::Option<crate::types::DeletionProtection>,
+    /// <p>The version of the Cedar language used with policies, policy templates, and schemas in this policy store. For more information, see <a href="https://docs.aws.amazon.com/verifiedpermissions/latest/userguide/cedar4-faq.html">Amazon Verified Permissions upgrade to Cedar v4 FAQ</a>.</p>
+    pub cedar_version: ::std::option::Option<crate::types::CedarVersion>,
+    /// <p>The list of tags associated with the policy store.</p>
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
 impl GetPolicyStoreOutput {
@@ -52,6 +56,14 @@ impl GetPolicyStoreOutput {
     pub fn deletion_protection(&self) -> ::std::option::Option<&crate::types::DeletionProtection> {
         self.deletion_protection.as_ref()
     }
+    /// <p>The version of the Cedar language used with policies, policy templates, and schemas in this policy store. For more information, see <a href="https://docs.aws.amazon.com/verifiedpermissions/latest/userguide/cedar4-faq.html">Amazon Verified Permissions upgrade to Cedar v4 FAQ</a>.</p>
+    pub fn cedar_version(&self) -> ::std::option::Option<&crate::types::CedarVersion> {
+        self.cedar_version.as_ref()
+    }
+    /// <p>The list of tags associated with the policy store.</p>
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        self.tags.as_ref()
+    }
 }
 impl ::std::fmt::Debug for GetPolicyStoreOutput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -63,6 +75,8 @@ impl ::std::fmt::Debug for GetPolicyStoreOutput {
         formatter.field("last_updated_date", &self.last_updated_date);
         formatter.field("description", &"*** Sensitive Data Redacted ***");
         formatter.field("deletion_protection", &self.deletion_protection);
+        formatter.field("cedar_version", &self.cedar_version);
+        formatter.field("tags", &self.tags);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }
@@ -90,6 +104,8 @@ pub struct GetPolicyStoreOutputBuilder {
     pub(crate) last_updated_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) deletion_protection: ::std::option::Option<crate::types::DeletionProtection>,
+    pub(crate) cedar_version: ::std::option::Option<crate::types::CedarVersion>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
 impl GetPolicyStoreOutputBuilder {
@@ -199,6 +215,40 @@ impl GetPolicyStoreOutputBuilder {
     pub fn get_deletion_protection(&self) -> &::std::option::Option<crate::types::DeletionProtection> {
         &self.deletion_protection
     }
+    /// <p>The version of the Cedar language used with policies, policy templates, and schemas in this policy store. For more information, see <a href="https://docs.aws.amazon.com/verifiedpermissions/latest/userguide/cedar4-faq.html">Amazon Verified Permissions upgrade to Cedar v4 FAQ</a>.</p>
+    pub fn cedar_version(mut self, input: crate::types::CedarVersion) -> Self {
+        self.cedar_version = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The version of the Cedar language used with policies, policy templates, and schemas in this policy store. For more information, see <a href="https://docs.aws.amazon.com/verifiedpermissions/latest/userguide/cedar4-faq.html">Amazon Verified Permissions upgrade to Cedar v4 FAQ</a>.</p>
+    pub fn set_cedar_version(mut self, input: ::std::option::Option<crate::types::CedarVersion>) -> Self {
+        self.cedar_version = input;
+        self
+    }
+    /// <p>The version of the Cedar language used with policies, policy templates, and schemas in this policy store. For more information, see <a href="https://docs.aws.amazon.com/verifiedpermissions/latest/userguide/cedar4-faq.html">Amazon Verified Permissions upgrade to Cedar v4 FAQ</a>.</p>
+    pub fn get_cedar_version(&self) -> &::std::option::Option<crate::types::CedarVersion> {
+        &self.cedar_version
+    }
+    /// Adds a key-value pair to `tags`.
+    ///
+    /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+    ///
+    /// <p>The list of tags associated with the policy store.</p>
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut hash_map = self.tags.unwrap_or_default();
+        hash_map.insert(k.into(), v.into());
+        self.tags = ::std::option::Option::Some(hash_map);
+        self
+    }
+    /// <p>The list of tags associated with the policy store.</p>
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input;
+        self
+    }
+    /// <p>The list of tags associated with the policy store.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        &self.tags
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -245,6 +295,8 @@ impl GetPolicyStoreOutputBuilder {
             })?,
             description: self.description,
             deletion_protection: self.deletion_protection,
+            cedar_version: self.cedar_version,
+            tags: self.tags,
             _request_id: self._request_id,
         })
     }
@@ -259,6 +311,8 @@ impl ::std::fmt::Debug for GetPolicyStoreOutputBuilder {
         formatter.field("last_updated_date", &self.last_updated_date);
         formatter.field("description", &"*** Sensitive Data Redacted ***");
         formatter.field("deletion_protection", &self.deletion_protection);
+        formatter.field("cedar_version", &self.cedar_version);
+        formatter.field("tags", &self.tags);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }

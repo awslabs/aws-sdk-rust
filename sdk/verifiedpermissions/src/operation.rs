@@ -67,8 +67,17 @@ pub mod list_policy_stores;
 /// Types for the `ListPolicyTemplates` operation.
 pub mod list_policy_templates;
 
+/// Types for the `ListTagsForResource` operation.
+pub mod list_tags_for_resource;
+
 /// Types for the `PutSchema` operation.
 pub mod put_schema;
+
+/// Types for the `TagResource` operation.
+pub mod tag_resource;
+
+/// Types for the `UntagResource` operation.
+pub mod untag_resource;
 
 /// Types for the `UpdateIdentitySource` operation.
 pub mod update_identity_source;

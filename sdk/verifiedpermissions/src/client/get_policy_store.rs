@@ -4,6 +4,7 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`policy_store_id(impl Into<String>)`](crate::operation::get_policy_store::builders::GetPolicyStoreFluentBuilder::policy_store_id) / [`set_policy_store_id(Option<String>)`](crate::operation::get_policy_store::builders::GetPolicyStoreFluentBuilder::set_policy_store_id):<br>required: **true**<br><p>Specifies the ID of the policy store that you want information about.</p><br>
+    ///   - [`tags(bool)`](crate::operation::get_policy_store::builders::GetPolicyStoreFluentBuilder::tags) / [`set_tags(Option<bool>)`](crate::operation::get_policy_store::builders::GetPolicyStoreFluentBuilder::set_tags):<br>required: **false**<br><p>Specifies whether to return the tags that are attached to the policy store. If this parameter is included in the API call, the tags are returned, otherwise they are not returned.</p><note>  <p>If this parameter is included in the API call but there are no tags attached to the policy store, the <code>tags</code> response parameter is omitted from the response.</p> </note><br>
     /// - On success, responds with [`GetPolicyStoreOutput`](crate::operation::get_policy_store::GetPolicyStoreOutput) with field(s):
     ///   - [`policy_store_id(String)`](crate::operation::get_policy_store::GetPolicyStoreOutput::policy_store_id): <p>The ID of the policy store;</p>
     ///   - [`arn(String)`](crate::operation::get_policy_store::GetPolicyStoreOutput::arn): <p>The Amazon Resource Name (ARN) of the policy store.</p>
@@ -12,6 +13,8 @@ impl super::Client {
     ///   - [`last_updated_date(DateTime)`](crate::operation::get_policy_store::GetPolicyStoreOutput::last_updated_date): <p>The date and time that the policy store was last updated.</p>
     ///   - [`description(Option<String>)`](crate::operation::get_policy_store::GetPolicyStoreOutput::description): <p>Descriptive text that you can provide to help with identification of the current policy store.</p>
     ///   - [`deletion_protection(Option<DeletionProtection>)`](crate::operation::get_policy_store::GetPolicyStoreOutput::deletion_protection): <p>Specifies whether the policy store can be deleted. If enabled, the policy store can't be deleted.</p> <p>The default state is <code>DISABLED</code>.</p>
+    ///   - [`cedar_version(Option<CedarVersion>)`](crate::operation::get_policy_store::GetPolicyStoreOutput::cedar_version): <p>The version of the Cedar language used with policies, policy templates, and schemas in this policy store. For more information, see <a href="https://docs.aws.amazon.com/verifiedpermissions/latest/userguide/cedar4-faq.html">Amazon Verified Permissions upgrade to Cedar v4 FAQ</a>.</p>
+    ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::get_policy_store::GetPolicyStoreOutput::tags): <p>The list of tags associated with the policy store.</p>
     /// - On failure, responds with [`SdkError<GetPolicyStoreError>`](crate::operation::get_policy_store::GetPolicyStoreError)
     pub fn get_policy_store(&self) -> crate::operation::get_policy_store::builders::GetPolicyStoreFluentBuilder {
         crate::operation::get_policy_store::builders::GetPolicyStoreFluentBuilder::new(self.handle.clone())

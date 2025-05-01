@@ -122,4 +122,24 @@ impl GetPolicyStoreFluentBuilder {
     pub fn get_policy_store_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_policy_store_id()
     }
+    /// <p>Specifies whether to return the tags that are attached to the policy store. If this parameter is included in the API call, the tags are returned, otherwise they are not returned.</p><note>
+    /// <p>If this parameter is included in the API call but there are no tags attached to the policy store, the <code>tags</code> response parameter is omitted from the response.</p>
+    /// </note>
+    pub fn tags(mut self, input: bool) -> Self {
+        self.inner = self.inner.tags(input);
+        self
+    }
+    /// <p>Specifies whether to return the tags that are attached to the policy store. If this parameter is included in the API call, the tags are returned, otherwise they are not returned.</p><note>
+    /// <p>If this parameter is included in the API call but there are no tags attached to the policy store, the <code>tags</code> response parameter is omitted from the response.</p>
+    /// </note>
+    pub fn set_tags(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_tags(input);
+        self
+    }
+    /// <p>Specifies whether to return the tags that are attached to the policy store. If this parameter is included in the API call, the tags are returned, otherwise they are not returned.</p><note>
+    /// <p>If this parameter is included in the API call but there are no tags attached to the policy store, the <code>tags</code> response parameter is omitted from the response.</p>
+    /// </note>
+    pub fn get_tags(&self) -> &::std::option::Option<bool> {
+        self.inner.get_tags()
+    }
 }

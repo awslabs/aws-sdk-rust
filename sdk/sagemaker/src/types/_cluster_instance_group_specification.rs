@@ -42,6 +42,8 @@ pub struct ClusterInstanceGroupSpecification {
     /// </ul>
     /// </note>
     pub override_vpc_config: ::std::option::Option<crate::types::VpcConfig>,
+    /// <p>The configuration object of the schedule that SageMaker uses to update the AMI.</p>
+    pub scheduled_update_config: ::std::option::Option<crate::types::ScheduledUpdateConfig>,
 }
 impl ClusterInstanceGroupSpecification {
     /// <p>Specifies the number of instances to add to the instance group of a SageMaker HyperPod cluster.</p>
@@ -106,6 +108,10 @@ impl ClusterInstanceGroupSpecification {
     pub fn override_vpc_config(&self) -> ::std::option::Option<&crate::types::VpcConfig> {
         self.override_vpc_config.as_ref()
     }
+    /// <p>The configuration object of the schedule that SageMaker uses to update the AMI.</p>
+    pub fn scheduled_update_config(&self) -> ::std::option::Option<&crate::types::ScheduledUpdateConfig> {
+        self.scheduled_update_config.as_ref()
+    }
 }
 impl ClusterInstanceGroupSpecification {
     /// Creates a new builder-style object to manufacture [`ClusterInstanceGroupSpecification`](crate::types::ClusterInstanceGroupSpecification).
@@ -128,6 +134,7 @@ pub struct ClusterInstanceGroupSpecificationBuilder {
     pub(crate) on_start_deep_health_checks: ::std::option::Option<::std::vec::Vec<crate::types::DeepHealthCheckType>>,
     pub(crate) training_plan_arn: ::std::option::Option<::std::string::String>,
     pub(crate) override_vpc_config: ::std::option::Option<crate::types::VpcConfig>,
+    pub(crate) scheduled_update_config: ::std::option::Option<crate::types::ScheduledUpdateConfig>,
 }
 impl ClusterInstanceGroupSpecificationBuilder {
     /// <p>Specifies the number of instances to add to the instance group of a SageMaker HyperPod cluster.</p>
@@ -341,6 +348,20 @@ impl ClusterInstanceGroupSpecificationBuilder {
     pub fn get_override_vpc_config(&self) -> &::std::option::Option<crate::types::VpcConfig> {
         &self.override_vpc_config
     }
+    /// <p>The configuration object of the schedule that SageMaker uses to update the AMI.</p>
+    pub fn scheduled_update_config(mut self, input: crate::types::ScheduledUpdateConfig) -> Self {
+        self.scheduled_update_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The configuration object of the schedule that SageMaker uses to update the AMI.</p>
+    pub fn set_scheduled_update_config(mut self, input: ::std::option::Option<crate::types::ScheduledUpdateConfig>) -> Self {
+        self.scheduled_update_config = input;
+        self
+    }
+    /// <p>The configuration object of the schedule that SageMaker uses to update the AMI.</p>
+    pub fn get_scheduled_update_config(&self) -> &::std::option::Option<crate::types::ScheduledUpdateConfig> {
+        &self.scheduled_update_config
+    }
     /// Consumes the builder and constructs a [`ClusterInstanceGroupSpecification`](crate::types::ClusterInstanceGroupSpecification).
     pub fn build(self) -> crate::types::ClusterInstanceGroupSpecification {
         crate::types::ClusterInstanceGroupSpecification {
@@ -354,6 +375,7 @@ impl ClusterInstanceGroupSpecificationBuilder {
             on_start_deep_health_checks: self.on_start_deep_health_checks,
             training_plan_arn: self.training_plan_arn,
             override_vpc_config: self.override_vpc_config,
+            scheduled_update_config: self.scheduled_update_config,
         }
     }
 }

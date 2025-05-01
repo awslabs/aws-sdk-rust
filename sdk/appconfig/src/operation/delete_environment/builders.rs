@@ -137,7 +137,7 @@ impl DeleteEnvironmentFluentBuilder {
     pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_application_id()
     }
-    /// <p>A parameter to configure deletion protection. If enabled, deletion protection prevents a user from deleting an environment if your application called either <a href="https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_appconfigdata_GetLatestConfiguration.html">GetLatestConfiguration</a> or in the environment during the specified interval.</p>
+    /// <p>A parameter to configure deletion protection. Deletion protection prevents a user from deleting an environment if your application called either <a href="https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_appconfigdata_GetLatestConfiguration.html">GetLatestConfiguration</a> or in the environment during the specified interval.</p>
     /// <p>This parameter supports the following values:</p>
     /// <ul>
     /// <li>
@@ -151,7 +151,7 @@ impl DeleteEnvironmentFluentBuilder {
         self.inner = self.inner.deletion_protection_check(input);
         self
     }
-    /// <p>A parameter to configure deletion protection. If enabled, deletion protection prevents a user from deleting an environment if your application called either <a href="https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_appconfigdata_GetLatestConfiguration.html">GetLatestConfiguration</a> or in the environment during the specified interval.</p>
+    /// <p>A parameter to configure deletion protection. Deletion protection prevents a user from deleting an environment if your application called either <a href="https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_appconfigdata_GetLatestConfiguration.html">GetLatestConfiguration</a> or in the environment during the specified interval.</p>
     /// <p>This parameter supports the following values:</p>
     /// <ul>
     /// <li>
@@ -165,7 +165,7 @@ impl DeleteEnvironmentFluentBuilder {
         self.inner = self.inner.set_deletion_protection_check(input);
         self
     }
-    /// <p>A parameter to configure deletion protection. If enabled, deletion protection prevents a user from deleting an environment if your application called either <a href="https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_appconfigdata_GetLatestConfiguration.html">GetLatestConfiguration</a> or in the environment during the specified interval.</p>
+    /// <p>A parameter to configure deletion protection. Deletion protection prevents a user from deleting an environment if your application called either <a href="https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_appconfigdata_GetLatestConfiguration.html">GetLatestConfiguration</a> or in the environment during the specified interval.</p>
     /// <p>This parameter supports the following values:</p>
     /// <ul>
     /// <li>

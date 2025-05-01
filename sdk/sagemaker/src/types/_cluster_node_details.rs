@@ -14,6 +14,8 @@ pub struct ClusterNodeDetails {
     pub instance_type: ::std::option::Option<crate::types::ClusterInstanceType>,
     /// <p>The time when the instance is launched.</p>
     pub launch_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>The time of when the cluster was last updated.</p>
+    pub last_software_update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The LifeCycle configuration applied to the instance.</p>
     pub life_cycle_config: ::std::option::Option<crate::types::ClusterLifeCycleConfig>,
     /// <p>The customized Amazon VPC configuration at the instance group level that overrides the default Amazon VPC configuration of the SageMaker HyperPod cluster.</p>
@@ -51,6 +53,10 @@ impl ClusterNodeDetails {
     /// <p>The time when the instance is launched.</p>
     pub fn launch_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.launch_time.as_ref()
+    }
+    /// <p>The time of when the cluster was last updated.</p>
+    pub fn last_software_update_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+        self.last_software_update_time.as_ref()
     }
     /// <p>The LifeCycle configuration applied to the instance.</p>
     pub fn life_cycle_config(&self) -> ::std::option::Option<&crate::types::ClusterLifeCycleConfig> {
@@ -103,6 +109,7 @@ pub struct ClusterNodeDetailsBuilder {
     pub(crate) instance_status: ::std::option::Option<crate::types::ClusterInstanceStatusDetails>,
     pub(crate) instance_type: ::std::option::Option<crate::types::ClusterInstanceType>,
     pub(crate) launch_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) last_software_update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) life_cycle_config: ::std::option::Option<crate::types::ClusterLifeCycleConfig>,
     pub(crate) override_vpc_config: ::std::option::Option<crate::types::VpcConfig>,
     pub(crate) threads_per_core: ::std::option::Option<i32>,
@@ -182,6 +189,20 @@ impl ClusterNodeDetailsBuilder {
     /// <p>The time when the instance is launched.</p>
     pub fn get_launch_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.launch_time
+    }
+    /// <p>The time of when the cluster was last updated.</p>
+    pub fn last_software_update_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.last_software_update_time = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The time of when the cluster was last updated.</p>
+    pub fn set_last_software_update_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.last_software_update_time = input;
+        self
+    }
+    /// <p>The time of when the cluster was last updated.</p>
+    pub fn get_last_software_update_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_software_update_time
     }
     /// <p>The LifeCycle configuration applied to the instance.</p>
     pub fn life_cycle_config(mut self, input: crate::types::ClusterLifeCycleConfig) -> Self {
@@ -309,6 +330,7 @@ impl ClusterNodeDetailsBuilder {
             instance_status: self.instance_status,
             instance_type: self.instance_type,
             launch_time: self.launch_time,
+            last_software_update_time: self.last_software_update_time,
             life_cycle_config: self.life_cycle_config,
             override_vpc_config: self.override_vpc_config,
             threads_per_core: self.threads_per_core,

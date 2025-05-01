@@ -46,6 +46,12 @@ where
                                 ::aws_smithy_types::date_time::Format::EpochSeconds,
                             )?);
                         }
+                        "LastSoftwareUpdateTime" => {
+                            builder = builder.set_last_software_update_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
+                                tokens.next(),
+                                ::aws_smithy_types::date_time::Format::EpochSeconds,
+                            )?);
+                        }
                         "LifeCycleConfig" => {
                             builder = builder.set_life_cycle_config(
                                 crate::protocol_serde::shape_cluster_life_cycle_config::de_cluster_life_cycle_config(tokens)?,

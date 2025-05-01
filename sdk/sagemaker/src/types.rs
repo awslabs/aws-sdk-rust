@@ -411,6 +411,18 @@ pub use crate::types::_cluster_instance_type::ClusterInstanceType;
 
 pub use crate::types::_git_config_for_update::GitConfigForUpdate;
 
+pub use crate::types::_deployment_configuration::DeploymentConfiguration;
+
+pub use crate::types::_alarm_details::AlarmDetails;
+
+pub use crate::types::_rolling_deployment_policy::RollingDeploymentPolicy;
+
+pub use crate::types::_capacity_size_config::CapacitySizeConfig;
+
+pub use crate::types::_node_unavailability_type::NodeUnavailabilityType;
+
+pub use crate::types::_update_cluster_software_instance_group_specification::UpdateClusterSoftwareInstanceGroupSpecification;
+
 pub use crate::types::_scheduler_config::SchedulerConfig;
 
 pub use crate::types::_fair_share::FairShare;
@@ -420,6 +432,8 @@ pub use crate::types::_priority_class::PriorityClass;
 pub use crate::types::_cluster_node_recovery::ClusterNodeRecovery;
 
 pub use crate::types::_cluster_instance_group_specification::ClusterInstanceGroupSpecification;
+
+pub use crate::types::_scheduled_update_config::ScheduledUpdateConfig;
 
 pub use crate::types::_deep_health_check_type::DeepHealthCheckType;
 
@@ -1891,6 +1905,8 @@ mod _aggregation_transformation_value;
 
 mod _alarm;
 
+mod _alarm_details;
+
 mod _algorithm_sort_by;
 
 mod _algorithm_specification;
@@ -2091,6 +2107,8 @@ mod _canvas_app_settings;
 
 mod _capacity_size;
 
+mod _capacity_size_config;
+
 mod _capacity_size_type;
 
 mod _capture_content_type_header;
@@ -2278,6 +2296,8 @@ mod _default_space_storage_settings;
 mod _deployed_image;
 
 mod _deployment_config;
+
+mod _deployment_configuration;
 
 mod _deployment_recommendation;
 
@@ -3017,6 +3037,8 @@ mod _nested_filters;
 
 mod _network_config;
 
+mod _node_unavailability_type;
+
 mod _notebook_instance_accelerator_type;
 
 mod _notebook_instance_lifecycle_config_sort_key;
@@ -3357,6 +3379,8 @@ mod _retention_type;
 
 mod _retry_strategy;
 
+mod _rolling_deployment_policy;
+
 mod _rolling_update_policy;
 
 mod _root_access;
@@ -3394,6 +3418,8 @@ mod _scaling_policy_objective;
 mod _schedule_config;
 
 mod _schedule_status;
+
+mod _scheduled_update_config;
 
 mod _scheduler_config;
 
@@ -3692,6 +3718,8 @@ mod _ui_config;
 mod _ui_template;
 
 mod _ui_template_info;
+
+mod _update_cluster_software_instance_group_specification;
 
 mod _usd;
 

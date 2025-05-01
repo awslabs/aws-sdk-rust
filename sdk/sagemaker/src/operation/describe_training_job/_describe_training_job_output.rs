@@ -177,7 +177,9 @@ pub struct DescribeTrainingJobOutput {
     pub profiler_rule_evaluation_statuses: ::std::option::Option<::std::vec::Vec<crate::types::ProfilerRuleEvaluationStatus>>,
     /// <p>Profiling status of a training job.</p>
     pub profiling_status: ::std::option::Option<crate::types::ProfilingStatus>,
-    /// <p>The environment variables to set in the Docker container.</p>
+    /// <p>The environment variables to set in the Docker container.</p><important>
+    /// <p>Do not include any security-sensitive information including account access IDs, secrets, or tokens in any environment fields. As part of the shared responsibility model, you are responsible for any potential exposure, unauthorized access, or compromise of your sensitive data if caused by security-sensitive information included in the request environment variable or plain text fields.</p>
+    /// </important>
     pub environment: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The number of times to retry the job when the job fails due to an <code>InternalServerError</code>.</p>
     pub retry_strategy: ::std::option::Option<crate::types::RetryStrategy>,
@@ -454,7 +456,9 @@ impl DescribeTrainingJobOutput {
     pub fn profiling_status(&self) -> ::std::option::Option<&crate::types::ProfilingStatus> {
         self.profiling_status.as_ref()
     }
-    /// <p>The environment variables to set in the Docker container.</p>
+    /// <p>The environment variables to set in the Docker container.</p><important>
+    /// <p>Do not include any security-sensitive information including account access IDs, secrets, or tokens in any environment fields. As part of the shared responsibility model, you are responsible for any potential exposure, unauthorized access, or compromise of your sensitive data if caused by security-sensitive information included in the request environment variable or plain text fields.</p>
+    /// </important>
     pub fn environment(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.environment.as_ref()
     }
@@ -1447,14 +1451,18 @@ impl DescribeTrainingJobOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_environment`](Self::set_environment).
     ///
-    /// <p>The environment variables to set in the Docker container.</p>
+    /// <p>The environment variables to set in the Docker container.</p><important>
+    /// <p>Do not include any security-sensitive information including account access IDs, secrets, or tokens in any environment fields. As part of the shared responsibility model, you are responsible for any potential exposure, unauthorized access, or compromise of your sensitive data if caused by security-sensitive information included in the request environment variable or plain text fields.</p>
+    /// </important>
     pub fn environment(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.environment.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.environment = ::std::option::Option::Some(hash_map);
         self
     }
-    /// <p>The environment variables to set in the Docker container.</p>
+    /// <p>The environment variables to set in the Docker container.</p><important>
+    /// <p>Do not include any security-sensitive information including account access IDs, secrets, or tokens in any environment fields. As part of the shared responsibility model, you are responsible for any potential exposure, unauthorized access, or compromise of your sensitive data if caused by security-sensitive information included in the request environment variable or plain text fields.</p>
+    /// </important>
     pub fn set_environment(
         mut self,
         input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
@@ -1462,7 +1470,9 @@ impl DescribeTrainingJobOutputBuilder {
         self.environment = input;
         self
     }
-    /// <p>The environment variables to set in the Docker container.</p>
+    /// <p>The environment variables to set in the Docker container.</p><important>
+    /// <p>Do not include any security-sensitive information including account access IDs, secrets, or tokens in any environment fields. As part of the shared responsibility model, you are responsible for any potential exposure, unauthorized access, or compromise of your sensitive data if caused by security-sensitive information included in the request environment variable or plain text fields.</p>
+    /// </important>
     pub fn get_environment(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.environment
     }

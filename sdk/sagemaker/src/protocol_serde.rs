@@ -1609,6 +1609,8 @@ pub(crate) mod shape_default_space_settings;
 
 pub(crate) mod shape_deployment_config;
 
+pub(crate) mod shape_deployment_configuration;
+
 pub(crate) mod shape_deployment_recommendation;
 
 pub(crate) mod shape_deployment_stage;
@@ -2157,6 +2159,8 @@ pub(crate) mod shape_ui_template;
 
 pub(crate) mod shape_ui_template_info;
 
+pub(crate) mod shape_update_cluster_software_instance_group_specification;
+
 pub(crate) mod shape_user_context;
 
 pub(crate) mod shape_user_profile_list;
@@ -2194,6 +2198,8 @@ pub(crate) mod shape_additional_model_data_sources;
 pub(crate) mod shape_additional_s3_data_source;
 
 pub(crate) mod shape_agent_version;
+
+pub(crate) mod shape_alarm_details;
 
 pub(crate) mod shape_algorithm_status_item_list;
 
@@ -2703,6 +2709,8 @@ pub(crate) mod shape_resource_sharing_config;
 
 pub(crate) mod shape_response_mime_types;
 
+pub(crate) mod shape_rolling_deployment_policy;
+
 pub(crate) mod shape_rolling_update_policy;
 
 pub(crate) mod shape_s3_presign;
@@ -2712,6 +2720,8 @@ pub(crate) mod shape_s3_storage_config;
 pub(crate) mod shape_scaling_policies;
 
 pub(crate) mod shape_schedule_config;
+
+pub(crate) mod shape_scheduled_update_config;
 
 pub(crate) mod shape_search_record;
 
@@ -2840,6 +2850,8 @@ pub(crate) mod shape_candidate_artifact_locations;
 pub(crate) mod shape_candidate_generation_config;
 
 pub(crate) mod shape_capacity_size;
+
+pub(crate) mod shape_capacity_size_config;
 
 pub(crate) mod shape_categorical_parameter_range;
 
@@ -3242,6 +3254,8 @@ pub(crate) mod shape_tuning_job_step_meta_data;
 pub(crate) mod shape_attribute_names;
 
 pub(crate) mod shape_auto_ml_algorithms;
+
+pub(crate) mod shape_auto_rollback_alarms;
 
 pub(crate) mod shape_categorical_parameters;
 

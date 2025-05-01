@@ -95,6 +95,11 @@ where
                         "OverrideVpcConfig" => {
                             builder = builder.set_override_vpc_config(crate::protocol_serde::shape_vpc_config::de_vpc_config(tokens)?);
                         }
+                        "ScheduledUpdateConfig" => {
+                            builder = builder.set_scheduled_update_config(
+                                crate::protocol_serde::shape_scheduled_update_config::de_scheduled_update_config(tokens)?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

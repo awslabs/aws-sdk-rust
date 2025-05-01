@@ -607,6 +607,12 @@ pub use crate::types::_evaluation_metadata::EvaluationMetadataBuilder;
 
 pub use crate::types::_contact::ContactBuilder;
 
+pub use crate::types::_contact_details::ContactDetailsBuilder;
+
+pub use crate::types::_contact_evaluation::ContactEvaluationBuilder;
+
+pub use crate::types::_recording_info::RecordingInfoBuilder;
+
 pub use crate::types::_additional_email_recipients::AdditionalEmailRecipientsBuilder;
 
 pub use crate::types::_email_recipient::EmailRecipientBuilder;
@@ -640,6 +646,8 @@ pub use crate::types::_endpoint_info::EndpointInfoBuilder;
 pub use crate::types::_wisdom_info::WisdomInfoBuilder;
 
 pub use crate::types::_agent_info::AgentInfoBuilder;
+
+pub use crate::types::_state_transition::StateTransitionBuilder;
 
 pub use crate::types::_hierarchy_groups::HierarchyGroupsBuilder;
 

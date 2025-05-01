@@ -55,6 +55,8 @@ pub use crate::types::_validation_settings::ValidationSettings;
 
 pub use crate::types::_validation_mode::ValidationMode;
 
+pub use crate::types::_cedar_version::CedarVersion;
+
 pub use crate::types::_policy_store_item::PolicyStoreItem;
 
 pub use crate::types::_policy_template_item::PolicyTemplateItem;
@@ -176,6 +178,8 @@ mod _batch_is_authorized_output_item;
 mod _batch_is_authorized_with_token_input_item;
 
 mod _batch_is_authorized_with_token_output_item;
+
+mod _cedar_version;
 
 mod _cognito_group_configuration;
 

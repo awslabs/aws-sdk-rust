@@ -176,6 +176,16 @@ pub(crate) fn de_get_policy_store(
                             .transpose()?,
                     );
                 }
+                "cedarVersion" => {
+                    builder = builder.set_cedar_version(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| crate::types::CedarVersion::from(u.as_ref())))
+                            .transpose()?,
+                    );
+                }
+                "tags" => {
+                    builder = builder.set_tags(crate::protocol_serde::shape_tag_map::de_tag_map(tokens)?);
+                }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },
             other => {
