@@ -22,7 +22,7 @@ impl crate::operation::disable_directory_data_access::builders::DisableDirectory
 }
 /// Fluent builder constructing a request to `DisableDirectoryDataAccess`.
 ///
-/// <p>Deactivates access to directory data via the Directory Service Data API for the specified directory.</p>
+/// <p>Deactivates access to directory data via the Directory Service Data API for the specified directory. For more information, see <a href="https://docs.aws.amazon.com/directoryservicedata/latest/DirectoryServiceDataAPIReference/Welcome.html">Directory Service Data API Reference</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DisableDirectoryDataAccessFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

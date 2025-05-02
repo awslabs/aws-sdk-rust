@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeDirectoriesOutput {
-    /// <p>The list of <code>DirectoryDescription</code> objects that were retrieved.</p>
+    /// <p>The list of available <code>DirectoryDescription</code> objects that were retrieved.</p>
     /// <p>It is possible that this list contains less than the number of items specified in the <code>Limit</code> member of the request. This occurs if there are less than the requested number of items left to retrieve, or if the limitations of the operation have been exceeded.</p>
     pub directory_descriptions: ::std::option::Option<::std::vec::Vec<crate::types::DirectoryDescription>>,
     /// <p>If not null, more results are available. Pass this value for the <code>NextToken</code> parameter in a subsequent call to <code>DescribeDirectories</code> to retrieve the next set of items.</p>
@@ -12,7 +12,7 @@ pub struct DescribeDirectoriesOutput {
     _request_id: Option<String>,
 }
 impl DescribeDirectoriesOutput {
-    /// <p>The list of <code>DirectoryDescription</code> objects that were retrieved.</p>
+    /// <p>The list of available <code>DirectoryDescription</code> objects that were retrieved.</p>
     /// <p>It is possible that this list contains less than the number of items specified in the <code>Limit</code> member of the request. This occurs if there are less than the requested number of items left to retrieve, or if the limitations of the operation have been exceeded.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.directory_descriptions.is_none()`.
@@ -49,7 +49,7 @@ impl DescribeDirectoriesOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_directory_descriptions`](Self::set_directory_descriptions).
     ///
-    /// <p>The list of <code>DirectoryDescription</code> objects that were retrieved.</p>
+    /// <p>The list of available <code>DirectoryDescription</code> objects that were retrieved.</p>
     /// <p>It is possible that this list contains less than the number of items specified in the <code>Limit</code> member of the request. This occurs if there are less than the requested number of items left to retrieve, or if the limitations of the operation have been exceeded.</p>
     pub fn directory_descriptions(mut self, input: crate::types::DirectoryDescription) -> Self {
         let mut v = self.directory_descriptions.unwrap_or_default();
@@ -57,13 +57,13 @@ impl DescribeDirectoriesOutputBuilder {
         self.directory_descriptions = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The list of <code>DirectoryDescription</code> objects that were retrieved.</p>
+    /// <p>The list of available <code>DirectoryDescription</code> objects that were retrieved.</p>
     /// <p>It is possible that this list contains less than the number of items specified in the <code>Limit</code> member of the request. This occurs if there are less than the requested number of items left to retrieve, or if the limitations of the operation have been exceeded.</p>
     pub fn set_directory_descriptions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DirectoryDescription>>) -> Self {
         self.directory_descriptions = input;
         self
     }
-    /// <p>The list of <code>DirectoryDescription</code> objects that were retrieved.</p>
+    /// <p>The list of available <code>DirectoryDescription</code> objects that were retrieved.</p>
     /// <p>It is possible that this list contains less than the number of items specified in the <code>Limit</code> member of the request. This occurs if there are less than the requested number of items left to retrieve, or if the limitations of the operation have been exceeded.</p>
     pub fn get_directory_descriptions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DirectoryDescription>> {
         &self.directory_descriptions

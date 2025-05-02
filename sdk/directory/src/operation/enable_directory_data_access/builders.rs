@@ -22,7 +22,7 @@ impl crate::operation::enable_directory_data_access::builders::EnableDirectoryDa
 }
 /// Fluent builder constructing a request to `EnableDirectoryDataAccess`.
 ///
-/// <p>Enables access to directory data via the Directory Service Data API for the specified directory.</p>
+/// <p>Enables access to directory data via the Directory Service Data API for the specified directory. For more information, see <a href="https://docs.aws.amazon.com/directoryservicedata/latest/DirectoryServiceDataAPIReference/Welcome.html">Directory Service Data API Reference</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct EnableDirectoryDataAccessFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

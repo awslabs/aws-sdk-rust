@@ -12,6 +12,7 @@
 /// ```text
 /// # let type = unimplemented!();
 /// match type {
+///     Type::Audio => { /* ... */ },
 ///     Type::Document => { /* ... */ },
 ///     Type::Image => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -43,6 +44,8 @@
 )]
 pub enum Type {
     #[allow(missing_docs)] // documentation missing in model
+    Audio,
+    #[allow(missing_docs)] // documentation missing in model
     Document,
     #[allow(missing_docs)] // documentation missing in model
     Image,
@@ -53,6 +56,7 @@ pub enum Type {
 impl ::std::convert::From<&str> for Type {
     fn from(s: &str) -> Self {
         match s {
+            "AUDIO" => Type::Audio,
             "DOCUMENT" => Type::Document,
             "IMAGE" => Type::Image,
             other => Type::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -70,6 +74,7 @@ impl Type {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            Type::Audio => "AUDIO",
             Type::Document => "DOCUMENT",
             Type::Image => "IMAGE",
             Type::Unknown(value) => value.as_str(),
@@ -77,7 +82,7 @@ impl Type {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["DOCUMENT", "IMAGE"]
+        &["AUDIO", "DOCUMENT", "IMAGE"]
     }
 }
 impl ::std::convert::AsRef<str> for Type {
@@ -100,6 +105,7 @@ impl Type {
 impl ::std::fmt::Display for Type {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            Type::Audio => write!(f, "AUDIO"),
             Type::Document => write!(f, "DOCUMENT"),
             Type::Image => write!(f, "IMAGE"),
             Type::Unknown(value) => write!(f, "{}", value),

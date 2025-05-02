@@ -56,6 +56,7 @@ impl UntagResourceInputBuilder {
         &self.tag_keys
     }
     /// <p>The Amazon Resource Name (ARN) of the Kinesis resource from which to remove tags.</p>
+    /// This field is required.
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_arn = ::std::option::Option::Some(input.into());
         self
