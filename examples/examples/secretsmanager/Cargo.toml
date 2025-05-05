@@ -9,7 +9,7 @@ publish = false
 
 [dependencies]
 aws-config= { version = "1.6.2", path = "../../../sdk/aws-config", features = ["behavior-version-latest"] }
-aws-sdk-secretsmanager= { version = "1.69.0", path = "../../../sdk/secretsmanager" }
+aws-sdk-secretsmanager= { version = "1.70.0", path = "../../../sdk/secretsmanager" }
 
 [dependencies.tokio]
 version = "1.20.1"

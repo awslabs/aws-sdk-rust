@@ -9,7 +9,7 @@ publish = false
 [dependencies]
 thiserror = "1.0.49"
 aws-config= { version = "1.6.2", path = "../../../sdk/aws-config", features = ["behavior-version-latest"] }
-aws-sdk-textract= { version = "1.65.0", path = "../../../sdk/textract" }
+aws-sdk-textract= { version = "1.66.0", path = "../../../sdk/textract" }
 aws-types= { version = "1.3.7", path = "../../../sdk/aws-types" }
 
 [dependencies.tokio]
