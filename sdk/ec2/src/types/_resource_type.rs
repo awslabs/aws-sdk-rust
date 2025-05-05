@@ -59,6 +59,7 @@
 ///     ResourceType::NetworkInsightsAnalysis => { /* ... */ },
 ///     ResourceType::NetworkInsightsPath => { /* ... */ },
 ///     ResourceType::NetworkInterface => { /* ... */ },
+///     ResourceType::OutpostLag => { /* ... */ },
 ///     ResourceType::PlacementGroup => { /* ... */ },
 ///     ResourceType::PrefixList => { /* ... */ },
 ///     ResourceType::ReplaceRootVolumeTask => { /* ... */ },
@@ -69,6 +70,7 @@
 ///     ResourceType::RouteTable => { /* ... */ },
 ///     ResourceType::SecurityGroup => { /* ... */ },
 ///     ResourceType::SecurityGroupRule => { /* ... */ },
+///     ResourceType::ServiceLinkVirtualInterface => { /* ... */ },
 ///     ResourceType::Snapshot => { /* ... */ },
 ///     ResourceType::SpotFleetRequest => { /* ... */ },
 ///     ResourceType::SpotInstancesRequest => { /* ... */ },
@@ -227,6 +229,8 @@ pub enum ResourceType {
     #[allow(missing_docs)] // documentation missing in model
     NetworkInterface,
     #[allow(missing_docs)] // documentation missing in model
+    OutpostLag,
+    #[allow(missing_docs)] // documentation missing in model
     PlacementGroup,
     #[allow(missing_docs)] // documentation missing in model
     PrefixList,
@@ -246,6 +250,8 @@ pub enum ResourceType {
     SecurityGroup,
     #[allow(missing_docs)] // documentation missing in model
     SecurityGroupRule,
+    #[allow(missing_docs)] // documentation missing in model
+    ServiceLinkVirtualInterface,
     #[allow(missing_docs)] // documentation missing in model
     Snapshot,
     #[allow(missing_docs)] // documentation missing in model
@@ -370,6 +376,7 @@ impl ::std::convert::From<&str> for ResourceType {
             "network-insights-analysis" => ResourceType::NetworkInsightsAnalysis,
             "network-insights-path" => ResourceType::NetworkInsightsPath,
             "network-interface" => ResourceType::NetworkInterface,
+            "outpost-lag" => ResourceType::OutpostLag,
             "placement-group" => ResourceType::PlacementGroup,
             "prefix-list" => ResourceType::PrefixList,
             "replace-root-volume-task" => ResourceType::ReplaceRootVolumeTask,
@@ -380,6 +387,7 @@ impl ::std::convert::From<&str> for ResourceType {
             "route-table" => ResourceType::RouteTable,
             "security-group" => ResourceType::SecurityGroup,
             "security-group-rule" => ResourceType::SecurityGroupRule,
+            "service-link-virtual-interface" => ResourceType::ServiceLinkVirtualInterface,
             "snapshot" => ResourceType::Snapshot,
             "spot-fleet-request" => ResourceType::SpotFleetRequest,
             "spot-instances-request" => ResourceType::SpotInstancesRequest,
@@ -477,6 +485,7 @@ impl ResourceType {
             ResourceType::NetworkInsightsAnalysis => "network-insights-analysis",
             ResourceType::NetworkInsightsPath => "network-insights-path",
             ResourceType::NetworkInterface => "network-interface",
+            ResourceType::OutpostLag => "outpost-lag",
             ResourceType::PlacementGroup => "placement-group",
             ResourceType::PrefixList => "prefix-list",
             ResourceType::ReplaceRootVolumeTask => "replace-root-volume-task",
@@ -487,6 +496,7 @@ impl ResourceType {
             ResourceType::RouteTable => "route-table",
             ResourceType::SecurityGroup => "security-group",
             ResourceType::SecurityGroupRule => "security-group-rule",
+            ResourceType::ServiceLinkVirtualInterface => "service-link-virtual-interface",
             ResourceType::Snapshot => "snapshot",
             ResourceType::SpotFleetRequest => "spot-fleet-request",
             ResourceType::SpotInstancesRequest => "spot-instances-request",
@@ -575,6 +585,7 @@ impl ResourceType {
             "network-insights-analysis",
             "network-insights-path",
             "network-interface",
+            "outpost-lag",
             "placement-group",
             "prefix-list",
             "replace-root-volume-task",
@@ -585,6 +596,7 @@ impl ResourceType {
             "route-table",
             "security-group",
             "security-group-rule",
+            "service-link-virtual-interface",
             "snapshot",
             "spot-fleet-request",
             "spot-instances-request",
@@ -692,6 +704,7 @@ impl ::std::fmt::Display for ResourceType {
             ResourceType::NetworkInsightsAnalysis => write!(f, "network-insights-analysis"),
             ResourceType::NetworkInsightsPath => write!(f, "network-insights-path"),
             ResourceType::NetworkInterface => write!(f, "network-interface"),
+            ResourceType::OutpostLag => write!(f, "outpost-lag"),
             ResourceType::PlacementGroup => write!(f, "placement-group"),
             ResourceType::PrefixList => write!(f, "prefix-list"),
             ResourceType::ReplaceRootVolumeTask => write!(f, "replace-root-volume-task"),
@@ -702,6 +715,7 @@ impl ::std::fmt::Display for ResourceType {
             ResourceType::RouteTable => write!(f, "route-table"),
             ResourceType::SecurityGroup => write!(f, "security-group"),
             ResourceType::SecurityGroupRule => write!(f, "security-group-rule"),
+            ResourceType::ServiceLinkVirtualInterface => write!(f, "service-link-virtual-interface"),
             ResourceType::Snapshot => write!(f, "snapshot"),
             ResourceType::SpotFleetRequest => write!(f, "spot-fleet-request"),
             ResourceType::SpotInstancesRequest => write!(f, "spot-instances-request"),

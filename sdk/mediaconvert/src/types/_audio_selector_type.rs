@@ -12,6 +12,7 @@
 /// ```text
 /// # let audioselectortype = unimplemented!();
 /// match audioselectortype {
+///     AudioSelectorType::AllPcm => { /* ... */ },
 ///     AudioSelectorType::HlsRenditionGroup => { /* ... */ },
 ///     AudioSelectorType::LanguageCode => { /* ... */ },
 ///     AudioSelectorType::Pid => { /* ... */ },
@@ -45,6 +46,8 @@
 )]
 pub enum AudioSelectorType {
     #[allow(missing_docs)] // documentation missing in model
+    AllPcm,
+    #[allow(missing_docs)] // documentation missing in model
     HlsRenditionGroup,
     #[allow(missing_docs)] // documentation missing in model
     LanguageCode,
@@ -59,6 +62,7 @@ pub enum AudioSelectorType {
 impl ::std::convert::From<&str> for AudioSelectorType {
     fn from(s: &str) -> Self {
         match s {
+            "ALL_PCM" => AudioSelectorType::AllPcm,
             "HLS_RENDITION_GROUP" => AudioSelectorType::HlsRenditionGroup,
             "LANGUAGE_CODE" => AudioSelectorType::LanguageCode,
             "PID" => AudioSelectorType::Pid,
@@ -78,6 +82,7 @@ impl AudioSelectorType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            AudioSelectorType::AllPcm => "ALL_PCM",
             AudioSelectorType::HlsRenditionGroup => "HLS_RENDITION_GROUP",
             AudioSelectorType::LanguageCode => "LANGUAGE_CODE",
             AudioSelectorType::Pid => "PID",
@@ -87,7 +92,7 @@ impl AudioSelectorType {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["HLS_RENDITION_GROUP", "LANGUAGE_CODE", "PID", "TRACK"]
+        &["ALL_PCM", "HLS_RENDITION_GROUP", "LANGUAGE_CODE", "PID", "TRACK"]
     }
 }
 impl ::std::convert::AsRef<str> for AudioSelectorType {
@@ -110,6 +115,7 @@ impl AudioSelectorType {
 impl ::std::fmt::Display for AudioSelectorType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            AudioSelectorType::AllPcm => write!(f, "ALL_PCM"),
             AudioSelectorType::HlsRenditionGroup => write!(f, "HLS_RENDITION_GROUP"),
             AudioSelectorType::LanguageCode => write!(f, "LANGUAGE_CODE"),
             AudioSelectorType::Pid => write!(f, "PID"),

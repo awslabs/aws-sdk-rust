@@ -325,6 +325,8 @@ pub use crate::types::_user_details::UserDetailsBuilder;
 
 pub use crate::types::_policy_grant_member::PolicyGrantMemberBuilder;
 
+pub use crate::types::_use_asset_type_policy_grant_detail::UseAssetTypePolicyGrantDetailBuilder;
+
 pub use crate::types::_create_project_from_project_profile_policy_grant_detail::CreateProjectFromProjectProfilePolicyGrantDetailBuilder;
 
 pub use crate::types::_unit::UnitBuilder;

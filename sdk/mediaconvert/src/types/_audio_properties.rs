@@ -7,7 +7,7 @@ pub struct AudioProperties {
     /// The bit depth of the audio track.
     pub bit_depth: ::std::option::Option<i32>,
     /// The bit rate of the audio track, in bits per second.
-    pub bit_rate: ::std::option::Option<i32>,
+    pub bit_rate: ::std::option::Option<i64>,
     /// The number of audio channels in the audio track.
     pub channels: ::std::option::Option<i32>,
     /// The frame rate of the video or audio track.
@@ -23,7 +23,7 @@ impl AudioProperties {
         self.bit_depth
     }
     /// The bit rate of the audio track, in bits per second.
-    pub fn bit_rate(&self) -> ::std::option::Option<i32> {
+    pub fn bit_rate(&self) -> ::std::option::Option<i64> {
         self.bit_rate
     }
     /// The number of audio channels in the audio track.
@@ -55,7 +55,7 @@ impl AudioProperties {
 #[non_exhaustive]
 pub struct AudioPropertiesBuilder {
     pub(crate) bit_depth: ::std::option::Option<i32>,
-    pub(crate) bit_rate: ::std::option::Option<i32>,
+    pub(crate) bit_rate: ::std::option::Option<i64>,
     pub(crate) channels: ::std::option::Option<i32>,
     pub(crate) frame_rate: ::std::option::Option<crate::types::FrameRate>,
     pub(crate) language_code: ::std::option::Option<::std::string::String>,
@@ -77,17 +77,17 @@ impl AudioPropertiesBuilder {
         &self.bit_depth
     }
     /// The bit rate of the audio track, in bits per second.
-    pub fn bit_rate(mut self, input: i32) -> Self {
+    pub fn bit_rate(mut self, input: i64) -> Self {
         self.bit_rate = ::std::option::Option::Some(input);
         self
     }
     /// The bit rate of the audio track, in bits per second.
-    pub fn set_bit_rate(mut self, input: ::std::option::Option<i32>) -> Self {
+    pub fn set_bit_rate(mut self, input: ::std::option::Option<i64>) -> Self {
         self.bit_rate = input;
         self
     }
     /// The bit rate of the audio track, in bits per second.
-    pub fn get_bit_rate(&self) -> &::std::option::Option<i32> {
+    pub fn get_bit_rate(&self) -> &::std::option::Option<i64> {
         &self.bit_rate
     }
     /// The number of audio channels in the audio track.

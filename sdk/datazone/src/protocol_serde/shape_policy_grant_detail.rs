@@ -94,6 +94,12 @@ pub fn ser_policy_grant_detail(
             crate::protocol_serde::shape_create_project_from_project_profile_policy_grant_detail::ser_create_project_from_project_profile_policy_grant_detail(&mut object_13, inner)?;
             object_13.finish();
         }
+        crate::types::PolicyGrantDetail::UseAssetType(inner) => {
+            #[allow(unused_mut)]
+            let mut object_14 = object_3.key("useAssetType").start_object();
+            crate::protocol_serde::shape_use_asset_type_policy_grant_detail::ser_use_asset_type_policy_grant_detail(&mut object_14, inner)?;
+            object_14.finish();
+        }
         crate::types::PolicyGrantDetail::Unknown => {
             return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant(
                 "PolicyGrantDetail",
@@ -209,6 +215,12 @@ where
                                 Some(crate::types::PolicyGrantDetail::CreateProjectFromProjectProfile(
                                     crate::protocol_serde::shape_create_project_from_project_profile_policy_grant_detail::de_create_project_from_project_profile_policy_grant_detail(tokens)?
                                     .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'createProjectFromProjectProfile' cannot be null"))?
+                                ))
+                            }
+                            "useAssetType" => {
+                                Some(crate::types::PolicyGrantDetail::UseAssetType(
+                                    crate::protocol_serde::shape_use_asset_type_policy_grant_detail::de_use_asset_type_policy_grant_detail(tokens)?
+                                    .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'useAssetType' cannot be null"))?
                                 ))
                             }
                             _ => {

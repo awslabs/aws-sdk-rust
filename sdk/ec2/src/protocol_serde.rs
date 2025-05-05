@@ -395,6 +395,14 @@ pub(crate) mod shape_create_local_gateway_route_table_vpc_association;
 
 pub(crate) mod shape_create_local_gateway_route_table_vpc_association_input;
 
+pub(crate) mod shape_create_local_gateway_virtual_interface;
+
+pub(crate) mod shape_create_local_gateway_virtual_interface_group;
+
+pub(crate) mod shape_create_local_gateway_virtual_interface_group_input;
+
+pub(crate) mod shape_create_local_gateway_virtual_interface_input;
+
 pub(crate) mod shape_create_managed_prefix_list;
 
 pub(crate) mod shape_create_managed_prefix_list_input;
@@ -718,6 +726,14 @@ pub(crate) mod shape_delete_local_gateway_route_table_virtual_interface_group_as
 pub(crate) mod shape_delete_local_gateway_route_table_vpc_association;
 
 pub(crate) mod shape_delete_local_gateway_route_table_vpc_association_input;
+
+pub(crate) mod shape_delete_local_gateway_virtual_interface;
+
+pub(crate) mod shape_delete_local_gateway_virtual_interface_group;
+
+pub(crate) mod shape_delete_local_gateway_virtual_interface_group_input;
+
+pub(crate) mod shape_delete_local_gateway_virtual_interface_input;
 
 pub(crate) mod shape_delete_managed_prefix_list;
 
@@ -1327,6 +1343,10 @@ pub(crate) mod shape_describe_network_interfaces;
 
 pub(crate) mod shape_describe_network_interfaces_input;
 
+pub(crate) mod shape_describe_outpost_lags;
+
+pub(crate) mod shape_describe_outpost_lags_input;
+
 pub(crate) mod shape_describe_placement_groups;
 
 pub(crate) mod shape_describe_placement_groups_input;
@@ -1406,6 +1426,10 @@ pub(crate) mod shape_describe_security_group_vpc_associations_input;
 pub(crate) mod shape_describe_security_groups;
 
 pub(crate) mod shape_describe_security_groups_input;
+
+pub(crate) mod shape_describe_service_link_virtual_interfaces;
+
+pub(crate) mod shape_describe_service_link_virtual_interfaces_input;
 
 pub(crate) mod shape_describe_snapshot_attribute;
 
@@ -3443,6 +3467,10 @@ pub(crate) mod shape_local_gateway_route_table_vpc_association_set;
 
 pub(crate) mod shape_local_gateway_set;
 
+pub(crate) mod shape_local_gateway_virtual_interface;
+
+pub(crate) mod shape_local_gateway_virtual_interface_group;
+
 pub(crate) mod shape_local_gateway_virtual_interface_group_set;
 
 pub(crate) mod shape_local_gateway_virtual_interface_set;
@@ -3508,6 +3536,8 @@ pub(crate) mod shape_network_interface_permission;
 pub(crate) mod shape_network_interface_permission_list;
 
 pub(crate) mod shape_operator_response;
+
+pub(crate) mod shape_outpost_lag_set;
 
 pub(crate) mod shape_path_statement_request;
 
@@ -3638,6 +3668,8 @@ pub(crate) mod shape_service_configuration;
 pub(crate) mod shape_service_configuration_set;
 
 pub(crate) mod shape_service_detail_set;
+
+pub(crate) mod shape_service_link_virtual_interface_set;
 
 pub(crate) mod shape_snapshot_detail_list;
 
@@ -4197,9 +4229,7 @@ pub(crate) mod shape_load_permission_list;
 
 pub(crate) mod shape_local_gateway;
 
-pub(crate) mod shape_local_gateway_virtual_interface;
-
-pub(crate) mod shape_local_gateway_virtual_interface_group;
+pub(crate) mod shape_local_gateway_virtual_interface_id_set;
 
 pub(crate) mod shape_locked_snapshots_info;
 
@@ -4226,6 +4256,8 @@ pub(crate) mod shape_network_interface_permission_state;
 pub(crate) mod shape_network_interface_private_ip_address_list;
 
 pub(crate) mod shape_oidc_options;
+
+pub(crate) mod shape_outpost_lag;
 
 pub(crate) mod shape_packet_header_statement_request;
 
@@ -4316,6 +4348,8 @@ pub(crate) mod shape_security_group_rule;
 pub(crate) mod shape_security_group_vpc_association;
 
 pub(crate) mod shape_service_detail;
+
+pub(crate) mod shape_service_link_virtual_interface;
 
 pub(crate) mod shape_service_type_detail_set;
 
@@ -4681,8 +4715,6 @@ pub(crate) mod shape_license_list;
 
 pub(crate) mod shape_load_permission;
 
-pub(crate) mod shape_local_gateway_virtual_interface_id_set;
-
 pub(crate) mod shape_local_storage_type_set;
 
 pub(crate) mod shape_mac_os_version_string_list;
@@ -4772,6 +4804,8 @@ pub(crate) mod shape_route_table_association;
 pub(crate) mod shape_scheduled_instance_recurrence;
 
 pub(crate) mod shape_security_group_identifier;
+
+pub(crate) mod shape_service_link_virtual_interface_id_set;
 
 pub(crate) mod shape_service_type_detail;
 

@@ -56,14 +56,71 @@ pub fn de_local_gateway_virtual_interface_group(
                 builder = builder.set_owner_id(var_4);
             }
             ,
-            s if s.matches("tagSet") /* Tags com.amazonaws.ec2#LocalGatewayVirtualInterfaceGroup$Tags */ =>  {
+            s if s.matches("localBgpAsn") /* LocalBgpAsn com.amazonaws.ec2#LocalGatewayVirtualInterfaceGroup$LocalBgpAsn */ =>  {
                 let var_5 =
+                    Some(
+                         {
+                            <i32 as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (integer: `com.amazonaws.ec2#Integer`)"))
+                        }
+                        ?
+                    )
+                ;
+                builder = builder.set_local_bgp_asn(var_5);
+            }
+            ,
+            s if s.matches("localBgpAsnExtended") /* LocalBgpAsnExtended com.amazonaws.ec2#LocalGatewayVirtualInterfaceGroup$LocalBgpAsnExtended */ =>  {
+                let var_6 =
+                    Some(
+                         {
+                            <i64 as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (long: `com.amazonaws.ec2#Long`)"))
+                        }
+                        ?
+                    )
+                ;
+                builder = builder.set_local_bgp_asn_extended(var_6);
+            }
+            ,
+            s if s.matches("localGatewayVirtualInterfaceGroupArn") /* LocalGatewayVirtualInterfaceGroupArn com.amazonaws.ec2#LocalGatewayVirtualInterfaceGroup$LocalGatewayVirtualInterfaceGroupArn */ =>  {
+                let var_7 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_local_gateway_virtual_interface_group_arn(var_7);
+            }
+            ,
+            s if s.matches("tagSet") /* Tags com.amazonaws.ec2#LocalGatewayVirtualInterfaceGroup$Tags */ =>  {
+                let var_8 =
                     Some(
                         crate::protocol_serde::shape_tag_list::de_tag_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_tags(var_5);
+                builder = builder.set_tags(var_8);
+            }
+            ,
+            s if s.matches("configurationState") /* ConfigurationState com.amazonaws.ec2#LocalGatewayVirtualInterfaceGroup$ConfigurationState */ =>  {
+                let var_9 =
+                    Some(
+                        Result::<crate::types::LocalGatewayVirtualInterfaceGroupConfigurationState, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::LocalGatewayVirtualInterfaceGroupConfigurationState::from(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_configuration_state(var_9);
             }
             ,
             _ => {}

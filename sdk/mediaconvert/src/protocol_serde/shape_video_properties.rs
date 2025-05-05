@@ -24,7 +24,7 @@ where
                         "bitRate" => {
                             builder = builder.set_bit_rate(
                                 ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
-                                    .map(i32::try_from)
+                                    .map(i64::try_from)
                                     .transpose()?,
                             );
                         }

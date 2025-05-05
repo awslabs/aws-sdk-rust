@@ -2412,6 +2412,74 @@ impl From<crate::operation::create_local_gateway_route_table_vpc_association::Cr
         }
     }
 }
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::create_local_gateway_virtual_interface::CreateLocalGatewayVirtualInterfaceError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::create_local_gateway_virtual_interface::CreateLocalGatewayVirtualInterfaceError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_local_gateway_virtual_interface::CreateLocalGatewayVirtualInterfaceError> for Error {
+    fn from(err: crate::operation::create_local_gateway_virtual_interface::CreateLocalGatewayVirtualInterfaceError) -> Self {
+        match err {
+            crate::operation::create_local_gateway_virtual_interface::CreateLocalGatewayVirtualInterfaceError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::create_local_gateway_virtual_interface_group::CreateLocalGatewayVirtualInterfaceGroupError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::create_local_gateway_virtual_interface_group::CreateLocalGatewayVirtualInterfaceGroupError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_local_gateway_virtual_interface_group::CreateLocalGatewayVirtualInterfaceGroupError> for Error {
+    fn from(err: crate::operation::create_local_gateway_virtual_interface_group::CreateLocalGatewayVirtualInterfaceGroupError) -> Self {
+        match err {
+            crate::operation::create_local_gateway_virtual_interface_group::CreateLocalGatewayVirtualInterfaceGroupError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_managed_prefix_list::CreateManagedPrefixListError, R>>
     for Error
 where
@@ -4473,6 +4541,74 @@ impl From<crate::operation::delete_local_gateway_route_table_vpc_association::De
     fn from(err: crate::operation::delete_local_gateway_route_table_vpc_association::DeleteLocalGatewayRouteTableVpcAssociationError) -> Self {
         match err {
             crate::operation::delete_local_gateway_route_table_vpc_association::DeleteLocalGatewayRouteTableVpcAssociationError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::delete_local_gateway_virtual_interface::DeleteLocalGatewayVirtualInterfaceError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::delete_local_gateway_virtual_interface::DeleteLocalGatewayVirtualInterfaceError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_local_gateway_virtual_interface::DeleteLocalGatewayVirtualInterfaceError> for Error {
+    fn from(err: crate::operation::delete_local_gateway_virtual_interface::DeleteLocalGatewayVirtualInterfaceError) -> Self {
+        match err {
+            crate::operation::delete_local_gateway_virtual_interface::DeleteLocalGatewayVirtualInterfaceError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::delete_local_gateway_virtual_interface_group::DeleteLocalGatewayVirtualInterfaceGroupError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::delete_local_gateway_virtual_interface_group::DeleteLocalGatewayVirtualInterfaceGroupError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_local_gateway_virtual_interface_group::DeleteLocalGatewayVirtualInterfaceGroupError> for Error {
+    fn from(err: crate::operation::delete_local_gateway_virtual_interface_group::DeleteLocalGatewayVirtualInterfaceGroupError) -> Self {
+        match err {
+            crate::operation::delete_local_gateway_virtual_interface_group::DeleteLocalGatewayVirtualInterfaceGroupError::Unhandled(inner) => {
                 Error::Unhandled(inner)
             }
         }
@@ -8510,6 +8646,27 @@ impl From<crate::operation::describe_network_interfaces::DescribeNetworkInterfac
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_outpost_lags::DescribeOutpostLagsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_outpost_lags::DescribeOutpostLagsError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::describe_outpost_lags::DescribeOutpostLagsError> for Error {
+    fn from(err: crate::operation::describe_outpost_lags::DescribeOutpostLagsError) -> Self {
+        match err {
+            crate::operation::describe_outpost_lags::DescribeOutpostLagsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_placement_groups::DescribePlacementGroupsError, R>>
     for Error
 where
@@ -9042,6 +9199,40 @@ impl From<crate::operation::describe_security_group_vpc_associations::DescribeSe
     fn from(err: crate::operation::describe_security_group_vpc_associations::DescribeSecurityGroupVpcAssociationsError) -> Self {
         match err {
             crate::operation::describe_security_group_vpc_associations::DescribeSecurityGroupVpcAssociationsError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::describe_service_link_virtual_interfaces::DescribeServiceLinkVirtualInterfacesError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::describe_service_link_virtual_interfaces::DescribeServiceLinkVirtualInterfacesError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::describe_service_link_virtual_interfaces::DescribeServiceLinkVirtualInterfacesError> for Error {
+    fn from(err: crate::operation::describe_service_link_virtual_interfaces::DescribeServiceLinkVirtualInterfacesError) -> Self {
+        match err {
+            crate::operation::describe_service_link_virtual_interfaces::DescribeServiceLinkVirtualInterfacesError::Unhandled(inner) => {
                 Error::Unhandled(inner)
             }
         }

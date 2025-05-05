@@ -147,6 +147,8 @@ pub use crate::types::_xavc_slow_pal::XavcSlowPal;
 
 pub use crate::types::_xavc_profile::XavcProfile;
 
+pub use crate::types::_frame_metric_type::FrameMetricType;
+
 pub use crate::types::_xavc_framerate_conversion_algorithm::XavcFramerateConversionAlgorithm;
 
 pub use crate::types::_xavc_framerate_control::XavcFramerateControl;
@@ -1764,6 +1766,8 @@ mod _force_include_rendition_size;
 mod _format;
 
 mod _frame_capture_settings;
+
+mod _frame_metric_type;
 
 mod _frame_rate;
 

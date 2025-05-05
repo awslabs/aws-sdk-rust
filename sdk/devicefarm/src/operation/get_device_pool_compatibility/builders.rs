@@ -271,4 +271,18 @@ impl GetDevicePoolCompatibilityFluentBuilder {
     pub fn get_configuration(&self) -> &::std::option::Option<crate::types::ScheduleRunConfiguration> {
         self.inner.get_configuration()
     }
+    /// <p>The ARN of the project for which you want to check device pool compatibility.</p>
+    pub fn project_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.project_arn(input.into());
+        self
+    }
+    /// <p>The ARN of the project for which you want to check device pool compatibility.</p>
+    pub fn set_project_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_project_arn(input);
+        self
+    }
+    /// <p>The ARN of the project for which you want to check device pool compatibility.</p>
+    pub fn get_project_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_project_arn()
+    }
 }

@@ -530,6 +530,10 @@ mod create_local_gateway_route_table_virtual_interface_group_association;
 
 mod create_local_gateway_route_table_vpc_association;
 
+mod create_local_gateway_virtual_interface;
+
+mod create_local_gateway_virtual_interface_group;
+
 mod create_managed_prefix_list;
 
 mod create_nat_gateway;
@@ -718,6 +722,10 @@ mod delete_local_gateway_route_table;
 mod delete_local_gateway_route_table_virtual_interface_group_association;
 
 mod delete_local_gateway_route_table_vpc_association;
+
+mod delete_local_gateway_virtual_interface;
+
+mod delete_local_gateway_virtual_interface_group;
 
 mod delete_managed_prefix_list;
 
@@ -1023,6 +1031,8 @@ mod describe_network_interface_permissions;
 
 mod describe_network_interfaces;
 
+mod describe_outpost_lags;
+
 mod describe_placement_groups;
 
 mod describe_prefix_lists;
@@ -1062,6 +1072,8 @@ mod describe_security_group_rules;
 mod describe_security_group_vpc_associations;
 
 mod describe_security_groups;
+
+mod describe_service_link_virtual_interfaces;
 
 mod describe_snapshot_attribute;
 

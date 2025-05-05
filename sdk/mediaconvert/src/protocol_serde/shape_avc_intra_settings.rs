@@ -33,14 +33,23 @@ pub fn ser_avc_intra_settings(
     if let Some(var_8) = &input.interlace_mode {
         object.key("interlaceMode").string(var_8.as_str());
     }
-    if let Some(var_9) = &input.scan_type_conversion_mode {
-        object.key("scanTypeConversionMode").string(var_9.as_str());
+    if let Some(var_9) = &input.per_frame_metrics {
+        let mut array_10 = object.key("perFrameMetrics").start_array();
+        for item_11 in var_9 {
+            {
+                array_10.value().string(item_11.as_str());
+            }
+        }
+        array_10.finish();
     }
-    if let Some(var_10) = &input.slow_pal {
-        object.key("slowPal").string(var_10.as_str());
+    if let Some(var_12) = &input.scan_type_conversion_mode {
+        object.key("scanTypeConversionMode").string(var_12.as_str());
     }
-    if let Some(var_11) = &input.telecine {
-        object.key("telecine").string(var_11.as_str());
+    if let Some(var_13) = &input.slow_pal {
+        object.key("slowPal").string(var_13.as_str());
+    }
+    if let Some(var_14) = &input.telecine {
+        object.key("telecine").string(var_14.as_str());
     }
     Ok(())
 }
@@ -107,6 +116,11 @@ where
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| crate::types::AvcIntraInterlaceMode::from(u.as_ref())))
                                     .transpose()?,
+                            );
+                        }
+                        "perFrameMetrics" => {
+                            builder = builder.set_per_frame_metrics(
+                                crate::protocol_serde::shape_list_of_frame_metric_type::de_list_of_frame_metric_type(tokens)?,
                             );
                         }
                         "scanTypeConversionMode" => {

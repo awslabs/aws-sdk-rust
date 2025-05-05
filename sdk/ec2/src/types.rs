@@ -1605,6 +1605,10 @@ pub use crate::types::_snapshot::Snapshot;
 
 pub use crate::types::_transfer_type::TransferType;
 
+pub use crate::types::_service_link_virtual_interface::ServiceLinkVirtualInterface;
+
+pub use crate::types::_service_link_virtual_interface_configuration_state::ServiceLinkVirtualInterfaceConfigurationState;
+
 pub use crate::types::_security_group_vpc_association::SecurityGroupVpcAssociation;
 
 pub use crate::types::_security_group::SecurityGroup;
@@ -1709,6 +1713,8 @@ pub use crate::types::_placement_strategy::PlacementStrategy;
 
 pub use crate::types::_placement_group_state::PlacementGroupState;
 
+pub use crate::types::_outpost_lag::OutpostLag;
+
 pub use crate::types::_network_interface::NetworkInterface;
 
 pub use crate::types::_ipv6_prefix_specification::Ipv6PrefixSpecification;
@@ -1773,7 +1779,11 @@ pub use crate::types::_locked_snapshots_info::LockedSnapshotsInfo;
 
 pub use crate::types::_local_gateway_virtual_interface::LocalGatewayVirtualInterface;
 
+pub use crate::types::_local_gateway_virtual_interface_configuration_state::LocalGatewayVirtualInterfaceConfigurationState;
+
 pub use crate::types::_local_gateway_virtual_interface_group::LocalGatewayVirtualInterfaceGroup;
+
+pub use crate::types::_local_gateway_virtual_interface_group_configuration_state::LocalGatewayVirtualInterfaceGroupConfigurationState;
 
 pub use crate::types::_local_gateway::LocalGateway;
 
@@ -3659,7 +3669,11 @@ mod _local_gateway_route_type;
 
 mod _local_gateway_virtual_interface;
 
+mod _local_gateway_virtual_interface_configuration_state;
+
 mod _local_gateway_virtual_interface_group;
+
+mod _local_gateway_virtual_interface_group_configuration_state;
 
 mod _local_storage;
 
@@ -3840,6 +3854,8 @@ mod _operation_type;
 mod _operator_request;
 
 mod _operator_response;
+
+mod _outpost_lag;
 
 mod _packet_header_statement;
 
@@ -4198,6 +4214,10 @@ mod _service_configuration;
 mod _service_connectivity_type;
 
 mod _service_detail;
+
+mod _service_link_virtual_interface;
+
+mod _service_link_virtual_interface_configuration_state;
 
 mod _service_managed;
 

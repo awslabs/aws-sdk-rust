@@ -30,6 +30,8 @@ pub enum PolicyGrantDetail {
     OverrideDomainUnitOwners(crate::types::OverrideDomainUnitOwnersPolicyGrantDetail),
     /// <p>Specifies whether to override project owners.</p>
     OverrideProjectOwners(crate::types::OverrideProjectOwnersPolicyGrantDetail),
+    /// <p>Specifies the domain unit(s) whose projects can use this asset type while creating asset or asset revisions.</p>
+    UseAssetType(crate::types::UseAssetTypePolicyGrantDetail),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
     /// An unknown enum variant
     ///
@@ -211,6 +213,19 @@ impl PolicyGrantDetail {
     /// Returns true if this is a [`OverrideProjectOwners`](crate::types::PolicyGrantDetail::OverrideProjectOwners).
     pub fn is_override_project_owners(&self) -> bool {
         self.as_override_project_owners().is_ok()
+    }
+    /// Tries to convert the enum instance into [`UseAssetType`](crate::types::PolicyGrantDetail::UseAssetType), extracting the inner [`UseAssetTypePolicyGrantDetail`](crate::types::UseAssetTypePolicyGrantDetail).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_use_asset_type(&self) -> ::std::result::Result<&crate::types::UseAssetTypePolicyGrantDetail, &Self> {
+        if let PolicyGrantDetail::UseAssetType(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`UseAssetType`](crate::types::PolicyGrantDetail::UseAssetType).
+    pub fn is_use_asset_type(&self) -> bool {
+        self.as_use_asset_type().is_ok()
     }
     /// Returns true if the enum instance is the `Unknown` variant.
     pub fn is_unknown(&self) -> bool {

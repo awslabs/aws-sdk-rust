@@ -280,6 +280,12 @@ pub mod create_local_gateway_route_table_virtual_interface_group_association;
 /// Types for the `CreateLocalGatewayRouteTableVpcAssociation` operation.
 pub mod create_local_gateway_route_table_vpc_association;
 
+/// Types for the `CreateLocalGatewayVirtualInterface` operation.
+pub mod create_local_gateway_virtual_interface;
+
+/// Types for the `CreateLocalGatewayVirtualInterfaceGroup` operation.
+pub mod create_local_gateway_virtual_interface_group;
+
 /// Types for the `CreateManagedPrefixList` operation.
 pub mod create_managed_prefix_list;
 
@@ -522,6 +528,12 @@ pub mod delete_local_gateway_route_table_virtual_interface_group_association;
 
 /// Types for the `DeleteLocalGatewayRouteTableVpcAssociation` operation.
 pub mod delete_local_gateway_route_table_vpc_association;
+
+/// Types for the `DeleteLocalGatewayVirtualInterface` operation.
+pub mod delete_local_gateway_virtual_interface;
+
+/// Types for the `DeleteLocalGatewayVirtualInterfaceGroup` operation.
+pub mod delete_local_gateway_virtual_interface_group;
 
 /// Types for the `DeleteManagedPrefixList` operation.
 pub mod delete_managed_prefix_list;
@@ -979,6 +991,9 @@ pub mod describe_network_interface_permissions;
 /// Types for the `DescribeNetworkInterfaces` operation.
 pub mod describe_network_interfaces;
 
+/// Types for the `DescribeOutpostLags` operation.
+pub mod describe_outpost_lags;
+
 /// Types for the `DescribePlacementGroups` operation.
 pub mod describe_placement_groups;
 
@@ -1038,6 +1053,9 @@ pub mod describe_security_group_vpc_associations;
 
 /// Types for the `DescribeSecurityGroups` operation.
 pub mod describe_security_groups;
+
+/// Types for the `DescribeServiceLinkVirtualInterfaces` operation.
+pub mod describe_service_link_virtual_interfaces;
 
 /// Types for the `DescribeSnapshotAttribute` operation.
 pub mod describe_snapshot_attribute;

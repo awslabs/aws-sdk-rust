@@ -1065,6 +1065,8 @@ pub use crate::types::_snapshot_tier_status::SnapshotTierStatusBuilder;
 
 pub use crate::types::_snapshot::SnapshotBuilder;
 
+pub use crate::types::_service_link_virtual_interface::ServiceLinkVirtualInterfaceBuilder;
+
 pub use crate::types::_security_group_vpc_association::SecurityGroupVpcAssociationBuilder;
 
 pub use crate::types::_security_group::SecurityGroupBuilder;
@@ -1134,6 +1136,8 @@ pub use crate::types::_id_format::IdFormatBuilder;
 pub use crate::types::_prefix_list::PrefixListBuilder;
 
 pub use crate::types::_placement_group::PlacementGroupBuilder;
+
+pub use crate::types::_outpost_lag::OutpostLagBuilder;
 
 pub use crate::types::_network_interface::NetworkInterfaceBuilder;
 

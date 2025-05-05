@@ -135,62 +135,71 @@ pub fn ser_h264_settings(
             ::aws_smithy_types::Number::NegInt((*var_30).into()),
         );
     }
-    if let Some(var_31) = &input.quality_tuning_level {
-        object.key("qualityTuningLevel").string(var_31.as_str());
+    if let Some(var_31) = &input.per_frame_metrics {
+        let mut array_32 = object.key("perFrameMetrics").start_array();
+        for item_33 in var_31 {
+            {
+                array_32.value().string(item_33.as_str());
+            }
+        }
+        array_32.finish();
     }
-    if let Some(var_32) = &input.qvbr_settings {
+    if let Some(var_34) = &input.quality_tuning_level {
+        object.key("qualityTuningLevel").string(var_34.as_str());
+    }
+    if let Some(var_35) = &input.qvbr_settings {
         #[allow(unused_mut)]
-        let mut object_33 = object.key("qvbrSettings").start_object();
-        crate::protocol_serde::shape_h264_qvbr_settings::ser_h264_qvbr_settings(&mut object_33, var_32)?;
-        object_33.finish();
+        let mut object_36 = object.key("qvbrSettings").start_object();
+        crate::protocol_serde::shape_h264_qvbr_settings::ser_h264_qvbr_settings(&mut object_36, var_35)?;
+        object_36.finish();
     }
-    if let Some(var_34) = &input.rate_control_mode {
-        object.key("rateControlMode").string(var_34.as_str());
+    if let Some(var_37) = &input.rate_control_mode {
+        object.key("rateControlMode").string(var_37.as_str());
     }
-    if let Some(var_35) = &input.repeat_pps {
-        object.key("repeatPps").string(var_35.as_str());
+    if let Some(var_38) = &input.repeat_pps {
+        object.key("repeatPps").string(var_38.as_str());
     }
-    if let Some(var_36) = &input.saliency_aware_encoding {
-        object.key("saliencyAwareEncoding").string(var_36.as_str());
+    if let Some(var_39) = &input.saliency_aware_encoding {
+        object.key("saliencyAwareEncoding").string(var_39.as_str());
     }
-    if let Some(var_37) = &input.scan_type_conversion_mode {
-        object.key("scanTypeConversionMode").string(var_37.as_str());
+    if let Some(var_40) = &input.scan_type_conversion_mode {
+        object.key("scanTypeConversionMode").string(var_40.as_str());
     }
-    if let Some(var_38) = &input.scene_change_detect {
-        object.key("sceneChangeDetect").string(var_38.as_str());
+    if let Some(var_41) = &input.scene_change_detect {
+        object.key("sceneChangeDetect").string(var_41.as_str());
     }
-    if let Some(var_39) = &input.slices {
+    if let Some(var_42) = &input.slices {
         object.key("slices").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_39).into()),
+            ::aws_smithy_types::Number::NegInt((*var_42).into()),
         );
     }
-    if let Some(var_40) = &input.slow_pal {
-        object.key("slowPal").string(var_40.as_str());
+    if let Some(var_43) = &input.slow_pal {
+        object.key("slowPal").string(var_43.as_str());
     }
-    if let Some(var_41) = &input.softness {
+    if let Some(var_44) = &input.softness {
         object.key("softness").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_41).into()),
+            ::aws_smithy_types::Number::NegInt((*var_44).into()),
         );
     }
-    if let Some(var_42) = &input.spatial_adaptive_quantization {
-        object.key("spatialAdaptiveQuantization").string(var_42.as_str());
+    if let Some(var_45) = &input.spatial_adaptive_quantization {
+        object.key("spatialAdaptiveQuantization").string(var_45.as_str());
     }
-    if let Some(var_43) = &input.syntax {
-        object.key("syntax").string(var_43.as_str());
+    if let Some(var_46) = &input.syntax {
+        object.key("syntax").string(var_46.as_str());
     }
-    if let Some(var_44) = &input.telecine {
-        object.key("telecine").string(var_44.as_str());
+    if let Some(var_47) = &input.telecine {
+        object.key("telecine").string(var_47.as_str());
     }
-    if let Some(var_45) = &input.temporal_adaptive_quantization {
-        object.key("temporalAdaptiveQuantization").string(var_45.as_str());
+    if let Some(var_48) = &input.temporal_adaptive_quantization {
+        object.key("temporalAdaptiveQuantization").string(var_48.as_str());
     }
-    if let Some(var_46) = &input.unregistered_sei_timecode {
-        object.key("unregisteredSeiTimecode").string(var_46.as_str());
+    if let Some(var_49) = &input.unregistered_sei_timecode {
+        object.key("unregisteredSeiTimecode").string(var_49.as_str());
     }
-    if let Some(var_47) = &input.write_mp4_packaging_type {
-        object.key("writeMp4PackagingType").string(var_47.as_str());
+    if let Some(var_50) = &input.write_mp4_packaging_type {
+        object.key("writeMp4PackagingType").string(var_50.as_str());
     }
     Ok(())
 }
@@ -406,6 +415,11 @@ where
                                 ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
                                     .map(i32::try_from)
                                     .transpose()?,
+                            );
+                        }
+                        "perFrameMetrics" => {
+                            builder = builder.set_per_frame_metrics(
+                                crate::protocol_serde::shape_list_of_frame_metric_type::de_list_of_frame_metric_type(tokens)?,
                             );
                         }
                         "qualityTuningLevel" => {

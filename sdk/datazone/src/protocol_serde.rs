@@ -977,6 +977,8 @@ pub(crate) mod shape_time_series_data_point_summary_form_output;
 
 pub(crate) mod shape_unit;
 
+pub(crate) mod shape_use_asset_type_policy_grant_detail;
+
 pub(crate) mod shape_user_policy_grant_principal;
 
 pub(crate) mod shape_user_profile_summary;

@@ -531,6 +531,8 @@ pub use crate::types::_policy_grant_member::PolicyGrantMember;
 
 pub use crate::types::_policy_grant_detail::PolicyGrantDetail;
 
+pub use crate::types::_use_asset_type_policy_grant_detail::UseAssetTypePolicyGrantDetail;
+
 pub use crate::types::_create_project_from_project_profile_policy_grant_detail::CreateProjectFromProjectProfilePolicyGrantDetail;
 
 pub use crate::types::_unit::Unit;
@@ -1344,6 +1346,8 @@ mod _topic;
 mod _types_search_scope;
 
 mod _unit;
+
+mod _use_asset_type_policy_grant_detail;
 
 mod _user_assignment;
 

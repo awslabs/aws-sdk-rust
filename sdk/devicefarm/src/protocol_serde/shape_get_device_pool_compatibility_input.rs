@@ -24,5 +24,8 @@ pub fn ser_get_device_pool_compatibility_input_input(
         crate::protocol_serde::shape_schedule_run_configuration::ser_schedule_run_configuration(&mut object_7, var_6)?;
         object_7.finish();
     }
+    if let Some(var_8) = &input.project_arn {
+        object.key("projectArn").string(var_8.as_str());
+    }
     Ok(())
 }

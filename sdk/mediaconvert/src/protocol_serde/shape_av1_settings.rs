@@ -48,23 +48,32 @@ pub fn ser_av1_settings(
             ::aws_smithy_types::Number::NegInt((*var_10).into()),
         );
     }
-    if let Some(var_11) = &input.qvbr_settings {
+    if let Some(var_11) = &input.per_frame_metrics {
+        let mut array_12 = object.key("perFrameMetrics").start_array();
+        for item_13 in var_11 {
+            {
+                array_12.value().string(item_13.as_str());
+            }
+        }
+        array_12.finish();
+    }
+    if let Some(var_14) = &input.qvbr_settings {
         #[allow(unused_mut)]
-        let mut object_12 = object.key("qvbrSettings").start_object();
-        crate::protocol_serde::shape_av1_qvbr_settings::ser_av1_qvbr_settings(&mut object_12, var_11)?;
-        object_12.finish();
+        let mut object_15 = object.key("qvbrSettings").start_object();
+        crate::protocol_serde::shape_av1_qvbr_settings::ser_av1_qvbr_settings(&mut object_15, var_14)?;
+        object_15.finish();
     }
-    if let Some(var_13) = &input.rate_control_mode {
-        object.key("rateControlMode").string(var_13.as_str());
+    if let Some(var_16) = &input.rate_control_mode {
+        object.key("rateControlMode").string(var_16.as_str());
     }
-    if let Some(var_14) = &input.slices {
+    if let Some(var_17) = &input.slices {
         object.key("slices").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_14).into()),
+            ::aws_smithy_types::Number::NegInt((*var_17).into()),
         );
     }
-    if let Some(var_15) = &input.spatial_adaptive_quantization {
-        object.key("spatialAdaptiveQuantization").string(var_15.as_str());
+    if let Some(var_18) = &input.spatial_adaptive_quantization {
+        object.key("spatialAdaptiveQuantization").string(var_18.as_str());
     }
     Ok(())
 }
@@ -149,6 +158,11 @@ where
                                 ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
                                     .map(i32::try_from)
                                     .transpose()?,
+                            );
+                        }
+                        "perFrameMetrics" => {
+                            builder = builder.set_per_frame_metrics(
+                                crate::protocol_serde::shape_list_of_frame_metric_type::de_list_of_frame_metric_type(tokens)?,
                             );
                         }
                         "qvbrSettings" => {

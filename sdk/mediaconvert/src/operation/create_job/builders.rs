@@ -116,17 +116,17 @@ impl CreateJobFluentBuilder {
     pub fn get_acceleration_settings(&self) -> &::std::option::Option<crate::types::AccelerationSettings> {
         self.inner.get_acceleration_settings()
     }
-    /// Optional. Choose a tag type that AWS Billing and Cost Management will use to sort your AWS Elemental MediaConvert costs on any billing report that you set up. Any transcoding outputs that don't have an associated tag will appear in your billing report unsorted. If you don't choose a valid value for this field, your job outputs will appear on the billing report unsorted.
+    /// Optionally choose a Billing tags source that AWS Billing and Cost Management will use to display tags for individual output costs on any billing report that you set up. Leave blank to use the default value, Job.
     pub fn billing_tags_source(mut self, input: crate::types::BillingTagsSource) -> Self {
         self.inner = self.inner.billing_tags_source(input);
         self
     }
-    /// Optional. Choose a tag type that AWS Billing and Cost Management will use to sort your AWS Elemental MediaConvert costs on any billing report that you set up. Any transcoding outputs that don't have an associated tag will appear in your billing report unsorted. If you don't choose a valid value for this field, your job outputs will appear on the billing report unsorted.
+    /// Optionally choose a Billing tags source that AWS Billing and Cost Management will use to display tags for individual output costs on any billing report that you set up. Leave blank to use the default value, Job.
     pub fn set_billing_tags_source(mut self, input: ::std::option::Option<crate::types::BillingTagsSource>) -> Self {
         self.inner = self.inner.set_billing_tags_source(input);
         self
     }
-    /// Optional. Choose a tag type that AWS Billing and Cost Management will use to sort your AWS Elemental MediaConvert costs on any billing report that you set up. Any transcoding outputs that don't have an associated tag will appear in your billing report unsorted. If you don't choose a valid value for this field, your job outputs will appear on the billing report unsorted.
+    /// Optionally choose a Billing tags source that AWS Billing and Cost Management will use to display tags for individual output costs on any billing report that you set up. Leave blank to use the default value, Job.
     pub fn get_billing_tags_source(&self) -> &::std::option::Option<crate::types::BillingTagsSource> {
         self.inner.get_billing_tags_source()
     }

@@ -25,6 +25,7 @@
 ///     ManagedPolicyType::DelegateCreateEnvironmentProfile => { /* ... */ },
 ///     ManagedPolicyType::OverrideDomainUnitOwners => { /* ... */ },
 ///     ManagedPolicyType::OverrideProjectOwners => { /* ... */ },
+///     ManagedPolicyType::UseAssetType => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -79,6 +80,8 @@ pub enum ManagedPolicyType {
     OverrideDomainUnitOwners,
     #[allow(missing_docs)] // documentation missing in model
     OverrideProjectOwners,
+    #[allow(missing_docs)] // documentation missing in model
+    UseAssetType,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -99,6 +102,7 @@ impl ::std::convert::From<&str> for ManagedPolicyType {
             "DELEGATE_CREATE_ENVIRONMENT_PROFILE" => ManagedPolicyType::DelegateCreateEnvironmentProfile,
             "OVERRIDE_DOMAIN_UNIT_OWNERS" => ManagedPolicyType::OverrideDomainUnitOwners,
             "OVERRIDE_PROJECT_OWNERS" => ManagedPolicyType::OverrideProjectOwners,
+            "USE_ASSET_TYPE" => ManagedPolicyType::UseAssetType,
             other => ManagedPolicyType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -127,6 +131,7 @@ impl ManagedPolicyType {
             ManagedPolicyType::DelegateCreateEnvironmentProfile => "DELEGATE_CREATE_ENVIRONMENT_PROFILE",
             ManagedPolicyType::OverrideDomainUnitOwners => "OVERRIDE_DOMAIN_UNIT_OWNERS",
             ManagedPolicyType::OverrideProjectOwners => "OVERRIDE_PROJECT_OWNERS",
+            ManagedPolicyType::UseAssetType => "USE_ASSET_TYPE",
             ManagedPolicyType::Unknown(value) => value.as_str(),
         }
     }
@@ -146,6 +151,7 @@ impl ManagedPolicyType {
             "DELEGATE_CREATE_ENVIRONMENT_PROFILE",
             "OVERRIDE_DOMAIN_UNIT_OWNERS",
             "OVERRIDE_PROJECT_OWNERS",
+            "USE_ASSET_TYPE",
         ]
     }
 }
@@ -182,6 +188,7 @@ impl ::std::fmt::Display for ManagedPolicyType {
             ManagedPolicyType::DelegateCreateEnvironmentProfile => write!(f, "DELEGATE_CREATE_ENVIRONMENT_PROFILE"),
             ManagedPolicyType::OverrideDomainUnitOwners => write!(f, "OVERRIDE_DOMAIN_UNIT_OWNERS"),
             ManagedPolicyType::OverrideProjectOwners => write!(f, "OVERRIDE_PROJECT_OWNERS"),
+            ManagedPolicyType::UseAssetType => write!(f, "USE_ASSET_TYPE"),
             ManagedPolicyType::Unknown(value) => write!(f, "{}", value),
         }
     }

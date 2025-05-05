@@ -24,6 +24,8 @@ pub struct Av1Settings {
     pub max_bitrate: ::std::option::Option<i32>,
     /// Specify from the number of B-frames, in the range of 0-15. For AV1 encoding, we recommend using 7 or 15. Choose a larger number for a lower bitrate and smaller file size; choose a smaller number for better video quality.
     pub number_b_frames_between_reference_frames: ::std::option::Option<i32>,
+    /// Optionally choose one or more per frame metric reports to generate along with your output. You can use these metrics to analyze your video output according to one or more commonly used image quality metrics. You can specify per frame metrics for output groups or for individual outputs. When you do, MediaConvert writes a CSV (Comma-Separated Values) file to your S3 output destination, named after the video, video codec, and metric type. For example: video_h264_PSNR.csv Jobs that generate per frame metrics will take longer to complete, depending on the resolution and complexity of your output. For example, some 4K jobs might take up to twice as long to complete. Note that when analyzing the video quality of your output, or when comparing the video quality of multiple different outputs, we generally also recommend a detailed visual review in a controlled environment. You can choose from the following per frame metrics: * PSNR: Peak Signal-to-Noise Ratio * SSIM: Structural Similarity Index Measure * MS_SSIM: Multi-Scale Similarity Index Measure * PSNR_HVS: Peak Signal-to-Noise Ratio, Human Visual System * VMAF: Video Multi-Method Assessment Fusion * QVBR: Quality-Defined Variable Bitrate. This option is only available when your output uses the QVBR rate control mode.
+    pub per_frame_metrics: ::std::option::Option<::std::vec::Vec<crate::types::FrameMetricType>>,
     /// Settings for quality-defined variable bitrate encoding with the H.265 codec. Use these settings only when you set QVBR for Rate control mode.
     pub qvbr_settings: ::std::option::Option<crate::types::Av1QvbrSettings>,
     /// 'With AV1 outputs, for rate control mode, MediaConvert supports only quality-defined variable bitrate (QVBR). You can''t use CBR or VBR.'
@@ -74,6 +76,12 @@ impl Av1Settings {
     pub fn number_b_frames_between_reference_frames(&self) -> ::std::option::Option<i32> {
         self.number_b_frames_between_reference_frames
     }
+    /// Optionally choose one or more per frame metric reports to generate along with your output. You can use these metrics to analyze your video output according to one or more commonly used image quality metrics. You can specify per frame metrics for output groups or for individual outputs. When you do, MediaConvert writes a CSV (Comma-Separated Values) file to your S3 output destination, named after the video, video codec, and metric type. For example: video_h264_PSNR.csv Jobs that generate per frame metrics will take longer to complete, depending on the resolution and complexity of your output. For example, some 4K jobs might take up to twice as long to complete. Note that when analyzing the video quality of your output, or when comparing the video quality of multiple different outputs, we generally also recommend a detailed visual review in a controlled environment. You can choose from the following per frame metrics: * PSNR: Peak Signal-to-Noise Ratio * SSIM: Structural Similarity Index Measure * MS_SSIM: Multi-Scale Similarity Index Measure * PSNR_HVS: Peak Signal-to-Noise Ratio, Human Visual System * VMAF: Video Multi-Method Assessment Fusion * QVBR: Quality-Defined Variable Bitrate. This option is only available when your output uses the QVBR rate control mode.
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.per_frame_metrics.is_none()`.
+    pub fn per_frame_metrics(&self) -> &[crate::types::FrameMetricType] {
+        self.per_frame_metrics.as_deref().unwrap_or_default()
+    }
     /// Settings for quality-defined variable bitrate encoding with the H.265 codec. Use these settings only when you set QVBR for Rate control mode.
     pub fn qvbr_settings(&self) -> ::std::option::Option<&crate::types::Av1QvbrSettings> {
         self.qvbr_settings.as_ref()
@@ -112,6 +120,7 @@ pub struct Av1SettingsBuilder {
     pub(crate) gop_size: ::std::option::Option<f64>,
     pub(crate) max_bitrate: ::std::option::Option<i32>,
     pub(crate) number_b_frames_between_reference_frames: ::std::option::Option<i32>,
+    pub(crate) per_frame_metrics: ::std::option::Option<::std::vec::Vec<crate::types::FrameMetricType>>,
     pub(crate) qvbr_settings: ::std::option::Option<crate::types::Av1QvbrSettings>,
     pub(crate) rate_control_mode: ::std::option::Option<crate::types::Av1RateControlMode>,
     pub(crate) slices: ::std::option::Option<i32>,
@@ -258,6 +267,26 @@ impl Av1SettingsBuilder {
     pub fn get_number_b_frames_between_reference_frames(&self) -> &::std::option::Option<i32> {
         &self.number_b_frames_between_reference_frames
     }
+    /// Appends an item to `per_frame_metrics`.
+    ///
+    /// To override the contents of this collection use [`set_per_frame_metrics`](Self::set_per_frame_metrics).
+    ///
+    /// Optionally choose one or more per frame metric reports to generate along with your output. You can use these metrics to analyze your video output according to one or more commonly used image quality metrics. You can specify per frame metrics for output groups or for individual outputs. When you do, MediaConvert writes a CSV (Comma-Separated Values) file to your S3 output destination, named after the video, video codec, and metric type. For example: video_h264_PSNR.csv Jobs that generate per frame metrics will take longer to complete, depending on the resolution and complexity of your output. For example, some 4K jobs might take up to twice as long to complete. Note that when analyzing the video quality of your output, or when comparing the video quality of multiple different outputs, we generally also recommend a detailed visual review in a controlled environment. You can choose from the following per frame metrics: * PSNR: Peak Signal-to-Noise Ratio * SSIM: Structural Similarity Index Measure * MS_SSIM: Multi-Scale Similarity Index Measure * PSNR_HVS: Peak Signal-to-Noise Ratio, Human Visual System * VMAF: Video Multi-Method Assessment Fusion * QVBR: Quality-Defined Variable Bitrate. This option is only available when your output uses the QVBR rate control mode.
+    pub fn per_frame_metrics(mut self, input: crate::types::FrameMetricType) -> Self {
+        let mut v = self.per_frame_metrics.unwrap_or_default();
+        v.push(input);
+        self.per_frame_metrics = ::std::option::Option::Some(v);
+        self
+    }
+    /// Optionally choose one or more per frame metric reports to generate along with your output. You can use these metrics to analyze your video output according to one or more commonly used image quality metrics. You can specify per frame metrics for output groups or for individual outputs. When you do, MediaConvert writes a CSV (Comma-Separated Values) file to your S3 output destination, named after the video, video codec, and metric type. For example: video_h264_PSNR.csv Jobs that generate per frame metrics will take longer to complete, depending on the resolution and complexity of your output. For example, some 4K jobs might take up to twice as long to complete. Note that when analyzing the video quality of your output, or when comparing the video quality of multiple different outputs, we generally also recommend a detailed visual review in a controlled environment. You can choose from the following per frame metrics: * PSNR: Peak Signal-to-Noise Ratio * SSIM: Structural Similarity Index Measure * MS_SSIM: Multi-Scale Similarity Index Measure * PSNR_HVS: Peak Signal-to-Noise Ratio, Human Visual System * VMAF: Video Multi-Method Assessment Fusion * QVBR: Quality-Defined Variable Bitrate. This option is only available when your output uses the QVBR rate control mode.
+    pub fn set_per_frame_metrics(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FrameMetricType>>) -> Self {
+        self.per_frame_metrics = input;
+        self
+    }
+    /// Optionally choose one or more per frame metric reports to generate along with your output. You can use these metrics to analyze your video output according to one or more commonly used image quality metrics. You can specify per frame metrics for output groups or for individual outputs. When you do, MediaConvert writes a CSV (Comma-Separated Values) file to your S3 output destination, named after the video, video codec, and metric type. For example: video_h264_PSNR.csv Jobs that generate per frame metrics will take longer to complete, depending on the resolution and complexity of your output. For example, some 4K jobs might take up to twice as long to complete. Note that when analyzing the video quality of your output, or when comparing the video quality of multiple different outputs, we generally also recommend a detailed visual review in a controlled environment. You can choose from the following per frame metrics: * PSNR: Peak Signal-to-Noise Ratio * SSIM: Structural Similarity Index Measure * MS_SSIM: Multi-Scale Similarity Index Measure * PSNR_HVS: Peak Signal-to-Noise Ratio, Human Visual System * VMAF: Video Multi-Method Assessment Fusion * QVBR: Quality-Defined Variable Bitrate. This option is only available when your output uses the QVBR rate control mode.
+    pub fn get_per_frame_metrics(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FrameMetricType>> {
+        &self.per_frame_metrics
+    }
     /// Settings for quality-defined variable bitrate encoding with the H.265 codec. Use these settings only when you set QVBR for Rate control mode.
     pub fn qvbr_settings(mut self, input: crate::types::Av1QvbrSettings) -> Self {
         self.qvbr_settings = ::std::option::Option::Some(input);
@@ -327,6 +356,7 @@ impl Av1SettingsBuilder {
             gop_size: self.gop_size,
             max_bitrate: self.max_bitrate,
             number_b_frames_between_reference_frames: self.number_b_frames_between_reference_frames,
+            per_frame_metrics: self.per_frame_metrics,
             qvbr_settings: self.qvbr_settings,
             rate_control_mode: self.rate_control_mode,
             slices: self.slices,

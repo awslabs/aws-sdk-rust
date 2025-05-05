@@ -14,6 +14,8 @@ pub struct OutputGroupSettings {
     pub hls_group_settings: ::std::option::Option<crate::types::HlsGroupSettings>,
     /// Settings related to your Microsoft Smooth Streaming output package. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/outputs-file-ABR.html.
     pub ms_smooth_group_settings: ::std::option::Option<crate::types::MsSmoothGroupSettings>,
+    /// Optionally choose one or more per frame metric reports to generate along with your output. You can use these metrics to analyze your video output according to one or more commonly used image quality metrics. You can specify per frame metrics for output groups or for individual outputs. When you do, MediaConvert writes a CSV (Comma-Separated Values) file to your S3 output destination, named after the video, video codec, and metric type. For example: video_h264_PSNR.csv Jobs that generate per frame metrics will take longer to complete, depending on the resolution and complexity of your output. For example, some 4K jobs might take up to twice as long to complete. Note that when analyzing the video quality of your output, or when comparing the video quality of multiple different outputs, we generally also recommend a detailed visual review in a controlled environment. You can choose from the following per frame metrics: * PSNR: Peak Signal-to-Noise Ratio * SSIM: Structural Similarity Index Measure * MS_SSIM: Multi-Scale Similarity Index Measure * PSNR_HVS: Peak Signal-to-Noise Ratio, Human Visual System * VMAF: Video Multi-Method Assessment Fusion * QVBR: Quality-Defined Variable Bitrate. This option is only available when your output uses the QVBR rate control mode.
+    pub per_frame_metrics: ::std::option::Option<::std::vec::Vec<crate::types::FrameMetricType>>,
     /// Type of output group (File group, Apple HLS, DASH ISO, Microsoft Smooth Streaming, CMAF)
     pub r#type: ::std::option::Option<crate::types::OutputGroupType>,
 }
@@ -38,6 +40,12 @@ impl OutputGroupSettings {
     pub fn ms_smooth_group_settings(&self) -> ::std::option::Option<&crate::types::MsSmoothGroupSettings> {
         self.ms_smooth_group_settings.as_ref()
     }
+    /// Optionally choose one or more per frame metric reports to generate along with your output. You can use these metrics to analyze your video output according to one or more commonly used image quality metrics. You can specify per frame metrics for output groups or for individual outputs. When you do, MediaConvert writes a CSV (Comma-Separated Values) file to your S3 output destination, named after the video, video codec, and metric type. For example: video_h264_PSNR.csv Jobs that generate per frame metrics will take longer to complete, depending on the resolution and complexity of your output. For example, some 4K jobs might take up to twice as long to complete. Note that when analyzing the video quality of your output, or when comparing the video quality of multiple different outputs, we generally also recommend a detailed visual review in a controlled environment. You can choose from the following per frame metrics: * PSNR: Peak Signal-to-Noise Ratio * SSIM: Structural Similarity Index Measure * MS_SSIM: Multi-Scale Similarity Index Measure * PSNR_HVS: Peak Signal-to-Noise Ratio, Human Visual System * VMAF: Video Multi-Method Assessment Fusion * QVBR: Quality-Defined Variable Bitrate. This option is only available when your output uses the QVBR rate control mode.
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.per_frame_metrics.is_none()`.
+    pub fn per_frame_metrics(&self) -> &[crate::types::FrameMetricType] {
+        self.per_frame_metrics.as_deref().unwrap_or_default()
+    }
     /// Type of output group (File group, Apple HLS, DASH ISO, Microsoft Smooth Streaming, CMAF)
     pub fn r#type(&self) -> ::std::option::Option<&crate::types::OutputGroupType> {
         self.r#type.as_ref()
@@ -59,6 +67,7 @@ pub struct OutputGroupSettingsBuilder {
     pub(crate) file_group_settings: ::std::option::Option<crate::types::FileGroupSettings>,
     pub(crate) hls_group_settings: ::std::option::Option<crate::types::HlsGroupSettings>,
     pub(crate) ms_smooth_group_settings: ::std::option::Option<crate::types::MsSmoothGroupSettings>,
+    pub(crate) per_frame_metrics: ::std::option::Option<::std::vec::Vec<crate::types::FrameMetricType>>,
     pub(crate) r#type: ::std::option::Option<crate::types::OutputGroupType>,
 }
 impl OutputGroupSettingsBuilder {
@@ -132,6 +141,26 @@ impl OutputGroupSettingsBuilder {
     pub fn get_ms_smooth_group_settings(&self) -> &::std::option::Option<crate::types::MsSmoothGroupSettings> {
         &self.ms_smooth_group_settings
     }
+    /// Appends an item to `per_frame_metrics`.
+    ///
+    /// To override the contents of this collection use [`set_per_frame_metrics`](Self::set_per_frame_metrics).
+    ///
+    /// Optionally choose one or more per frame metric reports to generate along with your output. You can use these metrics to analyze your video output according to one or more commonly used image quality metrics. You can specify per frame metrics for output groups or for individual outputs. When you do, MediaConvert writes a CSV (Comma-Separated Values) file to your S3 output destination, named after the video, video codec, and metric type. For example: video_h264_PSNR.csv Jobs that generate per frame metrics will take longer to complete, depending on the resolution and complexity of your output. For example, some 4K jobs might take up to twice as long to complete. Note that when analyzing the video quality of your output, or when comparing the video quality of multiple different outputs, we generally also recommend a detailed visual review in a controlled environment. You can choose from the following per frame metrics: * PSNR: Peak Signal-to-Noise Ratio * SSIM: Structural Similarity Index Measure * MS_SSIM: Multi-Scale Similarity Index Measure * PSNR_HVS: Peak Signal-to-Noise Ratio, Human Visual System * VMAF: Video Multi-Method Assessment Fusion * QVBR: Quality-Defined Variable Bitrate. This option is only available when your output uses the QVBR rate control mode.
+    pub fn per_frame_metrics(mut self, input: crate::types::FrameMetricType) -> Self {
+        let mut v = self.per_frame_metrics.unwrap_or_default();
+        v.push(input);
+        self.per_frame_metrics = ::std::option::Option::Some(v);
+        self
+    }
+    /// Optionally choose one or more per frame metric reports to generate along with your output. You can use these metrics to analyze your video output according to one or more commonly used image quality metrics. You can specify per frame metrics for output groups or for individual outputs. When you do, MediaConvert writes a CSV (Comma-Separated Values) file to your S3 output destination, named after the video, video codec, and metric type. For example: video_h264_PSNR.csv Jobs that generate per frame metrics will take longer to complete, depending on the resolution and complexity of your output. For example, some 4K jobs might take up to twice as long to complete. Note that when analyzing the video quality of your output, or when comparing the video quality of multiple different outputs, we generally also recommend a detailed visual review in a controlled environment. You can choose from the following per frame metrics: * PSNR: Peak Signal-to-Noise Ratio * SSIM: Structural Similarity Index Measure * MS_SSIM: Multi-Scale Similarity Index Measure * PSNR_HVS: Peak Signal-to-Noise Ratio, Human Visual System * VMAF: Video Multi-Method Assessment Fusion * QVBR: Quality-Defined Variable Bitrate. This option is only available when your output uses the QVBR rate control mode.
+    pub fn set_per_frame_metrics(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FrameMetricType>>) -> Self {
+        self.per_frame_metrics = input;
+        self
+    }
+    /// Optionally choose one or more per frame metric reports to generate along with your output. You can use these metrics to analyze your video output according to one or more commonly used image quality metrics. You can specify per frame metrics for output groups or for individual outputs. When you do, MediaConvert writes a CSV (Comma-Separated Values) file to your S3 output destination, named after the video, video codec, and metric type. For example: video_h264_PSNR.csv Jobs that generate per frame metrics will take longer to complete, depending on the resolution and complexity of your output. For example, some 4K jobs might take up to twice as long to complete. Note that when analyzing the video quality of your output, or when comparing the video quality of multiple different outputs, we generally also recommend a detailed visual review in a controlled environment. You can choose from the following per frame metrics: * PSNR: Peak Signal-to-Noise Ratio * SSIM: Structural Similarity Index Measure * MS_SSIM: Multi-Scale Similarity Index Measure * PSNR_HVS: Peak Signal-to-Noise Ratio, Human Visual System * VMAF: Video Multi-Method Assessment Fusion * QVBR: Quality-Defined Variable Bitrate. This option is only available when your output uses the QVBR rate control mode.
+    pub fn get_per_frame_metrics(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FrameMetricType>> {
+        &self.per_frame_metrics
+    }
     /// Type of output group (File group, Apple HLS, DASH ISO, Microsoft Smooth Streaming, CMAF)
     pub fn r#type(mut self, input: crate::types::OutputGroupType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
@@ -154,6 +183,7 @@ impl OutputGroupSettingsBuilder {
             file_group_settings: self.file_group_settings,
             hls_group_settings: self.hls_group_settings,
             ms_smooth_group_settings: self.ms_smooth_group_settings,
+            per_frame_metrics: self.per_frame_metrics,
             r#type: self.r#type,
         }
     }

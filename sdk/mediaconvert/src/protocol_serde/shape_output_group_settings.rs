@@ -33,8 +33,17 @@ pub fn ser_output_group_settings(
         crate::protocol_serde::shape_ms_smooth_group_settings::ser_ms_smooth_group_settings(&mut object_10, var_9)?;
         object_10.finish();
     }
-    if let Some(var_11) = &input.r#type {
-        object.key("type").string(var_11.as_str());
+    if let Some(var_11) = &input.per_frame_metrics {
+        let mut array_12 = object.key("perFrameMetrics").start_array();
+        for item_13 in var_11 {
+            {
+                array_12.value().string(item_13.as_str());
+            }
+        }
+        array_12.finish();
+    }
+    if let Some(var_14) = &input.r#type {
+        object.key("type").string(var_14.as_str());
     }
     Ok(())
 }
@@ -73,6 +82,11 @@ where
                         "msSmoothGroupSettings" => {
                             builder = builder.set_ms_smooth_group_settings(
                                 crate::protocol_serde::shape_ms_smooth_group_settings::de_ms_smooth_group_settings(tokens)?,
+                            );
+                        }
+                        "perFrameMetrics" => {
+                            builder = builder.set_per_frame_metrics(
+                                crate::protocol_serde::shape_list_of_frame_metric_type::de_list_of_frame_metric_type(tokens)?,
                             );
                         }
                         "type" => {

@@ -12,8 +12,16 @@ pub struct LocalGatewayVirtualInterfaceGroup {
     pub local_gateway_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the Amazon Web Services account that owns the local gateway virtual interface group.</p>
     pub owner_id: ::std::option::Option<::std::string::String>,
+    /// <p>The Autonomous System Number(ASN) for the local Border Gateway Protocol (BGP).</p>
+    pub local_bgp_asn: ::std::option::Option<i32>,
+    /// <p>The extended 32-bit ASN for the local BGP configuration.</p>
+    pub local_bgp_asn_extended: ::std::option::Option<i64>,
+    /// <p>The Amazon Resource Number (ARN) of the local gateway virtual interface group.</p>
+    pub local_gateway_virtual_interface_group_arn: ::std::option::Option<::std::string::String>,
     /// <p>The tags assigned to the virtual interface group.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    /// <p>The current state of the local gateway virtual interface group.</p>
+    pub configuration_state: ::std::option::Option<crate::types::LocalGatewayVirtualInterfaceGroupConfigurationState>,
 }
 impl LocalGatewayVirtualInterfaceGroup {
     /// <p>The ID of the virtual interface group.</p>
@@ -34,11 +42,27 @@ impl LocalGatewayVirtualInterfaceGroup {
     pub fn owner_id(&self) -> ::std::option::Option<&str> {
         self.owner_id.as_deref()
     }
+    /// <p>The Autonomous System Number(ASN) for the local Border Gateway Protocol (BGP).</p>
+    pub fn local_bgp_asn(&self) -> ::std::option::Option<i32> {
+        self.local_bgp_asn
+    }
+    /// <p>The extended 32-bit ASN for the local BGP configuration.</p>
+    pub fn local_bgp_asn_extended(&self) -> ::std::option::Option<i64> {
+        self.local_bgp_asn_extended
+    }
+    /// <p>The Amazon Resource Number (ARN) of the local gateway virtual interface group.</p>
+    pub fn local_gateway_virtual_interface_group_arn(&self) -> ::std::option::Option<&str> {
+        self.local_gateway_virtual_interface_group_arn.as_deref()
+    }
     /// <p>The tags assigned to the virtual interface group.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
     pub fn tags(&self) -> &[crate::types::Tag] {
         self.tags.as_deref().unwrap_or_default()
+    }
+    /// <p>The current state of the local gateway virtual interface group.</p>
+    pub fn configuration_state(&self) -> ::std::option::Option<&crate::types::LocalGatewayVirtualInterfaceGroupConfigurationState> {
+        self.configuration_state.as_ref()
     }
 }
 impl LocalGatewayVirtualInterfaceGroup {
@@ -56,7 +80,11 @@ pub struct LocalGatewayVirtualInterfaceGroupBuilder {
     pub(crate) local_gateway_virtual_interface_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) local_gateway_id: ::std::option::Option<::std::string::String>,
     pub(crate) owner_id: ::std::option::Option<::std::string::String>,
+    pub(crate) local_bgp_asn: ::std::option::Option<i32>,
+    pub(crate) local_bgp_asn_extended: ::std::option::Option<i64>,
+    pub(crate) local_gateway_virtual_interface_group_arn: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) configuration_state: ::std::option::Option<crate::types::LocalGatewayVirtualInterfaceGroupConfigurationState>,
 }
 impl LocalGatewayVirtualInterfaceGroupBuilder {
     /// <p>The ID of the virtual interface group.</p>
@@ -121,6 +149,48 @@ impl LocalGatewayVirtualInterfaceGroupBuilder {
     pub fn get_owner_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.owner_id
     }
+    /// <p>The Autonomous System Number(ASN) for the local Border Gateway Protocol (BGP).</p>
+    pub fn local_bgp_asn(mut self, input: i32) -> Self {
+        self.local_bgp_asn = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The Autonomous System Number(ASN) for the local Border Gateway Protocol (BGP).</p>
+    pub fn set_local_bgp_asn(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.local_bgp_asn = input;
+        self
+    }
+    /// <p>The Autonomous System Number(ASN) for the local Border Gateway Protocol (BGP).</p>
+    pub fn get_local_bgp_asn(&self) -> &::std::option::Option<i32> {
+        &self.local_bgp_asn
+    }
+    /// <p>The extended 32-bit ASN for the local BGP configuration.</p>
+    pub fn local_bgp_asn_extended(mut self, input: i64) -> Self {
+        self.local_bgp_asn_extended = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The extended 32-bit ASN for the local BGP configuration.</p>
+    pub fn set_local_bgp_asn_extended(mut self, input: ::std::option::Option<i64>) -> Self {
+        self.local_bgp_asn_extended = input;
+        self
+    }
+    /// <p>The extended 32-bit ASN for the local BGP configuration.</p>
+    pub fn get_local_bgp_asn_extended(&self) -> &::std::option::Option<i64> {
+        &self.local_bgp_asn_extended
+    }
+    /// <p>The Amazon Resource Number (ARN) of the local gateway virtual interface group.</p>
+    pub fn local_gateway_virtual_interface_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.local_gateway_virtual_interface_group_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Number (ARN) of the local gateway virtual interface group.</p>
+    pub fn set_local_gateway_virtual_interface_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.local_gateway_virtual_interface_group_arn = input;
+        self
+    }
+    /// <p>The Amazon Resource Number (ARN) of the local gateway virtual interface group.</p>
+    pub fn get_local_gateway_virtual_interface_group_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.local_gateway_virtual_interface_group_arn
+    }
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -141,6 +211,23 @@ impl LocalGatewayVirtualInterfaceGroupBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         &self.tags
     }
+    /// <p>The current state of the local gateway virtual interface group.</p>
+    pub fn configuration_state(mut self, input: crate::types::LocalGatewayVirtualInterfaceGroupConfigurationState) -> Self {
+        self.configuration_state = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The current state of the local gateway virtual interface group.</p>
+    pub fn set_configuration_state(
+        mut self,
+        input: ::std::option::Option<crate::types::LocalGatewayVirtualInterfaceGroupConfigurationState>,
+    ) -> Self {
+        self.configuration_state = input;
+        self
+    }
+    /// <p>The current state of the local gateway virtual interface group.</p>
+    pub fn get_configuration_state(&self) -> &::std::option::Option<crate::types::LocalGatewayVirtualInterfaceGroupConfigurationState> {
+        &self.configuration_state
+    }
     /// Consumes the builder and constructs a [`LocalGatewayVirtualInterfaceGroup`](crate::types::LocalGatewayVirtualInterfaceGroup).
     pub fn build(self) -> crate::types::LocalGatewayVirtualInterfaceGroup {
         crate::types::LocalGatewayVirtualInterfaceGroup {
@@ -148,7 +235,11 @@ impl LocalGatewayVirtualInterfaceGroupBuilder {
             local_gateway_virtual_interface_ids: self.local_gateway_virtual_interface_ids,
             local_gateway_id: self.local_gateway_id,
             owner_id: self.owner_id,
+            local_bgp_asn: self.local_bgp_asn,
+            local_bgp_asn_extended: self.local_bgp_asn_extended,
+            local_gateway_virtual_interface_group_arn: self.local_gateway_virtual_interface_group_arn,
             tags: self.tags,
+            configuration_state: self.configuration_state,
         }
     }
 }

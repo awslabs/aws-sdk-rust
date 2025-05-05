@@ -7,7 +7,7 @@ pub struct VideoProperties {
     /// The bit depth of the video track.
     pub bit_depth: ::std::option::Option<i32>,
     /// The bit rate of the video track, in bits per second.
-    pub bit_rate: ::std::option::Option<i32>,
+    pub bit_rate: ::std::option::Option<i64>,
     /// The color space color primaries of the video track.
     pub color_primaries: ::std::option::Option<crate::types::ColorPrimaries>,
     /// The frame rate of the video or audio track.
@@ -27,7 +27,7 @@ impl VideoProperties {
         self.bit_depth
     }
     /// The bit rate of the video track, in bits per second.
-    pub fn bit_rate(&self) -> ::std::option::Option<i32> {
+    pub fn bit_rate(&self) -> ::std::option::Option<i64> {
         self.bit_rate
     }
     /// The color space color primaries of the video track.
@@ -67,7 +67,7 @@ impl VideoProperties {
 #[non_exhaustive]
 pub struct VideoPropertiesBuilder {
     pub(crate) bit_depth: ::std::option::Option<i32>,
-    pub(crate) bit_rate: ::std::option::Option<i32>,
+    pub(crate) bit_rate: ::std::option::Option<i64>,
     pub(crate) color_primaries: ::std::option::Option<crate::types::ColorPrimaries>,
     pub(crate) frame_rate: ::std::option::Option<crate::types::FrameRate>,
     pub(crate) height: ::std::option::Option<i32>,
@@ -91,17 +91,17 @@ impl VideoPropertiesBuilder {
         &self.bit_depth
     }
     /// The bit rate of the video track, in bits per second.
-    pub fn bit_rate(mut self, input: i32) -> Self {
+    pub fn bit_rate(mut self, input: i64) -> Self {
         self.bit_rate = ::std::option::Option::Some(input);
         self
     }
     /// The bit rate of the video track, in bits per second.
-    pub fn set_bit_rate(mut self, input: ::std::option::Option<i32>) -> Self {
+    pub fn set_bit_rate(mut self, input: ::std::option::Option<i64>) -> Self {
         self.bit_rate = input;
         self
     }
     /// The bit rate of the video track, in bits per second.
-    pub fn get_bit_rate(&self) -> &::std::option::Option<i32> {
+    pub fn get_bit_rate(&self) -> &::std::option::Option<i64> {
         &self.bit_rate
     }
     /// The color space color primaries of the video track.

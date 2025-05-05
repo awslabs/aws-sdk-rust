@@ -5,7 +5,7 @@
 pub struct UpdateSubscriptionTargetOutput {
     /// <p>Identifier of the subscription target that is to be updated.</p>
     pub id: ::std::string::String,
-    /// <p>The authorized principals to be updated as part of the <code>UpdateSubscriptionTarget</code> action.</p>
+    /// <p>The authorized principals to be updated as part of the <code>UpdateSubscriptionTarget</code> action. Updates are supported in batches of 5 at a time.</p>
     pub authorized_principals: ::std::vec::Vec<::std::string::String>,
     /// <p>The identifier of the Amazon DataZone domain in which a subscription target is to be updated.</p>
     pub domain_id: ::std::string::String,
@@ -41,7 +41,7 @@ impl UpdateSubscriptionTargetOutput {
         use std::ops::Deref;
         self.id.deref()
     }
-    /// <p>The authorized principals to be updated as part of the <code>UpdateSubscriptionTarget</code> action.</p>
+    /// <p>The authorized principals to be updated as part of the <code>UpdateSubscriptionTarget</code> action. Updates are supported in batches of 5 at a time.</p>
     pub fn authorized_principals(&self) -> &[::std::string::String] {
         use std::ops::Deref;
         self.authorized_principals.deref()
@@ -183,19 +183,19 @@ impl UpdateSubscriptionTargetOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_authorized_principals`](Self::set_authorized_principals).
     ///
-    /// <p>The authorized principals to be updated as part of the <code>UpdateSubscriptionTarget</code> action.</p>
+    /// <p>The authorized principals to be updated as part of the <code>UpdateSubscriptionTarget</code> action. Updates are supported in batches of 5 at a time.</p>
     pub fn authorized_principals(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.authorized_principals.unwrap_or_default();
         v.push(input.into());
         self.authorized_principals = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The authorized principals to be updated as part of the <code>UpdateSubscriptionTarget</code> action.</p>
+    /// <p>The authorized principals to be updated as part of the <code>UpdateSubscriptionTarget</code> action. Updates are supported in batches of 5 at a time.</p>
     pub fn set_authorized_principals(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.authorized_principals = input;
         self
     }
-    /// <p>The authorized principals to be updated as part of the <code>UpdateSubscriptionTarget</code> action.</p>
+    /// <p>The authorized principals to be updated as part of the <code>UpdateSubscriptionTarget</code> action. Updates are supported in batches of 5 at a time.</p>
     pub fn get_authorized_principals(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.authorized_principals
     }

@@ -12,6 +12,7 @@
 /// ```text
 /// # let targetentitytype = unimplemented!();
 /// match targetentitytype {
+///     TargetEntityType::AssetType => { /* ... */ },
 ///     TargetEntityType::DomainUnit => { /* ... */ },
 ///     TargetEntityType::EnvironmentBlueprintConfiguration => { /* ... */ },
 ///     TargetEntityType::EnvironmentProfile => { /* ... */ },
@@ -44,6 +45,8 @@
 )]
 pub enum TargetEntityType {
     #[allow(missing_docs)] // documentation missing in model
+    AssetType,
+    #[allow(missing_docs)] // documentation missing in model
     DomainUnit,
     #[allow(missing_docs)] // documentation missing in model
     EnvironmentBlueprintConfiguration,
@@ -56,6 +59,7 @@ pub enum TargetEntityType {
 impl ::std::convert::From<&str> for TargetEntityType {
     fn from(s: &str) -> Self {
         match s {
+            "ASSET_TYPE" => TargetEntityType::AssetType,
             "DOMAIN_UNIT" => TargetEntityType::DomainUnit,
             "ENVIRONMENT_BLUEPRINT_CONFIGURATION" => TargetEntityType::EnvironmentBlueprintConfiguration,
             "ENVIRONMENT_PROFILE" => TargetEntityType::EnvironmentProfile,
@@ -74,6 +78,7 @@ impl TargetEntityType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            TargetEntityType::AssetType => "ASSET_TYPE",
             TargetEntityType::DomainUnit => "DOMAIN_UNIT",
             TargetEntityType::EnvironmentBlueprintConfiguration => "ENVIRONMENT_BLUEPRINT_CONFIGURATION",
             TargetEntityType::EnvironmentProfile => "ENVIRONMENT_PROFILE",
@@ -82,7 +87,7 @@ impl TargetEntityType {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["DOMAIN_UNIT", "ENVIRONMENT_BLUEPRINT_CONFIGURATION", "ENVIRONMENT_PROFILE"]
+        &["ASSET_TYPE", "DOMAIN_UNIT", "ENVIRONMENT_BLUEPRINT_CONFIGURATION", "ENVIRONMENT_PROFILE"]
     }
 }
 impl ::std::convert::AsRef<str> for TargetEntityType {
@@ -105,6 +110,7 @@ impl TargetEntityType {
 impl ::std::fmt::Display for TargetEntityType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            TargetEntityType::AssetType => write!(f, "ASSET_TYPE"),
             TargetEntityType::DomainUnit => write!(f, "DOMAIN_UNIT"),
             TargetEntityType::EnvironmentBlueprintConfiguration => write!(f, "ENVIRONMENT_BLUEPRINT_CONFIGURATION"),
             TargetEntityType::EnvironmentProfile => write!(f, "ENVIRONMENT_PROFILE"),

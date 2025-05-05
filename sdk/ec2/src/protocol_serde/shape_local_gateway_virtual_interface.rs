@@ -33,22 +33,20 @@ pub fn de_local_gateway_virtual_interface(
                 builder = builder.set_local_gateway_id(var_2);
             }
             ,
-            s if s.matches("vlan") /* Vlan com.amazonaws.ec2#LocalGatewayVirtualInterface$Vlan */ =>  {
+            s if s.matches("localGatewayVirtualInterfaceGroupId") /* LocalGatewayVirtualInterfaceGroupId com.amazonaws.ec2#LocalGatewayVirtualInterface$LocalGatewayVirtualInterfaceGroupId */ =>  {
                 let var_3 =
                     Some(
-                         {
-                            <i32 as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
-                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            )
-                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (integer: `com.amazonaws.ec2#Integer`)"))
-                        }
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
                         ?
                     )
                 ;
-                builder = builder.set_vlan(var_3);
+                builder = builder.set_local_gateway_virtual_interface_group_id(var_3);
             }
             ,
-            s if s.matches("localAddress") /* LocalAddress com.amazonaws.ec2#LocalGatewayVirtualInterface$LocalAddress */ =>  {
+            s if s.matches("localGatewayVirtualInterfaceArn") /* LocalGatewayVirtualInterfaceArn com.amazonaws.ec2#LocalGatewayVirtualInterface$LocalGatewayVirtualInterfaceArn */ =>  {
                 let var_4 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -58,10 +56,10 @@ pub fn de_local_gateway_virtual_interface(
                         ?
                     )
                 ;
-                builder = builder.set_local_address(var_4);
+                builder = builder.set_local_gateway_virtual_interface_arn(var_4);
             }
             ,
-            s if s.matches("peerAddress") /* PeerAddress com.amazonaws.ec2#LocalGatewayVirtualInterface$PeerAddress */ =>  {
+            s if s.matches("outpostLagId") /* OutpostLagId com.amazonaws.ec2#LocalGatewayVirtualInterface$OutpostLagId */ =>  {
                 let var_5 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -71,10 +69,10 @@ pub fn de_local_gateway_virtual_interface(
                         ?
                     )
                 ;
-                builder = builder.set_peer_address(var_5);
+                builder = builder.set_outpost_lag_id(var_5);
             }
             ,
-            s if s.matches("localBgpAsn") /* LocalBgpAsn com.amazonaws.ec2#LocalGatewayVirtualInterface$LocalBgpAsn */ =>  {
+            s if s.matches("vlan") /* Vlan com.amazonaws.ec2#LocalGatewayVirtualInterface$Vlan */ =>  {
                 let var_6 =
                     Some(
                          {
@@ -86,11 +84,37 @@ pub fn de_local_gateway_virtual_interface(
                         ?
                     )
                 ;
-                builder = builder.set_local_bgp_asn(var_6);
+                builder = builder.set_vlan(var_6);
             }
             ,
-            s if s.matches("peerBgpAsn") /* PeerBgpAsn com.amazonaws.ec2#LocalGatewayVirtualInterface$PeerBgpAsn */ =>  {
+            s if s.matches("localAddress") /* LocalAddress com.amazonaws.ec2#LocalGatewayVirtualInterface$LocalAddress */ =>  {
                 let var_7 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_local_address(var_7);
+            }
+            ,
+            s if s.matches("peerAddress") /* PeerAddress com.amazonaws.ec2#LocalGatewayVirtualInterface$PeerAddress */ =>  {
+                let var_8 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_peer_address(var_8);
+            }
+            ,
+            s if s.matches("localBgpAsn") /* LocalBgpAsn com.amazonaws.ec2#LocalGatewayVirtualInterface$LocalBgpAsn */ =>  {
+                let var_9 =
                     Some(
                          {
                             <i32 as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -101,11 +125,41 @@ pub fn de_local_gateway_virtual_interface(
                         ?
                     )
                 ;
-                builder = builder.set_peer_bgp_asn(var_7);
+                builder = builder.set_local_bgp_asn(var_9);
+            }
+            ,
+            s if s.matches("peerBgpAsn") /* PeerBgpAsn com.amazonaws.ec2#LocalGatewayVirtualInterface$PeerBgpAsn */ =>  {
+                let var_10 =
+                    Some(
+                         {
+                            <i32 as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (integer: `com.amazonaws.ec2#Integer`)"))
+                        }
+                        ?
+                    )
+                ;
+                builder = builder.set_peer_bgp_asn(var_10);
+            }
+            ,
+            s if s.matches("peerBgpAsnExtended") /* PeerBgpAsnExtended com.amazonaws.ec2#LocalGatewayVirtualInterface$PeerBgpAsnExtended */ =>  {
+                let var_11 =
+                    Some(
+                         {
+                            <i64 as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (long: `com.amazonaws.ec2#Long`)"))
+                        }
+                        ?
+                    )
+                ;
+                builder = builder.set_peer_bgp_asn_extended(var_11);
             }
             ,
             s if s.matches("ownerId") /* OwnerId com.amazonaws.ec2#LocalGatewayVirtualInterface$OwnerId */ =>  {
-                let var_8 =
+                let var_12 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -114,17 +168,31 @@ pub fn de_local_gateway_virtual_interface(
                         ?
                     )
                 ;
-                builder = builder.set_owner_id(var_8);
+                builder = builder.set_owner_id(var_12);
             }
             ,
             s if s.matches("tagSet") /* Tags com.amazonaws.ec2#LocalGatewayVirtualInterface$Tags */ =>  {
-                let var_9 =
+                let var_13 =
                     Some(
                         crate::protocol_serde::shape_tag_list::de_tag_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_tags(var_9);
+                builder = builder.set_tags(var_13);
+            }
+            ,
+            s if s.matches("configurationState") /* ConfigurationState com.amazonaws.ec2#LocalGatewayVirtualInterface$ConfigurationState */ =>  {
+                let var_14 =
+                    Some(
+                        Result::<crate::types::LocalGatewayVirtualInterfaceConfigurationState, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::LocalGatewayVirtualInterfaceConfigurationState::from(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_configuration_state(var_14);
             }
             ,
             _ => {}

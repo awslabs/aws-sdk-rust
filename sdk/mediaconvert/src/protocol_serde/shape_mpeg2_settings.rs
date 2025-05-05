@@ -111,38 +111,47 @@ pub fn ser_mpeg2_settings(
             ::aws_smithy_types::Number::NegInt((*var_23).into()),
         );
     }
-    if let Some(var_24) = &input.quality_tuning_level {
-        object.key("qualityTuningLevel").string(var_24.as_str());
+    if let Some(var_24) = &input.per_frame_metrics {
+        let mut array_25 = object.key("perFrameMetrics").start_array();
+        for item_26 in var_24 {
+            {
+                array_25.value().string(item_26.as_str());
+            }
+        }
+        array_25.finish();
     }
-    if let Some(var_25) = &input.rate_control_mode {
-        object.key("rateControlMode").string(var_25.as_str());
+    if let Some(var_27) = &input.quality_tuning_level {
+        object.key("qualityTuningLevel").string(var_27.as_str());
     }
-    if let Some(var_26) = &input.scan_type_conversion_mode {
-        object.key("scanTypeConversionMode").string(var_26.as_str());
+    if let Some(var_28) = &input.rate_control_mode {
+        object.key("rateControlMode").string(var_28.as_str());
     }
-    if let Some(var_27) = &input.scene_change_detect {
-        object.key("sceneChangeDetect").string(var_27.as_str());
+    if let Some(var_29) = &input.scan_type_conversion_mode {
+        object.key("scanTypeConversionMode").string(var_29.as_str());
     }
-    if let Some(var_28) = &input.slow_pal {
-        object.key("slowPal").string(var_28.as_str());
+    if let Some(var_30) = &input.scene_change_detect {
+        object.key("sceneChangeDetect").string(var_30.as_str());
     }
-    if let Some(var_29) = &input.softness {
+    if let Some(var_31) = &input.slow_pal {
+        object.key("slowPal").string(var_31.as_str());
+    }
+    if let Some(var_32) = &input.softness {
         object.key("softness").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_29).into()),
+            ::aws_smithy_types::Number::NegInt((*var_32).into()),
         );
     }
-    if let Some(var_30) = &input.spatial_adaptive_quantization {
-        object.key("spatialAdaptiveQuantization").string(var_30.as_str());
+    if let Some(var_33) = &input.spatial_adaptive_quantization {
+        object.key("spatialAdaptiveQuantization").string(var_33.as_str());
     }
-    if let Some(var_31) = &input.syntax {
-        object.key("syntax").string(var_31.as_str());
+    if let Some(var_34) = &input.syntax {
+        object.key("syntax").string(var_34.as_str());
     }
-    if let Some(var_32) = &input.telecine {
-        object.key("telecine").string(var_32.as_str());
+    if let Some(var_35) = &input.telecine {
+        object.key("telecine").string(var_35.as_str());
     }
-    if let Some(var_33) = &input.temporal_adaptive_quantization {
-        object.key("temporalAdaptiveQuantization").string(var_33.as_str());
+    if let Some(var_36) = &input.temporal_adaptive_quantization {
+        object.key("temporalAdaptiveQuantization").string(var_36.as_str());
     }
     Ok(())
 }
@@ -321,6 +330,11 @@ where
                                 ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
                                     .map(i32::try_from)
                                     .transpose()?,
+                            );
+                        }
+                        "perFrameMetrics" => {
+                            builder = builder.set_per_frame_metrics(
+                                crate::protocol_serde::shape_list_of_frame_metric_type::de_list_of_frame_metric_type(tokens)?,
                             );
                         }
                         "qualityTuningLevel" => {

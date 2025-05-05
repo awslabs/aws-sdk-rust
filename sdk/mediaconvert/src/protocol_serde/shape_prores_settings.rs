@@ -45,14 +45,23 @@ pub fn ser_prores_settings(
             ::aws_smithy_types::Number::NegInt((*var_10).into()),
         );
     }
-    if let Some(var_11) = &input.scan_type_conversion_mode {
-        object.key("scanTypeConversionMode").string(var_11.as_str());
+    if let Some(var_11) = &input.per_frame_metrics {
+        let mut array_12 = object.key("perFrameMetrics").start_array();
+        for item_13 in var_11 {
+            {
+                array_12.value().string(item_13.as_str());
+            }
+        }
+        array_12.finish();
     }
-    if let Some(var_12) = &input.slow_pal {
-        object.key("slowPal").string(var_12.as_str());
+    if let Some(var_14) = &input.scan_type_conversion_mode {
+        object.key("scanTypeConversionMode").string(var_14.as_str());
     }
-    if let Some(var_13) = &input.telecine {
-        object.key("telecine").string(var_13.as_str());
+    if let Some(var_15) = &input.slow_pal {
+        object.key("slowPal").string(var_15.as_str());
+    }
+    if let Some(var_16) = &input.telecine {
+        object.key("telecine").string(var_16.as_str());
     }
     Ok(())
 }
@@ -143,6 +152,11 @@ where
                                 ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
                                     .map(i32::try_from)
                                     .transpose()?,
+                            );
+                        }
+                        "perFrameMetrics" => {
+                            builder = builder.set_per_frame_metrics(
+                                crate::protocol_serde::shape_list_of_frame_metric_type::de_list_of_frame_metric_type(tokens)?,
                             );
                         }
                         "scanTypeConversionMode" => {

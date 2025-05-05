@@ -573,6 +573,8 @@ pub(crate) mod shape_force_include_rendition_size;
 
 pub(crate) mod shape_list_of_audio_channel_tag;
 
+pub(crate) mod shape_list_of_frame_metric_type;
+
 pub(crate) mod shape_list_of_insertable_image;
 
 pub(crate) mod shape_min_bottom_rendition_size;

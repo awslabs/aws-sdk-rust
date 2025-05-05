@@ -45,6 +45,8 @@ pub struct GetDevicePoolCompatibilityInput {
     pub test: ::std::option::Option<crate::types::ScheduleRunTest>,
     /// <p>An object that contains information about the settings for a run.</p>
     pub configuration: ::std::option::Option<crate::types::ScheduleRunConfiguration>,
+    /// <p>The ARN of the project for which you want to check device pool compatibility.</p>
+    pub project_arn: ::std::option::Option<::std::string::String>,
 }
 impl GetDevicePoolCompatibilityInput {
     /// <p>The device pool's ARN.</p>
@@ -98,6 +100,10 @@ impl GetDevicePoolCompatibilityInput {
     pub fn configuration(&self) -> ::std::option::Option<&crate::types::ScheduleRunConfiguration> {
         self.configuration.as_ref()
     }
+    /// <p>The ARN of the project for which you want to check device pool compatibility.</p>
+    pub fn project_arn(&self) -> ::std::option::Option<&str> {
+        self.project_arn.as_deref()
+    }
 }
 impl GetDevicePoolCompatibilityInput {
     /// Creates a new builder-style object to manufacture [`GetDevicePoolCompatibilityInput`](crate::operation::get_device_pool_compatibility::GetDevicePoolCompatibilityInput).
@@ -115,6 +121,7 @@ pub struct GetDevicePoolCompatibilityInputBuilder {
     pub(crate) test_type: ::std::option::Option<crate::types::TestType>,
     pub(crate) test: ::std::option::Option<crate::types::ScheduleRunTest>,
     pub(crate) configuration: ::std::option::Option<crate::types::ScheduleRunConfiguration>,
+    pub(crate) project_arn: ::std::option::Option<::std::string::String>,
 }
 impl GetDevicePoolCompatibilityInputBuilder {
     /// <p>The device pool's ARN.</p>
@@ -281,6 +288,20 @@ impl GetDevicePoolCompatibilityInputBuilder {
     pub fn get_configuration(&self) -> &::std::option::Option<crate::types::ScheduleRunConfiguration> {
         &self.configuration
     }
+    /// <p>The ARN of the project for which you want to check device pool compatibility.</p>
+    pub fn project_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.project_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ARN of the project for which you want to check device pool compatibility.</p>
+    pub fn set_project_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.project_arn = input;
+        self
+    }
+    /// <p>The ARN of the project for which you want to check device pool compatibility.</p>
+    pub fn get_project_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.project_arn
+    }
     /// Consumes the builder and constructs a [`GetDevicePoolCompatibilityInput`](crate::operation::get_device_pool_compatibility::GetDevicePoolCompatibilityInput).
     pub fn build(
         self,
@@ -294,6 +315,7 @@ impl GetDevicePoolCompatibilityInputBuilder {
             test_type: self.test_type,
             test: self.test,
             configuration: self.configuration,
+            project_arn: self.project_arn,
         })
     }
 }
