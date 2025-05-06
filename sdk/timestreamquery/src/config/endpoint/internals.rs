@@ -42,6 +42,30 @@ pub(super) fn resolve_endpoint(
                 if (*use_dual_stack) == (true) {
                     if (true) == (partition_result.supports_fips()) {
                         if (true) == (partition_result.supports_dual_stack()) {
+                            if ("aws") == (partition_result.name()) {
+                                return Ok(::aws_smithy_types::endpoint::Endpoint::builder()
+                                    .url({
+                                        let mut out = String::new();
+                                        out.push_str("https://timestream-query-fips.");
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&region.as_ref() as &str);
+                                        out.push_str(".api.aws");
+                                        out
+                                    })
+                                    .build());
+                            }
+                            if ("aws-us-gov") == (partition_result.name()) {
+                                return Ok(::aws_smithy_types::endpoint::Endpoint::builder()
+                                    .url({
+                                        let mut out = String::new();
+                                        out.push_str("https://timestream-query.");
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&region.as_ref() as &str);
+                                        out.push_str(".api.aws");
+                                        out
+                                    })
+                                    .build());
+                            }
                             return Ok(::aws_smithy_types::endpoint::Endpoint::builder()
                                 .url({
                                     let mut out = String::new();
@@ -63,6 +87,18 @@ pub(super) fn resolve_endpoint(
             }
             if (*use_fips) == (true) {
                 if (partition_result.supports_fips()) == (true) {
+                    if (partition_result.name()) == ("aws-us-gov") {
+                        return Ok(::aws_smithy_types::endpoint::Endpoint::builder()
+                            .url({
+                                let mut out = String::new();
+                                out.push_str("https://query.timestream.");
+                                #[allow(clippy::needless_borrow)]
+                                out.push_str(&region.as_ref() as &str);
+                                out.push_str(".amazonaws.com");
+                                out
+                            })
+                            .build());
+                    }
                     return Ok(::aws_smithy_types::endpoint::Endpoint::builder()
                         .url({
                             let mut out = String::new();
@@ -82,6 +118,30 @@ pub(super) fn resolve_endpoint(
             }
             if (*use_dual_stack) == (true) {
                 if (true) == (partition_result.supports_dual_stack()) {
+                    if ("aws") == (partition_result.name()) {
+                        return Ok(::aws_smithy_types::endpoint::Endpoint::builder()
+                            .url({
+                                let mut out = String::new();
+                                out.push_str("https://timestream-query.");
+                                #[allow(clippy::needless_borrow)]
+                                out.push_str(&region.as_ref() as &str);
+                                out.push_str(".api.aws");
+                                out
+                            })
+                            .build());
+                    }
+                    if ("aws-us-gov") == (partition_result.name()) {
+                        return Ok(::aws_smithy_types::endpoint::Endpoint::builder()
+                            .url({
+                                let mut out = String::new();
+                                out.push_str("https://timestream-query.");
+                                #[allow(clippy::needless_borrow)]
+                                out.push_str(&region.as_ref() as &str);
+                                out.push_str(".api.aws");
+                                out
+                            })
+                            .build());
+                    }
                     return Ok(::aws_smithy_types::endpoint::Endpoint::builder()
                         .url({
                             let mut out = String::new();

@@ -48,6 +48,14 @@ pub fn ser_create_replace_root_volume_task_input_input_input(
     if let Some(var_17) = &input.delete_replaced_root_volume {
         scope_16.boolean(*var_17);
     }
+    #[allow(unused_mut)]
+    let mut scope_18 = writer.prefix("VolumeInitializationRate");
+    if let Some(var_19) = &input.volume_initialization_rate {
+        scope_18.number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_19).into()),
+        );
+    }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

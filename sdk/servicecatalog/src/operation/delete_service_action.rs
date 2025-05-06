@@ -275,6 +275,8 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for DeleteService
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum DeleteServiceActionError {
+    /// <p>One or more parameters provided to the operation are not valid.</p>
+    InvalidParametersException(crate::types::error::InvalidParametersException),
     /// <p>A resource that is currently in use. Ensure that the resource is not in use and retry the operation.</p>
     ResourceInUseException(crate::types::error::ResourceInUseException),
     /// <p>The specified resource was not found.</p>
@@ -312,10 +314,15 @@ impl DeleteServiceActionError {
     ///
     pub fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
+            Self::InvalidParametersException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ResourceInUseException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ResourceNotFoundException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::Unhandled(e) => &e.meta,
         }
+    }
+    /// Returns `true` if the error kind is `DeleteServiceActionError::InvalidParametersException`.
+    pub fn is_invalid_parameters_exception(&self) -> bool {
+        matches!(self, Self::InvalidParametersException(_))
     }
     /// Returns `true` if the error kind is `DeleteServiceActionError::ResourceInUseException`.
     pub fn is_resource_in_use_exception(&self) -> bool {
@@ -329,6 +336,7 @@ impl DeleteServiceActionError {
 impl ::std::error::Error for DeleteServiceActionError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
+            Self::InvalidParametersException(_inner) => ::std::option::Option::Some(_inner),
             Self::ResourceInUseException(_inner) => ::std::option::Option::Some(_inner),
             Self::ResourceNotFoundException(_inner) => ::std::option::Option::Some(_inner),
             Self::Unhandled(_inner) => ::std::option::Option::Some(&*_inner.source),
@@ -338,6 +346,7 @@ impl ::std::error::Error for DeleteServiceActionError {
 impl ::std::fmt::Display for DeleteServiceActionError {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         match self {
+            Self::InvalidParametersException(_inner) => _inner.fmt(f),
             Self::ResourceInUseException(_inner) => _inner.fmt(f),
             Self::ResourceNotFoundException(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => {
@@ -361,6 +370,7 @@ impl ::aws_smithy_types::retry::ProvideErrorKind for DeleteServiceActionError {
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for DeleteServiceActionError {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
+            Self::InvalidParametersException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ResourceInUseException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ResourceNotFoundException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::Unhandled(_inner) => &_inner.meta,

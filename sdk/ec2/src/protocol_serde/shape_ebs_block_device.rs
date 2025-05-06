@@ -58,6 +58,14 @@ pub fn ser_ebs_block_device(
     if let Some(var_18) = &input.encrypted {
         scope_17.boolean(*var_18);
     }
+    #[allow(unused_mut)]
+    let mut scope_19 = writer.prefix("VolumeInitializationRate");
+    if let Some(var_20) = &input.volume_initialization_rate {
+        scope_19.number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_20).into()),
+        );
+    }
     Ok(())
 }
 
@@ -70,7 +78,7 @@ pub fn de_ebs_block_device(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("deleteOnTermination") /* DeleteOnTermination com.amazonaws.ec2#EbsBlockDevice$DeleteOnTermination */ =>  {
-                let var_19 =
+                let var_21 =
                     Some(
                          {
                             <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -81,38 +89,10 @@ pub fn de_ebs_block_device(
                         ?
                     )
                 ;
-                builder = builder.set_delete_on_termination(var_19);
+                builder = builder.set_delete_on_termination(var_21);
             }
             ,
             s if s.matches("iops") /* Iops com.amazonaws.ec2#EbsBlockDevice$Iops */ =>  {
-                let var_20 =
-                    Some(
-                         {
-                            <i32 as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
-                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            )
-                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (integer: `com.amazonaws.ec2#Integer`)"))
-                        }
-                        ?
-                    )
-                ;
-                builder = builder.set_iops(var_20);
-            }
-            ,
-            s if s.matches("snapshotId") /* SnapshotId com.amazonaws.ec2#EbsBlockDevice$SnapshotId */ =>  {
-                let var_21 =
-                    Some(
-                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_snapshot_id(var_21);
-            }
-            ,
-            s if s.matches("volumeSize") /* VolumeSize com.amazonaws.ec2#EbsBlockDevice$VolumeSize */ =>  {
                 let var_22 =
                     Some(
                          {
@@ -124,25 +104,11 @@ pub fn de_ebs_block_device(
                         ?
                     )
                 ;
-                builder = builder.set_volume_size(var_22);
+                builder = builder.set_iops(var_22);
             }
             ,
-            s if s.matches("volumeType") /* VolumeType com.amazonaws.ec2#EbsBlockDevice$VolumeType */ =>  {
+            s if s.matches("snapshotId") /* SnapshotId com.amazonaws.ec2#EbsBlockDevice$SnapshotId */ =>  {
                 let var_23 =
-                    Some(
-                        Result::<crate::types::VolumeType, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            crate::types::VolumeType::from(
-                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            )
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_volume_type(var_23);
-            }
-            ,
-            s if s.matches("kmsKeyId") /* KmsKeyId com.amazonaws.ec2#EbsBlockDevice$KmsKeyId */ =>  {
-                let var_24 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -151,11 +117,11 @@ pub fn de_ebs_block_device(
                         ?
                     )
                 ;
-                builder = builder.set_kms_key_id(var_24);
+                builder = builder.set_snapshot_id(var_23);
             }
             ,
-            s if s.matches("throughput") /* Throughput com.amazonaws.ec2#EbsBlockDevice$Throughput */ =>  {
-                let var_25 =
+            s if s.matches("volumeSize") /* VolumeSize com.amazonaws.ec2#EbsBlockDevice$VolumeSize */ =>  {
+                let var_24 =
                     Some(
                          {
                             <i32 as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -166,10 +132,24 @@ pub fn de_ebs_block_device(
                         ?
                     )
                 ;
-                builder = builder.set_throughput(var_25);
+                builder = builder.set_volume_size(var_24);
             }
             ,
-            s if s.matches("outpostArn") /* OutpostArn com.amazonaws.ec2#EbsBlockDevice$OutpostArn */ =>  {
+            s if s.matches("volumeType") /* VolumeType com.amazonaws.ec2#EbsBlockDevice$VolumeType */ =>  {
+                let var_25 =
+                    Some(
+                        Result::<crate::types::VolumeType, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::VolumeType::from(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_volume_type(var_25);
+            }
+            ,
+            s if s.matches("kmsKeyId") /* KmsKeyId com.amazonaws.ec2#EbsBlockDevice$KmsKeyId */ =>  {
                 let var_26 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -179,11 +159,39 @@ pub fn de_ebs_block_device(
                         ?
                     )
                 ;
-                builder = builder.set_outpost_arn(var_26);
+                builder = builder.set_kms_key_id(var_26);
+            }
+            ,
+            s if s.matches("throughput") /* Throughput com.amazonaws.ec2#EbsBlockDevice$Throughput */ =>  {
+                let var_27 =
+                    Some(
+                         {
+                            <i32 as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (integer: `com.amazonaws.ec2#Integer`)"))
+                        }
+                        ?
+                    )
+                ;
+                builder = builder.set_throughput(var_27);
+            }
+            ,
+            s if s.matches("outpostArn") /* OutpostArn com.amazonaws.ec2#EbsBlockDevice$OutpostArn */ =>  {
+                let var_28 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_outpost_arn(var_28);
             }
             ,
             s if s.matches("encrypted") /* Encrypted com.amazonaws.ec2#EbsBlockDevice$Encrypted */ =>  {
-                let var_27 =
+                let var_29 =
                     Some(
                          {
                             <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -194,7 +202,22 @@ pub fn de_ebs_block_device(
                         ?
                     )
                 ;
-                builder = builder.set_encrypted(var_27);
+                builder = builder.set_encrypted(var_29);
+            }
+            ,
+            s if s.matches("VolumeInitializationRate") /* VolumeInitializationRate com.amazonaws.ec2#EbsBlockDevice$VolumeInitializationRate */ =>  {
+                let var_30 =
+                    Some(
+                         {
+                            <i32 as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (integer: `com.amazonaws.ec2#Integer`)"))
+                        }
+                        ?
+                    )
+                ;
+                builder = builder.set_volume_initialization_rate(var_30);
             }
             ,
             _ => {}

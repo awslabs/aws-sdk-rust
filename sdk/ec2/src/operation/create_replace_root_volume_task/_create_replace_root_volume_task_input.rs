@@ -19,6 +19,19 @@ pub struct CreateReplaceRootVolumeTaskInput {
     pub image_id: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether to automatically delete the original root volume after the root volume replacement task completes. To delete the original root volume, specify <code>true</code>. If you choose to keep the original root volume after the replacement task completes, you must manually delete it when you no longer need it.</p>
     pub delete_replaced_root_volume: ::std::option::Option<bool>,
+    /// <p>Specifies the Amazon EBS Provisioned Rate for Volume Initialization (volume initialization rate), in MiB/s, at which to download the snapshot blocks from Amazon S3 to the replacement root volume. This is also known as <i>volume initialization</i>. Specifying a volume initialization rate ensures that the volume is initialized at a predictable and consistent rate after creation.</p>
+    /// <p>Omit this parameter if:</p>
+    /// <ul>
+    /// <li>
+    /// <p>You want to create the volume using fast snapshot restore. You must specify a snapshot that is enabled for fast snapshot restore. In this case, the volume is fully initialized at creation.</p><note>
+    /// <p>If you specify a snapshot that is enabled for fast snapshot restore and a volume initialization rate, the volume will be initialized at the specified rate instead of fast snapshot restore.</p>
+    /// </note></li>
+    /// <li>
+    /// <p>You want to create a volume that is initialized at the default rate.</p></li>
+    /// </ul>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/initalize-volume.html"> Initialize Amazon EBS volumes</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    /// <p>Valid range: 100 - 300 MiB/s</p>
+    pub volume_initialization_rate: ::std::option::Option<i64>,
 }
 impl CreateReplaceRootVolumeTaskInput {
     /// <p>The ID of the instance for which to replace the root volume.</p>
@@ -53,6 +66,21 @@ impl CreateReplaceRootVolumeTaskInput {
     pub fn delete_replaced_root_volume(&self) -> ::std::option::Option<bool> {
         self.delete_replaced_root_volume
     }
+    /// <p>Specifies the Amazon EBS Provisioned Rate for Volume Initialization (volume initialization rate), in MiB/s, at which to download the snapshot blocks from Amazon S3 to the replacement root volume. This is also known as <i>volume initialization</i>. Specifying a volume initialization rate ensures that the volume is initialized at a predictable and consistent rate after creation.</p>
+    /// <p>Omit this parameter if:</p>
+    /// <ul>
+    /// <li>
+    /// <p>You want to create the volume using fast snapshot restore. You must specify a snapshot that is enabled for fast snapshot restore. In this case, the volume is fully initialized at creation.</p><note>
+    /// <p>If you specify a snapshot that is enabled for fast snapshot restore and a volume initialization rate, the volume will be initialized at the specified rate instead of fast snapshot restore.</p>
+    /// </note></li>
+    /// <li>
+    /// <p>You want to create a volume that is initialized at the default rate.</p></li>
+    /// </ul>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/initalize-volume.html"> Initialize Amazon EBS volumes</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    /// <p>Valid range: 100 - 300 MiB/s</p>
+    pub fn volume_initialization_rate(&self) -> ::std::option::Option<i64> {
+        self.volume_initialization_rate
+    }
 }
 impl CreateReplaceRootVolumeTaskInput {
     /// Creates a new builder-style object to manufacture [`CreateReplaceRootVolumeTaskInput`](crate::operation::create_replace_root_volume_task::CreateReplaceRootVolumeTaskInput).
@@ -72,6 +100,7 @@ pub struct CreateReplaceRootVolumeTaskInputBuilder {
     pub(crate) tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
     pub(crate) image_id: ::std::option::Option<::std::string::String>,
     pub(crate) delete_replaced_root_volume: ::std::option::Option<bool>,
+    pub(crate) volume_initialization_rate: ::std::option::Option<i64>,
 }
 impl CreateReplaceRootVolumeTaskInputBuilder {
     /// <p>The ID of the instance for which to replace the root volume.</p>
@@ -185,6 +214,53 @@ impl CreateReplaceRootVolumeTaskInputBuilder {
     pub fn get_delete_replaced_root_volume(&self) -> &::std::option::Option<bool> {
         &self.delete_replaced_root_volume
     }
+    /// <p>Specifies the Amazon EBS Provisioned Rate for Volume Initialization (volume initialization rate), in MiB/s, at which to download the snapshot blocks from Amazon S3 to the replacement root volume. This is also known as <i>volume initialization</i>. Specifying a volume initialization rate ensures that the volume is initialized at a predictable and consistent rate after creation.</p>
+    /// <p>Omit this parameter if:</p>
+    /// <ul>
+    /// <li>
+    /// <p>You want to create the volume using fast snapshot restore. You must specify a snapshot that is enabled for fast snapshot restore. In this case, the volume is fully initialized at creation.</p><note>
+    /// <p>If you specify a snapshot that is enabled for fast snapshot restore and a volume initialization rate, the volume will be initialized at the specified rate instead of fast snapshot restore.</p>
+    /// </note></li>
+    /// <li>
+    /// <p>You want to create a volume that is initialized at the default rate.</p></li>
+    /// </ul>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/initalize-volume.html"> Initialize Amazon EBS volumes</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    /// <p>Valid range: 100 - 300 MiB/s</p>
+    pub fn volume_initialization_rate(mut self, input: i64) -> Self {
+        self.volume_initialization_rate = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies the Amazon EBS Provisioned Rate for Volume Initialization (volume initialization rate), in MiB/s, at which to download the snapshot blocks from Amazon S3 to the replacement root volume. This is also known as <i>volume initialization</i>. Specifying a volume initialization rate ensures that the volume is initialized at a predictable and consistent rate after creation.</p>
+    /// <p>Omit this parameter if:</p>
+    /// <ul>
+    /// <li>
+    /// <p>You want to create the volume using fast snapshot restore. You must specify a snapshot that is enabled for fast snapshot restore. In this case, the volume is fully initialized at creation.</p><note>
+    /// <p>If you specify a snapshot that is enabled for fast snapshot restore and a volume initialization rate, the volume will be initialized at the specified rate instead of fast snapshot restore.</p>
+    /// </note></li>
+    /// <li>
+    /// <p>You want to create a volume that is initialized at the default rate.</p></li>
+    /// </ul>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/initalize-volume.html"> Initialize Amazon EBS volumes</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    /// <p>Valid range: 100 - 300 MiB/s</p>
+    pub fn set_volume_initialization_rate(mut self, input: ::std::option::Option<i64>) -> Self {
+        self.volume_initialization_rate = input;
+        self
+    }
+    /// <p>Specifies the Amazon EBS Provisioned Rate for Volume Initialization (volume initialization rate), in MiB/s, at which to download the snapshot blocks from Amazon S3 to the replacement root volume. This is also known as <i>volume initialization</i>. Specifying a volume initialization rate ensures that the volume is initialized at a predictable and consistent rate after creation.</p>
+    /// <p>Omit this parameter if:</p>
+    /// <ul>
+    /// <li>
+    /// <p>You want to create the volume using fast snapshot restore. You must specify a snapshot that is enabled for fast snapshot restore. In this case, the volume is fully initialized at creation.</p><note>
+    /// <p>If you specify a snapshot that is enabled for fast snapshot restore and a volume initialization rate, the volume will be initialized at the specified rate instead of fast snapshot restore.</p>
+    /// </note></li>
+    /// <li>
+    /// <p>You want to create a volume that is initialized at the default rate.</p></li>
+    /// </ul>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/initalize-volume.html"> Initialize Amazon EBS volumes</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    /// <p>Valid range: 100 - 300 MiB/s</p>
+    pub fn get_volume_initialization_rate(&self) -> &::std::option::Option<i64> {
+        &self.volume_initialization_rate
+    }
     /// Consumes the builder and constructs a [`CreateReplaceRootVolumeTaskInput`](crate::operation::create_replace_root_volume_task::CreateReplaceRootVolumeTaskInput).
     pub fn build(
         self,
@@ -200,6 +276,7 @@ impl CreateReplaceRootVolumeTaskInputBuilder {
             tag_specifications: self.tag_specifications,
             image_id: self.image_id,
             delete_replaced_root_volume: self.delete_replaced_root_volume,
+            volume_initialization_rate: self.volume_initialization_rate,
         })
     }
 }

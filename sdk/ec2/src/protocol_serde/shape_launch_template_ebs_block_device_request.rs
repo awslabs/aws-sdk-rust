@@ -53,5 +53,13 @@ pub fn ser_launch_template_ebs_block_device_request(
             ::aws_smithy_types::Number::NegInt((*var_16).into()),
         );
     }
+    #[allow(unused_mut)]
+    let mut scope_17 = writer.prefix("VolumeInitializationRate");
+    if let Some(var_18) = &input.volume_initialization_rate {
+        scope_17.number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_18).into()),
+        );
+    }
     Ok(())
 }

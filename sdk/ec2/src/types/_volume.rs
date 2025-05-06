@@ -28,6 +28,8 @@ pub struct Volume {
     pub sse_type: ::std::option::Option<crate::types::SseType>,
     /// <p>The service provider that manages the volume.</p>
     pub operator: ::std::option::Option<crate::types::OperatorResponse>,
+    /// <p>The Amazon EBS Provisioned Rate for Volume Initialization (volume initialization rate) specified for the volume during creation, in MiB/s. If no volume initialization rate was specified, the value is <code>null</code>.</p>
+    pub volume_initialization_rate: ::std::option::Option<i32>,
     /// <p>The ID of the volume.</p>
     pub volume_id: ::std::option::Option<::std::string::String>,
     /// <p>The size of the volume, in GiBs.</p>
@@ -95,6 +97,10 @@ impl Volume {
     pub fn operator(&self) -> ::std::option::Option<&crate::types::OperatorResponse> {
         self.operator.as_ref()
     }
+    /// <p>The Amazon EBS Provisioned Rate for Volume Initialization (volume initialization rate) specified for the volume during creation, in MiB/s. If no volume initialization rate was specified, the value is <code>null</code>.</p>
+    pub fn volume_initialization_rate(&self) -> ::std::option::Option<i32> {
+        self.volume_initialization_rate
+    }
     /// <p>The ID of the volume.</p>
     pub fn volume_id(&self) -> ::std::option::Option<&str> {
         self.volume_id.as_deref()
@@ -157,6 +163,7 @@ pub struct VolumeBuilder {
     pub(crate) throughput: ::std::option::Option<i32>,
     pub(crate) sse_type: ::std::option::Option<crate::types::SseType>,
     pub(crate) operator: ::std::option::Option<crate::types::OperatorResponse>,
+    pub(crate) volume_initialization_rate: ::std::option::Option<i32>,
     pub(crate) volume_id: ::std::option::Option<::std::string::String>,
     pub(crate) size: ::std::option::Option<i32>,
     pub(crate) snapshot_id: ::std::option::Option<::std::string::String>,
@@ -318,6 +325,20 @@ impl VolumeBuilder {
     pub fn get_operator(&self) -> &::std::option::Option<crate::types::OperatorResponse> {
         &self.operator
     }
+    /// <p>The Amazon EBS Provisioned Rate for Volume Initialization (volume initialization rate) specified for the volume during creation, in MiB/s. If no volume initialization rate was specified, the value is <code>null</code>.</p>
+    pub fn volume_initialization_rate(mut self, input: i32) -> Self {
+        self.volume_initialization_rate = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The Amazon EBS Provisioned Rate for Volume Initialization (volume initialization rate) specified for the volume during creation, in MiB/s. If no volume initialization rate was specified, the value is <code>null</code>.</p>
+    pub fn set_volume_initialization_rate(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.volume_initialization_rate = input;
+        self
+    }
+    /// <p>The Amazon EBS Provisioned Rate for Volume Initialization (volume initialization rate) specified for the volume during creation, in MiB/s. If no volume initialization rate was specified, the value is <code>null</code>.</p>
+    pub fn get_volume_initialization_rate(&self) -> &::std::option::Option<i32> {
+        &self.volume_initialization_rate
+    }
     /// <p>The ID of the volume.</p>
     pub fn volume_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.volume_id = ::std::option::Option::Some(input.into());
@@ -471,6 +492,7 @@ impl VolumeBuilder {
             throughput: self.throughput,
             sse_type: self.sse_type,
             operator: self.operator,
+            volume_initialization_rate: self.volume_initialization_rate,
             volume_id: self.volume_id,
             size: self.size,
             snapshot_id: self.snapshot_id,

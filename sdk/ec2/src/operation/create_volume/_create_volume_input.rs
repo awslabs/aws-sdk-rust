@@ -83,6 +83,19 @@ pub struct CreateVolumeInput {
     pub throughput: ::std::option::Option<i32>,
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/ec2/latest/devguide/ec2-api-idempotency.html">Ensure Idempotency</a>.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
+    /// <p>Specifies the Amazon EBS Provisioned Rate for Volume Initialization (volume initialization rate), in MiB/s, at which to download the snapshot blocks from Amazon S3 to the volume. This is also known as <i>volume initialization</i>. Specifying a volume initialization rate ensures that the volume is initialized at a predictable and consistent rate after creation.</p>
+    /// <p>This parameter is supported only for volumes created from snapshots. Omit this parameter if:</p>
+    /// <ul>
+    /// <li>
+    /// <p>You want to create the volume using fast snapshot restore. You must specify a snapshot that is enabled for fast snapshot restore. In this case, the volume is fully initialized at creation.</p><note>
+    /// <p>If you specify a snapshot that is enabled for fast snapshot restore and a volume initialization rate, the volume will be initialized at the specified rate instead of fast snapshot restore.</p>
+    /// </note></li>
+    /// <li>
+    /// <p>You want to create a volume that is initialized at the default rate.</p></li>
+    /// </ul>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/initalize-volume.html"> Initialize Amazon EBS volumes</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    /// <p>Valid range: 100 - 300 MiB/s</p>
+    pub volume_initialization_rate: ::std::option::Option<i32>,
     /// <p>Reserved for internal use.</p>
     pub operator: ::std::option::Option<crate::types::OperatorRequest>,
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -195,6 +208,21 @@ impl CreateVolumeInput {
     pub fn client_token(&self) -> ::std::option::Option<&str> {
         self.client_token.as_deref()
     }
+    /// <p>Specifies the Amazon EBS Provisioned Rate for Volume Initialization (volume initialization rate), in MiB/s, at which to download the snapshot blocks from Amazon S3 to the volume. This is also known as <i>volume initialization</i>. Specifying a volume initialization rate ensures that the volume is initialized at a predictable and consistent rate after creation.</p>
+    /// <p>This parameter is supported only for volumes created from snapshots. Omit this parameter if:</p>
+    /// <ul>
+    /// <li>
+    /// <p>You want to create the volume using fast snapshot restore. You must specify a snapshot that is enabled for fast snapshot restore. In this case, the volume is fully initialized at creation.</p><note>
+    /// <p>If you specify a snapshot that is enabled for fast snapshot restore and a volume initialization rate, the volume will be initialized at the specified rate instead of fast snapshot restore.</p>
+    /// </note></li>
+    /// <li>
+    /// <p>You want to create a volume that is initialized at the default rate.</p></li>
+    /// </ul>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/initalize-volume.html"> Initialize Amazon EBS volumes</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    /// <p>Valid range: 100 - 300 MiB/s</p>
+    pub fn volume_initialization_rate(&self) -> ::std::option::Option<i32> {
+        self.volume_initialization_rate
+    }
     /// <p>Reserved for internal use.</p>
     pub fn operator(&self) -> ::std::option::Option<&crate::types::OperatorRequest> {
         self.operator.as_ref()
@@ -227,6 +255,7 @@ pub struct CreateVolumeInputBuilder {
     pub(crate) multi_attach_enabled: ::std::option::Option<bool>,
     pub(crate) throughput: ::std::option::Option<i32>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
+    pub(crate) volume_initialization_rate: ::std::option::Option<i32>,
     pub(crate) operator: ::std::option::Option<crate::types::OperatorRequest>,
     pub(crate) dry_run: ::std::option::Option<bool>,
 }
@@ -574,6 +603,53 @@ impl CreateVolumeInputBuilder {
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }
+    /// <p>Specifies the Amazon EBS Provisioned Rate for Volume Initialization (volume initialization rate), in MiB/s, at which to download the snapshot blocks from Amazon S3 to the volume. This is also known as <i>volume initialization</i>. Specifying a volume initialization rate ensures that the volume is initialized at a predictable and consistent rate after creation.</p>
+    /// <p>This parameter is supported only for volumes created from snapshots. Omit this parameter if:</p>
+    /// <ul>
+    /// <li>
+    /// <p>You want to create the volume using fast snapshot restore. You must specify a snapshot that is enabled for fast snapshot restore. In this case, the volume is fully initialized at creation.</p><note>
+    /// <p>If you specify a snapshot that is enabled for fast snapshot restore and a volume initialization rate, the volume will be initialized at the specified rate instead of fast snapshot restore.</p>
+    /// </note></li>
+    /// <li>
+    /// <p>You want to create a volume that is initialized at the default rate.</p></li>
+    /// </ul>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/initalize-volume.html"> Initialize Amazon EBS volumes</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    /// <p>Valid range: 100 - 300 MiB/s</p>
+    pub fn volume_initialization_rate(mut self, input: i32) -> Self {
+        self.volume_initialization_rate = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies the Amazon EBS Provisioned Rate for Volume Initialization (volume initialization rate), in MiB/s, at which to download the snapshot blocks from Amazon S3 to the volume. This is also known as <i>volume initialization</i>. Specifying a volume initialization rate ensures that the volume is initialized at a predictable and consistent rate after creation.</p>
+    /// <p>This parameter is supported only for volumes created from snapshots. Omit this parameter if:</p>
+    /// <ul>
+    /// <li>
+    /// <p>You want to create the volume using fast snapshot restore. You must specify a snapshot that is enabled for fast snapshot restore. In this case, the volume is fully initialized at creation.</p><note>
+    /// <p>If you specify a snapshot that is enabled for fast snapshot restore and a volume initialization rate, the volume will be initialized at the specified rate instead of fast snapshot restore.</p>
+    /// </note></li>
+    /// <li>
+    /// <p>You want to create a volume that is initialized at the default rate.</p></li>
+    /// </ul>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/initalize-volume.html"> Initialize Amazon EBS volumes</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    /// <p>Valid range: 100 - 300 MiB/s</p>
+    pub fn set_volume_initialization_rate(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.volume_initialization_rate = input;
+        self
+    }
+    /// <p>Specifies the Amazon EBS Provisioned Rate for Volume Initialization (volume initialization rate), in MiB/s, at which to download the snapshot blocks from Amazon S3 to the volume. This is also known as <i>volume initialization</i>. Specifying a volume initialization rate ensures that the volume is initialized at a predictable and consistent rate after creation.</p>
+    /// <p>This parameter is supported only for volumes created from snapshots. Omit this parameter if:</p>
+    /// <ul>
+    /// <li>
+    /// <p>You want to create the volume using fast snapshot restore. You must specify a snapshot that is enabled for fast snapshot restore. In this case, the volume is fully initialized at creation.</p><note>
+    /// <p>If you specify a snapshot that is enabled for fast snapshot restore and a volume initialization rate, the volume will be initialized at the specified rate instead of fast snapshot restore.</p>
+    /// </note></li>
+    /// <li>
+    /// <p>You want to create a volume that is initialized at the default rate.</p></li>
+    /// </ul>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/initalize-volume.html"> Initialize Amazon EBS volumes</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    /// <p>Valid range: 100 - 300 MiB/s</p>
+    pub fn get_volume_initialization_rate(&self) -> &::std::option::Option<i32> {
+        &self.volume_initialization_rate
+    }
     /// <p>Reserved for internal use.</p>
     pub fn operator(mut self, input: crate::types::OperatorRequest) -> Self {
         self.operator = ::std::option::Option::Some(input);
@@ -619,6 +695,7 @@ impl CreateVolumeInputBuilder {
             multi_attach_enabled: self.multi_attach_enabled,
             throughput: self.throughput,
             client_token: self.client_token,
+            volume_initialization_rate: self.volume_initialization_rate,
             operator: self.operator,
             dry_run: self.dry_run,
         })

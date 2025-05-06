@@ -64,6 +64,20 @@ pub struct EbsBlockDevice {
     /// <p>If you are creating a block device mapping from an <b>existing encrypted volume</b>, you can include this parameter, and specify either <code>true</code> or <code>false</code>. However, if you specify <code>false</code>, the parameter is ignored and the block device mapping is always encrypted. In this case, we recommend that you omit the parameter.</p></li>
     /// </ul>
     pub encrypted: ::std::option::Option<bool>,
+    /// <p>Specifies the Amazon EBS Provisioned Rate for Volume Initialization (volume initialization rate), in MiB/s, at which to download the snapshot blocks from Amazon S3 to the volume. This is also known as <i>volume initialization</i>. Specifying a volume initialization rate ensures that the volume is initialized at a predictable and consistent rate after creation.</p>
+    /// <p>This parameter is supported only for volumes created from snapshots. Omit this parameter if:</p>
+    /// <ul>
+    /// <li>
+    /// <p>You want to create the volume using fast snapshot restore. You must specify a snapshot that is enabled for fast snapshot restore. In this case, the volume is fully initialized at creation.</p><note>
+    /// <p>If you specify a snapshot that is enabled for fast snapshot restore and a volume initialization rate, the volume will be initialized at the specified rate instead of fast snapshot restore.</p>
+    /// </note></li>
+    /// <li>
+    /// <p>You want to create a volume that is initialized at the default rate.</p></li>
+    /// </ul>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/initalize-volume.html"> Initialize Amazon EBS volumes</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    /// <p>This parameter is not supported when using <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateImage.html">CreateImage</a>.</p>
+    /// <p>Valid range: 100 - 300 MiB/s</p>
+    pub volume_initialization_rate: ::std::option::Option<i32>,
 }
 impl EbsBlockDevice {
     /// <p>Indicates whether the EBS volume is deleted on instance termination. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/terminating-instances.html#preserving-volumes-on-termination">Preserving Amazon EBS volumes on instance termination</a> in the <i>Amazon EC2 User Guide</i>.</p>
@@ -144,6 +158,22 @@ impl EbsBlockDevice {
     pub fn encrypted(&self) -> ::std::option::Option<bool> {
         self.encrypted
     }
+    /// <p>Specifies the Amazon EBS Provisioned Rate for Volume Initialization (volume initialization rate), in MiB/s, at which to download the snapshot blocks from Amazon S3 to the volume. This is also known as <i>volume initialization</i>. Specifying a volume initialization rate ensures that the volume is initialized at a predictable and consistent rate after creation.</p>
+    /// <p>This parameter is supported only for volumes created from snapshots. Omit this parameter if:</p>
+    /// <ul>
+    /// <li>
+    /// <p>You want to create the volume using fast snapshot restore. You must specify a snapshot that is enabled for fast snapshot restore. In this case, the volume is fully initialized at creation.</p><note>
+    /// <p>If you specify a snapshot that is enabled for fast snapshot restore and a volume initialization rate, the volume will be initialized at the specified rate instead of fast snapshot restore.</p>
+    /// </note></li>
+    /// <li>
+    /// <p>You want to create a volume that is initialized at the default rate.</p></li>
+    /// </ul>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/initalize-volume.html"> Initialize Amazon EBS volumes</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    /// <p>This parameter is not supported when using <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateImage.html">CreateImage</a>.</p>
+    /// <p>Valid range: 100 - 300 MiB/s</p>
+    pub fn volume_initialization_rate(&self) -> ::std::option::Option<i32> {
+        self.volume_initialization_rate
+    }
 }
 impl EbsBlockDevice {
     /// Creates a new builder-style object to manufacture [`EbsBlockDevice`](crate::types::EbsBlockDevice).
@@ -165,6 +195,7 @@ pub struct EbsBlockDeviceBuilder {
     pub(crate) throughput: ::std::option::Option<i32>,
     pub(crate) outpost_arn: ::std::option::Option<::std::string::String>,
     pub(crate) encrypted: ::std::option::Option<bool>,
+    pub(crate) volume_initialization_rate: ::std::option::Option<i32>,
 }
 impl EbsBlockDeviceBuilder {
     /// <p>Indicates whether the EBS volume is deleted on instance termination. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/terminating-instances.html#preserving-volumes-on-termination">Preserving Amazon EBS volumes on instance termination</a> in the <i>Amazon EC2 User Guide</i>.</p>
@@ -419,6 +450,56 @@ impl EbsBlockDeviceBuilder {
     pub fn get_encrypted(&self) -> &::std::option::Option<bool> {
         &self.encrypted
     }
+    /// <p>Specifies the Amazon EBS Provisioned Rate for Volume Initialization (volume initialization rate), in MiB/s, at which to download the snapshot blocks from Amazon S3 to the volume. This is also known as <i>volume initialization</i>. Specifying a volume initialization rate ensures that the volume is initialized at a predictable and consistent rate after creation.</p>
+    /// <p>This parameter is supported only for volumes created from snapshots. Omit this parameter if:</p>
+    /// <ul>
+    /// <li>
+    /// <p>You want to create the volume using fast snapshot restore. You must specify a snapshot that is enabled for fast snapshot restore. In this case, the volume is fully initialized at creation.</p><note>
+    /// <p>If you specify a snapshot that is enabled for fast snapshot restore and a volume initialization rate, the volume will be initialized at the specified rate instead of fast snapshot restore.</p>
+    /// </note></li>
+    /// <li>
+    /// <p>You want to create a volume that is initialized at the default rate.</p></li>
+    /// </ul>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/initalize-volume.html"> Initialize Amazon EBS volumes</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    /// <p>This parameter is not supported when using <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateImage.html">CreateImage</a>.</p>
+    /// <p>Valid range: 100 - 300 MiB/s</p>
+    pub fn volume_initialization_rate(mut self, input: i32) -> Self {
+        self.volume_initialization_rate = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies the Amazon EBS Provisioned Rate for Volume Initialization (volume initialization rate), in MiB/s, at which to download the snapshot blocks from Amazon S3 to the volume. This is also known as <i>volume initialization</i>. Specifying a volume initialization rate ensures that the volume is initialized at a predictable and consistent rate after creation.</p>
+    /// <p>This parameter is supported only for volumes created from snapshots. Omit this parameter if:</p>
+    /// <ul>
+    /// <li>
+    /// <p>You want to create the volume using fast snapshot restore. You must specify a snapshot that is enabled for fast snapshot restore. In this case, the volume is fully initialized at creation.</p><note>
+    /// <p>If you specify a snapshot that is enabled for fast snapshot restore and a volume initialization rate, the volume will be initialized at the specified rate instead of fast snapshot restore.</p>
+    /// </note></li>
+    /// <li>
+    /// <p>You want to create a volume that is initialized at the default rate.</p></li>
+    /// </ul>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/initalize-volume.html"> Initialize Amazon EBS volumes</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    /// <p>This parameter is not supported when using <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateImage.html">CreateImage</a>.</p>
+    /// <p>Valid range: 100 - 300 MiB/s</p>
+    pub fn set_volume_initialization_rate(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.volume_initialization_rate = input;
+        self
+    }
+    /// <p>Specifies the Amazon EBS Provisioned Rate for Volume Initialization (volume initialization rate), in MiB/s, at which to download the snapshot blocks from Amazon S3 to the volume. This is also known as <i>volume initialization</i>. Specifying a volume initialization rate ensures that the volume is initialized at a predictable and consistent rate after creation.</p>
+    /// <p>This parameter is supported only for volumes created from snapshots. Omit this parameter if:</p>
+    /// <ul>
+    /// <li>
+    /// <p>You want to create the volume using fast snapshot restore. You must specify a snapshot that is enabled for fast snapshot restore. In this case, the volume is fully initialized at creation.</p><note>
+    /// <p>If you specify a snapshot that is enabled for fast snapshot restore and a volume initialization rate, the volume will be initialized at the specified rate instead of fast snapshot restore.</p>
+    /// </note></li>
+    /// <li>
+    /// <p>You want to create a volume that is initialized at the default rate.</p></li>
+    /// </ul>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/initalize-volume.html"> Initialize Amazon EBS volumes</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    /// <p>This parameter is not supported when using <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateImage.html">CreateImage</a>.</p>
+    /// <p>Valid range: 100 - 300 MiB/s</p>
+    pub fn get_volume_initialization_rate(&self) -> &::std::option::Option<i32> {
+        &self.volume_initialization_rate
+    }
     /// Consumes the builder and constructs a [`EbsBlockDevice`](crate::types::EbsBlockDevice).
     pub fn build(self) -> crate::types::EbsBlockDevice {
         crate::types::EbsBlockDevice {
@@ -431,6 +512,7 @@ impl EbsBlockDeviceBuilder {
             throughput: self.throughput,
             outpost_arn: self.outpost_arn,
             encrypted: self.encrypted,
+            volume_initialization_rate: self.volume_initialization_rate,
         }
     }
 }

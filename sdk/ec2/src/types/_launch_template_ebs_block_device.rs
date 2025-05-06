@@ -20,6 +20,8 @@ pub struct LaunchTemplateEbsBlockDevice {
     pub volume_type: ::std::option::Option<crate::types::VolumeType>,
     /// <p>The throughput that the volume supports, in MiB/s.</p>
     pub throughput: ::std::option::Option<i32>,
+    /// <p>The Amazon EBS Provisioned Rate for Volume Initialization (volume initialization rate) specified for the volume, in MiB/s. If no volume initialization rate was specified, the value is <code>null</code>.</p>
+    pub volume_initialization_rate: ::std::option::Option<i32>,
 }
 impl LaunchTemplateEbsBlockDevice {
     /// <p>Indicates whether the EBS volume is encrypted.</p>
@@ -54,6 +56,10 @@ impl LaunchTemplateEbsBlockDevice {
     pub fn throughput(&self) -> ::std::option::Option<i32> {
         self.throughput
     }
+    /// <p>The Amazon EBS Provisioned Rate for Volume Initialization (volume initialization rate) specified for the volume, in MiB/s. If no volume initialization rate was specified, the value is <code>null</code>.</p>
+    pub fn volume_initialization_rate(&self) -> ::std::option::Option<i32> {
+        self.volume_initialization_rate
+    }
 }
 impl LaunchTemplateEbsBlockDevice {
     /// Creates a new builder-style object to manufacture [`LaunchTemplateEbsBlockDevice`](crate::types::LaunchTemplateEbsBlockDevice).
@@ -74,6 +80,7 @@ pub struct LaunchTemplateEbsBlockDeviceBuilder {
     pub(crate) volume_size: ::std::option::Option<i32>,
     pub(crate) volume_type: ::std::option::Option<crate::types::VolumeType>,
     pub(crate) throughput: ::std::option::Option<i32>,
+    pub(crate) volume_initialization_rate: ::std::option::Option<i32>,
 }
 impl LaunchTemplateEbsBlockDeviceBuilder {
     /// <p>Indicates whether the EBS volume is encrypted.</p>
@@ -188,6 +195,20 @@ impl LaunchTemplateEbsBlockDeviceBuilder {
     pub fn get_throughput(&self) -> &::std::option::Option<i32> {
         &self.throughput
     }
+    /// <p>The Amazon EBS Provisioned Rate for Volume Initialization (volume initialization rate) specified for the volume, in MiB/s. If no volume initialization rate was specified, the value is <code>null</code>.</p>
+    pub fn volume_initialization_rate(mut self, input: i32) -> Self {
+        self.volume_initialization_rate = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The Amazon EBS Provisioned Rate for Volume Initialization (volume initialization rate) specified for the volume, in MiB/s. If no volume initialization rate was specified, the value is <code>null</code>.</p>
+    pub fn set_volume_initialization_rate(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.volume_initialization_rate = input;
+        self
+    }
+    /// <p>The Amazon EBS Provisioned Rate for Volume Initialization (volume initialization rate) specified for the volume, in MiB/s. If no volume initialization rate was specified, the value is <code>null</code>.</p>
+    pub fn get_volume_initialization_rate(&self) -> &::std::option::Option<i32> {
+        &self.volume_initialization_rate
+    }
     /// Consumes the builder and constructs a [`LaunchTemplateEbsBlockDevice`](crate::types::LaunchTemplateEbsBlockDevice).
     pub fn build(self) -> crate::types::LaunchTemplateEbsBlockDevice {
         crate::types::LaunchTemplateEbsBlockDevice {
@@ -199,6 +220,7 @@ impl LaunchTemplateEbsBlockDeviceBuilder {
             volume_size: self.volume_size,
             volume_type: self.volume_type,
             throughput: self.throughput,
+            volume_initialization_rate: self.volume_initialization_rate,
         }
     }
 }

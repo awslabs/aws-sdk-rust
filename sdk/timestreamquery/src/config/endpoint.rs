@@ -6,69 +6,209 @@ pub use ::aws_smithy_types::endpoint::Endpoint;
 #[cfg(test)]
 mod test {
 
-    /// For region us-east-1 with FIPS enabled and DualStack enabled
+    /// For region ap-northeast-1 with FIPS disabled and DualStack disabled
     #[test]
     fn test_1() {
         let params = crate::config::endpoint::Params::builder()
-            .region("us-east-1".to_string())
-            .use_fips(true)
-            .use_dual_stack(true)
-            .build()
-            .expect("invalid params");
-        let resolver = crate::config::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint.expect("Expected valid endpoint: https://query.timestream-fips.us-east-1.api.aws");
-        assert_eq!(
-            endpoint,
-            ::aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://query.timestream-fips.us-east-1.api.aws")
-                .build()
-        );
-    }
-
-    /// For region us-east-1 with FIPS enabled and DualStack disabled
-    #[test]
-    fn test_2() {
-        let params = crate::config::endpoint::Params::builder()
-            .region("us-east-1".to_string())
-            .use_fips(true)
+            .region("ap-northeast-1".to_string())
+            .use_fips(false)
             .use_dual_stack(false)
             .build()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint.expect("Expected valid endpoint: https://query.timestream-fips.us-east-1.amazonaws.com");
+        let endpoint = endpoint.expect("Expected valid endpoint: https://query.timestream.ap-northeast-1.amazonaws.com");
         assert_eq!(
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://query.timestream-fips.us-east-1.amazonaws.com")
+                .url("https://query.timestream.ap-northeast-1.amazonaws.com")
                 .build()
         );
     }
 
-    /// For region us-east-1 with FIPS disabled and DualStack enabled
+    /// For region ap-northeast-1 with FIPS disabled and DualStack enabled
     #[test]
-    fn test_3() {
+    fn test_2() {
         let params = crate::config::endpoint::Params::builder()
-            .region("us-east-1".to_string())
+            .region("ap-northeast-1".to_string())
             .use_fips(false)
             .use_dual_stack(true)
             .build()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint.expect("Expected valid endpoint: https://query.timestream.us-east-1.api.aws");
+        let endpoint = endpoint.expect("Expected valid endpoint: https://timestream-query.ap-northeast-1.api.aws");
         assert_eq!(
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://query.timestream.us-east-1.api.aws")
+                .url("https://timestream-query.ap-northeast-1.api.aws")
+                .build()
+        );
+    }
+
+    /// For region ap-south-1 with FIPS disabled and DualStack disabled
+    #[test]
+    fn test_3() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("ap-south-1".to_string())
+            .use_fips(false)
+            .use_dual_stack(false)
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://query.timestream.ap-south-1.amazonaws.com");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://query.timestream.ap-south-1.amazonaws.com")
+                .build()
+        );
+    }
+
+    /// For region ap-south-1 with FIPS disabled and DualStack enabled
+    #[test]
+    fn test_4() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("ap-south-1".to_string())
+            .use_fips(false)
+            .use_dual_stack(true)
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://timestream-query.ap-south-1.api.aws");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://timestream-query.ap-south-1.api.aws")
+                .build()
+        );
+    }
+
+    /// For region ap-southeast-2 with FIPS disabled and DualStack disabled
+    #[test]
+    fn test_5() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("ap-southeast-2".to_string())
+            .use_fips(false)
+            .use_dual_stack(false)
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://query.timestream.ap-southeast-2.amazonaws.com");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://query.timestream.ap-southeast-2.amazonaws.com")
+                .build()
+        );
+    }
+
+    /// For region ap-southeast-2 with FIPS disabled and DualStack enabled
+    #[test]
+    fn test_6() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("ap-southeast-2".to_string())
+            .use_fips(false)
+            .use_dual_stack(true)
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://timestream-query.ap-southeast-2.api.aws");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://timestream-query.ap-southeast-2.api.aws")
+                .build()
+        );
+    }
+
+    /// For region eu-central-1 with FIPS disabled and DualStack disabled
+    #[test]
+    fn test_7() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("eu-central-1".to_string())
+            .use_fips(false)
+            .use_dual_stack(false)
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://query.timestream.eu-central-1.amazonaws.com");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://query.timestream.eu-central-1.amazonaws.com")
+                .build()
+        );
+    }
+
+    /// For region eu-central-1 with FIPS disabled and DualStack enabled
+    #[test]
+    fn test_8() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("eu-central-1".to_string())
+            .use_fips(false)
+            .use_dual_stack(true)
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://timestream-query.eu-central-1.api.aws");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://timestream-query.eu-central-1.api.aws")
+                .build()
+        );
+    }
+
+    /// For region eu-west-1 with FIPS disabled and DualStack disabled
+    #[test]
+    fn test_9() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("eu-west-1".to_string())
+            .use_fips(false)
+            .use_dual_stack(false)
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://query.timestream.eu-west-1.amazonaws.com");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://query.timestream.eu-west-1.amazonaws.com")
+                .build()
+        );
+    }
+
+    /// For region eu-west-1 with FIPS disabled and DualStack enabled
+    #[test]
+    fn test_10() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("eu-west-1".to_string())
+            .use_fips(false)
+            .use_dual_stack(true)
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://timestream-query.eu-west-1.api.aws");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://timestream-query.eu-west-1.api.aws")
                 .build()
         );
     }
 
     /// For region us-east-1 with FIPS disabled and DualStack disabled
     #[test]
-    fn test_4() {
+    fn test_11() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-east-1".to_string())
             .use_fips(false)
@@ -86,9 +226,189 @@ mod test {
         );
     }
 
+    /// For region us-east-1 with FIPS disabled and DualStack enabled
+    #[test]
+    fn test_12() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-east-1".to_string())
+            .use_fips(false)
+            .use_dual_stack(true)
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://timestream-query.us-east-1.api.aws");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://timestream-query.us-east-1.api.aws")
+                .build()
+        );
+    }
+
+    /// For region us-east-1 with FIPS enabled and DualStack enabled
+    #[test]
+    fn test_13() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-east-1".to_string())
+            .use_fips(true)
+            .use_dual_stack(true)
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://timestream-query-fips.us-east-1.api.aws");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://timestream-query-fips.us-east-1.api.aws")
+                .build()
+        );
+    }
+
+    /// For region us-east-2 with FIPS disabled and DualStack disabled
+    #[test]
+    fn test_14() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-east-2".to_string())
+            .use_fips(false)
+            .use_dual_stack(false)
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://query.timestream.us-east-2.amazonaws.com");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://query.timestream.us-east-2.amazonaws.com")
+                .build()
+        );
+    }
+
+    /// For region us-east-2 with FIPS disabled and DualStack enabled
+    #[test]
+    fn test_15() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-east-2".to_string())
+            .use_fips(false)
+            .use_dual_stack(true)
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://timestream-query.us-east-2.api.aws");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://timestream-query.us-east-2.api.aws")
+                .build()
+        );
+    }
+
+    /// For region us-east-2 with FIPS enabled and DualStack enabled
+    #[test]
+    fn test_16() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-east-2".to_string())
+            .use_fips(true)
+            .use_dual_stack(true)
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://timestream-query-fips.us-east-2.api.aws");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://timestream-query-fips.us-east-2.api.aws")
+                .build()
+        );
+    }
+
+    /// For region us-west-2 with FIPS disabled and DualStack disabled
+    #[test]
+    fn test_17() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-west-2".to_string())
+            .use_fips(false)
+            .use_dual_stack(false)
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://query.timestream.us-west-2.amazonaws.com");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://query.timestream.us-west-2.amazonaws.com")
+                .build()
+        );
+    }
+
+    /// For region us-west-2 with FIPS disabled and DualStack enabled
+    #[test]
+    fn test_18() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-west-2".to_string())
+            .use_fips(false)
+            .use_dual_stack(true)
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://timestream-query.us-west-2.api.aws");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://timestream-query.us-west-2.api.aws")
+                .build()
+        );
+    }
+
+    /// For region us-west-2 with FIPS enabled and DualStack enabled
+    #[test]
+    fn test_19() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-west-2".to_string())
+            .use_fips(true)
+            .use_dual_stack(true)
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://timestream-query-fips.us-west-2.api.aws");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://timestream-query-fips.us-west-2.api.aws")
+                .build()
+        );
+    }
+
+    /// For region us-east-1 with FIPS enabled and DualStack disabled
+    #[test]
+    fn test_20() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-east-1".to_string())
+            .use_fips(true)
+            .use_dual_stack(false)
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://query.timestream-fips.us-east-1.amazonaws.com");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://query.timestream-fips.us-east-1.amazonaws.com")
+                .build()
+        );
+    }
+
     /// For region cn-north-1 with FIPS enabled and DualStack enabled
     #[test]
-    fn test_5() {
+    fn test_21() {
         let params = crate::config::endpoint::Params::builder()
             .region("cn-north-1".to_string())
             .use_fips(true)
@@ -108,7 +428,7 @@ mod test {
 
     /// For region cn-north-1 with FIPS enabled and DualStack disabled
     #[test]
-    fn test_6() {
+    fn test_22() {
         let params = crate::config::endpoint::Params::builder()
             .region("cn-north-1".to_string())
             .use_fips(true)
@@ -128,7 +448,7 @@ mod test {
 
     /// For region cn-north-1 with FIPS disabled and DualStack enabled
     #[test]
-    fn test_7() {
+    fn test_23() {
         let params = crate::config::endpoint::Params::builder()
             .region("cn-north-1".to_string())
             .use_fips(false)
@@ -148,7 +468,7 @@ mod test {
 
     /// For region cn-north-1 with FIPS disabled and DualStack disabled
     #[test]
-    fn test_8() {
+    fn test_24() {
         let params = crate::config::endpoint::Params::builder()
             .region("cn-north-1".to_string())
             .use_fips(false)
@@ -166,9 +486,89 @@ mod test {
         );
     }
 
+    /// For region us-gov-west-1 with FIPS disabled and DualStack disabled
+    #[test]
+    fn test_25() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-gov-west-1".to_string())
+            .use_fips(false)
+            .use_dual_stack(false)
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://query.timestream.us-gov-west-1.amazonaws.com");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://query.timestream.us-gov-west-1.amazonaws.com")
+                .build()
+        );
+    }
+
+    /// For region us-gov-west-1 with FIPS enabled and DualStack disabled
+    #[test]
+    fn test_26() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-gov-west-1".to_string())
+            .use_fips(true)
+            .use_dual_stack(false)
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://query.timestream.us-gov-west-1.amazonaws.com");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://query.timestream.us-gov-west-1.amazonaws.com")
+                .build()
+        );
+    }
+
+    /// For region us-gov-west-1 with FIPS disabled and DualStack enabled
+    #[test]
+    fn test_27() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-gov-west-1".to_string())
+            .use_fips(false)
+            .use_dual_stack(true)
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://timestream-query.us-gov-west-1.api.aws");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://timestream-query.us-gov-west-1.api.aws")
+                .build()
+        );
+    }
+
+    /// For region us-gov-west-1 with FIPS enabled and DualStack enabled
+    #[test]
+    fn test_28() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-gov-west-1".to_string())
+            .use_fips(true)
+            .use_dual_stack(true)
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://timestream-query.us-gov-west-1.api.aws");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://timestream-query.us-gov-west-1.api.aws")
+                .build()
+        );
+    }
+
     /// For region us-gov-east-1 with FIPS enabled and DualStack enabled
     #[test]
-    fn test_9() {
+    fn test_29() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-gov-east-1".to_string())
             .use_fips(true)
@@ -177,18 +577,18 @@ mod test {
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint.expect("Expected valid endpoint: https://query.timestream-fips.us-gov-east-1.api.aws");
+        let endpoint = endpoint.expect("Expected valid endpoint: https://timestream-query.us-gov-east-1.api.aws");
         assert_eq!(
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://query.timestream-fips.us-gov-east-1.api.aws")
+                .url("https://timestream-query.us-gov-east-1.api.aws")
                 .build()
         );
     }
 
     /// For region us-gov-east-1 with FIPS enabled and DualStack disabled
     #[test]
-    fn test_10() {
+    fn test_30() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-gov-east-1".to_string())
             .use_fips(true)
@@ -197,18 +597,18 @@ mod test {
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint.expect("Expected valid endpoint: https://query.timestream-fips.us-gov-east-1.amazonaws.com");
+        let endpoint = endpoint.expect("Expected valid endpoint: https://query.timestream.us-gov-east-1.amazonaws.com");
         assert_eq!(
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://query.timestream-fips.us-gov-east-1.amazonaws.com")
+                .url("https://query.timestream.us-gov-east-1.amazonaws.com")
                 .build()
         );
     }
 
     /// For region us-gov-east-1 with FIPS disabled and DualStack enabled
     #[test]
-    fn test_11() {
+    fn test_31() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-gov-east-1".to_string())
             .use_fips(false)
@@ -217,18 +617,18 @@ mod test {
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint.expect("Expected valid endpoint: https://query.timestream.us-gov-east-1.api.aws");
+        let endpoint = endpoint.expect("Expected valid endpoint: https://timestream-query.us-gov-east-1.api.aws");
         assert_eq!(
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://query.timestream.us-gov-east-1.api.aws")
+                .url("https://timestream-query.us-gov-east-1.api.aws")
                 .build()
         );
     }
 
     /// For region us-gov-east-1 with FIPS disabled and DualStack disabled
     #[test]
-    fn test_12() {
+    fn test_32() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-gov-east-1".to_string())
             .use_fips(false)
@@ -248,7 +648,7 @@ mod test {
 
     /// For region us-iso-east-1 with FIPS enabled and DualStack enabled
     #[test]
-    fn test_13() {
+    fn test_33() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-iso-east-1".to_string())
             .use_fips(true)
@@ -266,7 +666,7 @@ mod test {
 
     /// For region us-iso-east-1 with FIPS enabled and DualStack disabled
     #[test]
-    fn test_14() {
+    fn test_34() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-iso-east-1".to_string())
             .use_fips(true)
@@ -286,7 +686,7 @@ mod test {
 
     /// For region us-iso-east-1 with FIPS disabled and DualStack enabled
     #[test]
-    fn test_15() {
+    fn test_35() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-iso-east-1".to_string())
             .use_fips(false)
@@ -301,7 +701,7 @@ mod test {
 
     /// For region us-iso-east-1 with FIPS disabled and DualStack disabled
     #[test]
-    fn test_16() {
+    fn test_36() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-iso-east-1".to_string())
             .use_fips(false)
@@ -321,7 +721,7 @@ mod test {
 
     /// For region us-isob-east-1 with FIPS enabled and DualStack enabled
     #[test]
-    fn test_17() {
+    fn test_37() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-isob-east-1".to_string())
             .use_fips(true)
@@ -339,7 +739,7 @@ mod test {
 
     /// For region us-isob-east-1 with FIPS enabled and DualStack disabled
     #[test]
-    fn test_18() {
+    fn test_38() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-isob-east-1".to_string())
             .use_fips(true)
@@ -359,7 +759,7 @@ mod test {
 
     /// For region us-isob-east-1 with FIPS disabled and DualStack enabled
     #[test]
-    fn test_19() {
+    fn test_39() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-isob-east-1".to_string())
             .use_fips(false)
@@ -374,7 +774,7 @@ mod test {
 
     /// For region us-isob-east-1 with FIPS disabled and DualStack disabled
     #[test]
-    fn test_20() {
+    fn test_40() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-isob-east-1".to_string())
             .use_fips(false)
@@ -394,7 +794,7 @@ mod test {
 
     /// For custom endpoint with region set and fips disabled and dualstack disabled
     #[test]
-    fn test_21() {
+    fn test_41() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-east-1".to_string())
             .use_fips(false)
@@ -413,7 +813,7 @@ mod test {
 
     /// For custom endpoint with region not set and fips disabled and dualstack disabled
     #[test]
-    fn test_22() {
+    fn test_42() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(false)
@@ -431,7 +831,7 @@ mod test {
 
     /// For custom endpoint with fips enabled and dualstack disabled
     #[test]
-    fn test_23() {
+    fn test_43() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-east-1".to_string())
             .use_fips(true)
@@ -447,7 +847,7 @@ mod test {
 
     /// For custom endpoint with fips disabled and dualstack enabled
     #[test]
-    fn test_24() {
+    fn test_44() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-east-1".to_string())
             .use_fips(false)
@@ -466,7 +866,7 @@ mod test {
 
     /// Missing region
     #[test]
-    fn test_25() {
+    fn test_45() {
         let params = crate::config::endpoint::Params::builder().build().expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);

@@ -20,6 +20,21 @@ pub fn de_delete_service_action_http_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
+        "InvalidParametersException" => crate::operation::delete_service_action::DeleteServiceActionError::InvalidParametersException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::InvalidParametersExceptionBuilder::default();
+                output = crate::protocol_serde::shape_invalid_parameters_exception::de_invalid_parameters_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::delete_service_action::DeleteServiceActionError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "ResourceInUseException" => crate::operation::delete_service_action::DeleteServiceActionError::ResourceInUseException({
             #[allow(unused_mut)]
             let mut tmp = {

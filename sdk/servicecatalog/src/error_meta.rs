@@ -812,6 +812,9 @@ where
 impl From<crate::operation::delete_service_action::DeleteServiceActionError> for Error {
     fn from(err: crate::operation::delete_service_action::DeleteServiceActionError) -> Self {
         match err {
+            crate::operation::delete_service_action::DeleteServiceActionError::InvalidParametersException(inner) => {
+                Error::InvalidParametersException(inner)
+            }
             crate::operation::delete_service_action::DeleteServiceActionError::ResourceInUseException(inner) => Error::ResourceInUseException(inner),
             crate::operation::delete_service_action::DeleteServiceActionError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
@@ -1501,6 +1504,7 @@ impl From<crate::operation::disassociate_service_action_from_provisioning_artifa
         err: crate::operation::disassociate_service_action_from_provisioning_artifact::DisassociateServiceActionFromProvisioningArtifactError,
     ) -> Self {
         match err {
+            crate::operation::disassociate_service_action_from_provisioning_artifact::DisassociateServiceActionFromProvisioningArtifactError::InvalidParametersException(inner) => Error::InvalidParametersException(inner),
             crate::operation::disassociate_service_action_from_provisioning_artifact::DisassociateServiceActionFromProvisioningArtifactError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::disassociate_service_action_from_provisioning_artifact::DisassociateServiceActionFromProvisioningArtifactError::Unhandled(inner) => Error::Unhandled(inner),
         }
