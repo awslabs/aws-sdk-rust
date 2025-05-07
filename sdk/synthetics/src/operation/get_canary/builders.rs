@@ -116,4 +116,18 @@ impl GetCanaryFluentBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_name()
     }
+    /// <p>The DryRunId associated with an existing canary’s dry run. You can use this DryRunId to retrieve information about the dry run.</p>
+    pub fn dry_run_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.dry_run_id(input.into());
+        self
+    }
+    /// <p>The DryRunId associated with an existing canary’s dry run. You can use this DryRunId to retrieve information about the dry run.</p>
+    pub fn set_dry_run_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_dry_run_id(input);
+        self
+    }
+    /// <p>The DryRunId associated with an existing canary’s dry run. You can use this DryRunId to retrieve information about the dry run.</p>
+    pub fn get_dry_run_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_dry_run_id()
+    }
 }

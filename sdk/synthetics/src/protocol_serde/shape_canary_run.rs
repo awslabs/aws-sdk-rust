@@ -41,6 +41,11 @@ where
                                     .transpose()?,
                             );
                         }
+                        "DryRunConfig" => {
+                            builder = builder.set_dry_run_config(
+                                crate::protocol_serde::shape_canary_dry_run_config_output::de_canary_dry_run_config_output(tokens)?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

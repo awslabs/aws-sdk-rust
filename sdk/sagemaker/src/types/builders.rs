@@ -273,6 +273,8 @@ pub use crate::types::_default_space_settings::DefaultSpaceSettingsBuilder;
 
 pub use crate::types::_domain_settings_for_update::DomainSettingsForUpdateBuilder;
 
+pub use crate::types::_unified_studio_settings::UnifiedStudioSettingsBuilder;
+
 pub use crate::types::_amazon_q_settings::AmazonQSettingsBuilder;
 
 pub use crate::types::_docker_settings::DockerSettingsBuilder;

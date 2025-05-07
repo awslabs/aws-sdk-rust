@@ -233,50 +233,56 @@ impl CreateCanaryFluentBuilder {
         self.inner.get_schedule()
     }
     /// <p>A structure that contains the configuration for individual canary runs, such as timeout value and environment variables.</p><important>
-    /// <p>The environment variables keys and values are not encrypted. Do not store sensitive information in this field.</p>
+    /// <p>Environment variable keys and values are encrypted at rest using Amazon Web Services owned KMS keys. However, the environment variables are not encrypted on the client side. Do not store sensitive information in them.</p>
     /// </important>
     pub fn run_config(mut self, input: crate::types::CanaryRunConfigInput) -> Self {
         self.inner = self.inner.run_config(input);
         self
     }
     /// <p>A structure that contains the configuration for individual canary runs, such as timeout value and environment variables.</p><important>
-    /// <p>The environment variables keys and values are not encrypted. Do not store sensitive information in this field.</p>
+    /// <p>Environment variable keys and values are encrypted at rest using Amazon Web Services owned KMS keys. However, the environment variables are not encrypted on the client side. Do not store sensitive information in them.</p>
     /// </important>
     pub fn set_run_config(mut self, input: ::std::option::Option<crate::types::CanaryRunConfigInput>) -> Self {
         self.inner = self.inner.set_run_config(input);
         self
     }
     /// <p>A structure that contains the configuration for individual canary runs, such as timeout value and environment variables.</p><important>
-    /// <p>The environment variables keys and values are not encrypted. Do not store sensitive information in this field.</p>
+    /// <p>Environment variable keys and values are encrypted at rest using Amazon Web Services owned KMS keys. However, the environment variables are not encrypted on the client side. Do not store sensitive information in them.</p>
     /// </important>
     pub fn get_run_config(&self) -> &::std::option::Option<crate::types::CanaryRunConfigInput> {
         self.inner.get_run_config()
     }
     /// <p>The number of days to retain data about successful runs of this canary. If you omit this field, the default of 31 days is used. The valid range is 1 to 455 days.</p>
+    /// <p>This setting affects the range of information returned by <a href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_GetCanaryRuns.html">GetCanaryRuns</a>, as well as the range of information displayed in the Synthetics console.</p>
     pub fn success_retention_period_in_days(mut self, input: i32) -> Self {
         self.inner = self.inner.success_retention_period_in_days(input);
         self
     }
     /// <p>The number of days to retain data about successful runs of this canary. If you omit this field, the default of 31 days is used. The valid range is 1 to 455 days.</p>
+    /// <p>This setting affects the range of information returned by <a href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_GetCanaryRuns.html">GetCanaryRuns</a>, as well as the range of information displayed in the Synthetics console.</p>
     pub fn set_success_retention_period_in_days(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_success_retention_period_in_days(input);
         self
     }
     /// <p>The number of days to retain data about successful runs of this canary. If you omit this field, the default of 31 days is used. The valid range is 1 to 455 days.</p>
+    /// <p>This setting affects the range of information returned by <a href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_GetCanaryRuns.html">GetCanaryRuns</a>, as well as the range of information displayed in the Synthetics console.</p>
     pub fn get_success_retention_period_in_days(&self) -> &::std::option::Option<i32> {
         self.inner.get_success_retention_period_in_days()
     }
     /// <p>The number of days to retain data about failed runs of this canary. If you omit this field, the default of 31 days is used. The valid range is 1 to 455 days.</p>
+    /// <p>This setting affects the range of information returned by <a href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_GetCanaryRuns.html">GetCanaryRuns</a>, as well as the range of information displayed in the Synthetics console.</p>
     pub fn failure_retention_period_in_days(mut self, input: i32) -> Self {
         self.inner = self.inner.failure_retention_period_in_days(input);
         self
     }
     /// <p>The number of days to retain data about failed runs of this canary. If you omit this field, the default of 31 days is used. The valid range is 1 to 455 days.</p>
+    /// <p>This setting affects the range of information returned by <a href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_GetCanaryRuns.html">GetCanaryRuns</a>, as well as the range of information displayed in the Synthetics console.</p>
     pub fn set_failure_retention_period_in_days(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_failure_retention_period_in_days(input);
         self
     }
     /// <p>The number of days to retain data about failed runs of this canary. If you omit this field, the default of 31 days is used. The valid range is 1 to 455 days.</p>
+    /// <p>This setting affects the range of information returned by <a href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_GetCanaryRuns.html">GetCanaryRuns</a>, as well as the range of information displayed in the Synthetics console.</p>
     pub fn get_failure_retention_period_in_days(&self) -> &::std::option::Option<i32> {
         self.inner.get_failure_retention_period_in_days()
     }

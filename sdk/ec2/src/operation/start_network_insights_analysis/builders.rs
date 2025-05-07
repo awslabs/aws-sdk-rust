@@ -160,6 +160,25 @@ impl StartNetworkInsightsAnalysisFluentBuilder {
     pub fn get_filter_in_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_filter_in_arns()
     }
+    ///
+    /// Appends an item to `FilterOutArns`.
+    ///
+    /// To override the contents of this collection use [`set_filter_out_arns`](Self::set_filter_out_arns).
+    ///
+    /// <p>The Amazon Resource Names (ARN) of the resources that the path will ignore.</p>
+    pub fn filter_out_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.filter_out_arns(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Names (ARN) of the resources that the path will ignore.</p>
+    pub fn set_filter_out_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.inner = self.inner.set_filter_out_arns(input);
+        self
+    }
+    /// <p>The Amazon Resource Names (ARN) of the resources that the path will ignore.</p>
+    pub fn get_filter_out_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_filter_out_arns()
+    }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.inner = self.inner.dry_run(input);

@@ -66,8 +66,18 @@ pub fn de_network_insights_analysis(
                 builder = builder.set_filter_in_arns(var_5);
             }
             ,
-            s if s.matches("startDate") /* StartDate com.amazonaws.ec2#NetworkInsightsAnalysis$StartDate */ =>  {
+            s if s.matches("filterOutArnSet") /* FilterOutArns com.amazonaws.ec2#NetworkInsightsAnalysis$FilterOutArns */ =>  {
                 let var_6 =
+                    Some(
+                        crate::protocol_serde::shape_arn_list::de_arn_list(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_filter_out_arns(var_6);
+            }
+            ,
+            s if s.matches("startDate") /* StartDate com.amazonaws.ec2#NetworkInsightsAnalysis$StartDate */ =>  {
+                let var_7 =
                     Some(
                         ::aws_smithy_types::DateTime::from_str(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -77,11 +87,11 @@ pub fn de_network_insights_analysis(
                         ?
                     )
                 ;
-                builder = builder.set_start_date(var_6);
+                builder = builder.set_start_date(var_7);
             }
             ,
             s if s.matches("status") /* Status com.amazonaws.ec2#NetworkInsightsAnalysis$Status */ =>  {
-                let var_7 =
+                let var_8 =
                     Some(
                         Result::<crate::types::AnalysisStatus, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             crate::types::AnalysisStatus::from(
@@ -91,23 +101,10 @@ pub fn de_network_insights_analysis(
                         ?
                     )
                 ;
-                builder = builder.set_status(var_7);
+                builder = builder.set_status(var_8);
             }
             ,
             s if s.matches("statusMessage") /* StatusMessage com.amazonaws.ec2#NetworkInsightsAnalysis$StatusMessage */ =>  {
-                let var_8 =
-                    Some(
-                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_status_message(var_8);
-            }
-            ,
-            s if s.matches("warningMessage") /* WarningMessage com.amazonaws.ec2#NetworkInsightsAnalysis$WarningMessage */ =>  {
                 let var_9 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -117,11 +114,24 @@ pub fn de_network_insights_analysis(
                         ?
                     )
                 ;
-                builder = builder.set_warning_message(var_9);
+                builder = builder.set_status_message(var_9);
+            }
+            ,
+            s if s.matches("warningMessage") /* WarningMessage com.amazonaws.ec2#NetworkInsightsAnalysis$WarningMessage */ =>  {
+                let var_10 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_warning_message(var_10);
             }
             ,
             s if s.matches("networkPathFound") /* NetworkPathFound com.amazonaws.ec2#NetworkInsightsAnalysis$NetworkPathFound */ =>  {
-                let var_10 =
+                let var_11 =
                     Some(
                          {
                             <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -132,67 +142,67 @@ pub fn de_network_insights_analysis(
                         ?
                     )
                 ;
-                builder = builder.set_network_path_found(var_10);
+                builder = builder.set_network_path_found(var_11);
             }
             ,
             s if s.matches("forwardPathComponentSet") /* ForwardPathComponents com.amazonaws.ec2#NetworkInsightsAnalysis$ForwardPathComponents */ =>  {
-                let var_11 =
-                    Some(
-                        crate::protocol_serde::shape_path_component_list::de_path_component_list(&mut tag)
-                        ?
-                    )
-                ;
-                builder = builder.set_forward_path_components(var_11);
-            }
-            ,
-            s if s.matches("returnPathComponentSet") /* ReturnPathComponents com.amazonaws.ec2#NetworkInsightsAnalysis$ReturnPathComponents */ =>  {
                 let var_12 =
                     Some(
                         crate::protocol_serde::shape_path_component_list::de_path_component_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_return_path_components(var_12);
+                builder = builder.set_forward_path_components(var_12);
+            }
+            ,
+            s if s.matches("returnPathComponentSet") /* ReturnPathComponents com.amazonaws.ec2#NetworkInsightsAnalysis$ReturnPathComponents */ =>  {
+                let var_13 =
+                    Some(
+                        crate::protocol_serde::shape_path_component_list::de_path_component_list(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_return_path_components(var_13);
             }
             ,
             s if s.matches("explanationSet") /* Explanations com.amazonaws.ec2#NetworkInsightsAnalysis$Explanations */ =>  {
-                let var_13 =
+                let var_14 =
                     Some(
                         crate::protocol_serde::shape_explanation_list::de_explanation_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_explanations(var_13);
+                builder = builder.set_explanations(var_14);
             }
             ,
             s if s.matches("alternatePathHintSet") /* AlternatePathHints com.amazonaws.ec2#NetworkInsightsAnalysis$AlternatePathHints */ =>  {
-                let var_14 =
+                let var_15 =
                     Some(
                         crate::protocol_serde::shape_alternate_path_hint_list::de_alternate_path_hint_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_alternate_path_hints(var_14);
+                builder = builder.set_alternate_path_hints(var_15);
             }
             ,
             s if s.matches("suggestedAccountSet") /* SuggestedAccounts com.amazonaws.ec2#NetworkInsightsAnalysis$SuggestedAccounts */ =>  {
-                let var_15 =
+                let var_16 =
                     Some(
                         crate::protocol_serde::shape_value_string_list::de_value_string_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_suggested_accounts(var_15);
+                builder = builder.set_suggested_accounts(var_16);
             }
             ,
             s if s.matches("tagSet") /* Tags com.amazonaws.ec2#NetworkInsightsAnalysis$Tags */ =>  {
-                let var_16 =
+                let var_17 =
                     Some(
                         crate::protocol_serde::shape_tag_list::de_tag_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_tags(var_16);
+                builder = builder.set_tags(var_17);
             }
             ,
             _ => {}

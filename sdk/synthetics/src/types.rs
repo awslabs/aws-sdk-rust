@@ -19,11 +19,15 @@ pub use crate::types::_canary_schedule_input::CanaryScheduleInput;
 
 pub use crate::types::_canary_code_input::CanaryCodeInput;
 
+pub use crate::types::_dry_run_config_output::DryRunConfigOutput;
+
 pub use crate::types::_group_summary::GroupSummary;
 
 pub use crate::types::_group::Group;
 
 pub use crate::types::_canary_run::CanaryRun;
+
+pub use crate::types::_canary_dry_run_config_output::CanaryDryRunConfigOutput;
 
 pub use crate::types::_canary_run_timeline::CanaryRunTimeline;
 
@@ -32,6 +36,8 @@ pub use crate::types::_canary_run_status::CanaryRunStatus;
 pub use crate::types::_canary_run_state_reason_code::CanaryRunStateReasonCode;
 
 pub use crate::types::_canary_run_state::CanaryRunState;
+
+pub use crate::types::_run_type::RunType;
 
 pub use crate::types::_canary::Canary;
 
@@ -73,6 +79,8 @@ mod _canary_code_input;
 
 mod _canary_code_output;
 
+mod _canary_dry_run_config_output;
+
 mod _canary_last_run;
 
 mod _canary_run;
@@ -101,6 +109,8 @@ mod _canary_status;
 
 mod _canary_timeline;
 
+mod _dry_run_config_output;
+
 mod _encryption_mode;
 
 mod _group;
@@ -110,6 +120,8 @@ mod _group_summary;
 mod _provisioned_resource_cleanup_setting;
 
 mod _resource_to_tag;
+
+mod _run_type;
 
 mod _runtime_version;
 

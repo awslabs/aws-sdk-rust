@@ -36,5 +36,11 @@ pub fn ser_domain_settings_for_update(
         crate::protocol_serde::shape_amazon_q_settings::ser_amazon_q_settings(&mut object_10, var_9)?;
         object_10.finish();
     }
+    if let Some(var_11) = &input.unified_studio_settings {
+        #[allow(unused_mut)]
+        let mut object_12 = object.key("UnifiedStudioSettings").start_object();
+        crate::protocol_serde::shape_unified_studio_settings::ser_unified_studio_settings(&mut object_12, var_11)?;
+        object_12.finish();
+    }
     Ok(())
 }

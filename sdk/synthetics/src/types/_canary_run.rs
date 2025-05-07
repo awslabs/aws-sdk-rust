@@ -14,6 +14,8 @@ pub struct CanaryRun {
     pub timeline: ::std::option::Option<crate::types::CanaryRunTimeline>,
     /// <p>The location where the canary stored artifacts from the run. Artifacts include the log file, screenshots, and HAR files.</p>
     pub artifact_s3_location: ::std::option::Option<::std::string::String>,
+    /// <p>Returns the dry run configurations for a canary.</p>
+    pub dry_run_config: ::std::option::Option<crate::types::CanaryDryRunConfigOutput>,
 }
 impl CanaryRun {
     /// <p>A unique ID that identifies this canary run.</p>
@@ -36,6 +38,10 @@ impl CanaryRun {
     pub fn artifact_s3_location(&self) -> ::std::option::Option<&str> {
         self.artifact_s3_location.as_deref()
     }
+    /// <p>Returns the dry run configurations for a canary.</p>
+    pub fn dry_run_config(&self) -> ::std::option::Option<&crate::types::CanaryDryRunConfigOutput> {
+        self.dry_run_config.as_ref()
+    }
 }
 impl CanaryRun {
     /// Creates a new builder-style object to manufacture [`CanaryRun`](crate::types::CanaryRun).
@@ -53,6 +59,7 @@ pub struct CanaryRunBuilder {
     pub(crate) status: ::std::option::Option<crate::types::CanaryRunStatus>,
     pub(crate) timeline: ::std::option::Option<crate::types::CanaryRunTimeline>,
     pub(crate) artifact_s3_location: ::std::option::Option<::std::string::String>,
+    pub(crate) dry_run_config: ::std::option::Option<crate::types::CanaryDryRunConfigOutput>,
 }
 impl CanaryRunBuilder {
     /// <p>A unique ID that identifies this canary run.</p>
@@ -125,6 +132,20 @@ impl CanaryRunBuilder {
     pub fn get_artifact_s3_location(&self) -> &::std::option::Option<::std::string::String> {
         &self.artifact_s3_location
     }
+    /// <p>Returns the dry run configurations for a canary.</p>
+    pub fn dry_run_config(mut self, input: crate::types::CanaryDryRunConfigOutput) -> Self {
+        self.dry_run_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Returns the dry run configurations for a canary.</p>
+    pub fn set_dry_run_config(mut self, input: ::std::option::Option<crate::types::CanaryDryRunConfigOutput>) -> Self {
+        self.dry_run_config = input;
+        self
+    }
+    /// <p>Returns the dry run configurations for a canary.</p>
+    pub fn get_dry_run_config(&self) -> &::std::option::Option<crate::types::CanaryDryRunConfigOutput> {
+        &self.dry_run_config
+    }
     /// Consumes the builder and constructs a [`CanaryRun`](crate::types::CanaryRun).
     pub fn build(self) -> crate::types::CanaryRun {
         crate::types::CanaryRun {
@@ -133,6 +154,7 @@ impl CanaryRunBuilder {
             status: self.status,
             timeline: self.timeline,
             artifact_s3_location: self.artifact_s3_location,
+            dry_run_config: self.dry_run_config,
         }
     }
 }

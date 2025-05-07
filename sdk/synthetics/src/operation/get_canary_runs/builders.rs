@@ -156,4 +156,59 @@ impl GetCanaryRunsFluentBuilder {
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_results()
     }
+    /// <p>The DryRunId associated with an existing canary’s dry run. You can use this DryRunId to retrieve information about the dry run.</p>
+    pub fn dry_run_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.dry_run_id(input.into());
+        self
+    }
+    /// <p>The DryRunId associated with an existing canary’s dry run. You can use this DryRunId to retrieve information about the dry run.</p>
+    pub fn set_dry_run_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_dry_run_id(input);
+        self
+    }
+    /// <p>The DryRunId associated with an existing canary’s dry run. You can use this DryRunId to retrieve information about the dry run.</p>
+    pub fn get_dry_run_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_dry_run_id()
+    }
+    /// <ul>
+    /// <li>
+    /// <p>When you provide <code>RunType=CANARY_RUN</code> and <code>dryRunId</code>, you will get an exception</p></li>
+    /// <li>
+    /// <p>When a value is not provided for <code>RunType</code>, the default value is <code>CANARY_RUN</code></p></li>
+    /// <li>
+    /// <p>When <code>CANARY_RUN</code> is provided, all canary runs excluding dry runs are returned</p></li>
+    /// <li>
+    /// <p>When <code>DRY_RUN</code> is provided, all dry runs excluding canary runs are returned</p></li>
+    /// </ul>
+    pub fn run_type(mut self, input: crate::types::RunType) -> Self {
+        self.inner = self.inner.run_type(input);
+        self
+    }
+    /// <ul>
+    /// <li>
+    /// <p>When you provide <code>RunType=CANARY_RUN</code> and <code>dryRunId</code>, you will get an exception</p></li>
+    /// <li>
+    /// <p>When a value is not provided for <code>RunType</code>, the default value is <code>CANARY_RUN</code></p></li>
+    /// <li>
+    /// <p>When <code>CANARY_RUN</code> is provided, all canary runs excluding dry runs are returned</p></li>
+    /// <li>
+    /// <p>When <code>DRY_RUN</code> is provided, all dry runs excluding canary runs are returned</p></li>
+    /// </ul>
+    pub fn set_run_type(mut self, input: ::std::option::Option<crate::types::RunType>) -> Self {
+        self.inner = self.inner.set_run_type(input);
+        self
+    }
+    /// <ul>
+    /// <li>
+    /// <p>When you provide <code>RunType=CANARY_RUN</code> and <code>dryRunId</code>, you will get an exception</p></li>
+    /// <li>
+    /// <p>When a value is not provided for <code>RunType</code>, the default value is <code>CANARY_RUN</code></p></li>
+    /// <li>
+    /// <p>When <code>CANARY_RUN</code> is provided, all canary runs excluding dry runs are returned</p></li>
+    /// <li>
+    /// <p>When <code>DRY_RUN</code> is provided, all dry runs excluding canary runs are returned</p></li>
+    /// </ul>
+    pub fn get_run_type(&self) -> &::std::option::Option<crate::types::RunType> {
+        self.inner.get_run_type()
+    }
 }

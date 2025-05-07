@@ -31,12 +31,14 @@ pub struct UpdateCanaryInput {
     /// <p>A structure that contains information about how often the canary is to run, and when these runs are to stop.</p>
     pub schedule: ::std::option::Option<crate::types::CanaryScheduleInput>,
     /// <p>A structure that contains the timeout value that is used for each individual run of the canary.</p><important>
-    /// <p>The environment variables keys and values are not encrypted. Do not store sensitive information in this field.</p>
+    /// <p>Environment variable keys and values are encrypted at rest using Amazon Web Services owned KMS keys. However, the environment variables are not encrypted on the client side. Do not store sensitive information in them.</p>
     /// </important>
     pub run_config: ::std::option::Option<crate::types::CanaryRunConfigInput>,
     /// <p>The number of days to retain data about successful runs of this canary.</p>
+    /// <p>This setting affects the range of information returned by <a href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_GetCanaryRuns.html">GetCanaryRuns</a>, as well as the range of information displayed in the Synthetics console.</p>
     pub success_retention_period_in_days: ::std::option::Option<i32>,
     /// <p>The number of days to retain data about failed runs of this canary.</p>
+    /// <p>This setting affects the range of information returned by <a href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_GetCanaryRuns.html">GetCanaryRuns</a>, as well as the range of information displayed in the Synthetics console.</p>
     pub failure_retention_period_in_days: ::std::option::Option<i32>,
     /// <p>If this canary is to test an endpoint in a VPC, this structure contains information about the subnet and security groups of the VPC endpoint. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_VPC.html"> Running a Canary in a VPC</a>.</p>
     pub vpc_config: ::std::option::Option<crate::types::VpcConfigInput>,
@@ -50,6 +52,10 @@ pub struct UpdateCanaryInput {
     /// <p>Specifies whether to also delete the Lambda functions and layers used by this canary when the canary is deleted.</p>
     /// <p>If the value of this parameter is <code>OFF</code>, then the value of the <code>DeleteLambda</code> parameter of the <a href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_DeleteCanary.html">DeleteCanary</a> operation determines whether the Lambda functions and layers will be deleted.</p>
     pub provisioned_resource_cleanup: ::std::option::Option<crate::types::ProvisionedResourceCleanupSetting>,
+    /// <p>Update the existing canary using the updated configurations from the DryRun associated with the DryRunId.</p><note>
+    /// <p>When you use the <code>dryRunId</code> field when updating a canary, the only other field you can provide is the <code>Schedule</code>. Adding any other field will thrown an exception.</p>
+    /// </note>
+    pub dry_run_id: ::std::option::Option<::std::string::String>,
 }
 impl UpdateCanaryInput {
     /// <p>The name of the canary that you want to update. To find the names of your canaries, use <a href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_DescribeCanaries.html">DescribeCanaries</a>.</p>
@@ -90,16 +96,18 @@ impl UpdateCanaryInput {
         self.schedule.as_ref()
     }
     /// <p>A structure that contains the timeout value that is used for each individual run of the canary.</p><important>
-    /// <p>The environment variables keys and values are not encrypted. Do not store sensitive information in this field.</p>
+    /// <p>Environment variable keys and values are encrypted at rest using Amazon Web Services owned KMS keys. However, the environment variables are not encrypted on the client side. Do not store sensitive information in them.</p>
     /// </important>
     pub fn run_config(&self) -> ::std::option::Option<&crate::types::CanaryRunConfigInput> {
         self.run_config.as_ref()
     }
     /// <p>The number of days to retain data about successful runs of this canary.</p>
+    /// <p>This setting affects the range of information returned by <a href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_GetCanaryRuns.html">GetCanaryRuns</a>, as well as the range of information displayed in the Synthetics console.</p>
     pub fn success_retention_period_in_days(&self) -> ::std::option::Option<i32> {
         self.success_retention_period_in_days
     }
     /// <p>The number of days to retain data about failed runs of this canary.</p>
+    /// <p>This setting affects the range of information returned by <a href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_GetCanaryRuns.html">GetCanaryRuns</a>, as well as the range of information displayed in the Synthetics console.</p>
     pub fn failure_retention_period_in_days(&self) -> ::std::option::Option<i32> {
         self.failure_retention_period_in_days
     }
@@ -124,6 +132,12 @@ impl UpdateCanaryInput {
     /// <p>If the value of this parameter is <code>OFF</code>, then the value of the <code>DeleteLambda</code> parameter of the <a href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_DeleteCanary.html">DeleteCanary</a> operation determines whether the Lambda functions and layers will be deleted.</p>
     pub fn provisioned_resource_cleanup(&self) -> ::std::option::Option<&crate::types::ProvisionedResourceCleanupSetting> {
         self.provisioned_resource_cleanup.as_ref()
+    }
+    /// <p>Update the existing canary using the updated configurations from the DryRun associated with the DryRunId.</p><note>
+    /// <p>When you use the <code>dryRunId</code> field when updating a canary, the only other field you can provide is the <code>Schedule</code>. Adding any other field will thrown an exception.</p>
+    /// </note>
+    pub fn dry_run_id(&self) -> ::std::option::Option<&str> {
+        self.dry_run_id.as_deref()
     }
 }
 impl UpdateCanaryInput {
@@ -150,6 +164,7 @@ pub struct UpdateCanaryInputBuilder {
     pub(crate) artifact_s3_location: ::std::option::Option<::std::string::String>,
     pub(crate) artifact_config: ::std::option::Option<crate::types::ArtifactConfigInput>,
     pub(crate) provisioned_resource_cleanup: ::std::option::Option<crate::types::ProvisionedResourceCleanupSetting>,
+    pub(crate) dry_run_id: ::std::option::Option<::std::string::String>,
 }
 impl UpdateCanaryInputBuilder {
     /// <p>The name of the canary that you want to update. To find the names of your canaries, use <a href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_DescribeCanaries.html">DescribeCanaries</a>.</p>
@@ -275,50 +290,56 @@ impl UpdateCanaryInputBuilder {
         &self.schedule
     }
     /// <p>A structure that contains the timeout value that is used for each individual run of the canary.</p><important>
-    /// <p>The environment variables keys and values are not encrypted. Do not store sensitive information in this field.</p>
+    /// <p>Environment variable keys and values are encrypted at rest using Amazon Web Services owned KMS keys. However, the environment variables are not encrypted on the client side. Do not store sensitive information in them.</p>
     /// </important>
     pub fn run_config(mut self, input: crate::types::CanaryRunConfigInput) -> Self {
         self.run_config = ::std::option::Option::Some(input);
         self
     }
     /// <p>A structure that contains the timeout value that is used for each individual run of the canary.</p><important>
-    /// <p>The environment variables keys and values are not encrypted. Do not store sensitive information in this field.</p>
+    /// <p>Environment variable keys and values are encrypted at rest using Amazon Web Services owned KMS keys. However, the environment variables are not encrypted on the client side. Do not store sensitive information in them.</p>
     /// </important>
     pub fn set_run_config(mut self, input: ::std::option::Option<crate::types::CanaryRunConfigInput>) -> Self {
         self.run_config = input;
         self
     }
     /// <p>A structure that contains the timeout value that is used for each individual run of the canary.</p><important>
-    /// <p>The environment variables keys and values are not encrypted. Do not store sensitive information in this field.</p>
+    /// <p>Environment variable keys and values are encrypted at rest using Amazon Web Services owned KMS keys. However, the environment variables are not encrypted on the client side. Do not store sensitive information in them.</p>
     /// </important>
     pub fn get_run_config(&self) -> &::std::option::Option<crate::types::CanaryRunConfigInput> {
         &self.run_config
     }
     /// <p>The number of days to retain data about successful runs of this canary.</p>
+    /// <p>This setting affects the range of information returned by <a href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_GetCanaryRuns.html">GetCanaryRuns</a>, as well as the range of information displayed in the Synthetics console.</p>
     pub fn success_retention_period_in_days(mut self, input: i32) -> Self {
         self.success_retention_period_in_days = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of days to retain data about successful runs of this canary.</p>
+    /// <p>This setting affects the range of information returned by <a href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_GetCanaryRuns.html">GetCanaryRuns</a>, as well as the range of information displayed in the Synthetics console.</p>
     pub fn set_success_retention_period_in_days(mut self, input: ::std::option::Option<i32>) -> Self {
         self.success_retention_period_in_days = input;
         self
     }
     /// <p>The number of days to retain data about successful runs of this canary.</p>
+    /// <p>This setting affects the range of information returned by <a href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_GetCanaryRuns.html">GetCanaryRuns</a>, as well as the range of information displayed in the Synthetics console.</p>
     pub fn get_success_retention_period_in_days(&self) -> &::std::option::Option<i32> {
         &self.success_retention_period_in_days
     }
     /// <p>The number of days to retain data about failed runs of this canary.</p>
+    /// <p>This setting affects the range of information returned by <a href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_GetCanaryRuns.html">GetCanaryRuns</a>, as well as the range of information displayed in the Synthetics console.</p>
     pub fn failure_retention_period_in_days(mut self, input: i32) -> Self {
         self.failure_retention_period_in_days = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of days to retain data about failed runs of this canary.</p>
+    /// <p>This setting affects the range of information returned by <a href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_GetCanaryRuns.html">GetCanaryRuns</a>, as well as the range of information displayed in the Synthetics console.</p>
     pub fn set_failure_retention_period_in_days(mut self, input: ::std::option::Option<i32>) -> Self {
         self.failure_retention_period_in_days = input;
         self
     }
     /// <p>The number of days to retain data about failed runs of this canary.</p>
+    /// <p>This setting affects the range of information returned by <a href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_GetCanaryRuns.html">GetCanaryRuns</a>, as well as the range of information displayed in the Synthetics console.</p>
     pub fn get_failure_retention_period_in_days(&self) -> &::std::option::Option<i32> {
         &self.failure_retention_period_in_days
     }
@@ -398,6 +419,26 @@ impl UpdateCanaryInputBuilder {
     pub fn get_provisioned_resource_cleanup(&self) -> &::std::option::Option<crate::types::ProvisionedResourceCleanupSetting> {
         &self.provisioned_resource_cleanup
     }
+    /// <p>Update the existing canary using the updated configurations from the DryRun associated with the DryRunId.</p><note>
+    /// <p>When you use the <code>dryRunId</code> field when updating a canary, the only other field you can provide is the <code>Schedule</code>. Adding any other field will thrown an exception.</p>
+    /// </note>
+    pub fn dry_run_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.dry_run_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Update the existing canary using the updated configurations from the DryRun associated with the DryRunId.</p><note>
+    /// <p>When you use the <code>dryRunId</code> field when updating a canary, the only other field you can provide is the <code>Schedule</code>. Adding any other field will thrown an exception.</p>
+    /// </note>
+    pub fn set_dry_run_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.dry_run_id = input;
+        self
+    }
+    /// <p>Update the existing canary using the updated configurations from the DryRun associated with the DryRunId.</p><note>
+    /// <p>When you use the <code>dryRunId</code> field when updating a canary, the only other field you can provide is the <code>Schedule</code>. Adding any other field will thrown an exception.</p>
+    /// </note>
+    pub fn get_dry_run_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dry_run_id
+    }
     /// Consumes the builder and constructs a [`UpdateCanaryInput`](crate::operation::update_canary::UpdateCanaryInput).
     pub fn build(
         self,
@@ -416,6 +457,7 @@ impl UpdateCanaryInputBuilder {
             artifact_s3_location: self.artifact_s3_location,
             artifact_config: self.artifact_config,
             provisioned_resource_cleanup: self.provisioned_resource_cleanup,
+            dry_run_id: self.dry_run_id,
         })
     }
 }

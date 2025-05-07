@@ -15,11 +15,15 @@ pub use crate::types::_canary_schedule_input::CanaryScheduleInputBuilder;
 
 pub use crate::types::_canary_code_input::CanaryCodeInputBuilder;
 
+pub use crate::types::_dry_run_config_output::DryRunConfigOutputBuilder;
+
 pub use crate::types::_group_summary::GroupSummaryBuilder;
 
 pub use crate::types::_group::GroupBuilder;
 
 pub use crate::types::_canary_run::CanaryRunBuilder;
+
+pub use crate::types::_canary_dry_run_config_output::CanaryDryRunConfigOutputBuilder;
 
 pub use crate::types::_canary_run_timeline::CanaryRunTimelineBuilder;
 

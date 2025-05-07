@@ -286,4 +286,18 @@ impl UpdateChannelFluentBuilder {
     pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
         self.inner.get_dry_run()
     }
+    /// The Elemental Anywhere settings for this channel.
+    pub fn anywhere_settings(mut self, input: crate::types::AnywhereSettings) -> Self {
+        self.inner = self.inner.anywhere_settings(input);
+        self
+    }
+    /// The Elemental Anywhere settings for this channel.
+    pub fn set_anywhere_settings(mut self, input: ::std::option::Option<crate::types::AnywhereSettings>) -> Self {
+        self.inner = self.inner.set_anywhere_settings(input);
+        self
+    }
+    /// The Elemental Anywhere settings for this channel.
+    pub fn get_anywhere_settings(&self) -> &::std::option::Option<crate::types::AnywhereSettings> {
+        self.inner.get_anywhere_settings()
+    }
 }

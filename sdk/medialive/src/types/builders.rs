@@ -487,6 +487,8 @@ pub use crate::types::_media_package_output_destination_settings::MediaPackageOu
 
 pub use crate::types::_cdi_input_specification::CdiInputSpecificationBuilder;
 
+pub use crate::types::_anywhere_settings::AnywhereSettingsBuilder;
+
 pub use crate::types::_channel_engine_version_request::ChannelEngineVersionRequestBuilder;
 
 pub use crate::types::_maintenance_update_settings::MaintenanceUpdateSettingsBuilder;
@@ -616,8 +618,6 @@ pub use crate::types::_input_vpc_request::InputVpcRequestBuilder;
 pub use crate::types::_cluster_network_settings_create_request::ClusterNetworkSettingsCreateRequestBuilder;
 
 pub use crate::types::_interface_mapping_create_request::InterfaceMappingCreateRequestBuilder;
-
-pub use crate::types::_anywhere_settings::AnywhereSettingsBuilder;
 
 pub use crate::types::_vpc_output_settings::VpcOutputSettingsBuilder;
 

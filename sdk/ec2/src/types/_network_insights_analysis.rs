@@ -14,6 +14,8 @@ pub struct NetworkInsightsAnalysis {
     pub additional_accounts: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The Amazon Resource Names (ARN) of the resources that the path must traverse.</p>
     pub filter_in_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>The Amazon Resource Names (ARN) of the resources that the path must ignore.</p>
+    pub filter_out_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The time the analysis started.</p>
     pub start_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The status of the network insights analysis.</p>
@@ -61,6 +63,12 @@ impl NetworkInsightsAnalysis {
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filter_in_arns.is_none()`.
     pub fn filter_in_arns(&self) -> &[::std::string::String] {
         self.filter_in_arns.as_deref().unwrap_or_default()
+    }
+    /// <p>The Amazon Resource Names (ARN) of the resources that the path must ignore.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filter_out_arns.is_none()`.
+    pub fn filter_out_arns(&self) -> &[::std::string::String] {
+        self.filter_out_arns.as_deref().unwrap_or_default()
     }
     /// <p>The time the analysis started.</p>
     pub fn start_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
@@ -135,6 +143,7 @@ pub struct NetworkInsightsAnalysisBuilder {
     pub(crate) network_insights_path_id: ::std::option::Option<::std::string::String>,
     pub(crate) additional_accounts: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) filter_in_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) filter_out_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) start_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) status: ::std::option::Option<crate::types::AnalysisStatus>,
     pub(crate) status_message: ::std::option::Option<::std::string::String>,
@@ -229,6 +238,26 @@ impl NetworkInsightsAnalysisBuilder {
     /// <p>The Amazon Resource Names (ARN) of the resources that the path must traverse.</p>
     pub fn get_filter_in_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.filter_in_arns
+    }
+    /// Appends an item to `filter_out_arns`.
+    ///
+    /// To override the contents of this collection use [`set_filter_out_arns`](Self::set_filter_out_arns).
+    ///
+    /// <p>The Amazon Resource Names (ARN) of the resources that the path must ignore.</p>
+    pub fn filter_out_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.filter_out_arns.unwrap_or_default();
+        v.push(input.into());
+        self.filter_out_arns = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The Amazon Resource Names (ARN) of the resources that the path must ignore.</p>
+    pub fn set_filter_out_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.filter_out_arns = input;
+        self
+    }
+    /// <p>The Amazon Resource Names (ARN) of the resources that the path must ignore.</p>
+    pub fn get_filter_out_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.filter_out_arns
     }
     /// <p>The time the analysis started.</p>
     pub fn start_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -428,6 +457,7 @@ impl NetworkInsightsAnalysisBuilder {
             network_insights_path_id: self.network_insights_path_id,
             additional_accounts: self.additional_accounts,
             filter_in_arns: self.filter_in_arns,
+            filter_out_arns: self.filter_out_arns,
             start_date: self.start_date,
             status: self.status,
             status_message: self.status_message,

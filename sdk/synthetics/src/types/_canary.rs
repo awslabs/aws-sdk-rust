@@ -17,8 +17,10 @@ pub struct Canary {
     /// <p>A structure that contains information about a canary run.</p>
     pub run_config: ::std::option::Option<crate::types::CanaryRunConfigOutput>,
     /// <p>The number of days to retain data about successful runs of this canary.</p>
+    /// <p>This setting affects the range of information returned by <a href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_GetCanaryRuns.html">GetCanaryRuns</a>, as well as the range of information displayed in the Synthetics console.</p>
     pub success_retention_period_in_days: ::std::option::Option<i32>,
     /// <p>The number of days to retain data about failed runs of this canary.</p>
+    /// <p>This setting affects the range of information returned by <a href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_GetCanaryRuns.html">GetCanaryRuns</a>, as well as the range of information displayed in the Synthetics console.</p>
     pub failure_retention_period_in_days: ::std::option::Option<i32>,
     /// <p>A structure that contains information about the canary's status.</p>
     pub status: ::std::option::Option<crate::types::CanaryStatus>,
@@ -41,6 +43,8 @@ pub struct Canary {
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>A structure that contains the configuration for canary artifacts, including the encryption-at-rest settings for artifacts that the canary uploads to Amazon S3.</p>
     pub artifact_config: ::std::option::Option<crate::types::ArtifactConfigOutput>,
+    /// <p>Returns the dry run configurations for a canary.</p>
+    pub dry_run_config: ::std::option::Option<crate::types::DryRunConfigOutput>,
 }
 impl Canary {
     /// <p>The unique ID of this canary.</p>
@@ -68,10 +72,12 @@ impl Canary {
         self.run_config.as_ref()
     }
     /// <p>The number of days to retain data about successful runs of this canary.</p>
+    /// <p>This setting affects the range of information returned by <a href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_GetCanaryRuns.html">GetCanaryRuns</a>, as well as the range of information displayed in the Synthetics console.</p>
     pub fn success_retention_period_in_days(&self) -> ::std::option::Option<i32> {
         self.success_retention_period_in_days
     }
     /// <p>The number of days to retain data about failed runs of this canary.</p>
+    /// <p>This setting affects the range of information returned by <a href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_GetCanaryRuns.html">GetCanaryRuns</a>, as well as the range of information displayed in the Synthetics console.</p>
     pub fn failure_retention_period_in_days(&self) -> ::std::option::Option<i32> {
         self.failure_retention_period_in_days
     }
@@ -116,6 +122,10 @@ impl Canary {
     pub fn artifact_config(&self) -> ::std::option::Option<&crate::types::ArtifactConfigOutput> {
         self.artifact_config.as_ref()
     }
+    /// <p>Returns the dry run configurations for a canary.</p>
+    pub fn dry_run_config(&self) -> ::std::option::Option<&crate::types::DryRunConfigOutput> {
+        self.dry_run_config.as_ref()
+    }
 }
 impl Canary {
     /// Creates a new builder-style object to manufacture [`Canary`](crate::types::Canary).
@@ -146,6 +156,7 @@ pub struct CanaryBuilder {
     pub(crate) provisioned_resource_cleanup: ::std::option::Option<crate::types::ProvisionedResourceCleanupSetting>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) artifact_config: ::std::option::Option<crate::types::ArtifactConfigOutput>,
+    pub(crate) dry_run_config: ::std::option::Option<crate::types::DryRunConfigOutput>,
 }
 impl CanaryBuilder {
     /// <p>The unique ID of this canary.</p>
@@ -233,30 +244,36 @@ impl CanaryBuilder {
         &self.run_config
     }
     /// <p>The number of days to retain data about successful runs of this canary.</p>
+    /// <p>This setting affects the range of information returned by <a href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_GetCanaryRuns.html">GetCanaryRuns</a>, as well as the range of information displayed in the Synthetics console.</p>
     pub fn success_retention_period_in_days(mut self, input: i32) -> Self {
         self.success_retention_period_in_days = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of days to retain data about successful runs of this canary.</p>
+    /// <p>This setting affects the range of information returned by <a href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_GetCanaryRuns.html">GetCanaryRuns</a>, as well as the range of information displayed in the Synthetics console.</p>
     pub fn set_success_retention_period_in_days(mut self, input: ::std::option::Option<i32>) -> Self {
         self.success_retention_period_in_days = input;
         self
     }
     /// <p>The number of days to retain data about successful runs of this canary.</p>
+    /// <p>This setting affects the range of information returned by <a href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_GetCanaryRuns.html">GetCanaryRuns</a>, as well as the range of information displayed in the Synthetics console.</p>
     pub fn get_success_retention_period_in_days(&self) -> &::std::option::Option<i32> {
         &self.success_retention_period_in_days
     }
     /// <p>The number of days to retain data about failed runs of this canary.</p>
+    /// <p>This setting affects the range of information returned by <a href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_GetCanaryRuns.html">GetCanaryRuns</a>, as well as the range of information displayed in the Synthetics console.</p>
     pub fn failure_retention_period_in_days(mut self, input: i32) -> Self {
         self.failure_retention_period_in_days = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of days to retain data about failed runs of this canary.</p>
+    /// <p>This setting affects the range of information returned by <a href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_GetCanaryRuns.html">GetCanaryRuns</a>, as well as the range of information displayed in the Synthetics console.</p>
     pub fn set_failure_retention_period_in_days(mut self, input: ::std::option::Option<i32>) -> Self {
         self.failure_retention_period_in_days = input;
         self
     }
     /// <p>The number of days to retain data about failed runs of this canary.</p>
+    /// <p>This setting affects the range of information returned by <a href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_GetCanaryRuns.html">GetCanaryRuns</a>, as well as the range of information displayed in the Synthetics console.</p>
     pub fn get_failure_retention_period_in_days(&self) -> &::std::option::Option<i32> {
         &self.failure_retention_period_in_days
     }
@@ -409,6 +426,20 @@ impl CanaryBuilder {
     pub fn get_artifact_config(&self) -> &::std::option::Option<crate::types::ArtifactConfigOutput> {
         &self.artifact_config
     }
+    /// <p>Returns the dry run configurations for a canary.</p>
+    pub fn dry_run_config(mut self, input: crate::types::DryRunConfigOutput) -> Self {
+        self.dry_run_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Returns the dry run configurations for a canary.</p>
+    pub fn set_dry_run_config(mut self, input: ::std::option::Option<crate::types::DryRunConfigOutput>) -> Self {
+        self.dry_run_config = input;
+        self
+    }
+    /// <p>Returns the dry run configurations for a canary.</p>
+    pub fn get_dry_run_config(&self) -> &::std::option::Option<crate::types::DryRunConfigOutput> {
+        &self.dry_run_config
+    }
     /// Consumes the builder and constructs a [`Canary`](crate::types::Canary).
     pub fn build(self) -> crate::types::Canary {
         crate::types::Canary {
@@ -430,6 +461,7 @@ impl CanaryBuilder {
             provisioned_resource_cleanup: self.provisioned_resource_cleanup,
             tags: self.tags,
             artifact_config: self.artifact_config,
+            dry_run_config: self.dry_run_config,
         }
     }
 }

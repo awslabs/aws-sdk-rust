@@ -52,6 +52,9 @@ pub mod list_tags_for_resource;
 /// Types for the `StartCanary` operation.
 pub mod start_canary;
 
+/// Types for the `StartCanaryDryRun` operation.
+pub mod start_canary_dry_run;
+
 /// Types for the `StopCanary` operation.
 pub mod stop_canary;
 

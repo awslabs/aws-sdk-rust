@@ -2805,6 +2805,8 @@ pub(crate) mod shape_tuning_job_completion_criteria;
 
 pub(crate) mod shape_ui_config;
 
+pub(crate) mod shape_unified_studio_settings;
+
 pub(crate) mod shape_user_profile_details;
 
 pub(crate) mod shape_vertex;

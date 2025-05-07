@@ -3,6 +3,8 @@
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum Error {
+    /// <p>You don't have permission to perform this operation on this resource.</p>
+    AccessDeniedException(crate::types::error::AccessDeniedException),
     /// <p>The request was not valid.</p>
     BadRequestException(crate::types::error::BadRequestException),
     /// <p>A conflicting operation is already in progress.</p>
@@ -35,6 +37,7 @@ pub enum Error {
 impl ::std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match self {
+            Error::AccessDeniedException(inner) => inner.fmt(f),
             Error::BadRequestException(inner) => inner.fmt(f),
             Error::ConflictException(inner) => inner.fmt(f),
             Error::InternalFailureException(inner) => inner.fmt(f),
@@ -66,6 +69,7 @@ impl From<::aws_smithy_types::error::operation::BuildError> for Error {
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
     fn meta(&self) -> &::aws_smithy_types::error::metadata::ErrorMetadata {
         match self {
+            Self::AccessDeniedException(inner) => inner.meta(),
             Self::BadRequestException(inner) => inner.meta(),
             Self::ConflictException(inner) => inner.meta(),
             Self::InternalFailureException(inner) => inner.meta(),
@@ -524,6 +528,34 @@ impl From<crate::operation::start_canary::StartCanaryError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_canary_dry_run::StartCanaryDryRunError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_canary_dry_run::StartCanaryDryRunError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::start_canary_dry_run::StartCanaryDryRunError> for Error {
+    fn from(err: crate::operation::start_canary_dry_run::StartCanaryDryRunError) -> Self {
+        match err {
+            crate::operation::start_canary_dry_run::StartCanaryDryRunError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::start_canary_dry_run::StartCanaryDryRunError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::start_canary_dry_run::StartCanaryDryRunError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::start_canary_dry_run::StartCanaryDryRunError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::start_canary_dry_run::StartCanaryDryRunError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::start_canary_dry_run::StartCanaryDryRunError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::stop_canary::StopCanaryError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -618,6 +650,7 @@ where
 impl From<crate::operation::update_canary::UpdateCanaryError> for Error {
     fn from(err: crate::operation::update_canary::UpdateCanaryError) -> Self {
         match err {
+            crate::operation::update_canary::UpdateCanaryError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::update_canary::UpdateCanaryError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::update_canary::UpdateCanaryError::InternalServerException(inner) => Error::InternalServerException(inner),
             crate::operation::update_canary::UpdateCanaryError::RequestEntityTooLargeException(inner) => Error::RequestEntityTooLargeException(inner),
@@ -630,6 +663,7 @@ impl From<crate::operation::update_canary::UpdateCanaryError> for Error {
 impl ::std::error::Error for Error {
     fn source(&self) -> std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
+            Error::AccessDeniedException(inner) => inner.source(),
             Error::BadRequestException(inner) => inner.source(),
             Error::ConflictException(inner) => inner.source(),
             Error::InternalFailureException(inner) => inner.source(),
@@ -647,6 +681,7 @@ impl ::std::error::Error for Error {
 impl ::aws_types::request_id::RequestId for Error {
     fn request_id(&self) -> Option<&str> {
         match self {
+            Self::AccessDeniedException(e) => e.request_id(),
             Self::BadRequestException(e) => e.request_id(),
             Self::ConflictException(e) => e.request_id(),
             Self::InternalFailureException(e) => e.request_id(),

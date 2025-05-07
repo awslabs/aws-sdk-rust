@@ -3,71 +3,77 @@ pub fn ser_update_channel_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_channel::UpdateChannelInput,
 ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
-    if let Some(var_1) = &input.cdi_input_specification {
+    if let Some(var_1) = &input.anywhere_settings {
         #[allow(unused_mut)]
-        let mut object_2 = object.key("cdiInputSpecification").start_object();
-        crate::protocol_serde::shape_cdi_input_specification::ser_cdi_input_specification(&mut object_2, var_1)?;
+        let mut object_2 = object.key("anywhereSettings").start_object();
+        crate::protocol_serde::shape_anywhere_settings::ser_anywhere_settings(&mut object_2, var_1)?;
         object_2.finish();
     }
-    if let Some(var_3) = &input.channel_engine_version {
+    if let Some(var_3) = &input.cdi_input_specification {
         #[allow(unused_mut)]
-        let mut object_4 = object.key("channelEngineVersion").start_object();
-        crate::protocol_serde::shape_channel_engine_version_request::ser_channel_engine_version_request(&mut object_4, var_3)?;
+        let mut object_4 = object.key("cdiInputSpecification").start_object();
+        crate::protocol_serde::shape_cdi_input_specification::ser_cdi_input_specification(&mut object_4, var_3)?;
         object_4.finish();
     }
-    if let Some(var_5) = &input.destinations {
-        let mut array_6 = object.key("destinations").start_array();
-        for item_7 in var_5 {
+    if let Some(var_5) = &input.channel_engine_version {
+        #[allow(unused_mut)]
+        let mut object_6 = object.key("channelEngineVersion").start_object();
+        crate::protocol_serde::shape_channel_engine_version_request::ser_channel_engine_version_request(&mut object_6, var_5)?;
+        object_6.finish();
+    }
+    if let Some(var_7) = &input.destinations {
+        let mut array_8 = object.key("destinations").start_array();
+        for item_9 in var_7 {
             {
                 #[allow(unused_mut)]
-                let mut object_8 = array_6.value().start_object();
-                crate::protocol_serde::shape_output_destination::ser_output_destination(&mut object_8, item_7)?;
-                object_8.finish();
+                let mut object_10 = array_8.value().start_object();
+                crate::protocol_serde::shape_output_destination::ser_output_destination(&mut object_10, item_9)?;
+                object_10.finish();
             }
         }
-        array_6.finish();
+        array_8.finish();
     }
-    if let Some(var_9) = &input.dry_run {
-        object.key("dryRun").boolean(*var_9);
+    if let Some(var_11) = &input.dry_run {
+        object.key("dryRun").boolean(*var_11);
     }
-    if let Some(var_10) = &input.encoder_settings {
+    if let Some(var_12) = &input.encoder_settings {
         #[allow(unused_mut)]
-        let mut object_11 = object.key("encoderSettings").start_object();
-        crate::protocol_serde::shape_encoder_settings::ser_encoder_settings(&mut object_11, var_10)?;
-        object_11.finish();
+        let mut object_13 = object.key("encoderSettings").start_object();
+        crate::protocol_serde::shape_encoder_settings::ser_encoder_settings(&mut object_13, var_12)?;
+        object_13.finish();
     }
-    if let Some(var_12) = &input.input_attachments {
-        let mut array_13 = object.key("inputAttachments").start_array();
-        for item_14 in var_12 {
+    if let Some(var_14) = &input.input_attachments {
+        let mut array_15 = object.key("inputAttachments").start_array();
+        for item_16 in var_14 {
             {
                 #[allow(unused_mut)]
-                let mut object_15 = array_13.value().start_object();
-                crate::protocol_serde::shape_input_attachment::ser_input_attachment(&mut object_15, item_14)?;
-                object_15.finish();
+                let mut object_17 = array_15.value().start_object();
+                crate::protocol_serde::shape_input_attachment::ser_input_attachment(&mut object_17, item_16)?;
+                object_17.finish();
             }
         }
-        array_13.finish();
+        array_15.finish();
     }
-    if let Some(var_16) = &input.input_specification {
+    if let Some(var_18) = &input.input_specification {
         #[allow(unused_mut)]
-        let mut object_17 = object.key("inputSpecification").start_object();
-        crate::protocol_serde::shape_input_specification::ser_input_specification(&mut object_17, var_16)?;
-        object_17.finish();
+        let mut object_19 = object.key("inputSpecification").start_object();
+        crate::protocol_serde::shape_input_specification::ser_input_specification(&mut object_19, var_18)?;
+        object_19.finish();
     }
-    if let Some(var_18) = &input.log_level {
-        object.key("logLevel").string(var_18.as_str());
+    if let Some(var_20) = &input.log_level {
+        object.key("logLevel").string(var_20.as_str());
     }
-    if let Some(var_19) = &input.maintenance {
+    if let Some(var_21) = &input.maintenance {
         #[allow(unused_mut)]
-        let mut object_20 = object.key("maintenance").start_object();
-        crate::protocol_serde::shape_maintenance_update_settings::ser_maintenance_update_settings(&mut object_20, var_19)?;
-        object_20.finish();
+        let mut object_22 = object.key("maintenance").start_object();
+        crate::protocol_serde::shape_maintenance_update_settings::ser_maintenance_update_settings(&mut object_22, var_21)?;
+        object_22.finish();
     }
-    if let Some(var_21) = &input.name {
-        object.key("name").string(var_21.as_str());
+    if let Some(var_23) = &input.name {
+        object.key("name").string(var_23.as_str());
     }
-    if let Some(var_22) = &input.role_arn {
-        object.key("roleArn").string(var_22.as_str());
+    if let Some(var_24) = &input.role_arn {
+        object.key("roleArn").string(var_24.as_str());
     }
     Ok(())
 }

@@ -14,7 +14,7 @@ pub struct ClusterNodeDetails {
     pub instance_type: ::std::option::Option<crate::types::ClusterInstanceType>,
     /// <p>The time when the instance is launched.</p>
     pub launch_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>The time of when the cluster was last updated.</p>
+    /// <p>The time when the cluster was last updated.</p>
     pub last_software_update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The LifeCycle configuration applied to the instance.</p>
     pub life_cycle_config: ::std::option::Option<crate::types::ClusterLifeCycleConfig>,
@@ -54,7 +54,7 @@ impl ClusterNodeDetails {
     pub fn launch_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.launch_time.as_ref()
     }
-    /// <p>The time of when the cluster was last updated.</p>
+    /// <p>The time when the cluster was last updated.</p>
     pub fn last_software_update_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_software_update_time.as_ref()
     }
@@ -190,17 +190,17 @@ impl ClusterNodeDetailsBuilder {
     pub fn get_launch_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.launch_time
     }
-    /// <p>The time of when the cluster was last updated.</p>
+    /// <p>The time when the cluster was last updated.</p>
     pub fn last_software_update_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_software_update_time = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The time of when the cluster was last updated.</p>
+    /// <p>The time when the cluster was last updated.</p>
     pub fn set_last_software_update_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_software_update_time = input;
         self
     }
-    /// <p>The time of when the cluster was last updated.</p>
+    /// <p>The time when the cluster was last updated.</p>
     pub fn get_last_software_update_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_software_update_time
     }

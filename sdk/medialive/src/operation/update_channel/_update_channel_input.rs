@@ -28,6 +28,8 @@ pub struct UpdateChannelInput {
     pub channel_engine_version: ::std::option::Option<crate::types::ChannelEngineVersionRequest>,
     /// Placeholder documentation for __boolean
     pub dry_run: ::std::option::Option<bool>,
+    /// The Elemental Anywhere settings for this channel.
+    pub anywhere_settings: ::std::option::Option<crate::types::AnywhereSettings>,
 }
 impl UpdateChannelInput {
     /// Specification of CDI inputs for this channel
@@ -82,6 +84,10 @@ impl UpdateChannelInput {
     pub fn dry_run(&self) -> ::std::option::Option<bool> {
         self.dry_run
     }
+    /// The Elemental Anywhere settings for this channel.
+    pub fn anywhere_settings(&self) -> ::std::option::Option<&crate::types::AnywhereSettings> {
+        self.anywhere_settings.as_ref()
+    }
 }
 impl UpdateChannelInput {
     /// Creates a new builder-style object to manufacture [`UpdateChannelInput`](crate::operation::update_channel::UpdateChannelInput).
@@ -106,6 +112,7 @@ pub struct UpdateChannelInputBuilder {
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) channel_engine_version: ::std::option::Option<crate::types::ChannelEngineVersionRequest>,
     pub(crate) dry_run: ::std::option::Option<bool>,
+    pub(crate) anywhere_settings: ::std::option::Option<crate::types::AnywhereSettings>,
 }
 impl UpdateChannelInputBuilder {
     /// Specification of CDI inputs for this channel
@@ -289,6 +296,20 @@ impl UpdateChannelInputBuilder {
     pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
         &self.dry_run
     }
+    /// The Elemental Anywhere settings for this channel.
+    pub fn anywhere_settings(mut self, input: crate::types::AnywhereSettings) -> Self {
+        self.anywhere_settings = ::std::option::Option::Some(input);
+        self
+    }
+    /// The Elemental Anywhere settings for this channel.
+    pub fn set_anywhere_settings(mut self, input: ::std::option::Option<crate::types::AnywhereSettings>) -> Self {
+        self.anywhere_settings = input;
+        self
+    }
+    /// The Elemental Anywhere settings for this channel.
+    pub fn get_anywhere_settings(&self) -> &::std::option::Option<crate::types::AnywhereSettings> {
+        &self.anywhere_settings
+    }
     /// Consumes the builder and constructs a [`UpdateChannelInput`](crate::operation::update_channel::UpdateChannelInput).
     pub fn build(
         self,
@@ -306,6 +327,7 @@ impl UpdateChannelInputBuilder {
             role_arn: self.role_arn,
             channel_engine_version: self.channel_engine_version,
             dry_run: self.dry_run,
+            anywhere_settings: self.anywhere_settings,
         })
     }
 }

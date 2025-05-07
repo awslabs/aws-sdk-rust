@@ -57,6 +57,8 @@ pub(crate) mod shape_list_tags_for_resource;
 
 pub(crate) mod shape_start_canary;
 
+pub(crate) mod shape_start_canary_dry_run;
+
 pub(crate) mod shape_stop_canary;
 
 pub(crate) mod shape_tag_resource;
@@ -65,8 +67,6 @@ pub(crate) mod shape_untag_resource;
 
 pub(crate) mod shape_update_canary;
 
-pub(crate) mod shape_associate_resource_input;
-
 pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
     if data.is_empty() {
         b"{}"
@@ -74,6 +74,10 @@ pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
         data
     }
 }
+
+pub(crate) mod shape_access_denied_exception;
+
+pub(crate) mod shape_associate_resource_input;
 
 pub(crate) mod shape_bad_request_exception;
 
@@ -111,6 +115,8 @@ pub(crate) mod shape_resource_not_found_exception;
 
 pub(crate) mod shape_service_quota_exceeded_exception;
 
+pub(crate) mod shape_start_canary_dry_run_input;
+
 pub(crate) mod shape_tag_resource_input;
 
 pub(crate) mod shape_too_many_requests_exception;
@@ -134,6 +140,8 @@ pub(crate) mod shape_canary_run_config_input;
 pub(crate) mod shape_canary_runs;
 
 pub(crate) mod shape_canary_schedule_input;
+
+pub(crate) mod shape_dry_run_config_output;
 
 pub(crate) mod shape_group;
 
@@ -178,6 +186,8 @@ pub(crate) mod shape_visual_reference_output;
 pub(crate) mod shape_vpc_config_output;
 
 pub(crate) mod shape_base_screenshots;
+
+pub(crate) mod shape_canary_dry_run_config_output;
 
 pub(crate) mod shape_canary_run_status;
 

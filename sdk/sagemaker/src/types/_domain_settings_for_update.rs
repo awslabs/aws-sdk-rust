@@ -14,6 +14,8 @@ pub struct DomainSettingsForUpdate {
     pub docker_settings: ::std::option::Option<crate::types::DockerSettings>,
     /// <p>A collection of settings that configure the Amazon Q experience within the domain.</p>
     pub amazon_q_settings: ::std::option::Option<crate::types::AmazonQSettings>,
+    /// <p>The settings that apply to an SageMaker AI domain when you use it in Amazon SageMaker Unified Studio.</p>
+    pub unified_studio_settings: ::std::option::Option<crate::types::UnifiedStudioSettings>,
 }
 impl DomainSettingsForUpdate {
     /// <p>A collection of <code>RStudioServerPro</code> Domain-level app settings to update. A single <code>RStudioServerPro</code> application is created for a domain.</p>
@@ -38,6 +40,10 @@ impl DomainSettingsForUpdate {
     pub fn amazon_q_settings(&self) -> ::std::option::Option<&crate::types::AmazonQSettings> {
         self.amazon_q_settings.as_ref()
     }
+    /// <p>The settings that apply to an SageMaker AI domain when you use it in Amazon SageMaker Unified Studio.</p>
+    pub fn unified_studio_settings(&self) -> ::std::option::Option<&crate::types::UnifiedStudioSettings> {
+        self.unified_studio_settings.as_ref()
+    }
 }
 impl DomainSettingsForUpdate {
     /// Creates a new builder-style object to manufacture [`DomainSettingsForUpdate`](crate::types::DomainSettingsForUpdate).
@@ -55,6 +61,7 @@ pub struct DomainSettingsForUpdateBuilder {
     pub(crate) security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) docker_settings: ::std::option::Option<crate::types::DockerSettings>,
     pub(crate) amazon_q_settings: ::std::option::Option<crate::types::AmazonQSettings>,
+    pub(crate) unified_studio_settings: ::std::option::Option<crate::types::UnifiedStudioSettings>,
 }
 impl DomainSettingsForUpdateBuilder {
     /// <p>A collection of <code>RStudioServerPro</code> Domain-level app settings to update. A single <code>RStudioServerPro</code> application is created for a domain.</p>
@@ -138,6 +145,20 @@ impl DomainSettingsForUpdateBuilder {
     pub fn get_amazon_q_settings(&self) -> &::std::option::Option<crate::types::AmazonQSettings> {
         &self.amazon_q_settings
     }
+    /// <p>The settings that apply to an SageMaker AI domain when you use it in Amazon SageMaker Unified Studio.</p>
+    pub fn unified_studio_settings(mut self, input: crate::types::UnifiedStudioSettings) -> Self {
+        self.unified_studio_settings = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The settings that apply to an SageMaker AI domain when you use it in Amazon SageMaker Unified Studio.</p>
+    pub fn set_unified_studio_settings(mut self, input: ::std::option::Option<crate::types::UnifiedStudioSettings>) -> Self {
+        self.unified_studio_settings = input;
+        self
+    }
+    /// <p>The settings that apply to an SageMaker AI domain when you use it in Amazon SageMaker Unified Studio.</p>
+    pub fn get_unified_studio_settings(&self) -> &::std::option::Option<crate::types::UnifiedStudioSettings> {
+        &self.unified_studio_settings
+    }
     /// Consumes the builder and constructs a [`DomainSettingsForUpdate`](crate::types::DomainSettingsForUpdate).
     pub fn build(self) -> crate::types::DomainSettingsForUpdate {
         crate::types::DomainSettingsForUpdate {
@@ -146,6 +167,7 @@ impl DomainSettingsForUpdateBuilder {
             security_group_ids: self.security_group_ids,
             docker_settings: self.docker_settings,
             amazon_q_settings: self.amazon_q_settings,
+            unified_studio_settings: self.unified_studio_settings,
         }
     }
 }

@@ -1093,6 +1093,8 @@ pub use crate::types::_cdi_input_specification::CdiInputSpecification;
 
 pub use crate::types::_cdi_input_resolution::CdiInputResolution;
 
+pub use crate::types::_anywhere_settings::AnywhereSettings;
+
 pub use crate::types::_channel_engine_version_request::ChannelEngineVersionRequest;
 
 pub use crate::types::_maintenance_update_settings::MaintenanceUpdateSettings;
@@ -1258,8 +1260,6 @@ pub use crate::types::_input_vpc_request::InputVpcRequest;
 pub use crate::types::_cluster_network_settings_create_request::ClusterNetworkSettingsCreateRequest;
 
 pub use crate::types::_interface_mapping_create_request::InterfaceMappingCreateRequest;
-
-pub use crate::types::_anywhere_settings::AnywhereSettings;
 
 pub use crate::types::_vpc_output_settings::VpcOutputSettings;
 

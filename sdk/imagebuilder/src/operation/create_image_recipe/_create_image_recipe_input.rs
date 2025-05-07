@@ -26,7 +26,18 @@ pub struct CreateImageRecipeInput {
     pub semantic_version: ::std::option::Option<::std::string::String>,
     /// <p>The components included in the image recipe.</p>
     pub components: ::std::option::Option<::std::vec::Vec<crate::types::ComponentConfiguration>>,
-    /// <p>The base image of the image recipe. The value of the string can be the ARN of the base image or an AMI ID. The format for the ARN follows this example: <code>arn:aws:imagebuilder:us-west-2:aws:image/windows-server-2016-english-full-base-x86/x.x.x</code>. You can provide the specific version that you want to use, or you can use a wildcard in all of the fields. If you enter an AMI ID for the string value, you must have access to the AMI, and the AMI must be in the same Region in which you are using Image Builder.</p>
+    /// <p>The base image for customizations specified in the image recipe. You can specify the parent image using one of the following options:</p>
+    /// <ul>
+    /// <li>
+    /// <p>AMI ID</p></li>
+    /// <li>
+    /// <p>Image Builder image Amazon Resource Name (ARN)</p></li>
+    /// <li>
+    /// <p>Amazon Web Services Systems Manager (SSM) Parameter Store Parameter, prefixed by <code>ssm:</code>, followed by the parameter name or ARN.</p></li>
+    /// <li>
+    /// <p>Amazon Web Services Marketplace product ID</p></li>
+    /// </ul>
+    /// <p>If you enter an AMI ID or an SSM parameter that contains the AMI ID, you must have access to the AMI, and the AMI must be in the source Region.</p>
     pub parent_image: ::std::option::Option<::std::string::String>,
     /// <p>The block device mappings of the image recipe.</p>
     pub block_device_mappings: ::std::option::Option<::std::vec::Vec<crate::types::InstanceBlockDeviceMapping>>,
@@ -73,7 +84,18 @@ impl CreateImageRecipeInput {
     pub fn components(&self) -> &[crate::types::ComponentConfiguration] {
         self.components.as_deref().unwrap_or_default()
     }
-    /// <p>The base image of the image recipe. The value of the string can be the ARN of the base image or an AMI ID. The format for the ARN follows this example: <code>arn:aws:imagebuilder:us-west-2:aws:image/windows-server-2016-english-full-base-x86/x.x.x</code>. You can provide the specific version that you want to use, or you can use a wildcard in all of the fields. If you enter an AMI ID for the string value, you must have access to the AMI, and the AMI must be in the same Region in which you are using Image Builder.</p>
+    /// <p>The base image for customizations specified in the image recipe. You can specify the parent image using one of the following options:</p>
+    /// <ul>
+    /// <li>
+    /// <p>AMI ID</p></li>
+    /// <li>
+    /// <p>Image Builder image Amazon Resource Name (ARN)</p></li>
+    /// <li>
+    /// <p>Amazon Web Services Systems Manager (SSM) Parameter Store Parameter, prefixed by <code>ssm:</code>, followed by the parameter name or ARN.</p></li>
+    /// <li>
+    /// <p>Amazon Web Services Marketplace product ID</p></li>
+    /// </ul>
+    /// <p>If you enter an AMI ID or an SSM parameter that contains the AMI ID, you must have access to the AMI, and the AMI must be in the source Region.</p>
     pub fn parent_image(&self) -> ::std::option::Option<&str> {
         self.parent_image.as_deref()
     }
@@ -232,18 +254,51 @@ impl CreateImageRecipeInputBuilder {
     pub fn get_components(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ComponentConfiguration>> {
         &self.components
     }
-    /// <p>The base image of the image recipe. The value of the string can be the ARN of the base image or an AMI ID. The format for the ARN follows this example: <code>arn:aws:imagebuilder:us-west-2:aws:image/windows-server-2016-english-full-base-x86/x.x.x</code>. You can provide the specific version that you want to use, or you can use a wildcard in all of the fields. If you enter an AMI ID for the string value, you must have access to the AMI, and the AMI must be in the same Region in which you are using Image Builder.</p>
+    /// <p>The base image for customizations specified in the image recipe. You can specify the parent image using one of the following options:</p>
+    /// <ul>
+    /// <li>
+    /// <p>AMI ID</p></li>
+    /// <li>
+    /// <p>Image Builder image Amazon Resource Name (ARN)</p></li>
+    /// <li>
+    /// <p>Amazon Web Services Systems Manager (SSM) Parameter Store Parameter, prefixed by <code>ssm:</code>, followed by the parameter name or ARN.</p></li>
+    /// <li>
+    /// <p>Amazon Web Services Marketplace product ID</p></li>
+    /// </ul>
+    /// <p>If you enter an AMI ID or an SSM parameter that contains the AMI ID, you must have access to the AMI, and the AMI must be in the source Region.</p>
     /// This field is required.
     pub fn parent_image(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.parent_image = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The base image of the image recipe. The value of the string can be the ARN of the base image or an AMI ID. The format for the ARN follows this example: <code>arn:aws:imagebuilder:us-west-2:aws:image/windows-server-2016-english-full-base-x86/x.x.x</code>. You can provide the specific version that you want to use, or you can use a wildcard in all of the fields. If you enter an AMI ID for the string value, you must have access to the AMI, and the AMI must be in the same Region in which you are using Image Builder.</p>
+    /// <p>The base image for customizations specified in the image recipe. You can specify the parent image using one of the following options:</p>
+    /// <ul>
+    /// <li>
+    /// <p>AMI ID</p></li>
+    /// <li>
+    /// <p>Image Builder image Amazon Resource Name (ARN)</p></li>
+    /// <li>
+    /// <p>Amazon Web Services Systems Manager (SSM) Parameter Store Parameter, prefixed by <code>ssm:</code>, followed by the parameter name or ARN.</p></li>
+    /// <li>
+    /// <p>Amazon Web Services Marketplace product ID</p></li>
+    /// </ul>
+    /// <p>If you enter an AMI ID or an SSM parameter that contains the AMI ID, you must have access to the AMI, and the AMI must be in the source Region.</p>
     pub fn set_parent_image(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.parent_image = input;
         self
     }
-    /// <p>The base image of the image recipe. The value of the string can be the ARN of the base image or an AMI ID. The format for the ARN follows this example: <code>arn:aws:imagebuilder:us-west-2:aws:image/windows-server-2016-english-full-base-x86/x.x.x</code>. You can provide the specific version that you want to use, or you can use a wildcard in all of the fields. If you enter an AMI ID for the string value, you must have access to the AMI, and the AMI must be in the same Region in which you are using Image Builder.</p>
+    /// <p>The base image for customizations specified in the image recipe. You can specify the parent image using one of the following options:</p>
+    /// <ul>
+    /// <li>
+    /// <p>AMI ID</p></li>
+    /// <li>
+    /// <p>Image Builder image Amazon Resource Name (ARN)</p></li>
+    /// <li>
+    /// <p>Amazon Web Services Systems Manager (SSM) Parameter Store Parameter, prefixed by <code>ssm:</code>, followed by the parameter name or ARN.</p></li>
+    /// <li>
+    /// <p>Amazon Web Services Marketplace product ID</p></li>
+    /// </ul>
+    /// <p>If you enter an AMI ID or an SSM parameter that contains the AMI ID, you must have access to the AMI, and the AMI must be in the source Region.</p>
     pub fn get_parent_image(&self) -> &::std::option::Option<::std::string::String> {
         &self.parent_image
     }

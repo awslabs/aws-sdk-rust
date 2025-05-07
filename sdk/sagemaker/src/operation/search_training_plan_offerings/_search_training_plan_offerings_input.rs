@@ -78,7 +78,6 @@ pub struct SearchTrainingPlanOfferingsInputBuilder {
 }
 impl SearchTrainingPlanOfferingsInputBuilder {
     /// <p>The type of instance you want to search for in the available training plan offerings. This field allows you to filter the search results based on the specific compute resources you require for your SageMaker training jobs or SageMaker HyperPod clusters. When searching for training plan offerings, specifying the instance type helps you find Reserved Instances that match your computational needs.</p>
-    /// This field is required.
     pub fn instance_type(mut self, input: crate::types::ReservedCapacityInstanceType) -> Self {
         self.instance_type = ::std::option::Option::Some(input);
         self
@@ -93,7 +92,6 @@ impl SearchTrainingPlanOfferingsInputBuilder {
         &self.instance_type
     }
     /// <p>The number of instances you want to reserve in the training plan offerings. This allows you to specify the quantity of compute resources needed for your SageMaker training jobs or SageMaker HyperPod clusters, helping you find reserved capacity offerings that match your requirements.</p>
-    /// This field is required.
     pub fn instance_count(mut self, input: i32) -> Self {
         self.instance_count = ::std::option::Option::Some(input);
         self

@@ -15,7 +15,7 @@ pub struct CanaryRunConfigInput {
     /// <p>Specifies the keys and values to use for any environment variables used in the canary script. Use the following format:</p>
     /// <p>{ "key1" : "value1", "key2" : "value2", ...}</p>
     /// <p>Keys must start with a letter and be at least two characters. The total size of your environment variables cannot exceed 4 KB. You can't specify any Lambda reserved environment variables as the keys for your environment variables. For more information about reserved keys, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html#configuration-envvars-runtime"> Runtime environment variables</a>.</p><important>
-    /// <p>The environment variables keys and values are not encrypted. Do not store sensitive information in this field.</p>
+    /// <p>Environment variable keys and values are encrypted at rest using Amazon Web Services owned KMS keys. However, the environment variables are not encrypted on the client side. Do not store sensitive information in them.</p>
     /// </important>
     pub environment_variables: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
@@ -37,7 +37,7 @@ impl CanaryRunConfigInput {
     /// <p>Specifies the keys and values to use for any environment variables used in the canary script. Use the following format:</p>
     /// <p>{ "key1" : "value1", "key2" : "value2", ...}</p>
     /// <p>Keys must start with a letter and be at least two characters. The total size of your environment variables cannot exceed 4 KB. You can't specify any Lambda reserved environment variables as the keys for your environment variables. For more information about reserved keys, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html#configuration-envvars-runtime"> Runtime environment variables</a>.</p><important>
-    /// <p>The environment variables keys and values are not encrypted. Do not store sensitive information in this field.</p>
+    /// <p>Environment variable keys and values are encrypted at rest using Amazon Web Services owned KMS keys. However, the environment variables are not encrypted on the client side. Do not store sensitive information in them.</p>
     /// </important>
     pub fn environment_variables(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.environment_variables.as_ref()
@@ -115,7 +115,7 @@ impl CanaryRunConfigInputBuilder {
     /// <p>Specifies the keys and values to use for any environment variables used in the canary script. Use the following format:</p>
     /// <p>{ "key1" : "value1", "key2" : "value2", ...}</p>
     /// <p>Keys must start with a letter and be at least two characters. The total size of your environment variables cannot exceed 4 KB. You can't specify any Lambda reserved environment variables as the keys for your environment variables. For more information about reserved keys, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html#configuration-envvars-runtime"> Runtime environment variables</a>.</p><important>
-    /// <p>The environment variables keys and values are not encrypted. Do not store sensitive information in this field.</p>
+    /// <p>Environment variable keys and values are encrypted at rest using Amazon Web Services owned KMS keys. However, the environment variables are not encrypted on the client side. Do not store sensitive information in them.</p>
     /// </important>
     pub fn environment_variables(
         mut self,
@@ -130,7 +130,7 @@ impl CanaryRunConfigInputBuilder {
     /// <p>Specifies the keys and values to use for any environment variables used in the canary script. Use the following format:</p>
     /// <p>{ "key1" : "value1", "key2" : "value2", ...}</p>
     /// <p>Keys must start with a letter and be at least two characters. The total size of your environment variables cannot exceed 4 KB. You can't specify any Lambda reserved environment variables as the keys for your environment variables. For more information about reserved keys, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html#configuration-envvars-runtime"> Runtime environment variables</a>.</p><important>
-    /// <p>The environment variables keys and values are not encrypted. Do not store sensitive information in this field.</p>
+    /// <p>Environment variable keys and values are encrypted at rest using Amazon Web Services owned KMS keys. However, the environment variables are not encrypted on the client side. Do not store sensitive information in them.</p>
     /// </important>
     pub fn set_environment_variables(
         mut self,
@@ -142,7 +142,7 @@ impl CanaryRunConfigInputBuilder {
     /// <p>Specifies the keys and values to use for any environment variables used in the canary script. Use the following format:</p>
     /// <p>{ "key1" : "value1", "key2" : "value2", ...}</p>
     /// <p>Keys must start with a letter and be at least two characters. The total size of your environment variables cannot exceed 4 KB. You can't specify any Lambda reserved environment variables as the keys for your environment variables. For more information about reserved keys, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html#configuration-envvars-runtime"> Runtime environment variables</a>.</p><important>
-    /// <p>The environment variables keys and values are not encrypted. Do not store sensitive information in this field.</p>
+    /// <p>Environment variable keys and values are encrypted at rest using Amazon Web Services owned KMS keys. However, the environment variables are not encrypted on the client side. Do not store sensitive information in them.</p>
     /// </important>
     pub fn get_environment_variables(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.environment_variables

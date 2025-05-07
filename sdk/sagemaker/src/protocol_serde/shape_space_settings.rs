@@ -36,17 +36,20 @@ pub fn ser_space_settings(
         crate::protocol_serde::shape_space_storage_settings::ser_space_storage_settings(&mut object_11, var_10)?;
         object_11.finish();
     }
-    if let Some(var_12) = &input.custom_file_systems {
-        let mut array_13 = object.key("CustomFileSystems").start_array();
-        for item_14 in var_12 {
+    if let Some(var_12) = &input.space_managed_resources {
+        object.key("SpaceManagedResources").string(var_12.as_str());
+    }
+    if let Some(var_13) = &input.custom_file_systems {
+        let mut array_14 = object.key("CustomFileSystems").start_array();
+        for item_15 in var_13 {
             {
                 #[allow(unused_mut)]
-                let mut object_15 = array_13.value().start_object();
-                crate::protocol_serde::shape_custom_file_system::ser_custom_file_system(&mut object_15, item_14)?;
-                object_15.finish();
+                let mut object_16 = array_14.value().start_object();
+                crate::protocol_serde::shape_custom_file_system::ser_custom_file_system(&mut object_16, item_15)?;
+                object_16.finish();
             }
         }
-        array_13.finish();
+        array_14.finish();
     }
     Ok(())
 }
@@ -96,6 +99,13 @@ where
                         "SpaceStorageSettings" => {
                             builder = builder
                                 .set_space_storage_settings(crate::protocol_serde::shape_space_storage_settings::de_space_storage_settings(tokens)?);
+                        }
+                        "SpaceManagedResources" => {
+                            builder = builder.set_space_managed_resources(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::FeatureStatus::from(u.as_ref())))
+                                    .transpose()?,
+                            );
                         }
                         "CustomFileSystems" => {
                             builder =

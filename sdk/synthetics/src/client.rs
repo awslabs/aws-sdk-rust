@@ -197,6 +197,8 @@ mod list_tags_for_resource;
 
 mod start_canary;
 
+mod start_canary_dry_run;
+
 mod stop_canary;
 
 mod tag_resource;

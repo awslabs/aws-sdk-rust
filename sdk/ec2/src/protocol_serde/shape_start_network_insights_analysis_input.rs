@@ -37,27 +37,40 @@ pub fn ser_start_network_insights_analysis_input_input_input(
         }
     }
     #[allow(unused_mut)]
-    let mut scope_13 = writer.prefix("DryRun");
-    if let Some(var_14) = &input.dry_run {
-        scope_13.boolean(*var_14);
-    }
-    #[allow(unused_mut)]
-    let mut scope_15 = writer.prefix("TagSpecification");
-    if let Some(var_16) = &input.tag_specifications {
-        if !var_16.is_empty() {
-            let mut list_18 = scope_15.start_list(true, Some("item"));
-            for item_17 in var_16 {
+    let mut scope_13 = writer.prefix("FilterOutArn");
+    if let Some(var_14) = &input.filter_out_arns {
+        if !var_14.is_empty() {
+            let mut list_16 = scope_13.start_list(true, Some("item"));
+            for item_15 in var_14 {
                 #[allow(unused_mut)]
-                let mut entry_19 = list_18.entry();
-                crate::protocol_serde::shape_tag_specification::ser_tag_specification(entry_19, item_17)?;
+                let mut entry_17 = list_16.entry();
+                entry_17.string(item_15);
             }
-            list_18.finish();
+            list_16.finish();
         }
     }
     #[allow(unused_mut)]
-    let mut scope_20 = writer.prefix("ClientToken");
-    if let Some(var_21) = &input.client_token {
-        scope_20.string(var_21);
+    let mut scope_18 = writer.prefix("DryRun");
+    if let Some(var_19) = &input.dry_run {
+        scope_18.boolean(*var_19);
+    }
+    #[allow(unused_mut)]
+    let mut scope_20 = writer.prefix("TagSpecification");
+    if let Some(var_21) = &input.tag_specifications {
+        if !var_21.is_empty() {
+            let mut list_23 = scope_20.start_list(true, Some("item"));
+            for item_22 in var_21 {
+                #[allow(unused_mut)]
+                let mut entry_24 = list_23.entry();
+                crate::protocol_serde::shape_tag_specification::ser_tag_specification(entry_24, item_22)?;
+            }
+            list_23.finish();
+        }
+    }
+    #[allow(unused_mut)]
+    let mut scope_25 = writer.prefix("ClientToken");
+    if let Some(var_26) = &input.client_token {
+        scope_25.string(var_26);
     }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))

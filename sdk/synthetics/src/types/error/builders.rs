@@ -9,6 +9,8 @@ pub use crate::types::error::_internal_server_exception::InternalServerException
 
 pub use crate::types::error::_conflict_exception::ConflictExceptionBuilder;
 
+pub use crate::types::error::_access_denied_exception::AccessDeniedExceptionBuilder;
+
 pub use crate::types::error::_too_many_requests_exception::TooManyRequestsExceptionBuilder;
 
 pub use crate::types::error::_not_found_exception::NotFoundExceptionBuilder;

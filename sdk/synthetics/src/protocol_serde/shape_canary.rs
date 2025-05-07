@@ -111,6 +111,10 @@ where
                             builder =
                                 builder.set_artifact_config(crate::protocol_serde::shape_artifact_config_output::de_artifact_config_output(tokens)?);
                         }
+                        "DryRunConfig" => {
+                            builder =
+                                builder.set_dry_run_config(crate::protocol_serde::shape_dry_run_config_output::de_dry_run_config_output(tokens)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

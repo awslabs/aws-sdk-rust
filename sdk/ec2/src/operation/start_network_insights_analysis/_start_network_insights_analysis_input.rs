@@ -9,6 +9,8 @@ pub struct StartNetworkInsightsAnalysisInput {
     pub additional_accounts: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The Amazon Resource Names (ARN) of the resources that the path must traverse.</p>
     pub filter_in_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>The Amazon Resource Names (ARN) of the resources that the path will ignore.</p>
+    pub filter_out_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub dry_run: ::std::option::Option<bool>,
     /// <p>The tags to apply.</p>
@@ -32,6 +34,12 @@ impl StartNetworkInsightsAnalysisInput {
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filter_in_arns.is_none()`.
     pub fn filter_in_arns(&self) -> &[::std::string::String] {
         self.filter_in_arns.as_deref().unwrap_or_default()
+    }
+    /// <p>The Amazon Resource Names (ARN) of the resources that the path will ignore.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filter_out_arns.is_none()`.
+    pub fn filter_out_arns(&self) -> &[::std::string::String] {
+        self.filter_out_arns.as_deref().unwrap_or_default()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(&self) -> ::std::option::Option<bool> {
@@ -62,6 +70,7 @@ pub struct StartNetworkInsightsAnalysisInputBuilder {
     pub(crate) network_insights_path_id: ::std::option::Option<::std::string::String>,
     pub(crate) additional_accounts: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) filter_in_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) filter_out_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
@@ -121,6 +130,26 @@ impl StartNetworkInsightsAnalysisInputBuilder {
     /// <p>The Amazon Resource Names (ARN) of the resources that the path must traverse.</p>
     pub fn get_filter_in_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.filter_in_arns
+    }
+    /// Appends an item to `filter_out_arns`.
+    ///
+    /// To override the contents of this collection use [`set_filter_out_arns`](Self::set_filter_out_arns).
+    ///
+    /// <p>The Amazon Resource Names (ARN) of the resources that the path will ignore.</p>
+    pub fn filter_out_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.filter_out_arns.unwrap_or_default();
+        v.push(input.into());
+        self.filter_out_arns = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The Amazon Resource Names (ARN) of the resources that the path will ignore.</p>
+    pub fn set_filter_out_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.filter_out_arns = input;
+        self
+    }
+    /// <p>The Amazon Resource Names (ARN) of the resources that the path will ignore.</p>
+    pub fn get_filter_out_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.filter_out_arns
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
@@ -182,6 +211,7 @@ impl StartNetworkInsightsAnalysisInputBuilder {
             network_insights_path_id: self.network_insights_path_id,
             additional_accounts: self.additional_accounts,
             filter_in_arns: self.filter_in_arns,
+            filter_out_arns: self.filter_out_arns,
             dry_run: self.dry_run,
             tag_specifications: self.tag_specifications,
             client_token: self.client_token,

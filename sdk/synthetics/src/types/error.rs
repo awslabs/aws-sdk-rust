@@ -9,6 +9,8 @@ pub use crate::types::error::_internal_server_exception::InternalServerException
 
 pub use crate::types::error::_conflict_exception::ConflictException;
 
+pub use crate::types::error::_access_denied_exception::AccessDeniedException;
+
 pub use crate::types::error::_too_many_requests_exception::TooManyRequestsException;
 
 pub use crate::types::error::_not_found_exception::NotFoundException;
@@ -18,6 +20,8 @@ pub use crate::types::error::_internal_failure_exception::InternalFailureExcepti
 pub use crate::types::error::_bad_request_exception::BadRequestException;
 
 pub use crate::types::error::_service_quota_exceeded_exception::ServiceQuotaExceededException;
+
+mod _access_denied_exception;
 
 mod _bad_request_exception;
 

@@ -12,7 +12,7 @@ pub struct ClusterNodeSummary {
     pub instance_type: ::std::option::Option<crate::types::ClusterInstanceType>,
     /// <p>The time when the instance is launched.</p>
     pub launch_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>The time of when SageMaker last updated the software of the instances in the cluster.</p>
+    /// <p>The time when SageMaker last updated the software of the instances in the cluster.</p>
     pub last_software_update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The status of the instance.</p>
     pub instance_status: ::std::option::Option<crate::types::ClusterInstanceStatusDetails>,
@@ -34,7 +34,7 @@ impl ClusterNodeSummary {
     pub fn launch_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.launch_time.as_ref()
     }
-    /// <p>The time of when SageMaker last updated the software of the instances in the cluster.</p>
+    /// <p>The time when SageMaker last updated the software of the instances in the cluster.</p>
     pub fn last_software_update_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_software_update_time.as_ref()
     }
@@ -122,17 +122,17 @@ impl ClusterNodeSummaryBuilder {
     pub fn get_launch_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.launch_time
     }
-    /// <p>The time of when SageMaker last updated the software of the instances in the cluster.</p>
+    /// <p>The time when SageMaker last updated the software of the instances in the cluster.</p>
     pub fn last_software_update_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_software_update_time = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The time of when SageMaker last updated the software of the instances in the cluster.</p>
+    /// <p>The time when SageMaker last updated the software of the instances in the cluster.</p>
     pub fn set_last_software_update_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_software_update_time = input;
         self
     }
-    /// <p>The time of when SageMaker last updated the software of the instances in the cluster.</p>
+    /// <p>The time when SageMaker last updated the software of the instances in the cluster.</p>
     pub fn get_last_software_update_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_software_update_time
     }

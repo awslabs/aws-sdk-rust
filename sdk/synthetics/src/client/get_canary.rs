@@ -4,6 +4,7 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`name(impl Into<String>)`](crate::operation::get_canary::builders::GetCanaryFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::get_canary::builders::GetCanaryFluentBuilder::set_name):<br>required: **true**<br><p>The name of the canary that you want details for.</p><br>
+    ///   - [`dry_run_id(impl Into<String>)`](crate::operation::get_canary::builders::GetCanaryFluentBuilder::dry_run_id) / [`set_dry_run_id(Option<String>)`](crate::operation::get_canary::builders::GetCanaryFluentBuilder::set_dry_run_id):<br>required: **false**<br><p>The DryRunId associated with an existing canary’s dry run. You can use this DryRunId to retrieve information about the dry run.</p><br>
     /// - On success, responds with [`GetCanaryOutput`](crate::operation::get_canary::GetCanaryOutput) with field(s):
     ///   - [`canary(Option<Canary>)`](crate::operation::get_canary::GetCanaryOutput::canary): <p>A structure that contains the full information about the canary.</p>
     /// - On failure, responds with [`SdkError<GetCanaryError>`](crate::operation::get_canary::GetCanaryError)

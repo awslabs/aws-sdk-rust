@@ -17,6 +17,14 @@ pub struct SpaceSettings {
     pub app_type: ::std::option::Option<crate::types::AppType>,
     /// <p>The storage settings for a space.</p>
     pub space_storage_settings: ::std::option::Option<crate::types::SpaceStorageSettings>,
+    /// <p>If you enable this option, SageMaker AI creates the following resources on your behalf when you create the space:</p>
+    /// <ul>
+    /// <li>
+    /// <p>The user profile that possesses the space.</p></li>
+    /// <li>
+    /// <p>The app that the space contains.</p></li>
+    /// </ul>
+    pub space_managed_resources: ::std::option::Option<crate::types::FeatureStatus>,
     /// <p>A file system, created by you, that you assign to a space for an Amazon SageMaker AI Domain. Permitted users can access this file system in Amazon SageMaker AI Studio.</p>
     pub custom_file_systems: ::std::option::Option<::std::vec::Vec<crate::types::CustomFileSystem>>,
 }
@@ -46,6 +54,16 @@ impl SpaceSettings {
     pub fn space_storage_settings(&self) -> ::std::option::Option<&crate::types::SpaceStorageSettings> {
         self.space_storage_settings.as_ref()
     }
+    /// <p>If you enable this option, SageMaker AI creates the following resources on your behalf when you create the space:</p>
+    /// <ul>
+    /// <li>
+    /// <p>The user profile that possesses the space.</p></li>
+    /// <li>
+    /// <p>The app that the space contains.</p></li>
+    /// </ul>
+    pub fn space_managed_resources(&self) -> ::std::option::Option<&crate::types::FeatureStatus> {
+        self.space_managed_resources.as_ref()
+    }
     /// <p>A file system, created by you, that you assign to a space for an Amazon SageMaker AI Domain. Permitted users can access this file system in Amazon SageMaker AI Studio.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.custom_file_systems.is_none()`.
@@ -70,6 +88,7 @@ pub struct SpaceSettingsBuilder {
     pub(crate) jupyter_lab_app_settings: ::std::option::Option<crate::types::SpaceJupyterLabAppSettings>,
     pub(crate) app_type: ::std::option::Option<crate::types::AppType>,
     pub(crate) space_storage_settings: ::std::option::Option<crate::types::SpaceStorageSettings>,
+    pub(crate) space_managed_resources: ::std::option::Option<crate::types::FeatureStatus>,
     pub(crate) custom_file_systems: ::std::option::Option<::std::vec::Vec<crate::types::CustomFileSystem>>,
 }
 impl SpaceSettingsBuilder {
@@ -160,6 +179,38 @@ impl SpaceSettingsBuilder {
     pub fn get_space_storage_settings(&self) -> &::std::option::Option<crate::types::SpaceStorageSettings> {
         &self.space_storage_settings
     }
+    /// <p>If you enable this option, SageMaker AI creates the following resources on your behalf when you create the space:</p>
+    /// <ul>
+    /// <li>
+    /// <p>The user profile that possesses the space.</p></li>
+    /// <li>
+    /// <p>The app that the space contains.</p></li>
+    /// </ul>
+    pub fn space_managed_resources(mut self, input: crate::types::FeatureStatus) -> Self {
+        self.space_managed_resources = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>If you enable this option, SageMaker AI creates the following resources on your behalf when you create the space:</p>
+    /// <ul>
+    /// <li>
+    /// <p>The user profile that possesses the space.</p></li>
+    /// <li>
+    /// <p>The app that the space contains.</p></li>
+    /// </ul>
+    pub fn set_space_managed_resources(mut self, input: ::std::option::Option<crate::types::FeatureStatus>) -> Self {
+        self.space_managed_resources = input;
+        self
+    }
+    /// <p>If you enable this option, SageMaker AI creates the following resources on your behalf when you create the space:</p>
+    /// <ul>
+    /// <li>
+    /// <p>The user profile that possesses the space.</p></li>
+    /// <li>
+    /// <p>The app that the space contains.</p></li>
+    /// </ul>
+    pub fn get_space_managed_resources(&self) -> &::std::option::Option<crate::types::FeatureStatus> {
+        &self.space_managed_resources
+    }
     /// Appends an item to `custom_file_systems`.
     ///
     /// To override the contents of this collection use [`set_custom_file_systems`](Self::set_custom_file_systems).
@@ -189,6 +240,7 @@ impl SpaceSettingsBuilder {
             jupyter_lab_app_settings: self.jupyter_lab_app_settings,
             app_type: self.app_type,
             space_storage_settings: self.space_storage_settings,
+            space_managed_resources: self.space_managed_resources,
             custom_file_systems: self.custom_file_systems,
         }
     }

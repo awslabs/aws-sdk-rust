@@ -379,6 +379,8 @@ pub use crate::types::_app_security_group_management::AppSecurityGroupManagement
 
 pub use crate::types::_domain_settings_for_update::DomainSettingsForUpdate;
 
+pub use crate::types::_unified_studio_settings::UnifiedStudioSettings;
+
 pub use crate::types::_amazon_q_settings::AmazonQSettings;
 
 pub use crate::types::_docker_settings::DockerSettings;
@@ -3718,6 +3720,8 @@ mod _ui_config;
 mod _ui_template;
 
 mod _ui_template_info;
+
+mod _unified_studio_settings;
 
 mod _update_cluster_software_instance_group_specification;
 

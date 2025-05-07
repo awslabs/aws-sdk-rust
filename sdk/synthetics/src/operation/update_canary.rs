@@ -264,6 +264,8 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for UpdateCanaryE
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum UpdateCanaryError {
+    /// <p>You don't have permission to perform this operation on this resource.</p>
+    AccessDeniedException(crate::types::error::AccessDeniedException),
     /// <p>A conflicting operation is already in progress.</p>
     ConflictException(crate::types::error::ConflictException),
     /// <p>An unknown internal error occurred.</p>
@@ -307,6 +309,7 @@ impl UpdateCanaryError {
     ///
     pub fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
+            Self::AccessDeniedException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ConflictException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InternalServerException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::RequestEntityTooLargeException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
@@ -314,6 +317,10 @@ impl UpdateCanaryError {
             Self::ValidationException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::Unhandled(e) => &e.meta,
         }
+    }
+    /// Returns `true` if the error kind is `UpdateCanaryError::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(self, Self::AccessDeniedException(_))
     }
     /// Returns `true` if the error kind is `UpdateCanaryError::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
@@ -339,6 +346,7 @@ impl UpdateCanaryError {
 impl ::std::error::Error for UpdateCanaryError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
+            Self::AccessDeniedException(_inner) => ::std::option::Option::Some(_inner),
             Self::ConflictException(_inner) => ::std::option::Option::Some(_inner),
             Self::InternalServerException(_inner) => ::std::option::Option::Some(_inner),
             Self::RequestEntityTooLargeException(_inner) => ::std::option::Option::Some(_inner),
@@ -351,6 +359,7 @@ impl ::std::error::Error for UpdateCanaryError {
 impl ::std::fmt::Display for UpdateCanaryError {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         match self {
+            Self::AccessDeniedException(_inner) => _inner.fmt(f),
             Self::ConflictException(_inner) => _inner.fmt(f),
             Self::InternalServerException(_inner) => _inner.fmt(f),
             Self::RequestEntityTooLargeException(_inner) => _inner.fmt(f),
@@ -377,6 +386,7 @@ impl ::aws_smithy_types::retry::ProvideErrorKind for UpdateCanaryError {
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for UpdateCanaryError {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
+            Self::AccessDeniedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ConflictException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InternalServerException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::RequestEntityTooLargeException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
