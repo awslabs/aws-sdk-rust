@@ -199,6 +199,20 @@ pub fn de_network_info(
                 builder = builder.set_bandwidth_weightings(var_14);
             }
             ,
+            s if s.matches("flexibleEnaQueuesSupport") /* FlexibleEnaQueuesSupport com.amazonaws.ec2#NetworkInfo$FlexibleEnaQueuesSupport */ =>  {
+                let var_15 =
+                    Some(
+                        Result::<crate::types::FlexibleEnaQueuesSupport, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::FlexibleEnaQueuesSupport::from(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_flexible_ena_queues_support(var_15);
+            }
+            ,
             _ => {}
         }
     }

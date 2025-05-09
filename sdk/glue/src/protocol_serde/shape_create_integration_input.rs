@@ -43,5 +43,11 @@ pub fn ser_create_integration_input_input(
         }
         array_12.finish();
     }
+    if let Some(var_15) = &input.integration_config {
+        #[allow(unused_mut)]
+        let mut object_16 = object.key("IntegrationConfig").start_object();
+        crate::protocol_serde::shape_integration_config::ser_integration_config(&mut object_16, var_15)?;
+        object_16.finish();
+    }
     Ok(())
 }

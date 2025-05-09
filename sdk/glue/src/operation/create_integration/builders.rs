@@ -239,4 +239,18 @@ impl CreateIntegrationFluentBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         self.inner.get_tags()
     }
+    /// <p>The configuration settings.</p>
+    pub fn integration_config(mut self, input: crate::types::IntegrationConfig) -> Self {
+        self.inner = self.inner.integration_config(input);
+        self
+    }
+    /// <p>The configuration settings.</p>
+    pub fn set_integration_config(mut self, input: ::std::option::Option<crate::types::IntegrationConfig>) -> Self {
+        self.inner = self.inner.set_integration_config(input);
+        self
+    }
+    /// <p>The configuration settings.</p>
+    pub fn get_integration_config(&self) -> &::std::option::Option<crate::types::IntegrationConfig> {
+        self.inner.get_integration_config()
+    }
 }

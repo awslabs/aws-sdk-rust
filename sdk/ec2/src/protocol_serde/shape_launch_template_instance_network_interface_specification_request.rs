@@ -172,5 +172,13 @@ pub fn ser_launch_template_instance_network_interface_specification_request(
     if let Some(var_59) = &input.connection_tracking_specification {
         crate::protocol_serde::shape_connection_tracking_specification_request::ser_connection_tracking_specification_request(scope_58, var_59)?;
     }
+    #[allow(unused_mut)]
+    let mut scope_60 = writer.prefix("EnaQueueCount");
+    if let Some(var_61) = &input.ena_queue_count {
+        scope_60.number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_61).into()),
+        );
+    }
     Ok(())
 }

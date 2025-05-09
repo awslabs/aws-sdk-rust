@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetDistributionTenant`](crate::operation::get_distribution_tenant::builders::GetDistributionTenantFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`identifier(impl Into<String>)`](crate::operation::get_distribution_tenant::builders::GetDistributionTenantFluentBuilder::identifier) / [`set_identifier(Option<String>)`](crate::operation::get_distribution_tenant::builders::GetDistributionTenantFluentBuilder::set_identifier):<br>required: **true**<br><p>The ID of the distribution tenant. You can specify the ARN ID, or name of the distribution tenant.</p><br>
+    ///   - [`identifier(impl Into<String>)`](crate::operation::get_distribution_tenant::builders::GetDistributionTenantFluentBuilder::identifier) / [`set_identifier(Option<String>)`](crate::operation::get_distribution_tenant::builders::GetDistributionTenantFluentBuilder::set_identifier):<br>required: **true**<br><p>The identifier of the distribution tenant. You can specify the ARN, ID, or name of the distribution tenant.</p><br>
     /// - On success, responds with [`GetDistributionTenantOutput`](crate::operation::get_distribution_tenant::GetDistributionTenantOutput) with field(s):
     ///   - [`distribution_tenant(Option<DistributionTenant>)`](crate::operation::get_distribution_tenant::GetDistributionTenantOutput::distribution_tenant): <p>The distribution tenant that you retrieved.</p>
     ///   - [`e_tag(Option<String>)`](crate::operation::get_distribution_tenant::GetDistributionTenantOutput::e_tag): <p>The current version of the distribution tenant.</p>

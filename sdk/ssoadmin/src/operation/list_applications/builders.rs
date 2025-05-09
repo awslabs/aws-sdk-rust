@@ -22,7 +22,7 @@ impl crate::operation::list_applications::builders::ListApplicationsInputBuilder
 }
 /// Fluent builder constructing a request to `ListApplications`.
 ///
-/// <p>Lists all applications associated with the instance of IAM Identity Center. When listing applications for an instance in the management account, member accounts must use the <code>applicationAccount</code> parameter to filter the list to only applications created from that account.</p>
+/// <p>Lists all applications associated with the instance of IAM Identity Center. When listing applications for an organization instance in the management account, member accounts must use the <code>applicationAccount</code> parameter to filter the list to only applications created from that account. When listing applications for an account instance in the same member account, a filter is not required.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListApplicationsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

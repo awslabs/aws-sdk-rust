@@ -5,7 +5,7 @@
 pub struct VerifyDnsConfigurationInput {
     /// <p>The domain name that you're verifying.</p>
     pub domain: ::std::option::Option<::std::string::String>,
-    /// <p>The ID of the distribution tenant.</p>
+    /// <p>The identifier of the distribution tenant. You can specify the ARN, ID, or name of the distribution tenant.</p>
     pub identifier: ::std::option::Option<::std::string::String>,
 }
 impl VerifyDnsConfigurationInput {
@@ -13,7 +13,7 @@ impl VerifyDnsConfigurationInput {
     pub fn domain(&self) -> ::std::option::Option<&str> {
         self.domain.as_deref()
     }
-    /// <p>The ID of the distribution tenant.</p>
+    /// <p>The identifier of the distribution tenant. You can specify the ARN, ID, or name of the distribution tenant.</p>
     pub fn identifier(&self) -> ::std::option::Option<&str> {
         self.identifier.as_deref()
     }
@@ -47,18 +47,18 @@ impl VerifyDnsConfigurationInputBuilder {
     pub fn get_domain(&self) -> &::std::option::Option<::std::string::String> {
         &self.domain
     }
-    /// <p>The ID of the distribution tenant.</p>
+    /// <p>The identifier of the distribution tenant. You can specify the ARN, ID, or name of the distribution tenant.</p>
     /// This field is required.
     pub fn identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identifier = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID of the distribution tenant.</p>
+    /// <p>The identifier of the distribution tenant. You can specify the ARN, ID, or name of the distribution tenant.</p>
     pub fn set_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.identifier = input;
         self
     }
-    /// <p>The ID of the distribution tenant.</p>
+    /// <p>The identifier of the distribution tenant. You can specify the ARN, ID, or name of the distribution tenant.</p>
     pub fn get_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.identifier
     }

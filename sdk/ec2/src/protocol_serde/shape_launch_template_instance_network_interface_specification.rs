@@ -292,6 +292,21 @@ pub fn de_launch_template_instance_network_interface_specification(
                 builder = builder.set_connection_tracking_specification(var_22);
             }
             ,
+            s if s.matches("enaQueueCount") /* EnaQueueCount com.amazonaws.ec2#LaunchTemplateInstanceNetworkInterfaceSpecification$EnaQueueCount */ =>  {
+                let var_23 =
+                    Some(
+                         {
+                            <i32 as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (integer: `com.amazonaws.ec2#Integer`)"))
+                        }
+                        ?
+                    )
+                ;
+                builder = builder.set_ena_queue_count(var_23);
+            }
+            ,
             _ => {}
         }
     }

@@ -19,26 +19,34 @@ pub fn ser_attach_network_interface_input_input_input(
         crate::protocol_serde::shape_ena_srd_specification::ser_ena_srd_specification(scope_3, var_4)?;
     }
     #[allow(unused_mut)]
-    let mut scope_5 = writer.prefix("DryRun");
-    if let Some(var_6) = &input.dry_run {
-        scope_5.boolean(*var_6);
+    let mut scope_5 = writer.prefix("EnaQueueCount");
+    if let Some(var_6) = &input.ena_queue_count {
+        scope_5.number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_6).into()),
+        );
     }
     #[allow(unused_mut)]
-    let mut scope_7 = writer.prefix("NetworkInterfaceId");
-    if let Some(var_8) = &input.network_interface_id {
-        scope_7.string(var_8);
+    let mut scope_7 = writer.prefix("DryRun");
+    if let Some(var_8) = &input.dry_run {
+        scope_7.boolean(*var_8);
     }
     #[allow(unused_mut)]
-    let mut scope_9 = writer.prefix("InstanceId");
-    if let Some(var_10) = &input.instance_id {
+    let mut scope_9 = writer.prefix("NetworkInterfaceId");
+    if let Some(var_10) = &input.network_interface_id {
         scope_9.string(var_10);
     }
     #[allow(unused_mut)]
-    let mut scope_11 = writer.prefix("DeviceIndex");
-    if let Some(var_12) = &input.device_index {
-        scope_11.number(
+    let mut scope_11 = writer.prefix("InstanceId");
+    if let Some(var_12) = &input.instance_id {
+        scope_11.string(var_12);
+    }
+    #[allow(unused_mut)]
+    let mut scope_13 = writer.prefix("DeviceIndex");
+    if let Some(var_14) = &input.device_index {
+        scope_13.number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_12).into()),
+            ::aws_smithy_types::Number::NegInt((*var_14).into()),
         );
     }
     writer.finish();

@@ -215,6 +215,8 @@ impl DescribeInstanceTypesFluentBuilder {
     /// <li>
     /// <p><code>network-info.ena-support</code> - Indicates whether Elastic Network Adapter (ENA) is supported or required (<code>required</code> | <code>supported</code> | <code>unsupported</code>).</p></li>
     /// <li>
+    /// <p><code>network-info.flexible-ena-queues-support</code> - Indicates whether an instance supports flexible ENA queues (<code>supported</code> | <code>unsupported</code>).</p></li>
+    /// <li>
     /// <p><code>network-info.encryption-in-transit-supported</code> - Indicates whether the instance type automatically encrypts in-transit traffic between instances (<code>true</code> | <code>false</code>).</p></li>
     /// <li>
     /// <p><code>network-info.ipv4-addresses-per-interface</code> - The maximum number of private IPv4 addresses per network interface.</p></li>
@@ -326,6 +328,8 @@ impl DescribeInstanceTypesFluentBuilder {
     /// <li>
     /// <p><code>network-info.ena-support</code> - Indicates whether Elastic Network Adapter (ENA) is supported or required (<code>required</code> | <code>supported</code> | <code>unsupported</code>).</p></li>
     /// <li>
+    /// <p><code>network-info.flexible-ena-queues-support</code> - Indicates whether an instance supports flexible ENA queues (<code>supported</code> | <code>unsupported</code>).</p></li>
+    /// <li>
     /// <p><code>network-info.encryption-in-transit-supported</code> - Indicates whether the instance type automatically encrypts in-transit traffic between instances (<code>true</code> | <code>false</code>).</p></li>
     /// <li>
     /// <p><code>network-info.ipv4-addresses-per-interface</code> - The maximum number of private IPv4 addresses per network interface.</p></li>
@@ -436,6 +440,8 @@ impl DescribeInstanceTypesFluentBuilder {
     /// <p><code>network-info.efa-supported</code> - Indicates whether the instance type supports Elastic Fabric Adapter (EFA) (<code>true</code> | <code>false</code>).</p></li>
     /// <li>
     /// <p><code>network-info.ena-support</code> - Indicates whether Elastic Network Adapter (ENA) is supported or required (<code>required</code> | <code>supported</code> | <code>unsupported</code>).</p></li>
+    /// <li>
+    /// <p><code>network-info.flexible-ena-queues-support</code> - Indicates whether an instance supports flexible ENA queues (<code>supported</code> | <code>unsupported</code>).</p></li>
     /// <li>
     /// <p><code>network-info.encryption-in-transit-supported</code> - Indicates whether the instance type automatically encrypts in-transit traffic between instances (<code>true</code> | <code>false</code>).</p></li>
     /// <li>

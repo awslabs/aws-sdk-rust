@@ -4,17 +4,17 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IntegrationPartition {
-    /// <p>The field name used to partition data on the target.</p>
+    /// <p>The field name used to partition data on the target. Avoid using columns that have unique values for each row (for example, `LastModifiedTimestamp`, `SystemModTimeStamp`) as the partition column. These columns are not suitable for partitioning because they create a large number of small partitions, which can lead to performance issues.</p>
     pub field_name: ::std::option::Option<::std::string::String>,
-    /// <p>Specifies a function used to partition data on the target.</p>
+    /// <p>Specifies the function used to partition data on the target. The only accepted value for this parameter is `'identity'` (string). The `'identity'` function ensures that the data partitioning on the target follows the same scheme as the source. In other words, the partitioning structure of the source data is preserved in the target destination.</p>
     pub function_spec: ::std::option::Option<::std::string::String>,
 }
 impl IntegrationPartition {
-    /// <p>The field name used to partition data on the target.</p>
+    /// <p>The field name used to partition data on the target. Avoid using columns that have unique values for each row (for example, `LastModifiedTimestamp`, `SystemModTimeStamp`) as the partition column. These columns are not suitable for partitioning because they create a large number of small partitions, which can lead to performance issues.</p>
     pub fn field_name(&self) -> ::std::option::Option<&str> {
         self.field_name.as_deref()
     }
-    /// <p>Specifies a function used to partition data on the target.</p>
+    /// <p>Specifies the function used to partition data on the target. The only accepted value for this parameter is `'identity'` (string). The `'identity'` function ensures that the data partitioning on the target follows the same scheme as the source. In other words, the partitioning structure of the source data is preserved in the target destination.</p>
     pub fn function_spec(&self) -> ::std::option::Option<&str> {
         self.function_spec.as_deref()
     }
@@ -34,31 +34,31 @@ pub struct IntegrationPartitionBuilder {
     pub(crate) function_spec: ::std::option::Option<::std::string::String>,
 }
 impl IntegrationPartitionBuilder {
-    /// <p>The field name used to partition data on the target.</p>
+    /// <p>The field name used to partition data on the target. Avoid using columns that have unique values for each row (for example, `LastModifiedTimestamp`, `SystemModTimeStamp`) as the partition column. These columns are not suitable for partitioning because they create a large number of small partitions, which can lead to performance issues.</p>
     pub fn field_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.field_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The field name used to partition data on the target.</p>
+    /// <p>The field name used to partition data on the target. Avoid using columns that have unique values for each row (for example, `LastModifiedTimestamp`, `SystemModTimeStamp`) as the partition column. These columns are not suitable for partitioning because they create a large number of small partitions, which can lead to performance issues.</p>
     pub fn set_field_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.field_name = input;
         self
     }
-    /// <p>The field name used to partition data on the target.</p>
+    /// <p>The field name used to partition data on the target. Avoid using columns that have unique values for each row (for example, `LastModifiedTimestamp`, `SystemModTimeStamp`) as the partition column. These columns are not suitable for partitioning because they create a large number of small partitions, which can lead to performance issues.</p>
     pub fn get_field_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.field_name
     }
-    /// <p>Specifies a function used to partition data on the target.</p>
+    /// <p>Specifies the function used to partition data on the target. The only accepted value for this parameter is `'identity'` (string). The `'identity'` function ensures that the data partitioning on the target follows the same scheme as the source. In other words, the partitioning structure of the source data is preserved in the target destination.</p>
     pub fn function_spec(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.function_spec = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Specifies a function used to partition data on the target.</p>
+    /// <p>Specifies the function used to partition data on the target. The only accepted value for this parameter is `'identity'` (string). The `'identity'` function ensures that the data partitioning on the target follows the same scheme as the source. In other words, the partitioning structure of the source data is preserved in the target destination.</p>
     pub fn set_function_spec(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.function_spec = input;
         self
     }
-    /// <p>Specifies a function used to partition data on the target.</p>
+    /// <p>Specifies the function used to partition data on the target. The only accepted value for this parameter is `'identity'` (string). The `'identity'` function ensures that the data partitioning on the target follows the same scheme as the source. In other words, the partitioning structure of the source data is preserved in the target destination.</p>
     pub fn get_function_spec(&self) -> &::std::option::Option<::std::string::String> {
         &self.function_spec
     }

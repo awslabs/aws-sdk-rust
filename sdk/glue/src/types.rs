@@ -919,6 +919,8 @@ pub use crate::types::_blueprint_status::BlueprintStatus;
 
 pub use crate::types::_integration::Integration;
 
+pub use crate::types::_integration_config::IntegrationConfig;
+
 pub use crate::types::_integration_filter::IntegrationFilter;
 
 pub use crate::types::_inbound_integration::InboundIntegration;
@@ -1436,6 +1438,8 @@ mod _inbound_integration;
 mod _inclusion_annotation_value;
 
 mod _integration;
+
+mod _integration_config;
 
 mod _integration_error;
 

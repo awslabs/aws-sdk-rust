@@ -8,6 +8,8 @@ pub struct EnvironmentVariable {
     pub name: ::std::string::String,
     /// <p>The environment variable value in the key-value pair.</p>
     pub value: ::std::string::String,
+    /// <p>Specifies the type of use for the environment variable value. The value can be either <code>PLAINTEXT</code> or <code>SECRETS_MANAGER</code>. If the value is <code>SECRETS_MANAGER</code>, provide the Secrets reference in the EnvironmentVariable value.</p>
+    pub r#type: ::std::option::Option<crate::types::EnvironmentVariableType>,
 }
 impl EnvironmentVariable {
     /// <p>The environment variable name in the key-value pair.</p>
@@ -19,6 +21,10 @@ impl EnvironmentVariable {
     pub fn value(&self) -> &str {
         use std::ops::Deref;
         self.value.deref()
+    }
+    /// <p>Specifies the type of use for the environment variable value. The value can be either <code>PLAINTEXT</code> or <code>SECRETS_MANAGER</code>. If the value is <code>SECRETS_MANAGER</code>, provide the Secrets reference in the EnvironmentVariable value.</p>
+    pub fn r#type(&self) -> ::std::option::Option<&crate::types::EnvironmentVariableType> {
+        self.r#type.as_ref()
     }
 }
 impl EnvironmentVariable {
@@ -34,6 +40,7 @@ impl EnvironmentVariable {
 pub struct EnvironmentVariableBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) value: ::std::option::Option<::std::string::String>,
+    pub(crate) r#type: ::std::option::Option<crate::types::EnvironmentVariableType>,
 }
 impl EnvironmentVariableBuilder {
     /// <p>The environment variable name in the key-value pair.</p>
@@ -66,6 +73,20 @@ impl EnvironmentVariableBuilder {
     pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
         &self.value
     }
+    /// <p>Specifies the type of use for the environment variable value. The value can be either <code>PLAINTEXT</code> or <code>SECRETS_MANAGER</code>. If the value is <code>SECRETS_MANAGER</code>, provide the Secrets reference in the EnvironmentVariable value.</p>
+    pub fn r#type(mut self, input: crate::types::EnvironmentVariableType) -> Self {
+        self.r#type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies the type of use for the environment variable value. The value can be either <code>PLAINTEXT</code> or <code>SECRETS_MANAGER</code>. If the value is <code>SECRETS_MANAGER</code>, provide the Secrets reference in the EnvironmentVariable value.</p>
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::EnvironmentVariableType>) -> Self {
+        self.r#type = input;
+        self
+    }
+    /// <p>Specifies the type of use for the environment variable value. The value can be either <code>PLAINTEXT</code> or <code>SECRETS_MANAGER</code>. If the value is <code>SECRETS_MANAGER</code>, provide the Secrets reference in the EnvironmentVariable value.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::EnvironmentVariableType> {
+        &self.r#type
+    }
     /// Consumes the builder and constructs a [`EnvironmentVariable`](crate::types::EnvironmentVariable).
     /// This method will fail if any of the following fields are not set:
     /// - [`name`](crate::types::builders::EnvironmentVariableBuilder::name)
@@ -84,6 +105,7 @@ impl EnvironmentVariableBuilder {
                     "value was not specified but it is required when building EnvironmentVariable",
                 )
             })?,
+            r#type: self.r#type,
         })
     }
 }

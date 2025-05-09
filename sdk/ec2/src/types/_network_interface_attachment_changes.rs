@@ -4,12 +4,24 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NetworkInterfaceAttachmentChanges {
+    /// <p>The default number of the ENA queues.</p>
+    pub default_ena_queue_count: ::std::option::Option<bool>,
+    /// <p>The number of ENA queues to be created with the instance.</p>
+    pub ena_queue_count: ::std::option::Option<i32>,
     /// <p>The ID of the network interface attachment.</p>
     pub attachment_id: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether the network interface is deleted when the instance is terminated.</p>
     pub delete_on_termination: ::std::option::Option<bool>,
 }
 impl NetworkInterfaceAttachmentChanges {
+    /// <p>The default number of the ENA queues.</p>
+    pub fn default_ena_queue_count(&self) -> ::std::option::Option<bool> {
+        self.default_ena_queue_count
+    }
+    /// <p>The number of ENA queues to be created with the instance.</p>
+    pub fn ena_queue_count(&self) -> ::std::option::Option<i32> {
+        self.ena_queue_count
+    }
     /// <p>The ID of the network interface attachment.</p>
     pub fn attachment_id(&self) -> ::std::option::Option<&str> {
         self.attachment_id.as_deref()
@@ -30,10 +42,40 @@ impl NetworkInterfaceAttachmentChanges {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 pub struct NetworkInterfaceAttachmentChangesBuilder {
+    pub(crate) default_ena_queue_count: ::std::option::Option<bool>,
+    pub(crate) ena_queue_count: ::std::option::Option<i32>,
     pub(crate) attachment_id: ::std::option::Option<::std::string::String>,
     pub(crate) delete_on_termination: ::std::option::Option<bool>,
 }
 impl NetworkInterfaceAttachmentChangesBuilder {
+    /// <p>The default number of the ENA queues.</p>
+    pub fn default_ena_queue_count(mut self, input: bool) -> Self {
+        self.default_ena_queue_count = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The default number of the ENA queues.</p>
+    pub fn set_default_ena_queue_count(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.default_ena_queue_count = input;
+        self
+    }
+    /// <p>The default number of the ENA queues.</p>
+    pub fn get_default_ena_queue_count(&self) -> &::std::option::Option<bool> {
+        &self.default_ena_queue_count
+    }
+    /// <p>The number of ENA queues to be created with the instance.</p>
+    pub fn ena_queue_count(mut self, input: i32) -> Self {
+        self.ena_queue_count = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The number of ENA queues to be created with the instance.</p>
+    pub fn set_ena_queue_count(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.ena_queue_count = input;
+        self
+    }
+    /// <p>The number of ENA queues to be created with the instance.</p>
+    pub fn get_ena_queue_count(&self) -> &::std::option::Option<i32> {
+        &self.ena_queue_count
+    }
     /// <p>The ID of the network interface attachment.</p>
     pub fn attachment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.attachment_id = ::std::option::Option::Some(input.into());
@@ -65,6 +107,8 @@ impl NetworkInterfaceAttachmentChangesBuilder {
     /// Consumes the builder and constructs a [`NetworkInterfaceAttachmentChanges`](crate::types::NetworkInterfaceAttachmentChanges).
     pub fn build(self) -> crate::types::NetworkInterfaceAttachmentChanges {
         crate::types::NetworkInterfaceAttachmentChanges {
+            default_ena_queue_count: self.default_ena_queue_count,
+            ena_queue_count: self.ena_queue_count,
             attachment_id: self.attachment_id,
             delete_on_termination: self.delete_on_termination,
         }

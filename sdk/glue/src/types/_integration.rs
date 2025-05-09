@@ -40,6 +40,8 @@ pub struct Integration {
     pub status: crate::types::IntegrationStatus,
     /// <p>The time that the integration was created, in UTC.</p>
     pub create_time: ::aws_smithy_types::DateTime,
+    /// <p>Properties associated with the integration.</p>
+    pub integration_config: ::std::option::Option<crate::types::IntegrationConfig>,
     /// <p>A list of errors associated with the integration.</p>
     pub errors: ::std::option::Option<::std::vec::Vec<crate::types::IntegrationError>>,
     /// <p>Selects source tables for the integration using Maxwell filter syntax.</p>
@@ -108,6 +110,10 @@ impl Integration {
     pub fn create_time(&self) -> &::aws_smithy_types::DateTime {
         &self.create_time
     }
+    /// <p>Properties associated with the integration.</p>
+    pub fn integration_config(&self) -> ::std::option::Option<&crate::types::IntegrationConfig> {
+        self.integration_config.as_ref()
+    }
     /// <p>A list of errors associated with the integration.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.errors.is_none()`.
@@ -140,6 +146,7 @@ pub struct IntegrationBuilder {
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     pub(crate) status: ::std::option::Option<crate::types::IntegrationStatus>,
     pub(crate) create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) integration_config: ::std::option::Option<crate::types::IntegrationConfig>,
     pub(crate) errors: ::std::option::Option<::std::vec::Vec<crate::types::IntegrationError>>,
     pub(crate) data_filter: ::std::option::Option<::std::string::String>,
 }
@@ -359,6 +366,20 @@ impl IntegrationBuilder {
     pub fn get_create_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.create_time
     }
+    /// <p>Properties associated with the integration.</p>
+    pub fn integration_config(mut self, input: crate::types::IntegrationConfig) -> Self {
+        self.integration_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Properties associated with the integration.</p>
+    pub fn set_integration_config(mut self, input: ::std::option::Option<crate::types::IntegrationConfig>) -> Self {
+        self.integration_config = input;
+        self
+    }
+    /// <p>Properties associated with the integration.</p>
+    pub fn get_integration_config(&self) -> &::std::option::Option<crate::types::IntegrationConfig> {
+        &self.integration_config
+    }
     /// Appends an item to `errors`.
     ///
     /// To override the contents of this collection use [`set_errors`](Self::set_errors).
@@ -443,6 +464,7 @@ impl IntegrationBuilder {
                     "create_time was not specified but it is required when building Integration",
                 )
             })?,
+            integration_config: self.integration_config,
             errors: self.errors,
             data_filter: self.data_filter,
         })

@@ -55,6 +55,8 @@ pub use crate::types::_action_declaration::ActionDeclaration;
 
 pub use crate::types::_environment_variable::EnvironmentVariable;
 
+pub use crate::types::_environment_variable_type::EnvironmentVariableType;
+
 pub use crate::types::_output_artifact::OutputArtifact;
 
 pub use crate::types::_action_type_id::ActionTypeId;
@@ -376,6 +378,8 @@ mod _encryption_key;
 mod _encryption_key_type;
 
 mod _environment_variable;
+
+mod _environment_variable_type;
 
 mod _error_details;
 

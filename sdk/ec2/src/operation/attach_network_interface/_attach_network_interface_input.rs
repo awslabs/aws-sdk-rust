@@ -8,6 +8,8 @@ pub struct AttachNetworkInterfaceInput {
     pub network_card_index: ::std::option::Option<i32>,
     /// <p>Configures ENA Express for the network interface that this action attaches to the instance.</p>
     pub ena_srd_specification: ::std::option::Option<crate::types::EnaSrdSpecification>,
+    /// <p>The number of ENA queues to be created with the instance.</p>
+    pub ena_queue_count: ::std::option::Option<i32>,
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub dry_run: ::std::option::Option<bool>,
     /// <p>The ID of the network interface.</p>
@@ -25,6 +27,10 @@ impl AttachNetworkInterfaceInput {
     /// <p>Configures ENA Express for the network interface that this action attaches to the instance.</p>
     pub fn ena_srd_specification(&self) -> ::std::option::Option<&crate::types::EnaSrdSpecification> {
         self.ena_srd_specification.as_ref()
+    }
+    /// <p>The number of ENA queues to be created with the instance.</p>
+    pub fn ena_queue_count(&self) -> ::std::option::Option<i32> {
+        self.ena_queue_count
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(&self) -> ::std::option::Option<bool> {
@@ -56,6 +62,7 @@ impl AttachNetworkInterfaceInput {
 pub struct AttachNetworkInterfaceInputBuilder {
     pub(crate) network_card_index: ::std::option::Option<i32>,
     pub(crate) ena_srd_specification: ::std::option::Option<crate::types::EnaSrdSpecification>,
+    pub(crate) ena_queue_count: ::std::option::Option<i32>,
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) network_interface_id: ::std::option::Option<::std::string::String>,
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
@@ -89,6 +96,20 @@ impl AttachNetworkInterfaceInputBuilder {
     /// <p>Configures ENA Express for the network interface that this action attaches to the instance.</p>
     pub fn get_ena_srd_specification(&self) -> &::std::option::Option<crate::types::EnaSrdSpecification> {
         &self.ena_srd_specification
+    }
+    /// <p>The number of ENA queues to be created with the instance.</p>
+    pub fn ena_queue_count(mut self, input: i32) -> Self {
+        self.ena_queue_count = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The number of ENA queues to be created with the instance.</p>
+    pub fn set_ena_queue_count(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.ena_queue_count = input;
+        self
+    }
+    /// <p>The number of ENA queues to be created with the instance.</p>
+    pub fn get_ena_queue_count(&self) -> &::std::option::Option<i32> {
+        &self.ena_queue_count
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
@@ -159,6 +180,7 @@ impl AttachNetworkInterfaceInputBuilder {
         ::std::result::Result::Ok(crate::operation::attach_network_interface::AttachNetworkInterfaceInput {
             network_card_index: self.network_card_index,
             ena_srd_specification: self.ena_srd_specification,
+            ena_queue_count: self.ena_queue_count,
             dry_run: self.dry_run,
             network_interface_id: self.network_interface_id,
             instance_id: self.instance_id,

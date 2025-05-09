@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetManagedCertificateDetails`](crate::operation::get_managed_certificate_details::builders::GetManagedCertificateDetailsFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`identifier(impl Into<String>)`](crate::operation::get_managed_certificate_details::builders::GetManagedCertificateDetailsFluentBuilder::identifier) / [`set_identifier(Option<String>)`](crate::operation::get_managed_certificate_details::builders::GetManagedCertificateDetailsFluentBuilder::set_identifier):<br>required: **true**<br><p>The identifier of the multi-tenant distribution.</p><br>
+    ///   - [`identifier(impl Into<String>)`](crate::operation::get_managed_certificate_details::builders::GetManagedCertificateDetailsFluentBuilder::identifier) / [`set_identifier(Option<String>)`](crate::operation::get_managed_certificate_details::builders::GetManagedCertificateDetailsFluentBuilder::set_identifier):<br>required: **true**<br><p>The identifier of the distribution tenant. You can specify the ARN, ID, or name of the distribution tenant.</p><br>
     /// - On success, responds with [`GetManagedCertificateDetailsOutput`](crate::operation::get_managed_certificate_details::GetManagedCertificateDetailsOutput) with field(s):
     ///   - [`managed_certificate_details(Option<ManagedCertificateDetails>)`](crate::operation::get_managed_certificate_details::GetManagedCertificateDetailsOutput::managed_certificate_details): <p>Contains details about the CloudFront managed ACM certificate.</p>
     /// - On failure, responds with [`SdkError<GetManagedCertificateDetailsError>`](crate::operation::get_managed_certificate_details::GetManagedCertificateDetailsError)

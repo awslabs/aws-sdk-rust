@@ -7,7 +7,7 @@ pub struct CreateIntegrationTablePropertiesInput {
     pub resource_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the table to be replicated.</p>
     pub table_name: ::std::option::Option<::std::string::String>,
-    /// <p>A structure for the source table configuration.</p>
+    /// <p>A structure for the source table configuration. See the <code>SourceTableConfig</code> structure to see list of supported source properties.</p>
     pub source_table_config: ::std::option::Option<crate::types::SourceTableConfig>,
     /// <p>A structure for the target table configuration.</p>
     pub target_table_config: ::std::option::Option<crate::types::TargetTableConfig>,
@@ -21,7 +21,7 @@ impl CreateIntegrationTablePropertiesInput {
     pub fn table_name(&self) -> ::std::option::Option<&str> {
         self.table_name.as_deref()
     }
-    /// <p>A structure for the source table configuration.</p>
+    /// <p>A structure for the source table configuration. See the <code>SourceTableConfig</code> structure to see list of supported source properties.</p>
     pub fn source_table_config(&self) -> ::std::option::Option<&crate::types::SourceTableConfig> {
         self.source_table_config.as_ref()
     }
@@ -77,17 +77,17 @@ impl CreateIntegrationTablePropertiesInputBuilder {
     pub fn get_table_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.table_name
     }
-    /// <p>A structure for the source table configuration.</p>
+    /// <p>A structure for the source table configuration. See the <code>SourceTableConfig</code> structure to see list of supported source properties.</p>
     pub fn source_table_config(mut self, input: crate::types::SourceTableConfig) -> Self {
         self.source_table_config = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A structure for the source table configuration.</p>
+    /// <p>A structure for the source table configuration. See the <code>SourceTableConfig</code> structure to see list of supported source properties.</p>
     pub fn set_source_table_config(mut self, input: ::std::option::Option<crate::types::SourceTableConfig>) -> Self {
         self.source_table_config = input;
         self
     }
-    /// <p>A structure for the source table configuration.</p>
+    /// <p>A structure for the source table configuration. See the <code>SourceTableConfig</code> structure to see list of supported source properties.</p>
     pub fn get_source_table_config(&self) -> &::std::option::Option<crate::types::SourceTableConfig> {
         &self.source_table_config
     }

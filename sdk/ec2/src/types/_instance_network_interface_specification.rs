@@ -55,6 +55,8 @@ pub struct InstanceNetworkInterfaceSpecification {
     pub ena_srd_specification: ::std::option::Option<crate::types::EnaSrdSpecificationRequest>,
     /// <p>A security group connection tracking specification that enables you to set the timeout for connection tracking on an Elastic network interface. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/security-group-connection-tracking.html#connection-tracking-timeouts">Connection tracking timeouts</a> in the <i>Amazon EC2 User Guide</i>.</p>
     pub connection_tracking_specification: ::std::option::Option<crate::types::ConnectionTrackingSpecificationRequest>,
+    /// <p>The number of ENA queues to be created with the instance.</p>
+    pub ena_queue_count: ::std::option::Option<i32>,
 }
 impl InstanceNetworkInterfaceSpecification {
     /// <p>Indicates whether to assign a public IPv4 address to an instance you launch in a VPC. The public IP address can only be assigned to a network interface for eth0, and can only be assigned to a new network interface, not an existing one. You cannot specify more than one network interface in the request. If launching into a default subnet, the default value is <code>true</code>.</p>
@@ -162,6 +164,10 @@ impl InstanceNetworkInterfaceSpecification {
     pub fn connection_tracking_specification(&self) -> ::std::option::Option<&crate::types::ConnectionTrackingSpecificationRequest> {
         self.connection_tracking_specification.as_ref()
     }
+    /// <p>The number of ENA queues to be created with the instance.</p>
+    pub fn ena_queue_count(&self) -> ::std::option::Option<i32> {
+        self.ena_queue_count
+    }
 }
 impl InstanceNetworkInterfaceSpecification {
     /// Creates a new builder-style object to manufacture [`InstanceNetworkInterfaceSpecification`](crate::types::InstanceNetworkInterfaceSpecification).
@@ -196,6 +202,7 @@ pub struct InstanceNetworkInterfaceSpecificationBuilder {
     pub(crate) primary_ipv6: ::std::option::Option<bool>,
     pub(crate) ena_srd_specification: ::std::option::Option<crate::types::EnaSrdSpecificationRequest>,
     pub(crate) connection_tracking_specification: ::std::option::Option<crate::types::ConnectionTrackingSpecificationRequest>,
+    pub(crate) ena_queue_count: ::std::option::Option<i32>,
 }
 impl InstanceNetworkInterfaceSpecificationBuilder {
     /// <p>Indicates whether to assign a public IPv4 address to an instance you launch in a VPC. The public IP address can only be assigned to a network interface for eth0, and can only be assigned to a new network interface, not an existing one. You cannot specify more than one network interface in the request. If launching into a default subnet, the default value is <code>true</code>.</p>
@@ -560,6 +567,20 @@ impl InstanceNetworkInterfaceSpecificationBuilder {
     pub fn get_connection_tracking_specification(&self) -> &::std::option::Option<crate::types::ConnectionTrackingSpecificationRequest> {
         &self.connection_tracking_specification
     }
+    /// <p>The number of ENA queues to be created with the instance.</p>
+    pub fn ena_queue_count(mut self, input: i32) -> Self {
+        self.ena_queue_count = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The number of ENA queues to be created with the instance.</p>
+    pub fn set_ena_queue_count(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.ena_queue_count = input;
+        self
+    }
+    /// <p>The number of ENA queues to be created with the instance.</p>
+    pub fn get_ena_queue_count(&self) -> &::std::option::Option<i32> {
+        &self.ena_queue_count
+    }
     /// Consumes the builder and constructs a [`InstanceNetworkInterfaceSpecification`](crate::types::InstanceNetworkInterfaceSpecification).
     pub fn build(self) -> crate::types::InstanceNetworkInterfaceSpecification {
         crate::types::InstanceNetworkInterfaceSpecification {
@@ -585,6 +606,7 @@ impl InstanceNetworkInterfaceSpecificationBuilder {
             primary_ipv6: self.primary_ipv6,
             ena_srd_specification: self.ena_srd_specification,
             connection_tracking_specification: self.connection_tracking_specification,
+            ena_queue_count: self.ena_queue_count,
         }
     }
 }

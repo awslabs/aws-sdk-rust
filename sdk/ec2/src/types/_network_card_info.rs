@@ -14,6 +14,12 @@ pub struct NetworkCardInfo {
     pub baseline_bandwidth_in_gbps: ::std::option::Option<f64>,
     /// <p>The peak (burst) network performance of the network card, in Gbps.</p>
     pub peak_bandwidth_in_gbps: ::std::option::Option<f64>,
+    /// <p>The default number of the ENA queues for each interface.</p>
+    pub default_ena_queue_count_per_interface: ::std::option::Option<i32>,
+    /// <p>The maximum number of the ENA queues.</p>
+    pub maximum_ena_queue_count: ::std::option::Option<i32>,
+    /// <p>The maximum number of the ENA queues for each interface.</p>
+    pub maximum_ena_queue_count_per_interface: ::std::option::Option<i32>,
 }
 impl NetworkCardInfo {
     /// <p>The index of the network card.</p>
@@ -36,6 +42,18 @@ impl NetworkCardInfo {
     pub fn peak_bandwidth_in_gbps(&self) -> ::std::option::Option<f64> {
         self.peak_bandwidth_in_gbps
     }
+    /// <p>The default number of the ENA queues for each interface.</p>
+    pub fn default_ena_queue_count_per_interface(&self) -> ::std::option::Option<i32> {
+        self.default_ena_queue_count_per_interface
+    }
+    /// <p>The maximum number of the ENA queues.</p>
+    pub fn maximum_ena_queue_count(&self) -> ::std::option::Option<i32> {
+        self.maximum_ena_queue_count
+    }
+    /// <p>The maximum number of the ENA queues for each interface.</p>
+    pub fn maximum_ena_queue_count_per_interface(&self) -> ::std::option::Option<i32> {
+        self.maximum_ena_queue_count_per_interface
+    }
 }
 impl NetworkCardInfo {
     /// Creates a new builder-style object to manufacture [`NetworkCardInfo`](crate::types::NetworkCardInfo).
@@ -53,6 +71,9 @@ pub struct NetworkCardInfoBuilder {
     pub(crate) maximum_network_interfaces: ::std::option::Option<i32>,
     pub(crate) baseline_bandwidth_in_gbps: ::std::option::Option<f64>,
     pub(crate) peak_bandwidth_in_gbps: ::std::option::Option<f64>,
+    pub(crate) default_ena_queue_count_per_interface: ::std::option::Option<i32>,
+    pub(crate) maximum_ena_queue_count: ::std::option::Option<i32>,
+    pub(crate) maximum_ena_queue_count_per_interface: ::std::option::Option<i32>,
 }
 impl NetworkCardInfoBuilder {
     /// <p>The index of the network card.</p>
@@ -125,6 +146,48 @@ impl NetworkCardInfoBuilder {
     pub fn get_peak_bandwidth_in_gbps(&self) -> &::std::option::Option<f64> {
         &self.peak_bandwidth_in_gbps
     }
+    /// <p>The default number of the ENA queues for each interface.</p>
+    pub fn default_ena_queue_count_per_interface(mut self, input: i32) -> Self {
+        self.default_ena_queue_count_per_interface = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The default number of the ENA queues for each interface.</p>
+    pub fn set_default_ena_queue_count_per_interface(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.default_ena_queue_count_per_interface = input;
+        self
+    }
+    /// <p>The default number of the ENA queues for each interface.</p>
+    pub fn get_default_ena_queue_count_per_interface(&self) -> &::std::option::Option<i32> {
+        &self.default_ena_queue_count_per_interface
+    }
+    /// <p>The maximum number of the ENA queues.</p>
+    pub fn maximum_ena_queue_count(mut self, input: i32) -> Self {
+        self.maximum_ena_queue_count = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The maximum number of the ENA queues.</p>
+    pub fn set_maximum_ena_queue_count(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.maximum_ena_queue_count = input;
+        self
+    }
+    /// <p>The maximum number of the ENA queues.</p>
+    pub fn get_maximum_ena_queue_count(&self) -> &::std::option::Option<i32> {
+        &self.maximum_ena_queue_count
+    }
+    /// <p>The maximum number of the ENA queues for each interface.</p>
+    pub fn maximum_ena_queue_count_per_interface(mut self, input: i32) -> Self {
+        self.maximum_ena_queue_count_per_interface = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The maximum number of the ENA queues for each interface.</p>
+    pub fn set_maximum_ena_queue_count_per_interface(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.maximum_ena_queue_count_per_interface = input;
+        self
+    }
+    /// <p>The maximum number of the ENA queues for each interface.</p>
+    pub fn get_maximum_ena_queue_count_per_interface(&self) -> &::std::option::Option<i32> {
+        &self.maximum_ena_queue_count_per_interface
+    }
     /// Consumes the builder and constructs a [`NetworkCardInfo`](crate::types::NetworkCardInfo).
     pub fn build(self) -> crate::types::NetworkCardInfo {
         crate::types::NetworkCardInfo {
@@ -133,6 +196,9 @@ impl NetworkCardInfoBuilder {
             maximum_network_interfaces: self.maximum_network_interfaces,
             baseline_bandwidth_in_gbps: self.baseline_bandwidth_in_gbps,
             peak_bandwidth_in_gbps: self.peak_bandwidth_in_gbps,
+            default_ena_queue_count_per_interface: self.default_ena_queue_count_per_interface,
+            maximum_ena_queue_count: self.maximum_ena_queue_count,
+            maximum_ena_queue_count_per_interface: self.maximum_ena_queue_count_per_interface,
         }
     }
 }

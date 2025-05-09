@@ -1865,6 +1865,8 @@ pub use crate::types::_gpu_device_memory_info::GpuDeviceMemoryInfo;
 
 pub use crate::types::_network_info::NetworkInfo;
 
+pub use crate::types::_flexible_ena_queues_support::FlexibleEnaQueuesSupport;
+
 pub use crate::types::_bandwidth_weighting_type::BandwidthWeightingType;
 
 pub use crate::types::_efa_info::EfaInfo;
@@ -3094,6 +3096,8 @@ mod _fleet_spot_maintenance_strategies_request;
 mod _fleet_state_code;
 
 mod _fleet_type;
+
+mod _flexible_ena_queues_support;
 
 mod _flow_log;
 

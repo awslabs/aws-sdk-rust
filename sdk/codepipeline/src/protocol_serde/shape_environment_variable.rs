@@ -9,6 +9,9 @@ pub fn ser_environment_variable(
     {
         object.key("value").string(input.value.as_str());
     }
+    if let Some(var_1) = &input.r#type {
+        object.key("type").string(var_1.as_str());
+    }
     Ok(())
 }
 
@@ -38,6 +41,13 @@ where
                             builder = builder.set_value(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "type" => {
+                            builder = builder.set_type(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::EnvironmentVariableType::from(u.as_ref())))
                                     .transpose()?,
                             );
                         }

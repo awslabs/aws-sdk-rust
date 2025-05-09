@@ -136,6 +136,20 @@ impl AttachNetworkInterfaceFluentBuilder {
     pub fn get_ena_srd_specification(&self) -> &::std::option::Option<crate::types::EnaSrdSpecification> {
         self.inner.get_ena_srd_specification()
     }
+    /// <p>The number of ENA queues to be created with the instance.</p>
+    pub fn ena_queue_count(mut self, input: i32) -> Self {
+        self.inner = self.inner.ena_queue_count(input);
+        self
+    }
+    /// <p>The number of ENA queues to be created with the instance.</p>
+    pub fn set_ena_queue_count(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.inner = self.inner.set_ena_queue_count(input);
+        self
+    }
+    /// <p>The number of ENA queues to be created with the instance.</p>
+    pub fn get_ena_queue_count(&self) -> &::std::option::Option<i32> {
+        self.inner.get_ena_queue_count()
+    }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.inner = self.inner.dry_run(input);

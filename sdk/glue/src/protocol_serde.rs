@@ -1337,6 +1337,8 @@ pub(crate) mod shape_inbound_integrations_list;
 
 pub(crate) mod shape_integration_additional_encryption_context_map;
 
+pub(crate) mod shape_integration_config;
+
 pub(crate) mod shape_integration_error_list;
 
 pub(crate) mod shape_integration_filter;

@@ -103,6 +103,21 @@ pub fn de_instance_network_interface_attachment(
                 builder = builder.set_ena_srd_specification(var_7);
             }
             ,
+            s if s.matches("enaQueueCount") /* EnaQueueCount com.amazonaws.ec2#InstanceNetworkInterfaceAttachment$EnaQueueCount */ =>  {
+                let var_8 =
+                    Some(
+                         {
+                            <i32 as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (integer: `com.amazonaws.ec2#Integer`)"))
+                        }
+                        ?
+                    )
+                ;
+                builder = builder.set_ena_queue_count(var_8);
+            }
+            ,
             _ => {}
         }
     }

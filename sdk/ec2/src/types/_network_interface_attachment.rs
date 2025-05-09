@@ -22,6 +22,8 @@ pub struct NetworkInterfaceAttachment {
     pub status: ::std::option::Option<crate::types::AttachmentStatus>,
     /// <p>Configures ENA Express for the network interface that this action attaches to the instance.</p>
     pub ena_srd_specification: ::std::option::Option<crate::types::AttachmentEnaSrdSpecification>,
+    /// <p>The number of ENA queues created with the instance.</p>
+    pub ena_queue_count: ::std::option::Option<i32>,
 }
 impl NetworkInterfaceAttachment {
     /// <p>The timestamp indicating when the attachment initiated.</p>
@@ -60,6 +62,10 @@ impl NetworkInterfaceAttachment {
     pub fn ena_srd_specification(&self) -> ::std::option::Option<&crate::types::AttachmentEnaSrdSpecification> {
         self.ena_srd_specification.as_ref()
     }
+    /// <p>The number of ENA queues created with the instance.</p>
+    pub fn ena_queue_count(&self) -> ::std::option::Option<i32> {
+        self.ena_queue_count
+    }
 }
 impl NetworkInterfaceAttachment {
     /// Creates a new builder-style object to manufacture [`NetworkInterfaceAttachment`](crate::types::NetworkInterfaceAttachment).
@@ -81,6 +87,7 @@ pub struct NetworkInterfaceAttachmentBuilder {
     pub(crate) instance_owner_id: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::AttachmentStatus>,
     pub(crate) ena_srd_specification: ::std::option::Option<crate::types::AttachmentEnaSrdSpecification>,
+    pub(crate) ena_queue_count: ::std::option::Option<i32>,
 }
 impl NetworkInterfaceAttachmentBuilder {
     /// <p>The timestamp indicating when the attachment initiated.</p>
@@ -209,6 +216,20 @@ impl NetworkInterfaceAttachmentBuilder {
     pub fn get_ena_srd_specification(&self) -> &::std::option::Option<crate::types::AttachmentEnaSrdSpecification> {
         &self.ena_srd_specification
     }
+    /// <p>The number of ENA queues created with the instance.</p>
+    pub fn ena_queue_count(mut self, input: i32) -> Self {
+        self.ena_queue_count = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The number of ENA queues created with the instance.</p>
+    pub fn set_ena_queue_count(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.ena_queue_count = input;
+        self
+    }
+    /// <p>The number of ENA queues created with the instance.</p>
+    pub fn get_ena_queue_count(&self) -> &::std::option::Option<i32> {
+        &self.ena_queue_count
+    }
     /// Consumes the builder and constructs a [`NetworkInterfaceAttachment`](crate::types::NetworkInterfaceAttachment).
     pub fn build(self) -> crate::types::NetworkInterfaceAttachment {
         crate::types::NetworkInterfaceAttachment {
@@ -221,6 +242,7 @@ impl NetworkInterfaceAttachmentBuilder {
             instance_owner_id: self.instance_owner_id,
             status: self.status,
             ena_srd_specification: self.ena_srd_specification,
+            ena_queue_count: self.ena_queue_count,
         }
     }
 }

@@ -136,17 +136,17 @@ impl CreateIntegrationTablePropertiesFluentBuilder {
     pub fn get_table_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_table_name()
     }
-    /// <p>A structure for the source table configuration.</p>
+    /// <p>A structure for the source table configuration. See the <code>SourceTableConfig</code> structure to see list of supported source properties.</p>
     pub fn source_table_config(mut self, input: crate::types::SourceTableConfig) -> Self {
         self.inner = self.inner.source_table_config(input);
         self
     }
-    /// <p>A structure for the source table configuration.</p>
+    /// <p>A structure for the source table configuration. See the <code>SourceTableConfig</code> structure to see list of supported source properties.</p>
     pub fn set_source_table_config(mut self, input: ::std::option::Option<crate::types::SourceTableConfig>) -> Self {
         self.inner = self.inner.set_source_table_config(input);
         self
     }
-    /// <p>A structure for the source table configuration.</p>
+    /// <p>A structure for the source table configuration. See the <code>SourceTableConfig</code> structure to see list of supported source properties.</p>
     pub fn get_source_table_config(&self) -> &::std::option::Option<crate::types::SourceTableConfig> {
         self.inner.get_source_table_config()
     }

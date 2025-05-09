@@ -689,6 +689,8 @@ pub use crate::types::_last_active_definition::LastActiveDefinitionBuilder;
 
 pub use crate::types::_integration::IntegrationBuilder;
 
+pub use crate::types::_integration_config::IntegrationConfigBuilder;
+
 pub use crate::types::_integration_filter::IntegrationFilterBuilder;
 
 pub use crate::types::_inbound_integration::InboundIntegrationBuilder;

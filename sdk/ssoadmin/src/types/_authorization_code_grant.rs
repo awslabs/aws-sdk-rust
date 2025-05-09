@@ -4,11 +4,15 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AuthorizationCodeGrant {
-    /// <p>A list of URIs that are valid locations to redirect a user's browser after the user is authorized.</p>
+    /// <p>A list of URIs that are valid locations to redirect a user's browser after the user is authorized.</p><note>
+    /// <p>RedirectUris is required when the grant type is <code>authorization_code</code>.</p>
+    /// </note>
     pub redirect_uris: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl AuthorizationCodeGrant {
-    /// <p>A list of URIs that are valid locations to redirect a user's browser after the user is authorized.</p>
+    /// <p>A list of URIs that are valid locations to redirect a user's browser after the user is authorized.</p><note>
+    /// <p>RedirectUris is required when the grant type is <code>authorization_code</code>.</p>
+    /// </note>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.redirect_uris.is_none()`.
     pub fn redirect_uris(&self) -> &[::std::string::String] {
@@ -33,19 +37,25 @@ impl AuthorizationCodeGrantBuilder {
     ///
     /// To override the contents of this collection use [`set_redirect_uris`](Self::set_redirect_uris).
     ///
-    /// <p>A list of URIs that are valid locations to redirect a user's browser after the user is authorized.</p>
+    /// <p>A list of URIs that are valid locations to redirect a user's browser after the user is authorized.</p><note>
+    /// <p>RedirectUris is required when the grant type is <code>authorization_code</code>.</p>
+    /// </note>
     pub fn redirect_uris(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.redirect_uris.unwrap_or_default();
         v.push(input.into());
         self.redirect_uris = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of URIs that are valid locations to redirect a user's browser after the user is authorized.</p>
+    /// <p>A list of URIs that are valid locations to redirect a user's browser after the user is authorized.</p><note>
+    /// <p>RedirectUris is required when the grant type is <code>authorization_code</code>.</p>
+    /// </note>
     pub fn set_redirect_uris(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.redirect_uris = input;
         self
     }
-    /// <p>A list of URIs that are valid locations to redirect a user's browser after the user is authorized.</p>
+    /// <p>A list of URIs that are valid locations to redirect a user's browser after the user is authorized.</p><note>
+    /// <p>RedirectUris is required when the grant type is <code>authorization_code</code>.</p>
+    /// </note>
     pub fn get_redirect_uris(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.redirect_uris
     }

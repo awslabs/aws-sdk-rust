@@ -80,6 +80,51 @@ pub fn de_network_card_info(
                 builder = builder.set_peak_bandwidth_in_gbps(var_5);
             }
             ,
+            s if s.matches("defaultEnaQueueCountPerInterface") /* DefaultEnaQueueCountPerInterface com.amazonaws.ec2#NetworkCardInfo$DefaultEnaQueueCountPerInterface */ =>  {
+                let var_6 =
+                    Some(
+                         {
+                            <i32 as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (integer: `com.amazonaws.ec2#DefaultEnaQueueCountPerInterface`)"))
+                        }
+                        ?
+                    )
+                ;
+                builder = builder.set_default_ena_queue_count_per_interface(var_6);
+            }
+            ,
+            s if s.matches("maximumEnaQueueCount") /* MaximumEnaQueueCount com.amazonaws.ec2#NetworkCardInfo$MaximumEnaQueueCount */ =>  {
+                let var_7 =
+                    Some(
+                         {
+                            <i32 as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (integer: `com.amazonaws.ec2#MaximumEnaQueueCount`)"))
+                        }
+                        ?
+                    )
+                ;
+                builder = builder.set_maximum_ena_queue_count(var_7);
+            }
+            ,
+            s if s.matches("maximumEnaQueueCountPerInterface") /* MaximumEnaQueueCountPerInterface com.amazonaws.ec2#NetworkCardInfo$MaximumEnaQueueCountPerInterface */ =>  {
+                let var_8 =
+                    Some(
+                         {
+                            <i32 as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (integer: `com.amazonaws.ec2#MaximumEnaQueueCountPerInterface`)"))
+                        }
+                        ?
+                    )
+                ;
+                builder = builder.set_maximum_ena_queue_count_per_interface(var_8);
+            }
+            ,
             _ => {}
         }
     }

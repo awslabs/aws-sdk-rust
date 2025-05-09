@@ -122,17 +122,17 @@ impl VerifyDnsConfigurationFluentBuilder {
     pub fn get_domain(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_domain()
     }
-    /// <p>The ID of the distribution tenant.</p>
+    /// <p>The identifier of the distribution tenant. You can specify the ARN, ID, or name of the distribution tenant.</p>
     pub fn identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.identifier(input.into());
         self
     }
-    /// <p>The ID of the distribution tenant.</p>
+    /// <p>The identifier of the distribution tenant. You can specify the ARN, ID, or name of the distribution tenant.</p>
     pub fn set_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_identifier(input);
         self
     }
-    /// <p>The ID of the distribution tenant.</p>
+    /// <p>The identifier of the distribution tenant. You can specify the ARN, ID, or name of the distribution tenant.</p>
     pub fn get_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_identifier()
     }

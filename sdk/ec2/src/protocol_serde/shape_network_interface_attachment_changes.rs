@@ -5,14 +5,27 @@ pub fn ser_network_interface_attachment_changes(
     input: &crate::types::NetworkInterfaceAttachmentChanges,
 ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
-    let mut scope_1 = writer.prefix("AttachmentId");
-    if let Some(var_2) = &input.attachment_id {
-        scope_1.string(var_2);
+    let mut scope_1 = writer.prefix("DefaultEnaQueueCount");
+    if let Some(var_2) = &input.default_ena_queue_count {
+        scope_1.boolean(*var_2);
     }
     #[allow(unused_mut)]
-    let mut scope_3 = writer.prefix("DeleteOnTermination");
-    if let Some(var_4) = &input.delete_on_termination {
-        scope_3.boolean(*var_4);
+    let mut scope_3 = writer.prefix("EnaQueueCount");
+    if let Some(var_4) = &input.ena_queue_count {
+        scope_3.number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_4).into()),
+        );
+    }
+    #[allow(unused_mut)]
+    let mut scope_5 = writer.prefix("AttachmentId");
+    if let Some(var_6) = &input.attachment_id {
+        scope_5.string(var_6);
+    }
+    #[allow(unused_mut)]
+    let mut scope_7 = writer.prefix("DeleteOnTermination");
+    if let Some(var_8) = &input.delete_on_termination {
+        scope_7.boolean(*var_8);
     }
     Ok(())
 }

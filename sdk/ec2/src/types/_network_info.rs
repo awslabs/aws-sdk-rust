@@ -32,6 +32,8 @@ pub struct NetworkInfo {
     pub ena_srd_supported: ::std::option::Option<bool>,
     /// <p>A list of valid settings for configurable bandwidth weighting for the instance type, if supported.</p>
     pub bandwidth_weightings: ::std::option::Option<::std::vec::Vec<crate::types::BandwidthWeightingType>>,
+    /// <p>Indicates whether changing the number of ENA queues is supported.</p>
+    pub flexible_ena_queues_support: ::std::option::Option<crate::types::FlexibleEnaQueuesSupport>,
 }
 impl NetworkInfo {
     /// <p>The network performance.</p>
@@ -94,6 +96,10 @@ impl NetworkInfo {
     pub fn bandwidth_weightings(&self) -> &[crate::types::BandwidthWeightingType] {
         self.bandwidth_weightings.as_deref().unwrap_or_default()
     }
+    /// <p>Indicates whether changing the number of ENA queues is supported.</p>
+    pub fn flexible_ena_queues_support(&self) -> ::std::option::Option<&crate::types::FlexibleEnaQueuesSupport> {
+        self.flexible_ena_queues_support.as_ref()
+    }
 }
 impl NetworkInfo {
     /// Creates a new builder-style object to manufacture [`NetworkInfo`](crate::types::NetworkInfo).
@@ -120,6 +126,7 @@ pub struct NetworkInfoBuilder {
     pub(crate) encryption_in_transit_supported: ::std::option::Option<bool>,
     pub(crate) ena_srd_supported: ::std::option::Option<bool>,
     pub(crate) bandwidth_weightings: ::std::option::Option<::std::vec::Vec<crate::types::BandwidthWeightingType>>,
+    pub(crate) flexible_ena_queues_support: ::std::option::Option<crate::types::FlexibleEnaQueuesSupport>,
 }
 impl NetworkInfoBuilder {
     /// <p>The network performance.</p>
@@ -330,6 +337,20 @@ impl NetworkInfoBuilder {
     pub fn get_bandwidth_weightings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BandwidthWeightingType>> {
         &self.bandwidth_weightings
     }
+    /// <p>Indicates whether changing the number of ENA queues is supported.</p>
+    pub fn flexible_ena_queues_support(mut self, input: crate::types::FlexibleEnaQueuesSupport) -> Self {
+        self.flexible_ena_queues_support = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates whether changing the number of ENA queues is supported.</p>
+    pub fn set_flexible_ena_queues_support(mut self, input: ::std::option::Option<crate::types::FlexibleEnaQueuesSupport>) -> Self {
+        self.flexible_ena_queues_support = input;
+        self
+    }
+    /// <p>Indicates whether changing the number of ENA queues is supported.</p>
+    pub fn get_flexible_ena_queues_support(&self) -> &::std::option::Option<crate::types::FlexibleEnaQueuesSupport> {
+        &self.flexible_ena_queues_support
+    }
     /// Consumes the builder and constructs a [`NetworkInfo`](crate::types::NetworkInfo).
     pub fn build(self) -> crate::types::NetworkInfo {
         crate::types::NetworkInfo {
@@ -347,6 +368,7 @@ impl NetworkInfoBuilder {
             encryption_in_transit_supported: self.encryption_in_transit_supported,
             ena_srd_supported: self.ena_srd_supported,
             bandwidth_weightings: self.bandwidth_weightings,
+            flexible_ena_queues_support: self.flexible_ena_queues_support,
         }
     }
 }

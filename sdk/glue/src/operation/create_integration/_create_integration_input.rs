@@ -19,6 +19,8 @@ pub struct CreateIntegrationInput {
     pub additional_encryption_context: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Metadata assigned to the resource consisting of a list of key-value pairs.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    /// <p>The configuration settings.</p>
+    pub integration_config: ::std::option::Option<crate::types::IntegrationConfig>,
 }
 impl CreateIntegrationInput {
     /// <p>A unique name for an integration in Glue.</p>
@@ -55,6 +57,10 @@ impl CreateIntegrationInput {
     pub fn tags(&self) -> &[crate::types::Tag] {
         self.tags.as_deref().unwrap_or_default()
     }
+    /// <p>The configuration settings.</p>
+    pub fn integration_config(&self) -> ::std::option::Option<&crate::types::IntegrationConfig> {
+        self.integration_config.as_ref()
+    }
 }
 impl CreateIntegrationInput {
     /// Creates a new builder-style object to manufacture [`CreateIntegrationInput`](crate::operation::create_integration::CreateIntegrationInput).
@@ -75,6 +81,7 @@ pub struct CreateIntegrationInputBuilder {
     pub(crate) kms_key_id: ::std::option::Option<::std::string::String>,
     pub(crate) additional_encryption_context: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) integration_config: ::std::option::Option<crate::types::IntegrationConfig>,
 }
 impl CreateIntegrationInputBuilder {
     /// <p>A unique name for an integration in Glue.</p>
@@ -213,6 +220,20 @@ impl CreateIntegrationInputBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         &self.tags
     }
+    /// <p>The configuration settings.</p>
+    pub fn integration_config(mut self, input: crate::types::IntegrationConfig) -> Self {
+        self.integration_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The configuration settings.</p>
+    pub fn set_integration_config(mut self, input: ::std::option::Option<crate::types::IntegrationConfig>) -> Self {
+        self.integration_config = input;
+        self
+    }
+    /// <p>The configuration settings.</p>
+    pub fn get_integration_config(&self) -> &::std::option::Option<crate::types::IntegrationConfig> {
+        &self.integration_config
+    }
     /// Consumes the builder and constructs a [`CreateIntegrationInput`](crate::operation::create_integration::CreateIntegrationInput).
     pub fn build(
         self,
@@ -226,6 +247,7 @@ impl CreateIntegrationInputBuilder {
             kms_key_id: self.kms_key_id,
             additional_encryption_context: self.additional_encryption_context,
             tags: self.tags,
+            integration_config: self.integration_config,
         })
     }
 }

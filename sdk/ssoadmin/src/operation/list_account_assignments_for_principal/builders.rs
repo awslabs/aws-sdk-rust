@@ -22,7 +22,7 @@ impl crate::operation::list_account_assignments_for_principal::builders::ListAcc
 }
 /// Fluent builder constructing a request to `ListAccountAssignmentsForPrincipal`.
 ///
-/// <p>Retrieves a list of the IAM Identity Center associated Amazon Web Services accounts that the principal has access to.</p>
+/// <p>Retrieves a list of the IAM Identity Center associated Amazon Web Services accounts that the principal has access to. This action must be called from the management account containing your organization instance of IAM Identity Center. This action is not valid for account instances of IAM Identity Center.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListAccountAssignmentsForPrincipalFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

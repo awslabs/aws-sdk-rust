@@ -4,33 +4,33 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SourceTableConfig {
-    /// <p>A list of fields used for column-level filtering.</p>
+    /// <p>A list of fields used for column-level filtering. Currently unsupported.</p>
     pub fields: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>A condition clause used for row-level filtering.</p>
+    /// <p>A condition clause used for row-level filtering. Currently unsupported.</p>
     pub filter_predicate: ::std::option::Option<::std::string::String>,
-    /// <p>Unique identifier of a record.</p>
+    /// <p>Provide the primary key set for this table. Currently supported specifically for SAP <code>EntityOf</code> entities upon request. Contact Amazon Web Services Support to make this feature available.</p>
     pub primary_key: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>Incremental pull timestamp-based field.</p>
+    /// <p>Incremental pull timestamp-based field. Currently unsupported.</p>
     pub record_update_field: ::std::option::Option<::std::string::String>,
 }
 impl SourceTableConfig {
-    /// <p>A list of fields used for column-level filtering.</p>
+    /// <p>A list of fields used for column-level filtering. Currently unsupported.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.fields.is_none()`.
     pub fn fields(&self) -> &[::std::string::String] {
         self.fields.as_deref().unwrap_or_default()
     }
-    /// <p>A condition clause used for row-level filtering.</p>
+    /// <p>A condition clause used for row-level filtering. Currently unsupported.</p>
     pub fn filter_predicate(&self) -> ::std::option::Option<&str> {
         self.filter_predicate.as_deref()
     }
-    /// <p>Unique identifier of a record.</p>
+    /// <p>Provide the primary key set for this table. Currently supported specifically for SAP <code>EntityOf</code> entities upon request. Contact Amazon Web Services Support to make this feature available.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.primary_key.is_none()`.
     pub fn primary_key(&self) -> &[::std::string::String] {
         self.primary_key.as_deref().unwrap_or_default()
     }
-    /// <p>Incremental pull timestamp-based field.</p>
+    /// <p>Incremental pull timestamp-based field. Currently unsupported.</p>
     pub fn record_update_field(&self) -> ::std::option::Option<&str> {
         self.record_update_field.as_deref()
     }
@@ -56,33 +56,33 @@ impl SourceTableConfigBuilder {
     ///
     /// To override the contents of this collection use [`set_fields`](Self::set_fields).
     ///
-    /// <p>A list of fields used for column-level filtering.</p>
+    /// <p>A list of fields used for column-level filtering. Currently unsupported.</p>
     pub fn fields(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.fields.unwrap_or_default();
         v.push(input.into());
         self.fields = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of fields used for column-level filtering.</p>
+    /// <p>A list of fields used for column-level filtering. Currently unsupported.</p>
     pub fn set_fields(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.fields = input;
         self
     }
-    /// <p>A list of fields used for column-level filtering.</p>
+    /// <p>A list of fields used for column-level filtering. Currently unsupported.</p>
     pub fn get_fields(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.fields
     }
-    /// <p>A condition clause used for row-level filtering.</p>
+    /// <p>A condition clause used for row-level filtering. Currently unsupported.</p>
     pub fn filter_predicate(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.filter_predicate = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A condition clause used for row-level filtering.</p>
+    /// <p>A condition clause used for row-level filtering. Currently unsupported.</p>
     pub fn set_filter_predicate(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.filter_predicate = input;
         self
     }
-    /// <p>A condition clause used for row-level filtering.</p>
+    /// <p>A condition clause used for row-level filtering. Currently unsupported.</p>
     pub fn get_filter_predicate(&self) -> &::std::option::Option<::std::string::String> {
         &self.filter_predicate
     }
@@ -90,33 +90,33 @@ impl SourceTableConfigBuilder {
     ///
     /// To override the contents of this collection use [`set_primary_key`](Self::set_primary_key).
     ///
-    /// <p>Unique identifier of a record.</p>
+    /// <p>Provide the primary key set for this table. Currently supported specifically for SAP <code>EntityOf</code> entities upon request. Contact Amazon Web Services Support to make this feature available.</p>
     pub fn primary_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.primary_key.unwrap_or_default();
         v.push(input.into());
         self.primary_key = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Unique identifier of a record.</p>
+    /// <p>Provide the primary key set for this table. Currently supported specifically for SAP <code>EntityOf</code> entities upon request. Contact Amazon Web Services Support to make this feature available.</p>
     pub fn set_primary_key(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.primary_key = input;
         self
     }
-    /// <p>Unique identifier of a record.</p>
+    /// <p>Provide the primary key set for this table. Currently supported specifically for SAP <code>EntityOf</code> entities upon request. Contact Amazon Web Services Support to make this feature available.</p>
     pub fn get_primary_key(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.primary_key
     }
-    /// <p>Incremental pull timestamp-based field.</p>
+    /// <p>Incremental pull timestamp-based field. Currently unsupported.</p>
     pub fn record_update_field(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.record_update_field = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Incremental pull timestamp-based field.</p>
+    /// <p>Incremental pull timestamp-based field. Currently unsupported.</p>
     pub fn set_record_update_field(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.record_update_field = input;
         self
     }
-    /// <p>Incremental pull timestamp-based field.</p>
+    /// <p>Incremental pull timestamp-based field. Currently unsupported.</p>
     pub fn get_record_update_field(&self) -> &::std::option::Option<::std::string::String> {
         &self.record_update_field
     }

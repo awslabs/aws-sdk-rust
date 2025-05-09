@@ -77,6 +77,9 @@ where
                                 ::aws_smithy_types::date_time::Format::EpochSeconds,
                             )?);
                         }
+                        "IntegrationConfig" => {
+                            builder = builder.set_integration_config(crate::protocol_serde::shape_integration_config::de_integration_config(tokens)?);
+                        }
                         "Errors" => {
                             builder = builder.set_errors(crate::protocol_serde::shape_integration_error_list::de_integration_error_list(tokens)?);
                         }

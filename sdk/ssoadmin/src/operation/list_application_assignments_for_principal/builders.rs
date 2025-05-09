@@ -22,7 +22,7 @@ impl crate::operation::list_application_assignments_for_principal::builders::Lis
 }
 /// Fluent builder constructing a request to `ListApplicationAssignmentsForPrincipal`.
 ///
-/// <p>Lists the applications to which a specified principal is assigned.</p>
+/// <p>Lists the applications to which a specified principal is assigned. You must provide a filter when calling this action from a member account against your organization instance of IAM Identity Center. A filter is not required when called from the management account against an organization instance of IAM Identity Center, or from a member account against an account instance of IAM Identity Center in the same account.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListApplicationAssignmentsForPrincipalFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
