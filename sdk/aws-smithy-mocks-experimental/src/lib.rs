@@ -3,11 +3,13 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-//! This crate allows mocking of smithy clients.
+//! This crate has been deprecated. Please migrate to the `aws-smithy-mocks` crate.
 
 /* Automatically managed default lints */
 #![cfg_attr(docsrs, feature(doc_auto_cfg))]
 /* End of automatically managed default lints */
+#![allow(deprecated)]
+
 use std::collections::VecDeque;
 use std::fmt::{Debug, Formatter};
 use std::future::Future;
@@ -60,6 +62,10 @@ use aws_smithy_types::config_bag::{ConfigBag, Storable, StoreReplace};
 ///   .then_error(||GetObjectError::NoSuchKey(NoSuchKey::builder().build()));
 /// ```
 #[macro_export]
+#[deprecated(
+    since = "0.2.4",
+    note = "The `aws-smithy-mocks-experimental` crate is now deprecated and is replaced by the `aws-smithy-mocks` crate. Please migrate to the non-experimental crate."
+)]
 macro_rules! mock {
     ($operation: expr) => {
         #[allow(unreachable_code)]
@@ -116,6 +122,10 @@ macro_rules! mock {
 /// ```
 ///
 #[macro_export]
+#[deprecated(
+    since = "0.2.4",
+    note = "The `aws-smithy-mocks-experimental` crate is now deprecated and is replaced by the `aws-smithy-mocks` crate. Please migrate to the non-experimental crate."
+)]
 macro_rules! mock_client {
     ($aws_crate: ident, $rules: expr) => {
         $crate::mock_client!($aws_crate, $crate::RuleMode::Sequential, $rules)
@@ -163,13 +173,20 @@ enum MockOutput {
 /// RuleMode describes how rules will be interpreted.
 /// - In RuleMode::MatchAny, the first matching rule will be applied, and the rules will remain unchanged.
 /// - In RuleMode::Sequential, the first matching rule will be applied, and that rule will be removed from the list of rules.
-#[derive()]
+#[deprecated(
+    since = "0.2.4",
+    note = "The `aws-smithy-mocks-experimental` crate is now deprecated and is replaced by the `aws-smithy-mocks` crate. Please migrate to the non-experimental crate."
+)]
 pub enum RuleMode {
     MatchAny,
     Sequential,
 }
 
 /// Interceptor which produces mock responses based on a list of rules
+#[deprecated(
+    since = "0.2.4",
+    note = "The `aws-smithy-mocks-experimental` crate is now deprecated and is replaced by the `aws-smithy-mocks` crate. Please migrate to the non-experimental crate."
+)]
 pub struct MockResponseInterceptor {
     rules: Arc<Mutex<VecDeque<Rule>>>,
     rule_mode: RuleMode,
@@ -182,11 +199,19 @@ impl Default for MockResponseInterceptor {
     }
 }
 
+#[deprecated(
+    since = "0.2.4",
+    note = "The `aws-smithy-mocks-experimental` crate is now deprecated and is replaced by the `aws-smithy-mocks` crate. Please migrate to the non-experimental crate."
+)]
 pub struct RuleBuilder<I, O, E> {
     _ty: PhantomData<(I, O, E)>,
     input_filter: MatchFn,
 }
 
+#[deprecated(
+    since = "0.2.4",
+    note = "The `aws-smithy-mocks-experimental` crate is now deprecated and is replaced by the `aws-smithy-mocks` crate. Please migrate to the non-experimental crate."
+)]
 impl<I, O, E> RuleBuilder<I, O, E>
 where
     I: Send + Sync + Debug + 'static,
@@ -251,6 +276,10 @@ where
     }
 }
 
+#[deprecated(
+    since = "0.2.4",
+    note = "The `aws-smithy-mocks-experimental` crate is now deprecated and is replaced by the `aws-smithy-mocks` crate. Please migrate to the non-experimental crate."
+)]
 #[derive(Clone)]
 pub struct Rule {
     matcher: MatchFn,
@@ -288,6 +317,10 @@ impl Storable for ActiveRule {
     type Storer = StoreReplace<ActiveRule>;
 }
 
+#[deprecated(
+    since = "0.2.4",
+    note = "The `aws-smithy-mocks-experimental` crate is now deprecated and is replaced by the `aws-smithy-mocks` crate. Please migrate to the non-experimental crate."
+)]
 impl MockResponseInterceptor {
     pub fn new() -> Self {
         Self {

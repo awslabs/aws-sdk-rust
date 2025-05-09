@@ -18,6 +18,7 @@ mod fake_crate {
     }
 
     pub(crate) mod config {
+        use aws_smithy_runtime_api::client::http::SharedHttpClient;
         use aws_smithy_runtime_api::client::interceptors::Intercept;
 
         pub(crate) struct Config {}
@@ -37,6 +38,9 @@ mod fake_crate {
             pub fn with_test_defaults(self) -> Self {
                 Self {}
             }
+            pub fn http_client(self, _http_client: SharedHttpClient) -> Self {
+                Self {}
+            }
 
             pub fn interceptor(self, _interceptor: impl Intercept + 'static) -> Self {
                 self
@@ -51,9 +55,7 @@ mod fake_crate {
         }
     }
 }
-
-#[allow(deprecated)]
 #[test]
 fn mock_client() {
-    aws_smithy_mocks_experimental::mock_client!(fake_crate, &[]);
+    aws_smithy_mocks::mock_client!(fake_crate, &[]);
 }

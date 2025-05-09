@@ -148,7 +148,11 @@ version = "0.60.8"
 [dev-dependencies.aws-smithy-http-client]
 path = "../aws-smithy-http-client"
 features = ["test-util", "wire-mock", "rustls-ring"]
-version = "1.0.1"
+version = "1.0.2"
+
+[dev-dependencies.aws-smithy-mocks]
+path = "../aws-smithy-mocks"
+version = "0.1.0"
 
 [dev-dependencies.aws-smithy-protocol-test]
 path = "../aws-smithy-protocol-test"

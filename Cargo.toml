@@ -64,6 +64,7 @@ members = [
     "sdk/aws-smithy-http-client",
     "sdk/aws-smithy-http-tower",
     "sdk/aws-smithy-json",
+    "sdk/aws-smithy-mocks",
     "sdk/aws-smithy-mocks-experimental",
     "sdk/aws-smithy-observability",
     "sdk/aws-smithy-observability-otel",

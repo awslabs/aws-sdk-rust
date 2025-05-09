@@ -133,7 +133,7 @@ version = "1.8.3"
 [dev-dependencies.aws-smithy-http-client]
 path = "../aws-smithy-http-client"
 features = ["default-client", "test-util"]
-version = "1.0.1"
+version = "1.0.2"
 
 [dev-dependencies.aws-smithy-runtime-api]
 path = "../aws-smithy-runtime-api"
