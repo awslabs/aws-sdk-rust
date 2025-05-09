@@ -7,7 +7,7 @@ description = "AWS SDK for AWS CodeDeploy"
 edition = "2021"
 license = "Apache-2.0"
 repository = "https://github.com/awslabs/aws-sdk-rust"
-rust-version = "1.81.0"
+rust-version = "1.82.0"
 readme = "README.md"
 [package.metadata.smithy]
 codegen-version = "2918b160eb691fc171f7944a5142865320aaf491"
