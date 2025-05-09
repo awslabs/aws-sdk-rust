@@ -50,7 +50,7 @@ pub fn ser_clip_range(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ClipRange,
 ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
-    if input.end_offset_millis != 0 {
+    {
         object.key("EndOffsetMillis").number(
             #[allow(clippy::useless_conversion)]
             ::aws_smithy_types::Number::NegInt((input.end_offset_millis).into()),

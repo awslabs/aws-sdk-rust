@@ -6,7 +6,7 @@ pub fn ser_domain_unit_filter_for_project(
     {
         object.key("domainUnit").string(input.domain_unit.as_str());
     }
-    if input.include_child_domain_units {
+    {
         object.key("includeChildDomainUnits").boolean(input.include_child_domain_units);
     }
     Ok(())

@@ -15,7 +15,7 @@ pub fn ser_lte_nmr_obj(
             ::aws_smithy_types::Number::NegInt((input.earfcn).into()),
         );
     }
-    if input.eutran_cid != 0 {
+    {
         object.key("EutranCid").number(
             #[allow(clippy::useless_conversion)]
             ::aws_smithy_types::Number::NegInt((input.eutran_cid).into()),
