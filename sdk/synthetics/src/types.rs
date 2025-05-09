@@ -17,6 +17,8 @@ pub use crate::types::_canary_run_config_input::CanaryRunConfigInput;
 
 pub use crate::types::_canary_schedule_input::CanaryScheduleInput;
 
+pub use crate::types::_retry_config_input::RetryConfigInput;
+
 pub use crate::types::_canary_code_input::CanaryCodeInput;
 
 pub use crate::types::_dry_run_config_output::DryRunConfigOutput;
@@ -58,6 +60,8 @@ pub use crate::types::_canary_state::CanaryState;
 pub use crate::types::_canary_run_config_output::CanaryRunConfigOutput;
 
 pub use crate::types::_canary_schedule_output::CanaryScheduleOutput;
+
+pub use crate::types::_retry_config_output::RetryConfigOutput;
 
 pub use crate::types::_canary_code_output::CanaryCodeOutput;
 
@@ -120,6 +124,10 @@ mod _group_summary;
 mod _provisioned_resource_cleanup_setting;
 
 mod _resource_to_tag;
+
+mod _retry_config_input;
+
+mod _retry_config_output;
 
 mod _run_type;
 

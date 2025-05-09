@@ -177,6 +177,8 @@ pub(crate) mod shape_canary_timeline;
 
 pub(crate) mod shape_group_summary;
 
+pub(crate) mod shape_retry_config_input;
+
 pub(crate) mod shape_runtime_version;
 
 pub(crate) mod shape_s3_encryption_config;
@@ -192,6 +194,8 @@ pub(crate) mod shape_canary_dry_run_config_output;
 pub(crate) mod shape_canary_run_status;
 
 pub(crate) mod shape_canary_run_timeline;
+
+pub(crate) mod shape_retry_config_output;
 
 pub(crate) mod shape_security_group_ids;
 

@@ -7,8 +7,6 @@ pub struct RegisterWorkspaceDirectoryInput {
     pub directory_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifiers of the subnets for your virtual private cloud (VPC). Make sure that the subnets are in supported Availability Zones. The subnets must also be in separate Availability Zones. If these conditions are not met, you will receive an OperationNotSupportedException error.</p>
     pub subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>Indicates whether Amazon WorkDocs is enabled or disabled. If you have enabled this parameter and WorkDocs is not available in the Region, you will receive an OperationNotSupportedException error. Set <code>EnableWorkDocs</code> to disabled, and try again.</p>
-    pub enable_work_docs: ::std::option::Option<bool>,
     /// <p>Indicates whether self-service capabilities are enabled or disabled.</p>
     pub enable_self_service: ::std::option::Option<bool>,
     /// <p>Indicates whether your WorkSpace directory is dedicated or shared. To use Bring Your Own License (BYOL) images, this value must be set to <code>DEDICATED</code> and your Amazon Web Services account must be enabled for BYOL. If your account has not been enabled for BYOL, you will receive an InvalidParameterValuesException error. For more information about BYOL images, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html">Bring Your Own Windows Desktop Images</a>.</p>
@@ -40,10 +38,6 @@ impl RegisterWorkspaceDirectoryInput {
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.subnet_ids.is_none()`.
     pub fn subnet_ids(&self) -> &[::std::string::String] {
         self.subnet_ids.as_deref().unwrap_or_default()
-    }
-    /// <p>Indicates whether Amazon WorkDocs is enabled or disabled. If you have enabled this parameter and WorkDocs is not available in the Region, you will receive an OperationNotSupportedException error. Set <code>EnableWorkDocs</code> to disabled, and try again.</p>
-    pub fn enable_work_docs(&self) -> ::std::option::Option<bool> {
-        self.enable_work_docs
     }
     /// <p>Indicates whether self-service capabilities are enabled or disabled.</p>
     pub fn enable_self_service(&self) -> ::std::option::Option<bool> {
@@ -101,7 +95,6 @@ impl RegisterWorkspaceDirectoryInput {
 pub struct RegisterWorkspaceDirectoryInputBuilder {
     pub(crate) directory_id: ::std::option::Option<::std::string::String>,
     pub(crate) subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) enable_work_docs: ::std::option::Option<bool>,
     pub(crate) enable_self_service: ::std::option::Option<bool>,
     pub(crate) tenancy: ::std::option::Option<crate::types::Tenancy>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
@@ -147,20 +140,6 @@ impl RegisterWorkspaceDirectoryInputBuilder {
     /// <p>The identifiers of the subnets for your virtual private cloud (VPC). Make sure that the subnets are in supported Availability Zones. The subnets must also be in separate Availability Zones. If these conditions are not met, you will receive an OperationNotSupportedException error.</p>
     pub fn get_subnet_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.subnet_ids
-    }
-    /// <p>Indicates whether Amazon WorkDocs is enabled or disabled. If you have enabled this parameter and WorkDocs is not available in the Region, you will receive an OperationNotSupportedException error. Set <code>EnableWorkDocs</code> to disabled, and try again.</p>
-    pub fn enable_work_docs(mut self, input: bool) -> Self {
-        self.enable_work_docs = ::std::option::Option::Some(input);
-        self
-    }
-    /// <p>Indicates whether Amazon WorkDocs is enabled or disabled. If you have enabled this parameter and WorkDocs is not available in the Region, you will receive an OperationNotSupportedException error. Set <code>EnableWorkDocs</code> to disabled, and try again.</p>
-    pub fn set_enable_work_docs(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.enable_work_docs = input;
-        self
-    }
-    /// <p>Indicates whether Amazon WorkDocs is enabled or disabled. If you have enabled this parameter and WorkDocs is not available in the Region, you will receive an OperationNotSupportedException error. Set <code>EnableWorkDocs</code> to disabled, and try again.</p>
-    pub fn get_enable_work_docs(&self) -> &::std::option::Option<bool> {
-        &self.enable_work_docs
     }
     /// <p>Indicates whether self-service capabilities are enabled or disabled.</p>
     pub fn enable_self_service(mut self, input: bool) -> Self {
@@ -318,7 +297,6 @@ impl RegisterWorkspaceDirectoryInputBuilder {
         ::std::result::Result::Ok(crate::operation::register_workspace_directory::RegisterWorkspaceDirectoryInput {
             directory_id: self.directory_id,
             subnet_ids: self.subnet_ids,
-            enable_work_docs: self.enable_work_docs,
             enable_self_service: self.enable_self_service,
             tenancy: self.tenancy,
             tags: self.tags,

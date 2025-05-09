@@ -12,6 +12,8 @@ pub struct CanaryScheduleInput {
     pub expression: ::std::string::String,
     /// <p>How long, in seconds, for the canary to continue making regular runs according to the schedule in the <code>Expression</code> value. If you specify 0, the canary continues making runs until you stop it. If you omit this field, the default of 0 is used.</p>
     pub duration_in_seconds: ::std::option::Option<i64>,
+    /// <p>A structure that contains the retry configuration for a canary</p>
+    pub retry_config: ::std::option::Option<crate::types::RetryConfigInput>,
 }
 impl CanaryScheduleInput {
     /// <p>A <code>rate</code> expression or a <code>cron</code> expression that defines how often the canary is to run.</p>
@@ -27,6 +29,10 @@ impl CanaryScheduleInput {
     pub fn duration_in_seconds(&self) -> ::std::option::Option<i64> {
         self.duration_in_seconds
     }
+    /// <p>A structure that contains the retry configuration for a canary</p>
+    pub fn retry_config(&self) -> ::std::option::Option<&crate::types::RetryConfigInput> {
+        self.retry_config.as_ref()
+    }
 }
 impl CanaryScheduleInput {
     /// Creates a new builder-style object to manufacture [`CanaryScheduleInput`](crate::types::CanaryScheduleInput).
@@ -41,6 +47,7 @@ impl CanaryScheduleInput {
 pub struct CanaryScheduleInputBuilder {
     pub(crate) expression: ::std::option::Option<::std::string::String>,
     pub(crate) duration_in_seconds: ::std::option::Option<i64>,
+    pub(crate) retry_config: ::std::option::Option<crate::types::RetryConfigInput>,
 }
 impl CanaryScheduleInputBuilder {
     /// <p>A <code>rate</code> expression or a <code>cron</code> expression that defines how often the canary is to run.</p>
@@ -84,6 +91,20 @@ impl CanaryScheduleInputBuilder {
     pub fn get_duration_in_seconds(&self) -> &::std::option::Option<i64> {
         &self.duration_in_seconds
     }
+    /// <p>A structure that contains the retry configuration for a canary</p>
+    pub fn retry_config(mut self, input: crate::types::RetryConfigInput) -> Self {
+        self.retry_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>A structure that contains the retry configuration for a canary</p>
+    pub fn set_retry_config(mut self, input: ::std::option::Option<crate::types::RetryConfigInput>) -> Self {
+        self.retry_config = input;
+        self
+    }
+    /// <p>A structure that contains the retry configuration for a canary</p>
+    pub fn get_retry_config(&self) -> &::std::option::Option<crate::types::RetryConfigInput> {
+        &self.retry_config
+    }
     /// Consumes the builder and constructs a [`CanaryScheduleInput`](crate::types::CanaryScheduleInput).
     /// This method will fail if any of the following fields are not set:
     /// - [`expression`](crate::types::builders::CanaryScheduleInputBuilder::expression)
@@ -96,6 +117,7 @@ impl CanaryScheduleInputBuilder {
                 )
             })?,
             duration_in_seconds: self.duration_in_seconds,
+            retry_config: self.retry_config,
         })
     }
 }

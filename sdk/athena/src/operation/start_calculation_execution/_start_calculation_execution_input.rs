@@ -8,7 +8,7 @@ pub struct StartCalculationExecutionInput {
     /// <p>A description of the calculation.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Contains configuration information for the calculation.</p>
-    #[deprecated(note = "Kepler Post GA Tasks : https://sim.amazon.com/issues/ATHENA-39828")]
+    #[deprecated(note = "Structure is deprecated.")]
     pub calculation_configuration: ::std::option::Option<crate::types::CalculationConfiguration>,
     /// <p>A string that contains the code of the calculation. Use this parameter instead of <code>CalculationConfiguration$CodeBlock</code>, which is deprecated.</p>
     pub code_block: ::std::option::Option<::std::string::String>,
@@ -27,7 +27,7 @@ impl StartCalculationExecutionInput {
         self.description.as_deref()
     }
     /// <p>Contains configuration information for the calculation.</p>
-    #[deprecated(note = "Kepler Post GA Tasks : https://sim.amazon.com/issues/ATHENA-39828")]
+    #[deprecated(note = "Structure is deprecated.")]
     pub fn calculation_configuration(&self) -> ::std::option::Option<&crate::types::CalculationConfiguration> {
         self.calculation_configuration.as_ref()
     }
@@ -90,19 +90,19 @@ impl StartCalculationExecutionInputBuilder {
         &self.description
     }
     /// <p>Contains configuration information for the calculation.</p>
-    #[deprecated(note = "Kepler Post GA Tasks : https://sim.amazon.com/issues/ATHENA-39828")]
+    #[deprecated(note = "Structure is deprecated.")]
     pub fn calculation_configuration(mut self, input: crate::types::CalculationConfiguration) -> Self {
         self.calculation_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>Contains configuration information for the calculation.</p>
-    #[deprecated(note = "Kepler Post GA Tasks : https://sim.amazon.com/issues/ATHENA-39828")]
+    #[deprecated(note = "Structure is deprecated.")]
     pub fn set_calculation_configuration(mut self, input: ::std::option::Option<crate::types::CalculationConfiguration>) -> Self {
         self.calculation_configuration = input;
         self
     }
     /// <p>Contains configuration information for the calculation.</p>
-    #[deprecated(note = "Kepler Post GA Tasks : https://sim.amazon.com/issues/ATHENA-39828")]
+    #[deprecated(note = "Structure is deprecated.")]
     pub fn get_calculation_configuration(&self) -> &::std::option::Option<crate::types::CalculationConfiguration> {
         &self.calculation_configuration
     }

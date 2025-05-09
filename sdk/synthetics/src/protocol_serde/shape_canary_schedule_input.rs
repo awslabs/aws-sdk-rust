@@ -12,5 +12,11 @@ pub fn ser_canary_schedule_input(
             ::aws_smithy_types::Number::NegInt((*var_1).into()),
         );
     }
+    if let Some(var_2) = &input.retry_config {
+        #[allow(unused_mut)]
+        let mut object_3 = object.key("RetryConfig").start_object();
+        crate::protocol_serde::shape_retry_config_input::ser_retry_config_input(&mut object_3, var_2)?;
+        object_3.finish();
+    }
     Ok(())
 }

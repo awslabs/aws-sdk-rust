@@ -141,20 +141,6 @@ impl RegisterWorkspaceDirectoryFluentBuilder {
     pub fn get_subnet_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_subnet_ids()
     }
-    /// <p>Indicates whether Amazon WorkDocs is enabled or disabled. If you have enabled this parameter and WorkDocs is not available in the Region, you will receive an OperationNotSupportedException error. Set <code>EnableWorkDocs</code> to disabled, and try again.</p>
-    pub fn enable_work_docs(mut self, input: bool) -> Self {
-        self.inner = self.inner.enable_work_docs(input);
-        self
-    }
-    /// <p>Indicates whether Amazon WorkDocs is enabled or disabled. If you have enabled this parameter and WorkDocs is not available in the Region, you will receive an OperationNotSupportedException error. Set <code>EnableWorkDocs</code> to disabled, and try again.</p>
-    pub fn set_enable_work_docs(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.inner = self.inner.set_enable_work_docs(input);
-        self
-    }
-    /// <p>Indicates whether Amazon WorkDocs is enabled or disabled. If you have enabled this parameter and WorkDocs is not available in the Region, you will receive an OperationNotSupportedException error. Set <code>EnableWorkDocs</code> to disabled, and try again.</p>
-    pub fn get_enable_work_docs(&self) -> &::std::option::Option<bool> {
-        self.inner.get_enable_work_docs()
-    }
     /// <p>Indicates whether self-service capabilities are enabled or disabled.</p>
     pub fn enable_self_service(mut self, input: bool) -> Self {
         self.inner = self.inner.enable_self_service(input);

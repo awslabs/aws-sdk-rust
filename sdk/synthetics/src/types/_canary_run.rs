@@ -6,6 +6,10 @@
 pub struct CanaryRun {
     /// <p>A unique ID that identifies this canary run.</p>
     pub id: ::std::option::Option<::std::string::String>,
+    /// <p>The ID of the scheduled canary run.</p>
+    pub scheduled_run_id: ::std::option::Option<::std::string::String>,
+    /// <p>The count in number of the retry attempt.</p>
+    pub retry_attempt: ::std::option::Option<i32>,
     /// <p>The name of the canary.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The status of this run.</p>
@@ -21,6 +25,14 @@ impl CanaryRun {
     /// <p>A unique ID that identifies this canary run.</p>
     pub fn id(&self) -> ::std::option::Option<&str> {
         self.id.as_deref()
+    }
+    /// <p>The ID of the scheduled canary run.</p>
+    pub fn scheduled_run_id(&self) -> ::std::option::Option<&str> {
+        self.scheduled_run_id.as_deref()
+    }
+    /// <p>The count in number of the retry attempt.</p>
+    pub fn retry_attempt(&self) -> ::std::option::Option<i32> {
+        self.retry_attempt
     }
     /// <p>The name of the canary.</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
@@ -55,6 +67,8 @@ impl CanaryRun {
 #[non_exhaustive]
 pub struct CanaryRunBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
+    pub(crate) scheduled_run_id: ::std::option::Option<::std::string::String>,
+    pub(crate) retry_attempt: ::std::option::Option<i32>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::CanaryRunStatus>,
     pub(crate) timeline: ::std::option::Option<crate::types::CanaryRunTimeline>,
@@ -75,6 +89,34 @@ impl CanaryRunBuilder {
     /// <p>A unique ID that identifies this canary run.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.id
+    }
+    /// <p>The ID of the scheduled canary run.</p>
+    pub fn scheduled_run_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.scheduled_run_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ID of the scheduled canary run.</p>
+    pub fn set_scheduled_run_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.scheduled_run_id = input;
+        self
+    }
+    /// <p>The ID of the scheduled canary run.</p>
+    pub fn get_scheduled_run_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.scheduled_run_id
+    }
+    /// <p>The count in number of the retry attempt.</p>
+    pub fn retry_attempt(mut self, input: i32) -> Self {
+        self.retry_attempt = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The count in number of the retry attempt.</p>
+    pub fn set_retry_attempt(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.retry_attempt = input;
+        self
+    }
+    /// <p>The count in number of the retry attempt.</p>
+    pub fn get_retry_attempt(&self) -> &::std::option::Option<i32> {
+        &self.retry_attempt
     }
     /// <p>The name of the canary.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -150,6 +192,8 @@ impl CanaryRunBuilder {
     pub fn build(self) -> crate::types::CanaryRun {
         crate::types::CanaryRun {
             id: self.id,
+            scheduled_run_id: self.scheduled_run_id,
+            retry_attempt: self.retry_attempt,
             name: self.name,
             status: self.status,
             timeline: self.timeline,

@@ -7,7 +7,7 @@
 pub struct Grok {
     /// <p>The path to the field in the log event that you want to parse. If you omit this value, the whole log message is parsed.</p>
     pub source: ::std::option::Option<::std::string::String>,
-    /// <p>The grok pattern to match against the log event. For a list of supported grok patterns, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatch-Logs-Transformation.html#Grok-Patterns">Supported grok patterns</a>.</p>
+    /// <p>The grok pattern to match against the log event. For a list of supported grok patterns, see <a href="https://docs.aws.amazon.com/mazonCloudWatch/latest/logs/CloudWatch-Logs-Transformation-Processors.html#Grok-Patterns">Supported grok patterns</a>.</p>
     pub r#match: ::std::string::String,
 }
 impl Grok {
@@ -15,7 +15,7 @@ impl Grok {
     pub fn source(&self) -> ::std::option::Option<&str> {
         self.source.as_deref()
     }
-    /// <p>The grok pattern to match against the log event. For a list of supported grok patterns, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatch-Logs-Transformation.html#Grok-Patterns">Supported grok patterns</a>.</p>
+    /// <p>The grok pattern to match against the log event. For a list of supported grok patterns, see <a href="https://docs.aws.amazon.com/mazonCloudWatch/latest/logs/CloudWatch-Logs-Transformation-Processors.html#Grok-Patterns">Supported grok patterns</a>.</p>
     pub fn r#match(&self) -> &str {
         use std::ops::Deref;
         self.r#match.deref()
@@ -50,18 +50,18 @@ impl GrokBuilder {
     pub fn get_source(&self) -> &::std::option::Option<::std::string::String> {
         &self.source
     }
-    /// <p>The grok pattern to match against the log event. For a list of supported grok patterns, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatch-Logs-Transformation.html#Grok-Patterns">Supported grok patterns</a>.</p>
+    /// <p>The grok pattern to match against the log event. For a list of supported grok patterns, see <a href="https://docs.aws.amazon.com/mazonCloudWatch/latest/logs/CloudWatch-Logs-Transformation-Processors.html#Grok-Patterns">Supported grok patterns</a>.</p>
     /// This field is required.
     pub fn r#match(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.r#match = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The grok pattern to match against the log event. For a list of supported grok patterns, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatch-Logs-Transformation.html#Grok-Patterns">Supported grok patterns</a>.</p>
+    /// <p>The grok pattern to match against the log event. For a list of supported grok patterns, see <a href="https://docs.aws.amazon.com/mazonCloudWatch/latest/logs/CloudWatch-Logs-Transformation-Processors.html#Grok-Patterns">Supported grok patterns</a>.</p>
     pub fn set_match(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.r#match = input;
         self
     }
-    /// <p>The grok pattern to match against the log event. For a list of supported grok patterns, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatch-Logs-Transformation.html#Grok-Patterns">Supported grok patterns</a>.</p>
+    /// <p>The grok pattern to match against the log event. For a list of supported grok patterns, see <a href="https://docs.aws.amazon.com/mazonCloudWatch/latest/logs/CloudWatch-Logs-Transformation-Processors.html#Grok-Patterns">Supported grok patterns</a>.</p>
     pub fn get_match(&self) -> &::std::option::Option<::std::string::String> {
         &self.r#match
     }

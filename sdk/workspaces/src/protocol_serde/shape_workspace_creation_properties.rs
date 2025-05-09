@@ -3,26 +3,23 @@ pub fn ser_workspace_creation_properties(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::WorkspaceCreationProperties,
 ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
-    if let Some(var_1) = &input.enable_work_docs {
-        object.key("EnableWorkDocs").boolean(*var_1);
+    if let Some(var_1) = &input.enable_internet_access {
+        object.key("EnableInternetAccess").boolean(*var_1);
     }
-    if let Some(var_2) = &input.enable_internet_access {
-        object.key("EnableInternetAccess").boolean(*var_2);
+    if let Some(var_2) = &input.default_ou {
+        object.key("DefaultOu").string(var_2.as_str());
     }
-    if let Some(var_3) = &input.default_ou {
-        object.key("DefaultOu").string(var_3.as_str());
+    if let Some(var_3) = &input.custom_security_group_id {
+        object.key("CustomSecurityGroupId").string(var_3.as_str());
     }
-    if let Some(var_4) = &input.custom_security_group_id {
-        object.key("CustomSecurityGroupId").string(var_4.as_str());
+    if let Some(var_4) = &input.user_enabled_as_local_administrator {
+        object.key("UserEnabledAsLocalAdministrator").boolean(*var_4);
     }
-    if let Some(var_5) = &input.user_enabled_as_local_administrator {
-        object.key("UserEnabledAsLocalAdministrator").boolean(*var_5);
+    if let Some(var_5) = &input.enable_maintenance_mode {
+        object.key("EnableMaintenanceMode").boolean(*var_5);
     }
-    if let Some(var_6) = &input.enable_maintenance_mode {
-        object.key("EnableMaintenanceMode").boolean(*var_6);
-    }
-    if let Some(var_7) = &input.instance_iam_role_arn {
-        object.key("InstanceIamRoleArn").string(var_7.as_str());
+    if let Some(var_6) = &input.instance_iam_role_arn {
+        object.key("InstanceIamRoleArn").string(var_6.as_str());
     }
     Ok(())
 }

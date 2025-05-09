@@ -28,6 +28,9 @@ where
                                     .transpose()?,
                             );
                         }
+                        "RetryConfig" => {
+                            builder = builder.set_retry_config(crate::protocol_serde::shape_retry_config_output::de_retry_config_output(tokens)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

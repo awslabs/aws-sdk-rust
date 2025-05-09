@@ -13,6 +13,7 @@ pub struct CreateDataCatalogInput {
     /// </ul>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The type of data catalog to create: <code>LAMBDA</code> for a federated catalog, <code>GLUE</code> for an Glue Data Catalog, and <code>HIVE</code> for an external Apache Hive metastore. <code>FEDERATED</code> is a federated catalog for which Athena creates the connection and the Lambda function for you based on the parameters that you pass.</p>
+    /// <p>For <code>FEDERATED</code> type, we do not support IAM identity center.</p>
     pub r#type: ::std::option::Option<crate::types::DataCatalogType>,
     /// <p>A description of the data catalog to be created.</p>
     pub description: ::std::option::Option<::std::string::String>,
@@ -68,6 +69,7 @@ impl CreateDataCatalogInput {
         self.name.as_deref()
     }
     /// <p>The type of data catalog to create: <code>LAMBDA</code> for a federated catalog, <code>GLUE</code> for an Glue Data Catalog, and <code>HIVE</code> for an external Apache Hive metastore. <code>FEDERATED</code> is a federated catalog for which Athena creates the connection and the Lambda function for you based on the parameters that you pass.</p>
+    /// <p>For <code>FEDERATED</code> type, we do not support IAM identity center.</p>
     pub fn r#type(&self) -> ::std::option::Option<&crate::types::DataCatalogType> {
         self.r#type.as_ref()
     }
@@ -175,17 +177,20 @@ impl CreateDataCatalogInputBuilder {
         &self.name
     }
     /// <p>The type of data catalog to create: <code>LAMBDA</code> for a federated catalog, <code>GLUE</code> for an Glue Data Catalog, and <code>HIVE</code> for an external Apache Hive metastore. <code>FEDERATED</code> is a federated catalog for which Athena creates the connection and the Lambda function for you based on the parameters that you pass.</p>
+    /// <p>For <code>FEDERATED</code> type, we do not support IAM identity center.</p>
     /// This field is required.
     pub fn r#type(mut self, input: crate::types::DataCatalogType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type of data catalog to create: <code>LAMBDA</code> for a federated catalog, <code>GLUE</code> for an Glue Data Catalog, and <code>HIVE</code> for an external Apache Hive metastore. <code>FEDERATED</code> is a federated catalog for which Athena creates the connection and the Lambda function for you based on the parameters that you pass.</p>
+    /// <p>For <code>FEDERATED</code> type, we do not support IAM identity center.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::DataCatalogType>) -> Self {
         self.r#type = input;
         self
     }
     /// <p>The type of data catalog to create: <code>LAMBDA</code> for a federated catalog, <code>GLUE</code> for an Glue Data Catalog, and <code>HIVE</code> for an external Apache Hive metastore. <code>FEDERATED</code> is a federated catalog for which Athena creates the connection and the Lambda function for you based on the parameters that you pass.</p>
+    /// <p>For <code>FEDERATED</code> type, we do not support IAM identity center.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::DataCatalogType> {
         &self.r#type
     }

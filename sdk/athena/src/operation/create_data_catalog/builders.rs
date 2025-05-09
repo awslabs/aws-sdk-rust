@@ -23,7 +23,7 @@ impl crate::operation::create_data_catalog::builders::CreateDataCatalogInputBuil
 /// Fluent builder constructing a request to `CreateDataCatalog`.
 ///
 /// <p>Creates (registers) a data catalog with the specified name and properties. Catalogs created are visible to all users of the same Amazon Web Services account.</p>
-/// <p>This API operation creates the following resources.</p>
+/// <p>For a <code>FEDERATED</code> catalog, this API operation creates the following resources.</p>
 /// <ul>
 /// <li>
 /// <p>CFN Stack Name with a maximum length of 128 characters and prefix <code>athenafederatedcatalog-CATALOG_NAME_SANITIZED</code> with length 23 characters.</p></li>
@@ -153,16 +153,19 @@ impl CreateDataCatalogFluentBuilder {
         self.inner.get_name()
     }
     /// <p>The type of data catalog to create: <code>LAMBDA</code> for a federated catalog, <code>GLUE</code> for an Glue Data Catalog, and <code>HIVE</code> for an external Apache Hive metastore. <code>FEDERATED</code> is a federated catalog for which Athena creates the connection and the Lambda function for you based on the parameters that you pass.</p>
+    /// <p>For <code>FEDERATED</code> type, we do not support IAM identity center.</p>
     pub fn r#type(mut self, input: crate::types::DataCatalogType) -> Self {
         self.inner = self.inner.r#type(input);
         self
     }
     /// <p>The type of data catalog to create: <code>LAMBDA</code> for a federated catalog, <code>GLUE</code> for an Glue Data Catalog, and <code>HIVE</code> for an external Apache Hive metastore. <code>FEDERATED</code> is a federated catalog for which Athena creates the connection and the Lambda function for you based on the parameters that you pass.</p>
+    /// <p>For <code>FEDERATED</code> type, we do not support IAM identity center.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::DataCatalogType>) -> Self {
         self.inner = self.inner.set_type(input);
         self
     }
     /// <p>The type of data catalog to create: <code>LAMBDA</code> for a federated catalog, <code>GLUE</code> for an Glue Data Catalog, and <code>HIVE</code> for an external Apache Hive metastore. <code>FEDERATED</code> is a federated catalog for which Athena creates the connection and the Lambda function for you based on the parameters that you pass.</p>
+    /// <p>For <code>FEDERATED</code> type, we do not support IAM identity center.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::DataCatalogType> {
         self.inner.get_type()
     }

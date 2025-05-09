@@ -13,6 +13,8 @@ pub use crate::types::_canary_run_config_input::CanaryRunConfigInputBuilder;
 
 pub use crate::types::_canary_schedule_input::CanaryScheduleInputBuilder;
 
+pub use crate::types::_retry_config_input::RetryConfigInputBuilder;
+
 pub use crate::types::_canary_code_input::CanaryCodeInputBuilder;
 
 pub use crate::types::_dry_run_config_output::DryRunConfigOutputBuilder;
@@ -44,6 +46,8 @@ pub use crate::types::_canary_status::CanaryStatusBuilder;
 pub use crate::types::_canary_run_config_output::CanaryRunConfigOutputBuilder;
 
 pub use crate::types::_canary_schedule_output::CanaryScheduleOutputBuilder;
+
+pub use crate::types::_retry_config_output::RetryConfigOutputBuilder;
 
 pub use crate::types::_canary_code_output::CanaryCodeOutputBuilder;
 

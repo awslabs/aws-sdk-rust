@@ -14,9 +14,6 @@ where
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
-                        "EnableWorkDocs" => {
-                            builder = builder.set_enable_work_docs(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
-                        }
                         "EnableInternetAccess" => {
                             builder = builder.set_enable_internet_access(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }

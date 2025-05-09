@@ -139,19 +139,19 @@ impl StartCalculationExecutionFluentBuilder {
         self.inner.get_description()
     }
     /// <p>Contains configuration information for the calculation.</p>
-    #[deprecated(note = "Kepler Post GA Tasks : https://sim.amazon.com/issues/ATHENA-39828")]
+    #[deprecated(note = "Structure is deprecated.")]
     pub fn calculation_configuration(mut self, input: crate::types::CalculationConfiguration) -> Self {
         self.inner = self.inner.calculation_configuration(input);
         self
     }
     /// <p>Contains configuration information for the calculation.</p>
-    #[deprecated(note = "Kepler Post GA Tasks : https://sim.amazon.com/issues/ATHENA-39828")]
+    #[deprecated(note = "Structure is deprecated.")]
     pub fn set_calculation_configuration(mut self, input: ::std::option::Option<crate::types::CalculationConfiguration>) -> Self {
         self.inner = self.inner.set_calculation_configuration(input);
         self
     }
     /// <p>Contains configuration information for the calculation.</p>
-    #[deprecated(note = "Kepler Post GA Tasks : https://sim.amazon.com/issues/ATHENA-39828")]
+    #[deprecated(note = "Structure is deprecated.")]
     pub fn get_calculation_configuration(&self) -> &::std::option::Option<crate::types::CalculationConfiguration> {
         self.inner.get_calculation_configuration()
     }

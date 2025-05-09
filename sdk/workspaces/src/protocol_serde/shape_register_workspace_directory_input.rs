@@ -15,53 +15,50 @@ pub fn ser_register_workspace_directory_input_input(
         }
         array_3.finish();
     }
-    if let Some(var_5) = &input.enable_work_docs {
-        object.key("EnableWorkDocs").boolean(*var_5);
+    if let Some(var_5) = &input.enable_self_service {
+        object.key("EnableSelfService").boolean(*var_5);
     }
-    if let Some(var_6) = &input.enable_self_service {
-        object.key("EnableSelfService").boolean(*var_6);
+    if let Some(var_6) = &input.tenancy {
+        object.key("Tenancy").string(var_6.as_str());
     }
-    if let Some(var_7) = &input.tenancy {
-        object.key("Tenancy").string(var_7.as_str());
-    }
-    if let Some(var_8) = &input.tags {
-        let mut array_9 = object.key("Tags").start_array();
-        for item_10 in var_8 {
+    if let Some(var_7) = &input.tags {
+        let mut array_8 = object.key("Tags").start_array();
+        for item_9 in var_7 {
             {
                 #[allow(unused_mut)]
-                let mut object_11 = array_9.value().start_object();
-                crate::protocol_serde::shape_tag::ser_tag(&mut object_11, item_10)?;
-                object_11.finish();
+                let mut object_10 = array_8.value().start_object();
+                crate::protocol_serde::shape_tag::ser_tag(&mut object_10, item_9)?;
+                object_10.finish();
             }
         }
-        array_9.finish();
+        array_8.finish();
     }
-    if let Some(var_12) = &input.workspace_directory_name {
-        object.key("WorkspaceDirectoryName").string(var_12.as_str());
+    if let Some(var_11) = &input.workspace_directory_name {
+        object.key("WorkspaceDirectoryName").string(var_11.as_str());
     }
-    if let Some(var_13) = &input.workspace_directory_description {
-        object.key("WorkspaceDirectoryDescription").string(var_13.as_str());
+    if let Some(var_12) = &input.workspace_directory_description {
+        object.key("WorkspaceDirectoryDescription").string(var_12.as_str());
     }
-    if let Some(var_14) = &input.user_identity_type {
-        object.key("UserIdentityType").string(var_14.as_str());
+    if let Some(var_13) = &input.user_identity_type {
+        object.key("UserIdentityType").string(var_13.as_str());
     }
-    if let Some(var_15) = &input.idc_instance_arn {
-        object.key("IdcInstanceArn").string(var_15.as_str());
+    if let Some(var_14) = &input.idc_instance_arn {
+        object.key("IdcInstanceArn").string(var_14.as_str());
     }
-    if let Some(var_16) = &input.microsoft_entra_config {
+    if let Some(var_15) = &input.microsoft_entra_config {
         #[allow(unused_mut)]
-        let mut object_17 = object.key("MicrosoftEntraConfig").start_object();
-        crate::protocol_serde::shape_microsoft_entra_config::ser_microsoft_entra_config(&mut object_17, var_16)?;
-        object_17.finish();
+        let mut object_16 = object.key("MicrosoftEntraConfig").start_object();
+        crate::protocol_serde::shape_microsoft_entra_config::ser_microsoft_entra_config(&mut object_16, var_15)?;
+        object_16.finish();
     }
-    if let Some(var_18) = &input.workspace_type {
-        object.key("WorkspaceType").string(var_18.as_str());
+    if let Some(var_17) = &input.workspace_type {
+        object.key("WorkspaceType").string(var_17.as_str());
     }
-    if let Some(var_19) = &input.active_directory_config {
+    if let Some(var_18) = &input.active_directory_config {
         #[allow(unused_mut)]
-        let mut object_20 = object.key("ActiveDirectoryConfig").start_object();
-        crate::protocol_serde::shape_active_directory_config::ser_active_directory_config(&mut object_20, var_19)?;
-        object_20.finish();
+        let mut object_19 = object.key("ActiveDirectoryConfig").start_object();
+        crate::protocol_serde::shape_active_directory_config::ser_active_directory_config(&mut object_19, var_18)?;
+        object_19.finish();
     }
     Ok(())
 }

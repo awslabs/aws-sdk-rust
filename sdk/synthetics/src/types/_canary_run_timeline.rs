@@ -8,6 +8,8 @@ pub struct CanaryRunTimeline {
     pub started: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The end time of the run.</p>
     pub completed: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>The time at which the metrics will be generated for this run or retries.</p>
+    pub metric_timestamp_for_run_and_retries: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl CanaryRunTimeline {
     /// <p>The start time of the run.</p>
@@ -17,6 +19,10 @@ impl CanaryRunTimeline {
     /// <p>The end time of the run.</p>
     pub fn completed(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.completed.as_ref()
+    }
+    /// <p>The time at which the metrics will be generated for this run or retries.</p>
+    pub fn metric_timestamp_for_run_and_retries(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+        self.metric_timestamp_for_run_and_retries.as_ref()
     }
 }
 impl CanaryRunTimeline {
@@ -32,6 +38,7 @@ impl CanaryRunTimeline {
 pub struct CanaryRunTimelineBuilder {
     pub(crate) started: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) completed: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) metric_timestamp_for_run_and_retries: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl CanaryRunTimelineBuilder {
     /// <p>The start time of the run.</p>
@@ -62,11 +69,26 @@ impl CanaryRunTimelineBuilder {
     pub fn get_completed(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.completed
     }
+    /// <p>The time at which the metrics will be generated for this run or retries.</p>
+    pub fn metric_timestamp_for_run_and_retries(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.metric_timestamp_for_run_and_retries = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The time at which the metrics will be generated for this run or retries.</p>
+    pub fn set_metric_timestamp_for_run_and_retries(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.metric_timestamp_for_run_and_retries = input;
+        self
+    }
+    /// <p>The time at which the metrics will be generated for this run or retries.</p>
+    pub fn get_metric_timestamp_for_run_and_retries(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.metric_timestamp_for_run_and_retries
+    }
     /// Consumes the builder and constructs a [`CanaryRunTimeline`](crate::types::CanaryRunTimeline).
     pub fn build(self) -> crate::types::CanaryRunTimeline {
         crate::types::CanaryRunTimeline {
             started: self.started,
             completed: self.completed,
+            metric_timestamp_for_run_and_retries: self.metric_timestamp_for_run_and_retries,
         }
     }
 }

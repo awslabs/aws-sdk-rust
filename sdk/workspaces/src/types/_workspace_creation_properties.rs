@@ -4,11 +4,6 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct WorkspaceCreationProperties {
-    /// <p>Indicates whether Amazon WorkDocs is enabled for your WorkSpaces.</p><note>
-    /// <p>If WorkDocs is already enabled for a WorkSpaces directory and you disable it, new WorkSpaces launched in the directory will not have WorkDocs enabled. However, WorkDocs remains enabled for any existing WorkSpaces, unless you either disable users' access to WorkDocs or you delete the WorkDocs site. To disable users' access to WorkDocs, see <a href="https://docs.aws.amazon.com/workdocs/latest/adminguide/inactive-user.html">Disabling Users</a> in the <i>Amazon WorkDocs Administration Guide</i>. To delete a WorkDocs site, see <a href="https://docs.aws.amazon.com/workdocs/latest/adminguide/manage-sites.html">Deleting a Site</a> in the <i>Amazon WorkDocs Administration Guide</i>.</p>
-    /// <p>If you enable WorkDocs on a directory that already has existing WorkSpaces, the existing WorkSpaces and any new WorkSpaces that are launched in the directory will have WorkDocs enabled.</p>
-    /// </note>
-    pub enable_work_docs: ::std::option::Option<bool>,
     /// <p>Indicates whether internet access is enabled for your WorkSpaces.</p>
     pub enable_internet_access: ::std::option::Option<bool>,
     /// <p>The default organizational unit (OU) for your WorkSpaces directories. This string must be the full Lightweight Directory Access Protocol (LDAP) distinguished name for the target domain and OU. It must be in the form <code>"OU=<i>value</i>,DC=<i>value</i>,DC=<i>value</i>"</code>, where <i>value</i> is any string of characters, and the number of domain components (DCs) is two or more. For example, <code>OU=WorkSpaces_machines,DC=machines,DC=example,DC=com</code>.</p><important>
@@ -30,13 +25,6 @@ pub struct WorkspaceCreationProperties {
     pub instance_iam_role_arn: ::std::option::Option<::std::string::String>,
 }
 impl WorkspaceCreationProperties {
-    /// <p>Indicates whether Amazon WorkDocs is enabled for your WorkSpaces.</p><note>
-    /// <p>If WorkDocs is already enabled for a WorkSpaces directory and you disable it, new WorkSpaces launched in the directory will not have WorkDocs enabled. However, WorkDocs remains enabled for any existing WorkSpaces, unless you either disable users' access to WorkDocs or you delete the WorkDocs site. To disable users' access to WorkDocs, see <a href="https://docs.aws.amazon.com/workdocs/latest/adminguide/inactive-user.html">Disabling Users</a> in the <i>Amazon WorkDocs Administration Guide</i>. To delete a WorkDocs site, see <a href="https://docs.aws.amazon.com/workdocs/latest/adminguide/manage-sites.html">Deleting a Site</a> in the <i>Amazon WorkDocs Administration Guide</i>.</p>
-    /// <p>If you enable WorkDocs on a directory that already has existing WorkSpaces, the existing WorkSpaces and any new WorkSpaces that are launched in the directory will have WorkDocs enabled.</p>
-    /// </note>
-    pub fn enable_work_docs(&self) -> ::std::option::Option<bool> {
-        self.enable_work_docs
-    }
     /// <p>Indicates whether internet access is enabled for your WorkSpaces.</p>
     pub fn enable_internet_access(&self) -> ::std::option::Option<bool> {
         self.enable_internet_access
@@ -80,7 +68,6 @@ impl WorkspaceCreationProperties {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 pub struct WorkspaceCreationPropertiesBuilder {
-    pub(crate) enable_work_docs: ::std::option::Option<bool>,
     pub(crate) enable_internet_access: ::std::option::Option<bool>,
     pub(crate) default_ou: ::std::option::Option<::std::string::String>,
     pub(crate) custom_security_group_id: ::std::option::Option<::std::string::String>,
@@ -89,29 +76,6 @@ pub struct WorkspaceCreationPropertiesBuilder {
     pub(crate) instance_iam_role_arn: ::std::option::Option<::std::string::String>,
 }
 impl WorkspaceCreationPropertiesBuilder {
-    /// <p>Indicates whether Amazon WorkDocs is enabled for your WorkSpaces.</p><note>
-    /// <p>If WorkDocs is already enabled for a WorkSpaces directory and you disable it, new WorkSpaces launched in the directory will not have WorkDocs enabled. However, WorkDocs remains enabled for any existing WorkSpaces, unless you either disable users' access to WorkDocs or you delete the WorkDocs site. To disable users' access to WorkDocs, see <a href="https://docs.aws.amazon.com/workdocs/latest/adminguide/inactive-user.html">Disabling Users</a> in the <i>Amazon WorkDocs Administration Guide</i>. To delete a WorkDocs site, see <a href="https://docs.aws.amazon.com/workdocs/latest/adminguide/manage-sites.html">Deleting a Site</a> in the <i>Amazon WorkDocs Administration Guide</i>.</p>
-    /// <p>If you enable WorkDocs on a directory that already has existing WorkSpaces, the existing WorkSpaces and any new WorkSpaces that are launched in the directory will have WorkDocs enabled.</p>
-    /// </note>
-    pub fn enable_work_docs(mut self, input: bool) -> Self {
-        self.enable_work_docs = ::std::option::Option::Some(input);
-        self
-    }
-    /// <p>Indicates whether Amazon WorkDocs is enabled for your WorkSpaces.</p><note>
-    /// <p>If WorkDocs is already enabled for a WorkSpaces directory and you disable it, new WorkSpaces launched in the directory will not have WorkDocs enabled. However, WorkDocs remains enabled for any existing WorkSpaces, unless you either disable users' access to WorkDocs or you delete the WorkDocs site. To disable users' access to WorkDocs, see <a href="https://docs.aws.amazon.com/workdocs/latest/adminguide/inactive-user.html">Disabling Users</a> in the <i>Amazon WorkDocs Administration Guide</i>. To delete a WorkDocs site, see <a href="https://docs.aws.amazon.com/workdocs/latest/adminguide/manage-sites.html">Deleting a Site</a> in the <i>Amazon WorkDocs Administration Guide</i>.</p>
-    /// <p>If you enable WorkDocs on a directory that already has existing WorkSpaces, the existing WorkSpaces and any new WorkSpaces that are launched in the directory will have WorkDocs enabled.</p>
-    /// </note>
-    pub fn set_enable_work_docs(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.enable_work_docs = input;
-        self
-    }
-    /// <p>Indicates whether Amazon WorkDocs is enabled for your WorkSpaces.</p><note>
-    /// <p>If WorkDocs is already enabled for a WorkSpaces directory and you disable it, new WorkSpaces launched in the directory will not have WorkDocs enabled. However, WorkDocs remains enabled for any existing WorkSpaces, unless you either disable users' access to WorkDocs or you delete the WorkDocs site. To disable users' access to WorkDocs, see <a href="https://docs.aws.amazon.com/workdocs/latest/adminguide/inactive-user.html">Disabling Users</a> in the <i>Amazon WorkDocs Administration Guide</i>. To delete a WorkDocs site, see <a href="https://docs.aws.amazon.com/workdocs/latest/adminguide/manage-sites.html">Deleting a Site</a> in the <i>Amazon WorkDocs Administration Guide</i>.</p>
-    /// <p>If you enable WorkDocs on a directory that already has existing WorkSpaces, the existing WorkSpaces and any new WorkSpaces that are launched in the directory will have WorkDocs enabled.</p>
-    /// </note>
-    pub fn get_enable_work_docs(&self) -> &::std::option::Option<bool> {
-        &self.enable_work_docs
-    }
     /// <p>Indicates whether internet access is enabled for your WorkSpaces.</p>
     pub fn enable_internet_access(mut self, input: bool) -> Self {
         self.enable_internet_access = ::std::option::Option::Some(input);
@@ -220,7 +184,6 @@ impl WorkspaceCreationPropertiesBuilder {
     /// Consumes the builder and constructs a [`WorkspaceCreationProperties`](crate::types::WorkspaceCreationProperties).
     pub fn build(self) -> crate::types::WorkspaceCreationProperties {
         crate::types::WorkspaceCreationProperties {
-            enable_work_docs: self.enable_work_docs,
             enable_internet_access: self.enable_internet_access,
             default_ou: self.default_ou,
             custom_security_group_id: self.custom_security_group_id,
