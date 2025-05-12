@@ -87,6 +87,15 @@ pub fn ser_av1_settings(
         crate::protocol_serde::shape_timecode_burnin_settings::ser_timecode_burnin_settings(&mut object_19, var_18)?;
         object_19.finish();
     }
+    if let Some(var_20) = &input.bitrate {
+        object.key("bitrate").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_20).into()),
+        );
+    }
+    if let Some(var_21) = &input.rate_control_mode {
+        object.key("rateControlMode").string(var_21.as_str());
+    }
     Ok(())
 }
 
@@ -215,6 +224,20 @@ where
                         "timecodeBurninSettings" => {
                             builder = builder.set_timecode_burnin_settings(
                                 crate::protocol_serde::shape_timecode_burnin_settings::de_timecode_burnin_settings(tokens)?,
+                            );
+                        }
+                        "bitrate" => {
+                            builder = builder.set_bitrate(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
+                            );
+                        }
+                        "rateControlMode" => {
+                            builder = builder.set_rate_control_mode(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::Av1RateControlMode::from(u.as_ref())))
+                                    .transpose()?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

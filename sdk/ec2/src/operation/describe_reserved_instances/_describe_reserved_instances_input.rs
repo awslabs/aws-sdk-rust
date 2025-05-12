@@ -16,6 +16,8 @@ pub struct DescribeReservedInstancesInput {
     /// <li>
     /// <p><code>availability-zone</code> - The Availability Zone where the Reserved Instance can be used.</p></li>
     /// <li>
+    /// <p><code>availability-zone-id</code> - The ID of the Availability Zone where the Reserved Instance can be used.</p></li>
+    /// <li>
     /// <p><code>duration</code> - The duration of the Reserved Instance (one year or three years), in seconds (<code>31536000</code> | <code>94608000</code>).</p></li>
     /// <li>
     /// <p><code>end</code> - The time when the Reserved Instance expires (for example, 2015-08-07T11:54:42.000Z).</p></li>
@@ -64,6 +66,8 @@ impl DescribeReservedInstancesInput {
     /// <ul>
     /// <li>
     /// <p><code>availability-zone</code> - The Availability Zone where the Reserved Instance can be used.</p></li>
+    /// <li>
+    /// <p><code>availability-zone-id</code> - The ID of the Availability Zone where the Reserved Instance can be used.</p></li>
     /// <li>
     /// <p><code>duration</code> - The duration of the Reserved Instance (one year or three years), in seconds (<code>31536000</code> | <code>94608000</code>).</p></li>
     /// <li>
@@ -177,6 +181,8 @@ impl DescribeReservedInstancesInputBuilder {
     /// <li>
     /// <p><code>availability-zone</code> - The Availability Zone where the Reserved Instance can be used.</p></li>
     /// <li>
+    /// <p><code>availability-zone-id</code> - The ID of the Availability Zone where the Reserved Instance can be used.</p></li>
+    /// <li>
     /// <p><code>duration</code> - The duration of the Reserved Instance (one year or three years), in seconds (<code>31536000</code> | <code>94608000</code>).</p></li>
     /// <li>
     /// <p><code>end</code> - The time when the Reserved Instance expires (for example, 2015-08-07T11:54:42.000Z).</p></li>
@@ -212,6 +218,8 @@ impl DescribeReservedInstancesInputBuilder {
     /// <li>
     /// <p><code>availability-zone</code> - The Availability Zone where the Reserved Instance can be used.</p></li>
     /// <li>
+    /// <p><code>availability-zone-id</code> - The ID of the Availability Zone where the Reserved Instance can be used.</p></li>
+    /// <li>
     /// <p><code>duration</code> - The duration of the Reserved Instance (one year or three years), in seconds (<code>31536000</code> | <code>94608000</code>).</p></li>
     /// <li>
     /// <p><code>end</code> - The time when the Reserved Instance expires (for example, 2015-08-07T11:54:42.000Z).</p></li>
@@ -244,6 +252,8 @@ impl DescribeReservedInstancesInputBuilder {
     /// <ul>
     /// <li>
     /// <p><code>availability-zone</code> - The Availability Zone where the Reserved Instance can be used.</p></li>
+    /// <li>
+    /// <p><code>availability-zone-id</code> - The ID of the Availability Zone where the Reserved Instance can be used.</p></li>
     /// <li>
     /// <p><code>duration</code> - The duration of the Reserved Instance (one year or three years), in seconds (<code>31536000</code> | <code>94608000</code>).</p></li>
     /// <li>

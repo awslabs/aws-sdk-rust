@@ -6,7 +6,7 @@
 pub struct CreateDataLakeDatasetInput {
     /// <p>The Amazon Web Services Supply Chain instance identifier.</p>
     pub instance_id: ::std::option::Option<::std::string::String>,
-    /// <p>The name space of the dataset.</p>
+    /// <p>The namespace of the dataset, besides the custom defined namespace, every instance comes with below pre-defined namespaces:</p>
     /// <ul>
     /// <li>
     /// <p><b>asc</b> - For information on the Amazon Web Services Supply Chain supported datasets see <a href="https://docs.aws.amazon.com/aws-supply-chain/latest/userguide/data-model-asc.html">https://docs.aws.amazon.com/aws-supply-chain/latest/userguide/data-model-asc.html</a>.</p></li>
@@ -16,10 +16,12 @@ pub struct CreateDataLakeDatasetInput {
     pub namespace: ::std::option::Option<::std::string::String>,
     /// <p>The name of the dataset. For <b>asc</b> name space, the name must be one of the supported data entities under <a href="https://docs.aws.amazon.com/aws-supply-chain/latest/userguide/data-model-asc.html">https://docs.aws.amazon.com/aws-supply-chain/latest/userguide/data-model-asc.html</a>.</p>
     pub name: ::std::option::Option<::std::string::String>,
-    /// <p>The custom schema of the data lake dataset and is only required when the name space is <b>default</b>.</p>
+    /// <p>The custom schema of the data lake dataset and required for dataset in <b>default</b> and custom namespaces.</p>
     pub schema: ::std::option::Option<crate::types::DataLakeDatasetSchema>,
     /// <p>The description of the dataset.</p>
     pub description: ::std::option::Option<::std::string::String>,
+    /// <p>The partition specification of the dataset. Partitioning can effectively improve the dataset query performance by reducing the amount of data scanned during query execution. But partitioning or not will affect how data get ingested by data ingestion methods, such as SendDataIntegrationEvent's dataset UPSERT will upsert records within partition (instead of within whole dataset). For more details, refer to those data ingestion documentations.</p>
+    pub partition_spec: ::std::option::Option<crate::types::DataLakeDatasetPartitionSpec>,
     /// <p>The tags of the dataset.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
@@ -28,7 +30,7 @@ impl CreateDataLakeDatasetInput {
     pub fn instance_id(&self) -> ::std::option::Option<&str> {
         self.instance_id.as_deref()
     }
-    /// <p>The name space of the dataset.</p>
+    /// <p>The namespace of the dataset, besides the custom defined namespace, every instance comes with below pre-defined namespaces:</p>
     /// <ul>
     /// <li>
     /// <p><b>asc</b> - For information on the Amazon Web Services Supply Chain supported datasets see <a href="https://docs.aws.amazon.com/aws-supply-chain/latest/userguide/data-model-asc.html">https://docs.aws.amazon.com/aws-supply-chain/latest/userguide/data-model-asc.html</a>.</p></li>
@@ -42,13 +44,17 @@ impl CreateDataLakeDatasetInput {
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The custom schema of the data lake dataset and is only required when the name space is <b>default</b>.</p>
+    /// <p>The custom schema of the data lake dataset and required for dataset in <b>default</b> and custom namespaces.</p>
     pub fn schema(&self) -> ::std::option::Option<&crate::types::DataLakeDatasetSchema> {
         self.schema.as_ref()
     }
     /// <p>The description of the dataset.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
+    }
+    /// <p>The partition specification of the dataset. Partitioning can effectively improve the dataset query performance by reducing the amount of data scanned during query execution. But partitioning or not will affect how data get ingested by data ingestion methods, such as SendDataIntegrationEvent's dataset UPSERT will upsert records within partition (instead of within whole dataset). For more details, refer to those data ingestion documentations.</p>
+    pub fn partition_spec(&self) -> ::std::option::Option<&crate::types::DataLakeDatasetPartitionSpec> {
+        self.partition_spec.as_ref()
     }
     /// <p>The tags of the dataset.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
@@ -71,6 +77,7 @@ pub struct CreateDataLakeDatasetInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) schema: ::std::option::Option<crate::types::DataLakeDatasetSchema>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
+    pub(crate) partition_spec: ::std::option::Option<crate::types::DataLakeDatasetPartitionSpec>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateDataLakeDatasetInputBuilder {
@@ -89,7 +96,7 @@ impl CreateDataLakeDatasetInputBuilder {
     pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.instance_id
     }
-    /// <p>The name space of the dataset.</p>
+    /// <p>The namespace of the dataset, besides the custom defined namespace, every instance comes with below pre-defined namespaces:</p>
     /// <ul>
     /// <li>
     /// <p><b>asc</b> - For information on the Amazon Web Services Supply Chain supported datasets see <a href="https://docs.aws.amazon.com/aws-supply-chain/latest/userguide/data-model-asc.html">https://docs.aws.amazon.com/aws-supply-chain/latest/userguide/data-model-asc.html</a>.</p></li>
@@ -101,7 +108,7 @@ impl CreateDataLakeDatasetInputBuilder {
         self.namespace = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name space of the dataset.</p>
+    /// <p>The namespace of the dataset, besides the custom defined namespace, every instance comes with below pre-defined namespaces:</p>
     /// <ul>
     /// <li>
     /// <p><b>asc</b> - For information on the Amazon Web Services Supply Chain supported datasets see <a href="https://docs.aws.amazon.com/aws-supply-chain/latest/userguide/data-model-asc.html">https://docs.aws.amazon.com/aws-supply-chain/latest/userguide/data-model-asc.html</a>.</p></li>
@@ -112,7 +119,7 @@ impl CreateDataLakeDatasetInputBuilder {
         self.namespace = input;
         self
     }
-    /// <p>The name space of the dataset.</p>
+    /// <p>The namespace of the dataset, besides the custom defined namespace, every instance comes with below pre-defined namespaces:</p>
     /// <ul>
     /// <li>
     /// <p><b>asc</b> - For information on the Amazon Web Services Supply Chain supported datasets see <a href="https://docs.aws.amazon.com/aws-supply-chain/latest/userguide/data-model-asc.html">https://docs.aws.amazon.com/aws-supply-chain/latest/userguide/data-model-asc.html</a>.</p></li>
@@ -137,17 +144,17 @@ impl CreateDataLakeDatasetInputBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
-    /// <p>The custom schema of the data lake dataset and is only required when the name space is <b>default</b>.</p>
+    /// <p>The custom schema of the data lake dataset and required for dataset in <b>default</b> and custom namespaces.</p>
     pub fn schema(mut self, input: crate::types::DataLakeDatasetSchema) -> Self {
         self.schema = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The custom schema of the data lake dataset and is only required when the name space is <b>default</b>.</p>
+    /// <p>The custom schema of the data lake dataset and required for dataset in <b>default</b> and custom namespaces.</p>
     pub fn set_schema(mut self, input: ::std::option::Option<crate::types::DataLakeDatasetSchema>) -> Self {
         self.schema = input;
         self
     }
-    /// <p>The custom schema of the data lake dataset and is only required when the name space is <b>default</b>.</p>
+    /// <p>The custom schema of the data lake dataset and required for dataset in <b>default</b> and custom namespaces.</p>
     pub fn get_schema(&self) -> &::std::option::Option<crate::types::DataLakeDatasetSchema> {
         &self.schema
     }
@@ -164,6 +171,20 @@ impl CreateDataLakeDatasetInputBuilder {
     /// <p>The description of the dataset.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
+    }
+    /// <p>The partition specification of the dataset. Partitioning can effectively improve the dataset query performance by reducing the amount of data scanned during query execution. But partitioning or not will affect how data get ingested by data ingestion methods, such as SendDataIntegrationEvent's dataset UPSERT will upsert records within partition (instead of within whole dataset). For more details, refer to those data ingestion documentations.</p>
+    pub fn partition_spec(mut self, input: crate::types::DataLakeDatasetPartitionSpec) -> Self {
+        self.partition_spec = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The partition specification of the dataset. Partitioning can effectively improve the dataset query performance by reducing the amount of data scanned during query execution. But partitioning or not will affect how data get ingested by data ingestion methods, such as SendDataIntegrationEvent's dataset UPSERT will upsert records within partition (instead of within whole dataset). For more details, refer to those data ingestion documentations.</p>
+    pub fn set_partition_spec(mut self, input: ::std::option::Option<crate::types::DataLakeDatasetPartitionSpec>) -> Self {
+        self.partition_spec = input;
+        self
+    }
+    /// <p>The partition specification of the dataset. Partitioning can effectively improve the dataset query performance by reducing the amount of data scanned during query execution. But partitioning or not will affect how data get ingested by data ingestion methods, such as SendDataIntegrationEvent's dataset UPSERT will upsert records within partition (instead of within whole dataset). For more details, refer to those data ingestion documentations.</p>
+    pub fn get_partition_spec(&self) -> &::std::option::Option<crate::types::DataLakeDatasetPartitionSpec> {
+        &self.partition_spec
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -196,6 +217,7 @@ impl CreateDataLakeDatasetInputBuilder {
             name: self.name,
             schema: self.schema,
             description: self.description,
+            partition_spec: self.partition_spec,
             tags: self.tags,
         })
     }

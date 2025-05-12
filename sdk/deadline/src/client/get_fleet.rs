@@ -17,6 +17,7 @@ impl super::Client {
     ///   - [`min_worker_count(i32)`](crate::operation::get_fleet::GetFleetOutput::min_worker_count): <p>The minimum number of workers specified in the fleet.</p>
     ///   - [`max_worker_count(i32)`](crate::operation::get_fleet::GetFleetOutput::max_worker_count): <p>The maximum number of workers specified in the fleet.</p>
     ///   - [`configuration(Option<FleetConfiguration>)`](crate::operation::get_fleet::GetFleetOutput::configuration): <p>The configuration setting for the fleet.</p>
+    ///   - [`host_configuration(Option<HostConfiguration>)`](crate::operation::get_fleet::GetFleetOutput::host_configuration): <p>The script that runs as a worker is starting up that you can use to provide additional configuration for workers in your fleet.</p>
     ///   - [`capabilities(Option<FleetCapabilities>)`](crate::operation::get_fleet::GetFleetOutput::capabilities): <p>Outlines what the fleet is capable of for minimums, maximums, and naming, in addition to attribute names and values.</p>
     ///   - [`role_arn(String)`](crate::operation::get_fleet::GetFleetOutput::role_arn): <p>The IAM role ARN.</p>
     ///   - [`created_at(DateTime)`](crate::operation::get_fleet::GetFleetOutput::created_at): <p>The date and time the resource was created.</p>

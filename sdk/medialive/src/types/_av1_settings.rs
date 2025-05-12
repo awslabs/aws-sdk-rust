@@ -38,6 +38,10 @@ pub struct Av1Settings {
     pub scene_change_detect: ::std::option::Option<crate::types::Av1SceneChangeDetect>,
     /// Configures the timecode burn-in feature. If you enable this feature, the timecode will become part of the video.
     pub timecode_burnin_settings: ::std::option::Option<crate::types::TimecodeBurninSettings>,
+    /// Average bitrate in bits/second. Required when the rate control mode is CBR. Not used for QVBR.
+    pub bitrate: ::std::option::Option<i32>,
+    /// Rate control mode. QVBR: Quality will match the specified quality level except when it is constrained by the maximum bitrate. Recommended if you or your viewers pay for bandwidth. CBR: Quality varies, depending on the video complexity. Recommended only if you distribute your assets to devices that cannot handle variable bitrates.
+    pub rate_control_mode: ::std::option::Option<crate::types::Av1RateControlMode>,
 }
 impl Av1Settings {
     /// Configures whether MediaLive will write AFD values into the video. AUTO: MediaLive will try to preserve the input AFD value (in cases where multiple AFD values are valid). FIXED: the AFD value will be the value configured in the fixedAfd parameter. NONE: MediaLive won't write AFD into the video
@@ -108,6 +112,14 @@ impl Av1Settings {
     pub fn timecode_burnin_settings(&self) -> ::std::option::Option<&crate::types::TimecodeBurninSettings> {
         self.timecode_burnin_settings.as_ref()
     }
+    /// Average bitrate in bits/second. Required when the rate control mode is CBR. Not used for QVBR.
+    pub fn bitrate(&self) -> ::std::option::Option<i32> {
+        self.bitrate
+    }
+    /// Rate control mode. QVBR: Quality will match the specified quality level except when it is constrained by the maximum bitrate. Recommended if you or your viewers pay for bandwidth. CBR: Quality varies, depending on the video complexity. Recommended only if you distribute your assets to devices that cannot handle variable bitrates.
+    pub fn rate_control_mode(&self) -> ::std::option::Option<&crate::types::Av1RateControlMode> {
+        self.rate_control_mode.as_ref()
+    }
 }
 impl Av1Settings {
     /// Creates a new builder-style object to manufacture [`Av1Settings`](crate::types::Av1Settings).
@@ -137,6 +149,8 @@ pub struct Av1SettingsBuilder {
     pub(crate) qvbr_quality_level: ::std::option::Option<i32>,
     pub(crate) scene_change_detect: ::std::option::Option<crate::types::Av1SceneChangeDetect>,
     pub(crate) timecode_burnin_settings: ::std::option::Option<crate::types::TimecodeBurninSettings>,
+    pub(crate) bitrate: ::std::option::Option<i32>,
+    pub(crate) rate_control_mode: ::std::option::Option<crate::types::Av1RateControlMode>,
 }
 impl Av1SettingsBuilder {
     /// Configures whether MediaLive will write AFD values into the video. AUTO: MediaLive will try to preserve the input AFD value (in cases where multiple AFD values are valid). FIXED: the AFD value will be the value configured in the fixedAfd parameter. NONE: MediaLive won't write AFD into the video
@@ -379,6 +393,34 @@ impl Av1SettingsBuilder {
     pub fn get_timecode_burnin_settings(&self) -> &::std::option::Option<crate::types::TimecodeBurninSettings> {
         &self.timecode_burnin_settings
     }
+    /// Average bitrate in bits/second. Required when the rate control mode is CBR. Not used for QVBR.
+    pub fn bitrate(mut self, input: i32) -> Self {
+        self.bitrate = ::std::option::Option::Some(input);
+        self
+    }
+    /// Average bitrate in bits/second. Required when the rate control mode is CBR. Not used for QVBR.
+    pub fn set_bitrate(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.bitrate = input;
+        self
+    }
+    /// Average bitrate in bits/second. Required when the rate control mode is CBR. Not used for QVBR.
+    pub fn get_bitrate(&self) -> &::std::option::Option<i32> {
+        &self.bitrate
+    }
+    /// Rate control mode. QVBR: Quality will match the specified quality level except when it is constrained by the maximum bitrate. Recommended if you or your viewers pay for bandwidth. CBR: Quality varies, depending on the video complexity. Recommended only if you distribute your assets to devices that cannot handle variable bitrates.
+    pub fn rate_control_mode(mut self, input: crate::types::Av1RateControlMode) -> Self {
+        self.rate_control_mode = ::std::option::Option::Some(input);
+        self
+    }
+    /// Rate control mode. QVBR: Quality will match the specified quality level except when it is constrained by the maximum bitrate. Recommended if you or your viewers pay for bandwidth. CBR: Quality varies, depending on the video complexity. Recommended only if you distribute your assets to devices that cannot handle variable bitrates.
+    pub fn set_rate_control_mode(mut self, input: ::std::option::Option<crate::types::Av1RateControlMode>) -> Self {
+        self.rate_control_mode = input;
+        self
+    }
+    /// Rate control mode. QVBR: Quality will match the specified quality level except when it is constrained by the maximum bitrate. Recommended if you or your viewers pay for bandwidth. CBR: Quality varies, depending on the video complexity. Recommended only if you distribute your assets to devices that cannot handle variable bitrates.
+    pub fn get_rate_control_mode(&self) -> &::std::option::Option<crate::types::Av1RateControlMode> {
+        &self.rate_control_mode
+    }
     /// Consumes the builder and constructs a [`Av1Settings`](crate::types::Av1Settings).
     pub fn build(self) -> crate::types::Av1Settings {
         crate::types::Av1Settings {
@@ -399,6 +441,8 @@ impl Av1SettingsBuilder {
             qvbr_quality_level: self.qvbr_quality_level,
             scene_change_detect: self.scene_change_detect,
             timecode_burnin_settings: self.timecode_burnin_settings,
+            bitrate: self.bitrate,
+            rate_control_mode: self.rate_control_mode,
         }
     }
 }

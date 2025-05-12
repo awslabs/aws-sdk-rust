@@ -12,6 +12,7 @@
 /// ```text
 /// # let servicequotaexceededexceptionreason = unimplemented!();
 /// match servicequotaexceededexceptionreason {
+///     ServiceQuotaExceededExceptionReason::DependencyLimitExceeded => { /* ... */ },
 ///     ServiceQuotaExceededExceptionReason::KmsKeyLimitExceeded => { /* ... */ },
 ///     ServiceQuotaExceededExceptionReason::ServiceQuotaExceededException => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -43,6 +44,8 @@
 )]
 pub enum ServiceQuotaExceededExceptionReason {
     #[allow(missing_docs)] // documentation missing in model
+    DependencyLimitExceeded,
+    #[allow(missing_docs)] // documentation missing in model
     KmsKeyLimitExceeded,
     #[allow(missing_docs)] // documentation missing in model
     ServiceQuotaExceededException,
@@ -53,6 +56,7 @@ pub enum ServiceQuotaExceededExceptionReason {
 impl ::std::convert::From<&str> for ServiceQuotaExceededExceptionReason {
     fn from(s: &str) -> Self {
         match s {
+            "DEPENDENCY_LIMIT_EXCEEDED" => ServiceQuotaExceededExceptionReason::DependencyLimitExceeded,
             "KMS_KEY_LIMIT_EXCEEDED" => ServiceQuotaExceededExceptionReason::KmsKeyLimitExceeded,
             "SERVICE_QUOTA_EXCEEDED_EXCEPTION" => ServiceQuotaExceededExceptionReason::ServiceQuotaExceededException,
             other => ServiceQuotaExceededExceptionReason::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -70,6 +74,7 @@ impl ServiceQuotaExceededExceptionReason {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            ServiceQuotaExceededExceptionReason::DependencyLimitExceeded => "DEPENDENCY_LIMIT_EXCEEDED",
             ServiceQuotaExceededExceptionReason::KmsKeyLimitExceeded => "KMS_KEY_LIMIT_EXCEEDED",
             ServiceQuotaExceededExceptionReason::ServiceQuotaExceededException => "SERVICE_QUOTA_EXCEEDED_EXCEPTION",
             ServiceQuotaExceededExceptionReason::Unknown(value) => value.as_str(),
@@ -77,7 +82,7 @@ impl ServiceQuotaExceededExceptionReason {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["KMS_KEY_LIMIT_EXCEEDED", "SERVICE_QUOTA_EXCEEDED_EXCEPTION"]
+        &["DEPENDENCY_LIMIT_EXCEEDED", "KMS_KEY_LIMIT_EXCEEDED", "SERVICE_QUOTA_EXCEEDED_EXCEPTION"]
     }
 }
 impl ::std::convert::AsRef<str> for ServiceQuotaExceededExceptionReason {
@@ -100,6 +105,7 @@ impl ServiceQuotaExceededExceptionReason {
 impl ::std::fmt::Display for ServiceQuotaExceededExceptionReason {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            ServiceQuotaExceededExceptionReason::DependencyLimitExceeded => write!(f, "DEPENDENCY_LIMIT_EXCEEDED"),
             ServiceQuotaExceededExceptionReason::KmsKeyLimitExceeded => write!(f, "KMS_KEY_LIMIT_EXCEEDED"),
             ServiceQuotaExceededExceptionReason::ServiceQuotaExceededException => write!(f, "SERVICE_QUOTA_EXCEEDED_EXCEPTION"),
             ServiceQuotaExceededExceptionReason::Unknown(value) => write!(f, "{}", value),

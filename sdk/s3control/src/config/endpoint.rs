@@ -3561,6 +3561,160 @@ mod test {
         let error = endpoint.expect_err("expected error: Unrecognized S3Express Access Point name format. [Error Access Point APIs on express bucket routed to s3express-control invalid zone]");
         assert_eq!(format!("{}", error), "Unrecognized S3Express Access Point name format.")
     }
+
+    /// Access Point APIs on express bucket routed to custom endpoint if provided
+    #[test]
+    fn test_121() {
+        let params = crate::config::endpoint::Params::builder()
+            .account_id("871317572157".to_string())
+            .access_point_name("myaccesspoint--abcd-ab1--xa-s3".to_string())
+            .endpoint("https://my-endpoint.express-control.s3.aws.dev".to_string())
+            .region("us-east-1".to_string())
+            .requires_account_id(true)
+            .use_dual_stack(false)
+            .use_fips(false)
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://my-endpoint.express-control.s3.aws.dev");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://my-endpoint.express-control.s3.aws.dev")
+                .property(
+                    "authSchemes",
+                    vec![{
+                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
+                        out.insert("name".to_string(), "sigv4".to_string().into());
+                        out.insert("signingName".to_string(), "s3express".to_string().into());
+                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
+                        out.insert("disableDoubleEncoding".to_string(), true.into());
+                        out
+                    }
+                    .into()]
+                )
+                .build()
+        );
+    }
+
+    /// Access Point APIs on express bucket routed to custom endpoint if provided for List
+    #[test]
+    fn test_122() {
+        let params = crate::config::endpoint::Params::builder()
+            .account_id("871317572157".to_string())
+            .region("us-east-1".to_string())
+            .use_s3_express_control_endpoint(true)
+            .endpoint("https://my-endpoint.express-control.s3.aws.dev".to_string())
+            .requires_account_id(true)
+            .use_dual_stack(false)
+            .use_fips(false)
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://my-endpoint.express-control.s3.aws.dev");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://my-endpoint.express-control.s3.aws.dev")
+                .property(
+                    "authSchemes",
+                    vec![{
+                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
+                        out.insert("name".to_string(), "sigv4".to_string().into());
+                        out.insert("signingName".to_string(), "s3express".to_string().into());
+                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
+                        out.insert("disableDoubleEncoding".to_string(), true.into());
+                        out
+                    }
+                    .into()]
+                )
+                .build()
+        );
+    }
+
+    /// Error on Access Point APIs on express bucket for dual stack
+    #[test]
+    fn test_123() {
+        let params = crate::config::endpoint::Params::builder()
+            .account_id("871317572157".to_string())
+            .access_point_name("myaccesspoint--abcd-ab1--xa-s3".to_string())
+            .region("us-east-1".to_string())
+            .requires_account_id(true)
+            .use_dual_stack(true)
+            .use_fips(false)
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let error = endpoint
+            .expect_err("expected error: S3Express does not support Dual-stack. [Error on Access Point APIs on express bucket for dual stack]");
+        assert_eq!(format!("{}", error), "S3Express does not support Dual-stack.")
+    }
+
+    /// Error Access Point APIs on express bucket for dual stack for List
+    #[test]
+    fn test_124() {
+        let params = crate::config::endpoint::Params::builder()
+            .account_id("871317572157".to_string())
+            .region("us-east-1".to_string())
+            .use_s3_express_control_endpoint(true)
+            .requires_account_id(true)
+            .use_dual_stack(true)
+            .use_fips(false)
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let error = endpoint
+            .expect_err("expected error: S3Express does not support Dual-stack. [Error Access Point APIs on express bucket for dual stack for List]");
+        assert_eq!(format!("{}", error), "S3Express does not support Dual-stack.")
+    }
+
+    /// Error on Access Point APIs on express bucket for custom endpoint and dual stack
+    #[test]
+    fn test_125() {
+        let params = crate::config::endpoint::Params::builder()
+            .account_id("871317572157".to_string())
+            .access_point_name("myaccesspoint--abcd-ab1--xa-s3".to_string())
+            .endpoint("https://my-endpoint.express-control.s3.aws.dev".to_string())
+            .region("us-east-1".to_string())
+            .requires_account_id(true)
+            .use_dual_stack(true)
+            .use_fips(false)
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let error = endpoint.expect_err("expected error: Invalid Configuration: DualStack and custom endpoint are not supported [Error on Access Point APIs on express bucket for custom endpoint and dual stack]");
+        assert_eq!(
+            format!("{}", error),
+            "Invalid Configuration: DualStack and custom endpoint are not supported"
+        )
+    }
+
+    /// Error Access Point APIs on express bucket for custom endpoint and dual stack for List
+    #[test]
+    fn test_126() {
+        let params = crate::config::endpoint::Params::builder()
+            .account_id("871317572157".to_string())
+            .region("us-east-1".to_string())
+            .use_s3_express_control_endpoint(true)
+            .endpoint("https://my-endpoint.express-control.s3.aws.dev".to_string())
+            .requires_account_id(true)
+            .use_dual_stack(true)
+            .use_fips(false)
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let error = endpoint.expect_err("expected error: Invalid Configuration: DualStack and custom endpoint are not supported [Error Access Point APIs on express bucket for custom endpoint and dual stack for List]");
+        assert_eq!(
+            format!("{}", error),
+            "Invalid Configuration: DualStack and custom endpoint are not supported"
+        )
+    }
 }
 
 /// Endpoint resolver trait specific to AWS S3 Control

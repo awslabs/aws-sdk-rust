@@ -18,6 +18,8 @@ pub struct ReservedInstances {
     pub scope: ::std::option::Option<crate::types::Scope>,
     /// <p>Any tags assigned to the resource.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    /// <p>The ID of the Availability Zone.</p>
+    pub availability_zone_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the Reserved Instance.</p>
     pub reserved_instances_id: ::std::option::Option<::std::string::String>,
     /// <p>The instance type on which the Reserved Instance can be used.</p>
@@ -73,6 +75,10 @@ impl ReservedInstances {
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
     pub fn tags(&self) -> &[crate::types::Tag] {
         self.tags.as_deref().unwrap_or_default()
+    }
+    /// <p>The ID of the Availability Zone.</p>
+    pub fn availability_zone_id(&self) -> ::std::option::Option<&str> {
+        self.availability_zone_id.as_deref()
     }
     /// <p>The ID of the Reserved Instance.</p>
     pub fn reserved_instances_id(&self) -> ::std::option::Option<&str> {
@@ -137,6 +143,7 @@ pub struct ReservedInstancesBuilder {
     pub(crate) recurring_charges: ::std::option::Option<::std::vec::Vec<crate::types::RecurringCharge>>,
     pub(crate) scope: ::std::option::Option<crate::types::Scope>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) availability_zone_id: ::std::option::Option<::std::string::String>,
     pub(crate) reserved_instances_id: ::std::option::Option<::std::string::String>,
     pub(crate) instance_type: ::std::option::Option<crate::types::InstanceType>,
     pub(crate) availability_zone: ::std::option::Option<::std::string::String>,
@@ -259,6 +266,20 @@ impl ReservedInstancesBuilder {
     /// <p>Any tags assigned to the resource.</p>
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         &self.tags
+    }
+    /// <p>The ID of the Availability Zone.</p>
+    pub fn availability_zone_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.availability_zone_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ID of the Availability Zone.</p>
+    pub fn set_availability_zone_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.availability_zone_id = input;
+        self
+    }
+    /// <p>The ID of the Availability Zone.</p>
+    pub fn get_availability_zone_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.availability_zone_id
     }
     /// <p>The ID of the Reserved Instance.</p>
     pub fn reserved_instances_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -424,6 +445,7 @@ impl ReservedInstancesBuilder {
             recurring_charges: self.recurring_charges,
             scope: self.scope,
             tags: self.tags,
+            availability_zone_id: self.availability_zone_id,
             reserved_instances_id: self.reserved_instances_id,
             instance_type: self.instance_type,
             availability_zone: self.availability_zone,

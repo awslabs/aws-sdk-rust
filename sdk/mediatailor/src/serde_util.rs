@@ -44,6 +44,9 @@ pub(crate) fn log_configuration_correct_errors(
     if builder.percent_enabled.is_none() {
         builder.percent_enabled = Some(Default::default())
     }
+    if builder.enabled_logging_strategies.is_none() {
+        builder.enabled_logging_strategies = Some(Default::default())
+    }
     builder
 }
 

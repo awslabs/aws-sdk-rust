@@ -128,7 +128,7 @@ impl ListDataLakeDatasetsFluentBuilder {
     pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_instance_id()
     }
-    /// <p>The name space of the dataset. The available values are:</p>
+    /// <p>The namespace of the dataset, besides the custom defined namespace, every instance comes with below pre-defined namespaces:</p>
     /// <ul>
     /// <li>
     /// <p><b>asc</b> - For information on the Amazon Web Services Supply Chain supported datasets see <a href="https://docs.aws.amazon.com/aws-supply-chain/latest/userguide/data-model-asc.html">https://docs.aws.amazon.com/aws-supply-chain/latest/userguide/data-model-asc.html</a>.</p></li>
@@ -139,7 +139,7 @@ impl ListDataLakeDatasetsFluentBuilder {
         self.inner = self.inner.namespace(input.into());
         self
     }
-    /// <p>The name space of the dataset. The available values are:</p>
+    /// <p>The namespace of the dataset, besides the custom defined namespace, every instance comes with below pre-defined namespaces:</p>
     /// <ul>
     /// <li>
     /// <p><b>asc</b> - For information on the Amazon Web Services Supply Chain supported datasets see <a href="https://docs.aws.amazon.com/aws-supply-chain/latest/userguide/data-model-asc.html">https://docs.aws.amazon.com/aws-supply-chain/latest/userguide/data-model-asc.html</a>.</p></li>
@@ -150,7 +150,7 @@ impl ListDataLakeDatasetsFluentBuilder {
         self.inner = self.inner.set_namespace(input);
         self
     }
-    /// <p>The name space of the dataset. The available values are:</p>
+    /// <p>The namespace of the dataset, besides the custom defined namespace, every instance comes with below pre-defined namespaces:</p>
     /// <ul>
     /// <li>
     /// <p><b>asc</b> - For information on the Amazon Web Services Supply Chain supported datasets see <a href="https://docs.aws.amazon.com/aws-supply-chain/latest/userguide/data-model-asc.html">https://docs.aws.amazon.com/aws-supply-chain/latest/userguide/data-model-asc.html</a>.</p></li>

@@ -22,9 +22,12 @@ pub struct UpdateFleetInput {
     /// <p>The minimum number of workers in the fleet.</p>
     pub min_worker_count: ::std::option::Option<i32>,
     /// <p>The maximum number of workers in the fleet.</p>
+    /// <p>Deadline Cloud limits the number of workers to less than or equal to the fleet's maximum worker count. The service maintains eventual consistency for the worker count. If you make multiple rapid calls to <code>CreateWorker</code> before the field updates, you might exceed your fleet's maximum worker count. For example, if your <code>maxWorkerCount</code> is 10 and you currently have 9 workers, making two quick <code>CreateWorker</code> calls might successfully create 2 workers instead of 1, resulting in 11 total workers.</p>
     pub max_worker_count: ::std::option::Option<i32>,
     /// <p>The fleet configuration to update.</p>
     pub configuration: ::std::option::Option<crate::types::FleetConfiguration>,
+    /// <p>Provides a script that runs as a worker is starting up that you can use to provide additional configuration for workers in your fleet.</p>
+    pub host_configuration: ::std::option::Option<crate::types::HostConfiguration>,
 }
 impl UpdateFleetInput {
     /// <p>The unique token which the server uses to recognize retries of the same request.</p>
@@ -60,12 +63,17 @@ impl UpdateFleetInput {
         self.min_worker_count
     }
     /// <p>The maximum number of workers in the fleet.</p>
+    /// <p>Deadline Cloud limits the number of workers to less than or equal to the fleet's maximum worker count. The service maintains eventual consistency for the worker count. If you make multiple rapid calls to <code>CreateWorker</code> before the field updates, you might exceed your fleet's maximum worker count. For example, if your <code>maxWorkerCount</code> is 10 and you currently have 9 workers, making two quick <code>CreateWorker</code> calls might successfully create 2 workers instead of 1, resulting in 11 total workers.</p>
     pub fn max_worker_count(&self) -> ::std::option::Option<i32> {
         self.max_worker_count
     }
     /// <p>The fleet configuration to update.</p>
     pub fn configuration(&self) -> ::std::option::Option<&crate::types::FleetConfiguration> {
         self.configuration.as_ref()
+    }
+    /// <p>Provides a script that runs as a worker is starting up that you can use to provide additional configuration for workers in your fleet.</p>
+    pub fn host_configuration(&self) -> ::std::option::Option<&crate::types::HostConfiguration> {
+        self.host_configuration.as_ref()
     }
 }
 impl ::std::fmt::Debug for UpdateFleetInput {
@@ -80,6 +88,7 @@ impl ::std::fmt::Debug for UpdateFleetInput {
         formatter.field("min_worker_count", &self.min_worker_count);
         formatter.field("max_worker_count", &self.max_worker_count);
         formatter.field("configuration", &self.configuration);
+        formatter.field("host_configuration", &self.host_configuration);
         formatter.finish()
     }
 }
@@ -103,6 +112,7 @@ pub struct UpdateFleetInputBuilder {
     pub(crate) min_worker_count: ::std::option::Option<i32>,
     pub(crate) max_worker_count: ::std::option::Option<i32>,
     pub(crate) configuration: ::std::option::Option<crate::types::FleetConfiguration>,
+    pub(crate) host_configuration: ::std::option::Option<crate::types::HostConfiguration>,
 }
 impl UpdateFleetInputBuilder {
     /// <p>The unique token which the server uses to recognize retries of the same request.</p>
@@ -218,16 +228,19 @@ impl UpdateFleetInputBuilder {
         &self.min_worker_count
     }
     /// <p>The maximum number of workers in the fleet.</p>
+    /// <p>Deadline Cloud limits the number of workers to less than or equal to the fleet's maximum worker count. The service maintains eventual consistency for the worker count. If you make multiple rapid calls to <code>CreateWorker</code> before the field updates, you might exceed your fleet's maximum worker count. For example, if your <code>maxWorkerCount</code> is 10 and you currently have 9 workers, making two quick <code>CreateWorker</code> calls might successfully create 2 workers instead of 1, resulting in 11 total workers.</p>
     pub fn max_worker_count(mut self, input: i32) -> Self {
         self.max_worker_count = ::std::option::Option::Some(input);
         self
     }
     /// <p>The maximum number of workers in the fleet.</p>
+    /// <p>Deadline Cloud limits the number of workers to less than or equal to the fleet's maximum worker count. The service maintains eventual consistency for the worker count. If you make multiple rapid calls to <code>CreateWorker</code> before the field updates, you might exceed your fleet's maximum worker count. For example, if your <code>maxWorkerCount</code> is 10 and you currently have 9 workers, making two quick <code>CreateWorker</code> calls might successfully create 2 workers instead of 1, resulting in 11 total workers.</p>
     pub fn set_max_worker_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_worker_count = input;
         self
     }
     /// <p>The maximum number of workers in the fleet.</p>
+    /// <p>Deadline Cloud limits the number of workers to less than or equal to the fleet's maximum worker count. The service maintains eventual consistency for the worker count. If you make multiple rapid calls to <code>CreateWorker</code> before the field updates, you might exceed your fleet's maximum worker count. For example, if your <code>maxWorkerCount</code> is 10 and you currently have 9 workers, making two quick <code>CreateWorker</code> calls might successfully create 2 workers instead of 1, resulting in 11 total workers.</p>
     pub fn get_max_worker_count(&self) -> &::std::option::Option<i32> {
         &self.max_worker_count
     }
@@ -245,6 +258,20 @@ impl UpdateFleetInputBuilder {
     pub fn get_configuration(&self) -> &::std::option::Option<crate::types::FleetConfiguration> {
         &self.configuration
     }
+    /// <p>Provides a script that runs as a worker is starting up that you can use to provide additional configuration for workers in your fleet.</p>
+    pub fn host_configuration(mut self, input: crate::types::HostConfiguration) -> Self {
+        self.host_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Provides a script that runs as a worker is starting up that you can use to provide additional configuration for workers in your fleet.</p>
+    pub fn set_host_configuration(mut self, input: ::std::option::Option<crate::types::HostConfiguration>) -> Self {
+        self.host_configuration = input;
+        self
+    }
+    /// <p>Provides a script that runs as a worker is starting up that you can use to provide additional configuration for workers in your fleet.</p>
+    pub fn get_host_configuration(&self) -> &::std::option::Option<crate::types::HostConfiguration> {
+        &self.host_configuration
+    }
     /// Consumes the builder and constructs a [`UpdateFleetInput`](crate::operation::update_fleet::UpdateFleetInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::update_fleet::UpdateFleetInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_fleet::UpdateFleetInput {
@@ -257,6 +284,7 @@ impl UpdateFleetInputBuilder {
             min_worker_count: self.min_worker_count,
             max_worker_count: self.max_worker_count,
             configuration: self.configuration,
+            host_configuration: self.host_configuration,
         })
     }
 }
@@ -272,6 +300,7 @@ impl ::std::fmt::Debug for UpdateFleetInputBuilder {
         formatter.field("min_worker_count", &self.min_worker_count);
         formatter.field("max_worker_count", &self.max_worker_count);
         formatter.field("configuration", &self.configuration);
+        formatter.field("host_configuration", &self.host_configuration);
         formatter.finish()
     }
 }

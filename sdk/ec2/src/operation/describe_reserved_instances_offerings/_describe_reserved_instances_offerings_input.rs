@@ -5,6 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeReservedInstancesOfferingsInput {
     /// <p>The Availability Zone in which the Reserved Instance can be used.</p>
+    /// <p>Either <code>AvailabilityZone</code> or <code>AvailabilityZoneId</code> can be specified, but not both.</p>
     pub availability_zone: ::std::option::Option<::std::string::String>,
     /// <p>Include Reserved Instance Marketplace offerings in the response.</p>
     pub include_marketplace: ::std::option::Option<bool>,
@@ -25,12 +26,17 @@ pub struct DescribeReservedInstancesOfferingsInput {
     pub product_description: ::std::option::Option<crate::types::RiProductDescription>,
     /// <p>One or more Reserved Instances offering IDs.</p>
     pub reserved_instances_offering_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>The ID of the Availability Zone.</p>
+    /// <p>Either <code>AvailabilityZone</code> or <code>AvailabilityZoneId</code> can be specified, but not both.</p>
+    pub availability_zone_id: ::std::option::Option<::std::string::String>,
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub dry_run: ::std::option::Option<bool>,
     /// <p>One or more filters.</p>
     /// <ul>
     /// <li>
     /// <p><code>availability-zone</code> - The Availability Zone where the Reserved Instance can be used.</p></li>
+    /// <li>
+    /// <p><code>availability-zone-id</code> - The ID of the Availability Zone where the Reserved Instance can be used.</p></li>
     /// <li>
     /// <p><code>duration</code> - The duration of the Reserved Instance (for example, one year or three years), in seconds (<code>31536000</code> | <code>94608000</code>).</p></li>
     /// <li>
@@ -63,6 +69,7 @@ pub struct DescribeReservedInstancesOfferingsInput {
 }
 impl DescribeReservedInstancesOfferingsInput {
     /// <p>The Availability Zone in which the Reserved Instance can be used.</p>
+    /// <p>Either <code>AvailabilityZone</code> or <code>AvailabilityZoneId</code> can be specified, but not both.</p>
     pub fn availability_zone(&self) -> ::std::option::Option<&str> {
         self.availability_zone.as_deref()
     }
@@ -103,6 +110,11 @@ impl DescribeReservedInstancesOfferingsInput {
     pub fn reserved_instances_offering_ids(&self) -> &[::std::string::String] {
         self.reserved_instances_offering_ids.as_deref().unwrap_or_default()
     }
+    /// <p>The ID of the Availability Zone.</p>
+    /// <p>Either <code>AvailabilityZone</code> or <code>AvailabilityZoneId</code> can be specified, but not both.</p>
+    pub fn availability_zone_id(&self) -> ::std::option::Option<&str> {
+        self.availability_zone_id.as_deref()
+    }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(&self) -> ::std::option::Option<bool> {
         self.dry_run
@@ -111,6 +123,8 @@ impl DescribeReservedInstancesOfferingsInput {
     /// <ul>
     /// <li>
     /// <p><code>availability-zone</code> - The Availability Zone where the Reserved Instance can be used.</p></li>
+    /// <li>
+    /// <p><code>availability-zone-id</code> - The ID of the Availability Zone where the Reserved Instance can be used.</p></li>
     /// <li>
     /// <p><code>duration</code> - The duration of the Reserved Instance (for example, one year or three years), in seconds (<code>31536000</code> | <code>94608000</code>).</p></li>
     /// <li>
@@ -173,6 +187,7 @@ pub struct DescribeReservedInstancesOfferingsInputBuilder {
     pub(crate) offering_class: ::std::option::Option<crate::types::OfferingClassType>,
     pub(crate) product_description: ::std::option::Option<crate::types::RiProductDescription>,
     pub(crate) reserved_instances_offering_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) availability_zone_id: ::std::option::Option<::std::string::String>,
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     pub(crate) instance_tenancy: ::std::option::Option<crate::types::Tenancy>,
@@ -182,16 +197,19 @@ pub struct DescribeReservedInstancesOfferingsInputBuilder {
 }
 impl DescribeReservedInstancesOfferingsInputBuilder {
     /// <p>The Availability Zone in which the Reserved Instance can be used.</p>
+    /// <p>Either <code>AvailabilityZone</code> or <code>AvailabilityZoneId</code> can be specified, but not both.</p>
     pub fn availability_zone(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.availability_zone = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Availability Zone in which the Reserved Instance can be used.</p>
+    /// <p>Either <code>AvailabilityZone</code> or <code>AvailabilityZoneId</code> can be specified, but not both.</p>
     pub fn set_availability_zone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.availability_zone = input;
         self
     }
     /// <p>The Availability Zone in which the Reserved Instance can be used.</p>
+    /// <p>Either <code>AvailabilityZone</code> or <code>AvailabilityZoneId</code> can be specified, but not both.</p>
     pub fn get_availability_zone(&self) -> &::std::option::Option<::std::string::String> {
         &self.availability_zone
     }
@@ -322,6 +340,23 @@ impl DescribeReservedInstancesOfferingsInputBuilder {
     pub fn get_reserved_instances_offering_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.reserved_instances_offering_ids
     }
+    /// <p>The ID of the Availability Zone.</p>
+    /// <p>Either <code>AvailabilityZone</code> or <code>AvailabilityZoneId</code> can be specified, but not both.</p>
+    pub fn availability_zone_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.availability_zone_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ID of the Availability Zone.</p>
+    /// <p>Either <code>AvailabilityZone</code> or <code>AvailabilityZoneId</code> can be specified, but not both.</p>
+    pub fn set_availability_zone_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.availability_zone_id = input;
+        self
+    }
+    /// <p>The ID of the Availability Zone.</p>
+    /// <p>Either <code>AvailabilityZone</code> or <code>AvailabilityZoneId</code> can be specified, but not both.</p>
+    pub fn get_availability_zone_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.availability_zone_id
+    }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.dry_run = ::std::option::Option::Some(input);
@@ -344,6 +379,8 @@ impl DescribeReservedInstancesOfferingsInputBuilder {
     /// <ul>
     /// <li>
     /// <p><code>availability-zone</code> - The Availability Zone where the Reserved Instance can be used.</p></li>
+    /// <li>
+    /// <p><code>availability-zone-id</code> - The ID of the Availability Zone where the Reserved Instance can be used.</p></li>
     /// <li>
     /// <p><code>duration</code> - The duration of the Reserved Instance (for example, one year or three years), in seconds (<code>31536000</code> | <code>94608000</code>).</p></li>
     /// <li>
@@ -372,6 +409,8 @@ impl DescribeReservedInstancesOfferingsInputBuilder {
     /// <li>
     /// <p><code>availability-zone</code> - The Availability Zone where the Reserved Instance can be used.</p></li>
     /// <li>
+    /// <p><code>availability-zone-id</code> - The ID of the Availability Zone where the Reserved Instance can be used.</p></li>
+    /// <li>
     /// <p><code>duration</code> - The duration of the Reserved Instance (for example, one year or three years), in seconds (<code>31536000</code> | <code>94608000</code>).</p></li>
     /// <li>
     /// <p><code>fixed-price</code> - The purchase price of the Reserved Instance (for example, 9800.0).</p></li>
@@ -396,6 +435,8 @@ impl DescribeReservedInstancesOfferingsInputBuilder {
     /// <ul>
     /// <li>
     /// <p><code>availability-zone</code> - The Availability Zone where the Reserved Instance can be used.</p></li>
+    /// <li>
+    /// <p><code>availability-zone-id</code> - The ID of the Availability Zone where the Reserved Instance can be used.</p></li>
     /// <li>
     /// <p><code>duration</code> - The duration of the Reserved Instance (for example, one year or three years), in seconds (<code>31536000</code> | <code>94608000</code>).</p></li>
     /// <li>
@@ -499,6 +540,7 @@ impl DescribeReservedInstancesOfferingsInputBuilder {
                 offering_class: self.offering_class,
                 product_description: self.product_description,
                 reserved_instances_offering_ids: self.reserved_instances_offering_ids,
+                availability_zone_id: self.availability_zone_id,
                 dry_run: self.dry_run,
                 filters: self.filters,
                 instance_tenancy: self.instance_tenancy,

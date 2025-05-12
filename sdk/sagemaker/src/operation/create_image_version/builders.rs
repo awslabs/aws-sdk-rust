@@ -109,37 +109,19 @@ impl CreateImageVersionFluentBuilder {
         self
     }
     /// <p>The registry path of the container image to use as the starting point for this version. The path is an Amazon ECR URI in the following format:</p>
-    /// <p><code><acct-id>
-    /// .dkr.ecr.
-    /// <region>
-    /// .amazonaws.com/
-    /// <repo-name[:tag] or [@digest]></repo-name[:tag]>
-    /// </region>
-    /// </acct-id></code></p>
+    /// <p><code>&lt;acct-id&gt;.dkr.ecr.&lt;region&gt;.amazonaws.com/&lt;repo-name\[:tag\] or \[@digest\]&gt;</code></p>
     pub fn base_image(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.base_image(input.into());
         self
     }
     /// <p>The registry path of the container image to use as the starting point for this version. The path is an Amazon ECR URI in the following format:</p>
-    /// <p><code><acct-id>
-    /// .dkr.ecr.
-    /// <region>
-    /// .amazonaws.com/
-    /// <repo-name[:tag] or [@digest]></repo-name[:tag]>
-    /// </region>
-    /// </acct-id></code></p>
+    /// <p><code>&lt;acct-id&gt;.dkr.ecr.&lt;region&gt;.amazonaws.com/&lt;repo-name\[:tag\] or \[@digest\]&gt;</code></p>
     pub fn set_base_image(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_base_image(input);
         self
     }
     /// <p>The registry path of the container image to use as the starting point for this version. The path is an Amazon ECR URI in the following format:</p>
-    /// <p><code><acct-id>
-    /// .dkr.ecr.
-    /// <region>
-    /// .amazonaws.com/
-    /// <repo-name[:tag] or [@digest]></repo-name[:tag]>
-    /// </region>
-    /// </acct-id></code></p>
+    /// <p><code>&lt;acct-id&gt;.dkr.ecr.&lt;region&gt;.amazonaws.com/&lt;repo-name\[:tag\] or \[@digest\]&gt;</code></p>
     pub fn get_base_image(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_base_image()
     }

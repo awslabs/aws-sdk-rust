@@ -11,6 +11,7 @@ impl super::Client {
     ///   - [`host_properties(HostPropertiesRequest)`](crate::operation::update_worker::builders::UpdateWorkerFluentBuilder::host_properties) / [`set_host_properties(Option<HostPropertiesRequest>)`](crate::operation::update_worker::builders::UpdateWorkerFluentBuilder::set_host_properties):<br>required: **false**<br><p>The host properties to update.</p><br>
     /// - On success, responds with [`UpdateWorkerOutput`](crate::operation::update_worker::UpdateWorkerOutput) with field(s):
     ///   - [`log(Option<LogConfiguration>)`](crate::operation::update_worker::UpdateWorkerOutput::log): <p>The worker log to update.</p>
+    ///   - [`host_configuration(Option<HostConfiguration>)`](crate::operation::update_worker::UpdateWorkerOutput::host_configuration): <p>The script that runs as a worker is starting up that you can use to provide additional configuration for workers in your fleet.</p>
     /// - On failure, responds with [`SdkError<UpdateWorkerError>`](crate::operation::update_worker::UpdateWorkerError)
     pub fn update_worker(&self) -> crate::operation::update_worker::builders::UpdateWorkerFluentBuilder {
         crate::operation::update_worker::builders::UpdateWorkerFluentBuilder::new(self.handle.clone())

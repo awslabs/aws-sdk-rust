@@ -3,9 +3,21 @@ pub use crate::types::_instance::Instance;
 
 pub use crate::types::_instance_state::InstanceState;
 
+pub use crate::types::_data_lake_namespace::DataLakeNamespace;
+
 pub use crate::types::_data_lake_dataset::DataLakeDataset;
 
+pub use crate::types::_data_lake_dataset_partition_spec::DataLakeDatasetPartitionSpec;
+
+pub use crate::types::_data_lake_dataset_partition_field::DataLakeDatasetPartitionField;
+
+pub use crate::types::_data_lake_dataset_partition_field_transform::DataLakeDatasetPartitionFieldTransform;
+
+pub use crate::types::_data_lake_dataset_partition_transform_type::DataLakeDatasetPartitionTransformType;
+
 pub use crate::types::_data_lake_dataset_schema::DataLakeDatasetSchema;
+
+pub use crate::types::_data_lake_dataset_primary_key_field::DataLakeDatasetPrimaryKeyField;
 
 pub use crate::types::_data_lake_dataset_schema_field::DataLakeDatasetSchemaField;
 
@@ -18,6 +30,16 @@ pub use crate::types::_data_integration_flow_target::DataIntegrationFlowTarget;
 pub use crate::types::_data_integration_flow_dataset_target_configuration::DataIntegrationFlowDatasetTargetConfiguration;
 
 pub use crate::types::_data_integration_flow_dataset_options::DataIntegrationFlowDatasetOptions;
+
+pub use crate::types::_data_integration_flow_dedupe_strategy::DataIntegrationFlowDedupeStrategy;
+
+pub use crate::types::_data_integration_flow_field_priority_dedupe_strategy_configuration::DataIntegrationFlowFieldPriorityDedupeStrategyConfiguration;
+
+pub use crate::types::_data_integration_flow_field_priority_dedupe_field::DataIntegrationFlowFieldPriorityDedupeField;
+
+pub use crate::types::_data_integration_flow_field_priority_dedupe_sort_order::DataIntegrationFlowFieldPriorityDedupeSortOrder;
+
+pub use crate::types::_data_integration_flow_dedupe_strategy_type::DataIntegrationFlowDedupeStrategyType;
 
 pub use crate::types::_data_integration_flow_load_type::DataIntegrationFlowLoadType;
 
@@ -43,15 +65,51 @@ pub use crate::types::_data_integration_flow_s3_source_configuration::DataIntegr
 
 pub use crate::types::_data_integration_flow_source_type::DataIntegrationFlowSourceType;
 
-pub use crate::types::_data_integration_event_type::DataIntegrationEventType;
-
 pub use crate::types::_bill_of_materials_import_job::BillOfMaterialsImportJob;
 
 pub use crate::types::_configuration_job_status::ConfigurationJobStatus;
 
+pub use crate::types::_data_integration_event_dataset_target_configuration::DataIntegrationEventDatasetTargetConfiguration;
+
+pub use crate::types::_data_integration_event_dataset_operation_type::DataIntegrationEventDatasetOperationType;
+
+pub use crate::types::_data_integration_event_type::DataIntegrationEventType;
+
+pub use crate::types::_data_integration_flow_execution::DataIntegrationFlowExecution;
+
+pub use crate::types::_data_integration_flow_execution_output_metadata::DataIntegrationFlowExecutionOutputMetadata;
+
+pub use crate::types::_data_integration_flow_execution_source_info::DataIntegrationFlowExecutionSourceInfo;
+
+pub use crate::types::_data_integration_flow_dataset_source::DataIntegrationFlowDatasetSource;
+
+pub use crate::types::_data_integration_flow_s3_source::DataIntegrationFlowS3Source;
+
+pub use crate::types::_data_integration_flow_execution_status::DataIntegrationFlowExecutionStatus;
+
+pub use crate::types::_data_integration_event::DataIntegrationEvent;
+
+pub use crate::types::_data_integration_event_dataset_target_details::DataIntegrationEventDatasetTargetDetails;
+
+pub use crate::types::_data_integration_event_dataset_load_execution_details::DataIntegrationEventDatasetLoadExecutionDetails;
+
+pub use crate::types::_data_integration_event_dataset_load_status::DataIntegrationEventDatasetLoadStatus;
+
 mod _bill_of_materials_import_job;
 
 mod _configuration_job_status;
+
+mod _data_integration_event;
+
+mod _data_integration_event_dataset_load_execution_details;
+
+mod _data_integration_event_dataset_load_status;
+
+mod _data_integration_event_dataset_operation_type;
+
+mod _data_integration_event_dataset_target_configuration;
+
+mod _data_integration_event_dataset_target_details;
 
 mod _data_integration_event_type;
 
@@ -59,15 +117,37 @@ mod _data_integration_flow;
 
 mod _data_integration_flow_dataset_options;
 
+mod _data_integration_flow_dataset_source;
+
 mod _data_integration_flow_dataset_source_configuration;
 
 mod _data_integration_flow_dataset_target_configuration;
+
+mod _data_integration_flow_dedupe_strategy;
+
+mod _data_integration_flow_dedupe_strategy_type;
+
+mod _data_integration_flow_execution;
+
+mod _data_integration_flow_execution_output_metadata;
+
+mod _data_integration_flow_execution_source_info;
+
+mod _data_integration_flow_execution_status;
+
+mod _data_integration_flow_field_priority_dedupe_field;
+
+mod _data_integration_flow_field_priority_dedupe_sort_order;
+
+mod _data_integration_flow_field_priority_dedupe_strategy_configuration;
 
 mod _data_integration_flow_file_type;
 
 mod _data_integration_flow_load_type;
 
 mod _data_integration_flow_s3_options;
+
+mod _data_integration_flow_s3_source;
 
 mod _data_integration_flow_s3_source_configuration;
 
@@ -89,11 +169,23 @@ mod _data_integration_flow_transformation_type;
 
 mod _data_lake_dataset;
 
+mod _data_lake_dataset_partition_field;
+
+mod _data_lake_dataset_partition_field_transform;
+
+mod _data_lake_dataset_partition_spec;
+
+mod _data_lake_dataset_partition_transform_type;
+
+mod _data_lake_dataset_primary_key_field;
+
 mod _data_lake_dataset_schema;
 
 mod _data_lake_dataset_schema_field;
 
 mod _data_lake_dataset_schema_field_type;
+
+mod _data_lake_namespace;
 
 mod _instance;
 

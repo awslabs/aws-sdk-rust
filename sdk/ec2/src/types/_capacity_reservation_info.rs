@@ -10,6 +10,8 @@ pub struct CapacityReservationInfo {
     pub availability_zone: ::std::option::Option<::std::string::String>,
     /// <p>The tenancy of the Capacity Reservation.</p>
     pub tenancy: ::std::option::Option<crate::types::CapacityReservationTenancy>,
+    /// <p>The ID of the Availability Zone.</p>
+    pub availability_zone_id: ::std::option::Option<::std::string::String>,
 }
 impl CapacityReservationInfo {
     /// <p>The instance type for the Capacity Reservation.</p>
@@ -23,6 +25,10 @@ impl CapacityReservationInfo {
     /// <p>The tenancy of the Capacity Reservation.</p>
     pub fn tenancy(&self) -> ::std::option::Option<&crate::types::CapacityReservationTenancy> {
         self.tenancy.as_ref()
+    }
+    /// <p>The ID of the Availability Zone.</p>
+    pub fn availability_zone_id(&self) -> ::std::option::Option<&str> {
+        self.availability_zone_id.as_deref()
     }
 }
 impl CapacityReservationInfo {
@@ -39,6 +45,7 @@ pub struct CapacityReservationInfoBuilder {
     pub(crate) instance_type: ::std::option::Option<::std::string::String>,
     pub(crate) availability_zone: ::std::option::Option<::std::string::String>,
     pub(crate) tenancy: ::std::option::Option<crate::types::CapacityReservationTenancy>,
+    pub(crate) availability_zone_id: ::std::option::Option<::std::string::String>,
 }
 impl CapacityReservationInfoBuilder {
     /// <p>The instance type for the Capacity Reservation.</p>
@@ -83,12 +90,27 @@ impl CapacityReservationInfoBuilder {
     pub fn get_tenancy(&self) -> &::std::option::Option<crate::types::CapacityReservationTenancy> {
         &self.tenancy
     }
+    /// <p>The ID of the Availability Zone.</p>
+    pub fn availability_zone_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.availability_zone_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ID of the Availability Zone.</p>
+    pub fn set_availability_zone_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.availability_zone_id = input;
+        self
+    }
+    /// <p>The ID of the Availability Zone.</p>
+    pub fn get_availability_zone_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.availability_zone_id
+    }
     /// Consumes the builder and constructs a [`CapacityReservationInfo`](crate::types::CapacityReservationInfo).
     pub fn build(self) -> crate::types::CapacityReservationInfo {
         crate::types::CapacityReservationInfo {
             instance_type: self.instance_type,
             availability_zone: self.availability_zone,
             tenancy: self.tenancy,
+            availability_zone_id: self.availability_zone_id,
         }
     }
 }

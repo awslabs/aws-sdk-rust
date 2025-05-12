@@ -383,6 +383,8 @@ pub use crate::types::_video_codec_settings::VideoCodecSettings;
 
 pub use crate::types::_av1_settings::Av1Settings;
 
+pub use crate::types::_av1_rate_control_mode::Av1RateControlMode;
+
 pub use crate::types::_timecode_burnin_settings::TimecodeBurninSettings;
 
 pub use crate::types::_timecode_burnin_position::TimecodeBurninPosition;
@@ -1392,6 +1394,8 @@ mod _av1_gop_size_units;
 mod _av1_level;
 
 mod _av1_look_ahead_rate_control;
+
+mod _av1_rate_control_mode;
 
 mod _av1_scene_change_detect;
 

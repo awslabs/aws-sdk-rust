@@ -8,9 +8,7 @@
 /// Metrics
 /// </dt>
 /// <dd>
-/// <p>To define a metric filter, enter a value using the form <code>"Metrics.<name>
-/// "
-/// </name></code>, where <code><name></name></code> is a metric name. For example, the following filter searches for training jobs with an <code>"accuracy"</code> metric greater than <code>"0.9"</code>:</p>
+/// <p>To define a metric filter, enter a value using the form <code>"Metrics.&lt;name&gt;"</code>, where <code>&lt;name&gt;</code> is a metric name. For example, the following filter searches for training jobs with an <code>"accuracy"</code> metric greater than <code>"0.9"</code>:</p>
 /// <p><code>{</code></p>
 /// <p><code>"Name": "Metrics.accuracy",</code></p>
 /// <p><code>"Operator": "GreaterThan",</code></p>
@@ -21,9 +19,7 @@
 /// HyperParameters
 /// </dt>
 /// <dd>
-/// <p>To define a hyperparameter filter, enter a value with the form <code>"HyperParameters.<name>
-/// "
-/// </name></code>. Decimal hyperparameter values are treated as a decimal in a comparison if the specified <code>Value</code> is also a decimal value. If the specified <code>Value</code> is an integer, the decimal hyperparameter values are treated as integers. For example, the following filter is satisfied by training jobs with a <code>"learning_rate"</code> hyperparameter that is less than <code>"0.5"</code>:</p>
+/// <p>To define a hyperparameter filter, enter a value with the form <code>"HyperParameters.&lt;name&gt;"</code>. Decimal hyperparameter values are treated as a decimal in a comparison if the specified <code>Value</code> is also a decimal value. If the specified <code>Value</code> is an integer, the decimal hyperparameter values are treated as integers. For example, the following filter is satisfied by training jobs with a <code>"learning_rate"</code> hyperparameter that is less than <code>"0.5"</code>:</p>
 /// <p><code> {</code></p>
 /// <p><code> "Name": "HyperParameters.learning_rate",</code></p>
 /// <p><code> "Operator": "LessThan",</code></p>
@@ -34,7 +30,7 @@
 /// Tags
 /// </dt>
 /// <dd>
-/// <p>To define a tag filter, enter a value with the form <code>Tags.<key></key></code>.</p>
+/// <p>To define a tag filter, enter a value with the form <code>Tags.&lt;key&gt;</code>.</p>
 /// </dd>
 /// </dl>
 #[non_exhaustive]

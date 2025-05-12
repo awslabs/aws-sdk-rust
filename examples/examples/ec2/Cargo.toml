@@ -15,7 +15,7 @@ aws-smithy-runtime-api= { version = "1.8.0", path = "../../../sdk/aws-smithy-run
 aws-sdk-ssm= { version = "1.75.0", path = "../../../sdk/ssm" }
 aws-smithy-async= { version = "1.2.5", path = "../../../sdk/aws-smithy-async" }
 aws-config= { version = "1.6.2", path = "../../../sdk/aws-config", features = ["behavior-version-latest"] }
-aws-sdk-ec2= { version = "1.128.0", path = "../../../sdk/ec2" }
+aws-sdk-ec2= { version = "1.129.0", path = "../../../sdk/ec2" }
 aws-types= { version = "1.3.7", path = "../../../sdk/aws-types" }
 
 [dependencies.tokio]

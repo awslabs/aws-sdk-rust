@@ -16,6 +16,8 @@ pub struct Explanation {
     pub attached_to: ::std::option::Option<crate::types::AnalysisComponent>,
     /// <p>The Availability Zones.</p>
     pub availability_zones: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>The IDs of the Availability Zones.</p>
+    pub availability_zone_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The CIDR ranges.</p>
     pub cidrs: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The component.</p>
@@ -145,6 +147,12 @@ impl Explanation {
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.availability_zones.is_none()`.
     pub fn availability_zones(&self) -> &[::std::string::String] {
         self.availability_zones.as_deref().unwrap_or_default()
+    }
+    /// <p>The IDs of the Availability Zones.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.availability_zone_ids.is_none()`.
+    pub fn availability_zone_ids(&self) -> &[::std::string::String] {
+        self.availability_zone_ids.as_deref().unwrap_or_default()
     }
     /// <p>The CIDR ranges.</p>
     ///
@@ -368,6 +376,7 @@ pub struct ExplanationBuilder {
     pub(crate) addresses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) attached_to: ::std::option::Option<crate::types::AnalysisComponent>,
     pub(crate) availability_zones: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) availability_zone_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) cidrs: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) component: ::std::option::Option<crate::types::AnalysisComponent>,
     pub(crate) customer_gateway: ::std::option::Option<crate::types::AnalysisComponent>,
@@ -512,6 +521,26 @@ impl ExplanationBuilder {
     /// <p>The Availability Zones.</p>
     pub fn get_availability_zones(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.availability_zones
+    }
+    /// Appends an item to `availability_zone_ids`.
+    ///
+    /// To override the contents of this collection use [`set_availability_zone_ids`](Self::set_availability_zone_ids).
+    ///
+    /// <p>The IDs of the Availability Zones.</p>
+    pub fn availability_zone_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.availability_zone_ids.unwrap_or_default();
+        v.push(input.into());
+        self.availability_zone_ids = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The IDs of the Availability Zones.</p>
+    pub fn set_availability_zone_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.availability_zone_ids = input;
+        self
+    }
+    /// <p>The IDs of the Availability Zones.</p>
+    pub fn get_availability_zone_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.availability_zone_ids
     }
     /// Appends an item to `cidrs`.
     ///
@@ -1228,6 +1257,7 @@ impl ExplanationBuilder {
             addresses: self.addresses,
             attached_to: self.attached_to,
             availability_zones: self.availability_zones,
+            availability_zone_ids: self.availability_zone_ids,
             cidrs: self.cidrs,
             component: self.component,
             customer_gateway: self.customer_gateway,

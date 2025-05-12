@@ -8,6 +8,8 @@ pub struct AnalysisLoadBalancerTarget {
     pub address: ::std::option::Option<::std::string::String>,
     /// <p>The Availability Zone.</p>
     pub availability_zone: ::std::option::Option<::std::string::String>,
+    /// <p>The ID of the Availability Zone.</p>
+    pub availability_zone_id: ::std::option::Option<::std::string::String>,
     /// <p>Information about the instance.</p>
     pub instance: ::std::option::Option<crate::types::AnalysisComponent>,
     /// <p>The port on which the target is listening.</p>
@@ -21,6 +23,10 @@ impl AnalysisLoadBalancerTarget {
     /// <p>The Availability Zone.</p>
     pub fn availability_zone(&self) -> ::std::option::Option<&str> {
         self.availability_zone.as_deref()
+    }
+    /// <p>The ID of the Availability Zone.</p>
+    pub fn availability_zone_id(&self) -> ::std::option::Option<&str> {
+        self.availability_zone_id.as_deref()
     }
     /// <p>Information about the instance.</p>
     pub fn instance(&self) -> ::std::option::Option<&crate::types::AnalysisComponent> {
@@ -44,6 +50,7 @@ impl AnalysisLoadBalancerTarget {
 pub struct AnalysisLoadBalancerTargetBuilder {
     pub(crate) address: ::std::option::Option<::std::string::String>,
     pub(crate) availability_zone: ::std::option::Option<::std::string::String>,
+    pub(crate) availability_zone_id: ::std::option::Option<::std::string::String>,
     pub(crate) instance: ::std::option::Option<crate::types::AnalysisComponent>,
     pub(crate) port: ::std::option::Option<i32>,
 }
@@ -75,6 +82,20 @@ impl AnalysisLoadBalancerTargetBuilder {
     /// <p>The Availability Zone.</p>
     pub fn get_availability_zone(&self) -> &::std::option::Option<::std::string::String> {
         &self.availability_zone
+    }
+    /// <p>The ID of the Availability Zone.</p>
+    pub fn availability_zone_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.availability_zone_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ID of the Availability Zone.</p>
+    pub fn set_availability_zone_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.availability_zone_id = input;
+        self
+    }
+    /// <p>The ID of the Availability Zone.</p>
+    pub fn get_availability_zone_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.availability_zone_id
     }
     /// <p>Information about the instance.</p>
     pub fn instance(mut self, input: crate::types::AnalysisComponent) -> Self {
@@ -109,6 +130,7 @@ impl AnalysisLoadBalancerTargetBuilder {
         crate::types::AnalysisLoadBalancerTarget {
             address: self.address,
             availability_zone: self.availability_zone,
+            availability_zone_id: self.availability_zone_id,
             instance: self.instance,
             port: self.port,
         }

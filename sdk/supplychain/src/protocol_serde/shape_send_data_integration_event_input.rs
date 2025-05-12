@@ -9,16 +9,25 @@ pub fn ser_send_data_integration_event_input_input(
     if let Some(var_2) = &input.data {
         object.key("data").string(var_2.as_str());
     }
-    if let Some(var_3) = &input.event_group_id {
-        object.key("eventGroupId").string(var_3.as_str());
+    if let Some(var_3) = &input.dataset_target {
+        #[allow(unused_mut)]
+        let mut object_4 = object.key("datasetTarget").start_object();
+        crate::protocol_serde::shape_data_integration_event_dataset_target_configuration::ser_data_integration_event_dataset_target_configuration(
+            &mut object_4,
+            var_3,
+        )?;
+        object_4.finish();
     }
-    if let Some(var_4) = &input.event_timestamp {
+    if let Some(var_5) = &input.event_group_id {
+        object.key("eventGroupId").string(var_5.as_str());
+    }
+    if let Some(var_6) = &input.event_timestamp {
         object
             .key("eventTimestamp")
-            .date_time(var_4, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
+            .date_time(var_6, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
-    if let Some(var_5) = &input.event_type {
-        object.key("eventType").string(var_5.as_str());
+    if let Some(var_7) = &input.event_type {
+        object.key("eventType").string(var_7.as_str());
     }
     Ok(())
 }

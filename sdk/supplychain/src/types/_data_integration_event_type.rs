@@ -12,6 +12,7 @@
 /// ```text
 /// # let dataintegrationeventtype = unimplemented!();
 /// match dataintegrationeventtype {
+///     DataIntegrationEventType::Dataset => { /* ... */ },
 ///     DataIntegrationEventType::Forecast => { /* ... */ },
 ///     DataIntegrationEventType::InboundOrder => { /* ... */ },
 ///     DataIntegrationEventType::InboundOrderLine => { /* ... */ },
@@ -56,6 +57,8 @@
 )]
 pub enum DataIntegrationEventType {
     #[allow(missing_docs)] // documentation missing in model
+    Dataset,
+    #[allow(missing_docs)] // documentation missing in model
     Forecast,
     #[allow(missing_docs)] // documentation missing in model
     InboundOrder,
@@ -92,6 +95,7 @@ pub enum DataIntegrationEventType {
 impl ::std::convert::From<&str> for DataIntegrationEventType {
     fn from(s: &str) -> Self {
         match s {
+            "scn.data.dataset" => DataIntegrationEventType::Dataset,
             "scn.data.forecast" => DataIntegrationEventType::Forecast,
             "scn.data.inboundorder" => DataIntegrationEventType::InboundOrder,
             "scn.data.inboundorderline" => DataIntegrationEventType::InboundOrderLine,
@@ -122,6 +126,7 @@ impl DataIntegrationEventType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            DataIntegrationEventType::Dataset => "scn.data.dataset",
             DataIntegrationEventType::Forecast => "scn.data.forecast",
             DataIntegrationEventType::InboundOrder => "scn.data.inboundorder",
             DataIntegrationEventType::InboundOrderLine => "scn.data.inboundorderline",
@@ -143,6 +148,7 @@ impl DataIntegrationEventType {
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
+            "scn.data.dataset",
             "scn.data.forecast",
             "scn.data.inboundorder",
             "scn.data.inboundorderline",
@@ -181,6 +187,7 @@ impl DataIntegrationEventType {
 impl ::std::fmt::Display for DataIntegrationEventType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            DataIntegrationEventType::Dataset => write!(f, "scn.data.dataset"),
             DataIntegrationEventType::Forecast => write!(f, "scn.data.forecast"),
             DataIntegrationEventType::InboundOrder => write!(f, "scn.data.inboundorder"),
             DataIntegrationEventType::InboundOrderLine => write!(f, "scn.data.inboundorderline"),

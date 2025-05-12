@@ -112,7 +112,7 @@ pub fn de_reserved_instances_offering(
                 builder = builder.set_scope(var_8);
             }
             ,
-            s if s.matches("reservedInstancesOfferingId") /* ReservedInstancesOfferingId com.amazonaws.ec2#ReservedInstancesOffering$ReservedInstancesOfferingId */ =>  {
+            s if s.matches("availabilityZoneId") /* AvailabilityZoneId com.amazonaws.ec2#ReservedInstancesOffering$AvailabilityZoneId */ =>  {
                 let var_9 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -122,11 +122,24 @@ pub fn de_reserved_instances_offering(
                         ?
                     )
                 ;
-                builder = builder.set_reserved_instances_offering_id(var_9);
+                builder = builder.set_availability_zone_id(var_9);
+            }
+            ,
+            s if s.matches("reservedInstancesOfferingId") /* ReservedInstancesOfferingId com.amazonaws.ec2#ReservedInstancesOffering$ReservedInstancesOfferingId */ =>  {
+                let var_10 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_reserved_instances_offering_id(var_10);
             }
             ,
             s if s.matches("instanceType") /* InstanceType com.amazonaws.ec2#ReservedInstancesOffering$InstanceType */ =>  {
-                let var_10 =
+                let var_11 =
                     Some(
                         Result::<crate::types::InstanceType, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             crate::types::InstanceType::from(
@@ -136,11 +149,11 @@ pub fn de_reserved_instances_offering(
                         ?
                     )
                 ;
-                builder = builder.set_instance_type(var_10);
+                builder = builder.set_instance_type(var_11);
             }
             ,
             s if s.matches("availabilityZone") /* AvailabilityZone com.amazonaws.ec2#ReservedInstancesOffering$AvailabilityZone */ =>  {
-                let var_11 =
+                let var_12 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -149,11 +162,11 @@ pub fn de_reserved_instances_offering(
                         ?
                     )
                 ;
-                builder = builder.set_availability_zone(var_11);
+                builder = builder.set_availability_zone(var_12);
             }
             ,
             s if s.matches("duration") /* Duration com.amazonaws.ec2#ReservedInstancesOffering$Duration */ =>  {
-                let var_12 =
+                let var_13 =
                     Some(
                          {
                             <i64 as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -164,25 +177,10 @@ pub fn de_reserved_instances_offering(
                         ?
                     )
                 ;
-                builder = builder.set_duration(var_12);
+                builder = builder.set_duration(var_13);
             }
             ,
             s if s.matches("usagePrice") /* UsagePrice com.amazonaws.ec2#ReservedInstancesOffering$UsagePrice */ =>  {
-                let var_13 =
-                    Some(
-                         {
-                            <f32 as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
-                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            )
-                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (float: `com.amazonaws.ec2#Float`)"))
-                        }
-                        ?
-                    )
-                ;
-                builder = builder.set_usage_price(var_13);
-            }
-            ,
-            s if s.matches("fixedPrice") /* FixedPrice com.amazonaws.ec2#ReservedInstancesOffering$FixedPrice */ =>  {
                 let var_14 =
                     Some(
                          {
@@ -194,11 +192,26 @@ pub fn de_reserved_instances_offering(
                         ?
                     )
                 ;
-                builder = builder.set_fixed_price(var_14);
+                builder = builder.set_usage_price(var_14);
+            }
+            ,
+            s if s.matches("fixedPrice") /* FixedPrice com.amazonaws.ec2#ReservedInstancesOffering$FixedPrice */ =>  {
+                let var_15 =
+                    Some(
+                         {
+                            <f32 as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (float: `com.amazonaws.ec2#Float`)"))
+                        }
+                        ?
+                    )
+                ;
+                builder = builder.set_fixed_price(var_15);
             }
             ,
             s if s.matches("productDescription") /* ProductDescription com.amazonaws.ec2#ReservedInstancesOffering$ProductDescription */ =>  {
-                let var_15 =
+                let var_16 =
                     Some(
                         Result::<crate::types::RiProductDescription, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             crate::types::RiProductDescription::from(
@@ -208,7 +221,7 @@ pub fn de_reserved_instances_offering(
                         ?
                     )
                 ;
-                builder = builder.set_product_description(var_15);
+                builder = builder.set_product_description(var_16);
             }
             ,
             _ => {}

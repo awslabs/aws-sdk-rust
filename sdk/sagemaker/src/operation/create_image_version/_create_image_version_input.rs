@@ -4,13 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateImageVersionInput {
     /// <p>The registry path of the container image to use as the starting point for this version. The path is an Amazon ECR URI in the following format:</p>
-    /// <p><code><acct-id>
-    /// .dkr.ecr.
-    /// <region>
-    /// .amazonaws.com/
-    /// <repo-name[:tag] or [@digest]></repo-name[:tag]>
-    /// </region>
-    /// </acct-id></code></p>
+    /// <p><code>&lt;acct-id&gt;.dkr.ecr.&lt;region&gt;.amazonaws.com/&lt;repo-name\[:tag\] or \[@digest\]&gt;</code></p>
     pub base_image: ::std::option::Option<::std::string::String>,
     /// <p>A unique ID. If not specified, the Amazon Web Services CLI and Amazon Web Services SDKs, such as the SDK for Python (Boto3), add a unique value to the call.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
@@ -59,13 +53,7 @@ pub struct CreateImageVersionInput {
 }
 impl CreateImageVersionInput {
     /// <p>The registry path of the container image to use as the starting point for this version. The path is an Amazon ECR URI in the following format:</p>
-    /// <p><code><acct-id>
-    /// .dkr.ecr.
-    /// <region>
-    /// .amazonaws.com/
-    /// <repo-name[:tag] or [@digest]></repo-name[:tag]>
-    /// </region>
-    /// </acct-id></code></p>
+    /// <p><code>&lt;acct-id&gt;.dkr.ecr.&lt;region&gt;.amazonaws.com/&lt;repo-name\[:tag\] or \[@digest\]&gt;</code></p>
     pub fn base_image(&self) -> ::std::option::Option<&str> {
         self.base_image.as_deref()
     }
@@ -161,38 +149,20 @@ pub struct CreateImageVersionInputBuilder {
 }
 impl CreateImageVersionInputBuilder {
     /// <p>The registry path of the container image to use as the starting point for this version. The path is an Amazon ECR URI in the following format:</p>
-    /// <p><code><acct-id>
-    /// .dkr.ecr.
-    /// <region>
-    /// .amazonaws.com/
-    /// <repo-name[:tag] or [@digest]></repo-name[:tag]>
-    /// </region>
-    /// </acct-id></code></p>
+    /// <p><code>&lt;acct-id&gt;.dkr.ecr.&lt;region&gt;.amazonaws.com/&lt;repo-name\[:tag\] or \[@digest\]&gt;</code></p>
     /// This field is required.
     pub fn base_image(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.base_image = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The registry path of the container image to use as the starting point for this version. The path is an Amazon ECR URI in the following format:</p>
-    /// <p><code><acct-id>
-    /// .dkr.ecr.
-    /// <region>
-    /// .amazonaws.com/
-    /// <repo-name[:tag] or [@digest]></repo-name[:tag]>
-    /// </region>
-    /// </acct-id></code></p>
+    /// <p><code>&lt;acct-id&gt;.dkr.ecr.&lt;region&gt;.amazonaws.com/&lt;repo-name\[:tag\] or \[@digest\]&gt;</code></p>
     pub fn set_base_image(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.base_image = input;
         self
     }
     /// <p>The registry path of the container image to use as the starting point for this version. The path is an Amazon ECR URI in the following format:</p>
-    /// <p><code><acct-id>
-    /// .dkr.ecr.
-    /// <region>
-    /// .amazonaws.com/
-    /// <repo-name[:tag] or [@digest]></repo-name[:tag]>
-    /// </region>
-    /// </acct-id></code></p>
+    /// <p><code>&lt;acct-id&gt;.dkr.ecr.&lt;region&gt;.amazonaws.com/&lt;repo-name\[:tag\] or \[@digest\]&gt;</code></p>
     pub fn get_base_image(&self) -> &::std::option::Option<::std::string::String> {
         &self.base_image
     }

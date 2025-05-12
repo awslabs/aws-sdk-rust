@@ -54,6 +54,15 @@ pub fn ser_output_destination(
         }
         array_13.finish();
     }
+    if let Some(var_16) = &input.logical_interface_names {
+        let mut array_17 = object.key("logicalInterfaceNames").start_array();
+        for item_18 in var_16 {
+            {
+                array_17.value().string(item_18.as_str());
+            }
+        }
+        array_17.finish();
+    }
     Ok(())
 }
 
@@ -100,6 +109,9 @@ where
                                     tokens,
                                 )?,
                             );
+                        }
+                        "logicalInterfaceNames" => {
+                            builder = builder.set_logical_interface_names(crate::protocol_serde::shape_list_of_string::de_list_of_string(tokens)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

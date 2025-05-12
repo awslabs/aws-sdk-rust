@@ -9,6 +9,12 @@ pub fn ser_data_integration_flow_dataset_options(
     if let Some(var_2) = &input.dedupe_records {
         object.key("dedupeRecords").boolean(*var_2);
     }
+    if let Some(var_3) = &input.dedupe_strategy {
+        #[allow(unused_mut)]
+        let mut object_4 = object.key("dedupeStrategy").start_object();
+        crate::protocol_serde::shape_data_integration_flow_dedupe_strategy::ser_data_integration_flow_dedupe_strategy(&mut object_4, var_3)?;
+        object_4.finish();
+    }
     Ok(())
 }
 
@@ -36,6 +42,11 @@ where
                         }
                         "dedupeRecords" => {
                             builder = builder.set_dedupe_records(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                        }
+                        "dedupeStrategy" => {
+                            builder = builder.set_dedupe_strategy(
+                                crate::protocol_serde::shape_data_integration_flow_dedupe_strategy::de_data_integration_flow_dedupe_strategy(tokens)?,
+                            );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

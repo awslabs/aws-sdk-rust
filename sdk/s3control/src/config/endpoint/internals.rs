@@ -232,10 +232,46 @@ pub(super) fn resolve_endpoint(
                 if (access_point_suffix.as_ref() as &str) == ("--xa-s3") {
                     #[allow(unused_variables)]
                     if let Some(partition_result) = partition_resolver.resolve_partition(region.as_ref() as &str, _diagnostic_collector) {
+                        #[allow(unused_variables)]
+                        if let Some(endpoint) = endpoint {
+                            if (*use_dual_stack) == (true) {
+                                return Err(::aws_smithy_http::endpoint::ResolveEndpointError::message(
+                                    "Invalid Configuration: DualStack and custom endpoint are not supported".to_string(),
+                                ));
+                            }
+                        }
                         if (*use_dual_stack) == (true) {
                             return Err(::aws_smithy_http::endpoint::ResolveEndpointError::message(
                                 "S3Express does not support Dual-stack.".to_string(),
                             ));
+                        }
+                        #[allow(unused_variables)]
+                        if let Some(endpoint) = endpoint {
+                            #[allow(unused_variables)]
+                            if let Some(url) = crate::endpoint_lib::parse_url::parse_url(endpoint.as_ref() as &str, _diagnostic_collector) {
+                                return Ok(::aws_smithy_types::endpoint::Endpoint::builder()
+                                    .url({
+                                        let mut out = String::new();
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&url.scheme());
+                                        out.push_str("://");
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&url.authority());
+                                        out
+                                    })
+                                    .property(
+                                        "authSchemes",
+                                        vec![::aws_smithy_types::Document::from({
+                                            let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
+                                            out.insert("disableDoubleEncoding".to_string(), true.into());
+                                            out.insert("name".to_string(), "sigv4".to_string().into());
+                                            out.insert("signingName".to_string(), "s3express".to_string().into());
+                                            out.insert("signingRegion".to_string(), region.to_owned().into());
+                                            out
+                                        })],
+                                    )
+                                    .build());
+                            }
                         }
                         #[allow(unused_variables)]
                         if let Some(s3express_availability_zone_id) =
@@ -554,6 +590,47 @@ pub(super) fn resolve_endpoint(
             if (*use_s3_express_control_endpoint) == (true) {
                 #[allow(unused_variables)]
                 if let Some(partition_result) = partition_resolver.resolve_partition(region.as_ref() as &str, _diagnostic_collector) {
+                    #[allow(unused_variables)]
+                    if let Some(endpoint) = endpoint {
+                        if (*use_dual_stack) == (true) {
+                            return Err(::aws_smithy_http::endpoint::ResolveEndpointError::message(
+                                "Invalid Configuration: DualStack and custom endpoint are not supported".to_string(),
+                            ));
+                        }
+                    }
+                    if (*use_dual_stack) == (true) {
+                        return Err(::aws_smithy_http::endpoint::ResolveEndpointError::message(
+                            "S3Express does not support Dual-stack.".to_string(),
+                        ));
+                    }
+                    #[allow(unused_variables)]
+                    if let Some(endpoint) = endpoint {
+                        #[allow(unused_variables)]
+                        if let Some(url) = crate::endpoint_lib::parse_url::parse_url(endpoint.as_ref() as &str, _diagnostic_collector) {
+                            return Ok(::aws_smithy_types::endpoint::Endpoint::builder()
+                                .url({
+                                    let mut out = String::new();
+                                    #[allow(clippy::needless_borrow)]
+                                    out.push_str(&url.scheme());
+                                    out.push_str("://");
+                                    #[allow(clippy::needless_borrow)]
+                                    out.push_str(&url.authority());
+                                    out
+                                })
+                                .property(
+                                    "authSchemes",
+                                    vec![::aws_smithy_types::Document::from({
+                                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
+                                        out.insert("disableDoubleEncoding".to_string(), true.into());
+                                        out.insert("name".to_string(), "sigv4".to_string().into());
+                                        out.insert("signingName".to_string(), "s3express".to_string().into());
+                                        out.insert("signingRegion".to_string(), region.to_owned().into());
+                                        out
+                                    })],
+                                )
+                                .build());
+                        }
+                    }
                     if (*use_fips) == (true) {
                         return Ok(::aws_smithy_types::endpoint::Endpoint::builder()
                             .url({

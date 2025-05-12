@@ -24,6 +24,8 @@ pub struct AllocateHostsInput {
     /// <p>If you specify both <b>AssetIds</b> and <b>Quantity</b>, then the value for <b>Quantity</b> must be equal to the number of asset IDs specified.</p></li>
     /// </ul>
     pub asset_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>The ID of the Availability Zone.</p>
+    pub availability_zone_id: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether the host accepts any untargeted instance launches that match its instance type configuration, or if it only accepts Host tenancy instance launches that specify its unique host ID. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/how-dedicated-hosts-work.html#dedicated-hosts-understanding"> Understanding auto-placement and affinity</a> in the <i>Amazon EC2 User Guide</i>.</p>
     /// <p>Default: <code>off</code></p>
     pub auto_placement: ::std::option::Option<crate::types::AutoPlacement>,
@@ -75,6 +77,10 @@ impl AllocateHostsInput {
     pub fn asset_ids(&self) -> &[::std::string::String] {
         self.asset_ids.as_deref().unwrap_or_default()
     }
+    /// <p>The ID of the Availability Zone.</p>
+    pub fn availability_zone_id(&self) -> ::std::option::Option<&str> {
+        self.availability_zone_id.as_deref()
+    }
     /// <p>Indicates whether the host accepts any untargeted instance launches that match its instance type configuration, or if it only accepts Host tenancy instance launches that specify its unique host ID. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/how-dedicated-hosts-work.html#dedicated-hosts-understanding"> Understanding auto-placement and affinity</a> in the <i>Amazon EC2 User Guide</i>.</p>
     /// <p>Default: <code>off</code></p>
     pub fn auto_placement(&self) -> ::std::option::Option<&crate::types::AutoPlacement> {
@@ -115,6 +121,7 @@ pub struct AllocateHostsInputBuilder {
     pub(crate) outpost_arn: ::std::option::Option<::std::string::String>,
     pub(crate) host_maintenance: ::std::option::Option<crate::types::HostMaintenance>,
     pub(crate) asset_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) availability_zone_id: ::std::option::Option<::std::string::String>,
     pub(crate) auto_placement: ::std::option::Option<crate::types::AutoPlacement>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) instance_type: ::std::option::Option<::std::string::String>,
@@ -245,6 +252,20 @@ impl AllocateHostsInputBuilder {
     pub fn get_asset_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.asset_ids
     }
+    /// <p>The ID of the Availability Zone.</p>
+    pub fn availability_zone_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.availability_zone_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ID of the Availability Zone.</p>
+    pub fn set_availability_zone_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.availability_zone_id = input;
+        self
+    }
+    /// <p>The ID of the Availability Zone.</p>
+    pub fn get_availability_zone_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.availability_zone_id
+    }
     /// <p>Indicates whether the host accepts any untargeted instance launches that match its instance type configuration, or if it only accepts Host tenancy instance launches that specify its unique host ID. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/how-dedicated-hosts-work.html#dedicated-hosts-understanding"> Understanding auto-placement and affinity</a> in the <i>Amazon EC2 User Guide</i>.</p>
     /// <p>Default: <code>off</code></p>
     pub fn auto_placement(mut self, input: crate::types::AutoPlacement) -> Self {
@@ -308,7 +329,6 @@ impl AllocateHostsInputBuilder {
         &self.quantity
     }
     /// <p>The Availability Zone in which to allocate the Dedicated Host.</p>
-    /// This field is required.
     pub fn availability_zone(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.availability_zone = ::std::option::Option::Some(input.into());
         self
@@ -333,6 +353,7 @@ impl AllocateHostsInputBuilder {
             outpost_arn: self.outpost_arn,
             host_maintenance: self.host_maintenance,
             asset_ids: self.asset_ids,
+            availability_zone_id: self.availability_zone_id,
             auto_placement: self.auto_placement,
             client_token: self.client_token,
             instance_type: self.instance_type,

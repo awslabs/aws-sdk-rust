@@ -122,7 +122,7 @@ impl CreateDataLakeDatasetFluentBuilder {
     pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_instance_id()
     }
-    /// <p>The name space of the dataset.</p>
+    /// <p>The namespace of the dataset, besides the custom defined namespace, every instance comes with below pre-defined namespaces:</p>
     /// <ul>
     /// <li>
     /// <p><b>asc</b> - For information on the Amazon Web Services Supply Chain supported datasets see <a href="https://docs.aws.amazon.com/aws-supply-chain/latest/userguide/data-model-asc.html">https://docs.aws.amazon.com/aws-supply-chain/latest/userguide/data-model-asc.html</a>.</p></li>
@@ -133,7 +133,7 @@ impl CreateDataLakeDatasetFluentBuilder {
         self.inner = self.inner.namespace(input.into());
         self
     }
-    /// <p>The name space of the dataset.</p>
+    /// <p>The namespace of the dataset, besides the custom defined namespace, every instance comes with below pre-defined namespaces:</p>
     /// <ul>
     /// <li>
     /// <p><b>asc</b> - For information on the Amazon Web Services Supply Chain supported datasets see <a href="https://docs.aws.amazon.com/aws-supply-chain/latest/userguide/data-model-asc.html">https://docs.aws.amazon.com/aws-supply-chain/latest/userguide/data-model-asc.html</a>.</p></li>
@@ -144,7 +144,7 @@ impl CreateDataLakeDatasetFluentBuilder {
         self.inner = self.inner.set_namespace(input);
         self
     }
-    /// <p>The name space of the dataset.</p>
+    /// <p>The namespace of the dataset, besides the custom defined namespace, every instance comes with below pre-defined namespaces:</p>
     /// <ul>
     /// <li>
     /// <p><b>asc</b> - For information on the Amazon Web Services Supply Chain supported datasets see <a href="https://docs.aws.amazon.com/aws-supply-chain/latest/userguide/data-model-asc.html">https://docs.aws.amazon.com/aws-supply-chain/latest/userguide/data-model-asc.html</a>.</p></li>
@@ -168,17 +168,17 @@ impl CreateDataLakeDatasetFluentBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_name()
     }
-    /// <p>The custom schema of the data lake dataset and is only required when the name space is <b>default</b>.</p>
+    /// <p>The custom schema of the data lake dataset and required for dataset in <b>default</b> and custom namespaces.</p>
     pub fn schema(mut self, input: crate::types::DataLakeDatasetSchema) -> Self {
         self.inner = self.inner.schema(input);
         self
     }
-    /// <p>The custom schema of the data lake dataset and is only required when the name space is <b>default</b>.</p>
+    /// <p>The custom schema of the data lake dataset and required for dataset in <b>default</b> and custom namespaces.</p>
     pub fn set_schema(mut self, input: ::std::option::Option<crate::types::DataLakeDatasetSchema>) -> Self {
         self.inner = self.inner.set_schema(input);
         self
     }
-    /// <p>The custom schema of the data lake dataset and is only required when the name space is <b>default</b>.</p>
+    /// <p>The custom schema of the data lake dataset and required for dataset in <b>default</b> and custom namespaces.</p>
     pub fn get_schema(&self) -> &::std::option::Option<crate::types::DataLakeDatasetSchema> {
         self.inner.get_schema()
     }
@@ -195,6 +195,20 @@ impl CreateDataLakeDatasetFluentBuilder {
     /// <p>The description of the dataset.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_description()
+    }
+    /// <p>The partition specification of the dataset. Partitioning can effectively improve the dataset query performance by reducing the amount of data scanned during query execution. But partitioning or not will affect how data get ingested by data ingestion methods, such as SendDataIntegrationEvent's dataset UPSERT will upsert records within partition (instead of within whole dataset). For more details, refer to those data ingestion documentations.</p>
+    pub fn partition_spec(mut self, input: crate::types::DataLakeDatasetPartitionSpec) -> Self {
+        self.inner = self.inner.partition_spec(input);
+        self
+    }
+    /// <p>The partition specification of the dataset. Partitioning can effectively improve the dataset query performance by reducing the amount of data scanned during query execution. But partitioning or not will affect how data get ingested by data ingestion methods, such as SendDataIntegrationEvent's dataset UPSERT will upsert records within partition (instead of within whole dataset). For more details, refer to those data ingestion documentations.</p>
+    pub fn set_partition_spec(mut self, input: ::std::option::Option<crate::types::DataLakeDatasetPartitionSpec>) -> Self {
+        self.inner = self.inner.set_partition_spec(input);
+        self
+    }
+    /// <p>The partition specification of the dataset. Partitioning can effectively improve the dataset query performance by reducing the amount of data scanned during query execution. But partitioning or not will affect how data get ingested by data ingestion methods, such as SendDataIntegrationEvent's dataset UPSERT will upsert records within partition (instead of within whole dataset). For more details, refer to those data ingestion documentations.</p>
+    pub fn get_partition_spec(&self) -> &::std::option::Option<crate::types::DataLakeDatasetPartitionSpec> {
+        self.inner.get_partition_spec()
     }
     ///
     /// Adds a key-value pair to `tags`.

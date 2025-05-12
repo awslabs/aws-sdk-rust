@@ -21,6 +21,8 @@ pub struct DescribeReservedInstancesModificationsInput {
     /// <li>
     /// <p><code>modification-result.target-configuration.availability-zone</code> - The Availability Zone for the new Reserved Instances.</p></li>
     /// <li>
+    /// <p><code>modification-result.target-configuration.availability-zone-id</code> - The ID of the Availability Zone for the new Reserved Instances.</p></li>
+    /// <li>
     /// <p><code>modification-result.target-configuration.instance-count </code> - The number of new Reserved Instances.</p></li>
     /// <li>
     /// <p><code>modification-result.target-configuration.instance-type</code> - The instance type of the new Reserved Instances.</p></li>
@@ -60,6 +62,8 @@ impl DescribeReservedInstancesModificationsInput {
     /// <p><code>modification-result.reserved-instances-id</code> - The ID for the Reserved Instances created as part of the modification request. This ID is only available when the status of the modification is <code>fulfilled</code>.</p></li>
     /// <li>
     /// <p><code>modification-result.target-configuration.availability-zone</code> - The Availability Zone for the new Reserved Instances.</p></li>
+    /// <li>
+    /// <p><code>modification-result.target-configuration.availability-zone-id</code> - The ID of the Availability Zone for the new Reserved Instances.</p></li>
     /// <li>
     /// <p><code>modification-result.target-configuration.instance-count </code> - The number of new Reserved Instances.</p></li>
     /// <li>
@@ -148,6 +152,8 @@ impl DescribeReservedInstancesModificationsInputBuilder {
     /// <li>
     /// <p><code>modification-result.target-configuration.availability-zone</code> - The Availability Zone for the new Reserved Instances.</p></li>
     /// <li>
+    /// <p><code>modification-result.target-configuration.availability-zone-id</code> - The ID of the Availability Zone for the new Reserved Instances.</p></li>
+    /// <li>
     /// <p><code>modification-result.target-configuration.instance-count </code> - The number of new Reserved Instances.</p></li>
     /// <li>
     /// <p><code>modification-result.target-configuration.instance-type</code> - The instance type of the new Reserved Instances.</p></li>
@@ -181,6 +187,8 @@ impl DescribeReservedInstancesModificationsInputBuilder {
     /// <li>
     /// <p><code>modification-result.target-configuration.availability-zone</code> - The Availability Zone for the new Reserved Instances.</p></li>
     /// <li>
+    /// <p><code>modification-result.target-configuration.availability-zone-id</code> - The ID of the Availability Zone for the new Reserved Instances.</p></li>
+    /// <li>
     /// <p><code>modification-result.target-configuration.instance-count </code> - The number of new Reserved Instances.</p></li>
     /// <li>
     /// <p><code>modification-result.target-configuration.instance-type</code> - The instance type of the new Reserved Instances.</p></li>
@@ -211,6 +219,8 @@ impl DescribeReservedInstancesModificationsInputBuilder {
     /// <p><code>modification-result.reserved-instances-id</code> - The ID for the Reserved Instances created as part of the modification request. This ID is only available when the status of the modification is <code>fulfilled</code>.</p></li>
     /// <li>
     /// <p><code>modification-result.target-configuration.availability-zone</code> - The Availability Zone for the new Reserved Instances.</p></li>
+    /// <li>
+    /// <p><code>modification-result.target-configuration.availability-zone-id</code> - The ID of the Availability Zone for the new Reserved Instances.</p></li>
     /// <li>
     /// <p><code>modification-result.target-configuration.instance-count </code> - The number of new Reserved Instances.</p></li>
     /// <li>

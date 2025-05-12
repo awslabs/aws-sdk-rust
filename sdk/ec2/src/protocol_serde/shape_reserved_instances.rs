@@ -97,7 +97,7 @@ pub fn de_reserved_instances(
                 builder = builder.set_tags(var_7);
             }
             ,
-            s if s.matches("reservedInstancesId") /* ReservedInstancesId com.amazonaws.ec2#ReservedInstances$ReservedInstancesId */ =>  {
+            s if s.matches("availabilityZoneId") /* AvailabilityZoneId com.amazonaws.ec2#ReservedInstances$AvailabilityZoneId */ =>  {
                 let var_8 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -107,11 +107,24 @@ pub fn de_reserved_instances(
                         ?
                     )
                 ;
-                builder = builder.set_reserved_instances_id(var_8);
+                builder = builder.set_availability_zone_id(var_8);
+            }
+            ,
+            s if s.matches("reservedInstancesId") /* ReservedInstancesId com.amazonaws.ec2#ReservedInstances$ReservedInstancesId */ =>  {
+                let var_9 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_reserved_instances_id(var_9);
             }
             ,
             s if s.matches("instanceType") /* InstanceType com.amazonaws.ec2#ReservedInstances$InstanceType */ =>  {
-                let var_9 =
+                let var_10 =
                     Some(
                         Result::<crate::types::InstanceType, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             crate::types::InstanceType::from(
@@ -121,11 +134,11 @@ pub fn de_reserved_instances(
                         ?
                     )
                 ;
-                builder = builder.set_instance_type(var_9);
+                builder = builder.set_instance_type(var_10);
             }
             ,
             s if s.matches("availabilityZone") /* AvailabilityZone com.amazonaws.ec2#ReservedInstances$AvailabilityZone */ =>  {
-                let var_10 =
+                let var_11 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -134,24 +147,10 @@ pub fn de_reserved_instances(
                         ?
                     )
                 ;
-                builder = builder.set_availability_zone(var_10);
+                builder = builder.set_availability_zone(var_11);
             }
             ,
             s if s.matches("start") /* Start com.amazonaws.ec2#ReservedInstances$Start */ =>  {
-                let var_11 =
-                    Some(
-                        ::aws_smithy_types::DateTime::from_str(
-                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , ::aws_smithy_types::date_time::Format::DateTimeWithOffset
-                        )
-                        .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (timestamp: `com.amazonaws.ec2#DateTime`)"))
-                        ?
-                    )
-                ;
-                builder = builder.set_start(var_11);
-            }
-            ,
-            s if s.matches("end") /* End com.amazonaws.ec2#ReservedInstances$End */ =>  {
                 let var_12 =
                     Some(
                         ::aws_smithy_types::DateTime::from_str(
@@ -162,11 +161,25 @@ pub fn de_reserved_instances(
                         ?
                     )
                 ;
-                builder = builder.set_end(var_12);
+                builder = builder.set_start(var_12);
+            }
+            ,
+            s if s.matches("end") /* End com.amazonaws.ec2#ReservedInstances$End */ =>  {
+                let var_13 =
+                    Some(
+                        ::aws_smithy_types::DateTime::from_str(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            , ::aws_smithy_types::date_time::Format::DateTimeWithOffset
+                        )
+                        .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (timestamp: `com.amazonaws.ec2#DateTime`)"))
+                        ?
+                    )
+                ;
+                builder = builder.set_end(var_13);
             }
             ,
             s if s.matches("duration") /* Duration com.amazonaws.ec2#ReservedInstances$Duration */ =>  {
-                let var_13 =
+                let var_14 =
                     Some(
                          {
                             <i64 as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -177,25 +190,10 @@ pub fn de_reserved_instances(
                         ?
                     )
                 ;
-                builder = builder.set_duration(var_13);
+                builder = builder.set_duration(var_14);
             }
             ,
             s if s.matches("usagePrice") /* UsagePrice com.amazonaws.ec2#ReservedInstances$UsagePrice */ =>  {
-                let var_14 =
-                    Some(
-                         {
-                            <f32 as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
-                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            )
-                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (float: `com.amazonaws.ec2#Float`)"))
-                        }
-                        ?
-                    )
-                ;
-                builder = builder.set_usage_price(var_14);
-            }
-            ,
-            s if s.matches("fixedPrice") /* FixedPrice com.amazonaws.ec2#ReservedInstances$FixedPrice */ =>  {
                 let var_15 =
                     Some(
                          {
@@ -207,11 +205,26 @@ pub fn de_reserved_instances(
                         ?
                     )
                 ;
-                builder = builder.set_fixed_price(var_15);
+                builder = builder.set_usage_price(var_15);
+            }
+            ,
+            s if s.matches("fixedPrice") /* FixedPrice com.amazonaws.ec2#ReservedInstances$FixedPrice */ =>  {
+                let var_16 =
+                    Some(
+                         {
+                            <f32 as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (float: `com.amazonaws.ec2#Float`)"))
+                        }
+                        ?
+                    )
+                ;
+                builder = builder.set_fixed_price(var_16);
             }
             ,
             s if s.matches("instanceCount") /* InstanceCount com.amazonaws.ec2#ReservedInstances$InstanceCount */ =>  {
-                let var_16 =
+                let var_17 =
                     Some(
                          {
                             <i32 as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -222,11 +235,11 @@ pub fn de_reserved_instances(
                         ?
                     )
                 ;
-                builder = builder.set_instance_count(var_16);
+                builder = builder.set_instance_count(var_17);
             }
             ,
             s if s.matches("productDescription") /* ProductDescription com.amazonaws.ec2#ReservedInstances$ProductDescription */ =>  {
-                let var_17 =
+                let var_18 =
                     Some(
                         Result::<crate::types::RiProductDescription, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             crate::types::RiProductDescription::from(
@@ -236,11 +249,11 @@ pub fn de_reserved_instances(
                         ?
                     )
                 ;
-                builder = builder.set_product_description(var_17);
+                builder = builder.set_product_description(var_18);
             }
             ,
             s if s.matches("state") /* State com.amazonaws.ec2#ReservedInstances$State */ =>  {
-                let var_18 =
+                let var_19 =
                     Some(
                         Result::<crate::types::ReservedInstanceState, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             crate::types::ReservedInstanceState::from(
@@ -250,7 +263,7 @@ pub fn de_reserved_instances(
                         ?
                     )
                 ;
-                builder = builder.set_state(var_18);
+                builder = builder.set_state(var_19);
             }
             ,
             _ => {}

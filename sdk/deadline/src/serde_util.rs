@@ -1107,6 +1107,15 @@ pub(crate) fn dependency_counts_correct_errors(
     builder
 }
 
+pub(crate) fn host_configuration_correct_errors(
+    mut builder: crate::types::builders::HostConfigurationBuilder,
+) -> crate::types::builders::HostConfigurationBuilder {
+    if builder.script_body.is_none() {
+        builder.script_body = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn job_attachment_settings_correct_errors(
     mut builder: crate::types::builders::JobAttachmentSettingsBuilder,
 ) -> crate::types::builders::JobAttachmentSettingsBuilder {

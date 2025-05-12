@@ -156,6 +156,9 @@ pub(crate) fn de_update_worker(
         match tokens.next().transpose()? {
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                "hostConfiguration" => {
+                    builder = builder.set_host_configuration(crate::protocol_serde::shape_host_configuration::de_host_configuration(tokens)?);
+                }
                 "log" => {
                     builder = builder.set_log(crate::protocol_serde::shape_log_configuration::de_log_configuration(tokens)?);
                 }

@@ -6,7 +6,7 @@
 pub struct DataLakeDataset {
     /// <p>The Amazon Web Services Supply Chain instance identifier.</p>
     pub instance_id: ::std::string::String,
-    /// <p>The name space of the dataset. The available values are:</p>
+    /// <p>The namespace of the dataset, besides the custom defined namespace, every instance comes with below pre-defined namespaces:</p>
     /// <ul>
     /// <li>
     /// <p><b>asc</b> - For information on the Amazon Web Services Supply Chain supported datasets see <a href="https://docs.aws.amazon.com/aws-supply-chain/latest/userguide/data-model-asc.html">https://docs.aws.amazon.com/aws-supply-chain/latest/userguide/data-model-asc.html</a>.</p></li>
@@ -14,7 +14,7 @@ pub struct DataLakeDataset {
     /// <p><b>default</b> - For datasets with custom user-defined schemas.</p></li>
     /// </ul>
     pub namespace: ::std::string::String,
-    /// <p>The name of the dataset. For <b>asc</b> name space, the name must be one of the supported data entities under <a href="https://docs.aws.amazon.com/aws-supply-chain/latest/userguide/data-model-asc.html">https://docs.aws.amazon.com/aws-supply-chain/latest/userguide/data-model-asc.html</a>.</p>
+    /// <p>The name of the dataset. For <b>asc</b> namespace, the name must be one of the supported data entities under <a href="https://docs.aws.amazon.com/aws-supply-chain/latest/userguide/data-model-asc.html">https://docs.aws.amazon.com/aws-supply-chain/latest/userguide/data-model-asc.html</a>.</p>
     pub name: ::std::string::String,
     /// <p>The arn of the dataset.</p>
     pub arn: ::std::string::String,
@@ -22,6 +22,8 @@ pub struct DataLakeDataset {
     pub schema: ::std::option::Option<crate::types::DataLakeDatasetSchema>,
     /// <p>The description of the dataset.</p>
     pub description: ::std::option::Option<::std::string::String>,
+    /// <p>The partition specification for a dataset.</p>
+    pub partition_spec: ::std::option::Option<crate::types::DataLakeDatasetPartitionSpec>,
     /// <p>The creation time of the dataset.</p>
     pub created_time: ::aws_smithy_types::DateTime,
     /// <p>The last modified time of the dataset.</p>
@@ -33,7 +35,7 @@ impl DataLakeDataset {
         use std::ops::Deref;
         self.instance_id.deref()
     }
-    /// <p>The name space of the dataset. The available values are:</p>
+    /// <p>The namespace of the dataset, besides the custom defined namespace, every instance comes with below pre-defined namespaces:</p>
     /// <ul>
     /// <li>
     /// <p><b>asc</b> - For information on the Amazon Web Services Supply Chain supported datasets see <a href="https://docs.aws.amazon.com/aws-supply-chain/latest/userguide/data-model-asc.html">https://docs.aws.amazon.com/aws-supply-chain/latest/userguide/data-model-asc.html</a>.</p></li>
@@ -44,7 +46,7 @@ impl DataLakeDataset {
         use std::ops::Deref;
         self.namespace.deref()
     }
-    /// <p>The name of the dataset. For <b>asc</b> name space, the name must be one of the supported data entities under <a href="https://docs.aws.amazon.com/aws-supply-chain/latest/userguide/data-model-asc.html">https://docs.aws.amazon.com/aws-supply-chain/latest/userguide/data-model-asc.html</a>.</p>
+    /// <p>The name of the dataset. For <b>asc</b> namespace, the name must be one of the supported data entities under <a href="https://docs.aws.amazon.com/aws-supply-chain/latest/userguide/data-model-asc.html">https://docs.aws.amazon.com/aws-supply-chain/latest/userguide/data-model-asc.html</a>.</p>
     pub fn name(&self) -> &str {
         use std::ops::Deref;
         self.name.deref()
@@ -61,6 +63,10 @@ impl DataLakeDataset {
     /// <p>The description of the dataset.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
+    }
+    /// <p>The partition specification for a dataset.</p>
+    pub fn partition_spec(&self) -> ::std::option::Option<&crate::types::DataLakeDatasetPartitionSpec> {
+        self.partition_spec.as_ref()
     }
     /// <p>The creation time of the dataset.</p>
     pub fn created_time(&self) -> &::aws_smithy_types::DateTime {
@@ -88,6 +94,7 @@ pub struct DataLakeDatasetBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) schema: ::std::option::Option<crate::types::DataLakeDatasetSchema>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
+    pub(crate) partition_spec: ::std::option::Option<crate::types::DataLakeDatasetPartitionSpec>,
     pub(crate) created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
@@ -107,7 +114,7 @@ impl DataLakeDatasetBuilder {
     pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.instance_id
     }
-    /// <p>The name space of the dataset. The available values are:</p>
+    /// <p>The namespace of the dataset, besides the custom defined namespace, every instance comes with below pre-defined namespaces:</p>
     /// <ul>
     /// <li>
     /// <p><b>asc</b> - For information on the Amazon Web Services Supply Chain supported datasets see <a href="https://docs.aws.amazon.com/aws-supply-chain/latest/userguide/data-model-asc.html">https://docs.aws.amazon.com/aws-supply-chain/latest/userguide/data-model-asc.html</a>.</p></li>
@@ -119,7 +126,7 @@ impl DataLakeDatasetBuilder {
         self.namespace = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name space of the dataset. The available values are:</p>
+    /// <p>The namespace of the dataset, besides the custom defined namespace, every instance comes with below pre-defined namespaces:</p>
     /// <ul>
     /// <li>
     /// <p><b>asc</b> - For information on the Amazon Web Services Supply Chain supported datasets see <a href="https://docs.aws.amazon.com/aws-supply-chain/latest/userguide/data-model-asc.html">https://docs.aws.amazon.com/aws-supply-chain/latest/userguide/data-model-asc.html</a>.</p></li>
@@ -130,7 +137,7 @@ impl DataLakeDatasetBuilder {
         self.namespace = input;
         self
     }
-    /// <p>The name space of the dataset. The available values are:</p>
+    /// <p>The namespace of the dataset, besides the custom defined namespace, every instance comes with below pre-defined namespaces:</p>
     /// <ul>
     /// <li>
     /// <p><b>asc</b> - For information on the Amazon Web Services Supply Chain supported datasets see <a href="https://docs.aws.amazon.com/aws-supply-chain/latest/userguide/data-model-asc.html">https://docs.aws.amazon.com/aws-supply-chain/latest/userguide/data-model-asc.html</a>.</p></li>
@@ -140,18 +147,18 @@ impl DataLakeDatasetBuilder {
     pub fn get_namespace(&self) -> &::std::option::Option<::std::string::String> {
         &self.namespace
     }
-    /// <p>The name of the dataset. For <b>asc</b> name space, the name must be one of the supported data entities under <a href="https://docs.aws.amazon.com/aws-supply-chain/latest/userguide/data-model-asc.html">https://docs.aws.amazon.com/aws-supply-chain/latest/userguide/data-model-asc.html</a>.</p>
+    /// <p>The name of the dataset. For <b>asc</b> namespace, the name must be one of the supported data entities under <a href="https://docs.aws.amazon.com/aws-supply-chain/latest/userguide/data-model-asc.html">https://docs.aws.amazon.com/aws-supply-chain/latest/userguide/data-model-asc.html</a>.</p>
     /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the dataset. For <b>asc</b> name space, the name must be one of the supported data entities under <a href="https://docs.aws.amazon.com/aws-supply-chain/latest/userguide/data-model-asc.html">https://docs.aws.amazon.com/aws-supply-chain/latest/userguide/data-model-asc.html</a>.</p>
+    /// <p>The name of the dataset. For <b>asc</b> namespace, the name must be one of the supported data entities under <a href="https://docs.aws.amazon.com/aws-supply-chain/latest/userguide/data-model-asc.html">https://docs.aws.amazon.com/aws-supply-chain/latest/userguide/data-model-asc.html</a>.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
-    /// <p>The name of the dataset. For <b>asc</b> name space, the name must be one of the supported data entities under <a href="https://docs.aws.amazon.com/aws-supply-chain/latest/userguide/data-model-asc.html">https://docs.aws.amazon.com/aws-supply-chain/latest/userguide/data-model-asc.html</a>.</p>
+    /// <p>The name of the dataset. For <b>asc</b> namespace, the name must be one of the supported data entities under <a href="https://docs.aws.amazon.com/aws-supply-chain/latest/userguide/data-model-asc.html">https://docs.aws.amazon.com/aws-supply-chain/latest/userguide/data-model-asc.html</a>.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
@@ -198,6 +205,20 @@ impl DataLakeDatasetBuilder {
     /// <p>The description of the dataset.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
+    }
+    /// <p>The partition specification for a dataset.</p>
+    pub fn partition_spec(mut self, input: crate::types::DataLakeDatasetPartitionSpec) -> Self {
+        self.partition_spec = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The partition specification for a dataset.</p>
+    pub fn set_partition_spec(mut self, input: ::std::option::Option<crate::types::DataLakeDatasetPartitionSpec>) -> Self {
+        self.partition_spec = input;
+        self
+    }
+    /// <p>The partition specification for a dataset.</p>
+    pub fn get_partition_spec(&self) -> &::std::option::Option<crate::types::DataLakeDatasetPartitionSpec> {
+        &self.partition_spec
     }
     /// <p>The creation time of the dataset.</p>
     /// This field is required.
@@ -265,6 +286,7 @@ impl DataLakeDatasetBuilder {
             })?,
             schema: self.schema,
             description: self.description,
+            partition_spec: self.partition_spec,
             created_time: self.created_time.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "created_time",

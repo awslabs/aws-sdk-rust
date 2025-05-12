@@ -29,25 +29,41 @@ pub(crate) mod shape_create_data_integration_flow;
 
 pub(crate) mod shape_create_data_lake_dataset;
 
+pub(crate) mod shape_create_data_lake_namespace;
+
 pub(crate) mod shape_create_instance;
 
 pub(crate) mod shape_delete_data_integration_flow;
 
 pub(crate) mod shape_delete_data_lake_dataset;
 
+pub(crate) mod shape_delete_data_lake_namespace;
+
 pub(crate) mod shape_delete_instance;
 
 pub(crate) mod shape_get_bill_of_materials_import_job;
 
+pub(crate) mod shape_get_data_integration_event;
+
 pub(crate) mod shape_get_data_integration_flow;
+
+pub(crate) mod shape_get_data_integration_flow_execution;
 
 pub(crate) mod shape_get_data_lake_dataset;
 
+pub(crate) mod shape_get_data_lake_namespace;
+
 pub(crate) mod shape_get_instance;
+
+pub(crate) mod shape_list_data_integration_events;
+
+pub(crate) mod shape_list_data_integration_flow_executions;
 
 pub(crate) mod shape_list_data_integration_flows;
 
 pub(crate) mod shape_list_data_lake_datasets;
+
+pub(crate) mod shape_list_data_lake_namespaces;
 
 pub(crate) mod shape_list_instances;
 
@@ -62,6 +78,8 @@ pub(crate) mod shape_untag_resource;
 pub(crate) mod shape_update_data_integration_flow;
 
 pub(crate) mod shape_update_data_lake_dataset;
+
+pub(crate) mod shape_update_data_lake_namespace;
 
 pub(crate) mod shape_update_instance;
 
@@ -83,6 +101,8 @@ pub(crate) mod shape_create_data_integration_flow_input;
 
 pub(crate) mod shape_create_data_lake_dataset_input;
 
+pub(crate) mod shape_create_data_lake_namespace_input;
+
 pub(crate) mod shape_create_instance_input;
 
 pub(crate) mod shape_internal_server_exception;
@@ -101,13 +121,25 @@ pub(crate) mod shape_update_data_integration_flow_input;
 
 pub(crate) mod shape_update_data_lake_dataset_input;
 
+pub(crate) mod shape_update_data_lake_namespace_input;
+
 pub(crate) mod shape_update_instance_input;
 
 pub(crate) mod shape_validation_exception;
 
 pub(crate) mod shape_bill_of_materials_import_job;
 
+pub(crate) mod shape_data_integration_event;
+
+pub(crate) mod shape_data_integration_event_dataset_target_configuration;
+
+pub(crate) mod shape_data_integration_event_list;
+
 pub(crate) mod shape_data_integration_flow;
+
+pub(crate) mod shape_data_integration_flow_execution;
+
+pub(crate) mod shape_data_integration_flow_execution_list;
 
 pub(crate) mod shape_data_integration_flow_list;
 
@@ -121,7 +153,13 @@ pub(crate) mod shape_data_lake_dataset;
 
 pub(crate) mod shape_data_lake_dataset_list;
 
+pub(crate) mod shape_data_lake_dataset_partition_spec;
+
 pub(crate) mod shape_data_lake_dataset_schema;
+
+pub(crate) mod shape_data_lake_namespace;
+
+pub(crate) mod shape_data_lake_namespace_list;
 
 pub(crate) mod shape_instance;
 
@@ -129,9 +167,15 @@ pub(crate) mod shape_instance_list;
 
 pub(crate) mod shape_tag_map;
 
+pub(crate) mod shape_data_integration_event_dataset_target_details;
+
 pub(crate) mod shape_data_integration_flow_dataset_source_configuration;
 
 pub(crate) mod shape_data_integration_flow_dataset_target_configuration;
+
+pub(crate) mod shape_data_integration_flow_execution_output_metadata;
+
+pub(crate) mod shape_data_integration_flow_execution_source_info;
 
 pub(crate) mod shape_data_integration_flow_s3_source_configuration;
 
@@ -141,10 +185,34 @@ pub(crate) mod shape_data_integration_flow_source_list;
 
 pub(crate) mod shape_data_integration_flow_sql_transformation_configuration;
 
+pub(crate) mod shape_data_lake_dataset_partition_field;
+
+pub(crate) mod shape_data_lake_dataset_primary_key_field;
+
 pub(crate) mod shape_data_lake_dataset_schema_field;
+
+pub(crate) mod shape_data_integration_event_dataset_load_execution_details;
 
 pub(crate) mod shape_data_integration_flow_dataset_options;
 
+pub(crate) mod shape_data_integration_flow_dataset_source;
+
 pub(crate) mod shape_data_integration_flow_s3_options;
 
+pub(crate) mod shape_data_integration_flow_s3_source;
+
+pub(crate) mod shape_data_lake_dataset_partition_field_list;
+
+pub(crate) mod shape_data_lake_dataset_partition_field_transform;
+
+pub(crate) mod shape_data_lake_dataset_primary_key_field_list;
+
 pub(crate) mod shape_data_lake_dataset_schema_field_list;
+
+pub(crate) mod shape_data_integration_flow_dedupe_strategy;
+
+pub(crate) mod shape_data_integration_flow_field_priority_dedupe_strategy_configuration;
+
+pub(crate) mod shape_data_integration_flow_field_priority_dedupe_field;
+
+pub(crate) mod shape_data_integration_flow_field_priority_dedupe_field_list;

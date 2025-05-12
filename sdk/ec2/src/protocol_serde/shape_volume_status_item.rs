@@ -86,6 +86,19 @@ pub fn de_volume_status_item(
                 builder = builder.set_attachment_statuses(var_7);
             }
             ,
+            s if s.matches("availabilityZoneId") /* AvailabilityZoneId com.amazonaws.ec2#VolumeStatusItem$AvailabilityZoneId */ =>  {
+                let var_8 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_availability_zone_id(var_8);
+            }
+            ,
             _ => {}
         }
     }

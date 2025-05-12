@@ -119,16 +119,19 @@ impl DescribeReservedInstancesOfferingsFluentBuilder {
         crate::operation::describe_reserved_instances_offerings::paginator::DescribeReservedInstancesOfferingsPaginator::new(self.handle, self.inner)
     }
     /// <p>The Availability Zone in which the Reserved Instance can be used.</p>
+    /// <p>Either <code>AvailabilityZone</code> or <code>AvailabilityZoneId</code> can be specified, but not both.</p>
     pub fn availability_zone(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.availability_zone(input.into());
         self
     }
     /// <p>The Availability Zone in which the Reserved Instance can be used.</p>
+    /// <p>Either <code>AvailabilityZone</code> or <code>AvailabilityZoneId</code> can be specified, but not both.</p>
     pub fn set_availability_zone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_availability_zone(input);
         self
     }
     /// <p>The Availability Zone in which the Reserved Instance can be used.</p>
+    /// <p>Either <code>AvailabilityZone</code> or <code>AvailabilityZoneId</code> can be specified, but not both.</p>
     pub fn get_availability_zone(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_availability_zone()
     }
@@ -258,6 +261,23 @@ impl DescribeReservedInstancesOfferingsFluentBuilder {
     pub fn get_reserved_instances_offering_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_reserved_instances_offering_ids()
     }
+    /// <p>The ID of the Availability Zone.</p>
+    /// <p>Either <code>AvailabilityZone</code> or <code>AvailabilityZoneId</code> can be specified, but not both.</p>
+    pub fn availability_zone_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.availability_zone_id(input.into());
+        self
+    }
+    /// <p>The ID of the Availability Zone.</p>
+    /// <p>Either <code>AvailabilityZone</code> or <code>AvailabilityZoneId</code> can be specified, but not both.</p>
+    pub fn set_availability_zone_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_availability_zone_id(input);
+        self
+    }
+    /// <p>The ID of the Availability Zone.</p>
+    /// <p>Either <code>AvailabilityZone</code> or <code>AvailabilityZoneId</code> can be specified, but not both.</p>
+    pub fn get_availability_zone_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_availability_zone_id()
+    }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.inner = self.inner.dry_run(input);
@@ -281,6 +301,8 @@ impl DescribeReservedInstancesOfferingsFluentBuilder {
     /// <ul>
     /// <li>
     /// <p><code>availability-zone</code> - The Availability Zone where the Reserved Instance can be used.</p></li>
+    /// <li>
+    /// <p><code>availability-zone-id</code> - The ID of the Availability Zone where the Reserved Instance can be used.</p></li>
     /// <li>
     /// <p><code>duration</code> - The duration of the Reserved Instance (for example, one year or three years), in seconds (<code>31536000</code> | <code>94608000</code>).</p></li>
     /// <li>
@@ -307,6 +329,8 @@ impl DescribeReservedInstancesOfferingsFluentBuilder {
     /// <li>
     /// <p><code>availability-zone</code> - The Availability Zone where the Reserved Instance can be used.</p></li>
     /// <li>
+    /// <p><code>availability-zone-id</code> - The ID of the Availability Zone where the Reserved Instance can be used.</p></li>
+    /// <li>
     /// <p><code>duration</code> - The duration of the Reserved Instance (for example, one year or three years), in seconds (<code>31536000</code> | <code>94608000</code>).</p></li>
     /// <li>
     /// <p><code>fixed-price</code> - The purchase price of the Reserved Instance (for example, 9800.0).</p></li>
@@ -331,6 +355,8 @@ impl DescribeReservedInstancesOfferingsFluentBuilder {
     /// <ul>
     /// <li>
     /// <p><code>availability-zone</code> - The Availability Zone where the Reserved Instance can be used.</p></li>
+    /// <li>
+    /// <p><code>availability-zone-id</code> - The ID of the Availability Zone where the Reserved Instance can be used.</p></li>
     /// <li>
     /// <p><code>duration</code> - The duration of the Reserved Instance (for example, one year or three years), in seconds (<code>31536000</code> | <code>94608000</code>).</p></li>
     /// <li>

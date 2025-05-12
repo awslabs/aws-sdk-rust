@@ -205,16 +205,19 @@ impl CreateFleetFluentBuilder {
         self.inner.get_min_worker_count()
     }
     /// <p>The maximum number of workers for the fleet.</p>
+    /// <p>Deadline Cloud limits the number of workers to less than or equal to the fleet's maximum worker count. The service maintains eventual consistency for the worker count. If you make multiple rapid calls to <code>CreateWorker</code> before the field updates, you might exceed your fleet's maximum worker count. For example, if your <code>maxWorkerCount</code> is 10 and you currently have 9 workers, making two quick <code>CreateWorker</code> calls might successfully create 2 workers instead of 1, resulting in 11 total workers.</p>
     pub fn max_worker_count(mut self, input: i32) -> Self {
         self.inner = self.inner.max_worker_count(input);
         self
     }
     /// <p>The maximum number of workers for the fleet.</p>
+    /// <p>Deadline Cloud limits the number of workers to less than or equal to the fleet's maximum worker count. The service maintains eventual consistency for the worker count. If you make multiple rapid calls to <code>CreateWorker</code> before the field updates, you might exceed your fleet's maximum worker count. For example, if your <code>maxWorkerCount</code> is 10 and you currently have 9 workers, making two quick <code>CreateWorker</code> calls might successfully create 2 workers instead of 1, resulting in 11 total workers.</p>
     pub fn set_max_worker_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_worker_count(input);
         self
     }
     /// <p>The maximum number of workers for the fleet.</p>
+    /// <p>Deadline Cloud limits the number of workers to less than or equal to the fleet's maximum worker count. The service maintains eventual consistency for the worker count. If you make multiple rapid calls to <code>CreateWorker</code> before the field updates, you might exceed your fleet's maximum worker count. For example, if your <code>maxWorkerCount</code> is 10 and you currently have 9 workers, making two quick <code>CreateWorker</code> calls might successfully create 2 workers instead of 1, resulting in 11 total workers.</p>
     pub fn get_max_worker_count(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_worker_count()
     }
@@ -250,5 +253,19 @@ impl CreateFleetFluentBuilder {
     /// <p>Each tag consists of a tag key and a tag value. Tag keys and values are both required, but tag values can be empty strings.</p>
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
+    }
+    /// <p>Provides a script that runs as a worker is starting up that you can use to provide additional configuration for workers in your fleet.</p>
+    pub fn host_configuration(mut self, input: crate::types::HostConfiguration) -> Self {
+        self.inner = self.inner.host_configuration(input);
+        self
+    }
+    /// <p>Provides a script that runs as a worker is starting up that you can use to provide additional configuration for workers in your fleet.</p>
+    pub fn set_host_configuration(mut self, input: ::std::option::Option<crate::types::HostConfiguration>) -> Self {
+        self.inner = self.inner.set_host_configuration(input);
+        self
+    }
+    /// <p>Provides a script that runs as a worker is starting up that you can use to provide additional configuration for workers in your fleet.</p>
+    pub fn get_host_configuration(&self) -> &::std::option::Option<crate::types::HostConfiguration> {
+        self.inner.get_host_configuration()
     }
 }

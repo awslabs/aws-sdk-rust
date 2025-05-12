@@ -4,19 +4,39 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DataIntegrationFlowDatasetOptions {
-    /// <p>The dataset data load type in dataset options.</p>
+    /// <p>The target dataset's data load type. This only affects how source S3 files are selected in the S3-to-dataset flow.</p>
+    /// <ul>
+    /// <li>
+    /// <p><b>REPLACE</b> - Target dataset will get replaced with the new file added under the source s3 prefix.</p></li>
+    /// <li>
+    /// <p><b>INCREMENTAL</b> - Target dataset will get updated with the up-to-date content under S3 prefix incorporating any file additions or removals there.</p></li>
+    /// </ul>
     pub load_type: ::std::option::Option<crate::types::DataIntegrationFlowLoadType>,
-    /// <p>The dataset load option to remove duplicates.</p>
+    /// <p>The option to perform deduplication on data records sharing same primary key values. If disabled, transformed data with duplicate primary key values will ingest into dataset, for datasets within <b>asc</b> namespace, such duplicates will cause ingestion fail. If enabled without dedupeStrategy, deduplication is done by retaining a random data record among those sharing the same primary key values. If enabled with dedupeStragtegy, the deduplication is done following the strategy.</p>
+    /// <p>Note that target dataset may have partition configured, when dedupe is enabled, it only dedupe against primary keys and retain only one record out of those duplicates regardless of its partition status.</p>
     pub dedupe_records: ::std::option::Option<bool>,
+    /// <p>The deduplication strategy to dedupe the data records sharing same primary key values of the target dataset. This strategy only applies to target dataset with primary keys and with dedupeRecords option enabled. If transformed data still got duplicates after the dedupeStrategy evaluation, a random data record is chosen to be retained.</p>
+    pub dedupe_strategy: ::std::option::Option<crate::types::DataIntegrationFlowDedupeStrategy>,
 }
 impl DataIntegrationFlowDatasetOptions {
-    /// <p>The dataset data load type in dataset options.</p>
+    /// <p>The target dataset's data load type. This only affects how source S3 files are selected in the S3-to-dataset flow.</p>
+    /// <ul>
+    /// <li>
+    /// <p><b>REPLACE</b> - Target dataset will get replaced with the new file added under the source s3 prefix.</p></li>
+    /// <li>
+    /// <p><b>INCREMENTAL</b> - Target dataset will get updated with the up-to-date content under S3 prefix incorporating any file additions or removals there.</p></li>
+    /// </ul>
     pub fn load_type(&self) -> ::std::option::Option<&crate::types::DataIntegrationFlowLoadType> {
         self.load_type.as_ref()
     }
-    /// <p>The dataset load option to remove duplicates.</p>
+    /// <p>The option to perform deduplication on data records sharing same primary key values. If disabled, transformed data with duplicate primary key values will ingest into dataset, for datasets within <b>asc</b> namespace, such duplicates will cause ingestion fail. If enabled without dedupeStrategy, deduplication is done by retaining a random data record among those sharing the same primary key values. If enabled with dedupeStragtegy, the deduplication is done following the strategy.</p>
+    /// <p>Note that target dataset may have partition configured, when dedupe is enabled, it only dedupe against primary keys and retain only one record out of those duplicates regardless of its partition status.</p>
     pub fn dedupe_records(&self) -> ::std::option::Option<bool> {
         self.dedupe_records
+    }
+    /// <p>The deduplication strategy to dedupe the data records sharing same primary key values of the target dataset. This strategy only applies to target dataset with primary keys and with dedupeRecords option enabled. If transformed data still got duplicates after the dedupeStrategy evaluation, a random data record is chosen to be retained.</p>
+    pub fn dedupe_strategy(&self) -> ::std::option::Option<&crate::types::DataIntegrationFlowDedupeStrategy> {
+        self.dedupe_strategy.as_ref()
     }
 }
 impl DataIntegrationFlowDatasetOptions {
@@ -32,41 +52,78 @@ impl DataIntegrationFlowDatasetOptions {
 pub struct DataIntegrationFlowDatasetOptionsBuilder {
     pub(crate) load_type: ::std::option::Option<crate::types::DataIntegrationFlowLoadType>,
     pub(crate) dedupe_records: ::std::option::Option<bool>,
+    pub(crate) dedupe_strategy: ::std::option::Option<crate::types::DataIntegrationFlowDedupeStrategy>,
 }
 impl DataIntegrationFlowDatasetOptionsBuilder {
-    /// <p>The dataset data load type in dataset options.</p>
+    /// <p>The target dataset's data load type. This only affects how source S3 files are selected in the S3-to-dataset flow.</p>
+    /// <ul>
+    /// <li>
+    /// <p><b>REPLACE</b> - Target dataset will get replaced with the new file added under the source s3 prefix.</p></li>
+    /// <li>
+    /// <p><b>INCREMENTAL</b> - Target dataset will get updated with the up-to-date content under S3 prefix incorporating any file additions or removals there.</p></li>
+    /// </ul>
     pub fn load_type(mut self, input: crate::types::DataIntegrationFlowLoadType) -> Self {
         self.load_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The dataset data load type in dataset options.</p>
+    /// <p>The target dataset's data load type. This only affects how source S3 files are selected in the S3-to-dataset flow.</p>
+    /// <ul>
+    /// <li>
+    /// <p><b>REPLACE</b> - Target dataset will get replaced with the new file added under the source s3 prefix.</p></li>
+    /// <li>
+    /// <p><b>INCREMENTAL</b> - Target dataset will get updated with the up-to-date content under S3 prefix incorporating any file additions or removals there.</p></li>
+    /// </ul>
     pub fn set_load_type(mut self, input: ::std::option::Option<crate::types::DataIntegrationFlowLoadType>) -> Self {
         self.load_type = input;
         self
     }
-    /// <p>The dataset data load type in dataset options.</p>
+    /// <p>The target dataset's data load type. This only affects how source S3 files are selected in the S3-to-dataset flow.</p>
+    /// <ul>
+    /// <li>
+    /// <p><b>REPLACE</b> - Target dataset will get replaced with the new file added under the source s3 prefix.</p></li>
+    /// <li>
+    /// <p><b>INCREMENTAL</b> - Target dataset will get updated with the up-to-date content under S3 prefix incorporating any file additions or removals there.</p></li>
+    /// </ul>
     pub fn get_load_type(&self) -> &::std::option::Option<crate::types::DataIntegrationFlowLoadType> {
         &self.load_type
     }
-    /// <p>The dataset load option to remove duplicates.</p>
+    /// <p>The option to perform deduplication on data records sharing same primary key values. If disabled, transformed data with duplicate primary key values will ingest into dataset, for datasets within <b>asc</b> namespace, such duplicates will cause ingestion fail. If enabled without dedupeStrategy, deduplication is done by retaining a random data record among those sharing the same primary key values. If enabled with dedupeStragtegy, the deduplication is done following the strategy.</p>
+    /// <p>Note that target dataset may have partition configured, when dedupe is enabled, it only dedupe against primary keys and retain only one record out of those duplicates regardless of its partition status.</p>
     pub fn dedupe_records(mut self, input: bool) -> Self {
         self.dedupe_records = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The dataset load option to remove duplicates.</p>
+    /// <p>The option to perform deduplication on data records sharing same primary key values. If disabled, transformed data with duplicate primary key values will ingest into dataset, for datasets within <b>asc</b> namespace, such duplicates will cause ingestion fail. If enabled without dedupeStrategy, deduplication is done by retaining a random data record among those sharing the same primary key values. If enabled with dedupeStragtegy, the deduplication is done following the strategy.</p>
+    /// <p>Note that target dataset may have partition configured, when dedupe is enabled, it only dedupe against primary keys and retain only one record out of those duplicates regardless of its partition status.</p>
     pub fn set_dedupe_records(mut self, input: ::std::option::Option<bool>) -> Self {
         self.dedupe_records = input;
         self
     }
-    /// <p>The dataset load option to remove duplicates.</p>
+    /// <p>The option to perform deduplication on data records sharing same primary key values. If disabled, transformed data with duplicate primary key values will ingest into dataset, for datasets within <b>asc</b> namespace, such duplicates will cause ingestion fail. If enabled without dedupeStrategy, deduplication is done by retaining a random data record among those sharing the same primary key values. If enabled with dedupeStragtegy, the deduplication is done following the strategy.</p>
+    /// <p>Note that target dataset may have partition configured, when dedupe is enabled, it only dedupe against primary keys and retain only one record out of those duplicates regardless of its partition status.</p>
     pub fn get_dedupe_records(&self) -> &::std::option::Option<bool> {
         &self.dedupe_records
+    }
+    /// <p>The deduplication strategy to dedupe the data records sharing same primary key values of the target dataset. This strategy only applies to target dataset with primary keys and with dedupeRecords option enabled. If transformed data still got duplicates after the dedupeStrategy evaluation, a random data record is chosen to be retained.</p>
+    pub fn dedupe_strategy(mut self, input: crate::types::DataIntegrationFlowDedupeStrategy) -> Self {
+        self.dedupe_strategy = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The deduplication strategy to dedupe the data records sharing same primary key values of the target dataset. This strategy only applies to target dataset with primary keys and with dedupeRecords option enabled. If transformed data still got duplicates after the dedupeStrategy evaluation, a random data record is chosen to be retained.</p>
+    pub fn set_dedupe_strategy(mut self, input: ::std::option::Option<crate::types::DataIntegrationFlowDedupeStrategy>) -> Self {
+        self.dedupe_strategy = input;
+        self
+    }
+    /// <p>The deduplication strategy to dedupe the data records sharing same primary key values of the target dataset. This strategy only applies to target dataset with primary keys and with dedupeRecords option enabled. If transformed data still got duplicates after the dedupeStrategy evaluation, a random data record is chosen to be retained.</p>
+    pub fn get_dedupe_strategy(&self) -> &::std::option::Option<crate::types::DataIntegrationFlowDedupeStrategy> {
+        &self.dedupe_strategy
     }
     /// Consumes the builder and constructs a [`DataIntegrationFlowDatasetOptions`](crate::types::DataIntegrationFlowDatasetOptions).
     pub fn build(self) -> crate::types::DataIntegrationFlowDatasetOptions {
         crate::types::DataIntegrationFlowDatasetOptions {
             load_type: self.load_type,
             dedupe_records: self.dedupe_records,
+            dedupe_strategy: self.dedupe_strategy,
         }
     }
 }

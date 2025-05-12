@@ -8,7 +8,7 @@ pub struct DataIntegrationFlowTarget {
     pub target_type: crate::types::DataIntegrationFlowTargetType,
     /// <p>The S3 DataIntegrationFlow target.</p>
     pub s3_target: ::std::option::Option<crate::types::DataIntegrationFlowS3TargetConfiguration>,
-    /// <p>The dataset DataIntegrationFlow target.</p>
+    /// <p>The dataset DataIntegrationFlow target. Note that for AWS Supply Chain dataset under <b>asc</b> namespace, it has a connection_id internal field that is not allowed to be provided by client directly, they will be auto populated.</p>
     pub dataset_target: ::std::option::Option<crate::types::DataIntegrationFlowDatasetTargetConfiguration>,
 }
 impl DataIntegrationFlowTarget {
@@ -20,7 +20,7 @@ impl DataIntegrationFlowTarget {
     pub fn s3_target(&self) -> ::std::option::Option<&crate::types::DataIntegrationFlowS3TargetConfiguration> {
         self.s3_target.as_ref()
     }
-    /// <p>The dataset DataIntegrationFlow target.</p>
+    /// <p>The dataset DataIntegrationFlow target. Note that for AWS Supply Chain dataset under <b>asc</b> namespace, it has a connection_id internal field that is not allowed to be provided by client directly, they will be auto populated.</p>
     pub fn dataset_target(&self) -> ::std::option::Option<&crate::types::DataIntegrationFlowDatasetTargetConfiguration> {
         self.dataset_target.as_ref()
     }
@@ -70,17 +70,17 @@ impl DataIntegrationFlowTargetBuilder {
     pub fn get_s3_target(&self) -> &::std::option::Option<crate::types::DataIntegrationFlowS3TargetConfiguration> {
         &self.s3_target
     }
-    /// <p>The dataset DataIntegrationFlow target.</p>
+    /// <p>The dataset DataIntegrationFlow target. Note that for AWS Supply Chain dataset under <b>asc</b> namespace, it has a connection_id internal field that is not allowed to be provided by client directly, they will be auto populated.</p>
     pub fn dataset_target(mut self, input: crate::types::DataIntegrationFlowDatasetTargetConfiguration) -> Self {
         self.dataset_target = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The dataset DataIntegrationFlow target.</p>
+    /// <p>The dataset DataIntegrationFlow target. Note that for AWS Supply Chain dataset under <b>asc</b> namespace, it has a connection_id internal field that is not allowed to be provided by client directly, they will be auto populated.</p>
     pub fn set_dataset_target(mut self, input: ::std::option::Option<crate::types::DataIntegrationFlowDatasetTargetConfiguration>) -> Self {
         self.dataset_target = input;
         self
     }
-    /// <p>The dataset DataIntegrationFlow target.</p>
+    /// <p>The dataset DataIntegrationFlow target. Note that for AWS Supply Chain dataset under <b>asc</b> namespace, it has a connection_id internal field that is not allowed to be provided by client directly, they will be auto populated.</p>
     pub fn get_dataset_target(&self) -> &::std::option::Option<crate::types::DataIntegrationFlowDatasetTargetConfiguration> {
         &self.dataset_target
     }

@@ -159,6 +159,8 @@ pub use crate::types::_job_summary::JobSummary;
 
 pub use crate::types::_fleet_member::FleetMember;
 
+pub use crate::types::_host_configuration::HostConfiguration;
+
 pub use crate::types::_fleet_configuration::FleetConfiguration;
 
 pub use crate::types::_service_managed_ec2_fleet_configuration::ServiceManagedEc2FleetConfiguration;
@@ -492,6 +494,8 @@ mod _fleet_status;
 mod _fleet_summary;
 
 mod _get_job_entity_error;
+
+mod _host_configuration;
 
 mod _host_properties_request;
 

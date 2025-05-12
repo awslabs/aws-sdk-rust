@@ -6,7 +6,7 @@
 pub struct DataIntegrationFlowS3SourceConfiguration {
     /// <p>The bucketName of the S3 source objects.</p>
     pub bucket_name: ::std::string::String,
-    /// <p>The prefix of the S3 source objects.</p>
+    /// <p>The prefix of the S3 source objects. To trigger data ingestion, S3 files need to be put under <code>s3://<i>bucketName</i>/<i>prefix</i>/</code>.</p>
     pub prefix: ::std::string::String,
     /// <p>The other options of the S3 DataIntegrationFlow source.</p>
     pub options: ::std::option::Option<crate::types::DataIntegrationFlowS3Options>,
@@ -17,7 +17,7 @@ impl DataIntegrationFlowS3SourceConfiguration {
         use std::ops::Deref;
         self.bucket_name.deref()
     }
-    /// <p>The prefix of the S3 source objects.</p>
+    /// <p>The prefix of the S3 source objects. To trigger data ingestion, S3 files need to be put under <code>s3://<i>bucketName</i>/<i>prefix</i>/</code>.</p>
     pub fn prefix(&self) -> &str {
         use std::ops::Deref;
         self.prefix.deref()
@@ -58,18 +58,18 @@ impl DataIntegrationFlowS3SourceConfigurationBuilder {
     pub fn get_bucket_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.bucket_name
     }
-    /// <p>The prefix of the S3 source objects.</p>
+    /// <p>The prefix of the S3 source objects. To trigger data ingestion, S3 files need to be put under <code>s3://<i>bucketName</i>/<i>prefix</i>/</code>.</p>
     /// This field is required.
     pub fn prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.prefix = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The prefix of the S3 source objects.</p>
+    /// <p>The prefix of the S3 source objects. To trigger data ingestion, S3 files need to be put under <code>s3://<i>bucketName</i>/<i>prefix</i>/</code>.</p>
     pub fn set_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.prefix = input;
         self
     }
-    /// <p>The prefix of the S3 source objects.</p>
+    /// <p>The prefix of the S3 source objects. To trigger data ingestion, S3 files need to be put under <code>s3://<i>bucketName</i>/<i>prefix</i>/</code>.</p>
     pub fn get_prefix(&self) -> &::std::option::Option<::std::string::String> {
         &self.prefix
     }

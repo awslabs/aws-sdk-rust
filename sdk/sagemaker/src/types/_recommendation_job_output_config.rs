@@ -12,29 +12,13 @@ pub struct RecommendationJobOutputConfig {
     /// <p><code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code></p></li>
     /// <li>
     /// <p>// Amazon Resource Name (ARN) of a KMS Key</p>
-    /// <p><code>"arn:aws:kms:<region>
-    /// :
-    /// <account>
-    /// :key/
-    /// <key-id-12ab-34cd-56ef-1234567890ab>
-    /// "
-    /// </key-id-12ab-34cd-56ef-1234567890ab>
-    /// </account>
-    /// </region></code></p></li>
+    /// <p><code>"arn:aws:kms:&lt;region&gt;:&lt;account&gt;:key/&lt;key-id-12ab-34cd-56ef-1234567890ab&gt;"</code></p></li>
     /// <li>
     /// <p>// KMS Key Alias</p>
     /// <p><code>"alias/ExampleAlias"</code></p></li>
     /// <li>
     /// <p>// Amazon Resource Name (ARN) of a KMS Key Alias</p>
-    /// <p><code>"arn:aws:kms:<region>
-    /// :
-    /// <account>
-    /// :alias/
-    /// <examplealias>
-    /// "
-    /// </examplealias>
-    /// </account>
-    /// </region></code></p></li>
+    /// <p><code>"arn:aws:kms:&lt;region&gt;:&lt;account&gt;:alias/&lt;ExampleAlias&gt;"</code></p></li>
     /// </ul>
     /// <p>For more information about key identifiers, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-id">Key identifiers (KeyID)</a> in the Amazon Web Services Key Management Service (Amazon Web Services KMS) documentation.</p>
     pub kms_key_id: ::std::option::Option<::std::string::String>,
@@ -50,29 +34,13 @@ impl RecommendationJobOutputConfig {
     /// <p><code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code></p></li>
     /// <li>
     /// <p>// Amazon Resource Name (ARN) of a KMS Key</p>
-    /// <p><code>"arn:aws:kms:<region>
-    /// :
-    /// <account>
-    /// :key/
-    /// <key-id-12ab-34cd-56ef-1234567890ab>
-    /// "
-    /// </key-id-12ab-34cd-56ef-1234567890ab>
-    /// </account>
-    /// </region></code></p></li>
+    /// <p><code>"arn:aws:kms:&lt;region&gt;:&lt;account&gt;:key/&lt;key-id-12ab-34cd-56ef-1234567890ab&gt;"</code></p></li>
     /// <li>
     /// <p>// KMS Key Alias</p>
     /// <p><code>"alias/ExampleAlias"</code></p></li>
     /// <li>
     /// <p>// Amazon Resource Name (ARN) of a KMS Key Alias</p>
-    /// <p><code>"arn:aws:kms:<region>
-    /// :
-    /// <account>
-    /// :alias/
-    /// <examplealias>
-    /// "
-    /// </examplealias>
-    /// </account>
-    /// </region></code></p></li>
+    /// <p><code>"arn:aws:kms:&lt;region&gt;:&lt;account&gt;:alias/&lt;ExampleAlias&gt;"</code></p></li>
     /// </ul>
     /// <p>For more information about key identifiers, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-id">Key identifiers (KeyID)</a> in the Amazon Web Services Key Management Service (Amazon Web Services KMS) documentation.</p>
     pub fn kms_key_id(&self) -> ::std::option::Option<&str> {
@@ -106,29 +74,13 @@ impl RecommendationJobOutputConfigBuilder {
     /// <p><code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code></p></li>
     /// <li>
     /// <p>// Amazon Resource Name (ARN) of a KMS Key</p>
-    /// <p><code>"arn:aws:kms:<region>
-    /// :
-    /// <account>
-    /// :key/
-    /// <key-id-12ab-34cd-56ef-1234567890ab>
-    /// "
-    /// </key-id-12ab-34cd-56ef-1234567890ab>
-    /// </account>
-    /// </region></code></p></li>
+    /// <p><code>"arn:aws:kms:&lt;region&gt;:&lt;account&gt;:key/&lt;key-id-12ab-34cd-56ef-1234567890ab&gt;"</code></p></li>
     /// <li>
     /// <p>// KMS Key Alias</p>
     /// <p><code>"alias/ExampleAlias"</code></p></li>
     /// <li>
     /// <p>// Amazon Resource Name (ARN) of a KMS Key Alias</p>
-    /// <p><code>"arn:aws:kms:<region>
-    /// :
-    /// <account>
-    /// :alias/
-    /// <examplealias>
-    /// "
-    /// </examplealias>
-    /// </account>
-    /// </region></code></p></li>
+    /// <p><code>"arn:aws:kms:&lt;region&gt;:&lt;account&gt;:alias/&lt;ExampleAlias&gt;"</code></p></li>
     /// </ul>
     /// <p>For more information about key identifiers, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-id">Key identifiers (KeyID)</a> in the Amazon Web Services Key Management Service (Amazon Web Services KMS) documentation.</p>
     pub fn kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -143,29 +95,13 @@ impl RecommendationJobOutputConfigBuilder {
     /// <p><code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code></p></li>
     /// <li>
     /// <p>// Amazon Resource Name (ARN) of a KMS Key</p>
-    /// <p><code>"arn:aws:kms:<region>
-    /// :
-    /// <account>
-    /// :key/
-    /// <key-id-12ab-34cd-56ef-1234567890ab>
-    /// "
-    /// </key-id-12ab-34cd-56ef-1234567890ab>
-    /// </account>
-    /// </region></code></p></li>
+    /// <p><code>"arn:aws:kms:&lt;region&gt;:&lt;account&gt;:key/&lt;key-id-12ab-34cd-56ef-1234567890ab&gt;"</code></p></li>
     /// <li>
     /// <p>// KMS Key Alias</p>
     /// <p><code>"alias/ExampleAlias"</code></p></li>
     /// <li>
     /// <p>// Amazon Resource Name (ARN) of a KMS Key Alias</p>
-    /// <p><code>"arn:aws:kms:<region>
-    /// :
-    /// <account>
-    /// :alias/
-    /// <examplealias>
-    /// "
-    /// </examplealias>
-    /// </account>
-    /// </region></code></p></li>
+    /// <p><code>"arn:aws:kms:&lt;region&gt;:&lt;account&gt;:alias/&lt;ExampleAlias&gt;"</code></p></li>
     /// </ul>
     /// <p>For more information about key identifiers, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-id">Key identifiers (KeyID)</a> in the Amazon Web Services Key Management Service (Amazon Web Services KMS) documentation.</p>
     pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -180,29 +116,13 @@ impl RecommendationJobOutputConfigBuilder {
     /// <p><code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code></p></li>
     /// <li>
     /// <p>// Amazon Resource Name (ARN) of a KMS Key</p>
-    /// <p><code>"arn:aws:kms:<region>
-    /// :
-    /// <account>
-    /// :key/
-    /// <key-id-12ab-34cd-56ef-1234567890ab>
-    /// "
-    /// </key-id-12ab-34cd-56ef-1234567890ab>
-    /// </account>
-    /// </region></code></p></li>
+    /// <p><code>"arn:aws:kms:&lt;region&gt;:&lt;account&gt;:key/&lt;key-id-12ab-34cd-56ef-1234567890ab&gt;"</code></p></li>
     /// <li>
     /// <p>// KMS Key Alias</p>
     /// <p><code>"alias/ExampleAlias"</code></p></li>
     /// <li>
     /// <p>// Amazon Resource Name (ARN) of a KMS Key Alias</p>
-    /// <p><code>"arn:aws:kms:<region>
-    /// :
-    /// <account>
-    /// :alias/
-    /// <examplealias>
-    /// "
-    /// </examplealias>
-    /// </account>
-    /// </region></code></p></li>
+    /// <p><code>"arn:aws:kms:&lt;region&gt;:&lt;account&gt;:alias/&lt;ExampleAlias&gt;"</code></p></li>
     /// </ul>
     /// <p>For more information about key identifiers, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-id">Key identifiers (KeyID)</a> in the Amazon Web Services Key Management Service (Amazon Web Services KMS) documentation.</p>
     pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {

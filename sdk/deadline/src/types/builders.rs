@@ -93,6 +93,8 @@ pub use crate::types::_job_summary::JobSummaryBuilder;
 
 pub use crate::types::_fleet_member::FleetMemberBuilder;
 
+pub use crate::types::_host_configuration::HostConfigurationBuilder;
+
 pub use crate::types::_service_managed_ec2_fleet_configuration::ServiceManagedEc2FleetConfigurationBuilder;
 
 pub use crate::types::_service_managed_ec2_instance_market_options::ServiceManagedEc2InstanceMarketOptionsBuilder;

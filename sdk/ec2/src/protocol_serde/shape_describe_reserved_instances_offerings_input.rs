@@ -68,44 +68,49 @@ pub fn ser_describe_reserved_instances_offerings_input_input_input(
         }
     }
     #[allow(unused_mut)]
-    let mut scope_22 = writer.prefix("DryRun");
-    if let Some(var_23) = &input.dry_run {
-        scope_22.boolean(*var_23);
+    let mut scope_22 = writer.prefix("AvailabilityZoneId");
+    if let Some(var_23) = &input.availability_zone_id {
+        scope_22.string(var_23);
     }
     #[allow(unused_mut)]
-    let mut scope_24 = writer.prefix("Filter");
-    if let Some(var_25) = &input.filters {
-        if !var_25.is_empty() {
-            let mut list_27 = scope_24.start_list(true, Some("Filter"));
-            for item_26 in var_25 {
+    let mut scope_24 = writer.prefix("DryRun");
+    if let Some(var_25) = &input.dry_run {
+        scope_24.boolean(*var_25);
+    }
+    #[allow(unused_mut)]
+    let mut scope_26 = writer.prefix("Filter");
+    if let Some(var_27) = &input.filters {
+        if !var_27.is_empty() {
+            let mut list_29 = scope_26.start_list(true, Some("Filter"));
+            for item_28 in var_27 {
                 #[allow(unused_mut)]
-                let mut entry_28 = list_27.entry();
-                crate::protocol_serde::shape_filter::ser_filter(entry_28, item_26)?;
+                let mut entry_30 = list_29.entry();
+                crate::protocol_serde::shape_filter::ser_filter(entry_30, item_28)?;
             }
-            list_27.finish();
+            list_29.finish();
         }
     }
     #[allow(unused_mut)]
-    let mut scope_29 = writer.prefix("InstanceTenancy");
-    if let Some(var_30) = &input.instance_tenancy {
-        scope_29.string(var_30.as_str());
-    }
-    #[allow(unused_mut)]
-    let mut scope_31 = writer.prefix("OfferingType");
-    if let Some(var_32) = &input.offering_type {
+    let mut scope_31 = writer.prefix("InstanceTenancy");
+    if let Some(var_32) = &input.instance_tenancy {
         scope_31.string(var_32.as_str());
     }
     #[allow(unused_mut)]
-    let mut scope_33 = writer.prefix("NextToken");
-    if let Some(var_34) = &input.next_token {
-        scope_33.string(var_34);
+    let mut scope_33 = writer.prefix("OfferingType");
+    if let Some(var_34) = &input.offering_type {
+        scope_33.string(var_34.as_str());
     }
     #[allow(unused_mut)]
-    let mut scope_35 = writer.prefix("MaxResults");
-    if let Some(var_36) = &input.max_results {
-        scope_35.number(
+    let mut scope_35 = writer.prefix("NextToken");
+    if let Some(var_36) = &input.next_token {
+        scope_35.string(var_36);
+    }
+    #[allow(unused_mut)]
+    let mut scope_37 = writer.prefix("MaxResults");
+    if let Some(var_38) = &input.max_results {
+        scope_37.number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_36).into()),
+            ::aws_smithy_types::Number::NegInt((*var_38).into()),
         );
     }
     writer.finish();

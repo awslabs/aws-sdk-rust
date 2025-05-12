@@ -32,6 +32,11 @@ pub fn ser_reserved_instances_configuration(
     if let Some(var_10) = &input.scope {
         scope_9.string(var_10.as_str());
     }
+    #[allow(unused_mut)]
+    let mut scope_11 = writer.prefix("AvailabilityZoneId");
+    if let Some(var_12) = &input.availability_zone_id {
+        scope_11.string(var_12);
+    }
     Ok(())
 }
 
@@ -44,7 +49,7 @@ pub fn de_reserved_instances_configuration(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("availabilityZone") /* AvailabilityZone com.amazonaws.ec2#ReservedInstancesConfiguration$AvailabilityZone */ =>  {
-                let var_11 =
+                let var_13 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -53,11 +58,11 @@ pub fn de_reserved_instances_configuration(
                         ?
                     )
                 ;
-                builder = builder.set_availability_zone(var_11);
+                builder = builder.set_availability_zone(var_13);
             }
             ,
             s if s.matches("instanceCount") /* InstanceCount com.amazonaws.ec2#ReservedInstancesConfiguration$InstanceCount */ =>  {
-                let var_12 =
+                let var_14 =
                     Some(
                          {
                             <i32 as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -68,11 +73,11 @@ pub fn de_reserved_instances_configuration(
                         ?
                     )
                 ;
-                builder = builder.set_instance_count(var_12);
+                builder = builder.set_instance_count(var_14);
             }
             ,
             s if s.matches("instanceType") /* InstanceType com.amazonaws.ec2#ReservedInstancesConfiguration$InstanceType */ =>  {
-                let var_13 =
+                let var_15 =
                     Some(
                         Result::<crate::types::InstanceType, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             crate::types::InstanceType::from(
@@ -82,11 +87,11 @@ pub fn de_reserved_instances_configuration(
                         ?
                     )
                 ;
-                builder = builder.set_instance_type(var_13);
+                builder = builder.set_instance_type(var_15);
             }
             ,
             s if s.matches("platform") /* Platform com.amazonaws.ec2#ReservedInstancesConfiguration$Platform */ =>  {
-                let var_14 =
+                let var_16 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -95,11 +100,11 @@ pub fn de_reserved_instances_configuration(
                         ?
                     )
                 ;
-                builder = builder.set_platform(var_14);
+                builder = builder.set_platform(var_16);
             }
             ,
             s if s.matches("scope") /* Scope com.amazonaws.ec2#ReservedInstancesConfiguration$Scope */ =>  {
-                let var_15 =
+                let var_17 =
                     Some(
                         Result::<crate::types::Scope, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             crate::types::Scope::from(
@@ -109,7 +114,20 @@ pub fn de_reserved_instances_configuration(
                         ?
                     )
                 ;
-                builder = builder.set_scope(var_15);
+                builder = builder.set_scope(var_17);
+            }
+            ,
+            s if s.matches("availabilityZoneId") /* AvailabilityZoneId com.amazonaws.ec2#ReservedInstancesConfiguration$AvailabilityZoneId */ =>  {
+                let var_18 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_availability_zone_id(var_18);
             }
             ,
             _ => {}

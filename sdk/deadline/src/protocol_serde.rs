@@ -399,6 +399,8 @@ pub(crate) mod shape_fleet_members;
 
 pub(crate) mod shape_fleet_summaries;
 
+pub(crate) mod shape_host_configuration;
+
 pub(crate) mod shape_host_properties_request;
 
 pub(crate) mod shape_host_properties_response;

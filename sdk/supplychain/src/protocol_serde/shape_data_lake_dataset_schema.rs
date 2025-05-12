@@ -18,6 +18,18 @@ pub fn ser_data_lake_dataset_schema(
         }
         array_1.finish();
     }
+    if let Some(var_4) = &input.primary_keys {
+        let mut array_5 = object.key("primaryKeys").start_array();
+        for item_6 in var_4 {
+            {
+                #[allow(unused_mut)]
+                let mut object_7 = array_5.value().start_object();
+                crate::protocol_serde::shape_data_lake_dataset_primary_key_field::ser_data_lake_dataset_primary_key_field(&mut object_7, item_6)?;
+                object_7.finish();
+            }
+        }
+        array_5.finish();
+    }
     Ok(())
 }
 
@@ -35,21 +47,28 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
-                        "name" => {
-                            builder = builder.set_name(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                        match key.to_unescaped()?.as_ref() {
+                            "name" => {
+                                builder = builder.set_name(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
+                                );
+                            }
+                            "fields" => {
+                                builder = builder.set_fields(
+                                    crate::protocol_serde::shape_data_lake_dataset_schema_field_list::de_data_lake_dataset_schema_field_list(tokens)?,
+                                );
+                            }
+                            "primaryKeys" => {
+                                builder = builder.set_primary_keys(
+                                    crate::protocol_serde::shape_data_lake_dataset_primary_key_field_list::de_data_lake_dataset_primary_key_field_list(tokens)?
+                                );
+                            }
+                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
-                        "fields" => {
-                            builder = builder.set_fields(
-                                crate::protocol_serde::shape_data_lake_dataset_schema_field_list::de_data_lake_dataset_schema_field_list(tokens)?,
-                            );
-                        }
-                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
-                    },
+                    }
                     other => {
                         return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
                             "expected object key or end object, found: {:?}",

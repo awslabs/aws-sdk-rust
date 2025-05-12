@@ -29,6 +29,8 @@ pub struct GetFleetOutput {
     pub max_worker_count: i32,
     /// <p>The configuration setting for the fleet.</p>
     pub configuration: ::std::option::Option<crate::types::FleetConfiguration>,
+    /// <p>The script that runs as a worker is starting up that you can use to provide additional configuration for workers in your fleet.</p>
+    pub host_configuration: ::std::option::Option<crate::types::HostConfiguration>,
     /// <p>Outlines what the fleet is capable of for minimums, maximums, and naming, in addition to attribute names and values.</p>
     pub capabilities: ::std::option::Option<crate::types::FleetCapabilities>,
     /// <p>The IAM role ARN.</p>
@@ -95,6 +97,10 @@ impl GetFleetOutput {
     pub fn configuration(&self) -> ::std::option::Option<&crate::types::FleetConfiguration> {
         self.configuration.as_ref()
     }
+    /// <p>The script that runs as a worker is starting up that you can use to provide additional configuration for workers in your fleet.</p>
+    pub fn host_configuration(&self) -> ::std::option::Option<&crate::types::HostConfiguration> {
+        self.host_configuration.as_ref()
+    }
     /// <p>Outlines what the fleet is capable of for minimums, maximums, and naming, in addition to attribute names and values.</p>
     pub fn capabilities(&self) -> ::std::option::Option<&crate::types::FleetCapabilities> {
         self.capabilities.as_ref()
@@ -136,6 +142,7 @@ impl ::std::fmt::Debug for GetFleetOutput {
         formatter.field("min_worker_count", &self.min_worker_count);
         formatter.field("max_worker_count", &self.max_worker_count);
         formatter.field("configuration", &self.configuration);
+        formatter.field("host_configuration", &self.host_configuration);
         formatter.field("capabilities", &self.capabilities);
         formatter.field("role_arn", &self.role_arn);
         formatter.field("created_at", &self.created_at);
@@ -173,6 +180,7 @@ pub struct GetFleetOutputBuilder {
     pub(crate) min_worker_count: ::std::option::Option<i32>,
     pub(crate) max_worker_count: ::std::option::Option<i32>,
     pub(crate) configuration: ::std::option::Option<crate::types::FleetConfiguration>,
+    pub(crate) host_configuration: ::std::option::Option<crate::types::HostConfiguration>,
     pub(crate) capabilities: ::std::option::Option<crate::types::FleetCapabilities>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -356,6 +364,20 @@ impl GetFleetOutputBuilder {
     pub fn get_configuration(&self) -> &::std::option::Option<crate::types::FleetConfiguration> {
         &self.configuration
     }
+    /// <p>The script that runs as a worker is starting up that you can use to provide additional configuration for workers in your fleet.</p>
+    pub fn host_configuration(mut self, input: crate::types::HostConfiguration) -> Self {
+        self.host_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The script that runs as a worker is starting up that you can use to provide additional configuration for workers in your fleet.</p>
+    pub fn set_host_configuration(mut self, input: ::std::option::Option<crate::types::HostConfiguration>) -> Self {
+        self.host_configuration = input;
+        self
+    }
+    /// <p>The script that runs as a worker is starting up that you can use to provide additional configuration for workers in your fleet.</p>
+    pub fn get_host_configuration(&self) -> &::std::option::Option<crate::types::HostConfiguration> {
+        &self.host_configuration
+    }
     /// <p>Outlines what the fleet is capable of for minimums, maximums, and naming, in addition to attribute names and values.</p>
     pub fn capabilities(mut self, input: crate::types::FleetCapabilities) -> Self {
         self.capabilities = ::std::option::Option::Some(input);
@@ -512,6 +534,7 @@ impl GetFleetOutputBuilder {
                 )
             })?,
             configuration: self.configuration,
+            host_configuration: self.host_configuration,
             capabilities: self.capabilities,
             role_arn: self.role_arn.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
@@ -551,6 +574,7 @@ impl ::std::fmt::Debug for GetFleetOutputBuilder {
         formatter.field("min_worker_count", &self.min_worker_count);
         formatter.field("max_worker_count", &self.max_worker_count);
         formatter.field("configuration", &self.configuration);
+        formatter.field("host_configuration", &self.host_configuration);
         formatter.field("capabilities", &self.capabilities);
         formatter.field("role_arn", &self.role_arn);
         formatter.field("created_at", &self.created_at);

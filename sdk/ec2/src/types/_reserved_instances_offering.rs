@@ -20,6 +20,8 @@ pub struct ReservedInstancesOffering {
     pub recurring_charges: ::std::option::Option<::std::vec::Vec<crate::types::RecurringCharge>>,
     /// <p>Whether the Reserved Instance is applied to instances in a Region or an Availability Zone.</p>
     pub scope: ::std::option::Option<crate::types::Scope>,
+    /// <p>The ID of the Availability Zone.</p>
+    pub availability_zone_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the Reserved Instance offering. This is the offering ID used in <code>GetReservedInstancesExchangeQuote</code> to confirm that an exchange can be made.</p>
     pub reserved_instances_offering_id: ::std::option::Option<::std::string::String>,
     /// <p>The instance type on which the Reserved Instance can be used.</p>
@@ -72,6 +74,10 @@ impl ReservedInstancesOffering {
     pub fn scope(&self) -> ::std::option::Option<&crate::types::Scope> {
         self.scope.as_ref()
     }
+    /// <p>The ID of the Availability Zone.</p>
+    pub fn availability_zone_id(&self) -> ::std::option::Option<&str> {
+        self.availability_zone_id.as_deref()
+    }
     /// <p>The ID of the Reserved Instance offering. This is the offering ID used in <code>GetReservedInstancesExchangeQuote</code> to confirm that an exchange can be made.</p>
     pub fn reserved_instances_offering_id(&self) -> ::std::option::Option<&str> {
         self.reserved_instances_offering_id.as_deref()
@@ -120,6 +126,7 @@ pub struct ReservedInstancesOfferingBuilder {
     pub(crate) pricing_details: ::std::option::Option<::std::vec::Vec<crate::types::PricingDetail>>,
     pub(crate) recurring_charges: ::std::option::Option<::std::vec::Vec<crate::types::RecurringCharge>>,
     pub(crate) scope: ::std::option::Option<crate::types::Scope>,
+    pub(crate) availability_zone_id: ::std::option::Option<::std::string::String>,
     pub(crate) reserved_instances_offering_id: ::std::option::Option<::std::string::String>,
     pub(crate) instance_type: ::std::option::Option<crate::types::InstanceType>,
     pub(crate) availability_zone: ::std::option::Option<::std::string::String>,
@@ -253,6 +260,20 @@ impl ReservedInstancesOfferingBuilder {
     pub fn get_scope(&self) -> &::std::option::Option<crate::types::Scope> {
         &self.scope
     }
+    /// <p>The ID of the Availability Zone.</p>
+    pub fn availability_zone_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.availability_zone_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ID of the Availability Zone.</p>
+    pub fn set_availability_zone_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.availability_zone_id = input;
+        self
+    }
+    /// <p>The ID of the Availability Zone.</p>
+    pub fn get_availability_zone_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.availability_zone_id
+    }
     /// <p>The ID of the Reserved Instance offering. This is the offering ID used in <code>GetReservedInstancesExchangeQuote</code> to confirm that an exchange can be made.</p>
     pub fn reserved_instances_offering_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.reserved_instances_offering_id = ::std::option::Option::Some(input.into());
@@ -362,6 +383,7 @@ impl ReservedInstancesOfferingBuilder {
             pricing_details: self.pricing_details,
             recurring_charges: self.recurring_charges,
             scope: self.scope,
+            availability_zone_id: self.availability_zone_id,
             reserved_instances_offering_id: self.reserved_instances_offering_id,
             instance_type: self.instance_type,
             availability_zone: self.availability_zone,

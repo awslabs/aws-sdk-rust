@@ -185,6 +185,9 @@ pub(crate) fn de_get_fleet(
                             .transpose()?,
                     );
                 }
+                "hostConfiguration" => {
+                    builder = builder.set_host_configuration(crate::protocol_serde::shape_host_configuration::de_host_configuration(tokens)?);
+                }
                 "maxWorkerCount" => {
                     builder = builder.set_max_worker_count(
                         ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?

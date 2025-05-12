@@ -10,6 +10,9 @@ pub mod create_data_integration_flow;
 /// Types for the `CreateDataLakeDataset` operation.
 pub mod create_data_lake_dataset;
 
+/// Types for the `CreateDataLakeNamespace` operation.
+pub mod create_data_lake_namespace;
+
 /// Types for the `CreateInstance` operation.
 pub mod create_instance;
 
@@ -19,26 +22,47 @@ pub mod delete_data_integration_flow;
 /// Types for the `DeleteDataLakeDataset` operation.
 pub mod delete_data_lake_dataset;
 
+/// Types for the `DeleteDataLakeNamespace` operation.
+pub mod delete_data_lake_namespace;
+
 /// Types for the `DeleteInstance` operation.
 pub mod delete_instance;
 
 /// Types for the `GetBillOfMaterialsImportJob` operation.
 pub mod get_bill_of_materials_import_job;
 
+/// Types for the `GetDataIntegrationEvent` operation.
+pub mod get_data_integration_event;
+
 /// Types for the `GetDataIntegrationFlow` operation.
 pub mod get_data_integration_flow;
+
+/// Types for the `GetDataIntegrationFlowExecution` operation.
+pub mod get_data_integration_flow_execution;
 
 /// Types for the `GetDataLakeDataset` operation.
 pub mod get_data_lake_dataset;
 
+/// Types for the `GetDataLakeNamespace` operation.
+pub mod get_data_lake_namespace;
+
 /// Types for the `GetInstance` operation.
 pub mod get_instance;
+
+/// Types for the `ListDataIntegrationEvents` operation.
+pub mod list_data_integration_events;
+
+/// Types for the `ListDataIntegrationFlowExecutions` operation.
+pub mod list_data_integration_flow_executions;
 
 /// Types for the `ListDataIntegrationFlows` operation.
 pub mod list_data_integration_flows;
 
 /// Types for the `ListDataLakeDatasets` operation.
 pub mod list_data_lake_datasets;
+
+/// Types for the `ListDataLakeNamespaces` operation.
+pub mod list_data_lake_namespaces;
 
 /// Types for the `ListInstances` operation.
 pub mod list_instances;
@@ -60,6 +84,9 @@ pub mod update_data_integration_flow;
 
 /// Types for the `UpdateDataLakeDataset` operation.
 pub mod update_data_lake_dataset;
+
+/// Types for the `UpdateDataLakeNamespace` operation.
+pub mod update_data_lake_namespace;
 
 /// Types for the `UpdateInstance` operation.
 pub mod update_instance;

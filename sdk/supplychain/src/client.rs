@@ -142,6 +142,8 @@ mod create_data_integration_flow;
 
 mod create_data_lake_dataset;
 
+mod create_data_lake_namespace;
+
 mod create_instance;
 
 /// Operation customization and supporting types.
@@ -175,19 +177,33 @@ mod delete_data_integration_flow;
 
 mod delete_data_lake_dataset;
 
+mod delete_data_lake_namespace;
+
 mod delete_instance;
 
 mod get_bill_of_materials_import_job;
 
+mod get_data_integration_event;
+
 mod get_data_integration_flow;
+
+mod get_data_integration_flow_execution;
 
 mod get_data_lake_dataset;
 
+mod get_data_lake_namespace;
+
 mod get_instance;
+
+mod list_data_integration_events;
+
+mod list_data_integration_flow_executions;
 
 mod list_data_integration_flows;
 
 mod list_data_lake_datasets;
+
+mod list_data_lake_namespaces;
 
 mod list_instances;
 
@@ -202,5 +218,7 @@ mod untag_resource;
 mod update_data_integration_flow;
 
 mod update_data_lake_dataset;
+
+mod update_data_lake_namespace;
 
 mod update_instance;

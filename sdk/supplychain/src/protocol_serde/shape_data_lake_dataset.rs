@@ -54,6 +54,11 @@ where
                                     .transpose()?,
                             );
                         }
+                        "partitionSpec" => {
+                            builder = builder.set_partition_spec(
+                                crate::protocol_serde::shape_data_lake_dataset_partition_spec::de_data_lake_dataset_partition_spec(tokens)?,
+                            );
+                        }
                         "createdTime" => {
                             builder = builder.set_created_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                                 tokens.next(),

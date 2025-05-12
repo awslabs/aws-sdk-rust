@@ -14,6 +14,7 @@
 /// match datalakedatasetschemafieldtype {
 ///     DataLakeDatasetSchemaFieldType::Double => { /* ... */ },
 ///     DataLakeDatasetSchemaFieldType::Int => { /* ... */ },
+///     DataLakeDatasetSchemaFieldType::Long => { /* ... */ },
 ///     DataLakeDatasetSchemaFieldType::String => { /* ... */ },
 ///     DataLakeDatasetSchemaFieldType::Timestamp => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -49,6 +50,8 @@ pub enum DataLakeDatasetSchemaFieldType {
     #[allow(missing_docs)] // documentation missing in model
     Int,
     #[allow(missing_docs)] // documentation missing in model
+    Long,
+    #[allow(missing_docs)] // documentation missing in model
     String,
     #[allow(missing_docs)] // documentation missing in model
     Timestamp,
@@ -61,6 +64,7 @@ impl ::std::convert::From<&str> for DataLakeDatasetSchemaFieldType {
         match s {
             "DOUBLE" => DataLakeDatasetSchemaFieldType::Double,
             "INT" => DataLakeDatasetSchemaFieldType::Int,
+            "LONG" => DataLakeDatasetSchemaFieldType::Long,
             "STRING" => DataLakeDatasetSchemaFieldType::String,
             "TIMESTAMP" => DataLakeDatasetSchemaFieldType::Timestamp,
             other => DataLakeDatasetSchemaFieldType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -80,6 +84,7 @@ impl DataLakeDatasetSchemaFieldType {
         match self {
             DataLakeDatasetSchemaFieldType::Double => "DOUBLE",
             DataLakeDatasetSchemaFieldType::Int => "INT",
+            DataLakeDatasetSchemaFieldType::Long => "LONG",
             DataLakeDatasetSchemaFieldType::String => "STRING",
             DataLakeDatasetSchemaFieldType::Timestamp => "TIMESTAMP",
             DataLakeDatasetSchemaFieldType::Unknown(value) => value.as_str(),
@@ -87,7 +92,7 @@ impl DataLakeDatasetSchemaFieldType {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["DOUBLE", "INT", "STRING", "TIMESTAMP"]
+        &["DOUBLE", "INT", "LONG", "STRING", "TIMESTAMP"]
     }
 }
 impl ::std::convert::AsRef<str> for DataLakeDatasetSchemaFieldType {
@@ -112,6 +117,7 @@ impl ::std::fmt::Display for DataLakeDatasetSchemaFieldType {
         match self {
             DataLakeDatasetSchemaFieldType::Double => write!(f, "DOUBLE"),
             DataLakeDatasetSchemaFieldType::Int => write!(f, "INT"),
+            DataLakeDatasetSchemaFieldType::Long => write!(f, "LONG"),
             DataLakeDatasetSchemaFieldType::String => write!(f, "STRING"),
             DataLakeDatasetSchemaFieldType::Timestamp => write!(f, "TIMESTAMP"),
             DataLakeDatasetSchemaFieldType::Unknown(value) => write!(f, "{}", value),

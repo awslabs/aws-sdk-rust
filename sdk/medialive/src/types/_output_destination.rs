@@ -14,6 +14,8 @@ pub struct OutputDestination {
     pub settings: ::std::option::Option<::std::vec::Vec<crate::types::OutputDestinationSettings>>,
     /// SRT settings for an SRT output; one destination for each redundant encoder.
     pub srt_settings: ::std::option::Option<::std::vec::Vec<crate::types::SrtOutputDestinationSettings>>,
+    /// Optional assignment of an output to a logical interface on the Node. Only applies to on premises channels.
+    pub logical_interface_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl OutputDestination {
     /// User-specified id. This is used in an output group or an output.
@@ -42,6 +44,12 @@ impl OutputDestination {
     pub fn srt_settings(&self) -> &[crate::types::SrtOutputDestinationSettings] {
         self.srt_settings.as_deref().unwrap_or_default()
     }
+    /// Optional assignment of an output to a logical interface on the Node. Only applies to on premises channels.
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.logical_interface_names.is_none()`.
+    pub fn logical_interface_names(&self) -> &[::std::string::String] {
+        self.logical_interface_names.as_deref().unwrap_or_default()
+    }
 }
 impl OutputDestination {
     /// Creates a new builder-style object to manufacture [`OutputDestination`](crate::types::OutputDestination).
@@ -59,6 +67,7 @@ pub struct OutputDestinationBuilder {
     pub(crate) multiplex_settings: ::std::option::Option<crate::types::MultiplexProgramChannelDestinationSettings>,
     pub(crate) settings: ::std::option::Option<::std::vec::Vec<crate::types::OutputDestinationSettings>>,
     pub(crate) srt_settings: ::std::option::Option<::std::vec::Vec<crate::types::SrtOutputDestinationSettings>>,
+    pub(crate) logical_interface_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl OutputDestinationBuilder {
     /// User-specified id. This is used in an output group or an output.
@@ -152,6 +161,26 @@ impl OutputDestinationBuilder {
     pub fn get_srt_settings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SrtOutputDestinationSettings>> {
         &self.srt_settings
     }
+    /// Appends an item to `logical_interface_names`.
+    ///
+    /// To override the contents of this collection use [`set_logical_interface_names`](Self::set_logical_interface_names).
+    ///
+    /// Optional assignment of an output to a logical interface on the Node. Only applies to on premises channels.
+    pub fn logical_interface_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.logical_interface_names.unwrap_or_default();
+        v.push(input.into());
+        self.logical_interface_names = ::std::option::Option::Some(v);
+        self
+    }
+    /// Optional assignment of an output to a logical interface on the Node. Only applies to on premises channels.
+    pub fn set_logical_interface_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.logical_interface_names = input;
+        self
+    }
+    /// Optional assignment of an output to a logical interface on the Node. Only applies to on premises channels.
+    pub fn get_logical_interface_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.logical_interface_names
+    }
     /// Consumes the builder and constructs a [`OutputDestination`](crate::types::OutputDestination).
     pub fn build(self) -> crate::types::OutputDestination {
         crate::types::OutputDestination {
@@ -160,6 +189,7 @@ impl OutputDestinationBuilder {
             multiplex_settings: self.multiplex_settings,
             settings: self.settings,
             srt_settings: self.srt_settings,
+            logical_interface_names: self.logical_interface_names,
         }
     }
 }

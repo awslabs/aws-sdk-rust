@@ -4816,3 +4816,867 @@ async fn operation_input_test_get_access_point_policy_status_139() {
         error
     );
 }
+
+#[::tokio::test]
+async fn operation_input_test_create_access_point_140() {
+    /* documentation: Access Point APIs on express bucket routed to custom endpoint if provided */
+    /* builtIns: {
+        "AWS::Region": "us-east-1",
+        "SDK::Endpoint": "https://my-endpoint.express-control.s3.aws.dev"
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_s3control::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
+        let builder = builder.endpoint_url("https://my-endpoint.express-control.s3.aws.dev");
+        builder.build()
+    };
+    let client = aws_sdk_s3control::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .create_access_point()
+            .set_name(::std::option::Option::Some("myaccesspoint--abcd-ab1--xa-s3".to_owned()))
+            .set_bucket(::std::option::Option::Some("mybucket--abcd-ab1--x-s3".to_owned()))
+            .set_account_id(::std::option::Option::Some("871317572157".to_owned()))
+            .set_scope(::std::option::Option::Some(
+                aws_sdk_s3control::types::Scope::builder()
+                    .set_prefixes(::std::option::Option::Some(vec![]))
+                    .set_permissions(::std::option::Option::Some(vec![]))
+                    .build()
+            ))
+            .send()
+            .await
+    );
+    let req = rcvr.expect_request();
+    let uri = req.uri().to_string();
+    assert!(
+        uri.starts_with("https://my-endpoint.express-control.s3.aws.dev"),
+        "expected URI to start with `https://my-endpoint.express-control.s3.aws.dev` but it was `{}`",
+        uri
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_get_access_point_141() {
+    /* documentation: Access Point APIs on express bucket routed to custom endpoint if provided */
+    /* builtIns: {
+        "AWS::Region": "us-east-1",
+        "SDK::Endpoint": "https://my-endpoint.express-control.s3.aws.dev"
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_s3control::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
+        let builder = builder.endpoint_url("https://my-endpoint.express-control.s3.aws.dev");
+        builder.build()
+    };
+    let client = aws_sdk_s3control::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .get_access_point()
+            .set_name(::std::option::Option::Some("myaccesspoint--abcd-ab1--xa-s3".to_owned()))
+            .set_account_id(::std::option::Option::Some("871317572157".to_owned()))
+            .send()
+            .await
+    );
+    let req = rcvr.expect_request();
+    let uri = req.uri().to_string();
+    assert!(
+        uri.starts_with("https://my-endpoint.express-control.s3.aws.dev"),
+        "expected URI to start with `https://my-endpoint.express-control.s3.aws.dev` but it was `{}`",
+        uri
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_delete_access_point_142() {
+    /* documentation: Access Point APIs on express bucket routed to custom endpoint if provided */
+    /* builtIns: {
+        "AWS::Region": "us-east-1",
+        "SDK::Endpoint": "https://my-endpoint.express-control.s3.aws.dev"
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_s3control::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
+        let builder = builder.endpoint_url("https://my-endpoint.express-control.s3.aws.dev");
+        builder.build()
+    };
+    let client = aws_sdk_s3control::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .delete_access_point()
+            .set_name(::std::option::Option::Some("myaccesspoint--abcd-ab1--xa-s3".to_owned()))
+            .set_account_id(::std::option::Option::Some("871317572157".to_owned()))
+            .send()
+            .await
+    );
+    let req = rcvr.expect_request();
+    let uri = req.uri().to_string();
+    assert!(
+        uri.starts_with("https://my-endpoint.express-control.s3.aws.dev"),
+        "expected URI to start with `https://my-endpoint.express-control.s3.aws.dev` but it was `{}`",
+        uri
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_put_access_point_policy_143() {
+    /* documentation: Access Point APIs on express bucket routed to custom endpoint if provided */
+    /* builtIns: {
+        "AWS::Region": "us-east-1",
+        "SDK::Endpoint": "https://my-endpoint.express-control.s3.aws.dev"
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_s3control::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
+        let builder = builder.endpoint_url("https://my-endpoint.express-control.s3.aws.dev");
+        builder.build()
+    };
+    let client = aws_sdk_s3control::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .put_access_point_policy()
+            .set_name(::std::option::Option::Some("myaccesspoint--abcd-ab1--xa-s3".to_owned()))
+            .set_account_id(::std::option::Option::Some("871317572157".to_owned()))
+            .set_policy(::std::option::Option::Some("my-policy".to_owned()))
+            .send()
+            .await
+    );
+    let req = rcvr.expect_request();
+    let uri = req.uri().to_string();
+    assert!(
+        uri.starts_with("https://my-endpoint.express-control.s3.aws.dev"),
+        "expected URI to start with `https://my-endpoint.express-control.s3.aws.dev` but it was `{}`",
+        uri
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_get_access_point_policy_144() {
+    /* documentation: Access Point APIs on express bucket routed to custom endpoint if provided */
+    /* builtIns: {
+        "AWS::Region": "us-east-1",
+        "SDK::Endpoint": "https://my-endpoint.express-control.s3.aws.dev"
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_s3control::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
+        let builder = builder.endpoint_url("https://my-endpoint.express-control.s3.aws.dev");
+        builder.build()
+    };
+    let client = aws_sdk_s3control::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .get_access_point_policy()
+            .set_name(::std::option::Option::Some("myaccesspoint--abcd-ab1--xa-s3".to_owned()))
+            .set_account_id(::std::option::Option::Some("871317572157".to_owned()))
+            .send()
+            .await
+    );
+    let req = rcvr.expect_request();
+    let uri = req.uri().to_string();
+    assert!(
+        uri.starts_with("https://my-endpoint.express-control.s3.aws.dev"),
+        "expected URI to start with `https://my-endpoint.express-control.s3.aws.dev` but it was `{}`",
+        uri
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_delete_access_point_policy_145() {
+    /* documentation: Access Point APIs on express bucket routed to custom endpoint if provided */
+    /* builtIns: {
+        "AWS::Region": "us-east-1",
+        "SDK::Endpoint": "https://my-endpoint.express-control.s3.aws.dev"
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_s3control::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
+        let builder = builder.endpoint_url("https://my-endpoint.express-control.s3.aws.dev");
+        builder.build()
+    };
+    let client = aws_sdk_s3control::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .delete_access_point_policy()
+            .set_name(::std::option::Option::Some("myaccesspoint--abcd-ab1--xa-s3".to_owned()))
+            .set_account_id(::std::option::Option::Some("871317572157".to_owned()))
+            .send()
+            .await
+    );
+    let req = rcvr.expect_request();
+    let uri = req.uri().to_string();
+    assert!(
+        uri.starts_with("https://my-endpoint.express-control.s3.aws.dev"),
+        "expected URI to start with `https://my-endpoint.express-control.s3.aws.dev` but it was `{}`",
+        uri
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_get_access_point_policy_status_146() {
+    /* documentation: Access Point APIs on express bucket routed to custom endpoint if provided */
+    /* builtIns: {
+        "AWS::Region": "us-east-1",
+        "SDK::Endpoint": "https://my-endpoint.express-control.s3.aws.dev"
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_s3control::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
+        let builder = builder.endpoint_url("https://my-endpoint.express-control.s3.aws.dev");
+        builder.build()
+    };
+    let client = aws_sdk_s3control::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .get_access_point_policy_status()
+            .set_name(::std::option::Option::Some("myaccesspoint--abcd-ab1--xa-s3".to_owned()))
+            .set_account_id(::std::option::Option::Some("871317572157".to_owned()))
+            .send()
+            .await
+    );
+    let req = rcvr.expect_request();
+    let uri = req.uri().to_string();
+    assert!(
+        uri.starts_with("https://my-endpoint.express-control.s3.aws.dev"),
+        "expected URI to start with `https://my-endpoint.express-control.s3.aws.dev` but it was `{}`",
+        uri
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_list_access_points_for_directory_buckets_147() {
+    /* documentation: Access Point APIs on express bucket routed to custom endpoint if provided for List */
+    /* builtIns: {
+        "AWS::Region": "us-east-1",
+        "SDK::Endpoint": "https://my-endpoint.express-control.s3.aws.dev"
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_s3control::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
+        let builder = builder.endpoint_url("https://my-endpoint.express-control.s3.aws.dev");
+        builder.build()
+    };
+    let client = aws_sdk_s3control::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .list_access_points_for_directory_buckets()
+            .set_directory_bucket(::std::option::Option::Some("mybucket--abcd-ab1--x-s3".to_owned()))
+            .set_account_id(::std::option::Option::Some("871317572157".to_owned()))
+            .send()
+            .await
+    );
+    let req = rcvr.expect_request();
+    let uri = req.uri().to_string();
+    assert!(
+        uri.starts_with("https://my-endpoint.express-control.s3.aws.dev"),
+        "expected URI to start with `https://my-endpoint.express-control.s3.aws.dev` but it was `{}`",
+        uri
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_create_access_point_148() {
+    /* documentation: Error on Access Point APIs on express bucket for dual stack */
+    /* builtIns: {
+        "AWS::Region": "us-east-1",
+        "AWS::UseDualStack": true
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_s3control::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
+        let builder = builder.use_dual_stack(true);
+        builder.build()
+    };
+    let client = aws_sdk_s3control::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .create_access_point()
+            .set_name(::std::option::Option::Some("myaccesspoint--abcd-ab1--xa-s3".to_owned()))
+            .set_bucket(::std::option::Option::Some("mybucket--abcd-ab1--x-s3".to_owned()))
+            .set_account_id(::std::option::Option::Some("871317572157".to_owned()))
+            .set_scope(::std::option::Option::Some(
+                aws_sdk_s3control::types::Scope::builder()
+                    .set_prefixes(::std::option::Option::Some(vec![]))
+                    .set_permissions(::std::option::Option::Some(vec![]))
+                    .build()
+            ))
+            .send()
+            .await
+    );
+    rcvr.expect_no_request();
+    let error =
+        _result.expect_err("expected error: S3Express does not support Dual-stack. [Error on Access Point APIs on express bucket for dual stack]");
+    assert!(
+        format!("{:?}", error).contains("S3Express does not support Dual-stack."),
+        "expected error to contain `S3Express does not support Dual-stack.` but it was {:?}",
+        error
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_get_access_point_149() {
+    /* documentation: Error on Access Point APIs on express bucket for dual stack */
+    /* builtIns: {
+        "AWS::Region": "us-east-1",
+        "AWS::UseDualStack": true
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_s3control::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
+        let builder = builder.use_dual_stack(true);
+        builder.build()
+    };
+    let client = aws_sdk_s3control::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .get_access_point()
+            .set_name(::std::option::Option::Some("myaccesspoint--abcd-ab1--xa-s3".to_owned()))
+            .set_account_id(::std::option::Option::Some("871317572157".to_owned()))
+            .send()
+            .await
+    );
+    rcvr.expect_no_request();
+    let error =
+        _result.expect_err("expected error: S3Express does not support Dual-stack. [Error on Access Point APIs on express bucket for dual stack]");
+    assert!(
+        format!("{:?}", error).contains("S3Express does not support Dual-stack."),
+        "expected error to contain `S3Express does not support Dual-stack.` but it was {:?}",
+        error
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_delete_access_point_150() {
+    /* documentation: Error on Access Point APIs on express bucket for dual stack */
+    /* builtIns: {
+        "AWS::Region": "us-east-1",
+        "AWS::UseDualStack": true
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_s3control::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
+        let builder = builder.use_dual_stack(true);
+        builder.build()
+    };
+    let client = aws_sdk_s3control::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .delete_access_point()
+            .set_name(::std::option::Option::Some("myaccesspoint--abcd-ab1--xa-s3".to_owned()))
+            .set_account_id(::std::option::Option::Some("871317572157".to_owned()))
+            .send()
+            .await
+    );
+    rcvr.expect_no_request();
+    let error =
+        _result.expect_err("expected error: S3Express does not support Dual-stack. [Error on Access Point APIs on express bucket for dual stack]");
+    assert!(
+        format!("{:?}", error).contains("S3Express does not support Dual-stack."),
+        "expected error to contain `S3Express does not support Dual-stack.` but it was {:?}",
+        error
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_put_access_point_policy_151() {
+    /* documentation: Error on Access Point APIs on express bucket for dual stack */
+    /* builtIns: {
+        "AWS::Region": "us-east-1",
+        "AWS::UseDualStack": true
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_s3control::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
+        let builder = builder.use_dual_stack(true);
+        builder.build()
+    };
+    let client = aws_sdk_s3control::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .put_access_point_policy()
+            .set_name(::std::option::Option::Some("myaccesspoint--abcd-ab1--xa-s3".to_owned()))
+            .set_account_id(::std::option::Option::Some("871317572157".to_owned()))
+            .set_policy(::std::option::Option::Some("my-policy".to_owned()))
+            .send()
+            .await
+    );
+    rcvr.expect_no_request();
+    let error =
+        _result.expect_err("expected error: S3Express does not support Dual-stack. [Error on Access Point APIs on express bucket for dual stack]");
+    assert!(
+        format!("{:?}", error).contains("S3Express does not support Dual-stack."),
+        "expected error to contain `S3Express does not support Dual-stack.` but it was {:?}",
+        error
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_get_access_point_policy_152() {
+    /* documentation: Error on Access Point APIs on express bucket for dual stack */
+    /* builtIns: {
+        "AWS::Region": "us-east-1",
+        "AWS::UseDualStack": true
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_s3control::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
+        let builder = builder.use_dual_stack(true);
+        builder.build()
+    };
+    let client = aws_sdk_s3control::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .get_access_point_policy()
+            .set_name(::std::option::Option::Some("myaccesspoint--abcd-ab1--xa-s3".to_owned()))
+            .set_account_id(::std::option::Option::Some("871317572157".to_owned()))
+            .send()
+            .await
+    );
+    rcvr.expect_no_request();
+    let error =
+        _result.expect_err("expected error: S3Express does not support Dual-stack. [Error on Access Point APIs on express bucket for dual stack]");
+    assert!(
+        format!("{:?}", error).contains("S3Express does not support Dual-stack."),
+        "expected error to contain `S3Express does not support Dual-stack.` but it was {:?}",
+        error
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_delete_access_point_policy_153() {
+    /* documentation: Error on Access Point APIs on express bucket for dual stack */
+    /* builtIns: {
+        "AWS::Region": "us-east-1",
+        "AWS::UseDualStack": true
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_s3control::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
+        let builder = builder.use_dual_stack(true);
+        builder.build()
+    };
+    let client = aws_sdk_s3control::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .delete_access_point_policy()
+            .set_name(::std::option::Option::Some("myaccesspoint--abcd-ab1--xa-s3".to_owned()))
+            .set_account_id(::std::option::Option::Some("871317572157".to_owned()))
+            .send()
+            .await
+    );
+    rcvr.expect_no_request();
+    let error =
+        _result.expect_err("expected error: S3Express does not support Dual-stack. [Error on Access Point APIs on express bucket for dual stack]");
+    assert!(
+        format!("{:?}", error).contains("S3Express does not support Dual-stack."),
+        "expected error to contain `S3Express does not support Dual-stack.` but it was {:?}",
+        error
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_get_access_point_policy_status_154() {
+    /* documentation: Error on Access Point APIs on express bucket for dual stack */
+    /* builtIns: {
+        "AWS::Region": "us-east-1",
+        "AWS::UseDualStack": true
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_s3control::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
+        let builder = builder.use_dual_stack(true);
+        builder.build()
+    };
+    let client = aws_sdk_s3control::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .get_access_point_policy_status()
+            .set_name(::std::option::Option::Some("myaccesspoint--abcd-ab1--xa-s3".to_owned()))
+            .set_account_id(::std::option::Option::Some("871317572157".to_owned()))
+            .send()
+            .await
+    );
+    rcvr.expect_no_request();
+    let error =
+        _result.expect_err("expected error: S3Express does not support Dual-stack. [Error on Access Point APIs on express bucket for dual stack]");
+    assert!(
+        format!("{:?}", error).contains("S3Express does not support Dual-stack."),
+        "expected error to contain `S3Express does not support Dual-stack.` but it was {:?}",
+        error
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_list_access_points_for_directory_buckets_155() {
+    /* documentation: Error Access Point APIs on express bucket for dual stack for List */
+    /* builtIns: {
+        "AWS::Region": "us-east-1",
+        "AWS::UseDualStack": true
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_s3control::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
+        let builder = builder.use_dual_stack(true);
+        builder.build()
+    };
+    let client = aws_sdk_s3control::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .list_access_points_for_directory_buckets()
+            .set_directory_bucket(::std::option::Option::Some("mybucket--abcd-ab1--x-s3".to_owned()))
+            .set_account_id(::std::option::Option::Some("871317572157".to_owned()))
+            .send()
+            .await
+    );
+    rcvr.expect_no_request();
+    let error = _result
+        .expect_err("expected error: S3Express does not support Dual-stack. [Error Access Point APIs on express bucket for dual stack for List]");
+    assert!(
+        format!("{:?}", error).contains("S3Express does not support Dual-stack."),
+        "expected error to contain `S3Express does not support Dual-stack.` but it was {:?}",
+        error
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_create_access_point_156() {
+    /* documentation: Error on Access Point APIs on express bucket for custom endpoint and dual stack */
+    /* builtIns: {
+        "AWS::Region": "us-east-1",
+        "SDK::Endpoint": "https://my-endpoint.express-control.s3.aws.dev",
+        "AWS::UseDualStack": true
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_s3control::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
+        let builder = builder.endpoint_url("https://my-endpoint.express-control.s3.aws.dev");
+        let builder = builder.use_dual_stack(true);
+        builder.build()
+    };
+    let client = aws_sdk_s3control::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .create_access_point()
+            .set_name(::std::option::Option::Some("myaccesspoint--abcd-ab1--xa-s3".to_owned()))
+            .set_bucket(::std::option::Option::Some("mybucket--abcd-ab1--x-s3".to_owned()))
+            .set_account_id(::std::option::Option::Some("871317572157".to_owned()))
+            .set_scope(::std::option::Option::Some(
+                aws_sdk_s3control::types::Scope::builder()
+                    .set_prefixes(::std::option::Option::Some(vec![]))
+                    .set_permissions(::std::option::Option::Some(vec![]))
+                    .build()
+            ))
+            .send()
+            .await
+    );
+    rcvr.expect_no_request();
+    let error = _result.expect_err("expected error: Invalid Configuration: DualStack and custom endpoint are not supported [Error on Access Point APIs on express bucket for custom endpoint and dual stack]");
+    assert!(
+        format!("{:?}", error).contains("Invalid Configuration: DualStack and custom endpoint are not supported"),
+        "expected error to contain `Invalid Configuration: DualStack and custom endpoint are not supported` but it was {:?}",
+        error
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_get_access_point_157() {
+    /* documentation: Error on Access Point APIs on express bucket for custom endpoint and dual stack */
+    /* builtIns: {
+        "AWS::Region": "us-east-1",
+        "SDK::Endpoint": "https://my-endpoint.express-control.s3.aws.dev",
+        "AWS::UseDualStack": true
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_s3control::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
+        let builder = builder.endpoint_url("https://my-endpoint.express-control.s3.aws.dev");
+        let builder = builder.use_dual_stack(true);
+        builder.build()
+    };
+    let client = aws_sdk_s3control::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .get_access_point()
+            .set_name(::std::option::Option::Some("myaccesspoint--abcd-ab1--xa-s3".to_owned()))
+            .set_account_id(::std::option::Option::Some("871317572157".to_owned()))
+            .send()
+            .await
+    );
+    rcvr.expect_no_request();
+    let error = _result.expect_err("expected error: Invalid Configuration: DualStack and custom endpoint are not supported [Error on Access Point APIs on express bucket for custom endpoint and dual stack]");
+    assert!(
+        format!("{:?}", error).contains("Invalid Configuration: DualStack and custom endpoint are not supported"),
+        "expected error to contain `Invalid Configuration: DualStack and custom endpoint are not supported` but it was {:?}",
+        error
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_delete_access_point_158() {
+    /* documentation: Error on Access Point APIs on express bucket for custom endpoint and dual stack */
+    /* builtIns: {
+        "AWS::Region": "us-east-1",
+        "SDK::Endpoint": "https://my-endpoint.express-control.s3.aws.dev",
+        "AWS::UseDualStack": true
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_s3control::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
+        let builder = builder.endpoint_url("https://my-endpoint.express-control.s3.aws.dev");
+        let builder = builder.use_dual_stack(true);
+        builder.build()
+    };
+    let client = aws_sdk_s3control::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .delete_access_point()
+            .set_name(::std::option::Option::Some("myaccesspoint--abcd-ab1--xa-s3".to_owned()))
+            .set_account_id(::std::option::Option::Some("871317572157".to_owned()))
+            .send()
+            .await
+    );
+    rcvr.expect_no_request();
+    let error = _result.expect_err("expected error: Invalid Configuration: DualStack and custom endpoint are not supported [Error on Access Point APIs on express bucket for custom endpoint and dual stack]");
+    assert!(
+        format!("{:?}", error).contains("Invalid Configuration: DualStack and custom endpoint are not supported"),
+        "expected error to contain `Invalid Configuration: DualStack and custom endpoint are not supported` but it was {:?}",
+        error
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_put_access_point_policy_159() {
+    /* documentation: Error on Access Point APIs on express bucket for custom endpoint and dual stack */
+    /* builtIns: {
+        "AWS::Region": "us-east-1",
+        "SDK::Endpoint": "https://my-endpoint.express-control.s3.aws.dev",
+        "AWS::UseDualStack": true
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_s3control::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
+        let builder = builder.endpoint_url("https://my-endpoint.express-control.s3.aws.dev");
+        let builder = builder.use_dual_stack(true);
+        builder.build()
+    };
+    let client = aws_sdk_s3control::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .put_access_point_policy()
+            .set_name(::std::option::Option::Some("myaccesspoint--abcd-ab1--xa-s3".to_owned()))
+            .set_account_id(::std::option::Option::Some("871317572157".to_owned()))
+            .set_policy(::std::option::Option::Some("my-policy".to_owned()))
+            .send()
+            .await
+    );
+    rcvr.expect_no_request();
+    let error = _result.expect_err("expected error: Invalid Configuration: DualStack and custom endpoint are not supported [Error on Access Point APIs on express bucket for custom endpoint and dual stack]");
+    assert!(
+        format!("{:?}", error).contains("Invalid Configuration: DualStack and custom endpoint are not supported"),
+        "expected error to contain `Invalid Configuration: DualStack and custom endpoint are not supported` but it was {:?}",
+        error
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_get_access_point_policy_160() {
+    /* documentation: Error on Access Point APIs on express bucket for custom endpoint and dual stack */
+    /* builtIns: {
+        "AWS::Region": "us-east-1",
+        "SDK::Endpoint": "https://my-endpoint.express-control.s3.aws.dev",
+        "AWS::UseDualStack": true
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_s3control::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
+        let builder = builder.endpoint_url("https://my-endpoint.express-control.s3.aws.dev");
+        let builder = builder.use_dual_stack(true);
+        builder.build()
+    };
+    let client = aws_sdk_s3control::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .get_access_point_policy()
+            .set_name(::std::option::Option::Some("myaccesspoint--abcd-ab1--xa-s3".to_owned()))
+            .set_account_id(::std::option::Option::Some("871317572157".to_owned()))
+            .send()
+            .await
+    );
+    rcvr.expect_no_request();
+    let error = _result.expect_err("expected error: Invalid Configuration: DualStack and custom endpoint are not supported [Error on Access Point APIs on express bucket for custom endpoint and dual stack]");
+    assert!(
+        format!("{:?}", error).contains("Invalid Configuration: DualStack and custom endpoint are not supported"),
+        "expected error to contain `Invalid Configuration: DualStack and custom endpoint are not supported` but it was {:?}",
+        error
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_delete_access_point_policy_161() {
+    /* documentation: Error on Access Point APIs on express bucket for custom endpoint and dual stack */
+    /* builtIns: {
+        "AWS::Region": "us-east-1",
+        "SDK::Endpoint": "https://my-endpoint.express-control.s3.aws.dev",
+        "AWS::UseDualStack": true
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_s3control::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
+        let builder = builder.endpoint_url("https://my-endpoint.express-control.s3.aws.dev");
+        let builder = builder.use_dual_stack(true);
+        builder.build()
+    };
+    let client = aws_sdk_s3control::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .delete_access_point_policy()
+            .set_name(::std::option::Option::Some("myaccesspoint--abcd-ab1--xa-s3".to_owned()))
+            .set_account_id(::std::option::Option::Some("871317572157".to_owned()))
+            .send()
+            .await
+    );
+    rcvr.expect_no_request();
+    let error = _result.expect_err("expected error: Invalid Configuration: DualStack and custom endpoint are not supported [Error on Access Point APIs on express bucket for custom endpoint and dual stack]");
+    assert!(
+        format!("{:?}", error).contains("Invalid Configuration: DualStack and custom endpoint are not supported"),
+        "expected error to contain `Invalid Configuration: DualStack and custom endpoint are not supported` but it was {:?}",
+        error
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_get_access_point_policy_status_162() {
+    /* documentation: Error on Access Point APIs on express bucket for custom endpoint and dual stack */
+    /* builtIns: {
+        "AWS::Region": "us-east-1",
+        "SDK::Endpoint": "https://my-endpoint.express-control.s3.aws.dev",
+        "AWS::UseDualStack": true
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_s3control::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
+        let builder = builder.endpoint_url("https://my-endpoint.express-control.s3.aws.dev");
+        let builder = builder.use_dual_stack(true);
+        builder.build()
+    };
+    let client = aws_sdk_s3control::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .get_access_point_policy_status()
+            .set_name(::std::option::Option::Some("myaccesspoint--abcd-ab1--xa-s3".to_owned()))
+            .set_account_id(::std::option::Option::Some("871317572157".to_owned()))
+            .send()
+            .await
+    );
+    rcvr.expect_no_request();
+    let error = _result.expect_err("expected error: Invalid Configuration: DualStack and custom endpoint are not supported [Error on Access Point APIs on express bucket for custom endpoint and dual stack]");
+    assert!(
+        format!("{:?}", error).contains("Invalid Configuration: DualStack and custom endpoint are not supported"),
+        "expected error to contain `Invalid Configuration: DualStack and custom endpoint are not supported` but it was {:?}",
+        error
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_list_access_points_for_directory_buckets_163() {
+    /* documentation: Error Access Point APIs on express bucket for custom endpoint and dual stack for List */
+    /* builtIns: {
+        "AWS::Region": "us-east-1",
+        "SDK::Endpoint": "https://my-endpoint.express-control.s3.aws.dev",
+        "AWS::UseDualStack": true
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_s3control::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
+        let builder = builder.endpoint_url("https://my-endpoint.express-control.s3.aws.dev");
+        let builder = builder.use_dual_stack(true);
+        builder.build()
+    };
+    let client = aws_sdk_s3control::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .list_access_points_for_directory_buckets()
+            .set_directory_bucket(::std::option::Option::Some("mybucket--abcd-ab1--x-s3".to_owned()))
+            .set_account_id(::std::option::Option::Some("871317572157".to_owned()))
+            .send()
+            .await
+    );
+    rcvr.expect_no_request();
+    let error = _result.expect_err("expected error: Invalid Configuration: DualStack and custom endpoint are not supported [Error Access Point APIs on express bucket for custom endpoint and dual stack for List]");
+    assert!(
+        format!("{:?}", error).contains("Invalid Configuration: DualStack and custom endpoint are not supported"),
+        "expected error to contain `Invalid Configuration: DualStack and custom endpoint are not supported` but it was {:?}",
+        error
+    );
+}

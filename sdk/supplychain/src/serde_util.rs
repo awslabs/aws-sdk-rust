@@ -32,6 +32,18 @@ pub(crate) fn create_data_lake_dataset_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn create_data_lake_namespace_output_output_correct_errors(
+    mut builder: crate::operation::create_data_lake_namespace::builders::CreateDataLakeNamespaceOutputBuilder,
+) -> crate::operation::create_data_lake_namespace::builders::CreateDataLakeNamespaceOutputBuilder {
+    if builder.namespace.is_none() {
+        builder.namespace = {
+            let builder = crate::types::builders::DataLakeNamespaceBuilder::default();
+            crate::serde_util::data_lake_namespace_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
 pub(crate) fn create_instance_output_output_correct_errors(
     mut builder: crate::operation::create_instance::builders::CreateInstanceOutputBuilder,
 ) -> crate::operation::create_instance::builders::CreateInstanceOutputBuilder {
@@ -71,6 +83,18 @@ pub(crate) fn delete_data_lake_dataset_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn delete_data_lake_namespace_output_output_correct_errors(
+    mut builder: crate::operation::delete_data_lake_namespace::builders::DeleteDataLakeNamespaceOutputBuilder,
+) -> crate::operation::delete_data_lake_namespace::builders::DeleteDataLakeNamespaceOutputBuilder {
+    if builder.instance_id.is_none() {
+        builder.instance_id = Some(Default::default())
+    }
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn delete_instance_output_output_correct_errors(
     mut builder: crate::operation::delete_instance::builders::DeleteInstanceOutputBuilder,
 ) -> crate::operation::delete_instance::builders::DeleteInstanceOutputBuilder {
@@ -95,6 +119,18 @@ pub(crate) fn get_bill_of_materials_import_job_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn get_data_integration_event_output_output_correct_errors(
+    mut builder: crate::operation::get_data_integration_event::builders::GetDataIntegrationEventOutputBuilder,
+) -> crate::operation::get_data_integration_event::builders::GetDataIntegrationEventOutputBuilder {
+    if builder.event.is_none() {
+        builder.event = {
+            let builder = crate::types::builders::DataIntegrationEventBuilder::default();
+            crate::serde_util::data_integration_event_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
 pub(crate) fn get_data_integration_flow_output_output_correct_errors(
     mut builder: crate::operation::get_data_integration_flow::builders::GetDataIntegrationFlowOutputBuilder,
 ) -> crate::operation::get_data_integration_flow::builders::GetDataIntegrationFlowOutputBuilder {
@@ -102,6 +138,18 @@ pub(crate) fn get_data_integration_flow_output_output_correct_errors(
         builder.flow = {
             let builder = crate::types::builders::DataIntegrationFlowBuilder::default();
             crate::serde_util::data_integration_flow_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
+pub(crate) fn get_data_integration_flow_execution_output_output_correct_errors(
+    mut builder: crate::operation::get_data_integration_flow_execution::builders::GetDataIntegrationFlowExecutionOutputBuilder,
+) -> crate::operation::get_data_integration_flow_execution::builders::GetDataIntegrationFlowExecutionOutputBuilder {
+    if builder.flow_execution.is_none() {
+        builder.flow_execution = {
+            let builder = crate::types::builders::DataIntegrationFlowExecutionBuilder::default();
+            crate::serde_util::data_integration_flow_execution_correct_errors(builder).build().ok()
         }
     }
     builder
@@ -119,6 +167,18 @@ pub(crate) fn get_data_lake_dataset_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn get_data_lake_namespace_output_output_correct_errors(
+    mut builder: crate::operation::get_data_lake_namespace::builders::GetDataLakeNamespaceOutputBuilder,
+) -> crate::operation::get_data_lake_namespace::builders::GetDataLakeNamespaceOutputBuilder {
+    if builder.namespace.is_none() {
+        builder.namespace = {
+            let builder = crate::types::builders::DataLakeNamespaceBuilder::default();
+            crate::serde_util::data_lake_namespace_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
 pub(crate) fn get_instance_output_output_correct_errors(
     mut builder: crate::operation::get_instance::builders::GetInstanceOutputBuilder,
 ) -> crate::operation::get_instance::builders::GetInstanceOutputBuilder {
@@ -127,6 +187,24 @@ pub(crate) fn get_instance_output_output_correct_errors(
             let builder = crate::types::builders::InstanceBuilder::default();
             crate::serde_util::instance_correct_errors(builder).build().ok()
         }
+    }
+    builder
+}
+
+pub(crate) fn list_data_integration_events_output_output_correct_errors(
+    mut builder: crate::operation::list_data_integration_events::builders::ListDataIntegrationEventsOutputBuilder,
+) -> crate::operation::list_data_integration_events::builders::ListDataIntegrationEventsOutputBuilder {
+    if builder.events.is_none() {
+        builder.events = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn list_data_integration_flow_executions_output_output_correct_errors(
+    mut builder: crate::operation::list_data_integration_flow_executions::builders::ListDataIntegrationFlowExecutionsOutputBuilder,
+) -> crate::operation::list_data_integration_flow_executions::builders::ListDataIntegrationFlowExecutionsOutputBuilder {
+    if builder.flow_executions.is_none() {
+        builder.flow_executions = Some(Default::default())
     }
     builder
 }
@@ -145,6 +223,15 @@ pub(crate) fn list_data_lake_datasets_output_output_correct_errors(
 ) -> crate::operation::list_data_lake_datasets::builders::ListDataLakeDatasetsOutputBuilder {
     if builder.datasets.is_none() {
         builder.datasets = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn list_data_lake_namespaces_output_output_correct_errors(
+    mut builder: crate::operation::list_data_lake_namespaces::builders::ListDataLakeNamespacesOutputBuilder,
+) -> crate::operation::list_data_lake_namespaces::builders::ListDataLakeNamespacesOutputBuilder {
+    if builder.namespaces.is_none() {
+        builder.namespaces = Some(Default::default())
     }
     builder
 }
@@ -200,6 +287,18 @@ pub(crate) fn update_data_lake_dataset_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn update_data_lake_namespace_output_output_correct_errors(
+    mut builder: crate::operation::update_data_lake_namespace::builders::UpdateDataLakeNamespaceOutputBuilder,
+) -> crate::operation::update_data_lake_namespace::builders::UpdateDataLakeNamespaceOutputBuilder {
+    if builder.namespace.is_none() {
+        builder.namespace = {
+            let builder = crate::types::builders::DataLakeNamespaceBuilder::default();
+            crate::serde_util::data_lake_namespace_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
 pub(crate) fn update_instance_output_output_correct_errors(
     mut builder: crate::operation::update_instance::builders::UpdateInstanceOutputBuilder,
 ) -> crate::operation::update_instance::builders::UpdateInstanceOutputBuilder {
@@ -242,6 +341,27 @@ pub(crate) fn data_lake_dataset_correct_errors(
     builder
 }
 
+pub(crate) fn data_lake_namespace_correct_errors(
+    mut builder: crate::types::builders::DataLakeNamespaceBuilder,
+) -> crate::types::builders::DataLakeNamespaceBuilder {
+    if builder.instance_id.is_none() {
+        builder.instance_id = Some(Default::default())
+    }
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
+    }
+    if builder.created_time.is_none() {
+        builder.created_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.last_modified_time.is_none() {
+        builder.last_modified_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
 pub(crate) fn instance_correct_errors(mut builder: crate::types::builders::InstanceBuilder) -> crate::types::builders::InstanceBuilder {
     if builder.instance_id.is_none() {
         builder.instance_id = Some(Default::default())
@@ -269,6 +389,27 @@ pub(crate) fn bill_of_materials_import_job_correct_errors(
     }
     if builder.s3_uri.is_none() {
         builder.s3_uri = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn data_integration_event_correct_errors(
+    mut builder: crate::types::builders::DataIntegrationEventBuilder,
+) -> crate::types::builders::DataIntegrationEventBuilder {
+    if builder.instance_id.is_none() {
+        builder.instance_id = Some(Default::default())
+    }
+    if builder.event_id.is_none() {
+        builder.event_id = Some(Default::default())
+    }
+    if builder.event_type.is_none() {
+        builder.event_type = "no value was set".parse::<crate::types::DataIntegrationEventType>().ok()
+    }
+    if builder.event_group_id.is_none() {
+        builder.event_group_id = Some(Default::default())
+    }
+    if builder.event_timestamp.is_none() {
+        builder.event_timestamp = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
     }
     builder
 }
@@ -308,6 +449,21 @@ pub(crate) fn data_integration_flow_correct_errors(
     builder
 }
 
+pub(crate) fn data_integration_flow_execution_correct_errors(
+    mut builder: crate::types::builders::DataIntegrationFlowExecutionBuilder,
+) -> crate::types::builders::DataIntegrationFlowExecutionBuilder {
+    if builder.instance_id.is_none() {
+        builder.instance_id = Some(Default::default())
+    }
+    if builder.flow_name.is_none() {
+        builder.flow_name = Some(Default::default())
+    }
+    if builder.execution_id.is_none() {
+        builder.execution_id = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn data_lake_dataset_schema_correct_errors(
     mut builder: crate::types::builders::DataLakeDatasetSchemaBuilder,
 ) -> crate::types::builders::DataLakeDatasetSchemaBuilder {
@@ -338,11 +494,79 @@ pub(crate) fn data_integration_flow_target_correct_errors(
     builder
 }
 
+pub(crate) fn data_integration_event_dataset_target_details_correct_errors(
+    mut builder: crate::types::builders::DataIntegrationEventDatasetTargetDetailsBuilder,
+) -> crate::types::builders::DataIntegrationEventDatasetTargetDetailsBuilder {
+    if builder.dataset_identifier.is_none() {
+        builder.dataset_identifier = Some(Default::default())
+    }
+    if builder.operation_type.is_none() {
+        builder.operation_type = "no value was set".parse::<crate::types::DataIntegrationEventDatasetOperationType>().ok()
+    }
+    if builder.dataset_load_execution.is_none() {
+        builder.dataset_load_execution = {
+            let builder = crate::types::builders::DataIntegrationEventDatasetLoadExecutionDetailsBuilder::default();
+            crate::serde_util::data_integration_event_dataset_load_execution_details_correct_errors(builder)
+                .build()
+                .ok()
+        }
+    }
+    builder
+}
+
+pub(crate) fn data_integration_flow_execution_source_info_correct_errors(
+    mut builder: crate::types::builders::DataIntegrationFlowExecutionSourceInfoBuilder,
+) -> crate::types::builders::DataIntegrationFlowExecutionSourceInfoBuilder {
+    if builder.source_type.is_none() {
+        builder.source_type = "no value was set".parse::<crate::types::DataIntegrationFlowSourceType>().ok()
+    }
+    builder
+}
+
+pub(crate) fn data_lake_dataset_partition_spec_correct_errors(
+    mut builder: crate::types::builders::DataLakeDatasetPartitionSpecBuilder,
+) -> crate::types::builders::DataLakeDatasetPartitionSpecBuilder {
+    if builder.fields.is_none() {
+        builder.fields = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn data_integration_event_dataset_load_execution_details_correct_errors(
+    mut builder: crate::types::builders::DataIntegrationEventDatasetLoadExecutionDetailsBuilder,
+) -> crate::types::builders::DataIntegrationEventDatasetLoadExecutionDetailsBuilder {
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::DataIntegrationEventDatasetLoadStatus>().ok()
+    }
+    builder
+}
+
+pub(crate) fn data_integration_flow_dataset_source_correct_errors(
+    mut builder: crate::types::builders::DataIntegrationFlowDatasetSourceBuilder,
+) -> crate::types::builders::DataIntegrationFlowDatasetSourceBuilder {
+    if builder.dataset_identifier.is_none() {
+        builder.dataset_identifier = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn data_integration_flow_dataset_target_configuration_correct_errors(
     mut builder: crate::types::builders::DataIntegrationFlowDatasetTargetConfigurationBuilder,
 ) -> crate::types::builders::DataIntegrationFlowDatasetTargetConfigurationBuilder {
     if builder.dataset_identifier.is_none() {
         builder.dataset_identifier = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn data_integration_flow_s3_source_correct_errors(
+    mut builder: crate::types::builders::DataIntegrationFlowS3SourceBuilder,
+) -> crate::types::builders::DataIntegrationFlowS3SourceBuilder {
+    if builder.bucket_name.is_none() {
+        builder.bucket_name = Some(Default::default())
+    }
+    if builder.key.is_none() {
+        builder.key = Some(Default::default())
     }
     builder
 }
@@ -401,6 +625,32 @@ pub(crate) fn data_integration_flow_s3_source_configuration_correct_errors(
     builder
 }
 
+pub(crate) fn data_lake_dataset_partition_field_correct_errors(
+    mut builder: crate::types::builders::DataLakeDatasetPartitionFieldBuilder,
+) -> crate::types::builders::DataLakeDatasetPartitionFieldBuilder {
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.transform.is_none() {
+        builder.transform = {
+            let builder = crate::types::builders::DataLakeDatasetPartitionFieldTransformBuilder::default();
+            crate::serde_util::data_lake_dataset_partition_field_transform_correct_errors(builder)
+                .build()
+                .ok()
+        }
+    }
+    builder
+}
+
+pub(crate) fn data_lake_dataset_primary_key_field_correct_errors(
+    mut builder: crate::types::builders::DataLakeDatasetPrimaryKeyFieldBuilder,
+) -> crate::types::builders::DataLakeDatasetPrimaryKeyFieldBuilder {
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn data_lake_dataset_schema_field_correct_errors(
     mut builder: crate::types::builders::DataLakeDatasetSchemaFieldBuilder,
 ) -> crate::types::builders::DataLakeDatasetSchemaFieldBuilder {
@@ -412,6 +662,47 @@ pub(crate) fn data_lake_dataset_schema_field_correct_errors(
     }
     if builder.is_required.is_none() {
         builder.is_required = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn data_integration_flow_dedupe_strategy_correct_errors(
+    mut builder: crate::types::builders::DataIntegrationFlowDedupeStrategyBuilder,
+) -> crate::types::builders::DataIntegrationFlowDedupeStrategyBuilder {
+    if builder.r#type.is_none() {
+        builder.r#type = "no value was set".parse::<crate::types::DataIntegrationFlowDedupeStrategyType>().ok()
+    }
+    builder
+}
+
+pub(crate) fn data_lake_dataset_partition_field_transform_correct_errors(
+    mut builder: crate::types::builders::DataLakeDatasetPartitionFieldTransformBuilder,
+) -> crate::types::builders::DataLakeDatasetPartitionFieldTransformBuilder {
+    if builder.r#type.is_none() {
+        builder.r#type = "no value was set".parse::<crate::types::DataLakeDatasetPartitionTransformType>().ok()
+    }
+    builder
+}
+
+pub(crate) fn data_integration_flow_field_priority_dedupe_strategy_configuration_correct_errors(
+    mut builder: crate::types::builders::DataIntegrationFlowFieldPriorityDedupeStrategyConfigurationBuilder,
+) -> crate::types::builders::DataIntegrationFlowFieldPriorityDedupeStrategyConfigurationBuilder {
+    if builder.fields.is_none() {
+        builder.fields = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn data_integration_flow_field_priority_dedupe_field_correct_errors(
+    mut builder: crate::types::builders::DataIntegrationFlowFieldPriorityDedupeFieldBuilder,
+) -> crate::types::builders::DataIntegrationFlowFieldPriorityDedupeFieldBuilder {
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.sort_order.is_none() {
+        builder.sort_order = "no value was set"
+            .parse::<crate::types::DataIntegrationFlowFieldPriorityDedupeSortOrder>()
+            .ok()
     }
     builder
 }

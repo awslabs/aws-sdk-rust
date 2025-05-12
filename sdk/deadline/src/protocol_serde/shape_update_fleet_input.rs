@@ -15,20 +15,26 @@ pub fn ser_update_fleet_input_input(
     if let Some(var_4) = &input.display_name {
         object.key("displayName").string(var_4.as_str());
     }
-    if let Some(var_5) = &input.max_worker_count {
+    if let Some(var_5) = &input.host_configuration {
+        #[allow(unused_mut)]
+        let mut object_6 = object.key("hostConfiguration").start_object();
+        crate::protocol_serde::shape_host_configuration::ser_host_configuration(&mut object_6, var_5)?;
+        object_6.finish();
+    }
+    if let Some(var_7) = &input.max_worker_count {
         object.key("maxWorkerCount").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_5).into()),
+            ::aws_smithy_types::Number::NegInt((*var_7).into()),
         );
     }
-    if let Some(var_6) = &input.min_worker_count {
+    if let Some(var_8) = &input.min_worker_count {
         object.key("minWorkerCount").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_6).into()),
+            ::aws_smithy_types::Number::NegInt((*var_8).into()),
         );
     }
-    if let Some(var_7) = &input.role_arn {
-        object.key("roleArn").string(var_7.as_str());
+    if let Some(var_9) = &input.role_arn {
+        object.key("roleArn").string(var_9.as_str());
     }
     Ok(())
 }

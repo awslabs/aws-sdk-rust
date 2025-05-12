@@ -33,18 +33,31 @@ pub fn de_analysis_load_balancer_target(
                 builder = builder.set_availability_zone(var_2);
             }
             ,
-            s if s.matches("instance") /* Instance com.amazonaws.ec2#AnalysisLoadBalancerTarget$Instance */ =>  {
+            s if s.matches("availabilityZoneId") /* AvailabilityZoneId com.amazonaws.ec2#AnalysisLoadBalancerTarget$AvailabilityZoneId */ =>  {
                 let var_3 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_availability_zone_id(var_3);
+            }
+            ,
+            s if s.matches("instance") /* Instance com.amazonaws.ec2#AnalysisLoadBalancerTarget$Instance */ =>  {
+                let var_4 =
                     Some(
                         crate::protocol_serde::shape_analysis_component::de_analysis_component(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_instance(var_3);
+                builder = builder.set_instance(var_4);
             }
             ,
             s if s.matches("port") /* Port com.amazonaws.ec2#AnalysisLoadBalancerTarget$Port */ =>  {
-                let var_4 =
+                let var_5 =
                     Some(
                          {
                             <i32 as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -55,7 +68,7 @@ pub fn de_analysis_load_balancer_target(
                         ?
                     )
                 ;
-                builder = builder.set_port(var_4);
+                builder = builder.set_port(var_5);
             }
             ,
             _ => {}
