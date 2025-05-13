@@ -7,8 +7,8 @@ on:
     branches:
       - "canary*"
 env:
-  tool_rust_version: 1.81.0
-  rust_nightly_version: nightly-2024-09-04
+  tool_rust_version: 1.82.0
+  rust_nightly_version: nightly-2025-05-04
 
 jobs:
   generate-canary-matrix:
