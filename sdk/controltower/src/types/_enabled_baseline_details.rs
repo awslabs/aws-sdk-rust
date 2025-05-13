@@ -10,6 +10,8 @@ pub struct EnabledBaselineDetails {
     pub baseline_identifier: ::std::string::String,
     /// <p>The enabled version of the <code>Baseline</code>.</p>
     pub baseline_version: ::std::option::Option<::std::string::String>,
+    /// <p>The drift status of the enabled baseline.</p>
+    pub drift_status_summary: ::std::option::Option<crate::types::EnabledBaselineDriftStatusSummary>,
     /// <p>The target on which to enable the <code>Baseline</code>.</p>
     pub target_identifier: ::std::string::String,
     /// <p>An ARN that represents the parent <code>EnabledBaseline</code> at the Organizational Unit (OU) level, from which the child <code>EnabledBaseline</code> inherits its configuration. The value is returned by <code>GetEnabledBaseline</code>.</p>
@@ -33,6 +35,10 @@ impl EnabledBaselineDetails {
     /// <p>The enabled version of the <code>Baseline</code>.</p>
     pub fn baseline_version(&self) -> ::std::option::Option<&str> {
         self.baseline_version.as_deref()
+    }
+    /// <p>The drift status of the enabled baseline.</p>
+    pub fn drift_status_summary(&self) -> ::std::option::Option<&crate::types::EnabledBaselineDriftStatusSummary> {
+        self.drift_status_summary.as_ref()
     }
     /// <p>The target on which to enable the <code>Baseline</code>.</p>
     pub fn target_identifier(&self) -> &str {
@@ -68,6 +74,7 @@ pub struct EnabledBaselineDetailsBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) baseline_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) baseline_version: ::std::option::Option<::std::string::String>,
+    pub(crate) drift_status_summary: ::std::option::Option<crate::types::EnabledBaselineDriftStatusSummary>,
     pub(crate) target_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) parent_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) status_summary: ::std::option::Option<crate::types::EnablementStatusSummary>,
@@ -117,6 +124,20 @@ impl EnabledBaselineDetailsBuilder {
     /// <p>The enabled version of the <code>Baseline</code>.</p>
     pub fn get_baseline_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.baseline_version
+    }
+    /// <p>The drift status of the enabled baseline.</p>
+    pub fn drift_status_summary(mut self, input: crate::types::EnabledBaselineDriftStatusSummary) -> Self {
+        self.drift_status_summary = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The drift status of the enabled baseline.</p>
+    pub fn set_drift_status_summary(mut self, input: ::std::option::Option<crate::types::EnabledBaselineDriftStatusSummary>) -> Self {
+        self.drift_status_summary = input;
+        self
+    }
+    /// <p>The drift status of the enabled baseline.</p>
+    pub fn get_drift_status_summary(&self) -> &::std::option::Option<crate::types::EnabledBaselineDriftStatusSummary> {
+        &self.drift_status_summary
     }
     /// <p>The target on which to enable the <code>Baseline</code>.</p>
     /// This field is required.
@@ -202,6 +223,7 @@ impl EnabledBaselineDetailsBuilder {
                 )
             })?,
             baseline_version: self.baseline_version,
+            drift_status_summary: self.drift_status_summary,
             target_identifier: self.target_identifier.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "target_identifier",

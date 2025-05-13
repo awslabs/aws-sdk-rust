@@ -68,6 +68,11 @@ where
                                 ::aws_smithy_types::date_time::Format::DateTimeWithOffset,
                             )?);
                         }
+                        "crossRegionDetails" => {
+                            builder = builder.set_cross_region_details(
+                                crate::protocol_serde::shape_guardrail_cross_region_details::de_guardrail_cross_region_details(tokens)?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

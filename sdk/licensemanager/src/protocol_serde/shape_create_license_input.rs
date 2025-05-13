@@ -63,5 +63,17 @@ pub fn ser_create_license_input_input(
     if let Some(var_20) = &input.client_token {
         object.key("ClientToken").string(var_20.as_str());
     }
+    if let Some(var_21) = &input.tags {
+        let mut array_22 = object.key("Tags").start_array();
+        for item_23 in var_21 {
+            {
+                #[allow(unused_mut)]
+                let mut object_24 = array_22.value().start_object();
+                crate::protocol_serde::shape_tag::ser_tag(&mut object_24, item_23)?;
+                object_24.finish();
+            }
+        }
+        array_22.finish();
+    }
     Ok(())
 }

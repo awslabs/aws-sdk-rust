@@ -229,13 +229,13 @@ pub use crate::types::_custom_orchestration_trace_event::CustomOrchestrationTrac
 
 pub use crate::types::_failure_trace::FailureTrace;
 
-pub use crate::types::_routing_classifier_trace::RoutingClassifierTrace;
-
-pub use crate::types::_routing_classifier_model_invocation_output::RoutingClassifierModelInvocationOutput;
-
 pub use crate::types::_metadata::Metadata;
 
 pub use crate::types::_usage::Usage;
+
+pub use crate::types::_routing_classifier_trace::RoutingClassifierTrace;
+
+pub use crate::types::_routing_classifier_model_invocation_output::RoutingClassifierModelInvocationOutput;
 
 pub use crate::types::_raw_response::RawResponse;
 

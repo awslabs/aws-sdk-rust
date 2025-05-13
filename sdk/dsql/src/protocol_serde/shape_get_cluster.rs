@@ -157,12 +157,19 @@ pub(crate) fn de_get_cluster(
                 "linkedClusterArns" => {
                     builder = builder.set_linked_cluster_arns(crate::protocol_serde::shape_cluster_arn_list::de_cluster_arn_list(tokens)?);
                 }
+                "multiRegionProperties" => {
+                    builder = builder
+                        .set_multi_region_properties(crate::protocol_serde::shape_multi_region_properties::de_multi_region_properties(tokens)?);
+                }
                 "status" => {
                     builder = builder.set_status(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                             .map(|s| s.to_unescaped().map(|u| crate::types::ClusterStatus::from(u.as_ref())))
                             .transpose()?,
                     );
+                }
+                "tags" => {
+                    builder = builder.set_tags(crate::protocol_serde::shape_tag_map::de_tag_map(tokens)?);
                 }
                 "witnessRegion" => {
                     builder = builder.set_witness_region(

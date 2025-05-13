@@ -2,10 +2,12 @@
 
 /// <p>Contains details about the results from looking up the knowledge base.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct KnowledgeBaseLookupOutput {
     /// <p>Contains metadata about the sources cited for the generated response.</p>
     pub retrieved_references: ::std::option::Option<::std::vec::Vec<crate::types::RetrievedReference>>,
+    /// <p>Contains information about the knowledge base output.</p>
+    pub metadata: ::std::option::Option<crate::types::Metadata>,
 }
 impl KnowledgeBaseLookupOutput {
     /// <p>Contains metadata about the sources cited for the generated response.</p>
@@ -13,6 +15,18 @@ impl KnowledgeBaseLookupOutput {
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.retrieved_references.is_none()`.
     pub fn retrieved_references(&self) -> &[crate::types::RetrievedReference] {
         self.retrieved_references.as_deref().unwrap_or_default()
+    }
+    /// <p>Contains information about the knowledge base output.</p>
+    pub fn metadata(&self) -> ::std::option::Option<&crate::types::Metadata> {
+        self.metadata.as_ref()
+    }
+}
+impl ::std::fmt::Debug for KnowledgeBaseLookupOutput {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("KnowledgeBaseLookupOutput");
+        formatter.field("retrieved_references", &self.retrieved_references);
+        formatter.field("metadata", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }
 impl KnowledgeBaseLookupOutput {
@@ -23,10 +37,11 @@ impl KnowledgeBaseLookupOutput {
 }
 
 /// A builder for [`KnowledgeBaseLookupOutput`](crate::types::KnowledgeBaseLookupOutput).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct KnowledgeBaseLookupOutputBuilder {
     pub(crate) retrieved_references: ::std::option::Option<::std::vec::Vec<crate::types::RetrievedReference>>,
+    pub(crate) metadata: ::std::option::Option<crate::types::Metadata>,
 }
 impl KnowledgeBaseLookupOutputBuilder {
     /// Appends an item to `retrieved_references`.
@@ -49,10 +64,33 @@ impl KnowledgeBaseLookupOutputBuilder {
     pub fn get_retrieved_references(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RetrievedReference>> {
         &self.retrieved_references
     }
+    /// <p>Contains information about the knowledge base output.</p>
+    pub fn metadata(mut self, input: crate::types::Metadata) -> Self {
+        self.metadata = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Contains information about the knowledge base output.</p>
+    pub fn set_metadata(mut self, input: ::std::option::Option<crate::types::Metadata>) -> Self {
+        self.metadata = input;
+        self
+    }
+    /// <p>Contains information about the knowledge base output.</p>
+    pub fn get_metadata(&self) -> &::std::option::Option<crate::types::Metadata> {
+        &self.metadata
+    }
     /// Consumes the builder and constructs a [`KnowledgeBaseLookupOutput`](crate::types::KnowledgeBaseLookupOutput).
     pub fn build(self) -> crate::types::KnowledgeBaseLookupOutput {
         crate::types::KnowledgeBaseLookupOutput {
             retrieved_references: self.retrieved_references,
+            metadata: self.metadata,
         }
+    }
+}
+impl ::std::fmt::Debug for KnowledgeBaseLookupOutputBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("KnowledgeBaseLookupOutputBuilder");
+        formatter.field("retrieved_references", &self.retrieved_references);
+        formatter.field("metadata", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

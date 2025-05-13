@@ -26,7 +26,7 @@ pub struct SystemControl {
     pub namespace: ::std::option::Option<::std::string::String>,
     /// <p>The namespaced kernel parameter to set a <code>value</code> for.</p>
     /// <p>Valid IPC namespace values: <code>"kernel.msgmax" | "kernel.msgmnb" | "kernel.msgmni" | "kernel.sem" | "kernel.shmall" | "kernel.shmmax" | "kernel.shmmni" | "kernel.shm_rmid_forced"</code>, and <code>Sysctls</code> that start with <code>"fs.mqueue.*"</code></p>
-    /// <p>Valid network namespace values: <code>Sysctls</code> that start with <code>"net.*"</code></p>
+    /// <p>Valid network namespace values: <code>Sysctls</code> that start with <code>"net.*"</code>. Only namespaced <code>Sysctls</code> that exist within the container starting with "net.* are accepted.</p>
     /// <p>All of these values are supported by Fargate.</p>
     pub value: ::std::option::Option<::std::string::String>,
 }
@@ -37,7 +37,7 @@ impl SystemControl {
     }
     /// <p>The namespaced kernel parameter to set a <code>value</code> for.</p>
     /// <p>Valid IPC namespace values: <code>"kernel.msgmax" | "kernel.msgmnb" | "kernel.msgmni" | "kernel.sem" | "kernel.shmall" | "kernel.shmmax" | "kernel.shmmni" | "kernel.shm_rmid_forced"</code>, and <code>Sysctls</code> that start with <code>"fs.mqueue.*"</code></p>
-    /// <p>Valid network namespace values: <code>Sysctls</code> that start with <code>"net.*"</code></p>
+    /// <p>Valid network namespace values: <code>Sysctls</code> that start with <code>"net.*"</code>. Only namespaced <code>Sysctls</code> that exist within the container starting with "net.* are accepted.</p>
     /// <p>All of these values are supported by Fargate.</p>
     pub fn value(&self) -> ::std::option::Option<&str> {
         self.value.as_deref()
@@ -74,7 +74,7 @@ impl SystemControlBuilder {
     }
     /// <p>The namespaced kernel parameter to set a <code>value</code> for.</p>
     /// <p>Valid IPC namespace values: <code>"kernel.msgmax" | "kernel.msgmnb" | "kernel.msgmni" | "kernel.sem" | "kernel.shmall" | "kernel.shmmax" | "kernel.shmmni" | "kernel.shm_rmid_forced"</code>, and <code>Sysctls</code> that start with <code>"fs.mqueue.*"</code></p>
-    /// <p>Valid network namespace values: <code>Sysctls</code> that start with <code>"net.*"</code></p>
+    /// <p>Valid network namespace values: <code>Sysctls</code> that start with <code>"net.*"</code>. Only namespaced <code>Sysctls</code> that exist within the container starting with "net.* are accepted.</p>
     /// <p>All of these values are supported by Fargate.</p>
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.value = ::std::option::Option::Some(input.into());
@@ -82,7 +82,7 @@ impl SystemControlBuilder {
     }
     /// <p>The namespaced kernel parameter to set a <code>value</code> for.</p>
     /// <p>Valid IPC namespace values: <code>"kernel.msgmax" | "kernel.msgmnb" | "kernel.msgmni" | "kernel.sem" | "kernel.shmall" | "kernel.shmmax" | "kernel.shmmni" | "kernel.shm_rmid_forced"</code>, and <code>Sysctls</code> that start with <code>"fs.mqueue.*"</code></p>
-    /// <p>Valid network namespace values: <code>Sysctls</code> that start with <code>"net.*"</code></p>
+    /// <p>Valid network namespace values: <code>Sysctls</code> that start with <code>"net.*"</code>. Only namespaced <code>Sysctls</code> that exist within the container starting with "net.* are accepted.</p>
     /// <p>All of these values are supported by Fargate.</p>
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.value = input;
@@ -90,7 +90,7 @@ impl SystemControlBuilder {
     }
     /// <p>The namespaced kernel parameter to set a <code>value</code> for.</p>
     /// <p>Valid IPC namespace values: <code>"kernel.msgmax" | "kernel.msgmnb" | "kernel.msgmni" | "kernel.sem" | "kernel.shmall" | "kernel.shmmax" | "kernel.shmmni" | "kernel.shm_rmid_forced"</code>, and <code>Sysctls</code> that start with <code>"fs.mqueue.*"</code></p>
-    /// <p>Valid network namespace values: <code>Sysctls</code> that start with <code>"net.*"</code></p>
+    /// <p>Valid network namespace values: <code>Sysctls</code> that start with <code>"net.*"</code>. Only namespaced <code>Sysctls</code> that exist within the container starting with "net.* are accepted.</p>
     /// <p>All of these values are supported by Fargate.</p>
     pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
         &self.value

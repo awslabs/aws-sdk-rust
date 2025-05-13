@@ -30,5 +30,23 @@ pub fn ser_enabled_baseline_filter(
         }
         array_8.finish();
     }
+    if let Some(var_10) = &input.statuses {
+        let mut array_11 = object.key("statuses").start_array();
+        for item_12 in var_10 {
+            {
+                array_11.value().string(item_12.as_str());
+            }
+        }
+        array_11.finish();
+    }
+    if let Some(var_13) = &input.inheritance_drift_statuses {
+        let mut array_14 = object.key("inheritanceDriftStatuses").start_array();
+        for item_15 in var_13 {
+            {
+                array_14.value().string(item_15.as_str());
+            }
+        }
+        array_14.finish();
+    }
     Ok(())
 }

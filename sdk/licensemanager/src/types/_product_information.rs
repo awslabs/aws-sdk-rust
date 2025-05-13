@@ -30,7 +30,7 @@ pub struct ProductInformation {
     /// <p>The following filters and logical operators are supported when the resource type is <code>RDS</code>:</p>
     /// <ul>
     /// <li>
-    /// <p><code>Engine Edition</code> - The edition of the database engine. Logical operator is <code>EQUALS</code>. Possible values are: <code>oracle-ee</code> | <code>oracle-se</code> | <code>oracle-se1</code> | <code>oracle-se2</code>.</p></li>
+    /// <p><code>Engine Edition</code> - The edition of the database engine. Logical operator is <code>EQUALS</code>. Possible values are: <code>oracle-ee</code> | <code>oracle-se</code> | <code>oracle-se1</code> | <code>oracle-se2</code> | <code>db2-se</code> | <code>db2-ae</code>.</p></li>
     /// <li>
     /// <p><code>License Pack</code> - The license pack. Logical operator is <code>EQUALS</code>. Possible values are: <code>data guard</code> | <code>diagnostic pack sqlt</code> | <code>tuning pack sqlt</code> | <code>ols</code> | <code>olap</code>.</p></li>
     /// </ul>
@@ -66,7 +66,7 @@ impl ProductInformation {
     /// <p>The following filters and logical operators are supported when the resource type is <code>RDS</code>:</p>
     /// <ul>
     /// <li>
-    /// <p><code>Engine Edition</code> - The edition of the database engine. Logical operator is <code>EQUALS</code>. Possible values are: <code>oracle-ee</code> | <code>oracle-se</code> | <code>oracle-se1</code> | <code>oracle-se2</code>.</p></li>
+    /// <p><code>Engine Edition</code> - The edition of the database engine. Logical operator is <code>EQUALS</code>. Possible values are: <code>oracle-ee</code> | <code>oracle-se</code> | <code>oracle-se1</code> | <code>oracle-se2</code> | <code>db2-se</code> | <code>db2-ae</code>.</p></li>
     /// <li>
     /// <p><code>License Pack</code> - The license pack. Logical operator is <code>EQUALS</code>. Possible values are: <code>data guard</code> | <code>diagnostic pack sqlt</code> | <code>tuning pack sqlt</code> | <code>ols</code> | <code>olap</code>.</p></li>
     /// </ul>
@@ -133,7 +133,7 @@ impl ProductInformationBuilder {
     /// <p>The following filters and logical operators are supported when the resource type is <code>RDS</code>:</p>
     /// <ul>
     /// <li>
-    /// <p><code>Engine Edition</code> - The edition of the database engine. Logical operator is <code>EQUALS</code>. Possible values are: <code>oracle-ee</code> | <code>oracle-se</code> | <code>oracle-se1</code> | <code>oracle-se2</code>.</p></li>
+    /// <p><code>Engine Edition</code> - The edition of the database engine. Logical operator is <code>EQUALS</code>. Possible values are: <code>oracle-ee</code> | <code>oracle-se</code> | <code>oracle-se1</code> | <code>oracle-se2</code> | <code>db2-se</code> | <code>db2-ae</code>.</p></li>
     /// <li>
     /// <p><code>License Pack</code> - The license pack. Logical operator is <code>EQUALS</code>. Possible values are: <code>data guard</code> | <code>diagnostic pack sqlt</code> | <code>tuning pack sqlt</code> | <code>ols</code> | <code>olap</code>.</p></li>
     /// </ul>
@@ -167,7 +167,7 @@ impl ProductInformationBuilder {
     /// <p>The following filters and logical operators are supported when the resource type is <code>RDS</code>:</p>
     /// <ul>
     /// <li>
-    /// <p><code>Engine Edition</code> - The edition of the database engine. Logical operator is <code>EQUALS</code>. Possible values are: <code>oracle-ee</code> | <code>oracle-se</code> | <code>oracle-se1</code> | <code>oracle-se2</code>.</p></li>
+    /// <p><code>Engine Edition</code> - The edition of the database engine. Logical operator is <code>EQUALS</code>. Possible values are: <code>oracle-ee</code> | <code>oracle-se</code> | <code>oracle-se1</code> | <code>oracle-se2</code> | <code>db2-se</code> | <code>db2-ae</code>.</p></li>
     /// <li>
     /// <p><code>License Pack</code> - The license pack. Logical operator is <code>EQUALS</code>. Possible values are: <code>data guard</code> | <code>diagnostic pack sqlt</code> | <code>tuning pack sqlt</code> | <code>ols</code> | <code>olap</code>.</p></li>
     /// </ul>
@@ -202,7 +202,7 @@ impl ProductInformationBuilder {
     /// <p>The following filters and logical operators are supported when the resource type is <code>RDS</code>:</p>
     /// <ul>
     /// <li>
-    /// <p><code>Engine Edition</code> - The edition of the database engine. Logical operator is <code>EQUALS</code>. Possible values are: <code>oracle-ee</code> | <code>oracle-se</code> | <code>oracle-se1</code> | <code>oracle-se2</code>.</p></li>
+    /// <p><code>Engine Edition</code> - The edition of the database engine. Logical operator is <code>EQUALS</code>. Possible values are: <code>oracle-ee</code> | <code>oracle-se</code> | <code>oracle-se1</code> | <code>oracle-se2</code> | <code>db2-se</code> | <code>db2-ae</code>.</p></li>
     /// <li>
     /// <p><code>License Pack</code> - The license pack. Logical operator is <code>EQUALS</code>. Possible values are: <code>data guard</code> | <code>diagnostic pack sqlt</code> | <code>tuning pack sqlt</code> | <code>ols</code> | <code>olap</code>.</p></li>
     /// </ul>

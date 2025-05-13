@@ -25,6 +25,8 @@ pub struct GetGuardrailOutput {
     pub sensitive_information_policy: ::std::option::Option<crate::types::GuardrailSensitiveInformationPolicy>,
     /// <p>The contextual grounding policy used in the guardrail.</p>
     pub contextual_grounding_policy: ::std::option::Option<crate::types::GuardrailContextualGroundingPolicy>,
+    /// <p>Details about the system-defined guardrail profile that you're using with your guardrail, including the guardrail profile ID and Amazon Resource Name (ARN).</p>
+    pub cross_region_details: ::std::option::Option<crate::types::GuardrailCrossRegionDetails>,
     /// <p>The date and time at which the guardrail was created.</p>
     pub created_at: ::aws_smithy_types::DateTime,
     /// <p>The date and time at which the guardrail was updated.</p>
@@ -90,6 +92,10 @@ impl GetGuardrailOutput {
     pub fn contextual_grounding_policy(&self) -> ::std::option::Option<&crate::types::GuardrailContextualGroundingPolicy> {
         self.contextual_grounding_policy.as_ref()
     }
+    /// <p>Details about the system-defined guardrail profile that you're using with your guardrail, including the guardrail profile ID and Amazon Resource Name (ARN).</p>
+    pub fn cross_region_details(&self) -> ::std::option::Option<&crate::types::GuardrailCrossRegionDetails> {
+        self.cross_region_details.as_ref()
+    }
     /// <p>The date and time at which the guardrail was created.</p>
     pub fn created_at(&self) -> &::aws_smithy_types::DateTime {
         &self.created_at
@@ -139,6 +145,7 @@ impl ::std::fmt::Debug for GetGuardrailOutput {
         formatter.field("word_policy", &self.word_policy);
         formatter.field("sensitive_information_policy", &self.sensitive_information_policy);
         formatter.field("contextual_grounding_policy", &self.contextual_grounding_policy);
+        formatter.field("cross_region_details", &self.cross_region_details);
         formatter.field("created_at", &self.created_at);
         formatter.field("updated_at", &self.updated_at);
         formatter.field("status_reasons", &"*** Sensitive Data Redacted ***");
@@ -177,6 +184,7 @@ pub struct GetGuardrailOutputBuilder {
     pub(crate) word_policy: ::std::option::Option<crate::types::GuardrailWordPolicy>,
     pub(crate) sensitive_information_policy: ::std::option::Option<crate::types::GuardrailSensitiveInformationPolicy>,
     pub(crate) contextual_grounding_policy: ::std::option::Option<crate::types::GuardrailContextualGroundingPolicy>,
+    pub(crate) cross_region_details: ::std::option::Option<crate::types::GuardrailCrossRegionDetails>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) status_reasons: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -345,6 +353,20 @@ impl GetGuardrailOutputBuilder {
     /// <p>The contextual grounding policy used in the guardrail.</p>
     pub fn get_contextual_grounding_policy(&self) -> &::std::option::Option<crate::types::GuardrailContextualGroundingPolicy> {
         &self.contextual_grounding_policy
+    }
+    /// <p>Details about the system-defined guardrail profile that you're using with your guardrail, including the guardrail profile ID and Amazon Resource Name (ARN).</p>
+    pub fn cross_region_details(mut self, input: crate::types::GuardrailCrossRegionDetails) -> Self {
+        self.cross_region_details = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Details about the system-defined guardrail profile that you're using with your guardrail, including the guardrail profile ID and Amazon Resource Name (ARN).</p>
+    pub fn set_cross_region_details(mut self, input: ::std::option::Option<crate::types::GuardrailCrossRegionDetails>) -> Self {
+        self.cross_region_details = input;
+        self
+    }
+    /// <p>Details about the system-defined guardrail profile that you're using with your guardrail, including the guardrail profile ID and Amazon Resource Name (ARN).</p>
+    pub fn get_cross_region_details(&self) -> &::std::option::Option<crate::types::GuardrailCrossRegionDetails> {
+        &self.cross_region_details
     }
     /// <p>The date and time at which the guardrail was created.</p>
     /// This field is required.
@@ -520,6 +542,7 @@ impl GetGuardrailOutputBuilder {
             word_policy: self.word_policy,
             sensitive_information_policy: self.sensitive_information_policy,
             contextual_grounding_policy: self.contextual_grounding_policy,
+            cross_region_details: self.cross_region_details,
             created_at: self.created_at.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "created_at",
@@ -565,6 +588,7 @@ impl ::std::fmt::Debug for GetGuardrailOutputBuilder {
         formatter.field("word_policy", &self.word_policy);
         formatter.field("sensitive_information_policy", &self.sensitive_information_policy);
         formatter.field("contextual_grounding_policy", &self.contextual_grounding_policy);
+        formatter.field("cross_region_details", &self.cross_region_details);
         formatter.field("created_at", &self.created_at);
         formatter.field("updated_at", &self.updated_at);
         formatter.field("status_reasons", &"*** Sensitive Data Redacted ***");

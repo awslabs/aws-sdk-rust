@@ -33,6 +33,9 @@ where
                                 crate::protocol_serde::shape_agent_collaborator_output_payload::de_agent_collaborator_output_payload(tokens)?,
                             );
                         }
+                        "metadata" => {
+                            builder = builder.set_metadata(crate::protocol_serde::shape_metadata::de_metadata(tokens)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

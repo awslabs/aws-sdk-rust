@@ -274,6 +274,8 @@ pub enum UpdateLicenseSpecificationsForResourceError {
     AccessDeniedException(crate::types::error::AccessDeniedException),
     /// <p>The Amazon Web Services user account does not have permission to perform the action. Check the IAM policy associated with this account.</p>
     AuthorizationException(crate::types::error::AuthorizationException),
+    /// <p>There was a conflict processing the request. Try your request again.</p>
+    ConflictException(crate::types::error::ConflictException),
     /// <p>One or more parameter values are not valid.</p>
     InvalidParameterValueException(crate::types::error::InvalidParameterValueException),
     /// <p>License Manager cannot allocate a license to a resource because of its state.</p>
@@ -320,6 +322,7 @@ impl UpdateLicenseSpecificationsForResourceError {
         match self {
             Self::AccessDeniedException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::AuthorizationException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::ConflictException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidParameterValueException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidResourceStateException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::LicenseUsageException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
@@ -335,6 +338,10 @@ impl UpdateLicenseSpecificationsForResourceError {
     /// Returns `true` if the error kind is `UpdateLicenseSpecificationsForResourceError::AuthorizationException`.
     pub fn is_authorization_exception(&self) -> bool {
         matches!(self, Self::AuthorizationException(_))
+    }
+    /// Returns `true` if the error kind is `UpdateLicenseSpecificationsForResourceError::ConflictException`.
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(self, Self::ConflictException(_))
     }
     /// Returns `true` if the error kind is `UpdateLicenseSpecificationsForResourceError::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
@@ -362,6 +369,7 @@ impl ::std::error::Error for UpdateLicenseSpecificationsForResourceError {
         match self {
             Self::AccessDeniedException(_inner) => ::std::option::Option::Some(_inner),
             Self::AuthorizationException(_inner) => ::std::option::Option::Some(_inner),
+            Self::ConflictException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidParameterValueException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidResourceStateException(_inner) => ::std::option::Option::Some(_inner),
             Self::LicenseUsageException(_inner) => ::std::option::Option::Some(_inner),
@@ -376,6 +384,7 @@ impl ::std::fmt::Display for UpdateLicenseSpecificationsForResourceError {
         match self {
             Self::AccessDeniedException(_inner) => _inner.fmt(f),
             Self::AuthorizationException(_inner) => _inner.fmt(f),
+            Self::ConflictException(_inner) => _inner.fmt(f),
             Self::InvalidParameterValueException(_inner) => _inner.fmt(f),
             Self::InvalidResourceStateException(_inner) => _inner.fmt(f),
             Self::LicenseUsageException(_inner) => _inner.fmt(f),
@@ -404,6 +413,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for UpdateLicense
         match self {
             Self::AccessDeniedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::AuthorizationException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::ConflictException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidParameterValueException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidResourceStateException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::LicenseUsageException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),

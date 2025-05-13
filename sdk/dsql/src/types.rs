@@ -7,6 +7,8 @@ pub use crate::types::_linked_cluster_properties::LinkedClusterProperties;
 
 pub use crate::types::_cluster_status::ClusterStatus;
 
+pub use crate::types::_multi_region_properties::MultiRegionProperties;
+
 pub use crate::types::_cluster_summary::ClusterSummary;
 
 mod _cluster_status;
@@ -14,6 +16,8 @@ mod _cluster_status;
 mod _cluster_summary;
 
 mod _linked_cluster_properties;
+
+mod _multi_region_properties;
 
 mod _validation_exception_field;
 

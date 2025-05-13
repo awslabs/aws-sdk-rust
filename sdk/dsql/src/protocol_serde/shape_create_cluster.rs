@@ -48,6 +48,20 @@ pub fn de_create_cluster_http_error(
             };
             tmp
         }),
+        "ValidationException" => crate::operation::create_cluster::CreateClusterError::ValidationException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ValidationExceptionBuilder::default();
+                output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::create_cluster::CreateClusterError::unhandled)?;
+                let output = output.meta(generic);
+                crate::serde_util::validation_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::create_cluster::CreateClusterError::unhandled)?
+            };
+            tmp
+        }),
         "AccessDeniedException" => crate::operation::create_cluster::CreateClusterError::AccessDeniedException({
             #[allow(unused_mut)]
             let mut tmp = {
@@ -95,20 +109,6 @@ pub fn de_create_cluster_http_error(
                 );
                 let output = output.meta(generic);
                 crate::serde_util::throttling_exception_correct_errors(output)
-                    .build()
-                    .map_err(crate::operation::create_cluster::CreateClusterError::unhandled)?
-            };
-            tmp
-        }),
-        "ValidationException" => crate::operation::create_cluster::CreateClusterError::ValidationException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::types::error::builders::ValidationExceptionBuilder::default();
-                output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(_response_body, output)
-                    .map_err(crate::operation::create_cluster::CreateClusterError::unhandled)?;
-                let output = output.meta(generic);
-                crate::serde_util::validation_exception_correct_errors(output)
                     .build()
                     .map_err(crate::operation::create_cluster::CreateClusterError::unhandled)?
             };
@@ -182,6 +182,10 @@ pub(crate) fn de_create_cluster(
                             .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                             .transpose()?,
                     );
+                }
+                "multiRegionProperties" => {
+                    builder = builder
+                        .set_multi_region_properties(crate::protocol_serde::shape_multi_region_properties::de_multi_region_properties(tokens)?);
                 }
                 "status" => {
                     builder = builder.set_status(

@@ -4,26 +4,26 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ThrottlingException {
-    /// Description of the error
+    /// <p>The message that the request was denied due to request throttling.</p>
     pub message: ::std::string::String,
-    /// Service Quotas requirement to identify originating service
+    /// <p>The request exceeds a service quota.</p>
     pub service_code: ::std::option::Option<::std::string::String>,
-    /// Service Quotas requirement to identify originating quota
+    /// <p>The request exceeds a request rate quota.</p>
     pub quota_code: ::std::option::Option<::std::string::String>,
-    /// Advice to clients on when the call can be safely retried
+    /// <p>The request exceeds a request rate quota. Retry after seconds.</p>
     pub retry_after_seconds: ::std::option::Option<i32>,
     pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
 }
 impl ThrottlingException {
-    /// Service Quotas requirement to identify originating service
+    /// <p>The request exceeds a service quota.</p>
     pub fn service_code(&self) -> ::std::option::Option<&str> {
         self.service_code.as_deref()
     }
-    /// Service Quotas requirement to identify originating quota
+    /// <p>The request exceeds a request rate quota.</p>
     pub fn quota_code(&self) -> ::std::option::Option<&str> {
         self.quota_code.as_deref()
     }
-    /// Advice to clients on when the call can be safely retried
+    /// <p>The request exceeds a request rate quota. Retry after seconds.</p>
     pub fn retry_after_seconds(&self) -> ::std::option::Option<i32> {
         self.retry_after_seconds
     }
@@ -77,60 +77,60 @@ pub struct ThrottlingExceptionBuilder {
     meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
 }
 impl ThrottlingExceptionBuilder {
-    /// Description of the error
+    /// <p>The message that the request was denied due to request throttling.</p>
     /// This field is required.
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
         self
     }
-    /// Description of the error
+    /// <p>The message that the request was denied due to request throttling.</p>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
     }
-    /// Description of the error
+    /// <p>The message that the request was denied due to request throttling.</p>
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
         &self.message
     }
-    /// Service Quotas requirement to identify originating service
+    /// <p>The request exceeds a service quota.</p>
     pub fn service_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_code = ::std::option::Option::Some(input.into());
         self
     }
-    /// Service Quotas requirement to identify originating service
+    /// <p>The request exceeds a service quota.</p>
     pub fn set_service_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.service_code = input;
         self
     }
-    /// Service Quotas requirement to identify originating service
+    /// <p>The request exceeds a service quota.</p>
     pub fn get_service_code(&self) -> &::std::option::Option<::std::string::String> {
         &self.service_code
     }
-    /// Service Quotas requirement to identify originating quota
+    /// <p>The request exceeds a request rate quota.</p>
     pub fn quota_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.quota_code = ::std::option::Option::Some(input.into());
         self
     }
-    /// Service Quotas requirement to identify originating quota
+    /// <p>The request exceeds a request rate quota.</p>
     pub fn set_quota_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.quota_code = input;
         self
     }
-    /// Service Quotas requirement to identify originating quota
+    /// <p>The request exceeds a request rate quota.</p>
     pub fn get_quota_code(&self) -> &::std::option::Option<::std::string::String> {
         &self.quota_code
     }
-    /// Advice to clients on when the call can be safely retried
+    /// <p>The request exceeds a request rate quota. Retry after seconds.</p>
     pub fn retry_after_seconds(mut self, input: i32) -> Self {
         self.retry_after_seconds = ::std::option::Option::Some(input);
         self
     }
-    /// Advice to clients on when the call can be safely retried
+    /// <p>The request exceeds a request rate quota. Retry after seconds.</p>
     pub fn set_retry_after_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
         self.retry_after_seconds = input;
         self
     }
-    /// Advice to clients on when the call can be safely retried
+    /// <p>The request exceeds a request rate quota. Retry after seconds.</p>
     pub fn get_retry_after_seconds(&self) -> &::std::option::Option<i32> {
         &self.retry_after_seconds
     }

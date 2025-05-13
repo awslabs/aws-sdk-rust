@@ -10,6 +10,10 @@ impl super::Client {
     /// - On success, responds with [`CreateMultiRegionClustersOutput`](crate::operation::create_multi_region_clusters::CreateMultiRegionClustersOutput) with field(s):
     ///   - [`linked_cluster_arns(Vec::<String>)`](crate::operation::create_multi_region_clusters::CreateMultiRegionClustersOutput::linked_cluster_arns): <p>An array that contains the ARNs of all linked clusters.</p>
     /// - On failure, responds with [`SdkError<CreateMultiRegionClustersError>`](crate::operation::create_multi_region_clusters::CreateMultiRegionClustersError)
+    #[deprecated(
+        note = "The CreateMultiRegionClusters API is deprecated. Use the CreateCluster API with multi-Region properties to create a multi-Region cluster.",
+        since = "5/13/2025"
+    )]
     pub fn create_multi_region_clusters(&self) -> crate::operation::create_multi_region_clusters::builders::CreateMultiRegionClustersFluentBuilder {
         crate::operation::create_multi_region_clusters::builders::CreateMultiRegionClustersFluentBuilder::new(self.handle.clone())
     }

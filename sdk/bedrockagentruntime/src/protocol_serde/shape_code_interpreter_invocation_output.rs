@@ -34,6 +34,9 @@ where
                         "executionTimeout" => {
                             builder = builder.set_execution_timeout(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
+                        "metadata" => {
+                            builder = builder.set_metadata(crate::protocol_serde::shape_metadata::de_metadata(tokens)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

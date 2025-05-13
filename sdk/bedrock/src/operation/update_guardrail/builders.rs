@@ -252,6 +252,23 @@ impl UpdateGuardrailFluentBuilder {
     pub fn get_contextual_grounding_policy_config(&self) -> &::std::option::Option<crate::types::GuardrailContextualGroundingPolicyConfig> {
         self.inner.get_contextual_grounding_policy_config()
     }
+    /// <p>The system-defined guardrail profile that you're using with your guardrail. Guardrail profiles define the destination Amazon Web Services Regions where guardrail inference requests can be automatically routed.</p>
+    /// <p>For more information, see the <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/guardrails-cross-region.html">Amazon Bedrock User Guide</a>.</p>
+    pub fn cross_region_config(mut self, input: crate::types::GuardrailCrossRegionConfig) -> Self {
+        self.inner = self.inner.cross_region_config(input);
+        self
+    }
+    /// <p>The system-defined guardrail profile that you're using with your guardrail. Guardrail profiles define the destination Amazon Web Services Regions where guardrail inference requests can be automatically routed.</p>
+    /// <p>For more information, see the <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/guardrails-cross-region.html">Amazon Bedrock User Guide</a>.</p>
+    pub fn set_cross_region_config(mut self, input: ::std::option::Option<crate::types::GuardrailCrossRegionConfig>) -> Self {
+        self.inner = self.inner.set_cross_region_config(input);
+        self
+    }
+    /// <p>The system-defined guardrail profile that you're using with your guardrail. Guardrail profiles define the destination Amazon Web Services Regions where guardrail inference requests can be automatically routed.</p>
+    /// <p>For more information, see the <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/guardrails-cross-region.html">Amazon Bedrock User Guide</a>.</p>
+    pub fn get_cross_region_config(&self) -> &::std::option::Option<crate::types::GuardrailCrossRegionConfig> {
+        self.inner.get_cross_region_config()
+    }
     /// <p>The message to return when the guardrail blocks a prompt.</p>
     pub fn blocked_input_messaging(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.blocked_input_messaging(input.into());

@@ -28,6 +28,16 @@ where
                                     .transpose()?,
                             );
                         }
+                        "failureCode" => {
+                            builder = builder.set_failure_code(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
+                            );
+                        }
+                        "metadata" => {
+                            builder = builder.set_metadata(crate::protocol_serde::shape_metadata::de_metadata(tokens)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

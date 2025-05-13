@@ -13,6 +13,8 @@ pub use crate::types::error::_license_usage_exception::LicenseUsageExceptionBuil
 
 pub use crate::types::error::_invalid_resource_state_exception::InvalidResourceStateExceptionBuilder;
 
+pub use crate::types::error::_conflict_exception::ConflictExceptionBuilder;
+
 pub use crate::types::error::_validation_exception::ValidationExceptionBuilder;
 
 pub use crate::types::error::_resource_not_found_exception::ResourceNotFoundExceptionBuilder;
@@ -24,8 +26,6 @@ pub use crate::types::error::_filter_limit_exceeded_exception::FilterLimitExceed
 pub use crate::types::error::_failed_dependency_exception::FailedDependencyExceptionBuilder;
 
 pub use crate::types::error::_redirect_exception::RedirectExceptionBuilder;
-
-pub use crate::types::error::_conflict_exception::ConflictExceptionBuilder;
 
 pub use crate::types::error::_unsupported_digital_signature_method_exception::UnsupportedDigitalSignatureMethodExceptionBuilder;
 

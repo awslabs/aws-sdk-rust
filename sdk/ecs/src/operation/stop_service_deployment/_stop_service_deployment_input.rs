@@ -6,7 +6,7 @@ pub struct StopServiceDeploymentInput {
     /// <p>The ARN of the service deployment that you want to stop.</p>
     pub service_deployment_arn: ::std::option::Option<::std::string::String>,
     /// <p>How you want Amazon ECS to stop the service.</p>
-    /// <p>The valid values are <code>ROLLBACK</code>.</p>
+    /// <p>The ROLLBACK and ABORT stopType aren't supported.</p>
     pub stop_type: ::std::option::Option<crate::types::StopServiceDeploymentStopType>,
 }
 impl StopServiceDeploymentInput {
@@ -15,7 +15,7 @@ impl StopServiceDeploymentInput {
         self.service_deployment_arn.as_deref()
     }
     /// <p>How you want Amazon ECS to stop the service.</p>
-    /// <p>The valid values are <code>ROLLBACK</code>.</p>
+    /// <p>The ROLLBACK and ABORT stopType aren't supported.</p>
     pub fn stop_type(&self) -> ::std::option::Option<&crate::types::StopServiceDeploymentStopType> {
         self.stop_type.as_ref()
     }
@@ -51,19 +51,19 @@ impl StopServiceDeploymentInputBuilder {
         &self.service_deployment_arn
     }
     /// <p>How you want Amazon ECS to stop the service.</p>
-    /// <p>The valid values are <code>ROLLBACK</code>.</p>
+    /// <p>The ROLLBACK and ABORT stopType aren't supported.</p>
     pub fn stop_type(mut self, input: crate::types::StopServiceDeploymentStopType) -> Self {
         self.stop_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>How you want Amazon ECS to stop the service.</p>
-    /// <p>The valid values are <code>ROLLBACK</code>.</p>
+    /// <p>The ROLLBACK and ABORT stopType aren't supported.</p>
     pub fn set_stop_type(mut self, input: ::std::option::Option<crate::types::StopServiceDeploymentStopType>) -> Self {
         self.stop_type = input;
         self
     }
     /// <p>How you want Amazon ECS to stop the service.</p>
-    /// <p>The valid values are <code>ROLLBACK</code>.</p>
+    /// <p>The ROLLBACK and ABORT stopType aren't supported.</p>
     pub fn get_stop_type(&self) -> &::std::option::Option<crate::types::StopServiceDeploymentStopType> {
         &self.stop_type
     }

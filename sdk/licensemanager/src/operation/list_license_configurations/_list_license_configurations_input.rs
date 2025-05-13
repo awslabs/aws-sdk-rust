@@ -12,11 +12,11 @@ pub struct ListLicenseConfigurationsInput {
     /// <p>Filters to scope the results. The following filters and logical operators are supported:</p>
     /// <ul>
     /// <li>
-    /// <p><code>licenseCountingType</code> - The dimension for which licenses are counted. Possible values are <code>vCPU</code> | <code>Instance</code> | <code>Core</code> | <code>Socket</code>. Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p></li>
+    /// <p><code>licenseCountingType</code> - The dimension for which licenses are counted. Possible values are <code>vCPU</code> | <code>Instance</code> | <code>Core</code> | <code>Socket</code>.</p></li>
     /// <li>
-    /// <p><code>enforceLicenseCount</code> - A Boolean value that indicates whether hard license enforcement is used. Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p></li>
+    /// <p><code>enforceLicenseCount</code> - A Boolean value that indicates whether hard license enforcement is used.</p></li>
     /// <li>
-    /// <p><code>usagelimitExceeded</code> - A Boolean value that indicates whether the available licenses have been exceeded. Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p></li>
+    /// <p><code>usagelimitExceeded</code> - A Boolean value that indicates whether the available licenses have been exceeded.</p></li>
     /// </ul>
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
 }
@@ -38,11 +38,11 @@ impl ListLicenseConfigurationsInput {
     /// <p>Filters to scope the results. The following filters and logical operators are supported:</p>
     /// <ul>
     /// <li>
-    /// <p><code>licenseCountingType</code> - The dimension for which licenses are counted. Possible values are <code>vCPU</code> | <code>Instance</code> | <code>Core</code> | <code>Socket</code>. Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p></li>
+    /// <p><code>licenseCountingType</code> - The dimension for which licenses are counted. Possible values are <code>vCPU</code> | <code>Instance</code> | <code>Core</code> | <code>Socket</code>.</p></li>
     /// <li>
-    /// <p><code>enforceLicenseCount</code> - A Boolean value that indicates whether hard license enforcement is used. Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p></li>
+    /// <p><code>enforceLicenseCount</code> - A Boolean value that indicates whether hard license enforcement is used.</p></li>
     /// <li>
-    /// <p><code>usagelimitExceeded</code> - A Boolean value that indicates whether the available licenses have been exceeded. Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p></li>
+    /// <p><code>usagelimitExceeded</code> - A Boolean value that indicates whether the available licenses have been exceeded.</p></li>
     /// </ul>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
@@ -122,11 +122,11 @@ impl ListLicenseConfigurationsInputBuilder {
     /// <p>Filters to scope the results. The following filters and logical operators are supported:</p>
     /// <ul>
     /// <li>
-    /// <p><code>licenseCountingType</code> - The dimension for which licenses are counted. Possible values are <code>vCPU</code> | <code>Instance</code> | <code>Core</code> | <code>Socket</code>. Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p></li>
+    /// <p><code>licenseCountingType</code> - The dimension for which licenses are counted. Possible values are <code>vCPU</code> | <code>Instance</code> | <code>Core</code> | <code>Socket</code>.</p></li>
     /// <li>
-    /// <p><code>enforceLicenseCount</code> - A Boolean value that indicates whether hard license enforcement is used. Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p></li>
+    /// <p><code>enforceLicenseCount</code> - A Boolean value that indicates whether hard license enforcement is used.</p></li>
     /// <li>
-    /// <p><code>usagelimitExceeded</code> - A Boolean value that indicates whether the available licenses have been exceeded. Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p></li>
+    /// <p><code>usagelimitExceeded</code> - A Boolean value that indicates whether the available licenses have been exceeded.</p></li>
     /// </ul>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         let mut v = self.filters.unwrap_or_default();
@@ -137,11 +137,11 @@ impl ListLicenseConfigurationsInputBuilder {
     /// <p>Filters to scope the results. The following filters and logical operators are supported:</p>
     /// <ul>
     /// <li>
-    /// <p><code>licenseCountingType</code> - The dimension for which licenses are counted. Possible values are <code>vCPU</code> | <code>Instance</code> | <code>Core</code> | <code>Socket</code>. Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p></li>
+    /// <p><code>licenseCountingType</code> - The dimension for which licenses are counted. Possible values are <code>vCPU</code> | <code>Instance</code> | <code>Core</code> | <code>Socket</code>.</p></li>
     /// <li>
-    /// <p><code>enforceLicenseCount</code> - A Boolean value that indicates whether hard license enforcement is used. Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p></li>
+    /// <p><code>enforceLicenseCount</code> - A Boolean value that indicates whether hard license enforcement is used.</p></li>
     /// <li>
-    /// <p><code>usagelimitExceeded</code> - A Boolean value that indicates whether the available licenses have been exceeded. Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p></li>
+    /// <p><code>usagelimitExceeded</code> - A Boolean value that indicates whether the available licenses have been exceeded.</p></li>
     /// </ul>
     pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
@@ -150,11 +150,11 @@ impl ListLicenseConfigurationsInputBuilder {
     /// <p>Filters to scope the results. The following filters and logical operators are supported:</p>
     /// <ul>
     /// <li>
-    /// <p><code>licenseCountingType</code> - The dimension for which licenses are counted. Possible values are <code>vCPU</code> | <code>Instance</code> | <code>Core</code> | <code>Socket</code>. Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p></li>
+    /// <p><code>licenseCountingType</code> - The dimension for which licenses are counted. Possible values are <code>vCPU</code> | <code>Instance</code> | <code>Core</code> | <code>Socket</code>.</p></li>
     /// <li>
-    /// <p><code>enforceLicenseCount</code> - A Boolean value that indicates whether hard license enforcement is used. Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p></li>
+    /// <p><code>enforceLicenseCount</code> - A Boolean value that indicates whether hard license enforcement is used.</p></li>
     /// <li>
-    /// <p><code>usagelimitExceeded</code> - A Boolean value that indicates whether the available licenses have been exceeded. Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p></li>
+    /// <p><code>usagelimitExceeded</code> - A Boolean value that indicates whether the available licenses have been exceeded.</p></li>
     /// </ul>
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
         &self.filters

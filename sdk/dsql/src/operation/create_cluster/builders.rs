@@ -22,7 +22,71 @@ impl crate::operation::create_cluster::builders::CreateClusterInputBuilder {
 }
 /// Fluent builder constructing a request to `CreateCluster`.
 ///
-/// <p>Creates a cluster in Amazon Aurora DSQL.</p>
+/// <p>This operation creates a cluster in Amazon Aurora DSQL. You need the following permissions to use this operation.</p>
+/// <p>Permission to create a cluster.</p>
+/// <dl>
+/// <dt>
+/// dsql:CreateCluster
+/// </dt>
+/// <dd>
+/// <p>Resources: arn:aws:dsql:<i>region</i>:<i>account-id</i>:cluster/*</p>
+/// </dd>
+/// </dl>
+/// <p>Permission to add tags to a resource.</p>
+/// <dl>
+/// <dt>
+/// dsql:TagResource
+/// </dt>
+/// <dd>
+/// <p>Resources: arn:aws:dsql:<i>region</i>:<i>account-id</i>:cluster/*</p>
+/// </dd>
+/// </dl>
+/// <p>Permission to configure multi-region properties for a cluster.</p>
+/// <dl>
+/// <dt>
+/// dsql:PutMultiRegionProperties
+/// </dt>
+/// <dd>
+/// <p>Resources: arn:aws:dsql:<i>region</i>:<i>account-id</i>:cluster/*</p>
+/// </dd>
+/// </dl>
+/// <p>When specifying multiRegionProperties.clusters.</p>
+/// <dl>
+/// <dt>
+/// dsql:AddPeerCluster
+/// </dt>
+/// <dd>
+/// <p>Permission to add peer clusters.</p>
+/// <p>Resources:</p>
+/// <ul>
+/// <li>
+/// <p>Local cluster: arn:aws:dsql:<i>region</i>:<i>account-id</i>:cluster/*</p></li>
+/// <li>
+/// <p>Each peer cluster: exact ARN of each specified peer cluster</p></li>
+/// </ul>
+/// </dd>
+/// </dl>
+/// <p>When specifying multiRegionProperties.witnessRegion.</p>
+/// <dl>
+/// <dt>
+/// dsql:PutWitnessRegion
+/// </dt>
+/// <dd>
+/// <p>Permission to set a witness region.</p>
+/// <p>Resources: arn:aws:dsql:<i>region</i>:<i>account-id</i>:cluster/*</p>
+/// <p>Condition Keys: <code>dsql:WitnessRegion</code> (matching the specified witness region)</p><note>
+/// <p>This permission is checked both in the cluster Region and in the witness Region.</p>
+/// </note>
+/// </dd>
+/// </dl><important>
+/// <p><b>Important Notes for Multi-Region Operations</b></p>
+/// <ul>
+/// <li>
+/// <p>The witness region specified in <code>multiRegionProperties.witnessRegion</code> cannot be the same as the cluster's Region.</p></li>
+/// <li>
+/// <p>When updating clusters with peer relationships, permissions are checked for both adding and removing peers.</p></li>
+/// </ul>
+/// </important>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateClusterFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -157,5 +221,19 @@ impl CreateClusterFluentBuilder {
     /// <p>If you don't specify a client token, the Amazon Web Services SDK automatically generates one.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_client_token()
+    }
+    /// <p>The configuration settings when creating a multi-Region cluster, including the witness region and linked cluster properties.</p>
+    pub fn multi_region_properties(mut self, input: crate::types::MultiRegionProperties) -> Self {
+        self.inner = self.inner.multi_region_properties(input);
+        self
+    }
+    /// <p>The configuration settings when creating a multi-Region cluster, including the witness region and linked cluster properties.</p>
+    pub fn set_multi_region_properties(mut self, input: ::std::option::Option<crate::types::MultiRegionProperties>) -> Self {
+        self.inner = self.inner.set_multi_region_properties(input);
+        self
+    }
+    /// <p>The configuration settings when creating a multi-Region cluster, including the witness region and linked cluster properties.</p>
+    pub fn get_multi_region_properties(&self) -> &::std::option::Option<crate::types::MultiRegionProperties> {
+        self.inner.get_multi_region_properties()
     }
 }

@@ -197,6 +197,8 @@ pub(crate) mod shape_control_operation_summary;
 
 pub(crate) mod shape_drift_status_summary;
 
+pub(crate) mod shape_enabled_baseline_drift_status_summary;
+
 pub(crate) mod shape_enabled_baseline_parameter_summaries;
 
 pub(crate) mod shape_enabled_baseline_summary;
@@ -215,8 +217,12 @@ pub(crate) mod shape_landing_zone_summary;
 
 pub(crate) mod shape_target_regions;
 
+pub(crate) mod shape_enabled_baseline_drift_types;
+
 pub(crate) mod shape_enabled_baseline_parameter_summary;
 
 pub(crate) mod shape_enabled_control_parameter_summary;
 
 pub(crate) mod shape_region;
+
+pub(crate) mod shape_enabled_baseline_inheritance_drift;

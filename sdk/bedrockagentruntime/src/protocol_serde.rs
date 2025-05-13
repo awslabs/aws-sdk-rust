@@ -491,6 +491,8 @@ pub(crate) mod shape_image_input_source;
 
 pub(crate) mod shape_invocation_input;
 
+pub(crate) mod shape_metadata;
+
 pub(crate) mod shape_model_invocation_input;
 
 pub(crate) mod shape_observation;
@@ -541,8 +543,6 @@ pub(crate) mod shape_knowledge_base_lookup_input;
 
 pub(crate) mod shape_knowledge_base_lookup_output;
 
-pub(crate) mod shape_metadata;
-
 pub(crate) mod shape_post_processing_parsed_response;
 
 pub(crate) mod shape_pre_processing_parsed_response;
@@ -552,6 +552,8 @@ pub(crate) mod shape_raw_response;
 pub(crate) mod shape_reasoning_content_block;
 
 pub(crate) mod shape_reprompt_response;
+
+pub(crate) mod shape_usage;
 
 pub(crate) mod shape_agent_collaborator_input_payload;
 
@@ -584,8 +586,6 @@ pub(crate) mod shape_reasoning_text_block;
 pub(crate) mod shape_request_body;
 
 pub(crate) mod shape_stop_sequences;
-
-pub(crate) mod shape_usage;
 
 pub(crate) mod shape_content_map;
 

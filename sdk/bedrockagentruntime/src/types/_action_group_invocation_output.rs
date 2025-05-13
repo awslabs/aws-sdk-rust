@@ -6,17 +6,24 @@
 pub struct ActionGroupInvocationOutput {
     /// <p>The JSON-formatted string returned by the API invoked by the action group.</p>
     pub text: ::std::option::Option<::std::string::String>,
+    /// <p>Contains information about the action group output.</p>
+    pub metadata: ::std::option::Option<crate::types::Metadata>,
 }
 impl ActionGroupInvocationOutput {
     /// <p>The JSON-formatted string returned by the API invoked by the action group.</p>
     pub fn text(&self) -> ::std::option::Option<&str> {
         self.text.as_deref()
     }
+    /// <p>Contains information about the action group output.</p>
+    pub fn metadata(&self) -> ::std::option::Option<&crate::types::Metadata> {
+        self.metadata.as_ref()
+    }
 }
 impl ::std::fmt::Debug for ActionGroupInvocationOutput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("ActionGroupInvocationOutput");
         formatter.field("text", &"*** Sensitive Data Redacted ***");
+        formatter.field("metadata", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }
@@ -32,6 +39,7 @@ impl ActionGroupInvocationOutput {
 #[non_exhaustive]
 pub struct ActionGroupInvocationOutputBuilder {
     pub(crate) text: ::std::option::Option<::std::string::String>,
+    pub(crate) metadata: ::std::option::Option<crate::types::Metadata>,
 }
 impl ActionGroupInvocationOutputBuilder {
     /// <p>The JSON-formatted string returned by the API invoked by the action group.</p>
@@ -48,15 +56,33 @@ impl ActionGroupInvocationOutputBuilder {
     pub fn get_text(&self) -> &::std::option::Option<::std::string::String> {
         &self.text
     }
+    /// <p>Contains information about the action group output.</p>
+    pub fn metadata(mut self, input: crate::types::Metadata) -> Self {
+        self.metadata = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Contains information about the action group output.</p>
+    pub fn set_metadata(mut self, input: ::std::option::Option<crate::types::Metadata>) -> Self {
+        self.metadata = input;
+        self
+    }
+    /// <p>Contains information about the action group output.</p>
+    pub fn get_metadata(&self) -> &::std::option::Option<crate::types::Metadata> {
+        &self.metadata
+    }
     /// Consumes the builder and constructs a [`ActionGroupInvocationOutput`](crate::types::ActionGroupInvocationOutput).
     pub fn build(self) -> crate::types::ActionGroupInvocationOutput {
-        crate::types::ActionGroupInvocationOutput { text: self.text }
+        crate::types::ActionGroupInvocationOutput {
+            text: self.text,
+            metadata: self.metadata,
+        }
     }
 }
 impl ::std::fmt::Debug for ActionGroupInvocationOutputBuilder {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("ActionGroupInvocationOutputBuilder");
         formatter.field("text", &"*** Sensitive Data Redacted ***");
+        formatter.field("metadata", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }

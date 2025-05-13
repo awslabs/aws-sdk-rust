@@ -45,6 +45,20 @@ pub fn de_update_cluster_http_error(
             };
             tmp
         }),
+        "ValidationException" => crate::operation::update_cluster::UpdateClusterError::ValidationException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ValidationExceptionBuilder::default();
+                output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::update_cluster::UpdateClusterError::unhandled)?;
+                let output = output.meta(generic);
+                crate::serde_util::validation_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::update_cluster::UpdateClusterError::unhandled)?
+            };
+            tmp
+        }),
         "AccessDeniedException" => crate::operation::update_cluster::UpdateClusterError::AccessDeniedException({
             #[allow(unused_mut)]
             let mut tmp = {
@@ -92,20 +106,6 @@ pub fn de_update_cluster_http_error(
                 );
                 let output = output.meta(generic);
                 crate::serde_util::throttling_exception_correct_errors(output)
-                    .build()
-                    .map_err(crate::operation::update_cluster::UpdateClusterError::unhandled)?
-            };
-            tmp
-        }),
-        "ValidationException" => crate::operation::update_cluster::UpdateClusterError::ValidationException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::types::error::builders::ValidationExceptionBuilder::default();
-                output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(_response_body, output)
-                    .map_err(crate::operation::update_cluster::UpdateClusterError::unhandled)?;
-                let output = output.meta(generic);
-                crate::serde_util::validation_exception_correct_errors(output)
                     .build()
                     .map_err(crate::operation::update_cluster::UpdateClusterError::unhandled)?
             };

@@ -81,6 +81,8 @@ pub(crate) mod shape_cluster_list;
 
 pub(crate) mod shape_linked_cluster_properties;
 
+pub(crate) mod shape_multi_region_properties;
+
 pub(crate) mod shape_tag_map;
 
 pub(crate) mod shape_validation_exception_field_list;

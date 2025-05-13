@@ -75,6 +75,8 @@ pub use crate::types::_inference_profile_model::InferenceProfileModelBuilder;
 
 pub use crate::types::_inference_profile_summary::InferenceProfileSummaryBuilder;
 
+pub use crate::types::_guardrail_cross_region_config::GuardrailCrossRegionConfigBuilder;
+
 pub use crate::types::_guardrail_contextual_grounding_policy_config::GuardrailContextualGroundingPolicyConfigBuilder;
 
 pub use crate::types::_guardrail_contextual_grounding_filter_config::GuardrailContextualGroundingFilterConfigBuilder;
@@ -98,6 +100,8 @@ pub use crate::types::_guardrail_content_filter_config::GuardrailContentFilterCo
 pub use crate::types::_guardrail_topic_policy_config::GuardrailTopicPolicyConfigBuilder;
 
 pub use crate::types::_guardrail_topic_config::GuardrailTopicConfigBuilder;
+
+pub use crate::types::_guardrail_cross_region_details::GuardrailCrossRegionDetailsBuilder;
 
 pub use crate::types::_guardrail_contextual_grounding_policy::GuardrailContextualGroundingPolicyBuilder;
 

@@ -45,6 +45,14 @@ pub use crate::types::_enabled_baseline_details::EnabledBaselineDetails;
 
 pub use crate::types::_enabled_baseline_parameter_summary::EnabledBaselineParameterSummary;
 
+pub use crate::types::_enabled_baseline_drift_status_summary::EnabledBaselineDriftStatusSummary;
+
+pub use crate::types::_enabled_baseline_drift_types::EnabledBaselineDriftTypes;
+
+pub use crate::types::_enabled_baseline_inheritance_drift::EnabledBaselineInheritanceDrift;
+
+pub use crate::types::_enabled_baseline_drift_status::EnabledBaselineDriftStatus;
+
 pub use crate::types::_enabled_baseline_summary::EnabledBaselineSummary;
 
 pub use crate::types::_enabled_baseline_filter::EnabledBaselineFilter;
@@ -91,7 +99,15 @@ mod _drift_status_summary;
 
 mod _enabled_baseline_details;
 
+mod _enabled_baseline_drift_status;
+
+mod _enabled_baseline_drift_status_summary;
+
+mod _enabled_baseline_drift_types;
+
 mod _enabled_baseline_filter;
+
+mod _enabled_baseline_inheritance_drift;
 
 mod _enabled_baseline_parameter;
 

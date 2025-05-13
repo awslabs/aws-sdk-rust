@@ -27,6 +27,8 @@ pub struct CreateGrantInput {
     pub home_region: ::std::option::Option<::std::string::String>,
     /// <p>Allowed operations for the grant.</p>
     pub allowed_operations: ::std::option::Option<::std::vec::Vec<crate::types::AllowedOperation>>,
+    /// <p>Tags to add to the grant. For more information about tagging support in License Manager, see the <a href="https://docs.aws.amazon.com/license-manager/latest/APIReference/API_TagResource.html">TagResource</a> operation.</p>
+    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateGrantInput {
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
@@ -69,6 +71,12 @@ impl CreateGrantInput {
     pub fn allowed_operations(&self) -> &[crate::types::AllowedOperation] {
         self.allowed_operations.as_deref().unwrap_or_default()
     }
+    /// <p>Tags to add to the grant. For more information about tagging support in License Manager, see the <a href="https://docs.aws.amazon.com/license-manager/latest/APIReference/API_TagResource.html">TagResource</a> operation.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
+    }
 }
 impl CreateGrantInput {
     /// Creates a new builder-style object to manufacture [`CreateGrantInput`](crate::operation::create_grant::CreateGrantInput).
@@ -87,6 +95,7 @@ pub struct CreateGrantInputBuilder {
     pub(crate) principals: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) home_region: ::std::option::Option<::std::string::String>,
     pub(crate) allowed_operations: ::std::option::Option<::std::vec::Vec<crate::types::AllowedOperation>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateGrantInputBuilder {
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
@@ -225,6 +234,26 @@ impl CreateGrantInputBuilder {
     pub fn get_allowed_operations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AllowedOperation>> {
         &self.allowed_operations
     }
+    /// Appends an item to `tags`.
+    ///
+    /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+    ///
+    /// <p>Tags to add to the grant. For more information about tagging support in License Manager, see the <a href="https://docs.aws.amazon.com/license-manager/latest/APIReference/API_TagResource.html">TagResource</a> operation.</p>
+    pub fn tags(mut self, input: crate::types::Tag) -> Self {
+        let mut v = self.tags.unwrap_or_default();
+        v.push(input);
+        self.tags = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Tags to add to the grant. For more information about tagging support in License Manager, see the <a href="https://docs.aws.amazon.com/license-manager/latest/APIReference/API_TagResource.html">TagResource</a> operation.</p>
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
+        self.tags = input;
+        self
+    }
+    /// <p>Tags to add to the grant. For more information about tagging support in License Manager, see the <a href="https://docs.aws.amazon.com/license-manager/latest/APIReference/API_TagResource.html">TagResource</a> operation.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
+    }
     /// Consumes the builder and constructs a [`CreateGrantInput`](crate::operation::create_grant::CreateGrantInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::create_grant::CreateGrantInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_grant::CreateGrantInput {
@@ -234,6 +263,7 @@ impl CreateGrantInputBuilder {
             principals: self.principals,
             home_region: self.home_region,
             allowed_operations: self.allowed_operations,
+            tags: self.tags,
         })
     }
 }

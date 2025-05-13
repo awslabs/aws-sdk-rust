@@ -23,6 +23,10 @@ impl crate::operation::delete_multi_region_clusters::builders::DeleteMultiRegion
 /// Fluent builder constructing a request to `DeleteMultiRegionClusters`.
 ///
 /// <p>Deletes a multi-Region cluster in Amazon Aurora DSQL.</p>
+#[deprecated(
+    note = "The DeleteMultiRegionClusters API is deprecated. To delete a multi-Region cluster, use the DeleteCluster API instead.",
+    since = "5/13/2025"
+)]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteMultiRegionClustersFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

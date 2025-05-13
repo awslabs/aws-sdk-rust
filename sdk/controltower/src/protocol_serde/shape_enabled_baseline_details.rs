@@ -35,6 +35,11 @@ where
                                     .transpose()?,
                             );
                         }
+                        "driftStatusSummary" => {
+                            builder = builder.set_drift_status_summary(
+                                crate::protocol_serde::shape_enabled_baseline_drift_status_summary::de_enabled_baseline_drift_status_summary(tokens)?,
+                            );
+                        }
                         "targetIdentifier" => {
                             builder = builder.set_target_identifier(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

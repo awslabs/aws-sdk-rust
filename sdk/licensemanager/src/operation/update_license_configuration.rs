@@ -270,6 +270,8 @@ pub enum UpdateLicenseConfigurationError {
     AccessDeniedException(crate::types::error::AccessDeniedException),
     /// <p>The Amazon Web Services user account does not have permission to perform the action. Check the IAM policy associated with this account.</p>
     AuthorizationException(crate::types::error::AuthorizationException),
+    /// <p>There was a conflict processing the request. Try your request again.</p>
+    ConflictException(crate::types::error::ConflictException),
     /// <p>One or more parameter values are not valid.</p>
     InvalidParameterValueException(crate::types::error::InvalidParameterValueException),
     /// <p>Too many requests have been submitted. Try again after a brief wait.</p>
@@ -313,6 +315,7 @@ impl UpdateLicenseConfigurationError {
         match self {
             Self::AccessDeniedException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::AuthorizationException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::ConflictException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidParameterValueException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::RateLimitExceededException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ResourceLimitExceededException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
@@ -327,6 +330,10 @@ impl UpdateLicenseConfigurationError {
     /// Returns `true` if the error kind is `UpdateLicenseConfigurationError::AuthorizationException`.
     pub fn is_authorization_exception(&self) -> bool {
         matches!(self, Self::AuthorizationException(_))
+    }
+    /// Returns `true` if the error kind is `UpdateLicenseConfigurationError::ConflictException`.
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(self, Self::ConflictException(_))
     }
     /// Returns `true` if the error kind is `UpdateLicenseConfigurationError::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
@@ -350,6 +357,7 @@ impl ::std::error::Error for UpdateLicenseConfigurationError {
         match self {
             Self::AccessDeniedException(_inner) => ::std::option::Option::Some(_inner),
             Self::AuthorizationException(_inner) => ::std::option::Option::Some(_inner),
+            Self::ConflictException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidParameterValueException(_inner) => ::std::option::Option::Some(_inner),
             Self::RateLimitExceededException(_inner) => ::std::option::Option::Some(_inner),
             Self::ResourceLimitExceededException(_inner) => ::std::option::Option::Some(_inner),
@@ -363,6 +371,7 @@ impl ::std::fmt::Display for UpdateLicenseConfigurationError {
         match self {
             Self::AccessDeniedException(_inner) => _inner.fmt(f),
             Self::AuthorizationException(_inner) => _inner.fmt(f),
+            Self::ConflictException(_inner) => _inner.fmt(f),
             Self::InvalidParameterValueException(_inner) => _inner.fmt(f),
             Self::RateLimitExceededException(_inner) => _inner.fmt(f),
             Self::ResourceLimitExceededException(_inner) => _inner.fmt(f),
@@ -390,6 +399,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for UpdateLicense
         match self {
             Self::AccessDeniedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::AuthorizationException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::ConflictException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidParameterValueException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::RateLimitExceededException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ResourceLimitExceededException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),

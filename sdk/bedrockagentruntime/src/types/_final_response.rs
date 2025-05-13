@@ -6,17 +6,24 @@
 pub struct FinalResponse {
     /// <p>The text in the response to the user.</p>
     pub text: ::std::option::Option<::std::string::String>,
+    /// <p>Contains information about the invoke agent operation.</p>
+    pub metadata: ::std::option::Option<crate::types::Metadata>,
 }
 impl FinalResponse {
     /// <p>The text in the response to the user.</p>
     pub fn text(&self) -> ::std::option::Option<&str> {
         self.text.as_deref()
     }
+    /// <p>Contains information about the invoke agent operation.</p>
+    pub fn metadata(&self) -> ::std::option::Option<&crate::types::Metadata> {
+        self.metadata.as_ref()
+    }
 }
 impl ::std::fmt::Debug for FinalResponse {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("FinalResponse");
         formatter.field("text", &"*** Sensitive Data Redacted ***");
+        formatter.field("metadata", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }
@@ -32,6 +39,7 @@ impl FinalResponse {
 #[non_exhaustive]
 pub struct FinalResponseBuilder {
     pub(crate) text: ::std::option::Option<::std::string::String>,
+    pub(crate) metadata: ::std::option::Option<crate::types::Metadata>,
 }
 impl FinalResponseBuilder {
     /// <p>The text in the response to the user.</p>
@@ -48,15 +56,33 @@ impl FinalResponseBuilder {
     pub fn get_text(&self) -> &::std::option::Option<::std::string::String> {
         &self.text
     }
+    /// <p>Contains information about the invoke agent operation.</p>
+    pub fn metadata(mut self, input: crate::types::Metadata) -> Self {
+        self.metadata = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Contains information about the invoke agent operation.</p>
+    pub fn set_metadata(mut self, input: ::std::option::Option<crate::types::Metadata>) -> Self {
+        self.metadata = input;
+        self
+    }
+    /// <p>Contains information about the invoke agent operation.</p>
+    pub fn get_metadata(&self) -> &::std::option::Option<crate::types::Metadata> {
+        &self.metadata
+    }
     /// Consumes the builder and constructs a [`FinalResponse`](crate::types::FinalResponse).
     pub fn build(self) -> crate::types::FinalResponse {
-        crate::types::FinalResponse { text: self.text }
+        crate::types::FinalResponse {
+            text: self.text,
+            metadata: self.metadata,
+        }
     }
 }
 impl ::std::fmt::Debug for FinalResponseBuilder {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("FinalResponseBuilder");
         formatter.field("text", &"*** Sensitive Data Redacted ***");
+        formatter.field("metadata", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }

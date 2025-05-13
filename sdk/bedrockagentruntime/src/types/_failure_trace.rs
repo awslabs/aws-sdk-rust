@@ -8,6 +8,10 @@ pub struct FailureTrace {
     pub trace_id: ::std::option::Option<::std::string::String>,
     /// <p>The reason the interaction failed.</p>
     pub failure_reason: ::std::option::Option<::std::string::String>,
+    /// <p>The failure code for the trace.</p>
+    pub failure_code: ::std::option::Option<i32>,
+    /// <p>Information about the failure that occurred.</p>
+    pub metadata: ::std::option::Option<crate::types::Metadata>,
 }
 impl FailureTrace {
     /// <p>The unique identifier of the trace.</p>
@@ -18,12 +22,22 @@ impl FailureTrace {
     pub fn failure_reason(&self) -> ::std::option::Option<&str> {
         self.failure_reason.as_deref()
     }
+    /// <p>The failure code for the trace.</p>
+    pub fn failure_code(&self) -> ::std::option::Option<i32> {
+        self.failure_code
+    }
+    /// <p>Information about the failure that occurred.</p>
+    pub fn metadata(&self) -> ::std::option::Option<&crate::types::Metadata> {
+        self.metadata.as_ref()
+    }
 }
 impl ::std::fmt::Debug for FailureTrace {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("FailureTrace");
         formatter.field("trace_id", &"*** Sensitive Data Redacted ***");
         formatter.field("failure_reason", &"*** Sensitive Data Redacted ***");
+        formatter.field("failure_code", &"*** Sensitive Data Redacted ***");
+        formatter.field("metadata", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }
@@ -40,6 +54,8 @@ impl FailureTrace {
 pub struct FailureTraceBuilder {
     pub(crate) trace_id: ::std::option::Option<::std::string::String>,
     pub(crate) failure_reason: ::std::option::Option<::std::string::String>,
+    pub(crate) failure_code: ::std::option::Option<i32>,
+    pub(crate) metadata: ::std::option::Option<crate::types::Metadata>,
 }
 impl FailureTraceBuilder {
     /// <p>The unique identifier of the trace.</p>
@@ -70,11 +86,41 @@ impl FailureTraceBuilder {
     pub fn get_failure_reason(&self) -> &::std::option::Option<::std::string::String> {
         &self.failure_reason
     }
+    /// <p>The failure code for the trace.</p>
+    pub fn failure_code(mut self, input: i32) -> Self {
+        self.failure_code = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The failure code for the trace.</p>
+    pub fn set_failure_code(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.failure_code = input;
+        self
+    }
+    /// <p>The failure code for the trace.</p>
+    pub fn get_failure_code(&self) -> &::std::option::Option<i32> {
+        &self.failure_code
+    }
+    /// <p>Information about the failure that occurred.</p>
+    pub fn metadata(mut self, input: crate::types::Metadata) -> Self {
+        self.metadata = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Information about the failure that occurred.</p>
+    pub fn set_metadata(mut self, input: ::std::option::Option<crate::types::Metadata>) -> Self {
+        self.metadata = input;
+        self
+    }
+    /// <p>Information about the failure that occurred.</p>
+    pub fn get_metadata(&self) -> &::std::option::Option<crate::types::Metadata> {
+        &self.metadata
+    }
     /// Consumes the builder and constructs a [`FailureTrace`](crate::types::FailureTrace).
     pub fn build(self) -> crate::types::FailureTrace {
         crate::types::FailureTrace {
             trace_id: self.trace_id,
             failure_reason: self.failure_reason,
+            failure_code: self.failure_code,
+            metadata: self.metadata,
         }
     }
 }
@@ -83,6 +129,8 @@ impl ::std::fmt::Debug for FailureTraceBuilder {
         let mut formatter = f.debug_struct("FailureTraceBuilder");
         formatter.field("trace_id", &"*** Sensitive Data Redacted ***");
         formatter.field("failure_reason", &"*** Sensitive Data Redacted ***");
+        formatter.field("failure_code", &"*** Sensitive Data Redacted ***");
+        formatter.field("metadata", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }

@@ -14,6 +14,39 @@ where
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "startTime" => {
+                            builder = builder.set_start_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
+                                tokens.next(),
+                                ::aws_smithy_types::date_time::Format::DateTimeWithOffset,
+                            )?);
+                        }
+                        "endTime" => {
+                            builder = builder.set_end_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
+                                tokens.next(),
+                                ::aws_smithy_types::date_time::Format::DateTimeWithOffset,
+                            )?);
+                        }
+                        "totalTimeMs" => {
+                            builder = builder.set_total_time_ms(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i64::try_from)
+                                    .transpose()?,
+                            );
+                        }
+                        "operationTotalTimeMs" => {
+                            builder = builder.set_operation_total_time_ms(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i64::try_from)
+                                    .transpose()?,
+                            );
+                        }
+                        "clientRequestId" => {
+                            builder = builder.set_client_request_id(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         "usage" => {
                             builder = builder.set_usage(crate::protocol_serde::shape_usage::de_usage(tokens)?);
                         }

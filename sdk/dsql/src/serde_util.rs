@@ -29,6 +29,18 @@ pub(crate) fn service_quota_exceeded_exception_correct_errors(
     builder
 }
 
+pub(crate) fn validation_exception_correct_errors(
+    mut builder: crate::types::error::builders::ValidationExceptionBuilder,
+) -> crate::types::error::builders::ValidationExceptionBuilder {
+    if builder.message.is_none() {
+        builder.message = Some(Default::default())
+    }
+    if builder.reason.is_none() {
+        builder.reason = "no value was set".parse::<crate::types::ValidationExceptionReason>().ok()
+    }
+    builder
+}
+
 pub(crate) fn access_denied_exception_correct_errors(
     mut builder: crate::types::error::builders::AccessDeniedExceptionBuilder,
 ) -> crate::types::error::builders::AccessDeniedExceptionBuilder {
@@ -52,18 +64,6 @@ pub(crate) fn throttling_exception_correct_errors(
 ) -> crate::types::error::builders::ThrottlingExceptionBuilder {
     if builder.message.is_none() {
         builder.message = Some(Default::default())
-    }
-    builder
-}
-
-pub(crate) fn validation_exception_correct_errors(
-    mut builder: crate::types::error::builders::ValidationExceptionBuilder,
-) -> crate::types::error::builders::ValidationExceptionBuilder {
-    if builder.message.is_none() {
-        builder.message = Some(Default::default())
-    }
-    if builder.reason.is_none() {
-        builder.reason = "no value was set".parse::<crate::types::ValidationExceptionReason>().ok()
     }
     builder
 }

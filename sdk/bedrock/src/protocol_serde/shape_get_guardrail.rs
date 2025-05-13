@@ -158,6 +158,11 @@ pub(crate) fn de_get_guardrail(
                         ::aws_smithy_types::date_time::Format::DateTimeWithOffset,
                     )?);
                 }
+                "crossRegionDetails" => {
+                    builder = builder.set_cross_region_details(
+                        crate::protocol_serde::shape_guardrail_cross_region_details::de_guardrail_cross_region_details(tokens)?,
+                    );
+                }
                 "description" => {
                     builder = builder.set_description(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

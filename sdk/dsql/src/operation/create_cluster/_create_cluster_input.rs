@@ -10,6 +10,8 @@ pub struct CreateClusterInput {
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Idempotency ensures that an API request completes only once. With an idempotent request, if the original request completes successfully, the subsequent retries with the same client token return the result from the original successful request and they have no additional effect.</p>
     /// <p>If you don't specify a client token, the Amazon Web Services SDK automatically generates one.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
+    /// <p>The configuration settings when creating a multi-Region cluster, including the witness region and linked cluster properties.</p>
+    pub multi_region_properties: ::std::option::Option<crate::types::MultiRegionProperties>,
 }
 impl CreateClusterInput {
     /// <p>If enabled, you can't delete your cluster. You must first disable this property before you can delete your cluster.</p>
@@ -24,6 +26,10 @@ impl CreateClusterInput {
     /// <p>If you don't specify a client token, the Amazon Web Services SDK automatically generates one.</p>
     pub fn client_token(&self) -> ::std::option::Option<&str> {
         self.client_token.as_deref()
+    }
+    /// <p>The configuration settings when creating a multi-Region cluster, including the witness region and linked cluster properties.</p>
+    pub fn multi_region_properties(&self) -> ::std::option::Option<&crate::types::MultiRegionProperties> {
+        self.multi_region_properties.as_ref()
     }
 }
 impl CreateClusterInput {
@@ -40,6 +46,7 @@ pub struct CreateClusterInputBuilder {
     pub(crate) deletion_protection_enabled: ::std::option::Option<bool>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
+    pub(crate) multi_region_properties: ::std::option::Option<crate::types::MultiRegionProperties>,
 }
 impl CreateClusterInputBuilder {
     /// <p>If enabled, you can't delete your cluster. You must first disable this property before you can delete your cluster.</p>
@@ -93,6 +100,20 @@ impl CreateClusterInputBuilder {
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }
+    /// <p>The configuration settings when creating a multi-Region cluster, including the witness region and linked cluster properties.</p>
+    pub fn multi_region_properties(mut self, input: crate::types::MultiRegionProperties) -> Self {
+        self.multi_region_properties = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The configuration settings when creating a multi-Region cluster, including the witness region and linked cluster properties.</p>
+    pub fn set_multi_region_properties(mut self, input: ::std::option::Option<crate::types::MultiRegionProperties>) -> Self {
+        self.multi_region_properties = input;
+        self
+    }
+    /// <p>The configuration settings when creating a multi-Region cluster, including the witness region and linked cluster properties.</p>
+    pub fn get_multi_region_properties(&self) -> &::std::option::Option<crate::types::MultiRegionProperties> {
+        &self.multi_region_properties
+    }
     /// Consumes the builder and constructs a [`CreateClusterInput`](crate::operation::create_cluster::CreateClusterInput).
     pub fn build(
         self,
@@ -101,6 +122,7 @@ impl CreateClusterInputBuilder {
             deletion_protection_enabled: self.deletion_protection_enabled,
             tags: self.tags,
             client_token: self.client_token,
+            multi_region_properties: self.multi_region_properties,
         })
     }
 }

@@ -17,6 +17,9 @@ pub struct CreateGuardrailInput {
     pub sensitive_information_policy_config: ::std::option::Option<crate::types::GuardrailSensitiveInformationPolicyConfig>,
     /// <p>The contextual grounding policy configuration used to create a guardrail.</p>
     pub contextual_grounding_policy_config: ::std::option::Option<crate::types::GuardrailContextualGroundingPolicyConfig>,
+    /// <p>The system-defined guardrail profile that you're using with your guardrail. Guardrail profiles define the destination Amazon Web Services Regions where guardrail inference requests can be automatically routed.</p>
+    /// <p>For more information, see the <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/guardrails-cross-region.html">Amazon Bedrock User Guide</a>.</p>
+    pub cross_region_config: ::std::option::Option<crate::types::GuardrailCrossRegionConfig>,
     /// <p>The message to return when the guardrail blocks a prompt.</p>
     pub blocked_input_messaging: ::std::option::Option<::std::string::String>,
     /// <p>The message to return when the guardrail blocks a model response.</p>
@@ -57,6 +60,11 @@ impl CreateGuardrailInput {
     pub fn contextual_grounding_policy_config(&self) -> ::std::option::Option<&crate::types::GuardrailContextualGroundingPolicyConfig> {
         self.contextual_grounding_policy_config.as_ref()
     }
+    /// <p>The system-defined guardrail profile that you're using with your guardrail. Guardrail profiles define the destination Amazon Web Services Regions where guardrail inference requests can be automatically routed.</p>
+    /// <p>For more information, see the <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/guardrails-cross-region.html">Amazon Bedrock User Guide</a>.</p>
+    pub fn cross_region_config(&self) -> ::std::option::Option<&crate::types::GuardrailCrossRegionConfig> {
+        self.cross_region_config.as_ref()
+    }
     /// <p>The message to return when the guardrail blocks a prompt.</p>
     pub fn blocked_input_messaging(&self) -> ::std::option::Option<&str> {
         self.blocked_input_messaging.as_deref()
@@ -90,6 +98,7 @@ impl ::std::fmt::Debug for CreateGuardrailInput {
         formatter.field("word_policy_config", &self.word_policy_config);
         formatter.field("sensitive_information_policy_config", &self.sensitive_information_policy_config);
         formatter.field("contextual_grounding_policy_config", &self.contextual_grounding_policy_config);
+        formatter.field("cross_region_config", &self.cross_region_config);
         formatter.field("blocked_input_messaging", &"*** Sensitive Data Redacted ***");
         formatter.field("blocked_outputs_messaging", &"*** Sensitive Data Redacted ***");
         formatter.field("kms_key_id", &self.kms_key_id);
@@ -116,6 +125,7 @@ pub struct CreateGuardrailInputBuilder {
     pub(crate) word_policy_config: ::std::option::Option<crate::types::GuardrailWordPolicyConfig>,
     pub(crate) sensitive_information_policy_config: ::std::option::Option<crate::types::GuardrailSensitiveInformationPolicyConfig>,
     pub(crate) contextual_grounding_policy_config: ::std::option::Option<crate::types::GuardrailContextualGroundingPolicyConfig>,
+    pub(crate) cross_region_config: ::std::option::Option<crate::types::GuardrailCrossRegionConfig>,
     pub(crate) blocked_input_messaging: ::std::option::Option<::std::string::String>,
     pub(crate) blocked_outputs_messaging: ::std::option::Option<::std::string::String>,
     pub(crate) kms_key_id: ::std::option::Option<::std::string::String>,
@@ -228,6 +238,23 @@ impl CreateGuardrailInputBuilder {
     pub fn get_contextual_grounding_policy_config(&self) -> &::std::option::Option<crate::types::GuardrailContextualGroundingPolicyConfig> {
         &self.contextual_grounding_policy_config
     }
+    /// <p>The system-defined guardrail profile that you're using with your guardrail. Guardrail profiles define the destination Amazon Web Services Regions where guardrail inference requests can be automatically routed.</p>
+    /// <p>For more information, see the <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/guardrails-cross-region.html">Amazon Bedrock User Guide</a>.</p>
+    pub fn cross_region_config(mut self, input: crate::types::GuardrailCrossRegionConfig) -> Self {
+        self.cross_region_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The system-defined guardrail profile that you're using with your guardrail. Guardrail profiles define the destination Amazon Web Services Regions where guardrail inference requests can be automatically routed.</p>
+    /// <p>For more information, see the <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/guardrails-cross-region.html">Amazon Bedrock User Guide</a>.</p>
+    pub fn set_cross_region_config(mut self, input: ::std::option::Option<crate::types::GuardrailCrossRegionConfig>) -> Self {
+        self.cross_region_config = input;
+        self
+    }
+    /// <p>The system-defined guardrail profile that you're using with your guardrail. Guardrail profiles define the destination Amazon Web Services Regions where guardrail inference requests can be automatically routed.</p>
+    /// <p>For more information, see the <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/guardrails-cross-region.html">Amazon Bedrock User Guide</a>.</p>
+    pub fn get_cross_region_config(&self) -> &::std::option::Option<crate::types::GuardrailCrossRegionConfig> {
+        &self.cross_region_config
+    }
     /// <p>The message to return when the guardrail blocks a prompt.</p>
     /// This field is required.
     pub fn blocked_input_messaging(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -318,6 +345,7 @@ impl CreateGuardrailInputBuilder {
             word_policy_config: self.word_policy_config,
             sensitive_information_policy_config: self.sensitive_information_policy_config,
             contextual_grounding_policy_config: self.contextual_grounding_policy_config,
+            cross_region_config: self.cross_region_config,
             blocked_input_messaging: self.blocked_input_messaging,
             blocked_outputs_messaging: self.blocked_outputs_messaging,
             kms_key_id: self.kms_key_id,
@@ -336,6 +364,7 @@ impl ::std::fmt::Debug for CreateGuardrailInputBuilder {
         formatter.field("word_policy_config", &self.word_policy_config);
         formatter.field("sensitive_information_policy_config", &self.sensitive_information_policy_config);
         formatter.field("contextual_grounding_policy_config", &self.contextual_grounding_policy_config);
+        formatter.field("cross_region_config", &self.cross_region_config);
         formatter.field("blocked_input_messaging", &"*** Sensitive Data Redacted ***");
         formatter.field("blocked_outputs_messaging", &"*** Sensitive Data Redacted ***");
         formatter.field("kms_key_id", &self.kms_key_id);

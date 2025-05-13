@@ -133,6 +133,8 @@ pub use crate::types::_inference_profile_model_source::InferenceProfileModelSour
 
 pub use crate::types::_inference_profile_summary::InferenceProfileSummary;
 
+pub use crate::types::_guardrail_cross_region_config::GuardrailCrossRegionConfig;
+
 pub use crate::types::_guardrail_contextual_grounding_policy_config::GuardrailContextualGroundingPolicyConfig;
 
 pub use crate::types::_guardrail_contextual_grounding_filter_config::GuardrailContextualGroundingFilterConfig;
@@ -180,6 +182,8 @@ pub use crate::types::_guardrail_topic_config::GuardrailTopicConfig;
 pub use crate::types::_guardrail_topic_action::GuardrailTopicAction;
 
 pub use crate::types::_guardrail_topic_type::GuardrailTopicType;
+
+pub use crate::types::_guardrail_cross_region_details::GuardrailCrossRegionDetails;
 
 pub use crate::types::_guardrail_contextual_grounding_policy::GuardrailContextualGroundingPolicy;
 
@@ -470,6 +474,10 @@ mod _guardrail_contextual_grounding_filter_type;
 mod _guardrail_contextual_grounding_policy;
 
 mod _guardrail_contextual_grounding_policy_config;
+
+mod _guardrail_cross_region_config;
+
+mod _guardrail_cross_region_details;
 
 mod _guardrail_filter_strength;
 

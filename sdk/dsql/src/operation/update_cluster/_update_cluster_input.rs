@@ -10,6 +10,8 @@ pub struct UpdateClusterInput {
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Idempotency ensures that an API request completes only once. With an idempotent request, if the original request completes successfully. The subsequent retries with the same client token return the result from the original successful request and they have no additional effect.</p>
     /// <p>If you don't specify a client token, the Amazon Web Services SDK automatically generates one.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
+    /// <p>The new multi-Region cluster configuration settings to be applied during an update operation.</p>
+    pub multi_region_properties: ::std::option::Option<crate::types::MultiRegionProperties>,
 }
 impl UpdateClusterInput {
     /// <p>The ID of the cluster you want to update.</p>
@@ -24,6 +26,10 @@ impl UpdateClusterInput {
     /// <p>If you don't specify a client token, the Amazon Web Services SDK automatically generates one.</p>
     pub fn client_token(&self) -> ::std::option::Option<&str> {
         self.client_token.as_deref()
+    }
+    /// <p>The new multi-Region cluster configuration settings to be applied during an update operation.</p>
+    pub fn multi_region_properties(&self) -> ::std::option::Option<&crate::types::MultiRegionProperties> {
+        self.multi_region_properties.as_ref()
     }
 }
 impl UpdateClusterInput {
@@ -40,6 +46,7 @@ pub struct UpdateClusterInputBuilder {
     pub(crate) identifier: ::std::option::Option<::std::string::String>,
     pub(crate) deletion_protection_enabled: ::std::option::Option<bool>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
+    pub(crate) multi_region_properties: ::std::option::Option<crate::types::MultiRegionProperties>,
 }
 impl UpdateClusterInputBuilder {
     /// <p>The ID of the cluster you want to update.</p>
@@ -88,6 +95,20 @@ impl UpdateClusterInputBuilder {
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }
+    /// <p>The new multi-Region cluster configuration settings to be applied during an update operation.</p>
+    pub fn multi_region_properties(mut self, input: crate::types::MultiRegionProperties) -> Self {
+        self.multi_region_properties = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The new multi-Region cluster configuration settings to be applied during an update operation.</p>
+    pub fn set_multi_region_properties(mut self, input: ::std::option::Option<crate::types::MultiRegionProperties>) -> Self {
+        self.multi_region_properties = input;
+        self
+    }
+    /// <p>The new multi-Region cluster configuration settings to be applied during an update operation.</p>
+    pub fn get_multi_region_properties(&self) -> &::std::option::Option<crate::types::MultiRegionProperties> {
+        &self.multi_region_properties
+    }
     /// Consumes the builder and constructs a [`UpdateClusterInput`](crate::operation::update_cluster::UpdateClusterInput).
     pub fn build(
         self,
@@ -96,6 +117,7 @@ impl UpdateClusterInputBuilder {
             identifier: self.identifier,
             deletion_protection_enabled: self.deletion_protection_enabled,
             client_token: self.client_token,
+            multi_region_properties: self.multi_region_properties,
         })
     }
 }

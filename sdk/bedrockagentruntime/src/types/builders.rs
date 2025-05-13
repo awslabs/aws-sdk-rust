@@ -161,11 +161,11 @@ pub use crate::types::_custom_orchestration_trace_event::CustomOrchestrationTrac
 
 pub use crate::types::_failure_trace::FailureTraceBuilder;
 
-pub use crate::types::_routing_classifier_model_invocation_output::RoutingClassifierModelInvocationOutputBuilder;
-
 pub use crate::types::_metadata::MetadataBuilder;
 
 pub use crate::types::_usage::UsageBuilder;
+
+pub use crate::types::_routing_classifier_model_invocation_output::RoutingClassifierModelInvocationOutputBuilder;
 
 pub use crate::types::_raw_response::RawResponseBuilder;
 

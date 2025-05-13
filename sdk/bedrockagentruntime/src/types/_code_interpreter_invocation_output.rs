@@ -2,7 +2,7 @@
 
 /// <p>Contains the JSON-formatted string returned by the API invoked by the code interpreter.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct CodeInterpreterInvocationOutput {
     /// <p>Contains the successful output returned from code execution</p>
     pub execution_output: ::std::option::Option<::std::string::String>,
@@ -12,6 +12,8 @@ pub struct CodeInterpreterInvocationOutput {
     pub files: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Indicates if the execution of the code timed out.</p>
     pub execution_timeout: ::std::option::Option<bool>,
+    /// <p>Contains information about the output from the code interpreter.</p>
+    pub metadata: ::std::option::Option<crate::types::Metadata>,
 }
 impl CodeInterpreterInvocationOutput {
     /// <p>Contains the successful output returned from code execution</p>
@@ -32,6 +34,21 @@ impl CodeInterpreterInvocationOutput {
     pub fn execution_timeout(&self) -> ::std::option::Option<bool> {
         self.execution_timeout
     }
+    /// <p>Contains information about the output from the code interpreter.</p>
+    pub fn metadata(&self) -> ::std::option::Option<&crate::types::Metadata> {
+        self.metadata.as_ref()
+    }
+}
+impl ::std::fmt::Debug for CodeInterpreterInvocationOutput {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("CodeInterpreterInvocationOutput");
+        formatter.field("execution_output", &self.execution_output);
+        formatter.field("execution_error", &self.execution_error);
+        formatter.field("files", &self.files);
+        formatter.field("execution_timeout", &self.execution_timeout);
+        formatter.field("metadata", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
 }
 impl CodeInterpreterInvocationOutput {
     /// Creates a new builder-style object to manufacture [`CodeInterpreterInvocationOutput`](crate::types::CodeInterpreterInvocationOutput).
@@ -41,13 +58,14 @@ impl CodeInterpreterInvocationOutput {
 }
 
 /// A builder for [`CodeInterpreterInvocationOutput`](crate::types::CodeInterpreterInvocationOutput).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct CodeInterpreterInvocationOutputBuilder {
     pub(crate) execution_output: ::std::option::Option<::std::string::String>,
     pub(crate) execution_error: ::std::option::Option<::std::string::String>,
     pub(crate) files: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) execution_timeout: ::std::option::Option<bool>,
+    pub(crate) metadata: ::std::option::Option<crate::types::Metadata>,
 }
 impl CodeInterpreterInvocationOutputBuilder {
     /// <p>Contains the successful output returned from code execution</p>
@@ -112,6 +130,20 @@ impl CodeInterpreterInvocationOutputBuilder {
     pub fn get_execution_timeout(&self) -> &::std::option::Option<bool> {
         &self.execution_timeout
     }
+    /// <p>Contains information about the output from the code interpreter.</p>
+    pub fn metadata(mut self, input: crate::types::Metadata) -> Self {
+        self.metadata = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Contains information about the output from the code interpreter.</p>
+    pub fn set_metadata(mut self, input: ::std::option::Option<crate::types::Metadata>) -> Self {
+        self.metadata = input;
+        self
+    }
+    /// <p>Contains information about the output from the code interpreter.</p>
+    pub fn get_metadata(&self) -> &::std::option::Option<crate::types::Metadata> {
+        &self.metadata
+    }
     /// Consumes the builder and constructs a [`CodeInterpreterInvocationOutput`](crate::types::CodeInterpreterInvocationOutput).
     pub fn build(self) -> crate::types::CodeInterpreterInvocationOutput {
         crate::types::CodeInterpreterInvocationOutput {
@@ -119,6 +151,18 @@ impl CodeInterpreterInvocationOutputBuilder {
             execution_error: self.execution_error,
             files: self.files,
             execution_timeout: self.execution_timeout,
+            metadata: self.metadata,
         }
+    }
+}
+impl ::std::fmt::Debug for CodeInterpreterInvocationOutputBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("CodeInterpreterInvocationOutputBuilder");
+        formatter.field("execution_output", &self.execution_output);
+        formatter.field("execution_error", &self.execution_error);
+        formatter.field("files", &self.files);
+        formatter.field("execution_timeout", &self.execution_timeout);
+        formatter.field("metadata", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

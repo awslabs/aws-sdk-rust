@@ -17,6 +17,10 @@
 ///     ClusterStatus::Deleted => { /* ... */ },
 ///     ClusterStatus::Deleting => { /* ... */ },
 ///     ClusterStatus::Failed => { /* ... */ },
+///     ClusterStatus::Idle => { /* ... */ },
+///     ClusterStatus::Inactive => { /* ... */ },
+///     ClusterStatus::PendingDelete => { /* ... */ },
+///     ClusterStatus::PendingSetup => { /* ... */ },
 ///     ClusterStatus::Updating => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -40,7 +44,7 @@
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 ///
-/// Cluster Status
+/// <p>The current status of a cluster.</p>
 #[non_exhaustive]
 #[derive(
     ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
@@ -57,6 +61,14 @@ pub enum ClusterStatus {
     #[allow(missing_docs)] // documentation missing in model
     Failed,
     #[allow(missing_docs)] // documentation missing in model
+    Idle,
+    #[allow(missing_docs)] // documentation missing in model
+    Inactive,
+    #[allow(missing_docs)] // documentation missing in model
+    PendingDelete,
+    #[allow(missing_docs)] // documentation missing in model
+    PendingSetup,
+    #[allow(missing_docs)] // documentation missing in model
     Updating,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
@@ -70,6 +82,10 @@ impl ::std::convert::From<&str> for ClusterStatus {
             "DELETED" => ClusterStatus::Deleted,
             "DELETING" => ClusterStatus::Deleting,
             "FAILED" => ClusterStatus::Failed,
+            "IDLE" => ClusterStatus::Idle,
+            "INACTIVE" => ClusterStatus::Inactive,
+            "PENDING_DELETE" => ClusterStatus::PendingDelete,
+            "PENDING_SETUP" => ClusterStatus::PendingSetup,
             "UPDATING" => ClusterStatus::Updating,
             other => ClusterStatus::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -91,13 +107,28 @@ impl ClusterStatus {
             ClusterStatus::Deleted => "DELETED",
             ClusterStatus::Deleting => "DELETING",
             ClusterStatus::Failed => "FAILED",
+            ClusterStatus::Idle => "IDLE",
+            ClusterStatus::Inactive => "INACTIVE",
+            ClusterStatus::PendingDelete => "PENDING_DELETE",
+            ClusterStatus::PendingSetup => "PENDING_SETUP",
             ClusterStatus::Updating => "UPDATING",
             ClusterStatus::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ACTIVE", "CREATING", "DELETED", "DELETING", "FAILED", "UPDATING"]
+        &[
+            "ACTIVE",
+            "CREATING",
+            "DELETED",
+            "DELETING",
+            "FAILED",
+            "IDLE",
+            "INACTIVE",
+            "PENDING_DELETE",
+            "PENDING_SETUP",
+            "UPDATING",
+        ]
     }
 }
 impl ::std::convert::AsRef<str> for ClusterStatus {
@@ -125,6 +156,10 @@ impl ::std::fmt::Display for ClusterStatus {
             ClusterStatus::Deleted => write!(f, "DELETED"),
             ClusterStatus::Deleting => write!(f, "DELETING"),
             ClusterStatus::Failed => write!(f, "FAILED"),
+            ClusterStatus::Idle => write!(f, "IDLE"),
+            ClusterStatus::Inactive => write!(f, "INACTIVE"),
+            ClusterStatus::PendingDelete => write!(f, "PENDING_DELETE"),
+            ClusterStatus::PendingSetup => write!(f, "PENDING_SETUP"),
             ClusterStatus::Updating => write!(f, "UPDATING"),
             ClusterStatus::Unknown(value) => write!(f, "{}", value),
         }

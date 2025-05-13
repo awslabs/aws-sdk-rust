@@ -6,18 +6,18 @@
 pub struct ValidationException {
     #[allow(missing_docs)] // documentation missing in model
     pub message: ::std::string::String,
-    /// Reason the request failed validation
+    /// <p>The reason for the validation exception.</p>
     pub reason: crate::types::ValidationExceptionReason,
-    /// List of fields that caused the error
+    /// <p>A list of fields that didn't validate.</p>
     pub field_list: ::std::option::Option<::std::vec::Vec<crate::types::ValidationExceptionField>>,
     pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
 }
 impl ValidationException {
-    /// Reason the request failed validation
+    /// <p>The reason for the validation exception.</p>
     pub fn reason(&self) -> &crate::types::ValidationExceptionReason {
         &self.reason
     }
-    /// List of fields that caused the error
+    /// <p>A list of fields that didn't validate.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.field_list.is_none()`.
     pub fn field_list(&self) -> &[crate::types::ValidationExceptionField] {
@@ -83,18 +83,18 @@ impl ValidationExceptionBuilder {
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
         &self.message
     }
-    /// Reason the request failed validation
+    /// <p>The reason for the validation exception.</p>
     /// This field is required.
     pub fn reason(mut self, input: crate::types::ValidationExceptionReason) -> Self {
         self.reason = ::std::option::Option::Some(input);
         self
     }
-    /// Reason the request failed validation
+    /// <p>The reason for the validation exception.</p>
     pub fn set_reason(mut self, input: ::std::option::Option<crate::types::ValidationExceptionReason>) -> Self {
         self.reason = input;
         self
     }
-    /// Reason the request failed validation
+    /// <p>The reason for the validation exception.</p>
     pub fn get_reason(&self) -> &::std::option::Option<crate::types::ValidationExceptionReason> {
         &self.reason
     }
@@ -102,19 +102,19 @@ impl ValidationExceptionBuilder {
     ///
     /// To override the contents of this collection use [`set_field_list`](Self::set_field_list).
     ///
-    /// List of fields that caused the error
+    /// <p>A list of fields that didn't validate.</p>
     pub fn field_list(mut self, input: crate::types::ValidationExceptionField) -> Self {
         let mut v = self.field_list.unwrap_or_default();
         v.push(input);
         self.field_list = ::std::option::Option::Some(v);
         self
     }
-    /// List of fields that caused the error
+    /// <p>A list of fields that didn't validate.</p>
     pub fn set_field_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ValidationExceptionField>>) -> Self {
         self.field_list = input;
         self
     }
-    /// List of fields that caused the error
+    /// <p>A list of fields that didn't validate.</p>
     pub fn get_field_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ValidationExceptionField>> {
         &self.field_list
     }

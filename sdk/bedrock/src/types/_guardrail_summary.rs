@@ -25,6 +25,8 @@ pub struct GuardrailSummary {
     pub created_at: ::aws_smithy_types::DateTime,
     /// <p>The date and time at which the guardrail was last updated.</p>
     pub updated_at: ::aws_smithy_types::DateTime,
+    /// <p>Details about the system-defined guardrail profile that you're using with your guardrail, including the guardrail profile ID and Amazon Resource Name (ARN).</p>
+    pub cross_region_details: ::std::option::Option<crate::types::GuardrailCrossRegionDetails>,
 }
 impl GuardrailSummary {
     /// <p>The unique identifier of the guardrail.</p>
@@ -63,6 +65,10 @@ impl GuardrailSummary {
     pub fn updated_at(&self) -> &::aws_smithy_types::DateTime {
         &self.updated_at
     }
+    /// <p>Details about the system-defined guardrail profile that you're using with your guardrail, including the guardrail profile ID and Amazon Resource Name (ARN).</p>
+    pub fn cross_region_details(&self) -> ::std::option::Option<&crate::types::GuardrailCrossRegionDetails> {
+        self.cross_region_details.as_ref()
+    }
 }
 impl ::std::fmt::Debug for GuardrailSummary {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -75,6 +81,7 @@ impl ::std::fmt::Debug for GuardrailSummary {
         formatter.field("version", &self.version);
         formatter.field("created_at", &self.created_at);
         formatter.field("updated_at", &self.updated_at);
+        formatter.field("cross_region_details", &self.cross_region_details);
         formatter.finish()
     }
 }
@@ -97,6 +104,7 @@ pub struct GuardrailSummaryBuilder {
     pub(crate) version: ::std::option::Option<::std::string::String>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) cross_region_details: ::std::option::Option<crate::types::GuardrailCrossRegionDetails>,
 }
 impl GuardrailSummaryBuilder {
     /// <p>The unique identifier of the guardrail.</p>
@@ -218,6 +226,20 @@ impl GuardrailSummaryBuilder {
     pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.updated_at
     }
+    /// <p>Details about the system-defined guardrail profile that you're using with your guardrail, including the guardrail profile ID and Amazon Resource Name (ARN).</p>
+    pub fn cross_region_details(mut self, input: crate::types::GuardrailCrossRegionDetails) -> Self {
+        self.cross_region_details = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Details about the system-defined guardrail profile that you're using with your guardrail, including the guardrail profile ID and Amazon Resource Name (ARN).</p>
+    pub fn set_cross_region_details(mut self, input: ::std::option::Option<crate::types::GuardrailCrossRegionDetails>) -> Self {
+        self.cross_region_details = input;
+        self
+    }
+    /// <p>Details about the system-defined guardrail profile that you're using with your guardrail, including the guardrail profile ID and Amazon Resource Name (ARN).</p>
+    pub fn get_cross_region_details(&self) -> &::std::option::Option<crate::types::GuardrailCrossRegionDetails> {
+        &self.cross_region_details
+    }
     /// Consumes the builder and constructs a [`GuardrailSummary`](crate::types::GuardrailSummary).
     /// This method will fail if any of the following fields are not set:
     /// - [`id`](crate::types::builders::GuardrailSummaryBuilder::id)
@@ -272,6 +294,7 @@ impl GuardrailSummaryBuilder {
                     "updated_at was not specified but it is required when building GuardrailSummary",
                 )
             })?,
+            cross_region_details: self.cross_region_details,
         })
     }
 }
@@ -286,6 +309,7 @@ impl ::std::fmt::Debug for GuardrailSummaryBuilder {
         formatter.field("version", &self.version);
         formatter.field("created_at", &self.created_at);
         formatter.field("updated_at", &self.updated_at);
+        formatter.field("cross_region_details", &self.cross_region_details);
         formatter.finish()
     }
 }

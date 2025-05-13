@@ -23,6 +23,19 @@ impl crate::operation::update_cluster::builders::UpdateClusterInputBuilder {
 /// Fluent builder constructing a request to `UpdateCluster`.
 ///
 /// <p>Updates a cluster.</p>
+/// <p><b>Example IAM Policy for Multi-Region Operations</b></p>
+/// <p>The following IAM policy grants permissions for multi-Region operations.</p>
+/// <p>The <code>dsql:RemovePeerCluster</code> permission uses a wildcard ARN pattern to simplify permission management during updates.</p><important>
+/// <p><b>Important Notes for Multi-Region Operations</b></p>
+/// <ul>
+/// <li>
+/// <p>The witness region specified in <code>multiRegionProperties.witnessRegion</code> cannot be the same as the cluster's Region.</p></li>
+/// <li>
+/// <p>When updating clusters with peer relationships, permissions are checked for both adding and removing peers.</p></li>
+/// <li>
+/// <p>The <code>dsql:RemovePeerCluster</code> permission uses a wildcard ARN pattern to simplify permission management during updates.</p></li>
+/// </ul>
+/// </important>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateClusterFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -152,5 +165,19 @@ impl UpdateClusterFluentBuilder {
     /// <p>If you don't specify a client token, the Amazon Web Services SDK automatically generates one.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_client_token()
+    }
+    /// <p>The new multi-Region cluster configuration settings to be applied during an update operation.</p>
+    pub fn multi_region_properties(mut self, input: crate::types::MultiRegionProperties) -> Self {
+        self.inner = self.inner.multi_region_properties(input);
+        self
+    }
+    /// <p>The new multi-Region cluster configuration settings to be applied during an update operation.</p>
+    pub fn set_multi_region_properties(mut self, input: ::std::option::Option<crate::types::MultiRegionProperties>) -> Self {
+        self.inner = self.inner.set_multi_region_properties(input);
+        self
+    }
+    /// <p>The new multi-Region cluster configuration settings to be applied during an update operation.</p>
+    pub fn get_multi_region_properties(&self) -> &::std::option::Option<crate::types::MultiRegionProperties> {
+        self.inner.get_multi_region_properties()
     }
 }

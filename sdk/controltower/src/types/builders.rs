@@ -33,6 +33,12 @@ pub use crate::types::_enabled_baseline_details::EnabledBaselineDetailsBuilder;
 
 pub use crate::types::_enabled_baseline_parameter_summary::EnabledBaselineParameterSummaryBuilder;
 
+pub use crate::types::_enabled_baseline_drift_status_summary::EnabledBaselineDriftStatusSummaryBuilder;
+
+pub use crate::types::_enabled_baseline_drift_types::EnabledBaselineDriftTypesBuilder;
+
+pub use crate::types::_enabled_baseline_inheritance_drift::EnabledBaselineInheritanceDriftBuilder;
+
 pub use crate::types::_enabled_baseline_summary::EnabledBaselineSummaryBuilder;
 
 pub use crate::types::_enabled_baseline_filter::EnabledBaselineFilterBuilder;

@@ -8,7 +8,7 @@ pub struct Cluster {
     pub cluster_arn: ::std::option::Option<::std::string::String>,
     /// <p>A user-generated string that you use to identify your cluster.</p>
     pub cluster_name: ::std::option::Option<::std::string::String>,
-    /// <p>The execute command configuration for the cluster.</p>
+    /// <p>The execute command and managed storage configuration for the cluster.</p>
     pub configuration: ::std::option::Option<crate::types::ClusterConfiguration>,
     /// <p>The status of the cluster. The following are the possible states that are returned.</p>
     /// <dl>
@@ -134,7 +134,7 @@ impl Cluster {
     pub fn cluster_name(&self) -> ::std::option::Option<&str> {
         self.cluster_name.as_deref()
     }
-    /// <p>The execute command configuration for the cluster.</p>
+    /// <p>The execute command and managed storage configuration for the cluster.</p>
     pub fn configuration(&self) -> ::std::option::Option<&crate::types::ClusterConfiguration> {
         self.configuration.as_ref()
     }
@@ -348,17 +348,17 @@ impl ClusterBuilder {
     pub fn get_cluster_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.cluster_name
     }
-    /// <p>The execute command configuration for the cluster.</p>
+    /// <p>The execute command and managed storage configuration for the cluster.</p>
     pub fn configuration(mut self, input: crate::types::ClusterConfiguration) -> Self {
         self.configuration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The execute command configuration for the cluster.</p>
+    /// <p>The execute command and managed storage configuration for the cluster.</p>
     pub fn set_configuration(mut self, input: ::std::option::Option<crate::types::ClusterConfiguration>) -> Self {
         self.configuration = input;
         self
     }
-    /// <p>The execute command configuration for the cluster.</p>
+    /// <p>The execute command and managed storage configuration for the cluster.</p>
     pub fn get_configuration(&self) -> &::std::option::Option<crate::types::ClusterConfiguration> {
         &self.configuration
     }

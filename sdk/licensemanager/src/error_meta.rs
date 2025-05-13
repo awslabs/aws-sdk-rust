@@ -1863,6 +1863,9 @@ impl From<crate::operation::update_license_configuration::UpdateLicenseConfigura
             crate::operation::update_license_configuration::UpdateLicenseConfigurationError::AuthorizationException(inner) => {
                 Error::AuthorizationException(inner)
             }
+            crate::operation::update_license_configuration::UpdateLicenseConfigurationError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
             crate::operation::update_license_configuration::UpdateLicenseConfigurationError::InvalidParameterValueException(inner) => {
                 Error::InvalidParameterValueException(inner)
             }
@@ -1967,6 +1970,7 @@ impl From<crate::operation::update_license_specifications_for_resource::UpdateLi
         match err {
             crate::operation::update_license_specifications_for_resource::UpdateLicenseSpecificationsForResourceError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::update_license_specifications_for_resource::UpdateLicenseSpecificationsForResourceError::AuthorizationException(inner) => Error::AuthorizationException(inner),
+            crate::operation::update_license_specifications_for_resource::UpdateLicenseSpecificationsForResourceError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::update_license_specifications_for_resource::UpdateLicenseSpecificationsForResourceError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
             crate::operation::update_license_specifications_for_resource::UpdateLicenseSpecificationsForResourceError::InvalidResourceStateException(inner) => Error::InvalidResourceStateException(inner),
             crate::operation::update_license_specifications_for_resource::UpdateLicenseSpecificationsForResourceError::LicenseUsageException(inner) => Error::LicenseUsageException(inner),

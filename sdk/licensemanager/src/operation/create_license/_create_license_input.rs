@@ -25,6 +25,8 @@ pub struct CreateLicenseInput {
     pub license_metadata: ::std::option::Option<::std::vec::Vec<crate::types::Metadata>>,
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
+    /// <p>Tags to add to the license. For more information about tagging support in License Manager, see the <a href="https://docs.aws.amazon.com/license-manager/latest/APIReference/API_TagResource.html">TagResource</a> operation.</p>
+    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateLicenseInput {
     /// <p>License name.</p>
@@ -75,6 +77,12 @@ impl CreateLicenseInput {
     pub fn client_token(&self) -> ::std::option::Option<&str> {
         self.client_token.as_deref()
     }
+    /// <p>Tags to add to the license. For more information about tagging support in License Manager, see the <a href="https://docs.aws.amazon.com/license-manager/latest/APIReference/API_TagResource.html">TagResource</a> operation.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
+    }
 }
 impl CreateLicenseInput {
     /// Creates a new builder-style object to manufacture [`CreateLicenseInput`](crate::operation::create_license::CreateLicenseInput).
@@ -98,6 +106,7 @@ pub struct CreateLicenseInputBuilder {
     pub(crate) consumption_configuration: ::std::option::Option<crate::types::ConsumptionConfiguration>,
     pub(crate) license_metadata: ::std::option::Option<::std::vec::Vec<crate::types::Metadata>>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateLicenseInputBuilder {
     /// <p>License name.</p>
@@ -275,6 +284,26 @@ impl CreateLicenseInputBuilder {
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }
+    /// Appends an item to `tags`.
+    ///
+    /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+    ///
+    /// <p>Tags to add to the license. For more information about tagging support in License Manager, see the <a href="https://docs.aws.amazon.com/license-manager/latest/APIReference/API_TagResource.html">TagResource</a> operation.</p>
+    pub fn tags(mut self, input: crate::types::Tag) -> Self {
+        let mut v = self.tags.unwrap_or_default();
+        v.push(input);
+        self.tags = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Tags to add to the license. For more information about tagging support in License Manager, see the <a href="https://docs.aws.amazon.com/license-manager/latest/APIReference/API_TagResource.html">TagResource</a> operation.</p>
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
+        self.tags = input;
+        self
+    }
+    /// <p>Tags to add to the license. For more information about tagging support in License Manager, see the <a href="https://docs.aws.amazon.com/license-manager/latest/APIReference/API_TagResource.html">TagResource</a> operation.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
+    }
     /// Consumes the builder and constructs a [`CreateLicenseInput`](crate::operation::create_license::CreateLicenseInput).
     pub fn build(
         self,
@@ -291,6 +320,7 @@ impl CreateLicenseInputBuilder {
             consumption_configuration: self.consumption_configuration,
             license_metadata: self.license_metadata,
             client_token: self.client_token,
+            tags: self.tags,
         })
     }
 }

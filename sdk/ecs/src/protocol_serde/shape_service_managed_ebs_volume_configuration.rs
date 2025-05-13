@@ -21,35 +21,41 @@ pub fn ser_service_managed_ebs_volume_configuration(
     if let Some(var_5) = &input.snapshot_id {
         object.key("snapshotId").string(var_5.as_str());
     }
-    if let Some(var_6) = &input.iops {
-        object.key("iops").number(
+    if let Some(var_6) = &input.volume_initialization_rate {
+        object.key("volumeInitializationRate").number(
             #[allow(clippy::useless_conversion)]
             ::aws_smithy_types::Number::NegInt((*var_6).into()),
         );
     }
-    if let Some(var_7) = &input.throughput {
-        object.key("throughput").number(
+    if let Some(var_7) = &input.iops {
+        object.key("iops").number(
             #[allow(clippy::useless_conversion)]
             ::aws_smithy_types::Number::NegInt((*var_7).into()),
         );
     }
-    if let Some(var_8) = &input.tag_specifications {
-        let mut array_9 = object.key("tagSpecifications").start_array();
-        for item_10 in var_8 {
+    if let Some(var_8) = &input.throughput {
+        object.key("throughput").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_8).into()),
+        );
+    }
+    if let Some(var_9) = &input.tag_specifications {
+        let mut array_10 = object.key("tagSpecifications").start_array();
+        for item_11 in var_9 {
             {
                 #[allow(unused_mut)]
-                let mut object_11 = array_9.value().start_object();
-                crate::protocol_serde::shape_ebs_tag_specification::ser_ebs_tag_specification(&mut object_11, item_10)?;
-                object_11.finish();
+                let mut object_12 = array_10.value().start_object();
+                crate::protocol_serde::shape_ebs_tag_specification::ser_ebs_tag_specification(&mut object_12, item_11)?;
+                object_12.finish();
             }
         }
-        array_9.finish();
+        array_10.finish();
     }
     {
         object.key("roleArn").string(input.role_arn.as_str());
     }
-    if let Some(var_12) = &input.filesystem_type {
-        object.key("filesystemType").string(var_12.as_str());
+    if let Some(var_13) = &input.filesystem_type {
+        object.key("filesystemType").string(var_13.as_str());
     }
     Ok(())
 }
@@ -97,6 +103,13 @@ where
                             builder = builder.set_snapshot_id(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "volumeInitializationRate" => {
+                            builder = builder.set_volume_initialization_rate(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
                                     .transpose()?,
                             );
                         }

@@ -87,10 +87,10 @@ impl From<crate::operation::create_cluster::CreateClusterError> for Error {
         match err {
             crate::operation::create_cluster::CreateClusterError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::create_cluster::CreateClusterError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::operation::create_cluster::CreateClusterError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::create_cluster::CreateClusterError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::create_cluster::CreateClusterError::InternalServerException(inner) => Error::InternalServerException(inner),
             crate::operation::create_cluster::CreateClusterError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::operation::create_cluster::CreateClusterError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::create_cluster::CreateClusterError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -399,10 +399,10 @@ impl From<crate::operation::update_cluster::UpdateClusterError> for Error {
         match err {
             crate::operation::update_cluster::UpdateClusterError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::update_cluster::UpdateClusterError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::update_cluster::UpdateClusterError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::update_cluster::UpdateClusterError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::update_cluster::UpdateClusterError::InternalServerException(inner) => Error::InternalServerException(inner),
             crate::operation::update_cluster::UpdateClusterError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::operation::update_cluster::UpdateClusterError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::update_cluster::UpdateClusterError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }

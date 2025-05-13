@@ -23,6 +23,10 @@ impl crate::operation::create_multi_region_clusters::builders::CreateMultiRegion
 /// Fluent builder constructing a request to `CreateMultiRegionClusters`.
 ///
 /// <p>Creates multi-Region clusters in Amazon Aurora DSQL. Multi-Region clusters require a linked Region list, which is an array of the Regions in which you want to create linked clusters. Multi-Region clusters require a witness Region, which participates in quorum in failure scenarios.</p>
+#[deprecated(
+    note = "The CreateMultiRegionClusters API is deprecated. Use the CreateCluster API with multi-Region properties to create a multi-Region cluster.",
+    since = "5/13/2025"
+)]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateMultiRegionClustersFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

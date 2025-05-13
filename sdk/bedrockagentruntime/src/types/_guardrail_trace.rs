@@ -12,6 +12,8 @@ pub struct GuardrailTrace {
     pub input_assessments: ::std::option::Option<::std::vec::Vec<crate::types::GuardrailAssessment>>,
     /// <p>The details of the output assessments used in the Guardrail Trace.</p>
     pub output_assessments: ::std::option::Option<::std::vec::Vec<crate::types::GuardrailAssessment>>,
+    /// <p>Contains information about the Guardrail output.</p>
+    pub metadata: ::std::option::Option<crate::types::Metadata>,
 }
 impl GuardrailTrace {
     /// <p>The trace action details used with the Guardrail.</p>
@@ -34,6 +36,10 @@ impl GuardrailTrace {
     pub fn output_assessments(&self) -> &[crate::types::GuardrailAssessment] {
         self.output_assessments.as_deref().unwrap_or_default()
     }
+    /// <p>Contains information about the Guardrail output.</p>
+    pub fn metadata(&self) -> ::std::option::Option<&crate::types::Metadata> {
+        self.metadata.as_ref()
+    }
 }
 impl ::std::fmt::Debug for GuardrailTrace {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -42,6 +48,7 @@ impl ::std::fmt::Debug for GuardrailTrace {
         formatter.field("trace_id", &"*** Sensitive Data Redacted ***");
         formatter.field("input_assessments", &"*** Sensitive Data Redacted ***");
         formatter.field("output_assessments", &"*** Sensitive Data Redacted ***");
+        formatter.field("metadata", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }
@@ -60,6 +67,7 @@ pub struct GuardrailTraceBuilder {
     pub(crate) trace_id: ::std::option::Option<::std::string::String>,
     pub(crate) input_assessments: ::std::option::Option<::std::vec::Vec<crate::types::GuardrailAssessment>>,
     pub(crate) output_assessments: ::std::option::Option<::std::vec::Vec<crate::types::GuardrailAssessment>>,
+    pub(crate) metadata: ::std::option::Option<crate::types::Metadata>,
 }
 impl GuardrailTraceBuilder {
     /// <p>The trace action details used with the Guardrail.</p>
@@ -130,6 +138,20 @@ impl GuardrailTraceBuilder {
     pub fn get_output_assessments(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GuardrailAssessment>> {
         &self.output_assessments
     }
+    /// <p>Contains information about the Guardrail output.</p>
+    pub fn metadata(mut self, input: crate::types::Metadata) -> Self {
+        self.metadata = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Contains information about the Guardrail output.</p>
+    pub fn set_metadata(mut self, input: ::std::option::Option<crate::types::Metadata>) -> Self {
+        self.metadata = input;
+        self
+    }
+    /// <p>Contains information about the Guardrail output.</p>
+    pub fn get_metadata(&self) -> &::std::option::Option<crate::types::Metadata> {
+        &self.metadata
+    }
     /// Consumes the builder and constructs a [`GuardrailTrace`](crate::types::GuardrailTrace).
     pub fn build(self) -> crate::types::GuardrailTrace {
         crate::types::GuardrailTrace {
@@ -137,6 +159,7 @@ impl GuardrailTraceBuilder {
             trace_id: self.trace_id,
             input_assessments: self.input_assessments,
             output_assessments: self.output_assessments,
+            metadata: self.metadata,
         }
     }
 }
@@ -147,6 +170,7 @@ impl ::std::fmt::Debug for GuardrailTraceBuilder {
         formatter.field("trace_id", &"*** Sensitive Data Redacted ***");
         formatter.field("input_assessments", &"*** Sensitive Data Redacted ***");
         formatter.field("output_assessments", &"*** Sensitive Data Redacted ***");
+        formatter.field("metadata", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }

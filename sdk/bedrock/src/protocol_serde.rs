@@ -241,6 +241,10 @@ pub(crate) mod shape_guardrail_contextual_grounding_policy;
 
 pub(crate) mod shape_guardrail_contextual_grounding_policy_config;
 
+pub(crate) mod shape_guardrail_cross_region_config;
+
+pub(crate) mod shape_guardrail_cross_region_details;
+
 pub(crate) mod shape_guardrail_failure_recommendations;
 
 pub(crate) mod shape_guardrail_sensitive_information_policy;

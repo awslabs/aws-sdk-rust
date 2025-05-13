@@ -263,7 +263,7 @@ pub enum ResetEnabledControlError {
     InternalServerException(crate::types::error::InternalServerException),
     /// <p>The request references a resource that does not exist.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
-    /// <p>The request would cause a service quota to be exceeded. The limit is 10 concurrent operations.</p>
+    /// <p>The request would cause a service quota to be exceeded. The limit is 100 concurrent operations.</p>
     ServiceQuotaExceededException(crate::types::error::ServiceQuotaExceededException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::types::error::ThrottlingException),

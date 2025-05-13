@@ -2,7 +2,7 @@
 
 /// <p>Output from an agent collaborator.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct AgentCollaboratorInvocationOutput {
     /// <p>The output's agent collaborator name.</p>
     pub agent_collaborator_name: ::std::option::Option<::std::string::String>,
@@ -10,6 +10,8 @@ pub struct AgentCollaboratorInvocationOutput {
     pub agent_collaborator_alias_arn: ::std::option::Option<::std::string::String>,
     /// <p>The output's output.</p>
     pub output: ::std::option::Option<crate::types::AgentCollaboratorOutputPayload>,
+    /// <p>Contains information about the output from the agent collaborator.</p>
+    pub metadata: ::std::option::Option<crate::types::Metadata>,
 }
 impl AgentCollaboratorInvocationOutput {
     /// <p>The output's agent collaborator name.</p>
@@ -24,6 +26,20 @@ impl AgentCollaboratorInvocationOutput {
     pub fn output(&self) -> ::std::option::Option<&crate::types::AgentCollaboratorOutputPayload> {
         self.output.as_ref()
     }
+    /// <p>Contains information about the output from the agent collaborator.</p>
+    pub fn metadata(&self) -> ::std::option::Option<&crate::types::Metadata> {
+        self.metadata.as_ref()
+    }
+}
+impl ::std::fmt::Debug for AgentCollaboratorInvocationOutput {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("AgentCollaboratorInvocationOutput");
+        formatter.field("agent_collaborator_name", &self.agent_collaborator_name);
+        formatter.field("agent_collaborator_alias_arn", &self.agent_collaborator_alias_arn);
+        formatter.field("output", &self.output);
+        formatter.field("metadata", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
 }
 impl AgentCollaboratorInvocationOutput {
     /// Creates a new builder-style object to manufacture [`AgentCollaboratorInvocationOutput`](crate::types::AgentCollaboratorInvocationOutput).
@@ -33,12 +49,13 @@ impl AgentCollaboratorInvocationOutput {
 }
 
 /// A builder for [`AgentCollaboratorInvocationOutput`](crate::types::AgentCollaboratorInvocationOutput).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct AgentCollaboratorInvocationOutputBuilder {
     pub(crate) agent_collaborator_name: ::std::option::Option<::std::string::String>,
     pub(crate) agent_collaborator_alias_arn: ::std::option::Option<::std::string::String>,
     pub(crate) output: ::std::option::Option<crate::types::AgentCollaboratorOutputPayload>,
+    pub(crate) metadata: ::std::option::Option<crate::types::Metadata>,
 }
 impl AgentCollaboratorInvocationOutputBuilder {
     /// <p>The output's agent collaborator name.</p>
@@ -83,12 +100,37 @@ impl AgentCollaboratorInvocationOutputBuilder {
     pub fn get_output(&self) -> &::std::option::Option<crate::types::AgentCollaboratorOutputPayload> {
         &self.output
     }
+    /// <p>Contains information about the output from the agent collaborator.</p>
+    pub fn metadata(mut self, input: crate::types::Metadata) -> Self {
+        self.metadata = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Contains information about the output from the agent collaborator.</p>
+    pub fn set_metadata(mut self, input: ::std::option::Option<crate::types::Metadata>) -> Self {
+        self.metadata = input;
+        self
+    }
+    /// <p>Contains information about the output from the agent collaborator.</p>
+    pub fn get_metadata(&self) -> &::std::option::Option<crate::types::Metadata> {
+        &self.metadata
+    }
     /// Consumes the builder and constructs a [`AgentCollaboratorInvocationOutput`](crate::types::AgentCollaboratorInvocationOutput).
     pub fn build(self) -> crate::types::AgentCollaboratorInvocationOutput {
         crate::types::AgentCollaboratorInvocationOutput {
             agent_collaborator_name: self.agent_collaborator_name,
             agent_collaborator_alias_arn: self.agent_collaborator_alias_arn,
             output: self.output,
+            metadata: self.metadata,
         }
+    }
+}
+impl ::std::fmt::Debug for AgentCollaboratorInvocationOutputBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("AgentCollaboratorInvocationOutputBuilder");
+        formatter.field("agent_collaborator_name", &self.agent_collaborator_name);
+        formatter.field("agent_collaborator_alias_arn", &self.agent_collaborator_alias_arn);
+        formatter.field("output", &self.output);
+        formatter.field("metadata", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }
