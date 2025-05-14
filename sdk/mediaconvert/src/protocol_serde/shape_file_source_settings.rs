@@ -30,6 +30,9 @@ pub fn ser_file_source_settings(
     if let Some(var_8) = &input.time_delta_units {
         object.key("timeDeltaUnits").string(var_8.as_str());
     }
+    if let Some(var_9) = &input.upconvert_stl_to_teletext {
+        object.key("upconvertSTLToTeletext").string(var_9.as_str());
+    }
     Ok(())
 }
 
@@ -95,6 +98,16 @@ where
                             builder = builder.set_time_delta_units(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| crate::types::FileSourceTimeDeltaUnits::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "upconvertSTLToTeletext" => {
+                            builder = builder.set_upconvert_stl_to_teletext(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| {
+                                        s.to_unescaped()
+                                            .map(|u| crate::types::CaptionSourceUpconvertStlToTeletext::from(u.as_ref()))
+                                    })
                                     .transpose()?,
                             );
                         }

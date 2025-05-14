@@ -2,18 +2,18 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeLogGroupsOutput {
+pub struct ListLogGroupsOutput {
     /// <p>An array of structures, where each structure contains the information about one log group.</p>
-    pub log_groups: ::std::option::Option<::std::vec::Vec<crate::types::LogGroup>>,
+    pub log_groups: ::std::option::Option<::std::vec::Vec<crate::types::LogGroupSummary>>,
     /// <p>The token for the next set of items to return. The token expires after 24 hours.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl DescribeLogGroupsOutput {
+impl ListLogGroupsOutput {
     /// <p>An array of structures, where each structure contains the information about one log group.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.log_groups.is_none()`.
-    pub fn log_groups(&self) -> &[crate::types::LogGroup] {
+    pub fn log_groups(&self) -> &[crate::types::LogGroupSummary] {
         self.log_groups.as_deref().unwrap_or_default()
     }
     /// <p>The token for the next set of items to return. The token expires after 24 hours.</p>
@@ -21,45 +21,45 @@ impl DescribeLogGroupsOutput {
         self.next_token.as_deref()
     }
 }
-impl ::aws_types::request_id::RequestId for DescribeLogGroupsOutput {
+impl ::aws_types::request_id::RequestId for ListLogGroupsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
 }
-impl DescribeLogGroupsOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeLogGroupsOutput`](crate::operation::describe_log_groups::DescribeLogGroupsOutput).
-    pub fn builder() -> crate::operation::describe_log_groups::builders::DescribeLogGroupsOutputBuilder {
-        crate::operation::describe_log_groups::builders::DescribeLogGroupsOutputBuilder::default()
+impl ListLogGroupsOutput {
+    /// Creates a new builder-style object to manufacture [`ListLogGroupsOutput`](crate::operation::list_log_groups::ListLogGroupsOutput).
+    pub fn builder() -> crate::operation::list_log_groups::builders::ListLogGroupsOutputBuilder {
+        crate::operation::list_log_groups::builders::ListLogGroupsOutputBuilder::default()
     }
 }
 
-/// A builder for [`DescribeLogGroupsOutput`](crate::operation::describe_log_groups::DescribeLogGroupsOutput).
+/// A builder for [`ListLogGroupsOutput`](crate::operation::list_log_groups::ListLogGroupsOutput).
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
-pub struct DescribeLogGroupsOutputBuilder {
-    pub(crate) log_groups: ::std::option::Option<::std::vec::Vec<crate::types::LogGroup>>,
+pub struct ListLogGroupsOutputBuilder {
+    pub(crate) log_groups: ::std::option::Option<::std::vec::Vec<crate::types::LogGroupSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl DescribeLogGroupsOutputBuilder {
+impl ListLogGroupsOutputBuilder {
     /// Appends an item to `log_groups`.
     ///
     /// To override the contents of this collection use [`set_log_groups`](Self::set_log_groups).
     ///
     /// <p>An array of structures, where each structure contains the information about one log group.</p>
-    pub fn log_groups(mut self, input: crate::types::LogGroup) -> Self {
+    pub fn log_groups(mut self, input: crate::types::LogGroupSummary) -> Self {
         let mut v = self.log_groups.unwrap_or_default();
         v.push(input);
         self.log_groups = ::std::option::Option::Some(v);
         self
     }
     /// <p>An array of structures, where each structure contains the information about one log group.</p>
-    pub fn set_log_groups(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LogGroup>>) -> Self {
+    pub fn set_log_groups(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LogGroupSummary>>) -> Self {
         self.log_groups = input;
         self
     }
     /// <p>An array of structures, where each structure contains the information about one log group.</p>
-    pub fn get_log_groups(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LogGroup>> {
+    pub fn get_log_groups(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LogGroupSummary>> {
         &self.log_groups
     }
     /// <p>The token for the next set of items to return. The token expires after 24 hours.</p>
@@ -85,9 +85,9 @@ impl DescribeLogGroupsOutputBuilder {
         self._request_id = request_id;
         self
     }
-    /// Consumes the builder and constructs a [`DescribeLogGroupsOutput`](crate::operation::describe_log_groups::DescribeLogGroupsOutput).
-    pub fn build(self) -> crate::operation::describe_log_groups::DescribeLogGroupsOutput {
-        crate::operation::describe_log_groups::DescribeLogGroupsOutput {
+    /// Consumes the builder and constructs a [`ListLogGroupsOutput`](crate::operation::list_log_groups::ListLogGroupsOutput).
+    pub fn build(self) -> crate::operation::list_log_groups::ListLogGroupsOutput {
+        crate::operation::list_log_groups::ListLogGroupsOutput {
             log_groups: self.log_groups,
             next_token: self.next_token,
             _request_id: self._request_id,

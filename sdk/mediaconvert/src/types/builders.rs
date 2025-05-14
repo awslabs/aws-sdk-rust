@@ -295,6 +295,8 @@ pub use crate::types::_video_overlay_input::VideoOverlayInputBuilder;
 
 pub use crate::types::_video_overlay_input_clipping::VideoOverlayInputClippingBuilder;
 
+pub use crate::types::_video_overlay_crop::VideoOverlayCropBuilder;
+
 pub use crate::types::_input_clipping::InputClippingBuilder;
 
 pub use crate::types::_dynamic_audio_selector::DynamicAudioSelectorBuilder;

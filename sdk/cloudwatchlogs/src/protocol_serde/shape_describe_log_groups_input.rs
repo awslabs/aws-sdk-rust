@@ -33,5 +33,14 @@ pub fn ser_describe_log_groups_input_input(
     if let Some(var_9) = &input.log_group_class {
         object.key("logGroupClass").string(var_9.as_str());
     }
+    if let Some(var_10) = &input.log_group_identifiers {
+        let mut array_11 = object.key("logGroupIdentifiers").start_array();
+        for item_12 in var_10 {
+            {
+                array_11.value().string(item_12.as_str());
+            }
+        }
+        array_11.finish();
+    }
     Ok(())
 }

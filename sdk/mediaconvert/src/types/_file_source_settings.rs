@@ -18,6 +18,8 @@ pub struct FileSourceSettings {
     pub time_delta: ::std::option::Option<i32>,
     /// When you use the setting Time delta to adjust the sync between your sidecar captions and your video, use this setting to specify the units for the delta that you specify. When you don't specify a value for Time delta units, MediaConvert uses seconds by default.
     pub time_delta_units: ::std::option::Option<crate::types::FileSourceTimeDeltaUnits>,
+    /// Specify whether this set of input captions appears in your outputs in both STL and Teletext format. If you choose Upconvert, MediaConvert includes the captions data in two ways: it passes the STL data through using the Teletext compatibility bytes fields of the Teletext wrapper, and it also translates the STL data into Teletext.
+    pub upconvert_stl_to_teletext: ::std::option::Option<crate::types::CaptionSourceUpconvertStlToTeletext>,
 }
 impl FileSourceSettings {
     /// Choose whether to limit the byte rate at which your SCC input captions are inserted into your output. To not limit the caption rate: We recommend that you keep the default value, Disabled. MediaConvert inserts captions in your output according to the byte rates listed in the EIA-608 specification, typically 2 or 3 caption bytes per frame depending on your output frame rate. To limit your output caption rate: Choose Enabled. Choose this option if your downstream systems require a maximum of 2 caption bytes per frame. Note that this setting has no effect when your output frame rate is 30 or 60.
@@ -48,6 +50,10 @@ impl FileSourceSettings {
     pub fn time_delta_units(&self) -> ::std::option::Option<&crate::types::FileSourceTimeDeltaUnits> {
         self.time_delta_units.as_ref()
     }
+    /// Specify whether this set of input captions appears in your outputs in both STL and Teletext format. If you choose Upconvert, MediaConvert includes the captions data in two ways: it passes the STL data through using the Teletext compatibility bytes fields of the Teletext wrapper, and it also translates the STL data into Teletext.
+    pub fn upconvert_stl_to_teletext(&self) -> ::std::option::Option<&crate::types::CaptionSourceUpconvertStlToTeletext> {
+        self.upconvert_stl_to_teletext.as_ref()
+    }
 }
 impl FileSourceSettings {
     /// Creates a new builder-style object to manufacture [`FileSourceSettings`](crate::types::FileSourceSettings).
@@ -67,6 +73,7 @@ pub struct FileSourceSettingsBuilder {
     pub(crate) source_file: ::std::option::Option<::std::string::String>,
     pub(crate) time_delta: ::std::option::Option<i32>,
     pub(crate) time_delta_units: ::std::option::Option<crate::types::FileSourceTimeDeltaUnits>,
+    pub(crate) upconvert_stl_to_teletext: ::std::option::Option<crate::types::CaptionSourceUpconvertStlToTeletext>,
 }
 impl FileSourceSettingsBuilder {
     /// Choose whether to limit the byte rate at which your SCC input captions are inserted into your output. To not limit the caption rate: We recommend that you keep the default value, Disabled. MediaConvert inserts captions in your output according to the byte rates listed in the EIA-608 specification, typically 2 or 3 caption bytes per frame depending on your output frame rate. To limit your output caption rate: Choose Enabled. Choose this option if your downstream systems require a maximum of 2 caption bytes per frame. Note that this setting has no effect when your output frame rate is 30 or 60.
@@ -167,6 +174,20 @@ impl FileSourceSettingsBuilder {
     pub fn get_time_delta_units(&self) -> &::std::option::Option<crate::types::FileSourceTimeDeltaUnits> {
         &self.time_delta_units
     }
+    /// Specify whether this set of input captions appears in your outputs in both STL and Teletext format. If you choose Upconvert, MediaConvert includes the captions data in two ways: it passes the STL data through using the Teletext compatibility bytes fields of the Teletext wrapper, and it also translates the STL data into Teletext.
+    pub fn upconvert_stl_to_teletext(mut self, input: crate::types::CaptionSourceUpconvertStlToTeletext) -> Self {
+        self.upconvert_stl_to_teletext = ::std::option::Option::Some(input);
+        self
+    }
+    /// Specify whether this set of input captions appears in your outputs in both STL and Teletext format. If you choose Upconvert, MediaConvert includes the captions data in two ways: it passes the STL data through using the Teletext compatibility bytes fields of the Teletext wrapper, and it also translates the STL data into Teletext.
+    pub fn set_upconvert_stl_to_teletext(mut self, input: ::std::option::Option<crate::types::CaptionSourceUpconvertStlToTeletext>) -> Self {
+        self.upconvert_stl_to_teletext = input;
+        self
+    }
+    /// Specify whether this set of input captions appears in your outputs in both STL and Teletext format. If you choose Upconvert, MediaConvert includes the captions data in two ways: it passes the STL data through using the Teletext compatibility bytes fields of the Teletext wrapper, and it also translates the STL data into Teletext.
+    pub fn get_upconvert_stl_to_teletext(&self) -> &::std::option::Option<crate::types::CaptionSourceUpconvertStlToTeletext> {
+        &self.upconvert_stl_to_teletext
+    }
     /// Consumes the builder and constructs a [`FileSourceSettings`](crate::types::FileSourceSettings).
     pub fn build(self) -> crate::types::FileSourceSettings {
         crate::types::FileSourceSettings {
@@ -177,6 +198,7 @@ impl FileSourceSettingsBuilder {
             source_file: self.source_file,
             time_delta: self.time_delta,
             time_delta_units: self.time_delta_units,
+            upconvert_stl_to_teletext: self.upconvert_stl_to_teletext,
         }
     }
 }

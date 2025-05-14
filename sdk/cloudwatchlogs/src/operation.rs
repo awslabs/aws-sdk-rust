@@ -175,6 +175,9 @@ pub mod list_integrations;
 /// Types for the `ListLogAnomalyDetectors` operation.
 pub mod list_log_anomaly_detectors;
 
+/// Types for the `ListLogGroups` operation.
+pub mod list_log_groups;
+
 /// Types for the `ListLogGroupsForQuery` operation.
 pub mod list_log_groups_for_query;
 

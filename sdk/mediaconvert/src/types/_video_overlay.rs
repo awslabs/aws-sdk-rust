@@ -4,6 +4,8 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VideoOverlay {
+    /// Specify a rectangle of content to crop and use from your video overlay's input video. When you do, MediaConvert uses the cropped dimensions that you specify under X offset, Y offset, Width, and Height.
+    pub crop: ::std::option::Option<crate::types::VideoOverlayCrop>,
     /// Enter the end timecode in the base input video for this overlay. Your overlay will be active through this frame. To display your video overlay for the duration of the base input video: Leave blank. Use the format HH:MM:SS:FF or HH:MM:SS;FF, where HH is the hour, MM is the minute, SS isthe second, and FF is the frame number. When entering this value, take into account your choice for the base input video's timecode source. For example, if you have embedded timecodes that start at 01:00:00:00 and you want your overlay to end ten minutes into the video, enter 01:10:00:00.
     pub end_timecode: ::std::option::Option<::std::string::String>,
     /// Specify the Initial position of your video overlay. To specify the Initial position of your video overlay, including distance from the left or top edge of the base input video's frame, or size: Enter a value for X position, Y position, Width, or Height. To use the full frame of the base input video: Leave blank.
@@ -18,6 +20,10 @@ pub struct VideoOverlay {
     pub transitions: ::std::option::Option<::std::vec::Vec<crate::types::VideoOverlayTransition>>,
 }
 impl VideoOverlay {
+    /// Specify a rectangle of content to crop and use from your video overlay's input video. When you do, MediaConvert uses the cropped dimensions that you specify under X offset, Y offset, Width, and Height.
+    pub fn crop(&self) -> ::std::option::Option<&crate::types::VideoOverlayCrop> {
+        self.crop.as_ref()
+    }
     /// Enter the end timecode in the base input video for this overlay. Your overlay will be active through this frame. To display your video overlay for the duration of the base input video: Leave blank. Use the format HH:MM:SS:FF or HH:MM:SS;FF, where HH is the hour, MM is the minute, SS isthe second, and FF is the frame number. When entering this value, take into account your choice for the base input video's timecode source. For example, if you have embedded timecodes that start at 01:00:00:00 and you want your overlay to end ten minutes into the video, enter 01:10:00:00.
     pub fn end_timecode(&self) -> ::std::option::Option<&str> {
         self.end_timecode.as_deref()
@@ -56,6 +62,7 @@ impl VideoOverlay {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 pub struct VideoOverlayBuilder {
+    pub(crate) crop: ::std::option::Option<crate::types::VideoOverlayCrop>,
     pub(crate) end_timecode: ::std::option::Option<::std::string::String>,
     pub(crate) initial_position: ::std::option::Option<crate::types::VideoOverlayPosition>,
     pub(crate) input: ::std::option::Option<crate::types::VideoOverlayInput>,
@@ -64,6 +71,20 @@ pub struct VideoOverlayBuilder {
     pub(crate) transitions: ::std::option::Option<::std::vec::Vec<crate::types::VideoOverlayTransition>>,
 }
 impl VideoOverlayBuilder {
+    /// Specify a rectangle of content to crop and use from your video overlay's input video. When you do, MediaConvert uses the cropped dimensions that you specify under X offset, Y offset, Width, and Height.
+    pub fn crop(mut self, input: crate::types::VideoOverlayCrop) -> Self {
+        self.crop = ::std::option::Option::Some(input);
+        self
+    }
+    /// Specify a rectangle of content to crop and use from your video overlay's input video. When you do, MediaConvert uses the cropped dimensions that you specify under X offset, Y offset, Width, and Height.
+    pub fn set_crop(mut self, input: ::std::option::Option<crate::types::VideoOverlayCrop>) -> Self {
+        self.crop = input;
+        self
+    }
+    /// Specify a rectangle of content to crop and use from your video overlay's input video. When you do, MediaConvert uses the cropped dimensions that you specify under X offset, Y offset, Width, and Height.
+    pub fn get_crop(&self) -> &::std::option::Option<crate::types::VideoOverlayCrop> {
+        &self.crop
+    }
     /// Enter the end timecode in the base input video for this overlay. Your overlay will be active through this frame. To display your video overlay for the duration of the base input video: Leave blank. Use the format HH:MM:SS:FF or HH:MM:SS;FF, where HH is the hour, MM is the minute, SS isthe second, and FF is the frame number. When entering this value, take into account your choice for the base input video's timecode source. For example, if you have embedded timecodes that start at 01:00:00:00 and you want your overlay to end ten minutes into the video, enter 01:10:00:00.
     pub fn end_timecode(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.end_timecode = ::std::option::Option::Some(input.into());
@@ -157,6 +178,7 @@ impl VideoOverlayBuilder {
     /// Consumes the builder and constructs a [`VideoOverlay`](crate::types::VideoOverlay).
     pub fn build(self) -> crate::types::VideoOverlay {
         crate::types::VideoOverlay {
+            crop: self.crop,
             end_timecode: self.end_timecode,
             initial_position: self.initial_position,
             input: self.input,

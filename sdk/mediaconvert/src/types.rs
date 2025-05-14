@@ -1095,6 +1095,8 @@ pub use crate::types::_input_timecode_source::InputTimecodeSource;
 
 pub use crate::types::_video_overlay_input_clipping::VideoOverlayInputClipping;
 
+pub use crate::types::_video_overlay_crop::VideoOverlayCrop;
+
 pub use crate::types::_input_psi_control::InputPsiControl;
 
 pub use crate::types::_input_scan_type::InputScanType;
@@ -1126,6 +1128,8 @@ pub use crate::types::_teletext_source_settings::TeletextSourceSettings;
 pub use crate::types::_caption_source_type::CaptionSourceType;
 
 pub use crate::types::_file_source_settings::FileSourceSettings;
+
+pub use crate::types::_caption_source_upconvert_stl_to_teletext::CaptionSourceUpconvertStlToTeletext;
 
 pub use crate::types::_file_source_time_delta_units::FileSourceTimeDeltaUnits;
 
@@ -1470,6 +1474,8 @@ mod _caption_source_framerate;
 mod _caption_source_settings;
 
 mod _caption_source_type;
+
+mod _caption_source_upconvert_stl_to_teletext;
 
 mod _channel_mapping;
 
@@ -2444,6 +2450,8 @@ mod _video_description;
 mod _video_detail;
 
 mod _video_overlay;
+
+mod _video_overlay_crop;
 
 mod _video_overlay_input;
 

@@ -3,38 +3,44 @@ pub fn ser_video_overlay(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::VideoOverlay,
 ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
-    if let Some(var_1) = &input.end_timecode {
-        object.key("endTimecode").string(var_1.as_str());
-    }
-    if let Some(var_2) = &input.initial_position {
+    if let Some(var_1) = &input.crop {
         #[allow(unused_mut)]
-        let mut object_3 = object.key("initialPosition").start_object();
-        crate::protocol_serde::shape_video_overlay_position::ser_video_overlay_position(&mut object_3, var_2)?;
-        object_3.finish();
+        let mut object_2 = object.key("crop").start_object();
+        crate::protocol_serde::shape_video_overlay_crop::ser_video_overlay_crop(&mut object_2, var_1)?;
+        object_2.finish();
     }
-    if let Some(var_4) = &input.input {
+    if let Some(var_3) = &input.end_timecode {
+        object.key("endTimecode").string(var_3.as_str());
+    }
+    if let Some(var_4) = &input.initial_position {
         #[allow(unused_mut)]
-        let mut object_5 = object.key("input").start_object();
-        crate::protocol_serde::shape_video_overlay_input::ser_video_overlay_input(&mut object_5, var_4)?;
+        let mut object_5 = object.key("initialPosition").start_object();
+        crate::protocol_serde::shape_video_overlay_position::ser_video_overlay_position(&mut object_5, var_4)?;
         object_5.finish();
     }
-    if let Some(var_6) = &input.playback {
-        object.key("playback").string(var_6.as_str());
+    if let Some(var_6) = &input.input {
+        #[allow(unused_mut)]
+        let mut object_7 = object.key("input").start_object();
+        crate::protocol_serde::shape_video_overlay_input::ser_video_overlay_input(&mut object_7, var_6)?;
+        object_7.finish();
     }
-    if let Some(var_7) = &input.start_timecode {
-        object.key("startTimecode").string(var_7.as_str());
+    if let Some(var_8) = &input.playback {
+        object.key("playback").string(var_8.as_str());
     }
-    if let Some(var_8) = &input.transitions {
-        let mut array_9 = object.key("transitions").start_array();
-        for item_10 in var_8 {
+    if let Some(var_9) = &input.start_timecode {
+        object.key("startTimecode").string(var_9.as_str());
+    }
+    if let Some(var_10) = &input.transitions {
+        let mut array_11 = object.key("transitions").start_array();
+        for item_12 in var_10 {
             {
                 #[allow(unused_mut)]
-                let mut object_11 = array_9.value().start_object();
-                crate::protocol_serde::shape_video_overlay_transition::ser_video_overlay_transition(&mut object_11, item_10)?;
-                object_11.finish();
+                let mut object_13 = array_11.value().start_object();
+                crate::protocol_serde::shape_video_overlay_transition::ser_video_overlay_transition(&mut object_13, item_12)?;
+                object_13.finish();
             }
         }
-        array_9.finish();
+        array_11.finish();
     }
     Ok(())
 }
@@ -54,6 +60,9 @@ where
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "crop" => {
+                            builder = builder.set_crop(crate::protocol_serde::shape_video_overlay_crop::de_video_overlay_crop(tokens)?);
+                        }
                         "endTimecode" => {
                             builder = builder.set_end_timecode(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

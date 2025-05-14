@@ -139,6 +139,8 @@ pub(crate) mod shape_list_integrations;
 
 pub(crate) mod shape_list_log_anomaly_detectors;
 
+pub(crate) mod shape_list_log_groups;
+
 pub(crate) mod shape_list_log_groups_for_query;
 
 pub(crate) mod shape_list_tags_for_resource;
@@ -341,6 +343,8 @@ pub(crate) mod shape_list_log_anomaly_detectors_input;
 
 pub(crate) mod shape_list_log_groups_for_query_input;
 
+pub(crate) mod shape_list_log_groups_input;
+
 pub(crate) mod shape_list_tags_for_resource_input;
 
 pub(crate) mod shape_list_tags_log_group_input;
@@ -485,6 +489,8 @@ pub(crate) mod shape_log_group_field_list;
 
 pub(crate) mod shape_log_group_identifiers;
 
+pub(crate) mod shape_log_group_summaries;
+
 pub(crate) mod shape_log_groups;
 
 pub(crate) mod shape_log_record;
@@ -572,6 +578,8 @@ pub(crate) mod shape_live_tail_session_update;
 pub(crate) mod shape_log_group;
 
 pub(crate) mod shape_log_group_field;
+
+pub(crate) mod shape_log_group_summary;
 
 pub(crate) mod shape_log_stream;
 

@@ -279,6 +279,8 @@ mod list_integrations;
 
 mod list_log_anomaly_detectors;
 
+mod list_log_groups;
+
 mod list_log_groups_for_query;
 
 mod list_tags_for_resource;

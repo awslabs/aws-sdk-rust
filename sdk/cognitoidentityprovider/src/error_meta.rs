@@ -2425,11 +2425,17 @@ impl From<crate::operation::delete_web_authn_credential::DeleteWebAuthnCredentia
             crate::operation::delete_web_authn_credential::DeleteWebAuthnCredentialError::InvalidParameterException(inner) => {
                 Error::InvalidParameterException(inner)
             }
+            crate::operation::delete_web_authn_credential::DeleteWebAuthnCredentialError::LimitExceededException(inner) => {
+                Error::LimitExceededException(inner)
+            }
             crate::operation::delete_web_authn_credential::DeleteWebAuthnCredentialError::NotAuthorizedException(inner) => {
                 Error::NotAuthorizedException(inner)
             }
             crate::operation::delete_web_authn_credential::DeleteWebAuthnCredentialError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::delete_web_authn_credential::DeleteWebAuthnCredentialError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
             }
             crate::operation::delete_web_authn_credential::DeleteWebAuthnCredentialError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -3724,8 +3730,14 @@ impl From<crate::operation::list_web_authn_credentials::ListWebAuthnCredentialsE
             crate::operation::list_web_authn_credentials::ListWebAuthnCredentialsError::InvalidParameterException(inner) => {
                 Error::InvalidParameterException(inner)
             }
+            crate::operation::list_web_authn_credentials::ListWebAuthnCredentialsError::LimitExceededException(inner) => {
+                Error::LimitExceededException(inner)
+            }
             crate::operation::list_web_authn_credentials::ListWebAuthnCredentialsError::NotAuthorizedException(inner) => {
                 Error::NotAuthorizedException(inner)
+            }
+            crate::operation::list_web_authn_credentials::ListWebAuthnCredentialsError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
             }
             crate::operation::list_web_authn_credentials::ListWebAuthnCredentialsError::Unhandled(inner) => Error::Unhandled(inner),
         }

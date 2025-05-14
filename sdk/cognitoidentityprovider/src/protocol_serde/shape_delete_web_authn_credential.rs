@@ -69,6 +69,21 @@ pub fn de_delete_web_authn_credential_http_error(
             }
             tmp
         }),
+        "LimitExceededException" => crate::operation::delete_web_authn_credential::DeleteWebAuthnCredentialError::LimitExceededException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::LimitExceededExceptionBuilder::default();
+                output = crate::protocol_serde::shape_limit_exceeded_exception::de_limit_exceeded_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::delete_web_authn_credential::DeleteWebAuthnCredentialError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "NotAuthorizedException" => crate::operation::delete_web_authn_credential::DeleteWebAuthnCredentialError::NotAuthorizedException({
             #[allow(unused_mut)]
             let mut tmp = {
@@ -90,6 +105,21 @@ pub fn de_delete_web_authn_credential_http_error(
                 #[allow(unused_mut)]
                 let mut output = crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
                 output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::delete_web_authn_credential::DeleteWebAuthnCredentialError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "TooManyRequestsException" => crate::operation::delete_web_authn_credential::DeleteWebAuthnCredentialError::TooManyRequestsException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::TooManyRequestsExceptionBuilder::default();
+                output = crate::protocol_serde::shape_too_many_requests_exception::de_too_many_requests_exception_json_err(_response_body, output)
                     .map_err(crate::operation::delete_web_authn_credential::DeleteWebAuthnCredentialError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()

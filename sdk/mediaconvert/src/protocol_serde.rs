@@ -439,6 +439,8 @@ pub(crate) mod shape_uncompressed_settings;
 
 pub(crate) mod shape_vc3_settings;
 
+pub(crate) mod shape_video_overlay_crop;
+
 pub(crate) mod shape_video_overlay_input;
 
 pub(crate) mod shape_video_overlay_position;
