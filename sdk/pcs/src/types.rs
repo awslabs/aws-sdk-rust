@@ -19,6 +19,10 @@ pub use crate::types::_networking::Networking;
 
 pub use crate::types::_cluster_slurm_configuration::ClusterSlurmConfiguration;
 
+pub use crate::types::_accounting::Accounting;
+
+pub use crate::types::_accounting_mode::AccountingMode;
+
 pub use crate::types::_slurm_auth_key::SlurmAuthKey;
 
 pub use crate::types::_slurm_custom_setting::SlurmCustomSetting;
@@ -30,6 +34,8 @@ pub use crate::types::_scheduler::Scheduler;
 pub use crate::types::_scheduler_type::SchedulerType;
 
 pub use crate::types::_cluster_slurm_configuration_request::ClusterSlurmConfigurationRequest;
+
+pub use crate::types::_accounting_request::AccountingRequest;
 
 pub use crate::types::_networking_request::NetworkingRequest;
 
@@ -68,6 +74,12 @@ pub use crate::types::_update_compute_node_group_slurm_configuration_request::Up
 pub use crate::types::_scaling_configuration_request::ScalingConfigurationRequest;
 
 pub use crate::types::_compute_node_group_slurm_configuration_request::ComputeNodeGroupSlurmConfigurationRequest;
+
+mod _accounting;
+
+mod _accounting_mode;
+
+mod _accounting_request;
 
 mod _cluster;
 

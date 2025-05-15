@@ -271,7 +271,17 @@ pub use crate::types::_flow_node_io_data_type::FlowNodeIoDataType;
 
 pub use crate::types::_flow_node_input::FlowNodeInput;
 
+pub use crate::types::_flow_node_input_category::FlowNodeInputCategory;
+
 pub use crate::types::_flow_node_configuration::FlowNodeConfiguration;
+
+pub use crate::types::_loop_controller_flow_node_configuration::LoopControllerFlowNodeConfiguration;
+
+pub use crate::types::_flow_condition::FlowCondition;
+
+pub use crate::types::_loop_input_flow_node_configuration::LoopInputFlowNodeConfiguration;
+
+pub use crate::types::_loop_flow_node_configuration::LoopFlowNodeConfiguration;
 
 pub use crate::types::_inline_code_flow_node_configuration::InlineCodeFlowNodeConfiguration;
 
@@ -309,9 +319,31 @@ pub use crate::types::_lex_flow_node_configuration::LexFlowNodeConfiguration;
 
 pub use crate::types::_condition_flow_node_configuration::ConditionFlowNodeConfiguration;
 
-pub use crate::types::_flow_condition::FlowCondition;
-
 pub use crate::types::_knowledge_base_flow_node_configuration::KnowledgeBaseFlowNodeConfiguration;
+
+pub use crate::types::_knowledge_base_orchestration_configuration::KnowledgeBaseOrchestrationConfiguration;
+
+pub use crate::types::_performance_configuration::PerformanceConfiguration;
+
+pub use crate::types::_performance_config_latency::PerformanceConfigLatency;
+
+pub use crate::types::_knowledge_base_prompt_template::KnowledgeBasePromptTemplate;
+
+pub use crate::types::_vector_search_reranking_configuration::VectorSearchRerankingConfiguration;
+
+pub use crate::types::_vector_search_bedrock_reranking_configuration::VectorSearchBedrockRerankingConfiguration;
+
+pub use crate::types::_metadata_configuration_for_reranking::MetadataConfigurationForReranking;
+
+pub use crate::types::_reranking_metadata_selective_mode_configuration::RerankingMetadataSelectiveModeConfiguration;
+
+pub use crate::types::_field_for_reranking::FieldForReranking;
+
+pub use crate::types::_reranking_metadata_selection_mode::RerankingMetadataSelectionMode;
+
+pub use crate::types::_vector_search_bedrock_reranking_model_configuration::VectorSearchBedrockRerankingModelConfiguration;
+
+pub use crate::types::_vector_search_reranking_configuration_type::VectorSearchRerankingConfigurationType;
 
 pub use crate::types::_output_flow_node_configuration::OutputFlowNodeConfiguration;
 
@@ -324,6 +356,20 @@ pub use crate::types::_flow_validation::FlowValidation;
 pub use crate::types::_flow_validation_type::FlowValidationType;
 
 pub use crate::types::_flow_validation_details::FlowValidationDetails;
+
+pub use crate::types::_invalid_loop_boundary_flow_validation_details::InvalidLoopBoundaryFlowValidationDetails;
+
+pub use crate::types::_loop_incompatible_node_type_flow_validation_details::LoopIncompatibleNodeTypeFlowValidationDetails;
+
+pub use crate::types::_incompatible_loop_node_type::IncompatibleLoopNodeType;
+
+pub use crate::types::_multiple_loop_controller_nodes_flow_validation_details::MultipleLoopControllerNodesFlowValidationDetails;
+
+pub use crate::types::_multiple_loop_input_nodes_flow_validation_details::MultipleLoopInputNodesFlowValidationDetails;
+
+pub use crate::types::_missing_loop_controller_node_flow_validation_details::MissingLoopControllerNodeFlowValidationDetails;
+
+pub use crate::types::_missing_loop_input_node_flow_validation_details::MissingLoopInputNodeFlowValidationDetails;
 
 pub use crate::types::_unknown_node_output_flow_validation_details::UnknownNodeOutputFlowValidationDetails;
 
@@ -384,6 +430,10 @@ pub use crate::types::_flow_validation_severity::FlowValidationSeverity;
 pub use crate::types::_flow_summary::FlowSummary;
 
 pub use crate::types::_flow_version_summary::FlowVersionSummary;
+
+pub use crate::types::_flow_alias_concurrency_configuration::FlowAliasConcurrencyConfiguration;
+
+pub use crate::types::_concurrency_type::ConcurrencyType;
 
 pub use crate::types::_flow_alias_routing_configuration_list_item::FlowAliasRoutingConfigurationListItem;
 
@@ -629,6 +679,8 @@ mod _chunking_strategy;
 
 mod _collector_flow_node_configuration;
 
+mod _concurrency_type;
+
 mod _condition_flow_node_configuration;
 
 mod _confluence_auth_type;
@@ -707,7 +759,11 @@ mod _enrichment_strategy_configuration;
 
 mod _enrichment_strategy_method;
 
+mod _field_for_reranking;
+
 mod _fixed_size_chunking_configuration;
+
+mod _flow_alias_concurrency_configuration;
 
 mod _flow_alias_routing_configuration_list_item;
 
@@ -732,6 +788,8 @@ mod _flow_node;
 mod _flow_node_configuration;
 
 mod _flow_node_input;
+
+mod _flow_node_input_category;
 
 mod _flow_node_io_data_type;
 
@@ -767,6 +825,8 @@ mod _include_exclude;
 
 mod _incompatible_connection_data_type_flow_validation_details;
 
+mod _incompatible_loop_node_type;
+
 mod _inference_configuration;
 
 mod _ingestion_job;
@@ -797,6 +857,8 @@ mod _input_flow_node_configuration;
 
 mod _intermediate_storage;
 
+mod _invalid_loop_boundary_flow_validation_details;
+
 mod _iterator_flow_node_configuration;
 
 mod _kendra_knowledge_base_configuration;
@@ -810,6 +872,10 @@ mod _knowledge_base_document;
 mod _knowledge_base_document_detail;
 
 mod _knowledge_base_flow_node_configuration;
+
+mod _knowledge_base_orchestration_configuration;
+
+mod _knowledge_base_prompt_template;
 
 mod _knowledge_base_state;
 
@@ -825,6 +891,14 @@ mod _lambda_function_flow_node_configuration;
 
 mod _lex_flow_node_configuration;
 
+mod _loop_controller_flow_node_configuration;
+
+mod _loop_flow_node_configuration;
+
+mod _loop_incompatible_node_type_flow_validation_details;
+
+mod _loop_input_flow_node_configuration;
+
 mod _malformed_condition_expression_flow_validation_details;
 
 mod _malformed_node_input_expression_flow_validation_details;
@@ -838,6 +912,8 @@ mod _message;
 mod _metadata_attribute;
 
 mod _metadata_attribute_value;
+
+mod _metadata_configuration_for_reranking;
 
 mod _metadata_source_type;
 
@@ -853,6 +929,10 @@ mod _missing_default_condition_flow_validation_details;
 
 mod _missing_ending_nodes_flow_validation_details;
 
+mod _missing_loop_controller_node_flow_validation_details;
+
+mod _missing_loop_input_node_flow_validation_details;
+
 mod _missing_node_configuration_flow_validation_details;
 
 mod _missing_node_input_flow_validation_details;
@@ -864,6 +944,10 @@ mod _missing_starting_nodes_flow_validation_details;
 mod _mongo_db_atlas_configuration;
 
 mod _mongo_db_atlas_field_mapping;
+
+mod _multiple_loop_controller_nodes_flow_validation_details;
+
+mod _multiple_loop_input_nodes_flow_validation_details;
 
 mod _multiple_node_input_connections_flow_validation_details;
 
@@ -898,6 +982,10 @@ mod _parsing_strategy;
 mod _pattern_object_filter;
 
 mod _pattern_object_filter_configuration;
+
+mod _performance_config_latency;
+
+mod _performance_configuration;
 
 mod _pinecone_configuration;
 
@@ -986,6 +1074,10 @@ mod _redshift_serverless_configuration;
 mod _relay_conversation_history;
 
 mod _require_confirmation;
+
+mod _reranking_metadata_selection_mode;
+
+mod _reranking_metadata_selective_mode_configuration;
 
 mod _retrieval_flow_node_configuration;
 
@@ -1104,6 +1196,14 @@ mod _validation_exception_field;
 mod _vector_ingestion_configuration;
 
 mod _vector_knowledge_base_configuration;
+
+mod _vector_search_bedrock_reranking_configuration;
+
+mod _vector_search_bedrock_reranking_model_configuration;
+
+mod _vector_search_reranking_configuration;
+
+mod _vector_search_reranking_configuration_type;
 
 mod _web_crawler_configuration;
 

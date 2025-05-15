@@ -33,6 +33,11 @@ where
                                 crate::protocol_serde::shape_flow_alias_routing_configuration::de_flow_alias_routing_configuration(tokens)?,
                             );
                         }
+                        "concurrencyConfiguration" => {
+                            builder = builder.set_concurrency_configuration(
+                                crate::protocol_serde::shape_flow_alias_concurrency_configuration::de_flow_alias_concurrency_configuration(tokens)?,
+                            );
+                        }
                         "flowId" => {
                             builder = builder.set_flow_id(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

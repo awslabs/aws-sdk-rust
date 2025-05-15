@@ -12,6 +12,10 @@ pub enum FlowValidationDetails {
     DuplicateConnections(crate::types::DuplicateConnectionsFlowValidationDetails),
     /// <p>Details about incompatible data types in a connection.</p>
     IncompatibleConnectionDataType(crate::types::IncompatibleConnectionDataTypeFlowValidationDetails),
+    /// <p>Details about a flow that includes connections that violate loop boundary rules.</p>
+    InvalidLoopBoundary(crate::types::InvalidLoopBoundaryFlowValidationDetails),
+    /// <p>Details about a flow that includes incompatible node types in a DoWhile loop.</p>
+    LoopIncompatibleNodeType(crate::types::LoopIncompatibleNodeTypeFlowValidationDetails),
     /// <p>Details about a malformed condition expression in a node.</p>
     MalformedConditionExpression(crate::types::MalformedConditionExpressionFlowValidationDetails),
     /// <p>Details about a malformed input expression in a node.</p>
@@ -26,6 +30,10 @@ pub enum FlowValidationDetails {
     MissingDefaultCondition(crate::types::MissingDefaultConditionFlowValidationDetails),
     /// <p>Details about missing ending nodes in the flow.</p>
     MissingEndingNodes(crate::types::MissingEndingNodesFlowValidationDetails),
+    /// <p>Details about a flow that's missing a required <code>LoopController</code> node in a DoWhile loop.</p>
+    MissingLoopControllerNode(crate::types::MissingLoopControllerNodeFlowValidationDetails),
+    /// <p>Details about a flow that's missing a required <code>LoopInput</code> node in a DoWhile loop.</p>
+    MissingLoopInputNode(crate::types::MissingLoopInputNodeFlowValidationDetails),
     /// <p>Details about missing configuration for a node.</p>
     MissingNodeConfiguration(crate::types::MissingNodeConfigurationFlowValidationDetails),
     /// <p>Details about a missing required input in a node.</p>
@@ -34,6 +42,10 @@ pub enum FlowValidationDetails {
     MissingNodeOutput(crate::types::MissingNodeOutputFlowValidationDetails),
     /// <p>Details about missing starting nodes in the flow.</p>
     MissingStartingNodes(crate::types::MissingStartingNodesFlowValidationDetails),
+    /// <p>Details about a flow that contains multiple <code>LoopController</code> nodes in a DoWhile loop.</p>
+    MultipleLoopControllerNodes(crate::types::MultipleLoopControllerNodesFlowValidationDetails),
+    /// <p>Details about a flow that contains multiple <code>LoopInput</code> nodes in a DoWhile loop.</p>
+    MultipleLoopInputNodes(crate::types::MultipleLoopInputNodesFlowValidationDetails),
     /// <p>Details about multiple connections to a single node input.</p>
     MultipleNodeInputConnections(crate::types::MultipleNodeInputConnectionsFlowValidationDetails),
     /// <p>Details about an unfulfilled node input with no valid connections.</p>
@@ -124,6 +136,32 @@ impl FlowValidationDetails {
     /// Returns true if this is a [`IncompatibleConnectionDataType`](crate::types::FlowValidationDetails::IncompatibleConnectionDataType).
     pub fn is_incompatible_connection_data_type(&self) -> bool {
         self.as_incompatible_connection_data_type().is_ok()
+    }
+    /// Tries to convert the enum instance into [`InvalidLoopBoundary`](crate::types::FlowValidationDetails::InvalidLoopBoundary), extracting the inner [`InvalidLoopBoundaryFlowValidationDetails`](crate::types::InvalidLoopBoundaryFlowValidationDetails).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_invalid_loop_boundary(&self) -> ::std::result::Result<&crate::types::InvalidLoopBoundaryFlowValidationDetails, &Self> {
+        if let FlowValidationDetails::InvalidLoopBoundary(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`InvalidLoopBoundary`](crate::types::FlowValidationDetails::InvalidLoopBoundary).
+    pub fn is_invalid_loop_boundary(&self) -> bool {
+        self.as_invalid_loop_boundary().is_ok()
+    }
+    /// Tries to convert the enum instance into [`LoopIncompatibleNodeType`](crate::types::FlowValidationDetails::LoopIncompatibleNodeType), extracting the inner [`LoopIncompatibleNodeTypeFlowValidationDetails`](crate::types::LoopIncompatibleNodeTypeFlowValidationDetails).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_loop_incompatible_node_type(&self) -> ::std::result::Result<&crate::types::LoopIncompatibleNodeTypeFlowValidationDetails, &Self> {
+        if let FlowValidationDetails::LoopIncompatibleNodeType(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`LoopIncompatibleNodeType`](crate::types::FlowValidationDetails::LoopIncompatibleNodeType).
+    pub fn is_loop_incompatible_node_type(&self) -> bool {
+        self.as_loop_incompatible_node_type().is_ok()
     }
     /// Tries to convert the enum instance into [`MalformedConditionExpression`](crate::types::FlowValidationDetails::MalformedConditionExpression), extracting the inner [`MalformedConditionExpressionFlowValidationDetails`](crate::types::MalformedConditionExpressionFlowValidationDetails).
     /// Returns `Err(&Self)` if it can't be converted.
@@ -222,6 +260,32 @@ impl FlowValidationDetails {
     pub fn is_missing_ending_nodes(&self) -> bool {
         self.as_missing_ending_nodes().is_ok()
     }
+    /// Tries to convert the enum instance into [`MissingLoopControllerNode`](crate::types::FlowValidationDetails::MissingLoopControllerNode), extracting the inner [`MissingLoopControllerNodeFlowValidationDetails`](crate::types::MissingLoopControllerNodeFlowValidationDetails).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_missing_loop_controller_node(&self) -> ::std::result::Result<&crate::types::MissingLoopControllerNodeFlowValidationDetails, &Self> {
+        if let FlowValidationDetails::MissingLoopControllerNode(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`MissingLoopControllerNode`](crate::types::FlowValidationDetails::MissingLoopControllerNode).
+    pub fn is_missing_loop_controller_node(&self) -> bool {
+        self.as_missing_loop_controller_node().is_ok()
+    }
+    /// Tries to convert the enum instance into [`MissingLoopInputNode`](crate::types::FlowValidationDetails::MissingLoopInputNode), extracting the inner [`MissingLoopInputNodeFlowValidationDetails`](crate::types::MissingLoopInputNodeFlowValidationDetails).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_missing_loop_input_node(&self) -> ::std::result::Result<&crate::types::MissingLoopInputNodeFlowValidationDetails, &Self> {
+        if let FlowValidationDetails::MissingLoopInputNode(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`MissingLoopInputNode`](crate::types::FlowValidationDetails::MissingLoopInputNode).
+    pub fn is_missing_loop_input_node(&self) -> bool {
+        self.as_missing_loop_input_node().is_ok()
+    }
     /// Tries to convert the enum instance into [`MissingNodeConfiguration`](crate::types::FlowValidationDetails::MissingNodeConfiguration), extracting the inner [`MissingNodeConfigurationFlowValidationDetails`](crate::types::MissingNodeConfigurationFlowValidationDetails).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_missing_node_configuration(&self) -> ::std::result::Result<&crate::types::MissingNodeConfigurationFlowValidationDetails, &Self> {
@@ -273,6 +337,32 @@ impl FlowValidationDetails {
     /// Returns true if this is a [`MissingStartingNodes`](crate::types::FlowValidationDetails::MissingStartingNodes).
     pub fn is_missing_starting_nodes(&self) -> bool {
         self.as_missing_starting_nodes().is_ok()
+    }
+    /// Tries to convert the enum instance into [`MultipleLoopControllerNodes`](crate::types::FlowValidationDetails::MultipleLoopControllerNodes), extracting the inner [`MultipleLoopControllerNodesFlowValidationDetails`](crate::types::MultipleLoopControllerNodesFlowValidationDetails).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_multiple_loop_controller_nodes(&self) -> ::std::result::Result<&crate::types::MultipleLoopControllerNodesFlowValidationDetails, &Self> {
+        if let FlowValidationDetails::MultipleLoopControllerNodes(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`MultipleLoopControllerNodes`](crate::types::FlowValidationDetails::MultipleLoopControllerNodes).
+    pub fn is_multiple_loop_controller_nodes(&self) -> bool {
+        self.as_multiple_loop_controller_nodes().is_ok()
+    }
+    /// Tries to convert the enum instance into [`MultipleLoopInputNodes`](crate::types::FlowValidationDetails::MultipleLoopInputNodes), extracting the inner [`MultipleLoopInputNodesFlowValidationDetails`](crate::types::MultipleLoopInputNodesFlowValidationDetails).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_multiple_loop_input_nodes(&self) -> ::std::result::Result<&crate::types::MultipleLoopInputNodesFlowValidationDetails, &Self> {
+        if let FlowValidationDetails::MultipleLoopInputNodes(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`MultipleLoopInputNodes`](crate::types::FlowValidationDetails::MultipleLoopInputNodes).
+    pub fn is_multiple_loop_input_nodes(&self) -> bool {
+        self.as_multiple_loop_input_nodes().is_ok()
     }
     /// Tries to convert the enum instance into [`MultipleNodeInputConnections`](crate::types::FlowValidationDetails::MultipleNodeInputConnections), extracting the inner [`MultipleNodeInputConnectionsFlowValidationDetails`](crate::types::MultipleNodeInputConnectionsFlowValidationDetails).
     /// Returns `Err(&Self)` if it can't be converted.

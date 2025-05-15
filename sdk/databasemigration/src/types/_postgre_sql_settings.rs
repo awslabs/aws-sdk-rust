@@ -78,6 +78,10 @@ pub struct PostgreSqlSettings {
     /// <p>Disables the Unicode source filter with PostgreSQL, for values passed into the Selection rule filter on Source Endpoint column values. By default DMS performs source filter comparisons using a Unicode string which can cause look ups to ignore the indexes in the text columns and slow down migrations.</p>
     /// <p>Unicode support should only be disabled when using a selection rule filter is on a text column in the Source database that is indexed.</p>
     pub disable_unicode_source_filter: ::std::option::Option<bool>,
+    /// <p>The IAM role arn you can use to authenticate the connection to your endpoint. Ensure to include <code>iam:PassRole</code> and <code>rds-db:connect</code> actions in permission policy.</p>
+    pub service_access_role_arn: ::std::option::Option<::std::string::String>,
+    /// <p>This attribute allows you to specify the authentication method as "iam auth".</p>
+    pub authentication_method: ::std::option::Option<crate::types::PostgreSqlAuthenticationMethod>,
 }
 impl PostgreSqlSettings {
     /// <p>For use with change data capture (CDC) only, this attribute has DMS bypass foreign keys and user triggers to reduce the time it takes to bulk load data.</p>
@@ -204,6 +208,14 @@ impl PostgreSqlSettings {
     pub fn disable_unicode_source_filter(&self) -> ::std::option::Option<bool> {
         self.disable_unicode_source_filter
     }
+    /// <p>The IAM role arn you can use to authenticate the connection to your endpoint. Ensure to include <code>iam:PassRole</code> and <code>rds-db:connect</code> actions in permission policy.</p>
+    pub fn service_access_role_arn(&self) -> ::std::option::Option<&str> {
+        self.service_access_role_arn.as_deref()
+    }
+    /// <p>This attribute allows you to specify the authentication method as "iam auth".</p>
+    pub fn authentication_method(&self) -> ::std::option::Option<&crate::types::PostgreSqlAuthenticationMethod> {
+        self.authentication_method.as_ref()
+    }
 }
 impl ::std::fmt::Debug for PostgreSqlSettings {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -233,6 +245,8 @@ impl ::std::fmt::Debug for PostgreSqlSettings {
         formatter.field("database_mode", &self.database_mode);
         formatter.field("babelfish_database_name", &self.babelfish_database_name);
         formatter.field("disable_unicode_source_filter", &self.disable_unicode_source_filter);
+        formatter.field("service_access_role_arn", &self.service_access_role_arn);
+        formatter.field("authentication_method", &self.authentication_method);
         formatter.finish()
     }
 }
@@ -272,6 +286,8 @@ pub struct PostgreSqlSettingsBuilder {
     pub(crate) database_mode: ::std::option::Option<crate::types::DatabaseMode>,
     pub(crate) babelfish_database_name: ::std::option::Option<::std::string::String>,
     pub(crate) disable_unicode_source_filter: ::std::option::Option<bool>,
+    pub(crate) service_access_role_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) authentication_method: ::std::option::Option<crate::types::PostgreSqlAuthenticationMethod>,
 }
 impl PostgreSqlSettingsBuilder {
     /// <p>For use with change data capture (CDC) only, this attribute has DMS bypass foreign keys and user triggers to reduce the time it takes to bulk load data.</p>
@@ -696,6 +712,34 @@ impl PostgreSqlSettingsBuilder {
     pub fn get_disable_unicode_source_filter(&self) -> &::std::option::Option<bool> {
         &self.disable_unicode_source_filter
     }
+    /// <p>The IAM role arn you can use to authenticate the connection to your endpoint. Ensure to include <code>iam:PassRole</code> and <code>rds-db:connect</code> actions in permission policy.</p>
+    pub fn service_access_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.service_access_role_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The IAM role arn you can use to authenticate the connection to your endpoint. Ensure to include <code>iam:PassRole</code> and <code>rds-db:connect</code> actions in permission policy.</p>
+    pub fn set_service_access_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.service_access_role_arn = input;
+        self
+    }
+    /// <p>The IAM role arn you can use to authenticate the connection to your endpoint. Ensure to include <code>iam:PassRole</code> and <code>rds-db:connect</code> actions in permission policy.</p>
+    pub fn get_service_access_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.service_access_role_arn
+    }
+    /// <p>This attribute allows you to specify the authentication method as "iam auth".</p>
+    pub fn authentication_method(mut self, input: crate::types::PostgreSqlAuthenticationMethod) -> Self {
+        self.authentication_method = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>This attribute allows you to specify the authentication method as "iam auth".</p>
+    pub fn set_authentication_method(mut self, input: ::std::option::Option<crate::types::PostgreSqlAuthenticationMethod>) -> Self {
+        self.authentication_method = input;
+        self
+    }
+    /// <p>This attribute allows you to specify the authentication method as "iam auth".</p>
+    pub fn get_authentication_method(&self) -> &::std::option::Option<crate::types::PostgreSqlAuthenticationMethod> {
+        &self.authentication_method
+    }
     /// Consumes the builder and constructs a [`PostgreSqlSettings`](crate::types::PostgreSqlSettings).
     pub fn build(self) -> crate::types::PostgreSqlSettings {
         crate::types::PostgreSqlSettings {
@@ -724,6 +768,8 @@ impl PostgreSqlSettingsBuilder {
             database_mode: self.database_mode,
             babelfish_database_name: self.babelfish_database_name,
             disable_unicode_source_filter: self.disable_unicode_source_filter,
+            service_access_role_arn: self.service_access_role_arn,
+            authentication_method: self.authentication_method,
         }
     }
 }
@@ -755,6 +801,8 @@ impl ::std::fmt::Debug for PostgreSqlSettingsBuilder {
         formatter.field("database_mode", &self.database_mode);
         formatter.field("babelfish_database_name", &self.babelfish_database_name);
         formatter.field("disable_unicode_source_filter", &self.disable_unicode_source_filter);
+        formatter.field("service_access_role_arn", &self.service_access_role_arn);
+        formatter.field("authentication_method", &self.authentication_method);
         formatter.finish()
     }
 }

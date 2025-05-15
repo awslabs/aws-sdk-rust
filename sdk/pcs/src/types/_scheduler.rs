@@ -7,7 +7,7 @@ pub struct Scheduler {
     /// <p>The software Amazon Web Services PCS uses to manage cluster scaling and job scheduling.</p>
     pub r#type: crate::types::SchedulerType,
     /// <p>The version of the specified scheduling software that Amazon Web Services PCS uses to manage cluster scaling and job scheduling. For more information, see <a href="https://docs.aws.amazon.com/pcs/latest/userguide/slurm-versions.html">Slurm versions in Amazon Web Services PCS</a> in the <i>Amazon Web Services PCS User Guide</i>.</p>
-    /// <p>Valid Values: <code>23.11 | 24.05</code></p>
+    /// <p>Valid Values: <code>23.11 | 24.05 | 24.11</code></p>
     pub version: ::std::string::String,
 }
 impl Scheduler {
@@ -16,7 +16,7 @@ impl Scheduler {
         &self.r#type
     }
     /// <p>The version of the specified scheduling software that Amazon Web Services PCS uses to manage cluster scaling and job scheduling. For more information, see <a href="https://docs.aws.amazon.com/pcs/latest/userguide/slurm-versions.html">Slurm versions in Amazon Web Services PCS</a> in the <i>Amazon Web Services PCS User Guide</i>.</p>
-    /// <p>Valid Values: <code>23.11 | 24.05</code></p>
+    /// <p>Valid Values: <code>23.11 | 24.05 | 24.11</code></p>
     pub fn version(&self) -> &str {
         use std::ops::Deref;
         self.version.deref()
@@ -53,20 +53,20 @@ impl SchedulerBuilder {
         &self.r#type
     }
     /// <p>The version of the specified scheduling software that Amazon Web Services PCS uses to manage cluster scaling and job scheduling. For more information, see <a href="https://docs.aws.amazon.com/pcs/latest/userguide/slurm-versions.html">Slurm versions in Amazon Web Services PCS</a> in the <i>Amazon Web Services PCS User Guide</i>.</p>
-    /// <p>Valid Values: <code>23.11 | 24.05</code></p>
+    /// <p>Valid Values: <code>23.11 | 24.05 | 24.11</code></p>
     /// This field is required.
     pub fn version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The version of the specified scheduling software that Amazon Web Services PCS uses to manage cluster scaling and job scheduling. For more information, see <a href="https://docs.aws.amazon.com/pcs/latest/userguide/slurm-versions.html">Slurm versions in Amazon Web Services PCS</a> in the <i>Amazon Web Services PCS User Guide</i>.</p>
-    /// <p>Valid Values: <code>23.11 | 24.05</code></p>
+    /// <p>Valid Values: <code>23.11 | 24.05 | 24.11</code></p>
     pub fn set_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.version = input;
         self
     }
     /// <p>The version of the specified scheduling software that Amazon Web Services PCS uses to manage cluster scaling and job scheduling. For more information, see <a href="https://docs.aws.amazon.com/pcs/latest/userguide/slurm-versions.html">Slurm versions in Amazon Web Services PCS</a> in the <i>Amazon Web Services PCS User Guide</i>.</p>
-    /// <p>Valid Values: <code>23.11 | 24.05</code></p>
+    /// <p>Valid Values: <code>23.11 | 24.05 | 24.11</code></p>
     pub fn get_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.version
     }

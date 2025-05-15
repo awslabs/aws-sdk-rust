@@ -15,6 +15,39 @@ pub fn ser_knowledge_base_flow_node_configuration(
         crate::protocol_serde::shape_guardrail_configuration::ser_guardrail_configuration(&mut object_3, var_2)?;
         object_3.finish();
     }
+    if let Some(var_4) = &input.number_of_results {
+        object.key("numberOfResults").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_4).into()),
+        );
+    }
+    if let Some(var_5) = &input.prompt_template {
+        #[allow(unused_mut)]
+        let mut object_6 = object.key("promptTemplate").start_object();
+        crate::protocol_serde::shape_knowledge_base_prompt_template::ser_knowledge_base_prompt_template(&mut object_6, var_5)?;
+        object_6.finish();
+    }
+    if let Some(var_7) = &input.inference_configuration {
+        #[allow(unused_mut)]
+        let mut object_8 = object.key("inferenceConfiguration").start_object();
+        crate::protocol_serde::shape_prompt_inference_configuration::ser_prompt_inference_configuration(&mut object_8, var_7)?;
+        object_8.finish();
+    }
+    if let Some(var_9) = &input.reranking_configuration {
+        #[allow(unused_mut)]
+        let mut object_10 = object.key("rerankingConfiguration").start_object();
+        crate::protocol_serde::shape_vector_search_reranking_configuration::ser_vector_search_reranking_configuration(&mut object_10, var_9)?;
+        object_10.finish();
+    }
+    if let Some(var_11) = &input.orchestration_configuration {
+        #[allow(unused_mut)]
+        let mut object_12 = object.key("orchestrationConfiguration").start_object();
+        crate::protocol_serde::shape_knowledge_base_orchestration_configuration::ser_knowledge_base_orchestration_configuration(
+            &mut object_12,
+            var_11,
+        )?;
+        object_12.finish();
+    }
     Ok(())
 }
 
@@ -51,6 +84,33 @@ where
                             builder = builder.set_guardrail_configuration(
                                 crate::protocol_serde::shape_guardrail_configuration::de_guardrail_configuration(tokens)?,
                             );
+                        }
+                        "numberOfResults" => {
+                            builder = builder.set_number_of_results(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
+                            );
+                        }
+                        "promptTemplate" => {
+                            builder = builder.set_prompt_template(
+                                crate::protocol_serde::shape_knowledge_base_prompt_template::de_knowledge_base_prompt_template(tokens)?,
+                            );
+                        }
+                        "inferenceConfiguration" => {
+                            builder = builder.set_inference_configuration(
+                                crate::protocol_serde::shape_prompt_inference_configuration::de_prompt_inference_configuration(tokens)?,
+                            );
+                        }
+                        "rerankingConfiguration" => {
+                            builder = builder.set_reranking_configuration(
+                                crate::protocol_serde::shape_vector_search_reranking_configuration::de_vector_search_reranking_configuration(tokens)?,
+                            );
+                        }
+                        "orchestrationConfiguration" => {
+                            builder = builder.set_orchestration_configuration(
+                                    crate::protocol_serde::shape_knowledge_base_orchestration_configuration::de_knowledge_base_orchestration_configuration(tokens)?
+                                );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

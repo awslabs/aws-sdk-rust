@@ -9,6 +9,8 @@ pub struct CreateFlowAliasInput {
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Contains information about the version to which to map the alias.</p>
     pub routing_configuration: ::std::option::Option<::std::vec::Vec<crate::types::FlowAliasRoutingConfigurationListItem>>,
+    /// <p>The configuration that specifies how nodes in the flow are executed in parallel.</p>
+    pub concurrency_configuration: ::std::option::Option<crate::types::FlowAliasConcurrencyConfiguration>,
     /// <p>The unique identifier of the flow for which to create an alias.</p>
     pub flow_identifier: ::std::option::Option<::std::string::String>,
     /// <p>A unique, case-sensitive identifier to ensure that the API request completes no more than one time. If this token matches a previous request, Amazon Bedrock ignores the request, but does not return an error. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a>.</p>
@@ -30,6 +32,10 @@ impl CreateFlowAliasInput {
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.routing_configuration.is_none()`.
     pub fn routing_configuration(&self) -> &[crate::types::FlowAliasRoutingConfigurationListItem] {
         self.routing_configuration.as_deref().unwrap_or_default()
+    }
+    /// <p>The configuration that specifies how nodes in the flow are executed in parallel.</p>
+    pub fn concurrency_configuration(&self) -> ::std::option::Option<&crate::types::FlowAliasConcurrencyConfiguration> {
+        self.concurrency_configuration.as_ref()
     }
     /// <p>The unique identifier of the flow for which to create an alias.</p>
     pub fn flow_identifier(&self) -> ::std::option::Option<&str> {
@@ -58,6 +64,7 @@ pub struct CreateFlowAliasInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) routing_configuration: ::std::option::Option<::std::vec::Vec<crate::types::FlowAliasRoutingConfigurationListItem>>,
+    pub(crate) concurrency_configuration: ::std::option::Option<crate::types::FlowAliasConcurrencyConfiguration>,
     pub(crate) flow_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
@@ -114,6 +121,20 @@ impl CreateFlowAliasInputBuilder {
     /// <p>Contains information about the version to which to map the alias.</p>
     pub fn get_routing_configuration(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FlowAliasRoutingConfigurationListItem>> {
         &self.routing_configuration
+    }
+    /// <p>The configuration that specifies how nodes in the flow are executed in parallel.</p>
+    pub fn concurrency_configuration(mut self, input: crate::types::FlowAliasConcurrencyConfiguration) -> Self {
+        self.concurrency_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The configuration that specifies how nodes in the flow are executed in parallel.</p>
+    pub fn set_concurrency_configuration(mut self, input: ::std::option::Option<crate::types::FlowAliasConcurrencyConfiguration>) -> Self {
+        self.concurrency_configuration = input;
+        self
+    }
+    /// <p>The configuration that specifies how nodes in the flow are executed in parallel.</p>
+    pub fn get_concurrency_configuration(&self) -> &::std::option::Option<crate::types::FlowAliasConcurrencyConfiguration> {
+        &self.concurrency_configuration
     }
     /// <p>The unique identifier of the flow for which to create an alias.</p>
     /// This field is required.
@@ -172,6 +193,7 @@ impl CreateFlowAliasInputBuilder {
             name: self.name,
             description: self.description,
             routing_configuration: self.routing_configuration,
+            concurrency_configuration: self.concurrency_configuration,
             flow_identifier: self.flow_identifier,
             client_token: self.client_token,
             tags: self.tags,

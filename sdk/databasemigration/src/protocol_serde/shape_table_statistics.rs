@@ -168,6 +168,39 @@ where
                                     .transpose()?,
                             );
                         }
+                        "ResyncState" => {
+                            builder = builder.set_resync_state(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "ResyncRowsAttempted" => {
+                            builder = builder.set_resync_rows_attempted(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i64::try_from)
+                                    .transpose()?,
+                            );
+                        }
+                        "ResyncRowsSucceeded" => {
+                            builder = builder.set_resync_rows_succeeded(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i64::try_from)
+                                    .transpose()?,
+                            );
+                        }
+                        "ResyncRowsFailed" => {
+                            builder = builder.set_resync_rows_failed(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i64::try_from)
+                                    .transpose()?,
+                            );
+                        }
+                        "ResyncProgress" => {
+                            builder = builder.set_resync_progress(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?.map(|v| v.to_f64_lossy()),
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

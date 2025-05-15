@@ -135,19 +135,19 @@ impl DescribeEventSubscriptionsFluentBuilder {
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
     ///
     /// <p>Filters applied to event subscriptions.</p>
-    /// <p>Valid filter names: event-subscription-arn | event-subscription-id</p>
+    /// <p>Valid filter names: <code>event-subscription-arn</code> | <code>event-subscription-id</code></p>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         self.inner = self.inner.filters(input);
         self
     }
     /// <p>Filters applied to event subscriptions.</p>
-    /// <p>Valid filter names: event-subscription-arn | event-subscription-id</p>
+    /// <p>Valid filter names: <code>event-subscription-arn</code> | <code>event-subscription-id</code></p>
     pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
     /// <p>Filters applied to event subscriptions.</p>
-    /// <p>Valid filter names: event-subscription-arn | event-subscription-id</p>
+    /// <p>Valid filter names: <code>event-subscription-arn</code> | <code>event-subscription-id</code></p>
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
         self.inner.get_filters()
     }

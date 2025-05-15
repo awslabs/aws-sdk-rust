@@ -28,6 +28,9 @@ where
                         "authKey" => {
                             builder = builder.set_auth_key(crate::protocol_serde::shape_slurm_auth_key::de_slurm_auth_key(tokens)?);
                         }
+                        "accounting" => {
+                            builder = builder.set_accounting(crate::protocol_serde::shape_accounting::de_accounting(tokens)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

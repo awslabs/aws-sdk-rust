@@ -1156,6 +1156,15 @@ pub(crate) fn ingestion_job_correct_errors(mut builder: crate::types::builders::
     builder
 }
 
+pub(crate) fn flow_alias_concurrency_configuration_correct_errors(
+    mut builder: crate::types::builders::FlowAliasConcurrencyConfigurationBuilder,
+) -> crate::types::builders::FlowAliasConcurrencyConfigurationBuilder {
+    if builder.r#type.is_none() {
+        builder.r#type = "no value was set".parse::<crate::types::ConcurrencyType>().ok()
+    }
+    builder
+}
+
 pub(crate) fn data_source_configuration_correct_errors(
     mut builder: crate::types::builders::DataSourceConfigurationBuilder,
 ) -> crate::types::builders::DataSourceConfigurationBuilder {
@@ -2006,6 +2015,36 @@ pub(crate) fn intermediate_storage_correct_errors(
     builder
 }
 
+pub(crate) fn invalid_loop_boundary_flow_validation_details_correct_errors(
+    mut builder: crate::types::builders::InvalidLoopBoundaryFlowValidationDetailsBuilder,
+) -> crate::types::builders::InvalidLoopBoundaryFlowValidationDetailsBuilder {
+    if builder.connection.is_none() {
+        builder.connection = Some(Default::default())
+    }
+    if builder.source.is_none() {
+        builder.source = Some(Default::default())
+    }
+    if builder.target.is_none() {
+        builder.target = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn loop_incompatible_node_type_flow_validation_details_correct_errors(
+    mut builder: crate::types::builders::LoopIncompatibleNodeTypeFlowValidationDetailsBuilder,
+) -> crate::types::builders::LoopIncompatibleNodeTypeFlowValidationDetailsBuilder {
+    if builder.node.is_none() {
+        builder.node = Some(Default::default())
+    }
+    if builder.incompatible_node_type.is_none() {
+        builder.incompatible_node_type = "no value was set".parse::<crate::types::IncompatibleLoopNodeType>().ok()
+    }
+    if builder.incompatible_node_name.is_none() {
+        builder.incompatible_node_name = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn malformed_condition_expression_flow_validation_details_correct_errors(
     mut builder: crate::types::builders::MalformedConditionExpressionFlowValidationDetailsBuilder,
 ) -> crate::types::builders::MalformedConditionExpressionFlowValidationDetailsBuilder {
@@ -2084,6 +2123,24 @@ pub(crate) fn missing_default_condition_flow_validation_details_correct_errors(
     builder
 }
 
+pub(crate) fn missing_loop_controller_node_flow_validation_details_correct_errors(
+    mut builder: crate::types::builders::MissingLoopControllerNodeFlowValidationDetailsBuilder,
+) -> crate::types::builders::MissingLoopControllerNodeFlowValidationDetailsBuilder {
+    if builder.loop_node.is_none() {
+        builder.loop_node = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn missing_loop_input_node_flow_validation_details_correct_errors(
+    mut builder: crate::types::builders::MissingLoopInputNodeFlowValidationDetailsBuilder,
+) -> crate::types::builders::MissingLoopInputNodeFlowValidationDetailsBuilder {
+    if builder.loop_node.is_none() {
+        builder.loop_node = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn missing_node_configuration_flow_validation_details_correct_errors(
     mut builder: crate::types::builders::MissingNodeConfigurationFlowValidationDetailsBuilder,
 ) -> crate::types::builders::MissingNodeConfigurationFlowValidationDetailsBuilder {
@@ -2128,6 +2185,24 @@ pub(crate) fn mongo_db_atlas_field_mapping_correct_errors(
     }
     if builder.metadata_field.is_none() {
         builder.metadata_field = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn multiple_loop_controller_nodes_flow_validation_details_correct_errors(
+    mut builder: crate::types::builders::MultipleLoopControllerNodesFlowValidationDetailsBuilder,
+) -> crate::types::builders::MultipleLoopControllerNodesFlowValidationDetailsBuilder {
+    if builder.loop_node.is_none() {
+        builder.loop_node = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn multiple_loop_input_nodes_flow_validation_details_correct_errors(
+    mut builder: crate::types::builders::MultipleLoopInputNodesFlowValidationDetailsBuilder,
+) -> crate::types::builders::MultipleLoopInputNodesFlowValidationDetailsBuilder {
+    if builder.loop_node.is_none() {
+        builder.loop_node = Some(Default::default())
     }
     builder
 }
@@ -2591,6 +2666,30 @@ pub(crate) fn lex_flow_node_configuration_correct_errors(
     builder
 }
 
+pub(crate) fn loop_controller_flow_node_configuration_correct_errors(
+    mut builder: crate::types::builders::LoopControllerFlowNodeConfigurationBuilder,
+) -> crate::types::builders::LoopControllerFlowNodeConfigurationBuilder {
+    if builder.continue_condition.is_none() {
+        builder.continue_condition = {
+            let builder = crate::types::builders::FlowConditionBuilder::default();
+            crate::serde_util::flow_condition_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
+pub(crate) fn loop_flow_node_configuration_correct_errors(
+    mut builder: crate::types::builders::LoopFlowNodeConfigurationBuilder,
+) -> crate::types::builders::LoopFlowNodeConfigurationBuilder {
+    if builder.definition.is_none() {
+        builder.definition = {
+            let builder = crate::types::builders::FlowDefinitionBuilder::default();
+            Some(builder.build())
+        }
+    }
+    builder
+}
+
 pub(crate) fn parsing_prompt_correct_errors(
     mut builder: crate::types::builders::ParsingPromptBuilder,
 ) -> crate::types::builders::ParsingPromptBuilder {
@@ -2656,6 +2755,15 @@ pub(crate) fn transformation_correct_errors(
     }
     if builder.step_to_apply.is_none() {
         builder.step_to_apply = "no value was set".parse::<crate::types::StepType>().ok()
+    }
+    builder
+}
+
+pub(crate) fn flow_condition_correct_errors(
+    mut builder: crate::types::builders::FlowConditionBuilder,
+) -> crate::types::builders::FlowConditionBuilder {
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
     }
     builder
 }
@@ -2763,11 +2871,11 @@ pub(crate) fn transformation_function_correct_errors(
     builder
 }
 
-pub(crate) fn flow_condition_correct_errors(
-    mut builder: crate::types::builders::FlowConditionBuilder,
-) -> crate::types::builders::FlowConditionBuilder {
-    if builder.name.is_none() {
-        builder.name = Some(Default::default())
+pub(crate) fn vector_search_reranking_configuration_correct_errors(
+    mut builder: crate::types::builders::VectorSearchRerankingConfigurationBuilder,
+) -> crate::types::builders::VectorSearchRerankingConfigurationBuilder {
+    if builder.r#type.is_none() {
+        builder.r#type = "no value was set".parse::<crate::types::VectorSearchRerankingConfigurationType>().ok()
     }
     builder
 }
@@ -2868,12 +2976,35 @@ pub(crate) fn transformation_lambda_configuration_correct_errors(
     builder
 }
 
+pub(crate) fn vector_search_bedrock_reranking_configuration_correct_errors(
+    mut builder: crate::types::builders::VectorSearchBedrockRerankingConfigurationBuilder,
+) -> crate::types::builders::VectorSearchBedrockRerankingConfigurationBuilder {
+    if builder.model_configuration.is_none() {
+        builder.model_configuration = {
+            let builder = crate::types::builders::VectorSearchBedrockRerankingModelConfigurationBuilder::default();
+            crate::serde_util::vector_search_bedrock_reranking_model_configuration_correct_errors(builder)
+                .build()
+                .ok()
+        }
+    }
+    builder
+}
+
 pub(crate) fn curated_query_correct_errors(mut builder: crate::types::builders::CuratedQueryBuilder) -> crate::types::builders::CuratedQueryBuilder {
     if builder.natural_language.is_none() {
         builder.natural_language = Some(Default::default())
     }
     if builder.sql.is_none() {
         builder.sql = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn metadata_configuration_for_reranking_correct_errors(
+    mut builder: crate::types::builders::MetadataConfigurationForRerankingBuilder,
+) -> crate::types::builders::MetadataConfigurationForRerankingBuilder {
+    if builder.selection_mode.is_none() {
+        builder.selection_mode = "no value was set".parse::<crate::types::RerankingMetadataSelectionMode>().ok()
     }
     builder
 }
@@ -2904,6 +3035,24 @@ pub(crate) fn tool_specification_correct_errors(
     }
     if builder.input_schema.is_none() {
         builder.input_schema = Some(crate::types::ToolInputSchema::Unknown)
+    }
+    builder
+}
+
+pub(crate) fn vector_search_bedrock_reranking_model_configuration_correct_errors(
+    mut builder: crate::types::builders::VectorSearchBedrockRerankingModelConfigurationBuilder,
+) -> crate::types::builders::VectorSearchBedrockRerankingModelConfigurationBuilder {
+    if builder.model_arn.is_none() {
+        builder.model_arn = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn field_for_reranking_correct_errors(
+    mut builder: crate::types::builders::FieldForRerankingBuilder,
+) -> crate::types::builders::FieldForRerankingBuilder {
+    if builder.field_name.is_none() {
+        builder.field_name = Some(Default::default())
     }
     builder
 }

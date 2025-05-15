@@ -39,6 +39,8 @@ pub struct CreateFleetInput {
     /// <p>If you use <code>ATTRIBUTE_BASED_COMPUTE</code>, you must define your attributes by using <code>computeConfiguration</code>. CodeBuild will select the cheapest instance that satisfies your specified attributes. For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html#environment-reserved-capacity.types">Reserved capacity environment types</a> in the <i>CodeBuild User Guide</i>.</p>
     /// </note></li>
     /// <li>
+    /// <p><code>CUSTOM_INSTANCE_TYPE</code>: Specify the instance type for your compute fleet. For a list of supported instance types, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html#environment-reserved-capacity.instance-types">Supported instance families </a> in the <i>CodeBuild User Guide</i>.</p></li>
+    /// <li>
     /// <p><code>BUILD_GENERAL1_SMALL</code>: Use up to 4 GiB memory and 2 vCPUs for builds.</p></li>
     /// <li>
     /// <p><code>BUILD_GENERAL1_MEDIUM</code>: Use up to 8 GiB memory and 4 vCPUs for builds.</p></li>
@@ -79,7 +81,7 @@ pub struct CreateFleetInput {
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html#environment.types">On-demand environment types</a> in the <i>CodeBuild User Guide.</i></p>
     pub compute_type: ::std::option::Option<crate::types::ComputeType>,
-    /// <p>The compute configuration of the compute fleet. This is only required if <code>computeType</code> is set to <code>ATTRIBUTE_BASED_COMPUTE</code>.</p>
+    /// <p>The compute configuration of the compute fleet. This is only required if <code>computeType</code> is set to <code>ATTRIBUTE_BASED_COMPUTE</code> or <code>CUSTOM_INSTANCE_TYPE</code>.</p>
     pub compute_configuration: ::std::option::Option<crate::types::ComputeConfiguration>,
     /// <p>The scaling configuration of the compute fleet.</p>
     pub scaling_configuration: ::std::option::Option<crate::types::ScalingConfigurationInput>,
@@ -148,6 +150,8 @@ impl CreateFleetInput {
     /// <p>If you use <code>ATTRIBUTE_BASED_COMPUTE</code>, you must define your attributes by using <code>computeConfiguration</code>. CodeBuild will select the cheapest instance that satisfies your specified attributes. For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html#environment-reserved-capacity.types">Reserved capacity environment types</a> in the <i>CodeBuild User Guide</i>.</p>
     /// </note></li>
     /// <li>
+    /// <p><code>CUSTOM_INSTANCE_TYPE</code>: Specify the instance type for your compute fleet. For a list of supported instance types, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html#environment-reserved-capacity.instance-types">Supported instance families </a> in the <i>CodeBuild User Guide</i>.</p></li>
+    /// <li>
     /// <p><code>BUILD_GENERAL1_SMALL</code>: Use up to 4 GiB memory and 2 vCPUs for builds.</p></li>
     /// <li>
     /// <p><code>BUILD_GENERAL1_MEDIUM</code>: Use up to 8 GiB memory and 4 vCPUs for builds.</p></li>
@@ -190,7 +194,7 @@ impl CreateFleetInput {
     pub fn compute_type(&self) -> ::std::option::Option<&crate::types::ComputeType> {
         self.compute_type.as_ref()
     }
-    /// <p>The compute configuration of the compute fleet. This is only required if <code>computeType</code> is set to <code>ATTRIBUTE_BASED_COMPUTE</code>.</p>
+    /// <p>The compute configuration of the compute fleet. This is only required if <code>computeType</code> is set to <code>ATTRIBUTE_BASED_COMPUTE</code> or <code>CUSTOM_INSTANCE_TYPE</code>.</p>
     pub fn compute_configuration(&self) -> ::std::option::Option<&crate::types::ComputeConfiguration> {
         self.compute_configuration.as_ref()
     }
@@ -380,6 +384,8 @@ impl CreateFleetInputBuilder {
     /// <p>If you use <code>ATTRIBUTE_BASED_COMPUTE</code>, you must define your attributes by using <code>computeConfiguration</code>. CodeBuild will select the cheapest instance that satisfies your specified attributes. For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html#environment-reserved-capacity.types">Reserved capacity environment types</a> in the <i>CodeBuild User Guide</i>.</p>
     /// </note></li>
     /// <li>
+    /// <p><code>CUSTOM_INSTANCE_TYPE</code>: Specify the instance type for your compute fleet. For a list of supported instance types, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html#environment-reserved-capacity.instance-types">Supported instance families </a> in the <i>CodeBuild User Guide</i>.</p></li>
+    /// <li>
     /// <p><code>BUILD_GENERAL1_SMALL</code>: Use up to 4 GiB memory and 2 vCPUs for builds.</p></li>
     /// <li>
     /// <p><code>BUILD_GENERAL1_MEDIUM</code>: Use up to 8 GiB memory and 4 vCPUs for builds.</p></li>
@@ -431,6 +437,8 @@ impl CreateFleetInputBuilder {
     /// <p>If you use <code>ATTRIBUTE_BASED_COMPUTE</code>, you must define your attributes by using <code>computeConfiguration</code>. CodeBuild will select the cheapest instance that satisfies your specified attributes. For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html#environment-reserved-capacity.types">Reserved capacity environment types</a> in the <i>CodeBuild User Guide</i>.</p>
     /// </note></li>
     /// <li>
+    /// <p><code>CUSTOM_INSTANCE_TYPE</code>: Specify the instance type for your compute fleet. For a list of supported instance types, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html#environment-reserved-capacity.instance-types">Supported instance families </a> in the <i>CodeBuild User Guide</i>.</p></li>
+    /// <li>
     /// <p><code>BUILD_GENERAL1_SMALL</code>: Use up to 4 GiB memory and 2 vCPUs for builds.</p></li>
     /// <li>
     /// <p><code>BUILD_GENERAL1_MEDIUM</code>: Use up to 8 GiB memory and 4 vCPUs for builds.</p></li>
@@ -481,6 +489,8 @@ impl CreateFleetInputBuilder {
     /// <p>If you use <code>ATTRIBUTE_BASED_COMPUTE</code>, you must define your attributes by using <code>computeConfiguration</code>. CodeBuild will select the cheapest instance that satisfies your specified attributes. For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html#environment-reserved-capacity.types">Reserved capacity environment types</a> in the <i>CodeBuild User Guide</i>.</p>
     /// </note></li>
     /// <li>
+    /// <p><code>CUSTOM_INSTANCE_TYPE</code>: Specify the instance type for your compute fleet. For a list of supported instance types, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html#environment-reserved-capacity.instance-types">Supported instance families </a> in the <i>CodeBuild User Guide</i>.</p></li>
+    /// <li>
     /// <p><code>BUILD_GENERAL1_SMALL</code>: Use up to 4 GiB memory and 2 vCPUs for builds.</p></li>
     /// <li>
     /// <p><code>BUILD_GENERAL1_MEDIUM</code>: Use up to 8 GiB memory and 4 vCPUs for builds.</p></li>
@@ -523,17 +533,17 @@ impl CreateFleetInputBuilder {
     pub fn get_compute_type(&self) -> &::std::option::Option<crate::types::ComputeType> {
         &self.compute_type
     }
-    /// <p>The compute configuration of the compute fleet. This is only required if <code>computeType</code> is set to <code>ATTRIBUTE_BASED_COMPUTE</code>.</p>
+    /// <p>The compute configuration of the compute fleet. This is only required if <code>computeType</code> is set to <code>ATTRIBUTE_BASED_COMPUTE</code> or <code>CUSTOM_INSTANCE_TYPE</code>.</p>
     pub fn compute_configuration(mut self, input: crate::types::ComputeConfiguration) -> Self {
         self.compute_configuration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The compute configuration of the compute fleet. This is only required if <code>computeType</code> is set to <code>ATTRIBUTE_BASED_COMPUTE</code>.</p>
+    /// <p>The compute configuration of the compute fleet. This is only required if <code>computeType</code> is set to <code>ATTRIBUTE_BASED_COMPUTE</code> or <code>CUSTOM_INSTANCE_TYPE</code>.</p>
     pub fn set_compute_configuration(mut self, input: ::std::option::Option<crate::types::ComputeConfiguration>) -> Self {
         self.compute_configuration = input;
         self
     }
-    /// <p>The compute configuration of the compute fleet. This is only required if <code>computeType</code> is set to <code>ATTRIBUTE_BASED_COMPUTE</code>.</p>
+    /// <p>The compute configuration of the compute fleet. This is only required if <code>computeType</code> is set to <code>ATTRIBUTE_BASED_COMPUTE</code> or <code>CUSTOM_INSTANCE_TYPE</code>.</p>
     pub fn get_compute_configuration(&self) -> &::std::option::Option<crate::types::ComputeConfiguration> {
         &self.compute_configuration
     }

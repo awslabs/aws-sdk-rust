@@ -155,6 +155,8 @@ pub(crate) mod shape_update_compute_node_group_slurm_configuration_request;
 
 pub(crate) mod shape_validation_exception_field_list;
 
+pub(crate) mod shape_accounting_request;
+
 pub(crate) mod shape_cluster_slurm_configuration;
 
 pub(crate) mod shape_cluster_summary;
@@ -184,6 +186,8 @@ pub(crate) mod shape_slurm_custom_setting;
 pub(crate) mod shape_subnet_id_list;
 
 pub(crate) mod shape_validation_exception_field;
+
+pub(crate) mod shape_accounting;
 
 pub(crate) mod shape_error_info;
 

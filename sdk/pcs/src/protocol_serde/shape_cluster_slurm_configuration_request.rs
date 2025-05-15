@@ -21,5 +21,11 @@ pub fn ser_cluster_slurm_configuration_request(
         }
         array_3.finish();
     }
+    if let Some(var_6) = &input.accounting {
+        #[allow(unused_mut)]
+        let mut object_7 = object.key("accounting").start_object();
+        crate::protocol_serde::shape_accounting_request::ser_accounting_request(&mut object_7, var_6)?;
+        object_7.finish();
+    }
     Ok(())
 }

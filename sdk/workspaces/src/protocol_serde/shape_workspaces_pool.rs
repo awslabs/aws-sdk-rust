@@ -83,6 +83,13 @@ where
                         "TimeoutSettings" => {
                             builder = builder.set_timeout_settings(crate::protocol_serde::shape_timeout_settings::de_timeout_settings(tokens)?);
                         }
+                        "RunningMode" => {
+                            builder = builder.set_running_mode(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::PoolsRunningMode::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

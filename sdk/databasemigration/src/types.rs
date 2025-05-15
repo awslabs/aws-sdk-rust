@@ -119,7 +119,11 @@ pub use crate::types::_char_length_semantics::CharLengthSemantics;
 
 pub use crate::types::_my_sql_settings::MySqlSettings;
 
+pub use crate::types::_my_sql_authentication_method::MySqlAuthenticationMethod;
+
 pub use crate::types::_postgre_sql_settings::PostgreSqlSettings;
+
+pub use crate::types::_postgre_sql_authentication_method::PostgreSqlAuthenticationMethod;
 
 pub use crate::types::_database_mode::DatabaseMode;
 
@@ -441,6 +445,8 @@ mod _mongo_db_data_provider_settings;
 
 mod _mongo_db_settings;
 
+mod _my_sql_authentication_method;
+
 mod _my_sql_data_provider_settings;
 
 mod _my_sql_settings;
@@ -464,6 +470,8 @@ mod _parquet_version_value;
 mod _pending_maintenance_action;
 
 mod _plugin_name_value;
+
+mod _postgre_sql_authentication_method;
 
 mod _postgre_sql_data_provider_settings;
 

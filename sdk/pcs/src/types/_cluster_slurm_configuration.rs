@@ -11,6 +11,8 @@ pub struct ClusterSlurmConfiguration {
     pub slurm_custom_settings: ::std::option::Option<::std::vec::Vec<crate::types::SlurmCustomSetting>>,
     /// <p>The shared Slurm key for authentication, also known as the <b>cluster secret</b>.</p>
     pub auth_key: ::std::option::Option<crate::types::SlurmAuthKey>,
+    /// <p>The accounting configuration includes configurable settings for Slurm accounting.</p>
+    pub accounting: ::std::option::Option<crate::types::Accounting>,
 }
 impl ClusterSlurmConfiguration {
     /// <p>The time (in seconds) before an idle node is scaled down.</p>
@@ -28,6 +30,10 @@ impl ClusterSlurmConfiguration {
     pub fn auth_key(&self) -> ::std::option::Option<&crate::types::SlurmAuthKey> {
         self.auth_key.as_ref()
     }
+    /// <p>The accounting configuration includes configurable settings for Slurm accounting.</p>
+    pub fn accounting(&self) -> ::std::option::Option<&crate::types::Accounting> {
+        self.accounting.as_ref()
+    }
 }
 impl ClusterSlurmConfiguration {
     /// Creates a new builder-style object to manufacture [`ClusterSlurmConfiguration`](crate::types::ClusterSlurmConfiguration).
@@ -43,6 +49,7 @@ pub struct ClusterSlurmConfigurationBuilder {
     pub(crate) scale_down_idle_time_in_seconds: ::std::option::Option<i32>,
     pub(crate) slurm_custom_settings: ::std::option::Option<::std::vec::Vec<crate::types::SlurmCustomSetting>>,
     pub(crate) auth_key: ::std::option::Option<crate::types::SlurmAuthKey>,
+    pub(crate) accounting: ::std::option::Option<crate::types::Accounting>,
 }
 impl ClusterSlurmConfigurationBuilder {
     /// <p>The time (in seconds) before an idle node is scaled down.</p>
@@ -96,12 +103,27 @@ impl ClusterSlurmConfigurationBuilder {
     pub fn get_auth_key(&self) -> &::std::option::Option<crate::types::SlurmAuthKey> {
         &self.auth_key
     }
+    /// <p>The accounting configuration includes configurable settings for Slurm accounting.</p>
+    pub fn accounting(mut self, input: crate::types::Accounting) -> Self {
+        self.accounting = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The accounting configuration includes configurable settings for Slurm accounting.</p>
+    pub fn set_accounting(mut self, input: ::std::option::Option<crate::types::Accounting>) -> Self {
+        self.accounting = input;
+        self
+    }
+    /// <p>The accounting configuration includes configurable settings for Slurm accounting.</p>
+    pub fn get_accounting(&self) -> &::std::option::Option<crate::types::Accounting> {
+        &self.accounting
+    }
     /// Consumes the builder and constructs a [`ClusterSlurmConfiguration`](crate::types::ClusterSlurmConfiguration).
     pub fn build(self) -> crate::types::ClusterSlurmConfiguration {
         crate::types::ClusterSlurmConfiguration {
             scale_down_idle_time_in_seconds: self.scale_down_idle_time_in_seconds,
             slurm_custom_settings: self.slurm_custom_settings,
             auth_key: self.auth_key,
+            accounting: self.accounting,
         }
     }
 }

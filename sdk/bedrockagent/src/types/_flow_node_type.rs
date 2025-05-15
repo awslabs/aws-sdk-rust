@@ -21,6 +21,9 @@
 ///     FlowNodeType::KnowledgeBase => { /* ... */ },
 ///     FlowNodeType::LambdaFunction => { /* ... */ },
 ///     FlowNodeType::Lex => { /* ... */ },
+///     FlowNodeType::Loop => { /* ... */ },
+///     FlowNodeType::LoopController => { /* ... */ },
+///     FlowNodeType::LoopInput => { /* ... */ },
 ///     FlowNodeType::Output => { /* ... */ },
 ///     FlowNodeType::Prompt => { /* ... */ },
 ///     FlowNodeType::Retrieval => { /* ... */ },
@@ -72,6 +75,12 @@ pub enum FlowNodeType {
     #[allow(missing_docs)] // documentation missing in model
     Lex,
     #[allow(missing_docs)] // documentation missing in model
+    Loop,
+    #[allow(missing_docs)] // documentation missing in model
+    LoopController,
+    #[allow(missing_docs)] // documentation missing in model
+    LoopInput,
+    #[allow(missing_docs)] // documentation missing in model
     Output,
     #[allow(missing_docs)] // documentation missing in model
     Prompt,
@@ -95,6 +104,9 @@ impl ::std::convert::From<&str> for FlowNodeType {
             "KnowledgeBase" => FlowNodeType::KnowledgeBase,
             "LambdaFunction" => FlowNodeType::LambdaFunction,
             "Lex" => FlowNodeType::Lex,
+            "Loop" => FlowNodeType::Loop,
+            "LoopController" => FlowNodeType::LoopController,
+            "LoopInput" => FlowNodeType::LoopInput,
             "Output" => FlowNodeType::Output,
             "Prompt" => FlowNodeType::Prompt,
             "Retrieval" => FlowNodeType::Retrieval,
@@ -123,6 +135,9 @@ impl FlowNodeType {
             FlowNodeType::KnowledgeBase => "KnowledgeBase",
             FlowNodeType::LambdaFunction => "LambdaFunction",
             FlowNodeType::Lex => "Lex",
+            FlowNodeType::Loop => "Loop",
+            FlowNodeType::LoopController => "LoopController",
+            FlowNodeType::LoopInput => "LoopInput",
             FlowNodeType::Output => "Output",
             FlowNodeType::Prompt => "Prompt",
             FlowNodeType::Retrieval => "Retrieval",
@@ -142,6 +157,9 @@ impl FlowNodeType {
             "KnowledgeBase",
             "LambdaFunction",
             "Lex",
+            "Loop",
+            "LoopController",
+            "LoopInput",
             "Output",
             "Prompt",
             "Retrieval",
@@ -178,6 +196,9 @@ impl ::std::fmt::Display for FlowNodeType {
             FlowNodeType::KnowledgeBase => write!(f, "KnowledgeBase"),
             FlowNodeType::LambdaFunction => write!(f, "LambdaFunction"),
             FlowNodeType::Lex => write!(f, "Lex"),
+            FlowNodeType::Loop => write!(f, "Loop"),
+            FlowNodeType::LoopController => write!(f, "LoopController"),
+            FlowNodeType::LoopInput => write!(f, "LoopInput"),
             FlowNodeType::Output => write!(f, "Output"),
             FlowNodeType::Prompt => write!(f, "Prompt"),
             FlowNodeType::Retrieval => write!(f, "Retrieval"),

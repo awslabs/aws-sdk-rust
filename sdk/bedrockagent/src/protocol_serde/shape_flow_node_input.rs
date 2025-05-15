@@ -12,6 +12,9 @@ pub fn ser_flow_node_input(
     {
         object.key("expression").string(input.expression.as_str());
     }
+    if let Some(var_1) = &input.category {
+        object.key("category").string(var_1.as_str());
+    }
     Ok(())
 }
 
@@ -48,6 +51,13 @@ where
                             builder = builder.set_expression(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "category" => {
+                            builder = builder.set_category(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::FlowNodeInputCategory::from(u.as_ref())))
                                     .transpose()?,
                             );
                         }

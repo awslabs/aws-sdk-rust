@@ -76,6 +76,29 @@ pub struct TableStatistics {
     pub validation_state: ::std::option::Option<::std::string::String>,
     /// <p>Additional details about the state of validation.</p>
     pub validation_state_details: ::std::option::Option<::std::string::String>,
+    /// <p>Records the current state of table resynchronization in the migration task.</p>
+    /// <p>This parameter can have the following values:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Not enabled – Resync is not enabled for the table in the migration task.</p></li>
+    /// <li>
+    /// <p>Pending – The tables are waiting for resync.</p></li>
+    /// <li>
+    /// <p>In progress – Resync in progress for some records in the table.</p></li>
+    /// <li>
+    /// <p>No primary key – The table could not be resynced because it has no primary key.</p></li>
+    /// <li>
+    /// <p>Last resync at: <code>date/time</code> – Resync session is finished at time. Time provided in UTC format.</p></li>
+    /// </ul>
+    pub resync_state: ::std::option::Option<::std::string::String>,
+    /// <p>Records the total number of mismatched data rows where the system attempted to apply fixes in the target database.</p>
+    pub resync_rows_attempted: ::std::option::Option<i64>,
+    /// <p>Records the total number of mismatched data rows where fixes were successfully applied in the target database.</p>
+    pub resync_rows_succeeded: ::std::option::Option<i64>,
+    /// <p>Records the total number of mismatched data rows where fix attempts failed in the target database.</p>
+    pub resync_rows_failed: ::std::option::Option<i64>,
+    /// <p>Calculates the percentage of failed validations that were successfully resynced to the system.</p>
+    pub resync_progress: ::std::option::Option<f64>,
 }
 impl TableStatistics {
     /// <p>The schema name.</p>
@@ -196,6 +219,39 @@ impl TableStatistics {
     pub fn validation_state_details(&self) -> ::std::option::Option<&str> {
         self.validation_state_details.as_deref()
     }
+    /// <p>Records the current state of table resynchronization in the migration task.</p>
+    /// <p>This parameter can have the following values:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Not enabled – Resync is not enabled for the table in the migration task.</p></li>
+    /// <li>
+    /// <p>Pending – The tables are waiting for resync.</p></li>
+    /// <li>
+    /// <p>In progress – Resync in progress for some records in the table.</p></li>
+    /// <li>
+    /// <p>No primary key – The table could not be resynced because it has no primary key.</p></li>
+    /// <li>
+    /// <p>Last resync at: <code>date/time</code> – Resync session is finished at time. Time provided in UTC format.</p></li>
+    /// </ul>
+    pub fn resync_state(&self) -> ::std::option::Option<&str> {
+        self.resync_state.as_deref()
+    }
+    /// <p>Records the total number of mismatched data rows where the system attempted to apply fixes in the target database.</p>
+    pub fn resync_rows_attempted(&self) -> ::std::option::Option<i64> {
+        self.resync_rows_attempted
+    }
+    /// <p>Records the total number of mismatched data rows where fixes were successfully applied in the target database.</p>
+    pub fn resync_rows_succeeded(&self) -> ::std::option::Option<i64> {
+        self.resync_rows_succeeded
+    }
+    /// <p>Records the total number of mismatched data rows where fix attempts failed in the target database.</p>
+    pub fn resync_rows_failed(&self) -> ::std::option::Option<i64> {
+        self.resync_rows_failed
+    }
+    /// <p>Calculates the percentage of failed validations that were successfully resynced to the system.</p>
+    pub fn resync_progress(&self) -> ::std::option::Option<f64> {
+        self.resync_progress
+    }
 }
 impl TableStatistics {
     /// Creates a new builder-style object to manufacture [`TableStatistics`](crate::types::TableStatistics).
@@ -231,6 +287,11 @@ pub struct TableStatisticsBuilder {
     pub(crate) validation_suspended_records: ::std::option::Option<i64>,
     pub(crate) validation_state: ::std::option::Option<::std::string::String>,
     pub(crate) validation_state_details: ::std::option::Option<::std::string::String>,
+    pub(crate) resync_state: ::std::option::Option<::std::string::String>,
+    pub(crate) resync_rows_attempted: ::std::option::Option<i64>,
+    pub(crate) resync_rows_succeeded: ::std::option::Option<i64>,
+    pub(crate) resync_rows_failed: ::std::option::Option<i64>,
+    pub(crate) resync_progress: ::std::option::Option<f64>,
 }
 impl TableStatisticsBuilder {
     /// <p>The schema name.</p>
@@ -633,6 +694,115 @@ impl TableStatisticsBuilder {
     pub fn get_validation_state_details(&self) -> &::std::option::Option<::std::string::String> {
         &self.validation_state_details
     }
+    /// <p>Records the current state of table resynchronization in the migration task.</p>
+    /// <p>This parameter can have the following values:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Not enabled – Resync is not enabled for the table in the migration task.</p></li>
+    /// <li>
+    /// <p>Pending – The tables are waiting for resync.</p></li>
+    /// <li>
+    /// <p>In progress – Resync in progress for some records in the table.</p></li>
+    /// <li>
+    /// <p>No primary key – The table could not be resynced because it has no primary key.</p></li>
+    /// <li>
+    /// <p>Last resync at: <code>date/time</code> – Resync session is finished at time. Time provided in UTC format.</p></li>
+    /// </ul>
+    pub fn resync_state(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.resync_state = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Records the current state of table resynchronization in the migration task.</p>
+    /// <p>This parameter can have the following values:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Not enabled – Resync is not enabled for the table in the migration task.</p></li>
+    /// <li>
+    /// <p>Pending – The tables are waiting for resync.</p></li>
+    /// <li>
+    /// <p>In progress – Resync in progress for some records in the table.</p></li>
+    /// <li>
+    /// <p>No primary key – The table could not be resynced because it has no primary key.</p></li>
+    /// <li>
+    /// <p>Last resync at: <code>date/time</code> – Resync session is finished at time. Time provided in UTC format.</p></li>
+    /// </ul>
+    pub fn set_resync_state(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.resync_state = input;
+        self
+    }
+    /// <p>Records the current state of table resynchronization in the migration task.</p>
+    /// <p>This parameter can have the following values:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Not enabled – Resync is not enabled for the table in the migration task.</p></li>
+    /// <li>
+    /// <p>Pending – The tables are waiting for resync.</p></li>
+    /// <li>
+    /// <p>In progress – Resync in progress for some records in the table.</p></li>
+    /// <li>
+    /// <p>No primary key – The table could not be resynced because it has no primary key.</p></li>
+    /// <li>
+    /// <p>Last resync at: <code>date/time</code> – Resync session is finished at time. Time provided in UTC format.</p></li>
+    /// </ul>
+    pub fn get_resync_state(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resync_state
+    }
+    /// <p>Records the total number of mismatched data rows where the system attempted to apply fixes in the target database.</p>
+    pub fn resync_rows_attempted(mut self, input: i64) -> Self {
+        self.resync_rows_attempted = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Records the total number of mismatched data rows where the system attempted to apply fixes in the target database.</p>
+    pub fn set_resync_rows_attempted(mut self, input: ::std::option::Option<i64>) -> Self {
+        self.resync_rows_attempted = input;
+        self
+    }
+    /// <p>Records the total number of mismatched data rows where the system attempted to apply fixes in the target database.</p>
+    pub fn get_resync_rows_attempted(&self) -> &::std::option::Option<i64> {
+        &self.resync_rows_attempted
+    }
+    /// <p>Records the total number of mismatched data rows where fixes were successfully applied in the target database.</p>
+    pub fn resync_rows_succeeded(mut self, input: i64) -> Self {
+        self.resync_rows_succeeded = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Records the total number of mismatched data rows where fixes were successfully applied in the target database.</p>
+    pub fn set_resync_rows_succeeded(mut self, input: ::std::option::Option<i64>) -> Self {
+        self.resync_rows_succeeded = input;
+        self
+    }
+    /// <p>Records the total number of mismatched data rows where fixes were successfully applied in the target database.</p>
+    pub fn get_resync_rows_succeeded(&self) -> &::std::option::Option<i64> {
+        &self.resync_rows_succeeded
+    }
+    /// <p>Records the total number of mismatched data rows where fix attempts failed in the target database.</p>
+    pub fn resync_rows_failed(mut self, input: i64) -> Self {
+        self.resync_rows_failed = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Records the total number of mismatched data rows where fix attempts failed in the target database.</p>
+    pub fn set_resync_rows_failed(mut self, input: ::std::option::Option<i64>) -> Self {
+        self.resync_rows_failed = input;
+        self
+    }
+    /// <p>Records the total number of mismatched data rows where fix attempts failed in the target database.</p>
+    pub fn get_resync_rows_failed(&self) -> &::std::option::Option<i64> {
+        &self.resync_rows_failed
+    }
+    /// <p>Calculates the percentage of failed validations that were successfully resynced to the system.</p>
+    pub fn resync_progress(mut self, input: f64) -> Self {
+        self.resync_progress = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Calculates the percentage of failed validations that were successfully resynced to the system.</p>
+    pub fn set_resync_progress(mut self, input: ::std::option::Option<f64>) -> Self {
+        self.resync_progress = input;
+        self
+    }
+    /// <p>Calculates the percentage of failed validations that were successfully resynced to the system.</p>
+    pub fn get_resync_progress(&self) -> &::std::option::Option<f64> {
+        &self.resync_progress
+    }
     /// Consumes the builder and constructs a [`TableStatistics`](crate::types::TableStatistics).
     pub fn build(self) -> crate::types::TableStatistics {
         crate::types::TableStatistics {
@@ -659,6 +829,11 @@ impl TableStatisticsBuilder {
             validation_suspended_records: self.validation_suspended_records.unwrap_or_default(),
             validation_state: self.validation_state,
             validation_state_details: self.validation_state_details,
+            resync_state: self.resync_state,
+            resync_rows_attempted: self.resync_rows_attempted,
+            resync_rows_succeeded: self.resync_rows_succeeded,
+            resync_rows_failed: self.resync_rows_failed,
+            resync_progress: self.resync_progress,
         }
     }
 }

@@ -15,6 +15,8 @@ pub struct FlowAliasSummary {
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>A list of configurations about the versions that the alias maps to. Currently, you can only specify one.</p>
     pub routing_configuration: ::std::vec::Vec<crate::types::FlowAliasRoutingConfigurationListItem>,
+    /// <p>The configuration that specifies how nodes in the flow are executed concurrently.</p>
+    pub concurrency_configuration: ::std::option::Option<crate::types::FlowAliasConcurrencyConfiguration>,
     /// <p>The unique identifier of the flow.</p>
     pub flow_id: ::std::string::String,
     /// <p>The unique identifier of the alias of the flow.</p>
@@ -40,6 +42,10 @@ impl FlowAliasSummary {
     pub fn routing_configuration(&self) -> &[crate::types::FlowAliasRoutingConfigurationListItem] {
         use std::ops::Deref;
         self.routing_configuration.deref()
+    }
+    /// <p>The configuration that specifies how nodes in the flow are executed concurrently.</p>
+    pub fn concurrency_configuration(&self) -> ::std::option::Option<&crate::types::FlowAliasConcurrencyConfiguration> {
+        self.concurrency_configuration.as_ref()
     }
     /// <p>The unique identifier of the flow.</p>
     pub fn flow_id(&self) -> &str {
@@ -79,6 +85,7 @@ pub struct FlowAliasSummaryBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) routing_configuration: ::std::option::Option<::std::vec::Vec<crate::types::FlowAliasRoutingConfigurationListItem>>,
+    pub(crate) concurrency_configuration: ::std::option::Option<crate::types::FlowAliasConcurrencyConfiguration>,
     pub(crate) flow_id: ::std::option::Option<::std::string::String>,
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
@@ -137,6 +144,20 @@ impl FlowAliasSummaryBuilder {
     /// <p>A list of configurations about the versions that the alias maps to. Currently, you can only specify one.</p>
     pub fn get_routing_configuration(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FlowAliasRoutingConfigurationListItem>> {
         &self.routing_configuration
+    }
+    /// <p>The configuration that specifies how nodes in the flow are executed concurrently.</p>
+    pub fn concurrency_configuration(mut self, input: crate::types::FlowAliasConcurrencyConfiguration) -> Self {
+        self.concurrency_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The configuration that specifies how nodes in the flow are executed concurrently.</p>
+    pub fn set_concurrency_configuration(mut self, input: ::std::option::Option<crate::types::FlowAliasConcurrencyConfiguration>) -> Self {
+        self.concurrency_configuration = input;
+        self
+    }
+    /// <p>The configuration that specifies how nodes in the flow are executed concurrently.</p>
+    pub fn get_concurrency_configuration(&self) -> &::std::option::Option<crate::types::FlowAliasConcurrencyConfiguration> {
+        &self.concurrency_configuration
     }
     /// <p>The unique identifier of the flow.</p>
     /// This field is required.
@@ -237,6 +258,7 @@ impl FlowAliasSummaryBuilder {
                     "routing_configuration was not specified but it is required when building FlowAliasSummary",
                 )
             })?,
+            concurrency_configuration: self.concurrency_configuration,
             flow_id: self.flow_id.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "flow_id",

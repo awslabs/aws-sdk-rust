@@ -110,6 +110,8 @@ pub struct ProjectEnvironment {
     /// </ul>
     /// <p>When you use a cross-account or private registry image, you must use SERVICE_ROLE credentials. When you use an CodeBuild curated image, you must use CODEBUILD credentials.</p>
     pub image_pull_credentials_type: ::std::option::Option<crate::types::ImagePullCredentialsType>,
+    /// <p>A DockerServer object to use for this build project.</p>
+    pub docker_server: ::std::option::Option<crate::types::DockerServer>,
 }
 impl ProjectEnvironment {
     /// <p>The type of build environment to use for related builds.</p><note>
@@ -241,6 +243,10 @@ impl ProjectEnvironment {
     pub fn image_pull_credentials_type(&self) -> ::std::option::Option<&crate::types::ImagePullCredentialsType> {
         self.image_pull_credentials_type.as_ref()
     }
+    /// <p>A DockerServer object to use for this build project.</p>
+    pub fn docker_server(&self) -> ::std::option::Option<&crate::types::DockerServer> {
+        self.docker_server.as_ref()
+    }
 }
 impl ProjectEnvironment {
     /// Creates a new builder-style object to manufacture [`ProjectEnvironment`](crate::types::ProjectEnvironment).
@@ -263,6 +269,7 @@ pub struct ProjectEnvironmentBuilder {
     pub(crate) certificate: ::std::option::Option<::std::string::String>,
     pub(crate) registry_credential: ::std::option::Option<crate::types::RegistryCredential>,
     pub(crate) image_pull_credentials_type: ::std::option::Option<crate::types::ImagePullCredentialsType>,
+    pub(crate) docker_server: ::std::option::Option<crate::types::DockerServer>,
 }
 impl ProjectEnvironmentBuilder {
     /// <p>The type of build environment to use for related builds.</p><note>
@@ -672,6 +679,20 @@ impl ProjectEnvironmentBuilder {
     pub fn get_image_pull_credentials_type(&self) -> &::std::option::Option<crate::types::ImagePullCredentialsType> {
         &self.image_pull_credentials_type
     }
+    /// <p>A DockerServer object to use for this build project.</p>
+    pub fn docker_server(mut self, input: crate::types::DockerServer) -> Self {
+        self.docker_server = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>A DockerServer object to use for this build project.</p>
+    pub fn set_docker_server(mut self, input: ::std::option::Option<crate::types::DockerServer>) -> Self {
+        self.docker_server = input;
+        self
+    }
+    /// <p>A DockerServer object to use for this build project.</p>
+    pub fn get_docker_server(&self) -> &::std::option::Option<crate::types::DockerServer> {
+        &self.docker_server
+    }
     /// Consumes the builder and constructs a [`ProjectEnvironment`](crate::types::ProjectEnvironment).
     /// This method will fail if any of the following fields are not set:
     /// - [`r#type`](crate::types::builders::ProjectEnvironmentBuilder::type)
@@ -704,6 +725,7 @@ impl ProjectEnvironmentBuilder {
             certificate: self.certificate,
             registry_credential: self.registry_credential,
             image_pull_credentials_type: self.image_pull_credentials_type,
+            docker_server: self.docker_server,
         })
     }
 }

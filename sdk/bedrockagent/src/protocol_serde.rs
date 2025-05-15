@@ -307,6 +307,8 @@ pub(crate) mod shape_data_source_summaries;
 
 pub(crate) mod shape_document_identifier;
 
+pub(crate) mod shape_flow_alias_concurrency_configuration;
+
 pub(crate) mod shape_flow_alias_routing_configuration;
 
 pub(crate) mod shape_flow_alias_routing_configuration_list_item;
@@ -609,6 +611,8 @@ pub(crate) mod shape_inline_content;
 
 pub(crate) mod shape_input_flow_node_configuration;
 
+pub(crate) mod shape_invalid_loop_boundary_flow_validation_details;
+
 pub(crate) mod shape_iterator_flow_node_configuration;
 
 pub(crate) mod shape_knowledge_base_flow_node_configuration;
@@ -616,6 +620,14 @@ pub(crate) mod shape_knowledge_base_flow_node_configuration;
 pub(crate) mod shape_lambda_function_flow_node_configuration;
 
 pub(crate) mod shape_lex_flow_node_configuration;
+
+pub(crate) mod shape_loop_controller_flow_node_configuration;
+
+pub(crate) mod shape_loop_flow_node_configuration;
+
+pub(crate) mod shape_loop_incompatible_node_type_flow_validation_details;
+
+pub(crate) mod shape_loop_input_flow_node_configuration;
 
 pub(crate) mod shape_malformed_condition_expression_flow_validation_details;
 
@@ -635,6 +647,10 @@ pub(crate) mod shape_missing_default_condition_flow_validation_details;
 
 pub(crate) mod shape_missing_ending_nodes_flow_validation_details;
 
+pub(crate) mod shape_missing_loop_controller_node_flow_validation_details;
+
+pub(crate) mod shape_missing_loop_input_node_flow_validation_details;
+
 pub(crate) mod shape_missing_node_configuration_flow_validation_details;
 
 pub(crate) mod shape_missing_node_input_flow_validation_details;
@@ -642,6 +658,10 @@ pub(crate) mod shape_missing_node_input_flow_validation_details;
 pub(crate) mod shape_missing_node_output_flow_validation_details;
 
 pub(crate) mod shape_missing_starting_nodes_flow_validation_details;
+
+pub(crate) mod shape_multiple_loop_controller_nodes_flow_validation_details;
+
+pub(crate) mod shape_multiple_loop_input_nodes_flow_validation_details;
 
 pub(crate) mod shape_multiple_node_input_connections_flow_validation_details;
 
@@ -711,6 +731,10 @@ pub(crate) mod shape_flow_condition;
 
 pub(crate) mod shape_hierarchical_chunking_level_configurations;
 
+pub(crate) mod shape_knowledge_base_orchestration_configuration;
+
+pub(crate) mod shape_knowledge_base_prompt_template;
+
 pub(crate) mod shape_messages;
 
 pub(crate) mod shape_parameter_map;
@@ -755,6 +779,8 @@ pub(crate) mod shape_tool_choice;
 
 pub(crate) mod shape_transformation_lambda_configuration;
 
+pub(crate) mod shape_vector_search_reranking_configuration;
+
 pub(crate) mod shape_any_tool_choice;
 
 pub(crate) mod shape_auto_tool_choice;
@@ -764,6 +790,8 @@ pub(crate) mod shape_curated_query;
 pub(crate) mod shape_flow_conditions;
 
 pub(crate) mod shape_pattern_object_filter;
+
+pub(crate) mod shape_performance_configuration;
 
 pub(crate) mod shape_prompt_flow_node_inline_configuration;
 
@@ -787,9 +815,15 @@ pub(crate) mod shape_tool_specification;
 
 pub(crate) mod shape_tools;
 
+pub(crate) mod shape_vector_search_bedrock_reranking_configuration;
+
+pub(crate) mod shape_additional_model_request_fields;
+
 pub(crate) mod shape_content_blocks;
 
 pub(crate) mod shape_curated_queries;
+
+pub(crate) mod shape_metadata_configuration_for_reranking;
 
 pub(crate) mod shape_pattern_object_filter_list;
 
@@ -799,6 +833,14 @@ pub(crate) mod shape_query_generation_tables;
 
 pub(crate) mod shape_tool_input_schema;
 
+pub(crate) mod shape_vector_search_bedrock_reranking_model_configuration;
+
 pub(crate) mod shape_aws_data_catalog_table_names;
 
+pub(crate) mod shape_reranking_metadata_selective_mode_configuration;
+
+pub(crate) mod shape_field_for_reranking;
+
 pub(crate) mod shape_query_generation_columns;
+
+pub(crate) mod shape_fields_for_reranking;

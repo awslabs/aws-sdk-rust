@@ -59,6 +59,12 @@ pub use crate::types::_vpc_config::VpcConfig;
 
 pub use crate::types::_project_environment::ProjectEnvironment;
 
+pub use crate::types::_docker_server::DockerServer;
+
+pub use crate::types::_docker_server_status::DockerServerStatus;
+
+pub use crate::types::_compute_type::ComputeType;
+
 pub use crate::types::_image_pull_credentials_type::ImagePullCredentialsType;
 
 pub use crate::types::_registry_credential::RegistryCredential;
@@ -74,8 +80,6 @@ pub use crate::types::_project_fleet::ProjectFleet;
 pub use crate::types::_compute_configuration::ComputeConfiguration;
 
 pub use crate::types::_machine_type::MachineType;
-
-pub use crate::types::_compute_type::ComputeType;
 
 pub use crate::types::_environment_type::EnvironmentType;
 
@@ -300,6 +304,10 @@ mod _compute_type;
 mod _credential_provider_type;
 
 mod _debug_session;
+
+mod _docker_server;
+
+mod _docker_server_status;
 
 mod _environment_image;
 

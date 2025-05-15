@@ -158,6 +158,20 @@ impl UpdateFlowAliasFluentBuilder {
     pub fn get_routing_configuration(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FlowAliasRoutingConfigurationListItem>> {
         self.inner.get_routing_configuration()
     }
+    /// <p>The configuration that specifies how nodes in the flow are executed in parallel.</p>
+    pub fn concurrency_configuration(mut self, input: crate::types::FlowAliasConcurrencyConfiguration) -> Self {
+        self.inner = self.inner.concurrency_configuration(input);
+        self
+    }
+    /// <p>The configuration that specifies how nodes in the flow are executed in parallel.</p>
+    pub fn set_concurrency_configuration(mut self, input: ::std::option::Option<crate::types::FlowAliasConcurrencyConfiguration>) -> Self {
+        self.inner = self.inner.set_concurrency_configuration(input);
+        self
+    }
+    /// <p>The configuration that specifies how nodes in the flow are executed in parallel.</p>
+    pub fn get_concurrency_configuration(&self) -> &::std::option::Option<crate::types::FlowAliasConcurrencyConfiguration> {
+        self.inner.get_concurrency_configuration()
+    }
     /// <p>The unique identifier of the flow.</p>
     pub fn flow_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.flow_identifier(input.into());

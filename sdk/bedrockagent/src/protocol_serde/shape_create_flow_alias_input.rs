@@ -6,36 +6,42 @@ pub fn ser_create_flow_alias_input_input(
     if let Some(var_1) = &input.client_token {
         object.key("clientToken").string(var_1.as_str());
     }
-    if let Some(var_2) = &input.description {
-        object.key("description").string(var_2.as_str());
+    if let Some(var_2) = &input.concurrency_configuration {
+        #[allow(unused_mut)]
+        let mut object_3 = object.key("concurrencyConfiguration").start_object();
+        crate::protocol_serde::shape_flow_alias_concurrency_configuration::ser_flow_alias_concurrency_configuration(&mut object_3, var_2)?;
+        object_3.finish();
     }
-    if let Some(var_3) = &input.name {
-        object.key("name").string(var_3.as_str());
+    if let Some(var_4) = &input.description {
+        object.key("description").string(var_4.as_str());
     }
-    if let Some(var_4) = &input.routing_configuration {
-        let mut array_5 = object.key("routingConfiguration").start_array();
-        for item_6 in var_4 {
+    if let Some(var_5) = &input.name {
+        object.key("name").string(var_5.as_str());
+    }
+    if let Some(var_6) = &input.routing_configuration {
+        let mut array_7 = object.key("routingConfiguration").start_array();
+        for item_8 in var_6 {
             {
                 #[allow(unused_mut)]
-                let mut object_7 = array_5.value().start_object();
+                let mut object_9 = array_7.value().start_object();
                 crate::protocol_serde::shape_flow_alias_routing_configuration_list_item::ser_flow_alias_routing_configuration_list_item(
-                    &mut object_7,
-                    item_6,
+                    &mut object_9,
+                    item_8,
                 )?;
-                object_7.finish();
+                object_9.finish();
             }
         }
-        array_5.finish();
+        array_7.finish();
     }
-    if let Some(var_8) = &input.tags {
+    if let Some(var_10) = &input.tags {
         #[allow(unused_mut)]
-        let mut object_9 = object.key("tags").start_object();
-        for (key_10, value_11) in var_8 {
+        let mut object_11 = object.key("tags").start_object();
+        for (key_12, value_13) in var_10 {
             {
-                object_9.key(key_10.as_str()).string(value_11.as_str());
+                object_11.key(key_12.as_str()).string(value_13.as_str());
             }
         }
-        object_9.finish();
+        object_11.finish();
     }
     Ok(())
 }

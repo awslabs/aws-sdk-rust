@@ -9,6 +9,7 @@ impl super::Client {
     ///   - [`name(String)`](crate::operation::get_flow_alias::GetFlowAliasOutput::name): <p>The name of the alias.</p>
     ///   - [`description(Option<String>)`](crate::operation::get_flow_alias::GetFlowAliasOutput::description): <p>The description of the flow.</p>
     ///   - [`routing_configuration(Vec::<FlowAliasRoutingConfigurationListItem>)`](crate::operation::get_flow_alias::GetFlowAliasOutput::routing_configuration): <p>Contains information about the version that the alias is mapped to.</p>
+    ///   - [`concurrency_configuration(Option<FlowAliasConcurrencyConfiguration>)`](crate::operation::get_flow_alias::GetFlowAliasOutput::concurrency_configuration): <p>The configuration that specifies how nodes in the flow are executed in parallel.</p>
     ///   - [`flow_id(String)`](crate::operation::get_flow_alias::GetFlowAliasOutput::flow_id): <p>The unique identifier of the flow that the alias belongs to.</p>
     ///   - [`id(String)`](crate::operation::get_flow_alias::GetFlowAliasOutput::id): <p>The unique identifier of the alias of the flow.</p>
     ///   - [`arn(String)`](crate::operation::get_flow_alias::GetFlowAliasOutput::arn): <p>The Amazon Resource Name (ARN) of the flow.</p>

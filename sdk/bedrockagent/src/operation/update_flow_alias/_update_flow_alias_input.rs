@@ -9,6 +9,8 @@ pub struct UpdateFlowAliasInput {
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Contains information about the version to which to map the alias.</p>
     pub routing_configuration: ::std::option::Option<::std::vec::Vec<crate::types::FlowAliasRoutingConfigurationListItem>>,
+    /// <p>The configuration that specifies how nodes in the flow are executed in parallel.</p>
+    pub concurrency_configuration: ::std::option::Option<crate::types::FlowAliasConcurrencyConfiguration>,
     /// <p>The unique identifier of the flow.</p>
     pub flow_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of the alias.</p>
@@ -28,6 +30,10 @@ impl UpdateFlowAliasInput {
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.routing_configuration.is_none()`.
     pub fn routing_configuration(&self) -> &[crate::types::FlowAliasRoutingConfigurationListItem] {
         self.routing_configuration.as_deref().unwrap_or_default()
+    }
+    /// <p>The configuration that specifies how nodes in the flow are executed in parallel.</p>
+    pub fn concurrency_configuration(&self) -> ::std::option::Option<&crate::types::FlowAliasConcurrencyConfiguration> {
+        self.concurrency_configuration.as_ref()
     }
     /// <p>The unique identifier of the flow.</p>
     pub fn flow_identifier(&self) -> ::std::option::Option<&str> {
@@ -52,6 +58,7 @@ pub struct UpdateFlowAliasInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) routing_configuration: ::std::option::Option<::std::vec::Vec<crate::types::FlowAliasRoutingConfigurationListItem>>,
+    pub(crate) concurrency_configuration: ::std::option::Option<crate::types::FlowAliasConcurrencyConfiguration>,
     pub(crate) flow_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) alias_identifier: ::std::option::Option<::std::string::String>,
 }
@@ -108,6 +115,20 @@ impl UpdateFlowAliasInputBuilder {
     pub fn get_routing_configuration(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FlowAliasRoutingConfigurationListItem>> {
         &self.routing_configuration
     }
+    /// <p>The configuration that specifies how nodes in the flow are executed in parallel.</p>
+    pub fn concurrency_configuration(mut self, input: crate::types::FlowAliasConcurrencyConfiguration) -> Self {
+        self.concurrency_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The configuration that specifies how nodes in the flow are executed in parallel.</p>
+    pub fn set_concurrency_configuration(mut self, input: ::std::option::Option<crate::types::FlowAliasConcurrencyConfiguration>) -> Self {
+        self.concurrency_configuration = input;
+        self
+    }
+    /// <p>The configuration that specifies how nodes in the flow are executed in parallel.</p>
+    pub fn get_concurrency_configuration(&self) -> &::std::option::Option<crate::types::FlowAliasConcurrencyConfiguration> {
+        &self.concurrency_configuration
+    }
     /// <p>The unique identifier of the flow.</p>
     /// This field is required.
     pub fn flow_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -146,6 +167,7 @@ impl UpdateFlowAliasInputBuilder {
             name: self.name,
             description: self.description,
             routing_configuration: self.routing_configuration,
+            concurrency_configuration: self.concurrency_configuration,
             flow_identifier: self.flow_identifier,
             alias_identifier: self.alias_identifier,
         })

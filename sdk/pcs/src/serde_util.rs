@@ -370,6 +370,13 @@ pub(crate) fn validation_exception_field_correct_errors(
     builder
 }
 
+pub(crate) fn accounting_correct_errors(mut builder: crate::types::builders::AccountingBuilder) -> crate::types::builders::AccountingBuilder {
+    if builder.mode.is_none() {
+        builder.mode = "no value was set".parse::<crate::types::AccountingMode>().ok()
+    }
+    builder
+}
+
 pub(crate) fn slurm_auth_key_correct_errors(mut builder: crate::types::builders::SlurmAuthKeyBuilder) -> crate::types::builders::SlurmAuthKeyBuilder {
     if builder.secret_arn.is_none() {
         builder.secret_arn = Some(Default::default())

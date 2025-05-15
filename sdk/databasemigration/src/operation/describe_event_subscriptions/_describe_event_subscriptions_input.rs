@@ -7,7 +7,7 @@ pub struct DescribeEventSubscriptionsInput {
     /// <p>The name of the DMS event subscription to be described.</p>
     pub subscription_name: ::std::option::Option<::std::string::String>,
     /// <p>Filters applied to event subscriptions.</p>
-    /// <p>Valid filter names: event-subscription-arn | event-subscription-id</p>
+    /// <p>Valid filter names: <code>event-subscription-arn</code> | <code>event-subscription-id</code></p>
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved.</p>
     /// <p>Default: 100</p>
@@ -22,7 +22,7 @@ impl DescribeEventSubscriptionsInput {
         self.subscription_name.as_deref()
     }
     /// <p>Filters applied to event subscriptions.</p>
-    /// <p>Valid filter names: event-subscription-arn | event-subscription-id</p>
+    /// <p>Valid filter names: <code>event-subscription-arn</code> | <code>event-subscription-id</code></p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
     pub fn filters(&self) -> &[crate::types::Filter] {
@@ -75,7 +75,7 @@ impl DescribeEventSubscriptionsInputBuilder {
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
     ///
     /// <p>Filters applied to event subscriptions.</p>
-    /// <p>Valid filter names: event-subscription-arn | event-subscription-id</p>
+    /// <p>Valid filter names: <code>event-subscription-arn</code> | <code>event-subscription-id</code></p>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         let mut v = self.filters.unwrap_or_default();
         v.push(input);
@@ -83,13 +83,13 @@ impl DescribeEventSubscriptionsInputBuilder {
         self
     }
     /// <p>Filters applied to event subscriptions.</p>
-    /// <p>Valid filter names: event-subscription-arn | event-subscription-id</p>
+    /// <p>Valid filter names: <code>event-subscription-arn</code> | <code>event-subscription-id</code></p>
     pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
         self
     }
     /// <p>Filters applied to event subscriptions.</p>
-    /// <p>Valid filter names: event-subscription-arn | event-subscription-id</p>
+    /// <p>Valid filter names: <code>event-subscription-arn</code> | <code>event-subscription-id</code></p>
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
         &self.filters
     }

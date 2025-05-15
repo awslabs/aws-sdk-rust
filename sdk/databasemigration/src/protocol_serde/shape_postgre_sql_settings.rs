@@ -90,6 +90,12 @@ pub fn ser_postgre_sql_settings(
     if let Some(var_25) = &input.disable_unicode_source_filter {
         object.key("DisableUnicodeSourceFilter").boolean(*var_25);
     }
+    if let Some(var_26) = &input.service_access_role_arn {
+        object.key("ServiceAccessRoleArn").string(var_26.as_str());
+    }
+    if let Some(var_27) = &input.authentication_method {
+        object.key("AuthenticationMethod").string(var_27.as_str());
+    }
     Ok(())
 }
 
@@ -256,6 +262,20 @@ where
                         "DisableUnicodeSourceFilter" => {
                             builder =
                                 builder.set_disable_unicode_source_filter(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                        }
+                        "ServiceAccessRoleArn" => {
+                            builder = builder.set_service_access_role_arn(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "AuthenticationMethod" => {
+                            builder = builder.set_authentication_method(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::PostgreSqlAuthenticationMethod::from(u.as_ref())))
+                                    .transpose()?,
+                            );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

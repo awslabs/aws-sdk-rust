@@ -60,6 +60,13 @@ pub(crate) fn cloud_watch_logs_config_correct_errors(
     builder
 }
 
+pub(crate) fn docker_server_correct_errors(mut builder: crate::types::builders::DockerServerBuilder) -> crate::types::builders::DockerServerBuilder {
+    if builder.compute_type.is_none() {
+        builder.compute_type = "no value was set".parse::<crate::types::ComputeType>().ok()
+    }
+    builder
+}
+
 pub(crate) fn git_submodules_config_correct_errors(
     mut builder: crate::types::builders::GitSubmodulesConfigBuilder,
 ) -> crate::types::builders::GitSubmodulesConfigBuilder {

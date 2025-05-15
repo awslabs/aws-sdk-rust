@@ -82,6 +82,24 @@ pub fn ser_flow_node_configuration(
             crate::protocol_serde::shape_inline_code_flow_node_configuration::ser_inline_code_flow_node_configuration(&mut object_13, inner)?;
             object_13.finish();
         }
+        crate::types::FlowNodeConfiguration::Loop(inner) => {
+            #[allow(unused_mut)]
+            let mut object_14 = object_2.key("loop").start_object();
+            crate::protocol_serde::shape_loop_flow_node_configuration::ser_loop_flow_node_configuration(&mut object_14, inner)?;
+            object_14.finish();
+        }
+        crate::types::FlowNodeConfiguration::LoopInput(inner) => {
+            #[allow(unused_mut)]
+            let mut object_15 = object_2.key("loopInput").start_object();
+            crate::protocol_serde::shape_loop_input_flow_node_configuration::ser_loop_input_flow_node_configuration(&mut object_15, inner)?;
+            object_15.finish();
+        }
+        crate::types::FlowNodeConfiguration::LoopController(inner) => {
+            #[allow(unused_mut)]
+            let mut object_16 = object_2.key("loopController").start_object();
+            crate::protocol_serde::shape_loop_controller_flow_node_configuration::ser_loop_controller_flow_node_configuration(&mut object_16, inner)?;
+            object_16.finish();
+        }
         crate::types::FlowNodeConfiguration::Unknown => {
             return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant(
                 "FlowNodeConfiguration",
@@ -187,6 +205,22 @@ where
                             crate::protocol_serde::shape_inline_code_flow_node_configuration::de_inline_code_flow_node_configuration(tokens)?
                                 .ok_or_else(|| {
                                     ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'inlineCode' cannot be null")
+                                })?,
+                        )),
+                        "loop" => Some(crate::types::FlowNodeConfiguration::Loop(
+                            crate::protocol_serde::shape_loop_flow_node_configuration::de_loop_flow_node_configuration(tokens)?
+                                .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'loop' cannot be null"))?,
+                        )),
+                        "loopInput" => Some(crate::types::FlowNodeConfiguration::LoopInput(
+                            crate::protocol_serde::shape_loop_input_flow_node_configuration::de_loop_input_flow_node_configuration(tokens)?
+                                .ok_or_else(|| {
+                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'loopInput' cannot be null")
+                                })?,
+                        )),
+                        "loopController" => Some(crate::types::FlowNodeConfiguration::LoopController(
+                            crate::protocol_serde::shape_loop_controller_flow_node_configuration::de_loop_controller_flow_node_configuration(tokens)?
+                                .ok_or_else(|| {
+                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'loopController' cannot be null")
                                 })?,
                         )),
                         _ => {

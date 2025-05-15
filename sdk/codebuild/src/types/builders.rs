@@ -33,6 +33,10 @@ pub use crate::types::_vpc_config::VpcConfigBuilder;
 
 pub use crate::types::_project_environment::ProjectEnvironmentBuilder;
 
+pub use crate::types::_docker_server::DockerServerBuilder;
+
+pub use crate::types::_docker_server_status::DockerServerStatusBuilder;
+
 pub use crate::types::_registry_credential::RegistryCredentialBuilder;
 
 pub use crate::types::_environment_variable::EnvironmentVariableBuilder;

@@ -183,6 +183,14 @@ pub use crate::types::_flow_node_output::FlowNodeOutputBuilder;
 
 pub use crate::types::_flow_node_input::FlowNodeInputBuilder;
 
+pub use crate::types::_loop_controller_flow_node_configuration::LoopControllerFlowNodeConfigurationBuilder;
+
+pub use crate::types::_flow_condition::FlowConditionBuilder;
+
+pub use crate::types::_loop_input_flow_node_configuration::LoopInputFlowNodeConfigurationBuilder;
+
+pub use crate::types::_loop_flow_node_configuration::LoopFlowNodeConfigurationBuilder;
+
 pub use crate::types::_inline_code_flow_node_configuration::InlineCodeFlowNodeConfigurationBuilder;
 
 pub use crate::types::_collector_flow_node_configuration::CollectorFlowNodeConfigurationBuilder;
@@ -211,15 +219,41 @@ pub use crate::types::_lex_flow_node_configuration::LexFlowNodeConfigurationBuil
 
 pub use crate::types::_condition_flow_node_configuration::ConditionFlowNodeConfigurationBuilder;
 
-pub use crate::types::_flow_condition::FlowConditionBuilder;
-
 pub use crate::types::_knowledge_base_flow_node_configuration::KnowledgeBaseFlowNodeConfigurationBuilder;
+
+pub use crate::types::_knowledge_base_orchestration_configuration::KnowledgeBaseOrchestrationConfigurationBuilder;
+
+pub use crate::types::_performance_configuration::PerformanceConfigurationBuilder;
+
+pub use crate::types::_knowledge_base_prompt_template::KnowledgeBasePromptTemplateBuilder;
+
+pub use crate::types::_vector_search_reranking_configuration::VectorSearchRerankingConfigurationBuilder;
+
+pub use crate::types::_vector_search_bedrock_reranking_configuration::VectorSearchBedrockRerankingConfigurationBuilder;
+
+pub use crate::types::_metadata_configuration_for_reranking::MetadataConfigurationForRerankingBuilder;
+
+pub use crate::types::_field_for_reranking::FieldForRerankingBuilder;
+
+pub use crate::types::_vector_search_bedrock_reranking_model_configuration::VectorSearchBedrockRerankingModelConfigurationBuilder;
 
 pub use crate::types::_output_flow_node_configuration::OutputFlowNodeConfigurationBuilder;
 
 pub use crate::types::_input_flow_node_configuration::InputFlowNodeConfigurationBuilder;
 
 pub use crate::types::_flow_validation::FlowValidationBuilder;
+
+pub use crate::types::_invalid_loop_boundary_flow_validation_details::InvalidLoopBoundaryFlowValidationDetailsBuilder;
+
+pub use crate::types::_loop_incompatible_node_type_flow_validation_details::LoopIncompatibleNodeTypeFlowValidationDetailsBuilder;
+
+pub use crate::types::_multiple_loop_controller_nodes_flow_validation_details::MultipleLoopControllerNodesFlowValidationDetailsBuilder;
+
+pub use crate::types::_multiple_loop_input_nodes_flow_validation_details::MultipleLoopInputNodesFlowValidationDetailsBuilder;
+
+pub use crate::types::_missing_loop_controller_node_flow_validation_details::MissingLoopControllerNodeFlowValidationDetailsBuilder;
+
+pub use crate::types::_missing_loop_input_node_flow_validation_details::MissingLoopInputNodeFlowValidationDetailsBuilder;
 
 pub use crate::types::_unknown_node_output_flow_validation_details::UnknownNodeOutputFlowValidationDetailsBuilder;
 
@@ -278,6 +312,8 @@ pub use crate::types::_cyclic_connection_flow_validation_details::CyclicConnecti
 pub use crate::types::_flow_summary::FlowSummaryBuilder;
 
 pub use crate::types::_flow_version_summary::FlowVersionSummaryBuilder;
+
+pub use crate::types::_flow_alias_concurrency_configuration::FlowAliasConcurrencyConfigurationBuilder;
 
 pub use crate::types::_flow_alias_routing_configuration_list_item::FlowAliasRoutingConfigurationListItemBuilder;
 

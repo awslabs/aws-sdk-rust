@@ -417,6 +417,8 @@ pub(crate) mod shape_code_coverage;
 
 pub(crate) mod shape_debug_session;
 
+pub(crate) mod shape_docker_server;
+
 pub(crate) mod shape_environment_platform;
 
 pub(crate) mod shape_exported_environment_variables;
@@ -468,6 +470,8 @@ pub(crate) mod shape_build_group;
 pub(crate) mod shape_build_phase;
 
 pub(crate) mod shape_code_coverage_report_summary;
+
+pub(crate) mod shape_docker_server_status;
 
 pub(crate) mod shape_environment_languages;
 

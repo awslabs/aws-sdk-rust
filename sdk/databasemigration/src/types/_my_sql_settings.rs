@@ -46,6 +46,10 @@ pub struct MySqlSettings {
     pub secrets_manager_secret_id: ::std::option::Option<::std::string::String>,
     /// <p>Sets the client statement timeout (in seconds) for a MySQL source endpoint.</p>
     pub execute_timeout: ::std::option::Option<i32>,
+    /// <p>The IAM role you can use to authenticate when connecting to your endpoint. Ensure to include <code>iam:PassRole</code> and <code>rds-db:connect</code> actions in permission policy.</p>
+    pub service_access_role_arn: ::std::option::Option<::std::string::String>,
+    /// <p>This attribute allows you to specify the authentication method as "iam auth".</p>
+    pub authentication_method: ::std::option::Option<crate::types::MySqlAuthenticationMethod>,
 }
 impl MySqlSettings {
     /// <p>Specifies a script to run immediately after DMS connects to the endpoint. The migration task continues running regardless if the SQL statement succeeds or fails.</p>
@@ -120,6 +124,14 @@ impl MySqlSettings {
     pub fn execute_timeout(&self) -> ::std::option::Option<i32> {
         self.execute_timeout
     }
+    /// <p>The IAM role you can use to authenticate when connecting to your endpoint. Ensure to include <code>iam:PassRole</code> and <code>rds-db:connect</code> actions in permission policy.</p>
+    pub fn service_access_role_arn(&self) -> ::std::option::Option<&str> {
+        self.service_access_role_arn.as_deref()
+    }
+    /// <p>This attribute allows you to specify the authentication method as "iam auth".</p>
+    pub fn authentication_method(&self) -> ::std::option::Option<&crate::types::MySqlAuthenticationMethod> {
+        self.authentication_method.as_ref()
+    }
 }
 impl ::std::fmt::Debug for MySqlSettings {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -139,6 +151,8 @@ impl ::std::fmt::Debug for MySqlSettings {
         formatter.field("secrets_manager_access_role_arn", &self.secrets_manager_access_role_arn);
         formatter.field("secrets_manager_secret_id", &self.secrets_manager_secret_id);
         formatter.field("execute_timeout", &self.execute_timeout);
+        formatter.field("service_access_role_arn", &self.service_access_role_arn);
+        formatter.field("authentication_method", &self.authentication_method);
         formatter.finish()
     }
 }
@@ -168,6 +182,8 @@ pub struct MySqlSettingsBuilder {
     pub(crate) secrets_manager_access_role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) secrets_manager_secret_id: ::std::option::Option<::std::string::String>,
     pub(crate) execute_timeout: ::std::option::Option<i32>,
+    pub(crate) service_access_role_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) authentication_method: ::std::option::Option<crate::types::MySqlAuthenticationMethod>,
 }
 impl MySqlSettingsBuilder {
     /// <p>Specifies a script to run immediately after DMS connects to the endpoint. The migration task continues running regardless if the SQL statement succeeds or fails.</p>
@@ -416,6 +432,34 @@ impl MySqlSettingsBuilder {
     pub fn get_execute_timeout(&self) -> &::std::option::Option<i32> {
         &self.execute_timeout
     }
+    /// <p>The IAM role you can use to authenticate when connecting to your endpoint. Ensure to include <code>iam:PassRole</code> and <code>rds-db:connect</code> actions in permission policy.</p>
+    pub fn service_access_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.service_access_role_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The IAM role you can use to authenticate when connecting to your endpoint. Ensure to include <code>iam:PassRole</code> and <code>rds-db:connect</code> actions in permission policy.</p>
+    pub fn set_service_access_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.service_access_role_arn = input;
+        self
+    }
+    /// <p>The IAM role you can use to authenticate when connecting to your endpoint. Ensure to include <code>iam:PassRole</code> and <code>rds-db:connect</code> actions in permission policy.</p>
+    pub fn get_service_access_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.service_access_role_arn
+    }
+    /// <p>This attribute allows you to specify the authentication method as "iam auth".</p>
+    pub fn authentication_method(mut self, input: crate::types::MySqlAuthenticationMethod) -> Self {
+        self.authentication_method = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>This attribute allows you to specify the authentication method as "iam auth".</p>
+    pub fn set_authentication_method(mut self, input: ::std::option::Option<crate::types::MySqlAuthenticationMethod>) -> Self {
+        self.authentication_method = input;
+        self
+    }
+    /// <p>This attribute allows you to specify the authentication method as "iam auth".</p>
+    pub fn get_authentication_method(&self) -> &::std::option::Option<crate::types::MySqlAuthenticationMethod> {
+        &self.authentication_method
+    }
     /// Consumes the builder and constructs a [`MySqlSettings`](crate::types::MySqlSettings).
     pub fn build(self) -> crate::types::MySqlSettings {
         crate::types::MySqlSettings {
@@ -434,6 +478,8 @@ impl MySqlSettingsBuilder {
             secrets_manager_access_role_arn: self.secrets_manager_access_role_arn,
             secrets_manager_secret_id: self.secrets_manager_secret_id,
             execute_timeout: self.execute_timeout,
+            service_access_role_arn: self.service_access_role_arn,
+            authentication_method: self.authentication_method,
         }
     }
 }
@@ -455,6 +501,8 @@ impl ::std::fmt::Debug for MySqlSettingsBuilder {
         formatter.field("secrets_manager_access_role_arn", &self.secrets_manager_access_role_arn);
         formatter.field("secrets_manager_secret_id", &self.secrets_manager_secret_id);
         formatter.field("execute_timeout", &self.execute_timeout);
+        formatter.field("service_access_role_arn", &self.service_access_role_arn);
+        formatter.field("authentication_method", &self.authentication_method);
         formatter.finish()
     }
 }

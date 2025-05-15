@@ -191,6 +191,42 @@ where
                                     .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'unknownNodeOutput' cannot be null"))?
                                 ))
                             }
+                            "missingLoopInputNode" => {
+                                Some(crate::types::FlowValidationDetails::MissingLoopInputNode(
+                                    crate::protocol_serde::shape_missing_loop_input_node_flow_validation_details::de_missing_loop_input_node_flow_validation_details(tokens)?
+                                    .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'missingLoopInputNode' cannot be null"))?
+                                ))
+                            }
+                            "missingLoopControllerNode" => {
+                                Some(crate::types::FlowValidationDetails::MissingLoopControllerNode(
+                                    crate::protocol_serde::shape_missing_loop_controller_node_flow_validation_details::de_missing_loop_controller_node_flow_validation_details(tokens)?
+                                    .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'missingLoopControllerNode' cannot be null"))?
+                                ))
+                            }
+                            "multipleLoopInputNodes" => {
+                                Some(crate::types::FlowValidationDetails::MultipleLoopInputNodes(
+                                    crate::protocol_serde::shape_multiple_loop_input_nodes_flow_validation_details::de_multiple_loop_input_nodes_flow_validation_details(tokens)?
+                                    .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'multipleLoopInputNodes' cannot be null"))?
+                                ))
+                            }
+                            "multipleLoopControllerNodes" => {
+                                Some(crate::types::FlowValidationDetails::MultipleLoopControllerNodes(
+                                    crate::protocol_serde::shape_multiple_loop_controller_nodes_flow_validation_details::de_multiple_loop_controller_nodes_flow_validation_details(tokens)?
+                                    .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'multipleLoopControllerNodes' cannot be null"))?
+                                ))
+                            }
+                            "loopIncompatibleNodeType" => {
+                                Some(crate::types::FlowValidationDetails::LoopIncompatibleNodeType(
+                                    crate::protocol_serde::shape_loop_incompatible_node_type_flow_validation_details::de_loop_incompatible_node_type_flow_validation_details(tokens)?
+                                    .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'loopIncompatibleNodeType' cannot be null"))?
+                                ))
+                            }
+                            "invalidLoopBoundary" => {
+                                Some(crate::types::FlowValidationDetails::InvalidLoopBoundary(
+                                    crate::protocol_serde::shape_invalid_loop_boundary_flow_validation_details::de_invalid_loop_boundary_flow_validation_details(tokens)?
+                                    .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'invalidLoopBoundary' cannot be null"))?
+                                ))
+                            }
                             _ => {
                                                                               ::aws_smithy_json::deserialize::token::skip_value(tokens)?;
                                                                               Some(crate::types::FlowValidationDetails::Unknown)

@@ -63,6 +63,12 @@ pub fn ser_my_sql_settings(
             ::aws_smithy_types::Number::NegInt((*var_15).into()),
         );
     }
+    if let Some(var_16) = &input.service_access_role_arn {
+        object.key("ServiceAccessRoleArn").string(var_16.as_str());
+    }
+    if let Some(var_17) = &input.authentication_method {
+        object.key("AuthenticationMethod").string(var_17.as_str());
+    }
     Ok(())
 }
 
@@ -180,6 +186,20 @@ where
                             builder = builder.set_execute_timeout(
                                 ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
                                     .map(i32::try_from)
+                                    .transpose()?,
+                            );
+                        }
+                        "ServiceAccessRoleArn" => {
+                            builder = builder.set_service_access_role_arn(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "AuthenticationMethod" => {
+                            builder = builder.set_authentication_method(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::MySqlAuthenticationMethod::from(u.as_ref())))
                                     .transpose()?,
                             );
                         }

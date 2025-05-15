@@ -29,6 +29,9 @@ pub(crate) fn workspaces_pool_correct_errors(
     if builder.directory_id.is_none() {
         builder.directory_id = Some(Default::default())
     }
+    if builder.running_mode.is_none() {
+        builder.running_mode = "no value was set".parse::<crate::types::PoolsRunningMode>().ok()
+    }
     builder
 }
 

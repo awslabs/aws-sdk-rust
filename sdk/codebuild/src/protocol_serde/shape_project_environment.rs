@@ -51,6 +51,12 @@ pub fn ser_project_environment(
     if let Some(var_13) = &input.image_pull_credentials_type {
         object.key("imagePullCredentialsType").string(var_13.as_str());
     }
+    if let Some(var_14) = &input.docker_server {
+        #[allow(unused_mut)]
+        let mut object_15 = object.key("dockerServer").start_object();
+        crate::protocol_serde::shape_docker_server::ser_docker_server(&mut object_15, var_14)?;
+        object_15.finish();
+    }
     Ok(())
 }
 
@@ -121,6 +127,9 @@ where
                                     .map(|s| s.to_unescaped().map(|u| crate::types::ImagePullCredentialsType::from(u.as_ref())))
                                     .transpose()?,
                             );
+                        }
+                        "dockerServer" => {
+                            builder = builder.set_docker_server(crate::protocol_serde::shape_docker_server::de_docker_server(tokens)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

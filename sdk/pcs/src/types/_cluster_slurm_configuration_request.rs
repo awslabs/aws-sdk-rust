@@ -9,6 +9,8 @@ pub struct ClusterSlurmConfigurationRequest {
     pub scale_down_idle_time_in_seconds: ::std::option::Option<i32>,
     /// <p>Additional Slurm-specific configuration that directly maps to Slurm settings.</p>
     pub slurm_custom_settings: ::std::option::Option<::std::vec::Vec<crate::types::SlurmCustomSetting>>,
+    /// <p>The accounting configuration includes configurable settings for Slurm accounting.</p>
+    pub accounting: ::std::option::Option<crate::types::AccountingRequest>,
 }
 impl ClusterSlurmConfigurationRequest {
     /// <p>The time (in seconds) before an idle node is scaled down.</p>
@@ -21,6 +23,10 @@ impl ClusterSlurmConfigurationRequest {
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.slurm_custom_settings.is_none()`.
     pub fn slurm_custom_settings(&self) -> &[crate::types::SlurmCustomSetting] {
         self.slurm_custom_settings.as_deref().unwrap_or_default()
+    }
+    /// <p>The accounting configuration includes configurable settings for Slurm accounting.</p>
+    pub fn accounting(&self) -> ::std::option::Option<&crate::types::AccountingRequest> {
+        self.accounting.as_ref()
     }
 }
 impl ClusterSlurmConfigurationRequest {
@@ -36,6 +42,7 @@ impl ClusterSlurmConfigurationRequest {
 pub struct ClusterSlurmConfigurationRequestBuilder {
     pub(crate) scale_down_idle_time_in_seconds: ::std::option::Option<i32>,
     pub(crate) slurm_custom_settings: ::std::option::Option<::std::vec::Vec<crate::types::SlurmCustomSetting>>,
+    pub(crate) accounting: ::std::option::Option<crate::types::AccountingRequest>,
 }
 impl ClusterSlurmConfigurationRequestBuilder {
     /// <p>The time (in seconds) before an idle node is scaled down.</p>
@@ -75,11 +82,26 @@ impl ClusterSlurmConfigurationRequestBuilder {
     pub fn get_slurm_custom_settings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SlurmCustomSetting>> {
         &self.slurm_custom_settings
     }
+    /// <p>The accounting configuration includes configurable settings for Slurm accounting.</p>
+    pub fn accounting(mut self, input: crate::types::AccountingRequest) -> Self {
+        self.accounting = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The accounting configuration includes configurable settings for Slurm accounting.</p>
+    pub fn set_accounting(mut self, input: ::std::option::Option<crate::types::AccountingRequest>) -> Self {
+        self.accounting = input;
+        self
+    }
+    /// <p>The accounting configuration includes configurable settings for Slurm accounting.</p>
+    pub fn get_accounting(&self) -> &::std::option::Option<crate::types::AccountingRequest> {
+        &self.accounting
+    }
     /// Consumes the builder and constructs a [`ClusterSlurmConfigurationRequest`](crate::types::ClusterSlurmConfigurationRequest).
     pub fn build(self) -> crate::types::ClusterSlurmConfigurationRequest {
         crate::types::ClusterSlurmConfigurationRequest {
             scale_down_idle_time_in_seconds: self.scale_down_idle_time_in_seconds,
             slurm_custom_settings: self.slurm_custom_settings,
+            accounting: self.accounting,
         }
     }
 }

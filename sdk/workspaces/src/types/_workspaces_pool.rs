@@ -10,7 +10,7 @@ pub struct WorkspacesPool {
     pub pool_arn: ::std::string::String,
     /// <p>The capacity status for the pool</p>
     pub capacity_status: ::std::option::Option<crate::types::CapacityStatus>,
-    /// <p>The name of the pool,</p>
+    /// <p>The name of the pool.</p>
     pub pool_name: ::std::string::String,
     /// <p>The description of the pool.</p>
     pub description: ::std::option::Option<::std::string::String>,
@@ -28,6 +28,8 @@ pub struct WorkspacesPool {
     pub application_settings: ::std::option::Option<crate::types::ApplicationSettingsResponse>,
     /// <p>The amount of time that a pool session remains active after users disconnect. If they try to reconnect to the pool session after a disconnection or network interruption within this time interval, they are connected to their previous session. Otherwise, they are connected to a new session with a new pool instance.</p>
     pub timeout_settings: ::std::option::Option<crate::types::TimeoutSettings>,
+    /// <p>The running mode of the pool.</p>
+    pub running_mode: crate::types::PoolsRunningMode,
 }
 impl WorkspacesPool {
     /// <p>The identifier of a pool.</p>
@@ -44,7 +46,7 @@ impl WorkspacesPool {
     pub fn capacity_status(&self) -> ::std::option::Option<&crate::types::CapacityStatus> {
         self.capacity_status.as_ref()
     }
-    /// <p>The name of the pool,</p>
+    /// <p>The name of the pool.</p>
     pub fn pool_name(&self) -> &str {
         use std::ops::Deref;
         self.pool_name.deref()
@@ -85,6 +87,10 @@ impl WorkspacesPool {
     pub fn timeout_settings(&self) -> ::std::option::Option<&crate::types::TimeoutSettings> {
         self.timeout_settings.as_ref()
     }
+    /// <p>The running mode of the pool.</p>
+    pub fn running_mode(&self) -> &crate::types::PoolsRunningMode {
+        &self.running_mode
+    }
 }
 impl WorkspacesPool {
     /// Creates a new builder-style object to manufacture [`WorkspacesPool`](crate::types::WorkspacesPool).
@@ -109,6 +115,7 @@ pub struct WorkspacesPoolBuilder {
     pub(crate) errors: ::std::option::Option<::std::vec::Vec<crate::types::WorkspacesPoolError>>,
     pub(crate) application_settings: ::std::option::Option<crate::types::ApplicationSettingsResponse>,
     pub(crate) timeout_settings: ::std::option::Option<crate::types::TimeoutSettings>,
+    pub(crate) running_mode: ::std::option::Option<crate::types::PoolsRunningMode>,
 }
 impl WorkspacesPoolBuilder {
     /// <p>The identifier of a pool.</p>
@@ -156,18 +163,18 @@ impl WorkspacesPoolBuilder {
     pub fn get_capacity_status(&self) -> &::std::option::Option<crate::types::CapacityStatus> {
         &self.capacity_status
     }
-    /// <p>The name of the pool,</p>
+    /// <p>The name of the pool.</p>
     /// This field is required.
     pub fn pool_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pool_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the pool,</p>
+    /// <p>The name of the pool.</p>
     pub fn set_pool_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.pool_name = input;
         self
     }
-    /// <p>The name of the pool,</p>
+    /// <p>The name of the pool.</p>
     pub fn get_pool_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.pool_name
     }
@@ -293,6 +300,21 @@ impl WorkspacesPoolBuilder {
     pub fn get_timeout_settings(&self) -> &::std::option::Option<crate::types::TimeoutSettings> {
         &self.timeout_settings
     }
+    /// <p>The running mode of the pool.</p>
+    /// This field is required.
+    pub fn running_mode(mut self, input: crate::types::PoolsRunningMode) -> Self {
+        self.running_mode = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The running mode of the pool.</p>
+    pub fn set_running_mode(mut self, input: ::std::option::Option<crate::types::PoolsRunningMode>) -> Self {
+        self.running_mode = input;
+        self
+    }
+    /// <p>The running mode of the pool.</p>
+    pub fn get_running_mode(&self) -> &::std::option::Option<crate::types::PoolsRunningMode> {
+        &self.running_mode
+    }
     /// Consumes the builder and constructs a [`WorkspacesPool`](crate::types::WorkspacesPool).
     /// This method will fail if any of the following fields are not set:
     /// - [`pool_id`](crate::types::builders::WorkspacesPoolBuilder::pool_id)
@@ -351,6 +373,11 @@ impl WorkspacesPoolBuilder {
             errors: self.errors,
             application_settings: self.application_settings,
             timeout_settings: self.timeout_settings,
+            running_mode: self.running_mode.unwrap_or(
+                "AUTO_STOP"
+                    .parse::<crate::types::PoolsRunningMode>()
+                    .expect("static value validated to member"),
+            ),
         })
     }
 }

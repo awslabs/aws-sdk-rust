@@ -12,11 +12,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EnabledBaselineDriftTypes {
-    /// <p>One or more accounts within the target OU does not match the baseline configuration defined on that OU. An account is in inheritance drift when it does not match the configuration of a parent OU, possibly a new parent OU if the account is moved.</p>
+    /// <p>At least one account within the target OU does not match the baseline configuration defined on that OU. An account is in inheritance drift when it does not match the configuration of a parent OU, possibly a new parent OU, if the account is moved.</p>
     pub inheritance: ::std::option::Option<crate::types::EnabledBaselineInheritanceDrift>,
 }
 impl EnabledBaselineDriftTypes {
-    /// <p>One or more accounts within the target OU does not match the baseline configuration defined on that OU. An account is in inheritance drift when it does not match the configuration of a parent OU, possibly a new parent OU if the account is moved.</p>
+    /// <p>At least one account within the target OU does not match the baseline configuration defined on that OU. An account is in inheritance drift when it does not match the configuration of a parent OU, possibly a new parent OU, if the account is moved.</p>
     pub fn inheritance(&self) -> ::std::option::Option<&crate::types::EnabledBaselineInheritanceDrift> {
         self.inheritance.as_ref()
     }
@@ -35,17 +35,17 @@ pub struct EnabledBaselineDriftTypesBuilder {
     pub(crate) inheritance: ::std::option::Option<crate::types::EnabledBaselineInheritanceDrift>,
 }
 impl EnabledBaselineDriftTypesBuilder {
-    /// <p>One or more accounts within the target OU does not match the baseline configuration defined on that OU. An account is in inheritance drift when it does not match the configuration of a parent OU, possibly a new parent OU if the account is moved.</p>
+    /// <p>At least one account within the target OU does not match the baseline configuration defined on that OU. An account is in inheritance drift when it does not match the configuration of a parent OU, possibly a new parent OU, if the account is moved.</p>
     pub fn inheritance(mut self, input: crate::types::EnabledBaselineInheritanceDrift) -> Self {
         self.inheritance = ::std::option::Option::Some(input);
         self
     }
-    /// <p>One or more accounts within the target OU does not match the baseline configuration defined on that OU. An account is in inheritance drift when it does not match the configuration of a parent OU, possibly a new parent OU if the account is moved.</p>
+    /// <p>At least one account within the target OU does not match the baseline configuration defined on that OU. An account is in inheritance drift when it does not match the configuration of a parent OU, possibly a new parent OU, if the account is moved.</p>
     pub fn set_inheritance(mut self, input: ::std::option::Option<crate::types::EnabledBaselineInheritanceDrift>) -> Self {
         self.inheritance = input;
         self
     }
-    /// <p>One or more accounts within the target OU does not match the baseline configuration defined on that OU. An account is in inheritance drift when it does not match the configuration of a parent OU, possibly a new parent OU if the account is moved.</p>
+    /// <p>At least one account within the target OU does not match the baseline configuration defined on that OU. An account is in inheritance drift when it does not match the configuration of a parent OU, possibly a new parent OU, if the account is moved.</p>
     pub fn get_inheritance(&self) -> &::std::option::Option<crate::types::EnabledBaselineInheritanceDrift> {
         &self.inheritance
     }

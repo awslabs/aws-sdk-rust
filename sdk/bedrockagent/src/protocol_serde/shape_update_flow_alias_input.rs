@@ -3,26 +3,32 @@ pub fn ser_update_flow_alias_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_flow_alias::UpdateFlowAliasInput,
 ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
-    if let Some(var_1) = &input.description {
-        object.key("description").string(var_1.as_str());
+    if let Some(var_1) = &input.concurrency_configuration {
+        #[allow(unused_mut)]
+        let mut object_2 = object.key("concurrencyConfiguration").start_object();
+        crate::protocol_serde::shape_flow_alias_concurrency_configuration::ser_flow_alias_concurrency_configuration(&mut object_2, var_1)?;
+        object_2.finish();
     }
-    if let Some(var_2) = &input.name {
-        object.key("name").string(var_2.as_str());
+    if let Some(var_3) = &input.description {
+        object.key("description").string(var_3.as_str());
     }
-    if let Some(var_3) = &input.routing_configuration {
-        let mut array_4 = object.key("routingConfiguration").start_array();
-        for item_5 in var_3 {
+    if let Some(var_4) = &input.name {
+        object.key("name").string(var_4.as_str());
+    }
+    if let Some(var_5) = &input.routing_configuration {
+        let mut array_6 = object.key("routingConfiguration").start_array();
+        for item_7 in var_5 {
             {
                 #[allow(unused_mut)]
-                let mut object_6 = array_4.value().start_object();
+                let mut object_8 = array_6.value().start_object();
                 crate::protocol_serde::shape_flow_alias_routing_configuration_list_item::ser_flow_alias_routing_configuration_list_item(
-                    &mut object_6,
-                    item_5,
+                    &mut object_8,
+                    item_7,
                 )?;
-                object_6.finish();
+                object_8.finish();
             }
         }
-        array_4.finish();
+        array_6.finish();
     }
     Ok(())
 }

@@ -33,5 +33,8 @@ pub fn ser_update_workspaces_pool_input_input(
         crate::protocol_serde::shape_timeout_settings::ser_timeout_settings(&mut object_10, var_9)?;
         object_10.finish();
     }
+    if let Some(var_11) = &input.running_mode {
+        object.key("RunningMode").string(var_11.as_str());
+    }
     Ok(())
 }

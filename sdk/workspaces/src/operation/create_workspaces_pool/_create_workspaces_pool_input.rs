@@ -19,6 +19,8 @@ pub struct CreateWorkspacesPoolInput {
     pub application_settings: ::std::option::Option<crate::types::ApplicationSettingsRequest>,
     /// <p>Indicates the timeout settings of the pool.</p>
     pub timeout_settings: ::std::option::Option<crate::types::TimeoutSettings>,
+    /// <p>The running mode for the pool.</p>
+    pub running_mode: ::std::option::Option<crate::types::PoolsRunningMode>,
 }
 impl CreateWorkspacesPoolInput {
     /// <p>The name of the pool.</p>
@@ -55,6 +57,10 @@ impl CreateWorkspacesPoolInput {
     pub fn timeout_settings(&self) -> ::std::option::Option<&crate::types::TimeoutSettings> {
         self.timeout_settings.as_ref()
     }
+    /// <p>The running mode for the pool.</p>
+    pub fn running_mode(&self) -> ::std::option::Option<&crate::types::PoolsRunningMode> {
+        self.running_mode.as_ref()
+    }
 }
 impl CreateWorkspacesPoolInput {
     /// Creates a new builder-style object to manufacture [`CreateWorkspacesPoolInput`](crate::operation::create_workspaces_pool::CreateWorkspacesPoolInput).
@@ -75,6 +81,7 @@ pub struct CreateWorkspacesPoolInputBuilder {
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     pub(crate) application_settings: ::std::option::Option<crate::types::ApplicationSettingsRequest>,
     pub(crate) timeout_settings: ::std::option::Option<crate::types::TimeoutSettings>,
+    pub(crate) running_mode: ::std::option::Option<crate::types::PoolsRunningMode>,
 }
 impl CreateWorkspacesPoolInputBuilder {
     /// <p>The name of the pool.</p>
@@ -200,6 +207,20 @@ impl CreateWorkspacesPoolInputBuilder {
     pub fn get_timeout_settings(&self) -> &::std::option::Option<crate::types::TimeoutSettings> {
         &self.timeout_settings
     }
+    /// <p>The running mode for the pool.</p>
+    pub fn running_mode(mut self, input: crate::types::PoolsRunningMode) -> Self {
+        self.running_mode = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The running mode for the pool.</p>
+    pub fn set_running_mode(mut self, input: ::std::option::Option<crate::types::PoolsRunningMode>) -> Self {
+        self.running_mode = input;
+        self
+    }
+    /// <p>The running mode for the pool.</p>
+    pub fn get_running_mode(&self) -> &::std::option::Option<crate::types::PoolsRunningMode> {
+        &self.running_mode
+    }
     /// Consumes the builder and constructs a [`CreateWorkspacesPoolInput`](crate::operation::create_workspaces_pool::CreateWorkspacesPoolInput).
     pub fn build(
         self,
@@ -214,6 +235,7 @@ impl CreateWorkspacesPoolInputBuilder {
             tags: self.tags,
             application_settings: self.application_settings,
             timeout_settings: self.timeout_settings,
+            running_mode: self.running_mode,
         })
     }
 }

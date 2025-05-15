@@ -206,4 +206,18 @@ impl UpdateWorkspacesPoolFluentBuilder {
     pub fn get_timeout_settings(&self) -> &::std::option::Option<crate::types::TimeoutSettings> {
         self.inner.get_timeout_settings()
     }
+    /// <p>The desired running mode for the pool. The running mode can only be updated when the pool is in a stopped state.</p>
+    pub fn running_mode(mut self, input: crate::types::PoolsRunningMode) -> Self {
+        self.inner = self.inner.running_mode(input);
+        self
+    }
+    /// <p>The desired running mode for the pool. The running mode can only be updated when the pool is in a stopped state.</p>
+    pub fn set_running_mode(mut self, input: ::std::option::Option<crate::types::PoolsRunningMode>) -> Self {
+        self.inner = self.inner.set_running_mode(input);
+        self
+    }
+    /// <p>The desired running mode for the pool. The running mode can only be updated when the pool is in a stopped state.</p>
+    pub fn get_running_mode(&self) -> &::std::option::Option<crate::types::PoolsRunningMode> {
+        self.inner.get_running_mode()
+    }
 }

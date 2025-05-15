@@ -178,6 +178,11 @@ pub(crate) fn de_update_flow_alias(
                             .transpose()?,
                     );
                 }
+                "concurrencyConfiguration" => {
+                    builder = builder.set_concurrency_configuration(
+                        crate::protocol_serde::shape_flow_alias_concurrency_configuration::de_flow_alias_concurrency_configuration(tokens)?,
+                    );
+                }
                 "createdAt" => {
                     builder = builder.set_created_at(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                         tokens.next(),

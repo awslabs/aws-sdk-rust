@@ -17,6 +17,8 @@ pub struct UpdateWorkspacesPoolInput {
     pub application_settings: ::std::option::Option<crate::types::ApplicationSettingsRequest>,
     /// <p>Indicates the timeout settings of the specified pool.</p>
     pub timeout_settings: ::std::option::Option<crate::types::TimeoutSettings>,
+    /// <p>The desired running mode for the pool. The running mode can only be updated when the pool is in a stopped state.</p>
+    pub running_mode: ::std::option::Option<crate::types::PoolsRunningMode>,
 }
 impl UpdateWorkspacesPoolInput {
     /// <p>The identifier of the specified pool to update.</p>
@@ -47,6 +49,10 @@ impl UpdateWorkspacesPoolInput {
     pub fn timeout_settings(&self) -> ::std::option::Option<&crate::types::TimeoutSettings> {
         self.timeout_settings.as_ref()
     }
+    /// <p>The desired running mode for the pool. The running mode can only be updated when the pool is in a stopped state.</p>
+    pub fn running_mode(&self) -> ::std::option::Option<&crate::types::PoolsRunningMode> {
+        self.running_mode.as_ref()
+    }
 }
 impl UpdateWorkspacesPoolInput {
     /// Creates a new builder-style object to manufacture [`UpdateWorkspacesPoolInput`](crate::operation::update_workspaces_pool::UpdateWorkspacesPoolInput).
@@ -66,6 +72,7 @@ pub struct UpdateWorkspacesPoolInputBuilder {
     pub(crate) capacity: ::std::option::Option<crate::types::Capacity>,
     pub(crate) application_settings: ::std::option::Option<crate::types::ApplicationSettingsRequest>,
     pub(crate) timeout_settings: ::std::option::Option<crate::types::TimeoutSettings>,
+    pub(crate) running_mode: ::std::option::Option<crate::types::PoolsRunningMode>,
 }
 impl UpdateWorkspacesPoolInputBuilder {
     /// <p>The identifier of the specified pool to update.</p>
@@ -167,6 +174,20 @@ impl UpdateWorkspacesPoolInputBuilder {
     pub fn get_timeout_settings(&self) -> &::std::option::Option<crate::types::TimeoutSettings> {
         &self.timeout_settings
     }
+    /// <p>The desired running mode for the pool. The running mode can only be updated when the pool is in a stopped state.</p>
+    pub fn running_mode(mut self, input: crate::types::PoolsRunningMode) -> Self {
+        self.running_mode = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The desired running mode for the pool. The running mode can only be updated when the pool is in a stopped state.</p>
+    pub fn set_running_mode(mut self, input: ::std::option::Option<crate::types::PoolsRunningMode>) -> Self {
+        self.running_mode = input;
+        self
+    }
+    /// <p>The desired running mode for the pool. The running mode can only be updated when the pool is in a stopped state.</p>
+    pub fn get_running_mode(&self) -> &::std::option::Option<crate::types::PoolsRunningMode> {
+        &self.running_mode
+    }
     /// Consumes the builder and constructs a [`UpdateWorkspacesPoolInput`](crate::operation::update_workspaces_pool::UpdateWorkspacesPoolInput).
     pub fn build(
         self,
@@ -180,6 +201,7 @@ impl UpdateWorkspacesPoolInputBuilder {
             capacity: self.capacity,
             application_settings: self.application_settings,
             timeout_settings: self.timeout_settings,
+            running_mode: self.running_mode,
         })
     }
 }
