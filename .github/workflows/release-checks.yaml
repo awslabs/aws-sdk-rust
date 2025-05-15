@@ -1,5 +1,5 @@
 on:
-  pull:
+  pull_request:
     branches:
       - main
   workflow_dispatch:
