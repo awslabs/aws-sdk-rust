@@ -78,6 +78,9 @@ version = "0.2.9"
 [dependencies.http-body]
 version = "0.4.4"
 
+[dependencies.once_cell]
+version = "1.16"
+
 [dependencies.regex-lite]
 version = "0.1.5"
 
