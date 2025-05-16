@@ -8,8 +8,8 @@ publish = false
 
 [dependencies]
 aws-config= { version = "1.6.2", path = "../../../sdk/aws-config", features = ["behavior-version-latest"] }
-aws-sdk-qldb= { version = "1.67.0", path = "../../../sdk/qldb" }
-aws-sdk-qldbsession= { version = "1.67.0", path = "../../../sdk/qldbsession" }
+aws-sdk-qldb= { version = "1.68.0", path = "../../../sdk/qldb" }
+aws-sdk-qldbsession= { version = "1.68.0", path = "../../../sdk/qldbsession" }
 
 [dependencies.tokio]
 version = "1.20.1"
