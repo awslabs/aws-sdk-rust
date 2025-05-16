@@ -34,6 +34,10 @@ aws-smithy-types = { path = "../../sdk/aws-smithy-types" }
 aws-smithy-wasm = { path = "../../sdk/aws-smithy-wasm" }
 http = "0.2.9"
 tokio = { version = "1.32.0", features = ["macros", "rt"] }
+# getrandom is a transitive dependency, but requires the wasm_js feature to compile for wasm
+# also requires a compiler flag which is set in .cargo/config.toml
+# https://docs.rs/getrandom/0.3.3/getrandom/#webassembly-support
+getrandom = {version="0.3.3", features = ["wasm_js"]}
 
 [target.'cfg(all(target_family = "wasm", target_env = "p1"))'.dependencies]
 wit-bindgen = { version = "0.16.0", features = ["macros", "realloc"] }
