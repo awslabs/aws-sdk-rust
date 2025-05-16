@@ -3,6 +3,8 @@
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum Error {
+    /// <p>The action execution was not found.</p>
+    ActionExecutionNotFoundException(crate::types::error::ActionExecutionNotFoundException),
     /// <p>The specified action cannot be found.</p>
     ActionNotFoundException(crate::types::error::ActionNotFoundException),
     /// <p>The specified action type cannot be found.</p>
@@ -95,6 +97,7 @@ pub enum Error {
 impl ::std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match self {
+            Error::ActionExecutionNotFoundException(inner) => inner.fmt(f),
             Error::ActionNotFoundException(inner) => inner.fmt(f),
             Error::ActionTypeNotFoundException(inner) => inner.fmt(f),
             Error::ApprovalAlreadyCompletedException(inner) => inner.fmt(f),
@@ -156,6 +159,7 @@ impl From<::aws_smithy_types::error::operation::BuildError> for Error {
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
     fn meta(&self) -> &::aws_smithy_types::error::metadata::ErrorMetadata {
         match self {
+            Self::ActionExecutionNotFoundException(inner) => inner.meta(),
             Self::ActionNotFoundException(inner) => inner.meta(),
             Self::ActionTypeNotFoundException(inner) => inner.meta(),
             Self::ApprovalAlreadyCompletedException(inner) => inner.meta(),
@@ -722,6 +726,52 @@ impl From<crate::operation::list_action_types::ListActionTypesError> for Error {
             crate::operation::list_action_types::ListActionTypesError::InvalidNextTokenException(inner) => Error::InvalidNextTokenException(inner),
             crate::operation::list_action_types::ListActionTypesError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::list_action_types::ListActionTypesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_deploy_action_execution_targets::ListDeployActionExecutionTargetsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_deploy_action_execution_targets::ListDeployActionExecutionTargetsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_deploy_action_execution_targets::ListDeployActionExecutionTargetsError> for Error {
+    fn from(err: crate::operation::list_deploy_action_execution_targets::ListDeployActionExecutionTargetsError) -> Self {
+        match err {
+            crate::operation::list_deploy_action_execution_targets::ListDeployActionExecutionTargetsError::ActionExecutionNotFoundException(
+                inner,
+            ) => Error::ActionExecutionNotFoundException(inner),
+            crate::operation::list_deploy_action_execution_targets::ListDeployActionExecutionTargetsError::InvalidNextTokenException(inner) => {
+                Error::InvalidNextTokenException(inner)
+            }
+            crate::operation::list_deploy_action_execution_targets::ListDeployActionExecutionTargetsError::PipelineNotFoundException(inner) => {
+                Error::PipelineNotFoundException(inner)
+            }
+            crate::operation::list_deploy_action_execution_targets::ListDeployActionExecutionTargetsError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::list_deploy_action_execution_targets::ListDeployActionExecutionTargetsError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
         }
     }
 }
@@ -1503,6 +1553,7 @@ impl From<crate::operation::update_pipeline::UpdatePipelineError> for Error {
 impl ::std::error::Error for Error {
     fn source(&self) -> std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
+            Error::ActionExecutionNotFoundException(inner) => inner.source(),
             Error::ActionNotFoundException(inner) => inner.source(),
             Error::ActionTypeNotFoundException(inner) => inner.source(),
             Error::ApprovalAlreadyCompletedException(inner) => inner.source(),
@@ -1550,6 +1601,7 @@ impl ::std::error::Error for Error {
 impl ::aws_types::request_id::RequestId for Error {
     fn request_id(&self) -> Option<&str> {
         match self {
+            Self::ActionExecutionNotFoundException(e) => e.request_id(),
             Self::ActionNotFoundException(e) => e.request_id(),
             Self::ActionTypeNotFoundException(e) => e.request_id(),
             Self::ApprovalAlreadyCompletedException(e) => e.request_id(),

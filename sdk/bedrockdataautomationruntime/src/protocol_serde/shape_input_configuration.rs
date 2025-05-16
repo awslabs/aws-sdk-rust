@@ -6,5 +6,11 @@ pub fn ser_input_configuration(
     {
         object.key("s3Uri").string(input.s3_uri.as_str());
     }
+    if let Some(var_1) = &input.asset_processing_configuration {
+        #[allow(unused_mut)]
+        let mut object_2 = object.key("assetProcessingConfiguration").start_object();
+        crate::protocol_serde::shape_asset_processing_configuration::ser_asset_processing_configuration(&mut object_2, var_1)?;
+        object_2.finish();
+    }
     Ok(())
 }

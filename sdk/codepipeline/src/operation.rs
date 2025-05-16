@@ -55,6 +55,9 @@ pub mod list_action_executions;
 /// Types for the `ListActionTypes` operation.
 pub mod list_action_types;
 
+/// Types for the `ListDeployActionExecutionTargets` operation.
+pub mod list_deploy_action_execution_targets;
+
 /// Types for the `ListPipelineExecutions` operation.
 pub mod list_pipeline_executions;
 

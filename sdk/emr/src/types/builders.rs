@@ -179,6 +179,8 @@ pub use crate::types::_os_release::OsReleaseBuilder;
 
 pub use crate::types::_simplified_application::SimplifiedApplicationBuilder;
 
+pub use crate::types::_persistent_app_ui::PersistentAppUiBuilder;
+
 pub use crate::types::_notebook_execution::NotebookExecutionBuilder;
 
 pub use crate::types::_output_notebook_s3_location_for_output::OutputNotebookS3LocationForOutputBuilder;
@@ -200,5 +202,7 @@ pub use crate::types::_job_flow_execution_status_detail::JobFlowExecutionStatusD
 pub use crate::types::_cluster::ClusterBuilder;
 
 pub use crate::types::_ec2_instance_attributes::Ec2InstanceAttributesBuilder;
+
+pub use crate::types::_emr_containers_config::EmrContainersConfigBuilder;
 
 pub use crate::types::_cancel_steps_info::CancelStepsInfoBuilder;

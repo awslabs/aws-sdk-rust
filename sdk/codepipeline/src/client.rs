@@ -199,6 +199,8 @@ mod list_action_executions;
 
 mod list_action_types;
 
+mod list_deploy_action_execution_targets;
+
 mod list_pipeline_executions;
 
 mod list_pipelines;

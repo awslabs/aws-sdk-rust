@@ -25,6 +25,8 @@ pub fn parse_http_error_metadata(
 
 pub(crate) mod shape_associate_service_quota_template;
 
+pub(crate) mod shape_create_support_case;
+
 pub(crate) mod shape_delete_service_quota_increase_request_from_template;
 
 pub(crate) mod shape_disassociate_service_quota_template;
@@ -72,6 +74,8 @@ pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
 pub(crate) mod shape_access_denied_exception;
 
 pub(crate) mod shape_aws_service_access_not_enabled_exception;
+
+pub(crate) mod shape_create_support_case_input;
 
 pub(crate) mod shape_delete_service_quota_increase_request_from_template_input;
 

@@ -157,6 +157,14 @@ pub use crate::types::_pipeline_execution_filter::PipelineExecutionFilterBuilder
 
 pub use crate::types::_succeeded_in_stage_filter::SucceededInStageFilterBuilder;
 
+pub use crate::types::_deploy_action_execution_target::DeployActionExecutionTargetBuilder;
+
+pub use crate::types::_deploy_target_event::DeployTargetEventBuilder;
+
+pub use crate::types::_deploy_target_event_context::DeployTargetEventContextBuilder;
+
+pub use crate::types::_target_filter::TargetFilterBuilder;
+
 pub use crate::types::_action_type::ActionTypeBuilder;
 
 pub use crate::types::_action_configuration_property::ActionConfigurationPropertyBuilder;

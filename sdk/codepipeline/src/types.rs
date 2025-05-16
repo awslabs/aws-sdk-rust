@@ -211,6 +211,16 @@ pub use crate::types::_pipeline_execution_filter::PipelineExecutionFilter;
 
 pub use crate::types::_succeeded_in_stage_filter::SucceededInStageFilter;
 
+pub use crate::types::_deploy_action_execution_target::DeployActionExecutionTarget;
+
+pub use crate::types::_deploy_target_event::DeployTargetEvent;
+
+pub use crate::types::_deploy_target_event_context::DeployTargetEventContext;
+
+pub use crate::types::_target_filter::TargetFilter;
+
+pub use crate::types::_target_filter_name::TargetFilterName;
+
 pub use crate::types::_action_type::ActionType;
 
 pub use crate::types::_action_configuration_property::ActionConfigurationProperty;
@@ -372,6 +382,12 @@ mod _condition_state;
 mod _condition_type;
 
 mod _current_revision;
+
+mod _deploy_action_execution_target;
+
+mod _deploy_target_event;
+
+mod _deploy_target_event_context;
 
 mod _encryption_key;
 
@@ -544,6 +560,10 @@ mod _succeeded_in_stage_filter;
 mod _success_conditions;
 
 mod _tag;
+
+mod _target_filter;
+
+mod _target_filter_name;
 
 mod _third_party_job;
 

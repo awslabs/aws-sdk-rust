@@ -71,6 +71,8 @@ pub use crate::types::error::_condition_not_overridable_exception::ConditionNotO
 
 pub use crate::types::error::_invalid_next_token_exception::InvalidNextTokenExceptionBuilder;
 
+pub use crate::types::error::_action_execution_not_found_exception::ActionExecutionNotFoundExceptionBuilder;
+
 pub use crate::types::error::_invalid_job_exception::InvalidJobExceptionBuilder;
 
 pub use crate::types::error::_pipeline_version_not_found_exception::PipelineVersionNotFoundExceptionBuilder;

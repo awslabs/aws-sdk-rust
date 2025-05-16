@@ -165,6 +165,35 @@ impl From<crate::operation::cancel_steps::CancelStepsError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_persistent_app_ui::CreatePersistentAppUIError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_persistent_app_ui::CreatePersistentAppUIError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_persistent_app_ui::CreatePersistentAppUIError> for Error {
+    fn from(err: crate::operation::create_persistent_app_ui::CreatePersistentAppUIError) -> Self {
+        match err {
+            crate::operation::create_persistent_app_ui::CreatePersistentAppUIError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::create_persistent_app_ui::CreatePersistentAppUIError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::create_persistent_app_ui::CreatePersistentAppUIError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_security_configuration::CreateSecurityConfigurationError, R>>
     for Error
 where
@@ -406,6 +435,36 @@ impl From<crate::operation::describe_notebook_execution::DescribeNotebookExecuti
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_persistent_app_ui::DescribePersistentAppUIError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_persistent_app_ui::DescribePersistentAppUIError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::describe_persistent_app_ui::DescribePersistentAppUIError> for Error {
+    fn from(err: crate::operation::describe_persistent_app_ui::DescribePersistentAppUIError) -> Self {
+        match err {
+            crate::operation::describe_persistent_app_ui::DescribePersistentAppUIError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::describe_persistent_app_ui::DescribePersistentAppUIError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::describe_persistent_app_ui::DescribePersistentAppUIError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_release_label::DescribeReleaseLabelError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -632,6 +691,82 @@ impl From<crate::operation::get_managed_scaling_policy::GetManagedScalingPolicyE
     fn from(err: crate::operation::get_managed_scaling_policy::GetManagedScalingPolicyError) -> Self {
         match err {
             crate::operation::get_managed_scaling_policy::GetManagedScalingPolicyError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_on_cluster_app_ui_presigned_url::GetOnClusterAppUIPresignedURLError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_on_cluster_app_ui_presigned_url::GetOnClusterAppUIPresignedURLError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_on_cluster_app_ui_presigned_url::GetOnClusterAppUIPresignedURLError> for Error {
+    fn from(err: crate::operation::get_on_cluster_app_ui_presigned_url::GetOnClusterAppUIPresignedURLError) -> Self {
+        match err {
+            crate::operation::get_on_cluster_app_ui_presigned_url::GetOnClusterAppUIPresignedURLError::InternalServerError(inner) => {
+                Error::InternalServerError(inner)
+            }
+            crate::operation::get_on_cluster_app_ui_presigned_url::GetOnClusterAppUIPresignedURLError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::get_on_cluster_app_ui_presigned_url::GetOnClusterAppUIPresignedURLError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_persistent_app_ui_presigned_url::GetPersistentAppUIPresignedURLError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_persistent_app_ui_presigned_url::GetPersistentAppUIPresignedURLError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_persistent_app_ui_presigned_url::GetPersistentAppUIPresignedURLError> for Error {
+    fn from(err: crate::operation::get_persistent_app_ui_presigned_url::GetPersistentAppUIPresignedURLError) -> Self {
+        match err {
+            crate::operation::get_persistent_app_ui_presigned_url::GetPersistentAppUIPresignedURLError::InternalServerError(inner) => {
+                Error::InternalServerError(inner)
+            }
+            crate::operation::get_persistent_app_ui_presigned_url::GetPersistentAppUIPresignedURLError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::get_persistent_app_ui_presigned_url::GetPersistentAppUIPresignedURLError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

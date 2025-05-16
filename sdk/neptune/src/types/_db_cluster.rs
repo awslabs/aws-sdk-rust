@@ -95,7 +95,15 @@ pub struct DbCluster {
     pub global_cluster_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The next time you can modify the DB cluster to use the <code>iopt1</code> storage type.</p>
     pub io_optimized_next_allowed_modification_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>The storage type associated with the DB cluster.</p>
+    /// <p>The storage type used by the DB cluster.</p>
+    /// <p>Valid Values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><b> <code>standard</code> </b> &nbsp; – &nbsp; ( <i>the default</i> ) Provides cost-effective database storage for applications with moderate to small I/O usage.</p></li>
+    /// <li>
+    /// <p><b> <code>iopt1</code> </b> &nbsp; – &nbsp; Enables <a href="https://docs.aws.amazon.com/neptune/latest/userguide/storage-types.html#provisioned-iops-storage">I/O-Optimized storage</a> that's designed to meet the needs of I/O-intensive graph workloads that require predictable pricing with low I/O latency and consistent I/O throughput.</p>
+    /// <p>Neptune I/O-Optimized storage is only available starting with engine release 1.3.0.0.</p></li>
+    /// </ul>
     pub storage_type: ::std::option::Option<::std::string::String>,
 }
 impl DbCluster {
@@ -291,7 +299,15 @@ impl DbCluster {
     pub fn io_optimized_next_allowed_modification_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.io_optimized_next_allowed_modification_time.as_ref()
     }
-    /// <p>The storage type associated with the DB cluster.</p>
+    /// <p>The storage type used by the DB cluster.</p>
+    /// <p>Valid Values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><b> <code>standard</code> </b> &nbsp; – &nbsp; ( <i>the default</i> ) Provides cost-effective database storage for applications with moderate to small I/O usage.</p></li>
+    /// <li>
+    /// <p><b> <code>iopt1</code> </b> &nbsp; – &nbsp; Enables <a href="https://docs.aws.amazon.com/neptune/latest/userguide/storage-types.html#provisioned-iops-storage">I/O-Optimized storage</a> that's designed to meet the needs of I/O-intensive graph workloads that require predictable pricing with low I/O latency and consistent I/O throughput.</p>
+    /// <p>Neptune I/O-Optimized storage is only available starting with engine release 1.3.0.0.</p></li>
+    /// </ul>
     pub fn storage_type(&self) -> ::std::option::Option<&str> {
         self.storage_type.as_deref()
     }
@@ -1024,17 +1040,41 @@ impl DbClusterBuilder {
     pub fn get_io_optimized_next_allowed_modification_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.io_optimized_next_allowed_modification_time
     }
-    /// <p>The storage type associated with the DB cluster.</p>
+    /// <p>The storage type used by the DB cluster.</p>
+    /// <p>Valid Values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><b> <code>standard</code> </b> &nbsp; – &nbsp; ( <i>the default</i> ) Provides cost-effective database storage for applications with moderate to small I/O usage.</p></li>
+    /// <li>
+    /// <p><b> <code>iopt1</code> </b> &nbsp; – &nbsp; Enables <a href="https://docs.aws.amazon.com/neptune/latest/userguide/storage-types.html#provisioned-iops-storage">I/O-Optimized storage</a> that's designed to meet the needs of I/O-intensive graph workloads that require predictable pricing with low I/O latency and consistent I/O throughput.</p>
+    /// <p>Neptune I/O-Optimized storage is only available starting with engine release 1.3.0.0.</p></li>
+    /// </ul>
     pub fn storage_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.storage_type = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The storage type associated with the DB cluster.</p>
+    /// <p>The storage type used by the DB cluster.</p>
+    /// <p>Valid Values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><b> <code>standard</code> </b> &nbsp; – &nbsp; ( <i>the default</i> ) Provides cost-effective database storage for applications with moderate to small I/O usage.</p></li>
+    /// <li>
+    /// <p><b> <code>iopt1</code> </b> &nbsp; – &nbsp; Enables <a href="https://docs.aws.amazon.com/neptune/latest/userguide/storage-types.html#provisioned-iops-storage">I/O-Optimized storage</a> that's designed to meet the needs of I/O-intensive graph workloads that require predictable pricing with low I/O latency and consistent I/O throughput.</p>
+    /// <p>Neptune I/O-Optimized storage is only available starting with engine release 1.3.0.0.</p></li>
+    /// </ul>
     pub fn set_storage_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.storage_type = input;
         self
     }
-    /// <p>The storage type associated with the DB cluster.</p>
+    /// <p>The storage type used by the DB cluster.</p>
+    /// <p>Valid Values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><b> <code>standard</code> </b> &nbsp; – &nbsp; ( <i>the default</i> ) Provides cost-effective database storage for applications with moderate to small I/O usage.</p></li>
+    /// <li>
+    /// <p><b> <code>iopt1</code> </b> &nbsp; – &nbsp; Enables <a href="https://docs.aws.amazon.com/neptune/latest/userguide/storage-types.html#provisioned-iops-storage">I/O-Optimized storage</a> that's designed to meet the needs of I/O-intensive graph workloads that require predictable pricing with low I/O latency and consistent I/O throughput.</p>
+    /// <p>Neptune I/O-Optimized storage is only available starting with engine release 1.3.0.0.</p></li>
+    /// </ul>
     pub fn get_storage_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.storage_type
     }

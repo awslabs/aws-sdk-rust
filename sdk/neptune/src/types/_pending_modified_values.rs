@@ -24,7 +24,7 @@ pub struct PendingModifiedValues {
     pub iops: ::std::option::Option<i32>,
     /// <p>Contains the new <code>DBInstanceIdentifier</code> for the DB instance that will be applied or is currently being applied.</p>
     pub db_instance_identifier: ::std::option::Option<::std::string::String>,
-    /// <p>Specifies the storage type to be associated with the DB instance.</p>
+    /// <p>Not applicable. In Neptune the storage type is managed at the DB Cluster level.</p>
     pub storage_type: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the identifier of the CA certificate for the DB instance.</p>
     pub ca_certificate_identifier: ::std::option::Option<::std::string::String>,
@@ -74,7 +74,7 @@ impl PendingModifiedValues {
     pub fn db_instance_identifier(&self) -> ::std::option::Option<&str> {
         self.db_instance_identifier.as_deref()
     }
-    /// <p>Specifies the storage type to be associated with the DB instance.</p>
+    /// <p>Not applicable. In Neptune the storage type is managed at the DB Cluster level.</p>
     pub fn storage_type(&self) -> ::std::option::Option<&str> {
         self.storage_type.as_deref()
     }
@@ -258,17 +258,17 @@ impl PendingModifiedValuesBuilder {
     pub fn get_db_instance_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.db_instance_identifier
     }
-    /// <p>Specifies the storage type to be associated with the DB instance.</p>
+    /// <p>Not applicable. In Neptune the storage type is managed at the DB Cluster level.</p>
     pub fn storage_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.storage_type = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Specifies the storage type to be associated with the DB instance.</p>
+    /// <p>Not applicable. In Neptune the storage type is managed at the DB Cluster level.</p>
     pub fn set_storage_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.storage_type = input;
         self
     }
-    /// <p>Specifies the storage type to be associated with the DB instance.</p>
+    /// <p>Not applicable. In Neptune the storage type is managed at the DB Cluster level.</p>
     pub fn get_storage_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.storage_type
     }

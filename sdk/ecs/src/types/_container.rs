@@ -20,7 +20,7 @@ pub struct Container {
     pub last_status: ::std::option::Option<::std::string::String>,
     /// <p>The exit code returned from the container.</p>
     pub exit_code: ::std::option::Option<i32>,
-    /// <p>A short (255 max characters) human-readable string to provide additional details about a running or stopped container.</p>
+    /// <p>A short (1024 max characters) human-readable string to provide additional details about a running or stopped container.</p>
     pub reason: ::std::option::Option<::std::string::String>,
     /// <p>The network bindings associated with the container.</p>
     pub network_bindings: ::std::option::Option<::std::vec::Vec<crate::types::NetworkBinding>>,
@@ -72,7 +72,7 @@ impl Container {
     pub fn exit_code(&self) -> ::std::option::Option<i32> {
         self.exit_code
     }
-    /// <p>A short (255 max characters) human-readable string to provide additional details about a running or stopped container.</p>
+    /// <p>A short (1024 max characters) human-readable string to provide additional details about a running or stopped container.</p>
     pub fn reason(&self) -> ::std::option::Option<&str> {
         self.reason.as_deref()
     }
@@ -259,17 +259,17 @@ impl ContainerBuilder {
     pub fn get_exit_code(&self) -> &::std::option::Option<i32> {
         &self.exit_code
     }
-    /// <p>A short (255 max characters) human-readable string to provide additional details about a running or stopped container.</p>
+    /// <p>A short (1024 max characters) human-readable string to provide additional details about a running or stopped container.</p>
     pub fn reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.reason = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A short (255 max characters) human-readable string to provide additional details about a running or stopped container.</p>
+    /// <p>A short (1024 max characters) human-readable string to provide additional details about a running or stopped container.</p>
     pub fn set_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.reason = input;
         self
     }
-    /// <p>A short (255 max characters) human-readable string to provide additional details about a running or stopped container.</p>
+    /// <p>A short (1024 max characters) human-readable string to provide additional details about a running or stopped container.</p>
     pub fn get_reason(&self) -> &::std::option::Option<::std::string::String> {
         &self.reason
     }

@@ -21,6 +21,16 @@ pub use crate::types::_data_automation_stage::DataAutomationStage;
 
 pub use crate::types::_input_configuration::InputConfiguration;
 
+pub use crate::types::_asset_processing_configuration::AssetProcessingConfiguration;
+
+pub use crate::types::_video_asset_processing_configuration::VideoAssetProcessingConfiguration;
+
+pub use crate::types::_video_segment_configuration::VideoSegmentConfiguration;
+
+pub use crate::types::_timestamp_segment::TimestampSegment;
+
+mod _asset_processing_configuration;
+
 mod _automation_job_status;
 
 mod _blueprint;
@@ -42,6 +52,12 @@ mod _notification_configuration;
 mod _output_configuration;
 
 mod _tag;
+
+mod _timestamp_segment;
+
+mod _video_asset_processing_configuration;
+
+mod _video_segment_configuration;
 
 /// Builders
 pub mod builders;

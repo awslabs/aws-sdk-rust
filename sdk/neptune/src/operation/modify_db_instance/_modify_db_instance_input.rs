@@ -97,7 +97,7 @@ pub struct ModifyDbInstanceInput {
     /// </ul>
     /// <p>Example: <code>mydbinstance</code></p>
     pub new_db_instance_identifier: ::std::option::Option<::std::string::String>,
-    /// <p>Not supported.</p>
+    /// <p>Not applicable. In Neptune the storage type is managed at the DB Cluster level.</p>
     pub storage_type: ::std::option::Option<::std::string::String>,
     /// <p>The ARN from the key store with which to associate the instance for TDE encryption.</p>
     pub tde_credential_arn: ::std::option::Option<::std::string::String>,
@@ -283,7 +283,7 @@ impl ModifyDbInstanceInput {
     pub fn new_db_instance_identifier(&self) -> ::std::option::Option<&str> {
         self.new_db_instance_identifier.as_deref()
     }
-    /// <p>Not supported.</p>
+    /// <p>Not applicable. In Neptune the storage type is managed at the DB Cluster level.</p>
     pub fn storage_type(&self) -> ::std::option::Option<&str> {
         self.storage_type.as_deref()
     }
@@ -912,17 +912,17 @@ impl ModifyDbInstanceInputBuilder {
     pub fn get_new_db_instance_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.new_db_instance_identifier
     }
-    /// <p>Not supported.</p>
+    /// <p>Not applicable. In Neptune the storage type is managed at the DB Cluster level.</p>
     pub fn storage_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.storage_type = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Not supported.</p>
+    /// <p>Not applicable. In Neptune the storage type is managed at the DB Cluster level.</p>
     pub fn set_storage_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.storage_type = input;
         self
     }
-    /// <p>Not supported.</p>
+    /// <p>Not applicable. In Neptune the storage type is managed at the DB Cluster level.</p>
     pub fn get_storage_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.storage_type
     }

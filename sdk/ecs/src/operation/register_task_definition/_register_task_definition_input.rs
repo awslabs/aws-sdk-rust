@@ -29,26 +29,7 @@ pub struct RegisterTaskDefinitionInput {
     /// <p>Task-level CPU and memory parameters are ignored for Windows containers. We recommend specifying container-level resources for Windows containers.</p>
     /// </note>
     /// <p>If you're using the EC2 launch type or external launch type, this field is optional. Supported values are between <code>128</code> CPU units (<code>0.125</code> vCPUs) and <code>196608</code> CPU units (<code>192</code> vCPUs). If you do not specify a value, the parameter is ignored.</p>
-    /// <p>If you're using the Fargate launch type, this field is required and you must use one of the following values, which determines your range of supported values for the <code>memory</code> parameter:</p>
-    /// <p>The CPU units cannot be less than 1 vCPU when you use Windows containers on Fargate.</p>
-    /// <ul>
-    /// <li>
-    /// <p>256 (.25 vCPU) - Available <code>memory</code> values: 512 (0.5 GB), 1024 (1 GB), 2048 (2 GB)</p></li>
-    /// <li>
-    /// <p>512 (.5 vCPU) - Available <code>memory</code> values: 1024 (1 GB), 2048 (2 GB), 3072 (3 GB), 4096 (4 GB)</p></li>
-    /// <li>
-    /// <p>1024 (1 vCPU) - Available <code>memory</code> values: 2048 (2 GB), 3072 (3 GB), 4096 (4 GB), 5120 (5 GB), 6144 (6 GB), 7168 (7 GB), 8192 (8 GB)</p></li>
-    /// <li>
-    /// <p>2048 (2 vCPU) - Available <code>memory</code> values: 4096 (4 GB) and 16384 (16 GB) in increments of 1024 (1 GB)</p></li>
-    /// <li>
-    /// <p>4096 (4 vCPU) - Available <code>memory</code> values: 8192 (8 GB) and 30720 (30 GB) in increments of 1024 (1 GB)</p></li>
-    /// <li>
-    /// <p>8192 (8 vCPU) - Available <code>memory</code> values: 16 GB and 60 GB in 4 GB increments</p>
-    /// <p>This option requires Linux platform <code>1.4.0</code> or later.</p></li>
-    /// <li>
-    /// <p>16384 (16vCPU) - Available <code>memory</code> values: 32GB and 120 GB in 8 GB increments</p>
-    /// <p>This option requires Linux platform <code>1.4.0</code> or later.</p></li>
-    /// </ul>
+    /// <p>This field is required for Fargate. For information about the valid values, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definition_parameters.html#task_size">Task size</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     pub cpu: ::std::option::Option<::std::string::String>,
     /// <p>The amount of memory (in MiB) used by the task. It can be expressed as an integer using MiB (for example ,<code>1024</code>) or as a string using GB (for example, <code>1GB</code> or <code>1 GB</code>) in a task definition. String values are converted to an integer indicating the MiB when the task definition is registered.</p><note>
     /// <p>Task-level CPU and memory parameters are ignored for Windows containers. We recommend specifying container-level resources for Windows containers.</p>
@@ -187,26 +168,7 @@ impl RegisterTaskDefinitionInput {
     /// <p>Task-level CPU and memory parameters are ignored for Windows containers. We recommend specifying container-level resources for Windows containers.</p>
     /// </note>
     /// <p>If you're using the EC2 launch type or external launch type, this field is optional. Supported values are between <code>128</code> CPU units (<code>0.125</code> vCPUs) and <code>196608</code> CPU units (<code>192</code> vCPUs). If you do not specify a value, the parameter is ignored.</p>
-    /// <p>If you're using the Fargate launch type, this field is required and you must use one of the following values, which determines your range of supported values for the <code>memory</code> parameter:</p>
-    /// <p>The CPU units cannot be less than 1 vCPU when you use Windows containers on Fargate.</p>
-    /// <ul>
-    /// <li>
-    /// <p>256 (.25 vCPU) - Available <code>memory</code> values: 512 (0.5 GB), 1024 (1 GB), 2048 (2 GB)</p></li>
-    /// <li>
-    /// <p>512 (.5 vCPU) - Available <code>memory</code> values: 1024 (1 GB), 2048 (2 GB), 3072 (3 GB), 4096 (4 GB)</p></li>
-    /// <li>
-    /// <p>1024 (1 vCPU) - Available <code>memory</code> values: 2048 (2 GB), 3072 (3 GB), 4096 (4 GB), 5120 (5 GB), 6144 (6 GB), 7168 (7 GB), 8192 (8 GB)</p></li>
-    /// <li>
-    /// <p>2048 (2 vCPU) - Available <code>memory</code> values: 4096 (4 GB) and 16384 (16 GB) in increments of 1024 (1 GB)</p></li>
-    /// <li>
-    /// <p>4096 (4 vCPU) - Available <code>memory</code> values: 8192 (8 GB) and 30720 (30 GB) in increments of 1024 (1 GB)</p></li>
-    /// <li>
-    /// <p>8192 (8 vCPU) - Available <code>memory</code> values: 16 GB and 60 GB in 4 GB increments</p>
-    /// <p>This option requires Linux platform <code>1.4.0</code> or later.</p></li>
-    /// <li>
-    /// <p>16384 (16vCPU) - Available <code>memory</code> values: 32GB and 120 GB in 8 GB increments</p>
-    /// <p>This option requires Linux platform <code>1.4.0</code> or later.</p></li>
-    /// </ul>
+    /// <p>This field is required for Fargate. For information about the valid values, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definition_parameters.html#task_size">Task size</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     pub fn cpu(&self) -> ::std::option::Option<&str> {
         self.cpu.as_deref()
     }
@@ -511,26 +473,7 @@ impl RegisterTaskDefinitionInputBuilder {
     /// <p>Task-level CPU and memory parameters are ignored for Windows containers. We recommend specifying container-level resources for Windows containers.</p>
     /// </note>
     /// <p>If you're using the EC2 launch type or external launch type, this field is optional. Supported values are between <code>128</code> CPU units (<code>0.125</code> vCPUs) and <code>196608</code> CPU units (<code>192</code> vCPUs). If you do not specify a value, the parameter is ignored.</p>
-    /// <p>If you're using the Fargate launch type, this field is required and you must use one of the following values, which determines your range of supported values for the <code>memory</code> parameter:</p>
-    /// <p>The CPU units cannot be less than 1 vCPU when you use Windows containers on Fargate.</p>
-    /// <ul>
-    /// <li>
-    /// <p>256 (.25 vCPU) - Available <code>memory</code> values: 512 (0.5 GB), 1024 (1 GB), 2048 (2 GB)</p></li>
-    /// <li>
-    /// <p>512 (.5 vCPU) - Available <code>memory</code> values: 1024 (1 GB), 2048 (2 GB), 3072 (3 GB), 4096 (4 GB)</p></li>
-    /// <li>
-    /// <p>1024 (1 vCPU) - Available <code>memory</code> values: 2048 (2 GB), 3072 (3 GB), 4096 (4 GB), 5120 (5 GB), 6144 (6 GB), 7168 (7 GB), 8192 (8 GB)</p></li>
-    /// <li>
-    /// <p>2048 (2 vCPU) - Available <code>memory</code> values: 4096 (4 GB) and 16384 (16 GB) in increments of 1024 (1 GB)</p></li>
-    /// <li>
-    /// <p>4096 (4 vCPU) - Available <code>memory</code> values: 8192 (8 GB) and 30720 (30 GB) in increments of 1024 (1 GB)</p></li>
-    /// <li>
-    /// <p>8192 (8 vCPU) - Available <code>memory</code> values: 16 GB and 60 GB in 4 GB increments</p>
-    /// <p>This option requires Linux platform <code>1.4.0</code> or later.</p></li>
-    /// <li>
-    /// <p>16384 (16vCPU) - Available <code>memory</code> values: 32GB and 120 GB in 8 GB increments</p>
-    /// <p>This option requires Linux platform <code>1.4.0</code> or later.</p></li>
-    /// </ul>
+    /// <p>This field is required for Fargate. For information about the valid values, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definition_parameters.html#task_size">Task size</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     pub fn cpu(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cpu = ::std::option::Option::Some(input.into());
         self
@@ -539,26 +482,7 @@ impl RegisterTaskDefinitionInputBuilder {
     /// <p>Task-level CPU and memory parameters are ignored for Windows containers. We recommend specifying container-level resources for Windows containers.</p>
     /// </note>
     /// <p>If you're using the EC2 launch type or external launch type, this field is optional. Supported values are between <code>128</code> CPU units (<code>0.125</code> vCPUs) and <code>196608</code> CPU units (<code>192</code> vCPUs). If you do not specify a value, the parameter is ignored.</p>
-    /// <p>If you're using the Fargate launch type, this field is required and you must use one of the following values, which determines your range of supported values for the <code>memory</code> parameter:</p>
-    /// <p>The CPU units cannot be less than 1 vCPU when you use Windows containers on Fargate.</p>
-    /// <ul>
-    /// <li>
-    /// <p>256 (.25 vCPU) - Available <code>memory</code> values: 512 (0.5 GB), 1024 (1 GB), 2048 (2 GB)</p></li>
-    /// <li>
-    /// <p>512 (.5 vCPU) - Available <code>memory</code> values: 1024 (1 GB), 2048 (2 GB), 3072 (3 GB), 4096 (4 GB)</p></li>
-    /// <li>
-    /// <p>1024 (1 vCPU) - Available <code>memory</code> values: 2048 (2 GB), 3072 (3 GB), 4096 (4 GB), 5120 (5 GB), 6144 (6 GB), 7168 (7 GB), 8192 (8 GB)</p></li>
-    /// <li>
-    /// <p>2048 (2 vCPU) - Available <code>memory</code> values: 4096 (4 GB) and 16384 (16 GB) in increments of 1024 (1 GB)</p></li>
-    /// <li>
-    /// <p>4096 (4 vCPU) - Available <code>memory</code> values: 8192 (8 GB) and 30720 (30 GB) in increments of 1024 (1 GB)</p></li>
-    /// <li>
-    /// <p>8192 (8 vCPU) - Available <code>memory</code> values: 16 GB and 60 GB in 4 GB increments</p>
-    /// <p>This option requires Linux platform <code>1.4.0</code> or later.</p></li>
-    /// <li>
-    /// <p>16384 (16vCPU) - Available <code>memory</code> values: 32GB and 120 GB in 8 GB increments</p>
-    /// <p>This option requires Linux platform <code>1.4.0</code> or later.</p></li>
-    /// </ul>
+    /// <p>This field is required for Fargate. For information about the valid values, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definition_parameters.html#task_size">Task size</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     pub fn set_cpu(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cpu = input;
         self
@@ -567,26 +491,7 @@ impl RegisterTaskDefinitionInputBuilder {
     /// <p>Task-level CPU and memory parameters are ignored for Windows containers. We recommend specifying container-level resources for Windows containers.</p>
     /// </note>
     /// <p>If you're using the EC2 launch type or external launch type, this field is optional. Supported values are between <code>128</code> CPU units (<code>0.125</code> vCPUs) and <code>196608</code> CPU units (<code>192</code> vCPUs). If you do not specify a value, the parameter is ignored.</p>
-    /// <p>If you're using the Fargate launch type, this field is required and you must use one of the following values, which determines your range of supported values for the <code>memory</code> parameter:</p>
-    /// <p>The CPU units cannot be less than 1 vCPU when you use Windows containers on Fargate.</p>
-    /// <ul>
-    /// <li>
-    /// <p>256 (.25 vCPU) - Available <code>memory</code> values: 512 (0.5 GB), 1024 (1 GB), 2048 (2 GB)</p></li>
-    /// <li>
-    /// <p>512 (.5 vCPU) - Available <code>memory</code> values: 1024 (1 GB), 2048 (2 GB), 3072 (3 GB), 4096 (4 GB)</p></li>
-    /// <li>
-    /// <p>1024 (1 vCPU) - Available <code>memory</code> values: 2048 (2 GB), 3072 (3 GB), 4096 (4 GB), 5120 (5 GB), 6144 (6 GB), 7168 (7 GB), 8192 (8 GB)</p></li>
-    /// <li>
-    /// <p>2048 (2 vCPU) - Available <code>memory</code> values: 4096 (4 GB) and 16384 (16 GB) in increments of 1024 (1 GB)</p></li>
-    /// <li>
-    /// <p>4096 (4 vCPU) - Available <code>memory</code> values: 8192 (8 GB) and 30720 (30 GB) in increments of 1024 (1 GB)</p></li>
-    /// <li>
-    /// <p>8192 (8 vCPU) - Available <code>memory</code> values: 16 GB and 60 GB in 4 GB increments</p>
-    /// <p>This option requires Linux platform <code>1.4.0</code> or later.</p></li>
-    /// <li>
-    /// <p>16384 (16vCPU) - Available <code>memory</code> values: 32GB and 120 GB in 8 GB increments</p>
-    /// <p>This option requires Linux platform <code>1.4.0</code> or later.</p></li>
-    /// </ul>
+    /// <p>This field is required for Fargate. For information about the valid values, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definition_parameters.html#task_size">Task size</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     pub fn get_cpu(&self) -> &::std::option::Option<::std::string::String> {
         &self.cpu
     }

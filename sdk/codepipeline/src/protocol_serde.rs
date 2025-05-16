@@ -59,6 +59,8 @@ pub(crate) mod shape_list_action_executions;
 
 pub(crate) mod shape_list_action_types;
 
+pub(crate) mod shape_list_deploy_action_execution_targets;
+
 pub(crate) mod shape_list_pipeline_executions;
 
 pub(crate) mod shape_list_pipelines;
@@ -120,6 +122,8 @@ pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
 pub(crate) mod shape_acknowledge_job_input;
 
 pub(crate) mod shape_acknowledge_third_party_job_input;
+
+pub(crate) mod shape_action_execution_not_found_exception;
 
 pub(crate) mod shape_action_not_found_exception;
 
@@ -200,6 +204,8 @@ pub(crate) mod shape_limit_exceeded_exception;
 pub(crate) mod shape_list_action_executions_input;
 
 pub(crate) mod shape_list_action_types_input;
+
+pub(crate) mod shape_list_deploy_action_execution_targets_input;
 
 pub(crate) mod shape_list_pipeline_executions_input;
 
@@ -307,6 +313,8 @@ pub(crate) mod shape_artifact_details;
 
 pub(crate) mod shape_current_revision;
 
+pub(crate) mod shape_deploy_action_execution_target_list;
+
 pub(crate) mod shape_execution_details;
 
 pub(crate) mod shape_failure_details;
@@ -345,6 +353,8 @@ pub(crate) mod shape_tag;
 
 pub(crate) mod shape_tag_list;
 
+pub(crate) mod shape_target_filter;
+
 pub(crate) mod shape_third_party_job_details;
 
 pub(crate) mod shape_third_party_job_list;
@@ -376,6 +386,8 @@ pub(crate) mod shape_artifact_revision_list;
 pub(crate) mod shape_artifact_store;
 
 pub(crate) mod shape_artifact_store_map;
+
+pub(crate) mod shape_deploy_action_execution_target;
 
 pub(crate) mod shape_execution_trigger;
 
@@ -443,6 +455,8 @@ pub(crate) mod shape_before_entry_conditions;
 
 pub(crate) mod shape_blocker_declaration;
 
+pub(crate) mod shape_deploy_target_event_list;
+
 pub(crate) mod shape_encryption_key;
 
 pub(crate) mod shape_executor_configuration;
@@ -499,6 +513,8 @@ pub(crate) mod shape_condition;
 
 pub(crate) mod shape_condition_state_list;
 
+pub(crate) mod shape_deploy_target_event;
+
 pub(crate) mod shape_environment_variable;
 
 pub(crate) mod shape_git_pull_request_filter;
@@ -546,6 +562,8 @@ pub(crate) mod shape_artifact_location;
 pub(crate) mod shape_condition_list;
 
 pub(crate) mod shape_condition_state;
+
+pub(crate) mod shape_deploy_target_event_context;
 
 pub(crate) mod shape_error_details;
 

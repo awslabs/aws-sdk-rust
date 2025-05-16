@@ -79,4 +79,12 @@ pub(crate) mod shape_tag;
 
 pub(crate) mod shape_tag_list;
 
+pub(crate) mod shape_asset_processing_configuration;
+
 pub(crate) mod shape_event_bridge_configuration;
+
+pub(crate) mod shape_video_asset_processing_configuration;
+
+pub(crate) mod shape_video_segment_configuration;
+
+pub(crate) mod shape_timestamp_segment;

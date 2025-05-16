@@ -14,3 +14,9 @@ pub use crate::types::_encryption_configuration::EncryptionConfigurationBuilder;
 pub use crate::types::_data_automation_configuration::DataAutomationConfigurationBuilder;
 
 pub use crate::types::_input_configuration::InputConfigurationBuilder;
+
+pub use crate::types::_asset_processing_configuration::AssetProcessingConfigurationBuilder;
+
+pub use crate::types::_video_asset_processing_configuration::VideoAssetProcessingConfigurationBuilder;
+
+pub use crate::types::_timestamp_segment::TimestampSegmentBuilder;

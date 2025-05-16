@@ -23,6 +23,8 @@ pub struct GlobalCluster {
     pub deletion_protection: ::std::option::Option<bool>,
     /// <p>A list of cluster ARNs and instance ARNs for all the DB clusters that are part of the global database.</p>
     pub global_cluster_members: ::std::option::Option<::std::vec::Vec<crate::types::GlobalClusterMember>>,
+    /// <p>A data object containing all properties for the current state of an in-process or pending switchover or failover process for this global cluster (Neptune global database). This object is empty unless the <code>SwitchoverGlobalCluster</code> or <code>FailoverGlobalCluster</code> operation was called on this global cluster.</p>
+    pub failover_state: ::std::option::Option<crate::types::FailoverState>,
 }
 impl GlobalCluster {
     /// <p>Contains a user-supplied global database cluster identifier. This identifier is the unique key that identifies a global database.</p>
@@ -63,6 +65,10 @@ impl GlobalCluster {
     pub fn global_cluster_members(&self) -> &[crate::types::GlobalClusterMember] {
         self.global_cluster_members.as_deref().unwrap_or_default()
     }
+    /// <p>A data object containing all properties for the current state of an in-process or pending switchover or failover process for this global cluster (Neptune global database). This object is empty unless the <code>SwitchoverGlobalCluster</code> or <code>FailoverGlobalCluster</code> operation was called on this global cluster.</p>
+    pub fn failover_state(&self) -> ::std::option::Option<&crate::types::FailoverState> {
+        self.failover_state.as_ref()
+    }
 }
 impl GlobalCluster {
     /// Creates a new builder-style object to manufacture [`GlobalCluster`](crate::types::GlobalCluster).
@@ -84,6 +90,7 @@ pub struct GlobalClusterBuilder {
     pub(crate) storage_encrypted: ::std::option::Option<bool>,
     pub(crate) deletion_protection: ::std::option::Option<bool>,
     pub(crate) global_cluster_members: ::std::option::Option<::std::vec::Vec<crate::types::GlobalClusterMember>>,
+    pub(crate) failover_state: ::std::option::Option<crate::types::FailoverState>,
 }
 impl GlobalClusterBuilder {
     /// <p>Contains a user-supplied global database cluster identifier. This identifier is the unique key that identifies a global database.</p>
@@ -218,6 +225,20 @@ impl GlobalClusterBuilder {
     pub fn get_global_cluster_members(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GlobalClusterMember>> {
         &self.global_cluster_members
     }
+    /// <p>A data object containing all properties for the current state of an in-process or pending switchover or failover process for this global cluster (Neptune global database). This object is empty unless the <code>SwitchoverGlobalCluster</code> or <code>FailoverGlobalCluster</code> operation was called on this global cluster.</p>
+    pub fn failover_state(mut self, input: crate::types::FailoverState) -> Self {
+        self.failover_state = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>A data object containing all properties for the current state of an in-process or pending switchover or failover process for this global cluster (Neptune global database). This object is empty unless the <code>SwitchoverGlobalCluster</code> or <code>FailoverGlobalCluster</code> operation was called on this global cluster.</p>
+    pub fn set_failover_state(mut self, input: ::std::option::Option<crate::types::FailoverState>) -> Self {
+        self.failover_state = input;
+        self
+    }
+    /// <p>A data object containing all properties for the current state of an in-process or pending switchover or failover process for this global cluster (Neptune global database). This object is empty unless the <code>SwitchoverGlobalCluster</code> or <code>FailoverGlobalCluster</code> operation was called on this global cluster.</p>
+    pub fn get_failover_state(&self) -> &::std::option::Option<crate::types::FailoverState> {
+        &self.failover_state
+    }
     /// Consumes the builder and constructs a [`GlobalCluster`](crate::types::GlobalCluster).
     pub fn build(self) -> crate::types::GlobalCluster {
         crate::types::GlobalCluster {
@@ -230,6 +251,7 @@ impl GlobalClusterBuilder {
             storage_encrypted: self.storage_encrypted,
             deletion_protection: self.deletion_protection,
             global_cluster_members: self.global_cluster_members,
+            failover_state: self.failover_state,
         }
     }
 }

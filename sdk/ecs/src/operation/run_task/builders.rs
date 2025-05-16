@@ -46,6 +46,7 @@ impl crate::operation::run_task::builders::RunTaskInputBuilder {
 /// <li>
 /// <p>Run <code>RunTask</code> with the <code>clientToken</code> and the original set of parameters</p></li>
 /// </ul>
+/// <p>If you get a <code>ClientException</code>error, the <code>RunTask</code> could not be processed because you use managed scaling and there is a capacity error because the quota of tasks in the <code>PROVISIONING</code> per cluster has been reached. For information about the service quotas, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-quotas.html">Amazon ECS service quotas</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct RunTaskFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

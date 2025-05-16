@@ -241,6 +241,10 @@ pub use crate::types::_command::Command;
 
 pub use crate::types::_session_mapping_detail::SessionMappingDetail;
 
+pub use crate::types::_persistent_app_ui_type::PersistentAppUiType;
+
+pub use crate::types::_on_cluster_app_ui_type::OnClusterAppUiType;
+
 pub use crate::types::_credentials::Credentials;
 
 pub use crate::types::_username_password::UsernamePassword;
@@ -256,6 +260,8 @@ pub use crate::types::_step::Step;
 pub use crate::types::_os_release::OsRelease;
 
 pub use crate::types::_simplified_application::SimplifiedApplication;
+
+pub use crate::types::_persistent_app_ui::PersistentAppUi;
 
 pub use crate::types::_notebook_execution::NotebookExecution;
 
@@ -284,6 +290,10 @@ pub use crate::types::_cluster::Cluster;
 pub use crate::types::_instance_collection_type::InstanceCollectionType;
 
 pub use crate::types::_ec2_instance_attributes::Ec2InstanceAttributes;
+
+pub use crate::types::_profiler_type::ProfilerType;
+
+pub use crate::types::_emr_containers_config::EmrContainersConfig;
 
 pub use crate::types::_cancel_steps_info::CancelStepsInfo;
 
@@ -362,6 +372,8 @@ mod _ebs_configuration;
 mod _ebs_volume;
 
 mod _ec2_instance_attributes;
+
+mod _emr_containers_config;
 
 mod _error_detail;
 
@@ -473,6 +485,8 @@ mod _notebook_s3_location_for_output;
 
 mod _notebook_s3_location_from_input;
 
+mod _on_cluster_app_ui_type;
+
 mod _on_demand_capacity_reservation_options;
 
 mod _on_demand_capacity_reservation_preference;
@@ -493,6 +507,10 @@ mod _output_notebook_s3_location_for_output;
 
 mod _output_notebook_s3_location_from_input;
 
+mod _persistent_app_ui;
+
+mod _persistent_app_ui_type;
+
 mod _placement_group_config;
 
 mod _placement_group_strategy;
@@ -500,6 +518,8 @@ mod _placement_group_strategy;
 mod _placement_type;
 
 mod _port_range;
+
+mod _profiler_type;
 
 mod _reconfiguration_type;
 

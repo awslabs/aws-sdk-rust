@@ -19,6 +19,16 @@ pub(crate) fn reflens_list_action_types_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_deploy_action_execution_targets_output_output_next_token(
+    input: &crate::operation::list_deploy_action_execution_targets::ListDeployActionExecutionTargetsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_pipeline_executions_output_output_next_token(
     input: &crate::operation::list_pipeline_executions::ListPipelineExecutionsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -83,6 +93,16 @@ pub(crate) fn lens_list_action_types_output_output_action_types(
     input: crate::operation::list_action_types::ListActionTypesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ActionType>> {
     let input = input.action_types;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_deploy_action_execution_targets_output_output_targets(
+    input: crate::operation::list_deploy_action_execution_targets::ListDeployActionExecutionTargetsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::DeployActionExecutionTarget>> {
+    let input = match input.targets {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
     ::std::option::Option::Some(input)
 }
 

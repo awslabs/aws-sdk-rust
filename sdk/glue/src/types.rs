@@ -305,7 +305,15 @@ pub use crate::types::_apply_mapping::ApplyMapping;
 
 pub use crate::types::_mapping::Mapping;
 
+pub use crate::types::_s3_iceberg_direct_target::S3IcebergDirectTarget;
+
+pub use crate::types::_iceberg_target_compression_type::IcebergTargetCompressionType;
+
 pub use crate::types::_s3_direct_target::S3DirectTarget;
+
+pub use crate::types::_s3_hyper_direct_target::S3HyperDirectTarget;
+
+pub use crate::types::_hyper_target_compression_type::HyperTargetCompressionType;
 
 pub use crate::types::_s3_glue_parquet_target::S3GlueParquetTarget;
 
@@ -332,6 +340,8 @@ pub use crate::types::_s3_parquet_source::S3ParquetSource;
 pub use crate::types::_s3_json_source::S3JsonSource;
 
 pub use crate::types::_compression_type::CompressionType;
+
+pub use crate::types::_s3_excel_source::S3ExcelSource;
 
 pub use crate::types::_s3_csv_source::S3CsvSource;
 
@@ -1417,6 +1427,8 @@ mod _hudi_target;
 
 mod _hudi_target_compression_type;
 
+mod _hyper_target_compression_type;
+
 mod _iceberg_compaction_metrics;
 
 mod _iceberg_input;
@@ -1430,6 +1442,8 @@ mod _iceberg_retention_configuration;
 mod _iceberg_retention_metrics;
 
 mod _iceberg_target;
+
+mod _iceberg_target_compression_type;
 
 mod _import_labels_task_run_properties;
 
@@ -1705,6 +1719,8 @@ mod _s3_encryption;
 
 mod _s3_encryption_mode;
 
+mod _s3_excel_source;
+
 mod _s3_glue_parquet_target;
 
 mod _s3_hudi_catalog_target;
@@ -1712,6 +1728,10 @@ mod _s3_hudi_catalog_target;
 mod _s3_hudi_direct_target;
 
 mod _s3_hudi_source;
+
+mod _s3_hyper_direct_target;
+
+mod _s3_iceberg_direct_target;
 
 mod _s3_json_source;
 

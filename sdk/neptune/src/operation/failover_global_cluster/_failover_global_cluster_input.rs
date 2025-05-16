@@ -8,6 +8,13 @@ pub struct FailoverGlobalClusterInput {
     pub global_cluster_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the secondary Neptune DB cluster that you want to promote to primary for the global database.</p>
     pub target_db_cluster_identifier: ::std::option::Option<::std::string::String>,
+    /// <p>Specifies whether to allow data loss for this global database cluster operation. Allowing data loss triggers a global failover operation.</p>
+    /// <p>If you don't specify <code>AllowDataLoss</code>, the global database cluster operation defaults to a switchover.</p>
+    /// <p>Constraints:Can't be specified together with the <code>Switchover</code> parameter.</p>
+    pub allow_data_loss: ::std::option::Option<bool>,
+    /// <p>Specifies whether to switch over this global database cluster.</p>
+    /// <p>Constraints:Can't be specified together with the <code>AllowDataLoss</code> parameter.</p>
+    pub switchover: ::std::option::Option<bool>,
 }
 impl FailoverGlobalClusterInput {
     /// <p>Identifier of the Neptune global database that should be failed over. The identifier is the unique key assigned by the user when the Neptune global database was created. In other words, it's the name of the global database that you want to fail over.</p>
@@ -18,6 +25,17 @@ impl FailoverGlobalClusterInput {
     /// <p>The Amazon Resource Name (ARN) of the secondary Neptune DB cluster that you want to promote to primary for the global database.</p>
     pub fn target_db_cluster_identifier(&self) -> ::std::option::Option<&str> {
         self.target_db_cluster_identifier.as_deref()
+    }
+    /// <p>Specifies whether to allow data loss for this global database cluster operation. Allowing data loss triggers a global failover operation.</p>
+    /// <p>If you don't specify <code>AllowDataLoss</code>, the global database cluster operation defaults to a switchover.</p>
+    /// <p>Constraints:Can't be specified together with the <code>Switchover</code> parameter.</p>
+    pub fn allow_data_loss(&self) -> ::std::option::Option<bool> {
+        self.allow_data_loss
+    }
+    /// <p>Specifies whether to switch over this global database cluster.</p>
+    /// <p>Constraints:Can't be specified together with the <code>AllowDataLoss</code> parameter.</p>
+    pub fn switchover(&self) -> ::std::option::Option<bool> {
+        self.switchover
     }
 }
 impl FailoverGlobalClusterInput {
@@ -33,6 +51,8 @@ impl FailoverGlobalClusterInput {
 pub struct FailoverGlobalClusterInputBuilder {
     pub(crate) global_cluster_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) target_db_cluster_identifier: ::std::option::Option<::std::string::String>,
+    pub(crate) allow_data_loss: ::std::option::Option<bool>,
+    pub(crate) switchover: ::std::option::Option<bool>,
 }
 impl FailoverGlobalClusterInputBuilder {
     /// <p>Identifier of the Neptune global database that should be failed over. The identifier is the unique key assigned by the user when the Neptune global database was created. In other words, it's the name of the global database that you want to fail over.</p>
@@ -68,6 +88,43 @@ impl FailoverGlobalClusterInputBuilder {
     pub fn get_target_db_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.target_db_cluster_identifier
     }
+    /// <p>Specifies whether to allow data loss for this global database cluster operation. Allowing data loss triggers a global failover operation.</p>
+    /// <p>If you don't specify <code>AllowDataLoss</code>, the global database cluster operation defaults to a switchover.</p>
+    /// <p>Constraints:Can't be specified together with the <code>Switchover</code> parameter.</p>
+    pub fn allow_data_loss(mut self, input: bool) -> Self {
+        self.allow_data_loss = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies whether to allow data loss for this global database cluster operation. Allowing data loss triggers a global failover operation.</p>
+    /// <p>If you don't specify <code>AllowDataLoss</code>, the global database cluster operation defaults to a switchover.</p>
+    /// <p>Constraints:Can't be specified together with the <code>Switchover</code> parameter.</p>
+    pub fn set_allow_data_loss(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.allow_data_loss = input;
+        self
+    }
+    /// <p>Specifies whether to allow data loss for this global database cluster operation. Allowing data loss triggers a global failover operation.</p>
+    /// <p>If you don't specify <code>AllowDataLoss</code>, the global database cluster operation defaults to a switchover.</p>
+    /// <p>Constraints:Can't be specified together with the <code>Switchover</code> parameter.</p>
+    pub fn get_allow_data_loss(&self) -> &::std::option::Option<bool> {
+        &self.allow_data_loss
+    }
+    /// <p>Specifies whether to switch over this global database cluster.</p>
+    /// <p>Constraints:Can't be specified together with the <code>AllowDataLoss</code> parameter.</p>
+    pub fn switchover(mut self, input: bool) -> Self {
+        self.switchover = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies whether to switch over this global database cluster.</p>
+    /// <p>Constraints:Can't be specified together with the <code>AllowDataLoss</code> parameter.</p>
+    pub fn set_switchover(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.switchover = input;
+        self
+    }
+    /// <p>Specifies whether to switch over this global database cluster.</p>
+    /// <p>Constraints:Can't be specified together with the <code>AllowDataLoss</code> parameter.</p>
+    pub fn get_switchover(&self) -> &::std::option::Option<bool> {
+        &self.switchover
+    }
     /// Consumes the builder and constructs a [`FailoverGlobalClusterInput`](crate::operation::failover_global_cluster::FailoverGlobalClusterInput).
     pub fn build(
         self,
@@ -76,6 +133,8 @@ impl FailoverGlobalClusterInputBuilder {
         ::std::result::Result::Ok(crate::operation::failover_global_cluster::FailoverGlobalClusterInput {
             global_cluster_identifier: self.global_cluster_identifier,
             target_db_cluster_identifier: self.target_db_cluster_identifier,
+            allow_data_loss: self.allow_data_loss,
+            switchover: self.switchover,
         })
     }
 }

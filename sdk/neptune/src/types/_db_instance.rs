@@ -70,7 +70,7 @@ pub struct DbInstance {
     pub publicly_accessible: ::std::option::Option<bool>,
     /// <p>The status of a Read Replica. If the instance is not a Read Replica, this is blank.</p>
     pub status_infos: ::std::option::Option<::std::vec::Vec<crate::types::DbInstanceStatusInfo>>,
-    /// <p>Specifies the storage type associated with DB instance.</p>
+    /// <p>Specifies the storage type associated with the DB instance.</p>
     pub storage_type: ::std::option::Option<::std::string::String>,
     /// <p>The ARN from the key store with which the instance is associated for TDE encryption.</p>
     pub tde_credential_arn: ::std::option::Option<::std::string::String>,
@@ -257,7 +257,7 @@ impl DbInstance {
     pub fn status_infos(&self) -> &[crate::types::DbInstanceStatusInfo] {
         self.status_infos.as_deref().unwrap_or_default()
     }
-    /// <p>Specifies the storage type associated with DB instance.</p>
+    /// <p>Specifies the storage type associated with the DB instance.</p>
     pub fn storage_type(&self) -> ::std::option::Option<&str> {
         self.storage_type.as_deref()
     }
@@ -905,17 +905,17 @@ impl DbInstanceBuilder {
     pub fn get_status_infos(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DbInstanceStatusInfo>> {
         &self.status_infos
     }
-    /// <p>Specifies the storage type associated with DB instance.</p>
+    /// <p>Specifies the storage type associated with the DB instance.</p>
     pub fn storage_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.storage_type = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Specifies the storage type associated with DB instance.</p>
+    /// <p>Specifies the storage type associated with the DB instance.</p>
     pub fn set_storage_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.storage_type = input;
         self
     }
-    /// <p>Specifies the storage type associated with DB instance.</p>
+    /// <p>Specifies the storage type associated with the DB instance.</p>
     pub fn get_storage_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.storage_type
     }

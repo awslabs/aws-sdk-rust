@@ -4,6 +4,9 @@ pub use ::aws_types::request_id::RequestId;
 /// Types for the `AssociateServiceQuotaTemplate` operation.
 pub mod associate_service_quota_template;
 
+/// Types for the `CreateSupportCase` operation.
+pub mod create_support_case;
+
 /// Types for the `DeleteServiceQuotaIncreaseRequestFromTemplate` operation.
 pub mod delete_service_quota_increase_request_from_template;
 

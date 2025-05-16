@@ -634,20 +634,17 @@ impl CreateDBInstanceFluentBuilder {
     pub fn get_db_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_db_cluster_identifier()
     }
-    /// <p>Specifies the storage type to be associated with the DB instance.</p>
-    /// <p>Not applicable. Storage is managed by the DB Cluster.</p>
+    /// <p>Not applicable. In Neptune the storage type is managed at the DB Cluster level.</p>
     pub fn storage_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.storage_type(input.into());
         self
     }
-    /// <p>Specifies the storage type to be associated with the DB instance.</p>
-    /// <p>Not applicable. Storage is managed by the DB Cluster.</p>
+    /// <p>Not applicable. In Neptune the storage type is managed at the DB Cluster level.</p>
     pub fn set_storage_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_storage_type(input);
         self
     }
-    /// <p>Specifies the storage type to be associated with the DB instance.</p>
-    /// <p>Not applicable. Storage is managed by the DB Cluster.</p>
+    /// <p>Not applicable. In Neptune the storage type is managed at the DB Cluster level.</p>
     pub fn get_storage_type(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_storage_type()
     }

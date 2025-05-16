@@ -16,6 +16,9 @@ pub mod add_tags;
 /// Types for the `CancelSteps` operation.
 pub mod cancel_steps;
 
+/// Types for the `CreatePersistentAppUI` operation.
+pub mod create_persistent_app_ui;
+
 /// Types for the `CreateSecurityConfiguration` operation.
 pub mod create_security_configuration;
 
@@ -43,6 +46,9 @@ pub mod describe_job_flows;
 /// Types for the `DescribeNotebookExecution` operation.
 pub mod describe_notebook_execution;
 
+/// Types for the `DescribePersistentAppUI` operation.
+pub mod describe_persistent_app_ui;
+
 /// Types for the `DescribeReleaseLabel` operation.
 pub mod describe_release_label;
 
@@ -66,6 +72,12 @@ pub mod get_cluster_session_credentials;
 
 /// Types for the `GetManagedScalingPolicy` operation.
 pub mod get_managed_scaling_policy;
+
+/// Types for the `GetOnClusterAppUIPresignedURL` operation.
+pub mod get_on_cluster_app_ui_presigned_url;
+
+/// Types for the `GetPersistentAppUIPresignedURL` operation.
+pub mod get_persistent_app_ui_presigned_url;
 
 /// Types for the `GetStudioSessionMapping` operation.
 pub mod get_studio_session_mapping;

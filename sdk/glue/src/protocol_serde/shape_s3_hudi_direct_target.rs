@@ -21,39 +21,42 @@ pub fn ser_s3_hudi_direct_target(
     {
         object.key("Compression").string(input.compression.as_str());
     }
-    if let Some(var_3) = &input.partition_keys {
-        let mut array_4 = object.key("PartitionKeys").start_array();
-        for item_5 in var_3 {
+    if let Some(var_3) = &input.number_target_partitions {
+        object.key("NumberTargetPartitions").string(var_3.as_str());
+    }
+    if let Some(var_4) = &input.partition_keys {
+        let mut array_5 = object.key("PartitionKeys").start_array();
+        for item_6 in var_4 {
             {
-                let mut array_6 = array_4.value().start_array();
-                for item_7 in item_5 {
+                let mut array_7 = array_5.value().start_array();
+                for item_8 in item_6 {
                     {
-                        array_6.value().string(item_7.as_str());
+                        array_7.value().string(item_8.as_str());
                     }
                 }
-                array_6.finish();
+                array_7.finish();
             }
         }
-        array_4.finish();
+        array_5.finish();
     }
     {
         object.key("Format").string(input.format.as_str());
     }
     {
         #[allow(unused_mut)]
-        let mut object_8 = object.key("AdditionalOptions").start_object();
-        for (key_9, value_10) in &input.additional_options {
+        let mut object_9 = object.key("AdditionalOptions").start_object();
+        for (key_10, value_11) in &input.additional_options {
             {
-                object_8.key(key_9.as_str()).string(value_10.as_str());
+                object_9.key(key_10.as_str()).string(value_11.as_str());
             }
         }
-        object_8.finish();
+        object_9.finish();
     }
-    if let Some(var_11) = &input.schema_change_policy {
+    if let Some(var_12) = &input.schema_change_policy {
         #[allow(unused_mut)]
-        let mut object_12 = object.key("SchemaChangePolicy").start_object();
-        crate::protocol_serde::shape_direct_schema_change_policy::ser_direct_schema_change_policy(&mut object_12, var_11)?;
-        object_12.finish();
+        let mut object_13 = object.key("SchemaChangePolicy").start_object();
+        crate::protocol_serde::shape_direct_schema_change_policy::ser_direct_schema_change_policy(&mut object_13, var_12)?;
+        object_13.finish();
     }
     Ok(())
 }
@@ -94,6 +97,13 @@ where
                             builder = builder.set_compression(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| crate::types::HudiTargetCompressionType::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "NumberTargetPartitions" => {
+                            builder = builder.set_number_target_partitions(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
                             );
                         }

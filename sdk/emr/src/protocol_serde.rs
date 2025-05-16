@@ -33,6 +33,8 @@ pub(crate) mod shape_add_tags;
 
 pub(crate) mod shape_cancel_steps;
 
+pub(crate) mod shape_create_persistent_app_ui;
+
 pub(crate) mod shape_create_security_configuration;
 
 pub(crate) mod shape_create_studio;
@@ -51,6 +53,8 @@ pub(crate) mod shape_describe_job_flows;
 
 pub(crate) mod shape_describe_notebook_execution;
 
+pub(crate) mod shape_describe_persistent_app_ui;
+
 pub(crate) mod shape_describe_release_label;
 
 pub(crate) mod shape_describe_security_configuration;
@@ -66,6 +70,10 @@ pub(crate) mod shape_get_block_public_access_configuration;
 pub(crate) mod shape_get_cluster_session_credentials;
 
 pub(crate) mod shape_get_managed_scaling_policy;
+
+pub(crate) mod shape_get_on_cluster_app_ui_presigned_url;
+
+pub(crate) mod shape_get_persistent_app_ui_presigned_url;
 
 pub(crate) mod shape_get_studio_session_mapping;
 
@@ -153,6 +161,8 @@ pub(crate) mod shape_add_tags_input;
 
 pub(crate) mod shape_cancel_steps_input;
 
+pub(crate) mod shape_create_persistent_app_ui_input;
+
 pub(crate) mod shape_create_security_configuration_input;
 
 pub(crate) mod shape_create_studio_input;
@@ -171,6 +181,8 @@ pub(crate) mod shape_describe_job_flows_input;
 
 pub(crate) mod shape_describe_notebook_execution_input;
 
+pub(crate) mod shape_describe_persistent_app_ui_input;
+
 pub(crate) mod shape_describe_release_label_input;
 
 pub(crate) mod shape_describe_security_configuration_input;
@@ -184,6 +196,10 @@ pub(crate) mod shape_get_auto_termination_policy_input;
 pub(crate) mod shape_get_cluster_session_credentials_input;
 
 pub(crate) mod shape_get_managed_scaling_policy_input;
+
+pub(crate) mod shape_get_on_cluster_app_ui_presigned_url_input;
+
+pub(crate) mod shape_get_persistent_app_ui_presigned_url_input;
 
 pub(crate) mod shape_get_studio_session_mapping_input;
 
@@ -285,6 +301,8 @@ pub(crate) mod shape_configuration;
 
 pub(crate) mod shape_credentials;
 
+pub(crate) mod shape_emr_containers_config;
+
 pub(crate) mod shape_execution_engine_config;
 
 pub(crate) mod shape_instance_fleet_config;
@@ -320,6 +338,8 @@ pub(crate) mod shape_notebook_s3_location_from_input;
 pub(crate) mod shape_os_release_list;
 
 pub(crate) mod shape_output_notebook_s3_location_from_input;
+
+pub(crate) mod shape_persistent_app_ui;
 
 pub(crate) mod shape_placement_group_config;
 
@@ -400,6 +420,8 @@ pub(crate) mod shape_notebook_s3_location_for_output;
 pub(crate) mod shape_os_release;
 
 pub(crate) mod shape_output_notebook_s3_location_for_output;
+
+pub(crate) mod shape_persistent_app_ui_type_list;
 
 pub(crate) mod shape_placement_group_config_list;
 

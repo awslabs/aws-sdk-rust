@@ -1487,6 +1487,18 @@ pub(crate) fn s3_direct_target_correct_errors(
     builder
 }
 
+pub(crate) fn s3_excel_source_correct_errors(
+    mut builder: crate::types::builders::S3ExcelSourceBuilder,
+) -> crate::types::builders::S3ExcelSourceBuilder {
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.paths.is_none() {
+        builder.paths = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn s3_glue_parquet_target_correct_errors(
     mut builder: crate::types::builders::S3GlueParquetTargetBuilder,
 ) -> crate::types::builders::S3GlueParquetTargetBuilder {
@@ -1553,6 +1565,42 @@ pub(crate) fn s3_hudi_source_correct_errors(mut builder: crate::types::builders:
     }
     if builder.paths.is_none() {
         builder.paths = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn s3_hyper_direct_target_correct_errors(
+    mut builder: crate::types::builders::S3HyperDirectTargetBuilder,
+) -> crate::types::builders::S3HyperDirectTargetBuilder {
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.inputs.is_none() {
+        builder.inputs = Some(Default::default())
+    }
+    if builder.path.is_none() {
+        builder.path = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn s3_iceberg_direct_target_correct_errors(
+    mut builder: crate::types::builders::S3IcebergDirectTargetBuilder,
+) -> crate::types::builders::S3IcebergDirectTargetBuilder {
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.inputs.is_none() {
+        builder.inputs = Some(Default::default())
+    }
+    if builder.path.is_none() {
+        builder.path = Some(Default::default())
+    }
+    if builder.format.is_none() {
+        builder.format = "no value was set".parse::<crate::types::TargetFormat>().ok()
+    }
+    if builder.compression.is_none() {
+        builder.compression = "no value was set".parse::<crate::types::IcebergTargetCompressionType>().ok()
     }
     builder
 }

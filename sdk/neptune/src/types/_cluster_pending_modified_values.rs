@@ -14,11 +14,18 @@ pub struct ClusterPendingModifiedValues {
     pub engine_version: ::std::option::Option<::std::string::String>,
     /// <p>The number of days for which automatic DB snapshots are retained.</p>
     pub backup_retention_period: ::std::option::Option<i32>,
-    /// <p>The storage type for the DB cluster.</p>
+    /// <p>The pending change in storage type for the DB cluster. &nbsp; Valid Values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><b> <code>standard</code> </b> &nbsp; – &nbsp; ( <i>the default</i> ) Configures cost-effective database storage for applications with moderate to small I/O usage.</p></li>
+    /// <li>
+    /// <p><b> <code>iopt1</code> </b> &nbsp; – &nbsp; Enables <a href="https://docs.aws.amazon.com/neptune/latest/userguide/storage-types.html#provisioned-iops-storage">I/O-Optimized storage</a> that's designed to meet the needs of I/O-intensive graph workloads that require predictable pricing with low I/O latency and consistent I/O throughput.</p>
+    /// <p>Neptune I/O-Optimized storage is only available starting with engine release 1.3.0.0.</p></li>
+    /// </ul>
     pub storage_type: ::std::option::Option<::std::string::String>,
     /// <p>The allocated storage size in gibibytes (GiB) for database engines. For Neptune, <code>AllocatedStorage</code> always returns 1, because Neptune DB cluster storage size isn't fixed, but instead automatically adjusts as needed.</p>
     pub allocated_storage: ::std::option::Option<i32>,
-    /// <p>The Provisioned IOPS (I/O operations per second) value. This setting is only for non-Aurora Multi-AZ DB clusters.</p>
+    /// <p>The Provisioned IOPS (I/O operations per second) value. This setting is only for Multi-AZ DB clusters.</p>
     pub iops: ::std::option::Option<i32>,
 }
 impl ClusterPendingModifiedValues {
@@ -42,7 +49,14 @@ impl ClusterPendingModifiedValues {
     pub fn backup_retention_period(&self) -> ::std::option::Option<i32> {
         self.backup_retention_period
     }
-    /// <p>The storage type for the DB cluster.</p>
+    /// <p>The pending change in storage type for the DB cluster. &nbsp; Valid Values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><b> <code>standard</code> </b> &nbsp; – &nbsp; ( <i>the default</i> ) Configures cost-effective database storage for applications with moderate to small I/O usage.</p></li>
+    /// <li>
+    /// <p><b> <code>iopt1</code> </b> &nbsp; – &nbsp; Enables <a href="https://docs.aws.amazon.com/neptune/latest/userguide/storage-types.html#provisioned-iops-storage">I/O-Optimized storage</a> that's designed to meet the needs of I/O-intensive graph workloads that require predictable pricing with low I/O latency and consistent I/O throughput.</p>
+    /// <p>Neptune I/O-Optimized storage is only available starting with engine release 1.3.0.0.</p></li>
+    /// </ul>
     pub fn storage_type(&self) -> ::std::option::Option<&str> {
         self.storage_type.as_deref()
     }
@@ -50,7 +64,7 @@ impl ClusterPendingModifiedValues {
     pub fn allocated_storage(&self) -> ::std::option::Option<i32> {
         self.allocated_storage
     }
-    /// <p>The Provisioned IOPS (I/O operations per second) value. This setting is only for non-Aurora Multi-AZ DB clusters.</p>
+    /// <p>The Provisioned IOPS (I/O operations per second) value. This setting is only for Multi-AZ DB clusters.</p>
     pub fn iops(&self) -> ::std::option::Option<i32> {
         self.iops
     }
@@ -146,17 +160,38 @@ impl ClusterPendingModifiedValuesBuilder {
     pub fn get_backup_retention_period(&self) -> &::std::option::Option<i32> {
         &self.backup_retention_period
     }
-    /// <p>The storage type for the DB cluster.</p>
+    /// <p>The pending change in storage type for the DB cluster. &nbsp; Valid Values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><b> <code>standard</code> </b> &nbsp; – &nbsp; ( <i>the default</i> ) Configures cost-effective database storage for applications with moderate to small I/O usage.</p></li>
+    /// <li>
+    /// <p><b> <code>iopt1</code> </b> &nbsp; – &nbsp; Enables <a href="https://docs.aws.amazon.com/neptune/latest/userguide/storage-types.html#provisioned-iops-storage">I/O-Optimized storage</a> that's designed to meet the needs of I/O-intensive graph workloads that require predictable pricing with low I/O latency and consistent I/O throughput.</p>
+    /// <p>Neptune I/O-Optimized storage is only available starting with engine release 1.3.0.0.</p></li>
+    /// </ul>
     pub fn storage_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.storage_type = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The storage type for the DB cluster.</p>
+    /// <p>The pending change in storage type for the DB cluster. &nbsp; Valid Values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><b> <code>standard</code> </b> &nbsp; – &nbsp; ( <i>the default</i> ) Configures cost-effective database storage for applications with moderate to small I/O usage.</p></li>
+    /// <li>
+    /// <p><b> <code>iopt1</code> </b> &nbsp; – &nbsp; Enables <a href="https://docs.aws.amazon.com/neptune/latest/userguide/storage-types.html#provisioned-iops-storage">I/O-Optimized storage</a> that's designed to meet the needs of I/O-intensive graph workloads that require predictable pricing with low I/O latency and consistent I/O throughput.</p>
+    /// <p>Neptune I/O-Optimized storage is only available starting with engine release 1.3.0.0.</p></li>
+    /// </ul>
     pub fn set_storage_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.storage_type = input;
         self
     }
-    /// <p>The storage type for the DB cluster.</p>
+    /// <p>The pending change in storage type for the DB cluster. &nbsp; Valid Values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><b> <code>standard</code> </b> &nbsp; – &nbsp; ( <i>the default</i> ) Configures cost-effective database storage for applications with moderate to small I/O usage.</p></li>
+    /// <li>
+    /// <p><b> <code>iopt1</code> </b> &nbsp; – &nbsp; Enables <a href="https://docs.aws.amazon.com/neptune/latest/userguide/storage-types.html#provisioned-iops-storage">I/O-Optimized storage</a> that's designed to meet the needs of I/O-intensive graph workloads that require predictable pricing with low I/O latency and consistent I/O throughput.</p>
+    /// <p>Neptune I/O-Optimized storage is only available starting with engine release 1.3.0.0.</p></li>
+    /// </ul>
     pub fn get_storage_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.storage_type
     }
@@ -174,17 +209,17 @@ impl ClusterPendingModifiedValuesBuilder {
     pub fn get_allocated_storage(&self) -> &::std::option::Option<i32> {
         &self.allocated_storage
     }
-    /// <p>The Provisioned IOPS (I/O operations per second) value. This setting is only for non-Aurora Multi-AZ DB clusters.</p>
+    /// <p>The Provisioned IOPS (I/O operations per second) value. This setting is only for Multi-AZ DB clusters.</p>
     pub fn iops(mut self, input: i32) -> Self {
         self.iops = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The Provisioned IOPS (I/O operations per second) value. This setting is only for non-Aurora Multi-AZ DB clusters.</p>
+    /// <p>The Provisioned IOPS (I/O operations per second) value. This setting is only for Multi-AZ DB clusters.</p>
     pub fn set_iops(mut self, input: ::std::option::Option<i32>) -> Self {
         self.iops = input;
         self
     }
-    /// <p>The Provisioned IOPS (I/O operations per second) value. This setting is only for non-Aurora Multi-AZ DB clusters.</p>
+    /// <p>The Provisioned IOPS (I/O operations per second) value. This setting is only for Multi-AZ DB clusters.</p>
     pub fn get_iops(&self) -> &::std::option::Option<i32> {
         &self.iops
     }

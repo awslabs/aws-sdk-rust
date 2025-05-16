@@ -16,9 +16,12 @@
 ///     TargetFormat::Csv => { /* ... */ },
 ///     TargetFormat::Delta => { /* ... */ },
 ///     TargetFormat::Hudi => { /* ... */ },
+///     TargetFormat::Hyper => { /* ... */ },
+///     TargetFormat::Iceberg => { /* ... */ },
 ///     TargetFormat::Json => { /* ... */ },
 ///     TargetFormat::Orc => { /* ... */ },
 ///     TargetFormat::Parquet => { /* ... */ },
+///     TargetFormat::Xml => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -56,11 +59,17 @@ pub enum TargetFormat {
     #[allow(missing_docs)] // documentation missing in model
     Hudi,
     #[allow(missing_docs)] // documentation missing in model
+    Hyper,
+    #[allow(missing_docs)] // documentation missing in model
+    Iceberg,
+    #[allow(missing_docs)] // documentation missing in model
     Json,
     #[allow(missing_docs)] // documentation missing in model
     Orc,
     #[allow(missing_docs)] // documentation missing in model
     Parquet,
+    #[allow(missing_docs)] // documentation missing in model
+    Xml,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -72,9 +81,12 @@ impl ::std::convert::From<&str> for TargetFormat {
             "csv" => TargetFormat::Csv,
             "delta" => TargetFormat::Delta,
             "hudi" => TargetFormat::Hudi,
+            "hyper" => TargetFormat::Hyper,
+            "iceberg" => TargetFormat::Iceberg,
             "json" => TargetFormat::Json,
             "orc" => TargetFormat::Orc,
             "parquet" => TargetFormat::Parquet,
+            "xml" => TargetFormat::Xml,
             other => TargetFormat::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -94,15 +106,18 @@ impl TargetFormat {
             TargetFormat::Csv => "csv",
             TargetFormat::Delta => "delta",
             TargetFormat::Hudi => "hudi",
+            TargetFormat::Hyper => "hyper",
+            TargetFormat::Iceberg => "iceberg",
             TargetFormat::Json => "json",
             TargetFormat::Orc => "orc",
             TargetFormat::Parquet => "parquet",
+            TargetFormat::Xml => "xml",
             TargetFormat::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["avro", "csv", "delta", "hudi", "json", "orc", "parquet"]
+        &["avro", "csv", "delta", "hudi", "hyper", "iceberg", "json", "orc", "parquet", "xml"]
     }
 }
 impl ::std::convert::AsRef<str> for TargetFormat {
@@ -129,9 +144,12 @@ impl ::std::fmt::Display for TargetFormat {
             TargetFormat::Csv => write!(f, "csv"),
             TargetFormat::Delta => write!(f, "delta"),
             TargetFormat::Hudi => write!(f, "hudi"),
+            TargetFormat::Hyper => write!(f, "hyper"),
+            TargetFormat::Iceberg => write!(f, "iceberg"),
             TargetFormat::Json => write!(f, "json"),
             TargetFormat::Orc => write!(f, "orc"),
             TargetFormat::Parquet => write!(f, "parquet"),
+            TargetFormat::Xml => write!(f, "xml"),
             TargetFormat::Unknown(value) => write!(f, "{}", value),
         }
     }

@@ -185,6 +185,8 @@ mod add_tags;
 
 mod cancel_steps;
 
+mod create_persistent_app_ui;
+
 mod create_security_configuration;
 
 mod create_studio;
@@ -230,6 +232,8 @@ mod describe_job_flows;
 
 mod describe_notebook_execution;
 
+mod describe_persistent_app_ui;
+
 mod describe_release_label;
 
 mod describe_security_configuration;
@@ -245,6 +249,10 @@ mod get_block_public_access_configuration;
 mod get_cluster_session_credentials;
 
 mod get_managed_scaling_policy;
+
+mod get_on_cluster_app_ui_presigned_url;
+
+mod get_persistent_app_ui_presigned_url;
 
 mod get_studio_session_mapping;
 

@@ -71,6 +71,8 @@ pub use crate::types::error::_condition_not_overridable_exception::ConditionNotO
 
 pub use crate::types::error::_invalid_next_token_exception::InvalidNextTokenException;
 
+pub use crate::types::error::_action_execution_not_found_exception::ActionExecutionNotFoundException;
+
 pub use crate::types::error::_invalid_job_exception::InvalidJobException;
 
 pub use crate::types::error::_pipeline_version_not_found_exception::PipelineVersionNotFoundException;
@@ -78,6 +80,8 @@ pub use crate::types::error::_pipeline_version_not_found_exception::PipelineVers
 pub use crate::types::error::_pipeline_name_in_use_exception::PipelineNameInUseException;
 
 pub use crate::types::error::_invalid_nonce_exception::InvalidNonceException;
+
+mod _action_execution_not_found_exception;
 
 mod _action_not_found_exception;
 

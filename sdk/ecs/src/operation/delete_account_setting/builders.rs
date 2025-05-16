@@ -122,17 +122,20 @@ impl DeleteAccountSettingFluentBuilder {
     pub fn get_name(&self) -> &::std::option::Option<crate::types::SettingName> {
         self.inner.get_name()
     }
-    /// <p>The Amazon Resource Name (ARN) of the principal. It can be an user, role, or the root user. If you specify the root user, it disables the account setting for all users, roles, and the root user of the account unless a user or role explicitly overrides these settings. If this field is omitted, the setting is changed only for the authenticated user.</p>
+    /// <p>The Amazon Resource Name (ARN) of the principal. It can be a user, role, or the root user. If you specify the root user, it disables the account setting for all users, roles, and the root user of the account unless a user or role explicitly overrides these settings. If this field is omitted, the setting is changed only for the authenticated user.</p>
+    /// <p>In order to use this parameter, you must be the root user, or the principal.</p>
     pub fn principal_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.principal_arn(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the principal. It can be an user, role, or the root user. If you specify the root user, it disables the account setting for all users, roles, and the root user of the account unless a user or role explicitly overrides these settings. If this field is omitted, the setting is changed only for the authenticated user.</p>
+    /// <p>The Amazon Resource Name (ARN) of the principal. It can be a user, role, or the root user. If you specify the root user, it disables the account setting for all users, roles, and the root user of the account unless a user or role explicitly overrides these settings. If this field is omitted, the setting is changed only for the authenticated user.</p>
+    /// <p>In order to use this parameter, you must be the root user, or the principal.</p>
     pub fn set_principal_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_principal_arn(input);
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the principal. It can be an user, role, or the root user. If you specify the root user, it disables the account setting for all users, roles, and the root user of the account unless a user or role explicitly overrides these settings. If this field is omitted, the setting is changed only for the authenticated user.</p>
+    /// <p>The Amazon Resource Name (ARN) of the principal. It can be a user, role, or the root user. If you specify the root user, it disables the account setting for all users, roles, and the root user of the account unless a user or role explicitly overrides these settings. If this field is omitted, the setting is changed only for the authenticated user.</p>
+    /// <p>In order to use this parameter, you must be the root user, or the principal.</p>
     pub fn get_principal_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_principal_arn()
     }

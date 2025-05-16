@@ -59,14 +59,14 @@ pub(crate) struct Handle {
 /// # Using the `Client`
 ///
 /// A client has a function for every operation that can be performed by the service.
-/// For example, the [`DeleteServiceQuotaIncreaseRequestFromTemplate`](crate::operation::delete_service_quota_increase_request_from_template) operation has
-/// a [`Client::delete_service_quota_increase_request_from_template`], function which returns a builder for that operation.
+/// For example, the [`CreateSupportCase`](crate::operation::create_support_case) operation has
+/// a [`Client::create_support_case`], function which returns a builder for that operation.
 /// The fluent builder ultimately has a `send()` function that returns an async future that
 /// returns a result, as illustrated below:
 ///
 /// ```rust,ignore
-/// let result = client.delete_service_quota_increase_request_from_template()
-///     .service_code("example")
+/// let result = client.create_support_case()
+///     .request_id("example")
 ///     .send()
 ///     .await;
 /// ```
@@ -137,6 +137,8 @@ impl Client {
 }
 
 mod associate_service_quota_template;
+
+mod create_support_case;
 
 /// Operation customization and supporting types.
 ///

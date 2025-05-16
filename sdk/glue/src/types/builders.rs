@@ -233,7 +233,11 @@ pub use crate::types::_apply_mapping::ApplyMappingBuilder;
 
 pub use crate::types::_mapping::MappingBuilder;
 
+pub use crate::types::_s3_iceberg_direct_target::S3IcebergDirectTargetBuilder;
+
 pub use crate::types::_s3_direct_target::S3DirectTargetBuilder;
+
+pub use crate::types::_s3_hyper_direct_target::S3HyperDirectTargetBuilder;
 
 pub use crate::types::_s3_glue_parquet_target::S3GlueParquetTargetBuilder;
 
@@ -256,6 +260,8 @@ pub use crate::types::_relational_catalog_source::RelationalCatalogSourceBuilder
 pub use crate::types::_s3_parquet_source::S3ParquetSourceBuilder;
 
 pub use crate::types::_s3_json_source::S3JsonSourceBuilder;
+
+pub use crate::types::_s3_excel_source::S3ExcelSourceBuilder;
 
 pub use crate::types::_s3_csv_source::S3CsvSourceBuilder;
 

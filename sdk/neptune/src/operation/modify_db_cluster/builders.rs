@@ -548,12 +548,10 @@ impl ModifyDBClusterFluentBuilder {
     /// <p>Valid Values:</p>
     /// <ul>
     /// <li>
-    /// <p><code>standard | iopt1</code></p></li>
-    /// </ul>
-    /// <p>Default:</p>
-    /// <ul>
+    /// <p><b> <code>standard</code> </b> &nbsp; – &nbsp; ( <i>the default</i> ) Configures cost-effective database storage for applications with moderate to small I/O usage.</p></li>
     /// <li>
-    /// <p><code>standard</code></p></li>
+    /// <p><b> <code>iopt1</code> </b> &nbsp; – &nbsp; Enables <a href="https://docs.aws.amazon.com/neptune/latest/userguide/storage-types.html#provisioned-iops-storage">I/O-Optimized storage</a> that's designed to meet the needs of I/O-intensive graph workloads that require predictable pricing with low I/O latency and consistent I/O throughput.</p>
+    /// <p>Neptune I/O-Optimized storage is only available starting with engine release 1.3.0.0.</p></li>
     /// </ul>
     pub fn storage_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.storage_type(input.into());
@@ -563,12 +561,10 @@ impl ModifyDBClusterFluentBuilder {
     /// <p>Valid Values:</p>
     /// <ul>
     /// <li>
-    /// <p><code>standard | iopt1</code></p></li>
-    /// </ul>
-    /// <p>Default:</p>
-    /// <ul>
+    /// <p><b> <code>standard</code> </b> &nbsp; – &nbsp; ( <i>the default</i> ) Configures cost-effective database storage for applications with moderate to small I/O usage.</p></li>
     /// <li>
-    /// <p><code>standard</code></p></li>
+    /// <p><b> <code>iopt1</code> </b> &nbsp; – &nbsp; Enables <a href="https://docs.aws.amazon.com/neptune/latest/userguide/storage-types.html#provisioned-iops-storage">I/O-Optimized storage</a> that's designed to meet the needs of I/O-intensive graph workloads that require predictable pricing with low I/O latency and consistent I/O throughput.</p>
+    /// <p>Neptune I/O-Optimized storage is only available starting with engine release 1.3.0.0.</p></li>
     /// </ul>
     pub fn set_storage_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_storage_type(input);
@@ -578,12 +574,10 @@ impl ModifyDBClusterFluentBuilder {
     /// <p>Valid Values:</p>
     /// <ul>
     /// <li>
-    /// <p><code>standard | iopt1</code></p></li>
-    /// </ul>
-    /// <p>Default:</p>
-    /// <ul>
+    /// <p><b> <code>standard</code> </b> &nbsp; – &nbsp; ( <i>the default</i> ) Configures cost-effective database storage for applications with moderate to small I/O usage.</p></li>
     /// <li>
-    /// <p><code>standard</code></p></li>
+    /// <p><b> <code>iopt1</code> </b> &nbsp; – &nbsp; Enables <a href="https://docs.aws.amazon.com/neptune/latest/userguide/storage-types.html#provisioned-iops-storage">I/O-Optimized storage</a> that's designed to meet the needs of I/O-intensive graph workloads that require predictable pricing with low I/O latency and consistent I/O throughput.</p>
+    /// <p>Neptune I/O-Optimized storage is only available starting with engine release 1.3.0.0.</p></li>
     /// </ul>
     pub fn get_storage_type(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_storage_type()

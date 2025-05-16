@@ -22,9 +22,14 @@ impl crate::operation::stop_service_deployment::builders::StopServiceDeploymentI
 }
 /// Fluent builder constructing a request to `StopServiceDeployment`.
 ///
-/// <p>Stops an ongoing service deployment.</p><note>
-/// <p>StopServiceDeployment isn't currently supported.</p>
-/// </note>
+/// <p>Stops an ongoing service deployment.</p>
+/// <p>The following stop types are avaiable:</p>
+/// <ul>
+/// <li>
+/// <p>ROLLBACK - This option rolls back the service deployment to the previous service revision.</p>
+/// <p>You can use this option even if you didn't configure the service deployment for the rollback option.</p></li>
+/// </ul>
+/// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/stop-service-deployment.html">Stopping Amazon ECS service deployments</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StopServiceDeploymentFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -125,19 +130,19 @@ impl StopServiceDeploymentFluentBuilder {
         self.inner.get_service_deployment_arn()
     }
     /// <p>How you want Amazon ECS to stop the service.</p>
-    /// <p>The ROLLBACK and ABORT stopType aren't supported.</p>
+    /// <p>The valid values are <code>ROLLBACK</code>.</p>
     pub fn stop_type(mut self, input: crate::types::StopServiceDeploymentStopType) -> Self {
         self.inner = self.inner.stop_type(input);
         self
     }
     /// <p>How you want Amazon ECS to stop the service.</p>
-    /// <p>The ROLLBACK and ABORT stopType aren't supported.</p>
+    /// <p>The valid values are <code>ROLLBACK</code>.</p>
     pub fn set_stop_type(mut self, input: ::std::option::Option<crate::types::StopServiceDeploymentStopType>) -> Self {
         self.inner = self.inner.set_stop_type(input);
         self
     }
     /// <p>How you want Amazon ECS to stop the service.</p>
-    /// <p>The ROLLBACK and ABORT stopType aren't supported.</p>
+    /// <p>The valid values are <code>ROLLBACK</code>.</p>
     pub fn get_stop_type(&self) -> &::std::option::Option<crate::types::StopServiceDeploymentStopType> {
         self.inner.get_stop_type()
     }

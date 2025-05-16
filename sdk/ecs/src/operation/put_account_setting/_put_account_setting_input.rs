@@ -42,7 +42,8 @@ pub struct PutAccountSettingInput {
     /// <p><code>14</code> - Amazon Web Services sends the notification, and waits 14 calendar days to retire the tasks.</p></li>
     /// </ul>
     pub value: ::std::option::Option<::std::string::String>,
-    /// <p>The ARN of the principal, which can be a user, role, or the root user. If you specify the root user, it modifies the account setting for all users, roles, and the root user of the account unless a user or role explicitly overrides these settings. If this field is omitted, the setting is changed only for the authenticated user.</p><note>
+    /// <p>The ARN of the principal, which can be a user, role, or the root user. If you specify the root user, it modifies the account setting for all users, roles, and the root user of the account unless a user or role explicitly overrides these settings. If this field is omitted, the setting is changed only for the authenticated user.</p>
+    /// <p>In order to use this parameter, you must be the root user, or the principal.</p><note>
     /// <p>You must use the root user when you set the Fargate wait time (<code>fargateTaskRetirementWaitPeriod</code>).</p>
     /// <p>Federated users assume the account setting of the root user and can't have explicit account settings set for them.</p>
     /// </note>
@@ -92,7 +93,8 @@ impl PutAccountSettingInput {
     pub fn value(&self) -> ::std::option::Option<&str> {
         self.value.as_deref()
     }
-    /// <p>The ARN of the principal, which can be a user, role, or the root user. If you specify the root user, it modifies the account setting for all users, roles, and the root user of the account unless a user or role explicitly overrides these settings. If this field is omitted, the setting is changed only for the authenticated user.</p><note>
+    /// <p>The ARN of the principal, which can be a user, role, or the root user. If you specify the root user, it modifies the account setting for all users, roles, and the root user of the account unless a user or role explicitly overrides these settings. If this field is omitted, the setting is changed only for the authenticated user.</p>
+    /// <p>In order to use this parameter, you must be the root user, or the principal.</p><note>
     /// <p>You must use the root user when you set the Fargate wait time (<code>fargateTaskRetirementWaitPeriod</code>).</p>
     /// <p>Federated users assume the account setting of the root user and can't have explicit account settings set for them.</p>
     /// </note>
@@ -251,7 +253,8 @@ impl PutAccountSettingInputBuilder {
     pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
         &self.value
     }
-    /// <p>The ARN of the principal, which can be a user, role, or the root user. If you specify the root user, it modifies the account setting for all users, roles, and the root user of the account unless a user or role explicitly overrides these settings. If this field is omitted, the setting is changed only for the authenticated user.</p><note>
+    /// <p>The ARN of the principal, which can be a user, role, or the root user. If you specify the root user, it modifies the account setting for all users, roles, and the root user of the account unless a user or role explicitly overrides these settings. If this field is omitted, the setting is changed only for the authenticated user.</p>
+    /// <p>In order to use this parameter, you must be the root user, or the principal.</p><note>
     /// <p>You must use the root user when you set the Fargate wait time (<code>fargateTaskRetirementWaitPeriod</code>).</p>
     /// <p>Federated users assume the account setting of the root user and can't have explicit account settings set for them.</p>
     /// </note>
@@ -259,7 +262,8 @@ impl PutAccountSettingInputBuilder {
         self.principal_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ARN of the principal, which can be a user, role, or the root user. If you specify the root user, it modifies the account setting for all users, roles, and the root user of the account unless a user or role explicitly overrides these settings. If this field is omitted, the setting is changed only for the authenticated user.</p><note>
+    /// <p>The ARN of the principal, which can be a user, role, or the root user. If you specify the root user, it modifies the account setting for all users, roles, and the root user of the account unless a user or role explicitly overrides these settings. If this field is omitted, the setting is changed only for the authenticated user.</p>
+    /// <p>In order to use this parameter, you must be the root user, or the principal.</p><note>
     /// <p>You must use the root user when you set the Fargate wait time (<code>fargateTaskRetirementWaitPeriod</code>).</p>
     /// <p>Federated users assume the account setting of the root user and can't have explicit account settings set for them.</p>
     /// </note>
@@ -267,7 +271,8 @@ impl PutAccountSettingInputBuilder {
         self.principal_arn = input;
         self
     }
-    /// <p>The ARN of the principal, which can be a user, role, or the root user. If you specify the root user, it modifies the account setting for all users, roles, and the root user of the account unless a user or role explicitly overrides these settings. If this field is omitted, the setting is changed only for the authenticated user.</p><note>
+    /// <p>The ARN of the principal, which can be a user, role, or the root user. If you specify the root user, it modifies the account setting for all users, roles, and the root user of the account unless a user or role explicitly overrides these settings. If this field is omitted, the setting is changed only for the authenticated user.</p>
+    /// <p>In order to use this parameter, you must be the root user, or the principal.</p><note>
     /// <p>You must use the root user when you set the Fargate wait time (<code>fargateTaskRetirementWaitPeriod</code>).</p>
     /// <p>Federated users assume the account setting of the root user and can't have explicit account settings set for them.</p>
     /// </note>

@@ -36,11 +36,14 @@ pub fn ser_s3_glue_parquet_target(
     if let Some(var_8) = &input.compression {
         object.key("Compression").string(var_8.as_str());
     }
-    if let Some(var_9) = &input.schema_change_policy {
+    if let Some(var_9) = &input.number_target_partitions {
+        object.key("NumberTargetPartitions").string(var_9.as_str());
+    }
+    if let Some(var_10) = &input.schema_change_policy {
         #[allow(unused_mut)]
-        let mut object_10 = object.key("SchemaChangePolicy").start_object();
-        crate::protocol_serde::shape_direct_schema_change_policy::ser_direct_schema_change_policy(&mut object_10, var_9)?;
-        object_10.finish();
+        let mut object_11 = object.key("SchemaChangePolicy").start_object();
+        crate::protocol_serde::shape_direct_schema_change_policy::ser_direct_schema_change_policy(&mut object_11, var_10)?;
+        object_11.finish();
     }
     Ok(())
 }
@@ -85,6 +88,13 @@ where
                             builder = builder.set_compression(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| crate::types::ParquetCompressionType::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "NumberTargetPartitions" => {
+                            builder = builder.set_number_target_partitions(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
                             );
                         }

@@ -14,6 +14,8 @@ pub struct S3DeltaDirectTarget {
     pub path: ::std::string::String,
     /// <p>Specifies how the data is compressed. This is generally not necessary if the data has a standard file extension. Possible values are <code>"gzip"</code> and <code>"bzip"</code>).</p>
     pub compression: crate::types::DeltaTargetCompressionType,
+    /// <p>Specifies the number of target partitions for distributing Delta Lake dataset files across Amazon S3.</p>
+    pub number_target_partitions: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the data output format for the target.</p>
     pub format: crate::types::TargetFormat,
     /// <p>Specifies additional connection options for the connector.</p>
@@ -47,6 +49,10 @@ impl S3DeltaDirectTarget {
     pub fn compression(&self) -> &crate::types::DeltaTargetCompressionType {
         &self.compression
     }
+    /// <p>Specifies the number of target partitions for distributing Delta Lake dataset files across Amazon S3.</p>
+    pub fn number_target_partitions(&self) -> ::std::option::Option<&str> {
+        self.number_target_partitions.as_deref()
+    }
     /// <p>Specifies the data output format for the target.</p>
     pub fn format(&self) -> &crate::types::TargetFormat {
         &self.format
@@ -76,6 +82,7 @@ pub struct S3DeltaDirectTargetBuilder {
     pub(crate) partition_keys: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<::std::string::String>>>,
     pub(crate) path: ::std::option::Option<::std::string::String>,
     pub(crate) compression: ::std::option::Option<crate::types::DeltaTargetCompressionType>,
+    pub(crate) number_target_partitions: ::std::option::Option<::std::string::String>,
     pub(crate) format: ::std::option::Option<crate::types::TargetFormat>,
     pub(crate) additional_options: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) schema_change_policy: ::std::option::Option<crate::types::DirectSchemaChangePolicy>,
@@ -165,6 +172,20 @@ impl S3DeltaDirectTargetBuilder {
     /// <p>Specifies how the data is compressed. This is generally not necessary if the data has a standard file extension. Possible values are <code>"gzip"</code> and <code>"bzip"</code>).</p>
     pub fn get_compression(&self) -> &::std::option::Option<crate::types::DeltaTargetCompressionType> {
         &self.compression
+    }
+    /// <p>Specifies the number of target partitions for distributing Delta Lake dataset files across Amazon S3.</p>
+    pub fn number_target_partitions(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.number_target_partitions = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Specifies the number of target partitions for distributing Delta Lake dataset files across Amazon S3.</p>
+    pub fn set_number_target_partitions(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.number_target_partitions = input;
+        self
+    }
+    /// <p>Specifies the number of target partitions for distributing Delta Lake dataset files across Amazon S3.</p>
+    pub fn get_number_target_partitions(&self) -> &::std::option::Option<::std::string::String> {
+        &self.number_target_partitions
     }
     /// <p>Specifies the data output format for the target.</p>
     /// This field is required.
@@ -256,6 +277,7 @@ impl S3DeltaDirectTargetBuilder {
                     "compression was not specified but it is required when building S3DeltaDirectTarget",
                 )
             })?,
+            number_target_partitions: self.number_target_partitions,
             format: self.format.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "format",

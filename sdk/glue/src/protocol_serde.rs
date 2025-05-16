@@ -1875,6 +1875,8 @@ pub(crate) mod shape_s3_direct_target;
 
 pub(crate) mod shape_s3_encryption;
 
+pub(crate) mod shape_s3_excel_source;
+
 pub(crate) mod shape_s3_glue_parquet_target;
 
 pub(crate) mod shape_s3_hudi_catalog_target;
@@ -1882,6 +1884,10 @@ pub(crate) mod shape_s3_hudi_catalog_target;
 pub(crate) mod shape_s3_hudi_direct_target;
 
 pub(crate) mod shape_s3_hudi_source;
+
+pub(crate) mod shape_s3_hyper_direct_target;
+
+pub(crate) mod shape_s3_iceberg_direct_target;
 
 pub(crate) mod shape_s3_json_source;
 

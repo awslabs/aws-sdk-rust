@@ -242,7 +242,8 @@ impl PutAccountSettingFluentBuilder {
     pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_value()
     }
-    /// <p>The ARN of the principal, which can be a user, role, or the root user. If you specify the root user, it modifies the account setting for all users, roles, and the root user of the account unless a user or role explicitly overrides these settings. If this field is omitted, the setting is changed only for the authenticated user.</p><note>
+    /// <p>The ARN of the principal, which can be a user, role, or the root user. If you specify the root user, it modifies the account setting for all users, roles, and the root user of the account unless a user or role explicitly overrides these settings. If this field is omitted, the setting is changed only for the authenticated user.</p>
+    /// <p>In order to use this parameter, you must be the root user, or the principal.</p><note>
     /// <p>You must use the root user when you set the Fargate wait time (<code>fargateTaskRetirementWaitPeriod</code>).</p>
     /// <p>Federated users assume the account setting of the root user and can't have explicit account settings set for them.</p>
     /// </note>
@@ -250,7 +251,8 @@ impl PutAccountSettingFluentBuilder {
         self.inner = self.inner.principal_arn(input.into());
         self
     }
-    /// <p>The ARN of the principal, which can be a user, role, or the root user. If you specify the root user, it modifies the account setting for all users, roles, and the root user of the account unless a user or role explicitly overrides these settings. If this field is omitted, the setting is changed only for the authenticated user.</p><note>
+    /// <p>The ARN of the principal, which can be a user, role, or the root user. If you specify the root user, it modifies the account setting for all users, roles, and the root user of the account unless a user or role explicitly overrides these settings. If this field is omitted, the setting is changed only for the authenticated user.</p>
+    /// <p>In order to use this parameter, you must be the root user, or the principal.</p><note>
     /// <p>You must use the root user when you set the Fargate wait time (<code>fargateTaskRetirementWaitPeriod</code>).</p>
     /// <p>Federated users assume the account setting of the root user and can't have explicit account settings set for them.</p>
     /// </note>
@@ -258,7 +260,8 @@ impl PutAccountSettingFluentBuilder {
         self.inner = self.inner.set_principal_arn(input);
         self
     }
-    /// <p>The ARN of the principal, which can be a user, role, or the root user. If you specify the root user, it modifies the account setting for all users, roles, and the root user of the account unless a user or role explicitly overrides these settings. If this field is omitted, the setting is changed only for the authenticated user.</p><note>
+    /// <p>The ARN of the principal, which can be a user, role, or the root user. If you specify the root user, it modifies the account setting for all users, roles, and the root user of the account unless a user or role explicitly overrides these settings. If this field is omitted, the setting is changed only for the authenticated user.</p>
+    /// <p>In order to use this parameter, you must be the root user, or the principal.</p><note>
     /// <p>You must use the root user when you set the Fargate wait time (<code>fargateTaskRetirementWaitPeriod</code>).</p>
     /// <p>Federated users assume the account setting of the root user and can't have explicit account settings set for them.</p>
     /// </note>

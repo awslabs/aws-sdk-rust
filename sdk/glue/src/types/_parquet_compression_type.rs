@@ -12,7 +12,9 @@
 /// ```text
 /// # let parquetcompressiontype = unimplemented!();
 /// match parquetcompressiontype {
+///     ParquetCompressionType::Brotli => { /* ... */ },
 ///     ParquetCompressionType::Gzip => { /* ... */ },
+///     ParquetCompressionType::Lz4 => { /* ... */ },
 ///     ParquetCompressionType::Lzo => { /* ... */ },
 ///     ParquetCompressionType::None => { /* ... */ },
 ///     ParquetCompressionType::Snappy => { /* ... */ },
@@ -46,7 +48,11 @@
 )]
 pub enum ParquetCompressionType {
     #[allow(missing_docs)] // documentation missing in model
+    Brotli,
+    #[allow(missing_docs)] // documentation missing in model
     Gzip,
+    #[allow(missing_docs)] // documentation missing in model
+    Lz4,
     #[allow(missing_docs)] // documentation missing in model
     Lzo,
     #[allow(missing_docs)] // documentation missing in model
@@ -62,7 +68,9 @@ pub enum ParquetCompressionType {
 impl ::std::convert::From<&str> for ParquetCompressionType {
     fn from(s: &str) -> Self {
         match s {
+            "brotli" => ParquetCompressionType::Brotli,
             "gzip" => ParquetCompressionType::Gzip,
+            "lz4" => ParquetCompressionType::Lz4,
             "lzo" => ParquetCompressionType::Lzo,
             "none" => ParquetCompressionType::None,
             "snappy" => ParquetCompressionType::Snappy,
@@ -82,7 +90,9 @@ impl ParquetCompressionType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            ParquetCompressionType::Brotli => "brotli",
             ParquetCompressionType::Gzip => "gzip",
+            ParquetCompressionType::Lz4 => "lz4",
             ParquetCompressionType::Lzo => "lzo",
             ParquetCompressionType::None => "none",
             ParquetCompressionType::Snappy => "snappy",
@@ -92,7 +102,7 @@ impl ParquetCompressionType {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["gzip", "lzo", "none", "snappy", "uncompressed"]
+        &["brotli", "gzip", "lz4", "lzo", "none", "snappy", "uncompressed"]
     }
 }
 impl ::std::convert::AsRef<str> for ParquetCompressionType {
@@ -115,7 +125,9 @@ impl ParquetCompressionType {
 impl ::std::fmt::Display for ParquetCompressionType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            ParquetCompressionType::Brotli => write!(f, "brotli"),
             ParquetCompressionType::Gzip => write!(f, "gzip"),
+            ParquetCompressionType::Lz4 => write!(f, "lz4"),
             ParquetCompressionType::Lzo => write!(f, "lzo"),
             ParquetCompressionType::None => write!(f, "none"),
             ParquetCompressionType::Snappy => write!(f, "snappy"),

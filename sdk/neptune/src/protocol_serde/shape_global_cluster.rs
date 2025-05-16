@@ -125,6 +125,16 @@ pub fn de_global_cluster(
                 builder = builder.set_global_cluster_members(var_9);
             }
             ,
+            s if s.matches("FailoverState") /* FailoverState com.amazonaws.neptune#GlobalCluster$FailoverState */ =>  {
+                let var_10 =
+                    Some(
+                        crate::protocol_serde::shape_failover_state::de_failover_state(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_failover_state(var_10);
+            }
+            ,
             _ => {}
         }
     }

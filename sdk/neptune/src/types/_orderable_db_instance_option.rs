@@ -23,7 +23,7 @@ pub struct OrderableDbInstanceOption {
     pub vpc: ::std::option::Option<bool>,
     /// <p>Indicates whether a DB instance supports encrypted storage.</p>
     pub supports_storage_encryption: ::std::option::Option<bool>,
-    /// <p>Indicates the storage type for a DB instance.</p>
+    /// <p>Not applicable. In Neptune the storage type is managed at the DB Cluster level.</p>
     pub storage_type: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether a DB instance supports provisioned IOPS.</p>
     pub supports_iops: ::std::option::Option<bool>,
@@ -87,7 +87,7 @@ impl OrderableDbInstanceOption {
     pub fn supports_storage_encryption(&self) -> ::std::option::Option<bool> {
         self.supports_storage_encryption
     }
-    /// <p>Indicates the storage type for a DB instance.</p>
+    /// <p>Not applicable. In Neptune the storage type is managed at the DB Cluster level.</p>
     pub fn storage_type(&self) -> ::std::option::Option<&str> {
         self.storage_type.as_deref()
     }
@@ -302,17 +302,17 @@ impl OrderableDbInstanceOptionBuilder {
     pub fn get_supports_storage_encryption(&self) -> &::std::option::Option<bool> {
         &self.supports_storage_encryption
     }
-    /// <p>Indicates the storage type for a DB instance.</p>
+    /// <p>Not applicable. In Neptune the storage type is managed at the DB Cluster level.</p>
     pub fn storage_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.storage_type = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Indicates the storage type for a DB instance.</p>
+    /// <p>Not applicable. In Neptune the storage type is managed at the DB Cluster level.</p>
     pub fn set_storage_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.storage_type = input;
         self
     }
-    /// <p>Indicates the storage type for a DB instance.</p>
+    /// <p>Not applicable. In Neptune the storage type is managed at the DB Cluster level.</p>
     pub fn get_storage_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.storage_type
     }

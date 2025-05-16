@@ -36,24 +36,27 @@ pub fn ser_s3_delta_direct_target(
     {
         object.key("Compression").string(input.compression.as_str());
     }
+    if let Some(var_8) = &input.number_target_partitions {
+        object.key("NumberTargetPartitions").string(var_8.as_str());
+    }
     {
         object.key("Format").string(input.format.as_str());
     }
-    if let Some(var_8) = &input.additional_options {
+    if let Some(var_9) = &input.additional_options {
         #[allow(unused_mut)]
-        let mut object_9 = object.key("AdditionalOptions").start_object();
-        for (key_10, value_11) in var_8 {
+        let mut object_10 = object.key("AdditionalOptions").start_object();
+        for (key_11, value_12) in var_9 {
             {
-                object_9.key(key_10.as_str()).string(value_11.as_str());
+                object_10.key(key_11.as_str()).string(value_12.as_str());
             }
         }
-        object_9.finish();
+        object_10.finish();
     }
-    if let Some(var_12) = &input.schema_change_policy {
+    if let Some(var_13) = &input.schema_change_policy {
         #[allow(unused_mut)]
-        let mut object_13 = object.key("SchemaChangePolicy").start_object();
-        crate::protocol_serde::shape_direct_schema_change_policy::ser_direct_schema_change_policy(&mut object_13, var_12)?;
-        object_13.finish();
+        let mut object_14 = object.key("SchemaChangePolicy").start_object();
+        crate::protocol_serde::shape_direct_schema_change_policy::ser_direct_schema_change_policy(&mut object_14, var_13)?;
+        object_14.finish();
     }
     Ok(())
 }
@@ -98,6 +101,13 @@ where
                             builder = builder.set_compression(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| crate::types::DeltaTargetCompressionType::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "NumberTargetPartitions" => {
+                            builder = builder.set_number_target_partitions(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
                             );
                         }

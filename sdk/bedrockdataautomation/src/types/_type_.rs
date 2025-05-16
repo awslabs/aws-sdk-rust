@@ -15,6 +15,7 @@
 ///     Type::Audio => { /* ... */ },
 ///     Type::Document => { /* ... */ },
 ///     Type::Image => { /* ... */ },
+///     Type::Video => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -49,6 +50,8 @@ pub enum Type {
     Document,
     #[allow(missing_docs)] // documentation missing in model
     Image,
+    #[allow(missing_docs)] // documentation missing in model
+    Video,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -59,6 +62,7 @@ impl ::std::convert::From<&str> for Type {
             "AUDIO" => Type::Audio,
             "DOCUMENT" => Type::Document,
             "IMAGE" => Type::Image,
+            "VIDEO" => Type::Video,
             other => Type::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -77,12 +81,13 @@ impl Type {
             Type::Audio => "AUDIO",
             Type::Document => "DOCUMENT",
             Type::Image => "IMAGE",
+            Type::Video => "VIDEO",
             Type::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["AUDIO", "DOCUMENT", "IMAGE"]
+        &["AUDIO", "DOCUMENT", "IMAGE", "VIDEO"]
     }
 }
 impl ::std::convert::AsRef<str> for Type {
@@ -108,6 +113,7 @@ impl ::std::fmt::Display for Type {
             Type::Audio => write!(f, "AUDIO"),
             Type::Document => write!(f, "DOCUMENT"),
             Type::Image => write!(f, "IMAGE"),
+            Type::Video => write!(f, "VIDEO"),
             Type::Unknown(value) => write!(f, "{}", value),
         }
     }

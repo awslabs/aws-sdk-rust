@@ -161,6 +161,41 @@ impl From<crate::operation::associate_service_quota_template::AssociateServiceQu
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_support_case::CreateSupportCaseError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_support_case::CreateSupportCaseError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_support_case::CreateSupportCaseError> for Error {
+    fn from(err: crate::operation::create_support_case::CreateSupportCaseError) -> Self {
+        match err {
+            crate::operation::create_support_case::CreateSupportCaseError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::create_support_case::CreateSupportCaseError::DependencyAccessDeniedException(inner) => {
+                Error::DependencyAccessDeniedException(inner)
+            }
+            crate::operation::create_support_case::CreateSupportCaseError::IllegalArgumentException(inner) => Error::IllegalArgumentException(inner),
+            crate::operation::create_support_case::CreateSupportCaseError::InvalidResourceStateException(inner) => {
+                Error::InvalidResourceStateException(inner)
+            }
+            crate::operation::create_support_case::CreateSupportCaseError::NoSuchResourceException(inner) => Error::NoSuchResourceException(inner),
+            crate::operation::create_support_case::CreateSupportCaseError::ResourceAlreadyExistsException(inner) => {
+                Error::ResourceAlreadyExistsException(inner)
+            }
+            crate::operation::create_support_case::CreateSupportCaseError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::create_support_case::CreateSupportCaseError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::create_support_case::CreateSupportCaseError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R>
     From<
         ::aws_smithy_runtime_api::client::result::SdkError<

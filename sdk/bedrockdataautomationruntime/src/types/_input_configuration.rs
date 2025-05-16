@@ -6,12 +6,18 @@
 pub struct InputConfiguration {
     /// S3 uri.
     pub s3_uri: ::std::string::String,
+    /// Asset processing configuration
+    pub asset_processing_configuration: ::std::option::Option<crate::types::AssetProcessingConfiguration>,
 }
 impl InputConfiguration {
     /// S3 uri.
     pub fn s3_uri(&self) -> &str {
         use std::ops::Deref;
         self.s3_uri.deref()
+    }
+    /// Asset processing configuration
+    pub fn asset_processing_configuration(&self) -> ::std::option::Option<&crate::types::AssetProcessingConfiguration> {
+        self.asset_processing_configuration.as_ref()
     }
 }
 impl InputConfiguration {
@@ -26,6 +32,7 @@ impl InputConfiguration {
 #[non_exhaustive]
 pub struct InputConfigurationBuilder {
     pub(crate) s3_uri: ::std::option::Option<::std::string::String>,
+    pub(crate) asset_processing_configuration: ::std::option::Option<crate::types::AssetProcessingConfiguration>,
 }
 impl InputConfigurationBuilder {
     /// S3 uri.
@@ -43,6 +50,20 @@ impl InputConfigurationBuilder {
     pub fn get_s3_uri(&self) -> &::std::option::Option<::std::string::String> {
         &self.s3_uri
     }
+    /// Asset processing configuration
+    pub fn asset_processing_configuration(mut self, input: crate::types::AssetProcessingConfiguration) -> Self {
+        self.asset_processing_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// Asset processing configuration
+    pub fn set_asset_processing_configuration(mut self, input: ::std::option::Option<crate::types::AssetProcessingConfiguration>) -> Self {
+        self.asset_processing_configuration = input;
+        self
+    }
+    /// Asset processing configuration
+    pub fn get_asset_processing_configuration(&self) -> &::std::option::Option<crate::types::AssetProcessingConfiguration> {
+        &self.asset_processing_configuration
+    }
     /// Consumes the builder and constructs a [`InputConfiguration`](crate::types::InputConfiguration).
     /// This method will fail if any of the following fields are not set:
     /// - [`s3_uri`](crate::types::builders::InputConfigurationBuilder::s3_uri)
@@ -54,6 +75,7 @@ impl InputConfigurationBuilder {
                     "s3_uri was not specified but it is required when building InputConfiguration",
                 )
             })?,
+            asset_processing_configuration: self.asset_processing_configuration,
         })
     }
 }
