@@ -100,9 +100,6 @@ package = "http-body"
 [dependencies.lru]
 version = "0.12.2"
 
-[dependencies.once_cell]
-version = "1.16"
-
 [dependencies.percent-encoding]
 version = "2.0.0"
 

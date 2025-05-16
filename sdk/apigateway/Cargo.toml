@@ -65,9 +65,6 @@ version = "0.2.9"
 version = "1"
 package = "http"
 
-[dependencies.once_cell]
-version = "1.16"
-
 [dependencies.regex-lite]
 version = "0.1.5"
 
