@@ -101,6 +101,13 @@ impl<'a> SignatureValues<'a> {
         }
     }
 
+    #[allow(clippy::result_large_err)]
+    /*
+       QueryParams(QueryParamValues<'a>),
+       --------------------------------- the largest variant contains at least 192 bytes
+
+       Suppressing the Clippy warning, as the variant above is always returned wrapped in `Ok`.
+    */
     pub(crate) fn into_query_params(self) -> Result<QueryParamValues<'a>, Self> {
         match self {
             SignatureValues::QueryParams(values) => Ok(values),

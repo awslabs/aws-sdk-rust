@@ -18,7 +18,7 @@ tracing-fluent-assertions = "0.3.0"
 [dev-dependencies.aws-config]
 path = "../../sdk/aws-config"
 features = ["test-util", "behavior-version-latest"]
-version = "1.6.2"
+version = "1.6.3"
 
 [dev-dependencies.aws-sdk-dynamodb]
 path = "../../sdk/dynamodb"

@@ -123,9 +123,8 @@ impl ProvideCredentials for CredentialsProviderChain {
 
     fn fallback_on_interrupt(&self) -> Option<Credentials> {
         for (_, provider) in &self.providers {
-            match provider.fallback_on_interrupt() {
-                creds @ Some(_) => return creds,
-                None => {}
+            if let creds @ Some(_) = provider.fallback_on_interrupt() {
+                return creds;
             }
         }
         None
