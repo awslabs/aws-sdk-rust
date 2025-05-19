@@ -89,15 +89,6 @@ pub(crate) fn create_cluster_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn create_multi_region_clusters_output_output_correct_errors(
-    mut builder: crate::operation::create_multi_region_clusters::builders::CreateMultiRegionClustersOutputBuilder,
-) -> crate::operation::create_multi_region_clusters::builders::CreateMultiRegionClustersOutputBuilder {
-    if builder.linked_cluster_arns.is_none() {
-        builder.linked_cluster_arns = Some(Default::default())
-    }
-    builder
-}
-
 pub(crate) fn resource_not_found_exception_correct_errors(
     mut builder: crate::types::error::builders::ResourceNotFoundExceptionBuilder,
 ) -> crate::types::error::builders::ResourceNotFoundExceptionBuilder {
@@ -127,9 +118,6 @@ pub(crate) fn delete_cluster_output_output_correct_errors(
     }
     if builder.creation_time.is_none() {
         builder.creation_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
-    }
-    if builder.deletion_protection_enabled.is_none() {
-        builder.deletion_protection_enabled = Some(Default::default())
     }
     builder
 }
@@ -187,9 +175,6 @@ pub(crate) fn update_cluster_output_output_correct_errors(
     }
     if builder.creation_time.is_none() {
         builder.creation_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
-    }
-    if builder.deletion_protection_enabled.is_none() {
-        builder.deletion_protection_enabled = Some(Default::default())
     }
     builder
 }

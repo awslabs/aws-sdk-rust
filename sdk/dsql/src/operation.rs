@@ -4,14 +4,8 @@ pub use ::aws_types::request_id::RequestId;
 /// Types for the `CreateCluster` operation.
 pub mod create_cluster;
 
-/// Types for the `CreateMultiRegionClusters` operation.
-pub mod create_multi_region_clusters;
-
 /// Types for the `DeleteCluster` operation.
 pub mod delete_cluster;
-
-/// Types for the `DeleteMultiRegionClusters` operation.
-pub mod delete_multi_region_clusters;
 
 /// Types for the `GetCluster` operation.
 pub mod get_cluster;

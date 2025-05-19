@@ -214,6 +214,9 @@ pub mod create_default_subnet;
 /// Types for the `CreateDefaultVpc` operation.
 pub mod create_default_vpc;
 
+/// Types for the `CreateDelegateMacVolumeOwnershipTask` operation.
+pub mod create_delegate_mac_volume_ownership_task;
+
 /// Types for the `CreateDhcpOptions` operation.
 pub mod create_dhcp_options;
 
@@ -285,6 +288,9 @@ pub mod create_local_gateway_virtual_interface;
 
 /// Types for the `CreateLocalGatewayVirtualInterfaceGroup` operation.
 pub mod create_local_gateway_virtual_interface_group;
+
+/// Types for the `CreateMacSystemIntegrityProtectionModificationTask` operation.
+pub mod create_mac_system_integrity_protection_modification_task;
 
 /// Types for the `CreateManagedPrefixList` operation.
 pub mod create_managed_prefix_list;
@@ -957,6 +963,9 @@ pub mod describe_locked_snapshots;
 
 /// Types for the `DescribeMacHosts` operation.
 pub mod describe_mac_hosts;
+
+/// Types for the `DescribeMacModificationTasks` operation.
+pub mod describe_mac_modification_tasks;
 
 /// Types for the `DescribeManagedPrefixLists` operation.
 pub mod describe_managed_prefix_lists;

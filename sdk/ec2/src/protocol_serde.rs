@@ -307,6 +307,10 @@ pub(crate) mod shape_create_default_vpc;
 
 pub(crate) mod shape_create_default_vpc_input;
 
+pub(crate) mod shape_create_delegate_mac_volume_ownership_task;
+
+pub(crate) mod shape_create_delegate_mac_volume_ownership_task_input;
+
 pub(crate) mod shape_create_dhcp_options;
 
 pub(crate) mod shape_create_dhcp_options_input;
@@ -402,6 +406,10 @@ pub(crate) mod shape_create_local_gateway_virtual_interface_group;
 pub(crate) mod shape_create_local_gateway_virtual_interface_group_input;
 
 pub(crate) mod shape_create_local_gateway_virtual_interface_input;
+
+pub(crate) mod shape_create_mac_system_integrity_protection_modification_task;
+
+pub(crate) mod shape_create_mac_system_integrity_protection_modification_task_input;
 
 pub(crate) mod shape_create_managed_prefix_list;
 
@@ -1298,6 +1306,10 @@ pub(crate) mod shape_describe_locked_snapshots_input;
 pub(crate) mod shape_describe_mac_hosts;
 
 pub(crate) mod shape_describe_mac_hosts_input;
+
+pub(crate) mod shape_describe_mac_modification_tasks;
+
+pub(crate) mod shape_describe_mac_modification_tasks_input;
 
 pub(crate) mod shape_describe_managed_prefix_lists;
 
@@ -2909,6 +2921,8 @@ pub(crate) mod shape_license_configuration_request;
 
 pub(crate) mod shape_load_permission_modifications;
 
+pub(crate) mod shape_mac_system_integrity_protection_configuration_request;
+
 pub(crate) mod shape_modify_transit_gateway_options;
 
 pub(crate) mod shape_modify_transit_gateway_vpc_attachment_request_options;
@@ -3478,6 +3492,10 @@ pub(crate) mod shape_local_gateway_virtual_interface_set;
 pub(crate) mod shape_locked_snapshots_info_list;
 
 pub(crate) mod shape_mac_host_list;
+
+pub(crate) mod shape_mac_modification_task;
+
+pub(crate) mod shape_mac_modification_task_list;
 
 pub(crate) mod shape_maintenance_details;
 
@@ -4234,6 +4252,8 @@ pub(crate) mod shape_local_gateway_virtual_interface_id_set;
 pub(crate) mod shape_locked_snapshots_info;
 
 pub(crate) mod shape_mac_host;
+
+pub(crate) mod shape_mac_system_integrity_protection_configuration;
 
 pub(crate) mod shape_moving_address_status;
 

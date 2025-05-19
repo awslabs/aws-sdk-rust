@@ -12,24 +12,6 @@ pub struct UpdateClusterOutput {
     pub status: crate::types::ClusterStatus,
     /// <p>The time of when the cluster was created.</p>
     pub creation_time: ::aws_smithy_types::DateTime,
-    /// <p>The Region that receives all data you write to linked clusters.</p>
-    #[deprecated(
-        note = "The witnessRegion field is deprecated in the UpdateCluster API. To check witnessRegion, use the GetCluster API instead.",
-        since = "5/13/2025"
-    )]
-    pub witness_region: ::std::option::Option<::std::string::String>,
-    /// <p>The ARNs of the clusters linked to the updated cluster. Applicable only for multi-Region clusters.</p>
-    #[deprecated(
-        note = "The linkedClusterArns field is deprecated in the UpdateCluster API. To check peer cluster, use the GetCluster API instead.",
-        since = "5/13/2025"
-    )]
-    pub linked_cluster_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>Whether deletion protection is enabled for the updated cluster.</p>
-    #[deprecated(
-        note = "The deletionProtectionEnabled field is deprecated in the UpdateCluster API. To check deletion protection status, use the GetCluster API instead.",
-        since = "5/13/2025"
-    )]
-    pub deletion_protection_enabled: bool,
     _request_id: Option<String>,
 }
 impl UpdateClusterOutput {
@@ -50,32 +32,6 @@ impl UpdateClusterOutput {
     /// <p>The time of when the cluster was created.</p>
     pub fn creation_time(&self) -> &::aws_smithy_types::DateTime {
         &self.creation_time
-    }
-    /// <p>The Region that receives all data you write to linked clusters.</p>
-    #[deprecated(
-        note = "The witnessRegion field is deprecated in the UpdateCluster API. To check witnessRegion, use the GetCluster API instead.",
-        since = "5/13/2025"
-    )]
-    pub fn witness_region(&self) -> ::std::option::Option<&str> {
-        self.witness_region.as_deref()
-    }
-    /// <p>The ARNs of the clusters linked to the updated cluster. Applicable only for multi-Region clusters.</p>
-    ///
-    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.linked_cluster_arns.is_none()`.
-    #[deprecated(
-        note = "The linkedClusterArns field is deprecated in the UpdateCluster API. To check peer cluster, use the GetCluster API instead.",
-        since = "5/13/2025"
-    )]
-    pub fn linked_cluster_arns(&self) -> &[::std::string::String] {
-        self.linked_cluster_arns.as_deref().unwrap_or_default()
-    }
-    /// <p>Whether deletion protection is enabled for the updated cluster.</p>
-    #[deprecated(
-        note = "The deletionProtectionEnabled field is deprecated in the UpdateCluster API. To check deletion protection status, use the GetCluster API instead.",
-        since = "5/13/2025"
-    )]
-    pub fn deletion_protection_enabled(&self) -> bool {
-        self.deletion_protection_enabled
     }
 }
 impl ::aws_types::request_id::RequestId for UpdateClusterOutput {
@@ -98,9 +54,6 @@ pub struct UpdateClusterOutputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::ClusterStatus>,
     pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) witness_region: ::std::option::Option<::std::string::String>,
-    pub(crate) linked_cluster_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) deletion_protection_enabled: ::std::option::Option<bool>,
     _request_id: Option<String>,
 }
 impl UpdateClusterOutputBuilder {
@@ -164,91 +117,6 @@ impl UpdateClusterOutputBuilder {
     pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.creation_time
     }
-    /// <p>The Region that receives all data you write to linked clusters.</p>
-    #[deprecated(
-        note = "The witnessRegion field is deprecated in the UpdateCluster API. To check witnessRegion, use the GetCluster API instead.",
-        since = "5/13/2025"
-    )]
-    pub fn witness_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.witness_region = ::std::option::Option::Some(input.into());
-        self
-    }
-    /// <p>The Region that receives all data you write to linked clusters.</p>
-    #[deprecated(
-        note = "The witnessRegion field is deprecated in the UpdateCluster API. To check witnessRegion, use the GetCluster API instead.",
-        since = "5/13/2025"
-    )]
-    pub fn set_witness_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.witness_region = input;
-        self
-    }
-    /// <p>The Region that receives all data you write to linked clusters.</p>
-    #[deprecated(
-        note = "The witnessRegion field is deprecated in the UpdateCluster API. To check witnessRegion, use the GetCluster API instead.",
-        since = "5/13/2025"
-    )]
-    pub fn get_witness_region(&self) -> &::std::option::Option<::std::string::String> {
-        &self.witness_region
-    }
-    /// Appends an item to `linked_cluster_arns`.
-    ///
-    /// To override the contents of this collection use [`set_linked_cluster_arns`](Self::set_linked_cluster_arns).
-    ///
-    /// <p>The ARNs of the clusters linked to the updated cluster. Applicable only for multi-Region clusters.</p>
-    #[deprecated(
-        note = "The linkedClusterArns field is deprecated in the UpdateCluster API. To check peer cluster, use the GetCluster API instead.",
-        since = "5/13/2025"
-    )]
-    pub fn linked_cluster_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        let mut v = self.linked_cluster_arns.unwrap_or_default();
-        v.push(input.into());
-        self.linked_cluster_arns = ::std::option::Option::Some(v);
-        self
-    }
-    /// <p>The ARNs of the clusters linked to the updated cluster. Applicable only for multi-Region clusters.</p>
-    #[deprecated(
-        note = "The linkedClusterArns field is deprecated in the UpdateCluster API. To check peer cluster, use the GetCluster API instead.",
-        since = "5/13/2025"
-    )]
-    pub fn set_linked_cluster_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.linked_cluster_arns = input;
-        self
-    }
-    /// <p>The ARNs of the clusters linked to the updated cluster. Applicable only for multi-Region clusters.</p>
-    #[deprecated(
-        note = "The linkedClusterArns field is deprecated in the UpdateCluster API. To check peer cluster, use the GetCluster API instead.",
-        since = "5/13/2025"
-    )]
-    pub fn get_linked_cluster_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
-        &self.linked_cluster_arns
-    }
-    /// <p>Whether deletion protection is enabled for the updated cluster.</p>
-    /// This field is required.
-    #[deprecated(
-        note = "The deletionProtectionEnabled field is deprecated in the UpdateCluster API. To check deletion protection status, use the GetCluster API instead.",
-        since = "5/13/2025"
-    )]
-    pub fn deletion_protection_enabled(mut self, input: bool) -> Self {
-        self.deletion_protection_enabled = ::std::option::Option::Some(input);
-        self
-    }
-    /// <p>Whether deletion protection is enabled for the updated cluster.</p>
-    #[deprecated(
-        note = "The deletionProtectionEnabled field is deprecated in the UpdateCluster API. To check deletion protection status, use the GetCluster API instead.",
-        since = "5/13/2025"
-    )]
-    pub fn set_deletion_protection_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.deletion_protection_enabled = input;
-        self
-    }
-    /// <p>Whether deletion protection is enabled for the updated cluster.</p>
-    #[deprecated(
-        note = "The deletionProtectionEnabled field is deprecated in the UpdateCluster API. To check deletion protection status, use the GetCluster API instead.",
-        since = "5/13/2025"
-    )]
-    pub fn get_deletion_protection_enabled(&self) -> &::std::option::Option<bool> {
-        &self.deletion_protection_enabled
-    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -264,7 +132,6 @@ impl UpdateClusterOutputBuilder {
     /// - [`arn`](crate::operation::update_cluster::builders::UpdateClusterOutputBuilder::arn)
     /// - [`status`](crate::operation::update_cluster::builders::UpdateClusterOutputBuilder::status)
     /// - [`creation_time`](crate::operation::update_cluster::builders::UpdateClusterOutputBuilder::creation_time)
-    /// - [`deletion_protection_enabled`](crate::operation::update_cluster::builders::UpdateClusterOutputBuilder::deletion_protection_enabled)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::update_cluster::UpdateClusterOutput, ::aws_smithy_types::error::operation::BuildError> {
@@ -291,14 +158,6 @@ impl UpdateClusterOutputBuilder {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "creation_time",
                     "creation_time was not specified but it is required when building UpdateClusterOutput",
-                )
-            })?,
-            witness_region: self.witness_region,
-            linked_cluster_arns: self.linked_cluster_arns,
-            deletion_protection_enabled: self.deletion_protection_enabled.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "deletion_protection_enabled",
-                    "deletion_protection_enabled was not specified but it is required when building UpdateClusterOutput",
                 )
             })?,
             _request_id: self._request_id,

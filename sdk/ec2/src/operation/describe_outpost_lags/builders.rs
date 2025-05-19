@@ -22,7 +22,9 @@ impl crate::operation::describe_outpost_lags::builders::DescribeOutpostLagsInput
 }
 /// Fluent builder constructing a request to `DescribeOutpostLags`.
 ///
-/// <p>Describes the Outposts link aggregation groups (LAGs).</p>
+/// <p>Describes the Outposts link aggregation groups (LAGs).</p><note>
+/// <p>LAGs are only available for second-generation Outposts racks at this time.</p>
+/// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeOutpostLagsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

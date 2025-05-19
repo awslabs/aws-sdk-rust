@@ -1874,6 +1874,40 @@ impl From<crate::operation::create_default_vpc::CreateDefaultVpcError> for Error
         }
     }
 }
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::create_delegate_mac_volume_ownership_task::CreateDelegateMacVolumeOwnershipTaskError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::create_delegate_mac_volume_ownership_task::CreateDelegateMacVolumeOwnershipTaskError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_delegate_mac_volume_ownership_task::CreateDelegateMacVolumeOwnershipTaskError> for Error {
+    fn from(err: crate::operation::create_delegate_mac_volume_ownership_task::CreateDelegateMacVolumeOwnershipTaskError) -> Self {
+        match err {
+            crate::operation::create_delegate_mac_volume_ownership_task::CreateDelegateMacVolumeOwnershipTaskError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_dhcp_options::CreateDhcpOptionsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -2477,6 +2511,42 @@ impl From<crate::operation::create_local_gateway_virtual_interface_group::Create
             crate::operation::create_local_gateway_virtual_interface_group::CreateLocalGatewayVirtualInterfaceGroupError::Unhandled(inner) => {
                 Error::Unhandled(inner)
             }
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::create_mac_system_integrity_protection_modification_task::CreateMacSystemIntegrityProtectionModificationTaskError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::create_mac_system_integrity_protection_modification_task::CreateMacSystemIntegrityProtectionModificationTaskError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_mac_system_integrity_protection_modification_task::CreateMacSystemIntegrityProtectionModificationTaskError>
+    for Error
+{
+    fn from(
+        err: crate::operation::create_mac_system_integrity_protection_modification_task::CreateMacSystemIntegrityProtectionModificationTaskError,
+    ) -> Self {
+        match err {
+            crate::operation::create_mac_system_integrity_protection_modification_task::CreateMacSystemIntegrityProtectionModificationTaskError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -8333,6 +8403,34 @@ impl From<crate::operation::describe_mac_hosts::DescribeMacHostsError> for Error
     fn from(err: crate::operation::describe_mac_hosts::DescribeMacHostsError) -> Self {
         match err {
             crate::operation::describe_mac_hosts::DescribeMacHostsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_mac_modification_tasks::DescribeMacModificationTasksError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::describe_mac_modification_tasks::DescribeMacModificationTasksError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::describe_mac_modification_tasks::DescribeMacModificationTasksError> for Error {
+    fn from(err: crate::operation::describe_mac_modification_tasks::DescribeMacModificationTasksError) -> Self {
+        match err {
+            crate::operation::describe_mac_modification_tasks::DescribeMacModificationTasksError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

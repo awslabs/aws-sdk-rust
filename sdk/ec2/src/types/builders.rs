@@ -1183,6 +1183,10 @@ pub use crate::types::_provisioned_bandwidth::ProvisionedBandwidthBuilder;
 
 pub use crate::types::_moving_address_status::MovingAddressStatusBuilder;
 
+pub use crate::types::_mac_modification_task::MacModificationTaskBuilder;
+
+pub use crate::types::_mac_system_integrity_protection_configuration::MacSystemIntegrityProtectionConfigurationBuilder;
+
 pub use crate::types::_mac_host::MacHostBuilder;
 
 pub use crate::types::_locked_snapshots_info::LockedSnapshotsInfoBuilder;
@@ -1538,6 +1542,8 @@ pub use crate::types::_resource_statement_request::ResourceStatementRequestBuild
 pub use crate::types::_path_statement_request::PathStatementRequestBuilder;
 
 pub use crate::types::_packet_header_statement_request::PacketHeaderStatementRequestBuilder;
+
+pub use crate::types::_mac_system_integrity_protection_configuration_request::MacSystemIntegrityProtectionConfigurationRequestBuilder;
 
 pub use crate::types::_validation_warning::ValidationWarningBuilder;
 

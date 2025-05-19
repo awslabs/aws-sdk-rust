@@ -9,8 +9,6 @@ impl super::Client {
     ///   - [`arn(String)`](crate::operation::get_cluster::GetClusterOutput::arn): <p>The ARN of the retrieved cluster.</p>
     ///   - [`status(ClusterStatus)`](crate::operation::get_cluster::GetClusterOutput::status): <p>The status of the retrieved cluster.</p>
     ///   - [`creation_time(DateTime)`](crate::operation::get_cluster::GetClusterOutput::creation_time): <p>The time of when the cluster was created.</p>
-    ///   - [`witness_region(Option<String>)`](crate::operation::get_cluster::GetClusterOutput::witness_region): <p>The witness Region of the cluster. Applicable only for multi-Region clusters.</p>
-    ///   - [`linked_cluster_arns(Option<Vec::<String>>)`](crate::operation::get_cluster::GetClusterOutput::linked_cluster_arns): <p>The ARNs of the clusters linked to the retrieved cluster.</p>
     ///   - [`deletion_protection_enabled(bool)`](crate::operation::get_cluster::GetClusterOutput::deletion_protection_enabled): <p>Whether deletion protection is enabled in this cluster.</p>
     ///   - [`multi_region_properties(Option<MultiRegionProperties>)`](crate::operation::get_cluster::GetClusterOutput::multi_region_properties): <p>Returns the current multi-Region cluster configuration, including witness region and linked cluster information.</p>
     ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::get_cluster::GetClusterOutput::tags): <p>Map of tags.</p>

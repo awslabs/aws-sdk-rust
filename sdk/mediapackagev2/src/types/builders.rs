@@ -27,6 +27,20 @@ pub use crate::types::_channel_list_configuration::ChannelListConfigurationBuild
 
 pub use crate::types::_get_dash_manifest_configuration::GetDashManifestConfigurationBuilder;
 
+pub use crate::types::_dash_subtitle_configuration::DashSubtitleConfigurationBuilder;
+
+pub use crate::types::_dash_ttml_configuration::DashTtmlConfigurationBuilder;
+
+pub use crate::types::_dash_dvb_settings::DashDvbSettingsBuilder;
+
+pub use crate::types::_dash_dvb_metrics_reporting::DashDvbMetricsReportingBuilder;
+
+pub use crate::types::_dash_dvb_font_download::DashDvbFontDownloadBuilder;
+
+pub use crate::types::_dash_program_information::DashProgramInformationBuilder;
+
+pub use crate::types::_dash_base_url::DashBaseUrlBuilder;
+
 pub use crate::types::_dash_utc_timing::DashUtcTimingBuilder;
 
 pub use crate::types::_scte_dash::ScteDashBuilder;

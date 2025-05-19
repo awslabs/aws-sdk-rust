@@ -33,6 +33,18 @@ pub struct GetDashManifestConfiguration {
     pub drm_signaling: ::std::option::Option<crate::types::DashDrmSignaling>,
     /// <p>Determines the type of UTC timing included in the DASH Media Presentation Description (MPD).</p>
     pub utc_timing: ::std::option::Option<crate::types::DashUtcTiming>,
+    /// <p>The profile that the output is compliant with.</p>
+    pub profiles: ::std::option::Option<::std::vec::Vec<crate::types::DashProfile>>,
+    /// <p>The base URL to use for retrieving segments.</p>
+    pub base_urls: ::std::option::Option<::std::vec::Vec<crate::types::DashBaseUrl>>,
+    /// <p>Details about the content that you want MediaPackage to pass through in the manifest to the playback device.</p>
+    pub program_information: ::std::option::Option<crate::types::DashProgramInformation>,
+    /// <p>For endpoints that use the DVB-DASH profile only. The font download and error reporting information that you want MediaPackage to pass through to the manifest.</p>
+    pub dvb_settings: ::std::option::Option<crate::types::DashDvbSettings>,
+    /// <p>The layout of the DASH manifest that MediaPackage produces. <code>STANDARD</code> indicates a default manifest, which is compacted. <code>NONE</code> indicates a full manifest.</p>
+    pub compactness: ::std::option::Option<crate::types::DashCompactness>,
+    /// <p>The configuration for DASH subtitles.</p>
+    pub subtitle_configuration: ::std::option::Option<crate::types::DashSubtitleConfiguration>,
 }
 impl GetDashManifestConfiguration {
     /// <p>A short string that's appended to the endpoint URL. The manifest name creates a unique path to this endpoint. If you don't enter a value, MediaPackage uses the default manifest name, index.</p>
@@ -92,6 +104,34 @@ impl GetDashManifestConfiguration {
     pub fn utc_timing(&self) -> ::std::option::Option<&crate::types::DashUtcTiming> {
         self.utc_timing.as_ref()
     }
+    /// <p>The profile that the output is compliant with.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.profiles.is_none()`.
+    pub fn profiles(&self) -> &[crate::types::DashProfile] {
+        self.profiles.as_deref().unwrap_or_default()
+    }
+    /// <p>The base URL to use for retrieving segments.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.base_urls.is_none()`.
+    pub fn base_urls(&self) -> &[crate::types::DashBaseUrl] {
+        self.base_urls.as_deref().unwrap_or_default()
+    }
+    /// <p>Details about the content that you want MediaPackage to pass through in the manifest to the playback device.</p>
+    pub fn program_information(&self) -> ::std::option::Option<&crate::types::DashProgramInformation> {
+        self.program_information.as_ref()
+    }
+    /// <p>For endpoints that use the DVB-DASH profile only. The font download and error reporting information that you want MediaPackage to pass through to the manifest.</p>
+    pub fn dvb_settings(&self) -> ::std::option::Option<&crate::types::DashDvbSettings> {
+        self.dvb_settings.as_ref()
+    }
+    /// <p>The layout of the DASH manifest that MediaPackage produces. <code>STANDARD</code> indicates a default manifest, which is compacted. <code>NONE</code> indicates a full manifest.</p>
+    pub fn compactness(&self) -> ::std::option::Option<&crate::types::DashCompactness> {
+        self.compactness.as_ref()
+    }
+    /// <p>The configuration for DASH subtitles.</p>
+    pub fn subtitle_configuration(&self) -> ::std::option::Option<&crate::types::DashSubtitleConfiguration> {
+        self.subtitle_configuration.as_ref()
+    }
 }
 impl GetDashManifestConfiguration {
     /// Creates a new builder-style object to manufacture [`GetDashManifestConfiguration`](crate::types::GetDashManifestConfiguration).
@@ -116,6 +156,12 @@ pub struct GetDashManifestConfigurationBuilder {
     pub(crate) scte_dash: ::std::option::Option<crate::types::ScteDash>,
     pub(crate) drm_signaling: ::std::option::Option<crate::types::DashDrmSignaling>,
     pub(crate) utc_timing: ::std::option::Option<crate::types::DashUtcTiming>,
+    pub(crate) profiles: ::std::option::Option<::std::vec::Vec<crate::types::DashProfile>>,
+    pub(crate) base_urls: ::std::option::Option<::std::vec::Vec<crate::types::DashBaseUrl>>,
+    pub(crate) program_information: ::std::option::Option<crate::types::DashProgramInformation>,
+    pub(crate) dvb_settings: ::std::option::Option<crate::types::DashDvbSettings>,
+    pub(crate) compactness: ::std::option::Option<crate::types::DashCompactness>,
+    pub(crate) subtitle_configuration: ::std::option::Option<crate::types::DashSubtitleConfiguration>,
 }
 impl GetDashManifestConfigurationBuilder {
     /// <p>A short string that's appended to the endpoint URL. The manifest name creates a unique path to this endpoint. If you don't enter a value, MediaPackage uses the default manifest name, index.</p>
@@ -309,6 +355,102 @@ impl GetDashManifestConfigurationBuilder {
     pub fn get_utc_timing(&self) -> &::std::option::Option<crate::types::DashUtcTiming> {
         &self.utc_timing
     }
+    /// Appends an item to `profiles`.
+    ///
+    /// To override the contents of this collection use [`set_profiles`](Self::set_profiles).
+    ///
+    /// <p>The profile that the output is compliant with.</p>
+    pub fn profiles(mut self, input: crate::types::DashProfile) -> Self {
+        let mut v = self.profiles.unwrap_or_default();
+        v.push(input);
+        self.profiles = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The profile that the output is compliant with.</p>
+    pub fn set_profiles(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DashProfile>>) -> Self {
+        self.profiles = input;
+        self
+    }
+    /// <p>The profile that the output is compliant with.</p>
+    pub fn get_profiles(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DashProfile>> {
+        &self.profiles
+    }
+    /// Appends an item to `base_urls`.
+    ///
+    /// To override the contents of this collection use [`set_base_urls`](Self::set_base_urls).
+    ///
+    /// <p>The base URL to use for retrieving segments.</p>
+    pub fn base_urls(mut self, input: crate::types::DashBaseUrl) -> Self {
+        let mut v = self.base_urls.unwrap_or_default();
+        v.push(input);
+        self.base_urls = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The base URL to use for retrieving segments.</p>
+    pub fn set_base_urls(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DashBaseUrl>>) -> Self {
+        self.base_urls = input;
+        self
+    }
+    /// <p>The base URL to use for retrieving segments.</p>
+    pub fn get_base_urls(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DashBaseUrl>> {
+        &self.base_urls
+    }
+    /// <p>Details about the content that you want MediaPackage to pass through in the manifest to the playback device.</p>
+    pub fn program_information(mut self, input: crate::types::DashProgramInformation) -> Self {
+        self.program_information = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Details about the content that you want MediaPackage to pass through in the manifest to the playback device.</p>
+    pub fn set_program_information(mut self, input: ::std::option::Option<crate::types::DashProgramInformation>) -> Self {
+        self.program_information = input;
+        self
+    }
+    /// <p>Details about the content that you want MediaPackage to pass through in the manifest to the playback device.</p>
+    pub fn get_program_information(&self) -> &::std::option::Option<crate::types::DashProgramInformation> {
+        &self.program_information
+    }
+    /// <p>For endpoints that use the DVB-DASH profile only. The font download and error reporting information that you want MediaPackage to pass through to the manifest.</p>
+    pub fn dvb_settings(mut self, input: crate::types::DashDvbSettings) -> Self {
+        self.dvb_settings = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>For endpoints that use the DVB-DASH profile only. The font download and error reporting information that you want MediaPackage to pass through to the manifest.</p>
+    pub fn set_dvb_settings(mut self, input: ::std::option::Option<crate::types::DashDvbSettings>) -> Self {
+        self.dvb_settings = input;
+        self
+    }
+    /// <p>For endpoints that use the DVB-DASH profile only. The font download and error reporting information that you want MediaPackage to pass through to the manifest.</p>
+    pub fn get_dvb_settings(&self) -> &::std::option::Option<crate::types::DashDvbSettings> {
+        &self.dvb_settings
+    }
+    /// <p>The layout of the DASH manifest that MediaPackage produces. <code>STANDARD</code> indicates a default manifest, which is compacted. <code>NONE</code> indicates a full manifest.</p>
+    pub fn compactness(mut self, input: crate::types::DashCompactness) -> Self {
+        self.compactness = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The layout of the DASH manifest that MediaPackage produces. <code>STANDARD</code> indicates a default manifest, which is compacted. <code>NONE</code> indicates a full manifest.</p>
+    pub fn set_compactness(mut self, input: ::std::option::Option<crate::types::DashCompactness>) -> Self {
+        self.compactness = input;
+        self
+    }
+    /// <p>The layout of the DASH manifest that MediaPackage produces. <code>STANDARD</code> indicates a default manifest, which is compacted. <code>NONE</code> indicates a full manifest.</p>
+    pub fn get_compactness(&self) -> &::std::option::Option<crate::types::DashCompactness> {
+        &self.compactness
+    }
+    /// <p>The configuration for DASH subtitles.</p>
+    pub fn subtitle_configuration(mut self, input: crate::types::DashSubtitleConfiguration) -> Self {
+        self.subtitle_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The configuration for DASH subtitles.</p>
+    pub fn set_subtitle_configuration(mut self, input: ::std::option::Option<crate::types::DashSubtitleConfiguration>) -> Self {
+        self.subtitle_configuration = input;
+        self
+    }
+    /// <p>The configuration for DASH subtitles.</p>
+    pub fn get_subtitle_configuration(&self) -> &::std::option::Option<crate::types::DashSubtitleConfiguration> {
+        &self.subtitle_configuration
+    }
     /// Consumes the builder and constructs a [`GetDashManifestConfiguration`](crate::types::GetDashManifestConfiguration).
     /// This method will fail if any of the following fields are not set:
     /// - [`manifest_name`](crate::types::builders::GetDashManifestConfigurationBuilder::manifest_name)
@@ -337,6 +479,12 @@ impl GetDashManifestConfigurationBuilder {
             scte_dash: self.scte_dash,
             drm_signaling: self.drm_signaling,
             utc_timing: self.utc_timing,
+            profiles: self.profiles,
+            base_urls: self.base_urls,
+            program_information: self.program_information,
+            dvb_settings: self.dvb_settings,
+            compactness: self.compactness,
+            subtitle_configuration: self.subtitle_configuration,
         })
     }
 }

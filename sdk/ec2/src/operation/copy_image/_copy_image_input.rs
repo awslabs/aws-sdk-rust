@@ -55,7 +55,7 @@ pub struct CopyImageInput {
     /// <p>If you specify other values for <code>ResourceType</code>, the request fails.</p>
     /// <p>To tag an AMI or snapshot after it has been created, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.</p>
     pub tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
-    /// <p>Specify a completion duration, in 15 minute increments, to initiate a time-based AMI copy. The specified completion duration applies to each of the snapshots associated with the AMI. Each snapshot associated with the AMI will be completed within the specified completion duration, regardless of their size.</p>
+    /// <p>Specify a completion duration, in 15 minute increments, to initiate a time-based AMI copy. The specified completion duration applies to each of the snapshots associated with the AMI. Each snapshot associated with the AMI will be completed within the specified completion duration, with copy throughput automatically adjusted for each snapshot based on its size to meet the timing target.</p>
     /// <p>If you do not specify a value, the AMI copy operation is completed on a best-effort basis.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/time-based-copies.html"> Time-based copies</a>.</p>
     pub snapshot_copy_completion_duration_minutes: ::std::option::Option<i64>,
@@ -136,7 +136,7 @@ impl CopyImageInput {
     pub fn tag_specifications(&self) -> &[crate::types::TagSpecification] {
         self.tag_specifications.as_deref().unwrap_or_default()
     }
-    /// <p>Specify a completion duration, in 15 minute increments, to initiate a time-based AMI copy. The specified completion duration applies to each of the snapshots associated with the AMI. Each snapshot associated with the AMI will be completed within the specified completion duration, regardless of their size.</p>
+    /// <p>Specify a completion duration, in 15 minute increments, to initiate a time-based AMI copy. The specified completion duration applies to each of the snapshots associated with the AMI. Each snapshot associated with the AMI will be completed within the specified completion duration, with copy throughput automatically adjusted for each snapshot based on its size to meet the timing target.</p>
     /// <p>If you do not specify a value, the AMI copy operation is completed on a best-effort basis.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/time-based-copies.html"> Time-based copies</a>.</p>
     pub fn snapshot_copy_completion_duration_minutes(&self) -> ::std::option::Option<i64> {
@@ -414,21 +414,21 @@ impl CopyImageInputBuilder {
     pub fn get_tag_specifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
         &self.tag_specifications
     }
-    /// <p>Specify a completion duration, in 15 minute increments, to initiate a time-based AMI copy. The specified completion duration applies to each of the snapshots associated with the AMI. Each snapshot associated with the AMI will be completed within the specified completion duration, regardless of their size.</p>
+    /// <p>Specify a completion duration, in 15 minute increments, to initiate a time-based AMI copy. The specified completion duration applies to each of the snapshots associated with the AMI. Each snapshot associated with the AMI will be completed within the specified completion duration, with copy throughput automatically adjusted for each snapshot based on its size to meet the timing target.</p>
     /// <p>If you do not specify a value, the AMI copy operation is completed on a best-effort basis.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/time-based-copies.html"> Time-based copies</a>.</p>
     pub fn snapshot_copy_completion_duration_minutes(mut self, input: i64) -> Self {
         self.snapshot_copy_completion_duration_minutes = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specify a completion duration, in 15 minute increments, to initiate a time-based AMI copy. The specified completion duration applies to each of the snapshots associated with the AMI. Each snapshot associated with the AMI will be completed within the specified completion duration, regardless of their size.</p>
+    /// <p>Specify a completion duration, in 15 minute increments, to initiate a time-based AMI copy. The specified completion duration applies to each of the snapshots associated with the AMI. Each snapshot associated with the AMI will be completed within the specified completion duration, with copy throughput automatically adjusted for each snapshot based on its size to meet the timing target.</p>
     /// <p>If you do not specify a value, the AMI copy operation is completed on a best-effort basis.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/time-based-copies.html"> Time-based copies</a>.</p>
     pub fn set_snapshot_copy_completion_duration_minutes(mut self, input: ::std::option::Option<i64>) -> Self {
         self.snapshot_copy_completion_duration_minutes = input;
         self
     }
-    /// <p>Specify a completion duration, in 15 minute increments, to initiate a time-based AMI copy. The specified completion duration applies to each of the snapshots associated with the AMI. Each snapshot associated with the AMI will be completed within the specified completion duration, regardless of their size.</p>
+    /// <p>Specify a completion duration, in 15 minute increments, to initiate a time-based AMI copy. The specified completion duration applies to each of the snapshots associated with the AMI. Each snapshot associated with the AMI will be completed within the specified completion duration, with copy throughput automatically adjusted for each snapshot based on its size to meet the timing target.</p>
     /// <p>If you do not specify a value, the AMI copy operation is completed on a best-effort basis.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/time-based-copies.html"> Time-based copies</a>.</p>
     pub fn get_snapshot_copy_completion_duration_minutes(&self) -> &::std::option::Option<i64> {

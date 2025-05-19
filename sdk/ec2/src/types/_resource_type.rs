@@ -52,6 +52,7 @@
 ///     ResourceType::LocalGatewayRouteTableVpcAssociation => { /* ... */ },
 ///     ResourceType::LocalGatewayVirtualInterface => { /* ... */ },
 ///     ResourceType::LocalGatewayVirtualInterfaceGroup => { /* ... */ },
+///     ResourceType::MacModificationTask => { /* ... */ },
 ///     ResourceType::Natgateway => { /* ... */ },
 ///     ResourceType::NetworkAcl => { /* ... */ },
 ///     ResourceType::NetworkInsightsAccessScope => { /* ... */ },
@@ -215,6 +216,8 @@ pub enum ResourceType {
     #[allow(missing_docs)] // documentation missing in model
     LocalGatewayVirtualInterfaceGroup,
     #[allow(missing_docs)] // documentation missing in model
+    MacModificationTask,
+    #[allow(missing_docs)] // documentation missing in model
     Natgateway,
     #[allow(missing_docs)] // documentation missing in model
     NetworkAcl,
@@ -369,6 +372,7 @@ impl ::std::convert::From<&str> for ResourceType {
             "local-gateway-route-table-vpc-association" => ResourceType::LocalGatewayRouteTableVpcAssociation,
             "local-gateway-virtual-interface" => ResourceType::LocalGatewayVirtualInterface,
             "local-gateway-virtual-interface-group" => ResourceType::LocalGatewayVirtualInterfaceGroup,
+            "mac-modification-task" => ResourceType::MacModificationTask,
             "natgateway" => ResourceType::Natgateway,
             "network-acl" => ResourceType::NetworkAcl,
             "network-insights-access-scope" => ResourceType::NetworkInsightsAccessScope,
@@ -478,6 +482,7 @@ impl ResourceType {
             ResourceType::LocalGatewayRouteTableVpcAssociation => "local-gateway-route-table-vpc-association",
             ResourceType::LocalGatewayVirtualInterface => "local-gateway-virtual-interface",
             ResourceType::LocalGatewayVirtualInterfaceGroup => "local-gateway-virtual-interface-group",
+            ResourceType::MacModificationTask => "mac-modification-task",
             ResourceType::Natgateway => "natgateway",
             ResourceType::NetworkAcl => "network-acl",
             ResourceType::NetworkInsightsAccessScope => "network-insights-access-scope",
@@ -578,6 +583,7 @@ impl ResourceType {
             "local-gateway-route-table-vpc-association",
             "local-gateway-virtual-interface",
             "local-gateway-virtual-interface-group",
+            "mac-modification-task",
             "natgateway",
             "network-acl",
             "network-insights-access-scope",
@@ -697,6 +703,7 @@ impl ::std::fmt::Display for ResourceType {
             ResourceType::LocalGatewayRouteTableVpcAssociation => write!(f, "local-gateway-route-table-vpc-association"),
             ResourceType::LocalGatewayVirtualInterface => write!(f, "local-gateway-virtual-interface"),
             ResourceType::LocalGatewayVirtualInterfaceGroup => write!(f, "local-gateway-virtual-interface-group"),
+            ResourceType::MacModificationTask => write!(f, "mac-modification-task"),
             ResourceType::Natgateway => write!(f, "natgateway"),
             ResourceType::NetworkAcl => write!(f, "network-acl"),
             ResourceType::NetworkInsightsAccessScope => write!(f, "network-insights-access-scope"),

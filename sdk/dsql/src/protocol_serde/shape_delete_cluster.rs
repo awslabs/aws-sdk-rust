@@ -160,9 +160,6 @@ pub(crate) fn de_delete_cluster(
                         ::aws_smithy_types::date_time::Format::EpochSeconds,
                     )?);
                 }
-                "deletionProtectionEnabled" => {
-                    builder = builder.set_deletion_protection_enabled(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
-                }
                 "identifier" => {
                     builder = builder.set_identifier(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

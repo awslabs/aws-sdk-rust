@@ -1773,6 +1773,16 @@ pub use crate::types::_moving_address_status::MovingAddressStatus;
 
 pub use crate::types::_move_status::MoveStatus;
 
+pub use crate::types::_mac_modification_task::MacModificationTask;
+
+pub use crate::types::_mac_modification_task_type::MacModificationTaskType;
+
+pub use crate::types::_mac_modification_task_state::MacModificationTaskState;
+
+pub use crate::types::_mac_system_integrity_protection_configuration::MacSystemIntegrityProtectionConfiguration;
+
+pub use crate::types::_mac_system_integrity_protection_setting_status::MacSystemIntegrityProtectionSettingStatus;
+
 pub use crate::types::_mac_host::MacHost;
 
 pub use crate::types::_locked_snapshots_info::LockedSnapshotsInfo;
@@ -2286,6 +2296,8 @@ pub use crate::types::_resource_statement_request::ResourceStatementRequest;
 pub use crate::types::_path_statement_request::PathStatementRequest;
 
 pub use crate::types::_packet_header_statement_request::PacketHeaderStatementRequest;
+
+pub use crate::types::_mac_system_integrity_protection_configuration_request::MacSystemIntegrityProtectionConfigurationRequest;
 
 pub use crate::types::_validation_warning::ValidationWarning;
 
@@ -3694,6 +3706,18 @@ mod _locked_snapshots_info;
 mod _log_destination_type;
 
 mod _mac_host;
+
+mod _mac_modification_task;
+
+mod _mac_modification_task_state;
+
+mod _mac_modification_task_type;
+
+mod _mac_system_integrity_protection_configuration;
+
+mod _mac_system_integrity_protection_configuration_request;
+
+mod _mac_system_integrity_protection_setting_status;
 
 mod _maintenance_details;
 

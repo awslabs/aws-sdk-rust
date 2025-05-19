@@ -12,18 +12,6 @@ pub struct GetClusterOutput {
     pub status: crate::types::ClusterStatus,
     /// <p>The time of when the cluster was created.</p>
     pub creation_time: ::aws_smithy_types::DateTime,
-    /// <p>The witness Region of the cluster. Applicable only for multi-Region clusters.</p>
-    #[deprecated(
-        note = "The witnessRegion field is deprecated. To see the witnessRegion, use multiRegionProperties.witnessRegion instead.",
-        since = "5/13/2025"
-    )]
-    pub witness_region: ::std::option::Option<::std::string::String>,
-    /// <p>The ARNs of the clusters linked to the retrieved cluster.</p>
-    #[deprecated(
-        note = "The linkedClusterArns field is deprecated. To see the peered cluster Arns, use multiRegionProperties.cluster instead.",
-        since = "5/13/2025"
-    )]
-    pub linked_cluster_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Whether deletion protection is enabled in this cluster.</p>
     pub deletion_protection_enabled: bool,
     /// <p>Returns the current multi-Region cluster configuration, including witness region and linked cluster information.</p>
@@ -50,24 +38,6 @@ impl GetClusterOutput {
     /// <p>The time of when the cluster was created.</p>
     pub fn creation_time(&self) -> &::aws_smithy_types::DateTime {
         &self.creation_time
-    }
-    /// <p>The witness Region of the cluster. Applicable only for multi-Region clusters.</p>
-    #[deprecated(
-        note = "The witnessRegion field is deprecated. To see the witnessRegion, use multiRegionProperties.witnessRegion instead.",
-        since = "5/13/2025"
-    )]
-    pub fn witness_region(&self) -> ::std::option::Option<&str> {
-        self.witness_region.as_deref()
-    }
-    /// <p>The ARNs of the clusters linked to the retrieved cluster.</p>
-    ///
-    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.linked_cluster_arns.is_none()`.
-    #[deprecated(
-        note = "The linkedClusterArns field is deprecated. To see the peered cluster Arns, use multiRegionProperties.cluster instead.",
-        since = "5/13/2025"
-    )]
-    pub fn linked_cluster_arns(&self) -> &[::std::string::String] {
-        self.linked_cluster_arns.as_deref().unwrap_or_default()
     }
     /// <p>Whether deletion protection is enabled in this cluster.</p>
     pub fn deletion_protection_enabled(&self) -> bool {
@@ -102,8 +72,6 @@ pub struct GetClusterOutputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::ClusterStatus>,
     pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) witness_region: ::std::option::Option<::std::string::String>,
-    pub(crate) linked_cluster_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) deletion_protection_enabled: ::std::option::Option<bool>,
     pub(crate) multi_region_properties: ::std::option::Option<crate::types::MultiRegionProperties>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
@@ -169,64 +137,6 @@ impl GetClusterOutputBuilder {
     /// <p>The time of when the cluster was created.</p>
     pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.creation_time
-    }
-    /// <p>The witness Region of the cluster. Applicable only for multi-Region clusters.</p>
-    #[deprecated(
-        note = "The witnessRegion field is deprecated. To see the witnessRegion, use multiRegionProperties.witnessRegion instead.",
-        since = "5/13/2025"
-    )]
-    pub fn witness_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.witness_region = ::std::option::Option::Some(input.into());
-        self
-    }
-    /// <p>The witness Region of the cluster. Applicable only for multi-Region clusters.</p>
-    #[deprecated(
-        note = "The witnessRegion field is deprecated. To see the witnessRegion, use multiRegionProperties.witnessRegion instead.",
-        since = "5/13/2025"
-    )]
-    pub fn set_witness_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.witness_region = input;
-        self
-    }
-    /// <p>The witness Region of the cluster. Applicable only for multi-Region clusters.</p>
-    #[deprecated(
-        note = "The witnessRegion field is deprecated. To see the witnessRegion, use multiRegionProperties.witnessRegion instead.",
-        since = "5/13/2025"
-    )]
-    pub fn get_witness_region(&self) -> &::std::option::Option<::std::string::String> {
-        &self.witness_region
-    }
-    /// Appends an item to `linked_cluster_arns`.
-    ///
-    /// To override the contents of this collection use [`set_linked_cluster_arns`](Self::set_linked_cluster_arns).
-    ///
-    /// <p>The ARNs of the clusters linked to the retrieved cluster.</p>
-    #[deprecated(
-        note = "The linkedClusterArns field is deprecated. To see the peered cluster Arns, use multiRegionProperties.cluster instead.",
-        since = "5/13/2025"
-    )]
-    pub fn linked_cluster_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        let mut v = self.linked_cluster_arns.unwrap_or_default();
-        v.push(input.into());
-        self.linked_cluster_arns = ::std::option::Option::Some(v);
-        self
-    }
-    /// <p>The ARNs of the clusters linked to the retrieved cluster.</p>
-    #[deprecated(
-        note = "The linkedClusterArns field is deprecated. To see the peered cluster Arns, use multiRegionProperties.cluster instead.",
-        since = "5/13/2025"
-    )]
-    pub fn set_linked_cluster_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.linked_cluster_arns = input;
-        self
-    }
-    /// <p>The ARNs of the clusters linked to the retrieved cluster.</p>
-    #[deprecated(
-        note = "The linkedClusterArns field is deprecated. To see the peered cluster Arns, use multiRegionProperties.cluster instead.",
-        since = "5/13/2025"
-    )]
-    pub fn get_linked_cluster_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
-        &self.linked_cluster_arns
     }
     /// <p>Whether deletion protection is enabled in this cluster.</p>
     /// This field is required.
@@ -319,8 +229,6 @@ impl GetClusterOutputBuilder {
                     "creation_time was not specified but it is required when building GetClusterOutput",
                 )
             })?,
-            witness_region: self.witness_region,
-            linked_cluster_arns: self.linked_cluster_arns,
             deletion_protection_enabled: self.deletion_protection_enabled.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "deletion_protection_enabled",

@@ -579,6 +579,16 @@ pub(crate) fn reflens_describe_mac_hosts_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_describe_mac_modification_tasks_output_output_next_token(
+    input: &crate::operation::describe_mac_modification_tasks::DescribeMacModificationTasksOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_describe_managed_prefix_lists_output_output_next_token(
     input: &crate::operation::describe_managed_prefix_lists::DescribeManagedPrefixListsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -2053,6 +2063,16 @@ pub(crate) fn lens_describe_mac_hosts_output_output_mac_hosts(
     input: crate::operation::describe_mac_hosts::DescribeMacHostsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::MacHost>> {
     let input = match input.mac_hosts {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_describe_mac_modification_tasks_output_output_mac_modification_tasks(
+    input: crate::operation::describe_mac_modification_tasks::DescribeMacModificationTasksOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::MacModificationTask>> {
+    let input = match input.mac_modification_tasks {
         ::std::option::Option::None => return ::std::option::Option::None,
         ::std::option::Option::Some(t) => t,
     };

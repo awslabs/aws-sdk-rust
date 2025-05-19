@@ -10,7 +10,6 @@ impl super::Client {
     ///   - [`arn(String)`](crate::operation::delete_cluster::DeleteClusterOutput::arn): <p>The ARN of the deleted cluster.</p>
     ///   - [`status(ClusterStatus)`](crate::operation::delete_cluster::DeleteClusterOutput::status): <p>The status of the cluster.</p>
     ///   - [`creation_time(DateTime)`](crate::operation::delete_cluster::DeleteClusterOutput::creation_time): <p>The time of when the cluster was created.</p>
-    ///   - [`deletion_protection_enabled(bool)`](crate::operation::delete_cluster::DeleteClusterOutput::deletion_protection_enabled): <p>Specifies whether deletion protection was enabled on the cluster.</p>
     /// - On failure, responds with [`SdkError<DeleteClusterError>`](crate::operation::delete_cluster::DeleteClusterError)
     pub fn delete_cluster(&self) -> crate::operation::delete_cluster::builders::DeleteClusterFluentBuilder {
         crate::operation::delete_cluster::builders::DeleteClusterFluentBuilder::new(self.handle.clone())

@@ -15,6 +15,7 @@
 ///     ValidationExceptionType::CencIvIncompatible => { /* ... */ },
 ///     ValidationExceptionType::ClipStartTimeWithStartOrEnd => { /* ... */ },
 ///     ValidationExceptionType::ContainerTypeImmutable => { /* ... */ },
+///     ValidationExceptionType::DashDvbAttributesWithoutDvbDashProfile => { /* ... */ },
 ///     ValidationExceptionType::DirectModeWithTimingSource => { /* ... */ },
 ///     ValidationExceptionType::DrmSignalingMismatchSegmentEncryptionStatus => { /* ... */ },
 ///     ValidationExceptionType::DrmSystemsEncryptionMethodIncompatible => { /* ... */ },
@@ -29,6 +30,9 @@
 ///     ValidationExceptionType::HarvestJobIneligibleForCancellation => { /* ... */ },
 ///     ValidationExceptionType::HarvestJobS3DestinationMissingOrIncomplete => { /* ... */ },
 ///     ValidationExceptionType::HarvestJobUnableToWriteToS3Destination => { /* ... */ },
+///     ValidationExceptionType::IncompatibleDashCompactnessConfiguration => { /* ... */ },
+///     ValidationExceptionType::IncompatibleDashProfileDvbDashConfiguration => { /* ... */ },
+///     ValidationExceptionType::IncompatibleXmlEncoding => { /* ... */ },
 ///     ValidationExceptionType::InvalidHarvestJobDuration => { /* ... */ },
 ///     ValidationExceptionType::InvalidManifestFilter => { /* ... */ },
 ///     ValidationExceptionType::InvalidPaginationMaxResults => { /* ... */ },
@@ -106,6 +110,8 @@ pub enum ValidationExceptionType {
     #[allow(missing_docs)] // documentation missing in model
     ContainerTypeImmutable,
     #[allow(missing_docs)] // documentation missing in model
+    DashDvbAttributesWithoutDvbDashProfile,
+    #[allow(missing_docs)] // documentation missing in model
     DirectModeWithTimingSource,
     #[allow(missing_docs)] // documentation missing in model
     DrmSignalingMismatchSegmentEncryptionStatus,
@@ -133,6 +139,12 @@ pub enum ValidationExceptionType {
     HarvestJobS3DestinationMissingOrIncomplete,
     #[allow(missing_docs)] // documentation missing in model
     HarvestJobUnableToWriteToS3Destination,
+    #[allow(missing_docs)] // documentation missing in model
+    IncompatibleDashCompactnessConfiguration,
+    #[allow(missing_docs)] // documentation missing in model
+    IncompatibleDashProfileDvbDashConfiguration,
+    #[allow(missing_docs)] // documentation missing in model
+    IncompatibleXmlEncoding,
     #[allow(missing_docs)] // documentation missing in model
     InvalidHarvestJobDuration,
     #[allow(missing_docs)] // documentation missing in model
@@ -227,6 +239,7 @@ impl ::std::convert::From<&str> for ValidationExceptionType {
             "CENC_IV_INCOMPATIBLE" => ValidationExceptionType::CencIvIncompatible,
             "CLIP_START_TIME_WITH_START_OR_END" => ValidationExceptionType::ClipStartTimeWithStartOrEnd,
             "CONTAINER_TYPE_IMMUTABLE" => ValidationExceptionType::ContainerTypeImmutable,
+            "DASH_DVB_ATTRIBUTES_WITHOUT_DVB_DASH_PROFILE" => ValidationExceptionType::DashDvbAttributesWithoutDvbDashProfile,
             "DIRECT_MODE_WITH_TIMING_SOURCE" => ValidationExceptionType::DirectModeWithTimingSource,
             "DRM_SIGNALING_MISMATCH_SEGMENT_ENCRYPTION_STATUS" => ValidationExceptionType::DrmSignalingMismatchSegmentEncryptionStatus,
             "DRM_SYSTEMS_ENCRYPTION_METHOD_INCOMPATIBLE" => ValidationExceptionType::DrmSystemsEncryptionMethodIncompatible,
@@ -243,6 +256,9 @@ impl ::std::convert::From<&str> for ValidationExceptionType {
             "HARVEST_JOB_INELIGIBLE_FOR_CANCELLATION" => ValidationExceptionType::HarvestJobIneligibleForCancellation,
             "HARVEST_JOB_S3_DESTINATION_MISSING_OR_INCOMPLETE" => ValidationExceptionType::HarvestJobS3DestinationMissingOrIncomplete,
             "HARVEST_JOB_UNABLE_TO_WRITE_TO_S3_DESTINATION" => ValidationExceptionType::HarvestJobUnableToWriteToS3Destination,
+            "INCOMPATIBLE_DASH_COMPACTNESS_CONFIGURATION" => ValidationExceptionType::IncompatibleDashCompactnessConfiguration,
+            "INCOMPATIBLE_DASH_PROFILE_DVB_DASH_CONFIGURATION" => ValidationExceptionType::IncompatibleDashProfileDvbDashConfiguration,
+            "INCOMPATIBLE_XML_ENCODING" => ValidationExceptionType::IncompatibleXmlEncoding,
             "INVALID_HARVEST_JOB_DURATION" => ValidationExceptionType::InvalidHarvestJobDuration,
             "INVALID_MANIFEST_FILTER" => ValidationExceptionType::InvalidManifestFilter,
             "INVALID_PAGINATION_MAX_RESULTS" => ValidationExceptionType::InvalidPaginationMaxResults,
@@ -305,6 +321,7 @@ impl ValidationExceptionType {
             ValidationExceptionType::CencIvIncompatible => "CENC_IV_INCOMPATIBLE",
             ValidationExceptionType::ClipStartTimeWithStartOrEnd => "CLIP_START_TIME_WITH_START_OR_END",
             ValidationExceptionType::ContainerTypeImmutable => "CONTAINER_TYPE_IMMUTABLE",
+            ValidationExceptionType::DashDvbAttributesWithoutDvbDashProfile => "DASH_DVB_ATTRIBUTES_WITHOUT_DVB_DASH_PROFILE",
             ValidationExceptionType::DirectModeWithTimingSource => "DIRECT_MODE_WITH_TIMING_SOURCE",
             ValidationExceptionType::DrmSignalingMismatchSegmentEncryptionStatus => "DRM_SIGNALING_MISMATCH_SEGMENT_ENCRYPTION_STATUS",
             ValidationExceptionType::DrmSystemsEncryptionMethodIncompatible => "DRM_SYSTEMS_ENCRYPTION_METHOD_INCOMPATIBLE",
@@ -321,6 +338,9 @@ impl ValidationExceptionType {
             ValidationExceptionType::HarvestJobIneligibleForCancellation => "HARVEST_JOB_INELIGIBLE_FOR_CANCELLATION",
             ValidationExceptionType::HarvestJobS3DestinationMissingOrIncomplete => "HARVEST_JOB_S3_DESTINATION_MISSING_OR_INCOMPLETE",
             ValidationExceptionType::HarvestJobUnableToWriteToS3Destination => "HARVEST_JOB_UNABLE_TO_WRITE_TO_S3_DESTINATION",
+            ValidationExceptionType::IncompatibleDashCompactnessConfiguration => "INCOMPATIBLE_DASH_COMPACTNESS_CONFIGURATION",
+            ValidationExceptionType::IncompatibleDashProfileDvbDashConfiguration => "INCOMPATIBLE_DASH_PROFILE_DVB_DASH_CONFIGURATION",
+            ValidationExceptionType::IncompatibleXmlEncoding => "INCOMPATIBLE_XML_ENCODING",
             ValidationExceptionType::InvalidHarvestJobDuration => "INVALID_HARVEST_JOB_DURATION",
             ValidationExceptionType::InvalidManifestFilter => "INVALID_MANIFEST_FILTER",
             ValidationExceptionType::InvalidPaginationMaxResults => "INVALID_PAGINATION_MAX_RESULTS",
@@ -374,6 +394,7 @@ impl ValidationExceptionType {
             "CENC_IV_INCOMPATIBLE",
             "CLIP_START_TIME_WITH_START_OR_END",
             "CONTAINER_TYPE_IMMUTABLE",
+            "DASH_DVB_ATTRIBUTES_WITHOUT_DVB_DASH_PROFILE",
             "DIRECT_MODE_WITH_TIMING_SOURCE",
             "DRM_SIGNALING_MISMATCH_SEGMENT_ENCRYPTION_STATUS",
             "DRM_SYSTEMS_ENCRYPTION_METHOD_INCOMPATIBLE",
@@ -388,6 +409,9 @@ impl ValidationExceptionType {
             "HARVEST_JOB_INELIGIBLE_FOR_CANCELLATION",
             "HARVEST_JOB_S3_DESTINATION_MISSING_OR_INCOMPLETE",
             "HARVEST_JOB_UNABLE_TO_WRITE_TO_S3_DESTINATION",
+            "INCOMPATIBLE_DASH_COMPACTNESS_CONFIGURATION",
+            "INCOMPATIBLE_DASH_PROFILE_DVB_DASH_CONFIGURATION",
+            "INCOMPATIBLE_XML_ENCODING",
             "INVALID_HARVEST_JOB_DURATION",
             "INVALID_MANIFEST_FILTER",
             "INVALID_PAGINATION_MAX_RESULTS",
@@ -456,6 +480,7 @@ impl ::std::fmt::Display for ValidationExceptionType {
             ValidationExceptionType::CencIvIncompatible => write!(f, "CENC_IV_INCOMPATIBLE"),
             ValidationExceptionType::ClipStartTimeWithStartOrEnd => write!(f, "CLIP_START_TIME_WITH_START_OR_END"),
             ValidationExceptionType::ContainerTypeImmutable => write!(f, "CONTAINER_TYPE_IMMUTABLE"),
+            ValidationExceptionType::DashDvbAttributesWithoutDvbDashProfile => write!(f, "DASH_DVB_ATTRIBUTES_WITHOUT_DVB_DASH_PROFILE"),
             ValidationExceptionType::DirectModeWithTimingSource => write!(f, "DIRECT_MODE_WITH_TIMING_SOURCE"),
             ValidationExceptionType::DrmSignalingMismatchSegmentEncryptionStatus => write!(f, "DRM_SIGNALING_MISMATCH_SEGMENT_ENCRYPTION_STATUS"),
             ValidationExceptionType::DrmSystemsEncryptionMethodIncompatible => write!(f, "DRM_SYSTEMS_ENCRYPTION_METHOD_INCOMPATIBLE"),
@@ -474,6 +499,9 @@ impl ::std::fmt::Display for ValidationExceptionType {
             ValidationExceptionType::HarvestJobIneligibleForCancellation => write!(f, "HARVEST_JOB_INELIGIBLE_FOR_CANCELLATION"),
             ValidationExceptionType::HarvestJobS3DestinationMissingOrIncomplete => write!(f, "HARVEST_JOB_S3_DESTINATION_MISSING_OR_INCOMPLETE"),
             ValidationExceptionType::HarvestJobUnableToWriteToS3Destination => write!(f, "HARVEST_JOB_UNABLE_TO_WRITE_TO_S3_DESTINATION"),
+            ValidationExceptionType::IncompatibleDashCompactnessConfiguration => write!(f, "INCOMPATIBLE_DASH_COMPACTNESS_CONFIGURATION"),
+            ValidationExceptionType::IncompatibleDashProfileDvbDashConfiguration => write!(f, "INCOMPATIBLE_DASH_PROFILE_DVB_DASH_CONFIGURATION"),
+            ValidationExceptionType::IncompatibleXmlEncoding => write!(f, "INCOMPATIBLE_XML_ENCODING"),
             ValidationExceptionType::InvalidHarvestJobDuration => write!(f, "INVALID_HARVEST_JOB_DURATION"),
             ValidationExceptionType::InvalidManifestFilter => write!(f, "INVALID_MANIFEST_FILTER"),
             ValidationExceptionType::InvalidPaginationMaxResults => write!(f, "INVALID_PAGINATION_MAX_RESULTS"),

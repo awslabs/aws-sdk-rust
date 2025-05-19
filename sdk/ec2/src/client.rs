@@ -486,6 +486,8 @@ mod create_default_subnet;
 
 mod create_default_vpc;
 
+mod create_delegate_mac_volume_ownership_task;
+
 mod create_dhcp_options;
 
 mod create_egress_only_internet_gateway;
@@ -533,6 +535,8 @@ mod create_local_gateway_route_table_vpc_association;
 mod create_local_gateway_virtual_interface;
 
 mod create_local_gateway_virtual_interface_group;
+
+mod create_mac_system_integrity_protection_modification_task;
 
 mod create_managed_prefix_list;
 
@@ -1008,6 +1012,8 @@ mod describe_local_gateways;
 mod describe_locked_snapshots;
 
 mod describe_mac_hosts;
+
+mod describe_mac_modification_tasks;
 
 mod describe_managed_prefix_lists;
 

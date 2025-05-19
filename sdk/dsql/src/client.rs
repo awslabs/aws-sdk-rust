@@ -172,8 +172,6 @@ impl Client {
 
 mod create_cluster;
 
-mod create_multi_region_clusters;
-
 /// Operation customization and supporting types.
 ///
 /// The underlying HTTP requests made during an operation can be customized
@@ -202,8 +200,6 @@ mod create_multi_region_clusters;
 pub mod customize;
 
 mod delete_cluster;
-
-mod delete_multi_region_clusters;
 
 mod get_cluster;
 

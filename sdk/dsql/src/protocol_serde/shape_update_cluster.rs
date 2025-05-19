@@ -170,9 +170,6 @@ pub(crate) fn de_update_cluster(
                         ::aws_smithy_types::date_time::Format::EpochSeconds,
                     )?);
                 }
-                "deletionProtectionEnabled" => {
-                    builder = builder.set_deletion_protection_enabled(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
-                }
                 "identifier" => {
                     builder = builder.set_identifier(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
@@ -180,20 +177,10 @@ pub(crate) fn de_update_cluster(
                             .transpose()?,
                     );
                 }
-                "linkedClusterArns" => {
-                    builder = builder.set_linked_cluster_arns(crate::protocol_serde::shape_cluster_arn_list::de_cluster_arn_list(tokens)?);
-                }
                 "status" => {
                     builder = builder.set_status(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                             .map(|s| s.to_unescaped().map(|u| crate::types::ClusterStatus::from(u.as_ref())))
-                            .transpose()?,
-                    );
-                }
-                "witnessRegion" => {
-                    builder = builder.set_witness_region(
-                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                             .transpose()?,
                     );
                 }

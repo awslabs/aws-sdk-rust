@@ -63,5 +63,47 @@ pub fn ser_create_dash_manifest_configuration(
         crate::protocol_serde::shape_dash_utc_timing::ser_dash_utc_timing(&mut object_15, var_14)?;
         object_15.finish();
     }
+    if let Some(var_16) = &input.profiles {
+        let mut array_17 = object.key("Profiles").start_array();
+        for item_18 in var_16 {
+            {
+                array_17.value().string(item_18.as_str());
+            }
+        }
+        array_17.finish();
+    }
+    if let Some(var_19) = &input.base_urls {
+        let mut array_20 = object.key("BaseUrls").start_array();
+        for item_21 in var_19 {
+            {
+                #[allow(unused_mut)]
+                let mut object_22 = array_20.value().start_object();
+                crate::protocol_serde::shape_dash_base_url::ser_dash_base_url(&mut object_22, item_21)?;
+                object_22.finish();
+            }
+        }
+        array_20.finish();
+    }
+    if let Some(var_23) = &input.program_information {
+        #[allow(unused_mut)]
+        let mut object_24 = object.key("ProgramInformation").start_object();
+        crate::protocol_serde::shape_dash_program_information::ser_dash_program_information(&mut object_24, var_23)?;
+        object_24.finish();
+    }
+    if let Some(var_25) = &input.dvb_settings {
+        #[allow(unused_mut)]
+        let mut object_26 = object.key("DvbSettings").start_object();
+        crate::protocol_serde::shape_dash_dvb_settings::ser_dash_dvb_settings(&mut object_26, var_25)?;
+        object_26.finish();
+    }
+    if let Some(var_27) = &input.compactness {
+        object.key("Compactness").string(var_27.as_str());
+    }
+    if let Some(var_28) = &input.subtitle_configuration {
+        #[allow(unused_mut)]
+        let mut object_29 = object.key("SubtitleConfiguration").start_object();
+        crate::protocol_serde::shape_dash_subtitle_configuration::ser_dash_subtitle_configuration(&mut object_29, var_28)?;
+        object_29.finish();
+    }
     Ok(())
 }

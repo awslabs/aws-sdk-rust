@@ -12,9 +12,6 @@ impl super::Client {
     ///   - [`arn(String)`](crate::operation::update_cluster::UpdateClusterOutput::arn): <p>The ARN of the updated cluster.</p>
     ///   - [`status(ClusterStatus)`](crate::operation::update_cluster::UpdateClusterOutput::status): <p>The status of the updated cluster.</p>
     ///   - [`creation_time(DateTime)`](crate::operation::update_cluster::UpdateClusterOutput::creation_time): <p>The time of when the cluster was created.</p>
-    ///   - [`witness_region(Option<String>)`](crate::operation::update_cluster::UpdateClusterOutput::witness_region): <p>The Region that receives all data you write to linked clusters.</p>
-    ///   - [`linked_cluster_arns(Option<Vec::<String>>)`](crate::operation::update_cluster::UpdateClusterOutput::linked_cluster_arns): <p>The ARNs of the clusters linked to the updated cluster. Applicable only for multi-Region clusters.</p>
-    ///   - [`deletion_protection_enabled(bool)`](crate::operation::update_cluster::UpdateClusterOutput::deletion_protection_enabled): <p>Whether deletion protection is enabled for the updated cluster.</p>
     /// - On failure, responds with [`SdkError<UpdateClusterError>`](crate::operation::update_cluster::UpdateClusterError)
     pub fn update_cluster(&self) -> crate::operation::update_cluster::builders::UpdateClusterFluentBuilder {
         crate::operation::update_cluster::builders::UpdateClusterFluentBuilder::new(self.handle.clone())

@@ -25,11 +25,7 @@ pub fn parse_http_error_metadata(
 
 pub(crate) mod shape_create_cluster;
 
-pub(crate) mod shape_create_multi_region_clusters;
-
 pub(crate) mod shape_delete_cluster;
-
-pub(crate) mod shape_delete_multi_region_clusters;
 
 pub(crate) mod shape_get_cluster;
 
@@ -59,8 +55,6 @@ pub(crate) mod shape_conflict_exception;
 
 pub(crate) mod shape_create_cluster_input;
 
-pub(crate) mod shape_create_multi_region_clusters_input;
-
 pub(crate) mod shape_internal_server_exception;
 
 pub(crate) mod shape_resource_not_found_exception;
@@ -75,17 +69,15 @@ pub(crate) mod shape_update_cluster_input;
 
 pub(crate) mod shape_validation_exception;
 
-pub(crate) mod shape_cluster_arn_list;
-
 pub(crate) mod shape_cluster_list;
-
-pub(crate) mod shape_linked_cluster_properties;
 
 pub(crate) mod shape_multi_region_properties;
 
 pub(crate) mod shape_tag_map;
 
 pub(crate) mod shape_validation_exception_field_list;
+
+pub(crate) mod shape_cluster_arn_list;
 
 pub(crate) mod shape_cluster_summary;
 

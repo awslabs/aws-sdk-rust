@@ -37,6 +37,26 @@ pub use crate::types::_channel_list_configuration::ChannelListConfiguration;
 
 pub use crate::types::_get_dash_manifest_configuration::GetDashManifestConfiguration;
 
+pub use crate::types::_dash_subtitle_configuration::DashSubtitleConfiguration;
+
+pub use crate::types::_dash_ttml_configuration::DashTtmlConfiguration;
+
+pub use crate::types::_dash_ttml_profile::DashTtmlProfile;
+
+pub use crate::types::_dash_compactness::DashCompactness;
+
+pub use crate::types::_dash_dvb_settings::DashDvbSettings;
+
+pub use crate::types::_dash_dvb_metrics_reporting::DashDvbMetricsReporting;
+
+pub use crate::types::_dash_dvb_font_download::DashDvbFontDownload;
+
+pub use crate::types::_dash_program_information::DashProgramInformation;
+
+pub use crate::types::_dash_base_url::DashBaseUrl;
+
+pub use crate::types::_dash_profile::DashProfile;
+
 pub use crate::types::_dash_utc_timing::DashUtcTiming;
 
 pub use crate::types::_dash_utc_timing_mode::DashUtcTimingMode;
@@ -127,11 +147,31 @@ mod _create_hls_manifest_configuration;
 
 mod _create_low_latency_hls_manifest_configuration;
 
+mod _dash_base_url;
+
+mod _dash_compactness;
+
 mod _dash_drm_signaling;
+
+mod _dash_dvb_font_download;
+
+mod _dash_dvb_metrics_reporting;
+
+mod _dash_dvb_settings;
 
 mod _dash_period_trigger;
 
+mod _dash_profile;
+
+mod _dash_program_information;
+
 mod _dash_segment_template_format;
+
+mod _dash_subtitle_configuration;
+
+mod _dash_ttml_configuration;
+
+mod _dash_ttml_profile;
 
 mod _dash_utc_timing;
 

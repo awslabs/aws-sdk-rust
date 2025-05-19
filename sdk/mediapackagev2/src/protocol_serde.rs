@@ -167,6 +167,14 @@ pub(crate) mod shape_channel_group_list_configuration;
 
 pub(crate) mod shape_channel_list_configuration;
 
+pub(crate) mod shape_dash_base_url;
+
+pub(crate) mod shape_dash_dvb_settings;
+
+pub(crate) mod shape_dash_program_information;
+
+pub(crate) mod shape_dash_subtitle_configuration;
+
 pub(crate) mod shape_dash_utc_timing;
 
 pub(crate) mod shape_encryption;
@@ -209,7 +217,17 @@ pub(crate) mod shape_scte_hls;
 
 pub(crate) mod shape_start_tag;
 
+pub(crate) mod shape_dash_base_urls;
+
+pub(crate) mod shape_dash_dvb_font_download;
+
+pub(crate) mod shape_dash_dvb_metrics_reporting;
+
 pub(crate) mod shape_dash_period_triggers;
+
+pub(crate) mod shape_dash_profiles;
+
+pub(crate) mod shape_dash_ttml_configuration;
 
 pub(crate) mod shape_encryption_method;
 
@@ -222,6 +240,8 @@ pub(crate) mod shape_list_low_latency_hls_manifests;
 pub(crate) mod shape_scte_filter_list;
 
 pub(crate) mod shape_speke_key_provider;
+
+pub(crate) mod shape_dash_dvb_error_metrics;
 
 pub(crate) mod shape_drm_systems;
 

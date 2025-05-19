@@ -642,6 +642,22 @@ pub(crate) fn start_tag_correct_errors(mut builder: crate::types::builders::Star
     builder
 }
 
+pub(crate) fn dash_base_url_correct_errors(mut builder: crate::types::builders::DashBaseUrlBuilder) -> crate::types::builders::DashBaseUrlBuilder {
+    if builder.url.is_none() {
+        builder.url = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn dash_ttml_configuration_correct_errors(
+    mut builder: crate::types::builders::DashTtmlConfigurationBuilder,
+) -> crate::types::builders::DashTtmlConfigurationBuilder {
+    if builder.ttml_profile.is_none() {
+        builder.ttml_profile = "no value was set".parse::<crate::types::DashTtmlProfile>().ok()
+    }
+    builder
+}
+
 pub(crate) fn encryption_contract_configuration_correct_errors(
     mut builder: crate::types::builders::EncryptionContractConfigurationBuilder,
 ) -> crate::types::builders::EncryptionContractConfigurationBuilder {
@@ -677,6 +693,15 @@ pub(crate) fn list_low_latency_hls_manifest_configuration_correct_errors(
 ) -> crate::types::builders::ListLowLatencyHlsManifestConfigurationBuilder {
     if builder.manifest_name.is_none() {
         builder.manifest_name = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn dash_dvb_metrics_reporting_correct_errors(
+    mut builder: crate::types::builders::DashDvbMetricsReportingBuilder,
+) -> crate::types::builders::DashDvbMetricsReportingBuilder {
+    if builder.reporting_url.is_none() {
+        builder.reporting_url = Some(Default::default())
     }
     builder
 }

@@ -12,12 +12,6 @@ pub struct DeleteClusterOutput {
     pub status: crate::types::ClusterStatus,
     /// <p>The time of when the cluster was created.</p>
     pub creation_time: ::aws_smithy_types::DateTime,
-    /// <p>Specifies whether deletion protection was enabled on the cluster.</p>
-    #[deprecated(
-        note = "The deletionProtectionEnabled field is deprecated in the DeleteCluster API. To check deletion protection status, use the GetCluster API instead.",
-        since = "5/13/2025"
-    )]
-    pub deletion_protection_enabled: bool,
     _request_id: Option<String>,
 }
 impl DeleteClusterOutput {
@@ -38,14 +32,6 @@ impl DeleteClusterOutput {
     /// <p>The time of when the cluster was created.</p>
     pub fn creation_time(&self) -> &::aws_smithy_types::DateTime {
         &self.creation_time
-    }
-    /// <p>Specifies whether deletion protection was enabled on the cluster.</p>
-    #[deprecated(
-        note = "The deletionProtectionEnabled field is deprecated in the DeleteCluster API. To check deletion protection status, use the GetCluster API instead.",
-        since = "5/13/2025"
-    )]
-    pub fn deletion_protection_enabled(&self) -> bool {
-        self.deletion_protection_enabled
     }
 }
 impl ::aws_types::request_id::RequestId for DeleteClusterOutput {
@@ -68,7 +54,6 @@ pub struct DeleteClusterOutputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::ClusterStatus>,
     pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) deletion_protection_enabled: ::std::option::Option<bool>,
     _request_id: Option<String>,
 }
 impl DeleteClusterOutputBuilder {
@@ -132,33 +117,6 @@ impl DeleteClusterOutputBuilder {
     pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.creation_time
     }
-    /// <p>Specifies whether deletion protection was enabled on the cluster.</p>
-    /// This field is required.
-    #[deprecated(
-        note = "The deletionProtectionEnabled field is deprecated in the DeleteCluster API. To check deletion protection status, use the GetCluster API instead.",
-        since = "5/13/2025"
-    )]
-    pub fn deletion_protection_enabled(mut self, input: bool) -> Self {
-        self.deletion_protection_enabled = ::std::option::Option::Some(input);
-        self
-    }
-    /// <p>Specifies whether deletion protection was enabled on the cluster.</p>
-    #[deprecated(
-        note = "The deletionProtectionEnabled field is deprecated in the DeleteCluster API. To check deletion protection status, use the GetCluster API instead.",
-        since = "5/13/2025"
-    )]
-    pub fn set_deletion_protection_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.deletion_protection_enabled = input;
-        self
-    }
-    /// <p>Specifies whether deletion protection was enabled on the cluster.</p>
-    #[deprecated(
-        note = "The deletionProtectionEnabled field is deprecated in the DeleteCluster API. To check deletion protection status, use the GetCluster API instead.",
-        since = "5/13/2025"
-    )]
-    pub fn get_deletion_protection_enabled(&self) -> &::std::option::Option<bool> {
-        &self.deletion_protection_enabled
-    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -174,7 +132,6 @@ impl DeleteClusterOutputBuilder {
     /// - [`arn`](crate::operation::delete_cluster::builders::DeleteClusterOutputBuilder::arn)
     /// - [`status`](crate::operation::delete_cluster::builders::DeleteClusterOutputBuilder::status)
     /// - [`creation_time`](crate::operation::delete_cluster::builders::DeleteClusterOutputBuilder::creation_time)
-    /// - [`deletion_protection_enabled`](crate::operation::delete_cluster::builders::DeleteClusterOutputBuilder::deletion_protection_enabled)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::delete_cluster::DeleteClusterOutput, ::aws_smithy_types::error::operation::BuildError> {
@@ -201,12 +158,6 @@ impl DeleteClusterOutputBuilder {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "creation_time",
                     "creation_time was not specified but it is required when building DeleteClusterOutput",
-                )
-            })?,
-            deletion_protection_enabled: self.deletion_protection_enabled.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "deletion_protection_enabled",
-                    "deletion_protection_enabled was not specified but it is required when building DeleteClusterOutput",
                 )
             })?,
             _request_id: self._request_id,
