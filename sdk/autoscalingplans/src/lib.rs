@@ -44,7 +44,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-//! aws-sdk-autoscalingplans = "1.68.0"
+//! aws-sdk-autoscalingplans = "1.69.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!
