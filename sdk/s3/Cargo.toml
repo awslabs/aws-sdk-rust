@@ -33,7 +33,7 @@ version = "1.2.5"
 
 [dependencies.aws-smithy-checksums]
 path = "../aws-smithy-checksums"
-version = "0.63.2"
+version = "0.63.3"
 
 [dependencies.aws-smithy-eventstream]
 path = "../aws-smithy-eventstream"
@@ -149,7 +149,7 @@ version = "1.0.2"
 
 [dev-dependencies.aws-smithy-mocks]
 path = "../aws-smithy-mocks"
-version = "0.1.0"
+version = "0.1.1"
 
 [dev-dependencies.aws-smithy-protocol-test]
 path = "../aws-smithy-protocol-test"

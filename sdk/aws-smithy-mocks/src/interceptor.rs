@@ -111,8 +111,12 @@ impl Intercept for MockResponseInterceptor {
                 while i < rules.len() && matching_response.is_none() {
                     let rule = &rules[i];
 
-                    // Check if the rule is already exhausted
-                    if rule.is_exhausted() {
+                    // Check if the rule is already exhausted or if it's a simple rule used once
+                    //
+                    // In `aws-smithy-mocks-experimental` all rules were infinite sequences
+                    // but were only usable once in sequential mode. We retain that here for
+                    // backwards compatibility.
+                    if rule.is_exhausted() || (rule.is_simple() && rule.num_calls() > 0) {
                         // Rule is exhausted, remove it and try the next one
                         rules.remove(i);
                         continue; // Don't increment i since we removed an element
@@ -444,7 +448,7 @@ mod tests {
         expected = "must_match was enabled but no rules matched or all rules were exhausted for"
     )]
     #[tokio::test]
-    async fn test_exhausted_rules() {
+    async fn test_exhausted_rules_sequential() {
         // Create a rule with a single response
         let rule = create_rule_builder().then_output(|| TestOutput::new("only response"));
 
@@ -503,6 +507,14 @@ mod tests {
         // Verify the rules were used the expected number of times
         assert_eq!(rule1.num_calls(), 1);
         assert_eq!(rule2.num_calls(), 1);
+
+        // Calling with bucket1 again should match rule1 a second time
+        let result1 = operation
+            .invoke(TestInput::new("bucket1", "test-key"))
+            .await;
+        assert!(result1.is_ok());
+        assert_eq!(result1.unwrap(), TestOutput::new("response1"));
+        assert_eq!(rule1.num_calls(), 2);
     }
 
     #[tokio::test]
@@ -553,9 +565,63 @@ mod tests {
         // Verify the rule was used the expected number of times
         assert_eq!(rule.num_calls(), 3);
     }
+    #[tokio::test]
+    async fn test_exhausted_sequence_match_any() {
+        // Create a rule with a sequence that will be exhausted
+        let rule = create_rule_builder()
+            .match_requests(|input| input.bucket == "bucket-1")
+            .sequence()
+            .output(|| TestOutput::new("response 1"))
+            .output(|| TestOutput::new("response 2"))
+            .build();
+
+        // Create another rule to use after the first one is exhausted
+        let fallback_rule =
+            create_rule_builder().then_output(|| TestOutput::new("fallback response"));
+
+        // Create an interceptor with both rules
+        let interceptor = MockResponseInterceptor::new()
+            .rule_mode(RuleMode::MatchAny)
+            .with_rule(&rule)
+            .with_rule(&fallback_rule);
+
+        let operation = create_test_operation(interceptor, false);
+
+        // First two calls should use the first rule
+        let result1 = operation
+            .invoke(TestInput::new("bucket-1", "test-key"))
+            .await;
+        assert!(result1.is_ok());
+        assert_eq!(result1.unwrap(), TestOutput::new("response 1"));
+
+        // second should use our fallback rule
+        let result2 = operation
+            .invoke(TestInput::new("other-bucket", "test-key"))
+            .await;
+        assert!(result2.is_ok());
+        assert_eq!(result2.unwrap(), TestOutput::new("fallback response"));
+
+        // Third call should use the first rule again and exhaust it
+        let result3 = operation
+            .invoke(TestInput::new("bucket-1", "test-key"))
+            .await;
+        assert!(result3.is_ok());
+        assert_eq!(result3.unwrap(), TestOutput::new("response 2"));
+
+        // first rule is exhausted so the matcher shouldn't matter and we should hit our fallback rule
+        let result4 = operation
+            .invoke(TestInput::new("bucket-1", "test-key"))
+            .await;
+        assert!(result4.is_ok());
+        assert_eq!(result4.unwrap(), TestOutput::new("fallback response"));
+
+        // Verify the rules were used the expected number of times
+        assert_eq!(rule.num_calls(), 2);
+        assert_eq!(fallback_rule.num_calls(), 2);
+    }
 
     #[tokio::test]
-    async fn test_exhausted_sequence() {
+    async fn test_exhausted_sequence_sequential() {
         // Create a rule with a sequence that will be exhausted
         let rule = create_rule_builder()
             .sequence()
@@ -694,5 +760,119 @@ mod tests {
         assert!(result2.is_ok());
         assert_eq!(result2.unwrap(), TestOutput::new("success"));
         assert_eq!(rule2.num_calls(), 1);
+    }
+
+    #[tokio::test]
+    async fn test_simple_rule_in_match_any_mode() {
+        let rule = create_rule_builder().then_output(|| TestOutput::new("simple response"));
+
+        let interceptor = MockResponseInterceptor::new()
+            .rule_mode(RuleMode::MatchAny)
+            .with_rule(&rule);
+
+        let operation = create_test_operation(interceptor, false);
+
+        for i in 0..5 {
+            let result = operation
+                .invoke(TestInput::new("test-bucket", "test-key"))
+                .await;
+            assert!(result.is_ok(), "Call {} should succeed", i);
+            assert_eq!(result.unwrap(), TestOutput::new("simple response"));
+        }
+        assert_eq!(rule.num_calls(), 5);
+        assert!(!rule.is_exhausted());
+    }
+
+    #[tokio::test]
+    async fn test_simple_rule_in_sequential_mode() {
+        let rule1 = create_rule_builder().then_output(|| TestOutput::new("first response"));
+        let rule2 = create_rule_builder().then_output(|| TestOutput::new("second response"));
+
+        let interceptor = MockResponseInterceptor::new()
+            .rule_mode(RuleMode::Sequential)
+            .with_rule(&rule1)
+            .with_rule(&rule2);
+
+        let operation = create_test_operation(interceptor, false);
+
+        let result1 = operation
+            .invoke(TestInput::new("test-bucket", "test-key"))
+            .await;
+        assert!(result1.is_ok());
+        assert_eq!(result1.unwrap(), TestOutput::new("first response"));
+
+        // Second call should use rule2 (rule1 should be removed after one use in Sequential mode)
+        let result2 = operation
+            .invoke(TestInput::new("test-bucket", "test-key"))
+            .await;
+        assert!(result2.is_ok());
+        assert_eq!(result2.unwrap(), TestOutput::new("second response"));
+
+        assert_eq!(rule1.num_calls(), 1);
+        assert_eq!(rule2.num_calls(), 1);
+    }
+
+    #[tokio::test]
+    async fn test_repeatedly_method() {
+        let rule = create_rule_builder()
+            .sequence()
+            .output(|| TestOutput::new("first response"))
+            .output(|| TestOutput::new("repeated response"))
+            .repeatedly()
+            .build();
+
+        let interceptor = MockResponseInterceptor::new()
+            .rule_mode(RuleMode::Sequential)
+            .with_rule(&rule);
+
+        let operation = create_test_operation(interceptor, false);
+
+        let result1 = operation
+            .invoke(TestInput::new("test-bucket", "test-key"))
+            .await;
+        assert!(result1.is_ok());
+        assert_eq!(result1.unwrap(), TestOutput::new("first response"));
+
+        // all subsequent calls should return "repeated response"
+        for i in 0..10 {
+            let result = operation
+                .invoke(TestInput::new("test-bucket", "test-key"))
+                .await;
+            assert!(result.is_ok(), "Call {} should succeed", i);
+            assert_eq!(result.unwrap(), TestOutput::new("repeated response"));
+        }
+        assert_eq!(rule.num_calls(), 11);
+        assert!(!rule.is_exhausted());
+    }
+
+    #[should_panic(expected = "times(n) called before adding a response to the sequence")]
+    #[test]
+    fn test_times_validation() {
+        // This should panic because times() is called before adding any responses
+        let _rule = create_rule_builder()
+            .sequence()
+            .times(3)
+            .output(|| TestOutput::new("response"))
+            .build();
+    }
+
+    #[should_panic(expected = "repeatedly() called before adding a response to the sequence")]
+    #[test]
+    fn test_repeatedly_validation() {
+        // This should panic because repeatedly() is called before adding any responses
+        let _rule = create_rule_builder().sequence().repeatedly().build();
+    }
+
+    #[test]
+    fn test_total_responses_overflow() {
+        // Create a rule with a large number of repetitions to test overflow handling
+        let rule = create_rule_builder()
+            .sequence()
+            .output(|| TestOutput::new("response"))
+            .times(usize::MAX / 2)
+            .output(|| TestOutput::new("another response"))
+            .repeatedly()
+            .build();
+        assert_eq!(rule.max_responses, usize::MAX);
     }
 }

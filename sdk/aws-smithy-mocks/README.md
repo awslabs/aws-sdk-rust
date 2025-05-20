@@ -104,7 +104,18 @@ let retry_rule = mock!(Client::get_object)
     .times(2)                                        // First two calls return 503
     .output(|| GetObjectOutput::builder().build())   // Third call succeeds
     .build();
+
+// Repeat a response indefinitely
+let infinite_rule = mock!(Client::get_object)
+    .sequence()
+    .error(|| GetObjectError::NoSuchKey(NoSuchKey::builder().build()))
+    .output(|| GetObjectOutput::builder().build())   // Second call succeeds
+    .repeatedly()                                    // All subsequent calls succeed
+    .build();
 ```
+
+The `times(n)` method repeats the last added response `n` times, while `repeatedly()` causes the last response to
+repeat indefinitely, making the rule never exhaust.
 
 The sequence builder API provides a fluent interface for defining sequences of responses.
 After providing all responses in the sequence, the rule is considered exhausted.
@@ -133,8 +144,15 @@ let client = mock_client!(
 
 The [`RuleMode`] enum controls how rules are matched and applied:
 
+Given a simple (non-sequenced) based rule (e.g. `.then_output()`, `.then_error()`, or `.then_http_response()`):
+- `RuleMode::Sequential`: The rule is used once and then the next rule is used.
+- `RuleMode::MatchAny`: Rule is used repeatedly as many times as it is matched.
+
+In other words, simple rules behave as single use rules in `Sequential` mode and as infinite sequences in `MatchAny` mode.
+
+Given a sequenced rule (e.g. via `.sequence()`):
 - `RuleMode::Sequential`: Rules are tried in order. When a rule is exhausted, the next rule is used.
-- `RuleMode::MatchAny`: The first matching rule is used, regardless of order.
+- `RuleMode::MatchAny`: The first (non-exhausted) matching rule is used, regardless of order.
 
 ```rust,ignore
 let interceptor = MockResponseInterceptor::new()

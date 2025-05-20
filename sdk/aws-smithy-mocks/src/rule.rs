@@ -44,13 +44,19 @@ pub struct Rule {
     pub(crate) matcher: MatchFn,
 
     /// Handler function that generates responses.
-    pub(crate) response_handler: ServeFn,
+    response_handler: ServeFn,
 
     /// Number of times this rule has been called.
-    pub(crate) call_count: Arc<AtomicUsize>,
+    call_count: Arc<AtomicUsize>,
 
     /// Maximum number of responses this rule will provide.
     pub(crate) max_responses: usize,
+
+    /// Flag indicating this is a "simple" rule which changes how it is interpreted
+    /// depending on the RuleMode.
+    ///
+    /// See [smithy-rs#4135](https://github.com/smithy-lang/smithy-rs/issues/4135)
+    is_simple: bool,
 }
 
 impl fmt::Debug for Rule {
@@ -65,6 +71,7 @@ impl Rule {
         matcher: MatchFn,
         response_handler: Arc<dyn Fn(usize) -> Option<MockResponse<O, E>> + Send + Sync>,
         max_responses: usize,
+        is_simple: bool,
     ) -> Self
     where
         O: fmt::Debug + Send + Sync + 'static,
@@ -85,7 +92,13 @@ impl Rule {
             }),
             call_count: Arc::new(AtomicUsize::new(0)),
             max_responses,
+            is_simple,
         }
+    }
+
+    /// Test if this is a "simple" rule (non-sequenced)
+    pub(crate) fn is_simple(&self) -> bool {
+        self.is_simple
     }
 
     /// Gets the next response.
@@ -196,7 +209,7 @@ where
     where
         F: Fn() -> O + Send + Sync + 'static,
     {
-        self.sequence().output(output_fn).build()
+        self.sequence().output(output_fn).build_simple()
     }
 
     /// Creates a rule that returns a modeled error.
@@ -204,7 +217,7 @@ where
     where
         F: Fn() -> E + Send + Sync + 'static,
     {
-        self.sequence().error(error_fn).build()
+        self.sequence().error(error_fn).build_simple()
     }
 
     /// Creates a rule that returns an HTTP response.
@@ -212,7 +225,7 @@ where
     where
         F: Fn() -> HttpResponse + Send + Sync + 'static,
     {
-        self.sequence().http_response(response_fn).build()
+        self.sequence().http_response(response_fn).build_simple()
     }
 }
 
@@ -221,13 +234,21 @@ type SequenceGeneratorFn<O, E> = Arc<dyn Fn() -> MockResponse<O, E> + Send + Syn
 /// A builder for creating response sequences
 pub struct ResponseSequenceBuilder<I, O, E> {
     /// The response generators in the sequence
-    generators: Vec<SequenceGeneratorFn<O, E>>,
+    generators: Vec<(SequenceGeneratorFn<O, E>, usize)>,
 
     /// Function that determines if this rule matches a request
     input_filter: MatchFn,
 
+    /// flag indicating this is a "simple" rule
+    is_simple: bool,
+
     /// Marker for the input, output, and error types
     _marker: std::marker::PhantomData<I>,
+}
+
+/// Final sequence builder state  - can only `build()`
+pub struct FinalizedResponseSequenceBuilder<I, O, E> {
+    inner: ResponseSequenceBuilder<I, O, E>,
 }
 
 impl<I, O, E> ResponseSequenceBuilder<I, O, E>
@@ -241,6 +262,7 @@ where
         Self {
             generators: Vec::new(),
             input_filter,
+            is_simple: false,
             _marker: std::marker::PhantomData,
         }
     }
@@ -260,7 +282,7 @@ where
         F: Fn() -> O + Send + Sync + 'static,
     {
         let generator = Arc::new(move || MockResponse::Output(output_fn()));
-        self.generators.push(generator);
+        self.generators.push((generator, 1));
         self
     }
 
@@ -270,7 +292,7 @@ where
         F: Fn() -> E + Send + Sync + 'static,
     {
         let generator = Arc::new(move || MockResponse::Error(error_fn()));
-        self.generators.push(generator);
+        self.generators.push((generator, 1));
         self
     }
 
@@ -287,7 +309,7 @@ where
             }),
         };
 
-        self.generators.push(generator);
+        self.generators.push((generator, 1));
         self
     }
 
@@ -297,14 +319,37 @@ where
         F: Fn() -> HttpResponse + Send + Sync + 'static,
     {
         let generator = Arc::new(move || MockResponse::Http(response_fn()));
-        self.generators.push(generator);
+        self.generators.push((generator, 1));
         self
     }
 
-    /// Repeat the last added response multiple times (total count)
+    /// Repeat the last added response multiple times.
     ///
-    /// NOTE: `times(1)` has no effect and `times(0)` will panic
+    /// This method sets the number of times the last response in the sequence will be used.
+    /// For example, if you add a response and then call `times(3)`, that response will be
+    /// returned for the next 3 calls to the rule.
+    ///
+    /// # Examples
+    ///
+    /// ```rust,ignore
+    /// // Create a rule that returns 503 twice, then succeeds
+    /// let rule = mock!(Client::get_object)
+    ///     .sequence()
+    ///     .http_status(503, None)
+    ///     .times(2)                                        // First two calls return 503
+    ///     .output(|| GetObjectOutput::builder().build())   // Third call succeeds
+    ///     .build();
+    /// ```
+    ///
+    /// # Panics
+    ///
+    /// Panics if:
+    /// - Called with a count of 0
+    /// - Called before adding any responses to the sequence
     pub fn times(mut self, count: usize) -> Self {
+        if self.generators.is_empty() {
+            panic!("times(n) called before adding a response to the sequence");
+        }
         match count {
             0 => panic!("repeat count must be greater than zero"),
             1 => {
@@ -313,30 +358,88 @@ where
             _ => {}
         }
 
-        if let Some(last_generator) = self.generators.last().cloned() {
-            // Add count-1 more copies (we already have one)
-            for _ in 1..count {
-                self.generators.push(last_generator.clone());
-            }
+        // update the repeat count of the last generator
+        if let Some(last_generator) = self.generators.last_mut() {
+            last_generator.1 = count;
         }
         self
+    }
+    /// Make the last response in the sequence repeat indefinitely.
+    ///
+    /// This method causes the last response added to the sequence to be repeated
+    /// forever, making the rule never exhaust. After calling `repeatedly()`,
+    /// no more responses can be added to the sequence.
+    ///
+    /// # Examples
+    ///
+    /// ```rust,ignore
+    /// // Create a rule that returns an error once, then succeeds forever
+    /// let rule = mock!(Client::get_object)
+    ///     .sequence()
+    ///     .error(|| GetObjectError::NoSuchKey(NoSuchKey::builder().build()))
+    ///     .output(|| GetObjectOutput::builder().build())
+    ///     .repeatedly()
+    ///     .build();
+    ///
+    /// // First call will return NoSuchKey error
+    /// // All subsequent calls will return success
+    /// ```
+    ///
+    /// # Panics
+    ///
+    /// Panics if called before adding any responses to the sequence.
+    pub fn repeatedly(self) -> FinalizedResponseSequenceBuilder<I, O, E> {
+        if self.generators.is_empty() {
+            panic!("repeatedly() called before adding a response to the sequence");
+        }
+        let inner = self.times(usize::MAX);
+        FinalizedResponseSequenceBuilder { inner }
+    }
+
+    /// Build this a "simple" rule (internal detail)
+    pub(crate) fn build_simple(mut self) -> Rule {
+        self.is_simple = true;
+        self.repeatedly().build()
     }
 
     /// Build the rule with this response sequence
     pub fn build(self) -> Rule {
         let generators = self.generators;
-        let count = generators.len();
+        let is_simple = self.is_simple;
+
+        // calculate total responses (sum of all repetitions)
+        let total_responses: usize = generators
+            .iter()
+            .map(|(_, count)| *count)
+            .fold(0, |acc, count| acc.saturating_add(count));
 
         Rule::new(
             self.input_filter,
             Arc::new(move |idx| {
-                if idx < count {
-                    Some(generators[idx]())
-                } else {
-                    None
+                // find which generator to use
+                let mut current_idx = idx;
+                for (generator, repeat_count) in &generators {
+                    if current_idx < *repeat_count {
+                        return Some(generator());
+                    }
+                    current_idx -= repeat_count;
                 }
+                None
             }),
-            count,
+            total_responses,
+            is_simple,
         )
+    }
+}
+
+impl<I, O, E> FinalizedResponseSequenceBuilder<I, O, E>
+where
+    I: fmt::Debug + Send + Sync + 'static,
+    O: fmt::Debug + Send + Sync + 'static,
+    E: fmt::Debug + Send + Sync + std::error::Error + 'static,
+{
+    /// Build the rule with this response sequence
+    pub fn build(self) -> Rule {
+        self.inner.build()
     }
 }
