@@ -18,6 +18,10 @@ pub struct AwsEcrContainerAggregationResponse {
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>The number of finding by severity.</p>
     pub severity_counts: ::std::option::Option<crate::types::SeverityCounts>,
+    /// <p>The last time an Amazon ECR image was used in an Amazon ECS task or Amazon EKS pod.</p>
+    pub last_in_use_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>The number of Amazon ECS tasks or Amazon EKS pods where the Amazon ECR container image is in use.</p>
+    pub in_use_count: ::std::option::Option<i64>,
 }
 impl AwsEcrContainerAggregationResponse {
     /// <p>The resource ID of the container.</p>
@@ -51,6 +55,14 @@ impl AwsEcrContainerAggregationResponse {
     pub fn severity_counts(&self) -> ::std::option::Option<&crate::types::SeverityCounts> {
         self.severity_counts.as_ref()
     }
+    /// <p>The last time an Amazon ECR image was used in an Amazon ECS task or Amazon EKS pod.</p>
+    pub fn last_in_use_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+        self.last_in_use_at.as_ref()
+    }
+    /// <p>The number of Amazon ECS tasks or Amazon EKS pods where the Amazon ECR container image is in use.</p>
+    pub fn in_use_count(&self) -> ::std::option::Option<i64> {
+        self.in_use_count
+    }
 }
 impl AwsEcrContainerAggregationResponse {
     /// Creates a new builder-style object to manufacture [`AwsEcrContainerAggregationResponse`](crate::types::AwsEcrContainerAggregationResponse).
@@ -70,6 +82,8 @@ pub struct AwsEcrContainerAggregationResponseBuilder {
     pub(crate) image_tags: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) severity_counts: ::std::option::Option<crate::types::SeverityCounts>,
+    pub(crate) last_in_use_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) in_use_count: ::std::option::Option<i64>,
 }
 impl AwsEcrContainerAggregationResponseBuilder {
     /// <p>The resource ID of the container.</p>
@@ -177,6 +191,34 @@ impl AwsEcrContainerAggregationResponseBuilder {
     pub fn get_severity_counts(&self) -> &::std::option::Option<crate::types::SeverityCounts> {
         &self.severity_counts
     }
+    /// <p>The last time an Amazon ECR image was used in an Amazon ECS task or Amazon EKS pod.</p>
+    pub fn last_in_use_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.last_in_use_at = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The last time an Amazon ECR image was used in an Amazon ECS task or Amazon EKS pod.</p>
+    pub fn set_last_in_use_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.last_in_use_at = input;
+        self
+    }
+    /// <p>The last time an Amazon ECR image was used in an Amazon ECS task or Amazon EKS pod.</p>
+    pub fn get_last_in_use_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_in_use_at
+    }
+    /// <p>The number of Amazon ECS tasks or Amazon EKS pods where the Amazon ECR container image is in use.</p>
+    pub fn in_use_count(mut self, input: i64) -> Self {
+        self.in_use_count = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The number of Amazon ECS tasks or Amazon EKS pods where the Amazon ECR container image is in use.</p>
+    pub fn set_in_use_count(mut self, input: ::std::option::Option<i64>) -> Self {
+        self.in_use_count = input;
+        self
+    }
+    /// <p>The number of Amazon ECS tasks or Amazon EKS pods where the Amazon ECR container image is in use.</p>
+    pub fn get_in_use_count(&self) -> &::std::option::Option<i64> {
+        &self.in_use_count
+    }
     /// Consumes the builder and constructs a [`AwsEcrContainerAggregationResponse`](crate::types::AwsEcrContainerAggregationResponse).
     /// This method will fail if any of the following fields are not set:
     /// - [`resource_id`](crate::types::builders::AwsEcrContainerAggregationResponseBuilder::resource_id)
@@ -194,6 +236,8 @@ impl AwsEcrContainerAggregationResponseBuilder {
             image_tags: self.image_tags,
             account_id: self.account_id,
             severity_counts: self.severity_counts,
+            last_in_use_at: self.last_in_use_at,
+            in_use_count: self.in_use_count,
         })
     }
 }

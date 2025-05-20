@@ -48,6 +48,10 @@ pub struct FilterCriteria {
     pub ecr_image_tags: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     /// <p>Details of the Amazon ECR image hashes used to filter findings.</p>
     pub ecr_image_hash: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
+    /// <p>Filter criteria indicating when an Amazon ECR image was last used in an Amazon ECS cluster task or Amazon EKS cluster pod.</p>
+    pub ecr_image_last_in_use_at: ::std::option::Option<::std::vec::Vec<crate::types::DateFilter>>,
+    /// <p>Filter criteria indicating when details for an Amazon ECR image include when an Amazon ECR image is in use.</p>
+    pub ecr_image_in_use_count: ::std::option::Option<::std::vec::Vec<crate::types::NumberFilter>>,
     /// <p>Details on the port ranges used to filter findings.</p>
     pub port_range: ::std::option::Option<::std::vec::Vec<crate::types::PortRangeFilter>>,
     /// <p>Details on network protocol used to filter findings.</p>
@@ -222,6 +226,18 @@ impl FilterCriteria {
     pub fn ecr_image_hash(&self) -> &[crate::types::StringFilter] {
         self.ecr_image_hash.as_deref().unwrap_or_default()
     }
+    /// <p>Filter criteria indicating when an Amazon ECR image was last used in an Amazon ECS cluster task or Amazon EKS cluster pod.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ecr_image_last_in_use_at.is_none()`.
+    pub fn ecr_image_last_in_use_at(&self) -> &[crate::types::DateFilter] {
+        self.ecr_image_last_in_use_at.as_deref().unwrap_or_default()
+    }
+    /// <p>Filter criteria indicating when details for an Amazon ECR image include when an Amazon ECR image is in use.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ecr_image_in_use_count.is_none()`.
+    pub fn ecr_image_in_use_count(&self) -> &[crate::types::NumberFilter] {
+        self.ecr_image_in_use_count.as_deref().unwrap_or_default()
+    }
     /// <p>Details on the port ranges used to filter findings.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.port_range.is_none()`.
@@ -376,6 +392,8 @@ pub struct FilterCriteriaBuilder {
     pub(crate) ecr_image_repository_name: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     pub(crate) ecr_image_tags: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     pub(crate) ecr_image_hash: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
+    pub(crate) ecr_image_last_in_use_at: ::std::option::Option<::std::vec::Vec<crate::types::DateFilter>>,
+    pub(crate) ecr_image_in_use_count: ::std::option::Option<::std::vec::Vec<crate::types::NumberFilter>>,
     pub(crate) port_range: ::std::option::Option<::std::vec::Vec<crate::types::PortRangeFilter>>,
     pub(crate) network_protocol: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     pub(crate) component_id: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
@@ -838,6 +856,46 @@ impl FilterCriteriaBuilder {
     pub fn get_ecr_image_hash(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
         &self.ecr_image_hash
     }
+    /// Appends an item to `ecr_image_last_in_use_at`.
+    ///
+    /// To override the contents of this collection use [`set_ecr_image_last_in_use_at`](Self::set_ecr_image_last_in_use_at).
+    ///
+    /// <p>Filter criteria indicating when an Amazon ECR image was last used in an Amazon ECS cluster task or Amazon EKS cluster pod.</p>
+    pub fn ecr_image_last_in_use_at(mut self, input: crate::types::DateFilter) -> Self {
+        let mut v = self.ecr_image_last_in_use_at.unwrap_or_default();
+        v.push(input);
+        self.ecr_image_last_in_use_at = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Filter criteria indicating when an Amazon ECR image was last used in an Amazon ECS cluster task or Amazon EKS cluster pod.</p>
+    pub fn set_ecr_image_last_in_use_at(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DateFilter>>) -> Self {
+        self.ecr_image_last_in_use_at = input;
+        self
+    }
+    /// <p>Filter criteria indicating when an Amazon ECR image was last used in an Amazon ECS cluster task or Amazon EKS cluster pod.</p>
+    pub fn get_ecr_image_last_in_use_at(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DateFilter>> {
+        &self.ecr_image_last_in_use_at
+    }
+    /// Appends an item to `ecr_image_in_use_count`.
+    ///
+    /// To override the contents of this collection use [`set_ecr_image_in_use_count`](Self::set_ecr_image_in_use_count).
+    ///
+    /// <p>Filter criteria indicating when details for an Amazon ECR image include when an Amazon ECR image is in use.</p>
+    pub fn ecr_image_in_use_count(mut self, input: crate::types::NumberFilter) -> Self {
+        let mut v = self.ecr_image_in_use_count.unwrap_or_default();
+        v.push(input);
+        self.ecr_image_in_use_count = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Filter criteria indicating when details for an Amazon ECR image include when an Amazon ECR image is in use.</p>
+    pub fn set_ecr_image_in_use_count(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::NumberFilter>>) -> Self {
+        self.ecr_image_in_use_count = input;
+        self
+    }
+    /// <p>Filter criteria indicating when details for an Amazon ECR image include when an Amazon ECR image is in use.</p>
+    pub fn get_ecr_image_in_use_count(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::NumberFilter>> {
+        &self.ecr_image_in_use_count
+    }
     /// Appends an item to `port_range`.
     ///
     /// To override the contents of this collection use [`set_port_range`](Self::set_port_range).
@@ -1263,6 +1321,8 @@ impl FilterCriteriaBuilder {
             ecr_image_repository_name: self.ecr_image_repository_name,
             ecr_image_tags: self.ecr_image_tags,
             ecr_image_hash: self.ecr_image_hash,
+            ecr_image_last_in_use_at: self.ecr_image_last_in_use_at,
+            ecr_image_in_use_count: self.ecr_image_in_use_count,
             port_range: self.port_range,
             network_protocol: self.network_protocol,
             component_id: self.component_id,

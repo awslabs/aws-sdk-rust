@@ -281,6 +281,12 @@ pub use crate::types::_db_shard_group::DbShardGroup;
 
 pub use crate::types::_db_parameter_group::DbParameterGroup;
 
+pub use crate::types::_db_major_engine_version::DbMajorEngineVersion;
+
+pub use crate::types::_supported_engine_lifecycle::SupportedEngineLifecycle;
+
+pub use crate::types::_lifecycle_support_name::LifecycleSupportName;
+
 pub use crate::types::_describe_db_log_files_details::DescribeDbLogFilesDetails;
 
 pub use crate::types::_db_engine_version::DbEngineVersion;
@@ -385,6 +391,8 @@ mod _db_instance_role;
 
 mod _db_instance_status_info;
 
+mod _db_major_engine_version;
+
 mod _db_parameter_group;
 
 mod _db_parameter_group_status;
@@ -470,6 +478,8 @@ mod _integration_status;
 mod _ip_range;
 
 mod _issue_details;
+
+mod _lifecycle_support_name;
 
 mod _limitless_database;
 
@@ -564,6 +574,8 @@ mod _source_region;
 mod _source_type;
 
 mod _subnet;
+
+mod _supported_engine_lifecycle;
 
 mod _switchover_detail;
 

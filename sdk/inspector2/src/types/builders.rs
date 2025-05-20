@@ -167,6 +167,8 @@ pub use crate::types::_counts::CountsBuilder;
 
 pub use crate::types::_coverage_filter_criteria::CoverageFilterCriteriaBuilder;
 
+pub use crate::types::_coverage_number_filter::CoverageNumberFilterBuilder;
+
 pub use crate::types::_coverage_date_filter::CoverageDateFilterBuilder;
 
 pub use crate::types::_coverage_string_filter::CoverageStringFilterBuilder;
@@ -244,6 +246,18 @@ pub use crate::types::_ec2_scan_mode_state::Ec2ScanModeStateBuilder;
 pub use crate::types::_ecr_configuration_state::EcrConfigurationStateBuilder;
 
 pub use crate::types::_ecr_rescan_duration_state::EcrRescanDurationStateBuilder;
+
+pub use crate::types::_cluster_information::ClusterInformationBuilder;
+
+pub use crate::types::_cluster_details::ClusterDetailsBuilder;
+
+pub use crate::types::_aws_eks_metadata_details::AwsEksMetadataDetailsBuilder;
+
+pub use crate::types::_aws_eks_workload_info::AwsEksWorkloadInfoBuilder;
+
+pub use crate::types::_aws_ecs_metadata_details::AwsEcsMetadataDetailsBuilder;
+
+pub use crate::types::_cluster_for_image_filter_criteria::ClusterForImageFilterCriteriaBuilder;
 
 pub use crate::types::_cis_scan_result_details::CisScanResultDetailsBuilder;
 

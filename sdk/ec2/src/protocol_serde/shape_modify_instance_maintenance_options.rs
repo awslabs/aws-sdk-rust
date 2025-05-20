@@ -84,6 +84,20 @@ pub fn de_modify_instance_maintenance_options(
                 builder = builder.set_auto_recovery(var_2);
             }
             ,
+            s if s.matches("rebootMigration") /* RebootMigration com.amazonaws.ec2.synthetic#ModifyInstanceMaintenanceOptionsOutput$RebootMigration */ =>  {
+                let var_3 =
+                    Some(
+                        Result::<crate::types::InstanceRebootMigrationState, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::InstanceRebootMigrationState::from(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_reboot_migration(var_3);
+            }
+            ,
             _ => {}
         }
     }

@@ -316,21 +316,18 @@ impl UpdateLocationSmbFluentBuilder {
         self.inner.get_kerberos_principal()
     }
     /// <p>Specifies your Kerberos key table (keytab) file, which includes mappings between your Kerberos principal and encryption keys.</p>
-    /// <p>The file must be base64 encoded. If you're using the CLI, the encoding is done for you.</p>
     /// <p>To avoid task execution errors, make sure that the Kerberos principal that you use to create the keytab file matches exactly what you specify for <code>KerberosPrincipal</code>.</p>
     pub fn kerberos_keytab(mut self, input: ::aws_smithy_types::Blob) -> Self {
         self.inner = self.inner.kerberos_keytab(input);
         self
     }
     /// <p>Specifies your Kerberos key table (keytab) file, which includes mappings between your Kerberos principal and encryption keys.</p>
-    /// <p>The file must be base64 encoded. If you're using the CLI, the encoding is done for you.</p>
     /// <p>To avoid task execution errors, make sure that the Kerberos principal that you use to create the keytab file matches exactly what you specify for <code>KerberosPrincipal</code>.</p>
     pub fn set_kerberos_keytab(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
         self.inner = self.inner.set_kerberos_keytab(input);
         self
     }
     /// <p>Specifies your Kerberos key table (keytab) file, which includes mappings between your Kerberos principal and encryption keys.</p>
-    /// <p>The file must be base64 encoded. If you're using the CLI, the encoding is done for you.</p>
     /// <p>To avoid task execution errors, make sure that the Kerberos principal that you use to create the keytab file matches exactly what you specify for <code>KerberosPrincipal</code>.</p>
     pub fn get_kerberos_keytab(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
         self.inner.get_kerberos_keytab()

@@ -70,6 +70,9 @@ pub mod get_cis_scan_report;
 /// Types for the `GetCisScanResultDetails` operation.
 pub mod get_cis_scan_result_details;
 
+/// Types for the `GetClustersForImage` operation.
+pub mod get_clusters_for_image;
+
 /// Types for the `GetConfiguration` operation.
 pub mod get_configuration;
 

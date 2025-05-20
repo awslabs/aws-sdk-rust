@@ -194,6 +194,15 @@ pub(crate) fn enable_delegated_admin_account_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn get_clusters_for_image_output_output_correct_errors(
+    mut builder: crate::operation::get_clusters_for_image::builders::GetClustersForImageOutputBuilder,
+) -> crate::operation::get_clusters_for_image::builders::GetClustersForImageOutputBuilder {
+    if builder.cluster.is_none() {
+        builder.cluster = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn get_encryption_key_output_output_correct_errors(
     mut builder: crate::operation::get_encryption_key::builders::GetEncryptionKeyOutputBuilder,
 ) -> crate::operation::get_encryption_key::builders::GetEncryptionKeyOutputBuilder {
@@ -375,6 +384,15 @@ pub(crate) fn cis_target_resource_aggregation_correct_errors(
 ) -> crate::types::builders::CisTargetResourceAggregationBuilder {
     if builder.scan_arn.is_none() {
         builder.scan_arn = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn cluster_information_correct_errors(
+    mut builder: crate::types::builders::ClusterInformationBuilder,
+) -> crate::types::builders::ClusterInformationBuilder {
+    if builder.cluster_arn.is_none() {
+        builder.cluster_arn = Some(Default::default())
     }
     builder
 }
@@ -833,6 +851,18 @@ pub(crate) fn title_aggregation_response_correct_errors(
     builder
 }
 
+pub(crate) fn cluster_details_correct_errors(
+    mut builder: crate::types::builders::ClusterDetailsBuilder,
+) -> crate::types::builders::ClusterDetailsBuilder {
+    if builder.last_in_use.is_none() {
+        builder.last_in_use = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.cluster_metadata.is_none() {
+        builder.cluster_metadata = Some(crate::types::ClusterMetadata::Unknown)
+    }
+    builder
+}
+
 pub(crate) fn code_file_path_correct_errors(mut builder: crate::types::builders::CodeFilePathBuilder) -> crate::types::builders::CodeFilePathBuilder {
     if builder.file_name.is_none() {
         builder.file_name = Some(Default::default())
@@ -1010,6 +1040,18 @@ pub(crate) fn aws_ecr_container_image_details_correct_errors(
     builder
 }
 
+pub(crate) fn aws_ecs_metadata_details_correct_errors(
+    mut builder: crate::types::builders::AwsEcsMetadataDetailsBuilder,
+) -> crate::types::builders::AwsEcsMetadataDetailsBuilder {
+    if builder.details_group.is_none() {
+        builder.details_group = Some(Default::default())
+    }
+    if builder.task_definition_arn.is_none() {
+        builder.task_definition_arn = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn aws_lambda_function_details_correct_errors(
     mut builder: crate::types::builders::AwsLambdaFunctionDetailsBuilder,
 ) -> crate::types::builders::AwsLambdaFunctionDetailsBuilder {
@@ -1049,6 +1091,18 @@ pub(crate) fn step_correct_errors(mut builder: crate::types::builders::StepBuild
     }
     if builder.component_type.is_none() {
         builder.component_type = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn aws_eks_workload_info_correct_errors(
+    mut builder: crate::types::builders::AwsEksWorkloadInfoBuilder,
+) -> crate::types::builders::AwsEksWorkloadInfoBuilder {
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.r#type.is_none() {
+        builder.r#type = Some(Default::default())
     }
     builder
 }

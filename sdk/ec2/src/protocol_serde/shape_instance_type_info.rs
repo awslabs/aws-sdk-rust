@@ -367,6 +367,20 @@ pub fn de_instance_type_info(
                 builder = builder.set_phc_support(var_30);
             }
             ,
+            s if s.matches("rebootMigrationSupport") /* RebootMigrationSupport com.amazonaws.ec2#InstanceTypeInfo$RebootMigrationSupport */ =>  {
+                let var_31 =
+                    Some(
+                        Result::<crate::types::RebootMigrationSupport, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::RebootMigrationSupport::from(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_reboot_migration_support(var_31);
+            }
+            ,
             _ => {}
         }
     }

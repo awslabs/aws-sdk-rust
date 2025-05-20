@@ -8,6 +8,8 @@ pub struct EcrConfiguration {
     pub rescan_duration: crate::types::EcrRescanDuration,
     /// <p>The rescan duration configured for image pull date.</p>
     pub pull_date_rescan_duration: ::std::option::Option<crate::types::EcrPullDateRescanDuration>,
+    /// <p>The pull date for the re-scan mode.</p>
+    pub pull_date_rescan_mode: ::std::option::Option<crate::types::EcrPullDateRescanMode>,
 }
 impl EcrConfiguration {
     /// <p>The rescan duration configured for image push date.</p>
@@ -17,6 +19,10 @@ impl EcrConfiguration {
     /// <p>The rescan duration configured for image pull date.</p>
     pub fn pull_date_rescan_duration(&self) -> ::std::option::Option<&crate::types::EcrPullDateRescanDuration> {
         self.pull_date_rescan_duration.as_ref()
+    }
+    /// <p>The pull date for the re-scan mode.</p>
+    pub fn pull_date_rescan_mode(&self) -> ::std::option::Option<&crate::types::EcrPullDateRescanMode> {
+        self.pull_date_rescan_mode.as_ref()
     }
 }
 impl EcrConfiguration {
@@ -32,6 +38,7 @@ impl EcrConfiguration {
 pub struct EcrConfigurationBuilder {
     pub(crate) rescan_duration: ::std::option::Option<crate::types::EcrRescanDuration>,
     pub(crate) pull_date_rescan_duration: ::std::option::Option<crate::types::EcrPullDateRescanDuration>,
+    pub(crate) pull_date_rescan_mode: ::std::option::Option<crate::types::EcrPullDateRescanMode>,
 }
 impl EcrConfigurationBuilder {
     /// <p>The rescan duration configured for image push date.</p>
@@ -63,6 +70,20 @@ impl EcrConfigurationBuilder {
     pub fn get_pull_date_rescan_duration(&self) -> &::std::option::Option<crate::types::EcrPullDateRescanDuration> {
         &self.pull_date_rescan_duration
     }
+    /// <p>The pull date for the re-scan mode.</p>
+    pub fn pull_date_rescan_mode(mut self, input: crate::types::EcrPullDateRescanMode) -> Self {
+        self.pull_date_rescan_mode = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The pull date for the re-scan mode.</p>
+    pub fn set_pull_date_rescan_mode(mut self, input: ::std::option::Option<crate::types::EcrPullDateRescanMode>) -> Self {
+        self.pull_date_rescan_mode = input;
+        self
+    }
+    /// <p>The pull date for the re-scan mode.</p>
+    pub fn get_pull_date_rescan_mode(&self) -> &::std::option::Option<crate::types::EcrPullDateRescanMode> {
+        &self.pull_date_rescan_mode
+    }
     /// Consumes the builder and constructs a [`EcrConfiguration`](crate::types::EcrConfiguration).
     /// This method will fail if any of the following fields are not set:
     /// - [`rescan_duration`](crate::types::builders::EcrConfigurationBuilder::rescan_duration)
@@ -75,6 +96,7 @@ impl EcrConfigurationBuilder {
                 )
             })?,
             pull_date_rescan_duration: self.pull_date_rescan_duration,
+            pull_date_rescan_mode: self.pull_date_rescan_mode,
         })
     }
 }

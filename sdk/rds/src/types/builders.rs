@@ -225,6 +225,10 @@ pub use crate::types::_db_shard_group::DbShardGroupBuilder;
 
 pub use crate::types::_db_parameter_group::DbParameterGroupBuilder;
 
+pub use crate::types::_db_major_engine_version::DbMajorEngineVersionBuilder;
+
+pub use crate::types::_supported_engine_lifecycle::SupportedEngineLifecycleBuilder;
+
 pub use crate::types::_describe_db_log_files_details::DescribeDbLogFilesDetailsBuilder;
 
 pub use crate::types::_db_engine_version::DbEngineVersionBuilder;

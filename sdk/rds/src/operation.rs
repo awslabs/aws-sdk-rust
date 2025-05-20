@@ -211,6 +211,9 @@ pub mod describe_db_instances;
 /// Types for the `DescribeDBLogFiles` operation.
 pub mod describe_db_log_files;
 
+/// Types for the `DescribeDBMajorEngineVersions` operation.
+pub mod describe_db_major_engine_versions;
+
 /// Types for the `DescribeDBParameterGroups` operation.
 pub mod describe_db_parameter_groups;
 

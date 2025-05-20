@@ -23,8 +23,6 @@ pub fn parse_http_error_metadata(
     crate::json_errors::parse_error_metadata(response_body, response_headers)
 }
 
-pub(crate) mod shape_add_storage_system;
-
 pub(crate) mod shape_cancel_task_execution;
 
 pub(crate) mod shape_create_agent;
@@ -61,8 +59,6 @@ pub(crate) mod shape_delete_task;
 
 pub(crate) mod shape_describe_agent;
 
-pub(crate) mod shape_describe_discovery_job;
-
 pub(crate) mod shape_describe_location_azure_blob;
 
 pub(crate) mod shape_describe_location_efs;
@@ -85,25 +81,13 @@ pub(crate) mod shape_describe_location_s3;
 
 pub(crate) mod shape_describe_location_smb;
 
-pub(crate) mod shape_describe_storage_system;
-
-pub(crate) mod shape_describe_storage_system_resource_metrics;
-
-pub(crate) mod shape_describe_storage_system_resources;
-
 pub(crate) mod shape_describe_task;
 
 pub(crate) mod shape_describe_task_execution;
 
-pub(crate) mod shape_generate_recommendations;
-
 pub(crate) mod shape_list_agents;
 
-pub(crate) mod shape_list_discovery_jobs;
-
 pub(crate) mod shape_list_locations;
-
-pub(crate) mod shape_list_storage_systems;
 
 pub(crate) mod shape_list_tags_for_resource;
 
@@ -111,21 +95,13 @@ pub(crate) mod shape_list_task_executions;
 
 pub(crate) mod shape_list_tasks;
 
-pub(crate) mod shape_remove_storage_system;
-
-pub(crate) mod shape_start_discovery_job;
-
 pub(crate) mod shape_start_task_execution;
-
-pub(crate) mod shape_stop_discovery_job;
 
 pub(crate) mod shape_tag_resource;
 
 pub(crate) mod shape_untag_resource;
 
 pub(crate) mod shape_update_agent;
-
-pub(crate) mod shape_update_discovery_job;
 
 pub(crate) mod shape_update_location_azure_blob;
 
@@ -149,11 +125,11 @@ pub(crate) mod shape_update_location_s3;
 
 pub(crate) mod shape_update_location_smb;
 
-pub(crate) mod shape_update_storage_system;
-
 pub(crate) mod shape_update_task;
 
 pub(crate) mod shape_update_task_execution;
+
+pub(crate) mod shape_cancel_task_execution_input;
 
 pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
     if data.is_empty() {
@@ -162,10 +138,6 @@ pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
         data
     }
 }
-
-pub(crate) mod shape_add_storage_system_input;
-
-pub(crate) mod shape_cancel_task_execution_input;
 
 pub(crate) mod shape_create_agent_input;
 
@@ -201,8 +173,6 @@ pub(crate) mod shape_delete_task_input;
 
 pub(crate) mod shape_describe_agent_input;
 
-pub(crate) mod shape_describe_discovery_job_input;
-
 pub(crate) mod shape_describe_location_azure_blob_input;
 
 pub(crate) mod shape_describe_location_efs_input;
@@ -225,17 +195,9 @@ pub(crate) mod shape_describe_location_s3_input;
 
 pub(crate) mod shape_describe_location_smb_input;
 
-pub(crate) mod shape_describe_storage_system_input;
-
-pub(crate) mod shape_describe_storage_system_resource_metrics_input;
-
-pub(crate) mod shape_describe_storage_system_resources_input;
-
 pub(crate) mod shape_describe_task_execution_input;
 
 pub(crate) mod shape_describe_task_input;
-
-pub(crate) mod shape_generate_recommendations_input;
 
 pub(crate) mod shape_internal_exception;
 
@@ -243,11 +205,7 @@ pub(crate) mod shape_invalid_request_exception;
 
 pub(crate) mod shape_list_agents_input;
 
-pub(crate) mod shape_list_discovery_jobs_input;
-
 pub(crate) mod shape_list_locations_input;
-
-pub(crate) mod shape_list_storage_systems_input;
 
 pub(crate) mod shape_list_tags_for_resource_input;
 
@@ -255,21 +213,13 @@ pub(crate) mod shape_list_task_executions_input;
 
 pub(crate) mod shape_list_tasks_input;
 
-pub(crate) mod shape_remove_storage_system_input;
-
-pub(crate) mod shape_start_discovery_job_input;
-
 pub(crate) mod shape_start_task_execution_input;
-
-pub(crate) mod shape_stop_discovery_job_input;
 
 pub(crate) mod shape_tag_resource_input;
 
 pub(crate) mod shape_untag_resource_input;
 
 pub(crate) mod shape_update_agent_input;
-
-pub(crate) mod shape_update_discovery_job_input;
 
 pub(crate) mod shape_update_location_azure_blob_input;
 
@@ -293,8 +243,6 @@ pub(crate) mod shape_update_location_s3_input;
 
 pub(crate) mod shape_update_location_smb_input;
 
-pub(crate) mod shape_update_storage_system_input;
-
 pub(crate) mod shape_update_task_execution_input;
 
 pub(crate) mod shape_update_task_input;
@@ -305,15 +253,7 @@ pub(crate) mod shape_agent_list;
 
 pub(crate) mod shape_azure_blob_sas_configuration;
 
-pub(crate) mod shape_credentials;
-
 pub(crate) mod shape_destination_network_interface_arns;
-
-pub(crate) mod shape_discovery_agent_arn_list;
-
-pub(crate) mod shape_discovery_job_list;
-
-pub(crate) mod shape_discovery_server_configuration;
 
 pub(crate) mod shape_dns_ip_list;
 
@@ -339,8 +279,6 @@ pub(crate) mod shape_location_list;
 
 pub(crate) mod shape_manifest_config;
 
-pub(crate) mod shape_metrics;
-
 pub(crate) mod shape_nfs_mount_options;
 
 pub(crate) mod shape_on_prem_config;
@@ -357,15 +295,11 @@ pub(crate) mod shape_qop_configuration;
 
 pub(crate) mod shape_report_result;
 
-pub(crate) mod shape_resource_details;
-
 pub(crate) mod shape_s3_config;
 
 pub(crate) mod shape_smb_mount_options;
 
 pub(crate) mod shape_source_network_interface_arns;
-
-pub(crate) mod shape_storage_system_list;
 
 pub(crate) mod shape_tag_list_entry;
 
@@ -389,8 +323,6 @@ pub(crate) mod shape_task_schedule_details;
 
 pub(crate) mod shape_agent_list_entry;
 
-pub(crate) mod shape_discovery_job_list_entry;
-
 pub(crate) mod shape_fsx_protocol_nfs;
 
 pub(crate) mod shape_fsx_protocol_smb;
@@ -398,12 +330,6 @@ pub(crate) mod shape_fsx_protocol_smb;
 pub(crate) mod shape_fsx_update_protocol_smb;
 
 pub(crate) mod shape_location_list_entry;
-
-pub(crate) mod shape_net_app_ontap_clusters;
-
-pub(crate) mod shape_net_app_ontap_volumes;
-
-pub(crate) mod shape_net_app_ontapsvms;
 
 pub(crate) mod shape_pl_security_group_arn_list;
 
@@ -413,44 +339,14 @@ pub(crate) mod shape_report_destination;
 
 pub(crate) mod shape_report_overrides;
 
-pub(crate) mod shape_resource_metrics;
-
 pub(crate) mod shape_source_manifest_config;
-
-pub(crate) mod shape_storage_system_list_entry;
 
 pub(crate) mod shape_task_execution_list_entry;
 
 pub(crate) mod shape_task_list_entry;
-
-pub(crate) mod shape_capacity;
-
-pub(crate) mod shape_net_app_ontap_cluster;
-
-pub(crate) mod shape_net_app_ontap_volume;
-
-pub(crate) mod shape_net_app_ontapsvm;
-
-pub(crate) mod shape_p95_metrics;
 
 pub(crate) mod shape_report_destination_s3;
 
 pub(crate) mod shape_report_override;
 
 pub(crate) mod shape_s3_manifest_config;
-
-pub(crate) mod shape_enabled_protocols;
-
-pub(crate) mod shape_iops;
-
-pub(crate) mod shape_latency;
-
-pub(crate) mod shape_max_p95_performance;
-
-pub(crate) mod shape_recommendations;
-
-pub(crate) mod shape_throughput;
-
-pub(crate) mod shape_recommendation;
-
-pub(crate) mod shape_recommendations_config_map;

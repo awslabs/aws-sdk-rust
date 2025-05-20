@@ -65,6 +65,19 @@ where
                                     .transpose()?,
                             );
                         }
+                        "lastInUseAt" => {
+                            builder = builder.set_last_in_use_at(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
+                                tokens.next(),
+                                ::aws_smithy_types::date_time::Format::EpochSeconds,
+                            )?);
+                        }
+                        "inUseCount" => {
+                            builder = builder.set_in_use_count(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i64::try_from)
+                                    .transpose()?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

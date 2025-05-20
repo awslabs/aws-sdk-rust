@@ -18,6 +18,10 @@ pub struct AwsEcrContainerAggregation {
     pub sort_order: ::std::option::Option<crate::types::SortOrder>,
     /// <p>The value to sort by.</p>
     pub sort_by: ::std::option::Option<crate::types::AwsEcrContainerSortBy>,
+    /// <p>The last time an Amazon ECR image was used in an Amazon ECS task or Amazon EKS pod.</p>
+    pub last_in_use_at: ::std::option::Option<::std::vec::Vec<crate::types::DateFilter>>,
+    /// <p>The number of Amazon ECS tasks or Amazon EKS pods where the Amazon ECR container image is in use.</p>
+    pub in_use_count: ::std::option::Option<::std::vec::Vec<crate::types::NumberFilter>>,
 }
 impl AwsEcrContainerAggregation {
     /// <p>The container resource IDs.</p>
@@ -58,6 +62,18 @@ impl AwsEcrContainerAggregation {
     pub fn sort_by(&self) -> ::std::option::Option<&crate::types::AwsEcrContainerSortBy> {
         self.sort_by.as_ref()
     }
+    /// <p>The last time an Amazon ECR image was used in an Amazon ECS task or Amazon EKS pod.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.last_in_use_at.is_none()`.
+    pub fn last_in_use_at(&self) -> &[crate::types::DateFilter] {
+        self.last_in_use_at.as_deref().unwrap_or_default()
+    }
+    /// <p>The number of Amazon ECS tasks or Amazon EKS pods where the Amazon ECR container image is in use.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.in_use_count.is_none()`.
+    pub fn in_use_count(&self) -> &[crate::types::NumberFilter] {
+        self.in_use_count.as_deref().unwrap_or_default()
+    }
 }
 impl AwsEcrContainerAggregation {
     /// Creates a new builder-style object to manufacture [`AwsEcrContainerAggregation`](crate::types::AwsEcrContainerAggregation).
@@ -77,6 +93,8 @@ pub struct AwsEcrContainerAggregationBuilder {
     pub(crate) image_tags: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     pub(crate) sort_order: ::std::option::Option<crate::types::SortOrder>,
     pub(crate) sort_by: ::std::option::Option<crate::types::AwsEcrContainerSortBy>,
+    pub(crate) last_in_use_at: ::std::option::Option<::std::vec::Vec<crate::types::DateFilter>>,
+    pub(crate) in_use_count: ::std::option::Option<::std::vec::Vec<crate::types::NumberFilter>>,
 }
 impl AwsEcrContainerAggregationBuilder {
     /// Appends an item to `resource_ids`.
@@ -207,6 +225,46 @@ impl AwsEcrContainerAggregationBuilder {
     pub fn get_sort_by(&self) -> &::std::option::Option<crate::types::AwsEcrContainerSortBy> {
         &self.sort_by
     }
+    /// Appends an item to `last_in_use_at`.
+    ///
+    /// To override the contents of this collection use [`set_last_in_use_at`](Self::set_last_in_use_at).
+    ///
+    /// <p>The last time an Amazon ECR image was used in an Amazon ECS task or Amazon EKS pod.</p>
+    pub fn last_in_use_at(mut self, input: crate::types::DateFilter) -> Self {
+        let mut v = self.last_in_use_at.unwrap_or_default();
+        v.push(input);
+        self.last_in_use_at = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The last time an Amazon ECR image was used in an Amazon ECS task or Amazon EKS pod.</p>
+    pub fn set_last_in_use_at(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DateFilter>>) -> Self {
+        self.last_in_use_at = input;
+        self
+    }
+    /// <p>The last time an Amazon ECR image was used in an Amazon ECS task or Amazon EKS pod.</p>
+    pub fn get_last_in_use_at(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DateFilter>> {
+        &self.last_in_use_at
+    }
+    /// Appends an item to `in_use_count`.
+    ///
+    /// To override the contents of this collection use [`set_in_use_count`](Self::set_in_use_count).
+    ///
+    /// <p>The number of Amazon ECS tasks or Amazon EKS pods where the Amazon ECR container image is in use.</p>
+    pub fn in_use_count(mut self, input: crate::types::NumberFilter) -> Self {
+        let mut v = self.in_use_count.unwrap_or_default();
+        v.push(input);
+        self.in_use_count = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The number of Amazon ECS tasks or Amazon EKS pods where the Amazon ECR container image is in use.</p>
+    pub fn set_in_use_count(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::NumberFilter>>) -> Self {
+        self.in_use_count = input;
+        self
+    }
+    /// <p>The number of Amazon ECS tasks or Amazon EKS pods where the Amazon ECR container image is in use.</p>
+    pub fn get_in_use_count(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::NumberFilter>> {
+        &self.in_use_count
+    }
     /// Consumes the builder and constructs a [`AwsEcrContainerAggregation`](crate::types::AwsEcrContainerAggregation).
     pub fn build(self) -> crate::types::AwsEcrContainerAggregation {
         crate::types::AwsEcrContainerAggregation {
@@ -217,6 +275,8 @@ impl AwsEcrContainerAggregationBuilder {
             image_tags: self.image_tags,
             sort_order: self.sort_order,
             sort_by: self.sort_by,
+            last_in_use_at: self.last_in_use_at,
+            in_use_count: self.in_use_count,
         }
     }
 }

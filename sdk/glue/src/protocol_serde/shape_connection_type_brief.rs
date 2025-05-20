@@ -21,6 +21,20 @@ where
                                     .transpose()?,
                             );
                         }
+                        "DisplayName" => {
+                            builder = builder.set_display_name(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "Vendor" => {
+                            builder = builder.set_vendor(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         "Description" => {
                             builder = builder.set_description(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
@@ -28,8 +42,23 @@ where
                                     .transpose()?,
                             );
                         }
+                        "Categories" => {
+                            builder = builder.set_categories(crate::protocol_serde::shape_list_of_string::de_list_of_string(tokens)?);
+                        }
                         "Capabilities" => {
                             builder = builder.set_capabilities(crate::protocol_serde::shape_capabilities::de_capabilities(tokens)?);
+                        }
+                        "LogoUrl" => {
+                            builder = builder.set_logo_url(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "ConnectionTypeVariants" => {
+                            builder = builder.set_connection_type_variants(
+                                crate::protocol_serde::shape_connection_type_variant_list::de_connection_type_variant_list(tokens)?,
+                            );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

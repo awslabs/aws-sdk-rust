@@ -7,6 +7,15 @@ pub struct ModifyInstanceMaintenanceOptionsOutput {
     pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>Provides information on the current automatic recovery behavior of your instance.</p>
     pub auto_recovery: ::std::option::Option<crate::types::InstanceAutoRecoveryState>,
+    /// <p>Specifies whether to attempt reboot migration during a user-initiated reboot of an instance that has a scheduled <code>system-reboot</code> event:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>default</code> - Amazon EC2 attempts to migrate the instance to new hardware (reboot migration). If successful, the <code>system-reboot</code> event is cleared. If unsuccessful, an in-place reboot occurs and the event remains scheduled.</p></li>
+    /// <li>
+    /// <p><code>disabled</code> - Amazon EC2 keeps the instance on the same hardware (in-place reboot). The <code>system-reboot</code> event remains scheduled.</p></li>
+    /// </ul>
+    /// <p>This setting only applies to supported instances that have a scheduled reboot event. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/schedevents_actions_reboot.html#reboot-migration">Enable or disable reboot migration</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    pub reboot_migration: ::std::option::Option<crate::types::InstanceRebootMigrationState>,
     _request_id: Option<String>,
 }
 impl ModifyInstanceMaintenanceOptionsOutput {
@@ -17,6 +26,17 @@ impl ModifyInstanceMaintenanceOptionsOutput {
     /// <p>Provides information on the current automatic recovery behavior of your instance.</p>
     pub fn auto_recovery(&self) -> ::std::option::Option<&crate::types::InstanceAutoRecoveryState> {
         self.auto_recovery.as_ref()
+    }
+    /// <p>Specifies whether to attempt reboot migration during a user-initiated reboot of an instance that has a scheduled <code>system-reboot</code> event:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>default</code> - Amazon EC2 attempts to migrate the instance to new hardware (reboot migration). If successful, the <code>system-reboot</code> event is cleared. If unsuccessful, an in-place reboot occurs and the event remains scheduled.</p></li>
+    /// <li>
+    /// <p><code>disabled</code> - Amazon EC2 keeps the instance on the same hardware (in-place reboot). The <code>system-reboot</code> event remains scheduled.</p></li>
+    /// </ul>
+    /// <p>This setting only applies to supported instances that have a scheduled reboot event. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/schedevents_actions_reboot.html#reboot-migration">Enable or disable reboot migration</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    pub fn reboot_migration(&self) -> ::std::option::Option<&crate::types::InstanceRebootMigrationState> {
+        self.reboot_migration.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for ModifyInstanceMaintenanceOptionsOutput {
@@ -37,6 +57,7 @@ impl ModifyInstanceMaintenanceOptionsOutput {
 pub struct ModifyInstanceMaintenanceOptionsOutputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) auto_recovery: ::std::option::Option<crate::types::InstanceAutoRecoveryState>,
+    pub(crate) reboot_migration: ::std::option::Option<crate::types::InstanceRebootMigrationState>,
     _request_id: Option<String>,
 }
 impl ModifyInstanceMaintenanceOptionsOutputBuilder {
@@ -68,6 +89,41 @@ impl ModifyInstanceMaintenanceOptionsOutputBuilder {
     pub fn get_auto_recovery(&self) -> &::std::option::Option<crate::types::InstanceAutoRecoveryState> {
         &self.auto_recovery
     }
+    /// <p>Specifies whether to attempt reboot migration during a user-initiated reboot of an instance that has a scheduled <code>system-reboot</code> event:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>default</code> - Amazon EC2 attempts to migrate the instance to new hardware (reboot migration). If successful, the <code>system-reboot</code> event is cleared. If unsuccessful, an in-place reboot occurs and the event remains scheduled.</p></li>
+    /// <li>
+    /// <p><code>disabled</code> - Amazon EC2 keeps the instance on the same hardware (in-place reboot). The <code>system-reboot</code> event remains scheduled.</p></li>
+    /// </ul>
+    /// <p>This setting only applies to supported instances that have a scheduled reboot event. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/schedevents_actions_reboot.html#reboot-migration">Enable or disable reboot migration</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    pub fn reboot_migration(mut self, input: crate::types::InstanceRebootMigrationState) -> Self {
+        self.reboot_migration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies whether to attempt reboot migration during a user-initiated reboot of an instance that has a scheduled <code>system-reboot</code> event:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>default</code> - Amazon EC2 attempts to migrate the instance to new hardware (reboot migration). If successful, the <code>system-reboot</code> event is cleared. If unsuccessful, an in-place reboot occurs and the event remains scheduled.</p></li>
+    /// <li>
+    /// <p><code>disabled</code> - Amazon EC2 keeps the instance on the same hardware (in-place reboot). The <code>system-reboot</code> event remains scheduled.</p></li>
+    /// </ul>
+    /// <p>This setting only applies to supported instances that have a scheduled reboot event. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/schedevents_actions_reboot.html#reboot-migration">Enable or disable reboot migration</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    pub fn set_reboot_migration(mut self, input: ::std::option::Option<crate::types::InstanceRebootMigrationState>) -> Self {
+        self.reboot_migration = input;
+        self
+    }
+    /// <p>Specifies whether to attempt reboot migration during a user-initiated reboot of an instance that has a scheduled <code>system-reboot</code> event:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>default</code> - Amazon EC2 attempts to migrate the instance to new hardware (reboot migration). If successful, the <code>system-reboot</code> event is cleared. If unsuccessful, an in-place reboot occurs and the event remains scheduled.</p></li>
+    /// <li>
+    /// <p><code>disabled</code> - Amazon EC2 keeps the instance on the same hardware (in-place reboot). The <code>system-reboot</code> event remains scheduled.</p></li>
+    /// </ul>
+    /// <p>This setting only applies to supported instances that have a scheduled reboot event. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/schedevents_actions_reboot.html#reboot-migration">Enable or disable reboot migration</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    pub fn get_reboot_migration(&self) -> &::std::option::Option<crate::types::InstanceRebootMigrationState> {
+        &self.reboot_migration
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -82,6 +138,7 @@ impl ModifyInstanceMaintenanceOptionsOutputBuilder {
         crate::operation::modify_instance_maintenance_options::ModifyInstanceMaintenanceOptionsOutput {
             instance_id: self.instance_id,
             auto_recovery: self.auto_recovery,
+            reboot_migration: self.reboot_migration,
             _request_id: self._request_id,
         }
     }

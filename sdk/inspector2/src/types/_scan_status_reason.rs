@@ -27,6 +27,7 @@
 ///     ScanStatusReason::NoResourcesFound => { /* ... */ },
 ///     ScanStatusReason::PendingDisable => { /* ... */ },
 ///     ScanStatusReason::PendingInitialScan => { /* ... */ },
+///     ScanStatusReason::PendingRevivalScan => { /* ... */ },
 ///     ScanStatusReason::ResourceTerminated => { /* ... */ },
 ///     ScanStatusReason::ScanEligibilityExpired => { /* ... */ },
 ///     ScanStatusReason::ScanFrequencyManual => { /* ... */ },
@@ -97,6 +98,8 @@ pub enum ScanStatusReason {
     #[allow(missing_docs)] // documentation missing in model
     PendingInitialScan,
     #[allow(missing_docs)] // documentation missing in model
+    PendingRevivalScan,
+    #[allow(missing_docs)] // documentation missing in model
     ResourceTerminated,
     #[allow(missing_docs)] // documentation missing in model
     ScanEligibilityExpired,
@@ -140,6 +143,7 @@ impl ::std::convert::From<&str> for ScanStatusReason {
             "NO_RESOURCES_FOUND" => ScanStatusReason::NoResourcesFound,
             "PENDING_DISABLE" => ScanStatusReason::PendingDisable,
             "PENDING_INITIAL_SCAN" => ScanStatusReason::PendingInitialScan,
+            "PENDING_REVIVAL_SCAN" => ScanStatusReason::PendingRevivalScan,
             "RESOURCE_TERMINATED" => ScanStatusReason::ResourceTerminated,
             "SCAN_ELIGIBILITY_EXPIRED" => ScanStatusReason::ScanEligibilityExpired,
             "SCAN_FREQUENCY_MANUAL" => ScanStatusReason::ScanFrequencyManual,
@@ -181,6 +185,7 @@ impl ScanStatusReason {
             ScanStatusReason::NoResourcesFound => "NO_RESOURCES_FOUND",
             ScanStatusReason::PendingDisable => "PENDING_DISABLE",
             ScanStatusReason::PendingInitialScan => "PENDING_INITIAL_SCAN",
+            ScanStatusReason::PendingRevivalScan => "PENDING_REVIVAL_SCAN",
             ScanStatusReason::ResourceTerminated => "RESOURCE_TERMINATED",
             ScanStatusReason::ScanEligibilityExpired => "SCAN_ELIGIBILITY_EXPIRED",
             ScanStatusReason::ScanFrequencyManual => "SCAN_FREQUENCY_MANUAL",
@@ -213,6 +218,7 @@ impl ScanStatusReason {
             "NO_RESOURCES_FOUND",
             "PENDING_DISABLE",
             "PENDING_INITIAL_SCAN",
+            "PENDING_REVIVAL_SCAN",
             "RESOURCE_TERMINATED",
             "SCAN_ELIGIBILITY_EXPIRED",
             "SCAN_FREQUENCY_MANUAL",
@@ -262,6 +268,7 @@ impl ::std::fmt::Display for ScanStatusReason {
             ScanStatusReason::NoResourcesFound => write!(f, "NO_RESOURCES_FOUND"),
             ScanStatusReason::PendingDisable => write!(f, "PENDING_DISABLE"),
             ScanStatusReason::PendingInitialScan => write!(f, "PENDING_INITIAL_SCAN"),
+            ScanStatusReason::PendingRevivalScan => write!(f, "PENDING_REVIVAL_SCAN"),
             ScanStatusReason::ResourceTerminated => write!(f, "RESOURCE_TERMINATED"),
             ScanStatusReason::ScanEligibilityExpired => write!(f, "SCAN_ELIGIBILITY_EXPIRED"),
             ScanStatusReason::ScanFrequencyManual => write!(f, "SCAN_FREQUENCY_MANUAL"),

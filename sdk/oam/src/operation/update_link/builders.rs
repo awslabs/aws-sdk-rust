@@ -160,4 +160,21 @@ impl UpdateLinkFluentBuilder {
     pub fn get_link_configuration(&self) -> &::std::option::Option<crate::types::LinkConfiguration> {
         self.inner.get_link_configuration()
     }
+    /// <p>Specifies whether to include the tags associated with the link in the response after the update operation. When <code>IncludeTags</code> is set to <code>true</code> and the caller has the required permission, <code>oam:ListTagsForResource</code>, the API will return the tags for the specified resource. If the caller doesn't have the required permission, <code>oam:ListTagsForResource</code>, the API will raise an exception.</p>
+    /// <p>The default value is <code>false</code>.</p>
+    pub fn include_tags(mut self, input: bool) -> Self {
+        self.inner = self.inner.include_tags(input);
+        self
+    }
+    /// <p>Specifies whether to include the tags associated with the link in the response after the update operation. When <code>IncludeTags</code> is set to <code>true</code> and the caller has the required permission, <code>oam:ListTagsForResource</code>, the API will return the tags for the specified resource. If the caller doesn't have the required permission, <code>oam:ListTagsForResource</code>, the API will raise an exception.</p>
+    /// <p>The default value is <code>false</code>.</p>
+    pub fn set_include_tags(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_include_tags(input);
+        self
+    }
+    /// <p>Specifies whether to include the tags associated with the link in the response after the update operation. When <code>IncludeTags</code> is set to <code>true</code> and the caller has the required permission, <code>oam:ListTagsForResource</code>, the API will return the tags for the specified resource. If the caller doesn't have the required permission, <code>oam:ListTagsForResource</code>, the API will raise an exception.</p>
+    /// <p>The default value is <code>false</code>.</p>
+    pub fn get_include_tags(&self) -> &::std::option::Option<bool> {
+        self.inner.get_include_tags()
+    }
 }

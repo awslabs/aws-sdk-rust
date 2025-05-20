@@ -7,6 +7,15 @@ pub struct ModifyInstanceMaintenanceOptionsInput {
     pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>Disables the automatic recovery behavior of your instance or sets it to default.</p>
     pub auto_recovery: ::std::option::Option<crate::types::InstanceAutoRecoveryState>,
+    /// <p>Specifies whether to attempt reboot migration during a user-initiated reboot of an instance that has a scheduled <code>system-reboot</code> event:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>default</code> - Amazon EC2 attempts to migrate the instance to new hardware (reboot migration). If successful, the <code>system-reboot</code> event is cleared. If unsuccessful, an in-place reboot occurs and the event remains scheduled.</p></li>
+    /// <li>
+    /// <p><code>disabled</code> - Amazon EC2 keeps the instance on the same hardware (in-place reboot). The <code>system-reboot</code> event remains scheduled.</p></li>
+    /// </ul>
+    /// <p>This setting only applies to supported instances that have a scheduled reboot event. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/schedevents_actions_reboot.html#reboot-migration">Enable or disable reboot migration</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    pub reboot_migration: ::std::option::Option<crate::types::InstanceRebootMigrationState>,
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub dry_run: ::std::option::Option<bool>,
 }
@@ -18,6 +27,17 @@ impl ModifyInstanceMaintenanceOptionsInput {
     /// <p>Disables the automatic recovery behavior of your instance or sets it to default.</p>
     pub fn auto_recovery(&self) -> ::std::option::Option<&crate::types::InstanceAutoRecoveryState> {
         self.auto_recovery.as_ref()
+    }
+    /// <p>Specifies whether to attempt reboot migration during a user-initiated reboot of an instance that has a scheduled <code>system-reboot</code> event:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>default</code> - Amazon EC2 attempts to migrate the instance to new hardware (reboot migration). If successful, the <code>system-reboot</code> event is cleared. If unsuccessful, an in-place reboot occurs and the event remains scheduled.</p></li>
+    /// <li>
+    /// <p><code>disabled</code> - Amazon EC2 keeps the instance on the same hardware (in-place reboot). The <code>system-reboot</code> event remains scheduled.</p></li>
+    /// </ul>
+    /// <p>This setting only applies to supported instances that have a scheduled reboot event. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/schedevents_actions_reboot.html#reboot-migration">Enable or disable reboot migration</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    pub fn reboot_migration(&self) -> ::std::option::Option<&crate::types::InstanceRebootMigrationState> {
+        self.reboot_migration.as_ref()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(&self) -> ::std::option::Option<bool> {
@@ -37,6 +57,7 @@ impl ModifyInstanceMaintenanceOptionsInput {
 pub struct ModifyInstanceMaintenanceOptionsInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) auto_recovery: ::std::option::Option<crate::types::InstanceAutoRecoveryState>,
+    pub(crate) reboot_migration: ::std::option::Option<crate::types::InstanceRebootMigrationState>,
     pub(crate) dry_run: ::std::option::Option<bool>,
 }
 impl ModifyInstanceMaintenanceOptionsInputBuilder {
@@ -69,6 +90,41 @@ impl ModifyInstanceMaintenanceOptionsInputBuilder {
     pub fn get_auto_recovery(&self) -> &::std::option::Option<crate::types::InstanceAutoRecoveryState> {
         &self.auto_recovery
     }
+    /// <p>Specifies whether to attempt reboot migration during a user-initiated reboot of an instance that has a scheduled <code>system-reboot</code> event:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>default</code> - Amazon EC2 attempts to migrate the instance to new hardware (reboot migration). If successful, the <code>system-reboot</code> event is cleared. If unsuccessful, an in-place reboot occurs and the event remains scheduled.</p></li>
+    /// <li>
+    /// <p><code>disabled</code> - Amazon EC2 keeps the instance on the same hardware (in-place reboot). The <code>system-reboot</code> event remains scheduled.</p></li>
+    /// </ul>
+    /// <p>This setting only applies to supported instances that have a scheduled reboot event. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/schedevents_actions_reboot.html#reboot-migration">Enable or disable reboot migration</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    pub fn reboot_migration(mut self, input: crate::types::InstanceRebootMigrationState) -> Self {
+        self.reboot_migration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies whether to attempt reboot migration during a user-initiated reboot of an instance that has a scheduled <code>system-reboot</code> event:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>default</code> - Amazon EC2 attempts to migrate the instance to new hardware (reboot migration). If successful, the <code>system-reboot</code> event is cleared. If unsuccessful, an in-place reboot occurs and the event remains scheduled.</p></li>
+    /// <li>
+    /// <p><code>disabled</code> - Amazon EC2 keeps the instance on the same hardware (in-place reboot). The <code>system-reboot</code> event remains scheduled.</p></li>
+    /// </ul>
+    /// <p>This setting only applies to supported instances that have a scheduled reboot event. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/schedevents_actions_reboot.html#reboot-migration">Enable or disable reboot migration</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    pub fn set_reboot_migration(mut self, input: ::std::option::Option<crate::types::InstanceRebootMigrationState>) -> Self {
+        self.reboot_migration = input;
+        self
+    }
+    /// <p>Specifies whether to attempt reboot migration during a user-initiated reboot of an instance that has a scheduled <code>system-reboot</code> event:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>default</code> - Amazon EC2 attempts to migrate the instance to new hardware (reboot migration). If successful, the <code>system-reboot</code> event is cleared. If unsuccessful, an in-place reboot occurs and the event remains scheduled.</p></li>
+    /// <li>
+    /// <p><code>disabled</code> - Amazon EC2 keeps the instance on the same hardware (in-place reboot). The <code>system-reboot</code> event remains scheduled.</p></li>
+    /// </ul>
+    /// <p>This setting only applies to supported instances that have a scheduled reboot event. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/schedevents_actions_reboot.html#reboot-migration">Enable or disable reboot migration</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    pub fn get_reboot_migration(&self) -> &::std::option::Option<crate::types::InstanceRebootMigrationState> {
+        &self.reboot_migration
+    }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.dry_run = ::std::option::Option::Some(input);
@@ -94,6 +150,7 @@ impl ModifyInstanceMaintenanceOptionsInputBuilder {
             crate::operation::modify_instance_maintenance_options::ModifyInstanceMaintenanceOptionsInput {
                 instance_id: self.instance_id,
                 auto_recovery: self.auto_recovery,
+                reboot_migration: self.reboot_migration,
                 dry_run: self.dry_run,
             },
         )

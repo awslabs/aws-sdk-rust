@@ -16,7 +16,7 @@ pub struct GlobalCluster {
     pub engine: ::std::option::Option<::std::string::String>,
     /// <p>Indicates the database engine version.</p>
     pub engine_version: ::std::option::Option<::std::string::String>,
-    /// <p>The life cycle type for the global cluster.</p>
+    /// <p>The lifecycle type for the global cluster.</p>
     /// <p>For more information, see CreateGlobalCluster.</p>
     pub engine_lifecycle_support: ::std::option::Option<::std::string::String>,
     /// <p>The default database name within the new global database cluster.</p>
@@ -60,7 +60,7 @@ impl GlobalCluster {
     pub fn engine_version(&self) -> ::std::option::Option<&str> {
         self.engine_version.as_deref()
     }
-    /// <p>The life cycle type for the global cluster.</p>
+    /// <p>The lifecycle type for the global cluster.</p>
     /// <p>For more information, see CreateGlobalCluster.</p>
     pub fn engine_lifecycle_support(&self) -> ::std::option::Option<&str> {
         self.engine_lifecycle_support.as_deref()
@@ -210,19 +210,19 @@ impl GlobalClusterBuilder {
     pub fn get_engine_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.engine_version
     }
-    /// <p>The life cycle type for the global cluster.</p>
+    /// <p>The lifecycle type for the global cluster.</p>
     /// <p>For more information, see CreateGlobalCluster.</p>
     pub fn engine_lifecycle_support(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.engine_lifecycle_support = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The life cycle type for the global cluster.</p>
+    /// <p>The lifecycle type for the global cluster.</p>
     /// <p>For more information, see CreateGlobalCluster.</p>
     pub fn set_engine_lifecycle_support(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.engine_lifecycle_support = input;
         self
     }
-    /// <p>The life cycle type for the global cluster.</p>
+    /// <p>The lifecycle type for the global cluster.</p>
     /// <p>For more information, see CreateGlobalCluster.</p>
     pub fn get_engine_lifecycle_support(&self) -> &::std::option::Option<::std::string::String> {
         &self.engine_lifecycle_support

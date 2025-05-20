@@ -513,6 +513,8 @@ pub use crate::types::_crawls_filter::CrawlsFilterBuilder;
 
 pub use crate::types::_connection_type_brief::ConnectionTypeBriefBuilder;
 
+pub use crate::types::_connection_type_variant::ConnectionTypeVariantBuilder;
+
 pub use crate::types::_capabilities::CapabilitiesBuilder;
 
 pub use crate::types::_workflow_run::WorkflowRunBuilder;

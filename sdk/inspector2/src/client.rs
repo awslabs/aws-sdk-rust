@@ -209,6 +209,8 @@ mod get_cis_scan_report;
 
 mod get_cis_scan_result_details;
 
+mod get_clusters_for_image;
+
 mod get_configuration;
 
 mod get_delegated_admin_account;

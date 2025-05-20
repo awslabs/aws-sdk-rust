@@ -37,6 +37,8 @@ pub use crate::types::_ec2_scan_mode::Ec2ScanMode;
 
 pub use crate::types::_ecr_configuration::EcrConfiguration;
 
+pub use crate::types::_ecr_pull_date_rescan_mode::EcrPullDateRescanMode;
+
 pub use crate::types::_ecr_pull_date_rescan_duration::EcrPullDateRescanDuration;
 
 pub use crate::types::_ecr_rescan_duration::EcrRescanDuration;
@@ -265,6 +267,8 @@ pub use crate::types::_group_key::GroupKey;
 
 pub use crate::types::_coverage_filter_criteria::CoverageFilterCriteria;
 
+pub use crate::types::_coverage_number_filter::CoverageNumberFilter;
+
 pub use crate::types::_coverage_date_filter::CoverageDateFilter;
 
 pub use crate::types::_coverage_string_filter::CoverageStringFilter;
@@ -409,6 +413,20 @@ pub use crate::types::_ecr_rescan_duration_state::EcrRescanDurationState;
 
 pub use crate::types::_ecr_rescan_duration_status::EcrRescanDurationStatus;
 
+pub use crate::types::_cluster_information::ClusterInformation;
+
+pub use crate::types::_cluster_details::ClusterDetails;
+
+pub use crate::types::_cluster_metadata::ClusterMetadata;
+
+pub use crate::types::_aws_eks_metadata_details::AwsEksMetadataDetails;
+
+pub use crate::types::_aws_eks_workload_info::AwsEksWorkloadInfo;
+
+pub use crate::types::_aws_ecs_metadata_details::AwsEcsMetadataDetails;
+
+pub use crate::types::_cluster_for_image_filter_criteria::ClusterForImageFilterCriteria;
+
 pub use crate::types::_cis_scan_result_details::CisScanResultDetails;
 
 pub use crate::types::_cis_finding_status::CisFindingStatus;
@@ -525,6 +543,12 @@ mod _aws_ecr_container_image_details;
 
 mod _aws_ecr_container_sort_by;
 
+mod _aws_ecs_metadata_details;
+
+mod _aws_eks_metadata_details;
+
+mod _aws_eks_workload_info;
+
 mod _aws_lambda_function_details;
 
 mod _cis_check_aggregation;
@@ -607,6 +631,14 @@ mod _cis_targets;
 
 mod _cisa_data;
 
+mod _cluster_details;
+
+mod _cluster_for_image_filter_criteria;
+
+mod _cluster_information;
+
+mod _cluster_metadata;
+
 mod _code_file_path;
 
 mod _code_line;
@@ -630,6 +662,8 @@ mod _coverage_filter_criteria;
 mod _coverage_map_comparison;
 
 mod _coverage_map_filter;
+
+mod _coverage_number_filter;
 
 mod _coverage_resource_type;
 
@@ -696,6 +730,8 @@ mod _ecr_configuration_state;
 mod _ecr_container_image_metadata;
 
 mod _ecr_pull_date_rescan_duration;
+
+mod _ecr_pull_date_rescan_mode;
 
 mod _ecr_repository_metadata;
 

@@ -377,6 +377,8 @@ mod describe_db_instances;
 
 mod describe_db_log_files;
 
+mod describe_db_major_engine_versions;
+
 mod describe_db_parameter_groups;
 
 mod describe_db_parameters;

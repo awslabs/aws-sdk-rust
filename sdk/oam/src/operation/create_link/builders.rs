@@ -121,7 +121,9 @@ impl CreateLinkFluentBuilder {
     /// <p><code>$AccountEmail</code> is the globally unique email address of the account</p></li>
     /// <li>
     /// <p><code>$AccountEmailNoDomain</code> is the email address of the account without the domain name</p></li>
-    /// </ul>
+    /// </ul><note>
+    /// <p>In the Amazon Web Services GovCloud (US-East) and Amazon Web Services GovCloud (US-West) Regions, the only supported option is to use custom labels, and the <code>$AccountName</code>, <code>$AccountEmail</code>, and <code>$AccountEmailNoDomain</code> variables all resolve as <i>account-id</i> instead of the specified variable.</p>
+    /// </note>
     pub fn label_template(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.label_template(input.into());
         self
@@ -135,7 +137,9 @@ impl CreateLinkFluentBuilder {
     /// <p><code>$AccountEmail</code> is the globally unique email address of the account</p></li>
     /// <li>
     /// <p><code>$AccountEmailNoDomain</code> is the email address of the account without the domain name</p></li>
-    /// </ul>
+    /// </ul><note>
+    /// <p>In the Amazon Web Services GovCloud (US-East) and Amazon Web Services GovCloud (US-West) Regions, the only supported option is to use custom labels, and the <code>$AccountName</code>, <code>$AccountEmail</code>, and <code>$AccountEmailNoDomain</code> variables all resolve as <i>account-id</i> instead of the specified variable.</p>
+    /// </note>
     pub fn set_label_template(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_label_template(input);
         self
@@ -149,7 +153,9 @@ impl CreateLinkFluentBuilder {
     /// <p><code>$AccountEmail</code> is the globally unique email address of the account</p></li>
     /// <li>
     /// <p><code>$AccountEmailNoDomain</code> is the email address of the account without the domain name</p></li>
-    /// </ul>
+    /// </ul><note>
+    /// <p>In the Amazon Web Services GovCloud (US-East) and Amazon Web Services GovCloud (US-West) Regions, the only supported option is to use custom labels, and the <code>$AccountName</code>, <code>$AccountEmail</code>, and <code>$AccountEmailNoDomain</code> variables all resolve as <i>account-id</i> instead of the specified variable.</p>
+    /// </note>
     pub fn get_label_template(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_label_template()
     }

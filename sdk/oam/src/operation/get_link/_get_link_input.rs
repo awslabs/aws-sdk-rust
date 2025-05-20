@@ -5,11 +5,19 @@
 pub struct GetLinkInput {
     /// <p>The ARN of the link to retrieve information for.</p>
     pub identifier: ::std::option::Option<::std::string::String>,
+    /// <p>Specifies whether to include the tags associated with the link in the response. When <code>IncludeTags</code> is set to <code>true</code> and the caller has the required permission, <code>oam:ListTagsForResource</code>, the API will return the tags for the specified resource. If the caller doesn't have the required permission, <code>oam:ListTagsForResource</code>, the API will raise an exception.</p>
+    /// <p>The default value is <code>false</code>.</p>
+    pub include_tags: ::std::option::Option<bool>,
 }
 impl GetLinkInput {
     /// <p>The ARN of the link to retrieve information for.</p>
     pub fn identifier(&self) -> ::std::option::Option<&str> {
         self.identifier.as_deref()
+    }
+    /// <p>Specifies whether to include the tags associated with the link in the response. When <code>IncludeTags</code> is set to <code>true</code> and the caller has the required permission, <code>oam:ListTagsForResource</code>, the API will return the tags for the specified resource. If the caller doesn't have the required permission, <code>oam:ListTagsForResource</code>, the API will raise an exception.</p>
+    /// <p>The default value is <code>false</code>.</p>
+    pub fn include_tags(&self) -> ::std::option::Option<bool> {
+        self.include_tags
     }
 }
 impl GetLinkInput {
@@ -24,6 +32,7 @@ impl GetLinkInput {
 #[non_exhaustive]
 pub struct GetLinkInputBuilder {
     pub(crate) identifier: ::std::option::Option<::std::string::String>,
+    pub(crate) include_tags: ::std::option::Option<bool>,
 }
 impl GetLinkInputBuilder {
     /// <p>The ARN of the link to retrieve information for.</p>
@@ -41,8 +50,28 @@ impl GetLinkInputBuilder {
     pub fn get_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.identifier
     }
+    /// <p>Specifies whether to include the tags associated with the link in the response. When <code>IncludeTags</code> is set to <code>true</code> and the caller has the required permission, <code>oam:ListTagsForResource</code>, the API will return the tags for the specified resource. If the caller doesn't have the required permission, <code>oam:ListTagsForResource</code>, the API will raise an exception.</p>
+    /// <p>The default value is <code>false</code>.</p>
+    pub fn include_tags(mut self, input: bool) -> Self {
+        self.include_tags = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies whether to include the tags associated with the link in the response. When <code>IncludeTags</code> is set to <code>true</code> and the caller has the required permission, <code>oam:ListTagsForResource</code>, the API will return the tags for the specified resource. If the caller doesn't have the required permission, <code>oam:ListTagsForResource</code>, the API will raise an exception.</p>
+    /// <p>The default value is <code>false</code>.</p>
+    pub fn set_include_tags(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.include_tags = input;
+        self
+    }
+    /// <p>Specifies whether to include the tags associated with the link in the response. When <code>IncludeTags</code> is set to <code>true</code> and the caller has the required permission, <code>oam:ListTagsForResource</code>, the API will return the tags for the specified resource. If the caller doesn't have the required permission, <code>oam:ListTagsForResource</code>, the API will raise an exception.</p>
+    /// <p>The default value is <code>false</code>.</p>
+    pub fn get_include_tags(&self) -> &::std::option::Option<bool> {
+        &self.include_tags
+    }
     /// Consumes the builder and constructs a [`GetLinkInput`](crate::operation::get_link::GetLinkInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::get_link::GetLinkInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_link::GetLinkInput { identifier: self.identifier })
+        ::std::result::Result::Ok(crate::operation::get_link::GetLinkInput {
+            identifier: self.identifier,
+            include_tags: self.include_tags,
+        })
     }
 }

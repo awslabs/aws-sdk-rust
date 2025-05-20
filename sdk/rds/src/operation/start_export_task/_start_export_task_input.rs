@@ -34,23 +34,9 @@ pub struct StartExportTaskInput {
     /// <p>The ID of the Amazon Web Services KMS key to use to encrypt the data exported to Amazon S3. The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key. The caller of this operation must be authorized to run the following operations. These can be set in the Amazon Web Services KMS key policy:</p>
     /// <ul>
     /// <li>
-    /// <p>kms:Encrypt</p></li>
-    /// <li>
-    /// <p>kms:Decrypt</p></li>
-    /// <li>
-    /// <p>kms:GenerateDataKey</p></li>
-    /// <li>
-    /// <p>kms:GenerateDataKeyWithoutPlaintext</p></li>
-    /// <li>
-    /// <p>kms:ReEncryptFrom</p></li>
-    /// <li>
-    /// <p>kms:ReEncryptTo</p></li>
-    /// <li>
     /// <p>kms:CreateGrant</p></li>
     /// <li>
     /// <p>kms:DescribeKey</p></li>
-    /// <li>
-    /// <p>kms:RetireGrant</p></li>
     /// </ul>
     pub kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon S3 bucket prefix to use as the file name and path of the exported data.</p>
@@ -109,23 +95,9 @@ impl StartExportTaskInput {
     /// <p>The ID of the Amazon Web Services KMS key to use to encrypt the data exported to Amazon S3. The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key. The caller of this operation must be authorized to run the following operations. These can be set in the Amazon Web Services KMS key policy:</p>
     /// <ul>
     /// <li>
-    /// <p>kms:Encrypt</p></li>
-    /// <li>
-    /// <p>kms:Decrypt</p></li>
-    /// <li>
-    /// <p>kms:GenerateDataKey</p></li>
-    /// <li>
-    /// <p>kms:GenerateDataKeyWithoutPlaintext</p></li>
-    /// <li>
-    /// <p>kms:ReEncryptFrom</p></li>
-    /// <li>
-    /// <p>kms:ReEncryptTo</p></li>
-    /// <li>
     /// <p>kms:CreateGrant</p></li>
     /// <li>
     /// <p>kms:DescribeKey</p></li>
-    /// <li>
-    /// <p>kms:RetireGrant</p></li>
     /// </ul>
     pub fn kms_key_id(&self) -> ::std::option::Option<&str> {
         self.kms_key_id.as_deref()
@@ -295,23 +267,9 @@ impl StartExportTaskInputBuilder {
     /// <p>The ID of the Amazon Web Services KMS key to use to encrypt the data exported to Amazon S3. The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key. The caller of this operation must be authorized to run the following operations. These can be set in the Amazon Web Services KMS key policy:</p>
     /// <ul>
     /// <li>
-    /// <p>kms:Encrypt</p></li>
-    /// <li>
-    /// <p>kms:Decrypt</p></li>
-    /// <li>
-    /// <p>kms:GenerateDataKey</p></li>
-    /// <li>
-    /// <p>kms:GenerateDataKeyWithoutPlaintext</p></li>
-    /// <li>
-    /// <p>kms:ReEncryptFrom</p></li>
-    /// <li>
-    /// <p>kms:ReEncryptTo</p></li>
-    /// <li>
     /// <p>kms:CreateGrant</p></li>
     /// <li>
     /// <p>kms:DescribeKey</p></li>
-    /// <li>
-    /// <p>kms:RetireGrant</p></li>
     /// </ul>
     /// This field is required.
     pub fn kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -321,23 +279,9 @@ impl StartExportTaskInputBuilder {
     /// <p>The ID of the Amazon Web Services KMS key to use to encrypt the data exported to Amazon S3. The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key. The caller of this operation must be authorized to run the following operations. These can be set in the Amazon Web Services KMS key policy:</p>
     /// <ul>
     /// <li>
-    /// <p>kms:Encrypt</p></li>
-    /// <li>
-    /// <p>kms:Decrypt</p></li>
-    /// <li>
-    /// <p>kms:GenerateDataKey</p></li>
-    /// <li>
-    /// <p>kms:GenerateDataKeyWithoutPlaintext</p></li>
-    /// <li>
-    /// <p>kms:ReEncryptFrom</p></li>
-    /// <li>
-    /// <p>kms:ReEncryptTo</p></li>
-    /// <li>
     /// <p>kms:CreateGrant</p></li>
     /// <li>
     /// <p>kms:DescribeKey</p></li>
-    /// <li>
-    /// <p>kms:RetireGrant</p></li>
     /// </ul>
     pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.kms_key_id = input;
@@ -346,23 +290,9 @@ impl StartExportTaskInputBuilder {
     /// <p>The ID of the Amazon Web Services KMS key to use to encrypt the data exported to Amazon S3. The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key. The caller of this operation must be authorized to run the following operations. These can be set in the Amazon Web Services KMS key policy:</p>
     /// <ul>
     /// <li>
-    /// <p>kms:Encrypt</p></li>
-    /// <li>
-    /// <p>kms:Decrypt</p></li>
-    /// <li>
-    /// <p>kms:GenerateDataKey</p></li>
-    /// <li>
-    /// <p>kms:GenerateDataKeyWithoutPlaintext</p></li>
-    /// <li>
-    /// <p>kms:ReEncryptFrom</p></li>
-    /// <li>
-    /// <p>kms:ReEncryptTo</p></li>
-    /// <li>
     /// <p>kms:CreateGrant</p></li>
     /// <li>
     /// <p>kms:DescribeKey</p></li>
-    /// <li>
-    /// <p>kms:RetireGrant</p></li>
     /// </ul>
     pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.kms_key_id

@@ -685,6 +685,8 @@ pub use crate::types::_field_name::FieldName;
 
 pub use crate::types::_connection_type_brief::ConnectionTypeBrief;
 
+pub use crate::types::_connection_type_variant::ConnectionTypeVariant;
+
 pub use crate::types::_capabilities::Capabilities;
 
 pub use crate::types::_data_operation::DataOperation;
@@ -1174,6 +1176,8 @@ mod _connection_status;
 mod _connection_type;
 
 mod _connection_type_brief;
+
+mod _connection_type_variant;
 
 mod _connections_list;
 

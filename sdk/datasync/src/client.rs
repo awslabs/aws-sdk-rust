@@ -59,14 +59,14 @@ pub(crate) struct Handle {
 /// # Using the `Client`
 ///
 /// A client has a function for every operation that can be performed by the service.
-/// For example, the [`AddStorageSystem`](crate::operation::add_storage_system) operation has
-/// a [`Client::add_storage_system`], function which returns a builder for that operation.
+/// For example, the [`CancelTaskExecution`](crate::operation::cancel_task_execution) operation has
+/// a [`Client::cancel_task_execution`], function which returns a builder for that operation.
 /// The fluent builder ultimately has a `send()` function that returns an async future that
 /// returns a result, as illustrated below:
 ///
 /// ```rust,ignore
-/// let result = client.add_storage_system()
-///     .system_type("example")
+/// let result = client.cancel_task_execution()
+///     .task_execution_arn("example")
 ///     .send()
 ///     .await;
 /// ```
@@ -136,8 +136,6 @@ impl Client {
     }
 }
 
-mod add_storage_system;
-
 mod cancel_task_execution;
 
 mod create_agent;
@@ -177,7 +175,7 @@ mod create_task;
 /// # let client: aws_sdk_datasync::Client = unimplemented!();
 /// use ::http::header::{HeaderName, HeaderValue};
 ///
-/// let result = client.add_storage_system()
+/// let result = client.cancel_task_execution()
 ///     .customize()
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
@@ -201,8 +199,6 @@ mod delete_task;
 
 mod describe_agent;
 
-mod describe_discovery_job;
-
 mod describe_location_azure_blob;
 
 mod describe_location_efs;
@@ -225,25 +221,13 @@ mod describe_location_s3;
 
 mod describe_location_smb;
 
-mod describe_storage_system;
-
-mod describe_storage_system_resource_metrics;
-
-mod describe_storage_system_resources;
-
 mod describe_task;
 
 mod describe_task_execution;
 
-mod generate_recommendations;
-
 mod list_agents;
 
-mod list_discovery_jobs;
-
 mod list_locations;
-
-mod list_storage_systems;
 
 mod list_tags_for_resource;
 
@@ -251,21 +235,13 @@ mod list_task_executions;
 
 mod list_tasks;
 
-mod remove_storage_system;
-
-mod start_discovery_job;
-
 mod start_task_execution;
-
-mod stop_discovery_job;
 
 mod tag_resource;
 
 mod untag_resource;
 
 mod update_agent;
-
-mod update_discovery_job;
 
 mod update_location_azure_blob;
 
@@ -288,8 +264,6 @@ mod update_location_object_storage;
 mod update_location_s3;
 
 mod update_location_smb;
-
-mod update_storage_system;
 
 mod update_task;
 

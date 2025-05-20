@@ -7,3 +7,18 @@ pub(crate) fn integration_error_correct_errors(
     }
     builder
 }
+
+pub(crate) fn supported_engine_lifecycle_correct_errors(
+    mut builder: crate::types::builders::SupportedEngineLifecycleBuilder,
+) -> crate::types::builders::SupportedEngineLifecycleBuilder {
+    if builder.lifecycle_support_name.is_none() {
+        builder.lifecycle_support_name = "no value was set".parse::<crate::types::LifecycleSupportName>().ok()
+    }
+    if builder.lifecycle_support_start_date.is_none() {
+        builder.lifecycle_support_start_date = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.lifecycle_support_end_date.is_none() {
+        builder.lifecycle_support_end_date = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}

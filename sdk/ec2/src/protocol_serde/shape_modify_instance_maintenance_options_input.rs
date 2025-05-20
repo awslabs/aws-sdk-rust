@@ -16,9 +16,14 @@ pub fn ser_modify_instance_maintenance_options_input_input_input(
         scope_3.string(var_4.as_str());
     }
     #[allow(unused_mut)]
-    let mut scope_5 = writer.prefix("DryRun");
-    if let Some(var_6) = &input.dry_run {
-        scope_5.boolean(*var_6);
+    let mut scope_5 = writer.prefix("RebootMigration");
+    if let Some(var_6) = &input.reboot_migration {
+        scope_5.string(var_6.as_str());
+    }
+    #[allow(unused_mut)]
+    let mut scope_7 = writer.prefix("DryRun");
+    if let Some(var_8) = &input.dry_run {
+        scope_7.boolean(*var_8);
     }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))

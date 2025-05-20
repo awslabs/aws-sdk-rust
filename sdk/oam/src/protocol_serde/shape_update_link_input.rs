@@ -6,20 +6,23 @@ pub fn ser_update_link_input_input(
     if let Some(var_1) = &input.identifier {
         object.key("Identifier").string(var_1.as_str());
     }
-    if let Some(var_2) = &input.link_configuration {
-        #[allow(unused_mut)]
-        let mut object_3 = object.key("LinkConfiguration").start_object();
-        crate::protocol_serde::shape_link_configuration::ser_link_configuration(&mut object_3, var_2)?;
-        object_3.finish();
+    if let Some(var_2) = &input.include_tags {
+        object.key("IncludeTags").boolean(*var_2);
     }
-    if let Some(var_4) = &input.resource_types {
-        let mut array_5 = object.key("ResourceTypes").start_array();
-        for item_6 in var_4 {
+    if let Some(var_3) = &input.link_configuration {
+        #[allow(unused_mut)]
+        let mut object_4 = object.key("LinkConfiguration").start_object();
+        crate::protocol_serde::shape_link_configuration::ser_link_configuration(&mut object_4, var_3)?;
+        object_4.finish();
+    }
+    if let Some(var_5) = &input.resource_types {
+        let mut array_6 = object.key("ResourceTypes").start_array();
+        for item_7 in var_5 {
             {
-                array_5.value().string(item_6.as_str());
+                array_6.value().string(item_7.as_str());
             }
         }
-        array_5.finish();
+        array_6.finish();
     }
     Ok(())
 }

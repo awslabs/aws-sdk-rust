@@ -4,6 +4,7 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`identifier(impl Into<String>)`](crate::operation::get_sink::builders::GetSinkFluentBuilder::identifier) / [`set_identifier(Option<String>)`](crate::operation::get_sink::builders::GetSinkFluentBuilder::set_identifier):<br>required: **true**<br><p>The ARN of the sink to retrieve information for.</p><br>
+    ///   - [`include_tags(bool)`](crate::operation::get_sink::builders::GetSinkFluentBuilder::include_tags) / [`set_include_tags(Option<bool>)`](crate::operation::get_sink::builders::GetSinkFluentBuilder::set_include_tags):<br>required: **false**<br><p>Specifies whether to include the tags associated with the sink in the response. When <code>IncludeTags</code> is set to <code>true</code> and the caller has the required permission, <code>oam:ListTagsForResource</code>, the API will return the tags for the specified resource. If the caller doesn't have the required permission, <code>oam:ListTagsForResource</code>, the API will raise an exception.</p> <p>The default value is <code>false</code>.</p><br>
     /// - On success, responds with [`GetSinkOutput`](crate::operation::get_sink::GetSinkOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::operation::get_sink::GetSinkOutput::arn): <p>The ARN of the sink.</p>
     ///   - [`id(Option<String>)`](crate::operation::get_sink::GetSinkOutput::id): <p>The random ID string that Amazon Web Services generated as part of the sink ARN.</p>

@@ -69,6 +69,8 @@ pub(crate) mod shape_get_cis_scan_report;
 
 pub(crate) mod shape_get_cis_scan_result_details;
 
+pub(crate) mod shape_get_clusters_for_image;
+
 pub(crate) mod shape_get_configuration;
 
 pub(crate) mod shape_get_delegated_admin_account;
@@ -199,6 +201,8 @@ pub(crate) mod shape_get_cis_scan_report_input;
 
 pub(crate) mod shape_get_cis_scan_result_details_input;
 
+pub(crate) mod shape_get_clusters_for_image_input;
+
 pub(crate) mod shape_get_findings_report_status_input;
 
 pub(crate) mod shape_get_member_input;
@@ -296,6 +300,10 @@ pub(crate) mod shape_cis_scan_results_aggregated_by_target_resource_filter_crite
 pub(crate) mod shape_cis_session_message;
 
 pub(crate) mod shape_cis_target_resource_aggregation_list;
+
+pub(crate) mod shape_cluster_for_image_filter_criteria;
+
+pub(crate) mod shape_cluster_information_list;
 
 pub(crate) mod shape_code_snippet_error_list;
 
@@ -421,6 +429,8 @@ pub(crate) mod shape_cis_target_status_filter;
 
 pub(crate) mod shape_cis_target_status_reason_filter;
 
+pub(crate) mod shape_cluster_information;
+
 pub(crate) mod shape_code_snippet_error;
 
 pub(crate) mod shape_code_snippet_result;
@@ -432,6 +442,8 @@ pub(crate) mod shape_counts;
 pub(crate) mod shape_coverage_date_filter;
 
 pub(crate) mod shape_coverage_map_filter;
+
+pub(crate) mod shape_coverage_number_filter;
 
 pub(crate) mod shape_coverage_string_filter;
 
@@ -541,6 +553,8 @@ pub(crate) mod shape_cis_targets;
 
 pub(crate) mod shape_cisa_data;
 
+pub(crate) mod shape_cluster_details_list;
+
 pub(crate) mod shape_code_line_list;
 
 pub(crate) mod shape_code_vulnerability_details;
@@ -621,6 +635,8 @@ pub(crate) mod shape_vulnerability_reference_urls;
 
 pub(crate) mod shape_cis_account_id_list;
 
+pub(crate) mod shape_cluster_details;
+
 pub(crate) mod shape_code_file_path;
 
 pub(crate) mod shape_code_line;
@@ -673,6 +689,8 @@ pub(crate) mod shape_vulnerability_id_list;
 
 pub(crate) mod shape_vulnerable_package_list;
 
+pub(crate) mod shape_cluster_metadata;
+
 pub(crate) mod shape_cvss_score;
 
 pub(crate) mod shape_cvss_score_adjustment_list;
@@ -693,6 +711,10 @@ pub(crate) mod shape_aws_ec2_instance_details;
 
 pub(crate) mod shape_aws_ecr_container_image_details;
 
+pub(crate) mod shape_aws_ecs_metadata_details;
+
+pub(crate) mod shape_aws_eks_metadata_details;
+
 pub(crate) mod shape_aws_lambda_function_details;
 
 pub(crate) mod shape_cvss_score_adjustment;
@@ -700,6 +722,8 @@ pub(crate) mod shape_cvss_score_adjustment;
 pub(crate) mod shape_step;
 
 pub(crate) mod shape_architecture_list;
+
+pub(crate) mod shape_aws_eks_workload_info_list;
 
 pub(crate) mod shape_image_tag_list;
 
@@ -710,6 +734,8 @@ pub(crate) mod shape_ipv6_address_list;
 pub(crate) mod shape_lambda_vpc_config;
 
 pub(crate) mod shape_layer_list;
+
+pub(crate) mod shape_aws_eks_workload_info;
 
 pub(crate) mod shape_security_group_id_list;
 

@@ -151,14 +151,14 @@ pub use config::Config;
 /// # Using the `Client`
 ///
 /// A client has a function for every operation that can be performed by the service.
-/// For example, the [`AddStorageSystem`](crate::operation::add_storage_system) operation has
-/// a [`Client::add_storage_system`], function which returns a builder for that operation.
+/// For example, the [`CancelTaskExecution`](crate::operation::cancel_task_execution) operation has
+/// a [`Client::cancel_task_execution`], function which returns a builder for that operation.
 /// The fluent builder ultimately has a `send()` function that returns an async future that
 /// returns a result, as illustrated below:
 ///
 /// ```rust,ignore
-/// let result = client.add_storage_system()
-///     .system_type("example")
+/// let result = client.cancel_task_execution()
+///     .task_execution_arn("example")
 ///     .send()
 ///     .await;
 /// ```
@@ -190,10 +190,6 @@ pub mod types;
 
 mod auth_plugin;
 
-pub(crate) mod client_idempotency_token;
-
-mod idempotency_token;
-
 pub(crate) mod protocol_serde;
 
 mod sdk_feature_tracker;
@@ -204,9 +200,9 @@ mod endpoint_lib;
 
 mod lens;
 
-mod serde_util;
-
 mod json_errors;
+
+mod serde_util;
 
 #[doc(inline)]
 pub use client::Client;

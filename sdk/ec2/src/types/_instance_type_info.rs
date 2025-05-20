@@ -64,6 +64,8 @@ pub struct InstanceTypeInfo {
     pub neuron_info: ::std::option::Option<crate::types::NeuronInfo>,
     /// <p>Indicates whether a local Precision Time Protocol (PTP) hardware clock (PHC) is supported.</p>
     pub phc_support: ::std::option::Option<crate::types::PhcSupport>,
+    /// <p>Indicates whether reboot migration during a user-initiated reboot is supported for instances that have a scheduled <code>system-reboot</code> event. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/schedevents_actions_reboot.html#reboot-migration">Enable or disable reboot migration</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    pub reboot_migration_support: ::std::option::Option<crate::types::RebootMigrationSupport>,
 }
 impl InstanceTypeInfo {
     /// <p>The instance type. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance types</a> in the <i>Amazon EC2 User Guide</i>.</p>
@@ -194,6 +196,10 @@ impl InstanceTypeInfo {
     pub fn phc_support(&self) -> ::std::option::Option<&crate::types::PhcSupport> {
         self.phc_support.as_ref()
     }
+    /// <p>Indicates whether reboot migration during a user-initiated reboot is supported for instances that have a scheduled <code>system-reboot</code> event. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/schedevents_actions_reboot.html#reboot-migration">Enable or disable reboot migration</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    pub fn reboot_migration_support(&self) -> ::std::option::Option<&crate::types::RebootMigrationSupport> {
+        self.reboot_migration_support.as_ref()
+    }
 }
 impl InstanceTypeInfo {
     /// Creates a new builder-style object to manufacture [`InstanceTypeInfo`](crate::types::InstanceTypeInfo).
@@ -236,6 +242,7 @@ pub struct InstanceTypeInfoBuilder {
     pub(crate) media_accelerator_info: ::std::option::Option<crate::types::MediaAcceleratorInfo>,
     pub(crate) neuron_info: ::std::option::Option<crate::types::NeuronInfo>,
     pub(crate) phc_support: ::std::option::Option<crate::types::PhcSupport>,
+    pub(crate) reboot_migration_support: ::std::option::Option<crate::types::RebootMigrationSupport>,
 }
 impl InstanceTypeInfoBuilder {
     /// <p>The instance type. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance types</a> in the <i>Amazon EC2 User Guide</i>.</p>
@@ -682,6 +689,20 @@ impl InstanceTypeInfoBuilder {
     pub fn get_phc_support(&self) -> &::std::option::Option<crate::types::PhcSupport> {
         &self.phc_support
     }
+    /// <p>Indicates whether reboot migration during a user-initiated reboot is supported for instances that have a scheduled <code>system-reboot</code> event. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/schedevents_actions_reboot.html#reboot-migration">Enable or disable reboot migration</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    pub fn reboot_migration_support(mut self, input: crate::types::RebootMigrationSupport) -> Self {
+        self.reboot_migration_support = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates whether reboot migration during a user-initiated reboot is supported for instances that have a scheduled <code>system-reboot</code> event. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/schedevents_actions_reboot.html#reboot-migration">Enable or disable reboot migration</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    pub fn set_reboot_migration_support(mut self, input: ::std::option::Option<crate::types::RebootMigrationSupport>) -> Self {
+        self.reboot_migration_support = input;
+        self
+    }
+    /// <p>Indicates whether reboot migration during a user-initiated reboot is supported for instances that have a scheduled <code>system-reboot</code> event. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/schedevents_actions_reboot.html#reboot-migration">Enable or disable reboot migration</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    pub fn get_reboot_migration_support(&self) -> &::std::option::Option<crate::types::RebootMigrationSupport> {
+        &self.reboot_migration_support
+    }
     /// Consumes the builder and constructs a [`InstanceTypeInfo`](crate::types::InstanceTypeInfo).
     pub fn build(self) -> crate::types::InstanceTypeInfo {
         crate::types::InstanceTypeInfo {
@@ -715,6 +736,7 @@ impl InstanceTypeInfoBuilder {
             media_accelerator_info: self.media_accelerator_info,
             neuron_info: self.neuron_info,
             phc_support: self.phc_support,
+            reboot_migration_support: self.reboot_migration_support,
         }
     }
 }

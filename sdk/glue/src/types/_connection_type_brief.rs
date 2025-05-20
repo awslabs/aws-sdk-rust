@@ -6,23 +6,57 @@
 pub struct ConnectionTypeBrief {
     /// <p>The name of the connection type.</p>
     pub connection_type: ::std::option::Option<crate::types::ConnectionType>,
+    /// <p>The human-readable name for the connection type that is displayed in the Glue console.</p>
+    pub display_name: ::std::option::Option<::std::string::String>,
+    /// <p>The name of the vendor or provider that created or maintains this connection type.</p>
+    pub vendor: ::std::option::Option<::std::string::String>,
     /// <p>A description of the connection type.</p>
     pub description: ::std::option::Option<::std::string::String>,
+    /// <p>A list of categories that this connection type belongs to. Categories help users filter and find appropriate connection types based on their use cases.</p>
+    pub categories: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The supported authentication types, data interface types (compute environments), and data operations of the connector.</p>
     pub capabilities: ::std::option::Option<crate::types::Capabilities>,
+    /// <p>The URL of the logo associated with a connection type.</p>
+    pub logo_url: ::std::option::Option<::std::string::String>,
+    /// <p>A list of variants available for this connection type. Different variants may provide specialized configurations for specific use cases or implementations of the same general connection type.</p>
+    pub connection_type_variants: ::std::option::Option<::std::vec::Vec<crate::types::ConnectionTypeVariant>>,
 }
 impl ConnectionTypeBrief {
     /// <p>The name of the connection type.</p>
     pub fn connection_type(&self) -> ::std::option::Option<&crate::types::ConnectionType> {
         self.connection_type.as_ref()
     }
+    /// <p>The human-readable name for the connection type that is displayed in the Glue console.</p>
+    pub fn display_name(&self) -> ::std::option::Option<&str> {
+        self.display_name.as_deref()
+    }
+    /// <p>The name of the vendor or provider that created or maintains this connection type.</p>
+    pub fn vendor(&self) -> ::std::option::Option<&str> {
+        self.vendor.as_deref()
+    }
     /// <p>A description of the connection type.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
+    /// <p>A list of categories that this connection type belongs to. Categories help users filter and find appropriate connection types based on their use cases.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.categories.is_none()`.
+    pub fn categories(&self) -> &[::std::string::String] {
+        self.categories.as_deref().unwrap_or_default()
+    }
     /// <p>The supported authentication types, data interface types (compute environments), and data operations of the connector.</p>
     pub fn capabilities(&self) -> ::std::option::Option<&crate::types::Capabilities> {
         self.capabilities.as_ref()
+    }
+    /// <p>The URL of the logo associated with a connection type.</p>
+    pub fn logo_url(&self) -> ::std::option::Option<&str> {
+        self.logo_url.as_deref()
+    }
+    /// <p>A list of variants available for this connection type. Different variants may provide specialized configurations for specific use cases or implementations of the same general connection type.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.connection_type_variants.is_none()`.
+    pub fn connection_type_variants(&self) -> &[crate::types::ConnectionTypeVariant] {
+        self.connection_type_variants.as_deref().unwrap_or_default()
     }
 }
 impl ConnectionTypeBrief {
@@ -37,8 +71,13 @@ impl ConnectionTypeBrief {
 #[non_exhaustive]
 pub struct ConnectionTypeBriefBuilder {
     pub(crate) connection_type: ::std::option::Option<crate::types::ConnectionType>,
+    pub(crate) display_name: ::std::option::Option<::std::string::String>,
+    pub(crate) vendor: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
+    pub(crate) categories: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) capabilities: ::std::option::Option<crate::types::Capabilities>,
+    pub(crate) logo_url: ::std::option::Option<::std::string::String>,
+    pub(crate) connection_type_variants: ::std::option::Option<::std::vec::Vec<crate::types::ConnectionTypeVariant>>,
 }
 impl ConnectionTypeBriefBuilder {
     /// <p>The name of the connection type.</p>
@@ -55,6 +94,34 @@ impl ConnectionTypeBriefBuilder {
     pub fn get_connection_type(&self) -> &::std::option::Option<crate::types::ConnectionType> {
         &self.connection_type
     }
+    /// <p>The human-readable name for the connection type that is displayed in the Glue console.</p>
+    pub fn display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.display_name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The human-readable name for the connection type that is displayed in the Glue console.</p>
+    pub fn set_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.display_name = input;
+        self
+    }
+    /// <p>The human-readable name for the connection type that is displayed in the Glue console.</p>
+    pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.display_name
+    }
+    /// <p>The name of the vendor or provider that created or maintains this connection type.</p>
+    pub fn vendor(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.vendor = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The name of the vendor or provider that created or maintains this connection type.</p>
+    pub fn set_vendor(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.vendor = input;
+        self
+    }
+    /// <p>The name of the vendor or provider that created or maintains this connection type.</p>
+    pub fn get_vendor(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vendor
+    }
     /// <p>A description of the connection type.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -68,6 +135,26 @@ impl ConnectionTypeBriefBuilder {
     /// <p>A description of the connection type.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
+    }
+    /// Appends an item to `categories`.
+    ///
+    /// To override the contents of this collection use [`set_categories`](Self::set_categories).
+    ///
+    /// <p>A list of categories that this connection type belongs to. Categories help users filter and find appropriate connection types based on their use cases.</p>
+    pub fn categories(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.categories.unwrap_or_default();
+        v.push(input.into());
+        self.categories = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>A list of categories that this connection type belongs to. Categories help users filter and find appropriate connection types based on their use cases.</p>
+    pub fn set_categories(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.categories = input;
+        self
+    }
+    /// <p>A list of categories that this connection type belongs to. Categories help users filter and find appropriate connection types based on their use cases.</p>
+    pub fn get_categories(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.categories
     }
     /// <p>The supported authentication types, data interface types (compute environments), and data operations of the connector.</p>
     pub fn capabilities(mut self, input: crate::types::Capabilities) -> Self {
@@ -83,12 +170,51 @@ impl ConnectionTypeBriefBuilder {
     pub fn get_capabilities(&self) -> &::std::option::Option<crate::types::Capabilities> {
         &self.capabilities
     }
+    /// <p>The URL of the logo associated with a connection type.</p>
+    pub fn logo_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.logo_url = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The URL of the logo associated with a connection type.</p>
+    pub fn set_logo_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.logo_url = input;
+        self
+    }
+    /// <p>The URL of the logo associated with a connection type.</p>
+    pub fn get_logo_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.logo_url
+    }
+    /// Appends an item to `connection_type_variants`.
+    ///
+    /// To override the contents of this collection use [`set_connection_type_variants`](Self::set_connection_type_variants).
+    ///
+    /// <p>A list of variants available for this connection type. Different variants may provide specialized configurations for specific use cases or implementations of the same general connection type.</p>
+    pub fn connection_type_variants(mut self, input: crate::types::ConnectionTypeVariant) -> Self {
+        let mut v = self.connection_type_variants.unwrap_or_default();
+        v.push(input);
+        self.connection_type_variants = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>A list of variants available for this connection type. Different variants may provide specialized configurations for specific use cases or implementations of the same general connection type.</p>
+    pub fn set_connection_type_variants(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ConnectionTypeVariant>>) -> Self {
+        self.connection_type_variants = input;
+        self
+    }
+    /// <p>A list of variants available for this connection type. Different variants may provide specialized configurations for specific use cases or implementations of the same general connection type.</p>
+    pub fn get_connection_type_variants(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ConnectionTypeVariant>> {
+        &self.connection_type_variants
+    }
     /// Consumes the builder and constructs a [`ConnectionTypeBrief`](crate::types::ConnectionTypeBrief).
     pub fn build(self) -> crate::types::ConnectionTypeBrief {
         crate::types::ConnectionTypeBrief {
             connection_type: self.connection_type,
+            display_name: self.display_name,
+            vendor: self.vendor,
             description: self.description,
+            categories: self.categories,
             capabilities: self.capabilities,
+            logo_url: self.logo_url,
+            connection_type_variants: self.connection_type_variants,
         }
     }
 }

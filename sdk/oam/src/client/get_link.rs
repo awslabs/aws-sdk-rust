@@ -4,6 +4,7 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`identifier(impl Into<String>)`](crate::operation::get_link::builders::GetLinkFluentBuilder::identifier) / [`set_identifier(Option<String>)`](crate::operation::get_link::builders::GetLinkFluentBuilder::set_identifier):<br>required: **true**<br><p>The ARN of the link to retrieve information for.</p><br>
+    ///   - [`include_tags(bool)`](crate::operation::get_link::builders::GetLinkFluentBuilder::include_tags) / [`set_include_tags(Option<bool>)`](crate::operation::get_link::builders::GetLinkFluentBuilder::set_include_tags):<br>required: **false**<br><p>Specifies whether to include the tags associated with the link in the response. When <code>IncludeTags</code> is set to <code>true</code> and the caller has the required permission, <code>oam:ListTagsForResource</code>, the API will return the tags for the specified resource. If the caller doesn't have the required permission, <code>oam:ListTagsForResource</code>, the API will raise an exception.</p> <p>The default value is <code>false</code>.</p><br>
     /// - On success, responds with [`GetLinkOutput`](crate::operation::get_link::GetLinkOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::operation::get_link::GetLinkOutput::arn): <p>The ARN of the link.</p>
     ///   - [`id(Option<String>)`](crate::operation::get_link::GetLinkOutput::id): <p>The random ID string that Amazon Web Services generated as part of the link ARN.</p>

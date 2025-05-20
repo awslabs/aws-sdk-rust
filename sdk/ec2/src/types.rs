@@ -155,6 +155,8 @@ pub use crate::types::_instance_boot_mode_values::InstanceBootModeValues;
 
 pub use crate::types::_instance_maintenance_options::InstanceMaintenanceOptions;
 
+pub use crate::types::_instance_reboot_migration_state::InstanceRebootMigrationState;
+
 pub use crate::types::_instance_auto_recovery_state::InstanceAutoRecoveryState;
 
 pub use crate::types::_private_dns_name_options_response::PrivateDnsNameOptionsResponse;
@@ -1827,6 +1829,8 @@ pub use crate::types::_internet_gateway_attachment::InternetGatewayAttachment;
 
 pub use crate::types::_instance_type_info::InstanceTypeInfo;
 
+pub use crate::types::_reboot_migration_support::RebootMigrationSupport;
+
 pub use crate::types::_phc_support::PhcSupport;
 
 pub use crate::types::_neuron_info::NeuronInfo;
@@ -3341,6 +3345,8 @@ mod _instance_network_performance_options_request;
 
 mod _instance_private_ip_address;
 
+mod _instance_reboot_migration_state;
+
 mod _instance_requirements;
 
 mod _instance_requirements_request;
@@ -4024,6 +4030,8 @@ mod _public_ipv4_pool_range;
 mod _purchase;
 
 mod _purchase_request;
+
+mod _reboot_migration_support;
 
 mod _recurring_charge;
 

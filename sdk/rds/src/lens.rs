@@ -129,6 +129,16 @@ pub(crate) fn reflens_describe_db_log_files_output_output_marker(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_describe_db_major_engine_versions_output_output_marker(
+    input: &crate::operation::describe_db_major_engine_versions::DescribeDbMajorEngineVersionsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.marker {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_describe_db_parameter_groups_output_output_marker(
     input: &crate::operation::describe_db_parameter_groups::DescribeDbParameterGroupsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -517,6 +527,16 @@ pub(crate) fn lens_describe_db_log_files_output_output_describe_db_log_files(
     input: crate::operation::describe_db_log_files::DescribeDbLogFilesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::DescribeDbLogFilesDetails>> {
     let input = match input.describe_db_log_files {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_describe_db_major_engine_versions_output_output_db_major_engine_versions(
+    input: crate::operation::describe_db_major_engine_versions::DescribeDbMajorEngineVersionsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::DbMajorEngineVersion>> {
+    let input = match input.db_major_engine_versions {
         ::std::option::Option::None => return ::std::option::Option::None,
         ::std::option::Option::Some(t) => t,
     };

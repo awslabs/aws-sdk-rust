@@ -2003,6 +2003,8 @@ pub(crate) mod shape_confusion_matrix;
 
 pub(crate) mod shape_connection_string_list;
 
+pub(crate) mod shape_connection_type_variant_list;
+
 pub(crate) mod shape_csv_header;
 
 pub(crate) mod shape_custom_datatypes;
@@ -2172,6 +2174,8 @@ pub(crate) mod shape_column_importance;
 pub(crate) mod shape_column_value_string_list;
 
 pub(crate) mod shape_condition_expression;
+
+pub(crate) mod shape_connection_type_variant;
 
 pub(crate) mod shape_data_quality_metric_values;
 

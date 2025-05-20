@@ -222,7 +222,7 @@ pub struct DbInstance {
     pub is_storage_config_upgrade_available: ::std::option::Option<bool>,
     /// <p>Specifies whether the DB instance is in the multi-tenant configuration (TRUE) or the single-tenant configuration (FALSE).</p>
     pub multi_tenant: ::std::option::Option<bool>,
-    /// <p>The life cycle type for the DB instance.</p>
+    /// <p>The lifecycle type for the DB instance.</p>
     /// <p>For more information, see CreateDBInstance.</p>
     pub engine_lifecycle_support: ::std::option::Option<::std::string::String>,
 }
@@ -642,7 +642,7 @@ impl DbInstance {
     pub fn multi_tenant(&self) -> ::std::option::Option<bool> {
         self.multi_tenant
     }
-    /// <p>The life cycle type for the DB instance.</p>
+    /// <p>The lifecycle type for the DB instance.</p>
     /// <p>For more information, see CreateDBInstance.</p>
     pub fn engine_lifecycle_support(&self) -> ::std::option::Option<&str> {
         self.engine_lifecycle_support.as_deref()
@@ -2171,19 +2171,19 @@ impl DbInstanceBuilder {
     pub fn get_multi_tenant(&self) -> &::std::option::Option<bool> {
         &self.multi_tenant
     }
-    /// <p>The life cycle type for the DB instance.</p>
+    /// <p>The lifecycle type for the DB instance.</p>
     /// <p>For more information, see CreateDBInstance.</p>
     pub fn engine_lifecycle_support(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.engine_lifecycle_support = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The life cycle type for the DB instance.</p>
+    /// <p>The lifecycle type for the DB instance.</p>
     /// <p>For more information, see CreateDBInstance.</p>
     pub fn set_engine_lifecycle_support(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.engine_lifecycle_support = input;
         self
     }
-    /// <p>The life cycle type for the DB instance.</p>
+    /// <p>The lifecycle type for the DB instance.</p>
     /// <p>For more information, see CreateDBInstance.</p>
     pub fn get_engine_lifecycle_support(&self) -> &::std::option::Option<::std::string::String> {
         &self.engine_lifecycle_support

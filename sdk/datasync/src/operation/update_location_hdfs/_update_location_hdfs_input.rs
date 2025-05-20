@@ -23,7 +23,7 @@ pub struct UpdateLocationHdfsInput {
     pub simple_user: ::std::option::Option<::std::string::String>,
     /// <p>The Kerberos principal with access to the files and folders on the HDFS cluster.</p>
     pub kerberos_principal: ::std::option::Option<::std::string::String>,
-    /// <p>The Kerberos key table (keytab) that contains mappings between the defined Kerberos principal and the encrypted keys. You can load the keytab from a file by providing the file's address. If you use the CLI, it performs base64 encoding for you. Otherwise, provide the base64-encoded text.</p>
+    /// <p>The Kerberos key table (keytab) that contains mappings between the defined Kerberos principal and the encrypted keys. You can load the keytab from a file by providing the file's address.</p>
     pub kerberos_keytab: ::std::option::Option<::aws_smithy_types::Blob>,
     /// <p>The <code>krb5.conf</code> file that contains the Kerberos configuration information. You can load the <code>krb5.conf</code> file by providing the file's address. If you're using the CLI, it performs the base64 encoding for you. Otherwise, provide the base64-encoded text.</p>
     pub kerberos_krb5_conf: ::std::option::Option<::aws_smithy_types::Blob>,
@@ -73,7 +73,7 @@ impl UpdateLocationHdfsInput {
     pub fn kerberos_principal(&self) -> ::std::option::Option<&str> {
         self.kerberos_principal.as_deref()
     }
-    /// <p>The Kerberos key table (keytab) that contains mappings between the defined Kerberos principal and the encrypted keys. You can load the keytab from a file by providing the file's address. If you use the CLI, it performs base64 encoding for you. Otherwise, provide the base64-encoded text.</p>
+    /// <p>The Kerberos key table (keytab) that contains mappings between the defined Kerberos principal and the encrypted keys. You can load the keytab from a file by providing the file's address.</p>
     pub fn kerberos_keytab(&self) -> ::std::option::Option<&::aws_smithy_types::Blob> {
         self.kerberos_keytab.as_ref()
     }
@@ -261,17 +261,17 @@ impl UpdateLocationHdfsInputBuilder {
     pub fn get_kerberos_principal(&self) -> &::std::option::Option<::std::string::String> {
         &self.kerberos_principal
     }
-    /// <p>The Kerberos key table (keytab) that contains mappings between the defined Kerberos principal and the encrypted keys. You can load the keytab from a file by providing the file's address. If you use the CLI, it performs base64 encoding for you. Otherwise, provide the base64-encoded text.</p>
+    /// <p>The Kerberos key table (keytab) that contains mappings between the defined Kerberos principal and the encrypted keys. You can load the keytab from a file by providing the file's address.</p>
     pub fn kerberos_keytab(mut self, input: ::aws_smithy_types::Blob) -> Self {
         self.kerberos_keytab = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The Kerberos key table (keytab) that contains mappings between the defined Kerberos principal and the encrypted keys. You can load the keytab from a file by providing the file's address. If you use the CLI, it performs base64 encoding for you. Otherwise, provide the base64-encoded text.</p>
+    /// <p>The Kerberos key table (keytab) that contains mappings between the defined Kerberos principal and the encrypted keys. You can load the keytab from a file by providing the file's address.</p>
     pub fn set_kerberos_keytab(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
         self.kerberos_keytab = input;
         self
     }
-    /// <p>The Kerberos key table (keytab) that contains mappings between the defined Kerberos principal and the encrypted keys. You can load the keytab from a file by providing the file's address. If you use the CLI, it performs base64 encoding for you. Otherwise, provide the base64-encoded text.</p>
+    /// <p>The Kerberos key table (keytab) that contains mappings between the defined Kerberos principal and the encrypted keys. You can load the keytab from a file by providing the file's address.</p>
     pub fn get_kerberos_keytab(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
         &self.kerberos_keytab
     }

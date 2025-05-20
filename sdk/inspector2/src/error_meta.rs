@@ -823,6 +823,33 @@ impl From<crate::operation::get_cis_scan_result_details::GetCisScanResultDetails
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_clusters_for_image::GetClustersForImageError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_clusters_for_image::GetClustersForImageError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_clusters_for_image::GetClustersForImageError> for Error {
+    fn from(err: crate::operation::get_clusters_for_image::GetClustersForImageError) -> Self {
+        match err {
+            crate::operation::get_clusters_for_image::GetClustersForImageError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_clusters_for_image::GetClustersForImageError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::get_clusters_for_image::GetClustersForImageError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_clusters_for_image::GetClustersForImageError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_clusters_for_image::GetClustersForImageError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_configuration::GetConfigurationError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,

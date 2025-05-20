@@ -10,6 +10,9 @@ pub struct UpdateLinkInput {
     pub resource_types: ::std::option::Option<::std::vec::Vec<crate::types::ResourceType>>,
     /// <p>Use this structure to filter which metric namespaces and which log groups are to be shared from the source account to the monitoring account.</p>
     pub link_configuration: ::std::option::Option<crate::types::LinkConfiguration>,
+    /// <p>Specifies whether to include the tags associated with the link in the response after the update operation. When <code>IncludeTags</code> is set to <code>true</code> and the caller has the required permission, <code>oam:ListTagsForResource</code>, the API will return the tags for the specified resource. If the caller doesn't have the required permission, <code>oam:ListTagsForResource</code>, the API will raise an exception.</p>
+    /// <p>The default value is <code>false</code>.</p>
+    pub include_tags: ::std::option::Option<bool>,
 }
 impl UpdateLinkInput {
     /// <p>The ARN of the link that you want to update.</p>
@@ -27,6 +30,11 @@ impl UpdateLinkInput {
     pub fn link_configuration(&self) -> ::std::option::Option<&crate::types::LinkConfiguration> {
         self.link_configuration.as_ref()
     }
+    /// <p>Specifies whether to include the tags associated with the link in the response after the update operation. When <code>IncludeTags</code> is set to <code>true</code> and the caller has the required permission, <code>oam:ListTagsForResource</code>, the API will return the tags for the specified resource. If the caller doesn't have the required permission, <code>oam:ListTagsForResource</code>, the API will raise an exception.</p>
+    /// <p>The default value is <code>false</code>.</p>
+    pub fn include_tags(&self) -> ::std::option::Option<bool> {
+        self.include_tags
+    }
 }
 impl UpdateLinkInput {
     /// Creates a new builder-style object to manufacture [`UpdateLinkInput`](crate::operation::update_link::UpdateLinkInput).
@@ -42,6 +50,7 @@ pub struct UpdateLinkInputBuilder {
     pub(crate) identifier: ::std::option::Option<::std::string::String>,
     pub(crate) resource_types: ::std::option::Option<::std::vec::Vec<crate::types::ResourceType>>,
     pub(crate) link_configuration: ::std::option::Option<crate::types::LinkConfiguration>,
+    pub(crate) include_tags: ::std::option::Option<bool>,
 }
 impl UpdateLinkInputBuilder {
     /// <p>The ARN of the link that you want to update.</p>
@@ -96,12 +105,30 @@ impl UpdateLinkInputBuilder {
     pub fn get_link_configuration(&self) -> &::std::option::Option<crate::types::LinkConfiguration> {
         &self.link_configuration
     }
+    /// <p>Specifies whether to include the tags associated with the link in the response after the update operation. When <code>IncludeTags</code> is set to <code>true</code> and the caller has the required permission, <code>oam:ListTagsForResource</code>, the API will return the tags for the specified resource. If the caller doesn't have the required permission, <code>oam:ListTagsForResource</code>, the API will raise an exception.</p>
+    /// <p>The default value is <code>false</code>.</p>
+    pub fn include_tags(mut self, input: bool) -> Self {
+        self.include_tags = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies whether to include the tags associated with the link in the response after the update operation. When <code>IncludeTags</code> is set to <code>true</code> and the caller has the required permission, <code>oam:ListTagsForResource</code>, the API will return the tags for the specified resource. If the caller doesn't have the required permission, <code>oam:ListTagsForResource</code>, the API will raise an exception.</p>
+    /// <p>The default value is <code>false</code>.</p>
+    pub fn set_include_tags(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.include_tags = input;
+        self
+    }
+    /// <p>Specifies whether to include the tags associated with the link in the response after the update operation. When <code>IncludeTags</code> is set to <code>true</code> and the caller has the required permission, <code>oam:ListTagsForResource</code>, the API will return the tags for the specified resource. If the caller doesn't have the required permission, <code>oam:ListTagsForResource</code>, the API will raise an exception.</p>
+    /// <p>The default value is <code>false</code>.</p>
+    pub fn get_include_tags(&self) -> &::std::option::Option<bool> {
+        &self.include_tags
+    }
     /// Consumes the builder and constructs a [`UpdateLinkInput`](crate::operation::update_link::UpdateLinkInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::update_link::UpdateLinkInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_link::UpdateLinkInput {
             identifier: self.identifier,
             resource_types: self.resource_types,
             link_configuration: self.link_configuration,
+            include_tags: self.include_tags,
         })
     }
 }

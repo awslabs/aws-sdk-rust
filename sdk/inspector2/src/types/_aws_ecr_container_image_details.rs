@@ -20,6 +20,10 @@ pub struct AwsEcrContainerImageDetails {
     pub registry: ::std::string::String,
     /// <p>The platform of the Amazon ECR container image.</p>
     pub platform: ::std::option::Option<::std::string::String>,
+    /// <p>The last time an Amazon ECR image was used in an Amazon ECS task or Amazon EKS pod.</p>
+    pub last_in_use_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>The number of Amazon ECS tasks or Amazon EKS pods where the Amazon ECR container image is in use.</p>
+    pub in_use_count: ::std::option::Option<i64>,
 }
 impl AwsEcrContainerImageDetails {
     /// <p>The name of the repository the Amazon ECR container image resides in.</p>
@@ -59,6 +63,14 @@ impl AwsEcrContainerImageDetails {
     pub fn platform(&self) -> ::std::option::Option<&str> {
         self.platform.as_deref()
     }
+    /// <p>The last time an Amazon ECR image was used in an Amazon ECS task or Amazon EKS pod.</p>
+    pub fn last_in_use_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+        self.last_in_use_at.as_ref()
+    }
+    /// <p>The number of Amazon ECS tasks or Amazon EKS pods where the Amazon ECR container image is in use.</p>
+    pub fn in_use_count(&self) -> ::std::option::Option<i64> {
+        self.in_use_count
+    }
 }
 impl AwsEcrContainerImageDetails {
     /// Creates a new builder-style object to manufacture [`AwsEcrContainerImageDetails`](crate::types::AwsEcrContainerImageDetails).
@@ -79,6 +91,8 @@ pub struct AwsEcrContainerImageDetailsBuilder {
     pub(crate) image_hash: ::std::option::Option<::std::string::String>,
     pub(crate) registry: ::std::option::Option<::std::string::String>,
     pub(crate) platform: ::std::option::Option<::std::string::String>,
+    pub(crate) last_in_use_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) in_use_count: ::std::option::Option<i64>,
 }
 impl AwsEcrContainerImageDetailsBuilder {
     /// <p>The name of the repository the Amazon ECR container image resides in.</p>
@@ -202,6 +216,34 @@ impl AwsEcrContainerImageDetailsBuilder {
     pub fn get_platform(&self) -> &::std::option::Option<::std::string::String> {
         &self.platform
     }
+    /// <p>The last time an Amazon ECR image was used in an Amazon ECS task or Amazon EKS pod.</p>
+    pub fn last_in_use_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.last_in_use_at = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The last time an Amazon ECR image was used in an Amazon ECS task or Amazon EKS pod.</p>
+    pub fn set_last_in_use_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.last_in_use_at = input;
+        self
+    }
+    /// <p>The last time an Amazon ECR image was used in an Amazon ECS task or Amazon EKS pod.</p>
+    pub fn get_last_in_use_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_in_use_at
+    }
+    /// <p>The number of Amazon ECS tasks or Amazon EKS pods where the Amazon ECR container image is in use.</p>
+    pub fn in_use_count(mut self, input: i64) -> Self {
+        self.in_use_count = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The number of Amazon ECS tasks or Amazon EKS pods where the Amazon ECR container image is in use.</p>
+    pub fn set_in_use_count(mut self, input: ::std::option::Option<i64>) -> Self {
+        self.in_use_count = input;
+        self
+    }
+    /// <p>The number of Amazon ECS tasks or Amazon EKS pods where the Amazon ECR container image is in use.</p>
+    pub fn get_in_use_count(&self) -> &::std::option::Option<i64> {
+        &self.in_use_count
+    }
     /// Consumes the builder and constructs a [`AwsEcrContainerImageDetails`](crate::types::AwsEcrContainerImageDetails).
     /// This method will fail if any of the following fields are not set:
     /// - [`repository_name`](crate::types::builders::AwsEcrContainerImageDetailsBuilder::repository_name)
@@ -232,6 +274,8 @@ impl AwsEcrContainerImageDetailsBuilder {
                 )
             })?,
             platform: self.platform,
+            last_in_use_at: self.last_in_use_at,
+            in_use_count: self.in_use_count,
         })
     }
 }

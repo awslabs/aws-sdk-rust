@@ -21,10 +21,6 @@ pub use crate::types::_filter_rule::FilterRuleBuilder;
 
 pub use crate::types::_task_schedule::TaskScheduleBuilder;
 
-pub use crate::types::_credentials::CredentialsBuilder;
-
-pub use crate::types::_discovery_server_configuration::DiscoveryServerConfigurationBuilder;
-
 pub use crate::types::_smb_mount_options::SmbMountOptionsBuilder;
 
 pub use crate::types::_s3_config::S3ConfigBuilder;
@@ -57,13 +53,9 @@ pub use crate::types::_task_filter::TaskFilterBuilder;
 
 pub use crate::types::_task_execution_list_entry::TaskExecutionListEntryBuilder;
 
-pub use crate::types::_storage_system_list_entry::StorageSystemListEntryBuilder;
-
 pub use crate::types::_location_list_entry::LocationListEntryBuilder;
 
 pub use crate::types::_location_filter::LocationFilterBuilder;
-
-pub use crate::types::_discovery_job_list_entry::DiscoveryJobListEntryBuilder;
 
 pub use crate::types::_agent_list_entry::AgentListEntryBuilder;
 
@@ -78,30 +70,6 @@ pub use crate::types::_report_result::ReportResultBuilder;
 pub use crate::types::_task_execution_result_detail::TaskExecutionResultDetailBuilder;
 
 pub use crate::types::_task_schedule_details::TaskScheduleDetailsBuilder;
-
-pub use crate::types::_resource_details::ResourceDetailsBuilder;
-
-pub use crate::types::_net_app_ontap_cluster::NetAppOntapClusterBuilder;
-
-pub use crate::types::_recommendation::RecommendationBuilder;
-
-pub use crate::types::_max_p95_performance::MaxP95PerformanceBuilder;
-
-pub use crate::types::_net_app_ontap_volume::NetAppOntapVolumeBuilder;
-
-pub use crate::types::_net_app_ontapsvm::NetAppOntapsvmBuilder;
-
-pub use crate::types::_resource_metrics::ResourceMetricsBuilder;
-
-pub use crate::types::_capacity::CapacityBuilder;
-
-pub use crate::types::_p95_metrics::P95MetricsBuilder;
-
-pub use crate::types::_latency::LatencyBuilder;
-
-pub use crate::types::_throughput::ThroughputBuilder;
-
-pub use crate::types::_iops::IopsBuilder;
 
 pub use crate::types::_ec2_config::Ec2ConfigBuilder;
 

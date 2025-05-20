@@ -3018,6 +3018,38 @@ impl From<crate::operation::describe_db_log_files::DescribeDBLogFilesError> for 
         }
     }
 }
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::describe_db_major_engine_versions::DescribeDBMajorEngineVersionsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::describe_db_major_engine_versions::DescribeDBMajorEngineVersionsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::describe_db_major_engine_versions::DescribeDBMajorEngineVersionsError> for Error {
+    fn from(err: crate::operation::describe_db_major_engine_versions::DescribeDBMajorEngineVersionsError) -> Self {
+        match err {
+            crate::operation::describe_db_major_engine_versions::DescribeDBMajorEngineVersionsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_db_parameter_groups::DescribeDBParameterGroupsError, R>>
     for Error
 where

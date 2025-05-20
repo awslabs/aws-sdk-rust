@@ -267,44 +267,44 @@ pub fn ser_filter_criteria(
         }
         array_86.finish();
     }
-    if let Some(var_89) = &input.port_range {
-        let mut array_90 = object.key("portRange").start_array();
+    if let Some(var_89) = &input.ecr_image_last_in_use_at {
+        let mut array_90 = object.key("ecrImageLastInUseAt").start_array();
         for item_91 in var_89 {
             {
                 #[allow(unused_mut)]
                 let mut object_92 = array_90.value().start_object();
-                crate::protocol_serde::shape_port_range_filter::ser_port_range_filter(&mut object_92, item_91)?;
+                crate::protocol_serde::shape_date_filter::ser_date_filter(&mut object_92, item_91)?;
                 object_92.finish();
             }
         }
         array_90.finish();
     }
-    if let Some(var_93) = &input.network_protocol {
-        let mut array_94 = object.key("networkProtocol").start_array();
+    if let Some(var_93) = &input.ecr_image_in_use_count {
+        let mut array_94 = object.key("ecrImageInUseCount").start_array();
         for item_95 in var_93 {
             {
                 #[allow(unused_mut)]
                 let mut object_96 = array_94.value().start_object();
-                crate::protocol_serde::shape_string_filter::ser_string_filter(&mut object_96, item_95)?;
+                crate::protocol_serde::shape_number_filter::ser_number_filter(&mut object_96, item_95)?;
                 object_96.finish();
             }
         }
         array_94.finish();
     }
-    if let Some(var_97) = &input.component_id {
-        let mut array_98 = object.key("componentId").start_array();
+    if let Some(var_97) = &input.port_range {
+        let mut array_98 = object.key("portRange").start_array();
         for item_99 in var_97 {
             {
                 #[allow(unused_mut)]
                 let mut object_100 = array_98.value().start_object();
-                crate::protocol_serde::shape_string_filter::ser_string_filter(&mut object_100, item_99)?;
+                crate::protocol_serde::shape_port_range_filter::ser_port_range_filter(&mut object_100, item_99)?;
                 object_100.finish();
             }
         }
         array_98.finish();
     }
-    if let Some(var_101) = &input.component_type {
-        let mut array_102 = object.key("componentType").start_array();
+    if let Some(var_101) = &input.network_protocol {
+        let mut array_102 = object.key("networkProtocol").start_array();
         for item_103 in var_101 {
             {
                 #[allow(unused_mut)]
@@ -315,8 +315,8 @@ pub fn ser_filter_criteria(
         }
         array_102.finish();
     }
-    if let Some(var_105) = &input.vulnerability_id {
-        let mut array_106 = object.key("vulnerabilityId").start_array();
+    if let Some(var_105) = &input.component_id {
+        let mut array_106 = object.key("componentId").start_array();
         for item_107 in var_105 {
             {
                 #[allow(unused_mut)]
@@ -327,8 +327,8 @@ pub fn ser_filter_criteria(
         }
         array_106.finish();
     }
-    if let Some(var_109) = &input.vulnerability_source {
-        let mut array_110 = object.key("vulnerabilitySource").start_array();
+    if let Some(var_109) = &input.component_type {
+        let mut array_110 = object.key("componentType").start_array();
         for item_111 in var_109 {
             {
                 #[allow(unused_mut)]
@@ -339,8 +339,8 @@ pub fn ser_filter_criteria(
         }
         array_110.finish();
     }
-    if let Some(var_113) = &input.vendor_severity {
-        let mut array_114 = object.key("vendorSeverity").start_array();
+    if let Some(var_113) = &input.vulnerability_id {
+        let mut array_114 = object.key("vulnerabilityId").start_array();
         for item_115 in var_113 {
             {
                 #[allow(unused_mut)]
@@ -351,20 +351,20 @@ pub fn ser_filter_criteria(
         }
         array_114.finish();
     }
-    if let Some(var_117) = &input.vulnerable_packages {
-        let mut array_118 = object.key("vulnerablePackages").start_array();
+    if let Some(var_117) = &input.vulnerability_source {
+        let mut array_118 = object.key("vulnerabilitySource").start_array();
         for item_119 in var_117 {
             {
                 #[allow(unused_mut)]
                 let mut object_120 = array_118.value().start_object();
-                crate::protocol_serde::shape_package_filter::ser_package_filter(&mut object_120, item_119)?;
+                crate::protocol_serde::shape_string_filter::ser_string_filter(&mut object_120, item_119)?;
                 object_120.finish();
             }
         }
         array_118.finish();
     }
-    if let Some(var_121) = &input.related_vulnerabilities {
-        let mut array_122 = object.key("relatedVulnerabilities").start_array();
+    if let Some(var_121) = &input.vendor_severity {
+        let mut array_122 = object.key("vendorSeverity").start_array();
         for item_123 in var_121 {
             {
                 #[allow(unused_mut)]
@@ -375,20 +375,20 @@ pub fn ser_filter_criteria(
         }
         array_122.finish();
     }
-    if let Some(var_125) = &input.fix_available {
-        let mut array_126 = object.key("fixAvailable").start_array();
+    if let Some(var_125) = &input.vulnerable_packages {
+        let mut array_126 = object.key("vulnerablePackages").start_array();
         for item_127 in var_125 {
             {
                 #[allow(unused_mut)]
                 let mut object_128 = array_126.value().start_object();
-                crate::protocol_serde::shape_string_filter::ser_string_filter(&mut object_128, item_127)?;
+                crate::protocol_serde::shape_package_filter::ser_package_filter(&mut object_128, item_127)?;
                 object_128.finish();
             }
         }
         array_126.finish();
     }
-    if let Some(var_129) = &input.lambda_function_name {
-        let mut array_130 = object.key("lambdaFunctionName").start_array();
+    if let Some(var_129) = &input.related_vulnerabilities {
+        let mut array_130 = object.key("relatedVulnerabilities").start_array();
         for item_131 in var_129 {
             {
                 #[allow(unused_mut)]
@@ -399,8 +399,8 @@ pub fn ser_filter_criteria(
         }
         array_130.finish();
     }
-    if let Some(var_133) = &input.lambda_function_layers {
-        let mut array_134 = object.key("lambdaFunctionLayers").start_array();
+    if let Some(var_133) = &input.fix_available {
+        let mut array_134 = object.key("fixAvailable").start_array();
         for item_135 in var_133 {
             {
                 #[allow(unused_mut)]
@@ -411,8 +411,8 @@ pub fn ser_filter_criteria(
         }
         array_134.finish();
     }
-    if let Some(var_137) = &input.lambda_function_runtime {
-        let mut array_138 = object.key("lambdaFunctionRuntime").start_array();
+    if let Some(var_137) = &input.lambda_function_name {
+        let mut array_138 = object.key("lambdaFunctionName").start_array();
         for item_139 in var_137 {
             {
                 #[allow(unused_mut)]
@@ -423,20 +423,20 @@ pub fn ser_filter_criteria(
         }
         array_138.finish();
     }
-    if let Some(var_141) = &input.lambda_function_last_modified_at {
-        let mut array_142 = object.key("lambdaFunctionLastModifiedAt").start_array();
+    if let Some(var_141) = &input.lambda_function_layers {
+        let mut array_142 = object.key("lambdaFunctionLayers").start_array();
         for item_143 in var_141 {
             {
                 #[allow(unused_mut)]
                 let mut object_144 = array_142.value().start_object();
-                crate::protocol_serde::shape_date_filter::ser_date_filter(&mut object_144, item_143)?;
+                crate::protocol_serde::shape_string_filter::ser_string_filter(&mut object_144, item_143)?;
                 object_144.finish();
             }
         }
         array_142.finish();
     }
-    if let Some(var_145) = &input.lambda_function_execution_role_arn {
-        let mut array_146 = object.key("lambdaFunctionExecutionRoleArn").start_array();
+    if let Some(var_145) = &input.lambda_function_runtime {
+        let mut array_146 = object.key("lambdaFunctionRuntime").start_array();
         for item_147 in var_145 {
             {
                 #[allow(unused_mut)]
@@ -447,20 +447,20 @@ pub fn ser_filter_criteria(
         }
         array_146.finish();
     }
-    if let Some(var_149) = &input.exploit_available {
-        let mut array_150 = object.key("exploitAvailable").start_array();
+    if let Some(var_149) = &input.lambda_function_last_modified_at {
+        let mut array_150 = object.key("lambdaFunctionLastModifiedAt").start_array();
         for item_151 in var_149 {
             {
                 #[allow(unused_mut)]
                 let mut object_152 = array_150.value().start_object();
-                crate::protocol_serde::shape_string_filter::ser_string_filter(&mut object_152, item_151)?;
+                crate::protocol_serde::shape_date_filter::ser_date_filter(&mut object_152, item_151)?;
                 object_152.finish();
             }
         }
         array_150.finish();
     }
-    if let Some(var_153) = &input.code_vulnerability_detector_name {
-        let mut array_154 = object.key("codeVulnerabilityDetectorName").start_array();
+    if let Some(var_153) = &input.lambda_function_execution_role_arn {
+        let mut array_154 = object.key("lambdaFunctionExecutionRoleArn").start_array();
         for item_155 in var_153 {
             {
                 #[allow(unused_mut)]
@@ -471,8 +471,8 @@ pub fn ser_filter_criteria(
         }
         array_154.finish();
     }
-    if let Some(var_157) = &input.code_vulnerability_detector_tags {
-        let mut array_158 = object.key("codeVulnerabilityDetectorTags").start_array();
+    if let Some(var_157) = &input.exploit_available {
+        let mut array_158 = object.key("exploitAvailable").start_array();
         for item_159 in var_157 {
             {
                 #[allow(unused_mut)]
@@ -483,8 +483,8 @@ pub fn ser_filter_criteria(
         }
         array_158.finish();
     }
-    if let Some(var_161) = &input.code_vulnerability_file_path {
-        let mut array_162 = object.key("codeVulnerabilityFilePath").start_array();
+    if let Some(var_161) = &input.code_vulnerability_detector_name {
+        let mut array_162 = object.key("codeVulnerabilityDetectorName").start_array();
         for item_163 in var_161 {
             {
                 #[allow(unused_mut)]
@@ -495,17 +495,41 @@ pub fn ser_filter_criteria(
         }
         array_162.finish();
     }
-    if let Some(var_165) = &input.epss_score {
-        let mut array_166 = object.key("epssScore").start_array();
+    if let Some(var_165) = &input.code_vulnerability_detector_tags {
+        let mut array_166 = object.key("codeVulnerabilityDetectorTags").start_array();
         for item_167 in var_165 {
             {
                 #[allow(unused_mut)]
                 let mut object_168 = array_166.value().start_object();
-                crate::protocol_serde::shape_number_filter::ser_number_filter(&mut object_168, item_167)?;
+                crate::protocol_serde::shape_string_filter::ser_string_filter(&mut object_168, item_167)?;
                 object_168.finish();
             }
         }
         array_166.finish();
+    }
+    if let Some(var_169) = &input.code_vulnerability_file_path {
+        let mut array_170 = object.key("codeVulnerabilityFilePath").start_array();
+        for item_171 in var_169 {
+            {
+                #[allow(unused_mut)]
+                let mut object_172 = array_170.value().start_object();
+                crate::protocol_serde::shape_string_filter::ser_string_filter(&mut object_172, item_171)?;
+                object_172.finish();
+            }
+        }
+        array_170.finish();
+    }
+    if let Some(var_173) = &input.epss_score {
+        let mut array_174 = object.key("epssScore").start_array();
+        for item_175 in var_173 {
+            {
+                #[allow(unused_mut)]
+                let mut object_176 = array_174.value().start_object();
+                crate::protocol_serde::shape_number_filter::ser_number_filter(&mut object_176, item_175)?;
+                object_176.finish();
+            }
+        }
+        array_174.finish();
     }
     Ok(())
 }
@@ -595,6 +619,14 @@ where
                         }
                         "ecrImageHash" => {
                             builder = builder.set_ecr_image_hash(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens)?);
+                        }
+                        "ecrImageLastInUseAt" => {
+                            builder =
+                                builder.set_ecr_image_last_in_use_at(crate::protocol_serde::shape_date_filter_list::de_date_filter_list(tokens)?);
+                        }
+                        "ecrImageInUseCount" => {
+                            builder =
+                                builder.set_ecr_image_in_use_count(crate::protocol_serde::shape_number_filter_list::de_number_filter_list(tokens)?);
                         }
                         "portRange" => {
                             builder = builder.set_port_range(crate::protocol_serde::shape_port_range_filter_list::de_port_range_filter_list(tokens)?);

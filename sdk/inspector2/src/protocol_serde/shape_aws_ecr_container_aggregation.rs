@@ -69,5 +69,29 @@ pub fn ser_aws_ecr_container_aggregation(
     if let Some(var_22) = &input.sort_by {
         object.key("sortBy").string(var_22.as_str());
     }
+    if let Some(var_23) = &input.last_in_use_at {
+        let mut array_24 = object.key("lastInUseAt").start_array();
+        for item_25 in var_23 {
+            {
+                #[allow(unused_mut)]
+                let mut object_26 = array_24.value().start_object();
+                crate::protocol_serde::shape_date_filter::ser_date_filter(&mut object_26, item_25)?;
+                object_26.finish();
+            }
+        }
+        array_24.finish();
+    }
+    if let Some(var_27) = &input.in_use_count {
+        let mut array_28 = object.key("inUseCount").start_array();
+        for item_29 in var_27 {
+            {
+                #[allow(unused_mut)]
+                let mut object_30 = array_28.value().start_object();
+                crate::protocol_serde::shape_number_filter::ser_number_filter(&mut object_30, item_29)?;
+                object_30.finish();
+            }
+        }
+        array_28.finish();
+    }
     Ok(())
 }

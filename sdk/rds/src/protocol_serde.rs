@@ -303,6 +303,10 @@ pub(crate) mod shape_describe_db_log_files;
 
 pub(crate) mod shape_describe_db_log_files_input;
 
+pub(crate) mod shape_describe_db_major_engine_versions;
+
+pub(crate) mod shape_describe_db_major_engine_versions_input;
+
 pub(crate) mod shape_describe_db_parameter_groups;
 
 pub(crate) mod shape_describe_db_parameter_groups_input;
@@ -1033,6 +1037,8 @@ pub(crate) mod shape_db_instance_automated_backup_list;
 
 pub(crate) mod shape_db_instance_list;
 
+pub(crate) mod shape_db_major_engine_versions_list;
+
 pub(crate) mod shape_db_parameter_group;
 
 pub(crate) mod shape_db_parameter_group_list;
@@ -1180,6 +1186,8 @@ pub(crate) mod shape_db_instance_automated_backups_replication_list;
 pub(crate) mod shape_db_instance_roles;
 
 pub(crate) mod shape_db_instance_status_info_list;
+
+pub(crate) mod shape_db_major_engine_version;
 
 pub(crate) mod shape_db_parameter_group_status_list;
 
@@ -1343,6 +1351,8 @@ pub(crate) mod shape_recurring_charge;
 
 pub(crate) mod shape_subnet;
 
+pub(crate) mod shape_supported_engine_lifecycle_list;
+
 pub(crate) mod shape_switchover_detail;
 
 pub(crate) mod shape_target_health;
@@ -1376,6 +1386,8 @@ pub(crate) mod shape_range_list;
 pub(crate) mod shape_readers_arn_list;
 
 pub(crate) mod shape_recommended_action_parameter_list;
+
+pub(crate) mod shape_supported_engine_lifecycle;
 
 pub(crate) mod shape_context_attribute;
 

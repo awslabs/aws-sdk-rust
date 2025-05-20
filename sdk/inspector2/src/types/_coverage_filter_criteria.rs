@@ -34,6 +34,10 @@ pub struct CoverageFilterCriteria {
     pub scan_mode: ::std::option::Option<::std::vec::Vec<crate::types::CoverageStringFilter>>,
     /// <p>The date an image was last pulled at.</p>
     pub image_pulled_at: ::std::option::Option<::std::vec::Vec<crate::types::CoverageDateFilter>>,
+    /// <p>The Amazon ECR image that was last in use.</p>
+    pub ecr_image_last_in_use_at: ::std::option::Option<::std::vec::Vec<crate::types::CoverageDateFilter>>,
+    /// <p>The number of Amazon ECR images in use.</p>
+    pub ecr_image_in_use_count: ::std::option::Option<::std::vec::Vec<crate::types::CoverageNumberFilter>>,
 }
 impl CoverageFilterCriteria {
     /// <p>The scan status code to filter on. Valid values are: <code>ValidationException</code>, <code>InternalServerException</code>, <code>ResourceNotFoundException</code>, <code>BadRequestException</code>, and <code>ThrottlingException</code>.</p>
@@ -126,6 +130,18 @@ impl CoverageFilterCriteria {
     pub fn image_pulled_at(&self) -> &[crate::types::CoverageDateFilter] {
         self.image_pulled_at.as_deref().unwrap_or_default()
     }
+    /// <p>The Amazon ECR image that was last in use.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ecr_image_last_in_use_at.is_none()`.
+    pub fn ecr_image_last_in_use_at(&self) -> &[crate::types::CoverageDateFilter] {
+        self.ecr_image_last_in_use_at.as_deref().unwrap_or_default()
+    }
+    /// <p>The number of Amazon ECR images in use.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ecr_image_in_use_count.is_none()`.
+    pub fn ecr_image_in_use_count(&self) -> &[crate::types::CoverageNumberFilter] {
+        self.ecr_image_in_use_count.as_deref().unwrap_or_default()
+    }
 }
 impl CoverageFilterCriteria {
     /// Creates a new builder-style object to manufacture [`CoverageFilterCriteria`](crate::types::CoverageFilterCriteria).
@@ -153,6 +169,8 @@ pub struct CoverageFilterCriteriaBuilder {
     pub(crate) last_scanned_at: ::std::option::Option<::std::vec::Vec<crate::types::CoverageDateFilter>>,
     pub(crate) scan_mode: ::std::option::Option<::std::vec::Vec<crate::types::CoverageStringFilter>>,
     pub(crate) image_pulled_at: ::std::option::Option<::std::vec::Vec<crate::types::CoverageDateFilter>>,
+    pub(crate) ecr_image_last_in_use_at: ::std::option::Option<::std::vec::Vec<crate::types::CoverageDateFilter>>,
+    pub(crate) ecr_image_in_use_count: ::std::option::Option<::std::vec::Vec<crate::types::CoverageNumberFilter>>,
 }
 impl CoverageFilterCriteriaBuilder {
     /// Appends an item to `scan_status_code`.
@@ -455,6 +473,46 @@ impl CoverageFilterCriteriaBuilder {
     pub fn get_image_pulled_at(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CoverageDateFilter>> {
         &self.image_pulled_at
     }
+    /// Appends an item to `ecr_image_last_in_use_at`.
+    ///
+    /// To override the contents of this collection use [`set_ecr_image_last_in_use_at`](Self::set_ecr_image_last_in_use_at).
+    ///
+    /// <p>The Amazon ECR image that was last in use.</p>
+    pub fn ecr_image_last_in_use_at(mut self, input: crate::types::CoverageDateFilter) -> Self {
+        let mut v = self.ecr_image_last_in_use_at.unwrap_or_default();
+        v.push(input);
+        self.ecr_image_last_in_use_at = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The Amazon ECR image that was last in use.</p>
+    pub fn set_ecr_image_last_in_use_at(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CoverageDateFilter>>) -> Self {
+        self.ecr_image_last_in_use_at = input;
+        self
+    }
+    /// <p>The Amazon ECR image that was last in use.</p>
+    pub fn get_ecr_image_last_in_use_at(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CoverageDateFilter>> {
+        &self.ecr_image_last_in_use_at
+    }
+    /// Appends an item to `ecr_image_in_use_count`.
+    ///
+    /// To override the contents of this collection use [`set_ecr_image_in_use_count`](Self::set_ecr_image_in_use_count).
+    ///
+    /// <p>The number of Amazon ECR images in use.</p>
+    pub fn ecr_image_in_use_count(mut self, input: crate::types::CoverageNumberFilter) -> Self {
+        let mut v = self.ecr_image_in_use_count.unwrap_or_default();
+        v.push(input);
+        self.ecr_image_in_use_count = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The number of Amazon ECR images in use.</p>
+    pub fn set_ecr_image_in_use_count(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CoverageNumberFilter>>) -> Self {
+        self.ecr_image_in_use_count = input;
+        self
+    }
+    /// <p>The number of Amazon ECR images in use.</p>
+    pub fn get_ecr_image_in_use_count(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CoverageNumberFilter>> {
+        &self.ecr_image_in_use_count
+    }
     /// Consumes the builder and constructs a [`CoverageFilterCriteria`](crate::types::CoverageFilterCriteria).
     pub fn build(self) -> crate::types::CoverageFilterCriteria {
         crate::types::CoverageFilterCriteria {
@@ -473,6 +531,8 @@ impl CoverageFilterCriteriaBuilder {
             last_scanned_at: self.last_scanned_at,
             scan_mode: self.scan_mode,
             image_pulled_at: self.image_pulled_at,
+            ecr_image_last_in_use_at: self.ecr_image_last_in_use_at,
+            ecr_image_in_use_count: self.ecr_image_in_use_count,
         }
     }
 }

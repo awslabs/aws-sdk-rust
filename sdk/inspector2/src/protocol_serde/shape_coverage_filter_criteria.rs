@@ -183,5 +183,29 @@ pub fn ser_coverage_filter_criteria(
         }
         array_58.finish();
     }
+    if let Some(var_61) = &input.ecr_image_last_in_use_at {
+        let mut array_62 = object.key("ecrImageLastInUseAt").start_array();
+        for item_63 in var_61 {
+            {
+                #[allow(unused_mut)]
+                let mut object_64 = array_62.value().start_object();
+                crate::protocol_serde::shape_coverage_date_filter::ser_coverage_date_filter(&mut object_64, item_63)?;
+                object_64.finish();
+            }
+        }
+        array_62.finish();
+    }
+    if let Some(var_65) = &input.ecr_image_in_use_count {
+        let mut array_66 = object.key("ecrImageInUseCount").start_array();
+        for item_67 in var_65 {
+            {
+                #[allow(unused_mut)]
+                let mut object_68 = array_66.value().start_object();
+                crate::protocol_serde::shape_coverage_number_filter::ser_coverage_number_filter(&mut object_68, item_67)?;
+                object_68.finish();
+            }
+        }
+        array_66.finish();
+    }
     Ok(())
 }

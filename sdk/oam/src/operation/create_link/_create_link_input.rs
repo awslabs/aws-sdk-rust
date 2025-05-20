@@ -12,7 +12,9 @@ pub struct CreateLinkInput {
     /// <p><code>$AccountEmail</code> is the globally unique email address of the account</p></li>
     /// <li>
     /// <p><code>$AccountEmailNoDomain</code> is the email address of the account without the domain name</p></li>
-    /// </ul>
+    /// </ul><note>
+    /// <p>In the Amazon Web Services GovCloud (US-East) and Amazon Web Services GovCloud (US-West) Regions, the only supported option is to use custom labels, and the <code>$AccountName</code>, <code>$AccountEmail</code>, and <code>$AccountEmailNoDomain</code> variables all resolve as <i>account-id</i> instead of the specified variable.</p>
+    /// </note>
     pub label_template: ::std::option::Option<::std::string::String>,
     /// <p>An array of strings that define which types of data that the source account shares with the monitoring account.</p>
     pub resource_types: ::std::option::Option<::std::vec::Vec<crate::types::ResourceType>>,
@@ -36,7 +38,9 @@ impl CreateLinkInput {
     /// <p><code>$AccountEmail</code> is the globally unique email address of the account</p></li>
     /// <li>
     /// <p><code>$AccountEmailNoDomain</code> is the email address of the account without the domain name</p></li>
-    /// </ul>
+    /// </ul><note>
+    /// <p>In the Amazon Web Services GovCloud (US-East) and Amazon Web Services GovCloud (US-West) Regions, the only supported option is to use custom labels, and the <code>$AccountName</code>, <code>$AccountEmail</code>, and <code>$AccountEmailNoDomain</code> variables all resolve as <i>account-id</i> instead of the specified variable.</p>
+    /// </note>
     pub fn label_template(&self) -> ::std::option::Option<&str> {
         self.label_template.as_deref()
     }
@@ -89,7 +93,9 @@ impl CreateLinkInputBuilder {
     /// <p><code>$AccountEmail</code> is the globally unique email address of the account</p></li>
     /// <li>
     /// <p><code>$AccountEmailNoDomain</code> is the email address of the account without the domain name</p></li>
-    /// </ul>
+    /// </ul><note>
+    /// <p>In the Amazon Web Services GovCloud (US-East) and Amazon Web Services GovCloud (US-West) Regions, the only supported option is to use custom labels, and the <code>$AccountName</code>, <code>$AccountEmail</code>, and <code>$AccountEmailNoDomain</code> variables all resolve as <i>account-id</i> instead of the specified variable.</p>
+    /// </note>
     /// This field is required.
     pub fn label_template(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.label_template = ::std::option::Option::Some(input.into());
@@ -104,7 +110,9 @@ impl CreateLinkInputBuilder {
     /// <p><code>$AccountEmail</code> is the globally unique email address of the account</p></li>
     /// <li>
     /// <p><code>$AccountEmailNoDomain</code> is the email address of the account without the domain name</p></li>
-    /// </ul>
+    /// </ul><note>
+    /// <p>In the Amazon Web Services GovCloud (US-East) and Amazon Web Services GovCloud (US-West) Regions, the only supported option is to use custom labels, and the <code>$AccountName</code>, <code>$AccountEmail</code>, and <code>$AccountEmailNoDomain</code> variables all resolve as <i>account-id</i> instead of the specified variable.</p>
+    /// </note>
     pub fn set_label_template(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.label_template = input;
         self
@@ -118,7 +126,9 @@ impl CreateLinkInputBuilder {
     /// <p><code>$AccountEmail</code> is the globally unique email address of the account</p></li>
     /// <li>
     /// <p><code>$AccountEmailNoDomain</code> is the email address of the account without the domain name</p></li>
-    /// </ul>
+    /// </ul><note>
+    /// <p>In the Amazon Web Services GovCloud (US-East) and Amazon Web Services GovCloud (US-West) Regions, the only supported option is to use custom labels, and the <code>$AccountName</code>, <code>$AccountEmail</code>, and <code>$AccountEmailNoDomain</code> variables all resolve as <i>account-id</i> instead of the specified variable.</p>
+    /// </note>
     pub fn get_label_template(&self) -> &::std::option::Option<::std::string::String> {
         &self.label_template
     }
