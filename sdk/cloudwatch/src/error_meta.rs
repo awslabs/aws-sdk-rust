@@ -5,6 +5,8 @@
 pub enum Error {
     /// <p>More than one process tried to modify a resource at the same time.</p>
     ConcurrentModificationException(crate::types::error::ConcurrentModificationException),
+    /// <p>This operation attempted to create a resource that already exists.</p>
+    ConflictException(crate::types::error::ConflictException),
     /// <p>Some part of the dashboard data is invalid.</p>
     DashboardInvalidInputError(crate::types::error::DashboardInvalidInputError),
     /// <p>The specified dashboard does not exist.</p>
@@ -42,6 +44,7 @@ impl ::std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match self {
             Error::ConcurrentModificationException(inner) => inner.fmt(f),
+            Error::ConflictException(inner) => inner.fmt(f),
             Error::DashboardInvalidInputError(inner) => inner.fmt(f),
             Error::DashboardNotFoundError(inner) => inner.fmt(f),
             Error::InternalServiceFault(inner) => inner.fmt(f),
@@ -76,6 +79,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
     fn meta(&self) -> &::aws_smithy_types::error::metadata::ErrorMetadata {
         match self {
             Self::ConcurrentModificationException(inner) => inner.meta(),
+            Self::ConflictException(inner) => inner.meta(),
             Self::DashboardInvalidInputError(inner) => inner.meta(),
             Self::DashboardNotFoundError(inner) => inner.meta(),
             Self::InternalServiceFault(inner) => inner.meta(),
@@ -167,6 +171,7 @@ where
 impl From<crate::operation::delete_dashboards::DeleteDashboardsError> for Error {
     fn from(err: crate::operation::delete_dashboards::DeleteDashboardsError) -> Self {
         match err {
+            crate::operation::delete_dashboards::DeleteDashboardsError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::delete_dashboards::DeleteDashboardsError::DashboardNotFoundError(inner) => Error::DashboardNotFoundError(inner),
             crate::operation::delete_dashboards::DeleteDashboardsError::InternalServiceFault(inner) => Error::InternalServiceFault(inner),
             crate::operation::delete_dashboards::DeleteDashboardsError::InvalidParameterValueException(inner) => {
@@ -823,6 +828,7 @@ where
 impl From<crate::operation::put_dashboard::PutDashboardError> for Error {
     fn from(err: crate::operation::put_dashboard::PutDashboardError) -> Self {
         match err {
+            crate::operation::put_dashboard::PutDashboardError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::put_dashboard::PutDashboardError::DashboardInvalidInputError(inner) => Error::DashboardInvalidInputError(inner),
             crate::operation::put_dashboard::PutDashboardError::InternalServiceFault(inner) => Error::InternalServiceFault(inner),
             crate::operation::put_dashboard::PutDashboardError::Unhandled(inner) => Error::Unhandled(inner),
@@ -1071,6 +1077,7 @@ impl From<crate::operation::tag_resource::TagResourceError> for Error {
     fn from(err: crate::operation::tag_resource::TagResourceError) -> Self {
         match err {
             crate::operation::tag_resource::TagResourceError::ConcurrentModificationException(inner) => Error::ConcurrentModificationException(inner),
+            crate::operation::tag_resource::TagResourceError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::tag_resource::TagResourceError::InternalServiceFault(inner) => Error::InternalServiceFault(inner),
             crate::operation::tag_resource::TagResourceError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
             crate::operation::tag_resource::TagResourceError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
@@ -1098,6 +1105,7 @@ impl From<crate::operation::untag_resource::UntagResourceError> for Error {
             crate::operation::untag_resource::UntagResourceError::ConcurrentModificationException(inner) => {
                 Error::ConcurrentModificationException(inner)
             }
+            crate::operation::untag_resource::UntagResourceError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::untag_resource::UntagResourceError::InternalServiceFault(inner) => Error::InternalServiceFault(inner),
             crate::operation::untag_resource::UntagResourceError::InvalidParameterValueException(inner) => {
                 Error::InvalidParameterValueException(inner)
@@ -1123,6 +1131,7 @@ impl ::std::error::Error for Error {
     fn source(&self) -> std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
             Error::ConcurrentModificationException(inner) => inner.source(),
+            Error::ConflictException(inner) => inner.source(),
             Error::DashboardInvalidInputError(inner) => inner.source(),
             Error::DashboardNotFoundError(inner) => inner.source(),
             Error::InternalServiceFault(inner) => inner.source(),
@@ -1143,6 +1152,7 @@ impl ::aws_types::request_id::RequestId for Error {
     fn request_id(&self) -> Option<&str> {
         match self {
             Self::ConcurrentModificationException(e) => e.request_id(),
+            Self::ConflictException(e) => e.request_id(),
             Self::DashboardInvalidInputError(e) => e.request_id(),
             Self::DashboardNotFoundError(e) => e.request_id(),
             Self::InternalServiceFault(e) => e.request_id(),

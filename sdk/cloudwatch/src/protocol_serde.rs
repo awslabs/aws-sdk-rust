@@ -179,6 +179,8 @@ pub(crate) mod shape_anomaly_detector_configuration;
 
 pub(crate) mod shape_concurrent_modification_exception;
 
+pub(crate) mod shape_conflict_exception;
+
 pub(crate) mod shape_dashboard_invalid_input_error;
 
 pub(crate) mod shape_dashboard_not_found_error;

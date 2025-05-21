@@ -179,4 +179,27 @@ impl PutInsightRuleFluentBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         self.inner.get_tags()
     }
+    /// <p>Specify <code>true</code> to have this rule evalute log events after they have been transformed by <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatch-Logs-Transformation.html">Log transformation</a>. If you specify <code>true</code>, then the log events in log groups that have transformers will be evaluated by Contributor Insights after being transformed. Log groups that don't have transformers will still have their original log events evaluated by Contributor Insights.</p>
+    /// <p>The default is <code>false</code></p><note>
+    /// <p>If a log group has a transformer, and transformation fails for some log events, those log events won't be evaluated by Contributor Insights. For information about investigating log transformation failures, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Transformation-Errors-Metrics.html">Transformation metrics and errors</a>.</p>
+    /// </note>
+    pub fn apply_on_transformed_logs(mut self, input: bool) -> Self {
+        self.inner = self.inner.apply_on_transformed_logs(input);
+        self
+    }
+    /// <p>Specify <code>true</code> to have this rule evalute log events after they have been transformed by <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatch-Logs-Transformation.html">Log transformation</a>. If you specify <code>true</code>, then the log events in log groups that have transformers will be evaluated by Contributor Insights after being transformed. Log groups that don't have transformers will still have their original log events evaluated by Contributor Insights.</p>
+    /// <p>The default is <code>false</code></p><note>
+    /// <p>If a log group has a transformer, and transformation fails for some log events, those log events won't be evaluated by Contributor Insights. For information about investigating log transformation failures, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Transformation-Errors-Metrics.html">Transformation metrics and errors</a>.</p>
+    /// </note>
+    pub fn set_apply_on_transformed_logs(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_apply_on_transformed_logs(input);
+        self
+    }
+    /// <p>Specify <code>true</code> to have this rule evalute log events after they have been transformed by <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatch-Logs-Transformation.html">Log transformation</a>. If you specify <code>true</code>, then the log events in log groups that have transformers will be evaluated by Contributor Insights after being transformed. Log groups that don't have transformers will still have their original log events evaluated by Contributor Insights.</p>
+    /// <p>The default is <code>false</code></p><note>
+    /// <p>If a log group has a transformer, and transformation fails for some log events, those log events won't be evaluated by Contributor Insights. For information about investigating log transformation failures, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Transformation-Errors-Metrics.html">Transformation metrics and errors</a>.</p>
+    /// </note>
+    pub fn get_apply_on_transformed_logs(&self) -> &::std::option::Option<bool> {
+        self.inner.get_apply_on_transformed_logs()
+    }
 }

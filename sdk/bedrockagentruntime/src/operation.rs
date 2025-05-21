@@ -22,6 +22,12 @@ pub mod generate_query;
 /// Types for the `GetAgentMemory` operation.
 pub mod get_agent_memory;
 
+/// Types for the `GetExecutionFlowSnapshot` operation.
+pub mod get_execution_flow_snapshot;
+
+/// Types for the `GetFlowExecution` operation.
+pub mod get_flow_execution;
+
 /// Types for the `GetInvocationStep` operation.
 pub mod get_invocation_step;
 
@@ -36,6 +42,12 @@ pub mod invoke_flow;
 
 /// Types for the `InvokeInlineAgent` operation.
 pub mod invoke_inline_agent;
+
+/// Types for the `ListFlowExecutionEvents` operation.
+pub mod list_flow_execution_events;
+
+/// Types for the `ListFlowExecutions` operation.
+pub mod list_flow_executions;
 
 /// Types for the `ListInvocationSteps` operation.
 pub mod list_invocation_steps;
@@ -66,6 +78,12 @@ pub mod retrieve_and_generate;
 
 /// Types for the `RetrieveAndGenerateStream` operation.
 pub mod retrieve_and_generate_stream;
+
+/// Types for the `StartFlowExecution` operation.
+pub mod start_flow_execution;
+
+/// Types for the `StopFlowExecution` operation.
+pub mod stop_flow_execution;
 
 /// Types for the `TagResource` operation.
 pub mod tag_resource;

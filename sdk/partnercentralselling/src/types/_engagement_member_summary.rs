@@ -2,7 +2,7 @@
 
 /// <p>The EngagementMemberSummary provides a snapshot of essential information about participants in an AWS Partner Central Engagement. This compact data structure encapsulates key details of each member, facilitating efficient collaboration and management within the Engagement.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct EngagementMemberSummary {
     /// <p>The official name of the member's company or organization.</p>
     pub company_name: ::std::option::Option<::std::string::String>,
@@ -19,6 +19,14 @@ impl EngagementMemberSummary {
         self.website_url.as_deref()
     }
 }
+impl ::std::fmt::Debug for EngagementMemberSummary {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("EngagementMemberSummary");
+        formatter.field("company_name", &"*** Sensitive Data Redacted ***");
+        formatter.field("website_url", &self.website_url);
+        formatter.finish()
+    }
+}
 impl EngagementMemberSummary {
     /// Creates a new builder-style object to manufacture [`EngagementMemberSummary`](crate::types::EngagementMemberSummary).
     pub fn builder() -> crate::types::builders::EngagementMemberSummaryBuilder {
@@ -27,7 +35,7 @@ impl EngagementMemberSummary {
 }
 
 /// A builder for [`EngagementMemberSummary`](crate::types::EngagementMemberSummary).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct EngagementMemberSummaryBuilder {
     pub(crate) company_name: ::std::option::Option<::std::string::String>,
@@ -68,5 +76,13 @@ impl EngagementMemberSummaryBuilder {
             company_name: self.company_name,
             website_url: self.website_url,
         }
+    }
+}
+impl ::std::fmt::Debug for EngagementMemberSummaryBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("EngagementMemberSummaryBuilder");
+        formatter.field("company_name", &"*** Sensitive Data Redacted ***");
+        formatter.field("website_url", &self.website_url);
+        formatter.finish()
     }
 }

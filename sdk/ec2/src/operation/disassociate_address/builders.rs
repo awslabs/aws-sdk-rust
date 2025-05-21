@@ -24,6 +24,15 @@ impl crate::operation::disassociate_address::builders::DisassociateAddressInputB
 ///
 /// <p>Disassociates an Elastic IP address from the instance or network interface it's associated with.</p>
 /// <p>This is an idempotent operation. If you perform the operation more than once, Amazon EC2 doesn't return an error.</p>
+/// <p>An address cannot be disassociated if the all of the following conditions are met:</p>
+/// <ul>
+/// <li>
+/// <p>Network interface has a <code>publicDualStackDnsName</code> publicDnsName</p></li>
+/// <li>
+/// <p>Public IPv4 address is the primary public IPv4 address</p></li>
+/// <li>
+/// <p>Network interface only has one remaining public IPv4 address</p></li>
+/// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DisassociateAddressFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

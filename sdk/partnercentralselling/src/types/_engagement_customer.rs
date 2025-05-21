@@ -37,7 +37,7 @@ impl ::std::fmt::Debug for EngagementCustomer {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("EngagementCustomer");
         formatter.field("industry", &self.industry);
-        formatter.field("company_name", &self.company_name);
+        formatter.field("company_name", &"*** Sensitive Data Redacted ***");
         formatter.field("website_url", &"*** Sensitive Data Redacted ***");
         formatter.field("country_code", &"*** Sensitive Data Redacted ***");
         formatter.finish()
@@ -159,7 +159,7 @@ impl ::std::fmt::Debug for EngagementCustomerBuilder {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("EngagementCustomerBuilder");
         formatter.field("industry", &self.industry);
-        formatter.field("company_name", &self.company_name);
+        formatter.field("company_name", &"*** Sensitive Data Redacted ***");
         formatter.field("website_url", &"*** Sensitive Data Redacted ***");
         formatter.field("country_code", &"*** Sensitive Data Redacted ***");
         formatter.finish()

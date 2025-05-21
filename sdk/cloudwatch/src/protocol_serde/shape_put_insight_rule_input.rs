@@ -31,6 +31,11 @@ pub fn ser_put_insight_rule_input_input_input(
         }
         list_10.finish();
     }
+    #[allow(unused_mut)]
+    let mut scope_12 = writer.prefix("ApplyOnTransformedLogs");
+    if let Some(var_13) = &input.apply_on_transformed_logs {
+        scope_12.boolean(*var_13);
+    }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

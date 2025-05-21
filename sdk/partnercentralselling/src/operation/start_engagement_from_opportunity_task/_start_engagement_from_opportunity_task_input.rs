@@ -11,7 +11,7 @@ pub struct StartEngagementFromOpportunityTaskInput {
     pub identifier: ::std::option::Option<::std::string::String>,
     /// <p>Indicates the level of AWS involvement in the opportunity. This field helps track AWS participation throughout the engagement, such as providing technical support, deal assistance, and sales support.</p>
     pub aws_submission: ::std::option::Option<crate::types::AwsSubmission>,
-    /// A list of objects specifying each tag name and value.
+    /// <p>A map of the key-value pairs of the tag or tags to assign.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl StartEngagementFromOpportunityTaskInput {
@@ -31,7 +31,7 @@ impl StartEngagementFromOpportunityTaskInput {
     pub fn aws_submission(&self) -> ::std::option::Option<&crate::types::AwsSubmission> {
         self.aws_submission.as_ref()
     }
-    /// A list of objects specifying each tag name and value.
+    /// <p>A map of the key-value pairs of the tag or tags to assign.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
     pub fn tags(&self) -> &[crate::types::Tag] {
@@ -120,19 +120,19 @@ impl StartEngagementFromOpportunityTaskInputBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// A list of objects specifying each tag name and value.
+    /// <p>A map of the key-value pairs of the tag or tags to assign.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
         v.push(input);
         self.tags = ::std::option::Option::Some(v);
         self
     }
-    /// A list of objects specifying each tag name and value.
+    /// <p>A map of the key-value pairs of the tag or tags to assign.</p>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
-    /// A list of objects specifying each tag name and value.
+    /// <p>A map of the key-value pairs of the tag or tags to assign.</p>
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         &self.tags
     }

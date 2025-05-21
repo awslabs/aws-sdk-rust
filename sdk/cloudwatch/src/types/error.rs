@@ -5,6 +5,8 @@ pub use crate::types::error::_invalid_parameter_value_exception::InvalidParamete
 
 pub use crate::types::error::_internal_service_fault::InternalServiceFault;
 
+pub use crate::types::error::_conflict_exception::ConflictException;
+
 pub use crate::types::error::_concurrent_modification_exception::ConcurrentModificationException;
 
 pub use crate::types::error::_missing_required_parameter_exception::MissingRequiredParameterException;
@@ -26,6 +28,8 @@ pub use crate::types::error::_invalid_next_token::InvalidNextToken;
 pub use crate::types::error::_dashboard_not_found_error::DashboardNotFoundError;
 
 mod _concurrent_modification_exception;
+
+mod _conflict_exception;
 
 mod _dashboard_invalid_input_error;
 

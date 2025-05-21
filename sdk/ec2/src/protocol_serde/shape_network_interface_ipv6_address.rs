@@ -20,8 +20,21 @@ pub fn de_network_interface_ipv6_address(
                 builder = builder.set_ipv6_address(var_1);
             }
             ,
-            s if s.matches("isPrimaryIpv6") /* IsPrimaryIpv6 com.amazonaws.ec2#NetworkInterfaceIpv6Address$IsPrimaryIpv6 */ =>  {
+            s if s.matches("publicIpv6DnsName") /* PublicIpv6DnsName com.amazonaws.ec2#NetworkInterfaceIpv6Address$PublicIpv6DnsName */ =>  {
                 let var_2 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_public_ipv6_dns_name(var_2);
+            }
+            ,
+            s if s.matches("isPrimaryIpv6") /* IsPrimaryIpv6 com.amazonaws.ec2#NetworkInterfaceIpv6Address$IsPrimaryIpv6 */ =>  {
+                let var_3 =
                     Some(
                          {
                             <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -32,7 +45,7 @@ pub fn de_network_interface_ipv6_address(
                         ?
                     )
                 ;
-                builder = builder.set_is_primary_ipv6(var_2);
+                builder = builder.set_is_primary_ipv6(var_3);
             }
             ,
             _ => {}

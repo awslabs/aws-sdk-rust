@@ -823,6 +823,8 @@ pub use crate::types::_reserved_instances_configuration::ReservedInstancesConfig
 
 pub use crate::types::_scope::Scope;
 
+pub use crate::types::_public_ip_dns_option::PublicIpDnsOption;
+
 pub use crate::types::_network_interface_attachment_changes::NetworkInterfaceAttachmentChanges;
 
 pub use crate::types::_attribute_value::AttributeValue;
@@ -1726,6 +1728,8 @@ pub use crate::types::_ipv4_prefix_specification::Ipv4PrefixSpecification;
 pub use crate::types::_network_interface_private_ip_address::NetworkInterfacePrivateIpAddress;
 
 pub use crate::types::_network_interface_association::NetworkInterfaceAssociation;
+
+pub use crate::types::_public_ip_dns_name_options::PublicIpDnsNameOptions;
 
 pub use crate::types::_network_interface_ipv6_address::NetworkInterfaceIpv6Address;
 
@@ -4022,6 +4026,10 @@ mod _protocol_value;
 mod _provisioned_bandwidth;
 
 mod _ptr_update_status;
+
+mod _public_ip_dns_name_options;
+
+mod _public_ip_dns_option;
 
 mod _public_ipv4_pool;
 

@@ -344,3 +344,31 @@ pub use crate::types::_flow_output_event::FlowOutputEventBuilder;
 pub use crate::types::_model_performance_configuration::ModelPerformanceConfigurationBuilder;
 
 pub use crate::types::_flow_input::FlowInputBuilder;
+
+pub use crate::types::_flow_execution_summary::FlowExecutionSummaryBuilder;
+
+pub use crate::types::_flow_failure_event::FlowFailureEventBuilder;
+
+pub use crate::types::_node_failure_event::NodeFailureEventBuilder;
+
+pub use crate::types::_condition_result_event::ConditionResultEventBuilder;
+
+pub use crate::types::_satisfied_condition::SatisfiedConditionBuilder;
+
+pub use crate::types::_node_output_event::NodeOutputEventBuilder;
+
+pub use crate::types::_node_output_field::NodeOutputFieldBuilder;
+
+pub use crate::types::_node_input_event::NodeInputEventBuilder;
+
+pub use crate::types::_node_input_field::NodeInputFieldBuilder;
+
+pub use crate::types::_flow_execution_output_event::FlowExecutionOutputEventBuilder;
+
+pub use crate::types::_flow_output_field::FlowOutputFieldBuilder;
+
+pub use crate::types::_flow_execution_input_event::FlowExecutionInputEventBuilder;
+
+pub use crate::types::_flow_input_field::FlowInputFieldBuilder;
+
+pub use crate::types::_flow_execution_error::FlowExecutionErrorBuilder;

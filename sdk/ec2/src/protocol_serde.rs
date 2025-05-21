@@ -2315,6 +2315,10 @@ pub(crate) mod shape_modify_private_dns_name_options;
 
 pub(crate) mod shape_modify_private_dns_name_options_input;
 
+pub(crate) mod shape_modify_public_ip_dns_name_options;
+
+pub(crate) mod shape_modify_public_ip_dns_name_options_input;
+
 pub(crate) mod shape_modify_reserved_instances;
 
 pub(crate) mod shape_modify_reserved_instances_input;
@@ -4308,6 +4312,8 @@ pub(crate) mod shape_propagating_vgw_list;
 pub(crate) mod shape_provisioned_bandwidth;
 
 pub(crate) mod shape_ptr_update_status;
+
+pub(crate) mod shape_public_ip_dns_name_options;
 
 pub(crate) mod shape_public_ipv4_pool;
 

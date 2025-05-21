@@ -255,6 +255,8 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for DeleteDashboa
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum DeleteDashboardsError {
+    /// <p>This operation attempted to create a resource that already exists.</p>
+    ConflictException(crate::types::error::ConflictException),
     /// <p>The specified dashboard does not exist.</p>
     DashboardNotFoundError(crate::types::error::DashboardNotFoundError),
     /// <p>Request processing has failed due to some unknown error, exception, or failure.</p>
@@ -294,11 +296,16 @@ impl DeleteDashboardsError {
     ///
     pub fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
+            Self::ConflictException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::DashboardNotFoundError(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InternalServiceFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidParameterValueException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::Unhandled(e) => &e.meta,
         }
+    }
+    /// Returns `true` if the error kind is `DeleteDashboardsError::ConflictException`.
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(self, Self::ConflictException(_))
     }
     /// Returns `true` if the error kind is `DeleteDashboardsError::DashboardNotFoundError`.
     pub fn is_dashboard_not_found_error(&self) -> bool {
@@ -316,6 +323,7 @@ impl DeleteDashboardsError {
 impl ::std::error::Error for DeleteDashboardsError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
+            Self::ConflictException(_inner) => ::std::option::Option::Some(_inner),
             Self::DashboardNotFoundError(_inner) => ::std::option::Option::Some(_inner),
             Self::InternalServiceFault(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidParameterValueException(_inner) => ::std::option::Option::Some(_inner),
@@ -326,6 +334,7 @@ impl ::std::error::Error for DeleteDashboardsError {
 impl ::std::fmt::Display for DeleteDashboardsError {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         match self {
+            Self::ConflictException(_inner) => _inner.fmt(f),
             Self::DashboardNotFoundError(_inner) => _inner.fmt(f),
             Self::InternalServiceFault(_inner) => _inner.fmt(f),
             Self::InvalidParameterValueException(_inner) => _inner.fmt(f),
@@ -350,6 +359,7 @@ impl ::aws_smithy_types::retry::ProvideErrorKind for DeleteDashboardsError {
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for DeleteDashboardsError {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
+            Self::ConflictException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::DashboardNotFoundError(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InternalServiceFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidParameterValueException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),

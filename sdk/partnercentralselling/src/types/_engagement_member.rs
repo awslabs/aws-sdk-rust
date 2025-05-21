@@ -29,7 +29,7 @@ impl EngagementMember {
 impl ::std::fmt::Debug for EngagementMember {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("EngagementMember");
-        formatter.field("company_name", &self.company_name);
+        formatter.field("company_name", &"*** Sensitive Data Redacted ***");
         formatter.field("website_url", &self.website_url);
         formatter.field("account_id", &"*** Sensitive Data Redacted ***");
         formatter.finish()
@@ -105,7 +105,7 @@ impl EngagementMemberBuilder {
 impl ::std::fmt::Debug for EngagementMemberBuilder {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("EngagementMemberBuilder");
-        formatter.field("company_name", &self.company_name);
+        formatter.field("company_name", &"*** Sensitive Data Redacted ***");
         formatter.field("website_url", &self.website_url);
         formatter.field("account_id", &"*** Sensitive Data Redacted ***");
         formatter.finish()

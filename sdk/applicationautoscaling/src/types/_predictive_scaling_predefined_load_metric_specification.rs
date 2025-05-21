@@ -2,6 +2,27 @@
 
 /// <p>Describes a load metric for a predictive scaling policy.</p>
 /// <p>When returned in the output of <code>DescribePolicies</code>, it indicates that a predictive scaling policy uses individually specified load and scaling metrics instead of a metric pair.</p>
+/// <p>The following predefined metrics are available for predictive scaling:</p>
+/// <ul>
+/// <li>
+/// <p><code>ECSServiceAverageCPUUtilization</code></p></li>
+/// <li>
+/// <p><code>ECSServiceAverageMemoryUtilization</code></p></li>
+/// <li>
+/// <p><code>ECSServiceCPUUtilization</code></p></li>
+/// <li>
+/// <p><code>ECSServiceMemoryUtilization</code></p></li>
+/// <li>
+/// <p><code>ECSServiceTotalCPUUtilization</code></p></li>
+/// <li>
+/// <p><code>ECSServiceTotalMemoryUtilization</code></p></li>
+/// <li>
+/// <p><code>ALBRequestCount</code></p></li>
+/// <li>
+/// <p><code>ALBRequestCountPerTarget</code></p></li>
+/// <li>
+/// <p><code>TotalALBRequestCount</code></p></li>
+/// </ul>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PredictiveScalingPredefinedLoadMetricSpecification {

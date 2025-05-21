@@ -7,7 +7,7 @@ pub struct ListMetricsInput {
     pub namespace: ::std::option::Option<::std::string::String>,
     /// <p>The name of the metric to filter against. Only the metrics with names that match exactly will be returned.</p>
     pub metric_name: ::std::option::Option<::std::string::String>,
-    /// <p>The dimensions to filter against. Only the dimensions that match exactly will be returned.</p>
+    /// <p>The dimensions to filter against. Only the dimension with names that match exactly will be returned. If you specify one dimension name and a metric has that dimension and also other dimensions, it will be returned.</p>
     pub dimensions: ::std::option::Option<::std::vec::Vec<crate::types::DimensionFilter>>,
     /// <p>The token returned by a previous call to indicate that there is more data available.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -29,7 +29,7 @@ impl ListMetricsInput {
     pub fn metric_name(&self) -> ::std::option::Option<&str> {
         self.metric_name.as_deref()
     }
-    /// <p>The dimensions to filter against. Only the dimensions that match exactly will be returned.</p>
+    /// <p>The dimensions to filter against. Only the dimension with names that match exactly will be returned. If you specify one dimension name and a metric has that dimension and also other dimensions, it will be returned.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.dimensions.is_none()`.
     pub fn dimensions(&self) -> &[crate::types::DimensionFilter] {
@@ -106,19 +106,19 @@ impl ListMetricsInputBuilder {
     ///
     /// To override the contents of this collection use [`set_dimensions`](Self::set_dimensions).
     ///
-    /// <p>The dimensions to filter against. Only the dimensions that match exactly will be returned.</p>
+    /// <p>The dimensions to filter against. Only the dimension with names that match exactly will be returned. If you specify one dimension name and a metric has that dimension and also other dimensions, it will be returned.</p>
     pub fn dimensions(mut self, input: crate::types::DimensionFilter) -> Self {
         let mut v = self.dimensions.unwrap_or_default();
         v.push(input);
         self.dimensions = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The dimensions to filter against. Only the dimensions that match exactly will be returned.</p>
+    /// <p>The dimensions to filter against. Only the dimension with names that match exactly will be returned. If you specify one dimension name and a metric has that dimension and also other dimensions, it will be returned.</p>
     pub fn set_dimensions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DimensionFilter>>) -> Self {
         self.dimensions = input;
         self
     }
-    /// <p>The dimensions to filter against. Only the dimensions that match exactly will be returned.</p>
+    /// <p>The dimensions to filter against. Only the dimension with names that match exactly will be returned. If you specify one dimension name and a metric has that dimension and also other dimensions, it will be returned.</p>
     pub fn get_dimensions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DimensionFilter>> {
         &self.dimensions
     }

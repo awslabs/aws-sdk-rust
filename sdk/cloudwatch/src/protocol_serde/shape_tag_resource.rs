@@ -35,6 +35,21 @@ pub fn de_tag_resource_http_error(
             }
             tmp
         }),
+        "ConflictException" => crate::operation::tag_resource::TagResourceError::ConflictException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ConflictExceptionBuilder::default();
+                output = crate::protocol_serde::shape_conflict_exception::de_conflict_exception_xml_err(_response_body, output)
+                    .map_err(crate::operation::tag_resource::TagResourceError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "InternalServiceError" => crate::operation::tag_resource::TagResourceError::InternalServiceFault({
             #[allow(unused_mut)]
             let mut tmp = {

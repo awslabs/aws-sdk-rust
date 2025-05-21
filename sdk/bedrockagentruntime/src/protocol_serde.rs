@@ -37,6 +37,10 @@ pub(crate) mod shape_generate_query;
 
 pub(crate) mod shape_get_agent_memory;
 
+pub(crate) mod shape_get_execution_flow_snapshot;
+
+pub(crate) mod shape_get_flow_execution;
+
 pub(crate) mod shape_get_invocation_step;
 
 pub(crate) mod shape_get_session;
@@ -46,6 +50,10 @@ pub(crate) mod shape_invoke_agent;
 pub(crate) mod shape_invoke_flow;
 
 pub(crate) mod shape_invoke_inline_agent;
+
+pub(crate) mod shape_list_flow_execution_events;
+
+pub(crate) mod shape_list_flow_executions;
 
 pub(crate) mod shape_list_invocation_steps;
 
@@ -66,6 +74,10 @@ pub(crate) mod shape_retrieve;
 pub(crate) mod shape_retrieve_and_generate;
 
 pub(crate) mod shape_retrieve_and_generate_stream;
+
+pub(crate) mod shape_start_flow_execution;
+
+pub(crate) mod shape_stop_flow_execution;
 
 pub(crate) mod shape_tag_resource;
 
@@ -135,6 +147,8 @@ pub(crate) mod shape_retrieve_input;
 
 pub(crate) mod shape_service_quota_exceeded_exception;
 
+pub(crate) mod shape_start_flow_execution_input;
+
 pub(crate) mod shape_tag_resource_input;
 
 pub(crate) mod shape_throttling_exception;
@@ -160,6 +174,12 @@ pub(crate) mod shape_collaborator;
 pub(crate) mod shape_collaborator_configuration;
 
 pub(crate) mod shape_custom_orchestration;
+
+pub(crate) mod shape_flow_execution_errors;
+
+pub(crate) mod shape_flow_execution_events;
+
+pub(crate) mod shape_flow_execution_summaries;
 
 pub(crate) mod shape_flow_input;
 
@@ -247,6 +267,12 @@ pub(crate) mod shape_file_part;
 
 pub(crate) mod shape_flow_completion_event;
 
+pub(crate) mod shape_flow_execution_error;
+
+pub(crate) mod shape_flow_execution_event;
+
+pub(crate) mod shape_flow_execution_summary;
+
 pub(crate) mod shape_flow_input_content;
 
 pub(crate) mod shape_flow_multi_turn_input_request_event;
@@ -321,11 +347,19 @@ pub(crate) mod shape_bedrock_reranking_model_configuration;
 
 pub(crate) mod shape_bedrock_session_content_blocks;
 
+pub(crate) mod shape_condition_result_event;
+
 pub(crate) mod shape_external_source;
 
 pub(crate) mod shape_external_sources_generation_configuration;
 
 pub(crate) mod shape_file_source;
+
+pub(crate) mod shape_flow_execution_input_event;
+
+pub(crate) mod shape_flow_execution_output_event;
+
+pub(crate) mod shape_flow_failure_event;
 
 pub(crate) mod shape_function_definition;
 
@@ -344,6 +378,12 @@ pub(crate) mod shape_inference_configuration;
 pub(crate) mod shape_memory_session_summary;
 
 pub(crate) mod shape_message;
+
+pub(crate) mod shape_node_failure_event;
+
+pub(crate) mod shape_node_input_event;
+
+pub(crate) mod shape_node_output_event;
 
 pub(crate) mod shape_orchestration_configuration;
 
@@ -377,9 +417,13 @@ pub(crate) mod shape_content_body;
 
 pub(crate) mod shape_filter_attribute;
 
+pub(crate) mod shape_flow_input_fields;
+
 pub(crate) mod shape_flow_multi_turn_input_content;
 
 pub(crate) mod shape_flow_output_content;
+
+pub(crate) mod shape_flow_output_fields;
 
 pub(crate) mod shape_flow_trace;
 
@@ -390,6 +434,10 @@ pub(crate) mod shape_inference_config;
 pub(crate) mod shape_invocation_inputs;
 
 pub(crate) mod shape_metadata_attribute_schema;
+
+pub(crate) mod shape_node_input_fields;
+
+pub(crate) mod shape_node_output_fields;
 
 pub(crate) mod shape_optimized_prompt;
 
@@ -425,6 +473,8 @@ pub(crate) mod shape_s3_object_doc;
 
 pub(crate) mod shape_s3_object_file;
 
+pub(crate) mod shape_satisfied_conditions;
+
 pub(crate) mod shape_text_response_part;
 
 pub(crate) mod shape_trace;
@@ -436,6 +486,10 @@ pub(crate) mod shape_caller;
 pub(crate) mod shape_custom_orchestration_trace;
 
 pub(crate) mod shape_failure_trace;
+
+pub(crate) mod shape_flow_input_field;
+
+pub(crate) mod shape_flow_output_field;
 
 pub(crate) mod shape_flow_trace_condition_node_result_event;
 
@@ -453,6 +507,10 @@ pub(crate) mod shape_invocation_input_member;
 
 pub(crate) mod shape_metadata_configuration_for_reranking;
 
+pub(crate) mod shape_node_input_field;
+
+pub(crate) mod shape_node_output_field;
+
 pub(crate) mod shape_orchestration_trace;
 
 pub(crate) mod shape_output_file;
@@ -467,6 +525,8 @@ pub(crate) mod shape_routing_classifier_trace;
 
 pub(crate) mod shape_s3_location;
 
+pub(crate) mod shape_satisfied_condition;
+
 pub(crate) mod shape_span;
 
 pub(crate) mod shape_text_inference_config;
@@ -476,6 +536,8 @@ pub(crate) mod shape_vector_search_bedrock_reranking_model_configuration;
 pub(crate) mod shape_api_invocation_input;
 
 pub(crate) mod shape_custom_orchestration_trace_event;
+
+pub(crate) mod shape_flow_execution_content;
 
 pub(crate) mod shape_flow_trace_conditions;
 
@@ -494,6 +556,8 @@ pub(crate) mod shape_invocation_input;
 pub(crate) mod shape_metadata;
 
 pub(crate) mod shape_model_invocation_input;
+
+pub(crate) mod shape_node_execution_content;
 
 pub(crate) mod shape_observation;
 

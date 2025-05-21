@@ -527,6 +527,50 @@ pub use crate::types::_flow_input::FlowInput;
 
 pub use crate::types::_flow_input_content::FlowInputContent;
 
+pub use crate::types::_flow_execution_status::FlowExecutionStatus;
+
+pub use crate::types::_flow_execution_summary::FlowExecutionSummary;
+
+pub use crate::types::_flow_execution_event::FlowExecutionEvent;
+
+pub use crate::types::_flow_failure_event::FlowFailureEvent;
+
+pub use crate::types::_flow_error_code::FlowErrorCode;
+
+pub use crate::types::_node_failure_event::NodeFailureEvent;
+
+pub use crate::types::_node_error_code::NodeErrorCode;
+
+pub use crate::types::_condition_result_event::ConditionResultEvent;
+
+pub use crate::types::_satisfied_condition::SatisfiedCondition;
+
+pub use crate::types::_node_output_event::NodeOutputEvent;
+
+pub use crate::types::_node_output_field::NodeOutputField;
+
+pub use crate::types::_node_execution_content::NodeExecutionContent;
+
+pub use crate::types::_node_input_event::NodeInputEvent;
+
+pub use crate::types::_node_input_field::NodeInputField;
+
+pub use crate::types::_flow_execution_output_event::FlowExecutionOutputEvent;
+
+pub use crate::types::_flow_output_field::FlowOutputField;
+
+pub use crate::types::_flow_execution_content::FlowExecutionContent;
+
+pub use crate::types::_flow_execution_input_event::FlowExecutionInputEvent;
+
+pub use crate::types::_flow_input_field::FlowInputField;
+
+pub use crate::types::_flow_execution_event_type::FlowExecutionEventType;
+
+pub use crate::types::_flow_execution_error::FlowExecutionError;
+
+pub use crate::types::_flow_execution_error_type::FlowExecutionErrorType;
+
 mod _action_group_executor;
 
 mod _action_group_invocation_input;
@@ -591,6 +635,8 @@ mod _collaborator;
 
 mod _collaborator_configuration;
 
+mod _condition_result_event;
+
 mod _confirmation_state;
 
 mod _content_block;
@@ -641,9 +687,33 @@ mod _flow_completion_event;
 
 mod _flow_completion_reason;
 
+mod _flow_error_code;
+
+mod _flow_execution_content;
+
+mod _flow_execution_error;
+
+mod _flow_execution_error_type;
+
+mod _flow_execution_event;
+
+mod _flow_execution_event_type;
+
+mod _flow_execution_input_event;
+
+mod _flow_execution_output_event;
+
+mod _flow_execution_status;
+
+mod _flow_execution_summary;
+
+mod _flow_failure_event;
+
 mod _flow_input;
 
 mod _flow_input_content;
+
+mod _flow_input_field;
 
 mod _flow_multi_turn_input_content;
 
@@ -652,6 +722,8 @@ mod _flow_multi_turn_input_request_event;
 mod _flow_output_content;
 
 mod _flow_output_event;
+
+mod _flow_output_field;
 
 mod _flow_response_stream;
 
@@ -837,6 +909,20 @@ mod _model_invocation_input;
 
 mod _model_performance_configuration;
 
+mod _node_error_code;
+
+mod _node_execution_content;
+
+mod _node_failure_event;
+
+mod _node_input_event;
+
+mod _node_input_field;
+
+mod _node_output_event;
+
+mod _node_output_field;
+
 mod _node_type;
 
 mod _observation;
@@ -1010,6 +1096,8 @@ mod _s3_location;
 mod _s3_object_doc;
 
 mod _s3_object_file;
+
+mod _satisfied_condition;
 
 mod _search_type;
 

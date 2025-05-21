@@ -177,6 +177,10 @@ mod generate_query;
 
 mod get_agent_memory;
 
+mod get_execution_flow_snapshot;
+
+mod get_flow_execution;
+
 mod get_invocation_step;
 
 mod get_session;
@@ -186,6 +190,10 @@ mod invoke_agent;
 mod invoke_flow;
 
 mod invoke_inline_agent;
+
+mod list_flow_execution_events;
+
+mod list_flow_executions;
 
 mod list_invocation_steps;
 
@@ -206,6 +214,10 @@ mod retrieve;
 mod retrieve_and_generate;
 
 mod retrieve_and_generate_stream;
+
+mod start_flow_execution;
+
+mod stop_flow_execution;
 
 mod tag_resource;
 

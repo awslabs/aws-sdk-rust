@@ -23,7 +23,7 @@ impl AccountReceiver {
 impl ::std::fmt::Debug for AccountReceiver {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("AccountReceiver");
-        formatter.field("alias", &self.alias);
+        formatter.field("alias", &"*** Sensitive Data Redacted ***");
         formatter.field("aws_account_id", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
@@ -90,7 +90,7 @@ impl AccountReceiverBuilder {
 impl ::std::fmt::Debug for AccountReceiverBuilder {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("AccountReceiverBuilder");
-        formatter.field("alias", &self.alias);
+        formatter.field("alias", &"*** Sensitive Data Redacted ***");
         formatter.field("aws_account_id", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }

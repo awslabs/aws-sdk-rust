@@ -151,17 +151,17 @@ impl ListMetricsFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_dimensions`](Self::set_dimensions).
     ///
-    /// <p>The dimensions to filter against. Only the dimensions that match exactly will be returned.</p>
+    /// <p>The dimensions to filter against. Only the dimension with names that match exactly will be returned. If you specify one dimension name and a metric has that dimension and also other dimensions, it will be returned.</p>
     pub fn dimensions(mut self, input: crate::types::DimensionFilter) -> Self {
         self.inner = self.inner.dimensions(input);
         self
     }
-    /// <p>The dimensions to filter against. Only the dimensions that match exactly will be returned.</p>
+    /// <p>The dimensions to filter against. Only the dimension with names that match exactly will be returned. If you specify one dimension name and a metric has that dimension and also other dimensions, it will be returned.</p>
     pub fn set_dimensions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DimensionFilter>>) -> Self {
         self.inner = self.inner.set_dimensions(input);
         self
     }
-    /// <p>The dimensions to filter against. Only the dimensions that match exactly will be returned.</p>
+    /// <p>The dimensions to filter against. Only the dimension with names that match exactly will be returned. If you specify one dimension name and a metric has that dimension and also other dimensions, it will be returned.</p>
     pub fn get_dimensions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DimensionFilter>> {
         self.inner.get_dimensions()
     }

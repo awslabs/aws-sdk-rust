@@ -255,6 +255,8 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for PutDashboardE
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum PutDashboardError {
+    /// <p>This operation attempted to create a resource that already exists.</p>
+    ConflictException(crate::types::error::ConflictException),
     /// <p>Some part of the dashboard data is invalid.</p>
     DashboardInvalidInputError(crate::types::error::DashboardInvalidInputError),
     /// <p>Request processing has failed due to some unknown error, exception, or failure.</p>
@@ -292,10 +294,15 @@ impl PutDashboardError {
     ///
     pub fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
+            Self::ConflictException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::DashboardInvalidInputError(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InternalServiceFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::Unhandled(e) => &e.meta,
         }
+    }
+    /// Returns `true` if the error kind is `PutDashboardError::ConflictException`.
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(self, Self::ConflictException(_))
     }
     /// Returns `true` if the error kind is `PutDashboardError::DashboardInvalidInputError`.
     pub fn is_dashboard_invalid_input_error(&self) -> bool {
@@ -309,6 +316,7 @@ impl PutDashboardError {
 impl ::std::error::Error for PutDashboardError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
+            Self::ConflictException(_inner) => ::std::option::Option::Some(_inner),
             Self::DashboardInvalidInputError(_inner) => ::std::option::Option::Some(_inner),
             Self::InternalServiceFault(_inner) => ::std::option::Option::Some(_inner),
             Self::Unhandled(_inner) => ::std::option::Option::Some(&*_inner.source),
@@ -318,6 +326,7 @@ impl ::std::error::Error for PutDashboardError {
 impl ::std::fmt::Display for PutDashboardError {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         match self {
+            Self::ConflictException(_inner) => _inner.fmt(f),
             Self::DashboardInvalidInputError(_inner) => _inner.fmt(f),
             Self::InternalServiceFault(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => {
@@ -341,6 +350,7 @@ impl ::aws_smithy_types::retry::ProvideErrorKind for PutDashboardError {
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for PutDashboardError {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
+            Self::ConflictException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::DashboardInvalidInputError(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InternalServiceFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::Unhandled(_inner) => &_inner.meta,

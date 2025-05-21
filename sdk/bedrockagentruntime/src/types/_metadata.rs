@@ -6,7 +6,7 @@
 pub struct Metadata {
     /// <p>In the final response, <code>startTime</code> is the start time of the agent invocation operation.</p>
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>In the final response, <code>endTime</code> is the end time time of the agent invocation operation.</p>
+    /// <p>In the final response, <code>endTime</code> is the end time of the agent invocation operation.</p>
     pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The total execution time for the specific invocation being processed (model, knowledge base, guardrail, agent collaborator, or code interpreter). It represents how long the individual invocation took.</p>
     pub total_time_ms: ::std::option::Option<i64>,
@@ -22,7 +22,7 @@ impl Metadata {
     pub fn start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
-    /// <p>In the final response, <code>endTime</code> is the end time time of the agent invocation operation.</p>
+    /// <p>In the final response, <code>endTime</code> is the end time of the agent invocation operation.</p>
     pub fn end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
@@ -88,17 +88,17 @@ impl MetadataBuilder {
     pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.start_time
     }
-    /// <p>In the final response, <code>endTime</code> is the end time time of the agent invocation operation.</p>
+    /// <p>In the final response, <code>endTime</code> is the end time of the agent invocation operation.</p>
     pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.end_time = ::std::option::Option::Some(input);
         self
     }
-    /// <p>In the final response, <code>endTime</code> is the end time time of the agent invocation operation.</p>
+    /// <p>In the final response, <code>endTime</code> is the end time of the agent invocation operation.</p>
     pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.end_time = input;
         self
     }
-    /// <p>In the final response, <code>endTime</code> is the end time time of the agent invocation operation.</p>
+    /// <p>In the final response, <code>endTime</code> is the end time of the agent invocation operation.</p>
     pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.end_time
     }

@@ -1149,6 +1149,8 @@ pub use crate::types::_network_interface_private_ip_address::NetworkInterfacePri
 
 pub use crate::types::_network_interface_association::NetworkInterfaceAssociationBuilder;
 
+pub use crate::types::_public_ip_dns_name_options::PublicIpDnsNameOptionsBuilder;
+
 pub use crate::types::_network_interface_ipv6_address::NetworkInterfaceIpv6AddressBuilder;
 
 pub use crate::types::_connection_tracking_configuration::ConnectionTrackingConfigurationBuilder;

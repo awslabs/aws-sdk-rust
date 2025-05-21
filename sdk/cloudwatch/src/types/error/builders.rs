@@ -5,6 +5,8 @@ pub use crate::types::error::_invalid_parameter_value_exception::InvalidParamete
 
 pub use crate::types::error::_internal_service_fault::InternalServiceFaultBuilder;
 
+pub use crate::types::error::_conflict_exception::ConflictExceptionBuilder;
+
 pub use crate::types::error::_concurrent_modification_exception::ConcurrentModificationExceptionBuilder;
 
 pub use crate::types::error::_missing_required_parameter_exception::MissingRequiredParameterExceptionBuilder;

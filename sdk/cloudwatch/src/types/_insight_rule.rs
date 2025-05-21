@@ -14,6 +14,8 @@ pub struct InsightRule {
     pub definition: ::std::option::Option<::std::string::String>,
     /// <p>An optional built-in rule that Amazon Web Services manages.</p>
     pub managed_rule: ::std::option::Option<bool>,
+    /// <p>Displays whether the rule is evaluated on the transformed versions of logs, for log groups that have <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatch-Logs-Transformation.html">Log transformation</a> enabled. If this is <code>false</code>, log events are evaluated before they are transformed.</p>
+    pub apply_on_transformed_logs: ::std::option::Option<bool>,
 }
 impl InsightRule {
     /// <p>The name of the rule.</p>
@@ -36,6 +38,10 @@ impl InsightRule {
     pub fn managed_rule(&self) -> ::std::option::Option<bool> {
         self.managed_rule
     }
+    /// <p>Displays whether the rule is evaluated on the transformed versions of logs, for log groups that have <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatch-Logs-Transformation.html">Log transformation</a> enabled. If this is <code>false</code>, log events are evaluated before they are transformed.</p>
+    pub fn apply_on_transformed_logs(&self) -> ::std::option::Option<bool> {
+        self.apply_on_transformed_logs
+    }
 }
 impl InsightRule {
     /// Creates a new builder-style object to manufacture [`InsightRule`](crate::types::InsightRule).
@@ -53,6 +59,7 @@ pub struct InsightRuleBuilder {
     pub(crate) schema: ::std::option::Option<::std::string::String>,
     pub(crate) definition: ::std::option::Option<::std::string::String>,
     pub(crate) managed_rule: ::std::option::Option<bool>,
+    pub(crate) apply_on_transformed_logs: ::std::option::Option<bool>,
 }
 impl InsightRuleBuilder {
     /// <p>The name of the rule.</p>
@@ -129,6 +136,20 @@ impl InsightRuleBuilder {
     pub fn get_managed_rule(&self) -> &::std::option::Option<bool> {
         &self.managed_rule
     }
+    /// <p>Displays whether the rule is evaluated on the transformed versions of logs, for log groups that have <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatch-Logs-Transformation.html">Log transformation</a> enabled. If this is <code>false</code>, log events are evaluated before they are transformed.</p>
+    pub fn apply_on_transformed_logs(mut self, input: bool) -> Self {
+        self.apply_on_transformed_logs = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Displays whether the rule is evaluated on the transformed versions of logs, for log groups that have <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatch-Logs-Transformation.html">Log transformation</a> enabled. If this is <code>false</code>, log events are evaluated before they are transformed.</p>
+    pub fn set_apply_on_transformed_logs(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.apply_on_transformed_logs = input;
+        self
+    }
+    /// <p>Displays whether the rule is evaluated on the transformed versions of logs, for log groups that have <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatch-Logs-Transformation.html">Log transformation</a> enabled. If this is <code>false</code>, log events are evaluated before they are transformed.</p>
+    pub fn get_apply_on_transformed_logs(&self) -> &::std::option::Option<bool> {
+        &self.apply_on_transformed_logs
+    }
     /// Consumes the builder and constructs a [`InsightRule`](crate::types::InsightRule).
     pub fn build(self) -> crate::types::InsightRule {
         crate::types::InsightRule {
@@ -137,6 +158,7 @@ impl InsightRuleBuilder {
             schema: self.schema,
             definition: self.definition,
             managed_rule: self.managed_rule,
+            apply_on_transformed_logs: self.apply_on_transformed_logs,
         }
     }
 }

@@ -142,7 +142,7 @@ impl ::std::fmt::Debug for GetEngagementInvitationOutput {
         formatter.field("catalog", &self.catalog);
         formatter.field("rejection_reason", &self.rejection_reason);
         formatter.field("payload", &self.payload);
-        formatter.field("invitation_message", &self.invitation_message);
+        formatter.field("invitation_message", &"*** Sensitive Data Redacted ***");
         formatter.field("engagement_description", &self.engagement_description);
         formatter.field("existing_members", &self.existing_members);
         formatter.field("_request_id", &self._request_id);
@@ -517,7 +517,7 @@ impl ::std::fmt::Debug for GetEngagementInvitationOutputBuilder {
         formatter.field("catalog", &self.catalog);
         formatter.field("rejection_reason", &self.rejection_reason);
         formatter.field("payload", &self.payload);
-        formatter.field("invitation_message", &self.invitation_message);
+        formatter.field("invitation_message", &"*** Sensitive Data Redacted ***");
         formatter.field("engagement_description", &self.engagement_description);
         formatter.field("existing_members", &self.existing_members);
         formatter.field("_request_id", &self._request_id);

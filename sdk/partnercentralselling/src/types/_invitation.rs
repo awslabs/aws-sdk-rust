@@ -2,7 +2,7 @@
 
 /// <p>The Invitation structure represents an invitation exchanged between partners and AWS. It includes a message, receiver information, and a payload providing context for the invitation.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct Invitation {
     /// <p>A message accompanying the invitation.</p>
     pub message: ::std::string::String,
@@ -26,6 +26,15 @@ impl Invitation {
         self.payload.as_ref()
     }
 }
+impl ::std::fmt::Debug for Invitation {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("Invitation");
+        formatter.field("message", &"*** Sensitive Data Redacted ***");
+        formatter.field("receiver", &self.receiver);
+        formatter.field("payload", &self.payload);
+        formatter.finish()
+    }
+}
 impl Invitation {
     /// Creates a new builder-style object to manufacture [`Invitation`](crate::types::Invitation).
     pub fn builder() -> crate::types::builders::InvitationBuilder {
@@ -34,7 +43,7 @@ impl Invitation {
 }
 
 /// A builder for [`Invitation`](crate::types::Invitation).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct InvitationBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
@@ -101,5 +110,14 @@ impl InvitationBuilder {
             receiver: self.receiver,
             payload: self.payload,
         })
+    }
+}
+impl ::std::fmt::Debug for InvitationBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("InvitationBuilder");
+        formatter.field("message", &"*** Sensitive Data Redacted ***");
+        formatter.field("receiver", &self.receiver);
+        formatter.field("payload", &self.payload);
+        formatter.finish()
     }
 }

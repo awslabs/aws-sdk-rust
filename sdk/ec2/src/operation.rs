@@ -1720,6 +1720,9 @@ pub mod modify_network_interface_attribute;
 /// Types for the `ModifyPrivateDnsNameOptions` operation.
 pub mod modify_private_dns_name_options;
 
+/// Types for the `ModifyPublicIpDnsNameOptions` operation.
+pub mod modify_public_ip_dns_name_options;
+
 /// Types for the `ModifyReservedInstances` operation.
 pub mod modify_reserved_instances;
 

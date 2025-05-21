@@ -14,6 +14,11 @@ pub struct PutInsightRuleInput {
     /// <p>To be able to associate tags with a rule, you must have the <code>cloudwatch:TagResource</code> permission in addition to the <code>cloudwatch:PutInsightRule</code> permission.</p>
     /// <p>If you are using this operation to update an existing Contributor Insights rule, any tags you specify in this parameter are ignored. To change the tags of an existing rule, use <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_TagResource.html">TagResource</a>.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    /// <p>Specify <code>true</code> to have this rule evalute log events after they have been transformed by <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatch-Logs-Transformation.html">Log transformation</a>. If you specify <code>true</code>, then the log events in log groups that have transformers will be evaluated by Contributor Insights after being transformed. Log groups that don't have transformers will still have their original log events evaluated by Contributor Insights.</p>
+    /// <p>The default is <code>false</code></p><note>
+    /// <p>If a log group has a transformer, and transformation fails for some log events, those log events won't be evaluated by Contributor Insights. For information about investigating log transformation failures, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Transformation-Errors-Metrics.html">Transformation metrics and errors</a>.</p>
+    /// </note>
+    pub apply_on_transformed_logs: ::std::option::Option<bool>,
 }
 impl PutInsightRuleInput {
     /// <p>A unique name for the rule.</p>
@@ -37,6 +42,13 @@ impl PutInsightRuleInput {
     pub fn tags(&self) -> &[crate::types::Tag] {
         self.tags.as_deref().unwrap_or_default()
     }
+    /// <p>Specify <code>true</code> to have this rule evalute log events after they have been transformed by <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatch-Logs-Transformation.html">Log transformation</a>. If you specify <code>true</code>, then the log events in log groups that have transformers will be evaluated by Contributor Insights after being transformed. Log groups that don't have transformers will still have their original log events evaluated by Contributor Insights.</p>
+    /// <p>The default is <code>false</code></p><note>
+    /// <p>If a log group has a transformer, and transformation fails for some log events, those log events won't be evaluated by Contributor Insights. For information about investigating log transformation failures, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Transformation-Errors-Metrics.html">Transformation metrics and errors</a>.</p>
+    /// </note>
+    pub fn apply_on_transformed_logs(&self) -> ::std::option::Option<bool> {
+        self.apply_on_transformed_logs
+    }
 }
 impl PutInsightRuleInput {
     /// Creates a new builder-style object to manufacture [`PutInsightRuleInput`](crate::operation::put_insight_rule::PutInsightRuleInput).
@@ -53,6 +65,7 @@ pub struct PutInsightRuleInputBuilder {
     pub(crate) rule_state: ::std::option::Option<::std::string::String>,
     pub(crate) rule_definition: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) apply_on_transformed_logs: ::std::option::Option<bool>,
 }
 impl PutInsightRuleInputBuilder {
     /// <p>A unique name for the rule.</p>
@@ -128,6 +141,29 @@ impl PutInsightRuleInputBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         &self.tags
     }
+    /// <p>Specify <code>true</code> to have this rule evalute log events after they have been transformed by <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatch-Logs-Transformation.html">Log transformation</a>. If you specify <code>true</code>, then the log events in log groups that have transformers will be evaluated by Contributor Insights after being transformed. Log groups that don't have transformers will still have their original log events evaluated by Contributor Insights.</p>
+    /// <p>The default is <code>false</code></p><note>
+    /// <p>If a log group has a transformer, and transformation fails for some log events, those log events won't be evaluated by Contributor Insights. For information about investigating log transformation failures, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Transformation-Errors-Metrics.html">Transformation metrics and errors</a>.</p>
+    /// </note>
+    pub fn apply_on_transformed_logs(mut self, input: bool) -> Self {
+        self.apply_on_transformed_logs = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specify <code>true</code> to have this rule evalute log events after they have been transformed by <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatch-Logs-Transformation.html">Log transformation</a>. If you specify <code>true</code>, then the log events in log groups that have transformers will be evaluated by Contributor Insights after being transformed. Log groups that don't have transformers will still have their original log events evaluated by Contributor Insights.</p>
+    /// <p>The default is <code>false</code></p><note>
+    /// <p>If a log group has a transformer, and transformation fails for some log events, those log events won't be evaluated by Contributor Insights. For information about investigating log transformation failures, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Transformation-Errors-Metrics.html">Transformation metrics and errors</a>.</p>
+    /// </note>
+    pub fn set_apply_on_transformed_logs(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.apply_on_transformed_logs = input;
+        self
+    }
+    /// <p>Specify <code>true</code> to have this rule evalute log events after they have been transformed by <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatch-Logs-Transformation.html">Log transformation</a>. If you specify <code>true</code>, then the log events in log groups that have transformers will be evaluated by Contributor Insights after being transformed. Log groups that don't have transformers will still have their original log events evaluated by Contributor Insights.</p>
+    /// <p>The default is <code>false</code></p><note>
+    /// <p>If a log group has a transformer, and transformation fails for some log events, those log events won't be evaluated by Contributor Insights. For information about investigating log transformation failures, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Transformation-Errors-Metrics.html">Transformation metrics and errors</a>.</p>
+    /// </note>
+    pub fn get_apply_on_transformed_logs(&self) -> &::std::option::Option<bool> {
+        &self.apply_on_transformed_logs
+    }
     /// Consumes the builder and constructs a [`PutInsightRuleInput`](crate::operation::put_insight_rule::PutInsightRuleInput).
     pub fn build(
         self,
@@ -137,6 +173,7 @@ impl PutInsightRuleInputBuilder {
             rule_state: self.rule_state,
             rule_definition: self.rule_definition,
             tags: self.tags,
+            apply_on_transformed_logs: self.apply_on_transformed_logs,
         })
     }
 }

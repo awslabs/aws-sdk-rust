@@ -74,6 +74,21 @@ pub fn de_insight_rule(
                 builder = builder.set_managed_rule(var_5);
             }
             ,
+            s if s.matches("ApplyOnTransformedLogs") /* ApplyOnTransformedLogs com.amazonaws.cloudwatch#InsightRule$ApplyOnTransformedLogs */ =>  {
+                let var_6 =
+                    Some(
+                         {
+                            <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (boolean: `com.amazonaws.cloudwatch#InsightRuleOnTransformedLogs`)"))
+                        }
+                        ?
+                    )
+                ;
+                builder = builder.set_apply_on_transformed_logs(var_6);
+            }
+            ,
             _ => {}
         }
     }

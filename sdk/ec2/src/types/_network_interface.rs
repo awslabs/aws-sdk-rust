@@ -28,8 +28,12 @@ pub struct NetworkInterface {
     pub outpost_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services account ID of the owner of the network interface.</p>
     pub owner_id: ::std::option::Option<::std::string::String>,
-    /// <p>The private DNS name.</p>
+    /// <p>The private hostname. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-naming.html">EC2 instance hostnames, DNS names, and domains</a> in the <i>Amazon EC2 User Guide</i>.</p>
     pub private_dns_name: ::std::option::Option<::std::string::String>,
+    /// <p>A public hostname. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-naming.html">EC2 instance hostnames, DNS names, and domains</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    pub public_dns_name: ::std::option::Option<::std::string::String>,
+    /// <p>Public hostname type options. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-naming.html">EC2 instance hostnames, DNS names, and domains</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    pub public_ip_dns_name_options: ::std::option::Option<crate::types::PublicIpDnsNameOptions>,
     /// <p>The IPv4 address of the network interface within the subnet.</p>
     pub private_ip_address: ::std::option::Option<::std::string::String>,
     /// <p>The private IPv4 addresses associated with the network interface.</p>
@@ -114,9 +118,17 @@ impl NetworkInterface {
     pub fn owner_id(&self) -> ::std::option::Option<&str> {
         self.owner_id.as_deref()
     }
-    /// <p>The private DNS name.</p>
+    /// <p>The private hostname. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-naming.html">EC2 instance hostnames, DNS names, and domains</a> in the <i>Amazon EC2 User Guide</i>.</p>
     pub fn private_dns_name(&self) -> ::std::option::Option<&str> {
         self.private_dns_name.as_deref()
+    }
+    /// <p>A public hostname. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-naming.html">EC2 instance hostnames, DNS names, and domains</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    pub fn public_dns_name(&self) -> ::std::option::Option<&str> {
+        self.public_dns_name.as_deref()
+    }
+    /// <p>Public hostname type options. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-naming.html">EC2 instance hostnames, DNS names, and domains</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    pub fn public_ip_dns_name_options(&self) -> ::std::option::Option<&crate::types::PublicIpDnsNameOptions> {
+        self.public_ip_dns_name_options.as_ref()
     }
     /// <p>The IPv4 address of the network interface within the subnet.</p>
     pub fn private_ip_address(&self) -> ::std::option::Option<&str> {
@@ -211,6 +223,8 @@ pub struct NetworkInterfaceBuilder {
     pub(crate) outpost_arn: ::std::option::Option<::std::string::String>,
     pub(crate) owner_id: ::std::option::Option<::std::string::String>,
     pub(crate) private_dns_name: ::std::option::Option<::std::string::String>,
+    pub(crate) public_dns_name: ::std::option::Option<::std::string::String>,
+    pub(crate) public_ip_dns_name_options: ::std::option::Option<crate::types::PublicIpDnsNameOptions>,
     pub(crate) private_ip_address: ::std::option::Option<::std::string::String>,
     pub(crate) private_ip_addresses: ::std::option::Option<::std::vec::Vec<crate::types::NetworkInterfacePrivateIpAddress>>,
     pub(crate) ipv4_prefixes: ::std::option::Option<::std::vec::Vec<crate::types::Ipv4PrefixSpecification>>,
@@ -408,19 +422,47 @@ impl NetworkInterfaceBuilder {
     pub fn get_owner_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.owner_id
     }
-    /// <p>The private DNS name.</p>
+    /// <p>The private hostname. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-naming.html">EC2 instance hostnames, DNS names, and domains</a> in the <i>Amazon EC2 User Guide</i>.</p>
     pub fn private_dns_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.private_dns_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The private DNS name.</p>
+    /// <p>The private hostname. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-naming.html">EC2 instance hostnames, DNS names, and domains</a> in the <i>Amazon EC2 User Guide</i>.</p>
     pub fn set_private_dns_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.private_dns_name = input;
         self
     }
-    /// <p>The private DNS name.</p>
+    /// <p>The private hostname. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-naming.html">EC2 instance hostnames, DNS names, and domains</a> in the <i>Amazon EC2 User Guide</i>.</p>
     pub fn get_private_dns_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.private_dns_name
+    }
+    /// <p>A public hostname. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-naming.html">EC2 instance hostnames, DNS names, and domains</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    pub fn public_dns_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.public_dns_name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>A public hostname. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-naming.html">EC2 instance hostnames, DNS names, and domains</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    pub fn set_public_dns_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.public_dns_name = input;
+        self
+    }
+    /// <p>A public hostname. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-naming.html">EC2 instance hostnames, DNS names, and domains</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    pub fn get_public_dns_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.public_dns_name
+    }
+    /// <p>Public hostname type options. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-naming.html">EC2 instance hostnames, DNS names, and domains</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    pub fn public_ip_dns_name_options(mut self, input: crate::types::PublicIpDnsNameOptions) -> Self {
+        self.public_ip_dns_name_options = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Public hostname type options. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-naming.html">EC2 instance hostnames, DNS names, and domains</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    pub fn set_public_ip_dns_name_options(mut self, input: ::std::option::Option<crate::types::PublicIpDnsNameOptions>) -> Self {
+        self.public_ip_dns_name_options = input;
+        self
+    }
+    /// <p>Public hostname type options. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-naming.html">EC2 instance hostnames, DNS names, and domains</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    pub fn get_public_ip_dns_name_options(&self) -> &::std::option::Option<crate::types::PublicIpDnsNameOptions> {
+        &self.public_ip_dns_name_options
     }
     /// <p>The IPv4 address of the network interface within the subnet.</p>
     pub fn private_ip_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -672,6 +714,8 @@ impl NetworkInterfaceBuilder {
             outpost_arn: self.outpost_arn,
             owner_id: self.owner_id,
             private_dns_name: self.private_dns_name,
+            public_dns_name: self.public_dns_name,
+            public_ip_dns_name_options: self.public_ip_dns_name_options,
             private_ip_address: self.private_ip_address,
             private_ip_addresses: self.private_ip_addresses,
             ipv4_prefixes: self.ipv4_prefixes,

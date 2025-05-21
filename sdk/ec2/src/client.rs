@@ -1517,6 +1517,8 @@ mod modify_network_interface_attribute;
 
 mod modify_private_dns_name_options;
 
+mod modify_public_ip_dns_name_options;
+
 mod modify_reserved_instances;
 
 mod modify_route_server;

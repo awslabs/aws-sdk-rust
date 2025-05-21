@@ -6,6 +6,8 @@
 pub struct NetworkInterfaceIpv6Address {
     /// <p>The IPv6 address.</p>
     pub ipv6_address: ::std::option::Option<::std::string::String>,
+    /// <p>An IPv6-enabled public hostname for a network interface. Requests from within the VPC or from the internet resolve to the IPv6 GUA of the network interface. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-naming.html">EC2 instance hostnames, DNS names, and domains</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    pub public_ipv6_dns_name: ::std::option::Option<::std::string::String>,
     /// <p>Determines if an IPv6 address associated with a network interface is the primary IPv6 address. When you enable an IPv6 GUA address to be a primary IPv6, the first IPv6 GUA will be made the primary IPv6 address until the instance is terminated or the network interface is detached. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyNetworkInterfaceAttribute.html">ModifyNetworkInterfaceAttribute</a>.</p>
     pub is_primary_ipv6: ::std::option::Option<bool>,
 }
@@ -13,6 +15,10 @@ impl NetworkInterfaceIpv6Address {
     /// <p>The IPv6 address.</p>
     pub fn ipv6_address(&self) -> ::std::option::Option<&str> {
         self.ipv6_address.as_deref()
+    }
+    /// <p>An IPv6-enabled public hostname for a network interface. Requests from within the VPC or from the internet resolve to the IPv6 GUA of the network interface. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-naming.html">EC2 instance hostnames, DNS names, and domains</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    pub fn public_ipv6_dns_name(&self) -> ::std::option::Option<&str> {
+        self.public_ipv6_dns_name.as_deref()
     }
     /// <p>Determines if an IPv6 address associated with a network interface is the primary IPv6 address. When you enable an IPv6 GUA address to be a primary IPv6, the first IPv6 GUA will be made the primary IPv6 address until the instance is terminated or the network interface is detached. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyNetworkInterfaceAttribute.html">ModifyNetworkInterfaceAttribute</a>.</p>
     pub fn is_primary_ipv6(&self) -> ::std::option::Option<bool> {
@@ -31,6 +37,7 @@ impl NetworkInterfaceIpv6Address {
 #[non_exhaustive]
 pub struct NetworkInterfaceIpv6AddressBuilder {
     pub(crate) ipv6_address: ::std::option::Option<::std::string::String>,
+    pub(crate) public_ipv6_dns_name: ::std::option::Option<::std::string::String>,
     pub(crate) is_primary_ipv6: ::std::option::Option<bool>,
 }
 impl NetworkInterfaceIpv6AddressBuilder {
@@ -47,6 +54,20 @@ impl NetworkInterfaceIpv6AddressBuilder {
     /// <p>The IPv6 address.</p>
     pub fn get_ipv6_address(&self) -> &::std::option::Option<::std::string::String> {
         &self.ipv6_address
+    }
+    /// <p>An IPv6-enabled public hostname for a network interface. Requests from within the VPC or from the internet resolve to the IPv6 GUA of the network interface. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-naming.html">EC2 instance hostnames, DNS names, and domains</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    pub fn public_ipv6_dns_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.public_ipv6_dns_name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>An IPv6-enabled public hostname for a network interface. Requests from within the VPC or from the internet resolve to the IPv6 GUA of the network interface. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-naming.html">EC2 instance hostnames, DNS names, and domains</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    pub fn set_public_ipv6_dns_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.public_ipv6_dns_name = input;
+        self
+    }
+    /// <p>An IPv6-enabled public hostname for a network interface. Requests from within the VPC or from the internet resolve to the IPv6 GUA of the network interface. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-naming.html">EC2 instance hostnames, DNS names, and domains</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    pub fn get_public_ipv6_dns_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.public_ipv6_dns_name
     }
     /// <p>Determines if an IPv6 address associated with a network interface is the primary IPv6 address. When you enable an IPv6 GUA address to be a primary IPv6, the first IPv6 GUA will be made the primary IPv6 address until the instance is terminated or the network interface is detached. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyNetworkInterfaceAttribute.html">ModifyNetworkInterfaceAttribute</a>.</p>
     pub fn is_primary_ipv6(mut self, input: bool) -> Self {
@@ -66,6 +87,7 @@ impl NetworkInterfaceIpv6AddressBuilder {
     pub fn build(self) -> crate::types::NetworkInterfaceIpv6Address {
         crate::types::NetworkInterfaceIpv6Address {
             ipv6_address: self.ipv6_address,
+            public_ipv6_dns_name: self.public_ipv6_dns_name,
             is_primary_ipv6: self.is_primary_ipv6,
         }
     }

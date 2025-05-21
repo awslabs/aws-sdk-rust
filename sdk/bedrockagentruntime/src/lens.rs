@@ -9,6 +9,26 @@ pub(crate) fn reflens_get_agent_memory_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_flow_execution_events_output_output_next_token(
+    input: &crate::operation::list_flow_execution_events::ListFlowExecutionEventsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_flow_executions_output_output_next_token(
+    input: &crate::operation::list_flow_executions::ListFlowExecutionsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_invocation_steps_output_output_next_token(
     input: &crate::operation::list_invocation_steps::ListInvocationStepsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -66,6 +86,20 @@ pub(crate) fn lens_get_agent_memory_output_output_memory_contents(
         ::std::option::Option::None => return ::std::option::Option::None,
         ::std::option::Option::Some(t) => t,
     };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_flow_execution_events_output_output_flow_execution_events(
+    input: crate::operation::list_flow_execution_events::ListFlowExecutionEventsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::FlowExecutionEvent>> {
+    let input = input.flow_execution_events;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_flow_executions_output_output_flow_execution_summaries(
+    input: crate::operation::list_flow_executions::ListFlowExecutionsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::FlowExecutionSummary>> {
+    let input = input.flow_execution_summaries;
     ::std::option::Option::Some(input)
 }
 

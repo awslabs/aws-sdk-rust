@@ -9,7 +9,7 @@ pub struct ListEngagementsInput {
     pub created_by: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>An array of strings representing AWS Account IDs. Use this to exclude engagements created by specific users.</p>
     pub exclude_created_by: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>An object that specifies the sort order of the results.</p>
+    /// <p>Specifies the sorting parameters for listing Engagements.</p>
     pub sort: ::std::option::Option<crate::types::EngagementSort>,
     /// <p>The maximum number of results to return in a single call.</p>
     pub max_results: ::std::option::Option<i32>,
@@ -35,7 +35,7 @@ impl ListEngagementsInput {
     pub fn exclude_created_by(&self) -> &[::std::string::String] {
         self.exclude_created_by.as_deref().unwrap_or_default()
     }
-    /// <p>An object that specifies the sort order of the results.</p>
+    /// <p>Specifies the sorting parameters for listing Engagements.</p>
     pub fn sort(&self) -> ::std::option::Option<&crate::types::EngagementSort> {
         self.sort.as_ref()
     }
@@ -129,17 +129,17 @@ impl ListEngagementsInputBuilder {
     pub fn get_exclude_created_by(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.exclude_created_by
     }
-    /// <p>An object that specifies the sort order of the results.</p>
+    /// <p>Specifies the sorting parameters for listing Engagements.</p>
     pub fn sort(mut self, input: crate::types::EngagementSort) -> Self {
         self.sort = ::std::option::Option::Some(input);
         self
     }
-    /// <p>An object that specifies the sort order of the results.</p>
+    /// <p>Specifies the sorting parameters for listing Engagements.</p>
     pub fn set_sort(mut self, input: ::std::option::Option<crate::types::EngagementSort>) -> Self {
         self.sort = input;
         self
     }
-    /// <p>An object that specifies the sort order of the results.</p>
+    /// <p>Specifies the sorting parameters for listing Engagements.</p>
     pub fn get_sort(&self) -> &::std::option::Option<crate::types::EngagementSort> {
         &self.sort
     }
