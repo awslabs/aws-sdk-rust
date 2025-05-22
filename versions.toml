@@ -2621,6 +2621,10 @@ source_hash = '80ec4ac438cda0bc74755e6b3c466dee894170885c393c986c8378a658eecec7'
 category = 'AwsRuntime'
 version = '0.0.0'
 source_hash = '8f95c45532c2d3193640e712a4081002454f32a0b49b8e64c6e34ab790a4dd31'
+
+[release]
+tag = 'release-2025-05-22'
+
 [release.crates]
 aws-sdk-amp = '1.73.0'
 aws-sdk-auditmanager = '1.72.0'
