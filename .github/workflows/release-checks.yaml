@@ -1,0 +1,30 @@
+on:
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+
+name: Release Configuration Checks
+
+jobs:
+  check-config:
+    runs-on: ubuntu-latest
+    name: Check Release config.json
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check smithy-rs version exists
+        run: |
+          SMITHY_RS_VERSION=$(jq -r ".dependencies.smithyRsVersion" config.json)
+          echo "checking smithy-rs@$SMITHY_RS_VERSION"
+          mkdir smithy-rs
+          cd smithy-rs
+          git init
+          git remote add origin https://github.com/smithy-lang/smithy-rs.git
+          
+          if git fetch origin $SMITHY_RS_VERSION; then
+            echo "smithy-rs@$SMITHY_RS_VERSION found"
+          else
+            echo "::error::no smithy-rs@$SMITHY_RS_VERSION found"
+            exit 1
+          fi
+
