@@ -184,6 +184,8 @@ mod create_alert_manager_definition;
 
 mod create_logging_configuration;
 
+mod create_query_logging_configuration;
+
 mod create_rule_groups_namespace;
 
 mod create_scraper;
@@ -221,6 +223,8 @@ mod delete_alert_manager_definition;
 
 mod delete_logging_configuration;
 
+mod delete_query_logging_configuration;
+
 mod delete_rule_groups_namespace;
 
 mod delete_scraper;
@@ -230,6 +234,8 @@ mod delete_workspace;
 mod describe_alert_manager_definition;
 
 mod describe_logging_configuration;
+
+mod describe_query_logging_configuration;
 
 mod describe_rule_groups_namespace;
 
@@ -258,6 +264,8 @@ mod tag_resource;
 mod untag_resource;
 
 mod update_logging_configuration;
+
+mod update_query_logging_configuration;
 
 mod update_scraper;
 

@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateIntegrationTablePropertiesInput {
-    /// <p>The connection ARN of the source, or the database ARN of the target.</p>
+    /// <p>The Amazon Resource Name (ARN) of the target table for which to create integration table properties. Currently, this API only supports creating integration table properties for target tables, and the provided ARN should be the ARN of the target table in the Glue Data Catalog. Support for creating integration table properties for source connections (using the connection ARN) is not yet implemented and will be added in a future release.</p>
     pub resource_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the table to be replicated.</p>
     pub table_name: ::std::option::Option<::std::string::String>,
@@ -13,7 +13,7 @@ pub struct CreateIntegrationTablePropertiesInput {
     pub target_table_config: ::std::option::Option<crate::types::TargetTableConfig>,
 }
 impl CreateIntegrationTablePropertiesInput {
-    /// <p>The connection ARN of the source, or the database ARN of the target.</p>
+    /// <p>The Amazon Resource Name (ARN) of the target table for which to create integration table properties. Currently, this API only supports creating integration table properties for target tables, and the provided ARN should be the ARN of the target table in the Glue Data Catalog. Support for creating integration table properties for source connections (using the connection ARN) is not yet implemented and will be added in a future release.</p>
     pub fn resource_arn(&self) -> ::std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
@@ -47,18 +47,18 @@ pub struct CreateIntegrationTablePropertiesInputBuilder {
     pub(crate) target_table_config: ::std::option::Option<crate::types::TargetTableConfig>,
 }
 impl CreateIntegrationTablePropertiesInputBuilder {
-    /// <p>The connection ARN of the source, or the database ARN of the target.</p>
+    /// <p>The Amazon Resource Name (ARN) of the target table for which to create integration table properties. Currently, this API only supports creating integration table properties for target tables, and the provided ARN should be the ARN of the target table in the Glue Data Catalog. Support for creating integration table properties for source connections (using the connection ARN) is not yet implemented and will be added in a future release.</p>
     /// This field is required.
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The connection ARN of the source, or the database ARN of the target.</p>
+    /// <p>The Amazon Resource Name (ARN) of the target table for which to create integration table properties. Currently, this API only supports creating integration table properties for target tables, and the provided ARN should be the ARN of the target table in the Glue Data Catalog. Support for creating integration table properties for source connections (using the connection ARN) is not yet implemented and will be added in a future release.</p>
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_arn = input;
         self
     }
-    /// <p>The connection ARN of the source, or the database ARN of the target.</p>
+    /// <p>The Amazon Resource Name (ARN) of the target table for which to create integration table properties. Currently, this API only supports creating integration table properties for target tables, and the provided ARN should be the ARN of the target table in the Glue Data Catalog. Support for creating integration table properties for source connections (using the connection ARN) is not yet implemented and will be added in a future release.</p>
     pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_arn
     }

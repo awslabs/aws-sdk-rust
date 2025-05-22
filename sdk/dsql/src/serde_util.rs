@@ -179,6 +179,18 @@ pub(crate) fn update_cluster_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn encryption_details_correct_errors(
+    mut builder: crate::types::builders::EncryptionDetailsBuilder,
+) -> crate::types::builders::EncryptionDetailsBuilder {
+    if builder.encryption_type.is_none() {
+        builder.encryption_type = "no value was set".parse::<crate::types::EncryptionType>().ok()
+    }
+    if builder.encryption_status.is_none() {
+        builder.encryption_status = "no value was set".parse::<crate::types::EncryptionStatus>().ok()
+    }
+    builder
+}
+
 pub(crate) fn cluster_summary_correct_errors(
     mut builder: crate::types::builders::ClusterSummaryBuilder,
 ) -> crate::types::builders::ClusterSummaryBuilder {

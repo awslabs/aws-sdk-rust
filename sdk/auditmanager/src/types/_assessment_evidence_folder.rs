@@ -16,7 +16,7 @@ pub struct AssessmentEvidenceFolder {
     pub control_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier for the folder that the evidence is stored in.</p>
     pub id: ::std::option::Option<::std::string::String>,
-    /// <p>The Amazon Web Service that the evidence was collected from.</p>
+    /// <p>The Amazon Web Services service that the evidence was collected from.</p>
     pub data_source: ::std::option::Option<::std::string::String>,
     /// <p>The name of the user who created the evidence folder.</p>
     pub author: ::std::option::Option<::std::string::String>,
@@ -28,7 +28,7 @@ pub struct AssessmentEvidenceFolder {
     pub control_name: ::std::option::Option<::std::string::String>,
     /// <p>The amount of evidence that's included in the evidence folder.</p>
     pub evidence_resources_included_count: i32,
-    /// <p>The number of evidence that falls under the configuration data category. This evidence is collected from configuration snapshots of other Amazon Web Services such as Amazon EC2, Amazon S3, or IAM.</p>
+    /// <p>The number of evidence that falls under the configuration data category. This evidence is collected from configuration snapshots of other Amazon Web Services services such as Amazon EC2, Amazon S3, or IAM.</p>
     pub evidence_by_type_configuration_data_count: i32,
     /// <p>The number of evidence that falls under the manual category. This evidence is imported manually.</p>
     pub evidence_by_type_manual_count: i32,
@@ -66,7 +66,7 @@ impl AssessmentEvidenceFolder {
     pub fn id(&self) -> ::std::option::Option<&str> {
         self.id.as_deref()
     }
-    /// <p>The Amazon Web Service that the evidence was collected from.</p>
+    /// <p>The Amazon Web Services service that the evidence was collected from.</p>
     pub fn data_source(&self) -> ::std::option::Option<&str> {
         self.data_source.as_deref()
     }
@@ -90,7 +90,7 @@ impl AssessmentEvidenceFolder {
     pub fn evidence_resources_included_count(&self) -> i32 {
         self.evidence_resources_included_count
     }
-    /// <p>The number of evidence that falls under the configuration data category. This evidence is collected from configuration snapshots of other Amazon Web Services such as Amazon EC2, Amazon S3, or IAM.</p>
+    /// <p>The number of evidence that falls under the configuration data category. This evidence is collected from configuration snapshots of other Amazon Web Services services such as Amazon EC2, Amazon S3, or IAM.</p>
     pub fn evidence_by_type_configuration_data_count(&self) -> i32 {
         self.evidence_by_type_configuration_data_count
     }
@@ -230,17 +230,17 @@ impl AssessmentEvidenceFolderBuilder {
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.id
     }
-    /// <p>The Amazon Web Service that the evidence was collected from.</p>
+    /// <p>The Amazon Web Services service that the evidence was collected from.</p>
     pub fn data_source(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_source = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Web Service that the evidence was collected from.</p>
+    /// <p>The Amazon Web Services service that the evidence was collected from.</p>
     pub fn set_data_source(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.data_source = input;
         self
     }
-    /// <p>The Amazon Web Service that the evidence was collected from.</p>
+    /// <p>The Amazon Web Services service that the evidence was collected from.</p>
     pub fn get_data_source(&self) -> &::std::option::Option<::std::string::String> {
         &self.data_source
     }
@@ -314,17 +314,17 @@ impl AssessmentEvidenceFolderBuilder {
     pub fn get_evidence_resources_included_count(&self) -> &::std::option::Option<i32> {
         &self.evidence_resources_included_count
     }
-    /// <p>The number of evidence that falls under the configuration data category. This evidence is collected from configuration snapshots of other Amazon Web Services such as Amazon EC2, Amazon S3, or IAM.</p>
+    /// <p>The number of evidence that falls under the configuration data category. This evidence is collected from configuration snapshots of other Amazon Web Services services such as Amazon EC2, Amazon S3, or IAM.</p>
     pub fn evidence_by_type_configuration_data_count(mut self, input: i32) -> Self {
         self.evidence_by_type_configuration_data_count = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The number of evidence that falls under the configuration data category. This evidence is collected from configuration snapshots of other Amazon Web Services such as Amazon EC2, Amazon S3, or IAM.</p>
+    /// <p>The number of evidence that falls under the configuration data category. This evidence is collected from configuration snapshots of other Amazon Web Services services such as Amazon EC2, Amazon S3, or IAM.</p>
     pub fn set_evidence_by_type_configuration_data_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.evidence_by_type_configuration_data_count = input;
         self
     }
-    /// <p>The number of evidence that falls under the configuration data category. This evidence is collected from configuration snapshots of other Amazon Web Services such as Amazon EC2, Amazon S3, or IAM.</p>
+    /// <p>The number of evidence that falls under the configuration data category. This evidence is collected from configuration snapshots of other Amazon Web Services services such as Amazon EC2, Amazon S3, or IAM.</p>
     pub fn get_evidence_by_type_configuration_data_count(&self) -> &::std::option::Option<i32> {
         &self.evidence_by_type_configuration_data_count
     }

@@ -82,7 +82,7 @@ pub struct SourceKeyword {
     /// <li>
     /// <p>For Amazon Web Services API calls: Make sure that the <code>keywordValue</code> is written as <code>serviceprefix_ActionName</code>. For example, <code>iam_ListGroups</code>. For accuracy, we recommend that you reference the list of <a href="https://docs.aws.amazon.com/audit-manager/latest/userguide/control-data-sources-api.html">supported API calls</a>.</p></li>
     /// <li>
-    /// <p>For CloudTrail: Make sure that the <code>keywordValue</code> is written as <code>serviceprefix_ActionName</code>. For example, <code>cloudtrail_StartLogging</code>. For accuracy, we recommend that you review the Amazon Web Service prefix and action names in the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/reference_policies_actions-resources-contextkeys.html">Service Authorization Reference</a>.</p></li>
+    /// <p>For CloudTrail: Make sure that the <code>keywordValue</code> is written as <code>serviceprefix_ActionName</code>. For example, <code>cloudtrail_StartLogging</code>. For accuracy, we recommend that you review the Amazon Web Services service prefix and action names in the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/reference_policies_actions-resources-contextkeys.html">Service Authorization Reference</a>.</p></li>
     /// </ol>
     /// </important>
     pub keyword_value: ::std::option::Option<::std::string::String>,
@@ -155,7 +155,7 @@ impl SourceKeyword {
     /// <li>
     /// <p>For Amazon Web Services API calls: Make sure that the <code>keywordValue</code> is written as <code>serviceprefix_ActionName</code>. For example, <code>iam_ListGroups</code>. For accuracy, we recommend that you reference the list of <a href="https://docs.aws.amazon.com/audit-manager/latest/userguide/control-data-sources-api.html">supported API calls</a>.</p></li>
     /// <li>
-    /// <p>For CloudTrail: Make sure that the <code>keywordValue</code> is written as <code>serviceprefix_ActionName</code>. For example, <code>cloudtrail_StartLogging</code>. For accuracy, we recommend that you review the Amazon Web Service prefix and action names in the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/reference_policies_actions-resources-contextkeys.html">Service Authorization Reference</a>.</p></li>
+    /// <p>For CloudTrail: Make sure that the <code>keywordValue</code> is written as <code>serviceprefix_ActionName</code>. For example, <code>cloudtrail_StartLogging</code>. For accuracy, we recommend that you review the Amazon Web Services service prefix and action names in the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/reference_policies_actions-resources-contextkeys.html">Service Authorization Reference</a>.</p></li>
     /// </ol>
     /// </important>
     pub fn keyword_value(&self) -> ::std::option::Option<&str> {
@@ -286,7 +286,7 @@ impl SourceKeywordBuilder {
     /// <li>
     /// <p>For Amazon Web Services API calls: Make sure that the <code>keywordValue</code> is written as <code>serviceprefix_ActionName</code>. For example, <code>iam_ListGroups</code>. For accuracy, we recommend that you reference the list of <a href="https://docs.aws.amazon.com/audit-manager/latest/userguide/control-data-sources-api.html">supported API calls</a>.</p></li>
     /// <li>
-    /// <p>For CloudTrail: Make sure that the <code>keywordValue</code> is written as <code>serviceprefix_ActionName</code>. For example, <code>cloudtrail_StartLogging</code>. For accuracy, we recommend that you review the Amazon Web Service prefix and action names in the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/reference_policies_actions-resources-contextkeys.html">Service Authorization Reference</a>.</p></li>
+    /// <p>For CloudTrail: Make sure that the <code>keywordValue</code> is written as <code>serviceprefix_ActionName</code>. For example, <code>cloudtrail_StartLogging</code>. For accuracy, we recommend that you review the Amazon Web Services service prefix and action names in the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/reference_policies_actions-resources-contextkeys.html">Service Authorization Reference</a>.</p></li>
     /// </ol>
     /// </important>
     pub fn keyword_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -340,7 +340,7 @@ impl SourceKeywordBuilder {
     /// <li>
     /// <p>For Amazon Web Services API calls: Make sure that the <code>keywordValue</code> is written as <code>serviceprefix_ActionName</code>. For example, <code>iam_ListGroups</code>. For accuracy, we recommend that you reference the list of <a href="https://docs.aws.amazon.com/audit-manager/latest/userguide/control-data-sources-api.html">supported API calls</a>.</p></li>
     /// <li>
-    /// <p>For CloudTrail: Make sure that the <code>keywordValue</code> is written as <code>serviceprefix_ActionName</code>. For example, <code>cloudtrail_StartLogging</code>. For accuracy, we recommend that you review the Amazon Web Service prefix and action names in the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/reference_policies_actions-resources-contextkeys.html">Service Authorization Reference</a>.</p></li>
+    /// <p>For CloudTrail: Make sure that the <code>keywordValue</code> is written as <code>serviceprefix_ActionName</code>. For example, <code>cloudtrail_StartLogging</code>. For accuracy, we recommend that you review the Amazon Web Services service prefix and action names in the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/reference_policies_actions-resources-contextkeys.html">Service Authorization Reference</a>.</p></li>
     /// </ol>
     /// </important>
     pub fn set_keyword_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -394,7 +394,7 @@ impl SourceKeywordBuilder {
     /// <li>
     /// <p>For Amazon Web Services API calls: Make sure that the <code>keywordValue</code> is written as <code>serviceprefix_ActionName</code>. For example, <code>iam_ListGroups</code>. For accuracy, we recommend that you reference the list of <a href="https://docs.aws.amazon.com/audit-manager/latest/userguide/control-data-sources-api.html">supported API calls</a>.</p></li>
     /// <li>
-    /// <p>For CloudTrail: Make sure that the <code>keywordValue</code> is written as <code>serviceprefix_ActionName</code>. For example, <code>cloudtrail_StartLogging</code>. For accuracy, we recommend that you review the Amazon Web Service prefix and action names in the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/reference_policies_actions-resources-contextkeys.html">Service Authorization Reference</a>.</p></li>
+    /// <p>For CloudTrail: Make sure that the <code>keywordValue</code> is written as <code>serviceprefix_ActionName</code>. For example, <code>cloudtrail_StartLogging</code>. For accuracy, we recommend that you review the Amazon Web Services service prefix and action names in the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/reference_policies_actions-resources-contextkeys.html">Service Authorization Reference</a>.</p></li>
     /// </ol>
     /// </important>
     pub fn get_keyword_value(&self) -> &::std::option::Option<::std::string::String> {

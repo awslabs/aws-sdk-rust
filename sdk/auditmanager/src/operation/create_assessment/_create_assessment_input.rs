@@ -10,8 +10,8 @@ pub struct CreateAssessmentInput {
     /// <p>The assessment report storage destination for the assessment that's being created.</p>
     pub assessment_reports_destination: ::std::option::Option<crate::types::AssessmentReportsDestination>,
     /// <p>The wrapper that contains the Amazon Web Services accounts that are in scope for the assessment.</p><note>
-    /// <p>You no longer need to specify which Amazon Web Services are in scope when you create or update an assessment. Audit Manager infers the services in scope by examining your assessment controls and their data sources, and then mapping this information to the relevant Amazon Web Services.</p>
-    /// <p>If an underlying data source changes for your assessment, we automatically update the services scope as needed to reflect the correct Amazon Web Services. This ensures that your assessment collects accurate and comprehensive evidence about all of the relevant services in your AWS environment.</p>
+    /// <p>You no longer need to specify which Amazon Web Services services are in scope when you create or update an assessment. Audit Manager infers the services in scope by examining your assessment controls and their data sources, and then mapping this information to the relevant Amazon Web Services services.</p>
+    /// <p>If an underlying data source changes for your assessment, we automatically update the services scope as needed to reflect the correct Amazon Web Services services. This ensures that your assessment collects accurate and comprehensive evidence about all of the relevant services in your AWS environment.</p>
     /// </note>
     pub scope: ::std::option::Option<crate::types::Scope>,
     /// <p>The list of roles for the assessment.</p>
@@ -35,8 +35,8 @@ impl CreateAssessmentInput {
         self.assessment_reports_destination.as_ref()
     }
     /// <p>The wrapper that contains the Amazon Web Services accounts that are in scope for the assessment.</p><note>
-    /// <p>You no longer need to specify which Amazon Web Services are in scope when you create or update an assessment. Audit Manager infers the services in scope by examining your assessment controls and their data sources, and then mapping this information to the relevant Amazon Web Services.</p>
-    /// <p>If an underlying data source changes for your assessment, we automatically update the services scope as needed to reflect the correct Amazon Web Services. This ensures that your assessment collects accurate and comprehensive evidence about all of the relevant services in your AWS environment.</p>
+    /// <p>You no longer need to specify which Amazon Web Services services are in scope when you create or update an assessment. Audit Manager infers the services in scope by examining your assessment controls and their data sources, and then mapping this information to the relevant Amazon Web Services services.</p>
+    /// <p>If an underlying data source changes for your assessment, we automatically update the services scope as needed to reflect the correct Amazon Web Services services. This ensures that your assessment collects accurate and comprehensive evidence about all of the relevant services in your AWS environment.</p>
     /// </note>
     pub fn scope(&self) -> ::std::option::Option<&crate::types::Scope> {
         self.scope.as_ref()
@@ -134,8 +134,8 @@ impl CreateAssessmentInputBuilder {
         &self.assessment_reports_destination
     }
     /// <p>The wrapper that contains the Amazon Web Services accounts that are in scope for the assessment.</p><note>
-    /// <p>You no longer need to specify which Amazon Web Services are in scope when you create or update an assessment. Audit Manager infers the services in scope by examining your assessment controls and their data sources, and then mapping this information to the relevant Amazon Web Services.</p>
-    /// <p>If an underlying data source changes for your assessment, we automatically update the services scope as needed to reflect the correct Amazon Web Services. This ensures that your assessment collects accurate and comprehensive evidence about all of the relevant services in your AWS environment.</p>
+    /// <p>You no longer need to specify which Amazon Web Services services are in scope when you create or update an assessment. Audit Manager infers the services in scope by examining your assessment controls and their data sources, and then mapping this information to the relevant Amazon Web Services services.</p>
+    /// <p>If an underlying data source changes for your assessment, we automatically update the services scope as needed to reflect the correct Amazon Web Services services. This ensures that your assessment collects accurate and comprehensive evidence about all of the relevant services in your AWS environment.</p>
     /// </note>
     /// This field is required.
     pub fn scope(mut self, input: crate::types::Scope) -> Self {
@@ -143,16 +143,16 @@ impl CreateAssessmentInputBuilder {
         self
     }
     /// <p>The wrapper that contains the Amazon Web Services accounts that are in scope for the assessment.</p><note>
-    /// <p>You no longer need to specify which Amazon Web Services are in scope when you create or update an assessment. Audit Manager infers the services in scope by examining your assessment controls and their data sources, and then mapping this information to the relevant Amazon Web Services.</p>
-    /// <p>If an underlying data source changes for your assessment, we automatically update the services scope as needed to reflect the correct Amazon Web Services. This ensures that your assessment collects accurate and comprehensive evidence about all of the relevant services in your AWS environment.</p>
+    /// <p>You no longer need to specify which Amazon Web Services services are in scope when you create or update an assessment. Audit Manager infers the services in scope by examining your assessment controls and their data sources, and then mapping this information to the relevant Amazon Web Services services.</p>
+    /// <p>If an underlying data source changes for your assessment, we automatically update the services scope as needed to reflect the correct Amazon Web Services services. This ensures that your assessment collects accurate and comprehensive evidence about all of the relevant services in your AWS environment.</p>
     /// </note>
     pub fn set_scope(mut self, input: ::std::option::Option<crate::types::Scope>) -> Self {
         self.scope = input;
         self
     }
     /// <p>The wrapper that contains the Amazon Web Services accounts that are in scope for the assessment.</p><note>
-    /// <p>You no longer need to specify which Amazon Web Services are in scope when you create or update an assessment. Audit Manager infers the services in scope by examining your assessment controls and their data sources, and then mapping this information to the relevant Amazon Web Services.</p>
-    /// <p>If an underlying data source changes for your assessment, we automatically update the services scope as needed to reflect the correct Amazon Web Services. This ensures that your assessment collects accurate and comprehensive evidence about all of the relevant services in your AWS environment.</p>
+    /// <p>You no longer need to specify which Amazon Web Services services are in scope when you create or update an assessment. Audit Manager infers the services in scope by examining your assessment controls and their data sources, and then mapping this information to the relevant Amazon Web Services services.</p>
+    /// <p>If an underlying data source changes for your assessment, we automatically update the services scope as needed to reflect the correct Amazon Web Services services. This ensures that your assessment collects accurate and comprehensive evidence about all of the relevant services in your AWS environment.</p>
     /// </note>
     pub fn get_scope(&self) -> &::std::option::Option<crate::types::Scope> {
         &self.scope

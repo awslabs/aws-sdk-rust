@@ -1854,6 +1854,9 @@ impl From<crate::operation::update_assessment::UpdateAssessmentError> for Error 
             crate::operation::update_assessment::UpdateAssessmentError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::update_assessment::UpdateAssessmentError::InternalServerException(inner) => Error::InternalServerException(inner),
             crate::operation::update_assessment::UpdateAssessmentError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::update_assessment::UpdateAssessmentError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
             crate::operation::update_assessment::UpdateAssessmentError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::update_assessment::UpdateAssessmentError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::update_assessment::UpdateAssessmentError::Unhandled(inner) => Error::Unhandled(inner),

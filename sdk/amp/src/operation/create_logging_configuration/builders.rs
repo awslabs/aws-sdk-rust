@@ -22,7 +22,9 @@ impl crate::operation::create_logging_configuration::builders::CreateLoggingConf
 }
 /// Fluent builder constructing a request to `CreateLoggingConfiguration`.
 ///
-/// <p>The <code>CreateLoggingConfiguration</code> operation creates a logging configuration for the workspace. Use this operation to set the CloudWatch log group to which the logs will be published to.</p>
+/// <p>The <code>CreateLoggingConfiguration</code> operation creates rules and alerting logging configuration for the workspace. Use this operation to set the CloudWatch log group to which the logs will be published to.</p><note>
+/// <p>These logging configurations are only for rules and alerting logs.</p>
+/// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateLoggingConfigurationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

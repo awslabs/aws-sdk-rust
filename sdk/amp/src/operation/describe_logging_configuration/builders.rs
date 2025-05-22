@@ -22,7 +22,9 @@ impl crate::operation::describe_logging_configuration::builders::DescribeLogging
 }
 /// Fluent builder constructing a request to `DescribeLoggingConfiguration`.
 ///
-/// <p>Returns complete information about the current logging configuration of the workspace.</p>
+/// <p>Returns complete information about the current rules and alerting logging configuration of the workspace.</p><note>
+/// <p>These logging configurations are only for rules and alerting logs.</p>
+/// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeLoggingConfigurationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

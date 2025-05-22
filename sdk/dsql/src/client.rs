@@ -66,7 +66,7 @@ pub(crate) struct Handle {
 ///
 /// ```rust,ignore
 /// let result = client.create_cluster()
-///     .client_token("example")
+///     .kms_encryption_key("example")
 ///     .send()
 ///     .await;
 /// ```

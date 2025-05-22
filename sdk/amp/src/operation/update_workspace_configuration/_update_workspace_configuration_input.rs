@@ -7,7 +7,7 @@ pub struct UpdateWorkspaceConfigurationInput {
     pub workspace_id: ::std::option::Option<::std::string::String>,
     /// <p>You can include a token in your operation to make it an idempotent opeartion.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
-    /// <p>This is an array of structures, where each structure defines a label set for the workspace, and defines the ingestion limit for active time series for each of those label sets. Each label name in a label set must be unique.</p>
+    /// <p>This is an array of structures, where each structure defines a label set for the workspace, and defines the active time series limit for each of those label sets. Each label name in a label set must be unique.</p>
     pub limits_per_label_set: ::std::option::Option<::std::vec::Vec<crate::types::LimitsPerLabelSet>>,
     /// <p>Specifies how many days that metrics will be retained in the workspace.</p>
     pub retention_period_in_days: ::std::option::Option<i32>,
@@ -21,7 +21,7 @@ impl UpdateWorkspaceConfigurationInput {
     pub fn client_token(&self) -> ::std::option::Option<&str> {
         self.client_token.as_deref()
     }
-    /// <p>This is an array of structures, where each structure defines a label set for the workspace, and defines the ingestion limit for active time series for each of those label sets. Each label name in a label set must be unique.</p>
+    /// <p>This is an array of structures, where each structure defines a label set for the workspace, and defines the active time series limit for each of those label sets. Each label name in a label set must be unique.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.limits_per_label_set.is_none()`.
     pub fn limits_per_label_set(&self) -> &[crate::types::LimitsPerLabelSet] {
@@ -82,19 +82,19 @@ impl UpdateWorkspaceConfigurationInputBuilder {
     ///
     /// To override the contents of this collection use [`set_limits_per_label_set`](Self::set_limits_per_label_set).
     ///
-    /// <p>This is an array of structures, where each structure defines a label set for the workspace, and defines the ingestion limit for active time series for each of those label sets. Each label name in a label set must be unique.</p>
+    /// <p>This is an array of structures, where each structure defines a label set for the workspace, and defines the active time series limit for each of those label sets. Each label name in a label set must be unique.</p>
     pub fn limits_per_label_set(mut self, input: crate::types::LimitsPerLabelSet) -> Self {
         let mut v = self.limits_per_label_set.unwrap_or_default();
         v.push(input);
         self.limits_per_label_set = ::std::option::Option::Some(v);
         self
     }
-    /// <p>This is an array of structures, where each structure defines a label set for the workspace, and defines the ingestion limit for active time series for each of those label sets. Each label name in a label set must be unique.</p>
+    /// <p>This is an array of structures, where each structure defines a label set for the workspace, and defines the active time series limit for each of those label sets. Each label name in a label set must be unique.</p>
     pub fn set_limits_per_label_set(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LimitsPerLabelSet>>) -> Self {
         self.limits_per_label_set = input;
         self
     }
-    /// <p>This is an array of structures, where each structure defines a label set for the workspace, and defines the ingestion limit for active time series for each of those label sets. Each label name in a label set must be unique.</p>
+    /// <p>This is an array of structures, where each structure defines a label set for the workspace, and defines the active time series limit for each of those label sets. Each label name in a label set must be unique.</p>
     pub fn get_limits_per_label_set(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LimitsPerLabelSet>> {
         &self.limits_per_label_set
     }

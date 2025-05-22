@@ -21,6 +21,16 @@ pub use crate::types::_rule_groups_namespace_description::RuleGroupsNamespaceDes
 
 pub use crate::types::_rule_groups_namespace_summary::RuleGroupsNamespaceSummaryBuilder;
 
+pub use crate::types::_query_logging_configuration_status::QueryLoggingConfigurationStatusBuilder;
+
+pub use crate::types::_logging_destination::LoggingDestinationBuilder;
+
+pub use crate::types::_logging_filter::LoggingFilterBuilder;
+
+pub use crate::types::_cloud_watch_log_destination::CloudWatchLogDestinationBuilder;
+
+pub use crate::types::_query_logging_configuration_metadata::QueryLoggingConfigurationMetadataBuilder;
+
 pub use crate::types::_logging_configuration_status::LoggingConfigurationStatusBuilder;
 
 pub use crate::types::_logging_configuration_metadata::LoggingConfigurationMetadataBuilder;

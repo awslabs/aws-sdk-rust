@@ -27,6 +27,8 @@ pub(crate) mod shape_create_alert_manager_definition;
 
 pub(crate) mod shape_create_logging_configuration;
 
+pub(crate) mod shape_create_query_logging_configuration;
+
 pub(crate) mod shape_create_rule_groups_namespace;
 
 pub(crate) mod shape_create_scraper;
@@ -37,6 +39,8 @@ pub(crate) mod shape_delete_alert_manager_definition;
 
 pub(crate) mod shape_delete_logging_configuration;
 
+pub(crate) mod shape_delete_query_logging_configuration;
+
 pub(crate) mod shape_delete_rule_groups_namespace;
 
 pub(crate) mod shape_delete_scraper;
@@ -46,6 +50,8 @@ pub(crate) mod shape_delete_workspace;
 pub(crate) mod shape_describe_alert_manager_definition;
 
 pub(crate) mod shape_describe_logging_configuration;
+
+pub(crate) mod shape_describe_query_logging_configuration;
 
 pub(crate) mod shape_describe_rule_groups_namespace;
 
@@ -75,6 +81,8 @@ pub(crate) mod shape_untag_resource;
 
 pub(crate) mod shape_update_logging_configuration;
 
+pub(crate) mod shape_update_query_logging_configuration;
+
 pub(crate) mod shape_update_scraper;
 
 pub(crate) mod shape_update_workspace_alias;
@@ -96,6 +104,8 @@ pub(crate) mod shape_conflict_exception;
 pub(crate) mod shape_create_alert_manager_definition_input;
 
 pub(crate) mod shape_create_logging_configuration_input;
+
+pub(crate) mod shape_create_query_logging_configuration_input;
 
 pub(crate) mod shape_create_rule_groups_namespace_input;
 
@@ -119,6 +129,8 @@ pub(crate) mod shape_throttling_exception;
 
 pub(crate) mod shape_update_logging_configuration_input;
 
+pub(crate) mod shape_update_query_logging_configuration_input;
+
 pub(crate) mod shape_update_scraper_input;
 
 pub(crate) mod shape_update_workspace_alias_input;
@@ -138,6 +150,12 @@ pub(crate) mod shape_limits_per_label_set;
 pub(crate) mod shape_logging_configuration_metadata;
 
 pub(crate) mod shape_logging_configuration_status;
+
+pub(crate) mod shape_logging_destination;
+
+pub(crate) mod shape_query_logging_configuration_metadata;
+
+pub(crate) mod shape_query_logging_configuration_status;
 
 pub(crate) mod shape_role_configuration;
 
@@ -173,11 +191,17 @@ pub(crate) mod shape_workspace_summary_list;
 
 pub(crate) mod shape_amp_configuration;
 
+pub(crate) mod shape_cloud_watch_log_destination;
+
 pub(crate) mod shape_eks_configuration;
 
 pub(crate) mod shape_limits_per_label_set_entry;
 
 pub(crate) mod shape_limits_per_label_set_list;
+
+pub(crate) mod shape_logging_destinations;
+
+pub(crate) mod shape_logging_filter;
 
 pub(crate) mod shape_rule_groups_namespace_summary;
 

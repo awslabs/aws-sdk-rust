@@ -153,6 +153,50 @@ impl From<crate::operation::create_logging_configuration::CreateLoggingConfigura
         }
     }
 }
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::create_query_logging_configuration::CreateQueryLoggingConfigurationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::create_query_logging_configuration::CreateQueryLoggingConfigurationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_query_logging_configuration::CreateQueryLoggingConfigurationError> for Error {
+    fn from(err: crate::operation::create_query_logging_configuration::CreateQueryLoggingConfigurationError) -> Self {
+        match err {
+            crate::operation::create_query_logging_configuration::CreateQueryLoggingConfigurationError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::create_query_logging_configuration::CreateQueryLoggingConfigurationError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::create_query_logging_configuration::CreateQueryLoggingConfigurationError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::create_query_logging_configuration::CreateQueryLoggingConfigurationError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::create_query_logging_configuration::CreateQueryLoggingConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_rule_groups_namespace::CreateRuleGroupsNamespaceError, R>>
     for Error
 where
@@ -340,6 +384,53 @@ impl From<crate::operation::delete_logging_configuration::DeleteLoggingConfigura
         }
     }
 }
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::delete_query_logging_configuration::DeleteQueryLoggingConfigurationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::delete_query_logging_configuration::DeleteQueryLoggingConfigurationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_query_logging_configuration::DeleteQueryLoggingConfigurationError> for Error {
+    fn from(err: crate::operation::delete_query_logging_configuration::DeleteQueryLoggingConfigurationError) -> Self {
+        match err {
+            crate::operation::delete_query_logging_configuration::DeleteQueryLoggingConfigurationError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::delete_query_logging_configuration::DeleteQueryLoggingConfigurationError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::delete_query_logging_configuration::DeleteQueryLoggingConfigurationError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::delete_query_logging_configuration::DeleteQueryLoggingConfigurationError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::delete_query_logging_configuration::DeleteQueryLoggingConfigurationError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::delete_query_logging_configuration::DeleteQueryLoggingConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_rule_groups_namespace::DeleteRuleGroupsNamespaceError, R>>
     for Error
 where
@@ -520,6 +611,52 @@ impl From<crate::operation::describe_logging_configuration::DescribeLoggingConfi
                 Error::ValidationException(inner)
             }
             crate::operation::describe_logging_configuration::DescribeLoggingConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::describe_query_logging_configuration::DescribeQueryLoggingConfigurationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::describe_query_logging_configuration::DescribeQueryLoggingConfigurationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::describe_query_logging_configuration::DescribeQueryLoggingConfigurationError> for Error {
+    fn from(err: crate::operation::describe_query_logging_configuration::DescribeQueryLoggingConfigurationError) -> Self {
+        match err {
+            crate::operation::describe_query_logging_configuration::DescribeQueryLoggingConfigurationError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::describe_query_logging_configuration::DescribeQueryLoggingConfigurationError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::describe_query_logging_configuration::DescribeQueryLoggingConfigurationError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::describe_query_logging_configuration::DescribeQueryLoggingConfigurationError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::describe_query_logging_configuration::DescribeQueryLoggingConfigurationError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
         }
     }
 }
@@ -997,6 +1134,53 @@ impl From<crate::operation::update_logging_configuration::UpdateLoggingConfigura
                 Error::ValidationException(inner)
             }
             crate::operation::update_logging_configuration::UpdateLoggingConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::update_query_logging_configuration::UpdateQueryLoggingConfigurationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::update_query_logging_configuration::UpdateQueryLoggingConfigurationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_query_logging_configuration::UpdateQueryLoggingConfigurationError> for Error {
+    fn from(err: crate::operation::update_query_logging_configuration::UpdateQueryLoggingConfigurationError) -> Self {
+        match err {
+            crate::operation::update_query_logging_configuration::UpdateQueryLoggingConfigurationError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::update_query_logging_configuration::UpdateQueryLoggingConfigurationError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::update_query_logging_configuration::UpdateQueryLoggingConfigurationError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::update_query_logging_configuration::UpdateQueryLoggingConfigurationError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::update_query_logging_configuration::UpdateQueryLoggingConfigurationError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::update_query_logging_configuration::UpdateQueryLoggingConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

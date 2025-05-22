@@ -22,7 +22,9 @@ impl crate::operation::update_logging_configuration::builders::UpdateLoggingConf
 }
 /// Fluent builder constructing a request to `UpdateLoggingConfiguration`.
 ///
-/// <p>Updates the log group ARN or the workspace ID of the current logging configuration.</p>
+/// <p>Updates the log group ARN or the workspace ID of the current rules and alerting logging configuration.</p><note>
+/// <p>These logging configurations are only for rules and alerting logs.</p>
+/// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateLoggingConfigurationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

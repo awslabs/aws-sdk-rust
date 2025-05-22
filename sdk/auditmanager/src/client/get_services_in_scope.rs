@@ -4,7 +4,7 @@ impl super::Client {
     ///
     /// - The fluent builder takes no input, just [`send`](crate::operation::get_services_in_scope::builders::GetServicesInScopeFluentBuilder::send) it.
     /// - On success, responds with [`GetServicesInScopeOutput`](crate::operation::get_services_in_scope::GetServicesInScopeOutput) with field(s):
-    ///   - [`service_metadata(Option<Vec::<ServiceMetadata>>)`](crate::operation::get_services_in_scope::GetServicesInScopeOutput::service_metadata): <p>The metadata that's associated with the Amazon Web Service.</p>
+    ///   - [`service_metadata(Option<Vec::<ServiceMetadata>>)`](crate::operation::get_services_in_scope::GetServicesInScopeOutput::service_metadata): <p>The metadata that's associated with the Amazon Web Services service.</p>
     /// - On failure, responds with [`SdkError<GetServicesInScopeError>`](crate::operation::get_services_in_scope::GetServicesInScopeError)
     pub fn get_services_in_scope(&self) -> crate::operation::get_services_in_scope::builders::GetServicesInScopeFluentBuilder {
         crate::operation::get_services_in_scope::builders::GetServicesInScopeFluentBuilder::new(self.handle.clone())

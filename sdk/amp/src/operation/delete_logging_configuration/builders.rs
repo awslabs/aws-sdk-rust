@@ -22,7 +22,9 @@ impl crate::operation::delete_logging_configuration::builders::DeleteLoggingConf
 }
 /// Fluent builder constructing a request to `DeleteLoggingConfiguration`.
 ///
-/// <p>Deletes the logging configuration for a workspace.</p>
+/// <p>Deletes the rules and alerting logging configuration for a workspace.</p><note>
+/// <p>These logging configurations are only for rules and alerting logs.</p>
+/// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteLoggingConfigurationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

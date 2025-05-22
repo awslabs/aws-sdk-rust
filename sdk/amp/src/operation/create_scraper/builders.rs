@@ -24,7 +24,8 @@ impl crate::operation::create_scraper::builders::CreateScraperInputBuilder {
 ///
 /// <p>The <code>CreateScraper</code> operation creates a scraper to collect metrics. A scraper pulls metrics from Prometheus-compatible sources within an Amazon EKS cluster, and sends them to your Amazon Managed Service for Prometheus workspace. Scrapers are flexible, and can be configured to control what metrics are collected, the frequency of collection, what transformations are applied to the metrics, and more.</p>
 /// <p>An IAM role will be created for you that Amazon Managed Service for Prometheus uses to access the metrics in your cluster. You must configure this role with a policy that allows it to scrape metrics from your cluster. For more information, see <a href="https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-collector-how-to.html#AMP-collector-eks-setup">Configuring your Amazon EKS cluster</a> in the <i>Amazon Managed Service for Prometheus User Guide</i>.</p>
-/// <p>The <code>scrapeConfiguration</code> parameter contains the base-64 encoded YAML configuration for the scraper.</p><note>
+/// <p>The <code>scrapeConfiguration</code> parameter contains the base-64 encoded YAML configuration for the scraper.</p>
+/// <p>When creating a scraper, the service creates a <code>Network Interface</code> in each <b>Availability Zone</b> that are passed into <code>CreateScraper</code> through subnets. These network interfaces are used to connect to the Amazon EKS cluster within the VPC for scraping metrics.</p><note>
 /// <p>For more information about collectors, including what metrics are collected, and how to configure the scraper, see <a href="https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-collector-how-to.html">Using an Amazon Web Services managed collector</a> in the <i>Amazon Managed Service for Prometheus User Guide</i>.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

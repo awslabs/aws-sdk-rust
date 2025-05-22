@@ -206,6 +206,20 @@ impl UpdateClusterFluentBuilder {
     pub fn get_deletion_protection_enabled(&self) -> &::std::option::Option<bool> {
         self.inner.get_deletion_protection_enabled()
     }
+    /// <p>The KMS key that encrypts and protects the data on your cluster. You can specify the ARN, ID, or alias of an existing key or have Amazon Web Services create a default key for you.</p>
+    pub fn kms_encryption_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.kms_encryption_key(input.into());
+        self
+    }
+    /// <p>The KMS key that encrypts and protects the data on your cluster. You can specify the ARN, ID, or alias of an existing key or have Amazon Web Services create a default key for you.</p>
+    pub fn set_kms_encryption_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_kms_encryption_key(input);
+        self
+    }
+    /// <p>The KMS key that encrypts and protects the data on your cluster. You can specify the ARN, ID, or alias of an existing key or have Amazon Web Services create a default key for you.</p>
+    pub fn get_kms_encryption_key(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_kms_encryption_key()
+    }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Idempotency ensures that an API request completes only once. With an idempotent request, if the original request completes successfully. The subsequent retries with the same client token return the result from the original successful request and they have no additional effect.</p>
     /// <p>If you don't specify a client token, the Amazon Web Services SDK automatically generates one.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {

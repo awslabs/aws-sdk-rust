@@ -4,13 +4,17 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LoggingConfigurationStatus {
-    /// <p>The current status of the logging configuration.</p>
+    /// <p>The current status of the current rules and alerting logging configuration.</p><note>
+    /// <p>These logging configurations are only for rules and alerting logs.</p>
+    /// </note>
     pub status_code: crate::types::LoggingConfigurationStatusCode,
     /// <p>If failed, the reason for the failure.</p>
     pub status_reason: ::std::option::Option<::std::string::String>,
 }
 impl LoggingConfigurationStatus {
-    /// <p>The current status of the logging configuration.</p>
+    /// <p>The current status of the current rules and alerting logging configuration.</p><note>
+    /// <p>These logging configurations are only for rules and alerting logs.</p>
+    /// </note>
     pub fn status_code(&self) -> &crate::types::LoggingConfigurationStatusCode {
         &self.status_code
     }
@@ -34,18 +38,24 @@ pub struct LoggingConfigurationStatusBuilder {
     pub(crate) status_reason: ::std::option::Option<::std::string::String>,
 }
 impl LoggingConfigurationStatusBuilder {
-    /// <p>The current status of the logging configuration.</p>
+    /// <p>The current status of the current rules and alerting logging configuration.</p><note>
+    /// <p>These logging configurations are only for rules and alerting logs.</p>
+    /// </note>
     /// This field is required.
     pub fn status_code(mut self, input: crate::types::LoggingConfigurationStatusCode) -> Self {
         self.status_code = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The current status of the logging configuration.</p>
+    /// <p>The current status of the current rules and alerting logging configuration.</p><note>
+    /// <p>These logging configurations are only for rules and alerting logs.</p>
+    /// </note>
     pub fn set_status_code(mut self, input: ::std::option::Option<crate::types::LoggingConfigurationStatusCode>) -> Self {
         self.status_code = input;
         self
     }
-    /// <p>The current status of the logging configuration.</p>
+    /// <p>The current status of the current rules and alerting logging configuration.</p><note>
+    /// <p>These logging configurations are only for rules and alerting logs.</p>
+    /// </note>
     pub fn get_status_code(&self) -> &::std::option::Option<crate::types::LoggingConfigurationStatusCode> {
         &self.status_code
     }

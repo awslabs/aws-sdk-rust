@@ -108,17 +108,17 @@ impl GetIntegrationTablePropertiesFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The connection ARN of the source, or the database ARN of the target.</p>
+    /// <p>The Amazon Resource Name (ARN) of the target table for which to retrieve integration table properties. Currently, this API only supports retrieving properties for target tables, and the provided ARN should be the ARN of the target table in the Glue Data Catalog. Support for retrieving integration table properties for source connections (using the connection ARN) is not yet implemented and will be added in a future release.</p>
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_arn(input.into());
         self
     }
-    /// <p>The connection ARN of the source, or the database ARN of the target.</p>
+    /// <p>The Amazon Resource Name (ARN) of the target table for which to retrieve integration table properties. Currently, this API only supports retrieving properties for target tables, and the provided ARN should be the ARN of the target table in the Glue Data Catalog. Support for retrieving integration table properties for source connections (using the connection ARN) is not yet implemented and will be added in a future release.</p>
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_resource_arn(input);
         self
     }
-    /// <p>The connection ARN of the source, or the database ARN of the target.</p>
+    /// <p>The Amazon Resource Name (ARN) of the target table for which to retrieve integration table properties. Currently, this API only supports retrieving properties for target tables, and the provided ARN should be the ARN of the target table in the Glue Data Catalog. Support for retrieving integration table properties for source connections (using the connection ARN) is not yet implemented and will be added in a future release.</p>
     pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_resource_arn()
     }

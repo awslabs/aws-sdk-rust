@@ -174,6 +174,20 @@ impl CreateClusterFluentBuilder {
     pub fn get_deletion_protection_enabled(&self) -> &::std::option::Option<bool> {
         self.inner.get_deletion_protection_enabled()
     }
+    /// <p>The KMS key that encrypts and protects the data on your cluster. You can specify the ARN, ID, or alias of an existing key or have Amazon Web Services create a default key for you.</p>
+    pub fn kms_encryption_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.kms_encryption_key(input.into());
+        self
+    }
+    /// <p>The KMS key that encrypts and protects the data on your cluster. You can specify the ARN, ID, or alias of an existing key or have Amazon Web Services create a default key for you.</p>
+    pub fn set_kms_encryption_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_kms_encryption_key(input);
+        self
+    }
+    /// <p>The KMS key that encrypts and protects the data on your cluster. You can specify the ARN, ID, or alias of an existing key or have Amazon Web Services create a default key for you.</p>
+    pub fn get_kms_encryption_key(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_kms_encryption_key()
+    }
     ///
     /// Adds a key-value pair to `tags`.
     ///

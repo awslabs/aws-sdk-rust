@@ -9,6 +9,9 @@ pub fn ser_integration_partition(
     if let Some(var_2) = &input.function_spec {
         object.key("FunctionSpec").string(var_2.as_str());
     }
+    if let Some(var_3) = &input.conversion_spec {
+        object.key("ConversionSpec").string(var_3.as_str());
+    }
     Ok(())
 }
 
@@ -36,6 +39,13 @@ where
                         }
                         "FunctionSpec" => {
                             builder = builder.set_function_spec(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "ConversionSpec" => {
+                            builder = builder.set_conversion_spec(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,

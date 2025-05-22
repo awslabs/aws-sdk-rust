@@ -7,11 +7,23 @@ pub use crate::types::_cluster_status::ClusterStatus;
 
 pub use crate::types::_multi_region_properties::MultiRegionProperties;
 
+pub use crate::types::_encryption_details::EncryptionDetails;
+
+pub use crate::types::_encryption_status::EncryptionStatus;
+
+pub use crate::types::_encryption_type::EncryptionType;
+
 pub use crate::types::_cluster_summary::ClusterSummary;
 
 mod _cluster_status;
 
 mod _cluster_summary;
+
+mod _encryption_details;
+
+mod _encryption_status;
+
+mod _encryption_type;
 
 mod _multi_region_properties;
 

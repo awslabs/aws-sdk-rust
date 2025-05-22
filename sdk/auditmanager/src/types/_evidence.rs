@@ -10,7 +10,7 @@ pub struct Evidence {
     pub evidence_aws_account_id: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp that represents when the evidence was collected.</p>
     pub time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>The Amazon Web Service that the evidence is collected from.</p>
+    /// <p>The Amazon Web Services service that the evidence is collected from.</p>
     pub event_source: ::std::option::Option<::std::string::String>,
     /// <p>The name of the evidence event.</p>
     pub event_name: ::std::option::Option<::std::string::String>,
@@ -56,7 +56,7 @@ impl Evidence {
     pub fn time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.time.as_ref()
     }
-    /// <p>The Amazon Web Service that the evidence is collected from.</p>
+    /// <p>The Amazon Web Services service that the evidence is collected from.</p>
     pub fn event_source(&self) -> ::std::option::Option<&str> {
         self.event_source.as_deref()
     }
@@ -185,17 +185,17 @@ impl EvidenceBuilder {
     pub fn get_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.time
     }
-    /// <p>The Amazon Web Service that the evidence is collected from.</p>
+    /// <p>The Amazon Web Services service that the evidence is collected from.</p>
     pub fn event_source(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.event_source = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Web Service that the evidence is collected from.</p>
+    /// <p>The Amazon Web Services service that the evidence is collected from.</p>
     pub fn set_event_source(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.event_source = input;
         self
     }
-    /// <p>The Amazon Web Service that the evidence is collected from.</p>
+    /// <p>The Amazon Web Services service that the evidence is collected from.</p>
     pub fn get_event_source(&self) -> &::std::option::Option<::std::string::String> {
         &self.event_source
     }

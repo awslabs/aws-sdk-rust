@@ -176,6 +176,9 @@ pub(crate) fn de_create_cluster(
                 "deletionProtectionEnabled" => {
                     builder = builder.set_deletion_protection_enabled(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                 }
+                "encryptionDetails" => {
+                    builder = builder.set_encryption_details(crate::protocol_serde::shape_encryption_details::de_encryption_details(tokens)?);
+                }
                 "identifier" => {
                     builder = builder.set_identifier(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

@@ -9,11 +9,14 @@ pub fn ser_update_cluster_input_input(
     if let Some(var_2) = &input.deletion_protection_enabled {
         object.key("deletionProtectionEnabled").boolean(*var_2);
     }
-    if let Some(var_3) = &input.multi_region_properties {
+    if let Some(var_3) = &input.kms_encryption_key {
+        object.key("kmsEncryptionKey").string(var_3.as_str());
+    }
+    if let Some(var_4) = &input.multi_region_properties {
         #[allow(unused_mut)]
-        let mut object_4 = object.key("multiRegionProperties").start_object();
-        crate::protocol_serde::shape_multi_region_properties::ser_multi_region_properties(&mut object_4, var_3)?;
-        object_4.finish();
+        let mut object_5 = object.key("multiRegionProperties").start_object();
+        crate::protocol_serde::shape_multi_region_properties::ser_multi_region_properties(&mut object_5, var_4)?;
+        object_5.finish();
     }
     Ok(())
 }

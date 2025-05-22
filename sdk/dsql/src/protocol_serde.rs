@@ -71,6 +71,8 @@ pub(crate) mod shape_validation_exception;
 
 pub(crate) mod shape_cluster_list;
 
+pub(crate) mod shape_encryption_details;
+
 pub(crate) mod shape_multi_region_properties;
 
 pub(crate) mod shape_tag_map;

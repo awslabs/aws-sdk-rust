@@ -142,17 +142,17 @@ impl UpdateWorkspaceConfigurationFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_limits_per_label_set`](Self::set_limits_per_label_set).
     ///
-    /// <p>This is an array of structures, where each structure defines a label set for the workspace, and defines the ingestion limit for active time series for each of those label sets. Each label name in a label set must be unique.</p>
+    /// <p>This is an array of structures, where each structure defines a label set for the workspace, and defines the active time series limit for each of those label sets. Each label name in a label set must be unique.</p>
     pub fn limits_per_label_set(mut self, input: crate::types::LimitsPerLabelSet) -> Self {
         self.inner = self.inner.limits_per_label_set(input);
         self
     }
-    /// <p>This is an array of structures, where each structure defines a label set for the workspace, and defines the ingestion limit for active time series for each of those label sets. Each label name in a label set must be unique.</p>
+    /// <p>This is an array of structures, where each structure defines a label set for the workspace, and defines the active time series limit for each of those label sets. Each label name in a label set must be unique.</p>
     pub fn set_limits_per_label_set(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LimitsPerLabelSet>>) -> Self {
         self.inner = self.inner.set_limits_per_label_set(input);
         self
     }
-    /// <p>This is an array of structures, where each structure defines a label set for the workspace, and defines the ingestion limit for active time series for each of those label sets. Each label name in a label set must be unique.</p>
+    /// <p>This is an array of structures, where each structure defines a label set for the workspace, and defines the active time series limit for each of those label sets. Each label name in a label set must be unique.</p>
     pub fn get_limits_per_label_set(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LimitsPerLabelSet>> {
         self.inner.get_limits_per_label_set()
     }

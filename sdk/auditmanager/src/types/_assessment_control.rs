@@ -9,6 +9,10 @@ pub struct AssessmentControl {
     /// <p>The name of the control.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The description of the control.</p>
+    #[deprecated(
+        note = "This data type will be deprecated on May 19, 2025. To view the assessment control description, use GetControl.",
+        since = "2025-05-19"
+    )]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The status of the control.</p>
     pub status: ::std::option::Option<crate::types::ControlStatus>,
@@ -33,6 +37,10 @@ impl AssessmentControl {
         self.name.as_deref()
     }
     /// <p>The description of the control.</p>
+    #[deprecated(
+        note = "This data type will be deprecated on May 19, 2025. To view the assessment control description, use GetControl.",
+        since = "2025-05-19"
+    )]
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
@@ -131,16 +139,28 @@ impl AssessmentControlBuilder {
         &self.name
     }
     /// <p>The description of the control.</p>
+    #[deprecated(
+        note = "This data type will be deprecated on May 19, 2025. To view the assessment control description, use GetControl.",
+        since = "2025-05-19"
+    )]
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The description of the control.</p>
+    #[deprecated(
+        note = "This data type will be deprecated on May 19, 2025. To view the assessment control description, use GetControl.",
+        since = "2025-05-19"
+    )]
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
     /// <p>The description of the control.</p>
+    #[deprecated(
+        note = "This data type will be deprecated on May 19, 2025. To view the assessment control description, use GetControl.",
+        since = "2025-05-19"
+    )]
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }

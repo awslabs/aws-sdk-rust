@@ -29,6 +29,18 @@ pub use crate::types::_rule_groups_namespace_description::RuleGroupsNamespaceDes
 
 pub use crate::types::_rule_groups_namespace_summary::RuleGroupsNamespaceSummary;
 
+pub use crate::types::_query_logging_configuration_status::QueryLoggingConfigurationStatus;
+
+pub use crate::types::_query_logging_configuration_status_code::QueryLoggingConfigurationStatusCode;
+
+pub use crate::types::_logging_destination::LoggingDestination;
+
+pub use crate::types::_logging_filter::LoggingFilter;
+
+pub use crate::types::_cloud_watch_log_destination::CloudWatchLogDestination;
+
+pub use crate::types::_query_logging_configuration_metadata::QueryLoggingConfigurationMetadata;
+
 pub use crate::types::_logging_configuration_status::LoggingConfigurationStatus;
 
 pub use crate::types::_logging_configuration_status_code::LoggingConfigurationStatusCode;
@@ -69,6 +81,8 @@ mod _alert_manager_definition_status_code;
 
 mod _amp_configuration;
 
+mod _cloud_watch_log_destination;
+
 mod _destination;
 
 mod _eks_configuration;
@@ -82,6 +96,16 @@ mod _logging_configuration_metadata;
 mod _logging_configuration_status;
 
 mod _logging_configuration_status_code;
+
+mod _logging_destination;
+
+mod _logging_filter;
+
+mod _query_logging_configuration_metadata;
+
+mod _query_logging_configuration_status;
+
+mod _query_logging_configuration_status_code;
 
 mod _role_configuration;
 

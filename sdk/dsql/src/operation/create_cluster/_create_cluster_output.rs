@@ -14,6 +14,8 @@ pub struct CreateClusterOutput {
     pub creation_time: ::aws_smithy_types::DateTime,
     /// <p>The multi-Region cluster configuration details that were set during cluster creation</p>
     pub multi_region_properties: ::std::option::Option<crate::types::MultiRegionProperties>,
+    /// <p>The encryption configuration for the cluster that was specified during the creation process, including the KMS key identifier and encryption state.</p>
+    pub encryption_details: ::std::option::Option<crate::types::EncryptionDetails>,
     /// <p>Whether deletion protection is enabled on this cluster.</p>
     pub deletion_protection_enabled: bool,
     _request_id: Option<String>,
@@ -41,6 +43,10 @@ impl CreateClusterOutput {
     pub fn multi_region_properties(&self) -> ::std::option::Option<&crate::types::MultiRegionProperties> {
         self.multi_region_properties.as_ref()
     }
+    /// <p>The encryption configuration for the cluster that was specified during the creation process, including the KMS key identifier and encryption state.</p>
+    pub fn encryption_details(&self) -> ::std::option::Option<&crate::types::EncryptionDetails> {
+        self.encryption_details.as_ref()
+    }
     /// <p>Whether deletion protection is enabled on this cluster.</p>
     pub fn deletion_protection_enabled(&self) -> bool {
         self.deletion_protection_enabled
@@ -67,6 +73,7 @@ pub struct CreateClusterOutputBuilder {
     pub(crate) status: ::std::option::Option<crate::types::ClusterStatus>,
     pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) multi_region_properties: ::std::option::Option<crate::types::MultiRegionProperties>,
+    pub(crate) encryption_details: ::std::option::Option<crate::types::EncryptionDetails>,
     pub(crate) deletion_protection_enabled: ::std::option::Option<bool>,
     _request_id: Option<String>,
 }
@@ -145,6 +152,20 @@ impl CreateClusterOutputBuilder {
     pub fn get_multi_region_properties(&self) -> &::std::option::Option<crate::types::MultiRegionProperties> {
         &self.multi_region_properties
     }
+    /// <p>The encryption configuration for the cluster that was specified during the creation process, including the KMS key identifier and encryption state.</p>
+    pub fn encryption_details(mut self, input: crate::types::EncryptionDetails) -> Self {
+        self.encryption_details = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The encryption configuration for the cluster that was specified during the creation process, including the KMS key identifier and encryption state.</p>
+    pub fn set_encryption_details(mut self, input: ::std::option::Option<crate::types::EncryptionDetails>) -> Self {
+        self.encryption_details = input;
+        self
+    }
+    /// <p>The encryption configuration for the cluster that was specified during the creation process, including the KMS key identifier and encryption state.</p>
+    pub fn get_encryption_details(&self) -> &::std::option::Option<crate::types::EncryptionDetails> {
+        &self.encryption_details
+    }
     /// <p>Whether deletion protection is enabled on this cluster.</p>
     /// This field is required.
     pub fn deletion_protection_enabled(mut self, input: bool) -> Self {
@@ -205,6 +226,7 @@ impl CreateClusterOutputBuilder {
                 )
             })?,
             multi_region_properties: self.multi_region_properties,
+            encryption_details: self.encryption_details,
             deletion_protection_enabled: self.deletion_protection_enabled.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "deletion_protection_enabled",

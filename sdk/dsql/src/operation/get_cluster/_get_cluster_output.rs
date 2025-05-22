@@ -18,6 +18,8 @@ pub struct GetClusterOutput {
     pub multi_region_properties: ::std::option::Option<crate::types::MultiRegionProperties>,
     /// <p>Map of tags.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    /// <p>The current encryption configuration details for the cluster.</p>
+    pub encryption_details: ::std::option::Option<crate::types::EncryptionDetails>,
     _request_id: Option<String>,
 }
 impl GetClusterOutput {
@@ -51,6 +53,10 @@ impl GetClusterOutput {
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
+    /// <p>The current encryption configuration details for the cluster.</p>
+    pub fn encryption_details(&self) -> ::std::option::Option<&crate::types::EncryptionDetails> {
+        self.encryption_details.as_ref()
+    }
 }
 impl ::aws_types::request_id::RequestId for GetClusterOutput {
     fn request_id(&self) -> Option<&str> {
@@ -75,6 +81,7 @@ pub struct GetClusterOutputBuilder {
     pub(crate) deletion_protection_enabled: ::std::option::Option<bool>,
     pub(crate) multi_region_properties: ::std::option::Option<crate::types::MultiRegionProperties>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) encryption_details: ::std::option::Option<crate::types::EncryptionDetails>,
     _request_id: Option<String>,
 }
 impl GetClusterOutputBuilder {
@@ -187,6 +194,20 @@ impl GetClusterOutputBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
+    /// <p>The current encryption configuration details for the cluster.</p>
+    pub fn encryption_details(mut self, input: crate::types::EncryptionDetails) -> Self {
+        self.encryption_details = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The current encryption configuration details for the cluster.</p>
+    pub fn set_encryption_details(mut self, input: ::std::option::Option<crate::types::EncryptionDetails>) -> Self {
+        self.encryption_details = input;
+        self
+    }
+    /// <p>The current encryption configuration details for the cluster.</p>
+    pub fn get_encryption_details(&self) -> &::std::option::Option<crate::types::EncryptionDetails> {
+        &self.encryption_details
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -237,6 +258,7 @@ impl GetClusterOutputBuilder {
             })?,
             multi_region_properties: self.multi_region_properties,
             tags: self.tags,
+            encryption_details: self.encryption_details,
             _request_id: self._request_id,
         })
     }

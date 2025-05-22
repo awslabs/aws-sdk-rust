@@ -7,6 +7,9 @@ pub mod create_alert_manager_definition;
 /// Types for the `CreateLoggingConfiguration` operation.
 pub mod create_logging_configuration;
 
+/// Types for the `CreateQueryLoggingConfiguration` operation.
+pub mod create_query_logging_configuration;
+
 /// Types for the `CreateRuleGroupsNamespace` operation.
 pub mod create_rule_groups_namespace;
 
@@ -22,6 +25,9 @@ pub mod delete_alert_manager_definition;
 /// Types for the `DeleteLoggingConfiguration` operation.
 pub mod delete_logging_configuration;
 
+/// Types for the `DeleteQueryLoggingConfiguration` operation.
+pub mod delete_query_logging_configuration;
+
 /// Types for the `DeleteRuleGroupsNamespace` operation.
 pub mod delete_rule_groups_namespace;
 
@@ -36,6 +42,9 @@ pub mod describe_alert_manager_definition;
 
 /// Types for the `DescribeLoggingConfiguration` operation.
 pub mod describe_logging_configuration;
+
+/// Types for the `DescribeQueryLoggingConfiguration` operation.
+pub mod describe_query_logging_configuration;
 
 /// Types for the `DescribeRuleGroupsNamespace` operation.
 pub mod describe_rule_groups_namespace;
@@ -78,6 +87,9 @@ pub mod untag_resource;
 
 /// Types for the `UpdateLoggingConfiguration` operation.
 pub mod update_logging_configuration;
+
+/// Types for the `UpdateQueryLoggingConfiguration` operation.
+pub mod update_query_logging_configuration;
 
 /// Types for the `UpdateScraper` operation.
 pub mod update_scraper;

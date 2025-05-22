@@ -3,4 +3,6 @@ pub use crate::types::_validation_exception_field::ValidationExceptionFieldBuild
 
 pub use crate::types::_multi_region_properties::MultiRegionPropertiesBuilder;
 
+pub use crate::types::_encryption_details::EncryptionDetailsBuilder;
+
 pub use crate::types::_cluster_summary::ClusterSummaryBuilder;
