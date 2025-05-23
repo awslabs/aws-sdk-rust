@@ -24,6 +24,7 @@
 ///     AwsRegion::ApSoutheast3 => { /* ... */ },
 ///     AwsRegion::ApSoutheast4 => { /* ... */ },
 ///     AwsRegion::ApSoutheast5 => { /* ... */ },
+///     AwsRegion::ApSoutheast7 => { /* ... */ },
 ///     AwsRegion::CaCentral1 => { /* ... */ },
 ///     AwsRegion::CaWest1 => { /* ... */ },
 ///     AwsRegion::CnNorth1 => { /* ... */ },
@@ -39,6 +40,7 @@
 ///     AwsRegion::IlCentral1 => { /* ... */ },
 ///     AwsRegion::MeCentral1 => { /* ... */ },
 ///     AwsRegion::MeSouth1 => { /* ... */ },
+///     AwsRegion::MxCentral1 => { /* ... */ },
 ///     AwsRegion::SaEast1 => { /* ... */ },
 ///     AwsRegion::UsEast1 => { /* ... */ },
 ///     AwsRegion::UsEast2 => { /* ... */ },
@@ -97,6 +99,8 @@ pub enum AwsRegion {
     #[allow(missing_docs)] // documentation missing in model
     ApSoutheast5,
     #[allow(missing_docs)] // documentation missing in model
+    ApSoutheast7,
+    #[allow(missing_docs)] // documentation missing in model
     CaCentral1,
     #[allow(missing_docs)] // documentation missing in model
     CaWest1,
@@ -127,6 +131,8 @@ pub enum AwsRegion {
     #[allow(missing_docs)] // documentation missing in model
     MeSouth1,
     #[allow(missing_docs)] // documentation missing in model
+    MxCentral1,
+    #[allow(missing_docs)] // documentation missing in model
     SaEast1,
     #[allow(missing_docs)] // documentation missing in model
     UsEast1,
@@ -155,6 +161,7 @@ impl ::std::convert::From<&str> for AwsRegion {
             "ap-southeast-3" => AwsRegion::ApSoutheast3,
             "ap-southeast-4" => AwsRegion::ApSoutheast4,
             "ap-southeast-5" => AwsRegion::ApSoutheast5,
+            "ap-southeast-7" => AwsRegion::ApSoutheast7,
             "ca-central-1" => AwsRegion::CaCentral1,
             "ca-west-1" => AwsRegion::CaWest1,
             "cn-north-1" => AwsRegion::CnNorth1,
@@ -170,6 +177,7 @@ impl ::std::convert::From<&str> for AwsRegion {
             "il-central-1" => AwsRegion::IlCentral1,
             "me-central-1" => AwsRegion::MeCentral1,
             "me-south-1" => AwsRegion::MeSouth1,
+            "mx-central-1" => AwsRegion::MxCentral1,
             "sa-east-1" => AwsRegion::SaEast1,
             "us-east-1" => AwsRegion::UsEast1,
             "us-east-2" => AwsRegion::UsEast2,
@@ -202,6 +210,7 @@ impl AwsRegion {
             AwsRegion::ApSoutheast3 => "ap-southeast-3",
             AwsRegion::ApSoutheast4 => "ap-southeast-4",
             AwsRegion::ApSoutheast5 => "ap-southeast-5",
+            AwsRegion::ApSoutheast7 => "ap-southeast-7",
             AwsRegion::CaCentral1 => "ca-central-1",
             AwsRegion::CaWest1 => "ca-west-1",
             AwsRegion::CnNorth1 => "cn-north-1",
@@ -217,6 +226,7 @@ impl AwsRegion {
             AwsRegion::IlCentral1 => "il-central-1",
             AwsRegion::MeCentral1 => "me-central-1",
             AwsRegion::MeSouth1 => "me-south-1",
+            AwsRegion::MxCentral1 => "mx-central-1",
             AwsRegion::SaEast1 => "sa-east-1",
             AwsRegion::UsEast1 => "us-east-1",
             AwsRegion::UsEast2 => "us-east-2",
@@ -240,6 +250,7 @@ impl AwsRegion {
             "ap-southeast-3",
             "ap-southeast-4",
             "ap-southeast-5",
+            "ap-southeast-7",
             "ca-central-1",
             "ca-west-1",
             "cn-north-1",
@@ -255,6 +266,7 @@ impl AwsRegion {
             "il-central-1",
             "me-central-1",
             "me-south-1",
+            "mx-central-1",
             "sa-east-1",
             "us-east-1",
             "us-east-2",
@@ -295,6 +307,7 @@ impl ::std::fmt::Display for AwsRegion {
             AwsRegion::ApSoutheast3 => write!(f, "ap-southeast-3"),
             AwsRegion::ApSoutheast4 => write!(f, "ap-southeast-4"),
             AwsRegion::ApSoutheast5 => write!(f, "ap-southeast-5"),
+            AwsRegion::ApSoutheast7 => write!(f, "ap-southeast-7"),
             AwsRegion::CaCentral1 => write!(f, "ca-central-1"),
             AwsRegion::CaWest1 => write!(f, "ca-west-1"),
             AwsRegion::CnNorth1 => write!(f, "cn-north-1"),
@@ -310,6 +323,7 @@ impl ::std::fmt::Display for AwsRegion {
             AwsRegion::IlCentral1 => write!(f, "il-central-1"),
             AwsRegion::MeCentral1 => write!(f, "me-central-1"),
             AwsRegion::MeSouth1 => write!(f, "me-south-1"),
+            AwsRegion::MxCentral1 => write!(f, "mx-central-1"),
             AwsRegion::SaEast1 => write!(f, "sa-east-1"),
             AwsRegion::UsEast1 => write!(f, "us-east-1"),
             AwsRegion::UsEast2 => write!(f, "us-east-2"),
