@@ -181,4 +181,18 @@ impl ModifyVpnTunnelOptionsFluentBuilder {
     pub fn get_skip_tunnel_replacement(&self) -> &::std::option::Option<bool> {
         self.inner.get_skip_tunnel_replacement()
     }
+    /// <p>Specifies the storage mode for the pre-shared key (PSK). Valid values are <code>Standard</code> (stored in Site-to-Site VPN service) or <code>SecretsManager</code> (stored in Amazon Web Services Secrets Manager).</p>
+    pub fn pre_shared_key_storage(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.pre_shared_key_storage(input.into());
+        self
+    }
+    /// <p>Specifies the storage mode for the pre-shared key (PSK). Valid values are <code>Standard</code> (stored in Site-to-Site VPN service) or <code>SecretsManager</code> (stored in Amazon Web Services Secrets Manager).</p>
+    pub fn set_pre_shared_key_storage(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_pre_shared_key_storage(input);
+        self
+    }
+    /// <p>Specifies the storage mode for the pre-shared key (PSK). Valid values are <code>Standard</code> (stored in Site-to-Site VPN service) or <code>SecretsManager</code> (stored in Amazon Web Services Secrets Manager).</p>
+    pub fn get_pre_shared_key_storage(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_pre_shared_key_storage()
+    }
 }

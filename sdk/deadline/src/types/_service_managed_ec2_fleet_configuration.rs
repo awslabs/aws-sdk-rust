@@ -8,6 +8,8 @@ pub struct ServiceManagedEc2FleetConfiguration {
     pub instance_capabilities: ::std::option::Option<crate::types::ServiceManagedEc2InstanceCapabilities>,
     /// <p>The Amazon EC2 market type.</p>
     pub instance_market_options: ::std::option::Option<crate::types::ServiceManagedEc2InstanceMarketOptions>,
+    /// <p>The storage profile ID.</p>
+    pub storage_profile_id: ::std::option::Option<::std::string::String>,
 }
 impl ServiceManagedEc2FleetConfiguration {
     /// <p>The Amazon EC2 instance capabilities.</p>
@@ -17,6 +19,10 @@ impl ServiceManagedEc2FleetConfiguration {
     /// <p>The Amazon EC2 market type.</p>
     pub fn instance_market_options(&self) -> ::std::option::Option<&crate::types::ServiceManagedEc2InstanceMarketOptions> {
         self.instance_market_options.as_ref()
+    }
+    /// <p>The storage profile ID.</p>
+    pub fn storage_profile_id(&self) -> ::std::option::Option<&str> {
+        self.storage_profile_id.as_deref()
     }
 }
 impl ServiceManagedEc2FleetConfiguration {
@@ -32,6 +38,7 @@ impl ServiceManagedEc2FleetConfiguration {
 pub struct ServiceManagedEc2FleetConfigurationBuilder {
     pub(crate) instance_capabilities: ::std::option::Option<crate::types::ServiceManagedEc2InstanceCapabilities>,
     pub(crate) instance_market_options: ::std::option::Option<crate::types::ServiceManagedEc2InstanceMarketOptions>,
+    pub(crate) storage_profile_id: ::std::option::Option<::std::string::String>,
 }
 impl ServiceManagedEc2FleetConfigurationBuilder {
     /// <p>The Amazon EC2 instance capabilities.</p>
@@ -64,11 +71,26 @@ impl ServiceManagedEc2FleetConfigurationBuilder {
     pub fn get_instance_market_options(&self) -> &::std::option::Option<crate::types::ServiceManagedEc2InstanceMarketOptions> {
         &self.instance_market_options
     }
+    /// <p>The storage profile ID.</p>
+    pub fn storage_profile_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.storage_profile_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The storage profile ID.</p>
+    pub fn set_storage_profile_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.storage_profile_id = input;
+        self
+    }
+    /// <p>The storage profile ID.</p>
+    pub fn get_storage_profile_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.storage_profile_id
+    }
     /// Consumes the builder and constructs a [`ServiceManagedEc2FleetConfiguration`](crate::types::ServiceManagedEc2FleetConfiguration).
     pub fn build(self) -> crate::types::ServiceManagedEc2FleetConfiguration {
         crate::types::ServiceManagedEc2FleetConfiguration {
             instance_capabilities: self.instance_capabilities,
             instance_market_options: self.instance_market_options,
+            storage_profile_id: self.storage_profile_id,
         }
     }
 }

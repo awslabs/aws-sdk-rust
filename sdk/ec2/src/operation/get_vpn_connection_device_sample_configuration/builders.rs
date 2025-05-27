@@ -157,6 +157,20 @@ impl GetVpnConnectionDeviceSampleConfigurationFluentBuilder {
     pub fn get_internet_key_exchange_version(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_internet_key_exchange_version()
     }
+    /// <p>The type of sample configuration to generate. Valid values are "compatibility" (includes IKEv1) or "recommended" (throws UnsupportedOperationException for IKEv1).</p>
+    pub fn sample_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.sample_type(input.into());
+        self
+    }
+    /// <p>The type of sample configuration to generate. Valid values are "compatibility" (includes IKEv1) or "recommended" (throws UnsupportedOperationException for IKEv1).</p>
+    pub fn set_sample_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_sample_type(input);
+        self
+    }
+    /// <p>The type of sample configuration to generate. Valid values are "compatibility" (includes IKEv1) or "recommended" (throws UnsupportedOperationException for IKEv1).</p>
+    pub fn get_sample_type(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_sample_type()
+    }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.inner = self.inner.dry_run(input);

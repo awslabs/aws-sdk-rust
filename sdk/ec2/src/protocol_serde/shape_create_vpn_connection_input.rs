@@ -39,14 +39,19 @@ pub fn ser_create_vpn_connection_input_input_input(
         }
     }
     #[allow(unused_mut)]
-    let mut scope_14 = writer.prefix("DryRun");
-    if let Some(var_15) = &input.dry_run {
-        scope_14.boolean(*var_15);
+    let mut scope_14 = writer.prefix("PreSharedKeyStorage");
+    if let Some(var_15) = &input.pre_shared_key_storage {
+        scope_14.string(var_15);
     }
     #[allow(unused_mut)]
-    let mut scope_16 = writer.prefix("Options");
-    if let Some(var_17) = &input.options {
-        crate::protocol_serde::shape_vpn_connection_options_specification::ser_vpn_connection_options_specification(scope_16, var_17)?;
+    let mut scope_16 = writer.prefix("DryRun");
+    if let Some(var_17) = &input.dry_run {
+        scope_16.boolean(*var_17);
+    }
+    #[allow(unused_mut)]
+    let mut scope_18 = writer.prefix("Options");
+    if let Some(var_19) = &input.options {
+        crate::protocol_serde::shape_vpn_connection_options_specification::ser_vpn_connection_options_specification(scope_18, var_19)?;
     }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))

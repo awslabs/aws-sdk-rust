@@ -490,6 +490,42 @@ impl From<crate::operation::get_cost_and_usage::GetCostAndUsageError> for Error 
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_cost_and_usage_comparisons::GetCostAndUsageComparisonsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_cost_and_usage_comparisons::GetCostAndUsageComparisonsError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_cost_and_usage_comparisons::GetCostAndUsageComparisonsError> for Error {
+    fn from(err: crate::operation::get_cost_and_usage_comparisons::GetCostAndUsageComparisonsError) -> Self {
+        match err {
+            crate::operation::get_cost_and_usage_comparisons::GetCostAndUsageComparisonsError::DataUnavailableException(inner) => {
+                Error::DataUnavailableException(inner)
+            }
+            crate::operation::get_cost_and_usage_comparisons::GetCostAndUsageComparisonsError::InvalidNextTokenException(inner) => {
+                Error::InvalidNextTokenException(inner)
+            }
+            crate::operation::get_cost_and_usage_comparisons::GetCostAndUsageComparisonsError::LimitExceededException(inner) => {
+                Error::LimitExceededException(inner)
+            }
+            crate::operation::get_cost_and_usage_comparisons::GetCostAndUsageComparisonsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_cost_and_usage_comparisons::GetCostAndUsageComparisonsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R>
     From<
         ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_cost_and_usage_with_resources::GetCostAndUsageWithResourcesError, R>,
@@ -565,6 +601,42 @@ impl From<crate::operation::get_cost_categories::GetCostCategoriesError> for Err
                 Error::ResourceNotFoundException(inner)
             }
             crate::operation::get_cost_categories::GetCostCategoriesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_cost_comparison_drivers::GetCostComparisonDriversError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_cost_comparison_drivers::GetCostComparisonDriversError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_cost_comparison_drivers::GetCostComparisonDriversError> for Error {
+    fn from(err: crate::operation::get_cost_comparison_drivers::GetCostComparisonDriversError) -> Self {
+        match err {
+            crate::operation::get_cost_comparison_drivers::GetCostComparisonDriversError::DataUnavailableException(inner) => {
+                Error::DataUnavailableException(inner)
+            }
+            crate::operation::get_cost_comparison_drivers::GetCostComparisonDriversError::InvalidNextTokenException(inner) => {
+                Error::InvalidNextTokenException(inner)
+            }
+            crate::operation::get_cost_comparison_drivers::GetCostComparisonDriversError::LimitExceededException(inner) => {
+                Error::LimitExceededException(inner)
+            }
+            crate::operation::get_cost_comparison_drivers::GetCostComparisonDriversError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_cost_comparison_drivers::GetCostComparisonDriversError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

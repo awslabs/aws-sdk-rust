@@ -22,6 +22,8 @@ pub struct VpnConnection {
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>Information about the VPN tunnel.</p>
     pub vgw_telemetry: ::std::option::Option<::std::vec::Vec<crate::types::VgwTelemetry>>,
+    /// <p>The Amazon Resource Name (ARN) of the Secrets Manager secret storing the pre-shared key(s) for the VPN connection.</p>
+    pub pre_shared_key_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the VPN connection.</p>
     pub vpn_connection_id: ::std::option::Option<::std::string::String>,
     /// <p>The current state of the VPN connection.</p>
@@ -78,6 +80,10 @@ impl VpnConnection {
     pub fn vgw_telemetry(&self) -> &[crate::types::VgwTelemetry] {
         self.vgw_telemetry.as_deref().unwrap_or_default()
     }
+    /// <p>The Amazon Resource Name (ARN) of the Secrets Manager secret storing the pre-shared key(s) for the VPN connection.</p>
+    pub fn pre_shared_key_arn(&self) -> ::std::option::Option<&str> {
+        self.pre_shared_key_arn.as_deref()
+    }
     /// <p>The ID of the VPN connection.</p>
     pub fn vpn_connection_id(&self) -> ::std::option::Option<&str> {
         self.vpn_connection_id.as_deref()
@@ -115,6 +121,7 @@ impl ::std::fmt::Debug for VpnConnection {
         formatter.field("routes", &self.routes);
         formatter.field("tags", &self.tags);
         formatter.field("vgw_telemetry", &self.vgw_telemetry);
+        formatter.field("pre_shared_key_arn", &self.pre_shared_key_arn);
         formatter.field("vpn_connection_id", &self.vpn_connection_id);
         formatter.field("state", &self.state);
         formatter.field("customer_gateway_configuration", &"*** Sensitive Data Redacted ***");
@@ -144,6 +151,7 @@ pub struct VpnConnectionBuilder {
     pub(crate) routes: ::std::option::Option<::std::vec::Vec<crate::types::VpnStaticRoute>>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     pub(crate) vgw_telemetry: ::std::option::Option<::std::vec::Vec<crate::types::VgwTelemetry>>,
+    pub(crate) pre_shared_key_arn: ::std::option::Option<::std::string::String>,
     pub(crate) vpn_connection_id: ::std::option::Option<::std::string::String>,
     pub(crate) state: ::std::option::Option<crate::types::VpnState>,
     pub(crate) customer_gateway_configuration: ::std::option::Option<::std::string::String>,
@@ -296,6 +304,20 @@ impl VpnConnectionBuilder {
     pub fn get_vgw_telemetry(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::VgwTelemetry>> {
         &self.vgw_telemetry
     }
+    /// <p>The Amazon Resource Name (ARN) of the Secrets Manager secret storing the pre-shared key(s) for the VPN connection.</p>
+    pub fn pre_shared_key_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.pre_shared_key_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Secrets Manager secret storing the pre-shared key(s) for the VPN connection.</p>
+    pub fn set_pre_shared_key_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.pre_shared_key_arn = input;
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Secrets Manager secret storing the pre-shared key(s) for the VPN connection.</p>
+    pub fn get_pre_shared_key_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.pre_shared_key_arn
+    }
     /// <p>The ID of the VPN connection.</p>
     pub fn vpn_connection_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpn_connection_id = ::std::option::Option::Some(input.into());
@@ -392,6 +414,7 @@ impl VpnConnectionBuilder {
             routes: self.routes,
             tags: self.tags,
             vgw_telemetry: self.vgw_telemetry,
+            pre_shared_key_arn: self.pre_shared_key_arn,
             vpn_connection_id: self.vpn_connection_id,
             state: self.state,
             customer_gateway_configuration: self.customer_gateway_configuration,
@@ -413,6 +436,7 @@ impl ::std::fmt::Debug for VpnConnectionBuilder {
         formatter.field("routes", &self.routes);
         formatter.field("tags", &self.tags);
         formatter.field("vgw_telemetry", &self.vgw_telemetry);
+        formatter.field("pre_shared_key_arn", &self.pre_shared_key_arn);
         formatter.field("vpn_connection_id", &self.vpn_connection_id);
         formatter.field("state", &self.state);
         formatter.field("customer_gateway_configuration", &"*** Sensitive Data Redacted ***");

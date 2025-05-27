@@ -30,6 +30,11 @@ pub fn ser_modify_vpn_tunnel_options_input_input_input(
     if let Some(var_10) = &input.skip_tunnel_replacement {
         scope_9.boolean(*var_10);
     }
+    #[allow(unused_mut)]
+    let mut scope_11 = writer.prefix("PreSharedKeyStorage");
+    if let Some(var_12) = &input.pre_shared_key_storage {
+        scope_11.string(var_12);
+    }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

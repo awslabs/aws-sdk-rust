@@ -40,11 +40,17 @@ pub mod get_commitment_purchase_analysis;
 /// Types for the `GetCostAndUsage` operation.
 pub mod get_cost_and_usage;
 
+/// Types for the `GetCostAndUsageComparisons` operation.
+pub mod get_cost_and_usage_comparisons;
+
 /// Types for the `GetCostAndUsageWithResources` operation.
 pub mod get_cost_and_usage_with_resources;
 
 /// Types for the `GetCostCategories` operation.
 pub mod get_cost_categories;
+
+/// Types for the `GetCostComparisonDrivers` operation.
+pub mod get_cost_comparison_drivers;
 
 /// Types for the `GetCostForecast` operation.
 pub mod get_cost_forecast;

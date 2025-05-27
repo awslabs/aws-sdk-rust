@@ -29,6 +29,26 @@ pub(crate) fn reflens_get_anomaly_subscriptions_output_output_next_page_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_get_cost_and_usage_comparisons_output_output_next_page_token(
+    input: &crate::operation::get_cost_and_usage_comparisons::GetCostAndUsageComparisonsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_page_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_get_cost_comparison_drivers_output_output_next_page_token(
+    input: &crate::operation::get_cost_comparison_drivers::GetCostComparisonDriversOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_page_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_get_savings_plans_coverage_output_output_next_token(
     input: &crate::operation::get_savings_plans_coverage::GetSavingsPlansCoverageOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -97,5 +117,25 @@ pub(crate) fn lens_get_anomaly_subscriptions_output_output_anomaly_subscriptions
     input: crate::operation::get_anomaly_subscriptions::GetAnomalySubscriptionsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::AnomalySubscription>> {
     let input = input.anomaly_subscriptions;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_get_cost_and_usage_comparisons_output_output_cost_and_usage_comparisons(
+    input: crate::operation::get_cost_and_usage_comparisons::GetCostAndUsageComparisonsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::CostAndUsageComparison>> {
+    let input = match input.cost_and_usage_comparisons {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_get_cost_comparison_drivers_output_output_cost_comparison_drivers(
+    input: crate::operation::get_cost_comparison_drivers::GetCostComparisonDriversOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::CostComparisonDriver>> {
+    let input = match input.cost_comparison_drivers {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
     ::std::option::Option::Some(input)
 }

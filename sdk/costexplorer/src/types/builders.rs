@@ -161,9 +161,17 @@ pub use crate::types::_reservation_coverage_group::ReservationCoverageGroupBuild
 
 pub use crate::types::_dimension_values_with_attributes::DimensionValuesWithAttributesBuilder;
 
+pub use crate::types::_cost_comparison_driver::CostComparisonDriverBuilder;
+
+pub use crate::types::_cost_driver::CostDriverBuilder;
+
+pub use crate::types::_comparison_metric_value::ComparisonMetricValueBuilder;
+
 pub use crate::types::_result_by_time::ResultByTimeBuilder;
 
 pub use crate::types::_group::GroupBuilder;
+
+pub use crate::types::_cost_and_usage_comparison::CostAndUsageComparisonBuilder;
 
 pub use crate::types::_analysis_details::AnalysisDetailsBuilder;
 

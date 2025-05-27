@@ -9,6 +9,8 @@ pub struct GetVpnConnectionDeviceSampleConfigurationInput {
     pub vpn_connection_device_type_id: ::std::option::Option<::std::string::String>,
     /// <p>The IKE version to be used in the sample configuration file for your customer gateway device. You can specify one of the following versions: <code>ikev1</code> or <code>ikev2</code>.</p>
     pub internet_key_exchange_version: ::std::option::Option<::std::string::String>,
+    /// <p>The type of sample configuration to generate. Valid values are "compatibility" (includes IKEv1) or "recommended" (throws UnsupportedOperationException for IKEv1).</p>
+    pub sample_type: ::std::option::Option<::std::string::String>,
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub dry_run: ::std::option::Option<bool>,
 }
@@ -24,6 +26,10 @@ impl GetVpnConnectionDeviceSampleConfigurationInput {
     /// <p>The IKE version to be used in the sample configuration file for your customer gateway device. You can specify one of the following versions: <code>ikev1</code> or <code>ikev2</code>.</p>
     pub fn internet_key_exchange_version(&self) -> ::std::option::Option<&str> {
         self.internet_key_exchange_version.as_deref()
+    }
+    /// <p>The type of sample configuration to generate. Valid values are "compatibility" (includes IKEv1) or "recommended" (throws UnsupportedOperationException for IKEv1).</p>
+    pub fn sample_type(&self) -> ::std::option::Option<&str> {
+        self.sample_type.as_deref()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(&self) -> ::std::option::Option<bool> {
@@ -45,6 +51,7 @@ pub struct GetVpnConnectionDeviceSampleConfigurationInputBuilder {
     pub(crate) vpn_connection_id: ::std::option::Option<::std::string::String>,
     pub(crate) vpn_connection_device_type_id: ::std::option::Option<::std::string::String>,
     pub(crate) internet_key_exchange_version: ::std::option::Option<::std::string::String>,
+    pub(crate) sample_type: ::std::option::Option<::std::string::String>,
     pub(crate) dry_run: ::std::option::Option<bool>,
 }
 impl GetVpnConnectionDeviceSampleConfigurationInputBuilder {
@@ -92,6 +99,20 @@ impl GetVpnConnectionDeviceSampleConfigurationInputBuilder {
     pub fn get_internet_key_exchange_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.internet_key_exchange_version
     }
+    /// <p>The type of sample configuration to generate. Valid values are "compatibility" (includes IKEv1) or "recommended" (throws UnsupportedOperationException for IKEv1).</p>
+    pub fn sample_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.sample_type = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The type of sample configuration to generate. Valid values are "compatibility" (includes IKEv1) or "recommended" (throws UnsupportedOperationException for IKEv1).</p>
+    pub fn set_sample_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.sample_type = input;
+        self
+    }
+    /// <p>The type of sample configuration to generate. Valid values are "compatibility" (includes IKEv1) or "recommended" (throws UnsupportedOperationException for IKEv1).</p>
+    pub fn get_sample_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sample_type
+    }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.dry_run = ::std::option::Option::Some(input);
@@ -118,6 +139,7 @@ impl GetVpnConnectionDeviceSampleConfigurationInputBuilder {
                 vpn_connection_id: self.vpn_connection_id,
                 vpn_connection_device_type_id: self.vpn_connection_device_type_id,
                 internet_key_exchange_version: self.internet_key_exchange_version,
+                sample_type: self.sample_type,
                 dry_run: self.dry_run,
             },
         )

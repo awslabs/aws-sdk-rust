@@ -1923,6 +1923,10 @@ pub(crate) mod shape_export_verified_access_instance_client_configuration;
 
 pub(crate) mod shape_export_verified_access_instance_client_configuration_input;
 
+pub(crate) mod shape_get_active_vpn_tunnel_status;
+
+pub(crate) mod shape_get_active_vpn_tunnel_status_input;
+
 pub(crate) mod shape_get_allowed_images_settings;
 
 pub(crate) mod shape_get_allowed_images_settings_input;
@@ -3052,6 +3056,8 @@ pub(crate) mod shape_access_scope_analysis_finding_list;
 pub(crate) mod shape_account_attribute_list;
 
 pub(crate) mod shape_active_instance_set;
+
+pub(crate) mod shape_active_vpn_tunnel_status;
 
 pub(crate) mod shape_added_principal_set;
 

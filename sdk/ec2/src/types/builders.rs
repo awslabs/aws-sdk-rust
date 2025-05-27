@@ -873,6 +873,8 @@ pub use crate::types::_associated_role::AssociatedRoleBuilder;
 
 pub use crate::types::_image_criterion::ImageCriterionBuilder;
 
+pub use crate::types::_active_vpn_tunnel_status::ActiveVpnTunnelStatusBuilder;
+
 pub use crate::types::_verified_access_instance_open_vpn_client_configuration::VerifiedAccessInstanceOpenVpnClientConfigurationBuilder;
 
 pub use crate::types::_verified_access_instance_open_vpn_client_configuration_route::VerifiedAccessInstanceOpenVpnClientConfigurationRouteBuilder;

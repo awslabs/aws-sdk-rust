@@ -32,7 +32,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-//! aws-sdk-chimesdkvoice = "1.73.0"
+//! aws-sdk-chimesdkvoice = "1.74.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!

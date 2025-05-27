@@ -14,6 +14,8 @@ pub struct ModifyVpnTunnelOptionsInput {
     /// <p>Choose whether or not to trigger immediate tunnel replacement. This is only applicable when turning on or off <code>EnableTunnelLifecycleControl</code>.</p>
     /// <p>Valid values: <code>True</code> | <code>False</code></p>
     pub skip_tunnel_replacement: ::std::option::Option<bool>,
+    /// <p>Specifies the storage mode for the pre-shared key (PSK). Valid values are <code>Standard</code> (stored in Site-to-Site VPN service) or <code>SecretsManager</code> (stored in Amazon Web Services Secrets Manager).</p>
+    pub pre_shared_key_storage: ::std::option::Option<::std::string::String>,
 }
 impl ModifyVpnTunnelOptionsInput {
     /// <p>The ID of the Amazon Web Services Site-to-Site VPN connection.</p>
@@ -37,6 +39,10 @@ impl ModifyVpnTunnelOptionsInput {
     pub fn skip_tunnel_replacement(&self) -> ::std::option::Option<bool> {
         self.skip_tunnel_replacement
     }
+    /// <p>Specifies the storage mode for the pre-shared key (PSK). Valid values are <code>Standard</code> (stored in Site-to-Site VPN service) or <code>SecretsManager</code> (stored in Amazon Web Services Secrets Manager).</p>
+    pub fn pre_shared_key_storage(&self) -> ::std::option::Option<&str> {
+        self.pre_shared_key_storage.as_deref()
+    }
 }
 impl ::std::fmt::Debug for ModifyVpnTunnelOptionsInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -46,6 +52,7 @@ impl ::std::fmt::Debug for ModifyVpnTunnelOptionsInput {
         formatter.field("tunnel_options", &"*** Sensitive Data Redacted ***");
         formatter.field("dry_run", &self.dry_run);
         formatter.field("skip_tunnel_replacement", &self.skip_tunnel_replacement);
+        formatter.field("pre_shared_key_storage", &self.pre_shared_key_storage);
         formatter.finish()
     }
 }
@@ -65,6 +72,7 @@ pub struct ModifyVpnTunnelOptionsInputBuilder {
     pub(crate) tunnel_options: ::std::option::Option<crate::types::ModifyVpnTunnelOptionsSpecification>,
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) skip_tunnel_replacement: ::std::option::Option<bool>,
+    pub(crate) pre_shared_key_storage: ::std::option::Option<::std::string::String>,
 }
 impl ModifyVpnTunnelOptionsInputBuilder {
     /// <p>The ID of the Amazon Web Services Site-to-Site VPN connection.</p>
@@ -143,6 +151,20 @@ impl ModifyVpnTunnelOptionsInputBuilder {
     pub fn get_skip_tunnel_replacement(&self) -> &::std::option::Option<bool> {
         &self.skip_tunnel_replacement
     }
+    /// <p>Specifies the storage mode for the pre-shared key (PSK). Valid values are <code>Standard</code> (stored in Site-to-Site VPN service) or <code>SecretsManager</code> (stored in Amazon Web Services Secrets Manager).</p>
+    pub fn pre_shared_key_storage(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.pre_shared_key_storage = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Specifies the storage mode for the pre-shared key (PSK). Valid values are <code>Standard</code> (stored in Site-to-Site VPN service) or <code>SecretsManager</code> (stored in Amazon Web Services Secrets Manager).</p>
+    pub fn set_pre_shared_key_storage(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.pre_shared_key_storage = input;
+        self
+    }
+    /// <p>Specifies the storage mode for the pre-shared key (PSK). Valid values are <code>Standard</code> (stored in Site-to-Site VPN service) or <code>SecretsManager</code> (stored in Amazon Web Services Secrets Manager).</p>
+    pub fn get_pre_shared_key_storage(&self) -> &::std::option::Option<::std::string::String> {
+        &self.pre_shared_key_storage
+    }
     /// Consumes the builder and constructs a [`ModifyVpnTunnelOptionsInput`](crate::operation::modify_vpn_tunnel_options::ModifyVpnTunnelOptionsInput).
     pub fn build(
         self,
@@ -156,6 +178,7 @@ impl ModifyVpnTunnelOptionsInputBuilder {
             tunnel_options: self.tunnel_options,
             dry_run: self.dry_run,
             skip_tunnel_replacement: self.skip_tunnel_replacement,
+            pre_shared_key_storage: self.pre_shared_key_storage,
         })
     }
 }
@@ -167,6 +190,7 @@ impl ::std::fmt::Debug for ModifyVpnTunnelOptionsInputBuilder {
         formatter.field("tunnel_options", &"*** Sensitive Data Redacted ***");
         formatter.field("dry_run", &self.dry_run);
         formatter.field("skip_tunnel_replacement", &self.skip_tunnel_replacement);
+        formatter.field("pre_shared_key_storage", &self.pre_shared_key_storage);
         formatter.finish()
     }
 }

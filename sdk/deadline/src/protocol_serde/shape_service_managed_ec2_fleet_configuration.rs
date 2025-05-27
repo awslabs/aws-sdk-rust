@@ -18,6 +18,9 @@ pub fn ser_service_managed_ec2_fleet_configuration(
         )?;
         object_4.finish();
     }
+    if let Some(var_5) = &input.storage_profile_id {
+        object.key("storageProfileId").string(var_5.as_str());
+    }
     Ok(())
 }
 
@@ -45,6 +48,13 @@ where
                             "instanceMarketOptions" => {
                                 builder = builder.set_instance_market_options(
                                     crate::protocol_serde::shape_service_managed_ec2_instance_market_options::de_service_managed_ec2_instance_market_options(tokens)?
+                                );
+                            }
+                            "storageProfileId" => {
+                                builder = builder.set_storage_profile_id(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
                                 );
                             }
                             _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

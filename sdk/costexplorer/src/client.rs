@@ -189,9 +189,13 @@ mod get_commitment_purchase_analysis;
 
 mod get_cost_and_usage;
 
+mod get_cost_and_usage_comparisons;
+
 mod get_cost_and_usage_with_resources;
 
 mod get_cost_categories;
+
+mod get_cost_comparison_drivers;
 
 mod get_cost_forecast;
 

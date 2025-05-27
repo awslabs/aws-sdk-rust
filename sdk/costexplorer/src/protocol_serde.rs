@@ -49,9 +49,13 @@ pub(crate) mod shape_get_commitment_purchase_analysis;
 
 pub(crate) mod shape_get_cost_and_usage;
 
+pub(crate) mod shape_get_cost_and_usage_comparisons;
+
 pub(crate) mod shape_get_cost_and_usage_with_resources;
 
 pub(crate) mod shape_get_cost_categories;
+
+pub(crate) mod shape_get_cost_comparison_drivers;
 
 pub(crate) mod shape_get_cost_forecast;
 
@@ -153,11 +157,15 @@ pub(crate) mod shape_get_approximate_usage_records_input;
 
 pub(crate) mod shape_get_commitment_purchase_analysis_input;
 
+pub(crate) mod shape_get_cost_and_usage_comparisons_input;
+
 pub(crate) mod shape_get_cost_and_usage_input;
 
 pub(crate) mod shape_get_cost_and_usage_with_resources_input;
 
 pub(crate) mod shape_get_cost_categories_input;
+
+pub(crate) mod shape_get_cost_comparison_drivers_input;
 
 pub(crate) mod shape_get_cost_forecast_input;
 
@@ -253,6 +261,8 @@ pub(crate) mod shape_approximate_usage_records_per_service;
 
 pub(crate) mod shape_commitment_purchase_analysis_configuration;
 
+pub(crate) mod shape_comparison_metrics;
+
 pub(crate) mod shape_cost_allocation_tag_backfill_request;
 
 pub(crate) mod shape_cost_allocation_tag_backfill_request_list;
@@ -260,6 +270,8 @@ pub(crate) mod shape_cost_allocation_tag_backfill_request_list;
 pub(crate) mod shape_cost_allocation_tag_list;
 
 pub(crate) mod shape_cost_allocation_tag_status_entry;
+
+pub(crate) mod shape_cost_and_usage_comparisons;
 
 pub(crate) mod shape_cost_category;
 
@@ -272,6 +284,8 @@ pub(crate) mod shape_cost_category_rule;
 pub(crate) mod shape_cost_category_split_charge_rule;
 
 pub(crate) mod shape_cost_category_values_list;
+
+pub(crate) mod shape_cost_comparison_drivers;
 
 pub(crate) mod shape_coverage;
 
@@ -345,7 +359,11 @@ pub(crate) mod shape_analysis_summary;
 
 pub(crate) mod shape_anomaly;
 
+pub(crate) mod shape_comparison_metric_value;
+
 pub(crate) mod shape_cost_allocation_tag;
+
+pub(crate) mod shape_cost_and_usage_comparison;
 
 pub(crate) mod shape_cost_category_inherited_value_dimension;
 
@@ -360,6 +378,8 @@ pub(crate) mod shape_cost_category_split_charge_rule_parameter;
 pub(crate) mod shape_cost_category_split_charge_rules_list;
 
 pub(crate) mod shape_cost_category_values;
+
+pub(crate) mod shape_cost_comparison_driver;
 
 pub(crate) mod shape_coverage_by_time;
 
@@ -419,6 +439,8 @@ pub(crate) mod shape_attributes;
 
 pub(crate) mod shape_cost_category_processing_status;
 
+pub(crate) mod shape_cost_drivers;
+
 pub(crate) mod shape_current_instance;
 
 pub(crate) mod shape_finding_reason_codes;
@@ -462,6 +484,8 @@ pub(crate) mod shape_terminate_recommendation_detail;
 pub(crate) mod shape_cost_category_split_charge_rule_parameters_list;
 
 pub(crate) mod shape_cost_category_split_charge_rule_targets_list;
+
+pub(crate) mod shape_cost_driver;
 
 pub(crate) mod shape_expressions;
 

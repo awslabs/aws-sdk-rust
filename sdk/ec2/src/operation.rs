@@ -1426,6 +1426,9 @@ pub mod export_transit_gateway_routes;
 /// Types for the `ExportVerifiedAccessInstanceClientConfiguration` operation.
 pub mod export_verified_access_instance_client_configuration;
 
+/// Types for the `GetActiveVpnTunnelStatus` operation.
+pub mod get_active_vpn_tunnel_status;
+
 /// Types for the `GetAllowedImagesSettings` operation.
 pub mod get_allowed_images_settings;
 

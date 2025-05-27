@@ -233,9 +233,17 @@ pub use crate::types::_dimension_values_with_attributes::DimensionValuesWithAttr
 
 pub use crate::types::_context::Context;
 
+pub use crate::types::_cost_comparison_driver::CostComparisonDriver;
+
+pub use crate::types::_cost_driver::CostDriver;
+
+pub use crate::types::_comparison_metric_value::ComparisonMetricValue;
+
 pub use crate::types::_result_by_time::ResultByTime;
 
 pub use crate::types::_group::Group;
+
+pub use crate::types::_cost_and_usage_comparison::CostAndUsageComparison;
 
 pub use crate::types::_analysis_details::AnalysisDetails;
 
@@ -297,6 +305,8 @@ mod _approximation_dimension;
 
 mod _commitment_purchase_analysis_configuration;
 
+mod _comparison_metric_value;
+
 mod _context;
 
 mod _cost_allocation_tag;
@@ -310,6 +320,8 @@ mod _cost_allocation_tag_status;
 mod _cost_allocation_tag_status_entry;
 
 mod _cost_allocation_tag_type;
+
+mod _cost_and_usage_comparison;
 
 mod _cost_category;
 
@@ -340,6 +352,10 @@ mod _cost_category_status;
 mod _cost_category_status_component;
 
 mod _cost_category_values;
+
+mod _cost_comparison_driver;
+
+mod _cost_driver;
 
 mod _coverage;
 

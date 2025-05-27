@@ -1299,6 +1299,10 @@ pub use crate::types::_associated_role::AssociatedRole;
 
 pub use crate::types::_image_criterion::ImageCriterion;
 
+pub use crate::types::_active_vpn_tunnel_status::ActiveVpnTunnelStatus;
+
+pub use crate::types::_vpn_tunnel_provisioning_status::VpnTunnelProvisioningStatus;
+
 pub use crate::types::_verified_access_instance_open_vpn_client_configuration::VerifiedAccessInstanceOpenVpnClientConfiguration;
 
 pub use crate::types::_verified_access_instance_open_vpn_client_configuration_route::VerifiedAccessInstanceOpenVpnClientConfigurationRoute;
@@ -2440,6 +2444,8 @@ mod _account_attribute_name;
 mod _account_attribute_value;
 
 mod _active_instance;
+
+mod _active_vpn_tunnel_status;
 
 mod _activity_status;
 
@@ -4824,6 +4830,8 @@ mod _vpn_tunnel_log_options;
 mod _vpn_tunnel_log_options_specification;
 
 mod _vpn_tunnel_options_specification;
+
+mod _vpn_tunnel_provisioning_status;
 
 mod _week_day;
 

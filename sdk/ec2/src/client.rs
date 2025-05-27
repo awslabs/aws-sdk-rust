@@ -1321,6 +1321,8 @@ mod export_transit_gateway_routes;
 
 mod export_verified_access_instance_client_configuration;
 
+mod get_active_vpn_tunnel_status;
+
 mod get_allowed_images_settings;
 
 mod get_associated_enclave_certificate_iam_roles;

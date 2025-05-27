@@ -14,6 +14,8 @@ pub struct CreateVpnConnectionInput {
     pub transit_gateway_id: ::std::option::Option<::std::string::String>,
     /// <p>The tags to apply to the VPN connection.</p>
     pub tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
+    /// <p>Specifies the storage mode for the pre-shared key (PSK). Valid values are <code>Standard</code>" (stored in the Site-to-Site VPN service) or <code>SecretsManager</code> (stored in Amazon Web Services Secrets Manager).</p>
+    pub pre_shared_key_storage: ::std::option::Option<::std::string::String>,
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub dry_run: ::std::option::Option<bool>,
     /// <p>The options for the VPN connection.</p>
@@ -42,6 +44,10 @@ impl CreateVpnConnectionInput {
     pub fn tag_specifications(&self) -> &[crate::types::TagSpecification] {
         self.tag_specifications.as_deref().unwrap_or_default()
     }
+    /// <p>Specifies the storage mode for the pre-shared key (PSK). Valid values are <code>Standard</code>" (stored in the Site-to-Site VPN service) or <code>SecretsManager</code> (stored in Amazon Web Services Secrets Manager).</p>
+    pub fn pre_shared_key_storage(&self) -> ::std::option::Option<&str> {
+        self.pre_shared_key_storage.as_deref()
+    }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(&self) -> ::std::option::Option<bool> {
         self.dry_run
@@ -67,6 +73,7 @@ pub struct CreateVpnConnectionInputBuilder {
     pub(crate) vpn_gateway_id: ::std::option::Option<::std::string::String>,
     pub(crate) transit_gateway_id: ::std::option::Option<::std::string::String>,
     pub(crate) tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
+    pub(crate) pre_shared_key_storage: ::std::option::Option<::std::string::String>,
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) options: ::std::option::Option<crate::types::VpnConnectionOptionsSpecification>,
 }
@@ -149,6 +156,20 @@ impl CreateVpnConnectionInputBuilder {
     pub fn get_tag_specifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
         &self.tag_specifications
     }
+    /// <p>Specifies the storage mode for the pre-shared key (PSK). Valid values are <code>Standard</code>" (stored in the Site-to-Site VPN service) or <code>SecretsManager</code> (stored in Amazon Web Services Secrets Manager).</p>
+    pub fn pre_shared_key_storage(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.pre_shared_key_storage = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Specifies the storage mode for the pre-shared key (PSK). Valid values are <code>Standard</code>" (stored in the Site-to-Site VPN service) or <code>SecretsManager</code> (stored in Amazon Web Services Secrets Manager).</p>
+    pub fn set_pre_shared_key_storage(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.pre_shared_key_storage = input;
+        self
+    }
+    /// <p>Specifies the storage mode for the pre-shared key (PSK). Valid values are <code>Standard</code>" (stored in the Site-to-Site VPN service) or <code>SecretsManager</code> (stored in Amazon Web Services Secrets Manager).</p>
+    pub fn get_pre_shared_key_storage(&self) -> &::std::option::Option<::std::string::String> {
+        &self.pre_shared_key_storage
+    }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.dry_run = ::std::option::Option::Some(input);
@@ -188,6 +209,7 @@ impl CreateVpnConnectionInputBuilder {
             vpn_gateway_id: self.vpn_gateway_id,
             transit_gateway_id: self.transit_gateway_id,
             tag_specifications: self.tag_specifications,
+            pre_shared_key_storage: self.pre_shared_key_storage,
             dry_run: self.dry_run,
             options: self.options,
         })
