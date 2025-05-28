@@ -7,6 +7,8 @@ pub struct UpdatePreferencesInput {
     pub savings_estimation_mode: ::std::option::Option<crate::types::SavingsEstimationMode>,
     /// <p>Sets the "member account discount visibility" preference.</p>
     pub member_account_discount_visibility: ::std::option::Option<crate::types::MemberAccountDiscountVisibility>,
+    /// <p>Sets the preferences for how Reserved Instances and Savings Plans cost-saving opportunities are prioritized in terms of payment option and term length.</p>
+    pub preferred_commitment: ::std::option::Option<crate::types::PreferredCommitment>,
 }
 impl UpdatePreferencesInput {
     /// <p>Sets the "savings estimation mode" preference.</p>
@@ -16,6 +18,10 @@ impl UpdatePreferencesInput {
     /// <p>Sets the "member account discount visibility" preference.</p>
     pub fn member_account_discount_visibility(&self) -> ::std::option::Option<&crate::types::MemberAccountDiscountVisibility> {
         self.member_account_discount_visibility.as_ref()
+    }
+    /// <p>Sets the preferences for how Reserved Instances and Savings Plans cost-saving opportunities are prioritized in terms of payment option and term length.</p>
+    pub fn preferred_commitment(&self) -> ::std::option::Option<&crate::types::PreferredCommitment> {
+        self.preferred_commitment.as_ref()
     }
 }
 impl UpdatePreferencesInput {
@@ -31,6 +37,7 @@ impl UpdatePreferencesInput {
 pub struct UpdatePreferencesInputBuilder {
     pub(crate) savings_estimation_mode: ::std::option::Option<crate::types::SavingsEstimationMode>,
     pub(crate) member_account_discount_visibility: ::std::option::Option<crate::types::MemberAccountDiscountVisibility>,
+    pub(crate) preferred_commitment: ::std::option::Option<crate::types::PreferredCommitment>,
 }
 impl UpdatePreferencesInputBuilder {
     /// <p>Sets the "savings estimation mode" preference.</p>
@@ -61,6 +68,20 @@ impl UpdatePreferencesInputBuilder {
     pub fn get_member_account_discount_visibility(&self) -> &::std::option::Option<crate::types::MemberAccountDiscountVisibility> {
         &self.member_account_discount_visibility
     }
+    /// <p>Sets the preferences for how Reserved Instances and Savings Plans cost-saving opportunities are prioritized in terms of payment option and term length.</p>
+    pub fn preferred_commitment(mut self, input: crate::types::PreferredCommitment) -> Self {
+        self.preferred_commitment = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Sets the preferences for how Reserved Instances and Savings Plans cost-saving opportunities are prioritized in terms of payment option and term length.</p>
+    pub fn set_preferred_commitment(mut self, input: ::std::option::Option<crate::types::PreferredCommitment>) -> Self {
+        self.preferred_commitment = input;
+        self
+    }
+    /// <p>Sets the preferences for how Reserved Instances and Savings Plans cost-saving opportunities are prioritized in terms of payment option and term length.</p>
+    pub fn get_preferred_commitment(&self) -> &::std::option::Option<crate::types::PreferredCommitment> {
+        &self.preferred_commitment
+    }
     /// Consumes the builder and constructs a [`UpdatePreferencesInput`](crate::operation::update_preferences::UpdatePreferencesInput).
     pub fn build(
         self,
@@ -68,6 +89,7 @@ impl UpdatePreferencesInputBuilder {
         ::std::result::Result::Ok(crate::operation::update_preferences::UpdatePreferencesInput {
             savings_estimation_mode: self.savings_estimation_mode,
             member_account_discount_visibility: self.member_account_discount_visibility,
+            preferred_commitment: self.preferred_commitment,
         })
     }
 }

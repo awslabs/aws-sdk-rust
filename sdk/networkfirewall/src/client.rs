@@ -148,6 +148,8 @@ mod create_rule_group;
 
 mod create_tls_inspection_configuration;
 
+mod create_vpc_endpoint_association;
+
 /// Operation customization and supporting types.
 ///
 /// The underlying HTTP requests made during an operation can be customized
@@ -185,7 +187,11 @@ mod delete_rule_group;
 
 mod delete_tls_inspection_configuration;
 
+mod delete_vpc_endpoint_association;
+
 mod describe_firewall;
+
+mod describe_firewall_metadata;
 
 mod describe_firewall_policy;
 
@@ -200,6 +206,8 @@ mod describe_rule_group;
 mod describe_rule_group_metadata;
 
 mod describe_tls_inspection_configuration;
+
+mod describe_vpc_endpoint_association;
 
 mod disassociate_subnets;
 
@@ -220,6 +228,8 @@ mod list_rule_groups;
 mod list_tags_for_resource;
 
 mod list_tls_inspection_configurations;
+
+mod list_vpc_endpoint_associations;
 
 mod put_resource_policy;
 

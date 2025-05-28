@@ -134,6 +134,9 @@ pub(crate) fn de_update_preferences(
                             .transpose()?,
                     );
                 }
+                "preferredCommitment" => {
+                    builder = builder.set_preferred_commitment(crate::protocol_serde::shape_preferred_commitment::de_preferred_commitment(tokens)?);
+                }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },
             other => {

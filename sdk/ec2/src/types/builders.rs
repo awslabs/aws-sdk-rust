@@ -1469,6 +1469,8 @@ pub use crate::types::_transit_gateway_multicast_deregistered_group_members::Tra
 
 pub use crate::types::_deregister_instance_tag_attribute_request::DeregisterInstanceTagAttributeRequestBuilder;
 
+pub use crate::types::_delete_snapshot_return_code::DeleteSnapshotReturnCodeBuilder;
+
 pub use crate::types::_failed_queued_purchase_deletion::FailedQueuedPurchaseDeletionBuilder;
 
 pub use crate::types::_delete_queued_reserved_instances_error::DeleteQueuedReservedInstancesErrorBuilder;

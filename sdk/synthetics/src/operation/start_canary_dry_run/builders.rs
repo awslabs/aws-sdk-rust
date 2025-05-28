@@ -122,7 +122,7 @@ impl StartCanaryDryRunFluentBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_name()
     }
-    /// <p>Use this structure to input your script code for the canary. This structure contains the Lambda handler with the location where the canary should start running the script. If the script is stored in an S3 bucket, the bucket name, key, and version are also included. If the script was passed into the canary directly, the script code is contained in the value of <code>Zipfile</code>.</p>
+    /// <p>Use this structure to input your script code for the canary. This structure contains the Lambda handler with the location where the canary should start running the script. If the script is stored in an Amazon S3 bucket, the bucket name, key, and version are also included. If the script was passed into the canary directly, the script code is contained in the value of <code>Zipfile</code>.</p>
     /// <p>If you are uploading your canary scripts with an Amazon S3 bucket, your zip file should include your script in a certain folder structure.</p>
     /// <ul>
     /// <li>
@@ -134,7 +134,7 @@ impl StartCanaryDryRunFluentBuilder {
         self.inner = self.inner.code(input);
         self
     }
-    /// <p>Use this structure to input your script code for the canary. This structure contains the Lambda handler with the location where the canary should start running the script. If the script is stored in an S3 bucket, the bucket name, key, and version are also included. If the script was passed into the canary directly, the script code is contained in the value of <code>Zipfile</code>.</p>
+    /// <p>Use this structure to input your script code for the canary. This structure contains the Lambda handler with the location where the canary should start running the script. If the script is stored in an Amazon S3 bucket, the bucket name, key, and version are also included. If the script was passed into the canary directly, the script code is contained in the value of <code>Zipfile</code>.</p>
     /// <p>If you are uploading your canary scripts with an Amazon S3 bucket, your zip file should include your script in a certain folder structure.</p>
     /// <ul>
     /// <li>
@@ -146,7 +146,7 @@ impl StartCanaryDryRunFluentBuilder {
         self.inner = self.inner.set_code(input);
         self
     }
-    /// <p>Use this structure to input your script code for the canary. This structure contains the Lambda handler with the location where the canary should start running the script. If the script is stored in an S3 bucket, the bucket name, key, and version are also included. If the script was passed into the canary directly, the script code is contained in the value of <code>Zipfile</code>.</p>
+    /// <p>Use this structure to input your script code for the canary. This structure contains the Lambda handler with the location where the canary should start running the script. If the script is stored in an Amazon S3 bucket, the bucket name, key, and version are also included. If the script was passed into the canary directly, the script code is contained in the value of <code>Zipfile</code>.</p>
     /// <p>If you are uploading your canary scripts with an Amazon S3 bucket, your zip file should include your script in a certain folder structure.</p>
     /// <ul>
     /// <li>
@@ -213,36 +213,36 @@ impl StartCanaryDryRunFluentBuilder {
     pub fn get_execution_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_execution_role_arn()
     }
-    /// <p>The number of days to retain data on the failed runs for this canary. The valid range is 1 to 455 days.</p>
+    /// <p>The number of days to retain data about successful runs of this canary. If you omit this field, the default of 31 days is used. The valid range is 1 to 455 days.</p>
     /// <p>This setting affects the range of information returned by <a href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_GetCanaryRuns.html">GetCanaryRuns</a>, as well as the range of information displayed in the Synthetics console.</p>
     pub fn success_retention_period_in_days(mut self, input: i32) -> Self {
         self.inner = self.inner.success_retention_period_in_days(input);
         self
     }
-    /// <p>The number of days to retain data on the failed runs for this canary. The valid range is 1 to 455 days.</p>
+    /// <p>The number of days to retain data about successful runs of this canary. If you omit this field, the default of 31 days is used. The valid range is 1 to 455 days.</p>
     /// <p>This setting affects the range of information returned by <a href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_GetCanaryRuns.html">GetCanaryRuns</a>, as well as the range of information displayed in the Synthetics console.</p>
     pub fn set_success_retention_period_in_days(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_success_retention_period_in_days(input);
         self
     }
-    /// <p>The number of days to retain data on the failed runs for this canary. The valid range is 1 to 455 days.</p>
+    /// <p>The number of days to retain data about successful runs of this canary. If you omit this field, the default of 31 days is used. The valid range is 1 to 455 days.</p>
     /// <p>This setting affects the range of information returned by <a href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_GetCanaryRuns.html">GetCanaryRuns</a>, as well as the range of information displayed in the Synthetics console.</p>
     pub fn get_success_retention_period_in_days(&self) -> &::std::option::Option<i32> {
         self.inner.get_success_retention_period_in_days()
     }
-    /// <p>The number of days to retain data on the failed runs for this canary. The valid range is 1 to 455 days.</p>
+    /// <p>The number of days to retain data about failed runs of this canary. If you omit this field, the default of 31 days is used. The valid range is 1 to 455 days.</p>
     /// <p>This setting affects the range of information returned by <a href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_GetCanaryRuns.html">GetCanaryRuns</a>, as well as the range of information displayed in the Synthetics console.</p>
     pub fn failure_retention_period_in_days(mut self, input: i32) -> Self {
         self.inner = self.inner.failure_retention_period_in_days(input);
         self
     }
-    /// <p>The number of days to retain data on the failed runs for this canary. The valid range is 1 to 455 days.</p>
+    /// <p>The number of days to retain data about failed runs of this canary. If you omit this field, the default of 31 days is used. The valid range is 1 to 455 days.</p>
     /// <p>This setting affects the range of information returned by <a href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_GetCanaryRuns.html">GetCanaryRuns</a>, as well as the range of information displayed in the Synthetics console.</p>
     pub fn set_failure_retention_period_in_days(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_failure_retention_period_in_days(input);
         self
     }
-    /// <p>The number of days to retain data on the failed runs for this canary. The valid range is 1 to 455 days.</p>
+    /// <p>The number of days to retain data about failed runs of this canary. If you omit this field, the default of 31 days is used. The valid range is 1 to 455 days.</p>
     /// <p>This setting affects the range of information returned by <a href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_GetCanaryRuns.html">GetCanaryRuns</a>, as well as the range of information displayed in the Synthetics console.</p>
     pub fn get_failure_retention_period_in_days(&self) -> &::std::option::Option<i32> {
         self.inner.get_failure_retention_period_in_days()
@@ -292,19 +292,19 @@ impl StartCanaryDryRunFluentBuilder {
     pub fn get_artifact_config(&self) -> &::std::option::Option<crate::types::ArtifactConfigInput> {
         self.inner.get_artifact_config()
     }
-    /// <p>Specifies whether to also delete the Lambda functions and layers used by this canary when the canary is deleted. If the value of this parameter is <code>AUTOMATIC</code>, it means that the Lambda functions and layers will be deleted when the canary is deleted.</p>
+    /// <p>Specifies whether to also delete the Lambda functions and layers used by this canary when the canary is deleted. If you omit this parameter, the default of <code>AUTOMATIC</code> is used, which means that the Lambda functions and layers will be deleted when the canary is deleted.</p>
     /// <p>If the value of this parameter is <code>OFF</code>, then the value of the <code>DeleteLambda</code> parameter of the <a href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_DeleteCanary.html">DeleteCanary</a> operation determines whether the Lambda functions and layers will be deleted.</p>
     pub fn provisioned_resource_cleanup(mut self, input: crate::types::ProvisionedResourceCleanupSetting) -> Self {
         self.inner = self.inner.provisioned_resource_cleanup(input);
         self
     }
-    /// <p>Specifies whether to also delete the Lambda functions and layers used by this canary when the canary is deleted. If the value of this parameter is <code>AUTOMATIC</code>, it means that the Lambda functions and layers will be deleted when the canary is deleted.</p>
+    /// <p>Specifies whether to also delete the Lambda functions and layers used by this canary when the canary is deleted. If you omit this parameter, the default of <code>AUTOMATIC</code> is used, which means that the Lambda functions and layers will be deleted when the canary is deleted.</p>
     /// <p>If the value of this parameter is <code>OFF</code>, then the value of the <code>DeleteLambda</code> parameter of the <a href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_DeleteCanary.html">DeleteCanary</a> operation determines whether the Lambda functions and layers will be deleted.</p>
     pub fn set_provisioned_resource_cleanup(mut self, input: ::std::option::Option<crate::types::ProvisionedResourceCleanupSetting>) -> Self {
         self.inner = self.inner.set_provisioned_resource_cleanup(input);
         self
     }
-    /// <p>Specifies whether to also delete the Lambda functions and layers used by this canary when the canary is deleted. If the value of this parameter is <code>AUTOMATIC</code>, it means that the Lambda functions and layers will be deleted when the canary is deleted.</p>
+    /// <p>Specifies whether to also delete the Lambda functions and layers used by this canary when the canary is deleted. If you omit this parameter, the default of <code>AUTOMATIC</code> is used, which means that the Lambda functions and layers will be deleted when the canary is deleted.</p>
     /// <p>If the value of this parameter is <code>OFF</code>, then the value of the <code>DeleteLambda</code> parameter of the <a href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_DeleteCanary.html">DeleteCanary</a> operation determines whether the Lambda functions and layers will be deleted.</p>
     pub fn get_provisioned_resource_cleanup(&self) -> &::std::option::Option<crate::types::ProvisionedResourceCleanupSetting> {
         self.inner.get_provisioned_resource_cleanup()

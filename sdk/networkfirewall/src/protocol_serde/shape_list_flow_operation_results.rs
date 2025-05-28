@@ -145,6 +145,20 @@ pub(crate) fn de_list_flow_operation_results(
                             .transpose()?,
                     );
                 }
+                "VpcEndpointAssociationArn" => {
+                    builder = builder.set_vpc_endpoint_association_arn(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
+                "VpcEndpointId" => {
+                    builder = builder.set_vpc_endpoint_id(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
                 "FlowOperationId" => {
                     builder = builder.set_flow_operation_id(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

@@ -24,7 +24,7 @@ impl crate::operation::enable_image_block_public_access::builders::EnableImageBl
 ///
 /// <p>Enables <i>block public access for AMIs</i> at the account level in the specified Amazon Web Services Region. This prevents the public sharing of your AMIs. However, if you already have public AMIs, they will remain publicly available.</p>
 /// <p>The API can take up to 10 minutes to configure this setting. During this time, if you run <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetImageBlockPublicAccessState.html">GetImageBlockPublicAccessState</a>, the response will be <code>unblocked</code>. When the API has completed the configuration, the response will be <code>block-new-sharing</code>.</p>
-/// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/sharingamis-intro.html#block-public-access-to-amis">Block public access to your AMIs</a> in the <i>Amazon EC2 User Guide</i>.</p>
+/// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-public-access-to-amis.html">Block public access to your AMIs</a> in the <i>Amazon EC2 User Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct EnableImageBlockPublicAccessFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

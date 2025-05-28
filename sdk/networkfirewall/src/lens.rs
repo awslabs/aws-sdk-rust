@@ -89,6 +89,16 @@ pub(crate) fn reflens_list_tls_inspection_configurations_output_output_next_toke
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_vpc_endpoint_associations_output_output_next_token(
+    input: &crate::operation::list_vpc_endpoint_associations::ListVpcEndpointAssociationsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn lens_get_analysis_report_results_output_output_analysis_report_results(
     input: crate::operation::get_analysis_report_results::GetAnalysisReportResultsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::AnalysisTypeReportResult>> {
@@ -173,6 +183,16 @@ pub(crate) fn lens_list_tls_inspection_configurations_output_output_tls_inspecti
     input: crate::operation::list_tls_inspection_configurations::ListTlsInspectionConfigurationsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::TlsInspectionConfigurationMetadata>> {
     let input = match input.tls_inspection_configurations {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_vpc_endpoint_associations_output_output_vpc_endpoint_associations(
+    input: crate::operation::list_vpc_endpoint_associations::ListVpcEndpointAssociationsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::VpcEndpointAssociationMetadata>> {
+    let input = match input.vpc_endpoint_associations {
         ::std::option::Option::None => return ::std::option::Option::None,
         ::std::option::Option::Some(t) => t,
     };

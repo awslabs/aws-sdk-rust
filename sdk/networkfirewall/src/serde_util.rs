@@ -312,6 +312,36 @@ pub(crate) fn rule_group_correct_errors(mut builder: crate::types::builders::Rul
     builder
 }
 
+pub(crate) fn vpc_endpoint_association_correct_errors(
+    mut builder: crate::types::builders::VpcEndpointAssociationBuilder,
+) -> crate::types::builders::VpcEndpointAssociationBuilder {
+    if builder.vpc_endpoint_association_arn.is_none() {
+        builder.vpc_endpoint_association_arn = Some(Default::default())
+    }
+    if builder.firewall_arn.is_none() {
+        builder.firewall_arn = Some(Default::default())
+    }
+    if builder.vpc_id.is_none() {
+        builder.vpc_id = Some(Default::default())
+    }
+    if builder.subnet_mapping.is_none() {
+        builder.subnet_mapping = {
+            let builder = crate::types::builders::SubnetMappingBuilder::default();
+            crate::serde_util::subnet_mapping_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
+pub(crate) fn vpc_endpoint_association_status_correct_errors(
+    mut builder: crate::types::builders::VpcEndpointAssociationStatusBuilder,
+) -> crate::types::builders::VpcEndpointAssociationStatusBuilder {
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::FirewallStatusValue>().ok()
+    }
+    builder
+}
+
 pub(crate) fn subnet_mapping_correct_errors(
     mut builder: crate::types::builders::SubnetMappingBuilder,
 ) -> crate::types::builders::SubnetMappingBuilder {

@@ -304,6 +304,55 @@ impl From<crate::operation::create_tls_inspection_configuration::CreateTLSInspec
         }
     }
 }
+impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_vpc_endpoint_association::CreateVpcEndpointAssociationError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::create_vpc_endpoint_association::CreateVpcEndpointAssociationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_vpc_endpoint_association::CreateVpcEndpointAssociationError> for Error {
+    fn from(err: crate::operation::create_vpc_endpoint_association::CreateVpcEndpointAssociationError) -> Self {
+        match err {
+            crate::operation::create_vpc_endpoint_association::CreateVpcEndpointAssociationError::InsufficientCapacityException(inner) => {
+                Error::InsufficientCapacityException(inner)
+            }
+            crate::operation::create_vpc_endpoint_association::CreateVpcEndpointAssociationError::InternalServerError(inner) => {
+                Error::InternalServerError(inner)
+            }
+            crate::operation::create_vpc_endpoint_association::CreateVpcEndpointAssociationError::InvalidOperationException(inner) => {
+                Error::InvalidOperationException(inner)
+            }
+            crate::operation::create_vpc_endpoint_association::CreateVpcEndpointAssociationError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::create_vpc_endpoint_association::CreateVpcEndpointAssociationError::LimitExceededException(inner) => {
+                Error::LimitExceededException(inner)
+            }
+            crate::operation::create_vpc_endpoint_association::CreateVpcEndpointAssociationError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::create_vpc_endpoint_association::CreateVpcEndpointAssociationError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::create_vpc_endpoint_association::CreateVpcEndpointAssociationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_firewall::DeleteFirewallError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -476,6 +525,49 @@ impl From<crate::operation::delete_tls_inspection_configuration::DeleteTLSInspec
         }
     }
 }
+impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_vpc_endpoint_association::DeleteVpcEndpointAssociationError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::delete_vpc_endpoint_association::DeleteVpcEndpointAssociationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_vpc_endpoint_association::DeleteVpcEndpointAssociationError> for Error {
+    fn from(err: crate::operation::delete_vpc_endpoint_association::DeleteVpcEndpointAssociationError) -> Self {
+        match err {
+            crate::operation::delete_vpc_endpoint_association::DeleteVpcEndpointAssociationError::InternalServerError(inner) => {
+                Error::InternalServerError(inner)
+            }
+            crate::operation::delete_vpc_endpoint_association::DeleteVpcEndpointAssociationError::InvalidOperationException(inner) => {
+                Error::InvalidOperationException(inner)
+            }
+            crate::operation::delete_vpc_endpoint_association::DeleteVpcEndpointAssociationError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::delete_vpc_endpoint_association::DeleteVpcEndpointAssociationError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::delete_vpc_endpoint_association::DeleteVpcEndpointAssociationError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::delete_vpc_endpoint_association::DeleteVpcEndpointAssociationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_firewall::DescribeFirewallError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -498,6 +590,42 @@ impl From<crate::operation::describe_firewall::DescribeFirewallError> for Error 
             crate::operation::describe_firewall::DescribeFirewallError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::describe_firewall::DescribeFirewallError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::describe_firewall::DescribeFirewallError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_firewall_metadata::DescribeFirewallMetadataError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_firewall_metadata::DescribeFirewallMetadataError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::describe_firewall_metadata::DescribeFirewallMetadataError> for Error {
+    fn from(err: crate::operation::describe_firewall_metadata::DescribeFirewallMetadataError) -> Self {
+        match err {
+            crate::operation::describe_firewall_metadata::DescribeFirewallMetadataError::InternalServerError(inner) => {
+                Error::InternalServerError(inner)
+            }
+            crate::operation::describe_firewall_metadata::DescribeFirewallMetadataError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::describe_firewall_metadata::DescribeFirewallMetadataError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::describe_firewall_metadata::DescribeFirewallMetadataError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::describe_firewall_metadata::DescribeFirewallMetadataError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -740,6 +868,50 @@ impl From<crate::operation::describe_tls_inspection_configuration::DescribeTLSIn
             crate::operation::describe_tls_inspection_configuration::DescribeTLSInspectionConfigurationError::Unhandled(inner) => {
                 Error::Unhandled(inner)
             }
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::describe_vpc_endpoint_association::DescribeVpcEndpointAssociationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::describe_vpc_endpoint_association::DescribeVpcEndpointAssociationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::describe_vpc_endpoint_association::DescribeVpcEndpointAssociationError> for Error {
+    fn from(err: crate::operation::describe_vpc_endpoint_association::DescribeVpcEndpointAssociationError) -> Self {
+        match err {
+            crate::operation::describe_vpc_endpoint_association::DescribeVpcEndpointAssociationError::InternalServerError(inner) => {
+                Error::InternalServerError(inner)
+            }
+            crate::operation::describe_vpc_endpoint_association::DescribeVpcEndpointAssociationError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::describe_vpc_endpoint_association::DescribeVpcEndpointAssociationError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::describe_vpc_endpoint_association::DescribeVpcEndpointAssociationError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::describe_vpc_endpoint_association::DescribeVpcEndpointAssociationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1043,6 +1215,43 @@ impl From<crate::operation::list_tls_inspection_configurations::ListTLSInspectio
                 Error::ThrottlingException(inner)
             }
             crate::operation::list_tls_inspection_configurations::ListTLSInspectionConfigurationsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_vpc_endpoint_associations::ListVpcEndpointAssociationsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_vpc_endpoint_associations::ListVpcEndpointAssociationsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_vpc_endpoint_associations::ListVpcEndpointAssociationsError> for Error {
+    fn from(err: crate::operation::list_vpc_endpoint_associations::ListVpcEndpointAssociationsError) -> Self {
+        match err {
+            crate::operation::list_vpc_endpoint_associations::ListVpcEndpointAssociationsError::InternalServerError(inner) => {
+                Error::InternalServerError(inner)
+            }
+            crate::operation::list_vpc_endpoint_associations::ListVpcEndpointAssociationsError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::list_vpc_endpoint_associations::ListVpcEndpointAssociationsError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::list_vpc_endpoint_associations::ListVpcEndpointAssociationsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

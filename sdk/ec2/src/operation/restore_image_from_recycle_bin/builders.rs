@@ -22,7 +22,7 @@ impl crate::operation::restore_image_from_recycle_bin::builders::RestoreImageFro
 }
 /// Fluent builder constructing a request to `RestoreImageFromRecycleBin`.
 ///
-/// <p>Restores an AMI from the Recycle Bin. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/recycle-bin.html">Recycle Bin</a> in the <i>Amazon EC2 User Guide</i>.</p>
+/// <p>Restores an AMI from the Recycle Bin. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/recycle-bin.html">Recover deleted Amazon EBS snapshots and EBS-back AMIs with Recycle Bin</a> in the <i>Amazon EC2 User Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct RestoreImageFromRecycleBinFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

@@ -136,4 +136,18 @@ impl UpdatePreferencesFluentBuilder {
     pub fn get_member_account_discount_visibility(&self) -> &::std::option::Option<crate::types::MemberAccountDiscountVisibility> {
         self.inner.get_member_account_discount_visibility()
     }
+    /// <p>Sets the preferences for how Reserved Instances and Savings Plans cost-saving opportunities are prioritized in terms of payment option and term length.</p>
+    pub fn preferred_commitment(mut self, input: crate::types::PreferredCommitment) -> Self {
+        self.inner = self.inner.preferred_commitment(input);
+        self
+    }
+    /// <p>Sets the preferences for how Reserved Instances and Savings Plans cost-saving opportunities are prioritized in terms of payment option and term length.</p>
+    pub fn set_preferred_commitment(mut self, input: ::std::option::Option<crate::types::PreferredCommitment>) -> Self {
+        self.inner = self.inner.set_preferred_commitment(input);
+        self
+    }
+    /// <p>Sets the preferences for how Reserved Instances and Savings Plans cost-saving opportunities are prioritized in terms of payment option and term length.</p>
+    pub fn get_preferred_commitment(&self) -> &::std::option::Option<crate::types::PreferredCommitment> {
+        self.inner.get_preferred_commitment()
+    }
 }

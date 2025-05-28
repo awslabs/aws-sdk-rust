@@ -3,6 +3,12 @@ pub use crate::types::_validation_exception_detail::ValidationExceptionDetail;
 
 pub use crate::types::_validation_exception_reason::ValidationExceptionReason;
 
+pub use crate::types::_preferred_commitment::PreferredCommitment;
+
+pub use crate::types::_payment_option::PaymentOption;
+
+pub use crate::types::_term::Term;
+
 pub use crate::types::_member_account_discount_visibility::MemberAccountDiscountVisibility;
 
 pub use crate::types::_savings_estimation_mode::SavingsEstimationMode;
@@ -217,6 +223,10 @@ mod _order;
 
 mod _order_by;
 
+mod _payment_option;
+
+mod _preferred_commitment;
+
 mod _rds_db_instance;
 
 mod _rds_db_instance_configuration;
@@ -268,6 +278,8 @@ mod _summary_metrics;
 mod _summary_metrics_result;
 
 mod _tag;
+
+mod _term;
 
 mod _usage;
 

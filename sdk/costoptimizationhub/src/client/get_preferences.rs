@@ -6,6 +6,7 @@ impl super::Client {
     /// - On success, responds with [`GetPreferencesOutput`](crate::operation::get_preferences::GetPreferencesOutput) with field(s):
     ///   - [`savings_estimation_mode(Option<SavingsEstimationMode>)`](crate::operation::get_preferences::GetPreferencesOutput::savings_estimation_mode): <p>Retrieves the status of the "savings estimation mode" preference.</p>
     ///   - [`member_account_discount_visibility(Option<MemberAccountDiscountVisibility>)`](crate::operation::get_preferences::GetPreferencesOutput::member_account_discount_visibility): <p>Retrieves the status of the "member account discount visibility" preference.</p>
+    ///   - [`preferred_commitment(Option<PreferredCommitment>)`](crate::operation::get_preferences::GetPreferencesOutput::preferred_commitment): <p>Retrieves the current preferences for how Reserved Instances and Savings Plans cost-saving opportunities are prioritized in terms of payment option and term length.</p>
     /// - On failure, responds with [`SdkError<GetPreferencesError>`](crate::operation::get_preferences::GetPreferencesError)
     pub fn get_preferences(&self) -> crate::operation::get_preferences::builders::GetPreferencesFluentBuilder {
         crate::operation::get_preferences::builders::GetPreferencesFluentBuilder::new(self.handle.clone())

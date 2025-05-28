@@ -35,6 +35,13 @@ where
                                     .transpose()?,
                             );
                         }
+                        "TestResult" => {
+                            builder = builder.set_test_result(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CanaryRunTestResult::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

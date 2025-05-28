@@ -24,7 +24,7 @@ impl crate::operation::enable_image::builders::EnableImageInputBuilder {
 ///
 /// <p>Re-enables a disabled AMI. The re-enabled AMI is marked as <code>available</code> and can be used for instance launches, appears in describe operations, and can be shared. Amazon Web Services accounts, organizations, and Organizational Units that lost access to the AMI when it was disabled do not regain access automatically. Once the AMI is available, it can be shared with them again.</p>
 /// <p>Only the AMI owner can re-enable a disabled AMI.</p>
-/// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/disable-an-ami.html">Disable an AMI</a> in the <i>Amazon EC2 User Guide</i>.</p>
+/// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/disable-an-ami.html">Disable an Amazon EC2 AMI</a> in the <i>Amazon EC2 User Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct EnableImageFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

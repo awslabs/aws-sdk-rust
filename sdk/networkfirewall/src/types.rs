@@ -127,6 +127,8 @@ pub use crate::types::_flow_operation_status::FlowOperationStatus;
 
 pub use crate::types::_flow_filter::FlowFilter;
 
+pub use crate::types::_vpc_endpoint_association_metadata::VpcEndpointAssociationMetadata;
+
 pub use crate::types::_tls_inspection_configuration_metadata::TlsInspectionConfigurationMetadata;
 
 pub use crate::types::_rule_group_metadata::RuleGroupMetadata;
@@ -157,7 +159,21 @@ pub use crate::types::_subnet_mapping::SubnetMapping;
 
 pub use crate::types::_ip_address_type::IpAddressType;
 
+pub use crate::types::_vpc_endpoint_association_status::VpcEndpointAssociationStatus;
+
+pub use crate::types::_az_sync_state::AzSyncState;
+
+pub use crate::types::_attachment::Attachment;
+
+pub use crate::types::_attachment_status::AttachmentStatus;
+
+pub use crate::types::_firewall_status_value::FirewallStatusValue;
+
+pub use crate::types::_vpc_endpoint_association::VpcEndpointAssociation;
+
 pub use crate::types::_flow_operation::FlowOperation;
+
+pub use crate::types::_availability_zone_metadata::AvailabilityZoneMetadata;
 
 pub use crate::types::_firewall_status::FirewallStatus;
 
@@ -173,13 +189,7 @@ pub use crate::types::_per_object_status::PerObjectStatus;
 
 pub use crate::types::_per_object_sync_status::PerObjectSyncStatus;
 
-pub use crate::types::_attachment::Attachment;
-
-pub use crate::types::_attachment_status::AttachmentStatus;
-
 pub use crate::types::_configuration_sync_state::ConfigurationSyncState;
-
-pub use crate::types::_firewall_status_value::FirewallStatusValue;
 
 pub use crate::types::_firewall::Firewall;
 
@@ -196,6 +206,10 @@ mod _analysis_type_report_result;
 mod _attachment;
 
 mod _attachment_status;
+
+mod _availability_zone_metadata;
+
+mod _az_sync_state;
 
 mod _capacity_usage_summary;
 
@@ -366,6 +380,12 @@ mod _tls_inspection_configuration_metadata;
 mod _tls_inspection_configuration_response;
 
 mod _unique_sources;
+
+mod _vpc_endpoint_association;
+
+mod _vpc_endpoint_association_metadata;
+
+mod _vpc_endpoint_association_status;
 
 /// Builders
 pub mod builders;

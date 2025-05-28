@@ -6,6 +6,7 @@ pub struct CreateFirewallOutput {
     /// <p>The configuration settings for the firewall. These settings include the firewall policy and the subnets in your VPC to use for the firewall endpoints.</p>
     pub firewall: ::std::option::Option<crate::types::Firewall>,
     /// <p>Detailed information about the current status of a <code>Firewall</code>. You can retrieve this for a firewall by calling <code>DescribeFirewall</code> and providing the firewall name and ARN.</p>
+    /// <p>The firewall status indicates a combined status. It indicates whether all subnets are up-to-date with the latest firewall configurations, which is based on the sync states config values, and also whether all subnets have their endpoints fully enabled, based on their sync states attachment values.</p>
     pub firewall_status: ::std::option::Option<crate::types::FirewallStatus>,
     _request_id: Option<String>,
 }
@@ -15,6 +16,7 @@ impl CreateFirewallOutput {
         self.firewall.as_ref()
     }
     /// <p>Detailed information about the current status of a <code>Firewall</code>. You can retrieve this for a firewall by calling <code>DescribeFirewall</code> and providing the firewall name and ARN.</p>
+    /// <p>The firewall status indicates a combined status. It indicates whether all subnets are up-to-date with the latest firewall configurations, which is based on the sync states config values, and also whether all subnets have their endpoints fully enabled, based on their sync states attachment values.</p>
     pub fn firewall_status(&self) -> ::std::option::Option<&crate::types::FirewallStatus> {
         self.firewall_status.as_ref()
     }
@@ -55,16 +57,19 @@ impl CreateFirewallOutputBuilder {
         &self.firewall
     }
     /// <p>Detailed information about the current status of a <code>Firewall</code>. You can retrieve this for a firewall by calling <code>DescribeFirewall</code> and providing the firewall name and ARN.</p>
+    /// <p>The firewall status indicates a combined status. It indicates whether all subnets are up-to-date with the latest firewall configurations, which is based on the sync states config values, and also whether all subnets have their endpoints fully enabled, based on their sync states attachment values.</p>
     pub fn firewall_status(mut self, input: crate::types::FirewallStatus) -> Self {
         self.firewall_status = ::std::option::Option::Some(input);
         self
     }
     /// <p>Detailed information about the current status of a <code>Firewall</code>. You can retrieve this for a firewall by calling <code>DescribeFirewall</code> and providing the firewall name and ARN.</p>
+    /// <p>The firewall status indicates a combined status. It indicates whether all subnets are up-to-date with the latest firewall configurations, which is based on the sync states config values, and also whether all subnets have their endpoints fully enabled, based on their sync states attachment values.</p>
     pub fn set_firewall_status(mut self, input: ::std::option::Option<crate::types::FirewallStatus>) -> Self {
         self.firewall_status = input;
         self
     }
     /// <p>Detailed information about the current status of a <code>Firewall</code>. You can retrieve this for a firewall by calling <code>DescribeFirewall</code> and providing the firewall name and ARN.</p>
+    /// <p>The firewall status indicates a combined status. It indicates whether all subnets are up-to-date with the latest firewall configurations, which is based on the sync states config values, and also whether all subnets have their endpoints fully enabled, based on their sync states attachment values.</p>
     pub fn get_firewall_status(&self) -> &::std::option::Option<crate::types::FirewallStatus> {
         &self.firewall_status
     }

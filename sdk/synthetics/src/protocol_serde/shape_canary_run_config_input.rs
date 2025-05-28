@@ -28,5 +28,11 @@ pub fn ser_canary_run_config_input(
         }
         object_5.finish();
     }
+    if let Some(var_8) = &input.ephemeral_storage {
+        object.key("EphemeralStorage").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_8).into()),
+        );
+    }
     Ok(())
 }

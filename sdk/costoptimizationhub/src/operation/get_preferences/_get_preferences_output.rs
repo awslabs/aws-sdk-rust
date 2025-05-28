@@ -7,6 +7,8 @@ pub struct GetPreferencesOutput {
     pub savings_estimation_mode: ::std::option::Option<crate::types::SavingsEstimationMode>,
     /// <p>Retrieves the status of the "member account discount visibility" preference.</p>
     pub member_account_discount_visibility: ::std::option::Option<crate::types::MemberAccountDiscountVisibility>,
+    /// <p>Retrieves the current preferences for how Reserved Instances and Savings Plans cost-saving opportunities are prioritized in terms of payment option and term length.</p>
+    pub preferred_commitment: ::std::option::Option<crate::types::PreferredCommitment>,
     _request_id: Option<String>,
 }
 impl GetPreferencesOutput {
@@ -17,6 +19,10 @@ impl GetPreferencesOutput {
     /// <p>Retrieves the status of the "member account discount visibility" preference.</p>
     pub fn member_account_discount_visibility(&self) -> ::std::option::Option<&crate::types::MemberAccountDiscountVisibility> {
         self.member_account_discount_visibility.as_ref()
+    }
+    /// <p>Retrieves the current preferences for how Reserved Instances and Savings Plans cost-saving opportunities are prioritized in terms of payment option and term length.</p>
+    pub fn preferred_commitment(&self) -> ::std::option::Option<&crate::types::PreferredCommitment> {
+        self.preferred_commitment.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetPreferencesOutput {
@@ -37,6 +43,7 @@ impl GetPreferencesOutput {
 pub struct GetPreferencesOutputBuilder {
     pub(crate) savings_estimation_mode: ::std::option::Option<crate::types::SavingsEstimationMode>,
     pub(crate) member_account_discount_visibility: ::std::option::Option<crate::types::MemberAccountDiscountVisibility>,
+    pub(crate) preferred_commitment: ::std::option::Option<crate::types::PreferredCommitment>,
     _request_id: Option<String>,
 }
 impl GetPreferencesOutputBuilder {
@@ -68,6 +75,20 @@ impl GetPreferencesOutputBuilder {
     pub fn get_member_account_discount_visibility(&self) -> &::std::option::Option<crate::types::MemberAccountDiscountVisibility> {
         &self.member_account_discount_visibility
     }
+    /// <p>Retrieves the current preferences for how Reserved Instances and Savings Plans cost-saving opportunities are prioritized in terms of payment option and term length.</p>
+    pub fn preferred_commitment(mut self, input: crate::types::PreferredCommitment) -> Self {
+        self.preferred_commitment = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Retrieves the current preferences for how Reserved Instances and Savings Plans cost-saving opportunities are prioritized in terms of payment option and term length.</p>
+    pub fn set_preferred_commitment(mut self, input: ::std::option::Option<crate::types::PreferredCommitment>) -> Self {
+        self.preferred_commitment = input;
+        self
+    }
+    /// <p>Retrieves the current preferences for how Reserved Instances and Savings Plans cost-saving opportunities are prioritized in terms of payment option and term length.</p>
+    pub fn get_preferred_commitment(&self) -> &::std::option::Option<crate::types::PreferredCommitment> {
+        &self.preferred_commitment
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -82,6 +103,7 @@ impl GetPreferencesOutputBuilder {
         crate::operation::get_preferences::GetPreferencesOutput {
             savings_estimation_mode: self.savings_estimation_mode,
             member_account_discount_visibility: self.member_account_discount_visibility,
+            preferred_commitment: self.preferred_commitment,
             _request_id: self._request_id,
         }
     }

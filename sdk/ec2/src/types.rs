@@ -2219,6 +2219,10 @@ pub use crate::types::_transit_gateway_multicast_deregistered_group_members::Tra
 
 pub use crate::types::_deregister_instance_tag_attribute_request::DeregisterInstanceTagAttributeRequest;
 
+pub use crate::types::_delete_snapshot_return_code::DeleteSnapshotReturnCode;
+
+pub use crate::types::_snapshot_return_codes::SnapshotReturnCodes;
+
 pub use crate::types::_failed_queued_purchase_deletion::FailedQueuedPurchaseDeletion;
 
 pub use crate::types::_delete_queued_reserved_instances_error::DeleteQueuedReservedInstancesError;
@@ -2868,6 +2872,8 @@ mod _delete_launch_template_versions_response_success_item;
 mod _delete_queued_reserved_instances_error;
 
 mod _delete_queued_reserved_instances_error_code;
+
+mod _delete_snapshot_return_code;
 
 mod _deregister_instance_tag_attribute_request;
 
@@ -4298,6 +4304,8 @@ mod _snapshot_info;
 mod _snapshot_location_enum;
 
 mod _snapshot_recycle_bin_info;
+
+mod _snapshot_return_codes;
 
 mod _snapshot_state;
 

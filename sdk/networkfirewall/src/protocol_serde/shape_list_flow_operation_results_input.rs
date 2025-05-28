@@ -21,5 +21,11 @@ pub fn ser_list_flow_operation_results_input_input(
     if let Some(var_5) = &input.availability_zone {
         object.key("AvailabilityZone").string(var_5.as_str());
     }
+    if let Some(var_6) = &input.vpc_endpoint_id {
+        object.key("VpcEndpointId").string(var_6.as_str());
+    }
+    if let Some(var_7) = &input.vpc_endpoint_association_arn {
+        object.key("VpcEndpointAssociationArn").string(var_7.as_str());
+    }
     Ok(())
 }

@@ -9,5 +9,11 @@ pub fn ser_update_preferences_input_input(
     if let Some(var_2) = &input.member_account_discount_visibility {
         object.key("memberAccountDiscountVisibility").string(var_2.as_str());
     }
+    if let Some(var_3) = &input.preferred_commitment {
+        #[allow(unused_mut)]
+        let mut object_4 = object.key("preferredCommitment").start_object();
+        crate::protocol_serde::shape_preferred_commitment::ser_preferred_commitment(&mut object_4, var_3)?;
+        object_4.finish();
+    }
     Ok(())
 }

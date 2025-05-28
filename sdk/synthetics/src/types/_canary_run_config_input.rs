@@ -18,6 +18,8 @@ pub struct CanaryRunConfigInput {
     /// <p>Environment variable keys and values are encrypted at rest using Amazon Web Services owned KMS keys. However, the environment variables are not encrypted on the client side. Do not store sensitive information in them.</p>
     /// </important>
     pub environment_variables: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    /// <p>Specifies the amount of ephemeral storage (in MB) to allocate for the canary run during execution. This temporary storage is used for storing canary run artifacts (which are uploaded to an Amazon S3 bucket at the end of the run), and any canary browser operations. This temporary storage is cleared after the run is completed. Default storage value is 1024 MB.</p>
+    pub ephemeral_storage: ::std::option::Option<i32>,
 }
 impl CanaryRunConfigInput {
     /// <p>How long the canary is allowed to run before it must stop. You can't set this time to be longer than the frequency of the runs of this canary.</p>
@@ -42,6 +44,10 @@ impl CanaryRunConfigInput {
     pub fn environment_variables(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.environment_variables.as_ref()
     }
+    /// <p>Specifies the amount of ephemeral storage (in MB) to allocate for the canary run during execution. This temporary storage is used for storing canary run artifacts (which are uploaded to an Amazon S3 bucket at the end of the run), and any canary browser operations. This temporary storage is cleared after the run is completed. Default storage value is 1024 MB.</p>
+    pub fn ephemeral_storage(&self) -> ::std::option::Option<i32> {
+        self.ephemeral_storage
+    }
 }
 impl CanaryRunConfigInput {
     /// Creates a new builder-style object to manufacture [`CanaryRunConfigInput`](crate::types::CanaryRunConfigInput).
@@ -58,6 +64,7 @@ pub struct CanaryRunConfigInputBuilder {
     pub(crate) memory_in_mb: ::std::option::Option<i32>,
     pub(crate) active_tracing: ::std::option::Option<bool>,
     pub(crate) environment_variables: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) ephemeral_storage: ::std::option::Option<i32>,
 }
 impl CanaryRunConfigInputBuilder {
     /// <p>How long the canary is allowed to run before it must stop. You can't set this time to be longer than the frequency of the runs of this canary.</p>
@@ -147,6 +154,20 @@ impl CanaryRunConfigInputBuilder {
     pub fn get_environment_variables(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.environment_variables
     }
+    /// <p>Specifies the amount of ephemeral storage (in MB) to allocate for the canary run during execution. This temporary storage is used for storing canary run artifacts (which are uploaded to an Amazon S3 bucket at the end of the run), and any canary browser operations. This temporary storage is cleared after the run is completed. Default storage value is 1024 MB.</p>
+    pub fn ephemeral_storage(mut self, input: i32) -> Self {
+        self.ephemeral_storage = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies the amount of ephemeral storage (in MB) to allocate for the canary run during execution. This temporary storage is used for storing canary run artifacts (which are uploaded to an Amazon S3 bucket at the end of the run), and any canary browser operations. This temporary storage is cleared after the run is completed. Default storage value is 1024 MB.</p>
+    pub fn set_ephemeral_storage(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.ephemeral_storage = input;
+        self
+    }
+    /// <p>Specifies the amount of ephemeral storage (in MB) to allocate for the canary run during execution. This temporary storage is used for storing canary run artifacts (which are uploaded to an Amazon S3 bucket at the end of the run), and any canary browser operations. This temporary storage is cleared after the run is completed. Default storage value is 1024 MB.</p>
+    pub fn get_ephemeral_storage(&self) -> &::std::option::Option<i32> {
+        &self.ephemeral_storage
+    }
     /// Consumes the builder and constructs a [`CanaryRunConfigInput`](crate::types::CanaryRunConfigInput).
     pub fn build(self) -> crate::types::CanaryRunConfigInput {
         crate::types::CanaryRunConfigInput {
@@ -154,6 +175,7 @@ impl CanaryRunConfigInputBuilder {
             memory_in_mb: self.memory_in_mb,
             active_tracing: self.active_tracing,
             environment_variables: self.environment_variables,
+            ephemeral_storage: self.ephemeral_storage,
         }
     }
 }

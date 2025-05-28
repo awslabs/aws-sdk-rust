@@ -35,6 +35,8 @@ pub(crate) mod shape_create_rule_group;
 
 pub(crate) mod shape_create_tls_inspection_configuration;
 
+pub(crate) mod shape_create_vpc_endpoint_association;
+
 pub(crate) mod shape_delete_firewall;
 
 pub(crate) mod shape_delete_firewall_policy;
@@ -45,7 +47,11 @@ pub(crate) mod shape_delete_rule_group;
 
 pub(crate) mod shape_delete_tls_inspection_configuration;
 
+pub(crate) mod shape_delete_vpc_endpoint_association;
+
 pub(crate) mod shape_describe_firewall;
+
+pub(crate) mod shape_describe_firewall_metadata;
 
 pub(crate) mod shape_describe_firewall_policy;
 
@@ -60,6 +66,8 @@ pub(crate) mod shape_describe_rule_group;
 pub(crate) mod shape_describe_rule_group_metadata;
 
 pub(crate) mod shape_describe_tls_inspection_configuration;
+
+pub(crate) mod shape_describe_vpc_endpoint_association;
 
 pub(crate) mod shape_disassociate_subnets;
 
@@ -80,6 +88,8 @@ pub(crate) mod shape_list_rule_groups;
 pub(crate) mod shape_list_tags_for_resource;
 
 pub(crate) mod shape_list_tls_inspection_configurations;
+
+pub(crate) mod shape_list_vpc_endpoint_associations;
 
 pub(crate) mod shape_put_resource_policy;
 
@@ -133,6 +143,8 @@ pub(crate) mod shape_create_rule_group_input;
 
 pub(crate) mod shape_create_tls_inspection_configuration_input;
 
+pub(crate) mod shape_create_vpc_endpoint_association_input;
+
 pub(crate) mod shape_delete_firewall_input;
 
 pub(crate) mod shape_delete_firewall_policy_input;
@@ -143,7 +155,11 @@ pub(crate) mod shape_delete_rule_group_input;
 
 pub(crate) mod shape_delete_tls_inspection_configuration_input;
 
+pub(crate) mod shape_delete_vpc_endpoint_association_input;
+
 pub(crate) mod shape_describe_firewall_input;
+
+pub(crate) mod shape_describe_firewall_metadata_input;
 
 pub(crate) mod shape_describe_firewall_policy_input;
 
@@ -158,6 +174,8 @@ pub(crate) mod shape_describe_rule_group_input;
 pub(crate) mod shape_describe_rule_group_metadata_input;
 
 pub(crate) mod shape_describe_tls_inspection_configuration_input;
+
+pub(crate) mod shape_describe_vpc_endpoint_association_input;
 
 pub(crate) mod shape_disassociate_subnets_input;
 
@@ -192,6 +210,8 @@ pub(crate) mod shape_list_rule_groups_input;
 pub(crate) mod shape_list_tags_for_resource_input;
 
 pub(crate) mod shape_list_tls_inspection_configurations_input;
+
+pub(crate) mod shape_list_vpc_endpoint_associations_input;
 
 pub(crate) mod shape_log_destination_permission_exception;
 
@@ -279,6 +299,8 @@ pub(crate) mod shape_subnet_mapping;
 
 pub(crate) mod shape_subnet_mappings;
 
+pub(crate) mod shape_supported_availability_zones;
+
 pub(crate) mod shape_tag;
 
 pub(crate) mod shape_tag_list;
@@ -289,6 +311,12 @@ pub(crate) mod shape_tls_inspection_configuration_response;
 
 pub(crate) mod shape_tls_inspection_configurations;
 
+pub(crate) mod shape_vpc_endpoint_association;
+
+pub(crate) mod shape_vpc_endpoint_association_status;
+
+pub(crate) mod shape_vpc_endpoint_associations;
+
 pub(crate) mod shape_address;
 
 pub(crate) mod shape_analysis_report;
@@ -296,6 +324,10 @@ pub(crate) mod shape_analysis_report;
 pub(crate) mod shape_analysis_result_list;
 
 pub(crate) mod shape_analysis_type_report_result;
+
+pub(crate) mod shape_association_sync_state;
+
+pub(crate) mod shape_availability_zone_metadata;
 
 pub(crate) mod shape_capacity_usage_summary;
 
@@ -353,9 +385,13 @@ pub(crate) mod shape_tls_certificate_data;
 
 pub(crate) mod shape_tls_inspection_configuration_metadata;
 
+pub(crate) mod shape_vpc_endpoint_association_metadata;
+
 pub(crate) mod shape_action_definition;
 
 pub(crate) mod shape_analysis_result;
+
+pub(crate) mod shape_az_sync_state;
 
 pub(crate) mod shape_check_certificate_revocation_status_actions;
 

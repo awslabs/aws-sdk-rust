@@ -8,6 +8,10 @@ pub struct ListFlowOperationsInput {
     /// <p>The ID of the Availability Zone where the firewall is located. For example, <code>us-east-2a</code>.</p>
     /// <p>Defines the scope a flow operation. You can use up to 20 filters to configure a single flow operation.</p>
     pub availability_zone: ::std::option::Option<::std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) of a VPC endpoint association.</p>
+    pub vpc_endpoint_association_arn: ::std::option::Option<::std::string::String>,
+    /// <p>A unique identifier for the primary endpoint associated with a firewall.</p>
+    pub vpc_endpoint_id: ::std::option::Option<::std::string::String>,
     /// <p>An optional string that defines whether any or all operation types are returned.</p>
     pub flow_operation_type: ::std::option::Option<crate::types::FlowOperationType>,
     /// <p>When you request a list of objects with a <code>MaxResults</code> setting, if the number of objects that are still available for retrieval exceeds the maximum you requested, Network Firewall returns a <code>NextToken</code> value in the response. To retrieve the next batch of objects, use the token returned from the prior request in your next request.</p>
@@ -24,6 +28,14 @@ impl ListFlowOperationsInput {
     /// <p>Defines the scope a flow operation. You can use up to 20 filters to configure a single flow operation.</p>
     pub fn availability_zone(&self) -> ::std::option::Option<&str> {
         self.availability_zone.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of a VPC endpoint association.</p>
+    pub fn vpc_endpoint_association_arn(&self) -> ::std::option::Option<&str> {
+        self.vpc_endpoint_association_arn.as_deref()
+    }
+    /// <p>A unique identifier for the primary endpoint associated with a firewall.</p>
+    pub fn vpc_endpoint_id(&self) -> ::std::option::Option<&str> {
+        self.vpc_endpoint_id.as_deref()
     }
     /// <p>An optional string that defines whether any or all operation types are returned.</p>
     pub fn flow_operation_type(&self) -> ::std::option::Option<&crate::types::FlowOperationType> {
@@ -51,6 +63,8 @@ impl ListFlowOperationsInput {
 pub struct ListFlowOperationsInputBuilder {
     pub(crate) firewall_arn: ::std::option::Option<::std::string::String>,
     pub(crate) availability_zone: ::std::option::Option<::std::string::String>,
+    pub(crate) vpc_endpoint_association_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) vpc_endpoint_id: ::std::option::Option<::std::string::String>,
     pub(crate) flow_operation_type: ::std::option::Option<crate::types::FlowOperationType>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -87,6 +101,34 @@ impl ListFlowOperationsInputBuilder {
     /// <p>Defines the scope a flow operation. You can use up to 20 filters to configure a single flow operation.</p>
     pub fn get_availability_zone(&self) -> &::std::option::Option<::std::string::String> {
         &self.availability_zone
+    }
+    /// <p>The Amazon Resource Name (ARN) of a VPC endpoint association.</p>
+    pub fn vpc_endpoint_association_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.vpc_endpoint_association_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of a VPC endpoint association.</p>
+    pub fn set_vpc_endpoint_association_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.vpc_endpoint_association_arn = input;
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of a VPC endpoint association.</p>
+    pub fn get_vpc_endpoint_association_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vpc_endpoint_association_arn
+    }
+    /// <p>A unique identifier for the primary endpoint associated with a firewall.</p>
+    pub fn vpc_endpoint_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.vpc_endpoint_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>A unique identifier for the primary endpoint associated with a firewall.</p>
+    pub fn set_vpc_endpoint_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.vpc_endpoint_id = input;
+        self
+    }
+    /// <p>A unique identifier for the primary endpoint associated with a firewall.</p>
+    pub fn get_vpc_endpoint_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vpc_endpoint_id
     }
     /// <p>An optional string that defines whether any or all operation types are returned.</p>
     pub fn flow_operation_type(mut self, input: crate::types::FlowOperationType) -> Self {
@@ -138,6 +180,8 @@ impl ListFlowOperationsInputBuilder {
         ::std::result::Result::Ok(crate::operation::list_flow_operations::ListFlowOperationsInput {
             firewall_arn: self.firewall_arn,
             availability_zone: self.availability_zone,
+            vpc_endpoint_association_arn: self.vpc_endpoint_association_arn,
+            vpc_endpoint_id: self.vpc_endpoint_id,
             flow_operation_type: self.flow_operation_type,
             next_token: self.next_token,
             max_results: self.max_results,

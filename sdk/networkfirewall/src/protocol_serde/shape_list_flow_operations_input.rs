@@ -9,16 +9,22 @@ pub fn ser_list_flow_operations_input_input(
     if let Some(var_2) = &input.availability_zone {
         object.key("AvailabilityZone").string(var_2.as_str());
     }
-    if let Some(var_3) = &input.flow_operation_type {
-        object.key("FlowOperationType").string(var_3.as_str());
+    if let Some(var_3) = &input.vpc_endpoint_association_arn {
+        object.key("VpcEndpointAssociationArn").string(var_3.as_str());
     }
-    if let Some(var_4) = &input.next_token {
-        object.key("NextToken").string(var_4.as_str());
+    if let Some(var_4) = &input.vpc_endpoint_id {
+        object.key("VpcEndpointId").string(var_4.as_str());
     }
-    if let Some(var_5) = &input.max_results {
+    if let Some(var_5) = &input.flow_operation_type {
+        object.key("FlowOperationType").string(var_5.as_str());
+    }
+    if let Some(var_6) = &input.next_token {
+        object.key("NextToken").string(var_6.as_str());
+    }
+    if let Some(var_7) = &input.max_results {
         object.key("MaxResults").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_5).into()),
+            ::aws_smithy_types::Number::NegInt((*var_7).into()),
         );
     }
     Ok(())

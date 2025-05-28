@@ -73,6 +73,8 @@ pub(crate) mod shape_filter;
 
 pub(crate) mod shape_order_by;
 
+pub(crate) mod shape_preferred_commitment;
+
 pub(crate) mod shape_recommendation_list;
 
 pub(crate) mod shape_recommendation_summaries_list;

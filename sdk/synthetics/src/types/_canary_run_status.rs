@@ -8,8 +8,12 @@ pub struct CanaryRunStatus {
     pub state: ::std::option::Option<crate::types::CanaryRunState>,
     /// <p>If run of the canary failed, this field contains the reason for the error.</p>
     pub state_reason: ::std::option::Option<::std::string::String>,
-    /// <p>If this value is <code>CANARY_FAILURE</code>, an exception occurred in the canary code. If this value is <code>EXECUTION_FAILURE</code>, an exception occurred in CloudWatch Synthetics.</p>
+    /// <p>If this value is <code>CANARY_FAILURE</code>, either the canary script failed or Synthetics ran into a fatal error when running the canary. For example, a canary timeout misconfiguration setting can cause the canary to timeout before Synthetics can evaluate its status.</p>
+    /// <p>If this value is <code>EXECUTION_FAILURE</code>, a non-critical failure occurred such as failing to save generated debug artifacts (for example, screenshots or har files).</p>
+    /// <p>If both types of failures occurred, the <code>CANARY_FAILURE</code> takes precedence. To understand the exact error, use the <a href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_CanaryRunStatus.html">StateReason</a> API.</p>
     pub state_reason_code: ::std::option::Option<crate::types::CanaryRunStateReasonCode>,
+    /// <p>Specifies the status of canary script for this run. When Synthetics tries to determine the status but fails, the result is marked as <code>UNKNOWN</code>. For the overall status of canary run, see <a href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_CanaryRunStatus.html">State</a>.</p>
+    pub test_result: ::std::option::Option<crate::types::CanaryRunTestResult>,
 }
 impl CanaryRunStatus {
     /// <p>The current state of the run.</p>
@@ -20,9 +24,15 @@ impl CanaryRunStatus {
     pub fn state_reason(&self) -> ::std::option::Option<&str> {
         self.state_reason.as_deref()
     }
-    /// <p>If this value is <code>CANARY_FAILURE</code>, an exception occurred in the canary code. If this value is <code>EXECUTION_FAILURE</code>, an exception occurred in CloudWatch Synthetics.</p>
+    /// <p>If this value is <code>CANARY_FAILURE</code>, either the canary script failed or Synthetics ran into a fatal error when running the canary. For example, a canary timeout misconfiguration setting can cause the canary to timeout before Synthetics can evaluate its status.</p>
+    /// <p>If this value is <code>EXECUTION_FAILURE</code>, a non-critical failure occurred such as failing to save generated debug artifacts (for example, screenshots or har files).</p>
+    /// <p>If both types of failures occurred, the <code>CANARY_FAILURE</code> takes precedence. To understand the exact error, use the <a href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_CanaryRunStatus.html">StateReason</a> API.</p>
     pub fn state_reason_code(&self) -> ::std::option::Option<&crate::types::CanaryRunStateReasonCode> {
         self.state_reason_code.as_ref()
+    }
+    /// <p>Specifies the status of canary script for this run. When Synthetics tries to determine the status but fails, the result is marked as <code>UNKNOWN</code>. For the overall status of canary run, see <a href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_CanaryRunStatus.html">State</a>.</p>
+    pub fn test_result(&self) -> ::std::option::Option<&crate::types::CanaryRunTestResult> {
+        self.test_result.as_ref()
     }
 }
 impl CanaryRunStatus {
@@ -39,6 +49,7 @@ pub struct CanaryRunStatusBuilder {
     pub(crate) state: ::std::option::Option<crate::types::CanaryRunState>,
     pub(crate) state_reason: ::std::option::Option<::std::string::String>,
     pub(crate) state_reason_code: ::std::option::Option<crate::types::CanaryRunStateReasonCode>,
+    pub(crate) test_result: ::std::option::Option<crate::types::CanaryRunTestResult>,
 }
 impl CanaryRunStatusBuilder {
     /// <p>The current state of the run.</p>
@@ -69,19 +80,39 @@ impl CanaryRunStatusBuilder {
     pub fn get_state_reason(&self) -> &::std::option::Option<::std::string::String> {
         &self.state_reason
     }
-    /// <p>If this value is <code>CANARY_FAILURE</code>, an exception occurred in the canary code. If this value is <code>EXECUTION_FAILURE</code>, an exception occurred in CloudWatch Synthetics.</p>
+    /// <p>If this value is <code>CANARY_FAILURE</code>, either the canary script failed or Synthetics ran into a fatal error when running the canary. For example, a canary timeout misconfiguration setting can cause the canary to timeout before Synthetics can evaluate its status.</p>
+    /// <p>If this value is <code>EXECUTION_FAILURE</code>, a non-critical failure occurred such as failing to save generated debug artifacts (for example, screenshots or har files).</p>
+    /// <p>If both types of failures occurred, the <code>CANARY_FAILURE</code> takes precedence. To understand the exact error, use the <a href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_CanaryRunStatus.html">StateReason</a> API.</p>
     pub fn state_reason_code(mut self, input: crate::types::CanaryRunStateReasonCode) -> Self {
         self.state_reason_code = ::std::option::Option::Some(input);
         self
     }
-    /// <p>If this value is <code>CANARY_FAILURE</code>, an exception occurred in the canary code. If this value is <code>EXECUTION_FAILURE</code>, an exception occurred in CloudWatch Synthetics.</p>
+    /// <p>If this value is <code>CANARY_FAILURE</code>, either the canary script failed or Synthetics ran into a fatal error when running the canary. For example, a canary timeout misconfiguration setting can cause the canary to timeout before Synthetics can evaluate its status.</p>
+    /// <p>If this value is <code>EXECUTION_FAILURE</code>, a non-critical failure occurred such as failing to save generated debug artifacts (for example, screenshots or har files).</p>
+    /// <p>If both types of failures occurred, the <code>CANARY_FAILURE</code> takes precedence. To understand the exact error, use the <a href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_CanaryRunStatus.html">StateReason</a> API.</p>
     pub fn set_state_reason_code(mut self, input: ::std::option::Option<crate::types::CanaryRunStateReasonCode>) -> Self {
         self.state_reason_code = input;
         self
     }
-    /// <p>If this value is <code>CANARY_FAILURE</code>, an exception occurred in the canary code. If this value is <code>EXECUTION_FAILURE</code>, an exception occurred in CloudWatch Synthetics.</p>
+    /// <p>If this value is <code>CANARY_FAILURE</code>, either the canary script failed or Synthetics ran into a fatal error when running the canary. For example, a canary timeout misconfiguration setting can cause the canary to timeout before Synthetics can evaluate its status.</p>
+    /// <p>If this value is <code>EXECUTION_FAILURE</code>, a non-critical failure occurred such as failing to save generated debug artifacts (for example, screenshots or har files).</p>
+    /// <p>If both types of failures occurred, the <code>CANARY_FAILURE</code> takes precedence. To understand the exact error, use the <a href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_CanaryRunStatus.html">StateReason</a> API.</p>
     pub fn get_state_reason_code(&self) -> &::std::option::Option<crate::types::CanaryRunStateReasonCode> {
         &self.state_reason_code
+    }
+    /// <p>Specifies the status of canary script for this run. When Synthetics tries to determine the status but fails, the result is marked as <code>UNKNOWN</code>. For the overall status of canary run, see <a href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_CanaryRunStatus.html">State</a>.</p>
+    pub fn test_result(mut self, input: crate::types::CanaryRunTestResult) -> Self {
+        self.test_result = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies the status of canary script for this run. When Synthetics tries to determine the status but fails, the result is marked as <code>UNKNOWN</code>. For the overall status of canary run, see <a href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_CanaryRunStatus.html">State</a>.</p>
+    pub fn set_test_result(mut self, input: ::std::option::Option<crate::types::CanaryRunTestResult>) -> Self {
+        self.test_result = input;
+        self
+    }
+    /// <p>Specifies the status of canary script for this run. When Synthetics tries to determine the status but fails, the result is marked as <code>UNKNOWN</code>. For the overall status of canary run, see <a href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_CanaryRunStatus.html">State</a>.</p>
+    pub fn get_test_result(&self) -> &::std::option::Option<crate::types::CanaryRunTestResult> {
+        &self.test_result
     }
     /// Consumes the builder and constructs a [`CanaryRunStatus`](crate::types::CanaryRunStatus).
     pub fn build(self) -> crate::types::CanaryRunStatus {
@@ -89,6 +120,7 @@ impl CanaryRunStatusBuilder {
             state: self.state,
             state_reason: self.state_reason,
             state_reason_code: self.state_reason_code,
+            test_result: self.test_result,
         }
     }
 }

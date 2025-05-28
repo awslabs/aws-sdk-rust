@@ -23,7 +23,7 @@ impl crate::operation::get_image_block_public_access_state::builders::GetImageBl
 /// Fluent builder constructing a request to `GetImageBlockPublicAccessState`.
 ///
 /// <p>Gets the current state of <i>block public access for AMIs</i> at the account level in the specified Amazon Web Services Region.</p>
-/// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/sharingamis-intro.html#block-public-access-to-amis">Block public access to your AMIs</a> in the <i>Amazon EC2 User Guide</i>.</p>
+/// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-public-access-to-amis.html">Block public access to your AMIs</a> in the <i>Amazon EC2 User Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetImageBlockPublicAccessStateFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

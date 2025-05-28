@@ -3199,6 +3199,8 @@ pub(crate) mod shape_delete_launch_template_versions_response_error_set;
 
 pub(crate) mod shape_delete_launch_template_versions_response_success_set;
 
+pub(crate) mod shape_delete_snapshot_result_set;
+
 pub(crate) mod shape_deprovisioned_address_set;
 
 pub(crate) mod shape_describe_conversion_task_list;
@@ -4062,6 +4064,8 @@ pub(crate) mod shape_delete_fleet_success_item;
 pub(crate) mod shape_delete_launch_template_versions_response_error_item;
 
 pub(crate) mod shape_delete_launch_template_versions_response_success_item;
+
+pub(crate) mod shape_delete_snapshot_return_code;
 
 pub(crate) mod shape_describe_fast_launch_images_success_item;
 

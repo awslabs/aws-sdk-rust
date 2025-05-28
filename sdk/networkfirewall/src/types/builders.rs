@@ -91,6 +91,8 @@ pub use crate::types::_stateless_rule_group_reference::StatelessRuleGroupReferen
 
 pub use crate::types::_flow_filter::FlowFilterBuilder;
 
+pub use crate::types::_vpc_endpoint_association_metadata::VpcEndpointAssociationMetadataBuilder;
+
 pub use crate::types::_tls_inspection_configuration_metadata::TlsInspectionConfigurationMetadataBuilder;
 
 pub use crate::types::_rule_group_metadata::RuleGroupMetadataBuilder;
@@ -113,7 +115,17 @@ pub use crate::types::_hits::HitsBuilder;
 
 pub use crate::types::_subnet_mapping::SubnetMappingBuilder;
 
+pub use crate::types::_vpc_endpoint_association_status::VpcEndpointAssociationStatusBuilder;
+
+pub use crate::types::_az_sync_state::AzSyncStateBuilder;
+
+pub use crate::types::_attachment::AttachmentBuilder;
+
+pub use crate::types::_vpc_endpoint_association::VpcEndpointAssociationBuilder;
+
 pub use crate::types::_flow_operation::FlowOperationBuilder;
+
+pub use crate::types::_availability_zone_metadata::AvailabilityZoneMetadataBuilder;
 
 pub use crate::types::_firewall_status::FirewallStatusBuilder;
 
@@ -126,7 +138,5 @@ pub use crate::types::_ip_set_metadata::IpSetMetadataBuilder;
 pub use crate::types::_sync_state::SyncStateBuilder;
 
 pub use crate::types::_per_object_status::PerObjectStatusBuilder;
-
-pub use crate::types::_attachment::AttachmentBuilder;
 
 pub use crate::types::_firewall::FirewallBuilder;

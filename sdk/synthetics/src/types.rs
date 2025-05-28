@@ -35,6 +35,8 @@ pub use crate::types::_canary_run_timeline::CanaryRunTimeline;
 
 pub use crate::types::_canary_run_status::CanaryRunStatus;
 
+pub use crate::types::_canary_run_test_result::CanaryRunTestResult;
+
 pub use crate::types::_canary_run_state_reason_code::CanaryRunStateReasonCode;
 
 pub use crate::types::_canary_run_state::CanaryRunState;
@@ -98,6 +100,8 @@ mod _canary_run_state;
 mod _canary_run_state_reason_code;
 
 mod _canary_run_status;
+
+mod _canary_run_test_result;
 
 mod _canary_run_timeline;
 

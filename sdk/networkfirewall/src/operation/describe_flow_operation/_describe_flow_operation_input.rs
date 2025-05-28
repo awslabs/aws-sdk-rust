@@ -8,6 +8,10 @@ pub struct DescribeFlowOperationInput {
     /// <p>The ID of the Availability Zone where the firewall is located. For example, <code>us-east-2a</code>.</p>
     /// <p>Defines the scope a flow operation. You can use up to 20 filters to configure a single flow operation.</p>
     pub availability_zone: ::std::option::Option<::std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) of a VPC endpoint association.</p>
+    pub vpc_endpoint_association_arn: ::std::option::Option<::std::string::String>,
+    /// <p>A unique identifier for the primary endpoint associated with a firewall.</p>
+    pub vpc_endpoint_id: ::std::option::Option<::std::string::String>,
     /// <p>A unique identifier for the flow operation. This ID is returned in the responses to start and list commands. You provide to describe commands.</p>
     pub flow_operation_id: ::std::option::Option<::std::string::String>,
 }
@@ -20,6 +24,14 @@ impl DescribeFlowOperationInput {
     /// <p>Defines the scope a flow operation. You can use up to 20 filters to configure a single flow operation.</p>
     pub fn availability_zone(&self) -> ::std::option::Option<&str> {
         self.availability_zone.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of a VPC endpoint association.</p>
+    pub fn vpc_endpoint_association_arn(&self) -> ::std::option::Option<&str> {
+        self.vpc_endpoint_association_arn.as_deref()
+    }
+    /// <p>A unique identifier for the primary endpoint associated with a firewall.</p>
+    pub fn vpc_endpoint_id(&self) -> ::std::option::Option<&str> {
+        self.vpc_endpoint_id.as_deref()
     }
     /// <p>A unique identifier for the flow operation. This ID is returned in the responses to start and list commands. You provide to describe commands.</p>
     pub fn flow_operation_id(&self) -> ::std::option::Option<&str> {
@@ -39,6 +51,8 @@ impl DescribeFlowOperationInput {
 pub struct DescribeFlowOperationInputBuilder {
     pub(crate) firewall_arn: ::std::option::Option<::std::string::String>,
     pub(crate) availability_zone: ::std::option::Option<::std::string::String>,
+    pub(crate) vpc_endpoint_association_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) vpc_endpoint_id: ::std::option::Option<::std::string::String>,
     pub(crate) flow_operation_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeFlowOperationInputBuilder {
@@ -74,6 +88,34 @@ impl DescribeFlowOperationInputBuilder {
     pub fn get_availability_zone(&self) -> &::std::option::Option<::std::string::String> {
         &self.availability_zone
     }
+    /// <p>The Amazon Resource Name (ARN) of a VPC endpoint association.</p>
+    pub fn vpc_endpoint_association_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.vpc_endpoint_association_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of a VPC endpoint association.</p>
+    pub fn set_vpc_endpoint_association_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.vpc_endpoint_association_arn = input;
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of a VPC endpoint association.</p>
+    pub fn get_vpc_endpoint_association_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vpc_endpoint_association_arn
+    }
+    /// <p>A unique identifier for the primary endpoint associated with a firewall.</p>
+    pub fn vpc_endpoint_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.vpc_endpoint_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>A unique identifier for the primary endpoint associated with a firewall.</p>
+    pub fn set_vpc_endpoint_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.vpc_endpoint_id = input;
+        self
+    }
+    /// <p>A unique identifier for the primary endpoint associated with a firewall.</p>
+    pub fn get_vpc_endpoint_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vpc_endpoint_id
+    }
     /// <p>A unique identifier for the flow operation. This ID is returned in the responses to start and list commands. You provide to describe commands.</p>
     /// This field is required.
     pub fn flow_operation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -97,6 +139,8 @@ impl DescribeFlowOperationInputBuilder {
         ::std::result::Result::Ok(crate::operation::describe_flow_operation::DescribeFlowOperationInput {
             firewall_arn: self.firewall_arn,
             availability_zone: self.availability_zone,
+            vpc_endpoint_association_arn: self.vpc_endpoint_association_arn,
+            vpc_endpoint_id: self.vpc_endpoint_id,
             flow_operation_id: self.flow_operation_id,
         })
     }

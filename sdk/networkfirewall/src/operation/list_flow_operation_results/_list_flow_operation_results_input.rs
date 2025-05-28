@@ -14,6 +14,10 @@ pub struct ListFlowOperationResultsInput {
     /// <p>The ID of the Availability Zone where the firewall is located. For example, <code>us-east-2a</code>.</p>
     /// <p>Defines the scope a flow operation. You can use up to 20 filters to configure a single flow operation.</p>
     pub availability_zone: ::std::option::Option<::std::string::String>,
+    /// <p>A unique identifier for the primary endpoint associated with a firewall.</p>
+    pub vpc_endpoint_id: ::std::option::Option<::std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) of a VPC endpoint association.</p>
+    pub vpc_endpoint_association_arn: ::std::option::Option<::std::string::String>,
 }
 impl ListFlowOperationResultsInput {
     /// <p>The Amazon Resource Name (ARN) of the firewall.</p>
@@ -37,6 +41,14 @@ impl ListFlowOperationResultsInput {
     pub fn availability_zone(&self) -> ::std::option::Option<&str> {
         self.availability_zone.as_deref()
     }
+    /// <p>A unique identifier for the primary endpoint associated with a firewall.</p>
+    pub fn vpc_endpoint_id(&self) -> ::std::option::Option<&str> {
+        self.vpc_endpoint_id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of a VPC endpoint association.</p>
+    pub fn vpc_endpoint_association_arn(&self) -> ::std::option::Option<&str> {
+        self.vpc_endpoint_association_arn.as_deref()
+    }
 }
 impl ListFlowOperationResultsInput {
     /// Creates a new builder-style object to manufacture [`ListFlowOperationResultsInput`](crate::operation::list_flow_operation_results::ListFlowOperationResultsInput).
@@ -54,6 +66,8 @@ pub struct ListFlowOperationResultsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) availability_zone: ::std::option::Option<::std::string::String>,
+    pub(crate) vpc_endpoint_id: ::std::option::Option<::std::string::String>,
+    pub(crate) vpc_endpoint_association_arn: ::std::option::Option<::std::string::String>,
 }
 impl ListFlowOperationResultsInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the firewall.</p>
@@ -131,6 +145,34 @@ impl ListFlowOperationResultsInputBuilder {
     pub fn get_availability_zone(&self) -> &::std::option::Option<::std::string::String> {
         &self.availability_zone
     }
+    /// <p>A unique identifier for the primary endpoint associated with a firewall.</p>
+    pub fn vpc_endpoint_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.vpc_endpoint_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>A unique identifier for the primary endpoint associated with a firewall.</p>
+    pub fn set_vpc_endpoint_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.vpc_endpoint_id = input;
+        self
+    }
+    /// <p>A unique identifier for the primary endpoint associated with a firewall.</p>
+    pub fn get_vpc_endpoint_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vpc_endpoint_id
+    }
+    /// <p>The Amazon Resource Name (ARN) of a VPC endpoint association.</p>
+    pub fn vpc_endpoint_association_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.vpc_endpoint_association_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of a VPC endpoint association.</p>
+    pub fn set_vpc_endpoint_association_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.vpc_endpoint_association_arn = input;
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of a VPC endpoint association.</p>
+    pub fn get_vpc_endpoint_association_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vpc_endpoint_association_arn
+    }
     /// Consumes the builder and constructs a [`ListFlowOperationResultsInput`](crate::operation::list_flow_operation_results::ListFlowOperationResultsInput).
     pub fn build(
         self,
@@ -144,6 +186,8 @@ impl ListFlowOperationResultsInputBuilder {
             next_token: self.next_token,
             max_results: self.max_results,
             availability_zone: self.availability_zone,
+            vpc_endpoint_id: self.vpc_endpoint_id,
+            vpc_endpoint_association_arn: self.vpc_endpoint_association_arn,
         })
     }
 }

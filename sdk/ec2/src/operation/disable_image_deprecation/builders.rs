@@ -23,7 +23,7 @@ impl crate::operation::disable_image_deprecation::builders::DisableImageDeprecat
 /// Fluent builder constructing a request to `DisableImageDeprecation`.
 ///
 /// <p>Cancels the deprecation of the specified AMI.</p>
-/// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-deprecate.html">Deprecate an AMI</a> in the <i>Amazon EC2 User Guide</i>.</p>
+/// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-deprecate.html">Deprecate an Amazon EC2 AMI</a> in the <i>Amazon EC2 User Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DisableImageDeprecationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

@@ -24,7 +24,7 @@ impl crate::operation::disable_image_deregistration_protection::builders::Disabl
 ///
 /// <p>Disables deregistration protection for an AMI. When deregistration protection is disabled, the AMI can be deregistered.</p>
 /// <p>If you chose to include a 24-hour cooldown period when you enabled deregistration protection for the AMI, then, when you disable deregistration protection, you won’t immediately be able to deregister the AMI.</p>
-/// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/deregister-ami.html#ami-deregistration-protection">Protect an AMI from deregistration</a> in the <i>Amazon EC2 User Guide</i>.</p>
+/// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-deregistration-protection.html">Protect an Amazon EC2 AMI from deregistration</a> in the <i>Amazon EC2 User Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DisableImageDeregistrationProtectionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

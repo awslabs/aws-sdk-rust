@@ -23,8 +23,8 @@ impl crate::operation::create_store_image_task::builders::CreateStoreImageTaskIn
 /// Fluent builder constructing a request to `CreateStoreImageTask`.
 ///
 /// <p>Stores an AMI as a single object in an Amazon S3 bucket.</p>
-/// <p>To use this API, you must have the required permissions. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-store-restore.html#ami-s3-permissions">Permissions for storing and restoring AMIs using Amazon S3</a> in the <i>Amazon EC2 User Guide</i>.</p>
-/// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-store-restore.html">Store and restore an AMI using Amazon S3</a> in the <i>Amazon EC2 User Guide</i>.</p>
+/// <p>To use this API, you must have the required permissions. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/work-with-ami-store-restore.html#ami-s3-permissions">Permissions for storing and restoring AMIs using S3</a> in the <i>Amazon EC2 User Guide</i>.</p>
+/// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-store-restore.html">Store and restore an AMI using S3</a> in the <i>Amazon EC2 User Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateStoreImageTaskFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

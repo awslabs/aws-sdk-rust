@@ -19,6 +19,9 @@ pub mod create_rule_group;
 /// Types for the `CreateTLSInspectionConfiguration` operation.
 pub mod create_tls_inspection_configuration;
 
+/// Types for the `CreateVpcEndpointAssociation` operation.
+pub mod create_vpc_endpoint_association;
+
 /// Types for the `DeleteFirewall` operation.
 pub mod delete_firewall;
 
@@ -34,8 +37,14 @@ pub mod delete_rule_group;
 /// Types for the `DeleteTLSInspectionConfiguration` operation.
 pub mod delete_tls_inspection_configuration;
 
+/// Types for the `DeleteVpcEndpointAssociation` operation.
+pub mod delete_vpc_endpoint_association;
+
 /// Types for the `DescribeFirewall` operation.
 pub mod describe_firewall;
+
+/// Types for the `DescribeFirewallMetadata` operation.
+pub mod describe_firewall_metadata;
 
 /// Types for the `DescribeFirewallPolicy` operation.
 pub mod describe_firewall_policy;
@@ -57,6 +66,9 @@ pub mod describe_rule_group_metadata;
 
 /// Types for the `DescribeTLSInspectionConfiguration` operation.
 pub mod describe_tls_inspection_configuration;
+
+/// Types for the `DescribeVpcEndpointAssociation` operation.
+pub mod describe_vpc_endpoint_association;
 
 /// Types for the `DisassociateSubnets` operation.
 pub mod disassociate_subnets;
@@ -87,6 +99,9 @@ pub mod list_tags_for_resource;
 
 /// Types for the `ListTLSInspectionConfigurations` operation.
 pub mod list_tls_inspection_configurations;
+
+/// Types for the `ListVpcEndpointAssociations` operation.
+pub mod list_vpc_endpoint_associations;
 
 /// Types for the `PutResourcePolicy` operation.
 pub mod put_resource_policy;

@@ -10,6 +10,8 @@ pub struct CanaryRunConfigOutput {
     pub memory_in_mb: ::std::option::Option<i32>,
     /// <p>Displays whether this canary run used active X-Ray tracing.</p>
     pub active_tracing: ::std::option::Option<bool>,
+    /// <p>Specifies the amount of ephemeral storage (in MB) to allocate for the canary run during execution. This temporary storage is used for storing canary run artifacts (which are uploaded to an Amazon S3 bucket at the end of the run), and any canary browser operations. This temporary storage is cleared after the run is completed. Default storage value is 1024 MB.</p>
+    pub ephemeral_storage: ::std::option::Option<i32>,
 }
 impl CanaryRunConfigOutput {
     /// <p>How long the canary is allowed to run before it must stop.</p>
@@ -23,6 +25,10 @@ impl CanaryRunConfigOutput {
     /// <p>Displays whether this canary run used active X-Ray tracing.</p>
     pub fn active_tracing(&self) -> ::std::option::Option<bool> {
         self.active_tracing
+    }
+    /// <p>Specifies the amount of ephemeral storage (in MB) to allocate for the canary run during execution. This temporary storage is used for storing canary run artifacts (which are uploaded to an Amazon S3 bucket at the end of the run), and any canary browser operations. This temporary storage is cleared after the run is completed. Default storage value is 1024 MB.</p>
+    pub fn ephemeral_storage(&self) -> ::std::option::Option<i32> {
+        self.ephemeral_storage
     }
 }
 impl CanaryRunConfigOutput {
@@ -39,6 +45,7 @@ pub struct CanaryRunConfigOutputBuilder {
     pub(crate) timeout_in_seconds: ::std::option::Option<i32>,
     pub(crate) memory_in_mb: ::std::option::Option<i32>,
     pub(crate) active_tracing: ::std::option::Option<bool>,
+    pub(crate) ephemeral_storage: ::std::option::Option<i32>,
 }
 impl CanaryRunConfigOutputBuilder {
     /// <p>How long the canary is allowed to run before it must stop.</p>
@@ -83,12 +90,27 @@ impl CanaryRunConfigOutputBuilder {
     pub fn get_active_tracing(&self) -> &::std::option::Option<bool> {
         &self.active_tracing
     }
+    /// <p>Specifies the amount of ephemeral storage (in MB) to allocate for the canary run during execution. This temporary storage is used for storing canary run artifacts (which are uploaded to an Amazon S3 bucket at the end of the run), and any canary browser operations. This temporary storage is cleared after the run is completed. Default storage value is 1024 MB.</p>
+    pub fn ephemeral_storage(mut self, input: i32) -> Self {
+        self.ephemeral_storage = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies the amount of ephemeral storage (in MB) to allocate for the canary run during execution. This temporary storage is used for storing canary run artifacts (which are uploaded to an Amazon S3 bucket at the end of the run), and any canary browser operations. This temporary storage is cleared after the run is completed. Default storage value is 1024 MB.</p>
+    pub fn set_ephemeral_storage(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.ephemeral_storage = input;
+        self
+    }
+    /// <p>Specifies the amount of ephemeral storage (in MB) to allocate for the canary run during execution. This temporary storage is used for storing canary run artifacts (which are uploaded to an Amazon S3 bucket at the end of the run), and any canary browser operations. This temporary storage is cleared after the run is completed. Default storage value is 1024 MB.</p>
+    pub fn get_ephemeral_storage(&self) -> &::std::option::Option<i32> {
+        &self.ephemeral_storage
+    }
     /// Consumes the builder and constructs a [`CanaryRunConfigOutput`](crate::types::CanaryRunConfigOutput).
     pub fn build(self) -> crate::types::CanaryRunConfigOutput {
         crate::types::CanaryRunConfigOutput {
             timeout_in_seconds: self.timeout_in_seconds,
             memory_in_mb: self.memory_in_mb,
             active_tracing: self.active_tracing,
+            ephemeral_storage: self.ephemeral_storage,
         }
     }
 }

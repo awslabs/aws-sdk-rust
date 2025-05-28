@@ -23,13 +23,14 @@ impl crate::operation::deregister_image::builders::DeregisterImageInputBuilder {
 /// Fluent builder constructing a request to `DeregisterImage`.
 ///
 /// <p>Deregisters the specified AMI. A deregistered AMI can't be used to launch new instances.</p>
-/// <p>If a deregistered EBS-backed AMI matches a Recycle Bin retention rule, it moves to the Recycle Bin for the specified retention period. It can be restored before its retention period expires, after which it is permanently deleted. If the deregistered AMI doesn't match a retention rule, it is permanently deleted immediately. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/recycle-bin.html">Recycle Bin</a> in the <i>Amazon EBS User Guide</i>.</p>
+/// <p>If a deregistered EBS-backed AMI matches a Recycle Bin retention rule, it moves to the Recycle Bin for the specified retention period. It can be restored before its retention period expires, after which it is permanently deleted. If the deregistered AMI doesn't match a retention rule, it is permanently deleted immediately. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/recycle-bin.html">Recover deleted Amazon EBS snapshots and EBS-backed AMIs with Recycle Bin</a> in the <i>Amazon EBS User Guide</i>.</p>
+/// <p>When deregistering an EBS-backed AMI, you can optionally delete its associated snapshots at the same time. However, if a snapshot is associated with multiple AMIs, it won't be deleted even if specified for deletion, although the AMI will still be deregistered.</p>
 /// <p>Deregistering an AMI does not delete the following:</p>
 /// <ul>
 /// <li>
 /// <p>Instances already launched from the AMI. You'll continue to incur usage costs for the instances until you terminate them.</p></li>
 /// <li>
-/// <p>For EBS-backed AMIs: The snapshots that were created of the root and data volumes of the instance during AMI creation. You'll continue to incur snapshot storage costs.</p></li>
+/// <p>For EBS-backed AMIs: Snapshots that are associated with multiple AMIs. You'll continue to incur snapshot storage costs.</p></li>
 /// <li>
 /// <p>For instance store-backed AMIs: The files uploaded to Amazon S3 during AMI creation. You'll continue to incur S3 storage costs.</p></li>
 /// </ul>
@@ -132,6 +133,29 @@ impl DeregisterImageFluentBuilder {
     /// <p>The ID of the AMI.</p>
     pub fn get_image_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_image_id()
+    }
+    /// <p>Specifies whether to delete the snapshots associated with the AMI during deregistration.</p><note>
+    /// <p>If a snapshot is associated with multiple AMIs, it is not deleted, regardless of this setting.</p>
+    /// </note>
+    /// <p>Default: The snapshots are not deleted.</p>
+    pub fn delete_associated_snapshots(mut self, input: bool) -> Self {
+        self.inner = self.inner.delete_associated_snapshots(input);
+        self
+    }
+    /// <p>Specifies whether to delete the snapshots associated with the AMI during deregistration.</p><note>
+    /// <p>If a snapshot is associated with multiple AMIs, it is not deleted, regardless of this setting.</p>
+    /// </note>
+    /// <p>Default: The snapshots are not deleted.</p>
+    pub fn set_delete_associated_snapshots(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_delete_associated_snapshots(input);
+        self
+    }
+    /// <p>Specifies whether to delete the snapshots associated with the AMI during deregistration.</p><note>
+    /// <p>If a snapshot is associated with multiple AMIs, it is not deleted, regardless of this setting.</p>
+    /// </note>
+    /// <p>Default: The snapshots are not deleted.</p>
+    pub fn get_delete_associated_snapshots(&self) -> &::std::option::Option<bool> {
+        self.inner.get_delete_associated_snapshots()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {

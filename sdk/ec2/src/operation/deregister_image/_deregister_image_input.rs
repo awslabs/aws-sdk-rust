@@ -6,6 +6,11 @@
 pub struct DeregisterImageInput {
     /// <p>The ID of the AMI.</p>
     pub image_id: ::std::option::Option<::std::string::String>,
+    /// <p>Specifies whether to delete the snapshots associated with the AMI during deregistration.</p><note>
+    /// <p>If a snapshot is associated with multiple AMIs, it is not deleted, regardless of this setting.</p>
+    /// </note>
+    /// <p>Default: The snapshots are not deleted.</p>
+    pub delete_associated_snapshots: ::std::option::Option<bool>,
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub dry_run: ::std::option::Option<bool>,
 }
@@ -13,6 +18,13 @@ impl DeregisterImageInput {
     /// <p>The ID of the AMI.</p>
     pub fn image_id(&self) -> ::std::option::Option<&str> {
         self.image_id.as_deref()
+    }
+    /// <p>Specifies whether to delete the snapshots associated with the AMI during deregistration.</p><note>
+    /// <p>If a snapshot is associated with multiple AMIs, it is not deleted, regardless of this setting.</p>
+    /// </note>
+    /// <p>Default: The snapshots are not deleted.</p>
+    pub fn delete_associated_snapshots(&self) -> ::std::option::Option<bool> {
+        self.delete_associated_snapshots
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(&self) -> ::std::option::Option<bool> {
@@ -31,6 +43,7 @@ impl DeregisterImageInput {
 #[non_exhaustive]
 pub struct DeregisterImageInputBuilder {
     pub(crate) image_id: ::std::option::Option<::std::string::String>,
+    pub(crate) delete_associated_snapshots: ::std::option::Option<bool>,
     pub(crate) dry_run: ::std::option::Option<bool>,
 }
 impl DeregisterImageInputBuilder {
@@ -48,6 +61,29 @@ impl DeregisterImageInputBuilder {
     /// <p>The ID of the AMI.</p>
     pub fn get_image_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.image_id
+    }
+    /// <p>Specifies whether to delete the snapshots associated with the AMI during deregistration.</p><note>
+    /// <p>If a snapshot is associated with multiple AMIs, it is not deleted, regardless of this setting.</p>
+    /// </note>
+    /// <p>Default: The snapshots are not deleted.</p>
+    pub fn delete_associated_snapshots(mut self, input: bool) -> Self {
+        self.delete_associated_snapshots = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies whether to delete the snapshots associated with the AMI during deregistration.</p><note>
+    /// <p>If a snapshot is associated with multiple AMIs, it is not deleted, regardless of this setting.</p>
+    /// </note>
+    /// <p>Default: The snapshots are not deleted.</p>
+    pub fn set_delete_associated_snapshots(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.delete_associated_snapshots = input;
+        self
+    }
+    /// <p>Specifies whether to delete the snapshots associated with the AMI during deregistration.</p><note>
+    /// <p>If a snapshot is associated with multiple AMIs, it is not deleted, regardless of this setting.</p>
+    /// </note>
+    /// <p>Default: The snapshots are not deleted.</p>
+    pub fn get_delete_associated_snapshots(&self) -> &::std::option::Option<bool> {
+        &self.delete_associated_snapshots
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
@@ -69,6 +105,7 @@ impl DeregisterImageInputBuilder {
     ) -> ::std::result::Result<crate::operation::deregister_image::DeregisterImageInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::deregister_image::DeregisterImageInput {
             image_id: self.image_id,
+            delete_associated_snapshots: self.delete_associated_snapshots,
             dry_run: self.dry_run,
         })
     }

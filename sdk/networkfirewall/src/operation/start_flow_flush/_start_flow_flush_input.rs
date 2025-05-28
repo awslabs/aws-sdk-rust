@@ -8,6 +8,10 @@ pub struct StartFlowFlushInput {
     /// <p>The ID of the Availability Zone where the firewall is located. For example, <code>us-east-2a</code>.</p>
     /// <p>Defines the scope a flow operation. You can use up to 20 filters to configure a single flow operation.</p>
     pub availability_zone: ::std::option::Option<::std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) of a VPC endpoint association.</p>
+    pub vpc_endpoint_association_arn: ::std::option::Option<::std::string::String>,
+    /// <p>A unique identifier for the primary endpoint associated with a firewall.</p>
+    pub vpc_endpoint_id: ::std::option::Option<::std::string::String>,
     /// <p>The reqested <code>FlowOperation</code> ignores flows with an age (in seconds) lower than <code>MinimumFlowAgeInSeconds</code>. You provide this for start commands.</p>
     pub minimum_flow_age_in_seconds: ::std::option::Option<i32>,
     /// <p>Defines the scope a flow operation. You can use up to 20 filters to configure a single flow operation.</p>
@@ -22,6 +26,14 @@ impl StartFlowFlushInput {
     /// <p>Defines the scope a flow operation. You can use up to 20 filters to configure a single flow operation.</p>
     pub fn availability_zone(&self) -> ::std::option::Option<&str> {
         self.availability_zone.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of a VPC endpoint association.</p>
+    pub fn vpc_endpoint_association_arn(&self) -> ::std::option::Option<&str> {
+        self.vpc_endpoint_association_arn.as_deref()
+    }
+    /// <p>A unique identifier for the primary endpoint associated with a firewall.</p>
+    pub fn vpc_endpoint_id(&self) -> ::std::option::Option<&str> {
+        self.vpc_endpoint_id.as_deref()
     }
     /// <p>The reqested <code>FlowOperation</code> ignores flows with an age (in seconds) lower than <code>MinimumFlowAgeInSeconds</code>. You provide this for start commands.</p>
     pub fn minimum_flow_age_in_seconds(&self) -> ::std::option::Option<i32> {
@@ -47,6 +59,8 @@ impl StartFlowFlushInput {
 pub struct StartFlowFlushInputBuilder {
     pub(crate) firewall_arn: ::std::option::Option<::std::string::String>,
     pub(crate) availability_zone: ::std::option::Option<::std::string::String>,
+    pub(crate) vpc_endpoint_association_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) vpc_endpoint_id: ::std::option::Option<::std::string::String>,
     pub(crate) minimum_flow_age_in_seconds: ::std::option::Option<i32>,
     pub(crate) flow_filters: ::std::option::Option<::std::vec::Vec<crate::types::FlowFilter>>,
 }
@@ -82,6 +96,34 @@ impl StartFlowFlushInputBuilder {
     /// <p>Defines the scope a flow operation. You can use up to 20 filters to configure a single flow operation.</p>
     pub fn get_availability_zone(&self) -> &::std::option::Option<::std::string::String> {
         &self.availability_zone
+    }
+    /// <p>The Amazon Resource Name (ARN) of a VPC endpoint association.</p>
+    pub fn vpc_endpoint_association_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.vpc_endpoint_association_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of a VPC endpoint association.</p>
+    pub fn set_vpc_endpoint_association_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.vpc_endpoint_association_arn = input;
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of a VPC endpoint association.</p>
+    pub fn get_vpc_endpoint_association_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vpc_endpoint_association_arn
+    }
+    /// <p>A unique identifier for the primary endpoint associated with a firewall.</p>
+    pub fn vpc_endpoint_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.vpc_endpoint_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>A unique identifier for the primary endpoint associated with a firewall.</p>
+    pub fn set_vpc_endpoint_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.vpc_endpoint_id = input;
+        self
+    }
+    /// <p>A unique identifier for the primary endpoint associated with a firewall.</p>
+    pub fn get_vpc_endpoint_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vpc_endpoint_id
     }
     /// <p>The reqested <code>FlowOperation</code> ignores flows with an age (in seconds) lower than <code>MinimumFlowAgeInSeconds</code>. You provide this for start commands.</p>
     pub fn minimum_flow_age_in_seconds(mut self, input: i32) -> Self {
@@ -124,6 +166,8 @@ impl StartFlowFlushInputBuilder {
         ::std::result::Result::Ok(crate::operation::start_flow_flush::StartFlowFlushInput {
             firewall_arn: self.firewall_arn,
             availability_zone: self.availability_zone,
+            vpc_endpoint_association_arn: self.vpc_endpoint_association_arn,
+            vpc_endpoint_id: self.vpc_endpoint_id,
             minimum_flow_age_in_seconds: self.minimum_flow_age_in_seconds,
             flow_filters: self.flow_filters,
         })

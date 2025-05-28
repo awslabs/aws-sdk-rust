@@ -147,6 +147,34 @@ impl ListFlowOperationsFluentBuilder {
     pub fn get_availability_zone(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_availability_zone()
     }
+    /// <p>The Amazon Resource Name (ARN) of a VPC endpoint association.</p>
+    pub fn vpc_endpoint_association_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.vpc_endpoint_association_arn(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of a VPC endpoint association.</p>
+    pub fn set_vpc_endpoint_association_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_vpc_endpoint_association_arn(input);
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of a VPC endpoint association.</p>
+    pub fn get_vpc_endpoint_association_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_vpc_endpoint_association_arn()
+    }
+    /// <p>A unique identifier for the primary endpoint associated with a firewall.</p>
+    pub fn vpc_endpoint_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.vpc_endpoint_id(input.into());
+        self
+    }
+    /// <p>A unique identifier for the primary endpoint associated with a firewall.</p>
+    pub fn set_vpc_endpoint_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_vpc_endpoint_id(input);
+        self
+    }
+    /// <p>A unique identifier for the primary endpoint associated with a firewall.</p>
+    pub fn get_vpc_endpoint_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_vpc_endpoint_id()
+    }
     /// <p>An optional string that defines whether any or all operation types are returned.</p>
     pub fn flow_operation_type(mut self, input: crate::types::FlowOperationType) -> Self {
         self.inner = self.inner.flow_operation_type(input);

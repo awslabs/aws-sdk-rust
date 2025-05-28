@@ -78,6 +78,13 @@ where
                                 crate::protocol_serde::shape_encryption_configuration::de_encryption_configuration(tokens)?,
                             );
                         }
+                        "NumberOfAssociations" => {
+                            builder = builder.set_number_of_associations(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
+                            );
+                        }
                         "EnabledAnalysisTypes" => {
                             builder = builder
                                 .set_enabled_analysis_types(crate::protocol_serde::shape_enabled_analysis_types::de_enabled_analysis_types(tokens)?);

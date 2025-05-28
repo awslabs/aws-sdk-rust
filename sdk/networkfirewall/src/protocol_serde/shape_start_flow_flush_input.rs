@@ -9,23 +9,29 @@ pub fn ser_start_flow_flush_input_input(
     if let Some(var_2) = &input.availability_zone {
         object.key("AvailabilityZone").string(var_2.as_str());
     }
-    if let Some(var_3) = &input.minimum_flow_age_in_seconds {
+    if let Some(var_3) = &input.vpc_endpoint_association_arn {
+        object.key("VpcEndpointAssociationArn").string(var_3.as_str());
+    }
+    if let Some(var_4) = &input.vpc_endpoint_id {
+        object.key("VpcEndpointId").string(var_4.as_str());
+    }
+    if let Some(var_5) = &input.minimum_flow_age_in_seconds {
         object.key("MinimumFlowAgeInSeconds").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_3).into()),
+            ::aws_smithy_types::Number::NegInt((*var_5).into()),
         );
     }
-    if let Some(var_4) = &input.flow_filters {
-        let mut array_5 = object.key("FlowFilters").start_array();
-        for item_6 in var_4 {
+    if let Some(var_6) = &input.flow_filters {
+        let mut array_7 = object.key("FlowFilters").start_array();
+        for item_8 in var_6 {
             {
                 #[allow(unused_mut)]
-                let mut object_7 = array_5.value().start_object();
-                crate::protocol_serde::shape_flow_filter::ser_flow_filter(&mut object_7, item_6)?;
-                object_7.finish();
+                let mut object_9 = array_7.value().start_object();
+                crate::protocol_serde::shape_flow_filter::ser_flow_filter(&mut object_9, item_8)?;
+                object_9.finish();
             }
         }
-        array_5.finish();
+        array_7.finish();
     }
     Ok(())
 }

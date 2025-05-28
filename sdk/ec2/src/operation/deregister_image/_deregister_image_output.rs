@@ -3,7 +3,23 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeregisterImageOutput {
+    /// <p>Returns <code>true</code> if the request succeeds; otherwise, it returns an error.</p>
+    pub r#return: ::std::option::Option<bool>,
+    /// <p>The deletion result for each snapshot associated with the AMI, including the snapshot ID and its success or error code.</p>
+    pub delete_snapshot_results: ::std::option::Option<::std::vec::Vec<crate::types::DeleteSnapshotReturnCode>>,
     _request_id: Option<String>,
+}
+impl DeregisterImageOutput {
+    /// <p>Returns <code>true</code> if the request succeeds; otherwise, it returns an error.</p>
+    pub fn r#return(&self) -> ::std::option::Option<bool> {
+        self.r#return
+    }
+    /// <p>The deletion result for each snapshot associated with the AMI, including the snapshot ID and its success or error code.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.delete_snapshot_results.is_none()`.
+    pub fn delete_snapshot_results(&self) -> &[crate::types::DeleteSnapshotReturnCode] {
+        self.delete_snapshot_results.as_deref().unwrap_or_default()
+    }
 }
 impl ::aws_types::request_id::RequestId for DeregisterImageOutput {
     fn request_id(&self) -> Option<&str> {
@@ -21,9 +37,45 @@ impl DeregisterImageOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 pub struct DeregisterImageOutputBuilder {
+    pub(crate) r#return: ::std::option::Option<bool>,
+    pub(crate) delete_snapshot_results: ::std::option::Option<::std::vec::Vec<crate::types::DeleteSnapshotReturnCode>>,
     _request_id: Option<String>,
 }
 impl DeregisterImageOutputBuilder {
+    /// <p>Returns <code>true</code> if the request succeeds; otherwise, it returns an error.</p>
+    pub fn r#return(mut self, input: bool) -> Self {
+        self.r#return = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Returns <code>true</code> if the request succeeds; otherwise, it returns an error.</p>
+    pub fn set_return(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.r#return = input;
+        self
+    }
+    /// <p>Returns <code>true</code> if the request succeeds; otherwise, it returns an error.</p>
+    pub fn get_return(&self) -> &::std::option::Option<bool> {
+        &self.r#return
+    }
+    /// Appends an item to `delete_snapshot_results`.
+    ///
+    /// To override the contents of this collection use [`set_delete_snapshot_results`](Self::set_delete_snapshot_results).
+    ///
+    /// <p>The deletion result for each snapshot associated with the AMI, including the snapshot ID and its success or error code.</p>
+    pub fn delete_snapshot_results(mut self, input: crate::types::DeleteSnapshotReturnCode) -> Self {
+        let mut v = self.delete_snapshot_results.unwrap_or_default();
+        v.push(input);
+        self.delete_snapshot_results = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The deletion result for each snapshot associated with the AMI, including the snapshot ID and its success or error code.</p>
+    pub fn set_delete_snapshot_results(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DeleteSnapshotReturnCode>>) -> Self {
+        self.delete_snapshot_results = input;
+        self
+    }
+    /// <p>The deletion result for each snapshot associated with the AMI, including the snapshot ID and its success or error code.</p>
+    pub fn get_delete_snapshot_results(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DeleteSnapshotReturnCode>> {
+        &self.delete_snapshot_results
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -36,6 +88,8 @@ impl DeregisterImageOutputBuilder {
     /// Consumes the builder and constructs a [`DeregisterImageOutput`](crate::operation::deregister_image::DeregisterImageOutput).
     pub fn build(self) -> crate::operation::deregister_image::DeregisterImageOutput {
         crate::operation::deregister_image::DeregisterImageOutput {
+            r#return: self.r#return,
+            delete_snapshot_results: self.delete_snapshot_results,
             _request_id: self._request_id,
         }
     }
