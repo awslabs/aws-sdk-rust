@@ -35,7 +35,15 @@ pub struct FileSystem {
     /// <p>The storage capacity of the file system in gibibytes (GiB).</p>
     /// <p>Amazon FSx responds with an HTTP status code 400 (Bad Request) if the value of <code>StorageCapacity</code> is outside of the minimum or maximum values.</p>
     pub storage_capacity: ::std::option::Option<i32>,
-    /// <p>The type of storage the file system is using. If set to <code>SSD</code>, the file system uses solid state drive storage. If set to <code>HDD</code>, the file system uses hard disk drive storage.</p>
+    /// <p>The type of storage the file system is using.</p>
+    /// <ul>
+    /// <li>
+    /// <p>If set to <code>SSD</code>, the file system uses solid state drive storage.</p></li>
+    /// <li>
+    /// <p>If set to <code>HDD</code>, the file system uses hard disk drive storage.</p></li>
+    /// <li>
+    /// <p>If set to <code>INTELLIGENT_TIERING</code>, the file system uses fully elastic, intelligently-tiered storage.</p></li>
+    /// </ul>
     pub storage_type: ::std::option::Option<crate::types::StorageType>,
     /// <p>The ID of the primary virtual private cloud (VPC) for the file system.</p>
     pub vpc_id: ::std::option::Option<::std::string::String>,
@@ -123,7 +131,15 @@ impl FileSystem {
     pub fn storage_capacity(&self) -> ::std::option::Option<i32> {
         self.storage_capacity
     }
-    /// <p>The type of storage the file system is using. If set to <code>SSD</code>, the file system uses solid state drive storage. If set to <code>HDD</code>, the file system uses hard disk drive storage.</p>
+    /// <p>The type of storage the file system is using.</p>
+    /// <ul>
+    /// <li>
+    /// <p>If set to <code>SSD</code>, the file system uses solid state drive storage.</p></li>
+    /// <li>
+    /// <p>If set to <code>HDD</code>, the file system uses hard disk drive storage.</p></li>
+    /// <li>
+    /// <p>If set to <code>INTELLIGENT_TIERING</code>, the file system uses fully elastic, intelligently-tiered storage.</p></li>
+    /// </ul>
     pub fn storage_type(&self) -> ::std::option::Option<&crate::types::StorageType> {
         self.storage_type.as_ref()
     }
@@ -384,17 +400,41 @@ impl FileSystemBuilder {
     pub fn get_storage_capacity(&self) -> &::std::option::Option<i32> {
         &self.storage_capacity
     }
-    /// <p>The type of storage the file system is using. If set to <code>SSD</code>, the file system uses solid state drive storage. If set to <code>HDD</code>, the file system uses hard disk drive storage.</p>
+    /// <p>The type of storage the file system is using.</p>
+    /// <ul>
+    /// <li>
+    /// <p>If set to <code>SSD</code>, the file system uses solid state drive storage.</p></li>
+    /// <li>
+    /// <p>If set to <code>HDD</code>, the file system uses hard disk drive storage.</p></li>
+    /// <li>
+    /// <p>If set to <code>INTELLIGENT_TIERING</code>, the file system uses fully elastic, intelligently-tiered storage.</p></li>
+    /// </ul>
     pub fn storage_type(mut self, input: crate::types::StorageType) -> Self {
         self.storage_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The type of storage the file system is using. If set to <code>SSD</code>, the file system uses solid state drive storage. If set to <code>HDD</code>, the file system uses hard disk drive storage.</p>
+    /// <p>The type of storage the file system is using.</p>
+    /// <ul>
+    /// <li>
+    /// <p>If set to <code>SSD</code>, the file system uses solid state drive storage.</p></li>
+    /// <li>
+    /// <p>If set to <code>HDD</code>, the file system uses hard disk drive storage.</p></li>
+    /// <li>
+    /// <p>If set to <code>INTELLIGENT_TIERING</code>, the file system uses fully elastic, intelligently-tiered storage.</p></li>
+    /// </ul>
     pub fn set_storage_type(mut self, input: ::std::option::Option<crate::types::StorageType>) -> Self {
         self.storage_type = input;
         self
     }
-    /// <p>The type of storage the file system is using. If set to <code>SSD</code>, the file system uses solid state drive storage. If set to <code>HDD</code>, the file system uses hard disk drive storage.</p>
+    /// <p>The type of storage the file system is using.</p>
+    /// <ul>
+    /// <li>
+    /// <p>If set to <code>SSD</code>, the file system uses solid state drive storage.</p></li>
+    /// <li>
+    /// <p>If set to <code>HDD</code>, the file system uses hard disk drive storage.</p></li>
+    /// <li>
+    /// <p>If set to <code>INTELLIGENT_TIERING</code>, the file system uses fully elastic, intelligently-tiered storage.</p></li>
+    /// </ul>
     pub fn get_storage_type(&self) -> &::std::option::Option<crate::types::StorageType> {
         &self.storage_type
     }

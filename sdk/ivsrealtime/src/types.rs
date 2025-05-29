@@ -73,11 +73,17 @@ pub use crate::types::_public_key_summary::PublicKeySummary;
 
 pub use crate::types::_participant_summary::ParticipantSummary;
 
+pub use crate::types::_replication_state::ReplicationState;
+
+pub use crate::types::_replication_type::ReplicationType;
+
 pub use crate::types::_participant_recording_state::ParticipantRecordingState;
 
 pub use crate::types::_participant_state::ParticipantState;
 
 pub use crate::types::_participant_recording_filter_by_recording_state::ParticipantRecordingFilterByRecordingState;
+
+pub use crate::types::_participant_replica::ParticipantReplica;
 
 pub use crate::types::_event::Event;
 
@@ -171,6 +177,8 @@ mod _participant_recording_media_type;
 
 mod _participant_recording_state;
 
+mod _participant_replica;
+
 mod _participant_state;
 
 mod _participant_summary;
@@ -196,6 +204,10 @@ mod _public_key_summary;
 mod _recording_configuration;
 
 mod _recording_configuration_format;
+
+mod _replication_state;
+
+mod _replication_type;
 
 mod _s3_destination_configuration;
 

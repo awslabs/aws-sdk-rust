@@ -12,6 +12,8 @@ pub struct LastUpdate {
     pub error: ::std::option::Option<crate::types::UpdateError>,
     /// <p>The source of the last update to the environment. Includes internal processes by Amazon MWAA, such as an environment maintenance update.</p>
     pub source: ::std::option::Option<::std::string::String>,
+    /// <p>The worker replacement strategy used in the last update of the environment.</p>
+    pub worker_replacement_strategy: ::std::option::Option<crate::types::WorkerReplacementStrategy>,
 }
 impl LastUpdate {
     /// <p>The status of the last update on the environment.</p>
@@ -30,6 +32,10 @@ impl LastUpdate {
     pub fn source(&self) -> ::std::option::Option<&str> {
         self.source.as_deref()
     }
+    /// <p>The worker replacement strategy used in the last update of the environment.</p>
+    pub fn worker_replacement_strategy(&self) -> ::std::option::Option<&crate::types::WorkerReplacementStrategy> {
+        self.worker_replacement_strategy.as_ref()
+    }
 }
 impl LastUpdate {
     /// Creates a new builder-style object to manufacture [`LastUpdate`](crate::types::LastUpdate).
@@ -46,6 +52,7 @@ pub struct LastUpdateBuilder {
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) error: ::std::option::Option<crate::types::UpdateError>,
     pub(crate) source: ::std::option::Option<::std::string::String>,
+    pub(crate) worker_replacement_strategy: ::std::option::Option<crate::types::WorkerReplacementStrategy>,
 }
 impl LastUpdateBuilder {
     /// <p>The status of the last update on the environment.</p>
@@ -104,6 +111,20 @@ impl LastUpdateBuilder {
     pub fn get_source(&self) -> &::std::option::Option<::std::string::String> {
         &self.source
     }
+    /// <p>The worker replacement strategy used in the last update of the environment.</p>
+    pub fn worker_replacement_strategy(mut self, input: crate::types::WorkerReplacementStrategy) -> Self {
+        self.worker_replacement_strategy = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The worker replacement strategy used in the last update of the environment.</p>
+    pub fn set_worker_replacement_strategy(mut self, input: ::std::option::Option<crate::types::WorkerReplacementStrategy>) -> Self {
+        self.worker_replacement_strategy = input;
+        self
+    }
+    /// <p>The worker replacement strategy used in the last update of the environment.</p>
+    pub fn get_worker_replacement_strategy(&self) -> &::std::option::Option<crate::types::WorkerReplacementStrategy> {
+        &self.worker_replacement_strategy
+    }
     /// Consumes the builder and constructs a [`LastUpdate`](crate::types::LastUpdate).
     pub fn build(self) -> crate::types::LastUpdate {
         crate::types::LastUpdate {
@@ -111,6 +132,7 @@ impl LastUpdateBuilder {
             created_at: self.created_at,
             error: self.error,
             source: self.source,
+            worker_replacement_strategy: self.worker_replacement_strategy,
         }
     }
 }

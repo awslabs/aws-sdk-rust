@@ -72,6 +72,8 @@ pub enum Error {
     /// <p>For the <code>CreateTrail</code> <code>PutInsightSelectors</code>, <code>UpdateTrail</code>, <code>StartQuery</code>, and <code>StartImport</code> operations, this exception is thrown when the policy on the S3 bucket or KMS key does not have sufficient permissions for the operation.</p>
     /// <p>For all other operations, this exception is thrown when the policy for the KMS key does not have sufficient permissions for the operation.</p>
     InsufficientEncryptionPolicyException(crate::types::error::InsufficientEncryptionPolicyException),
+    /// <p>The task can't be completed because you are signed in with an account that lacks permissions to view or create a service-linked role. Sign in with an account that has the required permissions and then try again.</p>
+    InsufficientIamAccessPermissionException(crate::types::error::InsufficientIamAccessPermissionException),
     /// <p>This exception is thrown when the policy on the S3 bucket is not sufficient.</p>
     InsufficientS3BucketPolicyException(crate::types::error::InsufficientS3BucketPolicyException),
     /// <p>This exception is thrown when the policy on the Amazon SNS topic is not sufficient.</p>
@@ -250,6 +252,7 @@ impl ::std::fmt::Display for Error {
             Error::InsightNotEnabledException(inner) => inner.fmt(f),
             Error::InsufficientDependencyServiceAccessPermissionException(inner) => inner.fmt(f),
             Error::InsufficientEncryptionPolicyException(inner) => inner.fmt(f),
+            Error::InsufficientIamAccessPermissionException(inner) => inner.fmt(f),
             Error::InsufficientS3BucketPolicyException(inner) => inner.fmt(f),
             Error::InsufficientSnsTopicPolicyException(inner) => inner.fmt(f),
             Error::InvalidCloudWatchLogsLogGroupArnException(inner) => inner.fmt(f),
@@ -356,6 +359,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
             Self::InsightNotEnabledException(inner) => inner.meta(),
             Self::InsufficientDependencyServiceAccessPermissionException(inner) => inner.meta(),
             Self::InsufficientEncryptionPolicyException(inner) => inner.meta(),
+            Self::InsufficientIamAccessPermissionException(inner) => inner.meta(),
             Self::InsufficientS3BucketPolicyException(inner) => inner.meta(),
             Self::InsufficientSnsTopicPolicyException(inner) => inner.meta(),
             Self::InvalidCloudWatchLogsLogGroupArnException(inner) => inner.meta(),
@@ -1250,6 +1254,59 @@ impl From<crate::operation::get_dashboard::GetDashboardError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_event_configuration::GetEventConfigurationError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_event_configuration::GetEventConfigurationError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_event_configuration::GetEventConfigurationError> for Error {
+    fn from(err: crate::operation::get_event_configuration::GetEventConfigurationError) -> Self {
+        match err {
+            crate::operation::get_event_configuration::GetEventConfigurationError::CloudTrailArnInvalidException(inner) => {
+                Error::CloudTrailArnInvalidException(inner)
+            }
+            crate::operation::get_event_configuration::GetEventConfigurationError::EventDataStoreArnInvalidException(inner) => {
+                Error::EventDataStoreArnInvalidException(inner)
+            }
+            crate::operation::get_event_configuration::GetEventConfigurationError::EventDataStoreNotFoundException(inner) => {
+                Error::EventDataStoreNotFoundException(inner)
+            }
+            crate::operation::get_event_configuration::GetEventConfigurationError::InvalidEventDataStoreCategoryException(inner) => {
+                Error::InvalidEventDataStoreCategoryException(inner)
+            }
+            crate::operation::get_event_configuration::GetEventConfigurationError::InvalidEventDataStoreStatusException(inner) => {
+                Error::InvalidEventDataStoreStatusException(inner)
+            }
+            crate::operation::get_event_configuration::GetEventConfigurationError::InvalidParameterCombinationException(inner) => {
+                Error::InvalidParameterCombinationException(inner)
+            }
+            crate::operation::get_event_configuration::GetEventConfigurationError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::get_event_configuration::GetEventConfigurationError::NoManagementAccountSlrExistsException(inner) => {
+                Error::NoManagementAccountSlrExistsException(inner)
+            }
+            crate::operation::get_event_configuration::GetEventConfigurationError::OperationNotPermittedException(inner) => {
+                Error::OperationNotPermittedException(inner)
+            }
+            crate::operation::get_event_configuration::GetEventConfigurationError::UnsupportedOperationException(inner) => {
+                Error::UnsupportedOperationException(inner)
+            }
+            crate::operation::get_event_configuration::GetEventConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_event_data_store::GetEventDataStoreError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1872,6 +1929,73 @@ impl From<crate::operation::lookup_events::LookupEventsError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::put_event_configuration::PutEventConfigurationError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::put_event_configuration::PutEventConfigurationError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::put_event_configuration::PutEventConfigurationError> for Error {
+    fn from(err: crate::operation::put_event_configuration::PutEventConfigurationError) -> Self {
+        match err {
+            crate::operation::put_event_configuration::PutEventConfigurationError::CloudTrailArnInvalidException(inner) => {
+                Error::CloudTrailArnInvalidException(inner)
+            }
+            crate::operation::put_event_configuration::PutEventConfigurationError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::put_event_configuration::PutEventConfigurationError::EventDataStoreArnInvalidException(inner) => {
+                Error::EventDataStoreArnInvalidException(inner)
+            }
+            crate::operation::put_event_configuration::PutEventConfigurationError::EventDataStoreNotFoundException(inner) => {
+                Error::EventDataStoreNotFoundException(inner)
+            }
+            crate::operation::put_event_configuration::PutEventConfigurationError::InactiveEventDataStoreException(inner) => {
+                Error::InactiveEventDataStoreException(inner)
+            }
+            crate::operation::put_event_configuration::PutEventConfigurationError::InsufficientDependencyServiceAccessPermissionException(inner) => {
+                Error::InsufficientDependencyServiceAccessPermissionException(inner)
+            }
+            crate::operation::put_event_configuration::PutEventConfigurationError::InsufficientIamAccessPermissionException(inner) => {
+                Error::InsufficientIamAccessPermissionException(inner)
+            }
+            crate::operation::put_event_configuration::PutEventConfigurationError::InvalidEventDataStoreCategoryException(inner) => {
+                Error::InvalidEventDataStoreCategoryException(inner)
+            }
+            crate::operation::put_event_configuration::PutEventConfigurationError::InvalidEventDataStoreStatusException(inner) => {
+                Error::InvalidEventDataStoreStatusException(inner)
+            }
+            crate::operation::put_event_configuration::PutEventConfigurationError::InvalidParameterCombinationException(inner) => {
+                Error::InvalidParameterCombinationException(inner)
+            }
+            crate::operation::put_event_configuration::PutEventConfigurationError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::put_event_configuration::PutEventConfigurationError::NoManagementAccountSlrExistsException(inner) => {
+                Error::NoManagementAccountSlrExistsException(inner)
+            }
+            crate::operation::put_event_configuration::PutEventConfigurationError::NotOrganizationMasterAccountException(inner) => {
+                Error::NotOrganizationMasterAccountException(inner)
+            }
+            crate::operation::put_event_configuration::PutEventConfigurationError::OperationNotPermittedException(inner) => {
+                Error::OperationNotPermittedException(inner)
+            }
+            crate::operation::put_event_configuration::PutEventConfigurationError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::put_event_configuration::PutEventConfigurationError::UnsupportedOperationException(inner) => {
+                Error::UnsupportedOperationException(inner)
+            }
+            crate::operation::put_event_configuration::PutEventConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::put_event_selectors::PutEventSelectorsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -2061,6 +2185,7 @@ impl From<crate::operation::register_organization_delegated_admin::RegisterOrgan
             crate::operation::register_organization_delegated_admin::RegisterOrganizationDelegatedAdminError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::register_organization_delegated_admin::RegisterOrganizationDelegatedAdminError::DelegatedAdminAccountLimitExceededException(inner) => Error::DelegatedAdminAccountLimitExceededException(inner),
             crate::operation::register_organization_delegated_admin::RegisterOrganizationDelegatedAdminError::InsufficientDependencyServiceAccessPermissionException(inner) => Error::InsufficientDependencyServiceAccessPermissionException(inner),
+            crate::operation::register_organization_delegated_admin::RegisterOrganizationDelegatedAdminError::InsufficientIamAccessPermissionException(inner) => Error::InsufficientIamAccessPermissionException(inner),
             crate::operation::register_organization_delegated_admin::RegisterOrganizationDelegatedAdminError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
             crate::operation::register_organization_delegated_admin::RegisterOrganizationDelegatedAdminError::NotOrganizationManagementAccountException(inner) => Error::NotOrganizationManagementAccountException(inner),
             crate::operation::register_organization_delegated_admin::RegisterOrganizationDelegatedAdminError::OperationNotPermittedException(inner) => Error::OperationNotPermittedException(inner),
@@ -2269,6 +2394,7 @@ where
 impl From<crate::operation::start_event_data_store_ingestion::StartEventDataStoreIngestionError> for Error {
     fn from(err: crate::operation::start_event_data_store_ingestion::StartEventDataStoreIngestionError) -> Self {
         match err {
+            crate::operation::start_event_data_store_ingestion::StartEventDataStoreIngestionError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::start_event_data_store_ingestion::StartEventDataStoreIngestionError::EventDataStoreArnInvalidException(inner) => Error::EventDataStoreArnInvalidException(inner),
             crate::operation::start_event_data_store_ingestion::StartEventDataStoreIngestionError::EventDataStoreNotFoundException(inner) => Error::EventDataStoreNotFoundException(inner),
             crate::operation::start_event_data_store_ingestion::StartEventDataStoreIngestionError::InsufficientDependencyServiceAccessPermissionException(inner) => Error::InsufficientDependencyServiceAccessPermissionException(inner),
@@ -2431,6 +2557,7 @@ where
 impl From<crate::operation::stop_event_data_store_ingestion::StopEventDataStoreIngestionError> for Error {
     fn from(err: crate::operation::stop_event_data_store_ingestion::StopEventDataStoreIngestionError) -> Self {
         match err {
+            crate::operation::stop_event_data_store_ingestion::StopEventDataStoreIngestionError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::stop_event_data_store_ingestion::StopEventDataStoreIngestionError::EventDataStoreArnInvalidException(inner) => Error::EventDataStoreArnInvalidException(inner),
             crate::operation::stop_event_data_store_ingestion::StopEventDataStoreIngestionError::EventDataStoreNotFoundException(inner) => Error::EventDataStoreNotFoundException(inner),
             crate::operation::stop_event_data_store_ingestion::StopEventDataStoreIngestionError::InsufficientDependencyServiceAccessPermissionException(inner) => Error::InsufficientDependencyServiceAccessPermissionException(inner),
@@ -2786,6 +2913,7 @@ impl ::std::error::Error for Error {
             Error::InsightNotEnabledException(inner) => inner.source(),
             Error::InsufficientDependencyServiceAccessPermissionException(inner) => inner.source(),
             Error::InsufficientEncryptionPolicyException(inner) => inner.source(),
+            Error::InsufficientIamAccessPermissionException(inner) => inner.source(),
             Error::InsufficientS3BucketPolicyException(inner) => inner.source(),
             Error::InsufficientSnsTopicPolicyException(inner) => inner.source(),
             Error::InvalidCloudWatchLogsLogGroupArnException(inner) => inner.source(),
@@ -2878,6 +3006,7 @@ impl ::aws_types::request_id::RequestId for Error {
             Self::InsightNotEnabledException(e) => e.request_id(),
             Self::InsufficientDependencyServiceAccessPermissionException(e) => e.request_id(),
             Self::InsufficientEncryptionPolicyException(e) => e.request_id(),
+            Self::InsufficientIamAccessPermissionException(e) => e.request_id(),
             Self::InsufficientS3BucketPolicyException(e) => e.request_id(),
             Self::InsufficientSnsTopicPolicyException(e) => e.request_id(),
             Self::InvalidCloudWatchLogsLogGroupArnException(e) => e.request_id(),

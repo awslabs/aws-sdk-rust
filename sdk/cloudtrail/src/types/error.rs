@@ -109,6 +109,8 @@ pub use crate::types::error::_invalid_tag_parameter_exception::InvalidTagParamet
 
 pub use crate::types::error::_not_organization_management_account_exception::NotOrganizationManagementAccountException;
 
+pub use crate::types::error::_insufficient_iam_access_permission_exception::InsufficientIamAccessPermissionException;
+
 pub use crate::types::error::_delegated_admin_account_limit_exceeded_exception::DelegatedAdminAccountLimitExceededException;
 
 pub use crate::types::error::_cannot_delegate_management_account_exception::CannotDelegateManagementAccountException;
@@ -232,6 +234,8 @@ mod _insight_not_enabled_exception;
 mod _insufficient_dependency_service_access_permission_exception;
 
 mod _insufficient_encryption_policy_exception;
+
+mod _insufficient_iam_access_permission_exception;
 
 mod _insufficient_s3_bucket_policy_exception;
 

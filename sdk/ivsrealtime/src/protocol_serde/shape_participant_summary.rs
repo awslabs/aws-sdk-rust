@@ -51,6 +51,34 @@ where
                                     .transpose()?,
                             );
                         }
+                        "replicationType" => {
+                            builder = builder.set_replication_type(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::ReplicationType::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "replicationState" => {
+                            builder = builder.set_replication_state(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::ReplicationState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "sourceStageArn" => {
+                            builder = builder.set_source_stage_arn(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "sourceSessionId" => {
+                            builder = builder.set_source_session_id(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

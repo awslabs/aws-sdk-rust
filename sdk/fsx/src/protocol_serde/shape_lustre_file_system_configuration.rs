@@ -98,6 +98,18 @@ where
                         "EfaEnabled" => {
                             builder = builder.set_efa_enabled(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
+                        "ThroughputCapacity" => {
+                            builder = builder.set_throughput_capacity(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
+                            );
+                        }
+                        "DataReadCacheConfiguration" => {
+                            builder = builder.set_data_read_cache_configuration(
+                                crate::protocol_serde::shape_lustre_read_cache_configuration::de_lustre_read_cache_configuration(tokens)?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

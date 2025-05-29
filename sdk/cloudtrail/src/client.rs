@@ -201,6 +201,8 @@ mod get_channel;
 
 mod get_dashboard;
 
+mod get_event_configuration;
+
 mod get_event_data_store;
 
 mod get_event_selectors;
@@ -238,6 +240,8 @@ mod list_tags;
 mod list_trails;
 
 mod lookup_events;
+
+mod put_event_configuration;
 
 mod put_event_selectors;
 

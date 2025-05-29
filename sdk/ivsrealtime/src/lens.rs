@@ -39,6 +39,16 @@ pub(crate) fn reflens_list_participant_events_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_participant_replicas_output_output_next_token(
+    input: &crate::operation::list_participant_replicas::ListParticipantReplicasOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_participants_output_output_next_token(
     input: &crate::operation::list_participants::ListParticipantsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -93,6 +103,13 @@ pub(crate) fn lens_list_ingest_configurations_output_output_ingest_configuration
     input: crate::operation::list_ingest_configurations::ListIngestConfigurationsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::IngestConfigurationSummary>> {
     let input = input.ingest_configurations;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_participant_replicas_output_output_replicas(
+    input: crate::operation::list_participant_replicas::ListParticipantReplicasOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::ParticipantReplica>> {
+    let input = input.replicas;
     ::std::option::Option::Some(input)
 }
 

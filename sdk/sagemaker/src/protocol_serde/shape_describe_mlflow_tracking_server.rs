@@ -131,6 +131,13 @@ pub(crate) fn de_describe_mlflow_tracking_server(
                             .transpose()?,
                     );
                 }
+                "TrackingServerMaintenanceStatus" => {
+                    builder = builder.set_tracking_server_maintenance_status(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| crate::types::TrackingServerMaintenanceStatus::from(u.as_ref())))
+                            .transpose()?,
+                    );
+                }
                 "IsActive" => {
                     builder = builder.set_is_active(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

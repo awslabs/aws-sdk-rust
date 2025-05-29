@@ -18,7 +18,9 @@ pub struct CreateLocationObjectStorageInput {
     pub access_key: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the secret key (for example, a password) if credentials are required to authenticate with the object storage server.</p>
     pub secret_key: ::std::option::Option<::std::string::String>,
-    /// <p>Specifies the Amazon Resource Names (ARNs) of the DataSync agents that can connect with your object storage system.</p>
+    /// <p>(Optional) Specifies the Amazon Resource Names (ARNs) of the DataSync agents that can connect with your object storage system. If you are setting up an agentless cross-cloud transfer, you do not need to specify a value for this parameter.</p><note>
+    /// <p>Make sure you configure this parameter correctly when you first create your storage location. You cannot add or remove agents from a storage location after you create it.</p>
+    /// </note>
     pub agent_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Specifies the key-value pair that represents a tag that you want to add to the resource. Tags can help you manage, filter, and search for your resources. We recommend creating a name tag for your location.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::TagListEntry>>,
@@ -36,6 +38,16 @@ pub struct CreateLocationObjectStorageInput {
     /// <p><code>cat object_server_certificate.pem intermediate_certificate.pem ca_root_certificate.pem &gt; object_storage_certificates.pem</code></p>
     /// <p>To use this parameter, configure <code>ServerProtocol</code> to <code>HTTPS</code>.</p>
     pub server_certificate: ::std::option::Option<::aws_smithy_types::Blob>,
+    /// <p>Specifies configuration information for a DataSync-managed secret, which includes the <code>SecretKey</code> that DataSync uses to access a specific object storage location, with a customer-managed KMS key.</p>
+    /// <p>When you include this paramater as part of a <code>CreateLocationObjectStorage</code> request, you provide only the KMS key ARN. DataSync uses this KMS key together with the value you specify for the <code>SecretKey</code> parameter to create a DataSync-managed secret to store the location access credentials.</p>
+    /// <p>Make sure the DataSync has permission to access the KMS key that you specify.</p><note>
+    /// <p>You can use either <code>CmkSecretConfig</code> (with <code>SecretKey</code>) or <code>CustomSecretConfig</code> (without <code>SecretKey</code>) to provide credentials for a <code>CreateLocationObjectStorage</code> request. Do not provide both parameters for the same request.</p>
+    /// </note>
+    pub cmk_secret_config: ::std::option::Option<crate::types::CmkSecretConfig>,
+    /// <p>Specifies configuration information for a customer-managed Secrets Manager secret where the secret key for a specific object storage location is stored in plain text. This configuration includes the secret ARN, and the ARN for an IAM role that provides access to the secret.</p><note>
+    /// <p>You can use either <code>CmkSecretConfig</code> (with <code>SecretKey</code>) or <code>CustomSecretConfig</code> (without <code>SecretKey</code>) to provide credentials for a <code>CreateLocationObjectStorage</code> request. Do not provide both parameters for the same request.</p>
+    /// </note>
+    pub custom_secret_config: ::std::option::Option<crate::types::CustomSecretConfig>,
 }
 impl CreateLocationObjectStorageInput {
     /// <p>Specifies the domain name or IP version 4 (IPv4) address of the object storage server that your DataSync agent connects to.</p>
@@ -66,7 +78,9 @@ impl CreateLocationObjectStorageInput {
     pub fn secret_key(&self) -> ::std::option::Option<&str> {
         self.secret_key.as_deref()
     }
-    /// <p>Specifies the Amazon Resource Names (ARNs) of the DataSync agents that can connect with your object storage system.</p>
+    /// <p>(Optional) Specifies the Amazon Resource Names (ARNs) of the DataSync agents that can connect with your object storage system. If you are setting up an agentless cross-cloud transfer, you do not need to specify a value for this parameter.</p><note>
+    /// <p>Make sure you configure this parameter correctly when you first create your storage location. You cannot add or remove agents from a storage location after you create it.</p>
+    /// </note>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.agent_arns.is_none()`.
     pub fn agent_arns(&self) -> &[::std::string::String] {
@@ -94,6 +108,20 @@ impl CreateLocationObjectStorageInput {
     pub fn server_certificate(&self) -> ::std::option::Option<&::aws_smithy_types::Blob> {
         self.server_certificate.as_ref()
     }
+    /// <p>Specifies configuration information for a DataSync-managed secret, which includes the <code>SecretKey</code> that DataSync uses to access a specific object storage location, with a customer-managed KMS key.</p>
+    /// <p>When you include this paramater as part of a <code>CreateLocationObjectStorage</code> request, you provide only the KMS key ARN. DataSync uses this KMS key together with the value you specify for the <code>SecretKey</code> parameter to create a DataSync-managed secret to store the location access credentials.</p>
+    /// <p>Make sure the DataSync has permission to access the KMS key that you specify.</p><note>
+    /// <p>You can use either <code>CmkSecretConfig</code> (with <code>SecretKey</code>) or <code>CustomSecretConfig</code> (without <code>SecretKey</code>) to provide credentials for a <code>CreateLocationObjectStorage</code> request. Do not provide both parameters for the same request.</p>
+    /// </note>
+    pub fn cmk_secret_config(&self) -> ::std::option::Option<&crate::types::CmkSecretConfig> {
+        self.cmk_secret_config.as_ref()
+    }
+    /// <p>Specifies configuration information for a customer-managed Secrets Manager secret where the secret key for a specific object storage location is stored in plain text. This configuration includes the secret ARN, and the ARN for an IAM role that provides access to the secret.</p><note>
+    /// <p>You can use either <code>CmkSecretConfig</code> (with <code>SecretKey</code>) or <code>CustomSecretConfig</code> (without <code>SecretKey</code>) to provide credentials for a <code>CreateLocationObjectStorage</code> request. Do not provide both parameters for the same request.</p>
+    /// </note>
+    pub fn custom_secret_config(&self) -> ::std::option::Option<&crate::types::CustomSecretConfig> {
+        self.custom_secret_config.as_ref()
+    }
 }
 impl ::std::fmt::Debug for CreateLocationObjectStorageInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -108,6 +136,8 @@ impl ::std::fmt::Debug for CreateLocationObjectStorageInput {
         formatter.field("agent_arns", &self.agent_arns);
         formatter.field("tags", &self.tags);
         formatter.field("server_certificate", &self.server_certificate);
+        formatter.field("cmk_secret_config", &self.cmk_secret_config);
+        formatter.field("custom_secret_config", &self.custom_secret_config);
         formatter.finish()
     }
 }
@@ -132,6 +162,8 @@ pub struct CreateLocationObjectStorageInputBuilder {
     pub(crate) agent_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::TagListEntry>>,
     pub(crate) server_certificate: ::std::option::Option<::aws_smithy_types::Blob>,
+    pub(crate) cmk_secret_config: ::std::option::Option<crate::types::CmkSecretConfig>,
+    pub(crate) custom_secret_config: ::std::option::Option<crate::types::CustomSecretConfig>,
 }
 impl CreateLocationObjectStorageInputBuilder {
     /// <p>Specifies the domain name or IP version 4 (IPv4) address of the object storage server that your DataSync agent connects to.</p>
@@ -238,19 +270,25 @@ impl CreateLocationObjectStorageInputBuilder {
     ///
     /// To override the contents of this collection use [`set_agent_arns`](Self::set_agent_arns).
     ///
-    /// <p>Specifies the Amazon Resource Names (ARNs) of the DataSync agents that can connect with your object storage system.</p>
+    /// <p>(Optional) Specifies the Amazon Resource Names (ARNs) of the DataSync agents that can connect with your object storage system. If you are setting up an agentless cross-cloud transfer, you do not need to specify a value for this parameter.</p><note>
+    /// <p>Make sure you configure this parameter correctly when you first create your storage location. You cannot add or remove agents from a storage location after you create it.</p>
+    /// </note>
     pub fn agent_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.agent_arns.unwrap_or_default();
         v.push(input.into());
         self.agent_arns = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Specifies the Amazon Resource Names (ARNs) of the DataSync agents that can connect with your object storage system.</p>
+    /// <p>(Optional) Specifies the Amazon Resource Names (ARNs) of the DataSync agents that can connect with your object storage system. If you are setting up an agentless cross-cloud transfer, you do not need to specify a value for this parameter.</p><note>
+    /// <p>Make sure you configure this parameter correctly when you first create your storage location. You cannot add or remove agents from a storage location after you create it.</p>
+    /// </note>
     pub fn set_agent_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.agent_arns = input;
         self
     }
-    /// <p>Specifies the Amazon Resource Names (ARNs) of the DataSync agents that can connect with your object storage system.</p>
+    /// <p>(Optional) Specifies the Amazon Resource Names (ARNs) of the DataSync agents that can connect with your object storage system. If you are setting up an agentless cross-cloud transfer, you do not need to specify a value for this parameter.</p><note>
+    /// <p>Make sure you configure this parameter correctly when you first create your storage location. You cannot add or remove agents from a storage location after you create it.</p>
+    /// </note>
     pub fn get_agent_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.agent_arns
     }
@@ -324,6 +362,52 @@ impl CreateLocationObjectStorageInputBuilder {
     pub fn get_server_certificate(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
         &self.server_certificate
     }
+    /// <p>Specifies configuration information for a DataSync-managed secret, which includes the <code>SecretKey</code> that DataSync uses to access a specific object storage location, with a customer-managed KMS key.</p>
+    /// <p>When you include this paramater as part of a <code>CreateLocationObjectStorage</code> request, you provide only the KMS key ARN. DataSync uses this KMS key together with the value you specify for the <code>SecretKey</code> parameter to create a DataSync-managed secret to store the location access credentials.</p>
+    /// <p>Make sure the DataSync has permission to access the KMS key that you specify.</p><note>
+    /// <p>You can use either <code>CmkSecretConfig</code> (with <code>SecretKey</code>) or <code>CustomSecretConfig</code> (without <code>SecretKey</code>) to provide credentials for a <code>CreateLocationObjectStorage</code> request. Do not provide both parameters for the same request.</p>
+    /// </note>
+    pub fn cmk_secret_config(mut self, input: crate::types::CmkSecretConfig) -> Self {
+        self.cmk_secret_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies configuration information for a DataSync-managed secret, which includes the <code>SecretKey</code> that DataSync uses to access a specific object storage location, with a customer-managed KMS key.</p>
+    /// <p>When you include this paramater as part of a <code>CreateLocationObjectStorage</code> request, you provide only the KMS key ARN. DataSync uses this KMS key together with the value you specify for the <code>SecretKey</code> parameter to create a DataSync-managed secret to store the location access credentials.</p>
+    /// <p>Make sure the DataSync has permission to access the KMS key that you specify.</p><note>
+    /// <p>You can use either <code>CmkSecretConfig</code> (with <code>SecretKey</code>) or <code>CustomSecretConfig</code> (without <code>SecretKey</code>) to provide credentials for a <code>CreateLocationObjectStorage</code> request. Do not provide both parameters for the same request.</p>
+    /// </note>
+    pub fn set_cmk_secret_config(mut self, input: ::std::option::Option<crate::types::CmkSecretConfig>) -> Self {
+        self.cmk_secret_config = input;
+        self
+    }
+    /// <p>Specifies configuration information for a DataSync-managed secret, which includes the <code>SecretKey</code> that DataSync uses to access a specific object storage location, with a customer-managed KMS key.</p>
+    /// <p>When you include this paramater as part of a <code>CreateLocationObjectStorage</code> request, you provide only the KMS key ARN. DataSync uses this KMS key together with the value you specify for the <code>SecretKey</code> parameter to create a DataSync-managed secret to store the location access credentials.</p>
+    /// <p>Make sure the DataSync has permission to access the KMS key that you specify.</p><note>
+    /// <p>You can use either <code>CmkSecretConfig</code> (with <code>SecretKey</code>) or <code>CustomSecretConfig</code> (without <code>SecretKey</code>) to provide credentials for a <code>CreateLocationObjectStorage</code> request. Do not provide both parameters for the same request.</p>
+    /// </note>
+    pub fn get_cmk_secret_config(&self) -> &::std::option::Option<crate::types::CmkSecretConfig> {
+        &self.cmk_secret_config
+    }
+    /// <p>Specifies configuration information for a customer-managed Secrets Manager secret where the secret key for a specific object storage location is stored in plain text. This configuration includes the secret ARN, and the ARN for an IAM role that provides access to the secret.</p><note>
+    /// <p>You can use either <code>CmkSecretConfig</code> (with <code>SecretKey</code>) or <code>CustomSecretConfig</code> (without <code>SecretKey</code>) to provide credentials for a <code>CreateLocationObjectStorage</code> request. Do not provide both parameters for the same request.</p>
+    /// </note>
+    pub fn custom_secret_config(mut self, input: crate::types::CustomSecretConfig) -> Self {
+        self.custom_secret_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies configuration information for a customer-managed Secrets Manager secret where the secret key for a specific object storage location is stored in plain text. This configuration includes the secret ARN, and the ARN for an IAM role that provides access to the secret.</p><note>
+    /// <p>You can use either <code>CmkSecretConfig</code> (with <code>SecretKey</code>) or <code>CustomSecretConfig</code> (without <code>SecretKey</code>) to provide credentials for a <code>CreateLocationObjectStorage</code> request. Do not provide both parameters for the same request.</p>
+    /// </note>
+    pub fn set_custom_secret_config(mut self, input: ::std::option::Option<crate::types::CustomSecretConfig>) -> Self {
+        self.custom_secret_config = input;
+        self
+    }
+    /// <p>Specifies configuration information for a customer-managed Secrets Manager secret where the secret key for a specific object storage location is stored in plain text. This configuration includes the secret ARN, and the ARN for an IAM role that provides access to the secret.</p><note>
+    /// <p>You can use either <code>CmkSecretConfig</code> (with <code>SecretKey</code>) or <code>CustomSecretConfig</code> (without <code>SecretKey</code>) to provide credentials for a <code>CreateLocationObjectStorage</code> request. Do not provide both parameters for the same request.</p>
+    /// </note>
+    pub fn get_custom_secret_config(&self) -> &::std::option::Option<crate::types::CustomSecretConfig> {
+        &self.custom_secret_config
+    }
     /// Consumes the builder and constructs a [`CreateLocationObjectStorageInput`](crate::operation::create_location_object_storage::CreateLocationObjectStorageInput).
     pub fn build(
         self,
@@ -342,6 +426,8 @@ impl CreateLocationObjectStorageInputBuilder {
             agent_arns: self.agent_arns,
             tags: self.tags,
             server_certificate: self.server_certificate,
+            cmk_secret_config: self.cmk_secret_config,
+            custom_secret_config: self.custom_secret_config,
         })
     }
 }
@@ -358,6 +444,8 @@ impl ::std::fmt::Debug for CreateLocationObjectStorageInputBuilder {
         formatter.field("agent_arns", &self.agent_arns);
         formatter.field("tags", &self.tags);
         formatter.field("server_certificate", &self.server_certificate);
+        formatter.field("cmk_secret_config", &self.cmk_secret_config);
+        formatter.field("custom_secret_config", &self.custom_secret_config);
         formatter.finish()
     }
 }

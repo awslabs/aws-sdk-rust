@@ -146,6 +146,16 @@ pub(crate) fn de_describe_location_object_storage(
                 "ServerCertificate" => {
                     builder = builder.set_server_certificate(::aws_smithy_json::deserialize::token::expect_blob_or_null(tokens.next())?);
                 }
+                "ManagedSecretConfig" => {
+                    builder =
+                        builder.set_managed_secret_config(crate::protocol_serde::shape_managed_secret_config::de_managed_secret_config(tokens)?);
+                }
+                "CmkSecretConfig" => {
+                    builder = builder.set_cmk_secret_config(crate::protocol_serde::shape_cmk_secret_config::de_cmk_secret_config(tokens)?);
+                }
+                "CustomSecretConfig" => {
+                    builder = builder.set_custom_secret_config(crate::protocol_serde::shape_custom_secret_config::de_custom_secret_config(tokens)?);
+                }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },
             other => {

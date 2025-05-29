@@ -284,6 +284,8 @@ pub enum RegisterOrganizationDelegatedAdminError {
     DelegatedAdminAccountLimitExceededException(crate::types::error::DelegatedAdminAccountLimitExceededException),
     /// <p>This exception is thrown when the IAM identity that is used to create the organization resource lacks one or more required permissions for creating an organization resource in a required service.</p>
     InsufficientDependencyServiceAccessPermissionException(crate::types::error::InsufficientDependencyServiceAccessPermissionException),
+    /// <p>The task can't be completed because you are signed in with an account that lacks permissions to view or create a service-linked role. Sign in with an account that has the required permissions and then try again.</p>
+    InsufficientIamAccessPermissionException(crate::types::error::InsufficientIamAccessPermissionException),
     /// <p>The request includes a parameter that is not valid.</p>
     InvalidParameterException(crate::types::error::InvalidParameterException),
     /// <p>This exception is thrown when the account making the request is not the organization's management account.</p>
@@ -336,6 +338,7 @@ impl RegisterOrganizationDelegatedAdminError {
             Self::ConflictException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::DelegatedAdminAccountLimitExceededException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InsufficientDependencyServiceAccessPermissionException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::InsufficientIamAccessPermissionException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidParameterException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::NotOrganizationManagementAccountException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::OperationNotPermittedException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
@@ -373,6 +376,10 @@ impl RegisterOrganizationDelegatedAdminError {
     pub fn is_insufficient_dependency_service_access_permission_exception(&self) -> bool {
         matches!(self, Self::InsufficientDependencyServiceAccessPermissionException(_))
     }
+    /// Returns `true` if the error kind is `RegisterOrganizationDelegatedAdminError::InsufficientIamAccessPermissionException`.
+    pub fn is_insufficient_iam_access_permission_exception(&self) -> bool {
+        matches!(self, Self::InsufficientIamAccessPermissionException(_))
+    }
     /// Returns `true` if the error kind is `RegisterOrganizationDelegatedAdminError::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(self, Self::InvalidParameterException(_))
@@ -408,6 +415,7 @@ impl ::std::error::Error for RegisterOrganizationDelegatedAdminError {
             Self::ConflictException(_inner) => ::std::option::Option::Some(_inner),
             Self::DelegatedAdminAccountLimitExceededException(_inner) => ::std::option::Option::Some(_inner),
             Self::InsufficientDependencyServiceAccessPermissionException(_inner) => ::std::option::Option::Some(_inner),
+            Self::InsufficientIamAccessPermissionException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidParameterException(_inner) => ::std::option::Option::Some(_inner),
             Self::NotOrganizationManagementAccountException(_inner) => ::std::option::Option::Some(_inner),
             Self::OperationNotPermittedException(_inner) => ::std::option::Option::Some(_inner),
@@ -428,6 +436,7 @@ impl ::std::fmt::Display for RegisterOrganizationDelegatedAdminError {
             Self::ConflictException(_inner) => _inner.fmt(f),
             Self::DelegatedAdminAccountLimitExceededException(_inner) => _inner.fmt(f),
             Self::InsufficientDependencyServiceAccessPermissionException(_inner) => _inner.fmt(f),
+            Self::InsufficientIamAccessPermissionException(_inner) => _inner.fmt(f),
             Self::InvalidParameterException(_inner) => _inner.fmt(f),
             Self::NotOrganizationManagementAccountException(_inner) => _inner.fmt(f),
             Self::OperationNotPermittedException(_inner) => _inner.fmt(f),
@@ -464,6 +473,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for RegisterOrgan
             Self::InsufficientDependencyServiceAccessPermissionException(_inner) => {
                 ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
             }
+            Self::InsufficientIamAccessPermissionException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidParameterException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::NotOrganizationManagementAccountException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::OperationNotPermittedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),

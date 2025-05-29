@@ -58,6 +58,9 @@ pub mod get_channel;
 /// Types for the `GetDashboard` operation.
 pub mod get_dashboard;
 
+/// Types for the `GetEventConfiguration` operation.
+pub mod get_event_configuration;
+
 /// Types for the `GetEventDataStore` operation.
 pub mod get_event_data_store;
 
@@ -114,6 +117,9 @@ pub mod list_trails;
 
 /// Types for the `LookupEvents` operation.
 pub mod lookup_events;
+
+/// Types for the `PutEventConfiguration` operation.
+pub mod put_event_configuration;
 
 /// Types for the `PutEventSelectors` operation.
 pub mod put_event_selectors;

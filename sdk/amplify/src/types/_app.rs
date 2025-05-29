@@ -65,6 +65,8 @@ pub struct App {
     pub webhook_create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Describes the Firewall configuration for the Amplify app. Firewall support enables you to protect your hosted applications with a direct integration with WAF.</p>
     pub waf_configuration: ::std::option::Option<crate::types::WafConfiguration>,
+    /// <p>The configuration details that apply to the jobs for an Amplify app.</p>
+    pub job_config: ::std::option::Option<crate::types::JobConfig>,
 }
 impl App {
     /// <p>The unique ID of the Amplify app.</p>
@@ -194,6 +196,10 @@ impl App {
     pub fn waf_configuration(&self) -> ::std::option::Option<&crate::types::WafConfiguration> {
         self.waf_configuration.as_ref()
     }
+    /// <p>The configuration details that apply to the jobs for an Amplify app.</p>
+    pub fn job_config(&self) -> ::std::option::Option<&crate::types::JobConfig> {
+        self.job_config.as_ref()
+    }
 }
 impl ::std::fmt::Debug for App {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -226,6 +232,7 @@ impl ::std::fmt::Debug for App {
         formatter.field("cache_config", &self.cache_config);
         formatter.field("webhook_create_time", &self.webhook_create_time);
         formatter.field("waf_configuration", &self.waf_configuration);
+        formatter.field("job_config", &self.job_config);
         formatter.finish()
     }
 }
@@ -268,6 +275,7 @@ pub struct AppBuilder {
     pub(crate) cache_config: ::std::option::Option<crate::types::CacheConfig>,
     pub(crate) webhook_create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) waf_configuration: ::std::option::Option<crate::types::WafConfiguration>,
+    pub(crate) job_config: ::std::option::Option<crate::types::JobConfig>,
 }
 impl AppBuilder {
     /// <p>The unique ID of the Amplify app.</p>
@@ -719,6 +727,20 @@ impl AppBuilder {
     pub fn get_waf_configuration(&self) -> &::std::option::Option<crate::types::WafConfiguration> {
         &self.waf_configuration
     }
+    /// <p>The configuration details that apply to the jobs for an Amplify app.</p>
+    pub fn job_config(mut self, input: crate::types::JobConfig) -> Self {
+        self.job_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The configuration details that apply to the jobs for an Amplify app.</p>
+    pub fn set_job_config(mut self, input: ::std::option::Option<crate::types::JobConfig>) -> Self {
+        self.job_config = input;
+        self
+    }
+    /// <p>The configuration details that apply to the jobs for an Amplify app.</p>
+    pub fn get_job_config(&self) -> &::std::option::Option<crate::types::JobConfig> {
+        &self.job_config
+    }
     /// Consumes the builder and constructs a [`App`](crate::types::App).
     /// This method will fail if any of the following fields are not set:
     /// - [`app_id`](crate::types::builders::AppBuilder::app_id)
@@ -820,6 +842,7 @@ impl AppBuilder {
             cache_config: self.cache_config,
             webhook_create_time: self.webhook_create_time,
             waf_configuration: self.waf_configuration,
+            job_config: self.job_config,
         })
     }
 }
@@ -854,6 +877,7 @@ impl ::std::fmt::Debug for AppBuilder {
         formatter.field("cache_config", &self.cache_config);
         formatter.field("webhook_create_time", &self.webhook_create_time);
         formatter.field("waf_configuration", &self.waf_configuration);
+        formatter.field("job_config", &self.job_config);
         formatter.finish()
     }
 }

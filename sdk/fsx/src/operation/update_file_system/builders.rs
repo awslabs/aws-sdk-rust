@@ -32,6 +32,8 @@ impl crate::operation::update_file_system::builders::UpdateFileSystemInputBuilde
 /// <li>
 /// <p><code>DailyAutomaticBackupStartTime</code></p></li>
 /// <li>
+/// <p><code>DiskIopsConfiguration</code></p></li>
+/// <li>
 /// <p><code>SelfManagedActiveDirectoryConfiguration</code></p></li>
 /// <li>
 /// <p><code>StorageCapacity</code></p></li>
@@ -39,8 +41,6 @@ impl crate::operation::update_file_system::builders::UpdateFileSystemInputBuilde
 /// <p><code>StorageType</code></p></li>
 /// <li>
 /// <p><code>ThroughputCapacity</code></p></li>
-/// <li>
-/// <p><code>DiskIopsConfiguration</code></p></li>
 /// <li>
 /// <p><code>WeeklyMaintenanceStartTime</code></p></li>
 /// </ul>
@@ -59,6 +59,8 @@ impl crate::operation::update_file_system::builders::UpdateFileSystemInputBuilde
 /// <li>
 /// <p><code>LogConfiguration</code></p></li>
 /// <li>
+/// <p><code>LustreReadCacheConfiguration</code></p></li>
+/// <li>
 /// <p><code>LustreRootSquashConfiguration</code></p></li>
 /// <li>
 /// <p><code>MetadataConfiguration</code></p></li>
@@ -66,6 +68,8 @@ impl crate::operation::update_file_system::builders::UpdateFileSystemInputBuilde
 /// <p><code>PerUnitStorageThroughput</code></p></li>
 /// <li>
 /// <p><code>StorageCapacity</code></p></li>
+/// <li>
+/// <p><code>ThroughputCapacity</code></p></li>
 /// <li>
 /// <p><code>WeeklyMaintenanceStartTime</code></p></li>
 /// </ul>

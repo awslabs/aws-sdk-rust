@@ -44,6 +44,12 @@ pub struct Event {
     /// <p><code>STREAM_DURATION_EXCEEDED</code> — The participant exceeded the maximum allowed stream duration. For details, see <a href="https://docs.aws.amazon.com/ivs/latest/RealTimeUserGuide/service-quotas.html"> Service Quotas</a>.</p></li>
     /// </ul>
     pub error_code: ::std::option::Option<crate::types::EventErrorCode>,
+    /// <p>ARN of the stage where the participant is replicated. Applicable only if the event name is <code>REPLICATION_STARTED</code> or <code>REPLICATION_STOPPED</code>.</p>
+    pub destination_stage_arn: ::std::option::Option<::std::string::String>,
+    /// <p>ID of the session within the destination stage. Applicable only if the event name is <code>REPLICATION_STARTED</code> or <code>REPLICATION_STOPPED</code>.</p>
+    pub destination_session_id: ::std::option::Option<::std::string::String>,
+    /// <p>If true, this indicates the <code>participantId</code> is a replicated participant. If this is a subscribe event, then this flag refers to <code>remoteParticipantId</code>.</p>
+    pub replica: bool,
 }
 impl Event {
     /// <p>The name of the event.</p>
@@ -96,6 +102,18 @@ impl Event {
     pub fn error_code(&self) -> ::std::option::Option<&crate::types::EventErrorCode> {
         self.error_code.as_ref()
     }
+    /// <p>ARN of the stage where the participant is replicated. Applicable only if the event name is <code>REPLICATION_STARTED</code> or <code>REPLICATION_STOPPED</code>.</p>
+    pub fn destination_stage_arn(&self) -> ::std::option::Option<&str> {
+        self.destination_stage_arn.as_deref()
+    }
+    /// <p>ID of the session within the destination stage. Applicable only if the event name is <code>REPLICATION_STARTED</code> or <code>REPLICATION_STOPPED</code>.</p>
+    pub fn destination_session_id(&self) -> ::std::option::Option<&str> {
+        self.destination_session_id.as_deref()
+    }
+    /// <p>If true, this indicates the <code>participantId</code> is a replicated participant. If this is a subscribe event, then this flag refers to <code>remoteParticipantId</code>.</p>
+    pub fn replica(&self) -> bool {
+        self.replica
+    }
 }
 impl Event {
     /// Creates a new builder-style object to manufacture [`Event`](crate::types::Event).
@@ -113,6 +131,9 @@ pub struct EventBuilder {
     pub(crate) event_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) remote_participant_id: ::std::option::Option<::std::string::String>,
     pub(crate) error_code: ::std::option::Option<crate::types::EventErrorCode>,
+    pub(crate) destination_stage_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) destination_session_id: ::std::option::Option<::std::string::String>,
+    pub(crate) replica: ::std::option::Option<bool>,
 }
 impl EventBuilder {
     /// <p>The name of the event.</p>
@@ -275,6 +296,48 @@ impl EventBuilder {
     pub fn get_error_code(&self) -> &::std::option::Option<crate::types::EventErrorCode> {
         &self.error_code
     }
+    /// <p>ARN of the stage where the participant is replicated. Applicable only if the event name is <code>REPLICATION_STARTED</code> or <code>REPLICATION_STOPPED</code>.</p>
+    pub fn destination_stage_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.destination_stage_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>ARN of the stage where the participant is replicated. Applicable only if the event name is <code>REPLICATION_STARTED</code> or <code>REPLICATION_STOPPED</code>.</p>
+    pub fn set_destination_stage_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.destination_stage_arn = input;
+        self
+    }
+    /// <p>ARN of the stage where the participant is replicated. Applicable only if the event name is <code>REPLICATION_STARTED</code> or <code>REPLICATION_STOPPED</code>.</p>
+    pub fn get_destination_stage_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.destination_stage_arn
+    }
+    /// <p>ID of the session within the destination stage. Applicable only if the event name is <code>REPLICATION_STARTED</code> or <code>REPLICATION_STOPPED</code>.</p>
+    pub fn destination_session_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.destination_session_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>ID of the session within the destination stage. Applicable only if the event name is <code>REPLICATION_STARTED</code> or <code>REPLICATION_STOPPED</code>.</p>
+    pub fn set_destination_session_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.destination_session_id = input;
+        self
+    }
+    /// <p>ID of the session within the destination stage. Applicable only if the event name is <code>REPLICATION_STARTED</code> or <code>REPLICATION_STOPPED</code>.</p>
+    pub fn get_destination_session_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.destination_session_id
+    }
+    /// <p>If true, this indicates the <code>participantId</code> is a replicated participant. If this is a subscribe event, then this flag refers to <code>remoteParticipantId</code>.</p>
+    pub fn replica(mut self, input: bool) -> Self {
+        self.replica = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>If true, this indicates the <code>participantId</code> is a replicated participant. If this is a subscribe event, then this flag refers to <code>remoteParticipantId</code>.</p>
+    pub fn set_replica(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.replica = input;
+        self
+    }
+    /// <p>If true, this indicates the <code>participantId</code> is a replicated participant. If this is a subscribe event, then this flag refers to <code>remoteParticipantId</code>.</p>
+    pub fn get_replica(&self) -> &::std::option::Option<bool> {
+        &self.replica
+    }
     /// Consumes the builder and constructs a [`Event`](crate::types::Event).
     pub fn build(self) -> crate::types::Event {
         crate::types::Event {
@@ -283,6 +346,9 @@ impl EventBuilder {
             event_time: self.event_time,
             remote_participant_id: self.remote_participant_id,
             error_code: self.error_code,
+            destination_stage_arn: self.destination_stage_arn,
+            destination_session_id: self.destination_session_id,
+            replica: self.replica.unwrap_or_default(),
         }
     }
 }

@@ -30,6 +30,18 @@ pub(crate) fn advanced_event_selector_correct_errors(
     builder
 }
 
+pub(crate) fn context_key_selector_correct_errors(
+    mut builder: crate::types::builders::ContextKeySelectorBuilder,
+) -> crate::types::builders::ContextKeySelectorBuilder {
+    if builder.r#type.is_none() {
+        builder.r#type = "no value was set".parse::<crate::types::Type>().ok()
+    }
+    if builder.equals.is_none() {
+        builder.equals = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn destination_correct_errors(mut builder: crate::types::builders::DestinationBuilder) -> crate::types::builders::DestinationBuilder {
     if builder.r#type.is_none() {
         builder.r#type = "no value was set".parse::<crate::types::DestinationType>().ok()

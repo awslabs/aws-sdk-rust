@@ -439,6 +439,8 @@ pub(crate) mod shape_lustre_file_system_configuration;
 
 pub(crate) mod shape_lustre_log_create_configuration;
 
+pub(crate) mod shape_lustre_read_cache_configuration;
+
 pub(crate) mod shape_lustre_root_squash_configuration;
 
 pub(crate) mod shape_network_interface_ids;

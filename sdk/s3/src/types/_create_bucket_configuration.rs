@@ -11,7 +11,7 @@ pub struct CreateBucketConfiguration {
     /// </note>
     pub location_constraint: ::std::option::Option<crate::types::BucketLocationConstraint>,
     /// <p>Specifies the location where the bucket will be created.</p>
-    /// <p><b>Directory buckets </b> - The location type is Availability Zone or Local Zone. To use the Local Zone location type, your account must be enabled for Dedicated Local Zones. Otherwise, you get an HTTP <code>403 Forbidden</code> error with the error code <code>AccessDenied</code>. To learn more, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/opt-in-directory-bucket-lz.html">Enable accounts for Dedicated Local Zones</a> in the <i>Amazon S3 User Guide</i>.</p><note>
+    /// <p><b>Directory buckets </b> - The location type is Availability Zone or Local Zone. To use the Local Zone location type, your account must be enabled for Local Zones. Otherwise, you get an HTTP <code>403 Forbidden</code> error with the error code <code>AccessDenied</code>. To learn more, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/opt-in-directory-bucket-lz.html">Enable accounts for Local Zones</a> in the <i>Amazon S3 User Guide</i>.</p><note>
     /// <p>This functionality is only supported by directory buckets.</p>
     /// </note>
     pub location: ::std::option::Option<crate::types::LocationInfo>,
@@ -30,7 +30,7 @@ impl CreateBucketConfiguration {
         self.location_constraint.as_ref()
     }
     /// <p>Specifies the location where the bucket will be created.</p>
-    /// <p><b>Directory buckets </b> - The location type is Availability Zone or Local Zone. To use the Local Zone location type, your account must be enabled for Dedicated Local Zones. Otherwise, you get an HTTP <code>403 Forbidden</code> error with the error code <code>AccessDenied</code>. To learn more, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/opt-in-directory-bucket-lz.html">Enable accounts for Dedicated Local Zones</a> in the <i>Amazon S3 User Guide</i>.</p><note>
+    /// <p><b>Directory buckets </b> - The location type is Availability Zone or Local Zone. To use the Local Zone location type, your account must be enabled for Local Zones. Otherwise, you get an HTTP <code>403 Forbidden</code> error with the error code <code>AccessDenied</code>. To learn more, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/opt-in-directory-bucket-lz.html">Enable accounts for Local Zones</a> in the <i>Amazon S3 User Guide</i>.</p><note>
     /// <p>This functionality is only supported by directory buckets.</p>
     /// </note>
     pub fn location(&self) -> ::std::option::Option<&crate::types::LocationInfo> {
@@ -86,7 +86,7 @@ impl CreateBucketConfigurationBuilder {
         &self.location_constraint
     }
     /// <p>Specifies the location where the bucket will be created.</p>
-    /// <p><b>Directory buckets </b> - The location type is Availability Zone or Local Zone. To use the Local Zone location type, your account must be enabled for Dedicated Local Zones. Otherwise, you get an HTTP <code>403 Forbidden</code> error with the error code <code>AccessDenied</code>. To learn more, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/opt-in-directory-bucket-lz.html">Enable accounts for Dedicated Local Zones</a> in the <i>Amazon S3 User Guide</i>.</p><note>
+    /// <p><b>Directory buckets </b> - The location type is Availability Zone or Local Zone. To use the Local Zone location type, your account must be enabled for Local Zones. Otherwise, you get an HTTP <code>403 Forbidden</code> error with the error code <code>AccessDenied</code>. To learn more, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/opt-in-directory-bucket-lz.html">Enable accounts for Local Zones</a> in the <i>Amazon S3 User Guide</i>.</p><note>
     /// <p>This functionality is only supported by directory buckets.</p>
     /// </note>
     pub fn location(mut self, input: crate::types::LocationInfo) -> Self {
@@ -94,7 +94,7 @@ impl CreateBucketConfigurationBuilder {
         self
     }
     /// <p>Specifies the location where the bucket will be created.</p>
-    /// <p><b>Directory buckets </b> - The location type is Availability Zone or Local Zone. To use the Local Zone location type, your account must be enabled for Dedicated Local Zones. Otherwise, you get an HTTP <code>403 Forbidden</code> error with the error code <code>AccessDenied</code>. To learn more, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/opt-in-directory-bucket-lz.html">Enable accounts for Dedicated Local Zones</a> in the <i>Amazon S3 User Guide</i>.</p><note>
+    /// <p><b>Directory buckets </b> - The location type is Availability Zone or Local Zone. To use the Local Zone location type, your account must be enabled for Local Zones. Otherwise, you get an HTTP <code>403 Forbidden</code> error with the error code <code>AccessDenied</code>. To learn more, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/opt-in-directory-bucket-lz.html">Enable accounts for Local Zones</a> in the <i>Amazon S3 User Guide</i>.</p><note>
     /// <p>This functionality is only supported by directory buckets.</p>
     /// </note>
     pub fn set_location(mut self, input: ::std::option::Option<crate::types::LocationInfo>) -> Self {
@@ -102,7 +102,7 @@ impl CreateBucketConfigurationBuilder {
         self
     }
     /// <p>Specifies the location where the bucket will be created.</p>
-    /// <p><b>Directory buckets </b> - The location type is Availability Zone or Local Zone. To use the Local Zone location type, your account must be enabled for Dedicated Local Zones. Otherwise, you get an HTTP <code>403 Forbidden</code> error with the error code <code>AccessDenied</code>. To learn more, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/opt-in-directory-bucket-lz.html">Enable accounts for Dedicated Local Zones</a> in the <i>Amazon S3 User Guide</i>.</p><note>
+    /// <p><b>Directory buckets </b> - The location type is Availability Zone or Local Zone. To use the Local Zone location type, your account must be enabled for Local Zones. Otherwise, you get an HTTP <code>403 Forbidden</code> error with the error code <code>AccessDenied</code>. To learn more, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/opt-in-directory-bucket-lz.html">Enable accounts for Local Zones</a> in the <i>Amazon S3 User Guide</i>.</p><note>
     /// <p>This functionality is only supported by directory buckets.</p>
     /// </note>
     pub fn get_location(&self) -> &::std::option::Option<crate::types::LocationInfo> {

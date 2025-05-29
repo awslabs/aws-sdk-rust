@@ -17,7 +17,9 @@ pub struct UpdateLocationObjectStorageInput {
     pub access_key: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the secret key (for example, a password) if credentials are required to authenticate with the object storage server.</p>
     pub secret_key: ::std::option::Option<::std::string::String>,
-    /// <p>Specifies the Amazon Resource Names (ARNs) of the DataSync agents that can connect with your object storage system.</p>
+    /// <p>(Optional) Specifies the Amazon Resource Names (ARNs) of the DataSync agents that can connect with your object storage system. If you are setting up an agentless cross-cloud transfer, you do not need to specify a value for this parameter.</p><note>
+    /// <p>You cannot add or remove agents from a storage location after you initially create it.</p>
+    /// </note>
     pub agent_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Specifies a certificate chain for DataSync to authenticate with your object storage system if the system uses a private or self-signed certificate authority (CA). You must specify a single <code>.pem</code> file with a full certificate chain (for example, <code>file:///home/user/.ssh/object_storage_certificates.pem</code>).</p>
     /// <p>The certificate chain might include:</p>
@@ -34,6 +36,10 @@ pub struct UpdateLocationObjectStorageInput {
     /// <p>To use this parameter, configure <code>ServerProtocol</code> to <code>HTTPS</code>.</p>
     /// <p>Updating this parameter doesn't interfere with tasks that you have in progress.</p>
     pub server_certificate: ::std::option::Option<::aws_smithy_types::Blob>,
+    /// <p>Specifies configuration information for a DataSync-managed secret, such as an authentication token or set of credentials that DataSync uses to access a specific transfer location, and a customer-managed KMS key.</p>
+    pub cmk_secret_config: ::std::option::Option<crate::types::CmkSecretConfig>,
+    /// <p>Specifies configuration information for a customer-managed secret, such as an authentication token or set of credentials that DataSync uses to access a specific transfer location, and a customer-managed KMS key.</p>
+    pub custom_secret_config: ::std::option::Option<crate::types::CustomSecretConfig>,
 }
 impl UpdateLocationObjectStorageInput {
     /// <p>Specifies the ARN of the object storage system location that you're updating.</p>
@@ -64,7 +70,9 @@ impl UpdateLocationObjectStorageInput {
     pub fn secret_key(&self) -> ::std::option::Option<&str> {
         self.secret_key.as_deref()
     }
-    /// <p>Specifies the Amazon Resource Names (ARNs) of the DataSync agents that can connect with your object storage system.</p>
+    /// <p>(Optional) Specifies the Amazon Resource Names (ARNs) of the DataSync agents that can connect with your object storage system. If you are setting up an agentless cross-cloud transfer, you do not need to specify a value for this parameter.</p><note>
+    /// <p>You cannot add or remove agents from a storage location after you initially create it.</p>
+    /// </note>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.agent_arns.is_none()`.
     pub fn agent_arns(&self) -> &[::std::string::String] {
@@ -87,6 +95,14 @@ impl UpdateLocationObjectStorageInput {
     pub fn server_certificate(&self) -> ::std::option::Option<&::aws_smithy_types::Blob> {
         self.server_certificate.as_ref()
     }
+    /// <p>Specifies configuration information for a DataSync-managed secret, such as an authentication token or set of credentials that DataSync uses to access a specific transfer location, and a customer-managed KMS key.</p>
+    pub fn cmk_secret_config(&self) -> ::std::option::Option<&crate::types::CmkSecretConfig> {
+        self.cmk_secret_config.as_ref()
+    }
+    /// <p>Specifies configuration information for a customer-managed secret, such as an authentication token or set of credentials that DataSync uses to access a specific transfer location, and a customer-managed KMS key.</p>
+    pub fn custom_secret_config(&self) -> ::std::option::Option<&crate::types::CustomSecretConfig> {
+        self.custom_secret_config.as_ref()
+    }
 }
 impl ::std::fmt::Debug for UpdateLocationObjectStorageInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -100,6 +116,8 @@ impl ::std::fmt::Debug for UpdateLocationObjectStorageInput {
         formatter.field("secret_key", &"*** Sensitive Data Redacted ***");
         formatter.field("agent_arns", &self.agent_arns);
         formatter.field("server_certificate", &self.server_certificate);
+        formatter.field("cmk_secret_config", &self.cmk_secret_config);
+        formatter.field("custom_secret_config", &self.custom_secret_config);
         formatter.finish()
     }
 }
@@ -123,6 +141,8 @@ pub struct UpdateLocationObjectStorageInputBuilder {
     pub(crate) secret_key: ::std::option::Option<::std::string::String>,
     pub(crate) agent_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) server_certificate: ::std::option::Option<::aws_smithy_types::Blob>,
+    pub(crate) cmk_secret_config: ::std::option::Option<crate::types::CmkSecretConfig>,
+    pub(crate) custom_secret_config: ::std::option::Option<crate::types::CustomSecretConfig>,
 }
 impl UpdateLocationObjectStorageInputBuilder {
     /// <p>Specifies the ARN of the object storage system location that you're updating.</p>
@@ -228,19 +248,25 @@ impl UpdateLocationObjectStorageInputBuilder {
     ///
     /// To override the contents of this collection use [`set_agent_arns`](Self::set_agent_arns).
     ///
-    /// <p>Specifies the Amazon Resource Names (ARNs) of the DataSync agents that can connect with your object storage system.</p>
+    /// <p>(Optional) Specifies the Amazon Resource Names (ARNs) of the DataSync agents that can connect with your object storage system. If you are setting up an agentless cross-cloud transfer, you do not need to specify a value for this parameter.</p><note>
+    /// <p>You cannot add or remove agents from a storage location after you initially create it.</p>
+    /// </note>
     pub fn agent_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.agent_arns.unwrap_or_default();
         v.push(input.into());
         self.agent_arns = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Specifies the Amazon Resource Names (ARNs) of the DataSync agents that can connect with your object storage system.</p>
+    /// <p>(Optional) Specifies the Amazon Resource Names (ARNs) of the DataSync agents that can connect with your object storage system. If you are setting up an agentless cross-cloud transfer, you do not need to specify a value for this parameter.</p><note>
+    /// <p>You cannot add or remove agents from a storage location after you initially create it.</p>
+    /// </note>
     pub fn set_agent_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.agent_arns = input;
         self
     }
-    /// <p>Specifies the Amazon Resource Names (ARNs) of the DataSync agents that can connect with your object storage system.</p>
+    /// <p>(Optional) Specifies the Amazon Resource Names (ARNs) of the DataSync agents that can connect with your object storage system. If you are setting up an agentless cross-cloud transfer, you do not need to specify a value for this parameter.</p><note>
+    /// <p>You cannot add or remove agents from a storage location after you initially create it.</p>
+    /// </note>
     pub fn get_agent_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.agent_arns
     }
@@ -297,6 +323,34 @@ impl UpdateLocationObjectStorageInputBuilder {
     pub fn get_server_certificate(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
         &self.server_certificate
     }
+    /// <p>Specifies configuration information for a DataSync-managed secret, such as an authentication token or set of credentials that DataSync uses to access a specific transfer location, and a customer-managed KMS key.</p>
+    pub fn cmk_secret_config(mut self, input: crate::types::CmkSecretConfig) -> Self {
+        self.cmk_secret_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies configuration information for a DataSync-managed secret, such as an authentication token or set of credentials that DataSync uses to access a specific transfer location, and a customer-managed KMS key.</p>
+    pub fn set_cmk_secret_config(mut self, input: ::std::option::Option<crate::types::CmkSecretConfig>) -> Self {
+        self.cmk_secret_config = input;
+        self
+    }
+    /// <p>Specifies configuration information for a DataSync-managed secret, such as an authentication token or set of credentials that DataSync uses to access a specific transfer location, and a customer-managed KMS key.</p>
+    pub fn get_cmk_secret_config(&self) -> &::std::option::Option<crate::types::CmkSecretConfig> {
+        &self.cmk_secret_config
+    }
+    /// <p>Specifies configuration information for a customer-managed secret, such as an authentication token or set of credentials that DataSync uses to access a specific transfer location, and a customer-managed KMS key.</p>
+    pub fn custom_secret_config(mut self, input: crate::types::CustomSecretConfig) -> Self {
+        self.custom_secret_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies configuration information for a customer-managed secret, such as an authentication token or set of credentials that DataSync uses to access a specific transfer location, and a customer-managed KMS key.</p>
+    pub fn set_custom_secret_config(mut self, input: ::std::option::Option<crate::types::CustomSecretConfig>) -> Self {
+        self.custom_secret_config = input;
+        self
+    }
+    /// <p>Specifies configuration information for a customer-managed secret, such as an authentication token or set of credentials that DataSync uses to access a specific transfer location, and a customer-managed KMS key.</p>
+    pub fn get_custom_secret_config(&self) -> &::std::option::Option<crate::types::CustomSecretConfig> {
+        &self.custom_secret_config
+    }
     /// Consumes the builder and constructs a [`UpdateLocationObjectStorageInput`](crate::operation::update_location_object_storage::UpdateLocationObjectStorageInput).
     pub fn build(
         self,
@@ -314,6 +368,8 @@ impl UpdateLocationObjectStorageInputBuilder {
             secret_key: self.secret_key,
             agent_arns: self.agent_arns,
             server_certificate: self.server_certificate,
+            cmk_secret_config: self.cmk_secret_config,
+            custom_secret_config: self.custom_secret_config,
         })
     }
 }
@@ -329,6 +385,8 @@ impl ::std::fmt::Debug for UpdateLocationObjectStorageInputBuilder {
         formatter.field("secret_key", &"*** Sensitive Data Redacted ***");
         formatter.field("agent_arns", &self.agent_arns);
         formatter.field("server_certificate", &self.server_certificate);
+        formatter.field("cmk_secret_config", &self.cmk_secret_config);
+        formatter.field("custom_secret_config", &self.custom_secret_config);
         formatter.finish()
     }
 }

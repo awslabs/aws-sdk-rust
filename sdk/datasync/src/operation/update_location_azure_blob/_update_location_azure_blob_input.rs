@@ -15,9 +15,15 @@ pub struct UpdateLocationAzureBlobInput {
     pub blob_type: ::std::option::Option<crate::types::AzureBlobType>,
     /// <p>Specifies the access tier that you want your objects or files transferred into. This only applies when using the location as a transfer destination. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/creating-azure-blob-location.html#azure-blob-access-tiers">Access tiers</a>.</p>
     pub access_tier: ::std::option::Option<crate::types::AzureAccessTier>,
-    /// <p>Specifies the Amazon Resource Name (ARN) of the DataSync agent that can connect with your Azure Blob Storage container.</p>
-    /// <p>You can specify more than one agent. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/multiple-agents.html">Using multiple agents for your transfer</a>.</p>
+    /// <p>(Optional) Specifies the Amazon Resource Name (ARN) of the DataSync agent that can connect with your Azure Blob Storage container. If you are setting up an agentless cross-cloud transfer, you do not need to specify a value for this parameter.</p>
+    /// <p>You can specify more than one agent. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/multiple-agents.html">Using multiple agents for your transfer</a>.</p><note>
+    /// <p>You cannot add or remove agents from a storage location after you initially create it.</p>
+    /// </note>
     pub agent_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>Specifies configuration information for a DataSync-managed secret, such as an authentication token or set of credentials that DataSync uses to access a specific transfer location, and a customer-managed KMS key.</p>
+    pub cmk_secret_config: ::std::option::Option<crate::types::CmkSecretConfig>,
+    /// <p>Specifies configuration information for a customer-managed secret, such as an authentication token or set of credentials that DataSync uses to access a specific transfer location, and a customer-managed KMS key.</p>
+    pub custom_secret_config: ::std::option::Option<crate::types::CustomSecretConfig>,
 }
 impl UpdateLocationAzureBlobInput {
     /// <p>Specifies the ARN of the Azure Blob Storage transfer location that you're updating.</p>
@@ -44,12 +50,22 @@ impl UpdateLocationAzureBlobInput {
     pub fn access_tier(&self) -> ::std::option::Option<&crate::types::AzureAccessTier> {
         self.access_tier.as_ref()
     }
-    /// <p>Specifies the Amazon Resource Name (ARN) of the DataSync agent that can connect with your Azure Blob Storage container.</p>
-    /// <p>You can specify more than one agent. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/multiple-agents.html">Using multiple agents for your transfer</a>.</p>
+    /// <p>(Optional) Specifies the Amazon Resource Name (ARN) of the DataSync agent that can connect with your Azure Blob Storage container. If you are setting up an agentless cross-cloud transfer, you do not need to specify a value for this parameter.</p>
+    /// <p>You can specify more than one agent. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/multiple-agents.html">Using multiple agents for your transfer</a>.</p><note>
+    /// <p>You cannot add or remove agents from a storage location after you initially create it.</p>
+    /// </note>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.agent_arns.is_none()`.
     pub fn agent_arns(&self) -> &[::std::string::String] {
         self.agent_arns.as_deref().unwrap_or_default()
+    }
+    /// <p>Specifies configuration information for a DataSync-managed secret, such as an authentication token or set of credentials that DataSync uses to access a specific transfer location, and a customer-managed KMS key.</p>
+    pub fn cmk_secret_config(&self) -> ::std::option::Option<&crate::types::CmkSecretConfig> {
+        self.cmk_secret_config.as_ref()
+    }
+    /// <p>Specifies configuration information for a customer-managed secret, such as an authentication token or set of credentials that DataSync uses to access a specific transfer location, and a customer-managed KMS key.</p>
+    pub fn custom_secret_config(&self) -> ::std::option::Option<&crate::types::CustomSecretConfig> {
+        self.custom_secret_config.as_ref()
     }
 }
 impl UpdateLocationAzureBlobInput {
@@ -70,6 +86,8 @@ pub struct UpdateLocationAzureBlobInputBuilder {
     pub(crate) blob_type: ::std::option::Option<crate::types::AzureBlobType>,
     pub(crate) access_tier: ::std::option::Option<crate::types::AzureAccessTier>,
     pub(crate) agent_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) cmk_secret_config: ::std::option::Option<crate::types::CmkSecretConfig>,
+    pub(crate) custom_secret_config: ::std::option::Option<crate::types::CustomSecretConfig>,
 }
 impl UpdateLocationAzureBlobInputBuilder {
     /// <p>Specifies the ARN of the Azure Blob Storage transfer location that you're updating.</p>
@@ -161,24 +179,58 @@ impl UpdateLocationAzureBlobInputBuilder {
     ///
     /// To override the contents of this collection use [`set_agent_arns`](Self::set_agent_arns).
     ///
-    /// <p>Specifies the Amazon Resource Name (ARN) of the DataSync agent that can connect with your Azure Blob Storage container.</p>
-    /// <p>You can specify more than one agent. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/multiple-agents.html">Using multiple agents for your transfer</a>.</p>
+    /// <p>(Optional) Specifies the Amazon Resource Name (ARN) of the DataSync agent that can connect with your Azure Blob Storage container. If you are setting up an agentless cross-cloud transfer, you do not need to specify a value for this parameter.</p>
+    /// <p>You can specify more than one agent. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/multiple-agents.html">Using multiple agents for your transfer</a>.</p><note>
+    /// <p>You cannot add or remove agents from a storage location after you initially create it.</p>
+    /// </note>
     pub fn agent_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.agent_arns.unwrap_or_default();
         v.push(input.into());
         self.agent_arns = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Specifies the Amazon Resource Name (ARN) of the DataSync agent that can connect with your Azure Blob Storage container.</p>
-    /// <p>You can specify more than one agent. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/multiple-agents.html">Using multiple agents for your transfer</a>.</p>
+    /// <p>(Optional) Specifies the Amazon Resource Name (ARN) of the DataSync agent that can connect with your Azure Blob Storage container. If you are setting up an agentless cross-cloud transfer, you do not need to specify a value for this parameter.</p>
+    /// <p>You can specify more than one agent. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/multiple-agents.html">Using multiple agents for your transfer</a>.</p><note>
+    /// <p>You cannot add or remove agents from a storage location after you initially create it.</p>
+    /// </note>
     pub fn set_agent_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.agent_arns = input;
         self
     }
-    /// <p>Specifies the Amazon Resource Name (ARN) of the DataSync agent that can connect with your Azure Blob Storage container.</p>
-    /// <p>You can specify more than one agent. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/multiple-agents.html">Using multiple agents for your transfer</a>.</p>
+    /// <p>(Optional) Specifies the Amazon Resource Name (ARN) of the DataSync agent that can connect with your Azure Blob Storage container. If you are setting up an agentless cross-cloud transfer, you do not need to specify a value for this parameter.</p>
+    /// <p>You can specify more than one agent. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/multiple-agents.html">Using multiple agents for your transfer</a>.</p><note>
+    /// <p>You cannot add or remove agents from a storage location after you initially create it.</p>
+    /// </note>
     pub fn get_agent_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.agent_arns
+    }
+    /// <p>Specifies configuration information for a DataSync-managed secret, such as an authentication token or set of credentials that DataSync uses to access a specific transfer location, and a customer-managed KMS key.</p>
+    pub fn cmk_secret_config(mut self, input: crate::types::CmkSecretConfig) -> Self {
+        self.cmk_secret_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies configuration information for a DataSync-managed secret, such as an authentication token or set of credentials that DataSync uses to access a specific transfer location, and a customer-managed KMS key.</p>
+    pub fn set_cmk_secret_config(mut self, input: ::std::option::Option<crate::types::CmkSecretConfig>) -> Self {
+        self.cmk_secret_config = input;
+        self
+    }
+    /// <p>Specifies configuration information for a DataSync-managed secret, such as an authentication token or set of credentials that DataSync uses to access a specific transfer location, and a customer-managed KMS key.</p>
+    pub fn get_cmk_secret_config(&self) -> &::std::option::Option<crate::types::CmkSecretConfig> {
+        &self.cmk_secret_config
+    }
+    /// <p>Specifies configuration information for a customer-managed secret, such as an authentication token or set of credentials that DataSync uses to access a specific transfer location, and a customer-managed KMS key.</p>
+    pub fn custom_secret_config(mut self, input: crate::types::CustomSecretConfig) -> Self {
+        self.custom_secret_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies configuration information for a customer-managed secret, such as an authentication token or set of credentials that DataSync uses to access a specific transfer location, and a customer-managed KMS key.</p>
+    pub fn set_custom_secret_config(mut self, input: ::std::option::Option<crate::types::CustomSecretConfig>) -> Self {
+        self.custom_secret_config = input;
+        self
+    }
+    /// <p>Specifies configuration information for a customer-managed secret, such as an authentication token or set of credentials that DataSync uses to access a specific transfer location, and a customer-managed KMS key.</p>
+    pub fn get_custom_secret_config(&self) -> &::std::option::Option<crate::types::CustomSecretConfig> {
+        &self.custom_secret_config
     }
     /// Consumes the builder and constructs a [`UpdateLocationAzureBlobInput`](crate::operation::update_location_azure_blob::UpdateLocationAzureBlobInput).
     pub fn build(
@@ -195,6 +247,8 @@ impl UpdateLocationAzureBlobInputBuilder {
             blob_type: self.blob_type,
             access_tier: self.access_tier,
             agent_arns: self.agent_arns,
+            cmk_secret_config: self.cmk_secret_config,
+            custom_secret_config: self.custom_secret_config,
         })
     }
 }

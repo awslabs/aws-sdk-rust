@@ -19,7 +19,7 @@ pub struct DescribeTaskExecutionOutput {
     pub includes: ::std::option::Option<::std::vec::Vec<crate::types::FilterRule>>,
     /// <p>The configuration of the manifest that lists the files or objects to transfer. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/transferring-with-manifest.html">Specifying what DataSync transfers by using a manifest</a>.</p>
     pub manifest_config: ::std::option::Option<crate::types::ManifestConfig>,
-    /// <p>The time when the task execution started.</p>
+    /// <p>The time that DataSync sends the request to start the task execution. For non-queued tasks, <code>LaunchTime</code> and <code>StartTime</code> are typically the same. For queued tasks, <code>LaunchTime</code> is typically later than <code>StartTime</code> because previously queued tasks must finish running before newer tasks can begin.</p>
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The number of files, objects, and directories that DataSync expects to transfer over the network. This value is calculated while DataSync <a href="https://docs.aws.amazon.com/datasync/latest/userguide/run-task.html#understand-task-execution-statuses">prepares</a> the transfer.</p>
     /// <p>How this gets calculated depends primarily on your task’s <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_Options.html#DataSync-Type-Options-TransferMode">transfer mode</a> configuration:</p>
@@ -80,6 +80,10 @@ pub struct DescribeTaskExecutionOutput {
     /// <p>Applies only to <a href="https://docs.aws.amazon.com/datasync/latest/userguide/choosing-task-mode.html">Enhanced mode tasks</a>.</p>
     /// </note>
     pub files_failed: ::std::option::Option<crate::types::TaskExecutionFilesFailedDetail>,
+    /// <p>The time that the task execution actually begins. For non-queued tasks, <code>LaunchTime</code> and <code>StartTime</code> are typically the same. For queued tasks, <code>LaunchTime</code> is typically later than <code>StartTime</code> because previously queued tasks must finish running before newer tasks can begin.</p>
+    pub launch_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>The time that the transfer task ends.</p>
+    pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }
 impl DescribeTaskExecutionOutput {
@@ -114,7 +118,7 @@ impl DescribeTaskExecutionOutput {
     pub fn manifest_config(&self) -> ::std::option::Option<&crate::types::ManifestConfig> {
         self.manifest_config.as_ref()
     }
-    /// <p>The time when the task execution started.</p>
+    /// <p>The time that DataSync sends the request to start the task execution. For non-queued tasks, <code>LaunchTime</code> and <code>StartTime</code> are typically the same. For queued tasks, <code>LaunchTime</code> is typically later than <code>StartTime</code> because previously queued tasks must finish running before newer tasks can begin.</p>
     pub fn start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
@@ -211,6 +215,14 @@ impl DescribeTaskExecutionOutput {
     pub fn files_failed(&self) -> ::std::option::Option<&crate::types::TaskExecutionFilesFailedDetail> {
         self.files_failed.as_ref()
     }
+    /// <p>The time that the task execution actually begins. For non-queued tasks, <code>LaunchTime</code> and <code>StartTime</code> are typically the same. For queued tasks, <code>LaunchTime</code> is typically later than <code>StartTime</code> because previously queued tasks must finish running before newer tasks can begin.</p>
+    pub fn launch_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+        self.launch_time.as_ref()
+    }
+    /// <p>The time that the transfer task ends.</p>
+    pub fn end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+        self.end_time.as_ref()
+    }
 }
 impl ::aws_types::request_id::RequestId for DescribeTaskExecutionOutput {
     fn request_id(&self) -> Option<&str> {
@@ -252,6 +264,8 @@ pub struct DescribeTaskExecutionOutputBuilder {
     pub(crate) files_prepared: ::std::option::Option<i64>,
     pub(crate) files_listed: ::std::option::Option<crate::types::TaskExecutionFilesListedDetail>,
     pub(crate) files_failed: ::std::option::Option<crate::types::TaskExecutionFilesFailedDetail>,
+    pub(crate) launch_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }
 impl DescribeTaskExecutionOutputBuilder {
@@ -360,17 +374,17 @@ impl DescribeTaskExecutionOutputBuilder {
     pub fn get_manifest_config(&self) -> &::std::option::Option<crate::types::ManifestConfig> {
         &self.manifest_config
     }
-    /// <p>The time when the task execution started.</p>
+    /// <p>The time that DataSync sends the request to start the task execution. For non-queued tasks, <code>LaunchTime</code> and <code>StartTime</code> are typically the same. For queued tasks, <code>LaunchTime</code> is typically later than <code>StartTime</code> because previously queued tasks must finish running before newer tasks can begin.</p>
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.start_time = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The time when the task execution started.</p>
+    /// <p>The time that DataSync sends the request to start the task execution. For non-queued tasks, <code>LaunchTime</code> and <code>StartTime</code> are typically the same. For queued tasks, <code>LaunchTime</code> is typically later than <code>StartTime</code> because previously queued tasks must finish running before newer tasks can begin.</p>
     pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.start_time = input;
         self
     }
-    /// <p>The time when the task execution started.</p>
+    /// <p>The time that DataSync sends the request to start the task execution. For non-queued tasks, <code>LaunchTime</code> and <code>StartTime</code> are typically the same. For queued tasks, <code>LaunchTime</code> is typically later than <code>StartTime</code> because previously queued tasks must finish running before newer tasks can begin.</p>
     pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.start_time
     }
@@ -687,6 +701,34 @@ impl DescribeTaskExecutionOutputBuilder {
     pub fn get_files_failed(&self) -> &::std::option::Option<crate::types::TaskExecutionFilesFailedDetail> {
         &self.files_failed
     }
+    /// <p>The time that the task execution actually begins. For non-queued tasks, <code>LaunchTime</code> and <code>StartTime</code> are typically the same. For queued tasks, <code>LaunchTime</code> is typically later than <code>StartTime</code> because previously queued tasks must finish running before newer tasks can begin.</p>
+    pub fn launch_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.launch_time = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The time that the task execution actually begins. For non-queued tasks, <code>LaunchTime</code> and <code>StartTime</code> are typically the same. For queued tasks, <code>LaunchTime</code> is typically later than <code>StartTime</code> because previously queued tasks must finish running before newer tasks can begin.</p>
+    pub fn set_launch_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.launch_time = input;
+        self
+    }
+    /// <p>The time that the task execution actually begins. For non-queued tasks, <code>LaunchTime</code> and <code>StartTime</code> are typically the same. For queued tasks, <code>LaunchTime</code> is typically later than <code>StartTime</code> because previously queued tasks must finish running before newer tasks can begin.</p>
+    pub fn get_launch_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.launch_time
+    }
+    /// <p>The time that the transfer task ends.</p>
+    pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.end_time = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The time that the transfer task ends.</p>
+    pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.end_time = input;
+        self
+    }
+    /// <p>The time that the transfer task ends.</p>
+    pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.end_time
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -723,6 +765,8 @@ impl DescribeTaskExecutionOutputBuilder {
             files_prepared: self.files_prepared.unwrap_or_default(),
             files_listed: self.files_listed,
             files_failed: self.files_failed,
+            launch_time: self.launch_time,
+            end_time: self.end_time,
             _request_id: self._request_id,
         }
     }

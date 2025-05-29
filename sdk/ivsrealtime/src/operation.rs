@@ -73,6 +73,9 @@ pub mod list_ingest_configurations;
 /// Types for the `ListParticipantEvents` operation.
 pub mod list_participant_events;
 
+/// Types for the `ListParticipantReplicas` operation.
+pub mod list_participant_replicas;
+
 /// Types for the `ListParticipants` operation.
 pub mod list_participants;
 
@@ -94,8 +97,14 @@ pub mod list_tags_for_resource;
 /// Types for the `StartComposition` operation.
 pub mod start_composition;
 
+/// Types for the `StartParticipantReplication` operation.
+pub mod start_participant_replication;
+
 /// Types for the `StopComposition` operation.
 pub mod stop_composition;
+
+/// Types for the `StopParticipantReplication` operation.
+pub mod stop_participant_replication;
 
 /// Types for the `TagResource` operation.
 pub mod tag_resource;

@@ -49,6 +49,12 @@ pub use crate::types::_data_resource::DataResource;
 
 pub use crate::types::_read_write_type::ReadWriteType;
 
+pub use crate::types::_context_key_selector::ContextKeySelector;
+
+pub use crate::types::_type_::Type;
+
+pub use crate::types::_max_event_size::MaxEventSize;
+
 pub use crate::types::_event::Event;
 
 pub use crate::types::_resource::Resource;
@@ -107,6 +113,8 @@ mod _billing_mode;
 
 mod _channel;
 
+mod _context_key_selector;
+
 mod _dashboard_detail;
 
 mod _dashboard_status;
@@ -157,6 +165,8 @@ mod _lookup_attribute;
 
 mod _lookup_attribute_key;
 
+mod _max_event_size;
+
 mod _partition_key;
 
 mod _public_key;
@@ -196,6 +206,8 @@ mod _tag;
 mod _trail;
 
 mod _trail_info;
+
+mod _type_;
 
 mod _widget;
 

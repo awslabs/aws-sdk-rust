@@ -30,12 +30,20 @@ pub struct Participant {
     pub sdk_version: ::std::option::Option<::std::string::String>,
     /// <p>Name of the S3 bucket to where the participant is being recorded, if individual participant recording is enabled, or <code>""</code> (empty string), if recording is not enabled.</p>
     pub recording_s3_bucket_name: ::std::option::Option<::std::string::String>,
-    /// <p>S3 prefix of the S3 bucket where the participant is being recorded, if individual participant recording is enabled, or <code>""</code> (empty string), if recording is not enabled.</p>
+    /// <p>S3 prefix of the S3 bucket where the participant is being recorded, if individual participant recording is enabled, or <code>""</code> (empty string), if recording is not enabled. If individual participant recording merge is enabled, and if a stage publisher disconnects from a stage and then reconnects, IVS tries to record to the same S3 prefix as the previous session. See <a href="/ivs/latest/RealTimeUserGuide/rt-individual-participant-recording.html#ind-part-rec-merge-frag"> Merge Fragmented Individual Participant Recordings</a>.</p>
     pub recording_s3_prefix: ::std::option::Option<::std::string::String>,
     /// <p>The participant’s recording state.</p>
     pub recording_state: ::std::option::Option<crate::types::ParticipantRecordingState>,
     /// <p>Type of ingest protocol that the participant employs for broadcasting.</p>
     pub protocol: ::std::option::Option<crate::types::ParticipantProtocol>,
+    /// <p>Indicates if the participant has been replicated to another stage or is a replica from another stage. Default: <code>NONE</code>.</p>
+    pub replication_type: ::std::option::Option<crate::types::ReplicationType>,
+    /// <p>The participant's replication state.</p>
+    pub replication_state: ::std::option::Option<crate::types::ReplicationState>,
+    /// <p>Source stage ARN from which this participant is replicated, if <code>replicationType</code> is <code>REPLICA</code>.</p>
+    pub source_stage_arn: ::std::option::Option<::std::string::String>,
+    /// <p>ID of the session within the source stage, if <code>replicationType</code> is <code>REPLICA</code>.</p>
+    pub source_session_id: ::std::option::Option<::std::string::String>,
 }
 impl Participant {
     /// <p>Unique identifier for this participant, assigned by IVS.</p>
@@ -90,7 +98,7 @@ impl Participant {
     pub fn recording_s3_bucket_name(&self) -> ::std::option::Option<&str> {
         self.recording_s3_bucket_name.as_deref()
     }
-    /// <p>S3 prefix of the S3 bucket where the participant is being recorded, if individual participant recording is enabled, or <code>""</code> (empty string), if recording is not enabled.</p>
+    /// <p>S3 prefix of the S3 bucket where the participant is being recorded, if individual participant recording is enabled, or <code>""</code> (empty string), if recording is not enabled. If individual participant recording merge is enabled, and if a stage publisher disconnects from a stage and then reconnects, IVS tries to record to the same S3 prefix as the previous session. See <a href="/ivs/latest/RealTimeUserGuide/rt-individual-participant-recording.html#ind-part-rec-merge-frag"> Merge Fragmented Individual Participant Recordings</a>.</p>
     pub fn recording_s3_prefix(&self) -> ::std::option::Option<&str> {
         self.recording_s3_prefix.as_deref()
     }
@@ -101,6 +109,22 @@ impl Participant {
     /// <p>Type of ingest protocol that the participant employs for broadcasting.</p>
     pub fn protocol(&self) -> ::std::option::Option<&crate::types::ParticipantProtocol> {
         self.protocol.as_ref()
+    }
+    /// <p>Indicates if the participant has been replicated to another stage or is a replica from another stage. Default: <code>NONE</code>.</p>
+    pub fn replication_type(&self) -> ::std::option::Option<&crate::types::ReplicationType> {
+        self.replication_type.as_ref()
+    }
+    /// <p>The participant's replication state.</p>
+    pub fn replication_state(&self) -> ::std::option::Option<&crate::types::ReplicationState> {
+        self.replication_state.as_ref()
+    }
+    /// <p>Source stage ARN from which this participant is replicated, if <code>replicationType</code> is <code>REPLICA</code>.</p>
+    pub fn source_stage_arn(&self) -> ::std::option::Option<&str> {
+        self.source_stage_arn.as_deref()
+    }
+    /// <p>ID of the session within the source stage, if <code>replicationType</code> is <code>REPLICA</code>.</p>
+    pub fn source_session_id(&self) -> ::std::option::Option<&str> {
+        self.source_session_id.as_deref()
     }
 }
 impl Participant {
@@ -130,6 +154,10 @@ pub struct ParticipantBuilder {
     pub(crate) recording_s3_prefix: ::std::option::Option<::std::string::String>,
     pub(crate) recording_state: ::std::option::Option<crate::types::ParticipantRecordingState>,
     pub(crate) protocol: ::std::option::Option<crate::types::ParticipantProtocol>,
+    pub(crate) replication_type: ::std::option::Option<crate::types::ReplicationType>,
+    pub(crate) replication_state: ::std::option::Option<crate::types::ReplicationState>,
+    pub(crate) source_stage_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) source_session_id: ::std::option::Option<::std::string::String>,
 }
 impl ParticipantBuilder {
     /// <p>Unique identifier for this participant, assigned by IVS.</p>
@@ -320,17 +348,17 @@ impl ParticipantBuilder {
     pub fn get_recording_s3_bucket_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.recording_s3_bucket_name
     }
-    /// <p>S3 prefix of the S3 bucket where the participant is being recorded, if individual participant recording is enabled, or <code>""</code> (empty string), if recording is not enabled.</p>
+    /// <p>S3 prefix of the S3 bucket where the participant is being recorded, if individual participant recording is enabled, or <code>""</code> (empty string), if recording is not enabled. If individual participant recording merge is enabled, and if a stage publisher disconnects from a stage and then reconnects, IVS tries to record to the same S3 prefix as the previous session. See <a href="/ivs/latest/RealTimeUserGuide/rt-individual-participant-recording.html#ind-part-rec-merge-frag"> Merge Fragmented Individual Participant Recordings</a>.</p>
     pub fn recording_s3_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.recording_s3_prefix = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>S3 prefix of the S3 bucket where the participant is being recorded, if individual participant recording is enabled, or <code>""</code> (empty string), if recording is not enabled.</p>
+    /// <p>S3 prefix of the S3 bucket where the participant is being recorded, if individual participant recording is enabled, or <code>""</code> (empty string), if recording is not enabled. If individual participant recording merge is enabled, and if a stage publisher disconnects from a stage and then reconnects, IVS tries to record to the same S3 prefix as the previous session. See <a href="/ivs/latest/RealTimeUserGuide/rt-individual-participant-recording.html#ind-part-rec-merge-frag"> Merge Fragmented Individual Participant Recordings</a>.</p>
     pub fn set_recording_s3_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.recording_s3_prefix = input;
         self
     }
-    /// <p>S3 prefix of the S3 bucket where the participant is being recorded, if individual participant recording is enabled, or <code>""</code> (empty string), if recording is not enabled.</p>
+    /// <p>S3 prefix of the S3 bucket where the participant is being recorded, if individual participant recording is enabled, or <code>""</code> (empty string), if recording is not enabled. If individual participant recording merge is enabled, and if a stage publisher disconnects from a stage and then reconnects, IVS tries to record to the same S3 prefix as the previous session. See <a href="/ivs/latest/RealTimeUserGuide/rt-individual-participant-recording.html#ind-part-rec-merge-frag"> Merge Fragmented Individual Participant Recordings</a>.</p>
     pub fn get_recording_s3_prefix(&self) -> &::std::option::Option<::std::string::String> {
         &self.recording_s3_prefix
     }
@@ -362,6 +390,62 @@ impl ParticipantBuilder {
     pub fn get_protocol(&self) -> &::std::option::Option<crate::types::ParticipantProtocol> {
         &self.protocol
     }
+    /// <p>Indicates if the participant has been replicated to another stage or is a replica from another stage. Default: <code>NONE</code>.</p>
+    pub fn replication_type(mut self, input: crate::types::ReplicationType) -> Self {
+        self.replication_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates if the participant has been replicated to another stage or is a replica from another stage. Default: <code>NONE</code>.</p>
+    pub fn set_replication_type(mut self, input: ::std::option::Option<crate::types::ReplicationType>) -> Self {
+        self.replication_type = input;
+        self
+    }
+    /// <p>Indicates if the participant has been replicated to another stage or is a replica from another stage. Default: <code>NONE</code>.</p>
+    pub fn get_replication_type(&self) -> &::std::option::Option<crate::types::ReplicationType> {
+        &self.replication_type
+    }
+    /// <p>The participant's replication state.</p>
+    pub fn replication_state(mut self, input: crate::types::ReplicationState) -> Self {
+        self.replication_state = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The participant's replication state.</p>
+    pub fn set_replication_state(mut self, input: ::std::option::Option<crate::types::ReplicationState>) -> Self {
+        self.replication_state = input;
+        self
+    }
+    /// <p>The participant's replication state.</p>
+    pub fn get_replication_state(&self) -> &::std::option::Option<crate::types::ReplicationState> {
+        &self.replication_state
+    }
+    /// <p>Source stage ARN from which this participant is replicated, if <code>replicationType</code> is <code>REPLICA</code>.</p>
+    pub fn source_stage_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.source_stage_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Source stage ARN from which this participant is replicated, if <code>replicationType</code> is <code>REPLICA</code>.</p>
+    pub fn set_source_stage_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.source_stage_arn = input;
+        self
+    }
+    /// <p>Source stage ARN from which this participant is replicated, if <code>replicationType</code> is <code>REPLICA</code>.</p>
+    pub fn get_source_stage_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_stage_arn
+    }
+    /// <p>ID of the session within the source stage, if <code>replicationType</code> is <code>REPLICA</code>.</p>
+    pub fn source_session_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.source_session_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>ID of the session within the source stage, if <code>replicationType</code> is <code>REPLICA</code>.</p>
+    pub fn set_source_session_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.source_session_id = input;
+        self
+    }
+    /// <p>ID of the session within the source stage, if <code>replicationType</code> is <code>REPLICA</code>.</p>
+    pub fn get_source_session_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_session_id
+    }
     /// Consumes the builder and constructs a [`Participant`](crate::types::Participant).
     pub fn build(self) -> crate::types::Participant {
         crate::types::Participant {
@@ -381,6 +465,10 @@ impl ParticipantBuilder {
             recording_s3_prefix: self.recording_s3_prefix,
             recording_state: self.recording_state,
             protocol: self.protocol,
+            replication_type: self.replication_type,
+            replication_state: self.replication_state,
+            source_stage_arn: self.source_stage_arn,
+            source_session_id: self.source_session_id,
         }
     }
 }

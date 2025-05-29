@@ -232,6 +232,18 @@ pub(crate) fn de_describe_task_execution(
                         crate::protocol_serde::shape_task_execution_files_failed_detail::de_task_execution_files_failed_detail(tokens)?,
                     );
                 }
+                "LaunchTime" => {
+                    builder = builder.set_launch_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
+                        tokens.next(),
+                        ::aws_smithy_types::date_time::Format::EpochSeconds,
+                    )?);
+                }
+                "EndTime" => {
+                    builder = builder.set_end_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
+                        tokens.next(),
+                        ::aws_smithy_types::date_time::Format::EpochSeconds,
+                    )?);
+                }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },
             other => {

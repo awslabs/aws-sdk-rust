@@ -132,6 +132,22 @@ pub fn de_register_organization_delegated_admin_http_error(
                                                         }
             tmp
         }),
+        "InsufficientIAMAccessPermissionException" => crate::operation::register_organization_delegated_admin::RegisterOrganizationDelegatedAdminError::InsufficientIamAccessPermissionException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::InsufficientIamAccessPermissionExceptionBuilder::default();
+                    output = crate::protocol_serde::shape_insufficient_iam_access_permission_exception::de_insufficient_iam_access_permission_exception_json_err(_response_body, output).map_err(crate::operation::register_organization_delegated_admin::RegisterOrganizationDelegatedAdminError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                            tmp.message = _error_message;
+                                                        }
+            tmp
+        }),
         "InvalidParameterException" => crate::operation::register_organization_delegated_admin::RegisterOrganizationDelegatedAdminError::InvalidParameterException({
             #[allow(unused_mut)]
             let mut tmp =

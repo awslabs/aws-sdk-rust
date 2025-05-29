@@ -7,7 +7,9 @@ pub struct CreateLocationAzureBlobInput {
     pub container_url: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the authentication method DataSync uses to access your Azure Blob Storage. DataSync can access blob storage using a shared access signature (SAS).</p>
     pub authentication_type: ::std::option::Option<crate::types::AzureBlobAuthenticationType>,
-    /// <p>Specifies the SAS configuration that allows DataSync to access your Azure Blob Storage.</p>
+    /// <p>Specifies the SAS configuration that allows DataSync to access your Azure Blob Storage.</p><note>
+    /// <p>If you provide an authentication token using <code>SasConfiguration</code>, but do not provide secret configuration details using <code>CmkSecretConfig</code> or <code>CustomSecretConfig</code>, then DataSync stores the token using your Amazon Web Services account's secrets manager secret.</p>
+    /// </note>
     pub sas_configuration: ::std::option::Option<crate::types::AzureBlobSasConfiguration>,
     /// <p>Specifies the type of blob that you want your objects or files to be when transferring them into Azure Blob Storage. Currently, DataSync only supports moving data into Azure Blob Storage as block blobs. For more information on blob types, see the <a href="https://learn.microsoft.com/en-us/rest/api/storageservices/understanding-block-blobs--append-blobs--and-page-blobs">Azure Blob Storage documentation</a>.</p>
     pub blob_type: ::std::option::Option<crate::types::AzureBlobType>,
@@ -15,11 +17,23 @@ pub struct CreateLocationAzureBlobInput {
     pub access_tier: ::std::option::Option<crate::types::AzureAccessTier>,
     /// <p>Specifies path segments if you want to limit your transfer to a virtual directory in your container (for example, <code>/my/images</code>).</p>
     pub subdirectory: ::std::option::Option<::std::string::String>,
-    /// <p>Specifies the Amazon Resource Name (ARN) of the DataSync agent that can connect with your Azure Blob Storage container.</p>
-    /// <p>You can specify more than one agent. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/multiple-agents.html">Using multiple agents for your transfer</a>.</p>
+    /// <p>(Optional) Specifies the Amazon Resource Name (ARN) of the DataSync agent that can connect with your Azure Blob Storage container. If you are setting up an agentless cross-cloud transfer, you do not need to specify a value for this parameter.</p>
+    /// <p>You can specify more than one agent. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/multiple-agents.html">Using multiple agents for your transfer</a>.</p><note>
+    /// <p>Make sure you configure this parameter correctly when you first create your storage location. You cannot add or remove agents from a storage location after you create it.</p>
+    /// </note>
     pub agent_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Specifies labels that help you categorize, filter, and search for your Amazon Web Services resources. We recommend creating at least a name tag for your transfer location.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::TagListEntry>>,
+    /// <p>Specifies configuration information for a DataSync-managed secret, which includes the authentication token that DataSync uses to access a specific AzureBlob storage location, with a customer-managed KMS key.</p>
+    /// <p>When you include this paramater as part of a <code>CreateLocationAzureBlob</code> request, you provide only the KMS key ARN. DataSync uses this KMS key together with the authentication token you specify for <code>SasConfiguration</code> to create a DataSync-managed secret to store the location access credentials.</p>
+    /// <p>Make sure the DataSync has permission to access the KMS key that you specify.</p><note>
+    /// <p>You can use either <code>CmkSecretConfig</code> (with <code>SasConfiguration</code>) or <code>CustomSecretConfig</code> (without <code>SasConfiguration</code>) to provide credentials for a <code>CreateLocationAzureBlob</code> request. Do not provide both parameters for the same request.</p>
+    /// </note>
+    pub cmk_secret_config: ::std::option::Option<crate::types::CmkSecretConfig>,
+    /// <p>Specifies configuration information for a customer-managed Secrets Manager secret where the authentication token for an AzureBlob storage location is stored in plain text. This configuration includes the secret ARN, and the ARN for an IAM role that provides access to the secret.</p><note>
+    /// <p>You can use either <code>CmkSecretConfig</code> (with <code>SasConfiguration</code>) or <code>CustomSecretConfig</code> (without <code>SasConfiguration</code>) to provide credentials for a <code>CreateLocationAzureBlob</code> request. Do not provide both parameters for the same request.</p>
+    /// </note>
+    pub custom_secret_config: ::std::option::Option<crate::types::CustomSecretConfig>,
 }
 impl CreateLocationAzureBlobInput {
     /// <p>Specifies the URL of the Azure Blob Storage container involved in your transfer.</p>
@@ -30,7 +44,9 @@ impl CreateLocationAzureBlobInput {
     pub fn authentication_type(&self) -> ::std::option::Option<&crate::types::AzureBlobAuthenticationType> {
         self.authentication_type.as_ref()
     }
-    /// <p>Specifies the SAS configuration that allows DataSync to access your Azure Blob Storage.</p>
+    /// <p>Specifies the SAS configuration that allows DataSync to access your Azure Blob Storage.</p><note>
+    /// <p>If you provide an authentication token using <code>SasConfiguration</code>, but do not provide secret configuration details using <code>CmkSecretConfig</code> or <code>CustomSecretConfig</code>, then DataSync stores the token using your Amazon Web Services account's secrets manager secret.</p>
+    /// </note>
     pub fn sas_configuration(&self) -> ::std::option::Option<&crate::types::AzureBlobSasConfiguration> {
         self.sas_configuration.as_ref()
     }
@@ -46,8 +62,10 @@ impl CreateLocationAzureBlobInput {
     pub fn subdirectory(&self) -> ::std::option::Option<&str> {
         self.subdirectory.as_deref()
     }
-    /// <p>Specifies the Amazon Resource Name (ARN) of the DataSync agent that can connect with your Azure Blob Storage container.</p>
-    /// <p>You can specify more than one agent. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/multiple-agents.html">Using multiple agents for your transfer</a>.</p>
+    /// <p>(Optional) Specifies the Amazon Resource Name (ARN) of the DataSync agent that can connect with your Azure Blob Storage container. If you are setting up an agentless cross-cloud transfer, you do not need to specify a value for this parameter.</p>
+    /// <p>You can specify more than one agent. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/multiple-agents.html">Using multiple agents for your transfer</a>.</p><note>
+    /// <p>Make sure you configure this parameter correctly when you first create your storage location. You cannot add or remove agents from a storage location after you create it.</p>
+    /// </note>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.agent_arns.is_none()`.
     pub fn agent_arns(&self) -> &[::std::string::String] {
@@ -58,6 +76,20 @@ impl CreateLocationAzureBlobInput {
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
     pub fn tags(&self) -> &[crate::types::TagListEntry] {
         self.tags.as_deref().unwrap_or_default()
+    }
+    /// <p>Specifies configuration information for a DataSync-managed secret, which includes the authentication token that DataSync uses to access a specific AzureBlob storage location, with a customer-managed KMS key.</p>
+    /// <p>When you include this paramater as part of a <code>CreateLocationAzureBlob</code> request, you provide only the KMS key ARN. DataSync uses this KMS key together with the authentication token you specify for <code>SasConfiguration</code> to create a DataSync-managed secret to store the location access credentials.</p>
+    /// <p>Make sure the DataSync has permission to access the KMS key that you specify.</p><note>
+    /// <p>You can use either <code>CmkSecretConfig</code> (with <code>SasConfiguration</code>) or <code>CustomSecretConfig</code> (without <code>SasConfiguration</code>) to provide credentials for a <code>CreateLocationAzureBlob</code> request. Do not provide both parameters for the same request.</p>
+    /// </note>
+    pub fn cmk_secret_config(&self) -> ::std::option::Option<&crate::types::CmkSecretConfig> {
+        self.cmk_secret_config.as_ref()
+    }
+    /// <p>Specifies configuration information for a customer-managed Secrets Manager secret where the authentication token for an AzureBlob storage location is stored in plain text. This configuration includes the secret ARN, and the ARN for an IAM role that provides access to the secret.</p><note>
+    /// <p>You can use either <code>CmkSecretConfig</code> (with <code>SasConfiguration</code>) or <code>CustomSecretConfig</code> (without <code>SasConfiguration</code>) to provide credentials for a <code>CreateLocationAzureBlob</code> request. Do not provide both parameters for the same request.</p>
+    /// </note>
+    pub fn custom_secret_config(&self) -> ::std::option::Option<&crate::types::CustomSecretConfig> {
+        self.custom_secret_config.as_ref()
     }
 }
 impl CreateLocationAzureBlobInput {
@@ -79,6 +111,8 @@ pub struct CreateLocationAzureBlobInputBuilder {
     pub(crate) subdirectory: ::std::option::Option<::std::string::String>,
     pub(crate) agent_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::TagListEntry>>,
+    pub(crate) cmk_secret_config: ::std::option::Option<crate::types::CmkSecretConfig>,
+    pub(crate) custom_secret_config: ::std::option::Option<crate::types::CustomSecretConfig>,
 }
 impl CreateLocationAzureBlobInputBuilder {
     /// <p>Specifies the URL of the Azure Blob Storage container involved in your transfer.</p>
@@ -111,17 +145,23 @@ impl CreateLocationAzureBlobInputBuilder {
     pub fn get_authentication_type(&self) -> &::std::option::Option<crate::types::AzureBlobAuthenticationType> {
         &self.authentication_type
     }
-    /// <p>Specifies the SAS configuration that allows DataSync to access your Azure Blob Storage.</p>
+    /// <p>Specifies the SAS configuration that allows DataSync to access your Azure Blob Storage.</p><note>
+    /// <p>If you provide an authentication token using <code>SasConfiguration</code>, but do not provide secret configuration details using <code>CmkSecretConfig</code> or <code>CustomSecretConfig</code>, then DataSync stores the token using your Amazon Web Services account's secrets manager secret.</p>
+    /// </note>
     pub fn sas_configuration(mut self, input: crate::types::AzureBlobSasConfiguration) -> Self {
         self.sas_configuration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies the SAS configuration that allows DataSync to access your Azure Blob Storage.</p>
+    /// <p>Specifies the SAS configuration that allows DataSync to access your Azure Blob Storage.</p><note>
+    /// <p>If you provide an authentication token using <code>SasConfiguration</code>, but do not provide secret configuration details using <code>CmkSecretConfig</code> or <code>CustomSecretConfig</code>, then DataSync stores the token using your Amazon Web Services account's secrets manager secret.</p>
+    /// </note>
     pub fn set_sas_configuration(mut self, input: ::std::option::Option<crate::types::AzureBlobSasConfiguration>) -> Self {
         self.sas_configuration = input;
         self
     }
-    /// <p>Specifies the SAS configuration that allows DataSync to access your Azure Blob Storage.</p>
+    /// <p>Specifies the SAS configuration that allows DataSync to access your Azure Blob Storage.</p><note>
+    /// <p>If you provide an authentication token using <code>SasConfiguration</code>, but do not provide secret configuration details using <code>CmkSecretConfig</code> or <code>CustomSecretConfig</code>, then DataSync stores the token using your Amazon Web Services account's secrets manager secret.</p>
+    /// </note>
     pub fn get_sas_configuration(&self) -> &::std::option::Option<crate::types::AzureBlobSasConfiguration> {
         &self.sas_configuration
     }
@@ -171,22 +211,28 @@ impl CreateLocationAzureBlobInputBuilder {
     ///
     /// To override the contents of this collection use [`set_agent_arns`](Self::set_agent_arns).
     ///
-    /// <p>Specifies the Amazon Resource Name (ARN) of the DataSync agent that can connect with your Azure Blob Storage container.</p>
-    /// <p>You can specify more than one agent. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/multiple-agents.html">Using multiple agents for your transfer</a>.</p>
+    /// <p>(Optional) Specifies the Amazon Resource Name (ARN) of the DataSync agent that can connect with your Azure Blob Storage container. If you are setting up an agentless cross-cloud transfer, you do not need to specify a value for this parameter.</p>
+    /// <p>You can specify more than one agent. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/multiple-agents.html">Using multiple agents for your transfer</a>.</p><note>
+    /// <p>Make sure you configure this parameter correctly when you first create your storage location. You cannot add or remove agents from a storage location after you create it.</p>
+    /// </note>
     pub fn agent_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.agent_arns.unwrap_or_default();
         v.push(input.into());
         self.agent_arns = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Specifies the Amazon Resource Name (ARN) of the DataSync agent that can connect with your Azure Blob Storage container.</p>
-    /// <p>You can specify more than one agent. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/multiple-agents.html">Using multiple agents for your transfer</a>.</p>
+    /// <p>(Optional) Specifies the Amazon Resource Name (ARN) of the DataSync agent that can connect with your Azure Blob Storage container. If you are setting up an agentless cross-cloud transfer, you do not need to specify a value for this parameter.</p>
+    /// <p>You can specify more than one agent. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/multiple-agents.html">Using multiple agents for your transfer</a>.</p><note>
+    /// <p>Make sure you configure this parameter correctly when you first create your storage location. You cannot add or remove agents from a storage location after you create it.</p>
+    /// </note>
     pub fn set_agent_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.agent_arns = input;
         self
     }
-    /// <p>Specifies the Amazon Resource Name (ARN) of the DataSync agent that can connect with your Azure Blob Storage container.</p>
-    /// <p>You can specify more than one agent. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/multiple-agents.html">Using multiple agents for your transfer</a>.</p>
+    /// <p>(Optional) Specifies the Amazon Resource Name (ARN) of the DataSync agent that can connect with your Azure Blob Storage container. If you are setting up an agentless cross-cloud transfer, you do not need to specify a value for this parameter.</p>
+    /// <p>You can specify more than one agent. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/multiple-agents.html">Using multiple agents for your transfer</a>.</p><note>
+    /// <p>Make sure you configure this parameter correctly when you first create your storage location. You cannot add or remove agents from a storage location after you create it.</p>
+    /// </note>
     pub fn get_agent_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.agent_arns
     }
@@ -210,6 +256,52 @@ impl CreateLocationAzureBlobInputBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagListEntry>> {
         &self.tags
     }
+    /// <p>Specifies configuration information for a DataSync-managed secret, which includes the authentication token that DataSync uses to access a specific AzureBlob storage location, with a customer-managed KMS key.</p>
+    /// <p>When you include this paramater as part of a <code>CreateLocationAzureBlob</code> request, you provide only the KMS key ARN. DataSync uses this KMS key together with the authentication token you specify for <code>SasConfiguration</code> to create a DataSync-managed secret to store the location access credentials.</p>
+    /// <p>Make sure the DataSync has permission to access the KMS key that you specify.</p><note>
+    /// <p>You can use either <code>CmkSecretConfig</code> (with <code>SasConfiguration</code>) or <code>CustomSecretConfig</code> (without <code>SasConfiguration</code>) to provide credentials for a <code>CreateLocationAzureBlob</code> request. Do not provide both parameters for the same request.</p>
+    /// </note>
+    pub fn cmk_secret_config(mut self, input: crate::types::CmkSecretConfig) -> Self {
+        self.cmk_secret_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies configuration information for a DataSync-managed secret, which includes the authentication token that DataSync uses to access a specific AzureBlob storage location, with a customer-managed KMS key.</p>
+    /// <p>When you include this paramater as part of a <code>CreateLocationAzureBlob</code> request, you provide only the KMS key ARN. DataSync uses this KMS key together with the authentication token you specify for <code>SasConfiguration</code> to create a DataSync-managed secret to store the location access credentials.</p>
+    /// <p>Make sure the DataSync has permission to access the KMS key that you specify.</p><note>
+    /// <p>You can use either <code>CmkSecretConfig</code> (with <code>SasConfiguration</code>) or <code>CustomSecretConfig</code> (without <code>SasConfiguration</code>) to provide credentials for a <code>CreateLocationAzureBlob</code> request. Do not provide both parameters for the same request.</p>
+    /// </note>
+    pub fn set_cmk_secret_config(mut self, input: ::std::option::Option<crate::types::CmkSecretConfig>) -> Self {
+        self.cmk_secret_config = input;
+        self
+    }
+    /// <p>Specifies configuration information for a DataSync-managed secret, which includes the authentication token that DataSync uses to access a specific AzureBlob storage location, with a customer-managed KMS key.</p>
+    /// <p>When you include this paramater as part of a <code>CreateLocationAzureBlob</code> request, you provide only the KMS key ARN. DataSync uses this KMS key together with the authentication token you specify for <code>SasConfiguration</code> to create a DataSync-managed secret to store the location access credentials.</p>
+    /// <p>Make sure the DataSync has permission to access the KMS key that you specify.</p><note>
+    /// <p>You can use either <code>CmkSecretConfig</code> (with <code>SasConfiguration</code>) or <code>CustomSecretConfig</code> (without <code>SasConfiguration</code>) to provide credentials for a <code>CreateLocationAzureBlob</code> request. Do not provide both parameters for the same request.</p>
+    /// </note>
+    pub fn get_cmk_secret_config(&self) -> &::std::option::Option<crate::types::CmkSecretConfig> {
+        &self.cmk_secret_config
+    }
+    /// <p>Specifies configuration information for a customer-managed Secrets Manager secret where the authentication token for an AzureBlob storage location is stored in plain text. This configuration includes the secret ARN, and the ARN for an IAM role that provides access to the secret.</p><note>
+    /// <p>You can use either <code>CmkSecretConfig</code> (with <code>SasConfiguration</code>) or <code>CustomSecretConfig</code> (without <code>SasConfiguration</code>) to provide credentials for a <code>CreateLocationAzureBlob</code> request. Do not provide both parameters for the same request.</p>
+    /// </note>
+    pub fn custom_secret_config(mut self, input: crate::types::CustomSecretConfig) -> Self {
+        self.custom_secret_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies configuration information for a customer-managed Secrets Manager secret where the authentication token for an AzureBlob storage location is stored in plain text. This configuration includes the secret ARN, and the ARN for an IAM role that provides access to the secret.</p><note>
+    /// <p>You can use either <code>CmkSecretConfig</code> (with <code>SasConfiguration</code>) or <code>CustomSecretConfig</code> (without <code>SasConfiguration</code>) to provide credentials for a <code>CreateLocationAzureBlob</code> request. Do not provide both parameters for the same request.</p>
+    /// </note>
+    pub fn set_custom_secret_config(mut self, input: ::std::option::Option<crate::types::CustomSecretConfig>) -> Self {
+        self.custom_secret_config = input;
+        self
+    }
+    /// <p>Specifies configuration information for a customer-managed Secrets Manager secret where the authentication token for an AzureBlob storage location is stored in plain text. This configuration includes the secret ARN, and the ARN for an IAM role that provides access to the secret.</p><note>
+    /// <p>You can use either <code>CmkSecretConfig</code> (with <code>SasConfiguration</code>) or <code>CustomSecretConfig</code> (without <code>SasConfiguration</code>) to provide credentials for a <code>CreateLocationAzureBlob</code> request. Do not provide both parameters for the same request.</p>
+    /// </note>
+    pub fn get_custom_secret_config(&self) -> &::std::option::Option<crate::types::CustomSecretConfig> {
+        &self.custom_secret_config
+    }
     /// Consumes the builder and constructs a [`CreateLocationAzureBlobInput`](crate::operation::create_location_azure_blob::CreateLocationAzureBlobInput).
     pub fn build(
         self,
@@ -226,6 +318,8 @@ impl CreateLocationAzureBlobInputBuilder {
             subdirectory: self.subdirectory,
             agent_arns: self.agent_arns,
             tags: self.tags,
+            cmk_secret_config: self.cmk_secret_config,
+            custom_secret_config: self.custom_secret_config,
         })
     }
 }

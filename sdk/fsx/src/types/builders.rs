@@ -37,6 +37,8 @@ pub use crate::types::_file_system_endpoint::FileSystemEndpointBuilder;
 
 pub use crate::types::_lustre_file_system_configuration::LustreFileSystemConfigurationBuilder;
 
+pub use crate::types::_lustre_read_cache_configuration::LustreReadCacheConfigurationBuilder;
+
 pub use crate::types::_file_system_lustre_metadata_configuration::FileSystemLustreMetadataConfigurationBuilder;
 
 pub use crate::types::_lustre_root_squash_configuration::LustreRootSquashConfigurationBuilder;

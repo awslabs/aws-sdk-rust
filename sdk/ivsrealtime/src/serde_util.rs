@@ -35,6 +35,15 @@ pub(crate) fn list_participant_events_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn list_participant_replicas_output_output_correct_errors(
+    mut builder: crate::operation::list_participant_replicas::builders::ListParticipantReplicasOutputBuilder,
+) -> crate::operation::list_participant_replicas::builders::ListParticipantReplicasOutputBuilder {
+    if builder.replicas.is_none() {
+        builder.replicas = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn list_participants_output_output_correct_errors(
     mut builder: crate::operation::list_participants::builders::ListParticipantsOutputBuilder,
 ) -> crate::operation::list_participants::builders::ListParticipantsOutputBuilder {
@@ -213,6 +222,30 @@ pub(crate) fn ingest_configuration_summary_correct_errors(
     }
     if builder.state.is_none() {
         builder.state = "no value was set".parse::<crate::types::IngestConfigurationState>().ok()
+    }
+    builder
+}
+
+pub(crate) fn participant_replica_correct_errors(
+    mut builder: crate::types::builders::ParticipantReplicaBuilder,
+) -> crate::types::builders::ParticipantReplicaBuilder {
+    if builder.source_stage_arn.is_none() {
+        builder.source_stage_arn = Some(Default::default())
+    }
+    if builder.participant_id.is_none() {
+        builder.participant_id = Some(Default::default())
+    }
+    if builder.source_session_id.is_none() {
+        builder.source_session_id = Some(Default::default())
+    }
+    if builder.destination_stage_arn.is_none() {
+        builder.destination_stage_arn = Some(Default::default())
+    }
+    if builder.destination_session_id.is_none() {
+        builder.destination_session_id = Some(Default::default())
+    }
+    if builder.replication_state.is_none() {
+        builder.replication_state = "no value was set".parse::<crate::types::ReplicationState>().ok()
     }
     builder
 }

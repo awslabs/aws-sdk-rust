@@ -266,6 +266,8 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for StopEventData
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum StopEventDataStoreIngestionError {
+    /// <p>This exception is thrown when the specified resource is not ready for an operation. This can occur when you try to run an operation on a resource before CloudTrail has time to fully load the resource, or because another operation is modifying the resource. If this exception occurs, wait a few minutes, and then try the operation again.</p>
+    ConflictException(crate::types::error::ConflictException),
     /// <p>The specified event data store ARN is not valid or does not map to an event data store in your account.</p>
     EventDataStoreArnInvalidException(crate::types::error::EventDataStoreArnInvalidException),
     /// <p>The specified event data store was not found.</p>
@@ -319,6 +321,7 @@ impl StopEventDataStoreIngestionError {
     ///
     pub fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
+            Self::ConflictException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::EventDataStoreArnInvalidException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::EventDataStoreNotFoundException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InsufficientDependencyServiceAccessPermissionException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
@@ -331,6 +334,10 @@ impl StopEventDataStoreIngestionError {
             Self::UnsupportedOperationException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::Unhandled(e) => &e.meta,
         }
+    }
+    /// Returns `true` if the error kind is `StopEventDataStoreIngestionError::ConflictException`.
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(self, Self::ConflictException(_))
     }
     /// Returns `true` if the error kind is `StopEventDataStoreIngestionError::EventDataStoreArnInvalidException`.
     pub fn is_event_data_store_arn_invalid_exception(&self) -> bool {
@@ -376,6 +383,7 @@ impl StopEventDataStoreIngestionError {
 impl ::std::error::Error for StopEventDataStoreIngestionError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
+            Self::ConflictException(_inner) => ::std::option::Option::Some(_inner),
             Self::EventDataStoreArnInvalidException(_inner) => ::std::option::Option::Some(_inner),
             Self::EventDataStoreNotFoundException(_inner) => ::std::option::Option::Some(_inner),
             Self::InsufficientDependencyServiceAccessPermissionException(_inner) => ::std::option::Option::Some(_inner),
@@ -393,6 +401,7 @@ impl ::std::error::Error for StopEventDataStoreIngestionError {
 impl ::std::fmt::Display for StopEventDataStoreIngestionError {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         match self {
+            Self::ConflictException(_inner) => _inner.fmt(f),
             Self::EventDataStoreArnInvalidException(_inner) => _inner.fmt(f),
             Self::EventDataStoreNotFoundException(_inner) => _inner.fmt(f),
             Self::InsufficientDependencyServiceAccessPermissionException(_inner) => _inner.fmt(f),
@@ -424,6 +433,7 @@ impl ::aws_smithy_types::retry::ProvideErrorKind for StopEventDataStoreIngestion
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for StopEventDataStoreIngestionError {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
+            Self::ConflictException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::EventDataStoreArnInvalidException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::EventDataStoreNotFoundException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InsufficientDependencyServiceAccessPermissionException(_inner) => {

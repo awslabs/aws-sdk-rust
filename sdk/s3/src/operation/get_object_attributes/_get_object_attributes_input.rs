@@ -16,9 +16,9 @@ pub struct GetObjectAttributesInput {
     /// <p>S3 Versioning isn't enabled and supported for directory buckets. For this API operation, only the <code>null</code> value of the version ID is supported by directory buckets. You can only specify <code>null</code> to the <code>versionId</code> query parameter in the request.</p>
     /// </note>
     pub version_id: ::std::option::Option<::std::string::String>,
-    /// <p>Sets the maximum number of parts to return.</p>
+    /// <p>Sets the maximum number of parts to return. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/mpuoverview.html">Uploading and copying objects using multipart upload in Amazon S3 </a> in the <i>Amazon Simple Storage Service user guide</i>.</p>
     pub max_parts: ::std::option::Option<i32>,
-    /// <p>Specifies the part after which listing should begin. Only parts with higher part numbers will be listed.</p>
+    /// <p>Specifies the part after which listing should begin. Only parts with higher part numbers will be listed. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/mpuoverview.html">Uploading and copying objects using multipart upload in Amazon S3 </a> in the <i>Amazon Simple Storage Service user guide</i>.</p>
     pub part_number_marker: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the algorithm to use when encrypting the object (for example, AES256).</p><note>
     /// <p>This functionality is not supported for directory buckets.</p>
@@ -61,11 +61,11 @@ impl GetObjectAttributesInput {
     pub fn version_id(&self) -> ::std::option::Option<&str> {
         self.version_id.as_deref()
     }
-    /// <p>Sets the maximum number of parts to return.</p>
+    /// <p>Sets the maximum number of parts to return. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/mpuoverview.html">Uploading and copying objects using multipart upload in Amazon S3 </a> in the <i>Amazon Simple Storage Service user guide</i>.</p>
     pub fn max_parts(&self) -> ::std::option::Option<i32> {
         self.max_parts
     }
-    /// <p>Specifies the part after which listing should begin. Only parts with higher part numbers will be listed.</p>
+    /// <p>Specifies the part after which listing should begin. Only parts with higher part numbers will be listed. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/mpuoverview.html">Uploading and copying objects using multipart upload in Amazon S3 </a> in the <i>Amazon Simple Storage Service user guide</i>.</p>
     pub fn part_number_marker(&self) -> ::std::option::Option<&str> {
         self.part_number_marker.as_deref()
     }
@@ -210,31 +210,31 @@ impl GetObjectAttributesInputBuilder {
     pub fn get_version_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.version_id
     }
-    /// <p>Sets the maximum number of parts to return.</p>
+    /// <p>Sets the maximum number of parts to return. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/mpuoverview.html">Uploading and copying objects using multipart upload in Amazon S3 </a> in the <i>Amazon Simple Storage Service user guide</i>.</p>
     pub fn max_parts(mut self, input: i32) -> Self {
         self.max_parts = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Sets the maximum number of parts to return.</p>
+    /// <p>Sets the maximum number of parts to return. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/mpuoverview.html">Uploading and copying objects using multipart upload in Amazon S3 </a> in the <i>Amazon Simple Storage Service user guide</i>.</p>
     pub fn set_max_parts(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_parts = input;
         self
     }
-    /// <p>Sets the maximum number of parts to return.</p>
+    /// <p>Sets the maximum number of parts to return. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/mpuoverview.html">Uploading and copying objects using multipart upload in Amazon S3 </a> in the <i>Amazon Simple Storage Service user guide</i>.</p>
     pub fn get_max_parts(&self) -> &::std::option::Option<i32> {
         &self.max_parts
     }
-    /// <p>Specifies the part after which listing should begin. Only parts with higher part numbers will be listed.</p>
+    /// <p>Specifies the part after which listing should begin. Only parts with higher part numbers will be listed. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/mpuoverview.html">Uploading and copying objects using multipart upload in Amazon S3 </a> in the <i>Amazon Simple Storage Service user guide</i>.</p>
     pub fn part_number_marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.part_number_marker = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Specifies the part after which listing should begin. Only parts with higher part numbers will be listed.</p>
+    /// <p>Specifies the part after which listing should begin. Only parts with higher part numbers will be listed. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/mpuoverview.html">Uploading and copying objects using multipart upload in Amazon S3 </a> in the <i>Amazon Simple Storage Service user guide</i>.</p>
     pub fn set_part_number_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.part_number_marker = input;
         self
     }
-    /// <p>Specifies the part after which listing should begin. Only parts with higher part numbers will be listed.</p>
+    /// <p>Specifies the part after which listing should begin. Only parts with higher part numbers will be listed. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/mpuoverview.html">Uploading and copying objects using multipart upload in Amazon S3 </a> in the <i>Amazon Simple Storage Service user guide</i>.</p>
     pub fn get_part_number_marker(&self) -> &::std::option::Option<::std::string::String> {
         &self.part_number_marker
     }

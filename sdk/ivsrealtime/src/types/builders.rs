@@ -49,6 +49,8 @@ pub use crate::types::_public_key_summary::PublicKeySummaryBuilder;
 
 pub use crate::types::_participant_summary::ParticipantSummaryBuilder;
 
+pub use crate::types::_participant_replica::ParticipantReplicaBuilder;
+
 pub use crate::types::_event::EventBuilder;
 
 pub use crate::types::_ingest_configuration_summary::IngestConfigurationSummaryBuilder;

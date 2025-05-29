@@ -17,6 +17,8 @@ pub struct DescribeMlflowTrackingServerOutput {
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The current creation status of the described MLflow Tracking Server.</p>
     pub tracking_server_status: ::std::option::Option<crate::types::TrackingServerStatus>,
+    /// <p>The current maintenance status of the described MLflow Tracking Server.</p>
+    pub tracking_server_maintenance_status: ::std::option::Option<crate::types::TrackingServerMaintenanceStatus>,
     /// <p>Whether the described MLflow Tracking Server is currently active.</p>
     pub is_active: ::std::option::Option<crate::types::IsTrackingServerActive>,
     /// <p>The URL to connect to the MLflow user interface for the described tracking server.</p>
@@ -63,6 +65,10 @@ impl DescribeMlflowTrackingServerOutput {
     /// <p>The current creation status of the described MLflow Tracking Server.</p>
     pub fn tracking_server_status(&self) -> ::std::option::Option<&crate::types::TrackingServerStatus> {
         self.tracking_server_status.as_ref()
+    }
+    /// <p>The current maintenance status of the described MLflow Tracking Server.</p>
+    pub fn tracking_server_maintenance_status(&self) -> ::std::option::Option<&crate::types::TrackingServerMaintenanceStatus> {
+        self.tracking_server_maintenance_status.as_ref()
     }
     /// <p>Whether the described MLflow Tracking Server is currently active.</p>
     pub fn is_active(&self) -> ::std::option::Option<&crate::types::IsTrackingServerActive> {
@@ -120,6 +126,7 @@ pub struct DescribeMlflowTrackingServerOutputBuilder {
     pub(crate) mlflow_version: ::std::option::Option<::std::string::String>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) tracking_server_status: ::std::option::Option<crate::types::TrackingServerStatus>,
+    pub(crate) tracking_server_maintenance_status: ::std::option::Option<crate::types::TrackingServerMaintenanceStatus>,
     pub(crate) is_active: ::std::option::Option<crate::types::IsTrackingServerActive>,
     pub(crate) tracking_server_url: ::std::option::Option<::std::string::String>,
     pub(crate) weekly_maintenance_window_start: ::std::option::Option<::std::string::String>,
@@ -228,6 +235,20 @@ impl DescribeMlflowTrackingServerOutputBuilder {
     /// <p>The current creation status of the described MLflow Tracking Server.</p>
     pub fn get_tracking_server_status(&self) -> &::std::option::Option<crate::types::TrackingServerStatus> {
         &self.tracking_server_status
+    }
+    /// <p>The current maintenance status of the described MLflow Tracking Server.</p>
+    pub fn tracking_server_maintenance_status(mut self, input: crate::types::TrackingServerMaintenanceStatus) -> Self {
+        self.tracking_server_maintenance_status = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The current maintenance status of the described MLflow Tracking Server.</p>
+    pub fn set_tracking_server_maintenance_status(mut self, input: ::std::option::Option<crate::types::TrackingServerMaintenanceStatus>) -> Self {
+        self.tracking_server_maintenance_status = input;
+        self
+    }
+    /// <p>The current maintenance status of the described MLflow Tracking Server.</p>
+    pub fn get_tracking_server_maintenance_status(&self) -> &::std::option::Option<crate::types::TrackingServerMaintenanceStatus> {
+        &self.tracking_server_maintenance_status
     }
     /// <p>Whether the described MLflow Tracking Server is currently active.</p>
     pub fn is_active(mut self, input: crate::types::IsTrackingServerActive) -> Self {
@@ -360,6 +381,7 @@ impl DescribeMlflowTrackingServerOutputBuilder {
             mlflow_version: self.mlflow_version,
             role_arn: self.role_arn,
             tracking_server_status: self.tracking_server_status,
+            tracking_server_maintenance_status: self.tracking_server_maintenance_status,
             is_active: self.is_active,
             tracking_server_url: self.tracking_server_url,
             weekly_maintenance_window_start: self.weekly_maintenance_window_start,

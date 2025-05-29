@@ -79,27 +79,33 @@ pub fn ser_create_app_input_input(
     if let Some(var_26) = &input.iam_service_role_arn {
         object.key("iamServiceRoleArn").string(var_26.as_str());
     }
-    if let Some(var_27) = &input.name {
-        object.key("name").string(var_27.as_str());
-    }
-    if let Some(var_28) = &input.oauth_token {
-        object.key("oauthToken").string(var_28.as_str());
-    }
-    if let Some(var_29) = &input.platform {
-        object.key("platform").string(var_29.as_str());
-    }
-    if let Some(var_30) = &input.repository {
-        object.key("repository").string(var_30.as_str());
-    }
-    if let Some(var_31) = &input.tags {
+    if let Some(var_27) = &input.job_config {
         #[allow(unused_mut)]
-        let mut object_32 = object.key("tags").start_object();
-        for (key_33, value_34) in var_31 {
+        let mut object_28 = object.key("jobConfig").start_object();
+        crate::protocol_serde::shape_job_config::ser_job_config(&mut object_28, var_27)?;
+        object_28.finish();
+    }
+    if let Some(var_29) = &input.name {
+        object.key("name").string(var_29.as_str());
+    }
+    if let Some(var_30) = &input.oauth_token {
+        object.key("oauthToken").string(var_30.as_str());
+    }
+    if let Some(var_31) = &input.platform {
+        object.key("platform").string(var_31.as_str());
+    }
+    if let Some(var_32) = &input.repository {
+        object.key("repository").string(var_32.as_str());
+    }
+    if let Some(var_33) = &input.tags {
+        #[allow(unused_mut)]
+        let mut object_34 = object.key("tags").start_object();
+        for (key_35, value_36) in var_33 {
             {
-                object_32.key(key_33.as_str()).string(value_34.as_str());
+                object_34.key(key_35.as_str()).string(value_36.as_str());
             }
         }
-        object_32.finish();
+        object_34.finish();
     }
     Ok(())
 }

@@ -13,6 +13,7 @@
 /// # let workloadestimateratetype = unimplemented!();
 /// match workloadestimateratetype {
 ///     WorkloadEstimateRateType::AfterDiscounts => { /* ... */ },
+///     WorkloadEstimateRateType::AfterDiscountsAndCommitments => { /* ... */ },
 ///     WorkloadEstimateRateType::BeforeDiscounts => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -45,6 +46,8 @@ pub enum WorkloadEstimateRateType {
     #[allow(missing_docs)] // documentation missing in model
     AfterDiscounts,
     #[allow(missing_docs)] // documentation missing in model
+    AfterDiscountsAndCommitments,
+    #[allow(missing_docs)] // documentation missing in model
     BeforeDiscounts,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
@@ -54,6 +57,7 @@ impl ::std::convert::From<&str> for WorkloadEstimateRateType {
     fn from(s: &str) -> Self {
         match s {
             "AFTER_DISCOUNTS" => WorkloadEstimateRateType::AfterDiscounts,
+            "AFTER_DISCOUNTS_AND_COMMITMENTS" => WorkloadEstimateRateType::AfterDiscountsAndCommitments,
             "BEFORE_DISCOUNTS" => WorkloadEstimateRateType::BeforeDiscounts,
             other => WorkloadEstimateRateType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -71,13 +75,14 @@ impl WorkloadEstimateRateType {
     pub fn as_str(&self) -> &str {
         match self {
             WorkloadEstimateRateType::AfterDiscounts => "AFTER_DISCOUNTS",
+            WorkloadEstimateRateType::AfterDiscountsAndCommitments => "AFTER_DISCOUNTS_AND_COMMITMENTS",
             WorkloadEstimateRateType::BeforeDiscounts => "BEFORE_DISCOUNTS",
             WorkloadEstimateRateType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["AFTER_DISCOUNTS", "BEFORE_DISCOUNTS"]
+        &["AFTER_DISCOUNTS", "AFTER_DISCOUNTS_AND_COMMITMENTS", "BEFORE_DISCOUNTS"]
     }
 }
 impl ::std::convert::AsRef<str> for WorkloadEstimateRateType {
@@ -101,6 +106,7 @@ impl ::std::fmt::Display for WorkloadEstimateRateType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             WorkloadEstimateRateType::AfterDiscounts => write!(f, "AFTER_DISCOUNTS"),
+            WorkloadEstimateRateType::AfterDiscountsAndCommitments => write!(f, "AFTER_DISCOUNTS_AND_COMMITMENTS"),
             WorkloadEstimateRateType::BeforeDiscounts => write!(f, "BEFORE_DISCOUNTS"),
             WorkloadEstimateRateType::Unknown(value) => write!(f, "{}", value),
         }

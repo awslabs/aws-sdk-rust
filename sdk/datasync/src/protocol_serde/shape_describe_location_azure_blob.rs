@@ -145,6 +145,16 @@ pub(crate) fn de_describe_location_azure_blob(
                         ::aws_smithy_types::date_time::Format::EpochSeconds,
                     )?);
                 }
+                "ManagedSecretConfig" => {
+                    builder =
+                        builder.set_managed_secret_config(crate::protocol_serde::shape_managed_secret_config::de_managed_secret_config(tokens)?);
+                }
+                "CmkSecretConfig" => {
+                    builder = builder.set_cmk_secret_config(crate::protocol_serde::shape_cmk_secret_config::de_cmk_secret_config(tokens)?);
+                }
+                "CustomSecretConfig" => {
+                    builder = builder.set_custom_secret_config(crate::protocol_serde::shape_custom_secret_config::de_custom_secret_config(tokens)?);
+                }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },
             other => {

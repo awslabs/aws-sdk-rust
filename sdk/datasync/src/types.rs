@@ -73,6 +73,10 @@ pub use crate::types::_s3_config::S3Config;
 
 pub use crate::types::_s3_storage_class::S3StorageClass;
 
+pub use crate::types::_custom_secret_config::CustomSecretConfig;
+
+pub use crate::types::_cmk_secret_config::CmkSecretConfig;
+
 pub use crate::types::_object_storage_server_protocol::ObjectStorageServerProtocol;
 
 pub use crate::types::_nfs_mount_options::NfsMountOptions;
@@ -155,6 +159,8 @@ pub use crate::types::_task_schedule_details::TaskScheduleDetails;
 
 pub use crate::types::_schedule_disabled_by::ScheduleDisabledBy;
 
+pub use crate::types::_managed_secret_config::ManagedSecretConfig;
+
 pub use crate::types::_ec2_config::Ec2Config;
 
 pub use crate::types::_private_link_config::PrivateLinkConfig;
@@ -174,6 +180,10 @@ mod _azure_blob_authentication_type;
 mod _azure_blob_sas_configuration;
 
 mod _azure_blob_type;
+
+mod _cmk_secret_config;
+
+mod _custom_secret_config;
 
 mod _ec2_config;
 
@@ -212,6 +222,8 @@ mod _location_filter_name;
 mod _location_list_entry;
 
 mod _log_level;
+
+mod _managed_secret_config;
 
 mod _manifest_action;
 

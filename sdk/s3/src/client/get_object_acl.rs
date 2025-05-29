@@ -11,7 +11,7 @@ impl super::Client {
     /// - On success, responds with [`GetObjectAclOutput`](crate::operation::get_object_acl::GetObjectAclOutput) with field(s):
     ///   - [`owner(Option<Owner>)`](crate::operation::get_object_acl::GetObjectAclOutput::owner): <p>Container for the bucket owner's display name and ID.</p>
     ///   - [`grants(Option<Vec::<Grant>>)`](crate::operation::get_object_acl::GetObjectAclOutput::grants): <p>A list of grants.</p>
-    ///   - [`request_charged(Option<RequestCharged>)`](crate::operation::get_object_acl::GetObjectAclOutput::request_charged): <p>If present, indicates that the requester was successfully charged for the request.</p><note>  <p>This functionality is not supported for directory buckets.</p> </note>
+    ///   - [`request_charged(Option<RequestCharged>)`](crate::operation::get_object_acl::GetObjectAclOutput::request_charged): <p>If present, indicates that the requester was successfully charged for the request. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/RequesterPaysBuckets.html">Using Requester Pays buckets for storage transfers and usage</a> in the <i>Amazon Simple Storage Service user guide</i>.</p><note>  <p>This functionality is not supported for directory buckets.</p> </note>
     /// - On failure, responds with [`SdkError<GetObjectAclError>`](crate::operation::get_object_acl::GetObjectAclError)
     pub fn get_object_acl(&self) -> crate::operation::get_object_acl::builders::GetObjectAclFluentBuilder {
         crate::operation::get_object_acl::builders::GetObjectAclFluentBuilder::new(self.handle.clone())

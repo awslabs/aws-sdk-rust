@@ -33,5 +33,17 @@ pub fn ser_update_location_azure_blob_input_input(
         }
         array_9.finish();
     }
+    if let Some(var_11) = &input.cmk_secret_config {
+        #[allow(unused_mut)]
+        let mut object_12 = object.key("CmkSecretConfig").start_object();
+        crate::protocol_serde::shape_cmk_secret_config::ser_cmk_secret_config(&mut object_12, var_11)?;
+        object_12.finish();
+    }
+    if let Some(var_13) = &input.custom_secret_config {
+        #[allow(unused_mut)]
+        let mut object_14 = object.key("CustomSecretConfig").start_object();
+        crate::protocol_serde::shape_custom_secret_config::ser_custom_secret_config(&mut object_14, var_13)?;
+        object_14.finish();
+    }
     Ok(())
 }

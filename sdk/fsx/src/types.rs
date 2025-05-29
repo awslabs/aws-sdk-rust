@@ -53,6 +53,10 @@ pub use crate::types::_ontap_deployment_type::OntapDeploymentType;
 
 pub use crate::types::_lustre_file_system_configuration::LustreFileSystemConfiguration;
 
+pub use crate::types::_lustre_read_cache_configuration::LustreReadCacheConfiguration;
+
+pub use crate::types::_lustre_read_cache_sizing_mode::LustreReadCacheSizingMode;
+
 pub use crate::types::_file_system_lustre_metadata_configuration::FileSystemLustreMetadataConfiguration;
 
 pub use crate::types::_metadata_configuration_mode::MetadataConfigurationMode;
@@ -500,6 +504,10 @@ mod _lustre_file_system_configuration;
 mod _lustre_log_configuration;
 
 mod _lustre_log_create_configuration;
+
+mod _lustre_read_cache_configuration;
+
+mod _lustre_read_cache_sizing_mode;
 
 mod _lustre_root_squash_configuration;
 

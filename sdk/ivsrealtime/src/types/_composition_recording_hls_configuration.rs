@@ -4,11 +4,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CompositionRecordingHlsConfiguration {
-    /// <p>Defines the target duration for recorded segments generated when using composite recording. Segments may have durations shorter than the specified value when needed to ensure each segment begins with a keyframe. Default: 2.</p>
+    /// <p>Defines the target duration for recorded segments generated when using composite recording. Default: 2.</p>
     pub target_segment_duration_seconds: ::std::option::Option<i32>,
 }
 impl CompositionRecordingHlsConfiguration {
-    /// <p>Defines the target duration for recorded segments generated when using composite recording. Segments may have durations shorter than the specified value when needed to ensure each segment begins with a keyframe. Default: 2.</p>
+    /// <p>Defines the target duration for recorded segments generated when using composite recording. Default: 2.</p>
     pub fn target_segment_duration_seconds(&self) -> ::std::option::Option<i32> {
         self.target_segment_duration_seconds
     }
@@ -27,17 +27,17 @@ pub struct CompositionRecordingHlsConfigurationBuilder {
     pub(crate) target_segment_duration_seconds: ::std::option::Option<i32>,
 }
 impl CompositionRecordingHlsConfigurationBuilder {
-    /// <p>Defines the target duration for recorded segments generated when using composite recording. Segments may have durations shorter than the specified value when needed to ensure each segment begins with a keyframe. Default: 2.</p>
+    /// <p>Defines the target duration for recorded segments generated when using composite recording. Default: 2.</p>
     pub fn target_segment_duration_seconds(mut self, input: i32) -> Self {
         self.target_segment_duration_seconds = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Defines the target duration for recorded segments generated when using composite recording. Segments may have durations shorter than the specified value when needed to ensure each segment begins with a keyframe. Default: 2.</p>
+    /// <p>Defines the target duration for recorded segments generated when using composite recording. Default: 2.</p>
     pub fn set_target_segment_duration_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
         self.target_segment_duration_seconds = input;
         self
     }
-    /// <p>Defines the target duration for recorded segments generated when using composite recording. Segments may have durations shorter than the specified value when needed to ensure each segment begins with a keyframe. Default: 2.</p>
+    /// <p>Defines the target duration for recorded segments generated when using composite recording. Default: 2.</p>
     pub fn get_target_segment_duration_seconds(&self) -> &::std::option::Option<i32> {
         &self.target_segment_duration_seconds
     }

@@ -844,6 +844,36 @@ impl From<crate::operation::list_participant_events::ListParticipantEventsError>
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_participant_replicas::ListParticipantReplicasError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_participant_replicas::ListParticipantReplicasError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_participant_replicas::ListParticipantReplicasError> for Error {
+    fn from(err: crate::operation::list_participant_replicas::ListParticipantReplicasError) -> Self {
+        match err {
+            crate::operation::list_participant_replicas::ListParticipantReplicasError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::list_participant_replicas::ListParticipantReplicasError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::list_participant_replicas::ListParticipantReplicasError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_participants::ListParticipantsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1034,6 +1064,51 @@ impl From<crate::operation::start_composition::StartCompositionError> for Error 
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_participant_replication::StartParticipantReplicationError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_participant_replication::StartParticipantReplicationError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::start_participant_replication::StartParticipantReplicationError> for Error {
+    fn from(err: crate::operation::start_participant_replication::StartParticipantReplicationError) -> Self {
+        match err {
+            crate::operation::start_participant_replication::StartParticipantReplicationError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::start_participant_replication::StartParticipantReplicationError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::start_participant_replication::StartParticipantReplicationError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::start_participant_replication::StartParticipantReplicationError::PendingVerification(inner) => {
+                Error::PendingVerification(inner)
+            }
+            crate::operation::start_participant_replication::StartParticipantReplicationError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::start_participant_replication::StartParticipantReplicationError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::start_participant_replication::StartParticipantReplicationError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::start_participant_replication::StartParticipantReplicationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::stop_composition::StopCompositionError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1060,6 +1135,42 @@ impl From<crate::operation::stop_composition::StopCompositionError> for Error {
             }
             crate::operation::stop_composition::StopCompositionError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::stop_composition::StopCompositionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::stop_participant_replication::StopParticipantReplicationError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::stop_participant_replication::StopParticipantReplicationError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::stop_participant_replication::StopParticipantReplicationError> for Error {
+    fn from(err: crate::operation::stop_participant_replication::StopParticipantReplicationError) -> Self {
+        match err {
+            crate::operation::stop_participant_replication::StopParticipantReplicationError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::stop_participant_replication::StopParticipantReplicationError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::stop_participant_replication::StopParticipantReplicationError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::stop_participant_replication::StopParticipantReplicationError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::stop_participant_replication::StopParticipantReplicationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

@@ -12,6 +12,7 @@
 /// ```text
 /// # let azureblobauthenticationtype = unimplemented!();
 /// match azureblobauthenticationtype {
+///     AzureBlobAuthenticationType::None => { /* ... */ },
 ///     AzureBlobAuthenticationType::Sas => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -42,6 +43,8 @@
 )]
 pub enum AzureBlobAuthenticationType {
     #[allow(missing_docs)] // documentation missing in model
+    None,
+    #[allow(missing_docs)] // documentation missing in model
     Sas,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
@@ -50,6 +53,7 @@ pub enum AzureBlobAuthenticationType {
 impl ::std::convert::From<&str> for AzureBlobAuthenticationType {
     fn from(s: &str) -> Self {
         match s {
+            "NONE" => AzureBlobAuthenticationType::None,
             "SAS" => AzureBlobAuthenticationType::Sas,
             other => AzureBlobAuthenticationType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -66,13 +70,14 @@ impl AzureBlobAuthenticationType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            AzureBlobAuthenticationType::None => "NONE",
             AzureBlobAuthenticationType::Sas => "SAS",
             AzureBlobAuthenticationType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["SAS"]
+        &["NONE", "SAS"]
     }
 }
 impl ::std::convert::AsRef<str> for AzureBlobAuthenticationType {
@@ -95,6 +100,7 @@ impl AzureBlobAuthenticationType {
 impl ::std::fmt::Display for AzureBlobAuthenticationType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            AzureBlobAuthenticationType::None => write!(f, "NONE"),
             AzureBlobAuthenticationType::Sas => write!(f, "SAS"),
             AzureBlobAuthenticationType::Unknown(value) => write!(f, "{}", value),
         }

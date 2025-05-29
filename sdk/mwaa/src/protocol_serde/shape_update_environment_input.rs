@@ -94,5 +94,8 @@ pub fn ser_update_environment_input_input(
     if let Some(var_26) = &input.weekly_maintenance_window_start {
         object.key("WeeklyMaintenanceWindowStart").string(var_26.as_str());
     }
+    if let Some(var_27) = &input.worker_replacement_strategy {
+        object.key("WorkerReplacementStrategy").string(var_27.as_str());
+    }
     Ok(())
 }

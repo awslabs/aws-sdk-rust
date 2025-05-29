@@ -33,6 +33,9 @@ pub fn ser_auto_participant_recording_configuration(
         crate::protocol_serde::shape_participant_recording_hls_configuration::ser_participant_recording_hls_configuration(&mut object_7, var_6)?;
         object_7.finish();
     }
+    if input.record_participant_replicas {
+        object.key("recordParticipantReplicas").boolean(input.record_participant_replicas);
+    }
     Ok(())
 }
 
@@ -81,6 +84,10 @@ where
                                     tokens,
                                 )?,
                             );
+                        }
+                        "recordParticipantReplicas" => {
+                            builder =
+                                builder.set_record_participant_replicas(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

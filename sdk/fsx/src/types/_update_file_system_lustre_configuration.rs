@@ -48,6 +48,10 @@ pub struct UpdateFileSystemLustreConfiguration {
     pub per_unit_storage_throughput: ::std::option::Option<i32>,
     /// <p>The Lustre metadata performance configuration for an Amazon FSx for Lustre file system using a <code>PERSISTENT_2</code> deployment type. When this configuration is enabled, the file system supports increasing metadata performance.</p>
     pub metadata_configuration: ::std::option::Option<crate::types::UpdateFileSystemLustreMetadataConfiguration>,
+    /// <p>The throughput of an Amazon FSx for Lustre file system using an Intelligent-Tiering storage class, measured in megabytes per second (MBps). You can only increase your file system's throughput. Valid values are 4000 MBps or multiples of 4000 MBps.</p>
+    pub throughput_capacity: ::std::option::Option<i32>,
+    /// <p>Specifies the optional provisioned SSD read cache on Amazon FSx for Lustre file systems that use the Intelligent-Tiering storage class.</p>
+    pub data_read_cache_configuration: ::std::option::Option<crate::types::LustreReadCacheConfiguration>,
 }
 impl UpdateFileSystemLustreConfiguration {
     /// <p>(Optional) The preferred start time to perform weekly maintenance, formatted d:HH:MM in the UTC time zone. d is the weekday number, from 1 through 7, beginning with Monday and ending with Sunday.</p>
@@ -112,6 +116,14 @@ impl UpdateFileSystemLustreConfiguration {
     pub fn metadata_configuration(&self) -> ::std::option::Option<&crate::types::UpdateFileSystemLustreMetadataConfiguration> {
         self.metadata_configuration.as_ref()
     }
+    /// <p>The throughput of an Amazon FSx for Lustre file system using an Intelligent-Tiering storage class, measured in megabytes per second (MBps). You can only increase your file system's throughput. Valid values are 4000 MBps or multiples of 4000 MBps.</p>
+    pub fn throughput_capacity(&self) -> ::std::option::Option<i32> {
+        self.throughput_capacity
+    }
+    /// <p>Specifies the optional provisioned SSD read cache on Amazon FSx for Lustre file systems that use the Intelligent-Tiering storage class.</p>
+    pub fn data_read_cache_configuration(&self) -> ::std::option::Option<&crate::types::LustreReadCacheConfiguration> {
+        self.data_read_cache_configuration.as_ref()
+    }
 }
 impl UpdateFileSystemLustreConfiguration {
     /// Creates a new builder-style object to manufacture [`UpdateFileSystemLustreConfiguration`](crate::types::UpdateFileSystemLustreConfiguration).
@@ -133,6 +145,8 @@ pub struct UpdateFileSystemLustreConfigurationBuilder {
     pub(crate) root_squash_configuration: ::std::option::Option<crate::types::LustreRootSquashConfiguration>,
     pub(crate) per_unit_storage_throughput: ::std::option::Option<i32>,
     pub(crate) metadata_configuration: ::std::option::Option<crate::types::UpdateFileSystemLustreMetadataConfiguration>,
+    pub(crate) throughput_capacity: ::std::option::Option<i32>,
+    pub(crate) data_read_cache_configuration: ::std::option::Option<crate::types::LustreReadCacheConfiguration>,
 }
 impl UpdateFileSystemLustreConfigurationBuilder {
     /// <p>(Optional) The preferred start time to perform weekly maintenance, formatted d:HH:MM in the UTC time zone. d is the weekday number, from 1 through 7, beginning with Monday and ending with Sunday.</p>
@@ -339,6 +353,34 @@ impl UpdateFileSystemLustreConfigurationBuilder {
     pub fn get_metadata_configuration(&self) -> &::std::option::Option<crate::types::UpdateFileSystemLustreMetadataConfiguration> {
         &self.metadata_configuration
     }
+    /// <p>The throughput of an Amazon FSx for Lustre file system using an Intelligent-Tiering storage class, measured in megabytes per second (MBps). You can only increase your file system's throughput. Valid values are 4000 MBps or multiples of 4000 MBps.</p>
+    pub fn throughput_capacity(mut self, input: i32) -> Self {
+        self.throughput_capacity = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The throughput of an Amazon FSx for Lustre file system using an Intelligent-Tiering storage class, measured in megabytes per second (MBps). You can only increase your file system's throughput. Valid values are 4000 MBps or multiples of 4000 MBps.</p>
+    pub fn set_throughput_capacity(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.throughput_capacity = input;
+        self
+    }
+    /// <p>The throughput of an Amazon FSx for Lustre file system using an Intelligent-Tiering storage class, measured in megabytes per second (MBps). You can only increase your file system's throughput. Valid values are 4000 MBps or multiples of 4000 MBps.</p>
+    pub fn get_throughput_capacity(&self) -> &::std::option::Option<i32> {
+        &self.throughput_capacity
+    }
+    /// <p>Specifies the optional provisioned SSD read cache on Amazon FSx for Lustre file systems that use the Intelligent-Tiering storage class.</p>
+    pub fn data_read_cache_configuration(mut self, input: crate::types::LustreReadCacheConfiguration) -> Self {
+        self.data_read_cache_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies the optional provisioned SSD read cache on Amazon FSx for Lustre file systems that use the Intelligent-Tiering storage class.</p>
+    pub fn set_data_read_cache_configuration(mut self, input: ::std::option::Option<crate::types::LustreReadCacheConfiguration>) -> Self {
+        self.data_read_cache_configuration = input;
+        self
+    }
+    /// <p>Specifies the optional provisioned SSD read cache on Amazon FSx for Lustre file systems that use the Intelligent-Tiering storage class.</p>
+    pub fn get_data_read_cache_configuration(&self) -> &::std::option::Option<crate::types::LustreReadCacheConfiguration> {
+        &self.data_read_cache_configuration
+    }
     /// Consumes the builder and constructs a [`UpdateFileSystemLustreConfiguration`](crate::types::UpdateFileSystemLustreConfiguration).
     pub fn build(self) -> crate::types::UpdateFileSystemLustreConfiguration {
         crate::types::UpdateFileSystemLustreConfiguration {
@@ -351,6 +393,8 @@ impl UpdateFileSystemLustreConfigurationBuilder {
             root_squash_configuration: self.root_squash_configuration,
             per_unit_storage_throughput: self.per_unit_storage_throughput,
             metadata_configuration: self.metadata_configuration,
+            throughput_capacity: self.throughput_capacity,
+            data_read_cache_configuration: self.data_read_cache_configuration,
         }
     }
 }

@@ -12,6 +12,9 @@ pub struct PutBucketOwnershipControlsInput {
     pub expected_bucket_owner: ::std::option::Option<::std::string::String>,
     /// <p>The <code>OwnershipControls</code> (BucketOwnerEnforced, BucketOwnerPreferred, or ObjectWriter) that you want to apply to this Amazon S3 bucket.</p>
     pub ownership_controls: ::std::option::Option<crate::types::OwnershipControls>,
+    /// <p>Indicates the algorithm used to create the checksum for the object when you use the SDK. This header will not provide any additional functionality if you don't use the SDK. When you send this header, there must be a corresponding <code>x-amz-checksum-<i>algorithm</i> </code> header sent. Otherwise, Amazon S3 fails the request with the HTTP status code <code>400 Bad Request</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>If you provide an individual checksum, Amazon S3 ignores any provided <code>ChecksumAlgorithm</code> parameter.</p>
+    pub checksum_algorithm: ::std::option::Option<crate::types::ChecksumAlgorithm>,
 }
 impl PutBucketOwnershipControlsInput {
     /// <p>The name of the Amazon S3 bucket whose <code>OwnershipControls</code> you want to set.</p>
@@ -31,6 +34,11 @@ impl PutBucketOwnershipControlsInput {
     pub fn ownership_controls(&self) -> ::std::option::Option<&crate::types::OwnershipControls> {
         self.ownership_controls.as_ref()
     }
+    /// <p>Indicates the algorithm used to create the checksum for the object when you use the SDK. This header will not provide any additional functionality if you don't use the SDK. When you send this header, there must be a corresponding <code>x-amz-checksum-<i>algorithm</i> </code> header sent. Otherwise, Amazon S3 fails the request with the HTTP status code <code>400 Bad Request</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>If you provide an individual checksum, Amazon S3 ignores any provided <code>ChecksumAlgorithm</code> parameter.</p>
+    pub fn checksum_algorithm(&self) -> ::std::option::Option<&crate::types::ChecksumAlgorithm> {
+        self.checksum_algorithm.as_ref()
+    }
 }
 impl PutBucketOwnershipControlsInput {
     /// Creates a new builder-style object to manufacture [`PutBucketOwnershipControlsInput`](crate::operation::put_bucket_ownership_controls::PutBucketOwnershipControlsInput).
@@ -47,6 +55,7 @@ pub struct PutBucketOwnershipControlsInputBuilder {
     pub(crate) content_md5: ::std::option::Option<::std::string::String>,
     pub(crate) expected_bucket_owner: ::std::option::Option<::std::string::String>,
     pub(crate) ownership_controls: ::std::option::Option<crate::types::OwnershipControls>,
+    pub(crate) checksum_algorithm: ::std::option::Option<crate::types::ChecksumAlgorithm>,
 }
 impl PutBucketOwnershipControlsInputBuilder {
     /// <p>The name of the Amazon S3 bucket whose <code>OwnershipControls</code> you want to set.</p>
@@ -110,6 +119,23 @@ impl PutBucketOwnershipControlsInputBuilder {
     pub fn get_ownership_controls(&self) -> &::std::option::Option<crate::types::OwnershipControls> {
         &self.ownership_controls
     }
+    /// <p>Indicates the algorithm used to create the checksum for the object when you use the SDK. This header will not provide any additional functionality if you don't use the SDK. When you send this header, there must be a corresponding <code>x-amz-checksum-<i>algorithm</i> </code> header sent. Otherwise, Amazon S3 fails the request with the HTTP status code <code>400 Bad Request</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>If you provide an individual checksum, Amazon S3 ignores any provided <code>ChecksumAlgorithm</code> parameter.</p>
+    pub fn checksum_algorithm(mut self, input: crate::types::ChecksumAlgorithm) -> Self {
+        self.checksum_algorithm = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates the algorithm used to create the checksum for the object when you use the SDK. This header will not provide any additional functionality if you don't use the SDK. When you send this header, there must be a corresponding <code>x-amz-checksum-<i>algorithm</i> </code> header sent. Otherwise, Amazon S3 fails the request with the HTTP status code <code>400 Bad Request</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>If you provide an individual checksum, Amazon S3 ignores any provided <code>ChecksumAlgorithm</code> parameter.</p>
+    pub fn set_checksum_algorithm(mut self, input: ::std::option::Option<crate::types::ChecksumAlgorithm>) -> Self {
+        self.checksum_algorithm = input;
+        self
+    }
+    /// <p>Indicates the algorithm used to create the checksum for the object when you use the SDK. This header will not provide any additional functionality if you don't use the SDK. When you send this header, there must be a corresponding <code>x-amz-checksum-<i>algorithm</i> </code> header sent. Otherwise, Amazon S3 fails the request with the HTTP status code <code>400 Bad Request</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>If you provide an individual checksum, Amazon S3 ignores any provided <code>ChecksumAlgorithm</code> parameter.</p>
+    pub fn get_checksum_algorithm(&self) -> &::std::option::Option<crate::types::ChecksumAlgorithm> {
+        &self.checksum_algorithm
+    }
     /// Consumes the builder and constructs a [`PutBucketOwnershipControlsInput`](crate::operation::put_bucket_ownership_controls::PutBucketOwnershipControlsInput).
     pub fn build(
         self,
@@ -122,6 +148,7 @@ impl PutBucketOwnershipControlsInputBuilder {
             content_md5: self.content_md5,
             expected_bucket_owner: self.expected_bucket_owner,
             ownership_controls: self.ownership_controls,
+            checksum_algorithm: self.checksum_algorithm,
         })
     }
 }

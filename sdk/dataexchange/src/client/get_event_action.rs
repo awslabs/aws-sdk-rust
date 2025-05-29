@@ -10,6 +10,7 @@ impl super::Client {
     ///   - [`created_at(Option<DateTime>)`](crate::operation::get_event_action::GetEventActionOutput::created_at): <p>The date and time that the event action was created, in ISO 8601 format.</p>
     ///   - [`event(Option<Event>)`](crate::operation::get_event_action::GetEventActionOutput::event): <p>What occurs to start an action.</p>
     ///   - [`id(Option<String>)`](crate::operation::get_event_action::GetEventActionOutput::id): <p>The unique identifier for the event action.</p>
+    ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::get_event_action::GetEventActionOutput::tags): <p>The tags for the event action.</p>
     ///   - [`updated_at(Option<DateTime>)`](crate::operation::get_event_action::GetEventActionOutput::updated_at): <p>The date and time that the event action was last updated, in ISO 8601 format.</p>
     /// - On failure, responds with [`SdkError<GetEventActionError>`](crate::operation::get_event_action::GetEventActionError)
     pub fn get_event_action(&self) -> crate::operation::get_event_action::builders::GetEventActionFluentBuilder {

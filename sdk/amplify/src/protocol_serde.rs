@@ -179,6 +179,8 @@ pub(crate) mod shape_file_upload_urls;
 
 pub(crate) mod shape_job;
 
+pub(crate) mod shape_job_config;
+
 pub(crate) mod shape_job_summaries;
 
 pub(crate) mod shape_job_summary;

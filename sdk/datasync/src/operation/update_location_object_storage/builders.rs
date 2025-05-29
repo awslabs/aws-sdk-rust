@@ -212,17 +212,23 @@ impl UpdateLocationObjectStorageFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_agent_arns`](Self::set_agent_arns).
     ///
-    /// <p>Specifies the Amazon Resource Names (ARNs) of the DataSync agents that can connect with your object storage system.</p>
+    /// <p>(Optional) Specifies the Amazon Resource Names (ARNs) of the DataSync agents that can connect with your object storage system. If you are setting up an agentless cross-cloud transfer, you do not need to specify a value for this parameter.</p><note>
+    /// <p>You cannot add or remove agents from a storage location after you initially create it.</p>
+    /// </note>
     pub fn agent_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.agent_arns(input.into());
         self
     }
-    /// <p>Specifies the Amazon Resource Names (ARNs) of the DataSync agents that can connect with your object storage system.</p>
+    /// <p>(Optional) Specifies the Amazon Resource Names (ARNs) of the DataSync agents that can connect with your object storage system. If you are setting up an agentless cross-cloud transfer, you do not need to specify a value for this parameter.</p><note>
+    /// <p>You cannot add or remove agents from a storage location after you initially create it.</p>
+    /// </note>
     pub fn set_agent_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_agent_arns(input);
         self
     }
-    /// <p>Specifies the Amazon Resource Names (ARNs) of the DataSync agents that can connect with your object storage system.</p>
+    /// <p>(Optional) Specifies the Amazon Resource Names (ARNs) of the DataSync agents that can connect with your object storage system. If you are setting up an agentless cross-cloud transfer, you do not need to specify a value for this parameter.</p><note>
+    /// <p>You cannot add or remove agents from a storage location after you initially create it.</p>
+    /// </note>
     pub fn get_agent_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_agent_arns()
     }
@@ -278,5 +284,33 @@ impl UpdateLocationObjectStorageFluentBuilder {
     /// <p>Updating this parameter doesn't interfere with tasks that you have in progress.</p>
     pub fn get_server_certificate(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
         self.inner.get_server_certificate()
+    }
+    /// <p>Specifies configuration information for a DataSync-managed secret, such as an authentication token or set of credentials that DataSync uses to access a specific transfer location, and a customer-managed KMS key.</p>
+    pub fn cmk_secret_config(mut self, input: crate::types::CmkSecretConfig) -> Self {
+        self.inner = self.inner.cmk_secret_config(input);
+        self
+    }
+    /// <p>Specifies configuration information for a DataSync-managed secret, such as an authentication token or set of credentials that DataSync uses to access a specific transfer location, and a customer-managed KMS key.</p>
+    pub fn set_cmk_secret_config(mut self, input: ::std::option::Option<crate::types::CmkSecretConfig>) -> Self {
+        self.inner = self.inner.set_cmk_secret_config(input);
+        self
+    }
+    /// <p>Specifies configuration information for a DataSync-managed secret, such as an authentication token or set of credentials that DataSync uses to access a specific transfer location, and a customer-managed KMS key.</p>
+    pub fn get_cmk_secret_config(&self) -> &::std::option::Option<crate::types::CmkSecretConfig> {
+        self.inner.get_cmk_secret_config()
+    }
+    /// <p>Specifies configuration information for a customer-managed secret, such as an authentication token or set of credentials that DataSync uses to access a specific transfer location, and a customer-managed KMS key.</p>
+    pub fn custom_secret_config(mut self, input: crate::types::CustomSecretConfig) -> Self {
+        self.inner = self.inner.custom_secret_config(input);
+        self
+    }
+    /// <p>Specifies configuration information for a customer-managed secret, such as an authentication token or set of credentials that DataSync uses to access a specific transfer location, and a customer-managed KMS key.</p>
+    pub fn set_custom_secret_config(mut self, input: ::std::option::Option<crate::types::CustomSecretConfig>) -> Self {
+        self.inner = self.inner.set_custom_secret_config(input);
+        self
+    }
+    /// <p>Specifies configuration information for a customer-managed secret, such as an authentication token or set of credentials that DataSync uses to access a specific transfer location, and a customer-managed KMS key.</p>
+    pub fn get_custom_secret_config(&self) -> &::std::option::Option<crate::types::CustomSecretConfig> {
+        self.inner.get_custom_secret_config()
     }
 }

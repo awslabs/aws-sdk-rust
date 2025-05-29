@@ -1555,6 +1555,8 @@ pub use crate::types::_model_bias_app_specification::ModelBiasAppSpecification;
 
 pub use crate::types::_model_bias_baseline_config::ModelBiasBaselineConfig;
 
+pub use crate::types::_tracking_server_maintenance_status::TrackingServerMaintenanceStatus;
+
 pub use crate::types::_human_task_config::HumanTaskConfig;
 
 pub use crate::types::_public_workforce_task_price::PublicWorkforceTaskPrice;
@@ -3602,6 +3604,8 @@ mod _time_series_forecasting_settings;
 mod _time_series_transformations;
 
 mod _total_hits;
+
+mod _tracking_server_maintenance_status;
 
 mod _tracking_server_size;
 

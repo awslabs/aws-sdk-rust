@@ -167,6 +167,9 @@ where
                         "wafConfiguration" => {
                             builder = builder.set_waf_configuration(crate::protocol_serde::shape_waf_configuration::de_waf_configuration(tokens)?);
                         }
+                        "jobConfig" => {
+                            builder = builder.set_job_config(crate::protocol_serde::shape_job_config::de_job_config(tokens)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

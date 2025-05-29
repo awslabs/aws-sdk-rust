@@ -52,6 +52,8 @@ pub struct UpdateAppInput {
     /// <p>You must specify either <code>accessToken</code> or <code>oauthToken</code> when you update an app.</p>
     /// <p>Existing Amplify apps deployed from a GitHub repository using OAuth continue to work with CI/CD. However, we strongly recommend that you migrate these apps to use the GitHub App. For more information, see <a href="https://docs.aws.amazon.com/amplify/latest/userguide/setting-up-GitHub-access.html#migrating-to-github-app-auth">Migrating an existing OAuth app to the Amplify GitHub App</a> in the <i>Amplify User Guide</i> .</p>
     pub access_token: ::std::option::Option<::std::string::String>,
+    /// <p>Describes the configuration details that apply to the jobs for an Amplify app.</p>
+    pub job_config: ::std::option::Option<crate::types::JobConfig>,
     /// <p>The cache configuration for the Amplify app.</p>
     pub cache_config: ::std::option::Option<crate::types::CacheConfig>,
 }
@@ -148,6 +150,10 @@ impl UpdateAppInput {
     pub fn access_token(&self) -> ::std::option::Option<&str> {
         self.access_token.as_deref()
     }
+    /// <p>Describes the configuration details that apply to the jobs for an Amplify app.</p>
+    pub fn job_config(&self) -> ::std::option::Option<&crate::types::JobConfig> {
+        self.job_config.as_ref()
+    }
     /// <p>The cache configuration for the Amplify app.</p>
     pub fn cache_config(&self) -> ::std::option::Option<&crate::types::CacheConfig> {
         self.cache_config.as_ref()
@@ -176,6 +182,7 @@ impl ::std::fmt::Debug for UpdateAppInput {
         formatter.field("repository", &self.repository);
         formatter.field("oauth_token", &"*** Sensitive Data Redacted ***");
         formatter.field("access_token", &"*** Sensitive Data Redacted ***");
+        formatter.field("job_config", &self.job_config);
         formatter.field("cache_config", &self.cache_config);
         formatter.finish()
     }
@@ -211,6 +218,7 @@ pub struct UpdateAppInputBuilder {
     pub(crate) repository: ::std::option::Option<::std::string::String>,
     pub(crate) oauth_token: ::std::option::Option<::std::string::String>,
     pub(crate) access_token: ::std::option::Option<::std::string::String>,
+    pub(crate) job_config: ::std::option::Option<crate::types::JobConfig>,
     pub(crate) cache_config: ::std::option::Option<crate::types::CacheConfig>,
 }
 impl UpdateAppInputBuilder {
@@ -544,6 +552,20 @@ impl UpdateAppInputBuilder {
     pub fn get_access_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.access_token
     }
+    /// <p>Describes the configuration details that apply to the jobs for an Amplify app.</p>
+    pub fn job_config(mut self, input: crate::types::JobConfig) -> Self {
+        self.job_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Describes the configuration details that apply to the jobs for an Amplify app.</p>
+    pub fn set_job_config(mut self, input: ::std::option::Option<crate::types::JobConfig>) -> Self {
+        self.job_config = input;
+        self
+    }
+    /// <p>Describes the configuration details that apply to the jobs for an Amplify app.</p>
+    pub fn get_job_config(&self) -> &::std::option::Option<crate::types::JobConfig> {
+        &self.job_config
+    }
     /// <p>The cache configuration for the Amplify app.</p>
     pub fn cache_config(mut self, input: crate::types::CacheConfig) -> Self {
         self.cache_config = ::std::option::Option::Some(input);
@@ -581,6 +603,7 @@ impl UpdateAppInputBuilder {
             repository: self.repository,
             oauth_token: self.oauth_token,
             access_token: self.access_token,
+            job_config: self.job_config,
             cache_config: self.cache_config,
         })
     }
@@ -608,6 +631,7 @@ impl ::std::fmt::Debug for UpdateAppInputBuilder {
         formatter.field("repository", &self.repository);
         formatter.field("oauth_token", &"*** Sensitive Data Redacted ***");
         formatter.field("access_token", &"*** Sensitive Data Redacted ***");
+        formatter.field("job_config", &self.job_config);
         formatter.field("cache_config", &self.cache_config);
         formatter.finish()
     }

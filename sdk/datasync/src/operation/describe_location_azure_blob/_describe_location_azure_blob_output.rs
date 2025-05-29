@@ -17,6 +17,12 @@ pub struct DescribeLocationAzureBlobOutput {
     pub agent_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The time that your Azure Blob Storage transfer location was created.</p>
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>Describes configuration information for a DataSync-managed secret, such as an authentication token that DataSync uses to access a specific storage location. DataSync uses the default Amazon Web Services-managed KMS key to encrypt this secret in Secrets Manager.</p>
+    pub managed_secret_config: ::std::option::Option<crate::types::ManagedSecretConfig>,
+    /// <p>Describes configuration information for a DataSync-managed secret, such as an authentication token that DataSync uses to access a specific storage location, with a customer-managed KMS key.</p>
+    pub cmk_secret_config: ::std::option::Option<crate::types::CmkSecretConfig>,
+    /// <p>Describes configuration information for a customer-managed secret, such as an authentication token that DataSync uses to access a specific storage location, with a customer-managed KMS key.</p>
+    pub custom_secret_config: ::std::option::Option<crate::types::CustomSecretConfig>,
     _request_id: Option<String>,
 }
 impl DescribeLocationAzureBlobOutput {
@@ -50,6 +56,18 @@ impl DescribeLocationAzureBlobOutput {
     pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
+    /// <p>Describes configuration information for a DataSync-managed secret, such as an authentication token that DataSync uses to access a specific storage location. DataSync uses the default Amazon Web Services-managed KMS key to encrypt this secret in Secrets Manager.</p>
+    pub fn managed_secret_config(&self) -> ::std::option::Option<&crate::types::ManagedSecretConfig> {
+        self.managed_secret_config.as_ref()
+    }
+    /// <p>Describes configuration information for a DataSync-managed secret, such as an authentication token that DataSync uses to access a specific storage location, with a customer-managed KMS key.</p>
+    pub fn cmk_secret_config(&self) -> ::std::option::Option<&crate::types::CmkSecretConfig> {
+        self.cmk_secret_config.as_ref()
+    }
+    /// <p>Describes configuration information for a customer-managed secret, such as an authentication token that DataSync uses to access a specific storage location, with a customer-managed KMS key.</p>
+    pub fn custom_secret_config(&self) -> ::std::option::Option<&crate::types::CustomSecretConfig> {
+        self.custom_secret_config.as_ref()
+    }
 }
 impl ::aws_types::request_id::RequestId for DescribeLocationAzureBlobOutput {
     fn request_id(&self) -> Option<&str> {
@@ -74,6 +92,9 @@ pub struct DescribeLocationAzureBlobOutputBuilder {
     pub(crate) access_tier: ::std::option::Option<crate::types::AzureAccessTier>,
     pub(crate) agent_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) managed_secret_config: ::std::option::Option<crate::types::ManagedSecretConfig>,
+    pub(crate) cmk_secret_config: ::std::option::Option<crate::types::CmkSecretConfig>,
+    pub(crate) custom_secret_config: ::std::option::Option<crate::types::CustomSecretConfig>,
     _request_id: Option<String>,
 }
 impl DescribeLocationAzureBlobOutputBuilder {
@@ -181,6 +202,48 @@ impl DescribeLocationAzureBlobOutputBuilder {
     pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.creation_time
     }
+    /// <p>Describes configuration information for a DataSync-managed secret, such as an authentication token that DataSync uses to access a specific storage location. DataSync uses the default Amazon Web Services-managed KMS key to encrypt this secret in Secrets Manager.</p>
+    pub fn managed_secret_config(mut self, input: crate::types::ManagedSecretConfig) -> Self {
+        self.managed_secret_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Describes configuration information for a DataSync-managed secret, such as an authentication token that DataSync uses to access a specific storage location. DataSync uses the default Amazon Web Services-managed KMS key to encrypt this secret in Secrets Manager.</p>
+    pub fn set_managed_secret_config(mut self, input: ::std::option::Option<crate::types::ManagedSecretConfig>) -> Self {
+        self.managed_secret_config = input;
+        self
+    }
+    /// <p>Describes configuration information for a DataSync-managed secret, such as an authentication token that DataSync uses to access a specific storage location. DataSync uses the default Amazon Web Services-managed KMS key to encrypt this secret in Secrets Manager.</p>
+    pub fn get_managed_secret_config(&self) -> &::std::option::Option<crate::types::ManagedSecretConfig> {
+        &self.managed_secret_config
+    }
+    /// <p>Describes configuration information for a DataSync-managed secret, such as an authentication token that DataSync uses to access a specific storage location, with a customer-managed KMS key.</p>
+    pub fn cmk_secret_config(mut self, input: crate::types::CmkSecretConfig) -> Self {
+        self.cmk_secret_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Describes configuration information for a DataSync-managed secret, such as an authentication token that DataSync uses to access a specific storage location, with a customer-managed KMS key.</p>
+    pub fn set_cmk_secret_config(mut self, input: ::std::option::Option<crate::types::CmkSecretConfig>) -> Self {
+        self.cmk_secret_config = input;
+        self
+    }
+    /// <p>Describes configuration information for a DataSync-managed secret, such as an authentication token that DataSync uses to access a specific storage location, with a customer-managed KMS key.</p>
+    pub fn get_cmk_secret_config(&self) -> &::std::option::Option<crate::types::CmkSecretConfig> {
+        &self.cmk_secret_config
+    }
+    /// <p>Describes configuration information for a customer-managed secret, such as an authentication token that DataSync uses to access a specific storage location, with a customer-managed KMS key.</p>
+    pub fn custom_secret_config(mut self, input: crate::types::CustomSecretConfig) -> Self {
+        self.custom_secret_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Describes configuration information for a customer-managed secret, such as an authentication token that DataSync uses to access a specific storage location, with a customer-managed KMS key.</p>
+    pub fn set_custom_secret_config(mut self, input: ::std::option::Option<crate::types::CustomSecretConfig>) -> Self {
+        self.custom_secret_config = input;
+        self
+    }
+    /// <p>Describes configuration information for a customer-managed secret, such as an authentication token that DataSync uses to access a specific storage location, with a customer-managed KMS key.</p>
+    pub fn get_custom_secret_config(&self) -> &::std::option::Option<crate::types::CustomSecretConfig> {
+        &self.custom_secret_config
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -200,6 +263,9 @@ impl DescribeLocationAzureBlobOutputBuilder {
             access_tier: self.access_tier,
             agent_arns: self.agent_arns,
             creation_time: self.creation_time,
+            managed_secret_config: self.managed_secret_config,
+            cmk_secret_config: self.cmk_secret_config,
+            custom_secret_config: self.custom_secret_config,
             _request_id: self._request_id,
         }
     }

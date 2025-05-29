@@ -48,5 +48,17 @@ pub fn ser_update_file_system_lustre_configuration(
         )?;
         object_12.finish();
     }
+    if let Some(var_13) = &input.throughput_capacity {
+        object.key("ThroughputCapacity").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_13).into()),
+        );
+    }
+    if let Some(var_14) = &input.data_read_cache_configuration {
+        #[allow(unused_mut)]
+        let mut object_15 = object.key("DataReadCacheConfiguration").start_object();
+        crate::protocol_serde::shape_lustre_read_cache_configuration::ser_lustre_read_cache_configuration(&mut object_15, var_14)?;
+        object_15.finish();
+    }
     Ok(())
 }

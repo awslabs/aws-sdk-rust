@@ -61,6 +61,8 @@ pub(crate) mod shape_get_channel;
 
 pub(crate) mod shape_get_dashboard;
 
+pub(crate) mod shape_get_event_configuration;
+
 pub(crate) mod shape_get_event_data_store;
 
 pub(crate) mod shape_get_event_selectors;
@@ -98,6 +100,8 @@ pub(crate) mod shape_list_tags;
 pub(crate) mod shape_list_trails;
 
 pub(crate) mod shape_lookup_events;
+
+pub(crate) mod shape_put_event_configuration;
 
 pub(crate) mod shape_put_event_selectors;
 
@@ -235,6 +239,8 @@ pub(crate) mod shape_get_channel_input;
 
 pub(crate) mod shape_get_dashboard_input;
 
+pub(crate) mod shape_get_event_configuration_input;
+
 pub(crate) mod shape_get_event_data_store_input;
 
 pub(crate) mod shape_get_event_selectors_input;
@@ -262,6 +268,8 @@ pub(crate) mod shape_insight_not_enabled_exception;
 pub(crate) mod shape_insufficient_dependency_service_access_permission_exception;
 
 pub(crate) mod shape_insufficient_encryption_policy_exception;
+
+pub(crate) mod shape_insufficient_iam_access_permission_exception;
 
 pub(crate) mod shape_insufficient_s3_bucket_policy_exception;
 
@@ -363,6 +371,8 @@ pub(crate) mod shape_organization_not_in_all_features_mode_exception;
 
 pub(crate) mod shape_organizations_not_in_use_exception;
 
+pub(crate) mod shape_put_event_configuration_input;
+
 pub(crate) mod shape_put_event_selectors_input;
 
 pub(crate) mod shape_put_insight_selectors_input;
@@ -434,6 +444,10 @@ pub(crate) mod shape_advanced_event_selector;
 pub(crate) mod shape_advanced_event_selectors;
 
 pub(crate) mod shape_channels;
+
+pub(crate) mod shape_context_key_selector;
+
+pub(crate) mod shape_context_key_selectors;
 
 pub(crate) mod shape_dashboards;
 
@@ -546,6 +560,8 @@ pub(crate) mod shape_advanced_field_selectors;
 pub(crate) mod shape_data_resources;
 
 pub(crate) mod shape_exclude_management_event_sources;
+
+pub(crate) mod shape_operator_target_list;
 
 pub(crate) mod shape_query_parameters;
 

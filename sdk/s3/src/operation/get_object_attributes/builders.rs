@@ -22,8 +22,8 @@ impl crate::operation::get_object_attributes::builders::GetObjectAttributesInput
 }
 /// Fluent builder constructing a request to `GetObjectAttributes`.
 ///
-/// <p>Retrieves all the metadata from an object without returning the object itself. This operation is useful if you're interested only in an object's metadata.</p>
-/// <p><code>GetObjectAttributes</code> combines the functionality of <code>HeadObject</code> and <code>ListParts</code>. All of the data returned with each of those individual calls can be returned with a single call to <code>GetObjectAttributes</code>.</p><note>
+/// <p>Retrieves all of the metadata from an object without returning the object itself. This operation is useful if you're interested only in an object's metadata.</p>
+/// <p><code>GetObjectAttributes</code> combines the functionality of <code>HeadObject</code> and <code>ListParts</code>. All of the data returned with both of those individual calls can be returned with a single call to <code>GetObjectAttributes</code>.</p><note>
 /// <p><b>Directory buckets</b> - For directory buckets, you must make requests for this API operation to the Zonal endpoint. These endpoints support virtual-hosted-style requests in the format <code>https://<i>amzn-s3-demo-bucket</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com/<i>key-name</i> </code>. Path-style requests are not supported. For more information about endpoints in Availability Zones, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/endpoint-directory-buckets-AZ.html">Regional and Zonal endpoints for directory buckets in Availability Zones</a> in the <i>Amazon S3 User Guide</i>. For more information about endpoints in Local Zones, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-lzs-for-directory-buckets.html">Concepts for directory buckets in Local Zones</a> in the <i>Amazon S3 User Guide</i>.</p>
 /// </note>
 /// <dl>
@@ -33,7 +33,16 @@ impl crate::operation::get_object_attributes::builders::GetObjectAttributesInput
 /// <dd>
 /// <ul>
 /// <li>
-/// <p><b>General purpose bucket permissions</b> - To use <code>GetObjectAttributes</code>, you must have READ access to the object. The permissions that you need to use this operation depend on whether the bucket is versioned. If the bucket is versioned, you need both the <code>s3:GetObjectVersion</code> and <code>s3:GetObjectVersionAttributes</code> permissions for this operation. If the bucket is not versioned, you need the <code>s3:GetObject</code> and <code>s3:GetObjectAttributes</code> permissions. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-with-s3-actions.html">Specifying Permissions in a Policy</a> in the <i>Amazon S3 User Guide</i>. If the object that you request does not exist, the error Amazon S3 returns depends on whether you also have the <code>s3:ListBucket</code> permission.</p>
+/// <p><b>General purpose bucket permissions</b> - To use <code>GetObjectAttributes</code>, you must have READ access to the object.</p>
+/// <p>The other permissions that you need to use this operation depend on whether the bucket is versioned and if a version ID is passed in the <code>GetObjectAttributes</code> request.</p>
+/// <ul>
+/// <li>
+/// <p>If you pass a version ID in your request, you need both the <code>s3:GetObjectVersion</code> and <code>s3:GetObjectVersionAttributes</code> permissions.</p></li>
+/// <li>
+/// <p>If you do not pass a version ID in your request, you need the <code>s3:GetObject</code> and <code>s3:GetObjectAttributes</code> permissions.</p></li>
+/// </ul>
+/// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-with-s3-actions.html">Specifying Permissions in a Policy</a> in the <i>Amazon S3 User Guide</i>.</p>
+/// <p>If the object that you request does not exist, the error Amazon S3 returns depends on whether you also have the <code>s3:ListBucket</code> permission.</p>
 /// <ul>
 /// <li>
 /// <p>If you have the <code>s3:ListBucket</code> permission on the bucket, Amazon S3 returns an HTTP status code <code>404 Not Found</code> ("no such key") error.</p></li>
@@ -52,7 +61,7 @@ impl crate::operation::get_object_attributes::builders::GetObjectAttributesInput
 /// <note>
 /// <p>Encryption request headers, like <code>x-amz-server-side-encryption</code>, should not be sent for <code>HEAD</code> requests if your object uses server-side encryption with Key Management Service (KMS) keys (SSE-KMS), dual-layer server-side encryption with Amazon Web Services KMS keys (DSSE-KMS), or server-side encryption with Amazon S3 managed encryption keys (SSE-S3). The <code>x-amz-server-side-encryption</code> header is used when you <code>PUT</code> an object to S3 and want to specify the encryption method. If you include this header in a <code>GET</code> request for an object that uses these types of keys, you’ll get an HTTP <code>400 Bad Request</code> error. It's because the encryption method can't be changed when you retrieve the object.</p>
 /// </note>
-/// <p>If you encrypt an object by using server-side encryption with customer-provided encryption keys (SSE-C) when you store the object in Amazon S3, then when you retrieve the metadata from the object, you must use the following headers to provide the encryption key for the server to be able to retrieve the object's metadata. The headers are:</p>
+/// <p>If you encrypted an object when you stored the object in Amazon S3 by using server-side encryption with customer-provided encryption keys (SSE-C), then when you retrieve the metadata from the object, you must use the following headers. These headers provide the server with the encryption key required to retrieve the object's metadata. The headers are:</p>
 /// <ul>
 /// <li>
 /// <p><code>x-amz-server-side-encryption-customer-algorithm</code></p></li>
@@ -271,31 +280,31 @@ impl GetObjectAttributesFluentBuilder {
     pub fn get_version_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_version_id()
     }
-    /// <p>Sets the maximum number of parts to return.</p>
+    /// <p>Sets the maximum number of parts to return. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/mpuoverview.html">Uploading and copying objects using multipart upload in Amazon S3 </a> in the <i>Amazon Simple Storage Service user guide</i>.</p>
     pub fn max_parts(mut self, input: i32) -> Self {
         self.inner = self.inner.max_parts(input);
         self
     }
-    /// <p>Sets the maximum number of parts to return.</p>
+    /// <p>Sets the maximum number of parts to return. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/mpuoverview.html">Uploading and copying objects using multipart upload in Amazon S3 </a> in the <i>Amazon Simple Storage Service user guide</i>.</p>
     pub fn set_max_parts(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_parts(input);
         self
     }
-    /// <p>Sets the maximum number of parts to return.</p>
+    /// <p>Sets the maximum number of parts to return. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/mpuoverview.html">Uploading and copying objects using multipart upload in Amazon S3 </a> in the <i>Amazon Simple Storage Service user guide</i>.</p>
     pub fn get_max_parts(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_parts()
     }
-    /// <p>Specifies the part after which listing should begin. Only parts with higher part numbers will be listed.</p>
+    /// <p>Specifies the part after which listing should begin. Only parts with higher part numbers will be listed. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/mpuoverview.html">Uploading and copying objects using multipart upload in Amazon S3 </a> in the <i>Amazon Simple Storage Service user guide</i>.</p>
     pub fn part_number_marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.part_number_marker(input.into());
         self
     }
-    /// <p>Specifies the part after which listing should begin. Only parts with higher part numbers will be listed.</p>
+    /// <p>Specifies the part after which listing should begin. Only parts with higher part numbers will be listed. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/mpuoverview.html">Uploading and copying objects using multipart upload in Amazon S3 </a> in the <i>Amazon Simple Storage Service user guide</i>.</p>
     pub fn set_part_number_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_part_number_marker(input);
         self
     }
-    /// <p>Specifies the part after which listing should begin. Only parts with higher part numbers will be listed.</p>
+    /// <p>Specifies the part after which listing should begin. Only parts with higher part numbers will be listed. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/mpuoverview.html">Uploading and copying objects using multipart upload in Amazon S3 </a> in the <i>Amazon Simple Storage Service user guide</i>.</p>
     pub fn get_part_number_marker(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_part_number_marker()
     }

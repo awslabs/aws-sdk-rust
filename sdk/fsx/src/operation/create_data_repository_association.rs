@@ -286,7 +286,7 @@ pub enum CreateDataRepositoryAssociationError {
     IncompatibleParameterError(crate::types::error::IncompatibleParameterError),
     /// <p>A generic error indicating a server-side failure.</p>
     InternalServerError(crate::types::error::InternalServerError),
-    /// <p>An error indicating that a particular service limit was exceeded. You can increase some service limits by contacting Amazon Web Services Support.</p>
+    /// <p>An error indicating that a particular service limit was exceeded. You can increase some service limits by contacting Amazon Web ServicesSupport.</p>
     ServiceLimitExceeded(crate::types::error::ServiceLimitExceeded),
     /// <p>The requested operation is not supported for this resource or API.</p>
     UnsupportedOperation(crate::types::error::UnsupportedOperation),

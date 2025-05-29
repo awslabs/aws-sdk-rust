@@ -613,6 +613,13 @@ pub(crate) fn certificate_correct_errors(mut builder: crate::types::builders::Ce
     builder
 }
 
+pub(crate) fn job_config_correct_errors(mut builder: crate::types::builders::JobConfigBuilder) -> crate::types::builders::JobConfigBuilder {
+    if builder.build_compute_type.is_none() {
+        builder.build_compute_type = "no value was set".parse::<crate::types::BuildComputeType>().ok()
+    }
+    builder
+}
+
 pub(crate) fn custom_rule_correct_errors(mut builder: crate::types::builders::CustomRuleBuilder) -> crate::types::builders::CustomRuleBuilder {
     if builder.source.is_none() {
         builder.source = Some(Default::default())

@@ -71,6 +71,8 @@ pub(crate) mod shape_list_ingest_configurations;
 
 pub(crate) mod shape_list_participant_events;
 
+pub(crate) mod shape_list_participant_replicas;
+
 pub(crate) mod shape_list_participants;
 
 pub(crate) mod shape_list_public_keys;
@@ -85,7 +87,11 @@ pub(crate) mod shape_list_tags_for_resource;
 
 pub(crate) mod shape_start_composition;
 
+pub(crate) mod shape_start_participant_replication;
+
 pub(crate) mod shape_stop_composition;
+
+pub(crate) mod shape_stop_participant_replication;
 
 pub(crate) mod shape_tag_resource;
 
@@ -157,6 +163,8 @@ pub(crate) mod shape_list_ingest_configurations_input;
 
 pub(crate) mod shape_list_participant_events_input;
 
+pub(crate) mod shape_list_participant_replicas_input;
+
 pub(crate) mod shape_list_participants_input;
 
 pub(crate) mod shape_list_public_keys_input;
@@ -175,7 +183,15 @@ pub(crate) mod shape_service_quota_exceeded_exception;
 
 pub(crate) mod shape_start_composition_input;
 
+pub(crate) mod shape_start_participant_replication_input;
+
+pub(crate) mod shape_start_participant_replication_output;
+
 pub(crate) mod shape_stop_composition_input;
+
+pub(crate) mod shape_stop_participant_replication_input;
+
+pub(crate) mod shape_stop_participant_replication_output;
 
 pub(crate) mod shape_tag_resource_input;
 
@@ -208,6 +224,8 @@ pub(crate) mod shape_layout_configuration;
 pub(crate) mod shape_participant;
 
 pub(crate) mod shape_participant_list;
+
+pub(crate) mod shape_participant_replica_list;
 
 pub(crate) mod shape_participant_token;
 
@@ -254,6 +272,8 @@ pub(crate) mod shape_ingest_configuration_summary;
 pub(crate) mod shape_participant_attributes;
 
 pub(crate) mod shape_participant_recording_hls_configuration;
+
+pub(crate) mod shape_participant_replica;
 
 pub(crate) mod shape_participant_summary;
 

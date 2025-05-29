@@ -7,6 +7,8 @@ pub struct CreateEventActionInput {
     pub action: ::std::option::Option<crate::types::Action>,
     /// <p>What occurs to start an action.</p>
     pub event: ::std::option::Option<crate::types::Event>,
+    /// <p>Key-value pairs that you can associate with the event action.</p>
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateEventActionInput {
     /// <p>What occurs after a certain event.</p>
@@ -16,6 +18,10 @@ impl CreateEventActionInput {
     /// <p>What occurs to start an action.</p>
     pub fn event(&self) -> ::std::option::Option<&crate::types::Event> {
         self.event.as_ref()
+    }
+    /// <p>Key-value pairs that you can associate with the event action.</p>
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        self.tags.as_ref()
     }
 }
 impl CreateEventActionInput {
@@ -31,6 +37,7 @@ impl CreateEventActionInput {
 pub struct CreateEventActionInputBuilder {
     pub(crate) action: ::std::option::Option<crate::types::Action>,
     pub(crate) event: ::std::option::Option<crate::types::Event>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateEventActionInputBuilder {
     /// <p>What occurs after a certain event.</p>
@@ -63,6 +70,26 @@ impl CreateEventActionInputBuilder {
     pub fn get_event(&self) -> &::std::option::Option<crate::types::Event> {
         &self.event
     }
+    /// Adds a key-value pair to `tags`.
+    ///
+    /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+    ///
+    /// <p>Key-value pairs that you can associate with the event action.</p>
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut hash_map = self.tags.unwrap_or_default();
+        hash_map.insert(k.into(), v.into());
+        self.tags = ::std::option::Option::Some(hash_map);
+        self
+    }
+    /// <p>Key-value pairs that you can associate with the event action.</p>
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input;
+        self
+    }
+    /// <p>Key-value pairs that you can associate with the event action.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        &self.tags
+    }
     /// Consumes the builder and constructs a [`CreateEventActionInput`](crate::operation::create_event_action::CreateEventActionInput).
     pub fn build(
         self,
@@ -70,6 +97,7 @@ impl CreateEventActionInputBuilder {
         ::std::result::Result::Ok(crate::operation::create_event_action::CreateEventActionInput {
             action: self.action,
             event: self.event,
+            tags: self.tags,
         })
     }
 }

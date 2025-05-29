@@ -17,6 +17,8 @@ pub use crate::types::_backend::BackendBuilder;
 
 pub use crate::types::_app::AppBuilder;
 
+pub use crate::types::_job_config::JobConfigBuilder;
+
 pub use crate::types::_waf_configuration::WafConfigurationBuilder;
 
 pub use crate::types::_cache_config::CacheConfigBuilder;

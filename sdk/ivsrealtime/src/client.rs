@@ -211,6 +211,8 @@ mod list_ingest_configurations;
 
 mod list_participant_events;
 
+mod list_participant_replicas;
+
 mod list_participants;
 
 mod list_public_keys;
@@ -225,7 +227,11 @@ mod list_tags_for_resource;
 
 mod start_composition;
 
+mod start_participant_replication;
+
 mod stop_composition;
+
+mod stop_participant_replication;
 
 mod tag_resource;
 

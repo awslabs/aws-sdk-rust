@@ -109,6 +109,8 @@ pub use crate::types::error::_invalid_tag_parameter_exception::InvalidTagParamet
 
 pub use crate::types::error::_not_organization_management_account_exception::NotOrganizationManagementAccountExceptionBuilder;
 
+pub use crate::types::error::_insufficient_iam_access_permission_exception::InsufficientIamAccessPermissionExceptionBuilder;
+
 pub use crate::types::error::_delegated_admin_account_limit_exceeded_exception::DelegatedAdminAccountLimitExceededExceptionBuilder;
 
 pub use crate::types::error::_cannot_delegate_management_account_exception::CannotDelegateManagementAccountExceptionBuilder;

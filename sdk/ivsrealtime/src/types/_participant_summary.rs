@@ -16,6 +16,14 @@ pub struct ParticipantSummary {
     pub published: bool,
     /// <p>The participant’s recording state.</p>
     pub recording_state: ::std::option::Option<crate::types::ParticipantRecordingState>,
+    /// <p>Indicates if the participant has been replicated to another stage or is a replica from another stage. Default: <code>NONE</code>.</p>
+    pub replication_type: ::std::option::Option<crate::types::ReplicationType>,
+    /// <p>The participant's replication state.</p>
+    pub replication_state: ::std::option::Option<crate::types::ReplicationState>,
+    /// <p>ARN of the stage from which this participant is replicated.</p>
+    pub source_stage_arn: ::std::option::Option<::std::string::String>,
+    /// <p>ID of the session within the source stage, if <code>replicationType</code> is <code>REPLICA</code>.</p>
+    pub source_session_id: ::std::option::Option<::std::string::String>,
 }
 impl ParticipantSummary {
     /// <p>Unique identifier for this participant, assigned by IVS.</p>
@@ -42,6 +50,22 @@ impl ParticipantSummary {
     pub fn recording_state(&self) -> ::std::option::Option<&crate::types::ParticipantRecordingState> {
         self.recording_state.as_ref()
     }
+    /// <p>Indicates if the participant has been replicated to another stage or is a replica from another stage. Default: <code>NONE</code>.</p>
+    pub fn replication_type(&self) -> ::std::option::Option<&crate::types::ReplicationType> {
+        self.replication_type.as_ref()
+    }
+    /// <p>The participant's replication state.</p>
+    pub fn replication_state(&self) -> ::std::option::Option<&crate::types::ReplicationState> {
+        self.replication_state.as_ref()
+    }
+    /// <p>ARN of the stage from which this participant is replicated.</p>
+    pub fn source_stage_arn(&self) -> ::std::option::Option<&str> {
+        self.source_stage_arn.as_deref()
+    }
+    /// <p>ID of the session within the source stage, if <code>replicationType</code> is <code>REPLICA</code>.</p>
+    pub fn source_session_id(&self) -> ::std::option::Option<&str> {
+        self.source_session_id.as_deref()
+    }
 }
 impl ParticipantSummary {
     /// Creates a new builder-style object to manufacture [`ParticipantSummary`](crate::types::ParticipantSummary).
@@ -60,6 +84,10 @@ pub struct ParticipantSummaryBuilder {
     pub(crate) first_join_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) published: ::std::option::Option<bool>,
     pub(crate) recording_state: ::std::option::Option<crate::types::ParticipantRecordingState>,
+    pub(crate) replication_type: ::std::option::Option<crate::types::ReplicationType>,
+    pub(crate) replication_state: ::std::option::Option<crate::types::ReplicationState>,
+    pub(crate) source_stage_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) source_session_id: ::std::option::Option<::std::string::String>,
 }
 impl ParticipantSummaryBuilder {
     /// <p>Unique identifier for this participant, assigned by IVS.</p>
@@ -146,6 +174,62 @@ impl ParticipantSummaryBuilder {
     pub fn get_recording_state(&self) -> &::std::option::Option<crate::types::ParticipantRecordingState> {
         &self.recording_state
     }
+    /// <p>Indicates if the participant has been replicated to another stage or is a replica from another stage. Default: <code>NONE</code>.</p>
+    pub fn replication_type(mut self, input: crate::types::ReplicationType) -> Self {
+        self.replication_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates if the participant has been replicated to another stage or is a replica from another stage. Default: <code>NONE</code>.</p>
+    pub fn set_replication_type(mut self, input: ::std::option::Option<crate::types::ReplicationType>) -> Self {
+        self.replication_type = input;
+        self
+    }
+    /// <p>Indicates if the participant has been replicated to another stage or is a replica from another stage. Default: <code>NONE</code>.</p>
+    pub fn get_replication_type(&self) -> &::std::option::Option<crate::types::ReplicationType> {
+        &self.replication_type
+    }
+    /// <p>The participant's replication state.</p>
+    pub fn replication_state(mut self, input: crate::types::ReplicationState) -> Self {
+        self.replication_state = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The participant's replication state.</p>
+    pub fn set_replication_state(mut self, input: ::std::option::Option<crate::types::ReplicationState>) -> Self {
+        self.replication_state = input;
+        self
+    }
+    /// <p>The participant's replication state.</p>
+    pub fn get_replication_state(&self) -> &::std::option::Option<crate::types::ReplicationState> {
+        &self.replication_state
+    }
+    /// <p>ARN of the stage from which this participant is replicated.</p>
+    pub fn source_stage_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.source_stage_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>ARN of the stage from which this participant is replicated.</p>
+    pub fn set_source_stage_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.source_stage_arn = input;
+        self
+    }
+    /// <p>ARN of the stage from which this participant is replicated.</p>
+    pub fn get_source_stage_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_stage_arn
+    }
+    /// <p>ID of the session within the source stage, if <code>replicationType</code> is <code>REPLICA</code>.</p>
+    pub fn source_session_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.source_session_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>ID of the session within the source stage, if <code>replicationType</code> is <code>REPLICA</code>.</p>
+    pub fn set_source_session_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.source_session_id = input;
+        self
+    }
+    /// <p>ID of the session within the source stage, if <code>replicationType</code> is <code>REPLICA</code>.</p>
+    pub fn get_source_session_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_session_id
+    }
     /// Consumes the builder and constructs a [`ParticipantSummary`](crate::types::ParticipantSummary).
     pub fn build(self) -> crate::types::ParticipantSummary {
         crate::types::ParticipantSummary {
@@ -155,6 +239,10 @@ impl ParticipantSummaryBuilder {
             first_join_time: self.first_join_time,
             published: self.published.unwrap_or_default(),
             recording_state: self.recording_state,
+            replication_type: self.replication_type,
+            replication_state: self.replication_state,
+            source_stage_arn: self.source_stage_arn,
+            source_session_id: self.source_session_id,
         }
     }
 }

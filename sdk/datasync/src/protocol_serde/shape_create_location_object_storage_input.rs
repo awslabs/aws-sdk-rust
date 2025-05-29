@@ -53,5 +53,17 @@ pub fn ser_create_location_object_storage_input_input(
             .key("ServerCertificate")
             .string_unchecked(&::aws_smithy_types::base64::encode(var_15));
     }
+    if let Some(var_16) = &input.cmk_secret_config {
+        #[allow(unused_mut)]
+        let mut object_17 = object.key("CmkSecretConfig").start_object();
+        crate::protocol_serde::shape_cmk_secret_config::ser_cmk_secret_config(&mut object_17, var_16)?;
+        object_17.finish();
+    }
+    if let Some(var_18) = &input.custom_secret_config {
+        #[allow(unused_mut)]
+        let mut object_19 = object.key("CustomSecretConfig").start_object();
+        crate::protocol_serde::shape_custom_secret_config::ser_custom_secret_config(&mut object_19, var_18)?;
+        object_19.finish();
+    }
     Ok(())
 }

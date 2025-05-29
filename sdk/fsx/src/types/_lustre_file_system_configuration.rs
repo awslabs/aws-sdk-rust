@@ -11,7 +11,7 @@ pub struct LustreFileSystemConfiguration {
     pub data_repository_configuration: ::std::option::Option<crate::types::DataRepositoryConfiguration>,
     /// <p>The deployment type of the FSx for Lustre file system. <i>Scratch deployment type</i> is designed for temporary storage and shorter-term processing of data.</p>
     /// <p><code>SCRATCH_1</code> and <code>SCRATCH_2</code> deployment types are best suited for when you need temporary storage and shorter-term processing of data. The <code>SCRATCH_2</code> deployment type provides in-transit encryption of data and higher burst throughput capacity than <code>SCRATCH_1</code>.</p>
-    /// <p>The <code>PERSISTENT_1</code> and <code>PERSISTENT_2</code> deployment type is used for longer-term storage and workloads and encryption of data in transit. <code>PERSISTENT_2</code> offers higher <code>PerUnitStorageThroughput</code> (up to 1000 MB/s/TiB) along with a lower minimum storage capacity requirement (600 GiB). To learn more about FSx for Lustre deployment types, see <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/lustre-deployment-types.html"> FSx for Lustre deployment options</a>.</p>
+    /// <p>The <code>PERSISTENT_1</code> and <code>PERSISTENT_2</code> deployment type is used for longer-term storage and workloads and encryption of data in transit. <code>PERSISTENT_2</code> offers higher <code>PerUnitStorageThroughput</code> (up to 1000 MB/s/TiB) along with a lower minimum storage capacity requirement (600 GiB). To learn more about FSx for Lustre deployment types, see <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/using-fsx-lustre.html">Deployment and storage class options for FSx for Lustre file systems</a>.</p>
     /// <p>The default is <code>SCRATCH_1</code>.</p>
     pub deployment_type: ::std::option::Option<crate::types::LustreDeploymentType>,
     /// <p>Per unit storage throughput represents the megabytes per second of read or write throughput per 1 tebibyte of storage provisioned. File system throughput capacity is equal to Storage capacity (TiB) * PerUnitStorageThroughput (MB/s/TiB). This option is only valid for <code>PERSISTENT_1</code> and <code>PERSISTENT_2</code> deployment types.</p>
@@ -54,6 +54,10 @@ pub struct LustreFileSystemConfiguration {
     pub metadata_configuration: ::std::option::Option<crate::types::FileSystemLustreMetadataConfiguration>,
     /// <p>Specifies whether Elastic Fabric Adapter (EFA) and GPUDirect Storage (GDS) support is enabled for the Amazon FSx for Lustre file system.</p>
     pub efa_enabled: ::std::option::Option<bool>,
+    /// <p>The throughput of an Amazon FSx for Lustre file system using the Intelligent-Tiering storage class, measured in megabytes per second (MBps).</p>
+    pub throughput_capacity: ::std::option::Option<i32>,
+    /// <p>Required when <code>StorageType</code> is set to <code>INTELLIGENT_TIERING</code>. Specifies the optional provisioned SSD read cache.</p>
+    pub data_read_cache_configuration: ::std::option::Option<crate::types::LustreReadCacheConfiguration>,
 }
 impl LustreFileSystemConfiguration {
     /// <p>The preferred start time to perform weekly maintenance, formatted d:HH:MM in the UTC time zone. Here, <code>d</code> is the weekday number, from 1 through 7, beginning with Monday and ending with Sunday.</p>
@@ -67,7 +71,7 @@ impl LustreFileSystemConfiguration {
     }
     /// <p>The deployment type of the FSx for Lustre file system. <i>Scratch deployment type</i> is designed for temporary storage and shorter-term processing of data.</p>
     /// <p><code>SCRATCH_1</code> and <code>SCRATCH_2</code> deployment types are best suited for when you need temporary storage and shorter-term processing of data. The <code>SCRATCH_2</code> deployment type provides in-transit encryption of data and higher burst throughput capacity than <code>SCRATCH_1</code>.</p>
-    /// <p>The <code>PERSISTENT_1</code> and <code>PERSISTENT_2</code> deployment type is used for longer-term storage and workloads and encryption of data in transit. <code>PERSISTENT_2</code> offers higher <code>PerUnitStorageThroughput</code> (up to 1000 MB/s/TiB) along with a lower minimum storage capacity requirement (600 GiB). To learn more about FSx for Lustre deployment types, see <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/lustre-deployment-types.html"> FSx for Lustre deployment options</a>.</p>
+    /// <p>The <code>PERSISTENT_1</code> and <code>PERSISTENT_2</code> deployment type is used for longer-term storage and workloads and encryption of data in transit. <code>PERSISTENT_2</code> offers higher <code>PerUnitStorageThroughput</code> (up to 1000 MB/s/TiB) along with a lower minimum storage capacity requirement (600 GiB). To learn more about FSx for Lustre deployment types, see <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/using-fsx-lustre.html">Deployment and storage class options for FSx for Lustre file systems</a>.</p>
     /// <p>The default is <code>SCRATCH_1</code>.</p>
     pub fn deployment_type(&self) -> ::std::option::Option<&crate::types::LustreDeploymentType> {
         self.deployment_type.as_ref()
@@ -134,6 +138,14 @@ impl LustreFileSystemConfiguration {
     pub fn efa_enabled(&self) -> ::std::option::Option<bool> {
         self.efa_enabled
     }
+    /// <p>The throughput of an Amazon FSx for Lustre file system using the Intelligent-Tiering storage class, measured in megabytes per second (MBps).</p>
+    pub fn throughput_capacity(&self) -> ::std::option::Option<i32> {
+        self.throughput_capacity
+    }
+    /// <p>Required when <code>StorageType</code> is set to <code>INTELLIGENT_TIERING</code>. Specifies the optional provisioned SSD read cache.</p>
+    pub fn data_read_cache_configuration(&self) -> ::std::option::Option<&crate::types::LustreReadCacheConfiguration> {
+        self.data_read_cache_configuration.as_ref()
+    }
 }
 impl LustreFileSystemConfiguration {
     /// Creates a new builder-style object to manufacture [`LustreFileSystemConfiguration`](crate::types::LustreFileSystemConfiguration).
@@ -160,6 +172,8 @@ pub struct LustreFileSystemConfigurationBuilder {
     pub(crate) root_squash_configuration: ::std::option::Option<crate::types::LustreRootSquashConfiguration>,
     pub(crate) metadata_configuration: ::std::option::Option<crate::types::FileSystemLustreMetadataConfiguration>,
     pub(crate) efa_enabled: ::std::option::Option<bool>,
+    pub(crate) throughput_capacity: ::std::option::Option<i32>,
+    pub(crate) data_read_cache_configuration: ::std::option::Option<crate::types::LustreReadCacheConfiguration>,
 }
 impl LustreFileSystemConfigurationBuilder {
     /// <p>The preferred start time to perform weekly maintenance, formatted d:HH:MM in the UTC time zone. Here, <code>d</code> is the weekday number, from 1 through 7, beginning with Monday and ending with Sunday.</p>
@@ -195,7 +209,7 @@ impl LustreFileSystemConfigurationBuilder {
     }
     /// <p>The deployment type of the FSx for Lustre file system. <i>Scratch deployment type</i> is designed for temporary storage and shorter-term processing of data.</p>
     /// <p><code>SCRATCH_1</code> and <code>SCRATCH_2</code> deployment types are best suited for when you need temporary storage and shorter-term processing of data. The <code>SCRATCH_2</code> deployment type provides in-transit encryption of data and higher burst throughput capacity than <code>SCRATCH_1</code>.</p>
-    /// <p>The <code>PERSISTENT_1</code> and <code>PERSISTENT_2</code> deployment type is used for longer-term storage and workloads and encryption of data in transit. <code>PERSISTENT_2</code> offers higher <code>PerUnitStorageThroughput</code> (up to 1000 MB/s/TiB) along with a lower minimum storage capacity requirement (600 GiB). To learn more about FSx for Lustre deployment types, see <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/lustre-deployment-types.html"> FSx for Lustre deployment options</a>.</p>
+    /// <p>The <code>PERSISTENT_1</code> and <code>PERSISTENT_2</code> deployment type is used for longer-term storage and workloads and encryption of data in transit. <code>PERSISTENT_2</code> offers higher <code>PerUnitStorageThroughput</code> (up to 1000 MB/s/TiB) along with a lower minimum storage capacity requirement (600 GiB). To learn more about FSx for Lustre deployment types, see <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/using-fsx-lustre.html">Deployment and storage class options for FSx for Lustre file systems</a>.</p>
     /// <p>The default is <code>SCRATCH_1</code>.</p>
     pub fn deployment_type(mut self, input: crate::types::LustreDeploymentType) -> Self {
         self.deployment_type = ::std::option::Option::Some(input);
@@ -203,7 +217,7 @@ impl LustreFileSystemConfigurationBuilder {
     }
     /// <p>The deployment type of the FSx for Lustre file system. <i>Scratch deployment type</i> is designed for temporary storage and shorter-term processing of data.</p>
     /// <p><code>SCRATCH_1</code> and <code>SCRATCH_2</code> deployment types are best suited for when you need temporary storage and shorter-term processing of data. The <code>SCRATCH_2</code> deployment type provides in-transit encryption of data and higher burst throughput capacity than <code>SCRATCH_1</code>.</p>
-    /// <p>The <code>PERSISTENT_1</code> and <code>PERSISTENT_2</code> deployment type is used for longer-term storage and workloads and encryption of data in transit. <code>PERSISTENT_2</code> offers higher <code>PerUnitStorageThroughput</code> (up to 1000 MB/s/TiB) along with a lower minimum storage capacity requirement (600 GiB). To learn more about FSx for Lustre deployment types, see <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/lustre-deployment-types.html"> FSx for Lustre deployment options</a>.</p>
+    /// <p>The <code>PERSISTENT_1</code> and <code>PERSISTENT_2</code> deployment type is used for longer-term storage and workloads and encryption of data in transit. <code>PERSISTENT_2</code> offers higher <code>PerUnitStorageThroughput</code> (up to 1000 MB/s/TiB) along with a lower minimum storage capacity requirement (600 GiB). To learn more about FSx for Lustre deployment types, see <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/using-fsx-lustre.html">Deployment and storage class options for FSx for Lustre file systems</a>.</p>
     /// <p>The default is <code>SCRATCH_1</code>.</p>
     pub fn set_deployment_type(mut self, input: ::std::option::Option<crate::types::LustreDeploymentType>) -> Self {
         self.deployment_type = input;
@@ -211,7 +225,7 @@ impl LustreFileSystemConfigurationBuilder {
     }
     /// <p>The deployment type of the FSx for Lustre file system. <i>Scratch deployment type</i> is designed for temporary storage and shorter-term processing of data.</p>
     /// <p><code>SCRATCH_1</code> and <code>SCRATCH_2</code> deployment types are best suited for when you need temporary storage and shorter-term processing of data. The <code>SCRATCH_2</code> deployment type provides in-transit encryption of data and higher burst throughput capacity than <code>SCRATCH_1</code>.</p>
-    /// <p>The <code>PERSISTENT_1</code> and <code>PERSISTENT_2</code> deployment type is used for longer-term storage and workloads and encryption of data in transit. <code>PERSISTENT_2</code> offers higher <code>PerUnitStorageThroughput</code> (up to 1000 MB/s/TiB) along with a lower minimum storage capacity requirement (600 GiB). To learn more about FSx for Lustre deployment types, see <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/lustre-deployment-types.html"> FSx for Lustre deployment options</a>.</p>
+    /// <p>The <code>PERSISTENT_1</code> and <code>PERSISTENT_2</code> deployment type is used for longer-term storage and workloads and encryption of data in transit. <code>PERSISTENT_2</code> offers higher <code>PerUnitStorageThroughput</code> (up to 1000 MB/s/TiB) along with a lower minimum storage capacity requirement (600 GiB). To learn more about FSx for Lustre deployment types, see <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/using-fsx-lustre.html">Deployment and storage class options for FSx for Lustre file systems</a>.</p>
     /// <p>The default is <code>SCRATCH_1</code>.</p>
     pub fn get_deployment_type(&self) -> &::std::option::Option<crate::types::LustreDeploymentType> {
         &self.deployment_type
@@ -424,6 +438,34 @@ impl LustreFileSystemConfigurationBuilder {
     pub fn get_efa_enabled(&self) -> &::std::option::Option<bool> {
         &self.efa_enabled
     }
+    /// <p>The throughput of an Amazon FSx for Lustre file system using the Intelligent-Tiering storage class, measured in megabytes per second (MBps).</p>
+    pub fn throughput_capacity(mut self, input: i32) -> Self {
+        self.throughput_capacity = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The throughput of an Amazon FSx for Lustre file system using the Intelligent-Tiering storage class, measured in megabytes per second (MBps).</p>
+    pub fn set_throughput_capacity(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.throughput_capacity = input;
+        self
+    }
+    /// <p>The throughput of an Amazon FSx for Lustre file system using the Intelligent-Tiering storage class, measured in megabytes per second (MBps).</p>
+    pub fn get_throughput_capacity(&self) -> &::std::option::Option<i32> {
+        &self.throughput_capacity
+    }
+    /// <p>Required when <code>StorageType</code> is set to <code>INTELLIGENT_TIERING</code>. Specifies the optional provisioned SSD read cache.</p>
+    pub fn data_read_cache_configuration(mut self, input: crate::types::LustreReadCacheConfiguration) -> Self {
+        self.data_read_cache_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Required when <code>StorageType</code> is set to <code>INTELLIGENT_TIERING</code>. Specifies the optional provisioned SSD read cache.</p>
+    pub fn set_data_read_cache_configuration(mut self, input: ::std::option::Option<crate::types::LustreReadCacheConfiguration>) -> Self {
+        self.data_read_cache_configuration = input;
+        self
+    }
+    /// <p>Required when <code>StorageType</code> is set to <code>INTELLIGENT_TIERING</code>. Specifies the optional provisioned SSD read cache.</p>
+    pub fn get_data_read_cache_configuration(&self) -> &::std::option::Option<crate::types::LustreReadCacheConfiguration> {
+        &self.data_read_cache_configuration
+    }
     /// Consumes the builder and constructs a [`LustreFileSystemConfiguration`](crate::types::LustreFileSystemConfiguration).
     pub fn build(self) -> crate::types::LustreFileSystemConfiguration {
         crate::types::LustreFileSystemConfiguration {
@@ -441,6 +483,8 @@ impl LustreFileSystemConfigurationBuilder {
             root_squash_configuration: self.root_squash_configuration,
             metadata_configuration: self.metadata_configuration,
             efa_enabled: self.efa_enabled,
+            throughput_capacity: self.throughput_capacity,
+            data_read_cache_configuration: self.data_read_cache_configuration,
         }
     }
 }

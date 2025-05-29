@@ -52,6 +52,8 @@ pub struct CreateAppInput {
     pub auto_branch_creation_patterns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The automated branch creation configuration for an Amplify app.</p>
     pub auto_branch_creation_config: ::std::option::Option<crate::types::AutoBranchCreationConfig>,
+    /// <p>Describes the configuration details that apply to the jobs for an Amplify app.</p>
+    pub job_config: ::std::option::Option<crate::types::JobConfig>,
     /// <p>The cache configuration for the Amplify app.</p>
     pub cache_config: ::std::option::Option<crate::types::CacheConfig>,
 }
@@ -148,6 +150,10 @@ impl CreateAppInput {
     pub fn auto_branch_creation_config(&self) -> ::std::option::Option<&crate::types::AutoBranchCreationConfig> {
         self.auto_branch_creation_config.as_ref()
     }
+    /// <p>Describes the configuration details that apply to the jobs for an Amplify app.</p>
+    pub fn job_config(&self) -> ::std::option::Option<&crate::types::JobConfig> {
+        self.job_config.as_ref()
+    }
     /// <p>The cache configuration for the Amplify app.</p>
     pub fn cache_config(&self) -> ::std::option::Option<&crate::types::CacheConfig> {
         self.cache_config.as_ref()
@@ -176,6 +182,7 @@ impl ::std::fmt::Debug for CreateAppInput {
         formatter.field("enable_auto_branch_creation", &self.enable_auto_branch_creation);
         formatter.field("auto_branch_creation_patterns", &self.auto_branch_creation_patterns);
         formatter.field("auto_branch_creation_config", &self.auto_branch_creation_config);
+        formatter.field("job_config", &self.job_config);
         formatter.field("cache_config", &self.cache_config);
         formatter.finish()
     }
@@ -211,6 +218,7 @@ pub struct CreateAppInputBuilder {
     pub(crate) enable_auto_branch_creation: ::std::option::Option<bool>,
     pub(crate) auto_branch_creation_patterns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) auto_branch_creation_config: ::std::option::Option<crate::types::AutoBranchCreationConfig>,
+    pub(crate) job_config: ::std::option::Option<crate::types::JobConfig>,
     pub(crate) cache_config: ::std::option::Option<crate::types::CacheConfig>,
 }
 impl CreateAppInputBuilder {
@@ -550,6 +558,20 @@ impl CreateAppInputBuilder {
     pub fn get_auto_branch_creation_config(&self) -> &::std::option::Option<crate::types::AutoBranchCreationConfig> {
         &self.auto_branch_creation_config
     }
+    /// <p>Describes the configuration details that apply to the jobs for an Amplify app.</p>
+    pub fn job_config(mut self, input: crate::types::JobConfig) -> Self {
+        self.job_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Describes the configuration details that apply to the jobs for an Amplify app.</p>
+    pub fn set_job_config(mut self, input: ::std::option::Option<crate::types::JobConfig>) -> Self {
+        self.job_config = input;
+        self
+    }
+    /// <p>Describes the configuration details that apply to the jobs for an Amplify app.</p>
+    pub fn get_job_config(&self) -> &::std::option::Option<crate::types::JobConfig> {
+        &self.job_config
+    }
     /// <p>The cache configuration for the Amplify app.</p>
     pub fn cache_config(mut self, input: crate::types::CacheConfig) -> Self {
         self.cache_config = ::std::option::Option::Some(input);
@@ -587,6 +609,7 @@ impl CreateAppInputBuilder {
             enable_auto_branch_creation: self.enable_auto_branch_creation,
             auto_branch_creation_patterns: self.auto_branch_creation_patterns,
             auto_branch_creation_config: self.auto_branch_creation_config,
+            job_config: self.job_config,
             cache_config: self.cache_config,
         })
     }
@@ -614,6 +637,7 @@ impl ::std::fmt::Debug for CreateAppInputBuilder {
         formatter.field("enable_auto_branch_creation", &self.enable_auto_branch_creation);
         formatter.field("auto_branch_creation_patterns", &self.auto_branch_creation_patterns);
         formatter.field("auto_branch_creation_config", &self.auto_branch_creation_config);
+        formatter.field("job_config", &self.job_config);
         formatter.field("cache_config", &self.cache_config);
         formatter.finish()
     }

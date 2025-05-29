@@ -25,6 +25,10 @@ pub use crate::types::_smb_mount_options::SmbMountOptionsBuilder;
 
 pub use crate::types::_s3_config::S3ConfigBuilder;
 
+pub use crate::types::_custom_secret_config::CustomSecretConfigBuilder;
+
+pub use crate::types::_cmk_secret_config::CmkSecretConfigBuilder;
+
 pub use crate::types::_nfs_mount_options::NfsMountOptionsBuilder;
 
 pub use crate::types::_on_prem_config::OnPremConfigBuilder;
@@ -70,6 +74,8 @@ pub use crate::types::_report_result::ReportResultBuilder;
 pub use crate::types::_task_execution_result_detail::TaskExecutionResultDetailBuilder;
 
 pub use crate::types::_task_schedule_details::TaskScheduleDetailsBuilder;
+
+pub use crate::types::_managed_secret_config::ManagedSecretConfigBuilder;
 
 pub use crate::types::_ec2_config::Ec2ConfigBuilder;
 

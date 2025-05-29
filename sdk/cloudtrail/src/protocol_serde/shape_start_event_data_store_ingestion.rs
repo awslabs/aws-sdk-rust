@@ -20,6 +20,22 @@ pub fn de_start_event_data_store_ingestion_http_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
+        "ConflictException" => crate::operation::start_event_data_store_ingestion::StartEventDataStoreIngestionError::ConflictException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::ConflictExceptionBuilder::default();
+                    output = crate::protocol_serde::shape_conflict_exception::de_conflict_exception_json_err(_response_body, output).map_err(crate::operation::start_event_data_store_ingestion::StartEventDataStoreIngestionError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                            tmp.message = _error_message;
+                                                        }
+            tmp
+        }),
         "EventDataStoreARNInvalidException" => crate::operation::start_event_data_store_ingestion::StartEventDataStoreIngestionError::EventDataStoreArnInvalidException({
             #[allow(unused_mut)]
             let mut tmp =

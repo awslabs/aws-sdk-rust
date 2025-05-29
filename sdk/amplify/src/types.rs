@@ -25,6 +25,10 @@ pub use crate::types::_stage::Stage;
 
 pub use crate::types::_app::App;
 
+pub use crate::types::_job_config::JobConfig;
+
+pub use crate::types::_build_compute_type::BuildComputeType;
+
 pub use crate::types::_waf_configuration::WafConfiguration;
 
 pub use crate::types::_waf_status::WafStatus;
@@ -71,6 +75,8 @@ mod _backend_environment;
 
 mod _branch;
 
+mod _build_compute_type;
+
 mod _cache_config;
 
 mod _cache_config_type;
@@ -88,6 +94,8 @@ mod _domain_association;
 mod _domain_status;
 
 mod _job;
+
+mod _job_config;
 
 mod _job_status;
 

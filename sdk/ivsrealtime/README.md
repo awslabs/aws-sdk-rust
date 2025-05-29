@@ -11,6 +11,12 @@ For server-side composition:
   - __Composition process__ — Composites participants of a stage into a single video and forwards it to a set of outputs (e.g., IVS channels). Composition operations support this process.
   - __Composition__ — Controls the look of the outputs, including how participants are positioned in the video.
 
+For participant replication:
+  - __Source stage__ — The stage where the participant originally joined, which is used as the source for replication.
+  - __Destination stage__ — The stage to which the participant is replicated.
+  - __Replicated participant__ — A participant in a stage that is replicated to one or more destination stages.
+  - __Replica participant__ — A participant in a destination stage that is replicated from another stage (the source stage).
+
 For more information about your IVS live stream, also see [Getting Started with Amazon IVS Real-Time Streaming](https://docs.aws.amazon.com/ivs/latest/RealTimeUserGuide/getting-started.html).
 
 __Tagging__
@@ -35,7 +41,7 @@ your project, add the following to your **Cargo.toml** file:
 ```toml
 [dependencies]
 aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-aws-sdk-ivsrealtime = "1.79.0"
+aws-sdk-ivsrealtime = "1.80.0"
 tokio = { version = "1", features = ["full"] }
 ```
 

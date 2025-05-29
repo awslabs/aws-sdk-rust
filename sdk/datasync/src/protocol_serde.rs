@@ -253,6 +253,10 @@ pub(crate) mod shape_agent_list;
 
 pub(crate) mod shape_azure_blob_sas_configuration;
 
+pub(crate) mod shape_cmk_secret_config;
+
+pub(crate) mod shape_custom_secret_config;
+
 pub(crate) mod shape_destination_network_interface_arns;
 
 pub(crate) mod shape_dns_ip_list;
@@ -276,6 +280,8 @@ pub(crate) mod shape_hdfs_name_node_list;
 pub(crate) mod shape_location_filter;
 
 pub(crate) mod shape_location_list;
+
+pub(crate) mod shape_managed_secret_config;
 
 pub(crate) mod shape_manifest_config;
 

@@ -61,7 +61,7 @@ pub enum Error {
     ResourceDoesNotSupportTagging(crate::types::error::ResourceDoesNotSupportTagging),
     /// <p>The resource specified by the Amazon Resource Name (ARN) can't be found.</p>
     ResourceNotFound(crate::types::error::ResourceNotFound),
-    /// <p>An error indicating that a particular service limit was exceeded. You can increase some service limits by contacting Amazon Web Services Support.</p>
+    /// <p>An error indicating that a particular service limit was exceeded. You can increase some service limits by contacting Amazon Web ServicesSupport.</p>
     ServiceLimitExceeded(crate::types::error::ServiceLimitExceeded),
     /// <p>No Amazon FSx snapshots were found based on the supplied parameters.</p>
     SnapshotNotFound(crate::types::error::SnapshotNotFound),

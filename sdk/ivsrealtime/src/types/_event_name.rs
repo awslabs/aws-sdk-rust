@@ -18,6 +18,8 @@
 ///     EventName::PublishError => { /* ... */ },
 ///     EventName::PublishStarted => { /* ... */ },
 ///     EventName::PublishStopped => { /* ... */ },
+///     EventName::ReplicationStarted => { /* ... */ },
+///     EventName::ReplicationStopped => { /* ... */ },
 ///     EventName::SubscribeError => { /* ... */ },
 ///     EventName::SubscribeStarted => { /* ... */ },
 ///     EventName::SubscribeStopped => { /* ... */ },
@@ -62,6 +64,10 @@ pub enum EventName {
     #[allow(missing_docs)] // documentation missing in model
     PublishStopped,
     #[allow(missing_docs)] // documentation missing in model
+    ReplicationStarted,
+    #[allow(missing_docs)] // documentation missing in model
+    ReplicationStopped,
+    #[allow(missing_docs)] // documentation missing in model
     SubscribeError,
     #[allow(missing_docs)] // documentation missing in model
     SubscribeStarted,
@@ -80,6 +86,8 @@ impl ::std::convert::From<&str> for EventName {
             "PUBLISH_ERROR" => EventName::PublishError,
             "PUBLISH_STARTED" => EventName::PublishStarted,
             "PUBLISH_STOPPED" => EventName::PublishStopped,
+            "REPLICATION_STARTED" => EventName::ReplicationStarted,
+            "REPLICATION_STOPPED" => EventName::ReplicationStopped,
             "SUBSCRIBE_ERROR" => EventName::SubscribeError,
             "SUBSCRIBE_STARTED" => EventName::SubscribeStarted,
             "SUBSCRIBE_STOPPED" => EventName::SubscribeStopped,
@@ -104,6 +112,8 @@ impl EventName {
             EventName::PublishError => "PUBLISH_ERROR",
             EventName::PublishStarted => "PUBLISH_STARTED",
             EventName::PublishStopped => "PUBLISH_STOPPED",
+            EventName::ReplicationStarted => "REPLICATION_STARTED",
+            EventName::ReplicationStopped => "REPLICATION_STOPPED",
             EventName::SubscribeError => "SUBSCRIBE_ERROR",
             EventName::SubscribeStarted => "SUBSCRIBE_STARTED",
             EventName::SubscribeStopped => "SUBSCRIBE_STOPPED",
@@ -119,6 +129,8 @@ impl EventName {
             "PUBLISH_ERROR",
             "PUBLISH_STARTED",
             "PUBLISH_STOPPED",
+            "REPLICATION_STARTED",
+            "REPLICATION_STOPPED",
             "SUBSCRIBE_ERROR",
             "SUBSCRIBE_STARTED",
             "SUBSCRIBE_STOPPED",
@@ -151,6 +163,8 @@ impl ::std::fmt::Display for EventName {
             EventName::PublishError => write!(f, "PUBLISH_ERROR"),
             EventName::PublishStarted => write!(f, "PUBLISH_STARTED"),
             EventName::PublishStopped => write!(f, "PUBLISH_STOPPED"),
+            EventName::ReplicationStarted => write!(f, "REPLICATION_STARTED"),
+            EventName::ReplicationStopped => write!(f, "REPLICATION_STOPPED"),
             EventName::SubscribeError => write!(f, "SUBSCRIBE_ERROR"),
             EventName::SubscribeStarted => write!(f, "SUBSCRIBE_STARTED"),
             EventName::SubscribeStopped => write!(f, "SUBSCRIBE_STOPPED"),
