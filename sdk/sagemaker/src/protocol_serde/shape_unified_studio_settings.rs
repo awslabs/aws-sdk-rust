@@ -24,6 +24,9 @@ pub fn ser_unified_studio_settings(
     if let Some(var_7) = &input.project_s3_path {
         object.key("ProjectS3Path").string(var_7.as_str());
     }
+    if let Some(var_8) = &input.single_sign_on_application_arn {
+        object.key("SingleSignOnApplicationArn").string(var_8.as_str());
+    }
     Ok(())
 }
 
@@ -86,6 +89,13 @@ where
                         }
                         "ProjectS3Path" => {
                             builder = builder.set_project_s3_path(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "SingleSignOnApplicationArn" => {
+                            builder = builder.set_single_sign_on_application_arn(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,

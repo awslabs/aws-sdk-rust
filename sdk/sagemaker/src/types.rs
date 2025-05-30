@@ -793,6 +793,12 @@ pub use crate::types::_endpoint::Endpoint;
 
 pub use crate::types::_production_variant_summary::ProductionVariantSummary;
 
+pub use crate::types::_production_variant_capacity_reservation_summary::ProductionVariantCapacityReservationSummary;
+
+pub use crate::types::_ec2_capacity_reservation::Ec2CapacityReservation;
+
+pub use crate::types::_capacity_reservation_preference::CapacityReservationPreference;
+
 pub use crate::types::_production_variant_routing_config::ProductionVariantRoutingConfig;
 
 pub use crate::types::_routing_strategy::RoutingStrategy;
@@ -1653,6 +1659,8 @@ pub use crate::types::_throughput_config_description::ThroughputConfigDescriptio
 
 pub use crate::types::_production_variant::ProductionVariant;
 
+pub use crate::types::_production_variant_capacity_reservation_config::ProductionVariantCapacityReservationConfig;
+
 pub use crate::types::_production_variant_inference_ami_version::ProductionVariantInferenceAmiVersion;
 
 pub use crate::types::_production_variant_core_dump_config::ProductionVariantCoreDumpConfig;
@@ -2109,6 +2117,8 @@ mod _candidate_step_type;
 
 mod _canvas_app_settings;
 
+mod _capacity_reservation_preference;
+
 mod _capacity_size;
 
 mod _capacity_size_config;
@@ -2362,6 +2372,8 @@ mod _drift_check_model_quality;
 mod _dynamic_scaling_configuration;
 
 mod _ebs_storage_settings;
+
+mod _ec2_capacity_reservation;
 
 mod _edge;
 
@@ -3226,6 +3238,10 @@ mod _processor;
 mod _production_variant;
 
 mod _production_variant_accelerator_type;
+
+mod _production_variant_capacity_reservation_config;
+
+mod _production_variant_capacity_reservation_summary;
 
 mod _production_variant_core_dump_config;
 

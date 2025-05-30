@@ -150,6 +150,20 @@ impl StartJobRunFluentBuilder {
     pub fn get_execution_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_execution_role_arn()
     }
+    /// <p>You can pass an optional IAM policy. The resulting job IAM role permissions will be an intersection of this policy and the policy associated with your job execution role.</p>
+    pub fn execution_iam_policy(mut self, input: crate::types::JobRunExecutionIamPolicy) -> Self {
+        self.inner = self.inner.execution_iam_policy(input);
+        self
+    }
+    /// <p>You can pass an optional IAM policy. The resulting job IAM role permissions will be an intersection of this policy and the policy associated with your job execution role.</p>
+    pub fn set_execution_iam_policy(mut self, input: ::std::option::Option<crate::types::JobRunExecutionIamPolicy>) -> Self {
+        self.inner = self.inner.set_execution_iam_policy(input);
+        self
+    }
+    /// <p>You can pass an optional IAM policy. The resulting job IAM role permissions will be an intersection of this policy and the policy associated with your job execution role.</p>
+    pub fn get_execution_iam_policy(&self) -> &::std::option::Option<crate::types::JobRunExecutionIamPolicy> {
+        self.inner.get_execution_iam_policy()
+    }
     /// <p>The job driver for the job run.</p>
     pub fn job_driver(mut self, input: crate::types::JobDriver) -> Self {
         self.inner = self.inner.job_driver(input);

@@ -73,6 +73,11 @@ where
                                 crate::protocol_serde::shape_production_variant_routing_config::de_production_variant_routing_config(tokens)?,
                             );
                         }
+                        "CapacityReservationConfig" => {
+                            builder = builder.set_capacity_reservation_config(
+                                    crate::protocol_serde::shape_production_variant_capacity_reservation_summary::de_production_variant_capacity_reservation_summary(tokens)?
+                                );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

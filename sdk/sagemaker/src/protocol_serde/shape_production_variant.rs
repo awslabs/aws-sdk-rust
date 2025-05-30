@@ -78,6 +78,15 @@ pub fn ser_production_variant(
     if let Some(var_19) = &input.inference_ami_version {
         object.key("InferenceAmiVersion").string(var_19.as_str());
     }
+    if let Some(var_20) = &input.capacity_reservation_config {
+        #[allow(unused_mut)]
+        let mut object_21 = object.key("CapacityReservationConfig").start_object();
+        crate::protocol_serde::shape_production_variant_capacity_reservation_config::ser_production_variant_capacity_reservation_config(
+            &mut object_21,
+            var_20,
+        )?;
+        object_21.finish();
+    }
     Ok(())
 }
 
@@ -189,6 +198,11 @@ where
                                     })
                                     .transpose()?,
                             );
+                        }
+                        "CapacityReservationConfig" => {
+                            builder = builder.set_capacity_reservation_config(
+                                    crate::protocol_serde::shape_production_variant_capacity_reservation_config::de_production_variant_capacity_reservation_config(tokens)?
+                                );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

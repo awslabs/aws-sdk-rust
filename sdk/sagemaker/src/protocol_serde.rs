@@ -2649,6 +2649,8 @@ pub(crate) mod shape_processing_s3_input;
 
 pub(crate) mod shape_product_listings;
 
+pub(crate) mod shape_production_variant_capacity_reservation_config;
+
 pub(crate) mod shape_production_variant_core_dump_config;
 
 pub(crate) mod shape_production_variant_managed_instance_scaling;
@@ -3047,6 +3049,8 @@ pub(crate) mod shape_processing_feature_store_output;
 
 pub(crate) mod shape_processing_s3_output;
 
+pub(crate) mod shape_production_variant_capacity_reservation_summary;
+
 pub(crate) mod shape_production_variant_status_list;
 
 pub(crate) mod shape_project;
@@ -3171,6 +3175,8 @@ pub(crate) mod shape_continuous_parameter_range_specification;
 
 pub(crate) mod shape_device_names;
 
+pub(crate) mod shape_ec2_capacity_reservations_list;
+
 pub(crate) mod shape_edge_model_summary;
 
 pub(crate) mod shape_emr_step_metadata;
@@ -3260,6 +3266,8 @@ pub(crate) mod shape_auto_ml_algorithms;
 pub(crate) mod shape_auto_rollback_alarms;
 
 pub(crate) mod shape_categorical_parameters;
+
+pub(crate) mod shape_ec2_capacity_reservation;
 
 pub(crate) mod shape_environment_parameter;
 

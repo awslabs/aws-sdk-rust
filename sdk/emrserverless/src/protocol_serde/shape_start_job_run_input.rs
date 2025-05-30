@@ -12,42 +12,48 @@ pub fn ser_start_job_run_input_input(
         crate::protocol_serde::shape_configuration_overrides::ser_configuration_overrides(&mut object_3, var_2)?;
         object_3.finish();
     }
-    if let Some(var_4) = &input.execution_role_arn {
-        object.key("executionRoleArn").string(var_4.as_str());
+    if let Some(var_4) = &input.execution_iam_policy {
+        #[allow(unused_mut)]
+        let mut object_5 = object.key("executionIamPolicy").start_object();
+        crate::protocol_serde::shape_job_run_execution_iam_policy::ser_job_run_execution_iam_policy(&mut object_5, var_4)?;
+        object_5.finish();
     }
-    if let Some(var_5) = &input.execution_timeout_minutes {
+    if let Some(var_6) = &input.execution_role_arn {
+        object.key("executionRoleArn").string(var_6.as_str());
+    }
+    if let Some(var_7) = &input.execution_timeout_minutes {
         object.key("executionTimeoutMinutes").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_5).into()),
+            ::aws_smithy_types::Number::NegInt((*var_7).into()),
         );
     }
-    if let Some(var_6) = &input.job_driver {
+    if let Some(var_8) = &input.job_driver {
         #[allow(unused_mut)]
-        let mut object_7 = object.key("jobDriver").start_object();
-        crate::protocol_serde::shape_job_driver::ser_job_driver(&mut object_7, var_6)?;
-        object_7.finish();
+        let mut object_9 = object.key("jobDriver").start_object();
+        crate::protocol_serde::shape_job_driver::ser_job_driver(&mut object_9, var_8)?;
+        object_9.finish();
     }
-    if let Some(var_8) = &input.mode {
-        object.key("mode").string(var_8.as_str());
+    if let Some(var_10) = &input.mode {
+        object.key("mode").string(var_10.as_str());
     }
-    if let Some(var_9) = &input.name {
-        object.key("name").string(var_9.as_str());
+    if let Some(var_11) = &input.name {
+        object.key("name").string(var_11.as_str());
     }
-    if let Some(var_10) = &input.retry_policy {
+    if let Some(var_12) = &input.retry_policy {
         #[allow(unused_mut)]
-        let mut object_11 = object.key("retryPolicy").start_object();
-        crate::protocol_serde::shape_retry_policy::ser_retry_policy(&mut object_11, var_10)?;
-        object_11.finish();
+        let mut object_13 = object.key("retryPolicy").start_object();
+        crate::protocol_serde::shape_retry_policy::ser_retry_policy(&mut object_13, var_12)?;
+        object_13.finish();
     }
-    if let Some(var_12) = &input.tags {
+    if let Some(var_14) = &input.tags {
         #[allow(unused_mut)]
-        let mut object_13 = object.key("tags").start_object();
-        for (key_14, value_15) in var_12 {
+        let mut object_15 = object.key("tags").start_object();
+        for (key_16, value_17) in var_14 {
             {
-                object_13.key(key_14.as_str()).string(value_15.as_str());
+                object_15.key(key_16.as_str()).string(value_17.as_str());
             }
         }
-        object_13.finish();
+        object_15.finish();
     }
     Ok(())
 }

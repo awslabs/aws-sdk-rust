@@ -35,6 +35,8 @@ pub use crate::types::_s3_monitoring_configuration::S3MonitoringConfiguration;
 
 pub use crate::types::_configuration::Configuration;
 
+pub use crate::types::_job_run_execution_iam_policy::JobRunExecutionIamPolicy;
+
 pub use crate::types::_job_run_summary::JobRunSummary;
 
 pub use crate::types::_application::Application;
@@ -100,6 +102,8 @@ mod _job_driver;
 mod _job_run;
 
 mod _job_run_attempt_summary;
+
+mod _job_run_execution_iam_policy;
 
 mod _job_run_mode;
 

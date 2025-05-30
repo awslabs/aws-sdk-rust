@@ -105,6 +105,8 @@ pub(crate) mod shape_job_run;
 
 pub(crate) mod shape_job_run_attempts;
 
+pub(crate) mod shape_job_run_execution_iam_policy;
+
 pub(crate) mod shape_job_runs;
 
 pub(crate) mod shape_maximum_allowed_resources;

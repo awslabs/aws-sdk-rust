@@ -565,6 +565,10 @@ pub use crate::types::_endpoint::EndpointBuilder;
 
 pub use crate::types::_production_variant_summary::ProductionVariantSummaryBuilder;
 
+pub use crate::types::_production_variant_capacity_reservation_summary::ProductionVariantCapacityReservationSummaryBuilder;
+
+pub use crate::types::_ec2_capacity_reservation::Ec2CapacityReservationBuilder;
+
 pub use crate::types::_production_variant_routing_config::ProductionVariantRoutingConfigBuilder;
 
 pub use crate::types::_production_variant_managed_instance_scaling::ProductionVariantManagedInstanceScalingBuilder;
@@ -1082,6 +1086,8 @@ pub use crate::types::_human_loop_request_source::HumanLoopRequestSourceBuilder;
 pub use crate::types::_throughput_config_description::ThroughputConfigDescriptionBuilder;
 
 pub use crate::types::_production_variant::ProductionVariantBuilder;
+
+pub use crate::types::_production_variant_capacity_reservation_config::ProductionVariantCapacityReservationConfigBuilder;
 
 pub use crate::types::_production_variant_core_dump_config::ProductionVariantCoreDumpConfigBuilder;
 

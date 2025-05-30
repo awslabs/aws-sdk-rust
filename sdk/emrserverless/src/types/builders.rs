@@ -29,6 +29,8 @@ pub use crate::types::_s3_monitoring_configuration::S3MonitoringConfigurationBui
 
 pub use crate::types::_configuration::ConfigurationBuilder;
 
+pub use crate::types::_job_run_execution_iam_policy::JobRunExecutionIamPolicyBuilder;
+
 pub use crate::types::_job_run_summary::JobRunSummaryBuilder;
 
 pub use crate::types::_application::ApplicationBuilder;

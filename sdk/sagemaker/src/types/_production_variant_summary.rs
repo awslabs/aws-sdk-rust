@@ -26,6 +26,8 @@ pub struct ProductionVariantSummary {
     pub managed_instance_scaling: ::std::option::Option<crate::types::ProductionVariantManagedInstanceScaling>,
     /// <p>Settings that control how the endpoint routes incoming traffic to the instances that the endpoint hosts.</p>
     pub routing_config: ::std::option::Option<crate::types::ProductionVariantRoutingConfig>,
+    /// <p>Settings for the capacity reservation for the compute instances that SageMaker AI reserves for an endpoint.</p>
+    pub capacity_reservation_config: ::std::option::Option<crate::types::ProductionVariantCapacityReservationSummary>,
 }
 impl ProductionVariantSummary {
     /// <p>The name of the variant.</p>
@@ -76,6 +78,10 @@ impl ProductionVariantSummary {
     pub fn routing_config(&self) -> ::std::option::Option<&crate::types::ProductionVariantRoutingConfig> {
         self.routing_config.as_ref()
     }
+    /// <p>Settings for the capacity reservation for the compute instances that SageMaker AI reserves for an endpoint.</p>
+    pub fn capacity_reservation_config(&self) -> ::std::option::Option<&crate::types::ProductionVariantCapacityReservationSummary> {
+        self.capacity_reservation_config.as_ref()
+    }
 }
 impl ProductionVariantSummary {
     /// Creates a new builder-style object to manufacture [`ProductionVariantSummary`](crate::types::ProductionVariantSummary).
@@ -99,6 +105,7 @@ pub struct ProductionVariantSummaryBuilder {
     pub(crate) desired_serverless_config: ::std::option::Option<crate::types::ProductionVariantServerlessConfig>,
     pub(crate) managed_instance_scaling: ::std::option::Option<crate::types::ProductionVariantManagedInstanceScaling>,
     pub(crate) routing_config: ::std::option::Option<crate::types::ProductionVariantRoutingConfig>,
+    pub(crate) capacity_reservation_config: ::std::option::Option<crate::types::ProductionVariantCapacityReservationSummary>,
 }
 impl ProductionVariantSummaryBuilder {
     /// <p>The name of the variant.</p>
@@ -268,6 +275,23 @@ impl ProductionVariantSummaryBuilder {
     pub fn get_routing_config(&self) -> &::std::option::Option<crate::types::ProductionVariantRoutingConfig> {
         &self.routing_config
     }
+    /// <p>Settings for the capacity reservation for the compute instances that SageMaker AI reserves for an endpoint.</p>
+    pub fn capacity_reservation_config(mut self, input: crate::types::ProductionVariantCapacityReservationSummary) -> Self {
+        self.capacity_reservation_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Settings for the capacity reservation for the compute instances that SageMaker AI reserves for an endpoint.</p>
+    pub fn set_capacity_reservation_config(
+        mut self,
+        input: ::std::option::Option<crate::types::ProductionVariantCapacityReservationSummary>,
+    ) -> Self {
+        self.capacity_reservation_config = input;
+        self
+    }
+    /// <p>Settings for the capacity reservation for the compute instances that SageMaker AI reserves for an endpoint.</p>
+    pub fn get_capacity_reservation_config(&self) -> &::std::option::Option<crate::types::ProductionVariantCapacityReservationSummary> {
+        &self.capacity_reservation_config
+    }
     /// Consumes the builder and constructs a [`ProductionVariantSummary`](crate::types::ProductionVariantSummary).
     pub fn build(self) -> crate::types::ProductionVariantSummary {
         crate::types::ProductionVariantSummary {
@@ -282,6 +306,7 @@ impl ProductionVariantSummaryBuilder {
             desired_serverless_config: self.desired_serverless_config,
             managed_instance_scaling: self.managed_instance_scaling,
             routing_config: self.routing_config,
+            capacity_reservation_config: self.capacity_reservation_config,
         }
     }
 }

@@ -892,9 +892,9 @@ model_hash = 'a39666f61364fed55b6bb9e18360dff4d71dad1a7ef289d8b80015c36d796dae'
 
 [crates.aws-sdk-emrserverless]
 category = 'AwsSdk'
-version = '1.76.0'
-source_hash = '1c2b38919cd6614e1d342c29a10dfadcc5628a039d8d71bad74038c15797afa6'
-model_hash = '98936b9b4490adff195116c1e730b0eb9c74d18f20a2029cc24acf8ccfecfcc0'
+version = '1.77.0'
+source_hash = '2521490b155a95affa49a9c25554dec6567852a16288fbfbccebb8986ad64f1f'
+model_hash = '661fa999460c1b59fc35deabca1c3eec5913734b8550154cb5e9ea3478f8f867'
 
 [crates.aws-sdk-entityresolution]
 category = 'AwsSdk'
@@ -2026,9 +2026,9 @@ model_hash = 'deff5309d4d198438ec26ad0aa92211492a3e08b5a09cc1707dbca702c6dd0a0'
 
 [crates.aws-sdk-sagemaker]
 category = 'AwsSdk'
-version = '1.131.0'
-source_hash = '10b1e7dab586eff6544381aeb06707c6e5f5d0b1bb96bd37afd797cc8314ef93'
-model_hash = '89d8c8b2980cef2d65670c759542c953ac63b71076458a7ce7592d7f676b9915'
+version = '1.132.0'
+source_hash = '9e40990efe468ae6073c9cf078c97a890fec97a05a9b1dc3da2ff22b8a3757d3'
+model_hash = 'a7b334814d4ea8ead93550ad8de239f61c7c4b12a5040bd401935f3d84868b08'
 
 [crates.aws-sdk-sagemakera2iruntime]
 category = 'AwsSdk'
@@ -2621,20 +2621,6 @@ source_hash = '80ec4ac438cda0bc74755e6b3c466dee894170885c393c986c8378a658eecec7'
 category = 'AwsRuntime'
 version = '0.0.0'
 source_hash = '8f95c45532c2d3193640e712a4081002454f32a0b49b8e64c6e34ab790a4dd31'
-
-[release]
-tag = 'release-2025-05-29'
-
 [release.crates]
-aws-sdk-amplify = '1.80.0'
-aws-sdk-autoscaling = '1.80.0'
-aws-sdk-bcmpricingcalculator = '1.25.0'
-aws-sdk-cloudtrail = '1.78.0'
-aws-sdk-connect = '1.108.0'
-aws-sdk-dataexchange = '1.73.0'
-aws-sdk-datasync = '1.78.0'
-aws-sdk-fsx = '1.79.0'
-aws-sdk-ivsrealtime = '1.80.0'
-aws-sdk-mwaa = '1.77.0'
-aws-sdk-s3 = '1.90.0'
-aws-sdk-sagemaker = '1.131.0'
+aws-sdk-emrserverless = '1.77.0'
+aws-sdk-sagemaker = '1.132.0'

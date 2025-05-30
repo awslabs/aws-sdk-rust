@@ -9,6 +9,8 @@ pub struct StartJobRunInput {
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>The execution role ARN for the job run.</p>
     pub execution_role_arn: ::std::option::Option<::std::string::String>,
+    /// <p>You can pass an optional IAM policy. The resulting job IAM role permissions will be an intersection of this policy and the policy associated with your job execution role.</p>
+    pub execution_iam_policy: ::std::option::Option<crate::types::JobRunExecutionIamPolicy>,
     /// <p>The job driver for the job run.</p>
     pub job_driver: ::std::option::Option<crate::types::JobDriver>,
     /// <p>The configuration overrides for the job run.</p>
@@ -36,6 +38,10 @@ impl StartJobRunInput {
     /// <p>The execution role ARN for the job run.</p>
     pub fn execution_role_arn(&self) -> ::std::option::Option<&str> {
         self.execution_role_arn.as_deref()
+    }
+    /// <p>You can pass an optional IAM policy. The resulting job IAM role permissions will be an intersection of this policy and the policy associated with your job execution role.</p>
+    pub fn execution_iam_policy(&self) -> ::std::option::Option<&crate::types::JobRunExecutionIamPolicy> {
+        self.execution_iam_policy.as_ref()
     }
     /// <p>The job driver for the job run.</p>
     pub fn job_driver(&self) -> ::std::option::Option<&crate::types::JobDriver> {
@@ -80,6 +86,7 @@ pub struct StartJobRunInputBuilder {
     pub(crate) application_id: ::std::option::Option<::std::string::String>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) execution_role_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) execution_iam_policy: ::std::option::Option<crate::types::JobRunExecutionIamPolicy>,
     pub(crate) job_driver: ::std::option::Option<crate::types::JobDriver>,
     pub(crate) configuration_overrides: ::std::option::Option<crate::types::ConfigurationOverrides>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
@@ -133,6 +140,20 @@ impl StartJobRunInputBuilder {
     /// <p>The execution role ARN for the job run.</p>
     pub fn get_execution_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.execution_role_arn
+    }
+    /// <p>You can pass an optional IAM policy. The resulting job IAM role permissions will be an intersection of this policy and the policy associated with your job execution role.</p>
+    pub fn execution_iam_policy(mut self, input: crate::types::JobRunExecutionIamPolicy) -> Self {
+        self.execution_iam_policy = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>You can pass an optional IAM policy. The resulting job IAM role permissions will be an intersection of this policy and the policy associated with your job execution role.</p>
+    pub fn set_execution_iam_policy(mut self, input: ::std::option::Option<crate::types::JobRunExecutionIamPolicy>) -> Self {
+        self.execution_iam_policy = input;
+        self
+    }
+    /// <p>You can pass an optional IAM policy. The resulting job IAM role permissions will be an intersection of this policy and the policy associated with your job execution role.</p>
+    pub fn get_execution_iam_policy(&self) -> &::std::option::Option<crate::types::JobRunExecutionIamPolicy> {
+        &self.execution_iam_policy
     }
     /// <p>The job driver for the job run.</p>
     pub fn job_driver(mut self, input: crate::types::JobDriver) -> Self {
@@ -244,6 +265,7 @@ impl StartJobRunInputBuilder {
             application_id: self.application_id,
             client_token: self.client_token,
             execution_role_arn: self.execution_role_arn,
+            execution_iam_policy: self.execution_iam_policy,
             job_driver: self.job_driver,
             configuration_overrides: self.configuration_overrides,
             tags: self.tags,

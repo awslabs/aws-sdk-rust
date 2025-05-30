@@ -93,6 +93,8 @@ pub struct ProductionVariant {
     /// </dd>
     /// </dl>
     pub inference_ami_version: ::std::option::Option<crate::types::ProductionVariantInferenceAmiVersion>,
+    /// <p>Settings for the capacity reservation for the compute instances that SageMaker AI reserves for an endpoint.</p>
+    pub capacity_reservation_config: ::std::option::Option<crate::types::ProductionVariantCapacityReservationConfig>,
 }
 impl ProductionVariant {
     /// <p>The name of the production variant.</p>
@@ -214,6 +216,10 @@ impl ProductionVariant {
     pub fn inference_ami_version(&self) -> ::std::option::Option<&crate::types::ProductionVariantInferenceAmiVersion> {
         self.inference_ami_version.as_ref()
     }
+    /// <p>Settings for the capacity reservation for the compute instances that SageMaker AI reserves for an endpoint.</p>
+    pub fn capacity_reservation_config(&self) -> ::std::option::Option<&crate::types::ProductionVariantCapacityReservationConfig> {
+        self.capacity_reservation_config.as_ref()
+    }
 }
 impl ProductionVariant {
     /// Creates a new builder-style object to manufacture [`ProductionVariant`](crate::types::ProductionVariant).
@@ -241,6 +247,7 @@ pub struct ProductionVariantBuilder {
     pub(crate) managed_instance_scaling: ::std::option::Option<crate::types::ProductionVariantManagedInstanceScaling>,
     pub(crate) routing_config: ::std::option::Option<crate::types::ProductionVariantRoutingConfig>,
     pub(crate) inference_ami_version: ::std::option::Option<crate::types::ProductionVariantInferenceAmiVersion>,
+    pub(crate) capacity_reservation_config: ::std::option::Option<crate::types::ProductionVariantCapacityReservationConfig>,
 }
 impl ProductionVariantBuilder {
     /// <p>The name of the production variant.</p>
@@ -631,6 +638,20 @@ impl ProductionVariantBuilder {
     pub fn get_inference_ami_version(&self) -> &::std::option::Option<crate::types::ProductionVariantInferenceAmiVersion> {
         &self.inference_ami_version
     }
+    /// <p>Settings for the capacity reservation for the compute instances that SageMaker AI reserves for an endpoint.</p>
+    pub fn capacity_reservation_config(mut self, input: crate::types::ProductionVariantCapacityReservationConfig) -> Self {
+        self.capacity_reservation_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Settings for the capacity reservation for the compute instances that SageMaker AI reserves for an endpoint.</p>
+    pub fn set_capacity_reservation_config(mut self, input: ::std::option::Option<crate::types::ProductionVariantCapacityReservationConfig>) -> Self {
+        self.capacity_reservation_config = input;
+        self
+    }
+    /// <p>Settings for the capacity reservation for the compute instances that SageMaker AI reserves for an endpoint.</p>
+    pub fn get_capacity_reservation_config(&self) -> &::std::option::Option<crate::types::ProductionVariantCapacityReservationConfig> {
+        &self.capacity_reservation_config
+    }
     /// Consumes the builder and constructs a [`ProductionVariant`](crate::types::ProductionVariant).
     pub fn build(self) -> crate::types::ProductionVariant {
         crate::types::ProductionVariant {
@@ -649,6 +670,7 @@ impl ProductionVariantBuilder {
             managed_instance_scaling: self.managed_instance_scaling,
             routing_config: self.routing_config,
             inference_ami_version: self.inference_ami_version,
+            capacity_reservation_config: self.capacity_reservation_config,
         }
     }
 }
