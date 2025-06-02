@@ -3,20 +3,20 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetRdsDatabaseRecommendationsOutput {
-    /// <p>The token to advance to the next page of Amazon RDS recommendations.</p>
+    /// <p>The token to advance to the next page of Amazon Aurora and RDS database recommendations.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
-    /// <p>An array of objects that describe the Amazon RDS recommendations.</p>
+    /// <p>An array of objects that describe the Amazon Aurora and RDS database recommendations.</p>
     pub rds_db_recommendations: ::std::option::Option<::std::vec::Vec<crate::types::RdsdbRecommendation>>,
     /// <p>An array of objects that describe errors of the request.</p>
     pub errors: ::std::option::Option<::std::vec::Vec<crate::types::GetRecommendationError>>,
     _request_id: Option<String>,
 }
 impl GetRdsDatabaseRecommendationsOutput {
-    /// <p>The token to advance to the next page of Amazon RDS recommendations.</p>
+    /// <p>The token to advance to the next page of Amazon Aurora and RDS database recommendations.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>An array of objects that describe the Amazon RDS recommendations.</p>
+    /// <p>An array of objects that describe the Amazon Aurora and RDS database recommendations.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.rds_db_recommendations.is_none()`.
     pub fn rds_db_recommendations(&self) -> &[crate::types::RdsdbRecommendation] {
@@ -51,17 +51,17 @@ pub struct GetRdsDatabaseRecommendationsOutputBuilder {
     _request_id: Option<String>,
 }
 impl GetRdsDatabaseRecommendationsOutputBuilder {
-    /// <p>The token to advance to the next page of Amazon RDS recommendations.</p>
+    /// <p>The token to advance to the next page of Amazon Aurora and RDS database recommendations.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The token to advance to the next page of Amazon RDS recommendations.</p>
+    /// <p>The token to advance to the next page of Amazon Aurora and RDS database recommendations.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p>The token to advance to the next page of Amazon RDS recommendations.</p>
+    /// <p>The token to advance to the next page of Amazon Aurora and RDS database recommendations.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
@@ -69,19 +69,19 @@ impl GetRdsDatabaseRecommendationsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_rds_db_recommendations`](Self::set_rds_db_recommendations).
     ///
-    /// <p>An array of objects that describe the Amazon RDS recommendations.</p>
+    /// <p>An array of objects that describe the Amazon Aurora and RDS database recommendations.</p>
     pub fn rds_db_recommendations(mut self, input: crate::types::RdsdbRecommendation) -> Self {
         let mut v = self.rds_db_recommendations.unwrap_or_default();
         v.push(input);
         self.rds_db_recommendations = ::std::option::Option::Some(v);
         self
     }
-    /// <p>An array of objects that describe the Amazon RDS recommendations.</p>
+    /// <p>An array of objects that describe the Amazon Aurora and RDS database recommendations.</p>
     pub fn set_rds_db_recommendations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RdsdbRecommendation>>) -> Self {
         self.rds_db_recommendations = input;
         self
     }
-    /// <p>An array of objects that describe the Amazon RDS recommendations.</p>
+    /// <p>An array of objects that describe the Amazon Aurora and RDS database recommendations.</p>
     pub fn get_rds_db_recommendations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RdsdbRecommendation>> {
         &self.rds_db_recommendations
     }

@@ -4,35 +4,35 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DbStorageConfiguration {
-    /// <p>The type of RDS storage.</p>
+    /// <p>The type of DB storage.</p>
     pub storage_type: ::std::option::Option<::std::string::String>,
-    /// <p>The size of the RDS storage in gigabytes (GB).</p>
+    /// <p>The size of the DB storage in gigabytes (GB).</p>
     pub allocated_storage: i32,
-    /// <p>The provisioned IOPs of the RDS storage.</p>
+    /// <p>The provisioned IOPs of the DB storage.</p>
     pub iops: ::std::option::Option<i32>,
-    /// <p>The maximum limit in gibibytes (GiB) to which Amazon RDS can automatically scale the storage of the RDS instance.</p>
+    /// <p>The maximum limit in gibibytes (GiB) to which Amazon RDS can automatically scale the storage of the DB instance.</p>
     pub max_allocated_storage: ::std::option::Option<i32>,
-    /// <p>The storage throughput of the RDS storage.</p>
+    /// <p>The storage throughput of the DB storage.</p>
     pub storage_throughput: ::std::option::Option<i32>,
 }
 impl DbStorageConfiguration {
-    /// <p>The type of RDS storage.</p>
+    /// <p>The type of DB storage.</p>
     pub fn storage_type(&self) -> ::std::option::Option<&str> {
         self.storage_type.as_deref()
     }
-    /// <p>The size of the RDS storage in gigabytes (GB).</p>
+    /// <p>The size of the DB storage in gigabytes (GB).</p>
     pub fn allocated_storage(&self) -> i32 {
         self.allocated_storage
     }
-    /// <p>The provisioned IOPs of the RDS storage.</p>
+    /// <p>The provisioned IOPs of the DB storage.</p>
     pub fn iops(&self) -> ::std::option::Option<i32> {
         self.iops
     }
-    /// <p>The maximum limit in gibibytes (GiB) to which Amazon RDS can automatically scale the storage of the RDS instance.</p>
+    /// <p>The maximum limit in gibibytes (GiB) to which Amazon RDS can automatically scale the storage of the DB instance.</p>
     pub fn max_allocated_storage(&self) -> ::std::option::Option<i32> {
         self.max_allocated_storage
     }
-    /// <p>The storage throughput of the RDS storage.</p>
+    /// <p>The storage throughput of the DB storage.</p>
     pub fn storage_throughput(&self) -> ::std::option::Option<i32> {
         self.storage_throughput
     }
@@ -55,73 +55,73 @@ pub struct DbStorageConfigurationBuilder {
     pub(crate) storage_throughput: ::std::option::Option<i32>,
 }
 impl DbStorageConfigurationBuilder {
-    /// <p>The type of RDS storage.</p>
+    /// <p>The type of DB storage.</p>
     pub fn storage_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.storage_type = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The type of RDS storage.</p>
+    /// <p>The type of DB storage.</p>
     pub fn set_storage_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.storage_type = input;
         self
     }
-    /// <p>The type of RDS storage.</p>
+    /// <p>The type of DB storage.</p>
     pub fn get_storage_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.storage_type
     }
-    /// <p>The size of the RDS storage in gigabytes (GB).</p>
+    /// <p>The size of the DB storage in gigabytes (GB).</p>
     pub fn allocated_storage(mut self, input: i32) -> Self {
         self.allocated_storage = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The size of the RDS storage in gigabytes (GB).</p>
+    /// <p>The size of the DB storage in gigabytes (GB).</p>
     pub fn set_allocated_storage(mut self, input: ::std::option::Option<i32>) -> Self {
         self.allocated_storage = input;
         self
     }
-    /// <p>The size of the RDS storage in gigabytes (GB).</p>
+    /// <p>The size of the DB storage in gigabytes (GB).</p>
     pub fn get_allocated_storage(&self) -> &::std::option::Option<i32> {
         &self.allocated_storage
     }
-    /// <p>The provisioned IOPs of the RDS storage.</p>
+    /// <p>The provisioned IOPs of the DB storage.</p>
     pub fn iops(mut self, input: i32) -> Self {
         self.iops = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The provisioned IOPs of the RDS storage.</p>
+    /// <p>The provisioned IOPs of the DB storage.</p>
     pub fn set_iops(mut self, input: ::std::option::Option<i32>) -> Self {
         self.iops = input;
         self
     }
-    /// <p>The provisioned IOPs of the RDS storage.</p>
+    /// <p>The provisioned IOPs of the DB storage.</p>
     pub fn get_iops(&self) -> &::std::option::Option<i32> {
         &self.iops
     }
-    /// <p>The maximum limit in gibibytes (GiB) to which Amazon RDS can automatically scale the storage of the RDS instance.</p>
+    /// <p>The maximum limit in gibibytes (GiB) to which Amazon RDS can automatically scale the storage of the DB instance.</p>
     pub fn max_allocated_storage(mut self, input: i32) -> Self {
         self.max_allocated_storage = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The maximum limit in gibibytes (GiB) to which Amazon RDS can automatically scale the storage of the RDS instance.</p>
+    /// <p>The maximum limit in gibibytes (GiB) to which Amazon RDS can automatically scale the storage of the DB instance.</p>
     pub fn set_max_allocated_storage(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_allocated_storage = input;
         self
     }
-    /// <p>The maximum limit in gibibytes (GiB) to which Amazon RDS can automatically scale the storage of the RDS instance.</p>
+    /// <p>The maximum limit in gibibytes (GiB) to which Amazon RDS can automatically scale the storage of the DB instance.</p>
     pub fn get_max_allocated_storage(&self) -> &::std::option::Option<i32> {
         &self.max_allocated_storage
     }
-    /// <p>The storage throughput of the RDS storage.</p>
+    /// <p>The storage throughput of the DB storage.</p>
     pub fn storage_throughput(mut self, input: i32) -> Self {
         self.storage_throughput = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The storage throughput of the RDS storage.</p>
+    /// <p>The storage throughput of the DB storage.</p>
     pub fn set_storage_throughput(mut self, input: ::std::option::Option<i32>) -> Self {
         self.storage_throughput = input;
         self
     }
-    /// <p>The storage throughput of the RDS storage.</p>
+    /// <p>The storage throughput of the DB storage.</p>
     pub fn get_storage_throughput(&self) -> &::std::option::Option<i32> {
         &self.storage_throughput
     }

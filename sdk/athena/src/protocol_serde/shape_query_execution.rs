@@ -35,6 +35,11 @@ where
                                     .transpose()?,
                             );
                         }
+                        "ManagedQueryResultsConfiguration" => {
+                            builder = builder.set_managed_query_results_configuration(
+                                crate::protocol_serde::shape_managed_query_results_configuration::de_managed_query_results_configuration(tokens)?,
+                            );
+                        }
                         "ResultConfiguration" => {
                             builder =
                                 builder.set_result_configuration(crate::protocol_serde::shape_result_configuration::de_result_configuration(tokens)?);

@@ -29,7 +29,7 @@ pub use crate::types::_dynamo_db_reserved_capacity::DynamoDbReservedCapacityBuil
 
 pub use crate::types::_dynamo_db_reserved_capacity_configuration::DynamoDbReservedCapacityConfigurationBuilder;
 
-pub use crate::types::_rds_db_instance_storage::RdsDbInstanceStorageBuilder;
+pub use crate::types::_aurora_db_cluster_storage::AuroraDbClusterStorageBuilder;
 
 pub use crate::types::_resource_cost_calculation::ResourceCostCalculationBuilder;
 
@@ -38,6 +38,10 @@ pub use crate::types::_resource_pricing::ResourcePricingBuilder;
 pub use crate::types::_estimated_discounts::EstimatedDiscountsBuilder;
 
 pub use crate::types::_usage::UsageBuilder;
+
+pub use crate::types::_aurora_db_cluster_storage_configuration::AuroraDbClusterStorageConfigurationBuilder;
+
+pub use crate::types::_rds_db_instance_storage::RdsDbInstanceStorageBuilder;
 
 pub use crate::types::_rds_db_instance_storage_configuration::RdsDbInstanceStorageConfigurationBuilder;
 

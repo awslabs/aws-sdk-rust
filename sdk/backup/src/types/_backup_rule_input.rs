@@ -8,7 +8,7 @@ pub struct BackupRuleInput {
     pub rule_name: ::std::string::String,
     /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created.</p>
     pub target_backup_vault_name: ::std::string::String,
-    /// <p>A CRON expression in UTC specifying when Backup initiates a backup job.</p>
+    /// <p>A CRON expression in UTC specifying when Backup initiates a backup job. When no CRON expression is provided, Backup will use the default expression <code>cron(0 5 ? * * *)</code>.</p>
     pub schedule_expression: ::std::option::Option<::std::string::String>,
     /// <p>A value in minutes after a backup is scheduled before a job will be canceled if it doesn't start successfully. This value is optional. If this value is included, it must be at least 60 minutes to avoid errors.</p>
     /// <p>This parameter has a maximum value of 100 years (52,560,000 minutes).</p>
@@ -50,7 +50,7 @@ impl BackupRuleInput {
         use std::ops::Deref;
         self.target_backup_vault_name.deref()
     }
-    /// <p>A CRON expression in UTC specifying when Backup initiates a backup job.</p>
+    /// <p>A CRON expression in UTC specifying when Backup initiates a backup job. When no CRON expression is provided, Backup will use the default expression <code>cron(0 5 ? * * *)</code>.</p>
     pub fn schedule_expression(&self) -> ::std::option::Option<&str> {
         self.schedule_expression.as_deref()
     }
@@ -174,17 +174,17 @@ impl BackupRuleInputBuilder {
     pub fn get_target_backup_vault_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.target_backup_vault_name
     }
-    /// <p>A CRON expression in UTC specifying when Backup initiates a backup job.</p>
+    /// <p>A CRON expression in UTC specifying when Backup initiates a backup job. When no CRON expression is provided, Backup will use the default expression <code>cron(0 5 ? * * *)</code>.</p>
     pub fn schedule_expression(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.schedule_expression = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A CRON expression in UTC specifying when Backup initiates a backup job.</p>
+    /// <p>A CRON expression in UTC specifying when Backup initiates a backup job. When no CRON expression is provided, Backup will use the default expression <code>cron(0 5 ? * * *)</code>.</p>
     pub fn set_schedule_expression(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.schedule_expression = input;
         self
     }
-    /// <p>A CRON expression in UTC specifying when Backup initiates a backup job.</p>
+    /// <p>A CRON expression in UTC specifying when Backup initiates a backup job. When no CRON expression is provided, Backup will use the default expression <code>cron(0 5 ? * * *)</code>.</p>
     pub fn get_schedule_expression(&self) -> &::std::option::Option<::std::string::String> {
         &self.schedule_expression
     }

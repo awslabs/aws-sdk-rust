@@ -69,6 +69,14 @@ pub use crate::types::_job_metrics::JobMetricsBuilder;
 
 pub use crate::types::_id_mapping_job_metrics::IdMappingJobMetricsBuilder;
 
+pub use crate::types::_failed_record::FailedRecordBuilder;
+
+pub use crate::types::_match_group::MatchGroupBuilder;
+
+pub use crate::types::_matched_record::MatchedRecordBuilder;
+
+pub use crate::types::_record::RecordBuilder;
+
 pub use crate::types::_deleted_unique_id::DeletedUniqueIdBuilder;
 
 pub use crate::types::_delete_unique_id_error::DeleteUniqueIdErrorBuilder;

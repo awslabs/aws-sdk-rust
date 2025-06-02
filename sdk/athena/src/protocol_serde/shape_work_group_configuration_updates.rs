@@ -12,56 +12,65 @@ pub fn ser_work_group_configuration_updates(
         crate::protocol_serde::shape_result_configuration_updates::ser_result_configuration_updates(&mut object_3, var_2)?;
         object_3.finish();
     }
-    if let Some(var_4) = &input.publish_cloud_watch_metrics_enabled {
-        object.key("PublishCloudWatchMetricsEnabled").boolean(*var_4);
+    if let Some(var_4) = &input.managed_query_results_configuration_updates {
+        #[allow(unused_mut)]
+        let mut object_5 = object.key("ManagedQueryResultsConfigurationUpdates").start_object();
+        crate::protocol_serde::shape_managed_query_results_configuration_updates::ser_managed_query_results_configuration_updates(
+            &mut object_5,
+            var_4,
+        )?;
+        object_5.finish();
     }
-    if let Some(var_5) = &input.bytes_scanned_cutoff_per_query {
+    if let Some(var_6) = &input.publish_cloud_watch_metrics_enabled {
+        object.key("PublishCloudWatchMetricsEnabled").boolean(*var_6);
+    }
+    if let Some(var_7) = &input.bytes_scanned_cutoff_per_query {
         object.key("BytesScannedCutoffPerQuery").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_5).into()),
+            ::aws_smithy_types::Number::NegInt((*var_7).into()),
         );
     }
-    if let Some(var_6) = &input.remove_bytes_scanned_cutoff_per_query {
-        object.key("RemoveBytesScannedCutoffPerQuery").boolean(*var_6);
+    if let Some(var_8) = &input.remove_bytes_scanned_cutoff_per_query {
+        object.key("RemoveBytesScannedCutoffPerQuery").boolean(*var_8);
     }
-    if let Some(var_7) = &input.requester_pays_enabled {
-        object.key("RequesterPaysEnabled").boolean(*var_7);
+    if let Some(var_9) = &input.requester_pays_enabled {
+        object.key("RequesterPaysEnabled").boolean(*var_9);
     }
-    if let Some(var_8) = &input.engine_version {
+    if let Some(var_10) = &input.engine_version {
         #[allow(unused_mut)]
-        let mut object_9 = object.key("EngineVersion").start_object();
-        crate::protocol_serde::shape_engine_version::ser_engine_version(&mut object_9, var_8)?;
-        object_9.finish();
+        let mut object_11 = object.key("EngineVersion").start_object();
+        crate::protocol_serde::shape_engine_version::ser_engine_version(&mut object_11, var_10)?;
+        object_11.finish();
     }
-    if let Some(var_10) = &input.remove_customer_content_encryption_configuration {
-        object.key("RemoveCustomerContentEncryptionConfiguration").boolean(*var_10);
+    if let Some(var_12) = &input.remove_customer_content_encryption_configuration {
+        object.key("RemoveCustomerContentEncryptionConfiguration").boolean(*var_12);
     }
-    if let Some(var_11) = &input.additional_configuration {
-        object.key("AdditionalConfiguration").string(var_11.as_str());
+    if let Some(var_13) = &input.additional_configuration {
+        object.key("AdditionalConfiguration").string(var_13.as_str());
     }
-    if let Some(var_12) = &input.execution_role {
-        object.key("ExecutionRole").string(var_12.as_str());
+    if let Some(var_14) = &input.execution_role {
+        object.key("ExecutionRole").string(var_14.as_str());
     }
-    if let Some(var_13) = &input.customer_content_encryption_configuration {
+    if let Some(var_15) = &input.customer_content_encryption_configuration {
         #[allow(unused_mut)]
-        let mut object_14 = object.key("CustomerContentEncryptionConfiguration").start_object();
+        let mut object_16 = object.key("CustomerContentEncryptionConfiguration").start_object();
         crate::protocol_serde::shape_customer_content_encryption_configuration::ser_customer_content_encryption_configuration(
-            &mut object_14,
-            var_13,
+            &mut object_16,
+            var_15,
         )?;
-        object_14.finish();
+        object_16.finish();
     }
-    if let Some(var_15) = &input.enable_minimum_encryption_configuration {
-        object.key("EnableMinimumEncryptionConfiguration").boolean(*var_15);
+    if let Some(var_17) = &input.enable_minimum_encryption_configuration {
+        object.key("EnableMinimumEncryptionConfiguration").boolean(*var_17);
     }
-    if let Some(var_16) = &input.query_results_s3_access_grants_configuration {
+    if let Some(var_18) = &input.query_results_s3_access_grants_configuration {
         #[allow(unused_mut)]
-        let mut object_17 = object.key("QueryResultsS3AccessGrantsConfiguration").start_object();
+        let mut object_19 = object.key("QueryResultsS3AccessGrantsConfiguration").start_object();
         crate::protocol_serde::shape_query_results_s3_access_grants_configuration::ser_query_results_s3_access_grants_configuration(
-            &mut object_17,
-            var_16,
+            &mut object_19,
+            var_18,
         )?;
-        object_17.finish();
+        object_19.finish();
     }
     Ok(())
 }

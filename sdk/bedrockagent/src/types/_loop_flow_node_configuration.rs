@@ -8,7 +8,7 @@
 /// <li>
 /// <p><code>LoopInput</code> - The entry point node for the loop. This node receives inputs from nodes outside the loop and from previous loop iterations.</p></li>
 /// <li>
-/// <p>Body nodes - These can be</p></li>
+/// <p>Body nodes - The processing nodes that execute within each loop iteration. These can be nodes for handling data in your flow, such as a prompt or Lambda function nodes. Some node types aren't supported inside a DoWhile loop body. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_LoopIncompatibleNodeTypeFlowValidationDetails.html">LoopIncompatibleNodeTypeFlowValidationDetails</a>.</p></li>
 /// <li>
 /// <p><code>LoopController</code> - The node that evaluates whether the loop should continue or exit based on a condition.</p></li>
 /// </ul>

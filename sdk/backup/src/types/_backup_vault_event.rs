@@ -22,6 +22,9 @@
 ///     BackupVaultEvent::CopyJobFailed => { /* ... */ },
 ///     BackupVaultEvent::CopyJobStarted => { /* ... */ },
 ///     BackupVaultEvent::CopyJobSuccessful => { /* ... */ },
+///     BackupVaultEvent::RecoveryPointIndexingFailed => { /* ... */ },
+///     BackupVaultEvent::RecoveryPointIndexCompleted => { /* ... */ },
+///     BackupVaultEvent::RecoveryPointIndexDeleted => { /* ... */ },
 ///     BackupVaultEvent::RecoveryPointModified => { /* ... */ },
 ///     BackupVaultEvent::RestoreJobCompleted => { /* ... */ },
 ///     BackupVaultEvent::RestoreJobFailed => { /* ... */ },
@@ -78,6 +81,12 @@ pub enum BackupVaultEvent {
     #[allow(missing_docs)] // documentation missing in model
     CopyJobSuccessful,
     #[allow(missing_docs)] // documentation missing in model
+    RecoveryPointIndexingFailed,
+    #[allow(missing_docs)] // documentation missing in model
+    RecoveryPointIndexCompleted,
+    #[allow(missing_docs)] // documentation missing in model
+    RecoveryPointIndexDeleted,
+    #[allow(missing_docs)] // documentation missing in model
     RecoveryPointModified,
     #[allow(missing_docs)] // documentation missing in model
     RestoreJobCompleted,
@@ -108,6 +117,9 @@ impl ::std::convert::From<&str> for BackupVaultEvent {
             "COPY_JOB_FAILED" => BackupVaultEvent::CopyJobFailed,
             "COPY_JOB_STARTED" => BackupVaultEvent::CopyJobStarted,
             "COPY_JOB_SUCCESSFUL" => BackupVaultEvent::CopyJobSuccessful,
+            "RECOVERY_POINT_INDEXING_FAILED" => BackupVaultEvent::RecoveryPointIndexingFailed,
+            "RECOVERY_POINT_INDEX_COMPLETED" => BackupVaultEvent::RecoveryPointIndexCompleted,
+            "RECOVERY_POINT_INDEX_DELETED" => BackupVaultEvent::RecoveryPointIndexDeleted,
             "RECOVERY_POINT_MODIFIED" => BackupVaultEvent::RecoveryPointModified,
             "RESTORE_JOB_COMPLETED" => BackupVaultEvent::RestoreJobCompleted,
             "RESTORE_JOB_FAILED" => BackupVaultEvent::RestoreJobFailed,
@@ -140,6 +152,9 @@ impl BackupVaultEvent {
             BackupVaultEvent::CopyJobFailed => "COPY_JOB_FAILED",
             BackupVaultEvent::CopyJobStarted => "COPY_JOB_STARTED",
             BackupVaultEvent::CopyJobSuccessful => "COPY_JOB_SUCCESSFUL",
+            BackupVaultEvent::RecoveryPointIndexingFailed => "RECOVERY_POINT_INDEXING_FAILED",
+            BackupVaultEvent::RecoveryPointIndexCompleted => "RECOVERY_POINT_INDEX_COMPLETED",
+            BackupVaultEvent::RecoveryPointIndexDeleted => "RECOVERY_POINT_INDEX_DELETED",
             BackupVaultEvent::RecoveryPointModified => "RECOVERY_POINT_MODIFIED",
             BackupVaultEvent::RestoreJobCompleted => "RESTORE_JOB_COMPLETED",
             BackupVaultEvent::RestoreJobFailed => "RESTORE_JOB_FAILED",
@@ -163,6 +178,9 @@ impl BackupVaultEvent {
             "COPY_JOB_FAILED",
             "COPY_JOB_STARTED",
             "COPY_JOB_SUCCESSFUL",
+            "RECOVERY_POINT_INDEXING_FAILED",
+            "RECOVERY_POINT_INDEX_COMPLETED",
+            "RECOVERY_POINT_INDEX_DELETED",
             "RECOVERY_POINT_MODIFIED",
             "RESTORE_JOB_COMPLETED",
             "RESTORE_JOB_FAILED",
@@ -203,6 +221,9 @@ impl ::std::fmt::Display for BackupVaultEvent {
             BackupVaultEvent::CopyJobFailed => write!(f, "COPY_JOB_FAILED"),
             BackupVaultEvent::CopyJobStarted => write!(f, "COPY_JOB_STARTED"),
             BackupVaultEvent::CopyJobSuccessful => write!(f, "COPY_JOB_SUCCESSFUL"),
+            BackupVaultEvent::RecoveryPointIndexingFailed => write!(f, "RECOVERY_POINT_INDEXING_FAILED"),
+            BackupVaultEvent::RecoveryPointIndexCompleted => write!(f, "RECOVERY_POINT_INDEX_COMPLETED"),
+            BackupVaultEvent::RecoveryPointIndexDeleted => write!(f, "RECOVERY_POINT_INDEX_DELETED"),
             BackupVaultEvent::RecoveryPointModified => write!(f, "RECOVERY_POINT_MODIFIED"),
             BackupVaultEvent::RestoreJobCompleted => write!(f, "RESTORE_JOB_COMPLETED"),
             BackupVaultEvent::RestoreJobFailed => write!(f, "RESTORE_JOB_FAILED"),

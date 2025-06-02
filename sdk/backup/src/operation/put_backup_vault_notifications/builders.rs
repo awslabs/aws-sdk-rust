@@ -146,13 +146,15 @@ impl PutBackupVaultNotificationsFluentBuilder {
     /// <p>The following events are supported:</p>
     /// <ul>
     /// <li>
-    /// <p><code>BACKUP_JOB_STARTED</code> | <code>BACKUP_JOB_COMPLETED</code></p></li>
+    /// <p><code>BACKUP_JOB_STARTED</code> | <code>BACKUP_JOB_COMPLETED</code> | <code>BACKUP_JOB_FAILED</code></p></li>
     /// <li>
     /// <p><code>COPY_JOB_STARTED</code> | <code>COPY_JOB_SUCCESSFUL</code> | <code>COPY_JOB_FAILED</code></p></li>
     /// <li>
     /// <p><code>RESTORE_JOB_STARTED</code> | <code>RESTORE_JOB_COMPLETED</code> | <code>RECOVERY_POINT_MODIFIED</code></p></li>
     /// <li>
     /// <p><code>S3_BACKUP_OBJECT_FAILED</code> | <code>S3_RESTORE_OBJECT_FAILED</code></p></li>
+    /// <li>
+    /// <p><code>RECOVERY_POINT_INDEX_COMPLETED</code> | <code>RECOVERY_POINT_INDEX_DELETED</code> | <code>RECOVERY_POINT_INDEXING_FAILED</code></p></li>
     /// </ul><note>
     /// <p>The list below includes both supported events and deprecated events that are no longer in use (for reference). Deprecated events do not return statuses or notifications. Refer to the list above for the supported events.</p>
     /// </note>
@@ -165,13 +167,15 @@ impl PutBackupVaultNotificationsFluentBuilder {
     /// <p>The following events are supported:</p>
     /// <ul>
     /// <li>
-    /// <p><code>BACKUP_JOB_STARTED</code> | <code>BACKUP_JOB_COMPLETED</code></p></li>
+    /// <p><code>BACKUP_JOB_STARTED</code> | <code>BACKUP_JOB_COMPLETED</code> | <code>BACKUP_JOB_FAILED</code></p></li>
     /// <li>
     /// <p><code>COPY_JOB_STARTED</code> | <code>COPY_JOB_SUCCESSFUL</code> | <code>COPY_JOB_FAILED</code></p></li>
     /// <li>
     /// <p><code>RESTORE_JOB_STARTED</code> | <code>RESTORE_JOB_COMPLETED</code> | <code>RECOVERY_POINT_MODIFIED</code></p></li>
     /// <li>
     /// <p><code>S3_BACKUP_OBJECT_FAILED</code> | <code>S3_RESTORE_OBJECT_FAILED</code></p></li>
+    /// <li>
+    /// <p><code>RECOVERY_POINT_INDEX_COMPLETED</code> | <code>RECOVERY_POINT_INDEX_DELETED</code> | <code>RECOVERY_POINT_INDEXING_FAILED</code></p></li>
     /// </ul><note>
     /// <p>The list below includes both supported events and deprecated events that are no longer in use (for reference). Deprecated events do not return statuses or notifications. Refer to the list above for the supported events.</p>
     /// </note>
@@ -184,13 +188,15 @@ impl PutBackupVaultNotificationsFluentBuilder {
     /// <p>The following events are supported:</p>
     /// <ul>
     /// <li>
-    /// <p><code>BACKUP_JOB_STARTED</code> | <code>BACKUP_JOB_COMPLETED</code></p></li>
+    /// <p><code>BACKUP_JOB_STARTED</code> | <code>BACKUP_JOB_COMPLETED</code> | <code>BACKUP_JOB_FAILED</code></p></li>
     /// <li>
     /// <p><code>COPY_JOB_STARTED</code> | <code>COPY_JOB_SUCCESSFUL</code> | <code>COPY_JOB_FAILED</code></p></li>
     /// <li>
     /// <p><code>RESTORE_JOB_STARTED</code> | <code>RESTORE_JOB_COMPLETED</code> | <code>RECOVERY_POINT_MODIFIED</code></p></li>
     /// <li>
     /// <p><code>S3_BACKUP_OBJECT_FAILED</code> | <code>S3_RESTORE_OBJECT_FAILED</code></p></li>
+    /// <li>
+    /// <p><code>RECOVERY_POINT_INDEX_COMPLETED</code> | <code>RECOVERY_POINT_INDEX_DELETED</code> | <code>RECOVERY_POINT_INDEXING_FAILED</code></p></li>
     /// </ul><note>
     /// <p>The list below includes both supported events and deprecated events that are no longer in use (for reference). Deprecated events do not return statuses or notifications. Refer to the list above for the supported events.</p>
     /// </note>

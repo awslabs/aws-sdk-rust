@@ -51,7 +51,7 @@ pub struct RestoreTestingSelectionForCreate {
     pub restore_metadata_overrides: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The unique name of the restore testing selection that belongs to the related restore testing plan.</p>
     pub restore_testing_selection_name: ::std::string::String,
-    /// <p>This is amount of hours (1 to 168) available to run a validation script on the data. The data will be deleted upon the completion of the validation script or the end of the specified retention period, whichever comes first.</p>
+    /// <p>This is amount of hours (0 to 168) available to run a validation script on the data. The data will be deleted upon the completion of the validation script or the end of the specified retention period, whichever comes first.</p>
     pub validation_window_hours: i32,
 }
 impl RestoreTestingSelectionForCreate {
@@ -108,7 +108,7 @@ impl RestoreTestingSelectionForCreate {
         use std::ops::Deref;
         self.restore_testing_selection_name.deref()
     }
-    /// <p>This is amount of hours (1 to 168) available to run a validation script on the data. The data will be deleted upon the completion of the validation script or the end of the specified retention period, whichever comes first.</p>
+    /// <p>This is amount of hours (0 to 168) available to run a validation script on the data. The data will be deleted upon the completion of the validation script or the end of the specified retention period, whichever comes first.</p>
     pub fn validation_window_hours(&self) -> i32 {
         self.validation_window_hours
     }
@@ -326,17 +326,17 @@ impl RestoreTestingSelectionForCreateBuilder {
     pub fn get_restore_testing_selection_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.restore_testing_selection_name
     }
-    /// <p>This is amount of hours (1 to 168) available to run a validation script on the data. The data will be deleted upon the completion of the validation script or the end of the specified retention period, whichever comes first.</p>
+    /// <p>This is amount of hours (0 to 168) available to run a validation script on the data. The data will be deleted upon the completion of the validation script or the end of the specified retention period, whichever comes first.</p>
     pub fn validation_window_hours(mut self, input: i32) -> Self {
         self.validation_window_hours = ::std::option::Option::Some(input);
         self
     }
-    /// <p>This is amount of hours (1 to 168) available to run a validation script on the data. The data will be deleted upon the completion of the validation script or the end of the specified retention period, whichever comes first.</p>
+    /// <p>This is amount of hours (0 to 168) available to run a validation script on the data. The data will be deleted upon the completion of the validation script or the end of the specified retention period, whichever comes first.</p>
     pub fn set_validation_window_hours(mut self, input: ::std::option::Option<i32>) -> Self {
         self.validation_window_hours = input;
         self
     }
-    /// <p>This is amount of hours (1 to 168) available to run a validation script on the data. The data will be deleted upon the completion of the validation script or the end of the specified retention period, whichever comes first.</p>
+    /// <p>This is amount of hours (0 to 168) available to run a validation script on the data. The data will be deleted upon the completion of the validation script or the end of the specified retention period, whichever comes first.</p>
     pub fn get_validation_window_hours(&self) -> &::std::option::Option<i32> {
         &self.validation_window_hours
     }

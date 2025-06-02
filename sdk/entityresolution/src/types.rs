@@ -93,6 +93,16 @@ pub use crate::types::_job_metrics::JobMetrics;
 
 pub use crate::types::_id_mapping_job_metrics::IdMappingJobMetrics;
 
+pub use crate::types::_failed_record::FailedRecord;
+
+pub use crate::types::_match_group::MatchGroup;
+
+pub use crate::types::_matched_record::MatchedRecord;
+
+pub use crate::types::_processing_type::ProcessingType;
+
+pub use crate::types::_record::Record;
+
 pub use crate::types::_deleted_unique_id::DeletedUniqueId;
 
 pub use crate::types::_delete_unique_id_error::DeleteUniqueIdError;
@@ -114,6 +124,8 @@ mod _delete_unique_id_status;
 mod _deleted_unique_id;
 
 mod _error_details;
+
+mod _failed_record;
 
 mod _id_mapping_job_metrics;
 
@@ -159,7 +171,11 @@ mod _job_status;
 
 mod _job_summary;
 
+mod _match_group;
+
 mod _match_purpose;
+
+mod _matched_record;
 
 mod _matching_workflow_summary;
 
@@ -170,6 +186,8 @@ mod _namespace_rule_based_properties;
 mod _output_attribute;
 
 mod _output_source;
+
+mod _processing_type;
 
 mod _provider_component_schema;
 
@@ -186,6 +204,8 @@ mod _provider_properties;
 mod _provider_schema_attribute;
 
 mod _provider_service_summary;
+
+mod _record;
 
 mod _record_matching_model;
 

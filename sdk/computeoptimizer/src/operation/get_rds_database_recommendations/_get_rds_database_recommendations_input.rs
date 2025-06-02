@@ -3,28 +3,28 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetRdsDatabaseRecommendationsInput {
-    /// <p>The ARN that identifies the Amazon RDS.</p>
+    /// <p>The ARN that identifies the Amazon Aurora or RDS database.</p>
     /// <p>The following is the format of the ARN:</p>
     /// <p><code>arn:aws:rds:{region}:{accountId}:db:{resourceName}</code></p>
     /// <p>The following is the format of a DB Cluster ARN:</p>
     /// <p><code>arn:aws:rds:{region}:{accountId}:cluster:{resourceName}</code></p>
     pub resource_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>The token to advance to the next page of Amazon RDS recommendations.</p>
+    /// <p>The token to advance to the next page of Amazon Aurora and RDS database recommendations.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
-    /// <p>The maximum number of Amazon RDS recommendations to return with a single request.</p>
+    /// <p>The maximum number of Amazon Aurora and RDS database recommendations to return with a single request.</p>
     /// <p>To retrieve the remaining results, make another request with the returned <code>nextToken</code> value.</p>
     pub max_results: ::std::option::Option<i32>,
-    /// <p>An array of objects to specify a filter that returns a more specific list of Amazon RDS recommendations.</p>
+    /// <p>An array of objects to specify a filter that returns a more specific list of Amazon Aurora and RDS database recommendations.</p>
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::RdsdbRecommendationFilter>>,
-    /// <p>Return the Amazon RDS recommendations to the specified Amazon Web Services account IDs.</p>
-    /// <p>If your account is the management account or the delegated administrator of an organization, use this parameter to return the Amazon RDS recommendations to specific member accounts.</p>
+    /// <p>Return the Amazon Aurora and RDS database recommendations to the specified Amazon Web Services account IDs.</p>
+    /// <p>If your account is the management account or the delegated administrator of an organization, use this parameter to return the Amazon Aurora and RDS database recommendations to specific member accounts.</p>
     /// <p>You can only specify one account ID per request.</p>
     pub account_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Describes the recommendation preferences to return in the response of a <code>GetAutoScalingGroupRecommendations</code>, <code>GetEC2InstanceRecommendations</code>, <code>GetEC2RecommendationProjectedMetrics</code>, <code>GetRDSDatabaseRecommendations</code>, and <code>GetRDSDatabaseRecommendationProjectedMetrics</code> request.</p>
     pub recommendation_preferences: ::std::option::Option<crate::types::RecommendationPreferences>,
 }
 impl GetRdsDatabaseRecommendationsInput {
-    /// <p>The ARN that identifies the Amazon RDS.</p>
+    /// <p>The ARN that identifies the Amazon Aurora or RDS database.</p>
     /// <p>The following is the format of the ARN:</p>
     /// <p><code>arn:aws:rds:{region}:{accountId}:db:{resourceName}</code></p>
     /// <p>The following is the format of a DB Cluster ARN:</p>
@@ -34,23 +34,23 @@ impl GetRdsDatabaseRecommendationsInput {
     pub fn resource_arns(&self) -> &[::std::string::String] {
         self.resource_arns.as_deref().unwrap_or_default()
     }
-    /// <p>The token to advance to the next page of Amazon RDS recommendations.</p>
+    /// <p>The token to advance to the next page of Amazon Aurora and RDS database recommendations.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The maximum number of Amazon RDS recommendations to return with a single request.</p>
+    /// <p>The maximum number of Amazon Aurora and RDS database recommendations to return with a single request.</p>
     /// <p>To retrieve the remaining results, make another request with the returned <code>nextToken</code> value.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
-    /// <p>An array of objects to specify a filter that returns a more specific list of Amazon RDS recommendations.</p>
+    /// <p>An array of objects to specify a filter that returns a more specific list of Amazon Aurora and RDS database recommendations.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
     pub fn filters(&self) -> &[crate::types::RdsdbRecommendationFilter] {
         self.filters.as_deref().unwrap_or_default()
     }
-    /// <p>Return the Amazon RDS recommendations to the specified Amazon Web Services account IDs.</p>
-    /// <p>If your account is the management account or the delegated administrator of an organization, use this parameter to return the Amazon RDS recommendations to specific member accounts.</p>
+    /// <p>Return the Amazon Aurora and RDS database recommendations to the specified Amazon Web Services account IDs.</p>
+    /// <p>If your account is the management account or the delegated administrator of an organization, use this parameter to return the Amazon Aurora and RDS database recommendations to specific member accounts.</p>
     /// <p>You can only specify one account ID per request.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.account_ids.is_none()`.
@@ -85,7 +85,7 @@ impl GetRdsDatabaseRecommendationsInputBuilder {
     ///
     /// To override the contents of this collection use [`set_resource_arns`](Self::set_resource_arns).
     ///
-    /// <p>The ARN that identifies the Amazon RDS.</p>
+    /// <p>The ARN that identifies the Amazon Aurora or RDS database.</p>
     /// <p>The following is the format of the ARN:</p>
     /// <p><code>arn:aws:rds:{region}:{accountId}:db:{resourceName}</code></p>
     /// <p>The following is the format of a DB Cluster ARN:</p>
@@ -96,7 +96,7 @@ impl GetRdsDatabaseRecommendationsInputBuilder {
         self.resource_arns = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The ARN that identifies the Amazon RDS.</p>
+    /// <p>The ARN that identifies the Amazon Aurora or RDS database.</p>
     /// <p>The following is the format of the ARN:</p>
     /// <p><code>arn:aws:rds:{region}:{accountId}:db:{resourceName}</code></p>
     /// <p>The following is the format of a DB Cluster ARN:</p>
@@ -105,7 +105,7 @@ impl GetRdsDatabaseRecommendationsInputBuilder {
         self.resource_arns = input;
         self
     }
-    /// <p>The ARN that identifies the Amazon RDS.</p>
+    /// <p>The ARN that identifies the Amazon Aurora or RDS database.</p>
     /// <p>The following is the format of the ARN:</p>
     /// <p><code>arn:aws:rds:{region}:{accountId}:db:{resourceName}</code></p>
     /// <p>The following is the format of a DB Cluster ARN:</p>
@@ -113,33 +113,33 @@ impl GetRdsDatabaseRecommendationsInputBuilder {
     pub fn get_resource_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.resource_arns
     }
-    /// <p>The token to advance to the next page of Amazon RDS recommendations.</p>
+    /// <p>The token to advance to the next page of Amazon Aurora and RDS database recommendations.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The token to advance to the next page of Amazon RDS recommendations.</p>
+    /// <p>The token to advance to the next page of Amazon Aurora and RDS database recommendations.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p>The token to advance to the next page of Amazon RDS recommendations.</p>
+    /// <p>The token to advance to the next page of Amazon Aurora and RDS database recommendations.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
-    /// <p>The maximum number of Amazon RDS recommendations to return with a single request.</p>
+    /// <p>The maximum number of Amazon Aurora and RDS database recommendations to return with a single request.</p>
     /// <p>To retrieve the remaining results, make another request with the returned <code>nextToken</code> value.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The maximum number of Amazon RDS recommendations to return with a single request.</p>
+    /// <p>The maximum number of Amazon Aurora and RDS database recommendations to return with a single request.</p>
     /// <p>To retrieve the remaining results, make another request with the returned <code>nextToken</code> value.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
     }
-    /// <p>The maximum number of Amazon RDS recommendations to return with a single request.</p>
+    /// <p>The maximum number of Amazon Aurora and RDS database recommendations to return with a single request.</p>
     /// <p>To retrieve the remaining results, make another request with the returned <code>nextToken</code> value.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
@@ -148,19 +148,19 @@ impl GetRdsDatabaseRecommendationsInputBuilder {
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
     ///
-    /// <p>An array of objects to specify a filter that returns a more specific list of Amazon RDS recommendations.</p>
+    /// <p>An array of objects to specify a filter that returns a more specific list of Amazon Aurora and RDS database recommendations.</p>
     pub fn filters(mut self, input: crate::types::RdsdbRecommendationFilter) -> Self {
         let mut v = self.filters.unwrap_or_default();
         v.push(input);
         self.filters = ::std::option::Option::Some(v);
         self
     }
-    /// <p>An array of objects to specify a filter that returns a more specific list of Amazon RDS recommendations.</p>
+    /// <p>An array of objects to specify a filter that returns a more specific list of Amazon Aurora and RDS database recommendations.</p>
     pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RdsdbRecommendationFilter>>) -> Self {
         self.filters = input;
         self
     }
-    /// <p>An array of objects to specify a filter that returns a more specific list of Amazon RDS recommendations.</p>
+    /// <p>An array of objects to specify a filter that returns a more specific list of Amazon Aurora and RDS database recommendations.</p>
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RdsdbRecommendationFilter>> {
         &self.filters
     }
@@ -168,8 +168,8 @@ impl GetRdsDatabaseRecommendationsInputBuilder {
     ///
     /// To override the contents of this collection use [`set_account_ids`](Self::set_account_ids).
     ///
-    /// <p>Return the Amazon RDS recommendations to the specified Amazon Web Services account IDs.</p>
-    /// <p>If your account is the management account or the delegated administrator of an organization, use this parameter to return the Amazon RDS recommendations to specific member accounts.</p>
+    /// <p>Return the Amazon Aurora and RDS database recommendations to the specified Amazon Web Services account IDs.</p>
+    /// <p>If your account is the management account or the delegated administrator of an organization, use this parameter to return the Amazon Aurora and RDS database recommendations to specific member accounts.</p>
     /// <p>You can only specify one account ID per request.</p>
     pub fn account_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.account_ids.unwrap_or_default();
@@ -177,15 +177,15 @@ impl GetRdsDatabaseRecommendationsInputBuilder {
         self.account_ids = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Return the Amazon RDS recommendations to the specified Amazon Web Services account IDs.</p>
-    /// <p>If your account is the management account or the delegated administrator of an organization, use this parameter to return the Amazon RDS recommendations to specific member accounts.</p>
+    /// <p>Return the Amazon Aurora and RDS database recommendations to the specified Amazon Web Services account IDs.</p>
+    /// <p>If your account is the management account or the delegated administrator of an organization, use this parameter to return the Amazon Aurora and RDS database recommendations to specific member accounts.</p>
     /// <p>You can only specify one account ID per request.</p>
     pub fn set_account_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.account_ids = input;
         self
     }
-    /// <p>Return the Amazon RDS recommendations to the specified Amazon Web Services account IDs.</p>
-    /// <p>If your account is the management account or the delegated administrator of an organization, use this parameter to return the Amazon RDS recommendations to specific member accounts.</p>
+    /// <p>Return the Amazon Aurora and RDS database recommendations to the specified Amazon Web Services account IDs.</p>
+    /// <p>If your account is the management account or the delegated administrator of an organization, use this parameter to return the Amazon Aurora and RDS database recommendations to specific member accounts.</p>
     /// <p>You can only specify one account ID per request.</p>
     pub fn get_account_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.account_ids

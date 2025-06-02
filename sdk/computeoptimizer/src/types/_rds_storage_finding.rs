@@ -12,6 +12,7 @@
 /// ```text
 /// # let rdsstoragefinding = unimplemented!();
 /// match rdsstoragefinding {
+///     RdsStorageFinding::NotOptimized => { /* ... */ },
 ///     RdsStorageFinding::Optimized => { /* ... */ },
 ///     RdsStorageFinding::OverProvisioned => { /* ... */ },
 ///     RdsStorageFinding::UnderProvisioned => { /* ... */ },
@@ -44,6 +45,8 @@
 )]
 pub enum RdsStorageFinding {
     #[allow(missing_docs)] // documentation missing in model
+    NotOptimized,
+    #[allow(missing_docs)] // documentation missing in model
     Optimized,
     #[allow(missing_docs)] // documentation missing in model
     OverProvisioned,
@@ -56,6 +59,7 @@ pub enum RdsStorageFinding {
 impl ::std::convert::From<&str> for RdsStorageFinding {
     fn from(s: &str) -> Self {
         match s {
+            "NotOptimized" => RdsStorageFinding::NotOptimized,
             "Optimized" => RdsStorageFinding::Optimized,
             "Overprovisioned" => RdsStorageFinding::OverProvisioned,
             "Underprovisioned" => RdsStorageFinding::UnderProvisioned,
@@ -74,6 +78,7 @@ impl RdsStorageFinding {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            RdsStorageFinding::NotOptimized => "NotOptimized",
             RdsStorageFinding::Optimized => "Optimized",
             RdsStorageFinding::OverProvisioned => "Overprovisioned",
             RdsStorageFinding::UnderProvisioned => "Underprovisioned",
@@ -82,7 +87,7 @@ impl RdsStorageFinding {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["Optimized", "Overprovisioned", "Underprovisioned"]
+        &["NotOptimized", "Optimized", "Overprovisioned", "Underprovisioned"]
     }
 }
 impl ::std::convert::AsRef<str> for RdsStorageFinding {
@@ -105,6 +110,7 @@ impl RdsStorageFinding {
 impl ::std::fmt::Display for RdsStorageFinding {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            RdsStorageFinding::NotOptimized => write!(f, "NotOptimized"),
             RdsStorageFinding::Optimized => write!(f, "Optimized"),
             RdsStorageFinding::OverProvisioned => write!(f, "Overprovisioned"),
             RdsStorageFinding::UnderProvisioned => write!(f, "Underprovisioned"),

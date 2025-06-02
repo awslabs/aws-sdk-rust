@@ -98,7 +98,15 @@ pub struct LogConfiguration {
     /// <p>This option defines the delivery mode of log messages from the container to the log driver specified using <code>logDriver</code>. The delivery mode you choose affects application availability when the flow of logs from container is interrupted.</p>
     /// <p>If you use the <code>blocking</code> mode and the flow of logs is interrupted, calls from container code to write to the <code>stdout</code> and <code>stderr</code> streams will block. The logging thread of the application will block as a result. This may cause the application to become unresponsive and lead to container healthcheck failure.</p>
     /// <p>If you use the <code>non-blocking</code> mode, the container's logs are instead stored in an in-memory intermediate buffer configured with the <code>max-buffer-size</code> option. This prevents the application from becoming unresponsive when logs cannot be sent. We recommend using this mode if you want to ensure service availability and are okay with some log loss. For more information, see <a href="http://aws.amazon.com/blogs/containers/preventing-log-loss-with-non-blocking-mode-in-the-awslogs-container-log-driver/">Preventing log loss with non-blocking mode in the <code>awslogs</code> container log driver</a>.</p>
-    /// <p>You can set a default <code>mode</code> for all containers in a specific Amazon Web Services Region by using the <code>defaultLogDriverMode</code> account setting. If you don't specify the <code>mode</code> option or configure the account setting, Amazon ECS will default to the <code>blocking</code> mode. For more information about the account setting, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-account-settings.html#default-log-driver-mode">Default log driver mode</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+    /// <p>You can set a default <code>mode</code> for all containers in a specific Amazon Web Services Region by using the <code>defaultLogDriverMode</code> account setting. If you don't specify the <code>mode</code> option or configure the account setting, Amazon ECS will default to the <code>blocking</code> mode. For more information about the account setting, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-account-settings.html#default-log-driver-mode">Default log driver mode</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p><note>
+    /// <p>On June 25, 2025, Amazon ECS is changing the default log driver mode from <code>blocking</code> to <code>non-blocking</code> to prioritize task availability over logging. To continue using the <code>blocking</code> mode after this change, do one of the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Set the <code>mode</code> option in your container definition's <code>logConfiguration</code> as <code>blocking</code>.</p></li>
+    /// <li>
+    /// <p>Set the <code>defaultLogDriverMode</code> account setting to <code>blocking</code>.</p></li>
+    /// </ul>
+    /// </note>
     /// </dd>
     /// <dt>
     /// max-buffer-size
@@ -203,7 +211,15 @@ impl LogConfiguration {
     /// <p>This option defines the delivery mode of log messages from the container to the log driver specified using <code>logDriver</code>. The delivery mode you choose affects application availability when the flow of logs from container is interrupted.</p>
     /// <p>If you use the <code>blocking</code> mode and the flow of logs is interrupted, calls from container code to write to the <code>stdout</code> and <code>stderr</code> streams will block. The logging thread of the application will block as a result. This may cause the application to become unresponsive and lead to container healthcheck failure.</p>
     /// <p>If you use the <code>non-blocking</code> mode, the container's logs are instead stored in an in-memory intermediate buffer configured with the <code>max-buffer-size</code> option. This prevents the application from becoming unresponsive when logs cannot be sent. We recommend using this mode if you want to ensure service availability and are okay with some log loss. For more information, see <a href="http://aws.amazon.com/blogs/containers/preventing-log-loss-with-non-blocking-mode-in-the-awslogs-container-log-driver/">Preventing log loss with non-blocking mode in the <code>awslogs</code> container log driver</a>.</p>
-    /// <p>You can set a default <code>mode</code> for all containers in a specific Amazon Web Services Region by using the <code>defaultLogDriverMode</code> account setting. If you don't specify the <code>mode</code> option or configure the account setting, Amazon ECS will default to the <code>blocking</code> mode. For more information about the account setting, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-account-settings.html#default-log-driver-mode">Default log driver mode</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+    /// <p>You can set a default <code>mode</code> for all containers in a specific Amazon Web Services Region by using the <code>defaultLogDriverMode</code> account setting. If you don't specify the <code>mode</code> option or configure the account setting, Amazon ECS will default to the <code>blocking</code> mode. For more information about the account setting, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-account-settings.html#default-log-driver-mode">Default log driver mode</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p><note>
+    /// <p>On June 25, 2025, Amazon ECS is changing the default log driver mode from <code>blocking</code> to <code>non-blocking</code> to prioritize task availability over logging. To continue using the <code>blocking</code> mode after this change, do one of the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Set the <code>mode</code> option in your container definition's <code>logConfiguration</code> as <code>blocking</code>.</p></li>
+    /// <li>
+    /// <p>Set the <code>defaultLogDriverMode</code> account setting to <code>blocking</code>.</p></li>
+    /// </ul>
+    /// </note>
     /// </dd>
     /// <dt>
     /// max-buffer-size
@@ -356,7 +372,15 @@ impl LogConfigurationBuilder {
     /// <p>This option defines the delivery mode of log messages from the container to the log driver specified using <code>logDriver</code>. The delivery mode you choose affects application availability when the flow of logs from container is interrupted.</p>
     /// <p>If you use the <code>blocking</code> mode and the flow of logs is interrupted, calls from container code to write to the <code>stdout</code> and <code>stderr</code> streams will block. The logging thread of the application will block as a result. This may cause the application to become unresponsive and lead to container healthcheck failure.</p>
     /// <p>If you use the <code>non-blocking</code> mode, the container's logs are instead stored in an in-memory intermediate buffer configured with the <code>max-buffer-size</code> option. This prevents the application from becoming unresponsive when logs cannot be sent. We recommend using this mode if you want to ensure service availability and are okay with some log loss. For more information, see <a href="http://aws.amazon.com/blogs/containers/preventing-log-loss-with-non-blocking-mode-in-the-awslogs-container-log-driver/">Preventing log loss with non-blocking mode in the <code>awslogs</code> container log driver</a>.</p>
-    /// <p>You can set a default <code>mode</code> for all containers in a specific Amazon Web Services Region by using the <code>defaultLogDriverMode</code> account setting. If you don't specify the <code>mode</code> option or configure the account setting, Amazon ECS will default to the <code>blocking</code> mode. For more information about the account setting, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-account-settings.html#default-log-driver-mode">Default log driver mode</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+    /// <p>You can set a default <code>mode</code> for all containers in a specific Amazon Web Services Region by using the <code>defaultLogDriverMode</code> account setting. If you don't specify the <code>mode</code> option or configure the account setting, Amazon ECS will default to the <code>blocking</code> mode. For more information about the account setting, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-account-settings.html#default-log-driver-mode">Default log driver mode</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p><note>
+    /// <p>On June 25, 2025, Amazon ECS is changing the default log driver mode from <code>blocking</code> to <code>non-blocking</code> to prioritize task availability over logging. To continue using the <code>blocking</code> mode after this change, do one of the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Set the <code>mode</code> option in your container definition's <code>logConfiguration</code> as <code>blocking</code>.</p></li>
+    /// <li>
+    /// <p>Set the <code>defaultLogDriverMode</code> account setting to <code>blocking</code>.</p></li>
+    /// </ul>
+    /// </note>
     /// </dd>
     /// <dt>
     /// max-buffer-size
@@ -452,7 +476,15 @@ impl LogConfigurationBuilder {
     /// <p>This option defines the delivery mode of log messages from the container to the log driver specified using <code>logDriver</code>. The delivery mode you choose affects application availability when the flow of logs from container is interrupted.</p>
     /// <p>If you use the <code>blocking</code> mode and the flow of logs is interrupted, calls from container code to write to the <code>stdout</code> and <code>stderr</code> streams will block. The logging thread of the application will block as a result. This may cause the application to become unresponsive and lead to container healthcheck failure.</p>
     /// <p>If you use the <code>non-blocking</code> mode, the container's logs are instead stored in an in-memory intermediate buffer configured with the <code>max-buffer-size</code> option. This prevents the application from becoming unresponsive when logs cannot be sent. We recommend using this mode if you want to ensure service availability and are okay with some log loss. For more information, see <a href="http://aws.amazon.com/blogs/containers/preventing-log-loss-with-non-blocking-mode-in-the-awslogs-container-log-driver/">Preventing log loss with non-blocking mode in the <code>awslogs</code> container log driver</a>.</p>
-    /// <p>You can set a default <code>mode</code> for all containers in a specific Amazon Web Services Region by using the <code>defaultLogDriverMode</code> account setting. If you don't specify the <code>mode</code> option or configure the account setting, Amazon ECS will default to the <code>blocking</code> mode. For more information about the account setting, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-account-settings.html#default-log-driver-mode">Default log driver mode</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+    /// <p>You can set a default <code>mode</code> for all containers in a specific Amazon Web Services Region by using the <code>defaultLogDriverMode</code> account setting. If you don't specify the <code>mode</code> option or configure the account setting, Amazon ECS will default to the <code>blocking</code> mode. For more information about the account setting, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-account-settings.html#default-log-driver-mode">Default log driver mode</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p><note>
+    /// <p>On June 25, 2025, Amazon ECS is changing the default log driver mode from <code>blocking</code> to <code>non-blocking</code> to prioritize task availability over logging. To continue using the <code>blocking</code> mode after this change, do one of the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Set the <code>mode</code> option in your container definition's <code>logConfiguration</code> as <code>blocking</code>.</p></li>
+    /// <li>
+    /// <p>Set the <code>defaultLogDriverMode</code> account setting to <code>blocking</code>.</p></li>
+    /// </ul>
+    /// </note>
     /// </dd>
     /// <dt>
     /// max-buffer-size
@@ -546,7 +578,15 @@ impl LogConfigurationBuilder {
     /// <p>This option defines the delivery mode of log messages from the container to the log driver specified using <code>logDriver</code>. The delivery mode you choose affects application availability when the flow of logs from container is interrupted.</p>
     /// <p>If you use the <code>blocking</code> mode and the flow of logs is interrupted, calls from container code to write to the <code>stdout</code> and <code>stderr</code> streams will block. The logging thread of the application will block as a result. This may cause the application to become unresponsive and lead to container healthcheck failure.</p>
     /// <p>If you use the <code>non-blocking</code> mode, the container's logs are instead stored in an in-memory intermediate buffer configured with the <code>max-buffer-size</code> option. This prevents the application from becoming unresponsive when logs cannot be sent. We recommend using this mode if you want to ensure service availability and are okay with some log loss. For more information, see <a href="http://aws.amazon.com/blogs/containers/preventing-log-loss-with-non-blocking-mode-in-the-awslogs-container-log-driver/">Preventing log loss with non-blocking mode in the <code>awslogs</code> container log driver</a>.</p>
-    /// <p>You can set a default <code>mode</code> for all containers in a specific Amazon Web Services Region by using the <code>defaultLogDriverMode</code> account setting. If you don't specify the <code>mode</code> option or configure the account setting, Amazon ECS will default to the <code>blocking</code> mode. For more information about the account setting, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-account-settings.html#default-log-driver-mode">Default log driver mode</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+    /// <p>You can set a default <code>mode</code> for all containers in a specific Amazon Web Services Region by using the <code>defaultLogDriverMode</code> account setting. If you don't specify the <code>mode</code> option or configure the account setting, Amazon ECS will default to the <code>blocking</code> mode. For more information about the account setting, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-account-settings.html#default-log-driver-mode">Default log driver mode</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p><note>
+    /// <p>On June 25, 2025, Amazon ECS is changing the default log driver mode from <code>blocking</code> to <code>non-blocking</code> to prioritize task availability over logging. To continue using the <code>blocking</code> mode after this change, do one of the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Set the <code>mode</code> option in your container definition's <code>logConfiguration</code> as <code>blocking</code>.</p></li>
+    /// <li>
+    /// <p>Set the <code>defaultLogDriverMode</code> account setting to <code>blocking</code>.</p></li>
+    /// </ul>
+    /// </note>
     /// </dd>
     /// <dt>
     /// max-buffer-size

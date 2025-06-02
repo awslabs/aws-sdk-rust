@@ -7,6 +7,10 @@ pub use crate::types::_customer_content_encryption_configuration::CustomerConten
 
 pub use crate::types::_engine_version::EngineVersionBuilder;
 
+pub use crate::types::_managed_query_results_configuration_updates::ManagedQueryResultsConfigurationUpdatesBuilder;
+
+pub use crate::types::_managed_query_results_encryption_configuration::ManagedQueryResultsEncryptionConfigurationBuilder;
+
 pub use crate::types::_result_configuration_updates::ResultConfigurationUpdatesBuilder;
 
 pub use crate::types::_acl_configuration::AclConfigurationBuilder;
@@ -68,6 +72,8 @@ pub use crate::types::_work_group::WorkGroupBuilder;
 pub use crate::types::_work_group_configuration::WorkGroupConfigurationBuilder;
 
 pub use crate::types::_identity_center_configuration::IdentityCenterConfigurationBuilder;
+
+pub use crate::types::_managed_query_results_configuration::ManagedQueryResultsConfigurationBuilder;
 
 pub use crate::types::_session_statistics::SessionStatisticsBuilder;
 

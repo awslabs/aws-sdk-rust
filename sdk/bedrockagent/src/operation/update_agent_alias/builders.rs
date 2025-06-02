@@ -186,4 +186,18 @@ impl UpdateAgentAliasFluentBuilder {
     pub fn get_routing_configuration(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AgentAliasRoutingConfigurationListItem>> {
         self.inner.get_routing_configuration()
     }
+    /// <p>The invocation state for the agent alias. To pause the agent alias, set the value to <code>REJECT_INVOCATIONS</code>. To start the agent alias running again, set the value to <code>ACCEPT_INVOCATIONS</code>. Use the <code>GetAgentAlias</code>, or <code>ListAgentAliases</code>, operation to get the invocation state of an agent alias.</p>
+    pub fn alias_invocation_state(mut self, input: crate::types::AliasInvocationState) -> Self {
+        self.inner = self.inner.alias_invocation_state(input);
+        self
+    }
+    /// <p>The invocation state for the agent alias. To pause the agent alias, set the value to <code>REJECT_INVOCATIONS</code>. To start the agent alias running again, set the value to <code>ACCEPT_INVOCATIONS</code>. Use the <code>GetAgentAlias</code>, or <code>ListAgentAliases</code>, operation to get the invocation state of an agent alias.</p>
+    pub fn set_alias_invocation_state(mut self, input: ::std::option::Option<crate::types::AliasInvocationState>) -> Self {
+        self.inner = self.inner.set_alias_invocation_state(input);
+        self
+    }
+    /// <p>The invocation state for the agent alias. To pause the agent alias, set the value to <code>REJECT_INVOCATIONS</code>. To start the agent alias running again, set the value to <code>ACCEPT_INVOCATIONS</code>. Use the <code>GetAgentAlias</code>, or <code>ListAgentAliases</code>, operation to get the invocation state of an agent alias.</p>
+    pub fn get_alias_invocation_state(&self) -> &::std::option::Option<crate::types::AliasInvocationState> {
+        self.inner.get_alias_invocation_state()
+    }
 }

@@ -171,6 +171,15 @@ pub(crate) fn executors_summary_correct_errors(
     builder
 }
 
+pub(crate) fn managed_query_results_configuration_correct_errors(
+    mut builder: crate::types::builders::ManagedQueryResultsConfigurationBuilder,
+) -> crate::types::builders::ManagedQueryResultsConfigurationBuilder {
+    if builder.enabled.is_none() {
+        builder.enabled = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn query_results_s3_access_grants_configuration_correct_errors(
     mut builder: crate::types::builders::QueryResultsS3AccessGrantsConfigurationBuilder,
 ) -> crate::types::builders::QueryResultsS3AccessGrantsConfigurationBuilder {
@@ -202,6 +211,15 @@ pub(crate) fn column_correct_errors(mut builder: crate::types::builders::ColumnB
 pub(crate) fn customer_content_encryption_configuration_correct_errors(
     mut builder: crate::types::builders::CustomerContentEncryptionConfigurationBuilder,
 ) -> crate::types::builders::CustomerContentEncryptionConfigurationBuilder {
+    if builder.kms_key.is_none() {
+        builder.kms_key = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn managed_query_results_encryption_configuration_correct_errors(
+    mut builder: crate::types::builders::ManagedQueryResultsEncryptionConfigurationBuilder,
+) -> crate::types::builders::ManagedQueryResultsEncryptionConfigurationBuilder {
     if builder.kms_key.is_none() {
         builder.kms_key = Some(Default::default())
     }

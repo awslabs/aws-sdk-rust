@@ -89,6 +89,8 @@ pub(crate) mod shape_validation_exception_details;
 
 pub(crate) mod shape_account_enrollment_status;
 
+pub(crate) mod shape_aurora_db_cluster_storage;
+
 pub(crate) mod shape_compute_savings_plans;
 
 pub(crate) mod shape_dynamo_db_reserved_capacity;
@@ -130,6 +132,8 @@ pub(crate) mod shape_sage_maker_savings_plans;
 pub(crate) mod shape_tag;
 
 pub(crate) mod shape_validation_exception_detail;
+
+pub(crate) mod shape_aurora_db_cluster_storage_configuration;
 
 pub(crate) mod shape_compute_savings_plans_configuration;
 

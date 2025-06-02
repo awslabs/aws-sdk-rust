@@ -159,4 +159,18 @@ impl GetQueryResultsFluentBuilder {
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_results()
     }
+    /// <p>When you set this to <code>DATA_ROWS</code> or empty, <code>GetQueryResults</code> returns the query results in rows. If set to <code>DATA_MANIFEST</code>, it returns the manifest file in rows. Only the query types <code>CREATE TABLE AS SELECT</code>, <code>UNLOAD</code>, and <code>INSERT</code> can generate a manifest file. If you use <code>DATA_MANIFEST</code> for other query types, the query will fail.</p>
+    pub fn query_result_type(mut self, input: crate::types::QueryResultType) -> Self {
+        self.inner = self.inner.query_result_type(input);
+        self
+    }
+    /// <p>When you set this to <code>DATA_ROWS</code> or empty, <code>GetQueryResults</code> returns the query results in rows. If set to <code>DATA_MANIFEST</code>, it returns the manifest file in rows. Only the query types <code>CREATE TABLE AS SELECT</code>, <code>UNLOAD</code>, and <code>INSERT</code> can generate a manifest file. If you use <code>DATA_MANIFEST</code> for other query types, the query will fail.</p>
+    pub fn set_query_result_type(mut self, input: ::std::option::Option<crate::types::QueryResultType>) -> Self {
+        self.inner = self.inner.set_query_result_type(input);
+        self
+    }
+    /// <p>When you set this to <code>DATA_ROWS</code> or empty, <code>GetQueryResults</code> returns the query results in rows. If set to <code>DATA_MANIFEST</code>, it returns the manifest file in rows. Only the query types <code>CREATE TABLE AS SELECT</code>, <code>UNLOAD</code>, and <code>INSERT</code> can generate a manifest file. If you use <code>DATA_MANIFEST</code> for other query types, the query will fail.</p>
+    pub fn get_query_result_type(&self) -> &::std::option::Option<crate::types::QueryResultType> {
+        self.inner.get_query_result_type()
+    }
 }

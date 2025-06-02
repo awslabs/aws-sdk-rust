@@ -22,7 +22,7 @@ impl crate::operation::get_rds_database_recommendation_projected_metrics::builde
 }
 /// Fluent builder constructing a request to `GetRDSDatabaseRecommendationProjectedMetrics`.
 ///
-/// <p>Returns the projected metrics of Amazon RDS recommendations.</p>
+/// <p>Returns the projected metrics of Aurora and RDS database recommendations.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetRDSDatabaseRecommendationProjectedMetricsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -115,21 +115,21 @@ impl GetRDSDatabaseRecommendationProjectedMetricsFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The ARN that identifies the Amazon RDS.</p>
+    /// <p>The ARN that identifies the Amazon Aurora or RDS database.</p>
     /// <p>The following is the format of the ARN:</p>
     /// <p><code>arn:aws:rds:{region}:{accountId}:db:{resourceName}</code></p>
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_arn(input.into());
         self
     }
-    /// <p>The ARN that identifies the Amazon RDS.</p>
+    /// <p>The ARN that identifies the Amazon Aurora or RDS database.</p>
     /// <p>The following is the format of the ARN:</p>
     /// <p><code>arn:aws:rds:{region}:{accountId}:db:{resourceName}</code></p>
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_resource_arn(input);
         self
     }
-    /// <p>The ARN that identifies the Amazon RDS.</p>
+    /// <p>The ARN that identifies the Amazon Aurora or RDS database.</p>
     /// <p>The following is the format of the ARN:</p>
     /// <p><code>arn:aws:rds:{region}:{accountId}:db:{resourceName}</code></p>
     pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {

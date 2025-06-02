@@ -34,6 +34,9 @@ pub mod delete_policy_statement;
 /// Types for the `DeleteSchemaMapping` operation.
 pub mod delete_schema_mapping;
 
+/// Types for the `GenerateMatchId` operation.
+pub mod generate_match_id;
+
 /// Types for the `GetIdMappingJob` operation.
 pub mod get_id_mapping_job;
 

@@ -55,7 +55,7 @@ pub use crate::types::_dynamo_db_reserved_capacity::DynamoDbReservedCapacity;
 
 pub use crate::types::_dynamo_db_reserved_capacity_configuration::DynamoDbReservedCapacityConfiguration;
 
-pub use crate::types::_rds_db_instance_storage::RdsDbInstanceStorage;
+pub use crate::types::_aurora_db_cluster_storage::AuroraDbClusterStorage;
 
 pub use crate::types::_resource_cost_calculation::ResourceCostCalculation;
 
@@ -64,6 +64,10 @@ pub use crate::types::_resource_pricing::ResourcePricing;
 pub use crate::types::_estimated_discounts::EstimatedDiscounts;
 
 pub use crate::types::_usage::Usage;
+
+pub use crate::types::_aurora_db_cluster_storage_configuration::AuroraDbClusterStorageConfiguration;
+
+pub use crate::types::_rds_db_instance_storage::RdsDbInstanceStorage;
 
 pub use crate::types::_rds_db_instance_storage_configuration::RdsDbInstanceStorageConfiguration;
 
@@ -148,6 +152,10 @@ mod _account_enrollment_status;
 mod _action_type;
 
 mod _allocation_strategy;
+
+mod _aurora_db_cluster_storage;
+
+mod _aurora_db_cluster_storage_configuration;
 
 mod _block_storage_performance_configuration;
 

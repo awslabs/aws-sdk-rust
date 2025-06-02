@@ -42,6 +42,8 @@ pub struct AgentAlias {
     pub agent_alias_status: crate::types::AgentAliasStatus,
     /// <p>Information on the failure of Provisioned Throughput assigned to an agent alias.</p>
     pub failure_reasons: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>The invocation state for the agent alias. If the agent alias is running, the value is <code>ACCEPT_INVOCATIONS</code>. If the agent alias is paused, the value is <code>REJECT_INVOCATIONS</code>. Use the <code>UpdateAgentAlias</code> operation to change the invocation state.</p>
+    pub alias_invocation_state: ::std::option::Option<crate::types::AliasInvocationState>,
 }
 impl AgentAlias {
     /// <p>The unique identifier of the agent.</p>
@@ -115,6 +117,10 @@ impl AgentAlias {
     pub fn failure_reasons(&self) -> &[::std::string::String] {
         self.failure_reasons.as_deref().unwrap_or_default()
     }
+    /// <p>The invocation state for the agent alias. If the agent alias is running, the value is <code>ACCEPT_INVOCATIONS</code>. If the agent alias is paused, the value is <code>REJECT_INVOCATIONS</code>. Use the <code>UpdateAgentAlias</code> operation to change the invocation state.</p>
+    pub fn alias_invocation_state(&self) -> ::std::option::Option<&crate::types::AliasInvocationState> {
+        self.alias_invocation_state.as_ref()
+    }
 }
 impl AgentAlias {
     /// Creates a new builder-style object to manufacture [`AgentAlias`](crate::types::AgentAlias).
@@ -139,6 +145,7 @@ pub struct AgentAliasBuilder {
     pub(crate) agent_alias_history_events: ::std::option::Option<::std::vec::Vec<crate::types::AgentAliasHistoryEvent>>,
     pub(crate) agent_alias_status: ::std::option::Option<crate::types::AgentAliasStatus>,
     pub(crate) failure_reasons: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) alias_invocation_state: ::std::option::Option<crate::types::AliasInvocationState>,
 }
 impl AgentAliasBuilder {
     /// <p>The unique identifier of the agent.</p>
@@ -379,6 +386,20 @@ impl AgentAliasBuilder {
     pub fn get_failure_reasons(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.failure_reasons
     }
+    /// <p>The invocation state for the agent alias. If the agent alias is running, the value is <code>ACCEPT_INVOCATIONS</code>. If the agent alias is paused, the value is <code>REJECT_INVOCATIONS</code>. Use the <code>UpdateAgentAlias</code> operation to change the invocation state.</p>
+    pub fn alias_invocation_state(mut self, input: crate::types::AliasInvocationState) -> Self {
+        self.alias_invocation_state = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The invocation state for the agent alias. If the agent alias is running, the value is <code>ACCEPT_INVOCATIONS</code>. If the agent alias is paused, the value is <code>REJECT_INVOCATIONS</code>. Use the <code>UpdateAgentAlias</code> operation to change the invocation state.</p>
+    pub fn set_alias_invocation_state(mut self, input: ::std::option::Option<crate::types::AliasInvocationState>) -> Self {
+        self.alias_invocation_state = input;
+        self
+    }
+    /// <p>The invocation state for the agent alias. If the agent alias is running, the value is <code>ACCEPT_INVOCATIONS</code>. If the agent alias is paused, the value is <code>REJECT_INVOCATIONS</code>. Use the <code>UpdateAgentAlias</code> operation to change the invocation state.</p>
+    pub fn get_alias_invocation_state(&self) -> &::std::option::Option<crate::types::AliasInvocationState> {
+        &self.alias_invocation_state
+    }
     /// Consumes the builder and constructs a [`AgentAlias`](crate::types::AgentAlias).
     /// This method will fail if any of the following fields are not set:
     /// - [`agent_id`](crate::types::builders::AgentAliasBuilder::agent_id)
@@ -443,6 +464,7 @@ impl AgentAliasBuilder {
                 )
             })?,
             failure_reasons: self.failure_reasons,
+            alias_invocation_state: self.alias_invocation_state,
         })
     }
 }

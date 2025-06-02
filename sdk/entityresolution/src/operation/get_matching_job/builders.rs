@@ -22,7 +22,7 @@ impl crate::operation::get_matching_job::builders::GetMatchingJobInputBuilder {
 }
 /// Fluent builder constructing a request to `GetMatchingJob`.
 ///
-/// <p>Gets the status, metrics, and errors (if there are any) that are associated with a job.</p>
+/// <p>Returns the status, metrics, and errors (if there are any) that are associated with a job.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetMatchingJobFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

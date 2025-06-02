@@ -8,7 +8,10 @@ pub struct BackupRule {
     pub rule_name: ::std::string::String,
     /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created.</p>
     pub target_backup_vault_name: ::std::string::String,
-    /// <p>A cron expression in UTC specifying when Backup initiates a backup job. For more information about Amazon Web Services cron expressions, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html">Schedule Expressions for Rules</a> in the <i>Amazon CloudWatch Events User Guide.</i>. Two examples of Amazon Web Services cron expressions are <code> 15 * ? * * *</code> (take a backup every hour at 15 minutes past the hour) and <code>0 12 * * ? *</code> (take a backup every day at 12 noon UTC). For a table of examples, click the preceding link and scroll down the page.</p>
+    /// <p>A cron expression in UTC specifying when Backup initiates a backup job. When no CRON expression is provided, Backup will use the default expression <code>cron(0 5 ? * * *)</code>.</p>
+    /// <p>For more information about Amazon Web Services cron expressions, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html">Schedule Expressions for Rules</a> in the <i>Amazon CloudWatch Events User Guide</i>.</p>
+    /// <p>Two examples of Amazon Web Services cron expressions are <code> 15 * ? * * *</code> (take a backup every hour at 15 minutes past the hour) and <code>0 12 * * ? *</code> (take a backup every day at 12 noon UTC).</p>
+    /// <p>For a table of examples, click the preceding link and scroll down the page.</p>
     pub schedule_expression: ::std::option::Option<::std::string::String>,
     /// <p>A value in minutes after a backup is scheduled before a job will be canceled if it doesn't start successfully. This value is optional. If this value is included, it must be at least 60 minutes to avoid errors.</p>
     /// <p>During the start window, the backup job status remains in <code>CREATED</code> status until it has successfully begun or until the start window time has run out. If within the start window time Backup receives an error that allows the job to be retried, Backup will automatically retry to begin the job at least every 10 minutes until the backup successfully begins (the job status changes to <code>RUNNING</code>) or until the job status changes to <code>EXPIRED</code> (which is expected to occur when the start window time is over).</p>
@@ -45,7 +48,10 @@ impl BackupRule {
         use std::ops::Deref;
         self.target_backup_vault_name.deref()
     }
-    /// <p>A cron expression in UTC specifying when Backup initiates a backup job. For more information about Amazon Web Services cron expressions, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html">Schedule Expressions for Rules</a> in the <i>Amazon CloudWatch Events User Guide.</i>. Two examples of Amazon Web Services cron expressions are <code> 15 * ? * * *</code> (take a backup every hour at 15 minutes past the hour) and <code>0 12 * * ? *</code> (take a backup every day at 12 noon UTC). For a table of examples, click the preceding link and scroll down the page.</p>
+    /// <p>A cron expression in UTC specifying when Backup initiates a backup job. When no CRON expression is provided, Backup will use the default expression <code>cron(0 5 ? * * *)</code>.</p>
+    /// <p>For more information about Amazon Web Services cron expressions, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html">Schedule Expressions for Rules</a> in the <i>Amazon CloudWatch Events User Guide</i>.</p>
+    /// <p>Two examples of Amazon Web Services cron expressions are <code> 15 * ? * * *</code> (take a backup every hour at 15 minutes past the hour) and <code>0 12 * * ? *</code> (take a backup every day at 12 noon UTC).</p>
+    /// <p>For a table of examples, click the preceding link and scroll down the page.</p>
     pub fn schedule_expression(&self) -> ::std::option::Option<&str> {
         self.schedule_expression.as_deref()
     }
@@ -168,17 +174,26 @@ impl BackupRuleBuilder {
     pub fn get_target_backup_vault_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.target_backup_vault_name
     }
-    /// <p>A cron expression in UTC specifying when Backup initiates a backup job. For more information about Amazon Web Services cron expressions, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html">Schedule Expressions for Rules</a> in the <i>Amazon CloudWatch Events User Guide.</i>. Two examples of Amazon Web Services cron expressions are <code> 15 * ? * * *</code> (take a backup every hour at 15 minutes past the hour) and <code>0 12 * * ? *</code> (take a backup every day at 12 noon UTC). For a table of examples, click the preceding link and scroll down the page.</p>
+    /// <p>A cron expression in UTC specifying when Backup initiates a backup job. When no CRON expression is provided, Backup will use the default expression <code>cron(0 5 ? * * *)</code>.</p>
+    /// <p>For more information about Amazon Web Services cron expressions, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html">Schedule Expressions for Rules</a> in the <i>Amazon CloudWatch Events User Guide</i>.</p>
+    /// <p>Two examples of Amazon Web Services cron expressions are <code> 15 * ? * * *</code> (take a backup every hour at 15 minutes past the hour) and <code>0 12 * * ? *</code> (take a backup every day at 12 noon UTC).</p>
+    /// <p>For a table of examples, click the preceding link and scroll down the page.</p>
     pub fn schedule_expression(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.schedule_expression = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A cron expression in UTC specifying when Backup initiates a backup job. For more information about Amazon Web Services cron expressions, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html">Schedule Expressions for Rules</a> in the <i>Amazon CloudWatch Events User Guide.</i>. Two examples of Amazon Web Services cron expressions are <code> 15 * ? * * *</code> (take a backup every hour at 15 minutes past the hour) and <code>0 12 * * ? *</code> (take a backup every day at 12 noon UTC). For a table of examples, click the preceding link and scroll down the page.</p>
+    /// <p>A cron expression in UTC specifying when Backup initiates a backup job. When no CRON expression is provided, Backup will use the default expression <code>cron(0 5 ? * * *)</code>.</p>
+    /// <p>For more information about Amazon Web Services cron expressions, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html">Schedule Expressions for Rules</a> in the <i>Amazon CloudWatch Events User Guide</i>.</p>
+    /// <p>Two examples of Amazon Web Services cron expressions are <code> 15 * ? * * *</code> (take a backup every hour at 15 minutes past the hour) and <code>0 12 * * ? *</code> (take a backup every day at 12 noon UTC).</p>
+    /// <p>For a table of examples, click the preceding link and scroll down the page.</p>
     pub fn set_schedule_expression(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.schedule_expression = input;
         self
     }
-    /// <p>A cron expression in UTC specifying when Backup initiates a backup job. For more information about Amazon Web Services cron expressions, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html">Schedule Expressions for Rules</a> in the <i>Amazon CloudWatch Events User Guide.</i>. Two examples of Amazon Web Services cron expressions are <code> 15 * ? * * *</code> (take a backup every hour at 15 minutes past the hour) and <code>0 12 * * ? *</code> (take a backup every day at 12 noon UTC). For a table of examples, click the preceding link and scroll down the page.</p>
+    /// <p>A cron expression in UTC specifying when Backup initiates a backup job. When no CRON expression is provided, Backup will use the default expression <code>cron(0 5 ? * * *)</code>.</p>
+    /// <p>For more information about Amazon Web Services cron expressions, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html">Schedule Expressions for Rules</a> in the <i>Amazon CloudWatch Events User Guide</i>.</p>
+    /// <p>Two examples of Amazon Web Services cron expressions are <code> 15 * ? * * *</code> (take a backup every hour at 15 minutes past the hour) and <code>0 12 * * ? *</code> (take a backup every day at 12 noon UTC).</p>
+    /// <p>For a table of examples, click the preceding link and scroll down the page.</p>
     pub fn get_schedule_expression(&self) -> &::std::option::Option<::std::string::String> {
         &self.schedule_expression
     }

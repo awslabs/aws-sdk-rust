@@ -555,6 +555,8 @@ pub use crate::types::_data_source_summary::DataSourceSummary;
 
 pub use crate::types::_agent_alias::AgentAlias;
 
+pub use crate::types::_alias_invocation_state::AliasInvocationState;
+
 pub use crate::types::_agent_alias_status::AgentAliasStatus;
 
 pub use crate::types::_agent_alias_history_event::AgentAliasHistoryEvent;
@@ -650,6 +652,8 @@ mod _agent_summary;
 mod _agent_version;
 
 mod _agent_version_summary;
+
+mod _alias_invocation_state;
 
 mod _any_tool_choice;
 

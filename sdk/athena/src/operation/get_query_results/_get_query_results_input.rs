@@ -9,6 +9,8 @@ pub struct GetQueryResultsInput {
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results (rows) to return in this request.</p>
     pub max_results: ::std::option::Option<i32>,
+    /// <p>When you set this to <code>DATA_ROWS</code> or empty, <code>GetQueryResults</code> returns the query results in rows. If set to <code>DATA_MANIFEST</code>, it returns the manifest file in rows. Only the query types <code>CREATE TABLE AS SELECT</code>, <code>UNLOAD</code>, and <code>INSERT</code> can generate a manifest file. If you use <code>DATA_MANIFEST</code> for other query types, the query will fail.</p>
+    pub query_result_type: ::std::option::Option<crate::types::QueryResultType>,
 }
 impl GetQueryResultsInput {
     /// <p>The unique ID of the query execution.</p>
@@ -22,6 +24,10 @@ impl GetQueryResultsInput {
     /// <p>The maximum number of results (rows) to return in this request.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
+    }
+    /// <p>When you set this to <code>DATA_ROWS</code> or empty, <code>GetQueryResults</code> returns the query results in rows. If set to <code>DATA_MANIFEST</code>, it returns the manifest file in rows. Only the query types <code>CREATE TABLE AS SELECT</code>, <code>UNLOAD</code>, and <code>INSERT</code> can generate a manifest file. If you use <code>DATA_MANIFEST</code> for other query types, the query will fail.</p>
+    pub fn query_result_type(&self) -> ::std::option::Option<&crate::types::QueryResultType> {
+        self.query_result_type.as_ref()
     }
 }
 impl GetQueryResultsInput {
@@ -38,6 +44,7 @@ pub struct GetQueryResultsInputBuilder {
     pub(crate) query_execution_id: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
+    pub(crate) query_result_type: ::std::option::Option<crate::types::QueryResultType>,
 }
 impl GetQueryResultsInputBuilder {
     /// <p>The unique ID of the query execution.</p>
@@ -83,6 +90,20 @@ impl GetQueryResultsInputBuilder {
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
+    /// <p>When you set this to <code>DATA_ROWS</code> or empty, <code>GetQueryResults</code> returns the query results in rows. If set to <code>DATA_MANIFEST</code>, it returns the manifest file in rows. Only the query types <code>CREATE TABLE AS SELECT</code>, <code>UNLOAD</code>, and <code>INSERT</code> can generate a manifest file. If you use <code>DATA_MANIFEST</code> for other query types, the query will fail.</p>
+    pub fn query_result_type(mut self, input: crate::types::QueryResultType) -> Self {
+        self.query_result_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>When you set this to <code>DATA_ROWS</code> or empty, <code>GetQueryResults</code> returns the query results in rows. If set to <code>DATA_MANIFEST</code>, it returns the manifest file in rows. Only the query types <code>CREATE TABLE AS SELECT</code>, <code>UNLOAD</code>, and <code>INSERT</code> can generate a manifest file. If you use <code>DATA_MANIFEST</code> for other query types, the query will fail.</p>
+    pub fn set_query_result_type(mut self, input: ::std::option::Option<crate::types::QueryResultType>) -> Self {
+        self.query_result_type = input;
+        self
+    }
+    /// <p>When you set this to <code>DATA_ROWS</code> or empty, <code>GetQueryResults</code> returns the query results in rows. If set to <code>DATA_MANIFEST</code>, it returns the manifest file in rows. Only the query types <code>CREATE TABLE AS SELECT</code>, <code>UNLOAD</code>, and <code>INSERT</code> can generate a manifest file. If you use <code>DATA_MANIFEST</code> for other query types, the query will fail.</p>
+    pub fn get_query_result_type(&self) -> &::std::option::Option<crate::types::QueryResultType> {
+        &self.query_result_type
+    }
     /// Consumes the builder and constructs a [`GetQueryResultsInput`](crate::operation::get_query_results::GetQueryResultsInput).
     pub fn build(
         self,
@@ -91,6 +112,7 @@ impl GetQueryResultsInputBuilder {
             query_execution_id: self.query_execution_id,
             next_token: self.next_token,
             max_results: self.max_results,
+            query_result_type: self.query_result_type,
         })
     }
 }

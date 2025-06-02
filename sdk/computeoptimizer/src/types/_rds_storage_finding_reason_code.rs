@@ -12,6 +12,8 @@
 /// ```text
 /// # let rdsstoragefindingreasoncode = unimplemented!();
 /// match rdsstoragefindingreasoncode {
+///     RdsStorageFindingReasonCode::DbClusterStorageOptionAvailable => { /* ... */ },
+///     RdsStorageFindingReasonCode::DbClusterStorageSavingsAvailable => { /* ... */ },
 ///     RdsStorageFindingReasonCode::EbsVolumeAllocatedStorageUnderProvisioned => { /* ... */ },
 ///     RdsStorageFindingReasonCode::EbsVolumeIopsOverProvisioned => { /* ... */ },
 ///     RdsStorageFindingReasonCode::EbsVolumeThroughputOverProvisioned => { /* ... */ },
@@ -46,6 +48,10 @@
 )]
 pub enum RdsStorageFindingReasonCode {
     #[allow(missing_docs)] // documentation missing in model
+    DbClusterStorageOptionAvailable,
+    #[allow(missing_docs)] // documentation missing in model
+    DbClusterStorageSavingsAvailable,
+    #[allow(missing_docs)] // documentation missing in model
     EbsVolumeAllocatedStorageUnderProvisioned,
     #[allow(missing_docs)] // documentation missing in model
     EbsVolumeIopsOverProvisioned,
@@ -62,6 +68,8 @@ pub enum RdsStorageFindingReasonCode {
 impl ::std::convert::From<&str> for RdsStorageFindingReasonCode {
     fn from(s: &str) -> Self {
         match s {
+            "DBClusterStorageOptionAvailable" => RdsStorageFindingReasonCode::DbClusterStorageOptionAvailable,
+            "DBClusterStorageSavingsAvailable" => RdsStorageFindingReasonCode::DbClusterStorageSavingsAvailable,
             "EBSVolumeAllocatedStorageUnderprovisioned" => RdsStorageFindingReasonCode::EbsVolumeAllocatedStorageUnderProvisioned,
             "EBSVolumeIOPSOverprovisioned" => RdsStorageFindingReasonCode::EbsVolumeIopsOverProvisioned,
             "EBSVolumeThroughputOverprovisioned" => RdsStorageFindingReasonCode::EbsVolumeThroughputOverProvisioned,
@@ -82,6 +90,8 @@ impl RdsStorageFindingReasonCode {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            RdsStorageFindingReasonCode::DbClusterStorageOptionAvailable => "DBClusterStorageOptionAvailable",
+            RdsStorageFindingReasonCode::DbClusterStorageSavingsAvailable => "DBClusterStorageSavingsAvailable",
             RdsStorageFindingReasonCode::EbsVolumeAllocatedStorageUnderProvisioned => "EBSVolumeAllocatedStorageUnderprovisioned",
             RdsStorageFindingReasonCode::EbsVolumeIopsOverProvisioned => "EBSVolumeIOPSOverprovisioned",
             RdsStorageFindingReasonCode::EbsVolumeThroughputOverProvisioned => "EBSVolumeThroughputOverprovisioned",
@@ -93,6 +103,8 @@ impl RdsStorageFindingReasonCode {
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
+            "DBClusterStorageOptionAvailable",
+            "DBClusterStorageSavingsAvailable",
             "EBSVolumeAllocatedStorageUnderprovisioned",
             "EBSVolumeIOPSOverprovisioned",
             "EBSVolumeThroughputOverprovisioned",
@@ -121,6 +133,8 @@ impl RdsStorageFindingReasonCode {
 impl ::std::fmt::Display for RdsStorageFindingReasonCode {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            RdsStorageFindingReasonCode::DbClusterStorageOptionAvailable => write!(f, "DBClusterStorageOptionAvailable"),
+            RdsStorageFindingReasonCode::DbClusterStorageSavingsAvailable => write!(f, "DBClusterStorageSavingsAvailable"),
             RdsStorageFindingReasonCode::EbsVolumeAllocatedStorageUnderProvisioned => write!(f, "EBSVolumeAllocatedStorageUnderprovisioned"),
             RdsStorageFindingReasonCode::EbsVolumeIopsOverProvisioned => write!(f, "EBSVolumeIOPSOverprovisioned"),
             RdsStorageFindingReasonCode::EbsVolumeThroughputOverProvisioned => write!(f, "EBSVolumeThroughputOverprovisioned"),

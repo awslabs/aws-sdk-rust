@@ -22,9 +22,9 @@ impl crate::operation::export_rds_database_recommendations::builders::ExportRdsD
 }
 /// Fluent builder constructing a request to `ExportRDSDatabaseRecommendations`.
 ///
-/// <p>Export optimization recommendations for your Amazon Relational Database Service (Amazon RDS).</p>
+/// <p>Export optimization recommendations for your Amazon Aurora and Amazon Relational Database Service (Amazon RDS) databases.</p>
 /// <p>Recommendations are exported in a comma-separated values (CSV) file, and its metadata in a JavaScript Object Notation (JSON) file, to an existing Amazon Simple Storage Service (Amazon S3) bucket that you specify. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/exporting-recommendations.html">Exporting Recommendations</a> in the <i>Compute Optimizer User Guide</i>.</p>
-/// <p>You can have only one Amazon RDS export job in progress per Amazon Web Services Region.</p>
+/// <p>You can have only one Amazon Aurora or RDS export job in progress per Amazon Web Services Region.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ExportRDSDatabaseRecommendationsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -115,7 +115,7 @@ impl ExportRDSDatabaseRecommendationsFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_account_ids`](Self::set_account_ids).
     ///
-    /// <p>The Amazon Web Services account IDs for the export Amazon RDS recommendations.</p>
+    /// <p>The Amazon Web Services account IDs for the export Amazon Aurora and RDS database recommendations.</p>
     /// <p>If your account is the management account or the delegated administrator of an organization, use this parameter to specify the member account you want to export recommendations to.</p>
     /// <p>This parameter can't be specified together with the include member accounts parameter. The parameters are mutually exclusive.</p>
     /// <p>If this parameter or the include member accounts parameter is omitted, the recommendations for member accounts aren't included in the export.</p>
@@ -124,7 +124,7 @@ impl ExportRDSDatabaseRecommendationsFluentBuilder {
         self.inner = self.inner.account_ids(input.into());
         self
     }
-    /// <p>The Amazon Web Services account IDs for the export Amazon RDS recommendations.</p>
+    /// <p>The Amazon Web Services account IDs for the export Amazon Aurora and RDS database recommendations.</p>
     /// <p>If your account is the management account or the delegated administrator of an organization, use this parameter to specify the member account you want to export recommendations to.</p>
     /// <p>This parameter can't be specified together with the include member accounts parameter. The parameters are mutually exclusive.</p>
     /// <p>If this parameter or the include member accounts parameter is omitted, the recommendations for member accounts aren't included in the export.</p>
@@ -133,7 +133,7 @@ impl ExportRDSDatabaseRecommendationsFluentBuilder {
         self.inner = self.inner.set_account_ids(input);
         self
     }
-    /// <p>The Amazon Web Services account IDs for the export Amazon RDS recommendations.</p>
+    /// <p>The Amazon Web Services account IDs for the export Amazon Aurora and RDS database recommendations.</p>
     /// <p>If your account is the management account or the delegated administrator of an organization, use this parameter to specify the member account you want to export recommendations to.</p>
     /// <p>This parameter can't be specified together with the include member accounts parameter. The parameters are mutually exclusive.</p>
     /// <p>If this parameter or the include member accounts parameter is omitted, the recommendations for member accounts aren't included in the export.</p>
@@ -146,17 +146,17 @@ impl ExportRDSDatabaseRecommendationsFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
     ///
-    /// <p>An array of objects to specify a filter that exports a more specific set of Amazon RDS recommendations.</p>
+    /// <p>An array of objects to specify a filter that exports a more specific set of Amazon Aurora and RDS recommendations.</p>
     pub fn filters(mut self, input: crate::types::RdsdbRecommendationFilter) -> Self {
         self.inner = self.inner.filters(input);
         self
     }
-    /// <p>An array of objects to specify a filter that exports a more specific set of Amazon RDS recommendations.</p>
+    /// <p>An array of objects to specify a filter that exports a more specific set of Amazon Aurora and RDS recommendations.</p>
     pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RdsdbRecommendationFilter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
-    /// <p>An array of objects to specify a filter that exports a more specific set of Amazon RDS recommendations.</p>
+    /// <p>An array of objects to specify a filter that exports a more specific set of Amazon Aurora and RDS recommendations.</p>
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RdsdbRecommendationFilter>> {
         self.inner.get_filters()
     }

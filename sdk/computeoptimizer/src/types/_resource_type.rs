@@ -12,6 +12,7 @@
 /// ```text
 /// # let resourcetype = unimplemented!();
 /// match resourcetype {
+///     ResourceType::AuroraDbClusterStorage => { /* ... */ },
 ///     ResourceType::AutoScalingGroup => { /* ... */ },
 ///     ResourceType::EbsVolume => { /* ... */ },
 ///     ResourceType::Ec2Instance => { /* ... */ },
@@ -50,6 +51,8 @@
 )]
 pub enum ResourceType {
     #[allow(missing_docs)] // documentation missing in model
+    AuroraDbClusterStorage,
+    #[allow(missing_docs)] // documentation missing in model
     AutoScalingGroup,
     #[allow(missing_docs)] // documentation missing in model
     EbsVolume,
@@ -74,6 +77,7 @@ pub enum ResourceType {
 impl ::std::convert::From<&str> for ResourceType {
     fn from(s: &str) -> Self {
         match s {
+            "AuroraDBClusterStorage" => ResourceType::AuroraDbClusterStorage,
             "AutoScalingGroup" => ResourceType::AutoScalingGroup,
             "EbsVolume" => ResourceType::EbsVolume,
             "Ec2Instance" => ResourceType::Ec2Instance,
@@ -98,6 +102,7 @@ impl ResourceType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            ResourceType::AuroraDbClusterStorage => "AuroraDBClusterStorage",
             ResourceType::AutoScalingGroup => "AutoScalingGroup",
             ResourceType::EbsVolume => "EbsVolume",
             ResourceType::Ec2Instance => "Ec2Instance",
@@ -113,6 +118,7 @@ impl ResourceType {
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
+            "AuroraDBClusterStorage",
             "AutoScalingGroup",
             "EbsVolume",
             "Ec2Instance",
@@ -145,6 +151,7 @@ impl ResourceType {
 impl ::std::fmt::Display for ResourceType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            ResourceType::AuroraDbClusterStorage => write!(f, "AuroraDBClusterStorage"),
             ResourceType::AutoScalingGroup => write!(f, "AutoScalingGroup"),
             ResourceType::EbsVolume => write!(f, "EbsVolume"),
             ResourceType::Ec2Instance => write!(f, "Ec2Instance"),

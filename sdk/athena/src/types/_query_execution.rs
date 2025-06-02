@@ -8,8 +8,10 @@ pub struct QueryExecution {
     pub query_execution_id: ::std::option::Option<::std::string::String>,
     /// <p>The SQL query statements which the query execution ran.</p>
     pub query: ::std::option::Option<::std::string::String>,
-    /// <p>The type of query statement that was run. <code>DDL</code> indicates DDL query statements. <code>DML</code> indicates DML (Data Manipulation Language) query statements, such as <code>CREATE TABLE AS SELECT</code>. <code>UTILITY</code> indicates query statements other than DDL and DML, such as <code>SHOW CREATE TABLE</code>, <code>EXPLAIN</code>, <code>DESCRIBE</code>, or <code>SHOW TABLES</code>.</p>
+    /// <p>The type of query statement that was run. <code>DDL</code> indicates DDL query statements. <code>DML</code> indicates DML (Data Manipulation Language) query statements, such as <code>CREATE TABLE AS SELECT</code>. <code>UTILITY</code> indicates query statements other than DDL and DML, such as <code>SHOW CREATE TABLE</code>, or <code>DESCRIBE TABLE</code>.</p>
     pub statement_type: ::std::option::Option<crate::types::StatementType>,
+    /// <p>The configuration for storing results in Athena owned storage, which includes whether this feature is enabled; whether encryption configuration, if any, is used for encrypting query results.</p>
+    pub managed_query_results_configuration: ::std::option::Option<crate::types::ManagedQueryResultsConfiguration>,
     /// <p>The location in Amazon S3 where query and calculation results are stored and the encryption option, if any, used for query results. These are known as "client-side settings". If workgroup settings override client-side settings, then the query uses the location for the query results and the encryption configuration that are specified for the workgroup.</p>
     pub result_configuration: ::std::option::Option<crate::types::ResultConfiguration>,
     /// <p>Specifies the query result reuse behavior that was used for the query.</p>
@@ -40,9 +42,13 @@ impl QueryExecution {
     pub fn query(&self) -> ::std::option::Option<&str> {
         self.query.as_deref()
     }
-    /// <p>The type of query statement that was run. <code>DDL</code> indicates DDL query statements. <code>DML</code> indicates DML (Data Manipulation Language) query statements, such as <code>CREATE TABLE AS SELECT</code>. <code>UTILITY</code> indicates query statements other than DDL and DML, such as <code>SHOW CREATE TABLE</code>, <code>EXPLAIN</code>, <code>DESCRIBE</code>, or <code>SHOW TABLES</code>.</p>
+    /// <p>The type of query statement that was run. <code>DDL</code> indicates DDL query statements. <code>DML</code> indicates DML (Data Manipulation Language) query statements, such as <code>CREATE TABLE AS SELECT</code>. <code>UTILITY</code> indicates query statements other than DDL and DML, such as <code>SHOW CREATE TABLE</code>, or <code>DESCRIBE TABLE</code>.</p>
     pub fn statement_type(&self) -> ::std::option::Option<&crate::types::StatementType> {
         self.statement_type.as_ref()
+    }
+    /// <p>The configuration for storing results in Athena owned storage, which includes whether this feature is enabled; whether encryption configuration, if any, is used for encrypting query results.</p>
+    pub fn managed_query_results_configuration(&self) -> ::std::option::Option<&crate::types::ManagedQueryResultsConfiguration> {
+        self.managed_query_results_configuration.as_ref()
     }
     /// <p>The location in Amazon S3 where query and calculation results are stored and the encryption option, if any, used for query results. These are known as "client-side settings". If workgroup settings override client-side settings, then the query uses the location for the query results and the encryption configuration that are specified for the workgroup.</p>
     pub fn result_configuration(&self) -> ::std::option::Option<&crate::types::ResultConfiguration> {
@@ -101,6 +107,7 @@ pub struct QueryExecutionBuilder {
     pub(crate) query_execution_id: ::std::option::Option<::std::string::String>,
     pub(crate) query: ::std::option::Option<::std::string::String>,
     pub(crate) statement_type: ::std::option::Option<crate::types::StatementType>,
+    pub(crate) managed_query_results_configuration: ::std::option::Option<crate::types::ManagedQueryResultsConfiguration>,
     pub(crate) result_configuration: ::std::option::Option<crate::types::ResultConfiguration>,
     pub(crate) result_reuse_configuration: ::std::option::Option<crate::types::ResultReuseConfiguration>,
     pub(crate) query_execution_context: ::std::option::Option<crate::types::QueryExecutionContext>,
@@ -141,19 +148,33 @@ impl QueryExecutionBuilder {
     pub fn get_query(&self) -> &::std::option::Option<::std::string::String> {
         &self.query
     }
-    /// <p>The type of query statement that was run. <code>DDL</code> indicates DDL query statements. <code>DML</code> indicates DML (Data Manipulation Language) query statements, such as <code>CREATE TABLE AS SELECT</code>. <code>UTILITY</code> indicates query statements other than DDL and DML, such as <code>SHOW CREATE TABLE</code>, <code>EXPLAIN</code>, <code>DESCRIBE</code>, or <code>SHOW TABLES</code>.</p>
+    /// <p>The type of query statement that was run. <code>DDL</code> indicates DDL query statements. <code>DML</code> indicates DML (Data Manipulation Language) query statements, such as <code>CREATE TABLE AS SELECT</code>. <code>UTILITY</code> indicates query statements other than DDL and DML, such as <code>SHOW CREATE TABLE</code>, or <code>DESCRIBE TABLE</code>.</p>
     pub fn statement_type(mut self, input: crate::types::StatementType) -> Self {
         self.statement_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The type of query statement that was run. <code>DDL</code> indicates DDL query statements. <code>DML</code> indicates DML (Data Manipulation Language) query statements, such as <code>CREATE TABLE AS SELECT</code>. <code>UTILITY</code> indicates query statements other than DDL and DML, such as <code>SHOW CREATE TABLE</code>, <code>EXPLAIN</code>, <code>DESCRIBE</code>, or <code>SHOW TABLES</code>.</p>
+    /// <p>The type of query statement that was run. <code>DDL</code> indicates DDL query statements. <code>DML</code> indicates DML (Data Manipulation Language) query statements, such as <code>CREATE TABLE AS SELECT</code>. <code>UTILITY</code> indicates query statements other than DDL and DML, such as <code>SHOW CREATE TABLE</code>, or <code>DESCRIBE TABLE</code>.</p>
     pub fn set_statement_type(mut self, input: ::std::option::Option<crate::types::StatementType>) -> Self {
         self.statement_type = input;
         self
     }
-    /// <p>The type of query statement that was run. <code>DDL</code> indicates DDL query statements. <code>DML</code> indicates DML (Data Manipulation Language) query statements, such as <code>CREATE TABLE AS SELECT</code>. <code>UTILITY</code> indicates query statements other than DDL and DML, such as <code>SHOW CREATE TABLE</code>, <code>EXPLAIN</code>, <code>DESCRIBE</code>, or <code>SHOW TABLES</code>.</p>
+    /// <p>The type of query statement that was run. <code>DDL</code> indicates DDL query statements. <code>DML</code> indicates DML (Data Manipulation Language) query statements, such as <code>CREATE TABLE AS SELECT</code>. <code>UTILITY</code> indicates query statements other than DDL and DML, such as <code>SHOW CREATE TABLE</code>, or <code>DESCRIBE TABLE</code>.</p>
     pub fn get_statement_type(&self) -> &::std::option::Option<crate::types::StatementType> {
         &self.statement_type
+    }
+    /// <p>The configuration for storing results in Athena owned storage, which includes whether this feature is enabled; whether encryption configuration, if any, is used for encrypting query results.</p>
+    pub fn managed_query_results_configuration(mut self, input: crate::types::ManagedQueryResultsConfiguration) -> Self {
+        self.managed_query_results_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The configuration for storing results in Athena owned storage, which includes whether this feature is enabled; whether encryption configuration, if any, is used for encrypting query results.</p>
+    pub fn set_managed_query_results_configuration(mut self, input: ::std::option::Option<crate::types::ManagedQueryResultsConfiguration>) -> Self {
+        self.managed_query_results_configuration = input;
+        self
+    }
+    /// <p>The configuration for storing results in Athena owned storage, which includes whether this feature is enabled; whether encryption configuration, if any, is used for encrypting query results.</p>
+    pub fn get_managed_query_results_configuration(&self) -> &::std::option::Option<crate::types::ManagedQueryResultsConfiguration> {
+        &self.managed_query_results_configuration
     }
     /// <p>The location in Amazon S3 where query and calculation results are stored and the encryption option, if any, used for query results. These are known as "client-side settings". If workgroup settings override client-side settings, then the query uses the location for the query results and the encryption configuration that are specified for the workgroup.</p>
     pub fn result_configuration(mut self, input: crate::types::ResultConfiguration) -> Self {
@@ -310,6 +331,7 @@ impl QueryExecutionBuilder {
             query_execution_id: self.query_execution_id,
             query: self.query,
             statement_type: self.statement_type,
+            managed_query_results_configuration: self.managed_query_results_configuration,
             result_configuration: self.result_configuration,
             result_reuse_configuration: self.result_reuse_configuration,
             query_execution_context: self.query_execution_context,

@@ -114,6 +114,11 @@ where
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'rdsDbInstanceStorage' cannot be null")
                             })?,
                         )),
+                        "auroraDbClusterStorage" => Some(crate::types::ResourceDetails::AuroraDbClusterStorage(
+                            crate::protocol_serde::shape_aurora_db_cluster_storage::de_aurora_db_cluster_storage(tokens)?.ok_or_else(|| {
+                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'auroraDbClusterStorage' cannot be null")
+                            })?,
+                        )),
                         "dynamoDbReservedCapacity" => Some(crate::types::ResourceDetails::DynamoDbReservedCapacity(
                             crate::protocol_serde::shape_dynamo_db_reserved_capacity::de_dynamo_db_reserved_capacity(tokens)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'dynamoDbReservedCapacity' cannot be null")

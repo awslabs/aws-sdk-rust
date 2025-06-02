@@ -29,6 +29,9 @@
 ///     RdsdbMetricName::ReadIopsEphemeralStorage => { /* ... */ },
 ///     RdsdbMetricName::StorageNetworkReceiveThroughput => { /* ... */ },
 ///     RdsdbMetricName::StorageNetworkTransmitThroughput => { /* ... */ },
+///     RdsdbMetricName::VolumeBytesUsed => { /* ... */ },
+///     RdsdbMetricName::VolumeReadIops => { /* ... */ },
+///     RdsdbMetricName::VolumeWriteIops => { /* ... */ },
 ///     RdsdbMetricName::WriteIopsEphemeralStorage => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -93,6 +96,12 @@ pub enum RdsdbMetricName {
     #[allow(missing_docs)] // documentation missing in model
     StorageNetworkTransmitThroughput,
     #[allow(missing_docs)] // documentation missing in model
+    VolumeBytesUsed,
+    #[allow(missing_docs)] // documentation missing in model
+    VolumeReadIops,
+    #[allow(missing_docs)] // documentation missing in model
+    VolumeWriteIops,
+    #[allow(missing_docs)] // documentation missing in model
     WriteIopsEphemeralStorage,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
@@ -118,6 +127,9 @@ impl ::std::convert::From<&str> for RdsdbMetricName {
             "ReadIOPSEphemeralStorage" => RdsdbMetricName::ReadIopsEphemeralStorage,
             "StorageNetworkReceiveThroughput" => RdsdbMetricName::StorageNetworkReceiveThroughput,
             "StorageNetworkTransmitThroughput" => RdsdbMetricName::StorageNetworkTransmitThroughput,
+            "VolumeBytesUsed" => RdsdbMetricName::VolumeBytesUsed,
+            "VolumeReadIOPs" => RdsdbMetricName::VolumeReadIops,
+            "VolumeWriteIOPs" => RdsdbMetricName::VolumeWriteIops,
             "WriteIOPSEphemeralStorage" => RdsdbMetricName::WriteIopsEphemeralStorage,
             other => RdsdbMetricName::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -151,6 +163,9 @@ impl RdsdbMetricName {
             RdsdbMetricName::ReadIopsEphemeralStorage => "ReadIOPSEphemeralStorage",
             RdsdbMetricName::StorageNetworkReceiveThroughput => "StorageNetworkReceiveThroughput",
             RdsdbMetricName::StorageNetworkTransmitThroughput => "StorageNetworkTransmitThroughput",
+            RdsdbMetricName::VolumeBytesUsed => "VolumeBytesUsed",
+            RdsdbMetricName::VolumeReadIops => "VolumeReadIOPs",
+            RdsdbMetricName::VolumeWriteIops => "VolumeWriteIOPs",
             RdsdbMetricName::WriteIopsEphemeralStorage => "WriteIOPSEphemeralStorage",
             RdsdbMetricName::Unknown(value) => value.as_str(),
         }
@@ -175,6 +190,9 @@ impl RdsdbMetricName {
             "ReadIOPSEphemeralStorage",
             "StorageNetworkReceiveThroughput",
             "StorageNetworkTransmitThroughput",
+            "VolumeBytesUsed",
+            "VolumeReadIOPs",
+            "VolumeWriteIOPs",
             "WriteIOPSEphemeralStorage",
         ]
     }
@@ -216,6 +234,9 @@ impl ::std::fmt::Display for RdsdbMetricName {
             RdsdbMetricName::ReadIopsEphemeralStorage => write!(f, "ReadIOPSEphemeralStorage"),
             RdsdbMetricName::StorageNetworkReceiveThroughput => write!(f, "StorageNetworkReceiveThroughput"),
             RdsdbMetricName::StorageNetworkTransmitThroughput => write!(f, "StorageNetworkTransmitThroughput"),
+            RdsdbMetricName::VolumeBytesUsed => write!(f, "VolumeBytesUsed"),
+            RdsdbMetricName::VolumeReadIops => write!(f, "VolumeReadIOPs"),
+            RdsdbMetricName::VolumeWriteIops => write!(f, "VolumeWriteIOPs"),
             RdsdbMetricName::WriteIopsEphemeralStorage => write!(f, "WriteIOPSEphemeralStorage"),
             RdsdbMetricName::Unknown(value) => write!(f, "{}", value),
         }

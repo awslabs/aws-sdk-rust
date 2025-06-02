@@ -18,7 +18,9 @@ pub struct Queue {
     pub modified_at: ::aws_smithy_types::DateTime,
     /// <p>The provisioning status of the queue.</p><note>
     /// <p>The provisioning status doesn't indicate the overall health of the queue.</p>
-    /// </note>
+    /// </note> <important>
+    /// <p>The resource enters the <code>SUSPENDING</code> and <code>SUSPENDED</code> states when the scheduler is beyond end of life and we have suspended the cluster. When in these states, you can't use the cluster. The cluster controller is down and all compute instances are terminated. The resources still count toward your service quotas. You can delete a resource if its status is <code>SUSPENDED</code>. For more information, see <a href="https://docs.aws.amazon.com/pcs/latest/userguide/slurm-versions_faq.html">Frequently asked questions about Slurm versions in PCS</a> in the <i>PCS User Guide</i>.</p>
+    /// </important>
     pub status: crate::types::QueueStatus,
     /// <p>The list of compute node group configurations associated with the queue. Queues assign jobs to associated compute node groups.</p>
     pub compute_node_group_configurations: ::std::vec::Vec<crate::types::ComputeNodeGroupConfiguration>,
@@ -56,7 +58,9 @@ impl Queue {
     }
     /// <p>The provisioning status of the queue.</p><note>
     /// <p>The provisioning status doesn't indicate the overall health of the queue.</p>
-    /// </note>
+    /// </note> <important>
+    /// <p>The resource enters the <code>SUSPENDING</code> and <code>SUSPENDED</code> states when the scheduler is beyond end of life and we have suspended the cluster. When in these states, you can't use the cluster. The cluster controller is down and all compute instances are terminated. The resources still count toward your service quotas. You can delete a resource if its status is <code>SUSPENDED</code>. For more information, see <a href="https://docs.aws.amazon.com/pcs/latest/userguide/slurm-versions_faq.html">Frequently asked questions about Slurm versions in PCS</a> in the <i>PCS User Guide</i>.</p>
+    /// </important>
     pub fn status(&self) -> &crate::types::QueueStatus {
         &self.status
     }
@@ -186,7 +190,9 @@ impl QueueBuilder {
     }
     /// <p>The provisioning status of the queue.</p><note>
     /// <p>The provisioning status doesn't indicate the overall health of the queue.</p>
-    /// </note>
+    /// </note> <important>
+    /// <p>The resource enters the <code>SUSPENDING</code> and <code>SUSPENDED</code> states when the scheduler is beyond end of life and we have suspended the cluster. When in these states, you can't use the cluster. The cluster controller is down and all compute instances are terminated. The resources still count toward your service quotas. You can delete a resource if its status is <code>SUSPENDED</code>. For more information, see <a href="https://docs.aws.amazon.com/pcs/latest/userguide/slurm-versions_faq.html">Frequently asked questions about Slurm versions in PCS</a> in the <i>PCS User Guide</i>.</p>
+    /// </important>
     /// This field is required.
     pub fn status(mut self, input: crate::types::QueueStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -194,14 +200,18 @@ impl QueueBuilder {
     }
     /// <p>The provisioning status of the queue.</p><note>
     /// <p>The provisioning status doesn't indicate the overall health of the queue.</p>
-    /// </note>
+    /// </note> <important>
+    /// <p>The resource enters the <code>SUSPENDING</code> and <code>SUSPENDED</code> states when the scheduler is beyond end of life and we have suspended the cluster. When in these states, you can't use the cluster. The cluster controller is down and all compute instances are terminated. The resources still count toward your service quotas. You can delete a resource if its status is <code>SUSPENDED</code>. For more information, see <a href="https://docs.aws.amazon.com/pcs/latest/userguide/slurm-versions_faq.html">Frequently asked questions about Slurm versions in PCS</a> in the <i>PCS User Guide</i>.</p>
+    /// </important>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::QueueStatus>) -> Self {
         self.status = input;
         self
     }
     /// <p>The provisioning status of the queue.</p><note>
     /// <p>The provisioning status doesn't indicate the overall health of the queue.</p>
-    /// </note>
+    /// </note> <important>
+    /// <p>The resource enters the <code>SUSPENDING</code> and <code>SUSPENDED</code> states when the scheduler is beyond end of life and we have suspended the cluster. When in these states, you can't use the cluster. The cluster controller is down and all compute instances are terminated. The resources still count toward your service quotas. You can delete a resource if its status is <code>SUSPENDED</code>. For more information, see <a href="https://docs.aws.amazon.com/pcs/latest/userguide/slurm-versions_faq.html">Frequently asked questions about Slurm versions in PCS</a> in the <i>PCS User Guide</i>.</p>
+    /// </important>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::QueueStatus> {
         &self.status
     }

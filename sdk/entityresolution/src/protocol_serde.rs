@@ -45,6 +45,8 @@ pub(crate) mod shape_delete_policy_statement;
 
 pub(crate) mod shape_delete_schema_mapping;
 
+pub(crate) mod shape_generate_match_id;
+
 pub(crate) mod shape_get_id_mapping_job;
 
 pub(crate) mod shape_get_id_mapping_workflow;
@@ -121,6 +123,8 @@ pub(crate) mod shape_create_schema_mapping_input;
 
 pub(crate) mod shape_exceeds_limit_exception;
 
+pub(crate) mod shape_generate_match_id_input;
+
 pub(crate) mod shape_get_match_id_input;
 
 pub(crate) mod shape_internal_server_exception;
@@ -152,6 +156,8 @@ pub(crate) mod shape_deleted_unique_id_list;
 pub(crate) mod shape_disconnected_unique_ids_list;
 
 pub(crate) mod shape_error_details;
+
+pub(crate) mod shape_failed_records_list;
 
 pub(crate) mod shape_id_mapping_job_metrics;
 
@@ -193,6 +199,8 @@ pub(crate) mod shape_job_metrics;
 
 pub(crate) mod shape_job_output_source_config;
 
+pub(crate) mod shape_match_groups_list;
+
 pub(crate) mod shape_matching_workflow_list;
 
 pub(crate) mod shape_output_source;
@@ -208,6 +216,8 @@ pub(crate) mod shape_provider_id_name_space_configuration;
 pub(crate) mod shape_provider_intermediate_data_access_configuration;
 
 pub(crate) mod shape_provider_service_list;
+
+pub(crate) mod shape_record;
 
 pub(crate) mod shape_resolution_techniques;
 
@@ -225,6 +235,8 @@ pub(crate) mod shape_delete_unique_id_error;
 
 pub(crate) mod shape_deleted_unique_id;
 
+pub(crate) mod shape_failed_record;
+
 pub(crate) mod shape_id_mapping_rule_based_properties;
 
 pub(crate) mod shape_id_mapping_workflow_summary;
@@ -234,6 +246,8 @@ pub(crate) mod shape_id_namespace_summary;
 pub(crate) mod shape_job_output_source;
 
 pub(crate) mod shape_job_summary;
+
+pub(crate) mod shape_match_group;
 
 pub(crate) mod shape_matching_workflow_summary;
 
@@ -263,6 +277,8 @@ pub(crate) mod shape_id_namespace_id_mapping_workflow_metadata_list;
 
 pub(crate) mod shape_intermediate_source_configuration;
 
+pub(crate) mod shape_matched_records_list;
+
 pub(crate) mod shape_output_attributes;
 
 pub(crate) mod shape_provider_schema_attribute;
@@ -276,6 +292,8 @@ pub(crate) mod shape_schema_list;
 pub(crate) mod shape_id_mapping_workflow_rule_definition_type_list;
 
 pub(crate) mod shape_id_namespace_id_mapping_workflow_metadata;
+
+pub(crate) mod shape_matched_record;
 
 pub(crate) mod shape_record_matching_model_list;
 

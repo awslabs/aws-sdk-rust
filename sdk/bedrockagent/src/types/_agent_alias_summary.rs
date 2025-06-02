@@ -18,6 +18,8 @@ pub struct AgentAliasSummary {
     pub created_at: ::aws_smithy_types::DateTime,
     /// <p>The time at which the alias was last updated.</p>
     pub updated_at: ::aws_smithy_types::DateTime,
+    /// <p>The invocation state for the agent alias. If the agent alias is running, the value is <code>ACCEPT_INVOCATIONS</code>. If the agent alias is paused, the value is <code>REJECT_INVOCATIONS</code>. Use the <code>UpdateAgentAlias</code> operation to change the invocation state.</p>
+    pub alias_invocation_state: ::std::option::Option<crate::types::AliasInvocationState>,
 }
 impl AgentAliasSummary {
     /// <p>Contains details about</p>
@@ -52,6 +54,10 @@ impl AgentAliasSummary {
     pub fn updated_at(&self) -> &::aws_smithy_types::DateTime {
         &self.updated_at
     }
+    /// <p>The invocation state for the agent alias. If the agent alias is running, the value is <code>ACCEPT_INVOCATIONS</code>. If the agent alias is paused, the value is <code>REJECT_INVOCATIONS</code>. Use the <code>UpdateAgentAlias</code> operation to change the invocation state.</p>
+    pub fn alias_invocation_state(&self) -> ::std::option::Option<&crate::types::AliasInvocationState> {
+        self.alias_invocation_state.as_ref()
+    }
 }
 impl AgentAliasSummary {
     /// Creates a new builder-style object to manufacture [`AgentAliasSummary`](crate::types::AgentAliasSummary).
@@ -71,6 +77,7 @@ pub struct AgentAliasSummaryBuilder {
     pub(crate) agent_alias_status: ::std::option::Option<crate::types::AgentAliasStatus>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) alias_invocation_state: ::std::option::Option<crate::types::AliasInvocationState>,
 }
 impl AgentAliasSummaryBuilder {
     /// <p>Contains details about</p>
@@ -185,6 +192,20 @@ impl AgentAliasSummaryBuilder {
     pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.updated_at
     }
+    /// <p>The invocation state for the agent alias. If the agent alias is running, the value is <code>ACCEPT_INVOCATIONS</code>. If the agent alias is paused, the value is <code>REJECT_INVOCATIONS</code>. Use the <code>UpdateAgentAlias</code> operation to change the invocation state.</p>
+    pub fn alias_invocation_state(mut self, input: crate::types::AliasInvocationState) -> Self {
+        self.alias_invocation_state = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The invocation state for the agent alias. If the agent alias is running, the value is <code>ACCEPT_INVOCATIONS</code>. If the agent alias is paused, the value is <code>REJECT_INVOCATIONS</code>. Use the <code>UpdateAgentAlias</code> operation to change the invocation state.</p>
+    pub fn set_alias_invocation_state(mut self, input: ::std::option::Option<crate::types::AliasInvocationState>) -> Self {
+        self.alias_invocation_state = input;
+        self
+    }
+    /// <p>The invocation state for the agent alias. If the agent alias is running, the value is <code>ACCEPT_INVOCATIONS</code>. If the agent alias is paused, the value is <code>REJECT_INVOCATIONS</code>. Use the <code>UpdateAgentAlias</code> operation to change the invocation state.</p>
+    pub fn get_alias_invocation_state(&self) -> &::std::option::Option<crate::types::AliasInvocationState> {
+        &self.alias_invocation_state
+    }
     /// Consumes the builder and constructs a [`AgentAliasSummary`](crate::types::AgentAliasSummary).
     /// This method will fail if any of the following fields are not set:
     /// - [`agent_alias_id`](crate::types::builders::AgentAliasSummaryBuilder::agent_alias_id)
@@ -226,6 +247,7 @@ impl AgentAliasSummaryBuilder {
                     "updated_at was not specified but it is required when building AgentAliasSummary",
                 )
             })?,
+            alias_invocation_state: self.alias_invocation_state,
         })
     }
 }

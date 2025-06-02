@@ -164,6 +164,18 @@ pub(crate) fn delete_schema_mapping_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn generate_match_id_output_output_correct_errors(
+    mut builder: crate::operation::generate_match_id::builders::GenerateMatchIdOutputBuilder,
+) -> crate::operation::generate_match_id::builders::GenerateMatchIdOutputBuilder {
+    if builder.match_groups.is_none() {
+        builder.match_groups = Some(Default::default())
+    }
+    if builder.failed_records.is_none() {
+        builder.failed_records = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn get_id_mapping_job_output_output_correct_errors(
     mut builder: crate::operation::get_id_mapping_job::builders::GetIdMappingJobOutputBuilder,
 ) -> crate::operation::get_id_mapping_job::builders::GetIdMappingJobOutputBuilder {
@@ -500,6 +512,19 @@ pub(crate) fn deleted_unique_id_correct_errors(
     builder
 }
 
+pub(crate) fn failed_record_correct_errors(mut builder: crate::types::builders::FailedRecordBuilder) -> crate::types::builders::FailedRecordBuilder {
+    if builder.input_source_arn.is_none() {
+        builder.input_source_arn = Some(Default::default())
+    }
+    if builder.unique_id.is_none() {
+        builder.unique_id = Some(Default::default())
+    }
+    if builder.error_message.is_none() {
+        builder.error_message = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn id_mapping_job_output_source_correct_errors(
     mut builder: crate::types::builders::IdMappingJobOutputSourceBuilder,
 ) -> crate::types::builders::IdMappingJobOutputSourceBuilder {
@@ -633,6 +658,19 @@ pub(crate) fn job_summary_correct_errors(mut builder: crate::types::builders::Jo
     }
     if builder.start_time.is_none() {
         builder.start_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
+pub(crate) fn match_group_correct_errors(mut builder: crate::types::builders::MatchGroupBuilder) -> crate::types::builders::MatchGroupBuilder {
+    if builder.records.is_none() {
+        builder.records = Some(Default::default())
+    }
+    if builder.match_id.is_none() {
+        builder.match_id = Some(Default::default())
+    }
+    if builder.match_rule.is_none() {
+        builder.match_rule = Some(Default::default())
     }
     builder
 }
@@ -796,6 +834,18 @@ pub(crate) fn id_namespace_id_mapping_workflow_metadata_correct_errors(
 ) -> crate::types::builders::IdNamespaceIdMappingWorkflowMetadataBuilder {
     if builder.id_mapping_type.is_none() {
         builder.id_mapping_type = "no value was set".parse::<crate::types::IdMappingType>().ok()
+    }
+    builder
+}
+
+pub(crate) fn matched_record_correct_errors(
+    mut builder: crate::types::builders::MatchedRecordBuilder,
+) -> crate::types::builders::MatchedRecordBuilder {
+    if builder.input_source_arn.is_none() {
+        builder.input_source_arn = Some(Default::default())
+    }
+    if builder.record_id.is_none() {
+        builder.record_id = Some(Default::default())
     }
     builder
 }

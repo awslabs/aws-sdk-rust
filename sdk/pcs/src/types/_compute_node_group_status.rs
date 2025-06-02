@@ -18,6 +18,8 @@
 ///     ComputeNodeGroupStatus::Deleted => { /* ... */ },
 ///     ComputeNodeGroupStatus::DeleteFailed => { /* ... */ },
 ///     ComputeNodeGroupStatus::Deleting => { /* ... */ },
+///     ComputeNodeGroupStatus::Suspended => { /* ... */ },
+///     ComputeNodeGroupStatus::Suspending => { /* ... */ },
 ///     ComputeNodeGroupStatus::UpdateFailed => { /* ... */ },
 ///     ComputeNodeGroupStatus::Updating => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -61,6 +63,10 @@ pub enum ComputeNodeGroupStatus {
     #[allow(missing_docs)] // documentation missing in model
     Deleting,
     #[allow(missing_docs)] // documentation missing in model
+    Suspended,
+    #[allow(missing_docs)] // documentation missing in model
+    Suspending,
+    #[allow(missing_docs)] // documentation missing in model
     UpdateFailed,
     #[allow(missing_docs)] // documentation missing in model
     Updating,
@@ -77,6 +83,8 @@ impl ::std::convert::From<&str> for ComputeNodeGroupStatus {
             "DELETED" => ComputeNodeGroupStatus::Deleted,
             "DELETE_FAILED" => ComputeNodeGroupStatus::DeleteFailed,
             "DELETING" => ComputeNodeGroupStatus::Deleting,
+            "SUSPENDED" => ComputeNodeGroupStatus::Suspended,
+            "SUSPENDING" => ComputeNodeGroupStatus::Suspending,
             "UPDATE_FAILED" => ComputeNodeGroupStatus::UpdateFailed,
             "UPDATING" => ComputeNodeGroupStatus::Updating,
             other => ComputeNodeGroupStatus::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -100,6 +108,8 @@ impl ComputeNodeGroupStatus {
             ComputeNodeGroupStatus::Deleted => "DELETED",
             ComputeNodeGroupStatus::DeleteFailed => "DELETE_FAILED",
             ComputeNodeGroupStatus::Deleting => "DELETING",
+            ComputeNodeGroupStatus::Suspended => "SUSPENDED",
+            ComputeNodeGroupStatus::Suspending => "SUSPENDING",
             ComputeNodeGroupStatus::UpdateFailed => "UPDATE_FAILED",
             ComputeNodeGroupStatus::Updating => "UPDATING",
             ComputeNodeGroupStatus::Unknown(value) => value.as_str(),
@@ -114,6 +124,8 @@ impl ComputeNodeGroupStatus {
             "DELETED",
             "DELETE_FAILED",
             "DELETING",
+            "SUSPENDED",
+            "SUSPENDING",
             "UPDATE_FAILED",
             "UPDATING",
         ]
@@ -145,6 +157,8 @@ impl ::std::fmt::Display for ComputeNodeGroupStatus {
             ComputeNodeGroupStatus::Deleted => write!(f, "DELETED"),
             ComputeNodeGroupStatus::DeleteFailed => write!(f, "DELETE_FAILED"),
             ComputeNodeGroupStatus::Deleting => write!(f, "DELETING"),
+            ComputeNodeGroupStatus::Suspended => write!(f, "SUSPENDED"),
+            ComputeNodeGroupStatus::Suspending => write!(f, "SUSPENDING"),
             ComputeNodeGroupStatus::UpdateFailed => write!(f, "UPDATE_FAILED"),
             ComputeNodeGroupStatus::Updating => write!(f, "UPDATING"),
             ComputeNodeGroupStatus::Unknown(value) => write!(f, "{}", value),

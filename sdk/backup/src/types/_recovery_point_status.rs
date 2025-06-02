@@ -12,10 +12,13 @@
 /// ```text
 /// # let recoverypointstatus = unimplemented!();
 /// match recoverypointstatus {
+///     RecoveryPointStatus::Available => { /* ... */ },
 ///     RecoveryPointStatus::Completed => { /* ... */ },
+///     RecoveryPointStatus::Creating => { /* ... */ },
 ///     RecoveryPointStatus::Deleting => { /* ... */ },
 ///     RecoveryPointStatus::Expired => { /* ... */ },
 ///     RecoveryPointStatus::Partial => { /* ... */ },
+///     RecoveryPointStatus::Stopped => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -45,13 +48,19 @@
 )]
 pub enum RecoveryPointStatus {
     #[allow(missing_docs)] // documentation missing in model
+    Available,
+    #[allow(missing_docs)] // documentation missing in model
     Completed,
+    #[allow(missing_docs)] // documentation missing in model
+    Creating,
     #[allow(missing_docs)] // documentation missing in model
     Deleting,
     #[allow(missing_docs)] // documentation missing in model
     Expired,
     #[allow(missing_docs)] // documentation missing in model
     Partial,
+    #[allow(missing_docs)] // documentation missing in model
+    Stopped,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -59,10 +68,13 @@ pub enum RecoveryPointStatus {
 impl ::std::convert::From<&str> for RecoveryPointStatus {
     fn from(s: &str) -> Self {
         match s {
+            "AVAILABLE" => RecoveryPointStatus::Available,
             "COMPLETED" => RecoveryPointStatus::Completed,
+            "CREATING" => RecoveryPointStatus::Creating,
             "DELETING" => RecoveryPointStatus::Deleting,
             "EXPIRED" => RecoveryPointStatus::Expired,
             "PARTIAL" => RecoveryPointStatus::Partial,
+            "STOPPED" => RecoveryPointStatus::Stopped,
             other => RecoveryPointStatus::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -78,16 +90,19 @@ impl RecoveryPointStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            RecoveryPointStatus::Available => "AVAILABLE",
             RecoveryPointStatus::Completed => "COMPLETED",
+            RecoveryPointStatus::Creating => "CREATING",
             RecoveryPointStatus::Deleting => "DELETING",
             RecoveryPointStatus::Expired => "EXPIRED",
             RecoveryPointStatus::Partial => "PARTIAL",
+            RecoveryPointStatus::Stopped => "STOPPED",
             RecoveryPointStatus::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["COMPLETED", "DELETING", "EXPIRED", "PARTIAL"]
+        &["AVAILABLE", "COMPLETED", "CREATING", "DELETING", "EXPIRED", "PARTIAL", "STOPPED"]
     }
 }
 impl ::std::convert::AsRef<str> for RecoveryPointStatus {
@@ -110,10 +125,13 @@ impl RecoveryPointStatus {
 impl ::std::fmt::Display for RecoveryPointStatus {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            RecoveryPointStatus::Available => write!(f, "AVAILABLE"),
             RecoveryPointStatus::Completed => write!(f, "COMPLETED"),
+            RecoveryPointStatus::Creating => write!(f, "CREATING"),
             RecoveryPointStatus::Deleting => write!(f, "DELETING"),
             RecoveryPointStatus::Expired => write!(f, "EXPIRED"),
             RecoveryPointStatus::Partial => write!(f, "PARTIAL"),
+            RecoveryPointStatus::Stopped => write!(f, "STOPPED"),
             RecoveryPointStatus::Unknown(value) => write!(f, "{}", value),
         }
     }

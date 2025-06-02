@@ -28,13 +28,17 @@ impl crate::operation::get_recommendation_summaries::builders::GetRecommendation
 /// <li>
 /// <p>Amazon EC2 instances in an account that are <code>Underprovisioned</code>, <code>Overprovisioned</code>, or <code>Optimized</code>.</p></li>
 /// <li>
-/// <p>Auto Scaling groups in an account that are <code>NotOptimized</code>, or <code>Optimized</code>.</p></li>
+/// <p>EC2Auto Scaling groups in an account that are <code>NotOptimized</code>, or <code>Optimized</code>.</p></li>
 /// <li>
 /// <p>Amazon EBS volumes in an account that are <code>NotOptimized</code>, or <code>Optimized</code>.</p></li>
 /// <li>
 /// <p>Lambda functions in an account that are <code>NotOptimized</code>, or <code>Optimized</code>.</p></li>
 /// <li>
 /// <p>Amazon ECS services in an account that are <code>Underprovisioned</code>, <code>Overprovisioned</code>, or <code>Optimized</code>.</p></li>
+/// <li>
+/// <p>Commercial software licenses in an account that are <code>InsufficientMetrics</code>, <code>NotOptimized</code> or <code>Optimized</code>.</p></li>
+/// <li>
+/// <p>Amazon Aurora and Amazon RDS databases in an account that are <code>Underprovisioned</code>, <code>Overprovisioned</code>, <code>Optimized</code>, or <code>NotOptimized</code>.</p></li>
 /// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetRecommendationSummariesFluentBuilder {

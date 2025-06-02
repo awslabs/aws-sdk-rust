@@ -9,7 +9,7 @@ pub struct GetSchemaMappingOutput {
     pub schema_arn: ::std::string::String,
     /// <p>A description of the schema.</p>
     pub description: ::std::option::Option<::std::string::String>,
-    /// <p>A list of <code>MappedInputFields</code>. Each <code>MappedInputField</code> corresponds to a column the source data table, and contains column name plus additional information Venice uses for matching.</p>
+    /// <p>A list of <code>MappedInputFields</code>. Each <code>MappedInputField</code> corresponds to a column the source data table, and contains column name plus additional information Entity Resolution uses for matching.</p>
     pub mapped_input_fields: ::std::vec::Vec<crate::types::SchemaInputAttribute>,
     /// <p>The timestamp of when the <code>SchemaMapping</code> was created.</p>
     pub created_at: ::aws_smithy_types::DateTime,
@@ -36,7 +36,7 @@ impl GetSchemaMappingOutput {
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>A list of <code>MappedInputFields</code>. Each <code>MappedInputField</code> corresponds to a column the source data table, and contains column name plus additional information Venice uses for matching.</p>
+    /// <p>A list of <code>MappedInputFields</code>. Each <code>MappedInputField</code> corresponds to a column the source data table, and contains column name plus additional information Entity Resolution uses for matching.</p>
     pub fn mapped_input_fields(&self) -> &[crate::types::SchemaInputAttribute] {
         use std::ops::Deref;
         self.mapped_input_fields.deref()
@@ -133,19 +133,19 @@ impl GetSchemaMappingOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_mapped_input_fields`](Self::set_mapped_input_fields).
     ///
-    /// <p>A list of <code>MappedInputFields</code>. Each <code>MappedInputField</code> corresponds to a column the source data table, and contains column name plus additional information Venice uses for matching.</p>
+    /// <p>A list of <code>MappedInputFields</code>. Each <code>MappedInputField</code> corresponds to a column the source data table, and contains column name plus additional information Entity Resolution uses for matching.</p>
     pub fn mapped_input_fields(mut self, input: crate::types::SchemaInputAttribute) -> Self {
         let mut v = self.mapped_input_fields.unwrap_or_default();
         v.push(input);
         self.mapped_input_fields = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of <code>MappedInputFields</code>. Each <code>MappedInputField</code> corresponds to a column the source data table, and contains column name plus additional information Venice uses for matching.</p>
+    /// <p>A list of <code>MappedInputFields</code>. Each <code>MappedInputField</code> corresponds to a column the source data table, and contains column name plus additional information Entity Resolution uses for matching.</p>
     pub fn set_mapped_input_fields(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SchemaInputAttribute>>) -> Self {
         self.mapped_input_fields = input;
         self
     }
-    /// <p>A list of <code>MappedInputFields</code>. Each <code>MappedInputField</code> corresponds to a column the source data table, and contains column name plus additional information Venice uses for matching.</p>
+    /// <p>A list of <code>MappedInputFields</code>. Each <code>MappedInputField</code> corresponds to a column the source data table, and contains column name plus additional information Entity Resolution uses for matching.</p>
     pub fn get_mapped_input_fields(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SchemaInputAttribute>> {
         &self.mapped_input_fields
     }

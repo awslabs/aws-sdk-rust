@@ -6,23 +6,26 @@ pub fn ser_update_agent_alias_input_input(
     if let Some(var_1) = &input.agent_alias_name {
         object.key("agentAliasName").string(var_1.as_str());
     }
-    if let Some(var_2) = &input.description {
-        object.key("description").string(var_2.as_str());
+    if let Some(var_2) = &input.alias_invocation_state {
+        object.key("aliasInvocationState").string(var_2.as_str());
     }
-    if let Some(var_3) = &input.routing_configuration {
-        let mut array_4 = object.key("routingConfiguration").start_array();
-        for item_5 in var_3 {
+    if let Some(var_3) = &input.description {
+        object.key("description").string(var_3.as_str());
+    }
+    if let Some(var_4) = &input.routing_configuration {
+        let mut array_5 = object.key("routingConfiguration").start_array();
+        for item_6 in var_4 {
             {
                 #[allow(unused_mut)]
-                let mut object_6 = array_4.value().start_object();
+                let mut object_7 = array_5.value().start_object();
                 crate::protocol_serde::shape_agent_alias_routing_configuration_list_item::ser_agent_alias_routing_configuration_list_item(
-                    &mut object_6,
-                    item_5,
+                    &mut object_7,
+                    item_6,
                 )?;
-                object_6.finish();
+                object_7.finish();
             }
         }
-        array_4.finish();
+        array_5.finish();
     }
     Ok(())
 }

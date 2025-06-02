@@ -104,6 +104,16 @@ where
                                     .transpose()?,
                             );
                         }
+                        "currentStorageEstimatedMonthlyVolumeIOPsCostVariation" => {
+                            builder = builder.set_current_storage_estimated_monthly_volume_iops_cost_variation(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| {
+                                        s.to_unescaped()
+                                            .map(|u| crate::types::RdsEstimatedMonthlyVolumeIoPsCostVariation::from(u.as_ref()))
+                                    })
+                                    .transpose()?,
+                            );
+                        }
                         "storageFindingReasonCodes" => {
                             builder = builder.set_storage_finding_reason_codes(
                                 crate::protocol_serde::shape_rds_storage_finding_reason_codes::de_rds_storage_finding_reason_codes(tokens)?,

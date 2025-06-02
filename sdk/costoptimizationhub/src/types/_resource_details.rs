@@ -4,6 +4,8 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum ResourceDetails {
+    /// <p>The Aurora DB cluster storage recommendation details.</p>
+    AuroraDbClusterStorage(crate::types::AuroraDbClusterStorage),
     /// <p>The Compute Savings Plans recommendation details.</p>
     ComputeSavingsPlans(crate::types::ComputeSavingsPlans),
     /// <p>The DynamoDB reserved capacity recommendation details.</p>
@@ -49,6 +51,19 @@ pub enum ResourceDetails {
     Unknown,
 }
 impl ResourceDetails {
+    /// Tries to convert the enum instance into [`AuroraDbClusterStorage`](crate::types::ResourceDetails::AuroraDbClusterStorage), extracting the inner [`AuroraDbClusterStorage`](crate::types::AuroraDbClusterStorage).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_aurora_db_cluster_storage(&self) -> ::std::result::Result<&crate::types::AuroraDbClusterStorage, &Self> {
+        if let ResourceDetails::AuroraDbClusterStorage(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`AuroraDbClusterStorage`](crate::types::ResourceDetails::AuroraDbClusterStorage).
+    pub fn is_aurora_db_cluster_storage(&self) -> bool {
+        self.as_aurora_db_cluster_storage().is_ok()
+    }
     /// Tries to convert the enum instance into [`ComputeSavingsPlans`](crate::types::ResourceDetails::ComputeSavingsPlans), extracting the inner [`ComputeSavingsPlans`](crate::types::ComputeSavingsPlans).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_compute_savings_plans(&self) -> ::std::result::Result<&crate::types::ComputeSavingsPlans, &Self> {

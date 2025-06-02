@@ -5,17 +5,17 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RdsStorageSavingsOpportunityAfterDiscounts {
-    /// <p>The estimated monthly savings possible as a percentage of monthly cost by adopting Compute Optimizer’s Amazon RDS storage recommendations. This includes any applicable Savings Plans discounts.</p>
+    /// <p>The estimated monthly savings possible as a percentage of monthly cost by adopting Compute Optimizer’s DB instance storage recommendations. This includes any applicable Savings Plans discounts.</p>
     pub savings_opportunity_percentage: f64,
-    /// <p>The estimated monthly savings possible by adopting Compute Optimizer’s Amazon RDS storage recommendations. This includes any applicable Savings Plans discounts.</p>
+    /// <p>The estimated monthly savings possible by adopting Compute Optimizer’s DB instance storage recommendations. This includes any applicable Savings Plans discounts.</p>
     pub estimated_monthly_savings: ::std::option::Option<crate::types::RdsStorageEstimatedMonthlySavings>,
 }
 impl RdsStorageSavingsOpportunityAfterDiscounts {
-    /// <p>The estimated monthly savings possible as a percentage of monthly cost by adopting Compute Optimizer’s Amazon RDS storage recommendations. This includes any applicable Savings Plans discounts.</p>
+    /// <p>The estimated monthly savings possible as a percentage of monthly cost by adopting Compute Optimizer’s DB instance storage recommendations. This includes any applicable Savings Plans discounts.</p>
     pub fn savings_opportunity_percentage(&self) -> f64 {
         self.savings_opportunity_percentage
     }
-    /// <p>The estimated monthly savings possible by adopting Compute Optimizer’s Amazon RDS storage recommendations. This includes any applicable Savings Plans discounts.</p>
+    /// <p>The estimated monthly savings possible by adopting Compute Optimizer’s DB instance storage recommendations. This includes any applicable Savings Plans discounts.</p>
     pub fn estimated_monthly_savings(&self) -> ::std::option::Option<&crate::types::RdsStorageEstimatedMonthlySavings> {
         self.estimated_monthly_savings.as_ref()
     }
@@ -35,31 +35,31 @@ pub struct RdsStorageSavingsOpportunityAfterDiscountsBuilder {
     pub(crate) estimated_monthly_savings: ::std::option::Option<crate::types::RdsStorageEstimatedMonthlySavings>,
 }
 impl RdsStorageSavingsOpportunityAfterDiscountsBuilder {
-    /// <p>The estimated monthly savings possible as a percentage of monthly cost by adopting Compute Optimizer’s Amazon RDS storage recommendations. This includes any applicable Savings Plans discounts.</p>
+    /// <p>The estimated monthly savings possible as a percentage of monthly cost by adopting Compute Optimizer’s DB instance storage recommendations. This includes any applicable Savings Plans discounts.</p>
     pub fn savings_opportunity_percentage(mut self, input: f64) -> Self {
         self.savings_opportunity_percentage = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The estimated monthly savings possible as a percentage of monthly cost by adopting Compute Optimizer’s Amazon RDS storage recommendations. This includes any applicable Savings Plans discounts.</p>
+    /// <p>The estimated monthly savings possible as a percentage of monthly cost by adopting Compute Optimizer’s DB instance storage recommendations. This includes any applicable Savings Plans discounts.</p>
     pub fn set_savings_opportunity_percentage(mut self, input: ::std::option::Option<f64>) -> Self {
         self.savings_opportunity_percentage = input;
         self
     }
-    /// <p>The estimated monthly savings possible as a percentage of monthly cost by adopting Compute Optimizer’s Amazon RDS storage recommendations. This includes any applicable Savings Plans discounts.</p>
+    /// <p>The estimated monthly savings possible as a percentage of monthly cost by adopting Compute Optimizer’s DB instance storage recommendations. This includes any applicable Savings Plans discounts.</p>
     pub fn get_savings_opportunity_percentage(&self) -> &::std::option::Option<f64> {
         &self.savings_opportunity_percentage
     }
-    /// <p>The estimated monthly savings possible by adopting Compute Optimizer’s Amazon RDS storage recommendations. This includes any applicable Savings Plans discounts.</p>
+    /// <p>The estimated monthly savings possible by adopting Compute Optimizer’s DB instance storage recommendations. This includes any applicable Savings Plans discounts.</p>
     pub fn estimated_monthly_savings(mut self, input: crate::types::RdsStorageEstimatedMonthlySavings) -> Self {
         self.estimated_monthly_savings = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The estimated monthly savings possible by adopting Compute Optimizer’s Amazon RDS storage recommendations. This includes any applicable Savings Plans discounts.</p>
+    /// <p>The estimated monthly savings possible by adopting Compute Optimizer’s DB instance storage recommendations. This includes any applicable Savings Plans discounts.</p>
     pub fn set_estimated_monthly_savings(mut self, input: ::std::option::Option<crate::types::RdsStorageEstimatedMonthlySavings>) -> Self {
         self.estimated_monthly_savings = input;
         self
     }
-    /// <p>The estimated monthly savings possible by adopting Compute Optimizer’s Amazon RDS storage recommendations. This includes any applicable Savings Plans discounts.</p>
+    /// <p>The estimated monthly savings possible by adopting Compute Optimizer’s DB instance storage recommendations. This includes any applicable Savings Plans discounts.</p>
     pub fn get_estimated_monthly_savings(&self) -> &::std::option::Option<crate::types::RdsStorageEstimatedMonthlySavings> {
         &self.estimated_monthly_savings
     }

@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetMatchingJobOutput {
-    /// <p>The ID of the job.</p>
+    /// <p>The unique identifier of the matching job.</p>
     pub job_id: ::std::string::String,
     /// <p>The current status of the job.</p>
     pub status: crate::types::JobStatus,
@@ -20,7 +20,7 @@ pub struct GetMatchingJobOutput {
     _request_id: Option<String>,
 }
 impl GetMatchingJobOutput {
-    /// <p>The ID of the job.</p>
+    /// <p>The unique identifier of the matching job.</p>
     pub fn job_id(&self) -> &str {
         use std::ops::Deref;
         self.job_id.deref()
@@ -78,18 +78,18 @@ pub struct GetMatchingJobOutputBuilder {
     _request_id: Option<String>,
 }
 impl GetMatchingJobOutputBuilder {
-    /// <p>The ID of the job.</p>
+    /// <p>The unique identifier of the matching job.</p>
     /// This field is required.
     pub fn job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID of the job.</p>
+    /// <p>The unique identifier of the matching job.</p>
     pub fn set_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.job_id = input;
         self
     }
-    /// <p>The ID of the job.</p>
+    /// <p>The unique identifier of the matching job.</p>
     pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.job_id
     }

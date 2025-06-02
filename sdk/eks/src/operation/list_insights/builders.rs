@@ -22,7 +22,14 @@ impl crate::operation::list_insights::builders::ListInsightsInputBuilder {
 }
 /// Fluent builder constructing a request to `ListInsights`.
 ///
-/// <p>Returns a list of all insights checked for against the specified cluster. You can filter which insights are returned by category, associated Kubernetes version, and status.</p>
+/// <p>Returns a list of all insights checked for against the specified cluster. You can filter which insights are returned by category, associated Kubernetes version, and status. The default filter lists all categories and every status.</p>
+/// <p>The following lists the available categories:</p>
+/// <ul>
+/// <li>
+/// <p><code>UPGRADE_READINESS</code>: Amazon EKS identifies issues that could impact your ability to upgrade to new versions of Kubernetes. These are called upgrade insights.</p></li>
+/// <li>
+/// <p><code>MISCONFIGURATION</code>: Amazon EKS identifies misconfiguration in your EKS Hybrid Nodes setup that could impair functionality of your cluster or workloads. These are called configuration insights.</p></li>
+/// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListInsightsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

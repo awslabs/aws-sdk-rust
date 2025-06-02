@@ -441,6 +441,10 @@ pub(crate) mod shape_executors_summary;
 
 pub(crate) mod shape_identity_center_configuration;
 
+pub(crate) mod shape_managed_query_results_configuration;
+
+pub(crate) mod shape_managed_query_results_configuration_updates;
+
 pub(crate) mod shape_notebook_session_summary;
 
 pub(crate) mod shape_parameters_map;
@@ -482,6 +486,8 @@ pub(crate) mod shape_athena_error;
 pub(crate) mod shape_column;
 
 pub(crate) mod shape_column_info_list;
+
+pub(crate) mod shape_managed_query_results_encryption_configuration;
 
 pub(crate) mod shape_query_stage_plan_node;
 

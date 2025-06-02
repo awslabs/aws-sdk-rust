@@ -22,7 +22,7 @@ impl crate::operation::get_id_mapping_job::builders::GetIdMappingJobInputBuilder
 }
 /// Fluent builder constructing a request to `GetIdMappingJob`.
 ///
-/// <p>Gets the status, metrics, and errors (if there are any) that are associated with a job.</p>
+/// <p>Returns the status, metrics, and errors (if there are any) that are associated with a job.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetIdMappingJobFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

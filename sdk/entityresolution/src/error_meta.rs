@@ -413,6 +413,32 @@ impl From<crate::operation::delete_schema_mapping::DeleteSchemaMappingError> for
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::generate_match_id::GenerateMatchIdError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::generate_match_id::GenerateMatchIdError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::generate_match_id::GenerateMatchIdError> for Error {
+    fn from(err: crate::operation::generate_match_id::GenerateMatchIdError) -> Self {
+        match err {
+            crate::operation::generate_match_id::GenerateMatchIdError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::generate_match_id::GenerateMatchIdError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::generate_match_id::GenerateMatchIdError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::generate_match_id::GenerateMatchIdError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::generate_match_id::GenerateMatchIdError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::generate_match_id::GenerateMatchIdError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_id_mapping_job::GetIdMappingJobError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,

@@ -26,7 +26,25 @@ pub struct BackupJob {
     pub status_message: ::std::option::Option<::std::string::String>,
     /// <p>Contains an estimated percentage complete of a job at the time the job status was queried.</p>
     pub percent_done: ::std::option::Option<::std::string::String>,
-    /// <p>The size, in bytes, of a backup.</p>
+    /// <p>The size, in bytes, of a backup (recovery point).</p>
+    /// <p>This value can render differently depending on the resource type as Backup pulls in data information from other Amazon Web Services services. For example, the value returned may show a value of <code>0</code>, which may differ from the anticipated value.</p>
+    /// <p>The expected behavior for values by resource type are described as follows:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Amazon Aurora, Amazon DocumentDB, and Amazon Neptune do not have this value populate from the operation <code>GetBackupJobStatus</code>.</p></li>
+    /// <li>
+    /// <p>For Amazon DynamoDB with advanced features, this value refers to the size of the recovery point (backup).</p></li>
+    /// <li>
+    /// <p>Amazon EC2 and Amazon EBS show volume size (provisioned storage) returned as part of this value. Amazon EBS does not return backup size information; snapshot size will have the same value as the original resource that was backed up.</p></li>
+    /// <li>
+    /// <p>For Amazon EFS, this value refers to the delta bytes transferred during a backup.</p></li>
+    /// <li>
+    /// <p>Amazon FSx does not populate this value from the operation <code>GetBackupJobStatus</code> for FSx file systems.</p></li>
+    /// <li>
+    /// <p>An Amazon RDS instance will show as <code>0</code>.</p></li>
+    /// <li>
+    /// <p>For virtual machines running VMware, this value is passed to Backup through an asynchronous workflow, which can mean this displayed value can under-represent the actual backup size.</p></li>
+    /// </ul>
     pub backup_size_in_bytes: ::std::option::Option<i64>,
     /// <p>Specifies the IAM role ARN used to create the target recovery point. IAM roles other than the default role must include either <code>AWSBackup</code> or <code>AwsBackup</code> in the role name. For example, <code>arn:aws:iam::123456789012:role/AWSBackupRDSAccess</code>. Role names without those strings lack permissions to perform backup jobs.</p>
     pub iam_role_arn: ::std::option::Option<::std::string::String>,
@@ -104,7 +122,25 @@ impl BackupJob {
     pub fn percent_done(&self) -> ::std::option::Option<&str> {
         self.percent_done.as_deref()
     }
-    /// <p>The size, in bytes, of a backup.</p>
+    /// <p>The size, in bytes, of a backup (recovery point).</p>
+    /// <p>This value can render differently depending on the resource type as Backup pulls in data information from other Amazon Web Services services. For example, the value returned may show a value of <code>0</code>, which may differ from the anticipated value.</p>
+    /// <p>The expected behavior for values by resource type are described as follows:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Amazon Aurora, Amazon DocumentDB, and Amazon Neptune do not have this value populate from the operation <code>GetBackupJobStatus</code>.</p></li>
+    /// <li>
+    /// <p>For Amazon DynamoDB with advanced features, this value refers to the size of the recovery point (backup).</p></li>
+    /// <li>
+    /// <p>Amazon EC2 and Amazon EBS show volume size (provisioned storage) returned as part of this value. Amazon EBS does not return backup size information; snapshot size will have the same value as the original resource that was backed up.</p></li>
+    /// <li>
+    /// <p>For Amazon EFS, this value refers to the delta bytes transferred during a backup.</p></li>
+    /// <li>
+    /// <p>Amazon FSx does not populate this value from the operation <code>GetBackupJobStatus</code> for FSx file systems.</p></li>
+    /// <li>
+    /// <p>An Amazon RDS instance will show as <code>0</code>.</p></li>
+    /// <li>
+    /// <p>For virtual machines running VMware, this value is passed to Backup through an asynchronous workflow, which can mean this displayed value can under-represent the actual backup size.</p></li>
+    /// </ul>
     pub fn backup_size_in_bytes(&self) -> ::std::option::Option<i64> {
         self.backup_size_in_bytes
     }
@@ -357,17 +393,71 @@ impl BackupJobBuilder {
     pub fn get_percent_done(&self) -> &::std::option::Option<::std::string::String> {
         &self.percent_done
     }
-    /// <p>The size, in bytes, of a backup.</p>
+    /// <p>The size, in bytes, of a backup (recovery point).</p>
+    /// <p>This value can render differently depending on the resource type as Backup pulls in data information from other Amazon Web Services services. For example, the value returned may show a value of <code>0</code>, which may differ from the anticipated value.</p>
+    /// <p>The expected behavior for values by resource type are described as follows:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Amazon Aurora, Amazon DocumentDB, and Amazon Neptune do not have this value populate from the operation <code>GetBackupJobStatus</code>.</p></li>
+    /// <li>
+    /// <p>For Amazon DynamoDB with advanced features, this value refers to the size of the recovery point (backup).</p></li>
+    /// <li>
+    /// <p>Amazon EC2 and Amazon EBS show volume size (provisioned storage) returned as part of this value. Amazon EBS does not return backup size information; snapshot size will have the same value as the original resource that was backed up.</p></li>
+    /// <li>
+    /// <p>For Amazon EFS, this value refers to the delta bytes transferred during a backup.</p></li>
+    /// <li>
+    /// <p>Amazon FSx does not populate this value from the operation <code>GetBackupJobStatus</code> for FSx file systems.</p></li>
+    /// <li>
+    /// <p>An Amazon RDS instance will show as <code>0</code>.</p></li>
+    /// <li>
+    /// <p>For virtual machines running VMware, this value is passed to Backup through an asynchronous workflow, which can mean this displayed value can under-represent the actual backup size.</p></li>
+    /// </ul>
     pub fn backup_size_in_bytes(mut self, input: i64) -> Self {
         self.backup_size_in_bytes = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The size, in bytes, of a backup.</p>
+    /// <p>The size, in bytes, of a backup (recovery point).</p>
+    /// <p>This value can render differently depending on the resource type as Backup pulls in data information from other Amazon Web Services services. For example, the value returned may show a value of <code>0</code>, which may differ from the anticipated value.</p>
+    /// <p>The expected behavior for values by resource type are described as follows:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Amazon Aurora, Amazon DocumentDB, and Amazon Neptune do not have this value populate from the operation <code>GetBackupJobStatus</code>.</p></li>
+    /// <li>
+    /// <p>For Amazon DynamoDB with advanced features, this value refers to the size of the recovery point (backup).</p></li>
+    /// <li>
+    /// <p>Amazon EC2 and Amazon EBS show volume size (provisioned storage) returned as part of this value. Amazon EBS does not return backup size information; snapshot size will have the same value as the original resource that was backed up.</p></li>
+    /// <li>
+    /// <p>For Amazon EFS, this value refers to the delta bytes transferred during a backup.</p></li>
+    /// <li>
+    /// <p>Amazon FSx does not populate this value from the operation <code>GetBackupJobStatus</code> for FSx file systems.</p></li>
+    /// <li>
+    /// <p>An Amazon RDS instance will show as <code>0</code>.</p></li>
+    /// <li>
+    /// <p>For virtual machines running VMware, this value is passed to Backup through an asynchronous workflow, which can mean this displayed value can under-represent the actual backup size.</p></li>
+    /// </ul>
     pub fn set_backup_size_in_bytes(mut self, input: ::std::option::Option<i64>) -> Self {
         self.backup_size_in_bytes = input;
         self
     }
-    /// <p>The size, in bytes, of a backup.</p>
+    /// <p>The size, in bytes, of a backup (recovery point).</p>
+    /// <p>This value can render differently depending on the resource type as Backup pulls in data information from other Amazon Web Services services. For example, the value returned may show a value of <code>0</code>, which may differ from the anticipated value.</p>
+    /// <p>The expected behavior for values by resource type are described as follows:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Amazon Aurora, Amazon DocumentDB, and Amazon Neptune do not have this value populate from the operation <code>GetBackupJobStatus</code>.</p></li>
+    /// <li>
+    /// <p>For Amazon DynamoDB with advanced features, this value refers to the size of the recovery point (backup).</p></li>
+    /// <li>
+    /// <p>Amazon EC2 and Amazon EBS show volume size (provisioned storage) returned as part of this value. Amazon EBS does not return backup size information; snapshot size will have the same value as the original resource that was backed up.</p></li>
+    /// <li>
+    /// <p>For Amazon EFS, this value refers to the delta bytes transferred during a backup.</p></li>
+    /// <li>
+    /// <p>Amazon FSx does not populate this value from the operation <code>GetBackupJobStatus</code> for FSx file systems.</p></li>
+    /// <li>
+    /// <p>An Amazon RDS instance will show as <code>0</code>.</p></li>
+    /// <li>
+    /// <p>For virtual machines running VMware, this value is passed to Backup through an asynchronous workflow, which can mean this displayed value can under-represent the actual backup size.</p></li>
+    /// </ul>
     pub fn get_backup_size_in_bytes(&self) -> &::std::option::Option<i64> {
         &self.backup_size_in_bytes
     }

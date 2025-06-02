@@ -15,5 +15,8 @@ pub fn ser_get_query_results_input_input(
             ::aws_smithy_types::Number::NegInt((*var_3).into()),
         );
     }
+    if let Some(var_4) = &input.query_result_type {
+        object.key("QueryResultType").string(var_4.as_str());
+    }
     Ok(())
 }

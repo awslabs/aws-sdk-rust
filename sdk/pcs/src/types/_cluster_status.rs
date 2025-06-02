@@ -17,6 +17,8 @@
 ///     ClusterStatus::Creating => { /* ... */ },
 ///     ClusterStatus::DeleteFailed => { /* ... */ },
 ///     ClusterStatus::Deleting => { /* ... */ },
+///     ClusterStatus::Suspended => { /* ... */ },
+///     ClusterStatus::Suspending => { /* ... */ },
 ///     ClusterStatus::UpdateFailed => { /* ... */ },
 ///     ClusterStatus::Updating => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -58,6 +60,10 @@ pub enum ClusterStatus {
     #[allow(missing_docs)] // documentation missing in model
     Deleting,
     #[allow(missing_docs)] // documentation missing in model
+    Suspended,
+    #[allow(missing_docs)] // documentation missing in model
+    Suspending,
+    #[allow(missing_docs)] // documentation missing in model
     UpdateFailed,
     #[allow(missing_docs)] // documentation missing in model
     Updating,
@@ -73,6 +79,8 @@ impl ::std::convert::From<&str> for ClusterStatus {
             "CREATING" => ClusterStatus::Creating,
             "DELETE_FAILED" => ClusterStatus::DeleteFailed,
             "DELETING" => ClusterStatus::Deleting,
+            "SUSPENDED" => ClusterStatus::Suspended,
+            "SUSPENDING" => ClusterStatus::Suspending,
             "UPDATE_FAILED" => ClusterStatus::UpdateFailed,
             "UPDATING" => ClusterStatus::Updating,
             other => ClusterStatus::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -95,6 +103,8 @@ impl ClusterStatus {
             ClusterStatus::Creating => "CREATING",
             ClusterStatus::DeleteFailed => "DELETE_FAILED",
             ClusterStatus::Deleting => "DELETING",
+            ClusterStatus::Suspended => "SUSPENDED",
+            ClusterStatus::Suspending => "SUSPENDING",
             ClusterStatus::UpdateFailed => "UPDATE_FAILED",
             ClusterStatus::Updating => "UPDATING",
             ClusterStatus::Unknown(value) => value.as_str(),
@@ -108,6 +118,8 @@ impl ClusterStatus {
             "CREATING",
             "DELETE_FAILED",
             "DELETING",
+            "SUSPENDED",
+            "SUSPENDING",
             "UPDATE_FAILED",
             "UPDATING",
         ]
@@ -138,6 +150,8 @@ impl ::std::fmt::Display for ClusterStatus {
             ClusterStatus::Creating => write!(f, "CREATING"),
             ClusterStatus::DeleteFailed => write!(f, "DELETE_FAILED"),
             ClusterStatus::Deleting => write!(f, "DELETING"),
+            ClusterStatus::Suspended => write!(f, "SUSPENDED"),
+            ClusterStatus::Suspending => write!(f, "SUSPENDING"),
             ClusterStatus::UpdateFailed => write!(f, "UPDATE_FAILED"),
             ClusterStatus::Updating => write!(f, "UPDATING"),
             ClusterStatus::Unknown(value) => write!(f, "{}", value),

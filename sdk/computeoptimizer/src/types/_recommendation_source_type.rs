@@ -12,6 +12,7 @@
 /// ```text
 /// # let recommendationsourcetype = unimplemented!();
 /// match recommendationsourcetype {
+///     RecommendationSourceType::AuroraDbClusterStorage => { /* ... */ },
 ///     RecommendationSourceType::AutoScalingGroup => { /* ... */ },
 ///     RecommendationSourceType::EbsVolume => { /* ... */ },
 ///     RecommendationSourceType::Ec2Instance => { /* ... */ },
@@ -49,6 +50,8 @@
 )]
 pub enum RecommendationSourceType {
     #[allow(missing_docs)] // documentation missing in model
+    AuroraDbClusterStorage,
+    #[allow(missing_docs)] // documentation missing in model
     AutoScalingGroup,
     #[allow(missing_docs)] // documentation missing in model
     EbsVolume,
@@ -71,6 +74,7 @@ pub enum RecommendationSourceType {
 impl ::std::convert::From<&str> for RecommendationSourceType {
     fn from(s: &str) -> Self {
         match s {
+            "AuroraDBClusterStorage" => RecommendationSourceType::AuroraDbClusterStorage,
             "AutoScalingGroup" => RecommendationSourceType::AutoScalingGroup,
             "EbsVolume" => RecommendationSourceType::EbsVolume,
             "Ec2Instance" => RecommendationSourceType::Ec2Instance,
@@ -94,6 +98,7 @@ impl RecommendationSourceType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            RecommendationSourceType::AuroraDbClusterStorage => "AuroraDBClusterStorage",
             RecommendationSourceType::AutoScalingGroup => "AutoScalingGroup",
             RecommendationSourceType::EbsVolume => "EbsVolume",
             RecommendationSourceType::Ec2Instance => "Ec2Instance",
@@ -108,6 +113,7 @@ impl RecommendationSourceType {
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
+            "AuroraDBClusterStorage",
             "AutoScalingGroup",
             "EbsVolume",
             "Ec2Instance",
@@ -139,6 +145,7 @@ impl RecommendationSourceType {
 impl ::std::fmt::Display for RecommendationSourceType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            RecommendationSourceType::AuroraDbClusterStorage => write!(f, "AuroraDBClusterStorage"),
             RecommendationSourceType::AutoScalingGroup => write!(f, "AutoScalingGroup"),
             RecommendationSourceType::EbsVolume => write!(f, "EbsVolume"),
             RecommendationSourceType::Ec2Instance => write!(f, "Ec2Instance"),

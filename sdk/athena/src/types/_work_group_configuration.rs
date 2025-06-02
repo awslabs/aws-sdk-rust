@@ -6,6 +6,8 @@
 pub struct WorkGroupConfiguration {
     /// <p>The configuration for the workgroup, which includes the location in Amazon S3 where query and calculation results are stored and the encryption option, if any, used for query and calculation results. To run the query, you must specify the query results location using one of the ways: either in the workgroup using this setting, or for individual queries (client-side), using <code>ResultConfiguration$OutputLocation</code>. If none of them is set, Athena issues an error that no output location is provided.</p>
     pub result_configuration: ::std::option::Option<crate::types::ResultConfiguration>,
+    /// <p>The configuration for storing results in Athena owned storage, which includes whether this feature is enabled; whether encryption configuration, if any, is used for encrypting query results.</p>
+    pub managed_query_results_configuration: ::std::option::Option<crate::types::ManagedQueryResultsConfiguration>,
     /// <p>If set to "true", the settings for the workgroup override client-side settings. If set to "false", client-side settings are used. For more information, see <a href="https://docs.aws.amazon.com/athena/latest/ug/workgroups-settings-override.html">Workgroup Settings Override Client-Side Settings</a>.</p>
     pub enforce_work_group_configuration: ::std::option::Option<bool>,
     /// <p>Indicates that the Amazon CloudWatch metrics are enabled for the workgroup.</p>
@@ -34,6 +36,10 @@ impl WorkGroupConfiguration {
     /// <p>The configuration for the workgroup, which includes the location in Amazon S3 where query and calculation results are stored and the encryption option, if any, used for query and calculation results. To run the query, you must specify the query results location using one of the ways: either in the workgroup using this setting, or for individual queries (client-side), using <code>ResultConfiguration$OutputLocation</code>. If none of them is set, Athena issues an error that no output location is provided.</p>
     pub fn result_configuration(&self) -> ::std::option::Option<&crate::types::ResultConfiguration> {
         self.result_configuration.as_ref()
+    }
+    /// <p>The configuration for storing results in Athena owned storage, which includes whether this feature is enabled; whether encryption configuration, if any, is used for encrypting query results.</p>
+    pub fn managed_query_results_configuration(&self) -> ::std::option::Option<&crate::types::ManagedQueryResultsConfiguration> {
+        self.managed_query_results_configuration.as_ref()
     }
     /// <p>If set to "true", the settings for the workgroup override client-side settings. If set to "false", client-side settings are used. For more information, see <a href="https://docs.aws.amazon.com/athena/latest/ug/workgroups-settings-override.html">Workgroup Settings Override Client-Side Settings</a>.</p>
     pub fn enforce_work_group_configuration(&self) -> ::std::option::Option<bool> {
@@ -93,6 +99,7 @@ impl WorkGroupConfiguration {
 #[non_exhaustive]
 pub struct WorkGroupConfigurationBuilder {
     pub(crate) result_configuration: ::std::option::Option<crate::types::ResultConfiguration>,
+    pub(crate) managed_query_results_configuration: ::std::option::Option<crate::types::ManagedQueryResultsConfiguration>,
     pub(crate) enforce_work_group_configuration: ::std::option::Option<bool>,
     pub(crate) publish_cloud_watch_metrics_enabled: ::std::option::Option<bool>,
     pub(crate) bytes_scanned_cutoff_per_query: ::std::option::Option<i64>,
@@ -119,6 +126,20 @@ impl WorkGroupConfigurationBuilder {
     /// <p>The configuration for the workgroup, which includes the location in Amazon S3 where query and calculation results are stored and the encryption option, if any, used for query and calculation results. To run the query, you must specify the query results location using one of the ways: either in the workgroup using this setting, or for individual queries (client-side), using <code>ResultConfiguration$OutputLocation</code>. If none of them is set, Athena issues an error that no output location is provided.</p>
     pub fn get_result_configuration(&self) -> &::std::option::Option<crate::types::ResultConfiguration> {
         &self.result_configuration
+    }
+    /// <p>The configuration for storing results in Athena owned storage, which includes whether this feature is enabled; whether encryption configuration, if any, is used for encrypting query results.</p>
+    pub fn managed_query_results_configuration(mut self, input: crate::types::ManagedQueryResultsConfiguration) -> Self {
+        self.managed_query_results_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The configuration for storing results in Athena owned storage, which includes whether this feature is enabled; whether encryption configuration, if any, is used for encrypting query results.</p>
+    pub fn set_managed_query_results_configuration(mut self, input: ::std::option::Option<crate::types::ManagedQueryResultsConfiguration>) -> Self {
+        self.managed_query_results_configuration = input;
+        self
+    }
+    /// <p>The configuration for storing results in Athena owned storage, which includes whether this feature is enabled; whether encryption configuration, if any, is used for encrypting query results.</p>
+    pub fn get_managed_query_results_configuration(&self) -> &::std::option::Option<crate::types::ManagedQueryResultsConfiguration> {
+        &self.managed_query_results_configuration
     }
     /// <p>If set to "true", the settings for the workgroup override client-side settings. If set to "false", client-side settings are used. For more information, see <a href="https://docs.aws.amazon.com/athena/latest/ug/workgroups-settings-override.html">Workgroup Settings Override Client-Side Settings</a>.</p>
     pub fn enforce_work_group_configuration(mut self, input: bool) -> Self {
@@ -287,6 +308,7 @@ impl WorkGroupConfigurationBuilder {
     pub fn build(self) -> crate::types::WorkGroupConfiguration {
         crate::types::WorkGroupConfiguration {
             result_configuration: self.result_configuration,
+            managed_query_results_configuration: self.managed_query_results_configuration,
             enforce_work_group_configuration: self.enforce_work_group_configuration,
             publish_cloud_watch_metrics_enabled: self.publish_cloud_watch_metrics_enabled,
             bytes_scanned_cutoff_per_query: self.bytes_scanned_cutoff_per_query,

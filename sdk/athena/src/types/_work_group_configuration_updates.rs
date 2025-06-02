@@ -8,6 +8,8 @@ pub struct WorkGroupConfigurationUpdates {
     pub enforce_work_group_configuration: ::std::option::Option<bool>,
     /// <p>The result configuration information about the queries in this workgroup that will be updated. Includes the updated results location and an updated option for encrypting query results.</p>
     pub result_configuration_updates: ::std::option::Option<crate::types::ResultConfigurationUpdates>,
+    /// <p>Updates configuration information for managed query results in the workgroup.</p>
+    pub managed_query_results_configuration_updates: ::std::option::Option<crate::types::ManagedQueryResultsConfigurationUpdates>,
     /// <p>Indicates whether this workgroup enables publishing metrics to Amazon CloudWatch.</p>
     pub publish_cloud_watch_metrics_enabled: ::std::option::Option<bool>,
     /// <p>The upper limit (cutoff) for the amount of bytes a single query in a workgroup is allowed to scan.</p>
@@ -40,6 +42,10 @@ impl WorkGroupConfigurationUpdates {
     /// <p>The result configuration information about the queries in this workgroup that will be updated. Includes the updated results location and an updated option for encrypting query results.</p>
     pub fn result_configuration_updates(&self) -> ::std::option::Option<&crate::types::ResultConfigurationUpdates> {
         self.result_configuration_updates.as_ref()
+    }
+    /// <p>Updates configuration information for managed query results in the workgroup.</p>
+    pub fn managed_query_results_configuration_updates(&self) -> ::std::option::Option<&crate::types::ManagedQueryResultsConfigurationUpdates> {
+        self.managed_query_results_configuration_updates.as_ref()
     }
     /// <p>Indicates whether this workgroup enables publishing metrics to Amazon CloudWatch.</p>
     pub fn publish_cloud_watch_metrics_enabled(&self) -> ::std::option::Option<bool> {
@@ -100,6 +106,7 @@ impl WorkGroupConfigurationUpdates {
 pub struct WorkGroupConfigurationUpdatesBuilder {
     pub(crate) enforce_work_group_configuration: ::std::option::Option<bool>,
     pub(crate) result_configuration_updates: ::std::option::Option<crate::types::ResultConfigurationUpdates>,
+    pub(crate) managed_query_results_configuration_updates: ::std::option::Option<crate::types::ManagedQueryResultsConfigurationUpdates>,
     pub(crate) publish_cloud_watch_metrics_enabled: ::std::option::Option<bool>,
     pub(crate) bytes_scanned_cutoff_per_query: ::std::option::Option<i64>,
     pub(crate) remove_bytes_scanned_cutoff_per_query: ::std::option::Option<bool>,
@@ -140,6 +147,23 @@ impl WorkGroupConfigurationUpdatesBuilder {
     /// <p>The result configuration information about the queries in this workgroup that will be updated. Includes the updated results location and an updated option for encrypting query results.</p>
     pub fn get_result_configuration_updates(&self) -> &::std::option::Option<crate::types::ResultConfigurationUpdates> {
         &self.result_configuration_updates
+    }
+    /// <p>Updates configuration information for managed query results in the workgroup.</p>
+    pub fn managed_query_results_configuration_updates(mut self, input: crate::types::ManagedQueryResultsConfigurationUpdates) -> Self {
+        self.managed_query_results_configuration_updates = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Updates configuration information for managed query results in the workgroup.</p>
+    pub fn set_managed_query_results_configuration_updates(
+        mut self,
+        input: ::std::option::Option<crate::types::ManagedQueryResultsConfigurationUpdates>,
+    ) -> Self {
+        self.managed_query_results_configuration_updates = input;
+        self
+    }
+    /// <p>Updates configuration information for managed query results in the workgroup.</p>
+    pub fn get_managed_query_results_configuration_updates(&self) -> &::std::option::Option<crate::types::ManagedQueryResultsConfigurationUpdates> {
+        &self.managed_query_results_configuration_updates
     }
     /// <p>Indicates whether this workgroup enables publishing metrics to Amazon CloudWatch.</p>
     pub fn publish_cloud_watch_metrics_enabled(mut self, input: bool) -> Self {
@@ -309,6 +333,7 @@ impl WorkGroupConfigurationUpdatesBuilder {
         crate::types::WorkGroupConfigurationUpdates {
             enforce_work_group_configuration: self.enforce_work_group_configuration,
             result_configuration_updates: self.result_configuration_updates,
+            managed_query_results_configuration_updates: self.managed_query_results_configuration_updates,
             publish_cloud_watch_metrics_enabled: self.publish_cloud_watch_metrics_enabled,
             bytes_scanned_cutoff_per_query: self.bytes_scanned_cutoff_per_query,
             remove_bytes_scanned_cutoff_per_query: self.remove_bytes_scanned_cutoff_per_query,

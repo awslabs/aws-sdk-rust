@@ -87,6 +87,8 @@ pub use crate::types::_rdsdb_metric_name::RdsdbMetricName;
 
 pub use crate::types::_rdsdb_storage_recommendation_option::RdsdbStorageRecommendationOption;
 
+pub use crate::types::_rds_estimated_monthly_volume_iops_cost_variation::RdsEstimatedMonthlyVolumeIoPsCostVariation;
+
 pub use crate::types::_rds_storage_savings_opportunity_after_discounts::RdsStorageSavingsOpportunityAfterDiscounts;
 
 pub use crate::types::_rds_storage_estimated_monthly_savings::RdsStorageEstimatedMonthlySavings;
@@ -676,6 +678,8 @@ mod _rds_database_projected_metric;
 mod _rds_database_recommended_option_projected_metric;
 
 mod _rds_effective_recommendation_preferences;
+
+mod _rds_estimated_monthly_volume_iops_cost_variation;
 
 mod _rds_instance_estimated_monthly_savings;
 

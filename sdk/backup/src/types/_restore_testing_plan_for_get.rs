@@ -19,7 +19,7 @@ pub struct RestoreTestingPlanForGet {
     pub restore_testing_plan_arn: ::std::string::String,
     /// <p>The restore testing plan name.</p>
     pub restore_testing_plan_name: ::std::string::String,
-    /// <p>A CRON expression in specified timezone when a restore testing plan is executed.</p>
+    /// <p>A CRON expression in specified timezone when a restore testing plan is executed. When no CRON expression is provided, Backup will use the default expression <code>cron(0 5 ? * * *)</code>.</p>
     pub schedule_expression: ::std::string::String,
     /// <p>Optional. This is the timezone in which the schedule expression is set. By default, ScheduleExpressions are in UTC. You can modify this to a specified timezone.</p>
     pub schedule_expression_timezone: ::std::option::Option<::std::string::String>,
@@ -59,7 +59,7 @@ impl RestoreTestingPlanForGet {
         use std::ops::Deref;
         self.restore_testing_plan_name.deref()
     }
-    /// <p>A CRON expression in specified timezone when a restore testing plan is executed.</p>
+    /// <p>A CRON expression in specified timezone when a restore testing plan is executed. When no CRON expression is provided, Backup will use the default expression <code>cron(0 5 ? * * *)</code>.</p>
     pub fn schedule_expression(&self) -> &str {
         use std::ops::Deref;
         self.schedule_expression.deref()
@@ -202,18 +202,18 @@ impl RestoreTestingPlanForGetBuilder {
     pub fn get_restore_testing_plan_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.restore_testing_plan_name
     }
-    /// <p>A CRON expression in specified timezone when a restore testing plan is executed.</p>
+    /// <p>A CRON expression in specified timezone when a restore testing plan is executed. When no CRON expression is provided, Backup will use the default expression <code>cron(0 5 ? * * *)</code>.</p>
     /// This field is required.
     pub fn schedule_expression(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.schedule_expression = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A CRON expression in specified timezone when a restore testing plan is executed.</p>
+    /// <p>A CRON expression in specified timezone when a restore testing plan is executed. When no CRON expression is provided, Backup will use the default expression <code>cron(0 5 ? * * *)</code>.</p>
     pub fn set_schedule_expression(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.schedule_expression = input;
         self
     }
-    /// <p>A CRON expression in specified timezone when a restore testing plan is executed.</p>
+    /// <p>A CRON expression in specified timezone when a restore testing plan is executed. When no CRON expression is provided, Backup will use the default expression <code>cron(0 5 ? * * *)</code>.</p>
     pub fn get_schedule_expression(&self) -> &::std::option::Option<::std::string::String> {
         &self.schedule_expression
     }

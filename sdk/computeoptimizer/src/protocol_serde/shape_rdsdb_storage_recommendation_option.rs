@@ -35,6 +35,16 @@ where
                                     crate::protocol_serde::shape_rds_storage_savings_opportunity_after_discounts::de_rds_storage_savings_opportunity_after_discounts(tokens)?
                                 );
                         }
+                        "estimatedMonthlyVolumeIOPsCostVariation" => {
+                            builder = builder.set_estimated_monthly_volume_iops_cost_variation(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| {
+                                        s.to_unescaped()
+                                            .map(|u| crate::types::RdsEstimatedMonthlyVolumeIoPsCostVariation::from(u.as_ref()))
+                                    })
+                                    .transpose()?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

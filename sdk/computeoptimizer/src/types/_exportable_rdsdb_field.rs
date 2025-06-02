@@ -13,6 +13,7 @@
 /// # let exportablerdsdbfield = unimplemented!();
 /// match exportablerdsdbfield {
 ///     ExportableRdsdbField::AccountId => { /* ... */ },
+///     ExportableRdsdbField::ClusterWriter => { /* ... */ },
 ///     ExportableRdsdbField::CurrentDbInstanceClass => { /* ... */ },
 ///     ExportableRdsdbField::CurrentInstanceOnDemandHourlyPrice => { /* ... */ },
 ///     ExportableRdsdbField::CurrentInstancePerformanceRisk => { /* ... */ },
@@ -21,6 +22,10 @@
 ///     ExportableRdsdbField::CurrentStorageConfigurationMaxAllocatedStorage => { /* ... */ },
 ///     ExportableRdsdbField::CurrentStorageConfigurationStorageThroughput => { /* ... */ },
 ///     ExportableRdsdbField::CurrentStorageConfigurationStorageType => { /* ... */ },
+///     ExportableRdsdbField::CurrentStorageEstimatedClusterInstanceOnDemandMonthlyCost => { /* ... */ },
+///     ExportableRdsdbField::CurrentStorageEstimatedClusterStorageIoOnDemandMonthlyCost => { /* ... */ },
+///     ExportableRdsdbField::CurrentStorageEstimatedClusterStorageOnDemandMonthlyCost => { /* ... */ },
+///     ExportableRdsdbField::CurrentStorageEstimatedMonthlyVolumeIopsCostVariation => { /* ... */ },
 ///     ExportableRdsdbField::CurrentStorageOnDemandMonthlyPrice => { /* ... */ },
 ///     ExportableRdsdbField::DbClusterIdentifier => { /* ... */ },
 ///     ExportableRdsdbField::EffectiveRecommendationPreferencesCpuVendorArchitectures => { /* ... */ },
@@ -51,10 +56,14 @@
 ///     ExportableRdsdbField::StorageFinding => { /* ... */ },
 ///     ExportableRdsdbField::StorageFindingReasonCodes => { /* ... */ },
 ///     ExportableRdsdbField::StorageRecommendationOptionsAllocatedStorage => { /* ... */ },
+///     ExportableRdsdbField::StorageRecommendationOptionsEstimatedClusterInstanceOnDemandMonthlyCost => { /* ... */ },
+///     ExportableRdsdbField::StorageRecommendationOptionsEstimatedClusterStorageIoOnDemandMonthlyCost => { /* ... */ },
+///     ExportableRdsdbField::StorageRecommendationOptionsEstimatedClusterStorageOnDemandMonthlyCost => { /* ... */ },
 ///     ExportableRdsdbField::StorageRecommendationOptionsEstimatedMonthlySavingsCurrency => { /* ... */ },
 ///     ExportableRdsdbField::StorageRecommendationOptionsEstimatedMonthlySavingsCurrencyAfterDiscounts => { /* ... */ },
 ///     ExportableRdsdbField::StorageRecommendationOptionsEstimatedMonthlySavingsValue => { /* ... */ },
 ///     ExportableRdsdbField::StorageRecommendationOptionsEstimatedMonthlySavingsValueAfterDiscounts => { /* ... */ },
+///     ExportableRdsdbField::StorageRecommendationOptionsEstimatedMonthlyVolumeIopsCostVariation => { /* ... */ },
 ///     ExportableRdsdbField::StorageRecommendationOptionsIops => { /* ... */ },
 ///     ExportableRdsdbField::StorageRecommendationOptionsMaxAllocatedStorage => { /* ... */ },
 ///     ExportableRdsdbField::StorageRecommendationOptionsOnDemandMonthlyPrice => { /* ... */ },
@@ -81,6 +90,9 @@
 ///     ExportableRdsdbField::UtilizationMetricsReadIopsEphemeralStorageMaximum => { /* ... */ },
 ///     ExportableRdsdbField::UtilizationMetricsStorageNetworkReceiveThroughputMaximum => { /* ... */ },
 ///     ExportableRdsdbField::UtilizationMetricsStorageNetworkTransmitThroughputMaximum => { /* ... */ },
+///     ExportableRdsdbField::UtilizationMetricsVolumeBytesUsedAverage => { /* ... */ },
+///     ExportableRdsdbField::UtilizationMetricsVolumeReadIopsAverage => { /* ... */ },
+///     ExportableRdsdbField::UtilizationMetricsVolumeWriteIopsAverage => { /* ... */ },
 ///     ExportableRdsdbField::UtilizationMetricsWriteIopsEphemeralStorageMaximum => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -113,6 +125,8 @@ pub enum ExportableRdsdbField {
     #[allow(missing_docs)] // documentation missing in model
     AccountId,
     #[allow(missing_docs)] // documentation missing in model
+    ClusterWriter,
+    #[allow(missing_docs)] // documentation missing in model
     CurrentDbInstanceClass,
     #[allow(missing_docs)] // documentation missing in model
     CurrentInstanceOnDemandHourlyPrice,
@@ -128,6 +142,14 @@ pub enum ExportableRdsdbField {
     CurrentStorageConfigurationStorageThroughput,
     #[allow(missing_docs)] // documentation missing in model
     CurrentStorageConfigurationStorageType,
+    #[allow(missing_docs)] // documentation missing in model
+    CurrentStorageEstimatedClusterInstanceOnDemandMonthlyCost,
+    #[allow(missing_docs)] // documentation missing in model
+    CurrentStorageEstimatedClusterStorageIoOnDemandMonthlyCost,
+    #[allow(missing_docs)] // documentation missing in model
+    CurrentStorageEstimatedClusterStorageOnDemandMonthlyCost,
+    #[allow(missing_docs)] // documentation missing in model
+    CurrentStorageEstimatedMonthlyVolumeIopsCostVariation,
     #[allow(missing_docs)] // documentation missing in model
     CurrentStorageOnDemandMonthlyPrice,
     #[allow(missing_docs)] // documentation missing in model
@@ -189,6 +211,12 @@ pub enum ExportableRdsdbField {
     #[allow(missing_docs)] // documentation missing in model
     StorageRecommendationOptionsAllocatedStorage,
     #[allow(missing_docs)] // documentation missing in model
+    StorageRecommendationOptionsEstimatedClusterInstanceOnDemandMonthlyCost,
+    #[allow(missing_docs)] // documentation missing in model
+    StorageRecommendationOptionsEstimatedClusterStorageIoOnDemandMonthlyCost,
+    #[allow(missing_docs)] // documentation missing in model
+    StorageRecommendationOptionsEstimatedClusterStorageOnDemandMonthlyCost,
+    #[allow(missing_docs)] // documentation missing in model
     StorageRecommendationOptionsEstimatedMonthlySavingsCurrency,
     #[allow(missing_docs)] // documentation missing in model
     StorageRecommendationOptionsEstimatedMonthlySavingsCurrencyAfterDiscounts,
@@ -196,6 +224,8 @@ pub enum ExportableRdsdbField {
     StorageRecommendationOptionsEstimatedMonthlySavingsValue,
     #[allow(missing_docs)] // documentation missing in model
     StorageRecommendationOptionsEstimatedMonthlySavingsValueAfterDiscounts,
+    #[allow(missing_docs)] // documentation missing in model
+    StorageRecommendationOptionsEstimatedMonthlyVolumeIopsCostVariation,
     #[allow(missing_docs)] // documentation missing in model
     StorageRecommendationOptionsIops,
     #[allow(missing_docs)] // documentation missing in model
@@ -249,6 +279,12 @@ pub enum ExportableRdsdbField {
     #[allow(missing_docs)] // documentation missing in model
     UtilizationMetricsStorageNetworkTransmitThroughputMaximum,
     #[allow(missing_docs)] // documentation missing in model
+    UtilizationMetricsVolumeBytesUsedAverage,
+    #[allow(missing_docs)] // documentation missing in model
+    UtilizationMetricsVolumeReadIopsAverage,
+    #[allow(missing_docs)] // documentation missing in model
+    UtilizationMetricsVolumeWriteIopsAverage,
+    #[allow(missing_docs)] // documentation missing in model
     UtilizationMetricsWriteIopsEphemeralStorageMaximum,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
@@ -258,6 +294,7 @@ impl ::std::convert::From<&str> for ExportableRdsdbField {
     fn from(s: &str) -> Self {
         match s {
             "AccountId" => ExportableRdsdbField::AccountId,
+            "ClusterWriter" => ExportableRdsdbField::ClusterWriter,
             "CurrentDBInstanceClass" => ExportableRdsdbField::CurrentDbInstanceClass,
             "CurrentInstanceOnDemandHourlyPrice" => ExportableRdsdbField::CurrentInstanceOnDemandHourlyPrice,
             "CurrentInstancePerformanceRisk" => ExportableRdsdbField::CurrentInstancePerformanceRisk,
@@ -266,6 +303,16 @@ impl ::std::convert::From<&str> for ExportableRdsdbField {
             "CurrentStorageConfigurationMaxAllocatedStorage" => ExportableRdsdbField::CurrentStorageConfigurationMaxAllocatedStorage,
             "CurrentStorageConfigurationStorageThroughput" => ExportableRdsdbField::CurrentStorageConfigurationStorageThroughput,
             "CurrentStorageConfigurationStorageType" => ExportableRdsdbField::CurrentStorageConfigurationStorageType,
+            "CurrentStorageEstimatedClusterInstanceOnDemandMonthlyCost" => {
+                ExportableRdsdbField::CurrentStorageEstimatedClusterInstanceOnDemandMonthlyCost
+            }
+            "CurrentStorageEstimatedClusterStorageIOOnDemandMonthlyCost" => {
+                ExportableRdsdbField::CurrentStorageEstimatedClusterStorageIoOnDemandMonthlyCost
+            }
+            "CurrentStorageEstimatedClusterStorageOnDemandMonthlyCost" => {
+                ExportableRdsdbField::CurrentStorageEstimatedClusterStorageOnDemandMonthlyCost
+            }
+            "CurrentStorageEstimatedMonthlyVolumeIOPsCostVariation" => ExportableRdsdbField::CurrentStorageEstimatedMonthlyVolumeIopsCostVariation,
             "CurrentStorageOnDemandMonthlyPrice" => ExportableRdsdbField::CurrentStorageOnDemandMonthlyPrice,
             "DBClusterIdentifier" => ExportableRdsdbField::DbClusterIdentifier,
             "EffectiveRecommendationPreferencesCpuVendorArchitectures" => {
@@ -318,6 +365,15 @@ impl ::std::convert::From<&str> for ExportableRdsdbField {
             "StorageFinding" => ExportableRdsdbField::StorageFinding,
             "StorageFindingReasonCodes" => ExportableRdsdbField::StorageFindingReasonCodes,
             "StorageRecommendationOptionsAllocatedStorage" => ExportableRdsdbField::StorageRecommendationOptionsAllocatedStorage,
+            "StorageRecommendationOptionsEstimatedClusterInstanceOnDemandMonthlyCost" => {
+                ExportableRdsdbField::StorageRecommendationOptionsEstimatedClusterInstanceOnDemandMonthlyCost
+            }
+            "StorageRecommendationOptionsEstimatedClusterStorageIOOnDemandMonthlyCost" => {
+                ExportableRdsdbField::StorageRecommendationOptionsEstimatedClusterStorageIoOnDemandMonthlyCost
+            }
+            "StorageRecommendationOptionsEstimatedClusterStorageOnDemandMonthlyCost" => {
+                ExportableRdsdbField::StorageRecommendationOptionsEstimatedClusterStorageOnDemandMonthlyCost
+            }
             "StorageRecommendationOptionsEstimatedMonthlySavingsCurrency" => {
                 ExportableRdsdbField::StorageRecommendationOptionsEstimatedMonthlySavingsCurrency
             }
@@ -329,6 +385,9 @@ impl ::std::convert::From<&str> for ExportableRdsdbField {
             }
             "StorageRecommendationOptionsEstimatedMonthlySavingsValueAfterDiscounts" => {
                 ExportableRdsdbField::StorageRecommendationOptionsEstimatedMonthlySavingsValueAfterDiscounts
+            }
+            "StorageRecommendationOptionsEstimatedMonthlyVolumeIOPsCostVariation" => {
+                ExportableRdsdbField::StorageRecommendationOptionsEstimatedMonthlyVolumeIopsCostVariation
             }
             "StorageRecommendationOptionsIOPS" => ExportableRdsdbField::StorageRecommendationOptionsIops,
             "StorageRecommendationOptionsMaxAllocatedStorage" => ExportableRdsdbField::StorageRecommendationOptionsMaxAllocatedStorage,
@@ -368,6 +427,9 @@ impl ::std::convert::From<&str> for ExportableRdsdbField {
             "UtilizationMetricsStorageNetworkTransmitThroughputMaximum" => {
                 ExportableRdsdbField::UtilizationMetricsStorageNetworkTransmitThroughputMaximum
             }
+            "UtilizationMetricsVolumeBytesUsedAverage" => ExportableRdsdbField::UtilizationMetricsVolumeBytesUsedAverage,
+            "UtilizationMetricsVolumeReadIOPsAverage" => ExportableRdsdbField::UtilizationMetricsVolumeReadIopsAverage,
+            "UtilizationMetricsVolumeWriteIOPsAverage" => ExportableRdsdbField::UtilizationMetricsVolumeWriteIopsAverage,
             "UtilizationMetricsWriteIOPSEphemeralStorageMaximum" => ExportableRdsdbField::UtilizationMetricsWriteIopsEphemeralStorageMaximum,
             other => ExportableRdsdbField::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -385,6 +447,7 @@ impl ExportableRdsdbField {
     pub fn as_str(&self) -> &str {
         match self {
             ExportableRdsdbField::AccountId => "AccountId",
+            ExportableRdsdbField::ClusterWriter => "ClusterWriter",
             ExportableRdsdbField::CurrentDbInstanceClass => "CurrentDBInstanceClass",
             ExportableRdsdbField::CurrentInstanceOnDemandHourlyPrice => "CurrentInstanceOnDemandHourlyPrice",
             ExportableRdsdbField::CurrentInstancePerformanceRisk => "CurrentInstancePerformanceRisk",
@@ -393,6 +456,16 @@ impl ExportableRdsdbField {
             ExportableRdsdbField::CurrentStorageConfigurationMaxAllocatedStorage => "CurrentStorageConfigurationMaxAllocatedStorage",
             ExportableRdsdbField::CurrentStorageConfigurationStorageThroughput => "CurrentStorageConfigurationStorageThroughput",
             ExportableRdsdbField::CurrentStorageConfigurationStorageType => "CurrentStorageConfigurationStorageType",
+            ExportableRdsdbField::CurrentStorageEstimatedClusterInstanceOnDemandMonthlyCost => {
+                "CurrentStorageEstimatedClusterInstanceOnDemandMonthlyCost"
+            }
+            ExportableRdsdbField::CurrentStorageEstimatedClusterStorageIoOnDemandMonthlyCost => {
+                "CurrentStorageEstimatedClusterStorageIOOnDemandMonthlyCost"
+            }
+            ExportableRdsdbField::CurrentStorageEstimatedClusterStorageOnDemandMonthlyCost => {
+                "CurrentStorageEstimatedClusterStorageOnDemandMonthlyCost"
+            }
+            ExportableRdsdbField::CurrentStorageEstimatedMonthlyVolumeIopsCostVariation => "CurrentStorageEstimatedMonthlyVolumeIOPsCostVariation",
             ExportableRdsdbField::CurrentStorageOnDemandMonthlyPrice => "CurrentStorageOnDemandMonthlyPrice",
             ExportableRdsdbField::DbClusterIdentifier => "DBClusterIdentifier",
             ExportableRdsdbField::EffectiveRecommendationPreferencesCpuVendorArchitectures => {
@@ -445,6 +518,15 @@ impl ExportableRdsdbField {
             ExportableRdsdbField::StorageFinding => "StorageFinding",
             ExportableRdsdbField::StorageFindingReasonCodes => "StorageFindingReasonCodes",
             ExportableRdsdbField::StorageRecommendationOptionsAllocatedStorage => "StorageRecommendationOptionsAllocatedStorage",
+            ExportableRdsdbField::StorageRecommendationOptionsEstimatedClusterInstanceOnDemandMonthlyCost => {
+                "StorageRecommendationOptionsEstimatedClusterInstanceOnDemandMonthlyCost"
+            }
+            ExportableRdsdbField::StorageRecommendationOptionsEstimatedClusterStorageIoOnDemandMonthlyCost => {
+                "StorageRecommendationOptionsEstimatedClusterStorageIOOnDemandMonthlyCost"
+            }
+            ExportableRdsdbField::StorageRecommendationOptionsEstimatedClusterStorageOnDemandMonthlyCost => {
+                "StorageRecommendationOptionsEstimatedClusterStorageOnDemandMonthlyCost"
+            }
             ExportableRdsdbField::StorageRecommendationOptionsEstimatedMonthlySavingsCurrency => {
                 "StorageRecommendationOptionsEstimatedMonthlySavingsCurrency"
             }
@@ -456,6 +538,9 @@ impl ExportableRdsdbField {
             }
             ExportableRdsdbField::StorageRecommendationOptionsEstimatedMonthlySavingsValueAfterDiscounts => {
                 "StorageRecommendationOptionsEstimatedMonthlySavingsValueAfterDiscounts"
+            }
+            ExportableRdsdbField::StorageRecommendationOptionsEstimatedMonthlyVolumeIopsCostVariation => {
+                "StorageRecommendationOptionsEstimatedMonthlyVolumeIOPsCostVariation"
             }
             ExportableRdsdbField::StorageRecommendationOptionsIops => "StorageRecommendationOptionsIOPS",
             ExportableRdsdbField::StorageRecommendationOptionsMaxAllocatedStorage => "StorageRecommendationOptionsMaxAllocatedStorage",
@@ -495,6 +580,9 @@ impl ExportableRdsdbField {
             ExportableRdsdbField::UtilizationMetricsStorageNetworkTransmitThroughputMaximum => {
                 "UtilizationMetricsStorageNetworkTransmitThroughputMaximum"
             }
+            ExportableRdsdbField::UtilizationMetricsVolumeBytesUsedAverage => "UtilizationMetricsVolumeBytesUsedAverage",
+            ExportableRdsdbField::UtilizationMetricsVolumeReadIopsAverage => "UtilizationMetricsVolumeReadIOPsAverage",
+            ExportableRdsdbField::UtilizationMetricsVolumeWriteIopsAverage => "UtilizationMetricsVolumeWriteIOPsAverage",
             ExportableRdsdbField::UtilizationMetricsWriteIopsEphemeralStorageMaximum => "UtilizationMetricsWriteIOPSEphemeralStorageMaximum",
             ExportableRdsdbField::Unknown(value) => value.as_str(),
         }
@@ -503,6 +591,7 @@ impl ExportableRdsdbField {
     pub const fn values() -> &'static [&'static str] {
         &[
             "AccountId",
+            "ClusterWriter",
             "CurrentDBInstanceClass",
             "CurrentInstanceOnDemandHourlyPrice",
             "CurrentInstancePerformanceRisk",
@@ -511,6 +600,10 @@ impl ExportableRdsdbField {
             "CurrentStorageConfigurationMaxAllocatedStorage",
             "CurrentStorageConfigurationStorageThroughput",
             "CurrentStorageConfigurationStorageType",
+            "CurrentStorageEstimatedClusterInstanceOnDemandMonthlyCost",
+            "CurrentStorageEstimatedClusterStorageIOOnDemandMonthlyCost",
+            "CurrentStorageEstimatedClusterStorageOnDemandMonthlyCost",
+            "CurrentStorageEstimatedMonthlyVolumeIOPsCostVariation",
             "CurrentStorageOnDemandMonthlyPrice",
             "DBClusterIdentifier",
             "EffectiveRecommendationPreferencesCpuVendorArchitectures",
@@ -541,10 +634,14 @@ impl ExportableRdsdbField {
             "StorageFinding",
             "StorageFindingReasonCodes",
             "StorageRecommendationOptionsAllocatedStorage",
+            "StorageRecommendationOptionsEstimatedClusterInstanceOnDemandMonthlyCost",
+            "StorageRecommendationOptionsEstimatedClusterStorageIOOnDemandMonthlyCost",
+            "StorageRecommendationOptionsEstimatedClusterStorageOnDemandMonthlyCost",
             "StorageRecommendationOptionsEstimatedMonthlySavingsCurrency",
             "StorageRecommendationOptionsEstimatedMonthlySavingsCurrencyAfterDiscounts",
             "StorageRecommendationOptionsEstimatedMonthlySavingsValue",
             "StorageRecommendationOptionsEstimatedMonthlySavingsValueAfterDiscounts",
+            "StorageRecommendationOptionsEstimatedMonthlyVolumeIOPsCostVariation",
             "StorageRecommendationOptionsIOPS",
             "StorageRecommendationOptionsMaxAllocatedStorage",
             "StorageRecommendationOptionsOnDemandMonthlyPrice",
@@ -571,6 +668,9 @@ impl ExportableRdsdbField {
             "UtilizationMetricsReadIOPSEphemeralStorageMaximum",
             "UtilizationMetricsStorageNetworkReceiveThroughputMaximum",
             "UtilizationMetricsStorageNetworkTransmitThroughputMaximum",
+            "UtilizationMetricsVolumeBytesUsedAverage",
+            "UtilizationMetricsVolumeReadIOPsAverage",
+            "UtilizationMetricsVolumeWriteIOPsAverage",
             "UtilizationMetricsWriteIOPSEphemeralStorageMaximum",
         ]
     }
@@ -596,6 +696,7 @@ impl ::std::fmt::Display for ExportableRdsdbField {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             ExportableRdsdbField::AccountId => write!(f, "AccountId"),
+            ExportableRdsdbField::ClusterWriter => write!(f, "ClusterWriter"),
             ExportableRdsdbField::CurrentDbInstanceClass => write!(f, "CurrentDBInstanceClass"),
             ExportableRdsdbField::CurrentInstanceOnDemandHourlyPrice => write!(f, "CurrentInstanceOnDemandHourlyPrice"),
             ExportableRdsdbField::CurrentInstancePerformanceRisk => write!(f, "CurrentInstancePerformanceRisk"),
@@ -604,6 +705,18 @@ impl ::std::fmt::Display for ExportableRdsdbField {
             ExportableRdsdbField::CurrentStorageConfigurationMaxAllocatedStorage => write!(f, "CurrentStorageConfigurationMaxAllocatedStorage"),
             ExportableRdsdbField::CurrentStorageConfigurationStorageThroughput => write!(f, "CurrentStorageConfigurationStorageThroughput"),
             ExportableRdsdbField::CurrentStorageConfigurationStorageType => write!(f, "CurrentStorageConfigurationStorageType"),
+            ExportableRdsdbField::CurrentStorageEstimatedClusterInstanceOnDemandMonthlyCost => {
+                write!(f, "CurrentStorageEstimatedClusterInstanceOnDemandMonthlyCost")
+            }
+            ExportableRdsdbField::CurrentStorageEstimatedClusterStorageIoOnDemandMonthlyCost => {
+                write!(f, "CurrentStorageEstimatedClusterStorageIOOnDemandMonthlyCost")
+            }
+            ExportableRdsdbField::CurrentStorageEstimatedClusterStorageOnDemandMonthlyCost => {
+                write!(f, "CurrentStorageEstimatedClusterStorageOnDemandMonthlyCost")
+            }
+            ExportableRdsdbField::CurrentStorageEstimatedMonthlyVolumeIopsCostVariation => {
+                write!(f, "CurrentStorageEstimatedMonthlyVolumeIOPsCostVariation")
+            }
             ExportableRdsdbField::CurrentStorageOnDemandMonthlyPrice => write!(f, "CurrentStorageOnDemandMonthlyPrice"),
             ExportableRdsdbField::DbClusterIdentifier => write!(f, "DBClusterIdentifier"),
             ExportableRdsdbField::EffectiveRecommendationPreferencesCpuVendorArchitectures => {
@@ -656,6 +769,15 @@ impl ::std::fmt::Display for ExportableRdsdbField {
             ExportableRdsdbField::StorageFinding => write!(f, "StorageFinding"),
             ExportableRdsdbField::StorageFindingReasonCodes => write!(f, "StorageFindingReasonCodes"),
             ExportableRdsdbField::StorageRecommendationOptionsAllocatedStorage => write!(f, "StorageRecommendationOptionsAllocatedStorage"),
+            ExportableRdsdbField::StorageRecommendationOptionsEstimatedClusterInstanceOnDemandMonthlyCost => {
+                write!(f, "StorageRecommendationOptionsEstimatedClusterInstanceOnDemandMonthlyCost")
+            }
+            ExportableRdsdbField::StorageRecommendationOptionsEstimatedClusterStorageIoOnDemandMonthlyCost => {
+                write!(f, "StorageRecommendationOptionsEstimatedClusterStorageIOOnDemandMonthlyCost")
+            }
+            ExportableRdsdbField::StorageRecommendationOptionsEstimatedClusterStorageOnDemandMonthlyCost => {
+                write!(f, "StorageRecommendationOptionsEstimatedClusterStorageOnDemandMonthlyCost")
+            }
             ExportableRdsdbField::StorageRecommendationOptionsEstimatedMonthlySavingsCurrency => {
                 write!(f, "StorageRecommendationOptionsEstimatedMonthlySavingsCurrency")
             }
@@ -667,6 +789,9 @@ impl ::std::fmt::Display for ExportableRdsdbField {
             }
             ExportableRdsdbField::StorageRecommendationOptionsEstimatedMonthlySavingsValueAfterDiscounts => {
                 write!(f, "StorageRecommendationOptionsEstimatedMonthlySavingsValueAfterDiscounts")
+            }
+            ExportableRdsdbField::StorageRecommendationOptionsEstimatedMonthlyVolumeIopsCostVariation => {
+                write!(f, "StorageRecommendationOptionsEstimatedMonthlyVolumeIOPsCostVariation")
             }
             ExportableRdsdbField::StorageRecommendationOptionsIops => write!(f, "StorageRecommendationOptionsIOPS"),
             ExportableRdsdbField::StorageRecommendationOptionsMaxAllocatedStorage => write!(f, "StorageRecommendationOptionsMaxAllocatedStorage"),
@@ -712,6 +837,9 @@ impl ::std::fmt::Display for ExportableRdsdbField {
             ExportableRdsdbField::UtilizationMetricsStorageNetworkTransmitThroughputMaximum => {
                 write!(f, "UtilizationMetricsStorageNetworkTransmitThroughputMaximum")
             }
+            ExportableRdsdbField::UtilizationMetricsVolumeBytesUsedAverage => write!(f, "UtilizationMetricsVolumeBytesUsedAverage"),
+            ExportableRdsdbField::UtilizationMetricsVolumeReadIopsAverage => write!(f, "UtilizationMetricsVolumeReadIOPsAverage"),
+            ExportableRdsdbField::UtilizationMetricsVolumeWriteIopsAverage => write!(f, "UtilizationMetricsVolumeWriteIOPsAverage"),
             ExportableRdsdbField::UtilizationMetricsWriteIopsEphemeralStorageMaximum => {
                 write!(f, "UtilizationMetricsWriteIOPSEphemeralStorageMaximum")
             }

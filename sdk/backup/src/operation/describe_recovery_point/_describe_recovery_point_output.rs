@@ -19,12 +19,21 @@ pub struct DescribeRecoveryPointOutput {
     pub created_by: ::std::option::Option<crate::types::RecoveryPointCreator>,
     /// <p>Specifies the IAM role ARN used to create the target recovery point; for example, <code>arn:aws:iam::123456789012:role/S3Access</code>.</p>
     pub iam_role_arn: ::std::option::Option<::std::string::String>,
-    /// <p>A status code specifying the state of the recovery point.</p>
-    /// <p><code>PARTIAL</code> status indicates Backup could not create the recovery point before the backup window closed. To increase your backup plan window using the API, see <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/API_UpdateBackupPlan.html">UpdateBackupPlan</a>. You can also increase your backup plan window using the Console by choosing and editing your backup plan.</p>
-    /// <p><code>EXPIRED</code> status indicates that the recovery point has exceeded its retention period, but Backup lacks permission or is otherwise unable to delete it. To manually delete these recovery points, see <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/gs-cleanup-resources.html#cleanup-backups"> Step 3: Delete the recovery points</a> in the <i>Clean up resources</i> section of <i>Getting started</i>.</p>
+    /// <p>A status code specifying the state of the recovery point. For more information, see <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/applicationstackbackups.html#cfnrecoverypointstatus"> Recovery point status</a> in the <i>Backup Developer Guide</i>.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>CREATING</code> status indicates that an Backup job has been initiated for a resource. The backup process has started and is actively processing a backup job for the associated recovery point.</p></li>
+    /// <li>
+    /// <p><code>AVAILABLE</code> status indicates that the backup was successfully created for the recovery point. The backup process has completed without any issues, and the recovery point is now ready for use.</p></li>
+    /// <li>
+    /// <p><code>PARTIAL</code> status indicates a composite recovery point has one or more nested recovery points that were not in the backup.</p></li>
+    /// <li>
+    /// <p><code>EXPIRED</code> status indicates that the recovery point has exceeded its retention period, but Backup lacks permission or is otherwise unable to delete it. To manually delete these recovery points, see <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/gs-cleanup-resources.html#cleanup-backups"> Step 3: Delete the recovery points</a> in the <i>Clean up resources</i> section of <i>Getting started</i>.</p></li>
+    /// <li>
     /// <p><code>STOPPED</code> status occurs on a continuous backup where a user has taken some action that causes the continuous backup to be disabled. This can be caused by the removal of permissions, turning off versioning, turning off events being sent to EventBridge, or disabling the EventBridge rules that are put in place by Backup. For recovery points of Amazon S3, Amazon RDS, and Amazon Aurora resources, this status occurs when the retention period of a continuous backup rule is changed.</p>
     /// <p>To resolve <code>STOPPED</code> status, ensure that all requested permissions are in place and that versioning is enabled on the S3 bucket. Once these conditions are met, the next instance of a backup rule running will result in a new continuous recovery point being created. The recovery points with STOPPED status do not need to be deleted.</p>
-    /// <p>For SAP HANA on Amazon EC2 <code>STOPPED</code> status occurs due to user action, application misconfiguration, or backup failure. To ensure that future continuous backups succeed, refer to the recovery point status and check SAP HANA for details.</p>
+    /// <p>For SAP HANA on Amazon EC2 <code>STOPPED</code> status occurs due to user action, application misconfiguration, or backup failure. To ensure that future continuous backups succeed, refer to the recovery point status and check SAP HANA for details.</p></li>
+    /// </ul>
     pub status: ::std::option::Option<crate::types::RecoveryPointStatus>,
     /// <p>A status message explaining the status of the recovery point.</p>
     pub status_message: ::std::option::Option<::std::string::String>,
@@ -99,12 +108,21 @@ impl DescribeRecoveryPointOutput {
     pub fn iam_role_arn(&self) -> ::std::option::Option<&str> {
         self.iam_role_arn.as_deref()
     }
-    /// <p>A status code specifying the state of the recovery point.</p>
-    /// <p><code>PARTIAL</code> status indicates Backup could not create the recovery point before the backup window closed. To increase your backup plan window using the API, see <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/API_UpdateBackupPlan.html">UpdateBackupPlan</a>. You can also increase your backup plan window using the Console by choosing and editing your backup plan.</p>
-    /// <p><code>EXPIRED</code> status indicates that the recovery point has exceeded its retention period, but Backup lacks permission or is otherwise unable to delete it. To manually delete these recovery points, see <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/gs-cleanup-resources.html#cleanup-backups"> Step 3: Delete the recovery points</a> in the <i>Clean up resources</i> section of <i>Getting started</i>.</p>
+    /// <p>A status code specifying the state of the recovery point. For more information, see <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/applicationstackbackups.html#cfnrecoverypointstatus"> Recovery point status</a> in the <i>Backup Developer Guide</i>.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>CREATING</code> status indicates that an Backup job has been initiated for a resource. The backup process has started and is actively processing a backup job for the associated recovery point.</p></li>
+    /// <li>
+    /// <p><code>AVAILABLE</code> status indicates that the backup was successfully created for the recovery point. The backup process has completed without any issues, and the recovery point is now ready for use.</p></li>
+    /// <li>
+    /// <p><code>PARTIAL</code> status indicates a composite recovery point has one or more nested recovery points that were not in the backup.</p></li>
+    /// <li>
+    /// <p><code>EXPIRED</code> status indicates that the recovery point has exceeded its retention period, but Backup lacks permission or is otherwise unable to delete it. To manually delete these recovery points, see <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/gs-cleanup-resources.html#cleanup-backups"> Step 3: Delete the recovery points</a> in the <i>Clean up resources</i> section of <i>Getting started</i>.</p></li>
+    /// <li>
     /// <p><code>STOPPED</code> status occurs on a continuous backup where a user has taken some action that causes the continuous backup to be disabled. This can be caused by the removal of permissions, turning off versioning, turning off events being sent to EventBridge, or disabling the EventBridge rules that are put in place by Backup. For recovery points of Amazon S3, Amazon RDS, and Amazon Aurora resources, this status occurs when the retention period of a continuous backup rule is changed.</p>
     /// <p>To resolve <code>STOPPED</code> status, ensure that all requested permissions are in place and that versioning is enabled on the S3 bucket. Once these conditions are met, the next instance of a backup rule running will result in a new continuous recovery point being created. The recovery points with STOPPED status do not need to be deleted.</p>
-    /// <p>For SAP HANA on Amazon EC2 <code>STOPPED</code> status occurs due to user action, application misconfiguration, or backup failure. To ensure that future continuous backups succeed, refer to the recovery point status and check SAP HANA for details.</p>
+    /// <p>For SAP HANA on Amazon EC2 <code>STOPPED</code> status occurs due to user action, application misconfiguration, or backup failure. To ensure that future continuous backups succeed, refer to the recovery point status and check SAP HANA for details.</p></li>
+    /// </ul>
     pub fn status(&self) -> ::std::option::Option<&crate::types::RecoveryPointStatus> {
         self.status.as_ref()
     }
@@ -338,32 +356,59 @@ impl DescribeRecoveryPointOutputBuilder {
     pub fn get_iam_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.iam_role_arn
     }
-    /// <p>A status code specifying the state of the recovery point.</p>
-    /// <p><code>PARTIAL</code> status indicates Backup could not create the recovery point before the backup window closed. To increase your backup plan window using the API, see <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/API_UpdateBackupPlan.html">UpdateBackupPlan</a>. You can also increase your backup plan window using the Console by choosing and editing your backup plan.</p>
-    /// <p><code>EXPIRED</code> status indicates that the recovery point has exceeded its retention period, but Backup lacks permission or is otherwise unable to delete it. To manually delete these recovery points, see <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/gs-cleanup-resources.html#cleanup-backups"> Step 3: Delete the recovery points</a> in the <i>Clean up resources</i> section of <i>Getting started</i>.</p>
+    /// <p>A status code specifying the state of the recovery point. For more information, see <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/applicationstackbackups.html#cfnrecoverypointstatus"> Recovery point status</a> in the <i>Backup Developer Guide</i>.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>CREATING</code> status indicates that an Backup job has been initiated for a resource. The backup process has started and is actively processing a backup job for the associated recovery point.</p></li>
+    /// <li>
+    /// <p><code>AVAILABLE</code> status indicates that the backup was successfully created for the recovery point. The backup process has completed without any issues, and the recovery point is now ready for use.</p></li>
+    /// <li>
+    /// <p><code>PARTIAL</code> status indicates a composite recovery point has one or more nested recovery points that were not in the backup.</p></li>
+    /// <li>
+    /// <p><code>EXPIRED</code> status indicates that the recovery point has exceeded its retention period, but Backup lacks permission or is otherwise unable to delete it. To manually delete these recovery points, see <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/gs-cleanup-resources.html#cleanup-backups"> Step 3: Delete the recovery points</a> in the <i>Clean up resources</i> section of <i>Getting started</i>.</p></li>
+    /// <li>
     /// <p><code>STOPPED</code> status occurs on a continuous backup where a user has taken some action that causes the continuous backup to be disabled. This can be caused by the removal of permissions, turning off versioning, turning off events being sent to EventBridge, or disabling the EventBridge rules that are put in place by Backup. For recovery points of Amazon S3, Amazon RDS, and Amazon Aurora resources, this status occurs when the retention period of a continuous backup rule is changed.</p>
     /// <p>To resolve <code>STOPPED</code> status, ensure that all requested permissions are in place and that versioning is enabled on the S3 bucket. Once these conditions are met, the next instance of a backup rule running will result in a new continuous recovery point being created. The recovery points with STOPPED status do not need to be deleted.</p>
-    /// <p>For SAP HANA on Amazon EC2 <code>STOPPED</code> status occurs due to user action, application misconfiguration, or backup failure. To ensure that future continuous backups succeed, refer to the recovery point status and check SAP HANA for details.</p>
+    /// <p>For SAP HANA on Amazon EC2 <code>STOPPED</code> status occurs due to user action, application misconfiguration, or backup failure. To ensure that future continuous backups succeed, refer to the recovery point status and check SAP HANA for details.</p></li>
+    /// </ul>
     pub fn status(mut self, input: crate::types::RecoveryPointStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A status code specifying the state of the recovery point.</p>
-    /// <p><code>PARTIAL</code> status indicates Backup could not create the recovery point before the backup window closed. To increase your backup plan window using the API, see <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/API_UpdateBackupPlan.html">UpdateBackupPlan</a>. You can also increase your backup plan window using the Console by choosing and editing your backup plan.</p>
-    /// <p><code>EXPIRED</code> status indicates that the recovery point has exceeded its retention period, but Backup lacks permission or is otherwise unable to delete it. To manually delete these recovery points, see <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/gs-cleanup-resources.html#cleanup-backups"> Step 3: Delete the recovery points</a> in the <i>Clean up resources</i> section of <i>Getting started</i>.</p>
+    /// <p>A status code specifying the state of the recovery point. For more information, see <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/applicationstackbackups.html#cfnrecoverypointstatus"> Recovery point status</a> in the <i>Backup Developer Guide</i>.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>CREATING</code> status indicates that an Backup job has been initiated for a resource. The backup process has started and is actively processing a backup job for the associated recovery point.</p></li>
+    /// <li>
+    /// <p><code>AVAILABLE</code> status indicates that the backup was successfully created for the recovery point. The backup process has completed without any issues, and the recovery point is now ready for use.</p></li>
+    /// <li>
+    /// <p><code>PARTIAL</code> status indicates a composite recovery point has one or more nested recovery points that were not in the backup.</p></li>
+    /// <li>
+    /// <p><code>EXPIRED</code> status indicates that the recovery point has exceeded its retention period, but Backup lacks permission or is otherwise unable to delete it. To manually delete these recovery points, see <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/gs-cleanup-resources.html#cleanup-backups"> Step 3: Delete the recovery points</a> in the <i>Clean up resources</i> section of <i>Getting started</i>.</p></li>
+    /// <li>
     /// <p><code>STOPPED</code> status occurs on a continuous backup where a user has taken some action that causes the continuous backup to be disabled. This can be caused by the removal of permissions, turning off versioning, turning off events being sent to EventBridge, or disabling the EventBridge rules that are put in place by Backup. For recovery points of Amazon S3, Amazon RDS, and Amazon Aurora resources, this status occurs when the retention period of a continuous backup rule is changed.</p>
     /// <p>To resolve <code>STOPPED</code> status, ensure that all requested permissions are in place and that versioning is enabled on the S3 bucket. Once these conditions are met, the next instance of a backup rule running will result in a new continuous recovery point being created. The recovery points with STOPPED status do not need to be deleted.</p>
-    /// <p>For SAP HANA on Amazon EC2 <code>STOPPED</code> status occurs due to user action, application misconfiguration, or backup failure. To ensure that future continuous backups succeed, refer to the recovery point status and check SAP HANA for details.</p>
+    /// <p>For SAP HANA on Amazon EC2 <code>STOPPED</code> status occurs due to user action, application misconfiguration, or backup failure. To ensure that future continuous backups succeed, refer to the recovery point status and check SAP HANA for details.</p></li>
+    /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::RecoveryPointStatus>) -> Self {
         self.status = input;
         self
     }
-    /// <p>A status code specifying the state of the recovery point.</p>
-    /// <p><code>PARTIAL</code> status indicates Backup could not create the recovery point before the backup window closed. To increase your backup plan window using the API, see <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/API_UpdateBackupPlan.html">UpdateBackupPlan</a>. You can also increase your backup plan window using the Console by choosing and editing your backup plan.</p>
-    /// <p><code>EXPIRED</code> status indicates that the recovery point has exceeded its retention period, but Backup lacks permission or is otherwise unable to delete it. To manually delete these recovery points, see <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/gs-cleanup-resources.html#cleanup-backups"> Step 3: Delete the recovery points</a> in the <i>Clean up resources</i> section of <i>Getting started</i>.</p>
+    /// <p>A status code specifying the state of the recovery point. For more information, see <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/applicationstackbackups.html#cfnrecoverypointstatus"> Recovery point status</a> in the <i>Backup Developer Guide</i>.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>CREATING</code> status indicates that an Backup job has been initiated for a resource. The backup process has started and is actively processing a backup job for the associated recovery point.</p></li>
+    /// <li>
+    /// <p><code>AVAILABLE</code> status indicates that the backup was successfully created for the recovery point. The backup process has completed without any issues, and the recovery point is now ready for use.</p></li>
+    /// <li>
+    /// <p><code>PARTIAL</code> status indicates a composite recovery point has one or more nested recovery points that were not in the backup.</p></li>
+    /// <li>
+    /// <p><code>EXPIRED</code> status indicates that the recovery point has exceeded its retention period, but Backup lacks permission or is otherwise unable to delete it. To manually delete these recovery points, see <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/gs-cleanup-resources.html#cleanup-backups"> Step 3: Delete the recovery points</a> in the <i>Clean up resources</i> section of <i>Getting started</i>.</p></li>
+    /// <li>
     /// <p><code>STOPPED</code> status occurs on a continuous backup where a user has taken some action that causes the continuous backup to be disabled. This can be caused by the removal of permissions, turning off versioning, turning off events being sent to EventBridge, or disabling the EventBridge rules that are put in place by Backup. For recovery points of Amazon S3, Amazon RDS, and Amazon Aurora resources, this status occurs when the retention period of a continuous backup rule is changed.</p>
     /// <p>To resolve <code>STOPPED</code> status, ensure that all requested permissions are in place and that versioning is enabled on the S3 bucket. Once these conditions are met, the next instance of a backup rule running will result in a new continuous recovery point being created. The recovery points with STOPPED status do not need to be deleted.</p>
-    /// <p>For SAP HANA on Amazon EC2 <code>STOPPED</code> status occurs due to user action, application misconfiguration, or backup failure. To ensure that future continuous backups succeed, refer to the recovery point status and check SAP HANA for details.</p>
+    /// <p>For SAP HANA on Amazon EC2 <code>STOPPED</code> status occurs due to user action, application misconfiguration, or backup failure. To ensure that future continuous backups succeed, refer to the recovery point status and check SAP HANA for details.</p></li>
+    /// </ul>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::RecoveryPointStatus> {
         &self.status
     }

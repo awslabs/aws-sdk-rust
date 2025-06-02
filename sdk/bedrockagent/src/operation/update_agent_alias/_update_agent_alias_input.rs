@@ -13,6 +13,8 @@ pub struct UpdateAgentAliasInput {
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Contains details about the routing configuration of the alias.</p>
     pub routing_configuration: ::std::option::Option<::std::vec::Vec<crate::types::AgentAliasRoutingConfigurationListItem>>,
+    /// <p>The invocation state for the agent alias. To pause the agent alias, set the value to <code>REJECT_INVOCATIONS</code>. To start the agent alias running again, set the value to <code>ACCEPT_INVOCATIONS</code>. Use the <code>GetAgentAlias</code>, or <code>ListAgentAliases</code>, operation to get the invocation state of an agent alias.</p>
+    pub alias_invocation_state: ::std::option::Option<crate::types::AliasInvocationState>,
 }
 impl UpdateAgentAliasInput {
     /// <p>The unique identifier of the agent.</p>
@@ -37,6 +39,10 @@ impl UpdateAgentAliasInput {
     pub fn routing_configuration(&self) -> &[crate::types::AgentAliasRoutingConfigurationListItem] {
         self.routing_configuration.as_deref().unwrap_or_default()
     }
+    /// <p>The invocation state for the agent alias. To pause the agent alias, set the value to <code>REJECT_INVOCATIONS</code>. To start the agent alias running again, set the value to <code>ACCEPT_INVOCATIONS</code>. Use the <code>GetAgentAlias</code>, or <code>ListAgentAliases</code>, operation to get the invocation state of an agent alias.</p>
+    pub fn alias_invocation_state(&self) -> ::std::option::Option<&crate::types::AliasInvocationState> {
+        self.alias_invocation_state.as_ref()
+    }
 }
 impl UpdateAgentAliasInput {
     /// Creates a new builder-style object to manufacture [`UpdateAgentAliasInput`](crate::operation::update_agent_alias::UpdateAgentAliasInput).
@@ -54,6 +60,7 @@ pub struct UpdateAgentAliasInputBuilder {
     pub(crate) agent_alias_name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) routing_configuration: ::std::option::Option<::std::vec::Vec<crate::types::AgentAliasRoutingConfigurationListItem>>,
+    pub(crate) alias_invocation_state: ::std::option::Option<crate::types::AliasInvocationState>,
 }
 impl UpdateAgentAliasInputBuilder {
     /// <p>The unique identifier of the agent.</p>
@@ -138,6 +145,20 @@ impl UpdateAgentAliasInputBuilder {
     pub fn get_routing_configuration(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AgentAliasRoutingConfigurationListItem>> {
         &self.routing_configuration
     }
+    /// <p>The invocation state for the agent alias. To pause the agent alias, set the value to <code>REJECT_INVOCATIONS</code>. To start the agent alias running again, set the value to <code>ACCEPT_INVOCATIONS</code>. Use the <code>GetAgentAlias</code>, or <code>ListAgentAliases</code>, operation to get the invocation state of an agent alias.</p>
+    pub fn alias_invocation_state(mut self, input: crate::types::AliasInvocationState) -> Self {
+        self.alias_invocation_state = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The invocation state for the agent alias. To pause the agent alias, set the value to <code>REJECT_INVOCATIONS</code>. To start the agent alias running again, set the value to <code>ACCEPT_INVOCATIONS</code>. Use the <code>GetAgentAlias</code>, or <code>ListAgentAliases</code>, operation to get the invocation state of an agent alias.</p>
+    pub fn set_alias_invocation_state(mut self, input: ::std::option::Option<crate::types::AliasInvocationState>) -> Self {
+        self.alias_invocation_state = input;
+        self
+    }
+    /// <p>The invocation state for the agent alias. To pause the agent alias, set the value to <code>REJECT_INVOCATIONS</code>. To start the agent alias running again, set the value to <code>ACCEPT_INVOCATIONS</code>. Use the <code>GetAgentAlias</code>, or <code>ListAgentAliases</code>, operation to get the invocation state of an agent alias.</p>
+    pub fn get_alias_invocation_state(&self) -> &::std::option::Option<crate::types::AliasInvocationState> {
+        &self.alias_invocation_state
+    }
     /// Consumes the builder and constructs a [`UpdateAgentAliasInput`](crate::operation::update_agent_alias::UpdateAgentAliasInput).
     pub fn build(
         self,
@@ -148,6 +169,7 @@ impl UpdateAgentAliasInputBuilder {
             agent_alias_name: self.agent_alias_name,
             description: self.description,
             routing_configuration: self.routing_configuration,
+            alias_invocation_state: self.alias_invocation_state,
         })
     }
 }

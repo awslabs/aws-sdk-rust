@@ -185,6 +185,8 @@ mod delete_policy_statement;
 
 mod delete_schema_mapping;
 
+mod generate_match_id;
+
 mod get_id_mapping_job;
 
 mod get_id_mapping_workflow;

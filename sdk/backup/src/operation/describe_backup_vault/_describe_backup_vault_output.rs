@@ -18,6 +18,7 @@ pub struct DescribeBackupVaultOutput {
     /// <p>A unique string that identifies the request and allows failed requests to be retried without the risk of running the operation twice. This parameter is optional. If used, this parameter must contain 1 to 50 alphanumeric or '-_.' characters.</p>
     pub creator_request_id: ::std::option::Option<::std::string::String>,
     /// <p>The number of recovery points that are stored in a backup vault.</p>
+    /// <p>Recovery point count value displayed in the console can be an approximation. Use <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/API_ListRecoveryPointsByBackupVault.html"> <code>ListRecoveryPointsByBackupVault</code> </a> API to obtain the exact count.</p>
     pub number_of_recovery_points: i64,
     /// <p>A Boolean that indicates whether Backup Vault Lock is currently protecting the backup vault. <code>True</code> means that Vault Lock causes delete or update operations on the recovery points stored in the vault to fail.</p>
     pub locked: ::std::option::Option<bool>,
@@ -63,6 +64,7 @@ impl DescribeBackupVaultOutput {
         self.creator_request_id.as_deref()
     }
     /// <p>The number of recovery points that are stored in a backup vault.</p>
+    /// <p>Recovery point count value displayed in the console can be an approximation. Use <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/API_ListRecoveryPointsByBackupVault.html"> <code>ListRecoveryPointsByBackupVault</code> </a> API to obtain the exact count.</p>
     pub fn number_of_recovery_points(&self) -> i64 {
         self.number_of_recovery_points
     }
@@ -217,16 +219,19 @@ impl DescribeBackupVaultOutputBuilder {
         &self.creator_request_id
     }
     /// <p>The number of recovery points that are stored in a backup vault.</p>
+    /// <p>Recovery point count value displayed in the console can be an approximation. Use <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/API_ListRecoveryPointsByBackupVault.html"> <code>ListRecoveryPointsByBackupVault</code> </a> API to obtain the exact count.</p>
     pub fn number_of_recovery_points(mut self, input: i64) -> Self {
         self.number_of_recovery_points = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of recovery points that are stored in a backup vault.</p>
+    /// <p>Recovery point count value displayed in the console can be an approximation. Use <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/API_ListRecoveryPointsByBackupVault.html"> <code>ListRecoveryPointsByBackupVault</code> </a> API to obtain the exact count.</p>
     pub fn set_number_of_recovery_points(mut self, input: ::std::option::Option<i64>) -> Self {
         self.number_of_recovery_points = input;
         self
     }
     /// <p>The number of recovery points that are stored in a backup vault.</p>
+    /// <p>Recovery point count value displayed in the console can be an approximation. Use <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/API_ListRecoveryPointsByBackupVault.html"> <code>ListRecoveryPointsByBackupVault</code> </a> API to obtain the exact count.</p>
     pub fn get_number_of_recovery_points(&self) -> &::std::option::Option<i64> {
         &self.number_of_recovery_points
     }

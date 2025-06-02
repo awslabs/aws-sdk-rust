@@ -4,7 +4,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InsightsFilter {
-    /// <p>The categories to use to filter insights.</p>
+    /// <p>The categories to use to filter insights. The following lists the available categories:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>UPGRADE_READINESS</code>: Amazon EKS identifies issues that could impact your ability to upgrade to new versions of Kubernetes. These are called upgrade insights.</p></li>
+    /// <li>
+    /// <p><code>MISCONFIGURATION</code>: Amazon EKS identifies misconfiguration in your EKS Hybrid Nodes setup that could impair functionality of your cluster or workloads. These are called configuration insights.</p></li>
+    /// </ul>
     pub categories: ::std::option::Option<::std::vec::Vec<crate::types::Category>>,
     /// <p>The Kubernetes versions to use to filter the insights.</p>
     pub kubernetes_versions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -12,7 +18,13 @@ pub struct InsightsFilter {
     pub statuses: ::std::option::Option<::std::vec::Vec<crate::types::InsightStatusValue>>,
 }
 impl InsightsFilter {
-    /// <p>The categories to use to filter insights.</p>
+    /// <p>The categories to use to filter insights. The following lists the available categories:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>UPGRADE_READINESS</code>: Amazon EKS identifies issues that could impact your ability to upgrade to new versions of Kubernetes. These are called upgrade insights.</p></li>
+    /// <li>
+    /// <p><code>MISCONFIGURATION</code>: Amazon EKS identifies misconfiguration in your EKS Hybrid Nodes setup that could impair functionality of your cluster or workloads. These are called configuration insights.</p></li>
+    /// </ul>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.categories.is_none()`.
     pub fn categories(&self) -> &[crate::types::Category] {
@@ -51,19 +63,37 @@ impl InsightsFilterBuilder {
     ///
     /// To override the contents of this collection use [`set_categories`](Self::set_categories).
     ///
-    /// <p>The categories to use to filter insights.</p>
+    /// <p>The categories to use to filter insights. The following lists the available categories:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>UPGRADE_READINESS</code>: Amazon EKS identifies issues that could impact your ability to upgrade to new versions of Kubernetes. These are called upgrade insights.</p></li>
+    /// <li>
+    /// <p><code>MISCONFIGURATION</code>: Amazon EKS identifies misconfiguration in your EKS Hybrid Nodes setup that could impair functionality of your cluster or workloads. These are called configuration insights.</p></li>
+    /// </ul>
     pub fn categories(mut self, input: crate::types::Category) -> Self {
         let mut v = self.categories.unwrap_or_default();
         v.push(input);
         self.categories = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The categories to use to filter insights.</p>
+    /// <p>The categories to use to filter insights. The following lists the available categories:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>UPGRADE_READINESS</code>: Amazon EKS identifies issues that could impact your ability to upgrade to new versions of Kubernetes. These are called upgrade insights.</p></li>
+    /// <li>
+    /// <p><code>MISCONFIGURATION</code>: Amazon EKS identifies misconfiguration in your EKS Hybrid Nodes setup that could impair functionality of your cluster or workloads. These are called configuration insights.</p></li>
+    /// </ul>
     pub fn set_categories(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Category>>) -> Self {
         self.categories = input;
         self
     }
-    /// <p>The categories to use to filter insights.</p>
+    /// <p>The categories to use to filter insights. The following lists the available categories:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>UPGRADE_READINESS</code>: Amazon EKS identifies issues that could impact your ability to upgrade to new versions of Kubernetes. These are called upgrade insights.</p></li>
+    /// <li>
+    /// <p><code>MISCONFIGURATION</code>: Amazon EKS identifies misconfiguration in your EKS Hybrid Nodes setup that could impair functionality of your cluster or workloads. These are called configuration insights.</p></li>
+    /// </ul>
     pub fn get_categories(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Category>> {
         &self.categories
     }

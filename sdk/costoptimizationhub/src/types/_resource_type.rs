@@ -12,6 +12,7 @@
 /// ```text
 /// # let resourcetype = unimplemented!();
 /// match resourcetype {
+///     ResourceType::AuroraDbClusterStorage => { /* ... */ },
 ///     ResourceType::ComputeSavingsPlans => { /* ... */ },
 ///     ResourceType::DynamoDbReservedCapacity => { /* ... */ },
 ///     ResourceType::EbsVolume => { /* ... */ },
@@ -58,6 +59,8 @@
 )]
 pub enum ResourceType {
     #[allow(missing_docs)] // documentation missing in model
+    AuroraDbClusterStorage,
+    #[allow(missing_docs)] // documentation missing in model
     ComputeSavingsPlans,
     #[allow(missing_docs)] // documentation missing in model
     DynamoDbReservedCapacity,
@@ -98,6 +101,7 @@ pub enum ResourceType {
 impl ::std::convert::From<&str> for ResourceType {
     fn from(s: &str) -> Self {
         match s {
+            "AuroraDbClusterStorage" => ResourceType::AuroraDbClusterStorage,
             "ComputeSavingsPlans" => ResourceType::ComputeSavingsPlans,
             "DynamoDbReservedCapacity" => ResourceType::DynamoDbReservedCapacity,
             "EbsVolume" => ResourceType::EbsVolume,
@@ -130,6 +134,7 @@ impl ResourceType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            ResourceType::AuroraDbClusterStorage => "AuroraDbClusterStorage",
             ResourceType::ComputeSavingsPlans => "ComputeSavingsPlans",
             ResourceType::DynamoDbReservedCapacity => "DynamoDbReservedCapacity",
             ResourceType::EbsVolume => "EbsVolume",
@@ -153,6 +158,7 @@ impl ResourceType {
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
+            "AuroraDbClusterStorage",
             "ComputeSavingsPlans",
             "DynamoDbReservedCapacity",
             "EbsVolume",
@@ -193,6 +199,7 @@ impl ResourceType {
 impl ::std::fmt::Display for ResourceType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            ResourceType::AuroraDbClusterStorage => write!(f, "AuroraDbClusterStorage"),
             ResourceType::ComputeSavingsPlans => write!(f, "ComputeSavingsPlans"),
             ResourceType::DynamoDbReservedCapacity => write!(f, "DynamoDbReservedCapacity"),
             ResourceType::EbsVolume => write!(f, "EbsVolume"),

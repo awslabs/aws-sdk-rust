@@ -11,6 +11,10 @@ pub use crate::types::_customer_content_encryption_configuration::CustomerConten
 
 pub use crate::types::_engine_version::EngineVersion;
 
+pub use crate::types::_managed_query_results_configuration_updates::ManagedQueryResultsConfigurationUpdates;
+
+pub use crate::types::_managed_query_results_encryption_configuration::ManagedQueryResultsEncryptionConfiguration;
+
 pub use crate::types::_result_configuration_updates::ResultConfigurationUpdates;
 
 pub use crate::types::_acl_configuration::AclConfiguration;
@@ -99,6 +103,8 @@ pub use crate::types::_work_group_configuration::WorkGroupConfiguration;
 
 pub use crate::types::_identity_center_configuration::IdentityCenterConfiguration;
 
+pub use crate::types::_managed_query_results_configuration::ManagedQueryResultsConfiguration;
+
 pub use crate::types::_session_statistics::SessionStatistics;
 
 pub use crate::types::_session_configuration::SessionConfiguration;
@@ -124,6 +130,8 @@ pub use crate::types::_column_nullable::ColumnNullable;
 pub use crate::types::_row::Row;
 
 pub use crate::types::_datum::Datum;
+
+pub use crate::types::_query_result_type::QueryResultType;
 
 pub use crate::types::_query_execution::QueryExecution;
 
@@ -229,6 +237,12 @@ mod _filter_definition;
 
 mod _identity_center_configuration;
 
+mod _managed_query_results_configuration;
+
+mod _managed_query_results_configuration_updates;
+
+mod _managed_query_results_encryption_configuration;
+
 mod _named_query;
 
 mod _notebook_metadata;
@@ -250,6 +264,8 @@ mod _query_execution_state;
 mod _query_execution_statistics;
 
 mod _query_execution_status;
+
+mod _query_result_type;
 
 mod _query_results_s3_access_grants_configuration;
 

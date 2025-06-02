@@ -17,6 +17,8 @@
 ///     QueueStatus::Creating => { /* ... */ },
 ///     QueueStatus::DeleteFailed => { /* ... */ },
 ///     QueueStatus::Deleting => { /* ... */ },
+///     QueueStatus::Suspended => { /* ... */ },
+///     QueueStatus::Suspending => { /* ... */ },
 ///     QueueStatus::UpdateFailed => { /* ... */ },
 ///     QueueStatus::Updating => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -58,6 +60,10 @@ pub enum QueueStatus {
     #[allow(missing_docs)] // documentation missing in model
     Deleting,
     #[allow(missing_docs)] // documentation missing in model
+    Suspended,
+    #[allow(missing_docs)] // documentation missing in model
+    Suspending,
+    #[allow(missing_docs)] // documentation missing in model
     UpdateFailed,
     #[allow(missing_docs)] // documentation missing in model
     Updating,
@@ -73,6 +79,8 @@ impl ::std::convert::From<&str> for QueueStatus {
             "CREATING" => QueueStatus::Creating,
             "DELETE_FAILED" => QueueStatus::DeleteFailed,
             "DELETING" => QueueStatus::Deleting,
+            "SUSPENDED" => QueueStatus::Suspended,
+            "SUSPENDING" => QueueStatus::Suspending,
             "UPDATE_FAILED" => QueueStatus::UpdateFailed,
             "UPDATING" => QueueStatus::Updating,
             other => QueueStatus::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -95,6 +103,8 @@ impl QueueStatus {
             QueueStatus::Creating => "CREATING",
             QueueStatus::DeleteFailed => "DELETE_FAILED",
             QueueStatus::Deleting => "DELETING",
+            QueueStatus::Suspended => "SUSPENDED",
+            QueueStatus::Suspending => "SUSPENDING",
             QueueStatus::UpdateFailed => "UPDATE_FAILED",
             QueueStatus::Updating => "UPDATING",
             QueueStatus::Unknown(value) => value.as_str(),
@@ -108,6 +118,8 @@ impl QueueStatus {
             "CREATING",
             "DELETE_FAILED",
             "DELETING",
+            "SUSPENDED",
+            "SUSPENDING",
             "UPDATE_FAILED",
             "UPDATING",
         ]
@@ -138,6 +150,8 @@ impl ::std::fmt::Display for QueueStatus {
             QueueStatus::Creating => write!(f, "CREATING"),
             QueueStatus::DeleteFailed => write!(f, "DELETE_FAILED"),
             QueueStatus::Deleting => write!(f, "DELETING"),
+            QueueStatus::Suspended => write!(f, "SUSPENDED"),
+            QueueStatus::Suspending => write!(f, "SUSPENDING"),
             QueueStatus::UpdateFailed => write!(f, "UPDATE_FAILED"),
             QueueStatus::Updating => write!(f, "UPDATING"),
             QueueStatus::Unknown(value) => write!(f, "{}", value),

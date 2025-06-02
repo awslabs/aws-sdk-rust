@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetRdsDatabaseRecommendationProjectedMetricsInput {
-    /// <p>The ARN that identifies the Amazon RDS.</p>
+    /// <p>The ARN that identifies the Amazon Aurora or RDS database.</p>
     /// <p>The following is the format of the ARN:</p>
     /// <p><code>arn:aws:rds:{region}:{accountId}:db:{resourceName}</code></p>
     pub resource_arn: ::std::option::Option<::std::string::String>,
@@ -19,7 +19,7 @@ pub struct GetRdsDatabaseRecommendationProjectedMetricsInput {
     pub recommendation_preferences: ::std::option::Option<crate::types::RecommendationPreferences>,
 }
 impl GetRdsDatabaseRecommendationProjectedMetricsInput {
-    /// <p>The ARN that identifies the Amazon RDS.</p>
+    /// <p>The ARN that identifies the Amazon Aurora or RDS database.</p>
     /// <p>The following is the format of the ARN:</p>
     /// <p><code>arn:aws:rds:{region}:{accountId}:db:{resourceName}</code></p>
     pub fn resource_arn(&self) -> ::std::option::Option<&str> {
@@ -66,7 +66,7 @@ pub struct GetRdsDatabaseRecommendationProjectedMetricsInputBuilder {
     pub(crate) recommendation_preferences: ::std::option::Option<crate::types::RecommendationPreferences>,
 }
 impl GetRdsDatabaseRecommendationProjectedMetricsInputBuilder {
-    /// <p>The ARN that identifies the Amazon RDS.</p>
+    /// <p>The ARN that identifies the Amazon Aurora or RDS database.</p>
     /// <p>The following is the format of the ARN:</p>
     /// <p><code>arn:aws:rds:{region}:{accountId}:db:{resourceName}</code></p>
     /// This field is required.
@@ -74,14 +74,14 @@ impl GetRdsDatabaseRecommendationProjectedMetricsInputBuilder {
         self.resource_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ARN that identifies the Amazon RDS.</p>
+    /// <p>The ARN that identifies the Amazon Aurora or RDS database.</p>
     /// <p>The following is the format of the ARN:</p>
     /// <p><code>arn:aws:rds:{region}:{accountId}:db:{resourceName}</code></p>
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_arn = input;
         self
     }
-    /// <p>The ARN that identifies the Amazon RDS.</p>
+    /// <p>The ARN that identifies the Amazon Aurora or RDS database.</p>
     /// <p>The following is the format of the ARN:</p>
     /// <p><code>arn:aws:rds:{region}:{accountId}:db:{resourceName}</code></p>
     pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
