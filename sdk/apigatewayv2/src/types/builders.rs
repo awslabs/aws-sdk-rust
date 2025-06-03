@@ -19,6 +19,20 @@ pub use crate::types::_jwt_configuration::JwtConfigurationBuilder;
 
 pub use crate::types::_cors::CorsBuilder;
 
+pub use crate::types::_routing_rule_condition::RoutingRuleConditionBuilder;
+
+pub use crate::types::_routing_rule_match_headers::RoutingRuleMatchHeadersBuilder;
+
+pub use crate::types::_routing_rule_match_header_value::RoutingRuleMatchHeaderValueBuilder;
+
+pub use crate::types::_routing_rule_match_base_paths::RoutingRuleMatchBasePathsBuilder;
+
+pub use crate::types::_routing_rule_action::RoutingRuleActionBuilder;
+
+pub use crate::types::_routing_rule_action_invoke_api::RoutingRuleActionInvokeApiBuilder;
+
+pub use crate::types::_routing_rule::RoutingRuleBuilder;
+
 pub use crate::types::_vpc_link::VpcLinkBuilder;
 
 pub use crate::types::_stage::StageBuilder;

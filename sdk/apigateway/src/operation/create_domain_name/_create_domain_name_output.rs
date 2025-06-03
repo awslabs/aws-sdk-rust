@@ -46,6 +46,8 @@ pub struct CreateDomainNameOutput {
     pub management_policy: ::std::option::Option<::std::string::String>,
     /// <p>A stringified JSON policy document that applies to the <code>execute-api</code> service for this DomainName regardless of the caller and Method configuration. Supported only for private custom domain names.</p>
     pub policy: ::std::option::Option<::std::string::String>,
+    /// <p>The routing mode for this domain name. The routing mode determines how API Gateway sends traffic from your custom domain name to your private APIs.</p>
+    pub routing_mode: ::std::option::Option<crate::types::RoutingMode>,
     _request_id: Option<String>,
 }
 impl CreateDomainNameOutput {
@@ -133,6 +135,10 @@ impl CreateDomainNameOutput {
     pub fn policy(&self) -> ::std::option::Option<&str> {
         self.policy.as_deref()
     }
+    /// <p>The routing mode for this domain name. The routing mode determines how API Gateway sends traffic from your custom domain name to your private APIs.</p>
+    pub fn routing_mode(&self) -> ::std::option::Option<&crate::types::RoutingMode> {
+        self.routing_mode.as_ref()
+    }
 }
 impl ::aws_types::request_id::RequestId for CreateDomainNameOutput {
     fn request_id(&self) -> Option<&str> {
@@ -171,6 +177,7 @@ pub struct CreateDomainNameOutputBuilder {
     pub(crate) ownership_verification_certificate_arn: ::std::option::Option<::std::string::String>,
     pub(crate) management_policy: ::std::option::Option<::std::string::String>,
     pub(crate) policy: ::std::option::Option<::std::string::String>,
+    pub(crate) routing_mode: ::std::option::Option<crate::types::RoutingMode>,
     _request_id: Option<String>,
 }
 impl CreateDomainNameOutputBuilder {
@@ -474,6 +481,20 @@ impl CreateDomainNameOutputBuilder {
     pub fn get_policy(&self) -> &::std::option::Option<::std::string::String> {
         &self.policy
     }
+    /// <p>The routing mode for this domain name. The routing mode determines how API Gateway sends traffic from your custom domain name to your private APIs.</p>
+    pub fn routing_mode(mut self, input: crate::types::RoutingMode) -> Self {
+        self.routing_mode = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The routing mode for this domain name. The routing mode determines how API Gateway sends traffic from your custom domain name to your private APIs.</p>
+    pub fn set_routing_mode(mut self, input: ::std::option::Option<crate::types::RoutingMode>) -> Self {
+        self.routing_mode = input;
+        self
+    }
+    /// <p>The routing mode for this domain name. The routing mode determines how API Gateway sends traffic from your custom domain name to your private APIs.</p>
+    pub fn get_routing_mode(&self) -> &::std::option::Option<crate::types::RoutingMode> {
+        &self.routing_mode
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -507,6 +528,7 @@ impl CreateDomainNameOutputBuilder {
             ownership_verification_certificate_arn: self.ownership_verification_certificate_arn,
             management_policy: self.management_policy,
             policy: self.policy,
+            routing_mode: self.routing_mode,
             _request_id: self._request_id,
         }
     }

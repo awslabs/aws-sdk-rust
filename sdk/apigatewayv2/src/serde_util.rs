@@ -68,6 +68,18 @@ pub(crate) fn route_response_correct_errors(
     builder
 }
 
+pub(crate) fn routing_rule_action_correct_errors(
+    mut builder: crate::types::builders::RoutingRuleActionBuilder,
+) -> crate::types::builders::RoutingRuleActionBuilder {
+    if builder.invoke_api.is_none() {
+        builder.invoke_api = {
+            let builder = crate::types::builders::RoutingRuleActionInvokeApiBuilder::default();
+            Some(crate::serde_util::routing_rule_action_invoke_api_correct_errors(builder).build())
+        }
+    }
+    builder
+}
+
 pub(crate) fn stage_correct_errors(mut builder: crate::types::builders::StageBuilder) -> crate::types::builders::StageBuilder {
     if builder.stage_name.is_none() {
         builder.stage_name = Some(Default::default())
@@ -87,6 +99,48 @@ pub(crate) fn vpc_link_correct_errors(mut builder: crate::types::builders::VpcLi
     }
     if builder.vpc_link_id.is_none() {
         builder.vpc_link_id = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn routing_rule_action_invoke_api_correct_errors(
+    mut builder: crate::types::builders::RoutingRuleActionInvokeApiBuilder,
+) -> crate::types::builders::RoutingRuleActionInvokeApiBuilder {
+    if builder.api_id.is_none() {
+        builder.api_id = Some(Default::default())
+    }
+    if builder.stage.is_none() {
+        builder.stage = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn routing_rule_match_base_paths_correct_errors(
+    mut builder: crate::types::builders::RoutingRuleMatchBasePathsBuilder,
+) -> crate::types::builders::RoutingRuleMatchBasePathsBuilder {
+    if builder.any_of.is_none() {
+        builder.any_of = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn routing_rule_match_headers_correct_errors(
+    mut builder: crate::types::builders::RoutingRuleMatchHeadersBuilder,
+) -> crate::types::builders::RoutingRuleMatchHeadersBuilder {
+    if builder.any_of.is_none() {
+        builder.any_of = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn routing_rule_match_header_value_correct_errors(
+    mut builder: crate::types::builders::RoutingRuleMatchHeaderValueBuilder,
+) -> crate::types::builders::RoutingRuleMatchHeaderValueBuilder {
+    if builder.header.is_none() {
+        builder.header = Some(Default::default())
+    }
+    if builder.value_glob.is_none() {
+        builder.value_glob = Some(Default::default())
     }
     builder
 }

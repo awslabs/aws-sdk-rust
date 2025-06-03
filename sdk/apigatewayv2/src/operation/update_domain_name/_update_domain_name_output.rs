@@ -7,10 +7,14 @@ pub struct UpdateDomainNameOutput {
     pub api_mapping_selection_expression: ::std::option::Option<::std::string::String>,
     /// <p>The name of the DomainName resource.</p>
     pub domain_name: ::std::option::Option<::std::string::String>,
+    /// <p>Represents an Amazon Resource Name (ARN).</p>
+    pub domain_name_arn: ::std::option::Option<::std::string::String>,
     /// <p>The domain name configurations.</p>
     pub domain_name_configurations: ::std::option::Option<::std::vec::Vec<crate::types::DomainNameConfiguration>>,
     /// <p>The mutual TLS authentication configuration for a custom domain name.</p>
     pub mutual_tls_authentication: ::std::option::Option<crate::types::MutualTlsAuthentication>,
+    /// <p>The routing mode.</p>
+    pub routing_mode: ::std::option::Option<crate::types::RoutingMode>,
     /// <p>The collection of tags associated with a domain name.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
@@ -24,6 +28,10 @@ impl UpdateDomainNameOutput {
     pub fn domain_name(&self) -> ::std::option::Option<&str> {
         self.domain_name.as_deref()
     }
+    /// <p>Represents an Amazon Resource Name (ARN).</p>
+    pub fn domain_name_arn(&self) -> ::std::option::Option<&str> {
+        self.domain_name_arn.as_deref()
+    }
     /// <p>The domain name configurations.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.domain_name_configurations.is_none()`.
@@ -33,6 +41,10 @@ impl UpdateDomainNameOutput {
     /// <p>The mutual TLS authentication configuration for a custom domain name.</p>
     pub fn mutual_tls_authentication(&self) -> ::std::option::Option<&crate::types::MutualTlsAuthentication> {
         self.mutual_tls_authentication.as_ref()
+    }
+    /// <p>The routing mode.</p>
+    pub fn routing_mode(&self) -> ::std::option::Option<&crate::types::RoutingMode> {
+        self.routing_mode.as_ref()
     }
     /// <p>The collection of tags associated with a domain name.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
@@ -57,8 +69,10 @@ impl UpdateDomainNameOutput {
 pub struct UpdateDomainNameOutputBuilder {
     pub(crate) api_mapping_selection_expression: ::std::option::Option<::std::string::String>,
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
+    pub(crate) domain_name_arn: ::std::option::Option<::std::string::String>,
     pub(crate) domain_name_configurations: ::std::option::Option<::std::vec::Vec<crate::types::DomainNameConfiguration>>,
     pub(crate) mutual_tls_authentication: ::std::option::Option<crate::types::MutualTlsAuthentication>,
+    pub(crate) routing_mode: ::std::option::Option<crate::types::RoutingMode>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
@@ -90,6 +104,20 @@ impl UpdateDomainNameOutputBuilder {
     /// <p>The name of the DomainName resource.</p>
     pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.domain_name
+    }
+    /// <p>Represents an Amazon Resource Name (ARN).</p>
+    pub fn domain_name_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.domain_name_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Represents an Amazon Resource Name (ARN).</p>
+    pub fn set_domain_name_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.domain_name_arn = input;
+        self
+    }
+    /// <p>Represents an Amazon Resource Name (ARN).</p>
+    pub fn get_domain_name_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_name_arn
     }
     /// Appends an item to `domain_name_configurations`.
     ///
@@ -125,6 +153,20 @@ impl UpdateDomainNameOutputBuilder {
     pub fn get_mutual_tls_authentication(&self) -> &::std::option::Option<crate::types::MutualTlsAuthentication> {
         &self.mutual_tls_authentication
     }
+    /// <p>The routing mode.</p>
+    pub fn routing_mode(mut self, input: crate::types::RoutingMode) -> Self {
+        self.routing_mode = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The routing mode.</p>
+    pub fn set_routing_mode(mut self, input: ::std::option::Option<crate::types::RoutingMode>) -> Self {
+        self.routing_mode = input;
+        self
+    }
+    /// <p>The routing mode.</p>
+    pub fn get_routing_mode(&self) -> &::std::option::Option<crate::types::RoutingMode> {
+        &self.routing_mode
+    }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -159,8 +201,10 @@ impl UpdateDomainNameOutputBuilder {
         crate::operation::update_domain_name::UpdateDomainNameOutput {
             api_mapping_selection_expression: self.api_mapping_selection_expression,
             domain_name: self.domain_name,
+            domain_name_arn: self.domain_name_arn,
             domain_name_configurations: self.domain_name_configurations,
             mutual_tls_authentication: self.mutual_tls_authentication,
+            routing_mode: self.routing_mode,
             tags: self.tags,
             _request_id: self._request_id,
         }

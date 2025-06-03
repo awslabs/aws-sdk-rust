@@ -7,6 +7,8 @@ pub struct CancelJobRunInput {
     pub application_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the job run to cancel.</p>
     pub job_run_id: ::std::option::Option<::std::string::String>,
+    /// The duration (in seconds) to wait before forcefully terminating the job after cancellation is requested.
+    pub shutdown_grace_period_in_seconds: ::std::option::Option<i32>,
 }
 impl CancelJobRunInput {
     /// <p>The ID of the application on which the job run will be canceled.</p>
@@ -16,6 +18,10 @@ impl CancelJobRunInput {
     /// <p>The ID of the job run to cancel.</p>
     pub fn job_run_id(&self) -> ::std::option::Option<&str> {
         self.job_run_id.as_deref()
+    }
+    /// The duration (in seconds) to wait before forcefully terminating the job after cancellation is requested.
+    pub fn shutdown_grace_period_in_seconds(&self) -> ::std::option::Option<i32> {
+        self.shutdown_grace_period_in_seconds
     }
 }
 impl CancelJobRunInput {
@@ -31,6 +37,7 @@ impl CancelJobRunInput {
 pub struct CancelJobRunInputBuilder {
     pub(crate) application_id: ::std::option::Option<::std::string::String>,
     pub(crate) job_run_id: ::std::option::Option<::std::string::String>,
+    pub(crate) shutdown_grace_period_in_seconds: ::std::option::Option<i32>,
 }
 impl CancelJobRunInputBuilder {
     /// <p>The ID of the application on which the job run will be canceled.</p>
@@ -63,6 +70,20 @@ impl CancelJobRunInputBuilder {
     pub fn get_job_run_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.job_run_id
     }
+    /// The duration (in seconds) to wait before forcefully terminating the job after cancellation is requested.
+    pub fn shutdown_grace_period_in_seconds(mut self, input: i32) -> Self {
+        self.shutdown_grace_period_in_seconds = ::std::option::Option::Some(input);
+        self
+    }
+    /// The duration (in seconds) to wait before forcefully terminating the job after cancellation is requested.
+    pub fn set_shutdown_grace_period_in_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.shutdown_grace_period_in_seconds = input;
+        self
+    }
+    /// The duration (in seconds) to wait before forcefully terminating the job after cancellation is requested.
+    pub fn get_shutdown_grace_period_in_seconds(&self) -> &::std::option::Option<i32> {
+        &self.shutdown_grace_period_in_seconds
+    }
     /// Consumes the builder and constructs a [`CancelJobRunInput`](crate::operation::cancel_job_run::CancelJobRunInput).
     pub fn build(
         self,
@@ -70,6 +91,7 @@ impl CancelJobRunInputBuilder {
         ::std::result::Result::Ok(crate::operation::cancel_job_run::CancelJobRunInput {
             application_id: self.application_id,
             job_run_id: self.job_run_id,
+            shutdown_grace_period_in_seconds: self.shutdown_grace_period_in_seconds,
         })
     }
 }

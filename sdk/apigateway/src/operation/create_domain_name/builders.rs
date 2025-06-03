@@ -309,4 +309,18 @@ impl CreateDomainNameFluentBuilder {
     pub fn get_policy(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_policy()
     }
+    /// <p>The routing mode for this domain name. The routing mode determines how API Gateway sends traffic from your custom domain name to your private APIs.</p>
+    pub fn routing_mode(mut self, input: crate::types::RoutingMode) -> Self {
+        self.inner = self.inner.routing_mode(input);
+        self
+    }
+    /// <p>The routing mode for this domain name. The routing mode determines how API Gateway sends traffic from your custom domain name to your private APIs.</p>
+    pub fn set_routing_mode(mut self, input: ::std::option::Option<crate::types::RoutingMode>) -> Self {
+        self.inner = self.inner.set_routing_mode(input);
+        self
+    }
+    /// <p>The routing mode for this domain name. The routing mode determines how API Gateway sends traffic from your custom domain name to your private APIs.</p>
+    pub fn get_routing_mode(&self) -> &::std::option::Option<crate::types::RoutingMode> {
+        self.inner.get_routing_mode()
+    }
 }

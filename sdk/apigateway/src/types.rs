@@ -51,6 +51,8 @@ pub use crate::types::_method_response::MethodResponse;
 
 pub use crate::types::_gateway_response_type::GatewayResponseType;
 
+pub use crate::types::_routing_mode::RoutingMode;
+
 pub use crate::types::_mutual_tls_authentication::MutualTlsAuthentication;
 
 pub use crate::types::_security_policy::SecurityPolicy;
@@ -218,6 +220,8 @@ mod _resource;
 mod _resource_owner;
 
 mod _rest_api;
+
+mod _routing_mode;
 
 mod _sdk_configuration_property;
 

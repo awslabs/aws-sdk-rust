@@ -155,6 +155,20 @@ impl CreateDomainNameFluentBuilder {
     pub fn get_mutual_tls_authentication(&self) -> &::std::option::Option<crate::types::MutualTlsAuthenticationInput> {
         self.inner.get_mutual_tls_authentication()
     }
+    /// <p>The routing mode.</p>
+    pub fn routing_mode(mut self, input: crate::types::RoutingMode) -> Self {
+        self.inner = self.inner.routing_mode(input);
+        self
+    }
+    /// <p>The routing mode.</p>
+    pub fn set_routing_mode(mut self, input: ::std::option::Option<crate::types::RoutingMode>) -> Self {
+        self.inner = self.inner.set_routing_mode(input);
+        self
+    }
+    /// <p>The routing mode.</p>
+    pub fn get_routing_mode(&self) -> &::std::option::Option<crate::types::RoutingMode> {
+        self.inner.get_routing_mode()
+    }
     ///
     /// Adds a key-value pair to `Tags`.
     ///

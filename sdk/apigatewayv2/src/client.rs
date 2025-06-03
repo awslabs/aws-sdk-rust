@@ -156,6 +156,8 @@ mod create_route;
 
 mod create_route_response;
 
+mod create_routing_rule;
+
 mod create_stage;
 
 mod create_vpc_link;
@@ -215,6 +217,8 @@ mod delete_route_response;
 
 mod delete_route_settings;
 
+mod delete_routing_rule;
+
 mod delete_stage;
 
 mod delete_vpc_link;
@@ -263,6 +267,8 @@ mod get_route_responses;
 
 mod get_routes;
 
+mod get_routing_rule;
+
 mod get_stage;
 
 mod get_stages;
@@ -274,6 +280,10 @@ mod get_vpc_link;
 mod get_vpc_links;
 
 mod import_api;
+
+mod list_routing_rules;
+
+mod put_routing_rule;
 
 mod reimport_api;
 

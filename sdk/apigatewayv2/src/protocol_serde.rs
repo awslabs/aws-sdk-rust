@@ -43,6 +43,8 @@ pub(crate) mod shape_create_route;
 
 pub(crate) mod shape_create_route_response;
 
+pub(crate) mod shape_create_routing_rule;
+
 pub(crate) mod shape_create_stage;
 
 pub(crate) mod shape_create_vpc_link;
@@ -74,6 +76,8 @@ pub(crate) mod shape_delete_route_request_parameter;
 pub(crate) mod shape_delete_route_response;
 
 pub(crate) mod shape_delete_route_settings;
+
+pub(crate) mod shape_delete_routing_rule;
 
 pub(crate) mod shape_delete_stage;
 
@@ -123,6 +127,8 @@ pub(crate) mod shape_get_route_responses;
 
 pub(crate) mod shape_get_routes;
 
+pub(crate) mod shape_get_routing_rule;
+
 pub(crate) mod shape_get_stage;
 
 pub(crate) mod shape_get_stages;
@@ -134,6 +140,10 @@ pub(crate) mod shape_get_vpc_link;
 pub(crate) mod shape_get_vpc_links;
 
 pub(crate) mod shape_import_api;
+
+pub(crate) mod shape_list_routing_rules;
+
+pub(crate) mod shape_put_routing_rule;
 
 pub(crate) mod shape_reimport_api;
 
@@ -201,6 +211,8 @@ pub(crate) mod shape_create_route_input;
 
 pub(crate) mod shape_create_route_response_input;
 
+pub(crate) mod shape_create_routing_rule_input;
+
 pub(crate) mod shape_create_stage_input;
 
 pub(crate) mod shape_create_vpc_link_input;
@@ -210,6 +222,8 @@ pub(crate) mod shape_export_api_output;
 pub(crate) mod shape_import_api_input;
 
 pub(crate) mod shape_not_found_exception;
+
+pub(crate) mod shape_put_routing_rule_input;
 
 pub(crate) mod shape_reimport_api_input;
 
@@ -277,6 +291,12 @@ pub(crate) mod shape_list_of_route;
 
 pub(crate) mod shape_list_of_route_response;
 
+pub(crate) mod shape_list_of_routing_rule;
+
+pub(crate) mod shape_list_of_routing_rule_action;
+
+pub(crate) mod shape_list_of_routing_rule_condition;
+
 pub(crate) mod shape_list_of_stage;
 
 pub(crate) mod shape_list_of_string;
@@ -298,6 +318,10 @@ pub(crate) mod shape_route_parameters;
 pub(crate) mod shape_route_settings;
 
 pub(crate) mod shape_route_settings_map;
+
+pub(crate) mod shape_routing_rule_action;
+
+pub(crate) mod shape_routing_rule_condition;
 
 pub(crate) mod shape_security_group_id_list;
 
@@ -339,6 +363,20 @@ pub(crate) mod shape_route;
 
 pub(crate) mod shape_route_response;
 
+pub(crate) mod shape_routing_rule;
+
+pub(crate) mod shape_routing_rule_action_invoke_api;
+
+pub(crate) mod shape_routing_rule_match_base_paths;
+
+pub(crate) mod shape_routing_rule_match_headers;
+
 pub(crate) mod shape_stage;
 
 pub(crate) mod shape_vpc_link;
+
+pub(crate) mod shape_routing_rule_match_header_value;
+
+pub(crate) mod shape_list_of_routing_rule_match_header_value;
+
+pub(crate) mod shape_list_of_selection_key;

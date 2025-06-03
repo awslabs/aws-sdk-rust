@@ -324,6 +324,31 @@ impl From<crate::operation::create_route_response::CreateRouteResponseError> for
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_routing_rule::CreateRoutingRuleError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_routing_rule::CreateRoutingRuleError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_routing_rule::CreateRoutingRuleError> for Error {
+    fn from(err: crate::operation::create_routing_rule::CreateRoutingRuleError) -> Self {
+        match err {
+            crate::operation::create_routing_rule::CreateRoutingRuleError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::create_routing_rule::CreateRoutingRuleError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::create_routing_rule::CreateRoutingRuleError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::create_routing_rule::CreateRoutingRuleError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::create_routing_rule::CreateRoutingRuleError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_stage::CreateStageError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -724,6 +749,30 @@ impl From<crate::operation::delete_route_settings::DeleteRouteSettingsError> for
                 Error::TooManyRequestsException(inner)
             }
             crate::operation::delete_route_settings::DeleteRouteSettingsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_routing_rule::DeleteRoutingRuleError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_routing_rule::DeleteRoutingRuleError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_routing_rule::DeleteRoutingRuleError> for Error {
+    fn from(err: crate::operation::delete_routing_rule::DeleteRoutingRuleError) -> Self {
+        match err {
+            crate::operation::delete_routing_rule::DeleteRoutingRuleError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::delete_routing_rule::DeleteRoutingRuleError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::delete_routing_rule::DeleteRoutingRuleError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::delete_routing_rule::DeleteRoutingRuleError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1302,6 +1351,30 @@ impl From<crate::operation::get_routes::GetRoutesError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_routing_rule::GetRoutingRuleError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_routing_rule::GetRoutingRuleError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_routing_rule::GetRoutingRuleError> for Error {
+    fn from(err: crate::operation::get_routing_rule::GetRoutingRuleError) -> Self {
+        match err {
+            crate::operation::get_routing_rule::GetRoutingRuleError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::get_routing_rule::GetRoutingRuleError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::get_routing_rule::GetRoutingRuleError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::get_routing_rule::GetRoutingRuleError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_stage::GetStageError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1442,6 +1515,55 @@ impl From<crate::operation::import_api::ImportApiError> for Error {
             crate::operation::import_api::ImportApiError::NotFoundException(inner) => Error::NotFoundException(inner),
             crate::operation::import_api::ImportApiError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
             crate::operation::import_api::ImportApiError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_routing_rules::ListRoutingRulesError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_routing_rules::ListRoutingRulesError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_routing_rules::ListRoutingRulesError> for Error {
+    fn from(err: crate::operation::list_routing_rules::ListRoutingRulesError) -> Self {
+        match err {
+            crate::operation::list_routing_rules::ListRoutingRulesError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::list_routing_rules::ListRoutingRulesError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::list_routing_rules::ListRoutingRulesError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::list_routing_rules::ListRoutingRulesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::put_routing_rule::PutRoutingRuleError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::put_routing_rule::PutRoutingRuleError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::put_routing_rule::PutRoutingRuleError> for Error {
+    fn from(err: crate::operation::put_routing_rule::PutRoutingRuleError) -> Self {
+        match err {
+            crate::operation::put_routing_rule::PutRoutingRuleError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::put_routing_rule::PutRoutingRuleError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::put_routing_rule::PutRoutingRuleError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::put_routing_rule::PutRoutingRuleError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::put_routing_rule::PutRoutingRuleError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

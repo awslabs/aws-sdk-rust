@@ -21,5 +21,8 @@ pub fn ser_update_domain_name_input_input(
         crate::protocol_serde::shape_mutual_tls_authentication_input::ser_mutual_tls_authentication_input(&mut object_6, var_5)?;
         object_6.finish();
     }
+    if let Some(var_7) = &input.routing_mode {
+        object.key("routingMode").string(var_7.as_str());
+    }
     Ok(())
 }

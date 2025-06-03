@@ -25,6 +25,8 @@ pub use crate::types::_connection_type::ConnectionType;
 
 pub use crate::types::_tls_config_input::TlsConfigInput;
 
+pub use crate::types::_routing_mode::RoutingMode;
+
 pub use crate::types::_mutual_tls_authentication::MutualTlsAuthentication;
 
 pub use crate::types::_domain_name_configuration::DomainNameConfiguration;
@@ -48,6 +50,20 @@ pub use crate::types::_authorizer_type::AuthorizerType;
 pub use crate::types::_protocol_type::ProtocolType;
 
 pub use crate::types::_cors::Cors;
+
+pub use crate::types::_routing_rule_condition::RoutingRuleCondition;
+
+pub use crate::types::_routing_rule_match_headers::RoutingRuleMatchHeaders;
+
+pub use crate::types::_routing_rule_match_header_value::RoutingRuleMatchHeaderValue;
+
+pub use crate::types::_routing_rule_match_base_paths::RoutingRuleMatchBasePaths;
+
+pub use crate::types::_routing_rule_action::RoutingRuleAction;
+
+pub use crate::types::_routing_rule_action_invoke_api::RoutingRuleActionInvokeApi;
+
+pub use crate::types::_routing_rule::RoutingRule;
 
 pub use crate::types::_vpc_link::VpcLink;
 
@@ -132,6 +148,22 @@ mod _route;
 mod _route_response;
 
 mod _route_settings;
+
+mod _routing_mode;
+
+mod _routing_rule;
+
+mod _routing_rule_action;
+
+mod _routing_rule_action_invoke_api;
+
+mod _routing_rule_condition;
+
+mod _routing_rule_match_base_paths;
+
+mod _routing_rule_match_header_value;
+
+mod _routing_rule_match_headers;
 
 mod _security_policy;
 

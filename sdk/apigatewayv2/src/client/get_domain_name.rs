@@ -7,8 +7,10 @@ impl super::Client {
     /// - On success, responds with [`GetDomainNameOutput`](crate::operation::get_domain_name::GetDomainNameOutput) with field(s):
     ///   - [`api_mapping_selection_expression(Option<String>)`](crate::operation::get_domain_name::GetDomainNameOutput::api_mapping_selection_expression): <p>The API mapping selection expression.</p>
     ///   - [`domain_name(Option<String>)`](crate::operation::get_domain_name::GetDomainNameOutput::domain_name): <p>The name of the DomainName resource.</p>
+    ///   - [`domain_name_arn(Option<String>)`](crate::operation::get_domain_name::GetDomainNameOutput::domain_name_arn): <p>Represents an Amazon Resource Name (ARN).</p>
     ///   - [`domain_name_configurations(Option<Vec::<DomainNameConfiguration>>)`](crate::operation::get_domain_name::GetDomainNameOutput::domain_name_configurations): <p>The domain name configurations.</p>
     ///   - [`mutual_tls_authentication(Option<MutualTlsAuthentication>)`](crate::operation::get_domain_name::GetDomainNameOutput::mutual_tls_authentication): <p>The mutual TLS authentication configuration for a custom domain name.</p>
+    ///   - [`routing_mode(Option<RoutingMode>)`](crate::operation::get_domain_name::GetDomainNameOutput::routing_mode): <p>The routing mode.</p>
     ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::get_domain_name::GetDomainNameOutput::tags): <p>The collection of tags associated with a domain name.</p>
     /// - On failure, responds with [`SdkError<GetDomainNameError>`](crate::operation::get_domain_name::GetDomainNameError)
     pub fn get_domain_name(&self) -> crate::operation::get_domain_name::builders::GetDomainNameFluentBuilder {

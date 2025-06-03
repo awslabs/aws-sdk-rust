@@ -32,6 +32,8 @@ pub struct CreateDomainNameInput {
     pub ownership_verification_certificate_arn: ::std::option::Option<::std::string::String>,
     /// <p>A stringified JSON policy document that applies to the <code>execute-api</code> service for this DomainName regardless of the caller and Method configuration. Supported only for private custom domain names.</p>
     pub policy: ::std::option::Option<::std::string::String>,
+    /// <p>The routing mode for this domain name. The routing mode determines how API Gateway sends traffic from your custom domain name to your private APIs.</p>
+    pub routing_mode: ::std::option::Option<crate::types::RoutingMode>,
 }
 impl CreateDomainNameInput {
     /// <p>The name of the DomainName resource.</p>
@@ -90,6 +92,10 @@ impl CreateDomainNameInput {
     pub fn policy(&self) -> ::std::option::Option<&str> {
         self.policy.as_deref()
     }
+    /// <p>The routing mode for this domain name. The routing mode determines how API Gateway sends traffic from your custom domain name to your private APIs.</p>
+    pub fn routing_mode(&self) -> ::std::option::Option<&crate::types::RoutingMode> {
+        self.routing_mode.as_ref()
+    }
 }
 impl CreateDomainNameInput {
     /// Creates a new builder-style object to manufacture [`CreateDomainNameInput`](crate::operation::create_domain_name::CreateDomainNameInput).
@@ -116,6 +122,7 @@ pub struct CreateDomainNameInputBuilder {
     pub(crate) mutual_tls_authentication: ::std::option::Option<crate::types::MutualTlsAuthenticationInput>,
     pub(crate) ownership_verification_certificate_arn: ::std::option::Option<::std::string::String>,
     pub(crate) policy: ::std::option::Option<::std::string::String>,
+    pub(crate) routing_mode: ::std::option::Option<crate::types::RoutingMode>,
 }
 impl CreateDomainNameInputBuilder {
     /// <p>The name of the DomainName resource.</p>
@@ -321,6 +328,20 @@ impl CreateDomainNameInputBuilder {
     pub fn get_policy(&self) -> &::std::option::Option<::std::string::String> {
         &self.policy
     }
+    /// <p>The routing mode for this domain name. The routing mode determines how API Gateway sends traffic from your custom domain name to your private APIs.</p>
+    pub fn routing_mode(mut self, input: crate::types::RoutingMode) -> Self {
+        self.routing_mode = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The routing mode for this domain name. The routing mode determines how API Gateway sends traffic from your custom domain name to your private APIs.</p>
+    pub fn set_routing_mode(mut self, input: ::std::option::Option<crate::types::RoutingMode>) -> Self {
+        self.routing_mode = input;
+        self
+    }
+    /// <p>The routing mode for this domain name. The routing mode determines how API Gateway sends traffic from your custom domain name to your private APIs.</p>
+    pub fn get_routing_mode(&self) -> &::std::option::Option<crate::types::RoutingMode> {
+        &self.routing_mode
+    }
     /// Consumes the builder and constructs a [`CreateDomainNameInput`](crate::operation::create_domain_name::CreateDomainNameInput).
     pub fn build(
         self,
@@ -340,6 +361,7 @@ impl CreateDomainNameInputBuilder {
             mutual_tls_authentication: self.mutual_tls_authentication,
             ownership_verification_certificate_arn: self.ownership_verification_certificate_arn,
             policy: self.policy,
+            routing_mode: self.routing_mode,
         })
     }
 }

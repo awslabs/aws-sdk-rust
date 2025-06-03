@@ -150,6 +150,13 @@ pub(crate) fn de_create_domain_name(
                             .transpose()?,
                     );
                 }
+                "domainNameArn" => {
+                    builder = builder.set_domain_name_arn(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
                 "domainNameConfigurations" => {
                     builder = builder.set_domain_name_configurations(
                         crate::protocol_serde::shape_domain_name_configurations::de_domain_name_configurations(tokens)?,
@@ -158,6 +165,13 @@ pub(crate) fn de_create_domain_name(
                 "mutualTlsAuthentication" => {
                     builder = builder.set_mutual_tls_authentication(
                         crate::protocol_serde::shape_mutual_tls_authentication::de_mutual_tls_authentication(tokens)?,
+                    );
+                }
+                "routingMode" => {
+                    builder = builder.set_routing_mode(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| crate::types::RoutingMode::from(u.as_ref())))
+                            .transpose()?,
                     );
                 }
                 "tags" => {

@@ -243,6 +243,13 @@ pub(crate) fn de_get_domain_name(
                             .transpose()?,
                     );
                 }
+                "routingMode" => {
+                    builder = builder.set_routing_mode(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| crate::types::RoutingMode::from(u.as_ref())))
+                            .transpose()?,
+                    );
+                }
                 "securityPolicy" => {
                     builder = builder.set_security_policy(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

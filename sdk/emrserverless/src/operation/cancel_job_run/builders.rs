@@ -136,4 +136,18 @@ impl CancelJobRunFluentBuilder {
     pub fn get_job_run_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_job_run_id()
     }
+    /// The duration (in seconds) to wait before forcefully terminating the job after cancellation is requested.
+    pub fn shutdown_grace_period_in_seconds(mut self, input: i32) -> Self {
+        self.inner = self.inner.shutdown_grace_period_in_seconds(input);
+        self
+    }
+    /// The duration (in seconds) to wait before forcefully terminating the job after cancellation is requested.
+    pub fn set_shutdown_grace_period_in_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.inner = self.inner.set_shutdown_grace_period_in_seconds(input);
+        self
+    }
+    /// The duration (in seconds) to wait before forcefully terminating the job after cancellation is requested.
+    pub fn get_shutdown_grace_period_in_seconds(&self) -> &::std::option::Option<i32> {
+        self.inner.get_shutdown_grace_period_in_seconds()
+    }
 }

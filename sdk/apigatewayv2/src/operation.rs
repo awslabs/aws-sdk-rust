@@ -31,6 +31,9 @@ pub mod create_route;
 /// Types for the `CreateRouteResponse` operation.
 pub mod create_route_response;
 
+/// Types for the `CreateRoutingRule` operation.
+pub mod create_routing_rule;
+
 /// Types for the `CreateStage` operation.
 pub mod create_stage;
 
@@ -78,6 +81,9 @@ pub mod delete_route_response;
 
 /// Types for the `DeleteRouteSettings` operation.
 pub mod delete_route_settings;
+
+/// Types for the `DeleteRoutingRule` operation.
+pub mod delete_routing_rule;
 
 /// Types for the `DeleteStage` operation.
 pub mod delete_stage;
@@ -151,6 +157,9 @@ pub mod get_route_responses;
 /// Types for the `GetRoutes` operation.
 pub mod get_routes;
 
+/// Types for the `GetRoutingRule` operation.
+pub mod get_routing_rule;
+
 /// Types for the `GetStage` operation.
 pub mod get_stage;
 
@@ -168,6 +177,12 @@ pub mod get_vpc_links;
 
 /// Types for the `ImportApi` operation.
 pub mod import_api;
+
+/// Types for the `ListRoutingRules` operation.
+pub mod list_routing_rules;
+
+/// Types for the `PutRoutingRule` operation.
+pub mod put_routing_rule;
 
 /// Types for the `ReimportApi` operation.
 pub mod reimport_api;

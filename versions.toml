@@ -88,9 +88,9 @@ model_hash = '711a8d250ce7cfe2729c4838b919afef6eab9efc92d8655f2ebf50b50240db0d'
 
 [crates.aws-sdk-apigateway]
 category = 'AwsSdk'
-version = '1.73.0'
-source_hash = '0343fe7bbe7a0180dfa091c937dbb6db5e0f19c1389b6c2503dea25b656bee68'
-model_hash = 'c68ab6d7bb2dc1b068e1033aba1843d1bdea7353deb7b709b5c97be80c1e3319'
+version = '1.74.0'
+source_hash = '622d434b0947c91fa862cb98725af8f3c60e2c59a1fda0061c54e8ce0c71da9c'
+model_hash = 'bcb1c5a4b1420cb93c4b638da37e55743112f7db22b84c804c66f9cf2c9fa9ae'
 
 [crates.aws-sdk-apigatewaymanagement]
 category = 'AwsSdk'
@@ -100,9 +100,9 @@ model_hash = 'da3fc1b71d982864cd77e0187eb3078f4443e8d9da188cbb5db04cef126e46b6'
 
 [crates.aws-sdk-apigatewayv2]
 category = 'AwsSdk'
-version = '1.72.0'
-source_hash = '6ff81a709a8b7ba8d847c5568682220d092541ae2bd0fb6dac5d59216866876d'
-model_hash = '5fb1e09b47291b385cb3629ab752a8becdd9c42572ce50ee0ccd2d871e8c376d'
+version = '1.73.0'
+source_hash = '6b2faa26346f6958724f4c65e978c845ac310feff4669b4e3b6c94c150e36847'
+model_hash = '436b7623a9c491248ea3c873dae2c2b9b905121e37318c7320167a09bbbb6e0f'
 
 [crates.aws-sdk-appconfig]
 category = 'AwsSdk'
@@ -892,9 +892,9 @@ model_hash = 'a39666f61364fed55b6bb9e18360dff4d71dad1a7ef289d8b80015c36d796dae'
 
 [crates.aws-sdk-emrserverless]
 category = 'AwsSdk'
-version = '1.77.0'
-source_hash = '2521490b155a95affa49a9c25554dec6567852a16288fbfbccebb8986ad64f1f'
-model_hash = '661fa999460c1b59fc35deabca1c3eec5913734b8550154cb5e9ea3478f8f867'
+version = '1.78.0'
+source_hash = '1bc9a0b7e2b17d80e222f5099d488d726b0ae6c0c7f2efc8445df248b967b280'
+model_hash = '9070f53ea8a99898fda56e216d9b96d0c846c98a0cb78c818e1b367ab88fc256'
 
 [crates.aws-sdk-entityresolution]
 category = 'AwsSdk'
@@ -2621,18 +2621,7 @@ source_hash = '80ec4ac438cda0bc74755e6b3c466dee894170885c393c986c8378a658eecec7'
 category = 'AwsRuntime'
 version = '0.0.0'
 source_hash = '8f95c45532c2d3193640e712a4081002454f32a0b49b8e64c6e34ab790a4dd31'
-
-[release]
-tag = 'release-2025-06-02'
-
 [release.crates]
-aws-sdk-athena = '1.76.0'
-aws-sdk-backup = '1.76.0'
-aws-sdk-bedrockagent = '1.100.0'
-aws-sdk-computeoptimizer = '1.75.0'
-aws-sdk-costoptimizationhub = '1.76.0'
-aws-sdk-ecs = '1.82.1'
-aws-sdk-eks = '1.91.0'
-aws-sdk-entityresolution = '1.78.0'
-aws-sdk-pcs = '1.36.0'
-aws-sdk-synthetics = '1.78.0'
+aws-sdk-apigateway = '1.74.0'
+aws-sdk-apigatewayv2 = '1.73.0'
+aws-sdk-emrserverless = '1.78.0'

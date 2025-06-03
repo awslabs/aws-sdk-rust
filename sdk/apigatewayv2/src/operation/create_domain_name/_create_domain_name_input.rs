@@ -10,6 +10,8 @@ pub struct CreateDomainNameInput {
     pub domain_name_configurations: ::std::option::Option<::std::vec::Vec<crate::types::DomainNameConfiguration>>,
     /// <p>The mutual TLS authentication configuration for a custom domain name.</p>
     pub mutual_tls_authentication: ::std::option::Option<crate::types::MutualTlsAuthenticationInput>,
+    /// <p>The routing mode.</p>
+    pub routing_mode: ::std::option::Option<crate::types::RoutingMode>,
     /// <p>The collection of tags associated with a domain name.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
@@ -27,6 +29,10 @@ impl CreateDomainNameInput {
     /// <p>The mutual TLS authentication configuration for a custom domain name.</p>
     pub fn mutual_tls_authentication(&self) -> ::std::option::Option<&crate::types::MutualTlsAuthenticationInput> {
         self.mutual_tls_authentication.as_ref()
+    }
+    /// <p>The routing mode.</p>
+    pub fn routing_mode(&self) -> ::std::option::Option<&crate::types::RoutingMode> {
+        self.routing_mode.as_ref()
     }
     /// <p>The collection of tags associated with a domain name.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
@@ -47,6 +53,7 @@ pub struct CreateDomainNameInputBuilder {
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
     pub(crate) domain_name_configurations: ::std::option::Option<::std::vec::Vec<crate::types::DomainNameConfiguration>>,
     pub(crate) mutual_tls_authentication: ::std::option::Option<crate::types::MutualTlsAuthenticationInput>,
+    pub(crate) routing_mode: ::std::option::Option<crate::types::RoutingMode>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateDomainNameInputBuilder {
@@ -99,6 +106,20 @@ impl CreateDomainNameInputBuilder {
     pub fn get_mutual_tls_authentication(&self) -> &::std::option::Option<crate::types::MutualTlsAuthenticationInput> {
         &self.mutual_tls_authentication
     }
+    /// <p>The routing mode.</p>
+    pub fn routing_mode(mut self, input: crate::types::RoutingMode) -> Self {
+        self.routing_mode = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The routing mode.</p>
+    pub fn set_routing_mode(mut self, input: ::std::option::Option<crate::types::RoutingMode>) -> Self {
+        self.routing_mode = input;
+        self
+    }
+    /// <p>The routing mode.</p>
+    pub fn get_routing_mode(&self) -> &::std::option::Option<crate::types::RoutingMode> {
+        &self.routing_mode
+    }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -127,6 +148,7 @@ impl CreateDomainNameInputBuilder {
             domain_name: self.domain_name,
             domain_name_configurations: self.domain_name_configurations,
             mutual_tls_authentication: self.mutual_tls_authentication,
+            routing_mode: self.routing_mode,
             tags: self.tags,
         })
     }

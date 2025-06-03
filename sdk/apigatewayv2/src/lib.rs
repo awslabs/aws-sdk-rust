@@ -32,7 +32,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-//! aws-sdk-apigatewayv2 = "1.72.0"
+//! aws-sdk-apigatewayv2 = "1.73.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!
@@ -195,6 +195,8 @@ mod sdk_feature_tracker;
 mod serialization_settings;
 
 mod endpoint_lib;
+
+mod lens;
 
 mod json_errors;
 
