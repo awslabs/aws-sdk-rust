@@ -12,6 +12,7 @@
 /// ```text
 /// # let warningtype = unimplemented!();
 /// match warningtype {
+///     WarningType::ExcludedProperties => { /* ... */ },
 ///     WarningType::MutuallyExclusiveProperties => { /* ... */ },
 ///     WarningType::MutuallyExclusiveTypes => { /* ... */ },
 ///     WarningType::UnsupportedProperties => { /* ... */ },
@@ -44,6 +45,8 @@
 )]
 pub enum WarningType {
     #[allow(missing_docs)] // documentation missing in model
+    ExcludedProperties,
+    #[allow(missing_docs)] // documentation missing in model
     MutuallyExclusiveProperties,
     #[allow(missing_docs)] // documentation missing in model
     MutuallyExclusiveTypes,
@@ -56,6 +59,7 @@ pub enum WarningType {
 impl ::std::convert::From<&str> for WarningType {
     fn from(s: &str) -> Self {
         match s {
+            "EXCLUDED_PROPERTIES" => WarningType::ExcludedProperties,
             "MUTUALLY_EXCLUSIVE_PROPERTIES" => WarningType::MutuallyExclusiveProperties,
             "MUTUALLY_EXCLUSIVE_TYPES" => WarningType::MutuallyExclusiveTypes,
             "UNSUPPORTED_PROPERTIES" => WarningType::UnsupportedProperties,
@@ -74,6 +78,7 @@ impl WarningType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            WarningType::ExcludedProperties => "EXCLUDED_PROPERTIES",
             WarningType::MutuallyExclusiveProperties => "MUTUALLY_EXCLUSIVE_PROPERTIES",
             WarningType::MutuallyExclusiveTypes => "MUTUALLY_EXCLUSIVE_TYPES",
             WarningType::UnsupportedProperties => "UNSUPPORTED_PROPERTIES",
@@ -82,7 +87,12 @@ impl WarningType {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["MUTUALLY_EXCLUSIVE_PROPERTIES", "MUTUALLY_EXCLUSIVE_TYPES", "UNSUPPORTED_PROPERTIES"]
+        &[
+            "EXCLUDED_PROPERTIES",
+            "MUTUALLY_EXCLUSIVE_PROPERTIES",
+            "MUTUALLY_EXCLUSIVE_TYPES",
+            "UNSUPPORTED_PROPERTIES",
+        ]
     }
 }
 impl ::std::convert::AsRef<str> for WarningType {
@@ -105,6 +115,7 @@ impl WarningType {
 impl ::std::fmt::Display for WarningType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            WarningType::ExcludedProperties => write!(f, "EXCLUDED_PROPERTIES"),
             WarningType::MutuallyExclusiveProperties => write!(f, "MUTUALLY_EXCLUSIVE_PROPERTIES"),
             WarningType::MutuallyExclusiveTypes => write!(f, "MUTUALLY_EXCLUSIVE_TYPES"),
             WarningType::UnsupportedProperties => write!(f, "UNSUPPORTED_PROPERTIES"),

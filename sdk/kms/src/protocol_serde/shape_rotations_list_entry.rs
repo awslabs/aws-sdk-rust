@@ -21,6 +21,47 @@ where
                                     .transpose()?,
                             );
                         }
+                        "KeyMaterialId" => {
+                            builder = builder.set_key_material_id(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "KeyMaterialDescription" => {
+                            builder = builder.set_key_material_description(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "ImportState" => {
+                            builder = builder.set_import_state(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::ImportState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "KeyMaterialState" => {
+                            builder = builder.set_key_material_state(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::KeyMaterialState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "ExpirationModel" => {
+                            builder = builder.set_expiration_model(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::ExpirationModelType::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "ValidTo" => {
+                            builder = builder.set_valid_to(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
+                                tokens.next(),
+                                ::aws_smithy_types::date_time::Format::EpochSeconds,
+                            )?);
+                        }
                         "RotationDate" => {
                             builder = builder.set_rotation_date(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                                 tokens.next(),

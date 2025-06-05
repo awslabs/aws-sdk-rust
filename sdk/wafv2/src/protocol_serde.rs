@@ -429,6 +429,8 @@ pub(crate) mod shape_all_query_arguments;
 
 pub(crate) mod shape_and_statement;
 
+pub(crate) mod shape_asn_match_statement;
+
 pub(crate) mod shape_body;
 
 pub(crate) mod shape_byte_match_statement;
@@ -565,6 +567,8 @@ pub(crate) mod shape_label_name_condition;
 
 pub(crate) mod shape_password_field;
 
+pub(crate) mod shape_rate_limit_asn;
+
 pub(crate) mod shape_rate_limit_cookie;
 
 pub(crate) mod shape_rate_limit_forwarded_ip;
@@ -588,6 +592,8 @@ pub(crate) mod shape_rate_limit_query_string;
 pub(crate) mod shape_rate_limit_uri_path;
 
 pub(crate) mod shape_username_field;
+
+pub(crate) mod shape_asn_list;
 
 pub(crate) mod shape_cookie_names;
 

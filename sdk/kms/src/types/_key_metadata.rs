@@ -17,7 +17,7 @@ pub struct KeyMetadata {
     pub enabled: bool,
     /// <p>The description of the KMS key.</p>
     pub description: ::std::option::Option<::std::string::String>,
-    /// <p>The <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic operations</a> for which you can use the KMS key.</p>
+    /// <p>The <a href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-cryptography.html#cryptographic-operations">cryptographic operations</a> for which you can use the KMS key.</p>
     pub key_usage: ::std::option::Option<crate::types::KeyUsageType>,
     /// <p>The current status of the KMS key.</p>
     /// <p>For more information about how key state affects the use of a KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key states of KMS keys</a> in the <i>Key Management Service Developer Guide</i>.</p>
@@ -25,13 +25,13 @@ pub struct KeyMetadata {
     /// <p>The date and time after which KMS deletes this KMS key. This value is present only when the KMS key is scheduled for deletion, that is, when its <code>KeyState</code> is <code>PendingDeletion</code>.</p>
     /// <p>When the primary key in a multi-Region key is scheduled for deletion but still has replica keys, its key state is <code>PendingReplicaDeletion</code> and the length of its waiting period is displayed in the <code>PendingDeletionWindowInDays</code> field.</p>
     pub deletion_date: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>The time at which the imported key material expires. When the key material expires, KMS deletes the key material and the KMS key becomes unusable. This value is present only for KMS keys whose <code>Origin</code> is <code>EXTERNAL</code> and whose <code>ExpirationModel</code> is <code>KEY_MATERIAL_EXPIRES</code>, otherwise this value is omitted.</p>
+    /// <p>The earliest time at which any imported key material permanently associated with this KMS key expires. When a key material expires, KMS deletes the key material and the KMS key becomes unusable. This value is present only for KMS keys whose <code>Origin</code> is <code>EXTERNAL</code> and the <code>ExpirationModel</code> is <code>KEY_MATERIAL_EXPIRES</code>, otherwise this value is omitted.</p>
     pub valid_to: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The source of the key material for the KMS key. When this value is <code>AWS_KMS</code>, KMS created the key material. When this value is <code>EXTERNAL</code>, the key material was imported or the KMS key doesn't have any key material. When this value is <code>AWS_CLOUDHSM</code>, the key material was created in the CloudHSM cluster associated with a custom key store.</p>
     pub origin: ::std::option::Option<crate::types::OriginType>,
-    /// <p>A unique identifier for the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom key store</a> that contains the KMS key. This field is present only when the KMS key is created in a custom key store.</p>
+    /// <p>A unique identifier for the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-store-overview.html">custom key store</a> that contains the KMS key. This field is present only when the KMS key is created in a custom key store.</p>
     pub custom_key_store_id: ::std::option::Option<::std::string::String>,
-    /// <p>The cluster ID of the CloudHSM cluster that contains the key material for the KMS key. When you create a KMS key in an CloudHSM <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom key store</a>, KMS creates the key material for the KMS key in the associated CloudHSM cluster. This field is present only when the KMS key is created in an CloudHSM key store.</p>
+    /// <p>The cluster ID of the CloudHSM cluster that contains the key material for the KMS key. When you create a KMS key in an CloudHSM <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-store-overview.html">custom key store</a>, KMS creates the key material for the KMS key in the associated CloudHSM cluster. This field is present only when the KMS key is created in an CloudHSM key store.</p>
     pub cloud_hsm_cluster_id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether the KMS key's key material expires. This value is present only when <code>Origin</code> is <code>EXTERNAL</code>, otherwise this value is omitted.</p>
     pub expiration_model: ::std::option::Option<crate::types::ExpirationModelType>,
@@ -74,6 +74,8 @@ pub struct KeyMetadata {
     /// <p>Information about the external key that is associated with a KMS key in an external key store.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/keystore-external.html#concept-external-key">External key</a> in the <i>Key Management Service Developer Guide</i>.</p>
     pub xks_key_configuration: ::std::option::Option<crate::types::XksKeyConfigurationType>,
+    /// <p>Identifies the current key material. This value is present for symmetric encryption keys with <code>AWS_KMS</code> origin and single-Region, symmetric encryption keys with <code>EXTERNAL</code> origin. These KMS keys support automatic or on-demand key rotation and can have multiple key materials associated with them. KMS uses the current key material for both encryption and decryption, and the non-current key material for decryption operations only.</p>
+    pub current_key_material_id: ::std::option::Option<::std::string::String>,
 }
 impl KeyMetadata {
     /// <p>The twelve-digit account ID of the Amazon Web Services account that owns the KMS key.</p>
@@ -101,7 +103,7 @@ impl KeyMetadata {
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic operations</a> for which you can use the KMS key.</p>
+    /// <p>The <a href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-cryptography.html#cryptographic-operations">cryptographic operations</a> for which you can use the KMS key.</p>
     pub fn key_usage(&self) -> ::std::option::Option<&crate::types::KeyUsageType> {
         self.key_usage.as_ref()
     }
@@ -115,7 +117,7 @@ impl KeyMetadata {
     pub fn deletion_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.deletion_date.as_ref()
     }
-    /// <p>The time at which the imported key material expires. When the key material expires, KMS deletes the key material and the KMS key becomes unusable. This value is present only for KMS keys whose <code>Origin</code> is <code>EXTERNAL</code> and whose <code>ExpirationModel</code> is <code>KEY_MATERIAL_EXPIRES</code>, otherwise this value is omitted.</p>
+    /// <p>The earliest time at which any imported key material permanently associated with this KMS key expires. When a key material expires, KMS deletes the key material and the KMS key becomes unusable. This value is present only for KMS keys whose <code>Origin</code> is <code>EXTERNAL</code> and the <code>ExpirationModel</code> is <code>KEY_MATERIAL_EXPIRES</code>, otherwise this value is omitted.</p>
     pub fn valid_to(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.valid_to.as_ref()
     }
@@ -123,11 +125,11 @@ impl KeyMetadata {
     pub fn origin(&self) -> ::std::option::Option<&crate::types::OriginType> {
         self.origin.as_ref()
     }
-    /// <p>A unique identifier for the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom key store</a> that contains the KMS key. This field is present only when the KMS key is created in a custom key store.</p>
+    /// <p>A unique identifier for the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-store-overview.html">custom key store</a> that contains the KMS key. This field is present only when the KMS key is created in a custom key store.</p>
     pub fn custom_key_store_id(&self) -> ::std::option::Option<&str> {
         self.custom_key_store_id.as_deref()
     }
-    /// <p>The cluster ID of the CloudHSM cluster that contains the key material for the KMS key. When you create a KMS key in an CloudHSM <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom key store</a>, KMS creates the key material for the KMS key in the associated CloudHSM cluster. This field is present only when the KMS key is created in an CloudHSM key store.</p>
+    /// <p>The cluster ID of the CloudHSM cluster that contains the key material for the KMS key. When you create a KMS key in an CloudHSM <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-store-overview.html">custom key store</a>, KMS creates the key material for the KMS key in the associated CloudHSM cluster. This field is present only when the KMS key is created in an CloudHSM key store.</p>
     pub fn cloud_hsm_cluster_id(&self) -> ::std::option::Option<&str> {
         self.cloud_hsm_cluster_id.as_deref()
     }
@@ -204,6 +206,10 @@ impl KeyMetadata {
     pub fn xks_key_configuration(&self) -> ::std::option::Option<&crate::types::XksKeyConfigurationType> {
         self.xks_key_configuration.as_ref()
     }
+    /// <p>Identifies the current key material. This value is present for symmetric encryption keys with <code>AWS_KMS</code> origin and single-Region, symmetric encryption keys with <code>EXTERNAL</code> origin. These KMS keys support automatic or on-demand key rotation and can have multiple key materials associated with them. KMS uses the current key material for both encryption and decryption, and the non-current key material for decryption operations only.</p>
+    pub fn current_key_material_id(&self) -> ::std::option::Option<&str> {
+        self.current_key_material_id.as_deref()
+    }
 }
 impl KeyMetadata {
     /// Creates a new builder-style object to manufacture [`KeyMetadata`](crate::types::KeyMetadata).
@@ -241,6 +247,7 @@ pub struct KeyMetadataBuilder {
     pub(crate) pending_deletion_window_in_days: ::std::option::Option<i32>,
     pub(crate) mac_algorithms: ::std::option::Option<::std::vec::Vec<crate::types::MacAlgorithmSpec>>,
     pub(crate) xks_key_configuration: ::std::option::Option<crate::types::XksKeyConfigurationType>,
+    pub(crate) current_key_material_id: ::std::option::Option<::std::string::String>,
 }
 impl KeyMetadataBuilder {
     /// <p>The twelve-digit account ID of the Amazon Web Services account that owns the KMS key.</p>
@@ -328,17 +335,17 @@ impl KeyMetadataBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
-    /// <p>The <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic operations</a> for which you can use the KMS key.</p>
+    /// <p>The <a href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-cryptography.html#cryptographic-operations">cryptographic operations</a> for which you can use the KMS key.</p>
     pub fn key_usage(mut self, input: crate::types::KeyUsageType) -> Self {
         self.key_usage = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic operations</a> for which you can use the KMS key.</p>
+    /// <p>The <a href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-cryptography.html#cryptographic-operations">cryptographic operations</a> for which you can use the KMS key.</p>
     pub fn set_key_usage(mut self, input: ::std::option::Option<crate::types::KeyUsageType>) -> Self {
         self.key_usage = input;
         self
     }
-    /// <p>The <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic operations</a> for which you can use the KMS key.</p>
+    /// <p>The <a href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-cryptography.html#cryptographic-operations">cryptographic operations</a> for which you can use the KMS key.</p>
     pub fn get_key_usage(&self) -> &::std::option::Option<crate::types::KeyUsageType> {
         &self.key_usage
     }
@@ -376,17 +383,17 @@ impl KeyMetadataBuilder {
     pub fn get_deletion_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.deletion_date
     }
-    /// <p>The time at which the imported key material expires. When the key material expires, KMS deletes the key material and the KMS key becomes unusable. This value is present only for KMS keys whose <code>Origin</code> is <code>EXTERNAL</code> and whose <code>ExpirationModel</code> is <code>KEY_MATERIAL_EXPIRES</code>, otherwise this value is omitted.</p>
+    /// <p>The earliest time at which any imported key material permanently associated with this KMS key expires. When a key material expires, KMS deletes the key material and the KMS key becomes unusable. This value is present only for KMS keys whose <code>Origin</code> is <code>EXTERNAL</code> and the <code>ExpirationModel</code> is <code>KEY_MATERIAL_EXPIRES</code>, otherwise this value is omitted.</p>
     pub fn valid_to(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.valid_to = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The time at which the imported key material expires. When the key material expires, KMS deletes the key material and the KMS key becomes unusable. This value is present only for KMS keys whose <code>Origin</code> is <code>EXTERNAL</code> and whose <code>ExpirationModel</code> is <code>KEY_MATERIAL_EXPIRES</code>, otherwise this value is omitted.</p>
+    /// <p>The earliest time at which any imported key material permanently associated with this KMS key expires. When a key material expires, KMS deletes the key material and the KMS key becomes unusable. This value is present only for KMS keys whose <code>Origin</code> is <code>EXTERNAL</code> and the <code>ExpirationModel</code> is <code>KEY_MATERIAL_EXPIRES</code>, otherwise this value is omitted.</p>
     pub fn set_valid_to(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.valid_to = input;
         self
     }
-    /// <p>The time at which the imported key material expires. When the key material expires, KMS deletes the key material and the KMS key becomes unusable. This value is present only for KMS keys whose <code>Origin</code> is <code>EXTERNAL</code> and whose <code>ExpirationModel</code> is <code>KEY_MATERIAL_EXPIRES</code>, otherwise this value is omitted.</p>
+    /// <p>The earliest time at which any imported key material permanently associated with this KMS key expires. When a key material expires, KMS deletes the key material and the KMS key becomes unusable. This value is present only for KMS keys whose <code>Origin</code> is <code>EXTERNAL</code> and the <code>ExpirationModel</code> is <code>KEY_MATERIAL_EXPIRES</code>, otherwise this value is omitted.</p>
     pub fn get_valid_to(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.valid_to
     }
@@ -404,31 +411,31 @@ impl KeyMetadataBuilder {
     pub fn get_origin(&self) -> &::std::option::Option<crate::types::OriginType> {
         &self.origin
     }
-    /// <p>A unique identifier for the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom key store</a> that contains the KMS key. This field is present only when the KMS key is created in a custom key store.</p>
+    /// <p>A unique identifier for the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-store-overview.html">custom key store</a> that contains the KMS key. This field is present only when the KMS key is created in a custom key store.</p>
     pub fn custom_key_store_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.custom_key_store_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A unique identifier for the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom key store</a> that contains the KMS key. This field is present only when the KMS key is created in a custom key store.</p>
+    /// <p>A unique identifier for the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-store-overview.html">custom key store</a> that contains the KMS key. This field is present only when the KMS key is created in a custom key store.</p>
     pub fn set_custom_key_store_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.custom_key_store_id = input;
         self
     }
-    /// <p>A unique identifier for the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom key store</a> that contains the KMS key. This field is present only when the KMS key is created in a custom key store.</p>
+    /// <p>A unique identifier for the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-store-overview.html">custom key store</a> that contains the KMS key. This field is present only when the KMS key is created in a custom key store.</p>
     pub fn get_custom_key_store_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.custom_key_store_id
     }
-    /// <p>The cluster ID of the CloudHSM cluster that contains the key material for the KMS key. When you create a KMS key in an CloudHSM <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom key store</a>, KMS creates the key material for the KMS key in the associated CloudHSM cluster. This field is present only when the KMS key is created in an CloudHSM key store.</p>
+    /// <p>The cluster ID of the CloudHSM cluster that contains the key material for the KMS key. When you create a KMS key in an CloudHSM <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-store-overview.html">custom key store</a>, KMS creates the key material for the KMS key in the associated CloudHSM cluster. This field is present only when the KMS key is created in an CloudHSM key store.</p>
     pub fn cloud_hsm_cluster_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cloud_hsm_cluster_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The cluster ID of the CloudHSM cluster that contains the key material for the KMS key. When you create a KMS key in an CloudHSM <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom key store</a>, KMS creates the key material for the KMS key in the associated CloudHSM cluster. This field is present only when the KMS key is created in an CloudHSM key store.</p>
+    /// <p>The cluster ID of the CloudHSM cluster that contains the key material for the KMS key. When you create a KMS key in an CloudHSM <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-store-overview.html">custom key store</a>, KMS creates the key material for the KMS key in the associated CloudHSM cluster. This field is present only when the KMS key is created in an CloudHSM key store.</p>
     pub fn set_cloud_hsm_cluster_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cloud_hsm_cluster_id = input;
         self
     }
-    /// <p>The cluster ID of the CloudHSM cluster that contains the key material for the KMS key. When you create a KMS key in an CloudHSM <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom key store</a>, KMS creates the key material for the KMS key in the associated CloudHSM cluster. This field is present only when the KMS key is created in an CloudHSM key store.</p>
+    /// <p>The cluster ID of the CloudHSM cluster that contains the key material for the KMS key. When you create a KMS key in an CloudHSM <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-store-overview.html">custom key store</a>, KMS creates the key material for the KMS key in the associated CloudHSM cluster. This field is present only when the KMS key is created in an CloudHSM key store.</p>
     pub fn get_cloud_hsm_cluster_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.cloud_hsm_cluster_id
     }
@@ -675,6 +682,20 @@ impl KeyMetadataBuilder {
     pub fn get_xks_key_configuration(&self) -> &::std::option::Option<crate::types::XksKeyConfigurationType> {
         &self.xks_key_configuration
     }
+    /// <p>Identifies the current key material. This value is present for symmetric encryption keys with <code>AWS_KMS</code> origin and single-Region, symmetric encryption keys with <code>EXTERNAL</code> origin. These KMS keys support automatic or on-demand key rotation and can have multiple key materials associated with them. KMS uses the current key material for both encryption and decryption, and the non-current key material for decryption operations only.</p>
+    pub fn current_key_material_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.current_key_material_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Identifies the current key material. This value is present for symmetric encryption keys with <code>AWS_KMS</code> origin and single-Region, symmetric encryption keys with <code>EXTERNAL</code> origin. These KMS keys support automatic or on-demand key rotation and can have multiple key materials associated with them. KMS uses the current key material for both encryption and decryption, and the non-current key material for decryption operations only.</p>
+    pub fn set_current_key_material_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.current_key_material_id = input;
+        self
+    }
+    /// <p>Identifies the current key material. This value is present for symmetric encryption keys with <code>AWS_KMS</code> origin and single-Region, symmetric encryption keys with <code>EXTERNAL</code> origin. These KMS keys support automatic or on-demand key rotation and can have multiple key materials associated with them. KMS uses the current key material for both encryption and decryption, and the non-current key material for decryption operations only.</p>
+    pub fn get_current_key_material_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.current_key_material_id
+    }
     /// Consumes the builder and constructs a [`KeyMetadata`](crate::types::KeyMetadata).
     /// This method will fail if any of the following fields are not set:
     /// - [`key_id`](crate::types::builders::KeyMetadataBuilder::key_id)
@@ -710,6 +731,7 @@ impl KeyMetadataBuilder {
             pending_deletion_window_in_days: self.pending_deletion_window_in_days,
             mac_algorithms: self.mac_algorithms,
             xks_key_configuration: self.xks_key_configuration,
+            current_key_material_id: self.current_key_material_id,
         })
     }
 }

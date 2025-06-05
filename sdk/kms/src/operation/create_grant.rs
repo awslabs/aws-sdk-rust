@@ -277,7 +277,7 @@ pub enum CreateGrantError {
     /// <p>For cryptographic operations on KMS keys in custom key stores, this exception represents a general failure with many possible causes. To identify the cause, see the error message that accompanies the exception.</p></li>
     /// </ul>
     KmsInvalidStateException(crate::types::error::KmsInvalidStateException),
-    /// <p>The request was rejected because a quota was exceeded. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/limits.html">Quotas</a> in the <i>Key Management Service Developer Guide</i>.</p>
+    /// <p>The request was rejected because a length constraint or quota was exceeded. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/limits.html">Quotas</a> in the <i>Key Management Service Developer Guide</i>.</p>
     LimitExceededException(crate::types::error::LimitExceededException),
     /// <p>The request was rejected because the specified entity or resource could not be found.</p>
     NotFoundException(crate::types::error::NotFoundException),

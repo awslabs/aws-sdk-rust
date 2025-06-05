@@ -14,7 +14,7 @@ pub struct Headers {
     /// <p>The parts of the headers to match with the rule inspection criteria. If you specify <code>ALL</code>, WAF inspects both keys and values.</p>
     /// <p><code>All</code> does not require a match to be found in the keys and a match to be found in the values. It requires a match to be found in the keys or the values or both. To require a match in the keys and in the values, use a logical <code>AND</code> statement to combine two match rules, one that inspects the keys and another that inspects the values.</p>
     pub match_scope: crate::types::MapMatchScope,
-    /// <p>What WAF should do if the headers of the request are more numerous or larger than WAF can inspect. WAF does not support inspecting the entire contents of request headers when they exceed 8 KB (8192 bytes) or 200 total headers. The underlying host service forwards a maximum of 200 headers and at most 8 KB of header contents to WAF.</p>
+    /// <p>What WAF should do if the headers determined by your match scope are more numerous or larger than WAF can inspect. WAF does not support inspecting the entire contents of request headers when they exceed 8 KB (8192 bytes) or 200 total headers. The underlying host service forwards a maximum of 200 headers and at most 8 KB of header contents to WAF.</p>
     /// <p>The options for oversize handling are the following:</p>
     /// <ul>
     /// <li>
@@ -38,7 +38,7 @@ impl Headers {
     pub fn match_scope(&self) -> &crate::types::MapMatchScope {
         &self.match_scope
     }
-    /// <p>What WAF should do if the headers of the request are more numerous or larger than WAF can inspect. WAF does not support inspecting the entire contents of request headers when they exceed 8 KB (8192 bytes) or 200 total headers. The underlying host service forwards a maximum of 200 headers and at most 8 KB of header contents to WAF.</p>
+    /// <p>What WAF should do if the headers determined by your match scope are more numerous or larger than WAF can inspect. WAF does not support inspecting the entire contents of request headers when they exceed 8 KB (8192 bytes) or 200 total headers. The underlying host service forwards a maximum of 200 headers and at most 8 KB of header contents to WAF.</p>
     /// <p>The options for oversize handling are the following:</p>
     /// <ul>
     /// <li>
@@ -107,7 +107,7 @@ impl HeadersBuilder {
     pub fn get_match_scope(&self) -> &::std::option::Option<crate::types::MapMatchScope> {
         &self.match_scope
     }
-    /// <p>What WAF should do if the headers of the request are more numerous or larger than WAF can inspect. WAF does not support inspecting the entire contents of request headers when they exceed 8 KB (8192 bytes) or 200 total headers. The underlying host service forwards a maximum of 200 headers and at most 8 KB of header contents to WAF.</p>
+    /// <p>What WAF should do if the headers determined by your match scope are more numerous or larger than WAF can inspect. WAF does not support inspecting the entire contents of request headers when they exceed 8 KB (8192 bytes) or 200 total headers. The underlying host service forwards a maximum of 200 headers and at most 8 KB of header contents to WAF.</p>
     /// <p>The options for oversize handling are the following:</p>
     /// <ul>
     /// <li>
@@ -122,7 +122,7 @@ impl HeadersBuilder {
         self.oversize_handling = ::std::option::Option::Some(input);
         self
     }
-    /// <p>What WAF should do if the headers of the request are more numerous or larger than WAF can inspect. WAF does not support inspecting the entire contents of request headers when they exceed 8 KB (8192 bytes) or 200 total headers. The underlying host service forwards a maximum of 200 headers and at most 8 KB of header contents to WAF.</p>
+    /// <p>What WAF should do if the headers determined by your match scope are more numerous or larger than WAF can inspect. WAF does not support inspecting the entire contents of request headers when they exceed 8 KB (8192 bytes) or 200 total headers. The underlying host service forwards a maximum of 200 headers and at most 8 KB of header contents to WAF.</p>
     /// <p>The options for oversize handling are the following:</p>
     /// <ul>
     /// <li>
@@ -136,7 +136,7 @@ impl HeadersBuilder {
         self.oversize_handling = input;
         self
     }
-    /// <p>What WAF should do if the headers of the request are more numerous or larger than WAF can inspect. WAF does not support inspecting the entire contents of request headers when they exceed 8 KB (8192 bytes) or 200 total headers. The underlying host service forwards a maximum of 200 headers and at most 8 KB of header contents to WAF.</p>
+    /// <p>What WAF should do if the headers determined by your match scope are more numerous or larger than WAF can inspect. WAF does not support inspecting the entire contents of request headers when they exceed 8 KB (8192 bytes) or 200 total headers. The underlying host service forwards a maximum of 200 headers and at most 8 KB of header contents to WAF.</p>
     /// <p>The options for oversize handling are the following:</p>
     /// <ul>
     /// <li>

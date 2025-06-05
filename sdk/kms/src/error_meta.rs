@@ -61,7 +61,7 @@ pub enum Error {
     ExpiredImportTokenException(crate::types::error::ExpiredImportTokenException),
     /// <p>The request was rejected because the specified KMS key cannot decrypt the data. The <code>KeyId</code> in a <code>Decrypt</code> request and the <code>SourceKeyId</code> in a <code>ReEncrypt</code> request must identify the same KMS key that was used to encrypt the ciphertext.</p>
     IncorrectKeyException(crate::types::error::IncorrectKeyException),
-    /// <p>The request was rejected because the key material in the request is, expired, invalid, or is not the same key material that was previously imported into this KMS key.</p>
+    /// <p>The request was rejected because the key material in the request is, expired, invalid, or does not meet expectations. For example, it is not the same key material that was previously imported or KMS expected new key material but the key material being imported is already associated with the KMS key.</p>
     IncorrectKeyMaterialException(crate::types::error::IncorrectKeyMaterialException),
     /// <p>The request was rejected because the trust anchor certificate in the request to create an CloudHSM key store is not the trust anchor certificate for the specified CloudHSM cluster.</p>
     /// <p>When you <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/initialize-cluster.html#sign-csr">initialize the CloudHSM cluster</a>, you create the trust anchor certificate and save it in the <code>customerCA.crt</code> file.</p>
@@ -109,7 +109,7 @@ pub enum Error {
     KmsInvalidStateException(crate::types::error::KmsInvalidStateException),
     /// <p>The request was rejected because the specified KMS key was not available. You can retry the request.</p>
     KeyUnavailableException(crate::types::error::KeyUnavailableException),
-    /// <p>The request was rejected because a quota was exceeded. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/limits.html">Quotas</a> in the <i>Key Management Service Developer Guide</i>.</p>
+    /// <p>The request was rejected because a length constraint or quota was exceeded. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/limits.html">Quotas</a> in the <i>Key Management Service Developer Guide</i>.</p>
     LimitExceededException(crate::types::error::LimitExceededException),
     /// <p>The request was rejected because the specified policy is not syntactically or semantically correct.</p>
     MalformedPolicyDocumentException(crate::types::error::MalformedPolicyDocumentException),

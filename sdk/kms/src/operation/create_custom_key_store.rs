@@ -286,7 +286,7 @@ pub enum CreateCustomKeyStoreError {
     IncorrectTrustAnchorException(crate::types::error::IncorrectTrustAnchorException),
     /// <p>The request was rejected because an internal exception occurred. The request can be retried.</p>
     KmsInternalException(crate::types::error::KmsInternalException),
-    /// <p>The request was rejected because a quota was exceeded. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/limits.html">Quotas</a> in the <i>Key Management Service Developer Guide</i>.</p>
+    /// <p>The request was rejected because a length constraint or quota was exceeded. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/limits.html">Quotas</a> in the <i>Key Management Service Developer Guide</i>.</p>
     LimitExceededException(crate::types::error::LimitExceededException),
     /// <p>The request was rejected because the proxy credentials failed to authenticate to the specified external key store proxy. The specified external key store proxy rejected a status request from KMS due to invalid credentials. This can indicate an error in the credentials or in the identification of the external key store proxy.</p>
     XksProxyIncorrectAuthenticationCredentialException(crate::types::error::XksProxyIncorrectAuthenticationCredentialException),

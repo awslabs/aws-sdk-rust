@@ -30,7 +30,7 @@ impl crate::operation::describe_key::builders::DescribeKeyInputBuilder {
 /// <li>
 /// <p>Aliases associated with the KMS key. To get this information, use <code>ListAliases</code>.</p></li>
 /// <li>
-/// <p>Whether automatic key rotation is enabled on the KMS key. To get this information, use <code>GetKeyRotationStatus</code>. Also, some key states prevent a KMS key from being automatically rotated. For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/rotate-keys.html#rotate-keys-how-it-works">How Automatic Key Rotation Works</a> in the <i>Key Management Service Developer Guide</i>.</p></li>
+/// <p>Whether automatic key rotation is enabled on the KMS key. To get this information, use <code>GetKeyRotationStatus</code>. Also, some key states prevent a KMS key from being automatically rotated. For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/rotate-keys.html#rotate-keys-how-it-works">How key rotation works</a> in the <i>Key Management Service Developer Guide</i>.</p></li>
 /// <li>
 /// <p>Tags on the KMS key. To get this information, use <code>ListResourceTags</code>.</p></li>
 /// <li>
@@ -56,7 +56,7 @@ impl crate::operation::describe_key::builders::DescribeKeyInputBuilder {
 /// <li>
 /// <p><code>ListRetirableGrants</code></p></li>
 /// </ul>
-/// <p><b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS eventual consistency</a>.</p>
+/// <p><b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/accessing-kms.html#programming-eventual-consistency">KMS eventual consistency</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeKeyFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -204,19 +204,19 @@ impl DescribeKeyFluentBuilder {
     /// To override the contents of this collection use [`set_grant_tokens`](Self::set_grant_tokens).
     ///
     /// <p>A list of grant tokens.</p>
-    /// <p>Use a grant token when your permission to call this operation comes from a new grant that has not yet achieved <i>eventual consistency</i>. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html#grant_token">Grant token</a> and <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grant-manage.html#using-grant-token">Using a grant token</a> in the <i>Key Management Service Developer Guide</i>.</p>
+    /// <p>Use a grant token when your permission to call this operation comes from a new grant that has not yet achieved <i>eventual consistency</i>. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html#grant_token">Grant token</a> and <a href="https://docs.aws.amazon.com/kms/latest/developerguide/using-grant-token.html">Using a grant token</a> in the <i>Key Management Service Developer Guide</i>.</p>
     pub fn grant_tokens(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.grant_tokens(input.into());
         self
     }
     /// <p>A list of grant tokens.</p>
-    /// <p>Use a grant token when your permission to call this operation comes from a new grant that has not yet achieved <i>eventual consistency</i>. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html#grant_token">Grant token</a> and <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grant-manage.html#using-grant-token">Using a grant token</a> in the <i>Key Management Service Developer Guide</i>.</p>
+    /// <p>Use a grant token when your permission to call this operation comes from a new grant that has not yet achieved <i>eventual consistency</i>. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html#grant_token">Grant token</a> and <a href="https://docs.aws.amazon.com/kms/latest/developerguide/using-grant-token.html">Using a grant token</a> in the <i>Key Management Service Developer Guide</i>.</p>
     pub fn set_grant_tokens(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_grant_tokens(input);
         self
     }
     /// <p>A list of grant tokens.</p>
-    /// <p>Use a grant token when your permission to call this operation comes from a new grant that has not yet achieved <i>eventual consistency</i>. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html#grant_token">Grant token</a> and <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grant-manage.html#using-grant-token">Using a grant token</a> in the <i>Key Management Service Developer Guide</i>.</p>
+    /// <p>Use a grant token when your permission to call this operation comes from a new grant that has not yet achieved <i>eventual consistency</i>. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html#grant_token">Grant token</a> and <a href="https://docs.aws.amazon.com/kms/latest/developerguide/using-grant-token.html">Using a grant token</a> in the <i>Key Management Service Developer Guide</i>.</p>
     pub fn get_grant_tokens(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_grant_tokens()
     }

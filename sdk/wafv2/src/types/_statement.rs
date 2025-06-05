@@ -110,6 +110,9 @@ pub struct Statement {
     pub label_match_statement: ::std::option::Option<crate::types::LabelMatchStatement>,
     /// <p>A rule statement used to search web request components for a match against a single regular expression.</p>
     pub regex_match_statement: ::std::option::Option<crate::types::RegexMatchStatement>,
+    /// <p>A rule statement that inspects web traffic based on the Autonomous System Number (ASN) associated with the request's IP address.</p>
+    /// <p>For additional details, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-rule-statement-type-asn-match.html">ASN match rule statement</a> in the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>.</p>
+    pub asn_match_statement: ::std::option::Option<crate::types::AsnMatchStatement>,
 }
 impl Statement {
     /// <p>A rule statement that defines a string match search for WAF to apply to web requests. The byte match statement provides the bytes to search for, the location in requests that you want WAF to search, and other settings. The bytes to search for are typically a string that corresponds with ASCII characters. In the WAF console and the developer guide, this is called a string match statement.</p>
@@ -247,6 +250,11 @@ impl Statement {
     pub fn regex_match_statement(&self) -> ::std::option::Option<&crate::types::RegexMatchStatement> {
         self.regex_match_statement.as_ref()
     }
+    /// <p>A rule statement that inspects web traffic based on the Autonomous System Number (ASN) associated with the request's IP address.</p>
+    /// <p>For additional details, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-rule-statement-type-asn-match.html">ASN match rule statement</a> in the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>.</p>
+    pub fn asn_match_statement(&self) -> ::std::option::Option<&crate::types::AsnMatchStatement> {
+        self.asn_match_statement.as_ref()
+    }
 }
 impl Statement {
     /// Creates a new builder-style object to manufacture [`Statement`](crate::types::Statement).
@@ -274,6 +282,7 @@ pub struct StatementBuilder {
     pub(crate) managed_rule_group_statement: ::std::option::Option<crate::types::ManagedRuleGroupStatement>,
     pub(crate) label_match_statement: ::std::option::Option<crate::types::LabelMatchStatement>,
     pub(crate) regex_match_statement: ::std::option::Option<crate::types::RegexMatchStatement>,
+    pub(crate) asn_match_statement: ::std::option::Option<crate::types::AsnMatchStatement>,
 }
 impl StatementBuilder {
     /// <p>A rule statement that defines a string match search for WAF to apply to web requests. The byte match statement provides the bytes to search for, the location in requests that you want WAF to search, and other settings. The bytes to search for are typically a string that corresponds with ASCII characters. In the WAF console and the developer guide, this is called a string match statement.</p>
@@ -714,6 +723,23 @@ impl StatementBuilder {
     pub fn get_regex_match_statement(&self) -> &::std::option::Option<crate::types::RegexMatchStatement> {
         &self.regex_match_statement
     }
+    /// <p>A rule statement that inspects web traffic based on the Autonomous System Number (ASN) associated with the request's IP address.</p>
+    /// <p>For additional details, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-rule-statement-type-asn-match.html">ASN match rule statement</a> in the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>.</p>
+    pub fn asn_match_statement(mut self, input: crate::types::AsnMatchStatement) -> Self {
+        self.asn_match_statement = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>A rule statement that inspects web traffic based on the Autonomous System Number (ASN) associated with the request's IP address.</p>
+    /// <p>For additional details, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-rule-statement-type-asn-match.html">ASN match rule statement</a> in the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>.</p>
+    pub fn set_asn_match_statement(mut self, input: ::std::option::Option<crate::types::AsnMatchStatement>) -> Self {
+        self.asn_match_statement = input;
+        self
+    }
+    /// <p>A rule statement that inspects web traffic based on the Autonomous System Number (ASN) associated with the request's IP address.</p>
+    /// <p>For additional details, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-rule-statement-type-asn-match.html">ASN match rule statement</a> in the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>.</p>
+    pub fn get_asn_match_statement(&self) -> &::std::option::Option<crate::types::AsnMatchStatement> {
+        &self.asn_match_statement
+    }
     /// Consumes the builder and constructs a [`Statement`](crate::types::Statement).
     pub fn build(self) -> crate::types::Statement {
         crate::types::Statement {
@@ -732,6 +758,7 @@ impl StatementBuilder {
             managed_rule_group_statement: self.managed_rule_group_statement,
             label_match_statement: self.label_match_statement,
             regex_match_statement: self.regex_match_statement,
+            asn_match_statement: self.asn_match_statement,
         }
     }
 }

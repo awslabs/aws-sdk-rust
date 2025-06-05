@@ -391,6 +391,15 @@ pub(crate) fn and_statement_correct_errors(mut builder: crate::types::builders::
     builder
 }
 
+pub(crate) fn asn_match_statement_correct_errors(
+    mut builder: crate::types::builders::AsnMatchStatementBuilder,
+) -> crate::types::builders::AsnMatchStatementBuilder {
+    if builder.asn_list.is_none() {
+        builder.asn_list = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn byte_match_statement_correct_errors(
     mut builder: crate::types::builders::ByteMatchStatementBuilder,
 ) -> crate::types::builders::ByteMatchStatementBuilder {

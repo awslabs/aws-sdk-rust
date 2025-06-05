@@ -3,7 +3,21 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteImportedKeyMaterialOutput {
+    /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of the KMS key from which the key material was deleted.</p>
+    pub key_id: ::std::option::Option<::std::string::String>,
+    /// <p>Identifies the deleted key material.</p>
+    pub key_material_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
+}
+impl DeleteImportedKeyMaterialOutput {
+    /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of the KMS key from which the key material was deleted.</p>
+    pub fn key_id(&self) -> ::std::option::Option<&str> {
+        self.key_id.as_deref()
+    }
+    /// <p>Identifies the deleted key material.</p>
+    pub fn key_material_id(&self) -> ::std::option::Option<&str> {
+        self.key_material_id.as_deref()
+    }
 }
 impl ::aws_types::request_id::RequestId for DeleteImportedKeyMaterialOutput {
     fn request_id(&self) -> Option<&str> {
@@ -21,9 +35,39 @@ impl DeleteImportedKeyMaterialOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 pub struct DeleteImportedKeyMaterialOutputBuilder {
+    pub(crate) key_id: ::std::option::Option<::std::string::String>,
+    pub(crate) key_material_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DeleteImportedKeyMaterialOutputBuilder {
+    /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of the KMS key from which the key material was deleted.</p>
+    pub fn key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.key_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of the KMS key from which the key material was deleted.</p>
+    pub fn set_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.key_id = input;
+        self
+    }
+    /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of the KMS key from which the key material was deleted.</p>
+    pub fn get_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key_id
+    }
+    /// <p>Identifies the deleted key material.</p>
+    pub fn key_material_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.key_material_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Identifies the deleted key material.</p>
+    pub fn set_key_material_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.key_material_id = input;
+        self
+    }
+    /// <p>Identifies the deleted key material.</p>
+    pub fn get_key_material_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key_material_id
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -36,6 +80,8 @@ impl DeleteImportedKeyMaterialOutputBuilder {
     /// Consumes the builder and constructs a [`DeleteImportedKeyMaterialOutput`](crate::operation::delete_imported_key_material::DeleteImportedKeyMaterialOutput).
     pub fn build(self) -> crate::operation::delete_imported_key_material::DeleteImportedKeyMaterialOutput {
         crate::operation::delete_imported_key_material::DeleteImportedKeyMaterialOutput {
+            key_id: self.key_id,
+            key_material_id: self.key_material_id,
             _request_id: self._request_id,
         }
     }

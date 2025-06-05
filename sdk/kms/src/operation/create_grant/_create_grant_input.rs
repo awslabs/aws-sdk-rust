@@ -19,7 +19,7 @@ pub struct CreateGrantInput {
     pub grantee_principal: ::std::option::Option<::std::string::String>,
     /// <p>The principal that has permission to use the <code>RetireGrant</code> operation to retire the grant.</p>
     /// <p>To specify the principal, use the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of an Amazon Web Services principal. Valid principals include Amazon Web Services accounts, IAM users, IAM roles, federated users, and assumed role users. For help with the ARN syntax for a principal, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-arns">IAM ARNs</a> in the <i> <i>Identity and Access Management User Guide</i> </i>.</p>
-    /// <p>The grant determines the retiring principal. Other principals might have permission to retire the grant or revoke the grant. For details, see <code>RevokeGrant</code> and <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grant-manage.html#grant-delete">Retiring and revoking grants</a> in the <i>Key Management Service Developer Guide</i>.</p>
+    /// <p>The grant determines the retiring principal. Other principals might have permission to retire the grant or revoke the grant. For details, see <code>RevokeGrant</code> and <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grant-delete.html">Retiring and revoking grants</a> in the <i>Key Management Service Developer Guide</i>.</p>
     pub retiring_principal: ::std::option::Option<::std::string::String>,
     /// <p>A list of operations that the grant permits.</p>
     /// <p>This list must include only operations that are permitted in a grant. Also, the operation must be supported on the KMS key. For example, you cannot create a grant for a symmetric encryption KMS key that allows the <code>Sign</code> operation, or a grant for an asymmetric KMS key that allows the <code>GenerateDataKey</code> operation. If you try, KMS returns a <code>ValidationError</code> exception. For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html#terms-grant-operations">Grant operations</a> in the <i>Key Management Service Developer Guide</i>.</p>
@@ -33,7 +33,7 @@ pub struct CreateGrantInput {
     /// <p>Each constraint value can include up to 8 encryption context pairs. The encryption context value in each constraint cannot exceed 384 characters. For information about grant constraints, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/create-grant-overview.html#grant-constraints">Using grant constraints</a> in the <i>Key Management Service Developer Guide</i>. For more information about encryption context, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption context</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p>
     pub constraints: ::std::option::Option<crate::types::GrantConstraints>,
     /// <p>A list of grant tokens.</p>
-    /// <p>Use a grant token when your permission to call this operation comes from a new grant that has not yet achieved <i>eventual consistency</i>. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html#grant_token">Grant token</a> and <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grant-manage.html#using-grant-token">Using a grant token</a> in the <i>Key Management Service Developer Guide</i>.</p>
+    /// <p>Use a grant token when your permission to call this operation comes from a new grant that has not yet achieved <i>eventual consistency</i>. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html#grant_token">Grant token</a> and <a href="https://docs.aws.amazon.com/kms/latest/developerguide/using-grant-token.html">Using a grant token</a> in the <i>Key Management Service Developer Guide</i>.</p>
     pub grant_tokens: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A friendly name for the grant. Use this value to prevent the unintended creation of duplicate grants when retrying this request.</p><important>
     /// <p>Do not include confidential or sensitive information in this field. This field may be displayed in plaintext in CloudTrail logs and other output.</p>
@@ -42,7 +42,7 @@ pub struct CreateGrantInput {
     /// <p>When this value is present, you can retry a <code>CreateGrant</code> request with identical parameters; if the grant already exists, the original <code>GrantId</code> is returned without creating a new grant. Note that the returned grant token is unique with every <code>CreateGrant</code> request, even when a duplicate <code>GrantId</code> is returned. All grant tokens for the same grant ID can be used interchangeably.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Checks if your request will succeed. <code>DryRun</code> is an optional parameter.</p>
-    /// <p>To learn more about how to use this parameter, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-dryrun.html">Testing your KMS API calls</a> in the <i>Key Management Service Developer Guide</i>.</p>
+    /// <p>To learn more about how to use this parameter, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/testing-permissions.html">Testing your permissions</a> in the <i>Key Management Service Developer Guide</i>.</p>
     pub dry_run: ::std::option::Option<bool>,
 }
 impl CreateGrantInput {
@@ -66,7 +66,7 @@ impl CreateGrantInput {
     }
     /// <p>The principal that has permission to use the <code>RetireGrant</code> operation to retire the grant.</p>
     /// <p>To specify the principal, use the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of an Amazon Web Services principal. Valid principals include Amazon Web Services accounts, IAM users, IAM roles, federated users, and assumed role users. For help with the ARN syntax for a principal, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-arns">IAM ARNs</a> in the <i> <i>Identity and Access Management User Guide</i> </i>.</p>
-    /// <p>The grant determines the retiring principal. Other principals might have permission to retire the grant or revoke the grant. For details, see <code>RevokeGrant</code> and <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grant-manage.html#grant-delete">Retiring and revoking grants</a> in the <i>Key Management Service Developer Guide</i>.</p>
+    /// <p>The grant determines the retiring principal. Other principals might have permission to retire the grant or revoke the grant. For details, see <code>RevokeGrant</code> and <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grant-delete.html">Retiring and revoking grants</a> in the <i>Key Management Service Developer Guide</i>.</p>
     pub fn retiring_principal(&self) -> ::std::option::Option<&str> {
         self.retiring_principal.as_deref()
     }
@@ -88,7 +88,7 @@ impl CreateGrantInput {
         self.constraints.as_ref()
     }
     /// <p>A list of grant tokens.</p>
-    /// <p>Use a grant token when your permission to call this operation comes from a new grant that has not yet achieved <i>eventual consistency</i>. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html#grant_token">Grant token</a> and <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grant-manage.html#using-grant-token">Using a grant token</a> in the <i>Key Management Service Developer Guide</i>.</p>
+    /// <p>Use a grant token when your permission to call this operation comes from a new grant that has not yet achieved <i>eventual consistency</i>. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html#grant_token">Grant token</a> and <a href="https://docs.aws.amazon.com/kms/latest/developerguide/using-grant-token.html">Using a grant token</a> in the <i>Key Management Service Developer Guide</i>.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.grant_tokens.is_none()`.
     pub fn grant_tokens(&self) -> &[::std::string::String] {
@@ -103,7 +103,7 @@ impl CreateGrantInput {
         self.name.as_deref()
     }
     /// <p>Checks if your request will succeed. <code>DryRun</code> is an optional parameter.</p>
-    /// <p>To learn more about how to use this parameter, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-dryrun.html">Testing your KMS API calls</a> in the <i>Key Management Service Developer Guide</i>.</p>
+    /// <p>To learn more about how to use this parameter, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/testing-permissions.html">Testing your permissions</a> in the <i>Key Management Service Developer Guide</i>.</p>
     pub fn dry_run(&self) -> ::std::option::Option<bool> {
         self.dry_run
     }
@@ -191,21 +191,21 @@ impl CreateGrantInputBuilder {
     }
     /// <p>The principal that has permission to use the <code>RetireGrant</code> operation to retire the grant.</p>
     /// <p>To specify the principal, use the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of an Amazon Web Services principal. Valid principals include Amazon Web Services accounts, IAM users, IAM roles, federated users, and assumed role users. For help with the ARN syntax for a principal, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-arns">IAM ARNs</a> in the <i> <i>Identity and Access Management User Guide</i> </i>.</p>
-    /// <p>The grant determines the retiring principal. Other principals might have permission to retire the grant or revoke the grant. For details, see <code>RevokeGrant</code> and <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grant-manage.html#grant-delete">Retiring and revoking grants</a> in the <i>Key Management Service Developer Guide</i>.</p>
+    /// <p>The grant determines the retiring principal. Other principals might have permission to retire the grant or revoke the grant. For details, see <code>RevokeGrant</code> and <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grant-delete.html">Retiring and revoking grants</a> in the <i>Key Management Service Developer Guide</i>.</p>
     pub fn retiring_principal(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.retiring_principal = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The principal that has permission to use the <code>RetireGrant</code> operation to retire the grant.</p>
     /// <p>To specify the principal, use the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of an Amazon Web Services principal. Valid principals include Amazon Web Services accounts, IAM users, IAM roles, federated users, and assumed role users. For help with the ARN syntax for a principal, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-arns">IAM ARNs</a> in the <i> <i>Identity and Access Management User Guide</i> </i>.</p>
-    /// <p>The grant determines the retiring principal. Other principals might have permission to retire the grant or revoke the grant. For details, see <code>RevokeGrant</code> and <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grant-manage.html#grant-delete">Retiring and revoking grants</a> in the <i>Key Management Service Developer Guide</i>.</p>
+    /// <p>The grant determines the retiring principal. Other principals might have permission to retire the grant or revoke the grant. For details, see <code>RevokeGrant</code> and <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grant-delete.html">Retiring and revoking grants</a> in the <i>Key Management Service Developer Guide</i>.</p>
     pub fn set_retiring_principal(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.retiring_principal = input;
         self
     }
     /// <p>The principal that has permission to use the <code>RetireGrant</code> operation to retire the grant.</p>
     /// <p>To specify the principal, use the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of an Amazon Web Services principal. Valid principals include Amazon Web Services accounts, IAM users, IAM roles, federated users, and assumed role users. For help with the ARN syntax for a principal, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-arns">IAM ARNs</a> in the <i> <i>Identity and Access Management User Guide</i> </i>.</p>
-    /// <p>The grant determines the retiring principal. Other principals might have permission to retire the grant or revoke the grant. For details, see <code>RevokeGrant</code> and <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grant-manage.html#grant-delete">Retiring and revoking grants</a> in the <i>Key Management Service Developer Guide</i>.</p>
+    /// <p>The grant determines the retiring principal. Other principals might have permission to retire the grant or revoke the grant. For details, see <code>RevokeGrant</code> and <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grant-delete.html">Retiring and revoking grants</a> in the <i>Key Management Service Developer Guide</i>.</p>
     pub fn get_retiring_principal(&self) -> &::std::option::Option<::std::string::String> {
         &self.retiring_principal
     }
@@ -269,7 +269,7 @@ impl CreateGrantInputBuilder {
     /// To override the contents of this collection use [`set_grant_tokens`](Self::set_grant_tokens).
     ///
     /// <p>A list of grant tokens.</p>
-    /// <p>Use a grant token when your permission to call this operation comes from a new grant that has not yet achieved <i>eventual consistency</i>. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html#grant_token">Grant token</a> and <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grant-manage.html#using-grant-token">Using a grant token</a> in the <i>Key Management Service Developer Guide</i>.</p>
+    /// <p>Use a grant token when your permission to call this operation comes from a new grant that has not yet achieved <i>eventual consistency</i>. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html#grant_token">Grant token</a> and <a href="https://docs.aws.amazon.com/kms/latest/developerguide/using-grant-token.html">Using a grant token</a> in the <i>Key Management Service Developer Guide</i>.</p>
     pub fn grant_tokens(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.grant_tokens.unwrap_or_default();
         v.push(input.into());
@@ -277,13 +277,13 @@ impl CreateGrantInputBuilder {
         self
     }
     /// <p>A list of grant tokens.</p>
-    /// <p>Use a grant token when your permission to call this operation comes from a new grant that has not yet achieved <i>eventual consistency</i>. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html#grant_token">Grant token</a> and <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grant-manage.html#using-grant-token">Using a grant token</a> in the <i>Key Management Service Developer Guide</i>.</p>
+    /// <p>Use a grant token when your permission to call this operation comes from a new grant that has not yet achieved <i>eventual consistency</i>. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html#grant_token">Grant token</a> and <a href="https://docs.aws.amazon.com/kms/latest/developerguide/using-grant-token.html">Using a grant token</a> in the <i>Key Management Service Developer Guide</i>.</p>
     pub fn set_grant_tokens(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.grant_tokens = input;
         self
     }
     /// <p>A list of grant tokens.</p>
-    /// <p>Use a grant token when your permission to call this operation comes from a new grant that has not yet achieved <i>eventual consistency</i>. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html#grant_token">Grant token</a> and <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grant-manage.html#using-grant-token">Using a grant token</a> in the <i>Key Management Service Developer Guide</i>.</p>
+    /// <p>Use a grant token when your permission to call this operation comes from a new grant that has not yet achieved <i>eventual consistency</i>. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html#grant_token">Grant token</a> and <a href="https://docs.aws.amazon.com/kms/latest/developerguide/using-grant-token.html">Using a grant token</a> in the <i>Key Management Service Developer Guide</i>.</p>
     pub fn get_grant_tokens(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.grant_tokens
     }
@@ -314,19 +314,19 @@ impl CreateGrantInputBuilder {
         &self.name
     }
     /// <p>Checks if your request will succeed. <code>DryRun</code> is an optional parameter.</p>
-    /// <p>To learn more about how to use this parameter, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-dryrun.html">Testing your KMS API calls</a> in the <i>Key Management Service Developer Guide</i>.</p>
+    /// <p>To learn more about how to use this parameter, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/testing-permissions.html">Testing your permissions</a> in the <i>Key Management Service Developer Guide</i>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.dry_run = ::std::option::Option::Some(input);
         self
     }
     /// <p>Checks if your request will succeed. <code>DryRun</code> is an optional parameter.</p>
-    /// <p>To learn more about how to use this parameter, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-dryrun.html">Testing your KMS API calls</a> in the <i>Key Management Service Developer Guide</i>.</p>
+    /// <p>To learn more about how to use this parameter, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/testing-permissions.html">Testing your permissions</a> in the <i>Key Management Service Developer Guide</i>.</p>
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.dry_run = input;
         self
     }
     /// <p>Checks if your request will succeed. <code>DryRun</code> is an optional parameter.</p>
-    /// <p>To learn more about how to use this parameter, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-dryrun.html">Testing your KMS API calls</a> in the <i>Key Management Service Developer Guide</i>.</p>
+    /// <p>To learn more about how to use this parameter, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/testing-permissions.html">Testing your permissions</a> in the <i>Key Management Service Developer Guide</i>.</p>
     pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
         &self.dry_run
     }

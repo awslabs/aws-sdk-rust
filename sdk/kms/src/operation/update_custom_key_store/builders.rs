@@ -24,7 +24,7 @@ impl crate::operation::update_custom_key_store::builders::UpdateCustomKeyStoreIn
 ///
 /// <p>Changes the properties of a custom key store. You can use this operation to change the properties of an CloudHSM key store or an external key store.</p>
 /// <p>Use the required <code>CustomKeyStoreId</code> parameter to identify the custom key store. Use the remaining optional parameters to change its properties. This operation does not return any property values. To verify the updated property values, use the <code>DescribeCustomKeyStores</code> operation.</p>
-/// <p>This operation is part of the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom key stores</a> feature in KMS, which combines the convenience and extensive integration of KMS with the isolation and control of a key store that you own and manage.</p><important>
+/// <p>This operation is part of the custom key stores feature in KMS, which combines the convenience and extensive integration of KMS with the isolation and control of a key store that you own and manage.</p><important>
 /// <p>When updating the properties of an external key store, verify that the updated settings connect your key store, via the external key store proxy, to the same external key manager as the previous settings, or to a backup or snapshot of the external key manager with the same cryptographic keys. If the updated connection settings fail, you can fix them and retry, although an extended delay might disrupt Amazon Web Services services. However, if KMS permanently loses its access to cryptographic keys, ciphertext encrypted under those keys is unrecoverable.</p>
 /// </important> <note>
 /// <p>For external key stores:</p>
@@ -52,7 +52,7 @@ impl crate::operation::update_custom_key_store::builders::UpdateCustomKeyStoreIn
 /// <li>
 /// <p><code>DisconnectCustomKeyStore</code></p></li>
 /// </ul>
-/// <p><b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS eventual consistency</a>.</p>
+/// <p><b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/accessing-kms.html#programming-eventual-consistency">KMS eventual consistency</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateCustomKeyStoreFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

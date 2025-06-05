@@ -11,6 +11,8 @@ pub struct GenerateDataKeyPairWithoutPlaintextOutput {
     pub key_id: ::std::option::Option<::std::string::String>,
     /// <p>The type of data key pair that was generated.</p>
     pub key_pair_spec: ::std::option::Option<crate::types::DataKeyPairSpec>,
+    /// <p>The identifier of the key material used to encrypt the private key.</p>
+    pub key_material_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GenerateDataKeyPairWithoutPlaintextOutput {
@@ -29,6 +31,10 @@ impl GenerateDataKeyPairWithoutPlaintextOutput {
     /// <p>The type of data key pair that was generated.</p>
     pub fn key_pair_spec(&self) -> ::std::option::Option<&crate::types::DataKeyPairSpec> {
         self.key_pair_spec.as_ref()
+    }
+    /// <p>The identifier of the key material used to encrypt the private key.</p>
+    pub fn key_material_id(&self) -> ::std::option::Option<&str> {
+        self.key_material_id.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for GenerateDataKeyPairWithoutPlaintextOutput {
@@ -51,6 +57,7 @@ pub struct GenerateDataKeyPairWithoutPlaintextOutputBuilder {
     pub(crate) public_key: ::std::option::Option<::aws_smithy_types::Blob>,
     pub(crate) key_id: ::std::option::Option<::std::string::String>,
     pub(crate) key_pair_spec: ::std::option::Option<crate::types::DataKeyPairSpec>,
+    pub(crate) key_material_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GenerateDataKeyPairWithoutPlaintextOutputBuilder {
@@ -110,6 +117,20 @@ impl GenerateDataKeyPairWithoutPlaintextOutputBuilder {
     pub fn get_key_pair_spec(&self) -> &::std::option::Option<crate::types::DataKeyPairSpec> {
         &self.key_pair_spec
     }
+    /// <p>The identifier of the key material used to encrypt the private key.</p>
+    pub fn key_material_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.key_material_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The identifier of the key material used to encrypt the private key.</p>
+    pub fn set_key_material_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.key_material_id = input;
+        self
+    }
+    /// <p>The identifier of the key material used to encrypt the private key.</p>
+    pub fn get_key_material_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key_material_id
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -126,6 +147,7 @@ impl GenerateDataKeyPairWithoutPlaintextOutputBuilder {
             public_key: self.public_key,
             key_id: self.key_id,
             key_pair_spec: self.key_pair_spec,
+            key_material_id: self.key_material_id,
             _request_id: self._request_id,
         }
     }

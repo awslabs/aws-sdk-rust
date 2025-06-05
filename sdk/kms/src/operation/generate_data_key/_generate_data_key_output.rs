@@ -13,6 +13,8 @@ pub struct GenerateDataKeyOutput {
     /// <p>The plaintext data key encrypted with the public key from the Nitro enclave. This ciphertext can be decrypted only by using a private key in the Nitro enclave.</p>
     /// <p>This field is included in the response only when the <code>Recipient</code> parameter in the request includes a valid attestation document from an Amazon Web Services Nitro enclave. For information about the interaction between KMS and Amazon Web Services Nitro Enclaves, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/services-nitro-enclaves.html">How Amazon Web Services Nitro Enclaves uses KMS</a> in the <i>Key Management Service Developer Guide</i>.</p>
     pub ciphertext_for_recipient: ::std::option::Option<::aws_smithy_types::Blob>,
+    /// <p>The identifier of the key material used to encrypt the data key.</p>
+    pub key_material_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GenerateDataKeyOutput {
@@ -34,6 +36,10 @@ impl GenerateDataKeyOutput {
     pub fn ciphertext_for_recipient(&self) -> ::std::option::Option<&::aws_smithy_types::Blob> {
         self.ciphertext_for_recipient.as_ref()
     }
+    /// <p>The identifier of the key material used to encrypt the data key.</p>
+    pub fn key_material_id(&self) -> ::std::option::Option<&str> {
+        self.key_material_id.as_deref()
+    }
 }
 impl ::std::fmt::Debug for GenerateDataKeyOutput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -42,6 +48,7 @@ impl ::std::fmt::Debug for GenerateDataKeyOutput {
         formatter.field("plaintext", &"*** Sensitive Data Redacted ***");
         formatter.field("key_id", &self.key_id);
         formatter.field("ciphertext_for_recipient", &self.ciphertext_for_recipient);
+        formatter.field("key_material_id", &self.key_material_id);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }
@@ -66,6 +73,7 @@ pub struct GenerateDataKeyOutputBuilder {
     pub(crate) plaintext: ::std::option::Option<::aws_smithy_types::Blob>,
     pub(crate) key_id: ::std::option::Option<::std::string::String>,
     pub(crate) ciphertext_for_recipient: ::std::option::Option<::aws_smithy_types::Blob>,
+    pub(crate) key_material_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GenerateDataKeyOutputBuilder {
@@ -131,6 +139,20 @@ impl GenerateDataKeyOutputBuilder {
     pub fn get_ciphertext_for_recipient(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
         &self.ciphertext_for_recipient
     }
+    /// <p>The identifier of the key material used to encrypt the data key.</p>
+    pub fn key_material_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.key_material_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The identifier of the key material used to encrypt the data key.</p>
+    pub fn set_key_material_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.key_material_id = input;
+        self
+    }
+    /// <p>The identifier of the key material used to encrypt the data key.</p>
+    pub fn get_key_material_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key_material_id
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -147,6 +169,7 @@ impl GenerateDataKeyOutputBuilder {
             plaintext: self.plaintext,
             key_id: self.key_id,
             ciphertext_for_recipient: self.ciphertext_for_recipient,
+            key_material_id: self.key_material_id,
             _request_id: self._request_id,
         }
     }
@@ -158,6 +181,7 @@ impl ::std::fmt::Debug for GenerateDataKeyOutputBuilder {
         formatter.field("plaintext", &"*** Sensitive Data Redacted ***");
         formatter.field("key_id", &self.key_id);
         formatter.field("ciphertext_for_recipient", &self.ciphertext_for_recipient);
+        formatter.field("key_material_id", &self.key_material_id);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }

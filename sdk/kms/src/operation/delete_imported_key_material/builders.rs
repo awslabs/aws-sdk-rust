@@ -32,9 +32,11 @@ impl crate::operation::delete_imported_key_material::builders::DeleteImportedKey
 /// <li>
 /// <p><code>GetParametersForImport</code></p></li>
 /// <li>
+/// <p><code>ListKeyRotations</code></p></li>
+/// <li>
 /// <p><code>ImportKeyMaterial</code></p></li>
 /// </ul>
-/// <p><b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS eventual consistency</a>.</p>
+/// <p><b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/accessing-kms.html#programming-eventual-consistency">KMS eventual consistency</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteImportedKeyMaterialFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -160,5 +162,28 @@ impl DeleteImportedKeyMaterialFluentBuilder {
     /// <p>To get the key ID and key ARN for a KMS key, use <code>ListKeys</code> or <code>DescribeKey</code>.</p>
     pub fn get_key_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_key_id()
+    }
+    /// <p>Identifies the imported key material you are deleting.</p><important>
+    /// <p>If no KeyMaterialId is specified, KMS deletes the current key material.</p>
+    /// </important>
+    /// <p>To get the list of key material IDs associated with a KMS key, use <code>ListKeyRotations</code>.</p>
+    pub fn key_material_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.key_material_id(input.into());
+        self
+    }
+    /// <p>Identifies the imported key material you are deleting.</p><important>
+    /// <p>If no KeyMaterialId is specified, KMS deletes the current key material.</p>
+    /// </important>
+    /// <p>To get the list of key material IDs associated with a KMS key, use <code>ListKeyRotations</code>.</p>
+    pub fn set_key_material_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_key_material_id(input);
+        self
+    }
+    /// <p>Identifies the imported key material you are deleting.</p><important>
+    /// <p>If no KeyMaterialId is specified, KMS deletes the current key material.</p>
+    /// </important>
+    /// <p>To get the list of key material IDs associated with a KMS key, use <code>ListKeyRotations</code>.</p>
+    pub fn get_key_material_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_key_material_id()
     }
 }

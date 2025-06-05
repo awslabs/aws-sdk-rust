@@ -25,9 +25,9 @@ impl crate::operation::create_alias::builders::CreateAliasInputBuilder {
 /// <p>Creates a friendly name for a KMS key.</p><note>
 /// <p>Adding, deleting, or updating an alias can allow or deny permission to the KMS key. For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/abac.html">ABAC for KMS</a> in the <i>Key Management Service Developer Guide</i>.</p>
 /// </note>
-/// <p>You can use an alias to identify a KMS key in the KMS console, in the <code>DescribeKey</code> operation and in <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic operations</a>, such as <code>Encrypt</code> and <code>GenerateDataKey</code>. You can also change the KMS key that's associated with the alias (<code>UpdateAlias</code>) or delete the alias (<code>DeleteAlias</code>) at any time. These operations don't affect the underlying KMS key.</p>
+/// <p>You can use an alias to identify a KMS key in the KMS console, in the <code>DescribeKey</code> operation and in <a href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-cryptography.html#cryptographic-operations">cryptographic operations</a>, such as <code>Encrypt</code> and <code>GenerateDataKey</code>. You can also change the KMS key that's associated with the alias (<code>UpdateAlias</code>) or delete the alias (<code>DeleteAlias</code>) at any time. These operations don't affect the underlying KMS key.</p>
 /// <p>You can associate the alias with any customer managed key in the same Amazon Web Services Region. Each alias is associated with only one KMS key at a time, but a KMS key can have multiple aliases. A valid KMS key is required. You can't create an alias without a KMS key.</p>
-/// <p>The alias must be unique in the account and Region, but you can have aliases with the same name in different Regions. For detailed information about aliases, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-alias.html">Using aliases</a> in the <i>Key Management Service Developer Guide</i>.</p>
+/// <p>The alias must be unique in the account and Region, but you can have aliases with the same name in different Regions. For detailed information about aliases, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-alias.html">Aliases in KMS</a> in the <i>Key Management Service Developer Guide</i>.</p>
 /// <p>This operation does not return a response. To get the alias that you created, use the <code>ListAliases</code> operation.</p>
 /// <p>The KMS key that you use for this operation must be in a compatible key state. For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key states of KMS keys</a> in the <i>Key Management Service Developer Guide</i>.</p>
 /// <p><b>Cross-account use</b>: No. You cannot perform this operation on an alias in a different Amazon Web Services account.</p>
@@ -38,7 +38,7 @@ impl crate::operation::create_alias::builders::CreateAliasInputBuilder {
 /// <li>
 /// <p><a href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">kms:CreateAlias</a> on the KMS key (key policy).</p></li>
 /// </ul>
-/// <p>For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-alias.html#alias-access">Controlling access to aliases</a> in the <i>Key Management Service Developer Guide</i>.</p>
+/// <p>For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/alias-access.html">Controlling access to aliases</a> in the <i>Key Management Service Developer Guide</i>.</p>
 /// <p><b>Related operations:</b></p>
 /// <ul>
 /// <li>
@@ -48,7 +48,7 @@ impl crate::operation::create_alias::builders::CreateAliasInputBuilder {
 /// <li>
 /// <p><code>UpdateAlias</code></p></li>
 /// </ul>
-/// <p><b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS eventual consistency</a>.</p>
+/// <p><b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/accessing-kms.html#programming-eventual-consistency">KMS eventual consistency</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateAliasFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -159,7 +159,7 @@ impl CreateAliasFluentBuilder {
     }
     /// <p>Associates the alias with the specified <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-cmk">customer managed key</a>. The KMS key must be in the same Amazon Web Services Region.</p>
     /// <p>A valid key ID is required. If you supply a null or empty string value, this operation returns an error.</p>
-    /// <p>For help finding the key ID and ARN, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/viewing-keys.html#find-cmk-id-arn">Finding the Key ID and ARN</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p>
+    /// <p>For help finding the key ID and ARN, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/find-cmk-id-arn.html">Find the key ID and key ARN</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p>
     /// <p>Specify the key ID or key ARN of the KMS key.</p>
     /// <p>For example:</p>
     /// <ul>
@@ -175,7 +175,7 @@ impl CreateAliasFluentBuilder {
     }
     /// <p>Associates the alias with the specified <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-cmk">customer managed key</a>. The KMS key must be in the same Amazon Web Services Region.</p>
     /// <p>A valid key ID is required. If you supply a null or empty string value, this operation returns an error.</p>
-    /// <p>For help finding the key ID and ARN, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/viewing-keys.html#find-cmk-id-arn">Finding the Key ID and ARN</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p>
+    /// <p>For help finding the key ID and ARN, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/find-cmk-id-arn.html">Find the key ID and key ARN</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p>
     /// <p>Specify the key ID or key ARN of the KMS key.</p>
     /// <p>For example:</p>
     /// <ul>
@@ -191,7 +191,7 @@ impl CreateAliasFluentBuilder {
     }
     /// <p>Associates the alias with the specified <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-cmk">customer managed key</a>. The KMS key must be in the same Amazon Web Services Region.</p>
     /// <p>A valid key ID is required. If you supply a null or empty string value, this operation returns an error.</p>
-    /// <p>For help finding the key ID and ARN, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/viewing-keys.html#find-cmk-id-arn">Finding the Key ID and ARN</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p>
+    /// <p>For help finding the key ID and ARN, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/find-cmk-id-arn.html">Find the key ID and key ARN</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p>
     /// <p>Specify the key ID or key ARN of the KMS key.</p>
     /// <p>For example:</p>
     /// <ul>

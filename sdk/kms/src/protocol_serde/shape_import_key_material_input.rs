@@ -22,5 +22,14 @@ pub fn ser_import_key_material_input_input(
     if let Some(var_5) = &input.expiration_model {
         object.key("ExpirationModel").string(var_5.as_str());
     }
+    if let Some(var_6) = &input.import_type {
+        object.key("ImportType").string(var_6.as_str());
+    }
+    if let Some(var_7) = &input.key_material_description {
+        object.key("KeyMaterialDescription").string(var_7.as_str());
+    }
+    if let Some(var_8) = &input.key_material_id {
+        object.key("KeyMaterialId").string(var_8.as_str());
+    }
     Ok(())
 }

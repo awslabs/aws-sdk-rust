@@ -93,6 +93,12 @@ pub fn ser_statement(
         crate::protocol_serde::shape_regex_match_statement::ser_regex_match_statement(&mut object_30, var_29)?;
         object_30.finish();
     }
+    if let Some(var_31) = &input.asn_match_statement {
+        #[allow(unused_mut)]
+        let mut object_32 = object.key("AsnMatchStatement").start_object();
+        crate::protocol_serde::shape_asn_match_statement::ser_asn_match_statement(&mut object_32, var_31)?;
+        object_32.finish();
+    }
     Ok(())
 }
 
@@ -172,6 +178,10 @@ where
                         "RegexMatchStatement" => {
                             builder = builder
                                 .set_regex_match_statement(crate::protocol_serde::shape_regex_match_statement::de_regex_match_statement(tokens)?);
+                        }
+                        "AsnMatchStatement" => {
+                            builder =
+                                builder.set_asn_match_statement(crate::protocol_serde::shape_asn_match_statement::de_asn_match_statement(tokens)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

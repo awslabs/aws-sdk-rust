@@ -259,7 +259,7 @@ pub enum ImportKeyMaterialError {
     DependencyTimeoutException(crate::types::error::DependencyTimeoutException),
     /// <p>The request was rejected because the specified import token is expired. Use <code>GetParametersForImport</code> to get a new import token and public key, use the new public key to encrypt the key material, and then try the request again.</p>
     ExpiredImportTokenException(crate::types::error::ExpiredImportTokenException),
-    /// <p>The request was rejected because the key material in the request is, expired, invalid, or is not the same key material that was previously imported into this KMS key.</p>
+    /// <p>The request was rejected because the key material in the request is, expired, invalid, or does not meet expectations. For example, it is not the same key material that was previously imported or KMS expected new key material but the key material being imported is already associated with the KMS key.</p>
     IncorrectKeyMaterialException(crate::types::error::IncorrectKeyMaterialException),
     /// <p>The request was rejected because a specified ARN, or an ARN in a key policy, is not valid.</p>
     InvalidArnException(crate::types::error::InvalidArnException),

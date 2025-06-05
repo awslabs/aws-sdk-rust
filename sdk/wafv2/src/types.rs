@@ -59,6 +59,12 @@ pub use crate::types::_custom_response::CustomResponse;
 
 pub use crate::types::_statement::Statement;
 
+pub use crate::types::_asn_match_statement::AsnMatchStatement;
+
+pub use crate::types::_forwarded_ip_config::ForwardedIpConfig;
+
+pub use crate::types::_fallback_behavior::FallbackBehavior;
+
 pub use crate::types::_regex_match_statement::RegexMatchStatement;
 
 pub use crate::types::_text_transformation::TextTransformation;
@@ -68,8 +74,6 @@ pub use crate::types::_text_transformation_type::TextTransformationType;
 pub use crate::types::_field_to_match::FieldToMatch;
 
 pub use crate::types::_uri_fragment::UriFragment;
-
-pub use crate::types::_fallback_behavior::FallbackBehavior;
 
 pub use crate::types::_ja4_fingerprint::Ja4Fingerprint;
 
@@ -169,6 +173,8 @@ pub use crate::types::_rate_based_statement::RateBasedStatement;
 
 pub use crate::types::_rate_based_statement_custom_key::RateBasedStatementCustomKey;
 
+pub use crate::types::_rate_limit_asn::RateLimitAsn;
+
 pub use crate::types::_rate_limit_ja4_fingerprint::RateLimitJa4Fingerprint;
 
 pub use crate::types::_rate_limit_ja3_fingerprint::RateLimitJa3Fingerprint;
@@ -190,8 +196,6 @@ pub use crate::types::_rate_limit_query_argument::RateLimitQueryArgument;
 pub use crate::types::_rate_limit_cookie::RateLimitCookie;
 
 pub use crate::types::_rate_limit_header::RateLimitHeader;
-
-pub use crate::types::_forwarded_ip_config::ForwardedIpConfig;
 
 pub use crate::types::_rate_based_statement_aggregate_key_type::RateBasedStatementAggregateKeyType;
 
@@ -336,6 +340,8 @@ mod _allow_action;
 mod _and_statement;
 
 mod _api_key_summary;
+
+mod _asn_match_statement;
 
 mod _associated_resource_type;
 
@@ -530,6 +536,8 @@ mod _rate_based_statement_aggregate_key_type;
 mod _rate_based_statement_custom_key;
 
 mod _rate_based_statement_managed_keys_ip_set;
+
+mod _rate_limit_asn;
 
 mod _rate_limit_cookie;
 

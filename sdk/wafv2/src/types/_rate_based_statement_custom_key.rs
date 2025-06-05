@@ -33,6 +33,8 @@ pub struct RateBasedStatementCustomKey {
     pub ja3_fingerprint: ::std::option::Option<crate::types::RateLimitJa3Fingerprint>,
     /// <p>Use the request's JA4 fingerprint as an aggregate key. If you use a single JA4 fingerprint as your custom key, then each value fully defines an aggregation instance.</p>
     pub ja4_fingerprint: ::std::option::Option<crate::types::RateLimitJa4Fingerprint>,
+    /// <p>Use an Autonomous System Number (ASN) derived from the request's originating or forwarded IP address as an aggregate key. Each distinct ASN contributes to the aggregation instance.</p>
+    pub asn: ::std::option::Option<crate::types::RateLimitAsn>,
 }
 impl RateBasedStatementCustomKey {
     /// <p>Use the value of a header in the request as an aggregate key. Each distinct value in the header contributes to the aggregation instance. If you use a single header as your custom key, then each value fully defines an aggregation instance.</p>
@@ -84,6 +86,10 @@ impl RateBasedStatementCustomKey {
     pub fn ja4_fingerprint(&self) -> ::std::option::Option<&crate::types::RateLimitJa4Fingerprint> {
         self.ja4_fingerprint.as_ref()
     }
+    /// <p>Use an Autonomous System Number (ASN) derived from the request's originating or forwarded IP address as an aggregate key. Each distinct ASN contributes to the aggregation instance.</p>
+    pub fn asn(&self) -> ::std::option::Option<&crate::types::RateLimitAsn> {
+        self.asn.as_ref()
+    }
 }
 impl RateBasedStatementCustomKey {
     /// Creates a new builder-style object to manufacture [`RateBasedStatementCustomKey`](crate::types::RateBasedStatementCustomKey).
@@ -107,6 +113,7 @@ pub struct RateBasedStatementCustomKeyBuilder {
     pub(crate) uri_path: ::std::option::Option<crate::types::RateLimitUriPath>,
     pub(crate) ja3_fingerprint: ::std::option::Option<crate::types::RateLimitJa3Fingerprint>,
     pub(crate) ja4_fingerprint: ::std::option::Option<crate::types::RateLimitJa4Fingerprint>,
+    pub(crate) asn: ::std::option::Option<crate::types::RateLimitAsn>,
 }
 impl RateBasedStatementCustomKeyBuilder {
     /// <p>Use the value of a header in the request as an aggregate key. Each distinct value in the header contributes to the aggregation instance. If you use a single header as your custom key, then each value fully defines an aggregation instance.</p>
@@ -278,6 +285,20 @@ impl RateBasedStatementCustomKeyBuilder {
     pub fn get_ja4_fingerprint(&self) -> &::std::option::Option<crate::types::RateLimitJa4Fingerprint> {
         &self.ja4_fingerprint
     }
+    /// <p>Use an Autonomous System Number (ASN) derived from the request's originating or forwarded IP address as an aggregate key. Each distinct ASN contributes to the aggregation instance.</p>
+    pub fn asn(mut self, input: crate::types::RateLimitAsn) -> Self {
+        self.asn = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Use an Autonomous System Number (ASN) derived from the request's originating or forwarded IP address as an aggregate key. Each distinct ASN contributes to the aggregation instance.</p>
+    pub fn set_asn(mut self, input: ::std::option::Option<crate::types::RateLimitAsn>) -> Self {
+        self.asn = input;
+        self
+    }
+    /// <p>Use an Autonomous System Number (ASN) derived from the request's originating or forwarded IP address as an aggregate key. Each distinct ASN contributes to the aggregation instance.</p>
+    pub fn get_asn(&self) -> &::std::option::Option<crate::types::RateLimitAsn> {
+        &self.asn
+    }
     /// Consumes the builder and constructs a [`RateBasedStatementCustomKey`](crate::types::RateBasedStatementCustomKey).
     pub fn build(self) -> crate::types::RateBasedStatementCustomKey {
         crate::types::RateBasedStatementCustomKey {
@@ -292,6 +313,7 @@ impl RateBasedStatementCustomKeyBuilder {
             uri_path: self.uri_path,
             ja3_fingerprint: self.ja3_fingerprint,
             ja4_fingerprint: self.ja4_fingerprint,
+            asn: self.asn,
         }
     }
 }

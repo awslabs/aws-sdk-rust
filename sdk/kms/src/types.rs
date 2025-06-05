@@ -51,7 +51,15 @@ pub use crate::types::_rotations_list_entry::RotationsListEntry;
 
 pub use crate::types::_rotation_type::RotationType;
 
+pub use crate::types::_key_material_state::KeyMaterialState;
+
+pub use crate::types::_import_state::ImportState;
+
+pub use crate::types::_include_key_material::IncludeKeyMaterial;
+
 pub use crate::types::_alias_list_entry::AliasListEntry;
+
+pub use crate::types::_import_type::ImportType;
 
 pub use crate::types::_wrapping_key_spec::WrappingKeySpec;
 
@@ -103,6 +111,12 @@ mod _grant_list_entry;
 
 mod _grant_operation;
 
+mod _import_state;
+
+mod _import_type;
+
+mod _include_key_material;
+
 mod _key_agreement_algorithm_spec;
 
 mod _key_encryption_mechanism;
@@ -110,6 +124,8 @@ mod _key_encryption_mechanism;
 mod _key_list_entry;
 
 mod _key_manager_type;
+
+mod _key_material_state;
 
 mod _key_metadata;
 

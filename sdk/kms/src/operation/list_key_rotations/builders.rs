@@ -22,9 +22,9 @@ impl crate::operation::list_key_rotations::builders::ListKeyRotationsInputBuilde
 }
 /// Fluent builder constructing a request to `ListKeyRotations`.
 ///
-/// <p>Returns information about all completed key material rotations for the specified KMS key.</p>
+/// <p>Returns information about the key materials associated with the specified KMS key. You can use the optional <code>IncludeKeyMaterial</code> parameter to control which key materials are included in the response.</p>
 /// <p>You must specify the KMS key in all requests. You can refine the key rotations list by limiting the number of rotations returned.</p>
-/// <p>For detailed information about automatic and on-demand key rotations, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/rotate-keys.html">Rotating KMS keys</a> in the <i>Key Management Service Developer Guide</i>.</p>
+/// <p>For detailed information about automatic and on-demand key rotations, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/rotate-keys.html">Rotate KMS keys</a> in the <i>Key Management Service Developer Guide</i>.</p>
 /// <p><b>Cross-account use</b>: No. You cannot perform this operation on a KMS key in a different Amazon Web Services account.</p>
 /// <p><b>Required permissions</b>: <a href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">kms:ListKeyRotations</a> (key policy)</p>
 /// <p><b>Related operations:</b></p>
@@ -32,13 +32,17 @@ impl crate::operation::list_key_rotations::builders::ListKeyRotationsInputBuilde
 /// <li>
 /// <p><code>EnableKeyRotation</code></p></li>
 /// <li>
+/// <p><code>DeleteImportedKeyMaterial</code></p></li>
+/// <li>
 /// <p><code>DisableKeyRotation</code></p></li>
 /// <li>
 /// <p><code>GetKeyRotationStatus</code></p></li>
 /// <li>
+/// <p><code>ImportKeyMaterial</code></p></li>
+/// <li>
 /// <p><code>RotateKeyOnDemand</code></p></li>
 /// </ul>
-/// <p><b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS eventual consistency</a>.</p>
+/// <p><b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/accessing-kms.html#programming-eventual-consistency">KMS eventual consistency</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListKeyRotationsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -170,6 +174,20 @@ impl ListKeyRotationsFluentBuilder {
     /// <p>To get the key ID and key ARN for a KMS key, use <code>ListKeys</code> or <code>DescribeKey</code>.</p>
     pub fn get_key_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_key_id()
+    }
+    /// <p>Use this optional parameter to control which key materials associated with this key are listed in the response. The default value of this parameter is <code>ROTATIONS_ONLY</code>. If you omit this parameter, KMS returns information on the key materials created by automatic or on-demand key rotation. When you specify a value of <code>ALL_KEY_MATERIAL</code>, KMS adds the first key material and any imported key material pending rotation to the response. This parameter can only be used with KMS keys that support automatic or on-demand key rotation.</p>
+    pub fn include_key_material(mut self, input: crate::types::IncludeKeyMaterial) -> Self {
+        self.inner = self.inner.include_key_material(input);
+        self
+    }
+    /// <p>Use this optional parameter to control which key materials associated with this key are listed in the response. The default value of this parameter is <code>ROTATIONS_ONLY</code>. If you omit this parameter, KMS returns information on the key materials created by automatic or on-demand key rotation. When you specify a value of <code>ALL_KEY_MATERIAL</code>, KMS adds the first key material and any imported key material pending rotation to the response. This parameter can only be used with KMS keys that support automatic or on-demand key rotation.</p>
+    pub fn set_include_key_material(mut self, input: ::std::option::Option<crate::types::IncludeKeyMaterial>) -> Self {
+        self.inner = self.inner.set_include_key_material(input);
+        self
+    }
+    /// <p>Use this optional parameter to control which key materials associated with this key are listed in the response. The default value of this parameter is <code>ROTATIONS_ONLY</code>. If you omit this parameter, KMS returns information on the key materials created by automatic or on-demand key rotation. When you specify a value of <code>ALL_KEY_MATERIAL</code>, KMS adds the first key material and any imported key material pending rotation to the response. This parameter can only be used with KMS keys that support automatic or on-demand key rotation.</p>
+    pub fn get_include_key_material(&self) -> &::std::option::Option<crate::types::IncludeKeyMaterial> {
+        self.inner.get_include_key_material()
     }
     /// <p>Use this parameter to specify the maximum number of items to return. When this value is present, KMS does not return more than the specified number of items, but it might return fewer.</p>
     /// <p>This value is optional. If you include a value, it must be between 1 and 1000, inclusive. If you do not include a value, it defaults to 100.</p>

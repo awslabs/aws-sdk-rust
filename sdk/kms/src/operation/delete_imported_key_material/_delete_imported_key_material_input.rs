@@ -14,6 +14,11 @@ pub struct DeleteImportedKeyMaterialInput {
     /// </ul>
     /// <p>To get the key ID and key ARN for a KMS key, use <code>ListKeys</code> or <code>DescribeKey</code>.</p>
     pub key_id: ::std::option::Option<::std::string::String>,
+    /// <p>Identifies the imported key material you are deleting.</p><important>
+    /// <p>If no KeyMaterialId is specified, KMS deletes the current key material.</p>
+    /// </important>
+    /// <p>To get the list of key material IDs associated with a KMS key, use <code>ListKeyRotations</code>.</p>
+    pub key_material_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteImportedKeyMaterialInput {
     /// <p>Identifies the KMS key from which you are deleting imported key material. The <code>Origin</code> of the KMS key must be <code>EXTERNAL</code>.</p>
@@ -29,6 +34,13 @@ impl DeleteImportedKeyMaterialInput {
     pub fn key_id(&self) -> ::std::option::Option<&str> {
         self.key_id.as_deref()
     }
+    /// <p>Identifies the imported key material you are deleting.</p><important>
+    /// <p>If no KeyMaterialId is specified, KMS deletes the current key material.</p>
+    /// </important>
+    /// <p>To get the list of key material IDs associated with a KMS key, use <code>ListKeyRotations</code>.</p>
+    pub fn key_material_id(&self) -> ::std::option::Option<&str> {
+        self.key_material_id.as_deref()
+    }
 }
 impl DeleteImportedKeyMaterialInput {
     /// Creates a new builder-style object to manufacture [`DeleteImportedKeyMaterialInput`](crate::operation::delete_imported_key_material::DeleteImportedKeyMaterialInput).
@@ -42,6 +54,7 @@ impl DeleteImportedKeyMaterialInput {
 #[non_exhaustive]
 pub struct DeleteImportedKeyMaterialInputBuilder {
     pub(crate) key_id: ::std::option::Option<::std::string::String>,
+    pub(crate) key_material_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteImportedKeyMaterialInputBuilder {
     /// <p>Identifies the KMS key from which you are deleting imported key material. The <code>Origin</code> of the KMS key must be <code>EXTERNAL</code>.</p>
@@ -86,6 +99,29 @@ impl DeleteImportedKeyMaterialInputBuilder {
     pub fn get_key_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.key_id
     }
+    /// <p>Identifies the imported key material you are deleting.</p><important>
+    /// <p>If no KeyMaterialId is specified, KMS deletes the current key material.</p>
+    /// </important>
+    /// <p>To get the list of key material IDs associated with a KMS key, use <code>ListKeyRotations</code>.</p>
+    pub fn key_material_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.key_material_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Identifies the imported key material you are deleting.</p><important>
+    /// <p>If no KeyMaterialId is specified, KMS deletes the current key material.</p>
+    /// </important>
+    /// <p>To get the list of key material IDs associated with a KMS key, use <code>ListKeyRotations</code>.</p>
+    pub fn set_key_material_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.key_material_id = input;
+        self
+    }
+    /// <p>Identifies the imported key material you are deleting.</p><important>
+    /// <p>If no KeyMaterialId is specified, KMS deletes the current key material.</p>
+    /// </important>
+    /// <p>To get the list of key material IDs associated with a KMS key, use <code>ListKeyRotations</code>.</p>
+    pub fn get_key_material_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key_material_id
+    }
     /// Consumes the builder and constructs a [`DeleteImportedKeyMaterialInput`](crate::operation::delete_imported_key_material::DeleteImportedKeyMaterialInput).
     pub fn build(
         self,
@@ -93,6 +129,9 @@ impl DeleteImportedKeyMaterialInputBuilder {
         crate::operation::delete_imported_key_material::DeleteImportedKeyMaterialInput,
         ::aws_smithy_types::error::operation::BuildError,
     > {
-        ::std::result::Result::Ok(crate::operation::delete_imported_key_material::DeleteImportedKeyMaterialInput { key_id: self.key_id })
+        ::std::result::Result::Ok(crate::operation::delete_imported_key_material::DeleteImportedKeyMaterialInput {
+            key_id: self.key_id,
+            key_material_id: self.key_material_id,
+        })
     }
 }

@@ -22,8 +22,8 @@ impl crate::operation::describe_custom_key_stores::builders::DescribeCustomKeySt
 }
 /// Fluent builder constructing a request to `DescribeCustomKeyStores`.
 ///
-/// <p>Gets information about <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom key stores</a> in the account and Region.</p>
-/// <p>This operation is part of the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom key stores</a> feature in KMS, which combines the convenience and extensive integration of KMS with the isolation and control of a key store that you own and manage.</p>
+/// <p>Gets information about <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-store-overview.html">custom key stores</a> in the account and Region.</p>
+/// <p>This operation is part of the custom key stores feature in KMS, which combines the convenience and extensive integration of KMS with the isolation and control of a key store that you own and manage.</p>
 /// <p>By default, this operation returns information about all custom key stores in the account and Region. To get only information about a particular custom key store, use either the <code>CustomKeyStoreName</code> or <code>CustomKeyStoreId</code> parameter (but not both).</p>
 /// <p>To determine whether the custom key store is connected to its CloudHSM cluster or external key store proxy, use the <code>ConnectionState</code> element in the response. If an attempt to connect the custom key store failed, the <code>ConnectionState</code> value is <code>FAILED</code> and the <code>ConnectionErrorCode</code> element in the response indicates the cause of the failure. For help interpreting the <code>ConnectionErrorCode</code>, see <code>CustomKeyStoresListEntry</code>.</p>
 /// <p>Custom key stores have a <code>DISCONNECTED</code> connection state if the key store has never been connected or you used the <code>DisconnectCustomKeyStore</code> operation to disconnect it. Otherwise, the connection state is CONNECTED. If your custom key store connection state is <code>CONNECTED</code> but you are having trouble using it, verify that the backing store is active and available. For an CloudHSM key store, verify that the associated CloudHSM cluster is active and contains the minimum number of HSMs required for the operation, if any. For an external key store, verify that the external key store proxy and its associated external key manager are reachable and enabled.</p>
@@ -43,7 +43,7 @@ impl crate::operation::describe_custom_key_stores::builders::DescribeCustomKeySt
 /// <li>
 /// <p><code>UpdateCustomKeyStore</code></p></li>
 /// </ul>
-/// <p><b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS eventual consistency</a>.</p>
+/// <p><b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/accessing-kms.html#programming-eventual-consistency">KMS eventual consistency</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeCustomKeyStoresFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

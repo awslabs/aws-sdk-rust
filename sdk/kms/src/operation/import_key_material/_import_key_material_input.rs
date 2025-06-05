@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ImportKeyMaterialInput {
     /// <p>The identifier of the KMS key that will be associated with the imported key material. This must be the same KMS key specified in the <code>KeyID</code> parameter of the corresponding <code>GetParametersForImport</code> request. The <code>Origin</code> of the KMS key must be <code>EXTERNAL</code> and its <code>KeyState</code> must be <code>PendingImport</code>.</p>
-    /// <p>The KMS key can be a symmetric encryption KMS key, HMAC KMS key, asymmetric encryption KMS key, or asymmetric signing KMS key, including a <a href="kms/latest/developerguide/multi-region-keys-overview.html">multi-Region key</a> of any supported type. You cannot perform this operation on a KMS key in a custom key store, or on a KMS key in a different Amazon Web Services account.</p>
+    /// <p>The KMS key can be a symmetric encryption KMS key, HMAC KMS key, asymmetric encryption KMS key, or asymmetric signing KMS key, including a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html">multi-Region key</a> of any supported type. You cannot perform this operation on a KMS key in a custom key store, or on a KMS key in a different Amazon Web Services account.</p>
     /// <p>Specify the key ID or key ARN of the KMS key.</p>
     /// <p>For example:</p>
     /// <ul>
@@ -24,14 +24,29 @@ pub struct ImportKeyMaterialInput {
     /// <p>When the key material expires, KMS deletes the key material from the KMS key. Without its key material, the KMS key is unusable. To use the KMS key in cryptographic operations, you must reimport the same key material.</p>
     /// <p>You cannot change the <code>ExpirationModel</code> or <code>ValidTo</code> values for the current import after the request completes. To change either value, you must delete (<code>DeleteImportedKeyMaterial</code>) and reimport the key material.</p>
     pub valid_to: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>Specifies whether the key material expires. The default is <code>KEY_MATERIAL_EXPIRES</code>. For help with this choice, see <a href="https://docs.aws.amazon.com/en_us/kms/latest/developerguide/importing-keys.html#importing-keys-expiration">Setting an expiration time</a> in the <i>Key Management Service Developer Guide</i>.</p>
+    /// <p>Specifies whether the key material expires. The default is <code>KEY_MATERIAL_EXPIRES</code>. For help with this choice, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys-import-key-material.html#importing-keys-expiration">Setting an expiration time</a> in the <i>Key Management Service Developer Guide</i>.</p>
     /// <p>When the value of <code>ExpirationModel</code> is <code>KEY_MATERIAL_EXPIRES</code>, you must specify a value for the <code>ValidTo</code> parameter. When value is <code>KEY_MATERIAL_DOES_NOT_EXPIRE</code>, you must omit the <code>ValidTo</code> parameter.</p>
     /// <p>You cannot change the <code>ExpirationModel</code> or <code>ValidTo</code> values for the current import after the request completes. To change either value, you must reimport the key material.</p>
     pub expiration_model: ::std::option::Option<crate::types::ExpirationModelType>,
+    /// <p>Indicates whether the key material being imported is previously associated with this KMS key or not. This parameter is optional and only usable with symmetric encryption keys. The default is <code>EXISTING_KEY_MATERIAL</code>. If no key material has ever been imported into the KMS key, and this parameter is omitted, the parameter defaults to <code>NEW_KEY_MATERIAL</code>.</p>
+    pub import_type: ::std::option::Option<crate::types::ImportType>,
+    /// <p>Description for the key material being imported. This parameter is optional and only usable with symmetric encryption keys. If you do not specify a key material description, KMS retains the value you specified when you last imported the same key material into this KMS key.</p>
+    pub key_material_description: ::std::option::Option<::std::string::String>,
+    /// <p>Identifies the key material being imported. This parameter is optional and only usable with symmetric encryption keys. You cannot specify a key material ID with <code>ImportType</code> set to <code>NEW_KEY_MATERIAL</code>. Whenever you import key material into a symmetric encryption key, KMS assigns a unique identifier to the key material based on the KMS key ID and the imported key material. When you re-import key material with a specified key material ID, KMS:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Computes the identifier for the key material</p></li>
+    /// <li>
+    /// <p>Matches the computed identifier against the specified key material ID</p></li>
+    /// <li>
+    /// <p>Verifies that the key material ID is already associated with the KMS key</p></li>
+    /// </ul>
+    /// <p>To get the list of key material IDs associated with a KMS key, use <code>ListKeyRotations</code>.</p>
+    pub key_material_id: ::std::option::Option<::std::string::String>,
 }
 impl ImportKeyMaterialInput {
     /// <p>The identifier of the KMS key that will be associated with the imported key material. This must be the same KMS key specified in the <code>KeyID</code> parameter of the corresponding <code>GetParametersForImport</code> request. The <code>Origin</code> of the KMS key must be <code>EXTERNAL</code> and its <code>KeyState</code> must be <code>PendingImport</code>.</p>
-    /// <p>The KMS key can be a symmetric encryption KMS key, HMAC KMS key, asymmetric encryption KMS key, or asymmetric signing KMS key, including a <a href="kms/latest/developerguide/multi-region-keys-overview.html">multi-Region key</a> of any supported type. You cannot perform this operation on a KMS key in a custom key store, or on a KMS key in a different Amazon Web Services account.</p>
+    /// <p>The KMS key can be a symmetric encryption KMS key, HMAC KMS key, asymmetric encryption KMS key, or asymmetric signing KMS key, including a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html">multi-Region key</a> of any supported type. You cannot perform this operation on a KMS key in a custom key store, or on a KMS key in a different Amazon Web Services account.</p>
     /// <p>Specify the key ID or key ARN of the KMS key.</p>
     /// <p>For example:</p>
     /// <ul>
@@ -59,11 +74,32 @@ impl ImportKeyMaterialInput {
     pub fn valid_to(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.valid_to.as_ref()
     }
-    /// <p>Specifies whether the key material expires. The default is <code>KEY_MATERIAL_EXPIRES</code>. For help with this choice, see <a href="https://docs.aws.amazon.com/en_us/kms/latest/developerguide/importing-keys.html#importing-keys-expiration">Setting an expiration time</a> in the <i>Key Management Service Developer Guide</i>.</p>
+    /// <p>Specifies whether the key material expires. The default is <code>KEY_MATERIAL_EXPIRES</code>. For help with this choice, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys-import-key-material.html#importing-keys-expiration">Setting an expiration time</a> in the <i>Key Management Service Developer Guide</i>.</p>
     /// <p>When the value of <code>ExpirationModel</code> is <code>KEY_MATERIAL_EXPIRES</code>, you must specify a value for the <code>ValidTo</code> parameter. When value is <code>KEY_MATERIAL_DOES_NOT_EXPIRE</code>, you must omit the <code>ValidTo</code> parameter.</p>
     /// <p>You cannot change the <code>ExpirationModel</code> or <code>ValidTo</code> values for the current import after the request completes. To change either value, you must reimport the key material.</p>
     pub fn expiration_model(&self) -> ::std::option::Option<&crate::types::ExpirationModelType> {
         self.expiration_model.as_ref()
+    }
+    /// <p>Indicates whether the key material being imported is previously associated with this KMS key or not. This parameter is optional and only usable with symmetric encryption keys. The default is <code>EXISTING_KEY_MATERIAL</code>. If no key material has ever been imported into the KMS key, and this parameter is omitted, the parameter defaults to <code>NEW_KEY_MATERIAL</code>.</p>
+    pub fn import_type(&self) -> ::std::option::Option<&crate::types::ImportType> {
+        self.import_type.as_ref()
+    }
+    /// <p>Description for the key material being imported. This parameter is optional and only usable with symmetric encryption keys. If you do not specify a key material description, KMS retains the value you specified when you last imported the same key material into this KMS key.</p>
+    pub fn key_material_description(&self) -> ::std::option::Option<&str> {
+        self.key_material_description.as_deref()
+    }
+    /// <p>Identifies the key material being imported. This parameter is optional and only usable with symmetric encryption keys. You cannot specify a key material ID with <code>ImportType</code> set to <code>NEW_KEY_MATERIAL</code>. Whenever you import key material into a symmetric encryption key, KMS assigns a unique identifier to the key material based on the KMS key ID and the imported key material. When you re-import key material with a specified key material ID, KMS:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Computes the identifier for the key material</p></li>
+    /// <li>
+    /// <p>Matches the computed identifier against the specified key material ID</p></li>
+    /// <li>
+    /// <p>Verifies that the key material ID is already associated with the KMS key</p></li>
+    /// </ul>
+    /// <p>To get the list of key material IDs associated with a KMS key, use <code>ListKeyRotations</code>.</p>
+    pub fn key_material_id(&self) -> ::std::option::Option<&str> {
+        self.key_material_id.as_deref()
     }
 }
 impl ImportKeyMaterialInput {
@@ -82,10 +118,13 @@ pub struct ImportKeyMaterialInputBuilder {
     pub(crate) encrypted_key_material: ::std::option::Option<::aws_smithy_types::Blob>,
     pub(crate) valid_to: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) expiration_model: ::std::option::Option<crate::types::ExpirationModelType>,
+    pub(crate) import_type: ::std::option::Option<crate::types::ImportType>,
+    pub(crate) key_material_description: ::std::option::Option<::std::string::String>,
+    pub(crate) key_material_id: ::std::option::Option<::std::string::String>,
 }
 impl ImportKeyMaterialInputBuilder {
     /// <p>The identifier of the KMS key that will be associated with the imported key material. This must be the same KMS key specified in the <code>KeyID</code> parameter of the corresponding <code>GetParametersForImport</code> request. The <code>Origin</code> of the KMS key must be <code>EXTERNAL</code> and its <code>KeyState</code> must be <code>PendingImport</code>.</p>
-    /// <p>The KMS key can be a symmetric encryption KMS key, HMAC KMS key, asymmetric encryption KMS key, or asymmetric signing KMS key, including a <a href="kms/latest/developerguide/multi-region-keys-overview.html">multi-Region key</a> of any supported type. You cannot perform this operation on a KMS key in a custom key store, or on a KMS key in a different Amazon Web Services account.</p>
+    /// <p>The KMS key can be a symmetric encryption KMS key, HMAC KMS key, asymmetric encryption KMS key, or asymmetric signing KMS key, including a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html">multi-Region key</a> of any supported type. You cannot perform this operation on a KMS key in a custom key store, or on a KMS key in a different Amazon Web Services account.</p>
     /// <p>Specify the key ID or key ARN of the KMS key.</p>
     /// <p>For example:</p>
     /// <ul>
@@ -101,7 +140,7 @@ impl ImportKeyMaterialInputBuilder {
         self
     }
     /// <p>The identifier of the KMS key that will be associated with the imported key material. This must be the same KMS key specified in the <code>KeyID</code> parameter of the corresponding <code>GetParametersForImport</code> request. The <code>Origin</code> of the KMS key must be <code>EXTERNAL</code> and its <code>KeyState</code> must be <code>PendingImport</code>.</p>
-    /// <p>The KMS key can be a symmetric encryption KMS key, HMAC KMS key, asymmetric encryption KMS key, or asymmetric signing KMS key, including a <a href="kms/latest/developerguide/multi-region-keys-overview.html">multi-Region key</a> of any supported type. You cannot perform this operation on a KMS key in a custom key store, or on a KMS key in a different Amazon Web Services account.</p>
+    /// <p>The KMS key can be a symmetric encryption KMS key, HMAC KMS key, asymmetric encryption KMS key, or asymmetric signing KMS key, including a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html">multi-Region key</a> of any supported type. You cannot perform this operation on a KMS key in a custom key store, or on a KMS key in a different Amazon Web Services account.</p>
     /// <p>Specify the key ID or key ARN of the KMS key.</p>
     /// <p>For example:</p>
     /// <ul>
@@ -116,7 +155,7 @@ impl ImportKeyMaterialInputBuilder {
         self
     }
     /// <p>The identifier of the KMS key that will be associated with the imported key material. This must be the same KMS key specified in the <code>KeyID</code> parameter of the corresponding <code>GetParametersForImport</code> request. The <code>Origin</code> of the KMS key must be <code>EXTERNAL</code> and its <code>KeyState</code> must be <code>PendingImport</code>.</p>
-    /// <p>The KMS key can be a symmetric encryption KMS key, HMAC KMS key, asymmetric encryption KMS key, or asymmetric signing KMS key, including a <a href="kms/latest/developerguide/multi-region-keys-overview.html">multi-Region key</a> of any supported type. You cannot perform this operation on a KMS key in a custom key store, or on a KMS key in a different Amazon Web Services account.</p>
+    /// <p>The KMS key can be a symmetric encryption KMS key, HMAC KMS key, asymmetric encryption KMS key, or asymmetric signing KMS key, including a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html">multi-Region key</a> of any supported type. You cannot perform this operation on a KMS key in a custom key store, or on a KMS key in a different Amazon Web Services account.</p>
     /// <p>Specify the key ID or key ARN of the KMS key.</p>
     /// <p>For example:</p>
     /// <ul>
@@ -182,25 +221,94 @@ impl ImportKeyMaterialInputBuilder {
     pub fn get_valid_to(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.valid_to
     }
-    /// <p>Specifies whether the key material expires. The default is <code>KEY_MATERIAL_EXPIRES</code>. For help with this choice, see <a href="https://docs.aws.amazon.com/en_us/kms/latest/developerguide/importing-keys.html#importing-keys-expiration">Setting an expiration time</a> in the <i>Key Management Service Developer Guide</i>.</p>
+    /// <p>Specifies whether the key material expires. The default is <code>KEY_MATERIAL_EXPIRES</code>. For help with this choice, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys-import-key-material.html#importing-keys-expiration">Setting an expiration time</a> in the <i>Key Management Service Developer Guide</i>.</p>
     /// <p>When the value of <code>ExpirationModel</code> is <code>KEY_MATERIAL_EXPIRES</code>, you must specify a value for the <code>ValidTo</code> parameter. When value is <code>KEY_MATERIAL_DOES_NOT_EXPIRE</code>, you must omit the <code>ValidTo</code> parameter.</p>
     /// <p>You cannot change the <code>ExpirationModel</code> or <code>ValidTo</code> values for the current import after the request completes. To change either value, you must reimport the key material.</p>
     pub fn expiration_model(mut self, input: crate::types::ExpirationModelType) -> Self {
         self.expiration_model = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies whether the key material expires. The default is <code>KEY_MATERIAL_EXPIRES</code>. For help with this choice, see <a href="https://docs.aws.amazon.com/en_us/kms/latest/developerguide/importing-keys.html#importing-keys-expiration">Setting an expiration time</a> in the <i>Key Management Service Developer Guide</i>.</p>
+    /// <p>Specifies whether the key material expires. The default is <code>KEY_MATERIAL_EXPIRES</code>. For help with this choice, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys-import-key-material.html#importing-keys-expiration">Setting an expiration time</a> in the <i>Key Management Service Developer Guide</i>.</p>
     /// <p>When the value of <code>ExpirationModel</code> is <code>KEY_MATERIAL_EXPIRES</code>, you must specify a value for the <code>ValidTo</code> parameter. When value is <code>KEY_MATERIAL_DOES_NOT_EXPIRE</code>, you must omit the <code>ValidTo</code> parameter.</p>
     /// <p>You cannot change the <code>ExpirationModel</code> or <code>ValidTo</code> values for the current import after the request completes. To change either value, you must reimport the key material.</p>
     pub fn set_expiration_model(mut self, input: ::std::option::Option<crate::types::ExpirationModelType>) -> Self {
         self.expiration_model = input;
         self
     }
-    /// <p>Specifies whether the key material expires. The default is <code>KEY_MATERIAL_EXPIRES</code>. For help with this choice, see <a href="https://docs.aws.amazon.com/en_us/kms/latest/developerguide/importing-keys.html#importing-keys-expiration">Setting an expiration time</a> in the <i>Key Management Service Developer Guide</i>.</p>
+    /// <p>Specifies whether the key material expires. The default is <code>KEY_MATERIAL_EXPIRES</code>. For help with this choice, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys-import-key-material.html#importing-keys-expiration">Setting an expiration time</a> in the <i>Key Management Service Developer Guide</i>.</p>
     /// <p>When the value of <code>ExpirationModel</code> is <code>KEY_MATERIAL_EXPIRES</code>, you must specify a value for the <code>ValidTo</code> parameter. When value is <code>KEY_MATERIAL_DOES_NOT_EXPIRE</code>, you must omit the <code>ValidTo</code> parameter.</p>
     /// <p>You cannot change the <code>ExpirationModel</code> or <code>ValidTo</code> values for the current import after the request completes. To change either value, you must reimport the key material.</p>
     pub fn get_expiration_model(&self) -> &::std::option::Option<crate::types::ExpirationModelType> {
         &self.expiration_model
+    }
+    /// <p>Indicates whether the key material being imported is previously associated with this KMS key or not. This parameter is optional and only usable with symmetric encryption keys. The default is <code>EXISTING_KEY_MATERIAL</code>. If no key material has ever been imported into the KMS key, and this parameter is omitted, the parameter defaults to <code>NEW_KEY_MATERIAL</code>.</p>
+    pub fn import_type(mut self, input: crate::types::ImportType) -> Self {
+        self.import_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates whether the key material being imported is previously associated with this KMS key or not. This parameter is optional and only usable with symmetric encryption keys. The default is <code>EXISTING_KEY_MATERIAL</code>. If no key material has ever been imported into the KMS key, and this parameter is omitted, the parameter defaults to <code>NEW_KEY_MATERIAL</code>.</p>
+    pub fn set_import_type(mut self, input: ::std::option::Option<crate::types::ImportType>) -> Self {
+        self.import_type = input;
+        self
+    }
+    /// <p>Indicates whether the key material being imported is previously associated with this KMS key or not. This parameter is optional and only usable with symmetric encryption keys. The default is <code>EXISTING_KEY_MATERIAL</code>. If no key material has ever been imported into the KMS key, and this parameter is omitted, the parameter defaults to <code>NEW_KEY_MATERIAL</code>.</p>
+    pub fn get_import_type(&self) -> &::std::option::Option<crate::types::ImportType> {
+        &self.import_type
+    }
+    /// <p>Description for the key material being imported. This parameter is optional and only usable with symmetric encryption keys. If you do not specify a key material description, KMS retains the value you specified when you last imported the same key material into this KMS key.</p>
+    pub fn key_material_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.key_material_description = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Description for the key material being imported. This parameter is optional and only usable with symmetric encryption keys. If you do not specify a key material description, KMS retains the value you specified when you last imported the same key material into this KMS key.</p>
+    pub fn set_key_material_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.key_material_description = input;
+        self
+    }
+    /// <p>Description for the key material being imported. This parameter is optional and only usable with symmetric encryption keys. If you do not specify a key material description, KMS retains the value you specified when you last imported the same key material into this KMS key.</p>
+    pub fn get_key_material_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key_material_description
+    }
+    /// <p>Identifies the key material being imported. This parameter is optional and only usable with symmetric encryption keys. You cannot specify a key material ID with <code>ImportType</code> set to <code>NEW_KEY_MATERIAL</code>. Whenever you import key material into a symmetric encryption key, KMS assigns a unique identifier to the key material based on the KMS key ID and the imported key material. When you re-import key material with a specified key material ID, KMS:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Computes the identifier for the key material</p></li>
+    /// <li>
+    /// <p>Matches the computed identifier against the specified key material ID</p></li>
+    /// <li>
+    /// <p>Verifies that the key material ID is already associated with the KMS key</p></li>
+    /// </ul>
+    /// <p>To get the list of key material IDs associated with a KMS key, use <code>ListKeyRotations</code>.</p>
+    pub fn key_material_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.key_material_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Identifies the key material being imported. This parameter is optional and only usable with symmetric encryption keys. You cannot specify a key material ID with <code>ImportType</code> set to <code>NEW_KEY_MATERIAL</code>. Whenever you import key material into a symmetric encryption key, KMS assigns a unique identifier to the key material based on the KMS key ID and the imported key material. When you re-import key material with a specified key material ID, KMS:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Computes the identifier for the key material</p></li>
+    /// <li>
+    /// <p>Matches the computed identifier against the specified key material ID</p></li>
+    /// <li>
+    /// <p>Verifies that the key material ID is already associated with the KMS key</p></li>
+    /// </ul>
+    /// <p>To get the list of key material IDs associated with a KMS key, use <code>ListKeyRotations</code>.</p>
+    pub fn set_key_material_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.key_material_id = input;
+        self
+    }
+    /// <p>Identifies the key material being imported. This parameter is optional and only usable with symmetric encryption keys. You cannot specify a key material ID with <code>ImportType</code> set to <code>NEW_KEY_MATERIAL</code>. Whenever you import key material into a symmetric encryption key, KMS assigns a unique identifier to the key material based on the KMS key ID and the imported key material. When you re-import key material with a specified key material ID, KMS:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Computes the identifier for the key material</p></li>
+    /// <li>
+    /// <p>Matches the computed identifier against the specified key material ID</p></li>
+    /// <li>
+    /// <p>Verifies that the key material ID is already associated with the KMS key</p></li>
+    /// </ul>
+    /// <p>To get the list of key material IDs associated with a KMS key, use <code>ListKeyRotations</code>.</p>
+    pub fn get_key_material_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key_material_id
     }
     /// Consumes the builder and constructs a [`ImportKeyMaterialInput`](crate::operation::import_key_material::ImportKeyMaterialInput).
     pub fn build(
@@ -212,6 +320,9 @@ impl ImportKeyMaterialInputBuilder {
             encrypted_key_material: self.encrypted_key_material,
             valid_to: self.valid_to,
             expiration_model: self.expiration_model,
+            import_type: self.import_type,
+            key_material_description: self.key_material_description,
+            key_material_id: self.key_material_id,
         })
     }
 }

@@ -288,7 +288,7 @@ pub enum CreateKeyError {
     InvalidArnException(crate::types::error::InvalidArnException),
     /// <p>The request was rejected because an internal exception occurred. The request can be retried.</p>
     KmsInternalException(crate::types::error::KmsInternalException),
-    /// <p>The request was rejected because a quota was exceeded. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/limits.html">Quotas</a> in the <i>Key Management Service Developer Guide</i>.</p>
+    /// <p>The request was rejected because a length constraint or quota was exceeded. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/limits.html">Quotas</a> in the <i>Key Management Service Developer Guide</i>.</p>
     LimitExceededException(crate::types::error::LimitExceededException),
     /// <p>The request was rejected because the specified policy is not syntactically or semantically correct.</p>
     MalformedPolicyDocumentException(crate::types::error::MalformedPolicyDocumentException),

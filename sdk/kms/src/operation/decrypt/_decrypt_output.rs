@@ -13,6 +13,8 @@ pub struct DecryptOutput {
     /// <p>The plaintext data encrypted with the public key in the attestation document.</p>
     /// <p>This field is included in the response only when the <code>Recipient</code> parameter in the request includes a valid attestation document from an Amazon Web Services Nitro enclave. For information about the interaction between KMS and Amazon Web Services Nitro Enclaves, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/services-nitro-enclaves.html">How Amazon Web Services Nitro Enclaves uses KMS</a> in the <i>Key Management Service Developer Guide</i>.</p>
     pub ciphertext_for_recipient: ::std::option::Option<::aws_smithy_types::Blob>,
+    /// <p>The identifier of the key material used to decrypt the ciphertext. This field is present only when the operation uses a symmetric encryption KMS key.</p>
+    pub key_material_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DecryptOutput {
@@ -34,6 +36,10 @@ impl DecryptOutput {
     pub fn ciphertext_for_recipient(&self) -> ::std::option::Option<&::aws_smithy_types::Blob> {
         self.ciphertext_for_recipient.as_ref()
     }
+    /// <p>The identifier of the key material used to decrypt the ciphertext. This field is present only when the operation uses a symmetric encryption KMS key.</p>
+    pub fn key_material_id(&self) -> ::std::option::Option<&str> {
+        self.key_material_id.as_deref()
+    }
 }
 impl ::std::fmt::Debug for DecryptOutput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -42,6 +48,7 @@ impl ::std::fmt::Debug for DecryptOutput {
         formatter.field("plaintext", &"*** Sensitive Data Redacted ***");
         formatter.field("encryption_algorithm", &self.encryption_algorithm);
         formatter.field("ciphertext_for_recipient", &self.ciphertext_for_recipient);
+        formatter.field("key_material_id", &self.key_material_id);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }
@@ -66,6 +73,7 @@ pub struct DecryptOutputBuilder {
     pub(crate) plaintext: ::std::option::Option<::aws_smithy_types::Blob>,
     pub(crate) encryption_algorithm: ::std::option::Option<crate::types::EncryptionAlgorithmSpec>,
     pub(crate) ciphertext_for_recipient: ::std::option::Option<::aws_smithy_types::Blob>,
+    pub(crate) key_material_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DecryptOutputBuilder {
@@ -131,6 +139,20 @@ impl DecryptOutputBuilder {
     pub fn get_ciphertext_for_recipient(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
         &self.ciphertext_for_recipient
     }
+    /// <p>The identifier of the key material used to decrypt the ciphertext. This field is present only when the operation uses a symmetric encryption KMS key.</p>
+    pub fn key_material_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.key_material_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The identifier of the key material used to decrypt the ciphertext. This field is present only when the operation uses a symmetric encryption KMS key.</p>
+    pub fn set_key_material_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.key_material_id = input;
+        self
+    }
+    /// <p>The identifier of the key material used to decrypt the ciphertext. This field is present only when the operation uses a symmetric encryption KMS key.</p>
+    pub fn get_key_material_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key_material_id
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -147,6 +169,7 @@ impl DecryptOutputBuilder {
             plaintext: self.plaintext,
             encryption_algorithm: self.encryption_algorithm,
             ciphertext_for_recipient: self.ciphertext_for_recipient,
+            key_material_id: self.key_material_id,
             _request_id: self._request_id,
         }
     }
@@ -158,6 +181,7 @@ impl ::std::fmt::Debug for DecryptOutputBuilder {
         formatter.field("plaintext", &"*** Sensitive Data Redacted ***");
         formatter.field("encryption_algorithm", &self.encryption_algorithm);
         formatter.field("ciphertext_for_recipient", &self.ciphertext_for_recipient);
+        formatter.field("key_material_id", &self.key_material_id);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }

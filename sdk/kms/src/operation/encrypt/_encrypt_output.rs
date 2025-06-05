@@ -9,6 +9,8 @@ pub struct EncryptOutput {
     pub key_id: ::std::option::Option<::std::string::String>,
     /// <p>The encryption algorithm that was used to encrypt the plaintext.</p>
     pub encryption_algorithm: ::std::option::Option<crate::types::EncryptionAlgorithmSpec>,
+    /// <p>The identifier of the key material used to encrypt the ciphertext. This field is present only when the operation uses a symmetric encryption KMS key.</p>
+    pub key_material_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl EncryptOutput {
@@ -23,6 +25,10 @@ impl EncryptOutput {
     /// <p>The encryption algorithm that was used to encrypt the plaintext.</p>
     pub fn encryption_algorithm(&self) -> ::std::option::Option<&crate::types::EncryptionAlgorithmSpec> {
         self.encryption_algorithm.as_ref()
+    }
+    /// <p>The identifier of the key material used to encrypt the ciphertext. This field is present only when the operation uses a symmetric encryption KMS key.</p>
+    pub fn key_material_id(&self) -> ::std::option::Option<&str> {
+        self.key_material_id.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for EncryptOutput {
@@ -44,6 +50,7 @@ pub struct EncryptOutputBuilder {
     pub(crate) ciphertext_blob: ::std::option::Option<::aws_smithy_types::Blob>,
     pub(crate) key_id: ::std::option::Option<::std::string::String>,
     pub(crate) encryption_algorithm: ::std::option::Option<crate::types::EncryptionAlgorithmSpec>,
+    pub(crate) key_material_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl EncryptOutputBuilder {
@@ -89,6 +96,20 @@ impl EncryptOutputBuilder {
     pub fn get_encryption_algorithm(&self) -> &::std::option::Option<crate::types::EncryptionAlgorithmSpec> {
         &self.encryption_algorithm
     }
+    /// <p>The identifier of the key material used to encrypt the ciphertext. This field is present only when the operation uses a symmetric encryption KMS key.</p>
+    pub fn key_material_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.key_material_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The identifier of the key material used to encrypt the ciphertext. This field is present only when the operation uses a symmetric encryption KMS key.</p>
+    pub fn set_key_material_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.key_material_id = input;
+        self
+    }
+    /// <p>The identifier of the key material used to encrypt the ciphertext. This field is present only when the operation uses a symmetric encryption KMS key.</p>
+    pub fn get_key_material_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key_material_id
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -104,6 +125,7 @@ impl EncryptOutputBuilder {
             ciphertext_blob: self.ciphertext_blob,
             key_id: self.key_id,
             encryption_algorithm: self.encryption_algorithm,
+            key_material_id: self.key_material_id,
             _request_id: self._request_id,
         }
     }

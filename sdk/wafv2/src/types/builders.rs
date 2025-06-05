@@ -47,6 +47,10 @@ pub use crate::types::_custom_response::CustomResponseBuilder;
 
 pub use crate::types::_statement::StatementBuilder;
 
+pub use crate::types::_asn_match_statement::AsnMatchStatementBuilder;
+
+pub use crate::types::_forwarded_ip_config::ForwardedIpConfigBuilder;
+
 pub use crate::types::_regex_match_statement::RegexMatchStatementBuilder;
 
 pub use crate::types::_text_transformation::TextTransformationBuilder;
@@ -139,6 +143,8 @@ pub use crate::types::_rate_based_statement::RateBasedStatementBuilder;
 
 pub use crate::types::_rate_based_statement_custom_key::RateBasedStatementCustomKeyBuilder;
 
+pub use crate::types::_rate_limit_asn::RateLimitAsnBuilder;
+
 pub use crate::types::_rate_limit_ja4_fingerprint::RateLimitJa4FingerprintBuilder;
 
 pub use crate::types::_rate_limit_ja3_fingerprint::RateLimitJa3FingerprintBuilder;
@@ -160,8 +166,6 @@ pub use crate::types::_rate_limit_query_argument::RateLimitQueryArgumentBuilder;
 pub use crate::types::_rate_limit_cookie::RateLimitCookieBuilder;
 
 pub use crate::types::_rate_limit_header::RateLimitHeaderBuilder;
-
-pub use crate::types::_forwarded_ip_config::ForwardedIpConfigBuilder;
 
 pub use crate::types::_regex_pattern_set_reference_statement::RegexPatternSetReferenceStatementBuilder;
 

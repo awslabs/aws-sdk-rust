@@ -13,6 +13,10 @@ pub struct ReEncryptOutput {
     pub source_encryption_algorithm: ::std::option::Option<crate::types::EncryptionAlgorithmSpec>,
     /// <p>The encryption algorithm that was used to reencrypt the data.</p>
     pub destination_encryption_algorithm: ::std::option::Option<crate::types::EncryptionAlgorithmSpec>,
+    /// <p>The identifier of the key material used to originally encrypt the data. This field is present only when the original encryption used a symmetric encryption KMS key.</p>
+    pub source_key_material_id: ::std::option::Option<::std::string::String>,
+    /// <p>The identifier of the key material used to reencrypt the data. This field is present only when data is reencrypted using a symmetric encryption KMS key.</p>
+    pub destination_key_material_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ReEncryptOutput {
@@ -36,6 +40,14 @@ impl ReEncryptOutput {
     pub fn destination_encryption_algorithm(&self) -> ::std::option::Option<&crate::types::EncryptionAlgorithmSpec> {
         self.destination_encryption_algorithm.as_ref()
     }
+    /// <p>The identifier of the key material used to originally encrypt the data. This field is present only when the original encryption used a symmetric encryption KMS key.</p>
+    pub fn source_key_material_id(&self) -> ::std::option::Option<&str> {
+        self.source_key_material_id.as_deref()
+    }
+    /// <p>The identifier of the key material used to reencrypt the data. This field is present only when data is reencrypted using a symmetric encryption KMS key.</p>
+    pub fn destination_key_material_id(&self) -> ::std::option::Option<&str> {
+        self.destination_key_material_id.as_deref()
+    }
 }
 impl ::aws_types::request_id::RequestId for ReEncryptOutput {
     fn request_id(&self) -> Option<&str> {
@@ -58,6 +70,8 @@ pub struct ReEncryptOutputBuilder {
     pub(crate) key_id: ::std::option::Option<::std::string::String>,
     pub(crate) source_encryption_algorithm: ::std::option::Option<crate::types::EncryptionAlgorithmSpec>,
     pub(crate) destination_encryption_algorithm: ::std::option::Option<crate::types::EncryptionAlgorithmSpec>,
+    pub(crate) source_key_material_id: ::std::option::Option<::std::string::String>,
+    pub(crate) destination_key_material_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ReEncryptOutputBuilder {
@@ -131,6 +145,34 @@ impl ReEncryptOutputBuilder {
     pub fn get_destination_encryption_algorithm(&self) -> &::std::option::Option<crate::types::EncryptionAlgorithmSpec> {
         &self.destination_encryption_algorithm
     }
+    /// <p>The identifier of the key material used to originally encrypt the data. This field is present only when the original encryption used a symmetric encryption KMS key.</p>
+    pub fn source_key_material_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.source_key_material_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The identifier of the key material used to originally encrypt the data. This field is present only when the original encryption used a symmetric encryption KMS key.</p>
+    pub fn set_source_key_material_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.source_key_material_id = input;
+        self
+    }
+    /// <p>The identifier of the key material used to originally encrypt the data. This field is present only when the original encryption used a symmetric encryption KMS key.</p>
+    pub fn get_source_key_material_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_key_material_id
+    }
+    /// <p>The identifier of the key material used to reencrypt the data. This field is present only when data is reencrypted using a symmetric encryption KMS key.</p>
+    pub fn destination_key_material_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.destination_key_material_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The identifier of the key material used to reencrypt the data. This field is present only when data is reencrypted using a symmetric encryption KMS key.</p>
+    pub fn set_destination_key_material_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.destination_key_material_id = input;
+        self
+    }
+    /// <p>The identifier of the key material used to reencrypt the data. This field is present only when data is reencrypted using a symmetric encryption KMS key.</p>
+    pub fn get_destination_key_material_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.destination_key_material_id
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -148,6 +190,8 @@ impl ReEncryptOutputBuilder {
             key_id: self.key_id,
             source_encryption_algorithm: self.source_encryption_algorithm,
             destination_encryption_algorithm: self.destination_encryption_algorithm,
+            source_key_material_id: self.source_key_material_id,
+            destination_key_material_id: self.destination_key_material_id,
             _request_id: self._request_id,
         }
     }

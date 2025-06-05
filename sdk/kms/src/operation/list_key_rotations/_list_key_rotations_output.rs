@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListKeyRotationsOutput {
-    /// <p>A list of completed key material rotations.</p>
+    /// <p>A list of completed key material rotations. When the optional input parameter <code>IncludeKeyMaterial</code> is specified with a value of <code>ALL_KEY_MATERIAL</code>, this list includes the first key material and any imported key material pending rotation.</p>
     pub rotations: ::std::option::Option<::std::vec::Vec<crate::types::RotationsListEntry>>,
     /// <p>When <code>Truncated</code> is true, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent request.</p>
     pub next_marker: ::std::option::Option<::std::string::String>,
@@ -12,7 +12,7 @@ pub struct ListKeyRotationsOutput {
     _request_id: Option<String>,
 }
 impl ListKeyRotationsOutput {
-    /// <p>A list of completed key material rotations.</p>
+    /// <p>A list of completed key material rotations. When the optional input parameter <code>IncludeKeyMaterial</code> is specified with a value of <code>ALL_KEY_MATERIAL</code>, this list includes the first key material and any imported key material pending rotation.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.rotations.is_none()`.
     pub fn rotations(&self) -> &[crate::types::RotationsListEntry] {
@@ -53,19 +53,19 @@ impl ListKeyRotationsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_rotations`](Self::set_rotations).
     ///
-    /// <p>A list of completed key material rotations.</p>
+    /// <p>A list of completed key material rotations. When the optional input parameter <code>IncludeKeyMaterial</code> is specified with a value of <code>ALL_KEY_MATERIAL</code>, this list includes the first key material and any imported key material pending rotation.</p>
     pub fn rotations(mut self, input: crate::types::RotationsListEntry) -> Self {
         let mut v = self.rotations.unwrap_or_default();
         v.push(input);
         self.rotations = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of completed key material rotations.</p>
+    /// <p>A list of completed key material rotations. When the optional input parameter <code>IncludeKeyMaterial</code> is specified with a value of <code>ALL_KEY_MATERIAL</code>, this list includes the first key material and any imported key material pending rotation.</p>
     pub fn set_rotations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RotationsListEntry>>) -> Self {
         self.rotations = input;
         self
     }
-    /// <p>A list of completed key material rotations.</p>
+    /// <p>A list of completed key material rotations. When the optional input parameter <code>IncludeKeyMaterial</code> is specified with a value of <code>ALL_KEY_MATERIAL</code>, this list includes the first key material and any imported key material pending rotation.</p>
     pub fn get_rotations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RotationsListEntry>> {
         &self.rotations
     }

@@ -244,6 +244,13 @@ pub(crate) fn de_decrypt(
                 "CiphertextForRecipient" => {
                     builder = builder.set_ciphertext_for_recipient(::aws_smithy_json::deserialize::token::expect_blob_or_null(tokens.next())?);
                 }
+                "KeyMaterialId" => {
+                    builder = builder.set_key_material_id(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },
             other => {

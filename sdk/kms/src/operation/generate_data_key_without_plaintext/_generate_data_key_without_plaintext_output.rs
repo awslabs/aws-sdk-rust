@@ -7,6 +7,8 @@ pub struct GenerateDataKeyWithoutPlaintextOutput {
     pub ciphertext_blob: ::std::option::Option<::aws_smithy_types::Blob>,
     /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of the KMS key that encrypted the data key.</p>
     pub key_id: ::std::option::Option<::std::string::String>,
+    /// <p>The identifier of the key material used to encrypt the data key.</p>
+    pub key_material_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GenerateDataKeyWithoutPlaintextOutput {
@@ -17,6 +19,10 @@ impl GenerateDataKeyWithoutPlaintextOutput {
     /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of the KMS key that encrypted the data key.</p>
     pub fn key_id(&self) -> ::std::option::Option<&str> {
         self.key_id.as_deref()
+    }
+    /// <p>The identifier of the key material used to encrypt the data key.</p>
+    pub fn key_material_id(&self) -> ::std::option::Option<&str> {
+        self.key_material_id.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for GenerateDataKeyWithoutPlaintextOutput {
@@ -37,6 +43,7 @@ impl GenerateDataKeyWithoutPlaintextOutput {
 pub struct GenerateDataKeyWithoutPlaintextOutputBuilder {
     pub(crate) ciphertext_blob: ::std::option::Option<::aws_smithy_types::Blob>,
     pub(crate) key_id: ::std::option::Option<::std::string::String>,
+    pub(crate) key_material_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GenerateDataKeyWithoutPlaintextOutputBuilder {
@@ -68,6 +75,20 @@ impl GenerateDataKeyWithoutPlaintextOutputBuilder {
     pub fn get_key_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.key_id
     }
+    /// <p>The identifier of the key material used to encrypt the data key.</p>
+    pub fn key_material_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.key_material_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The identifier of the key material used to encrypt the data key.</p>
+    pub fn set_key_material_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.key_material_id = input;
+        self
+    }
+    /// <p>The identifier of the key material used to encrypt the data key.</p>
+    pub fn get_key_material_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key_material_id
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -82,6 +103,7 @@ impl GenerateDataKeyWithoutPlaintextOutputBuilder {
         crate::operation::generate_data_key_without_plaintext::GenerateDataKeyWithoutPlaintextOutput {
             ciphertext_blob: self.ciphertext_blob,
             key_id: self.key_id,
+            key_material_id: self.key_material_id,
             _request_id: self._request_id,
         }
     }

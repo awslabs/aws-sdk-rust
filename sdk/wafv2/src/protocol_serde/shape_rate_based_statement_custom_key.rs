@@ -69,6 +69,12 @@ pub fn ser_rate_based_statement_custom_key(
         crate::protocol_serde::shape_rate_limit_ja4_fingerprint::ser_rate_limit_ja4_fingerprint(&mut object_22, var_21)?;
         object_22.finish();
     }
+    if let Some(var_23) = &input.asn {
+        #[allow(unused_mut)]
+        let mut object_24 = object.key("ASN").start_object();
+        crate::protocol_serde::shape_rate_limit_asn::ser_rate_limit_asn(&mut object_24, var_23)?;
+        object_24.finish();
+    }
     Ok(())
 }
 
@@ -130,6 +136,9 @@ where
                             builder = builder.set_ja4_fingerprint(
                                 crate::protocol_serde::shape_rate_limit_ja4_fingerprint::de_rate_limit_ja4_fingerprint(tokens)?,
                             );
+                        }
+                        "ASN" => {
+                            builder = builder.set_asn(crate::protocol_serde::shape_rate_limit_asn::de_rate_limit_asn(tokens)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

@@ -6,14 +6,17 @@ pub fn ser_list_key_rotations_input_input(
     if let Some(var_1) = &input.key_id {
         object.key("KeyId").string(var_1.as_str());
     }
-    if let Some(var_2) = &input.limit {
+    if let Some(var_2) = &input.include_key_material {
+        object.key("IncludeKeyMaterial").string(var_2.as_str());
+    }
+    if let Some(var_3) = &input.limit {
         object.key("Limit").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_2).into()),
+            ::aws_smithy_types::Number::NegInt((*var_3).into()),
         );
     }
-    if let Some(var_3) = &input.marker {
-        object.key("Marker").string(var_3.as_str());
+    if let Some(var_4) = &input.marker {
+        object.key("Marker").string(var_4.as_str());
     }
     Ok(())
 }

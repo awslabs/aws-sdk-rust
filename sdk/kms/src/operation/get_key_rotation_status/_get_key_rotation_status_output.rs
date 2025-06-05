@@ -12,7 +12,7 @@ pub struct GetKeyRotationStatusOutput {
     /// <p>The next date that KMS will automatically rotate the key material.</p>
     pub next_rotation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Identifies the date and time that an in progress on-demand rotation was initiated.</p>
-    /// <p>The KMS API follows an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">eventual consistency</a> model due to the distributed nature of the system. As a result, there might be a slight delay between initiating on-demand key rotation and the rotation's completion. Once the on-demand rotation is complete, use <code>ListKeyRotations</code> to view the details of the on-demand rotation.</p>
+    /// <p>KMS uses a background process to perform rotations. As a result, there might be a slight delay between initiating on-demand key rotation and the rotation's completion. Once the on-demand rotation is complete, KMS removes this field from the response. You can use <code>ListKeyRotations</code> to view the details of the completed on-demand rotation.</p>
     pub on_demand_rotation_start_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }
@@ -34,7 +34,7 @@ impl GetKeyRotationStatusOutput {
         self.next_rotation_date.as_ref()
     }
     /// <p>Identifies the date and time that an in progress on-demand rotation was initiated.</p>
-    /// <p>The KMS API follows an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">eventual consistency</a> model due to the distributed nature of the system. As a result, there might be a slight delay between initiating on-demand key rotation and the rotation's completion. Once the on-demand rotation is complete, use <code>ListKeyRotations</code> to view the details of the on-demand rotation.</p>
+    /// <p>KMS uses a background process to perform rotations. As a result, there might be a slight delay between initiating on-demand key rotation and the rotation's completion. Once the on-demand rotation is complete, KMS removes this field from the response. You can use <code>ListKeyRotations</code> to view the details of the completed on-demand rotation.</p>
     pub fn on_demand_rotation_start_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.on_demand_rotation_start_date.as_ref()
     }
@@ -120,19 +120,19 @@ impl GetKeyRotationStatusOutputBuilder {
         &self.next_rotation_date
     }
     /// <p>Identifies the date and time that an in progress on-demand rotation was initiated.</p>
-    /// <p>The KMS API follows an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">eventual consistency</a> model due to the distributed nature of the system. As a result, there might be a slight delay between initiating on-demand key rotation and the rotation's completion. Once the on-demand rotation is complete, use <code>ListKeyRotations</code> to view the details of the on-demand rotation.</p>
+    /// <p>KMS uses a background process to perform rotations. As a result, there might be a slight delay between initiating on-demand key rotation and the rotation's completion. Once the on-demand rotation is complete, KMS removes this field from the response. You can use <code>ListKeyRotations</code> to view the details of the completed on-demand rotation.</p>
     pub fn on_demand_rotation_start_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.on_demand_rotation_start_date = ::std::option::Option::Some(input);
         self
     }
     /// <p>Identifies the date and time that an in progress on-demand rotation was initiated.</p>
-    /// <p>The KMS API follows an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">eventual consistency</a> model due to the distributed nature of the system. As a result, there might be a slight delay between initiating on-demand key rotation and the rotation's completion. Once the on-demand rotation is complete, use <code>ListKeyRotations</code> to view the details of the on-demand rotation.</p>
+    /// <p>KMS uses a background process to perform rotations. As a result, there might be a slight delay between initiating on-demand key rotation and the rotation's completion. Once the on-demand rotation is complete, KMS removes this field from the response. You can use <code>ListKeyRotations</code> to view the details of the completed on-demand rotation.</p>
     pub fn set_on_demand_rotation_start_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.on_demand_rotation_start_date = input;
         self
     }
     /// <p>Identifies the date and time that an in progress on-demand rotation was initiated.</p>
-    /// <p>The KMS API follows an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">eventual consistency</a> model due to the distributed nature of the system. As a result, there might be a slight delay between initiating on-demand key rotation and the rotation's completion. Once the on-demand rotation is complete, use <code>ListKeyRotations</code> to view the details of the on-demand rotation.</p>
+    /// <p>KMS uses a background process to perform rotations. As a result, there might be a slight delay between initiating on-demand key rotation and the rotation's completion. Once the on-demand rotation is complete, KMS removes this field from the response. You can use <code>ListKeyRotations</code> to view the details of the completed on-demand rotation.</p>
     pub fn get_on_demand_rotation_start_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.on_demand_rotation_start_date
     }
