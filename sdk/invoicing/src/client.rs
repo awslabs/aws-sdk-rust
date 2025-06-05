@@ -171,6 +171,8 @@ mod delete_invoice_unit;
 
 mod get_invoice_unit;
 
+mod list_invoice_summaries;
+
 mod list_invoice_units;
 
 mod list_tags_for_resource;

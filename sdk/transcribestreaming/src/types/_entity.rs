@@ -4,9 +4,9 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Entity {
-    /// <p>The start time, in milliseconds, of the utterance that was identified as PII.</p>
+    /// <p>The start time of the utterance that was identified as PII in seconds, with millisecond precision (e.g., 1.056)</p>
     pub start_time: f64,
-    /// <p>The end time, in milliseconds, of the utterance that was identified as PII.</p>
+    /// <p>The end time of the utterance that was identified as PII in seconds, with millisecond precision (e.g., 1.056)</p>
     pub end_time: f64,
     /// <p>The category of information identified. The only category is <code>PII</code>.</p>
     pub category: ::std::option::Option<::std::string::String>,
@@ -19,11 +19,11 @@ pub struct Entity {
     pub confidence: ::std::option::Option<f64>,
 }
 impl Entity {
-    /// <p>The start time, in milliseconds, of the utterance that was identified as PII.</p>
+    /// <p>The start time of the utterance that was identified as PII in seconds, with millisecond precision (e.g., 1.056)</p>
     pub fn start_time(&self) -> f64 {
         self.start_time
     }
-    /// <p>The end time, in milliseconds, of the utterance that was identified as PII.</p>
+    /// <p>The end time of the utterance that was identified as PII in seconds, with millisecond precision (e.g., 1.056)</p>
     pub fn end_time(&self) -> f64 {
         self.end_time
     }
@@ -64,31 +64,31 @@ pub struct EntityBuilder {
     pub(crate) confidence: ::std::option::Option<f64>,
 }
 impl EntityBuilder {
-    /// <p>The start time, in milliseconds, of the utterance that was identified as PII.</p>
+    /// <p>The start time of the utterance that was identified as PII in seconds, with millisecond precision (e.g., 1.056)</p>
     pub fn start_time(mut self, input: f64) -> Self {
         self.start_time = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The start time, in milliseconds, of the utterance that was identified as PII.</p>
+    /// <p>The start time of the utterance that was identified as PII in seconds, with millisecond precision (e.g., 1.056)</p>
     pub fn set_start_time(mut self, input: ::std::option::Option<f64>) -> Self {
         self.start_time = input;
         self
     }
-    /// <p>The start time, in milliseconds, of the utterance that was identified as PII.</p>
+    /// <p>The start time of the utterance that was identified as PII in seconds, with millisecond precision (e.g., 1.056)</p>
     pub fn get_start_time(&self) -> &::std::option::Option<f64> {
         &self.start_time
     }
-    /// <p>The end time, in milliseconds, of the utterance that was identified as PII.</p>
+    /// <p>The end time of the utterance that was identified as PII in seconds, with millisecond precision (e.g., 1.056)</p>
     pub fn end_time(mut self, input: f64) -> Self {
         self.end_time = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The end time, in milliseconds, of the utterance that was identified as PII.</p>
+    /// <p>The end time of the utterance that was identified as PII in seconds, with millisecond precision (e.g., 1.056)</p>
     pub fn set_end_time(mut self, input: ::std::option::Option<f64>) -> Self {
         self.end_time = input;
         self
     }
-    /// <p>The end time, in milliseconds, of the utterance that was identified as PII.</p>
+    /// <p>The end time of the utterance that was identified as PII in seconds, with millisecond precision (e.g., 1.056)</p>
     pub fn get_end_time(&self) -> &::std::option::Option<f64> {
         &self.end_time
     }

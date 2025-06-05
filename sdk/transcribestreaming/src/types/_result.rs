@@ -7,9 +7,9 @@
 pub struct Result {
     /// <p>Provides a unique identifier for the <code>Result</code>.</p>
     pub result_id: ::std::option::Option<::std::string::String>,
-    /// <p>The start time, in milliseconds, of the <code>Result</code>.</p>
+    /// <p>The start time of the <code>Result</code> in seconds, with millisecond precision (e.g., 1.056).</p>
     pub start_time: f64,
-    /// <p>The end time, in milliseconds, of the <code>Result</code>.</p>
+    /// <p>The end time of the <code>Result</code> in seconds, with millisecond precision (e.g., 1.056).</p>
     pub end_time: f64,
     /// <p>Indicates if the segment is complete.</p>
     /// <p>If <code>IsPartial</code> is <code>true</code>, the segment is not complete. If <code>IsPartial</code> is <code>false</code>, the segment is complete.</p>
@@ -29,11 +29,11 @@ impl Result {
     pub fn result_id(&self) -> ::std::option::Option<&str> {
         self.result_id.as_deref()
     }
-    /// <p>The start time, in milliseconds, of the <code>Result</code>.</p>
+    /// <p>The start time of the <code>Result</code> in seconds, with millisecond precision (e.g., 1.056).</p>
     pub fn start_time(&self) -> f64 {
         self.start_time
     }
-    /// <p>The end time, in milliseconds, of the <code>Result</code>.</p>
+    /// <p>The end time of the <code>Result</code> in seconds, with millisecond precision (e.g., 1.056).</p>
     pub fn end_time(&self) -> f64 {
         self.end_time
     }
@@ -99,31 +99,31 @@ impl ResultBuilder {
     pub fn get_result_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.result_id
     }
-    /// <p>The start time, in milliseconds, of the <code>Result</code>.</p>
+    /// <p>The start time of the <code>Result</code> in seconds, with millisecond precision (e.g., 1.056).</p>
     pub fn start_time(mut self, input: f64) -> Self {
         self.start_time = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The start time, in milliseconds, of the <code>Result</code>.</p>
+    /// <p>The start time of the <code>Result</code> in seconds, with millisecond precision (e.g., 1.056).</p>
     pub fn set_start_time(mut self, input: ::std::option::Option<f64>) -> Self {
         self.start_time = input;
         self
     }
-    /// <p>The start time, in milliseconds, of the <code>Result</code>.</p>
+    /// <p>The start time of the <code>Result</code> in seconds, with millisecond precision (e.g., 1.056).</p>
     pub fn get_start_time(&self) -> &::std::option::Option<f64> {
         &self.start_time
     }
-    /// <p>The end time, in milliseconds, of the <code>Result</code>.</p>
+    /// <p>The end time of the <code>Result</code> in seconds, with millisecond precision (e.g., 1.056).</p>
     pub fn end_time(mut self, input: f64) -> Self {
         self.end_time = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The end time, in milliseconds, of the <code>Result</code>.</p>
+    /// <p>The end time of the <code>Result</code> in seconds, with millisecond precision (e.g., 1.056).</p>
     pub fn set_end_time(mut self, input: ::std::option::Option<f64>) -> Self {
         self.end_time = input;
         self
     }
-    /// <p>The end time, in milliseconds, of the <code>Result</code>.</p>
+    /// <p>The end time of the <code>Result</code> in seconds, with millisecond precision (e.g., 1.056).</p>
     pub fn get_end_time(&self) -> &::std::option::Option<f64> {
         &self.end_time
     }

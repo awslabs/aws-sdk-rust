@@ -36,6 +36,19 @@ pub struct Output {
     pub bridge_ports: ::std::option::Option<::std::vec::Vec<i32>>,
     /// <p>An indication of whether the output is transmitting data or not.</p>
     pub output_status: ::std::option::Option<crate::types::OutputStatus>,
+    /// <p>The IP address of the device that is currently receiving content from this output.</p><note>
+    /// <ul>
+    /// <li>
+    /// <p>For outputs that use protocols where you specify the destination (such as SRT Caller or Zixi Push), this value matches the configured destination address.</p></li>
+    /// <li>
+    /// <p>For outputs that use listener protocols (such as SRT Listener), this value shows the address of the connected receiver.</p></li>
+    /// <li>
+    /// <p>Peer IP addresses aren't available for entitlements, managed MediaLive outputs, NDI outputs, and CDI/ST2110 outputs.</p></li>
+    /// <li>
+    /// <p>The peer IP address might not be visible for flows that haven't been started yet, or flows that were started before May 2025. In these cases, restart your flow to see the peer IP address.</p></li>
+    /// </ul>
+    /// </note>
+    pub peer_ip_address: ::std::option::Option<::std::string::String>,
 }
 impl Output {
     /// <p>Percentage from 0-100 of the data transfer cost to be billed to the subscriber.</p>
@@ -106,6 +119,21 @@ impl Output {
     pub fn output_status(&self) -> ::std::option::Option<&crate::types::OutputStatus> {
         self.output_status.as_ref()
     }
+    /// <p>The IP address of the device that is currently receiving content from this output.</p><note>
+    /// <ul>
+    /// <li>
+    /// <p>For outputs that use protocols where you specify the destination (such as SRT Caller or Zixi Push), this value matches the configured destination address.</p></li>
+    /// <li>
+    /// <p>For outputs that use listener protocols (such as SRT Listener), this value shows the address of the connected receiver.</p></li>
+    /// <li>
+    /// <p>Peer IP addresses aren't available for entitlements, managed MediaLive outputs, NDI outputs, and CDI/ST2110 outputs.</p></li>
+    /// <li>
+    /// <p>The peer IP address might not be visible for flows that haven't been started yet, or flows that were started before May 2025. In these cases, restart your flow to see the peer IP address.</p></li>
+    /// </ul>
+    /// </note>
+    pub fn peer_ip_address(&self) -> ::std::option::Option<&str> {
+        self.peer_ip_address.as_deref()
+    }
 }
 impl Output {
     /// Creates a new builder-style object to manufacture [`Output`](crate::types::Output).
@@ -134,6 +162,7 @@ pub struct OutputBuilder {
     pub(crate) bridge_arn: ::std::option::Option<::std::string::String>,
     pub(crate) bridge_ports: ::std::option::Option<::std::vec::Vec<i32>>,
     pub(crate) output_status: ::std::option::Option<crate::types::OutputStatus>,
+    pub(crate) peer_ip_address: ::std::option::Option<::std::string::String>,
 }
 impl OutputBuilder {
     /// <p>Percentage from 0-100 of the data transfer cost to be billed to the subscriber.</p>
@@ -377,6 +406,53 @@ impl OutputBuilder {
     pub fn get_output_status(&self) -> &::std::option::Option<crate::types::OutputStatus> {
         &self.output_status
     }
+    /// <p>The IP address of the device that is currently receiving content from this output.</p><note>
+    /// <ul>
+    /// <li>
+    /// <p>For outputs that use protocols where you specify the destination (such as SRT Caller or Zixi Push), this value matches the configured destination address.</p></li>
+    /// <li>
+    /// <p>For outputs that use listener protocols (such as SRT Listener), this value shows the address of the connected receiver.</p></li>
+    /// <li>
+    /// <p>Peer IP addresses aren't available for entitlements, managed MediaLive outputs, NDI outputs, and CDI/ST2110 outputs.</p></li>
+    /// <li>
+    /// <p>The peer IP address might not be visible for flows that haven't been started yet, or flows that were started before May 2025. In these cases, restart your flow to see the peer IP address.</p></li>
+    /// </ul>
+    /// </note>
+    pub fn peer_ip_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.peer_ip_address = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The IP address of the device that is currently receiving content from this output.</p><note>
+    /// <ul>
+    /// <li>
+    /// <p>For outputs that use protocols where you specify the destination (such as SRT Caller or Zixi Push), this value matches the configured destination address.</p></li>
+    /// <li>
+    /// <p>For outputs that use listener protocols (such as SRT Listener), this value shows the address of the connected receiver.</p></li>
+    /// <li>
+    /// <p>Peer IP addresses aren't available for entitlements, managed MediaLive outputs, NDI outputs, and CDI/ST2110 outputs.</p></li>
+    /// <li>
+    /// <p>The peer IP address might not be visible for flows that haven't been started yet, or flows that were started before May 2025. In these cases, restart your flow to see the peer IP address.</p></li>
+    /// </ul>
+    /// </note>
+    pub fn set_peer_ip_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.peer_ip_address = input;
+        self
+    }
+    /// <p>The IP address of the device that is currently receiving content from this output.</p><note>
+    /// <ul>
+    /// <li>
+    /// <p>For outputs that use protocols where you specify the destination (such as SRT Caller or Zixi Push), this value matches the configured destination address.</p></li>
+    /// <li>
+    /// <p>For outputs that use listener protocols (such as SRT Listener), this value shows the address of the connected receiver.</p></li>
+    /// <li>
+    /// <p>Peer IP addresses aren't available for entitlements, managed MediaLive outputs, NDI outputs, and CDI/ST2110 outputs.</p></li>
+    /// <li>
+    /// <p>The peer IP address might not be visible for flows that haven't been started yet, or flows that were started before May 2025. In these cases, restart your flow to see the peer IP address.</p></li>
+    /// </ul>
+    /// </note>
+    pub fn get_peer_ip_address(&self) -> &::std::option::Option<::std::string::String> {
+        &self.peer_ip_address
+    }
     /// Consumes the builder and constructs a [`Output`](crate::types::Output).
     pub fn build(self) -> crate::types::Output {
         crate::types::Output {
@@ -396,6 +472,7 @@ impl OutputBuilder {
             bridge_arn: self.bridge_arn,
             bridge_ports: self.bridge_ports,
             output_status: self.output_status,
+            peer_ip_address: self.peer_ip_address,
         }
     }
 }

@@ -6,6 +6,10 @@
 pub struct Mp4Settings {
     /// Specify this setting only when your output will be consumed by a downstream repackaging workflow that is sensitive to very small duration differences between video and audio. For this situation, choose Match video duration. In all other cases, keep the default value, Default codec duration. When you choose Match video duration, MediaConvert pads the output audio streams with silence or trims them to ensure that the total duration of each audio stream is at least as long as the total duration of the video stream. After padding or trimming, the audio stream duration is no more than one frame longer than the video stream. MediaConvert applies audio padding or trimming only to the end of the last segment of the output. For unsegmented outputs, MediaConvert adds padding only to the end of the file. When you keep the default value, any minor discrepancies between audio and video duration will depend on your output audio codec.
     pub audio_duration: ::std::option::Option<crate::types::CmfcAudioDuration>,
+    /// When enabled, a C2PA compliant manifest will be generated, signed and embeded in the output. For more information on C2PA, see https://c2pa.org/specifications/specifications/2.1/index.html
+    pub c2pa_manifest: ::std::option::Option<crate::types::Mp4C2paManifest>,
+    /// Specify the name or ARN of the AWS Secrets Manager secret that contains your C2PA public certificate chain in PEM format. Provide a valid secret name or ARN. Note that your MediaConvert service role must allow access to this secret. The public certificate chain is added to the COSE header (x5chain) for signature validation. Include the signer's certificate and all intermediate certificates. Do not include the root certificate. For details on COSE, see: https://opensource.contentauthenticity.org/docs/manifest/signing-manifests
+    pub certificate_secret: ::std::option::Option<::std::string::String>,
     /// When enabled, file composition times will start at zero, composition times in the 'ctts' (composition time to sample) box for B-frames will be negative, and a 'cslg' (composition shift least greatest) box will be included per 14496-1 amendment 1. This improves compatibility with Apple players and tools.
     pub cslg_atom: ::std::option::Option<crate::types::Mp4CslgAtom>,
     /// Ignore this setting unless compliance to the CTTS box version specification matters in your workflow. Specify a value of 1 to set your CTTS box version to 1 and make your output compliant with the specification. When you specify a value of 1, you must also set CSLG atom to the value INCLUDE. Keep the default value 0 to set your CTTS box version to 0. This can provide backward compatibility for some players and packagers.
@@ -16,11 +20,21 @@ pub struct Mp4Settings {
     pub moov_placement: ::std::option::Option<crate::types::Mp4MoovPlacement>,
     /// Overrides the "Major Brand" field in the output file. Usually not necessary to specify.
     pub mp4_major_brand: ::std::option::Option<::std::string::String>,
+    /// Specify the ID or ARN of the AWS KMS key used to sign the C2PA manifest in your MP4 output. Provide a valid KMS key ARN. Note that your MediaConvert service role must allow access to this key.
+    pub signing_kms_key: ::std::option::Option<::std::string::String>,
 }
 impl Mp4Settings {
     /// Specify this setting only when your output will be consumed by a downstream repackaging workflow that is sensitive to very small duration differences between video and audio. For this situation, choose Match video duration. In all other cases, keep the default value, Default codec duration. When you choose Match video duration, MediaConvert pads the output audio streams with silence or trims them to ensure that the total duration of each audio stream is at least as long as the total duration of the video stream. After padding or trimming, the audio stream duration is no more than one frame longer than the video stream. MediaConvert applies audio padding or trimming only to the end of the last segment of the output. For unsegmented outputs, MediaConvert adds padding only to the end of the file. When you keep the default value, any minor discrepancies between audio and video duration will depend on your output audio codec.
     pub fn audio_duration(&self) -> ::std::option::Option<&crate::types::CmfcAudioDuration> {
         self.audio_duration.as_ref()
+    }
+    /// When enabled, a C2PA compliant manifest will be generated, signed and embeded in the output. For more information on C2PA, see https://c2pa.org/specifications/specifications/2.1/index.html
+    pub fn c2pa_manifest(&self) -> ::std::option::Option<&crate::types::Mp4C2paManifest> {
+        self.c2pa_manifest.as_ref()
+    }
+    /// Specify the name or ARN of the AWS Secrets Manager secret that contains your C2PA public certificate chain in PEM format. Provide a valid secret name or ARN. Note that your MediaConvert service role must allow access to this secret. The public certificate chain is added to the COSE header (x5chain) for signature validation. Include the signer's certificate and all intermediate certificates. Do not include the root certificate. For details on COSE, see: https://opensource.contentauthenticity.org/docs/manifest/signing-manifests
+    pub fn certificate_secret(&self) -> ::std::option::Option<&str> {
+        self.certificate_secret.as_deref()
     }
     /// When enabled, file composition times will start at zero, composition times in the 'ctts' (composition time to sample) box for B-frames will be negative, and a 'cslg' (composition shift least greatest) box will be included per 14496-1 amendment 1. This improves compatibility with Apple players and tools.
     pub fn cslg_atom(&self) -> ::std::option::Option<&crate::types::Mp4CslgAtom> {
@@ -42,6 +56,10 @@ impl Mp4Settings {
     pub fn mp4_major_brand(&self) -> ::std::option::Option<&str> {
         self.mp4_major_brand.as_deref()
     }
+    /// Specify the ID or ARN of the AWS KMS key used to sign the C2PA manifest in your MP4 output. Provide a valid KMS key ARN. Note that your MediaConvert service role must allow access to this key.
+    pub fn signing_kms_key(&self) -> ::std::option::Option<&str> {
+        self.signing_kms_key.as_deref()
+    }
 }
 impl Mp4Settings {
     /// Creates a new builder-style object to manufacture [`Mp4Settings`](crate::types::Mp4Settings).
@@ -55,11 +73,14 @@ impl Mp4Settings {
 #[non_exhaustive]
 pub struct Mp4SettingsBuilder {
     pub(crate) audio_duration: ::std::option::Option<crate::types::CmfcAudioDuration>,
+    pub(crate) c2pa_manifest: ::std::option::Option<crate::types::Mp4C2paManifest>,
+    pub(crate) certificate_secret: ::std::option::Option<::std::string::String>,
     pub(crate) cslg_atom: ::std::option::Option<crate::types::Mp4CslgAtom>,
     pub(crate) ctts_version: ::std::option::Option<i32>,
     pub(crate) free_space_box: ::std::option::Option<crate::types::Mp4FreeSpaceBox>,
     pub(crate) moov_placement: ::std::option::Option<crate::types::Mp4MoovPlacement>,
     pub(crate) mp4_major_brand: ::std::option::Option<::std::string::String>,
+    pub(crate) signing_kms_key: ::std::option::Option<::std::string::String>,
 }
 impl Mp4SettingsBuilder {
     /// Specify this setting only when your output will be consumed by a downstream repackaging workflow that is sensitive to very small duration differences between video and audio. For this situation, choose Match video duration. In all other cases, keep the default value, Default codec duration. When you choose Match video duration, MediaConvert pads the output audio streams with silence or trims them to ensure that the total duration of each audio stream is at least as long as the total duration of the video stream. After padding or trimming, the audio stream duration is no more than one frame longer than the video stream. MediaConvert applies audio padding or trimming only to the end of the last segment of the output. For unsegmented outputs, MediaConvert adds padding only to the end of the file. When you keep the default value, any minor discrepancies between audio and video duration will depend on your output audio codec.
@@ -75,6 +96,34 @@ impl Mp4SettingsBuilder {
     /// Specify this setting only when your output will be consumed by a downstream repackaging workflow that is sensitive to very small duration differences between video and audio. For this situation, choose Match video duration. In all other cases, keep the default value, Default codec duration. When you choose Match video duration, MediaConvert pads the output audio streams with silence or trims them to ensure that the total duration of each audio stream is at least as long as the total duration of the video stream. After padding or trimming, the audio stream duration is no more than one frame longer than the video stream. MediaConvert applies audio padding or trimming only to the end of the last segment of the output. For unsegmented outputs, MediaConvert adds padding only to the end of the file. When you keep the default value, any minor discrepancies between audio and video duration will depend on your output audio codec.
     pub fn get_audio_duration(&self) -> &::std::option::Option<crate::types::CmfcAudioDuration> {
         &self.audio_duration
+    }
+    /// When enabled, a C2PA compliant manifest will be generated, signed and embeded in the output. For more information on C2PA, see https://c2pa.org/specifications/specifications/2.1/index.html
+    pub fn c2pa_manifest(mut self, input: crate::types::Mp4C2paManifest) -> Self {
+        self.c2pa_manifest = ::std::option::Option::Some(input);
+        self
+    }
+    /// When enabled, a C2PA compliant manifest will be generated, signed and embeded in the output. For more information on C2PA, see https://c2pa.org/specifications/specifications/2.1/index.html
+    pub fn set_c2pa_manifest(mut self, input: ::std::option::Option<crate::types::Mp4C2paManifest>) -> Self {
+        self.c2pa_manifest = input;
+        self
+    }
+    /// When enabled, a C2PA compliant manifest will be generated, signed and embeded in the output. For more information on C2PA, see https://c2pa.org/specifications/specifications/2.1/index.html
+    pub fn get_c2pa_manifest(&self) -> &::std::option::Option<crate::types::Mp4C2paManifest> {
+        &self.c2pa_manifest
+    }
+    /// Specify the name or ARN of the AWS Secrets Manager secret that contains your C2PA public certificate chain in PEM format. Provide a valid secret name or ARN. Note that your MediaConvert service role must allow access to this secret. The public certificate chain is added to the COSE header (x5chain) for signature validation. Include the signer's certificate and all intermediate certificates. Do not include the root certificate. For details on COSE, see: https://opensource.contentauthenticity.org/docs/manifest/signing-manifests
+    pub fn certificate_secret(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.certificate_secret = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// Specify the name or ARN of the AWS Secrets Manager secret that contains your C2PA public certificate chain in PEM format. Provide a valid secret name or ARN. Note that your MediaConvert service role must allow access to this secret. The public certificate chain is added to the COSE header (x5chain) for signature validation. Include the signer's certificate and all intermediate certificates. Do not include the root certificate. For details on COSE, see: https://opensource.contentauthenticity.org/docs/manifest/signing-manifests
+    pub fn set_certificate_secret(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.certificate_secret = input;
+        self
+    }
+    /// Specify the name or ARN of the AWS Secrets Manager secret that contains your C2PA public certificate chain in PEM format. Provide a valid secret name or ARN. Note that your MediaConvert service role must allow access to this secret. The public certificate chain is added to the COSE header (x5chain) for signature validation. Include the signer's certificate and all intermediate certificates. Do not include the root certificate. For details on COSE, see: https://opensource.contentauthenticity.org/docs/manifest/signing-manifests
+    pub fn get_certificate_secret(&self) -> &::std::option::Option<::std::string::String> {
+        &self.certificate_secret
     }
     /// When enabled, file composition times will start at zero, composition times in the 'ctts' (composition time to sample) box for B-frames will be negative, and a 'cslg' (composition shift least greatest) box will be included per 14496-1 amendment 1. This improves compatibility with Apple players and tools.
     pub fn cslg_atom(mut self, input: crate::types::Mp4CslgAtom) -> Self {
@@ -146,15 +195,32 @@ impl Mp4SettingsBuilder {
     pub fn get_mp4_major_brand(&self) -> &::std::option::Option<::std::string::String> {
         &self.mp4_major_brand
     }
+    /// Specify the ID or ARN of the AWS KMS key used to sign the C2PA manifest in your MP4 output. Provide a valid KMS key ARN. Note that your MediaConvert service role must allow access to this key.
+    pub fn signing_kms_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.signing_kms_key = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// Specify the ID or ARN of the AWS KMS key used to sign the C2PA manifest in your MP4 output. Provide a valid KMS key ARN. Note that your MediaConvert service role must allow access to this key.
+    pub fn set_signing_kms_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.signing_kms_key = input;
+        self
+    }
+    /// Specify the ID or ARN of the AWS KMS key used to sign the C2PA manifest in your MP4 output. Provide a valid KMS key ARN. Note that your MediaConvert service role must allow access to this key.
+    pub fn get_signing_kms_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.signing_kms_key
+    }
     /// Consumes the builder and constructs a [`Mp4Settings`](crate::types::Mp4Settings).
     pub fn build(self) -> crate::types::Mp4Settings {
         crate::types::Mp4Settings {
             audio_duration: self.audio_duration,
+            c2pa_manifest: self.c2pa_manifest,
+            certificate_secret: self.certificate_secret,
             cslg_atom: self.cslg_atom,
             ctts_version: self.ctts_version,
             free_space_box: self.free_space_box,
             moov_placement: self.moov_placement,
             mp4_major_brand: self.mp4_major_brand,
+            signing_kms_key: self.signing_kms_key,
         }
     }
 }

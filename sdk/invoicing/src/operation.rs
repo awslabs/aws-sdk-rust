@@ -13,6 +13,9 @@ pub mod delete_invoice_unit;
 /// Types for the `GetInvoiceUnit` operation.
 pub mod get_invoice_unit;
 
+/// Types for the `ListInvoiceSummaries` operation.
+pub mod list_invoice_summaries;
+
 /// Types for the `ListInvoiceUnits` operation.
 pub mod list_invoice_units;
 

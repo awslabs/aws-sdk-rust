@@ -24,7 +24,7 @@ use aws_smithy_types::body::SdkBody;
 use aws_smithy_types::config_bag::ConfigBag;
 use aws_smithy_types::error::display::DisplayErrorContext;
 use aws_smithy_types::retry::ErrorKind;
-use h2::Reason;
+use h2_0_3::Reason;
 use hyper_0_14::client::connect::{capture_connection, CaptureConnection, Connection, HttpInfo};
 use std::borrow::Cow;
 use std::collections::HashMap;
@@ -382,7 +382,7 @@ fn to_connector_error(err: hyper_0_14::Error) -> ConnectorError {
     if err.is_incomplete_message() {
         return ConnectorError::other(err.into(), Some(ErrorKind::TransientError));
     }
-    if let Some(h2_err) = find_source::<h2::Error>(&err) {
+    if let Some(h2_err) = find_source::<h2_0_3::Error>(&err) {
         if h2_err.is_go_away()
             || (h2_err.is_reset() && h2_err.reason() == Some(Reason::REFUSED_STREAM))
         {

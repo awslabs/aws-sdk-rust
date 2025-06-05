@@ -12,8 +12,13 @@
 /// ```text
 /// # let medicalscribenotetemplate = unimplemented!();
 /// match medicalscribenotetemplate {
+///     MedicalScribeNoteTemplate::BehavioralSoap => { /* ... */ },
+///     MedicalScribeNoteTemplate::Birp => { /* ... */ },
+///     MedicalScribeNoteTemplate::Dap => { /* ... */ },
 ///     MedicalScribeNoteTemplate::Girpp => { /* ... */ },
 ///     MedicalScribeNoteTemplate::HistoryAndPhysical => { /* ... */ },
+///     MedicalScribeNoteTemplate::PhysicalSoap => { /* ... */ },
+///     MedicalScribeNoteTemplate::Sirp => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -43,9 +48,19 @@
 )]
 pub enum MedicalScribeNoteTemplate {
     #[allow(missing_docs)] // documentation missing in model
+    BehavioralSoap,
+    #[allow(missing_docs)] // documentation missing in model
+    Birp,
+    #[allow(missing_docs)] // documentation missing in model
+    Dap,
+    #[allow(missing_docs)] // documentation missing in model
     Girpp,
     #[allow(missing_docs)] // documentation missing in model
     HistoryAndPhysical,
+    #[allow(missing_docs)] // documentation missing in model
+    PhysicalSoap,
+    #[allow(missing_docs)] // documentation missing in model
+    Sirp,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -53,8 +68,13 @@ pub enum MedicalScribeNoteTemplate {
 impl ::std::convert::From<&str> for MedicalScribeNoteTemplate {
     fn from(s: &str) -> Self {
         match s {
+            "BEHAVIORAL_SOAP" => MedicalScribeNoteTemplate::BehavioralSoap,
+            "BIRP" => MedicalScribeNoteTemplate::Birp,
+            "DAP" => MedicalScribeNoteTemplate::Dap,
             "GIRPP" => MedicalScribeNoteTemplate::Girpp,
             "HISTORY_AND_PHYSICAL" => MedicalScribeNoteTemplate::HistoryAndPhysical,
+            "PHYSICAL_SOAP" => MedicalScribeNoteTemplate::PhysicalSoap,
+            "SIRP" => MedicalScribeNoteTemplate::Sirp,
             other => MedicalScribeNoteTemplate::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -70,14 +90,19 @@ impl MedicalScribeNoteTemplate {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            MedicalScribeNoteTemplate::BehavioralSoap => "BEHAVIORAL_SOAP",
+            MedicalScribeNoteTemplate::Birp => "BIRP",
+            MedicalScribeNoteTemplate::Dap => "DAP",
             MedicalScribeNoteTemplate::Girpp => "GIRPP",
             MedicalScribeNoteTemplate::HistoryAndPhysical => "HISTORY_AND_PHYSICAL",
+            MedicalScribeNoteTemplate::PhysicalSoap => "PHYSICAL_SOAP",
+            MedicalScribeNoteTemplate::Sirp => "SIRP",
             MedicalScribeNoteTemplate::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["GIRPP", "HISTORY_AND_PHYSICAL"]
+        &["BEHAVIORAL_SOAP", "BIRP", "DAP", "GIRPP", "HISTORY_AND_PHYSICAL", "PHYSICAL_SOAP", "SIRP"]
     }
 }
 impl ::std::convert::AsRef<str> for MedicalScribeNoteTemplate {
@@ -100,8 +125,13 @@ impl MedicalScribeNoteTemplate {
 impl ::std::fmt::Display for MedicalScribeNoteTemplate {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            MedicalScribeNoteTemplate::BehavioralSoap => write!(f, "BEHAVIORAL_SOAP"),
+            MedicalScribeNoteTemplate::Birp => write!(f, "BIRP"),
+            MedicalScribeNoteTemplate::Dap => write!(f, "DAP"),
             MedicalScribeNoteTemplate::Girpp => write!(f, "GIRPP"),
             MedicalScribeNoteTemplate::HistoryAndPhysical => write!(f, "HISTORY_AND_PHYSICAL"),
+            MedicalScribeNoteTemplate::PhysicalSoap => write!(f, "PHYSICAL_SOAP"),
+            MedicalScribeNoteTemplate::Sirp => write!(f, "SIRP"),
             MedicalScribeNoteTemplate::Unknown(value) => write!(f, "{}", value),
         }
     }

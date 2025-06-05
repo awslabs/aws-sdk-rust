@@ -4,9 +4,9 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MedicalEntity {
-    /// <p>The start time, in milliseconds, of the utterance that was identified as PHI.</p>
+    /// <p>The start time, in seconds, of the utterance that was identified as PHI.</p>
     pub start_time: f64,
-    /// <p>The end time, in milliseconds, of the utterance that was identified as PHI.</p>
+    /// <p>The end time, in seconds, of the utterance that was identified as PHI.</p>
     pub end_time: f64,
     /// <p>The category of information identified. The only category is <code>PHI</code>.</p>
     pub category: ::std::option::Option<::std::string::String>,
@@ -17,11 +17,11 @@ pub struct MedicalEntity {
     pub confidence: ::std::option::Option<f64>,
 }
 impl MedicalEntity {
-    /// <p>The start time, in milliseconds, of the utterance that was identified as PHI.</p>
+    /// <p>The start time, in seconds, of the utterance that was identified as PHI.</p>
     pub fn start_time(&self) -> f64 {
         self.start_time
     }
-    /// <p>The end time, in milliseconds, of the utterance that was identified as PHI.</p>
+    /// <p>The end time, in seconds, of the utterance that was identified as PHI.</p>
     pub fn end_time(&self) -> f64 {
         self.end_time
     }
@@ -57,31 +57,31 @@ pub struct MedicalEntityBuilder {
     pub(crate) confidence: ::std::option::Option<f64>,
 }
 impl MedicalEntityBuilder {
-    /// <p>The start time, in milliseconds, of the utterance that was identified as PHI.</p>
+    /// <p>The start time, in seconds, of the utterance that was identified as PHI.</p>
     pub fn start_time(mut self, input: f64) -> Self {
         self.start_time = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The start time, in milliseconds, of the utterance that was identified as PHI.</p>
+    /// <p>The start time, in seconds, of the utterance that was identified as PHI.</p>
     pub fn set_start_time(mut self, input: ::std::option::Option<f64>) -> Self {
         self.start_time = input;
         self
     }
-    /// <p>The start time, in milliseconds, of the utterance that was identified as PHI.</p>
+    /// <p>The start time, in seconds, of the utterance that was identified as PHI.</p>
     pub fn get_start_time(&self) -> &::std::option::Option<f64> {
         &self.start_time
     }
-    /// <p>The end time, in milliseconds, of the utterance that was identified as PHI.</p>
+    /// <p>The end time, in seconds, of the utterance that was identified as PHI.</p>
     pub fn end_time(mut self, input: f64) -> Self {
         self.end_time = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The end time, in milliseconds, of the utterance that was identified as PHI.</p>
+    /// <p>The end time, in seconds, of the utterance that was identified as PHI.</p>
     pub fn set_end_time(mut self, input: ::std::option::Option<f64>) -> Self {
         self.end_time = input;
         self
     }
-    /// <p>The end time, in milliseconds, of the utterance that was identified as PHI.</p>
+    /// <p>The end time, in seconds, of the utterance that was identified as PHI.</p>
     pub fn get_end_time(&self) -> &::std::option::Option<f64> {
         &self.end_time
     }

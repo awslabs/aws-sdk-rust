@@ -34,6 +34,19 @@ pub struct Source {
     pub whitelist_cidr: ::std::option::Option<::std::string::String>,
     /// <p>The source configuration for cloud flows receiving a stream from a bridge.</p>
     pub gateway_bridge_source: ::std::option::Option<crate::types::GatewayBridgeSource>,
+    /// <p>The IP address of the device that is currently sending content to this source.</p><note>
+    /// <ul>
+    /// <li>
+    /// <p>For sources that use protocols where you specify the origin (such as SRT Caller), this value matches the configured origin address.</p></li>
+    /// <li>
+    /// <p>For sources that use listener protocols (such as SRT Listener or RTP), this value shows the address of the connected sender.</p></li>
+    /// <li>
+    /// <p>Peer IP addresses aren't available for entitlements and CDI/ST2110 sources.</p></li>
+    /// <li>
+    /// <p>The peer IP address might not be visible for flows that haven't been started yet, or flows that were started before May 2025. In these cases, restart your flow to see the peer IP address.</p></li>
+    /// </ul>
+    /// </note>
+    pub peer_ip_address: ::std::option::Option<::std::string::String>,
 }
 impl Source {
     /// <p>Percentage from 0-100 of the data transfer cost to be billed to the subscriber.</p>
@@ -98,6 +111,21 @@ impl Source {
     pub fn gateway_bridge_source(&self) -> ::std::option::Option<&crate::types::GatewayBridgeSource> {
         self.gateway_bridge_source.as_ref()
     }
+    /// <p>The IP address of the device that is currently sending content to this source.</p><note>
+    /// <ul>
+    /// <li>
+    /// <p>For sources that use protocols where you specify the origin (such as SRT Caller), this value matches the configured origin address.</p></li>
+    /// <li>
+    /// <p>For sources that use listener protocols (such as SRT Listener or RTP), this value shows the address of the connected sender.</p></li>
+    /// <li>
+    /// <p>Peer IP addresses aren't available for entitlements and CDI/ST2110 sources.</p></li>
+    /// <li>
+    /// <p>The peer IP address might not be visible for flows that haven't been started yet, or flows that were started before May 2025. In these cases, restart your flow to see the peer IP address.</p></li>
+    /// </ul>
+    /// </note>
+    pub fn peer_ip_address(&self) -> ::std::option::Option<&str> {
+        self.peer_ip_address.as_deref()
+    }
 }
 impl Source {
     /// Creates a new builder-style object to manufacture [`Source`](crate::types::Source).
@@ -125,6 +153,7 @@ pub struct SourceBuilder {
     pub(crate) vpc_interface_name: ::std::option::Option<::std::string::String>,
     pub(crate) whitelist_cidr: ::std::option::Option<::std::string::String>,
     pub(crate) gateway_bridge_source: ::std::option::Option<crate::types::GatewayBridgeSource>,
+    pub(crate) peer_ip_address: ::std::option::Option<::std::string::String>,
 }
 impl SourceBuilder {
     /// <p>Percentage from 0-100 of the data transfer cost to be billed to the subscriber.</p>
@@ -348,6 +377,53 @@ impl SourceBuilder {
     pub fn get_gateway_bridge_source(&self) -> &::std::option::Option<crate::types::GatewayBridgeSource> {
         &self.gateway_bridge_source
     }
+    /// <p>The IP address of the device that is currently sending content to this source.</p><note>
+    /// <ul>
+    /// <li>
+    /// <p>For sources that use protocols where you specify the origin (such as SRT Caller), this value matches the configured origin address.</p></li>
+    /// <li>
+    /// <p>For sources that use listener protocols (such as SRT Listener or RTP), this value shows the address of the connected sender.</p></li>
+    /// <li>
+    /// <p>Peer IP addresses aren't available for entitlements and CDI/ST2110 sources.</p></li>
+    /// <li>
+    /// <p>The peer IP address might not be visible for flows that haven't been started yet, or flows that were started before May 2025. In these cases, restart your flow to see the peer IP address.</p></li>
+    /// </ul>
+    /// </note>
+    pub fn peer_ip_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.peer_ip_address = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The IP address of the device that is currently sending content to this source.</p><note>
+    /// <ul>
+    /// <li>
+    /// <p>For sources that use protocols where you specify the origin (such as SRT Caller), this value matches the configured origin address.</p></li>
+    /// <li>
+    /// <p>For sources that use listener protocols (such as SRT Listener or RTP), this value shows the address of the connected sender.</p></li>
+    /// <li>
+    /// <p>Peer IP addresses aren't available for entitlements and CDI/ST2110 sources.</p></li>
+    /// <li>
+    /// <p>The peer IP address might not be visible for flows that haven't been started yet, or flows that were started before May 2025. In these cases, restart your flow to see the peer IP address.</p></li>
+    /// </ul>
+    /// </note>
+    pub fn set_peer_ip_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.peer_ip_address = input;
+        self
+    }
+    /// <p>The IP address of the device that is currently sending content to this source.</p><note>
+    /// <ul>
+    /// <li>
+    /// <p>For sources that use protocols where you specify the origin (such as SRT Caller), this value matches the configured origin address.</p></li>
+    /// <li>
+    /// <p>For sources that use listener protocols (such as SRT Listener or RTP), this value shows the address of the connected sender.</p></li>
+    /// <li>
+    /// <p>Peer IP addresses aren't available for entitlements and CDI/ST2110 sources.</p></li>
+    /// <li>
+    /// <p>The peer IP address might not be visible for flows that haven't been started yet, or flows that were started before May 2025. In these cases, restart your flow to see the peer IP address.</p></li>
+    /// </ul>
+    /// </note>
+    pub fn get_peer_ip_address(&self) -> &::std::option::Option<::std::string::String> {
+        &self.peer_ip_address
+    }
     /// Consumes the builder and constructs a [`Source`](crate::types::Source).
     pub fn build(self) -> crate::types::Source {
         crate::types::Source {
@@ -366,6 +442,7 @@ impl SourceBuilder {
             vpc_interface_name: self.vpc_interface_name,
             whitelist_cidr: self.whitelist_cidr,
             gateway_bridge_source: self.gateway_bridge_source,
+            peer_ip_address: self.peer_ip_address,
         }
     }
 }

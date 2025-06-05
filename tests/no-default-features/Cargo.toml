@@ -20,7 +20,7 @@ version = "1.6.3"
 [dev-dependencies.aws-sdk-s3]
 path = "../../sdk/s3"
 default-features = false
-version = "1.90.0"
+version = "1.91.0"
 
 [dev-dependencies.aws-smithy-async]
 path = "../../sdk/aws-smithy-async"
@@ -34,7 +34,7 @@ version = "1.8.3"
 [dev-dependencies.aws-smithy-http-client]
 path = "../../sdk/aws-smithy-http-client"
 features = ["test-util"]
-version = "1.0.2"
+version = "1.0.3"
 
 [dev-dependencies.aws-credential-types]
 path = "../../sdk/aws-credential-types"

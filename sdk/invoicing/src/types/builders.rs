@@ -9,6 +9,36 @@ pub use crate::types::_invoice_unit::InvoiceUnitBuilder;
 
 pub use crate::types::_filters::FiltersBuilder;
 
+pub use crate::types::_invoice_summary::InvoiceSummaryBuilder;
+
+pub use crate::types::_invoice_currency_amount::InvoiceCurrencyAmountBuilder;
+
+pub use crate::types::_currency_exchange_details::CurrencyExchangeDetailsBuilder;
+
+pub use crate::types::_amount_breakdown::AmountBreakdownBuilder;
+
+pub use crate::types::_fees_breakdown::FeesBreakdownBuilder;
+
+pub use crate::types::_fees_breakdown_amount::FeesBreakdownAmountBuilder;
+
+pub use crate::types::_taxes_breakdown::TaxesBreakdownBuilder;
+
+pub use crate::types::_taxes_breakdown_amount::TaxesBreakdownAmountBuilder;
+
+pub use crate::types::_discounts_breakdown::DiscountsBreakdownBuilder;
+
+pub use crate::types::_discounts_breakdown_amount::DiscountsBreakdownAmountBuilder;
+
+pub use crate::types::_billing_period::BillingPeriodBuilder;
+
+pub use crate::types::_entity::EntityBuilder;
+
+pub use crate::types::_invoice_summaries_filter::InvoiceSummariesFilterBuilder;
+
+pub use crate::types::_date_interval::DateIntervalBuilder;
+
+pub use crate::types::_invoice_summaries_selector::InvoiceSummariesSelectorBuilder;
+
 pub use crate::types::_invoice_profile::InvoiceProfileBuilder;
 
 pub use crate::types::_receiver_address::ReceiverAddressBuilder;

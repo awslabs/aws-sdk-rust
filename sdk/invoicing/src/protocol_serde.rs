@@ -31,6 +31,8 @@ pub(crate) mod shape_delete_invoice_unit;
 
 pub(crate) mod shape_get_invoice_unit;
 
+pub(crate) mod shape_list_invoice_summaries;
+
 pub(crate) mod shape_list_invoice_units;
 
 pub(crate) mod shape_list_tags_for_resource;
@@ -61,6 +63,8 @@ pub(crate) mod shape_get_invoice_unit_input;
 
 pub(crate) mod shape_internal_server_exception;
 
+pub(crate) mod shape_list_invoice_summaries_input;
+
 pub(crate) mod shape_list_invoice_units_input;
 
 pub(crate) mod shape_list_tags_for_resource_input;
@@ -81,6 +85,12 @@ pub(crate) mod shape_validation_exception;
 
 pub(crate) mod shape_filters;
 
+pub(crate) mod shape_invoice_summaries;
+
+pub(crate) mod shape_invoice_summaries_filter;
+
+pub(crate) mod shape_invoice_summaries_selector;
+
 pub(crate) mod shape_invoice_unit_rule;
 
 pub(crate) mod shape_invoice_units;
@@ -95,10 +105,42 @@ pub(crate) mod shape_validation_exception_field_list;
 
 pub(crate) mod shape_account_id_list;
 
+pub(crate) mod shape_billing_period;
+
+pub(crate) mod shape_date_interval;
+
 pub(crate) mod shape_invoice_profile;
+
+pub(crate) mod shape_invoice_summary;
 
 pub(crate) mod shape_invoice_unit;
 
 pub(crate) mod shape_validation_exception_field;
 
+pub(crate) mod shape_entity;
+
+pub(crate) mod shape_invoice_currency_amount;
+
 pub(crate) mod shape_receiver_address;
+
+pub(crate) mod shape_amount_breakdown;
+
+pub(crate) mod shape_currency_exchange_details;
+
+pub(crate) mod shape_discounts_breakdown;
+
+pub(crate) mod shape_fees_breakdown;
+
+pub(crate) mod shape_taxes_breakdown;
+
+pub(crate) mod shape_discounts_breakdown_amount_list;
+
+pub(crate) mod shape_fees_breakdown_amount_list;
+
+pub(crate) mod shape_taxes_breakdown_amount_list;
+
+pub(crate) mod shape_discounts_breakdown_amount;
+
+pub(crate) mod shape_fees_breakdown_amount;
+
+pub(crate) mod shape_taxes_breakdown_amount;

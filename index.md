@@ -248,6 +248,7 @@ The AWS SDK for Rust contains one crate for each AWS service, as well as [aws-co
 | Amazon Elastic File System | [aws-sdk-efs](https://crates.io/crates/aws-sdk-efs) ([docs](https://docs.rs/aws-sdk-efs)) |
 | Amazon Elastic Kubernetes Service | [aws-sdk-eks](https://crates.io/crates/aws-sdk-eks) ([docs](https://docs.rs/aws-sdk-eks)) |
 | Amazon Elastic Transcoder | [aws-sdk-elastictranscoder](https://crates.io/crates/aws-sdk-elastictranscoder) ([docs](https://docs.rs/aws-sdk-elastictranscoder)) |
+| Amazon Elastic VMware Service | [aws-sdk-evs](https://crates.io/crates/aws-sdk-evs) ([docs](https://docs.rs/aws-sdk-evs)) |
 | Amazon Elasticsearch Service | [aws-sdk-elasticsearch](https://crates.io/crates/aws-sdk-elasticsearch) ([docs](https://docs.rs/aws-sdk-elasticsearch)) |
 | Amazon EventBridge | [aws-sdk-eventbridge](https://crates.io/crates/aws-sdk-eventbridge) ([docs](https://docs.rs/aws-sdk-eventbridge)) |
 | Amazon EventBridge Pipes | [aws-sdk-pipes](https://crates.io/crates/aws-sdk-pipes) ([docs](https://docs.rs/aws-sdk-pipes)) |

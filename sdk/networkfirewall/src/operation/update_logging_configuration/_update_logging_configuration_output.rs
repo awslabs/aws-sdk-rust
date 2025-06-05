@@ -9,6 +9,9 @@ pub struct UpdateLoggingConfigurationOutput {
     pub firewall_name: ::std::option::Option<::std::string::String>,
     /// <p>Defines how Network Firewall performs logging for a <code>Firewall</code>.</p>
     pub logging_configuration: ::std::option::Option<crate::types::LoggingConfiguration>,
+    /// <p>A boolean that reflects whether or not the firewall monitoring dashboard is enabled on a firewall.</p>
+    /// <p>Returns <code>TRUE</code> when the firewall monitoring dashboard is enabled on the firewall. Returns <code>FALSE</code> when the firewall monitoring dashboard is not enabled on the firewall.</p>
+    pub enable_monitoring_dashboard: ::std::option::Option<bool>,
     _request_id: Option<String>,
 }
 impl UpdateLoggingConfigurationOutput {
@@ -23,6 +26,11 @@ impl UpdateLoggingConfigurationOutput {
     /// <p>Defines how Network Firewall performs logging for a <code>Firewall</code>.</p>
     pub fn logging_configuration(&self) -> ::std::option::Option<&crate::types::LoggingConfiguration> {
         self.logging_configuration.as_ref()
+    }
+    /// <p>A boolean that reflects whether or not the firewall monitoring dashboard is enabled on a firewall.</p>
+    /// <p>Returns <code>TRUE</code> when the firewall monitoring dashboard is enabled on the firewall. Returns <code>FALSE</code> when the firewall monitoring dashboard is not enabled on the firewall.</p>
+    pub fn enable_monitoring_dashboard(&self) -> ::std::option::Option<bool> {
+        self.enable_monitoring_dashboard
     }
 }
 impl ::aws_types::request_id::RequestId for UpdateLoggingConfigurationOutput {
@@ -44,6 +52,7 @@ pub struct UpdateLoggingConfigurationOutputBuilder {
     pub(crate) firewall_arn: ::std::option::Option<::std::string::String>,
     pub(crate) firewall_name: ::std::option::Option<::std::string::String>,
     pub(crate) logging_configuration: ::std::option::Option<crate::types::LoggingConfiguration>,
+    pub(crate) enable_monitoring_dashboard: ::std::option::Option<bool>,
     _request_id: Option<String>,
 }
 impl UpdateLoggingConfigurationOutputBuilder {
@@ -89,6 +98,23 @@ impl UpdateLoggingConfigurationOutputBuilder {
     pub fn get_logging_configuration(&self) -> &::std::option::Option<crate::types::LoggingConfiguration> {
         &self.logging_configuration
     }
+    /// <p>A boolean that reflects whether or not the firewall monitoring dashboard is enabled on a firewall.</p>
+    /// <p>Returns <code>TRUE</code> when the firewall monitoring dashboard is enabled on the firewall. Returns <code>FALSE</code> when the firewall monitoring dashboard is not enabled on the firewall.</p>
+    pub fn enable_monitoring_dashboard(mut self, input: bool) -> Self {
+        self.enable_monitoring_dashboard = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>A boolean that reflects whether or not the firewall monitoring dashboard is enabled on a firewall.</p>
+    /// <p>Returns <code>TRUE</code> when the firewall monitoring dashboard is enabled on the firewall. Returns <code>FALSE</code> when the firewall monitoring dashboard is not enabled on the firewall.</p>
+    pub fn set_enable_monitoring_dashboard(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.enable_monitoring_dashboard = input;
+        self
+    }
+    /// <p>A boolean that reflects whether or not the firewall monitoring dashboard is enabled on a firewall.</p>
+    /// <p>Returns <code>TRUE</code> when the firewall monitoring dashboard is enabled on the firewall. Returns <code>FALSE</code> when the firewall monitoring dashboard is not enabled on the firewall.</p>
+    pub fn get_enable_monitoring_dashboard(&self) -> &::std::option::Option<bool> {
+        &self.enable_monitoring_dashboard
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -104,6 +130,7 @@ impl UpdateLoggingConfigurationOutputBuilder {
             firewall_arn: self.firewall_arn,
             firewall_name: self.firewall_name,
             logging_configuration: self.logging_configuration,
+            enable_monitoring_dashboard: self.enable_monitoring_dashboard,
             _request_id: self._request_id,
         }
     }

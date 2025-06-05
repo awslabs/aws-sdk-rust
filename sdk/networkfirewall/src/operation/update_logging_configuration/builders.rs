@@ -167,4 +167,24 @@ impl UpdateLoggingConfigurationFluentBuilder {
     pub fn get_logging_configuration(&self) -> &::std::option::Option<crate::types::LoggingConfiguration> {
         self.inner.get_logging_configuration()
     }
+    /// <p>A boolean that lets you enable or disable the detailed firewall monitoring dashboard on the firewall.</p>
+    /// <p>The monitoring dashboard provides comprehensive visibility into your firewall's flow logs and alert logs. After you enable detailed monitoring, you can access these dashboards directly from the <b>Monitoring</b> page of the Network Firewall console.</p>
+    /// <p>Specify <code>TRUE</code> to enable the the detailed monitoring dashboard on the firewall. Specify <code>FALSE</code> to disable the the detailed monitoring dashboard on the firewall.</p>
+    pub fn enable_monitoring_dashboard(mut self, input: bool) -> Self {
+        self.inner = self.inner.enable_monitoring_dashboard(input);
+        self
+    }
+    /// <p>A boolean that lets you enable or disable the detailed firewall monitoring dashboard on the firewall.</p>
+    /// <p>The monitoring dashboard provides comprehensive visibility into your firewall's flow logs and alert logs. After you enable detailed monitoring, you can access these dashboards directly from the <b>Monitoring</b> page of the Network Firewall console.</p>
+    /// <p>Specify <code>TRUE</code> to enable the the detailed monitoring dashboard on the firewall. Specify <code>FALSE</code> to disable the the detailed monitoring dashboard on the firewall.</p>
+    pub fn set_enable_monitoring_dashboard(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_enable_monitoring_dashboard(input);
+        self
+    }
+    /// <p>A boolean that lets you enable or disable the detailed firewall monitoring dashboard on the firewall.</p>
+    /// <p>The monitoring dashboard provides comprehensive visibility into your firewall's flow logs and alert logs. After you enable detailed monitoring, you can access these dashboards directly from the <b>Monitoring</b> page of the Network Firewall console.</p>
+    /// <p>Specify <code>TRUE</code> to enable the the detailed monitoring dashboard on the firewall. Specify <code>FALSE</code> to disable the the detailed monitoring dashboard on the firewall.</p>
+    pub fn get_enable_monitoring_dashboard(&self) -> &::std::option::Option<bool> {
+        self.inner.get_enable_monitoring_dashboard()
+    }
 }

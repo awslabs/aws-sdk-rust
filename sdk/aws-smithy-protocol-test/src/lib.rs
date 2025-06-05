@@ -18,7 +18,7 @@ mod xml;
 
 use crate::sealed::GetNormalizedHeader;
 use crate::xml::try_xml_equivalent;
-use assert_json_diff::assert_json_eq_no_panic;
+use assert_json_diff::assert_json_matches_no_panic;
 use aws_smithy_runtime_api::client::orchestrator::HttpRequest;
 use aws_smithy_runtime_api::http::Headers;
 use http::{HeaderMap, Uri};
@@ -406,7 +406,8 @@ fn try_json_eq(expected: &str, actual: &str) -> Result<(), ProtocolTestFailure> 
             expected: "json".to_owned(),
             found: e.to_string() + actual,
         })?;
-    match assert_json_eq_no_panic(&actual_json, &expected_json) {
+    let config = assert_json_diff::Config::new(assert_json_diff::CompareMode::Strict);
+    match assert_json_matches_no_panic(&actual_json, &expected_json, config) {
         Ok(()) => Ok(()),
         Err(message) => Err(ProtocolTestFailure::BodyDidNotMatch {
             comparison: pretty_comparison(expected, actual),

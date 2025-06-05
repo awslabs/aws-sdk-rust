@@ -489,6 +489,8 @@ pub use crate::types::_mp4_free_space_box::Mp4FreeSpaceBox;
 
 pub use crate::types::_mp4_cslg_atom::Mp4CslgAtom;
 
+pub use crate::types::_mp4_c2pa_manifest::Mp4C2paManifest;
+
 pub use crate::types::_cmfc_audio_duration::CmfcAudioDuration;
 
 pub use crate::types::_mov_settings::MovSettings;
@@ -2120,6 +2122,8 @@ mod _mp2_settings;
 mod _mp3_rate_control_mode;
 
 mod _mp3_settings;
+
+mod _mp4_c2pa_manifest;
 
 mod _mp4_cslg_atom;
 

@@ -8,6 +8,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeLoggingConfigurationOutput`](crate::operation::describe_logging_configuration::DescribeLoggingConfigurationOutput) with field(s):
     ///   - [`firewall_arn(Option<String>)`](crate::operation::describe_logging_configuration::DescribeLoggingConfigurationOutput::firewall_arn): <p>The Amazon Resource Name (ARN) of the firewall.</p>
     ///   - [`logging_configuration(Option<LoggingConfiguration>)`](crate::operation::describe_logging_configuration::DescribeLoggingConfigurationOutput::logging_configuration): <p>Defines how Network Firewall performs logging for a <code>Firewall</code>.</p>
+    ///   - [`enable_monitoring_dashboard(Option<bool>)`](crate::operation::describe_logging_configuration::DescribeLoggingConfigurationOutput::enable_monitoring_dashboard): <p>A boolean that reflects whether or not the firewall monitoring dashboard is enabled on a firewall.</p> <p>Returns <code>TRUE</code> when the firewall monitoring dashboard is enabled on the firewall. Returns <code>FALSE</code> when the firewall monitoring dashboard is not enabled on the firewall.</p>
     /// - On failure, responds with [`SdkError<DescribeLoggingConfigurationError>`](crate::operation::describe_logging_configuration::DescribeLoggingConfigurationError)
     pub fn describe_logging_configuration(
         &self,

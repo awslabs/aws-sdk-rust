@@ -4,9 +4,9 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MedicalItem {
-    /// <p>The start time, in milliseconds, of the transcribed item.</p>
+    /// <p>The start time, in seconds, of the transcribed item.</p>
     pub start_time: f64,
-    /// <p>The end time, in milliseconds, of the transcribed item.</p>
+    /// <p>The end time, in seconds, of the transcribed item.</p>
     pub end_time: f64,
     /// <p>The type of item identified. Options are: <code>PRONUNCIATION</code> (spoken words) and <code>PUNCTUATION</code>.</p>
     pub r#type: ::std::option::Option<crate::types::ItemType>,
@@ -19,11 +19,11 @@ pub struct MedicalItem {
     pub speaker: ::std::option::Option<::std::string::String>,
 }
 impl MedicalItem {
-    /// <p>The start time, in milliseconds, of the transcribed item.</p>
+    /// <p>The start time, in seconds, of the transcribed item.</p>
     pub fn start_time(&self) -> f64 {
         self.start_time
     }
-    /// <p>The end time, in milliseconds, of the transcribed item.</p>
+    /// <p>The end time, in seconds, of the transcribed item.</p>
     pub fn end_time(&self) -> f64 {
         self.end_time
     }
@@ -64,31 +64,31 @@ pub struct MedicalItemBuilder {
     pub(crate) speaker: ::std::option::Option<::std::string::String>,
 }
 impl MedicalItemBuilder {
-    /// <p>The start time, in milliseconds, of the transcribed item.</p>
+    /// <p>The start time, in seconds, of the transcribed item.</p>
     pub fn start_time(mut self, input: f64) -> Self {
         self.start_time = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The start time, in milliseconds, of the transcribed item.</p>
+    /// <p>The start time, in seconds, of the transcribed item.</p>
     pub fn set_start_time(mut self, input: ::std::option::Option<f64>) -> Self {
         self.start_time = input;
         self
     }
-    /// <p>The start time, in milliseconds, of the transcribed item.</p>
+    /// <p>The start time, in seconds, of the transcribed item.</p>
     pub fn get_start_time(&self) -> &::std::option::Option<f64> {
         &self.start_time
     }
-    /// <p>The end time, in milliseconds, of the transcribed item.</p>
+    /// <p>The end time, in seconds, of the transcribed item.</p>
     pub fn end_time(mut self, input: f64) -> Self {
         self.end_time = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The end time, in milliseconds, of the transcribed item.</p>
+    /// <p>The end time, in seconds, of the transcribed item.</p>
     pub fn set_end_time(mut self, input: ::std::option::Option<f64>) -> Self {
         self.end_time = input;
         self
     }
-    /// <p>The end time, in milliseconds, of the transcribed item.</p>
+    /// <p>The end time, in seconds, of the transcribed item.</p>
     pub fn get_end_time(&self) -> &::std::option::Option<f64> {
         &self.end_time
     }

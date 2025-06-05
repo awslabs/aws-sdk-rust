@@ -6,23 +6,32 @@ pub fn ser_mp4_settings(
     if let Some(var_1) = &input.audio_duration {
         object.key("audioDuration").string(var_1.as_str());
     }
-    if let Some(var_2) = &input.cslg_atom {
-        object.key("cslgAtom").string(var_2.as_str());
+    if let Some(var_2) = &input.c2pa_manifest {
+        object.key("c2paManifest").string(var_2.as_str());
     }
-    if let Some(var_3) = &input.ctts_version {
+    if let Some(var_3) = &input.certificate_secret {
+        object.key("certificateSecret").string(var_3.as_str());
+    }
+    if let Some(var_4) = &input.cslg_atom {
+        object.key("cslgAtom").string(var_4.as_str());
+    }
+    if let Some(var_5) = &input.ctts_version {
         object.key("cttsVersion").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_3).into()),
+            ::aws_smithy_types::Number::NegInt((*var_5).into()),
         );
     }
-    if let Some(var_4) = &input.free_space_box {
-        object.key("freeSpaceBox").string(var_4.as_str());
+    if let Some(var_6) = &input.free_space_box {
+        object.key("freeSpaceBox").string(var_6.as_str());
     }
-    if let Some(var_5) = &input.moov_placement {
-        object.key("moovPlacement").string(var_5.as_str());
+    if let Some(var_7) = &input.moov_placement {
+        object.key("moovPlacement").string(var_7.as_str());
     }
-    if let Some(var_6) = &input.mp4_major_brand {
-        object.key("mp4MajorBrand").string(var_6.as_str());
+    if let Some(var_8) = &input.mp4_major_brand {
+        object.key("mp4MajorBrand").string(var_8.as_str());
+    }
+    if let Some(var_9) = &input.signing_kms_key {
+        object.key("signingKmsKey").string(var_9.as_str());
     }
     Ok(())
 }
@@ -46,6 +55,20 @@ where
                             builder = builder.set_audio_duration(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| crate::types::CmfcAudioDuration::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "c2paManifest" => {
+                            builder = builder.set_c2pa_manifest(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::Mp4C2paManifest::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "certificateSecret" => {
+                            builder = builder.set_certificate_secret(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
                             );
                         }
@@ -79,6 +102,13 @@ where
                         }
                         "mp4MajorBrand" => {
                             builder = builder.set_mp4_major_brand(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "signingKmsKey" => {
+                            builder = builder.set_signing_kms_key(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,

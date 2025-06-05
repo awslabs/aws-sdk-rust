@@ -180,6 +180,9 @@ pub(crate) fn de_update_logging_configuration(
                     builder =
                         builder.set_logging_configuration(crate::protocol_serde::shape_logging_configuration::de_logging_configuration(tokens)?);
                 }
+                "EnableMonitoringDashboard" => {
+                    builder = builder.set_enable_monitoring_dashboard(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },
             other => {

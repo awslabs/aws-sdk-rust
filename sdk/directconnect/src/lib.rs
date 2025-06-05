@@ -32,7 +32,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-//! aws-sdk-directconnect = "1.74.0"
+//! aws-sdk-directconnect = "1.75.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!

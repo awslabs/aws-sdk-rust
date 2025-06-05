@@ -10,6 +10,16 @@ pub struct ClinicalNoteGenerationSettings {
     /// <p>HISTORY_AND_PHYSICAL: Provides summaries for key sections of the clinical documentation. Examples of sections include Chief Complaint, History of Present Illness, Review of Systems, Past Medical History, Assessment, and Plan.</p></li>
     /// <li>
     /// <p>GIRPP: Provides summaries based on the patients progress toward goals. Examples of sections include Goal, Intervention, Response, Progress, and Plan.</p></li>
+    /// <li>
+    /// <p>BIRP: Focuses on the patient's behavioral patterns and responses. Examples of sections include Behavior, Intervention, Response, and Plan.</p></li>
+    /// <li>
+    /// <p>SIRP: Emphasizes the situational context of therapy. Examples of sections include Situation, Intervention, Response, and Plan.</p></li>
+    /// <li>
+    /// <p>DAP: Provides a simplified format for clinical documentation. Examples of sections include Data, Assessment, and Plan.</p></li>
+    /// <li>
+    /// <p>BEHAVIORAL_SOAP: Behavioral health focused documentation format. Examples of sections include Subjective, Objective, Assessment, and Plan.</p></li>
+    /// <li>
+    /// <p>PHYSICAL_SOAP: Physical health focused documentation format. Examples of sections include Subjective, Objective, Assessment, and Plan.</p></li>
     /// </ul>
     pub note_template: ::std::option::Option<crate::types::MedicalScribeNoteTemplate>,
 }
@@ -20,6 +30,16 @@ impl ClinicalNoteGenerationSettings {
     /// <p>HISTORY_AND_PHYSICAL: Provides summaries for key sections of the clinical documentation. Examples of sections include Chief Complaint, History of Present Illness, Review of Systems, Past Medical History, Assessment, and Plan.</p></li>
     /// <li>
     /// <p>GIRPP: Provides summaries based on the patients progress toward goals. Examples of sections include Goal, Intervention, Response, Progress, and Plan.</p></li>
+    /// <li>
+    /// <p>BIRP: Focuses on the patient's behavioral patterns and responses. Examples of sections include Behavior, Intervention, Response, and Plan.</p></li>
+    /// <li>
+    /// <p>SIRP: Emphasizes the situational context of therapy. Examples of sections include Situation, Intervention, Response, and Plan.</p></li>
+    /// <li>
+    /// <p>DAP: Provides a simplified format for clinical documentation. Examples of sections include Data, Assessment, and Plan.</p></li>
+    /// <li>
+    /// <p>BEHAVIORAL_SOAP: Behavioral health focused documentation format. Examples of sections include Subjective, Objective, Assessment, and Plan.</p></li>
+    /// <li>
+    /// <p>PHYSICAL_SOAP: Physical health focused documentation format. Examples of sections include Subjective, Objective, Assessment, and Plan.</p></li>
     /// </ul>
     pub fn note_template(&self) -> ::std::option::Option<&crate::types::MedicalScribeNoteTemplate> {
         self.note_template.as_ref()
@@ -45,6 +65,16 @@ impl ClinicalNoteGenerationSettingsBuilder {
     /// <p>HISTORY_AND_PHYSICAL: Provides summaries for key sections of the clinical documentation. Examples of sections include Chief Complaint, History of Present Illness, Review of Systems, Past Medical History, Assessment, and Plan.</p></li>
     /// <li>
     /// <p>GIRPP: Provides summaries based on the patients progress toward goals. Examples of sections include Goal, Intervention, Response, Progress, and Plan.</p></li>
+    /// <li>
+    /// <p>BIRP: Focuses on the patient's behavioral patterns and responses. Examples of sections include Behavior, Intervention, Response, and Plan.</p></li>
+    /// <li>
+    /// <p>SIRP: Emphasizes the situational context of therapy. Examples of sections include Situation, Intervention, Response, and Plan.</p></li>
+    /// <li>
+    /// <p>DAP: Provides a simplified format for clinical documentation. Examples of sections include Data, Assessment, and Plan.</p></li>
+    /// <li>
+    /// <p>BEHAVIORAL_SOAP: Behavioral health focused documentation format. Examples of sections include Subjective, Objective, Assessment, and Plan.</p></li>
+    /// <li>
+    /// <p>PHYSICAL_SOAP: Physical health focused documentation format. Examples of sections include Subjective, Objective, Assessment, and Plan.</p></li>
     /// </ul>
     pub fn note_template(mut self, input: crate::types::MedicalScribeNoteTemplate) -> Self {
         self.note_template = ::std::option::Option::Some(input);
@@ -56,6 +86,16 @@ impl ClinicalNoteGenerationSettingsBuilder {
     /// <p>HISTORY_AND_PHYSICAL: Provides summaries for key sections of the clinical documentation. Examples of sections include Chief Complaint, History of Present Illness, Review of Systems, Past Medical History, Assessment, and Plan.</p></li>
     /// <li>
     /// <p>GIRPP: Provides summaries based on the patients progress toward goals. Examples of sections include Goal, Intervention, Response, Progress, and Plan.</p></li>
+    /// <li>
+    /// <p>BIRP: Focuses on the patient's behavioral patterns and responses. Examples of sections include Behavior, Intervention, Response, and Plan.</p></li>
+    /// <li>
+    /// <p>SIRP: Emphasizes the situational context of therapy. Examples of sections include Situation, Intervention, Response, and Plan.</p></li>
+    /// <li>
+    /// <p>DAP: Provides a simplified format for clinical documentation. Examples of sections include Data, Assessment, and Plan.</p></li>
+    /// <li>
+    /// <p>BEHAVIORAL_SOAP: Behavioral health focused documentation format. Examples of sections include Subjective, Objective, Assessment, and Plan.</p></li>
+    /// <li>
+    /// <p>PHYSICAL_SOAP: Physical health focused documentation format. Examples of sections include Subjective, Objective, Assessment, and Plan.</p></li>
     /// </ul>
     pub fn set_note_template(mut self, input: ::std::option::Option<crate::types::MedicalScribeNoteTemplate>) -> Self {
         self.note_template = input;
@@ -67,6 +107,16 @@ impl ClinicalNoteGenerationSettingsBuilder {
     /// <p>HISTORY_AND_PHYSICAL: Provides summaries for key sections of the clinical documentation. Examples of sections include Chief Complaint, History of Present Illness, Review of Systems, Past Medical History, Assessment, and Plan.</p></li>
     /// <li>
     /// <p>GIRPP: Provides summaries based on the patients progress toward goals. Examples of sections include Goal, Intervention, Response, Progress, and Plan.</p></li>
+    /// <li>
+    /// <p>BIRP: Focuses on the patient's behavioral patterns and responses. Examples of sections include Behavior, Intervention, Response, and Plan.</p></li>
+    /// <li>
+    /// <p>SIRP: Emphasizes the situational context of therapy. Examples of sections include Situation, Intervention, Response, and Plan.</p></li>
+    /// <li>
+    /// <p>DAP: Provides a simplified format for clinical documentation. Examples of sections include Data, Assessment, and Plan.</p></li>
+    /// <li>
+    /// <p>BEHAVIORAL_SOAP: Behavioral health focused documentation format. Examples of sections include Subjective, Objective, Assessment, and Plan.</p></li>
+    /// <li>
+    /// <p>PHYSICAL_SOAP: Physical health focused documentation format. Examples of sections include Subjective, Objective, Assessment, and Plan.</p></li>
     /// </ul>
     pub fn get_note_template(&self) -> &::std::option::Option<crate::types::MedicalScribeNoteTemplate> {
         &self.note_template

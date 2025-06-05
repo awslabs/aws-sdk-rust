@@ -23,7 +23,7 @@ doc-scrape-examples = true
 name = "aws-smithy-http-client"
 authors = ["AWS Rust SDK Team <aws-sdk-rust@amazon.com>"]
 description = "HTTP client abstractions for generated smithy clients"
-version = "1.0.2"
+version = "1.0.3"
 license = "Apache-2.0"
 edition = "2021"
 repository = "https://github.com/smithy-lang/smithy-rs"
@@ -37,7 +37,7 @@ cargo-args = ["-Zunstable-options", "-Zrustdoc-scrape-examples"]
 rustdoc-args = ["--cfg", "docsrs"]
 
 [features]
-hyper-014 = ["aws-smithy-runtime-api/http-02x", "aws-smithy-types/http-body-0-4-x", "dep:http-02x", "dep:http-body-04x", "dep:hyper-0-14"]
+hyper-014 = ["aws-smithy-runtime-api/http-02x", "aws-smithy-types/http-body-0-4-x", "dep:http-02x", "dep:http-body-04x", "dep:hyper-0-14", "dep:h2-0-3"]
 default-client = ["aws-smithy-runtime-api/http-1x", "aws-smithy-types/http-body-1-x", "dep:hyper", "dep:hyper-util", "hyper-util?/client-legacy", "dep:http-1x", "dep:tower", "dep:rustls-pki-types", "dep:rustls-native-certs"]
 wire-mock = ["test-util", "default-client", "hyper-util?/server", "hyper-util?/server-auto", "hyper-util?/service", "hyper-util?/server-graceful", "tokio/macros", "dep:http-body-util"]
 test-util = ["dep:aws-smithy-protocol-test", "dep:serde", "dep:serde_json", "dep:indexmap", "dep:bytes", "dep:http-1x", "aws-smithy-runtime-api/http-1x", "dep:http-body-1x", "aws-smithy-types/http-body-1-x", "tokio/rt"]
@@ -68,7 +68,7 @@ version = "1.3.1"
 [dependencies.aws-smithy-protocol-test]
 path = "../aws-smithy-protocol-test"
 optional = true
-version = "0.63.1"
+version = "0.63.2"
 
 [dependencies.h2]
 version = "0.4.2"
@@ -156,6 +156,11 @@ optional = true
 [dependencies.legacy-rustls]
 package = "rustls"
 version = "0.21.8"
+optional = true
+
+[dependencies.h2-0-3]
+package = "h2"
+version = "0.3.24"
 optional = true
 
 [dependencies.bytes]

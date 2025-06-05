@@ -15,5 +15,8 @@ pub fn ser_update_logging_configuration_input_input(
         crate::protocol_serde::shape_logging_configuration::ser_logging_configuration(&mut object_4, var_3)?;
         object_4.finish();
     }
+    if let Some(var_5) = &input.enable_monitoring_dashboard {
+        object.key("EnableMonitoringDashboard").boolean(*var_5);
+    }
     Ok(())
 }
