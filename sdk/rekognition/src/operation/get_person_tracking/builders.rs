@@ -22,6 +22,9 @@ impl crate::operation::get_person_tracking::builders::GetPersonTrackingInputBuil
 }
 /// Fluent builder constructing a request to `GetPersonTracking`.
 ///
+/// <note>
+/// <p><i>End of support notice:</i> On October 31, 2025, AWS will discontinue support for Amazon Rekognition People Pathing. After October 31, 2025, you will no longer be able to use the Rekognition People Pathing capability. For more information, visit this <a href="https://aws.amazon.com/blogs/machine-learning/transitioning-from-amazon-rekognition-people-pathing-exploring-other-alternatives/">blog post</a>.</p>
+/// </note>
 /// <p>Gets the path tracking results of a Amazon Rekognition Video analysis started by <code>StartPersonTracking</code>.</p>
 /// <p>The person path tracking operation is started by a call to <code>StartPersonTracking</code> which returns a job identifier (<code>JobId</code>). When the operation finishes, Amazon Rekognition Video publishes a completion status to the Amazon Simple Notification Service topic registered in the initial call to <code>StartPersonTracking</code>.</p>
 /// <p>To get the results of the person path tracking operation, first check that the status value published to the Amazon SNS topic is <code>SUCCEEDED</code>. If so, call <code>GetPersonTracking</code> and pass the job identifier (<code>JobId</code>) from the initial call to <code>StartPersonTracking</code>.</p>

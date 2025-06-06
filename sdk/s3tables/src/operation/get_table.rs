@@ -175,47 +175,34 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetTableRequ
                 output: &mut ::std::string::String,
             ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::BuildError> {
                 use ::std::fmt::Write as _;
-                let input_1 = &_input.table_bucket_arn;
-                let input_1 = input_1
-                    .as_ref()
-                    .ok_or_else(|| ::aws_smithy_types::error::operation::BuildError::missing_field("table_bucket_arn", "cannot be empty or unset"))?;
-                let table_bucket_arn = ::aws_smithy_http::label::fmt_string(input_1, ::aws_smithy_http::label::EncodingStrategy::Default);
-                if table_bucket_arn.is_empty() {
-                    return ::std::result::Result::Err(::aws_smithy_types::error::operation::BuildError::missing_field(
-                        "table_bucket_arn",
-                        "cannot be empty or unset",
-                    ));
+                ::std::write!(output, "/get-table").expect("formatting should succeed");
+                ::std::result::Result::Ok(())
+            }
+            fn uri_query(
+                _input: &crate::operation::get_table::GetTableInput,
+                mut output: &mut ::std::string::String,
+            ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::BuildError> {
+                let mut query = ::aws_smithy_http::query::Writer::new(output);
+                if let ::std::option::Option::Some(inner_1) = &_input.table_bucket_arn {
+                    {
+                        query.push_kv("tableBucketARN", &::aws_smithy_http::query::fmt_string(inner_1));
+                    }
                 }
-                let input_2 = &_input.namespace;
-                let input_2 = input_2
-                    .as_ref()
-                    .ok_or_else(|| ::aws_smithy_types::error::operation::BuildError::missing_field("namespace", "cannot be empty or unset"))?;
-                let namespace = ::aws_smithy_http::label::fmt_string(input_2, ::aws_smithy_http::label::EncodingStrategy::Default);
-                if namespace.is_empty() {
-                    return ::std::result::Result::Err(::aws_smithy_types::error::operation::BuildError::missing_field(
-                        "namespace",
-                        "cannot be empty or unset",
-                    ));
+                if let ::std::option::Option::Some(inner_2) = &_input.namespace {
+                    {
+                        query.push_kv("namespace", &::aws_smithy_http::query::fmt_string(inner_2));
+                    }
                 }
-                let input_3 = &_input.name;
-                let input_3 = input_3
-                    .as_ref()
-                    .ok_or_else(|| ::aws_smithy_types::error::operation::BuildError::missing_field("name", "cannot be empty or unset"))?;
-                let name = ::aws_smithy_http::label::fmt_string(input_3, ::aws_smithy_http::label::EncodingStrategy::Default);
-                if name.is_empty() {
-                    return ::std::result::Result::Err(::aws_smithy_types::error::operation::BuildError::missing_field(
-                        "name",
-                        "cannot be empty or unset",
-                    ));
+                if let ::std::option::Option::Some(inner_3) = &_input.name {
+                    {
+                        query.push_kv("name", &::aws_smithy_http::query::fmt_string(inner_3));
+                    }
                 }
-                ::std::write!(
-                    output,
-                    "/tables/{tableBucketARN}/{namespace}/{name}",
-                    tableBucketARN = table_bucket_arn,
-                    namespace = namespace,
-                    name = name
-                )
-                .expect("formatting should succeed");
+                if let ::std::option::Option::Some(inner_4) = &_input.table_arn {
+                    {
+                        query.push_kv("tableArn", &::aws_smithy_http::query::fmt_string(inner_4));
+                    }
+                }
                 ::std::result::Result::Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
@@ -225,6 +212,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetTableRequ
             ) -> ::std::result::Result<::http::request::Builder, ::aws_smithy_types::error::operation::BuildError> {
                 let mut uri = ::std::string::String::new();
                 uri_base(input, &mut uri)?;
+                uri_query(input, &mut uri)?;
                 ::std::result::Result::Ok(builder.method("GET").uri(uri))
             }
             let mut builder = update_http_builder(&input, ::http::request::Builder::new())?;

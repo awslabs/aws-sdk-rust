@@ -7,7 +7,7 @@ pub struct ListFlowExecutionEventsInput {
     pub flow_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of the flow alias used for the execution.</p>
     pub flow_alias_identifier: ::std::option::Option<::std::string::String>,
-    /// <p>The unique identifier of the async execution.</p>
+    /// <p>The unique identifier of the flow execution.</p>
     pub execution_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of events to return in a single response. If more events exist than the specified maxResults value, a token is included in the response so that the remaining results can be retrieved.</p>
     pub max_results: ::std::option::Option<i32>,
@@ -25,7 +25,7 @@ impl ListFlowExecutionEventsInput {
     pub fn flow_alias_identifier(&self) -> ::std::option::Option<&str> {
         self.flow_alias_identifier.as_deref()
     }
-    /// <p>The unique identifier of the async execution.</p>
+    /// <p>The unique identifier of the flow execution.</p>
     pub fn execution_identifier(&self) -> ::std::option::Option<&str> {
         self.execution_identifier.as_deref()
     }
@@ -91,18 +91,18 @@ impl ListFlowExecutionEventsInputBuilder {
     pub fn get_flow_alias_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.flow_alias_identifier
     }
-    /// <p>The unique identifier of the async execution.</p>
+    /// <p>The unique identifier of the flow execution.</p>
     /// This field is required.
     pub fn execution_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.execution_identifier = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The unique identifier of the async execution.</p>
+    /// <p>The unique identifier of the flow execution.</p>
     pub fn set_execution_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.execution_identifier = input;
         self
     }
-    /// <p>The unique identifier of the async execution.</p>
+    /// <p>The unique identifier of the flow execution.</p>
     pub fn get_execution_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.execution_identifier
     }

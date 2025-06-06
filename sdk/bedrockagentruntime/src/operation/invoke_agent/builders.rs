@@ -290,6 +290,20 @@ impl InvokeAgentFluentBuilder {
     pub fn get_streaming_configurations(&self) -> &::std::option::Option<crate::types::StreamingConfigurations> {
         self.inner.get_streaming_configurations()
     }
+    /// <p>Specifies parameters that control how the service populates the agent prompt for an <code>InvokeAgent</code> request. You can control which aspects of previous invocations in the same agent session the service uses to populate the agent prompt. This gives you more granular control over the contextual history that is used to process the current request.</p>
+    pub fn prompt_creation_configurations(mut self, input: crate::types::PromptCreationConfigurations) -> Self {
+        self.inner = self.inner.prompt_creation_configurations(input);
+        self
+    }
+    /// <p>Specifies parameters that control how the service populates the agent prompt for an <code>InvokeAgent</code> request. You can control which aspects of previous invocations in the same agent session the service uses to populate the agent prompt. This gives you more granular control over the contextual history that is used to process the current request.</p>
+    pub fn set_prompt_creation_configurations(mut self, input: ::std::option::Option<crate::types::PromptCreationConfigurations>) -> Self {
+        self.inner = self.inner.set_prompt_creation_configurations(input);
+        self
+    }
+    /// <p>Specifies parameters that control how the service populates the agent prompt for an <code>InvokeAgent</code> request. You can control which aspects of previous invocations in the same agent session the service uses to populate the agent prompt. This gives you more granular control over the contextual history that is used to process the current request.</p>
+    pub fn get_prompt_creation_configurations(&self) -> &::std::option::Option<crate::types::PromptCreationConfigurations> {
+        self.inner.get_prompt_creation_configurations()
+    }
     /// <p>The ARN of the resource making the request.</p>
     pub fn source_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.source_arn(input.into());

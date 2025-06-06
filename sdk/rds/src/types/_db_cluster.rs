@@ -132,6 +132,8 @@ pub struct DbCluster {
     /// <p>A list of tags.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS resources</a> in the <i>Amazon RDS User Guide</i> or <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_Tagging.html">Tagging Amazon Aurora and Amazon RDS resources</a> in the <i>Amazon Aurora User Guide</i>.</p>
     pub tag_list: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    /// <p>Contains a user-supplied global database cluster identifier. This identifier is the unique key that identifies a global database cluster.</p>
+    pub global_cluster_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The status of write forwarding for a secondary cluster in an Aurora global database.</p>
     pub global_write_forwarding_status: ::std::option::Option<crate::types::WriteForwardingStatus>,
     /// <p>Indicates whether write forwarding is enabled for a secondary cluster in an Aurora global database. Because write forwarding takes time to enable, check the value of <code>GlobalWriteForwardingStatus</code> to confirm that the request has completed before using the write forwarding feature for this cluster.</p>
@@ -478,6 +480,10 @@ impl DbCluster {
     pub fn tag_list(&self) -> &[crate::types::Tag] {
         self.tag_list.as_deref().unwrap_or_default()
     }
+    /// <p>Contains a user-supplied global database cluster identifier. This identifier is the unique key that identifies a global database cluster.</p>
+    pub fn global_cluster_identifier(&self) -> ::std::option::Option<&str> {
+        self.global_cluster_identifier.as_deref()
+    }
     /// <p>The status of write forwarding for a secondary cluster in an Aurora global database.</p>
     pub fn global_write_forwarding_status(&self) -> ::std::option::Option<&crate::types::WriteForwardingStatus> {
         self.global_write_forwarding_status.as_ref()
@@ -684,6 +690,7 @@ pub struct DbClusterBuilder {
     pub(crate) cross_account_clone: ::std::option::Option<bool>,
     pub(crate) domain_memberships: ::std::option::Option<::std::vec::Vec<crate::types::DomainMembership>>,
     pub(crate) tag_list: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) global_cluster_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) global_write_forwarding_status: ::std::option::Option<crate::types::WriteForwardingStatus>,
     pub(crate) global_write_forwarding_requested: ::std::option::Option<bool>,
     pub(crate) pending_modified_values: ::std::option::Option<crate::types::ClusterPendingModifiedValues>,
@@ -1601,6 +1608,20 @@ impl DbClusterBuilder {
     pub fn get_tag_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         &self.tag_list
     }
+    /// <p>Contains a user-supplied global database cluster identifier. This identifier is the unique key that identifies a global database cluster.</p>
+    pub fn global_cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.global_cluster_identifier = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Contains a user-supplied global database cluster identifier. This identifier is the unique key that identifies a global database cluster.</p>
+    pub fn set_global_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.global_cluster_identifier = input;
+        self
+    }
+    /// <p>Contains a user-supplied global database cluster identifier. This identifier is the unique key that identifies a global database cluster.</p>
+    pub fn get_global_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.global_cluster_identifier
+    }
     /// <p>The status of write forwarding for a secondary cluster in an Aurora global database.</p>
     pub fn global_write_forwarding_status(mut self, input: crate::types::WriteForwardingStatus) -> Self {
         self.global_write_forwarding_status = ::std::option::Option::Some(input);
@@ -2129,6 +2150,7 @@ impl DbClusterBuilder {
             cross_account_clone: self.cross_account_clone,
             domain_memberships: self.domain_memberships,
             tag_list: self.tag_list,
+            global_cluster_identifier: self.global_cluster_identifier,
             global_write_forwarding_status: self.global_write_forwarding_status,
             global_write_forwarding_requested: self.global_write_forwarding_requested,
             pending_modified_values: self.pending_modified_values,

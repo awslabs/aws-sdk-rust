@@ -377,6 +377,20 @@ impl InvokeInlineAgentFluentBuilder {
     pub fn get_streaming_configurations(&self) -> &::std::option::Option<crate::types::StreamingConfigurations> {
         self.inner.get_streaming_configurations()
     }
+    /// <p>Specifies parameters that control how the service populates the agent prompt for an <code>InvokeInlineAgent</code> request. You can control which aspects of previous invocations in the same agent session the service uses to populate the agent prompt. This gives you more granular control over the contextual history that is used to process the current request.</p>
+    pub fn prompt_creation_configurations(mut self, input: crate::types::PromptCreationConfigurations) -> Self {
+        self.inner = self.inner.prompt_creation_configurations(input);
+        self
+    }
+    /// <p>Specifies parameters that control how the service populates the agent prompt for an <code>InvokeInlineAgent</code> request. You can control which aspects of previous invocations in the same agent session the service uses to populate the agent prompt. This gives you more granular control over the contextual history that is used to process the current request.</p>
+    pub fn set_prompt_creation_configurations(mut self, input: ::std::option::Option<crate::types::PromptCreationConfigurations>) -> Self {
+        self.inner = self.inner.set_prompt_creation_configurations(input);
+        self
+    }
+    /// <p>Specifies parameters that control how the service populates the agent prompt for an <code>InvokeInlineAgent</code> request. You can control which aspects of previous invocations in the same agent session the service uses to populate the agent prompt. This gives you more granular control over the contextual history that is used to process the current request.</p>
+    pub fn get_prompt_creation_configurations(&self) -> &::std::option::Option<crate::types::PromptCreationConfigurations> {
+        self.inner.get_prompt_creation_configurations()
+    }
     /// <p>Parameters that specify the various attributes of a sessions. You can include attributes for the session or prompt or, if you configured an action group to return control, results from invocation of the action group. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/agents-session-state.html">Control session context</a>.</p><note>
     /// <p>If you include <code>returnControlInvocationResults</code> in the <code>sessionState</code> field, the <code>inputText</code> field will be ignored.</p>
     /// </note>

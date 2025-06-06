@@ -3,14 +3,14 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListFlowExecutionEventsOutput {
-    /// <p>A list of events that occurred during the async execution. Events can include node inputs and outputs, flow inputs and outputs, condition results, and failure events.</p>
+    /// <p>A list of events that occurred during the flow execution. Events can include node inputs and outputs, flow inputs and outputs, condition results, and failure events.</p>
     pub flow_execution_events: ::std::vec::Vec<crate::types::FlowExecutionEvent>,
     /// <p>A token to retrieve the next set of results. This value is returned if more results are available.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListFlowExecutionEventsOutput {
-    /// <p>A list of events that occurred during the async execution. Events can include node inputs and outputs, flow inputs and outputs, condition results, and failure events.</p>
+    /// <p>A list of events that occurred during the flow execution. Events can include node inputs and outputs, flow inputs and outputs, condition results, and failure events.</p>
     pub fn flow_execution_events(&self) -> &[crate::types::FlowExecutionEvent] {
         use std::ops::Deref;
         self.flow_execution_events.deref()
@@ -45,19 +45,19 @@ impl ListFlowExecutionEventsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_flow_execution_events`](Self::set_flow_execution_events).
     ///
-    /// <p>A list of events that occurred during the async execution. Events can include node inputs and outputs, flow inputs and outputs, condition results, and failure events.</p>
+    /// <p>A list of events that occurred during the flow execution. Events can include node inputs and outputs, flow inputs and outputs, condition results, and failure events.</p>
     pub fn flow_execution_events(mut self, input: crate::types::FlowExecutionEvent) -> Self {
         let mut v = self.flow_execution_events.unwrap_or_default();
         v.push(input);
         self.flow_execution_events = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of events that occurred during the async execution. Events can include node inputs and outputs, flow inputs and outputs, condition results, and failure events.</p>
+    /// <p>A list of events that occurred during the flow execution. Events can include node inputs and outputs, flow inputs and outputs, condition results, and failure events.</p>
     pub fn set_flow_execution_events(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FlowExecutionEvent>>) -> Self {
         self.flow_execution_events = input;
         self
     }
-    /// <p>A list of events that occurred during the async execution. Events can include node inputs and outputs, flow inputs and outputs, condition results, and failure events.</p>
+    /// <p>A list of events that occurred during the flow execution. Events can include node inputs and outputs, flow inputs and outputs, condition results, and failure events.</p>
     pub fn get_flow_execution_events(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FlowExecutionEvent>> {
         &self.flow_execution_events
     }

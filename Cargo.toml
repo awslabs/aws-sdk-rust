@@ -1,10 +1,10 @@
 [workspace]
 resolver = "2"
 exclude = [
-    "examples/examples",
-    "examples/test-utils",
     "examples/cross_service",
+    "examples/test-utils",
     "examples/lambda",
+    "examples/examples",
     "examples/webassembly",
     "tests/telemetry",
     "tests/no-default-features",

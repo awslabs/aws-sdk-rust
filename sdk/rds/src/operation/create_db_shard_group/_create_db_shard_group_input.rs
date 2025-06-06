@@ -7,14 +7,14 @@ pub struct CreateDbShardGroupInput {
     pub db_shard_group_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The name of the primary DB cluster for the DB shard group.</p>
     pub db_cluster_identifier: ::std::option::Option<::std::string::String>,
-    /// <p>Specifies whether to create standby DB shard groups for the DB shard group. Valid values are the following:</p>
+    /// <p>Specifies whether to create standby standby DB data access shard for the DB shard group. Valid values are the following:</p>
     /// <ul>
     /// <li>
-    /// <p>0 - Creates a DB shard group without a standby DB shard group. This is the default value.</p></li>
+    /// <p>0 - Creates a DB shard group without a standby DB data access shard. This is the default value.</p></li>
     /// <li>
-    /// <p>1 - Creates a DB shard group with a standby DB shard group in a different Availability Zone (AZ).</p></li>
+    /// <p>1 - Creates a DB shard group with a standby DB data access shard in a different Availability Zone (AZ).</p></li>
     /// <li>
-    /// <p>2 - Creates a DB shard group with two standby DB shard groups in two different AZs.</p></li>
+    /// <p>2 - Creates a DB shard group with two standby DB data access shard in two different AZs.</p></li>
     /// </ul>
     pub compute_redundancy: ::std::option::Option<i32>,
     /// <p>The maximum capacity of the DB shard group in Aurora capacity units (ACUs).</p>
@@ -53,14 +53,14 @@ impl CreateDbShardGroupInput {
     pub fn db_cluster_identifier(&self) -> ::std::option::Option<&str> {
         self.db_cluster_identifier.as_deref()
     }
-    /// <p>Specifies whether to create standby DB shard groups for the DB shard group. Valid values are the following:</p>
+    /// <p>Specifies whether to create standby standby DB data access shard for the DB shard group. Valid values are the following:</p>
     /// <ul>
     /// <li>
-    /// <p>0 - Creates a DB shard group without a standby DB shard group. This is the default value.</p></li>
+    /// <p>0 - Creates a DB shard group without a standby DB data access shard. This is the default value.</p></li>
     /// <li>
-    /// <p>1 - Creates a DB shard group with a standby DB shard group in a different Availability Zone (AZ).</p></li>
+    /// <p>1 - Creates a DB shard group with a standby DB data access shard in a different Availability Zone (AZ).</p></li>
     /// <li>
-    /// <p>2 - Creates a DB shard group with two standby DB shard groups in two different AZs.</p></li>
+    /// <p>2 - Creates a DB shard group with two standby DB data access shard in two different AZs.</p></li>
     /// </ul>
     pub fn compute_redundancy(&self) -> ::std::option::Option<i32> {
         self.compute_redundancy
@@ -152,40 +152,40 @@ impl CreateDbShardGroupInputBuilder {
     pub fn get_db_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.db_cluster_identifier
     }
-    /// <p>Specifies whether to create standby DB shard groups for the DB shard group. Valid values are the following:</p>
+    /// <p>Specifies whether to create standby standby DB data access shard for the DB shard group. Valid values are the following:</p>
     /// <ul>
     /// <li>
-    /// <p>0 - Creates a DB shard group without a standby DB shard group. This is the default value.</p></li>
+    /// <p>0 - Creates a DB shard group without a standby DB data access shard. This is the default value.</p></li>
     /// <li>
-    /// <p>1 - Creates a DB shard group with a standby DB shard group in a different Availability Zone (AZ).</p></li>
+    /// <p>1 - Creates a DB shard group with a standby DB data access shard in a different Availability Zone (AZ).</p></li>
     /// <li>
-    /// <p>2 - Creates a DB shard group with two standby DB shard groups in two different AZs.</p></li>
+    /// <p>2 - Creates a DB shard group with two standby DB data access shard in two different AZs.</p></li>
     /// </ul>
     pub fn compute_redundancy(mut self, input: i32) -> Self {
         self.compute_redundancy = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies whether to create standby DB shard groups for the DB shard group. Valid values are the following:</p>
+    /// <p>Specifies whether to create standby standby DB data access shard for the DB shard group. Valid values are the following:</p>
     /// <ul>
     /// <li>
-    /// <p>0 - Creates a DB shard group without a standby DB shard group. This is the default value.</p></li>
+    /// <p>0 - Creates a DB shard group without a standby DB data access shard. This is the default value.</p></li>
     /// <li>
-    /// <p>1 - Creates a DB shard group with a standby DB shard group in a different Availability Zone (AZ).</p></li>
+    /// <p>1 - Creates a DB shard group with a standby DB data access shard in a different Availability Zone (AZ).</p></li>
     /// <li>
-    /// <p>2 - Creates a DB shard group with two standby DB shard groups in two different AZs.</p></li>
+    /// <p>2 - Creates a DB shard group with two standby DB data access shard in two different AZs.</p></li>
     /// </ul>
     pub fn set_compute_redundancy(mut self, input: ::std::option::Option<i32>) -> Self {
         self.compute_redundancy = input;
         self
     }
-    /// <p>Specifies whether to create standby DB shard groups for the DB shard group. Valid values are the following:</p>
+    /// <p>Specifies whether to create standby standby DB data access shard for the DB shard group. Valid values are the following:</p>
     /// <ul>
     /// <li>
-    /// <p>0 - Creates a DB shard group without a standby DB shard group. This is the default value.</p></li>
+    /// <p>0 - Creates a DB shard group without a standby DB data access shard. This is the default value.</p></li>
     /// <li>
-    /// <p>1 - Creates a DB shard group with a standby DB shard group in a different Availability Zone (AZ).</p></li>
+    /// <p>1 - Creates a DB shard group with a standby DB data access shard in a different Availability Zone (AZ).</p></li>
     /// <li>
-    /// <p>2 - Creates a DB shard group with two standby DB shard groups in two different AZs.</p></li>
+    /// <p>2 - Creates a DB shard group with two standby DB data access shard in two different AZs.</p></li>
     /// </ul>
     pub fn get_compute_redundancy(&self) -> &::std::option::Option<i32> {
         &self.compute_redundancy

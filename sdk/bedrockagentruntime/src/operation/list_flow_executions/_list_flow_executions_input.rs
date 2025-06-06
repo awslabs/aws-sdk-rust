@@ -7,7 +7,7 @@ pub struct ListFlowExecutionsInput {
     pub flow_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of the flow alias to list executions for.</p>
     pub flow_alias_identifier: ::std::option::Option<::std::string::String>,
-    /// <p>The maximum number of async executions to return in a single response. If more executions exist than the specified maxResults value, a token is included in the response so that the remaining results can be retrieved.</p>
+    /// <p>The maximum number of flow executions to return in a single response. If more executions exist than the specified <code>maxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
     pub max_results: ::std::option::Option<i32>,
     /// <p>A token to retrieve the next set of results. This value is returned in the response if more results are available.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -21,7 +21,7 @@ impl ListFlowExecutionsInput {
     pub fn flow_alias_identifier(&self) -> ::std::option::Option<&str> {
         self.flow_alias_identifier.as_deref()
     }
-    /// <p>The maximum number of async executions to return in a single response. If more executions exist than the specified maxResults value, a token is included in the response so that the remaining results can be retrieved.</p>
+    /// <p>The maximum number of flow executions to return in a single response. If more executions exist than the specified <code>maxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
@@ -76,17 +76,17 @@ impl ListFlowExecutionsInputBuilder {
     pub fn get_flow_alias_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.flow_alias_identifier
     }
-    /// <p>The maximum number of async executions to return in a single response. If more executions exist than the specified maxResults value, a token is included in the response so that the remaining results can be retrieved.</p>
+    /// <p>The maximum number of flow executions to return in a single response. If more executions exist than the specified <code>maxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The maximum number of async executions to return in a single response. If more executions exist than the specified maxResults value, a token is included in the response so that the remaining results can be retrieved.</p>
+    /// <p>The maximum number of flow executions to return in a single response. If more executions exist than the specified <code>maxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
     }
-    /// <p>The maximum number of async executions to return in a single response. If more executions exist than the specified maxResults value, a token is included in the response so that the remaining results can be retrieved.</p>
+    /// <p>The maximum number of flow executions to return in a single response. If more executions exist than the specified <code>maxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }

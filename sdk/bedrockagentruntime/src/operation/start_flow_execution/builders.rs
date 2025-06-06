@@ -22,9 +22,9 @@ impl crate::operation::start_flow_execution::builders::StartFlowExecutionInputBu
 }
 /// Fluent builder constructing a request to `StartFlowExecution`.
 ///
-/// <p>Starts an asynchronous execution of an Amazon Bedrock flow. Unlike synchronous flows that run until completion or time out after five minutes, you can run asynchronous flows for longer durations. Asynchronous flows also yield control so that your application can perform other tasks.</p>
-/// <p>This operation returns an Amazon Resource Name (ARN) that you can use to track and manage your flow's async execution.</p><note>
-/// <p>Asynchronous flows is in preview release for Amazon Bedrock and is subject to change.</p>
+/// <p>Starts an execution of an Amazon Bedrock flow. Unlike flows that run until completion or time out after five minutes, flow executions let you run flows asynchronously for longer durations. Flow executions also yield control so that your application can perform other tasks.</p>
+/// <p>This operation returns an Amazon Resource Name (ARN) that you can use to track and manage your flow execution.</p><note>
+/// <p>Flow executions is in preview release for Amazon Bedrock and is subject to change.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StartFlowExecutionFluentBuilder {
@@ -125,31 +125,31 @@ impl StartFlowExecutionFluentBuilder {
     pub fn get_flow_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_flow_identifier()
     }
-    /// <p>The unique identifier of the flow alias to use for the async execution.</p>
+    /// <p>The unique identifier of the flow alias to use for the flow execution.</p>
     pub fn flow_alias_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.flow_alias_identifier(input.into());
         self
     }
-    /// <p>The unique identifier of the flow alias to use for the async execution.</p>
+    /// <p>The unique identifier of the flow alias to use for the flow execution.</p>
     pub fn set_flow_alias_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_flow_alias_identifier(input);
         self
     }
-    /// <p>The unique identifier of the flow alias to use for the async execution.</p>
+    /// <p>The unique identifier of the flow alias to use for the flow execution.</p>
     pub fn get_flow_alias_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_flow_alias_identifier()
     }
-    /// <p>The unique name for the async execution. If you don't provide one, a system-generated name is used.</p>
+    /// <p>The unique name for the flow execution. If you don't provide one, a system-generated name is used.</p>
     pub fn flow_execution_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.flow_execution_name(input.into());
         self
     }
-    /// <p>The unique name for the async execution. If you don't provide one, a system-generated name is used.</p>
+    /// <p>The unique name for the flow execution. If you don't provide one, a system-generated name is used.</p>
     pub fn set_flow_execution_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_flow_execution_name(input);
         self
     }
-    /// <p>The unique name for the async execution. If you don't provide one, a system-generated name is used.</p>
+    /// <p>The unique name for the flow execution. If you don't provide one, a system-generated name is used.</p>
     pub fn get_flow_execution_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_flow_execution_name()
     }
@@ -158,31 +158,31 @@ impl StartFlowExecutionFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_inputs`](Self::set_inputs).
     ///
-    /// <p>The input data required for the async execution. This must match the input schema defined in the flow.</p>
+    /// <p>The input data required for the flow execution. This must match the input schema defined in the flow.</p>
     pub fn inputs(mut self, input: crate::types::FlowInput) -> Self {
         self.inner = self.inner.inputs(input);
         self
     }
-    /// <p>The input data required for the async execution. This must match the input schema defined in the flow.</p>
+    /// <p>The input data required for the flow execution. This must match the input schema defined in the flow.</p>
     pub fn set_inputs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FlowInput>>) -> Self {
         self.inner = self.inner.set_inputs(input);
         self
     }
-    /// <p>The input data required for the async execution. This must match the input schema defined in the flow.</p>
+    /// <p>The input data required for the flow execution. This must match the input schema defined in the flow.</p>
     pub fn get_inputs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FlowInput>> {
         self.inner.get_inputs()
     }
-    /// <p>The performance settings for the foundation model used in the async execution.</p>
+    /// <p>The performance settings for the foundation model used in the flow execution.</p>
     pub fn model_performance_configuration(mut self, input: crate::types::ModelPerformanceConfiguration) -> Self {
         self.inner = self.inner.model_performance_configuration(input);
         self
     }
-    /// <p>The performance settings for the foundation model used in the async execution.</p>
+    /// <p>The performance settings for the foundation model used in the flow execution.</p>
     pub fn set_model_performance_configuration(mut self, input: ::std::option::Option<crate::types::ModelPerformanceConfiguration>) -> Self {
         self.inner = self.inner.set_model_performance_configuration(input);
         self
     }
-    /// <p>The performance settings for the foundation model used in the async execution.</p>
+    /// <p>The performance settings for the foundation model used in the flow execution.</p>
     pub fn get_model_performance_configuration(&self) -> &::std::option::Option<crate::types::ModelPerformanceConfiguration> {
         self.inner.get_model_performance_configuration()
     }

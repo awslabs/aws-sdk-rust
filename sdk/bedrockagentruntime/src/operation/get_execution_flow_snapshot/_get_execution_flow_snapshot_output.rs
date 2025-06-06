@@ -5,13 +5,13 @@
 pub struct GetExecutionFlowSnapshotOutput {
     /// <p>The unique identifier of the flow.</p>
     pub flow_identifier: ::std::string::String,
-    /// <p>The unique identifier of the flow alias used for the async execution.</p>
+    /// <p>The unique identifier of the flow alias used for the flow execution.</p>
     pub flow_alias_identifier: ::std::string::String,
-    /// <p>The version of the flow used for the async execution.</p>
+    /// <p>The version of the flow used for the flow execution.</p>
     pub flow_version: ::std::string::String,
-    /// <p>The Amazon Resource Name (ARN) of the IAM service role that's used by the async execution.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM service role that's used by the flow execution.</p>
     pub execution_role_arn: ::std::string::String,
-    /// <p>The flow definition used for the async execution, including the nodes, connections, and configuration at the time when the execution started.</p>
+    /// <p>The flow definition used for the flow execution, including the nodes, connections, and configuration at the time when the execution started.</p>
     /// <p>The definition returns as a string that follows the structure of a <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_FlowDefinition.html">FlowDefinition</a> object.</p>
     pub definition: ::std::string::String,
     /// <p>The Amazon Resource Name (ARN) of the customer managed KMS key that's used to encrypt the flow snapshot.</p>
@@ -24,22 +24,22 @@ impl GetExecutionFlowSnapshotOutput {
         use std::ops::Deref;
         self.flow_identifier.deref()
     }
-    /// <p>The unique identifier of the flow alias used for the async execution.</p>
+    /// <p>The unique identifier of the flow alias used for the flow execution.</p>
     pub fn flow_alias_identifier(&self) -> &str {
         use std::ops::Deref;
         self.flow_alias_identifier.deref()
     }
-    /// <p>The version of the flow used for the async execution.</p>
+    /// <p>The version of the flow used for the flow execution.</p>
     pub fn flow_version(&self) -> &str {
         use std::ops::Deref;
         self.flow_version.deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the IAM service role that's used by the async execution.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM service role that's used by the flow execution.</p>
     pub fn execution_role_arn(&self) -> &str {
         use std::ops::Deref;
         self.execution_role_arn.deref()
     }
-    /// <p>The flow definition used for the async execution, including the nodes, connections, and configuration at the time when the execution started.</p>
+    /// <p>The flow definition used for the flow execution, including the nodes, connections, and configuration at the time when the execution started.</p>
     /// <p>The definition returns as a string that follows the structure of a <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_FlowDefinition.html">FlowDefinition</a> object.</p>
     pub fn definition(&self) -> &str {
         use std::ops::Deref;
@@ -90,65 +90,65 @@ impl GetExecutionFlowSnapshotOutputBuilder {
     pub fn get_flow_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.flow_identifier
     }
-    /// <p>The unique identifier of the flow alias used for the async execution.</p>
+    /// <p>The unique identifier of the flow alias used for the flow execution.</p>
     /// This field is required.
     pub fn flow_alias_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.flow_alias_identifier = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The unique identifier of the flow alias used for the async execution.</p>
+    /// <p>The unique identifier of the flow alias used for the flow execution.</p>
     pub fn set_flow_alias_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.flow_alias_identifier = input;
         self
     }
-    /// <p>The unique identifier of the flow alias used for the async execution.</p>
+    /// <p>The unique identifier of the flow alias used for the flow execution.</p>
     pub fn get_flow_alias_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.flow_alias_identifier
     }
-    /// <p>The version of the flow used for the async execution.</p>
+    /// <p>The version of the flow used for the flow execution.</p>
     /// This field is required.
     pub fn flow_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.flow_version = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The version of the flow used for the async execution.</p>
+    /// <p>The version of the flow used for the flow execution.</p>
     pub fn set_flow_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.flow_version = input;
         self
     }
-    /// <p>The version of the flow used for the async execution.</p>
+    /// <p>The version of the flow used for the flow execution.</p>
     pub fn get_flow_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.flow_version
     }
-    /// <p>The Amazon Resource Name (ARN) of the IAM service role that's used by the async execution.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM service role that's used by the flow execution.</p>
     /// This field is required.
     pub fn execution_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.execution_role_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the IAM service role that's used by the async execution.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM service role that's used by the flow execution.</p>
     pub fn set_execution_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.execution_role_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the IAM service role that's used by the async execution.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM service role that's used by the flow execution.</p>
     pub fn get_execution_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.execution_role_arn
     }
-    /// <p>The flow definition used for the async execution, including the nodes, connections, and configuration at the time when the execution started.</p>
+    /// <p>The flow definition used for the flow execution, including the nodes, connections, and configuration at the time when the execution started.</p>
     /// <p>The definition returns as a string that follows the structure of a <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_FlowDefinition.html">FlowDefinition</a> object.</p>
     /// This field is required.
     pub fn definition(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.definition = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The flow definition used for the async execution, including the nodes, connections, and configuration at the time when the execution started.</p>
+    /// <p>The flow definition used for the flow execution, including the nodes, connections, and configuration at the time when the execution started.</p>
     /// <p>The definition returns as a string that follows the structure of a <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_FlowDefinition.html">FlowDefinition</a> object.</p>
     pub fn set_definition(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.definition = input;
         self
     }
-    /// <p>The flow definition used for the async execution, including the nodes, connections, and configuration at the time when the execution started.</p>
+    /// <p>The flow definition used for the flow execution, including the nodes, connections, and configuration at the time when the execution started.</p>
     /// <p>The definition returns as a string that follows the structure of a <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_FlowDefinition.html">FlowDefinition</a> object.</p>
     pub fn get_definition(&self) -> &::std::option::Option<::std::string::String> {
         &self.definition

@@ -3,16 +3,16 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetFlowExecutionOutput {
-    /// <p>The Amazon Resource Name (ARN) that uniquely identifies the async execution.</p>
+    /// <p>The Amazon Resource Name (ARN) that uniquely identifies the flow execution.</p>
     pub execution_arn: ::std::string::String,
-    /// <p>The current status of the async execution.</p>
-    /// <p>Async executions time out after 24 hours.</p>
+    /// <p>The current status of the flow execution.</p>
+    /// <p>Flow executions time out after 24 hours.</p>
     pub status: crate::types::FlowExecutionStatus,
-    /// <p>The timestamp when the async execution started.</p>
+    /// <p>The timestamp when the flow execution started.</p>
     pub started_at: ::aws_smithy_types::DateTime,
-    /// <p>The timestamp when the async execution ended. This field is only populated when the execution has completed, failed, timed out, or been aborted.</p>
+    /// <p>The timestamp when the flow execution ended. This field is only populated when the execution has completed, failed, timed out, or been aborted.</p>
     pub ended_at: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>A list of errors that occurred during the async execution. Each error includes an error code, message, and the node where the error occurred, if applicable.</p>
+    /// <p>A list of errors that occurred during the flow execution. Each error includes an error code, message, and the node where the error occurred, if applicable.</p>
     pub errors: ::std::option::Option<::std::vec::Vec<crate::types::FlowExecutionError>>,
     /// <p>The unique identifier of the flow alias used for the execution.</p>
     pub flow_alias_identifier: ::std::string::String,
@@ -23,25 +23,25 @@ pub struct GetFlowExecutionOutput {
     _request_id: Option<String>,
 }
 impl GetFlowExecutionOutput {
-    /// <p>The Amazon Resource Name (ARN) that uniquely identifies the async execution.</p>
+    /// <p>The Amazon Resource Name (ARN) that uniquely identifies the flow execution.</p>
     pub fn execution_arn(&self) -> &str {
         use std::ops::Deref;
         self.execution_arn.deref()
     }
-    /// <p>The current status of the async execution.</p>
-    /// <p>Async executions time out after 24 hours.</p>
+    /// <p>The current status of the flow execution.</p>
+    /// <p>Flow executions time out after 24 hours.</p>
     pub fn status(&self) -> &crate::types::FlowExecutionStatus {
         &self.status
     }
-    /// <p>The timestamp when the async execution started.</p>
+    /// <p>The timestamp when the flow execution started.</p>
     pub fn started_at(&self) -> &::aws_smithy_types::DateTime {
         &self.started_at
     }
-    /// <p>The timestamp when the async execution ended. This field is only populated when the execution has completed, failed, timed out, or been aborted.</p>
+    /// <p>The timestamp when the flow execution ended. This field is only populated when the execution has completed, failed, timed out, or been aborted.</p>
     pub fn ended_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.ended_at.as_ref()
     }
-    /// <p>A list of errors that occurred during the async execution. Each error includes an error code, message, and the node where the error occurred, if applicable.</p>
+    /// <p>A list of errors that occurred during the flow execution. Each error includes an error code, message, and the node where the error occurred, if applicable.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.errors.is_none()`.
     pub fn errors(&self) -> &[crate::types::FlowExecutionError] {
@@ -90,65 +90,65 @@ pub struct GetFlowExecutionOutputBuilder {
     _request_id: Option<String>,
 }
 impl GetFlowExecutionOutputBuilder {
-    /// <p>The Amazon Resource Name (ARN) that uniquely identifies the async execution.</p>
+    /// <p>The Amazon Resource Name (ARN) that uniquely identifies the flow execution.</p>
     /// This field is required.
     pub fn execution_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.execution_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) that uniquely identifies the async execution.</p>
+    /// <p>The Amazon Resource Name (ARN) that uniquely identifies the flow execution.</p>
     pub fn set_execution_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.execution_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) that uniquely identifies the async execution.</p>
+    /// <p>The Amazon Resource Name (ARN) that uniquely identifies the flow execution.</p>
     pub fn get_execution_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.execution_arn
     }
-    /// <p>The current status of the async execution.</p>
-    /// <p>Async executions time out after 24 hours.</p>
+    /// <p>The current status of the flow execution.</p>
+    /// <p>Flow executions time out after 24 hours.</p>
     /// This field is required.
     pub fn status(mut self, input: crate::types::FlowExecutionStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The current status of the async execution.</p>
-    /// <p>Async executions time out after 24 hours.</p>
+    /// <p>The current status of the flow execution.</p>
+    /// <p>Flow executions time out after 24 hours.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::FlowExecutionStatus>) -> Self {
         self.status = input;
         self
     }
-    /// <p>The current status of the async execution.</p>
-    /// <p>Async executions time out after 24 hours.</p>
+    /// <p>The current status of the flow execution.</p>
+    /// <p>Flow executions time out after 24 hours.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::FlowExecutionStatus> {
         &self.status
     }
-    /// <p>The timestamp when the async execution started.</p>
+    /// <p>The timestamp when the flow execution started.</p>
     /// This field is required.
     pub fn started_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.started_at = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The timestamp when the async execution started.</p>
+    /// <p>The timestamp when the flow execution started.</p>
     pub fn set_started_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.started_at = input;
         self
     }
-    /// <p>The timestamp when the async execution started.</p>
+    /// <p>The timestamp when the flow execution started.</p>
     pub fn get_started_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.started_at
     }
-    /// <p>The timestamp when the async execution ended. This field is only populated when the execution has completed, failed, timed out, or been aborted.</p>
+    /// <p>The timestamp when the flow execution ended. This field is only populated when the execution has completed, failed, timed out, or been aborted.</p>
     pub fn ended_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.ended_at = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The timestamp when the async execution ended. This field is only populated when the execution has completed, failed, timed out, or been aborted.</p>
+    /// <p>The timestamp when the flow execution ended. This field is only populated when the execution has completed, failed, timed out, or been aborted.</p>
     pub fn set_ended_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.ended_at = input;
         self
     }
-    /// <p>The timestamp when the async execution ended. This field is only populated when the execution has completed, failed, timed out, or been aborted.</p>
+    /// <p>The timestamp when the flow execution ended. This field is only populated when the execution has completed, failed, timed out, or been aborted.</p>
     pub fn get_ended_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.ended_at
     }
@@ -156,19 +156,19 @@ impl GetFlowExecutionOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_errors`](Self::set_errors).
     ///
-    /// <p>A list of errors that occurred during the async execution. Each error includes an error code, message, and the node where the error occurred, if applicable.</p>
+    /// <p>A list of errors that occurred during the flow execution. Each error includes an error code, message, and the node where the error occurred, if applicable.</p>
     pub fn errors(mut self, input: crate::types::FlowExecutionError) -> Self {
         let mut v = self.errors.unwrap_or_default();
         v.push(input);
         self.errors = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of errors that occurred during the async execution. Each error includes an error code, message, and the node where the error occurred, if applicable.</p>
+    /// <p>A list of errors that occurred during the flow execution. Each error includes an error code, message, and the node where the error occurred, if applicable.</p>
     pub fn set_errors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FlowExecutionError>>) -> Self {
         self.errors = input;
         self
     }
-    /// <p>A list of errors that occurred during the async execution. Each error includes an error code, message, and the node where the error occurred, if applicable.</p>
+    /// <p>A list of errors that occurred during the flow execution. Each error includes an error code, message, and the node where the error occurred, if applicable.</p>
     pub fn get_errors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FlowExecutionError>> {
         &self.errors
     }

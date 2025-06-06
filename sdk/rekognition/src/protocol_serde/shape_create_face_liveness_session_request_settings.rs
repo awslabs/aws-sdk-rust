@@ -15,5 +15,17 @@ pub fn ser_create_face_liveness_session_request_settings(
             ::aws_smithy_types::Number::NegInt((*var_3).into()),
         );
     }
+    if let Some(var_4) = &input.challenge_preferences {
+        let mut array_5 = object.key("ChallengePreferences").start_array();
+        for item_6 in var_4 {
+            {
+                #[allow(unused_mut)]
+                let mut object_7 = array_5.value().start_object();
+                crate::protocol_serde::shape_challenge_preference::ser_challenge_preference(&mut object_7, item_6)?;
+                object_7.finish();
+            }
+        }
+        array_5.finish();
+    }
     Ok(())
 }

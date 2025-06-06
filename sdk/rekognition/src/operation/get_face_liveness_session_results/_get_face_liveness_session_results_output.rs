@@ -13,6 +13,8 @@ pub struct GetFaceLivenessSessionResultsOutput {
     pub reference_image: ::std::option::Option<crate::types::AuditImage>,
     /// <p>A set of images from the Face Liveness video that can be used for audit purposes. It includes a bounding box of the face and the Base64-encoded bytes that return an image. If the CreateFaceLivenessSession request included an OutputConfig argument, the image will be uploaded to an S3Object specified in the output configuration. If no Amazon S3 bucket is defined, raw bytes are sent instead.</p>
     pub audit_images: ::std::option::Option<::std::vec::Vec<crate::types::AuditImage>>,
+    /// <p>Contains information regarding the challenge type used for the Face Liveness check.</p>
+    pub challenge: ::std::option::Option<crate::types::Challenge>,
     _request_id: Option<String>,
 }
 impl GetFaceLivenessSessionResultsOutput {
@@ -39,6 +41,10 @@ impl GetFaceLivenessSessionResultsOutput {
     pub fn audit_images(&self) -> &[crate::types::AuditImage] {
         self.audit_images.as_deref().unwrap_or_default()
     }
+    /// <p>Contains information regarding the challenge type used for the Face Liveness check.</p>
+    pub fn challenge(&self) -> ::std::option::Option<&crate::types::Challenge> {
+        self.challenge.as_ref()
+    }
 }
 impl ::aws_types::request_id::RequestId for GetFaceLivenessSessionResultsOutput {
     fn request_id(&self) -> Option<&str> {
@@ -61,6 +67,7 @@ pub struct GetFaceLivenessSessionResultsOutputBuilder {
     pub(crate) confidence: ::std::option::Option<f32>,
     pub(crate) reference_image: ::std::option::Option<crate::types::AuditImage>,
     pub(crate) audit_images: ::std::option::Option<::std::vec::Vec<crate::types::AuditImage>>,
+    pub(crate) challenge: ::std::option::Option<crate::types::Challenge>,
     _request_id: Option<String>,
 }
 impl GetFaceLivenessSessionResultsOutputBuilder {
@@ -142,6 +149,20 @@ impl GetFaceLivenessSessionResultsOutputBuilder {
     pub fn get_audit_images(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AuditImage>> {
         &self.audit_images
     }
+    /// <p>Contains information regarding the challenge type used for the Face Liveness check.</p>
+    pub fn challenge(mut self, input: crate::types::Challenge) -> Self {
+        self.challenge = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Contains information regarding the challenge type used for the Face Liveness check.</p>
+    pub fn set_challenge(mut self, input: ::std::option::Option<crate::types::Challenge>) -> Self {
+        self.challenge = input;
+        self
+    }
+    /// <p>Contains information regarding the challenge type used for the Face Liveness check.</p>
+    pub fn get_challenge(&self) -> &::std::option::Option<crate::types::Challenge> {
+        &self.challenge
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -177,6 +198,7 @@ impl GetFaceLivenessSessionResultsOutputBuilder {
             confidence: self.confidence,
             reference_image: self.reference_image,
             audit_images: self.audit_images,
+            challenge: self.challenge,
             _request_id: self._request_id,
         })
     }

@@ -36,7 +36,7 @@ impl crate::operation::create_table::builders::CreateTableInputBuilder {
 /// <li>
 /// <p>If you use this operation with the optional <code>encryptionConfiguration</code> request parameter you must have the <code>s3tables:PutTableEncryption</code> permission.</p></li>
 /// </ul><note>
-/// <p>Additionally,</p>
+/// <p>Additionally, If you choose SSE-KMS encryption you must grant the S3 Tables maintenance principal access to your KMS key. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-tables-kms-permissions.html">Permissions requirements for S3 Tables SSE-KMS encryption</a>.</p>
 /// </note>
 /// </dd>
 /// </dl>

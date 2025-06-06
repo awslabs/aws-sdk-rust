@@ -14,6 +14,7 @@
 /// match cloudwatchregion {
 ///     CloudWatchRegion::AfSouth1 => { /* ... */ },
 ///     CloudWatchRegion::ApEast1 => { /* ... */ },
+///     CloudWatchRegion::ApEast2 => { /* ... */ },
 ///     CloudWatchRegion::ApNortheast1 => { /* ... */ },
 ///     CloudWatchRegion::ApNortheast2 => { /* ... */ },
 ///     CloudWatchRegion::ApNortheast3 => { /* ... */ },
@@ -85,6 +86,8 @@ pub enum CloudWatchRegion {
     AfSouth1,
     #[allow(missing_docs)] // documentation missing in model
     ApEast1,
+    #[allow(missing_docs)] // documentation missing in model
+    ApEast2,
     #[allow(missing_docs)] // documentation missing in model
     ApNortheast1,
     #[allow(missing_docs)] // documentation missing in model
@@ -172,6 +175,7 @@ impl ::std::convert::From<&str> for CloudWatchRegion {
         match s {
             "af-south-1" => CloudWatchRegion::AfSouth1,
             "ap-east-1" => CloudWatchRegion::ApEast1,
+            "ap-east-2" => CloudWatchRegion::ApEast2,
             "ap-northeast-1" => CloudWatchRegion::ApNortheast1,
             "ap-northeast-2" => CloudWatchRegion::ApNortheast2,
             "ap-northeast-3" => CloudWatchRegion::ApNortheast3,
@@ -228,6 +232,7 @@ impl CloudWatchRegion {
         match self {
             CloudWatchRegion::AfSouth1 => "af-south-1",
             CloudWatchRegion::ApEast1 => "ap-east-1",
+            CloudWatchRegion::ApEast2 => "ap-east-2",
             CloudWatchRegion::ApNortheast1 => "ap-northeast-1",
             CloudWatchRegion::ApNortheast2 => "ap-northeast-2",
             CloudWatchRegion::ApNortheast3 => "ap-northeast-3",
@@ -275,6 +280,7 @@ impl CloudWatchRegion {
         &[
             "af-south-1",
             "ap-east-1",
+            "ap-east-2",
             "ap-northeast-1",
             "ap-northeast-2",
             "ap-northeast-3",
@@ -339,6 +345,7 @@ impl ::std::fmt::Display for CloudWatchRegion {
         match self {
             CloudWatchRegion::AfSouth1 => write!(f, "af-south-1"),
             CloudWatchRegion::ApEast1 => write!(f, "ap-east-1"),
+            CloudWatchRegion::ApEast2 => write!(f, "ap-east-2"),
             CloudWatchRegion::ApNortheast1 => write!(f, "ap-northeast-1"),
             CloudWatchRegion::ApNortheast2 => write!(f, "ap-northeast-2"),
             CloudWatchRegion::ApNortheast3 => write!(f, "ap-northeast-3"),

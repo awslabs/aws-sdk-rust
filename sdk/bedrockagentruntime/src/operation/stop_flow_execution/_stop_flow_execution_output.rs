@@ -3,18 +3,18 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StopFlowExecutionOutput {
-    /// <p>The Amazon Resource Name (ARN) that uniquely identifies the async execution that was stopped.</p>
+    /// <p>The Amazon Resource Name (ARN) that uniquely identifies the flow execution that was stopped.</p>
     pub execution_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The updated status of the async execution after the stop request. This will typically be ABORTED if the execution was successfully stopped.</p>
+    /// <p>The updated status of the flow execution after the stop request. This will typically be ABORTED if the execution was successfully stopped.</p>
     pub status: crate::types::FlowExecutionStatus,
     _request_id: Option<String>,
 }
 impl StopFlowExecutionOutput {
-    /// <p>The Amazon Resource Name (ARN) that uniquely identifies the async execution that was stopped.</p>
+    /// <p>The Amazon Resource Name (ARN) that uniquely identifies the flow execution that was stopped.</p>
     pub fn execution_arn(&self) -> ::std::option::Option<&str> {
         self.execution_arn.as_deref()
     }
-    /// <p>The updated status of the async execution after the stop request. This will typically be ABORTED if the execution was successfully stopped.</p>
+    /// <p>The updated status of the flow execution after the stop request. This will typically be ABORTED if the execution was successfully stopped.</p>
     pub fn status(&self) -> &crate::types::FlowExecutionStatus {
         &self.status
     }
@@ -40,32 +40,32 @@ pub struct StopFlowExecutionOutputBuilder {
     _request_id: Option<String>,
 }
 impl StopFlowExecutionOutputBuilder {
-    /// <p>The Amazon Resource Name (ARN) that uniquely identifies the async execution that was stopped.</p>
+    /// <p>The Amazon Resource Name (ARN) that uniquely identifies the flow execution that was stopped.</p>
     pub fn execution_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.execution_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) that uniquely identifies the async execution that was stopped.</p>
+    /// <p>The Amazon Resource Name (ARN) that uniquely identifies the flow execution that was stopped.</p>
     pub fn set_execution_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.execution_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) that uniquely identifies the async execution that was stopped.</p>
+    /// <p>The Amazon Resource Name (ARN) that uniquely identifies the flow execution that was stopped.</p>
     pub fn get_execution_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.execution_arn
     }
-    /// <p>The updated status of the async execution after the stop request. This will typically be ABORTED if the execution was successfully stopped.</p>
+    /// <p>The updated status of the flow execution after the stop request. This will typically be ABORTED if the execution was successfully stopped.</p>
     /// This field is required.
     pub fn status(mut self, input: crate::types::FlowExecutionStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The updated status of the async execution after the stop request. This will typically be ABORTED if the execution was successfully stopped.</p>
+    /// <p>The updated status of the flow execution after the stop request. This will typically be ABORTED if the execution was successfully stopped.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::FlowExecutionStatus>) -> Self {
         self.status = input;
         self
     }
-    /// <p>The updated status of the async execution after the stop request. This will typically be ABORTED if the execution was successfully stopped.</p>
+    /// <p>The updated status of the flow execution after the stop request. This will typically be ABORTED if the execution was successfully stopped.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::FlowExecutionStatus> {
         &self.status
     }

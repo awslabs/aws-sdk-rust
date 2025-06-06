@@ -29,7 +29,7 @@ impl crate::operation::put_table_bucket_encryption::builders::PutTableBucketEncr
 /// </dt>
 /// <dd>
 /// <p>You must have the <code>s3tables:PutTableBucketEncryption</code> permission to use this operation.</p><note>
-/// <p>If you choose SSE-KMS encryption you must grant the S3 Tables maintenance principal access to your KMS key. For more information, see <a href="AmazonS3/latest/userguide/s3-tables-kms-permissions.html">Permissions requirements for S3 Tables SSE-KMS encryption</a></p>
+/// <p>If you choose SSE-KMS encryption you must grant the S3 Tables maintenance principal access to your KMS key. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-tables-kms-permissions.html">Permissions requirements for S3 Tables SSE-KMS encryption</a> in the <i>Amazon Simple Storage Service User Guide</i>.</p>
 /// </note>
 /// </dd>
 /// </dl>

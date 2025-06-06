@@ -3,14 +3,14 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListFlowExecutionsOutput {
-    /// <p>A list of async execution summaries. Each summary includes the execution ARN, flow identifier, flow alias identifier, flow version, status, and timestamps.</p>
+    /// <p>A list of flow execution summaries. Each summary includes the execution ARN, flow identifier, flow alias identifier, flow version, status, and timestamps.</p>
     pub flow_execution_summaries: ::std::vec::Vec<crate::types::FlowExecutionSummary>,
     /// <p>A token to retrieve the next set of results. This value is returned if more results are available.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListFlowExecutionsOutput {
-    /// <p>A list of async execution summaries. Each summary includes the execution ARN, flow identifier, flow alias identifier, flow version, status, and timestamps.</p>
+    /// <p>A list of flow execution summaries. Each summary includes the execution ARN, flow identifier, flow alias identifier, flow version, status, and timestamps.</p>
     pub fn flow_execution_summaries(&self) -> &[crate::types::FlowExecutionSummary] {
         use std::ops::Deref;
         self.flow_execution_summaries.deref()
@@ -45,19 +45,19 @@ impl ListFlowExecutionsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_flow_execution_summaries`](Self::set_flow_execution_summaries).
     ///
-    /// <p>A list of async execution summaries. Each summary includes the execution ARN, flow identifier, flow alias identifier, flow version, status, and timestamps.</p>
+    /// <p>A list of flow execution summaries. Each summary includes the execution ARN, flow identifier, flow alias identifier, flow version, status, and timestamps.</p>
     pub fn flow_execution_summaries(mut self, input: crate::types::FlowExecutionSummary) -> Self {
         let mut v = self.flow_execution_summaries.unwrap_or_default();
         v.push(input);
         self.flow_execution_summaries = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of async execution summaries. Each summary includes the execution ARN, flow identifier, flow alias identifier, flow version, status, and timestamps.</p>
+    /// <p>A list of flow execution summaries. Each summary includes the execution ARN, flow identifier, flow alias identifier, flow version, status, and timestamps.</p>
     pub fn set_flow_execution_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FlowExecutionSummary>>) -> Self {
         self.flow_execution_summaries = input;
         self
     }
-    /// <p>A list of async execution summaries. Each summary includes the execution ARN, flow identifier, flow alias identifier, flow version, status, and timestamps.</p>
+    /// <p>A list of flow execution summaries. Each summary includes the execution ARN, flow identifier, flow alias identifier, flow version, status, and timestamps.</p>
     pub fn get_flow_execution_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FlowExecutionSummary>> {
         &self.flow_execution_summaries
     }

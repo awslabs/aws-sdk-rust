@@ -391,6 +391,8 @@ pub(crate) mod shape_celebrity_list;
 
 pub(crate) mod shape_celebrity_recognitions;
 
+pub(crate) mod shape_challenge;
+
 pub(crate) mod shape_collection_id_list;
 
 pub(crate) mod shape_compare_faces_match_list;
@@ -576,6 +578,8 @@ pub(crate) mod shape_audio_metadata;
 pub(crate) mod shape_celebrity;
 
 pub(crate) mod shape_celebrity_recognition;
+
+pub(crate) mod shape_challenge_preference;
 
 pub(crate) mod shape_compare_faces_match;
 
@@ -778,6 +782,8 @@ pub(crate) mod shape_unsuccessful_face_association_reasons;
 pub(crate) mod shape_unsuccessful_face_deletion_reasons;
 
 pub(crate) mod shape_unsuccessful_face_disassociation_reasons;
+
+pub(crate) mod shape_versions;
 
 pub(crate) mod shape_dataset_metadata;
 

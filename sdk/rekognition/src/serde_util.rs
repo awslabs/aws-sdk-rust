@@ -92,6 +92,16 @@ pub(crate) fn media_analysis_output_config_correct_errors(
     builder
 }
 
+pub(crate) fn challenge_correct_errors(mut builder: crate::types::builders::ChallengeBuilder) -> crate::types::builders::ChallengeBuilder {
+    if builder.r#type.is_none() {
+        builder.r#type = "no value was set".parse::<crate::types::ChallengeType>().ok()
+    }
+    if builder.version.is_none() {
+        builder.version = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn stream_processor_data_sharing_preference_correct_errors(
     mut builder: crate::types::builders::StreamProcessorDataSharingPreferenceBuilder,
 ) -> crate::types::builders::StreamProcessorDataSharingPreferenceBuilder {

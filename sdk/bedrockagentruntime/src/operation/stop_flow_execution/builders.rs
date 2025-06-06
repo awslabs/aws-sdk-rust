@@ -22,7 +22,7 @@ impl crate::operation::stop_flow_execution::builders::StopFlowExecutionInputBuil
 }
 /// Fluent builder constructing a request to `StopFlowExecution`.
 ///
-/// <p>Stops an Amazon Bedrock flow's asynchronous execution. This operation prevents further processing of the flow and changes the execution status to <code>Aborted</code>.</p>
+/// <p>Stops an Amazon Bedrock flow's execution. This operation prevents further processing of the flow and changes the execution status to <code>Aborted</code>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StopFlowExecutionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -136,17 +136,17 @@ impl StopFlowExecutionFluentBuilder {
     pub fn get_flow_alias_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_flow_alias_identifier()
     }
-    /// <p>The unique identifier of the async execution to stop.</p>
+    /// <p>The unique identifier of the flow execution to stop.</p>
     pub fn execution_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.execution_identifier(input.into());
         self
     }
-    /// <p>The unique identifier of the async execution to stop.</p>
+    /// <p>The unique identifier of the flow execution to stop.</p>
     pub fn set_execution_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_execution_identifier(input);
         self
     }
-    /// <p>The unique identifier of the async execution to stop.</p>
+    /// <p>The unique identifier of the flow execution to stop.</p>
     pub fn get_execution_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_execution_identifier()
     }

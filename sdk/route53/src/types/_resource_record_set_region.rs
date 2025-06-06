@@ -14,6 +14,7 @@
 /// match resourcerecordsetregion {
 ///     ResourceRecordSetRegion::AfSouth1 => { /* ... */ },
 ///     ResourceRecordSetRegion::ApEast1 => { /* ... */ },
+///     ResourceRecordSetRegion::ApEast2 => { /* ... */ },
 ///     ResourceRecordSetRegion::ApNortheast1 => { /* ... */ },
 ///     ResourceRecordSetRegion::ApNortheast2 => { /* ... */ },
 ///     ResourceRecordSetRegion::ApNortheast3 => { /* ... */ },
@@ -80,6 +81,8 @@ pub enum ResourceRecordSetRegion {
     AfSouth1,
     #[allow(missing_docs)] // documentation missing in model
     ApEast1,
+    #[allow(missing_docs)] // documentation missing in model
+    ApEast2,
     #[allow(missing_docs)] // documentation missing in model
     ApNortheast1,
     #[allow(missing_docs)] // documentation missing in model
@@ -157,6 +160,7 @@ impl ::std::convert::From<&str> for ResourceRecordSetRegion {
         match s {
             "af-south-1" => ResourceRecordSetRegion::AfSouth1,
             "ap-east-1" => ResourceRecordSetRegion::ApEast1,
+            "ap-east-2" => ResourceRecordSetRegion::ApEast2,
             "ap-northeast-1" => ResourceRecordSetRegion::ApNortheast1,
             "ap-northeast-2" => ResourceRecordSetRegion::ApNortheast2,
             "ap-northeast-3" => ResourceRecordSetRegion::ApNortheast3,
@@ -208,6 +212,7 @@ impl ResourceRecordSetRegion {
         match self {
             ResourceRecordSetRegion::AfSouth1 => "af-south-1",
             ResourceRecordSetRegion::ApEast1 => "ap-east-1",
+            ResourceRecordSetRegion::ApEast2 => "ap-east-2",
             ResourceRecordSetRegion::ApNortheast1 => "ap-northeast-1",
             ResourceRecordSetRegion::ApNortheast2 => "ap-northeast-2",
             ResourceRecordSetRegion::ApNortheast3 => "ap-northeast-3",
@@ -250,6 +255,7 @@ impl ResourceRecordSetRegion {
         &[
             "af-south-1",
             "ap-east-1",
+            "ap-east-2",
             "ap-northeast-1",
             "ap-northeast-2",
             "ap-northeast-3",
@@ -309,6 +315,7 @@ impl ::std::fmt::Display for ResourceRecordSetRegion {
         match self {
             ResourceRecordSetRegion::AfSouth1 => write!(f, "af-south-1"),
             ResourceRecordSetRegion::ApEast1 => write!(f, "ap-east-1"),
+            ResourceRecordSetRegion::ApEast2 => write!(f, "ap-east-2"),
             ResourceRecordSetRegion::ApNortheast1 => write!(f, "ap-northeast-1"),
             ResourceRecordSetRegion::ApNortheast2 => write!(f, "ap-northeast-2"),
             ResourceRecordSetRegion::ApNortheast3 => write!(f, "ap-northeast-3"),

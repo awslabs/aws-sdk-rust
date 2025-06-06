@@ -221,6 +221,10 @@ pub use crate::types::_person_match::PersonMatch;
 
 pub use crate::types::_face_search_sort_by::FaceSearchSortBy;
 
+pub use crate::types::_challenge::Challenge;
+
+pub use crate::types::_challenge_type::ChallengeType;
+
 pub use crate::types::_audit_image::AuditImage;
 
 pub use crate::types::_liveness_session_status::LivenessSessionStatus;
@@ -365,6 +369,10 @@ pub use crate::types::_unsuccessful_face_deletion_reason::UnsuccessfulFaceDeleti
 
 pub use crate::types::_create_face_liveness_session_request_settings::CreateFaceLivenessSessionRequestSettings;
 
+pub use crate::types::_challenge_preference::ChallengePreference;
+
+pub use crate::types::_versions::Versions;
+
 pub use crate::types::_liveness_output_config::LivenessOutputConfig;
 
 pub use crate::types::_dataset_source::DatasetSource;
@@ -406,6 +414,12 @@ mod _celebrity_detail;
 mod _celebrity_recognition;
 
 mod _celebrity_recognition_sort_by;
+
+mod _challenge;
+
+mod _challenge_preference;
+
+mod _challenge_type;
 
 mod _compare_faces_match;
 
@@ -750,6 +764,8 @@ mod _user_match;
 mod _user_status;
 
 mod _validation_data;
+
+mod _versions;
 
 mod _video;
 

@@ -22,8 +22,8 @@ impl crate::operation::list_flow_execution_events::builders::ListFlowExecutionEv
 }
 /// Fluent builder constructing a request to `ListFlowExecutionEvents`.
 ///
-/// <p>Lists events that occurred during an asynchronous execution of a flow. Events provide detailed information about the execution progress, including node inputs and outputs, flow inputs and outputs, condition results, and failure events.</p><note>
-/// <p>Asynchronous flows is in preview release for Amazon Bedrock and is subject to change.</p>
+/// <p>Lists events that occurred during a flow execution. Events provide detailed information about the execution progress, including node inputs and outputs, flow inputs and outputs, condition results, and failure events.</p><note>
+/// <p>Flow executions is in preview release for Amazon Bedrock and is subject to change.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListFlowExecutionEventsFluentBuilder {
@@ -144,17 +144,17 @@ impl ListFlowExecutionEventsFluentBuilder {
     pub fn get_flow_alias_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_flow_alias_identifier()
     }
-    /// <p>The unique identifier of the async execution.</p>
+    /// <p>The unique identifier of the flow execution.</p>
     pub fn execution_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.execution_identifier(input.into());
         self
     }
-    /// <p>The unique identifier of the async execution.</p>
+    /// <p>The unique identifier of the flow execution.</p>
     pub fn set_execution_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_execution_identifier(input);
         self
     }
-    /// <p>The unique identifier of the async execution.</p>
+    /// <p>The unique identifier of the flow execution.</p>
     pub fn get_execution_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_execution_identifier()
     }

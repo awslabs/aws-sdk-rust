@@ -12,7 +12,8 @@ pub struct ConnectionPoolConfigurationInfo {
     pub connection_borrow_timeout: ::std::option::Option<i32>,
     /// <p>Each item in the list represents a class of SQL operations that normally cause all later statements in a session using a proxy to be pinned to the same underlying database connection. Including an item in the list exempts that class of SQL operations from the pinning behavior. This setting is only supported for MySQL engine family databases. Currently, the only allowed value is <code>EXCLUDE_VARIABLE_SETS</code>.</p>
     pub session_pinning_filters: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>One or more SQL statements for the proxy to run when opening each new database connection. Typically used with <code>SET</code> statements to make sure that each connection has identical settings such as time zone and character set. This setting is empty by default. For multiple statements, use semicolons as the separator. You can also include multiple variables in a single <code>SET</code> statement, such as <code>SET x=1, y=2</code>.</p>
+    /// <p>One or more SQL statements for the proxy to run when opening each new database connection. The setting is typically used with <code>SET</code> statements to make sure that each connection has identical settings. The query added here must be valid. For including multiple variables in a single SET statement, use a comma separator. This is an optional field.</p>
+    /// <p>For example: <code>SET variable1=value1, variable2=value2</code></p>
     pub init_query: ::std::option::Option<::std::string::String>,
 }
 impl ConnectionPoolConfigurationInfo {
@@ -34,7 +35,8 @@ impl ConnectionPoolConfigurationInfo {
     pub fn session_pinning_filters(&self) -> &[::std::string::String] {
         self.session_pinning_filters.as_deref().unwrap_or_default()
     }
-    /// <p>One or more SQL statements for the proxy to run when opening each new database connection. Typically used with <code>SET</code> statements to make sure that each connection has identical settings such as time zone and character set. This setting is empty by default. For multiple statements, use semicolons as the separator. You can also include multiple variables in a single <code>SET</code> statement, such as <code>SET x=1, y=2</code>.</p>
+    /// <p>One or more SQL statements for the proxy to run when opening each new database connection. The setting is typically used with <code>SET</code> statements to make sure that each connection has identical settings. The query added here must be valid. For including multiple variables in a single SET statement, use a comma separator. This is an optional field.</p>
+    /// <p>For example: <code>SET variable1=value1, variable2=value2</code></p>
     pub fn init_query(&self) -> ::std::option::Option<&str> {
         self.init_query.as_deref()
     }
@@ -119,17 +121,20 @@ impl ConnectionPoolConfigurationInfoBuilder {
     pub fn get_session_pinning_filters(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.session_pinning_filters
     }
-    /// <p>One or more SQL statements for the proxy to run when opening each new database connection. Typically used with <code>SET</code> statements to make sure that each connection has identical settings such as time zone and character set. This setting is empty by default. For multiple statements, use semicolons as the separator. You can also include multiple variables in a single <code>SET</code> statement, such as <code>SET x=1, y=2</code>.</p>
+    /// <p>One or more SQL statements for the proxy to run when opening each new database connection. The setting is typically used with <code>SET</code> statements to make sure that each connection has identical settings. The query added here must be valid. For including multiple variables in a single SET statement, use a comma separator. This is an optional field.</p>
+    /// <p>For example: <code>SET variable1=value1, variable2=value2</code></p>
     pub fn init_query(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.init_query = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>One or more SQL statements for the proxy to run when opening each new database connection. Typically used with <code>SET</code> statements to make sure that each connection has identical settings such as time zone and character set. This setting is empty by default. For multiple statements, use semicolons as the separator. You can also include multiple variables in a single <code>SET</code> statement, such as <code>SET x=1, y=2</code>.</p>
+    /// <p>One or more SQL statements for the proxy to run when opening each new database connection. The setting is typically used with <code>SET</code> statements to make sure that each connection has identical settings. The query added here must be valid. For including multiple variables in a single SET statement, use a comma separator. This is an optional field.</p>
+    /// <p>For example: <code>SET variable1=value1, variable2=value2</code></p>
     pub fn set_init_query(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.init_query = input;
         self
     }
-    /// <p>One or more SQL statements for the proxy to run when opening each new database connection. Typically used with <code>SET</code> statements to make sure that each connection has identical settings such as time zone and character set. This setting is empty by default. For multiple statements, use semicolons as the separator. You can also include multiple variables in a single <code>SET</code> statement, such as <code>SET x=1, y=2</code>.</p>
+    /// <p>One or more SQL statements for the proxy to run when opening each new database connection. The setting is typically used with <code>SET</code> statements to make sure that each connection has identical settings. The query added here must be valid. For including multiple variables in a single SET statement, use a comma separator. This is an optional field.</p>
+    /// <p>For example: <code>SET variable1=value1, variable2=value2</code></p>
     pub fn get_init_query(&self) -> &::std::option::Option<::std::string::String> {
         &self.init_query
     }

@@ -215,6 +215,8 @@ pub(crate) mod shape_memories;
 
 pub(crate) mod shape_model_performance_configuration;
 
+pub(crate) mod shape_prompt_creation_configurations;
+
 pub(crate) mod shape_prompt_override_configuration;
 
 pub(crate) mod shape_query_generation_input;

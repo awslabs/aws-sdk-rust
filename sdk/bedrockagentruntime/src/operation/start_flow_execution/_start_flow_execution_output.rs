@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartFlowExecutionOutput {
-    /// <p>The Amazon Resource Name (ARN) that uniquely identifies the async execution.</p>
+    /// <p>The Amazon Resource Name (ARN) that uniquely identifies the flow execution.</p>
     pub execution_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl StartFlowExecutionOutput {
-    /// <p>The Amazon Resource Name (ARN) that uniquely identifies the async execution.</p>
+    /// <p>The Amazon Resource Name (ARN) that uniquely identifies the flow execution.</p>
     pub fn execution_arn(&self) -> ::std::option::Option<&str> {
         self.execution_arn.as_deref()
     }
@@ -33,17 +33,17 @@ pub struct StartFlowExecutionOutputBuilder {
     _request_id: Option<String>,
 }
 impl StartFlowExecutionOutputBuilder {
-    /// <p>The Amazon Resource Name (ARN) that uniquely identifies the async execution.</p>
+    /// <p>The Amazon Resource Name (ARN) that uniquely identifies the flow execution.</p>
     pub fn execution_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.execution_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) that uniquely identifies the async execution.</p>
+    /// <p>The Amazon Resource Name (ARN) that uniquely identifies the flow execution.</p>
     pub fn set_execution_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.execution_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) that uniquely identifies the async execution.</p>
+    /// <p>The Amazon Resource Name (ARN) that uniquely identifies the flow execution.</p>
     pub fn get_execution_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.execution_arn
     }

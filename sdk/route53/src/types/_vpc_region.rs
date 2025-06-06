@@ -14,6 +14,7 @@
 /// match vpcregion {
 ///     VpcRegion::AfSouth1 => { /* ... */ },
 ///     VpcRegion::ApEast1 => { /* ... */ },
+///     VpcRegion::ApEast2 => { /* ... */ },
 ///     VpcRegion::ApNortheast1 => { /* ... */ },
 ///     VpcRegion::ApNortheast2 => { /* ... */ },
 ///     VpcRegion::ApNortheast3 => { /* ... */ },
@@ -85,6 +86,8 @@ pub enum VpcRegion {
     AfSouth1,
     #[allow(missing_docs)] // documentation missing in model
     ApEast1,
+    #[allow(missing_docs)] // documentation missing in model
+    ApEast2,
     #[allow(missing_docs)] // documentation missing in model
     ApNortheast1,
     #[allow(missing_docs)] // documentation missing in model
@@ -172,6 +175,7 @@ impl ::std::convert::From<&str> for VpcRegion {
         match s {
             "af-south-1" => VpcRegion::AfSouth1,
             "ap-east-1" => VpcRegion::ApEast1,
+            "ap-east-2" => VpcRegion::ApEast2,
             "ap-northeast-1" => VpcRegion::ApNortheast1,
             "ap-northeast-2" => VpcRegion::ApNortheast2,
             "ap-northeast-3" => VpcRegion::ApNortheast3,
@@ -228,6 +232,7 @@ impl VpcRegion {
         match self {
             VpcRegion::AfSouth1 => "af-south-1",
             VpcRegion::ApEast1 => "ap-east-1",
+            VpcRegion::ApEast2 => "ap-east-2",
             VpcRegion::ApNortheast1 => "ap-northeast-1",
             VpcRegion::ApNortheast2 => "ap-northeast-2",
             VpcRegion::ApNortheast3 => "ap-northeast-3",
@@ -275,6 +280,7 @@ impl VpcRegion {
         &[
             "af-south-1",
             "ap-east-1",
+            "ap-east-2",
             "ap-northeast-1",
             "ap-northeast-2",
             "ap-northeast-3",
@@ -339,6 +345,7 @@ impl ::std::fmt::Display for VpcRegion {
         match self {
             VpcRegion::AfSouth1 => write!(f, "af-south-1"),
             VpcRegion::ApEast1 => write!(f, "ap-east-1"),
+            VpcRegion::ApEast2 => write!(f, "ap-east-2"),
             VpcRegion::ApNortheast1 => write!(f, "ap-northeast-1"),
             VpcRegion::ApNortheast2 => write!(f, "ap-northeast-2"),
             VpcRegion::ApNortheast3 => write!(f, "ap-northeast-3"),

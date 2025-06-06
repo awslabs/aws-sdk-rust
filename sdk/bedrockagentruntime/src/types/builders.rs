@@ -295,6 +295,8 @@ pub use crate::types::_byte_content_file::ByteContentFileBuilder;
 
 pub use crate::types::_s3_object_file::S3ObjectFileBuilder;
 
+pub use crate::types::_prompt_creation_configurations::PromptCreationConfigurationsBuilder;
+
 pub use crate::types::_streaming_configurations::StreamingConfigurationsBuilder;
 
 pub use crate::types::_file_part::FilePartBuilder;

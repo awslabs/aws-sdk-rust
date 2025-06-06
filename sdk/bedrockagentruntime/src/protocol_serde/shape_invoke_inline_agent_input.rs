@@ -108,17 +108,23 @@ pub fn ser_invoke_inline_agent_input_input(
     if let Some(var_34) = &input.orchestration_type {
         object.key("orchestrationType").string(var_34.as_str());
     }
-    if let Some(var_35) = &input.prompt_override_configuration {
+    if let Some(var_35) = &input.prompt_creation_configurations {
         #[allow(unused_mut)]
-        let mut object_36 = object.key("promptOverrideConfiguration").start_object();
-        crate::protocol_serde::shape_prompt_override_configuration::ser_prompt_override_configuration(&mut object_36, var_35)?;
+        let mut object_36 = object.key("promptCreationConfigurations").start_object();
+        crate::protocol_serde::shape_prompt_creation_configurations::ser_prompt_creation_configurations(&mut object_36, var_35)?;
         object_36.finish();
     }
-    if let Some(var_37) = &input.streaming_configurations {
+    if let Some(var_37) = &input.prompt_override_configuration {
         #[allow(unused_mut)]
-        let mut object_38 = object.key("streamingConfigurations").start_object();
-        crate::protocol_serde::shape_streaming_configurations::ser_streaming_configurations(&mut object_38, var_37)?;
+        let mut object_38 = object.key("promptOverrideConfiguration").start_object();
+        crate::protocol_serde::shape_prompt_override_configuration::ser_prompt_override_configuration(&mut object_38, var_37)?;
         object_38.finish();
+    }
+    if let Some(var_39) = &input.streaming_configurations {
+        #[allow(unused_mut)]
+        let mut object_40 = object.key("streamingConfigurations").start_object();
+        crate::protocol_serde::shape_streaming_configurations::ser_streaming_configurations(&mut object_40, var_39)?;
+        object_40.finish();
     }
     Ok(())
 }

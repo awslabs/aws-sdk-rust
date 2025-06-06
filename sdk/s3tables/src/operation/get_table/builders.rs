@@ -149,4 +149,18 @@ impl GetTableFluentBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_name()
     }
+    /// <p>The Amazon Resource Name (ARN) of the table.</p>
+    pub fn table_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.table_arn(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the table.</p>
+    pub fn set_table_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_table_arn(input);
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the table.</p>
+    pub fn get_table_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_table_arn()
+    }
 }

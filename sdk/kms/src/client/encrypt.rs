@@ -13,7 +13,6 @@ impl super::Client {
     ///   - [`ciphertext_blob(Option<Blob>)`](crate::operation::encrypt::EncryptOutput::ciphertext_blob): <p>The encrypted plaintext. When you use the HTTP API or the Amazon Web Services CLI, the value is Base64-encoded. Otherwise, it is not Base64-encoded.</p>
     ///   - [`key_id(Option<String>)`](crate::operation::encrypt::EncryptOutput::key_id): <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of the KMS key that was used to encrypt the plaintext.</p>
     ///   - [`encryption_algorithm(Option<EncryptionAlgorithmSpec>)`](crate::operation::encrypt::EncryptOutput::encryption_algorithm): <p>The encryption algorithm that was used to encrypt the plaintext.</p>
-    ///   - [`key_material_id(Option<String>)`](crate::operation::encrypt::EncryptOutput::key_material_id): <p>The identifier of the key material used to encrypt the ciphertext. This field is present only when the operation uses a symmetric encryption KMS key.</p>
     /// - On failure, responds with [`SdkError<EncryptError>`](crate::operation::encrypt::EncryptError)
     pub fn encrypt(&self) -> crate::operation::encrypt::builders::EncryptFluentBuilder {
         crate::operation::encrypt::builders::EncryptFluentBuilder::new(self.handle.clone())

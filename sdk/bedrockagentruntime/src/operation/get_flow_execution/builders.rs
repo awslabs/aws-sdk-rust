@@ -22,7 +22,7 @@ impl crate::operation::get_flow_execution::builders::GetFlowExecutionInputBuilde
 }
 /// Fluent builder constructing a request to `GetFlowExecution`.
 ///
-/// <p>Retrieves details about a specific asynchronous execution of a flow, including its status, start and end times, and any errors that occurred during execution.</p>
+/// <p>Retrieves details about a specific flow execution, including its status, start and end times, and any errors that occurred during execution.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetFlowExecutionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -136,17 +136,17 @@ impl GetFlowExecutionFluentBuilder {
     pub fn get_flow_alias_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_flow_alias_identifier()
     }
-    /// <p>The unique identifier of the async execution to retrieve.</p>
+    /// <p>The unique identifier of the flow execution to retrieve.</p>
     pub fn execution_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.execution_identifier(input.into());
         self
     }
-    /// <p>The unique identifier of the async execution to retrieve.</p>
+    /// <p>The unique identifier of the flow execution to retrieve.</p>
     pub fn set_execution_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_execution_identifier(input);
         self
     }
-    /// <p>The unique identifier of the async execution to retrieve.</p>
+    /// <p>The unique identifier of the flow execution to retrieve.</p>
     pub fn get_execution_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_execution_identifier()
     }

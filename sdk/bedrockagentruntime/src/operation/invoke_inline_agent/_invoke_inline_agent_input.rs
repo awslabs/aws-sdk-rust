@@ -40,6 +40,8 @@ pub struct InvokeInlineAgentInput {
     /// <p>To use agent streaming, you need permissions to perform the <code>bedrock:InvokeModelWithResponseStream</code> action.</p>
     /// </note>
     pub streaming_configurations: ::std::option::Option<crate::types::StreamingConfigurations>,
+    /// <p>Specifies parameters that control how the service populates the agent prompt for an <code>InvokeInlineAgent</code> request. You can control which aspects of previous invocations in the same agent session the service uses to populate the agent prompt. This gives you more granular control over the contextual history that is used to process the current request.</p>
+    pub prompt_creation_configurations: ::std::option::Option<crate::types::PromptCreationConfigurations>,
     /// <p>Parameters that specify the various attributes of a sessions. You can include attributes for the session or prompt or, if you configured an action group to return control, results from invocation of the action group. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/agents-session-state.html">Control session context</a>.</p><note>
     /// <p>If you include <code>returnControlInvocationResults</code> in the <code>sessionState</code> field, the <code>inputText</code> field will be ignored.</p>
     /// </note>
@@ -129,6 +131,10 @@ impl InvokeInlineAgentInput {
     pub fn streaming_configurations(&self) -> ::std::option::Option<&crate::types::StreamingConfigurations> {
         self.streaming_configurations.as_ref()
     }
+    /// <p>Specifies parameters that control how the service populates the agent prompt for an <code>InvokeInlineAgent</code> request. You can control which aspects of previous invocations in the same agent session the service uses to populate the agent prompt. This gives you more granular control over the contextual history that is used to process the current request.</p>
+    pub fn prompt_creation_configurations(&self) -> ::std::option::Option<&crate::types::PromptCreationConfigurations> {
+        self.prompt_creation_configurations.as_ref()
+    }
     /// <p>Parameters that specify the various attributes of a sessions. You can include attributes for the session or prompt or, if you configured an action group to return control, results from invocation of the action group. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/agents-session-state.html">Control session context</a>.</p><note>
     /// <p>If you include <code>returnControlInvocationResults</code> in the <code>sessionState</code> field, the <code>inputText</code> field will be ignored.</p>
     /// </note>
@@ -173,6 +179,7 @@ impl ::std::fmt::Debug for InvokeInlineAgentInput {
         formatter.field("enable_trace", &self.enable_trace);
         formatter.field("input_text", &"*** Sensitive Data Redacted ***");
         formatter.field("streaming_configurations", &self.streaming_configurations);
+        formatter.field("prompt_creation_configurations", &self.prompt_creation_configurations);
         formatter.field("inline_session_state", &self.inline_session_state);
         formatter.field("collaborators", &self.collaborators);
         formatter.field("bedrock_model_configurations", &self.bedrock_model_configurations);
@@ -208,6 +215,7 @@ pub struct InvokeInlineAgentInputBuilder {
     pub(crate) enable_trace: ::std::option::Option<bool>,
     pub(crate) input_text: ::std::option::Option<::std::string::String>,
     pub(crate) streaming_configurations: ::std::option::Option<crate::types::StreamingConfigurations>,
+    pub(crate) prompt_creation_configurations: ::std::option::Option<crate::types::PromptCreationConfigurations>,
     pub(crate) inline_session_state: ::std::option::Option<crate::types::InlineSessionState>,
     pub(crate) collaborators: ::std::option::Option<::std::vec::Vec<crate::types::Collaborator>>,
     pub(crate) bedrock_model_configurations: ::std::option::Option<crate::types::InlineBedrockModelConfigurations>,
@@ -475,6 +483,20 @@ impl InvokeInlineAgentInputBuilder {
     pub fn get_streaming_configurations(&self) -> &::std::option::Option<crate::types::StreamingConfigurations> {
         &self.streaming_configurations
     }
+    /// <p>Specifies parameters that control how the service populates the agent prompt for an <code>InvokeInlineAgent</code> request. You can control which aspects of previous invocations in the same agent session the service uses to populate the agent prompt. This gives you more granular control over the contextual history that is used to process the current request.</p>
+    pub fn prompt_creation_configurations(mut self, input: crate::types::PromptCreationConfigurations) -> Self {
+        self.prompt_creation_configurations = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies parameters that control how the service populates the agent prompt for an <code>InvokeInlineAgent</code> request. You can control which aspects of previous invocations in the same agent session the service uses to populate the agent prompt. This gives you more granular control over the contextual history that is used to process the current request.</p>
+    pub fn set_prompt_creation_configurations(mut self, input: ::std::option::Option<crate::types::PromptCreationConfigurations>) -> Self {
+        self.prompt_creation_configurations = input;
+        self
+    }
+    /// <p>Specifies parameters that control how the service populates the agent prompt for an <code>InvokeInlineAgent</code> request. You can control which aspects of previous invocations in the same agent session the service uses to populate the agent prompt. This gives you more granular control over the contextual history that is used to process the current request.</p>
+    pub fn get_prompt_creation_configurations(&self) -> &::std::option::Option<crate::types::PromptCreationConfigurations> {
+        &self.prompt_creation_configurations
+    }
     /// <p>Parameters that specify the various attributes of a sessions. You can include attributes for the session or prompt or, if you configured an action group to return control, results from invocation of the action group. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/agents-session-state.html">Control session context</a>.</p><note>
     /// <p>If you include <code>returnControlInvocationResults</code> in the <code>sessionState</code> field, the <code>inputText</code> field will be ignored.</p>
     /// </note>
@@ -578,6 +600,7 @@ impl InvokeInlineAgentInputBuilder {
             enable_trace: self.enable_trace,
             input_text: self.input_text,
             streaming_configurations: self.streaming_configurations,
+            prompt_creation_configurations: self.prompt_creation_configurations,
             inline_session_state: self.inline_session_state,
             collaborators: self.collaborators,
             bedrock_model_configurations: self.bedrock_model_configurations,
@@ -605,6 +628,7 @@ impl ::std::fmt::Debug for InvokeInlineAgentInputBuilder {
         formatter.field("enable_trace", &self.enable_trace);
         formatter.field("input_text", &"*** Sensitive Data Redacted ***");
         formatter.field("streaming_configurations", &self.streaming_configurations);
+        formatter.field("prompt_creation_configurations", &self.prompt_creation_configurations);
         formatter.field("inline_session_state", &self.inline_session_state);
         formatter.field("collaborators", &self.collaborators);
         formatter.field("bedrock_model_configurations", &self.bedrock_model_configurations);

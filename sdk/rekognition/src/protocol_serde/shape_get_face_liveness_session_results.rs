@@ -190,6 +190,9 @@ pub(crate) fn de_get_face_liveness_session_results(
                 "AuditImages" => {
                     builder = builder.set_audit_images(crate::protocol_serde::shape_audit_images::de_audit_images(tokens)?);
                 }
+                "Challenge" => {
+                    builder = builder.set_challenge(crate::protocol_serde::shape_challenge::de_challenge(tokens)?);
+                }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },
             other => {

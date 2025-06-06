@@ -449,6 +449,8 @@ pub use crate::types::_s3_object_file::S3ObjectFile;
 
 pub use crate::types::_file_source_type::FileSourceType;
 
+pub use crate::types::_prompt_creation_configurations::PromptCreationConfigurations;
+
 pub use crate::types::_streaming_configurations::StreamingConfigurations;
 
 pub use crate::types::_response_stream::ResponseStream;
@@ -972,6 +974,8 @@ mod _pre_processing_parsed_response;
 mod _pre_processing_trace;
 
 mod _prompt_configuration;
+
+mod _prompt_creation_configurations;
 
 mod _prompt_override_configuration;
 

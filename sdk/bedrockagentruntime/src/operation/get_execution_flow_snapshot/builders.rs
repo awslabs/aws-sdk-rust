@@ -22,8 +22,8 @@ impl crate::operation::get_execution_flow_snapshot::builders::GetExecutionFlowSn
 }
 /// Fluent builder constructing a request to `GetExecutionFlowSnapshot`.
 ///
-/// <p>Retrieves the flow definition snapshot used for an asynchronous execution. The snapshot represents the flow metadata and definition as it existed at the time the asynchronous execution was started. Note that even if the flow is edited after an execution starts, the snapshot connected to the execution remains unchanged.</p><note>
-/// <p>Asynchronous flows is in preview release for Amazon Bedrock and is subject to change.</p>
+/// <p>Retrieves the flow definition snapshot used for a flow execution. The snapshot represents the flow metadata and definition as it existed at the time the execution was started. Note that even if the flow is edited after an execution starts, the snapshot connected to the execution remains unchanged.</p><note>
+/// <p>Flow executions is in preview release for Amazon Bedrock and is subject to change.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetExecutionFlowSnapshotFluentBuilder {
@@ -124,31 +124,31 @@ impl GetExecutionFlowSnapshotFluentBuilder {
     pub fn get_flow_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_flow_identifier()
     }
-    /// <p>The unique identifier of the flow alias used for the async execution.</p>
+    /// <p>The unique identifier of the flow alias used for the flow execution.</p>
     pub fn flow_alias_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.flow_alias_identifier(input.into());
         self
     }
-    /// <p>The unique identifier of the flow alias used for the async execution.</p>
+    /// <p>The unique identifier of the flow alias used for the flow execution.</p>
     pub fn set_flow_alias_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_flow_alias_identifier(input);
         self
     }
-    /// <p>The unique identifier of the flow alias used for the async execution.</p>
+    /// <p>The unique identifier of the flow alias used for the flow execution.</p>
     pub fn get_flow_alias_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_flow_alias_identifier()
     }
-    /// <p>The unique identifier of the async execution.</p>
+    /// <p>The unique identifier of the flow execution.</p>
     pub fn execution_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.execution_identifier(input.into());
         self
     }
-    /// <p>The unique identifier of the async execution.</p>
+    /// <p>The unique identifier of the flow execution.</p>
     pub fn set_execution_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_execution_identifier(input);
         self
     }
-    /// <p>The unique identifier of the async execution.</p>
+    /// <p>The unique identifier of the flow execution.</p>
     pub fn get_execution_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_execution_identifier()
     }
