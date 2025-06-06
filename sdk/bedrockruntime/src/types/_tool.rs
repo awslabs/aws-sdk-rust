@@ -2,7 +2,8 @@
 
 /// <p>Information about a tool that you can use with the Converse API. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/tool-use.html">Tool use (function calling)</a> in the Amazon Bedrock User Guide.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug, ::serde::Serialize)]
+#[serde(rename_all = "camelCase")]
 pub enum Tool {
     /// <p>CachePoint to include in the tool configuration.</p>
     CachePoint(crate::types::CachePointBlock),

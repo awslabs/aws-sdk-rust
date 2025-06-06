@@ -2,7 +2,8 @@
 
 /// <p>The tokens used in a message API inference call.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug, ::serde::Deserialize)]
+#[serde(rename_all = "camelCase")]
 pub struct TokenUsage {
     /// <p>The number of tokens sent in the request to the model.</p>
     pub input_tokens: i32,
@@ -45,7 +46,9 @@ impl TokenUsage {
 }
 
 /// A builder for [`TokenUsage`](crate::types::TokenUsage).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 #[non_exhaustive]
 pub struct TokenUsageBuilder {
     pub(crate) input_tokens: ::std::option::Option<i32>,
@@ -133,7 +136,12 @@ impl TokenUsageBuilder {
     /// - [`input_tokens`](crate::types::builders::TokenUsageBuilder::input_tokens)
     /// - [`output_tokens`](crate::types::builders::TokenUsageBuilder::output_tokens)
     /// - [`total_tokens`](crate::types::builders::TokenUsageBuilder::total_tokens)
-    pub fn build(self) -> ::std::result::Result<crate::types::TokenUsage, ::aws_smithy_types::error::operation::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::types::TokenUsage,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::types::TokenUsage {
             input_tokens: self.input_tokens.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(

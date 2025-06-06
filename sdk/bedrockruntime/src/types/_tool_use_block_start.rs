@@ -2,7 +2,7 @@
 
 /// <p>The start of a tool use block.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug, ::serde::Deserialize)]
 pub struct ToolUseBlockStart {
     /// <p>The ID for the tool request.</p>
     pub tool_use_id: ::std::string::String,

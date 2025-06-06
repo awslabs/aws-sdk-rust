@@ -2,7 +2,8 @@
 
 /// <p>The tool result content block.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug, ::serde::Serialize, ::serde::Deserialize)]
+#[serde(rename_all = "camelCase")]
 pub enum ToolResultContentBlock {
     /// <p>A tool result that is a document.</p>
     Document(crate::types::DocumentBlock),

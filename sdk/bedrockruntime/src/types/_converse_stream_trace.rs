@@ -2,7 +2,7 @@
 
 /// <p>The trace object in a response from <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_runtime_ConverseStream.html">ConverseStream</a>. Currently, you can only trace guardrails.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug, ::serde::Deserialize)]
 pub struct ConverseStreamTrace {
     /// <p>The guardrail trace object.</p>
     pub guardrail: ::std::option::Option<crate::types::GuardrailTraceAssessment>,

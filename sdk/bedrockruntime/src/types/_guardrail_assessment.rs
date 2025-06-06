@@ -2,7 +2,7 @@
 
 /// <p>A behavior assessment of the guardrail policies used in a call to the Converse API.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug, ::serde::Deserialize)]
 pub struct GuardrailAssessment {
     /// <p>The topic policy.</p>
     pub topic_policy: ::std::option::Option<crate::types::GuardrailTopicPolicyAssessment>,

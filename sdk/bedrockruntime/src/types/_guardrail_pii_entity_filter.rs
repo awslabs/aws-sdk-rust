@@ -2,7 +2,7 @@
 
 /// <p>A Personally Identifiable Information (PII) entity configured in a guardrail.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug,  ::serde::Deserialize)]
 pub struct GuardrailPiiEntityFilter {
     /// <p>The PII entity filter match.</p>
     pub r#match: ::std::string::String,

@@ -2,7 +2,7 @@
 
 /// <p>The assessment for aPersonally Identifiable Information (PII) policy.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug, ::serde::Deserialize)]
 pub struct GuardrailSensitiveInformationPolicyAssessment {
     /// <p>The PII entities in the assessment.</p>
     pub pii_entities: ::std::vec::Vec<crate::types::GuardrailPiiEntityFilter>,

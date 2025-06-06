@@ -2,7 +2,7 @@
 
 /// <p>A Regex filter configured in a guardrail.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug,  ::serde::Deserialize)]
 pub struct GuardrailRegexFilter {
     /// <p>The regex filter name.</p>
     pub name: ::std::option::Option<::std::string::String>,

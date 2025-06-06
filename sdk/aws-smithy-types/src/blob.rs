@@ -6,7 +6,7 @@
 /// Binary Blob Type
 ///
 /// Blobs represent protocol-agnostic binary content.
-#[derive(Debug, Default, PartialEq, Eq, Hash, Clone)]
+#[derive(Debug, Default, PartialEq, Eq, Hash, Clone, serde::Deserialize, serde::Serialize)]
 pub struct Blob {
     inner: Vec<u8>,
 }

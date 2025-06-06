@@ -2,7 +2,8 @@
 
 /// <p>Configuration information for the tools that you pass to a model. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/tool-use.html">Tool use (function calling)</a> in the Amazon Bedrock User Guide.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug, ::serde::Serialize)]
+#[serde(rename_all = "camelCase")]
 pub struct ToolConfiguration {
     /// <p>An array of tools that you want to pass to a model.</p>
     pub tools: ::std::vec::Vec<crate::types::Tool>,

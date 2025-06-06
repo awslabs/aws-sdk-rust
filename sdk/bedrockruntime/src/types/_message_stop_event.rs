@@ -2,7 +2,7 @@
 
 /// <p>The stop event for a message.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug, ::serde::Deserialize)]
 pub struct MessageStopEvent {
     /// <p>The reason why the model stopped generating output.</p>
     pub stop_reason: crate::types::StopReason,

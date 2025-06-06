@@ -2,7 +2,7 @@
 
 /// <p>The content block delta event.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug, ::serde::Deserialize)]
 pub struct ContentBlockDeltaEvent {
     /// <p>The delta for a content block delta event.</p>
     pub delta: ::std::option::Option<crate::types::ContentBlockDelta>,

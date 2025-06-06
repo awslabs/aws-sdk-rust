@@ -2,7 +2,7 @@
 
 /// <p>The delta for a tool use block.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug,  ::serde::Deserialize)]
 pub struct ToolUseBlockDelta {
     /// <p>The input for a requested tool.</p>
     pub input: ::std::string::String,

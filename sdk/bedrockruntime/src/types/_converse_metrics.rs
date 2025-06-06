@@ -2,7 +2,8 @@
 
 /// <p>Metrics for a call to <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_runtime_Converse.html">Converse</a>.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug, ::serde::Deserialize)]
+#[serde(rename_all = "camelCase")]
 pub struct ConverseMetrics {
     /// <p>The latency of the call to <code>Converse</code>, in milliseconds.</p>
     pub latency_ms: i64,
@@ -21,7 +22,9 @@ impl ConverseMetrics {
 }
 
 /// A builder for [`ConverseMetrics`](crate::types::ConverseMetrics).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 #[non_exhaustive]
 pub struct ConverseMetricsBuilder {
     pub(crate) latency_ms: ::std::option::Option<i64>,
@@ -45,7 +48,12 @@ impl ConverseMetricsBuilder {
     /// Consumes the builder and constructs a [`ConverseMetrics`](crate::types::ConverseMetrics).
     /// This method will fail if any of the following fields are not set:
     /// - [`latency_ms`](crate::types::builders::ConverseMetricsBuilder::latency_ms)
-    pub fn build(self) -> ::std::result::Result<crate::types::ConverseMetrics, ::aws_smithy_types::error::operation::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::types::ConverseMetrics,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::types::ConverseMetrics {
             latency_ms: self.latency_ms.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(

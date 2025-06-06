@@ -2,7 +2,8 @@
 
 /// <p>A document to include in a message.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug, ::serde::Deserialize, ::serde::Serialize)]
+#[serde(rename_all = "camelCase")]
 pub struct DocumentBlock {
     /// <p>The format of a document, or its extension.</p>
     pub format: crate::types::DocumentFormat,

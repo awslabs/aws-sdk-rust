@@ -2,7 +2,7 @@
 
 /// <p>A content block stop event.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug, ::serde::Deserialize)]
 pub struct ContentBlockStopEvent {
     /// <p>The index for a content block.</p>
     pub content_block_index: i32,

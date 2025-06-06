@@ -2,7 +2,7 @@
 
 /// <p>Content block start event.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug, ::serde::Deserialize)]
 pub struct ContentBlockStartEvent {
     /// <p>Start information about a content block start event.</p>
     pub start: ::std::option::Option<crate::types::ContentBlockStart>,

@@ -2,7 +2,8 @@
 
 /// <p>A tool use content block. Contains information about a tool that the model is requesting be run., The model uses the result from the tool to generate a response.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug,  ::serde::Deserialize, ::serde::Serialize)]
+#[serde(rename_all = "camelCase")]
 pub struct ToolUseBlock {
     /// <p>The ID for the tool request.</p>
     pub tool_use_id: ::std::string::String,

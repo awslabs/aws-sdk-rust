@@ -45,6 +45,7 @@ num-integer = "0.1.44"
 pin-project-lite = "0.2.14"
 pin-utils = "0.1.0"
 ryu = "1.0.5"
+serde = { version = "1", features = ["derive"] }
 time = { version = "0.3.4", features = ["parsing"] }
 
 # ByteStream internals

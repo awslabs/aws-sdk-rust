@@ -2,7 +2,7 @@
 
 /// <p>The content filter for a guardrail.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug,  ::serde::Deserialize)]
 pub struct GuardrailContentFilter {
     /// <p>The guardrail type.</p>
     pub r#type: crate::types::GuardrailContentFilterType,

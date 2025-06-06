@@ -2,7 +2,8 @@
 
 /// <p>Contains content regarding the reasoning that is carried out by the model with respect to the content in the content block. Reasoning refers to a Chain of Thought (CoT) that the model generates to enhance the accuracy of its final response.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::serde::Deserialize, ::serde::Serialize)]
+#[serde(rename_all = "camelCase")]
 pub enum ReasoningContentBlock {
     /// <p>The reasoning that the model used to return the output.</p>
     ReasoningText(crate::types::ReasoningTextBlock),

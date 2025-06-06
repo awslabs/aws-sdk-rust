@@ -2,7 +2,7 @@
 
 /// <p>The details for the guardrails contextual grounding filter.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug,  ::serde::Deserialize)]
 pub struct GuardrailContextualGroundingFilter {
     /// <p>The contextual grounding filter type.</p>
     pub r#type: crate::types::GuardrailContextualGroundingFilterType,

@@ -2,7 +2,7 @@
 
 /// <p>Configuration information for a guardrail that you use with the <code>ConverseStream</code> action.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug, ::serde::Serialize)]
 pub struct GuardrailStreamConfiguration {
     /// <p>The identifier for the guardrail.</p>
     pub guardrail_identifier: ::std::string::String,

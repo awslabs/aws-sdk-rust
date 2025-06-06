@@ -2,7 +2,7 @@
 
 /// <p>The action of the guardrail coverage details.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug,  ::serde::Deserialize)]
 pub struct GuardrailCoverage {
     /// <p>The text characters of the guardrail coverage details.</p>
     pub text_characters: ::std::option::Option<crate::types::GuardrailTextCharactersCoverage>,

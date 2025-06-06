@@ -2,7 +2,7 @@
 
 /// <p>Information about a topic guardrail.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug,  ::serde::Deserialize)]
 pub struct GuardrailTopic {
     /// <p>The name for the guardrail.</p>
     pub name: ::std::string::String,

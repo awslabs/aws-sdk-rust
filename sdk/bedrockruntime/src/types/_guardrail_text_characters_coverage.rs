@@ -2,7 +2,7 @@
 
 /// <p>The guardrail coverage for the text characters.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug,  ::serde::Deserialize)]
 pub struct GuardrailTextCharactersCoverage {
     /// <p>The text characters that were guarded by the guardrail coverage.</p>
     pub guarded: ::std::option::Option<i32>,

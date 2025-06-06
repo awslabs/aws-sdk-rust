@@ -2,7 +2,8 @@
 
 /// <p>Configuration information for a guardrail that you use with the <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_runtime_Converse.html">Converse</a> operation.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug, ::serde::Serialize)]
+#[serde(rename_all = "camelCase")]
 pub struct GuardrailConfiguration {
     /// <p>The identifier for the guardrail.</p>
     pub guardrail_identifier: ::std::string::String,

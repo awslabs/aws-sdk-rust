@@ -2,7 +2,7 @@
 
 /// <p>Metrics for the stream.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug, ::serde::Deserialize)]
 pub struct ConverseStreamMetrics {
     /// <p>The latency for the streaming request, in milliseconds.</p>
     pub latency_ms: i64,

@@ -9,6 +9,10 @@ license = "Apache-2.0"
 repository = "https://github.com/awslabs/aws-sdk-rust"
 rust-version = "1.86.0"
 readme = "README.md"
+
+[dependencies]
+serde = { version = "1", features = ["derive"] }
+
 [package.metadata.smithy]
 codegen-version = "23c0b37098f1b9a75f99aa5001589ff1356f627d"
 [package.metadata.docs.rs]
@@ -56,7 +60,7 @@ version = "1.8.3"
 
 [dependencies.aws-smithy-types]
 path = "../aws-smithy-types"
-features = ["http-body-0-4-x"]
+features = ["http-body-0-4-x", "serde-serialize", "serde-deserialize"]
 version = "1.3.2"
 
 [dependencies.aws-types]

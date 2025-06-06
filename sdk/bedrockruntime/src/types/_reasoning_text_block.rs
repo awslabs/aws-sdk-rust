@@ -2,7 +2,8 @@
 
 /// <p>Contains the reasoning that the model used to return the output.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::serde::Deserialize, ::serde::Serialize)]
+#[serde(rename_all = "camelCase")]
 pub struct ReasoningTextBlock {
     /// <p>The reasoning that the model used to return the output.</p>
     pub text: ::std::string::String,

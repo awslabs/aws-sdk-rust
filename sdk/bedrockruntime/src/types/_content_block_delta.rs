@@ -2,7 +2,7 @@
 
 /// <p>A block of content in a streaming response.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq,  ::serde::Deserialize)]
 pub enum ContentBlockDelta {
     /// <p>Incremental citation information that is streamed as part of the response generation process.</p>
     Citation(crate::types::CitationsDelta),

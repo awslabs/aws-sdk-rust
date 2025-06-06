@@ -2,7 +2,8 @@
 
 /// <p>A video source. You can upload a smaller video as a base64-encoded string as long as the encoded file is less than 25MB. You can also transfer videos up to 1GB in size from an S3 bucket.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug, ::serde::Serialize, ::serde::Deserialize)]
+#[serde(rename_all = "camelCase")]
 pub enum VideoSource {
     /// <p>Video content encoded in base64.</p>
     Bytes(::aws_smithy_types::Blob),

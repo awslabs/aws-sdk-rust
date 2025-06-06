@@ -2,7 +2,8 @@
 
 /// <p>Performance settings for a model.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug, ::serde::Serialize, ::serde::Deserialize)]
+#[serde(rename_all = "camelCase")]
 pub struct PerformanceConfiguration {
     /// <p>To use a latency-optimized version of the model, set to <code>optimized</code>.</p>
     pub latency: crate::types::PerformanceConfigLatency,
@@ -21,7 +22,9 @@ impl PerformanceConfiguration {
 }
 
 /// A builder for [`PerformanceConfiguration`](crate::types::PerformanceConfiguration).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 #[non_exhaustive]
 pub struct PerformanceConfigurationBuilder {
     pub(crate) latency: ::std::option::Option<crate::types::PerformanceConfigLatency>,
@@ -33,7 +36,10 @@ impl PerformanceConfigurationBuilder {
         self
     }
     /// <p>To use a latency-optimized version of the model, set to <code>optimized</code>.</p>
-    pub fn set_latency(mut self, input: ::std::option::Option<crate::types::PerformanceConfigLatency>) -> Self {
+    pub fn set_latency(
+        mut self,
+        input: ::std::option::Option<crate::types::PerformanceConfigLatency>,
+    ) -> Self {
         self.latency = input;
         self
     }

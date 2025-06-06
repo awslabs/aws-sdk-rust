@@ -2,7 +2,7 @@
 
 /// <p>An assessment of a content policy for a guardrail.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug,  ::serde::Deserialize)]
 pub struct GuardrailContentPolicyAssessment {
     /// <p>The content policy filters.</p>
     pub filters: ::std::vec::Vec<crate::types::GuardrailContentFilter>,

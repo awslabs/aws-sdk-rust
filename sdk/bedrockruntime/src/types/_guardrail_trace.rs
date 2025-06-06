@@ -41,7 +41,9 @@
 #[non_exhaustive]
 #[derive(
     ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
+    ::serde::Serialize
 )]
+#[serde(rename_all = "camelCase")]
 pub enum GuardrailTrace {
     #[allow(missing_docs)] // documentation missing in model
     Disabled,

@@ -2,7 +2,7 @@
 
 /// <p>The policy assessment details for the guardrails contextual grounding filter.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug, ::serde::Deserialize)]
 pub struct GuardrailContextualGroundingPolicyAssessment {
     /// <p>The filter details for the guardrails contextual grounding filter.</p>
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::GuardrailContextualGroundingFilter>>,

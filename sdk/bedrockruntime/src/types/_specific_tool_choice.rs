@@ -4,7 +4,8 @@
 /// <p>This field is only supported by Anthropic Claude 3 models.</p>
 /// </note>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug, ::serde::Serialize)]
+#[serde(rename_all = "camelCase")]
 pub struct SpecificToolChoice {
     /// <p>The name of the tool that the model must request.</p>
     pub name: ::std::string::String,

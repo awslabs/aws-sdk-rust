@@ -2,7 +2,7 @@
 
 /// <p>The messages output stream</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug, ::serde::Deserialize)]
 pub enum ConverseStreamOutput {
     /// <p>The messages output content block delta.</p>
     ContentBlockDelta(crate::types::ContentBlockDeltaEvent),

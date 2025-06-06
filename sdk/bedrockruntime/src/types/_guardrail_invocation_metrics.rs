@@ -2,7 +2,7 @@
 
 /// <p>The invocation metrics for the guardrail.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug,  ::serde::Deserialize)]
 pub struct GuardrailInvocationMetrics {
     /// <p>The processing latency details for the guardrail invocation metrics.</p>
     pub guardrail_processing_latency: ::std::option::Option<i64>,

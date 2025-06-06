@@ -2,7 +2,7 @@
 
 /// <p>The start of a message.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug, ::serde::Deserialize)]
 pub struct MessageStartEvent {
     /// <p>The role for the message.</p>
     pub role: crate::types::ConversationRole,

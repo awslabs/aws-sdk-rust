@@ -2,7 +2,7 @@
 
 /// <p>The details on the use of the guardrail.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug,  ::serde::Deserialize)]
 pub struct GuardrailUsage {
     /// <p>The topic policy units processed by the guardrail.</p>
     pub topic_policy_units: i32,

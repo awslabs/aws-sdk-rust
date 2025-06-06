@@ -2,7 +2,8 @@
 
 /// <p>A message input, or returned from, a call to <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_runtime_Converse.html">Converse</a> or <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_runtime_ConverseStream.html">ConverseStream</a>.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug, ::serde::Deserialize, ::serde::Serialize)]
+#[serde(rename_all = "camelCase")]
 pub struct Message {
     /// <p>The role that the message plays in the message.</p>
     pub role: crate::types::ConversationRole,
@@ -48,7 +49,9 @@ impl Message {
 }
 
 /// A builder for [`Message`](crate::types::Message).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 #[non_exhaustive]
 pub struct MessageBuilder {
     pub(crate) role: ::std::option::Option<crate::types::ConversationRole>,
@@ -62,7 +65,10 @@ impl MessageBuilder {
         self
     }
     /// <p>The role that the message plays in the message.</p>
-    pub fn set_role(mut self, input: ::std::option::Option<crate::types::ConversationRole>) -> Self {
+    pub fn set_role(
+        mut self,
+        input: ::std::option::Option<crate::types::ConversationRole>,
+    ) -> Self {
         self.role = input;
         self
     }
@@ -102,7 +108,10 @@ impl MessageBuilder {
     /// <li>
     /// <p>You can only include images and documents if the <code>role</code> is <code>user</code>.</p></li>
     /// </ul>
-    pub fn set_content(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ContentBlock>>) -> Self {
+    pub fn set_content(
+        mut self,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ContentBlock>>,
+    ) -> Self {
         self.content = input;
         self
     }
@@ -117,14 +126,21 @@ impl MessageBuilder {
     /// <li>
     /// <p>You can only include images and documents if the <code>role</code> is <code>user</code>.</p></li>
     /// </ul>
-    pub fn get_content(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ContentBlock>> {
+    pub fn get_content(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ContentBlock>> {
         &self.content
     }
     /// Consumes the builder and constructs a [`Message`](crate::types::Message).
     /// This method will fail if any of the following fields are not set:
     /// - [`role`](crate::types::builders::MessageBuilder::role)
     /// - [`content`](crate::types::builders::MessageBuilder::content)
-    pub fn build(self) -> ::std::result::Result<crate::types::Message, ::aws_smithy_types::error::operation::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::types::Message,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::types::Message {
             role: self.role.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(

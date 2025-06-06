@@ -2,7 +2,8 @@
 
 /// <p>Image content for a message.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug, ::serde::Deserialize, ::serde::Serialize)]
+#[serde(rename_all = "camelCase")]
 pub struct ImageBlock {
     /// <p>The format of the image.</p>
     pub format: crate::types::ImageFormat,

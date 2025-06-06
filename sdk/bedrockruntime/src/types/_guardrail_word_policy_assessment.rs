@@ -2,7 +2,7 @@
 
 /// <p>The word policy assessment.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug,  ::serde::Deserialize)]
 pub struct GuardrailWordPolicyAssessment {
     /// <p>Custom words in the assessment.</p>
     pub custom_words: ::std::vec::Vec<crate::types::GuardrailCustomWord>,

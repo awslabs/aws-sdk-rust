@@ -2,7 +2,7 @@
 
 /// <p>A managed word configured in a guardrail.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug, ::serde::Deserialize)]
 pub struct GuardrailManagedWord {
     /// <p>The match for the managed word.</p>
     pub r#match: ::std::string::String,

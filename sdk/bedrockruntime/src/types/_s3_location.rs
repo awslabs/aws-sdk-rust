@@ -2,7 +2,8 @@
 
 /// <p>A storage location in an Amazon S3 bucket.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug,  ::serde::Deserialize, ::serde::Serialize)]
+#[serde(rename_all = "camelCase")]
 pub struct S3Location {
     /// <p>An object URI starting with <code>s3://</code>.</p>
     pub uri: ::std::string::String,

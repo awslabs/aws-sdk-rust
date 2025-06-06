@@ -2,7 +2,7 @@
 
 /// <p>A behavior assessment of a topic policy.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug, ::serde::Deserialize)]
 pub struct GuardrailTopicPolicyAssessment {
     /// <p>The topics in the assessment.</p>
     pub topics: ::std::vec::Vec<crate::types::GuardrailTopic>,

@@ -2,7 +2,7 @@
 
 /// <p>A text block that contains text that you want to assess with a guardrail. For more information, see <code>GuardrailConverseContentBlock</code>.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug,  ::serde::Deserialize, ::serde::Serialize)]
 pub struct GuardrailConverseTextBlock {
     /// <p>The text that you want to guard.</p>
     pub text: ::std::string::String,
