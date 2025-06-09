@@ -167,6 +167,25 @@ impl ModifyNetworkInterfaceAttributeFluentBuilder {
     pub fn get_associate_public_ip_address(&self) -> &::std::option::Option<bool> {
         self.inner.get_associate_public_ip_address()
     }
+    ///
+    /// Appends an item to `AssociatedSubnetIds`.
+    ///
+    /// To override the contents of this collection use [`set_associated_subnet_ids`](Self::set_associated_subnet_ids).
+    ///
+    /// <p>A list of subnet IDs to associate with the network interface.</p>
+    pub fn associated_subnet_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.associated_subnet_ids(input.into());
+        self
+    }
+    /// <p>A list of subnet IDs to associate with the network interface.</p>
+    pub fn set_associated_subnet_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.inner = self.inner.set_associated_subnet_ids(input);
+        self
+    }
+    /// <p>A list of subnet IDs to associate with the network interface.</p>
+    pub fn get_associated_subnet_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_associated_subnet_ids()
+    }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.inner = self.inner.dry_run(input);

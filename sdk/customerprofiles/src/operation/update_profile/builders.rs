@@ -151,17 +151,17 @@ impl UpdateProfileFluentBuilder {
     pub fn get_additional_information(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_additional_information()
     }
-    /// <p>An account number that you have given to the customer.</p>
+    /// <p>An account number that you have assigned to the customer.</p>
     pub fn account_number(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.account_number(input.into());
         self
     }
-    /// <p>An account number that you have given to the customer.</p>
+    /// <p>An account number that you have assigned to the customer.</p>
     pub fn set_account_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_account_number(input);
         self
     }
-    /// <p>An account number that you have given to the customer.</p>
+    /// <p>An account number that you have assigned to the customer.</p>
     pub fn get_account_number(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_account_number()
     }

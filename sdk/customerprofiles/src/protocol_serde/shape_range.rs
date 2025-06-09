@@ -28,6 +28,23 @@ where
                                     .transpose()?,
                             );
                         }
+                        "ValueRange" => {
+                            builder = builder.set_value_range(crate::protocol_serde::shape_value_range::de_value_range(tokens)?);
+                        }
+                        "TimestampSource" => {
+                            builder = builder.set_timestamp_source(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "TimestampFormat" => {
+                            builder = builder.set_timestamp_format(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {
@@ -38,9 +55,7 @@ where
                     }
                 }
             }
-            Ok(Some(crate::serde_util::range_correct_errors(builder).build().map_err(|err| {
-                ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err)
-            })?))
+            Ok(Some(builder.build()))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",
@@ -60,6 +75,18 @@ pub fn ser_range(
     }
     {
         object.key("Unit").string(input.unit.as_str());
+    }
+    if let Some(var_1) = &input.value_range {
+        #[allow(unused_mut)]
+        let mut object_2 = object.key("ValueRange").start_object();
+        crate::protocol_serde::shape_value_range::ser_value_range(&mut object_2, var_1)?;
+        object_2.finish();
+    }
+    if let Some(var_3) = &input.timestamp_source {
+        object.key("TimestampSource").string(var_3.as_str());
+    }
+    if let Some(var_4) = &input.timestamp_format {
+        object.key("TimestampFormat").string(var_4.as_str());
     }
     Ok(())
 }

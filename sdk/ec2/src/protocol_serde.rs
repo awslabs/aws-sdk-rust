@@ -3991,6 +3991,8 @@ pub(crate) mod shape_assigned_private_ip_address;
 
 pub(crate) mod shape_associated_role;
 
+pub(crate) mod shape_associated_subnet_list;
+
 pub(crate) mod shape_attachment_ena_srd_specification;
 
 pub(crate) mod shape_attribute_summary;

@@ -28,6 +28,8 @@ pub struct Address {
     pub customer_owned_ipv4_pool: ::std::option::Option<::std::string::String>,
     /// <p>The carrier IP address associated. This option is only available for network interfaces which reside in a subnet in a Wavelength Zone (for example an EC2 instance).</p>
     pub carrier_ip: ::std::option::Option<::std::string::String>,
+    /// <p>The ID of the subnet where the IP address is allocated.</p>
+    pub subnet_id: ::std::option::Option<::std::string::String>,
     /// <p>The service that manages the elastic IP address.</p><note>
     /// <p>The only option supported today is <code>alb</code>.</p>
     /// </note>
@@ -88,6 +90,10 @@ impl Address {
     pub fn carrier_ip(&self) -> ::std::option::Option<&str> {
         self.carrier_ip.as_deref()
     }
+    /// <p>The ID of the subnet where the IP address is allocated.</p>
+    pub fn subnet_id(&self) -> ::std::option::Option<&str> {
+        self.subnet_id.as_deref()
+    }
     /// <p>The service that manages the elastic IP address.</p><note>
     /// <p>The only option supported today is <code>alb</code>.</p>
     /// </note>
@@ -126,6 +132,7 @@ pub struct AddressBuilder {
     pub(crate) customer_owned_ip: ::std::option::Option<::std::string::String>,
     pub(crate) customer_owned_ipv4_pool: ::std::option::Option<::std::string::String>,
     pub(crate) carrier_ip: ::std::option::Option<::std::string::String>,
+    pub(crate) subnet_id: ::std::option::Option<::std::string::String>,
     pub(crate) service_managed: ::std::option::Option<crate::types::ServiceManaged>,
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) public_ip: ::std::option::Option<::std::string::String>,
@@ -305,6 +312,20 @@ impl AddressBuilder {
     pub fn get_carrier_ip(&self) -> &::std::option::Option<::std::string::String> {
         &self.carrier_ip
     }
+    /// <p>The ID of the subnet where the IP address is allocated.</p>
+    pub fn subnet_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.subnet_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ID of the subnet where the IP address is allocated.</p>
+    pub fn set_subnet_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.subnet_id = input;
+        self
+    }
+    /// <p>The ID of the subnet where the IP address is allocated.</p>
+    pub fn get_subnet_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.subnet_id
+    }
     /// <p>The service that manages the elastic IP address.</p><note>
     /// <p>The only option supported today is <code>alb</code>.</p>
     /// </note>
@@ -368,6 +389,7 @@ impl AddressBuilder {
             customer_owned_ip: self.customer_owned_ip,
             customer_owned_ipv4_pool: self.customer_owned_ipv4_pool,
             carrier_ip: self.carrier_ip,
+            subnet_id: self.subnet_id,
             service_managed: self.service_managed,
             instance_id: self.instance_id,
             public_ip: self.public_ip,

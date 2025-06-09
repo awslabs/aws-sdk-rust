@@ -9,6 +9,10 @@ pub use crate::types::_entity::Entity;
 
 pub use crate::types::_entity_summary::EntitySummary;
 
+pub use crate::types::_machine_learning_product_summary::MachineLearningProductSummary;
+
+pub use crate::types::_machine_learning_product_visibility_string::MachineLearningProductVisibilityString;
+
 pub use crate::types::_resale_authorization_summary::ResaleAuthorizationSummary;
 
 pub use crate::types::_resale_authorization_status_string::ResaleAuthorizationStatusString;
@@ -37,9 +41,13 @@ pub use crate::types::_ami_product_visibility_string::AmiProductVisibilityString
 
 pub use crate::types::_entity_type_sort::EntityTypeSort;
 
-pub use crate::types::_resale_authorization_sort::ResaleAuthorizationSort;
+pub use crate::types::_machine_learning_product_sort::MachineLearningProductSort;
 
 pub use crate::types::_sort_order::SortOrder;
+
+pub use crate::types::_machine_learning_product_sort_by::MachineLearningProductSortBy;
+
+pub use crate::types::_resale_authorization_sort::ResaleAuthorizationSort;
 
 pub use crate::types::_resale_authorization_sort_by::ResaleAuthorizationSortBy;
 
@@ -64,6 +72,18 @@ pub use crate::types::_data_product_sort::DataProductSort;
 pub use crate::types::_data_product_sort_by::DataProductSortBy;
 
 pub use crate::types::_entity_type_filters::EntityTypeFilters;
+
+pub use crate::types::_machine_learning_product_filters::MachineLearningProductFilters;
+
+pub use crate::types::_machine_learning_product_visibility_filter::MachineLearningProductVisibilityFilter;
+
+pub use crate::types::_machine_learning_product_title_filter::MachineLearningProductTitleFilter;
+
+pub use crate::types::_machine_learning_product_last_modified_date_filter::MachineLearningProductLastModifiedDateFilter;
+
+pub use crate::types::_machine_learning_product_last_modified_date_filter_date_range::MachineLearningProductLastModifiedDateFilterDateRange;
+
+pub use crate::types::_machine_learning_product_entity_id_filter::MachineLearningProductEntityIdFilter;
 
 pub use crate::types::_resale_authorization_filters::ResaleAuthorizationFilters;
 
@@ -286,6 +306,26 @@ mod _failure_code;
 mod _filter;
 
 mod _intent;
+
+mod _machine_learning_product_entity_id_filter;
+
+mod _machine_learning_product_filters;
+
+mod _machine_learning_product_last_modified_date_filter;
+
+mod _machine_learning_product_last_modified_date_filter_date_range;
+
+mod _machine_learning_product_sort;
+
+mod _machine_learning_product_sort_by;
+
+mod _machine_learning_product_summary;
+
+mod _machine_learning_product_title_filter;
+
+mod _machine_learning_product_visibility_filter;
+
+mod _machine_learning_product_visibility_string;
 
 mod _offer_availability_end_date_filter;
 

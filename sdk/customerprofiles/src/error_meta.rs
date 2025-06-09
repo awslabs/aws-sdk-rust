@@ -236,6 +236,34 @@ impl From<crate::operation::create_domain::CreateDomainError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_domain_layout::CreateDomainLayoutError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_domain_layout::CreateDomainLayoutError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_domain_layout::CreateDomainLayoutError> for Error {
+    fn from(err: crate::operation::create_domain_layout::CreateDomainLayoutError) -> Self {
+        match err {
+            crate::operation::create_domain_layout::CreateDomainLayoutError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::create_domain_layout::CreateDomainLayoutError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::create_domain_layout::CreateDomainLayoutError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::create_domain_layout::CreateDomainLayoutError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::create_domain_layout::CreateDomainLayoutError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::create_domain_layout::CreateDomainLayoutError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_event_stream::CreateEventStreamError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -536,6 +564,34 @@ impl From<crate::operation::delete_domain::DeleteDomainError> for Error {
             crate::operation::delete_domain::DeleteDomainError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::delete_domain::DeleteDomainError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::delete_domain::DeleteDomainError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_domain_layout::DeleteDomainLayoutError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_domain_layout::DeleteDomainLayoutError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_domain_layout::DeleteDomainLayoutError> for Error {
+    fn from(err: crate::operation::delete_domain_layout::DeleteDomainLayoutError) -> Self {
+        match err {
+            crate::operation::delete_domain_layout::DeleteDomainLayoutError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::delete_domain_layout::DeleteDomainLayoutError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::delete_domain_layout::DeleteDomainLayoutError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::delete_domain_layout::DeleteDomainLayoutError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::delete_domain_layout::DeleteDomainLayoutError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::delete_domain_layout::DeleteDomainLayoutError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -999,6 +1055,32 @@ impl From<crate::operation::get_domain::GetDomainError> for Error {
             crate::operation::get_domain::GetDomainError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::get_domain::GetDomainError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::get_domain::GetDomainError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_domain_layout::GetDomainLayoutError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_domain_layout::GetDomainLayoutError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_domain_layout::GetDomainLayoutError> for Error {
+    fn from(err: crate::operation::get_domain_layout::GetDomainLayoutError) -> Self {
+        match err {
+            crate::operation::get_domain_layout::GetDomainLayoutError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_domain_layout::GetDomainLayoutError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::get_domain_layout::GetDomainLayoutError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::get_domain_layout::GetDomainLayoutError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_domain_layout::GetDomainLayoutError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_domain_layout::GetDomainLayoutError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1550,6 +1632,34 @@ impl From<crate::operation::list_calculated_attributes_for_profile::ListCalculat
             crate::operation::list_calculated_attributes_for_profile::ListCalculatedAttributesForProfileError::Unhandled(inner) => {
                 Error::Unhandled(inner)
             }
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_domain_layouts::ListDomainLayoutsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_domain_layouts::ListDomainLayoutsError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_domain_layouts::ListDomainLayoutsError> for Error {
+    fn from(err: crate::operation::list_domain_layouts::ListDomainLayoutsError) -> Self {
+        match err {
+            crate::operation::list_domain_layouts::ListDomainLayoutsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_domain_layouts::ListDomainLayoutsError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::list_domain_layouts::ListDomainLayoutsError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_domain_layouts::ListDomainLayoutsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::list_domain_layouts::ListDomainLayoutsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_domain_layouts::ListDomainLayoutsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -2261,6 +2371,34 @@ impl From<crate::operation::update_domain::UpdateDomainError> for Error {
             crate::operation::update_domain::UpdateDomainError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::update_domain::UpdateDomainError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::update_domain::UpdateDomainError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_domain_layout::UpdateDomainLayoutError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_domain_layout::UpdateDomainLayoutError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_domain_layout::UpdateDomainLayoutError> for Error {
+    fn from(err: crate::operation::update_domain_layout::UpdateDomainLayoutError) -> Self {
+        match err {
+            crate::operation::update_domain_layout::UpdateDomainLayoutError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::update_domain_layout::UpdateDomainLayoutError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::update_domain_layout::UpdateDomainLayoutError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::update_domain_layout::UpdateDomainLayoutError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::update_domain_layout::UpdateDomainLayoutError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::update_domain_layout::UpdateDomainLayoutError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

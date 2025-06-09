@@ -8,9 +8,23 @@ pub struct CreateMountTargetInput {
     pub file_system_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the subnet to add the mount target in. For One Zone file systems, use the subnet that is associated with the file system's Availability Zone.</p>
     pub subnet_id: ::std::option::Option<::std::string::String>,
-    /// <p>Valid IPv4 address within the address range of the specified subnet.</p>
+    /// <p>If the IP address type for the mount target is IPv4, then specify the IPv4 address within the address range of the specified subnet.</p>
     pub ip_address: ::std::option::Option<::std::string::String>,
-    /// <p>Up to five VPC security group IDs, of the form <code>sg-xxxxxxxx</code>. These must be for the same VPC as subnet specified.</p>
+    /// <p>If the IP address type for the mount target is IPv6, then specify the IPv6 address within the address range of the specified subnet.</p>
+    pub ipv6_address: ::std::option::Option<::std::string::String>,
+    /// <p>Specify the type of IP address of the mount target you are creating. Options are IPv4, dual stack, or IPv6. If you don’t specify an IpAddressType, then IPv4 is used.</p>
+    /// <ul>
+    /// <li>
+    /// <p>IPV4_ONLY – Create mount target with IPv4 only subnet or dual-stack subnet.</p></li>
+    /// <li>
+    /// <p>DUAL_STACK – Create mount target with dual-stack subnet.</p></li>
+    /// <li>
+    /// <p>IPV6_ONLY – Create mount target with IPv6 only subnet.</p></li>
+    /// </ul><note>
+    /// <p>Creating IPv6 mount target only ENI in dual-stack subnet is not supported.</p>
+    /// </note>
+    pub ip_address_type: ::std::option::Option<crate::types::IpAddressType>,
+    /// <p>VPC security group IDs, of the form <code>sg-xxxxxxxx</code>. These must be for the same VPC as the subnet specified. The maximum number of security groups depends on account quota. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/amazon-vpc-limits.html">Amazon VPC Quotas</a> in the <i>Amazon VPC User Guide</i> (see the <b>Security Groups</b> table).</p>
     pub security_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl CreateMountTargetInput {
@@ -22,11 +36,29 @@ impl CreateMountTargetInput {
     pub fn subnet_id(&self) -> ::std::option::Option<&str> {
         self.subnet_id.as_deref()
     }
-    /// <p>Valid IPv4 address within the address range of the specified subnet.</p>
+    /// <p>If the IP address type for the mount target is IPv4, then specify the IPv4 address within the address range of the specified subnet.</p>
     pub fn ip_address(&self) -> ::std::option::Option<&str> {
         self.ip_address.as_deref()
     }
-    /// <p>Up to five VPC security group IDs, of the form <code>sg-xxxxxxxx</code>. These must be for the same VPC as subnet specified.</p>
+    /// <p>If the IP address type for the mount target is IPv6, then specify the IPv6 address within the address range of the specified subnet.</p>
+    pub fn ipv6_address(&self) -> ::std::option::Option<&str> {
+        self.ipv6_address.as_deref()
+    }
+    /// <p>Specify the type of IP address of the mount target you are creating. Options are IPv4, dual stack, or IPv6. If you don’t specify an IpAddressType, then IPv4 is used.</p>
+    /// <ul>
+    /// <li>
+    /// <p>IPV4_ONLY – Create mount target with IPv4 only subnet or dual-stack subnet.</p></li>
+    /// <li>
+    /// <p>DUAL_STACK – Create mount target with dual-stack subnet.</p></li>
+    /// <li>
+    /// <p>IPV6_ONLY – Create mount target with IPv6 only subnet.</p></li>
+    /// </ul><note>
+    /// <p>Creating IPv6 mount target only ENI in dual-stack subnet is not supported.</p>
+    /// </note>
+    pub fn ip_address_type(&self) -> ::std::option::Option<&crate::types::IpAddressType> {
+        self.ip_address_type.as_ref()
+    }
+    /// <p>VPC security group IDs, of the form <code>sg-xxxxxxxx</code>. These must be for the same VPC as the subnet specified. The maximum number of security groups depends on account quota. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/amazon-vpc-limits.html">Amazon VPC Quotas</a> in the <i>Amazon VPC User Guide</i> (see the <b>Security Groups</b> table).</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.security_groups.is_none()`.
     pub fn security_groups(&self) -> &[::std::string::String] {
@@ -47,6 +79,8 @@ pub struct CreateMountTargetInputBuilder {
     pub(crate) file_system_id: ::std::option::Option<::std::string::String>,
     pub(crate) subnet_id: ::std::option::Option<::std::string::String>,
     pub(crate) ip_address: ::std::option::Option<::std::string::String>,
+    pub(crate) ipv6_address: ::std::option::Option<::std::string::String>,
+    pub(crate) ip_address_type: ::std::option::Option<crate::types::IpAddressType>,
     pub(crate) security_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl CreateMountTargetInputBuilder {
@@ -80,37 +114,95 @@ impl CreateMountTargetInputBuilder {
     pub fn get_subnet_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.subnet_id
     }
-    /// <p>Valid IPv4 address within the address range of the specified subnet.</p>
+    /// <p>If the IP address type for the mount target is IPv4, then specify the IPv4 address within the address range of the specified subnet.</p>
     pub fn ip_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ip_address = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Valid IPv4 address within the address range of the specified subnet.</p>
+    /// <p>If the IP address type for the mount target is IPv4, then specify the IPv4 address within the address range of the specified subnet.</p>
     pub fn set_ip_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ip_address = input;
         self
     }
-    /// <p>Valid IPv4 address within the address range of the specified subnet.</p>
+    /// <p>If the IP address type for the mount target is IPv4, then specify the IPv4 address within the address range of the specified subnet.</p>
     pub fn get_ip_address(&self) -> &::std::option::Option<::std::string::String> {
         &self.ip_address
+    }
+    /// <p>If the IP address type for the mount target is IPv6, then specify the IPv6 address within the address range of the specified subnet.</p>
+    pub fn ipv6_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.ipv6_address = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>If the IP address type for the mount target is IPv6, then specify the IPv6 address within the address range of the specified subnet.</p>
+    pub fn set_ipv6_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.ipv6_address = input;
+        self
+    }
+    /// <p>If the IP address type for the mount target is IPv6, then specify the IPv6 address within the address range of the specified subnet.</p>
+    pub fn get_ipv6_address(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ipv6_address
+    }
+    /// <p>Specify the type of IP address of the mount target you are creating. Options are IPv4, dual stack, or IPv6. If you don’t specify an IpAddressType, then IPv4 is used.</p>
+    /// <ul>
+    /// <li>
+    /// <p>IPV4_ONLY – Create mount target with IPv4 only subnet or dual-stack subnet.</p></li>
+    /// <li>
+    /// <p>DUAL_STACK – Create mount target with dual-stack subnet.</p></li>
+    /// <li>
+    /// <p>IPV6_ONLY – Create mount target with IPv6 only subnet.</p></li>
+    /// </ul><note>
+    /// <p>Creating IPv6 mount target only ENI in dual-stack subnet is not supported.</p>
+    /// </note>
+    pub fn ip_address_type(mut self, input: crate::types::IpAddressType) -> Self {
+        self.ip_address_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specify the type of IP address of the mount target you are creating. Options are IPv4, dual stack, or IPv6. If you don’t specify an IpAddressType, then IPv4 is used.</p>
+    /// <ul>
+    /// <li>
+    /// <p>IPV4_ONLY – Create mount target with IPv4 only subnet or dual-stack subnet.</p></li>
+    /// <li>
+    /// <p>DUAL_STACK – Create mount target with dual-stack subnet.</p></li>
+    /// <li>
+    /// <p>IPV6_ONLY – Create mount target with IPv6 only subnet.</p></li>
+    /// </ul><note>
+    /// <p>Creating IPv6 mount target only ENI in dual-stack subnet is not supported.</p>
+    /// </note>
+    pub fn set_ip_address_type(mut self, input: ::std::option::Option<crate::types::IpAddressType>) -> Self {
+        self.ip_address_type = input;
+        self
+    }
+    /// <p>Specify the type of IP address of the mount target you are creating. Options are IPv4, dual stack, or IPv6. If you don’t specify an IpAddressType, then IPv4 is used.</p>
+    /// <ul>
+    /// <li>
+    /// <p>IPV4_ONLY – Create mount target with IPv4 only subnet or dual-stack subnet.</p></li>
+    /// <li>
+    /// <p>DUAL_STACK – Create mount target with dual-stack subnet.</p></li>
+    /// <li>
+    /// <p>IPV6_ONLY – Create mount target with IPv6 only subnet.</p></li>
+    /// </ul><note>
+    /// <p>Creating IPv6 mount target only ENI in dual-stack subnet is not supported.</p>
+    /// </note>
+    pub fn get_ip_address_type(&self) -> &::std::option::Option<crate::types::IpAddressType> {
+        &self.ip_address_type
     }
     /// Appends an item to `security_groups`.
     ///
     /// To override the contents of this collection use [`set_security_groups`](Self::set_security_groups).
     ///
-    /// <p>Up to five VPC security group IDs, of the form <code>sg-xxxxxxxx</code>. These must be for the same VPC as subnet specified.</p>
+    /// <p>VPC security group IDs, of the form <code>sg-xxxxxxxx</code>. These must be for the same VPC as the subnet specified. The maximum number of security groups depends on account quota. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/amazon-vpc-limits.html">Amazon VPC Quotas</a> in the <i>Amazon VPC User Guide</i> (see the <b>Security Groups</b> table).</p>
     pub fn security_groups(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.security_groups.unwrap_or_default();
         v.push(input.into());
         self.security_groups = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Up to five VPC security group IDs, of the form <code>sg-xxxxxxxx</code>. These must be for the same VPC as subnet specified.</p>
+    /// <p>VPC security group IDs, of the form <code>sg-xxxxxxxx</code>. These must be for the same VPC as the subnet specified. The maximum number of security groups depends on account quota. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/amazon-vpc-limits.html">Amazon VPC Quotas</a> in the <i>Amazon VPC User Guide</i> (see the <b>Security Groups</b> table).</p>
     pub fn set_security_groups(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.security_groups = input;
         self
     }
-    /// <p>Up to five VPC security group IDs, of the form <code>sg-xxxxxxxx</code>. These must be for the same VPC as subnet specified.</p>
+    /// <p>VPC security group IDs, of the form <code>sg-xxxxxxxx</code>. These must be for the same VPC as the subnet specified. The maximum number of security groups depends on account quota. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/amazon-vpc-limits.html">Amazon VPC Quotas</a> in the <i>Amazon VPC User Guide</i> (see the <b>Security Groups</b> table).</p>
     pub fn get_security_groups(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.security_groups
     }
@@ -122,6 +214,8 @@ impl CreateMountTargetInputBuilder {
             file_system_id: self.file_system_id,
             subnet_id: self.subnet_id,
             ip_address: self.ip_address,
+            ipv6_address: self.ipv6_address,
+            ip_address_type: self.ip_address_type,
             security_groups: self.security_groups,
         })
     }

@@ -11,6 +11,7 @@ impl super::Client {
     ///   - [`display_name(Option<String>)`](crate::operation::get_calculated_attribute_for_profile::GetCalculatedAttributeForProfileOutput::display_name): <p>The display name of the calculated attribute.</p>
     ///   - [`is_data_partial(Option<String>)`](crate::operation::get_calculated_attribute_for_profile::GetCalculatedAttributeForProfileOutput::is_data_partial): <p>Indicates whether the calculated attribute’s value is based on partial data. If data is partial, it is set to true.</p>
     ///   - [`value(Option<String>)`](crate::operation::get_calculated_attribute_for_profile::GetCalculatedAttributeForProfileOutput::value): <p>The value of the calculated attribute.</p>
+    ///   - [`last_object_timestamp(Option<DateTime>)`](crate::operation::get_calculated_attribute_for_profile::GetCalculatedAttributeForProfileOutput::last_object_timestamp): <p>The timestamp of the newest object included in the calculated attribute calculation.</p>
     /// - On failure, responds with [`SdkError<GetCalculatedAttributeForProfileError>`](crate::operation::get_calculated_attribute_for_profile::GetCalculatedAttributeForProfileError)
     pub fn get_calculated_attribute_for_profile(
         &self,

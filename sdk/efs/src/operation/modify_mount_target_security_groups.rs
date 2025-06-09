@@ -258,10 +258,10 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ModifyMountTa
             .ok_or("failed to downcast to ModifyMountTargetSecurityGroupsInput")?;
 
         let params = crate::config::endpoint::Params::builder()
-            .set_region(cfg.load::<::aws_types::region::Region>().map(|r| r.as_ref().to_owned()))
             .set_use_dual_stack(cfg.load::<::aws_types::endpoint_config::UseDualStack>().map(|ty| ty.0))
             .set_use_fips(cfg.load::<::aws_types::endpoint_config::UseFips>().map(|ty| ty.0))
             .set_endpoint(cfg.load::<::aws_types::endpoint_config::EndpointUrl>().map(|ty| ty.0.clone()))
+            .set_region(cfg.load::<::aws_types::region::Region>().map(|r| r.as_ref().to_owned()))
             .build()
             .map_err(|err| {
                 ::aws_smithy_runtime_api::client::interceptors::error::ContextAttachedError::new("endpoint params could not be built", err)
@@ -287,7 +287,7 @@ pub enum ModifyMountTargetSecurityGroupsError {
     InternalServerError(crate::types::error::InternalServerError),
     /// <p>Returned if there is no mount target with the specified ID found in the caller's Amazon Web Services account.</p>
     MountTargetNotFound(crate::types::error::MountTargetNotFound),
-    /// <p>Returned if the size of <code>SecurityGroups</code> specified in the request is greater than five.</p>
+    /// <p>Returned if the number of <code>SecurityGroups</code> specified in the request is greater than the limit, which is based on account quota. Either delete some security groups or request that the account quota be raised. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/amazon-vpc-limits.html">Amazon VPC Quotas</a> in the <i>Amazon VPC User Guide</i> (see the <b>Security Groups</b> table).</p>
     SecurityGroupLimitExceeded(crate::types::error::SecurityGroupLimitExceeded),
     /// <p>Returned if one of the specified security groups doesn't exist in the subnet's virtual private cloud (VPC).</p>
     SecurityGroupNotFound(crate::types::error::SecurityGroupNotFound),

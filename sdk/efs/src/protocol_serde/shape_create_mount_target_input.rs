@@ -9,17 +9,23 @@ pub fn ser_create_mount_target_input_input(
     if let Some(var_2) = &input.ip_address {
         object.key("IpAddress").string(var_2.as_str());
     }
-    if let Some(var_3) = &input.security_groups {
-        let mut array_4 = object.key("SecurityGroups").start_array();
-        for item_5 in var_3 {
+    if let Some(var_3) = &input.ip_address_type {
+        object.key("IpAddressType").string(var_3.as_str());
+    }
+    if let Some(var_4) = &input.ipv6_address {
+        object.key("Ipv6Address").string(var_4.as_str());
+    }
+    if let Some(var_5) = &input.security_groups {
+        let mut array_6 = object.key("SecurityGroups").start_array();
+        for item_7 in var_5 {
             {
-                array_4.value().string(item_5.as_str());
+                array_6.value().string(item_7.as_str());
             }
         }
-        array_4.finish();
+        array_6.finish();
     }
-    if let Some(var_6) = &input.subnet_id {
-        object.key("SubnetId").string(var_6.as_str());
+    if let Some(var_8) = &input.subnet_id {
+        object.key("SubnetId").string(var_8.as_str());
     }
     Ok(())
 }

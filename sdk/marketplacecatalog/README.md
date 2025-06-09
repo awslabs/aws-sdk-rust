@@ -1,6 +1,6 @@
 # aws-sdk-marketplacecatalog
 
-Catalog API actions allow you to manage your entities through list, describe, and update capabilities. An entity can be a product or an offer on AWS Marketplace.
+Catalog API actions allow you to manage your entities through list, describe, and update capabilities. An _entity_ can be a product or an offer on AWS Marketplace.
 
 You can automate your entity update process by integrating the AWS Marketplace Catalog API with your AWS Marketplace product build or deployment pipelines. You can also create your own applications on top of the Catalog API to manage your products on AWS Marketplace.
 
@@ -16,7 +16,7 @@ your project, add the following to your **Cargo.toml** file:
 ```toml
 [dependencies]
 aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-aws-sdk-marketplacecatalog = "1.76.0"
+aws-sdk-marketplacecatalog = "1.77.0"
 tokio = { version = "1", features = ["full"] }
 ```
 

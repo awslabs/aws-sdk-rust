@@ -14,6 +14,8 @@ pub struct CalculatedAttributeValue {
     pub profile_id: ::std::option::Option<::std::string::String>,
     /// <p>The value of the calculated attribute.</p>
     pub value: ::std::option::Option<::std::string::String>,
+    /// <p>The timestamp of the newest object included in the calculated attribute calculation.</p>
+    pub last_object_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl CalculatedAttributeValue {
     /// <p>The unique name of the calculated attribute.</p>
@@ -36,6 +38,10 @@ impl CalculatedAttributeValue {
     pub fn value(&self) -> ::std::option::Option<&str> {
         self.value.as_deref()
     }
+    /// <p>The timestamp of the newest object included in the calculated attribute calculation.</p>
+    pub fn last_object_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+        self.last_object_timestamp.as_ref()
+    }
 }
 impl CalculatedAttributeValue {
     /// Creates a new builder-style object to manufacture [`CalculatedAttributeValue`](crate::types::CalculatedAttributeValue).
@@ -53,6 +59,7 @@ pub struct CalculatedAttributeValueBuilder {
     pub(crate) is_data_partial: ::std::option::Option<::std::string::String>,
     pub(crate) profile_id: ::std::option::Option<::std::string::String>,
     pub(crate) value: ::std::option::Option<::std::string::String>,
+    pub(crate) last_object_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl CalculatedAttributeValueBuilder {
     /// <p>The unique name of the calculated attribute.</p>
@@ -125,6 +132,20 @@ impl CalculatedAttributeValueBuilder {
     pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
         &self.value
     }
+    /// <p>The timestamp of the newest object included in the calculated attribute calculation.</p>
+    pub fn last_object_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.last_object_timestamp = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The timestamp of the newest object included in the calculated attribute calculation.</p>
+    pub fn set_last_object_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.last_object_timestamp = input;
+        self
+    }
+    /// <p>The timestamp of the newest object included in the calculated attribute calculation.</p>
+    pub fn get_last_object_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_object_timestamp
+    }
     /// Consumes the builder and constructs a [`CalculatedAttributeValue`](crate::types::CalculatedAttributeValue).
     pub fn build(self) -> crate::types::CalculatedAttributeValue {
         crate::types::CalculatedAttributeValue {
@@ -133,6 +154,7 @@ impl CalculatedAttributeValueBuilder {
             is_data_partial: self.is_data_partial,
             profile_id: self.profile_id,
             value: self.value,
+            last_object_timestamp: self.last_object_timestamp,
         }
     }
 }

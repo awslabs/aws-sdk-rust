@@ -135,17 +135,17 @@ impl ModifyMountTargetSecurityGroupsFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_security_groups`](Self::set_security_groups).
     ///
-    /// <p>An array of up to five VPC security group IDs.</p>
+    /// <p>An array of VPC security group IDs.</p>
     pub fn security_groups(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.security_groups(input.into());
         self
     }
-    /// <p>An array of up to five VPC security group IDs.</p>
+    /// <p>An array of VPC security group IDs.</p>
     pub fn set_security_groups(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_security_groups(input);
         self
     }
-    /// <p>An array of up to five VPC security group IDs.</p>
+    /// <p>An array of VPC security group IDs.</p>
     pub fn get_security_groups(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_security_groups()
     }

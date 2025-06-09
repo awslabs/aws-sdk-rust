@@ -40,6 +40,12 @@ pub fn ser_entity_type_sort(
             crate::protocol_serde::shape_resale_authorization_sort::ser_resale_authorization_sort(&mut object_6, inner)?;
             object_6.finish();
         }
+        crate::types::EntityTypeSort::MachineLearningProductSort(inner) => {
+            #[allow(unused_mut)]
+            let mut object_7 = object_6.key("MachineLearningProductSort").start_object();
+            crate::protocol_serde::shape_machine_learning_product_sort::ser_machine_learning_product_sort(&mut object_7, inner)?;
+            object_7.finish();
+        }
         crate::types::EntityTypeSort::Unknown => {
             return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant(
                 "EntityTypeSort",

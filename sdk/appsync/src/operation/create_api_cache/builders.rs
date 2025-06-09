@@ -140,30 +140,54 @@ impl CreateApiCacheFluentBuilder {
         self.inner.get_ttl()
     }
     /// <p>Transit encryption flag when connecting to cache. You cannot update this setting after creation.</p>
+    #[deprecated(
+        note = "transitEncryptionEnabled attribute is deprecated. Encryption in transit is always enabled.",
+        since = "5/15/2025"
+    )]
     pub fn transit_encryption_enabled(mut self, input: bool) -> Self {
         self.inner = self.inner.transit_encryption_enabled(input);
         self
     }
     /// <p>Transit encryption flag when connecting to cache. You cannot update this setting after creation.</p>
+    #[deprecated(
+        note = "transitEncryptionEnabled attribute is deprecated. Encryption in transit is always enabled.",
+        since = "5/15/2025"
+    )]
     pub fn set_transit_encryption_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_transit_encryption_enabled(input);
         self
     }
     /// <p>Transit encryption flag when connecting to cache. You cannot update this setting after creation.</p>
+    #[deprecated(
+        note = "transitEncryptionEnabled attribute is deprecated. Encryption in transit is always enabled.",
+        since = "5/15/2025"
+    )]
     pub fn get_transit_encryption_enabled(&self) -> &::std::option::Option<bool> {
         self.inner.get_transit_encryption_enabled()
     }
     /// <p>At-rest encryption flag for cache. You cannot update this setting after creation.</p>
+    #[deprecated(
+        note = "atRestEncryptionEnabled attribute is deprecated. Encryption at rest is always enabled.",
+        since = "5/15/2025"
+    )]
     pub fn at_rest_encryption_enabled(mut self, input: bool) -> Self {
         self.inner = self.inner.at_rest_encryption_enabled(input);
         self
     }
     /// <p>At-rest encryption flag for cache. You cannot update this setting after creation.</p>
+    #[deprecated(
+        note = "atRestEncryptionEnabled attribute is deprecated. Encryption at rest is always enabled.",
+        since = "5/15/2025"
+    )]
     pub fn set_at_rest_encryption_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_at_rest_encryption_enabled(input);
         self
     }
     /// <p>At-rest encryption flag for cache. You cannot update this setting after creation.</p>
+    #[deprecated(
+        note = "atRestEncryptionEnabled attribute is deprecated. Encryption at rest is always enabled.",
+        since = "5/15/2025"
+    )]
     pub fn get_at_rest_encryption_enabled(&self) -> &::std::option::Option<bool> {
         self.inner.get_at_rest_encryption_enabled()
     }

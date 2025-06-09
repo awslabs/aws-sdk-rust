@@ -33,6 +33,8 @@ pub(crate) mod shape_create_calculated_attribute_definition;
 
 pub(crate) mod shape_create_domain;
 
+pub(crate) mod shape_create_domain_layout;
+
 pub(crate) mod shape_create_event_stream;
 
 pub(crate) mod shape_create_event_trigger;
@@ -50,6 +52,8 @@ pub(crate) mod shape_create_segment_snapshot;
 pub(crate) mod shape_delete_calculated_attribute_definition;
 
 pub(crate) mod shape_delete_domain;
+
+pub(crate) mod shape_delete_domain_layout;
 
 pub(crate) mod shape_delete_event_stream;
 
@@ -78,6 +82,8 @@ pub(crate) mod shape_get_calculated_attribute_definition;
 pub(crate) mod shape_get_calculated_attribute_for_profile;
 
 pub(crate) mod shape_get_domain;
+
+pub(crate) mod shape_get_domain_layout;
 
 pub(crate) mod shape_get_event_stream;
 
@@ -112,6 +118,8 @@ pub(crate) mod shape_list_account_integrations;
 pub(crate) mod shape_list_calculated_attribute_definitions;
 
 pub(crate) mod shape_list_calculated_attributes_for_profile;
+
+pub(crate) mod shape_list_domain_layouts;
 
 pub(crate) mod shape_list_domains;
 
@@ -159,6 +167,8 @@ pub(crate) mod shape_update_calculated_attribute_definition;
 
 pub(crate) mod shape_update_domain;
 
+pub(crate) mod shape_update_domain_layout;
+
 pub(crate) mod shape_update_event_trigger;
 
 pub(crate) mod shape_update_profile;
@@ -184,6 +194,8 @@ pub(crate) mod shape_batch_get_profile_input;
 pub(crate) mod shape_create_calculated_attribute_definition_input;
 
 pub(crate) mod shape_create_domain_input;
+
+pub(crate) mod shape_create_domain_layout_input;
 
 pub(crate) mod shape_create_event_stream_input;
 
@@ -244,6 +256,8 @@ pub(crate) mod shape_throttling_exception;
 pub(crate) mod shape_update_calculated_attribute_definition_input;
 
 pub(crate) mod shape_update_domain_input;
+
+pub(crate) mod shape_update_domain_layout_input;
 
 pub(crate) mod shape_update_event_trigger_input;
 
@@ -319,6 +333,8 @@ pub(crate) mod shape_job_stats;
 
 pub(crate) mod shape_key_map;
 
+pub(crate) mod shape_layout_list;
+
 pub(crate) mod shape_list_object_type_attributes_list;
 
 pub(crate) mod shape_match_id_list;
@@ -348,6 +364,8 @@ pub(crate) mod shape_profile_object_type_list;
 pub(crate) mod shape_profile_object_type_template_list;
 
 pub(crate) mod shape_profiles;
+
+pub(crate) mod shape_readiness;
 
 pub(crate) mod shape_request_value_list;
 
@@ -412,6 +430,8 @@ pub(crate) mod shape_group_list;
 pub(crate) mod shape_identity_resolution_job;
 
 pub(crate) mod shape_job_schedule;
+
+pub(crate) mod shape_layout_item;
 
 pub(crate) mod shape_list_calculated_attribute_definition_item;
 
@@ -506,6 +526,8 @@ pub(crate) mod shape_source_connector_properties;
 pub(crate) mod shape_source_segment;
 
 pub(crate) mod shape_trigger_properties;
+
+pub(crate) mod shape_value_range;
 
 pub(crate) mod shape_calculated_attribute_dimension;
 

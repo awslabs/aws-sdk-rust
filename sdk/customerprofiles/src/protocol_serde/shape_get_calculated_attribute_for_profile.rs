@@ -164,6 +164,12 @@ pub(crate) fn de_get_calculated_attribute_for_profile(
                             .transpose()?,
                     );
                 }
+                "LastObjectTimestamp" => {
+                    builder = builder.set_last_object_timestamp(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
+                        tokens.next(),
+                        ::aws_smithy_types::date_time::Format::EpochSeconds,
+                    )?);
+                }
                 "Value" => {
                     builder = builder.set_value(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

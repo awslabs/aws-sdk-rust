@@ -17,6 +17,33 @@ pub(crate) fn create_domain_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn create_domain_layout_output_output_correct_errors(
+    mut builder: crate::operation::create_domain_layout::builders::CreateDomainLayoutOutputBuilder,
+) -> crate::operation::create_domain_layout::builders::CreateDomainLayoutOutputBuilder {
+    if builder.layout_definition_name.is_none() {
+        builder.layout_definition_name = Some(Default::default())
+    }
+    if builder.description.is_none() {
+        builder.description = Some(Default::default())
+    }
+    if builder.display_name.is_none() {
+        builder.display_name = Some(Default::default())
+    }
+    if builder.layout_type.is_none() {
+        builder.layout_type = "no value was set".parse::<crate::types::LayoutType>().ok()
+    }
+    if builder.layout.is_none() {
+        builder.layout = Some(Default::default())
+    }
+    if builder.version.is_none() {
+        builder.version = Some(Default::default())
+    }
+    if builder.created_at.is_none() {
+        builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
 pub(crate) fn create_event_stream_output_output_correct_errors(
     mut builder: crate::operation::create_event_stream::builders::CreateEventStreamOutputBuilder,
 ) -> crate::operation::create_event_stream::builders::CreateEventStreamOutputBuilder {
@@ -74,6 +101,15 @@ pub(crate) fn delete_domain_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn delete_domain_layout_output_output_correct_errors(
+    mut builder: crate::operation::delete_domain_layout::builders::DeleteDomainLayoutOutputBuilder,
+) -> crate::operation::delete_domain_layout::builders::DeleteDomainLayoutOutputBuilder {
+    if builder.message.is_none() {
+        builder.message = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn delete_event_trigger_output_output_correct_errors(
     mut builder: crate::operation::delete_event_trigger::builders::DeleteEventTriggerOutputBuilder,
 ) -> crate::operation::delete_event_trigger::builders::DeleteEventTriggerOutputBuilder {
@@ -115,6 +151,36 @@ pub(crate) fn get_domain_output_output_correct_errors(
 ) -> crate::operation::get_domain::builders::GetDomainOutputBuilder {
     if builder.domain_name.is_none() {
         builder.domain_name = Some(Default::default())
+    }
+    if builder.created_at.is_none() {
+        builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.last_updated_at.is_none() {
+        builder.last_updated_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
+pub(crate) fn get_domain_layout_output_output_correct_errors(
+    mut builder: crate::operation::get_domain_layout::builders::GetDomainLayoutOutputBuilder,
+) -> crate::operation::get_domain_layout::builders::GetDomainLayoutOutputBuilder {
+    if builder.layout_definition_name.is_none() {
+        builder.layout_definition_name = Some(Default::default())
+    }
+    if builder.description.is_none() {
+        builder.description = Some(Default::default())
+    }
+    if builder.display_name.is_none() {
+        builder.display_name = Some(Default::default())
+    }
+    if builder.layout_type.is_none() {
+        builder.layout_type = "no value was set".parse::<crate::types::LayoutType>().ok()
+    }
+    if builder.layout.is_none() {
+        builder.layout = Some(Default::default())
+    }
+    if builder.version.is_none() {
+        builder.version = Some(Default::default())
     }
     if builder.created_at.is_none() {
         builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
@@ -422,6 +488,28 @@ pub(crate) fn job_schedule_correct_errors(mut builder: crate::types::builders::J
     builder
 }
 
+pub(crate) fn layout_item_correct_errors(mut builder: crate::types::builders::LayoutItemBuilder) -> crate::types::builders::LayoutItemBuilder {
+    if builder.layout_definition_name.is_none() {
+        builder.layout_definition_name = Some(Default::default())
+    }
+    if builder.description.is_none() {
+        builder.description = Some(Default::default())
+    }
+    if builder.display_name.is_none() {
+        builder.display_name = Some(Default::default())
+    }
+    if builder.layout_type.is_none() {
+        builder.layout_type = "no value was set".parse::<crate::types::LayoutType>().ok()
+    }
+    if builder.created_at.is_none() {
+        builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.last_updated_at.is_none() {
+        builder.last_updated_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
 pub(crate) fn list_domain_item_correct_errors(
     mut builder: crate::types::builders::ListDomainItemBuilder,
 ) -> crate::types::builders::ListDomainItemBuilder {
@@ -523,16 +611,6 @@ pub(crate) fn profile_query_result_correct_errors(
     }
     if builder.query_result.is_none() {
         builder.query_result = "no value was set".parse::<crate::types::QueryResult>().ok()
-    }
-    builder
-}
-
-pub(crate) fn range_correct_errors(mut builder: crate::types::builders::RangeBuilder) -> crate::types::builders::RangeBuilder {
-    if builder.value.is_none() {
-        builder.value = Some(Default::default())
-    }
-    if builder.unit.is_none() {
-        builder.unit = "no value was set".parse::<crate::types::Unit>().ok()
     }
     builder
 }
@@ -642,6 +720,16 @@ pub(crate) fn s3_exporting_config_correct_errors(
 ) -> crate::types::builders::S3ExportingConfigBuilder {
     if builder.s3_bucket_name.is_none() {
         builder.s3_bucket_name = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn value_range_correct_errors(mut builder: crate::types::builders::ValueRangeBuilder) -> crate::types::builders::ValueRangeBuilder {
+    if builder.start.is_none() {
+        builder.start = Some(Default::default())
+    }
+    if builder.end.is_none() {
+        builder.end = Some(Default::default())
     }
     builder
 }

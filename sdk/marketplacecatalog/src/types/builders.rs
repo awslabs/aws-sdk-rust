@@ -7,6 +7,8 @@ pub use crate::types::_entity::EntityBuilder;
 
 pub use crate::types::_entity_summary::EntitySummaryBuilder;
 
+pub use crate::types::_machine_learning_product_summary::MachineLearningProductSummaryBuilder;
+
 pub use crate::types::_resale_authorization_summary::ResaleAuthorizationSummaryBuilder;
 
 pub use crate::types::_offer_summary::OfferSummaryBuilder;
@@ -19,6 +21,8 @@ pub use crate::types::_container_product_summary::ContainerProductSummaryBuilder
 
 pub use crate::types::_ami_product_summary::AmiProductSummaryBuilder;
 
+pub use crate::types::_machine_learning_product_sort::MachineLearningProductSortBuilder;
+
 pub use crate::types::_resale_authorization_sort::ResaleAuthorizationSortBuilder;
 
 pub use crate::types::_container_product_sort::ContainerProductSortBuilder;
@@ -30,6 +34,18 @@ pub use crate::types::_ami_product_sort::AmiProductSortBuilder;
 pub use crate::types::_saa_s_product_sort::SaaSProductSortBuilder;
 
 pub use crate::types::_data_product_sort::DataProductSortBuilder;
+
+pub use crate::types::_machine_learning_product_filters::MachineLearningProductFiltersBuilder;
+
+pub use crate::types::_machine_learning_product_visibility_filter::MachineLearningProductVisibilityFilterBuilder;
+
+pub use crate::types::_machine_learning_product_title_filter::MachineLearningProductTitleFilterBuilder;
+
+pub use crate::types::_machine_learning_product_last_modified_date_filter::MachineLearningProductLastModifiedDateFilterBuilder;
+
+pub use crate::types::_machine_learning_product_last_modified_date_filter_date_range::MachineLearningProductLastModifiedDateFilterDateRangeBuilder;
+
+pub use crate::types::_machine_learning_product_entity_id_filter::MachineLearningProductEntityIdFilterBuilder;
 
 pub use crate::types::_resale_authorization_filters::ResaleAuthorizationFiltersBuilder;
 

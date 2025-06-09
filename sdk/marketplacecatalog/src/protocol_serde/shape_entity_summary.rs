@@ -81,6 +81,11 @@ where
                                 crate::protocol_serde::shape_resale_authorization_summary::de_resale_authorization_summary(tokens)?,
                             );
                         }
+                        "MachineLearningProductSummary" => {
+                            builder = builder.set_machine_learning_product_summary(
+                                crate::protocol_serde::shape_machine_learning_product_summary::de_machine_learning_product_summary(tokens)?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

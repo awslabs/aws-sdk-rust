@@ -5,7 +5,7 @@
 pub struct CreateProfileInput {
     /// <p>The unique name of the domain.</p>
     pub domain_name: ::std::option::Option<::std::string::String>,
-    /// <p>An account number that you have given to the customer.</p>
+    /// <p>An account number that you have assigned to the customer.</p>
     pub account_number: ::std::option::Option<::std::string::String>,
     /// <p>Any additional information relevant to the customer’s profile.</p>
     pub additional_information: ::std::option::Option<::std::string::String>,
@@ -57,7 +57,7 @@ impl CreateProfileInput {
     pub fn domain_name(&self) -> ::std::option::Option<&str> {
         self.domain_name.as_deref()
     }
-    /// <p>An account number that you have given to the customer.</p>
+    /// <p>An account number that you have assigned to the customer.</p>
     pub fn account_number(&self) -> ::std::option::Option<&str> {
         self.account_number.as_deref()
     }
@@ -232,17 +232,17 @@ impl CreateProfileInputBuilder {
     pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.domain_name
     }
-    /// <p>An account number that you have given to the customer.</p>
+    /// <p>An account number that you have assigned to the customer.</p>
     pub fn account_number(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_number = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>An account number that you have given to the customer.</p>
+    /// <p>An account number that you have assigned to the customer.</p>
     pub fn set_account_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.account_number = input;
         self
     }
-    /// <p>An account number that you have given to the customer.</p>
+    /// <p>An account number that you have assigned to the customer.</p>
     pub fn get_account_number(&self) -> &::std::option::Option<::std::string::String> {
         &self.account_number
     }

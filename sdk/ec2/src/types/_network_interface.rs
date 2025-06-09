@@ -64,6 +64,8 @@ pub struct NetworkInterface {
     pub ipv6_address: ::std::option::Option<::std::string::String>,
     /// <p>The service provider that manages the network interface.</p>
     pub operator: ::std::option::Option<crate::types::OperatorResponse>,
+    /// <p>The subnets associated with this network interface.</p>
+    pub associated_subnets: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl NetworkInterface {
     /// <p>The association information for an Elastic IP address (IPv4) associated with the network interface.</p>
@@ -198,6 +200,12 @@ impl NetworkInterface {
     pub fn operator(&self) -> ::std::option::Option<&crate::types::OperatorResponse> {
         self.operator.as_ref()
     }
+    /// <p>The subnets associated with this network interface.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.associated_subnets.is_none()`.
+    pub fn associated_subnets(&self) -> &[::std::string::String] {
+        self.associated_subnets.as_deref().unwrap_or_default()
+    }
 }
 impl NetworkInterface {
     /// Creates a new builder-style object to manufacture [`NetworkInterface`](crate::types::NetworkInterface).
@@ -240,6 +248,7 @@ pub struct NetworkInterfaceBuilder {
     pub(crate) ipv6_native: ::std::option::Option<bool>,
     pub(crate) ipv6_address: ::std::option::Option<::std::string::String>,
     pub(crate) operator: ::std::option::Option<crate::types::OperatorResponse>,
+    pub(crate) associated_subnets: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl NetworkInterfaceBuilder {
     /// <p>The association information for an Elastic IP address (IPv4) associated with the network interface.</p>
@@ -698,6 +707,26 @@ impl NetworkInterfaceBuilder {
     pub fn get_operator(&self) -> &::std::option::Option<crate::types::OperatorResponse> {
         &self.operator
     }
+    /// Appends an item to `associated_subnets`.
+    ///
+    /// To override the contents of this collection use [`set_associated_subnets`](Self::set_associated_subnets).
+    ///
+    /// <p>The subnets associated with this network interface.</p>
+    pub fn associated_subnets(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.associated_subnets.unwrap_or_default();
+        v.push(input.into());
+        self.associated_subnets = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The subnets associated with this network interface.</p>
+    pub fn set_associated_subnets(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.associated_subnets = input;
+        self
+    }
+    /// <p>The subnets associated with this network interface.</p>
+    pub fn get_associated_subnets(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.associated_subnets
+    }
     /// Consumes the builder and constructs a [`NetworkInterface`](crate::types::NetworkInterface).
     pub fn build(self) -> crate::types::NetworkInterface {
         crate::types::NetworkInterface {
@@ -731,6 +760,7 @@ impl NetworkInterfaceBuilder {
             ipv6_native: self.ipv6_native,
             ipv6_address: self.ipv6_address,
             operator: self.operator,
+            associated_subnets: self.associated_subnets,
         }
     }
 }

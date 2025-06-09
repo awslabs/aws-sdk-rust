@@ -21,6 +21,8 @@ pub use crate::types::_object_attribute::ObjectAttribute;
 
 pub use crate::types::_comparison_operator::ComparisonOperator;
 
+pub use crate::types::_layout_type::LayoutType;
+
 pub use crate::types::_rule_based_matching_response::RuleBasedMatchingResponse;
 
 pub use crate::types::_exporting_config::ExportingConfig;
@@ -53,6 +55,10 @@ pub use crate::types::_rule_based_matching_request::RuleBasedMatchingRequest;
 
 pub use crate::types::_matching_request::MatchingRequest;
 
+pub use crate::types::_readiness::Readiness;
+
+pub use crate::types::_readiness_status::ReadinessStatus;
+
 pub use crate::types::_attribute_details::AttributeDetails;
 
 pub use crate::types::_attribute_item::AttributeItem;
@@ -64,6 +70,8 @@ pub use crate::types::_threshold::Threshold;
 pub use crate::types::_operator::Operator;
 
 pub use crate::types::_range::Range;
+
+pub use crate::types::_value_range::ValueRange;
 
 pub use crate::types::_unit::Unit;
 
@@ -180,6 +188,8 @@ pub use crate::types::_event_stream_destination_status::EventStreamDestinationSt
 pub use crate::types::_event_stream_state::EventStreamState;
 
 pub use crate::types::_list_domain_item::ListDomainItem;
+
+pub use crate::types::_layout_item::LayoutItem;
 
 pub use crate::types::_list_calculated_attribute_for_profile_item::ListCalculatedAttributeForProfileItem;
 
@@ -419,6 +429,10 @@ mod _job_schedule_day_of_the_week;
 
 mod _job_stats;
 
+mod _layout_item;
+
+mod _layout_type;
+
 mod _list_calculated_attribute_definition_item;
 
 mod _list_calculated_attribute_for_profile_item;
@@ -489,6 +503,10 @@ mod _range_override;
 
 mod _range_unit;
 
+mod _readiness;
+
+mod _readiness_status;
+
 mod _rule_based_matching_request;
 
 mod _rule_based_matching_response;
@@ -554,6 +572,8 @@ mod _type_;
 mod _unit;
 
 mod _update_address;
+
+mod _value_range;
 
 mod _workflow_attributes;
 

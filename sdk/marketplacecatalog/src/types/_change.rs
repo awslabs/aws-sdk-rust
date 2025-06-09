@@ -13,6 +13,7 @@ pub struct Change {
     /// <p>This object contains details specific to the change type of the requested change. For more information about change types available for single-AMI products, see <a href="https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/ami-products.html#working-with-single-AMI-products">Working with single-AMI products</a>. Also, for more information about change types available for container-based products, see <a href="https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/container-products.html#working-with-container-products">Working with container products</a>.</p>
     pub details: ::std::option::Option<::std::string::String>,
     /// <p>Alternative field that accepts a JSON value instead of a string for <code>ChangeType</code> details. You can use either <code>Details</code> or <code>DetailsDocument</code>, but not both.</p>
+    /// <p>To download the "DetailsDocument" shapes, see the <a href="https://github.com/awslabs/aws-marketplace-catalog-api-shapes-for-python">Python</a> and <a href="https://github.com/awslabs/aws-marketplace-catalog-api-shapes-for-java/tree/main">Java</a> shapes on GitHub.</p>
     pub details_document: ::std::option::Option<::aws_smithy_types::Document>,
     /// <p>Optional name for the change.</p>
     pub change_name: ::std::option::Option<::std::string::String>,
@@ -38,6 +39,7 @@ impl Change {
         self.details.as_deref()
     }
     /// <p>Alternative field that accepts a JSON value instead of a string for <code>ChangeType</code> details. You can use either <code>Details</code> or <code>DetailsDocument</code>, but not both.</p>
+    /// <p>To download the "DetailsDocument" shapes, see the <a href="https://github.com/awslabs/aws-marketplace-catalog-api-shapes-for-python">Python</a> and <a href="https://github.com/awslabs/aws-marketplace-catalog-api-shapes-for-java/tree/main">Java</a> shapes on GitHub.</p>
     pub fn details_document(&self) -> ::std::option::Option<&::aws_smithy_types::Document> {
         self.details_document.as_ref()
     }
@@ -130,16 +132,19 @@ impl ChangeBuilder {
         &self.details
     }
     /// <p>Alternative field that accepts a JSON value instead of a string for <code>ChangeType</code> details. You can use either <code>Details</code> or <code>DetailsDocument</code>, but not both.</p>
+    /// <p>To download the "DetailsDocument" shapes, see the <a href="https://github.com/awslabs/aws-marketplace-catalog-api-shapes-for-python">Python</a> and <a href="https://github.com/awslabs/aws-marketplace-catalog-api-shapes-for-java/tree/main">Java</a> shapes on GitHub.</p>
     pub fn details_document(mut self, input: ::aws_smithy_types::Document) -> Self {
         self.details_document = ::std::option::Option::Some(input);
         self
     }
     /// <p>Alternative field that accepts a JSON value instead of a string for <code>ChangeType</code> details. You can use either <code>Details</code> or <code>DetailsDocument</code>, but not both.</p>
+    /// <p>To download the "DetailsDocument" shapes, see the <a href="https://github.com/awslabs/aws-marketplace-catalog-api-shapes-for-python">Python</a> and <a href="https://github.com/awslabs/aws-marketplace-catalog-api-shapes-for-java/tree/main">Java</a> shapes on GitHub.</p>
     pub fn set_details_document(mut self, input: ::std::option::Option<::aws_smithy_types::Document>) -> Self {
         self.details_document = input;
         self
     }
     /// <p>Alternative field that accepts a JSON value instead of a string for <code>ChangeType</code> details. You can use either <code>Details</code> or <code>DetailsDocument</code>, but not both.</p>
+    /// <p>To download the "DetailsDocument" shapes, see the <a href="https://github.com/awslabs/aws-marketplace-catalog-api-shapes-for-python">Python</a> and <a href="https://github.com/awslabs/aws-marketplace-catalog-api-shapes-for-java/tree/main">Java</a> shapes on GitHub.</p>
     pub fn get_details_document(&self) -> &::std::option::Option<::aws_smithy_types::Document> {
         &self.details_document
     }

@@ -40,6 +40,12 @@ pub fn ser_entity_type_filters(
             crate::protocol_serde::shape_resale_authorization_filters::ser_resale_authorization_filters(&mut object_6, inner)?;
             object_6.finish();
         }
+        crate::types::EntityTypeFilters::MachineLearningProductFilters(inner) => {
+            #[allow(unused_mut)]
+            let mut object_7 = object_4.key("MachineLearningProductFilters").start_object();
+            crate::protocol_serde::shape_machine_learning_product_filters::ser_machine_learning_product_filters(&mut object_7, inner)?;
+            object_7.finish();
+        }
         crate::types::EntityTypeFilters::Unknown => {
             return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant(
                 "EntityTypeFilters",

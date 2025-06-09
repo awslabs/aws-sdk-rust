@@ -16,6 +16,9 @@ pub mod create_calculated_attribute_definition;
 /// Types for the `CreateDomain` operation.
 pub mod create_domain;
 
+/// Types for the `CreateDomainLayout` operation.
+pub mod create_domain_layout;
+
 /// Types for the `CreateEventStream` operation.
 pub mod create_event_stream;
 
@@ -42,6 +45,9 @@ pub mod delete_calculated_attribute_definition;
 
 /// Types for the `DeleteDomain` operation.
 pub mod delete_domain;
+
+/// Types for the `DeleteDomainLayout` operation.
+pub mod delete_domain_layout;
 
 /// Types for the `DeleteEventStream` operation.
 pub mod delete_event_stream;
@@ -84,6 +90,9 @@ pub mod get_calculated_attribute_for_profile;
 
 /// Types for the `GetDomain` operation.
 pub mod get_domain;
+
+/// Types for the `GetDomainLayout` operation.
+pub mod get_domain_layout;
 
 /// Types for the `GetEventStream` operation.
 pub mod get_event_stream;
@@ -135,6 +144,9 @@ pub mod list_calculated_attribute_definitions;
 
 /// Types for the `ListCalculatedAttributesForProfile` operation.
 pub mod list_calculated_attributes_for_profile;
+
+/// Types for the `ListDomainLayouts` operation.
+pub mod list_domain_layouts;
 
 /// Types for the `ListDomains` operation.
 pub mod list_domains;
@@ -204,6 +216,9 @@ pub mod update_calculated_attribute_definition;
 
 /// Types for the `UpdateDomain` operation.
 pub mod update_domain;
+
+/// Types for the `UpdateDomainLayout` operation.
+pub mod update_domain_layout;
 
 /// Types for the `UpdateEventTrigger` operation.
 pub mod update_event_trigger;

@@ -200,6 +200,9 @@ pub(crate) fn de_create_calculated_attribute_definition(
                         ::aws_smithy_types::date_time::Format::EpochSeconds,
                     )?);
                 }
+                "Readiness" => {
+                    builder = builder.set_readiness(crate::protocol_serde::shape_readiness::de_readiness(tokens)?);
+                }
                 "Statistic" => {
                     builder = builder.set_statistic(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
@@ -207,8 +210,18 @@ pub(crate) fn de_create_calculated_attribute_definition(
                             .transpose()?,
                     );
                 }
+                "Status" => {
+                    builder = builder.set_status(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| crate::types::ReadinessStatus::from(u.as_ref())))
+                            .transpose()?,
+                    );
+                }
                 "Tags" => {
                     builder = builder.set_tags(crate::protocol_serde::shape_tag_map::de_tag_map(tokens)?);
+                }
+                "UseHistoricalData" => {
+                    builder = builder.set_use_historical_data(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

@@ -221,6 +221,20 @@ impl CreateCalculatedAttributeDefinitionFluentBuilder {
     pub fn get_statistic(&self) -> &::std::option::Option<crate::types::Statistic> {
         self.inner.get_statistic()
     }
+    /// <p>Whether historical data ingested before the Calculated Attribute was created should be included in calculations.</p>
+    pub fn use_historical_data(mut self, input: bool) -> Self {
+        self.inner = self.inner.use_historical_data(input);
+        self
+    }
+    /// <p>Whether historical data ingested before the Calculated Attribute was created should be included in calculations.</p>
+    pub fn set_use_historical_data(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_use_historical_data(input);
+        self
+    }
+    /// <p>Whether historical data ingested before the Calculated Attribute was created should be included in calculations.</p>
+    pub fn get_use_historical_data(&self) -> &::std::option::Option<bool> {
+        self.inner.get_use_historical_data()
+    }
     ///
     /// Adds a key-value pair to `Tags`.
     ///

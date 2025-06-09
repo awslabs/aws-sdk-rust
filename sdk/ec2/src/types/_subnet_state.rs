@@ -13,6 +13,8 @@
 /// # let subnetstate = unimplemented!();
 /// match subnetstate {
 ///     SubnetState::Available => { /* ... */ },
+///     SubnetState::Failed => { /* ... */ },
+///     SubnetState::FailedInsufficientCapacity => { /* ... */ },
 ///     SubnetState::Pending => { /* ... */ },
 ///     SubnetState::Unavailable => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -46,6 +48,10 @@ pub enum SubnetState {
     #[allow(missing_docs)] // documentation missing in model
     Available,
     #[allow(missing_docs)] // documentation missing in model
+    Failed,
+    #[allow(missing_docs)] // documentation missing in model
+    FailedInsufficientCapacity,
+    #[allow(missing_docs)] // documentation missing in model
     Pending,
     #[allow(missing_docs)] // documentation missing in model
     Unavailable,
@@ -57,6 +63,8 @@ impl ::std::convert::From<&str> for SubnetState {
     fn from(s: &str) -> Self {
         match s {
             "available" => SubnetState::Available,
+            "failed" => SubnetState::Failed,
+            "failed-insufficient-capacity" => SubnetState::FailedInsufficientCapacity,
             "pending" => SubnetState::Pending,
             "unavailable" => SubnetState::Unavailable,
             other => SubnetState::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -75,6 +83,8 @@ impl SubnetState {
     pub fn as_str(&self) -> &str {
         match self {
             SubnetState::Available => "available",
+            SubnetState::Failed => "failed",
+            SubnetState::FailedInsufficientCapacity => "failed-insufficient-capacity",
             SubnetState::Pending => "pending",
             SubnetState::Unavailable => "unavailable",
             SubnetState::Unknown(value) => value.as_str(),
@@ -82,7 +92,7 @@ impl SubnetState {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["available", "pending", "unavailable"]
+        &["available", "failed", "failed-insufficient-capacity", "pending", "unavailable"]
     }
 }
 impl ::std::convert::AsRef<str> for SubnetState {
@@ -106,6 +116,8 @@ impl ::std::fmt::Display for SubnetState {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             SubnetState::Available => write!(f, "available"),
+            SubnetState::Failed => write!(f, "failed"),
+            SubnetState::FailedInsufficientCapacity => write!(f, "failed-insufficient-capacity"),
             SubnetState::Pending => write!(f, "pending"),
             SubnetState::Unavailable => write!(f, "unavailable"),
             SubnetState::Unknown(value) => write!(f, "{}", value),

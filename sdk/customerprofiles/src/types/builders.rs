@@ -35,6 +35,8 @@ pub use crate::types::_rule_based_matching_request::RuleBasedMatchingRequestBuil
 
 pub use crate::types::_matching_request::MatchingRequestBuilder;
 
+pub use crate::types::_readiness::ReadinessBuilder;
+
 pub use crate::types::_attribute_details::AttributeDetailsBuilder;
 
 pub use crate::types::_attribute_item::AttributeItemBuilder;
@@ -44,6 +46,8 @@ pub use crate::types::_conditions::ConditionsBuilder;
 pub use crate::types::_threshold::ThresholdBuilder;
 
 pub use crate::types::_range::RangeBuilder;
+
+pub use crate::types::_value_range::ValueRangeBuilder;
 
 pub use crate::types::_profile::ProfileBuilder;
 
@@ -120,6 +124,8 @@ pub use crate::types::_event_stream_summary::EventStreamSummaryBuilder;
 pub use crate::types::_destination_summary::DestinationSummaryBuilder;
 
 pub use crate::types::_list_domain_item::ListDomainItemBuilder;
+
+pub use crate::types::_layout_item::LayoutItemBuilder;
 
 pub use crate::types::_list_calculated_attribute_for_profile_item::ListCalculatedAttributeForProfileItemBuilder;
 

@@ -187,7 +187,7 @@ pub fn de_subnet(
                 builder = builder.set_block_public_access_states(var_14);
             }
             ,
-            s if s.matches("subnetId") /* SubnetId com.amazonaws.ec2#Subnet$SubnetId */ =>  {
+            s if s.matches("type") /* Type com.amazonaws.ec2#Subnet$Type */ =>  {
                 let var_15 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -197,11 +197,24 @@ pub fn de_subnet(
                         ?
                     )
                 ;
-                builder = builder.set_subnet_id(var_15);
+                builder = builder.set_type(var_15);
+            }
+            ,
+            s if s.matches("subnetId") /* SubnetId com.amazonaws.ec2#Subnet$SubnetId */ =>  {
+                let var_16 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_subnet_id(var_16);
             }
             ,
             s if s.matches("state") /* State com.amazonaws.ec2#Subnet$State */ =>  {
-                let var_16 =
+                let var_17 =
                     Some(
                         Result::<crate::types::SubnetState, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             crate::types::SubnetState::from(
@@ -211,23 +224,10 @@ pub fn de_subnet(
                         ?
                     )
                 ;
-                builder = builder.set_state(var_16);
+                builder = builder.set_state(var_17);
             }
             ,
             s if s.matches("vpcId") /* VpcId com.amazonaws.ec2#Subnet$VpcId */ =>  {
-                let var_17 =
-                    Some(
-                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_vpc_id(var_17);
-            }
-            ,
-            s if s.matches("cidrBlock") /* CidrBlock com.amazonaws.ec2#Subnet$CidrBlock */ =>  {
                 let var_18 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -237,11 +237,24 @@ pub fn de_subnet(
                         ?
                     )
                 ;
-                builder = builder.set_cidr_block(var_18);
+                builder = builder.set_vpc_id(var_18);
+            }
+            ,
+            s if s.matches("cidrBlock") /* CidrBlock com.amazonaws.ec2#Subnet$CidrBlock */ =>  {
+                let var_19 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_cidr_block(var_19);
             }
             ,
             s if s.matches("availableIpAddressCount") /* AvailableIpAddressCount com.amazonaws.ec2#Subnet$AvailableIpAddressCount */ =>  {
-                let var_19 =
+                let var_20 =
                     Some(
                          {
                             <i32 as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -252,11 +265,11 @@ pub fn de_subnet(
                         ?
                     )
                 ;
-                builder = builder.set_available_ip_address_count(var_19);
+                builder = builder.set_available_ip_address_count(var_20);
             }
             ,
             s if s.matches("availabilityZone") /* AvailabilityZone com.amazonaws.ec2#Subnet$AvailabilityZone */ =>  {
-                let var_20 =
+                let var_21 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -265,25 +278,10 @@ pub fn de_subnet(
                         ?
                     )
                 ;
-                builder = builder.set_availability_zone(var_20);
+                builder = builder.set_availability_zone(var_21);
             }
             ,
             s if s.matches("defaultForAz") /* DefaultForAz com.amazonaws.ec2#Subnet$DefaultForAz */ =>  {
-                let var_21 =
-                    Some(
-                         {
-                            <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
-                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            )
-                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (boolean: `com.amazonaws.ec2#Boolean`)"))
-                        }
-                        ?
-                    )
-                ;
-                builder = builder.set_default_for_az(var_21);
-            }
-            ,
-            s if s.matches("mapPublicIpOnLaunch") /* MapPublicIpOnLaunch com.amazonaws.ec2#Subnet$MapPublicIpOnLaunch */ =>  {
                 let var_22 =
                     Some(
                          {
@@ -295,7 +293,22 @@ pub fn de_subnet(
                         ?
                     )
                 ;
-                builder = builder.set_map_public_ip_on_launch(var_22);
+                builder = builder.set_default_for_az(var_22);
+            }
+            ,
+            s if s.matches("mapPublicIpOnLaunch") /* MapPublicIpOnLaunch com.amazonaws.ec2#Subnet$MapPublicIpOnLaunch */ =>  {
+                let var_23 =
+                    Some(
+                         {
+                            <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (boolean: `com.amazonaws.ec2#Boolean`)"))
+                        }
+                        ?
+                    )
+                ;
+                builder = builder.set_map_public_ip_on_launch(var_23);
             }
             ,
             _ => {}

@@ -146,6 +146,8 @@ mod create_calculated_attribute_definition;
 
 mod create_domain;
 
+mod create_domain_layout;
+
 mod create_event_stream;
 
 mod create_event_trigger;
@@ -191,6 +193,8 @@ mod delete_calculated_attribute_definition;
 
 mod delete_domain;
 
+mod delete_domain_layout;
+
 mod delete_event_stream;
 
 mod delete_event_trigger;
@@ -218,6 +222,8 @@ mod get_calculated_attribute_definition;
 mod get_calculated_attribute_for_profile;
 
 mod get_domain;
+
+mod get_domain_layout;
 
 mod get_event_stream;
 
@@ -252,6 +258,8 @@ mod list_account_integrations;
 mod list_calculated_attribute_definitions;
 
 mod list_calculated_attributes_for_profile;
+
+mod list_domain_layouts;
 
 mod list_domains;
 
@@ -298,6 +306,8 @@ mod untag_resource;
 mod update_calculated_attribute_definition;
 
 mod update_domain;
+
+mod update_domain_layout;
 
 mod update_event_trigger;
 

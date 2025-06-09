@@ -16,6 +16,8 @@ pub struct CreateMountTargetOutput {
     pub life_cycle_state: crate::types::LifeCycleState,
     /// <p>Address at which the file system can be mounted by using the mount target.</p>
     pub ip_address: ::std::option::Option<::std::string::String>,
+    /// <p>The IPv6 address for the mount target.</p>
+    pub ipv6_address: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the network interface that Amazon EFS created when it created the mount target.</p>
     pub network_interface_id: ::std::option::Option<::std::string::String>,
     /// <p>The unique and consistent identifier of the Availability Zone that the mount target resides in. For example, <code>use1-az1</code> is an AZ ID for the us-east-1 Region and it has the same location in every Amazon Web Services account.</p>
@@ -53,6 +55,10 @@ impl CreateMountTargetOutput {
     /// <p>Address at which the file system can be mounted by using the mount target.</p>
     pub fn ip_address(&self) -> ::std::option::Option<&str> {
         self.ip_address.as_deref()
+    }
+    /// <p>The IPv6 address for the mount target.</p>
+    pub fn ipv6_address(&self) -> ::std::option::Option<&str> {
+        self.ipv6_address.as_deref()
     }
     /// <p>The ID of the network interface that Amazon EFS created when it created the mount target.</p>
     pub fn network_interface_id(&self) -> ::std::option::Option<&str> {
@@ -93,6 +99,7 @@ pub struct CreateMountTargetOutputBuilder {
     pub(crate) subnet_id: ::std::option::Option<::std::string::String>,
     pub(crate) life_cycle_state: ::std::option::Option<crate::types::LifeCycleState>,
     pub(crate) ip_address: ::std::option::Option<::std::string::String>,
+    pub(crate) ipv6_address: ::std::option::Option<::std::string::String>,
     pub(crate) network_interface_id: ::std::option::Option<::std::string::String>,
     pub(crate) availability_zone_id: ::std::option::Option<::std::string::String>,
     pub(crate) availability_zone_name: ::std::option::Option<::std::string::String>,
@@ -187,6 +194,20 @@ impl CreateMountTargetOutputBuilder {
     /// <p>Address at which the file system can be mounted by using the mount target.</p>
     pub fn get_ip_address(&self) -> &::std::option::Option<::std::string::String> {
         &self.ip_address
+    }
+    /// <p>The IPv6 address for the mount target.</p>
+    pub fn ipv6_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.ipv6_address = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The IPv6 address for the mount target.</p>
+    pub fn set_ipv6_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.ipv6_address = input;
+        self
+    }
+    /// <p>The IPv6 address for the mount target.</p>
+    pub fn get_ipv6_address(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ipv6_address
     }
     /// <p>The ID of the network interface that Amazon EFS created when it created the mount target.</p>
     pub fn network_interface_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -289,6 +310,7 @@ impl CreateMountTargetOutputBuilder {
                 )
             })?,
             ip_address: self.ip_address,
+            ipv6_address: self.ipv6_address,
             network_interface_id: self.network_interface_id,
             availability_zone_id: self.availability_zone_id,
             availability_zone_name: self.availability_zone_name,

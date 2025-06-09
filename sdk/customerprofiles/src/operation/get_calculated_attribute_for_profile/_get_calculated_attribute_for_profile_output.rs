@@ -11,6 +11,8 @@ pub struct GetCalculatedAttributeForProfileOutput {
     pub is_data_partial: ::std::option::Option<::std::string::String>,
     /// <p>The value of the calculated attribute.</p>
     pub value: ::std::option::Option<::std::string::String>,
+    /// <p>The timestamp of the newest object included in the calculated attribute calculation.</p>
+    pub last_object_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }
 impl GetCalculatedAttributeForProfileOutput {
@@ -29,6 +31,10 @@ impl GetCalculatedAttributeForProfileOutput {
     /// <p>The value of the calculated attribute.</p>
     pub fn value(&self) -> ::std::option::Option<&str> {
         self.value.as_deref()
+    }
+    /// <p>The timestamp of the newest object included in the calculated attribute calculation.</p>
+    pub fn last_object_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+        self.last_object_timestamp.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetCalculatedAttributeForProfileOutput {
@@ -51,6 +57,7 @@ pub struct GetCalculatedAttributeForProfileOutputBuilder {
     pub(crate) display_name: ::std::option::Option<::std::string::String>,
     pub(crate) is_data_partial: ::std::option::Option<::std::string::String>,
     pub(crate) value: ::std::option::Option<::std::string::String>,
+    pub(crate) last_object_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }
 impl GetCalculatedAttributeForProfileOutputBuilder {
@@ -110,6 +117,20 @@ impl GetCalculatedAttributeForProfileOutputBuilder {
     pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
         &self.value
     }
+    /// <p>The timestamp of the newest object included in the calculated attribute calculation.</p>
+    pub fn last_object_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.last_object_timestamp = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The timestamp of the newest object included in the calculated attribute calculation.</p>
+    pub fn set_last_object_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.last_object_timestamp = input;
+        self
+    }
+    /// <p>The timestamp of the newest object included in the calculated attribute calculation.</p>
+    pub fn get_last_object_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_object_timestamp
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -126,6 +147,7 @@ impl GetCalculatedAttributeForProfileOutputBuilder {
             display_name: self.display_name,
             is_data_partial: self.is_data_partial,
             value: self.value,
+            last_object_timestamp: self.last_object_timestamp,
             _request_id: self._request_id,
         }
     }

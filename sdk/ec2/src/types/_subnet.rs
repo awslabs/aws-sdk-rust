@@ -32,9 +32,17 @@ pub struct Subnet {
     pub private_dns_name_options_on_launch: ::std::option::Option<crate::types::PrivateDnsNameOptionsOnLaunch>,
     /// <p>The state of VPC Block Public Access (BPA).</p>
     pub block_public_access_states: ::std::option::Option<crate::types::BlockPublicAccessStates>,
+    /// <p>Indicates if this is a subnet used with Amazon Elastic VMware Service (EVS). Possible values are <code>Elastic VMware Service</code> or no value. For more information about Amazon EVS, see <a href="https://docs.aws.amazon.com/evs/latest/APIReference/Welcome.html"> <i>Amazon Elastic VMware Service API Reference</i> </a>.</p>
+    pub r#type: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the subnet.</p>
     pub subnet_id: ::std::option::Option<::std::string::String>,
     /// <p>The current state of the subnet.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>failed</code>: The underlying infrastructure to support the subnet failed to provision as expected.</p></li>
+    /// <li>
+    /// <p><code>failed-insufficient-capacity</code>: The underlying infrastructure to support the subnet failed to provision due to a shortage of EC2 instance capacity.</p></li>
+    /// </ul>
     pub state: ::std::option::Option<crate::types::SubnetState>,
     /// <p>The ID of the VPC the subnet is in.</p>
     pub vpc_id: ::std::option::Option<::std::string::String>,
@@ -111,11 +119,21 @@ impl Subnet {
     pub fn block_public_access_states(&self) -> ::std::option::Option<&crate::types::BlockPublicAccessStates> {
         self.block_public_access_states.as_ref()
     }
+    /// <p>Indicates if this is a subnet used with Amazon Elastic VMware Service (EVS). Possible values are <code>Elastic VMware Service</code> or no value. For more information about Amazon EVS, see <a href="https://docs.aws.amazon.com/evs/latest/APIReference/Welcome.html"> <i>Amazon Elastic VMware Service API Reference</i> </a>.</p>
+    pub fn r#type(&self) -> ::std::option::Option<&str> {
+        self.r#type.as_deref()
+    }
     /// <p>The ID of the subnet.</p>
     pub fn subnet_id(&self) -> ::std::option::Option<&str> {
         self.subnet_id.as_deref()
     }
     /// <p>The current state of the subnet.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>failed</code>: The underlying infrastructure to support the subnet failed to provision as expected.</p></li>
+    /// <li>
+    /// <p><code>failed-insufficient-capacity</code>: The underlying infrastructure to support the subnet failed to provision due to a shortage of EC2 instance capacity.</p></li>
+    /// </ul>
     pub fn state(&self) -> ::std::option::Option<&crate::types::SubnetState> {
         self.state.as_ref()
     }
@@ -170,6 +188,7 @@ pub struct SubnetBuilder {
     pub(crate) ipv6_native: ::std::option::Option<bool>,
     pub(crate) private_dns_name_options_on_launch: ::std::option::Option<crate::types::PrivateDnsNameOptionsOnLaunch>,
     pub(crate) block_public_access_states: ::std::option::Option<crate::types::BlockPublicAccessStates>,
+    pub(crate) r#type: ::std::option::Option<::std::string::String>,
     pub(crate) subnet_id: ::std::option::Option<::std::string::String>,
     pub(crate) state: ::std::option::Option<crate::types::SubnetState>,
     pub(crate) vpc_id: ::std::option::Option<::std::string::String>,
@@ -391,6 +410,20 @@ impl SubnetBuilder {
     pub fn get_block_public_access_states(&self) -> &::std::option::Option<crate::types::BlockPublicAccessStates> {
         &self.block_public_access_states
     }
+    /// <p>Indicates if this is a subnet used with Amazon Elastic VMware Service (EVS). Possible values are <code>Elastic VMware Service</code> or no value. For more information about Amazon EVS, see <a href="https://docs.aws.amazon.com/evs/latest/APIReference/Welcome.html"> <i>Amazon Elastic VMware Service API Reference</i> </a>.</p>
+    pub fn r#type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.r#type = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Indicates if this is a subnet used with Amazon Elastic VMware Service (EVS). Possible values are <code>Elastic VMware Service</code> or no value. For more information about Amazon EVS, see <a href="https://docs.aws.amazon.com/evs/latest/APIReference/Welcome.html"> <i>Amazon Elastic VMware Service API Reference</i> </a>.</p>
+    pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.r#type = input;
+        self
+    }
+    /// <p>Indicates if this is a subnet used with Amazon Elastic VMware Service (EVS). Possible values are <code>Elastic VMware Service</code> or no value. For more information about Amazon EVS, see <a href="https://docs.aws.amazon.com/evs/latest/APIReference/Welcome.html"> <i>Amazon Elastic VMware Service API Reference</i> </a>.</p>
+    pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.r#type
+    }
     /// <p>The ID of the subnet.</p>
     pub fn subnet_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.subnet_id = ::std::option::Option::Some(input.into());
@@ -406,16 +439,34 @@ impl SubnetBuilder {
         &self.subnet_id
     }
     /// <p>The current state of the subnet.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>failed</code>: The underlying infrastructure to support the subnet failed to provision as expected.</p></li>
+    /// <li>
+    /// <p><code>failed-insufficient-capacity</code>: The underlying infrastructure to support the subnet failed to provision due to a shortage of EC2 instance capacity.</p></li>
+    /// </ul>
     pub fn state(mut self, input: crate::types::SubnetState) -> Self {
         self.state = ::std::option::Option::Some(input);
         self
     }
     /// <p>The current state of the subnet.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>failed</code>: The underlying infrastructure to support the subnet failed to provision as expected.</p></li>
+    /// <li>
+    /// <p><code>failed-insufficient-capacity</code>: The underlying infrastructure to support the subnet failed to provision due to a shortage of EC2 instance capacity.</p></li>
+    /// </ul>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::SubnetState>) -> Self {
         self.state = input;
         self
     }
     /// <p>The current state of the subnet.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>failed</code>: The underlying infrastructure to support the subnet failed to provision as expected.</p></li>
+    /// <li>
+    /// <p><code>failed-insufficient-capacity</code>: The underlying infrastructure to support the subnet failed to provision due to a shortage of EC2 instance capacity.</p></li>
+    /// </ul>
     pub fn get_state(&self) -> &::std::option::Option<crate::types::SubnetState> {
         &self.state
     }
@@ -523,6 +574,7 @@ impl SubnetBuilder {
             ipv6_native: self.ipv6_native,
             private_dns_name_options_on_launch: self.private_dns_name_options_on_launch,
             block_public_access_states: self.block_public_access_states,
+            r#type: self.r#type,
             subnet_id: self.subnet_id,
             state: self.state,
             vpc_id: self.vpc_id,

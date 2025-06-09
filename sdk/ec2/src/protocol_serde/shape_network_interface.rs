@@ -374,6 +374,16 @@ pub fn de_network_interface(
                 builder = builder.set_operator(var_30);
             }
             ,
+            s if s.matches("associatedSubnetSet") /* AssociatedSubnets com.amazonaws.ec2#NetworkInterface$AssociatedSubnets */ =>  {
+                let var_31 =
+                    Some(
+                        crate::protocol_serde::shape_associated_subnet_list::de_associated_subnet_list(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_associated_subnets(var_31);
+            }
+            ,
             _ => {}
         }
     }

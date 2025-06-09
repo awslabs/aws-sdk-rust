@@ -26,42 +26,55 @@ pub fn ser_modify_network_interface_attribute_input_input_input(
         scope_7.boolean(*var_8);
     }
     #[allow(unused_mut)]
-    let mut scope_9 = writer.prefix("DryRun");
-    if let Some(var_10) = &input.dry_run {
-        scope_9.boolean(*var_10);
-    }
-    #[allow(unused_mut)]
-    let mut scope_11 = writer.prefix("NetworkInterfaceId");
-    if let Some(var_12) = &input.network_interface_id {
-        scope_11.string(var_12);
-    }
-    #[allow(unused_mut)]
-    let mut scope_13 = writer.prefix("Description");
-    if let Some(var_14) = &input.description {
-        crate::protocol_serde::shape_attribute_value::ser_attribute_value(scope_13, var_14)?;
-    }
-    #[allow(unused_mut)]
-    let mut scope_15 = writer.prefix("SourceDestCheck");
-    if let Some(var_16) = &input.source_dest_check {
-        crate::protocol_serde::shape_attribute_boolean_value::ser_attribute_boolean_value(scope_15, var_16)?;
-    }
-    #[allow(unused_mut)]
-    let mut scope_17 = writer.prefix("SecurityGroupId");
-    if let Some(var_18) = &input.groups {
-        if !var_18.is_empty() {
-            let mut list_20 = scope_17.start_list(true, Some("SecurityGroupId"));
-            for item_19 in var_18 {
+    let mut scope_9 = writer.prefix("AssociatedSubnetId");
+    if let Some(var_10) = &input.associated_subnet_ids {
+        if !var_10.is_empty() {
+            let mut list_12 = scope_9.start_list(true, Some("AssociatedSubnetId"));
+            for item_11 in var_10 {
                 #[allow(unused_mut)]
-                let mut entry_21 = list_20.entry();
-                entry_21.string(item_19);
+                let mut entry_13 = list_12.entry();
+                entry_13.string(item_11);
             }
-            list_20.finish();
+            list_12.finish();
         }
     }
     #[allow(unused_mut)]
-    let mut scope_22 = writer.prefix("Attachment");
-    if let Some(var_23) = &input.attachment {
-        crate::protocol_serde::shape_network_interface_attachment_changes::ser_network_interface_attachment_changes(scope_22, var_23)?;
+    let mut scope_14 = writer.prefix("DryRun");
+    if let Some(var_15) = &input.dry_run {
+        scope_14.boolean(*var_15);
+    }
+    #[allow(unused_mut)]
+    let mut scope_16 = writer.prefix("NetworkInterfaceId");
+    if let Some(var_17) = &input.network_interface_id {
+        scope_16.string(var_17);
+    }
+    #[allow(unused_mut)]
+    let mut scope_18 = writer.prefix("Description");
+    if let Some(var_19) = &input.description {
+        crate::protocol_serde::shape_attribute_value::ser_attribute_value(scope_18, var_19)?;
+    }
+    #[allow(unused_mut)]
+    let mut scope_20 = writer.prefix("SourceDestCheck");
+    if let Some(var_21) = &input.source_dest_check {
+        crate::protocol_serde::shape_attribute_boolean_value::ser_attribute_boolean_value(scope_20, var_21)?;
+    }
+    #[allow(unused_mut)]
+    let mut scope_22 = writer.prefix("SecurityGroupId");
+    if let Some(var_23) = &input.groups {
+        if !var_23.is_empty() {
+            let mut list_25 = scope_22.start_list(true, Some("SecurityGroupId"));
+            for item_24 in var_23 {
+                #[allow(unused_mut)]
+                let mut entry_26 = list_25.entry();
+                entry_26.string(item_24);
+            }
+            list_25.finish();
+        }
+    }
+    #[allow(unused_mut)]
+    let mut scope_27 = writer.prefix("Attachment");
+    if let Some(var_28) = &input.attachment {
+        crate::protocol_serde::shape_network_interface_attachment_changes::ser_network_interface_attachment_changes(scope_27, var_28)?;
     }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))

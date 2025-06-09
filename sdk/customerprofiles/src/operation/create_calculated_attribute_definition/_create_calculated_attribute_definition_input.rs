@@ -19,6 +19,8 @@ pub struct CreateCalculatedAttributeDefinitionInput {
     pub filter: ::std::option::Option<crate::types::Filter>,
     /// <p>The aggregation operation to perform for the calculated attribute.</p>
     pub statistic: ::std::option::Option<crate::types::Statistic>,
+    /// <p>Whether historical data ingested before the Calculated Attribute was created should be included in calculations.</p>
+    pub use_historical_data: ::std::option::Option<bool>,
     /// <p>The tags used to organize, track, or control access for this resource.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
@@ -55,6 +57,10 @@ impl CreateCalculatedAttributeDefinitionInput {
     pub fn statistic(&self) -> ::std::option::Option<&crate::types::Statistic> {
         self.statistic.as_ref()
     }
+    /// <p>Whether historical data ingested before the Calculated Attribute was created should be included in calculations.</p>
+    pub fn use_historical_data(&self) -> ::std::option::Option<bool> {
+        self.use_historical_data
+    }
     /// <p>The tags used to organize, track, or control access for this resource.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
@@ -71,6 +77,7 @@ impl ::std::fmt::Debug for CreateCalculatedAttributeDefinitionInput {
         formatter.field("conditions", &"*** Sensitive Data Redacted ***");
         formatter.field("filter", &self.filter);
         formatter.field("statistic", &"*** Sensitive Data Redacted ***");
+        formatter.field("use_historical_data", &self.use_historical_data);
         formatter.field("tags", &self.tags);
         formatter.finish()
     }
@@ -94,6 +101,7 @@ pub struct CreateCalculatedAttributeDefinitionInputBuilder {
     pub(crate) conditions: ::std::option::Option<crate::types::Conditions>,
     pub(crate) filter: ::std::option::Option<crate::types::Filter>,
     pub(crate) statistic: ::std::option::Option<crate::types::Statistic>,
+    pub(crate) use_historical_data: ::std::option::Option<bool>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateCalculatedAttributeDefinitionInputBuilder {
@@ -213,6 +221,20 @@ impl CreateCalculatedAttributeDefinitionInputBuilder {
     pub fn get_statistic(&self) -> &::std::option::Option<crate::types::Statistic> {
         &self.statistic
     }
+    /// <p>Whether historical data ingested before the Calculated Attribute was created should be included in calculations.</p>
+    pub fn use_historical_data(mut self, input: bool) -> Self {
+        self.use_historical_data = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Whether historical data ingested before the Calculated Attribute was created should be included in calculations.</p>
+    pub fn set_use_historical_data(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.use_historical_data = input;
+        self
+    }
+    /// <p>Whether historical data ingested before the Calculated Attribute was created should be included in calculations.</p>
+    pub fn get_use_historical_data(&self) -> &::std::option::Option<bool> {
+        &self.use_historical_data
+    }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -250,6 +272,7 @@ impl CreateCalculatedAttributeDefinitionInputBuilder {
                 conditions: self.conditions,
                 filter: self.filter,
                 statistic: self.statistic,
+                use_historical_data: self.use_historical_data,
                 tags: self.tags,
             },
         )
@@ -266,6 +289,7 @@ impl ::std::fmt::Debug for CreateCalculatedAttributeDefinitionInputBuilder {
         formatter.field("conditions", &"*** Sensitive Data Redacted ***");
         formatter.field("filter", &self.filter);
         formatter.field("statistic", &"*** Sensitive Data Redacted ***");
+        formatter.field("use_historical_data", &self.use_historical_data);
         formatter.field("tags", &self.tags);
         formatter.finish()
     }

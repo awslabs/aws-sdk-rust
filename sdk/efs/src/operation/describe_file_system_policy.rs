@@ -240,10 +240,10 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for DescribeFileS
             .ok_or("failed to downcast to DescribeFileSystemPolicyInput")?;
 
         let params = crate::config::endpoint::Params::builder()
-            .set_region(cfg.load::<::aws_types::region::Region>().map(|r| r.as_ref().to_owned()))
             .set_use_dual_stack(cfg.load::<::aws_types::endpoint_config::UseDualStack>().map(|ty| ty.0))
             .set_use_fips(cfg.load::<::aws_types::endpoint_config::UseFips>().map(|ty| ty.0))
             .set_endpoint(cfg.load::<::aws_types::endpoint_config::EndpointUrl>().map(|ty| ty.0.clone()))
+            .set_region(cfg.load::<::aws_types::region::Region>().map(|r| r.as_ref().to_owned()))
             .build()
             .map_err(|err| {
                 ::aws_smithy_runtime_api::client::interceptors::error::ContextAttachedError::new("endpoint params could not be built", err)
@@ -267,7 +267,7 @@ pub enum DescribeFileSystemPolicyError {
     FileSystemNotFound(crate::types::error::FileSystemNotFound),
     /// <p>Returned if an error occurred on the server side.</p>
     InternalServerError(crate::types::error::InternalServerError),
-    /// <p>Returned if the default file system policy is in effect for the EFS file system specified.</p>
+    /// <p>Returned if <code>no backup</code> is specified for a One Zone EFS file system.</p>
     PolicyNotFound(crate::types::error::PolicyNotFound),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \

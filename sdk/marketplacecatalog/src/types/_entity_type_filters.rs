@@ -10,6 +10,8 @@ pub enum EntityTypeFilters {
     ContainerProductFilters(crate::types::ContainerProductFilters),
     /// <p>A filter for data products.</p>
     DataProductFilters(crate::types::DataProductFilters),
+    /// <p>The filters that you can use with the ListEntities operation to filter machine learning products. You can filter by EntityId, LastModifiedDate, ProductTitle, and Visibility.</p>
+    MachineLearningProductFilters(crate::types::MachineLearningProductFilters),
     /// <p>A filter for offers.</p>
     OfferFilters(crate::types::OfferFilters),
     /// <p>A filter for Resale Authorizations.</p>
@@ -65,6 +67,19 @@ impl EntityTypeFilters {
     /// Returns true if this is a [`DataProductFilters`](crate::types::EntityTypeFilters::DataProductFilters).
     pub fn is_data_product_filters(&self) -> bool {
         self.as_data_product_filters().is_ok()
+    }
+    /// Tries to convert the enum instance into [`MachineLearningProductFilters`](crate::types::EntityTypeFilters::MachineLearningProductFilters), extracting the inner [`MachineLearningProductFilters`](crate::types::MachineLearningProductFilters).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_machine_learning_product_filters(&self) -> ::std::result::Result<&crate::types::MachineLearningProductFilters, &Self> {
+        if let EntityTypeFilters::MachineLearningProductFilters(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`MachineLearningProductFilters`](crate::types::EntityTypeFilters::MachineLearningProductFilters).
+    pub fn is_machine_learning_product_filters(&self) -> bool {
+        self.as_machine_learning_product_filters().is_ok()
     }
     /// Tries to convert the enum instance into [`OfferFilters`](crate::types::EntityTypeFilters::OfferFilters), extracting the inner [`OfferFilters`](crate::types::OfferFilters).
     /// Returns `Err(&Self)` if it can't be converted.

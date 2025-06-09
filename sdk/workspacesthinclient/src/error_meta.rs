@@ -460,6 +460,7 @@ impl From<crate::operation::update_environment::UpdateEnvironmentError> for Erro
     fn from(err: crate::operation::update_environment::UpdateEnvironmentError) -> Self {
         match err {
             crate::operation::update_environment::UpdateEnvironmentError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::update_environment::UpdateEnvironmentError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::update_environment::UpdateEnvironmentError::InternalServerException(inner) => Error::InternalServerException(inner),
             crate::operation::update_environment::UpdateEnvironmentError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::update_environment::UpdateEnvironmentError::ThrottlingException(inner) => Error::ThrottlingException(inner),

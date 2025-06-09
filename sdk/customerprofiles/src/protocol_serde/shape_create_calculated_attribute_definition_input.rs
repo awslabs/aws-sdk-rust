@@ -40,5 +40,8 @@ pub fn ser_create_calculated_attribute_definition_input_input(
         }
         object_11.finish();
     }
+    if let Some(var_14) = &input.use_historical_data {
+        object.key("UseHistoricalData").boolean(*var_14);
+    }
     Ok(())
 }

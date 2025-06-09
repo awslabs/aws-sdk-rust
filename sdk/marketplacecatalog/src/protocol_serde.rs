@@ -139,6 +139,10 @@ pub(crate) mod shape_entity_detail;
 
 pub(crate) mod shape_entity_summary;
 
+pub(crate) mod shape_machine_learning_product_filters;
+
+pub(crate) mod shape_machine_learning_product_sort;
+
 pub(crate) mod shape_offer_filters;
 
 pub(crate) mod shape_offer_sort;
@@ -182,6 +186,16 @@ pub(crate) mod shape_data_product_title_filter;
 pub(crate) mod shape_data_product_visibility_filter;
 
 pub(crate) mod shape_error_detail_list;
+
+pub(crate) mod shape_machine_learning_product_entity_id_filter;
+
+pub(crate) mod shape_machine_learning_product_last_modified_date_filter;
+
+pub(crate) mod shape_machine_learning_product_summary;
+
+pub(crate) mod shape_machine_learning_product_title_filter;
+
+pub(crate) mod shape_machine_learning_product_visibility_filter;
 
 pub(crate) mod shape_offer_availability_end_date_filter;
 
@@ -252,6 +266,8 @@ pub(crate) mod shape_container_product_last_modified_date_filter_date_range;
 pub(crate) mod shape_data_product_last_modified_date_filter_date_range;
 
 pub(crate) mod shape_error_detail;
+
+pub(crate) mod shape_machine_learning_product_last_modified_date_filter_date_range;
 
 pub(crate) mod shape_offer_availability_end_date_filter_date_range;
 

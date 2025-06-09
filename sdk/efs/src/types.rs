@@ -53,6 +53,8 @@ pub use crate::types::_deletion_mode::DeletionMode;
 
 pub use crate::types::_destination_to_create::DestinationToCreate;
 
+pub use crate::types::_ip_address_type::IpAddressType;
+
 mod _access_point_description;
 
 mod _backup_policy;
@@ -70,6 +72,8 @@ mod _file_system_description;
 mod _file_system_protection_description;
 
 mod _file_system_size;
+
+mod _ip_address_type;
 
 mod _life_cycle_state;
 

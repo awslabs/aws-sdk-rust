@@ -8,6 +8,14 @@ pub struct Range {
     pub value: i32,
     /// <p>The unit of time.</p>
     pub unit: crate::types::Unit,
+    /// <p>A structure letting customers specify a relative time window over which over which data is included in the Calculated Attribute. Use positive numbers to indicate that the endpoint is in the past, and negative numbers to indicate it is in the future. ValueRange overrides Value.</p>
+    pub value_range: ::std::option::Option<crate::types::ValueRange>,
+    /// <p>An expression specifying the field in your JSON object from which the date should be parsed. The expression should follow the structure of \"{ObjectTypeName.<location of timestamp field in json pointer format>
+    /// }\". E.g. if your object type is MyType and source JSON is {"generatedAt": {"timestamp": "1737587945945"}}, then TimestampSource should be "{MyType.generatedAt.timestamp}".
+    /// </location></p>
+    pub timestamp_source: ::std::option::Option<::std::string::String>,
+    /// <p>The format the timestamp field in your JSON object is specified. This value should be one of EPOCHMILLI (for Unix epoch timestamps with second/millisecond level precision) or ISO_8601 (following ISO_8601 format with second/millisecond level precision, with an optional offset of Z or in the format HH:MM or HHMM.). E.g. if your object type is MyType and source JSON is {"generatedAt": {"timestamp": "2001-07-04T12:08:56.235-0700"}}, then TimestampFormat should be "ISO_8601".</p>
+    pub timestamp_format: ::std::option::Option<::std::string::String>,
 }
 impl Range {
     /// <p>The amount of time of the specified unit.</p>
@@ -17,6 +25,20 @@ impl Range {
     /// <p>The unit of time.</p>
     pub fn unit(&self) -> &crate::types::Unit {
         &self.unit
+    }
+    /// <p>A structure letting customers specify a relative time window over which over which data is included in the Calculated Attribute. Use positive numbers to indicate that the endpoint is in the past, and negative numbers to indicate it is in the future. ValueRange overrides Value.</p>
+    pub fn value_range(&self) -> ::std::option::Option<&crate::types::ValueRange> {
+        self.value_range.as_ref()
+    }
+    /// <p>An expression specifying the field in your JSON object from which the date should be parsed. The expression should follow the structure of \"{ObjectTypeName.<location of timestamp field in json pointer format>
+    /// }\". E.g. if your object type is MyType and source JSON is {"generatedAt": {"timestamp": "1737587945945"}}, then TimestampSource should be "{MyType.generatedAt.timestamp}".
+    /// </location></p>
+    pub fn timestamp_source(&self) -> ::std::option::Option<&str> {
+        self.timestamp_source.as_deref()
+    }
+    /// <p>The format the timestamp field in your JSON object is specified. This value should be one of EPOCHMILLI (for Unix epoch timestamps with second/millisecond level precision) or ISO_8601 (following ISO_8601 format with second/millisecond level precision, with an optional offset of Z or in the format HH:MM or HHMM.). E.g. if your object type is MyType and source JSON is {"generatedAt": {"timestamp": "2001-07-04T12:08:56.235-0700"}}, then TimestampFormat should be "ISO_8601".</p>
+    pub fn timestamp_format(&self) -> ::std::option::Option<&str> {
+        self.timestamp_format.as_deref()
     }
 }
 impl Range {
@@ -32,10 +54,12 @@ impl Range {
 pub struct RangeBuilder {
     pub(crate) value: ::std::option::Option<i32>,
     pub(crate) unit: ::std::option::Option<crate::types::Unit>,
+    pub(crate) value_range: ::std::option::Option<crate::types::ValueRange>,
+    pub(crate) timestamp_source: ::std::option::Option<::std::string::String>,
+    pub(crate) timestamp_format: ::std::option::Option<::std::string::String>,
 }
 impl RangeBuilder {
     /// <p>The amount of time of the specified unit.</p>
-    /// This field is required.
     pub fn value(mut self, input: i32) -> Self {
         self.value = ::std::option::Option::Some(input);
         self
@@ -50,7 +74,6 @@ impl RangeBuilder {
         &self.value
     }
     /// <p>The unit of time.</p>
-    /// This field is required.
     pub fn unit(mut self, input: crate::types::Unit) -> Self {
         self.unit = ::std::option::Option::Some(input);
         self
@@ -64,24 +87,64 @@ impl RangeBuilder {
     pub fn get_unit(&self) -> &::std::option::Option<crate::types::Unit> {
         &self.unit
     }
+    /// <p>A structure letting customers specify a relative time window over which over which data is included in the Calculated Attribute. Use positive numbers to indicate that the endpoint is in the past, and negative numbers to indicate it is in the future. ValueRange overrides Value.</p>
+    pub fn value_range(mut self, input: crate::types::ValueRange) -> Self {
+        self.value_range = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>A structure letting customers specify a relative time window over which over which data is included in the Calculated Attribute. Use positive numbers to indicate that the endpoint is in the past, and negative numbers to indicate it is in the future. ValueRange overrides Value.</p>
+    pub fn set_value_range(mut self, input: ::std::option::Option<crate::types::ValueRange>) -> Self {
+        self.value_range = input;
+        self
+    }
+    /// <p>A structure letting customers specify a relative time window over which over which data is included in the Calculated Attribute. Use positive numbers to indicate that the endpoint is in the past, and negative numbers to indicate it is in the future. ValueRange overrides Value.</p>
+    pub fn get_value_range(&self) -> &::std::option::Option<crate::types::ValueRange> {
+        &self.value_range
+    }
+    /// <p>An expression specifying the field in your JSON object from which the date should be parsed. The expression should follow the structure of \"{ObjectTypeName.<location of timestamp field in json pointer format>
+    /// }\". E.g. if your object type is MyType and source JSON is {"generatedAt": {"timestamp": "1737587945945"}}, then TimestampSource should be "{MyType.generatedAt.timestamp}".
+    /// </location></p>
+    pub fn timestamp_source(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.timestamp_source = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>An expression specifying the field in your JSON object from which the date should be parsed. The expression should follow the structure of \"{ObjectTypeName.<location of timestamp field in json pointer format>
+    /// }\". E.g. if your object type is MyType and source JSON is {"generatedAt": {"timestamp": "1737587945945"}}, then TimestampSource should be "{MyType.generatedAt.timestamp}".
+    /// </location></p>
+    pub fn set_timestamp_source(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.timestamp_source = input;
+        self
+    }
+    /// <p>An expression specifying the field in your JSON object from which the date should be parsed. The expression should follow the structure of \"{ObjectTypeName.<location of timestamp field in json pointer format>
+    /// }\". E.g. if your object type is MyType and source JSON is {"generatedAt": {"timestamp": "1737587945945"}}, then TimestampSource should be "{MyType.generatedAt.timestamp}".
+    /// </location></p>
+    pub fn get_timestamp_source(&self) -> &::std::option::Option<::std::string::String> {
+        &self.timestamp_source
+    }
+    /// <p>The format the timestamp field in your JSON object is specified. This value should be one of EPOCHMILLI (for Unix epoch timestamps with second/millisecond level precision) or ISO_8601 (following ISO_8601 format with second/millisecond level precision, with an optional offset of Z or in the format HH:MM or HHMM.). E.g. if your object type is MyType and source JSON is {"generatedAt": {"timestamp": "2001-07-04T12:08:56.235-0700"}}, then TimestampFormat should be "ISO_8601".</p>
+    pub fn timestamp_format(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.timestamp_format = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The format the timestamp field in your JSON object is specified. This value should be one of EPOCHMILLI (for Unix epoch timestamps with second/millisecond level precision) or ISO_8601 (following ISO_8601 format with second/millisecond level precision, with an optional offset of Z or in the format HH:MM or HHMM.). E.g. if your object type is MyType and source JSON is {"generatedAt": {"timestamp": "2001-07-04T12:08:56.235-0700"}}, then TimestampFormat should be "ISO_8601".</p>
+    pub fn set_timestamp_format(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.timestamp_format = input;
+        self
+    }
+    /// <p>The format the timestamp field in your JSON object is specified. This value should be one of EPOCHMILLI (for Unix epoch timestamps with second/millisecond level precision) or ISO_8601 (following ISO_8601 format with second/millisecond level precision, with an optional offset of Z or in the format HH:MM or HHMM.). E.g. if your object type is MyType and source JSON is {"generatedAt": {"timestamp": "2001-07-04T12:08:56.235-0700"}}, then TimestampFormat should be "ISO_8601".</p>
+    pub fn get_timestamp_format(&self) -> &::std::option::Option<::std::string::String> {
+        &self.timestamp_format
+    }
     /// Consumes the builder and constructs a [`Range`](crate::types::Range).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`value`](crate::types::builders::RangeBuilder::value)
-    /// - [`unit`](crate::types::builders::RangeBuilder::unit)
-    pub fn build(self) -> ::std::result::Result<crate::types::Range, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::Range {
-            value: self.value.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "value",
-                    "value was not specified but it is required when building Range",
-                )
-            })?,
-            unit: self.unit.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "unit",
-                    "unit was not specified but it is required when building Range",
-                )
-            })?,
-        })
+    pub fn build(self) -> crate::types::Range {
+        crate::types::Range {
+            value: self.value.unwrap_or_default(),
+            unit: self
+                .unit
+                .unwrap_or("DAYS".parse::<crate::types::Unit>().expect("static value validated to member")),
+            value_range: self.value_range,
+            timestamp_source: self.timestamp_source,
+            timestamp_format: self.timestamp_format,
+        }
     }
 }

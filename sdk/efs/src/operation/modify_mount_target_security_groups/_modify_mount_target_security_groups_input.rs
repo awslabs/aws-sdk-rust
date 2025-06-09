@@ -6,7 +6,7 @@
 pub struct ModifyMountTargetSecurityGroupsInput {
     /// <p>The ID of the mount target whose security groups you want to modify.</p>
     pub mount_target_id: ::std::option::Option<::std::string::String>,
-    /// <p>An array of up to five VPC security group IDs.</p>
+    /// <p>An array of VPC security group IDs.</p>
     pub security_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ModifyMountTargetSecurityGroupsInput {
@@ -14,7 +14,7 @@ impl ModifyMountTargetSecurityGroupsInput {
     pub fn mount_target_id(&self) -> ::std::option::Option<&str> {
         self.mount_target_id.as_deref()
     }
-    /// <p>An array of up to five VPC security group IDs.</p>
+    /// <p>An array of VPC security group IDs.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.security_groups.is_none()`.
     pub fn security_groups(&self) -> &[::std::string::String] {
@@ -55,19 +55,19 @@ impl ModifyMountTargetSecurityGroupsInputBuilder {
     ///
     /// To override the contents of this collection use [`set_security_groups`](Self::set_security_groups).
     ///
-    /// <p>An array of up to five VPC security group IDs.</p>
+    /// <p>An array of VPC security group IDs.</p>
     pub fn security_groups(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.security_groups.unwrap_or_default();
         v.push(input.into());
         self.security_groups = ::std::option::Option::Some(v);
         self
     }
-    /// <p>An array of up to five VPC security group IDs.</p>
+    /// <p>An array of VPC security group IDs.</p>
     pub fn set_security_groups(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.security_groups = input;
         self
     }
-    /// <p>An array of up to five VPC security group IDs.</p>
+    /// <p>An array of VPC security group IDs.</p>
     pub fn get_security_groups(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.security_groups
     }

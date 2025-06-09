@@ -161,8 +161,21 @@ pub fn de_address(
                 builder = builder.set_carrier_ip(var_12);
             }
             ,
-            s if s.matches("serviceManaged") /* ServiceManaged com.amazonaws.ec2#Address$ServiceManaged */ =>  {
+            s if s.matches("subnetId") /* SubnetId com.amazonaws.ec2#Address$SubnetId */ =>  {
                 let var_13 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_subnet_id(var_13);
+            }
+            ,
+            s if s.matches("serviceManaged") /* ServiceManaged com.amazonaws.ec2#Address$ServiceManaged */ =>  {
+                let var_14 =
                     Some(
                         Result::<crate::types::ServiceManaged, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             crate::types::ServiceManaged::from(
@@ -172,23 +185,10 @@ pub fn de_address(
                         ?
                     )
                 ;
-                builder = builder.set_service_managed(var_13);
+                builder = builder.set_service_managed(var_14);
             }
             ,
             s if s.matches("instanceId") /* InstanceId com.amazonaws.ec2#Address$InstanceId */ =>  {
-                let var_14 =
-                    Some(
-                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_instance_id(var_14);
-            }
-            ,
-            s if s.matches("publicIp") /* PublicIp com.amazonaws.ec2#Address$PublicIp */ =>  {
                 let var_15 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -198,7 +198,20 @@ pub fn de_address(
                         ?
                     )
                 ;
-                builder = builder.set_public_ip(var_15);
+                builder = builder.set_instance_id(var_15);
+            }
+            ,
+            s if s.matches("publicIp") /* PublicIp com.amazonaws.ec2#Address$PublicIp */ =>  {
+                let var_16 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_public_ip(var_16);
             }
             ,
             _ => {}

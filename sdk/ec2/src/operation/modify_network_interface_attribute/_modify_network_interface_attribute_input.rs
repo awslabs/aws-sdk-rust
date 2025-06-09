@@ -12,6 +12,8 @@ pub struct ModifyNetworkInterfaceAttributeInput {
     pub connection_tracking_specification: ::std::option::Option<crate::types::ConnectionTrackingSpecificationRequest>,
     /// <p>Indicates whether to assign a public IPv4 address to a network interface. This option can be enabled for any network interface but will only apply to the primary network interface (eth0).</p>
     pub associate_public_ip_address: ::std::option::Option<bool>,
+    /// <p>A list of subnet IDs to associate with the network interface.</p>
+    pub associated_subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub dry_run: ::std::option::Option<bool>,
     /// <p>The ID of the network interface.</p>
@@ -41,6 +43,12 @@ impl ModifyNetworkInterfaceAttributeInput {
     /// <p>Indicates whether to assign a public IPv4 address to a network interface. This option can be enabled for any network interface but will only apply to the primary network interface (eth0).</p>
     pub fn associate_public_ip_address(&self) -> ::std::option::Option<bool> {
         self.associate_public_ip_address
+    }
+    /// <p>A list of subnet IDs to associate with the network interface.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.associated_subnet_ids.is_none()`.
+    pub fn associated_subnet_ids(&self) -> &[::std::string::String] {
+        self.associated_subnet_ids.as_deref().unwrap_or_default()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(&self) -> ::std::option::Option<bool> {
@@ -84,6 +92,7 @@ pub struct ModifyNetworkInterfaceAttributeInputBuilder {
     pub(crate) enable_primary_ipv6: ::std::option::Option<bool>,
     pub(crate) connection_tracking_specification: ::std::option::Option<crate::types::ConnectionTrackingSpecificationRequest>,
     pub(crate) associate_public_ip_address: ::std::option::Option<bool>,
+    pub(crate) associated_subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) network_interface_id: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<crate::types::AttributeValue>,
@@ -150,6 +159,26 @@ impl ModifyNetworkInterfaceAttributeInputBuilder {
     /// <p>Indicates whether to assign a public IPv4 address to a network interface. This option can be enabled for any network interface but will only apply to the primary network interface (eth0).</p>
     pub fn get_associate_public_ip_address(&self) -> &::std::option::Option<bool> {
         &self.associate_public_ip_address
+    }
+    /// Appends an item to `associated_subnet_ids`.
+    ///
+    /// To override the contents of this collection use [`set_associated_subnet_ids`](Self::set_associated_subnet_ids).
+    ///
+    /// <p>A list of subnet IDs to associate with the network interface.</p>
+    pub fn associated_subnet_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.associated_subnet_ids.unwrap_or_default();
+        v.push(input.into());
+        self.associated_subnet_ids = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>A list of subnet IDs to associate with the network interface.</p>
+    pub fn set_associated_subnet_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.associated_subnet_ids = input;
+        self
+    }
+    /// <p>A list of subnet IDs to associate with the network interface.</p>
+    pub fn get_associated_subnet_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.associated_subnet_ids
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
@@ -255,6 +284,7 @@ impl ModifyNetworkInterfaceAttributeInputBuilder {
                 enable_primary_ipv6: self.enable_primary_ipv6,
                 connection_tracking_specification: self.connection_tracking_specification,
                 associate_public_ip_address: self.associate_public_ip_address,
+                associated_subnet_ids: self.associated_subnet_ids,
                 dry_run: self.dry_run,
                 network_interface_id: self.network_interface_id,
                 description: self.description,

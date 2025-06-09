@@ -11,7 +11,7 @@ pub struct FileSystemProtectionDescription {
     /// <li>
     /// <p><code>DISABLED</code> – The file system can be used as the destination file system in a replication configuration. The file system is read-only and can only be modified by EFS replication.</p></li>
     /// <li>
-    /// <p><code>REPLICATING</code> – The file system is being used as the destination file system in a replication configuration. The file system is read-only and is only modified only by EFS replication.</p></li>
+    /// <p><code>REPLICATING</code> – The file system is being used as the destination file system in a replication configuration. The file system is read-only and is modified only by EFS replication.</p></li>
     /// </ul>
     /// <p>If the replication configuration is deleted, the file system's replication overwrite protection is re-enabled, the file system becomes writeable.</p>
     pub replication_overwrite_protection: ::std::option::Option<crate::types::ReplicationOverwriteProtection>,
@@ -24,7 +24,7 @@ impl FileSystemProtectionDescription {
     /// <li>
     /// <p><code>DISABLED</code> – The file system can be used as the destination file system in a replication configuration. The file system is read-only and can only be modified by EFS replication.</p></li>
     /// <li>
-    /// <p><code>REPLICATING</code> – The file system is being used as the destination file system in a replication configuration. The file system is read-only and is only modified only by EFS replication.</p></li>
+    /// <p><code>REPLICATING</code> – The file system is being used as the destination file system in a replication configuration. The file system is read-only and is modified only by EFS replication.</p></li>
     /// </ul>
     /// <p>If the replication configuration is deleted, the file system's replication overwrite protection is re-enabled, the file system becomes writeable.</p>
     pub fn replication_overwrite_protection(&self) -> ::std::option::Option<&crate::types::ReplicationOverwriteProtection> {
@@ -52,7 +52,7 @@ impl FileSystemProtectionDescriptionBuilder {
     /// <li>
     /// <p><code>DISABLED</code> – The file system can be used as the destination file system in a replication configuration. The file system is read-only and can only be modified by EFS replication.</p></li>
     /// <li>
-    /// <p><code>REPLICATING</code> – The file system is being used as the destination file system in a replication configuration. The file system is read-only and is only modified only by EFS replication.</p></li>
+    /// <p><code>REPLICATING</code> – The file system is being used as the destination file system in a replication configuration. The file system is read-only and is modified only by EFS replication.</p></li>
     /// </ul>
     /// <p>If the replication configuration is deleted, the file system's replication overwrite protection is re-enabled, the file system becomes writeable.</p>
     pub fn replication_overwrite_protection(mut self, input: crate::types::ReplicationOverwriteProtection) -> Self {
@@ -66,7 +66,7 @@ impl FileSystemProtectionDescriptionBuilder {
     /// <li>
     /// <p><code>DISABLED</code> – The file system can be used as the destination file system in a replication configuration. The file system is read-only and can only be modified by EFS replication.</p></li>
     /// <li>
-    /// <p><code>REPLICATING</code> – The file system is being used as the destination file system in a replication configuration. The file system is read-only and is only modified only by EFS replication.</p></li>
+    /// <p><code>REPLICATING</code> – The file system is being used as the destination file system in a replication configuration. The file system is read-only and is modified only by EFS replication.</p></li>
     /// </ul>
     /// <p>If the replication configuration is deleted, the file system's replication overwrite protection is re-enabled, the file system becomes writeable.</p>
     pub fn set_replication_overwrite_protection(mut self, input: ::std::option::Option<crate::types::ReplicationOverwriteProtection>) -> Self {
@@ -80,7 +80,7 @@ impl FileSystemProtectionDescriptionBuilder {
     /// <li>
     /// <p><code>DISABLED</code> – The file system can be used as the destination file system in a replication configuration. The file system is read-only and can only be modified by EFS replication.</p></li>
     /// <li>
-    /// <p><code>REPLICATING</code> – The file system is being used as the destination file system in a replication configuration. The file system is read-only and is only modified only by EFS replication.</p></li>
+    /// <p><code>REPLICATING</code> – The file system is being used as the destination file system in a replication configuration. The file system is read-only and is modified only by EFS replication.</p></li>
     /// </ul>
     /// <p>If the replication configuration is deleted, the file system's replication overwrite protection is re-enabled, the file system becomes writeable.</p>
     pub fn get_replication_overwrite_protection(&self) -> &::std::option::Option<crate::types::ReplicationOverwriteProtection> {

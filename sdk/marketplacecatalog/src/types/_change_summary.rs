@@ -11,6 +11,7 @@ pub struct ChangeSummary {
     /// <p>This object contains details specific to the change type of the requested change.</p>
     pub details: ::std::option::Option<::std::string::String>,
     /// <p>The JSON value of the details specific to the change type of the requested change.</p>
+    /// <p>To download the "DetailsDocument" shapes, see the <a href="https://github.com/awslabs/aws-marketplace-catalog-api-shapes-for-python">Python</a> and <a href="https://github.com/awslabs/aws-marketplace-catalog-api-shapes-for-java/tree/main">Java</a> shapes on GitHub.</p>
     pub details_document: ::std::option::Option<::aws_smithy_types::Document>,
     /// <p>An array of <code>ErrorDetail</code> objects associated with the change.</p>
     pub error_detail_list: ::std::option::Option<::std::vec::Vec<crate::types::ErrorDetail>>,
@@ -31,6 +32,7 @@ impl ChangeSummary {
         self.details.as_deref()
     }
     /// <p>The JSON value of the details specific to the change type of the requested change.</p>
+    /// <p>To download the "DetailsDocument" shapes, see the <a href="https://github.com/awslabs/aws-marketplace-catalog-api-shapes-for-python">Python</a> and <a href="https://github.com/awslabs/aws-marketplace-catalog-api-shapes-for-java/tree/main">Java</a> shapes on GitHub.</p>
     pub fn details_document(&self) -> ::std::option::Option<&::aws_smithy_types::Document> {
         self.details_document.as_ref()
     }
@@ -107,16 +109,19 @@ impl ChangeSummaryBuilder {
         &self.details
     }
     /// <p>The JSON value of the details specific to the change type of the requested change.</p>
+    /// <p>To download the "DetailsDocument" shapes, see the <a href="https://github.com/awslabs/aws-marketplace-catalog-api-shapes-for-python">Python</a> and <a href="https://github.com/awslabs/aws-marketplace-catalog-api-shapes-for-java/tree/main">Java</a> shapes on GitHub.</p>
     pub fn details_document(mut self, input: ::aws_smithy_types::Document) -> Self {
         self.details_document = ::std::option::Option::Some(input);
         self
     }
     /// <p>The JSON value of the details specific to the change type of the requested change.</p>
+    /// <p>To download the "DetailsDocument" shapes, see the <a href="https://github.com/awslabs/aws-marketplace-catalog-api-shapes-for-python">Python</a> and <a href="https://github.com/awslabs/aws-marketplace-catalog-api-shapes-for-java/tree/main">Java</a> shapes on GitHub.</p>
     pub fn set_details_document(mut self, input: ::std::option::Option<::aws_smithy_types::Document>) -> Self {
         self.details_document = input;
         self
     }
     /// <p>The JSON value of the details specific to the change type of the requested change.</p>
+    /// <p>To download the "DetailsDocument" shapes, see the <a href="https://github.com/awslabs/aws-marketplace-catalog-api-shapes-for-python">Python</a> and <a href="https://github.com/awslabs/aws-marketplace-catalog-api-shapes-for-java/tree/main">Java</a> shapes on GitHub.</p>
     pub fn get_details_document(&self) -> &::std::option::Option<::aws_smithy_types::Document> {
         &self.details_document
     }

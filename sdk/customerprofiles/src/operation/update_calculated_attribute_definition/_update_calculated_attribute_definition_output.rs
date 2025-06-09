@@ -19,6 +19,12 @@ pub struct UpdateCalculatedAttributeDefinitionOutput {
     pub conditions: ::std::option::Option<crate::types::Conditions>,
     /// <p>The mathematical expression and a list of attribute items specified in that expression.</p>
     pub attribute_details: ::std::option::Option<crate::types::AttributeDetails>,
+    /// <p>Whether historical data ingested before the Calculated Attribute was created should be included in calculations.</p>
+    pub use_historical_data: ::std::option::Option<bool>,
+    /// <p>Status of the Calculated Attribute creation (whether all historical data has been indexed.)</p>
+    pub status: ::std::option::Option<crate::types::ReadinessStatus>,
+    /// <p>Information indicating if the Calculated Attribute is ready for use by confirming all historical data has been processed and reflected.</p>
+    pub readiness: ::std::option::Option<crate::types::Readiness>,
     /// <p>The tags used to organize, track, or control access for this resource.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
@@ -56,6 +62,18 @@ impl UpdateCalculatedAttributeDefinitionOutput {
     pub fn attribute_details(&self) -> ::std::option::Option<&crate::types::AttributeDetails> {
         self.attribute_details.as_ref()
     }
+    /// <p>Whether historical data ingested before the Calculated Attribute was created should be included in calculations.</p>
+    pub fn use_historical_data(&self) -> ::std::option::Option<bool> {
+        self.use_historical_data
+    }
+    /// <p>Status of the Calculated Attribute creation (whether all historical data has been indexed.)</p>
+    pub fn status(&self) -> ::std::option::Option<&crate::types::ReadinessStatus> {
+        self.status.as_ref()
+    }
+    /// <p>Information indicating if the Calculated Attribute is ready for use by confirming all historical data has been processed and reflected.</p>
+    pub fn readiness(&self) -> ::std::option::Option<&crate::types::Readiness> {
+        self.readiness.as_ref()
+    }
     /// <p>The tags used to organize, track, or control access for this resource.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
@@ -72,6 +90,9 @@ impl ::std::fmt::Debug for UpdateCalculatedAttributeDefinitionOutput {
         formatter.field("statistic", &"*** Sensitive Data Redacted ***");
         formatter.field("conditions", &"*** Sensitive Data Redacted ***");
         formatter.field("attribute_details", &"*** Sensitive Data Redacted ***");
+        formatter.field("use_historical_data", &self.use_historical_data);
+        formatter.field("status", &self.status);
+        formatter.field("readiness", &self.readiness);
         formatter.field("tags", &self.tags);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
@@ -101,6 +122,9 @@ pub struct UpdateCalculatedAttributeDefinitionOutputBuilder {
     pub(crate) statistic: ::std::option::Option<crate::types::Statistic>,
     pub(crate) conditions: ::std::option::Option<crate::types::Conditions>,
     pub(crate) attribute_details: ::std::option::Option<crate::types::AttributeDetails>,
+    pub(crate) use_historical_data: ::std::option::Option<bool>,
+    pub(crate) status: ::std::option::Option<crate::types::ReadinessStatus>,
+    pub(crate) readiness: ::std::option::Option<crate::types::Readiness>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
@@ -217,6 +241,48 @@ impl UpdateCalculatedAttributeDefinitionOutputBuilder {
     pub fn get_attribute_details(&self) -> &::std::option::Option<crate::types::AttributeDetails> {
         &self.attribute_details
     }
+    /// <p>Whether historical data ingested before the Calculated Attribute was created should be included in calculations.</p>
+    pub fn use_historical_data(mut self, input: bool) -> Self {
+        self.use_historical_data = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Whether historical data ingested before the Calculated Attribute was created should be included in calculations.</p>
+    pub fn set_use_historical_data(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.use_historical_data = input;
+        self
+    }
+    /// <p>Whether historical data ingested before the Calculated Attribute was created should be included in calculations.</p>
+    pub fn get_use_historical_data(&self) -> &::std::option::Option<bool> {
+        &self.use_historical_data
+    }
+    /// <p>Status of the Calculated Attribute creation (whether all historical data has been indexed.)</p>
+    pub fn status(mut self, input: crate::types::ReadinessStatus) -> Self {
+        self.status = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Status of the Calculated Attribute creation (whether all historical data has been indexed.)</p>
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::ReadinessStatus>) -> Self {
+        self.status = input;
+        self
+    }
+    /// <p>Status of the Calculated Attribute creation (whether all historical data has been indexed.)</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::ReadinessStatus> {
+        &self.status
+    }
+    /// <p>Information indicating if the Calculated Attribute is ready for use by confirming all historical data has been processed and reflected.</p>
+    pub fn readiness(mut self, input: crate::types::Readiness) -> Self {
+        self.readiness = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Information indicating if the Calculated Attribute is ready for use by confirming all historical data has been processed and reflected.</p>
+    pub fn set_readiness(mut self, input: ::std::option::Option<crate::types::Readiness>) -> Self {
+        self.readiness = input;
+        self
+    }
+    /// <p>Information indicating if the Calculated Attribute is ready for use by confirming all historical data has been processed and reflected.</p>
+    pub fn get_readiness(&self) -> &::std::option::Option<crate::types::Readiness> {
+        &self.readiness
+    }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -257,6 +323,9 @@ impl UpdateCalculatedAttributeDefinitionOutputBuilder {
             statistic: self.statistic,
             conditions: self.conditions,
             attribute_details: self.attribute_details,
+            use_historical_data: self.use_historical_data,
+            status: self.status,
+            readiness: self.readiness,
             tags: self.tags,
             _request_id: self._request_id,
         }
@@ -273,6 +342,9 @@ impl ::std::fmt::Debug for UpdateCalculatedAttributeDefinitionOutputBuilder {
         formatter.field("statistic", &"*** Sensitive Data Redacted ***");
         formatter.field("conditions", &"*** Sensitive Data Redacted ***");
         formatter.field("attribute_details", &"*** Sensitive Data Redacted ***");
+        formatter.field("use_historical_data", &self.use_historical_data);
+        formatter.field("status", &self.status);
+        formatter.field("readiness", &self.readiness);
         formatter.field("tags", &self.tags);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()

@@ -14,6 +14,7 @@ pub struct DescribeEntityOutput {
     /// <p>This stringified JSON object includes the details of the entity.</p>
     pub details: ::std::option::Option<::std::string::String>,
     /// <p>The JSON value of the details specific to the entity.</p>
+    /// <p>To download "DetailsDocument" shapes, see the <a href="https://github.com/awslabs/aws-marketplace-catalog-api-shapes-for-python">Python</a> and <a href="https://github.com/awslabs/aws-marketplace-catalog-api-shapes-for-java/tree/main">Java</a> shapes on GitHub.</p>
     pub details_document: ::std::option::Option<::aws_smithy_types::Document>,
     _request_id: Option<String>,
 }
@@ -39,6 +40,7 @@ impl DescribeEntityOutput {
         self.details.as_deref()
     }
     /// <p>The JSON value of the details specific to the entity.</p>
+    /// <p>To download "DetailsDocument" shapes, see the <a href="https://github.com/awslabs/aws-marketplace-catalog-api-shapes-for-python">Python</a> and <a href="https://github.com/awslabs/aws-marketplace-catalog-api-shapes-for-java/tree/main">Java</a> shapes on GitHub.</p>
     pub fn details_document(&self) -> ::std::option::Option<&::aws_smithy_types::Document> {
         self.details_document.as_ref()
     }
@@ -139,16 +141,19 @@ impl DescribeEntityOutputBuilder {
         &self.details
     }
     /// <p>The JSON value of the details specific to the entity.</p>
+    /// <p>To download "DetailsDocument" shapes, see the <a href="https://github.com/awslabs/aws-marketplace-catalog-api-shapes-for-python">Python</a> and <a href="https://github.com/awslabs/aws-marketplace-catalog-api-shapes-for-java/tree/main">Java</a> shapes on GitHub.</p>
     pub fn details_document(mut self, input: ::aws_smithy_types::Document) -> Self {
         self.details_document = ::std::option::Option::Some(input);
         self
     }
     /// <p>The JSON value of the details specific to the entity.</p>
+    /// <p>To download "DetailsDocument" shapes, see the <a href="https://github.com/awslabs/aws-marketplace-catalog-api-shapes-for-python">Python</a> and <a href="https://github.com/awslabs/aws-marketplace-catalog-api-shapes-for-java/tree/main">Java</a> shapes on GitHub.</p>
     pub fn set_details_document(mut self, input: ::std::option::Option<::aws_smithy_types::Document>) -> Self {
         self.details_document = input;
         self
     }
     /// <p>The JSON value of the details specific to the entity.</p>
+    /// <p>To download "DetailsDocument" shapes, see the <a href="https://github.com/awslabs/aws-marketplace-catalog-api-shapes-for-python">Python</a> and <a href="https://github.com/awslabs/aws-marketplace-catalog-api-shapes-for-java/tree/main">Java</a> shapes on GitHub.</p>
     pub fn get_details_document(&self) -> &::std::option::Option<::aws_smithy_types::Document> {
         &self.details_document
     }

@@ -12,10 +12,19 @@
 /// ```text
 /// # let standardidentifier = unimplemented!();
 /// match standardidentifier {
+///     StandardIdentifier::AirBooking => { /* ... */ },
+///     StandardIdentifier::AirPreference => { /* ... */ },
+///     StandardIdentifier::AirSegment => { /* ... */ },
 ///     StandardIdentifier::Asset => { /* ... */ },
 ///     StandardIdentifier::Case => { /* ... */ },
 ///     StandardIdentifier::CommunicationRecord => { /* ... */ },
+///     StandardIdentifier::HotelPreference => { /* ... */ },
+///     StandardIdentifier::HotelReservation => { /* ... */ },
+///     StandardIdentifier::HotelStayRevenue => { /* ... */ },
 ///     StandardIdentifier::LookupOnly => { /* ... */ },
+///     StandardIdentifier::Loyalty => { /* ... */ },
+///     StandardIdentifier::LoyaltyPromotion => { /* ... */ },
+///     StandardIdentifier::LoyaltyTransaction => { /* ... */ },
 ///     StandardIdentifier::NewOnly => { /* ... */ },
 ///     StandardIdentifier::Order => { /* ... */ },
 ///     StandardIdentifier::Profile => { /* ... */ },
@@ -50,13 +59,31 @@
 )]
 pub enum StandardIdentifier {
     #[allow(missing_docs)] // documentation missing in model
+    AirBooking,
+    #[allow(missing_docs)] // documentation missing in model
+    AirPreference,
+    #[allow(missing_docs)] // documentation missing in model
+    AirSegment,
+    #[allow(missing_docs)] // documentation missing in model
     Asset,
     #[allow(missing_docs)] // documentation missing in model
     Case,
     #[allow(missing_docs)] // documentation missing in model
     CommunicationRecord,
     #[allow(missing_docs)] // documentation missing in model
+    HotelPreference,
+    #[allow(missing_docs)] // documentation missing in model
+    HotelReservation,
+    #[allow(missing_docs)] // documentation missing in model
+    HotelStayRevenue,
+    #[allow(missing_docs)] // documentation missing in model
     LookupOnly,
+    #[allow(missing_docs)] // documentation missing in model
+    Loyalty,
+    #[allow(missing_docs)] // documentation missing in model
+    LoyaltyPromotion,
+    #[allow(missing_docs)] // documentation missing in model
+    LoyaltyTransaction,
     #[allow(missing_docs)] // documentation missing in model
     NewOnly,
     #[allow(missing_docs)] // documentation missing in model
@@ -74,10 +101,19 @@ pub enum StandardIdentifier {
 impl ::std::convert::From<&str> for StandardIdentifier {
     fn from(s: &str) -> Self {
         match s {
+            "AIR_BOOKING" => StandardIdentifier::AirBooking,
+            "AIR_PREFERENCE" => StandardIdentifier::AirPreference,
+            "AIR_SEGMENT" => StandardIdentifier::AirSegment,
             "ASSET" => StandardIdentifier::Asset,
             "CASE" => StandardIdentifier::Case,
             "COMMUNICATION_RECORD" => StandardIdentifier::CommunicationRecord,
+            "HOTEL_PREFERENCE" => StandardIdentifier::HotelPreference,
+            "HOTEL_RESERVATION" => StandardIdentifier::HotelReservation,
+            "HOTEL_STAY_REVENUE" => StandardIdentifier::HotelStayRevenue,
             "LOOKUP_ONLY" => StandardIdentifier::LookupOnly,
+            "LOYALTY" => StandardIdentifier::Loyalty,
+            "LOYALTY_PROMOTION" => StandardIdentifier::LoyaltyPromotion,
+            "LOYALTY_TRANSACTION" => StandardIdentifier::LoyaltyTransaction,
             "NEW_ONLY" => StandardIdentifier::NewOnly,
             "ORDER" => StandardIdentifier::Order,
             "PROFILE" => StandardIdentifier::Profile,
@@ -98,10 +134,19 @@ impl StandardIdentifier {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            StandardIdentifier::AirBooking => "AIR_BOOKING",
+            StandardIdentifier::AirPreference => "AIR_PREFERENCE",
+            StandardIdentifier::AirSegment => "AIR_SEGMENT",
             StandardIdentifier::Asset => "ASSET",
             StandardIdentifier::Case => "CASE",
             StandardIdentifier::CommunicationRecord => "COMMUNICATION_RECORD",
+            StandardIdentifier::HotelPreference => "HOTEL_PREFERENCE",
+            StandardIdentifier::HotelReservation => "HOTEL_RESERVATION",
+            StandardIdentifier::HotelStayRevenue => "HOTEL_STAY_REVENUE",
             StandardIdentifier::LookupOnly => "LOOKUP_ONLY",
+            StandardIdentifier::Loyalty => "LOYALTY",
+            StandardIdentifier::LoyaltyPromotion => "LOYALTY_PROMOTION",
+            StandardIdentifier::LoyaltyTransaction => "LOYALTY_TRANSACTION",
             StandardIdentifier::NewOnly => "NEW_ONLY",
             StandardIdentifier::Order => "ORDER",
             StandardIdentifier::Profile => "PROFILE",
@@ -113,10 +158,19 @@ impl StandardIdentifier {
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
+            "AIR_BOOKING",
+            "AIR_PREFERENCE",
+            "AIR_SEGMENT",
             "ASSET",
             "CASE",
             "COMMUNICATION_RECORD",
+            "HOTEL_PREFERENCE",
+            "HOTEL_RESERVATION",
+            "HOTEL_STAY_REVENUE",
             "LOOKUP_ONLY",
+            "LOYALTY",
+            "LOYALTY_PROMOTION",
+            "LOYALTY_TRANSACTION",
             "NEW_ONLY",
             "ORDER",
             "PROFILE",
@@ -145,10 +199,19 @@ impl StandardIdentifier {
 impl ::std::fmt::Display for StandardIdentifier {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            StandardIdentifier::AirBooking => write!(f, "AIR_BOOKING"),
+            StandardIdentifier::AirPreference => write!(f, "AIR_PREFERENCE"),
+            StandardIdentifier::AirSegment => write!(f, "AIR_SEGMENT"),
             StandardIdentifier::Asset => write!(f, "ASSET"),
             StandardIdentifier::Case => write!(f, "CASE"),
             StandardIdentifier::CommunicationRecord => write!(f, "COMMUNICATION_RECORD"),
+            StandardIdentifier::HotelPreference => write!(f, "HOTEL_PREFERENCE"),
+            StandardIdentifier::HotelReservation => write!(f, "HOTEL_RESERVATION"),
+            StandardIdentifier::HotelStayRevenue => write!(f, "HOTEL_STAY_REVENUE"),
             StandardIdentifier::LookupOnly => write!(f, "LOOKUP_ONLY"),
+            StandardIdentifier::Loyalty => write!(f, "LOYALTY"),
+            StandardIdentifier::LoyaltyPromotion => write!(f, "LOYALTY_PROMOTION"),
+            StandardIdentifier::LoyaltyTransaction => write!(f, "LOYALTY_TRANSACTION"),
             StandardIdentifier::NewOnly => write!(f, "NEW_ONLY"),
             StandardIdentifier::Order => write!(f, "ORDER"),
             StandardIdentifier::Profile => write!(f, "PROFILE"),
