@@ -20,7 +20,7 @@
 #![cfg_attr(docsrs, feature(doc_auto_cfg))]
 //! Amazon GameLift Streams provides a global cloud solution for content streaming experiences. Use Amazon GameLift Streams tools to upload and configure content for streaming, deploy and scale computing resources to host streams, and manage stream session placement to meet customer demand.
 //!
-//! This Reference Guide describes the Amazon GameLift Streams service API. You can use the API through the Amazon Web Services SDK, the Command Line Interface (AWS CLI), or by making direct REST calls through HTTPS.
+//! This Reference Guide describes the Amazon GameLift Streams service API. You can use the API through the Amazon Web Services SDK, the Command Line Interface (CLI), or by making direct REST calls through HTTPS.
 //!
 //! See the _Amazon GameLift Streams Developer Guide_ for more information on how Amazon GameLift Streams works and how to work with it.
 //!
@@ -36,7 +36,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-//! aws-sdk-gameliftstreams = "1.12.0"
+//! aws-sdk-gameliftstreams = "1.12.1"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!

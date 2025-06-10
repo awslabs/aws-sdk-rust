@@ -988,9 +988,9 @@ model_hash = '7d7385632f3ae7f3b23f23fbf25a975853f67b2a2ffc94a10739ac290a1db000'
 
 [crates.aws-sdk-gameliftstreams]
 category = 'AwsSdk'
-version = '1.12.0'
-source_hash = 'c329ac6c80e02ecbecd32c7c999cae3f19d165c687c41a67b34135dea6fc7883'
-model_hash = '0eb1324b4eba811cc015ca48fe94817c4cb9b36be4c1962107524f7768950421'
+version = '1.12.1'
+source_hash = '3a6e454b8c6afd2a24a68140245571a31d2a11afb67c5660d0e32a105b762e57'
+model_hash = 'ed02945c381fc6993b3679931edaafeacdc0a50d188694c9cf416e7dad24cf31'
 
 [crates.aws-sdk-geomaps]
 category = 'AwsSdk'
@@ -2627,15 +2627,5 @@ source_hash = '80ec4ac438cda0bc74755e6b3c466dee894170885c393c986c8378a658eecec7'
 category = 'AwsRuntime'
 version = '0.0.0'
 source_hash = '8f95c45532c2d3193640e712a4081002454f32a0b49b8e64c6e34ab790a4dd31'
-
-[release]
-tag = 'release-2025-06-09'
-
 [release.crates]
-aws-sdk-appsync = '1.85.0'
-aws-sdk-costexplorer = '1.81.0'
-aws-sdk-customerprofiles = '1.78.0'
-aws-sdk-ec2 = '1.138.0'
-aws-sdk-efs = '1.75.0'
-aws-sdk-marketplacecatalog = '1.77.0'
-aws-sdk-workspacesthinclient = '1.76.0'
+aws-sdk-gameliftstreams = '1.12.1'

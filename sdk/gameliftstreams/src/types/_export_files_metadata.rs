@@ -9,8 +9,8 @@ pub struct ExportFilesMetadata {
     /// <p>A short description of the reason the export is in <code>FAILED</code> status.</p>
     pub status_reason: ::std::option::Option<::std::string::String>,
     /// <p>The S3 bucket URI where Amazon GameLift Streams uploaded the set of compressed exported files for a stream session. Amazon GameLift Streams generates a ZIP file name based on the stream session metadata. Alternatively, you can provide a custom file name with a <code>.zip</code> file extension.</p>
-    /// <p>Example 1: If you provide an S3 URI called <code>s3://MyBucket/MyGame_Session1.zip</code>, then Amazon GameLift Streams will save the files at that location.</p>
-    /// <p>Example 2: If you provide an S3 URI called <code>s3://MyBucket/MyGameSessions_ExportedFiles/</code>, then Amazon GameLift Streams will save the files at <code>s3://MyBucket/MyGameSessions_ExportedFiles/YYYYMMDD-HHMMSS-appId-sg-Id-sessionId.zip</code> or another similar name.</p>
+    /// <p>Example 1: If you provide an S3 URI called <code>s3://amzn-s3-demo-destination-bucket/MyGame_Session1.zip</code>, then Amazon GameLift Streams will save the files at that location.</p>
+    /// <p>Example 2: If you provide an S3 URI called <code>s3://amzn-s3-demo-destination-bucket/MyGameSessions_ExportedFiles/</code>, then Amazon GameLift Streams will save the files at <code>s3://amzn-s3-demo-destination-bucket/MyGameSessions_ExportedFiles/YYYYMMDD-HHMMSS-appId-sg-Id-sessionId.zip</code> or another similar name.</p>
     pub output_uri: ::std::option::Option<::std::string::String>,
 }
 impl ExportFilesMetadata {
@@ -23,8 +23,8 @@ impl ExportFilesMetadata {
         self.status_reason.as_deref()
     }
     /// <p>The S3 bucket URI where Amazon GameLift Streams uploaded the set of compressed exported files for a stream session. Amazon GameLift Streams generates a ZIP file name based on the stream session metadata. Alternatively, you can provide a custom file name with a <code>.zip</code> file extension.</p>
-    /// <p>Example 1: If you provide an S3 URI called <code>s3://MyBucket/MyGame_Session1.zip</code>, then Amazon GameLift Streams will save the files at that location.</p>
-    /// <p>Example 2: If you provide an S3 URI called <code>s3://MyBucket/MyGameSessions_ExportedFiles/</code>, then Amazon GameLift Streams will save the files at <code>s3://MyBucket/MyGameSessions_ExportedFiles/YYYYMMDD-HHMMSS-appId-sg-Id-sessionId.zip</code> or another similar name.</p>
+    /// <p>Example 1: If you provide an S3 URI called <code>s3://amzn-s3-demo-destination-bucket/MyGame_Session1.zip</code>, then Amazon GameLift Streams will save the files at that location.</p>
+    /// <p>Example 2: If you provide an S3 URI called <code>s3://amzn-s3-demo-destination-bucket/MyGameSessions_ExportedFiles/</code>, then Amazon GameLift Streams will save the files at <code>s3://amzn-s3-demo-destination-bucket/MyGameSessions_ExportedFiles/YYYYMMDD-HHMMSS-appId-sg-Id-sessionId.zip</code> or another similar name.</p>
     pub fn output_uri(&self) -> ::std::option::Option<&str> {
         self.output_uri.as_deref()
     }
@@ -74,22 +74,22 @@ impl ExportFilesMetadataBuilder {
         &self.status_reason
     }
     /// <p>The S3 bucket URI where Amazon GameLift Streams uploaded the set of compressed exported files for a stream session. Amazon GameLift Streams generates a ZIP file name based on the stream session metadata. Alternatively, you can provide a custom file name with a <code>.zip</code> file extension.</p>
-    /// <p>Example 1: If you provide an S3 URI called <code>s3://MyBucket/MyGame_Session1.zip</code>, then Amazon GameLift Streams will save the files at that location.</p>
-    /// <p>Example 2: If you provide an S3 URI called <code>s3://MyBucket/MyGameSessions_ExportedFiles/</code>, then Amazon GameLift Streams will save the files at <code>s3://MyBucket/MyGameSessions_ExportedFiles/YYYYMMDD-HHMMSS-appId-sg-Id-sessionId.zip</code> or another similar name.</p>
+    /// <p>Example 1: If you provide an S3 URI called <code>s3://amzn-s3-demo-destination-bucket/MyGame_Session1.zip</code>, then Amazon GameLift Streams will save the files at that location.</p>
+    /// <p>Example 2: If you provide an S3 URI called <code>s3://amzn-s3-demo-destination-bucket/MyGameSessions_ExportedFiles/</code>, then Amazon GameLift Streams will save the files at <code>s3://amzn-s3-demo-destination-bucket/MyGameSessions_ExportedFiles/YYYYMMDD-HHMMSS-appId-sg-Id-sessionId.zip</code> or another similar name.</p>
     pub fn output_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.output_uri = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The S3 bucket URI where Amazon GameLift Streams uploaded the set of compressed exported files for a stream session. Amazon GameLift Streams generates a ZIP file name based on the stream session metadata. Alternatively, you can provide a custom file name with a <code>.zip</code> file extension.</p>
-    /// <p>Example 1: If you provide an S3 URI called <code>s3://MyBucket/MyGame_Session1.zip</code>, then Amazon GameLift Streams will save the files at that location.</p>
-    /// <p>Example 2: If you provide an S3 URI called <code>s3://MyBucket/MyGameSessions_ExportedFiles/</code>, then Amazon GameLift Streams will save the files at <code>s3://MyBucket/MyGameSessions_ExportedFiles/YYYYMMDD-HHMMSS-appId-sg-Id-sessionId.zip</code> or another similar name.</p>
+    /// <p>Example 1: If you provide an S3 URI called <code>s3://amzn-s3-demo-destination-bucket/MyGame_Session1.zip</code>, then Amazon GameLift Streams will save the files at that location.</p>
+    /// <p>Example 2: If you provide an S3 URI called <code>s3://amzn-s3-demo-destination-bucket/MyGameSessions_ExportedFiles/</code>, then Amazon GameLift Streams will save the files at <code>s3://amzn-s3-demo-destination-bucket/MyGameSessions_ExportedFiles/YYYYMMDD-HHMMSS-appId-sg-Id-sessionId.zip</code> or another similar name.</p>
     pub fn set_output_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.output_uri = input;
         self
     }
     /// <p>The S3 bucket URI where Amazon GameLift Streams uploaded the set of compressed exported files for a stream session. Amazon GameLift Streams generates a ZIP file name based on the stream session metadata. Alternatively, you can provide a custom file name with a <code>.zip</code> file extension.</p>
-    /// <p>Example 1: If you provide an S3 URI called <code>s3://MyBucket/MyGame_Session1.zip</code>, then Amazon GameLift Streams will save the files at that location.</p>
-    /// <p>Example 2: If you provide an S3 URI called <code>s3://MyBucket/MyGameSessions_ExportedFiles/</code>, then Amazon GameLift Streams will save the files at <code>s3://MyBucket/MyGameSessions_ExportedFiles/YYYYMMDD-HHMMSS-appId-sg-Id-sessionId.zip</code> or another similar name.</p>
+    /// <p>Example 1: If you provide an S3 URI called <code>s3://amzn-s3-demo-destination-bucket/MyGame_Session1.zip</code>, then Amazon GameLift Streams will save the files at that location.</p>
+    /// <p>Example 2: If you provide an S3 URI called <code>s3://amzn-s3-demo-destination-bucket/MyGameSessions_ExportedFiles/</code>, then Amazon GameLift Streams will save the files at <code>s3://amzn-s3-demo-destination-bucket/MyGameSessions_ExportedFiles/YYYYMMDD-HHMMSS-appId-sg-Id-sessionId.zip</code> or another similar name.</p>
     pub fn get_output_uri(&self) -> &::std::option::Option<::std::string::String> {
         &self.output_uri
     }

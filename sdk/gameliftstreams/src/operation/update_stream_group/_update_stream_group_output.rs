@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateStreamGroupOutput {
-    /// <p>An Amazon Resource Name (ARN) that is assigned to the stream group resource and that uniquely identifies the group across all Amazon Web Services Regions. Format is <code>arn:aws:gameliftstreams:\[AWS Region\]:\[AWS account\]:streamgroup/\[resource ID\]</code>.</p>
+    /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">Amazon Resource Name (ARN)</a> that is assigned to the stream group resource and that uniquely identifies the group across all Amazon Web Services Regions. Format is <code>arn:aws:gameliftstreams:\[AWS Region\]:\[AWS account\]:streamgroup/\[resource ID\]</code>.</p>
     pub arn: ::std::string::String,
     /// <p>A descriptive label for the stream group.</p>
     pub description: ::std::option::Option<::std::string::String>,
@@ -130,12 +130,12 @@ pub struct UpdateStreamGroupOutput {
     /// <p>A timestamp that indicates when this resource was created. Timestamps are expressed using in ISO8601 format, such as: <code>2022-12-27T22:29:40+00:00</code> (UTC).</p>
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A set of applications that this stream group is associated with. You can stream any of these applications with the stream group.</p>
-    /// <p>This value is a set of <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">Amazon Resource Names (ARNs)</a> that uniquely identify application resources. Format example: <code>arn:aws:gameliftstreams:us-west-2:123456789012:application/a-9ZY8X7Wv6</code>.</p>
+    /// <p>This value is a set of <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">Amazon Resource Names (ARNs)</a> that uniquely identify application resources. Example ARN: <code>arn:aws:gameliftstreams:us-west-2:111122223333:application/a-9ZY8X7Wv6</code>.</p>
     pub associated_applications: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     _request_id: Option<String>,
 }
 impl UpdateStreamGroupOutput {
-    /// <p>An Amazon Resource Name (ARN) that is assigned to the stream group resource and that uniquely identifies the group across all Amazon Web Services Regions. Format is <code>arn:aws:gameliftstreams:\[AWS Region\]:\[AWS account\]:streamgroup/\[resource ID\]</code>.</p>
+    /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">Amazon Resource Name (ARN)</a> that is assigned to the stream group resource and that uniquely identifies the group across all Amazon Web Services Regions. Format is <code>arn:aws:gameliftstreams:\[AWS Region\]:\[AWS account\]:streamgroup/\[resource ID\]</code>.</p>
     pub fn arn(&self) -> &str {
         use std::ops::Deref;
         self.arn.deref()
@@ -285,7 +285,7 @@ impl UpdateStreamGroupOutput {
         self.created_at.as_ref()
     }
     /// <p>A set of applications that this stream group is associated with. You can stream any of these applications with the stream group.</p>
-    /// <p>This value is a set of <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">Amazon Resource Names (ARNs)</a> that uniquely identify application resources. Format example: <code>arn:aws:gameliftstreams:us-west-2:123456789012:application/a-9ZY8X7Wv6</code>.</p>
+    /// <p>This value is a set of <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">Amazon Resource Names (ARNs)</a> that uniquely identify application resources. Example ARN: <code>arn:aws:gameliftstreams:us-west-2:111122223333:application/a-9ZY8X7Wv6</code>.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.associated_applications.is_none()`.
     pub fn associated_applications(&self) -> &[::std::string::String] {
@@ -322,18 +322,18 @@ pub struct UpdateStreamGroupOutputBuilder {
     _request_id: Option<String>,
 }
 impl UpdateStreamGroupOutputBuilder {
-    /// <p>An Amazon Resource Name (ARN) that is assigned to the stream group resource and that uniquely identifies the group across all Amazon Web Services Regions. Format is <code>arn:aws:gameliftstreams:\[AWS Region\]:\[AWS account\]:streamgroup/\[resource ID\]</code>.</p>
+    /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">Amazon Resource Name (ARN)</a> that is assigned to the stream group resource and that uniquely identifies the group across all Amazon Web Services Regions. Format is <code>arn:aws:gameliftstreams:\[AWS Region\]:\[AWS account\]:streamgroup/\[resource ID\]</code>.</p>
     /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>An Amazon Resource Name (ARN) that is assigned to the stream group resource and that uniquely identifies the group across all Amazon Web Services Regions. Format is <code>arn:aws:gameliftstreams:\[AWS Region\]:\[AWS account\]:streamgroup/\[resource ID\]</code>.</p>
+    /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">Amazon Resource Name (ARN)</a> that is assigned to the stream group resource and that uniquely identifies the group across all Amazon Web Services Regions. Format is <code>arn:aws:gameliftstreams:\[AWS Region\]:\[AWS account\]:streamgroup/\[resource ID\]</code>.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
     }
-    /// <p>An Amazon Resource Name (ARN) that is assigned to the stream group resource and that uniquely identifies the group across all Amazon Web Services Regions. Format is <code>arn:aws:gameliftstreams:\[AWS Region\]:\[AWS account\]:streamgroup/\[resource ID\]</code>.</p>
+    /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">Amazon Resource Name (ARN)</a> that is assigned to the stream group resource and that uniquely identifies the group across all Amazon Web Services Regions. Format is <code>arn:aws:gameliftstreams:\[AWS Region\]:\[AWS account\]:streamgroup/\[resource ID\]</code>.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.arn
     }
@@ -792,7 +792,7 @@ impl UpdateStreamGroupOutputBuilder {
     /// To override the contents of this collection use [`set_associated_applications`](Self::set_associated_applications).
     ///
     /// <p>A set of applications that this stream group is associated with. You can stream any of these applications with the stream group.</p>
-    /// <p>This value is a set of <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">Amazon Resource Names (ARNs)</a> that uniquely identify application resources. Format example: <code>arn:aws:gameliftstreams:us-west-2:123456789012:application/a-9ZY8X7Wv6</code>.</p>
+    /// <p>This value is a set of <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">Amazon Resource Names (ARNs)</a> that uniquely identify application resources. Example ARN: <code>arn:aws:gameliftstreams:us-west-2:111122223333:application/a-9ZY8X7Wv6</code>.</p>
     pub fn associated_applications(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.associated_applications.unwrap_or_default();
         v.push(input.into());
@@ -800,13 +800,13 @@ impl UpdateStreamGroupOutputBuilder {
         self
     }
     /// <p>A set of applications that this stream group is associated with. You can stream any of these applications with the stream group.</p>
-    /// <p>This value is a set of <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">Amazon Resource Names (ARNs)</a> that uniquely identify application resources. Format example: <code>arn:aws:gameliftstreams:us-west-2:123456789012:application/a-9ZY8X7Wv6</code>.</p>
+    /// <p>This value is a set of <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">Amazon Resource Names (ARNs)</a> that uniquely identify application resources. Example ARN: <code>arn:aws:gameliftstreams:us-west-2:111122223333:application/a-9ZY8X7Wv6</code>.</p>
     pub fn set_associated_applications(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.associated_applications = input;
         self
     }
     /// <p>A set of applications that this stream group is associated with. You can stream any of these applications with the stream group.</p>
-    /// <p>This value is a set of <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">Amazon Resource Names (ARNs)</a> that uniquely identify application resources. Format example: <code>arn:aws:gameliftstreams:us-west-2:123456789012:application/a-9ZY8X7Wv6</code>.</p>
+    /// <p>This value is a set of <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">Amazon Resource Names (ARNs)</a> that uniquely identify application resources. Example ARN: <code>arn:aws:gameliftstreams:us-west-2:111122223333:application/a-9ZY8X7Wv6</code>.</p>
     pub fn get_associated_applications(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.associated_applications
     }

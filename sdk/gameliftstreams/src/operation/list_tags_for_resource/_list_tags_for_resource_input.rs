@@ -3,11 +3,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListTagsForResourceInput {
-    /// <p>The (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">Amazon Resource Name (ARN)</a> that you want to retrieve tags for. To get a Amazon GameLift Streams resource ARN, call a List or Get operation for the resource.</p>
+    /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">Amazon Resource Name (ARN)</a> that you want to retrieve tags for. To get an Amazon GameLift Streams resource ARN, call a List or Get operation for the resource.</p>
     pub resource_arn: ::std::option::Option<::std::string::String>,
 }
 impl ListTagsForResourceInput {
-    /// <p>The (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">Amazon Resource Name (ARN)</a> that you want to retrieve tags for. To get a Amazon GameLift Streams resource ARN, call a List or Get operation for the resource.</p>
+    /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">Amazon Resource Name (ARN)</a> that you want to retrieve tags for. To get an Amazon GameLift Streams resource ARN, call a List or Get operation for the resource.</p>
     pub fn resource_arn(&self) -> ::std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
@@ -26,18 +26,18 @@ pub struct ListTagsForResourceInputBuilder {
     pub(crate) resource_arn: ::std::option::Option<::std::string::String>,
 }
 impl ListTagsForResourceInputBuilder {
-    /// <p>The (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">Amazon Resource Name (ARN)</a> that you want to retrieve tags for. To get a Amazon GameLift Streams resource ARN, call a List or Get operation for the resource.</p>
+    /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">Amazon Resource Name (ARN)</a> that you want to retrieve tags for. To get an Amazon GameLift Streams resource ARN, call a List or Get operation for the resource.</p>
     /// This field is required.
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">Amazon Resource Name (ARN)</a> that you want to retrieve tags for. To get a Amazon GameLift Streams resource ARN, call a List or Get operation for the resource.</p>
+    /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">Amazon Resource Name (ARN)</a> that you want to retrieve tags for. To get an Amazon GameLift Streams resource ARN, call a List or Get operation for the resource.</p>
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_arn = input;
         self
     }
-    /// <p>The (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">Amazon Resource Name (ARN)</a> that you want to retrieve tags for. To get a Amazon GameLift Streams resource ARN, call a List or Get operation for the resource.</p>
+    /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">Amazon Resource Name (ARN)</a> that you want to retrieve tags for. To get an Amazon GameLift Streams resource ARN, call a List or Get operation for the resource.</p>
     pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_arn
     }

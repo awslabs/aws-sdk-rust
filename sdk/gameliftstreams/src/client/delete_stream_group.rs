@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteStreamGroup`](crate::operation::delete_stream_group::builders::DeleteStreamGroupFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`identifier(impl Into<String>)`](crate::operation::delete_stream_group::builders::DeleteStreamGroupFluentBuilder::identifier) / [`set_identifier(Option<String>)`](crate::operation::delete_stream_group::builders::DeleteStreamGroupFluentBuilder::set_identifier):<br>required: **true**<br><p>The unique ID value of the stream group resource to delete. Format example: <code>sg-1AB2C3De4</code>.</p><br>
+    ///   - [`identifier(impl Into<String>)`](crate::operation::delete_stream_group::builders::DeleteStreamGroupFluentBuilder::identifier) / [`set_identifier(Option<String>)`](crate::operation::delete_stream_group::builders::DeleteStreamGroupFluentBuilder::set_identifier):<br>required: **true**<br><p>An <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">Amazon Resource Name (ARN)</a> or ID that uniquely identifies the stream group resource. Example ARN: <code>arn:aws:gameliftstreams:us-west-2:111122223333:streamgroup/sg-1AB2C3De4</code>. Example ID: <code>sg-1AB2C3De4</code>.</p><br>
     /// - On success, responds with [`DeleteStreamGroupOutput`](crate::operation::delete_stream_group::DeleteStreamGroupOutput)
     /// - On failure, responds with [`SdkError<DeleteStreamGroupError>`](crate::operation::delete_stream_group::DeleteStreamGroupError)
     pub fn delete_stream_group(&self) -> crate::operation::delete_stream_group::builders::DeleteStreamGroupFluentBuilder {
