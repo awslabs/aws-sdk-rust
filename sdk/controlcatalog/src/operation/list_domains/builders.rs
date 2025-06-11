@@ -22,7 +22,7 @@ impl crate::operation::list_domains::builders::ListDomainsInputBuilder {
 }
 /// Fluent builder constructing a request to `ListDomains`.
 ///
-/// <p>Returns a paginated list of domains from the Amazon Web Services Control Catalog.</p>
+/// <p>Returns a paginated list of domains from the Control Catalog.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListDomainsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

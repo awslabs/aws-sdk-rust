@@ -183,6 +183,8 @@ pub use crate::types::_descriptive_bot_builder_specification::DescriptiveBotBuil
 
 pub use crate::types::_runtime_settings::RuntimeSettingsBuilder;
 
+pub use crate::types::_nlu_improvement_specification::NluImprovementSpecificationBuilder;
+
 pub use crate::types::_slot_resolution_improvement_specification::SlotResolutionImprovementSpecificationBuilder;
 
 pub use crate::types::_voice_settings::VoiceSettingsBuilder;

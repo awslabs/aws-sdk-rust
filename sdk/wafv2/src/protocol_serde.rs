@@ -323,6 +323,8 @@ pub(crate) mod shape_managed_rule_set_summaries;
 
 pub(crate) mod shape_mobile_sdk_release;
 
+pub(crate) mod shape_on_source_d_do_s_protection_config;
+
 pub(crate) mod shape_rate_based_statement_managed_keys_ip_set;
 
 pub(crate) mod shape_regex;
@@ -555,6 +557,8 @@ pub(crate) mod shape_all;
 
 pub(crate) mod shape_aws_managed_rules_acfp_rule_set;
 
+pub(crate) mod shape_aws_managed_rules_anti_d_do_s_rule_set;
+
 pub(crate) mod shape_aws_managed_rules_atp_rule_set;
 
 pub(crate) mod shape_aws_managed_rules_bot_control_rule_set;
@@ -595,6 +599,8 @@ pub(crate) mod shape_username_field;
 
 pub(crate) mod shape_asn_list;
 
+pub(crate) mod shape_client_side_action_config;
+
 pub(crate) mod shape_cookie_names;
 
 pub(crate) mod shape_country_codes;
@@ -624,6 +630,8 @@ pub(crate) mod shape_statements;
 pub(crate) mod shape_text_transformations;
 
 pub(crate) mod shape_address_field;
+
+pub(crate) mod shape_client_side_action;
 
 pub(crate) mod shape_email_field;
 

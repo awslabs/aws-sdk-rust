@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdatePodIdentityAssociationOutput {
-    /// <p>The full description of the EKS Pod Identity association that was updated.</p>
+    /// <p>The full description of the association that was updated.</p>
     pub association: ::std::option::Option<crate::types::PodIdentityAssociation>,
     _request_id: Option<String>,
 }
 impl UpdatePodIdentityAssociationOutput {
-    /// <p>The full description of the EKS Pod Identity association that was updated.</p>
+    /// <p>The full description of the association that was updated.</p>
     pub fn association(&self) -> ::std::option::Option<&crate::types::PodIdentityAssociation> {
         self.association.as_ref()
     }
@@ -33,17 +33,17 @@ pub struct UpdatePodIdentityAssociationOutputBuilder {
     _request_id: Option<String>,
 }
 impl UpdatePodIdentityAssociationOutputBuilder {
-    /// <p>The full description of the EKS Pod Identity association that was updated.</p>
+    /// <p>The full description of the association that was updated.</p>
     pub fn association(mut self, input: crate::types::PodIdentityAssociation) -> Self {
         self.association = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The full description of the EKS Pod Identity association that was updated.</p>
+    /// <p>The full description of the association that was updated.</p>
     pub fn set_association(mut self, input: ::std::option::Option<crate::types::PodIdentityAssociation>) -> Self {
         self.association = input;
         self
     }
-    /// <p>The full description of the EKS Pod Identity association that was updated.</p>
+    /// <p>The full description of the association that was updated.</p>
     pub fn get_association(&self) -> &::std::option::Option<crate::types::PodIdentityAssociation> {
         &self.association
     }

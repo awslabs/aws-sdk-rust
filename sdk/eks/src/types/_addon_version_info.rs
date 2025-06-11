@@ -8,13 +8,13 @@ pub struct AddonVersionInfo {
     pub addon_version: ::std::option::Option<::std::string::String>,
     /// <p>The architectures that the version supports.</p>
     pub architecture: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>Indicates the compute type of the addon version.</p>
+    /// <p>Indicates the compute type of the add-on version.</p>
     pub compute_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>An object representing the compatibilities of a version.</p>
     pub compatibilities: ::std::option::Option<::std::vec::Vec<crate::types::Compatibility>>,
     /// <p>Whether the add-on requires configuration.</p>
     pub requires_configuration: bool,
-    /// <p>Indicates if the Addon requires IAM Permissions to operate, such as networking permissions.</p>
+    /// <p>Indicates if the add-on requires IAM Permissions to operate, such as networking permissions.</p>
     pub requires_iam_permissions: bool,
 }
 impl AddonVersionInfo {
@@ -28,7 +28,7 @@ impl AddonVersionInfo {
     pub fn architecture(&self) -> &[::std::string::String] {
         self.architecture.as_deref().unwrap_or_default()
     }
-    /// <p>Indicates the compute type of the addon version.</p>
+    /// <p>Indicates the compute type of the add-on version.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.compute_types.is_none()`.
     pub fn compute_types(&self) -> &[::std::string::String] {
@@ -44,7 +44,7 @@ impl AddonVersionInfo {
     pub fn requires_configuration(&self) -> bool {
         self.requires_configuration
     }
-    /// <p>Indicates if the Addon requires IAM Permissions to operate, such as networking permissions.</p>
+    /// <p>Indicates if the add-on requires IAM Permissions to operate, such as networking permissions.</p>
     pub fn requires_iam_permissions(&self) -> bool {
         self.requires_iam_permissions
     }
@@ -106,19 +106,19 @@ impl AddonVersionInfoBuilder {
     ///
     /// To override the contents of this collection use [`set_compute_types`](Self::set_compute_types).
     ///
-    /// <p>Indicates the compute type of the addon version.</p>
+    /// <p>Indicates the compute type of the add-on version.</p>
     pub fn compute_types(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.compute_types.unwrap_or_default();
         v.push(input.into());
         self.compute_types = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Indicates the compute type of the addon version.</p>
+    /// <p>Indicates the compute type of the add-on version.</p>
     pub fn set_compute_types(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.compute_types = input;
         self
     }
-    /// <p>Indicates the compute type of the addon version.</p>
+    /// <p>Indicates the compute type of the add-on version.</p>
     pub fn get_compute_types(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.compute_types
     }
@@ -156,17 +156,17 @@ impl AddonVersionInfoBuilder {
     pub fn get_requires_configuration(&self) -> &::std::option::Option<bool> {
         &self.requires_configuration
     }
-    /// <p>Indicates if the Addon requires IAM Permissions to operate, such as networking permissions.</p>
+    /// <p>Indicates if the add-on requires IAM Permissions to operate, such as networking permissions.</p>
     pub fn requires_iam_permissions(mut self, input: bool) -> Self {
         self.requires_iam_permissions = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Indicates if the Addon requires IAM Permissions to operate, such as networking permissions.</p>
+    /// <p>Indicates if the add-on requires IAM Permissions to operate, such as networking permissions.</p>
     pub fn set_requires_iam_permissions(mut self, input: ::std::option::Option<bool>) -> Self {
         self.requires_iam_permissions = input;
         self
     }
-    /// <p>Indicates if the Addon requires IAM Permissions to operate, such as networking permissions.</p>
+    /// <p>Indicates if the add-on requires IAM Permissions to operate, such as networking permissions.</p>
     pub fn get_requires_iam_permissions(&self) -> &::std::option::Option<bool> {
         &self.requires_iam_permissions
     }

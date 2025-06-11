@@ -63,8 +63,8 @@ pub struct DbInstance {
     /// <p>Currently, each RDS DB instance can have only one Aurora read replica.</p>
     /// </note>
     pub read_replica_db_cluster_identifiers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>The open mode of an Oracle read replica. The default is <code>open-read-only</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-read-replicas.html">Working with Oracle Read Replicas for Amazon RDS</a> in the <i>Amazon RDS User Guide</i>.</p><note>
-    /// <p>This attribute is only supported in RDS for Oracle.</p>
+    /// <p>The open mode of a Db2 or an Oracle read replica. The default is <code>open-read-only</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/db2-replication.html">Working with read replicas for Amazon RDS for Db2</a> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-read-replicas.html">Working with read replicas for Amazon RDS for Oracle</a> in the <i>Amazon RDS User Guide</i>.</p><note>
+    /// <p>This attribute is only supported in RDS for Db2, RDS for Oracle, and RDS Custom for Oracle.</p>
     /// </note>
     pub replica_mode: ::std::option::Option<crate::types::ReplicaMode>,
     /// <p>The license model information for this DB instance. This setting doesn't apply to Amazon Aurora or RDS Custom DB instances.</p>
@@ -347,8 +347,8 @@ impl DbInstance {
     pub fn read_replica_db_cluster_identifiers(&self) -> &[::std::string::String] {
         self.read_replica_db_cluster_identifiers.as_deref().unwrap_or_default()
     }
-    /// <p>The open mode of an Oracle read replica. The default is <code>open-read-only</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-read-replicas.html">Working with Oracle Read Replicas for Amazon RDS</a> in the <i>Amazon RDS User Guide</i>.</p><note>
-    /// <p>This attribute is only supported in RDS for Oracle.</p>
+    /// <p>The open mode of a Db2 or an Oracle read replica. The default is <code>open-read-only</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/db2-replication.html">Working with read replicas for Amazon RDS for Db2</a> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-read-replicas.html">Working with read replicas for Amazon RDS for Oracle</a> in the <i>Amazon RDS User Guide</i>.</p><note>
+    /// <p>This attribute is only supported in RDS for Db2, RDS for Oracle, and RDS Custom for Oracle.</p>
     /// </note>
     pub fn replica_mode(&self) -> ::std::option::Option<&crate::types::ReplicaMode> {
         self.replica_mode.as_ref()
@@ -1161,22 +1161,22 @@ impl DbInstanceBuilder {
     pub fn get_read_replica_db_cluster_identifiers(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.read_replica_db_cluster_identifiers
     }
-    /// <p>The open mode of an Oracle read replica. The default is <code>open-read-only</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-read-replicas.html">Working with Oracle Read Replicas for Amazon RDS</a> in the <i>Amazon RDS User Guide</i>.</p><note>
-    /// <p>This attribute is only supported in RDS for Oracle.</p>
+    /// <p>The open mode of a Db2 or an Oracle read replica. The default is <code>open-read-only</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/db2-replication.html">Working with read replicas for Amazon RDS for Db2</a> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-read-replicas.html">Working with read replicas for Amazon RDS for Oracle</a> in the <i>Amazon RDS User Guide</i>.</p><note>
+    /// <p>This attribute is only supported in RDS for Db2, RDS for Oracle, and RDS Custom for Oracle.</p>
     /// </note>
     pub fn replica_mode(mut self, input: crate::types::ReplicaMode) -> Self {
         self.replica_mode = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The open mode of an Oracle read replica. The default is <code>open-read-only</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-read-replicas.html">Working with Oracle Read Replicas for Amazon RDS</a> in the <i>Amazon RDS User Guide</i>.</p><note>
-    /// <p>This attribute is only supported in RDS for Oracle.</p>
+    /// <p>The open mode of a Db2 or an Oracle read replica. The default is <code>open-read-only</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/db2-replication.html">Working with read replicas for Amazon RDS for Db2</a> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-read-replicas.html">Working with read replicas for Amazon RDS for Oracle</a> in the <i>Amazon RDS User Guide</i>.</p><note>
+    /// <p>This attribute is only supported in RDS for Db2, RDS for Oracle, and RDS Custom for Oracle.</p>
     /// </note>
     pub fn set_replica_mode(mut self, input: ::std::option::Option<crate::types::ReplicaMode>) -> Self {
         self.replica_mode = input;
         self
     }
-    /// <p>The open mode of an Oracle read replica. The default is <code>open-read-only</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-read-replicas.html">Working with Oracle Read Replicas for Amazon RDS</a> in the <i>Amazon RDS User Guide</i>.</p><note>
-    /// <p>This attribute is only supported in RDS for Oracle.</p>
+    /// <p>The open mode of a Db2 or an Oracle read replica. The default is <code>open-read-only</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/db2-replication.html">Working with read replicas for Amazon RDS for Db2</a> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-read-replicas.html">Working with read replicas for Amazon RDS for Oracle</a> in the <i>Amazon RDS User Guide</i>.</p><note>
+    /// <p>This attribute is only supported in RDS for Db2, RDS for Oracle, and RDS Custom for Oracle.</p>
     /// </note>
     pub fn get_replica_mode(&self) -> &::std::option::Option<crate::types::ReplicaMode> {
         &self.replica_mode

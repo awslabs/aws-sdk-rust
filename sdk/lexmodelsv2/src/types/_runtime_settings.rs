@@ -6,11 +6,17 @@
 pub struct RuntimeSettings {
     /// <p>An object containing specifications for the assisted slot resolution feature.</p>
     pub slot_resolution_improvement: ::std::option::Option<crate::types::SlotResolutionImprovementSpecification>,
+    /// <p>An object containing specifications for the assisted nlu feature.</p>
+    pub nlu_improvement: ::std::option::Option<crate::types::NluImprovementSpecification>,
 }
 impl RuntimeSettings {
     /// <p>An object containing specifications for the assisted slot resolution feature.</p>
     pub fn slot_resolution_improvement(&self) -> ::std::option::Option<&crate::types::SlotResolutionImprovementSpecification> {
         self.slot_resolution_improvement.as_ref()
+    }
+    /// <p>An object containing specifications for the assisted nlu feature.</p>
+    pub fn nlu_improvement(&self) -> ::std::option::Option<&crate::types::NluImprovementSpecification> {
+        self.nlu_improvement.as_ref()
     }
 }
 impl RuntimeSettings {
@@ -25,6 +31,7 @@ impl RuntimeSettings {
 #[non_exhaustive]
 pub struct RuntimeSettingsBuilder {
     pub(crate) slot_resolution_improvement: ::std::option::Option<crate::types::SlotResolutionImprovementSpecification>,
+    pub(crate) nlu_improvement: ::std::option::Option<crate::types::NluImprovementSpecification>,
 }
 impl RuntimeSettingsBuilder {
     /// <p>An object containing specifications for the assisted slot resolution feature.</p>
@@ -41,10 +48,25 @@ impl RuntimeSettingsBuilder {
     pub fn get_slot_resolution_improvement(&self) -> &::std::option::Option<crate::types::SlotResolutionImprovementSpecification> {
         &self.slot_resolution_improvement
     }
+    /// <p>An object containing specifications for the assisted nlu feature.</p>
+    pub fn nlu_improvement(mut self, input: crate::types::NluImprovementSpecification) -> Self {
+        self.nlu_improvement = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>An object containing specifications for the assisted nlu feature.</p>
+    pub fn set_nlu_improvement(mut self, input: ::std::option::Option<crate::types::NluImprovementSpecification>) -> Self {
+        self.nlu_improvement = input;
+        self
+    }
+    /// <p>An object containing specifications for the assisted nlu feature.</p>
+    pub fn get_nlu_improvement(&self) -> &::std::option::Option<crate::types::NluImprovementSpecification> {
+        &self.nlu_improvement
+    }
     /// Consumes the builder and constructs a [`RuntimeSettings`](crate::types::RuntimeSettings).
     pub fn build(self) -> crate::types::RuntimeSettings {
         crate::types::RuntimeSettings {
             slot_resolution_improvement: self.slot_resolution_improvement,
+            nlu_improvement: self.nlu_improvement,
         }
     }
 }

@@ -7,6 +7,8 @@ pub struct ListControlsInput {
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results on a page or for an API request call.</p>
     pub max_results: ::std::option::Option<i32>,
+    /// <p>An optional filter that narrows the results to controls with specific implementation types or identifiers. If you don't provide a filter, the operation returns all available controls.</p>
+    pub filter: ::std::option::Option<crate::types::ControlFilter>,
 }
 impl ListControlsInput {
     /// <p>The pagination token that's used to fetch the next set of results.</p>
@@ -16,6 +18,10 @@ impl ListControlsInput {
     /// <p>The maximum number of results on a page or for an API request call.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
+    }
+    /// <p>An optional filter that narrows the results to controls with specific implementation types or identifiers. If you don't provide a filter, the operation returns all available controls.</p>
+    pub fn filter(&self) -> ::std::option::Option<&crate::types::ControlFilter> {
+        self.filter.as_ref()
     }
 }
 impl ListControlsInput {
@@ -31,6 +37,7 @@ impl ListControlsInput {
 pub struct ListControlsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
+    pub(crate) filter: ::std::option::Option<crate::types::ControlFilter>,
 }
 impl ListControlsInputBuilder {
     /// <p>The pagination token that's used to fetch the next set of results.</p>
@@ -61,6 +68,20 @@ impl ListControlsInputBuilder {
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
+    /// <p>An optional filter that narrows the results to controls with specific implementation types or identifiers. If you don't provide a filter, the operation returns all available controls.</p>
+    pub fn filter(mut self, input: crate::types::ControlFilter) -> Self {
+        self.filter = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>An optional filter that narrows the results to controls with specific implementation types or identifiers. If you don't provide a filter, the operation returns all available controls.</p>
+    pub fn set_filter(mut self, input: ::std::option::Option<crate::types::ControlFilter>) -> Self {
+        self.filter = input;
+        self
+    }
+    /// <p>An optional filter that narrows the results to controls with specific implementation types or identifiers. If you don't provide a filter, the operation returns all available controls.</p>
+    pub fn get_filter(&self) -> &::std::option::Option<crate::types::ControlFilter> {
+        &self.filter
+    }
     /// Consumes the builder and constructs a [`ListControlsInput`](crate::operation::list_controls::ListControlsInput).
     pub fn build(
         self,
@@ -68,6 +89,7 @@ impl ListControlsInputBuilder {
         ::std::result::Result::Ok(crate::operation::list_controls::ListControlsInput {
             next_token: self.next_token,
             max_results: self.max_results,
+            filter: self.filter,
         })
     }
 }

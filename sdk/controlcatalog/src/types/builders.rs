@@ -19,6 +19,10 @@ pub use crate::types::_control_summary::ControlSummaryBuilder;
 
 pub use crate::types::_implementation_summary::ImplementationSummaryBuilder;
 
+pub use crate::types::_control_filter::ControlFilterBuilder;
+
+pub use crate::types::_implementation_filter::ImplementationFilterBuilder;
+
 pub use crate::types::_common_control_summary::CommonControlSummaryBuilder;
 
 pub use crate::types::_associated_objective_summary::AssociatedObjectiveSummaryBuilder;
@@ -26,3 +30,11 @@ pub use crate::types::_associated_objective_summary::AssociatedObjectiveSummaryB
 pub use crate::types::_common_control_filter::CommonControlFilterBuilder;
 
 pub use crate::types::_objective_resource_filter::ObjectiveResourceFilterBuilder;
+
+pub use crate::types::_control_mapping::ControlMappingBuilder;
+
+pub use crate::types::_common_control_mapping_details::CommonControlMappingDetailsBuilder;
+
+pub use crate::types::_framework_mapping_details::FrameworkMappingDetailsBuilder;
+
+pub use crate::types::_control_mapping_filter::ControlMappingFilterBuilder;

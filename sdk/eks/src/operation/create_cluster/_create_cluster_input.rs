@@ -30,7 +30,7 @@ pub struct CreateClusterInput {
     /// <p>The access configuration for the cluster.</p>
     pub access_config: ::std::option::Option<crate::types::CreateAccessConfigRequest>,
     /// <p>If you set this value to <code>False</code> when creating a cluster, the default networking add-ons will not be installed.</p>
-    /// <p>The default networking addons include vpc-cni, coredns, and kube-proxy.</p>
+    /// <p>The default networking add-ons include <code>vpc-cni</code>, <code>coredns</code>, and <code>kube-proxy</code>.</p>
     /// <p>Use this option when you plan to install third-party alternative add-ons or self-manage the default networking add-ons.</p>
     pub bootstrap_self_managed_addons: ::std::option::Option<bool>,
     /// <p>New clusters, by default, have extended support enabled. You can disable extended support when creating a cluster by setting this value to <code>STANDARD</code>.</p>
@@ -98,7 +98,7 @@ impl CreateClusterInput {
         self.access_config.as_ref()
     }
     /// <p>If you set this value to <code>False</code> when creating a cluster, the default networking add-ons will not be installed.</p>
-    /// <p>The default networking addons include vpc-cni, coredns, and kube-proxy.</p>
+    /// <p>The default networking add-ons include <code>vpc-cni</code>, <code>coredns</code>, and <code>kube-proxy</code>.</p>
     /// <p>Use this option when you plan to install third-party alternative add-ons or self-manage the default networking add-ons.</p>
     pub fn bootstrap_self_managed_addons(&self) -> ::std::option::Option<bool> {
         self.bootstrap_self_managed_addons
@@ -338,21 +338,21 @@ impl CreateClusterInputBuilder {
         &self.access_config
     }
     /// <p>If you set this value to <code>False</code> when creating a cluster, the default networking add-ons will not be installed.</p>
-    /// <p>The default networking addons include vpc-cni, coredns, and kube-proxy.</p>
+    /// <p>The default networking add-ons include <code>vpc-cni</code>, <code>coredns</code>, and <code>kube-proxy</code>.</p>
     /// <p>Use this option when you plan to install third-party alternative add-ons or self-manage the default networking add-ons.</p>
     pub fn bootstrap_self_managed_addons(mut self, input: bool) -> Self {
         self.bootstrap_self_managed_addons = ::std::option::Option::Some(input);
         self
     }
     /// <p>If you set this value to <code>False</code> when creating a cluster, the default networking add-ons will not be installed.</p>
-    /// <p>The default networking addons include vpc-cni, coredns, and kube-proxy.</p>
+    /// <p>The default networking add-ons include <code>vpc-cni</code>, <code>coredns</code>, and <code>kube-proxy</code>.</p>
     /// <p>Use this option when you plan to install third-party alternative add-ons or self-manage the default networking add-ons.</p>
     pub fn set_bootstrap_self_managed_addons(mut self, input: ::std::option::Option<bool>) -> Self {
         self.bootstrap_self_managed_addons = input;
         self
     }
     /// <p>If you set this value to <code>False</code> when creating a cluster, the default networking add-ons will not be installed.</p>
-    /// <p>The default networking addons include vpc-cni, coredns, and kube-proxy.</p>
+    /// <p>The default networking add-ons include <code>vpc-cni</code>, <code>coredns</code>, and <code>kube-proxy</code>.</p>
     /// <p>Use this option when you plan to install third-party alternative add-ons or self-manage the default networking add-ons.</p>
     pub fn get_bootstrap_self_managed_addons(&self) -> &::std::option::Option<bool> {
         &self.bootstrap_self_managed_addons

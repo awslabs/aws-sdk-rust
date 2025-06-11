@@ -5,12 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ObjectiveFilter {
     /// <p>The domain that's used as filter criteria.</p>
-    /// <p>You can use this parameter to specify one domain ARN at a time. Passing multiple ARNs in the <code>ObjectiveFilter</code> isn’t currently supported.</p>
+    /// <p>You can use this parameter to specify one domain ARN at a time. Passing multiple ARNs in the <code>ObjectiveFilter</code> isn’t supported.</p>
     pub domains: ::std::option::Option<::std::vec::Vec<crate::types::DomainResourceFilter>>,
 }
 impl ObjectiveFilter {
     /// <p>The domain that's used as filter criteria.</p>
-    /// <p>You can use this parameter to specify one domain ARN at a time. Passing multiple ARNs in the <code>ObjectiveFilter</code> isn’t currently supported.</p>
+    /// <p>You can use this parameter to specify one domain ARN at a time. Passing multiple ARNs in the <code>ObjectiveFilter</code> isn’t supported.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.domains.is_none()`.
     pub fn domains(&self) -> &[crate::types::DomainResourceFilter] {
@@ -36,7 +36,7 @@ impl ObjectiveFilterBuilder {
     /// To override the contents of this collection use [`set_domains`](Self::set_domains).
     ///
     /// <p>The domain that's used as filter criteria.</p>
-    /// <p>You can use this parameter to specify one domain ARN at a time. Passing multiple ARNs in the <code>ObjectiveFilter</code> isn’t currently supported.</p>
+    /// <p>You can use this parameter to specify one domain ARN at a time. Passing multiple ARNs in the <code>ObjectiveFilter</code> isn’t supported.</p>
     pub fn domains(mut self, input: crate::types::DomainResourceFilter) -> Self {
         let mut v = self.domains.unwrap_or_default();
         v.push(input);
@@ -44,13 +44,13 @@ impl ObjectiveFilterBuilder {
         self
     }
     /// <p>The domain that's used as filter criteria.</p>
-    /// <p>You can use this parameter to specify one domain ARN at a time. Passing multiple ARNs in the <code>ObjectiveFilter</code> isn’t currently supported.</p>
+    /// <p>You can use this parameter to specify one domain ARN at a time. Passing multiple ARNs in the <code>ObjectiveFilter</code> isn’t supported.</p>
     pub fn set_domains(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DomainResourceFilter>>) -> Self {
         self.domains = input;
         self
     }
     /// <p>The domain that's used as filter criteria.</p>
-    /// <p>You can use this parameter to specify one domain ARN at a time. Passing multiple ARNs in the <code>ObjectiveFilter</code> isn’t currently supported.</p>
+    /// <p>You can use this parameter to specify one domain ARN at a time. Passing multiple ARNs in the <code>ObjectiveFilter</code> isn’t supported.</p>
     pub fn get_domains(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DomainResourceFilter>> {
         &self.domains
     }

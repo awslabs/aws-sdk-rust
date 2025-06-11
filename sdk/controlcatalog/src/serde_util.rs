@@ -32,6 +32,15 @@ pub(crate) fn list_common_controls_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn list_control_mappings_output_output_correct_errors(
+    mut builder: crate::operation::list_control_mappings::builders::ListControlMappingsOutputBuilder,
+) -> crate::operation::list_control_mappings::builders::ListControlMappingsOutputBuilder {
+    if builder.control_mappings.is_none() {
+        builder.control_mappings = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn list_controls_output_output_correct_errors(
     mut builder: crate::operation::list_controls::builders::ListControlsOutputBuilder,
 ) -> crate::operation::list_controls::builders::ListControlsOutputBuilder {
@@ -106,6 +115,21 @@ pub(crate) fn common_control_summary_correct_errors(
     }
     if builder.last_update_time.is_none() {
         builder.last_update_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
+pub(crate) fn control_mapping_correct_errors(
+    mut builder: crate::types::builders::ControlMappingBuilder,
+) -> crate::types::builders::ControlMappingBuilder {
+    if builder.control_arn.is_none() {
+        builder.control_arn = Some(Default::default())
+    }
+    if builder.mapping_type.is_none() {
+        builder.mapping_type = "no value was set".parse::<crate::types::MappingType>().ok()
+    }
+    if builder.mapping.is_none() {
+        builder.mapping = Some(crate::types::Mapping::Unknown)
     }
     builder
 }
@@ -187,6 +211,27 @@ pub(crate) fn implementation_summary_correct_errors(
 ) -> crate::types::builders::ImplementationSummaryBuilder {
     if builder.r#type.is_none() {
         builder.r#type = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn common_control_mapping_details_correct_errors(
+    mut builder: crate::types::builders::CommonControlMappingDetailsBuilder,
+) -> crate::types::builders::CommonControlMappingDetailsBuilder {
+    if builder.common_control_arn.is_none() {
+        builder.common_control_arn = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn framework_mapping_details_correct_errors(
+    mut builder: crate::types::builders::FrameworkMappingDetailsBuilder,
+) -> crate::types::builders::FrameworkMappingDetailsBuilder {
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.item.is_none() {
+        builder.item = Some(Default::default())
     }
     builder
 }

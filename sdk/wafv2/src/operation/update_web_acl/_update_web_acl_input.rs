@@ -47,6 +47,8 @@ pub struct UpdateWebAclInput {
     /// </note>
     /// <p>For Application Load Balancer and AppSync, the limit is fixed at 8 KB (8,192 bytes).</p>
     pub association_config: ::std::option::Option<crate::types::AssociationConfig>,
+    /// <p>Specifies the type of DDoS protection to apply to web request data for a web ACL. For most scenarios, it is recommended to use the default protection level, <code>ACTIVE_UNDER_DDOS</code>. If a web ACL is associated with multiple Application Load Balancers, the changes you make to DDoS protection in that web ACL will apply to all associated Application Load Balancers.</p>
+    pub on_source_d_do_s_protection_config: ::std::option::Option<crate::types::OnSourceDDoSProtectionConfig>,
 }
 impl UpdateWebAclInput {
     /// <p>The name of the web ACL. You cannot change the name of a web ACL after you create it.</p>
@@ -127,6 +129,10 @@ impl UpdateWebAclInput {
     pub fn association_config(&self) -> ::std::option::Option<&crate::types::AssociationConfig> {
         self.association_config.as_ref()
     }
+    /// <p>Specifies the type of DDoS protection to apply to web request data for a web ACL. For most scenarios, it is recommended to use the default protection level, <code>ACTIVE_UNDER_DDOS</code>. If a web ACL is associated with multiple Application Load Balancers, the changes you make to DDoS protection in that web ACL will apply to all associated Application Load Balancers.</p>
+    pub fn on_source_d_do_s_protection_config(&self) -> ::std::option::Option<&crate::types::OnSourceDDoSProtectionConfig> {
+        self.on_source_d_do_s_protection_config.as_ref()
+    }
 }
 impl UpdateWebAclInput {
     /// Creates a new builder-style object to manufacture [`UpdateWebAclInput`](crate::operation::update_web_acl::UpdateWebAclInput).
@@ -153,6 +159,7 @@ pub struct UpdateWebAclInputBuilder {
     pub(crate) challenge_config: ::std::option::Option<crate::types::ChallengeConfig>,
     pub(crate) token_domains: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) association_config: ::std::option::Option<crate::types::AssociationConfig>,
+    pub(crate) on_source_d_do_s_protection_config: ::std::option::Option<crate::types::OnSourceDDoSProtectionConfig>,
 }
 impl UpdateWebAclInputBuilder {
     /// <p>The name of the web ACL. You cannot change the name of a web ACL after you create it.</p>
@@ -428,6 +435,20 @@ impl UpdateWebAclInputBuilder {
     pub fn get_association_config(&self) -> &::std::option::Option<crate::types::AssociationConfig> {
         &self.association_config
     }
+    /// <p>Specifies the type of DDoS protection to apply to web request data for a web ACL. For most scenarios, it is recommended to use the default protection level, <code>ACTIVE_UNDER_DDOS</code>. If a web ACL is associated with multiple Application Load Balancers, the changes you make to DDoS protection in that web ACL will apply to all associated Application Load Balancers.</p>
+    pub fn on_source_d_do_s_protection_config(mut self, input: crate::types::OnSourceDDoSProtectionConfig) -> Self {
+        self.on_source_d_do_s_protection_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies the type of DDoS protection to apply to web request data for a web ACL. For most scenarios, it is recommended to use the default protection level, <code>ACTIVE_UNDER_DDOS</code>. If a web ACL is associated with multiple Application Load Balancers, the changes you make to DDoS protection in that web ACL will apply to all associated Application Load Balancers.</p>
+    pub fn set_on_source_d_do_s_protection_config(mut self, input: ::std::option::Option<crate::types::OnSourceDDoSProtectionConfig>) -> Self {
+        self.on_source_d_do_s_protection_config = input;
+        self
+    }
+    /// <p>Specifies the type of DDoS protection to apply to web request data for a web ACL. For most scenarios, it is recommended to use the default protection level, <code>ACTIVE_UNDER_DDOS</code>. If a web ACL is associated with multiple Application Load Balancers, the changes you make to DDoS protection in that web ACL will apply to all associated Application Load Balancers.</p>
+    pub fn get_on_source_d_do_s_protection_config(&self) -> &::std::option::Option<crate::types::OnSourceDDoSProtectionConfig> {
+        &self.on_source_d_do_s_protection_config
+    }
     /// Consumes the builder and constructs a [`UpdateWebAclInput`](crate::operation::update_web_acl::UpdateWebAclInput).
     pub fn build(
         self,
@@ -447,6 +468,7 @@ impl UpdateWebAclInputBuilder {
             challenge_config: self.challenge_config,
             token_domains: self.token_domains,
             association_config: self.association_config,
+            on_source_d_do_s_protection_config: self.on_source_d_do_s_protection_config,
         })
     }
 }

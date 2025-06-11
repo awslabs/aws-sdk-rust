@@ -215,6 +215,8 @@ pub use crate::types::_descriptive_bot_builder_specification::DescriptiveBotBuil
 
 pub use crate::types::_runtime_settings::RuntimeSettings;
 
+pub use crate::types::_nlu_improvement_specification::NluImprovementSpecification;
+
 pub use crate::types::_slot_resolution_improvement_specification::SlotResolutionImprovementSpecification;
 
 pub use crate::types::_bot_locale_status::BotLocaleStatus;
@@ -1174,6 +1176,8 @@ mod _message_selection_strategy;
 mod _multiple_values_setting;
 
 mod _new_custom_vocabulary_item;
+
+mod _nlu_improvement_specification;
 
 mod _obfuscation_setting;
 

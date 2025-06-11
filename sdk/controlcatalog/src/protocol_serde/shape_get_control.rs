@@ -136,6 +136,9 @@ pub(crate) fn de_get_control(
         match tokens.next().transpose()? {
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                "Aliases" => {
+                    builder = builder.set_aliases(crate::protocol_serde::shape_control_aliases::de_control_aliases(tokens)?);
+                }
                 "Arn" => {
                     builder = builder.set_arn(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
@@ -162,6 +165,9 @@ pub(crate) fn de_get_control(
                             .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                             .transpose()?,
                     );
+                }
+                "GovernedResources" => {
+                    builder = builder.set_governed_resources(crate::protocol_serde::shape_governed_resources::de_governed_resources(tokens)?);
                 }
                 "Implementation" => {
                     builder = builder.set_implementation(crate::protocol_serde::shape_implementation_details::de_implementation_details(tokens)?);

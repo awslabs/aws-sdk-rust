@@ -26,7 +26,7 @@ impl crate::operation::create_cluster::builders::CreateClusterInputBuilder {
 /// <p>The Amazon EKS control plane consists of control plane instances that run the Kubernetes software, such as <code>etcd</code> and the API server. The control plane runs in an account managed by Amazon Web Services, and the Kubernetes API is exposed by the Amazon EKS API server endpoint. Each Amazon EKS cluster control plane is single tenant and unique. It runs on its own set of Amazon EC2 instances.</p>
 /// <p>The cluster control plane is provisioned across multiple Availability Zones and fronted by an Elastic Load Balancing Network Load Balancer. Amazon EKS also provisions elastic network interfaces in your VPC subnets to provide connectivity from the control plane instances to the nodes (for example, to support <code>kubectl exec</code>, <code>logs</code>, and <code>proxy</code> data flows).</p>
 /// <p>Amazon EKS nodes run in your Amazon Web Services account and connect to your cluster's control plane over the Kubernetes API server endpoint and a certificate file that is created for your cluster.</p>
-/// <p>You can use the <code>endpointPublicAccess</code> and <code>endpointPrivateAccess</code> parameters to enable or disable public and private access to your cluster's Kubernetes API server endpoint. By default, public access is enabled, and private access is disabled. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html">Amazon EKS Cluster Endpoint Access Control</a> in the <i> <i>Amazon EKS User Guide</i> </i>.</p>
+/// <p>You can use the <code>endpointPublicAccess</code> and <code>endpointPrivateAccess</code> parameters to enable or disable public and private access to your cluster's Kubernetes API server endpoint. By default, public access is enabled, and private access is disabled. The endpoint domain name and IP address family depends on the value of the <code>ipFamily</code> for the cluster. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html">Amazon EKS Cluster Endpoint Access Control</a> in the <i> <i>Amazon EKS User Guide</i> </i>.</p>
 /// <p>You can use the <code>logging</code> parameter to enable or disable exporting the Kubernetes control plane logs for your cluster to CloudWatch Logs. By default, cluster control plane logs aren't exported to CloudWatch Logs. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/control-plane-logs.html">Amazon EKS Cluster Control Plane Logs</a> in the <i> <i>Amazon EKS User Guide</i> </i>.</p><note>
 /// <p>CloudWatch Logs ingestion, archive storage, and data scanning rates apply to exported control plane logs. For more information, see <a href="http://aws.amazon.com/cloudwatch/pricing/">CloudWatch Pricing</a>.</p>
 /// </note>
@@ -293,21 +293,21 @@ impl CreateClusterFluentBuilder {
         self.inner.get_access_config()
     }
     /// <p>If you set this value to <code>False</code> when creating a cluster, the default networking add-ons will not be installed.</p>
-    /// <p>The default networking addons include vpc-cni, coredns, and kube-proxy.</p>
+    /// <p>The default networking add-ons include <code>vpc-cni</code>, <code>coredns</code>, and <code>kube-proxy</code>.</p>
     /// <p>Use this option when you plan to install third-party alternative add-ons or self-manage the default networking add-ons.</p>
     pub fn bootstrap_self_managed_addons(mut self, input: bool) -> Self {
         self.inner = self.inner.bootstrap_self_managed_addons(input);
         self
     }
     /// <p>If you set this value to <code>False</code> when creating a cluster, the default networking add-ons will not be installed.</p>
-    /// <p>The default networking addons include vpc-cni, coredns, and kube-proxy.</p>
+    /// <p>The default networking add-ons include <code>vpc-cni</code>, <code>coredns</code>, and <code>kube-proxy</code>.</p>
     /// <p>Use this option when you plan to install third-party alternative add-ons or self-manage the default networking add-ons.</p>
     pub fn set_bootstrap_self_managed_addons(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_bootstrap_self_managed_addons(input);
         self
     }
     /// <p>If you set this value to <code>False</code> when creating a cluster, the default networking add-ons will not be installed.</p>
-    /// <p>The default networking addons include vpc-cni, coredns, and kube-proxy.</p>
+    /// <p>The default networking add-ons include <code>vpc-cni</code>, <code>coredns</code>, and <code>kube-proxy</code>.</p>
     /// <p>Use this option when you plan to install third-party alternative add-ons or self-manage the default networking add-ons.</p>
     pub fn get_bootstrap_self_managed_addons(&self) -> &::std::option::Option<bool> {
         self.inner.get_bootstrap_self_managed_addons()

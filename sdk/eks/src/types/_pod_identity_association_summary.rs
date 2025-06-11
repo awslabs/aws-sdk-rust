@@ -17,7 +17,7 @@
 pub struct PodIdentityAssociationSummary {
     /// <p>The name of the cluster that the association is in.</p>
     pub cluster_name: ::std::option::Option<::std::string::String>,
-    /// <p>The name of the Kubernetes namespace inside the cluster to create the association in. The service account and the pods that use the service account must be in this namespace.</p>
+    /// <p>The name of the Kubernetes namespace inside the cluster to create the association in. The service account and the Pods that use the service account must be in this namespace.</p>
     pub namespace: ::std::option::Option<::std::string::String>,
     /// <p>The name of the Kubernetes service account inside the cluster to associate the IAM credentials with.</p>
     pub service_account: ::std::option::Option<::std::string::String>,
@@ -25,7 +25,7 @@ pub struct PodIdentityAssociationSummary {
     pub association_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the association.</p>
     pub association_id: ::std::option::Option<::std::string::String>,
-    /// <p>If defined, the Pod Identity Association is owned by an Amazon EKS Addon.</p>
+    /// <p>If defined, the association is owned by an Amazon EKS add-on.</p>
     pub owner_arn: ::std::option::Option<::std::string::String>,
 }
 impl PodIdentityAssociationSummary {
@@ -33,7 +33,7 @@ impl PodIdentityAssociationSummary {
     pub fn cluster_name(&self) -> ::std::option::Option<&str> {
         self.cluster_name.as_deref()
     }
-    /// <p>The name of the Kubernetes namespace inside the cluster to create the association in. The service account and the pods that use the service account must be in this namespace.</p>
+    /// <p>The name of the Kubernetes namespace inside the cluster to create the association in. The service account and the Pods that use the service account must be in this namespace.</p>
     pub fn namespace(&self) -> ::std::option::Option<&str> {
         self.namespace.as_deref()
     }
@@ -49,7 +49,7 @@ impl PodIdentityAssociationSummary {
     pub fn association_id(&self) -> ::std::option::Option<&str> {
         self.association_id.as_deref()
     }
-    /// <p>If defined, the Pod Identity Association is owned by an Amazon EKS Addon.</p>
+    /// <p>If defined, the association is owned by an Amazon EKS add-on.</p>
     pub fn owner_arn(&self) -> ::std::option::Option<&str> {
         self.owner_arn.as_deref()
     }
@@ -87,17 +87,17 @@ impl PodIdentityAssociationSummaryBuilder {
     pub fn get_cluster_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.cluster_name
     }
-    /// <p>The name of the Kubernetes namespace inside the cluster to create the association in. The service account and the pods that use the service account must be in this namespace.</p>
+    /// <p>The name of the Kubernetes namespace inside the cluster to create the association in. The service account and the Pods that use the service account must be in this namespace.</p>
     pub fn namespace(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.namespace = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the Kubernetes namespace inside the cluster to create the association in. The service account and the pods that use the service account must be in this namespace.</p>
+    /// <p>The name of the Kubernetes namespace inside the cluster to create the association in. The service account and the Pods that use the service account must be in this namespace.</p>
     pub fn set_namespace(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.namespace = input;
         self
     }
-    /// <p>The name of the Kubernetes namespace inside the cluster to create the association in. The service account and the pods that use the service account must be in this namespace.</p>
+    /// <p>The name of the Kubernetes namespace inside the cluster to create the association in. The service account and the Pods that use the service account must be in this namespace.</p>
     pub fn get_namespace(&self) -> &::std::option::Option<::std::string::String> {
         &self.namespace
     }
@@ -143,17 +143,17 @@ impl PodIdentityAssociationSummaryBuilder {
     pub fn get_association_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.association_id
     }
-    /// <p>If defined, the Pod Identity Association is owned by an Amazon EKS Addon.</p>
+    /// <p>If defined, the association is owned by an Amazon EKS add-on.</p>
     pub fn owner_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.owner_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>If defined, the Pod Identity Association is owned by an Amazon EKS Addon.</p>
+    /// <p>If defined, the association is owned by an Amazon EKS add-on.</p>
     pub fn set_owner_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.owner_arn = input;
         self
     }
-    /// <p>If defined, the Pod Identity Association is owned by an Amazon EKS Addon.</p>
+    /// <p>If defined, the association is owned by an Amazon EKS add-on.</p>
     pub fn get_owner_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.owner_arn
     }

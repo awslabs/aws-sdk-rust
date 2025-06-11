@@ -8,7 +8,7 @@ pub struct ListObjectivesInput {
     /// <p>The pagination token that's used to fetch the next set of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>An optional filter that narrows the results to a specific domain.</p>
-    /// <p>This filter allows you to specify one domain ARN at a time. Passing multiple ARNs in the <code>ObjectiveFilter</code> isn’t currently supported.</p>
+    /// <p>This filter allows you to specify one domain ARN at a time. Passing multiple ARNs in the <code>ObjectiveFilter</code> isn’t supported.</p>
     pub objective_filter: ::std::option::Option<crate::types::ObjectiveFilter>,
 }
 impl ListObjectivesInput {
@@ -21,7 +21,7 @@ impl ListObjectivesInput {
         self.next_token.as_deref()
     }
     /// <p>An optional filter that narrows the results to a specific domain.</p>
-    /// <p>This filter allows you to specify one domain ARN at a time. Passing multiple ARNs in the <code>ObjectiveFilter</code> isn’t currently supported.</p>
+    /// <p>This filter allows you to specify one domain ARN at a time. Passing multiple ARNs in the <code>ObjectiveFilter</code> isn’t supported.</p>
     pub fn objective_filter(&self) -> ::std::option::Option<&crate::types::ObjectiveFilter> {
         self.objective_filter.as_ref()
     }
@@ -71,19 +71,19 @@ impl ListObjectivesInputBuilder {
         &self.next_token
     }
     /// <p>An optional filter that narrows the results to a specific domain.</p>
-    /// <p>This filter allows you to specify one domain ARN at a time. Passing multiple ARNs in the <code>ObjectiveFilter</code> isn’t currently supported.</p>
+    /// <p>This filter allows you to specify one domain ARN at a time. Passing multiple ARNs in the <code>ObjectiveFilter</code> isn’t supported.</p>
     pub fn objective_filter(mut self, input: crate::types::ObjectiveFilter) -> Self {
         self.objective_filter = ::std::option::Option::Some(input);
         self
     }
     /// <p>An optional filter that narrows the results to a specific domain.</p>
-    /// <p>This filter allows you to specify one domain ARN at a time. Passing multiple ARNs in the <code>ObjectiveFilter</code> isn’t currently supported.</p>
+    /// <p>This filter allows you to specify one domain ARN at a time. Passing multiple ARNs in the <code>ObjectiveFilter</code> isn’t supported.</p>
     pub fn set_objective_filter(mut self, input: ::std::option::Option<crate::types::ObjectiveFilter>) -> Self {
         self.objective_filter = input;
         self
     }
     /// <p>An optional filter that narrows the results to a specific domain.</p>
-    /// <p>This filter allows you to specify one domain ARN at a time. Passing multiple ARNs in the <code>ObjectiveFilter</code> isn’t currently supported.</p>
+    /// <p>This filter allows you to specify one domain ARN at a time. Passing multiple ARNs in the <code>ObjectiveFilter</code> isn’t supported.</p>
     pub fn get_objective_filter(&self) -> &::std::option::Option<crate::types::ObjectiveFilter> {
         &self.objective_filter
     }

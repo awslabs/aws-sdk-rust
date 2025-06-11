@@ -6,6 +6,8 @@
 /// <li>
 /// <p>Use the <code>AWSManagedRulesACFPRuleSet</code> configuration object to configure the account creation fraud prevention managed rule group. The configuration includes the registration and sign-up pages of your application and the locations in the account creation request payload of data, such as the user email and phone number fields.</p></li>
 /// <li>
+/// <p>Use the <code>AWSManagedRulesAntiDDoSRuleSet</code> configuration object to configure the anti-DDoS managed rule group. The configuration includes the sensitivity levels to use in the rules that typically block and challenge requests that might be participating in DDoS attacks and the specification to use to indicate whether a request can handle a silent browser challenge.</p></li>
+/// <li>
 /// <p>Use the <code>AWSManagedRulesATPRuleSet</code> configuration object to configure the account takeover prevention managed rule group. The configuration includes the sign-in page of your application and the locations in the login request payload of data such as the username and password.</p></li>
 /// <li>
 /// <p>Use the <code>AWSManagedRulesBotControlRuleSet</code> configuration object to configure the protection level that you want the Bot Control rule group to use.</p></li>
@@ -43,6 +45,9 @@ pub struct ManagedRuleGroupConfig {
     /// <p>Additional configuration for using the account creation fraud prevention (ACFP) managed rule group, <code>AWSManagedRulesACFPRuleSet</code>. Use this to provide account creation request information to the rule group. For web ACLs that protect CloudFront distributions, use this to also provide the information about how your distribution responds to account creation requests.</p>
     /// <p>For information about using the ACFP managed rule group, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/aws-managed-rule-groups-acfp.html">WAF Fraud Control account creation fraud prevention (ACFP) rule group</a> and <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-acfp.html">WAF Fraud Control account creation fraud prevention (ACFP)</a> in the <i>WAF Developer Guide</i>.</p>
     pub aws_managed_rules_acfp_rule_set: ::std::option::Option<crate::types::AwsManagedRulesAcfpRuleSet>,
+    /// <p>Additional configuration for using the anti-DDoS managed rule group, <code>AWSManagedRulesAntiDDoSRuleSet</code>. Use this to configure anti-DDoS behavior for the rule group.</p>
+    /// <p>For information about using the anti-DDoS managed rule group, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/aws-managed-rule-groups-anti-ddos.html">WAF Anti-DDoS rule group</a> and <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-anti-ddos.html">Distributed Denial of Service (DDoS) prevention</a> in the <i>WAF Developer Guide</i>.</p>
+    pub aws_managed_rules_anti_d_do_s_rule_set: ::std::option::Option<crate::types::AwsManagedRulesAntiDDoSRuleSet>,
 }
 impl ManagedRuleGroupConfig {
     /// <note>
@@ -88,6 +93,11 @@ impl ManagedRuleGroupConfig {
     pub fn aws_managed_rules_acfp_rule_set(&self) -> ::std::option::Option<&crate::types::AwsManagedRulesAcfpRuleSet> {
         self.aws_managed_rules_acfp_rule_set.as_ref()
     }
+    /// <p>Additional configuration for using the anti-DDoS managed rule group, <code>AWSManagedRulesAntiDDoSRuleSet</code>. Use this to configure anti-DDoS behavior for the rule group.</p>
+    /// <p>For information about using the anti-DDoS managed rule group, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/aws-managed-rule-groups-anti-ddos.html">WAF Anti-DDoS rule group</a> and <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-anti-ddos.html">Distributed Denial of Service (DDoS) prevention</a> in the <i>WAF Developer Guide</i>.</p>
+    pub fn aws_managed_rules_anti_d_do_s_rule_set(&self) -> ::std::option::Option<&crate::types::AwsManagedRulesAntiDDoSRuleSet> {
+        self.aws_managed_rules_anti_d_do_s_rule_set.as_ref()
+    }
 }
 impl ManagedRuleGroupConfig {
     /// Creates a new builder-style object to manufacture [`ManagedRuleGroupConfig`](crate::types::ManagedRuleGroupConfig).
@@ -107,6 +117,7 @@ pub struct ManagedRuleGroupConfigBuilder {
     pub(crate) aws_managed_rules_bot_control_rule_set: ::std::option::Option<crate::types::AwsManagedRulesBotControlRuleSet>,
     pub(crate) aws_managed_rules_atp_rule_set: ::std::option::Option<crate::types::AwsManagedRulesAtpRuleSet>,
     pub(crate) aws_managed_rules_acfp_rule_set: ::std::option::Option<crate::types::AwsManagedRulesAcfpRuleSet>,
+    pub(crate) aws_managed_rules_anti_d_do_s_rule_set: ::std::option::Option<crate::types::AwsManagedRulesAntiDDoSRuleSet>,
 }
 impl ManagedRuleGroupConfigBuilder {
     /// <note>
@@ -255,6 +266,23 @@ impl ManagedRuleGroupConfigBuilder {
     pub fn get_aws_managed_rules_acfp_rule_set(&self) -> &::std::option::Option<crate::types::AwsManagedRulesAcfpRuleSet> {
         &self.aws_managed_rules_acfp_rule_set
     }
+    /// <p>Additional configuration for using the anti-DDoS managed rule group, <code>AWSManagedRulesAntiDDoSRuleSet</code>. Use this to configure anti-DDoS behavior for the rule group.</p>
+    /// <p>For information about using the anti-DDoS managed rule group, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/aws-managed-rule-groups-anti-ddos.html">WAF Anti-DDoS rule group</a> and <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-anti-ddos.html">Distributed Denial of Service (DDoS) prevention</a> in the <i>WAF Developer Guide</i>.</p>
+    pub fn aws_managed_rules_anti_d_do_s_rule_set(mut self, input: crate::types::AwsManagedRulesAntiDDoSRuleSet) -> Self {
+        self.aws_managed_rules_anti_d_do_s_rule_set = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Additional configuration for using the anti-DDoS managed rule group, <code>AWSManagedRulesAntiDDoSRuleSet</code>. Use this to configure anti-DDoS behavior for the rule group.</p>
+    /// <p>For information about using the anti-DDoS managed rule group, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/aws-managed-rule-groups-anti-ddos.html">WAF Anti-DDoS rule group</a> and <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-anti-ddos.html">Distributed Denial of Service (DDoS) prevention</a> in the <i>WAF Developer Guide</i>.</p>
+    pub fn set_aws_managed_rules_anti_d_do_s_rule_set(mut self, input: ::std::option::Option<crate::types::AwsManagedRulesAntiDDoSRuleSet>) -> Self {
+        self.aws_managed_rules_anti_d_do_s_rule_set = input;
+        self
+    }
+    /// <p>Additional configuration for using the anti-DDoS managed rule group, <code>AWSManagedRulesAntiDDoSRuleSet</code>. Use this to configure anti-DDoS behavior for the rule group.</p>
+    /// <p>For information about using the anti-DDoS managed rule group, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/aws-managed-rule-groups-anti-ddos.html">WAF Anti-DDoS rule group</a> and <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-anti-ddos.html">Distributed Denial of Service (DDoS) prevention</a> in the <i>WAF Developer Guide</i>.</p>
+    pub fn get_aws_managed_rules_anti_d_do_s_rule_set(&self) -> &::std::option::Option<crate::types::AwsManagedRulesAntiDDoSRuleSet> {
+        &self.aws_managed_rules_anti_d_do_s_rule_set
+    }
     /// Consumes the builder and constructs a [`ManagedRuleGroupConfig`](crate::types::ManagedRuleGroupConfig).
     pub fn build(self) -> crate::types::ManagedRuleGroupConfig {
         crate::types::ManagedRuleGroupConfig {
@@ -265,6 +293,7 @@ impl ManagedRuleGroupConfigBuilder {
             aws_managed_rules_bot_control_rule_set: self.aws_managed_rules_bot_control_rule_set,
             aws_managed_rules_atp_rule_set: self.aws_managed_rules_atp_rule_set,
             aws_managed_rules_acfp_rule_set: self.aws_managed_rules_acfp_rule_set,
+            aws_managed_rules_anti_d_do_s_rule_set: self.aws_managed_rules_anti_d_do_s_rule_set,
         }
     }
 }

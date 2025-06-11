@@ -6,6 +6,8 @@
 pub struct ControlSummary {
     /// <p>The Amazon Resource Name (ARN) of the control.</p>
     pub arn: ::std::string::String,
+    /// <p>A list of alternative identifiers for the control. These are human-readable designators, such as <code>SH.S3.1</code>. Several aliases can refer to the same control across different Amazon Web Services services or compliance frameworks.</p>
+    pub aliases: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The display name of the control.</p>
     pub name: ::std::string::String,
     /// <p>A description of the control, as it may appear in the console. Describes the functionality of the control.</p>
@@ -18,12 +20,20 @@ pub struct ControlSummary {
     pub implementation: ::std::option::Option<crate::types::ImplementationSummary>,
     /// <p>A timestamp that notes the time when the control was released (start of its life) as a governance capability in Amazon Web Services.</p>
     pub create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>A list of Amazon Web Services resource types that are governed by this control. This information helps you understand which controls can govern certain types of resources, and conversely, which resources are affected when the control is implemented. The resources are represented as Amazon Web Services CloudFormation resource types. If <code>GovernedResources</code> cannot be represented by available CloudFormation resource types, it’s returned as an empty list.</p>
+    pub governed_resources: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ControlSummary {
     /// <p>The Amazon Resource Name (ARN) of the control.</p>
     pub fn arn(&self) -> &str {
         use std::ops::Deref;
         self.arn.deref()
+    }
+    /// <p>A list of alternative identifiers for the control. These are human-readable designators, such as <code>SH.S3.1</code>. Several aliases can refer to the same control across different Amazon Web Services services or compliance frameworks.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.aliases.is_none()`.
+    pub fn aliases(&self) -> &[::std::string::String] {
+        self.aliases.as_deref().unwrap_or_default()
     }
     /// <p>The display name of the control.</p>
     pub fn name(&self) -> &str {
@@ -51,6 +61,12 @@ impl ControlSummary {
     pub fn create_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.create_time.as_ref()
     }
+    /// <p>A list of Amazon Web Services resource types that are governed by this control. This information helps you understand which controls can govern certain types of resources, and conversely, which resources are affected when the control is implemented. The resources are represented as Amazon Web Services CloudFormation resource types. If <code>GovernedResources</code> cannot be represented by available CloudFormation resource types, it’s returned as an empty list.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.governed_resources.is_none()`.
+    pub fn governed_resources(&self) -> &[::std::string::String] {
+        self.governed_resources.as_deref().unwrap_or_default()
+    }
 }
 impl ControlSummary {
     /// Creates a new builder-style object to manufacture [`ControlSummary`](crate::types::ControlSummary).
@@ -64,12 +80,14 @@ impl ControlSummary {
 #[non_exhaustive]
 pub struct ControlSummaryBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
+    pub(crate) aliases: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) behavior: ::std::option::Option<crate::types::ControlBehavior>,
     pub(crate) severity: ::std::option::Option<crate::types::ControlSeverity>,
     pub(crate) implementation: ::std::option::Option<crate::types::ImplementationSummary>,
     pub(crate) create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) governed_resources: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ControlSummaryBuilder {
     /// <p>The Amazon Resource Name (ARN) of the control.</p>
@@ -86,6 +104,26 @@ impl ControlSummaryBuilder {
     /// <p>The Amazon Resource Name (ARN) of the control.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.arn
+    }
+    /// Appends an item to `aliases`.
+    ///
+    /// To override the contents of this collection use [`set_aliases`](Self::set_aliases).
+    ///
+    /// <p>A list of alternative identifiers for the control. These are human-readable designators, such as <code>SH.S3.1</code>. Several aliases can refer to the same control across different Amazon Web Services services or compliance frameworks.</p>
+    pub fn aliases(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.aliases.unwrap_or_default();
+        v.push(input.into());
+        self.aliases = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>A list of alternative identifiers for the control. These are human-readable designators, such as <code>SH.S3.1</code>. Several aliases can refer to the same control across different Amazon Web Services services or compliance frameworks.</p>
+    pub fn set_aliases(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.aliases = input;
+        self
+    }
+    /// <p>A list of alternative identifiers for the control. These are human-readable designators, such as <code>SH.S3.1</code>. Several aliases can refer to the same control across different Amazon Web Services services or compliance frameworks.</p>
+    pub fn get_aliases(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.aliases
     }
     /// <p>The display name of the control.</p>
     /// This field is required.
@@ -173,6 +211,26 @@ impl ControlSummaryBuilder {
     pub fn get_create_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.create_time
     }
+    /// Appends an item to `governed_resources`.
+    ///
+    /// To override the contents of this collection use [`set_governed_resources`](Self::set_governed_resources).
+    ///
+    /// <p>A list of Amazon Web Services resource types that are governed by this control. This information helps you understand which controls can govern certain types of resources, and conversely, which resources are affected when the control is implemented. The resources are represented as Amazon Web Services CloudFormation resource types. If <code>GovernedResources</code> cannot be represented by available CloudFormation resource types, it’s returned as an empty list.</p>
+    pub fn governed_resources(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.governed_resources.unwrap_or_default();
+        v.push(input.into());
+        self.governed_resources = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>A list of Amazon Web Services resource types that are governed by this control. This information helps you understand which controls can govern certain types of resources, and conversely, which resources are affected when the control is implemented. The resources are represented as Amazon Web Services CloudFormation resource types. If <code>GovernedResources</code> cannot be represented by available CloudFormation resource types, it’s returned as an empty list.</p>
+    pub fn set_governed_resources(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.governed_resources = input;
+        self
+    }
+    /// <p>A list of Amazon Web Services resource types that are governed by this control. This information helps you understand which controls can govern certain types of resources, and conversely, which resources are affected when the control is implemented. The resources are represented as Amazon Web Services CloudFormation resource types. If <code>GovernedResources</code> cannot be represented by available CloudFormation resource types, it’s returned as an empty list.</p>
+    pub fn get_governed_resources(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.governed_resources
+    }
     /// Consumes the builder and constructs a [`ControlSummary`](crate::types::ControlSummary).
     /// This method will fail if any of the following fields are not set:
     /// - [`arn`](crate::types::builders::ControlSummaryBuilder::arn)
@@ -186,6 +244,7 @@ impl ControlSummaryBuilder {
                     "arn was not specified but it is required when building ControlSummary",
                 )
             })?,
+            aliases: self.aliases,
             name: self.name.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
@@ -202,6 +261,7 @@ impl ControlSummaryBuilder {
             severity: self.severity,
             implementation: self.implementation,
             create_time: self.create_time,
+            governed_resources: self.governed_resources,
         })
     }
 }

@@ -5,6 +5,8 @@
 pub struct GetControlOutput {
     /// <p>The Amazon Resource Name (ARN) of the control.</p>
     pub arn: ::std::string::String,
+    /// <p>A list of alternative identifiers for the control. These are human-readable designators, such as <code>SH.S3.1</code>. Several aliases can refer to the same control across different Amazon Web Services services or compliance frameworks.</p>
+    pub aliases: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The display name of the control.</p>
     pub name: ::std::string::String,
     /// <p>A description of what the control does.</p>
@@ -13,7 +15,7 @@ pub struct GetControlOutput {
     pub behavior: crate::types::ControlBehavior,
     /// <p>An enumerated type, with the following possible values:</p>
     pub severity: ::std::option::Option<crate::types::ControlSeverity>,
-    /// <p>Returns information about the control, including the scope of the control, if enabled, and the Regions in which the control currently is available for deployment. For more information about scope, see <a href="https://docs.aws.amazon.com/whitepapers/latest/aws-fault-isolation-boundaries/global-services.html">Global services</a>.</p>
+    /// <p>Returns information about the control, including the scope of the control, if enabled, and the Regions in which the control is available for deployment. For more information about scope, see <a href="https://docs.aws.amazon.com/whitepapers/latest/aws-fault-isolation-boundaries/global-services.html">Global services</a>.</p>
     /// <p>If you are applying controls through an Amazon Web Services Control Tower landing zone environment, remember that the values returned in the <code>RegionConfiguration</code> API operation are not related to the governed Regions in your landing zone. For example, if you are governing Regions <code>A</code>,<code>B</code>,and <code>C</code> while the control is available in Regions <code>A</code>, <code>B</code>, C<code>,</code> and <code>D</code>, you'd see a response with <code>DeployableRegions</code> of <code>A</code>, <code>B</code>, <code>C</code>, and <code>D</code> for a control with <code>REGIONAL</code> scope, even though you may not intend to deploy the control in Region <code>D</code>, because you do not govern it through your landing zone.</p>
     pub region_configuration: ::std::option::Option<crate::types::RegionConfiguration>,
     /// <p>Returns information about the control, as an <code>ImplementationDetails</code> object that shows the underlying implementation type for a control.</p>
@@ -22,6 +24,8 @@ pub struct GetControlOutput {
     pub parameters: ::std::option::Option<::std::vec::Vec<crate::types::ControlParameter>>,
     /// <p>A timestamp that notes the time when the control was released (start of its life) as a governance capability in Amazon Web Services.</p>
     pub create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>A list of Amazon Web Services resource types that are governed by this control. This information helps you understand which controls can govern certain types of resources, and conversely, which resources are affected when the control is implemented. The resources are represented as Amazon Web Services CloudFormation resource types. If <code>GovernedResources</code> cannot be represented by available CloudFormation resource types, it’s returned as an empty list.</p>
+    pub governed_resources: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     _request_id: Option<String>,
 }
 impl GetControlOutput {
@@ -29,6 +33,12 @@ impl GetControlOutput {
     pub fn arn(&self) -> &str {
         use std::ops::Deref;
         self.arn.deref()
+    }
+    /// <p>A list of alternative identifiers for the control. These are human-readable designators, such as <code>SH.S3.1</code>. Several aliases can refer to the same control across different Amazon Web Services services or compliance frameworks.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.aliases.is_none()`.
+    pub fn aliases(&self) -> &[::std::string::String] {
+        self.aliases.as_deref().unwrap_or_default()
     }
     /// <p>The display name of the control.</p>
     pub fn name(&self) -> &str {
@@ -48,7 +58,7 @@ impl GetControlOutput {
     pub fn severity(&self) -> ::std::option::Option<&crate::types::ControlSeverity> {
         self.severity.as_ref()
     }
-    /// <p>Returns information about the control, including the scope of the control, if enabled, and the Regions in which the control currently is available for deployment. For more information about scope, see <a href="https://docs.aws.amazon.com/whitepapers/latest/aws-fault-isolation-boundaries/global-services.html">Global services</a>.</p>
+    /// <p>Returns information about the control, including the scope of the control, if enabled, and the Regions in which the control is available for deployment. For more information about scope, see <a href="https://docs.aws.amazon.com/whitepapers/latest/aws-fault-isolation-boundaries/global-services.html">Global services</a>.</p>
     /// <p>If you are applying controls through an Amazon Web Services Control Tower landing zone environment, remember that the values returned in the <code>RegionConfiguration</code> API operation are not related to the governed Regions in your landing zone. For example, if you are governing Regions <code>A</code>,<code>B</code>,and <code>C</code> while the control is available in Regions <code>A</code>, <code>B</code>, C<code>,</code> and <code>D</code>, you'd see a response with <code>DeployableRegions</code> of <code>A</code>, <code>B</code>, <code>C</code>, and <code>D</code> for a control with <code>REGIONAL</code> scope, even though you may not intend to deploy the control in Region <code>D</code>, because you do not govern it through your landing zone.</p>
     pub fn region_configuration(&self) -> ::std::option::Option<&crate::types::RegionConfiguration> {
         self.region_configuration.as_ref()
@@ -66,6 +76,12 @@ impl GetControlOutput {
     /// <p>A timestamp that notes the time when the control was released (start of its life) as a governance capability in Amazon Web Services.</p>
     pub fn create_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.create_time.as_ref()
+    }
+    /// <p>A list of Amazon Web Services resource types that are governed by this control. This information helps you understand which controls can govern certain types of resources, and conversely, which resources are affected when the control is implemented. The resources are represented as Amazon Web Services CloudFormation resource types. If <code>GovernedResources</code> cannot be represented by available CloudFormation resource types, it’s returned as an empty list.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.governed_resources.is_none()`.
+    pub fn governed_resources(&self) -> &[::std::string::String] {
+        self.governed_resources.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for GetControlOutput {
@@ -85,6 +101,7 @@ impl GetControlOutput {
 #[non_exhaustive]
 pub struct GetControlOutputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
+    pub(crate) aliases: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) behavior: ::std::option::Option<crate::types::ControlBehavior>,
@@ -93,6 +110,7 @@ pub struct GetControlOutputBuilder {
     pub(crate) implementation: ::std::option::Option<crate::types::ImplementationDetails>,
     pub(crate) parameters: ::std::option::Option<::std::vec::Vec<crate::types::ControlParameter>>,
     pub(crate) create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) governed_resources: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     _request_id: Option<String>,
 }
 impl GetControlOutputBuilder {
@@ -110,6 +128,26 @@ impl GetControlOutputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the control.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.arn
+    }
+    /// Appends an item to `aliases`.
+    ///
+    /// To override the contents of this collection use [`set_aliases`](Self::set_aliases).
+    ///
+    /// <p>A list of alternative identifiers for the control. These are human-readable designators, such as <code>SH.S3.1</code>. Several aliases can refer to the same control across different Amazon Web Services services or compliance frameworks.</p>
+    pub fn aliases(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.aliases.unwrap_or_default();
+        v.push(input.into());
+        self.aliases = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>A list of alternative identifiers for the control. These are human-readable designators, such as <code>SH.S3.1</code>. Several aliases can refer to the same control across different Amazon Web Services services or compliance frameworks.</p>
+    pub fn set_aliases(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.aliases = input;
+        self
+    }
+    /// <p>A list of alternative identifiers for the control. These are human-readable designators, such as <code>SH.S3.1</code>. Several aliases can refer to the same control across different Amazon Web Services services or compliance frameworks.</p>
+    pub fn get_aliases(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.aliases
     }
     /// <p>The display name of the control.</p>
     /// This field is required.
@@ -170,20 +208,20 @@ impl GetControlOutputBuilder {
     pub fn get_severity(&self) -> &::std::option::Option<crate::types::ControlSeverity> {
         &self.severity
     }
-    /// <p>Returns information about the control, including the scope of the control, if enabled, and the Regions in which the control currently is available for deployment. For more information about scope, see <a href="https://docs.aws.amazon.com/whitepapers/latest/aws-fault-isolation-boundaries/global-services.html">Global services</a>.</p>
+    /// <p>Returns information about the control, including the scope of the control, if enabled, and the Regions in which the control is available for deployment. For more information about scope, see <a href="https://docs.aws.amazon.com/whitepapers/latest/aws-fault-isolation-boundaries/global-services.html">Global services</a>.</p>
     /// <p>If you are applying controls through an Amazon Web Services Control Tower landing zone environment, remember that the values returned in the <code>RegionConfiguration</code> API operation are not related to the governed Regions in your landing zone. For example, if you are governing Regions <code>A</code>,<code>B</code>,and <code>C</code> while the control is available in Regions <code>A</code>, <code>B</code>, C<code>,</code> and <code>D</code>, you'd see a response with <code>DeployableRegions</code> of <code>A</code>, <code>B</code>, <code>C</code>, and <code>D</code> for a control with <code>REGIONAL</code> scope, even though you may not intend to deploy the control in Region <code>D</code>, because you do not govern it through your landing zone.</p>
     /// This field is required.
     pub fn region_configuration(mut self, input: crate::types::RegionConfiguration) -> Self {
         self.region_configuration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Returns information about the control, including the scope of the control, if enabled, and the Regions in which the control currently is available for deployment. For more information about scope, see <a href="https://docs.aws.amazon.com/whitepapers/latest/aws-fault-isolation-boundaries/global-services.html">Global services</a>.</p>
+    /// <p>Returns information about the control, including the scope of the control, if enabled, and the Regions in which the control is available for deployment. For more information about scope, see <a href="https://docs.aws.amazon.com/whitepapers/latest/aws-fault-isolation-boundaries/global-services.html">Global services</a>.</p>
     /// <p>If you are applying controls through an Amazon Web Services Control Tower landing zone environment, remember that the values returned in the <code>RegionConfiguration</code> API operation are not related to the governed Regions in your landing zone. For example, if you are governing Regions <code>A</code>,<code>B</code>,and <code>C</code> while the control is available in Regions <code>A</code>, <code>B</code>, C<code>,</code> and <code>D</code>, you'd see a response with <code>DeployableRegions</code> of <code>A</code>, <code>B</code>, <code>C</code>, and <code>D</code> for a control with <code>REGIONAL</code> scope, even though you may not intend to deploy the control in Region <code>D</code>, because you do not govern it through your landing zone.</p>
     pub fn set_region_configuration(mut self, input: ::std::option::Option<crate::types::RegionConfiguration>) -> Self {
         self.region_configuration = input;
         self
     }
-    /// <p>Returns information about the control, including the scope of the control, if enabled, and the Regions in which the control currently is available for deployment. For more information about scope, see <a href="https://docs.aws.amazon.com/whitepapers/latest/aws-fault-isolation-boundaries/global-services.html">Global services</a>.</p>
+    /// <p>Returns information about the control, including the scope of the control, if enabled, and the Regions in which the control is available for deployment. For more information about scope, see <a href="https://docs.aws.amazon.com/whitepapers/latest/aws-fault-isolation-boundaries/global-services.html">Global services</a>.</p>
     /// <p>If you are applying controls through an Amazon Web Services Control Tower landing zone environment, remember that the values returned in the <code>RegionConfiguration</code> API operation are not related to the governed Regions in your landing zone. For example, if you are governing Regions <code>A</code>,<code>B</code>,and <code>C</code> while the control is available in Regions <code>A</code>, <code>B</code>, C<code>,</code> and <code>D</code>, you'd see a response with <code>DeployableRegions</code> of <code>A</code>, <code>B</code>, <code>C</code>, and <code>D</code> for a control with <code>REGIONAL</code> scope, even though you may not intend to deploy the control in Region <code>D</code>, because you do not govern it through your landing zone.</p>
     pub fn get_region_configuration(&self) -> &::std::option::Option<crate::types::RegionConfiguration> {
         &self.region_configuration
@@ -236,6 +274,26 @@ impl GetControlOutputBuilder {
     pub fn get_create_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.create_time
     }
+    /// Appends an item to `governed_resources`.
+    ///
+    /// To override the contents of this collection use [`set_governed_resources`](Self::set_governed_resources).
+    ///
+    /// <p>A list of Amazon Web Services resource types that are governed by this control. This information helps you understand which controls can govern certain types of resources, and conversely, which resources are affected when the control is implemented. The resources are represented as Amazon Web Services CloudFormation resource types. If <code>GovernedResources</code> cannot be represented by available CloudFormation resource types, it’s returned as an empty list.</p>
+    pub fn governed_resources(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.governed_resources.unwrap_or_default();
+        v.push(input.into());
+        self.governed_resources = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>A list of Amazon Web Services resource types that are governed by this control. This information helps you understand which controls can govern certain types of resources, and conversely, which resources are affected when the control is implemented. The resources are represented as Amazon Web Services CloudFormation resource types. If <code>GovernedResources</code> cannot be represented by available CloudFormation resource types, it’s returned as an empty list.</p>
+    pub fn set_governed_resources(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.governed_resources = input;
+        self
+    }
+    /// <p>A list of Amazon Web Services resource types that are governed by this control. This information helps you understand which controls can govern certain types of resources, and conversely, which resources are affected when the control is implemented. The resources are represented as Amazon Web Services CloudFormation resource types. If <code>GovernedResources</code> cannot be represented by available CloudFormation resource types, it’s returned as an empty list.</p>
+    pub fn get_governed_resources(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.governed_resources
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -259,6 +317,7 @@ impl GetControlOutputBuilder {
                     "arn was not specified but it is required when building GetControlOutput",
                 )
             })?,
+            aliases: self.aliases,
             name: self.name.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
@@ -282,6 +341,7 @@ impl GetControlOutputBuilder {
             implementation: self.implementation,
             parameters: self.parameters,
             create_time: self.create_time,
+            governed_resources: self.governed_resources,
             _request_id: self._request_id,
         })
     }

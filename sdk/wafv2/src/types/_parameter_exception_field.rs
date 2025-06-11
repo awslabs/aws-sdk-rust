@@ -49,6 +49,7 @@
 ///     ParameterExceptionField::LabelMatchStatement => { /* ... */ },
 ///     ParameterExceptionField::LoggingFilter => { /* ... */ },
 ///     ParameterExceptionField::LogDestination => { /* ... */ },
+///     ParameterExceptionField::LowReputationMode => { /* ... */ },
 ///     ParameterExceptionField::ManagedRuleGroupConfig => { /* ... */ },
 ///     ParameterExceptionField::ManagedRuleSet => { /* ... */ },
 ///     ParameterExceptionField::ManagedRuleSetStatement => { /* ... */ },
@@ -186,6 +187,8 @@ pub enum ParameterExceptionField {
     #[allow(missing_docs)] // documentation missing in model
     LogDestination,
     #[allow(missing_docs)] // documentation missing in model
+    LowReputationMode,
+    #[allow(missing_docs)] // documentation missing in model
     ManagedRuleGroupConfig,
     #[allow(missing_docs)] // documentation missing in model
     ManagedRuleSet,
@@ -297,6 +300,7 @@ impl ::std::convert::From<&str> for ParameterExceptionField {
             "LABEL_MATCH_STATEMENT" => ParameterExceptionField::LabelMatchStatement,
             "LOGGING_FILTER" => ParameterExceptionField::LoggingFilter,
             "LOG_DESTINATION" => ParameterExceptionField::LogDestination,
+            "LOW_REPUTATION_MODE" => ParameterExceptionField::LowReputationMode,
             "MANAGED_RULE_GROUP_CONFIG" => ParameterExceptionField::ManagedRuleGroupConfig,
             "MANAGED_RULE_SET" => ParameterExceptionField::ManagedRuleSet,
             "MANAGED_RULE_SET_STATEMENT" => ParameterExceptionField::ManagedRuleSetStatement,
@@ -383,6 +387,7 @@ impl ParameterExceptionField {
             ParameterExceptionField::LabelMatchStatement => "LABEL_MATCH_STATEMENT",
             ParameterExceptionField::LoggingFilter => "LOGGING_FILTER",
             ParameterExceptionField::LogDestination => "LOG_DESTINATION",
+            ParameterExceptionField::LowReputationMode => "LOW_REPUTATION_MODE",
             ParameterExceptionField::ManagedRuleGroupConfig => "MANAGED_RULE_GROUP_CONFIG",
             ParameterExceptionField::ManagedRuleSet => "MANAGED_RULE_SET",
             ParameterExceptionField::ManagedRuleSetStatement => "MANAGED_RULE_SET_STATEMENT",
@@ -460,6 +465,7 @@ impl ParameterExceptionField {
             "LABEL_MATCH_STATEMENT",
             "LOGGING_FILTER",
             "LOG_DESTINATION",
+            "LOW_REPUTATION_MODE",
             "MANAGED_RULE_GROUP_CONFIG",
             "MANAGED_RULE_SET",
             "MANAGED_RULE_SET_STATEMENT",
@@ -554,6 +560,7 @@ impl ::std::fmt::Display for ParameterExceptionField {
             ParameterExceptionField::LabelMatchStatement => write!(f, "LABEL_MATCH_STATEMENT"),
             ParameterExceptionField::LoggingFilter => write!(f, "LOGGING_FILTER"),
             ParameterExceptionField::LogDestination => write!(f, "LOG_DESTINATION"),
+            ParameterExceptionField::LowReputationMode => write!(f, "LOW_REPUTATION_MODE"),
             ParameterExceptionField::ManagedRuleGroupConfig => write!(f, "MANAGED_RULE_GROUP_CONFIG"),
             ParameterExceptionField::ManagedRuleSet => write!(f, "MANAGED_RULE_SET"),
             ParameterExceptionField::ManagedRuleSetStatement => write!(f, "MANAGED_RULE_SET_STATEMENT"),

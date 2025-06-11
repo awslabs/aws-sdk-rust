@@ -22,6 +22,12 @@ pub struct CoreNetworkChangeValues {
     pub shared_segments: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Describes the service insertion action.</p>
     pub service_insertion_actions: ::std::option::Option<::std::vec::Vec<crate::types::ServiceInsertionAction>>,
+    /// <p>Indicates whether Equal Cost Multipath (ECMP) is enabled for the core network.</p>
+    pub vpn_ecmp_support: bool,
+    /// <p>Indicates whether public DNS support is supported. The default is <code>true</code>.</p>
+    pub dns_support: bool,
+    /// <p>Indicates whether security group referencing is enabled for the core network.</p>
+    pub security_group_referencing_support: bool,
 }
 impl CoreNetworkChangeValues {
     /// <p>The names of the segments in a core network.</p>
@@ -68,6 +74,18 @@ impl CoreNetworkChangeValues {
     pub fn service_insertion_actions(&self) -> &[crate::types::ServiceInsertionAction] {
         self.service_insertion_actions.as_deref().unwrap_or_default()
     }
+    /// <p>Indicates whether Equal Cost Multipath (ECMP) is enabled for the core network.</p>
+    pub fn vpn_ecmp_support(&self) -> bool {
+        self.vpn_ecmp_support
+    }
+    /// <p>Indicates whether public DNS support is supported. The default is <code>true</code>.</p>
+    pub fn dns_support(&self) -> bool {
+        self.dns_support
+    }
+    /// <p>Indicates whether security group referencing is enabled for the core network.</p>
+    pub fn security_group_referencing_support(&self) -> bool {
+        self.security_group_referencing_support
+    }
 }
 impl CoreNetworkChangeValues {
     /// Creates a new builder-style object to manufacture [`CoreNetworkChangeValues`](crate::types::CoreNetworkChangeValues).
@@ -89,6 +107,9 @@ pub struct CoreNetworkChangeValuesBuilder {
     pub(crate) inside_cidr_blocks: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) shared_segments: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) service_insertion_actions: ::std::option::Option<::std::vec::Vec<crate::types::ServiceInsertionAction>>,
+    pub(crate) vpn_ecmp_support: ::std::option::Option<bool>,
+    pub(crate) dns_support: ::std::option::Option<bool>,
+    pub(crate) security_group_referencing_support: ::std::option::Option<bool>,
 }
 impl CoreNetworkChangeValuesBuilder {
     /// <p>The names of the segments in a core network.</p>
@@ -241,6 +262,48 @@ impl CoreNetworkChangeValuesBuilder {
     pub fn get_service_insertion_actions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ServiceInsertionAction>> {
         &self.service_insertion_actions
     }
+    /// <p>Indicates whether Equal Cost Multipath (ECMP) is enabled for the core network.</p>
+    pub fn vpn_ecmp_support(mut self, input: bool) -> Self {
+        self.vpn_ecmp_support = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates whether Equal Cost Multipath (ECMP) is enabled for the core network.</p>
+    pub fn set_vpn_ecmp_support(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.vpn_ecmp_support = input;
+        self
+    }
+    /// <p>Indicates whether Equal Cost Multipath (ECMP) is enabled for the core network.</p>
+    pub fn get_vpn_ecmp_support(&self) -> &::std::option::Option<bool> {
+        &self.vpn_ecmp_support
+    }
+    /// <p>Indicates whether public DNS support is supported. The default is <code>true</code>.</p>
+    pub fn dns_support(mut self, input: bool) -> Self {
+        self.dns_support = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates whether public DNS support is supported. The default is <code>true</code>.</p>
+    pub fn set_dns_support(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.dns_support = input;
+        self
+    }
+    /// <p>Indicates whether public DNS support is supported. The default is <code>true</code>.</p>
+    pub fn get_dns_support(&self) -> &::std::option::Option<bool> {
+        &self.dns_support
+    }
+    /// <p>Indicates whether security group referencing is enabled for the core network.</p>
+    pub fn security_group_referencing_support(mut self, input: bool) -> Self {
+        self.security_group_referencing_support = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates whether security group referencing is enabled for the core network.</p>
+    pub fn set_security_group_referencing_support(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.security_group_referencing_support = input;
+        self
+    }
+    /// <p>Indicates whether security group referencing is enabled for the core network.</p>
+    pub fn get_security_group_referencing_support(&self) -> &::std::option::Option<bool> {
+        &self.security_group_referencing_support
+    }
     /// Consumes the builder and constructs a [`CoreNetworkChangeValues`](crate::types::CoreNetworkChangeValues).
     pub fn build(self) -> crate::types::CoreNetworkChangeValues {
         crate::types::CoreNetworkChangeValues {
@@ -253,6 +316,9 @@ impl CoreNetworkChangeValuesBuilder {
             inside_cidr_blocks: self.inside_cidr_blocks,
             shared_segments: self.shared_segments,
             service_insertion_actions: self.service_insertion_actions,
+            vpn_ecmp_support: self.vpn_ecmp_support.unwrap_or_default(),
+            dns_support: self.dns_support.unwrap_or_default(),
+            security_group_referencing_support: self.security_group_referencing_support.unwrap_or_default(),
         }
     }
 }

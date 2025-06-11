@@ -9,6 +9,14 @@ pub fn ser_vpc_options(
     if input.appliance_mode_support {
         object.key("ApplianceModeSupport").boolean(input.appliance_mode_support);
     }
+    if input.dns_support {
+        object.key("DnsSupport").boolean(input.dns_support);
+    }
+    if input.security_group_referencing_support {
+        object
+            .key("SecurityGroupReferencingSupport")
+            .boolean(input.security_group_referencing_support);
+    }
     Ok(())
 }
 
@@ -32,6 +40,13 @@ where
                         }
                         "ApplianceModeSupport" => {
                             builder = builder.set_appliance_mode_support(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                        }
+                        "DnsSupport" => {
+                            builder = builder.set_dns_support(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                        }
+                        "SecurityGroupReferencingSupport" => {
+                            builder = builder
+                                .set_security_group_referencing_support(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

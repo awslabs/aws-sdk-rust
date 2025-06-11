@@ -869,6 +869,8 @@ pub(crate) mod shape_message_group;
 
 pub(crate) mod shape_message_groups_list;
 
+pub(crate) mod shape_nlu_improvement_specification;
+
 pub(crate) mod shape_opensearch_configuration;
 
 pub(crate) mod shape_overall_test_result_item_list;

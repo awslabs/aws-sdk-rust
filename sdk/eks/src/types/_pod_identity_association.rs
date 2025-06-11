@@ -6,11 +6,11 @@
 pub struct PodIdentityAssociation {
     /// <p>The name of the cluster that the association is in.</p>
     pub cluster_name: ::std::option::Option<::std::string::String>,
-    /// <p>The name of the Kubernetes namespace inside the cluster to create the association in. The service account and the pods that use the service account must be in this namespace.</p>
+    /// <p>The name of the Kubernetes namespace inside the cluster to create the association in. The service account and the Pods that use the service account must be in this namespace.</p>
     pub namespace: ::std::option::Option<::std::string::String>,
     /// <p>The name of the Kubernetes service account inside the cluster to associate the IAM credentials with.</p>
     pub service_account: ::std::option::Option<::std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the IAM role to associate with the service account. The EKS Pod Identity agent manages credentials to assume this role for applications in the containers in the pods that use this service account.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM role to associate with the service account. The EKS Pod Identity agent manages credentials to assume this role for applications in the containers in the Pods that use this service account.</p>
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the association.</p>
     pub association_arn: ::std::option::Option<::std::string::String>,
@@ -37,17 +37,25 @@ pub struct PodIdentityAssociation {
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The timestamp that the association was created at.</p>
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>The most recent timestamp that the association was modified at</p>
+    /// <p>The most recent timestamp that the association was modified at.</p>
     pub modified_at: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>If defined, the Pod Identity Association is owned by an Amazon EKS Addon.</p>
+    /// <p>If defined, the EKS Pod Identity association is owned by an Amazon EKS add-on.</p>
     pub owner_arn: ::std::option::Option<::std::string::String>,
+    /// <p>The state of the automatic sessions tags. The value of <i>true</i> disables these tags.</p>
+    /// <p>EKS Pod Identity adds a pre-defined set of session tags when it assumes the role. You can use these tags to author a single role that can work across resources by allowing access to Amazon Web Services resources based on matching tags. By default, EKS Pod Identity attaches six tags, including tags for cluster name, namespace, and service account name. For the list of tags added by EKS Pod Identity, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/pod-id-abac.html#pod-id-abac-tags">List of session tags added by EKS Pod Identity</a> in the <i>Amazon EKS User Guide</i>.</p>
+    pub disable_session_tags: ::std::option::Option<bool>,
+    /// <p>The Amazon Resource Name (ARN) of the target IAM role to associate with the service account. This role is assumed by using the EKS Pod Identity association role, then the credentials for this role are injected into the Pod.</p>
+    pub target_role_arn: ::std::option::Option<::std::string::String>,
+    /// <p>The unique identifier for this EKS Pod Identity association for a target IAM role. You put this value in the trust policy of the target role, in a <code>Condition</code> to match the <code>sts.ExternalId</code>. This ensures that the target role can only be assumed by this association. This prevents the <i>confused deputy problem</i>. For more information about the confused deputy problem, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/confused-deputy.html">The confused deputy problem</a> in the <i>IAM User Guide</i>.</p>
+    /// <p>If you want to use the same target role with multiple associations or other roles, use independent statements in the trust policy to allow <code>sts:AssumeRole</code> access from each role.</p>
+    pub external_id: ::std::option::Option<::std::string::String>,
 }
 impl PodIdentityAssociation {
     /// <p>The name of the cluster that the association is in.</p>
     pub fn cluster_name(&self) -> ::std::option::Option<&str> {
         self.cluster_name.as_deref()
     }
-    /// <p>The name of the Kubernetes namespace inside the cluster to create the association in. The service account and the pods that use the service account must be in this namespace.</p>
+    /// <p>The name of the Kubernetes namespace inside the cluster to create the association in. The service account and the Pods that use the service account must be in this namespace.</p>
     pub fn namespace(&self) -> ::std::option::Option<&str> {
         self.namespace.as_deref()
     }
@@ -55,7 +63,7 @@ impl PodIdentityAssociation {
     pub fn service_account(&self) -> ::std::option::Option<&str> {
         self.service_account.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the IAM role to associate with the service account. The EKS Pod Identity agent manages credentials to assume this role for applications in the containers in the pods that use this service account.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM role to associate with the service account. The EKS Pod Identity agent manages credentials to assume this role for applications in the containers in the Pods that use this service account.</p>
     pub fn role_arn(&self) -> ::std::option::Option<&str> {
         self.role_arn.as_deref()
     }
@@ -92,13 +100,27 @@ impl PodIdentityAssociation {
     pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
-    /// <p>The most recent timestamp that the association was modified at</p>
+    /// <p>The most recent timestamp that the association was modified at.</p>
     pub fn modified_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.modified_at.as_ref()
     }
-    /// <p>If defined, the Pod Identity Association is owned by an Amazon EKS Addon.</p>
+    /// <p>If defined, the EKS Pod Identity association is owned by an Amazon EKS add-on.</p>
     pub fn owner_arn(&self) -> ::std::option::Option<&str> {
         self.owner_arn.as_deref()
+    }
+    /// <p>The state of the automatic sessions tags. The value of <i>true</i> disables these tags.</p>
+    /// <p>EKS Pod Identity adds a pre-defined set of session tags when it assumes the role. You can use these tags to author a single role that can work across resources by allowing access to Amazon Web Services resources based on matching tags. By default, EKS Pod Identity attaches six tags, including tags for cluster name, namespace, and service account name. For the list of tags added by EKS Pod Identity, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/pod-id-abac.html#pod-id-abac-tags">List of session tags added by EKS Pod Identity</a> in the <i>Amazon EKS User Guide</i>.</p>
+    pub fn disable_session_tags(&self) -> ::std::option::Option<bool> {
+        self.disable_session_tags
+    }
+    /// <p>The Amazon Resource Name (ARN) of the target IAM role to associate with the service account. This role is assumed by using the EKS Pod Identity association role, then the credentials for this role are injected into the Pod.</p>
+    pub fn target_role_arn(&self) -> ::std::option::Option<&str> {
+        self.target_role_arn.as_deref()
+    }
+    /// <p>The unique identifier for this EKS Pod Identity association for a target IAM role. You put this value in the trust policy of the target role, in a <code>Condition</code> to match the <code>sts.ExternalId</code>. This ensures that the target role can only be assumed by this association. This prevents the <i>confused deputy problem</i>. For more information about the confused deputy problem, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/confused-deputy.html">The confused deputy problem</a> in the <i>IAM User Guide</i>.</p>
+    /// <p>If you want to use the same target role with multiple associations or other roles, use independent statements in the trust policy to allow <code>sts:AssumeRole</code> access from each role.</p>
+    pub fn external_id(&self) -> ::std::option::Option<&str> {
+        self.external_id.as_deref()
     }
 }
 impl PodIdentityAssociation {
@@ -122,6 +144,9 @@ pub struct PodIdentityAssociationBuilder {
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) modified_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) owner_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) disable_session_tags: ::std::option::Option<bool>,
+    pub(crate) target_role_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) external_id: ::std::option::Option<::std::string::String>,
 }
 impl PodIdentityAssociationBuilder {
     /// <p>The name of the cluster that the association is in.</p>
@@ -138,17 +163,17 @@ impl PodIdentityAssociationBuilder {
     pub fn get_cluster_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.cluster_name
     }
-    /// <p>The name of the Kubernetes namespace inside the cluster to create the association in. The service account and the pods that use the service account must be in this namespace.</p>
+    /// <p>The name of the Kubernetes namespace inside the cluster to create the association in. The service account and the Pods that use the service account must be in this namespace.</p>
     pub fn namespace(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.namespace = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the Kubernetes namespace inside the cluster to create the association in. The service account and the pods that use the service account must be in this namespace.</p>
+    /// <p>The name of the Kubernetes namespace inside the cluster to create the association in. The service account and the Pods that use the service account must be in this namespace.</p>
     pub fn set_namespace(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.namespace = input;
         self
     }
-    /// <p>The name of the Kubernetes namespace inside the cluster to create the association in. The service account and the pods that use the service account must be in this namespace.</p>
+    /// <p>The name of the Kubernetes namespace inside the cluster to create the association in. The service account and the Pods that use the service account must be in this namespace.</p>
     pub fn get_namespace(&self) -> &::std::option::Option<::std::string::String> {
         &self.namespace
     }
@@ -166,17 +191,17 @@ impl PodIdentityAssociationBuilder {
     pub fn get_service_account(&self) -> &::std::option::Option<::std::string::String> {
         &self.service_account
     }
-    /// <p>The Amazon Resource Name (ARN) of the IAM role to associate with the service account. The EKS Pod Identity agent manages credentials to assume this role for applications in the containers in the pods that use this service account.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM role to associate with the service account. The EKS Pod Identity agent manages credentials to assume this role for applications in the containers in the Pods that use this service account.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the IAM role to associate with the service account. The EKS Pod Identity agent manages credentials to assume this role for applications in the containers in the pods that use this service account.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM role to associate with the service account. The EKS Pod Identity agent manages credentials to assume this role for applications in the containers in the Pods that use this service account.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the IAM role to associate with the service account. The EKS Pod Identity agent manages credentials to assume this role for applications in the containers in the pods that use this service account.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM role to associate with the service account. The EKS Pod Identity agent manages credentials to assume this role for applications in the containers in the Pods that use this service account.</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.role_arn
     }
@@ -293,33 +318,81 @@ impl PodIdentityAssociationBuilder {
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.created_at
     }
-    /// <p>The most recent timestamp that the association was modified at</p>
+    /// <p>The most recent timestamp that the association was modified at.</p>
     pub fn modified_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.modified_at = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The most recent timestamp that the association was modified at</p>
+    /// <p>The most recent timestamp that the association was modified at.</p>
     pub fn set_modified_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.modified_at = input;
         self
     }
-    /// <p>The most recent timestamp that the association was modified at</p>
+    /// <p>The most recent timestamp that the association was modified at.</p>
     pub fn get_modified_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.modified_at
     }
-    /// <p>If defined, the Pod Identity Association is owned by an Amazon EKS Addon.</p>
+    /// <p>If defined, the EKS Pod Identity association is owned by an Amazon EKS add-on.</p>
     pub fn owner_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.owner_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>If defined, the Pod Identity Association is owned by an Amazon EKS Addon.</p>
+    /// <p>If defined, the EKS Pod Identity association is owned by an Amazon EKS add-on.</p>
     pub fn set_owner_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.owner_arn = input;
         self
     }
-    /// <p>If defined, the Pod Identity Association is owned by an Amazon EKS Addon.</p>
+    /// <p>If defined, the EKS Pod Identity association is owned by an Amazon EKS add-on.</p>
     pub fn get_owner_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.owner_arn
+    }
+    /// <p>The state of the automatic sessions tags. The value of <i>true</i> disables these tags.</p>
+    /// <p>EKS Pod Identity adds a pre-defined set of session tags when it assumes the role. You can use these tags to author a single role that can work across resources by allowing access to Amazon Web Services resources based on matching tags. By default, EKS Pod Identity attaches six tags, including tags for cluster name, namespace, and service account name. For the list of tags added by EKS Pod Identity, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/pod-id-abac.html#pod-id-abac-tags">List of session tags added by EKS Pod Identity</a> in the <i>Amazon EKS User Guide</i>.</p>
+    pub fn disable_session_tags(mut self, input: bool) -> Self {
+        self.disable_session_tags = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The state of the automatic sessions tags. The value of <i>true</i> disables these tags.</p>
+    /// <p>EKS Pod Identity adds a pre-defined set of session tags when it assumes the role. You can use these tags to author a single role that can work across resources by allowing access to Amazon Web Services resources based on matching tags. By default, EKS Pod Identity attaches six tags, including tags for cluster name, namespace, and service account name. For the list of tags added by EKS Pod Identity, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/pod-id-abac.html#pod-id-abac-tags">List of session tags added by EKS Pod Identity</a> in the <i>Amazon EKS User Guide</i>.</p>
+    pub fn set_disable_session_tags(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.disable_session_tags = input;
+        self
+    }
+    /// <p>The state of the automatic sessions tags. The value of <i>true</i> disables these tags.</p>
+    /// <p>EKS Pod Identity adds a pre-defined set of session tags when it assumes the role. You can use these tags to author a single role that can work across resources by allowing access to Amazon Web Services resources based on matching tags. By default, EKS Pod Identity attaches six tags, including tags for cluster name, namespace, and service account name. For the list of tags added by EKS Pod Identity, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/pod-id-abac.html#pod-id-abac-tags">List of session tags added by EKS Pod Identity</a> in the <i>Amazon EKS User Guide</i>.</p>
+    pub fn get_disable_session_tags(&self) -> &::std::option::Option<bool> {
+        &self.disable_session_tags
+    }
+    /// <p>The Amazon Resource Name (ARN) of the target IAM role to associate with the service account. This role is assumed by using the EKS Pod Identity association role, then the credentials for this role are injected into the Pod.</p>
+    pub fn target_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.target_role_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the target IAM role to associate with the service account. This role is assumed by using the EKS Pod Identity association role, then the credentials for this role are injected into the Pod.</p>
+    pub fn set_target_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.target_role_arn = input;
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the target IAM role to associate with the service account. This role is assumed by using the EKS Pod Identity association role, then the credentials for this role are injected into the Pod.</p>
+    pub fn get_target_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.target_role_arn
+    }
+    /// <p>The unique identifier for this EKS Pod Identity association for a target IAM role. You put this value in the trust policy of the target role, in a <code>Condition</code> to match the <code>sts.ExternalId</code>. This ensures that the target role can only be assumed by this association. This prevents the <i>confused deputy problem</i>. For more information about the confused deputy problem, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/confused-deputy.html">The confused deputy problem</a> in the <i>IAM User Guide</i>.</p>
+    /// <p>If you want to use the same target role with multiple associations or other roles, use independent statements in the trust policy to allow <code>sts:AssumeRole</code> access from each role.</p>
+    pub fn external_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.external_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The unique identifier for this EKS Pod Identity association for a target IAM role. You put this value in the trust policy of the target role, in a <code>Condition</code> to match the <code>sts.ExternalId</code>. This ensures that the target role can only be assumed by this association. This prevents the <i>confused deputy problem</i>. For more information about the confused deputy problem, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/confused-deputy.html">The confused deputy problem</a> in the <i>IAM User Guide</i>.</p>
+    /// <p>If you want to use the same target role with multiple associations or other roles, use independent statements in the trust policy to allow <code>sts:AssumeRole</code> access from each role.</p>
+    pub fn set_external_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.external_id = input;
+        self
+    }
+    /// <p>The unique identifier for this EKS Pod Identity association for a target IAM role. You put this value in the trust policy of the target role, in a <code>Condition</code> to match the <code>sts.ExternalId</code>. This ensures that the target role can only be assumed by this association. This prevents the <i>confused deputy problem</i>. For more information about the confused deputy problem, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/confused-deputy.html">The confused deputy problem</a> in the <i>IAM User Guide</i>.</p>
+    /// <p>If you want to use the same target role with multiple associations or other roles, use independent statements in the trust policy to allow <code>sts:AssumeRole</code> access from each role.</p>
+    pub fn get_external_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.external_id
     }
     /// Consumes the builder and constructs a [`PodIdentityAssociation`](crate::types::PodIdentityAssociation).
     pub fn build(self) -> crate::types::PodIdentityAssociation {
@@ -334,6 +407,9 @@ impl PodIdentityAssociationBuilder {
             created_at: self.created_at,
             modified_at: self.modified_at,
             owner_arn: self.owner_arn,
+            disable_session_tags: self.disable_session_tags,
+            target_role_arn: self.target_role_arn,
+            external_id: self.external_id,
         }
     }
 }

@@ -167,6 +167,8 @@ mod get_control;
 
 mod list_common_controls;
 
+mod list_control_mappings;
+
 mod list_controls;
 
 mod list_domains;

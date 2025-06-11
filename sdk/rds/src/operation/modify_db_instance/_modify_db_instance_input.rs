@@ -426,11 +426,27 @@ pub struct ModifyDbInstanceInput {
     /// </ul>
     /// <p>This setting doesn't apply to RDS Custom DB instances.</p>
     pub certificate_rotation_restart: ::std::option::Option<bool>,
-    /// <p>A value that sets the open mode of a replica database to either mounted or read-only.</p><note>
-    /// <p>Currently, this parameter is only supported for Oracle DB instances.</p>
+    /// <p>The open mode of a replica database.</p><note>
+    /// <p>This parameter is only supported for Db2 DB instances and Oracle DB instances.</p>
     /// </note>
-    /// <p>Mounted DB replicas are included in Oracle Enterprise Edition. The main use case for mounted replicas is cross-Region disaster recovery. The primary database doesn't use Active Data Guard to transmit information to the mounted replica. Because it doesn't accept user connections, a mounted replica can't serve a read-only workload. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-read-replicas.html">Working with Oracle Read Replicas for Amazon RDS</a> in the <i>Amazon RDS User Guide</i>.</p>
-    /// <p>This setting doesn't apply to RDS Custom DB instances.</p>
+    /// <dl>
+    /// <dt>
+    /// Db2
+    /// </dt>
+    /// <dd>
+    /// <p>Standby DB replicas are included in Db2 Advanced Edition (AE) and Db2 Standard Edition (SE). The main use case for standby replicas is cross-Region disaster recovery. Because it doesn't accept user connections, a standby replica can't serve a read-only workload.</p>
+    /// <p>You can create a combination of standby and read-only DB replicas for the same primary DB instance. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/db2-replication.html">Working with read replicas for Amazon RDS for Db2</a> in the <i>Amazon RDS User Guide</i>.</p>
+    /// <p>To create standby DB replicas for RDS for Db2, set this parameter to <code>mounted</code>.</p>
+    /// </dd>
+    /// <dt>
+    /// Oracle
+    /// </dt>
+    /// <dd>
+    /// <p>Mounted DB replicas are included in Oracle Database Enterprise Edition. The main use case for mounted replicas is cross-Region disaster recovery. The primary database doesn't use Active Data Guard to transmit information to the mounted replica. Because it doesn't accept user connections, a mounted replica can't serve a read-only workload.</p>
+    /// <p>You can create a combination of mounted and read-only DB replicas for the same primary DB instance. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-read-replicas.html">Working with read replicas for Amazon RDS for Oracle</a> in the <i>Amazon RDS User Guide</i>.</p>
+    /// <p>For RDS Custom, you must specify this parameter and set it to <code>mounted</code>. The value won't be set by default. After replica creation, you can manage the open mode manually.</p>
+    /// </dd>
+    /// </dl>
     pub replica_mode: ::std::option::Option<crate::types::ReplicaMode>,
     /// <p>Specifies whether to enable a customer-owned IP address (CoIP) for an RDS on Outposts DB instance.</p>
     /// <p>A <i>CoIP</i> provides local or external connectivity to resources in your Outpost subnets through your on-premises network. For some use cases, a CoIP can provide lower latency for connections to the DB instance from outside of its virtual private cloud (VPC) on your local network.</p>
@@ -1052,11 +1068,27 @@ impl ModifyDbInstanceInput {
     pub fn certificate_rotation_restart(&self) -> ::std::option::Option<bool> {
         self.certificate_rotation_restart
     }
-    /// <p>A value that sets the open mode of a replica database to either mounted or read-only.</p><note>
-    /// <p>Currently, this parameter is only supported for Oracle DB instances.</p>
+    /// <p>The open mode of a replica database.</p><note>
+    /// <p>This parameter is only supported for Db2 DB instances and Oracle DB instances.</p>
     /// </note>
-    /// <p>Mounted DB replicas are included in Oracle Enterprise Edition. The main use case for mounted replicas is cross-Region disaster recovery. The primary database doesn't use Active Data Guard to transmit information to the mounted replica. Because it doesn't accept user connections, a mounted replica can't serve a read-only workload. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-read-replicas.html">Working with Oracle Read Replicas for Amazon RDS</a> in the <i>Amazon RDS User Guide</i>.</p>
-    /// <p>This setting doesn't apply to RDS Custom DB instances.</p>
+    /// <dl>
+    /// <dt>
+    /// Db2
+    /// </dt>
+    /// <dd>
+    /// <p>Standby DB replicas are included in Db2 Advanced Edition (AE) and Db2 Standard Edition (SE). The main use case for standby replicas is cross-Region disaster recovery. Because it doesn't accept user connections, a standby replica can't serve a read-only workload.</p>
+    /// <p>You can create a combination of standby and read-only DB replicas for the same primary DB instance. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/db2-replication.html">Working with read replicas for Amazon RDS for Db2</a> in the <i>Amazon RDS User Guide</i>.</p>
+    /// <p>To create standby DB replicas for RDS for Db2, set this parameter to <code>mounted</code>.</p>
+    /// </dd>
+    /// <dt>
+    /// Oracle
+    /// </dt>
+    /// <dd>
+    /// <p>Mounted DB replicas are included in Oracle Database Enterprise Edition. The main use case for mounted replicas is cross-Region disaster recovery. The primary database doesn't use Active Data Guard to transmit information to the mounted replica. Because it doesn't accept user connections, a mounted replica can't serve a read-only workload.</p>
+    /// <p>You can create a combination of mounted and read-only DB replicas for the same primary DB instance. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-read-replicas.html">Working with read replicas for Amazon RDS for Oracle</a> in the <i>Amazon RDS User Guide</i>.</p>
+    /// <p>For RDS Custom, you must specify this parameter and set it to <code>mounted</code>. The value won't be set by default. After replica creation, you can manage the open mode manually.</p>
+    /// </dd>
+    /// </dl>
     pub fn replica_mode(&self) -> ::std::option::Option<&crate::types::ReplicaMode> {
         self.replica_mode.as_ref()
     }
@@ -2926,29 +2958,77 @@ impl ModifyDbInstanceInputBuilder {
     pub fn get_certificate_rotation_restart(&self) -> &::std::option::Option<bool> {
         &self.certificate_rotation_restart
     }
-    /// <p>A value that sets the open mode of a replica database to either mounted or read-only.</p><note>
-    /// <p>Currently, this parameter is only supported for Oracle DB instances.</p>
+    /// <p>The open mode of a replica database.</p><note>
+    /// <p>This parameter is only supported for Db2 DB instances and Oracle DB instances.</p>
     /// </note>
-    /// <p>Mounted DB replicas are included in Oracle Enterprise Edition. The main use case for mounted replicas is cross-Region disaster recovery. The primary database doesn't use Active Data Guard to transmit information to the mounted replica. Because it doesn't accept user connections, a mounted replica can't serve a read-only workload. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-read-replicas.html">Working with Oracle Read Replicas for Amazon RDS</a> in the <i>Amazon RDS User Guide</i>.</p>
-    /// <p>This setting doesn't apply to RDS Custom DB instances.</p>
+    /// <dl>
+    /// <dt>
+    /// Db2
+    /// </dt>
+    /// <dd>
+    /// <p>Standby DB replicas are included in Db2 Advanced Edition (AE) and Db2 Standard Edition (SE). The main use case for standby replicas is cross-Region disaster recovery. Because it doesn't accept user connections, a standby replica can't serve a read-only workload.</p>
+    /// <p>You can create a combination of standby and read-only DB replicas for the same primary DB instance. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/db2-replication.html">Working with read replicas for Amazon RDS for Db2</a> in the <i>Amazon RDS User Guide</i>.</p>
+    /// <p>To create standby DB replicas for RDS for Db2, set this parameter to <code>mounted</code>.</p>
+    /// </dd>
+    /// <dt>
+    /// Oracle
+    /// </dt>
+    /// <dd>
+    /// <p>Mounted DB replicas are included in Oracle Database Enterprise Edition. The main use case for mounted replicas is cross-Region disaster recovery. The primary database doesn't use Active Data Guard to transmit information to the mounted replica. Because it doesn't accept user connections, a mounted replica can't serve a read-only workload.</p>
+    /// <p>You can create a combination of mounted and read-only DB replicas for the same primary DB instance. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-read-replicas.html">Working with read replicas for Amazon RDS for Oracle</a> in the <i>Amazon RDS User Guide</i>.</p>
+    /// <p>For RDS Custom, you must specify this parameter and set it to <code>mounted</code>. The value won't be set by default. After replica creation, you can manage the open mode manually.</p>
+    /// </dd>
+    /// </dl>
     pub fn replica_mode(mut self, input: crate::types::ReplicaMode) -> Self {
         self.replica_mode = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A value that sets the open mode of a replica database to either mounted or read-only.</p><note>
-    /// <p>Currently, this parameter is only supported for Oracle DB instances.</p>
+    /// <p>The open mode of a replica database.</p><note>
+    /// <p>This parameter is only supported for Db2 DB instances and Oracle DB instances.</p>
     /// </note>
-    /// <p>Mounted DB replicas are included in Oracle Enterprise Edition. The main use case for mounted replicas is cross-Region disaster recovery. The primary database doesn't use Active Data Guard to transmit information to the mounted replica. Because it doesn't accept user connections, a mounted replica can't serve a read-only workload. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-read-replicas.html">Working with Oracle Read Replicas for Amazon RDS</a> in the <i>Amazon RDS User Guide</i>.</p>
-    /// <p>This setting doesn't apply to RDS Custom DB instances.</p>
+    /// <dl>
+    /// <dt>
+    /// Db2
+    /// </dt>
+    /// <dd>
+    /// <p>Standby DB replicas are included in Db2 Advanced Edition (AE) and Db2 Standard Edition (SE). The main use case for standby replicas is cross-Region disaster recovery. Because it doesn't accept user connections, a standby replica can't serve a read-only workload.</p>
+    /// <p>You can create a combination of standby and read-only DB replicas for the same primary DB instance. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/db2-replication.html">Working with read replicas for Amazon RDS for Db2</a> in the <i>Amazon RDS User Guide</i>.</p>
+    /// <p>To create standby DB replicas for RDS for Db2, set this parameter to <code>mounted</code>.</p>
+    /// </dd>
+    /// <dt>
+    /// Oracle
+    /// </dt>
+    /// <dd>
+    /// <p>Mounted DB replicas are included in Oracle Database Enterprise Edition. The main use case for mounted replicas is cross-Region disaster recovery. The primary database doesn't use Active Data Guard to transmit information to the mounted replica. Because it doesn't accept user connections, a mounted replica can't serve a read-only workload.</p>
+    /// <p>You can create a combination of mounted and read-only DB replicas for the same primary DB instance. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-read-replicas.html">Working with read replicas for Amazon RDS for Oracle</a> in the <i>Amazon RDS User Guide</i>.</p>
+    /// <p>For RDS Custom, you must specify this parameter and set it to <code>mounted</code>. The value won't be set by default. After replica creation, you can manage the open mode manually.</p>
+    /// </dd>
+    /// </dl>
     pub fn set_replica_mode(mut self, input: ::std::option::Option<crate::types::ReplicaMode>) -> Self {
         self.replica_mode = input;
         self
     }
-    /// <p>A value that sets the open mode of a replica database to either mounted or read-only.</p><note>
-    /// <p>Currently, this parameter is only supported for Oracle DB instances.</p>
+    /// <p>The open mode of a replica database.</p><note>
+    /// <p>This parameter is only supported for Db2 DB instances and Oracle DB instances.</p>
     /// </note>
-    /// <p>Mounted DB replicas are included in Oracle Enterprise Edition. The main use case for mounted replicas is cross-Region disaster recovery. The primary database doesn't use Active Data Guard to transmit information to the mounted replica. Because it doesn't accept user connections, a mounted replica can't serve a read-only workload. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-read-replicas.html">Working with Oracle Read Replicas for Amazon RDS</a> in the <i>Amazon RDS User Guide</i>.</p>
-    /// <p>This setting doesn't apply to RDS Custom DB instances.</p>
+    /// <dl>
+    /// <dt>
+    /// Db2
+    /// </dt>
+    /// <dd>
+    /// <p>Standby DB replicas are included in Db2 Advanced Edition (AE) and Db2 Standard Edition (SE). The main use case for standby replicas is cross-Region disaster recovery. Because it doesn't accept user connections, a standby replica can't serve a read-only workload.</p>
+    /// <p>You can create a combination of standby and read-only DB replicas for the same primary DB instance. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/db2-replication.html">Working with read replicas for Amazon RDS for Db2</a> in the <i>Amazon RDS User Guide</i>.</p>
+    /// <p>To create standby DB replicas for RDS for Db2, set this parameter to <code>mounted</code>.</p>
+    /// </dd>
+    /// <dt>
+    /// Oracle
+    /// </dt>
+    /// <dd>
+    /// <p>Mounted DB replicas are included in Oracle Database Enterprise Edition. The main use case for mounted replicas is cross-Region disaster recovery. The primary database doesn't use Active Data Guard to transmit information to the mounted replica. Because it doesn't accept user connections, a mounted replica can't serve a read-only workload.</p>
+    /// <p>You can create a combination of mounted and read-only DB replicas for the same primary DB instance. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-read-replicas.html">Working with read replicas for Amazon RDS for Oracle</a> in the <i>Amazon RDS User Guide</i>.</p>
+    /// <p>For RDS Custom, you must specify this parameter and set it to <code>mounted</code>. The value won't be set by default. After replica creation, you can manage the open mode manually.</p>
+    /// </dd>
+    /// </dl>
     pub fn get_replica_mode(&self) -> &::std::option::Option<crate::types::ReplicaMode> {
         &self.replica_mode
     }

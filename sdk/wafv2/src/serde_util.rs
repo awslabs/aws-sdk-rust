@@ -123,6 +123,15 @@ pub(crate) fn logging_filter_correct_errors(
     builder
 }
 
+pub(crate) fn on_source_d_do_s_protection_config_correct_errors(
+    mut builder: crate::types::builders::OnSourceDDoSProtectionConfigBuilder,
+) -> crate::types::builders::OnSourceDDoSProtectionConfigBuilder {
+    if builder.alb_low_reputation_mode.is_none() {
+        builder.alb_low_reputation_mode = "no value was set".parse::<crate::types::LowReputationMode>().ok()
+    }
+    builder
+}
+
 pub(crate) fn sampled_http_request_correct_errors(
     mut builder: crate::types::builders::SampledHttpRequestBuilder,
 ) -> crate::types::builders::SampledHttpRequestBuilder {
@@ -697,6 +706,18 @@ pub(crate) fn aws_managed_rules_acfp_rule_set_correct_errors(
     builder
 }
 
+pub(crate) fn aws_managed_rules_anti_d_do_s_rule_set_correct_errors(
+    mut builder: crate::types::builders::AwsManagedRulesAntiDDoSRuleSetBuilder,
+) -> crate::types::builders::AwsManagedRulesAntiDDoSRuleSetBuilder {
+    if builder.client_side_action_config.is_none() {
+        builder.client_side_action_config = {
+            let builder = crate::types::builders::ClientSideActionConfigBuilder::default();
+            Some(crate::serde_util::client_side_action_config_correct_errors(builder).build())
+        }
+    }
+    builder
+}
+
 pub(crate) fn aws_managed_rules_atp_rule_set_correct_errors(
     mut builder: crate::types::builders::AwsManagedRulesAtpRuleSetBuilder,
 ) -> crate::types::builders::AwsManagedRulesAtpRuleSetBuilder {
@@ -814,6 +835,18 @@ pub(crate) fn username_field_correct_errors(
     builder
 }
 
+pub(crate) fn client_side_action_config_correct_errors(
+    mut builder: crate::types::builders::ClientSideActionConfigBuilder,
+) -> crate::types::builders::ClientSideActionConfigBuilder {
+    if builder.challenge.is_none() {
+        builder.challenge = {
+            let builder = crate::types::builders::ClientSideActionBuilder::default();
+            crate::serde_util::client_side_action_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
 pub(crate) fn request_inspection_correct_errors(
     mut builder: crate::types::builders::RequestInspectionBuilder,
 ) -> crate::types::builders::RequestInspectionBuilder {
@@ -840,6 +873,15 @@ pub(crate) fn request_inspection_acfp_correct_errors(
 ) -> crate::types::builders::RequestInspectionAcfpBuilder {
     if builder.payload_type.is_none() {
         builder.payload_type = "no value was set".parse::<crate::types::PayloadType>().ok()
+    }
+    builder
+}
+
+pub(crate) fn client_side_action_correct_errors(
+    mut builder: crate::types::builders::ClientSideActionBuilder,
+) -> crate::types::builders::ClientSideActionBuilder {
+    if builder.usage_of_action.is_none() {
+        builder.usage_of_action = "no value was set".parse::<crate::types::UsageOfAction>().ok()
     }
     builder
 }

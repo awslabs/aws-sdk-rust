@@ -39,6 +39,12 @@ pub fn ser_managed_rule_group_config(
         crate::protocol_serde::shape_aws_managed_rules_acfp_rule_set::ser_aws_managed_rules_acfp_rule_set(&mut object_12, var_11)?;
         object_12.finish();
     }
+    if let Some(var_13) = &input.aws_managed_rules_anti_d_do_s_rule_set {
+        #[allow(unused_mut)]
+        let mut object_14 = object.key("AWSManagedRulesAntiDDoSRuleSet").start_object();
+        crate::protocol_serde::shape_aws_managed_rules_anti_d_do_s_rule_set::ser_aws_managed_rules_anti_d_do_s_rule_set(&mut object_14, var_13)?;
+        object_14.finish();
+    }
     Ok(())
 }
 
@@ -92,6 +98,13 @@ where
                         "AWSManagedRulesACFPRuleSet" => {
                             builder = builder.set_aws_managed_rules_acfp_rule_set(
                                 crate::protocol_serde::shape_aws_managed_rules_acfp_rule_set::de_aws_managed_rules_acfp_rule_set(tokens)?,
+                            );
+                        }
+                        "AWSManagedRulesAntiDDoSRuleSet" => {
+                            builder = builder.set_aws_managed_rules_anti_d_do_s_rule_set(
+                                crate::protocol_serde::shape_aws_managed_rules_anti_d_do_s_rule_set::de_aws_managed_rules_anti_d_do_s_rule_set(
+                                    tokens,
+                                )?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

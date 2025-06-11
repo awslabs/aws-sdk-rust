@@ -21,6 +21,9 @@ where
                                     .transpose()?,
                             );
                         }
+                        "Aliases" => {
+                            builder = builder.set_aliases(crate::protocol_serde::shape_control_aliases::de_control_aliases(tokens)?);
+                        }
                         "Name" => {
                             builder = builder.set_name(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
@@ -58,6 +61,9 @@ where
                                 tokens.next(),
                                 ::aws_smithy_types::date_time::Format::EpochSeconds,
                             )?);
+                        }
+                        "GovernedResources" => {
+                            builder = builder.set_governed_resources(crate::protocol_serde::shape_governed_resources::de_governed_resources(tokens)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

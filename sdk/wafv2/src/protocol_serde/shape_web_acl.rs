@@ -103,6 +103,11 @@ where
                             builder = builder
                                 .set_retrofitted_by_firewall_manager(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
+                        "OnSourceDDoSProtectionConfig" => {
+                            builder = builder.set_on_source_d_do_s_protection_config(
+                                crate::protocol_serde::shape_on_source_d_do_s_protection_config::de_on_source_d_do_s_protection_config(tokens)?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

@@ -5,12 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CommonControlFilter {
     /// <p>The objective that's used as filter criteria.</p>
-    /// <p>You can use this parameter to specify one objective ARN at a time. Passing multiple ARNs in the <code>CommonControlFilter</code> isn’t currently supported.</p>
+    /// <p>You can use this parameter to specify one objective ARN at a time. Passing multiple ARNs in the <code>CommonControlFilter</code> isn’t supported.</p>
     pub objectives: ::std::option::Option<::std::vec::Vec<crate::types::ObjectiveResourceFilter>>,
 }
 impl CommonControlFilter {
     /// <p>The objective that's used as filter criteria.</p>
-    /// <p>You can use this parameter to specify one objective ARN at a time. Passing multiple ARNs in the <code>CommonControlFilter</code> isn’t currently supported.</p>
+    /// <p>You can use this parameter to specify one objective ARN at a time. Passing multiple ARNs in the <code>CommonControlFilter</code> isn’t supported.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.objectives.is_none()`.
     pub fn objectives(&self) -> &[crate::types::ObjectiveResourceFilter] {
@@ -36,7 +36,7 @@ impl CommonControlFilterBuilder {
     /// To override the contents of this collection use [`set_objectives`](Self::set_objectives).
     ///
     /// <p>The objective that's used as filter criteria.</p>
-    /// <p>You can use this parameter to specify one objective ARN at a time. Passing multiple ARNs in the <code>CommonControlFilter</code> isn’t currently supported.</p>
+    /// <p>You can use this parameter to specify one objective ARN at a time. Passing multiple ARNs in the <code>CommonControlFilter</code> isn’t supported.</p>
     pub fn objectives(mut self, input: crate::types::ObjectiveResourceFilter) -> Self {
         let mut v = self.objectives.unwrap_or_default();
         v.push(input);
@@ -44,13 +44,13 @@ impl CommonControlFilterBuilder {
         self
     }
     /// <p>The objective that's used as filter criteria.</p>
-    /// <p>You can use this parameter to specify one objective ARN at a time. Passing multiple ARNs in the <code>CommonControlFilter</code> isn’t currently supported.</p>
+    /// <p>You can use this parameter to specify one objective ARN at a time. Passing multiple ARNs in the <code>CommonControlFilter</code> isn’t supported.</p>
     pub fn set_objectives(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ObjectiveResourceFilter>>) -> Self {
         self.objectives = input;
         self
     }
     /// <p>The objective that's used as filter criteria.</p>
-    /// <p>You can use this parameter to specify one objective ARN at a time. Passing multiple ARNs in the <code>CommonControlFilter</code> isn’t currently supported.</p>
+    /// <p>You can use this parameter to specify one objective ARN at a time. Passing multiple ARNs in the <code>CommonControlFilter</code> isn’t supported.</p>
     pub fn get_objectives(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ObjectiveResourceFilter>> {
         &self.objectives
     }

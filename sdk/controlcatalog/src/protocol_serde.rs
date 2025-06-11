@@ -27,6 +27,8 @@ pub(crate) mod shape_get_control;
 
 pub(crate) mod shape_list_common_controls;
 
+pub(crate) mod shape_list_control_mappings;
+
 pub(crate) mod shape_list_controls;
 
 pub(crate) mod shape_list_domains;
@@ -49,6 +51,10 @@ pub(crate) mod shape_internal_server_exception;
 
 pub(crate) mod shape_list_common_controls_input;
 
+pub(crate) mod shape_list_control_mappings_input;
+
+pub(crate) mod shape_list_controls_input;
+
 pub(crate) mod shape_list_objectives_input;
 
 pub(crate) mod shape_resource_not_found_exception;
@@ -61,11 +67,21 @@ pub(crate) mod shape_common_control_filter;
 
 pub(crate) mod shape_common_control_summary_list;
 
+pub(crate) mod shape_control_aliases;
+
+pub(crate) mod shape_control_filter;
+
+pub(crate) mod shape_control_mapping_filter;
+
+pub(crate) mod shape_control_mappings;
+
 pub(crate) mod shape_control_parameters;
 
 pub(crate) mod shape_controls;
 
 pub(crate) mod shape_domain_summary_list;
+
+pub(crate) mod shape_governed_resources;
 
 pub(crate) mod shape_implementation_details;
 
@@ -77,6 +93,8 @@ pub(crate) mod shape_region_configuration;
 
 pub(crate) mod shape_common_control_summary;
 
+pub(crate) mod shape_control_mapping;
+
 pub(crate) mod shape_control_parameter;
 
 pub(crate) mod shape_control_summary;
@@ -87,6 +105,8 @@ pub(crate) mod shape_domain_resource_filter;
 
 pub(crate) mod shape_domain_summary;
 
+pub(crate) mod shape_implementation_filter;
+
 pub(crate) mod shape_objective_resource_filter;
 
 pub(crate) mod shape_objective_summary;
@@ -96,3 +116,9 @@ pub(crate) mod shape_associated_domain_summary;
 pub(crate) mod shape_associated_objective_summary;
 
 pub(crate) mod shape_implementation_summary;
+
+pub(crate) mod shape_mapping;
+
+pub(crate) mod shape_common_control_mapping_details;
+
+pub(crate) mod shape_framework_mapping_details;

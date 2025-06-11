@@ -25,6 +25,10 @@ pub use crate::types::_control_summary::ControlSummary;
 
 pub use crate::types::_implementation_summary::ImplementationSummary;
 
+pub use crate::types::_control_filter::ControlFilter;
+
+pub use crate::types::_implementation_filter::ImplementationFilter;
+
 pub use crate::types::_common_control_summary::CommonControlSummary;
 
 pub use crate::types::_associated_objective_summary::AssociatedObjectiveSummary;
@@ -33,15 +37,35 @@ pub use crate::types::_common_control_filter::CommonControlFilter;
 
 pub use crate::types::_objective_resource_filter::ObjectiveResourceFilter;
 
+pub use crate::types::_control_mapping::ControlMapping;
+
+pub use crate::types::_mapping::Mapping;
+
+pub use crate::types::_common_control_mapping_details::CommonControlMappingDetails;
+
+pub use crate::types::_framework_mapping_details::FrameworkMappingDetails;
+
+pub use crate::types::_mapping_type::MappingType;
+
+pub use crate::types::_control_mapping_filter::ControlMappingFilter;
+
 mod _associated_domain_summary;
 
 mod _associated_objective_summary;
 
 mod _common_control_filter;
 
+mod _common_control_mapping_details;
+
 mod _common_control_summary;
 
 mod _control_behavior;
+
+mod _control_filter;
+
+mod _control_mapping;
+
+mod _control_mapping_filter;
 
 mod _control_parameter;
 
@@ -55,9 +79,17 @@ mod _domain_resource_filter;
 
 mod _domain_summary;
 
+mod _framework_mapping_details;
+
 mod _implementation_details;
 
+mod _implementation_filter;
+
 mod _implementation_summary;
+
+mod _mapping;
+
+mod _mapping_type;
 
 mod _objective_filter;
 

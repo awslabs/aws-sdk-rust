@@ -8,6 +8,10 @@ pub struct VpcOptions {
     pub ipv6_support: bool,
     /// <p>Indicates whether appliance mode is supported. If enabled, traffic flow between a source and destination use the same Availability Zone for the VPC attachment for the lifetime of that flow. The default value is <code>false</code>.</p>
     pub appliance_mode_support: bool,
+    /// <p>Indicates whether DNS is supported.</p>
+    pub dns_support: bool,
+    /// <p>Indicates whether security group referencing is enabled for this VPC attachment. The default is <code>true</code>. However, at the core network policy-level the default is set to <code>false</code>.</p>
+    pub security_group_referencing_support: bool,
 }
 impl VpcOptions {
     /// <p>Indicates whether IPv6 is supported.</p>
@@ -17,6 +21,14 @@ impl VpcOptions {
     /// <p>Indicates whether appliance mode is supported. If enabled, traffic flow between a source and destination use the same Availability Zone for the VPC attachment for the lifetime of that flow. The default value is <code>false</code>.</p>
     pub fn appliance_mode_support(&self) -> bool {
         self.appliance_mode_support
+    }
+    /// <p>Indicates whether DNS is supported.</p>
+    pub fn dns_support(&self) -> bool {
+        self.dns_support
+    }
+    /// <p>Indicates whether security group referencing is enabled for this VPC attachment. The default is <code>true</code>. However, at the core network policy-level the default is set to <code>false</code>.</p>
+    pub fn security_group_referencing_support(&self) -> bool {
+        self.security_group_referencing_support
     }
 }
 impl VpcOptions {
@@ -32,6 +44,8 @@ impl VpcOptions {
 pub struct VpcOptionsBuilder {
     pub(crate) ipv6_support: ::std::option::Option<bool>,
     pub(crate) appliance_mode_support: ::std::option::Option<bool>,
+    pub(crate) dns_support: ::std::option::Option<bool>,
+    pub(crate) security_group_referencing_support: ::std::option::Option<bool>,
 }
 impl VpcOptionsBuilder {
     /// <p>Indicates whether IPv6 is supported.</p>
@@ -62,11 +76,41 @@ impl VpcOptionsBuilder {
     pub fn get_appliance_mode_support(&self) -> &::std::option::Option<bool> {
         &self.appliance_mode_support
     }
+    /// <p>Indicates whether DNS is supported.</p>
+    pub fn dns_support(mut self, input: bool) -> Self {
+        self.dns_support = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates whether DNS is supported.</p>
+    pub fn set_dns_support(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.dns_support = input;
+        self
+    }
+    /// <p>Indicates whether DNS is supported.</p>
+    pub fn get_dns_support(&self) -> &::std::option::Option<bool> {
+        &self.dns_support
+    }
+    /// <p>Indicates whether security group referencing is enabled for this VPC attachment. The default is <code>true</code>. However, at the core network policy-level the default is set to <code>false</code>.</p>
+    pub fn security_group_referencing_support(mut self, input: bool) -> Self {
+        self.security_group_referencing_support = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates whether security group referencing is enabled for this VPC attachment. The default is <code>true</code>. However, at the core network policy-level the default is set to <code>false</code>.</p>
+    pub fn set_security_group_referencing_support(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.security_group_referencing_support = input;
+        self
+    }
+    /// <p>Indicates whether security group referencing is enabled for this VPC attachment. The default is <code>true</code>. However, at the core network policy-level the default is set to <code>false</code>.</p>
+    pub fn get_security_group_referencing_support(&self) -> &::std::option::Option<bool> {
+        &self.security_group_referencing_support
+    }
     /// Consumes the builder and constructs a [`VpcOptions`](crate::types::VpcOptions).
     pub fn build(self) -> crate::types::VpcOptions {
         crate::types::VpcOptions {
             ipv6_support: self.ipv6_support.unwrap_or_default(),
             appliance_mode_support: self.appliance_mode_support.unwrap_or_default(),
+            dns_support: self.dns_support.unwrap_or_default(),
+            security_group_referencing_support: self.security_group_referencing_support.unwrap_or_default(),
         }
     }
 }

@@ -364,4 +364,18 @@ impl CreateWebACLFluentBuilder {
     pub fn get_association_config(&self) -> &::std::option::Option<crate::types::AssociationConfig> {
         self.inner.get_association_config()
     }
+    /// <p>Specifies the type of DDoS protection to apply to web request data for a web ACL. For most scenarios, it is recommended to use the default protection level, <code>ACTIVE_UNDER_DDOS</code>. If a web ACL is associated with multiple Application Load Balancers, the changes you make to DDoS protection in that web ACL will apply to all associated Application Load Balancers.</p>
+    pub fn on_source_d_do_s_protection_config(mut self, input: crate::types::OnSourceDDoSProtectionConfig) -> Self {
+        self.inner = self.inner.on_source_d_do_s_protection_config(input);
+        self
+    }
+    /// <p>Specifies the type of DDoS protection to apply to web request data for a web ACL. For most scenarios, it is recommended to use the default protection level, <code>ACTIVE_UNDER_DDOS</code>. If a web ACL is associated with multiple Application Load Balancers, the changes you make to DDoS protection in that web ACL will apply to all associated Application Load Balancers.</p>
+    pub fn set_on_source_d_do_s_protection_config(mut self, input: ::std::option::Option<crate::types::OnSourceDDoSProtectionConfig>) -> Self {
+        self.inner = self.inner.set_on_source_d_do_s_protection_config(input);
+        self
+    }
+    /// <p>Specifies the type of DDoS protection to apply to web request data for a web ACL. For most scenarios, it is recommended to use the default protection level, <code>ACTIVE_UNDER_DDOS</code>. If a web ACL is associated with multiple Application Load Balancers, the changes you make to DDoS protection in that web ACL will apply to all associated Application Load Balancers.</p>
+    pub fn get_on_source_d_do_s_protection_config(&self) -> &::std::option::Option<crate::types::OnSourceDDoSProtectionConfig> {
+        self.inner.get_on_source_d_do_s_protection_config()
+    }
 }

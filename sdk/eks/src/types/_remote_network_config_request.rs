@@ -10,7 +10,7 @@ pub struct RemoteNetworkConfigRequest {
     /// <p>It must satisfy the following requirements:</p>
     /// <ul>
     /// <li>
-    /// <p>Each block must be within an <code>IPv4</code> RFC-1918 network range. Minimum allowed size is /24, maximum allowed size is /8. Publicly-routable addresses aren't supported.</p></li>
+    /// <p>Each block must be within an <code>IPv4</code> RFC-1918 network range. Minimum allowed size is /32, maximum allowed size is /8. Publicly-routable addresses aren't supported.</p></li>
     /// <li>
     /// <p>Each block cannot overlap with the range of the VPC CIDR blocks for your EKS resources, or the block of the Kubernetes service IP range.</p></li>
     /// <li>
@@ -29,7 +29,7 @@ pub struct RemoteNetworkConfigRequest {
     /// <p>It must satisfy the following requirements:</p>
     /// <ul>
     /// <li>
-    /// <p>Each block must be within an <code>IPv4</code> RFC-1918 network range. Minimum allowed size is /24, maximum allowed size is /8. Publicly-routable addresses aren't supported.</p></li>
+    /// <p>Each block must be within an <code>IPv4</code> RFC-1918 network range. Minimum allowed size is /32, maximum allowed size is /8. Publicly-routable addresses aren't supported.</p></li>
     /// <li>
     /// <p>Each block cannot overlap with the range of the VPC CIDR blocks for your EKS resources, or the block of the Kubernetes service IP range.</p></li>
     /// </ul>
@@ -42,7 +42,7 @@ impl RemoteNetworkConfigRequest {
     /// <p>It must satisfy the following requirements:</p>
     /// <ul>
     /// <li>
-    /// <p>Each block must be within an <code>IPv4</code> RFC-1918 network range. Minimum allowed size is /24, maximum allowed size is /8. Publicly-routable addresses aren't supported.</p></li>
+    /// <p>Each block must be within an <code>IPv4</code> RFC-1918 network range. Minimum allowed size is /32, maximum allowed size is /8. Publicly-routable addresses aren't supported.</p></li>
     /// <li>
     /// <p>Each block cannot overlap with the range of the VPC CIDR blocks for your EKS resources, or the block of the Kubernetes service IP range.</p></li>
     /// <li>
@@ -65,7 +65,7 @@ impl RemoteNetworkConfigRequest {
     /// <p>It must satisfy the following requirements:</p>
     /// <ul>
     /// <li>
-    /// <p>Each block must be within an <code>IPv4</code> RFC-1918 network range. Minimum allowed size is /24, maximum allowed size is /8. Publicly-routable addresses aren't supported.</p></li>
+    /// <p>Each block must be within an <code>IPv4</code> RFC-1918 network range. Minimum allowed size is /32, maximum allowed size is /8. Publicly-routable addresses aren't supported.</p></li>
     /// <li>
     /// <p>Each block cannot overlap with the range of the VPC CIDR blocks for your EKS resources, or the block of the Kubernetes service IP range.</p></li>
     /// </ul>
@@ -100,7 +100,7 @@ impl RemoteNetworkConfigRequestBuilder {
     /// <p>It must satisfy the following requirements:</p>
     /// <ul>
     /// <li>
-    /// <p>Each block must be within an <code>IPv4</code> RFC-1918 network range. Minimum allowed size is /24, maximum allowed size is /8. Publicly-routable addresses aren't supported.</p></li>
+    /// <p>Each block must be within an <code>IPv4</code> RFC-1918 network range. Minimum allowed size is /32, maximum allowed size is /8. Publicly-routable addresses aren't supported.</p></li>
     /// <li>
     /// <p>Each block cannot overlap with the range of the VPC CIDR blocks for your EKS resources, or the block of the Kubernetes service IP range.</p></li>
     /// <li>
@@ -124,7 +124,7 @@ impl RemoteNetworkConfigRequestBuilder {
     /// <p>It must satisfy the following requirements:</p>
     /// <ul>
     /// <li>
-    /// <p>Each block must be within an <code>IPv4</code> RFC-1918 network range. Minimum allowed size is /24, maximum allowed size is /8. Publicly-routable addresses aren't supported.</p></li>
+    /// <p>Each block must be within an <code>IPv4</code> RFC-1918 network range. Minimum allowed size is /32, maximum allowed size is /8. Publicly-routable addresses aren't supported.</p></li>
     /// <li>
     /// <p>Each block cannot overlap with the range of the VPC CIDR blocks for your EKS resources, or the block of the Kubernetes service IP range.</p></li>
     /// <li>
@@ -146,7 +146,7 @@ impl RemoteNetworkConfigRequestBuilder {
     /// <p>It must satisfy the following requirements:</p>
     /// <ul>
     /// <li>
-    /// <p>Each block must be within an <code>IPv4</code> RFC-1918 network range. Minimum allowed size is /24, maximum allowed size is /8. Publicly-routable addresses aren't supported.</p></li>
+    /// <p>Each block must be within an <code>IPv4</code> RFC-1918 network range. Minimum allowed size is /32, maximum allowed size is /8. Publicly-routable addresses aren't supported.</p></li>
     /// <li>
     /// <p>Each block cannot overlap with the range of the VPC CIDR blocks for your EKS resources, or the block of the Kubernetes service IP range.</p></li>
     /// <li>
@@ -171,7 +171,7 @@ impl RemoteNetworkConfigRequestBuilder {
     /// <p>It must satisfy the following requirements:</p>
     /// <ul>
     /// <li>
-    /// <p>Each block must be within an <code>IPv4</code> RFC-1918 network range. Minimum allowed size is /24, maximum allowed size is /8. Publicly-routable addresses aren't supported.</p></li>
+    /// <p>Each block must be within an <code>IPv4</code> RFC-1918 network range. Minimum allowed size is /32, maximum allowed size is /8. Publicly-routable addresses aren't supported.</p></li>
     /// <li>
     /// <p>Each block cannot overlap with the range of the VPC CIDR blocks for your EKS resources, or the block of the Kubernetes service IP range.</p></li>
     /// </ul>
@@ -187,7 +187,7 @@ impl RemoteNetworkConfigRequestBuilder {
     /// <p>It must satisfy the following requirements:</p>
     /// <ul>
     /// <li>
-    /// <p>Each block must be within an <code>IPv4</code> RFC-1918 network range. Minimum allowed size is /24, maximum allowed size is /8. Publicly-routable addresses aren't supported.</p></li>
+    /// <p>Each block must be within an <code>IPv4</code> RFC-1918 network range. Minimum allowed size is /32, maximum allowed size is /8. Publicly-routable addresses aren't supported.</p></li>
     /// <li>
     /// <p>Each block cannot overlap with the range of the VPC CIDR blocks for your EKS resources, or the block of the Kubernetes service IP range.</p></li>
     /// </ul>
@@ -201,7 +201,7 @@ impl RemoteNetworkConfigRequestBuilder {
     /// <p>It must satisfy the following requirements:</p>
     /// <ul>
     /// <li>
-    /// <p>Each block must be within an <code>IPv4</code> RFC-1918 network range. Minimum allowed size is /24, maximum allowed size is /8. Publicly-routable addresses aren't supported.</p></li>
+    /// <p>Each block must be within an <code>IPv4</code> RFC-1918 network range. Minimum allowed size is /32, maximum allowed size is /8. Publicly-routable addresses aren't supported.</p></li>
     /// <li>
     /// <p>Each block cannot overlap with the range of the VPC CIDR blocks for your EKS resources, or the block of the Kubernetes service IP range.</p></li>
     /// </ul>

@@ -94,5 +94,11 @@ pub fn ser_create_web_acl_input_input(
         crate::protocol_serde::shape_association_config::ser_association_config(&mut object_31, var_30)?;
         object_31.finish();
     }
+    if let Some(var_32) = &input.on_source_d_do_s_protection_config {
+        #[allow(unused_mut)]
+        let mut object_33 = object.key("OnSourceDDoSProtectionConfig").start_object();
+        crate::protocol_serde::shape_on_source_d_do_s_protection_config::ser_on_source_d_do_s_protection_config(&mut object_33, var_32)?;
+        object_33.finish();
+    }
     Ok(())
 }

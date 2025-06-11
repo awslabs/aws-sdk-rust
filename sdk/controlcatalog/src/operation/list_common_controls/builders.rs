@@ -144,19 +144,19 @@ impl ListCommonControlsFluentBuilder {
         self.inner.get_next_token()
     }
     /// <p>An optional filter that narrows the results to a specific objective.</p>
-    /// <p>This filter allows you to specify one objective ARN at a time. Passing multiple ARNs in the <code>CommonControlFilter</code> isn’t currently supported.</p>
+    /// <p>This filter allows you to specify one objective ARN at a time. Passing multiple ARNs in the <code>CommonControlFilter</code> isn’t supported.</p>
     pub fn common_control_filter(mut self, input: crate::types::CommonControlFilter) -> Self {
         self.inner = self.inner.common_control_filter(input);
         self
     }
     /// <p>An optional filter that narrows the results to a specific objective.</p>
-    /// <p>This filter allows you to specify one objective ARN at a time. Passing multiple ARNs in the <code>CommonControlFilter</code> isn’t currently supported.</p>
+    /// <p>This filter allows you to specify one objective ARN at a time. Passing multiple ARNs in the <code>CommonControlFilter</code> isn’t supported.</p>
     pub fn set_common_control_filter(mut self, input: ::std::option::Option<crate::types::CommonControlFilter>) -> Self {
         self.inner = self.inner.set_common_control_filter(input);
         self
     }
     /// <p>An optional filter that narrows the results to a specific objective.</p>
-    /// <p>This filter allows you to specify one objective ARN at a time. Passing multiple ARNs in the <code>CommonControlFilter</code> isn’t currently supported.</p>
+    /// <p>This filter allows you to specify one objective ARN at a time. Passing multiple ARNs in the <code>CommonControlFilter</code> isn’t supported.</p>
     pub fn get_common_control_filter(&self) -> &::std::option::Option<crate::types::CommonControlFilter> {
         self.inner.get_common_control_filter()
     }

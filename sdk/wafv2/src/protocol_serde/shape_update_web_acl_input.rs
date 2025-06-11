@@ -88,5 +88,11 @@ pub fn ser_update_web_acl_input_input(
         crate::protocol_serde::shape_association_config::ser_association_config(&mut object_29, var_28)?;
         object_29.finish();
     }
+    if let Some(var_30) = &input.on_source_d_do_s_protection_config {
+        #[allow(unused_mut)]
+        let mut object_31 = object.key("OnSourceDDoSProtectionConfig").start_object();
+        crate::protocol_serde::shape_on_source_d_do_s_protection_config::ser_on_source_d_do_s_protection_config(&mut object_31, var_30)?;
+        object_31.finish();
+    }
     Ok(())
 }

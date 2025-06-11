@@ -22,7 +22,7 @@ impl crate::operation::list_objectives::builders::ListObjectivesInputBuilder {
 }
 /// Fluent builder constructing a request to `ListObjectives`.
 ///
-/// <p>Returns a paginated list of objectives from the Amazon Web Services Control Catalog.</p>
+/// <p>Returns a paginated list of objectives from the Control Catalog.</p>
 /// <p>You can apply an optional filter to see the objectives that belong to a specific domain. If you don’t provide a filter, the operation returns all objectives.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListObjectivesFluentBuilder {
@@ -144,19 +144,19 @@ impl ListObjectivesFluentBuilder {
         self.inner.get_next_token()
     }
     /// <p>An optional filter that narrows the results to a specific domain.</p>
-    /// <p>This filter allows you to specify one domain ARN at a time. Passing multiple ARNs in the <code>ObjectiveFilter</code> isn’t currently supported.</p>
+    /// <p>This filter allows you to specify one domain ARN at a time. Passing multiple ARNs in the <code>ObjectiveFilter</code> isn’t supported.</p>
     pub fn objective_filter(mut self, input: crate::types::ObjectiveFilter) -> Self {
         self.inner = self.inner.objective_filter(input);
         self
     }
     /// <p>An optional filter that narrows the results to a specific domain.</p>
-    /// <p>This filter allows you to specify one domain ARN at a time. Passing multiple ARNs in the <code>ObjectiveFilter</code> isn’t currently supported.</p>
+    /// <p>This filter allows you to specify one domain ARN at a time. Passing multiple ARNs in the <code>ObjectiveFilter</code> isn’t supported.</p>
     pub fn set_objective_filter(mut self, input: ::std::option::Option<crate::types::ObjectiveFilter>) -> Self {
         self.inner = self.inner.set_objective_filter(input);
         self
     }
     /// <p>An optional filter that narrows the results to a specific domain.</p>
-    /// <p>This filter allows you to specify one domain ARN at a time. Passing multiple ARNs in the <code>ObjectiveFilter</code> isn’t currently supported.</p>
+    /// <p>This filter allows you to specify one domain ARN at a time. Passing multiple ARNs in the <code>ObjectiveFilter</code> isn’t supported.</p>
     pub fn get_objective_filter(&self) -> &::std::option::Option<crate::types::ObjectiveFilter> {
         self.inner.get_objective_filter()
     }

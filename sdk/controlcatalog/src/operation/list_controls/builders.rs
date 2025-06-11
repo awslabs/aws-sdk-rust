@@ -22,7 +22,7 @@ impl crate::operation::list_controls::builders::ListControlsInputBuilder {
 }
 /// Fluent builder constructing a request to `ListControls`.
 ///
-/// <p>Returns a paginated list of all available controls in the Amazon Web Services Control Catalog library. Allows you to discover available controls. The list of controls is given as structures of type <i>controlSummary</i>. The ARN is returned in the global <i>controlcatalog</i> format, as shown in the examples.</p>
+/// <p>Returns a paginated list of all available controls in the Control Catalog library. Allows you to discover available controls. The list of controls is given as structures of type <i>controlSummary</i>. The ARN is returned in the global <i>controlcatalog</i> format, as shown in the examples.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListControlsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -141,5 +141,19 @@ impl ListControlsFluentBuilder {
     /// <p>The maximum number of results on a page or for an API request call.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_results()
+    }
+    /// <p>An optional filter that narrows the results to controls with specific implementation types or identifiers. If you don't provide a filter, the operation returns all available controls.</p>
+    pub fn filter(mut self, input: crate::types::ControlFilter) -> Self {
+        self.inner = self.inner.filter(input);
+        self
+    }
+    /// <p>An optional filter that narrows the results to controls with specific implementation types or identifiers. If you don't provide a filter, the operation returns all available controls.</p>
+    pub fn set_filter(mut self, input: ::std::option::Option<crate::types::ControlFilter>) -> Self {
+        self.inner = self.inner.set_filter(input);
+        self
+    }
+    /// <p>An optional filter that narrows the results to controls with specific implementation types or identifiers. If you don't provide a filter, the operation returns all available controls.</p>
+    pub fn get_filter(&self) -> &::std::option::Option<crate::types::ControlFilter> {
+        self.inner.get_filter()
     }
 }

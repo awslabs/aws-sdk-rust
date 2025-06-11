@@ -9,7 +9,7 @@ pub struct DescribeAddonConfigurationOutput {
     pub addon_version: ::std::option::Option<::std::string::String>,
     /// <p>A JSON schema that's used to validate the configuration values you provide when an add-on is created or updated.</p>
     pub configuration_schema: ::std::option::Option<::std::string::String>,
-    /// <p>The Kubernetes service account name used by the addon, and any suggested IAM policies. Use this information to create an IAM Role for the Addon.</p>
+    /// <p>The Kubernetes service account name used by the add-on, and any suggested IAM policies. Use this information to create an IAM Role for the add-on.</p>
     pub pod_identity_configuration: ::std::option::Option<::std::vec::Vec<crate::types::AddonPodIdentityConfiguration>>,
     _request_id: Option<String>,
 }
@@ -26,7 +26,7 @@ impl DescribeAddonConfigurationOutput {
     pub fn configuration_schema(&self) -> ::std::option::Option<&str> {
         self.configuration_schema.as_deref()
     }
-    /// <p>The Kubernetes service account name used by the addon, and any suggested IAM policies. Use this information to create an IAM Role for the Addon.</p>
+    /// <p>The Kubernetes service account name used by the add-on, and any suggested IAM policies. Use this information to create an IAM Role for the add-on.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.pod_identity_configuration.is_none()`.
     pub fn pod_identity_configuration(&self) -> &[crate::types::AddonPodIdentityConfiguration] {
@@ -102,14 +102,14 @@ impl DescribeAddonConfigurationOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_pod_identity_configuration`](Self::set_pod_identity_configuration).
     ///
-    /// <p>The Kubernetes service account name used by the addon, and any suggested IAM policies. Use this information to create an IAM Role for the Addon.</p>
+    /// <p>The Kubernetes service account name used by the add-on, and any suggested IAM policies. Use this information to create an IAM Role for the add-on.</p>
     pub fn pod_identity_configuration(mut self, input: crate::types::AddonPodIdentityConfiguration) -> Self {
         let mut v = self.pod_identity_configuration.unwrap_or_default();
         v.push(input);
         self.pod_identity_configuration = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The Kubernetes service account name used by the addon, and any suggested IAM policies. Use this information to create an IAM Role for the Addon.</p>
+    /// <p>The Kubernetes service account name used by the add-on, and any suggested IAM policies. Use this information to create an IAM Role for the add-on.</p>
     pub fn set_pod_identity_configuration(
         mut self,
         input: ::std::option::Option<::std::vec::Vec<crate::types::AddonPodIdentityConfiguration>>,
@@ -117,7 +117,7 @@ impl DescribeAddonConfigurationOutputBuilder {
         self.pod_identity_configuration = input;
         self
     }
-    /// <p>The Kubernetes service account name used by the addon, and any suggested IAM policies. Use this information to create an IAM Role for the Addon.</p>
+    /// <p>The Kubernetes service account name used by the add-on, and any suggested IAM policies. Use this information to create an IAM Role for the add-on.</p>
     pub fn get_pod_identity_configuration(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AddonPodIdentityConfiguration>> {
         &self.pod_identity_configuration
     }

@@ -20,6 +20,11 @@ where
                                     crate::protocol_serde::shape_slot_resolution_improvement_specification::de_slot_resolution_improvement_specification(tokens)?
                                 );
                             }
+                            "nluImprovement" => {
+                                builder = builder.set_nlu_improvement(
+                                    crate::protocol_serde::shape_nlu_improvement_specification::de_nlu_improvement_specification(tokens)?,
+                                );
+                            }
                             _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }
@@ -48,6 +53,12 @@ pub fn ser_runtime_settings(
         let mut object_2 = object.key("slotResolutionImprovement").start_object();
         crate::protocol_serde::shape_slot_resolution_improvement_specification::ser_slot_resolution_improvement_specification(&mut object_2, var_1)?;
         object_2.finish();
+    }
+    if let Some(var_3) = &input.nlu_improvement {
+        #[allow(unused_mut)]
+        let mut object_4 = object.key("nluImprovement").start_object();
+        crate::protocol_serde::shape_nlu_improvement_specification::ser_nlu_improvement_specification(&mut object_4, var_3)?;
+        object_4.finish();
     }
     Ok(())
 }

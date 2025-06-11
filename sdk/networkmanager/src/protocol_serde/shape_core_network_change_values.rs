@@ -67,6 +67,16 @@ where
                                 crate::protocol_serde::shape_service_insertion_action_list::de_service_insertion_action_list(tokens)?,
                             );
                         }
+                        "VpnEcmpSupport" => {
+                            builder = builder.set_vpn_ecmp_support(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                        }
+                        "DnsSupport" => {
+                            builder = builder.set_dns_support(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                        }
+                        "SecurityGroupReferencingSupport" => {
+                            builder = builder
+                                .set_security_group_referencing_support(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

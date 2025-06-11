@@ -777,6 +777,15 @@ pub(crate) fn grammar_slot_type_source_correct_errors(
     builder
 }
 
+pub(crate) fn nlu_improvement_specification_correct_errors(
+    mut builder: crate::types::builders::NluImprovementSpecificationBuilder,
+) -> crate::types::builders::NluImprovementSpecificationBuilder {
+    if builder.enabled.is_none() {
+        builder.enabled = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn opensearch_configuration_correct_errors(
     mut builder: crate::types::builders::OpensearchConfigurationBuilder,
 ) -> crate::types::builders::OpensearchConfigurationBuilder {

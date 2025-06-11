@@ -65,6 +65,8 @@ pub struct WebAcl {
     pub association_config: ::std::option::Option<crate::types::AssociationConfig>,
     /// <p>Indicates whether this web ACL was created by a customer account and then retrofitted by Firewall Manager. If true, then the web ACL is currently being managed by a Firewall Manager WAF policy, and only Firewall Manager can manage any Firewall Manager rule groups in the web ACL. See also the properties <code>ManagedByFirewallManager</code>, <code>PreProcessFirewallManagerRuleGroups</code>, and <code>PostProcessFirewallManagerRuleGroups</code>.</p>
     pub retrofitted_by_firewall_manager: bool,
+    /// <p>Configures the level of DDoS protection that applies to web ACLs associated with Application Load Balancers.</p>
+    pub on_source_d_do_s_protection_config: ::std::option::Option<crate::types::OnSourceDDoSProtectionConfig>,
 }
 impl WebAcl {
     /// <p>The name of the web ACL. You cannot change the name of a web ACL after you create it.</p>
@@ -179,6 +181,10 @@ impl WebAcl {
     pub fn retrofitted_by_firewall_manager(&self) -> bool {
         self.retrofitted_by_firewall_manager
     }
+    /// <p>Configures the level of DDoS protection that applies to web ACLs associated with Application Load Balancers.</p>
+    pub fn on_source_d_do_s_protection_config(&self) -> ::std::option::Option<&crate::types::OnSourceDDoSProtectionConfig> {
+        self.on_source_d_do_s_protection_config.as_ref()
+    }
 }
 impl WebAcl {
     /// Creates a new builder-style object to manufacture [`WebAcl`](crate::types::WebAcl).
@@ -210,6 +216,7 @@ pub struct WebAclBuilder {
     pub(crate) token_domains: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) association_config: ::std::option::Option<crate::types::AssociationConfig>,
     pub(crate) retrofitted_by_firewall_manager: ::std::option::Option<bool>,
+    pub(crate) on_source_d_do_s_protection_config: ::std::option::Option<crate::types::OnSourceDDoSProtectionConfig>,
 }
 impl WebAclBuilder {
     /// <p>The name of the web ACL. You cannot change the name of a web ACL after you create it.</p>
@@ -593,6 +600,20 @@ impl WebAclBuilder {
     pub fn get_retrofitted_by_firewall_manager(&self) -> &::std::option::Option<bool> {
         &self.retrofitted_by_firewall_manager
     }
+    /// <p>Configures the level of DDoS protection that applies to web ACLs associated with Application Load Balancers.</p>
+    pub fn on_source_d_do_s_protection_config(mut self, input: crate::types::OnSourceDDoSProtectionConfig) -> Self {
+        self.on_source_d_do_s_protection_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Configures the level of DDoS protection that applies to web ACLs associated with Application Load Balancers.</p>
+    pub fn set_on_source_d_do_s_protection_config(mut self, input: ::std::option::Option<crate::types::OnSourceDDoSProtectionConfig>) -> Self {
+        self.on_source_d_do_s_protection_config = input;
+        self
+    }
+    /// <p>Configures the level of DDoS protection that applies to web ACLs associated with Application Load Balancers.</p>
+    pub fn get_on_source_d_do_s_protection_config(&self) -> &::std::option::Option<crate::types::OnSourceDDoSProtectionConfig> {
+        &self.on_source_d_do_s_protection_config
+    }
     /// Consumes the builder and constructs a [`WebAcl`](crate::types::WebAcl).
     /// This method will fail if any of the following fields are not set:
     /// - [`name`](crate::types::builders::WebAclBuilder::name)
@@ -631,6 +652,7 @@ impl WebAclBuilder {
             token_domains: self.token_domains,
             association_config: self.association_config,
             retrofitted_by_firewall_manager: self.retrofitted_by_firewall_manager.unwrap_or_default(),
+            on_source_d_do_s_protection_config: self.on_source_d_do_s_protection_config,
         })
     }
 }

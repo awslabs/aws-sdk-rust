@@ -35,7 +35,9 @@ pub struct ConnectionPoolConfiguration {
     pub session_pinning_filters: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Add an initialization query, or modify the current one. You can specify one or more SQL statements for the proxy to run when opening each new database connection. The setting is typically used with <code>SET</code> statements to make sure that each connection has identical settings. Make sure the query added here is valid. This is an optional field, so you can choose to leave it empty. For including multiple variables in a single SET statement, use a comma separator.</p>
     /// <p>For example: <code>SET variable1=value1, variable2=value2</code></p>
-    /// <p>Default: no initialization query</p>
+    /// <p>Default: no initialization query</p><important>
+    /// <p>Since you can access initialization query as part of target group configuration, it is not protected by authentication or cryptographic methods. Anyone with access to view or manage your proxy target group configuration can view the initialization query. You should not add sensitive data, such as passwords or long-lived encryption keys, to this option.</p>
+    /// </important>
     pub init_query: ::std::option::Option<::std::string::String>,
 }
 impl ConnectionPoolConfiguration {
@@ -80,7 +82,9 @@ impl ConnectionPoolConfiguration {
     }
     /// <p>Add an initialization query, or modify the current one. You can specify one or more SQL statements for the proxy to run when opening each new database connection. The setting is typically used with <code>SET</code> statements to make sure that each connection has identical settings. Make sure the query added here is valid. This is an optional field, so you can choose to leave it empty. For including multiple variables in a single SET statement, use a comma separator.</p>
     /// <p>For example: <code>SET variable1=value1, variable2=value2</code></p>
-    /// <p>Default: no initialization query</p>
+    /// <p>Default: no initialization query</p><important>
+    /// <p>Since you can access initialization query as part of target group configuration, it is not protected by authentication or cryptographic methods. Anyone with access to view or manage your proxy target group configuration can view the initialization query. You should not add sensitive data, such as passwords or long-lived encryption keys, to this option.</p>
+    /// </important>
     pub fn init_query(&self) -> ::std::option::Option<&str> {
         self.init_query.as_deref()
     }
@@ -230,21 +234,27 @@ impl ConnectionPoolConfigurationBuilder {
     }
     /// <p>Add an initialization query, or modify the current one. You can specify one or more SQL statements for the proxy to run when opening each new database connection. The setting is typically used with <code>SET</code> statements to make sure that each connection has identical settings. Make sure the query added here is valid. This is an optional field, so you can choose to leave it empty. For including multiple variables in a single SET statement, use a comma separator.</p>
     /// <p>For example: <code>SET variable1=value1, variable2=value2</code></p>
-    /// <p>Default: no initialization query</p>
+    /// <p>Default: no initialization query</p><important>
+    /// <p>Since you can access initialization query as part of target group configuration, it is not protected by authentication or cryptographic methods. Anyone with access to view or manage your proxy target group configuration can view the initialization query. You should not add sensitive data, such as passwords or long-lived encryption keys, to this option.</p>
+    /// </important>
     pub fn init_query(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.init_query = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Add an initialization query, or modify the current one. You can specify one or more SQL statements for the proxy to run when opening each new database connection. The setting is typically used with <code>SET</code> statements to make sure that each connection has identical settings. Make sure the query added here is valid. This is an optional field, so you can choose to leave it empty. For including multiple variables in a single SET statement, use a comma separator.</p>
     /// <p>For example: <code>SET variable1=value1, variable2=value2</code></p>
-    /// <p>Default: no initialization query</p>
+    /// <p>Default: no initialization query</p><important>
+    /// <p>Since you can access initialization query as part of target group configuration, it is not protected by authentication or cryptographic methods. Anyone with access to view or manage your proxy target group configuration can view the initialization query. You should not add sensitive data, such as passwords or long-lived encryption keys, to this option.</p>
+    /// </important>
     pub fn set_init_query(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.init_query = input;
         self
     }
     /// <p>Add an initialization query, or modify the current one. You can specify one or more SQL statements for the proxy to run when opening each new database connection. The setting is typically used with <code>SET</code> statements to make sure that each connection has identical settings. Make sure the query added here is valid. This is an optional field, so you can choose to leave it empty. For including multiple variables in a single SET statement, use a comma separator.</p>
     /// <p>For example: <code>SET variable1=value1, variable2=value2</code></p>
-    /// <p>Default: no initialization query</p>
+    /// <p>Default: no initialization query</p><important>
+    /// <p>Since you can access initialization query as part of target group configuration, it is not protected by authentication or cryptographic methods. Anyone with access to view or manage your proxy target group configuration can view the initialization query. You should not add sensitive data, such as passwords or long-lived encryption keys, to this option.</p>
+    /// </important>
     pub fn get_init_query(&self) -> &::std::option::Option<::std::string::String> {
         &self.init_query
     }

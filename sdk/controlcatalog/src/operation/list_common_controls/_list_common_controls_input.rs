@@ -8,7 +8,7 @@ pub struct ListCommonControlsInput {
     /// <p>The pagination token that's used to fetch the next set of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>An optional filter that narrows the results to a specific objective.</p>
-    /// <p>This filter allows you to specify one objective ARN at a time. Passing multiple ARNs in the <code>CommonControlFilter</code> isn’t currently supported.</p>
+    /// <p>This filter allows you to specify one objective ARN at a time. Passing multiple ARNs in the <code>CommonControlFilter</code> isn’t supported.</p>
     pub common_control_filter: ::std::option::Option<crate::types::CommonControlFilter>,
 }
 impl ListCommonControlsInput {
@@ -21,7 +21,7 @@ impl ListCommonControlsInput {
         self.next_token.as_deref()
     }
     /// <p>An optional filter that narrows the results to a specific objective.</p>
-    /// <p>This filter allows you to specify one objective ARN at a time. Passing multiple ARNs in the <code>CommonControlFilter</code> isn’t currently supported.</p>
+    /// <p>This filter allows you to specify one objective ARN at a time. Passing multiple ARNs in the <code>CommonControlFilter</code> isn’t supported.</p>
     pub fn common_control_filter(&self) -> ::std::option::Option<&crate::types::CommonControlFilter> {
         self.common_control_filter.as_ref()
     }
@@ -71,19 +71,19 @@ impl ListCommonControlsInputBuilder {
         &self.next_token
     }
     /// <p>An optional filter that narrows the results to a specific objective.</p>
-    /// <p>This filter allows you to specify one objective ARN at a time. Passing multiple ARNs in the <code>CommonControlFilter</code> isn’t currently supported.</p>
+    /// <p>This filter allows you to specify one objective ARN at a time. Passing multiple ARNs in the <code>CommonControlFilter</code> isn’t supported.</p>
     pub fn common_control_filter(mut self, input: crate::types::CommonControlFilter) -> Self {
         self.common_control_filter = ::std::option::Option::Some(input);
         self
     }
     /// <p>An optional filter that narrows the results to a specific objective.</p>
-    /// <p>This filter allows you to specify one objective ARN at a time. Passing multiple ARNs in the <code>CommonControlFilter</code> isn’t currently supported.</p>
+    /// <p>This filter allows you to specify one objective ARN at a time. Passing multiple ARNs in the <code>CommonControlFilter</code> isn’t supported.</p>
     pub fn set_common_control_filter(mut self, input: ::std::option::Option<crate::types::CommonControlFilter>) -> Self {
         self.common_control_filter = input;
         self
     }
     /// <p>An optional filter that narrows the results to a specific objective.</p>
-    /// <p>This filter allows you to specify one objective ARN at a time. Passing multiple ARNs in the <code>CommonControlFilter</code> isn’t currently supported.</p>
+    /// <p>This filter allows you to specify one objective ARN at a time. Passing multiple ARNs in the <code>CommonControlFilter</code> isn’t supported.</p>
     pub fn get_common_control_filter(&self) -> &::std::option::Option<crate::types::CommonControlFilter> {
         &self.common_control_filter
     }

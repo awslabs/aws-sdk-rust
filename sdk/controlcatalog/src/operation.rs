@@ -7,6 +7,9 @@ pub mod get_control;
 /// Types for the `ListCommonControls` operation.
 pub mod list_common_controls;
 
+/// Types for the `ListControlMappings` operation.
+pub mod list_control_mappings;
+
 /// Types for the `ListControls` operation.
 pub mod list_controls;
 
