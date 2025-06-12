@@ -83,7 +83,7 @@ pub struct AppendItemIter<'a, U> {
     cur: Option<Rev<slice::Iter<'a, U>>>,
 }
 
-impl<'a, U> Debug for AppendItemIter<'a, U> {
+impl<U> Debug for AppendItemIter<'_, U> {
     fn fmt(&self, f: &mut Formatter<'_>) -> std::fmt::Result {
         write!(f, "AppendItemIter")
     }

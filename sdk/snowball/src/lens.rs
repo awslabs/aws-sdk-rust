@@ -72,59 +72,41 @@ pub(crate) fn reflens_list_pickup_locations_output_output_next_token(
 pub(crate) fn lens_describe_addresses_output_output_addresses(
     input: crate::operation::describe_addresses::DescribeAddressesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::Address>> {
-    let input = match input.addresses {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.addresses?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_cluster_jobs_output_output_job_list_entries(
     input: crate::operation::list_cluster_jobs::ListClusterJobsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::JobListEntry>> {
-    let input = match input.job_list_entries {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.job_list_entries?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_clusters_output_output_cluster_list_entries(
     input: crate::operation::list_clusters::ListClustersOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ClusterListEntry>> {
-    let input = match input.cluster_list_entries {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.cluster_list_entries?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_compatible_images_output_output_compatible_images(
     input: crate::operation::list_compatible_images::ListCompatibleImagesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::CompatibleImage>> {
-    let input = match input.compatible_images {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.compatible_images?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_jobs_output_output_job_list_entries(
     input: crate::operation::list_jobs::ListJobsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::JobListEntry>> {
-    let input = match input.job_list_entries {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.job_list_entries?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_long_term_pricing_output_output_long_term_pricing_entries(
     input: crate::operation::list_long_term_pricing::ListLongTermPricingOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::LongTermPricingListEntry>> {
-    let input = match input.long_term_pricing_entries {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.long_term_pricing_entries?;
     ::std::option::Option::Some(input)
 }

@@ -62,59 +62,41 @@ pub(crate) fn reflens_list_servers_output_output_next_token(
 pub(crate) fn lens_get_server_details_output_output_associated_applications(
     input: crate::operation::get_server_details::GetServerDetailsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::AssociatedApplication>> {
-    let input = match input.associated_applications {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.associated_applications?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_analyzable_servers_output_output_analyzable_servers(
     input: crate::operation::list_analyzable_servers::ListAnalyzableServersOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::AnalyzableServerSummary>> {
-    let input = match input.analyzable_servers {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.analyzable_servers?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_application_components_output_output_application_component_infos(
     input: crate::operation::list_application_components::ListApplicationComponentsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ApplicationComponentDetail>> {
-    let input = match input.application_component_infos {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.application_component_infos?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_collectors_output_output_collectors(
     input: crate::operation::list_collectors::ListCollectorsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::Collector>> {
-    let input = match input.collectors {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.collectors?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_import_file_task_output_output_task_infos(
     input: crate::operation::list_import_file_task::ListImportFileTaskOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ImportFileTaskInformation>> {
-    let input = match input.task_infos {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.task_infos?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_servers_output_output_server_infos(
     input: crate::operation::list_servers::ListServersOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ServerDetail>> {
-    let input = match input.server_infos {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.server_infos?;
     ::std::option::Option::Some(input)
 }

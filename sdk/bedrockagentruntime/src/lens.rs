@@ -82,10 +82,7 @@ pub(crate) fn reflens_retrieve_output_output_next_token(
 pub(crate) fn lens_get_agent_memory_output_output_memory_contents(
     input: crate::operation::get_agent_memory::GetAgentMemoryOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::Memory>> {
-    let input = match input.memory_contents {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.memory_contents?;
     ::std::option::Option::Some(input)
 }
 

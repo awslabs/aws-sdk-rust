@@ -42,39 +42,27 @@ pub(crate) fn reflens_list_projects_output_output_next_token(
 pub(crate) fn lens_list_dataset_entries_output_output_dataset_entries(
     input: crate::operation::list_dataset_entries::ListDatasetEntriesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<::std::string::String>> {
-    let input = match input.dataset_entries {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.dataset_entries?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_model_packaging_jobs_output_output_model_packaging_jobs(
     input: crate::operation::list_model_packaging_jobs::ListModelPackagingJobsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ModelPackagingJobMetadata>> {
-    let input = match input.model_packaging_jobs {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.model_packaging_jobs?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_models_output_output_models(
     input: crate::operation::list_models::ListModelsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ModelMetadata>> {
-    let input = match input.models {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.models?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_projects_output_output_projects(
     input: crate::operation::list_projects::ListProjectsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ProjectMetadata>> {
-    let input = match input.projects {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.projects?;
     ::std::option::Option::Some(input)
 }

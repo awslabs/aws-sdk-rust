@@ -102,99 +102,69 @@ pub(crate) fn reflens_list_vpc_endpoint_associations_output_output_next_token(
 pub(crate) fn lens_get_analysis_report_results_output_output_analysis_report_results(
     input: crate::operation::get_analysis_report_results::GetAnalysisReportResultsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::AnalysisTypeReportResult>> {
-    let input = match input.analysis_report_results {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.analysis_report_results?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_analysis_reports_output_output_analysis_reports(
     input: crate::operation::list_analysis_reports::ListAnalysisReportsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::AnalysisReport>> {
-    let input = match input.analysis_reports {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.analysis_reports?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_firewall_policies_output_output_firewall_policies(
     input: crate::operation::list_firewall_policies::ListFirewallPoliciesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::FirewallPolicyMetadata>> {
-    let input = match input.firewall_policies {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.firewall_policies?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_firewalls_output_output_firewalls(
     input: crate::operation::list_firewalls::ListFirewallsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::FirewallMetadata>> {
-    let input = match input.firewalls {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.firewalls?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_flow_operation_results_output_output_flows(
     input: crate::operation::list_flow_operation_results::ListFlowOperationResultsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::Flow>> {
-    let input = match input.flows {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.flows?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_flow_operations_output_output_flow_operations(
     input: crate::operation::list_flow_operations::ListFlowOperationsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::FlowOperationMetadata>> {
-    let input = match input.flow_operations {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.flow_operations?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_rule_groups_output_output_rule_groups(
     input: crate::operation::list_rule_groups::ListRuleGroupsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::RuleGroupMetadata>> {
-    let input = match input.rule_groups {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.rule_groups?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_tags_for_resource_output_output_tags(
     input: crate::operation::list_tags_for_resource::ListTagsForResourceOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
-    let input = match input.tags {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.tags?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_tls_inspection_configurations_output_output_tls_inspection_configurations(
     input: crate::operation::list_tls_inspection_configurations::ListTlsInspectionConfigurationsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::TlsInspectionConfigurationMetadata>> {
-    let input = match input.tls_inspection_configurations {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.tls_inspection_configurations?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_vpc_endpoint_associations_output_output_vpc_endpoint_associations(
     input: crate::operation::list_vpc_endpoint_associations::ListVpcEndpointAssociationsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::VpcEndpointAssociationMetadata>> {
-    let input = match input.vpc_endpoint_associations {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.vpc_endpoint_associations?;
     ::std::option::Option::Some(input)
 }

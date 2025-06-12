@@ -82,49 +82,34 @@ pub(crate) fn reflens_describe_trust_stores_output_output_next_marker(
 pub(crate) fn lens_describe_listener_certificates_output_output_certificates(
     input: crate::operation::describe_listener_certificates::DescribeListenerCertificatesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::Certificate>> {
-    let input = match input.certificates {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.certificates?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_describe_listeners_output_output_listeners(
     input: crate::operation::describe_listeners::DescribeListenersOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::Listener>> {
-    let input = match input.listeners {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.listeners?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_describe_load_balancers_output_output_load_balancers(
     input: crate::operation::describe_load_balancers::DescribeLoadBalancersOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::LoadBalancer>> {
-    let input = match input.load_balancers {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.load_balancers?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_describe_rules_output_output_rules(
     input: crate::operation::describe_rules::DescribeRulesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::Rule>> {
-    let input = match input.rules {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.rules?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_describe_target_groups_output_output_target_groups(
     input: crate::operation::describe_target_groups::DescribeTargetGroupsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::TargetGroup>> {
-    let input = match input.target_groups {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.target_groups?;
     ::std::option::Option::Some(input)
 }

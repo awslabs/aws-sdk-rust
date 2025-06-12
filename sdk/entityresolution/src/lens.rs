@@ -72,69 +72,48 @@ pub(crate) fn reflens_list_schema_mappings_output_output_next_token(
 pub(crate) fn lens_list_id_mapping_jobs_output_output_jobs(
     input: crate::operation::list_id_mapping_jobs::ListIdMappingJobsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::JobSummary>> {
-    let input = match input.jobs {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.jobs?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_id_mapping_workflows_output_output_workflow_summaries(
     input: crate::operation::list_id_mapping_workflows::ListIdMappingWorkflowsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::IdMappingWorkflowSummary>> {
-    let input = match input.workflow_summaries {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.workflow_summaries?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_id_namespaces_output_output_id_namespace_summaries(
     input: crate::operation::list_id_namespaces::ListIdNamespacesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::IdNamespaceSummary>> {
-    let input = match input.id_namespace_summaries {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.id_namespace_summaries?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_matching_jobs_output_output_jobs(
     input: crate::operation::list_matching_jobs::ListMatchingJobsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::JobSummary>> {
-    let input = match input.jobs {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.jobs?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_matching_workflows_output_output_workflow_summaries(
     input: crate::operation::list_matching_workflows::ListMatchingWorkflowsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::MatchingWorkflowSummary>> {
-    let input = match input.workflow_summaries {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.workflow_summaries?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_provider_services_output_output_provider_service_summaries(
     input: crate::operation::list_provider_services::ListProviderServicesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ProviderServiceSummary>> {
-    let input = match input.provider_service_summaries {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.provider_service_summaries?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_schema_mappings_output_output_schema_list(
     input: crate::operation::list_schema_mappings::ListSchemaMappingsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::SchemaMappingSummary>> {
-    let input = match input.schema_list {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.schema_list?;
     ::std::option::Option::Some(input)
 }

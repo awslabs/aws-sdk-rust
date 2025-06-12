@@ -52,20 +52,14 @@ pub(crate) fn reflens_list_scopes_output_output_next_token(
 pub(crate) fn lens_get_query_results_monitor_top_contributors_output_output_top_contributors(
     input: crate::operation::get_query_results_monitor_top_contributors::GetQueryResultsMonitorTopContributorsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::MonitorTopContributorsRow>> {
-    let input = match input.top_contributors {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.top_contributors?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_get_query_results_workload_insights_top_contributors_output_output_top_contributors(
     input: crate::operation::get_query_results_workload_insights_top_contributors::GetQueryResultsWorkloadInsightsTopContributorsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::WorkloadInsightsTopContributorsRow>> {
-    let input = match input.top_contributors {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.top_contributors?;
     ::std::option::Option::Some(input)
 }
 

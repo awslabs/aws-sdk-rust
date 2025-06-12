@@ -62,40 +62,28 @@ pub(crate) fn reflens_list_tags_for_resource_output_output_next_token(
 pub(crate) fn lens_describe_access_points_output_output_access_points(
     input: crate::operation::describe_access_points::DescribeAccessPointsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::AccessPointDescription>> {
-    let input = match input.access_points {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.access_points?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_describe_file_systems_output_output_file_systems(
     input: crate::operation::describe_file_systems::DescribeFileSystemsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::FileSystemDescription>> {
-    let input = match input.file_systems {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.file_systems?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_describe_mount_targets_output_output_mount_targets(
     input: crate::operation::describe_mount_targets::DescribeMountTargetsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::MountTargetDescription>> {
-    let input = match input.mount_targets {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.mount_targets?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_describe_replication_configurations_output_output_replications(
     input: crate::operation::describe_replication_configurations::DescribeReplicationConfigurationsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ReplicationConfigurationDescription>> {
-    let input = match input.replications {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.replications?;
     ::std::option::Option::Some(input)
 }
 

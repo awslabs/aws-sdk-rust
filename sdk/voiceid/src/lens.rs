@@ -62,59 +62,41 @@ pub(crate) fn reflens_list_watchlists_output_output_next_token(
 pub(crate) fn lens_list_domains_output_output_domain_summaries(
     input: crate::operation::list_domains::ListDomainsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::DomainSummary>> {
-    let input = match input.domain_summaries {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.domain_summaries?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_fraudster_registration_jobs_output_output_job_summaries(
     input: crate::operation::list_fraudster_registration_jobs::ListFraudsterRegistrationJobsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::FraudsterRegistrationJobSummary>> {
-    let input = match input.job_summaries {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.job_summaries?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_fraudsters_output_output_fraudster_summaries(
     input: crate::operation::list_fraudsters::ListFraudstersOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::FraudsterSummary>> {
-    let input = match input.fraudster_summaries {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.fraudster_summaries?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_speaker_enrollment_jobs_output_output_job_summaries(
     input: crate::operation::list_speaker_enrollment_jobs::ListSpeakerEnrollmentJobsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::SpeakerEnrollmentJobSummary>> {
-    let input = match input.job_summaries {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.job_summaries?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_speakers_output_output_speaker_summaries(
     input: crate::operation::list_speakers::ListSpeakersOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::SpeakerSummary>> {
-    let input = match input.speaker_summaries {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.speaker_summaries?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_watchlists_output_output_watchlist_summaries(
     input: crate::operation::list_watchlists::ListWatchlistsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::WatchlistSummary>> {
-    let input = match input.watchlist_summaries {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.watchlist_summaries?;
     ::std::option::Option::Some(input)
 }

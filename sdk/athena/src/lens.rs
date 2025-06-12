@@ -152,39 +152,27 @@ pub(crate) fn reflens_list_work_groups_output_output_next_token(
 pub(crate) fn lens_list_data_catalogs_output_output_data_catalogs_summary(
     input: crate::operation::list_data_catalogs::ListDataCatalogsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::DataCatalogSummary>> {
-    let input = match input.data_catalogs_summary {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.data_catalogs_summary?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_databases_output_output_database_list(
     input: crate::operation::list_databases::ListDatabasesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::Database>> {
-    let input = match input.database_list {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.database_list?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_table_metadata_output_output_table_metadata_list(
     input: crate::operation::list_table_metadata::ListTableMetadataOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::TableMetadata>> {
-    let input = match input.table_metadata_list {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.table_metadata_list?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_tags_for_resource_output_output_tags(
     input: crate::operation::list_tags_for_resource::ListTagsForResourceOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
-    let input = match input.tags {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.tags?;
     ::std::option::Option::Some(input)
 }

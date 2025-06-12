@@ -13,6 +13,7 @@
 /// # let messagetype = unimplemented!();
 /// match messagetype {
 ///     MessageType::Digest => { /* ... */ },
+///     MessageType::ExternalMu => { /* ... */ },
 ///     MessageType::Raw => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -45,6 +46,8 @@ pub enum MessageType {
     #[allow(missing_docs)] // documentation missing in model
     Digest,
     #[allow(missing_docs)] // documentation missing in model
+    ExternalMu,
+    #[allow(missing_docs)] // documentation missing in model
     Raw,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
@@ -54,6 +57,7 @@ impl ::std::convert::From<&str> for MessageType {
     fn from(s: &str) -> Self {
         match s {
             "DIGEST" => MessageType::Digest,
+            "EXTERNAL_MU" => MessageType::ExternalMu,
             "RAW" => MessageType::Raw,
             other => MessageType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -71,13 +75,14 @@ impl MessageType {
     pub fn as_str(&self) -> &str {
         match self {
             MessageType::Digest => "DIGEST",
+            MessageType::ExternalMu => "EXTERNAL_MU",
             MessageType::Raw => "RAW",
             MessageType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["DIGEST", "RAW"]
+        &["DIGEST", "EXTERNAL_MU", "RAW"]
     }
 }
 impl ::std::convert::AsRef<str> for MessageType {
@@ -101,6 +106,7 @@ impl ::std::fmt::Display for MessageType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             MessageType::Digest => write!(f, "DIGEST"),
+            MessageType::ExternalMu => write!(f, "EXTERNAL_MU"),
             MessageType::Raw => write!(f, "RAW"),
             MessageType::Unknown(value) => write!(f, "{}", value),
         }

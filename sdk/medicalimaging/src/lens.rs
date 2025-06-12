@@ -42,10 +42,7 @@ pub(crate) fn reflens_search_image_sets_output_output_next_token(
 pub(crate) fn lens_list_datastores_output_output_datastore_summaries(
     input: crate::operation::list_datastores::ListDatastoresOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::DatastoreSummary>> {
-    let input = match input.datastore_summaries {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.datastore_summaries?;
     ::std::option::Option::Some(input)
 }
 

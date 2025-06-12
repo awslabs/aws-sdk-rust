@@ -142,7 +142,7 @@ impl ProvideRegion for Region {
     }
 }
 
-impl<'a> ProvideRegion for &'a Region {
+impl ProvideRegion for &Region {
     fn region(&self) -> future::ProvideRegion<'_> {
         future::ProvideRegion::ready(Some((*self).clone()))
     }

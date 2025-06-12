@@ -82,10 +82,7 @@ pub(crate) fn reflens_list_webhooks_output_output_next_token(
 pub(crate) fn lens_list_action_executions_output_output_action_execution_details(
     input: crate::operation::list_action_executions::ListActionExecutionsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ActionExecutionDetail>> {
-    let input = match input.action_execution_details {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.action_execution_details?;
     ::std::option::Option::Some(input)
 }
 
@@ -99,59 +96,41 @@ pub(crate) fn lens_list_action_types_output_output_action_types(
 pub(crate) fn lens_list_deploy_action_execution_targets_output_output_targets(
     input: crate::operation::list_deploy_action_execution_targets::ListDeployActionExecutionTargetsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::DeployActionExecutionTarget>> {
-    let input = match input.targets {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.targets?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_pipeline_executions_output_output_pipeline_execution_summaries(
     input: crate::operation::list_pipeline_executions::ListPipelineExecutionsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::PipelineExecutionSummary>> {
-    let input = match input.pipeline_execution_summaries {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.pipeline_execution_summaries?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_pipelines_output_output_pipelines(
     input: crate::operation::list_pipelines::ListPipelinesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::PipelineSummary>> {
-    let input = match input.pipelines {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.pipelines?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_rule_executions_output_output_rule_execution_details(
     input: crate::operation::list_rule_executions::ListRuleExecutionsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::RuleExecutionDetail>> {
-    let input = match input.rule_execution_details {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.rule_execution_details?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_tags_for_resource_output_output_tags(
     input: crate::operation::list_tags_for_resource::ListTagsForResourceOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
-    let input = match input.tags {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.tags?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_webhooks_output_output_webhooks(
     input: crate::operation::list_webhooks::ListWebhooksOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ListWebhookItem>> {
-    let input = match input.webhooks {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.webhooks?;
     ::std::option::Option::Some(input)
 }

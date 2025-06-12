@@ -202,199 +202,139 @@ pub(crate) fn reflens_list_signal_maps_output_output_next_token(
 pub(crate) fn lens_describe_schedule_output_output_schedule_actions(
     input: crate::operation::describe_schedule::DescribeScheduleOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ScheduleAction>> {
-    let input = match input.schedule_actions {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.schedule_actions?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_channel_placement_groups_output_output_channel_placement_groups(
     input: crate::operation::list_channel_placement_groups::ListChannelPlacementGroupsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::DescribeChannelPlacementGroupSummary>> {
-    let input = match input.channel_placement_groups {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.channel_placement_groups?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_channels_output_output_channels(
     input: crate::operation::list_channels::ListChannelsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ChannelSummary>> {
-    let input = match input.channels {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.channels?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_cloud_watch_alarm_template_groups_output_output_cloud_watch_alarm_template_groups(
     input: crate::operation::list_cloud_watch_alarm_template_groups::ListCloudWatchAlarmTemplateGroupsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::CloudWatchAlarmTemplateGroupSummary>> {
-    let input = match input.cloud_watch_alarm_template_groups {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.cloud_watch_alarm_template_groups?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_cloud_watch_alarm_templates_output_output_cloud_watch_alarm_templates(
     input: crate::operation::list_cloud_watch_alarm_templates::ListCloudWatchAlarmTemplatesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::CloudWatchAlarmTemplateSummary>> {
-    let input = match input.cloud_watch_alarm_templates {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.cloud_watch_alarm_templates?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_clusters_output_output_clusters(
     input: crate::operation::list_clusters::ListClustersOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::DescribeClusterSummary>> {
-    let input = match input.clusters {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.clusters?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_event_bridge_rule_template_groups_output_output_event_bridge_rule_template_groups(
     input: crate::operation::list_event_bridge_rule_template_groups::ListEventBridgeRuleTemplateGroupsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::EventBridgeRuleTemplateGroupSummary>> {
-    let input = match input.event_bridge_rule_template_groups {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.event_bridge_rule_template_groups?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_event_bridge_rule_templates_output_output_event_bridge_rule_templates(
     input: crate::operation::list_event_bridge_rule_templates::ListEventBridgeRuleTemplatesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::EventBridgeRuleTemplateSummary>> {
-    let input = match input.event_bridge_rule_templates {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.event_bridge_rule_templates?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_input_device_transfers_output_output_input_device_transfers(
     input: crate::operation::list_input_device_transfers::ListInputDeviceTransfersOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::TransferringInputDeviceSummary>> {
-    let input = match input.input_device_transfers {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.input_device_transfers?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_input_devices_output_output_input_devices(
     input: crate::operation::list_input_devices::ListInputDevicesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::InputDeviceSummary>> {
-    let input = match input.input_devices {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.input_devices?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_input_security_groups_output_output_input_security_groups(
     input: crate::operation::list_input_security_groups::ListInputSecurityGroupsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::InputSecurityGroup>> {
-    let input = match input.input_security_groups {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.input_security_groups?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_inputs_output_output_inputs(
     input: crate::operation::list_inputs::ListInputsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::Input>> {
-    let input = match input.inputs {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.inputs?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_multiplex_programs_output_output_multiplex_programs(
     input: crate::operation::list_multiplex_programs::ListMultiplexProgramsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::MultiplexProgramSummary>> {
-    let input = match input.multiplex_programs {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.multiplex_programs?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_multiplexes_output_output_multiplexes(
     input: crate::operation::list_multiplexes::ListMultiplexesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::MultiplexSummary>> {
-    let input = match input.multiplexes {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.multiplexes?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_networks_output_output_networks(
     input: crate::operation::list_networks::ListNetworksOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::DescribeNetworkSummary>> {
-    let input = match input.networks {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.networks?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_nodes_output_output_nodes(
     input: crate::operation::list_nodes::ListNodesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::DescribeNodeSummary>> {
-    let input = match input.nodes {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.nodes?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_offerings_output_output_offerings(
     input: crate::operation::list_offerings::ListOfferingsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::Offering>> {
-    let input = match input.offerings {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.offerings?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_reservations_output_output_reservations(
     input: crate::operation::list_reservations::ListReservationsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::Reservation>> {
-    let input = match input.reservations {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.reservations?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_sdi_sources_output_output_sdi_sources(
     input: crate::operation::list_sdi_sources::ListSdiSourcesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::SdiSourceSummary>> {
-    let input = match input.sdi_sources {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.sdi_sources?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_signal_maps_output_output_signal_maps(
     input: crate::operation::list_signal_maps::ListSignalMapsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::SignalMapSummary>> {
-    let input = match input.signal_maps {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.signal_maps?;
     ::std::option::Option::Some(input)
 }

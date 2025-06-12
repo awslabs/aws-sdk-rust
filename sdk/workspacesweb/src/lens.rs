@@ -112,10 +112,7 @@ pub(crate) fn reflens_list_user_settings_output_output_next_token(
 pub(crate) fn lens_list_data_protection_settings_output_output_data_protection_settings(
     input: crate::operation::list_data_protection_settings::ListDataProtectionSettingsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::DataProtectionSettingsSummary>> {
-    let input = match input.data_protection_settings {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.data_protection_settings?;
     ::std::option::Option::Some(input)
 }
 

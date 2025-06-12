@@ -12,9 +12,6 @@ pub(crate) fn reflens_list_retained_messages_output_output_next_token(
 pub(crate) fn lens_list_retained_messages_output_output_retained_topics(
     input: crate::operation::list_retained_messages::ListRetainedMessagesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::RetainedMessageSummary>> {
-    let input = match input.retained_topics {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.retained_topics?;
     ::std::option::Option::Some(input)
 }

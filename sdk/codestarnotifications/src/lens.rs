@@ -32,29 +32,20 @@ pub(crate) fn reflens_list_targets_output_output_next_token(
 pub(crate) fn lens_list_event_types_output_output_event_types(
     input: crate::operation::list_event_types::ListEventTypesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::EventTypeSummary>> {
-    let input = match input.event_types {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.event_types?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_notification_rules_output_output_notification_rules(
     input: crate::operation::list_notification_rules::ListNotificationRulesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::NotificationRuleSummary>> {
-    let input = match input.notification_rules {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.notification_rules?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_targets_output_output_targets(
     input: crate::operation::list_targets::ListTargetsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::TargetSummary>> {
-    let input = match input.targets {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.targets?;
     ::std::option::Option::Some(input)
 }

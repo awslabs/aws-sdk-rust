@@ -12,9 +12,6 @@ pub(crate) fn reflens_list_regions_output_output_next_token(
 pub(crate) fn lens_list_regions_output_output_regions(
     input: crate::operation::list_regions::ListRegionsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::Region>> {
-    let input = match input.regions {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.regions?;
     ::std::option::Option::Some(input)
 }

@@ -452,189 +452,132 @@ pub(crate) fn reflens_search_tables_output_output_next_token(
 pub(crate) fn lens_describe_entity_output_output_fields(
     input: crate::operation::describe_entity::DescribeEntityOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::Field>> {
-    let input = match input.fields {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.fields?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_get_job_runs_output_output_job_runs(
     input: crate::operation::get_job_runs::GetJobRunsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::JobRun>> {
-    let input = match input.job_runs {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.job_runs?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_get_jobs_output_output_jobs(
     input: crate::operation::get_jobs::GetJobsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::Job>> {
-    let input = match input.jobs {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.jobs?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_get_partition_indexes_output_output_partition_index_descriptor_list(
     input: crate::operation::get_partition_indexes::GetPartitionIndexesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::PartitionIndexDescriptor>> {
-    let input = match input.partition_index_descriptor_list {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.partition_index_descriptor_list?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_get_resource_policies_output_output_get_resource_policies_response_list(
     input: crate::operation::get_resource_policies::GetResourcePoliciesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::GluePolicy>> {
-    let input = match input.get_resource_policies_response_list {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.get_resource_policies_response_list?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_get_security_configurations_output_output_security_configurations(
     input: crate::operation::get_security_configurations::GetSecurityConfigurationsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::SecurityConfiguration>> {
-    let input = match input.security_configurations {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.security_configurations?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_get_triggers_output_output_triggers(
     input: crate::operation::get_triggers::GetTriggersOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::Trigger>> {
-    let input = match input.triggers {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.triggers?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_get_workflow_runs_output_output_runs(
     input: crate::operation::get_workflow_runs::GetWorkflowRunsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::WorkflowRun>> {
-    let input = match input.runs {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.runs?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_blueprints_output_output_blueprints(
     input: crate::operation::list_blueprints::ListBlueprintsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<::std::string::String>> {
-    let input = match input.blueprints {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.blueprints?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_connection_types_output_output_connection_types(
     input: crate::operation::list_connection_types::ListConnectionTypesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ConnectionTypeBrief>> {
-    let input = match input.connection_types {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.connection_types?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_entities_output_output_entities(
     input: crate::operation::list_entities::ListEntitiesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::Entity>> {
-    let input = match input.entities {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.entities?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_jobs_output_output_job_names(
     input: crate::operation::list_jobs::ListJobsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<::std::string::String>> {
-    let input = match input.job_names {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.job_names?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_registries_output_output_registries(
     input: crate::operation::list_registries::ListRegistriesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::RegistryListItem>> {
-    let input = match input.registries {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.registries?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_schema_versions_output_output_schemas(
     input: crate::operation::list_schema_versions::ListSchemaVersionsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::SchemaVersionListItem>> {
-    let input = match input.schemas {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.schemas?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_schemas_output_output_schemas(
     input: crate::operation::list_schemas::ListSchemasOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::SchemaListItem>> {
-    let input = match input.schemas {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.schemas?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_table_optimizer_runs_output_output_table_optimizer_runs(
     input: crate::operation::list_table_optimizer_runs::ListTableOptimizerRunsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::TableOptimizerRun>> {
-    let input = match input.table_optimizer_runs {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.table_optimizer_runs?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_triggers_output_output_trigger_names(
     input: crate::operation::list_triggers::ListTriggersOutput,
 ) -> ::std::option::Option<::std::vec::Vec<::std::string::String>> {
-    let input = match input.trigger_names {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.trigger_names?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_usage_profiles_output_output_profiles(
     input: crate::operation::list_usage_profiles::ListUsageProfilesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::UsageProfileDefinition>> {
-    let input = match input.profiles {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.profiles?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_workflows_output_output_workflows(
     input: crate::operation::list_workflows::ListWorkflowsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<::std::string::String>> {
-    let input = match input.workflows {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.workflows?;
     ::std::option::Option::Some(input)
 }

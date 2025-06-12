@@ -32,29 +32,20 @@ pub(crate) fn reflens_list_scans_output_output_next_token(
 pub(crate) fn lens_get_findings_output_output_findings(
     input: crate::operation::get_findings::GetFindingsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::Finding>> {
-    let input = match input.findings {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.findings?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_findings_metrics_output_output_findings_metrics(
     input: crate::operation::list_findings_metrics::ListFindingsMetricsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::AccountFindingsMetric>> {
-    let input = match input.findings_metrics {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.findings_metrics?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_scans_output_output_summaries(
     input: crate::operation::list_scans::ListScansOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ScanSummary>> {
-    let input = match input.summaries {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.summaries?;
     ::std::option::Option::Some(input)
 }

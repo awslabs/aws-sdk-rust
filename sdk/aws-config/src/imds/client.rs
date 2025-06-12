@@ -733,8 +733,17 @@ pub(crate) mod test {
         .unwrap()
     }
 
+    pub(crate) fn imds_response_404() -> HttpResponse {
+        HttpResponse::try_from(
+            http::Response::builder()
+                .status(404)
+                .body(SdkBody::empty())
+                .unwrap(),
+        )
+        .unwrap()
+    }
+
     pub(crate) fn make_imds_client(http_client: &StaticReplayClient) -> super::Client {
-        tokio::time::pause();
         super::Client::builder()
             .configure(
                 &ProviderConfig::no_configuration()

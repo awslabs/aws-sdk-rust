@@ -32,29 +32,20 @@ pub(crate) fn reflens_list_tags_output_output_next_token(
 pub(crate) fn lens_list_certificate_authorities_output_output_certificate_authorities(
     input: crate::operation::list_certificate_authorities::ListCertificateAuthoritiesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::CertificateAuthority>> {
-    let input = match input.certificate_authorities {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.certificate_authorities?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_permissions_output_output_permissions(
     input: crate::operation::list_permissions::ListPermissionsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::Permission>> {
-    let input = match input.permissions {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.permissions?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_tags_output_output_tags(
     input: crate::operation::list_tags::ListTagsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
-    let input = match input.tags {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.tags?;
     ::std::option::Option::Some(input)
 }

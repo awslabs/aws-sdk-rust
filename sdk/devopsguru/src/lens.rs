@@ -149,19 +149,13 @@ pub(crate) fn lens_list_events_output_output_events(
 pub(crate) fn lens_list_notification_channels_output_output_channels(
     input: crate::operation::list_notification_channels::ListNotificationChannelsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::NotificationChannel>> {
-    let input = match input.channels {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.channels?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_recommendations_output_output_recommendations(
     input: crate::operation::list_recommendations::ListRecommendationsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::Recommendation>> {
-    let input = match input.recommendations {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.recommendations?;
     ::std::option::Option::Some(input)
 }

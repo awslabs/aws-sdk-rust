@@ -172,19 +172,13 @@ pub(crate) fn reflens_list_topics_detection_jobs_output_output_next_token(
 pub(crate) fn lens_list_endpoints_output_output_endpoint_properties_list(
     input: crate::operation::list_endpoints::ListEndpointsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::EndpointProperties>> {
-    let input = match input.endpoint_properties_list {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.endpoint_properties_list?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_pii_entities_detection_jobs_output_output_pii_entities_detection_job_properties_list(
     input: crate::operation::list_pii_entities_detection_jobs::ListPiiEntitiesDetectionJobsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::PiiEntitiesDetectionJobProperties>> {
-    let input = match input.pii_entities_detection_job_properties_list {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.pii_entities_detection_job_properties_list?;
     ::std::option::Option::Some(input)
 }

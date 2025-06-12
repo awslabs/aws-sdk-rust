@@ -32,29 +32,20 @@ pub(crate) fn reflens_list_profiles_output_output_next_token(
 pub(crate) fn lens_list_profile_associations_output_output_profile_associations(
     input: crate::operation::list_profile_associations::ListProfileAssociationsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ProfileAssociation>> {
-    let input = match input.profile_associations {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.profile_associations?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_profile_resource_associations_output_output_profile_resource_associations(
     input: crate::operation::list_profile_resource_associations::ListProfileResourceAssociationsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ProfileResourceAssociation>> {
-    let input = match input.profile_resource_associations {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.profile_resource_associations?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_profiles_output_output_profile_summaries(
     input: crate::operation::list_profiles::ListProfilesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ProfileSummary>> {
-    let input = match input.profile_summaries {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.profile_summaries?;
     ::std::option::Option::Some(input)
 }

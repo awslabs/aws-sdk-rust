@@ -42,39 +42,27 @@ pub(crate) fn reflens_describe_scheduled_actions_output_output_next_token(
 pub(crate) fn lens_describe_scalable_targets_output_output_scalable_targets(
     input: crate::operation::describe_scalable_targets::DescribeScalableTargetsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ScalableTarget>> {
-    let input = match input.scalable_targets {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.scalable_targets?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_describe_scaling_activities_output_output_scaling_activities(
     input: crate::operation::describe_scaling_activities::DescribeScalingActivitiesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ScalingActivity>> {
-    let input = match input.scaling_activities {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.scaling_activities?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_describe_scaling_policies_output_output_scaling_policies(
     input: crate::operation::describe_scaling_policies::DescribeScalingPoliciesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ScalingPolicy>> {
-    let input = match input.scaling_policies {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.scaling_policies?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_describe_scheduled_actions_output_output_scheduled_actions(
     input: crate::operation::describe_scheduled_actions::DescribeScheduledActionsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ScheduledAction>> {
-    let input = match input.scheduled_actions {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.scheduled_actions?;
     ::std::option::Option::Some(input)
 }

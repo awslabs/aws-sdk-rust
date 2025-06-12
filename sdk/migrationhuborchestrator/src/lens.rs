@@ -72,10 +72,7 @@ pub(crate) fn reflens_list_workflows_output_output_next_token(
 pub(crate) fn lens_list_plugins_output_output_plugins(
     input: crate::operation::list_plugins::ListPluginsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::PluginSummary>> {
-    let input = match input.plugins {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.plugins?;
     ::std::option::Option::Some(input)
 }
 
@@ -89,10 +86,7 @@ pub(crate) fn lens_list_template_step_groups_output_output_template_step_group_s
 pub(crate) fn lens_list_template_steps_output_output_template_step_summary_list(
     input: crate::operation::list_template_steps::ListTemplateStepsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::TemplateStepSummary>> {
-    let input = match input.template_step_summary_list {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.template_step_summary_list?;
     ::std::option::Option::Some(input)
 }
 

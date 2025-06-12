@@ -42,20 +42,14 @@ pub(crate) fn reflens_describe_repositories_output_output_next_token(
 pub(crate) fn lens_describe_image_tags_output_output_image_tag_details(
     input: crate::operation::describe_image_tags::DescribeImageTagsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ImageTagDetail>> {
-    let input = match input.image_tag_details {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.image_tag_details?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_describe_images_output_output_image_details(
     input: crate::operation::describe_images::DescribeImagesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ImageDetail>> {
-    let input = match input.image_details {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.image_details?;
     ::std::option::Option::Some(input)
 }
 
@@ -69,9 +63,6 @@ pub(crate) fn lens_describe_registries_output_output_registries(
 pub(crate) fn lens_describe_repositories_output_output_repositories(
     input: crate::operation::describe_repositories::DescribeRepositoriesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::Repository>> {
-    let input = match input.repositories {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.repositories?;
     ::std::option::Option::Some(input)
 }

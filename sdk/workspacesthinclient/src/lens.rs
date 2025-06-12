@@ -32,29 +32,20 @@ pub(crate) fn reflens_list_software_sets_output_output_next_token(
 pub(crate) fn lens_list_devices_output_output_devices(
     input: crate::operation::list_devices::ListDevicesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::DeviceSummary>> {
-    let input = match input.devices {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.devices?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_environments_output_output_environments(
     input: crate::operation::list_environments::ListEnvironmentsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::EnvironmentSummary>> {
-    let input = match input.environments {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.environments?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_software_sets_output_output_software_sets(
     input: crate::operation::list_software_sets::ListSoftwareSetsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::SoftwareSetSummary>> {
-    let input = match input.software_sets {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.software_sets?;
     ::std::option::Option::Some(input)
 }

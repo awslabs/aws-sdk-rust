@@ -52,49 +52,34 @@ pub(crate) fn reflens_search_schemas_output_output_next_token(
 pub(crate) fn lens_list_discoverers_output_output_discoverers(
     input: crate::operation::list_discoverers::ListDiscoverersOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::DiscovererSummary>> {
-    let input = match input.discoverers {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.discoverers?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_registries_output_output_registries(
     input: crate::operation::list_registries::ListRegistriesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::RegistrySummary>> {
-    let input = match input.registries {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.registries?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_schema_versions_output_output_schema_versions(
     input: crate::operation::list_schema_versions::ListSchemaVersionsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::SchemaVersionSummary>> {
-    let input = match input.schema_versions {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.schema_versions?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_schemas_output_output_schemas(
     input: crate::operation::list_schemas::ListSchemasOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::SchemaSummary>> {
-    let input = match input.schemas {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.schemas?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_search_schemas_output_output_schemas(
     input: crate::operation::search_schemas::SearchSchemasOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::SearchSchemaSummary>> {
-    let input = match input.schemas {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.schemas?;
     ::std::option::Option::Some(input)
 }

@@ -139,49 +139,34 @@ pub(crate) fn lens_get_work_units_output_output_work_unit_ranges(
 pub(crate) fn lens_list_data_cells_filter_output_output_data_cells_filters(
     input: crate::operation::list_data_cells_filter::ListDataCellsFilterOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::DataCellsFilter>> {
-    let input = match input.data_cells_filters {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.data_cells_filters?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_lf_tag_expressions_output_output_lf_tag_expressions(
     input: crate::operation::list_lf_tag_expressions::ListLfTagExpressionsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::LfTagExpression>> {
-    let input = match input.lf_tag_expressions {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.lf_tag_expressions?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_lf_tags_output_output_lf_tags(
     input: crate::operation::list_lf_tags::ListLfTagsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::LfTagPair>> {
-    let input = match input.lf_tags {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.lf_tags?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_search_databases_by_lf_tags_output_output_database_list(
     input: crate::operation::search_databases_by_lf_tags::SearchDatabasesByLfTagsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::TaggedDatabase>> {
-    let input = match input.database_list {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.database_list?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_search_tables_by_lf_tags_output_output_table_list(
     input: crate::operation::search_tables_by_lf_tags::SearchTablesByLfTagsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::TaggedTable>> {
-    let input = match input.table_list {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.table_list?;
     ::std::option::Option::Some(input)
 }

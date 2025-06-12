@@ -52,49 +52,34 @@ pub(crate) fn reflens_list_attribute_groups_for_application_output_output_next_t
 pub(crate) fn lens_list_applications_output_output_applications(
     input: crate::operation::list_applications::ListApplicationsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ApplicationSummary>> {
-    let input = match input.applications {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.applications?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_associated_attribute_groups_output_output_attribute_groups(
     input: crate::operation::list_associated_attribute_groups::ListAssociatedAttributeGroupsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<::std::string::String>> {
-    let input = match input.attribute_groups {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.attribute_groups?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_associated_resources_output_output_resources(
     input: crate::operation::list_associated_resources::ListAssociatedResourcesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ResourceInfo>> {
-    let input = match input.resources {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.resources?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_attribute_groups_output_output_attribute_groups(
     input: crate::operation::list_attribute_groups::ListAttributeGroupsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::AttributeGroupSummary>> {
-    let input = match input.attribute_groups {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.attribute_groups?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_attribute_groups_for_application_output_output_attribute_groups_details(
     input: crate::operation::list_attribute_groups_for_application::ListAttributeGroupsForApplicationOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::AttributeGroupDetails>> {
-    let input = match input.attribute_groups_details {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.attribute_groups_details?;
     ::std::option::Option::Some(input)
 }

@@ -32,29 +32,20 @@ pub(crate) fn reflens_list_virtual_machines_output_output_next_token(
 pub(crate) fn lens_list_gateways_output_output_gateways(
     input: crate::operation::list_gateways::ListGatewaysOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::Gateway>> {
-    let input = match input.gateways {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.gateways?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_hypervisors_output_output_hypervisors(
     input: crate::operation::list_hypervisors::ListHypervisorsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::Hypervisor>> {
-    let input = match input.hypervisors {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.hypervisors?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_virtual_machines_output_output_virtual_machines(
     input: crate::operation::list_virtual_machines::ListVirtualMachinesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::VirtualMachine>> {
-    let input = match input.virtual_machines {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.virtual_machines?;
     ::std::option::Option::Some(input)
 }

@@ -102,30 +102,21 @@ pub(crate) fn reflens_list_solutions_output_output_next_token(
 pub(crate) fn lens_list_engagement_by_accepting_invitation_tasks_output_output_task_summaries(
     input: crate::operation::list_engagement_by_accepting_invitation_tasks::ListEngagementByAcceptingInvitationTasksOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ListEngagementByAcceptingInvitationTaskSummary>> {
-    let input = match input.task_summaries {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.task_summaries?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_engagement_from_opportunity_tasks_output_output_task_summaries(
     input: crate::operation::list_engagement_from_opportunity_tasks::ListEngagementFromOpportunityTasksOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ListEngagementFromOpportunityTaskSummary>> {
-    let input = match input.task_summaries {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.task_summaries?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_engagement_invitations_output_output_engagement_invitation_summaries(
     input: crate::operation::list_engagement_invitations::ListEngagementInvitationsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::EngagementInvitationSummary>> {
-    let input = match input.engagement_invitation_summaries {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.engagement_invitation_summaries?;
     ::std::option::Option::Some(input)
 }
 

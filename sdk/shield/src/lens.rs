@@ -42,19 +42,13 @@ pub(crate) fn reflens_list_resources_in_protection_group_output_output_next_toke
 pub(crate) fn lens_list_attacks_output_output_attack_summaries(
     input: crate::operation::list_attacks::ListAttacksOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::AttackSummary>> {
-    let input = match input.attack_summaries {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.attack_summaries?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_protections_output_output_protections(
     input: crate::operation::list_protections::ListProtectionsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::Protection>> {
-    let input = match input.protections {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.protections?;
     ::std::option::Option::Some(input)
 }

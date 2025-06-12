@@ -59,39 +59,27 @@ pub(crate) fn lens_list_identity_providers_output_output_identity_provider_summa
 pub(crate) fn lens_list_instances_output_output_instance_summaries(
     input: crate::operation::list_instances::ListInstancesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::InstanceSummary>> {
-    let input = match input.instance_summaries {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.instance_summaries?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_license_server_endpoints_output_output_license_server_endpoints(
     input: crate::operation::list_license_server_endpoints::ListLicenseServerEndpointsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::LicenseServerEndpoint>> {
-    let input = match input.license_server_endpoints {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.license_server_endpoints?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_product_subscriptions_output_output_product_user_summaries(
     input: crate::operation::list_product_subscriptions::ListProductSubscriptionsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ProductUserSummary>> {
-    let input = match input.product_user_summaries {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.product_user_summaries?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_user_associations_output_output_instance_user_summaries(
     input: crate::operation::list_user_associations::ListUserAssociationsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::InstanceUserSummary>> {
-    let input = match input.instance_user_summaries {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.instance_user_summaries?;
     ::std::option::Option::Some(input)
 }

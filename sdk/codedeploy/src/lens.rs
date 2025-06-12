@@ -62,59 +62,41 @@ pub(crate) fn reflens_list_deployments_output_output_next_token(
 pub(crate) fn lens_list_application_revisions_output_output_revisions(
     input: crate::operation::list_application_revisions::ListApplicationRevisionsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::RevisionLocation>> {
-    let input = match input.revisions {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.revisions?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_applications_output_output_applications(
     input: crate::operation::list_applications::ListApplicationsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<::std::string::String>> {
-    let input = match input.applications {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.applications?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_deployment_configs_output_output_deployment_configs_list(
     input: crate::operation::list_deployment_configs::ListDeploymentConfigsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<::std::string::String>> {
-    let input = match input.deployment_configs_list {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.deployment_configs_list?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_deployment_groups_output_output_deployment_groups(
     input: crate::operation::list_deployment_groups::ListDeploymentGroupsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<::std::string::String>> {
-    let input = match input.deployment_groups {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.deployment_groups?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_deployment_instances_output_output_instances_list(
     input: crate::operation::list_deployment_instances::ListDeploymentInstancesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<::std::string::String>> {
-    let input = match input.instances_list {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.instances_list?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_deployments_output_output_deployments(
     input: crate::operation::list_deployments::ListDeploymentsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<::std::string::String>> {
-    let input = match input.deployments {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.deployments?;
     ::std::option::Option::Some(input)
 }

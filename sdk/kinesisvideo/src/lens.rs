@@ -42,39 +42,27 @@ pub(crate) fn reflens_list_streams_output_output_next_token(
 pub(crate) fn lens_describe_mapped_resource_configuration_output_output_mapped_resource_configuration_list(
     input: crate::operation::describe_mapped_resource_configuration::DescribeMappedResourceConfigurationOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::MappedResourceConfigurationListItem>> {
-    let input = match input.mapped_resource_configuration_list {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.mapped_resource_configuration_list?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_edge_agent_configurations_output_output_edge_configs(
     input: crate::operation::list_edge_agent_configurations::ListEdgeAgentConfigurationsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ListEdgeAgentConfigurationsEdgeConfig>> {
-    let input = match input.edge_configs {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.edge_configs?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_signaling_channels_output_output_channel_info_list(
     input: crate::operation::list_signaling_channels::ListSignalingChannelsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ChannelInfo>> {
-    let input = match input.channel_info_list {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.channel_info_list?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_streams_output_output_stream_info_list(
     input: crate::operation::list_streams::ListStreamsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::StreamInfo>> {
-    let input = match input.stream_info_list {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.stream_info_list?;
     ::std::option::Option::Some(input)
 }

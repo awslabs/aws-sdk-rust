@@ -68,6 +68,11 @@ where
                                     .transpose()?,
                             );
                         }
+                        "executionIamPolicy" => {
+                            builder = builder.set_execution_iam_policy(
+                                crate::protocol_serde::shape_job_run_execution_iam_policy::de_job_run_execution_iam_policy(tokens)?,
+                            );
+                        }
                         "state" => {
                             builder = builder.set_state(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

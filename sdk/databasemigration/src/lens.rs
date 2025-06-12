@@ -402,9 +402,6 @@ pub(crate) fn reflens_describe_table_statistics_output_output_marker(
 pub(crate) fn lens_describe_data_migrations_output_output_data_migrations(
     input: crate::operation::describe_data_migrations::DescribeDataMigrationsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::DataMigration>> {
-    let input = match input.data_migrations {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.data_migrations?;
     ::std::option::Option::Some(input)
 }

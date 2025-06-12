@@ -42,39 +42,27 @@ pub(crate) fn reflens_list_subscribers_output_output_next_token(
 pub(crate) fn lens_get_data_lake_sources_output_output_data_lake_sources(
     input: crate::operation::get_data_lake_sources::GetDataLakeSourcesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::DataLakeSource>> {
-    let input = match input.data_lake_sources {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.data_lake_sources?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_data_lake_exceptions_output_output_exceptions(
     input: crate::operation::list_data_lake_exceptions::ListDataLakeExceptionsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::DataLakeException>> {
-    let input = match input.exceptions {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.exceptions?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_log_sources_output_output_sources(
     input: crate::operation::list_log_sources::ListLogSourcesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::LogSource>> {
-    let input = match input.sources {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.sources?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_subscribers_output_output_subscribers(
     input: crate::operation::list_subscribers::ListSubscribersOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::SubscriberResource>> {
-    let input = match input.subscribers {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.subscribers?;
     ::std::option::Option::Some(input)
 }

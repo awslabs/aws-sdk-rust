@@ -260,6 +260,21 @@ pub(crate) fn time_window_correct_errors(mut builder: crate::types::builders::Ti
     builder
 }
 
+pub(crate) fn communication_limit_correct_errors(
+    mut builder: crate::types::builders::CommunicationLimitBuilder,
+) -> crate::types::builders::CommunicationLimitBuilder {
+    if builder.max_count_per_recipient.is_none() {
+        builder.max_count_per_recipient = Some(Default::default())
+    }
+    if builder.frequency.is_none() {
+        builder.frequency = Some(Default::default())
+    }
+    if builder.unit.is_none() {
+        builder.unit = "no value was set".parse::<crate::types::CommunicationLimitTimeUnit>().ok()
+    }
+    builder
+}
+
 pub(crate) fn email_outbound_config_correct_errors(
     mut builder: crate::types::builders::EmailOutboundConfigBuilder,
 ) -> crate::types::builders::EmailOutboundConfigBuilder {
@@ -298,21 +313,6 @@ pub(crate) fn answer_machine_detection_config_correct_errors(
 ) -> crate::types::builders::AnswerMachineDetectionConfigBuilder {
     if builder.enable_answer_machine_detection.is_none() {
         builder.enable_answer_machine_detection = Some(Default::default())
-    }
-    builder
-}
-
-pub(crate) fn communication_limit_correct_errors(
-    mut builder: crate::types::builders::CommunicationLimitBuilder,
-) -> crate::types::builders::CommunicationLimitBuilder {
-    if builder.max_count_per_recipient.is_none() {
-        builder.max_count_per_recipient = Some(Default::default())
-    }
-    if builder.frequency.is_none() {
-        builder.frequency = Some(Default::default())
-    }
-    if builder.unit.is_none() {
-        builder.unit = "no value was set".parse::<crate::types::CommunicationLimitTimeUnit>().ok()
     }
     builder
 }

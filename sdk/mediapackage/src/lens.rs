@@ -32,29 +32,20 @@ pub(crate) fn reflens_list_origin_endpoints_output_output_next_token(
 pub(crate) fn lens_list_channels_output_output_channels(
     input: crate::operation::list_channels::ListChannelsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::Channel>> {
-    let input = match input.channels {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.channels?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_harvest_jobs_output_output_harvest_jobs(
     input: crate::operation::list_harvest_jobs::ListHarvestJobsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::HarvestJob>> {
-    let input = match input.harvest_jobs {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.harvest_jobs?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_origin_endpoints_output_output_origin_endpoints(
     input: crate::operation::list_origin_endpoints::ListOriginEndpointsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::OriginEndpoint>> {
-    let input = match input.origin_endpoints {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.origin_endpoints?;
     ::std::option::Option::Some(input)
 }

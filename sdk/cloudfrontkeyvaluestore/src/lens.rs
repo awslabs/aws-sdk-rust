@@ -12,9 +12,6 @@ pub(crate) fn reflens_list_keys_output_output_next_token(
 pub(crate) fn lens_list_keys_output_output_items(
     input: crate::operation::list_keys::ListKeysOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ListKeysResponseListItem>> {
-    let input = match input.items {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.items?;
     ::std::option::Option::Some(input)
 }

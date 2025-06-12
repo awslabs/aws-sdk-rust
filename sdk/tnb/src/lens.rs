@@ -52,10 +52,7 @@ pub(crate) fn reflens_list_sol_network_packages_output_output_next_token(
 pub(crate) fn lens_list_sol_function_instances_output_output_function_instances(
     input: crate::operation::list_sol_function_instances::ListSolFunctionInstancesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ListSolFunctionInstanceInfo>> {
-    let input = match input.function_instances {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.function_instances?;
     ::std::option::Option::Some(input)
 }
 
@@ -69,20 +66,14 @@ pub(crate) fn lens_list_sol_function_packages_output_output_function_packages(
 pub(crate) fn lens_list_sol_network_instances_output_output_network_instances(
     input: crate::operation::list_sol_network_instances::ListSolNetworkInstancesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ListSolNetworkInstanceInfo>> {
-    let input = match input.network_instances {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.network_instances?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_sol_network_operations_output_output_network_operations(
     input: crate::operation::list_sol_network_operations::ListSolNetworkOperationsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ListSolNetworkOperationsInfo>> {
-    let input = match input.network_operations {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.network_operations?;
     ::std::option::Option::Some(input)
 }
 

@@ -42,39 +42,27 @@ pub(crate) fn reflens_view_billing_output_output_next_page_marker(
 pub(crate) fn lens_list_domains_output_output_domains(
     input: crate::operation::list_domains::ListDomainsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::DomainSummary>> {
-    let input = match input.domains {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.domains?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_operations_output_output_operations(
     input: crate::operation::list_operations::ListOperationsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::OperationSummary>> {
-    let input = match input.operations {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.operations?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_prices_output_output_prices(
     input: crate::operation::list_prices::ListPricesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::DomainPrice>> {
-    let input = match input.prices {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.prices?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_view_billing_output_output_billing_records(
     input: crate::operation::view_billing::ViewBillingOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::BillingRecord>> {
-    let input = match input.billing_records {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.billing_records?;
     ::std::option::Option::Some(input)
 }

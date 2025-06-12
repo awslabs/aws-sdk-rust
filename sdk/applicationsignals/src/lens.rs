@@ -83,10 +83,7 @@ pub(crate) fn lens_list_service_level_objective_exclusion_windows_output_output_
 pub(crate) fn lens_list_service_level_objectives_output_output_slo_summaries(
     input: crate::operation::list_service_level_objectives::ListServiceLevelObjectivesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ServiceLevelObjectiveSummary>> {
-    let input = match input.slo_summaries {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.slo_summaries?;
     ::std::option::Option::Some(input)
 }
 

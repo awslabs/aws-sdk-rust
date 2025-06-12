@@ -52,49 +52,34 @@ pub(crate) fn reflens_list_operations_output_output_next_token(
 pub(crate) fn lens_list_applications_output_output_applications(
     input: crate::operation::list_applications::ListApplicationsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ApplicationSummary>> {
-    let input = match input.applications {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.applications?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_components_output_output_components(
     input: crate::operation::list_components::ListComponentsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ComponentSummary>> {
-    let input = match input.components {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.components?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_databases_output_output_databases(
     input: crate::operation::list_databases::ListDatabasesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::DatabaseSummary>> {
-    let input = match input.databases {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.databases?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_operation_events_output_output_operation_events(
     input: crate::operation::list_operation_events::ListOperationEventsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::OperationEvent>> {
-    let input = match input.operation_events {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.operation_events?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_operations_output_output_operations(
     input: crate::operation::list_operations::ListOperationsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::Operation>> {
-    let input = match input.operations {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.operations?;
     ::std::option::Option::Some(input)
 }

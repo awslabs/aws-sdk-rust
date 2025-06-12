@@ -132,99 +132,69 @@ pub(crate) fn reflens_list_threat_intel_sets_output_output_next_token(
 pub(crate) fn lens_describe_malware_scans_output_output_scans(
     input: crate::operation::describe_malware_scans::DescribeMalwareScansOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::Scan>> {
-    let input = match input.scans {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.scans?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_coverage_output_output_resources(
     input: crate::operation::list_coverage::ListCoverageOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::CoverageResource>> {
-    let input = match input.resources {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.resources?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_detectors_output_output_detector_ids(
     input: crate::operation::list_detectors::ListDetectorsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<::std::string::String>> {
-    let input = match input.detector_ids {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.detector_ids?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_filters_output_output_filter_names(
     input: crate::operation::list_filters::ListFiltersOutput,
 ) -> ::std::option::Option<::std::vec::Vec<::std::string::String>> {
-    let input = match input.filter_names {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.filter_names?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_findings_output_output_finding_ids(
     input: crate::operation::list_findings::ListFindingsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<::std::string::String>> {
-    let input = match input.finding_ids {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.finding_ids?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_invitations_output_output_invitations(
     input: crate::operation::list_invitations::ListInvitationsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::Invitation>> {
-    let input = match input.invitations {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.invitations?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_ip_sets_output_output_ip_set_ids(
     input: crate::operation::list_ip_sets::ListIpSetsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<::std::string::String>> {
-    let input = match input.ip_set_ids {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.ip_set_ids?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_members_output_output_members(
     input: crate::operation::list_members::ListMembersOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::Member>> {
-    let input = match input.members {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.members?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_organization_admin_accounts_output_output_admin_accounts(
     input: crate::operation::list_organization_admin_accounts::ListOrganizationAdminAccountsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::AdminAccount>> {
-    let input = match input.admin_accounts {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.admin_accounts?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_threat_intel_sets_output_output_threat_intel_set_ids(
     input: crate::operation::list_threat_intel_sets::ListThreatIntelSetsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<::std::string::String>> {
-    let input = match input.threat_intel_set_ids {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.threat_intel_set_ids?;
     ::std::option::Option::Some(input)
 }

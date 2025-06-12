@@ -112,109 +112,76 @@ pub(crate) fn reflens_list_schema_versions_output_output_next_token(
 pub(crate) fn lens_list_credential_lockers_output_output_items(
     input: crate::operation::list_credential_lockers::ListCredentialLockersOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::CredentialLockerSummary>> {
-    let input = match input.items {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.items?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_destinations_output_output_destination_list(
     input: crate::operation::list_destinations::ListDestinationsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::DestinationSummary>> {
-    let input = match input.destination_list {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.destination_list?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_event_log_configurations_output_output_event_log_configuration_list(
     input: crate::operation::list_event_log_configurations::ListEventLogConfigurationsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::EventLogConfigurationSummary>> {
-    let input = match input.event_log_configuration_list {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.event_log_configuration_list?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_managed_thing_schemas_output_output_items(
     input: crate::operation::list_managed_thing_schemas::ListManagedThingSchemasOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ManagedThingSchemaListItem>> {
-    let input = match input.items {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.items?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_managed_things_output_output_items(
     input: crate::operation::list_managed_things::ListManagedThingsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ManagedThingSummary>> {
-    let input = match input.items {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.items?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_notification_configurations_output_output_notification_configuration_list(
     input: crate::operation::list_notification_configurations::ListNotificationConfigurationsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::NotificationConfigurationSummary>> {
-    let input = match input.notification_configuration_list {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.notification_configuration_list?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_ota_task_configurations_output_output_items(
     input: crate::operation::list_ota_task_configurations::ListOtaTaskConfigurationsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::OtaTaskConfigurationSummary>> {
-    let input = match input.items {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.items?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_ota_task_executions_output_output_execution_summaries(
     input: crate::operation::list_ota_task_executions::ListOtaTaskExecutionsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::OtaTaskExecutionSummaries>> {
-    let input = match input.execution_summaries {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.execution_summaries?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_ota_tasks_output_output_tasks(
     input: crate::operation::list_ota_tasks::ListOtaTasksOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::OtaTaskSummary>> {
-    let input = match input.tasks {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.tasks?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_provisioning_profiles_output_output_items(
     input: crate::operation::list_provisioning_profiles::ListProvisioningProfilesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ProvisioningProfileSummary>> {
-    let input = match input.items {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.items?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_schema_versions_output_output_items(
     input: crate::operation::list_schema_versions::ListSchemaVersionsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::SchemaVersionListItem>> {
-    let input = match input.items {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.items?;
     ::std::option::Option::Some(input)
 }

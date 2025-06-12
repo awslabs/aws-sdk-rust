@@ -29,9 +29,6 @@ pub(crate) fn lens_list_customer_agreements_output_output_customer_agreements(
 pub(crate) fn lens_list_reports_output_output_reports(
     input: crate::operation::list_reports::ListReportsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ReportSummary>> {
-    let input = match input.reports {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.reports?;
     ::std::option::Option::Some(input)
 }

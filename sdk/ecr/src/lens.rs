@@ -72,59 +72,41 @@ pub(crate) fn reflens_list_images_output_output_next_token(
 pub(crate) fn lens_describe_images_output_output_image_details(
     input: crate::operation::describe_images::DescribeImagesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ImageDetail>> {
-    let input = match input.image_details {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.image_details?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_describe_pull_through_cache_rules_output_output_pull_through_cache_rules(
     input: crate::operation::describe_pull_through_cache_rules::DescribePullThroughCacheRulesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::PullThroughCacheRule>> {
-    let input = match input.pull_through_cache_rules {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.pull_through_cache_rules?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_describe_repositories_output_output_repositories(
     input: crate::operation::describe_repositories::DescribeRepositoriesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::Repository>> {
-    let input = match input.repositories {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.repositories?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_describe_repository_creation_templates_output_output_repository_creation_templates(
     input: crate::operation::describe_repository_creation_templates::DescribeRepositoryCreationTemplatesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::RepositoryCreationTemplate>> {
-    let input = match input.repository_creation_templates {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.repository_creation_templates?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_get_lifecycle_policy_preview_output_output_preview_results(
     input: crate::operation::get_lifecycle_policy_preview::GetLifecyclePolicyPreviewOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::LifecyclePolicyPreviewResult>> {
-    let input = match input.preview_results {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.preview_results?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_images_output_output_image_ids(
     input: crate::operation::list_images::ListImagesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ImageIdentifier>> {
-    let input = match input.image_ids {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.image_ids?;
     ::std::option::Option::Some(input)
 }

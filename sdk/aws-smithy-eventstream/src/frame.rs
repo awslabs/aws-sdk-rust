@@ -108,7 +108,7 @@ impl DeferredSigner {
     fn acquire(&mut self) -> &mut (dyn SignMessage + Send + Sync) {
         // Can't use `if let Some(signer) = &mut self.signer` because the borrow checker isn't smart enough
         if self.signer.is_some() {
-            return self.signer.as_mut().unwrap().as_mut();
+            self.signer.as_mut().unwrap().as_mut()
         } else {
             self.signer = Some(
                 self.rx

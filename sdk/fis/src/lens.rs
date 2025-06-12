@@ -62,59 +62,41 @@ pub(crate) fn reflens_list_target_resource_types_output_output_next_token(
 pub(crate) fn lens_list_actions_output_output_actions(
     input: crate::operation::list_actions::ListActionsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ActionSummary>> {
-    let input = match input.actions {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.actions?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_experiment_resolved_targets_output_output_resolved_targets(
     input: crate::operation::list_experiment_resolved_targets::ListExperimentResolvedTargetsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ResolvedTarget>> {
-    let input = match input.resolved_targets {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.resolved_targets?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_experiment_templates_output_output_experiment_templates(
     input: crate::operation::list_experiment_templates::ListExperimentTemplatesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ExperimentTemplateSummary>> {
-    let input = match input.experiment_templates {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.experiment_templates?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_experiments_output_output_experiments(
     input: crate::operation::list_experiments::ListExperimentsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ExperimentSummary>> {
-    let input = match input.experiments {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.experiments?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_target_account_configurations_output_output_target_account_configurations(
     input: crate::operation::list_target_account_configurations::ListTargetAccountConfigurationsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::TargetAccountConfigurationSummary>> {
-    let input = match input.target_account_configurations {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.target_account_configurations?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_target_resource_types_output_output_target_resource_types(
     input: crate::operation::list_target_resource_types::ListTargetResourceTypesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::TargetResourceTypeSummary>> {
-    let input = match input.target_resource_types {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.target_resource_types?;
     ::std::option::Option::Some(input)
 }

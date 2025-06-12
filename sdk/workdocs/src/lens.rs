@@ -102,89 +102,62 @@ pub(crate) fn reflens_search_resources_output_output_marker(
 pub(crate) fn lens_describe_activities_output_output_user_activities(
     input: crate::operation::describe_activities::DescribeActivitiesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::Activity>> {
-    let input = match input.user_activities {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.user_activities?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_describe_comments_output_output_comments(
     input: crate::operation::describe_comments::DescribeCommentsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::Comment>> {
-    let input = match input.comments {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.comments?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_describe_document_versions_output_output_document_versions(
     input: crate::operation::describe_document_versions::DescribeDocumentVersionsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::DocumentVersionMetadata>> {
-    let input = match input.document_versions {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.document_versions?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_describe_groups_output_output_groups(
     input: crate::operation::describe_groups::DescribeGroupsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::GroupMetadata>> {
-    let input = match input.groups {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.groups?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_describe_notification_subscriptions_output_output_subscriptions(
     input: crate::operation::describe_notification_subscriptions::DescribeNotificationSubscriptionsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::Subscription>> {
-    let input = match input.subscriptions {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.subscriptions?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_describe_resource_permissions_output_output_principals(
     input: crate::operation::describe_resource_permissions::DescribeResourcePermissionsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::Principal>> {
-    let input = match input.principals {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.principals?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_describe_root_folders_output_output_folders(
     input: crate::operation::describe_root_folders::DescribeRootFoldersOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::FolderMetadata>> {
-    let input = match input.folders {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.folders?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_describe_users_output_output_users(
     input: crate::operation::describe_users::DescribeUsersOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::User>> {
-    let input = match input.users {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.users?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_search_resources_output_output_items(
     input: crate::operation::search_resources::SearchResourcesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ResponseItem>> {
-    let input = match input.items {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.items?;
     ::std::option::Option::Some(input)
 }

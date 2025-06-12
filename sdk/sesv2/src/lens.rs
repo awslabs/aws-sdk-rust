@@ -152,9 +152,6 @@ pub(crate) fn reflens_list_suppressed_destinations_output_output_next_token(
 pub(crate) fn lens_list_multi_region_endpoints_output_output_multi_region_endpoints(
     input: crate::operation::list_multi_region_endpoints::ListMultiRegionEndpointsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::MultiRegionEndpoint>> {
-    let input = match input.multi_region_endpoints {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.multi_region_endpoints?;
     ::std::option::Option::Some(input)
 }

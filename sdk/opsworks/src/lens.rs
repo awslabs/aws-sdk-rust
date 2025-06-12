@@ -12,9 +12,6 @@ pub(crate) fn reflens_describe_ecs_clusters_output_output_next_token(
 pub(crate) fn lens_describe_ecs_clusters_output_output_ecs_clusters(
     input: crate::operation::describe_ecs_clusters::DescribeEcsClustersOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::EcsCluster>> {
-    let input = match input.ecs_clusters {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.ecs_clusters?;
     ::std::option::Option::Some(input)
 }

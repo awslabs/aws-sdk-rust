@@ -16,6 +16,7 @@
 ///     VehicleState::Deleting => { /* ... */ },
 ///     VehicleState::Healthy => { /* ... */ },
 ///     VehicleState::Ready => { /* ... */ },
+///     VehicleState::ReadyForCheckin => { /* ... */ },
 ///     VehicleState::Suspended => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -54,6 +55,8 @@ pub enum VehicleState {
     #[allow(missing_docs)] // documentation missing in model
     Ready,
     #[allow(missing_docs)] // documentation missing in model
+    ReadyForCheckin,
+    #[allow(missing_docs)] // documentation missing in model
     Suspended,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
@@ -66,6 +69,7 @@ impl ::std::convert::From<&str> for VehicleState {
             "DELETING" => VehicleState::Deleting,
             "HEALTHY" => VehicleState::Healthy,
             "READY" => VehicleState::Ready,
+            "READY_FOR_CHECKIN" => VehicleState::ReadyForCheckin,
             "SUSPENDED" => VehicleState::Suspended,
             other => VehicleState::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -86,13 +90,14 @@ impl VehicleState {
             VehicleState::Deleting => "DELETING",
             VehicleState::Healthy => "HEALTHY",
             VehicleState::Ready => "READY",
+            VehicleState::ReadyForCheckin => "READY_FOR_CHECKIN",
             VehicleState::Suspended => "SUSPENDED",
             VehicleState::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["CREATED", "DELETING", "HEALTHY", "READY", "SUSPENDED"]
+        &["CREATED", "DELETING", "HEALTHY", "READY", "READY_FOR_CHECKIN", "SUSPENDED"]
     }
 }
 impl ::std::convert::AsRef<str> for VehicleState {
@@ -119,6 +124,7 @@ impl ::std::fmt::Display for VehicleState {
             VehicleState::Deleting => write!(f, "DELETING"),
             VehicleState::Healthy => write!(f, "HEALTHY"),
             VehicleState::Ready => write!(f, "READY"),
+            VehicleState::ReadyForCheckin => write!(f, "READY_FOR_CHECKIN"),
             VehicleState::Suspended => write!(f, "SUSPENDED"),
             VehicleState::Unknown(value) => write!(f, "{}", value),
         }

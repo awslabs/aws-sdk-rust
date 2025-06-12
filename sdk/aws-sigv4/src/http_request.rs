@@ -103,7 +103,7 @@ impl<'a> From<v4a::SigningParams<'a, SigningSettings>> for SigningParams<'a> {
     }
 }
 
-impl<'a> SigningParams<'a> {
+impl SigningParams<'_> {
     /// Return the credentials within the signing params.
     pub(crate) fn credentials(&self) -> Result<&Credentials, SigningError> {
         let identity = match self {

@@ -39,10 +39,7 @@ pub(crate) fn lens_list_supplemental_tax_registrations_output_output_tax_registr
 pub(crate) fn lens_list_tax_exemptions_output_output_tax_exemption_details_map(
     input: crate::operation::list_tax_exemptions::ListTaxExemptionsOutput,
 ) -> ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::TaxExemptionDetails>> {
-    let input = match input.tax_exemption_details_map {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.tax_exemption_details_map?;
     ::std::option::Option::Some(input)
 }
 

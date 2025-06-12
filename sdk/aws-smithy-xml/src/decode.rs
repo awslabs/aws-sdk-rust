@@ -352,7 +352,7 @@ impl<'inp> ScopedDecoder<'inp, '_> {
     }
 }
 
-impl<'inp, 'a> Iterator for ScopedDecoder<'inp, 'a> {
+impl<'inp> Iterator for ScopedDecoder<'inp, '_> {
     type Item = Result<(XmlToken<'inp>, Depth), XmlDecodeError>;
 
     fn next(&mut self) -> Option<Self::Item> {

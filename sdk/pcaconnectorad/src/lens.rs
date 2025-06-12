@@ -52,49 +52,34 @@ pub(crate) fn reflens_list_templates_output_output_next_token(
 pub(crate) fn lens_list_connectors_output_output_connectors(
     input: crate::operation::list_connectors::ListConnectorsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ConnectorSummary>> {
-    let input = match input.connectors {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.connectors?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_directory_registrations_output_output_directory_registrations(
     input: crate::operation::list_directory_registrations::ListDirectoryRegistrationsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::DirectoryRegistrationSummary>> {
-    let input = match input.directory_registrations {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.directory_registrations?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_service_principal_names_output_output_service_principal_names(
     input: crate::operation::list_service_principal_names::ListServicePrincipalNamesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ServicePrincipalNameSummary>> {
-    let input = match input.service_principal_names {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.service_principal_names?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_template_group_access_control_entries_output_output_access_control_entries(
     input: crate::operation::list_template_group_access_control_entries::ListTemplateGroupAccessControlEntriesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::AccessControlEntrySummary>> {
-    let input = match input.access_control_entries {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.access_control_entries?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_templates_output_output_templates(
     input: crate::operation::list_templates::ListTemplatesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::TemplateSummary>> {
-    let input = match input.templates {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.templates?;
     ::std::option::Option::Some(input)
 }

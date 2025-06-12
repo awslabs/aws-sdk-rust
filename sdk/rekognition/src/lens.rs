@@ -182,79 +182,55 @@ pub(crate) fn reflens_list_users_output_output_next_token(
 pub(crate) fn lens_describe_project_versions_output_output_project_version_descriptions(
     input: crate::operation::describe_project_versions::DescribeProjectVersionsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ProjectVersionDescription>> {
-    let input = match input.project_version_descriptions {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.project_version_descriptions?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_describe_projects_output_output_project_descriptions(
     input: crate::operation::describe_projects::DescribeProjectsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ProjectDescription>> {
-    let input = match input.project_descriptions {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.project_descriptions?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_collections_output_output_collection_ids(
     input: crate::operation::list_collections::ListCollectionsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<::std::string::String>> {
-    let input = match input.collection_ids {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.collection_ids?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_dataset_entries_output_output_dataset_entries(
     input: crate::operation::list_dataset_entries::ListDatasetEntriesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<::std::string::String>> {
-    let input = match input.dataset_entries {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.dataset_entries?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_dataset_labels_output_output_dataset_label_descriptions(
     input: crate::operation::list_dataset_labels::ListDatasetLabelsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::DatasetLabelDescription>> {
-    let input = match input.dataset_label_descriptions {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.dataset_label_descriptions?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_faces_output_output_faces(
     input: crate::operation::list_faces::ListFacesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::Face>> {
-    let input = match input.faces {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.faces?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_project_policies_output_output_project_policies(
     input: crate::operation::list_project_policies::ListProjectPoliciesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ProjectPolicy>> {
-    let input = match input.project_policies {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.project_policies?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_users_output_output_users(
     input: crate::operation::list_users::ListUsersOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::User>> {
-    let input = match input.users {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.users?;
     ::std::option::Option::Some(input)
 }

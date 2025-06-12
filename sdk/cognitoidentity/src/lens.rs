@@ -12,9 +12,6 @@ pub(crate) fn reflens_list_identity_pools_output_output_next_token(
 pub(crate) fn lens_list_identity_pools_output_output_identity_pools(
     input: crate::operation::list_identity_pools::ListIdentityPoolsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::IdentityPoolShortDescription>> {
-    let input = match input.identity_pools {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.identity_pools?;
     ::std::option::Option::Some(input)
 }

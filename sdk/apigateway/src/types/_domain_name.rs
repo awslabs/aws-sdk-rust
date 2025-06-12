@@ -8,7 +8,7 @@ pub struct DomainName {
     pub domain_name: ::std::option::Option<::std::string::String>,
     /// <p>The identifier for the domain name resource. Supported only for private custom domain names.</p>
     pub domain_name_id: ::std::option::Option<::std::string::String>,
-    /// <p>The ARN of the domain name. Supported only for private custom domain names.</p>
+    /// <p>The ARN of the domain name.</p>
     pub domain_name_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the certificate that will be used by edge-optimized endpoint or private endpoint for this domain name.</p>
     pub certificate_name: ::std::option::Option<::std::string::String>,
@@ -58,7 +58,7 @@ impl DomainName {
     pub fn domain_name_id(&self) -> ::std::option::Option<&str> {
         self.domain_name_id.as_deref()
     }
-    /// <p>The ARN of the domain name. Supported only for private custom domain names.</p>
+    /// <p>The ARN of the domain name.</p>
     pub fn domain_name_arn(&self) -> ::std::option::Option<&str> {
         self.domain_name_arn.as_deref()
     }
@@ -202,17 +202,17 @@ impl DomainNameBuilder {
     pub fn get_domain_name_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.domain_name_id
     }
-    /// <p>The ARN of the domain name. Supported only for private custom domain names.</p>
+    /// <p>The ARN of the domain name.</p>
     pub fn domain_name_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_name_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ARN of the domain name. Supported only for private custom domain names.</p>
+    /// <p>The ARN of the domain name.</p>
     pub fn set_domain_name_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.domain_name_arn = input;
         self
     }
-    /// <p>The ARN of the domain name. Supported only for private custom domain names.</p>
+    /// <p>The ARN of the domain name.</p>
     pub fn get_domain_name_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.domain_name_arn
     }

@@ -92,19 +92,13 @@ pub(crate) fn reflens_list_tags_for_resource_output_output_next_token(
 pub(crate) fn lens_describe_storage_virtual_machines_output_output_storage_virtual_machines(
     input: crate::operation::describe_storage_virtual_machines::DescribeStorageVirtualMachinesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::StorageVirtualMachine>> {
-    let input = match input.storage_virtual_machines {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.storage_virtual_machines?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_describe_volumes_output_output_volumes(
     input: crate::operation::describe_volumes::DescribeVolumesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::Volume>> {
-    let input = match input.volumes {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.volumes?;
     ::std::option::Option::Some(input)
 }

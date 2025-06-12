@@ -152,19 +152,13 @@ pub(crate) fn reflens_list_users_output_output_next_token(
 pub(crate) fn lens_list_availability_configurations_output_output_availability_configurations(
     input: crate::operation::list_availability_configurations::ListAvailabilityConfigurationsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::AvailabilityConfiguration>> {
-    let input = match input.availability_configurations {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.availability_configurations?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_personal_access_tokens_output_output_personal_access_token_summaries(
     input: crate::operation::list_personal_access_tokens::ListPersonalAccessTokensOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::PersonalAccessTokenSummary>> {
-    let input = match input.personal_access_token_summaries {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.personal_access_token_summaries?;
     ::std::option::Option::Some(input)
 }

@@ -12,9 +12,6 @@ pub(crate) fn reflens_list_linked_whats_app_business_accounts_output_output_next
 pub(crate) fn lens_list_linked_whats_app_business_accounts_output_output_linked_accounts(
     input: crate::operation::list_linked_whats_app_business_accounts::ListLinkedWhatsAppBusinessAccountsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::LinkedWhatsAppBusinessAccountSummary>> {
-    let input = match input.linked_accounts {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.linked_accounts?;
     ::std::option::Option::Some(input)
 }

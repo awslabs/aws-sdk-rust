@@ -92,30 +92,21 @@ pub(crate) fn reflens_list_users_in_group_output_output_next_token(
 pub(crate) fn lens_admin_list_groups_for_user_output_output_groups(
     input: crate::operation::admin_list_groups_for_user::AdminListGroupsForUserOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::GroupType>> {
-    let input = match input.groups {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.groups?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_admin_list_user_auth_events_output_output_auth_events(
     input: crate::operation::admin_list_user_auth_events::AdminListUserAuthEventsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::AuthEventType>> {
-    let input = match input.auth_events {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.auth_events?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_groups_output_output_groups(
     input: crate::operation::list_groups::ListGroupsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::GroupType>> {
-    let input = match input.groups {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.groups?;
     ::std::option::Option::Some(input)
 }
 
@@ -136,39 +127,27 @@ pub(crate) fn lens_list_resource_servers_output_output_resource_servers(
 pub(crate) fn lens_list_user_pool_clients_output_output_user_pool_clients(
     input: crate::operation::list_user_pool_clients::ListUserPoolClientsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::UserPoolClientDescription>> {
-    let input = match input.user_pool_clients {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.user_pool_clients?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_user_pools_output_output_user_pools(
     input: crate::operation::list_user_pools::ListUserPoolsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::UserPoolDescriptionType>> {
-    let input = match input.user_pools {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.user_pools?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_users_output_output_users(
     input: crate::operation::list_users::ListUsersOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::UserType>> {
-    let input = match input.users {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.users?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_users_in_group_output_output_users(
     input: crate::operation::list_users_in_group::ListUsersInGroupOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::UserType>> {
-    let input = match input.users {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.users?;
     ::std::option::Option::Some(input)
 }

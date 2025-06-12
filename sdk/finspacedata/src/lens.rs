@@ -52,49 +52,34 @@ pub(crate) fn reflens_list_users_output_output_next_token(
 pub(crate) fn lens_list_changesets_output_output_changesets(
     input: crate::operation::list_changesets::ListChangesetsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ChangesetSummary>> {
-    let input = match input.changesets {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.changesets?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_data_views_output_output_data_views(
     input: crate::operation::list_data_views::ListDataViewsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::DataViewSummary>> {
-    let input = match input.data_views {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.data_views?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_datasets_output_output_datasets(
     input: crate::operation::list_datasets::ListDatasetsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::Dataset>> {
-    let input = match input.datasets {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.datasets?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_permission_groups_output_output_permission_groups(
     input: crate::operation::list_permission_groups::ListPermissionGroupsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::PermissionGroup>> {
-    let input = match input.permission_groups {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.permission_groups?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_users_output_output_users(
     input: crate::operation::list_users::ListUsersOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::User>> {
-    let input = match input.users {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.users?;
     ::std::option::Option::Some(input)
 }

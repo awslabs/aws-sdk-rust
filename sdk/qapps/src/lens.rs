@@ -22,10 +22,7 @@ pub(crate) fn reflens_list_q_apps_output_output_next_token(
 pub(crate) fn lens_list_library_items_output_output_library_items(
     input: crate::operation::list_library_items::ListLibraryItemsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::LibraryItemMember>> {
-    let input = match input.library_items {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.library_items?;
     ::std::option::Option::Some(input)
 }
 

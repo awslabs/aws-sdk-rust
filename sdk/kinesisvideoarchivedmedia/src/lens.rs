@@ -22,19 +22,13 @@ pub(crate) fn reflens_list_fragments_output_output_next_token(
 pub(crate) fn lens_get_images_output_output_images(
     input: crate::operation::get_images::GetImagesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::Image>> {
-    let input = match input.images {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.images?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_fragments_output_output_fragments(
     input: crate::operation::list_fragments::ListFragmentsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::Fragment>> {
-    let input = match input.fragments {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.fragments?;
     ::std::option::Option::Some(input)
 }

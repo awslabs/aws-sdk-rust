@@ -42,29 +42,20 @@ pub(crate) fn reflens_list_platform_versions_output_output_next_token(
 pub(crate) fn lens_describe_environment_managed_action_history_output_output_managed_action_history_items(
     input: crate::operation::describe_environment_managed_action_history::DescribeEnvironmentManagedActionHistoryOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ManagedActionHistoryItem>> {
-    let input = match input.managed_action_history_items {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.managed_action_history_items?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_describe_events_output_output_events(
     input: crate::operation::describe_events::DescribeEventsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::EventDescription>> {
-    let input = match input.events {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.events?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_platform_versions_output_output_platform_summary_list(
     input: crate::operation::list_platform_versions::ListPlatformVersionsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::PlatformSummary>> {
-    let input = match input.platform_summary_list {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.platform_summary_list?;
     ::std::option::Option::Some(input)
 }

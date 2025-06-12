@@ -102,19 +102,13 @@ pub(crate) fn reflens_search_available_phone_numbers_output_output_next_token(
 pub(crate) fn lens_list_sip_media_applications_output_output_sip_media_applications(
     input: crate::operation::list_sip_media_applications::ListSipMediaApplicationsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::SipMediaApplication>> {
-    let input = match input.sip_media_applications {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.sip_media_applications?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_sip_rules_output_output_sip_rules(
     input: crate::operation::list_sip_rules::ListSipRulesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::SipRule>> {
-    let input = match input.sip_rules {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.sip_rules?;
     ::std::option::Option::Some(input)
 }

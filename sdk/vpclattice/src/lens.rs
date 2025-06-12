@@ -156,10 +156,7 @@ pub(crate) fn lens_list_listeners_output_output_items(
 pub(crate) fn lens_list_resource_configurations_output_output_items(
     input: crate::operation::list_resource_configurations::ListResourceConfigurationsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ResourceConfigurationSummary>> {
-    let input = match input.items {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.items?;
     ::std::option::Option::Some(input)
 }
 
@@ -173,10 +170,7 @@ pub(crate) fn lens_list_resource_endpoint_associations_output_output_items(
 pub(crate) fn lens_list_resource_gateways_output_output_items(
     input: crate::operation::list_resource_gateways::ListResourceGatewaysOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ResourceGatewaySummary>> {
-    let input = match input.items {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.items?;
     ::std::option::Option::Some(input)
 }
 
@@ -225,20 +219,14 @@ pub(crate) fn lens_list_service_networks_output_output_items(
 pub(crate) fn lens_list_services_output_output_items(
     input: crate::operation::list_services::ListServicesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ServiceSummary>> {
-    let input = match input.items {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.items?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_target_groups_output_output_items(
     input: crate::operation::list_target_groups::ListTargetGroupsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::TargetGroupSummary>> {
-    let input = match input.items {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.items?;
     ::std::option::Option::Some(input)
 }
 

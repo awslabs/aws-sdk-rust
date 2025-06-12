@@ -102,99 +102,69 @@ pub(crate) fn reflens_search_things_output_output_next_token(
 pub(crate) fn lens_get_flow_template_revisions_output_output_summaries(
     input: crate::operation::get_flow_template_revisions::GetFlowTemplateRevisionsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::FlowTemplateSummary>> {
-    let input = match input.summaries {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.summaries?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_get_system_template_revisions_output_output_summaries(
     input: crate::operation::get_system_template_revisions::GetSystemTemplateRevisionsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::SystemTemplateSummary>> {
-    let input = match input.summaries {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.summaries?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_flow_execution_messages_output_output_messages(
     input: crate::operation::list_flow_execution_messages::ListFlowExecutionMessagesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::FlowExecutionMessage>> {
-    let input = match input.messages {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.messages?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_tags_for_resource_output_output_tags(
     input: crate::operation::list_tags_for_resource::ListTagsForResourceOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
-    let input = match input.tags {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.tags?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_search_entities_output_output_descriptions(
     input: crate::operation::search_entities::SearchEntitiesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::EntityDescription>> {
-    let input = match input.descriptions {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.descriptions?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_search_flow_executions_output_output_summaries(
     input: crate::operation::search_flow_executions::SearchFlowExecutionsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::FlowExecutionSummary>> {
-    let input = match input.summaries {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.summaries?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_search_flow_templates_output_output_summaries(
     input: crate::operation::search_flow_templates::SearchFlowTemplatesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::FlowTemplateSummary>> {
-    let input = match input.summaries {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.summaries?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_search_system_instances_output_output_summaries(
     input: crate::operation::search_system_instances::SearchSystemInstancesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::SystemInstanceSummary>> {
-    let input = match input.summaries {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.summaries?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_search_system_templates_output_output_summaries(
     input: crate::operation::search_system_templates::SearchSystemTemplatesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::SystemTemplateSummary>> {
-    let input = match input.summaries {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.summaries?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_search_things_output_output_things(
     input: crate::operation::search_things::SearchThingsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::Thing>> {
-    let input = match input.things {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.things?;
     ::std::option::Option::Some(input)
 }

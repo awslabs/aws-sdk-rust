@@ -42,9 +42,6 @@ pub(crate) fn reflens_list_repository_associations_output_output_next_token(
 pub(crate) fn lens_list_repository_associations_output_output_repository_association_summaries(
     input: crate::operation::list_repository_associations::ListRepositoryAssociationsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::RepositoryAssociationSummary>> {
-    let input = match input.repository_association_summaries {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.repository_association_summaries?;
     ::std::option::Option::Some(input)
 }

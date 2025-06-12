@@ -222,90 +222,63 @@ pub(crate) fn reflens_list_registration_associations_output_output_next_token(
 pub(crate) fn lens_describe_account_attributes_output_output_account_attributes(
     input: crate::operation::describe_account_attributes::DescribeAccountAttributesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::AccountAttribute>> {
-    let input = match input.account_attributes {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.account_attributes?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_describe_account_limits_output_output_account_limits(
     input: crate::operation::describe_account_limits::DescribeAccountLimitsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::AccountLimit>> {
-    let input = match input.account_limits {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.account_limits?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_describe_configuration_sets_output_output_configuration_sets(
     input: crate::operation::describe_configuration_sets::DescribeConfigurationSetsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ConfigurationSetInformation>> {
-    let input = match input.configuration_sets {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.configuration_sets?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_describe_keywords_output_output_keywords(
     input: crate::operation::describe_keywords::DescribeKeywordsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::KeywordInformation>> {
-    let input = match input.keywords {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.keywords?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_describe_opt_out_lists_output_output_opt_out_lists(
     input: crate::operation::describe_opt_out_lists::DescribeOptOutListsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::OptOutListInformation>> {
-    let input = match input.opt_out_lists {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.opt_out_lists?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_describe_opted_out_numbers_output_output_opted_out_numbers(
     input: crate::operation::describe_opted_out_numbers::DescribeOptedOutNumbersOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::OptedOutNumberInformation>> {
-    let input = match input.opted_out_numbers {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.opted_out_numbers?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_describe_phone_numbers_output_output_phone_numbers(
     input: crate::operation::describe_phone_numbers::DescribePhoneNumbersOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::PhoneNumberInformation>> {
-    let input = match input.phone_numbers {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.phone_numbers?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_describe_pools_output_output_pools(
     input: crate::operation::describe_pools::DescribePoolsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::PoolInformation>> {
-    let input = match input.pools {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.pools?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_describe_protect_configurations_output_output_protect_configurations(
     input: crate::operation::describe_protect_configurations::DescribeProtectConfigurationsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ProtectConfigurationInformation>> {
-    let input = match input.protect_configurations {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.protect_configurations?;
     ::std::option::Option::Some(input)
 }
 
@@ -361,20 +334,14 @@ pub(crate) fn lens_describe_registrations_output_output_registrations(
 pub(crate) fn lens_describe_sender_ids_output_output_sender_ids(
     input: crate::operation::describe_sender_ids::DescribeSenderIdsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::SenderIdInformation>> {
-    let input = match input.sender_ids {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.sender_ids?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_describe_spend_limits_output_output_spend_limits(
     input: crate::operation::describe_spend_limits::DescribeSpendLimitsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::SpendLimit>> {
-    let input = match input.spend_limits {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.spend_limits?;
     ::std::option::Option::Some(input)
 }
 
@@ -388,20 +355,14 @@ pub(crate) fn lens_describe_verified_destination_numbers_output_output_verified_
 pub(crate) fn lens_list_pool_origination_identities_output_output_origination_identities(
     input: crate::operation::list_pool_origination_identities::ListPoolOriginationIdentitiesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::OriginationIdentityMetadata>> {
-    let input = match input.origination_identities {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.origination_identities?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_protect_configuration_rule_set_number_overrides_output_output_rule_set_number_overrides(
     input: crate::operation::list_protect_configuration_rule_set_number_overrides::ListProtectConfigurationRuleSetNumberOverridesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ProtectConfigurationRuleSetNumberOverride>> {
-    let input = match input.rule_set_number_overrides {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.rule_set_number_overrides?;
     ::std::option::Option::Some(input)
 }
 

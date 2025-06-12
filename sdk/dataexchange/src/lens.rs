@@ -72,69 +72,48 @@ pub(crate) fn reflens_list_revision_assets_output_output_next_token(
 pub(crate) fn lens_list_data_grants_output_output_data_grant_summaries(
     input: crate::operation::list_data_grants::ListDataGrantsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::DataGrantSummaryEntry>> {
-    let input = match input.data_grant_summaries {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.data_grant_summaries?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_data_set_revisions_output_output_revisions(
     input: crate::operation::list_data_set_revisions::ListDataSetRevisionsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::RevisionEntry>> {
-    let input = match input.revisions {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.revisions?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_data_sets_output_output_data_sets(
     input: crate::operation::list_data_sets::ListDataSetsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::DataSetEntry>> {
-    let input = match input.data_sets {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.data_sets?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_event_actions_output_output_event_actions(
     input: crate::operation::list_event_actions::ListEventActionsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::EventActionEntry>> {
-    let input = match input.event_actions {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.event_actions?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_jobs_output_output_jobs(
     input: crate::operation::list_jobs::ListJobsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::JobEntry>> {
-    let input = match input.jobs {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.jobs?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_received_data_grants_output_output_data_grant_summaries(
     input: crate::operation::list_received_data_grants::ListReceivedDataGrantsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ReceivedDataGrantSummariesEntry>> {
-    let input = match input.data_grant_summaries {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.data_grant_summaries?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_revision_assets_output_output_assets(
     input: crate::operation::list_revision_assets::ListRevisionAssetsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::AssetEntry>> {
-    let input = match input.assets {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.assets?;
     ::std::option::Option::Some(input)
 }

@@ -6,11 +6,17 @@
 pub struct CommunicationLimitsConfig {
     /// Communication limits
     pub all_channel_subtypes: ::std::option::Option<crate::types::CommunicationLimits>,
+    /// Instance limits handling
+    pub instance_limits_handling: ::std::option::Option<crate::types::InstanceLimitsHandling>,
 }
 impl CommunicationLimitsConfig {
     /// Communication limits
     pub fn all_channel_subtypes(&self) -> ::std::option::Option<&crate::types::CommunicationLimits> {
         self.all_channel_subtypes.as_ref()
+    }
+    /// Instance limits handling
+    pub fn instance_limits_handling(&self) -> ::std::option::Option<&crate::types::InstanceLimitsHandling> {
+        self.instance_limits_handling.as_ref()
     }
 }
 impl CommunicationLimitsConfig {
@@ -25,6 +31,7 @@ impl CommunicationLimitsConfig {
 #[non_exhaustive]
 pub struct CommunicationLimitsConfigBuilder {
     pub(crate) all_channel_subtypes: ::std::option::Option<crate::types::CommunicationLimits>,
+    pub(crate) instance_limits_handling: ::std::option::Option<crate::types::InstanceLimitsHandling>,
 }
 impl CommunicationLimitsConfigBuilder {
     /// Communication limits
@@ -41,10 +48,25 @@ impl CommunicationLimitsConfigBuilder {
     pub fn get_all_channel_subtypes(&self) -> &::std::option::Option<crate::types::CommunicationLimits> {
         &self.all_channel_subtypes
     }
+    /// Instance limits handling
+    pub fn instance_limits_handling(mut self, input: crate::types::InstanceLimitsHandling) -> Self {
+        self.instance_limits_handling = ::std::option::Option::Some(input);
+        self
+    }
+    /// Instance limits handling
+    pub fn set_instance_limits_handling(mut self, input: ::std::option::Option<crate::types::InstanceLimitsHandling>) -> Self {
+        self.instance_limits_handling = input;
+        self
+    }
+    /// Instance limits handling
+    pub fn get_instance_limits_handling(&self) -> &::std::option::Option<crate::types::InstanceLimitsHandling> {
+        &self.instance_limits_handling
+    }
     /// Consumes the builder and constructs a [`CommunicationLimitsConfig`](crate::types::CommunicationLimitsConfig).
     pub fn build(self) -> crate::types::CommunicationLimitsConfig {
         crate::types::CommunicationLimitsConfig {
             all_channel_subtypes: self.all_channel_subtypes,
+            instance_limits_handling: self.instance_limits_handling,
         }
     }
 }

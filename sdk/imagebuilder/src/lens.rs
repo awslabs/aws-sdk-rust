@@ -212,209 +212,146 @@ pub(crate) fn reflens_list_workflows_output_output_next_token(
 pub(crate) fn lens_list_component_build_versions_output_output_component_summary_list(
     input: crate::operation::list_component_build_versions::ListComponentBuildVersionsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ComponentSummary>> {
-    let input = match input.component_summary_list {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.component_summary_list?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_components_output_output_component_version_list(
     input: crate::operation::list_components::ListComponentsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ComponentVersion>> {
-    let input = match input.component_version_list {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.component_version_list?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_container_recipes_output_output_container_recipe_summary_list(
     input: crate::operation::list_container_recipes::ListContainerRecipesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ContainerRecipeSummary>> {
-    let input = match input.container_recipe_summary_list {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.container_recipe_summary_list?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_distribution_configurations_output_output_distribution_configuration_summary_list(
     input: crate::operation::list_distribution_configurations::ListDistributionConfigurationsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::DistributionConfigurationSummary>> {
-    let input = match input.distribution_configuration_summary_list {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.distribution_configuration_summary_list?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_image_build_versions_output_output_image_summary_list(
     input: crate::operation::list_image_build_versions::ListImageBuildVersionsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ImageSummary>> {
-    let input = match input.image_summary_list {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.image_summary_list?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_image_packages_output_output_image_package_list(
     input: crate::operation::list_image_packages::ListImagePackagesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ImagePackage>> {
-    let input = match input.image_package_list {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.image_package_list?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_image_pipeline_images_output_output_image_summary_list(
     input: crate::operation::list_image_pipeline_images::ListImagePipelineImagesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ImageSummary>> {
-    let input = match input.image_summary_list {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.image_summary_list?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_image_pipelines_output_output_image_pipeline_list(
     input: crate::operation::list_image_pipelines::ListImagePipelinesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ImagePipeline>> {
-    let input = match input.image_pipeline_list {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.image_pipeline_list?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_image_recipes_output_output_image_recipe_summary_list(
     input: crate::operation::list_image_recipes::ListImageRecipesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ImageRecipeSummary>> {
-    let input = match input.image_recipe_summary_list {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.image_recipe_summary_list?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_image_scan_finding_aggregations_output_output_responses(
     input: crate::operation::list_image_scan_finding_aggregations::ListImageScanFindingAggregationsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ImageScanFindingAggregation>> {
-    let input = match input.responses {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.responses?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_image_scan_findings_output_output_findings(
     input: crate::operation::list_image_scan_findings::ListImageScanFindingsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ImageScanFinding>> {
-    let input = match input.findings {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.findings?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_images_output_output_image_version_list(
     input: crate::operation::list_images::ListImagesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ImageVersion>> {
-    let input = match input.image_version_list {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.image_version_list?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_infrastructure_configurations_output_output_infrastructure_configuration_summary_list(
     input: crate::operation::list_infrastructure_configurations::ListInfrastructureConfigurationsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::InfrastructureConfigurationSummary>> {
-    let input = match input.infrastructure_configuration_summary_list {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.infrastructure_configuration_summary_list?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_lifecycle_execution_resources_output_output_resources(
     input: crate::operation::list_lifecycle_execution_resources::ListLifecycleExecutionResourcesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::LifecycleExecutionResource>> {
-    let input = match input.resources {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.resources?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_lifecycle_executions_output_output_lifecycle_executions(
     input: crate::operation::list_lifecycle_executions::ListLifecycleExecutionsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::LifecycleExecution>> {
-    let input = match input.lifecycle_executions {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.lifecycle_executions?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_lifecycle_policies_output_output_lifecycle_policy_summary_list(
     input: crate::operation::list_lifecycle_policies::ListLifecyclePoliciesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::LifecyclePolicySummary>> {
-    let input = match input.lifecycle_policy_summary_list {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.lifecycle_policy_summary_list?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_waiting_workflow_steps_output_output_steps(
     input: crate::operation::list_waiting_workflow_steps::ListWaitingWorkflowStepsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::WorkflowStepExecution>> {
-    let input = match input.steps {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.steps?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_workflow_build_versions_output_output_workflow_summary_list(
     input: crate::operation::list_workflow_build_versions::ListWorkflowBuildVersionsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::WorkflowSummary>> {
-    let input = match input.workflow_summary_list {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.workflow_summary_list?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_workflow_executions_output_output_workflow_executions(
     input: crate::operation::list_workflow_executions::ListWorkflowExecutionsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::WorkflowExecutionMetadata>> {
-    let input = match input.workflow_executions {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.workflow_executions?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_workflow_step_executions_output_output_steps(
     input: crate::operation::list_workflow_step_executions::ListWorkflowStepExecutionsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::WorkflowStepMetadata>> {
-    let input = match input.steps {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.steps?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_workflows_output_output_workflow_version_list(
     input: crate::operation::list_workflows::ListWorkflowsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::WorkflowVersion>> {
-    let input = match input.workflow_version_list {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.workflow_version_list?;
     ::std::option::Option::Some(input)
 }

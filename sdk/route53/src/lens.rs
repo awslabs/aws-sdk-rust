@@ -62,30 +62,21 @@ pub(crate) fn reflens_list_query_logging_configs_output_output_next_token(
 pub(crate) fn lens_list_cidr_blocks_output_output_cidr_blocks(
     input: crate::operation::list_cidr_blocks::ListCidrBlocksOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::CidrBlockSummary>> {
-    let input = match input.cidr_blocks {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.cidr_blocks?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_cidr_collections_output_output_cidr_collections(
     input: crate::operation::list_cidr_collections::ListCidrCollectionsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::CollectionSummary>> {
-    let input = match input.cidr_collections {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.cidr_collections?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_cidr_locations_output_output_cidr_locations(
     input: crate::operation::list_cidr_locations::ListCidrLocationsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::LocationSummary>> {
-    let input = match input.cidr_locations {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.cidr_locations?;
     ::std::option::Option::Some(input)
 }
 

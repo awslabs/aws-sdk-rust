@@ -363,30 +363,21 @@ pub(crate) fn lens_list_account_aliases_output_output_account_aliases(
 pub(crate) fn lens_list_attached_group_policies_output_output_attached_policies(
     input: crate::operation::list_attached_group_policies::ListAttachedGroupPoliciesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::AttachedPolicy>> {
-    let input = match input.attached_policies {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.attached_policies?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_attached_role_policies_output_output_attached_policies(
     input: crate::operation::list_attached_role_policies::ListAttachedRolePoliciesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::AttachedPolicy>> {
-    let input = match input.attached_policies {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.attached_policies?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_attached_user_policies_output_output_attached_policies(
     input: crate::operation::list_attached_user_policies::ListAttachedUserPoliciesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::AttachedPolicy>> {
-    let input = match input.attached_policies {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.attached_policies?;
     ::std::option::Option::Some(input)
 }
 
@@ -456,10 +447,7 @@ pub(crate) fn lens_list_open_id_connect_provider_tags_output_output_tags(
 pub(crate) fn lens_list_policies_output_output_policies(
     input: crate::operation::list_policies::ListPoliciesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::Policy>> {
-    let input = match input.policies {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.policies?;
     ::std::option::Option::Some(input)
 }
 
@@ -473,10 +461,7 @@ pub(crate) fn lens_list_policy_tags_output_output_tags(
 pub(crate) fn lens_list_policy_versions_output_output_versions(
     input: crate::operation::list_policy_versions::ListPolicyVersionsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::PolicyVersion>> {
-    let input = match input.versions {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.versions?;
     ::std::option::Option::Some(input)
 }
 
@@ -532,10 +517,7 @@ pub(crate) fn lens_list_signing_certificates_output_output_certificates(
 pub(crate) fn lens_list_ssh_public_keys_output_output_ssh_public_keys(
     input: crate::operation::list_ssh_public_keys::ListSshPublicKeysOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::SshPublicKeyMetadata>> {
-    let input = match input.ssh_public_keys {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.ssh_public_keys?;
     ::std::option::Option::Some(input)
 }
 
@@ -570,19 +552,13 @@ pub(crate) fn lens_list_virtual_mfa_devices_output_output_virtual_mfa_devices(
 pub(crate) fn lens_simulate_custom_policy_output_output_evaluation_results(
     input: crate::operation::simulate_custom_policy::SimulateCustomPolicyOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::EvaluationResult>> {
-    let input = match input.evaluation_results {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.evaluation_results?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_simulate_principal_policy_output_output_evaluation_results(
     input: crate::operation::simulate_principal_policy::SimulatePrincipalPolicyOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::EvaluationResult>> {
-    let input = match input.evaluation_results {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.evaluation_results?;
     ::std::option::Option::Some(input)
 }

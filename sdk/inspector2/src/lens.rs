@@ -162,10 +162,7 @@ pub(crate) fn reflens_search_vulnerabilities_output_output_next_token(
 pub(crate) fn lens_get_cis_scan_result_details_output_output_scan_result_details(
     input: crate::operation::get_cis_scan_result_details::GetCisScanResultDetailsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::CisScanResultDetails>> {
-    let input = match input.scan_result_details {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.scan_result_details?;
     ::std::option::Option::Some(input)
 }
 
@@ -186,70 +183,49 @@ pub(crate) fn lens_list_account_permissions_output_output_permissions(
 pub(crate) fn lens_list_cis_scan_configurations_output_output_scan_configurations(
     input: crate::operation::list_cis_scan_configurations::ListCisScanConfigurationsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::CisScanConfiguration>> {
-    let input = match input.scan_configurations {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.scan_configurations?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_cis_scan_results_aggregated_by_checks_output_output_check_aggregations(
     input: crate::operation::list_cis_scan_results_aggregated_by_checks::ListCisScanResultsAggregatedByChecksOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::CisCheckAggregation>> {
-    let input = match input.check_aggregations {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.check_aggregations?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_cis_scan_results_aggregated_by_target_resource_output_output_target_resource_aggregations(
     input: crate::operation::list_cis_scan_results_aggregated_by_target_resource::ListCisScanResultsAggregatedByTargetResourceOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::CisTargetResourceAggregation>> {
-    let input = match input.target_resource_aggregations {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.target_resource_aggregations?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_cis_scans_output_output_scans(
     input: crate::operation::list_cis_scans::ListCisScansOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::CisScan>> {
-    let input = match input.scans {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.scans?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_coverage_output_output_covered_resources(
     input: crate::operation::list_coverage::ListCoverageOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::CoveredResource>> {
-    let input = match input.covered_resources {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.covered_resources?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_coverage_statistics_output_output_counts_by_group(
     input: crate::operation::list_coverage_statistics::ListCoverageStatisticsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::Counts>> {
-    let input = match input.counts_by_group {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.counts_by_group?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_delegated_admin_accounts_output_output_delegated_admin_accounts(
     input: crate::operation::list_delegated_admin_accounts::ListDelegatedAdminAccountsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::DelegatedAdminAccount>> {
-    let input = match input.delegated_admin_accounts {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.delegated_admin_accounts?;
     ::std::option::Option::Some(input)
 }
 
@@ -263,40 +239,28 @@ pub(crate) fn lens_list_filters_output_output_filters(
 pub(crate) fn lens_list_finding_aggregations_output_output_responses(
     input: crate::operation::list_finding_aggregations::ListFindingAggregationsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::AggregationResponse>> {
-    let input = match input.responses {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.responses?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_findings_output_output_findings(
     input: crate::operation::list_findings::ListFindingsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::Finding>> {
-    let input = match input.findings {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.findings?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_members_output_output_members(
     input: crate::operation::list_members::ListMembersOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::Member>> {
-    let input = match input.members {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.members?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_usage_totals_output_output_totals(
     input: crate::operation::list_usage_totals::ListUsageTotalsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::UsageTotal>> {
-    let input = match input.totals {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.totals?;
     ::std::option::Option::Some(input)
 }
 

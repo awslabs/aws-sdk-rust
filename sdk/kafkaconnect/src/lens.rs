@@ -42,39 +42,27 @@ pub(crate) fn reflens_list_worker_configurations_output_output_next_token(
 pub(crate) fn lens_list_connector_operations_output_output_connector_operations(
     input: crate::operation::list_connector_operations::ListConnectorOperationsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ConnectorOperationSummary>> {
-    let input = match input.connector_operations {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.connector_operations?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_connectors_output_output_connectors(
     input: crate::operation::list_connectors::ListConnectorsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ConnectorSummary>> {
-    let input = match input.connectors {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.connectors?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_custom_plugins_output_output_custom_plugins(
     input: crate::operation::list_custom_plugins::ListCustomPluginsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::CustomPluginSummary>> {
-    let input = match input.custom_plugins {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.custom_plugins?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_worker_configurations_output_output_worker_configurations(
     input: crate::operation::list_worker_configurations::ListWorkerConfigurationsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::WorkerConfigurationSummary>> {
-    let input = match input.worker_configurations {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.worker_configurations?;
     ::std::option::Option::Some(input)
 }

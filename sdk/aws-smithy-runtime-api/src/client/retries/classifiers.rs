@@ -431,7 +431,7 @@ mod tests {
         let mid_priority_classifier = RetryClassifierPriority::run_before(high_priority_classifier);
         let low_priority_classifier = RetryClassifierPriority::run_before(mid_priority_classifier);
 
-        let mut list = vec![
+        let mut list = [
             wrap("mid", mid_priority_classifier),
             wrap("high", high_priority_classifier),
             wrap("low", low_priority_classifier),
@@ -450,7 +450,7 @@ mod tests {
         let mid_priority_classifier = RetryClassifierPriority::run_after(low_priority_classifier);
         let high_priority_classifier = RetryClassifierPriority::run_after(mid_priority_classifier);
 
-        let mut list = vec![
+        let mut list = [
             wrap("mid", mid_priority_classifier),
             wrap("high", high_priority_classifier),
             wrap("low", low_priority_classifier),
@@ -466,7 +466,7 @@ mod tests {
         let before_modeled_as_retryable = RetryClassifierPriority::run_before(
             RetryClassifierPriority::modeled_as_retryable_classifier(),
         );
-        let mut list = vec![
+        let mut list = [
             wrap(
                 "modeled as retryable",
                 RetryClassifierPriority::modeled_as_retryable_classifier(),

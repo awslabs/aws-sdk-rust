@@ -122,99 +122,69 @@ pub(crate) fn reflens_list_supported_instance_types_output_output_marker(
 pub(crate) fn lens_list_bootstrap_actions_output_output_bootstrap_actions(
     input: crate::operation::list_bootstrap_actions::ListBootstrapActionsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::Command>> {
-    let input = match input.bootstrap_actions {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.bootstrap_actions?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_clusters_output_output_clusters(
     input: crate::operation::list_clusters::ListClustersOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ClusterSummary>> {
-    let input = match input.clusters {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.clusters?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_instance_fleets_output_output_instance_fleets(
     input: crate::operation::list_instance_fleets::ListInstanceFleetsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::InstanceFleet>> {
-    let input = match input.instance_fleets {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.instance_fleets?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_instance_groups_output_output_instance_groups(
     input: crate::operation::list_instance_groups::ListInstanceGroupsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::InstanceGroup>> {
-    let input = match input.instance_groups {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.instance_groups?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_instances_output_output_instances(
     input: crate::operation::list_instances::ListInstancesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::Instance>> {
-    let input = match input.instances {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.instances?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_notebook_executions_output_output_notebook_executions(
     input: crate::operation::list_notebook_executions::ListNotebookExecutionsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::NotebookExecutionSummary>> {
-    let input = match input.notebook_executions {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.notebook_executions?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_security_configurations_output_output_security_configurations(
     input: crate::operation::list_security_configurations::ListSecurityConfigurationsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::SecurityConfigurationSummary>> {
-    let input = match input.security_configurations {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.security_configurations?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_steps_output_output_steps(
     input: crate::operation::list_steps::ListStepsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::StepSummary>> {
-    let input = match input.steps {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.steps?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_studio_session_mappings_output_output_session_mappings(
     input: crate::operation::list_studio_session_mappings::ListStudioSessionMappingsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::SessionMappingSummary>> {
-    let input = match input.session_mappings {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.session_mappings?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_studios_output_output_studios(
     input: crate::operation::list_studios::ListStudiosOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::StudioSummary>> {
-    let input = match input.studios {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.studios?;
     ::std::option::Option::Some(input)
 }

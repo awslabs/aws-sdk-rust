@@ -12,9 +12,6 @@ pub(crate) fn reflens_list_rules_output_output_next_token(
 pub(crate) fn lens_list_rules_output_output_rules(
     input: crate::operation::list_rules::ListRulesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::RuleSummary>> {
-    let input = match input.rules {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.rules?;
     ::std::option::Option::Some(input)
 }

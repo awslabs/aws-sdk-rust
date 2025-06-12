@@ -72,9 +72,6 @@ pub(crate) fn reflens_list_proposals_output_output_next_token(
 pub(crate) fn lens_list_accessors_output_output_accessors(
     input: crate::operation::list_accessors::ListAccessorsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::AccessorSummary>> {
-    let input = match input.accessors {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.accessors?;
     ::std::option::Option::Some(input)
 }

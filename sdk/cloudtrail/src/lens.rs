@@ -112,59 +112,41 @@ pub(crate) fn reflens_lookup_events_output_output_next_token(
 pub(crate) fn lens_list_import_failures_output_output_failures(
     input: crate::operation::list_import_failures::ListImportFailuresOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ImportFailureListItem>> {
-    let input = match input.failures {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.failures?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_imports_output_output_imports(
     input: crate::operation::list_imports::ListImportsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ImportsListItem>> {
-    let input = match input.imports {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.imports?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_public_keys_output_output_public_key_list(
     input: crate::operation::list_public_keys::ListPublicKeysOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::PublicKey>> {
-    let input = match input.public_key_list {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.public_key_list?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_tags_output_output_resource_tag_list(
     input: crate::operation::list_tags::ListTagsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ResourceTag>> {
-    let input = match input.resource_tag_list {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.resource_tag_list?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_trails_output_output_trails(
     input: crate::operation::list_trails::ListTrailsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::TrailInfo>> {
-    let input = match input.trails {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.trails?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_lookup_events_output_output_events(
     input: crate::operation::lookup_events::LookupEventsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::Event>> {
-    let input = match input.events {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.events?;
     ::std::option::Option::Some(input)
 }

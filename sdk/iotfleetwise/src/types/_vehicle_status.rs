@@ -11,15 +11,17 @@ pub struct VehicleStatus {
     /// <p>The status of a campaign, which can be one of the following:</p>
     /// <ul>
     /// <li>
-    /// <p><code>CREATED</code> - The campaign has been created successfully but has not been approved.</p></li>
+    /// <p><code>CREATED</code> - The campaign exists but is not yet approved.</p></li>
     /// <li>
-    /// <p><code>READY</code> - The campaign has been approved but has not been deployed to the vehicle.</p></li>
+    /// <p><code>READY</code> - The campaign is approved but has not been deployed to the vehicle. Data has not arrived at the vehicle yet.</p></li>
     /// <li>
-    /// <p><code>HEALTHY</code> - The campaign has been deployed to the vehicle.</p></li>
+    /// <p><code>HEALTHY</code> - The campaign is deployed to the vehicle.</p></li>
     /// <li>
-    /// <p><code>SUSPENDED</code> - The campaign has been suspended and data collection is paused.</p></li>
+    /// <p><code>SUSPENDED</code> - The campaign is suspended and data collection is paused.</p></li>
     /// <li>
     /// <p><code>DELETING</code> - The campaign is being removed from the vehicle.</p></li>
+    /// <li>
+    /// <p><code>READY_FOR_CHECKIN</code> - The campaign is approved and waiting for vehicle check-in before deployment.</p></li>
     /// </ul>
     pub status: ::std::option::Option<crate::types::VehicleState>,
 }
@@ -35,15 +37,17 @@ impl VehicleStatus {
     /// <p>The status of a campaign, which can be one of the following:</p>
     /// <ul>
     /// <li>
-    /// <p><code>CREATED</code> - The campaign has been created successfully but has not been approved.</p></li>
+    /// <p><code>CREATED</code> - The campaign exists but is not yet approved.</p></li>
     /// <li>
-    /// <p><code>READY</code> - The campaign has been approved but has not been deployed to the vehicle.</p></li>
+    /// <p><code>READY</code> - The campaign is approved but has not been deployed to the vehicle. Data has not arrived at the vehicle yet.</p></li>
     /// <li>
-    /// <p><code>HEALTHY</code> - The campaign has been deployed to the vehicle.</p></li>
+    /// <p><code>HEALTHY</code> - The campaign is deployed to the vehicle.</p></li>
     /// <li>
-    /// <p><code>SUSPENDED</code> - The campaign has been suspended and data collection is paused.</p></li>
+    /// <p><code>SUSPENDED</code> - The campaign is suspended and data collection is paused.</p></li>
     /// <li>
     /// <p><code>DELETING</code> - The campaign is being removed from the vehicle.</p></li>
+    /// <li>
+    /// <p><code>READY_FOR_CHECKIN</code> - The campaign is approved and waiting for vehicle check-in before deployment.</p></li>
     /// </ul>
     pub fn status(&self) -> ::std::option::Option<&crate::types::VehicleState> {
         self.status.as_ref()
@@ -96,15 +100,17 @@ impl VehicleStatusBuilder {
     /// <p>The status of a campaign, which can be one of the following:</p>
     /// <ul>
     /// <li>
-    /// <p><code>CREATED</code> - The campaign has been created successfully but has not been approved.</p></li>
+    /// <p><code>CREATED</code> - The campaign exists but is not yet approved.</p></li>
     /// <li>
-    /// <p><code>READY</code> - The campaign has been approved but has not been deployed to the vehicle.</p></li>
+    /// <p><code>READY</code> - The campaign is approved but has not been deployed to the vehicle. Data has not arrived at the vehicle yet.</p></li>
     /// <li>
-    /// <p><code>HEALTHY</code> - The campaign has been deployed to the vehicle.</p></li>
+    /// <p><code>HEALTHY</code> - The campaign is deployed to the vehicle.</p></li>
     /// <li>
-    /// <p><code>SUSPENDED</code> - The campaign has been suspended and data collection is paused.</p></li>
+    /// <p><code>SUSPENDED</code> - The campaign is suspended and data collection is paused.</p></li>
     /// <li>
     /// <p><code>DELETING</code> - The campaign is being removed from the vehicle.</p></li>
+    /// <li>
+    /// <p><code>READY_FOR_CHECKIN</code> - The campaign is approved and waiting for vehicle check-in before deployment.</p></li>
     /// </ul>
     pub fn status(mut self, input: crate::types::VehicleState) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -113,15 +119,17 @@ impl VehicleStatusBuilder {
     /// <p>The status of a campaign, which can be one of the following:</p>
     /// <ul>
     /// <li>
-    /// <p><code>CREATED</code> - The campaign has been created successfully but has not been approved.</p></li>
+    /// <p><code>CREATED</code> - The campaign exists but is not yet approved.</p></li>
     /// <li>
-    /// <p><code>READY</code> - The campaign has been approved but has not been deployed to the vehicle.</p></li>
+    /// <p><code>READY</code> - The campaign is approved but has not been deployed to the vehicle. Data has not arrived at the vehicle yet.</p></li>
     /// <li>
-    /// <p><code>HEALTHY</code> - The campaign has been deployed to the vehicle.</p></li>
+    /// <p><code>HEALTHY</code> - The campaign is deployed to the vehicle.</p></li>
     /// <li>
-    /// <p><code>SUSPENDED</code> - The campaign has been suspended and data collection is paused.</p></li>
+    /// <p><code>SUSPENDED</code> - The campaign is suspended and data collection is paused.</p></li>
     /// <li>
     /// <p><code>DELETING</code> - The campaign is being removed from the vehicle.</p></li>
+    /// <li>
+    /// <p><code>READY_FOR_CHECKIN</code> - The campaign is approved and waiting for vehicle check-in before deployment.</p></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::VehicleState>) -> Self {
         self.status = input;
@@ -130,15 +138,17 @@ impl VehicleStatusBuilder {
     /// <p>The status of a campaign, which can be one of the following:</p>
     /// <ul>
     /// <li>
-    /// <p><code>CREATED</code> - The campaign has been created successfully but has not been approved.</p></li>
+    /// <p><code>CREATED</code> - The campaign exists but is not yet approved.</p></li>
     /// <li>
-    /// <p><code>READY</code> - The campaign has been approved but has not been deployed to the vehicle.</p></li>
+    /// <p><code>READY</code> - The campaign is approved but has not been deployed to the vehicle. Data has not arrived at the vehicle yet.</p></li>
     /// <li>
-    /// <p><code>HEALTHY</code> - The campaign has been deployed to the vehicle.</p></li>
+    /// <p><code>HEALTHY</code> - The campaign is deployed to the vehicle.</p></li>
     /// <li>
-    /// <p><code>SUSPENDED</code> - The campaign has been suspended and data collection is paused.</p></li>
+    /// <p><code>SUSPENDED</code> - The campaign is suspended and data collection is paused.</p></li>
     /// <li>
     /// <p><code>DELETING</code> - The campaign is being removed from the vehicle.</p></li>
+    /// <li>
+    /// <p><code>READY_FOR_CHECKIN</code> - The campaign is approved and waiting for vehicle check-in before deployment.</p></li>
     /// </ul>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::VehicleState> {
         &self.status

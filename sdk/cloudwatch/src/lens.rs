@@ -92,29 +92,20 @@ pub(crate) fn reflens_list_metrics_output_output_next_token(
 pub(crate) fn lens_describe_alarm_history_output_output_alarm_history_items(
     input: crate::operation::describe_alarm_history::DescribeAlarmHistoryOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::AlarmHistoryItem>> {
-    let input = match input.alarm_history_items {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.alarm_history_items?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_describe_anomaly_detectors_output_output_anomaly_detectors(
     input: crate::operation::describe_anomaly_detectors::DescribeAnomalyDetectorsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::AnomalyDetector>> {
-    let input = match input.anomaly_detectors {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.anomaly_detectors?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_dashboards_output_output_dashboard_entries(
     input: crate::operation::list_dashboards::ListDashboardsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::DashboardEntry>> {
-    let input = match input.dashboard_entries {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.dashboard_entries?;
     ::std::option::Option::Some(input)
 }

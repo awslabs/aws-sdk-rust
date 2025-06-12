@@ -84,7 +84,7 @@ pub enum Token<'a> {
     },
 }
 
-impl<'a> Token<'a> {
+impl Token<'_> {
     pub fn offset(&self) -> Offset {
         use Token::*;
         *match self {

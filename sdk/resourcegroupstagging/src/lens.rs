@@ -42,39 +42,27 @@ pub(crate) fn reflens_get_tag_values_output_output_pagination_token(
 pub(crate) fn lens_get_compliance_summary_output_output_summary_list(
     input: crate::operation::get_compliance_summary::GetComplianceSummaryOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::Summary>> {
-    let input = match input.summary_list {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.summary_list?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_get_resources_output_output_resource_tag_mapping_list(
     input: crate::operation::get_resources::GetResourcesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ResourceTagMapping>> {
-    let input = match input.resource_tag_mapping_list {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.resource_tag_mapping_list?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_get_tag_keys_output_output_tag_keys(
     input: crate::operation::get_tag_keys::GetTagKeysOutput,
 ) -> ::std::option::Option<::std::vec::Vec<::std::string::String>> {
-    let input = match input.tag_keys {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.tag_keys?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_get_tag_values_output_output_tag_values(
     input: crate::operation::get_tag_values::GetTagValuesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<::std::string::String>> {
-    let input = match input.tag_values {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.tag_values?;
     ::std::option::Option::Some(input)
 }

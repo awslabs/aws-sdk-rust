@@ -539,6 +539,50 @@ impl From<crate::operation::get_connect_instance_config::GetConnectInstanceConfi
 impl<R>
     From<
         ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_instance_communication_limits::GetInstanceCommunicationLimitsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_instance_communication_limits::GetInstanceCommunicationLimitsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_instance_communication_limits::GetInstanceCommunicationLimitsError> for Error {
+    fn from(err: crate::operation::get_instance_communication_limits::GetInstanceCommunicationLimitsError) -> Self {
+        match err {
+            crate::operation::get_instance_communication_limits::GetInstanceCommunicationLimitsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::get_instance_communication_limits::GetInstanceCommunicationLimitsError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::get_instance_communication_limits::GetInstanceCommunicationLimitsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_instance_communication_limits::GetInstanceCommunicationLimitsError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::get_instance_communication_limits::GetInstanceCommunicationLimitsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::get_instance_onboarding_job_status::GetInstanceOnboardingJobStatusError,
             R,
         >,
@@ -753,6 +797,53 @@ impl From<crate::operation::put_connect_instance_integration::PutConnectInstance
                 Error::ValidationException(inner)
             }
             crate::operation::put_connect_instance_integration::PutConnectInstanceIntegrationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::put_instance_communication_limits::PutInstanceCommunicationLimitsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::put_instance_communication_limits::PutInstanceCommunicationLimitsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::put_instance_communication_limits::PutInstanceCommunicationLimitsError> for Error {
+    fn from(err: crate::operation::put_instance_communication_limits::PutInstanceCommunicationLimitsError) -> Self {
+        match err {
+            crate::operation::put_instance_communication_limits::PutInstanceCommunicationLimitsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::put_instance_communication_limits::PutInstanceCommunicationLimitsError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::put_instance_communication_limits::PutInstanceCommunicationLimitsError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::put_instance_communication_limits::PutInstanceCommunicationLimitsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::put_instance_communication_limits::PutInstanceCommunicationLimitsError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::put_instance_communication_limits::PutInstanceCommunicationLimitsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

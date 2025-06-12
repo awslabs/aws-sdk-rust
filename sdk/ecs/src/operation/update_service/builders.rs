@@ -61,16 +61,7 @@ impl crate::operation::update_service::builders::UpdateServiceInputBuilder {
 /// <p>Sort the container instances by the largest number of running tasks for this service in the same Availability Zone as the instance. For example, if zone A has one running service task and zones B and C each have two, container instances in either zone B or C are considered optimal for termination.</p></li>
 /// <li>
 /// <p>Stop the task on a container instance in an optimal Availability Zone (based on the previous steps), favoring container instances with the largest number of running tasks for this service.</p></li>
-/// </ul><note>
-/// <p>You must have a service-linked role when you update any of the following service properties:</p>
-/// <ul>
-/// <li>
-/// <p><code>loadBalancers</code>,</p></li>
-/// <li>
-/// <p><code>serviceRegistries</code></p></li>
 /// </ul>
-/// <p>For more information about the role see the <code>CreateService</code> request parameter <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_CreateService.html#ECS-CreateService-request-role"> <code>role</code> </a>.</p>
-/// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateServiceFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -157,16 +148,19 @@ impl UpdateServiceFluentBuilder {
         self
     }
     /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that your service runs on. If you do not specify a cluster, the default cluster is assumed.</p>
+    /// <p>You can't change the cluster name.</p>
     pub fn cluster(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.cluster(input.into());
         self
     }
     /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that your service runs on. If you do not specify a cluster, the default cluster is assumed.</p>
+    /// <p>You can't change the cluster name.</p>
     pub fn set_cluster(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_cluster(input);
         self
     }
     /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that your service runs on. If you do not specify a cluster, the default cluster is assumed.</p>
+    /// <p>You can't change the cluster name.</p>
     pub fn get_cluster(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_cluster()
     }
@@ -217,24 +211,48 @@ impl UpdateServiceFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_capacity_provider_strategy`](Self::set_capacity_provider_strategy).
     ///
-    /// <p>The capacity provider strategy to update the service to use.</p>
-    /// <p>if the service uses the default capacity provider strategy for the cluster, the service can be updated to use one or more capacity providers as opposed to the default capacity provider strategy. However, when a service is using a capacity provider strategy that's not the default capacity provider strategy, the service can't be updated to use the cluster's default capacity provider strategy.</p>
-    /// <p>A capacity provider strategy consists of one or more capacity providers along with the <code>base</code> and <code>weight</code> to assign to them. A capacity provider must be associated with the cluster to be used in a capacity provider strategy. The <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_PutClusterCapacityProviders.html">PutClusterCapacityProviders</a> API is used to associate a capacity provider with a cluster. Only capacity providers with an <code>ACTIVE</code> or <code>UPDATING</code> status can be used.</p>
-    /// <p>If specifying a capacity provider that uses an Auto Scaling group, the capacity provider must already be created. New capacity providers can be created with the <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_CreateClusterCapacityProvider.html">CreateClusterCapacityProvider</a> API operation.</p>
-    /// <p>To use a Fargate capacity provider, specify either the <code>FARGATE</code> or <code>FARGATE_SPOT</code> capacity providers. The Fargate capacity providers are available to all accounts and only need to be associated with a cluster to be used.</p>
-    /// <p>The <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_PutClusterCapacityProviders.html">PutClusterCapacityProviders</a>API operation is used to update the list of available capacity providers for a cluster after the cluster is created.</p>
-    /// <p></p>
+    /// <p>The details of a capacity provider strategy. You can set a capacity provider when you create a cluster, run a task, or update a service.</p>
+    /// <p>When you use Fargate, the capacity providers are <code>FARGATE</code> or <code>FARGATE_SPOT</code>.</p>
+    /// <p>When you use Amazon EC2, the capacity providers are Auto Scaling groups.</p>
+    /// <p>You can change capacity providers for rolling deployments and blue/green deployments.</p>
+    /// <p>The following list provides the valid transitions:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Update the Fargate launch type to an EC2 capacity provider.</p></li>
+    /// <li>
+    /// <p>Update the Amazon EC2 launch type to a Fargate capacity provider.</p></li>
+    /// <li>
+    /// <p>Update the Fargate capacity provider to an EC2 capacity provider.</p></li>
+    /// <li>
+    /// <p>Update the Amazon EC2 capacity provider to a Fargate capacity provider.</p></li>
+    /// <li>
+    /// <p>Update the EC2 or Fargate capacity provider back to the launch type.</p>
+    /// <p>Pass an empty list in the <code>capacityProvider</code> parameter.</p></li>
+    /// </ul>
+    /// <p>For information about Amazon Web Services CDK considerations, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/update-service-parameters.html">Amazon Web Services CDK considerations</a>.</p>
     pub fn capacity_provider_strategy(mut self, input: crate::types::CapacityProviderStrategyItem) -> Self {
         self.inner = self.inner.capacity_provider_strategy(input);
         self
     }
-    /// <p>The capacity provider strategy to update the service to use.</p>
-    /// <p>if the service uses the default capacity provider strategy for the cluster, the service can be updated to use one or more capacity providers as opposed to the default capacity provider strategy. However, when a service is using a capacity provider strategy that's not the default capacity provider strategy, the service can't be updated to use the cluster's default capacity provider strategy.</p>
-    /// <p>A capacity provider strategy consists of one or more capacity providers along with the <code>base</code> and <code>weight</code> to assign to them. A capacity provider must be associated with the cluster to be used in a capacity provider strategy. The <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_PutClusterCapacityProviders.html">PutClusterCapacityProviders</a> API is used to associate a capacity provider with a cluster. Only capacity providers with an <code>ACTIVE</code> or <code>UPDATING</code> status can be used.</p>
-    /// <p>If specifying a capacity provider that uses an Auto Scaling group, the capacity provider must already be created. New capacity providers can be created with the <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_CreateClusterCapacityProvider.html">CreateClusterCapacityProvider</a> API operation.</p>
-    /// <p>To use a Fargate capacity provider, specify either the <code>FARGATE</code> or <code>FARGATE_SPOT</code> capacity providers. The Fargate capacity providers are available to all accounts and only need to be associated with a cluster to be used.</p>
-    /// <p>The <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_PutClusterCapacityProviders.html">PutClusterCapacityProviders</a>API operation is used to update the list of available capacity providers for a cluster after the cluster is created.</p>
-    /// <p></p>
+    /// <p>The details of a capacity provider strategy. You can set a capacity provider when you create a cluster, run a task, or update a service.</p>
+    /// <p>When you use Fargate, the capacity providers are <code>FARGATE</code> or <code>FARGATE_SPOT</code>.</p>
+    /// <p>When you use Amazon EC2, the capacity providers are Auto Scaling groups.</p>
+    /// <p>You can change capacity providers for rolling deployments and blue/green deployments.</p>
+    /// <p>The following list provides the valid transitions:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Update the Fargate launch type to an EC2 capacity provider.</p></li>
+    /// <li>
+    /// <p>Update the Amazon EC2 launch type to a Fargate capacity provider.</p></li>
+    /// <li>
+    /// <p>Update the Fargate capacity provider to an EC2 capacity provider.</p></li>
+    /// <li>
+    /// <p>Update the Amazon EC2 capacity provider to a Fargate capacity provider.</p></li>
+    /// <li>
+    /// <p>Update the EC2 or Fargate capacity provider back to the launch type.</p>
+    /// <p>Pass an empty list in the <code>capacityProvider</code> parameter.</p></li>
+    /// </ul>
+    /// <p>For information about Amazon Web Services CDK considerations, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/update-service-parameters.html">Amazon Web Services CDK considerations</a>.</p>
     pub fn set_capacity_provider_strategy(
         mut self,
         input: ::std::option::Option<::std::vec::Vec<crate::types::CapacityProviderStrategyItem>>,
@@ -242,13 +260,25 @@ impl UpdateServiceFluentBuilder {
         self.inner = self.inner.set_capacity_provider_strategy(input);
         self
     }
-    /// <p>The capacity provider strategy to update the service to use.</p>
-    /// <p>if the service uses the default capacity provider strategy for the cluster, the service can be updated to use one or more capacity providers as opposed to the default capacity provider strategy. However, when a service is using a capacity provider strategy that's not the default capacity provider strategy, the service can't be updated to use the cluster's default capacity provider strategy.</p>
-    /// <p>A capacity provider strategy consists of one or more capacity providers along with the <code>base</code> and <code>weight</code> to assign to them. A capacity provider must be associated with the cluster to be used in a capacity provider strategy. The <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_PutClusterCapacityProviders.html">PutClusterCapacityProviders</a> API is used to associate a capacity provider with a cluster. Only capacity providers with an <code>ACTIVE</code> or <code>UPDATING</code> status can be used.</p>
-    /// <p>If specifying a capacity provider that uses an Auto Scaling group, the capacity provider must already be created. New capacity providers can be created with the <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_CreateClusterCapacityProvider.html">CreateClusterCapacityProvider</a> API operation.</p>
-    /// <p>To use a Fargate capacity provider, specify either the <code>FARGATE</code> or <code>FARGATE_SPOT</code> capacity providers. The Fargate capacity providers are available to all accounts and only need to be associated with a cluster to be used.</p>
-    /// <p>The <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_PutClusterCapacityProviders.html">PutClusterCapacityProviders</a>API operation is used to update the list of available capacity providers for a cluster after the cluster is created.</p>
-    /// <p></p>
+    /// <p>The details of a capacity provider strategy. You can set a capacity provider when you create a cluster, run a task, or update a service.</p>
+    /// <p>When you use Fargate, the capacity providers are <code>FARGATE</code> or <code>FARGATE_SPOT</code>.</p>
+    /// <p>When you use Amazon EC2, the capacity providers are Auto Scaling groups.</p>
+    /// <p>You can change capacity providers for rolling deployments and blue/green deployments.</p>
+    /// <p>The following list provides the valid transitions:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Update the Fargate launch type to an EC2 capacity provider.</p></li>
+    /// <li>
+    /// <p>Update the Amazon EC2 launch type to a Fargate capacity provider.</p></li>
+    /// <li>
+    /// <p>Update the Fargate capacity provider to an EC2 capacity provider.</p></li>
+    /// <li>
+    /// <p>Update the Amazon EC2 capacity provider to a Fargate capacity provider.</p></li>
+    /// <li>
+    /// <p>Update the EC2 or Fargate capacity provider back to the launch type.</p>
+    /// <p>Pass an empty list in the <code>capacityProvider</code> parameter.</p></li>
+    /// </ul>
+    /// <p>For information about Amazon Web Services CDK considerations, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/update-service-parameters.html">Amazon Web Services CDK considerations</a>.</p>
     pub fn get_capacity_provider_strategy(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CapacityProviderStrategyItem>> {
         self.inner.get_capacity_provider_strategy()
     }
@@ -425,6 +455,9 @@ impl UpdateServiceFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_load_balancers`](Self::set_load_balancers).
     ///
+    /// <note>
+    /// <p>You must have a service-linked role when you update this property</p>
+    /// </note>
     /// <p>A list of Elastic Load Balancing load balancer objects. It contains the load balancer name, the container name, and the container port to access from the load balancer. The container name is as it appears in a container definition.</p>
     /// <p>When you add, update, or remove a load balancer configuration, Amazon ECS starts new tasks with the updated Elastic Load Balancing configuration, and then stops the old tasks when the new tasks are running.</p>
     /// <p>For services that use rolling updates, you can add, update, or remove Elastic Load Balancing target groups. You can update from a single target group to multiple target groups and from multiple target groups to a single target group.</p>
@@ -435,6 +468,9 @@ impl UpdateServiceFluentBuilder {
         self.inner = self.inner.load_balancers(input);
         self
     }
+    /// <note>
+    /// <p>You must have a service-linked role when you update this property</p>
+    /// </note>
     /// <p>A list of Elastic Load Balancing load balancer objects. It contains the load balancer name, the container name, and the container port to access from the load balancer. The container name is as it appears in a container definition.</p>
     /// <p>When you add, update, or remove a load balancer configuration, Amazon ECS starts new tasks with the updated Elastic Load Balancing configuration, and then stops the old tasks when the new tasks are running.</p>
     /// <p>For services that use rolling updates, you can add, update, or remove Elastic Load Balancing target groups. You can update from a single target group to multiple target groups and from multiple target groups to a single target group.</p>
@@ -445,6 +481,9 @@ impl UpdateServiceFluentBuilder {
         self.inner = self.inner.set_load_balancers(input);
         self
     }
+    /// <note>
+    /// <p>You must have a service-linked role when you update this property</p>
+    /// </note>
     /// <p>A list of Elastic Load Balancing load balancer objects. It contains the load balancer name, the container name, and the container port to access from the load balancer. The container name is as it appears in a container definition.</p>
     /// <p>When you add, update, or remove a load balancer configuration, Amazon ECS starts new tasks with the updated Elastic Load Balancing configuration, and then stops the old tasks when the new tasks are running.</p>
     /// <p>For services that use rolling updates, you can add, update, or remove Elastic Load Balancing target groups. You can update from a single target group to multiple target groups and from multiple target groups to a single target group.</p>
@@ -476,6 +515,10 @@ impl UpdateServiceFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_service_registries`](Self::set_service_registries).
     ///
+    /// <note>
+    /// <p>You must have a service-linked role when you update this property.</p>
+    /// <p>For more information about the role see the <code>CreateService</code> request parameter <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_CreateService.html#ECS-CreateService-request-role"> <code>role</code> </a>.</p>
+    /// </note>
     /// <p>The details for the service discovery registries to assign to this service. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service Discovery</a>.</p>
     /// <p>When you add, update, or remove the service registries configuration, Amazon ECS starts new tasks with the updated service registries configuration, and then stops the old tasks when the new tasks are running.</p>
     /// <p>You can remove existing <code>serviceRegistries</code> by passing an empty list.</p>
@@ -483,6 +526,10 @@ impl UpdateServiceFluentBuilder {
         self.inner = self.inner.service_registries(input);
         self
     }
+    /// <note>
+    /// <p>You must have a service-linked role when you update this property.</p>
+    /// <p>For more information about the role see the <code>CreateService</code> request parameter <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_CreateService.html#ECS-CreateService-request-role"> <code>role</code> </a>.</p>
+    /// </note>
     /// <p>The details for the service discovery registries to assign to this service. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service Discovery</a>.</p>
     /// <p>When you add, update, or remove the service registries configuration, Amazon ECS starts new tasks with the updated service registries configuration, and then stops the old tasks when the new tasks are running.</p>
     /// <p>You can remove existing <code>serviceRegistries</code> by passing an empty list.</p>
@@ -490,6 +537,10 @@ impl UpdateServiceFluentBuilder {
         self.inner = self.inner.set_service_registries(input);
         self
     }
+    /// <note>
+    /// <p>You must have a service-linked role when you update this property.</p>
+    /// <p>For more information about the role see the <code>CreateService</code> request parameter <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_CreateService.html#ECS-CreateService-request-role"> <code>role</code> </a>.</p>
+    /// </note>
     /// <p>The details for the service discovery registries to assign to this service. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service Discovery</a>.</p>
     /// <p>When you add, update, or remove the service registries configuration, Amazon ECS starts new tasks with the updated service registries configuration, and then stops the old tasks when the new tasks are running.</p>
     /// <p>You can remove existing <code>serviceRegistries</code> by passing an empty list.</p>

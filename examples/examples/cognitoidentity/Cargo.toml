@@ -9,8 +9,8 @@ publish = false
 [dependencies]
 chrono = "0.4"
 thiserror = "1.0"
-aws-config= { version = "1.6.3", path = "../../../sdk/aws-config", features = ["behavior-version-latest"] }
-aws-sdk-cognitoidentity= { version = "1.73.0", path = "../../../sdk/cognitoidentity" }
+aws-config= { version = "1.8.0", path = "../../../sdk/aws-config", features = ["behavior-version-latest"] }
+aws-sdk-cognitoidentity= { version = "1.74.0", path = "../../../sdk/cognitoidentity" }
 aws-smithy-types-convert= { version = "0.60.9", path = "../../../sdk/aws-smithy-types-convert", features = ["convert-chrono"] }
 
 [dependencies.clap]

@@ -112,40 +112,28 @@ pub(crate) fn reflens_list_versions_by_function_output_output_next_marker(
 pub(crate) fn lens_list_aliases_output_output_aliases(
     input: crate::operation::list_aliases::ListAliasesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::AliasConfiguration>> {
-    let input = match input.aliases {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.aliases?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_code_signing_configs_output_output_code_signing_configs(
     input: crate::operation::list_code_signing_configs::ListCodeSigningConfigsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::CodeSigningConfig>> {
-    let input = match input.code_signing_configs {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.code_signing_configs?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_event_source_mappings_output_output_event_source_mappings(
     input: crate::operation::list_event_source_mappings::ListEventSourceMappingsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::EventSourceMappingConfiguration>> {
-    let input = match input.event_source_mappings {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.event_source_mappings?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_function_event_invoke_configs_output_output_function_event_invoke_configs(
     input: crate::operation::list_function_event_invoke_configs::ListFunctionEventInvokeConfigsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::FunctionEventInvokeConfig>> {
-    let input = match input.function_event_invoke_configs {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.function_event_invoke_configs?;
     ::std::option::Option::Some(input)
 }
 
@@ -159,59 +147,41 @@ pub(crate) fn lens_list_function_url_configs_output_output_function_url_configs(
 pub(crate) fn lens_list_functions_output_output_functions(
     input: crate::operation::list_functions::ListFunctionsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::FunctionConfiguration>> {
-    let input = match input.functions {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.functions?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_functions_by_code_signing_config_output_output_function_arns(
     input: crate::operation::list_functions_by_code_signing_config::ListFunctionsByCodeSigningConfigOutput,
 ) -> ::std::option::Option<::std::vec::Vec<::std::string::String>> {
-    let input = match input.function_arns {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.function_arns?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_layer_versions_output_output_layer_versions(
     input: crate::operation::list_layer_versions::ListLayerVersionsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::LayerVersionsListItem>> {
-    let input = match input.layer_versions {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.layer_versions?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_layers_output_output_layers(
     input: crate::operation::list_layers::ListLayersOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::LayersListItem>> {
-    let input = match input.layers {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.layers?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_provisioned_concurrency_configs_output_output_provisioned_concurrency_configs(
     input: crate::operation::list_provisioned_concurrency_configs::ListProvisionedConcurrencyConfigsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ProvisionedConcurrencyConfigListItem>> {
-    let input = match input.provisioned_concurrency_configs {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.provisioned_concurrency_configs?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_versions_by_function_output_output_versions(
     input: crate::operation::list_versions_by_function::ListVersionsByFunctionOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::FunctionConfiguration>> {
-    let input = match input.versions {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.versions?;
     ::std::option::Option::Some(input)
 }

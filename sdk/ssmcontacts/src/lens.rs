@@ -119,10 +119,7 @@ pub(crate) fn lens_list_contact_channels_output_output_contact_channels(
 pub(crate) fn lens_list_contacts_output_output_contacts(
     input: crate::operation::list_contacts::ListContactsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::Contact>> {
-    let input = match input.contacts {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.contacts?;
     ::std::option::Option::Some(input)
 }
 
@@ -136,10 +133,7 @@ pub(crate) fn lens_list_engagements_output_output_engagements(
 pub(crate) fn lens_list_page_receipts_output_output_receipts(
     input: crate::operation::list_page_receipts::ListPageReceiptsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::Receipt>> {
-    let input = match input.receipts {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.receipts?;
     ::std::option::Option::Some(input)
 }
 
@@ -167,30 +161,21 @@ pub(crate) fn lens_list_pages_by_engagement_output_output_pages(
 pub(crate) fn lens_list_preview_rotation_shifts_output_output_rotation_shifts(
     input: crate::operation::list_preview_rotation_shifts::ListPreviewRotationShiftsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::RotationShift>> {
-    let input = match input.rotation_shifts {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.rotation_shifts?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_rotation_overrides_output_output_rotation_overrides(
     input: crate::operation::list_rotation_overrides::ListRotationOverridesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::RotationOverride>> {
-    let input = match input.rotation_overrides {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.rotation_overrides?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_rotation_shifts_output_output_rotation_shifts(
     input: crate::operation::list_rotation_shifts::ListRotationShiftsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::RotationShift>> {
-    let input = match input.rotation_shifts {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.rotation_shifts?;
     ::std::option::Option::Some(input)
 }
 

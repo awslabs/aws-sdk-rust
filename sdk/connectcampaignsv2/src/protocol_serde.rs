@@ -47,6 +47,8 @@ pub(crate) mod shape_get_campaign_state_batch;
 
 pub(crate) mod shape_get_connect_instance_config;
 
+pub(crate) mod shape_get_instance_communication_limits;
+
 pub(crate) mod shape_get_instance_onboarding_job_status;
 
 pub(crate) mod shape_list_campaigns;
@@ -58,6 +60,8 @@ pub(crate) mod shape_list_tags_for_resource;
 pub(crate) mod shape_pause_campaign;
 
 pub(crate) mod shape_put_connect_instance_integration;
+
+pub(crate) mod shape_put_instance_communication_limits;
 
 pub(crate) mod shape_put_outbound_request_batch;
 
@@ -117,6 +121,8 @@ pub(crate) mod shape_list_campaigns_input;
 
 pub(crate) mod shape_put_connect_instance_integration_input;
 
+pub(crate) mod shape_put_instance_communication_limits_input;
+
 pub(crate) mod shape_put_outbound_request_batch_input;
 
 pub(crate) mod shape_put_profile_outbound_request_batch_input;
@@ -166,6 +172,8 @@ pub(crate) mod shape_failed_campaign_state_response_list;
 pub(crate) mod shape_failed_profile_outbound_request_list;
 
 pub(crate) mod shape_failed_request_list;
+
+pub(crate) mod shape_instance_communication_limits_config;
 
 pub(crate) mod shape_instance_config;
 
@@ -239,6 +247,8 @@ pub(crate) mod shape_channel_subtype_list;
 
 pub(crate) mod shape_communication_limit;
 
+pub(crate) mod shape_communication_limit_list;
+
 pub(crate) mod shape_customer_profiles_integration_summary;
 
 pub(crate) mod shape_email_channel_subtype_parameters;
@@ -268,8 +278,6 @@ pub(crate) mod shape_telephony_outbound_mode;
 pub(crate) mod shape_agentless_config;
 
 pub(crate) mod shape_answer_machine_detection_config;
-
-pub(crate) mod shape_communication_limit_list;
 
 pub(crate) mod shape_local_time_zone_detection;
 

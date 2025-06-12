@@ -68,7 +68,7 @@ async fn record_async_instruments(dyn_sdk_meter: Meter) {
 fn async_instruments_benchmark(c: &mut Criterion) {
     #[global_allocator]
     static GLOBAL: &StatsAlloc<System> = &INSTRUMENTED_SYSTEM;
-    let reg = Region::new(&GLOBAL);
+    let reg = Region::new(GLOBAL);
 
     // Setup the Otel MeterProvider (which needs to be done inside an async runtime)
     // The runtime is reused later for running the bench function

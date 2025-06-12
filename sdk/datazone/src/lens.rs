@@ -359,10 +359,7 @@ pub(crate) fn lens_list_asset_filters_output_output_items(
 pub(crate) fn lens_list_asset_revisions_output_output_items(
     input: crate::operation::list_asset_revisions::ListAssetRevisionsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::AssetRevision>> {
-    let input = match input.items {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.items?;
     ::std::option::Option::Some(input)
 }
 
@@ -425,20 +422,14 @@ pub(crate) fn lens_list_entity_owners_output_output_owners(
 pub(crate) fn lens_list_environment_actions_output_output_items(
     input: crate::operation::list_environment_actions::ListEnvironmentActionsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::EnvironmentActionSummary>> {
-    let input = match input.items {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.items?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_environment_blueprint_configurations_output_output_items(
     input: crate::operation::list_environment_blueprint_configurations::ListEnvironmentBlueprintConfigurationsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::EnvironmentBlueprintConfigurationItem>> {
-    let input = match input.items {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.items?;
     ::std::option::Option::Some(input)
 }
 
@@ -466,50 +457,35 @@ pub(crate) fn lens_list_environments_output_output_items(
 pub(crate) fn lens_list_job_runs_output_output_items(
     input: crate::operation::list_job_runs::ListJobRunsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::JobRunSummary>> {
-    let input = match input.items {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.items?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_lineage_events_output_output_items(
     input: crate::operation::list_lineage_events::ListLineageEventsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::LineageEventSummary>> {
-    let input = match input.items {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.items?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_lineage_node_history_output_output_nodes(
     input: crate::operation::list_lineage_node_history::ListLineageNodeHistoryOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::LineageNodeSummary>> {
-    let input = match input.nodes {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.nodes?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_metadata_generation_runs_output_output_items(
     input: crate::operation::list_metadata_generation_runs::ListMetadataGenerationRunsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::MetadataGenerationRunItem>> {
-    let input = match input.items {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.items?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_notifications_output_output_notifications(
     input: crate::operation::list_notifications::ListNotificationsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::NotificationOutput>> {
-    let input = match input.notifications {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.notifications?;
     ::std::option::Option::Some(input)
 }
 
@@ -530,20 +506,14 @@ pub(crate) fn lens_list_project_memberships_output_output_members(
 pub(crate) fn lens_list_project_profiles_output_output_items(
     input: crate::operation::list_project_profiles::ListProjectProfilesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ProjectProfileSummary>> {
-    let input = match input.items {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.items?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_projects_output_output_items(
     input: crate::operation::list_projects::ListProjectsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ProjectSummary>> {
-    let input = match input.items {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.items?;
     ::std::option::Option::Some(input)
 }
 
@@ -585,59 +555,41 @@ pub(crate) fn lens_list_subscriptions_output_output_items(
 pub(crate) fn lens_list_time_series_data_points_output_output_items(
     input: crate::operation::list_time_series_data_points::ListTimeSeriesDataPointsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::TimeSeriesDataPointSummaryFormOutput>> {
-    let input = match input.items {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.items?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_search_output_output_items(
     input: crate::operation::search::SearchOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::SearchInventoryResultItem>> {
-    let input = match input.items {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.items?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_search_group_profiles_output_output_items(
     input: crate::operation::search_group_profiles::SearchGroupProfilesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::GroupProfileSummary>> {
-    let input = match input.items {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.items?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_search_listings_output_output_items(
     input: crate::operation::search_listings::SearchListingsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::SearchResultItem>> {
-    let input = match input.items {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.items?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_search_types_output_output_items(
     input: crate::operation::search_types::SearchTypesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::SearchTypesResultItem>> {
-    let input = match input.items {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.items?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_search_user_profiles_output_output_items(
     input: crate::operation::search_user_profiles::SearchUserProfilesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::UserProfileSummary>> {
-    let input = match input.items {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.items?;
     ::std::option::Option::Some(input)
 }

@@ -72,69 +72,48 @@ pub(crate) fn reflens_search_output_output_next_token(
 pub(crate) fn lens_list_indexes_output_output_indexes(
     input: crate::operation::list_indexes::ListIndexesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::Index>> {
-    let input = match input.indexes {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.indexes?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_indexes_for_members_output_output_indexes(
     input: crate::operation::list_indexes_for_members::ListIndexesForMembersOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::MemberIndex>> {
-    let input = match input.indexes {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.indexes?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_managed_views_output_output_managed_views(
     input: crate::operation::list_managed_views::ListManagedViewsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<::std::string::String>> {
-    let input = match input.managed_views {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.managed_views?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_resources_output_output_resources(
     input: crate::operation::list_resources::ListResourcesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::Resource>> {
-    let input = match input.resources {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.resources?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_supported_resource_types_output_output_resource_types(
     input: crate::operation::list_supported_resource_types::ListSupportedResourceTypesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::SupportedResourceType>> {
-    let input = match input.resource_types {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.resource_types?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_views_output_output_views(
     input: crate::operation::list_views::ListViewsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<::std::string::String>> {
-    let input = match input.views {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.views?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_search_output_output_resources(
     input: crate::operation::search::SearchOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::Resource>> {
-    let input = match input.resources {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.resources?;
     ::std::option::Option::Some(input)
 }

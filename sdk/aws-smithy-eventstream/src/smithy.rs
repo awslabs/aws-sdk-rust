@@ -60,7 +60,7 @@ pub struct ResponseHeaders<'a> {
     pub smithy_type: &'a StrBytes,
 }
 
-impl<'a> ResponseHeaders<'a> {
+impl ResponseHeaders<'_> {
     /// Content-Type for this message
     pub fn content_type(&self) -> Option<&str> {
         self.content_type.map(|ct| ct.as_str())

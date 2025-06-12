@@ -186,12 +186,13 @@ mod hyper_014_support {
 
 #[cfg(test)]
 mod test {
+
+    use super::*;
+
     use aws_smithy_async::rt::sleep::TokioSleep;
     use aws_smithy_async::time::SystemTimeSource;
-    use aws_smithy_runtime_api::client::http::{HttpClient, HttpConnector, HttpConnectorSettings};
-    use aws_smithy_runtime_api::client::orchestrator::HttpRequest;
     use aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder;
-    use std::time::Duration;
+    use tokio::time::Duration;
 
     #[cfg(feature = "hyper-014")]
     #[tokio::test]

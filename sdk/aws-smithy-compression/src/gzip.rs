@@ -25,7 +25,7 @@ impl Gzip {
 
 impl Compress for Gzip {
     fn compress_bytes(&mut self, bytes: &[u8], writer: &mut dyn Write) -> Result<(), BoxError> {
-        Gzip::compress_bytes(self, bytes, writer).map_err(Into::into)
+        Gzip::compress_bytes(self, bytes, writer)
     }
 }
 

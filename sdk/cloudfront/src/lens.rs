@@ -154,151 +154,91 @@ pub(crate) fn reflens_list_streaming_distributions_output_output_streaming_distr
 pub(crate) fn lens_list_cloud_front_origin_access_identities_output_output_cloud_front_origin_access_identity_list_items(
     input: crate::operation::list_cloud_front_origin_access_identities::ListCloudFrontOriginAccessIdentitiesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::CloudFrontOriginAccessIdentitySummary>> {
-    let input = match input.cloud_front_origin_access_identity_list {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
-    let input = match input.items {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.cloud_front_origin_access_identity_list?;
+    let input = input.items?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_connection_groups_output_output_connection_groups(
     input: crate::operation::list_connection_groups::ListConnectionGroupsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ConnectionGroupSummary>> {
-    let input = match input.connection_groups {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.connection_groups?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_distribution_tenants_output_output_distribution_tenant_list(
     input: crate::operation::list_distribution_tenants::ListDistributionTenantsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::DistributionTenantSummary>> {
-    let input = match input.distribution_tenant_list {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.distribution_tenant_list?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_distribution_tenants_by_customization_output_output_distribution_tenant_list(
     input: crate::operation::list_distribution_tenants_by_customization::ListDistributionTenantsByCustomizationOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::DistributionTenantSummary>> {
-    let input = match input.distribution_tenant_list {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.distribution_tenant_list?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_distributions_output_output_distribution_list_items(
     input: crate::operation::list_distributions::ListDistributionsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::DistributionSummary>> {
-    let input = match input.distribution_list {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
-    let input = match input.items {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.distribution_list?;
+    let input = input.items?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_distributions_by_connection_mode_output_output_distribution_list_items(
     input: crate::operation::list_distributions_by_connection_mode::ListDistributionsByConnectionModeOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::DistributionSummary>> {
-    let input = match input.distribution_list {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
-    let input = match input.items {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.distribution_list?;
+    let input = input.items?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_domain_conflicts_output_output_domain_conflicts(
     input: crate::operation::list_domain_conflicts::ListDomainConflictsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::DomainConflict>> {
-    let input = match input.domain_conflicts {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.domain_conflicts?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_invalidations_output_output_invalidation_list_items(
     input: crate::operation::list_invalidations::ListInvalidationsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::InvalidationSummary>> {
-    let input = match input.invalidation_list {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
-    let input = match input.items {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.invalidation_list?;
+    let input = input.items?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_invalidations_for_distribution_tenant_output_output_invalidation_list_items(
     input: crate::operation::list_invalidations_for_distribution_tenant::ListInvalidationsForDistributionTenantOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::InvalidationSummary>> {
-    let input = match input.invalidation_list {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
-    let input = match input.items {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.invalidation_list?;
+    let input = input.items?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_key_value_stores_output_output_key_value_store_list_items(
     input: crate::operation::list_key_value_stores::ListKeyValueStoresOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::KeyValueStore>> {
-    let input = match input.key_value_store_list {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
-    let input = match input.items {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.key_value_store_list?;
+    let input = input.items?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_public_keys_output_output_public_key_list_items(
     input: crate::operation::list_public_keys::ListPublicKeysOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::PublicKeySummary>> {
-    let input = match input.public_key_list {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
-    let input = match input.items {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.public_key_list?;
+    let input = input.items?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_streaming_distributions_output_output_streaming_distribution_list_items(
     input: crate::operation::list_streaming_distributions::ListStreamingDistributionsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::StreamingDistributionSummary>> {
-    let input = match input.streaming_distribution_list {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
-    let input = match input.items {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.streaming_distribution_list?;
+    let input = input.items?;
     ::std::option::Option::Some(input)
 }

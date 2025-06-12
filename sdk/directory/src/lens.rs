@@ -142,129 +142,90 @@ pub(crate) fn reflens_list_tags_for_resource_output_output_next_token(
 pub(crate) fn lens_describe_client_authentication_settings_output_output_client_authentication_settings_info(
     input: crate::operation::describe_client_authentication_settings::DescribeClientAuthenticationSettingsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ClientAuthenticationSettingInfo>> {
-    let input = match input.client_authentication_settings_info {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.client_authentication_settings_info?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_describe_directories_output_output_directory_descriptions(
     input: crate::operation::describe_directories::DescribeDirectoriesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::DirectoryDescription>> {
-    let input = match input.directory_descriptions {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.directory_descriptions?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_describe_ldaps_settings_output_output_ldaps_settings_info(
     input: crate::operation::describe_ldaps_settings::DescribeLdapsSettingsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::LdapsSettingInfo>> {
-    let input = match input.ldaps_settings_info {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.ldaps_settings_info?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_describe_regions_output_output_regions_description(
     input: crate::operation::describe_regions::DescribeRegionsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::RegionDescription>> {
-    let input = match input.regions_description {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.regions_description?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_describe_shared_directories_output_output_shared_directories(
     input: crate::operation::describe_shared_directories::DescribeSharedDirectoriesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::SharedDirectory>> {
-    let input = match input.shared_directories {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.shared_directories?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_describe_snapshots_output_output_snapshots(
     input: crate::operation::describe_snapshots::DescribeSnapshotsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::Snapshot>> {
-    let input = match input.snapshots {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.snapshots?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_describe_trusts_output_output_trusts(
     input: crate::operation::describe_trusts::DescribeTrustsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::Trust>> {
-    let input = match input.trusts {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.trusts?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_describe_update_directory_output_output_update_activities(
     input: crate::operation::describe_update_directory::DescribeUpdateDirectoryOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::UpdateInfoEntry>> {
-    let input = match input.update_activities {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.update_activities?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_certificates_output_output_certificates_info(
     input: crate::operation::list_certificates::ListCertificatesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::CertificateInfo>> {
-    let input = match input.certificates_info {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.certificates_info?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_ip_routes_output_output_ip_routes_info(
     input: crate::operation::list_ip_routes::ListIpRoutesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::IpRouteInfo>> {
-    let input = match input.ip_routes_info {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.ip_routes_info?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_log_subscriptions_output_output_log_subscriptions(
     input: crate::operation::list_log_subscriptions::ListLogSubscriptionsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::LogSubscription>> {
-    let input = match input.log_subscriptions {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.log_subscriptions?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_schema_extensions_output_output_schema_extensions_info(
     input: crate::operation::list_schema_extensions::ListSchemaExtensionsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::SchemaExtensionInfo>> {
-    let input = match input.schema_extensions_info {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.schema_extensions_info?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_tags_for_resource_output_output_tags(
     input: crate::operation::list_tags_for_resource::ListTagsForResourceOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
-    let input = match input.tags {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.tags?;
     ::std::option::Option::Some(input)
 }

@@ -20,6 +20,8 @@ pub struct JobRun {
     pub updated_at: ::aws_smithy_types::DateTime,
     /// <p>The execution role ARN of the job run.</p>
     pub execution_role: ::std::string::String,
+    /// <p>Optional IAM policy. The resulting job IAM role permissions will be an intersection of the policies passed and the policy associated with your job execution role.</p>
+    pub execution_iam_policy: ::std::option::Option<crate::types::JobRunExecutionIamPolicy>,
     /// <p>The state of the job run.</p>
     pub state: crate::types::JobRunState,
     /// <p>The state details of the job run.</p>
@@ -96,6 +98,10 @@ impl JobRun {
     pub fn execution_role(&self) -> &str {
         use std::ops::Deref;
         self.execution_role.deref()
+    }
+    /// <p>Optional IAM policy. The resulting job IAM role permissions will be an intersection of the policies passed and the policy associated with your job execution role.</p>
+    pub fn execution_iam_policy(&self) -> ::std::option::Option<&crate::types::JobRunExecutionIamPolicy> {
+        self.execution_iam_policy.as_ref()
     }
     /// <p>The state of the job run.</p>
     pub fn state(&self) -> &crate::types::JobRunState {
@@ -195,6 +201,7 @@ pub struct JobRunBuilder {
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) execution_role: ::std::option::Option<::std::string::String>,
+    pub(crate) execution_iam_policy: ::std::option::Option<crate::types::JobRunExecutionIamPolicy>,
     pub(crate) state: ::std::option::Option<crate::types::JobRunState>,
     pub(crate) state_details: ::std::option::Option<::std::string::String>,
     pub(crate) release_label: ::std::option::Option<::std::string::String>,
@@ -334,6 +341,20 @@ impl JobRunBuilder {
     /// <p>The execution role ARN of the job run.</p>
     pub fn get_execution_role(&self) -> &::std::option::Option<::std::string::String> {
         &self.execution_role
+    }
+    /// <p>Optional IAM policy. The resulting job IAM role permissions will be an intersection of the policies passed and the policy associated with your job execution role.</p>
+    pub fn execution_iam_policy(mut self, input: crate::types::JobRunExecutionIamPolicy) -> Self {
+        self.execution_iam_policy = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Optional IAM policy. The resulting job IAM role permissions will be an intersection of the policies passed and the policy associated with your job execution role.</p>
+    pub fn set_execution_iam_policy(mut self, input: ::std::option::Option<crate::types::JobRunExecutionIamPolicy>) -> Self {
+        self.execution_iam_policy = input;
+        self
+    }
+    /// <p>Optional IAM policy. The resulting job IAM role permissions will be an intersection of the policies passed and the policy associated with your job execution role.</p>
+    pub fn get_execution_iam_policy(&self) -> &::std::option::Option<crate::types::JobRunExecutionIamPolicy> {
+        &self.execution_iam_policy
     }
     /// <p>The state of the job run.</p>
     /// This field is required.
@@ -668,6 +689,7 @@ impl JobRunBuilder {
                     "execution_role was not specified but it is required when building JobRun",
                 )
             })?,
+            execution_iam_policy: self.execution_iam_policy,
             state: self.state.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "state",

@@ -82,79 +82,55 @@ pub(crate) fn reflens_list_hosted_configuration_versions_output_output_next_toke
 pub(crate) fn lens_list_applications_output_output_items(
     input: crate::operation::list_applications::ListApplicationsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::Application>> {
-    let input = match input.items {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.items?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_configuration_profiles_output_output_items(
     input: crate::operation::list_configuration_profiles::ListConfigurationProfilesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ConfigurationProfileSummary>> {
-    let input = match input.items {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.items?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_deployment_strategies_output_output_items(
     input: crate::operation::list_deployment_strategies::ListDeploymentStrategiesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::DeploymentStrategy>> {
-    let input = match input.items {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.items?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_deployments_output_output_items(
     input: crate::operation::list_deployments::ListDeploymentsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::DeploymentSummary>> {
-    let input = match input.items {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.items?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_environments_output_output_items(
     input: crate::operation::list_environments::ListEnvironmentsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::Environment>> {
-    let input = match input.items {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.items?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_extension_associations_output_output_items(
     input: crate::operation::list_extension_associations::ListExtensionAssociationsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ExtensionAssociationSummary>> {
-    let input = match input.items {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.items?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_extensions_output_output_items(
     input: crate::operation::list_extensions::ListExtensionsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ExtensionSummary>> {
-    let input = match input.items {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.items?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_hosted_configuration_versions_output_output_items(
     input: crate::operation::list_hosted_configuration_versions::ListHostedConfigurationVersionsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::HostedConfigurationVersionSummary>> {
-    let input = match input.items {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.items?;
     ::std::option::Option::Some(input)
 }

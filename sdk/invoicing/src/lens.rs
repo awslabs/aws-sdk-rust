@@ -29,9 +29,6 @@ pub(crate) fn lens_list_invoice_summaries_output_output_invoice_summaries(
 pub(crate) fn lens_list_invoice_units_output_output_invoice_units(
     input: crate::operation::list_invoice_units::ListInvoiceUnitsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::InvoiceUnit>> {
-    let input = match input.invoice_units {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.invoice_units?;
     ::std::option::Option::Some(input)
 }

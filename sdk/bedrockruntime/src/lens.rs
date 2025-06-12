@@ -12,9 +12,6 @@ pub(crate) fn reflens_list_async_invokes_output_output_next_token(
 pub(crate) fn lens_list_async_invokes_output_output_async_invoke_summaries(
     input: crate::operation::list_async_invokes::ListAsyncInvokesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::AsyncInvokeSummary>> {
-    let input = match input.async_invoke_summaries {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.async_invoke_summaries?;
     ::std::option::Option::Some(input)
 }

@@ -103,7 +103,7 @@ pub struct SigningParams<'a, S> {
 
 pub(crate) const ECDSA_256: &str = "AWS4-ECDSA-P256-SHA256";
 
-impl<'a, S> SigningParams<'a, S> {
+impl<S> SigningParams<'_, S> {
     /// Returns the region that will be used to sign SigV4a requests
     pub fn region_set(&self) -> &str {
         self.region_set

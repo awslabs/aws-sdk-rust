@@ -21,7 +21,7 @@ struct SectionPair<'a> {
     suffix: Cow<'a, str>,
 }
 
-impl<'a> SectionPair<'a> {
+impl SectionPair<'_> {
     fn is_unprefixed_default(&self) -> bool {
         self.prefix.is_none() && self.suffix == DEFAULT
     }

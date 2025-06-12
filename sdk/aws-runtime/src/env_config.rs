@@ -43,7 +43,7 @@ enum Location<'a> {
     Profile { name: Cow<'a, str> },
 }
 
-impl<'a> fmt::Display for Location<'a> {
+impl fmt::Display for Location<'_> {
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         match self {
             Location::Environment => write!(f, "environment variable"),
@@ -58,7 +58,7 @@ enum Scope<'a> {
     Service { service_id: Cow<'a, str> },
 }
 
-impl<'a> fmt::Display for Scope<'a> {
+impl fmt::Display for Scope<'_> {
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         match self {
             Scope::Global => write!(f, "global"),
@@ -134,7 +134,7 @@ impl<'a> EnvConfigSource<'a> {
     }
 }
 
-impl<'a> fmt::Display for EnvConfigSource<'a> {
+impl fmt::Display for EnvConfigSource<'_> {
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         write!(f, "{} {} key: `{}`", self.scope, self.location, self.key)
     }

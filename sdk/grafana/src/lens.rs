@@ -59,10 +59,7 @@ pub(crate) fn lens_list_permissions_output_output_permissions(
 pub(crate) fn lens_list_versions_output_output_grafana_versions(
     input: crate::operation::list_versions::ListVersionsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<::std::string::String>> {
-    let input = match input.grafana_versions {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.grafana_versions?;
     ::std::option::Option::Some(input)
 }
 

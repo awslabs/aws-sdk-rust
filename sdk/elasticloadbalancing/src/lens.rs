@@ -12,9 +12,6 @@ pub(crate) fn reflens_describe_load_balancers_output_output_next_marker(
 pub(crate) fn lens_describe_load_balancers_output_output_load_balancer_descriptions(
     input: crate::operation::describe_load_balancers::DescribeLoadBalancersOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::LoadBalancerDescription>> {
-    let input = match input.load_balancer_descriptions {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.load_balancer_descriptions?;
     ::std::option::Option::Some(input)
 }

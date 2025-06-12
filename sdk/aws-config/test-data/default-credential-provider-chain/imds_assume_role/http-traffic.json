@@ -89,7 +89,7 @@
             "action": {
                 "Request": {
                     "request": {
-                        "uri": "http://169.254.169.254/latest/meta-data/iam/security-credentials/",
+                        "uri": "http://169.254.169.254/latest/meta-data/iam/security-credentials-extended/",
                         "headers": {
                             "x-aws-ec2-metadata-token": [
                                 "imdssesiontoken=="
@@ -179,7 +179,7 @@
             "action": {
                 "Request": {
                     "request": {
-                        "uri": "http://169.254.169.254/latest/meta-data/iam/security-credentials/imds-assume-role-test",
+                        "uri": "http://169.254.169.254/latest/meta-data/iam/security-credentials-extended/imds-assume-role-test",
                         "headers": {
                             "user-agent": [
                                 "aws-sdk-rust/0.1.0 os/linux lang/rust/1.52.1"

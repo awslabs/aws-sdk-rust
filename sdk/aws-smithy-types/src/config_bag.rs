@@ -740,7 +740,7 @@ pub struct ItemIter<'a, T> {
     t: PhantomData<T>,
 }
 
-impl<'a, T> Debug for ItemIter<'a, T> {
+impl<T> Debug for ItemIter<'_, T> {
     fn fmt(&self, f: &mut Formatter<'_>) -> std::fmt::Result {
         write!(f, "ItemIter")
     }

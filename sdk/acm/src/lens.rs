@@ -12,9 +12,6 @@ pub(crate) fn reflens_list_certificates_output_output_next_token(
 pub(crate) fn lens_list_certificates_output_output_certificate_summary_list(
     input: crate::operation::list_certificates::ListCertificatesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::CertificateSummary>> {
-    let input = match input.certificate_summary_list {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.certificate_summary_list?;
     ::std::option::Option::Some(input)
 }

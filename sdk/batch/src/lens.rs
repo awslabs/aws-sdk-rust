@@ -72,69 +72,48 @@ pub(crate) fn reflens_list_scheduling_policies_output_output_next_token(
 pub(crate) fn lens_describe_compute_environments_output_output_compute_environments(
     input: crate::operation::describe_compute_environments::DescribeComputeEnvironmentsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ComputeEnvironmentDetail>> {
-    let input = match input.compute_environments {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.compute_environments?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_describe_job_definitions_output_output_job_definitions(
     input: crate::operation::describe_job_definitions::DescribeJobDefinitionsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::JobDefinition>> {
-    let input = match input.job_definitions {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.job_definitions?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_describe_job_queues_output_output_job_queues(
     input: crate::operation::describe_job_queues::DescribeJobQueuesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::JobQueueDetail>> {
-    let input = match input.job_queues {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.job_queues?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_consumable_resources_output_output_consumable_resources(
     input: crate::operation::list_consumable_resources::ListConsumableResourcesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ConsumableResourceSummary>> {
-    let input = match input.consumable_resources {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.consumable_resources?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_jobs_output_output_job_summary_list(
     input: crate::operation::list_jobs::ListJobsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::JobSummary>> {
-    let input = match input.job_summary_list {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.job_summary_list?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_jobs_by_consumable_resource_output_output_jobs(
     input: crate::operation::list_jobs_by_consumable_resource::ListJobsByConsumableResourceOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ListJobsByConsumableResourceSummary>> {
-    let input = match input.jobs {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.jobs?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_scheduling_policies_output_output_scheduling_policies(
     input: crate::operation::list_scheduling_policies::ListSchedulingPoliciesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::SchedulingPolicyListingDetail>> {
-    let input = match input.scheduling_policies {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.scheduling_policies?;
     ::std::option::Option::Some(input)
 }

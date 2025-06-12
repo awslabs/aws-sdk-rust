@@ -61,6 +61,8 @@ pub use crate::types::_sms_channel_subtype_parameters::SmsChannelSubtypeParamete
 
 pub use crate::types::_telephony_channel_subtype_parameters::TelephonyChannelSubtypeParametersBuilder;
 
+pub use crate::types::_instance_communication_limits_config::InstanceCommunicationLimitsConfigBuilder;
+
 pub use crate::types::_q_connect_integration_config::QConnectIntegrationConfigBuilder;
 
 pub use crate::types::_customer_profiles_integration_config::CustomerProfilesIntegrationConfigBuilder;

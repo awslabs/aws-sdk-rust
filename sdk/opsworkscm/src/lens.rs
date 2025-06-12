@@ -42,39 +42,27 @@ pub(crate) fn reflens_list_tags_for_resource_output_output_next_token(
 pub(crate) fn lens_describe_backups_output_output_backups(
     input: crate::operation::describe_backups::DescribeBackupsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::Backup>> {
-    let input = match input.backups {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.backups?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_describe_events_output_output_server_events(
     input: crate::operation::describe_events::DescribeEventsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ServerEvent>> {
-    let input = match input.server_events {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.server_events?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_describe_servers_output_output_servers(
     input: crate::operation::describe_servers::DescribeServersOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::Server>> {
-    let input = match input.servers {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.servers?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_tags_for_resource_output_output_tags(
     input: crate::operation::list_tags_for_resource::ListTagsForResourceOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
-    let input = match input.tags {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.tags?;
     ::std::option::Option::Some(input)
 }

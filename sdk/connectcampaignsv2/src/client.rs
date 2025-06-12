@@ -187,6 +187,8 @@ mod get_campaign_state_batch;
 
 mod get_connect_instance_config;
 
+mod get_instance_communication_limits;
+
 mod get_instance_onboarding_job_status;
 
 mod list_campaigns;
@@ -198,6 +200,8 @@ mod list_tags_for_resource;
 mod pause_campaign;
 
 mod put_connect_instance_integration;
+
+mod put_instance_communication_limits;
 
 mod put_outbound_request_batch;
 

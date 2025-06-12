@@ -258,7 +258,7 @@ pub struct ArrayIter<'a, 'b, T> {
     inner: minicbor::decode::ArrayIter<'a, 'b, T>,
 }
 
-impl<'a, 'b, T: minicbor::Decode<'b, ()>> Iterator for ArrayIter<'a, 'b, T> {
+impl<'b, T: minicbor::Decode<'b, ()>> Iterator for ArrayIter<'_, 'b, T> {
     type Item = Result<T, DeserializeError>;
 
     fn next(&mut self) -> Option<Self::Item> {
@@ -274,7 +274,7 @@ pub struct MapIter<'a, 'b, K, V> {
     inner: minicbor::decode::MapIter<'a, 'b, K, V>,
 }
 
-impl<'a, 'b, K, V> Iterator for MapIter<'a, 'b, K, V>
+impl<'b, K, V> Iterator for MapIter<'_, 'b, K, V>
 where
     K: minicbor::Decode<'b, ()>,
     V: minicbor::Decode<'b, ()>,
@@ -344,7 +344,7 @@ mod tests {
         let bytes = [0x40];
         let mut decoder = Decoder::new(&bytes);
         let member = decoder.blob().expect("could not decode an empty blob");
-        assert_eq!(member, aws_smithy_types::Blob::new(&[]));
+        assert_eq!(member, aws_smithy_types::Blob::new([]));
     }
 
     #[test]

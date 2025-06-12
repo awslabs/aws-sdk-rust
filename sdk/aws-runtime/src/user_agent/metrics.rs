@@ -307,7 +307,7 @@ mod tests {
         for (feature_id, metric_value) in &*FEATURE_ID_TO_METRIC_VALUE {
             let expected = expected.get(format!("{feature_id}").as_str());
             assert_eq!(
-                expected.expect(&format!("Expected {feature_id} to have value `{metric_value}` but it was `{expected:?}` instead.")),
+                expected.unwrap_or_else(|| panic!("Expected {feature_id} to have value `{metric_value}` but it was `{expected:?}` instead.")),
                 metric_value,
             );
         }
@@ -316,10 +316,7 @@ mod tests {
     #[test]
     fn test_base64_iter() {
         // 350 is the max number of metric IDs we support for now
-        let ids: Vec<String> = Base64Iterator::new()
-            .into_iter()
-            .take(MAX_METRICS_ID_NUMBER)
-            .collect();
+        let ids: Vec<String> = Base64Iterator::new().take(MAX_METRICS_ID_NUMBER).collect();
         assert_eq!("A", ids[0]);
         assert_eq!("Z", ids[25]);
         assert_eq!("a", ids[26]);

@@ -32,29 +32,20 @@ pub(crate) fn reflens_list_registered_subscription_providers_output_output_next_
 pub(crate) fn lens_list_linux_subscription_instances_output_output_instances(
     input: crate::operation::list_linux_subscription_instances::ListLinuxSubscriptionInstancesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::Instance>> {
-    let input = match input.instances {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.instances?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_linux_subscriptions_output_output_subscriptions(
     input: crate::operation::list_linux_subscriptions::ListLinuxSubscriptionsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::Subscription>> {
-    let input = match input.subscriptions {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.subscriptions?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_registered_subscription_providers_output_output_registered_subscription_providers(
     input: crate::operation::list_registered_subscription_providers::ListRegisteredSubscriptionProvidersOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::RegisteredSubscriptionProvider>> {
-    let input = match input.registered_subscription_providers {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.registered_subscription_providers?;
     ::std::option::Option::Some(input)
 }

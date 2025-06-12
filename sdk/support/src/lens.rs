@@ -22,19 +22,13 @@ pub(crate) fn reflens_describe_communications_output_output_next_token(
 pub(crate) fn lens_describe_cases_output_output_cases(
     input: crate::operation::describe_cases::DescribeCasesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::CaseDetails>> {
-    let input = match input.cases {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.cases?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_describe_communications_output_output_communications(
     input: crate::operation::describe_communications::DescribeCommunicationsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::Communication>> {
-    let input = match input.communications {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.communications?;
     ::std::option::Option::Some(input)
 }

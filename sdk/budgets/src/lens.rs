@@ -103,39 +103,27 @@ pub(crate) fn lens_describe_budget_actions_for_budget_output_output_actions(
 pub(crate) fn lens_describe_budget_notifications_for_account_output_output_budget_notifications_for_account(
     input: crate::operation::describe_budget_notifications_for_account::DescribeBudgetNotificationsForAccountOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::BudgetNotificationsForAccount>> {
-    let input = match input.budget_notifications_for_account {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.budget_notifications_for_account?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_describe_budgets_output_output_budgets(
     input: crate::operation::describe_budgets::DescribeBudgetsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::Budget>> {
-    let input = match input.budgets {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.budgets?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_describe_notifications_for_budget_output_output_notifications(
     input: crate::operation::describe_notifications_for_budget::DescribeNotificationsForBudgetOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::Notification>> {
-    let input = match input.notifications {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.notifications?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_describe_subscribers_for_notification_output_output_subscribers(
     input: crate::operation::describe_subscribers_for_notification::DescribeSubscribersForNotificationOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::Subscriber>> {
-    let input = match input.subscribers {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.subscribers?;
     ::std::option::Option::Some(input)
 }

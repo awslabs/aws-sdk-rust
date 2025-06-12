@@ -344,10 +344,7 @@ pub(crate) fn lens_list_gateways_output_output_gateway_summaries(
 pub(crate) fn lens_list_portals_output_output_portal_summaries(
     input: crate::operation::list_portals::ListPortalsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::PortalSummary>> {
-    let input = match input.portal_summaries {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.portal_summaries?;
     ::std::option::Option::Some(input)
 }
 

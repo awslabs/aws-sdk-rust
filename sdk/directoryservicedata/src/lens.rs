@@ -62,59 +62,41 @@ pub(crate) fn reflens_search_users_output_output_next_token(
 pub(crate) fn lens_list_group_members_output_output_members(
     input: crate::operation::list_group_members::ListGroupMembersOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::Member>> {
-    let input = match input.members {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.members?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_groups_output_output_groups(
     input: crate::operation::list_groups::ListGroupsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::GroupSummary>> {
-    let input = match input.groups {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.groups?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_groups_for_member_output_output_groups(
     input: crate::operation::list_groups_for_member::ListGroupsForMemberOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::GroupSummary>> {
-    let input = match input.groups {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.groups?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_users_output_output_users(
     input: crate::operation::list_users::ListUsersOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::UserSummary>> {
-    let input = match input.users {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.users?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_search_groups_output_output_groups(
     input: crate::operation::search_groups::SearchGroupsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::Group>> {
-    let input = match input.groups {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.groups?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_search_users_output_output_users(
     input: crate::operation::search_users::SearchUsersOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::User>> {
-    let input = match input.users {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.users?;
     ::std::option::Option::Some(input)
 }

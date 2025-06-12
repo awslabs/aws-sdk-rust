@@ -42,39 +42,27 @@ pub(crate) fn reflens_list_presets_output_output_next_page_token(
 pub(crate) fn lens_list_jobs_by_pipeline_output_output_jobs(
     input: crate::operation::list_jobs_by_pipeline::ListJobsByPipelineOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::Job>> {
-    let input = match input.jobs {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.jobs?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_jobs_by_status_output_output_jobs(
     input: crate::operation::list_jobs_by_status::ListJobsByStatusOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::Job>> {
-    let input = match input.jobs {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.jobs?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_pipelines_output_output_pipelines(
     input: crate::operation::list_pipelines::ListPipelinesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::Pipeline>> {
-    let input = match input.pipelines {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.pipelines?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_presets_output_output_presets(
     input: crate::operation::list_presets::ListPresetsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::Preset>> {
-    let input = match input.presets {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.presets?;
     ::std::option::Option::Some(input)
 }

@@ -96,7 +96,7 @@ pub enum SignableBody<'a> {
 }
 
 /// Formats the value using the given formatter. To print the body data, set the environment variable `LOG_SIGNABLE_BODY=true`.
-impl<'a> Debug for SignableBody<'a> {
+impl Debug for SignableBody<'_> {
     fn fmt(&self, f: &mut Formatter<'_>) -> std::fmt::Result {
         let should_log_signable_body = std::env::var(LOG_SIGNABLE_BODY)
             .map(|v| v.eq_ignore_ascii_case("true"))

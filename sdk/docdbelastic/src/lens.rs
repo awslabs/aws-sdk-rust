@@ -32,20 +32,14 @@ pub(crate) fn reflens_list_pending_maintenance_actions_output_output_next_token(
 pub(crate) fn lens_list_cluster_snapshots_output_output_snapshots(
     input: crate::operation::list_cluster_snapshots::ListClusterSnapshotsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ClusterSnapshotInList>> {
-    let input = match input.snapshots {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.snapshots?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_clusters_output_output_clusters(
     input: crate::operation::list_clusters::ListClustersOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ClusterInList>> {
-    let input = match input.clusters {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.clusters?;
     ::std::option::Option::Some(input)
 }
 

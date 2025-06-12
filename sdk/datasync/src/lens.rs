@@ -52,49 +52,34 @@ pub(crate) fn reflens_list_tasks_output_output_next_token(
 pub(crate) fn lens_list_agents_output_output_agents(
     input: crate::operation::list_agents::ListAgentsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::AgentListEntry>> {
-    let input = match input.agents {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.agents?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_locations_output_output_locations(
     input: crate::operation::list_locations::ListLocationsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::LocationListEntry>> {
-    let input = match input.locations {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.locations?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_tags_for_resource_output_output_tags(
     input: crate::operation::list_tags_for_resource::ListTagsForResourceOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::TagListEntry>> {
-    let input = match input.tags {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.tags?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_task_executions_output_output_task_executions(
     input: crate::operation::list_task_executions::ListTaskExecutionsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::TaskExecutionListEntry>> {
-    let input = match input.task_executions {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.task_executions?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_tasks_output_output_tasks(
     input: crate::operation::list_tasks::ListTasksOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::TaskListEntry>> {
-    let input = match input.tasks {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.tasks?;
     ::std::option::Option::Some(input)
 }

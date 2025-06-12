@@ -142,10 +142,7 @@ pub(crate) fn reflens_list_workgroups_output_output_next_token(
 pub(crate) fn lens_list_custom_domain_associations_output_output_associations(
     input: crate::operation::list_custom_domain_associations::ListCustomDomainAssociationsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::Association>> {
-    let input = match input.associations {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.associations?;
     ::std::option::Option::Some(input)
 }
 
@@ -159,10 +156,7 @@ pub(crate) fn lens_list_endpoint_access_output_output_endpoints(
 pub(crate) fn lens_list_managed_workgroups_output_output_managed_workgroups(
     input: crate::operation::list_managed_workgroups::ListManagedWorkgroupsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ManagedWorkgroupListItem>> {
-    let input = match input.managed_workgroups {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.managed_workgroups?;
     ::std::option::Option::Some(input)
 }
 
@@ -176,10 +170,7 @@ pub(crate) fn lens_list_namespaces_output_output_namespaces(
 pub(crate) fn lens_list_recovery_points_output_output_recovery_points(
     input: crate::operation::list_recovery_points::ListRecoveryPointsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::RecoveryPoint>> {
-    let input = match input.recovery_points {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.recovery_points?;
     ::std::option::Option::Some(input)
 }
 
@@ -200,10 +191,7 @@ pub(crate) fn lens_list_reservations_output_output_reservations_list(
 pub(crate) fn lens_list_scheduled_actions_output_output_scheduled_actions(
     input: crate::operation::list_scheduled_actions::ListScheduledActionsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ScheduledActionAssociation>> {
-    let input = match input.scheduled_actions {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.scheduled_actions?;
     ::std::option::Option::Some(input)
 }
 
@@ -217,40 +205,28 @@ pub(crate) fn lens_list_snapshot_copy_configurations_output_output_snapshot_copy
 pub(crate) fn lens_list_snapshots_output_output_snapshots(
     input: crate::operation::list_snapshots::ListSnapshotsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::Snapshot>> {
-    let input = match input.snapshots {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.snapshots?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_table_restore_status_output_output_table_restore_statuses(
     input: crate::operation::list_table_restore_status::ListTableRestoreStatusOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::TableRestoreStatus>> {
-    let input = match input.table_restore_statuses {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.table_restore_statuses?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_tracks_output_output_tracks(
     input: crate::operation::list_tracks::ListTracksOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ServerlessTrack>> {
-    let input = match input.tracks {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.tracks?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_usage_limits_output_output_usage_limits(
     input: crate::operation::list_usage_limits::ListUsageLimitsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::UsageLimit>> {
-    let input = match input.usage_limits {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.usage_limits?;
     ::std::option::Option::Some(input)
 }
 

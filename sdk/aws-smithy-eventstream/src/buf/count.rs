@@ -31,7 +31,7 @@ where
     }
 }
 
-impl<'a, B> Buf for CountBuf<'a, B>
+impl<B> Buf for CountBuf<'_, B>
 where
     B: Buf,
 {

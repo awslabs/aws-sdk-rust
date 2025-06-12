@@ -72,10 +72,7 @@ pub(crate) fn reflens_list_tables_output_output_next_token(
 pub(crate) fn lens_describe_table_output_output_column_list(
     input: crate::operation::describe_table::DescribeTableOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ColumnMetadata>> {
-    let input = match input.column_list {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.column_list?;
     ::std::option::Option::Some(input)
 }
 
@@ -96,20 +93,14 @@ pub(crate) fn lens_get_statement_result_v2_output_output_records(
 pub(crate) fn lens_list_databases_output_output_databases(
     input: crate::operation::list_databases::ListDatabasesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<::std::string::String>> {
-    let input = match input.databases {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.databases?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_schemas_output_output_schemas(
     input: crate::operation::list_schemas::ListSchemasOutput,
 ) -> ::std::option::Option<::std::vec::Vec<::std::string::String>> {
-    let input = match input.schemas {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.schemas?;
     ::std::option::Option::Some(input)
 }
 
@@ -123,9 +114,6 @@ pub(crate) fn lens_list_statements_output_output_statements(
 pub(crate) fn lens_list_tables_output_output_tables(
     input: crate::operation::list_tables::ListTablesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::TableMember>> {
-    let input = match input.tables {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.tables?;
     ::std::option::Option::Some(input)
 }

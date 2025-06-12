@@ -102,99 +102,69 @@ pub(crate) fn reflens_list_sub_package_groups_output_output_next_token(
 pub(crate) fn lens_list_allowed_repositories_for_group_output_output_allowed_repositories(
     input: crate::operation::list_allowed_repositories_for_group::ListAllowedRepositoriesForGroupOutput,
 ) -> ::std::option::Option<::std::vec::Vec<::std::string::String>> {
-    let input = match input.allowed_repositories {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.allowed_repositories?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_associated_packages_output_output_packages(
     input: crate::operation::list_associated_packages::ListAssociatedPackagesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::AssociatedPackage>> {
-    let input = match input.packages {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.packages?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_domains_output_output_domains(
     input: crate::operation::list_domains::ListDomainsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::DomainSummary>> {
-    let input = match input.domains {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.domains?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_package_groups_output_output_package_groups(
     input: crate::operation::list_package_groups::ListPackageGroupsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::PackageGroupSummary>> {
-    let input = match input.package_groups {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.package_groups?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_package_version_assets_output_output_assets(
     input: crate::operation::list_package_version_assets::ListPackageVersionAssetsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::AssetSummary>> {
-    let input = match input.assets {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.assets?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_package_versions_output_output_versions(
     input: crate::operation::list_package_versions::ListPackageVersionsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::PackageVersionSummary>> {
-    let input = match input.versions {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.versions?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_packages_output_output_packages(
     input: crate::operation::list_packages::ListPackagesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::PackageSummary>> {
-    let input = match input.packages {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.packages?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_repositories_output_output_repositories(
     input: crate::operation::list_repositories::ListRepositoriesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::RepositorySummary>> {
-    let input = match input.repositories {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.repositories?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_repositories_in_domain_output_output_repositories(
     input: crate::operation::list_repositories_in_domain::ListRepositoriesInDomainOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::RepositorySummary>> {
-    let input = match input.repositories {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.repositories?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_sub_package_groups_output_output_package_groups(
     input: crate::operation::list_sub_package_groups::ListSubPackageGroupsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::PackageGroupSummary>> {
-    let input = match input.package_groups {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.package_groups?;
     ::std::option::Option::Some(input)
 }

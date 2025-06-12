@@ -32,29 +32,20 @@ pub(crate) fn reflens_list_packaging_groups_output_output_next_token(
 pub(crate) fn lens_list_assets_output_output_assets(
     input: crate::operation::list_assets::ListAssetsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::AssetShallow>> {
-    let input = match input.assets {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.assets?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_packaging_configurations_output_output_packaging_configurations(
     input: crate::operation::list_packaging_configurations::ListPackagingConfigurationsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::PackagingConfiguration>> {
-    let input = match input.packaging_configurations {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.packaging_configurations?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_packaging_groups_output_output_packaging_groups(
     input: crate::operation::list_packaging_groups::ListPackagingGroupsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::PackagingGroup>> {
-    let input = match input.packaging_groups {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.packaging_groups?;
     ::std::option::Option::Some(input)
 }

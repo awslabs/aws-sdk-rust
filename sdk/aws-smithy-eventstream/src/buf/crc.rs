@@ -37,7 +37,7 @@ where
     }
 }
 
-impl<'a, B> Buf for CrcBuf<'a, B>
+impl<B> Buf for CrcBuf<'_, B>
 where
     B: Buf,
 {
@@ -120,7 +120,7 @@ impl<'a> CrcBufMut<'a> {
     }
 }
 
-unsafe impl<'a> BufMut for CrcBufMut<'a> {
+unsafe impl BufMut for CrcBufMut<'_> {
     fn remaining_mut(&self) -> usize {
         self.buffer.remaining_mut()
     }

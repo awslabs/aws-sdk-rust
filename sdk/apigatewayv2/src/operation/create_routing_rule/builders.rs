@@ -22,7 +22,7 @@ impl crate::operation::create_routing_rule::builders::CreateRoutingRuleInputBuil
 }
 /// Fluent builder constructing a request to `CreateRoutingRule`.
 ///
-/// <p>Creates a RoutingRule</p>
+/// <p>Creates a RoutingRule.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateRoutingRuleFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

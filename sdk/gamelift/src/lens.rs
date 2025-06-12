@@ -272,259 +272,181 @@ pub(crate) fn reflens_search_game_sessions_output_output_next_token(
 pub(crate) fn lens_describe_fleet_attributes_output_output_fleet_attributes(
     input: crate::operation::describe_fleet_attributes::DescribeFleetAttributesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::FleetAttributes>> {
-    let input = match input.fleet_attributes {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.fleet_attributes?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_describe_fleet_capacity_output_output_fleet_capacity(
     input: crate::operation::describe_fleet_capacity::DescribeFleetCapacityOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::FleetCapacity>> {
-    let input = match input.fleet_capacity {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.fleet_capacity?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_describe_fleet_events_output_output_events(
     input: crate::operation::describe_fleet_events::DescribeFleetEventsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::Event>> {
-    let input = match input.events {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.events?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_describe_fleet_utilization_output_output_fleet_utilization(
     input: crate::operation::describe_fleet_utilization::DescribeFleetUtilizationOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::FleetUtilization>> {
-    let input = match input.fleet_utilization {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.fleet_utilization?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_describe_game_server_instances_output_output_game_server_instances(
     input: crate::operation::describe_game_server_instances::DescribeGameServerInstancesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::GameServerInstance>> {
-    let input = match input.game_server_instances {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.game_server_instances?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_describe_game_session_details_output_output_game_session_details(
     input: crate::operation::describe_game_session_details::DescribeGameSessionDetailsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::GameSessionDetail>> {
-    let input = match input.game_session_details {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.game_session_details?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_describe_game_session_queues_output_output_game_session_queues(
     input: crate::operation::describe_game_session_queues::DescribeGameSessionQueuesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::GameSessionQueue>> {
-    let input = match input.game_session_queues {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.game_session_queues?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_describe_game_sessions_output_output_game_sessions(
     input: crate::operation::describe_game_sessions::DescribeGameSessionsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::GameSession>> {
-    let input = match input.game_sessions {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.game_sessions?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_describe_instances_output_output_instances(
     input: crate::operation::describe_instances::DescribeInstancesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::Instance>> {
-    let input = match input.instances {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.instances?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_describe_matchmaking_configurations_output_output_configurations(
     input: crate::operation::describe_matchmaking_configurations::DescribeMatchmakingConfigurationsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::MatchmakingConfiguration>> {
-    let input = match input.configurations {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.configurations?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_describe_matchmaking_rule_sets_output_output_rule_sets(
     input: crate::operation::describe_matchmaking_rule_sets::DescribeMatchmakingRuleSetsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::MatchmakingRuleSet>> {
-    let input = match input.rule_sets {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.rule_sets?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_describe_player_sessions_output_output_player_sessions(
     input: crate::operation::describe_player_sessions::DescribePlayerSessionsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::PlayerSession>> {
-    let input = match input.player_sessions {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.player_sessions?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_describe_scaling_policies_output_output_scaling_policies(
     input: crate::operation::describe_scaling_policies::DescribeScalingPoliciesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ScalingPolicy>> {
-    let input = match input.scaling_policies {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.scaling_policies?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_aliases_output_output_aliases(
     input: crate::operation::list_aliases::ListAliasesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::Alias>> {
-    let input = match input.aliases {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.aliases?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_builds_output_output_builds(
     input: crate::operation::list_builds::ListBuildsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::Build>> {
-    let input = match input.builds {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.builds?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_compute_output_output_compute_list(
     input: crate::operation::list_compute::ListComputeOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::Compute>> {
-    let input = match input.compute_list {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.compute_list?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_container_fleets_output_output_container_fleets(
     input: crate::operation::list_container_fleets::ListContainerFleetsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ContainerFleet>> {
-    let input = match input.container_fleets {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.container_fleets?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_container_group_definition_versions_output_output_container_group_definitions(
     input: crate::operation::list_container_group_definition_versions::ListContainerGroupDefinitionVersionsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ContainerGroupDefinition>> {
-    let input = match input.container_group_definitions {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.container_group_definitions?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_container_group_definitions_output_output_container_group_definitions(
     input: crate::operation::list_container_group_definitions::ListContainerGroupDefinitionsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ContainerGroupDefinition>> {
-    let input = match input.container_group_definitions {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.container_group_definitions?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_fleet_deployments_output_output_fleet_deployments(
     input: crate::operation::list_fleet_deployments::ListFleetDeploymentsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::FleetDeployment>> {
-    let input = match input.fleet_deployments {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.fleet_deployments?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_fleets_output_output_fleet_ids(
     input: crate::operation::list_fleets::ListFleetsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<::std::string::String>> {
-    let input = match input.fleet_ids {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.fleet_ids?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_game_server_groups_output_output_game_server_groups(
     input: crate::operation::list_game_server_groups::ListGameServerGroupsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::GameServerGroup>> {
-    let input = match input.game_server_groups {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.game_server_groups?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_game_servers_output_output_game_servers(
     input: crate::operation::list_game_servers::ListGameServersOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::GameServer>> {
-    let input = match input.game_servers {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.game_servers?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_locations_output_output_locations(
     input: crate::operation::list_locations::ListLocationsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::LocationModel>> {
-    let input = match input.locations {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.locations?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_scripts_output_output_scripts(
     input: crate::operation::list_scripts::ListScriptsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::Script>> {
-    let input = match input.scripts {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.scripts?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_search_game_sessions_output_output_game_sessions(
     input: crate::operation::search_game_sessions::SearchGameSessionsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::GameSession>> {
-    let input = match input.game_sessions {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.game_sessions?;
     ::std::option::Option::Some(input)
 }

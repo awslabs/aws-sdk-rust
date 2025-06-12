@@ -122,20 +122,14 @@ pub(crate) fn reflens_list_provisioned_model_throughputs_output_output_next_toke
 pub(crate) fn lens_list_custom_models_output_output_model_summaries(
     input: crate::operation::list_custom_models::ListCustomModelsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::CustomModelSummary>> {
-    let input = match input.model_summaries {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.model_summaries?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_evaluation_jobs_output_output_job_summaries(
     input: crate::operation::list_evaluation_jobs::ListEvaluationJobsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::EvaluationSummary>> {
-    let input = match input.job_summaries {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.job_summaries?;
     ::std::option::Option::Some(input)
 }
 
@@ -149,89 +143,62 @@ pub(crate) fn lens_list_guardrails_output_output_guardrails(
 pub(crate) fn lens_list_imported_models_output_output_model_summaries(
     input: crate::operation::list_imported_models::ListImportedModelsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ImportedModelSummary>> {
-    let input = match input.model_summaries {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.model_summaries?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_inference_profiles_output_output_inference_profile_summaries(
     input: crate::operation::list_inference_profiles::ListInferenceProfilesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::InferenceProfileSummary>> {
-    let input = match input.inference_profile_summaries {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.inference_profile_summaries?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_marketplace_model_endpoints_output_output_marketplace_model_endpoints(
     input: crate::operation::list_marketplace_model_endpoints::ListMarketplaceModelEndpointsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::MarketplaceModelEndpointSummary>> {
-    let input = match input.marketplace_model_endpoints {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.marketplace_model_endpoints?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_model_copy_jobs_output_output_model_copy_job_summaries(
     input: crate::operation::list_model_copy_jobs::ListModelCopyJobsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ModelCopyJobSummary>> {
-    let input = match input.model_copy_job_summaries {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.model_copy_job_summaries?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_model_customization_jobs_output_output_model_customization_job_summaries(
     input: crate::operation::list_model_customization_jobs::ListModelCustomizationJobsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ModelCustomizationJobSummary>> {
-    let input = match input.model_customization_job_summaries {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.model_customization_job_summaries?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_model_import_jobs_output_output_model_import_job_summaries(
     input: crate::operation::list_model_import_jobs::ListModelImportJobsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ModelImportJobSummary>> {
-    let input = match input.model_import_job_summaries {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.model_import_job_summaries?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_model_invocation_jobs_output_output_invocation_job_summaries(
     input: crate::operation::list_model_invocation_jobs::ListModelInvocationJobsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ModelInvocationJobSummary>> {
-    let input = match input.invocation_job_summaries {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.invocation_job_summaries?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_prompt_routers_output_output_prompt_router_summaries(
     input: crate::operation::list_prompt_routers::ListPromptRoutersOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::PromptRouterSummary>> {
-    let input = match input.prompt_router_summaries {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.prompt_router_summaries?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_provisioned_model_throughputs_output_output_provisioned_model_summaries(
     input: crate::operation::list_provisioned_model_throughputs::ListProvisionedModelThroughputsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ProvisionedModelSummary>> {
-    let input = match input.provisioned_model_summaries {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.provisioned_model_summaries?;
     ::std::option::Option::Some(input)
 }

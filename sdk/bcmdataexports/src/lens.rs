@@ -32,29 +32,20 @@ pub(crate) fn reflens_list_tables_output_output_next_token(
 pub(crate) fn lens_list_executions_output_output_executions(
     input: crate::operation::list_executions::ListExecutionsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ExecutionReference>> {
-    let input = match input.executions {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.executions?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_exports_output_output_exports(
     input: crate::operation::list_exports::ListExportsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ExportReference>> {
-    let input = match input.exports {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.exports?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_tables_output_output_tables(
     input: crate::operation::list_tables::ListTablesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::Table>> {
-    let input = match input.tables {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.tables?;
     ::std::option::Option::Some(input)
 }

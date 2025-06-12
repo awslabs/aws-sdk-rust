@@ -72,69 +72,48 @@ pub(crate) fn reflens_list_source_resources_output_output_next_token(
 pub(crate) fn lens_list_application_states_output_output_application_state_list(
     input: crate::operation::list_application_states::ListApplicationStatesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ApplicationState>> {
-    let input = match input.application_state_list {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.application_state_list?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_created_artifacts_output_output_created_artifact_list(
     input: crate::operation::list_created_artifacts::ListCreatedArtifactsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::CreatedArtifact>> {
-    let input = match input.created_artifact_list {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.created_artifact_list?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_discovered_resources_output_output_discovered_resource_list(
     input: crate::operation::list_discovered_resources::ListDiscoveredResourcesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::DiscoveredResource>> {
-    let input = match input.discovered_resource_list {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.discovered_resource_list?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_migration_task_updates_output_output_migration_task_update_list(
     input: crate::operation::list_migration_task_updates::ListMigrationTaskUpdatesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::MigrationTaskUpdate>> {
-    let input = match input.migration_task_update_list {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.migration_task_update_list?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_migration_tasks_output_output_migration_task_summary_list(
     input: crate::operation::list_migration_tasks::ListMigrationTasksOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::MigrationTaskSummary>> {
-    let input = match input.migration_task_summary_list {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.migration_task_summary_list?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_progress_update_streams_output_output_progress_update_stream_summary_list(
     input: crate::operation::list_progress_update_streams::ListProgressUpdateStreamsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ProgressUpdateStreamSummary>> {
-    let input = match input.progress_update_stream_summary_list {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.progress_update_stream_summary_list?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_source_resources_output_output_source_resource_list(
     input: crate::operation::list_source_resources::ListSourceResourcesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::SourceResource>> {
-    let input = match input.source_resource_list {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.source_resource_list?;
     ::std::option::Option::Some(input)
 }

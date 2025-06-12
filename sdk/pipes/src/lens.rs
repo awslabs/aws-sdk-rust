@@ -12,9 +12,6 @@ pub(crate) fn reflens_list_pipes_output_output_next_token(
 pub(crate) fn lens_list_pipes_output_output_pipes(
     input: crate::operation::list_pipes::ListPipesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::Pipe>> {
-    let input = match input.pipes {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.pipes?;
     ::std::option::Option::Some(input)
 }

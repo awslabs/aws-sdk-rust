@@ -62,29 +62,20 @@ pub(crate) fn reflens_scan_output_output_last_evaluated_key(
 pub(crate) fn lens_list_tables_output_output_table_names(
     input: crate::operation::list_tables::ListTablesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<::std::string::String>> {
-    let input = match input.table_names {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.table_names?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_query_output_output_items(
     input: crate::operation::query::QueryOutput,
 ) -> ::std::option::Option<::std::vec::Vec<::std::collections::HashMap<::std::string::String, crate::types::AttributeValue>>> {
-    let input = match input.items {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.items?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_scan_output_output_items(
     input: crate::operation::scan::ScanOutput,
 ) -> ::std::option::Option<::std::vec::Vec<::std::collections::HashMap<::std::string::String, crate::types::AttributeValue>>> {
-    let input = match input.items {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.items?;
     ::std::option::Option::Some(input)
 }

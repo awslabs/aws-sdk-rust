@@ -22,19 +22,13 @@ pub(crate) fn reflens_list_resource_telemetry_for_organization_output_output_nex
 pub(crate) fn lens_list_resource_telemetry_output_output_telemetry_configurations(
     input: crate::operation::list_resource_telemetry::ListResourceTelemetryOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::TelemetryConfiguration>> {
-    let input = match input.telemetry_configurations {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.telemetry_configurations?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_resource_telemetry_for_organization_output_output_telemetry_configurations(
     input: crate::operation::list_resource_telemetry_for_organization::ListResourceTelemetryForOrganizationOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::TelemetryConfiguration>> {
-    let input = match input.telemetry_configurations {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.telemetry_configurations?;
     ::std::option::Option::Some(input)
 }

@@ -32,10 +32,7 @@ pub(crate) fn reflens_list_zonal_shifts_output_output_next_token(
 pub(crate) fn lens_list_autoshifts_output_output_items(
     input: crate::operation::list_autoshifts::ListAutoshiftsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::AutoshiftSummary>> {
-    let input = match input.items {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.items?;
     ::std::option::Option::Some(input)
 }
 
@@ -49,9 +46,6 @@ pub(crate) fn lens_list_managed_resources_output_output_items(
 pub(crate) fn lens_list_zonal_shifts_output_output_items(
     input: crate::operation::list_zonal_shifts::ListZonalShiftsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ZonalShiftSummary>> {
-    let input = match input.items {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.items?;
     ::std::option::Option::Some(input)
 }

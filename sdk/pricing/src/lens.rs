@@ -42,39 +42,27 @@ pub(crate) fn reflens_list_price_lists_output_output_next_token(
 pub(crate) fn lens_describe_services_output_output_services(
     input: crate::operation::describe_services::DescribeServicesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::Service>> {
-    let input = match input.services {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.services?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_get_attribute_values_output_output_attribute_values(
     input: crate::operation::get_attribute_values::GetAttributeValuesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::AttributeValue>> {
-    let input = match input.attribute_values {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.attribute_values?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_get_products_output_output_price_list(
     input: crate::operation::get_products::GetProductsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<::std::string::String>> {
-    let input = match input.price_list {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.price_list?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_price_lists_output_output_price_lists(
     input: crate::operation::list_price_lists::ListPriceListsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::PriceList>> {
-    let input = match input.price_lists {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.price_lists?;
     ::std::option::Option::Some(input)
 }

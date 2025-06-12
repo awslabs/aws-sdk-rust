@@ -192,189 +192,132 @@ pub(crate) fn reflens_search_relevant_content_output_output_next_token(
 pub(crate) fn lens_get_chat_controls_configuration_output_output_topic_configurations(
     input: crate::operation::get_chat_controls_configuration::GetChatControlsConfigurationOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::TopicConfiguration>> {
-    let input = match input.topic_configurations {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.topic_configurations?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_applications_output_output_applications(
     input: crate::operation::list_applications::ListApplicationsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::Application>> {
-    let input = match input.applications {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.applications?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_attachments_output_output_attachments(
     input: crate::operation::list_attachments::ListAttachmentsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::Attachment>> {
-    let input = match input.attachments {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.attachments?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_conversations_output_output_conversations(
     input: crate::operation::list_conversations::ListConversationsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::Conversation>> {
-    let input = match input.conversations {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.conversations?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_data_accessors_output_output_data_accessors(
     input: crate::operation::list_data_accessors::ListDataAccessorsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::DataAccessor>> {
-    let input = match input.data_accessors {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.data_accessors?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_data_source_sync_jobs_output_output_history(
     input: crate::operation::list_data_source_sync_jobs::ListDataSourceSyncJobsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::DataSourceSyncJob>> {
-    let input = match input.history {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.history?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_data_sources_output_output_data_sources(
     input: crate::operation::list_data_sources::ListDataSourcesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::DataSource>> {
-    let input = match input.data_sources {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.data_sources?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_documents_output_output_document_detail_list(
     input: crate::operation::list_documents::ListDocumentsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::DocumentDetails>> {
-    let input = match input.document_detail_list {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.document_detail_list?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_groups_output_output_items(
     input: crate::operation::list_groups::ListGroupsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::GroupSummary>> {
-    let input = match input.items {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.items?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_indices_output_output_indices(
     input: crate::operation::list_indices::ListIndicesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::Index>> {
-    let input = match input.indices {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.indices?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_messages_output_output_messages(
     input: crate::operation::list_messages::ListMessagesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::Message>> {
-    let input = match input.messages {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.messages?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_plugin_actions_output_output_items(
     input: crate::operation::list_plugin_actions::ListPluginActionsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ActionSummary>> {
-    let input = match input.items {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.items?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_plugin_type_actions_output_output_items(
     input: crate::operation::list_plugin_type_actions::ListPluginTypeActionsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ActionSummary>> {
-    let input = match input.items {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.items?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_plugin_type_metadata_output_output_items(
     input: crate::operation::list_plugin_type_metadata::ListPluginTypeMetadataOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::PluginTypeMetadataSummary>> {
-    let input = match input.items {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.items?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_plugins_output_output_plugins(
     input: crate::operation::list_plugins::ListPluginsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::Plugin>> {
-    let input = match input.plugins {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.plugins?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_retrievers_output_output_retrievers(
     input: crate::operation::list_retrievers::ListRetrieversOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::Retriever>> {
-    let input = match input.retrievers {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.retrievers?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_subscriptions_output_output_subscriptions(
     input: crate::operation::list_subscriptions::ListSubscriptionsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::Subscription>> {
-    let input = match input.subscriptions {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.subscriptions?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_web_experiences_output_output_web_experiences(
     input: crate::operation::list_web_experiences::ListWebExperiencesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::WebExperience>> {
-    let input = match input.web_experiences {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.web_experiences?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_search_relevant_content_output_output_relevant_content(
     input: crate::operation::search_relevant_content::SearchRelevantContentOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::RelevantContent>> {
-    let input = match input.relevant_content {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.relevant_content?;
     ::std::option::Option::Some(input)
 }

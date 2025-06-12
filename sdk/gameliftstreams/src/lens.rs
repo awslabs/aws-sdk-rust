@@ -42,39 +42,27 @@ pub(crate) fn reflens_list_stream_sessions_by_account_output_output_next_token(
 pub(crate) fn lens_list_applications_output_output_items(
     input: crate::operation::list_applications::ListApplicationsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ApplicationSummary>> {
-    let input = match input.items {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.items?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_stream_groups_output_output_items(
     input: crate::operation::list_stream_groups::ListStreamGroupsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::StreamGroupSummary>> {
-    let input = match input.items {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.items?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_stream_sessions_output_output_items(
     input: crate::operation::list_stream_sessions::ListStreamSessionsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::StreamSessionSummary>> {
-    let input = match input.items {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.items?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_stream_sessions_by_account_output_output_items(
     input: crate::operation::list_stream_sessions_by_account::ListStreamSessionsByAccountOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::StreamSessionSummary>> {
-    let input = match input.items {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.items?;
     ::std::option::Option::Some(input)
 }

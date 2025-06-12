@@ -42,39 +42,27 @@ pub(crate) fn reflens_describe_ml_models_output_output_next_token(
 pub(crate) fn lens_describe_batch_predictions_output_output_results(
     input: crate::operation::describe_batch_predictions::DescribeBatchPredictionsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::BatchPrediction>> {
-    let input = match input.results {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.results?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_describe_data_sources_output_output_results(
     input: crate::operation::describe_data_sources::DescribeDataSourcesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::DataSource>> {
-    let input = match input.results {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.results?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_describe_evaluations_output_output_results(
     input: crate::operation::describe_evaluations::DescribeEvaluationsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::Evaluation>> {
-    let input = match input.results {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.results?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_describe_ml_models_output_output_results(
     input: crate::operation::describe_ml_models::DescribeMlModelsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::MlModel>> {
-    let input = match input.results {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.results?;
     ::std::option::Option::Some(input)
 }

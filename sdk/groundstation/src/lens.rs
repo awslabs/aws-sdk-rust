@@ -72,69 +72,48 @@ pub(crate) fn reflens_list_satellites_output_output_next_token(
 pub(crate) fn lens_list_configs_output_output_config_list(
     input: crate::operation::list_configs::ListConfigsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ConfigListItem>> {
-    let input = match input.config_list {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.config_list?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_contacts_output_output_contact_list(
     input: crate::operation::list_contacts::ListContactsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ContactData>> {
-    let input = match input.contact_list {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.contact_list?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_dataflow_endpoint_groups_output_output_dataflow_endpoint_group_list(
     input: crate::operation::list_dataflow_endpoint_groups::ListDataflowEndpointGroupsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::DataflowEndpointListItem>> {
-    let input = match input.dataflow_endpoint_group_list {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.dataflow_endpoint_group_list?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_ephemerides_output_output_ephemerides(
     input: crate::operation::list_ephemerides::ListEphemeridesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::EphemerisItem>> {
-    let input = match input.ephemerides {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.ephemerides?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_ground_stations_output_output_ground_station_list(
     input: crate::operation::list_ground_stations::ListGroundStationsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::GroundStationData>> {
-    let input = match input.ground_station_list {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.ground_station_list?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_mission_profiles_output_output_mission_profile_list(
     input: crate::operation::list_mission_profiles::ListMissionProfilesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::MissionProfileListItem>> {
-    let input = match input.mission_profile_list {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.mission_profile_list?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_satellites_output_output_satellites(
     input: crate::operation::list_satellites::ListSatellitesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::SatelliteListItem>> {
-    let input = match input.satellites {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.satellites?;
     ::std::option::Option::Some(input)
 }

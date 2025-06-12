@@ -49,20 +49,14 @@ pub(crate) fn lens_list_keyspaces_output_output_keyspaces(
 pub(crate) fn lens_list_tables_output_output_tables(
     input: crate::operation::list_tables::ListTablesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::TableSummary>> {
-    let input = match input.tables {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.tables?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_tags_for_resource_output_output_tags(
     input: crate::operation::list_tags_for_resource::ListTagsForResourceOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
-    let input = match input.tags {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.tags?;
     ::std::option::Option::Some(input)
 }
 

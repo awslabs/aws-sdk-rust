@@ -71,7 +71,7 @@ pub(crate) struct RefreshableCredentials<'a> {
     pub(crate) expiration: SystemTime,
 }
 
-impl<'a> fmt::Debug for RefreshableCredentials<'a> {
+impl fmt::Debug for RefreshableCredentials<'_> {
     fn fmt(&self, f: &mut Formatter<'_>) -> fmt::Result {
         let mut debug = f.debug_struct("RefreshableCredentials");
         debug

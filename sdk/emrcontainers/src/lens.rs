@@ -52,49 +52,34 @@ pub(crate) fn reflens_list_virtual_clusters_output_output_next_token(
 pub(crate) fn lens_list_job_runs_output_output_job_runs(
     input: crate::operation::list_job_runs::ListJobRunsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::JobRun>> {
-    let input = match input.job_runs {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.job_runs?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_job_templates_output_output_templates(
     input: crate::operation::list_job_templates::ListJobTemplatesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::JobTemplate>> {
-    let input = match input.templates {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.templates?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_managed_endpoints_output_output_endpoints(
     input: crate::operation::list_managed_endpoints::ListManagedEndpointsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::Endpoint>> {
-    let input = match input.endpoints {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.endpoints?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_security_configurations_output_output_security_configurations(
     input: crate::operation::list_security_configurations::ListSecurityConfigurationsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::SecurityConfiguration>> {
-    let input = match input.security_configurations {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.security_configurations?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_virtual_clusters_output_output_virtual_clusters(
     input: crate::operation::list_virtual_clusters::ListVirtualClustersOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::VirtualCluster>> {
-    let input = match input.virtual_clusters {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.virtual_clusters?;
     ::std::option::Option::Some(input)
 }

@@ -22,19 +22,13 @@ pub(crate) fn reflens_list_connectors_output_output_next_token(
 pub(crate) fn lens_list_challenge_metadata_output_output_challenges(
     input: crate::operation::list_challenge_metadata::ListChallengeMetadataOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ChallengeMetadataSummary>> {
-    let input = match input.challenges {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.challenges?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_connectors_output_output_connectors(
     input: crate::operation::list_connectors::ListConnectorsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ConnectorSummary>> {
-    let input = match input.connectors {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.connectors?;
     ::std::option::Option::Some(input)
 }

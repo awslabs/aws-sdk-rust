@@ -82,7 +82,7 @@ pub struct SigningParams<'a, S> {
 
 const HMAC_256: &str = "AWS4-HMAC-SHA256";
 
-impl<'a, S> SigningParams<'a, S> {
+impl<S> SigningParams<'_, S> {
     /// Returns the region that will be used to sign SigV4 requests
     pub fn region(&self) -> &str {
         self.region

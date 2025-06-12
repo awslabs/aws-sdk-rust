@@ -42,39 +42,27 @@ pub(crate) fn reflens_list_workloads_output_output_next_token(
 pub(crate) fn lens_list_deployment_events_output_output_deployment_events(
     input: crate::operation::list_deployment_events::ListDeploymentEventsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::DeploymentEventDataSummary>> {
-    let input = match input.deployment_events {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.deployment_events?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_deployments_output_output_deployments(
     input: crate::operation::list_deployments::ListDeploymentsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::DeploymentDataSummary>> {
-    let input = match input.deployments {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.deployments?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_workload_deployment_patterns_output_output_workload_deployment_patterns(
     input: crate::operation::list_workload_deployment_patterns::ListWorkloadDeploymentPatternsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::WorkloadDeploymentPatternDataSummary>> {
-    let input = match input.workload_deployment_patterns {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.workload_deployment_patterns?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_workloads_output_output_workloads(
     input: crate::operation::list_workloads::ListWorkloadsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::WorkloadDataSummary>> {
-    let input = match input.workloads {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.workloads?;
     ::std::option::Option::Some(input)
 }

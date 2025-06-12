@@ -89,7 +89,7 @@
             "action": {
                 "Request": {
                     "request": {
-                        "uri": "http://169.254.169.254/latest/meta-data/iam/security-credentials/",
+                        "uri": "http://169.254.169.254/latest/meta-data/iam/security-credentials-extended/",
                         "headers": {
                             "user-agent": [
                                 "aws-sdk-rust/0.1.0 os/linux lang/rust/1.52.1"
@@ -161,6 +161,90 @@
         },
         {
             "connection_id": 1,
+            "action": {
+                "Eof": {
+                    "ok": true,
+                    "direction": "Response"
+                }
+            }
+        },
+        {
+            "connection_id": 2,
+            "action": {
+                "Request": {
+                    "request": {
+                        "uri": "http://169.254.169.254/latest/meta-data/iam/security-credentials/",
+                        "headers": {
+                            "user-agent": [
+                                "aws-sdk-rust/0.1.0 os/linux lang/rust/1.52.1"
+                            ],
+                            "x-amz-user-agent": [
+                                "aws-sdk-rust/0.1.0 api/imds/0.1.0 os/linux lang/rust/1.52.1"
+                            ],
+                            "x-aws-ec2-metadata-token": [
+                               "faketoken"
+                            ]
+                        },
+                        "method": "GET"
+                    }
+                }
+            }
+        },
+        {
+            "connection_id": 2,
+            "action": {
+                "Eof": {
+                    "ok": true,
+                    "direction": "Request"
+                }
+            }
+        },
+        {
+            "connection_id": 2,
+            "action": {
+                "Response": {
+                    "response": {
+                        "Ok": {
+                            "status": 404,
+                            "version": "HTTP/1.1",
+                            "headers": {
+                                "content-length": [
+                                    "339"
+                                ],
+                                "date": [
+                                    "Mon, 20 Sep 2021 20:51:52 GMT"
+                                ],
+                                "content-type": [
+                                    "text/html"
+                                ],
+                                "x-aws-ec2-metadata-token-ttl-seconds": [
+                                    "21600"
+                                ],
+                                "connection": [
+                                    "close"
+                                ],
+                                "server": [
+                                    "EC2ws"
+                                ]
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "connection_id": 2,
+            "action": {
+                "Data": {
+                    "data": {
+                        "Utf8": "<?xml version=\"1.0\" encoding=\"iso-8859-1\"?>\n<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\"\n\t\t \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">\n<html xmlns=\"http://www.w3.org/1999/xhtml\" xml:lang=\"en\" lang=\"en\">\n <head>\n  <title>404 - Not Found</title>\n </head>\n <body>\n  <h1>404 - Not Found</h1>\n </body>\n</html>\n"
+                    },
+                    "direction": "Response"
+                }
+            }
+        },
+        {
+            "connection_id": 2,
             "action": {
                 "Eof": {
                     "ok": true,

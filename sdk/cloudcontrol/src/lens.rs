@@ -22,19 +22,13 @@ pub(crate) fn reflens_list_resources_output_output_next_token(
 pub(crate) fn lens_list_resource_requests_output_output_resource_request_status_summaries(
     input: crate::operation::list_resource_requests::ListResourceRequestsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ProgressEvent>> {
-    let input = match input.resource_request_status_summaries {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.resource_request_status_summaries?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_resources_output_output_resource_descriptions(
     input: crate::operation::list_resources::ListResourcesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ResourceDescription>> {
-    let input = match input.resource_descriptions {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.resource_descriptions?;
     ::std::option::Option::Some(input)
 }

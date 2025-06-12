@@ -42,29 +42,20 @@ pub(crate) fn reflens_list_parts_output_output_next_part_number_marker(
 pub(crate) fn lens_list_buckets_output_output_buckets(
     input: crate::operation::list_buckets::ListBucketsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::Bucket>> {
-    let input = match input.buckets {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.buckets?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_directory_buckets_output_output_buckets(
     input: crate::operation::list_directory_buckets::ListDirectoryBucketsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::Bucket>> {
-    let input = match input.buckets {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.buckets?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_parts_output_output_parts(
     input: crate::operation::list_parts::ListPartsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::Part>> {
-    let input = match input.parts {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.parts?;
     ::std::option::Option::Some(input)
 }

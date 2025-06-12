@@ -172,169 +172,118 @@ pub(crate) fn reflens_list_standards_control_associations_output_output_next_tok
 pub(crate) fn lens_describe_action_targets_output_output_action_targets(
     input: crate::operation::describe_action_targets::DescribeActionTargetsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ActionTarget>> {
-    let input = match input.action_targets {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.action_targets?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_describe_products_output_output_products(
     input: crate::operation::describe_products::DescribeProductsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::Product>> {
-    let input = match input.products {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.products?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_describe_standards_output_output_standards(
     input: crate::operation::describe_standards::DescribeStandardsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::Standard>> {
-    let input = match input.standards {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.standards?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_describe_standards_controls_output_output_controls(
     input: crate::operation::describe_standards_controls::DescribeStandardsControlsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::StandardsControl>> {
-    let input = match input.controls {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.controls?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_get_enabled_standards_output_output_standards_subscriptions(
     input: crate::operation::get_enabled_standards::GetEnabledStandardsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::StandardsSubscription>> {
-    let input = match input.standards_subscriptions {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.standards_subscriptions?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_get_finding_history_output_output_records(
     input: crate::operation::get_finding_history::GetFindingHistoryOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::FindingHistoryRecord>> {
-    let input = match input.records {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.records?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_get_findings_output_output_findings(
     input: crate::operation::get_findings::GetFindingsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::AwsSecurityFinding>> {
-    let input = match input.findings {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.findings?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_get_insights_output_output_insights(
     input: crate::operation::get_insights::GetInsightsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::Insight>> {
-    let input = match input.insights {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.insights?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_configuration_policies_output_output_configuration_policy_summaries(
     input: crate::operation::list_configuration_policies::ListConfigurationPoliciesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ConfigurationPolicySummary>> {
-    let input = match input.configuration_policy_summaries {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.configuration_policy_summaries?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_configuration_policy_associations_output_output_configuration_policy_association_summaries(
     input: crate::operation::list_configuration_policy_associations::ListConfigurationPolicyAssociationsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ConfigurationPolicyAssociationSummary>> {
-    let input = match input.configuration_policy_association_summaries {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.configuration_policy_association_summaries?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_enabled_products_for_import_output_output_product_subscriptions(
     input: crate::operation::list_enabled_products_for_import::ListEnabledProductsForImportOutput,
 ) -> ::std::option::Option<::std::vec::Vec<::std::string::String>> {
-    let input = match input.product_subscriptions {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.product_subscriptions?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_finding_aggregators_output_output_finding_aggregators(
     input: crate::operation::list_finding_aggregators::ListFindingAggregatorsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::FindingAggregator>> {
-    let input = match input.finding_aggregators {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.finding_aggregators?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_invitations_output_output_invitations(
     input: crate::operation::list_invitations::ListInvitationsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::Invitation>> {
-    let input = match input.invitations {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.invitations?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_members_output_output_members(
     input: crate::operation::list_members::ListMembersOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::Member>> {
-    let input = match input.members {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.members?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_organization_admin_accounts_output_output_admin_accounts(
     input: crate::operation::list_organization_admin_accounts::ListOrganizationAdminAccountsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::AdminAccount>> {
-    let input = match input.admin_accounts {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.admin_accounts?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_security_control_definitions_output_output_security_control_definitions(
     input: crate::operation::list_security_control_definitions::ListSecurityControlDefinitionsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::SecurityControlDefinition>> {
-    let input = match input.security_control_definitions {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.security_control_definitions?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_standards_control_associations_output_output_standards_control_association_summaries(
     input: crate::operation::list_standards_control_associations::ListStandardsControlAssociationsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::StandardsControlAssociationSummary>> {
-    let input = match input.standards_control_association_summaries {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.standards_control_association_summaries?;
     ::std::option::Option::Some(input)
 }

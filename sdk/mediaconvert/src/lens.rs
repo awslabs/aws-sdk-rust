@@ -72,69 +72,48 @@ pub(crate) fn reflens_search_jobs_output_output_next_token(
 pub(crate) fn lens_describe_endpoints_output_output_endpoints(
     input: crate::operation::describe_endpoints::DescribeEndpointsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::Endpoint>> {
-    let input = match input.endpoints {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.endpoints?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_job_templates_output_output_job_templates(
     input: crate::operation::list_job_templates::ListJobTemplatesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::JobTemplate>> {
-    let input = match input.job_templates {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.job_templates?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_jobs_output_output_jobs(
     input: crate::operation::list_jobs::ListJobsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::Job>> {
-    let input = match input.jobs {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.jobs?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_presets_output_output_presets(
     input: crate::operation::list_presets::ListPresetsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::Preset>> {
-    let input = match input.presets {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.presets?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_queues_output_output_queues(
     input: crate::operation::list_queues::ListQueuesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::Queue>> {
-    let input = match input.queues {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.queues?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_versions_output_output_versions(
     input: crate::operation::list_versions::ListVersionsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::JobEngineVersion>> {
-    let input = match input.versions {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.versions?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_search_jobs_output_output_jobs(
     input: crate::operation::search_jobs::SearchJobsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::Job>> {
-    let input = match input.jobs {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.jobs?;
     ::std::option::Option::Some(input)
 }

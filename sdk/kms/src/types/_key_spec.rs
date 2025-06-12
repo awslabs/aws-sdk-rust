@@ -20,6 +20,9 @@
 ///     KeySpec::Hmac256 => { /* ... */ },
 ///     KeySpec::Hmac384 => { /* ... */ },
 ///     KeySpec::Hmac512 => { /* ... */ },
+///     KeySpec::MlDsa44 => { /* ... */ },
+///     KeySpec::MlDsa65 => { /* ... */ },
+///     KeySpec::MlDsa87 => { /* ... */ },
 ///     KeySpec::Rsa2048 => { /* ... */ },
 ///     KeySpec::Rsa3072 => { /* ... */ },
 ///     KeySpec::Rsa4096 => { /* ... */ },
@@ -70,6 +73,12 @@ pub enum KeySpec {
     #[allow(missing_docs)] // documentation missing in model
     Hmac512,
     #[allow(missing_docs)] // documentation missing in model
+    MlDsa44,
+    #[allow(missing_docs)] // documentation missing in model
+    MlDsa65,
+    #[allow(missing_docs)] // documentation missing in model
+    MlDsa87,
+    #[allow(missing_docs)] // documentation missing in model
     Rsa2048,
     #[allow(missing_docs)] // documentation missing in model
     Rsa3072,
@@ -94,6 +103,9 @@ impl ::std::convert::From<&str> for KeySpec {
             "HMAC_256" => KeySpec::Hmac256,
             "HMAC_384" => KeySpec::Hmac384,
             "HMAC_512" => KeySpec::Hmac512,
+            "ML_DSA_44" => KeySpec::MlDsa44,
+            "ML_DSA_65" => KeySpec::MlDsa65,
+            "ML_DSA_87" => KeySpec::MlDsa87,
             "RSA_2048" => KeySpec::Rsa2048,
             "RSA_3072" => KeySpec::Rsa3072,
             "RSA_4096" => KeySpec::Rsa4096,
@@ -122,6 +134,9 @@ impl KeySpec {
             KeySpec::Hmac256 => "HMAC_256",
             KeySpec::Hmac384 => "HMAC_384",
             KeySpec::Hmac512 => "HMAC_512",
+            KeySpec::MlDsa44 => "ML_DSA_44",
+            KeySpec::MlDsa65 => "ML_DSA_65",
+            KeySpec::MlDsa87 => "ML_DSA_87",
             KeySpec::Rsa2048 => "RSA_2048",
             KeySpec::Rsa3072 => "RSA_3072",
             KeySpec::Rsa4096 => "RSA_4096",
@@ -141,6 +156,9 @@ impl KeySpec {
             "HMAC_256",
             "HMAC_384",
             "HMAC_512",
+            "ML_DSA_44",
+            "ML_DSA_65",
+            "ML_DSA_87",
             "RSA_2048",
             "RSA_3072",
             "RSA_4096",
@@ -177,6 +195,9 @@ impl ::std::fmt::Display for KeySpec {
             KeySpec::Hmac256 => write!(f, "HMAC_256"),
             KeySpec::Hmac384 => write!(f, "HMAC_384"),
             KeySpec::Hmac512 => write!(f, "HMAC_512"),
+            KeySpec::MlDsa44 => write!(f, "ML_DSA_44"),
+            KeySpec::MlDsa65 => write!(f, "ML_DSA_65"),
+            KeySpec::MlDsa87 => write!(f, "ML_DSA_87"),
             KeySpec::Rsa2048 => write!(f, "RSA_2048"),
             KeySpec::Rsa3072 => write!(f, "RSA_3072"),
             KeySpec::Rsa4096 => write!(f, "RSA_4096"),

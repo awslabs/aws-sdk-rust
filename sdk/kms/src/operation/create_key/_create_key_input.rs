@@ -36,7 +36,9 @@ pub struct CreateKeyInput {
     /// <li>
     /// <p>For asymmetric KMS keys with NIST-recommended elliptic curve key pairs, specify <code>SIGN_VERIFY</code> or <code>KEY_AGREEMENT</code>.</p></li>
     /// <li>
-    /// <p>For asymmetric KMS keys with <code>ECC_SECG_P256K1</code> key pairs specify <code>SIGN_VERIFY</code>.</p></li>
+    /// <p>For asymmetric KMS keys with <code>ECC_SECG_P256K1</code> key pairs, specify <code>SIGN_VERIFY</code>.</p></li>
+    /// <li>
+    /// <p>For asymmetric KMS keys with ML-DSA key pairs, specify <code>SIGN_VERIFY</code>.</p></li>
     /// <li>
     /// <p>For asymmetric KMS keys with SM2 key pairs (China Regions only), specify <code>ENCRYPT_DECRYPT</code>, <code>SIGN_VERIFY</code>, or <code>KEY_AGREEMENT</code>.</p></li>
     /// </ul>
@@ -94,6 +96,16 @@ pub struct CreateKeyInput {
     /// <ul>
     /// <li>
     /// <p><code>ECC_SECG_P256K1</code> (secp256k1), commonly used for cryptocurrencies.</p></li>
+    /// </ul></li>
+    /// <li>
+    /// <p>Asymmetric ML-DSA key pairs (signing and verification)</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>ML_DSA_44</code></p></li>
+    /// <li>
+    /// <p><code>ML_DSA_65</code></p></li>
+    /// <li>
+    /// <p><code>ML_DSA_87</code></p></li>
     /// </ul></li>
     /// <li>
     /// <p>SM2 key pairs (encryption and decryption -or- signing and verification -or- deriving shared secrets)</p>
@@ -177,7 +189,9 @@ impl CreateKeyInput {
     /// <li>
     /// <p>For asymmetric KMS keys with NIST-recommended elliptic curve key pairs, specify <code>SIGN_VERIFY</code> or <code>KEY_AGREEMENT</code>.</p></li>
     /// <li>
-    /// <p>For asymmetric KMS keys with <code>ECC_SECG_P256K1</code> key pairs specify <code>SIGN_VERIFY</code>.</p></li>
+    /// <p>For asymmetric KMS keys with <code>ECC_SECG_P256K1</code> key pairs, specify <code>SIGN_VERIFY</code>.</p></li>
+    /// <li>
+    /// <p>For asymmetric KMS keys with ML-DSA key pairs, specify <code>SIGN_VERIFY</code>.</p></li>
     /// <li>
     /// <p>For asymmetric KMS keys with SM2 key pairs (China Regions only), specify <code>ENCRYPT_DECRYPT</code>, <code>SIGN_VERIFY</code>, or <code>KEY_AGREEMENT</code>.</p></li>
     /// </ul>
@@ -239,6 +253,16 @@ impl CreateKeyInput {
     /// <ul>
     /// <li>
     /// <p><code>ECC_SECG_P256K1</code> (secp256k1), commonly used for cryptocurrencies.</p></li>
+    /// </ul></li>
+    /// <li>
+    /// <p>Asymmetric ML-DSA key pairs (signing and verification)</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>ML_DSA_44</code></p></li>
+    /// <li>
+    /// <p><code>ML_DSA_65</code></p></li>
+    /// <li>
+    /// <p><code>ML_DSA_87</code></p></li>
     /// </ul></li>
     /// <li>
     /// <p>SM2 key pairs (encryption and decryption -or- signing and verification -or- deriving shared secrets)</p>
@@ -415,7 +439,9 @@ impl CreateKeyInputBuilder {
     /// <li>
     /// <p>For asymmetric KMS keys with NIST-recommended elliptic curve key pairs, specify <code>SIGN_VERIFY</code> or <code>KEY_AGREEMENT</code>.</p></li>
     /// <li>
-    /// <p>For asymmetric KMS keys with <code>ECC_SECG_P256K1</code> key pairs specify <code>SIGN_VERIFY</code>.</p></li>
+    /// <p>For asymmetric KMS keys with <code>ECC_SECG_P256K1</code> key pairs, specify <code>SIGN_VERIFY</code>.</p></li>
+    /// <li>
+    /// <p>For asymmetric KMS keys with ML-DSA key pairs, specify <code>SIGN_VERIFY</code>.</p></li>
     /// <li>
     /// <p>For asymmetric KMS keys with SM2 key pairs (China Regions only), specify <code>ENCRYPT_DECRYPT</code>, <code>SIGN_VERIFY</code>, or <code>KEY_AGREEMENT</code>.</p></li>
     /// </ul>
@@ -435,7 +461,9 @@ impl CreateKeyInputBuilder {
     /// <li>
     /// <p>For asymmetric KMS keys with NIST-recommended elliptic curve key pairs, specify <code>SIGN_VERIFY</code> or <code>KEY_AGREEMENT</code>.</p></li>
     /// <li>
-    /// <p>For asymmetric KMS keys with <code>ECC_SECG_P256K1</code> key pairs specify <code>SIGN_VERIFY</code>.</p></li>
+    /// <p>For asymmetric KMS keys with <code>ECC_SECG_P256K1</code> key pairs, specify <code>SIGN_VERIFY</code>.</p></li>
+    /// <li>
+    /// <p>For asymmetric KMS keys with ML-DSA key pairs, specify <code>SIGN_VERIFY</code>.</p></li>
     /// <li>
     /// <p>For asymmetric KMS keys with SM2 key pairs (China Regions only), specify <code>ENCRYPT_DECRYPT</code>, <code>SIGN_VERIFY</code>, or <code>KEY_AGREEMENT</code>.</p></li>
     /// </ul>
@@ -455,7 +483,9 @@ impl CreateKeyInputBuilder {
     /// <li>
     /// <p>For asymmetric KMS keys with NIST-recommended elliptic curve key pairs, specify <code>SIGN_VERIFY</code> or <code>KEY_AGREEMENT</code>.</p></li>
     /// <li>
-    /// <p>For asymmetric KMS keys with <code>ECC_SECG_P256K1</code> key pairs specify <code>SIGN_VERIFY</code>.</p></li>
+    /// <p>For asymmetric KMS keys with <code>ECC_SECG_P256K1</code> key pairs, specify <code>SIGN_VERIFY</code>.</p></li>
+    /// <li>
+    /// <p>For asymmetric KMS keys with ML-DSA key pairs, specify <code>SIGN_VERIFY</code>.</p></li>
     /// <li>
     /// <p>For asymmetric KMS keys with SM2 key pairs (China Regions only), specify <code>ENCRYPT_DECRYPT</code>, <code>SIGN_VERIFY</code>, or <code>KEY_AGREEMENT</code>.</p></li>
     /// </ul>
@@ -533,6 +563,16 @@ impl CreateKeyInputBuilder {
     /// <p><code>ECC_SECG_P256K1</code> (secp256k1), commonly used for cryptocurrencies.</p></li>
     /// </ul></li>
     /// <li>
+    /// <p>Asymmetric ML-DSA key pairs (signing and verification)</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>ML_DSA_44</code></p></li>
+    /// <li>
+    /// <p><code>ML_DSA_65</code></p></li>
+    /// <li>
+    /// <p><code>ML_DSA_87</code></p></li>
+    /// </ul></li>
+    /// <li>
     /// <p>SM2 key pairs (encryption and decryption -or- signing and verification -or- deriving shared secrets)</p>
     /// <ul>
     /// <li>
@@ -594,6 +634,16 @@ impl CreateKeyInputBuilder {
     /// <p><code>ECC_SECG_P256K1</code> (secp256k1), commonly used for cryptocurrencies.</p></li>
     /// </ul></li>
     /// <li>
+    /// <p>Asymmetric ML-DSA key pairs (signing and verification)</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>ML_DSA_44</code></p></li>
+    /// <li>
+    /// <p><code>ML_DSA_65</code></p></li>
+    /// <li>
+    /// <p><code>ML_DSA_87</code></p></li>
+    /// </ul></li>
+    /// <li>
     /// <p>SM2 key pairs (encryption and decryption -or- signing and verification -or- deriving shared secrets)</p>
     /// <ul>
     /// <li>
@@ -653,6 +703,16 @@ impl CreateKeyInputBuilder {
     /// <ul>
     /// <li>
     /// <p><code>ECC_SECG_P256K1</code> (secp256k1), commonly used for cryptocurrencies.</p></li>
+    /// </ul></li>
+    /// <li>
+    /// <p>Asymmetric ML-DSA key pairs (signing and verification)</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>ML_DSA_44</code></p></li>
+    /// <li>
+    /// <p><code>ML_DSA_65</code></p></li>
+    /// <li>
+    /// <p><code>ML_DSA_87</code></p></li>
     /// </ul></li>
     /// <li>
     /// <p>SM2 key pairs (encryption and decryption -or- signing and verification -or- deriving shared secrets)</p>

@@ -62,9 +62,6 @@ pub(crate) fn reflens_list_kx_scaling_groups_output_output_next_token(
 pub(crate) fn lens_list_kx_environments_output_output_environments(
     input: crate::operation::list_kx_environments::ListKxEnvironmentsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::KxEnvironment>> {
-    let input = match input.environments {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.environments?;
     ::std::option::Option::Some(input)
 }

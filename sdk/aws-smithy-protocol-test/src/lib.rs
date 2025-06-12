@@ -222,7 +222,7 @@ mod sealed {
     }
 }
 
-impl<'a> GetNormalizedHeader for &'a Headers {
+impl GetNormalizedHeader for &Headers {
     fn get_header(&self, key: &str) -> Option<String> {
         if !self.contains_key(key) {
             None
@@ -232,7 +232,7 @@ impl<'a> GetNormalizedHeader for &'a Headers {
     }
 }
 
-impl<'a> GetNormalizedHeader for &'a HeaderMap {
+impl GetNormalizedHeader for &HeaderMap {
     fn get_header(&self, key: &str) -> Option<String> {
         if !self.contains_key(key) {
             None

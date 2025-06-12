@@ -32,29 +32,20 @@ pub(crate) fn reflens_list_recommendations_output_output_next_token(
 pub(crate) fn lens_list_enrollment_statuses_output_output_items(
     input: crate::operation::list_enrollment_statuses::ListEnrollmentStatusesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::AccountEnrollmentStatus>> {
-    let input = match input.items {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.items?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_recommendation_summaries_output_output_items(
     input: crate::operation::list_recommendation_summaries::ListRecommendationSummariesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::RecommendationSummary>> {
-    let input = match input.items {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.items?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_recommendations_output_output_items(
     input: crate::operation::list_recommendations::ListRecommendationsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::Recommendation>> {
-    let input = match input.items {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.items?;
     ::std::option::Option::Some(input)
 }

@@ -130,20 +130,14 @@ pub(crate) fn lens_list_event_logs_output_output_items(
 pub(crate) fn lens_list_projects_output_output_items(
     input: crate::operation::list_projects::ListProjectsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ProjectSummary>> {
-    let input = match input.items {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.items?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_source_repositories_output_output_items(
     input: crate::operation::list_source_repositories::ListSourceRepositoriesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ListSourceRepositoriesItem>> {
-    let input = match input.items {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.items?;
     ::std::option::Option::Some(input)
 }
 
@@ -157,29 +151,20 @@ pub(crate) fn lens_list_source_repository_branches_output_output_items(
 pub(crate) fn lens_list_spaces_output_output_items(
     input: crate::operation::list_spaces::ListSpacesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::SpaceSummary>> {
-    let input = match input.items {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.items?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_workflow_runs_output_output_items(
     input: crate::operation::list_workflow_runs::ListWorkflowRunsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::WorkflowRunSummary>> {
-    let input = match input.items {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.items?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_workflows_output_output_items(
     input: crate::operation::list_workflows::ListWorkflowsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::WorkflowSummary>> {
-    let input = match input.items {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.items?;
     ::std::option::Option::Some(input)
 }

@@ -122,20 +122,14 @@ pub(crate) fn reflens_list_traffic_policies_output_output_next_token(
 pub(crate) fn lens_list_addon_instances_output_output_addon_instances(
     input: crate::operation::list_addon_instances::ListAddonInstancesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::AddonInstance>> {
-    let input = match input.addon_instances {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.addon_instances?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_addon_subscriptions_output_output_addon_subscriptions(
     input: crate::operation::list_addon_subscriptions::ListAddonSubscriptionsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::AddonSubscription>> {
-    let input = match input.addon_subscriptions {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.addon_subscriptions?;
     ::std::option::Option::Some(input)
 }
 
@@ -156,20 +150,14 @@ pub(crate) fn lens_list_address_lists_output_output_address_lists(
 pub(crate) fn lens_list_archive_exports_output_output_exports(
     input: crate::operation::list_archive_exports::ListArchiveExportsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ExportSummary>> {
-    let input = match input.exports {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.exports?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_archive_searches_output_output_searches(
     input: crate::operation::list_archive_searches::ListArchiveSearchesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::SearchSummary>> {
-    let input = match input.searches {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.searches?;
     ::std::option::Option::Some(input)
 }
 
@@ -183,10 +171,7 @@ pub(crate) fn lens_list_archives_output_output_archives(
 pub(crate) fn lens_list_ingress_points_output_output_ingress_points(
     input: crate::operation::list_ingress_points::ListIngressPointsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::IngressPoint>> {
-    let input = match input.ingress_points {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.ingress_points?;
     ::std::option::Option::Some(input)
 }
 
@@ -214,9 +199,6 @@ pub(crate) fn lens_list_rule_sets_output_output_rule_sets(
 pub(crate) fn lens_list_traffic_policies_output_output_traffic_policies(
     input: crate::operation::list_traffic_policies::ListTrafficPoliciesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::TrafficPolicy>> {
-    let input = match input.traffic_policies {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.traffic_policies?;
     ::std::option::Option::Some(input)
 }

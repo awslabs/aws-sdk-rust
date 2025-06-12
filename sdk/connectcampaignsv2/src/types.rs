@@ -27,6 +27,8 @@ pub use crate::types::_local_time_zone_detection_type::LocalTimeZoneDetectionTyp
 
 pub use crate::types::_communication_limits_config::CommunicationLimitsConfig;
 
+pub use crate::types::_instance_limits_handling::InstanceLimitsHandling;
+
 pub use crate::types::_communication_limits::CommunicationLimits;
 
 pub use crate::types::_communication_limit::CommunicationLimit;
@@ -94,6 +96,8 @@ pub use crate::types::_email_channel_subtype_parameters::EmailChannelSubtypePara
 pub use crate::types::_sms_channel_subtype_parameters::SmsChannelSubtypeParameters;
 
 pub use crate::types::_telephony_channel_subtype_parameters::TelephonyChannelSubtypeParameters;
+
+pub use crate::types::_instance_communication_limits_config::InstanceCommunicationLimitsConfig;
 
 pub use crate::types::_integration_config::IntegrationConfig;
 
@@ -209,11 +213,15 @@ mod _failure_code;
 
 mod _get_campaign_state_batch_failure_code;
 
+mod _instance_communication_limits_config;
+
 mod _instance_config;
 
 mod _instance_id_filter;
 
 mod _instance_id_filter_operator;
+
+mod _instance_limits_handling;
 
 mod _instance_onboarding_job_failure_code;
 

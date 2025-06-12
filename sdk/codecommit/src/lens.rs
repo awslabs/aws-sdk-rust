@@ -142,19 +142,13 @@ pub(crate) fn reflens_list_repositories_for_approval_rule_template_output_output
 pub(crate) fn lens_list_branches_output_output_branches(
     input: crate::operation::list_branches::ListBranchesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<::std::string::String>> {
-    let input = match input.branches {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.branches?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_repositories_output_output_repositories(
     input: crate::operation::list_repositories::ListRepositoriesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::RepositoryNameIdPair>> {
-    let input = match input.repositories {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.repositories?;
     ::std::option::Option::Some(input)
 }

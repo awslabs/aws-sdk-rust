@@ -42,39 +42,27 @@ pub(crate) fn reflens_list_vaults_output_output_marker(
 pub(crate) fn lens_list_jobs_output_output_job_list(
     input: crate::operation::list_jobs::ListJobsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::GlacierJobDescription>> {
-    let input = match input.job_list {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.job_list?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_multipart_uploads_output_output_uploads_list(
     input: crate::operation::list_multipart_uploads::ListMultipartUploadsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::UploadListElement>> {
-    let input = match input.uploads_list {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.uploads_list?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_parts_output_output_parts(
     input: crate::operation::list_parts::ListPartsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::PartListElement>> {
-    let input = match input.parts {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.parts?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_vaults_output_output_vault_list(
     input: crate::operation::list_vaults::ListVaultsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::DescribeVaultOutput>> {
-    let input = match input.vault_list {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.vault_list?;
     ::std::option::Option::Some(input)
 }

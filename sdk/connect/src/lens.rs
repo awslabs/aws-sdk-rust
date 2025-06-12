@@ -662,40 +662,28 @@ pub(crate) fn reflens_search_vocabularies_output_output_next_token(
 pub(crate) fn lens_list_agent_statuses_output_output_agent_status_summary_list(
     input: crate::operation::list_agent_statuses::ListAgentStatusesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::AgentStatusSummary>> {
-    let input = match input.agent_status_summary_list {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.agent_status_summary_list?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_approved_origins_output_output_origins(
     input: crate::operation::list_approved_origins::ListApprovedOriginsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<::std::string::String>> {
-    let input = match input.origins {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.origins?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_authentication_profiles_output_output_authentication_profile_summary_list(
     input: crate::operation::list_authentication_profiles::ListAuthenticationProfilesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::AuthenticationProfileSummary>> {
-    let input = match input.authentication_profile_summary_list {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.authentication_profile_summary_list?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_bots_output_output_lex_bots(
     input: crate::operation::list_bots::ListBotsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::LexBotConfig>> {
-    let input = match input.lex_bots {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.lex_bots?;
     ::std::option::Option::Some(input)
 }
 
@@ -709,40 +697,28 @@ pub(crate) fn lens_list_contact_evaluations_output_output_evaluation_summary_lis
 pub(crate) fn lens_list_contact_flow_modules_output_output_contact_flow_modules_summary_list(
     input: crate::operation::list_contact_flow_modules::ListContactFlowModulesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ContactFlowModuleSummary>> {
-    let input = match input.contact_flow_modules_summary_list {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.contact_flow_modules_summary_list?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_contact_flow_versions_output_output_contact_flow_version_summary_list(
     input: crate::operation::list_contact_flow_versions::ListContactFlowVersionsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ContactFlowVersionSummary>> {
-    let input = match input.contact_flow_version_summary_list {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.contact_flow_version_summary_list?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_contact_flows_output_output_contact_flow_summary_list(
     input: crate::operation::list_contact_flows::ListContactFlowsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ContactFlowSummary>> {
-    let input = match input.contact_flow_summary_list {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.contact_flow_summary_list?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_contact_references_output_output_reference_summary_list(
     input: crate::operation::list_contact_references::ListContactReferencesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ReferenceSummary>> {
-    let input = match input.reference_summary_list {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.reference_summary_list?;
     ::std::option::Option::Some(input)
 }
 
@@ -770,180 +746,126 @@ pub(crate) fn lens_list_evaluation_forms_output_output_evaluation_form_summary_l
 pub(crate) fn lens_list_flow_associations_output_output_flow_association_summary_list(
     input: crate::operation::list_flow_associations::ListFlowAssociationsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::FlowAssociationSummary>> {
-    let input = match input.flow_association_summary_list {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.flow_association_summary_list?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_hours_of_operation_overrides_output_output_hours_of_operation_override_list(
     input: crate::operation::list_hours_of_operation_overrides::ListHoursOfOperationOverridesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::HoursOfOperationOverride>> {
-    let input = match input.hours_of_operation_override_list {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.hours_of_operation_override_list?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_hours_of_operations_output_output_hours_of_operation_summary_list(
     input: crate::operation::list_hours_of_operations::ListHoursOfOperationsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::HoursOfOperationSummary>> {
-    let input = match input.hours_of_operation_summary_list {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.hours_of_operation_summary_list?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_instance_attributes_output_output_attributes(
     input: crate::operation::list_instance_attributes::ListInstanceAttributesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::Attribute>> {
-    let input = match input.attributes {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.attributes?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_instance_storage_configs_output_output_storage_configs(
     input: crate::operation::list_instance_storage_configs::ListInstanceStorageConfigsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::InstanceStorageConfig>> {
-    let input = match input.storage_configs {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.storage_configs?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_instances_output_output_instance_summary_list(
     input: crate::operation::list_instances::ListInstancesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::InstanceSummary>> {
-    let input = match input.instance_summary_list {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.instance_summary_list?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_integration_associations_output_output_integration_association_summary_list(
     input: crate::operation::list_integration_associations::ListIntegrationAssociationsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::IntegrationAssociationSummary>> {
-    let input = match input.integration_association_summary_list {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.integration_association_summary_list?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_lambda_functions_output_output_lambda_functions(
     input: crate::operation::list_lambda_functions::ListLambdaFunctionsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<::std::string::String>> {
-    let input = match input.lambda_functions {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.lambda_functions?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_lex_bots_output_output_lex_bots(
     input: crate::operation::list_lex_bots::ListLexBotsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::LexBot>> {
-    let input = match input.lex_bots {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.lex_bots?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_phone_numbers_output_output_phone_number_summary_list(
     input: crate::operation::list_phone_numbers::ListPhoneNumbersOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::PhoneNumberSummary>> {
-    let input = match input.phone_number_summary_list {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.phone_number_summary_list?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_phone_numbers_v2_output_output_list_phone_numbers_summary_list(
     input: crate::operation::list_phone_numbers_v2::ListPhoneNumbersV2Output,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ListPhoneNumbersSummary>> {
-    let input = match input.list_phone_numbers_summary_list {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.list_phone_numbers_summary_list?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_predefined_attributes_output_output_predefined_attribute_summary_list(
     input: crate::operation::list_predefined_attributes::ListPredefinedAttributesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::PredefinedAttributeSummary>> {
-    let input = match input.predefined_attribute_summary_list {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.predefined_attribute_summary_list?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_prompts_output_output_prompt_summary_list(
     input: crate::operation::list_prompts::ListPromptsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::PromptSummary>> {
-    let input = match input.prompt_summary_list {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.prompt_summary_list?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_queue_quick_connects_output_output_quick_connect_summary_list(
     input: crate::operation::list_queue_quick_connects::ListQueueQuickConnectsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::QuickConnectSummary>> {
-    let input = match input.quick_connect_summary_list {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.quick_connect_summary_list?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_queues_output_output_queue_summary_list(
     input: crate::operation::list_queues::ListQueuesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::QueueSummary>> {
-    let input = match input.queue_summary_list {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.queue_summary_list?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_quick_connects_output_output_quick_connect_summary_list(
     input: crate::operation::list_quick_connects::ListQuickConnectsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::QuickConnectSummary>> {
-    let input = match input.quick_connect_summary_list {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.quick_connect_summary_list?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_routing_profile_queues_output_output_routing_profile_queue_config_summary_list(
     input: crate::operation::list_routing_profile_queues::ListRoutingProfileQueuesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::RoutingProfileQueueConfigSummary>> {
-    let input = match input.routing_profile_queue_config_summary_list {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.routing_profile_queue_config_summary_list?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_routing_profiles_output_output_routing_profile_summary_list(
     input: crate::operation::list_routing_profiles::ListRoutingProfilesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::RoutingProfileSummary>> {
-    let input = match input.routing_profile_summary_list {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.routing_profile_summary_list?;
     ::std::option::Option::Some(input)
 }
 
@@ -957,170 +879,119 @@ pub(crate) fn lens_list_rules_output_output_rule_summary_list(
 pub(crate) fn lens_list_security_keys_output_output_security_keys(
     input: crate::operation::list_security_keys::ListSecurityKeysOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::SecurityKey>> {
-    let input = match input.security_keys {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.security_keys?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_security_profile_applications_output_output_applications(
     input: crate::operation::list_security_profile_applications::ListSecurityProfileApplicationsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::Application>> {
-    let input = match input.applications {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.applications?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_security_profile_permissions_output_output_permissions(
     input: crate::operation::list_security_profile_permissions::ListSecurityProfilePermissionsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<::std::string::String>> {
-    let input = match input.permissions {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.permissions?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_security_profiles_output_output_security_profile_summary_list(
     input: crate::operation::list_security_profiles::ListSecurityProfilesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::SecurityProfileSummary>> {
-    let input = match input.security_profile_summary_list {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.security_profile_summary_list?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_task_templates_output_output_task_templates(
     input: crate::operation::list_task_templates::ListTaskTemplatesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::TaskTemplateMetadata>> {
-    let input = match input.task_templates {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.task_templates?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_traffic_distribution_group_users_output_output_traffic_distribution_group_user_summary_list(
     input: crate::operation::list_traffic_distribution_group_users::ListTrafficDistributionGroupUsersOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::TrafficDistributionGroupUserSummary>> {
-    let input = match input.traffic_distribution_group_user_summary_list {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.traffic_distribution_group_user_summary_list?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_traffic_distribution_groups_output_output_traffic_distribution_group_summary_list(
     input: crate::operation::list_traffic_distribution_groups::ListTrafficDistributionGroupsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::TrafficDistributionGroupSummary>> {
-    let input = match input.traffic_distribution_group_summary_list {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.traffic_distribution_group_summary_list?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_use_cases_output_output_use_case_summary_list(
     input: crate::operation::list_use_cases::ListUseCasesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::UseCase>> {
-    let input = match input.use_case_summary_list {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.use_case_summary_list?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_user_hierarchy_groups_output_output_user_hierarchy_group_summary_list(
     input: crate::operation::list_user_hierarchy_groups::ListUserHierarchyGroupsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::HierarchyGroupSummary>> {
-    let input = match input.user_hierarchy_group_summary_list {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.user_hierarchy_group_summary_list?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_user_proficiencies_output_output_user_proficiency_list(
     input: crate::operation::list_user_proficiencies::ListUserProficienciesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::UserProficiency>> {
-    let input = match input.user_proficiency_list {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.user_proficiency_list?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_users_output_output_user_summary_list(
     input: crate::operation::list_users::ListUsersOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::UserSummary>> {
-    let input = match input.user_summary_list {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.user_summary_list?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_view_versions_output_output_view_version_summary_list(
     input: crate::operation::list_view_versions::ListViewVersionsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ViewVersionSummary>> {
-    let input = match input.view_version_summary_list {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.view_version_summary_list?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_views_output_output_views_summary_list(
     input: crate::operation::list_views::ListViewsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ViewSummary>> {
-    let input = match input.views_summary_list {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.views_summary_list?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_search_agent_statuses_output_output_agent_statuses(
     input: crate::operation::search_agent_statuses::SearchAgentStatusesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::AgentStatus>> {
-    let input = match input.agent_statuses {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.agent_statuses?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_search_available_phone_numbers_output_output_available_numbers_list(
     input: crate::operation::search_available_phone_numbers::SearchAvailablePhoneNumbersOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::AvailableNumberSummary>> {
-    let input = match input.available_numbers_list {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.available_numbers_list?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_search_contact_flow_modules_output_output_contact_flow_modules(
     input: crate::operation::search_contact_flow_modules::SearchContactFlowModulesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ContactFlowModule>> {
-    let input = match input.contact_flow_modules {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.contact_flow_modules?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_search_contact_flows_output_output_contact_flows(
     input: crate::operation::search_contact_flows::SearchContactFlowsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ContactFlow>> {
-    let input = match input.contact_flows {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.contact_flows?;
     ::std::option::Option::Some(input)
 }
 
@@ -1134,119 +1005,83 @@ pub(crate) fn lens_search_contacts_output_output_contacts(
 pub(crate) fn lens_search_hours_of_operation_overrides_output_output_hours_of_operation_overrides(
     input: crate::operation::search_hours_of_operation_overrides::SearchHoursOfOperationOverridesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::HoursOfOperationOverride>> {
-    let input = match input.hours_of_operation_overrides {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.hours_of_operation_overrides?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_search_hours_of_operations_output_output_hours_of_operations(
     input: crate::operation::search_hours_of_operations::SearchHoursOfOperationsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::HoursOfOperation>> {
-    let input = match input.hours_of_operations {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.hours_of_operations?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_search_predefined_attributes_output_output_predefined_attributes(
     input: crate::operation::search_predefined_attributes::SearchPredefinedAttributesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::PredefinedAttribute>> {
-    let input = match input.predefined_attributes {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.predefined_attributes?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_search_prompts_output_output_prompts(
     input: crate::operation::search_prompts::SearchPromptsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::Prompt>> {
-    let input = match input.prompts {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.prompts?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_search_queues_output_output_queues(
     input: crate::operation::search_queues::SearchQueuesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::Queue>> {
-    let input = match input.queues {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.queues?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_search_quick_connects_output_output_quick_connects(
     input: crate::operation::search_quick_connects::SearchQuickConnectsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::QuickConnect>> {
-    let input = match input.quick_connects {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.quick_connects?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_search_resource_tags_output_output_tags(
     input: crate::operation::search_resource_tags::SearchResourceTagsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::TagSet>> {
-    let input = match input.tags {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.tags?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_search_routing_profiles_output_output_routing_profiles(
     input: crate::operation::search_routing_profiles::SearchRoutingProfilesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::RoutingProfile>> {
-    let input = match input.routing_profiles {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.routing_profiles?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_search_security_profiles_output_output_security_profiles(
     input: crate::operation::search_security_profiles::SearchSecurityProfilesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::SecurityProfileSearchSummary>> {
-    let input = match input.security_profiles {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.security_profiles?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_search_user_hierarchy_groups_output_output_user_hierarchy_groups(
     input: crate::operation::search_user_hierarchy_groups::SearchUserHierarchyGroupsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::HierarchyGroup>> {
-    let input = match input.user_hierarchy_groups {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.user_hierarchy_groups?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_search_users_output_output_users(
     input: crate::operation::search_users::SearchUsersOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::UserSearchSummary>> {
-    let input = match input.users {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.users?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_search_vocabularies_output_output_vocabulary_summary_list(
     input: crate::operation::search_vocabularies::SearchVocabulariesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::VocabularySummary>> {
-    let input = match input.vocabulary_summary_list {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.vocabulary_summary_list?;
     ::std::option::Option::Some(input)
 }

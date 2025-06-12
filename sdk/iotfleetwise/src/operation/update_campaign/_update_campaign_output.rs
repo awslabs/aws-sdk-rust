@@ -12,7 +12,7 @@ pub struct UpdateCampaignOutput {
     /// <li>
     /// <p><code>CREATING</code> - Amazon Web Services IoT FleetWise is processing your request to create the campaign.</p></li>
     /// <li>
-    /// <p><code>WAITING_FOR_APPROVAL</code> - After a campaign is created, it enters the <code>WAITING_FOR_APPROVAL</code> state. To allow Amazon Web Services IoT FleetWise to deploy the campaign to the target vehicle or fleet, use the API operation to approve the campaign.</p></li>
+    /// <p><code>WAITING_FOR_APPROVAL</code> - After you create a campaign, it enters this state. Use the API operation to approve the campaign for deployment to the target vehicle or fleet.</p></li>
     /// <li>
     /// <p><code>RUNNING</code> - The campaign is active.</p></li>
     /// <li>
@@ -35,7 +35,7 @@ impl UpdateCampaignOutput {
     /// <li>
     /// <p><code>CREATING</code> - Amazon Web Services IoT FleetWise is processing your request to create the campaign.</p></li>
     /// <li>
-    /// <p><code>WAITING_FOR_APPROVAL</code> - After a campaign is created, it enters the <code>WAITING_FOR_APPROVAL</code> state. To allow Amazon Web Services IoT FleetWise to deploy the campaign to the target vehicle or fleet, use the API operation to approve the campaign.</p></li>
+    /// <p><code>WAITING_FOR_APPROVAL</code> - After you create a campaign, it enters this state. Use the API operation to approve the campaign for deployment to the target vehicle or fleet.</p></li>
     /// <li>
     /// <p><code>RUNNING</code> - The campaign is active.</p></li>
     /// <li>
@@ -100,7 +100,7 @@ impl UpdateCampaignOutputBuilder {
     /// <li>
     /// <p><code>CREATING</code> - Amazon Web Services IoT FleetWise is processing your request to create the campaign.</p></li>
     /// <li>
-    /// <p><code>WAITING_FOR_APPROVAL</code> - After a campaign is created, it enters the <code>WAITING_FOR_APPROVAL</code> state. To allow Amazon Web Services IoT FleetWise to deploy the campaign to the target vehicle or fleet, use the API operation to approve the campaign.</p></li>
+    /// <p><code>WAITING_FOR_APPROVAL</code> - After you create a campaign, it enters this state. Use the API operation to approve the campaign for deployment to the target vehicle or fleet.</p></li>
     /// <li>
     /// <p><code>RUNNING</code> - The campaign is active.</p></li>
     /// <li>
@@ -115,7 +115,7 @@ impl UpdateCampaignOutputBuilder {
     /// <li>
     /// <p><code>CREATING</code> - Amazon Web Services IoT FleetWise is processing your request to create the campaign.</p></li>
     /// <li>
-    /// <p><code>WAITING_FOR_APPROVAL</code> - After a campaign is created, it enters the <code>WAITING_FOR_APPROVAL</code> state. To allow Amazon Web Services IoT FleetWise to deploy the campaign to the target vehicle or fleet, use the API operation to approve the campaign.</p></li>
+    /// <p><code>WAITING_FOR_APPROVAL</code> - After you create a campaign, it enters this state. Use the API operation to approve the campaign for deployment to the target vehicle or fleet.</p></li>
     /// <li>
     /// <p><code>RUNNING</code> - The campaign is active.</p></li>
     /// <li>
@@ -130,7 +130,7 @@ impl UpdateCampaignOutputBuilder {
     /// <li>
     /// <p><code>CREATING</code> - Amazon Web Services IoT FleetWise is processing your request to create the campaign.</p></li>
     /// <li>
-    /// <p><code>WAITING_FOR_APPROVAL</code> - After a campaign is created, it enters the <code>WAITING_FOR_APPROVAL</code> state. To allow Amazon Web Services IoT FleetWise to deploy the campaign to the target vehicle or fleet, use the API operation to approve the campaign.</p></li>
+    /// <p><code>WAITING_FOR_APPROVAL</code> - After you create a campaign, it enters this state. Use the API operation to approve the campaign for deployment to the target vehicle or fleet.</p></li>
     /// <li>
     /// <p><code>RUNNING</code> - The campaign is active.</p></li>
     /// <li>

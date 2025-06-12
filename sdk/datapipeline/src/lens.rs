@@ -46,9 +46,6 @@ pub(crate) fn lens_list_pipelines_output_output_pipeline_id_list(
 pub(crate) fn lens_query_objects_output_output_ids(
     input: crate::operation::query_objects::QueryObjectsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<::std::string::String>> {
-    let input = match input.ids {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.ids?;
     ::std::option::Option::Some(input)
 }

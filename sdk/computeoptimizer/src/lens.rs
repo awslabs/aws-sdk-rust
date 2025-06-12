@@ -52,49 +52,34 @@ pub(crate) fn reflens_get_recommendation_summaries_output_output_next_token(
 pub(crate) fn lens_describe_recommendation_export_jobs_output_output_recommendation_export_jobs(
     input: crate::operation::describe_recommendation_export_jobs::DescribeRecommendationExportJobsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::RecommendationExportJob>> {
-    let input = match input.recommendation_export_jobs {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.recommendation_export_jobs?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_get_enrollment_statuses_for_organization_output_output_account_enrollment_statuses(
     input: crate::operation::get_enrollment_statuses_for_organization::GetEnrollmentStatusesForOrganizationOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::AccountEnrollmentStatus>> {
-    let input = match input.account_enrollment_statuses {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.account_enrollment_statuses?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_get_lambda_function_recommendations_output_output_lambda_function_recommendations(
     input: crate::operation::get_lambda_function_recommendations::GetLambdaFunctionRecommendationsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::LambdaFunctionRecommendation>> {
-    let input = match input.lambda_function_recommendations {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.lambda_function_recommendations?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_get_recommendation_preferences_output_output_recommendation_preferences_details(
     input: crate::operation::get_recommendation_preferences::GetRecommendationPreferencesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::RecommendationPreferencesDetail>> {
-    let input = match input.recommendation_preferences_details {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.recommendation_preferences_details?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_get_recommendation_summaries_output_output_recommendation_summaries(
     input: crate::operation::get_recommendation_summaries::GetRecommendationSummariesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::RecommendationSummary>> {
-    let input = match input.recommendation_summaries {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.recommendation_summaries?;
     ::std::option::Option::Some(input)
 }

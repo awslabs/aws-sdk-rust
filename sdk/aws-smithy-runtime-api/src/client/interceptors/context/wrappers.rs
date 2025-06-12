@@ -49,7 +49,7 @@ pub struct BeforeSerializationInterceptorContextRef<'a, I = Input, O = Output, E
 
 impl_from_interceptor_context!(ref BeforeSerializationInterceptorContextRef);
 
-impl<'a, I, O, E> BeforeSerializationInterceptorContextRef<'a, I, O, E> {
+impl<I, O, E> BeforeSerializationInterceptorContextRef<'_, I, O, E> {
     /// Returns a reference to the input.
     pub fn input(&self) -> &I {
         expect!(self, input)
@@ -78,7 +78,7 @@ pub struct BeforeSerializationInterceptorContextMut<'a, I = Input, O = Output, E
 
 impl_from_interceptor_context!(mut BeforeSerializationInterceptorContextMut);
 
-impl<'a, I, O, E> BeforeSerializationInterceptorContextMut<'a, I, O, E> {
+impl<I, O, E> BeforeSerializationInterceptorContextMut<'_, I, O, E> {
     /// Returns a reference to the input.
     pub fn input(&self) -> &I {
         expect!(self, input)
@@ -120,7 +120,7 @@ pub struct BeforeTransmitInterceptorContextRef<'a, I = Input, O = Output, E = Er
 
 impl_from_interceptor_context!(ref BeforeTransmitInterceptorContextRef);
 
-impl<'a, I, O, E> BeforeTransmitInterceptorContextRef<'a, I, O, E> {
+impl<I, O, E> BeforeTransmitInterceptorContextRef<'_, I, O, E> {
     /// Returns a reference to the transmittable request for the operation being invoked.
     pub fn request(&self) -> &Request {
         expect!(self, request)
@@ -149,7 +149,7 @@ pub struct BeforeTransmitInterceptorContextMut<'a, I = Input, O = Output, E = Er
 
 impl_from_interceptor_context!(mut BeforeTransmitInterceptorContextMut);
 
-impl<'a, I, O, E> BeforeTransmitInterceptorContextMut<'a, I, O, E> {
+impl<I, O, E> BeforeTransmitInterceptorContextMut<'_, I, O, E> {
     /// Returns a reference to the transmittable request for the operation being invoked.
     pub fn request(&self) -> &Request {
         expect!(self, request)
@@ -191,7 +191,7 @@ pub struct BeforeDeserializationInterceptorContextRef<'a, I = Input, O = Output,
 
 impl_from_interceptor_context!(ref BeforeDeserializationInterceptorContextRef);
 
-impl<'a, I, O, E> BeforeDeserializationInterceptorContextRef<'a, I, O, E> {
+impl<I, O, E> BeforeDeserializationInterceptorContextRef<'_, I, O, E> {
     /// Returns a reference to the response.
     pub fn response(&self) -> &Response {
         expect!(self, response)
@@ -219,7 +219,7 @@ pub struct BeforeDeserializationInterceptorContextMut<'a, I = Input, O = Output,
 
 impl_from_interceptor_context!(mut BeforeDeserializationInterceptorContextMut);
 
-impl<'a, I, O, E> BeforeDeserializationInterceptorContextMut<'a, I, O, E> {
+impl<I, O, E> BeforeDeserializationInterceptorContextMut<'_, I, O, E> {
     /// Returns a reference to the response.
     pub fn response(&self) -> &Response {
         expect!(self, response)
@@ -260,7 +260,7 @@ pub struct AfterDeserializationInterceptorContextRef<'a, I = Input, O = Output, 
 
 impl_from_interceptor_context!(ref AfterDeserializationInterceptorContextRef);
 
-impl<'a, I, O, E> AfterDeserializationInterceptorContextRef<'a, I, O, E> {
+impl<I, O, E> AfterDeserializationInterceptorContextRef<'_, I, O, E> {
     /// Returns a reference to the response.
     pub fn response(&self) -> &Response {
         expect!(self, response)
@@ -295,7 +295,7 @@ pub struct FinalizerInterceptorContextRef<'a, I = Input, O = Output, E = Error> 
 
 impl_from_interceptor_context!(ref FinalizerInterceptorContextRef);
 
-impl<'a, I, O, E> FinalizerInterceptorContextRef<'a, I, O, E> {
+impl<I, O, E> FinalizerInterceptorContextRef<'_, I, O, E> {
     /// Returns the operation input.
     pub fn input(&self) -> Option<&I> {
         self.inner.input.as_ref()
@@ -340,7 +340,7 @@ pub struct FinalizerInterceptorContextMut<'a, I = Input, O = Output, E = Error> 
 
 impl_from_interceptor_context!(mut FinalizerInterceptorContextMut);
 
-impl<'a, I, O, E> FinalizerInterceptorContextMut<'a, I, O, E> {
+impl<I, O, E> FinalizerInterceptorContextMut<'_, I, O, E> {
     /// Returns the operation input.
     pub fn input(&self) -> Option<&I> {
         self.inner.input.as_ref()

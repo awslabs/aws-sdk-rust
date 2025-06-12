@@ -9,6 +9,9 @@ pub fn ser_communication_limits_config(
         crate::protocol_serde::shape_communication_limits::ser_communication_limits(&mut object_2, var_1)?;
         object_2.finish();
     }
+    if let Some(var_3) = &input.instance_limits_handling {
+        object.key("instanceLimitsHandling").string(var_3.as_str());
+    }
     Ok(())
 }
 
@@ -30,6 +33,13 @@ where
                         "allChannelSubtypes" => {
                             builder =
                                 builder.set_all_channel_subtypes(crate::protocol_serde::shape_communication_limits::de_communication_limits(tokens)?);
+                        }
+                        "instanceLimitsHandling" => {
+                            builder = builder.set_instance_limits_handling(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::InstanceLimitsHandling::from(u.as_ref())))
+                                    .transpose()?,
+                            );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

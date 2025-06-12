@@ -35,7 +35,7 @@ pub struct PutIntegrationInput {
     /// <p>Specifies how to handle request payload content type conversions. Supported values are <code>CONVERT_TO_BINARY</code> and <code>CONVERT_TO_TEXT</code>, with the following behaviors:</p>
     /// <p>If this property is not defined, the request payload will be passed through from the method request to integration request without modification, provided that the <code>passthroughBehavior</code> is configured to support payload pass-through.</p>
     pub content_handling: ::std::option::Option<crate::types::ContentHandlingStrategy>,
-    /// <p>Custom timeout between 50 and 29,000 milliseconds. The default value is 29,000 milliseconds or 29 seconds.</p>
+    /// <p>Custom timeout between 50 and 29,000 milliseconds. The default value is 29,000 milliseconds or 29 seconds. You can increase the default value to longer than 29 seconds for Regional or private APIs only.</p>
     pub timeout_in_millis: ::std::option::Option<i32>,
     /// <p>Specifies the TLS configuration for an integration.</p>
     pub tls_config: ::std::option::Option<crate::types::TlsConfig>,
@@ -104,7 +104,7 @@ impl PutIntegrationInput {
     pub fn content_handling(&self) -> ::std::option::Option<&crate::types::ContentHandlingStrategy> {
         self.content_handling.as_ref()
     }
-    /// <p>Custom timeout between 50 and 29,000 milliseconds. The default value is 29,000 milliseconds or 29 seconds.</p>
+    /// <p>Custom timeout between 50 and 29,000 milliseconds. The default value is 29,000 milliseconds or 29 seconds. You can increase the default value to longer than 29 seconds for Regional or private APIs only.</p>
     pub fn timeout_in_millis(&self) -> ::std::option::Option<i32> {
         self.timeout_in_millis
     }
@@ -392,17 +392,17 @@ impl PutIntegrationInputBuilder {
     pub fn get_content_handling(&self) -> &::std::option::Option<crate::types::ContentHandlingStrategy> {
         &self.content_handling
     }
-    /// <p>Custom timeout between 50 and 29,000 milliseconds. The default value is 29,000 milliseconds or 29 seconds.</p>
+    /// <p>Custom timeout between 50 and 29,000 milliseconds. The default value is 29,000 milliseconds or 29 seconds. You can increase the default value to longer than 29 seconds for Regional or private APIs only.</p>
     pub fn timeout_in_millis(mut self, input: i32) -> Self {
         self.timeout_in_millis = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Custom timeout between 50 and 29,000 milliseconds. The default value is 29,000 milliseconds or 29 seconds.</p>
+    /// <p>Custom timeout between 50 and 29,000 milliseconds. The default value is 29,000 milliseconds or 29 seconds. You can increase the default value to longer than 29 seconds for Regional or private APIs only.</p>
     pub fn set_timeout_in_millis(mut self, input: ::std::option::Option<i32>) -> Self {
         self.timeout_in_millis = input;
         self
     }
-    /// <p>Custom timeout between 50 and 29,000 milliseconds. The default value is 29,000 milliseconds or 29 seconds.</p>
+    /// <p>Custom timeout between 50 and 29,000 milliseconds. The default value is 29,000 milliseconds or 29 seconds. You can increase the default value to longer than 29 seconds for Regional or private APIs only.</p>
     pub fn get_timeout_in_millis(&self) -> &::std::option::Option<i32> {
         &self.timeout_in_millis
     }

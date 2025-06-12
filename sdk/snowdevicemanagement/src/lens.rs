@@ -42,39 +42,27 @@ pub(crate) fn reflens_list_tasks_output_output_next_token(
 pub(crate) fn lens_list_device_resources_output_output_resources(
     input: crate::operation::list_device_resources::ListDeviceResourcesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ResourceSummary>> {
-    let input = match input.resources {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.resources?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_devices_output_output_devices(
     input: crate::operation::list_devices::ListDevicesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::DeviceSummary>> {
-    let input = match input.devices {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.devices?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_executions_output_output_executions(
     input: crate::operation::list_executions::ListExecutionsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ExecutionSummary>> {
-    let input = match input.executions {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.executions?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_tasks_output_output_tasks(
     input: crate::operation::list_tasks::ListTasksOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::TaskSummary>> {
-    let input = match input.tasks {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.tasks?;
     ::std::option::Option::Some(input)
 }

@@ -155,6 +155,8 @@ pub(crate) mod shape_worker_resource_config;
 
 pub(crate) mod shape_worker_type_specification_map;
 
+pub(crate) mod shape_policy_arn_list;
+
 pub(crate) mod shape_security_group_ids;
 
 pub(crate) mod shape_subnet_ids;

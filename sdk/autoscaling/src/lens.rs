@@ -132,89 +132,62 @@ pub(crate) fn reflens_describe_warm_pool_output_output_next_token(
 pub(crate) fn lens_describe_auto_scaling_groups_output_output_auto_scaling_groups(
     input: crate::operation::describe_auto_scaling_groups::DescribeAutoScalingGroupsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::AutoScalingGroup>> {
-    let input = match input.auto_scaling_groups {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.auto_scaling_groups?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_describe_auto_scaling_instances_output_output_auto_scaling_instances(
     input: crate::operation::describe_auto_scaling_instances::DescribeAutoScalingInstancesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::AutoScalingInstanceDetails>> {
-    let input = match input.auto_scaling_instances {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.auto_scaling_instances?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_describe_launch_configurations_output_output_launch_configurations(
     input: crate::operation::describe_launch_configurations::DescribeLaunchConfigurationsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::LaunchConfiguration>> {
-    let input = match input.launch_configurations {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.launch_configurations?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_describe_notification_configurations_output_output_notification_configurations(
     input: crate::operation::describe_notification_configurations::DescribeNotificationConfigurationsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::NotificationConfiguration>> {
-    let input = match input.notification_configurations {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.notification_configurations?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_describe_policies_output_output_scaling_policies(
     input: crate::operation::describe_policies::DescribePoliciesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ScalingPolicy>> {
-    let input = match input.scaling_policies {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.scaling_policies?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_describe_scaling_activities_output_output_activities(
     input: crate::operation::describe_scaling_activities::DescribeScalingActivitiesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::Activity>> {
-    let input = match input.activities {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.activities?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_describe_scheduled_actions_output_output_scheduled_update_group_actions(
     input: crate::operation::describe_scheduled_actions::DescribeScheduledActionsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ScheduledUpdateGroupAction>> {
-    let input = match input.scheduled_update_group_actions {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.scheduled_update_group_actions?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_describe_tags_output_output_tags(
     input: crate::operation::describe_tags::DescribeTagsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::TagDescription>> {
-    let input = match input.tags {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.tags?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_describe_warm_pool_output_output_instances(
     input: crate::operation::describe_warm_pool::DescribeWarmPoolOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::Instance>> {
-    let input = match input.instances {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.instances?;
     ::std::option::Option::Some(input)
 }

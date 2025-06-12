@@ -162,29 +162,20 @@ pub(crate) fn reflens_list_targets_for_policy_output_output_next_token(
 pub(crate) fn lens_list_delegated_administrators_output_output_delegated_administrators(
     input: crate::operation::list_delegated_administrators::ListDelegatedAdministratorsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::DelegatedAdministrator>> {
-    let input = match input.delegated_administrators {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.delegated_administrators?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_delegated_services_for_account_output_output_delegated_services(
     input: crate::operation::list_delegated_services_for_account::ListDelegatedServicesForAccountOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::DelegatedService>> {
-    let input = match input.delegated_services {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.delegated_services?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_tags_for_resource_output_output_tags(
     input: crate::operation::list_tags_for_resource::ListTagsForResourceOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
-    let input = match input.tags {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.tags?;
     ::std::option::Option::Some(input)
 }

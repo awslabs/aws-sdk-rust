@@ -37,6 +37,9 @@ pub mod get_campaign_state_batch;
 /// Types for the `GetConnectInstanceConfig` operation.
 pub mod get_connect_instance_config;
 
+/// Types for the `GetInstanceCommunicationLimits` operation.
+pub mod get_instance_communication_limits;
+
 /// Types for the `GetInstanceOnboardingJobStatus` operation.
 pub mod get_instance_onboarding_job_status;
 
@@ -54,6 +57,9 @@ pub mod pause_campaign;
 
 /// Types for the `PutConnectInstanceIntegration` operation.
 pub mod put_connect_instance_integration;
+
+/// Types for the `PutInstanceCommunicationLimits` operation.
+pub mod put_instance_communication_limits;
 
 /// Types for the `PutOutboundRequestBatch` operation.
 pub mod put_outbound_request_batch;

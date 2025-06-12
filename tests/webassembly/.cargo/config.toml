@@ -1,5 +1,5 @@
 [build]
-target = ["wasm32-unknown-unknown", "wasm32-wasi"]
+target = ["wasm32-unknown-unknown", "wasm32-wasip1"]
 
 [target.wasm32-wasi]
 rustflags = ["-C", "opt-level=1"]

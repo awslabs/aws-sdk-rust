@@ -142,139 +142,97 @@ pub(crate) fn reflens_list_vehicles_in_fleet_output_output_next_token(
 pub(crate) fn lens_get_vehicle_status_output_output_campaigns(
     input: crate::operation::get_vehicle_status::GetVehicleStatusOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::VehicleStatus>> {
-    let input = match input.campaigns {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.campaigns?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_campaigns_output_output_campaign_summaries(
     input: crate::operation::list_campaigns::ListCampaignsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::CampaignSummary>> {
-    let input = match input.campaign_summaries {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.campaign_summaries?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_decoder_manifest_network_interfaces_output_output_network_interfaces(
     input: crate::operation::list_decoder_manifest_network_interfaces::ListDecoderManifestNetworkInterfacesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::NetworkInterface>> {
-    let input = match input.network_interfaces {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.network_interfaces?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_decoder_manifest_signals_output_output_signal_decoders(
     input: crate::operation::list_decoder_manifest_signals::ListDecoderManifestSignalsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::SignalDecoder>> {
-    let input = match input.signal_decoders {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.signal_decoders?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_decoder_manifests_output_output_summaries(
     input: crate::operation::list_decoder_manifests::ListDecoderManifestsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::DecoderManifestSummary>> {
-    let input = match input.summaries {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.summaries?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_fleets_output_output_fleet_summaries(
     input: crate::operation::list_fleets::ListFleetsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::FleetSummary>> {
-    let input = match input.fleet_summaries {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.fleet_summaries?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_fleets_for_vehicle_output_output_fleets(
     input: crate::operation::list_fleets_for_vehicle::ListFleetsForVehicleOutput,
 ) -> ::std::option::Option<::std::vec::Vec<::std::string::String>> {
-    let input = match input.fleets {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.fleets?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_model_manifest_nodes_output_output_nodes(
     input: crate::operation::list_model_manifest_nodes::ListModelManifestNodesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::Node>> {
-    let input = match input.nodes {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.nodes?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_model_manifests_output_output_summaries(
     input: crate::operation::list_model_manifests::ListModelManifestsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ModelManifestSummary>> {
-    let input = match input.summaries {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.summaries?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_signal_catalog_nodes_output_output_nodes(
     input: crate::operation::list_signal_catalog_nodes::ListSignalCatalogNodesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::Node>> {
-    let input = match input.nodes {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.nodes?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_signal_catalogs_output_output_summaries(
     input: crate::operation::list_signal_catalogs::ListSignalCatalogsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::SignalCatalogSummary>> {
-    let input = match input.summaries {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.summaries?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_state_templates_output_output_summaries(
     input: crate::operation::list_state_templates::ListStateTemplatesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::StateTemplateSummary>> {
-    let input = match input.summaries {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.summaries?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_vehicles_output_output_vehicle_summaries(
     input: crate::operation::list_vehicles::ListVehiclesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::VehicleSummary>> {
-    let input = match input.vehicle_summaries {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.vehicle_summaries?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_vehicles_in_fleet_output_output_vehicles(
     input: crate::operation::list_vehicles_in_fleet::ListVehiclesInFleetOutput,
 ) -> ::std::option::Option<::std::vec::Vec<::std::string::String>> {
-    let input = match input.vehicles {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.vehicles?;
     ::std::option::Option::Some(input)
 }

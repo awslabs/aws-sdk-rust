@@ -252,160 +252,112 @@ pub(crate) fn reflens_list_tags_output_output_next_token(
 pub(crate) fn lens_list_backup_jobs_output_output_backup_jobs(
     input: crate::operation::list_backup_jobs::ListBackupJobsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::BackupJob>> {
-    let input = match input.backup_jobs {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.backup_jobs?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_backup_plan_templates_output_output_backup_plan_templates_list(
     input: crate::operation::list_backup_plan_templates::ListBackupPlanTemplatesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::BackupPlanTemplatesListMember>> {
-    let input = match input.backup_plan_templates_list {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.backup_plan_templates_list?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_backup_plan_versions_output_output_backup_plan_versions_list(
     input: crate::operation::list_backup_plan_versions::ListBackupPlanVersionsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::BackupPlansListMember>> {
-    let input = match input.backup_plan_versions_list {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.backup_plan_versions_list?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_backup_plans_output_output_backup_plans_list(
     input: crate::operation::list_backup_plans::ListBackupPlansOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::BackupPlansListMember>> {
-    let input = match input.backup_plans_list {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.backup_plans_list?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_backup_selections_output_output_backup_selections_list(
     input: crate::operation::list_backup_selections::ListBackupSelectionsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::BackupSelectionsListMember>> {
-    let input = match input.backup_selections_list {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.backup_selections_list?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_backup_vaults_output_output_backup_vault_list(
     input: crate::operation::list_backup_vaults::ListBackupVaultsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::BackupVaultListMember>> {
-    let input = match input.backup_vault_list {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.backup_vault_list?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_copy_jobs_output_output_copy_jobs(
     input: crate::operation::list_copy_jobs::ListCopyJobsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::CopyJob>> {
-    let input = match input.copy_jobs {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.copy_jobs?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_indexed_recovery_points_output_output_indexed_recovery_points(
     input: crate::operation::list_indexed_recovery_points::ListIndexedRecoveryPointsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::IndexedRecoveryPoint>> {
-    let input = match input.indexed_recovery_points {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.indexed_recovery_points?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_legal_holds_output_output_legal_holds(
     input: crate::operation::list_legal_holds::ListLegalHoldsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::LegalHold>> {
-    let input = match input.legal_holds {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.legal_holds?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_protected_resources_output_output_results(
     input: crate::operation::list_protected_resources::ListProtectedResourcesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ProtectedResource>> {
-    let input = match input.results {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.results?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_protected_resources_by_backup_vault_output_output_results(
     input: crate::operation::list_protected_resources_by_backup_vault::ListProtectedResourcesByBackupVaultOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ProtectedResource>> {
-    let input = match input.results {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.results?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_recovery_points_by_backup_vault_output_output_recovery_points(
     input: crate::operation::list_recovery_points_by_backup_vault::ListRecoveryPointsByBackupVaultOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::RecoveryPointByBackupVault>> {
-    let input = match input.recovery_points {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.recovery_points?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_recovery_points_by_legal_hold_output_output_recovery_points(
     input: crate::operation::list_recovery_points_by_legal_hold::ListRecoveryPointsByLegalHoldOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::RecoveryPointMember>> {
-    let input = match input.recovery_points {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.recovery_points?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_recovery_points_by_resource_output_output_recovery_points(
     input: crate::operation::list_recovery_points_by_resource::ListRecoveryPointsByResourceOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::RecoveryPointByResource>> {
-    let input = match input.recovery_points {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.recovery_points?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_restore_jobs_output_output_restore_jobs(
     input: crate::operation::list_restore_jobs::ListRestoreJobsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::RestoreJobsListMember>> {
-    let input = match input.restore_jobs {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.restore_jobs?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_restore_jobs_by_protected_resource_output_output_restore_jobs(
     input: crate::operation::list_restore_jobs_by_protected_resource::ListRestoreJobsByProtectedResourceOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::RestoreJobsListMember>> {
-    let input = match input.restore_jobs {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.restore_jobs?;
     ::std::option::Option::Some(input)
 }
 

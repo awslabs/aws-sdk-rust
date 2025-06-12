@@ -222,80 +222,56 @@ pub(crate) fn reflens_list_workflows_output_output_next_token(
 pub(crate) fn lens_list_annotation_import_jobs_output_output_annotation_import_jobs(
     input: crate::operation::list_annotation_import_jobs::ListAnnotationImportJobsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::AnnotationImportJobItem>> {
-    let input = match input.annotation_import_jobs {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.annotation_import_jobs?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_annotation_store_versions_output_output_annotation_store_versions(
     input: crate::operation::list_annotation_store_versions::ListAnnotationStoreVersionsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::AnnotationStoreVersionItem>> {
-    let input = match input.annotation_store_versions {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.annotation_store_versions?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_annotation_stores_output_output_annotation_stores(
     input: crate::operation::list_annotation_stores::ListAnnotationStoresOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::AnnotationStoreItem>> {
-    let input = match input.annotation_stores {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.annotation_stores?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_multipart_read_set_uploads_output_output_uploads(
     input: crate::operation::list_multipart_read_set_uploads::ListMultipartReadSetUploadsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::MultipartReadSetUploadListItem>> {
-    let input = match input.uploads {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.uploads?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_read_set_activation_jobs_output_output_activation_jobs(
     input: crate::operation::list_read_set_activation_jobs::ListReadSetActivationJobsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ActivateReadSetJobItem>> {
-    let input = match input.activation_jobs {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.activation_jobs?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_read_set_export_jobs_output_output_export_jobs(
     input: crate::operation::list_read_set_export_jobs::ListReadSetExportJobsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ExportReadSetJobDetail>> {
-    let input = match input.export_jobs {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.export_jobs?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_read_set_import_jobs_output_output_import_jobs(
     input: crate::operation::list_read_set_import_jobs::ListReadSetImportJobsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ImportReadSetJobItem>> {
-    let input = match input.import_jobs {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.import_jobs?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_read_set_upload_parts_output_output_parts(
     input: crate::operation::list_read_set_upload_parts::ListReadSetUploadPartsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ReadSetUploadPartListItem>> {
-    let input = match input.parts {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.parts?;
     ::std::option::Option::Some(input)
 }
 
@@ -309,10 +285,7 @@ pub(crate) fn lens_list_read_sets_output_output_read_sets(
 pub(crate) fn lens_list_reference_import_jobs_output_output_import_jobs(
     input: crate::operation::list_reference_import_jobs::ListReferenceImportJobsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ImportReferenceJobItem>> {
-    let input = match input.import_jobs {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.import_jobs?;
     ::std::option::Option::Some(input)
 }
 
@@ -333,40 +306,28 @@ pub(crate) fn lens_list_references_output_output_references(
 pub(crate) fn lens_list_run_caches_output_output_items(
     input: crate::operation::list_run_caches::ListRunCachesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::RunCacheListItem>> {
-    let input = match input.items {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.items?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_run_groups_output_output_items(
     input: crate::operation::list_run_groups::ListRunGroupsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::RunGroupListItem>> {
-    let input = match input.items {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.items?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_run_tasks_output_output_items(
     input: crate::operation::list_run_tasks::ListRunTasksOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::TaskListItem>> {
-    let input = match input.items {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.items?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_runs_output_output_items(
     input: crate::operation::list_runs::ListRunsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::RunListItem>> {
-    let input = match input.items {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.items?;
     ::std::option::Option::Some(input)
 }
 
@@ -387,39 +348,27 @@ pub(crate) fn lens_list_shares_output_output_shares(
 pub(crate) fn lens_list_variant_import_jobs_output_output_variant_import_jobs(
     input: crate::operation::list_variant_import_jobs::ListVariantImportJobsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::VariantImportJobItem>> {
-    let input = match input.variant_import_jobs {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.variant_import_jobs?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_variant_stores_output_output_variant_stores(
     input: crate::operation::list_variant_stores::ListVariantStoresOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::VariantStoreItem>> {
-    let input = match input.variant_stores {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.variant_stores?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_workflow_versions_output_output_items(
     input: crate::operation::list_workflow_versions::ListWorkflowVersionsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::WorkflowVersionListItem>> {
-    let input = match input.items {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.items?;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_workflows_output_output_items(
     input: crate::operation::list_workflows::ListWorkflowsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::WorkflowListItem>> {
-    let input = match input.items {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.items?;
     ::std::option::Option::Some(input)
 }

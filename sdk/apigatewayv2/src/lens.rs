@@ -12,9 +12,6 @@ pub(crate) fn reflens_list_routing_rules_output_output_next_token(
 pub(crate) fn lens_list_routing_rules_output_output_routing_rules(
     input: crate::operation::list_routing_rules::ListRoutingRulesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::RoutingRule>> {
-    let input = match input.routing_rules {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.routing_rules?;
     ::std::option::Option::Some(input)
 }

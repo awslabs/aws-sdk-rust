@@ -292,10 +292,7 @@ pub(crate) fn reflens_list_workers_output_output_next_token(
 pub(crate) fn lens_get_sessions_statistics_aggregation_output_output_statistics(
     input: crate::operation::get_sessions_statistics_aggregation::GetSessionsStatisticsAggregationOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::Statistics>> {
-    let input = match input.statistics {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.statistics?;
     ::std::option::Option::Some(input)
 }
 

@@ -43,7 +43,7 @@ impl crate::operation::create_key::builders::CreateKeyInputBuilder {
 /// </dt>
 /// <dd>
 /// <p>To create an asymmetric KMS key, use the <code>KeySpec</code> parameter to specify the type of key material in the KMS key. Then, use the <code>KeyUsage</code> parameter to determine whether the KMS key will be used to encrypt and decrypt or sign and verify. You can't change these properties after the KMS key is created.</p>
-/// <p>Asymmetric KMS keys contain an RSA key pair, Elliptic Curve (ECC) key pair, or an SM2 key pair (China Regions only). The private key in an asymmetric KMS key never leaves KMS unencrypted. However, you can use the <code>GetPublicKey</code> operation to download the public key so it can be used outside of KMS. Each KMS key can have only one key usage. KMS keys with RSA key pairs can be used to encrypt and decrypt data or sign and verify messages (but not both). KMS keys with NIST-recommended ECC key pairs can be used to sign and verify messages or derive shared secrets (but not both). KMS keys with <code>ECC_SECG_P256K1</code> can be used only to sign and verify messages. KMS keys with SM2 key pairs (China Regions only) can be used to either encrypt and decrypt data, sign and verify messages, or derive shared secrets (you must choose one key usage type). For information about asymmetric KMS keys, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Asymmetric KMS keys</a> in the <i>Key Management Service Developer Guide</i>.</p>
+/// <p>Asymmetric KMS keys contain an RSA key pair, Elliptic Curve (ECC) key pair, ML-DSA key pair or an SM2 key pair (China Regions only). The private key in an asymmetric KMS key never leaves KMS unencrypted. However, you can use the <code>GetPublicKey</code> operation to download the public key so it can be used outside of KMS. Each KMS key can have only one key usage. KMS keys with RSA key pairs can be used to encrypt and decrypt data or sign and verify messages (but not both). KMS keys with NIST-recommended ECC key pairs can be used to sign and verify messages or derive shared secrets (but not both). KMS keys with <code>ECC_SECG_P256K1</code> can be used only to sign and verify messages. KMS keys with ML-DSA key pairs can be used to sign and verify messages. KMS keys with SM2 key pairs (China Regions only) can be used to either encrypt and decrypt data, sign and verify messages, or derive shared secrets (you must choose one key usage type). For information about asymmetric KMS keys, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Asymmetric KMS keys</a> in the <i>Key Management Service Developer Guide</i>.</p>
 /// <p></p>
 /// </dd>
 /// <dt>
@@ -270,7 +270,9 @@ impl CreateKeyFluentBuilder {
     /// <li>
     /// <p>For asymmetric KMS keys with NIST-recommended elliptic curve key pairs, specify <code>SIGN_VERIFY</code> or <code>KEY_AGREEMENT</code>.</p></li>
     /// <li>
-    /// <p>For asymmetric KMS keys with <code>ECC_SECG_P256K1</code> key pairs specify <code>SIGN_VERIFY</code>.</p></li>
+    /// <p>For asymmetric KMS keys with <code>ECC_SECG_P256K1</code> key pairs, specify <code>SIGN_VERIFY</code>.</p></li>
+    /// <li>
+    /// <p>For asymmetric KMS keys with ML-DSA key pairs, specify <code>SIGN_VERIFY</code>.</p></li>
     /// <li>
     /// <p>For asymmetric KMS keys with SM2 key pairs (China Regions only), specify <code>ENCRYPT_DECRYPT</code>, <code>SIGN_VERIFY</code>, or <code>KEY_AGREEMENT</code>.</p></li>
     /// </ul>
@@ -290,7 +292,9 @@ impl CreateKeyFluentBuilder {
     /// <li>
     /// <p>For asymmetric KMS keys with NIST-recommended elliptic curve key pairs, specify <code>SIGN_VERIFY</code> or <code>KEY_AGREEMENT</code>.</p></li>
     /// <li>
-    /// <p>For asymmetric KMS keys with <code>ECC_SECG_P256K1</code> key pairs specify <code>SIGN_VERIFY</code>.</p></li>
+    /// <p>For asymmetric KMS keys with <code>ECC_SECG_P256K1</code> key pairs, specify <code>SIGN_VERIFY</code>.</p></li>
+    /// <li>
+    /// <p>For asymmetric KMS keys with ML-DSA key pairs, specify <code>SIGN_VERIFY</code>.</p></li>
     /// <li>
     /// <p>For asymmetric KMS keys with SM2 key pairs (China Regions only), specify <code>ENCRYPT_DECRYPT</code>, <code>SIGN_VERIFY</code>, or <code>KEY_AGREEMENT</code>.</p></li>
     /// </ul>
@@ -310,7 +314,9 @@ impl CreateKeyFluentBuilder {
     /// <li>
     /// <p>For asymmetric KMS keys with NIST-recommended elliptic curve key pairs, specify <code>SIGN_VERIFY</code> or <code>KEY_AGREEMENT</code>.</p></li>
     /// <li>
-    /// <p>For asymmetric KMS keys with <code>ECC_SECG_P256K1</code> key pairs specify <code>SIGN_VERIFY</code>.</p></li>
+    /// <p>For asymmetric KMS keys with <code>ECC_SECG_P256K1</code> key pairs, specify <code>SIGN_VERIFY</code>.</p></li>
+    /// <li>
+    /// <p>For asymmetric KMS keys with ML-DSA key pairs, specify <code>SIGN_VERIFY</code>.</p></li>
     /// <li>
     /// <p>For asymmetric KMS keys with SM2 key pairs (China Regions only), specify <code>ENCRYPT_DECRYPT</code>, <code>SIGN_VERIFY</code>, or <code>KEY_AGREEMENT</code>.</p></li>
     /// </ul>
@@ -388,6 +394,16 @@ impl CreateKeyFluentBuilder {
     /// <p><code>ECC_SECG_P256K1</code> (secp256k1), commonly used for cryptocurrencies.</p></li>
     /// </ul></li>
     /// <li>
+    /// <p>Asymmetric ML-DSA key pairs (signing and verification)</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>ML_DSA_44</code></p></li>
+    /// <li>
+    /// <p><code>ML_DSA_65</code></p></li>
+    /// <li>
+    /// <p><code>ML_DSA_87</code></p></li>
+    /// </ul></li>
+    /// <li>
     /// <p>SM2 key pairs (encryption and decryption -or- signing and verification -or- deriving shared secrets)</p>
     /// <ul>
     /// <li>
@@ -449,6 +465,16 @@ impl CreateKeyFluentBuilder {
     /// <p><code>ECC_SECG_P256K1</code> (secp256k1), commonly used for cryptocurrencies.</p></li>
     /// </ul></li>
     /// <li>
+    /// <p>Asymmetric ML-DSA key pairs (signing and verification)</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>ML_DSA_44</code></p></li>
+    /// <li>
+    /// <p><code>ML_DSA_65</code></p></li>
+    /// <li>
+    /// <p><code>ML_DSA_87</code></p></li>
+    /// </ul></li>
+    /// <li>
     /// <p>SM2 key pairs (encryption and decryption -or- signing and verification -or- deriving shared secrets)</p>
     /// <ul>
     /// <li>
@@ -508,6 +534,16 @@ impl CreateKeyFluentBuilder {
     /// <ul>
     /// <li>
     /// <p><code>ECC_SECG_P256K1</code> (secp256k1), commonly used for cryptocurrencies.</p></li>
+    /// </ul></li>
+    /// <li>
+    /// <p>Asymmetric ML-DSA key pairs (signing and verification)</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>ML_DSA_44</code></p></li>
+    /// <li>
+    /// <p><code>ML_DSA_65</code></p></li>
+    /// <li>
+    /// <p><code>ML_DSA_87</code></p></li>
     /// </ul></li>
     /// <li>
     /// <p>SM2 key pairs (encryption and decryption -or- signing and verification -or- deriving shared secrets)</p>
