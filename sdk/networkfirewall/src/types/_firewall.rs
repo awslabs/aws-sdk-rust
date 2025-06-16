@@ -37,6 +37,14 @@ pub struct Firewall {
     pub number_of_associations: ::std::option::Option<i32>,
     /// <p>An optional setting indicating the specific traffic analysis types to enable on the firewall.</p>
     pub enabled_analysis_types: ::std::option::Option<::std::vec::Vec<crate::types::EnabledAnalysisType>>,
+    /// <p>The unique identifier of the transit gateway associated with this firewall. This field is only present for transit gateway-attached firewalls.</p>
+    pub transit_gateway_id: ::std::option::Option<::std::string::String>,
+    /// <p>The Amazon Web Services account ID that owns the transit gateway. This may be different from the firewall owner's account ID when using a shared transit gateway.</p>
+    pub transit_gateway_owner_account_id: ::std::option::Option<::std::string::String>,
+    /// <p>The Availability Zones where the firewall endpoints are created for a transit gateway-attached firewall. Each mapping specifies an Availability Zone where the firewall processes traffic.</p>
+    pub availability_zone_mappings: ::std::option::Option<::std::vec::Vec<crate::types::AvailabilityZoneMapping>>,
+    /// <p>A setting indicating whether the firewall is protected against changes to its Availability Zone configuration. When set to <code>TRUE</code>, you must first disable this protection before adding or removing Availability Zones.</p>
+    pub availability_zone_change_protection: bool,
 }
 impl Firewall {
     /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
@@ -106,6 +114,24 @@ impl Firewall {
     pub fn enabled_analysis_types(&self) -> &[crate::types::EnabledAnalysisType] {
         self.enabled_analysis_types.as_deref().unwrap_or_default()
     }
+    /// <p>The unique identifier of the transit gateway associated with this firewall. This field is only present for transit gateway-attached firewalls.</p>
+    pub fn transit_gateway_id(&self) -> ::std::option::Option<&str> {
+        self.transit_gateway_id.as_deref()
+    }
+    /// <p>The Amazon Web Services account ID that owns the transit gateway. This may be different from the firewall owner's account ID when using a shared transit gateway.</p>
+    pub fn transit_gateway_owner_account_id(&self) -> ::std::option::Option<&str> {
+        self.transit_gateway_owner_account_id.as_deref()
+    }
+    /// <p>The Availability Zones where the firewall endpoints are created for a transit gateway-attached firewall. Each mapping specifies an Availability Zone where the firewall processes traffic.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.availability_zone_mappings.is_none()`.
+    pub fn availability_zone_mappings(&self) -> &[crate::types::AvailabilityZoneMapping] {
+        self.availability_zone_mappings.as_deref().unwrap_or_default()
+    }
+    /// <p>A setting indicating whether the firewall is protected against changes to its Availability Zone configuration. When set to <code>TRUE</code>, you must first disable this protection before adding or removing Availability Zones.</p>
+    pub fn availability_zone_change_protection(&self) -> bool {
+        self.availability_zone_change_protection
+    }
 }
 impl Firewall {
     /// Creates a new builder-style object to manufacture [`Firewall`](crate::types::Firewall).
@@ -132,6 +158,10 @@ pub struct FirewallBuilder {
     pub(crate) encryption_configuration: ::std::option::Option<crate::types::EncryptionConfiguration>,
     pub(crate) number_of_associations: ::std::option::Option<i32>,
     pub(crate) enabled_analysis_types: ::std::option::Option<::std::vec::Vec<crate::types::EnabledAnalysisType>>,
+    pub(crate) transit_gateway_id: ::std::option::Option<::std::string::String>,
+    pub(crate) transit_gateway_owner_account_id: ::std::option::Option<::std::string::String>,
+    pub(crate) availability_zone_mappings: ::std::option::Option<::std::vec::Vec<crate::types::AvailabilityZoneMapping>>,
+    pub(crate) availability_zone_change_protection: ::std::option::Option<bool>,
 }
 impl FirewallBuilder {
     /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
@@ -360,6 +390,68 @@ impl FirewallBuilder {
     pub fn get_enabled_analysis_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EnabledAnalysisType>> {
         &self.enabled_analysis_types
     }
+    /// <p>The unique identifier of the transit gateway associated with this firewall. This field is only present for transit gateway-attached firewalls.</p>
+    pub fn transit_gateway_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.transit_gateway_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The unique identifier of the transit gateway associated with this firewall. This field is only present for transit gateway-attached firewalls.</p>
+    pub fn set_transit_gateway_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.transit_gateway_id = input;
+        self
+    }
+    /// <p>The unique identifier of the transit gateway associated with this firewall. This field is only present for transit gateway-attached firewalls.</p>
+    pub fn get_transit_gateway_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.transit_gateway_id
+    }
+    /// <p>The Amazon Web Services account ID that owns the transit gateway. This may be different from the firewall owner's account ID when using a shared transit gateway.</p>
+    pub fn transit_gateway_owner_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.transit_gateway_owner_account_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Web Services account ID that owns the transit gateway. This may be different from the firewall owner's account ID when using a shared transit gateway.</p>
+    pub fn set_transit_gateway_owner_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.transit_gateway_owner_account_id = input;
+        self
+    }
+    /// <p>The Amazon Web Services account ID that owns the transit gateway. This may be different from the firewall owner's account ID when using a shared transit gateway.</p>
+    pub fn get_transit_gateway_owner_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.transit_gateway_owner_account_id
+    }
+    /// Appends an item to `availability_zone_mappings`.
+    ///
+    /// To override the contents of this collection use [`set_availability_zone_mappings`](Self::set_availability_zone_mappings).
+    ///
+    /// <p>The Availability Zones where the firewall endpoints are created for a transit gateway-attached firewall. Each mapping specifies an Availability Zone where the firewall processes traffic.</p>
+    pub fn availability_zone_mappings(mut self, input: crate::types::AvailabilityZoneMapping) -> Self {
+        let mut v = self.availability_zone_mappings.unwrap_or_default();
+        v.push(input);
+        self.availability_zone_mappings = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The Availability Zones where the firewall endpoints are created for a transit gateway-attached firewall. Each mapping specifies an Availability Zone where the firewall processes traffic.</p>
+    pub fn set_availability_zone_mappings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AvailabilityZoneMapping>>) -> Self {
+        self.availability_zone_mappings = input;
+        self
+    }
+    /// <p>The Availability Zones where the firewall endpoints are created for a transit gateway-attached firewall. Each mapping specifies an Availability Zone where the firewall processes traffic.</p>
+    pub fn get_availability_zone_mappings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AvailabilityZoneMapping>> {
+        &self.availability_zone_mappings
+    }
+    /// <p>A setting indicating whether the firewall is protected against changes to its Availability Zone configuration. When set to <code>TRUE</code>, you must first disable this protection before adding or removing Availability Zones.</p>
+    pub fn availability_zone_change_protection(mut self, input: bool) -> Self {
+        self.availability_zone_change_protection = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>A setting indicating whether the firewall is protected against changes to its Availability Zone configuration. When set to <code>TRUE</code>, you must first disable this protection before adding or removing Availability Zones.</p>
+    pub fn set_availability_zone_change_protection(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.availability_zone_change_protection = input;
+        self
+    }
+    /// <p>A setting indicating whether the firewall is protected against changes to its Availability Zone configuration. When set to <code>TRUE</code>, you must first disable this protection before adding or removing Availability Zones.</p>
+    pub fn get_availability_zone_change_protection(&self) -> &::std::option::Option<bool> {
+        &self.availability_zone_change_protection
+    }
     /// Consumes the builder and constructs a [`Firewall`](crate::types::Firewall).
     /// This method will fail if any of the following fields are not set:
     /// - [`firewall_policy_arn`](crate::types::builders::FirewallBuilder::firewall_policy_arn)
@@ -402,6 +494,10 @@ impl FirewallBuilder {
             encryption_configuration: self.encryption_configuration,
             number_of_associations: self.number_of_associations,
             enabled_analysis_types: self.enabled_analysis_types,
+            transit_gateway_id: self.transit_gateway_id,
+            transit_gateway_owner_account_id: self.transit_gateway_owner_account_id,
+            availability_zone_mappings: self.availability_zone_mappings,
+            availability_zone_change_protection: self.availability_zone_change_protection.unwrap_or_default(),
         })
     }
 }

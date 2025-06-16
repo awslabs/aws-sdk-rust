@@ -17,6 +17,7 @@
 ///     StatefulRuleProtocol::Dns => { /* ... */ },
 ///     StatefulRuleProtocol::Ftp => { /* ... */ },
 ///     StatefulRuleProtocol::Http => { /* ... */ },
+///     StatefulRuleProtocol::Http2 => { /* ... */ },
 ///     StatefulRuleProtocol::Icmp => { /* ... */ },
 ///     StatefulRuleProtocol::Ikev2 => { /* ... */ },
 ///     StatefulRuleProtocol::Imap => { /* ... */ },
@@ -24,6 +25,7 @@
 ///     StatefulRuleProtocol::Krb5 => { /* ... */ },
 ///     StatefulRuleProtocol::Msn => { /* ... */ },
 ///     StatefulRuleProtocol::Ntp => { /* ... */ },
+///     StatefulRuleProtocol::Quic => { /* ... */ },
 ///     StatefulRuleProtocol::Smb => { /* ... */ },
 ///     StatefulRuleProtocol::Smtp => { /* ... */ },
 ///     StatefulRuleProtocol::Ssh => { /* ... */ },
@@ -70,6 +72,8 @@ pub enum StatefulRuleProtocol {
     #[allow(missing_docs)] // documentation missing in model
     Http,
     #[allow(missing_docs)] // documentation missing in model
+    Http2,
+    #[allow(missing_docs)] // documentation missing in model
     Icmp,
     #[allow(missing_docs)] // documentation missing in model
     Ikev2,
@@ -83,6 +87,8 @@ pub enum StatefulRuleProtocol {
     Msn,
     #[allow(missing_docs)] // documentation missing in model
     Ntp,
+    #[allow(missing_docs)] // documentation missing in model
+    Quic,
     #[allow(missing_docs)] // documentation missing in model
     Smb,
     #[allow(missing_docs)] // documentation missing in model
@@ -109,6 +115,7 @@ impl ::std::convert::From<&str> for StatefulRuleProtocol {
             "DNS" => StatefulRuleProtocol::Dns,
             "FTP" => StatefulRuleProtocol::Ftp,
             "HTTP" => StatefulRuleProtocol::Http,
+            "HTTP2" => StatefulRuleProtocol::Http2,
             "ICMP" => StatefulRuleProtocol::Icmp,
             "IKEV2" => StatefulRuleProtocol::Ikev2,
             "IMAP" => StatefulRuleProtocol::Imap,
@@ -116,6 +123,7 @@ impl ::std::convert::From<&str> for StatefulRuleProtocol {
             "KRB5" => StatefulRuleProtocol::Krb5,
             "MSN" => StatefulRuleProtocol::Msn,
             "NTP" => StatefulRuleProtocol::Ntp,
+            "QUIC" => StatefulRuleProtocol::Quic,
             "SMB" => StatefulRuleProtocol::Smb,
             "SMTP" => StatefulRuleProtocol::Smtp,
             "SSH" => StatefulRuleProtocol::Ssh,
@@ -143,6 +151,7 @@ impl StatefulRuleProtocol {
             StatefulRuleProtocol::Dns => "DNS",
             StatefulRuleProtocol::Ftp => "FTP",
             StatefulRuleProtocol::Http => "HTTP",
+            StatefulRuleProtocol::Http2 => "HTTP2",
             StatefulRuleProtocol::Icmp => "ICMP",
             StatefulRuleProtocol::Ikev2 => "IKEV2",
             StatefulRuleProtocol::Imap => "IMAP",
@@ -150,6 +159,7 @@ impl StatefulRuleProtocol {
             StatefulRuleProtocol::Krb5 => "KRB5",
             StatefulRuleProtocol::Msn => "MSN",
             StatefulRuleProtocol::Ntp => "NTP",
+            StatefulRuleProtocol::Quic => "QUIC",
             StatefulRuleProtocol::Smb => "SMB",
             StatefulRuleProtocol::Smtp => "SMTP",
             StatefulRuleProtocol::Ssh => "SSH",
@@ -163,8 +173,8 @@ impl StatefulRuleProtocol {
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "DCERPC", "DHCP", "DNS", "FTP", "HTTP", "ICMP", "IKEV2", "IMAP", "IP", "KRB5", "MSN", "NTP", "SMB", "SMTP", "SSH", "TCP", "TFTP", "TLS",
-            "UDP",
+            "DCERPC", "DHCP", "DNS", "FTP", "HTTP", "HTTP2", "ICMP", "IKEV2", "IMAP", "IP", "KRB5", "MSN", "NTP", "QUIC", "SMB", "SMTP", "SSH",
+            "TCP", "TFTP", "TLS", "UDP",
         ]
     }
 }
@@ -193,6 +203,7 @@ impl ::std::fmt::Display for StatefulRuleProtocol {
             StatefulRuleProtocol::Dns => write!(f, "DNS"),
             StatefulRuleProtocol::Ftp => write!(f, "FTP"),
             StatefulRuleProtocol::Http => write!(f, "HTTP"),
+            StatefulRuleProtocol::Http2 => write!(f, "HTTP2"),
             StatefulRuleProtocol::Icmp => write!(f, "ICMP"),
             StatefulRuleProtocol::Ikev2 => write!(f, "IKEV2"),
             StatefulRuleProtocol::Imap => write!(f, "IMAP"),
@@ -200,6 +211,7 @@ impl ::std::fmt::Display for StatefulRuleProtocol {
             StatefulRuleProtocol::Krb5 => write!(f, "KRB5"),
             StatefulRuleProtocol::Msn => write!(f, "MSN"),
             StatefulRuleProtocol::Ntp => write!(f, "NTP"),
+            StatefulRuleProtocol::Quic => write!(f, "QUIC"),
             StatefulRuleProtocol::Smb => write!(f, "SMB"),
             StatefulRuleProtocol::Smtp => write!(f, "SMTP"),
             StatefulRuleProtocol::Ssh => write!(f, "SSH"),

@@ -20,7 +20,7 @@ pub struct DescribeRuleGroupMetadataOutput {
     pub capacity: ::std::option::Option<i32>,
     /// <p>Additional options governing how Network Firewall handles the rule group. You can only use these for stateful rule groups.</p>
     pub stateful_rule_options: ::std::option::Option<crate::types::StatefulRuleOptions>,
-    /// <p>The last time that the rule group was changed.</p>
+    /// <p>A timestamp indicating when the rule group was last modified.</p>
     pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }
@@ -56,7 +56,7 @@ impl DescribeRuleGroupMetadataOutput {
     pub fn stateful_rule_options(&self) -> ::std::option::Option<&crate::types::StatefulRuleOptions> {
         self.stateful_rule_options.as_ref()
     }
-    /// <p>The last time that the rule group was changed.</p>
+    /// <p>A timestamp indicating when the rule group was last modified.</p>
     pub fn last_modified_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
     }
@@ -188,17 +188,17 @@ impl DescribeRuleGroupMetadataOutputBuilder {
     pub fn get_stateful_rule_options(&self) -> &::std::option::Option<crate::types::StatefulRuleOptions> {
         &self.stateful_rule_options
     }
-    /// <p>The last time that the rule group was changed.</p>
+    /// <p>A timestamp indicating when the rule group was last modified.</p>
     pub fn last_modified_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_modified_time = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The last time that the rule group was changed.</p>
+    /// <p>A timestamp indicating when the rule group was last modified.</p>
     pub fn set_last_modified_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_modified_time = input;
         self
     }
-    /// <p>The last time that the rule group was changed.</p>
+    /// <p>A timestamp indicating when the rule group was last modified.</p>
     pub fn get_last_modified_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_modified_time
     }

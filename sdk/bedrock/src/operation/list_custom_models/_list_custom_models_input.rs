@@ -23,6 +23,17 @@ pub struct ListCustomModelsInput {
     pub sort_order: ::std::option::Option<crate::types::SortOrder>,
     /// <p>Return custom models depending on if the current account owns them (<code>true</code>) or if they were shared with the current account (<code>false</code>).</p>
     pub is_owned: ::std::option::Option<bool>,
+    /// <p>The status of them model to filter results by. Possible values include:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>Creating</code> - Include only models that are currently being created and validated.</p></li>
+    /// <li>
+    /// <p><code>Active</code> - Include only models that have been successfully created and are ready for use.</p></li>
+    /// <li>
+    /// <p><code>Failed</code> - Include only models where the creation process failed.</p></li>
+    /// </ul>
+    /// <p>If you don't specify a status, the API returns models in all states.</p>
+    pub model_status: ::std::option::Option<crate::types::ModelStatus>,
 }
 impl ListCustomModelsInput {
     /// <p>Return custom models created before the specified time.</p>
@@ -65,6 +76,19 @@ impl ListCustomModelsInput {
     pub fn is_owned(&self) -> ::std::option::Option<bool> {
         self.is_owned
     }
+    /// <p>The status of them model to filter results by. Possible values include:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>Creating</code> - Include only models that are currently being created and validated.</p></li>
+    /// <li>
+    /// <p><code>Active</code> - Include only models that have been successfully created and are ready for use.</p></li>
+    /// <li>
+    /// <p><code>Failed</code> - Include only models where the creation process failed.</p></li>
+    /// </ul>
+    /// <p>If you don't specify a status, the API returns models in all states.</p>
+    pub fn model_status(&self) -> ::std::option::Option<&crate::types::ModelStatus> {
+        self.model_status.as_ref()
+    }
 }
 impl ListCustomModelsInput {
     /// Creates a new builder-style object to manufacture [`ListCustomModelsInput`](crate::operation::list_custom_models::ListCustomModelsInput).
@@ -87,6 +111,7 @@ pub struct ListCustomModelsInputBuilder {
     pub(crate) sort_by: ::std::option::Option<crate::types::SortModelsBy>,
     pub(crate) sort_order: ::std::option::Option<crate::types::SortOrder>,
     pub(crate) is_owned: ::std::option::Option<bool>,
+    pub(crate) model_status: ::std::option::Option<crate::types::ModelStatus>,
 }
 impl ListCustomModelsInputBuilder {
     /// <p>Return custom models created before the specified time.</p>
@@ -229,6 +254,47 @@ impl ListCustomModelsInputBuilder {
     pub fn get_is_owned(&self) -> &::std::option::Option<bool> {
         &self.is_owned
     }
+    /// <p>The status of them model to filter results by. Possible values include:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>Creating</code> - Include only models that are currently being created and validated.</p></li>
+    /// <li>
+    /// <p><code>Active</code> - Include only models that have been successfully created and are ready for use.</p></li>
+    /// <li>
+    /// <p><code>Failed</code> - Include only models where the creation process failed.</p></li>
+    /// </ul>
+    /// <p>If you don't specify a status, the API returns models in all states.</p>
+    pub fn model_status(mut self, input: crate::types::ModelStatus) -> Self {
+        self.model_status = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The status of them model to filter results by. Possible values include:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>Creating</code> - Include only models that are currently being created and validated.</p></li>
+    /// <li>
+    /// <p><code>Active</code> - Include only models that have been successfully created and are ready for use.</p></li>
+    /// <li>
+    /// <p><code>Failed</code> - Include only models where the creation process failed.</p></li>
+    /// </ul>
+    /// <p>If you don't specify a status, the API returns models in all states.</p>
+    pub fn set_model_status(mut self, input: ::std::option::Option<crate::types::ModelStatus>) -> Self {
+        self.model_status = input;
+        self
+    }
+    /// <p>The status of them model to filter results by. Possible values include:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>Creating</code> - Include only models that are currently being created and validated.</p></li>
+    /// <li>
+    /// <p><code>Active</code> - Include only models that have been successfully created and are ready for use.</p></li>
+    /// <li>
+    /// <p><code>Failed</code> - Include only models where the creation process failed.</p></li>
+    /// </ul>
+    /// <p>If you don't specify a status, the API returns models in all states.</p>
+    pub fn get_model_status(&self) -> &::std::option::Option<crate::types::ModelStatus> {
+        &self.model_status
+    }
     /// Consumes the builder and constructs a [`ListCustomModelsInput`](crate::operation::list_custom_models::ListCustomModelsInput).
     pub fn build(
         self,
@@ -244,6 +310,7 @@ impl ListCustomModelsInputBuilder {
             sort_by: self.sort_by,
             sort_order: self.sort_order,
             is_owned: self.is_owned,
+            model_status: self.model_status,
         })
     }
 }

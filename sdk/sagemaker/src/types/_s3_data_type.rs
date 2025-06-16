@@ -13,6 +13,7 @@
 /// # let s3datatype = unimplemented!();
 /// match s3datatype {
 ///     S3DataType::AugmentedManifestFile => { /* ... */ },
+///     S3DataType::Converse => { /* ... */ },
 ///     S3DataType::ManifestFile => { /* ... */ },
 ///     S3DataType::S3Prefix => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -46,6 +47,8 @@ pub enum S3DataType {
     #[allow(missing_docs)] // documentation missing in model
     AugmentedManifestFile,
     #[allow(missing_docs)] // documentation missing in model
+    Converse,
+    #[allow(missing_docs)] // documentation missing in model
     ManifestFile,
     #[allow(missing_docs)] // documentation missing in model
     S3Prefix,
@@ -57,6 +60,7 @@ impl ::std::convert::From<&str> for S3DataType {
     fn from(s: &str) -> Self {
         match s {
             "AugmentedManifestFile" => S3DataType::AugmentedManifestFile,
+            "Converse" => S3DataType::Converse,
             "ManifestFile" => S3DataType::ManifestFile,
             "S3Prefix" => S3DataType::S3Prefix,
             other => S3DataType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -75,6 +79,7 @@ impl S3DataType {
     pub fn as_str(&self) -> &str {
         match self {
             S3DataType::AugmentedManifestFile => "AugmentedManifestFile",
+            S3DataType::Converse => "Converse",
             S3DataType::ManifestFile => "ManifestFile",
             S3DataType::S3Prefix => "S3Prefix",
             S3DataType::Unknown(value) => value.as_str(),
@@ -82,7 +87,7 @@ impl S3DataType {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["AugmentedManifestFile", "ManifestFile", "S3Prefix"]
+        &["AugmentedManifestFile", "Converse", "ManifestFile", "S3Prefix"]
     }
 }
 impl ::std::convert::AsRef<str> for S3DataType {
@@ -106,6 +111,7 @@ impl ::std::fmt::Display for S3DataType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             S3DataType::AugmentedManifestFile => write!(f, "AugmentedManifestFile"),
+            S3DataType::Converse => write!(f, "Converse"),
             S3DataType::ManifestFile => write!(f, "ManifestFile"),
             S3DataType::S3Prefix => write!(f, "S3Prefix"),
             S3DataType::Unknown(value) => write!(f, "{}", value),

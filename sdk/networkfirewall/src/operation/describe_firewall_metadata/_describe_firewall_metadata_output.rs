@@ -14,6 +14,8 @@ pub struct DescribeFirewallMetadataOutput {
     /// <p>The Availability Zones that the firewall currently supports. This includes all Availability Zones for which the firewall has a subnet defined.</p>
     pub supported_availability_zones:
         ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::AvailabilityZoneMetadata>>,
+    /// <p>The unique identifier of the transit gateway attachment associated with this firewall. This field is only present for transit gateway-attached firewalls.</p>
+    pub transit_gateway_attachment_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DescribeFirewallMetadataOutput {
@@ -39,6 +41,10 @@ impl DescribeFirewallMetadataOutput {
     ) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::AvailabilityZoneMetadata>> {
         self.supported_availability_zones.as_ref()
     }
+    /// <p>The unique identifier of the transit gateway attachment associated with this firewall. This field is only present for transit gateway-attached firewalls.</p>
+    pub fn transit_gateway_attachment_id(&self) -> ::std::option::Option<&str> {
+        self.transit_gateway_attachment_id.as_deref()
+    }
 }
 impl ::aws_types::request_id::RequestId for DescribeFirewallMetadataOutput {
     fn request_id(&self) -> Option<&str> {
@@ -62,6 +68,7 @@ pub struct DescribeFirewallMetadataOutputBuilder {
     pub(crate) status: ::std::option::Option<crate::types::FirewallStatusValue>,
     pub(crate) supported_availability_zones:
         ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::AvailabilityZoneMetadata>>,
+    pub(crate) transit_gateway_attachment_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DescribeFirewallMetadataOutputBuilder {
@@ -150,6 +157,20 @@ impl DescribeFirewallMetadataOutputBuilder {
     ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::AvailabilityZoneMetadata>> {
         &self.supported_availability_zones
     }
+    /// <p>The unique identifier of the transit gateway attachment associated with this firewall. This field is only present for transit gateway-attached firewalls.</p>
+    pub fn transit_gateway_attachment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.transit_gateway_attachment_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The unique identifier of the transit gateway attachment associated with this firewall. This field is only present for transit gateway-attached firewalls.</p>
+    pub fn set_transit_gateway_attachment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.transit_gateway_attachment_id = input;
+        self
+    }
+    /// <p>The unique identifier of the transit gateway attachment associated with this firewall. This field is only present for transit gateway-attached firewalls.</p>
+    pub fn get_transit_gateway_attachment_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.transit_gateway_attachment_id
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -167,6 +188,7 @@ impl DescribeFirewallMetadataOutputBuilder {
             description: self.description,
             status: self.status,
             supported_availability_zones: self.supported_availability_zones,
+            transit_gateway_attachment_id: self.transit_gateway_attachment_id,
             _request_id: self._request_id,
         }
     }

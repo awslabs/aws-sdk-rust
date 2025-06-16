@@ -35,6 +35,11 @@ where
                             builder = builder
                                 .set_capacity_usage_summary(crate::protocol_serde::shape_capacity_usage_summary::de_capacity_usage_summary(tokens)?);
                         }
+                        "TransitGatewayAttachmentSyncState" => {
+                            builder = builder.set_transit_gateway_attachment_sync_state(
+                                crate::protocol_serde::shape_transit_gateway_attachment_sync_state::de_transit_gateway_attachment_sync_state(tokens)?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

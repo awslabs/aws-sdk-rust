@@ -81,10 +81,6 @@ pub use crate::types::_model_customization::ModelCustomization;
 
 pub use crate::types::_model_modality::ModelModality;
 
-pub use crate::types::_custom_model_summary::CustomModelSummary;
-
-pub use crate::types::_sort_models_by::SortModelsBy;
-
 pub use crate::types::_foundation_model_details::FoundationModelDetails;
 
 pub use crate::types::_model_invocation_job_summary::ModelInvocationJobSummary;
@@ -106,6 +102,8 @@ pub use crate::types::_model_import_job_summary::ModelImportJobSummary;
 pub use crate::types::_model_import_job_status::ModelImportJobStatus;
 
 pub use crate::types::_imported_model_summary::ImportedModelSummary;
+
+pub use crate::types::_sort_models_by::SortModelsBy;
 
 pub use crate::types::_model_data_source::ModelDataSource;
 
@@ -336,6 +334,10 @@ pub use crate::types::_bedrock_evaluator_model::BedrockEvaluatorModel;
 pub use crate::types::_batch_delete_evaluation_job_item::BatchDeleteEvaluationJobItem;
 
 pub use crate::types::_batch_delete_evaluation_job_error::BatchDeleteEvaluationJobError;
+
+pub use crate::types::_custom_model_summary::CustomModelSummary;
+
+pub use crate::types::_model_status::ModelStatus;
 
 pub use crate::types::_marketplace_model_endpoint::MarketplaceModelEndpoint;
 
@@ -602,6 +604,8 @@ mod _model_invocation_job_status;
 mod _model_invocation_job_summary;
 
 mod _model_modality;
+
+mod _model_status;
 
 mod _orchestration_configuration;
 

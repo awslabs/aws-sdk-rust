@@ -115,6 +115,8 @@ pub use crate::types::_hits::HitsBuilder;
 
 pub use crate::types::_subnet_mapping::SubnetMappingBuilder;
 
+pub use crate::types::_availability_zone_mapping::AvailabilityZoneMappingBuilder;
+
 pub use crate::types::_vpc_endpoint_association_status::VpcEndpointAssociationStatusBuilder;
 
 pub use crate::types::_az_sync_state::AzSyncStateBuilder;
@@ -128,6 +130,8 @@ pub use crate::types::_flow_operation::FlowOperationBuilder;
 pub use crate::types::_availability_zone_metadata::AvailabilityZoneMetadataBuilder;
 
 pub use crate::types::_firewall_status::FirewallStatusBuilder;
+
+pub use crate::types::_transit_gateway_attachment_sync_state::TransitGatewayAttachmentSyncStateBuilder;
 
 pub use crate::types::_capacity_usage_summary::CapacityUsageSummaryBuilder;
 

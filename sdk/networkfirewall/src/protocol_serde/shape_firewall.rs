@@ -89,6 +89,29 @@ where
                             builder = builder
                                 .set_enabled_analysis_types(crate::protocol_serde::shape_enabled_analysis_types::de_enabled_analysis_types(tokens)?);
                         }
+                        "TransitGatewayId" => {
+                            builder = builder.set_transit_gateway_id(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "TransitGatewayOwnerAccountId" => {
+                            builder = builder.set_transit_gateway_owner_account_id(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "AvailabilityZoneMappings" => {
+                            builder = builder.set_availability_zone_mappings(
+                                crate::protocol_serde::shape_availability_zone_mappings::de_availability_zone_mappings(tokens)?,
+                            );
+                        }
+                        "AvailabilityZoneChangeProtection" => {
+                            builder = builder
+                                .set_availability_zone_change_protection(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

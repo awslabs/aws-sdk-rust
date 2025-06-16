@@ -248,6 +248,11 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListCustomMo
                         query.push_kv("isOwned", ::aws_smithy_types::primitive::Encoder::from(*inner_10).encode());
                     }
                 }
+                if let ::std::option::Option::Some(inner_11) = &_input.model_status {
+                    {
+                        query.push_kv("modelStatus", &::aws_smithy_http::query::fmt_string(inner_11));
+                    }
+                }
                 ::std::result::Result::Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]

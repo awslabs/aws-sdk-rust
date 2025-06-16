@@ -59,14 +59,14 @@ pub(crate) struct Handle {
 /// # Using the `Client`
 ///
 /// A client has a function for every operation that can be performed by the service.
-/// For example, the [`CreateEvaluationJob`](crate::operation::create_evaluation_job) operation has
-/// a [`Client::create_evaluation_job`], function which returns a builder for that operation.
+/// For example, the [`CreateCustomModel`](crate::operation::create_custom_model) operation has
+/// a [`Client::create_custom_model`], function which returns a builder for that operation.
 /// The fluent builder ultimately has a `send()` function that returns an async future that
 /// returns a result, as illustrated below:
 ///
 /// ```rust,ignore
-/// let result = client.create_evaluation_job()
-///     .job_name("example")
+/// let result = client.create_custom_model()
+///     .model_name("example")
 ///     .send()
 ///     .await;
 /// ```
@@ -137,6 +137,8 @@ impl Client {
 }
 
 mod batch_delete_evaluation_job;
+
+mod create_custom_model;
 
 mod create_evaluation_job;
 

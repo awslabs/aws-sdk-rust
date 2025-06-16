@@ -17,10 +17,10 @@ pub struct GetModelCustomizationJobOutput {
     pub role_arn: ::std::string::String,
     /// <p>The status of the job. A successful job transitions from in-progress to completed when the output model is ready to use. If the job failed, the failure message contains information about why the job failed.</p>
     pub status: ::std::option::Option<crate::types::ModelCustomizationJobStatus>,
-    /// <p>Information about why the job failed.</p>
-    pub failure_message: ::std::option::Option<::std::string::String>,
     /// <p>For a Distillation job, the details about the statuses of the sub-tasks of the customization job.</p>
     pub status_details: ::std::option::Option<crate::types::StatusDetails>,
+    /// <p>Information about why the job failed.</p>
+    pub failure_message: ::std::option::Option<::std::string::String>,
     /// <p>Time that the resource was created.</p>
     pub creation_time: ::aws_smithy_types::DateTime,
     /// <p>Time that the resource was last modified.</p>
@@ -84,13 +84,13 @@ impl GetModelCustomizationJobOutput {
     pub fn status(&self) -> ::std::option::Option<&crate::types::ModelCustomizationJobStatus> {
         self.status.as_ref()
     }
-    /// <p>Information about why the job failed.</p>
-    pub fn failure_message(&self) -> ::std::option::Option<&str> {
-        self.failure_message.as_deref()
-    }
     /// <p>For a Distillation job, the details about the statuses of the sub-tasks of the customization job.</p>
     pub fn status_details(&self) -> ::std::option::Option<&crate::types::StatusDetails> {
         self.status_details.as_ref()
+    }
+    /// <p>Information about why the job failed.</p>
+    pub fn failure_message(&self) -> ::std::option::Option<&str> {
+        self.failure_message.as_deref()
     }
     /// <p>Time that the resource was created.</p>
     pub fn creation_time(&self) -> &::aws_smithy_types::DateTime {
@@ -175,8 +175,8 @@ pub struct GetModelCustomizationJobOutputBuilder {
     pub(crate) client_request_token: ::std::option::Option<::std::string::String>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::ModelCustomizationJobStatus>,
-    pub(crate) failure_message: ::std::option::Option<::std::string::String>,
     pub(crate) status_details: ::std::option::Option<crate::types::StatusDetails>,
+    pub(crate) failure_message: ::std::option::Option<::std::string::String>,
     pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -296,20 +296,6 @@ impl GetModelCustomizationJobOutputBuilder {
     pub fn get_status(&self) -> &::std::option::Option<crate::types::ModelCustomizationJobStatus> {
         &self.status
     }
-    /// <p>Information about why the job failed.</p>
-    pub fn failure_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.failure_message = ::std::option::Option::Some(input.into());
-        self
-    }
-    /// <p>Information about why the job failed.</p>
-    pub fn set_failure_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.failure_message = input;
-        self
-    }
-    /// <p>Information about why the job failed.</p>
-    pub fn get_failure_message(&self) -> &::std::option::Option<::std::string::String> {
-        &self.failure_message
-    }
     /// <p>For a Distillation job, the details about the statuses of the sub-tasks of the customization job.</p>
     pub fn status_details(mut self, input: crate::types::StatusDetails) -> Self {
         self.status_details = ::std::option::Option::Some(input);
@@ -323,6 +309,20 @@ impl GetModelCustomizationJobOutputBuilder {
     /// <p>For a Distillation job, the details about the statuses of the sub-tasks of the customization job.</p>
     pub fn get_status_details(&self) -> &::std::option::Option<crate::types::StatusDetails> {
         &self.status_details
+    }
+    /// <p>Information about why the job failed.</p>
+    pub fn failure_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.failure_message = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Information about why the job failed.</p>
+    pub fn set_failure_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.failure_message = input;
+        self
+    }
+    /// <p>Information about why the job failed.</p>
+    pub fn get_failure_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.failure_message
     }
     /// <p>Time that the resource was created.</p>
     /// This field is required.
@@ -595,8 +595,8 @@ impl GetModelCustomizationJobOutputBuilder {
                 )
             })?,
             status: self.status,
-            failure_message: self.failure_message,
             status_details: self.status_details,
+            failure_message: self.failure_message,
             creation_time: self.creation_time.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "creation_time",

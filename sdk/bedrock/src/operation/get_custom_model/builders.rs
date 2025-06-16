@@ -22,7 +22,7 @@ impl crate::operation::get_custom_model::builders::GetCustomModelInputBuilder {
 }
 /// Fluent builder constructing a request to `GetCustomModel`.
 ///
-/// <p>Get the properties associated with a Amazon Bedrock custom model that you have created.For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models.html">Custom models</a> in the <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-service.html">Amazon Bedrock User Guide</a>.</p>
+/// <p>Get the properties associated with a Amazon Bedrock custom model that you have created. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models.html">Custom models</a> in the <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-service.html">Amazon Bedrock User Guide</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetCustomModelFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

@@ -151,6 +151,13 @@ pub(crate) fn de_get_custom_model(
                             .transpose()?,
                     );
                 }
+                "failureMessage" => {
+                    builder = builder.set_failure_message(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
                 "hyperParameters" => {
                     builder = builder.set_hyper_parameters(
                         crate::protocol_serde::shape_model_customization_hyper_parameters::de_model_customization_hyper_parameters(tokens)?,
@@ -188,6 +195,13 @@ pub(crate) fn de_get_custom_model(
                     builder = builder.set_model_name(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                             .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
+                "modelStatus" => {
+                    builder = builder.set_model_status(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| crate::types::ModelStatus::from(u.as_ref())))
                             .transpose()?,
                     );
                 }

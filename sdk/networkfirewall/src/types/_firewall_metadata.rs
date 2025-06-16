@@ -8,6 +8,8 @@ pub struct FirewallMetadata {
     pub firewall_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the firewall.</p>
     pub firewall_arn: ::std::option::Option<::std::string::String>,
+    /// <p>The unique identifier of the transit gateway attachment associated with this firewall. This field is only present for transit gateway-attached firewalls.</p>
+    pub transit_gateway_attachment_id: ::std::option::Option<::std::string::String>,
 }
 impl FirewallMetadata {
     /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
@@ -17,6 +19,10 @@ impl FirewallMetadata {
     /// <p>The Amazon Resource Name (ARN) of the firewall.</p>
     pub fn firewall_arn(&self) -> ::std::option::Option<&str> {
         self.firewall_arn.as_deref()
+    }
+    /// <p>The unique identifier of the transit gateway attachment associated with this firewall. This field is only present for transit gateway-attached firewalls.</p>
+    pub fn transit_gateway_attachment_id(&self) -> ::std::option::Option<&str> {
+        self.transit_gateway_attachment_id.as_deref()
     }
 }
 impl FirewallMetadata {
@@ -32,6 +38,7 @@ impl FirewallMetadata {
 pub struct FirewallMetadataBuilder {
     pub(crate) firewall_name: ::std::option::Option<::std::string::String>,
     pub(crate) firewall_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) transit_gateway_attachment_id: ::std::option::Option<::std::string::String>,
 }
 impl FirewallMetadataBuilder {
     /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
@@ -62,11 +69,26 @@ impl FirewallMetadataBuilder {
     pub fn get_firewall_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.firewall_arn
     }
+    /// <p>The unique identifier of the transit gateway attachment associated with this firewall. This field is only present for transit gateway-attached firewalls.</p>
+    pub fn transit_gateway_attachment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.transit_gateway_attachment_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The unique identifier of the transit gateway attachment associated with this firewall. This field is only present for transit gateway-attached firewalls.</p>
+    pub fn set_transit_gateway_attachment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.transit_gateway_attachment_id = input;
+        self
+    }
+    /// <p>The unique identifier of the transit gateway attachment associated with this firewall. This field is only present for transit gateway-attached firewalls.</p>
+    pub fn get_transit_gateway_attachment_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.transit_gateway_attachment_id
+    }
     /// Consumes the builder and constructs a [`FirewallMetadata`](crate::types::FirewallMetadata).
     pub fn build(self) -> crate::types::FirewallMetadata {
         crate::types::FirewallMetadata {
             firewall_name: self.firewall_name,
             firewall_arn: self.firewall_arn,
+            transit_gateway_attachment_id: self.transit_gateway_attachment_id,
         }
     }
 }

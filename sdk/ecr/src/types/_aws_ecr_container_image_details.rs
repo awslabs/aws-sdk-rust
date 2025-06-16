@@ -16,6 +16,10 @@ pub struct AwsEcrContainerImageDetails {
     pub platform: ::std::option::Option<::std::string::String>,
     /// <p>The date and time the Amazon ECR container image was pushed.</p>
     pub pushed_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>The most recent date and time a cluster was running the image.</p>
+    pub last_in_use_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>The number of Amazon ECS or Amazon EKS clusters currently running the image.</p>
+    pub in_use_count: ::std::option::Option<i64>,
     /// <p>The registry the Amazon ECR container image belongs to.</p>
     pub registry: ::std::option::Option<::std::string::String>,
     /// <p>The name of the repository the Amazon ECR container image resides in.</p>
@@ -48,6 +52,14 @@ impl AwsEcrContainerImageDetails {
     pub fn pushed_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.pushed_at.as_ref()
     }
+    /// <p>The most recent date and time a cluster was running the image.</p>
+    pub fn last_in_use_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+        self.last_in_use_at.as_ref()
+    }
+    /// <p>The number of Amazon ECS or Amazon EKS clusters currently running the image.</p>
+    pub fn in_use_count(&self) -> ::std::option::Option<i64> {
+        self.in_use_count
+    }
     /// <p>The registry the Amazon ECR container image belongs to.</p>
     pub fn registry(&self) -> ::std::option::Option<&str> {
         self.registry.as_deref()
@@ -74,6 +86,8 @@ pub struct AwsEcrContainerImageDetailsBuilder {
     pub(crate) image_tags: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) platform: ::std::option::Option<::std::string::String>,
     pub(crate) pushed_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) last_in_use_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) in_use_count: ::std::option::Option<i64>,
     pub(crate) registry: ::std::option::Option<::std::string::String>,
     pub(crate) repository_name: ::std::option::Option<::std::string::String>,
 }
@@ -168,6 +182,34 @@ impl AwsEcrContainerImageDetailsBuilder {
     pub fn get_pushed_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.pushed_at
     }
+    /// <p>The most recent date and time a cluster was running the image.</p>
+    pub fn last_in_use_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.last_in_use_at = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The most recent date and time a cluster was running the image.</p>
+    pub fn set_last_in_use_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.last_in_use_at = input;
+        self
+    }
+    /// <p>The most recent date and time a cluster was running the image.</p>
+    pub fn get_last_in_use_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_in_use_at
+    }
+    /// <p>The number of Amazon ECS or Amazon EKS clusters currently running the image.</p>
+    pub fn in_use_count(mut self, input: i64) -> Self {
+        self.in_use_count = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The number of Amazon ECS or Amazon EKS clusters currently running the image.</p>
+    pub fn set_in_use_count(mut self, input: ::std::option::Option<i64>) -> Self {
+        self.in_use_count = input;
+        self
+    }
+    /// <p>The number of Amazon ECS or Amazon EKS clusters currently running the image.</p>
+    pub fn get_in_use_count(&self) -> &::std::option::Option<i64> {
+        &self.in_use_count
+    }
     /// <p>The registry the Amazon ECR container image belongs to.</p>
     pub fn registry(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.registry = ::std::option::Option::Some(input.into());
@@ -205,6 +247,8 @@ impl AwsEcrContainerImageDetailsBuilder {
             image_tags: self.image_tags,
             platform: self.platform,
             pushed_at: self.pushed_at,
+            last_in_use_at: self.last_in_use_at,
+            in_use_count: self.in_use_count,
             registry: self.registry,
             repository_name: self.repository_name,
         }

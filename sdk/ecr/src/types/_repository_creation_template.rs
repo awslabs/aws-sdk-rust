@@ -12,7 +12,7 @@ pub struct RepositoryCreationTemplate {
     pub encryption_configuration: ::std::option::Option<crate::types::EncryptionConfigurationForRepositoryCreationTemplate>,
     /// <p>The metadata to apply to the repository to help you categorize and organize. Each tag consists of a key and an optional value, both of which you define. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.</p>
     pub resource_tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    /// <p>The tag mutability setting for the repository. If this parameter is omitted, the default setting of MUTABLE will be used which will allow image tags to be overwritten. If IMMUTABLE is specified, all image tags within the repository will be immutable which will prevent them from being overwritten.</p>
+    /// <p>The tag mutability setting for the repository. If this parameter is omitted, the default setting of <code>MUTABLE</code> will be used which will allow image tags to be overwritten. If <code>IMMUTABLE</code> is specified, all image tags within the repository will be immutable which will prevent them from being overwritten.</p>
     pub image_tag_mutability: ::std::option::Option<crate::types::ImageTagMutability>,
     /// <p>The repository policy to apply to repositories created using the template. A repository policy is a permissions policy associated with a repository to control access permissions.</p>
     pub repository_policy: ::std::option::Option<::std::string::String>,
@@ -46,7 +46,7 @@ impl RepositoryCreationTemplate {
     pub fn resource_tags(&self) -> &[crate::types::Tag] {
         self.resource_tags.as_deref().unwrap_or_default()
     }
-    /// <p>The tag mutability setting for the repository. If this parameter is omitted, the default setting of MUTABLE will be used which will allow image tags to be overwritten. If IMMUTABLE is specified, all image tags within the repository will be immutable which will prevent them from being overwritten.</p>
+    /// <p>The tag mutability setting for the repository. If this parameter is omitted, the default setting of <code>MUTABLE</code> will be used which will allow image tags to be overwritten. If <code>IMMUTABLE</code> is specified, all image tags within the repository will be immutable which will prevent them from being overwritten.</p>
     pub fn image_tag_mutability(&self) -> ::std::option::Option<&crate::types::ImageTagMutability> {
         self.image_tag_mutability.as_ref()
     }
@@ -166,17 +166,17 @@ impl RepositoryCreationTemplateBuilder {
     pub fn get_resource_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         &self.resource_tags
     }
-    /// <p>The tag mutability setting for the repository. If this parameter is omitted, the default setting of MUTABLE will be used which will allow image tags to be overwritten. If IMMUTABLE is specified, all image tags within the repository will be immutable which will prevent them from being overwritten.</p>
+    /// <p>The tag mutability setting for the repository. If this parameter is omitted, the default setting of <code>MUTABLE</code> will be used which will allow image tags to be overwritten. If <code>IMMUTABLE</code> is specified, all image tags within the repository will be immutable which will prevent them from being overwritten.</p>
     pub fn image_tag_mutability(mut self, input: crate::types::ImageTagMutability) -> Self {
         self.image_tag_mutability = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The tag mutability setting for the repository. If this parameter is omitted, the default setting of MUTABLE will be used which will allow image tags to be overwritten. If IMMUTABLE is specified, all image tags within the repository will be immutable which will prevent them from being overwritten.</p>
+    /// <p>The tag mutability setting for the repository. If this parameter is omitted, the default setting of <code>MUTABLE</code> will be used which will allow image tags to be overwritten. If <code>IMMUTABLE</code> is specified, all image tags within the repository will be immutable which will prevent them from being overwritten.</p>
     pub fn set_image_tag_mutability(mut self, input: ::std::option::Option<crate::types::ImageTagMutability>) -> Self {
         self.image_tag_mutability = input;
         self
     }
-    /// <p>The tag mutability setting for the repository. If this parameter is omitted, the default setting of MUTABLE will be used which will allow image tags to be overwritten. If IMMUTABLE is specified, all image tags within the repository will be immutable which will prevent them from being overwritten.</p>
+    /// <p>The tag mutability setting for the repository. If this parameter is omitted, the default setting of <code>MUTABLE</code> will be used which will allow image tags to be overwritten. If <code>IMMUTABLE</code> is specified, all image tags within the repository will be immutable which will prevent them from being overwritten.</p>
     pub fn get_image_tag_mutability(&self) -> &::std::option::Option<crate::types::ImageTagMutability> {
         &self.image_tag_mutability
     }

@@ -127,6 +127,8 @@ pub use crate::types::_flow_operation_status::FlowOperationStatus;
 
 pub use crate::types::_flow_filter::FlowFilter;
 
+pub use crate::types::_transit_gateway_attachment_status::TransitGatewayAttachmentStatus;
+
 pub use crate::types::_vpc_endpoint_association_metadata::VpcEndpointAssociationMetadata;
 
 pub use crate::types::_tls_inspection_configuration_metadata::TlsInspectionConfigurationMetadata;
@@ -159,6 +161,8 @@ pub use crate::types::_subnet_mapping::SubnetMapping;
 
 pub use crate::types::_ip_address_type::IpAddressType;
 
+pub use crate::types::_availability_zone_mapping::AvailabilityZoneMapping;
+
 pub use crate::types::_vpc_endpoint_association_status::VpcEndpointAssociationStatus;
 
 pub use crate::types::_az_sync_state::AzSyncState;
@@ -176,6 +180,8 @@ pub use crate::types::_flow_operation::FlowOperation;
 pub use crate::types::_availability_zone_metadata::AvailabilityZoneMetadata;
 
 pub use crate::types::_firewall_status::FirewallStatus;
+
+pub use crate::types::_transit_gateway_attachment_sync_state::TransitGatewayAttachmentSyncState;
 
 pub use crate::types::_capacity_usage_summary::CapacityUsageSummary;
 
@@ -206,6 +212,8 @@ mod _analysis_type_report_result;
 mod _attachment;
 
 mod _attachment_status;
+
+mod _availability_zone_mapping;
 
 mod _availability_zone_metadata;
 
@@ -378,6 +386,10 @@ mod _tls_inspection_configuration;
 mod _tls_inspection_configuration_metadata;
 
 mod _tls_inspection_configuration_response;
+
+mod _transit_gateway_attachment_status;
+
+mod _transit_gateway_attachment_sync_state;
 
 mod _unique_sources;
 

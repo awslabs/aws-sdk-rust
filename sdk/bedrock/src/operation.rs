@@ -4,6 +4,9 @@ pub use ::aws_types::request_id::RequestId;
 /// Types for the `BatchDeleteEvaluationJob` operation.
 pub mod batch_delete_evaluation_job;
 
+/// Types for the `CreateCustomModel` operation.
+pub mod create_custom_model;
+
 /// Types for the `CreateEvaluationJob` operation.
 pub mod create_evaluation_job;
 

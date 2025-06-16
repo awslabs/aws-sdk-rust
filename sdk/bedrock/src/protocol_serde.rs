@@ -25,6 +25,8 @@ pub fn parse_http_error_metadata(
 
 pub(crate) mod shape_batch_delete_evaluation_job;
 
+pub(crate) mod shape_create_custom_model;
+
 pub(crate) mod shape_create_evaluation_job;
 
 pub(crate) mod shape_create_guardrail;
@@ -154,6 +156,8 @@ pub(crate) mod shape_access_denied_exception;
 pub(crate) mod shape_batch_delete_evaluation_job_input;
 
 pub(crate) mod shape_conflict_exception;
+
+pub(crate) mod shape_create_custom_model_input;
 
 pub(crate) mod shape_create_evaluation_job_input;
 

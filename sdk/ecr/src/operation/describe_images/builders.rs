@@ -23,8 +23,10 @@ impl crate::operation::describe_images::builders::DescribeImagesInputBuilder {
 /// Fluent builder constructing a request to `DescribeImages`.
 ///
 /// <p>Returns metadata about the images in a repository.</p><note>
-/// <p>Beginning with Docker version 1.9, the Docker client compresses image layers before pushing them to a V2 Docker registry. The output of the <code>docker images</code> command shows the uncompressed image size, so it may return a larger image size than the image sizes returned by <code>DescribeImages</code>.</p>
-/// </note>
+/// <p>Starting with Docker version 1.9, the Docker client compresses image layers before pushing them to a V2 Docker registry. The output of the <code>docker images</code> command shows the uncompressed image size. Therefore, Docker might return a larger image than the image shown in the Amazon Web Services Management Console.</p>
+/// </note> <important>
+/// <p>The new version of Amazon ECR <i>Basic Scanning</i> doesn't use the <code>ImageDetail$imageScanFindingsSummary</code> and <code>ImageDetail$imageScanStatus</code> attributes from the API response to return scan results. Use the <code>DescribeImageScanFindings</code> API instead. For more information about Amazon Web Services native basic scanning, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/image-scanning.html"> Scan images for software vulnerabilities in Amazon ECR</a>.</p>
+/// </important>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeImagesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

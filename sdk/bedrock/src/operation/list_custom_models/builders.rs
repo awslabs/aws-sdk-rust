@@ -255,4 +255,45 @@ impl ListCustomModelsFluentBuilder {
     pub fn get_is_owned(&self) -> &::std::option::Option<bool> {
         self.inner.get_is_owned()
     }
+    /// <p>The status of them model to filter results by. Possible values include:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>Creating</code> - Include only models that are currently being created and validated.</p></li>
+    /// <li>
+    /// <p><code>Active</code> - Include only models that have been successfully created and are ready for use.</p></li>
+    /// <li>
+    /// <p><code>Failed</code> - Include only models where the creation process failed.</p></li>
+    /// </ul>
+    /// <p>If you don't specify a status, the API returns models in all states.</p>
+    pub fn model_status(mut self, input: crate::types::ModelStatus) -> Self {
+        self.inner = self.inner.model_status(input);
+        self
+    }
+    /// <p>The status of them model to filter results by. Possible values include:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>Creating</code> - Include only models that are currently being created and validated.</p></li>
+    /// <li>
+    /// <p><code>Active</code> - Include only models that have been successfully created and are ready for use.</p></li>
+    /// <li>
+    /// <p><code>Failed</code> - Include only models where the creation process failed.</p></li>
+    /// </ul>
+    /// <p>If you don't specify a status, the API returns models in all states.</p>
+    pub fn set_model_status(mut self, input: ::std::option::Option<crate::types::ModelStatus>) -> Self {
+        self.inner = self.inner.set_model_status(input);
+        self
+    }
+    /// <p>The status of them model to filter results by. Possible values include:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>Creating</code> - Include only models that are currently being created and validated.</p></li>
+    /// <li>
+    /// <p><code>Active</code> - Include only models that have been successfully created and are ready for use.</p></li>
+    /// <li>
+    /// <p><code>Failed</code> - Include only models where the creation process failed.</p></li>
+    /// </ul>
+    /// <p>If you don't specify a status, the API returns models in all states.</p>
+    pub fn get_model_status(&self) -> &::std::option::Option<crate::types::ModelStatus> {
+        self.inner.get_model_status()
+    }
 }

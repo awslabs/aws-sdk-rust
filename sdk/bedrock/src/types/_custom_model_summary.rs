@@ -18,6 +18,16 @@ pub struct CustomModelSummary {
     pub customization_type: ::std::option::Option<crate::types::CustomizationType>,
     /// <p>The unique identifier of the account that owns the model.</p>
     pub owner_account_id: ::std::option::Option<::std::string::String>,
+    /// <p>The current status of the custom model. Possible values include:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>Creating</code> - The model is being created and validated.</p></li>
+    /// <li>
+    /// <p><code>Active</code> - The model has been successfully created and is ready for use.</p></li>
+    /// <li>
+    /// <p><code>Failed</code> - The model creation process failed.</p></li>
+    /// </ul>
+    pub model_status: ::std::option::Option<crate::types::ModelStatus>,
 }
 impl CustomModelSummary {
     /// <p>The Amazon Resource Name (ARN) of the custom model.</p>
@@ -52,6 +62,18 @@ impl CustomModelSummary {
     pub fn owner_account_id(&self) -> ::std::option::Option<&str> {
         self.owner_account_id.as_deref()
     }
+    /// <p>The current status of the custom model. Possible values include:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>Creating</code> - The model is being created and validated.</p></li>
+    /// <li>
+    /// <p><code>Active</code> - The model has been successfully created and is ready for use.</p></li>
+    /// <li>
+    /// <p><code>Failed</code> - The model creation process failed.</p></li>
+    /// </ul>
+    pub fn model_status(&self) -> ::std::option::Option<&crate::types::ModelStatus> {
+        self.model_status.as_ref()
+    }
 }
 impl CustomModelSummary {
     /// Creates a new builder-style object to manufacture [`CustomModelSummary`](crate::types::CustomModelSummary).
@@ -71,6 +93,7 @@ pub struct CustomModelSummaryBuilder {
     pub(crate) base_model_name: ::std::option::Option<::std::string::String>,
     pub(crate) customization_type: ::std::option::Option<crate::types::CustomizationType>,
     pub(crate) owner_account_id: ::std::option::Option<::std::string::String>,
+    pub(crate) model_status: ::std::option::Option<crate::types::ModelStatus>,
 }
 impl CustomModelSummaryBuilder {
     /// <p>The Amazon Resource Name (ARN) of the custom model.</p>
@@ -176,6 +199,44 @@ impl CustomModelSummaryBuilder {
     pub fn get_owner_account_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.owner_account_id
     }
+    /// <p>The current status of the custom model. Possible values include:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>Creating</code> - The model is being created and validated.</p></li>
+    /// <li>
+    /// <p><code>Active</code> - The model has been successfully created and is ready for use.</p></li>
+    /// <li>
+    /// <p><code>Failed</code> - The model creation process failed.</p></li>
+    /// </ul>
+    pub fn model_status(mut self, input: crate::types::ModelStatus) -> Self {
+        self.model_status = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The current status of the custom model. Possible values include:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>Creating</code> - The model is being created and validated.</p></li>
+    /// <li>
+    /// <p><code>Active</code> - The model has been successfully created and is ready for use.</p></li>
+    /// <li>
+    /// <p><code>Failed</code> - The model creation process failed.</p></li>
+    /// </ul>
+    pub fn set_model_status(mut self, input: ::std::option::Option<crate::types::ModelStatus>) -> Self {
+        self.model_status = input;
+        self
+    }
+    /// <p>The current status of the custom model. Possible values include:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>Creating</code> - The model is being created and validated.</p></li>
+    /// <li>
+    /// <p><code>Active</code> - The model has been successfully created and is ready for use.</p></li>
+    /// <li>
+    /// <p><code>Failed</code> - The model creation process failed.</p></li>
+    /// </ul>
+    pub fn get_model_status(&self) -> &::std::option::Option<crate::types::ModelStatus> {
+        &self.model_status
+    }
     /// Consumes the builder and constructs a [`CustomModelSummary`](crate::types::CustomModelSummary).
     /// This method will fail if any of the following fields are not set:
     /// - [`model_arn`](crate::types::builders::CustomModelSummaryBuilder::model_arn)
@@ -217,6 +278,7 @@ impl CustomModelSummaryBuilder {
             })?,
             customization_type: self.customization_type,
             owner_account_id: self.owner_account_id,
+            model_status: self.model_status,
         })
     }
 }

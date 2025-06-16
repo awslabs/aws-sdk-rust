@@ -286,4 +286,66 @@ impl CreateFirewallFluentBuilder {
     pub fn get_enabled_analysis_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EnabledAnalysisType>> {
         self.inner.get_enabled_analysis_types()
     }
+    /// <p>Required when creating a transit gateway-attached firewall. The unique identifier of the transit gateway to attach to this firewall. You can provide either a transit gateway from your account or one that has been shared with you through Resource Access Manager.</p><important>
+    /// <p>After creating the firewall, you cannot change the transit gateway association. To use a different transit gateway, you must create a new firewall.</p>
+    /// </important>
+    /// <p>For information about creating firewalls, see <code>CreateFirewall</code>. For specific guidance about transit gateway-attached firewalls, see <a href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/tgw-firewall-considerations.html">Considerations for transit gateway-attached firewalls</a> in the <i>Network Firewall Developer Guide</i>.</p>
+    pub fn transit_gateway_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.transit_gateway_id(input.into());
+        self
+    }
+    /// <p>Required when creating a transit gateway-attached firewall. The unique identifier of the transit gateway to attach to this firewall. You can provide either a transit gateway from your account or one that has been shared with you through Resource Access Manager.</p><important>
+    /// <p>After creating the firewall, you cannot change the transit gateway association. To use a different transit gateway, you must create a new firewall.</p>
+    /// </important>
+    /// <p>For information about creating firewalls, see <code>CreateFirewall</code>. For specific guidance about transit gateway-attached firewalls, see <a href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/tgw-firewall-considerations.html">Considerations for transit gateway-attached firewalls</a> in the <i>Network Firewall Developer Guide</i>.</p>
+    pub fn set_transit_gateway_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_transit_gateway_id(input);
+        self
+    }
+    /// <p>Required when creating a transit gateway-attached firewall. The unique identifier of the transit gateway to attach to this firewall. You can provide either a transit gateway from your account or one that has been shared with you through Resource Access Manager.</p><important>
+    /// <p>After creating the firewall, you cannot change the transit gateway association. To use a different transit gateway, you must create a new firewall.</p>
+    /// </important>
+    /// <p>For information about creating firewalls, see <code>CreateFirewall</code>. For specific guidance about transit gateway-attached firewalls, see <a href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/tgw-firewall-considerations.html">Considerations for transit gateway-attached firewalls</a> in the <i>Network Firewall Developer Guide</i>.</p>
+    pub fn get_transit_gateway_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_transit_gateway_id()
+    }
+    ///
+    /// Appends an item to `AvailabilityZoneMappings`.
+    ///
+    /// To override the contents of this collection use [`set_availability_zone_mappings`](Self::set_availability_zone_mappings).
+    ///
+    /// <p>Required. The Availability Zones where you want to create firewall endpoints for a transit gateway-attached firewall. You must specify at least one Availability Zone. Consider enabling the firewall in every Availability Zone where you have workloads to maintain Availability Zone independence.</p>
+    /// <p>You can modify Availability Zones later using <code>AssociateAvailabilityZones</code> or <code>DisassociateAvailabilityZones</code>, but this may briefly disrupt traffic. The <code>AvailabilityZoneChangeProtection</code> setting controls whether you can make these modifications.</p>
+    pub fn availability_zone_mappings(mut self, input: crate::types::AvailabilityZoneMapping) -> Self {
+        self.inner = self.inner.availability_zone_mappings(input);
+        self
+    }
+    /// <p>Required. The Availability Zones where you want to create firewall endpoints for a transit gateway-attached firewall. You must specify at least one Availability Zone. Consider enabling the firewall in every Availability Zone where you have workloads to maintain Availability Zone independence.</p>
+    /// <p>You can modify Availability Zones later using <code>AssociateAvailabilityZones</code> or <code>DisassociateAvailabilityZones</code>, but this may briefly disrupt traffic. The <code>AvailabilityZoneChangeProtection</code> setting controls whether you can make these modifications.</p>
+    pub fn set_availability_zone_mappings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AvailabilityZoneMapping>>) -> Self {
+        self.inner = self.inner.set_availability_zone_mappings(input);
+        self
+    }
+    /// <p>Required. The Availability Zones where you want to create firewall endpoints for a transit gateway-attached firewall. You must specify at least one Availability Zone. Consider enabling the firewall in every Availability Zone where you have workloads to maintain Availability Zone independence.</p>
+    /// <p>You can modify Availability Zones later using <code>AssociateAvailabilityZones</code> or <code>DisassociateAvailabilityZones</code>, but this may briefly disrupt traffic. The <code>AvailabilityZoneChangeProtection</code> setting controls whether you can make these modifications.</p>
+    pub fn get_availability_zone_mappings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AvailabilityZoneMapping>> {
+        self.inner.get_availability_zone_mappings()
+    }
+    /// <p>Optional. A setting indicating whether the firewall is protected against changes to its Availability Zone configuration. When set to <code>TRUE</code>, you cannot add or remove Availability Zones without first disabling this protection using <code>UpdateAvailabilityZoneChangeProtection</code>.</p>
+    /// <p>Default value: <code>FALSE</code></p>
+    pub fn availability_zone_change_protection(mut self, input: bool) -> Self {
+        self.inner = self.inner.availability_zone_change_protection(input);
+        self
+    }
+    /// <p>Optional. A setting indicating whether the firewall is protected against changes to its Availability Zone configuration. When set to <code>TRUE</code>, you cannot add or remove Availability Zones without first disabling this protection using <code>UpdateAvailabilityZoneChangeProtection</code>.</p>
+    /// <p>Default value: <code>FALSE</code></p>
+    pub fn set_availability_zone_change_protection(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_availability_zone_change_protection(input);
+        self
+    }
+    /// <p>Optional. A setting indicating whether the firewall is protected against changes to its Availability Zone configuration. When set to <code>TRUE</code>, you cannot add or remove Availability Zones without first disabling this protection using <code>UpdateAvailabilityZoneChangeProtection</code>.</p>
+    /// <p>Default value: <code>FALSE</code></p>
+    pub fn get_availability_zone_change_protection(&self) -> &::std::option::Option<bool> {
+        self.inner.get_availability_zone_change_protection()
+    }
 }

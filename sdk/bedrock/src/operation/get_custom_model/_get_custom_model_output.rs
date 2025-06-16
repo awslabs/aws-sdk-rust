@@ -9,10 +9,10 @@ pub struct GetCustomModelOutput {
     pub model_name: ::std::string::String,
     /// <p>Job name associated with this model.</p>
     pub job_name: ::std::option::Option<::std::string::String>,
-    /// <p>Job Amazon Resource Name (ARN) associated with this model.</p>
-    pub job_arn: ::std::string::String,
+    /// <p>Job Amazon Resource Name (ARN) associated with this model. For models that you create with the <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_CreateCustomModel.html">CreateCustomModel</a> API operation, this is <code>NULL</code>.</p>
+    pub job_arn: ::std::option::Option<::std::string::String>,
     /// <p>Amazon Resource Name (ARN) of the base model.</p>
-    pub base_model_arn: ::std::string::String,
+    pub base_model_arn: ::std::option::Option<::std::string::String>,
     /// <p>The type of model customization.</p>
     pub customization_type: ::std::option::Option<crate::types::CustomizationType>,
     /// <p>The custom model is encrypted at rest using this key.</p>
@@ -33,6 +33,18 @@ pub struct GetCustomModelOutput {
     pub creation_time: ::aws_smithy_types::DateTime,
     /// <p>The customization configuration for the custom model.</p>
     pub customization_config: ::std::option::Option<crate::types::CustomizationConfig>,
+    /// <p>The current status of the custom model. Possible values include:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>Creating</code> - The model is being created and validated.</p></li>
+    /// <li>
+    /// <p><code>Active</code> - The model has been successfully created and is ready for use.</p></li>
+    /// <li>
+    /// <p><code>Failed</code> - The model creation process failed. Check the <code>failureMessage</code> field for details.</p></li>
+    /// </ul>
+    pub model_status: ::std::option::Option<crate::types::ModelStatus>,
+    /// <p>A failure message for any issues that occurred when creating the custom model. This is included for only a failed CreateCustomModel operation.</p>
+    pub failure_message: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetCustomModelOutput {
@@ -50,15 +62,13 @@ impl GetCustomModelOutput {
     pub fn job_name(&self) -> ::std::option::Option<&str> {
         self.job_name.as_deref()
     }
-    /// <p>Job Amazon Resource Name (ARN) associated with this model.</p>
-    pub fn job_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.job_arn.deref()
+    /// <p>Job Amazon Resource Name (ARN) associated with this model. For models that you create with the <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_CreateCustomModel.html">CreateCustomModel</a> API operation, this is <code>NULL</code>.</p>
+    pub fn job_arn(&self) -> ::std::option::Option<&str> {
+        self.job_arn.as_deref()
     }
     /// <p>Amazon Resource Name (ARN) of the base model.</p>
-    pub fn base_model_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.base_model_arn.deref()
+    pub fn base_model_arn(&self) -> ::std::option::Option<&str> {
+        self.base_model_arn.as_deref()
     }
     /// <p>The type of model customization.</p>
     pub fn customization_type(&self) -> ::std::option::Option<&crate::types::CustomizationType> {
@@ -102,6 +112,22 @@ impl GetCustomModelOutput {
     pub fn customization_config(&self) -> ::std::option::Option<&crate::types::CustomizationConfig> {
         self.customization_config.as_ref()
     }
+    /// <p>The current status of the custom model. Possible values include:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>Creating</code> - The model is being created and validated.</p></li>
+    /// <li>
+    /// <p><code>Active</code> - The model has been successfully created and is ready for use.</p></li>
+    /// <li>
+    /// <p><code>Failed</code> - The model creation process failed. Check the <code>failureMessage</code> field for details.</p></li>
+    /// </ul>
+    pub fn model_status(&self) -> ::std::option::Option<&crate::types::ModelStatus> {
+        self.model_status.as_ref()
+    }
+    /// <p>A failure message for any issues that occurred when creating the custom model. This is included for only a failed CreateCustomModel operation.</p>
+    pub fn failure_message(&self) -> ::std::option::Option<&str> {
+        self.failure_message.as_deref()
+    }
 }
 impl ::aws_types::request_id::RequestId for GetCustomModelOutput {
     fn request_id(&self) -> Option<&str> {
@@ -134,6 +160,8 @@ pub struct GetCustomModelOutputBuilder {
     pub(crate) validation_metrics: ::std::option::Option<::std::vec::Vec<crate::types::ValidatorMetric>>,
     pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) customization_config: ::std::option::Option<crate::types::CustomizationConfig>,
+    pub(crate) model_status: ::std::option::Option<crate::types::ModelStatus>,
+    pub(crate) failure_message: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetCustomModelOutputBuilder {
@@ -181,23 +209,21 @@ impl GetCustomModelOutputBuilder {
     pub fn get_job_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.job_name
     }
-    /// <p>Job Amazon Resource Name (ARN) associated with this model.</p>
-    /// This field is required.
+    /// <p>Job Amazon Resource Name (ARN) associated with this model. For models that you create with the <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_CreateCustomModel.html">CreateCustomModel</a> API operation, this is <code>NULL</code>.</p>
     pub fn job_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Job Amazon Resource Name (ARN) associated with this model.</p>
+    /// <p>Job Amazon Resource Name (ARN) associated with this model. For models that you create with the <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_CreateCustomModel.html">CreateCustomModel</a> API operation, this is <code>NULL</code>.</p>
     pub fn set_job_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.job_arn = input;
         self
     }
-    /// <p>Job Amazon Resource Name (ARN) associated with this model.</p>
+    /// <p>Job Amazon Resource Name (ARN) associated with this model. For models that you create with the <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_CreateCustomModel.html">CreateCustomModel</a> API operation, this is <code>NULL</code>.</p>
     pub fn get_job_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.job_arn
     }
     /// <p>Amazon Resource Name (ARN) of the base model.</p>
-    /// This field is required.
     pub fn base_model_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.base_model_arn = ::std::option::Option::Some(input.into());
         self
@@ -267,7 +293,6 @@ impl GetCustomModelOutputBuilder {
         &self.hyper_parameters
     }
     /// <p>Contains information about the training dataset.</p>
-    /// This field is required.
     pub fn training_data_config(mut self, input: crate::types::TrainingDataConfig) -> Self {
         self.training_data_config = ::std::option::Option::Some(input);
         self
@@ -296,7 +321,6 @@ impl GetCustomModelOutputBuilder {
         &self.validation_data_config
     }
     /// <p>Output data configuration associated with this custom model.</p>
-    /// This field is required.
     pub fn output_data_config(mut self, input: crate::types::OutputDataConfig) -> Self {
         self.output_data_config = ::std::option::Option::Some(input);
         self
@@ -373,6 +397,58 @@ impl GetCustomModelOutputBuilder {
     pub fn get_customization_config(&self) -> &::std::option::Option<crate::types::CustomizationConfig> {
         &self.customization_config
     }
+    /// <p>The current status of the custom model. Possible values include:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>Creating</code> - The model is being created and validated.</p></li>
+    /// <li>
+    /// <p><code>Active</code> - The model has been successfully created and is ready for use.</p></li>
+    /// <li>
+    /// <p><code>Failed</code> - The model creation process failed. Check the <code>failureMessage</code> field for details.</p></li>
+    /// </ul>
+    pub fn model_status(mut self, input: crate::types::ModelStatus) -> Self {
+        self.model_status = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The current status of the custom model. Possible values include:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>Creating</code> - The model is being created and validated.</p></li>
+    /// <li>
+    /// <p><code>Active</code> - The model has been successfully created and is ready for use.</p></li>
+    /// <li>
+    /// <p><code>Failed</code> - The model creation process failed. Check the <code>failureMessage</code> field for details.</p></li>
+    /// </ul>
+    pub fn set_model_status(mut self, input: ::std::option::Option<crate::types::ModelStatus>) -> Self {
+        self.model_status = input;
+        self
+    }
+    /// <p>The current status of the custom model. Possible values include:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>Creating</code> - The model is being created and validated.</p></li>
+    /// <li>
+    /// <p><code>Active</code> - The model has been successfully created and is ready for use.</p></li>
+    /// <li>
+    /// <p><code>Failed</code> - The model creation process failed. Check the <code>failureMessage</code> field for details.</p></li>
+    /// </ul>
+    pub fn get_model_status(&self) -> &::std::option::Option<crate::types::ModelStatus> {
+        &self.model_status
+    }
+    /// <p>A failure message for any issues that occurred when creating the custom model. This is included for only a failed CreateCustomModel operation.</p>
+    pub fn failure_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.failure_message = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>A failure message for any issues that occurred when creating the custom model. This is included for only a failed CreateCustomModel operation.</p>
+    pub fn set_failure_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.failure_message = input;
+        self
+    }
+    /// <p>A failure message for any issues that occurred when creating the custom model. This is included for only a failed CreateCustomModel operation.</p>
+    pub fn get_failure_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.failure_message
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -386,8 +462,6 @@ impl GetCustomModelOutputBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`model_arn`](crate::operation::get_custom_model::builders::GetCustomModelOutputBuilder::model_arn)
     /// - [`model_name`](crate::operation::get_custom_model::builders::GetCustomModelOutputBuilder::model_name)
-    /// - [`job_arn`](crate::operation::get_custom_model::builders::GetCustomModelOutputBuilder::job_arn)
-    /// - [`base_model_arn`](crate::operation::get_custom_model::builders::GetCustomModelOutputBuilder::base_model_arn)
     /// - [`creation_time`](crate::operation::get_custom_model::builders::GetCustomModelOutputBuilder::creation_time)
     pub fn build(
         self,
@@ -406,18 +480,8 @@ impl GetCustomModelOutputBuilder {
                 )
             })?,
             job_name: self.job_name,
-            job_arn: self.job_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "job_arn",
-                    "job_arn was not specified but it is required when building GetCustomModelOutput",
-                )
-            })?,
-            base_model_arn: self.base_model_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "base_model_arn",
-                    "base_model_arn was not specified but it is required when building GetCustomModelOutput",
-                )
-            })?,
+            job_arn: self.job_arn,
+            base_model_arn: self.base_model_arn,
             customization_type: self.customization_type,
             model_kms_key_arn: self.model_kms_key_arn,
             hyper_parameters: self.hyper_parameters,
@@ -433,6 +497,8 @@ impl GetCustomModelOutputBuilder {
                 )
             })?,
             customization_config: self.customization_config,
+            model_status: self.model_status,
+            failure_message: self.failure_message,
             _request_id: self._request_id,
         })
     }

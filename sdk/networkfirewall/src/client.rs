@@ -59,14 +59,14 @@ pub(crate) struct Handle {
 /// # Using the `Client`
 ///
 /// A client has a function for every operation that can be performed by the service.
-/// For example, the [`AssociateFirewallPolicy`](crate::operation::associate_firewall_policy) operation has
-/// a [`Client::associate_firewall_policy`], function which returns a builder for that operation.
+/// For example, the [`AcceptNetworkFirewallTransitGatewayAttachment`](crate::operation::accept_network_firewall_transit_gateway_attachment) operation has
+/// a [`Client::accept_network_firewall_transit_gateway_attachment`], function which returns a builder for that operation.
 /// The fluent builder ultimately has a `send()` function that returns an async future that
 /// returns a result, as illustrated below:
 ///
 /// ```rust,ignore
-/// let result = client.associate_firewall_policy()
-///     .update_token("example")
+/// let result = client.accept_network_firewall_transit_gateway_attachment()
+///     .transit_gateway_attachment_id("example")
 ///     .send()
 ///     .await;
 /// ```
@@ -136,6 +136,10 @@ impl Client {
     }
 }
 
+mod accept_network_firewall_transit_gateway_attachment;
+
+mod associate_availability_zones;
+
 mod associate_firewall_policy;
 
 mod associate_subnets;
@@ -161,7 +165,7 @@ mod create_vpc_endpoint_association;
 /// # let client: aws_sdk_networkfirewall::Client = unimplemented!();
 /// use ::http::header::{HeaderName, HeaderValue};
 ///
-/// let result = client.associate_firewall_policy()
+/// let result = client.accept_network_firewall_transit_gateway_attachment()
 ///     .customize()
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
@@ -180,6 +184,8 @@ pub mod customize;
 mod delete_firewall;
 
 mod delete_firewall_policy;
+
+mod delete_network_firewall_transit_gateway_attachment;
 
 mod delete_resource_policy;
 
@@ -209,6 +215,8 @@ mod describe_tls_inspection_configuration;
 
 mod describe_vpc_endpoint_association;
 
+mod disassociate_availability_zones;
+
 mod disassociate_subnets;
 
 mod get_analysis_report_results;
@@ -233,6 +241,8 @@ mod list_vpc_endpoint_associations;
 
 mod put_resource_policy;
 
+mod reject_network_firewall_transit_gateway_attachment;
+
 mod start_analysis_report;
 
 mod start_flow_capture;
@@ -242,6 +252,8 @@ mod start_flow_flush;
 mod tag_resource;
 
 mod untag_resource;
+
+mod update_availability_zone_change_protection;
 
 mod update_firewall_analysis_settings;
 

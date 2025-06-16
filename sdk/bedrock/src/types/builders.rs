@@ -45,8 +45,6 @@ pub use crate::types::_foundation_model_summary::FoundationModelSummaryBuilder;
 
 pub use crate::types::_foundation_model_lifecycle::FoundationModelLifecycleBuilder;
 
-pub use crate::types::_custom_model_summary::CustomModelSummaryBuilder;
-
 pub use crate::types::_foundation_model_details::FoundationModelDetailsBuilder;
 
 pub use crate::types::_model_invocation_job_summary::ModelInvocationJobSummaryBuilder;
@@ -212,6 +210,8 @@ pub use crate::types::_bedrock_evaluator_model::BedrockEvaluatorModelBuilder;
 pub use crate::types::_batch_delete_evaluation_job_item::BatchDeleteEvaluationJobItemBuilder;
 
 pub use crate::types::_batch_delete_evaluation_job_error::BatchDeleteEvaluationJobErrorBuilder;
+
+pub use crate::types::_custom_model_summary::CustomModelSummaryBuilder;
 
 pub use crate::types::_marketplace_model_endpoint::MarketplaceModelEndpointBuilder;
 

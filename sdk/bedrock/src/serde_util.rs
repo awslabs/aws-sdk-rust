@@ -11,6 +11,15 @@ pub(crate) fn batch_delete_evaluation_job_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn create_custom_model_output_output_correct_errors(
+    mut builder: crate::operation::create_custom_model::builders::CreateCustomModelOutputBuilder,
+) -> crate::operation::create_custom_model::builders::CreateCustomModelOutputBuilder {
+    if builder.model_arn.is_none() {
+        builder.model_arn = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn create_evaluation_job_output_output_correct_errors(
     mut builder: crate::operation::create_evaluation_job::builders::CreateEvaluationJobOutputBuilder,
 ) -> crate::operation::create_evaluation_job::builders::CreateEvaluationJobOutputBuilder {
@@ -124,24 +133,6 @@ pub(crate) fn get_custom_model_output_output_correct_errors(
     }
     if builder.model_name.is_none() {
         builder.model_name = Some(Default::default())
-    }
-    if builder.job_arn.is_none() {
-        builder.job_arn = Some(Default::default())
-    }
-    if builder.base_model_arn.is_none() {
-        builder.base_model_arn = Some(Default::default())
-    }
-    if builder.training_data_config.is_none() {
-        builder.training_data_config = {
-            let builder = crate::types::builders::TrainingDataConfigBuilder::default();
-            Some(builder.build())
-        }
-    }
-    if builder.output_data_config.is_none() {
-        builder.output_data_config = {
-            let builder = crate::types::builders::OutputDataConfigBuilder::default();
-            crate::serde_util::output_data_config_correct_errors(builder).build().ok()
-        }
     }
     if builder.creation_time.is_none() {
         builder.creation_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
@@ -476,15 +467,6 @@ pub(crate) fn marketplace_model_endpoint_correct_errors(
     builder
 }
 
-pub(crate) fn output_data_config_correct_errors(
-    mut builder: crate::types::builders::OutputDataConfigBuilder,
-) -> crate::types::builders::OutputDataConfigBuilder {
-    if builder.s3_uri.is_none() {
-        builder.s3_uri = Some(Default::default())
-    }
-    builder
-}
-
 pub(crate) fn evaluation_output_data_config_correct_errors(
     mut builder: crate::types::builders::EvaluationOutputDataConfigBuilder,
 ) -> crate::types::builders::EvaluationOutputDataConfigBuilder {
@@ -499,6 +481,15 @@ pub(crate) fn validation_data_config_correct_errors(
 ) -> crate::types::builders::ValidationDataConfigBuilder {
     if builder.validators.is_none() {
         builder.validators = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn output_data_config_correct_errors(
+    mut builder: crate::types::builders::OutputDataConfigBuilder,
+) -> crate::types::builders::OutputDataConfigBuilder {
+    if builder.s3_uri.is_none() {
+        builder.s3_uri = Some(Default::default())
     }
     builder
 }

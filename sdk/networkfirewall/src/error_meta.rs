@@ -96,6 +96,87 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
         }
     }
 }
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::accept_network_firewall_transit_gateway_attachment::AcceptNetworkFirewallTransitGatewayAttachmentError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::accept_network_firewall_transit_gateway_attachment::AcceptNetworkFirewallTransitGatewayAttachmentError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::accept_network_firewall_transit_gateway_attachment::AcceptNetworkFirewallTransitGatewayAttachmentError> for Error {
+    fn from(err: crate::operation::accept_network_firewall_transit_gateway_attachment::AcceptNetworkFirewallTransitGatewayAttachmentError) -> Self {
+        match err {
+            crate::operation::accept_network_firewall_transit_gateway_attachment::AcceptNetworkFirewallTransitGatewayAttachmentError::InternalServerError(inner) => Error::InternalServerError(inner),
+            crate::operation::accept_network_firewall_transit_gateway_attachment::AcceptNetworkFirewallTransitGatewayAttachmentError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::accept_network_firewall_transit_gateway_attachment::AcceptNetworkFirewallTransitGatewayAttachmentError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::accept_network_firewall_transit_gateway_attachment::AcceptNetworkFirewallTransitGatewayAttachmentError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::accept_network_firewall_transit_gateway_attachment::AcceptNetworkFirewallTransitGatewayAttachmentError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::associate_availability_zones::AssociateAvailabilityZonesError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::associate_availability_zones::AssociateAvailabilityZonesError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::associate_availability_zones::AssociateAvailabilityZonesError> for Error {
+    fn from(err: crate::operation::associate_availability_zones::AssociateAvailabilityZonesError) -> Self {
+        match err {
+            crate::operation::associate_availability_zones::AssociateAvailabilityZonesError::InsufficientCapacityException(inner) => {
+                Error::InsufficientCapacityException(inner)
+            }
+            crate::operation::associate_availability_zones::AssociateAvailabilityZonesError::InternalServerError(inner) => {
+                Error::InternalServerError(inner)
+            }
+            crate::operation::associate_availability_zones::AssociateAvailabilityZonesError::InvalidOperationException(inner) => {
+                Error::InvalidOperationException(inner)
+            }
+            crate::operation::associate_availability_zones::AssociateAvailabilityZonesError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::associate_availability_zones::AssociateAvailabilityZonesError::InvalidTokenException(inner) => {
+                Error::InvalidTokenException(inner)
+            }
+            crate::operation::associate_availability_zones::AssociateAvailabilityZonesError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::associate_availability_zones::AssociateAvailabilityZonesError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::associate_availability_zones::AssociateAvailabilityZonesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::associate_firewall_policy::AssociateFirewallPolicyError, R>>
     for Error
 where
@@ -414,6 +495,42 @@ impl From<crate::operation::delete_firewall_policy::DeleteFirewallPolicyError> f
                 Error::UnsupportedOperationException(inner)
             }
             crate::operation::delete_firewall_policy::DeleteFirewallPolicyError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::delete_network_firewall_transit_gateway_attachment::DeleteNetworkFirewallTransitGatewayAttachmentError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::delete_network_firewall_transit_gateway_attachment::DeleteNetworkFirewallTransitGatewayAttachmentError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_network_firewall_transit_gateway_attachment::DeleteNetworkFirewallTransitGatewayAttachmentError> for Error {
+    fn from(err: crate::operation::delete_network_firewall_transit_gateway_attachment::DeleteNetworkFirewallTransitGatewayAttachmentError) -> Self {
+        match err {
+            crate::operation::delete_network_firewall_transit_gateway_attachment::DeleteNetworkFirewallTransitGatewayAttachmentError::InternalServerError(inner) => Error::InternalServerError(inner),
+            crate::operation::delete_network_firewall_transit_gateway_attachment::DeleteNetworkFirewallTransitGatewayAttachmentError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::delete_network_firewall_transit_gateway_attachment::DeleteNetworkFirewallTransitGatewayAttachmentError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::delete_network_firewall_transit_gateway_attachment::DeleteNetworkFirewallTransitGatewayAttachmentError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::delete_network_firewall_transit_gateway_attachment::DeleteNetworkFirewallTransitGatewayAttachmentError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -915,6 +1032,52 @@ impl From<crate::operation::describe_vpc_endpoint_association::DescribeVpcEndpoi
         }
     }
 }
+impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::disassociate_availability_zones::DisassociateAvailabilityZonesError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::disassociate_availability_zones::DisassociateAvailabilityZonesError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::disassociate_availability_zones::DisassociateAvailabilityZonesError> for Error {
+    fn from(err: crate::operation::disassociate_availability_zones::DisassociateAvailabilityZonesError) -> Self {
+        match err {
+            crate::operation::disassociate_availability_zones::DisassociateAvailabilityZonesError::InternalServerError(inner) => {
+                Error::InternalServerError(inner)
+            }
+            crate::operation::disassociate_availability_zones::DisassociateAvailabilityZonesError::InvalidOperationException(inner) => {
+                Error::InvalidOperationException(inner)
+            }
+            crate::operation::disassociate_availability_zones::DisassociateAvailabilityZonesError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::disassociate_availability_zones::DisassociateAvailabilityZonesError::InvalidTokenException(inner) => {
+                Error::InvalidTokenException(inner)
+            }
+            crate::operation::disassociate_availability_zones::DisassociateAvailabilityZonesError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::disassociate_availability_zones::DisassociateAvailabilityZonesError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::disassociate_availability_zones::DisassociateAvailabilityZonesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::disassociate_subnets::DisassociateSubnetsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1285,6 +1448,42 @@ impl From<crate::operation::put_resource_policy::PutResourcePolicyError> for Err
         }
     }
 }
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::reject_network_firewall_transit_gateway_attachment::RejectNetworkFirewallTransitGatewayAttachmentError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::reject_network_firewall_transit_gateway_attachment::RejectNetworkFirewallTransitGatewayAttachmentError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::reject_network_firewall_transit_gateway_attachment::RejectNetworkFirewallTransitGatewayAttachmentError> for Error {
+    fn from(err: crate::operation::reject_network_firewall_transit_gateway_attachment::RejectNetworkFirewallTransitGatewayAttachmentError) -> Self {
+        match err {
+            crate::operation::reject_network_firewall_transit_gateway_attachment::RejectNetworkFirewallTransitGatewayAttachmentError::InternalServerError(inner) => Error::InternalServerError(inner),
+            crate::operation::reject_network_firewall_transit_gateway_attachment::RejectNetworkFirewallTransitGatewayAttachmentError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::reject_network_firewall_transit_gateway_attachment::RejectNetworkFirewallTransitGatewayAttachmentError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::reject_network_firewall_transit_gateway_attachment::RejectNetworkFirewallTransitGatewayAttachmentError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::reject_network_firewall_transit_gateway_attachment::RejectNetworkFirewallTransitGatewayAttachmentError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_analysis_report::StartAnalysisReportError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1411,6 +1610,44 @@ impl From<crate::operation::untag_resource::UntagResourceError> for Error {
             crate::operation::untag_resource::UntagResourceError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::untag_resource::UntagResourceError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::untag_resource::UntagResourceError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::update_availability_zone_change_protection::UpdateAvailabilityZoneChangeProtectionError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::update_availability_zone_change_protection::UpdateAvailabilityZoneChangeProtectionError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_availability_zone_change_protection::UpdateAvailabilityZoneChangeProtectionError> for Error {
+    fn from(err: crate::operation::update_availability_zone_change_protection::UpdateAvailabilityZoneChangeProtectionError) -> Self {
+        match err {
+            crate::operation::update_availability_zone_change_protection::UpdateAvailabilityZoneChangeProtectionError::InternalServerError(inner) => Error::InternalServerError(inner),
+            crate::operation::update_availability_zone_change_protection::UpdateAvailabilityZoneChangeProtectionError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::update_availability_zone_change_protection::UpdateAvailabilityZoneChangeProtectionError::InvalidTokenException(inner) => Error::InvalidTokenException(inner),
+            crate::operation::update_availability_zone_change_protection::UpdateAvailabilityZoneChangeProtectionError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::update_availability_zone_change_protection::UpdateAvailabilityZoneChangeProtectionError::ResourceOwnerCheckException(inner) => Error::ResourceOwnerCheckException(inner),
+            crate::operation::update_availability_zone_change_protection::UpdateAvailabilityZoneChangeProtectionError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::update_availability_zone_change_protection::UpdateAvailabilityZoneChangeProtectionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

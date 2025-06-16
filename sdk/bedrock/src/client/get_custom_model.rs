@@ -8,8 +8,8 @@ impl super::Client {
     ///   - [`model_arn(String)`](crate::operation::get_custom_model::GetCustomModelOutput::model_arn): <p>Amazon Resource Name (ARN) associated with this model.</p>
     ///   - [`model_name(String)`](crate::operation::get_custom_model::GetCustomModelOutput::model_name): <p>Model name associated with this model.</p>
     ///   - [`job_name(Option<String>)`](crate::operation::get_custom_model::GetCustomModelOutput::job_name): <p>Job name associated with this model.</p>
-    ///   - [`job_arn(String)`](crate::operation::get_custom_model::GetCustomModelOutput::job_arn): <p>Job Amazon Resource Name (ARN) associated with this model.</p>
-    ///   - [`base_model_arn(String)`](crate::operation::get_custom_model::GetCustomModelOutput::base_model_arn): <p>Amazon Resource Name (ARN) of the base model.</p>
+    ///   - [`job_arn(Option<String>)`](crate::operation::get_custom_model::GetCustomModelOutput::job_arn): <p>Job Amazon Resource Name (ARN) associated with this model. For models that you create with the <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_CreateCustomModel.html">CreateCustomModel</a> API operation, this is <code>NULL</code>.</p>
+    ///   - [`base_model_arn(Option<String>)`](crate::operation::get_custom_model::GetCustomModelOutput::base_model_arn): <p>Amazon Resource Name (ARN) of the base model.</p>
     ///   - [`customization_type(Option<CustomizationType>)`](crate::operation::get_custom_model::GetCustomModelOutput::customization_type): <p>The type of model customization.</p>
     ///   - [`model_kms_key_arn(Option<String>)`](crate::operation::get_custom_model::GetCustomModelOutput::model_kms_key_arn): <p>The custom model is encrypted at rest using this key.</p>
     ///   - [`hyper_parameters(Option<HashMap::<String, String>>)`](crate::operation::get_custom_model::GetCustomModelOutput::hyper_parameters): <p>Hyperparameter values associated with this model. For details on the format for different models, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models-hp.html">Custom model hyperparameters</a>.</p>
@@ -20,6 +20,8 @@ impl super::Client {
     ///   - [`validation_metrics(Option<Vec::<ValidatorMetric>>)`](crate::operation::get_custom_model::GetCustomModelOutput::validation_metrics): <p>The validation metrics from the job creation.</p>
     ///   - [`creation_time(DateTime)`](crate::operation::get_custom_model::GetCustomModelOutput::creation_time): <p>Creation time of the model.</p>
     ///   - [`customization_config(Option<CustomizationConfig>)`](crate::operation::get_custom_model::GetCustomModelOutput::customization_config): <p>The customization configuration for the custom model.</p>
+    ///   - [`model_status(Option<ModelStatus>)`](crate::operation::get_custom_model::GetCustomModelOutput::model_status): <p>The current status of the custom model. Possible values include:</p> <ul>  <li>   <p><code>Creating</code> - The model is being created and validated.</p></li>  <li>   <p><code>Active</code> - The model has been successfully created and is ready for use.</p></li>  <li>   <p><code>Failed</code> - The model creation process failed. Check the <code>failureMessage</code> field for details.</p></li> </ul>
+    ///   - [`failure_message(Option<String>)`](crate::operation::get_custom_model::GetCustomModelOutput::failure_message): <p>A failure message for any issues that occurred when creating the custom model. This is included for only a failed CreateCustomModel operation.</p>
     /// - On failure, responds with [`SdkError<GetCustomModelError>`](crate::operation::get_custom_model::GetCustomModelError)
     pub fn get_custom_model(&self) -> crate::operation::get_custom_model::builders::GetCustomModelFluentBuilder {
         crate::operation::get_custom_model::builders::GetCustomModelFluentBuilder::new(self.handle.clone())

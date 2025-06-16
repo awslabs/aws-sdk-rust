@@ -63,5 +63,23 @@ pub fn ser_create_firewall_input_input(
         }
         array_19.finish();
     }
+    if let Some(var_21) = &input.transit_gateway_id {
+        object.key("TransitGatewayId").string(var_21.as_str());
+    }
+    if let Some(var_22) = &input.availability_zone_mappings {
+        let mut array_23 = object.key("AvailabilityZoneMappings").start_array();
+        for item_24 in var_22 {
+            {
+                #[allow(unused_mut)]
+                let mut object_25 = array_23.value().start_object();
+                crate::protocol_serde::shape_availability_zone_mapping::ser_availability_zone_mapping(&mut object_25, item_24)?;
+                object_25.finish();
+            }
+        }
+        array_23.finish();
+    }
+    if let Some(var_26) = &input.availability_zone_change_protection {
+        object.key("AvailabilityZoneChangeProtection").boolean(*var_26);
+    }
     Ok(())
 }
