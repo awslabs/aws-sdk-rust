@@ -7,7 +7,7 @@ pub enum Error {
     AccessDeniedException(crate::types::error::AccessDeniedException),
     /// <p>You are trying to update a resource or configuration that is already being created or updated. Wait for the previous operation to finish and try again.</p>
     ConflictException(crate::types::error::ConflictException),
-    /// <p>One or more of of request parameters specified is not valid.</p>
+    /// <p>One or more of request parameters specified is not valid.</p>
     InvalidArgsException(crate::types::error::InvalidArgsException),
     /// <p>The requested Amazon Resource Name (ARN) does not refer to an existing resource.</p>
     InvalidArnException(crate::types::error::InvalidArnException),
@@ -511,6 +511,33 @@ impl From<crate::operation::resend_validation_email::ResendValidationEmailError>
                 Error::ResourceNotFoundException(inner)
             }
             crate::operation::resend_validation_email::ResendValidationEmailError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::revoke_certificate::RevokeCertificateError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::revoke_certificate::RevokeCertificateError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::revoke_certificate::RevokeCertificateError> for Error {
+    fn from(err: crate::operation::revoke_certificate::RevokeCertificateError) -> Self {
+        match err {
+            crate::operation::revoke_certificate::RevokeCertificateError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::revoke_certificate::RevokeCertificateError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::revoke_certificate::RevokeCertificateError::InvalidArnException(inner) => Error::InvalidArnException(inner),
+            crate::operation::revoke_certificate::RevokeCertificateError::ResourceInUseException(inner) => Error::ResourceInUseException(inner),
+            crate::operation::revoke_certificate::RevokeCertificateError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::revoke_certificate::RevokeCertificateError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::revoke_certificate::RevokeCertificateError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

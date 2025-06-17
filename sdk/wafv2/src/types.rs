@@ -299,6 +299,10 @@ pub use crate::types::_api_key_summary::ApiKeySummary;
 
 pub use crate::types::_web_acl::WebAcl;
 
+pub use crate::types::_application_config::ApplicationConfig;
+
+pub use crate::types::_application_attribute::ApplicationAttribute;
+
 pub use crate::types::_firewall_manager_rule_group::FirewallManagerRuleGroup;
 
 pub use crate::types::_firewall_manager_statement::FirewallManagerStatement;
@@ -354,6 +358,10 @@ mod _allow_action;
 mod _and_statement;
 
 mod _api_key_summary;
+
+mod _application_attribute;
+
+mod _application_config;
 
 mod _asn_match_statement;
 

@@ -5,9 +5,9 @@ pub use crate::types::_auto_enable::AutoEnableBuilder;
 
 pub use crate::types::_filter_criteria::FilterCriteriaBuilder;
 
-pub use crate::types::_number_filter::NumberFilterBuilder;
-
 pub use crate::types::_string_filter::StringFilterBuilder;
+
+pub use crate::types::_number_filter::NumberFilterBuilder;
 
 pub use crate::types::_date_filter::DateFilterBuilder;
 
@@ -20,6 +20,16 @@ pub use crate::types::_map_filter::MapFilterBuilder;
 pub use crate::types::_ec2_configuration::Ec2ConfigurationBuilder;
 
 pub use crate::types::_ecr_configuration::EcrConfigurationBuilder;
+
+pub use crate::types::_code_security_scan_configuration::CodeSecurityScanConfigurationBuilder;
+
+pub use crate::types::_continuous_integration_scan_configuration::ContinuousIntegrationScanConfigurationBuilder;
+
+pub use crate::types::_periodic_scan_configuration::PeriodicScanConfigurationBuilder;
+
+pub use crate::types::_update_git_hub_integration_detail::UpdateGitHubIntegrationDetailBuilder;
+
+pub use crate::types::_update_git_lab_self_managed_integration_detail::UpdateGitLabSelfManagedIntegrationDetailBuilder;
 
 pub use crate::types::_update_cis_targets::UpdateCisTargetsBuilder;
 
@@ -99,6 +109,8 @@ pub use crate::types::_resource::ResourceBuilder;
 
 pub use crate::types::_resource_details::ResourceDetailsBuilder;
 
+pub use crate::types::_code_repository_details::CodeRepositoryDetailsBuilder;
+
 pub use crate::types::_aws_lambda_function_details::AwsLambdaFunctionDetailsBuilder;
 
 pub use crate::types::_lambda_vpc_config::LambdaVpcConfigBuilder;
@@ -113,9 +125,11 @@ pub use crate::types::_recommendation::RecommendationBuilder;
 
 pub use crate::types::_sort_criteria::SortCriteriaBuilder;
 
-pub use crate::types::_lambda_function_aggregation_response::LambdaFunctionAggregationResponseBuilder;
+pub use crate::types::_code_repository_aggregation_response::CodeRepositoryAggregationResponseBuilder;
 
 pub use crate::types::_severity_counts::SeverityCountsBuilder;
+
+pub use crate::types::_lambda_function_aggregation_response::LambdaFunctionAggregationResponseBuilder;
 
 pub use crate::types::_lambda_layer_aggregation_response::LambdaLayerAggregationResponseBuilder;
 
@@ -136,6 +150,8 @@ pub use crate::types::_aws_ecr_container_aggregation_response::AwsEcrContainerAg
 pub use crate::types::_ami_aggregation_response::AmiAggregationResponseBuilder;
 
 pub use crate::types::_account_aggregation_response::AccountAggregationResponseBuilder;
+
+pub use crate::types::_code_repository_aggregation::CodeRepositoryAggregationBuilder;
 
 pub use crate::types::_lambda_function_aggregation::LambdaFunctionAggregationBuilder;
 
@@ -167,17 +183,29 @@ pub use crate::types::_counts::CountsBuilder;
 
 pub use crate::types::_coverage_filter_criteria::CoverageFilterCriteriaBuilder;
 
+pub use crate::types::_coverage_string_filter::CoverageStringFilterBuilder;
+
 pub use crate::types::_coverage_number_filter::CoverageNumberFilterBuilder;
 
 pub use crate::types::_coverage_date_filter::CoverageDateFilterBuilder;
-
-pub use crate::types::_coverage_string_filter::CoverageStringFilterBuilder;
 
 pub use crate::types::_coverage_map_filter::CoverageMapFilterBuilder;
 
 pub use crate::types::_covered_resource::CoveredResourceBuilder;
 
 pub use crate::types::_resource_scan_metadata::ResourceScanMetadataBuilder;
+
+pub use crate::types::_code_repository_metadata::CodeRepositoryMetadataBuilder;
+
+pub use crate::types::_code_repository_on_demand_scan::CodeRepositoryOnDemandScanBuilder;
+
+pub use crate::types::_scan_status::ScanStatusBuilder;
+
+pub use crate::types::_project_code_security_scan_configuration::ProjectCodeSecurityScanConfigurationBuilder;
+
+pub use crate::types::_project_continuous_integration_scan_configuration::ProjectContinuousIntegrationScanConfigurationBuilder;
+
+pub use crate::types::_project_periodic_scan_configuration::ProjectPeriodicScanConfigurationBuilder;
 
 pub use crate::types::_lambda_function_metadata::LambdaFunctionMetadataBuilder;
 
@@ -187,7 +215,13 @@ pub use crate::types::_ecr_container_image_metadata::EcrContainerImageMetadataBu
 
 pub use crate::types::_ecr_repository_metadata::EcrRepositoryMetadataBuilder;
 
-pub use crate::types::_scan_status::ScanStatusBuilder;
+pub use crate::types::_code_security_scan_configuration_summary::CodeSecurityScanConfigurationSummaryBuilder;
+
+pub use crate::types::_scope_settings::ScopeSettingsBuilder;
+
+pub use crate::types::_code_security_scan_configuration_association_summary::CodeSecurityScanConfigurationAssociationSummaryBuilder;
+
+pub use crate::types::_code_security_integration_summary::CodeSecurityIntegrationSummaryBuilder;
 
 pub use crate::types::_cis_scan::CisScanBuilder;
 
@@ -271,6 +305,8 @@ pub use crate::types::_resource_status::ResourceStatusBuilder;
 
 pub use crate::types::_account::AccountBuilder;
 
+pub use crate::types::_create_git_lab_self_managed_integration_detail::CreateGitLabSelfManagedIntegrationDetailBuilder;
+
 pub use crate::types::_create_cis_targets::CreateCisTargetsBuilder;
 
 pub use crate::types::_failed_member_account_ec2_deep_inspection_status_state::FailedMemberAccountEc2DeepInspectionStatusStateBuilder;
@@ -304,3 +340,11 @@ pub use crate::types::_account_state::AccountStateBuilder;
 pub use crate::types::_resource_state::ResourceStateBuilder;
 
 pub use crate::types::_state::StateBuilder;
+
+pub use crate::types::_successful_association_result::SuccessfulAssociationResultBuilder;
+
+pub use crate::types::_failed_association_result::FailedAssociationResultBuilder;
+
+pub use crate::types::_disassociate_configuration_request::DisassociateConfigurationRequestBuilder;
+
+pub use crate::types::_associate_configuration_request::AssociateConfigurationRequestBuilder;

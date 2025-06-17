@@ -3,7 +3,21 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EnableOrganizationAdminAccountOutput {
+    /// <p>The Amazon Web Services account identifier of the account to designate as the Security Hub administrator account.</p>
+    pub admin_account_id: ::std::option::Option<::std::string::String>,
+    /// <p>The feature where the delegated administrator is enabled. The default is Security Hub CSPM if no delegated administrator is specified in the request.</p>
+    pub feature: ::std::option::Option<crate::types::SecurityHubFeature>,
     _request_id: Option<String>,
+}
+impl EnableOrganizationAdminAccountOutput {
+    /// <p>The Amazon Web Services account identifier of the account to designate as the Security Hub administrator account.</p>
+    pub fn admin_account_id(&self) -> ::std::option::Option<&str> {
+        self.admin_account_id.as_deref()
+    }
+    /// <p>The feature where the delegated administrator is enabled. The default is Security Hub CSPM if no delegated administrator is specified in the request.</p>
+    pub fn feature(&self) -> ::std::option::Option<&crate::types::SecurityHubFeature> {
+        self.feature.as_ref()
+    }
 }
 impl ::aws_types::request_id::RequestId for EnableOrganizationAdminAccountOutput {
     fn request_id(&self) -> Option<&str> {
@@ -21,9 +35,39 @@ impl EnableOrganizationAdminAccountOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 pub struct EnableOrganizationAdminAccountOutputBuilder {
+    pub(crate) admin_account_id: ::std::option::Option<::std::string::String>,
+    pub(crate) feature: ::std::option::Option<crate::types::SecurityHubFeature>,
     _request_id: Option<String>,
 }
 impl EnableOrganizationAdminAccountOutputBuilder {
+    /// <p>The Amazon Web Services account identifier of the account to designate as the Security Hub administrator account.</p>
+    pub fn admin_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.admin_account_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Web Services account identifier of the account to designate as the Security Hub administrator account.</p>
+    pub fn set_admin_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.admin_account_id = input;
+        self
+    }
+    /// <p>The Amazon Web Services account identifier of the account to designate as the Security Hub administrator account.</p>
+    pub fn get_admin_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.admin_account_id
+    }
+    /// <p>The feature where the delegated administrator is enabled. The default is Security Hub CSPM if no delegated administrator is specified in the request.</p>
+    pub fn feature(mut self, input: crate::types::SecurityHubFeature) -> Self {
+        self.feature = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The feature where the delegated administrator is enabled. The default is Security Hub CSPM if no delegated administrator is specified in the request.</p>
+    pub fn set_feature(mut self, input: ::std::option::Option<crate::types::SecurityHubFeature>) -> Self {
+        self.feature = input;
+        self
+    }
+    /// <p>The feature where the delegated administrator is enabled. The default is Security Hub CSPM if no delegated administrator is specified in the request.</p>
+    pub fn get_feature(&self) -> &::std::option::Option<crate::types::SecurityHubFeature> {
+        &self.feature
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -36,6 +80,8 @@ impl EnableOrganizationAdminAccountOutputBuilder {
     /// Consumes the builder and constructs a [`EnableOrganizationAdminAccountOutput`](crate::operation::enable_organization_admin_account::EnableOrganizationAdminAccountOutput).
     pub fn build(self) -> crate::operation::enable_organization_admin_account::EnableOrganizationAdminAccountOutput {
         crate::operation::enable_organization_admin_account::EnableOrganizationAdminAccountOutput {
+            admin_account_id: self.admin_account_id,
+            feature: self.feature,
             _request_id: self._request_id,
         }
     }

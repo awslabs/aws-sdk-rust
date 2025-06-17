@@ -7,11 +7,11 @@ pub use crate::types::_auto_enable::AutoEnable;
 
 pub use crate::types::_filter_criteria::FilterCriteria;
 
-pub use crate::types::_number_filter::NumberFilter;
-
 pub use crate::types::_string_filter::StringFilter;
 
 pub use crate::types::_string_comparison::StringComparison;
+
+pub use crate::types::_number_filter::NumberFilter;
 
 pub use crate::types::_date_filter::DateFilter;
 
@@ -43,6 +43,26 @@ pub use crate::types::_ecr_pull_date_rescan_duration::EcrPullDateRescanDuration;
 
 pub use crate::types::_ecr_rescan_duration::EcrRescanDuration;
 
+pub use crate::types::_code_security_scan_configuration::CodeSecurityScanConfiguration;
+
+pub use crate::types::_rule_set_category::RuleSetCategory;
+
+pub use crate::types::_continuous_integration_scan_configuration::ContinuousIntegrationScanConfiguration;
+
+pub use crate::types::_continuous_integration_scan_event::ContinuousIntegrationScanEvent;
+
+pub use crate::types::_periodic_scan_configuration::PeriodicScanConfiguration;
+
+pub use crate::types::_periodic_scan_frequency::PeriodicScanFrequency;
+
+pub use crate::types::_integration_status::IntegrationStatus;
+
+pub use crate::types::_update_integration_details::UpdateIntegrationDetails;
+
+pub use crate::types::_update_git_hub_integration_detail::UpdateGitHubIntegrationDetail;
+
+pub use crate::types::_update_git_lab_self_managed_integration_detail::UpdateGitLabSelfManagedIntegrationDetail;
+
 pub use crate::types::_update_cis_targets::UpdateCisTargets;
 
 pub use crate::types::_schedule::Schedule;
@@ -68,6 +88,10 @@ pub use crate::types::_compute_platform::ComputePlatform;
 pub use crate::types::_stop_cis_message_progress::StopCisMessageProgress;
 
 pub use crate::types::_stop_cis_session_status::StopCisSessionStatus;
+
+pub use crate::types::_code_scan_status::CodeScanStatus;
+
+pub use crate::types::_code_security_resource::CodeSecurityResource;
 
 pub use crate::types::_start_cis_session_message::StartCisSessionMessage;
 
@@ -147,6 +171,10 @@ pub use crate::types::_resource::Resource;
 
 pub use crate::types::_resource_details::ResourceDetails;
 
+pub use crate::types::_code_repository_details::CodeRepositoryDetails;
+
+pub use crate::types::_code_repository_provider_type::CodeRepositoryProviderType;
+
 pub use crate::types::_aws_lambda_function_details::AwsLambdaFunctionDetails;
 
 pub use crate::types::_architecture::Architecture;
@@ -179,9 +207,11 @@ pub use crate::types::_sort_field::SortField;
 
 pub use crate::types::_aggregation_response::AggregationResponse;
 
-pub use crate::types::_lambda_function_aggregation_response::LambdaFunctionAggregationResponse;
+pub use crate::types::_code_repository_aggregation_response::CodeRepositoryAggregationResponse;
 
 pub use crate::types::_severity_counts::SeverityCounts;
+
+pub use crate::types::_lambda_function_aggregation_response::LambdaFunctionAggregationResponse;
 
 pub use crate::types::_lambda_layer_aggregation_response::LambdaLayerAggregationResponse;
 
@@ -206,6 +236,10 @@ pub use crate::types::_account_aggregation_response::AccountAggregationResponse;
 pub use crate::types::_aggregation_type::AggregationType;
 
 pub use crate::types::_aggregation_request::AggregationRequest;
+
+pub use crate::types::_code_repository_aggregation::CodeRepositoryAggregation;
+
+pub use crate::types::_code_repository_sort_by::CodeRepositorySortBy;
 
 pub use crate::types::_lambda_function_aggregation::LambdaFunctionAggregation;
 
@@ -267,13 +301,13 @@ pub use crate::types::_group_key::GroupKey;
 
 pub use crate::types::_coverage_filter_criteria::CoverageFilterCriteria;
 
-pub use crate::types::_coverage_number_filter::CoverageNumberFilter;
-
-pub use crate::types::_coverage_date_filter::CoverageDateFilter;
-
 pub use crate::types::_coverage_string_filter::CoverageStringFilter;
 
 pub use crate::types::_coverage_string_comparison::CoverageStringComparison;
+
+pub use crate::types::_coverage_number_filter::CoverageNumberFilter;
+
+pub use crate::types::_coverage_date_filter::CoverageDateFilter;
 
 pub use crate::types::_coverage_map_filter::CoverageMapFilter;
 
@@ -284,6 +318,22 @@ pub use crate::types::_covered_resource::CoveredResource;
 pub use crate::types::_scan_mode::ScanMode;
 
 pub use crate::types::_resource_scan_metadata::ResourceScanMetadata;
+
+pub use crate::types::_code_repository_metadata::CodeRepositoryMetadata;
+
+pub use crate::types::_code_repository_on_demand_scan::CodeRepositoryOnDemandScan;
+
+pub use crate::types::_scan_status::ScanStatus;
+
+pub use crate::types::_scan_status_reason::ScanStatusReason;
+
+pub use crate::types::_scan_status_code::ScanStatusCode;
+
+pub use crate::types::_project_code_security_scan_configuration::ProjectCodeSecurityScanConfiguration;
+
+pub use crate::types::_project_continuous_integration_scan_configuration::ProjectContinuousIntegrationScanConfiguration;
+
+pub use crate::types::_project_periodic_scan_configuration::ProjectPeriodicScanConfiguration;
 
 pub use crate::types::_lambda_function_metadata::LambdaFunctionMetadata;
 
@@ -297,13 +347,19 @@ pub use crate::types::_ecr_repository_metadata::EcrRepositoryMetadata;
 
 pub use crate::types::_ecr_scan_frequency::EcrScanFrequency;
 
-pub use crate::types::_scan_status::ScanStatus;
-
-pub use crate::types::_scan_status_reason::ScanStatusReason;
-
-pub use crate::types::_scan_status_code::ScanStatusCode;
-
 pub use crate::types::_coverage_resource_type::CoverageResourceType;
+
+pub use crate::types::_code_security_scan_configuration_summary::CodeSecurityScanConfigurationSummary;
+
+pub use crate::types::_scope_settings::ScopeSettings;
+
+pub use crate::types::_project_selection_scope::ProjectSelectionScope;
+
+pub use crate::types::_code_security_scan_configuration_association_summary::CodeSecurityScanConfigurationAssociationSummary;
+
+pub use crate::types::_code_security_integration_summary::CodeSecurityIntegrationSummary;
+
+pub use crate::types::_integration_type::IntegrationType;
 
 pub use crate::types::_cis_scan::CisScan;
 
@@ -413,6 +469,8 @@ pub use crate::types::_ecr_rescan_duration_state::EcrRescanDurationState;
 
 pub use crate::types::_ecr_rescan_duration_status::EcrRescanDurationStatus;
 
+pub use crate::types::_configuration_level::ConfigurationLevel;
+
 pub use crate::types::_cluster_information::ClusterInformation;
 
 pub use crate::types::_cluster_details::ClusterDetails;
@@ -456,6 +514,10 @@ pub use crate::types::_account::Account;
 pub use crate::types::_resource_scan_type::ResourceScanType;
 
 pub use crate::types::_report_format::ReportFormat;
+
+pub use crate::types::_create_integration_detail::CreateIntegrationDetail;
+
+pub use crate::types::_create_git_lab_self_managed_integration_detail::CreateGitLabSelfManagedIntegrationDetail;
 
 pub use crate::types::_create_cis_targets::CreateCisTargets;
 
@@ -501,6 +563,16 @@ pub use crate::types::_resource_state::ResourceState;
 
 pub use crate::types::_state::State;
 
+pub use crate::types::_successful_association_result::SuccessfulAssociationResult;
+
+pub use crate::types::_failed_association_result::FailedAssociationResult;
+
+pub use crate::types::_association_result_status_code::AssociationResultStatusCode;
+
+pub use crate::types::_disassociate_configuration_request::DisassociateConfigurationRequest;
+
+pub use crate::types::_associate_configuration_request::AssociateConfigurationRequest;
+
 mod _account;
 
 mod _account_aggregation;
@@ -528,6 +600,10 @@ mod _ami_aggregation_response;
 mod _ami_sort_by;
 
 mod _architecture;
+
+mod _associate_configuration_request;
+
+mod _association_result_status_code;
 
 mod _atig_data;
 
@@ -643,6 +719,32 @@ mod _code_file_path;
 
 mod _code_line;
 
+mod _code_repository_aggregation;
+
+mod _code_repository_aggregation_response;
+
+mod _code_repository_details;
+
+mod _code_repository_metadata;
+
+mod _code_repository_on_demand_scan;
+
+mod _code_repository_provider_type;
+
+mod _code_repository_sort_by;
+
+mod _code_scan_status;
+
+mod _code_security_integration_summary;
+
+mod _code_security_resource;
+
+mod _code_security_scan_configuration;
+
+mod _code_security_scan_configuration_association_summary;
+
+mod _code_security_scan_configuration_summary;
+
 mod _code_snippet_error;
 
 mod _code_snippet_error_code;
@@ -652,6 +754,12 @@ mod _code_snippet_result;
 mod _code_vulnerability_details;
 
 mod _compute_platform;
+
+mod _configuration_level;
+
+mod _continuous_integration_scan_configuration;
+
+mod _continuous_integration_scan_event;
 
 mod _counts;
 
@@ -674,6 +782,10 @@ mod _coverage_string_filter;
 mod _covered_resource;
 
 mod _create_cis_targets;
+
+mod _create_git_lab_self_managed_integration_detail;
+
+mod _create_integration_detail;
 
 mod _currency;
 
@@ -700,6 +812,8 @@ mod _delegated_admin_account;
 mod _delegated_admin_status;
 
 mod _destination;
+
+mod _disassociate_configuration_request;
 
 mod _ec2_configuration;
 
@@ -761,6 +875,8 @@ mod _external_report_status;
 
 mod _failed_account;
 
+mod _failed_association_result;
+
 mod _failed_member_account_ec2_deep_inspection_status_state;
 
 mod _filter;
@@ -810,6 +926,10 @@ mod _image_layer_aggregation_response;
 mod _image_layer_sort_by;
 
 mod _inspector_score_details;
+
+mod _integration_status;
+
+mod _integration_type;
 
 mod _lambda_function_aggregation;
 
@@ -873,11 +993,23 @@ mod _package_type;
 
 mod _package_vulnerability_details;
 
+mod _periodic_scan_configuration;
+
+mod _periodic_scan_frequency;
+
 mod _permission;
 
 mod _port_range;
 
 mod _port_range_filter;
+
+mod _project_code_security_scan_configuration;
+
+mod _project_continuous_integration_scan_configuration;
+
+mod _project_periodic_scan_configuration;
+
+mod _project_selection_scope;
 
 mod _recommendation;
 
@@ -919,6 +1051,8 @@ mod _resource_string_filter;
 
 mod _resource_type;
 
+mod _rule_set_category;
+
 mod _runtime;
 
 mod _sbom_report_format;
@@ -934,6 +1068,8 @@ mod _scan_status_reason;
 mod _scan_type;
 
 mod _schedule;
+
+mod _scope_settings;
 
 mod _search_vulnerabilities_filter_criteria;
 
@@ -969,6 +1105,8 @@ mod _string_comparison;
 
 mod _string_filter;
 
+mod _successful_association_result;
+
 mod _suggested_fix;
 
 mod _tag_comparison;
@@ -984,6 +1122,12 @@ mod _title_aggregation_response;
 mod _title_sort_by;
 
 mod _update_cis_targets;
+
+mod _update_git_hub_integration_detail;
+
+mod _update_git_lab_self_managed_integration_detail;
+
+mod _update_integration_details;
 
 mod _usage;
 

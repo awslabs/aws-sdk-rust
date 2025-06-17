@@ -299,4 +299,21 @@ impl UpdateRuleGroupFluentBuilder {
     pub fn get_analyze_rule_group(&self) -> &::std::option::Option<bool> {
         self.inner.get_analyze_rule_group()
     }
+    /// <p>Updates the selected summary configuration for a rule group.</p>
+    /// <p>Changes affect subsequent responses from <code>DescribeRuleGroupSummary</code>.</p>
+    pub fn summary_configuration(mut self, input: crate::types::SummaryConfiguration) -> Self {
+        self.inner = self.inner.summary_configuration(input);
+        self
+    }
+    /// <p>Updates the selected summary configuration for a rule group.</p>
+    /// <p>Changes affect subsequent responses from <code>DescribeRuleGroupSummary</code>.</p>
+    pub fn set_summary_configuration(mut self, input: ::std::option::Option<crate::types::SummaryConfiguration>) -> Self {
+        self.inner = self.inner.set_summary_configuration(input);
+        self
+    }
+    /// <p>Updates the selected summary configuration for a rule group.</p>
+    /// <p>Changes affect subsequent responses from <code>DescribeRuleGroupSummary</code>.</p>
+    pub fn get_summary_configuration(&self) -> &::std::option::Option<crate::types::SummaryConfiguration> {
+        self.inner.get_summary_configuration()
+    }
 }

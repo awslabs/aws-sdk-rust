@@ -189,6 +189,16 @@ pub(crate) fn reflens_list_report_plans_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_restore_access_backup_vaults_output_output_next_token(
+    input: &crate::operation::list_restore_access_backup_vaults::ListRestoreAccessBackupVaultsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_restore_job_summaries_output_output_next_token(
     input: &crate::operation::list_restore_job_summaries::ListRestoreJobSummariesOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -344,6 +354,13 @@ pub(crate) fn lens_list_recovery_points_by_resource_output_output_recovery_point
     input: crate::operation::list_recovery_points_by_resource::ListRecoveryPointsByResourceOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::RecoveryPointByResource>> {
     let input = input.recovery_points?;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_restore_access_backup_vaults_output_output_restore_access_backup_vaults(
+    input: crate::operation::list_restore_access_backup_vaults::ListRestoreAccessBackupVaultsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::RestoreAccessBackupVaultListMember>> {
+    let input = input.restore_access_backup_vaults?;
     ::std::option::Option::Some(input)
 }
 

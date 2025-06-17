@@ -14,9 +14,15 @@
 /// match indicatortype {
 ///     IndicatorType::AttackTactic => { /* ... */ },
 ///     IndicatorType::AttackTechnique => { /* ... */ },
+///     IndicatorType::CryptominingDomain => { /* ... */ },
+///     IndicatorType::CryptominingIp => { /* ... */ },
+///     IndicatorType::CryptominingProcess => { /* ... */ },
 ///     IndicatorType::HighRiskApi => { /* ... */ },
+///     IndicatorType::MaliciousDomain => { /* ... */ },
 ///     IndicatorType::MaliciousIp => { /* ... */ },
+///     IndicatorType::MaliciousProcess => { /* ... */ },
 ///     IndicatorType::SuspiciousNetwork => { /* ... */ },
+///     IndicatorType::SuspiciousProcess => { /* ... */ },
 ///     IndicatorType::SuspiciousUserAgent => { /* ... */ },
 ///     IndicatorType::TorIp => { /* ... */ },
 ///     IndicatorType::UnusualApiForAccount => { /* ... */ },
@@ -55,11 +61,23 @@ pub enum IndicatorType {
     #[allow(missing_docs)] // documentation missing in model
     AttackTechnique,
     #[allow(missing_docs)] // documentation missing in model
+    CryptominingDomain,
+    #[allow(missing_docs)] // documentation missing in model
+    CryptominingIp,
+    #[allow(missing_docs)] // documentation missing in model
+    CryptominingProcess,
+    #[allow(missing_docs)] // documentation missing in model
     HighRiskApi,
+    #[allow(missing_docs)] // documentation missing in model
+    MaliciousDomain,
     #[allow(missing_docs)] // documentation missing in model
     MaliciousIp,
     #[allow(missing_docs)] // documentation missing in model
+    MaliciousProcess,
+    #[allow(missing_docs)] // documentation missing in model
     SuspiciousNetwork,
+    #[allow(missing_docs)] // documentation missing in model
+    SuspiciousProcess,
     #[allow(missing_docs)] // documentation missing in model
     SuspiciousUserAgent,
     #[allow(missing_docs)] // documentation missing in model
@@ -79,9 +97,15 @@ impl ::std::convert::From<&str> for IndicatorType {
         match s {
             "ATTACK_TACTIC" => IndicatorType::AttackTactic,
             "ATTACK_TECHNIQUE" => IndicatorType::AttackTechnique,
+            "CRYPTOMINING_DOMAIN" => IndicatorType::CryptominingDomain,
+            "CRYPTOMINING_IP" => IndicatorType::CryptominingIp,
+            "CRYPTOMINING_PROCESS" => IndicatorType::CryptominingProcess,
             "HIGH_RISK_API" => IndicatorType::HighRiskApi,
+            "MALICIOUS_DOMAIN" => IndicatorType::MaliciousDomain,
             "MALICIOUS_IP" => IndicatorType::MaliciousIp,
+            "MALICIOUS_PROCESS" => IndicatorType::MaliciousProcess,
             "SUSPICIOUS_NETWORK" => IndicatorType::SuspiciousNetwork,
+            "SUSPICIOUS_PROCESS" => IndicatorType::SuspiciousProcess,
             "SUSPICIOUS_USER_AGENT" => IndicatorType::SuspiciousUserAgent,
             "TOR_IP" => IndicatorType::TorIp,
             "UNUSUAL_API_FOR_ACCOUNT" => IndicatorType::UnusualApiForAccount,
@@ -104,9 +128,15 @@ impl IndicatorType {
         match self {
             IndicatorType::AttackTactic => "ATTACK_TACTIC",
             IndicatorType::AttackTechnique => "ATTACK_TECHNIQUE",
+            IndicatorType::CryptominingDomain => "CRYPTOMINING_DOMAIN",
+            IndicatorType::CryptominingIp => "CRYPTOMINING_IP",
+            IndicatorType::CryptominingProcess => "CRYPTOMINING_PROCESS",
             IndicatorType::HighRiskApi => "HIGH_RISK_API",
+            IndicatorType::MaliciousDomain => "MALICIOUS_DOMAIN",
             IndicatorType::MaliciousIp => "MALICIOUS_IP",
+            IndicatorType::MaliciousProcess => "MALICIOUS_PROCESS",
             IndicatorType::SuspiciousNetwork => "SUSPICIOUS_NETWORK",
+            IndicatorType::SuspiciousProcess => "SUSPICIOUS_PROCESS",
             IndicatorType::SuspiciousUserAgent => "SUSPICIOUS_USER_AGENT",
             IndicatorType::TorIp => "TOR_IP",
             IndicatorType::UnusualApiForAccount => "UNUSUAL_API_FOR_ACCOUNT",
@@ -120,9 +150,15 @@ impl IndicatorType {
         &[
             "ATTACK_TACTIC",
             "ATTACK_TECHNIQUE",
+            "CRYPTOMINING_DOMAIN",
+            "CRYPTOMINING_IP",
+            "CRYPTOMINING_PROCESS",
             "HIGH_RISK_API",
+            "MALICIOUS_DOMAIN",
             "MALICIOUS_IP",
+            "MALICIOUS_PROCESS",
             "SUSPICIOUS_NETWORK",
+            "SUSPICIOUS_PROCESS",
             "SUSPICIOUS_USER_AGENT",
             "TOR_IP",
             "UNUSUAL_API_FOR_ACCOUNT",
@@ -153,9 +189,15 @@ impl ::std::fmt::Display for IndicatorType {
         match self {
             IndicatorType::AttackTactic => write!(f, "ATTACK_TACTIC"),
             IndicatorType::AttackTechnique => write!(f, "ATTACK_TECHNIQUE"),
+            IndicatorType::CryptominingDomain => write!(f, "CRYPTOMINING_DOMAIN"),
+            IndicatorType::CryptominingIp => write!(f, "CRYPTOMINING_IP"),
+            IndicatorType::CryptominingProcess => write!(f, "CRYPTOMINING_PROCESS"),
             IndicatorType::HighRiskApi => write!(f, "HIGH_RISK_API"),
+            IndicatorType::MaliciousDomain => write!(f, "MALICIOUS_DOMAIN"),
             IndicatorType::MaliciousIp => write!(f, "MALICIOUS_IP"),
+            IndicatorType::MaliciousProcess => write!(f, "MALICIOUS_PROCESS"),
             IndicatorType::SuspiciousNetwork => write!(f, "SUSPICIOUS_NETWORK"),
+            IndicatorType::SuspiciousProcess => write!(f, "SUSPICIOUS_PROCESS"),
             IndicatorType::SuspiciousUserAgent => write!(f, "SUSPICIOUS_USER_AGENT"),
             IndicatorType::TorIp => write!(f, "TOR_IP"),
             IndicatorType::UnusualApiForAccount => write!(f, "UNUSUAL_API_FOR_ACCOUNT"),

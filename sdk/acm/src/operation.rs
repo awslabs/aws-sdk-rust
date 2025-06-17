@@ -43,5 +43,8 @@ pub mod request_certificate;
 /// Types for the `ResendValidationEmail` operation.
 pub mod resend_validation_email;
 
+/// Types for the `RevokeCertificate` operation.
+pub mod revoke_certificate;
+
 /// Types for the `UpdateCertificateOptions` operation.
 pub mod update_certificate_options;

@@ -23,7 +23,7 @@ impl crate::operation::describe_policy::builders::DescribePolicyInputBuilder {
 /// Fluent builder constructing a request to `DescribePolicy`.
 ///
 /// <p>Retrieves information about a policy.</p>
-/// <p>This operation can be called only from the organization's management account or by a member account that is a delegated administrator for an Amazon Web Services service.</p>
+/// <p>This operation can be called only from the organization's management account or by a member account that is a delegated administrator.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribePolicyFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

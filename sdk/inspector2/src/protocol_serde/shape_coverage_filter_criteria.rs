@@ -207,5 +207,53 @@ pub fn ser_coverage_filter_criteria(
         }
         array_66.finish();
     }
+    if let Some(var_69) = &input.code_repository_project_name {
+        let mut array_70 = object.key("codeRepositoryProjectName").start_array();
+        for item_71 in var_69 {
+            {
+                #[allow(unused_mut)]
+                let mut object_72 = array_70.value().start_object();
+                crate::protocol_serde::shape_coverage_string_filter::ser_coverage_string_filter(&mut object_72, item_71)?;
+                object_72.finish();
+            }
+        }
+        array_70.finish();
+    }
+    if let Some(var_73) = &input.code_repository_provider_type {
+        let mut array_74 = object.key("codeRepositoryProviderType").start_array();
+        for item_75 in var_73 {
+            {
+                #[allow(unused_mut)]
+                let mut object_76 = array_74.value().start_object();
+                crate::protocol_serde::shape_coverage_string_filter::ser_coverage_string_filter(&mut object_76, item_75)?;
+                object_76.finish();
+            }
+        }
+        array_74.finish();
+    }
+    if let Some(var_77) = &input.code_repository_provider_type_visibility {
+        let mut array_78 = object.key("codeRepositoryProviderTypeVisibility").start_array();
+        for item_79 in var_77 {
+            {
+                #[allow(unused_mut)]
+                let mut object_80 = array_78.value().start_object();
+                crate::protocol_serde::shape_coverage_string_filter::ser_coverage_string_filter(&mut object_80, item_79)?;
+                object_80.finish();
+            }
+        }
+        array_78.finish();
+    }
+    if let Some(var_81) = &input.last_scanned_commit_id {
+        let mut array_82 = object.key("lastScannedCommitId").start_array();
+        for item_83 in var_81 {
+            {
+                #[allow(unused_mut)]
+                let mut object_84 = array_82.value().start_object();
+                crate::protocol_serde::shape_coverage_string_filter::ser_coverage_string_filter(&mut object_84, item_83)?;
+                object_84.finish();
+            }
+        }
+        array_82.finish();
+    }
     Ok(())
 }

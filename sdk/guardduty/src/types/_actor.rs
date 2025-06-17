@@ -10,6 +10,8 @@ pub struct Actor {
     pub user: ::std::option::Option<crate::types::User>,
     /// <p>Contains information about the user session where the activity initiated.</p>
     pub session: ::std::option::Option<crate::types::Session>,
+    /// <p>Contains information about the process associated with the threat actor. This includes details such as process name, path, execution time, and unique identifiers that help track the actor's activities within the system.</p>
+    pub process: ::std::option::Option<crate::types::ActorProcess>,
 }
 impl Actor {
     /// <p>ID of the threat actor.</p>
@@ -23,6 +25,10 @@ impl Actor {
     /// <p>Contains information about the user session where the activity initiated.</p>
     pub fn session(&self) -> ::std::option::Option<&crate::types::Session> {
         self.session.as_ref()
+    }
+    /// <p>Contains information about the process associated with the threat actor. This includes details such as process name, path, execution time, and unique identifiers that help track the actor's activities within the system.</p>
+    pub fn process(&self) -> ::std::option::Option<&crate::types::ActorProcess> {
+        self.process.as_ref()
     }
 }
 impl Actor {
@@ -39,6 +45,7 @@ pub struct ActorBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) user: ::std::option::Option<crate::types::User>,
     pub(crate) session: ::std::option::Option<crate::types::Session>,
+    pub(crate) process: ::std::option::Option<crate::types::ActorProcess>,
 }
 impl ActorBuilder {
     /// <p>ID of the threat actor.</p>
@@ -84,12 +91,27 @@ impl ActorBuilder {
     pub fn get_session(&self) -> &::std::option::Option<crate::types::Session> {
         &self.session
     }
+    /// <p>Contains information about the process associated with the threat actor. This includes details such as process name, path, execution time, and unique identifiers that help track the actor's activities within the system.</p>
+    pub fn process(mut self, input: crate::types::ActorProcess) -> Self {
+        self.process = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Contains information about the process associated with the threat actor. This includes details such as process name, path, execution time, and unique identifiers that help track the actor's activities within the system.</p>
+    pub fn set_process(mut self, input: ::std::option::Option<crate::types::ActorProcess>) -> Self {
+        self.process = input;
+        self
+    }
+    /// <p>Contains information about the process associated with the threat actor. This includes details such as process name, path, execution time, and unique identifiers that help track the actor's activities within the system.</p>
+    pub fn get_process(&self) -> &::std::option::Option<crate::types::ActorProcess> {
+        &self.process
+    }
     /// Consumes the builder and constructs a [`Actor`](crate::types::Actor).
     pub fn build(self) -> crate::types::Actor {
         crate::types::Actor {
             id: self.id,
             user: self.user,
             session: self.session,
+            process: self.process,
         }
     }
 }

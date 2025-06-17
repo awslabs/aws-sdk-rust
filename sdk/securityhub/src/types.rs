@@ -45,6 +45,10 @@ pub use crate::types::_record_state::RecordState;
 
 pub use crate::types::_note_update::NoteUpdate;
 
+pub use crate::types::_provider_update_configuration::ProviderUpdateConfiguration;
+
+pub use crate::types::_jira_cloud_update_configuration::JiraCloudUpdateConfiguration;
+
 pub use crate::types::_policy::Policy;
 
 pub use crate::types::_security_hub_policy::SecurityHubPolicy;
@@ -52,6 +56,44 @@ pub use crate::types::_security_hub_policy::SecurityHubPolicy;
 pub use crate::types::_security_controls_configuration::SecurityControlsConfiguration;
 
 pub use crate::types::_security_control_custom_parameter::SecurityControlCustomParameter;
+
+pub use crate::types::_automation_rules_action_v2::AutomationRulesActionV2;
+
+pub use crate::types::_external_integration_configuration::ExternalIntegrationConfiguration;
+
+pub use crate::types::_automation_rules_finding_fields_update_v2::AutomationRulesFindingFieldsUpdateV2;
+
+pub use crate::types::_automation_rules_action_type_v2::AutomationRulesActionTypeV2;
+
+pub use crate::types::_criteria::Criteria;
+
+pub use crate::types::_ocsf_finding_filters::OcsfFindingFilters;
+
+pub use crate::types::_allowed_operators::AllowedOperators;
+
+pub use crate::types::_composite_filter::CompositeFilter;
+
+pub use crate::types::_ocsf_map_filter::OcsfMapFilter;
+
+pub use crate::types::_ocsf_map_field::OcsfMapField;
+
+pub use crate::types::_ocsf_number_filter::OcsfNumberFilter;
+
+pub use crate::types::_ocsf_number_field::OcsfNumberField;
+
+pub use crate::types::_ocsf_boolean_filter::OcsfBooleanFilter;
+
+pub use crate::types::_ocsf_boolean_field::OcsfBooleanField;
+
+pub use crate::types::_ocsf_date_filter::OcsfDateFilter;
+
+pub use crate::types::_ocsf_date_field::OcsfDateField;
+
+pub use crate::types::_ocsf_string_filter::OcsfStringFilter;
+
+pub use crate::types::_ocsf_string_field::OcsfStringField;
+
+pub use crate::types::_rule_status_v2::RuleStatusV2;
 
 pub use crate::types::_target::Target;
 
@@ -93,6 +135,8 @@ pub use crate::types::_region_availability_status::RegionAvailabilityStatus;
 
 pub use crate::types::_severity_rating::SeverityRating;
 
+pub use crate::types::_security_hub_feature::SecurityHubFeature;
+
 pub use crate::types::_admin_account::AdminAccount;
 
 pub use crate::types::_admin_status::AdminStatus;
@@ -103,23 +147,83 @@ pub use crate::types::_invitation::Invitation;
 
 pub use crate::types::_finding_aggregator::FindingAggregator;
 
+pub use crate::types::_connector_summary::ConnectorSummary;
+
+pub use crate::types::_provider_summary::ProviderSummary;
+
+pub use crate::types::_connector_status::ConnectorStatus;
+
+pub use crate::types::_connector_provider_name::ConnectorProviderName;
+
 pub use crate::types::_configuration_policy_association_summary::ConfigurationPolicyAssociationSummary;
 
 pub use crate::types::_association_filters::AssociationFilters;
 
 pub use crate::types::_configuration_policy_summary::ConfigurationPolicySummary;
 
+pub use crate::types::_automation_rules_metadata_v2::AutomationRulesMetadataV2;
+
+pub use crate::types::_automation_rules_action_type_object_v2::AutomationRulesActionTypeObjectV2;
+
 pub use crate::types::_automation_rules_metadata::AutomationRulesMetadata;
 
 pub use crate::types::_rule_status::RuleStatus;
 
+pub use crate::types::_aggregator_v2::AggregatorV2;
+
 pub use crate::types::_result::Result;
+
+pub use crate::types::_resource_result::ResourceResult;
+
+pub use crate::types::_resource_tag::ResourceTag;
+
+pub use crate::types::_resource_findings_summary::ResourceFindingsSummary;
+
+pub use crate::types::_resource_severity_breakdown::ResourceSeverityBreakdown;
+
+pub use crate::types::_resource_category::ResourceCategory;
+
+pub use crate::types::_sort_criterion::SortCriterion;
+
+pub use crate::types::_sort_order::SortOrder;
+
+pub use crate::types::_resources_filters::ResourcesFilters;
+
+pub use crate::types::_resources_composite_filter::ResourcesCompositeFilter;
+
+pub use crate::types::_resources_map_filter::ResourcesMapFilter;
+
+pub use crate::types::_resources_map_field::ResourcesMapField;
+
+pub use crate::types::_resources_number_filter::ResourcesNumberFilter;
+
+pub use crate::types::_resources_number_field::ResourcesNumberField;
+
+pub use crate::types::_resources_date_filter::ResourcesDateFilter;
+
+pub use crate::types::_resources_date_field::ResourcesDateField;
+
+pub use crate::types::_resources_string_filter::ResourcesStringFilter;
+
+pub use crate::types::_resources_string_field::ResourcesStringField;
+
+pub use crate::types::_group_by_result::GroupByResult;
+
+pub use crate::types::_group_by_value::GroupByValue;
+
+pub use crate::types::_resource_group_by_rule::ResourceGroupByRule;
+
+pub use crate::types::_resource_group_by_field::ResourceGroupByField;
 
 pub use crate::types::_insight::Insight;
 
 pub use crate::types::_insight_results::InsightResults;
 
 pub use crate::types::_insight_result_value::InsightResultValue;
+
+pub use crate::types::_group_by_rule::GroupByRule;
+
+pub use crate::types::_group_by_field::GroupByField;
 
 pub use crate::types::_aws_security_finding::AwsSecurityFinding;
 
@@ -1373,10 +1477,6 @@ pub use crate::types::_recommendation::Recommendation;
 
 pub use crate::types::_severity::Severity;
 
-pub use crate::types::_sort_criterion::SortCriterion;
-
-pub use crate::types::_sort_order::SortOrder;
-
 pub use crate::types::_finding_history_record::FindingHistoryRecord;
 
 pub use crate::types::_finding_history_update::FindingHistoryUpdate;
@@ -1397,11 +1497,25 @@ pub use crate::types::_standards_controls_updatable::StandardsControlsUpdatable;
 
 pub use crate::types::_standards_status::StandardsStatus;
 
+pub use crate::types::_provider_detail::ProviderDetail;
+
+pub use crate::types::_service_now_detail::ServiceNowDetail;
+
+pub use crate::types::_connector_auth_status::ConnectorAuthStatus;
+
+pub use crate::types::_jira_cloud_detail::JiraCloudDetail;
+
+pub use crate::types::_health_check::HealthCheck;
+
 pub use crate::types::_standards_control::StandardsControl;
 
 pub use crate::types::_standard::Standard;
 
 pub use crate::types::_standards_managed_by::StandardsManagedBy;
+
+pub use crate::types::_product_v2::ProductV2;
+
+pub use crate::types::_integration_v2_type::IntegrationV2Type;
 
 pub use crate::types::_product::Product;
 
@@ -1410,6 +1524,12 @@ pub use crate::types::_integration_type::IntegrationType;
 pub use crate::types::_action_target::ActionTarget;
 
 pub use crate::types::_account_details::AccountDetails;
+
+pub use crate::types::_provider_configuration::ProviderConfiguration;
+
+pub use crate::types::_service_now_provider_configuration::ServiceNowProviderConfiguration;
+
+pub use crate::types::_jira_cloud_provider_configuration::JiraCloudProviderConfiguration;
 
 pub use crate::types::_automation_rules_action::AutomationRulesAction;
 
@@ -1428,6 +1548,14 @@ pub use crate::types::_unprocessed_standards_control_association_update::Unproce
 pub use crate::types::_unprocessed_error_code::UnprocessedErrorCode;
 
 pub use crate::types::_standards_control_association_update::StandardsControlAssociationUpdate;
+
+pub use crate::types::_batch_update_findings_v2_unprocessed_finding::BatchUpdateFindingsV2UnprocessedFinding;
+
+pub use crate::types::_batch_update_findings_v2_unprocessed_finding_error_code::BatchUpdateFindingsV2UnprocessedFindingErrorCode;
+
+pub use crate::types::_ocsf_finding_identifier::OcsfFindingIdentifier;
+
+pub use crate::types::_batch_update_findings_v2_processed_finding::BatchUpdateFindingsV2ProcessedFinding;
 
 pub use crate::types::_batch_update_findings_unprocessed_finding::BatchUpdateFindingsUnprocessedFinding;
 
@@ -1485,6 +1613,10 @@ mod _admin_account;
 
 mod _admin_status;
 
+mod _aggregator_v2;
+
+mod _allowed_operators;
+
 mod _associated_standard;
 
 mod _association_filters;
@@ -1503,13 +1635,23 @@ mod _automation_rules_action;
 
 mod _automation_rules_action_type;
 
+mod _automation_rules_action_type_object_v2;
+
+mod _automation_rules_action_type_v2;
+
+mod _automation_rules_action_v2;
+
 mod _automation_rules_config;
 
 mod _automation_rules_finding_fields_update;
 
+mod _automation_rules_finding_fields_update_v2;
+
 mod _automation_rules_finding_filters;
 
 mod _automation_rules_metadata;
+
+mod _automation_rules_metadata_v2;
 
 mod _availability_zone;
 
@@ -2511,6 +2653,12 @@ mod _aws_xray_encryption_config_details;
 
 mod _batch_update_findings_unprocessed_finding;
 
+mod _batch_update_findings_v2_processed_finding;
+
+mod _batch_update_findings_v2_unprocessed_finding;
+
+mod _batch_update_findings_v2_unprocessed_finding_error_code;
+
 mod _boolean_configuration_options;
 
 mod _boolean_filter;
@@ -2533,6 +2681,8 @@ mod _compliance;
 
 mod _compliance_status;
 
+mod _composite_filter;
+
 mod _configuration_options;
 
 mod _configuration_policy_association;
@@ -2545,6 +2695,14 @@ mod _configuration_policy_summary;
 
 mod _connection_direction;
 
+mod _connector_auth_status;
+
+mod _connector_provider_name;
+
+mod _connector_status;
+
+mod _connector_summary;
+
 mod _container_details;
 
 mod _control_finding_generator;
@@ -2552,6 +2710,8 @@ mod _control_finding_generator;
 mod _control_status;
 
 mod _country;
+
+mod _criteria;
 
 mod _custom_data_identifiers_detections;
 
@@ -2576,6 +2736,8 @@ mod _double_configuration_options;
 mod _enum_configuration_options;
 
 mod _enum_list_configuration_options;
+
+mod _external_integration_configuration;
 
 mod _file_paths;
 
@@ -2605,6 +2767,16 @@ mod _generator_details;
 
 mod _geo_location;
 
+mod _group_by_field;
+
+mod _group_by_result;
+
+mod _group_by_rule;
+
+mod _group_by_value;
+
+mod _health_check;
+
 mod _icmp_type_code;
 
 mod _import_findings_error;
@@ -2623,6 +2795,8 @@ mod _integer_list_configuration_options;
 
 mod _integration_type;
 
+mod _integration_v2_type;
+
 mod _invitation;
 
 mod _ip_filter;
@@ -2630,6 +2804,12 @@ mod _ip_filter;
 mod _ip_organization_details;
 
 mod _ipv6_cidr_block_association;
+
+mod _jira_cloud_detail;
+
+mod _jira_cloud_provider_configuration;
+
+mod _jira_cloud_update_configuration;
 
 mod _keyword_filter;
 
@@ -2675,6 +2855,30 @@ mod _number_filter;
 
 mod _occurrences;
 
+mod _ocsf_boolean_field;
+
+mod _ocsf_boolean_filter;
+
+mod _ocsf_date_field;
+
+mod _ocsf_date_filter;
+
+mod _ocsf_finding_filters;
+
+mod _ocsf_finding_identifier;
+
+mod _ocsf_map_field;
+
+mod _ocsf_map_filter;
+
+mod _ocsf_number_field;
+
+mod _ocsf_number_filter;
+
+mod _ocsf_string_field;
+
+mod _ocsf_string_filter;
+
 mod _organization_configuration;
 
 mod _organization_configuration_configuration_type;
@@ -2709,7 +2913,17 @@ mod _process_details;
 
 mod _product;
 
+mod _product_v2;
+
 mod _propagating_vgw_set_details;
+
+mod _provider_configuration;
+
+mod _provider_detail;
+
+mod _provider_summary;
+
+mod _provider_update_configuration;
 
 mod _range;
 
@@ -2727,7 +2941,41 @@ mod _remediation;
 
 mod _resource;
 
+mod _resource_category;
+
 mod _resource_details;
+
+mod _resource_findings_summary;
+
+mod _resource_group_by_field;
+
+mod _resource_group_by_rule;
+
+mod _resource_result;
+
+mod _resource_severity_breakdown;
+
+mod _resource_tag;
+
+mod _resources_composite_filter;
+
+mod _resources_date_field;
+
+mod _resources_date_filter;
+
+mod _resources_filters;
+
+mod _resources_map_field;
+
+mod _resources_map_filter;
+
+mod _resources_number_field;
+
+mod _resources_number_filter;
+
+mod _resources_string_field;
+
+mod _resources_string_filter;
 
 mod _result;
 
@@ -2773,6 +3021,8 @@ mod _rule_group_variables_port_sets_details;
 
 mod _rule_status;
 
+mod _rule_status_v2;
+
 mod _security_control;
 
 mod _security_control_custom_parameter;
@@ -2785,6 +3035,8 @@ mod _security_control_property;
 
 mod _security_controls_configuration;
 
+mod _security_hub_feature;
+
 mod _security_hub_policy;
 
 mod _sensitive_data_detections;
@@ -2792,6 +3044,10 @@ mod _sensitive_data_detections;
 mod _sensitive_data_result;
 
 mod _sequence;
+
+mod _service_now_detail;
+
+mod _service_now_provider_configuration;
 
 mod _severity;
 

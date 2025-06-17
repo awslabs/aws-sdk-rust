@@ -10,6 +10,12 @@ pub fn ser_analyzer_configuration(
             crate::protocol_serde::shape_unused_access_configuration::ser_unused_access_configuration(&mut object_1, inner)?;
             object_1.finish();
         }
+        crate::types::AnalyzerConfiguration::InternalAccess(inner) => {
+            #[allow(unused_mut)]
+            let mut object_2 = object_8.key("internalAccess").start_object();
+            crate::protocol_serde::shape_internal_access_configuration::ser_internal_access_configuration(&mut object_2, inner)?;
+            object_2.finish();
+        }
         crate::types::AnalyzerConfiguration::Unknown => {
             return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant(
                 "AnalyzerConfiguration",
@@ -53,6 +59,11 @@ where
                             crate::protocol_serde::shape_unused_access_configuration::de_unused_access_configuration(tokens)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'unusedAccess' cannot be null")
                             })?,
+                        )),
+                        "internalAccess" => Some(crate::types::AnalyzerConfiguration::InternalAccess(
+                            crate::protocol_serde::shape_internal_access_configuration::de_internal_access_configuration(tokens)?.ok_or_else(
+                                || ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'internalAccess' cannot be null"),
+                            )?,
                         )),
                         _ => {
                             ::aws_smithy_json::deserialize::token::skip_value(tokens)?;

@@ -48,6 +48,9 @@ where
                                     .transpose()?,
                             );
                         }
+                        "Virtual" => {
+                            builder = builder.set_virtual(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                        }
                         "Settings" => {
                             builder = builder.set_settings(crate::protocol_serde::shape_data_provider_settings::de_data_provider_settings(tokens)?);
                         }

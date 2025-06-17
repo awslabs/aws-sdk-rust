@@ -26,6 +26,8 @@ pub struct CertificateSummary {
     pub key_usages: ::std::option::Option<::std::vec::Vec<crate::types::KeyUsageName>>,
     /// <p>Contains a list of Extended Key Usage X.509 v3 extension objects. Each object specifies a purpose for which the certificate public key can be used and consists of a name and an object identifier (OID).</p>
     pub extended_key_usages: ::std::option::Option<::std::vec::Vec<crate::types::ExtendedKeyUsageName>>,
+    /// <p>Indicates if export is enabled for the certificate.</p>
+    pub export_option: ::std::option::Option<crate::types::CertificateExport>,
     /// <p>Indicates whether the certificate is currently in use by any Amazon Web Services resources.</p>
     pub in_use: ::std::option::Option<bool>,
     /// <p>Indicates whether the certificate has been exported. This value exists only when the certificate type is <code>PRIVATE</code>.</p>
@@ -94,6 +96,10 @@ impl CertificateSummary {
     pub fn extended_key_usages(&self) -> &[crate::types::ExtendedKeyUsageName] {
         self.extended_key_usages.as_deref().unwrap_or_default()
     }
+    /// <p>Indicates if export is enabled for the certificate.</p>
+    pub fn export_option(&self) -> ::std::option::Option<&crate::types::CertificateExport> {
+        self.export_option.as_ref()
+    }
     /// <p>Indicates whether the certificate is currently in use by any Amazon Web Services resources.</p>
     pub fn in_use(&self) -> ::std::option::Option<bool> {
         self.in_use
@@ -155,6 +161,7 @@ pub struct CertificateSummaryBuilder {
     pub(crate) key_algorithm: ::std::option::Option<crate::types::KeyAlgorithm>,
     pub(crate) key_usages: ::std::option::Option<::std::vec::Vec<crate::types::KeyUsageName>>,
     pub(crate) extended_key_usages: ::std::option::Option<::std::vec::Vec<crate::types::ExtendedKeyUsageName>>,
+    pub(crate) export_option: ::std::option::Option<crate::types::CertificateExport>,
     pub(crate) in_use: ::std::option::Option<bool>,
     pub(crate) exported: ::std::option::Option<bool>,
     pub(crate) renewal_eligibility: ::std::option::Option<crate::types::RenewalEligibility>,
@@ -323,6 +330,20 @@ impl CertificateSummaryBuilder {
     pub fn get_extended_key_usages(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ExtendedKeyUsageName>> {
         &self.extended_key_usages
     }
+    /// <p>Indicates if export is enabled for the certificate.</p>
+    pub fn export_option(mut self, input: crate::types::CertificateExport) -> Self {
+        self.export_option = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates if export is enabled for the certificate.</p>
+    pub fn set_export_option(mut self, input: ::std::option::Option<crate::types::CertificateExport>) -> Self {
+        self.export_option = input;
+        self
+    }
+    /// <p>Indicates if export is enabled for the certificate.</p>
+    pub fn get_export_option(&self) -> &::std::option::Option<crate::types::CertificateExport> {
+        &self.export_option
+    }
     /// <p>Indicates whether the certificate is currently in use by any Amazon Web Services resources.</p>
     pub fn in_use(mut self, input: bool) -> Self {
         self.in_use = ::std::option::Option::Some(input);
@@ -475,6 +496,7 @@ impl CertificateSummaryBuilder {
             key_algorithm: self.key_algorithm,
             key_usages: self.key_usages,
             extended_key_usages: self.extended_key_usages,
+            export_option: self.export_option,
             in_use: self.in_use,
             exported: self.exported,
             renewal_eligibility: self.renewal_eligibility,

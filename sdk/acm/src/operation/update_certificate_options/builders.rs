@@ -22,7 +22,7 @@ impl crate::operation::update_certificate_options::builders::UpdateCertificateOp
 }
 /// Fluent builder constructing a request to `UpdateCertificateOptions`.
 ///
-/// <p>Updates a certificate. Currently, you can use this function to specify whether to opt in to or out of recording your certificate in a certificate transparency log. For more information, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/acm-bestpractices.html#best-practices-transparency"> Opting Out of Certificate Transparency Logging</a>.</p>
+/// <p>Updates a certificate. You can use this function to specify whether to opt in to or out of recording your certificate in a certificate transparency log and exporting. For more information, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/acm-bestpractices.html#best-practices-transparency"> Opting Out of Certificate Transparency Logging</a> and <a href="https://docs.aws.amazon.com/acm/latest/userguide/acm-exportable-certificates.html">Certificate Manager Exportable Managed Certificates</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateCertificateOptionsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -125,17 +125,17 @@ impl UpdateCertificateOptionsFluentBuilder {
     pub fn get_certificate_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_certificate_arn()
     }
-    /// <p>Use to update the options for your certificate. Currently, you can specify whether to add your certificate to a transparency log. Certificate transparency makes it possible to detect SSL/TLS certificates that have been mistakenly or maliciously issued. Certificates that have not been logged typically produce an error message in a browser.</p>
+    /// <p>Use to update the options for your certificate. Currently, you can specify whether to add your certificate to a transparency log or export your certificate. Certificate transparency makes it possible to detect SSL/TLS certificates that have been mistakenly or maliciously issued. Certificates that have not been logged typically produce an error message in a browser.</p>
     pub fn options(mut self, input: crate::types::CertificateOptions) -> Self {
         self.inner = self.inner.options(input);
         self
     }
-    /// <p>Use to update the options for your certificate. Currently, you can specify whether to add your certificate to a transparency log. Certificate transparency makes it possible to detect SSL/TLS certificates that have been mistakenly or maliciously issued. Certificates that have not been logged typically produce an error message in a browser.</p>
+    /// <p>Use to update the options for your certificate. Currently, you can specify whether to add your certificate to a transparency log or export your certificate. Certificate transparency makes it possible to detect SSL/TLS certificates that have been mistakenly or maliciously issued. Certificates that have not been logged typically produce an error message in a browser.</p>
     pub fn set_options(mut self, input: ::std::option::Option<crate::types::CertificateOptions>) -> Self {
         self.inner = self.inner.set_options(input);
         self
     }
-    /// <p>Use to update the options for your certificate. Currently, you can specify whether to add your certificate to a transparency log. Certificate transparency makes it possible to detect SSL/TLS certificates that have been mistakenly or maliciously issued. Certificates that have not been logged typically produce an error message in a browser.</p>
+    /// <p>Use to update the options for your certificate. Currently, you can specify whether to add your certificate to a transparency log or export your certificate. Certificate transparency makes it possible to detect SSL/TLS certificates that have been mistakenly or maliciously issued. Certificates that have not been logged typically produce an error message in a browser.</p>
     pub fn get_options(&self) -> &::std::option::Option<crate::types::CertificateOptions> {
         self.inner.get_options()
     }

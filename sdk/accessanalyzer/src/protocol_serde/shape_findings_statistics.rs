@@ -37,6 +37,14 @@ where
                                     )
                                 })?,
                         )),
+                        "internalAccessFindingsStatistics" => Some(crate::types::FindingsStatistics::InternalAccessFindingsStatistics(
+                            crate::protocol_serde::shape_internal_access_findings_statistics::de_internal_access_findings_statistics(tokens)?
+                                .ok_or_else(|| {
+                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom(
+                                        "value for 'internalAccessFindingsStatistics' cannot be null",
+                                    )
+                                })?,
+                        )),
                         "unusedAccessFindingsStatistics" => Some(crate::types::FindingsStatistics::UnusedAccessFindingsStatistics(
                             crate::protocol_serde::shape_unused_access_findings_statistics::de_unused_access_findings_statistics(tokens)?
                                 .ok_or_else(|| {

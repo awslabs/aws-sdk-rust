@@ -17,6 +17,7 @@
 ///     AggregationType::AwsEc2Instance => { /* ... */ },
 ///     AggregationType::AwsEcrContainer => { /* ... */ },
 ///     AggregationType::AwsLambdaFunction => { /* ... */ },
+///     AggregationType::CodeRepository => { /* ... */ },
 ///     AggregationType::FindingType => { /* ... */ },
 ///     AggregationType::ImageLayer => { /* ... */ },
 ///     AggregationType::LambdaLayer => { /* ... */ },
@@ -62,6 +63,8 @@ pub enum AggregationType {
     #[allow(missing_docs)] // documentation missing in model
     AwsLambdaFunction,
     #[allow(missing_docs)] // documentation missing in model
+    CodeRepository,
+    #[allow(missing_docs)] // documentation missing in model
     FindingType,
     #[allow(missing_docs)] // documentation missing in model
     ImageLayer,
@@ -85,6 +88,7 @@ impl ::std::convert::From<&str> for AggregationType {
             "AWS_EC2_INSTANCE" => AggregationType::AwsEc2Instance,
             "AWS_ECR_CONTAINER" => AggregationType::AwsEcrContainer,
             "AWS_LAMBDA_FUNCTION" => AggregationType::AwsLambdaFunction,
+            "CODE_REPOSITORY" => AggregationType::CodeRepository,
             "FINDING_TYPE" => AggregationType::FindingType,
             "IMAGE_LAYER" => AggregationType::ImageLayer,
             "LAMBDA_LAYER" => AggregationType::LambdaLayer,
@@ -111,6 +115,7 @@ impl AggregationType {
             AggregationType::AwsEc2Instance => "AWS_EC2_INSTANCE",
             AggregationType::AwsEcrContainer => "AWS_ECR_CONTAINER",
             AggregationType::AwsLambdaFunction => "AWS_LAMBDA_FUNCTION",
+            AggregationType::CodeRepository => "CODE_REPOSITORY",
             AggregationType::FindingType => "FINDING_TYPE",
             AggregationType::ImageLayer => "IMAGE_LAYER",
             AggregationType::LambdaLayer => "LAMBDA_LAYER",
@@ -128,6 +133,7 @@ impl AggregationType {
             "AWS_EC2_INSTANCE",
             "AWS_ECR_CONTAINER",
             "AWS_LAMBDA_FUNCTION",
+            "CODE_REPOSITORY",
             "FINDING_TYPE",
             "IMAGE_LAYER",
             "LAMBDA_LAYER",
@@ -162,6 +168,7 @@ impl ::std::fmt::Display for AggregationType {
             AggregationType::AwsEc2Instance => write!(f, "AWS_EC2_INSTANCE"),
             AggregationType::AwsEcrContainer => write!(f, "AWS_ECR_CONTAINER"),
             AggregationType::AwsLambdaFunction => write!(f, "AWS_LAMBDA_FUNCTION"),
+            AggregationType::CodeRepository => write!(f, "CODE_REPOSITORY"),
             AggregationType::FindingType => write!(f, "FINDING_TYPE"),
             AggregationType::ImageLayer => write!(f, "IMAGE_LAYER"),
             AggregationType::LambdaLayer => write!(f, "LAMBDA_LAYER"),

@@ -220,4 +220,6 @@ mod request_certificate;
 
 mod resend_validation_email;
 
+mod revoke_certificate;
+
 mod update_certificate_options;

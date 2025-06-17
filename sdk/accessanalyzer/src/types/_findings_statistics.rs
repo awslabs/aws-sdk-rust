@@ -6,6 +6,8 @@
 pub enum FindingsStatistics {
     /// <p>The aggregate statistics for an external access analyzer.</p>
     ExternalAccessFindingsStatistics(crate::types::ExternalAccessFindingsStatistics),
+    /// <p>The aggregate statistics for an internal access analyzer. This includes information about active, archived, and resolved findings related to internal access within your Amazon Web Services organization or account.</p>
+    InternalAccessFindingsStatistics(crate::types::InternalAccessFindingsStatistics),
     /// <p>The aggregate statistics for an unused access analyzer.</p>
     UnusedAccessFindingsStatistics(crate::types::UnusedAccessFindingsStatistics),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
@@ -31,6 +33,19 @@ impl FindingsStatistics {
     /// Returns true if this is a [`ExternalAccessFindingsStatistics`](crate::types::FindingsStatistics::ExternalAccessFindingsStatistics).
     pub fn is_external_access_findings_statistics(&self) -> bool {
         self.as_external_access_findings_statistics().is_ok()
+    }
+    /// Tries to convert the enum instance into [`InternalAccessFindingsStatistics`](crate::types::FindingsStatistics::InternalAccessFindingsStatistics), extracting the inner [`InternalAccessFindingsStatistics`](crate::types::InternalAccessFindingsStatistics).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_internal_access_findings_statistics(&self) -> ::std::result::Result<&crate::types::InternalAccessFindingsStatistics, &Self> {
+        if let FindingsStatistics::InternalAccessFindingsStatistics(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`InternalAccessFindingsStatistics`](crate::types::FindingsStatistics::InternalAccessFindingsStatistics).
+    pub fn is_internal_access_findings_statistics(&self) -> bool {
+        self.as_internal_access_findings_statistics().is_ok()
     }
     /// Tries to convert the enum instance into [`UnusedAccessFindingsStatistics`](crate::types::FindingsStatistics::UnusedAccessFindingsStatistics), extracting the inner [`UnusedAccessFindingsStatistics`](crate::types::UnusedAccessFindingsStatistics).
     /// Returns `Err(&Self)` if it can't be converted.

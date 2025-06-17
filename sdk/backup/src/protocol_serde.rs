@@ -23,6 +23,8 @@ pub fn parse_http_error_metadata(
     crate::json_errors::parse_error_metadata(response_body, response_headers)
 }
 
+pub(crate) mod shape_associate_backup_vault_mpa_approval_team;
+
 pub(crate) mod shape_cancel_legal_hold;
 
 pub(crate) mod shape_create_backup_plan;
@@ -38,6 +40,8 @@ pub(crate) mod shape_create_legal_hold;
 pub(crate) mod shape_create_logically_air_gapped_backup_vault;
 
 pub(crate) mod shape_create_report_plan;
+
+pub(crate) mod shape_create_restore_access_backup_vault;
 
 pub(crate) mod shape_create_restore_testing_plan;
 
@@ -86,6 +90,8 @@ pub(crate) mod shape_describe_report_job;
 pub(crate) mod shape_describe_report_plan;
 
 pub(crate) mod shape_describe_restore_job;
+
+pub(crate) mod shape_disassociate_backup_vault_mpa_approval_team;
 
 pub(crate) mod shape_disassociate_recovery_point;
 
@@ -159,6 +165,8 @@ pub(crate) mod shape_list_report_jobs;
 
 pub(crate) mod shape_list_report_plans;
 
+pub(crate) mod shape_list_restore_access_backup_vaults;
+
 pub(crate) mod shape_list_restore_job_summaries;
 
 pub(crate) mod shape_list_restore_jobs;
@@ -178,6 +186,8 @@ pub(crate) mod shape_put_backup_vault_lock_configuration;
 pub(crate) mod shape_put_backup_vault_notifications;
 
 pub(crate) mod shape_put_restore_validation_result;
+
+pub(crate) mod shape_revoke_restore_access_backup_vault;
 
 pub(crate) mod shape_start_backup_job;
 
@@ -221,6 +231,8 @@ pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
 
 pub(crate) mod shape_already_exists_exception;
 
+pub(crate) mod shape_associate_backup_vault_mpa_approval_team_input;
+
 pub(crate) mod shape_conflict_exception;
 
 pub(crate) mod shape_create_backup_plan_input;
@@ -237,11 +249,15 @@ pub(crate) mod shape_create_logically_air_gapped_backup_vault_input;
 
 pub(crate) mod shape_create_report_plan_input;
 
+pub(crate) mod shape_create_restore_access_backup_vault_input;
+
 pub(crate) mod shape_create_restore_testing_plan_input;
 
 pub(crate) mod shape_create_restore_testing_selection_input;
 
 pub(crate) mod shape_dependency_failure_exception;
+
+pub(crate) mod shape_disassociate_backup_vault_mpa_approval_team_input;
 
 pub(crate) mod shape_get_backup_plan_from_json_input;
 
@@ -343,6 +359,8 @@ pub(crate) mod shape_global_settings;
 
 pub(crate) mod shape_indexed_recovery_point_list;
 
+pub(crate) mod shape_latest_mpa_approval_team_update;
+
 pub(crate) mod shape_legal_holds_list;
 
 pub(crate) mod shape_lifecycle;
@@ -378,6 +396,8 @@ pub(crate) mod shape_resource_type_management_preference;
 pub(crate) mod shape_resource_type_opt_in_preference;
 
 pub(crate) mod shape_resource_types;
+
+pub(crate) mod shape_restore_access_backup_vault_list;
 
 pub(crate) mod shape_restore_job_creator;
 
@@ -461,6 +481,8 @@ pub(crate) mod shape_resource_arns;
 
 pub(crate) mod shape_resource_identifiers;
 
+pub(crate) mod shape_restore_access_backup_vault_list_member;
+
 pub(crate) mod shape_restore_job_summary;
 
 pub(crate) mod shape_restore_jobs_list_member;
@@ -494,6 +516,8 @@ pub(crate) mod shape_index_action;
 pub(crate) mod shape_key_value;
 
 pub(crate) mod shape_key_value_list;
+
+pub(crate) mod shape_latest_revoke_request;
 
 pub(crate) mod shape_restore_testing_recovery_point_type_list;
 

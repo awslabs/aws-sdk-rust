@@ -10,6 +10,8 @@ pub struct ResourceDetails {
     pub aws_ecr_container_image: ::std::option::Option<crate::types::AwsEcrContainerImageDetails>,
     /// <p>A summary of the information about an Amazon Web Services Lambda function affected by a finding.</p>
     pub aws_lambda_function: ::std::option::Option<crate::types::AwsLambdaFunctionDetails>,
+    /// <p>Contains details about a code repository resource associated with a finding.</p>
+    pub code_repository: ::std::option::Option<crate::types::CodeRepositoryDetails>,
 }
 impl ResourceDetails {
     /// <p>An object that contains details about the Amazon EC2 instance involved in the finding.</p>
@@ -23,6 +25,10 @@ impl ResourceDetails {
     /// <p>A summary of the information about an Amazon Web Services Lambda function affected by a finding.</p>
     pub fn aws_lambda_function(&self) -> ::std::option::Option<&crate::types::AwsLambdaFunctionDetails> {
         self.aws_lambda_function.as_ref()
+    }
+    /// <p>Contains details about a code repository resource associated with a finding.</p>
+    pub fn code_repository(&self) -> ::std::option::Option<&crate::types::CodeRepositoryDetails> {
+        self.code_repository.as_ref()
     }
 }
 impl ResourceDetails {
@@ -39,6 +45,7 @@ pub struct ResourceDetailsBuilder {
     pub(crate) aws_ec2_instance: ::std::option::Option<crate::types::AwsEc2InstanceDetails>,
     pub(crate) aws_ecr_container_image: ::std::option::Option<crate::types::AwsEcrContainerImageDetails>,
     pub(crate) aws_lambda_function: ::std::option::Option<crate::types::AwsLambdaFunctionDetails>,
+    pub(crate) code_repository: ::std::option::Option<crate::types::CodeRepositoryDetails>,
 }
 impl ResourceDetailsBuilder {
     /// <p>An object that contains details about the Amazon EC2 instance involved in the finding.</p>
@@ -83,12 +90,27 @@ impl ResourceDetailsBuilder {
     pub fn get_aws_lambda_function(&self) -> &::std::option::Option<crate::types::AwsLambdaFunctionDetails> {
         &self.aws_lambda_function
     }
+    /// <p>Contains details about a code repository resource associated with a finding.</p>
+    pub fn code_repository(mut self, input: crate::types::CodeRepositoryDetails) -> Self {
+        self.code_repository = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Contains details about a code repository resource associated with a finding.</p>
+    pub fn set_code_repository(mut self, input: ::std::option::Option<crate::types::CodeRepositoryDetails>) -> Self {
+        self.code_repository = input;
+        self
+    }
+    /// <p>Contains details about a code repository resource associated with a finding.</p>
+    pub fn get_code_repository(&self) -> &::std::option::Option<crate::types::CodeRepositoryDetails> {
+        &self.code_repository
+    }
     /// Consumes the builder and constructs a [`ResourceDetails`](crate::types::ResourceDetails).
     pub fn build(self) -> crate::types::ResourceDetails {
         crate::types::ResourceDetails {
             aws_ec2_instance: self.aws_ec2_instance,
             aws_ecr_container_image: self.aws_ecr_container_image,
             aws_lambda_function: self.aws_lambda_function,
+            code_repository: self.code_repository,
         }
     }
 }

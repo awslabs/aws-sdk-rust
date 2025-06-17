@@ -73,6 +73,9 @@ pub mod describe_rule_group;
 /// Types for the `DescribeRuleGroupMetadata` operation.
 pub mod describe_rule_group_metadata;
 
+/// Types for the `DescribeRuleGroupSummary` operation.
+pub mod describe_rule_group_summary;
+
 /// Types for the `DescribeTLSInspectionConfiguration` operation.
 pub mod describe_tls_inspection_configuration;
 

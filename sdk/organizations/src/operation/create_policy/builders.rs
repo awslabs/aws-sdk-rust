@@ -25,7 +25,7 @@ impl crate::operation::create_policy::builders::CreatePolicyInputBuilder {
 /// <p>Creates a policy of a specified type that you can attach to a root, an organizational unit (OU), or an individual Amazon Web Services account.</p>
 /// <p>For more information about policies and their use, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies.html">Managing Organizations policies</a>.</p>
 /// <p>If the request includes tags, then the requester must have the <code>organizations:TagResource</code> permission.</p>
-/// <p>This operation can be called only from the organization's management account or by a member account that is a delegated administrator for an Amazon Web Services service.</p>
+/// <p>This operation can be called only from the organization's management account or by a member account that is a delegated administrator.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreatePolicyFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -175,6 +175,8 @@ impl CreatePolicyFluentBuilder {
     /// <p><a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_chatbot.html">CHATBOT_POLICY</a></p></li>
     /// <li>
     /// <p><a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_ai-opt-out.html">AISERVICES_OPT_OUT_POLICY</a></p></li>
+    /// <li>
+    /// <p><a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_security_hub.html">SECURITYHUB_POLICY</a></p></li>
     /// </ul>
     pub fn r#type(mut self, input: crate::types::PolicyType) -> Self {
         self.inner = self.inner.r#type(input);
@@ -196,6 +198,8 @@ impl CreatePolicyFluentBuilder {
     /// <p><a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_chatbot.html">CHATBOT_POLICY</a></p></li>
     /// <li>
     /// <p><a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_ai-opt-out.html">AISERVICES_OPT_OUT_POLICY</a></p></li>
+    /// <li>
+    /// <p><a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_security_hub.html">SECURITYHUB_POLICY</a></p></li>
     /// </ul>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::PolicyType>) -> Self {
         self.inner = self.inner.set_type(input);
@@ -217,6 +221,8 @@ impl CreatePolicyFluentBuilder {
     /// <p><a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_chatbot.html">CHATBOT_POLICY</a></p></li>
     /// <li>
     /// <p><a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_ai-opt-out.html">AISERVICES_OPT_OUT_POLICY</a></p></li>
+    /// <li>
+    /// <p><a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_security_hub.html">SECURITYHUB_POLICY</a></p></li>
     /// </ul>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::PolicyType> {
         self.inner.get_type()

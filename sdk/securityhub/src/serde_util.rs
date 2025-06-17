@@ -41,6 +41,27 @@ pub(crate) fn batch_update_findings_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn batch_update_findings_v2_output_output_correct_errors(
+    mut builder: crate::operation::batch_update_findings_v2::builders::BatchUpdateFindingsV2OutputBuilder,
+) -> crate::operation::batch_update_findings_v2::builders::BatchUpdateFindingsV2OutputBuilder {
+    if builder.processed_findings.is_none() {
+        builder.processed_findings = Some(Default::default())
+    }
+    if builder.unprocessed_findings.is_none() {
+        builder.unprocessed_findings = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn connector_registrations_v2_output_output_correct_errors(
+    mut builder: crate::operation::connector_registrations_v2::builders::ConnectorRegistrationsV2OutputBuilder,
+) -> crate::operation::connector_registrations_v2::builders::ConnectorRegistrationsV2OutputBuilder {
+    if builder.connector_id.is_none() {
+        builder.connector_id = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn create_action_target_output_output_correct_errors(
     mut builder: crate::operation::create_action_target::builders::CreateActionTargetOutputBuilder,
 ) -> crate::operation::create_action_target::builders::CreateActionTargetOutputBuilder {
@@ -50,11 +71,29 @@ pub(crate) fn create_action_target_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn create_connector_v2_output_output_correct_errors(
+    mut builder: crate::operation::create_connector_v2::builders::CreateConnectorV2OutputBuilder,
+) -> crate::operation::create_connector_v2::builders::CreateConnectorV2OutputBuilder {
+    if builder.connector_id.is_none() {
+        builder.connector_id = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn create_insight_output_output_correct_errors(
     mut builder: crate::operation::create_insight::builders::CreateInsightOutputBuilder,
 ) -> crate::operation::create_insight::builders::CreateInsightOutputBuilder {
     if builder.insight_arn.is_none() {
         builder.insight_arn = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn create_ticket_v2_output_output_correct_errors(
+    mut builder: crate::operation::create_ticket_v2::builders::CreateTicketV2OutputBuilder,
+) -> crate::operation::create_ticket_v2::builders::CreateTicketV2OutputBuilder {
+    if builder.ticket_id.is_none() {
+        builder.ticket_id = Some(Default::default())
     }
     builder
 }
@@ -95,6 +134,42 @@ pub(crate) fn describe_products_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn describe_products_v2_output_output_correct_errors(
+    mut builder: crate::operation::describe_products_v2::builders::DescribeProductsV2OutputBuilder,
+) -> crate::operation::describe_products_v2::builders::DescribeProductsV2OutputBuilder {
+    if builder.products_v2.is_none() {
+        builder.products_v2 = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn get_connector_v2_output_output_correct_errors(
+    mut builder: crate::operation::get_connector_v2::builders::GetConnectorV2OutputBuilder,
+) -> crate::operation::get_connector_v2::builders::GetConnectorV2OutputBuilder {
+    if builder.connector_id.is_none() {
+        builder.connector_id = Some(Default::default())
+    }
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.created_at.is_none() {
+        builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.last_updated_at.is_none() {
+        builder.last_updated_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.health.is_none() {
+        builder.health = {
+            let builder = crate::types::builders::HealthCheckBuilder::default();
+            Some(crate::serde_util::health_check_correct_errors(builder).build())
+        }
+    }
+    if builder.provider_detail.is_none() {
+        builder.provider_detail = Some(crate::types::ProviderDetail::Unknown)
+    }
+    builder
+}
+
 pub(crate) fn get_findings_output_output_correct_errors(
     mut builder: crate::operation::get_findings::builders::GetFindingsOutputBuilder,
 ) -> crate::operation::get_findings::builders::GetFindingsOutputBuilder {
@@ -125,6 +200,24 @@ pub(crate) fn get_insights_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn get_resources_statistics_v2_output_output_correct_errors(
+    mut builder: crate::operation::get_resources_statistics_v2::builders::GetResourcesStatisticsV2OutputBuilder,
+) -> crate::operation::get_resources_statistics_v2::builders::GetResourcesStatisticsV2OutputBuilder {
+    if builder.group_by_results.is_none() {
+        builder.group_by_results = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn get_resources_v2_output_output_correct_errors(
+    mut builder: crate::operation::get_resources_v2::builders::GetResourcesV2OutputBuilder,
+) -> crate::operation::get_resources_v2::builders::GetResourcesV2OutputBuilder {
+    if builder.resources.is_none() {
+        builder.resources = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn get_security_control_definition_output_output_correct_errors(
     mut builder: crate::operation::get_security_control_definition::builders::GetSecurityControlDefinitionOutputBuilder,
 ) -> crate::operation::get_security_control_definition::builders::GetSecurityControlDefinitionOutputBuilder {
@@ -133,6 +226,15 @@ pub(crate) fn get_security_control_definition_output_output_correct_errors(
             let builder = crate::types::builders::SecurityControlDefinitionBuilder::default();
             Some(crate::serde_util::security_control_definition_correct_errors(builder).build())
         }
+    }
+    builder
+}
+
+pub(crate) fn list_connectors_v2_output_output_correct_errors(
+    mut builder: crate::operation::list_connectors_v2::builders::ListConnectorsV2OutputBuilder,
+) -> crate::operation::list_connectors_v2::builders::ListConnectorsV2OutputBuilder {
+    if builder.connectors.is_none() {
+        builder.connectors = Some(Default::default())
     }
     builder
 }
@@ -151,6 +253,16 @@ pub(crate) fn list_standards_control_associations_output_output_correct_errors(
 ) -> crate::operation::list_standards_control_associations::builders::ListStandardsControlAssociationsOutputBuilder {
     if builder.standards_control_association_summaries.is_none() {
         builder.standards_control_association_summaries = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn health_check_correct_errors(mut builder: crate::types::builders::HealthCheckBuilder) -> crate::types::builders::HealthCheckBuilder {
+    if builder.connector_status.is_none() {
+        builder.connector_status = "no value was set".parse::<crate::types::ConnectorStatus>().ok()
+    }
+    if builder.last_checked_at.is_none() {
+        builder.last_checked_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
     }
     builder
 }
@@ -203,6 +315,15 @@ pub(crate) fn action_target_correct_errors(mut builder: crate::types::builders::
     }
     if builder.description.is_none() {
         builder.description = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn automation_rules_action_v2_correct_errors(
+    mut builder: crate::types::builders::AutomationRulesActionV2Builder,
+) -> crate::types::builders::AutomationRulesActionV2Builder {
+    if builder.r#type.is_none() {
+        builder.r#type = "no value was set".parse::<crate::types::AutomationRulesActionTypeV2>().ok()
     }
     builder
 }
@@ -273,6 +394,27 @@ pub(crate) fn batch_update_findings_unprocessed_finding_correct_errors(
     builder
 }
 
+pub(crate) fn connector_summary_correct_errors(
+    mut builder: crate::types::builders::ConnectorSummaryBuilder,
+) -> crate::types::builders::ConnectorSummaryBuilder {
+    if builder.connector_id.is_none() {
+        builder.connector_id = Some(Default::default())
+    }
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.provider_summary.is_none() {
+        builder.provider_summary = {
+            let builder = crate::types::builders::ProviderSummaryBuilder::default();
+            Some(builder.build())
+        }
+    }
+    if builder.created_at.is_none() {
+        builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
 pub(crate) fn import_findings_error_correct_errors(
     mut builder: crate::types::builders::ImportFindingsErrorBuilder,
 ) -> crate::types::builders::ImportFindingsErrorBuilder {
@@ -314,6 +456,27 @@ pub(crate) fn product_correct_errors(mut builder: crate::types::builders::Produc
     builder
 }
 
+pub(crate) fn resource_result_correct_errors(
+    mut builder: crate::types::builders::ResourceResultBuilder,
+) -> crate::types::builders::ResourceResultBuilder {
+    if builder.resource_id.is_none() {
+        builder.resource_id = Some(Default::default())
+    }
+    if builder.account_id.is_none() {
+        builder.account_id = Some(Default::default())
+    }
+    if builder.region.is_none() {
+        builder.region = Some(Default::default())
+    }
+    if builder.resource_detail_capture_time_dt.is_none() {
+        builder.resource_detail_capture_time_dt = Some(Default::default())
+    }
+    if builder.resource_config.is_none() {
+        builder.resource_config = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn security_control_correct_errors(
     mut builder: crate::types::builders::SecurityControlBuilder,
 ) -> crate::types::builders::SecurityControlBuilder {
@@ -337,6 +500,15 @@ pub(crate) fn security_control_correct_errors(
     }
     if builder.security_control_status.is_none() {
         builder.security_control_status = "no value was set".parse::<crate::types::ControlStatus>().ok()
+    }
+    builder
+}
+
+pub(crate) fn service_now_detail_correct_errors(
+    mut builder: crate::types::builders::ServiceNowDetailBuilder,
+) -> crate::types::builders::ServiceNowDetailBuilder {
+    if builder.auth_status.is_none() {
+        builder.auth_status = "no value was set".parse::<crate::types::ConnectorAuthStatus>().ok()
     }
     builder
 }
@@ -462,6 +634,21 @@ pub(crate) fn note_correct_errors(mut builder: crate::types::builders::NoteBuild
     builder
 }
 
+pub(crate) fn ocsf_finding_identifier_correct_errors(
+    mut builder: crate::types::builders::OcsfFindingIdentifierBuilder,
+) -> crate::types::builders::OcsfFindingIdentifierBuilder {
+    if builder.cloud_account_uid.is_none() {
+        builder.cloud_account_uid = Some(Default::default())
+    }
+    if builder.finding_info_uid.is_none() {
+        builder.finding_info_uid = Some(Default::default())
+    }
+    if builder.metadata_product_uid.is_none() {
+        builder.metadata_product_uid = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn parameter_definition_correct_errors(
     mut builder: crate::types::builders::ParameterDefinitionBuilder,
 ) -> crate::types::builders::ParameterDefinitionBuilder {
@@ -551,6 +738,31 @@ pub(crate) fn resource_correct_errors(mut builder: crate::types::builders::Resou
     }
     if builder.id.is_none() {
         builder.id = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn resource_findings_summary_correct_errors(
+    mut builder: crate::types::builders::ResourceFindingsSummaryBuilder,
+) -> crate::types::builders::ResourceFindingsSummaryBuilder {
+    if builder.finding_type.is_none() {
+        builder.finding_type = Some(Default::default())
+    }
+    if builder.product_name.is_none() {
+        builder.product_name = Some(Default::default())
+    }
+    if builder.total_findings.is_none() {
+        builder.total_findings = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn resource_tag_correct_errors(mut builder: crate::types::builders::ResourceTagBuilder) -> crate::types::builders::ResourceTagBuilder {
+    if builder.key.is_none() {
+        builder.key = Some(Default::default())
+    }
+    if builder.value.is_none() {
+        builder.value = Some(Default::default())
     }
     builder
 }

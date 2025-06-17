@@ -105,6 +105,10 @@ where
                             builder =
                                 builder.set_analysis_results(crate::protocol_serde::shape_analysis_result_list::de_analysis_result_list(tokens)?);
                         }
+                        "SummaryConfiguration" => {
+                            builder = builder
+                                .set_summary_configuration(crate::protocol_serde::shape_summary_configuration::de_summary_configuration(tokens)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

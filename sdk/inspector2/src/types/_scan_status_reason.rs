@@ -13,6 +13,7 @@
 /// # let scanstatusreason = unimplemented!();
 /// match scanstatusreason {
 ///     ScanStatusReason::AccessDenied => { /* ... */ },
+///     ScanStatusReason::AccessDeniedToEncryptionKey => { /* ... */ },
 ///     ScanStatusReason::AgentlessInstanceCollectionTimeLimitExceeded => { /* ... */ },
 ///     ScanStatusReason::AgentlessInstanceStorageLimitExceeded => { /* ... */ },
 ///     ScanStatusReason::DeepInspectionCollectionTimeLimitExceeded => { /* ... */ },
@@ -22,9 +23,11 @@
 ///     ScanStatusReason::Ec2InstanceStopped => { /* ... */ },
 ///     ScanStatusReason::ExcludedByTag => { /* ... */ },
 ///     ScanStatusReason::ImageSizeExceeded => { /* ... */ },
+///     ScanStatusReason::IntegrationConnectionLost => { /* ... */ },
 ///     ScanStatusReason::InternalError => { /* ... */ },
 ///     ScanStatusReason::NoInventory => { /* ... */ },
 ///     ScanStatusReason::NoResourcesFound => { /* ... */ },
+///     ScanStatusReason::NoScanConfigurationAssociated => { /* ... */ },
 ///     ScanStatusReason::PendingDisable => { /* ... */ },
 ///     ScanStatusReason::PendingInitialScan => { /* ... */ },
 ///     ScanStatusReason::PendingRevivalScan => { /* ... */ },
@@ -32,10 +35,12 @@
 ///     ScanStatusReason::ScanEligibilityExpired => { /* ... */ },
 ///     ScanStatusReason::ScanFrequencyManual => { /* ... */ },
 ///     ScanStatusReason::ScanFrequencyScanOnPush => { /* ... */ },
+///     ScanStatusReason::ScanInProgress => { /* ... */ },
 ///     ScanStatusReason::StaleInventory => { /* ... */ },
 ///     ScanStatusReason::Successful => { /* ... */ },
 ///     ScanStatusReason::UnmanagedEc2Instance => { /* ... */ },
 ///     ScanStatusReason::UnsupportedConfigFile => { /* ... */ },
+///     ScanStatusReason::UnsupportedLanguage => { /* ... */ },
 ///     ScanStatusReason::UnsupportedMediaType => { /* ... */ },
 ///     ScanStatusReason::UnsupportedOs => { /* ... */ },
 ///     ScanStatusReason::UnsupportedRuntime => { /* ... */ },
@@ -70,6 +75,8 @@ pub enum ScanStatusReason {
     #[allow(missing_docs)] // documentation missing in model
     AccessDenied,
     #[allow(missing_docs)] // documentation missing in model
+    AccessDeniedToEncryptionKey,
+    #[allow(missing_docs)] // documentation missing in model
     AgentlessInstanceCollectionTimeLimitExceeded,
     #[allow(missing_docs)] // documentation missing in model
     AgentlessInstanceStorageLimitExceeded,
@@ -88,11 +95,15 @@ pub enum ScanStatusReason {
     #[allow(missing_docs)] // documentation missing in model
     ImageSizeExceeded,
     #[allow(missing_docs)] // documentation missing in model
+    IntegrationConnectionLost,
+    #[allow(missing_docs)] // documentation missing in model
     InternalError,
     #[allow(missing_docs)] // documentation missing in model
     NoInventory,
     #[allow(missing_docs)] // documentation missing in model
     NoResourcesFound,
+    #[allow(missing_docs)] // documentation missing in model
+    NoScanConfigurationAssociated,
     #[allow(missing_docs)] // documentation missing in model
     PendingDisable,
     #[allow(missing_docs)] // documentation missing in model
@@ -108,6 +119,8 @@ pub enum ScanStatusReason {
     #[allow(missing_docs)] // documentation missing in model
     ScanFrequencyScanOnPush,
     #[allow(missing_docs)] // documentation missing in model
+    ScanInProgress,
+    #[allow(missing_docs)] // documentation missing in model
     StaleInventory,
     #[allow(missing_docs)] // documentation missing in model
     Successful,
@@ -115,6 +128,8 @@ pub enum ScanStatusReason {
     UnmanagedEc2Instance,
     #[allow(missing_docs)] // documentation missing in model
     UnsupportedConfigFile,
+    #[allow(missing_docs)] // documentation missing in model
+    UnsupportedLanguage,
     #[allow(missing_docs)] // documentation missing in model
     UnsupportedMediaType,
     #[allow(missing_docs)] // documentation missing in model
@@ -129,6 +144,7 @@ impl ::std::convert::From<&str> for ScanStatusReason {
     fn from(s: &str) -> Self {
         match s {
             "ACCESS_DENIED" => ScanStatusReason::AccessDenied,
+            "ACCESS_DENIED_TO_ENCRYPTION_KEY" => ScanStatusReason::AccessDeniedToEncryptionKey,
             "AGENTLESS_INSTANCE_COLLECTION_TIME_LIMIT_EXCEEDED" => ScanStatusReason::AgentlessInstanceCollectionTimeLimitExceeded,
             "AGENTLESS_INSTANCE_STORAGE_LIMIT_EXCEEDED" => ScanStatusReason::AgentlessInstanceStorageLimitExceeded,
             "DEEP_INSPECTION_COLLECTION_TIME_LIMIT_EXCEEDED" => ScanStatusReason::DeepInspectionCollectionTimeLimitExceeded,
@@ -138,9 +154,11 @@ impl ::std::convert::From<&str> for ScanStatusReason {
             "EC2_INSTANCE_STOPPED" => ScanStatusReason::Ec2InstanceStopped,
             "EXCLUDED_BY_TAG" => ScanStatusReason::ExcludedByTag,
             "IMAGE_SIZE_EXCEEDED" => ScanStatusReason::ImageSizeExceeded,
+            "INTEGRATION_CONNECTION_LOST" => ScanStatusReason::IntegrationConnectionLost,
             "INTERNAL_ERROR" => ScanStatusReason::InternalError,
             "NO_INVENTORY" => ScanStatusReason::NoInventory,
             "NO_RESOURCES_FOUND" => ScanStatusReason::NoResourcesFound,
+            "NO_SCAN_CONFIGURATION_ASSOCIATED" => ScanStatusReason::NoScanConfigurationAssociated,
             "PENDING_DISABLE" => ScanStatusReason::PendingDisable,
             "PENDING_INITIAL_SCAN" => ScanStatusReason::PendingInitialScan,
             "PENDING_REVIVAL_SCAN" => ScanStatusReason::PendingRevivalScan,
@@ -148,10 +166,12 @@ impl ::std::convert::From<&str> for ScanStatusReason {
             "SCAN_ELIGIBILITY_EXPIRED" => ScanStatusReason::ScanEligibilityExpired,
             "SCAN_FREQUENCY_MANUAL" => ScanStatusReason::ScanFrequencyManual,
             "SCAN_FREQUENCY_SCAN_ON_PUSH" => ScanStatusReason::ScanFrequencyScanOnPush,
+            "SCAN_IN_PROGRESS" => ScanStatusReason::ScanInProgress,
             "STALE_INVENTORY" => ScanStatusReason::StaleInventory,
             "SUCCESSFUL" => ScanStatusReason::Successful,
             "UNMANAGED_EC2_INSTANCE" => ScanStatusReason::UnmanagedEc2Instance,
             "UNSUPPORTED_CONFIG_FILE" => ScanStatusReason::UnsupportedConfigFile,
+            "UNSUPPORTED_LANGUAGE" => ScanStatusReason::UnsupportedLanguage,
             "UNSUPPORTED_MEDIA_TYPE" => ScanStatusReason::UnsupportedMediaType,
             "UNSUPPORTED_OS" => ScanStatusReason::UnsupportedOs,
             "UNSUPPORTED_RUNTIME" => ScanStatusReason::UnsupportedRuntime,
@@ -171,6 +191,7 @@ impl ScanStatusReason {
     pub fn as_str(&self) -> &str {
         match self {
             ScanStatusReason::AccessDenied => "ACCESS_DENIED",
+            ScanStatusReason::AccessDeniedToEncryptionKey => "ACCESS_DENIED_TO_ENCRYPTION_KEY",
             ScanStatusReason::AgentlessInstanceCollectionTimeLimitExceeded => "AGENTLESS_INSTANCE_COLLECTION_TIME_LIMIT_EXCEEDED",
             ScanStatusReason::AgentlessInstanceStorageLimitExceeded => "AGENTLESS_INSTANCE_STORAGE_LIMIT_EXCEEDED",
             ScanStatusReason::DeepInspectionCollectionTimeLimitExceeded => "DEEP_INSPECTION_COLLECTION_TIME_LIMIT_EXCEEDED",
@@ -180,9 +201,11 @@ impl ScanStatusReason {
             ScanStatusReason::Ec2InstanceStopped => "EC2_INSTANCE_STOPPED",
             ScanStatusReason::ExcludedByTag => "EXCLUDED_BY_TAG",
             ScanStatusReason::ImageSizeExceeded => "IMAGE_SIZE_EXCEEDED",
+            ScanStatusReason::IntegrationConnectionLost => "INTEGRATION_CONNECTION_LOST",
             ScanStatusReason::InternalError => "INTERNAL_ERROR",
             ScanStatusReason::NoInventory => "NO_INVENTORY",
             ScanStatusReason::NoResourcesFound => "NO_RESOURCES_FOUND",
+            ScanStatusReason::NoScanConfigurationAssociated => "NO_SCAN_CONFIGURATION_ASSOCIATED",
             ScanStatusReason::PendingDisable => "PENDING_DISABLE",
             ScanStatusReason::PendingInitialScan => "PENDING_INITIAL_SCAN",
             ScanStatusReason::PendingRevivalScan => "PENDING_REVIVAL_SCAN",
@@ -190,10 +213,12 @@ impl ScanStatusReason {
             ScanStatusReason::ScanEligibilityExpired => "SCAN_ELIGIBILITY_EXPIRED",
             ScanStatusReason::ScanFrequencyManual => "SCAN_FREQUENCY_MANUAL",
             ScanStatusReason::ScanFrequencyScanOnPush => "SCAN_FREQUENCY_SCAN_ON_PUSH",
+            ScanStatusReason::ScanInProgress => "SCAN_IN_PROGRESS",
             ScanStatusReason::StaleInventory => "STALE_INVENTORY",
             ScanStatusReason::Successful => "SUCCESSFUL",
             ScanStatusReason::UnmanagedEc2Instance => "UNMANAGED_EC2_INSTANCE",
             ScanStatusReason::UnsupportedConfigFile => "UNSUPPORTED_CONFIG_FILE",
+            ScanStatusReason::UnsupportedLanguage => "UNSUPPORTED_LANGUAGE",
             ScanStatusReason::UnsupportedMediaType => "UNSUPPORTED_MEDIA_TYPE",
             ScanStatusReason::UnsupportedOs => "UNSUPPORTED_OS",
             ScanStatusReason::UnsupportedRuntime => "UNSUPPORTED_RUNTIME",
@@ -204,6 +229,7 @@ impl ScanStatusReason {
     pub const fn values() -> &'static [&'static str] {
         &[
             "ACCESS_DENIED",
+            "ACCESS_DENIED_TO_ENCRYPTION_KEY",
             "AGENTLESS_INSTANCE_COLLECTION_TIME_LIMIT_EXCEEDED",
             "AGENTLESS_INSTANCE_STORAGE_LIMIT_EXCEEDED",
             "DEEP_INSPECTION_COLLECTION_TIME_LIMIT_EXCEEDED",
@@ -213,9 +239,11 @@ impl ScanStatusReason {
             "EC2_INSTANCE_STOPPED",
             "EXCLUDED_BY_TAG",
             "IMAGE_SIZE_EXCEEDED",
+            "INTEGRATION_CONNECTION_LOST",
             "INTERNAL_ERROR",
             "NO_INVENTORY",
             "NO_RESOURCES_FOUND",
+            "NO_SCAN_CONFIGURATION_ASSOCIATED",
             "PENDING_DISABLE",
             "PENDING_INITIAL_SCAN",
             "PENDING_REVIVAL_SCAN",
@@ -223,10 +251,12 @@ impl ScanStatusReason {
             "SCAN_ELIGIBILITY_EXPIRED",
             "SCAN_FREQUENCY_MANUAL",
             "SCAN_FREQUENCY_SCAN_ON_PUSH",
+            "SCAN_IN_PROGRESS",
             "STALE_INVENTORY",
             "SUCCESSFUL",
             "UNMANAGED_EC2_INSTANCE",
             "UNSUPPORTED_CONFIG_FILE",
+            "UNSUPPORTED_LANGUAGE",
             "UNSUPPORTED_MEDIA_TYPE",
             "UNSUPPORTED_OS",
             "UNSUPPORTED_RUNTIME",
@@ -254,6 +284,7 @@ impl ::std::fmt::Display for ScanStatusReason {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             ScanStatusReason::AccessDenied => write!(f, "ACCESS_DENIED"),
+            ScanStatusReason::AccessDeniedToEncryptionKey => write!(f, "ACCESS_DENIED_TO_ENCRYPTION_KEY"),
             ScanStatusReason::AgentlessInstanceCollectionTimeLimitExceeded => write!(f, "AGENTLESS_INSTANCE_COLLECTION_TIME_LIMIT_EXCEEDED"),
             ScanStatusReason::AgentlessInstanceStorageLimitExceeded => write!(f, "AGENTLESS_INSTANCE_STORAGE_LIMIT_EXCEEDED"),
             ScanStatusReason::DeepInspectionCollectionTimeLimitExceeded => write!(f, "DEEP_INSPECTION_COLLECTION_TIME_LIMIT_EXCEEDED"),
@@ -263,9 +294,11 @@ impl ::std::fmt::Display for ScanStatusReason {
             ScanStatusReason::Ec2InstanceStopped => write!(f, "EC2_INSTANCE_STOPPED"),
             ScanStatusReason::ExcludedByTag => write!(f, "EXCLUDED_BY_TAG"),
             ScanStatusReason::ImageSizeExceeded => write!(f, "IMAGE_SIZE_EXCEEDED"),
+            ScanStatusReason::IntegrationConnectionLost => write!(f, "INTEGRATION_CONNECTION_LOST"),
             ScanStatusReason::InternalError => write!(f, "INTERNAL_ERROR"),
             ScanStatusReason::NoInventory => write!(f, "NO_INVENTORY"),
             ScanStatusReason::NoResourcesFound => write!(f, "NO_RESOURCES_FOUND"),
+            ScanStatusReason::NoScanConfigurationAssociated => write!(f, "NO_SCAN_CONFIGURATION_ASSOCIATED"),
             ScanStatusReason::PendingDisable => write!(f, "PENDING_DISABLE"),
             ScanStatusReason::PendingInitialScan => write!(f, "PENDING_INITIAL_SCAN"),
             ScanStatusReason::PendingRevivalScan => write!(f, "PENDING_REVIVAL_SCAN"),
@@ -273,10 +306,12 @@ impl ::std::fmt::Display for ScanStatusReason {
             ScanStatusReason::ScanEligibilityExpired => write!(f, "SCAN_ELIGIBILITY_EXPIRED"),
             ScanStatusReason::ScanFrequencyManual => write!(f, "SCAN_FREQUENCY_MANUAL"),
             ScanStatusReason::ScanFrequencyScanOnPush => write!(f, "SCAN_FREQUENCY_SCAN_ON_PUSH"),
+            ScanStatusReason::ScanInProgress => write!(f, "SCAN_IN_PROGRESS"),
             ScanStatusReason::StaleInventory => write!(f, "STALE_INVENTORY"),
             ScanStatusReason::Successful => write!(f, "SUCCESSFUL"),
             ScanStatusReason::UnmanagedEc2Instance => write!(f, "UNMANAGED_EC2_INSTANCE"),
             ScanStatusReason::UnsupportedConfigFile => write!(f, "UNSUPPORTED_CONFIG_FILE"),
+            ScanStatusReason::UnsupportedLanguage => write!(f, "UNSUPPORTED_LANGUAGE"),
             ScanStatusReason::UnsupportedMediaType => write!(f, "UNSUPPORTED_MEDIA_TYPE"),
             ScanStatusReason::UnsupportedOs => write!(f, "UNSUPPORTED_OS"),
             ScanStatusReason::UnsupportedRuntime => write!(f, "UNSUPPORTED_RUNTIME"),

@@ -23,7 +23,7 @@ impl crate::operation::delete_resource_policy::builders::DeleteResourcePolicyInp
 /// Fluent builder constructing a request to `DeleteResourcePolicy`.
 ///
 /// <p>Deletes the resource policy from your organization.</p>
-/// <p>You can only call this operation from the organization's management account.</p>
+/// <p>This operation can be called only from the organization's management account.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteResourcePolicyFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

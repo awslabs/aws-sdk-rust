@@ -23,7 +23,7 @@ impl crate::operation::describe_account::builders::DescribeAccountInputBuilder {
 /// Fluent builder constructing a request to `DescribeAccount`.
 ///
 /// <p>Retrieves Organizations-related information about the specified account.</p>
-/// <p>This operation can be called only from the organization's management account or by a member account that is a delegated administrator for an Amazon Web Services service.</p>
+/// <p>This operation can be called only from the organization's management account or by a member account that is a delegated administrator.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeAccountFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

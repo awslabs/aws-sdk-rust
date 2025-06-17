@@ -4,7 +4,10 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`admin_account_id(impl Into<String>)`](crate::operation::enable_organization_admin_account::builders::EnableOrganizationAdminAccountFluentBuilder::admin_account_id) / [`set_admin_account_id(Option<String>)`](crate::operation::enable_organization_admin_account::builders::EnableOrganizationAdminAccountFluentBuilder::set_admin_account_id):<br>required: **true**<br><p>The Amazon Web Services account identifier of the account to designate as the Security Hub administrator account.</p><br>
-    /// - On success, responds with [`EnableOrganizationAdminAccountOutput`](crate::operation::enable_organization_admin_account::EnableOrganizationAdminAccountOutput)
+    ///   - [`feature(SecurityHubFeature)`](crate::operation::enable_organization_admin_account::builders::EnableOrganizationAdminAccountFluentBuilder::feature) / [`set_feature(Option<SecurityHubFeature>)`](crate::operation::enable_organization_admin_account::builders::EnableOrganizationAdminAccountFluentBuilder::set_feature):<br>required: **false**<br><p>The feature for which the delegated admin account is enabled. Defaults to Security Hub if not specified.</p><br>
+    /// - On success, responds with [`EnableOrganizationAdminAccountOutput`](crate::operation::enable_organization_admin_account::EnableOrganizationAdminAccountOutput) with field(s):
+    ///   - [`admin_account_id(Option<String>)`](crate::operation::enable_organization_admin_account::EnableOrganizationAdminAccountOutput::admin_account_id): <p>The Amazon Web Services account identifier of the account to designate as the Security Hub administrator account.</p>
+    ///   - [`feature(Option<SecurityHubFeature>)`](crate::operation::enable_organization_admin_account::EnableOrganizationAdminAccountOutput::feature): <p>The feature where the delegated administrator is enabled. The default is Security Hub CSPM if no delegated administrator is specified in the request.</p>
     /// - On failure, responds with [`SdkError<EnableOrganizationAdminAccountError>`](crate::operation::enable_organization_admin_account::EnableOrganizationAdminAccountError)
     pub fn enable_organization_admin_account(
         &self,

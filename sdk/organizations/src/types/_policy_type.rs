@@ -17,6 +17,7 @@
 ///     PolicyType::ChatbotPolicy => { /* ... */ },
 ///     PolicyType::DeclarativePolicyEc2 => { /* ... */ },
 ///     PolicyType::ResourceControlPolicy => { /* ... */ },
+///     PolicyType::SecurityhubPolicy => { /* ... */ },
 ///     PolicyType::ServiceControlPolicy => { /* ... */ },
 ///     PolicyType::TagPolicy => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -58,6 +59,8 @@ pub enum PolicyType {
     #[allow(missing_docs)] // documentation missing in model
     ResourceControlPolicy,
     #[allow(missing_docs)] // documentation missing in model
+    SecurityhubPolicy,
+    #[allow(missing_docs)] // documentation missing in model
     ServiceControlPolicy,
     #[allow(missing_docs)] // documentation missing in model
     TagPolicy,
@@ -73,6 +76,7 @@ impl ::std::convert::From<&str> for PolicyType {
             "CHATBOT_POLICY" => PolicyType::ChatbotPolicy,
             "DECLARATIVE_POLICY_EC2" => PolicyType::DeclarativePolicyEc2,
             "RESOURCE_CONTROL_POLICY" => PolicyType::ResourceControlPolicy,
+            "SECURITYHUB_POLICY" => PolicyType::SecurityhubPolicy,
             "SERVICE_CONTROL_POLICY" => PolicyType::ServiceControlPolicy,
             "TAG_POLICY" => PolicyType::TagPolicy,
             other => PolicyType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -95,6 +99,7 @@ impl PolicyType {
             PolicyType::ChatbotPolicy => "CHATBOT_POLICY",
             PolicyType::DeclarativePolicyEc2 => "DECLARATIVE_POLICY_EC2",
             PolicyType::ResourceControlPolicy => "RESOURCE_CONTROL_POLICY",
+            PolicyType::SecurityhubPolicy => "SECURITYHUB_POLICY",
             PolicyType::ServiceControlPolicy => "SERVICE_CONTROL_POLICY",
             PolicyType::TagPolicy => "TAG_POLICY",
             PolicyType::Unknown(value) => value.as_str(),
@@ -108,6 +113,7 @@ impl PolicyType {
             "CHATBOT_POLICY",
             "DECLARATIVE_POLICY_EC2",
             "RESOURCE_CONTROL_POLICY",
+            "SECURITYHUB_POLICY",
             "SERVICE_CONTROL_POLICY",
             "TAG_POLICY",
         ]
@@ -138,6 +144,7 @@ impl ::std::fmt::Display for PolicyType {
             PolicyType::ChatbotPolicy => write!(f, "CHATBOT_POLICY"),
             PolicyType::DeclarativePolicyEc2 => write!(f, "DECLARATIVE_POLICY_EC2"),
             PolicyType::ResourceControlPolicy => write!(f, "RESOURCE_CONTROL_POLICY"),
+            PolicyType::SecurityhubPolicy => write!(f, "SECURITYHUB_POLICY"),
             PolicyType::ServiceControlPolicy => write!(f, "SERVICE_CONTROL_POLICY"),
             PolicyType::TagPolicy => write!(f, "TAG_POLICY"),
             PolicyType::Unknown(value) => write!(f, "{}", value),

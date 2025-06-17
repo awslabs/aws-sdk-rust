@@ -10,6 +10,9 @@ pub struct DescribeFleetAdvisorSchemaObjectSummaryInput {
     /// </ul>
     /// <p>Example: <code>describe-fleet-advisor-schema-object-summary --filter Name="schema-id",Values="50"</code></p>
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
+    /// <important>
+    /// <p>End of support notice: On May 20, 2026, Amazon Web Services will end support for Amazon Web Services DMS Fleet Advisor;. After May 20, 2026, you will no longer be able to access the Amazon Web Services DMS Fleet Advisor; console or Amazon Web Services DMS Fleet Advisor; resources. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/dms_fleet.advisor-end-of-support.html">Amazon Web Services DMS Fleet Advisor end of support</a>.</p>
+    /// </important>
     /// <p>Sets the maximum number of records returned in the response.</p>
     pub max_records: ::std::option::Option<i32>,
     /// <p>If <code>NextToken</code> is returned by a previous response, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged.</p>
@@ -27,6 +30,9 @@ impl DescribeFleetAdvisorSchemaObjectSummaryInput {
     pub fn filters(&self) -> &[crate::types::Filter] {
         self.filters.as_deref().unwrap_or_default()
     }
+    /// <important>
+    /// <p>End of support notice: On May 20, 2026, Amazon Web Services will end support for Amazon Web Services DMS Fleet Advisor;. After May 20, 2026, you will no longer be able to access the Amazon Web Services DMS Fleet Advisor; console or Amazon Web Services DMS Fleet Advisor; resources. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/dms_fleet.advisor-end-of-support.html">Amazon Web Services DMS Fleet Advisor end of support</a>.</p>
+    /// </important>
     /// <p>Sets the maximum number of records returned in the response.</p>
     pub fn max_records(&self) -> ::std::option::Option<i32> {
         self.max_records
@@ -88,16 +94,25 @@ impl DescribeFleetAdvisorSchemaObjectSummaryInputBuilder {
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
         &self.filters
     }
+    /// <important>
+    /// <p>End of support notice: On May 20, 2026, Amazon Web Services will end support for Amazon Web Services DMS Fleet Advisor;. After May 20, 2026, you will no longer be able to access the Amazon Web Services DMS Fleet Advisor; console or Amazon Web Services DMS Fleet Advisor; resources. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/dms_fleet.advisor-end-of-support.html">Amazon Web Services DMS Fleet Advisor end of support</a>.</p>
+    /// </important>
     /// <p>Sets the maximum number of records returned in the response.</p>
     pub fn max_records(mut self, input: i32) -> Self {
         self.max_records = ::std::option::Option::Some(input);
         self
     }
+    /// <important>
+    /// <p>End of support notice: On May 20, 2026, Amazon Web Services will end support for Amazon Web Services DMS Fleet Advisor;. After May 20, 2026, you will no longer be able to access the Amazon Web Services DMS Fleet Advisor; console or Amazon Web Services DMS Fleet Advisor; resources. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/dms_fleet.advisor-end-of-support.html">Amazon Web Services DMS Fleet Advisor end of support</a>.</p>
+    /// </important>
     /// <p>Sets the maximum number of records returned in the response.</p>
     pub fn set_max_records(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_records = input;
         self
     }
+    /// <important>
+    /// <p>End of support notice: On May 20, 2026, Amazon Web Services will end support for Amazon Web Services DMS Fleet Advisor;. After May 20, 2026, you will no longer be able to access the Amazon Web Services DMS Fleet Advisor; console or Amazon Web Services DMS Fleet Advisor; resources. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/dms_fleet.advisor-end-of-support.html">Amazon Web Services DMS Fleet Advisor end of support</a>.</p>
+    /// </important>
     /// <p>Sets the maximum number of records returned in the response.</p>
     pub fn get_max_records(&self) -> &::std::option::Option<i32> {
         &self.max_records

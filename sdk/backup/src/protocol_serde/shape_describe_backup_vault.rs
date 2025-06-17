@@ -158,6 +158,11 @@ pub(crate) fn de_describe_backup_vault(
                             .transpose()?,
                     );
                 }
+                "LatestMpaApprovalTeamUpdate" => {
+                    builder = builder.set_latest_mpa_approval_team_update(
+                        crate::protocol_serde::shape_latest_mpa_approval_team_update::de_latest_mpa_approval_team_update(tokens)?,
+                    );
+                }
                 "LockDate" => {
                     builder = builder.set_lock_date(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                         tokens.next(),
@@ -181,10 +186,31 @@ pub(crate) fn de_describe_backup_vault(
                             .transpose()?,
                     );
                 }
+                "MpaApprovalTeamArn" => {
+                    builder = builder.set_mpa_approval_team_arn(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
+                "MpaSessionArn" => {
+                    builder = builder.set_mpa_session_arn(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
                 "NumberOfRecoveryPoints" => {
                     builder = builder.set_number_of_recovery_points(
                         ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
                             .map(i64::try_from)
+                            .transpose()?,
+                    );
+                }
+                "SourceBackupVaultArn" => {
+                    builder = builder.set_source_backup_vault_arn(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                             .transpose()?,
                     );
                 }

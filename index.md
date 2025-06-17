@@ -117,6 +117,7 @@ The AWS SDK for Rust contains one crate for each AWS service, as well as [aws-co
 | AWS Migration Hub Config | [aws-sdk-migrationhubconfig](https://crates.io/crates/aws-sdk-migrationhubconfig) ([docs](https://docs.rs/aws-sdk-migrationhubconfig)) |
 | AWS Migration Hub Orchestrator | [aws-sdk-migrationhuborchestrator](https://crates.io/crates/aws-sdk-migrationhuborchestrator) ([docs](https://docs.rs/aws-sdk-migrationhuborchestrator)) |
 | AWS Migration Hub Refactor Spaces | [aws-sdk-migrationhubrefactorspaces](https://crates.io/crates/aws-sdk-migrationhubrefactorspaces) ([docs](https://docs.rs/aws-sdk-migrationhubrefactorspaces)) |
+| AWS Multi-party Approval | [aws-sdk-mpa](https://crates.io/crates/aws-sdk-mpa) ([docs](https://docs.rs/aws-sdk-mpa)) |
 | AWS Network Firewall | [aws-sdk-networkfirewall](https://crates.io/crates/aws-sdk-networkfirewall) ([docs](https://docs.rs/aws-sdk-networkfirewall)) |
 | AWS Network Manager | [aws-sdk-networkmanager](https://crates.io/crates/aws-sdk-networkmanager) ([docs](https://docs.rs/aws-sdk-networkmanager)) |
 | AWS OpsWorks | [aws-sdk-opsworks](https://crates.io/crates/aws-sdk-opsworks) ([docs](https://docs.rs/aws-sdk-opsworks)) |

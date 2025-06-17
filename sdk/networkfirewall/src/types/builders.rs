@@ -23,6 +23,8 @@ pub use crate::types::_server_certificate::ServerCertificateBuilder;
 
 pub use crate::types::_rule_group_response::RuleGroupResponseBuilder;
 
+pub use crate::types::_summary_configuration::SummaryConfigurationBuilder;
+
 pub use crate::types::_analysis_result::AnalysisResultBuilder;
 
 pub use crate::types::_source_metadata::SourceMetadataBuilder;
@@ -124,6 +126,10 @@ pub use crate::types::_az_sync_state::AzSyncStateBuilder;
 pub use crate::types::_attachment::AttachmentBuilder;
 
 pub use crate::types::_vpc_endpoint_association::VpcEndpointAssociationBuilder;
+
+pub use crate::types::_summary::SummaryBuilder;
+
+pub use crate::types::_rule_summary::RuleSummaryBuilder;
 
 pub use crate::types::_flow_operation::FlowOperationBuilder;
 

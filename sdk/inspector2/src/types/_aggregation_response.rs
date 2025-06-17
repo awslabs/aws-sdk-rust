@@ -10,6 +10,8 @@ pub enum AggregationResponse {
     AmiAggregation(crate::types::AmiAggregationResponse),
     /// <p>An object that contains details about an aggregation response based on Amazon ECR container images.</p>
     AwsEcrContainerAggregation(crate::types::AwsEcrContainerAggregationResponse),
+    /// <p>An object that contains details about an aggregation response based on code repositories.</p>
+    CodeRepositoryAggregation(crate::types::CodeRepositoryAggregationResponse),
     /// <p>An object that contains details about an aggregation response based on Amazon EC2 instances.</p>
     Ec2InstanceAggregation(crate::types::Ec2InstanceAggregationResponse),
     /// <p>An object that contains details about an aggregation response based on finding types.</p>
@@ -75,6 +77,19 @@ impl AggregationResponse {
     /// Returns true if this is a [`AwsEcrContainerAggregation`](crate::types::AggregationResponse::AwsEcrContainerAggregation).
     pub fn is_aws_ecr_container_aggregation(&self) -> bool {
         self.as_aws_ecr_container_aggregation().is_ok()
+    }
+    /// Tries to convert the enum instance into [`CodeRepositoryAggregation`](crate::types::AggregationResponse::CodeRepositoryAggregation), extracting the inner [`CodeRepositoryAggregationResponse`](crate::types::CodeRepositoryAggregationResponse).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_code_repository_aggregation(&self) -> ::std::result::Result<&crate::types::CodeRepositoryAggregationResponse, &Self> {
+        if let AggregationResponse::CodeRepositoryAggregation(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`CodeRepositoryAggregation`](crate::types::AggregationResponse::CodeRepositoryAggregation).
+    pub fn is_code_repository_aggregation(&self) -> bool {
+        self.as_code_repository_aggregation().is_ok()
     }
     /// Tries to convert the enum instance into [`Ec2InstanceAggregation`](crate::types::AggregationResponse::Ec2InstanceAggregation), extracting the inner [`Ec2InstanceAggregationResponse`](crate::types::Ec2InstanceAggregationResponse).
     /// Returns `Err(&Self)` if it can't be converted.

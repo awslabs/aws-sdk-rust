@@ -49,6 +49,16 @@ pub struct CreateRuleGroupInput {
     pub source_metadata: ::std::option::Option<crate::types::SourceMetadata>,
     /// <p>Indicates whether you want Network Firewall to analyze the stateless rules in the rule group for rule behavior such as asymmetric routing. If set to <code>TRUE</code>, Network Firewall runs the analysis and then creates the rule group for you. To run the stateless rule group analyzer without creating the rule group, set <code>DryRun</code> to <code>TRUE</code>.</p>
     pub analyze_rule_group: ::std::option::Option<bool>,
+    /// <p>An object that contains a <code>RuleOptions</code> array of strings. You use <code>RuleOptions</code> to determine which of the following <code>RuleSummary</code> values are returned in response to <code>DescribeRuleGroupSummary</code>.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>Metadata</code> - returns</p></li>
+    /// <li>
+    /// <p><code>Msg</code></p></li>
+    /// <li>
+    /// <p><code>SID</code></p></li>
+    /// </ul>
+    pub summary_configuration: ::std::option::Option<crate::types::SummaryConfiguration>,
 }
 impl CreateRuleGroupInput {
     /// <p>The descriptive name of the rule group. You can't change the name of a rule group after you create it.</p>
@@ -121,6 +131,18 @@ impl CreateRuleGroupInput {
     pub fn analyze_rule_group(&self) -> ::std::option::Option<bool> {
         self.analyze_rule_group
     }
+    /// <p>An object that contains a <code>RuleOptions</code> array of strings. You use <code>RuleOptions</code> to determine which of the following <code>RuleSummary</code> values are returned in response to <code>DescribeRuleGroupSummary</code>.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>Metadata</code> - returns</p></li>
+    /// <li>
+    /// <p><code>Msg</code></p></li>
+    /// <li>
+    /// <p><code>SID</code></p></li>
+    /// </ul>
+    pub fn summary_configuration(&self) -> ::std::option::Option<&crate::types::SummaryConfiguration> {
+        self.summary_configuration.as_ref()
+    }
 }
 impl CreateRuleGroupInput {
     /// Creates a new builder-style object to manufacture [`CreateRuleGroupInput`](crate::operation::create_rule_group::CreateRuleGroupInput).
@@ -144,6 +166,7 @@ pub struct CreateRuleGroupInputBuilder {
     pub(crate) encryption_configuration: ::std::option::Option<crate::types::EncryptionConfiguration>,
     pub(crate) source_metadata: ::std::option::Option<crate::types::SourceMetadata>,
     pub(crate) analyze_rule_group: ::std::option::Option<bool>,
+    pub(crate) summary_configuration: ::std::option::Option<crate::types::SummaryConfiguration>,
 }
 impl CreateRuleGroupInputBuilder {
     /// <p>The descriptive name of the rule group. You can't change the name of a rule group after you create it.</p>
@@ -381,6 +404,44 @@ impl CreateRuleGroupInputBuilder {
     pub fn get_analyze_rule_group(&self) -> &::std::option::Option<bool> {
         &self.analyze_rule_group
     }
+    /// <p>An object that contains a <code>RuleOptions</code> array of strings. You use <code>RuleOptions</code> to determine which of the following <code>RuleSummary</code> values are returned in response to <code>DescribeRuleGroupSummary</code>.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>Metadata</code> - returns</p></li>
+    /// <li>
+    /// <p><code>Msg</code></p></li>
+    /// <li>
+    /// <p><code>SID</code></p></li>
+    /// </ul>
+    pub fn summary_configuration(mut self, input: crate::types::SummaryConfiguration) -> Self {
+        self.summary_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>An object that contains a <code>RuleOptions</code> array of strings. You use <code>RuleOptions</code> to determine which of the following <code>RuleSummary</code> values are returned in response to <code>DescribeRuleGroupSummary</code>.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>Metadata</code> - returns</p></li>
+    /// <li>
+    /// <p><code>Msg</code></p></li>
+    /// <li>
+    /// <p><code>SID</code></p></li>
+    /// </ul>
+    pub fn set_summary_configuration(mut self, input: ::std::option::Option<crate::types::SummaryConfiguration>) -> Self {
+        self.summary_configuration = input;
+        self
+    }
+    /// <p>An object that contains a <code>RuleOptions</code> array of strings. You use <code>RuleOptions</code> to determine which of the following <code>RuleSummary</code> values are returned in response to <code>DescribeRuleGroupSummary</code>.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>Metadata</code> - returns</p></li>
+    /// <li>
+    /// <p><code>Msg</code></p></li>
+    /// <li>
+    /// <p><code>SID</code></p></li>
+    /// </ul>
+    pub fn get_summary_configuration(&self) -> &::std::option::Option<crate::types::SummaryConfiguration> {
+        &self.summary_configuration
+    }
     /// Consumes the builder and constructs a [`CreateRuleGroupInput`](crate::operation::create_rule_group::CreateRuleGroupInput).
     pub fn build(
         self,
@@ -397,6 +458,7 @@ impl CreateRuleGroupInputBuilder {
             encryption_configuration: self.encryption_configuration,
             source_metadata: self.source_metadata,
             analyze_rule_group: self.analyze_rule_group,
+            summary_configuration: self.summary_configuration,
         })
     }
 }

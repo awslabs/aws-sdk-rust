@@ -57,5 +57,11 @@ pub fn ser_create_rule_group_input_input(
     if let Some(var_17) = &input.analyze_rule_group {
         object.key("AnalyzeRuleGroup").boolean(*var_17);
     }
+    if let Some(var_18) = &input.summary_configuration {
+        #[allow(unused_mut)]
+        let mut object_19 = object.key("SummaryConfiguration").start_object();
+        crate::protocol_serde::shape_summary_configuration::ser_summary_configuration(&mut object_19, var_18)?;
+        object_19.finish();
+    }
     Ok(())
 }

@@ -29,6 +29,11 @@ where
                         ));
                     }
                     variant = match key.as_ref() {
+                        "internalAccessDetails" => Some(crate::types::FindingDetails::InternalAccessDetails(
+                            crate::protocol_serde::shape_internal_access_details::de_internal_access_details(tokens)?.ok_or_else(|| {
+                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'internalAccessDetails' cannot be null")
+                            })?,
+                        )),
                         "externalAccessDetails" => Some(crate::types::FindingDetails::ExternalAccessDetails(
                             crate::protocol_serde::shape_external_access_details::de_external_access_details(tokens)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'externalAccessDetails' cannot be null")

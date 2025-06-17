@@ -142,4 +142,18 @@ impl ListOrganizationAdminAccountsFluentBuilder {
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_token()
     }
+    /// <p>The feature where the delegated administrator account is listed. Defaults to Security Hub if not specified.</p>
+    pub fn feature(mut self, input: crate::types::SecurityHubFeature) -> Self {
+        self.inner = self.inner.feature(input);
+        self
+    }
+    /// <p>The feature where the delegated administrator account is listed. Defaults to Security Hub if not specified.</p>
+    pub fn set_feature(mut self, input: ::std::option::Option<crate::types::SecurityHubFeature>) -> Self {
+        self.inner = self.inner.set_feature(input);
+        self
+    }
+    /// <p>The feature where the delegated administrator account is listed. Defaults to Security Hub if not specified.</p>
+    pub fn get_feature(&self) -> &::std::option::Option<crate::types::SecurityHubFeature> {
+        self.inner.get_feature()
+    }
 }

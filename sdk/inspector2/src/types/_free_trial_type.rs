@@ -12,6 +12,7 @@
 /// ```text
 /// # let freetrialtype = unimplemented!();
 /// match freetrialtype {
+///     FreeTrialType::CodeRepository => { /* ... */ },
 ///     FreeTrialType::Ec2 => { /* ... */ },
 ///     FreeTrialType::Ecr => { /* ... */ },
 ///     FreeTrialType::Lambda => { /* ... */ },
@@ -45,6 +46,8 @@
 )]
 pub enum FreeTrialType {
     #[allow(missing_docs)] // documentation missing in model
+    CodeRepository,
+    #[allow(missing_docs)] // documentation missing in model
     Ec2,
     #[allow(missing_docs)] // documentation missing in model
     Ecr,
@@ -59,6 +62,7 @@ pub enum FreeTrialType {
 impl ::std::convert::From<&str> for FreeTrialType {
     fn from(s: &str) -> Self {
         match s {
+            "CODE_REPOSITORY" => FreeTrialType::CodeRepository,
             "EC2" => FreeTrialType::Ec2,
             "ECR" => FreeTrialType::Ecr,
             "LAMBDA" => FreeTrialType::Lambda,
@@ -78,6 +82,7 @@ impl FreeTrialType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            FreeTrialType::CodeRepository => "CODE_REPOSITORY",
             FreeTrialType::Ec2 => "EC2",
             FreeTrialType::Ecr => "ECR",
             FreeTrialType::Lambda => "LAMBDA",
@@ -87,7 +92,7 @@ impl FreeTrialType {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["EC2", "ECR", "LAMBDA", "LAMBDA_CODE"]
+        &["CODE_REPOSITORY", "EC2", "ECR", "LAMBDA", "LAMBDA_CODE"]
     }
 }
 impl ::std::convert::AsRef<str> for FreeTrialType {
@@ -110,6 +115,7 @@ impl FreeTrialType {
 impl ::std::fmt::Display for FreeTrialType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            FreeTrialType::CodeRepository => write!(f, "CODE_REPOSITORY"),
             FreeTrialType::Ec2 => write!(f, "EC2"),
             FreeTrialType::Ecr => write!(f, "ECR"),
             FreeTrialType::Lambda => write!(f, "LAMBDA"),

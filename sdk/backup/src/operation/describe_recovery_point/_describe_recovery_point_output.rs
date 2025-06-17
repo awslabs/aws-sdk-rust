@@ -39,6 +39,8 @@ pub struct DescribeRecoveryPointOutput {
     pub status_message: ::std::option::Option<::std::string::String>,
     /// <p>The date and time that a recovery point is created, in Unix format and Coordinated Universal Time (UTC). The value of <code>CreationDate</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
     pub creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>The date and time when the backup job that created this recovery point was initiated, in Unix format and Coordinated Universal Time (UTC).</p>
+    pub initiation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time that a job to create a recovery point is completed, in Unix format and Coordinated Universal Time (UTC). The value of <code>CompletionDate</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
     pub completion_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The size, in bytes, of a backup.</p>
@@ -134,6 +136,10 @@ impl DescribeRecoveryPointOutput {
     pub fn creation_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
+    /// <p>The date and time when the backup job that created this recovery point was initiated, in Unix format and Coordinated Universal Time (UTC).</p>
+    pub fn initiation_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+        self.initiation_date.as_ref()
+    }
     /// <p>The date and time that a job to create a recovery point is completed, in Unix format and Coordinated Universal Time (UTC). The value of <code>CompletionDate</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
     pub fn completion_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.completion_date.as_ref()
@@ -226,6 +232,7 @@ pub struct DescribeRecoveryPointOutputBuilder {
     pub(crate) status: ::std::option::Option<crate::types::RecoveryPointStatus>,
     pub(crate) status_message: ::std::option::Option<::std::string::String>,
     pub(crate) creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) initiation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) completion_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) backup_size_in_bytes: ::std::option::Option<i64>,
     pub(crate) calculated_lifecycle: ::std::option::Option<crate::types::CalculatedLifecycle>,
@@ -439,6 +446,20 @@ impl DescribeRecoveryPointOutputBuilder {
     /// <p>The date and time that a recovery point is created, in Unix format and Coordinated Universal Time (UTC). The value of <code>CreationDate</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
     pub fn get_creation_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.creation_date
+    }
+    /// <p>The date and time when the backup job that created this recovery point was initiated, in Unix format and Coordinated Universal Time (UTC).</p>
+    pub fn initiation_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.initiation_date = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The date and time when the backup job that created this recovery point was initiated, in Unix format and Coordinated Universal Time (UTC).</p>
+    pub fn set_initiation_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.initiation_date = input;
+        self
+    }
+    /// <p>The date and time when the backup job that created this recovery point was initiated, in Unix format and Coordinated Universal Time (UTC).</p>
+    pub fn get_initiation_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.initiation_date
     }
     /// <p>The date and time that a job to create a recovery point is completed, in Unix format and Coordinated Universal Time (UTC). The value of <code>CompletionDate</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
     pub fn completion_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -685,6 +706,7 @@ impl DescribeRecoveryPointOutputBuilder {
             status: self.status,
             status_message: self.status_message,
             creation_date: self.creation_date,
+            initiation_date: self.initiation_date,
             completion_date: self.completion_date,
             backup_size_in_bytes: self.backup_size_in_bytes,
             calculated_lifecycle: self.calculated_lifecycle,

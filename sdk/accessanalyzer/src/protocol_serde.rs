@@ -265,6 +265,8 @@ pub(crate) mod shape_generated_policy_properties;
 
 pub(crate) mod shape_iam_role_configuration;
 
+pub(crate) mod shape_internal_access_configuration;
+
 pub(crate) mod shape_job_error;
 
 pub(crate) mod shape_kms_key_configuration;
@@ -315,6 +317,12 @@ pub(crate) mod shape_finding_source;
 
 pub(crate) mod shape_generated_policy;
 
+pub(crate) mod shape_internal_access_analysis_rule;
+
+pub(crate) mod shape_internal_access_details;
+
+pub(crate) mod shape_internal_access_findings_statistics;
+
 pub(crate) mod shape_kms_grant_configuration;
 
 pub(crate) mod shape_location_list;
@@ -353,6 +361,12 @@ pub(crate) mod shape_analysis_rule_criteria_list;
 
 pub(crate) mod shape_finding_source_detail;
 
+pub(crate) mod shape_internal_access_analysis_rule_criteria;
+
+pub(crate) mod shape_internal_access_analysis_rule_criteria_list;
+
+pub(crate) mod shape_internal_access_resource_type_statistics_map;
+
 pub(crate) mod shape_kms_grant_constraints;
 
 pub(crate) mod shape_location;
@@ -374,6 +388,8 @@ pub(crate) mod shape_ebs_group_list;
 pub(crate) mod shape_ebs_user_id_list;
 
 pub(crate) mod shape_finding_aggregation_account_details;
+
+pub(crate) mod shape_internal_access_resource_type_details;
 
 pub(crate) mod shape_internet_configuration;
 
@@ -414,6 +430,10 @@ pub(crate) mod shape_path_element;
 pub(crate) mod shape_position;
 
 pub(crate) mod shape_region_list;
+
+pub(crate) mod shape_resource_arns_list;
+
+pub(crate) mod shape_resource_type_list;
 
 pub(crate) mod shape_tags_list;
 

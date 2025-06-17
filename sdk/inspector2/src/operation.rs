@@ -4,6 +4,12 @@ pub use ::aws_types::request_id::RequestId;
 /// Types for the `AssociateMember` operation.
 pub mod associate_member;
 
+/// Types for the `BatchAssociateCodeSecurityScanConfiguration` operation.
+pub mod batch_associate_code_security_scan_configuration;
+
+/// Types for the `BatchDisassociateCodeSecurityScanConfiguration` operation.
+pub mod batch_disassociate_code_security_scan_configuration;
+
 /// Types for the `BatchGetAccountStatus` operation.
 pub mod batch_get_account_status;
 
@@ -31,6 +37,12 @@ pub mod cancel_sbom_export;
 /// Types for the `CreateCisScanConfiguration` operation.
 pub mod create_cis_scan_configuration;
 
+/// Types for the `CreateCodeSecurityIntegration` operation.
+pub mod create_code_security_integration;
+
+/// Types for the `CreateCodeSecurityScanConfiguration` operation.
+pub mod create_code_security_scan_configuration;
+
 /// Types for the `CreateFilter` operation.
 pub mod create_filter;
 
@@ -42,6 +54,12 @@ pub mod create_sbom_export;
 
 /// Types for the `DeleteCisScanConfiguration` operation.
 pub mod delete_cis_scan_configuration;
+
+/// Types for the `DeleteCodeSecurityIntegration` operation.
+pub mod delete_code_security_integration;
+
+/// Types for the `DeleteCodeSecurityScanConfiguration` operation.
+pub mod delete_code_security_scan_configuration;
 
 /// Types for the `DeleteFilter` operation.
 pub mod delete_filter;
@@ -72,6 +90,15 @@ pub mod get_cis_scan_result_details;
 
 /// Types for the `GetClustersForImage` operation.
 pub mod get_clusters_for_image;
+
+/// Types for the `GetCodeSecurityIntegration` operation.
+pub mod get_code_security_integration;
+
+/// Types for the `GetCodeSecurityScan` operation.
+pub mod get_code_security_scan;
+
+/// Types for the `GetCodeSecurityScanConfiguration` operation.
+pub mod get_code_security_scan_configuration;
 
 /// Types for the `GetConfiguration` operation.
 pub mod get_configuration;
@@ -108,6 +135,15 @@ pub mod list_cis_scan_results_aggregated_by_target_resource;
 
 /// Types for the `ListCisScans` operation.
 pub mod list_cis_scans;
+
+/// Types for the `ListCodeSecurityIntegrations` operation.
+pub mod list_code_security_integrations;
+
+/// Types for the `ListCodeSecurityScanConfigurationAssociations` operation.
+pub mod list_code_security_scan_configuration_associations;
+
+/// Types for the `ListCodeSecurityScanConfigurations` operation.
+pub mod list_code_security_scan_configurations;
 
 /// Types for the `ListCoverage` operation.
 pub mod list_coverage;
@@ -151,6 +187,9 @@ pub mod send_cis_session_telemetry;
 /// Types for the `StartCisSession` operation.
 pub mod start_cis_session;
 
+/// Types for the `StartCodeSecurityScan` operation.
+pub mod start_code_security_scan;
+
 /// Types for the `StopCisSession` operation.
 pub mod stop_cis_session;
 
@@ -162,6 +201,12 @@ pub mod untag_resource;
 
 /// Types for the `UpdateCisScanConfiguration` operation.
 pub mod update_cis_scan_configuration;
+
+/// Types for the `UpdateCodeSecurityIntegration` operation.
+pub mod update_code_security_integration;
+
+/// Types for the `UpdateCodeSecurityScanConfiguration` operation.
+pub mod update_code_security_scan_configuration;
 
 /// Types for the `UpdateConfiguration` operation.
 pub mod update_configuration;

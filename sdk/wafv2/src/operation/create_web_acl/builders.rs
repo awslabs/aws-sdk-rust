@@ -378,4 +378,18 @@ impl CreateWebACLFluentBuilder {
     pub fn get_on_source_d_do_s_protection_config(&self) -> &::std::option::Option<crate::types::OnSourceDDoSProtectionConfig> {
         self.inner.get_on_source_d_do_s_protection_config()
     }
+    /// <p>Configures the ability for the WAF console to store and retrieve application attributes during the web ACL creation process. Application attributes help WAF give recommendations for protection packs.</p>
+    pub fn application_config(mut self, input: crate::types::ApplicationConfig) -> Self {
+        self.inner = self.inner.application_config(input);
+        self
+    }
+    /// <p>Configures the ability for the WAF console to store and retrieve application attributes during the web ACL creation process. Application attributes help WAF give recommendations for protection packs.</p>
+    pub fn set_application_config(mut self, input: ::std::option::Option<crate::types::ApplicationConfig>) -> Self {
+        self.inner = self.inner.set_application_config(input);
+        self
+    }
+    /// <p>Configures the ability for the WAF console to store and retrieve application attributes during the web ACL creation process. Application attributes help WAF give recommendations for protection packs.</p>
+    pub fn get_application_config(&self) -> &::std::option::Option<crate::types::ApplicationConfig> {
+        self.inner.get_application_config()
+    }
 }

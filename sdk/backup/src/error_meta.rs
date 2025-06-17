@@ -80,6 +80,55 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
         }
     }
 }
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::associate_backup_vault_mpa_approval_team::AssociateBackupVaultMpaApprovalTeamError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::associate_backup_vault_mpa_approval_team::AssociateBackupVaultMpaApprovalTeamError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::associate_backup_vault_mpa_approval_team::AssociateBackupVaultMpaApprovalTeamError> for Error {
+    fn from(err: crate::operation::associate_backup_vault_mpa_approval_team::AssociateBackupVaultMpaApprovalTeamError) -> Self {
+        match err {
+            crate::operation::associate_backup_vault_mpa_approval_team::AssociateBackupVaultMpaApprovalTeamError::InvalidParameterValueException(
+                inner,
+            ) => Error::InvalidParameterValueException(inner),
+            crate::operation::associate_backup_vault_mpa_approval_team::AssociateBackupVaultMpaApprovalTeamError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::associate_backup_vault_mpa_approval_team::AssociateBackupVaultMpaApprovalTeamError::MissingParameterValueException(
+                inner,
+            ) => Error::MissingParameterValueException(inner),
+            crate::operation::associate_backup_vault_mpa_approval_team::AssociateBackupVaultMpaApprovalTeamError::ResourceNotFoundException(
+                inner,
+            ) => Error::ResourceNotFoundException(inner),
+            crate::operation::associate_backup_vault_mpa_approval_team::AssociateBackupVaultMpaApprovalTeamError::ServiceUnavailableException(
+                inner,
+            ) => Error::ServiceUnavailableException(inner),
+            crate::operation::associate_backup_vault_mpa_approval_team::AssociateBackupVaultMpaApprovalTeamError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::cancel_legal_hold::CancelLegalHoldError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -358,6 +407,59 @@ impl From<crate::operation::create_report_plan::CreateReportPlanError> for Error
                 Error::ServiceUnavailableException(inner)
             }
             crate::operation::create_report_plan::CreateReportPlanError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::create_restore_access_backup_vault::CreateRestoreAccessBackupVaultError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::create_restore_access_backup_vault::CreateRestoreAccessBackupVaultError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_restore_access_backup_vault::CreateRestoreAccessBackupVaultError> for Error {
+    fn from(err: crate::operation::create_restore_access_backup_vault::CreateRestoreAccessBackupVaultError) -> Self {
+        match err {
+            crate::operation::create_restore_access_backup_vault::CreateRestoreAccessBackupVaultError::AlreadyExistsException(inner) => {
+                Error::AlreadyExistsException(inner)
+            }
+            crate::operation::create_restore_access_backup_vault::CreateRestoreAccessBackupVaultError::InvalidParameterValueException(inner) => {
+                Error::InvalidParameterValueException(inner)
+            }
+            crate::operation::create_restore_access_backup_vault::CreateRestoreAccessBackupVaultError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::create_restore_access_backup_vault::CreateRestoreAccessBackupVaultError::LimitExceededException(inner) => {
+                Error::LimitExceededException(inner)
+            }
+            crate::operation::create_restore_access_backup_vault::CreateRestoreAccessBackupVaultError::MissingParameterValueException(inner) => {
+                Error::MissingParameterValueException(inner)
+            }
+            crate::operation::create_restore_access_backup_vault::CreateRestoreAccessBackupVaultError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::create_restore_access_backup_vault::CreateRestoreAccessBackupVaultError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::operation::create_restore_access_backup_vault::CreateRestoreAccessBackupVaultError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1205,6 +1307,43 @@ impl From<crate::operation::describe_restore_job::DescribeRestoreJobError> for E
                 Error::ServiceUnavailableException(inner)
             }
             crate::operation::describe_restore_job::DescribeRestoreJobError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::disassociate_backup_vault_mpa_approval_team::DisassociateBackupVaultMpaApprovalTeamError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::disassociate_backup_vault_mpa_approval_team::DisassociateBackupVaultMpaApprovalTeamError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::disassociate_backup_vault_mpa_approval_team::DisassociateBackupVaultMpaApprovalTeamError> for Error {
+    fn from(err: crate::operation::disassociate_backup_vault_mpa_approval_team::DisassociateBackupVaultMpaApprovalTeamError) -> Self {
+        match err {
+            crate::operation::disassociate_backup_vault_mpa_approval_team::DisassociateBackupVaultMpaApprovalTeamError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::disassociate_backup_vault_mpa_approval_team::DisassociateBackupVaultMpaApprovalTeamError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::disassociate_backup_vault_mpa_approval_team::DisassociateBackupVaultMpaApprovalTeamError::MissingParameterValueException(inner) => Error::MissingParameterValueException(inner),
+            crate::operation::disassociate_backup_vault_mpa_approval_team::DisassociateBackupVaultMpaApprovalTeamError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::disassociate_backup_vault_mpa_approval_team::DisassociateBackupVaultMpaApprovalTeamError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::disassociate_backup_vault_mpa_approval_team::DisassociateBackupVaultMpaApprovalTeamError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -2436,6 +2575,50 @@ impl From<crate::operation::list_report_plans::ListReportPlansError> for Error {
         }
     }
 }
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_restore_access_backup_vaults::ListRestoreAccessBackupVaultsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_restore_access_backup_vaults::ListRestoreAccessBackupVaultsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_restore_access_backup_vaults::ListRestoreAccessBackupVaultsError> for Error {
+    fn from(err: crate::operation::list_restore_access_backup_vaults::ListRestoreAccessBackupVaultsError) -> Self {
+        match err {
+            crate::operation::list_restore_access_backup_vaults::ListRestoreAccessBackupVaultsError::InvalidParameterValueException(inner) => {
+                Error::InvalidParameterValueException(inner)
+            }
+            crate::operation::list_restore_access_backup_vaults::ListRestoreAccessBackupVaultsError::MissingParameterValueException(inner) => {
+                Error::MissingParameterValueException(inner)
+            }
+            crate::operation::list_restore_access_backup_vaults::ListRestoreAccessBackupVaultsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::list_restore_access_backup_vaults::ListRestoreAccessBackupVaultsError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::operation::list_restore_access_backup_vaults::ListRestoreAccessBackupVaultsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_restore_jobs::ListRestoreJobsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -2794,6 +2977,53 @@ impl From<crate::operation::put_restore_validation_result::PutRestoreValidationR
                 Error::ServiceUnavailableException(inner)
             }
             crate::operation::put_restore_validation_result::PutRestoreValidationResultError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::revoke_restore_access_backup_vault::RevokeRestoreAccessBackupVaultError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::revoke_restore_access_backup_vault::RevokeRestoreAccessBackupVaultError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::revoke_restore_access_backup_vault::RevokeRestoreAccessBackupVaultError> for Error {
+    fn from(err: crate::operation::revoke_restore_access_backup_vault::RevokeRestoreAccessBackupVaultError) -> Self {
+        match err {
+            crate::operation::revoke_restore_access_backup_vault::RevokeRestoreAccessBackupVaultError::InvalidParameterValueException(inner) => {
+                Error::InvalidParameterValueException(inner)
+            }
+            crate::operation::revoke_restore_access_backup_vault::RevokeRestoreAccessBackupVaultError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::revoke_restore_access_backup_vault::RevokeRestoreAccessBackupVaultError::MissingParameterValueException(inner) => {
+                Error::MissingParameterValueException(inner)
+            }
+            crate::operation::revoke_restore_access_backup_vault::RevokeRestoreAccessBackupVaultError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::revoke_restore_access_backup_vault::RevokeRestoreAccessBackupVaultError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::operation::revoke_restore_access_backup_vault::RevokeRestoreAccessBackupVaultError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

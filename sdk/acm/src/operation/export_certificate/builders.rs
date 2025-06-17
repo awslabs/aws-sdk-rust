@@ -22,8 +22,8 @@ impl crate::operation::export_certificate::builders::ExportCertificateInputBuild
 }
 /// Fluent builder constructing a request to `ExportCertificate`.
 ///
-/// <p>Exports a private certificate issued by a private certificate authority (CA) for use anywhere. The exported file contains the certificate, the certificate chain, and the encrypted private 2048-bit RSA key associated with the public key that is embedded in the certificate. For security, you must assign a passphrase for the private key when exporting it.</p>
-/// <p>For information about exporting and formatting a certificate using the ACM console or CLI, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-export-private.html">Export a Private Certificate</a>.</p>
+/// <p>Exports a private certificate issued by a private certificate authority (CA) or public certificate for use anywhere. The exported file contains the certificate, the certificate chain, and the encrypted private key associated with the public key that is embedded in the certificate. For security, you must assign a passphrase for the private key when exporting it.</p>
+/// <p>For information about exporting and formatting a certificate using the ACM console or CLI, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/export-private.html">Export a private certificate</a> and <a href="https://docs.aws.amazon.com/acm/latest/userguide/export-public-certificate">Export a public certificate</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ExportCertificateFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

@@ -5,7 +5,7 @@
 pub struct CreateCustomModelInput {
     /// <p>A unique name for the custom model.</p>
     pub model_name: ::std::option::Option<::std::string::String>,
-    /// <p>The data source for the model. The Amazon S3 URI in the model source must be for the Amazon-managed Amazon S3 bucket containing your model artifacts. SageMaker AI creates this bucket when you run your first SageMaker AI training job.</p>
+    /// <p>The data source for the model. The Amazon S3 URI in the model source must be for the Amazon-managed Amazon S3 bucket containing your model artifacts.</p>
     pub model_source_config: ::std::option::Option<crate::types::ModelDataSource>,
     /// <p>The Amazon Resource Name (ARN) of the customer managed KMS key to encrypt the custom model. If you don't provide a KMS key, Amazon Bedrock uses an Amazon Web Services-managed KMS key to encrypt the model.</p>
     /// <p>If you provide a customer managed KMS key, your Amazon Bedrock service role must have permissions to use it. For more information see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/encryption-import-model.html">Encryption of imported models</a>.</p>
@@ -23,7 +23,7 @@ impl CreateCustomModelInput {
     pub fn model_name(&self) -> ::std::option::Option<&str> {
         self.model_name.as_deref()
     }
-    /// <p>The data source for the model. The Amazon S3 URI in the model source must be for the Amazon-managed Amazon S3 bucket containing your model artifacts. SageMaker AI creates this bucket when you run your first SageMaker AI training job.</p>
+    /// <p>The data source for the model. The Amazon S3 URI in the model source must be for the Amazon-managed Amazon S3 bucket containing your model artifacts.</p>
     pub fn model_source_config(&self) -> ::std::option::Option<&crate::types::ModelDataSource> {
         self.model_source_config.as_ref()
     }
@@ -82,18 +82,18 @@ impl CreateCustomModelInputBuilder {
     pub fn get_model_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.model_name
     }
-    /// <p>The data source for the model. The Amazon S3 URI in the model source must be for the Amazon-managed Amazon S3 bucket containing your model artifacts. SageMaker AI creates this bucket when you run your first SageMaker AI training job.</p>
+    /// <p>The data source for the model. The Amazon S3 URI in the model source must be for the Amazon-managed Amazon S3 bucket containing your model artifacts.</p>
     /// This field is required.
     pub fn model_source_config(mut self, input: crate::types::ModelDataSource) -> Self {
         self.model_source_config = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The data source for the model. The Amazon S3 URI in the model source must be for the Amazon-managed Amazon S3 bucket containing your model artifacts. SageMaker AI creates this bucket when you run your first SageMaker AI training job.</p>
+    /// <p>The data source for the model. The Amazon S3 URI in the model source must be for the Amazon-managed Amazon S3 bucket containing your model artifacts.</p>
     pub fn set_model_source_config(mut self, input: ::std::option::Option<crate::types::ModelDataSource>) -> Self {
         self.model_source_config = input;
         self
     }
-    /// <p>The data source for the model. The Amazon S3 URI in the model source must be for the Amazon-managed Amazon S3 bucket containing your model artifacts. SageMaker AI creates this bucket when you run your first SageMaker AI training job.</p>
+    /// <p>The data source for the model. The Amazon S3 URI in the model source must be for the Amazon-managed Amazon S3 bucket containing your model artifacts.</p>
     pub fn get_model_source_config(&self) -> &::std::option::Option<crate::types::ModelDataSource> {
         &self.model_source_config
     }

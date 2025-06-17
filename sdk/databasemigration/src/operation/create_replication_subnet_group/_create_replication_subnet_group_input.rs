@@ -9,6 +9,7 @@ pub struct CreateReplicationSubnetGroupInput {
     /// <p>Example: <code>mySubnetgroup</code></p>
     pub replication_subnet_group_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The description for the subnet group.</p>
+    /// <p>Constraints: This parameter Must not contain non-printable control characters.</p>
     pub replication_subnet_group_description: ::std::option::Option<::std::string::String>,
     /// <p>Two or more subnet IDs to be assigned to the subnet group.</p>
     pub subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -23,6 +24,7 @@ impl CreateReplicationSubnetGroupInput {
         self.replication_subnet_group_identifier.as_deref()
     }
     /// <p>The description for the subnet group.</p>
+    /// <p>Constraints: This parameter Must not contain non-printable control characters.</p>
     pub fn replication_subnet_group_description(&self) -> ::std::option::Option<&str> {
         self.replication_subnet_group_description.as_deref()
     }
@@ -78,17 +80,20 @@ impl CreateReplicationSubnetGroupInputBuilder {
         &self.replication_subnet_group_identifier
     }
     /// <p>The description for the subnet group.</p>
+    /// <p>Constraints: This parameter Must not contain non-printable control characters.</p>
     /// This field is required.
     pub fn replication_subnet_group_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.replication_subnet_group_description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The description for the subnet group.</p>
+    /// <p>Constraints: This parameter Must not contain non-printable control characters.</p>
     pub fn set_replication_subnet_group_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.replication_subnet_group_description = input;
         self
     }
     /// <p>The description for the subnet group.</p>
+    /// <p>Constraints: This parameter Must not contain non-printable control characters.</p>
     pub fn get_replication_subnet_group_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.replication_subnet_group_description
     }

@@ -531,6 +531,30 @@ pub fn ser_filter_criteria(
         }
         array_174.finish();
     }
+    if let Some(var_177) = &input.code_repository_project_name {
+        let mut array_178 = object.key("codeRepositoryProjectName").start_array();
+        for item_179 in var_177 {
+            {
+                #[allow(unused_mut)]
+                let mut object_180 = array_178.value().start_object();
+                crate::protocol_serde::shape_string_filter::ser_string_filter(&mut object_180, item_179)?;
+                object_180.finish();
+            }
+        }
+        array_178.finish();
+    }
+    if let Some(var_181) = &input.code_repository_provider_type {
+        let mut array_182 = object.key("codeRepositoryProviderType").start_array();
+        for item_183 in var_181 {
+            {
+                #[allow(unused_mut)]
+                let mut object_184 = array_182.value().start_object();
+                crate::protocol_serde::shape_string_filter::ser_string_filter(&mut object_184, item_183)?;
+                object_184.finish();
+            }
+        }
+        array_182.finish();
+    }
     Ok(())
 }
 
@@ -701,6 +725,14 @@ where
                         }
                         "epssScore" => {
                             builder = builder.set_epss_score(crate::protocol_serde::shape_number_filter_list::de_number_filter_list(tokens)?);
+                        }
+                        "codeRepositoryProjectName" => {
+                            builder = builder
+                                .set_code_repository_project_name(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens)?);
+                        }
+                        "codeRepositoryProviderType" => {
+                            builder = builder
+                                .set_code_repository_provider_type(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

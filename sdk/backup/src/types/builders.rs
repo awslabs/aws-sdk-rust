@@ -43,6 +43,10 @@ pub use crate::types::_restore_jobs_list_member::RestoreJobsListMemberBuilder;
 
 pub use crate::types::_restore_job_creator::RestoreJobCreatorBuilder;
 
+pub use crate::types::_restore_access_backup_vault_list_member::RestoreAccessBackupVaultListMemberBuilder;
+
+pub use crate::types::_latest_revoke_request::LatestRevokeRequestBuilder;
+
 pub use crate::types::_report_plan::ReportPlanBuilder;
 
 pub use crate::types::_report_job::ReportJobBuilder;
@@ -100,6 +104,8 @@ pub use crate::types::_condition::ConditionBuilder;
 pub use crate::types::_backup_plan::BackupPlanBuilder;
 
 pub use crate::types::_backup_rule::BackupRuleBuilder;
+
+pub use crate::types::_latest_mpa_approval_team_update::LatestMpaApprovalTeamUpdateBuilder;
 
 pub use crate::types::_restore_testing_selection_for_create::RestoreTestingSelectionForCreateBuilder;
 

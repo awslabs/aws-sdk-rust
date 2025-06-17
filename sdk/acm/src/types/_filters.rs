@@ -11,6 +11,8 @@ pub struct Filters {
     /// <p>Specify one or more algorithms that can be used to generate key pairs.</p>
     /// <p>Default filtering returns only <code>RSA_1024</code> and <code>RSA_2048</code> certificates that have at least one domain. To return other certificate types, provide the desired type signatures in a comma-separated list. For example, <code>"keyTypes": \["RSA_2048","RSA_4096"\]</code> returns both <code>RSA_2048</code> and <code>RSA_4096</code> certificates.</p>
     pub key_types: ::std::option::Option<::std::vec::Vec<crate::types::KeyAlgorithm>>,
+    /// <p>Specify <code>ENABLED</code> or <code>DISABLED</code> to identify certificates that can be exported.</p>
+    pub export_option: ::std::option::Option<crate::types::CertificateExport>,
     /// <p>Identifies the Amazon Web Services service that manages the certificate issued by ACM.</p>
     pub managed_by: ::std::option::Option<crate::types::CertificateManagedBy>,
 }
@@ -34,6 +36,10 @@ impl Filters {
     pub fn key_types(&self) -> &[crate::types::KeyAlgorithm] {
         self.key_types.as_deref().unwrap_or_default()
     }
+    /// <p>Specify <code>ENABLED</code> or <code>DISABLED</code> to identify certificates that can be exported.</p>
+    pub fn export_option(&self) -> ::std::option::Option<&crate::types::CertificateExport> {
+        self.export_option.as_ref()
+    }
     /// <p>Identifies the Amazon Web Services service that manages the certificate issued by ACM.</p>
     pub fn managed_by(&self) -> ::std::option::Option<&crate::types::CertificateManagedBy> {
         self.managed_by.as_ref()
@@ -53,6 +59,7 @@ pub struct FiltersBuilder {
     pub(crate) extended_key_usage: ::std::option::Option<::std::vec::Vec<crate::types::ExtendedKeyUsageName>>,
     pub(crate) key_usage: ::std::option::Option<::std::vec::Vec<crate::types::KeyUsageName>>,
     pub(crate) key_types: ::std::option::Option<::std::vec::Vec<crate::types::KeyAlgorithm>>,
+    pub(crate) export_option: ::std::option::Option<crate::types::CertificateExport>,
     pub(crate) managed_by: ::std::option::Option<crate::types::CertificateManagedBy>,
 }
 impl FiltersBuilder {
@@ -119,6 +126,20 @@ impl FiltersBuilder {
     pub fn get_key_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::KeyAlgorithm>> {
         &self.key_types
     }
+    /// <p>Specify <code>ENABLED</code> or <code>DISABLED</code> to identify certificates that can be exported.</p>
+    pub fn export_option(mut self, input: crate::types::CertificateExport) -> Self {
+        self.export_option = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specify <code>ENABLED</code> or <code>DISABLED</code> to identify certificates that can be exported.</p>
+    pub fn set_export_option(mut self, input: ::std::option::Option<crate::types::CertificateExport>) -> Self {
+        self.export_option = input;
+        self
+    }
+    /// <p>Specify <code>ENABLED</code> or <code>DISABLED</code> to identify certificates that can be exported.</p>
+    pub fn get_export_option(&self) -> &::std::option::Option<crate::types::CertificateExport> {
+        &self.export_option
+    }
     /// <p>Identifies the Amazon Web Services service that manages the certificate issued by ACM.</p>
     pub fn managed_by(mut self, input: crate::types::CertificateManagedBy) -> Self {
         self.managed_by = ::std::option::Option::Some(input);
@@ -139,6 +160,7 @@ impl FiltersBuilder {
             extended_key_usage: self.extended_key_usage,
             key_usage: self.key_usage,
             key_types: self.key_types,
+            export_option: self.export_option,
             managed_by: self.managed_by,
         }
     }

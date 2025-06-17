@@ -70,6 +70,12 @@ pub fn ser_aggregation_request(
             crate::protocol_serde::shape_lambda_function_aggregation::ser_lambda_function_aggregation(&mut object_11, inner)?;
             object_11.finish();
         }
+        crate::types::AggregationRequest::CodeRepositoryAggregation(inner) => {
+            #[allow(unused_mut)]
+            let mut object_12 = object_6.key("codeRepositoryAggregation").start_object();
+            crate::protocol_serde::shape_code_repository_aggregation::ser_code_repository_aggregation(&mut object_12, inner)?;
+            object_12.finish();
+        }
         crate::types::AggregationRequest::Unknown => {
             return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant(
                 "AggregationRequest",

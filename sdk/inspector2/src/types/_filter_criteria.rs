@@ -92,6 +92,10 @@ pub struct FilterCriteria {
     pub code_vulnerability_file_path: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     /// <p>The EPSS score used to filter findings.</p>
     pub epss_score: ::std::option::Option<::std::vec::Vec<crate::types::NumberFilter>>,
+    /// <p>Filter criteria for findings based on the project name in a code repository.</p>
+    pub code_repository_project_name: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
+    /// <p>Filter criteria for findings based on the repository provider type (such as GitHub, GitLab, etc.).</p>
+    pub code_repository_provider_type: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
 }
 impl FilterCriteria {
     /// <p>Details on the finding ARNs used to filter findings.</p>
@@ -358,6 +362,18 @@ impl FilterCriteria {
     pub fn epss_score(&self) -> &[crate::types::NumberFilter] {
         self.epss_score.as_deref().unwrap_or_default()
     }
+    /// <p>Filter criteria for findings based on the project name in a code repository.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.code_repository_project_name.is_none()`.
+    pub fn code_repository_project_name(&self) -> &[crate::types::StringFilter] {
+        self.code_repository_project_name.as_deref().unwrap_or_default()
+    }
+    /// <p>Filter criteria for findings based on the repository provider type (such as GitHub, GitLab, etc.).</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.code_repository_provider_type.is_none()`.
+    pub fn code_repository_provider_type(&self) -> &[crate::types::StringFilter] {
+        self.code_repository_provider_type.as_deref().unwrap_or_default()
+    }
 }
 impl FilterCriteria {
     /// Creates a new builder-style object to manufacture [`FilterCriteria`](crate::types::FilterCriteria).
@@ -414,6 +430,8 @@ pub struct FilterCriteriaBuilder {
     pub(crate) code_vulnerability_detector_tags: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     pub(crate) code_vulnerability_file_path: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     pub(crate) epss_score: ::std::option::Option<::std::vec::Vec<crate::types::NumberFilter>>,
+    pub(crate) code_repository_project_name: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
+    pub(crate) code_repository_provider_type: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
 }
 impl FilterCriteriaBuilder {
     /// Appends an item to `finding_arn`.
@@ -1296,6 +1314,46 @@ impl FilterCriteriaBuilder {
     pub fn get_epss_score(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::NumberFilter>> {
         &self.epss_score
     }
+    /// Appends an item to `code_repository_project_name`.
+    ///
+    /// To override the contents of this collection use [`set_code_repository_project_name`](Self::set_code_repository_project_name).
+    ///
+    /// <p>Filter criteria for findings based on the project name in a code repository.</p>
+    pub fn code_repository_project_name(mut self, input: crate::types::StringFilter) -> Self {
+        let mut v = self.code_repository_project_name.unwrap_or_default();
+        v.push(input);
+        self.code_repository_project_name = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Filter criteria for findings based on the project name in a code repository.</p>
+    pub fn set_code_repository_project_name(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>) -> Self {
+        self.code_repository_project_name = input;
+        self
+    }
+    /// <p>Filter criteria for findings based on the project name in a code repository.</p>
+    pub fn get_code_repository_project_name(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
+        &self.code_repository_project_name
+    }
+    /// Appends an item to `code_repository_provider_type`.
+    ///
+    /// To override the contents of this collection use [`set_code_repository_provider_type`](Self::set_code_repository_provider_type).
+    ///
+    /// <p>Filter criteria for findings based on the repository provider type (such as GitHub, GitLab, etc.).</p>
+    pub fn code_repository_provider_type(mut self, input: crate::types::StringFilter) -> Self {
+        let mut v = self.code_repository_provider_type.unwrap_or_default();
+        v.push(input);
+        self.code_repository_provider_type = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Filter criteria for findings based on the repository provider type (such as GitHub, GitLab, etc.).</p>
+    pub fn set_code_repository_provider_type(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>) -> Self {
+        self.code_repository_provider_type = input;
+        self
+    }
+    /// <p>Filter criteria for findings based on the repository provider type (such as GitHub, GitLab, etc.).</p>
+    pub fn get_code_repository_provider_type(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
+        &self.code_repository_provider_type
+    }
     /// Consumes the builder and constructs a [`FilterCriteria`](crate::types::FilterCriteria).
     pub fn build(self) -> crate::types::FilterCriteria {
         crate::types::FilterCriteria {
@@ -1343,6 +1401,8 @@ impl FilterCriteriaBuilder {
             code_vulnerability_detector_tags: self.code_vulnerability_detector_tags,
             code_vulnerability_file_path: self.code_vulnerability_file_path,
             epss_score: self.epss_score,
+            code_repository_project_name: self.code_repository_project_name,
+            code_repository_provider_type: self.code_repository_provider_type,
         }
     }
 }

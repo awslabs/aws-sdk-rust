@@ -43,6 +43,11 @@ where
                         "sequenceIndicators" => {
                             builder = builder.set_sequence_indicators(crate::protocol_serde::shape_indicators::de_indicators(tokens)?);
                         }
+                        "additionalSequenceTypes" => {
+                            builder = builder.set_additional_sequence_types(
+                                crate::protocol_serde::shape_additional_sequence_types::de_additional_sequence_types(tokens)?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

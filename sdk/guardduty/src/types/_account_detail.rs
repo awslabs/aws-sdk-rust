@@ -7,6 +7,26 @@ pub struct AccountDetail {
     /// <p>The member account ID.</p>
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>The email address of the member account.</p>
+    /// <p>The rules for a valid email address:</p>
+    /// <ul>
+    /// <li>
+    /// <p>The email address must be a minimum of 6 and a maximum of 64 characters long.</p></li>
+    /// <li>
+    /// <p>All characters must be 7-bit ASCII characters.</p></li>
+    /// <li>
+    /// <p>There must be one and only one @ symbol, which separates the local name from the domain name.</p></li>
+    /// <li>
+    /// <p>The local name can't contain any of the following characters:</p>
+    /// <p>whitespace, " ' ( ) &lt; &gt; \[ \] : ' , \ | % &amp;</p></li>
+    /// <li>
+    /// <p>The local name can't begin with a dot (.).</p></li>
+    /// <li>
+    /// <p>The domain name can consist of only the characters \[a-z\], \[A-Z\], \[0-9\], hyphen (-), or dot (.).</p></li>
+    /// <li>
+    /// <p>The domain name can't begin or end with a dot (.) or hyphen (-).</p></li>
+    /// <li>
+    /// <p>The domain name must contain at least one dot.</p></li>
+    /// </ul>
     pub email: ::std::option::Option<::std::string::String>,
 }
 impl AccountDetail {
@@ -15,6 +35,26 @@ impl AccountDetail {
         self.account_id.as_deref()
     }
     /// <p>The email address of the member account.</p>
+    /// <p>The rules for a valid email address:</p>
+    /// <ul>
+    /// <li>
+    /// <p>The email address must be a minimum of 6 and a maximum of 64 characters long.</p></li>
+    /// <li>
+    /// <p>All characters must be 7-bit ASCII characters.</p></li>
+    /// <li>
+    /// <p>There must be one and only one @ symbol, which separates the local name from the domain name.</p></li>
+    /// <li>
+    /// <p>The local name can't contain any of the following characters:</p>
+    /// <p>whitespace, " ' ( ) &lt; &gt; \[ \] : ' , \ | % &amp;</p></li>
+    /// <li>
+    /// <p>The local name can't begin with a dot (.).</p></li>
+    /// <li>
+    /// <p>The domain name can consist of only the characters \[a-z\], \[A-Z\], \[0-9\], hyphen (-), or dot (.).</p></li>
+    /// <li>
+    /// <p>The domain name can't begin or end with a dot (.) or hyphen (-).</p></li>
+    /// <li>
+    /// <p>The domain name must contain at least one dot.</p></li>
+    /// </ul>
     pub fn email(&self) -> ::std::option::Option<&str> {
         self.email.as_deref()
     }
@@ -58,17 +98,77 @@ impl AccountDetailBuilder {
         &self.account_id
     }
     /// <p>The email address of the member account.</p>
+    /// <p>The rules for a valid email address:</p>
+    /// <ul>
+    /// <li>
+    /// <p>The email address must be a minimum of 6 and a maximum of 64 characters long.</p></li>
+    /// <li>
+    /// <p>All characters must be 7-bit ASCII characters.</p></li>
+    /// <li>
+    /// <p>There must be one and only one @ symbol, which separates the local name from the domain name.</p></li>
+    /// <li>
+    /// <p>The local name can't contain any of the following characters:</p>
+    /// <p>whitespace, " ' ( ) &lt; &gt; \[ \] : ' , \ | % &amp;</p></li>
+    /// <li>
+    /// <p>The local name can't begin with a dot (.).</p></li>
+    /// <li>
+    /// <p>The domain name can consist of only the characters \[a-z\], \[A-Z\], \[0-9\], hyphen (-), or dot (.).</p></li>
+    /// <li>
+    /// <p>The domain name can't begin or end with a dot (.) or hyphen (-).</p></li>
+    /// <li>
+    /// <p>The domain name must contain at least one dot.</p></li>
+    /// </ul>
     /// This field is required.
     pub fn email(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.email = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The email address of the member account.</p>
+    /// <p>The rules for a valid email address:</p>
+    /// <ul>
+    /// <li>
+    /// <p>The email address must be a minimum of 6 and a maximum of 64 characters long.</p></li>
+    /// <li>
+    /// <p>All characters must be 7-bit ASCII characters.</p></li>
+    /// <li>
+    /// <p>There must be one and only one @ symbol, which separates the local name from the domain name.</p></li>
+    /// <li>
+    /// <p>The local name can't contain any of the following characters:</p>
+    /// <p>whitespace, " ' ( ) &lt; &gt; \[ \] : ' , \ | % &amp;</p></li>
+    /// <li>
+    /// <p>The local name can't begin with a dot (.).</p></li>
+    /// <li>
+    /// <p>The domain name can consist of only the characters \[a-z\], \[A-Z\], \[0-9\], hyphen (-), or dot (.).</p></li>
+    /// <li>
+    /// <p>The domain name can't begin or end with a dot (.) or hyphen (-).</p></li>
+    /// <li>
+    /// <p>The domain name must contain at least one dot.</p></li>
+    /// </ul>
     pub fn set_email(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.email = input;
         self
     }
     /// <p>The email address of the member account.</p>
+    /// <p>The rules for a valid email address:</p>
+    /// <ul>
+    /// <li>
+    /// <p>The email address must be a minimum of 6 and a maximum of 64 characters long.</p></li>
+    /// <li>
+    /// <p>All characters must be 7-bit ASCII characters.</p></li>
+    /// <li>
+    /// <p>There must be one and only one @ symbol, which separates the local name from the domain name.</p></li>
+    /// <li>
+    /// <p>The local name can't contain any of the following characters:</p>
+    /// <p>whitespace, " ' ( ) &lt; &gt; \[ \] : ' , \ | % &amp;</p></li>
+    /// <li>
+    /// <p>The local name can't begin with a dot (.).</p></li>
+    /// <li>
+    /// <p>The domain name can consist of only the characters \[a-z\], \[A-Z\], \[0-9\], hyphen (-), or dot (.).</p></li>
+    /// <li>
+    /// <p>The domain name can't begin or end with a dot (.) or hyphen (-).</p></li>
+    /// <li>
+    /// <p>The domain name must contain at least one dot.</p></li>
+    /// </ul>
     pub fn get_email(&self) -> &::std::option::Option<::std::string::String> {
         &self.email
     }

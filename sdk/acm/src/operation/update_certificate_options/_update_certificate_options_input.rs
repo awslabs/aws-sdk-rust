@@ -6,7 +6,7 @@ pub struct UpdateCertificateOptionsInput {
     /// <p>ARN of the requested certificate to update. This must be of the form:</p>
     /// <p><code>arn:aws:acm:us-east-1:<i>account</i>:certificate/<i>12345678-1234-1234-1234-123456789012</i> </code></p>
     pub certificate_arn: ::std::option::Option<::std::string::String>,
-    /// <p>Use to update the options for your certificate. Currently, you can specify whether to add your certificate to a transparency log. Certificate transparency makes it possible to detect SSL/TLS certificates that have been mistakenly or maliciously issued. Certificates that have not been logged typically produce an error message in a browser.</p>
+    /// <p>Use to update the options for your certificate. Currently, you can specify whether to add your certificate to a transparency log or export your certificate. Certificate transparency makes it possible to detect SSL/TLS certificates that have been mistakenly or maliciously issued. Certificates that have not been logged typically produce an error message in a browser.</p>
     pub options: ::std::option::Option<crate::types::CertificateOptions>,
 }
 impl UpdateCertificateOptionsInput {
@@ -15,7 +15,7 @@ impl UpdateCertificateOptionsInput {
     pub fn certificate_arn(&self) -> ::std::option::Option<&str> {
         self.certificate_arn.as_deref()
     }
-    /// <p>Use to update the options for your certificate. Currently, you can specify whether to add your certificate to a transparency log. Certificate transparency makes it possible to detect SSL/TLS certificates that have been mistakenly or maliciously issued. Certificates that have not been logged typically produce an error message in a browser.</p>
+    /// <p>Use to update the options for your certificate. Currently, you can specify whether to add your certificate to a transparency log or export your certificate. Certificate transparency makes it possible to detect SSL/TLS certificates that have been mistakenly or maliciously issued. Certificates that have not been logged typically produce an error message in a browser.</p>
     pub fn options(&self) -> ::std::option::Option<&crate::types::CertificateOptions> {
         self.options.as_ref()
     }
@@ -53,18 +53,18 @@ impl UpdateCertificateOptionsInputBuilder {
     pub fn get_certificate_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.certificate_arn
     }
-    /// <p>Use to update the options for your certificate. Currently, you can specify whether to add your certificate to a transparency log. Certificate transparency makes it possible to detect SSL/TLS certificates that have been mistakenly or maliciously issued. Certificates that have not been logged typically produce an error message in a browser.</p>
+    /// <p>Use to update the options for your certificate. Currently, you can specify whether to add your certificate to a transparency log or export your certificate. Certificate transparency makes it possible to detect SSL/TLS certificates that have been mistakenly or maliciously issued. Certificates that have not been logged typically produce an error message in a browser.</p>
     /// This field is required.
     pub fn options(mut self, input: crate::types::CertificateOptions) -> Self {
         self.options = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Use to update the options for your certificate. Currently, you can specify whether to add your certificate to a transparency log. Certificate transparency makes it possible to detect SSL/TLS certificates that have been mistakenly or maliciously issued. Certificates that have not been logged typically produce an error message in a browser.</p>
+    /// <p>Use to update the options for your certificate. Currently, you can specify whether to add your certificate to a transparency log or export your certificate. Certificate transparency makes it possible to detect SSL/TLS certificates that have been mistakenly or maliciously issued. Certificates that have not been logged typically produce an error message in a browser.</p>
     pub fn set_options(mut self, input: ::std::option::Option<crate::types::CertificateOptions>) -> Self {
         self.options = input;
         self
     }
-    /// <p>Use to update the options for your certificate. Currently, you can specify whether to add your certificate to a transparency log. Certificate transparency makes it possible to detect SSL/TLS certificates that have been mistakenly or maliciously issued. Certificates that have not been logged typically produce an error message in a browser.</p>
+    /// <p>Use to update the options for your certificate. Currently, you can specify whether to add your certificate to a transparency log or export your certificate. Certificate transparency makes it possible to detect SSL/TLS certificates that have been mistakenly or maliciously issued. Certificates that have not been logged typically produce an error message in a browser.</p>
     pub fn get_options(&self) -> &::std::option::Option<crate::types::CertificateOptions> {
         &self.options
     }

@@ -45,6 +45,7 @@
 ///     ConstraintViolationExceptionReason::OuNumberLimitExceeded => { /* ... */ },
 ///     ConstraintViolationExceptionReason::PolicyContentLimitExceeded => { /* ... */ },
 ///     ConstraintViolationExceptionReason::PolicyNumberLimitExceeded => { /* ... */ },
+///     ConstraintViolationExceptionReason::PolicyTypeEnabledForThisService => { /* ... */ },
 ///     ConstraintViolationExceptionReason::ServiceAccessNotEnabled => { /* ... */ },
 ///     ConstraintViolationExceptionReason::TagPolicyViolation => { /* ... */ },
 ///     ConstraintViolationExceptionReason::WaitPeriodActive => { /* ... */ },
@@ -143,6 +144,8 @@ pub enum ConstraintViolationExceptionReason {
     #[allow(missing_docs)] // documentation missing in model
     PolicyNumberLimitExceeded,
     #[allow(missing_docs)] // documentation missing in model
+    PolicyTypeEnabledForThisService,
+    #[allow(missing_docs)] // documentation missing in model
     ServiceAccessNotEnabled,
     #[allow(missing_docs)] // documentation missing in model
     TagPolicyViolation,
@@ -196,6 +199,7 @@ impl ::std::convert::From<&str> for ConstraintViolationExceptionReason {
             "OU_NUMBER_LIMIT_EXCEEDED" => ConstraintViolationExceptionReason::OuNumberLimitExceeded,
             "POLICY_CONTENT_LIMIT_EXCEEDED" => ConstraintViolationExceptionReason::PolicyContentLimitExceeded,
             "POLICY_NUMBER_LIMIT_EXCEEDED" => ConstraintViolationExceptionReason::PolicyNumberLimitExceeded,
+            "POLICY_TYPE_ENABLED_FOR_THIS_SERVICE" => ConstraintViolationExceptionReason::PolicyTypeEnabledForThisService,
             "SERVICE_ACCESS_NOT_ENABLED" => ConstraintViolationExceptionReason::ServiceAccessNotEnabled,
             "TAG_POLICY_VIOLATION" => ConstraintViolationExceptionReason::TagPolicyViolation,
             "WAIT_PERIOD_ACTIVE" => ConstraintViolationExceptionReason::WaitPeriodActive,
@@ -255,6 +259,7 @@ impl ConstraintViolationExceptionReason {
             ConstraintViolationExceptionReason::OuNumberLimitExceeded => "OU_NUMBER_LIMIT_EXCEEDED",
             ConstraintViolationExceptionReason::PolicyContentLimitExceeded => "POLICY_CONTENT_LIMIT_EXCEEDED",
             ConstraintViolationExceptionReason::PolicyNumberLimitExceeded => "POLICY_NUMBER_LIMIT_EXCEEDED",
+            ConstraintViolationExceptionReason::PolicyTypeEnabledForThisService => "POLICY_TYPE_ENABLED_FOR_THIS_SERVICE",
             ConstraintViolationExceptionReason::ServiceAccessNotEnabled => "SERVICE_ACCESS_NOT_ENABLED",
             ConstraintViolationExceptionReason::TagPolicyViolation => "TAG_POLICY_VIOLATION",
             ConstraintViolationExceptionReason::WaitPeriodActive => "WAIT_PERIOD_ACTIVE",
@@ -297,6 +302,7 @@ impl ConstraintViolationExceptionReason {
             "OU_NUMBER_LIMIT_EXCEEDED",
             "POLICY_CONTENT_LIMIT_EXCEEDED",
             "POLICY_NUMBER_LIMIT_EXCEEDED",
+            "POLICY_TYPE_ENABLED_FOR_THIS_SERVICE",
             "SERVICE_ACCESS_NOT_ENABLED",
             "TAG_POLICY_VIOLATION",
             "WAIT_PERIOD_ACTIVE",
@@ -374,6 +380,7 @@ impl ::std::fmt::Display for ConstraintViolationExceptionReason {
             ConstraintViolationExceptionReason::OuNumberLimitExceeded => write!(f, "OU_NUMBER_LIMIT_EXCEEDED"),
             ConstraintViolationExceptionReason::PolicyContentLimitExceeded => write!(f, "POLICY_CONTENT_LIMIT_EXCEEDED"),
             ConstraintViolationExceptionReason::PolicyNumberLimitExceeded => write!(f, "POLICY_NUMBER_LIMIT_EXCEEDED"),
+            ConstraintViolationExceptionReason::PolicyTypeEnabledForThisService => write!(f, "POLICY_TYPE_ENABLED_FOR_THIS_SERVICE"),
             ConstraintViolationExceptionReason::ServiceAccessNotEnabled => write!(f, "SERVICE_ACCESS_NOT_ENABLED"),
             ConstraintViolationExceptionReason::TagPolicyViolation => write!(f, "TAG_POLICY_VIOLATION"),
             ConstraintViolationExceptionReason::WaitPeriodActive => write!(f, "WAIT_PERIOD_ACTIVE"),

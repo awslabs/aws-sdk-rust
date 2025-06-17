@@ -12,6 +12,8 @@ pub struct ResourceScanMetadata {
     pub ec2: ::std::option::Option<crate::types::Ec2Metadata>,
     /// <p>An object that contains metadata details for an Amazon Web Services Lambda function.</p>
     pub lambda_function: ::std::option::Option<crate::types::LambdaFunctionMetadata>,
+    /// <p>Contains metadata about scan coverage for a code repository resource.</p>
+    pub code_repository: ::std::option::Option<crate::types::CodeRepositoryMetadata>,
 }
 impl ResourceScanMetadata {
     /// <p>An object that contains details about the repository an Amazon ECR image resides in.</p>
@@ -30,6 +32,10 @@ impl ResourceScanMetadata {
     pub fn lambda_function(&self) -> ::std::option::Option<&crate::types::LambdaFunctionMetadata> {
         self.lambda_function.as_ref()
     }
+    /// <p>Contains metadata about scan coverage for a code repository resource.</p>
+    pub fn code_repository(&self) -> ::std::option::Option<&crate::types::CodeRepositoryMetadata> {
+        self.code_repository.as_ref()
+    }
 }
 impl ResourceScanMetadata {
     /// Creates a new builder-style object to manufacture [`ResourceScanMetadata`](crate::types::ResourceScanMetadata).
@@ -46,6 +52,7 @@ pub struct ResourceScanMetadataBuilder {
     pub(crate) ecr_image: ::std::option::Option<crate::types::EcrContainerImageMetadata>,
     pub(crate) ec2: ::std::option::Option<crate::types::Ec2Metadata>,
     pub(crate) lambda_function: ::std::option::Option<crate::types::LambdaFunctionMetadata>,
+    pub(crate) code_repository: ::std::option::Option<crate::types::CodeRepositoryMetadata>,
 }
 impl ResourceScanMetadataBuilder {
     /// <p>An object that contains details about the repository an Amazon ECR image resides in.</p>
@@ -104,6 +111,20 @@ impl ResourceScanMetadataBuilder {
     pub fn get_lambda_function(&self) -> &::std::option::Option<crate::types::LambdaFunctionMetadata> {
         &self.lambda_function
     }
+    /// <p>Contains metadata about scan coverage for a code repository resource.</p>
+    pub fn code_repository(mut self, input: crate::types::CodeRepositoryMetadata) -> Self {
+        self.code_repository = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Contains metadata about scan coverage for a code repository resource.</p>
+    pub fn set_code_repository(mut self, input: ::std::option::Option<crate::types::CodeRepositoryMetadata>) -> Self {
+        self.code_repository = input;
+        self
+    }
+    /// <p>Contains metadata about scan coverage for a code repository resource.</p>
+    pub fn get_code_repository(&self) -> &::std::option::Option<crate::types::CodeRepositoryMetadata> {
+        &self.code_repository
+    }
     /// Consumes the builder and constructs a [`ResourceScanMetadata`](crate::types::ResourceScanMetadata).
     pub fn build(self) -> crate::types::ResourceScanMetadata {
         crate::types::ResourceScanMetadata {
@@ -111,6 +132,7 @@ impl ResourceScanMetadataBuilder {
             ecr_image: self.ecr_image,
             ec2: self.ec2,
             lambda_function: self.lambda_function,
+            code_repository: self.code_repository,
         }
     }
 }

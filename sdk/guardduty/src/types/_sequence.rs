@@ -18,6 +18,8 @@ pub struct Sequence {
     pub signals: ::std::option::Option<::std::vec::Vec<crate::types::Signal>>,
     /// <p>Contains information about the indicators observed in the attack sequence.</p>
     pub sequence_indicators: ::std::option::Option<::std::vec::Vec<crate::types::Indicator>>,
+    /// <p>Additional types of sequences that may be associated with the attack sequence finding, providing further context about the nature of the detected threat.</p>
+    pub additional_sequence_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl Sequence {
     /// <p>Unique identifier of the attack sequence.</p>
@@ -58,6 +60,12 @@ impl Sequence {
     pub fn sequence_indicators(&self) -> &[crate::types::Indicator] {
         self.sequence_indicators.as_deref().unwrap_or_default()
     }
+    /// <p>Additional types of sequences that may be associated with the attack sequence finding, providing further context about the nature of the detected threat.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.additional_sequence_types.is_none()`.
+    pub fn additional_sequence_types(&self) -> &[::std::string::String] {
+        self.additional_sequence_types.as_deref().unwrap_or_default()
+    }
 }
 impl Sequence {
     /// Creates a new builder-style object to manufacture [`Sequence`](crate::types::Sequence).
@@ -77,6 +85,7 @@ pub struct SequenceBuilder {
     pub(crate) endpoints: ::std::option::Option<::std::vec::Vec<crate::types::NetworkEndpoint>>,
     pub(crate) signals: ::std::option::Option<::std::vec::Vec<crate::types::Signal>>,
     pub(crate) sequence_indicators: ::std::option::Option<::std::vec::Vec<crate::types::Indicator>>,
+    pub(crate) additional_sequence_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl SequenceBuilder {
     /// <p>Unique identifier of the attack sequence.</p>
@@ -209,6 +218,26 @@ impl SequenceBuilder {
     pub fn get_sequence_indicators(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Indicator>> {
         &self.sequence_indicators
     }
+    /// Appends an item to `additional_sequence_types`.
+    ///
+    /// To override the contents of this collection use [`set_additional_sequence_types`](Self::set_additional_sequence_types).
+    ///
+    /// <p>Additional types of sequences that may be associated with the attack sequence finding, providing further context about the nature of the detected threat.</p>
+    pub fn additional_sequence_types(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.additional_sequence_types.unwrap_or_default();
+        v.push(input.into());
+        self.additional_sequence_types = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Additional types of sequences that may be associated with the attack sequence finding, providing further context about the nature of the detected threat.</p>
+    pub fn set_additional_sequence_types(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.additional_sequence_types = input;
+        self
+    }
+    /// <p>Additional types of sequences that may be associated with the attack sequence finding, providing further context about the nature of the detected threat.</p>
+    pub fn get_additional_sequence_types(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.additional_sequence_types
+    }
     /// Consumes the builder and constructs a [`Sequence`](crate::types::Sequence).
     pub fn build(self) -> crate::types::Sequence {
         crate::types::Sequence {
@@ -219,6 +248,7 @@ impl SequenceBuilder {
             endpoints: self.endpoints,
             signals: self.signals,
             sequence_indicators: self.sequence_indicators,
+            additional_sequence_types: self.additional_sequence_types,
         }
     }
 }

@@ -12,6 +12,7 @@
 /// ```text
 /// # let resourcemanagedtype = unimplemented!();
 /// match resourcemanagedtype {
+///     ResourceManagedType::ActiveThreatDefense => { /* ... */ },
 ///     ResourceManagedType::AwsManagedDomainLists => { /* ... */ },
 ///     ResourceManagedType::AwsManagedThreatSignatures => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -43,6 +44,8 @@
 )]
 pub enum ResourceManagedType {
     #[allow(missing_docs)] // documentation missing in model
+    ActiveThreatDefense,
+    #[allow(missing_docs)] // documentation missing in model
     AwsManagedDomainLists,
     #[allow(missing_docs)] // documentation missing in model
     AwsManagedThreatSignatures,
@@ -53,6 +56,7 @@ pub enum ResourceManagedType {
 impl ::std::convert::From<&str> for ResourceManagedType {
     fn from(s: &str) -> Self {
         match s {
+            "ACTIVE_THREAT_DEFENSE" => ResourceManagedType::ActiveThreatDefense,
             "AWS_MANAGED_DOMAIN_LISTS" => ResourceManagedType::AwsManagedDomainLists,
             "AWS_MANAGED_THREAT_SIGNATURES" => ResourceManagedType::AwsManagedThreatSignatures,
             other => ResourceManagedType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -70,6 +74,7 @@ impl ResourceManagedType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            ResourceManagedType::ActiveThreatDefense => "ACTIVE_THREAT_DEFENSE",
             ResourceManagedType::AwsManagedDomainLists => "AWS_MANAGED_DOMAIN_LISTS",
             ResourceManagedType::AwsManagedThreatSignatures => "AWS_MANAGED_THREAT_SIGNATURES",
             ResourceManagedType::Unknown(value) => value.as_str(),
@@ -77,7 +82,7 @@ impl ResourceManagedType {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["AWS_MANAGED_DOMAIN_LISTS", "AWS_MANAGED_THREAT_SIGNATURES"]
+        &["ACTIVE_THREAT_DEFENSE", "AWS_MANAGED_DOMAIN_LISTS", "AWS_MANAGED_THREAT_SIGNATURES"]
     }
 }
 impl ::std::convert::AsRef<str> for ResourceManagedType {
@@ -100,6 +105,7 @@ impl ResourceManagedType {
 impl ::std::fmt::Display for ResourceManagedType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            ResourceManagedType::ActiveThreatDefense => write!(f, "ACTIVE_THREAT_DEFENSE"),
             ResourceManagedType::AwsManagedDomainLists => write!(f, "AWS_MANAGED_DOMAIN_LISTS"),
             ResourceManagedType::AwsManagedThreatSignatures => write!(f, "AWS_MANAGED_THREAT_SIGNATURES"),
             ResourceManagedType::Unknown(value) => write!(f, "{}", value),

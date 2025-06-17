@@ -131,16 +131,19 @@ impl CreateReplicationSubnetGroupFluentBuilder {
         self.inner.get_replication_subnet_group_identifier()
     }
     /// <p>The description for the subnet group.</p>
+    /// <p>Constraints: This parameter Must not contain non-printable control characters.</p>
     pub fn replication_subnet_group_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.replication_subnet_group_description(input.into());
         self
     }
     /// <p>The description for the subnet group.</p>
+    /// <p>Constraints: This parameter Must not contain non-printable control characters.</p>
     pub fn set_replication_subnet_group_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_replication_subnet_group_description(input);
         self
     }
     /// <p>The description for the subnet group.</p>
+    /// <p>Constraints: This parameter Must not contain non-printable control characters.</p>
     pub fn get_replication_subnet_group_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_replication_subnet_group_description()
     }

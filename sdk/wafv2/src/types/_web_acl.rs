@@ -67,6 +67,8 @@ pub struct WebAcl {
     pub retrofitted_by_firewall_manager: bool,
     /// <p>Configures the level of DDoS protection that applies to web ACLs associated with Application Load Balancers.</p>
     pub on_source_d_do_s_protection_config: ::std::option::Option<crate::types::OnSourceDDoSProtectionConfig>,
+    /// <p>Returns a list of <code>ApplicationAttribute</code>s.</p>
+    pub application_config: ::std::option::Option<crate::types::ApplicationConfig>,
 }
 impl WebAcl {
     /// <p>The name of the web ACL. You cannot change the name of a web ACL after you create it.</p>
@@ -185,6 +187,10 @@ impl WebAcl {
     pub fn on_source_d_do_s_protection_config(&self) -> ::std::option::Option<&crate::types::OnSourceDDoSProtectionConfig> {
         self.on_source_d_do_s_protection_config.as_ref()
     }
+    /// <p>Returns a list of <code>ApplicationAttribute</code>s.</p>
+    pub fn application_config(&self) -> ::std::option::Option<&crate::types::ApplicationConfig> {
+        self.application_config.as_ref()
+    }
 }
 impl WebAcl {
     /// Creates a new builder-style object to manufacture [`WebAcl`](crate::types::WebAcl).
@@ -217,6 +223,7 @@ pub struct WebAclBuilder {
     pub(crate) association_config: ::std::option::Option<crate::types::AssociationConfig>,
     pub(crate) retrofitted_by_firewall_manager: ::std::option::Option<bool>,
     pub(crate) on_source_d_do_s_protection_config: ::std::option::Option<crate::types::OnSourceDDoSProtectionConfig>,
+    pub(crate) application_config: ::std::option::Option<crate::types::ApplicationConfig>,
 }
 impl WebAclBuilder {
     /// <p>The name of the web ACL. You cannot change the name of a web ACL after you create it.</p>
@@ -614,6 +621,20 @@ impl WebAclBuilder {
     pub fn get_on_source_d_do_s_protection_config(&self) -> &::std::option::Option<crate::types::OnSourceDDoSProtectionConfig> {
         &self.on_source_d_do_s_protection_config
     }
+    /// <p>Returns a list of <code>ApplicationAttribute</code>s.</p>
+    pub fn application_config(mut self, input: crate::types::ApplicationConfig) -> Self {
+        self.application_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Returns a list of <code>ApplicationAttribute</code>s.</p>
+    pub fn set_application_config(mut self, input: ::std::option::Option<crate::types::ApplicationConfig>) -> Self {
+        self.application_config = input;
+        self
+    }
+    /// <p>Returns a list of <code>ApplicationAttribute</code>s.</p>
+    pub fn get_application_config(&self) -> &::std::option::Option<crate::types::ApplicationConfig> {
+        &self.application_config
+    }
     /// Consumes the builder and constructs a [`WebAcl`](crate::types::WebAcl).
     /// This method will fail if any of the following fields are not set:
     /// - [`name`](crate::types::builders::WebAclBuilder::name)
@@ -653,6 +674,7 @@ impl WebAclBuilder {
             association_config: self.association_config,
             retrofitted_by_firewall_manager: self.retrofitted_by_firewall_manager.unwrap_or_default(),
             on_source_d_do_s_protection_config: self.on_source_d_do_s_protection_config,
+            application_config: self.application_config,
         })
     }
 }

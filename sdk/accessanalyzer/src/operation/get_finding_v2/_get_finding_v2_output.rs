@@ -25,7 +25,7 @@ pub struct GetFindingV2Output {
     pub updated_at: ::aws_smithy_types::DateTime,
     /// <p>A localized message that explains the finding and provides guidance on how to address it.</p>
     pub finding_details: ::std::vec::Vec<crate::types::FindingDetails>,
-    /// <p>The type of the finding. For external access analyzers, the type is <code>ExternalAccess</code>. For unused access analyzers, the type can be <code>UnusedIAMRole</code>, <code>UnusedIAMUserAccessKey</code>, <code>UnusedIAMUserPassword</code>, or <code>UnusedPermission</code>.</p>
+    /// <p>The type of the finding. For external access analyzers, the type is <code>ExternalAccess</code>. For unused access analyzers, the type can be <code>UnusedIAMRole</code>, <code>UnusedIAMUserAccessKey</code>, <code>UnusedIAMUserPassword</code>, or <code>UnusedPermission</code>. For internal access analyzers, the type is <code>InternalAccess</code>.</p>
     pub finding_type: ::std::option::Option<crate::types::FindingType>,
     _request_id: Option<String>,
 }
@@ -77,7 +77,7 @@ impl GetFindingV2Output {
         use std::ops::Deref;
         self.finding_details.deref()
     }
-    /// <p>The type of the finding. For external access analyzers, the type is <code>ExternalAccess</code>. For unused access analyzers, the type can be <code>UnusedIAMRole</code>, <code>UnusedIAMUserAccessKey</code>, <code>UnusedIAMUserPassword</code>, or <code>UnusedPermission</code>.</p>
+    /// <p>The type of the finding. For external access analyzers, the type is <code>ExternalAccess</code>. For unused access analyzers, the type can be <code>UnusedIAMRole</code>, <code>UnusedIAMUserAccessKey</code>, <code>UnusedIAMUserPassword</code>, or <code>UnusedPermission</code>. For internal access analyzers, the type is <code>InternalAccess</code>.</p>
     pub fn finding_type(&self) -> ::std::option::Option<&crate::types::FindingType> {
         self.finding_type.as_ref()
     }
@@ -280,17 +280,17 @@ impl GetFindingV2OutputBuilder {
     pub fn get_finding_details(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FindingDetails>> {
         &self.finding_details
     }
-    /// <p>The type of the finding. For external access analyzers, the type is <code>ExternalAccess</code>. For unused access analyzers, the type can be <code>UnusedIAMRole</code>, <code>UnusedIAMUserAccessKey</code>, <code>UnusedIAMUserPassword</code>, or <code>UnusedPermission</code>.</p>
+    /// <p>The type of the finding. For external access analyzers, the type is <code>ExternalAccess</code>. For unused access analyzers, the type can be <code>UnusedIAMRole</code>, <code>UnusedIAMUserAccessKey</code>, <code>UnusedIAMUserPassword</code>, or <code>UnusedPermission</code>. For internal access analyzers, the type is <code>InternalAccess</code>.</p>
     pub fn finding_type(mut self, input: crate::types::FindingType) -> Self {
         self.finding_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The type of the finding. For external access analyzers, the type is <code>ExternalAccess</code>. For unused access analyzers, the type can be <code>UnusedIAMRole</code>, <code>UnusedIAMUserAccessKey</code>, <code>UnusedIAMUserPassword</code>, or <code>UnusedPermission</code>.</p>
+    /// <p>The type of the finding. For external access analyzers, the type is <code>ExternalAccess</code>. For unused access analyzers, the type can be <code>UnusedIAMRole</code>, <code>UnusedIAMUserAccessKey</code>, <code>UnusedIAMUserPassword</code>, or <code>UnusedPermission</code>. For internal access analyzers, the type is <code>InternalAccess</code>.</p>
     pub fn set_finding_type(mut self, input: ::std::option::Option<crate::types::FindingType>) -> Self {
         self.finding_type = input;
         self
     }
-    /// <p>The type of the finding. For external access analyzers, the type is <code>ExternalAccess</code>. For unused access analyzers, the type can be <code>UnusedIAMRole</code>, <code>UnusedIAMUserAccessKey</code>, <code>UnusedIAMUserPassword</code>, or <code>UnusedPermission</code>.</p>
+    /// <p>The type of the finding. For external access analyzers, the type is <code>ExternalAccess</code>. For unused access analyzers, the type can be <code>UnusedIAMRole</code>, <code>UnusedIAMUserAccessKey</code>, <code>UnusedIAMUserPassword</code>, or <code>UnusedPermission</code>. For internal access analyzers, the type is <code>InternalAccess</code>.</p>
     pub fn get_finding_type(&self) -> &::std::option::Option<crate::types::FindingType> {
         &self.finding_type
     }

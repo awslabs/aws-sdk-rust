@@ -16,6 +16,7 @@
 ///     CoverageResourceType::AwsEcrContainerImage => { /* ... */ },
 ///     CoverageResourceType::AwsEcrRepository => { /* ... */ },
 ///     CoverageResourceType::AwsLambdaFunction => { /* ... */ },
+///     CoverageResourceType::CodeRepository => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -52,6 +53,8 @@ pub enum CoverageResourceType {
     AwsEcrRepository,
     #[allow(missing_docs)] // documentation missing in model
     AwsLambdaFunction,
+    #[allow(missing_docs)] // documentation missing in model
+    CodeRepository,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -63,6 +66,7 @@ impl ::std::convert::From<&str> for CoverageResourceType {
             "AWS_ECR_CONTAINER_IMAGE" => CoverageResourceType::AwsEcrContainerImage,
             "AWS_ECR_REPOSITORY" => CoverageResourceType::AwsEcrRepository,
             "AWS_LAMBDA_FUNCTION" => CoverageResourceType::AwsLambdaFunction,
+            "CODE_REPOSITORY" => CoverageResourceType::CodeRepository,
             other => CoverageResourceType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -82,12 +86,19 @@ impl CoverageResourceType {
             CoverageResourceType::AwsEcrContainerImage => "AWS_ECR_CONTAINER_IMAGE",
             CoverageResourceType::AwsEcrRepository => "AWS_ECR_REPOSITORY",
             CoverageResourceType::AwsLambdaFunction => "AWS_LAMBDA_FUNCTION",
+            CoverageResourceType::CodeRepository => "CODE_REPOSITORY",
             CoverageResourceType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["AWS_EC2_INSTANCE", "AWS_ECR_CONTAINER_IMAGE", "AWS_ECR_REPOSITORY", "AWS_LAMBDA_FUNCTION"]
+        &[
+            "AWS_EC2_INSTANCE",
+            "AWS_ECR_CONTAINER_IMAGE",
+            "AWS_ECR_REPOSITORY",
+            "AWS_LAMBDA_FUNCTION",
+            "CODE_REPOSITORY",
+        ]
     }
 }
 impl ::std::convert::AsRef<str> for CoverageResourceType {
@@ -114,6 +125,7 @@ impl ::std::fmt::Display for CoverageResourceType {
             CoverageResourceType::AwsEcrContainerImage => write!(f, "AWS_ECR_CONTAINER_IMAGE"),
             CoverageResourceType::AwsEcrRepository => write!(f, "AWS_ECR_REPOSITORY"),
             CoverageResourceType::AwsLambdaFunction => write!(f, "AWS_LAMBDA_FUNCTION"),
+            CoverageResourceType::CodeRepository => write!(f, "CODE_REPOSITORY"),
             CoverageResourceType::Unknown(value) => write!(f, "{}", value),
         }
     }

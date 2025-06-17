@@ -701,6 +701,8 @@ pub(crate) mod shape_vpc_config;
 
 pub(crate) mod shape_actors;
 
+pub(crate) mod shape_additional_sequence_types;
+
 pub(crate) mod shape_affected_resources;
 
 pub(crate) mod shape_anomaly_profiles;
@@ -837,6 +839,8 @@ pub(crate) mod shape_account_level_permissions;
 
 pub(crate) mod shape_actor_ids;
 
+pub(crate) mod shape_actor_process;
+
 pub(crate) mod shape_anomaly_profile_feature_objects;
 
 pub(crate) mod shape_anomaly_unusual_behavior_feature;
@@ -881,15 +885,25 @@ pub(crate) mod shape_block_public_access;
 
 pub(crate) mod shape_bucket_policy;
 
+pub(crate) mod shape_container_finding_resource;
+
 pub(crate) mod shape_ec2_instance;
 
 pub(crate) mod shape_ec2_network_interface;
 
+pub(crate) mod shape_eks_cluster;
+
 pub(crate) mod shape_file_paths;
+
+pub(crate) mod shape_kubernetes_workload;
 
 pub(crate) mod shape_s3_bucket;
 
 pub(crate) mod shape_s3_object;
+
+pub(crate) mod shape_container_uids;
+
+pub(crate) mod shape_ec2_instance_uids;
 
 pub(crate) mod shape_ec2_network_interface_uids;
 

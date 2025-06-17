@@ -12,6 +12,7 @@
 /// ```text
 /// # let resourcescantype = unimplemented!();
 /// match resourcescantype {
+///     ResourceScanType::CodeRepository => { /* ... */ },
 ///     ResourceScanType::Ec2 => { /* ... */ },
 ///     ResourceScanType::Ecr => { /* ... */ },
 ///     ResourceScanType::Lambda => { /* ... */ },
@@ -45,6 +46,8 @@
 )]
 pub enum ResourceScanType {
     #[allow(missing_docs)] // documentation missing in model
+    CodeRepository,
+    #[allow(missing_docs)] // documentation missing in model
     Ec2,
     #[allow(missing_docs)] // documentation missing in model
     Ecr,
@@ -59,6 +62,7 @@ pub enum ResourceScanType {
 impl ::std::convert::From<&str> for ResourceScanType {
     fn from(s: &str) -> Self {
         match s {
+            "CODE_REPOSITORY" => ResourceScanType::CodeRepository,
             "EC2" => ResourceScanType::Ec2,
             "ECR" => ResourceScanType::Ecr,
             "LAMBDA" => ResourceScanType::Lambda,
@@ -78,6 +82,7 @@ impl ResourceScanType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            ResourceScanType::CodeRepository => "CODE_REPOSITORY",
             ResourceScanType::Ec2 => "EC2",
             ResourceScanType::Ecr => "ECR",
             ResourceScanType::Lambda => "LAMBDA",
@@ -87,7 +92,7 @@ impl ResourceScanType {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["EC2", "ECR", "LAMBDA", "LAMBDA_CODE"]
+        &["CODE_REPOSITORY", "EC2", "ECR", "LAMBDA", "LAMBDA_CODE"]
     }
 }
 impl ::std::convert::AsRef<str> for ResourceScanType {
@@ -110,6 +115,7 @@ impl ResourceScanType {
 impl ::std::fmt::Display for ResourceScanType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            ResourceScanType::CodeRepository => write!(f, "CODE_REPOSITORY"),
             ResourceScanType::Ec2 => write!(f, "EC2"),
             ResourceScanType::Ecr => write!(f, "ECR"),
             ResourceScanType::Lambda => write!(f, "LAMBDA"),

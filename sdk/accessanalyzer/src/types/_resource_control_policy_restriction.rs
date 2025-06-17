@@ -13,6 +13,7 @@
 /// # let resourcecontrolpolicyrestriction = unimplemented!();
 /// match resourcecontrolpolicyrestriction {
 ///     ResourceControlPolicyRestriction::Applicable => { /* ... */ },
+///     ResourceControlPolicyRestriction::Applied => { /* ... */ },
 ///     ResourceControlPolicyRestriction::FailedToEvaluateRcp => { /* ... */ },
 ///     ResourceControlPolicyRestriction::NotApplicable => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -46,6 +47,8 @@ pub enum ResourceControlPolicyRestriction {
     #[allow(missing_docs)] // documentation missing in model
     Applicable,
     #[allow(missing_docs)] // documentation missing in model
+    Applied,
+    #[allow(missing_docs)] // documentation missing in model
     FailedToEvaluateRcp,
     #[allow(missing_docs)] // documentation missing in model
     NotApplicable,
@@ -57,6 +60,7 @@ impl ::std::convert::From<&str> for ResourceControlPolicyRestriction {
     fn from(s: &str) -> Self {
         match s {
             "APPLICABLE" => ResourceControlPolicyRestriction::Applicable,
+            "APPLIED" => ResourceControlPolicyRestriction::Applied,
             "FAILED_TO_EVALUATE_RCP" => ResourceControlPolicyRestriction::FailedToEvaluateRcp,
             "NOT_APPLICABLE" => ResourceControlPolicyRestriction::NotApplicable,
             other => ResourceControlPolicyRestriction::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -75,6 +79,7 @@ impl ResourceControlPolicyRestriction {
     pub fn as_str(&self) -> &str {
         match self {
             ResourceControlPolicyRestriction::Applicable => "APPLICABLE",
+            ResourceControlPolicyRestriction::Applied => "APPLIED",
             ResourceControlPolicyRestriction::FailedToEvaluateRcp => "FAILED_TO_EVALUATE_RCP",
             ResourceControlPolicyRestriction::NotApplicable => "NOT_APPLICABLE",
             ResourceControlPolicyRestriction::Unknown(value) => value.as_str(),
@@ -82,7 +87,7 @@ impl ResourceControlPolicyRestriction {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["APPLICABLE", "FAILED_TO_EVALUATE_RCP", "NOT_APPLICABLE"]
+        &["APPLICABLE", "APPLIED", "FAILED_TO_EVALUATE_RCP", "NOT_APPLICABLE"]
     }
 }
 impl ::std::convert::AsRef<str> for ResourceControlPolicyRestriction {
@@ -106,6 +111,7 @@ impl ::std::fmt::Display for ResourceControlPolicyRestriction {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             ResourceControlPolicyRestriction::Applicable => write!(f, "APPLICABLE"),
+            ResourceControlPolicyRestriction::Applied => write!(f, "APPLIED"),
             ResourceControlPolicyRestriction::FailedToEvaluateRcp => write!(f, "FAILED_TO_EVALUATE_RCP"),
             ResourceControlPolicyRestriction::NotApplicable => write!(f, "NOT_APPLICABLE"),
             ResourceControlPolicyRestriction::Unknown(value) => write!(f, "{}", value),

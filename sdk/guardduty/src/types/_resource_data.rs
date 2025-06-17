@@ -14,6 +14,12 @@ pub struct ResourceData {
     pub ec2_network_interface: ::std::option::Option<crate::types::Ec2NetworkInterface>,
     /// <p>Contains information about the Amazon S3 object.</p>
     pub s3_object: ::std::option::Option<crate::types::S3Object>,
+    /// <p>Contains detailed information about the Amazon EKS cluster associated with the activity that prompted GuardDuty to generate a finding.</p>
+    pub eks_cluster: ::std::option::Option<crate::types::EksCluster>,
+    /// <p>Contains detailed information about the Kubernetes workload associated with the activity that prompted GuardDuty to generate a finding.</p>
+    pub kubernetes_workload: ::std::option::Option<crate::types::KubernetesWorkload>,
+    /// <p>Contains detailed information about the container associated with the activity that prompted GuardDuty to generate a finding.</p>
+    pub container: ::std::option::Option<crate::types::ContainerFindingResource>,
 }
 impl ResourceData {
     /// <p>Contains information about the Amazon S3 bucket.</p>
@@ -36,6 +42,18 @@ impl ResourceData {
     pub fn s3_object(&self) -> ::std::option::Option<&crate::types::S3Object> {
         self.s3_object.as_ref()
     }
+    /// <p>Contains detailed information about the Amazon EKS cluster associated with the activity that prompted GuardDuty to generate a finding.</p>
+    pub fn eks_cluster(&self) -> ::std::option::Option<&crate::types::EksCluster> {
+        self.eks_cluster.as_ref()
+    }
+    /// <p>Contains detailed information about the Kubernetes workload associated with the activity that prompted GuardDuty to generate a finding.</p>
+    pub fn kubernetes_workload(&self) -> ::std::option::Option<&crate::types::KubernetesWorkload> {
+        self.kubernetes_workload.as_ref()
+    }
+    /// <p>Contains detailed information about the container associated with the activity that prompted GuardDuty to generate a finding.</p>
+    pub fn container(&self) -> ::std::option::Option<&crate::types::ContainerFindingResource> {
+        self.container.as_ref()
+    }
 }
 impl ResourceData {
     /// Creates a new builder-style object to manufacture [`ResourceData`](crate::types::ResourceData).
@@ -53,6 +71,9 @@ pub struct ResourceDataBuilder {
     pub(crate) access_key: ::std::option::Option<crate::types::AccessKey>,
     pub(crate) ec2_network_interface: ::std::option::Option<crate::types::Ec2NetworkInterface>,
     pub(crate) s3_object: ::std::option::Option<crate::types::S3Object>,
+    pub(crate) eks_cluster: ::std::option::Option<crate::types::EksCluster>,
+    pub(crate) kubernetes_workload: ::std::option::Option<crate::types::KubernetesWorkload>,
+    pub(crate) container: ::std::option::Option<crate::types::ContainerFindingResource>,
 }
 impl ResourceDataBuilder {
     /// <p>Contains information about the Amazon S3 bucket.</p>
@@ -125,6 +146,48 @@ impl ResourceDataBuilder {
     pub fn get_s3_object(&self) -> &::std::option::Option<crate::types::S3Object> {
         &self.s3_object
     }
+    /// <p>Contains detailed information about the Amazon EKS cluster associated with the activity that prompted GuardDuty to generate a finding.</p>
+    pub fn eks_cluster(mut self, input: crate::types::EksCluster) -> Self {
+        self.eks_cluster = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Contains detailed information about the Amazon EKS cluster associated with the activity that prompted GuardDuty to generate a finding.</p>
+    pub fn set_eks_cluster(mut self, input: ::std::option::Option<crate::types::EksCluster>) -> Self {
+        self.eks_cluster = input;
+        self
+    }
+    /// <p>Contains detailed information about the Amazon EKS cluster associated with the activity that prompted GuardDuty to generate a finding.</p>
+    pub fn get_eks_cluster(&self) -> &::std::option::Option<crate::types::EksCluster> {
+        &self.eks_cluster
+    }
+    /// <p>Contains detailed information about the Kubernetes workload associated with the activity that prompted GuardDuty to generate a finding.</p>
+    pub fn kubernetes_workload(mut self, input: crate::types::KubernetesWorkload) -> Self {
+        self.kubernetes_workload = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Contains detailed information about the Kubernetes workload associated with the activity that prompted GuardDuty to generate a finding.</p>
+    pub fn set_kubernetes_workload(mut self, input: ::std::option::Option<crate::types::KubernetesWorkload>) -> Self {
+        self.kubernetes_workload = input;
+        self
+    }
+    /// <p>Contains detailed information about the Kubernetes workload associated with the activity that prompted GuardDuty to generate a finding.</p>
+    pub fn get_kubernetes_workload(&self) -> &::std::option::Option<crate::types::KubernetesWorkload> {
+        &self.kubernetes_workload
+    }
+    /// <p>Contains detailed information about the container associated with the activity that prompted GuardDuty to generate a finding.</p>
+    pub fn container(mut self, input: crate::types::ContainerFindingResource) -> Self {
+        self.container = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Contains detailed information about the container associated with the activity that prompted GuardDuty to generate a finding.</p>
+    pub fn set_container(mut self, input: ::std::option::Option<crate::types::ContainerFindingResource>) -> Self {
+        self.container = input;
+        self
+    }
+    /// <p>Contains detailed information about the container associated with the activity that prompted GuardDuty to generate a finding.</p>
+    pub fn get_container(&self) -> &::std::option::Option<crate::types::ContainerFindingResource> {
+        &self.container
+    }
     /// Consumes the builder and constructs a [`ResourceData`](crate::types::ResourceData).
     pub fn build(self) -> crate::types::ResourceData {
         crate::types::ResourceData {
@@ -133,6 +196,9 @@ impl ResourceDataBuilder {
             access_key: self.access_key,
             ec2_network_interface: self.ec2_network_interface,
             s3_object: self.s3_object,
+            eks_cluster: self.eks_cluster,
+            kubernetes_workload: self.kubernetes_workload,
+            container: self.container,
         }
     }
 }

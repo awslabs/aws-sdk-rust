@@ -122,4 +122,18 @@ impl EnableOrganizationAdminAccountFluentBuilder {
     pub fn get_admin_account_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_admin_account_id()
     }
+    /// <p>The feature for which the delegated admin account is enabled. Defaults to Security Hub if not specified.</p>
+    pub fn feature(mut self, input: crate::types::SecurityHubFeature) -> Self {
+        self.inner = self.inner.feature(input);
+        self
+    }
+    /// <p>The feature for which the delegated admin account is enabled. Defaults to Security Hub if not specified.</p>
+    pub fn set_feature(mut self, input: ::std::option::Option<crate::types::SecurityHubFeature>) -> Self {
+        self.inner = self.inner.set_feature(input);
+        self
+    }
+    /// <p>The feature for which the delegated admin account is enabled. Defaults to Security Hub if not specified.</p>
+    pub fn get_feature(&self) -> &::std::option::Option<crate::types::SecurityHubFeature> {
+        self.inner.get_feature()
+    }
 }

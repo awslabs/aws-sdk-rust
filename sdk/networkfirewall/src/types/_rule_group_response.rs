@@ -37,6 +37,14 @@ pub struct RuleGroupResponse {
     pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The list of analysis results for <code>AnalyzeRuleGroup</code>. If you set <code>AnalyzeRuleGroup</code> to <code>TRUE</code> in <code>CreateRuleGroup</code>, <code>UpdateRuleGroup</code>, or <code>DescribeRuleGroup</code>, Network Firewall analyzes the rule group and identifies the rules that might adversely effect your firewall's functionality. For example, if Network Firewall detects a rule that's routing traffic asymmetrically, which impacts the service's ability to properly process traffic, the service includes the rule in the list of analysis results.</p>
     pub analysis_results: ::std::option::Option<::std::vec::Vec<crate::types::AnalysisResult>>,
+    /// <p>A complex type containing the currently selected rule option fields that will be displayed for rule summarization returned by <code>DescribeRuleGroupSummary</code>.</p>
+    /// <ul>
+    /// <li>
+    /// <p>The <code>RuleOptions</code> specified in <code>SummaryConfiguration</code></p></li>
+    /// <li>
+    /// <p>Rule metadata organization preferences</p></li>
+    /// </ul>
+    pub summary_configuration: ::std::option::Option<crate::types::SummaryConfiguration>,
 }
 impl RuleGroupResponse {
     /// <p>The Amazon Resource Name (ARN) of the rule group.</p><note>
@@ -109,6 +117,16 @@ impl RuleGroupResponse {
     pub fn analysis_results(&self) -> &[crate::types::AnalysisResult] {
         self.analysis_results.as_deref().unwrap_or_default()
     }
+    /// <p>A complex type containing the currently selected rule option fields that will be displayed for rule summarization returned by <code>DescribeRuleGroupSummary</code>.</p>
+    /// <ul>
+    /// <li>
+    /// <p>The <code>RuleOptions</code> specified in <code>SummaryConfiguration</code></p></li>
+    /// <li>
+    /// <p>Rule metadata organization preferences</p></li>
+    /// </ul>
+    pub fn summary_configuration(&self) -> ::std::option::Option<&crate::types::SummaryConfiguration> {
+        self.summary_configuration.as_ref()
+    }
 }
 impl RuleGroupResponse {
     /// Creates a new builder-style object to manufacture [`RuleGroupResponse`](crate::types::RuleGroupResponse).
@@ -136,6 +154,7 @@ pub struct RuleGroupResponseBuilder {
     pub(crate) sns_topic: ::std::option::Option<::std::string::String>,
     pub(crate) last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) analysis_results: ::std::option::Option<::std::vec::Vec<crate::types::AnalysisResult>>,
+    pub(crate) summary_configuration: ::std::option::Option<crate::types::SummaryConfiguration>,
 }
 impl RuleGroupResponseBuilder {
     /// <p>The Amazon Resource Name (ARN) of the rule group.</p><note>
@@ -372,6 +391,38 @@ impl RuleGroupResponseBuilder {
     pub fn get_analysis_results(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AnalysisResult>> {
         &self.analysis_results
     }
+    /// <p>A complex type containing the currently selected rule option fields that will be displayed for rule summarization returned by <code>DescribeRuleGroupSummary</code>.</p>
+    /// <ul>
+    /// <li>
+    /// <p>The <code>RuleOptions</code> specified in <code>SummaryConfiguration</code></p></li>
+    /// <li>
+    /// <p>Rule metadata organization preferences</p></li>
+    /// </ul>
+    pub fn summary_configuration(mut self, input: crate::types::SummaryConfiguration) -> Self {
+        self.summary_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>A complex type containing the currently selected rule option fields that will be displayed for rule summarization returned by <code>DescribeRuleGroupSummary</code>.</p>
+    /// <ul>
+    /// <li>
+    /// <p>The <code>RuleOptions</code> specified in <code>SummaryConfiguration</code></p></li>
+    /// <li>
+    /// <p>Rule metadata organization preferences</p></li>
+    /// </ul>
+    pub fn set_summary_configuration(mut self, input: ::std::option::Option<crate::types::SummaryConfiguration>) -> Self {
+        self.summary_configuration = input;
+        self
+    }
+    /// <p>A complex type containing the currently selected rule option fields that will be displayed for rule summarization returned by <code>DescribeRuleGroupSummary</code>.</p>
+    /// <ul>
+    /// <li>
+    /// <p>The <code>RuleOptions</code> specified in <code>SummaryConfiguration</code></p></li>
+    /// <li>
+    /// <p>Rule metadata organization preferences</p></li>
+    /// </ul>
+    pub fn get_summary_configuration(&self) -> &::std::option::Option<crate::types::SummaryConfiguration> {
+        &self.summary_configuration
+    }
     /// Consumes the builder and constructs a [`RuleGroupResponse`](crate::types::RuleGroupResponse).
     /// This method will fail if any of the following fields are not set:
     /// - [`rule_group_arn`](crate::types::builders::RuleGroupResponseBuilder::rule_group_arn)
@@ -409,6 +460,7 @@ impl RuleGroupResponseBuilder {
             sns_topic: self.sns_topic,
             last_modified_time: self.last_modified_time,
             analysis_results: self.analysis_results,
+            summary_configuration: self.summary_configuration,
         })
     }
 }

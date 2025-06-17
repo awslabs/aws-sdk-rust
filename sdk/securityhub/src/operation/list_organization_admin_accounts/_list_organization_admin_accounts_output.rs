@@ -7,6 +7,8 @@ pub struct ListOrganizationAdminAccountsOutput {
     pub admin_accounts: ::std::option::Option<::std::vec::Vec<crate::types::AdminAccount>>,
     /// <p>The pagination token to use to request the next page of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
+    /// <p>The feature where the delegated administrator account is listed. Defaults to Security Hub CSPM if not specified.</p>
+    pub feature: ::std::option::Option<crate::types::SecurityHubFeature>,
     _request_id: Option<String>,
 }
 impl ListOrganizationAdminAccountsOutput {
@@ -19,6 +21,10 @@ impl ListOrganizationAdminAccountsOutput {
     /// <p>The pagination token to use to request the next page of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
+    }
+    /// <p>The feature where the delegated administrator account is listed. Defaults to Security Hub CSPM if not specified.</p>
+    pub fn feature(&self) -> ::std::option::Option<&crate::types::SecurityHubFeature> {
+        self.feature.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListOrganizationAdminAccountsOutput {
@@ -39,6 +45,7 @@ impl ListOrganizationAdminAccountsOutput {
 pub struct ListOrganizationAdminAccountsOutputBuilder {
     pub(crate) admin_accounts: ::std::option::Option<::std::vec::Vec<crate::types::AdminAccount>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
+    pub(crate) feature: ::std::option::Option<crate::types::SecurityHubFeature>,
     _request_id: Option<String>,
 }
 impl ListOrganizationAdminAccountsOutputBuilder {
@@ -76,6 +83,20 @@ impl ListOrganizationAdminAccountsOutputBuilder {
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
+    /// <p>The feature where the delegated administrator account is listed. Defaults to Security Hub CSPM if not specified.</p>
+    pub fn feature(mut self, input: crate::types::SecurityHubFeature) -> Self {
+        self.feature = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The feature where the delegated administrator account is listed. Defaults to Security Hub CSPM if not specified.</p>
+    pub fn set_feature(mut self, input: ::std::option::Option<crate::types::SecurityHubFeature>) -> Self {
+        self.feature = input;
+        self
+    }
+    /// <p>The feature where the delegated administrator account is listed. Defaults to Security Hub CSPM if not specified.</p>
+    pub fn get_feature(&self) -> &::std::option::Option<crate::types::SecurityHubFeature> {
+        &self.feature
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -90,6 +111,7 @@ impl ListOrganizationAdminAccountsOutputBuilder {
         crate::operation::list_organization_admin_accounts::ListOrganizationAdminAccountsOutput {
             admin_accounts: self.admin_accounts,
             next_token: self.next_token,
+            feature: self.feature,
             _request_id: self._request_id,
         }
     }

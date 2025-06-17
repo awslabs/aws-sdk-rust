@@ -166,6 +166,20 @@ impl ModifyDataProviderFluentBuilder {
     pub fn get_engine(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_engine()
     }
+    /// <p>Indicates whether the data provider is virtual.</p>
+    pub fn r#virtual(mut self, input: bool) -> Self {
+        self.inner = self.inner.r#virtual(input);
+        self
+    }
+    /// <p>Indicates whether the data provider is virtual.</p>
+    pub fn set_virtual(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_virtual(input);
+        self
+    }
+    /// <p>Indicates whether the data provider is virtual.</p>
+    pub fn get_virtual(&self) -> &::std::option::Option<bool> {
+        self.inner.get_virtual()
+    }
     /// <p>If this attribute is Y, the current call to <code>ModifyDataProvider</code> replaces all existing data provider settings with the exact settings that you specify in this call. If this attribute is N, the current call to <code>ModifyDataProvider</code> does two things:</p>
     /// <ul>
     /// <li>

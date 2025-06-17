@@ -38,6 +38,14 @@ pub struct CoverageFilterCriteria {
     pub ecr_image_last_in_use_at: ::std::option::Option<::std::vec::Vec<crate::types::CoverageDateFilter>>,
     /// <p>The number of Amazon ECR images in use.</p>
     pub ecr_image_in_use_count: ::std::option::Option<::std::vec::Vec<crate::types::CoverageNumberFilter>>,
+    /// <p>Filter criteria for code repositories based on project name.</p>
+    pub code_repository_project_name: ::std::option::Option<::std::vec::Vec<crate::types::CoverageStringFilter>>,
+    /// <p>Filter criteria for code repositories based on provider type (such as GitHub, GitLab, etc.).</p>
+    pub code_repository_provider_type: ::std::option::Option<::std::vec::Vec<crate::types::CoverageStringFilter>>,
+    /// <p>Filter criteria for code repositories based on visibility setting (public or private).</p>
+    pub code_repository_provider_type_visibility: ::std::option::Option<::std::vec::Vec<crate::types::CoverageStringFilter>>,
+    /// <p>Filter criteria for code repositories based on the ID of the last scanned commit.</p>
+    pub last_scanned_commit_id: ::std::option::Option<::std::vec::Vec<crate::types::CoverageStringFilter>>,
 }
 impl CoverageFilterCriteria {
     /// <p>The scan status code to filter on. Valid values are: <code>ValidationException</code>, <code>InternalServerException</code>, <code>ResourceNotFoundException</code>, <code>BadRequestException</code>, and <code>ThrottlingException</code>.</p>
@@ -142,6 +150,30 @@ impl CoverageFilterCriteria {
     pub fn ecr_image_in_use_count(&self) -> &[crate::types::CoverageNumberFilter] {
         self.ecr_image_in_use_count.as_deref().unwrap_or_default()
     }
+    /// <p>Filter criteria for code repositories based on project name.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.code_repository_project_name.is_none()`.
+    pub fn code_repository_project_name(&self) -> &[crate::types::CoverageStringFilter] {
+        self.code_repository_project_name.as_deref().unwrap_or_default()
+    }
+    /// <p>Filter criteria for code repositories based on provider type (such as GitHub, GitLab, etc.).</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.code_repository_provider_type.is_none()`.
+    pub fn code_repository_provider_type(&self) -> &[crate::types::CoverageStringFilter] {
+        self.code_repository_provider_type.as_deref().unwrap_or_default()
+    }
+    /// <p>Filter criteria for code repositories based on visibility setting (public or private).</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.code_repository_provider_type_visibility.is_none()`.
+    pub fn code_repository_provider_type_visibility(&self) -> &[crate::types::CoverageStringFilter] {
+        self.code_repository_provider_type_visibility.as_deref().unwrap_or_default()
+    }
+    /// <p>Filter criteria for code repositories based on the ID of the last scanned commit.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.last_scanned_commit_id.is_none()`.
+    pub fn last_scanned_commit_id(&self) -> &[crate::types::CoverageStringFilter] {
+        self.last_scanned_commit_id.as_deref().unwrap_or_default()
+    }
 }
 impl CoverageFilterCriteria {
     /// Creates a new builder-style object to manufacture [`CoverageFilterCriteria`](crate::types::CoverageFilterCriteria).
@@ -171,6 +203,10 @@ pub struct CoverageFilterCriteriaBuilder {
     pub(crate) image_pulled_at: ::std::option::Option<::std::vec::Vec<crate::types::CoverageDateFilter>>,
     pub(crate) ecr_image_last_in_use_at: ::std::option::Option<::std::vec::Vec<crate::types::CoverageDateFilter>>,
     pub(crate) ecr_image_in_use_count: ::std::option::Option<::std::vec::Vec<crate::types::CoverageNumberFilter>>,
+    pub(crate) code_repository_project_name: ::std::option::Option<::std::vec::Vec<crate::types::CoverageStringFilter>>,
+    pub(crate) code_repository_provider_type: ::std::option::Option<::std::vec::Vec<crate::types::CoverageStringFilter>>,
+    pub(crate) code_repository_provider_type_visibility: ::std::option::Option<::std::vec::Vec<crate::types::CoverageStringFilter>>,
+    pub(crate) last_scanned_commit_id: ::std::option::Option<::std::vec::Vec<crate::types::CoverageStringFilter>>,
 }
 impl CoverageFilterCriteriaBuilder {
     /// Appends an item to `scan_status_code`.
@@ -513,6 +549,89 @@ impl CoverageFilterCriteriaBuilder {
     pub fn get_ecr_image_in_use_count(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CoverageNumberFilter>> {
         &self.ecr_image_in_use_count
     }
+    /// Appends an item to `code_repository_project_name`.
+    ///
+    /// To override the contents of this collection use [`set_code_repository_project_name`](Self::set_code_repository_project_name).
+    ///
+    /// <p>Filter criteria for code repositories based on project name.</p>
+    pub fn code_repository_project_name(mut self, input: crate::types::CoverageStringFilter) -> Self {
+        let mut v = self.code_repository_project_name.unwrap_or_default();
+        v.push(input);
+        self.code_repository_project_name = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Filter criteria for code repositories based on project name.</p>
+    pub fn set_code_repository_project_name(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CoverageStringFilter>>) -> Self {
+        self.code_repository_project_name = input;
+        self
+    }
+    /// <p>Filter criteria for code repositories based on project name.</p>
+    pub fn get_code_repository_project_name(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CoverageStringFilter>> {
+        &self.code_repository_project_name
+    }
+    /// Appends an item to `code_repository_provider_type`.
+    ///
+    /// To override the contents of this collection use [`set_code_repository_provider_type`](Self::set_code_repository_provider_type).
+    ///
+    /// <p>Filter criteria for code repositories based on provider type (such as GitHub, GitLab, etc.).</p>
+    pub fn code_repository_provider_type(mut self, input: crate::types::CoverageStringFilter) -> Self {
+        let mut v = self.code_repository_provider_type.unwrap_or_default();
+        v.push(input);
+        self.code_repository_provider_type = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Filter criteria for code repositories based on provider type (such as GitHub, GitLab, etc.).</p>
+    pub fn set_code_repository_provider_type(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CoverageStringFilter>>) -> Self {
+        self.code_repository_provider_type = input;
+        self
+    }
+    /// <p>Filter criteria for code repositories based on provider type (such as GitHub, GitLab, etc.).</p>
+    pub fn get_code_repository_provider_type(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CoverageStringFilter>> {
+        &self.code_repository_provider_type
+    }
+    /// Appends an item to `code_repository_provider_type_visibility`.
+    ///
+    /// To override the contents of this collection use [`set_code_repository_provider_type_visibility`](Self::set_code_repository_provider_type_visibility).
+    ///
+    /// <p>Filter criteria for code repositories based on visibility setting (public or private).</p>
+    pub fn code_repository_provider_type_visibility(mut self, input: crate::types::CoverageStringFilter) -> Self {
+        let mut v = self.code_repository_provider_type_visibility.unwrap_or_default();
+        v.push(input);
+        self.code_repository_provider_type_visibility = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Filter criteria for code repositories based on visibility setting (public or private).</p>
+    pub fn set_code_repository_provider_type_visibility(
+        mut self,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::CoverageStringFilter>>,
+    ) -> Self {
+        self.code_repository_provider_type_visibility = input;
+        self
+    }
+    /// <p>Filter criteria for code repositories based on visibility setting (public or private).</p>
+    pub fn get_code_repository_provider_type_visibility(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CoverageStringFilter>> {
+        &self.code_repository_provider_type_visibility
+    }
+    /// Appends an item to `last_scanned_commit_id`.
+    ///
+    /// To override the contents of this collection use [`set_last_scanned_commit_id`](Self::set_last_scanned_commit_id).
+    ///
+    /// <p>Filter criteria for code repositories based on the ID of the last scanned commit.</p>
+    pub fn last_scanned_commit_id(mut self, input: crate::types::CoverageStringFilter) -> Self {
+        let mut v = self.last_scanned_commit_id.unwrap_or_default();
+        v.push(input);
+        self.last_scanned_commit_id = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Filter criteria for code repositories based on the ID of the last scanned commit.</p>
+    pub fn set_last_scanned_commit_id(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CoverageStringFilter>>) -> Self {
+        self.last_scanned_commit_id = input;
+        self
+    }
+    /// <p>Filter criteria for code repositories based on the ID of the last scanned commit.</p>
+    pub fn get_last_scanned_commit_id(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CoverageStringFilter>> {
+        &self.last_scanned_commit_id
+    }
     /// Consumes the builder and constructs a [`CoverageFilterCriteria`](crate::types::CoverageFilterCriteria).
     pub fn build(self) -> crate::types::CoverageFilterCriteria {
         crate::types::CoverageFilterCriteria {
@@ -533,6 +652,10 @@ impl CoverageFilterCriteriaBuilder {
             image_pulled_at: self.image_pulled_at,
             ecr_image_last_in_use_at: self.ecr_image_last_in_use_at,
             ecr_image_in_use_count: self.ecr_image_in_use_count,
+            code_repository_project_name: self.code_repository_project_name,
+            code_repository_provider_type: self.code_repository_provider_type,
+            code_repository_provider_type_visibility: self.code_repository_provider_type_visibility,
+            last_scanned_commit_id: self.last_scanned_commit_id,
         }
     }
 }

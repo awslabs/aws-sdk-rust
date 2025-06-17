@@ -32,6 +32,14 @@ pub struct DescribeBackupVaultOutput {
     /// <p>If you applied Vault Lock to your vault without specifying a lock date, you can change any of your Vault Lock settings, or delete Vault Lock from the vault entirely, at any time.</p>
     /// <p>This value is in Unix format, Coordinated Universal Time (UTC), and accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
     pub lock_date: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>The ARN of the source backup vault from which this restore access backup vault was created.</p>
+    pub source_backup_vault_arn: ::std::option::Option<::std::string::String>,
+    /// <p>The ARN of the MPA approval team associated with this backup vault.</p>
+    pub mpa_approval_team_arn: ::std::option::Option<::std::string::String>,
+    /// <p>The ARN of the MPA session associated with this backup vault.</p>
+    pub mpa_session_arn: ::std::option::Option<::std::string::String>,
+    /// <p>Information about the latest update to the MPA approval team association for this backup vault.</p>
+    pub latest_mpa_approval_team_update: ::std::option::Option<crate::types::LatestMpaApprovalTeamUpdate>,
     _request_id: Option<String>,
 }
 impl DescribeBackupVaultOutput {
@@ -88,6 +96,22 @@ impl DescribeBackupVaultOutput {
     pub fn lock_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.lock_date.as_ref()
     }
+    /// <p>The ARN of the source backup vault from which this restore access backup vault was created.</p>
+    pub fn source_backup_vault_arn(&self) -> ::std::option::Option<&str> {
+        self.source_backup_vault_arn.as_deref()
+    }
+    /// <p>The ARN of the MPA approval team associated with this backup vault.</p>
+    pub fn mpa_approval_team_arn(&self) -> ::std::option::Option<&str> {
+        self.mpa_approval_team_arn.as_deref()
+    }
+    /// <p>The ARN of the MPA session associated with this backup vault.</p>
+    pub fn mpa_session_arn(&self) -> ::std::option::Option<&str> {
+        self.mpa_session_arn.as_deref()
+    }
+    /// <p>Information about the latest update to the MPA approval team association for this backup vault.</p>
+    pub fn latest_mpa_approval_team_update(&self) -> ::std::option::Option<&crate::types::LatestMpaApprovalTeamUpdate> {
+        self.latest_mpa_approval_team_update.as_ref()
+    }
 }
 impl ::aws_types::request_id::RequestId for DescribeBackupVaultOutput {
     fn request_id(&self) -> Option<&str> {
@@ -117,6 +141,10 @@ pub struct DescribeBackupVaultOutputBuilder {
     pub(crate) min_retention_days: ::std::option::Option<i64>,
     pub(crate) max_retention_days: ::std::option::Option<i64>,
     pub(crate) lock_date: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) source_backup_vault_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) mpa_approval_team_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) mpa_session_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) latest_mpa_approval_team_update: ::std::option::Option<crate::types::LatestMpaApprovalTeamUpdate>,
     _request_id: Option<String>,
 }
 impl DescribeBackupVaultOutputBuilder {
@@ -303,6 +331,62 @@ impl DescribeBackupVaultOutputBuilder {
     pub fn get_lock_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.lock_date
     }
+    /// <p>The ARN of the source backup vault from which this restore access backup vault was created.</p>
+    pub fn source_backup_vault_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.source_backup_vault_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ARN of the source backup vault from which this restore access backup vault was created.</p>
+    pub fn set_source_backup_vault_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.source_backup_vault_arn = input;
+        self
+    }
+    /// <p>The ARN of the source backup vault from which this restore access backup vault was created.</p>
+    pub fn get_source_backup_vault_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_backup_vault_arn
+    }
+    /// <p>The ARN of the MPA approval team associated with this backup vault.</p>
+    pub fn mpa_approval_team_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.mpa_approval_team_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ARN of the MPA approval team associated with this backup vault.</p>
+    pub fn set_mpa_approval_team_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.mpa_approval_team_arn = input;
+        self
+    }
+    /// <p>The ARN of the MPA approval team associated with this backup vault.</p>
+    pub fn get_mpa_approval_team_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.mpa_approval_team_arn
+    }
+    /// <p>The ARN of the MPA session associated with this backup vault.</p>
+    pub fn mpa_session_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.mpa_session_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ARN of the MPA session associated with this backup vault.</p>
+    pub fn set_mpa_session_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.mpa_session_arn = input;
+        self
+    }
+    /// <p>The ARN of the MPA session associated with this backup vault.</p>
+    pub fn get_mpa_session_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.mpa_session_arn
+    }
+    /// <p>Information about the latest update to the MPA approval team association for this backup vault.</p>
+    pub fn latest_mpa_approval_team_update(mut self, input: crate::types::LatestMpaApprovalTeamUpdate) -> Self {
+        self.latest_mpa_approval_team_update = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Information about the latest update to the MPA approval team association for this backup vault.</p>
+    pub fn set_latest_mpa_approval_team_update(mut self, input: ::std::option::Option<crate::types::LatestMpaApprovalTeamUpdate>) -> Self {
+        self.latest_mpa_approval_team_update = input;
+        self
+    }
+    /// <p>Information about the latest update to the MPA approval team association for this backup vault.</p>
+    pub fn get_latest_mpa_approval_team_update(&self) -> &::std::option::Option<crate::types::LatestMpaApprovalTeamUpdate> {
+        &self.latest_mpa_approval_team_update
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -327,6 +411,10 @@ impl DescribeBackupVaultOutputBuilder {
             min_retention_days: self.min_retention_days,
             max_retention_days: self.max_retention_days,
             lock_date: self.lock_date,
+            source_backup_vault_arn: self.source_backup_vault_arn,
+            mpa_approval_team_arn: self.mpa_approval_team_arn,
+            mpa_session_arn: self.mpa_session_arn,
+            latest_mpa_approval_team_update: self.latest_mpa_approval_team_update,
             _request_id: self._request_id,
         }
     }

@@ -4,6 +4,8 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum AnalyzerConfiguration {
+    /// <p>Specifies the configuration of an internal access analyzer for an Amazon Web Services organization or account. This configuration determines how the analyzer evaluates access within your Amazon Web Services environment.</p>
+    InternalAccess(crate::types::InternalAccessConfiguration),
     /// <p>Specifies the configuration of an unused access analyzer for an Amazon Web Services organization or account.</p>
     UnusedAccess(crate::types::UnusedAccessConfiguration),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
@@ -17,7 +19,19 @@ pub enum AnalyzerConfiguration {
     Unknown,
 }
 impl AnalyzerConfiguration {
-    #[allow(irrefutable_let_patterns)]
+    /// Tries to convert the enum instance into [`InternalAccess`](crate::types::AnalyzerConfiguration::InternalAccess), extracting the inner [`InternalAccessConfiguration`](crate::types::InternalAccessConfiguration).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_internal_access(&self) -> ::std::result::Result<&crate::types::InternalAccessConfiguration, &Self> {
+        if let AnalyzerConfiguration::InternalAccess(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`InternalAccess`](crate::types::AnalyzerConfiguration::InternalAccess).
+    pub fn is_internal_access(&self) -> bool {
+        self.as_internal_access().is_ok()
+    }
     /// Tries to convert the enum instance into [`UnusedAccess`](crate::types::AnalyzerConfiguration::UnusedAccess), extracting the inner [`UnusedAccessConfiguration`](crate::types::UnusedAccessConfiguration).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_unused_access(&self) -> ::std::result::Result<&crate::types::UnusedAccessConfiguration, &Self> {

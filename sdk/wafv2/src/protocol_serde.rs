@@ -287,6 +287,8 @@ pub(crate) mod shape_waf_unsupported_aggregate_key_type_exception;
 
 pub(crate) mod shape_api_key_summaries;
 
+pub(crate) mod shape_application_config;
+
 pub(crate) mod shape_association_config;
 
 pub(crate) mod shape_captcha_config;
@@ -373,6 +375,8 @@ pub(crate) mod shape_allow_action;
 
 pub(crate) mod shape_api_key_summary;
 
+pub(crate) mod shape_application_attribute;
+
 pub(crate) mod shape_block_action;
 
 pub(crate) mod shape_custom_response_bodies;
@@ -430,6 +434,8 @@ pub(crate) mod shape_tag_list;
 pub(crate) mod shape_all_query_arguments;
 
 pub(crate) mod shape_and_statement;
+
+pub(crate) mod shape_application_attributes;
 
 pub(crate) mod shape_asn_match_statement;
 
@@ -554,6 +560,8 @@ pub(crate) mod shape_text_transformation;
 pub(crate) mod shape_action_condition;
 
 pub(crate) mod shape_all;
+
+pub(crate) mod shape_attribute_values;
 
 pub(crate) mod shape_aws_managed_rules_acfp_rule_set;
 

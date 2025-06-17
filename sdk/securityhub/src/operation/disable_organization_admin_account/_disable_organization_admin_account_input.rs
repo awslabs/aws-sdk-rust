@@ -5,11 +5,17 @@
 pub struct DisableOrganizationAdminAccountInput {
     /// <p>The Amazon Web Services account identifier of the Security Hub administrator account.</p>
     pub admin_account_id: ::std::option::Option<::std::string::String>,
+    /// <p>The feature for which the delegated admin account is disabled. Defaults to Security Hub if not specified.</p>
+    pub feature: ::std::option::Option<crate::types::SecurityHubFeature>,
 }
 impl DisableOrganizationAdminAccountInput {
     /// <p>The Amazon Web Services account identifier of the Security Hub administrator account.</p>
     pub fn admin_account_id(&self) -> ::std::option::Option<&str> {
         self.admin_account_id.as_deref()
+    }
+    /// <p>The feature for which the delegated admin account is disabled. Defaults to Security Hub if not specified.</p>
+    pub fn feature(&self) -> ::std::option::Option<&crate::types::SecurityHubFeature> {
+        self.feature.as_ref()
     }
 }
 impl DisableOrganizationAdminAccountInput {
@@ -24,6 +30,7 @@ impl DisableOrganizationAdminAccountInput {
 #[non_exhaustive]
 pub struct DisableOrganizationAdminAccountInputBuilder {
     pub(crate) admin_account_id: ::std::option::Option<::std::string::String>,
+    pub(crate) feature: ::std::option::Option<crate::types::SecurityHubFeature>,
 }
 impl DisableOrganizationAdminAccountInputBuilder {
     /// <p>The Amazon Web Services account identifier of the Security Hub administrator account.</p>
@@ -41,6 +48,20 @@ impl DisableOrganizationAdminAccountInputBuilder {
     pub fn get_admin_account_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.admin_account_id
     }
+    /// <p>The feature for which the delegated admin account is disabled. Defaults to Security Hub if not specified.</p>
+    pub fn feature(mut self, input: crate::types::SecurityHubFeature) -> Self {
+        self.feature = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The feature for which the delegated admin account is disabled. Defaults to Security Hub if not specified.</p>
+    pub fn set_feature(mut self, input: ::std::option::Option<crate::types::SecurityHubFeature>) -> Self {
+        self.feature = input;
+        self
+    }
+    /// <p>The feature for which the delegated admin account is disabled. Defaults to Security Hub if not specified.</p>
+    pub fn get_feature(&self) -> &::std::option::Option<crate::types::SecurityHubFeature> {
+        &self.feature
+    }
     /// Consumes the builder and constructs a [`DisableOrganizationAdminAccountInput`](crate::operation::disable_organization_admin_account::DisableOrganizationAdminAccountInput).
     pub fn build(
         self,
@@ -51,6 +72,7 @@ impl DisableOrganizationAdminAccountInputBuilder {
         ::std::result::Result::Ok(
             crate::operation::disable_organization_admin_account::DisableOrganizationAdminAccountInput {
                 admin_account_id: self.admin_account_id,
+                feature: self.feature,
             },
         )
     }

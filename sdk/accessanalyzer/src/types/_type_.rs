@@ -13,8 +13,10 @@
 /// # let type = unimplemented!();
 /// match type {
 ///     Type::Account => { /* ... */ },
+///     Type::AccountInternalAccess => { /* ... */ },
 ///     Type::AccountUnusedAccess => { /* ... */ },
 ///     Type::Organization => { /* ... */ },
+///     Type::OrganizationInternalAccess => { /* ... */ },
 ///     Type::OrganizationUnusedAccess => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -47,9 +49,13 @@ pub enum Type {
     #[allow(missing_docs)] // documentation missing in model
     Account,
     #[allow(missing_docs)] // documentation missing in model
+    AccountInternalAccess,
+    #[allow(missing_docs)] // documentation missing in model
     AccountUnusedAccess,
     #[allow(missing_docs)] // documentation missing in model
     Organization,
+    #[allow(missing_docs)] // documentation missing in model
+    OrganizationInternalAccess,
     #[allow(missing_docs)] // documentation missing in model
     OrganizationUnusedAccess,
     /// `Unknown` contains new variants that have been added since this code was generated.
@@ -60,8 +66,10 @@ impl ::std::convert::From<&str> for Type {
     fn from(s: &str) -> Self {
         match s {
             "ACCOUNT" => Type::Account,
+            "ACCOUNT_INTERNAL_ACCESS" => Type::AccountInternalAccess,
             "ACCOUNT_UNUSED_ACCESS" => Type::AccountUnusedAccess,
             "ORGANIZATION" => Type::Organization,
+            "ORGANIZATION_INTERNAL_ACCESS" => Type::OrganizationInternalAccess,
             "ORGANIZATION_UNUSED_ACCESS" => Type::OrganizationUnusedAccess,
             other => Type::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -79,15 +87,24 @@ impl Type {
     pub fn as_str(&self) -> &str {
         match self {
             Type::Account => "ACCOUNT",
+            Type::AccountInternalAccess => "ACCOUNT_INTERNAL_ACCESS",
             Type::AccountUnusedAccess => "ACCOUNT_UNUSED_ACCESS",
             Type::Organization => "ORGANIZATION",
+            Type::OrganizationInternalAccess => "ORGANIZATION_INTERNAL_ACCESS",
             Type::OrganizationUnusedAccess => "ORGANIZATION_UNUSED_ACCESS",
             Type::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ACCOUNT", "ACCOUNT_UNUSED_ACCESS", "ORGANIZATION", "ORGANIZATION_UNUSED_ACCESS"]
+        &[
+            "ACCOUNT",
+            "ACCOUNT_INTERNAL_ACCESS",
+            "ACCOUNT_UNUSED_ACCESS",
+            "ORGANIZATION",
+            "ORGANIZATION_INTERNAL_ACCESS",
+            "ORGANIZATION_UNUSED_ACCESS",
+        ]
     }
 }
 impl ::std::convert::AsRef<str> for Type {
@@ -111,8 +128,10 @@ impl ::std::fmt::Display for Type {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             Type::Account => write!(f, "ACCOUNT"),
+            Type::AccountInternalAccess => write!(f, "ACCOUNT_INTERNAL_ACCESS"),
             Type::AccountUnusedAccess => write!(f, "ACCOUNT_UNUSED_ACCESS"),
             Type::Organization => write!(f, "ORGANIZATION"),
+            Type::OrganizationInternalAccess => write!(f, "ORGANIZATION_INTERNAL_ACCESS"),
             Type::OrganizationUnusedAccess => write!(f, "ORGANIZATION_UNUSED_ACCESS"),
             Type::Unknown(value) => write!(f, "{}", value),
         }

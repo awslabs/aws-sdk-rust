@@ -124,28 +124,37 @@ impl StartReplicationTaskFluentBuilder {
         self.inner.get_replication_task_arn()
     }
     /// <p>The type of replication task to start.</p>
-    /// <p>When the migration type is <code>full-load</code> or <code>full-load-and-cdc</code>, the only valid value for the first run of the task is <code>start-replication</code>. This option will start the migration.</p>
+    /// <p><code>start-replication</code> is the only valid action that can be used for the first time a task with the migration type of <code>full-load</code>full-load, <code>full-load-and-cdc</code> or <code>cdc</code> is run. Any other action used for the first time on a given task, such as <code>resume-processing</code> and reload-target will result in data errors.</p>
     /// <p>You can also use <code>ReloadTables</code> to reload specific tables that failed during migration instead of restarting the task.</p>
-    /// <p>The <code>resume-processing</code> option isn't applicable for a full-load task, because you can't resume partially loaded tables during the full load phase.</p>
+    /// <p>For a <code>full-load</code> task, the resume-processing option will reload any tables that were partially loaded or not yet loaded during the full load phase.</p>
     /// <p>For a <code>full-load-and-cdc</code> task, DMS migrates table data, and then applies data changes that occur on the source. To load all the tables again, and start capturing source changes, use <code>reload-target</code>. Otherwise use <code>resume-processing</code>, to replicate the changes from the last stop position.</p>
+    /// <p>For a <code>cdc</code> only task, to start from a specific position, you must use start-replication and also specify the start position. Check the source endpoint DMS documentation for any limitations. For example, not all sources support starting from a time.</p><note>
+    /// <p><code>resume-processing</code> is only available for previously executed tasks.</p>
+    /// </note>
     pub fn start_replication_task_type(mut self, input: crate::types::StartReplicationTaskTypeValue) -> Self {
         self.inner = self.inner.start_replication_task_type(input);
         self
     }
     /// <p>The type of replication task to start.</p>
-    /// <p>When the migration type is <code>full-load</code> or <code>full-load-and-cdc</code>, the only valid value for the first run of the task is <code>start-replication</code>. This option will start the migration.</p>
+    /// <p><code>start-replication</code> is the only valid action that can be used for the first time a task with the migration type of <code>full-load</code>full-load, <code>full-load-and-cdc</code> or <code>cdc</code> is run. Any other action used for the first time on a given task, such as <code>resume-processing</code> and reload-target will result in data errors.</p>
     /// <p>You can also use <code>ReloadTables</code> to reload specific tables that failed during migration instead of restarting the task.</p>
-    /// <p>The <code>resume-processing</code> option isn't applicable for a full-load task, because you can't resume partially loaded tables during the full load phase.</p>
+    /// <p>For a <code>full-load</code> task, the resume-processing option will reload any tables that were partially loaded or not yet loaded during the full load phase.</p>
     /// <p>For a <code>full-load-and-cdc</code> task, DMS migrates table data, and then applies data changes that occur on the source. To load all the tables again, and start capturing source changes, use <code>reload-target</code>. Otherwise use <code>resume-processing</code>, to replicate the changes from the last stop position.</p>
+    /// <p>For a <code>cdc</code> only task, to start from a specific position, you must use start-replication and also specify the start position. Check the source endpoint DMS documentation for any limitations. For example, not all sources support starting from a time.</p><note>
+    /// <p><code>resume-processing</code> is only available for previously executed tasks.</p>
+    /// </note>
     pub fn set_start_replication_task_type(mut self, input: ::std::option::Option<crate::types::StartReplicationTaskTypeValue>) -> Self {
         self.inner = self.inner.set_start_replication_task_type(input);
         self
     }
     /// <p>The type of replication task to start.</p>
-    /// <p>When the migration type is <code>full-load</code> or <code>full-load-and-cdc</code>, the only valid value for the first run of the task is <code>start-replication</code>. This option will start the migration.</p>
+    /// <p><code>start-replication</code> is the only valid action that can be used for the first time a task with the migration type of <code>full-load</code>full-load, <code>full-load-and-cdc</code> or <code>cdc</code> is run. Any other action used for the first time on a given task, such as <code>resume-processing</code> and reload-target will result in data errors.</p>
     /// <p>You can also use <code>ReloadTables</code> to reload specific tables that failed during migration instead of restarting the task.</p>
-    /// <p>The <code>resume-processing</code> option isn't applicable for a full-load task, because you can't resume partially loaded tables during the full load phase.</p>
+    /// <p>For a <code>full-load</code> task, the resume-processing option will reload any tables that were partially loaded or not yet loaded during the full load phase.</p>
     /// <p>For a <code>full-load-and-cdc</code> task, DMS migrates table data, and then applies data changes that occur on the source. To load all the tables again, and start capturing source changes, use <code>reload-target</code>. Otherwise use <code>resume-processing</code>, to replicate the changes from the last stop position.</p>
+    /// <p>For a <code>cdc</code> only task, to start from a specific position, you must use start-replication and also specify the start position. Check the source endpoint DMS documentation for any limitations. For example, not all sources support starting from a time.</p><note>
+    /// <p><code>resume-processing</code> is only available for previously executed tasks.</p>
+    /// </note>
     pub fn get_start_replication_task_type(&self) -> &::std::option::Option<crate::types::StartReplicationTaskTypeValue> {
         self.inner.get_start_replication_task_type()
     }

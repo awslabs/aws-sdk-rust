@@ -23,12 +23,7 @@ impl crate::operation::invite_account_to_organization::builders::InviteAccountTo
 /// Fluent builder constructing a request to `InviteAccountToOrganization`.
 ///
 /// <p>Sends an invitation to another account to join your organization as a member account. Organizations sends email on your behalf to the email address that is associated with the other account's owner. The invitation is implemented as a <code>Handshake</code> whose details are in the response.</p><important>
-/// <ul>
-/// <li>
-/// <p>You can invite Amazon Web Services accounts only from the same seller as the management account. For example, if your organization's management account was created by Amazon Internet Services Pvt. Ltd (AISPL), an Amazon Web Services seller in India, you can invite only other AISPL accounts to your organization. You can't combine accounts from AISPL and Amazon Web Services or from any other Amazon Web Services seller. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/useconsolidatedbilling-India.html">Consolidated billing in India</a>.</p></li>
-/// <li>
-/// <p>If you receive an exception that indicates that you exceeded your account limits for the organization or that the operation failed because your organization is still initializing, wait one hour and then try again. If the error persists after an hour, contact <a href="https://console.aws.amazon.com/support/home#/">Amazon Web Services Support</a>.</p></li>
-/// </ul>
+/// <p>If you receive an exception that indicates that you exceeded your account limits for the organization or that the operation failed because your organization is still initializing, wait one hour and then try again. If the error persists after an hour, contact <a href="https://console.aws.amazon.com/support/home#/">Amazon Web Services Support</a>.</p>
 /// </important>
 /// <p>If the request includes tags, then the requester must have the <code>organizations:TagResource</code> permission.</p>
 /// <p>This operation can be called only from the organization's management account.</p>

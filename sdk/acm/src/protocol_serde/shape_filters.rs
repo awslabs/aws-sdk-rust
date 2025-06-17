@@ -30,8 +30,11 @@ pub fn ser_filters(
         }
         array_8.finish();
     }
-    if let Some(var_10) = &input.managed_by {
-        object.key("managedBy").string(var_10.as_str());
+    if let Some(var_10) = &input.export_option {
+        object.key("exportOption").string(var_10.as_str());
+    }
+    if let Some(var_11) = &input.managed_by {
+        object.key("managedBy").string(var_11.as_str());
     }
     Ok(())
 }

@@ -51,6 +51,8 @@ pub(crate) mod shape_request_certificate;
 
 pub(crate) mod shape_resend_validation_email;
 
+pub(crate) mod shape_revoke_certificate;
+
 pub(crate) mod shape_update_certificate_options;
 
 pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
@@ -110,6 +112,8 @@ pub(crate) mod shape_resend_validation_email_input;
 pub(crate) mod shape_resource_in_use_exception;
 
 pub(crate) mod shape_resource_not_found_exception;
+
+pub(crate) mod shape_revoke_certificate_input;
 
 pub(crate) mod shape_tag_policy_exception;
 

@@ -25,7 +25,7 @@ aws-config= { version = "1.8.0", path = "../../../sdk/aws-config", features = ["
 aws-credential-types= { version = "1.2.3", path = "../../../sdk/aws-credential-types", features = ["hardcoded-credentials"] }
 aws-sdk-iam= { version = "1.77.0", path = "../../../sdk/iam" }
 aws-sdk-s3= { version = "1.92.0", path = "../../../sdk/s3" }
-aws-sdk-sts= { version = "1.74.0", path = "../../../sdk/sts" }
+aws-sdk-sts= { version = "1.75.0", path = "../../../sdk/sts" }
 
 [dependencies.sdk-examples-test-utils]
 path = "../../test-utils"

@@ -108,6 +108,9 @@ where
                                 crate::protocol_serde::shape_on_source_d_do_s_protection_config::de_on_source_d_do_s_protection_config(tokens)?,
                             );
                         }
+                        "ApplicationConfig" => {
+                            builder = builder.set_application_config(crate::protocol_serde::shape_application_config::de_application_config(tokens)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

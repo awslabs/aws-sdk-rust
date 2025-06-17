@@ -13,7 +13,11 @@
 /// # let signaltype = unimplemented!();
 /// match signaltype {
 ///     SignalType::CloudTrail => { /* ... */ },
+///     SignalType::DnsLogs => { /* ... */ },
+///     SignalType::EksAuditLogs => { /* ... */ },
 ///     SignalType::Finding => { /* ... */ },
+///     SignalType::FlowLogs => { /* ... */ },
+///     SignalType::RuntimeMonitoring => { /* ... */ },
 ///     SignalType::S3DataEvents => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -46,7 +50,15 @@ pub enum SignalType {
     #[allow(missing_docs)] // documentation missing in model
     CloudTrail,
     #[allow(missing_docs)] // documentation missing in model
+    DnsLogs,
+    #[allow(missing_docs)] // documentation missing in model
+    EksAuditLogs,
+    #[allow(missing_docs)] // documentation missing in model
     Finding,
+    #[allow(missing_docs)] // documentation missing in model
+    FlowLogs,
+    #[allow(missing_docs)] // documentation missing in model
+    RuntimeMonitoring,
     #[allow(missing_docs)] // documentation missing in model
     S3DataEvents,
     /// `Unknown` contains new variants that have been added since this code was generated.
@@ -57,7 +69,11 @@ impl ::std::convert::From<&str> for SignalType {
     fn from(s: &str) -> Self {
         match s {
             "CLOUD_TRAIL" => SignalType::CloudTrail,
+            "DNS_LOGS" => SignalType::DnsLogs,
+            "EKS_AUDIT_LOGS" => SignalType::EksAuditLogs,
             "FINDING" => SignalType::Finding,
+            "FLOW_LOGS" => SignalType::FlowLogs,
+            "RUNTIME_MONITORING" => SignalType::RuntimeMonitoring,
             "S3_DATA_EVENTS" => SignalType::S3DataEvents,
             other => SignalType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -75,14 +91,26 @@ impl SignalType {
     pub fn as_str(&self) -> &str {
         match self {
             SignalType::CloudTrail => "CLOUD_TRAIL",
+            SignalType::DnsLogs => "DNS_LOGS",
+            SignalType::EksAuditLogs => "EKS_AUDIT_LOGS",
             SignalType::Finding => "FINDING",
+            SignalType::FlowLogs => "FLOW_LOGS",
+            SignalType::RuntimeMonitoring => "RUNTIME_MONITORING",
             SignalType::S3DataEvents => "S3_DATA_EVENTS",
             SignalType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["CLOUD_TRAIL", "FINDING", "S3_DATA_EVENTS"]
+        &[
+            "CLOUD_TRAIL",
+            "DNS_LOGS",
+            "EKS_AUDIT_LOGS",
+            "FINDING",
+            "FLOW_LOGS",
+            "RUNTIME_MONITORING",
+            "S3_DATA_EVENTS",
+        ]
     }
 }
 impl ::std::convert::AsRef<str> for SignalType {
@@ -106,7 +134,11 @@ impl ::std::fmt::Display for SignalType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             SignalType::CloudTrail => write!(f, "CLOUD_TRAIL"),
+            SignalType::DnsLogs => write!(f, "DNS_LOGS"),
+            SignalType::EksAuditLogs => write!(f, "EKS_AUDIT_LOGS"),
             SignalType::Finding => write!(f, "FINDING"),
+            SignalType::FlowLogs => write!(f, "FLOW_LOGS"),
+            SignalType::RuntimeMonitoring => write!(f, "RUNTIME_MONITORING"),
             SignalType::S3DataEvents => write!(f, "S3_DATA_EVENTS"),
             SignalType::Unknown(value) => write!(f, "{}", value),
         }

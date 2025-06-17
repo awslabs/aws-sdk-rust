@@ -255,7 +255,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ListCertifica
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum ListCertificatesError {
-    /// <p>One or more of of request parameters specified is not valid.</p>
+    /// <p>One or more of request parameters specified is not valid.</p>
     InvalidArgsException(crate::types::error::InvalidArgsException),
     /// <p>The supplied input failed to satisfy constraints of an Amazon Web Services service.</p>
     ValidationException(crate::types::error::ValidationException),

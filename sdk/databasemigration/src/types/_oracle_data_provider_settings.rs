@@ -25,6 +25,10 @@ pub struct OracleDataProviderSettings {
     pub secrets_manager_security_db_encryption_secret_id: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the IAM role that provides access to the secret in Secrets Manager that contains the TDE password.</p>
     pub secrets_manager_security_db_encryption_access_role_arn: ::std::option::Option<::std::string::String>,
+    /// <p>The path for the Amazon S3 bucket that the application uses for accessing the user-defined schema.</p>
+    pub s3_path: ::std::option::Option<::std::string::String>,
+    /// <p>The ARN for the role the application uses to access its Amazon S3 bucket.</p>
+    pub s3_access_role_arn: ::std::option::Option<::std::string::String>,
 }
 impl OracleDataProviderSettings {
     /// <p>The name of the Oracle server.</p>
@@ -68,6 +72,14 @@ impl OracleDataProviderSettings {
     pub fn secrets_manager_security_db_encryption_access_role_arn(&self) -> ::std::option::Option<&str> {
         self.secrets_manager_security_db_encryption_access_role_arn.as_deref()
     }
+    /// <p>The path for the Amazon S3 bucket that the application uses for accessing the user-defined schema.</p>
+    pub fn s3_path(&self) -> ::std::option::Option<&str> {
+        self.s3_path.as_deref()
+    }
+    /// <p>The ARN for the role the application uses to access its Amazon S3 bucket.</p>
+    pub fn s3_access_role_arn(&self) -> ::std::option::Option<&str> {
+        self.s3_access_role_arn.as_deref()
+    }
 }
 impl OracleDataProviderSettings {
     /// Creates a new builder-style object to manufacture [`OracleDataProviderSettings`](crate::types::OracleDataProviderSettings).
@@ -90,6 +102,8 @@ pub struct OracleDataProviderSettingsBuilder {
     pub(crate) secrets_manager_oracle_asm_access_role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) secrets_manager_security_db_encryption_secret_id: ::std::option::Option<::std::string::String>,
     pub(crate) secrets_manager_security_db_encryption_access_role_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) s3_path: ::std::option::Option<::std::string::String>,
+    pub(crate) s3_access_role_arn: ::std::option::Option<::std::string::String>,
 }
 impl OracleDataProviderSettingsBuilder {
     /// <p>The name of the Oracle server.</p>
@@ -235,6 +249,34 @@ impl OracleDataProviderSettingsBuilder {
     pub fn get_secrets_manager_security_db_encryption_access_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.secrets_manager_security_db_encryption_access_role_arn
     }
+    /// <p>The path for the Amazon S3 bucket that the application uses for accessing the user-defined schema.</p>
+    pub fn s3_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.s3_path = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The path for the Amazon S3 bucket that the application uses for accessing the user-defined schema.</p>
+    pub fn set_s3_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.s3_path = input;
+        self
+    }
+    /// <p>The path for the Amazon S3 bucket that the application uses for accessing the user-defined schema.</p>
+    pub fn get_s3_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.s3_path
+    }
+    /// <p>The ARN for the role the application uses to access its Amazon S3 bucket.</p>
+    pub fn s3_access_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.s3_access_role_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ARN for the role the application uses to access its Amazon S3 bucket.</p>
+    pub fn set_s3_access_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.s3_access_role_arn = input;
+        self
+    }
+    /// <p>The ARN for the role the application uses to access its Amazon S3 bucket.</p>
+    pub fn get_s3_access_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.s3_access_role_arn
+    }
     /// Consumes the builder and constructs a [`OracleDataProviderSettings`](crate::types::OracleDataProviderSettings).
     pub fn build(self) -> crate::types::OracleDataProviderSettings {
         crate::types::OracleDataProviderSettings {
@@ -248,6 +290,8 @@ impl OracleDataProviderSettingsBuilder {
             secrets_manager_oracle_asm_access_role_arn: self.secrets_manager_oracle_asm_access_role_arn,
             secrets_manager_security_db_encryption_secret_id: self.secrets_manager_security_db_encryption_secret_id,
             secrets_manager_security_db_encryption_access_role_arn: self.secrets_manager_security_db_encryption_access_role_arn,
+            s3_path: self.s3_path,
+            s3_access_role_arn: self.s3_access_role_arn,
         }
     }
 }

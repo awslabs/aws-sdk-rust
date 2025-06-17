@@ -211,6 +211,8 @@ mod describe_rule_group;
 
 mod describe_rule_group_metadata;
 
+mod describe_rule_group_summary;
+
 mod describe_tls_inspection_configuration;
 
 mod describe_vpc_endpoint_association;

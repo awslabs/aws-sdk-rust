@@ -5,6 +5,14 @@ pub use crate::types::_validation_exception_reason::ValidationExceptionReason;
 
 pub use crate::types::_analyzer_configuration::AnalyzerConfiguration;
 
+pub use crate::types::_internal_access_configuration::InternalAccessConfiguration;
+
+pub use crate::types::_internal_access_analysis_rule::InternalAccessAnalysisRule;
+
+pub use crate::types::_internal_access_analysis_rule_criteria::InternalAccessAnalysisRuleCriteria;
+
+pub use crate::types::_resource_type::ResourceType;
+
 pub use crate::types::_unused_access_configuration::UnusedAccessConfiguration;
 
 pub use crate::types::_analysis_rule::AnalysisRule;
@@ -65,8 +73,6 @@ pub use crate::types::_finding_type::FindingType;
 
 pub use crate::types::_finding_status::FindingStatus;
 
-pub use crate::types::_resource_type::ResourceType;
-
 pub use crate::types::_sort_criteria::SortCriteria;
 
 pub use crate::types::_order_by::OrderBy;
@@ -125,6 +131,14 @@ pub use crate::types::_unused_action::UnusedAction;
 
 pub use crate::types::_external_access_details::ExternalAccessDetails;
 
+pub use crate::types::_internal_access_details::InternalAccessDetails;
+
+pub use crate::types::_service_control_policy_restriction::ServiceControlPolicyRestriction;
+
+pub use crate::types::_principal_type::PrincipalType;
+
+pub use crate::types::_internal_access_type::InternalAccessType;
+
 pub use crate::types::_findings_statistics::FindingsStatistics;
 
 pub use crate::types::_unused_access_findings_statistics::UnusedAccessFindingsStatistics;
@@ -132,6 +146,10 @@ pub use crate::types::_unused_access_findings_statistics::UnusedAccessFindingsSt
 pub use crate::types::_finding_aggregation_account_details::FindingAggregationAccountDetails;
 
 pub use crate::types::_unused_access_type_statistics::UnusedAccessTypeStatistics;
+
+pub use crate::types::_internal_access_findings_statistics::InternalAccessFindingsStatistics;
+
+pub use crate::types::_internal_access_resource_type_details::InternalAccessResourceTypeDetails;
 
 pub use crate::types::_external_access_findings_statistics::ExternalAccessFindingsStatistics;
 
@@ -329,6 +347,20 @@ mod _iam_role_configuration;
 
 mod _inline_archive_rule;
 
+mod _internal_access_analysis_rule;
+
+mod _internal_access_analysis_rule_criteria;
+
+mod _internal_access_configuration;
+
+mod _internal_access_details;
+
+mod _internal_access_findings_statistics;
+
+mod _internal_access_resource_type_details;
+
+mod _internal_access_type;
+
 mod _internet_configuration;
 
 mod _job_details;
@@ -364,6 +396,8 @@ mod _policy_generation_details;
 mod _policy_type;
 
 mod _position;
+
+mod _principal_type;
 
 mod _rds_db_cluster_snapshot_attribute_value;
 
@@ -404,6 +438,8 @@ mod _s3_express_directory_bucket_configuration;
 mod _s3_public_access_block_configuration;
 
 mod _secrets_manager_secret_configuration;
+
+mod _service_control_policy_restriction;
 
 mod _sns_topic_configuration;
 

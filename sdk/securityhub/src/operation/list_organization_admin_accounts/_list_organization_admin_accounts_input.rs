@@ -7,6 +7,8 @@ pub struct ListOrganizationAdminAccountsInput {
     pub max_results: ::std::option::Option<i32>,
     /// <p>The token that is required for pagination. On your first call to the <code>ListOrganizationAdminAccounts</code> operation, set the value of this parameter to <code>NULL</code>. For subsequent calls to the operation, to continue listing data, set the value of this parameter to the value returned from the previous response.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
+    /// <p>The feature where the delegated administrator account is listed. Defaults to Security Hub if not specified.</p>
+    pub feature: ::std::option::Option<crate::types::SecurityHubFeature>,
 }
 impl ListOrganizationAdminAccountsInput {
     /// <p>The maximum number of items to return in the response.</p>
@@ -16,6 +18,10 @@ impl ListOrganizationAdminAccountsInput {
     /// <p>The token that is required for pagination. On your first call to the <code>ListOrganizationAdminAccounts</code> operation, set the value of this parameter to <code>NULL</code>. For subsequent calls to the operation, to continue listing data, set the value of this parameter to the value returned from the previous response.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
+    }
+    /// <p>The feature where the delegated administrator account is listed. Defaults to Security Hub if not specified.</p>
+    pub fn feature(&self) -> ::std::option::Option<&crate::types::SecurityHubFeature> {
+        self.feature.as_ref()
     }
 }
 impl ListOrganizationAdminAccountsInput {
@@ -31,6 +37,7 @@ impl ListOrganizationAdminAccountsInput {
 pub struct ListOrganizationAdminAccountsInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
+    pub(crate) feature: ::std::option::Option<crate::types::SecurityHubFeature>,
 }
 impl ListOrganizationAdminAccountsInputBuilder {
     /// <p>The maximum number of items to return in the response.</p>
@@ -61,6 +68,20 @@ impl ListOrganizationAdminAccountsInputBuilder {
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
+    /// <p>The feature where the delegated administrator account is listed. Defaults to Security Hub if not specified.</p>
+    pub fn feature(mut self, input: crate::types::SecurityHubFeature) -> Self {
+        self.feature = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The feature where the delegated administrator account is listed. Defaults to Security Hub if not specified.</p>
+    pub fn set_feature(mut self, input: ::std::option::Option<crate::types::SecurityHubFeature>) -> Self {
+        self.feature = input;
+        self
+    }
+    /// <p>The feature where the delegated administrator account is listed. Defaults to Security Hub if not specified.</p>
+    pub fn get_feature(&self) -> &::std::option::Option<crate::types::SecurityHubFeature> {
+        &self.feature
+    }
     /// Consumes the builder and constructs a [`ListOrganizationAdminAccountsInput`](crate::operation::list_organization_admin_accounts::ListOrganizationAdminAccountsInput).
     pub fn build(
         self,
@@ -71,6 +92,7 @@ impl ListOrganizationAdminAccountsInputBuilder {
         ::std::result::Result::Ok(crate::operation::list_organization_admin_accounts::ListOrganizationAdminAccountsInput {
             max_results: self.max_results,
             next_token: self.next_token,
+            feature: self.feature,
         })
     }
 }

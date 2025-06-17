@@ -14,6 +14,7 @@
 /// match vaulttype {
 ///     VaultType::BackupVault => { /* ... */ },
 ///     VaultType::LogicallyAirGappedBackupVault => { /* ... */ },
+///     VaultType::RestoreAccessBackupVault => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -46,6 +47,8 @@ pub enum VaultType {
     BackupVault,
     #[allow(missing_docs)] // documentation missing in model
     LogicallyAirGappedBackupVault,
+    #[allow(missing_docs)] // documentation missing in model
+    RestoreAccessBackupVault,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -55,6 +58,7 @@ impl ::std::convert::From<&str> for VaultType {
         match s {
             "BACKUP_VAULT" => VaultType::BackupVault,
             "LOGICALLY_AIR_GAPPED_BACKUP_VAULT" => VaultType::LogicallyAirGappedBackupVault,
+            "RESTORE_ACCESS_BACKUP_VAULT" => VaultType::RestoreAccessBackupVault,
             other => VaultType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -72,12 +76,13 @@ impl VaultType {
         match self {
             VaultType::BackupVault => "BACKUP_VAULT",
             VaultType::LogicallyAirGappedBackupVault => "LOGICALLY_AIR_GAPPED_BACKUP_VAULT",
+            VaultType::RestoreAccessBackupVault => "RESTORE_ACCESS_BACKUP_VAULT",
             VaultType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["BACKUP_VAULT", "LOGICALLY_AIR_GAPPED_BACKUP_VAULT"]
+        &["BACKUP_VAULT", "LOGICALLY_AIR_GAPPED_BACKUP_VAULT", "RESTORE_ACCESS_BACKUP_VAULT"]
     }
 }
 impl ::std::convert::AsRef<str> for VaultType {
@@ -102,6 +107,7 @@ impl ::std::fmt::Display for VaultType {
         match self {
             VaultType::BackupVault => write!(f, "BACKUP_VAULT"),
             VaultType::LogicallyAirGappedBackupVault => write!(f, "LOGICALLY_AIR_GAPPED_BACKUP_VAULT"),
+            VaultType::RestoreAccessBackupVault => write!(f, "RESTORE_ACCESS_BACKUP_VAULT"),
             VaultType::Unknown(value) => write!(f, "{}", value),
         }
     }

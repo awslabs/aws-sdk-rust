@@ -150,6 +150,20 @@ impl CreateDataProviderFluentBuilder {
     pub fn get_engine(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_engine()
     }
+    /// <p>Indicates whether the data provider is virtual.</p>
+    pub fn r#virtual(mut self, input: bool) -> Self {
+        self.inner = self.inner.r#virtual(input);
+        self
+    }
+    /// <p>Indicates whether the data provider is virtual.</p>
+    pub fn set_virtual(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_virtual(input);
+        self
+    }
+    /// <p>Indicates whether the data provider is virtual.</p>
+    pub fn get_virtual(&self) -> &::std::option::Option<bool> {
+        self.inner.get_virtual()
+    }
     /// <p>The settings in JSON format for a data provider.</p>
     pub fn settings(mut self, input: crate::types::DataProviderSettings) -> Self {
         self.inner = self.inner.settings(input);

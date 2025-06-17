@@ -7,23 +7,7 @@ pub struct PutBackupVaultNotificationsInput {
     pub backup_vault_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) that specifies the topic for a backup vault’s events; for example, <code>arn:aws:sns:us-west-2:111122223333:MyVaultTopic</code>.</p>
     pub sns_topic_arn: ::std::option::Option<::std::string::String>,
-    /// <p>An array of events that indicate the status of jobs to back up resources to the backup vault.</p>
-    /// <p>For common use cases and code samples, see <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/sns-notifications.html">Using Amazon SNS to track Backup events</a>.</p>
-    /// <p>The following events are supported:</p>
-    /// <ul>
-    /// <li>
-    /// <p><code>BACKUP_JOB_STARTED</code> | <code>BACKUP_JOB_COMPLETED</code> | <code>BACKUP_JOB_FAILED</code></p></li>
-    /// <li>
-    /// <p><code>COPY_JOB_STARTED</code> | <code>COPY_JOB_SUCCESSFUL</code> | <code>COPY_JOB_FAILED</code></p></li>
-    /// <li>
-    /// <p><code>RESTORE_JOB_STARTED</code> | <code>RESTORE_JOB_COMPLETED</code> | <code>RECOVERY_POINT_MODIFIED</code></p></li>
-    /// <li>
-    /// <p><code>S3_BACKUP_OBJECT_FAILED</code> | <code>S3_RESTORE_OBJECT_FAILED</code></p></li>
-    /// <li>
-    /// <p><code>RECOVERY_POINT_INDEX_COMPLETED</code> | <code>RECOVERY_POINT_INDEX_DELETED</code> | <code>RECOVERY_POINT_INDEXING_FAILED</code></p></li>
-    /// </ul><note>
-    /// <p>The list below includes both supported events and deprecated events that are no longer in use (for reference). Deprecated events do not return statuses or notifications. Refer to the list above for the supported events.</p>
-    /// </note>
+    /// <p>An array of events that indicate the status of jobs to back up resources to the backup vault. For the list of supported events, common use cases, and code samples, see <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/backup-notifications.html">Notification options with Backup</a>.</p>
     pub backup_vault_events: ::std::option::Option<::std::vec::Vec<crate::types::BackupVaultEvent>>,
 }
 impl PutBackupVaultNotificationsInput {
@@ -35,23 +19,7 @@ impl PutBackupVaultNotificationsInput {
     pub fn sns_topic_arn(&self) -> ::std::option::Option<&str> {
         self.sns_topic_arn.as_deref()
     }
-    /// <p>An array of events that indicate the status of jobs to back up resources to the backup vault.</p>
-    /// <p>For common use cases and code samples, see <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/sns-notifications.html">Using Amazon SNS to track Backup events</a>.</p>
-    /// <p>The following events are supported:</p>
-    /// <ul>
-    /// <li>
-    /// <p><code>BACKUP_JOB_STARTED</code> | <code>BACKUP_JOB_COMPLETED</code> | <code>BACKUP_JOB_FAILED</code></p></li>
-    /// <li>
-    /// <p><code>COPY_JOB_STARTED</code> | <code>COPY_JOB_SUCCESSFUL</code> | <code>COPY_JOB_FAILED</code></p></li>
-    /// <li>
-    /// <p><code>RESTORE_JOB_STARTED</code> | <code>RESTORE_JOB_COMPLETED</code> | <code>RECOVERY_POINT_MODIFIED</code></p></li>
-    /// <li>
-    /// <p><code>S3_BACKUP_OBJECT_FAILED</code> | <code>S3_RESTORE_OBJECT_FAILED</code></p></li>
-    /// <li>
-    /// <p><code>RECOVERY_POINT_INDEX_COMPLETED</code> | <code>RECOVERY_POINT_INDEX_DELETED</code> | <code>RECOVERY_POINT_INDEXING_FAILED</code></p></li>
-    /// </ul><note>
-    /// <p>The list below includes both supported events and deprecated events that are no longer in use (for reference). Deprecated events do not return statuses or notifications. Refer to the list above for the supported events.</p>
-    /// </note>
+    /// <p>An array of events that indicate the status of jobs to back up resources to the backup vault. For the list of supported events, common use cases, and code samples, see <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/backup-notifications.html">Notification options with Backup</a>.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.backup_vault_events.is_none()`.
     pub fn backup_vault_events(&self) -> &[crate::types::BackupVaultEvent] {
@@ -108,67 +76,19 @@ impl PutBackupVaultNotificationsInputBuilder {
     ///
     /// To override the contents of this collection use [`set_backup_vault_events`](Self::set_backup_vault_events).
     ///
-    /// <p>An array of events that indicate the status of jobs to back up resources to the backup vault.</p>
-    /// <p>For common use cases and code samples, see <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/sns-notifications.html">Using Amazon SNS to track Backup events</a>.</p>
-    /// <p>The following events are supported:</p>
-    /// <ul>
-    /// <li>
-    /// <p><code>BACKUP_JOB_STARTED</code> | <code>BACKUP_JOB_COMPLETED</code> | <code>BACKUP_JOB_FAILED</code></p></li>
-    /// <li>
-    /// <p><code>COPY_JOB_STARTED</code> | <code>COPY_JOB_SUCCESSFUL</code> | <code>COPY_JOB_FAILED</code></p></li>
-    /// <li>
-    /// <p><code>RESTORE_JOB_STARTED</code> | <code>RESTORE_JOB_COMPLETED</code> | <code>RECOVERY_POINT_MODIFIED</code></p></li>
-    /// <li>
-    /// <p><code>S3_BACKUP_OBJECT_FAILED</code> | <code>S3_RESTORE_OBJECT_FAILED</code></p></li>
-    /// <li>
-    /// <p><code>RECOVERY_POINT_INDEX_COMPLETED</code> | <code>RECOVERY_POINT_INDEX_DELETED</code> | <code>RECOVERY_POINT_INDEXING_FAILED</code></p></li>
-    /// </ul><note>
-    /// <p>The list below includes both supported events and deprecated events that are no longer in use (for reference). Deprecated events do not return statuses or notifications. Refer to the list above for the supported events.</p>
-    /// </note>
+    /// <p>An array of events that indicate the status of jobs to back up resources to the backup vault. For the list of supported events, common use cases, and code samples, see <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/backup-notifications.html">Notification options with Backup</a>.</p>
     pub fn backup_vault_events(mut self, input: crate::types::BackupVaultEvent) -> Self {
         let mut v = self.backup_vault_events.unwrap_or_default();
         v.push(input);
         self.backup_vault_events = ::std::option::Option::Some(v);
         self
     }
-    /// <p>An array of events that indicate the status of jobs to back up resources to the backup vault.</p>
-    /// <p>For common use cases and code samples, see <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/sns-notifications.html">Using Amazon SNS to track Backup events</a>.</p>
-    /// <p>The following events are supported:</p>
-    /// <ul>
-    /// <li>
-    /// <p><code>BACKUP_JOB_STARTED</code> | <code>BACKUP_JOB_COMPLETED</code> | <code>BACKUP_JOB_FAILED</code></p></li>
-    /// <li>
-    /// <p><code>COPY_JOB_STARTED</code> | <code>COPY_JOB_SUCCESSFUL</code> | <code>COPY_JOB_FAILED</code></p></li>
-    /// <li>
-    /// <p><code>RESTORE_JOB_STARTED</code> | <code>RESTORE_JOB_COMPLETED</code> | <code>RECOVERY_POINT_MODIFIED</code></p></li>
-    /// <li>
-    /// <p><code>S3_BACKUP_OBJECT_FAILED</code> | <code>S3_RESTORE_OBJECT_FAILED</code></p></li>
-    /// <li>
-    /// <p><code>RECOVERY_POINT_INDEX_COMPLETED</code> | <code>RECOVERY_POINT_INDEX_DELETED</code> | <code>RECOVERY_POINT_INDEXING_FAILED</code></p></li>
-    /// </ul><note>
-    /// <p>The list below includes both supported events and deprecated events that are no longer in use (for reference). Deprecated events do not return statuses or notifications. Refer to the list above for the supported events.</p>
-    /// </note>
+    /// <p>An array of events that indicate the status of jobs to back up resources to the backup vault. For the list of supported events, common use cases, and code samples, see <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/backup-notifications.html">Notification options with Backup</a>.</p>
     pub fn set_backup_vault_events(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BackupVaultEvent>>) -> Self {
         self.backup_vault_events = input;
         self
     }
-    /// <p>An array of events that indicate the status of jobs to back up resources to the backup vault.</p>
-    /// <p>For common use cases and code samples, see <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/sns-notifications.html">Using Amazon SNS to track Backup events</a>.</p>
-    /// <p>The following events are supported:</p>
-    /// <ul>
-    /// <li>
-    /// <p><code>BACKUP_JOB_STARTED</code> | <code>BACKUP_JOB_COMPLETED</code> | <code>BACKUP_JOB_FAILED</code></p></li>
-    /// <li>
-    /// <p><code>COPY_JOB_STARTED</code> | <code>COPY_JOB_SUCCESSFUL</code> | <code>COPY_JOB_FAILED</code></p></li>
-    /// <li>
-    /// <p><code>RESTORE_JOB_STARTED</code> | <code>RESTORE_JOB_COMPLETED</code> | <code>RECOVERY_POINT_MODIFIED</code></p></li>
-    /// <li>
-    /// <p><code>S3_BACKUP_OBJECT_FAILED</code> | <code>S3_RESTORE_OBJECT_FAILED</code></p></li>
-    /// <li>
-    /// <p><code>RECOVERY_POINT_INDEX_COMPLETED</code> | <code>RECOVERY_POINT_INDEX_DELETED</code> | <code>RECOVERY_POINT_INDEXING_FAILED</code></p></li>
-    /// </ul><note>
-    /// <p>The list below includes both supported events and deprecated events that are no longer in use (for reference). Deprecated events do not return statuses or notifications. Refer to the list above for the supported events.</p>
-    /// </note>
+    /// <p>An array of events that indicate the status of jobs to back up resources to the backup vault. For the list of supported events, common use cases, and code samples, see <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/backup-notifications.html">Notification options with Backup</a>.</p>
     pub fn get_backup_vault_events(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BackupVaultEvent>> {
         &self.backup_vault_events
     }

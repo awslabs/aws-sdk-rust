@@ -15,6 +15,12 @@ pub fn ser_redshift_data_provider_settings(
     if let Some(var_3) = &input.database_name {
         object.key("DatabaseName").string(var_3.as_str());
     }
+    if let Some(var_4) = &input.s3_path {
+        object.key("S3Path").string(var_4.as_str());
+    }
+    if let Some(var_5) = &input.s3_access_role_arn {
+        object.key("S3AccessRoleArn").string(var_5.as_str());
+    }
     Ok(())
 }
 
@@ -49,6 +55,20 @@ where
                         }
                         "DatabaseName" => {
                             builder = builder.set_database_name(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "S3Path" => {
+                            builder = builder.set_s3_path(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "S3AccessRoleArn" => {
+                            builder = builder.set_s3_access_role_arn(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,

@@ -100,5 +100,11 @@ pub fn ser_create_web_acl_input_input(
         crate::protocol_serde::shape_on_source_d_do_s_protection_config::ser_on_source_d_do_s_protection_config(&mut object_33, var_32)?;
         object_33.finish();
     }
+    if let Some(var_34) = &input.application_config {
+        #[allow(unused_mut)]
+        let mut object_35 = object.key("ApplicationConfig").start_object();
+        crate::protocol_serde::shape_application_config::ser_application_config(&mut object_35, var_34)?;
+        object_35.finish();
+    }
     Ok(())
 }

@@ -14,6 +14,8 @@ pub struct DataProvider {
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The type of database engine for the data provider. Valid values include <code>"aurora"</code>, <code>"aurora-postgresql"</code>, <code>"mysql"</code>, <code>"oracle"</code>, <code>"postgres"</code>, <code>"sqlserver"</code>, <code>redshift</code>, <code>mariadb</code>, <code>mongodb</code>, <code>db2</code>, <code>db2-zos</code> and <code>docdb</code>. A value of <code>"aurora"</code> represents Amazon Aurora MySQL-Compatible Edition.</p>
     pub engine: ::std::option::Option<::std::string::String>,
+    /// <p>Indicates whether the data provider is virtual.</p>
+    pub r#virtual: ::std::option::Option<bool>,
     /// <p>The settings in JSON format for a data provider.</p>
     pub settings: ::std::option::Option<crate::types::DataProviderSettings>,
 }
@@ -38,6 +40,10 @@ impl DataProvider {
     pub fn engine(&self) -> ::std::option::Option<&str> {
         self.engine.as_deref()
     }
+    /// <p>Indicates whether the data provider is virtual.</p>
+    pub fn r#virtual(&self) -> ::std::option::Option<bool> {
+        self.r#virtual
+    }
     /// <p>The settings in JSON format for a data provider.</p>
     pub fn settings(&self) -> ::std::option::Option<&crate::types::DataProviderSettings> {
         self.settings.as_ref()
@@ -59,6 +65,7 @@ pub struct DataProviderBuilder {
     pub(crate) data_provider_creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) engine: ::std::option::Option<::std::string::String>,
+    pub(crate) r#virtual: ::std::option::Option<bool>,
     pub(crate) settings: ::std::option::Option<crate::types::DataProviderSettings>,
 }
 impl DataProviderBuilder {
@@ -132,6 +139,20 @@ impl DataProviderBuilder {
     pub fn get_engine(&self) -> &::std::option::Option<::std::string::String> {
         &self.engine
     }
+    /// <p>Indicates whether the data provider is virtual.</p>
+    pub fn r#virtual(mut self, input: bool) -> Self {
+        self.r#virtual = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates whether the data provider is virtual.</p>
+    pub fn set_virtual(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.r#virtual = input;
+        self
+    }
+    /// <p>Indicates whether the data provider is virtual.</p>
+    pub fn get_virtual(&self) -> &::std::option::Option<bool> {
+        &self.r#virtual
+    }
     /// <p>The settings in JSON format for a data provider.</p>
     pub fn settings(mut self, input: crate::types::DataProviderSettings) -> Self {
         self.settings = ::std::option::Option::Some(input);
@@ -154,6 +175,7 @@ impl DataProviderBuilder {
             data_provider_creation_time: self.data_provider_creation_time,
             description: self.description,
             engine: self.engine,
+            r#virtual: self.r#virtual,
             settings: self.settings,
         }
     }

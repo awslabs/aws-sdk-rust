@@ -66,6 +66,13 @@ where
                                 crate::protocol_serde::shape_extended_key_usage_names::de_extended_key_usage_names(tokens)?,
                             );
                         }
+                        "ExportOption" => {
+                            builder = builder.set_export_option(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CertificateExport::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
                         "InUse" => {
                             builder = builder.set_in_use(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }

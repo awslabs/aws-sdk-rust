@@ -13,6 +13,7 @@
 /// # let findingtype = unimplemented!();
 /// match findingtype {
 ///     FindingType::ExternalAccess => { /* ... */ },
+///     FindingType::InternalAccess => { /* ... */ },
 ///     FindingType::UnusedIamRole => { /* ... */ },
 ///     FindingType::UnusedIamUserAccessKey => { /* ... */ },
 ///     FindingType::UnusedIamUserPassword => { /* ... */ },
@@ -48,6 +49,8 @@ pub enum FindingType {
     #[allow(missing_docs)] // documentation missing in model
     ExternalAccess,
     #[allow(missing_docs)] // documentation missing in model
+    InternalAccess,
+    #[allow(missing_docs)] // documentation missing in model
     UnusedIamRole,
     #[allow(missing_docs)] // documentation missing in model
     UnusedIamUserAccessKey,
@@ -63,6 +66,7 @@ impl ::std::convert::From<&str> for FindingType {
     fn from(s: &str) -> Self {
         match s {
             "ExternalAccess" => FindingType::ExternalAccess,
+            "InternalAccess" => FindingType::InternalAccess,
             "UnusedIAMRole" => FindingType::UnusedIamRole,
             "UnusedIAMUserAccessKey" => FindingType::UnusedIamUserAccessKey,
             "UnusedIAMUserPassword" => FindingType::UnusedIamUserPassword,
@@ -83,6 +87,7 @@ impl FindingType {
     pub fn as_str(&self) -> &str {
         match self {
             FindingType::ExternalAccess => "ExternalAccess",
+            FindingType::InternalAccess => "InternalAccess",
             FindingType::UnusedIamRole => "UnusedIAMRole",
             FindingType::UnusedIamUserAccessKey => "UnusedIAMUserAccessKey",
             FindingType::UnusedIamUserPassword => "UnusedIAMUserPassword",
@@ -94,6 +99,7 @@ impl FindingType {
     pub const fn values() -> &'static [&'static str] {
         &[
             "ExternalAccess",
+            "InternalAccess",
             "UnusedIAMRole",
             "UnusedIAMUserAccessKey",
             "UnusedIAMUserPassword",
@@ -122,6 +128,7 @@ impl ::std::fmt::Display for FindingType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             FindingType::ExternalAccess => write!(f, "ExternalAccess"),
+            FindingType::InternalAccess => write!(f, "InternalAccess"),
             FindingType::UnusedIamRole => write!(f, "UnusedIAMRole"),
             FindingType::UnusedIamUserAccessKey => write!(f, "UnusedIAMUserAccessKey"),
             FindingType::UnusedIamUserPassword => write!(f, "UnusedIAMUserPassword"),

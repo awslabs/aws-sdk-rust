@@ -9,8 +9,8 @@ pub use crate::types::error::_access_denied_exception::AccessDeniedExceptionBuil
 
 pub use crate::types::error::_resource_not_found_exception::ResourceNotFoundExceptionBuilder;
 
-pub use crate::types::error::_bad_request_exception::BadRequestExceptionBuilder;
-
 pub use crate::types::error::_conflict_exception::ConflictExceptionBuilder;
+
+pub use crate::types::error::_bad_request_exception::BadRequestExceptionBuilder;
 
 pub use crate::types::error::_service_quota_exceeded_exception::ServiceQuotaExceededExceptionBuilder;

@@ -211,6 +211,12 @@ pub use crate::types::_resource_v2::ResourceV2Builder;
 
 pub use crate::types::_resource_data::ResourceDataBuilder;
 
+pub use crate::types::_container_finding_resource::ContainerFindingResourceBuilder;
+
+pub use crate::types::_kubernetes_workload::KubernetesWorkloadBuilder;
+
+pub use crate::types::_eks_cluster::EksClusterBuilder;
+
 pub use crate::types::_s3_object::S3ObjectBuilder;
 
 pub use crate::types::_ec2_network_interface::Ec2NetworkInterfaceBuilder;
@@ -234,6 +240,8 @@ pub use crate::types::_public_access_configuration::PublicAccessConfigurationBui
 pub use crate::types::_tag::TagBuilder;
 
 pub use crate::types::_actor::ActorBuilder;
+
+pub use crate::types::_actor_process::ActorProcessBuilder;
 
 pub use crate::types::_session::SessionBuilder;
 

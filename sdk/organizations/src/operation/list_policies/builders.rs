@@ -25,7 +25,7 @@ impl crate::operation::list_policies::builders::ListPoliciesInputBuilder {
 /// <p>Retrieves the list of all policies in an organization of a specified type.</p><note>
 /// <p>Always check the <code>NextToken</code> response parameter for a <code>null</code> value when calling a <code>List*</code> operation. These operations can occasionally return an empty set of results even when there are more results available. The <code>NextToken</code> response parameter value is <code>null</code> <i>only</i> when there are no more results to display.</p>
 /// </note>
-/// <p>This operation can be called only from the organization's management account or by a member account that is a delegated administrator for an Amazon Web Services service.</p>
+/// <p>This operation can be called only from the organization's management account or by a member account that is a delegated administrator.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListPoliciesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -133,6 +133,8 @@ impl ListPoliciesFluentBuilder {
     /// <p><a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_chatbot.html">CHATBOT_POLICY</a></p></li>
     /// <li>
     /// <p><a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_ai-opt-out.html">AISERVICES_OPT_OUT_POLICY</a></p></li>
+    /// <li>
+    /// <p><a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_security_hub.html">SECURITYHUB_POLICY</a></p></li>
     /// </ul>
     pub fn filter(mut self, input: crate::types::PolicyType) -> Self {
         self.inner = self.inner.filter(input);
@@ -154,6 +156,8 @@ impl ListPoliciesFluentBuilder {
     /// <p><a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_chatbot.html">CHATBOT_POLICY</a></p></li>
     /// <li>
     /// <p><a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_ai-opt-out.html">AISERVICES_OPT_OUT_POLICY</a></p></li>
+    /// <li>
+    /// <p><a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_security_hub.html">SECURITYHUB_POLICY</a></p></li>
     /// </ul>
     pub fn set_filter(mut self, input: ::std::option::Option<crate::types::PolicyType>) -> Self {
         self.inner = self.inner.set_filter(input);
@@ -175,6 +179,8 @@ impl ListPoliciesFluentBuilder {
     /// <p><a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_chatbot.html">CHATBOT_POLICY</a></p></li>
     /// <li>
     /// <p><a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_ai-opt-out.html">AISERVICES_OPT_OUT_POLICY</a></p></li>
+    /// <li>
+    /// <p><a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_security_hub.html">SECURITYHUB_POLICY</a></p></li>
     /// </ul>
     pub fn get_filter(&self) -> &::std::option::Option<crate::types::PolicyType> {
         self.inner.get_filter()

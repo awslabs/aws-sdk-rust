@@ -13,6 +13,7 @@
 /// # let stringfiltercomparison = unimplemented!();
 /// match stringfiltercomparison {
 ///     StringFilterComparison::Contains => { /* ... */ },
+///     StringFilterComparison::ContainsWord => { /* ... */ },
 ///     StringFilterComparison::Equals => { /* ... */ },
 ///     StringFilterComparison::NotContains => { /* ... */ },
 ///     StringFilterComparison::NotEquals => { /* ... */ },
@@ -49,6 +50,8 @@ pub enum StringFilterComparison {
     #[allow(missing_docs)] // documentation missing in model
     Contains,
     #[allow(missing_docs)] // documentation missing in model
+    ContainsWord,
+    #[allow(missing_docs)] // documentation missing in model
     Equals,
     #[allow(missing_docs)] // documentation missing in model
     NotContains,
@@ -66,6 +69,7 @@ impl ::std::convert::From<&str> for StringFilterComparison {
     fn from(s: &str) -> Self {
         match s {
             "CONTAINS" => StringFilterComparison::Contains,
+            "CONTAINS_WORD" => StringFilterComparison::ContainsWord,
             "EQUALS" => StringFilterComparison::Equals,
             "NOT_CONTAINS" => StringFilterComparison::NotContains,
             "NOT_EQUALS" => StringFilterComparison::NotEquals,
@@ -87,6 +91,7 @@ impl StringFilterComparison {
     pub fn as_str(&self) -> &str {
         match self {
             StringFilterComparison::Contains => "CONTAINS",
+            StringFilterComparison::ContainsWord => "CONTAINS_WORD",
             StringFilterComparison::Equals => "EQUALS",
             StringFilterComparison::NotContains => "NOT_CONTAINS",
             StringFilterComparison::NotEquals => "NOT_EQUALS",
@@ -97,7 +102,15 @@ impl StringFilterComparison {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["CONTAINS", "EQUALS", "NOT_CONTAINS", "NOT_EQUALS", "PREFIX", "PREFIX_NOT_EQUALS"]
+        &[
+            "CONTAINS",
+            "CONTAINS_WORD",
+            "EQUALS",
+            "NOT_CONTAINS",
+            "NOT_EQUALS",
+            "PREFIX",
+            "PREFIX_NOT_EQUALS",
+        ]
     }
 }
 impl ::std::convert::AsRef<str> for StringFilterComparison {
@@ -121,6 +134,7 @@ impl ::std::fmt::Display for StringFilterComparison {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             StringFilterComparison::Contains => write!(f, "CONTAINS"),
+            StringFilterComparison::ContainsWord => write!(f, "CONTAINS_WORD"),
             StringFilterComparison::Equals => write!(f, "EQUALS"),
             StringFilterComparison::NotContains => write!(f, "NOT_CONTAINS"),
             StringFilterComparison::NotEquals => write!(f, "NOT_EQUALS"),

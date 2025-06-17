@@ -13,8 +13,11 @@
 /// # let findingresourcetype = unimplemented!();
 /// match findingresourcetype {
 ///     FindingResourceType::AccessKey => { /* ... */ },
+///     FindingResourceType::Container => { /* ... */ },
 ///     FindingResourceType::Ec2Instance => { /* ... */ },
 ///     FindingResourceType::Ec2NetworkInterface => { /* ... */ },
+///     FindingResourceType::EksCluster => { /* ... */ },
+///     FindingResourceType::KubernetesWorkload => { /* ... */ },
 ///     FindingResourceType::S3Bucket => { /* ... */ },
 ///     FindingResourceType::S3Object => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -48,9 +51,15 @@ pub enum FindingResourceType {
     #[allow(missing_docs)] // documentation missing in model
     AccessKey,
     #[allow(missing_docs)] // documentation missing in model
+    Container,
+    #[allow(missing_docs)] // documentation missing in model
     Ec2Instance,
     #[allow(missing_docs)] // documentation missing in model
     Ec2NetworkInterface,
+    #[allow(missing_docs)] // documentation missing in model
+    EksCluster,
+    #[allow(missing_docs)] // documentation missing in model
+    KubernetesWorkload,
     #[allow(missing_docs)] // documentation missing in model
     S3Bucket,
     #[allow(missing_docs)] // documentation missing in model
@@ -63,8 +72,11 @@ impl ::std::convert::From<&str> for FindingResourceType {
     fn from(s: &str) -> Self {
         match s {
             "ACCESS_KEY" => FindingResourceType::AccessKey,
+            "CONTAINER" => FindingResourceType::Container,
             "EC2_INSTANCE" => FindingResourceType::Ec2Instance,
             "EC2_NETWORK_INTERFACE" => FindingResourceType::Ec2NetworkInterface,
+            "EKS_CLUSTER" => FindingResourceType::EksCluster,
+            "KUBERNETES_WORKLOAD" => FindingResourceType::KubernetesWorkload,
             "S3_BUCKET" => FindingResourceType::S3Bucket,
             "S3_OBJECT" => FindingResourceType::S3Object,
             other => FindingResourceType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -83,8 +95,11 @@ impl FindingResourceType {
     pub fn as_str(&self) -> &str {
         match self {
             FindingResourceType::AccessKey => "ACCESS_KEY",
+            FindingResourceType::Container => "CONTAINER",
             FindingResourceType::Ec2Instance => "EC2_INSTANCE",
             FindingResourceType::Ec2NetworkInterface => "EC2_NETWORK_INTERFACE",
+            FindingResourceType::EksCluster => "EKS_CLUSTER",
+            FindingResourceType::KubernetesWorkload => "KUBERNETES_WORKLOAD",
             FindingResourceType::S3Bucket => "S3_BUCKET",
             FindingResourceType::S3Object => "S3_OBJECT",
             FindingResourceType::Unknown(value) => value.as_str(),
@@ -92,7 +107,16 @@ impl FindingResourceType {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ACCESS_KEY", "EC2_INSTANCE", "EC2_NETWORK_INTERFACE", "S3_BUCKET", "S3_OBJECT"]
+        &[
+            "ACCESS_KEY",
+            "CONTAINER",
+            "EC2_INSTANCE",
+            "EC2_NETWORK_INTERFACE",
+            "EKS_CLUSTER",
+            "KUBERNETES_WORKLOAD",
+            "S3_BUCKET",
+            "S3_OBJECT",
+        ]
     }
 }
 impl ::std::convert::AsRef<str> for FindingResourceType {
@@ -116,8 +140,11 @@ impl ::std::fmt::Display for FindingResourceType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             FindingResourceType::AccessKey => write!(f, "ACCESS_KEY"),
+            FindingResourceType::Container => write!(f, "CONTAINER"),
             FindingResourceType::Ec2Instance => write!(f, "EC2_INSTANCE"),
             FindingResourceType::Ec2NetworkInterface => write!(f, "EC2_NETWORK_INTERFACE"),
+            FindingResourceType::EksCluster => write!(f, "EKS_CLUSTER"),
+            FindingResourceType::KubernetesWorkload => write!(f, "KUBERNETES_WORKLOAD"),
             FindingResourceType::S3Bucket => write!(f, "S3_BUCKET"),
             FindingResourceType::S3Object => write!(f, "S3_OBJECT"),
             FindingResourceType::Unknown(value) => write!(f, "{}", value),

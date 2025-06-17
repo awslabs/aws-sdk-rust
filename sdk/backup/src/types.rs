@@ -63,6 +63,14 @@ pub use crate::types::_restore_job_creator::RestoreJobCreator;
 
 pub use crate::types::_restore_job_status::RestoreJobStatus;
 
+pub use crate::types::_restore_access_backup_vault_list_member::RestoreAccessBackupVaultListMember;
+
+pub use crate::types::_latest_revoke_request::LatestRevokeRequest;
+
+pub use crate::types::_mpa_revoke_session_status::MpaRevokeSessionStatus;
+
+pub use crate::types::_vault_state::VaultState;
+
 pub use crate::types::_report_plan::ReportPlan;
 
 pub use crate::types::_report_job::ReportJob;
@@ -101,8 +109,6 @@ pub use crate::types::_copy_job_state::CopyJobState;
 
 pub use crate::types::_backup_vault_list_member::BackupVaultListMember;
 
-pub use crate::types::_vault_state::VaultState;
-
 pub use crate::types::_backup_selections_list_member::BackupSelectionsListMember;
 
 pub use crate::types::_backup_plans_list_member::BackupPlansListMember;
@@ -140,6 +146,10 @@ pub use crate::types::_backup_plan::BackupPlan;
 pub use crate::types::_backup_rule::BackupRule;
 
 pub use crate::types::_storage_class::StorageClass;
+
+pub use crate::types::_latest_mpa_approval_team_update::LatestMpaApprovalTeamUpdate;
+
+pub use crate::types::_mpa_session_status::MpaSessionStatus;
 
 pub use crate::types::_restore_testing_selection_for_create::RestoreTestingSelectionForCreate;
 
@@ -217,11 +227,19 @@ mod _indexed_recovery_point;
 
 mod _key_value;
 
+mod _latest_mpa_approval_team_update;
+
+mod _latest_revoke_request;
+
 mod _legal_hold;
 
 mod _legal_hold_status;
 
 mod _lifecycle;
+
+mod _mpa_revoke_session_status;
+
+mod _mpa_session_status;
 
 mod _protected_resource;
 
@@ -248,6 +266,8 @@ mod _report_job;
 mod _report_plan;
 
 mod _report_setting;
+
+mod _restore_access_backup_vault_list_member;
 
 mod _restore_deletion_status;
 

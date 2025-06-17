@@ -138,6 +138,10 @@ impl Client {
 
 mod associate_member;
 
+mod batch_associate_code_security_scan_configuration;
+
+mod batch_disassociate_code_security_scan_configuration;
+
 mod batch_get_account_status;
 
 mod batch_get_code_snippet;
@@ -155,6 +159,10 @@ mod cancel_findings_report;
 mod cancel_sbom_export;
 
 mod create_cis_scan_configuration;
+
+mod create_code_security_integration;
+
+mod create_code_security_scan_configuration;
 
 mod create_filter;
 
@@ -191,6 +199,10 @@ pub mod customize;
 
 mod delete_cis_scan_configuration;
 
+mod delete_code_security_integration;
+
+mod delete_code_security_scan_configuration;
+
 mod delete_filter;
 
 mod describe_organization_configuration;
@@ -210,6 +222,12 @@ mod get_cis_scan_report;
 mod get_cis_scan_result_details;
 
 mod get_clusters_for_image;
+
+mod get_code_security_integration;
+
+mod get_code_security_scan;
+
+mod get_code_security_scan_configuration;
 
 mod get_configuration;
 
@@ -234,6 +252,12 @@ mod list_cis_scan_results_aggregated_by_checks;
 mod list_cis_scan_results_aggregated_by_target_resource;
 
 mod list_cis_scans;
+
+mod list_code_security_integrations;
+
+mod list_code_security_scan_configuration_associations;
+
+mod list_code_security_scan_configurations;
 
 mod list_coverage;
 
@@ -263,6 +287,8 @@ mod send_cis_session_telemetry;
 
 mod start_cis_session;
 
+mod start_code_security_scan;
+
 mod stop_cis_session;
 
 mod tag_resource;
@@ -270,6 +296,10 @@ mod tag_resource;
 mod untag_resource;
 
 mod update_cis_scan_configuration;
+
+mod update_code_security_integration;
+
+mod update_code_security_scan_configuration;
 
 mod update_configuration;
 

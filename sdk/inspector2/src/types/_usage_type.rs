@@ -12,6 +12,9 @@
 /// ```text
 /// # let usagetype = unimplemented!();
 /// match usagetype {
+///     UsageType::CodeRepositoryIac => { /* ... */ },
+///     UsageType::CodeRepositorySast => { /* ... */ },
+///     UsageType::CodeRepositorySca => { /* ... */ },
 ///     UsageType::Ec2InstanceHours => { /* ... */ },
 ///     UsageType::EcrInitialScan => { /* ... */ },
 ///     UsageType::EcrRescan => { /* ... */ },
@@ -46,6 +49,12 @@
 )]
 pub enum UsageType {
     #[allow(missing_docs)] // documentation missing in model
+    CodeRepositoryIac,
+    #[allow(missing_docs)] // documentation missing in model
+    CodeRepositorySast,
+    #[allow(missing_docs)] // documentation missing in model
+    CodeRepositorySca,
+    #[allow(missing_docs)] // documentation missing in model
     Ec2InstanceHours,
     #[allow(missing_docs)] // documentation missing in model
     EcrInitialScan,
@@ -62,6 +71,9 @@ pub enum UsageType {
 impl ::std::convert::From<&str> for UsageType {
     fn from(s: &str) -> Self {
         match s {
+            "CODE_REPOSITORY_IAC" => UsageType::CodeRepositoryIac,
+            "CODE_REPOSITORY_SAST" => UsageType::CodeRepositorySast,
+            "CODE_REPOSITORY_SCA" => UsageType::CodeRepositorySca,
             "EC2_INSTANCE_HOURS" => UsageType::Ec2InstanceHours,
             "ECR_INITIAL_SCAN" => UsageType::EcrInitialScan,
             "ECR_RESCAN" => UsageType::EcrRescan,
@@ -82,6 +94,9 @@ impl UsageType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            UsageType::CodeRepositoryIac => "CODE_REPOSITORY_IAC",
+            UsageType::CodeRepositorySast => "CODE_REPOSITORY_SAST",
+            UsageType::CodeRepositorySca => "CODE_REPOSITORY_SCA",
             UsageType::Ec2InstanceHours => "EC2_INSTANCE_HOURS",
             UsageType::EcrInitialScan => "ECR_INITIAL_SCAN",
             UsageType::EcrRescan => "ECR_RESCAN",
@@ -93,6 +108,9 @@ impl UsageType {
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
+            "CODE_REPOSITORY_IAC",
+            "CODE_REPOSITORY_SAST",
+            "CODE_REPOSITORY_SCA",
             "EC2_INSTANCE_HOURS",
             "ECR_INITIAL_SCAN",
             "ECR_RESCAN",
@@ -121,6 +139,9 @@ impl UsageType {
 impl ::std::fmt::Display for UsageType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            UsageType::CodeRepositoryIac => write!(f, "CODE_REPOSITORY_IAC"),
+            UsageType::CodeRepositorySast => write!(f, "CODE_REPOSITORY_SAST"),
+            UsageType::CodeRepositorySca => write!(f, "CODE_REPOSITORY_SCA"),
             UsageType::Ec2InstanceHours => write!(f, "EC2_INSTANCE_HOURS"),
             UsageType::EcrInitialScan => write!(f, "ECR_INITIAL_SCAN"),
             UsageType::EcrRescan => write!(f, "ECR_RESCAN"),

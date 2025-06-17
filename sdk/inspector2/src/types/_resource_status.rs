@@ -12,6 +12,8 @@ pub struct ResourceStatus {
     pub lambda: ::std::option::Option<crate::types::Status>,
     /// <p>The status of Amazon Inspector scanning for custom application code for Amazon Web Services Lambda functions.</p>
     pub lambda_code: ::std::option::Option<crate::types::Status>,
+    /// <p>The status of Amazon Inspector scanning for code repositories.</p>
+    pub code_repository: ::std::option::Option<crate::types::Status>,
 }
 impl ResourceStatus {
     /// <p>The status of Amazon Inspector scanning for Amazon EC2 resources.</p>
@@ -30,6 +32,10 @@ impl ResourceStatus {
     pub fn lambda_code(&self) -> ::std::option::Option<&crate::types::Status> {
         self.lambda_code.as_ref()
     }
+    /// <p>The status of Amazon Inspector scanning for code repositories.</p>
+    pub fn code_repository(&self) -> ::std::option::Option<&crate::types::Status> {
+        self.code_repository.as_ref()
+    }
 }
 impl ResourceStatus {
     /// Creates a new builder-style object to manufacture [`ResourceStatus`](crate::types::ResourceStatus).
@@ -46,6 +52,7 @@ pub struct ResourceStatusBuilder {
     pub(crate) ecr: ::std::option::Option<crate::types::Status>,
     pub(crate) lambda: ::std::option::Option<crate::types::Status>,
     pub(crate) lambda_code: ::std::option::Option<crate::types::Status>,
+    pub(crate) code_repository: ::std::option::Option<crate::types::Status>,
 }
 impl ResourceStatusBuilder {
     /// <p>The status of Amazon Inspector scanning for Amazon EC2 resources.</p>
@@ -106,6 +113,20 @@ impl ResourceStatusBuilder {
     pub fn get_lambda_code(&self) -> &::std::option::Option<crate::types::Status> {
         &self.lambda_code
     }
+    /// <p>The status of Amazon Inspector scanning for code repositories.</p>
+    pub fn code_repository(mut self, input: crate::types::Status) -> Self {
+        self.code_repository = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The status of Amazon Inspector scanning for code repositories.</p>
+    pub fn set_code_repository(mut self, input: ::std::option::Option<crate::types::Status>) -> Self {
+        self.code_repository = input;
+        self
+    }
+    /// <p>The status of Amazon Inspector scanning for code repositories.</p>
+    pub fn get_code_repository(&self) -> &::std::option::Option<crate::types::Status> {
+        &self.code_repository
+    }
     /// Consumes the builder and constructs a [`ResourceStatus`](crate::types::ResourceStatus).
     /// This method will fail if any of the following fields are not set:
     /// - [`ec2`](crate::types::builders::ResourceStatusBuilder::ec2)
@@ -126,6 +147,7 @@ impl ResourceStatusBuilder {
             })?,
             lambda: self.lambda,
             lambda_code: self.lambda_code,
+            code_repository: self.code_repository,
         })
     }
 }

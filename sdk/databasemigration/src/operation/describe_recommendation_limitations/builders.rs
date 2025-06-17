@@ -22,6 +22,9 @@ impl crate::operation::describe_recommendation_limitations::builders::DescribeRe
 }
 /// Fluent builder constructing a request to `DescribeRecommendationLimitations`.
 ///
+/// <important>
+/// <p>End of support notice: On May 20, 2026, Amazon Web Services will end support for Amazon Web Services DMS Fleet Advisor;. After May 20, 2026, you will no longer be able to access the Amazon Web Services DMS Fleet Advisor; console or Amazon Web Services DMS Fleet Advisor; resources. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/dms_fleet.advisor-end-of-support.html">Amazon Web Services DMS Fleet Advisor end of support</a>.</p>
+/// </important>
 /// <p>Returns a paginated list of limitations for recommendations of target Amazon Web Services engines.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeRecommendationLimitationsFluentBuilder {

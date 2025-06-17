@@ -198,6 +198,12 @@ pub(crate) fn de_describe_recovery_point(
                             .transpose()?,
                     );
                 }
+                "InitiationDate" => {
+                    builder = builder.set_initiation_date(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
+                        tokens.next(),
+                        ::aws_smithy_types::date_time::Format::EpochSeconds,
+                    )?);
+                }
                 "IsEncrypted" => {
                     builder = builder.set_is_encrypted(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                 }

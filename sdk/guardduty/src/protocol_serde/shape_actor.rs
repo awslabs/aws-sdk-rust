@@ -27,6 +27,9 @@ where
                         "session" => {
                             builder = builder.set_session(crate::protocol_serde::shape_session::de_session(tokens)?);
                         }
+                        "process" => {
+                            builder = builder.set_process(crate::protocol_serde::shape_actor_process::de_actor_process(tokens)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

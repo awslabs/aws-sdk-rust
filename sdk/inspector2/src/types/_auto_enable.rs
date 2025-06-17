@@ -12,6 +12,8 @@ pub struct AutoEnable {
     pub lambda: ::std::option::Option<bool>,
     /// <p>Represents whether Lambda code scans are automatically enabled for new members of your Amazon Inspector organization.</p>
     pub lambda_code: ::std::option::Option<bool>,
+    /// <p>Represents whether code repository scans are automatically enabled for new members of your Amazon Inspector organization.</p>
+    pub code_repository: ::std::option::Option<bool>,
 }
 impl AutoEnable {
     /// <p>Represents whether Amazon EC2 scans are automatically enabled for new members of your Amazon Inspector organization.</p>
@@ -30,6 +32,10 @@ impl AutoEnable {
     pub fn lambda_code(&self) -> ::std::option::Option<bool> {
         self.lambda_code
     }
+    /// <p>Represents whether code repository scans are automatically enabled for new members of your Amazon Inspector organization.</p>
+    pub fn code_repository(&self) -> ::std::option::Option<bool> {
+        self.code_repository
+    }
 }
 impl AutoEnable {
     /// Creates a new builder-style object to manufacture [`AutoEnable`](crate::types::AutoEnable).
@@ -46,6 +52,7 @@ pub struct AutoEnableBuilder {
     pub(crate) ecr: ::std::option::Option<bool>,
     pub(crate) lambda: ::std::option::Option<bool>,
     pub(crate) lambda_code: ::std::option::Option<bool>,
+    pub(crate) code_repository: ::std::option::Option<bool>,
 }
 impl AutoEnableBuilder {
     /// <p>Represents whether Amazon EC2 scans are automatically enabled for new members of your Amazon Inspector organization.</p>
@@ -106,6 +113,20 @@ impl AutoEnableBuilder {
     pub fn get_lambda_code(&self) -> &::std::option::Option<bool> {
         &self.lambda_code
     }
+    /// <p>Represents whether code repository scans are automatically enabled for new members of your Amazon Inspector organization.</p>
+    pub fn code_repository(mut self, input: bool) -> Self {
+        self.code_repository = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Represents whether code repository scans are automatically enabled for new members of your Amazon Inspector organization.</p>
+    pub fn set_code_repository(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.code_repository = input;
+        self
+    }
+    /// <p>Represents whether code repository scans are automatically enabled for new members of your Amazon Inspector organization.</p>
+    pub fn get_code_repository(&self) -> &::std::option::Option<bool> {
+        &self.code_repository
+    }
     /// Consumes the builder and constructs a [`AutoEnable`](crate::types::AutoEnable).
     /// This method will fail if any of the following fields are not set:
     /// - [`ec2`](crate::types::builders::AutoEnableBuilder::ec2)
@@ -126,6 +147,7 @@ impl AutoEnableBuilder {
             })?,
             lambda: self.lambda,
             lambda_code: self.lambda_code,
+            code_repository: self.code_repository,
         })
     }
 }

@@ -29,6 +29,10 @@ pub use crate::types::_server_certificate::ServerCertificate;
 
 pub use crate::types::_rule_group_response::RuleGroupResponse;
 
+pub use crate::types::_summary_configuration::SummaryConfiguration;
+
+pub use crate::types::_summary_rule_option::SummaryRuleOption;
+
 pub use crate::types::_analysis_result::AnalysisResult;
 
 pub use crate::types::_identified_type::IdentifiedType;
@@ -174,6 +178,10 @@ pub use crate::types::_attachment_status::AttachmentStatus;
 pub use crate::types::_firewall_status_value::FirewallStatusValue;
 
 pub use crate::types::_vpc_endpoint_association::VpcEndpointAssociation;
+
+pub use crate::types::_summary::Summary;
+
+pub use crate::types::_rule_summary::RuleSummary;
 
 pub use crate::types::_flow_operation::FlowOperation;
 
@@ -329,6 +337,8 @@ mod _rule_option;
 
 mod _rule_order;
 
+mod _rule_summary;
+
 mod _rule_variables;
 
 mod _rules_source;
@@ -368,6 +378,12 @@ mod _stateless_rules_and_custom_actions;
 mod _stream_exception_policy;
 
 mod _subnet_mapping;
+
+mod _summary;
+
+mod _summary_configuration;
+
+mod _summary_rule_option;
 
 mod _sync_state;
 

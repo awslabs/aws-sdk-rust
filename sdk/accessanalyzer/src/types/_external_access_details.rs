@@ -15,6 +15,16 @@ pub struct ExternalAccessDetails {
     /// <p>The sources of the external access finding. This indicates how the access that generated the finding is granted. It is populated for Amazon S3 bucket findings.</p>
     pub sources: ::std::option::Option<::std::vec::Vec<crate::types::FindingSource>>,
     /// <p>The type of restriction applied to the finding by the resource owner with an Organizations resource control policy (RCP).</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>APPLICABLE</code>: There is an RCP present in the organization but IAM Access Analyzer does not include it in the evaluation of effective permissions. For example, if <code>s3:DeleteObject</code> is blocked by the RCP and the restriction is <code>APPLICABLE</code>, then <code>s3:DeleteObject</code> would still be included in the list of actions for the finding.</p></li>
+    /// <li>
+    /// <p><code>FAILED_TO_EVALUATE_RCP</code>: There was an error evaluating the RCP.</p></li>
+    /// <li>
+    /// <p><code>NOT_APPLICABLE</code>: There was no RCP present in the organization, or there was no RCP applicable to the resource. For example, the resource being analyzed is an Amazon RDS snapshot and there is an RCP in the organization, but the RCP only impacts Amazon S3 buckets.</p></li>
+    /// <li>
+    /// <p><code>APPLIED</code>: This restriction is not currently available for external access findings.</p></li>
+    /// </ul>
     pub resource_control_policy_restriction: ::std::option::Option<crate::types::ResourceControlPolicyRestriction>,
 }
 impl ExternalAccessDetails {
@@ -43,6 +53,16 @@ impl ExternalAccessDetails {
         self.sources.as_deref().unwrap_or_default()
     }
     /// <p>The type of restriction applied to the finding by the resource owner with an Organizations resource control policy (RCP).</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>APPLICABLE</code>: There is an RCP present in the organization but IAM Access Analyzer does not include it in the evaluation of effective permissions. For example, if <code>s3:DeleteObject</code> is blocked by the RCP and the restriction is <code>APPLICABLE</code>, then <code>s3:DeleteObject</code> would still be included in the list of actions for the finding.</p></li>
+    /// <li>
+    /// <p><code>FAILED_TO_EVALUATE_RCP</code>: There was an error evaluating the RCP.</p></li>
+    /// <li>
+    /// <p><code>NOT_APPLICABLE</code>: There was no RCP present in the organization, or there was no RCP applicable to the resource. For example, the resource being analyzed is an Amazon RDS snapshot and there is an RCP in the organization, but the RCP only impacts Amazon S3 buckets.</p></li>
+    /// <li>
+    /// <p><code>APPLIED</code>: This restriction is not currently available for external access findings.</p></li>
+    /// </ul>
     pub fn resource_control_policy_restriction(&self) -> ::std::option::Option<&crate::types::ResourceControlPolicyRestriction> {
         self.resource_control_policy_restriction.as_ref()
     }
@@ -161,16 +181,46 @@ impl ExternalAccessDetailsBuilder {
         &self.sources
     }
     /// <p>The type of restriction applied to the finding by the resource owner with an Organizations resource control policy (RCP).</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>APPLICABLE</code>: There is an RCP present in the organization but IAM Access Analyzer does not include it in the evaluation of effective permissions. For example, if <code>s3:DeleteObject</code> is blocked by the RCP and the restriction is <code>APPLICABLE</code>, then <code>s3:DeleteObject</code> would still be included in the list of actions for the finding.</p></li>
+    /// <li>
+    /// <p><code>FAILED_TO_EVALUATE_RCP</code>: There was an error evaluating the RCP.</p></li>
+    /// <li>
+    /// <p><code>NOT_APPLICABLE</code>: There was no RCP present in the organization, or there was no RCP applicable to the resource. For example, the resource being analyzed is an Amazon RDS snapshot and there is an RCP in the organization, but the RCP only impacts Amazon S3 buckets.</p></li>
+    /// <li>
+    /// <p><code>APPLIED</code>: This restriction is not currently available for external access findings.</p></li>
+    /// </ul>
     pub fn resource_control_policy_restriction(mut self, input: crate::types::ResourceControlPolicyRestriction) -> Self {
         self.resource_control_policy_restriction = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type of restriction applied to the finding by the resource owner with an Organizations resource control policy (RCP).</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>APPLICABLE</code>: There is an RCP present in the organization but IAM Access Analyzer does not include it in the evaluation of effective permissions. For example, if <code>s3:DeleteObject</code> is blocked by the RCP and the restriction is <code>APPLICABLE</code>, then <code>s3:DeleteObject</code> would still be included in the list of actions for the finding.</p></li>
+    /// <li>
+    /// <p><code>FAILED_TO_EVALUATE_RCP</code>: There was an error evaluating the RCP.</p></li>
+    /// <li>
+    /// <p><code>NOT_APPLICABLE</code>: There was no RCP present in the organization, or there was no RCP applicable to the resource. For example, the resource being analyzed is an Amazon RDS snapshot and there is an RCP in the organization, but the RCP only impacts Amazon S3 buckets.</p></li>
+    /// <li>
+    /// <p><code>APPLIED</code>: This restriction is not currently available for external access findings.</p></li>
+    /// </ul>
     pub fn set_resource_control_policy_restriction(mut self, input: ::std::option::Option<crate::types::ResourceControlPolicyRestriction>) -> Self {
         self.resource_control_policy_restriction = input;
         self
     }
     /// <p>The type of restriction applied to the finding by the resource owner with an Organizations resource control policy (RCP).</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>APPLICABLE</code>: There is an RCP present in the organization but IAM Access Analyzer does not include it in the evaluation of effective permissions. For example, if <code>s3:DeleteObject</code> is blocked by the RCP and the restriction is <code>APPLICABLE</code>, then <code>s3:DeleteObject</code> would still be included in the list of actions for the finding.</p></li>
+    /// <li>
+    /// <p><code>FAILED_TO_EVALUATE_RCP</code>: There was an error evaluating the RCP.</p></li>
+    /// <li>
+    /// <p><code>NOT_APPLICABLE</code>: There was no RCP present in the organization, or there was no RCP applicable to the resource. For example, the resource being analyzed is an Amazon RDS snapshot and there is an RCP in the organization, but the RCP only impacts Amazon S3 buckets.</p></li>
+    /// <li>
+    /// <p><code>APPLIED</code>: This restriction is not currently available for external access findings.</p></li>
+    /// </ul>
     pub fn get_resource_control_policy_restriction(&self) -> &::std::option::Option<crate::types::ResourceControlPolicyRestriction> {
         &self.resource_control_policy_restriction
     }

@@ -676,6 +676,16 @@ pub(crate) fn signal_correct_errors(mut builder: crate::types::builders::SignalB
     builder
 }
 
+pub(crate) fn actor_process_correct_errors(mut builder: crate::types::builders::ActorProcessBuilder) -> crate::types::builders::ActorProcessBuilder {
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.path.is_none() {
+        builder.path = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn autonomous_system_correct_errors(
     mut builder: crate::types::builders::AutonomousSystemBuilder,
 ) -> crate::types::builders::AutonomousSystemBuilder {
@@ -731,6 +741,15 @@ pub(crate) fn user_correct_errors(mut builder: crate::types::builders::UserBuild
 pub(crate) fn account_correct_errors(mut builder: crate::types::builders::AccountBuilder) -> crate::types::builders::AccountBuilder {
     if builder.uid.is_none() {
         builder.uid = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn container_finding_resource_correct_errors(
+    mut builder: crate::types::builders::ContainerFindingResourceBuilder,
+) -> crate::types::builders::ContainerFindingResourceBuilder {
+    if builder.image.is_none() {
+        builder.image = Some(Default::default())
     }
     builder
 }

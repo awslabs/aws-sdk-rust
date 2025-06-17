@@ -23,7 +23,7 @@ impl crate::operation::update_policy::builders::UpdatePolicyInputBuilder {
 /// Fluent builder constructing a request to `UpdatePolicy`.
 ///
 /// <p>Updates an existing policy with a new name, description, or content. If you don't supply any parameter, that value remains unchanged. You can't change a policy's type.</p>
-/// <p>This operation can be called only from the organization's management account or by a member account that is a delegated administrator for an Amazon Web Services service.</p>
+/// <p>This operation can be called only from the organization's management account or by a member account that is a delegated administrator.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdatePolicyFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

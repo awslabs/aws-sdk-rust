@@ -12,6 +12,10 @@ pub struct StatefulRuleGroupReference {
     pub priority: ::std::option::Option<i32>,
     /// <p>The action that allows the policy owner to override the behavior of the rule group within a policy.</p>
     pub r#override: ::std::option::Option<crate::types::StatefulRuleGroupOverride>,
+    /// <p>Network Firewall plans to augment the active threat defense managed rule group with an additional deep threat inspection capability. When this capability is released, Amazon Web Services will analyze service logs of network traffic processed by these rule groups to identify threat indicators across customers. Amazon Web Services will use these threat indicators to improve the active threat defense managed rule groups and protect the security of Amazon Web Services customers and services.</p><note>
+    /// <p>Customers can opt-out of deep threat inspection at any time through the Network Firewall console or API. When customers opt out, Network Firewall will not use the network traffic processed by those customers' active threat defense rule groups for rule group improvement.</p>
+    /// </note>
+    pub deep_threat_inspection: ::std::option::Option<bool>,
 }
 impl StatefulRuleGroupReference {
     /// <p>The Amazon Resource Name (ARN) of the stateful rule group.</p>
@@ -29,6 +33,12 @@ impl StatefulRuleGroupReference {
     pub fn r#override(&self) -> ::std::option::Option<&crate::types::StatefulRuleGroupOverride> {
         self.r#override.as_ref()
     }
+    /// <p>Network Firewall plans to augment the active threat defense managed rule group with an additional deep threat inspection capability. When this capability is released, Amazon Web Services will analyze service logs of network traffic processed by these rule groups to identify threat indicators across customers. Amazon Web Services will use these threat indicators to improve the active threat defense managed rule groups and protect the security of Amazon Web Services customers and services.</p><note>
+    /// <p>Customers can opt-out of deep threat inspection at any time through the Network Firewall console or API. When customers opt out, Network Firewall will not use the network traffic processed by those customers' active threat defense rule groups for rule group improvement.</p>
+    /// </note>
+    pub fn deep_threat_inspection(&self) -> ::std::option::Option<bool> {
+        self.deep_threat_inspection
+    }
 }
 impl StatefulRuleGroupReference {
     /// Creates a new builder-style object to manufacture [`StatefulRuleGroupReference`](crate::types::StatefulRuleGroupReference).
@@ -44,6 +54,7 @@ pub struct StatefulRuleGroupReferenceBuilder {
     pub(crate) resource_arn: ::std::option::Option<::std::string::String>,
     pub(crate) priority: ::std::option::Option<i32>,
     pub(crate) r#override: ::std::option::Option<crate::types::StatefulRuleGroupOverride>,
+    pub(crate) deep_threat_inspection: ::std::option::Option<bool>,
 }
 impl StatefulRuleGroupReferenceBuilder {
     /// <p>The Amazon Resource Name (ARN) of the stateful rule group.</p>
@@ -95,6 +106,26 @@ impl StatefulRuleGroupReferenceBuilder {
     pub fn get_override(&self) -> &::std::option::Option<crate::types::StatefulRuleGroupOverride> {
         &self.r#override
     }
+    /// <p>Network Firewall plans to augment the active threat defense managed rule group with an additional deep threat inspection capability. When this capability is released, Amazon Web Services will analyze service logs of network traffic processed by these rule groups to identify threat indicators across customers. Amazon Web Services will use these threat indicators to improve the active threat defense managed rule groups and protect the security of Amazon Web Services customers and services.</p><note>
+    /// <p>Customers can opt-out of deep threat inspection at any time through the Network Firewall console or API. When customers opt out, Network Firewall will not use the network traffic processed by those customers' active threat defense rule groups for rule group improvement.</p>
+    /// </note>
+    pub fn deep_threat_inspection(mut self, input: bool) -> Self {
+        self.deep_threat_inspection = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Network Firewall plans to augment the active threat defense managed rule group with an additional deep threat inspection capability. When this capability is released, Amazon Web Services will analyze service logs of network traffic processed by these rule groups to identify threat indicators across customers. Amazon Web Services will use these threat indicators to improve the active threat defense managed rule groups and protect the security of Amazon Web Services customers and services.</p><note>
+    /// <p>Customers can opt-out of deep threat inspection at any time through the Network Firewall console or API. When customers opt out, Network Firewall will not use the network traffic processed by those customers' active threat defense rule groups for rule group improvement.</p>
+    /// </note>
+    pub fn set_deep_threat_inspection(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.deep_threat_inspection = input;
+        self
+    }
+    /// <p>Network Firewall plans to augment the active threat defense managed rule group with an additional deep threat inspection capability. When this capability is released, Amazon Web Services will analyze service logs of network traffic processed by these rule groups to identify threat indicators across customers. Amazon Web Services will use these threat indicators to improve the active threat defense managed rule groups and protect the security of Amazon Web Services customers and services.</p><note>
+    /// <p>Customers can opt-out of deep threat inspection at any time through the Network Firewall console or API. When customers opt out, Network Firewall will not use the network traffic processed by those customers' active threat defense rule groups for rule group improvement.</p>
+    /// </note>
+    pub fn get_deep_threat_inspection(&self) -> &::std::option::Option<bool> {
+        &self.deep_threat_inspection
+    }
     /// Consumes the builder and constructs a [`StatefulRuleGroupReference`](crate::types::StatefulRuleGroupReference).
     /// This method will fail if any of the following fields are not set:
     /// - [`resource_arn`](crate::types::builders::StatefulRuleGroupReferenceBuilder::resource_arn)
@@ -108,6 +139,7 @@ impl StatefulRuleGroupReferenceBuilder {
             })?,
             priority: self.priority,
             r#override: self.r#override,
+            deep_threat_inspection: self.deep_threat_inspection,
         })
     }
 }

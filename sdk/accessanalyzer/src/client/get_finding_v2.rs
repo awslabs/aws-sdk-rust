@@ -20,7 +20,7 @@ impl super::Client {
     ///   - [`status(FindingStatus)`](crate::operation::get_finding_v2::GetFindingV2Output::status): <p>The status of the finding.</p>
     ///   - [`updated_at(DateTime)`](crate::operation::get_finding_v2::GetFindingV2Output::updated_at): <p>The time at which the finding was updated.</p>
     ///   - [`finding_details(Vec::<FindingDetails>)`](crate::operation::get_finding_v2::GetFindingV2Output::finding_details): <p>A localized message that explains the finding and provides guidance on how to address it.</p>
-    ///   - [`finding_type(Option<FindingType>)`](crate::operation::get_finding_v2::GetFindingV2Output::finding_type): <p>The type of the finding. For external access analyzers, the type is <code>ExternalAccess</code>. For unused access analyzers, the type can be <code>UnusedIAMRole</code>, <code>UnusedIAMUserAccessKey</code>, <code>UnusedIAMUserPassword</code>, or <code>UnusedPermission</code>.</p>
+    ///   - [`finding_type(Option<FindingType>)`](crate::operation::get_finding_v2::GetFindingV2Output::finding_type): <p>The type of the finding. For external access analyzers, the type is <code>ExternalAccess</code>. For unused access analyzers, the type can be <code>UnusedIAMRole</code>, <code>UnusedIAMUserAccessKey</code>, <code>UnusedIAMUserPassword</code>, or <code>UnusedPermission</code>. For internal access analyzers, the type is <code>InternalAccess</code>.</p>
     /// - On failure, responds with [`SdkError<GetFindingV2Error>`](crate::operation::get_finding_v2::GetFindingV2Error)
     pub fn get_finding_v2(&self) -> crate::operation::get_finding_v2::builders::GetFindingV2FluentBuilder {
         crate::operation::get_finding_v2::builders::GetFindingV2FluentBuilder::new(self.handle.clone())

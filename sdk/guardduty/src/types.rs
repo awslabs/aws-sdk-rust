@@ -285,6 +285,16 @@ pub use crate::types::_resource_v2::ResourceV2;
 
 pub use crate::types::_resource_data::ResourceData;
 
+pub use crate::types::_container_finding_resource::ContainerFindingResource;
+
+pub use crate::types::_kubernetes_workload::KubernetesWorkload;
+
+pub use crate::types::_kubernetes_resources_types::KubernetesResourcesTypes;
+
+pub use crate::types::_eks_cluster::EksCluster;
+
+pub use crate::types::_cluster_status::ClusterStatus;
+
 pub use crate::types::_s3_object::S3Object;
 
 pub use crate::types::_ec2_network_interface::Ec2NetworkInterface;
@@ -316,6 +326,8 @@ pub use crate::types::_tag::Tag;
 pub use crate::types::_finding_resource_type::FindingResourceType;
 
 pub use crate::types::_actor::Actor;
+
+pub use crate::types::_actor_process::ActorProcess;
 
 pub use crate::types::_session::Session;
 
@@ -557,6 +569,8 @@ mod _action;
 
 mod _actor;
 
+mod _actor_process;
+
 mod _addon_details;
 
 mod _admin_account;
@@ -589,9 +603,13 @@ mod _city;
 
 mod _cloud_trail_configuration_result;
 
+mod _cluster_status;
+
 mod _condition;
 
 mod _container;
+
+mod _container_finding_resource;
 
 mod _container_instance_details;
 
@@ -691,6 +709,8 @@ mod _ecs_cluster_details;
 
 mod _ecs_task_details;
 
+mod _eks_cluster;
+
 mod _eks_cluster_details;
 
 mod _evidence;
@@ -773,11 +793,15 @@ mod _kubernetes_details;
 
 mod _kubernetes_permission_checked_details;
 
+mod _kubernetes_resources_types;
+
 mod _kubernetes_role_binding_details;
 
 mod _kubernetes_role_details;
 
 mod _kubernetes_user_details;
+
+mod _kubernetes_workload;
 
 mod _kubernetes_workload_details;
 

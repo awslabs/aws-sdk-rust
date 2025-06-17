@@ -71,6 +71,8 @@ pub(crate) mod shape_describe_rule_group;
 
 pub(crate) mod shape_describe_rule_group_metadata;
 
+pub(crate) mod shape_describe_rule_group_summary;
+
 pub(crate) mod shape_describe_tls_inspection_configuration;
 
 pub(crate) mod shape_describe_vpc_endpoint_association;
@@ -190,6 +192,8 @@ pub(crate) mod shape_describe_resource_policy_input;
 pub(crate) mod shape_describe_rule_group_input;
 
 pub(crate) mod shape_describe_rule_group_metadata_input;
+
+pub(crate) mod shape_describe_rule_group_summary_input;
 
 pub(crate) mod shape_describe_tls_inspection_configuration_input;
 
@@ -327,6 +331,10 @@ pub(crate) mod shape_subnet_mapping;
 
 pub(crate) mod shape_subnet_mappings;
 
+pub(crate) mod shape_summary;
+
+pub(crate) mod shape_summary_configuration;
+
 pub(crate) mod shape_supported_availability_zones;
 
 pub(crate) mod shape_tag;
@@ -384,6 +392,8 @@ pub(crate) mod shape_policy_variables;
 pub(crate) mod shape_reference_sets;
 
 pub(crate) mod shape_rule_group_metadata;
+
+pub(crate) mod shape_rule_summaries;
 
 pub(crate) mod shape_rule_variables;
 
@@ -443,6 +453,8 @@ pub(crate) mod shape_port_set;
 
 pub(crate) mod shape_port_sets;
 
+pub(crate) mod shape_rule_summary;
+
 pub(crate) mod shape_rules_source_list;
 
 pub(crate) mod shape_server_certificate;
@@ -456,6 +468,8 @@ pub(crate) mod shape_stateful_rule_group_override;
 pub(crate) mod shape_stateful_rules;
 
 pub(crate) mod shape_stateless_rules_and_custom_actions;
+
+pub(crate) mod shape_summary_rule_options;
 
 pub(crate) mod shape_sync_state;
 

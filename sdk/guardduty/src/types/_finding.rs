@@ -18,7 +18,7 @@ pub struct Finding {
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The partition associated with the finding.</p>
     pub partition: ::std::option::Option<::std::string::String>,
-    /// <p>The Region where the finding was generated.</p>
+    /// <p>The Region where the finding was generated. For findings generated from <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-concepts.html#cloudtrail-concepts-global-service-events">Global Service Events</a>, the Region value in the finding might differ from the Region where GuardDuty identifies the potential threat. For more information, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_data-sources.html#cloudtrail_global">How GuardDuty handles Amazon Web Services CloudTrail global events</a> in the <i>Amazon GuardDuty User Guide</i>.</p>
     pub region: ::std::option::Option<::std::string::String>,
     /// <p>Contains information about the Amazon Web Services resource associated with the activity that prompted GuardDuty to generate a finding.</p>
     pub resource: ::std::option::Option<crate::types::Resource>,
@@ -66,7 +66,7 @@ impl Finding {
     pub fn partition(&self) -> ::std::option::Option<&str> {
         self.partition.as_deref()
     }
-    /// <p>The Region where the finding was generated.</p>
+    /// <p>The Region where the finding was generated. For findings generated from <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-concepts.html#cloudtrail-concepts-global-service-events">Global Service Events</a>, the Region value in the finding might differ from the Region where GuardDuty identifies the potential threat. For more information, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_data-sources.html#cloudtrail_global">How GuardDuty handles Amazon Web Services CloudTrail global events</a> in the <i>Amazon GuardDuty User Guide</i>.</p>
     pub fn region(&self) -> ::std::option::Option<&str> {
         self.region.as_deref()
     }
@@ -234,18 +234,18 @@ impl FindingBuilder {
     pub fn get_partition(&self) -> &::std::option::Option<::std::string::String> {
         &self.partition
     }
-    /// <p>The Region where the finding was generated.</p>
+    /// <p>The Region where the finding was generated. For findings generated from <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-concepts.html#cloudtrail-concepts-global-service-events">Global Service Events</a>, the Region value in the finding might differ from the Region where GuardDuty identifies the potential threat. For more information, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_data-sources.html#cloudtrail_global">How GuardDuty handles Amazon Web Services CloudTrail global events</a> in the <i>Amazon GuardDuty User Guide</i>.</p>
     /// This field is required.
     pub fn region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.region = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Region where the finding was generated.</p>
+    /// <p>The Region where the finding was generated. For findings generated from <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-concepts.html#cloudtrail-concepts-global-service-events">Global Service Events</a>, the Region value in the finding might differ from the Region where GuardDuty identifies the potential threat. For more information, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_data-sources.html#cloudtrail_global">How GuardDuty handles Amazon Web Services CloudTrail global events</a> in the <i>Amazon GuardDuty User Guide</i>.</p>
     pub fn set_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.region = input;
         self
     }
-    /// <p>The Region where the finding was generated.</p>
+    /// <p>The Region where the finding was generated. For findings generated from <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-concepts.html#cloudtrail-concepts-global-service-events">Global Service Events</a>, the Region value in the finding might differ from the Region where GuardDuty identifies the potential threat. For more information, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_data-sources.html#cloudtrail_global">How GuardDuty handles Amazon Web Services CloudTrail global events</a> in the <i>Amazon GuardDuty User Guide</i>.</p>
     pub fn get_region(&self) -> &::std::option::Option<::std::string::String> {
         &self.region
     }

@@ -160,19 +160,31 @@ mod batch_update_automation_rules;
 
 mod batch_update_findings;
 
+mod batch_update_findings_v2;
+
 mod batch_update_standards_control_associations;
+
+mod connector_registrations_v2;
 
 mod create_action_target;
 
+mod create_aggregator_v2;
+
 mod create_automation_rule;
 
+mod create_automation_rule_v2;
+
 mod create_configuration_policy;
+
+mod create_connector_v2;
 
 mod create_finding_aggregator;
 
 mod create_insight;
 
 mod create_members;
+
+mod create_ticket_v2;
 
 /// Operation customization and supporting types.
 ///
@@ -205,7 +217,13 @@ mod decline_invitations;
 
 mod delete_action_target;
 
+mod delete_aggregator_v2;
+
+mod delete_automation_rule_v2;
+
 mod delete_configuration_policy;
+
+mod delete_connector_v2;
 
 mod delete_finding_aggregator;
 
@@ -223,6 +241,10 @@ mod describe_organization_configuration;
 
 mod describe_products;
 
+mod describe_products_v2;
+
+mod describe_security_hub_v2;
+
 mod describe_standards;
 
 mod describe_standards_controls;
@@ -232,6 +254,8 @@ mod disable_import_findings_for_product;
 mod disable_organization_admin_account;
 
 mod disable_security_hub;
+
+mod disable_security_hub_v2;
 
 mod disassociate_from_administrator_account;
 
@@ -245,11 +269,19 @@ mod enable_organization_admin_account;
 
 mod enable_security_hub;
 
+mod enable_security_hub_v2;
+
 mod get_administrator_account;
+
+mod get_aggregator_v2;
+
+mod get_automation_rule_v2;
 
 mod get_configuration_policy;
 
 mod get_configuration_policy_association;
+
+mod get_connector_v2;
 
 mod get_enabled_standards;
 
@@ -257,7 +289,11 @@ mod get_finding_aggregator;
 
 mod get_finding_history;
 
+mod get_finding_statistics_v2;
+
 mod get_findings;
+
+mod get_findings_v2;
 
 mod get_insight_results;
 
@@ -269,15 +305,25 @@ mod get_master_account;
 
 mod get_members;
 
+mod get_resources_statistics_v2;
+
+mod get_resources_v2;
+
 mod get_security_control_definition;
 
 mod invite_members;
 
+mod list_aggregators_v2;
+
 mod list_automation_rules;
+
+mod list_automation_rules_v2;
 
 mod list_configuration_policies;
 
 mod list_configuration_policy_associations;
+
+mod list_connectors_v2;
 
 mod list_enabled_products_for_import;
 
@@ -305,7 +351,13 @@ mod untag_resource;
 
 mod update_action_target;
 
+mod update_aggregator_v2;
+
+mod update_automation_rule_v2;
+
 mod update_configuration_policy;
+
+mod update_connector_v2;
 
 mod update_finding_aggregator;
 

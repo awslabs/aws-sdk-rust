@@ -19,6 +19,7 @@
 ///     BackupVaultEvent::BackupJobSuccessful => { /* ... */ },
 ///     BackupVaultEvent::BackupPlanCreated => { /* ... */ },
 ///     BackupVaultEvent::BackupPlanModified => { /* ... */ },
+///     BackupVaultEvent::ContinuousBackupInterrupted => { /* ... */ },
 ///     BackupVaultEvent::CopyJobFailed => { /* ... */ },
 ///     BackupVaultEvent::CopyJobStarted => { /* ... */ },
 ///     BackupVaultEvent::CopyJobSuccessful => { /* ... */ },
@@ -75,6 +76,8 @@ pub enum BackupVaultEvent {
     #[allow(missing_docs)] // documentation missing in model
     BackupPlanModified,
     #[allow(missing_docs)] // documentation missing in model
+    ContinuousBackupInterrupted,
+    #[allow(missing_docs)] // documentation missing in model
     CopyJobFailed,
     #[allow(missing_docs)] // documentation missing in model
     CopyJobStarted,
@@ -114,6 +117,7 @@ impl ::std::convert::From<&str> for BackupVaultEvent {
             "BACKUP_JOB_SUCCESSFUL" => BackupVaultEvent::BackupJobSuccessful,
             "BACKUP_PLAN_CREATED" => BackupVaultEvent::BackupPlanCreated,
             "BACKUP_PLAN_MODIFIED" => BackupVaultEvent::BackupPlanModified,
+            "CONTINUOUS_BACKUP_INTERRUPTED" => BackupVaultEvent::ContinuousBackupInterrupted,
             "COPY_JOB_FAILED" => BackupVaultEvent::CopyJobFailed,
             "COPY_JOB_STARTED" => BackupVaultEvent::CopyJobStarted,
             "COPY_JOB_SUCCESSFUL" => BackupVaultEvent::CopyJobSuccessful,
@@ -149,6 +153,7 @@ impl BackupVaultEvent {
             BackupVaultEvent::BackupJobSuccessful => "BACKUP_JOB_SUCCESSFUL",
             BackupVaultEvent::BackupPlanCreated => "BACKUP_PLAN_CREATED",
             BackupVaultEvent::BackupPlanModified => "BACKUP_PLAN_MODIFIED",
+            BackupVaultEvent::ContinuousBackupInterrupted => "CONTINUOUS_BACKUP_INTERRUPTED",
             BackupVaultEvent::CopyJobFailed => "COPY_JOB_FAILED",
             BackupVaultEvent::CopyJobStarted => "COPY_JOB_STARTED",
             BackupVaultEvent::CopyJobSuccessful => "COPY_JOB_SUCCESSFUL",
@@ -175,6 +180,7 @@ impl BackupVaultEvent {
             "BACKUP_JOB_SUCCESSFUL",
             "BACKUP_PLAN_CREATED",
             "BACKUP_PLAN_MODIFIED",
+            "CONTINUOUS_BACKUP_INTERRUPTED",
             "COPY_JOB_FAILED",
             "COPY_JOB_STARTED",
             "COPY_JOB_SUCCESSFUL",
@@ -218,6 +224,7 @@ impl ::std::fmt::Display for BackupVaultEvent {
             BackupVaultEvent::BackupJobSuccessful => write!(f, "BACKUP_JOB_SUCCESSFUL"),
             BackupVaultEvent::BackupPlanCreated => write!(f, "BACKUP_PLAN_CREATED"),
             BackupVaultEvent::BackupPlanModified => write!(f, "BACKUP_PLAN_MODIFIED"),
+            BackupVaultEvent::ContinuousBackupInterrupted => write!(f, "CONTINUOUS_BACKUP_INTERRUPTED"),
             BackupVaultEvent::CopyJobFailed => write!(f, "COPY_JOB_FAILED"),
             BackupVaultEvent::CopyJobStarted => write!(f, "COPY_JOB_STARTED"),
             BackupVaultEvent::CopyJobSuccessful => write!(f, "COPY_JOB_SUCCESSFUL"),

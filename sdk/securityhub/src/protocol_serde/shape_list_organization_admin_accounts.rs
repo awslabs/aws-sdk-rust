@@ -120,6 +120,13 @@ pub(crate) fn de_list_organization_admin_accounts(
                 "AdminAccounts" => {
                     builder = builder.set_admin_accounts(crate::protocol_serde::shape_admin_accounts::de_admin_accounts(tokens)?);
                 }
+                "Feature" => {
+                    builder = builder.set_feature(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| crate::types::SecurityHubFeature::from(u.as_ref())))
+                            .transpose()?,
+                    );
+                }
                 "NextToken" => {
                     builder = builder.set_next_token(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

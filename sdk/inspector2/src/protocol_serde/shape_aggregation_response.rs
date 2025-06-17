@@ -107,6 +107,14 @@ where
                                     )
                                 })?,
                         )),
+                        "codeRepositoryAggregation" => Some(crate::types::AggregationResponse::CodeRepositoryAggregation(
+                            crate::protocol_serde::shape_code_repository_aggregation_response::de_code_repository_aggregation_response(tokens)?
+                                .ok_or_else(|| {
+                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom(
+                                        "value for 'codeRepositoryAggregation' cannot be null",
+                                    )
+                                })?,
+                        )),
                         _ => {
                             ::aws_smithy_json::deserialize::token::skip_value(tokens)?;
                             Some(crate::types::AggregationResponse::Unknown)

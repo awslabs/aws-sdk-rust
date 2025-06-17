@@ -40,7 +40,7 @@ pub struct StringFilter {
     /// <li>
     /// <p><code>ResourceType NOT_EQUALS AwsEc2NetworkInterface</code></p></li>
     /// </ul>
-    /// <p><code>CONTAINS</code> and <code>NOT_CONTAINS</code> operators can be used only with automation rules. For more information, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/automation-rules.html">Automation rules</a> in the <i>Security Hub User Guide</i>.</p>
+    /// <p><code>CONTAINS</code> and <code>NOT_CONTAINS</code> operators can be used only with automation rules V1. <code>CONTAINS_WORD</code> operator is only supported in <code>GetFindingsV2</code>, <code>GetFindingStatisticsV2</code>, <code>GetResourcesV2</code>, and <code>GetResourceStatisticsV2</code> APIs. For more information, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/automation-rules.html">Automation rules</a> in the <i>Security Hub User Guide</i>.</p>
     pub comparison: ::std::option::Option<crate::types::StringFilterComparison>,
 }
 impl StringFilter {
@@ -82,7 +82,7 @@ impl StringFilter {
     /// <li>
     /// <p><code>ResourceType NOT_EQUALS AwsEc2NetworkInterface</code></p></li>
     /// </ul>
-    /// <p><code>CONTAINS</code> and <code>NOT_CONTAINS</code> operators can be used only with automation rules. For more information, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/automation-rules.html">Automation rules</a> in the <i>Security Hub User Guide</i>.</p>
+    /// <p><code>CONTAINS</code> and <code>NOT_CONTAINS</code> operators can be used only with automation rules V1. <code>CONTAINS_WORD</code> operator is only supported in <code>GetFindingsV2</code>, <code>GetFindingStatisticsV2</code>, <code>GetResourcesV2</code>, and <code>GetResourceStatisticsV2</code> APIs. For more information, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/automation-rules.html">Automation rules</a> in the <i>Security Hub User Guide</i>.</p>
     pub fn comparison(&self) -> ::std::option::Option<&crate::types::StringFilterComparison> {
         self.comparison.as_ref()
     }
@@ -150,7 +150,7 @@ impl StringFilterBuilder {
     /// <li>
     /// <p><code>ResourceType NOT_EQUALS AwsEc2NetworkInterface</code></p></li>
     /// </ul>
-    /// <p><code>CONTAINS</code> and <code>NOT_CONTAINS</code> operators can be used only with automation rules. For more information, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/automation-rules.html">Automation rules</a> in the <i>Security Hub User Guide</i>.</p>
+    /// <p><code>CONTAINS</code> and <code>NOT_CONTAINS</code> operators can be used only with automation rules V1. <code>CONTAINS_WORD</code> operator is only supported in <code>GetFindingsV2</code>, <code>GetFindingStatisticsV2</code>, <code>GetResourcesV2</code>, and <code>GetResourceStatisticsV2</code> APIs. For more information, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/automation-rules.html">Automation rules</a> in the <i>Security Hub User Guide</i>.</p>
     pub fn comparison(mut self, input: crate::types::StringFilterComparison) -> Self {
         self.comparison = ::std::option::Option::Some(input);
         self
@@ -189,7 +189,7 @@ impl StringFilterBuilder {
     /// <li>
     /// <p><code>ResourceType NOT_EQUALS AwsEc2NetworkInterface</code></p></li>
     /// </ul>
-    /// <p><code>CONTAINS</code> and <code>NOT_CONTAINS</code> operators can be used only with automation rules. For more information, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/automation-rules.html">Automation rules</a> in the <i>Security Hub User Guide</i>.</p>
+    /// <p><code>CONTAINS</code> and <code>NOT_CONTAINS</code> operators can be used only with automation rules V1. <code>CONTAINS_WORD</code> operator is only supported in <code>GetFindingsV2</code>, <code>GetFindingStatisticsV2</code>, <code>GetResourcesV2</code>, and <code>GetResourceStatisticsV2</code> APIs. For more information, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/automation-rules.html">Automation rules</a> in the <i>Security Hub User Guide</i>.</p>
     pub fn set_comparison(mut self, input: ::std::option::Option<crate::types::StringFilterComparison>) -> Self {
         self.comparison = input;
         self
@@ -228,7 +228,7 @@ impl StringFilterBuilder {
     /// <li>
     /// <p><code>ResourceType NOT_EQUALS AwsEc2NetworkInterface</code></p></li>
     /// </ul>
-    /// <p><code>CONTAINS</code> and <code>NOT_CONTAINS</code> operators can be used only with automation rules. For more information, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/automation-rules.html">Automation rules</a> in the <i>Security Hub User Guide</i>.</p>
+    /// <p><code>CONTAINS</code> and <code>NOT_CONTAINS</code> operators can be used only with automation rules V1. <code>CONTAINS_WORD</code> operator is only supported in <code>GetFindingsV2</code>, <code>GetFindingStatisticsV2</code>, <code>GetResourcesV2</code>, and <code>GetResourceStatisticsV2</code> APIs. For more information, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/automation-rules.html">Automation rules</a> in the <i>Security Hub User Guide</i>.</p>
     pub fn get_comparison(&self) -> &::std::option::Option<crate::types::StringFilterComparison> {
         &self.comparison
     }

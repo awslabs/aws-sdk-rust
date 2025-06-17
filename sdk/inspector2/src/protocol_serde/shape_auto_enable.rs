@@ -26,6 +26,9 @@ where
                         "lambdaCode" => {
                             builder = builder.set_lambda_code(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
+                        "codeRepository" => {
+                            builder = builder.set_code_repository(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {
@@ -61,6 +64,9 @@ pub fn ser_auto_enable(
     }
     if let Some(var_2) = &input.lambda_code {
         object.key("lambdaCode").boolean(*var_2);
+    }
+    if let Some(var_3) = &input.code_repository {
+        object.key("codeRepository").boolean(*var_3);
     }
     Ok(())
 }

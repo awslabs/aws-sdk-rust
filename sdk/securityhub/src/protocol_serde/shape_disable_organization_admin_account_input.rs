@@ -6,5 +6,8 @@ pub fn ser_disable_organization_admin_account_input_input(
     if let Some(var_1) = &input.admin_account_id {
         object.key("AdminAccountId").string(var_1.as_str());
     }
+    if let Some(var_2) = &input.feature {
+        object.key("Feature").string(var_2.as_str());
+    }
     Ok(())
 }

@@ -34,7 +34,7 @@ impl crate::operation::tag_resource::builders::TagResourceInputBuilder {
 /// <li>
 /// <p>Policy (any type)</p></li>
 /// </ul>
-/// <p>This operation can be called only from the organization's management account or by a member account that is a delegated administrator for an Amazon Web Services service.</p>
+/// <p>This operation can be called only from the organization's management account or by a member account that is a delegated administrator.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct TagResourceFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

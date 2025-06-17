@@ -4,10 +4,11 @@
 #[derive(::std::fmt::Debug)]
 pub enum Error {
     /// <p>You do not have sufficient access to perform this action.</p>
+    /// <p>For <code>Enable</code>, you receive this error if you attempt to use a feature in an unsupported Amazon Web Services Region.</p>
     AccessDeniedException(crate::types::error::AccessDeniedException),
     /// <p>One or more tags submitted as part of the request is not valid.</p>
     BadRequestException(crate::types::error::BadRequestException),
-    /// <p>A conflict occurred.</p>
+    /// <p>A conflict occurred. This exception occurs when the same resource is being modified by concurrent requests.</p>
     ConflictException(crate::types::error::ConflictException),
     /// <p>The request has failed due to an internal failure of the Amazon Inspector service.</p>
     InternalServerException(crate::types::error::InternalServerException),
@@ -97,6 +98,82 @@ impl From<crate::operation::associate_member::AssociateMemberError> for Error {
             crate::operation::associate_member::AssociateMemberError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::associate_member::AssociateMemberError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::associate_member::AssociateMemberError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::batch_associate_code_security_scan_configuration::BatchAssociateCodeSecurityScanConfigurationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::batch_associate_code_security_scan_configuration::BatchAssociateCodeSecurityScanConfigurationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::batch_associate_code_security_scan_configuration::BatchAssociateCodeSecurityScanConfigurationError> for Error {
+    fn from(err: crate::operation::batch_associate_code_security_scan_configuration::BatchAssociateCodeSecurityScanConfigurationError) -> Self {
+        match err {
+            crate::operation::batch_associate_code_security_scan_configuration::BatchAssociateCodeSecurityScanConfigurationError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::batch_associate_code_security_scan_configuration::BatchAssociateCodeSecurityScanConfigurationError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::batch_associate_code_security_scan_configuration::BatchAssociateCodeSecurityScanConfigurationError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::batch_associate_code_security_scan_configuration::BatchAssociateCodeSecurityScanConfigurationError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::batch_associate_code_security_scan_configuration::BatchAssociateCodeSecurityScanConfigurationError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::batch_associate_code_security_scan_configuration::BatchAssociateCodeSecurityScanConfigurationError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::batch_associate_code_security_scan_configuration::BatchAssociateCodeSecurityScanConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::batch_disassociate_code_security_scan_configuration::BatchDisassociateCodeSecurityScanConfigurationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::batch_disassociate_code_security_scan_configuration::BatchDisassociateCodeSecurityScanConfigurationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::batch_disassociate_code_security_scan_configuration::BatchDisassociateCodeSecurityScanConfigurationError> for Error {
+    fn from(err: crate::operation::batch_disassociate_code_security_scan_configuration::BatchDisassociateCodeSecurityScanConfigurationError) -> Self {
+        match err {
+            crate::operation::batch_disassociate_code_security_scan_configuration::BatchDisassociateCodeSecurityScanConfigurationError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::batch_disassociate_code_security_scan_configuration::BatchDisassociateCodeSecurityScanConfigurationError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::batch_disassociate_code_security_scan_configuration::BatchDisassociateCodeSecurityScanConfigurationError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::batch_disassociate_code_security_scan_configuration::BatchDisassociateCodeSecurityScanConfigurationError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::batch_disassociate_code_security_scan_configuration::BatchDisassociateCodeSecurityScanConfigurationError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::batch_disassociate_code_security_scan_configuration::BatchDisassociateCodeSecurityScanConfigurationError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::batch_disassociate_code_security_scan_configuration::BatchDisassociateCodeSecurityScanConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -398,6 +475,105 @@ impl From<crate::operation::create_cis_scan_configuration::CreateCisScanConfigur
         }
     }
 }
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_code_security_integration::CreateCodeSecurityIntegrationError, R>,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::create_code_security_integration::CreateCodeSecurityIntegrationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_code_security_integration::CreateCodeSecurityIntegrationError> for Error {
+    fn from(err: crate::operation::create_code_security_integration::CreateCodeSecurityIntegrationError) -> Self {
+        match err {
+            crate::operation::create_code_security_integration::CreateCodeSecurityIntegrationError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::create_code_security_integration::CreateCodeSecurityIntegrationError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::create_code_security_integration::CreateCodeSecurityIntegrationError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::create_code_security_integration::CreateCodeSecurityIntegrationError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::create_code_security_integration::CreateCodeSecurityIntegrationError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::create_code_security_integration::CreateCodeSecurityIntegrationError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::create_code_security_integration::CreateCodeSecurityIntegrationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::create_code_security_scan_configuration::CreateCodeSecurityScanConfigurationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::create_code_security_scan_configuration::CreateCodeSecurityScanConfigurationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_code_security_scan_configuration::CreateCodeSecurityScanConfigurationError> for Error {
+    fn from(err: crate::operation::create_code_security_scan_configuration::CreateCodeSecurityScanConfigurationError) -> Self {
+        match err {
+            crate::operation::create_code_security_scan_configuration::CreateCodeSecurityScanConfigurationError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::create_code_security_scan_configuration::CreateCodeSecurityScanConfigurationError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::create_code_security_scan_configuration::CreateCodeSecurityScanConfigurationError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::create_code_security_scan_configuration::CreateCodeSecurityScanConfigurationError::ServiceQuotaExceededException(
+                inner,
+            ) => Error::ServiceQuotaExceededException(inner),
+            crate::operation::create_code_security_scan_configuration::CreateCodeSecurityScanConfigurationError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::create_code_security_scan_configuration::CreateCodeSecurityScanConfigurationError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::create_code_security_scan_configuration::CreateCodeSecurityScanConfigurationError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_filter::CreateFilterError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -517,6 +693,99 @@ impl From<crate::operation::delete_cis_scan_configuration::DeleteCisScanConfigur
                 Error::ValidationException(inner)
             }
             crate::operation::delete_cis_scan_configuration::DeleteCisScanConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_code_security_integration::DeleteCodeSecurityIntegrationError, R>,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::delete_code_security_integration::DeleteCodeSecurityIntegrationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_code_security_integration::DeleteCodeSecurityIntegrationError> for Error {
+    fn from(err: crate::operation::delete_code_security_integration::DeleteCodeSecurityIntegrationError) -> Self {
+        match err {
+            crate::operation::delete_code_security_integration::DeleteCodeSecurityIntegrationError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::delete_code_security_integration::DeleteCodeSecurityIntegrationError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::delete_code_security_integration::DeleteCodeSecurityIntegrationError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::delete_code_security_integration::DeleteCodeSecurityIntegrationError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::delete_code_security_integration::DeleteCodeSecurityIntegrationError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::delete_code_security_integration::DeleteCodeSecurityIntegrationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::delete_code_security_scan_configuration::DeleteCodeSecurityScanConfigurationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::delete_code_security_scan_configuration::DeleteCodeSecurityScanConfigurationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_code_security_scan_configuration::DeleteCodeSecurityScanConfigurationError> for Error {
+    fn from(err: crate::operation::delete_code_security_scan_configuration::DeleteCodeSecurityScanConfigurationError) -> Self {
+        match err {
+            crate::operation::delete_code_security_scan_configuration::DeleteCodeSecurityScanConfigurationError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::delete_code_security_scan_configuration::DeleteCodeSecurityScanConfigurationError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::delete_code_security_scan_configuration::DeleteCodeSecurityScanConfigurationError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::delete_code_security_scan_configuration::DeleteCodeSecurityScanConfigurationError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::delete_code_security_scan_configuration::DeleteCodeSecurityScanConfigurationError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::delete_code_security_scan_configuration::DeleteCodeSecurityScanConfigurationError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
         }
     }
 }
@@ -847,6 +1116,125 @@ impl From<crate::operation::get_clusters_for_image::GetClustersForImageError> fo
             crate::operation::get_clusters_for_image::GetClustersForImageError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::get_clusters_for_image::GetClustersForImageError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::get_clusters_for_image::GetClustersForImageError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_code_security_integration::GetCodeSecurityIntegrationError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_code_security_integration::GetCodeSecurityIntegrationError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_code_security_integration::GetCodeSecurityIntegrationError> for Error {
+    fn from(err: crate::operation::get_code_security_integration::GetCodeSecurityIntegrationError) -> Self {
+        match err {
+            crate::operation::get_code_security_integration::GetCodeSecurityIntegrationError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::get_code_security_integration::GetCodeSecurityIntegrationError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::get_code_security_integration::GetCodeSecurityIntegrationError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_code_security_integration::GetCodeSecurityIntegrationError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::get_code_security_integration::GetCodeSecurityIntegrationError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::get_code_security_integration::GetCodeSecurityIntegrationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_code_security_scan::GetCodeSecurityScanError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_code_security_scan::GetCodeSecurityScanError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_code_security_scan::GetCodeSecurityScanError> for Error {
+    fn from(err: crate::operation::get_code_security_scan::GetCodeSecurityScanError) -> Self {
+        match err {
+            crate::operation::get_code_security_scan::GetCodeSecurityScanError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_code_security_scan::GetCodeSecurityScanError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::get_code_security_scan::GetCodeSecurityScanError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::get_code_security_scan::GetCodeSecurityScanError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_code_security_scan::GetCodeSecurityScanError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_code_security_scan::GetCodeSecurityScanError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_code_security_scan::GetCodeSecurityScanError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_code_security_scan_configuration::GetCodeSecurityScanConfigurationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_code_security_scan_configuration::GetCodeSecurityScanConfigurationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_code_security_scan_configuration::GetCodeSecurityScanConfigurationError> for Error {
+    fn from(err: crate::operation::get_code_security_scan_configuration::GetCodeSecurityScanConfigurationError) -> Self {
+        match err {
+            crate::operation::get_code_security_scan_configuration::GetCodeSecurityScanConfigurationError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::get_code_security_scan_configuration::GetCodeSecurityScanConfigurationError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::get_code_security_scan_configuration::GetCodeSecurityScanConfigurationError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_code_security_scan_configuration::GetCodeSecurityScanConfigurationError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::get_code_security_scan_configuration::GetCodeSecurityScanConfigurationError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::get_code_security_scan_configuration::GetCodeSecurityScanConfigurationError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
         }
     }
 }
@@ -1250,6 +1638,132 @@ impl From<crate::operation::list_cis_scans::ListCisScansError> for Error {
         }
     }
 }
+impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_code_security_integrations::ListCodeSecurityIntegrationsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_code_security_integrations::ListCodeSecurityIntegrationsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_code_security_integrations::ListCodeSecurityIntegrationsError> for Error {
+    fn from(err: crate::operation::list_code_security_integrations::ListCodeSecurityIntegrationsError) -> Self {
+        match err {
+            crate::operation::list_code_security_integrations::ListCodeSecurityIntegrationsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::list_code_security_integrations::ListCodeSecurityIntegrationsError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::list_code_security_integrations::ListCodeSecurityIntegrationsError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::list_code_security_integrations::ListCodeSecurityIntegrationsError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::list_code_security_integrations::ListCodeSecurityIntegrationsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_code_security_scan_configuration_associations::ListCodeSecurityScanConfigurationAssociationsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_code_security_scan_configuration_associations::ListCodeSecurityScanConfigurationAssociationsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_code_security_scan_configuration_associations::ListCodeSecurityScanConfigurationAssociationsError> for Error {
+    fn from(err: crate::operation::list_code_security_scan_configuration_associations::ListCodeSecurityScanConfigurationAssociationsError) -> Self {
+        match err {
+            crate::operation::list_code_security_scan_configuration_associations::ListCodeSecurityScanConfigurationAssociationsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_code_security_scan_configuration_associations::ListCodeSecurityScanConfigurationAssociationsError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_code_security_scan_configuration_associations::ListCodeSecurityScanConfigurationAssociationsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::list_code_security_scan_configuration_associations::ListCodeSecurityScanConfigurationAssociationsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_code_security_scan_configuration_associations::ListCodeSecurityScanConfigurationAssociationsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_code_security_scan_configuration_associations::ListCodeSecurityScanConfigurationAssociationsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_code_security_scan_configurations::ListCodeSecurityScanConfigurationsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_code_security_scan_configurations::ListCodeSecurityScanConfigurationsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_code_security_scan_configurations::ListCodeSecurityScanConfigurationsError> for Error {
+    fn from(err: crate::operation::list_code_security_scan_configurations::ListCodeSecurityScanConfigurationsError) -> Self {
+        match err {
+            crate::operation::list_code_security_scan_configurations::ListCodeSecurityScanConfigurationsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::list_code_security_scan_configurations::ListCodeSecurityScanConfigurationsError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::list_code_security_scan_configurations::ListCodeSecurityScanConfigurationsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::list_code_security_scan_configurations::ListCodeSecurityScanConfigurationsError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::list_code_security_scan_configurations::ListCodeSecurityScanConfigurationsError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::list_code_security_scan_configurations::ListCodeSecurityScanConfigurationsError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_coverage::ListCoverageError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1649,6 +2163,41 @@ impl From<crate::operation::start_cis_session::StartCisSessionError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_code_security_scan::StartCodeSecurityScanError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_code_security_scan::StartCodeSecurityScanError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::start_code_security_scan::StartCodeSecurityScanError> for Error {
+    fn from(err: crate::operation::start_code_security_scan::StartCodeSecurityScanError) -> Self {
+        match err {
+            crate::operation::start_code_security_scan::StartCodeSecurityScanError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::start_code_security_scan::StartCodeSecurityScanError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::start_code_security_scan::StartCodeSecurityScanError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::start_code_security_scan::StartCodeSecurityScanError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::start_code_security_scan::StartCodeSecurityScanError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::start_code_security_scan::StartCodeSecurityScanError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::start_code_security_scan::StartCodeSecurityScanError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::stop_cis_session::StopCisSessionError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1762,6 +2311,105 @@ impl From<crate::operation::update_cis_scan_configuration::UpdateCisScanConfigur
                 Error::ValidationException(inner)
             }
             crate::operation::update_cis_scan_configuration::UpdateCisScanConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_code_security_integration::UpdateCodeSecurityIntegrationError, R>,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::update_code_security_integration::UpdateCodeSecurityIntegrationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_code_security_integration::UpdateCodeSecurityIntegrationError> for Error {
+    fn from(err: crate::operation::update_code_security_integration::UpdateCodeSecurityIntegrationError) -> Self {
+        match err {
+            crate::operation::update_code_security_integration::UpdateCodeSecurityIntegrationError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::update_code_security_integration::UpdateCodeSecurityIntegrationError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::update_code_security_integration::UpdateCodeSecurityIntegrationError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::update_code_security_integration::UpdateCodeSecurityIntegrationError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::update_code_security_integration::UpdateCodeSecurityIntegrationError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::update_code_security_integration::UpdateCodeSecurityIntegrationError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::update_code_security_integration::UpdateCodeSecurityIntegrationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::update_code_security_scan_configuration::UpdateCodeSecurityScanConfigurationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::update_code_security_scan_configuration::UpdateCodeSecurityScanConfigurationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_code_security_scan_configuration::UpdateCodeSecurityScanConfigurationError> for Error {
+    fn from(err: crate::operation::update_code_security_scan_configuration::UpdateCodeSecurityScanConfigurationError) -> Self {
+        match err {
+            crate::operation::update_code_security_scan_configuration::UpdateCodeSecurityScanConfigurationError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::update_code_security_scan_configuration::UpdateCodeSecurityScanConfigurationError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::update_code_security_scan_configuration::UpdateCodeSecurityScanConfigurationError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::update_code_security_scan_configuration::UpdateCodeSecurityScanConfigurationError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::update_code_security_scan_configuration::UpdateCodeSecurityScanConfigurationError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::update_code_security_scan_configuration::UpdateCodeSecurityScanConfigurationError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::update_code_security_scan_configuration::UpdateCodeSecurityScanConfigurationError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
         }
     }
 }

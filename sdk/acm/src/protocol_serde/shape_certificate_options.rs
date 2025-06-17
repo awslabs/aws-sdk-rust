@@ -6,6 +6,9 @@ pub fn ser_certificate_options(
     if let Some(var_1) = &input.certificate_transparency_logging_preference {
         object.key("CertificateTransparencyLoggingPreference").string(var_1.as_str());
     }
+    if let Some(var_2) = &input.export {
+        object.key("Export").string(var_2.as_str());
+    }
     Ok(())
 }
 
@@ -31,6 +34,13 @@ where
                                         s.to_unescaped()
                                             .map(|u| crate::types::CertificateTransparencyLoggingPreference::from(u.as_ref()))
                                     })
+                                    .transpose()?,
+                            );
+                        }
+                        "Export" => {
+                            builder = builder.set_export(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CertificateExport::from(u.as_ref())))
                                     .transpose()?,
                             );
                         }

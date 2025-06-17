@@ -122,17 +122,17 @@ impl CreateAnalyzerFluentBuilder {
     pub fn get_analyzer_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_analyzer_name()
     }
-    /// <p>The type of analyzer to create. Only <code>ACCOUNT</code>, <code>ORGANIZATION</code>, <code>ACCOUNT_UNUSED_ACCESS</code>, and <code>ORGANIZATION_UNUSED_ACCESS</code> analyzers are supported. You can create only one analyzer per account per Region. You can create up to 5 analyzers per organization per Region.</p>
+    /// <p>The type of analyzer to create. You can create only one analyzer per account per Region. You can create up to 5 analyzers per organization per Region.</p>
     pub fn r#type(mut self, input: crate::types::Type) -> Self {
         self.inner = self.inner.r#type(input);
         self
     }
-    /// <p>The type of analyzer to create. Only <code>ACCOUNT</code>, <code>ORGANIZATION</code>, <code>ACCOUNT_UNUSED_ACCESS</code>, and <code>ORGANIZATION_UNUSED_ACCESS</code> analyzers are supported. You can create only one analyzer per account per Region. You can create up to 5 analyzers per organization per Region.</p>
+    /// <p>The type of analyzer to create. You can create only one analyzer per account per Region. You can create up to 5 analyzers per organization per Region.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::Type>) -> Self {
         self.inner = self.inner.set_type(input);
         self
     }
-    /// <p>The type of analyzer to create. Only <code>ACCOUNT</code>, <code>ORGANIZATION</code>, <code>ACCOUNT_UNUSED_ACCESS</code>, and <code>ORGANIZATION_UNUSED_ACCESS</code> analyzers are supported. You can create only one analyzer per account per Region. You can create up to 5 analyzers per organization per Region.</p>
+    /// <p>The type of analyzer to create. You can create only one analyzer per account per Region. You can create up to 5 analyzers per organization per Region.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::Type> {
         self.inner.get_type()
     }
@@ -194,17 +194,17 @@ impl CreateAnalyzerFluentBuilder {
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_client_token()
     }
-    /// <p>Specifies the configuration of the analyzer. If the analyzer is an unused access analyzer, the specified scope of unused access is used for the configuration.</p>
+    /// <p>Specifies the configuration of the analyzer. If the analyzer is an unused access analyzer, the specified scope of unused access is used for the configuration. If the analyzer is an internal access analyzer, the specified internal access analysis rules are used for the configuration.</p>
     pub fn configuration(mut self, input: crate::types::AnalyzerConfiguration) -> Self {
         self.inner = self.inner.configuration(input);
         self
     }
-    /// <p>Specifies the configuration of the analyzer. If the analyzer is an unused access analyzer, the specified scope of unused access is used for the configuration.</p>
+    /// <p>Specifies the configuration of the analyzer. If the analyzer is an unused access analyzer, the specified scope of unused access is used for the configuration. If the analyzer is an internal access analyzer, the specified internal access analysis rules are used for the configuration.</p>
     pub fn set_configuration(mut self, input: ::std::option::Option<crate::types::AnalyzerConfiguration>) -> Self {
         self.inner = self.inner.set_configuration(input);
         self
     }
-    /// <p>Specifies the configuration of the analyzer. If the analyzer is an unused access analyzer, the specified scope of unused access is used for the configuration.</p>
+    /// <p>Specifies the configuration of the analyzer. If the analyzer is an unused access analyzer, the specified scope of unused access is used for the configuration. If the analyzer is an internal access analyzer, the specified internal access analysis rules are used for the configuration.</p>
     pub fn get_configuration(&self) -> &::std::option::Option<crate::types::AnalyzerConfiguration> {
         self.inner.get_configuration()
     }

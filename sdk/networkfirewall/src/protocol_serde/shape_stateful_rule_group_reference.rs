@@ -18,6 +18,9 @@ pub fn ser_stateful_rule_group_reference(
         crate::protocol_serde::shape_stateful_rule_group_override::ser_stateful_rule_group_override(&mut object_3, var_2)?;
         object_3.finish();
     }
+    if let Some(var_4) = &input.deep_threat_inspection {
+        object.key("DeepThreatInspection").boolean(*var_4);
+    }
     Ok(())
 }
 
@@ -53,6 +56,9 @@ where
                         "Override" => {
                             builder = builder
                                 .set_override(crate::protocol_serde::shape_stateful_rule_group_override::de_stateful_rule_group_override(tokens)?);
+                        }
+                        "DeepThreatInspection" => {
+                            builder = builder.set_deep_threat_inspection(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

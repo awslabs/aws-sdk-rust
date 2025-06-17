@@ -30,6 +30,18 @@ where
                         "s3Object" => {
                             builder = builder.set_s3_object(crate::protocol_serde::shape_s3_object::de_s3_object(tokens)?);
                         }
+                        "eksCluster" => {
+                            builder = builder.set_eks_cluster(crate::protocol_serde::shape_eks_cluster::de_eks_cluster(tokens)?);
+                        }
+                        "kubernetesWorkload" => {
+                            builder =
+                                builder.set_kubernetes_workload(crate::protocol_serde::shape_kubernetes_workload::de_kubernetes_workload(tokens)?);
+                        }
+                        "container" => {
+                            builder = builder.set_container(crate::protocol_serde::shape_container_finding_resource::de_container_finding_resource(
+                                tokens,
+                            )?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

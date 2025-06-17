@@ -32,7 +32,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-//! aws-sdk-backup = "1.78.0"
+//! aws-sdk-backup = "1.79.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!
@@ -149,14 +149,14 @@ pub use config::Config;
 /// # Using the `Client`
 ///
 /// A client has a function for every operation that can be performed by the service.
-/// For example, the [`CancelLegalHold`](crate::operation::cancel_legal_hold) operation has
-/// a [`Client::cancel_legal_hold`], function which returns a builder for that operation.
+/// For example, the [`AssociateBackupVaultMpaApprovalTeam`](crate::operation::associate_backup_vault_mpa_approval_team) operation has
+/// a [`Client::associate_backup_vault_mpa_approval_team`], function which returns a builder for that operation.
 /// The fluent builder ultimately has a `send()` function that returns an async future that
 /// returns a result, as illustrated below:
 ///
 /// ```rust,ignore
-/// let result = client.cancel_legal_hold()
-///     .legal_hold_id("example")
+/// let result = client.associate_backup_vault_mpa_approval_team()
+///     .backup_vault_name("example")
 ///     .send()
 ///     .await;
 /// ```

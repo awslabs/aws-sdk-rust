@@ -12,6 +12,8 @@ pub struct ResourceState {
     pub lambda: ::std::option::Option<crate::types::State>,
     /// <p>An object that described the state of Amazon Inspector scans for an account.</p>
     pub lambda_code: ::std::option::Option<crate::types::State>,
+    /// <p>An object that described the state of Amazon Inspector scans for an account.</p>
+    pub code_repository: ::std::option::Option<crate::types::State>,
 }
 impl ResourceState {
     /// <p>An object detailing the state of Amazon Inspector scanning for Amazon EC2 resources.</p>
@@ -30,6 +32,10 @@ impl ResourceState {
     pub fn lambda_code(&self) -> ::std::option::Option<&crate::types::State> {
         self.lambda_code.as_ref()
     }
+    /// <p>An object that described the state of Amazon Inspector scans for an account.</p>
+    pub fn code_repository(&self) -> ::std::option::Option<&crate::types::State> {
+        self.code_repository.as_ref()
+    }
 }
 impl ResourceState {
     /// Creates a new builder-style object to manufacture [`ResourceState`](crate::types::ResourceState).
@@ -46,6 +52,7 @@ pub struct ResourceStateBuilder {
     pub(crate) ecr: ::std::option::Option<crate::types::State>,
     pub(crate) lambda: ::std::option::Option<crate::types::State>,
     pub(crate) lambda_code: ::std::option::Option<crate::types::State>,
+    pub(crate) code_repository: ::std::option::Option<crate::types::State>,
 }
 impl ResourceStateBuilder {
     /// <p>An object detailing the state of Amazon Inspector scanning for Amazon EC2 resources.</p>
@@ -106,6 +113,20 @@ impl ResourceStateBuilder {
     pub fn get_lambda_code(&self) -> &::std::option::Option<crate::types::State> {
         &self.lambda_code
     }
+    /// <p>An object that described the state of Amazon Inspector scans for an account.</p>
+    pub fn code_repository(mut self, input: crate::types::State) -> Self {
+        self.code_repository = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>An object that described the state of Amazon Inspector scans for an account.</p>
+    pub fn set_code_repository(mut self, input: ::std::option::Option<crate::types::State>) -> Self {
+        self.code_repository = input;
+        self
+    }
+    /// <p>An object that described the state of Amazon Inspector scans for an account.</p>
+    pub fn get_code_repository(&self) -> &::std::option::Option<crate::types::State> {
+        &self.code_repository
+    }
     /// Consumes the builder and constructs a [`ResourceState`](crate::types::ResourceState).
     pub fn build(self) -> crate::types::ResourceState {
         crate::types::ResourceState {
@@ -113,6 +134,7 @@ impl ResourceStateBuilder {
             ecr: self.ecr,
             lambda: self.lambda,
             lambda_code: self.lambda_code,
+            code_repository: self.code_repository,
         }
     }
 }

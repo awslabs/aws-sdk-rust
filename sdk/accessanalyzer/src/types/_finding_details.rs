@@ -6,6 +6,8 @@
 pub enum FindingDetails {
     /// <p>The details for an external access analyzer finding.</p>
     ExternalAccessDetails(crate::types::ExternalAccessDetails),
+    /// <p>The details for an internal access analyzer finding. This contains information about access patterns identified within your Amazon Web Services organization or account.</p>
+    InternalAccessDetails(crate::types::InternalAccessDetails),
     /// <p>The details for an unused access analyzer finding with an unused IAM role finding type.</p>
     UnusedIamRoleDetails(crate::types::UnusedIamRoleDetails),
     /// <p>The details for an unused access analyzer finding with an unused IAM user access key finding type.</p>
@@ -37,6 +39,19 @@ impl FindingDetails {
     /// Returns true if this is a [`ExternalAccessDetails`](crate::types::FindingDetails::ExternalAccessDetails).
     pub fn is_external_access_details(&self) -> bool {
         self.as_external_access_details().is_ok()
+    }
+    /// Tries to convert the enum instance into [`InternalAccessDetails`](crate::types::FindingDetails::InternalAccessDetails), extracting the inner [`InternalAccessDetails`](crate::types::InternalAccessDetails).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_internal_access_details(&self) -> ::std::result::Result<&crate::types::InternalAccessDetails, &Self> {
+        if let FindingDetails::InternalAccessDetails(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`InternalAccessDetails`](crate::types::FindingDetails::InternalAccessDetails).
+    pub fn is_internal_access_details(&self) -> bool {
+        self.as_internal_access_details().is_ok()
     }
     /// Tries to convert the enum instance into [`UnusedIamRoleDetails`](crate::types::FindingDetails::UnusedIamRoleDetails), extracting the inner [`UnusedIamRoleDetails`](crate::types::UnusedIamRoleDetails).
     /// Returns `Err(&Self)` if it can't be converted.

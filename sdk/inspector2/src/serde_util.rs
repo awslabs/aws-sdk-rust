@@ -59,6 +59,21 @@ pub(crate) fn associate_member_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn conflict_exception_correct_errors(
+    mut builder: crate::types::error::builders::ConflictExceptionBuilder,
+) -> crate::types::error::builders::ConflictExceptionBuilder {
+    if builder.message.is_none() {
+        builder.message = Some(Default::default())
+    }
+    if builder.resource_id.is_none() {
+        builder.resource_id = Some(Default::default())
+    }
+    if builder.resource_type.is_none() {
+        builder.resource_type = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn resource_not_found_exception_correct_errors(
     mut builder: crate::types::error::builders::ResourceNotFoundExceptionBuilder,
 ) -> crate::types::error::builders::ResourceNotFoundExceptionBuilder {
@@ -94,6 +109,27 @@ pub(crate) fn cancel_findings_report_output_output_correct_errors(
 ) -> crate::operation::cancel_findings_report::builders::CancelFindingsReportOutputBuilder {
     if builder.report_id.is_none() {
         builder.report_id = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn create_code_security_integration_output_output_correct_errors(
+    mut builder: crate::operation::create_code_security_integration::builders::CreateCodeSecurityIntegrationOutputBuilder,
+) -> crate::operation::create_code_security_integration::builders::CreateCodeSecurityIntegrationOutputBuilder {
+    if builder.integration_arn.is_none() {
+        builder.integration_arn = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::IntegrationStatus>().ok()
+    }
+    builder
+}
+
+pub(crate) fn create_code_security_scan_configuration_output_output_correct_errors(
+    mut builder: crate::operation::create_code_security_scan_configuration::builders::CreateCodeSecurityScanConfigurationOutputBuilder,
+) -> crate::operation::create_code_security_scan_configuration::builders::CreateCodeSecurityScanConfigurationOutputBuilder {
+    if builder.scan_configuration_arn.is_none() {
+        builder.scan_configuration_arn = Some(Default::default())
     }
     builder
 }
@@ -143,21 +179,6 @@ pub(crate) fn disable_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn conflict_exception_correct_errors(
-    mut builder: crate::types::error::builders::ConflictExceptionBuilder,
-) -> crate::types::error::builders::ConflictExceptionBuilder {
-    if builder.message.is_none() {
-        builder.message = Some(Default::default())
-    }
-    if builder.resource_id.is_none() {
-        builder.resource_id = Some(Default::default())
-    }
-    if builder.resource_type.is_none() {
-        builder.resource_type = Some(Default::default())
-    }
-    builder
-}
-
 pub(crate) fn disable_delegated_admin_account_output_output_correct_errors(
     mut builder: crate::operation::disable_delegated_admin_account::builders::DisableDelegatedAdminAccountOutputBuilder,
 ) -> crate::operation::disable_delegated_admin_account::builders::DisableDelegatedAdminAccountOutputBuilder {
@@ -199,6 +220,33 @@ pub(crate) fn get_clusters_for_image_output_output_correct_errors(
 ) -> crate::operation::get_clusters_for_image::builders::GetClustersForImageOutputBuilder {
     if builder.cluster.is_none() {
         builder.cluster = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn get_code_security_integration_output_output_correct_errors(
+    mut builder: crate::operation::get_code_security_integration::builders::GetCodeSecurityIntegrationOutputBuilder,
+) -> crate::operation::get_code_security_integration::builders::GetCodeSecurityIntegrationOutputBuilder {
+    if builder.integration_arn.is_none() {
+        builder.integration_arn = Some(Default::default())
+    }
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.r#type.is_none() {
+        builder.r#type = "no value was set".parse::<crate::types::IntegrationType>().ok()
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::IntegrationStatus>().ok()
+    }
+    if builder.status_reason.is_none() {
+        builder.status_reason = Some(Default::default())
+    }
+    if builder.created_on.is_none() {
+        builder.created_on = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.last_update_on.is_none() {
+        builder.last_update_on = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
     }
     builder
 }
@@ -266,6 +314,18 @@ pub(crate) fn update_cis_scan_configuration_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn update_code_security_integration_output_output_correct_errors(
+    mut builder: crate::operation::update_code_security_integration::builders::UpdateCodeSecurityIntegrationOutputBuilder,
+) -> crate::operation::update_code_security_integration::builders::UpdateCodeSecurityIntegrationOutputBuilder {
+    if builder.integration_arn.is_none() {
+        builder.integration_arn = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::IntegrationStatus>().ok()
+    }
+    builder
+}
+
 pub(crate) fn update_filter_output_output_correct_errors(
     mut builder: crate::operation::update_filter::builders::UpdateFilterOutputBuilder,
 ) -> crate::operation::update_filter::builders::UpdateFilterOutputBuilder {
@@ -293,6 +353,15 @@ pub(crate) fn auto_enable_correct_errors(mut builder: crate::types::builders::Au
     }
     if builder.ecr.is_none() {
         builder.ecr = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn code_security_scan_configuration_correct_errors(
+    mut builder: crate::types::builders::CodeSecurityScanConfigurationBuilder,
+) -> crate::types::builders::CodeSecurityScanConfigurationBuilder {
+    if builder.rule_set_categories.is_none() {
+        builder.rule_set_categories = Some(Default::default())
     }
     builder
 }
@@ -397,6 +466,51 @@ pub(crate) fn cluster_information_correct_errors(
     builder
 }
 
+pub(crate) fn code_security_integration_summary_correct_errors(
+    mut builder: crate::types::builders::CodeSecurityIntegrationSummaryBuilder,
+) -> crate::types::builders::CodeSecurityIntegrationSummaryBuilder {
+    if builder.integration_arn.is_none() {
+        builder.integration_arn = Some(Default::default())
+    }
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.r#type.is_none() {
+        builder.r#type = "no value was set".parse::<crate::types::IntegrationType>().ok()
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::IntegrationStatus>().ok()
+    }
+    if builder.status_reason.is_none() {
+        builder.status_reason = Some(Default::default())
+    }
+    if builder.created_on.is_none() {
+        builder.created_on = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.last_update_on.is_none() {
+        builder.last_update_on = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
+pub(crate) fn code_security_scan_configuration_summary_correct_errors(
+    mut builder: crate::types::builders::CodeSecurityScanConfigurationSummaryBuilder,
+) -> crate::types::builders::CodeSecurityScanConfigurationSummaryBuilder {
+    if builder.scan_configuration_arn.is_none() {
+        builder.scan_configuration_arn = Some(Default::default())
+    }
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.owner_account_id.is_none() {
+        builder.owner_account_id = Some(Default::default())
+    }
+    if builder.rule_set_categories.is_none() {
+        builder.rule_set_categories = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn code_snippet_error_correct_errors(
     mut builder: crate::types::builders::CodeSnippetErrorBuilder,
 ) -> crate::types::builders::CodeSnippetErrorBuilder {
@@ -408,6 +522,15 @@ pub(crate) fn code_snippet_error_correct_errors(
     }
     if builder.error_message.is_none() {
         builder.error_message = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn continuous_integration_scan_configuration_correct_errors(
+    mut builder: crate::types::builders::ContinuousIntegrationScanConfigurationBuilder,
+) -> crate::types::builders::ContinuousIntegrationScanConfigurationBuilder {
+    if builder.supported_events.is_none() {
+        builder.supported_events = Some(Default::default())
     }
     builder
 }
@@ -615,6 +738,15 @@ pub(crate) fn aws_ecr_container_aggregation_response_correct_errors(
 ) -> crate::types::builders::AwsEcrContainerAggregationResponseBuilder {
     if builder.resource_id.is_none() {
         builder.resource_id = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn code_repository_aggregation_response_correct_errors(
+    mut builder: crate::types::builders::CodeRepositoryAggregationResponseBuilder,
+) -> crate::types::builders::CodeRepositoryAggregationResponseBuilder {
+    if builder.project_names.is_none() {
+        builder.project_names = Some(Default::default())
     }
     builder
 }
@@ -885,6 +1017,21 @@ pub(crate) fn code_line_correct_errors(mut builder: crate::types::builders::Code
     }
     if builder.line_number.is_none() {
         builder.line_number = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn code_repository_metadata_correct_errors(
+    mut builder: crate::types::builders::CodeRepositoryMetadataBuilder,
+) -> crate::types::builders::CodeRepositoryMetadataBuilder {
+    if builder.project_name.is_none() {
+        builder.project_name = Some(Default::default())
+    }
+    if builder.provider_type.is_none() {
+        builder.provider_type = Some(Default::default())
+    }
+    if builder.provider_type_visibility.is_none() {
+        builder.provider_type_visibility = Some(Default::default())
     }
     builder
 }

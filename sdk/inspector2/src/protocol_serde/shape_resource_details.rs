@@ -29,6 +29,10 @@ where
                                 crate::protocol_serde::shape_aws_lambda_function_details::de_aws_lambda_function_details(tokens)?,
                             );
                         }
+                        "codeRepository" => {
+                            builder = builder
+                                .set_code_repository(crate::protocol_serde::shape_code_repository_details::de_code_repository_details(tokens)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

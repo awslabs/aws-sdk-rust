@@ -47,13 +47,23 @@ pub(crate) mod shape_batch_update_automation_rules;
 
 pub(crate) mod shape_batch_update_findings;
 
+pub(crate) mod shape_batch_update_findings_v2;
+
 pub(crate) mod shape_batch_update_standards_control_associations;
+
+pub(crate) mod shape_connector_registrations_v2;
 
 pub(crate) mod shape_create_action_target;
 
+pub(crate) mod shape_create_aggregator_v2;
+
 pub(crate) mod shape_create_automation_rule;
 
+pub(crate) mod shape_create_automation_rule_v2;
+
 pub(crate) mod shape_create_configuration_policy;
+
+pub(crate) mod shape_create_connector_v2;
 
 pub(crate) mod shape_create_finding_aggregator;
 
@@ -61,11 +71,19 @@ pub(crate) mod shape_create_insight;
 
 pub(crate) mod shape_create_members;
 
+pub(crate) mod shape_create_ticket_v2;
+
 pub(crate) mod shape_decline_invitations;
 
 pub(crate) mod shape_delete_action_target;
 
+pub(crate) mod shape_delete_aggregator_v2;
+
+pub(crate) mod shape_delete_automation_rule_v2;
+
 pub(crate) mod shape_delete_configuration_policy;
+
+pub(crate) mod shape_delete_connector_v2;
 
 pub(crate) mod shape_delete_finding_aggregator;
 
@@ -83,6 +101,10 @@ pub(crate) mod shape_describe_organization_configuration;
 
 pub(crate) mod shape_describe_products;
 
+pub(crate) mod shape_describe_products_v2;
+
+pub(crate) mod shape_describe_security_hub_v2;
+
 pub(crate) mod shape_describe_standards;
 
 pub(crate) mod shape_describe_standards_controls;
@@ -92,6 +114,8 @@ pub(crate) mod shape_disable_import_findings_for_product;
 pub(crate) mod shape_disable_organization_admin_account;
 
 pub(crate) mod shape_disable_security_hub;
+
+pub(crate) mod shape_disable_security_hub_v2;
 
 pub(crate) mod shape_disassociate_from_administrator_account;
 
@@ -105,11 +129,19 @@ pub(crate) mod shape_enable_organization_admin_account;
 
 pub(crate) mod shape_enable_security_hub;
 
+pub(crate) mod shape_enable_security_hub_v2;
+
 pub(crate) mod shape_get_administrator_account;
+
+pub(crate) mod shape_get_aggregator_v2;
+
+pub(crate) mod shape_get_automation_rule_v2;
 
 pub(crate) mod shape_get_configuration_policy;
 
 pub(crate) mod shape_get_configuration_policy_association;
+
+pub(crate) mod shape_get_connector_v2;
 
 pub(crate) mod shape_get_enabled_standards;
 
@@ -117,7 +149,11 @@ pub(crate) mod shape_get_finding_aggregator;
 
 pub(crate) mod shape_get_finding_history;
 
+pub(crate) mod shape_get_finding_statistics_v2;
+
 pub(crate) mod shape_get_findings;
+
+pub(crate) mod shape_get_findings_v2;
 
 pub(crate) mod shape_get_insight_results;
 
@@ -129,15 +165,25 @@ pub(crate) mod shape_get_master_account;
 
 pub(crate) mod shape_get_members;
 
+pub(crate) mod shape_get_resources_statistics_v2;
+
+pub(crate) mod shape_get_resources_v2;
+
 pub(crate) mod shape_get_security_control_definition;
 
 pub(crate) mod shape_invite_members;
 
+pub(crate) mod shape_list_aggregators_v2;
+
 pub(crate) mod shape_list_automation_rules;
+
+pub(crate) mod shape_list_automation_rules_v2;
 
 pub(crate) mod shape_list_configuration_policies;
 
 pub(crate) mod shape_list_configuration_policy_associations;
+
+pub(crate) mod shape_list_connectors_v2;
 
 pub(crate) mod shape_list_enabled_products_for_import;
 
@@ -165,7 +211,13 @@ pub(crate) mod shape_untag_resource;
 
 pub(crate) mod shape_update_action_target;
 
+pub(crate) mod shape_update_aggregator_v2;
+
+pub(crate) mod shape_update_automation_rule_v2;
+
 pub(crate) mod shape_update_configuration_policy;
+
+pub(crate) mod shape_update_connector_v2;
 
 pub(crate) mod shape_update_finding_aggregator;
 
@@ -215,19 +267,33 @@ pub(crate) mod shape_batch_update_automation_rules_input;
 
 pub(crate) mod shape_batch_update_findings_input;
 
+pub(crate) mod shape_batch_update_findings_v2_input;
+
 pub(crate) mod shape_batch_update_standards_control_associations_input;
+
+pub(crate) mod shape_conflict_exception;
+
+pub(crate) mod shape_connector_registrations_v2_input;
 
 pub(crate) mod shape_create_action_target_input;
 
+pub(crate) mod shape_create_aggregator_v2_input;
+
 pub(crate) mod shape_create_automation_rule_input;
 
+pub(crate) mod shape_create_automation_rule_v2_input;
+
 pub(crate) mod shape_create_configuration_policy_input;
+
+pub(crate) mod shape_create_connector_v2_input;
 
 pub(crate) mod shape_create_finding_aggregator_input;
 
 pub(crate) mod shape_create_insight_input;
 
 pub(crate) mod shape_create_members_input;
+
+pub(crate) mod shape_create_ticket_v2_input;
 
 pub(crate) mod shape_decline_invitations_input;
 
@@ -247,19 +313,31 @@ pub(crate) mod shape_enable_organization_admin_account_input;
 
 pub(crate) mod shape_enable_security_hub_input;
 
+pub(crate) mod shape_enable_security_hub_v2_input;
+
 pub(crate) mod shape_get_configuration_policy_association_input;
 
 pub(crate) mod shape_get_enabled_standards_input;
 
 pub(crate) mod shape_get_finding_history_input;
 
+pub(crate) mod shape_get_finding_statistics_v2_input;
+
 pub(crate) mod shape_get_findings_input;
+
+pub(crate) mod shape_get_findings_v2_input;
 
 pub(crate) mod shape_get_insights_input;
 
 pub(crate) mod shape_get_members_input;
 
+pub(crate) mod shape_get_resources_statistics_v2_input;
+
+pub(crate) mod shape_get_resources_v2_input;
+
 pub(crate) mod shape_internal_exception;
+
+pub(crate) mod shape_internal_server_exception;
 
 pub(crate) mod shape_invalid_access_exception;
 
@@ -283,9 +361,17 @@ pub(crate) mod shape_start_configuration_policy_disassociation_input;
 
 pub(crate) mod shape_tag_resource_input;
 
+pub(crate) mod shape_throttling_exception;
+
 pub(crate) mod shape_update_action_target_input;
 
+pub(crate) mod shape_update_aggregator_v2_input;
+
+pub(crate) mod shape_update_automation_rule_v2_input;
+
 pub(crate) mod shape_update_configuration_policy_input;
+
+pub(crate) mod shape_update_connector_v2_input;
 
 pub(crate) mod shape_update_finding_aggregator_input;
 
@@ -301,15 +387,23 @@ pub(crate) mod shape_update_security_hub_configuration_input;
 
 pub(crate) mod shape_update_standards_control_input;
 
+pub(crate) mod shape_validation_exception;
+
 pub(crate) mod shape_account_details;
 
 pub(crate) mod shape_action_target_list;
 
 pub(crate) mod shape_admin_accounts;
 
+pub(crate) mod shape_aggregator_v2_list;
+
 pub(crate) mod shape_association_filters;
 
 pub(crate) mod shape_automation_rules_action;
+
+pub(crate) mod shape_automation_rules_action_list_v2;
+
+pub(crate) mod shape_automation_rules_action_v2;
 
 pub(crate) mod shape_automation_rules_arns_list;
 
@@ -318,6 +412,8 @@ pub(crate) mod shape_automation_rules_config_list;
 pub(crate) mod shape_automation_rules_finding_filters;
 
 pub(crate) mod shape_automation_rules_metadata_list;
+
+pub(crate) mod shape_automation_rules_metadata_list_v2;
 
 pub(crate) mod shape_aws_security_finding;
 
@@ -331,6 +427,10 @@ pub(crate) mod shape_aws_security_finding_list;
 
 pub(crate) mod shape_batch_update_findings_unprocessed_findings_list;
 
+pub(crate) mod shape_batch_update_findings_v2_processed_findings_list;
+
+pub(crate) mod shape_batch_update_findings_v2_unprocessed_findings_list;
+
 pub(crate) mod shape_configuration_policy_association;
 
 pub(crate) mod shape_configuration_policy_association_list;
@@ -339,9 +439,19 @@ pub(crate) mod shape_configuration_policy_association_summary_list;
 
 pub(crate) mod shape_configuration_policy_summary_list;
 
+pub(crate) mod shape_connector_summary_list;
+
+pub(crate) mod shape_criteria;
+
 pub(crate) mod shape_finding_aggregator_list;
 
 pub(crate) mod shape_finding_history_record_list;
+
+pub(crate) mod shape_group_by_results;
+
+pub(crate) mod shape_group_by_rule;
+
+pub(crate) mod shape_health_check;
 
 pub(crate) mod shape_import_findings_error_list;
 
@@ -357,6 +467,12 @@ pub(crate) mod shape_member_list;
 
 pub(crate) mod shape_note_update;
 
+pub(crate) mod shape_ocsf_finding_filters;
+
+pub(crate) mod shape_ocsf_finding_identifier;
+
+pub(crate) mod shape_ocsf_findings_list;
+
 pub(crate) mod shape_organization_configuration;
 
 pub(crate) mod shape_parameter_configuration;
@@ -367,7 +483,21 @@ pub(crate) mod shape_product_subscription_arn_list;
 
 pub(crate) mod shape_products_list;
 
+pub(crate) mod shape_products_v2_list;
+
+pub(crate) mod shape_provider_configuration;
+
+pub(crate) mod shape_provider_detail;
+
+pub(crate) mod shape_provider_update_configuration;
+
 pub(crate) mod shape_related_finding;
+
+pub(crate) mod shape_resource_group_by_rule;
+
+pub(crate) mod shape_resources;
+
+pub(crate) mod shape_resources_filters;
 
 pub(crate) mod shape_result_list;
 
@@ -423,27 +553,43 @@ pub(crate) mod shape_action_target;
 
 pub(crate) mod shape_admin_account;
 
+pub(crate) mod shape_aggregator_v2;
+
 pub(crate) mod shape_automation_rules_config;
 
 pub(crate) mod shape_automation_rules_finding_fields_update;
 
+pub(crate) mod shape_automation_rules_finding_fields_update_v2;
+
 pub(crate) mod shape_automation_rules_metadata;
 
+pub(crate) mod shape_automation_rules_metadata_v2;
+
 pub(crate) mod shape_batch_update_findings_unprocessed_finding;
+
+pub(crate) mod shape_batch_update_findings_v2_processed_finding;
+
+pub(crate) mod shape_batch_update_findings_v2_unprocessed_finding;
 
 pub(crate) mod shape_boolean_filter;
 
 pub(crate) mod shape_compliance;
 
+pub(crate) mod shape_composite_filter;
+
 pub(crate) mod shape_configuration_policy_association_summary;
 
 pub(crate) mod shape_configuration_policy_summary;
+
+pub(crate) mod shape_connector_summary;
 
 pub(crate) mod shape_customizable_properties;
 
 pub(crate) mod shape_date_filter;
 
 pub(crate) mod shape_detection;
+
+pub(crate) mod shape_external_integration_configuration;
 
 pub(crate) mod shape_finding_aggregator;
 
@@ -453,6 +599,8 @@ pub(crate) mod shape_finding_provider_fields;
 
 pub(crate) mod shape_generator_details;
 
+pub(crate) mod shape_group_by_result;
+
 pub(crate) mod shape_import_findings_error;
 
 pub(crate) mod shape_insight;
@@ -460,6 +608,12 @@ pub(crate) mod shape_insight;
 pub(crate) mod shape_insight_result_value_list;
 
 pub(crate) mod shape_ip_filter;
+
+pub(crate) mod shape_jira_cloud_detail;
+
+pub(crate) mod shape_jira_cloud_provider_configuration;
+
+pub(crate) mod shape_jira_cloud_update_configuration;
 
 pub(crate) mod shape_keyword_filter;
 
@@ -487,15 +641,25 @@ pub(crate) mod shape_process_details;
 
 pub(crate) mod shape_product;
 
+pub(crate) mod shape_product_v2;
+
 pub(crate) mod shape_remediation;
 
 pub(crate) mod shape_resource;
+
+pub(crate) mod shape_resource_result;
+
+pub(crate) mod shape_resources_composite_filter;
 
 pub(crate) mod shape_result;
 
 pub(crate) mod shape_security_control;
 
 pub(crate) mod shape_security_hub_policy;
+
+pub(crate) mod shape_service_now_detail;
+
+pub(crate) mod shape_service_now_provider_configuration;
 
 pub(crate) mod shape_severity;
 
@@ -533,9 +697,13 @@ pub(crate) mod shape_action_list;
 
 pub(crate) mod shape_associated_standard;
 
+pub(crate) mod shape_automation_rules_action_type_list_v2;
+
 pub(crate) mod shape_aws_api_call_action;
 
 pub(crate) mod shape_category_list;
+
+pub(crate) mod shape_composite_filter_list;
 
 pub(crate) mod shape_cvss;
 
@@ -557,9 +725,13 @@ pub(crate) mod shape_finding_history_updates_list;
 
 pub(crate) mod shape_finding_provider_severity;
 
+pub(crate) mod shape_group_by_values;
+
 pub(crate) mod shape_insight_result_value;
 
 pub(crate) mod shape_integration_type_list;
+
+pub(crate) mod shape_integration_v2_type_list;
 
 pub(crate) mod shape_malware_list;
 
@@ -569,6 +741,16 @@ pub(crate) mod shape_network_header;
 
 pub(crate) mod shape_network_path_list;
 
+pub(crate) mod shape_ocsf_boolean_filter;
+
+pub(crate) mod shape_ocsf_date_filter;
+
+pub(crate) mod shape_ocsf_map_filter;
+
+pub(crate) mod shape_ocsf_number_filter;
+
+pub(crate) mod shape_ocsf_string_filter;
+
 pub(crate) mod shape_parameter_definition;
 
 pub(crate) mod shape_parameters;
@@ -576,6 +758,8 @@ pub(crate) mod shape_parameters;
 pub(crate) mod shape_port_probe_action;
 
 pub(crate) mod shape_port_range;
+
+pub(crate) mod shape_provider_summary;
 
 pub(crate) mod shape_recommendation;
 
@@ -585,7 +769,19 @@ pub(crate) mod shape_related_requirements_list;
 
 pub(crate) mod shape_resource_details;
 
+pub(crate) mod shape_resource_findings_summary_list;
+
 pub(crate) mod shape_resource_list;
+
+pub(crate) mod shape_resource_tag_list;
+
+pub(crate) mod shape_resources_date_filter;
+
+pub(crate) mod shape_resources_map_filter;
+
+pub(crate) mod shape_resources_number_filter;
+
+pub(crate) mod shape_resources_string_filter;
 
 pub(crate) mod shape_security_control_parameter;
 
@@ -628,6 +824,8 @@ pub(crate) mod shape_actor;
 pub(crate) mod shape_adjustment;
 
 pub(crate) mod shape_associated_standards_list;
+
+pub(crate) mod shape_automation_rules_action_type_object_v2;
 
 pub(crate) mod shape_aws_amazon_mq_broker_details;
 
@@ -843,6 +1041,8 @@ pub(crate) mod shape_enabled_security_control_identifier_list;
 
 pub(crate) mod shape_finding_history_update;
 
+pub(crate) mod shape_group_by_value;
+
 pub(crate) mod shape_indicator;
 
 pub(crate) mod shape_ip_filter_list;
@@ -858,6 +1058,10 @@ pub(crate) mod shape_network_path_component_details;
 pub(crate) mod shape_number_filter_list;
 
 pub(crate) mod shape_port_probe_detail;
+
+pub(crate) mod shape_resource_findings_summary;
+
+pub(crate) mod shape_resource_tag;
 
 pub(crate) mod shape_security_control_custom_parameter;
 
@@ -1353,9 +1557,21 @@ pub(crate) mod shape_network_endpoints_list;
 
 pub(crate) mod shape_network_geo_location;
 
+pub(crate) mod shape_ocsf_boolean_filter_list;
+
+pub(crate) mod shape_ocsf_date_filter_list;
+
+pub(crate) mod shape_ocsf_map_filter_list;
+
+pub(crate) mod shape_ocsf_number_filter_list;
+
+pub(crate) mod shape_ocsf_string_filter_list;
+
 pub(crate) mod shape_port_probe_detail_list;
 
 pub(crate) mod shape_propagating_vgw_set_details;
+
+pub(crate) mod shape_resource_severity_breakdown;
 
 pub(crate) mod shape_route_set_details;
 

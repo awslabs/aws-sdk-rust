@@ -22,7 +22,8 @@ impl crate::operation::get_finding_history::builders::GetFindingHistoryInputBuil
 }
 /// Fluent builder constructing a request to `GetFindingHistory`.
 ///
-/// <p>Returns history for a Security Hub finding in the last 90 days. The history includes changes made to any fields in the Amazon Web Services Security Finding Format (ASFF).</p>
+/// <p>Returns the history of a Security Hub finding for the past 90 days. The history includes changes made to any fields in the Amazon Web Services Security Finding Format (ASFF) except top-level timestamp fields, such as the <code>CreatedAt</code> and <code>UpdatedAt</code> fields.</p>
+/// <p>This operation might return fewer results than the maximum number of results (<code>MaxResults</code>) specified in a request, even when more results are available. If this occurs, the response includes a <code>NextToken</code> value, which you should use to retrieve the next set of results in the response. The presence of a <code>NextToken</code> value in a response doesn't necessarily indicate that the results are incomplete. However, you should continue to specify a <code>NextToken</code> value until you receive a response that doesn't include this value.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetFindingHistoryFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

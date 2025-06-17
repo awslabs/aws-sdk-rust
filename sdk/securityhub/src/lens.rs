@@ -19,6 +19,16 @@ pub(crate) fn reflens_describe_products_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_describe_products_v2_output_output_next_token(
+    input: &crate::operation::describe_products_v2::DescribeProductsV2Output,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_describe_standards_output_output_next_token(
     input: &crate::operation::describe_standards::DescribeStandardsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -69,8 +79,38 @@ pub(crate) fn reflens_get_findings_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_get_findings_v2_output_output_next_token(
+    input: &crate::operation::get_findings_v2::GetFindingsV2Output,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_get_insights_output_output_next_token(
     input: &crate::operation::get_insights::GetInsightsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_get_resources_v2_output_output_next_token(
+    input: &crate::operation::get_resources_v2::GetResourcesV2Output,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_aggregators_v2_output_output_next_token(
+    input: &crate::operation::list_aggregators_v2::ListAggregatorsV2Output,
 ) -> ::std::option::Option<&::std::string::String> {
     let input = match &input.next_token {
         ::std::option::Option::None => return ::std::option::Option::None,
@@ -183,6 +223,13 @@ pub(crate) fn lens_describe_products_output_output_products(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn lens_describe_products_v2_output_output_products_v2(
+    input: crate::operation::describe_products_v2::DescribeProductsV2Output,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::ProductV2>> {
+    let input = input.products_v2?;
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn lens_describe_standards_output_output_standards(
     input: crate::operation::describe_standards::DescribeStandardsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::Standard>> {
@@ -218,10 +265,31 @@ pub(crate) fn lens_get_findings_output_output_findings(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn lens_get_findings_v2_output_output_findings(
+    input: crate::operation::get_findings_v2::GetFindingsV2Output,
+) -> ::std::option::Option<::std::vec::Vec<::aws_smithy_types::Document>> {
+    let input = input.findings?;
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn lens_get_insights_output_output_insights(
     input: crate::operation::get_insights::GetInsightsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::Insight>> {
     let input = input.insights?;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_get_resources_v2_output_output_resources(
+    input: crate::operation::get_resources_v2::GetResourcesV2Output,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::ResourceResult>> {
+    let input = input.resources?;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_aggregators_v2_output_output_aggregators_v2(
+    input: crate::operation::list_aggregators_v2::ListAggregatorsV2Output,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::AggregatorV2>> {
+    let input = input.aggregators_v2?;
     ::std::option::Option::Some(input)
 }
 

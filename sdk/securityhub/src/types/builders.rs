@@ -23,11 +23,33 @@ pub use crate::types::_ip_filter::IpFilterBuilder;
 
 pub use crate::types::_note_update::NoteUpdateBuilder;
 
+pub use crate::types::_jira_cloud_update_configuration::JiraCloudUpdateConfigurationBuilder;
+
 pub use crate::types::_security_hub_policy::SecurityHubPolicyBuilder;
 
 pub use crate::types::_security_controls_configuration::SecurityControlsConfigurationBuilder;
 
 pub use crate::types::_security_control_custom_parameter::SecurityControlCustomParameterBuilder;
+
+pub use crate::types::_automation_rules_action_v2::AutomationRulesActionV2Builder;
+
+pub use crate::types::_external_integration_configuration::ExternalIntegrationConfigurationBuilder;
+
+pub use crate::types::_automation_rules_finding_fields_update_v2::AutomationRulesFindingFieldsUpdateV2Builder;
+
+pub use crate::types::_ocsf_finding_filters::OcsfFindingFiltersBuilder;
+
+pub use crate::types::_composite_filter::CompositeFilterBuilder;
+
+pub use crate::types::_ocsf_map_filter::OcsfMapFilterBuilder;
+
+pub use crate::types::_ocsf_number_filter::OcsfNumberFilterBuilder;
+
+pub use crate::types::_ocsf_boolean_filter::OcsfBooleanFilterBuilder;
+
+pub use crate::types::_ocsf_date_filter::OcsfDateFilterBuilder;
+
+pub use crate::types::_ocsf_string_filter::OcsfStringFilterBuilder;
 
 pub use crate::types::_standards_control_association_summary::StandardsControlAssociationSummaryBuilder;
 
@@ -59,21 +81,61 @@ pub use crate::types::_invitation::InvitationBuilder;
 
 pub use crate::types::_finding_aggregator::FindingAggregatorBuilder;
 
+pub use crate::types::_connector_summary::ConnectorSummaryBuilder;
+
+pub use crate::types::_provider_summary::ProviderSummaryBuilder;
+
 pub use crate::types::_configuration_policy_association_summary::ConfigurationPolicyAssociationSummaryBuilder;
 
 pub use crate::types::_association_filters::AssociationFiltersBuilder;
 
 pub use crate::types::_configuration_policy_summary::ConfigurationPolicySummaryBuilder;
 
+pub use crate::types::_automation_rules_metadata_v2::AutomationRulesMetadataV2Builder;
+
+pub use crate::types::_automation_rules_action_type_object_v2::AutomationRulesActionTypeObjectV2Builder;
+
 pub use crate::types::_automation_rules_metadata::AutomationRulesMetadataBuilder;
 
+pub use crate::types::_aggregator_v2::AggregatorV2Builder;
+
 pub use crate::types::_result::ResultBuilder;
+
+pub use crate::types::_resource_result::ResourceResultBuilder;
+
+pub use crate::types::_resource_tag::ResourceTagBuilder;
+
+pub use crate::types::_resource_findings_summary::ResourceFindingsSummaryBuilder;
+
+pub use crate::types::_resource_severity_breakdown::ResourceSeverityBreakdownBuilder;
+
+pub use crate::types::_sort_criterion::SortCriterionBuilder;
+
+pub use crate::types::_resources_filters::ResourcesFiltersBuilder;
+
+pub use crate::types::_resources_composite_filter::ResourcesCompositeFilterBuilder;
+
+pub use crate::types::_resources_map_filter::ResourcesMapFilterBuilder;
+
+pub use crate::types::_resources_number_filter::ResourcesNumberFilterBuilder;
+
+pub use crate::types::_resources_date_filter::ResourcesDateFilterBuilder;
+
+pub use crate::types::_resources_string_filter::ResourcesStringFilterBuilder;
+
+pub use crate::types::_group_by_result::GroupByResultBuilder;
+
+pub use crate::types::_group_by_value::GroupByValueBuilder;
+
+pub use crate::types::_resource_group_by_rule::ResourceGroupByRuleBuilder;
 
 pub use crate::types::_insight::InsightBuilder;
 
 pub use crate::types::_insight_results::InsightResultsBuilder;
 
 pub use crate::types::_insight_result_value::InsightResultValueBuilder;
+
+pub use crate::types::_group_by_rule::GroupByRuleBuilder;
 
 pub use crate::types::_aws_security_finding::AwsSecurityFindingBuilder;
 
@@ -1293,8 +1355,6 @@ pub use crate::types::_recommendation::RecommendationBuilder;
 
 pub use crate::types::_severity::SeverityBuilder;
 
-pub use crate::types::_sort_criterion::SortCriterionBuilder;
-
 pub use crate::types::_finding_history_record::FindingHistoryRecordBuilder;
 
 pub use crate::types::_finding_history_update::FindingHistoryUpdateBuilder;
@@ -1307,17 +1367,29 @@ pub use crate::types::_standards_subscription::StandardsSubscriptionBuilder;
 
 pub use crate::types::_standards_status_reason::StandardsStatusReasonBuilder;
 
+pub use crate::types::_service_now_detail::ServiceNowDetailBuilder;
+
+pub use crate::types::_jira_cloud_detail::JiraCloudDetailBuilder;
+
+pub use crate::types::_health_check::HealthCheckBuilder;
+
 pub use crate::types::_standards_control::StandardsControlBuilder;
 
 pub use crate::types::_standard::StandardBuilder;
 
 pub use crate::types::_standards_managed_by::StandardsManagedByBuilder;
 
+pub use crate::types::_product_v2::ProductV2Builder;
+
 pub use crate::types::_product::ProductBuilder;
 
 pub use crate::types::_action_target::ActionTargetBuilder;
 
 pub use crate::types::_account_details::AccountDetailsBuilder;
+
+pub use crate::types::_service_now_provider_configuration::ServiceNowProviderConfigurationBuilder;
+
+pub use crate::types::_jira_cloud_provider_configuration::JiraCloudProviderConfigurationBuilder;
 
 pub use crate::types::_automation_rules_action::AutomationRulesActionBuilder;
 
@@ -1332,6 +1404,12 @@ pub use crate::types::_automation_rules_finding_filters::AutomationRulesFindingF
 pub use crate::types::_unprocessed_standards_control_association_update::UnprocessedStandardsControlAssociationUpdateBuilder;
 
 pub use crate::types::_standards_control_association_update::StandardsControlAssociationUpdateBuilder;
+
+pub use crate::types::_batch_update_findings_v2_unprocessed_finding::BatchUpdateFindingsV2UnprocessedFindingBuilder;
+
+pub use crate::types::_ocsf_finding_identifier::OcsfFindingIdentifierBuilder;
+
+pub use crate::types::_batch_update_findings_v2_processed_finding::BatchUpdateFindingsV2ProcessedFindingBuilder;
 
 pub use crate::types::_batch_update_findings_unprocessed_finding::BatchUpdateFindingsUnprocessedFindingBuilder;
 

@@ -37,17 +37,32 @@ pub mod batch_update_automation_rules;
 /// Types for the `BatchUpdateFindings` operation.
 pub mod batch_update_findings;
 
+/// Types for the `BatchUpdateFindingsV2` operation.
+pub mod batch_update_findings_v2;
+
 /// Types for the `BatchUpdateStandardsControlAssociations` operation.
 pub mod batch_update_standards_control_associations;
+
+/// Types for the `ConnectorRegistrationsV2` operation.
+pub mod connector_registrations_v2;
 
 /// Types for the `CreateActionTarget` operation.
 pub mod create_action_target;
 
+/// Types for the `CreateAggregatorV2` operation.
+pub mod create_aggregator_v2;
+
 /// Types for the `CreateAutomationRule` operation.
 pub mod create_automation_rule;
 
+/// Types for the `CreateAutomationRuleV2` operation.
+pub mod create_automation_rule_v2;
+
 /// Types for the `CreateConfigurationPolicy` operation.
 pub mod create_configuration_policy;
+
+/// Types for the `CreateConnectorV2` operation.
+pub mod create_connector_v2;
 
 /// Types for the `CreateFindingAggregator` operation.
 pub mod create_finding_aggregator;
@@ -58,14 +73,26 @@ pub mod create_insight;
 /// Types for the `CreateMembers` operation.
 pub mod create_members;
 
+/// Types for the `CreateTicketV2` operation.
+pub mod create_ticket_v2;
+
 /// Types for the `DeclineInvitations` operation.
 pub mod decline_invitations;
 
 /// Types for the `DeleteActionTarget` operation.
 pub mod delete_action_target;
 
+/// Types for the `DeleteAggregatorV2` operation.
+pub mod delete_aggregator_v2;
+
+/// Types for the `DeleteAutomationRuleV2` operation.
+pub mod delete_automation_rule_v2;
+
 /// Types for the `DeleteConfigurationPolicy` operation.
 pub mod delete_configuration_policy;
+
+/// Types for the `DeleteConnectorV2` operation.
+pub mod delete_connector_v2;
 
 /// Types for the `DeleteFindingAggregator` operation.
 pub mod delete_finding_aggregator;
@@ -91,6 +118,12 @@ pub mod describe_organization_configuration;
 /// Types for the `DescribeProducts` operation.
 pub mod describe_products;
 
+/// Types for the `DescribeProductsV2` operation.
+pub mod describe_products_v2;
+
+/// Types for the `DescribeSecurityHubV2` operation.
+pub mod describe_security_hub_v2;
+
 /// Types for the `DescribeStandards` operation.
 pub mod describe_standards;
 
@@ -105,6 +138,9 @@ pub mod disable_organization_admin_account;
 
 /// Types for the `DisableSecurityHub` operation.
 pub mod disable_security_hub;
+
+/// Types for the `DisableSecurityHubV2` operation.
+pub mod disable_security_hub_v2;
 
 /// Types for the `DisassociateFromAdministratorAccount` operation.
 pub mod disassociate_from_administrator_account;
@@ -124,14 +160,26 @@ pub mod enable_organization_admin_account;
 /// Types for the `EnableSecurityHub` operation.
 pub mod enable_security_hub;
 
+/// Types for the `EnableSecurityHubV2` operation.
+pub mod enable_security_hub_v2;
+
 /// Types for the `GetAdministratorAccount` operation.
 pub mod get_administrator_account;
+
+/// Types for the `GetAggregatorV2` operation.
+pub mod get_aggregator_v2;
+
+/// Types for the `GetAutomationRuleV2` operation.
+pub mod get_automation_rule_v2;
 
 /// Types for the `GetConfigurationPolicy` operation.
 pub mod get_configuration_policy;
 
 /// Types for the `GetConfigurationPolicyAssociation` operation.
 pub mod get_configuration_policy_association;
+
+/// Types for the `GetConnectorV2` operation.
+pub mod get_connector_v2;
 
 /// Types for the `GetEnabledStandards` operation.
 pub mod get_enabled_standards;
@@ -142,8 +190,14 @@ pub mod get_finding_aggregator;
 /// Types for the `GetFindingHistory` operation.
 pub mod get_finding_history;
 
+/// Types for the `GetFindingStatisticsV2` operation.
+pub mod get_finding_statistics_v2;
+
 /// Types for the `GetFindings` operation.
 pub mod get_findings;
+
+/// Types for the `GetFindingsV2` operation.
+pub mod get_findings_v2;
 
 /// Types for the `GetInsightResults` operation.
 pub mod get_insight_results;
@@ -160,20 +214,35 @@ pub mod get_master_account;
 /// Types for the `GetMembers` operation.
 pub mod get_members;
 
+/// Types for the `GetResourcesStatisticsV2` operation.
+pub mod get_resources_statistics_v2;
+
+/// Types for the `GetResourcesV2` operation.
+pub mod get_resources_v2;
+
 /// Types for the `GetSecurityControlDefinition` operation.
 pub mod get_security_control_definition;
 
 /// Types for the `InviteMembers` operation.
 pub mod invite_members;
 
+/// Types for the `ListAggregatorsV2` operation.
+pub mod list_aggregators_v2;
+
 /// Types for the `ListAutomationRules` operation.
 pub mod list_automation_rules;
+
+/// Types for the `ListAutomationRulesV2` operation.
+pub mod list_automation_rules_v2;
 
 /// Types for the `ListConfigurationPolicies` operation.
 pub mod list_configuration_policies;
 
 /// Types for the `ListConfigurationPolicyAssociations` operation.
 pub mod list_configuration_policy_associations;
+
+/// Types for the `ListConnectorsV2` operation.
+pub mod list_connectors_v2;
 
 /// Types for the `ListEnabledProductsForImport` operation.
 pub mod list_enabled_products_for_import;
@@ -214,8 +283,17 @@ pub mod untag_resource;
 /// Types for the `UpdateActionTarget` operation.
 pub mod update_action_target;
 
+/// Types for the `UpdateAggregatorV2` operation.
+pub mod update_aggregator_v2;
+
+/// Types for the `UpdateAutomationRuleV2` operation.
+pub mod update_automation_rule_v2;
+
 /// Types for the `UpdateConfigurationPolicy` operation.
 pub mod update_configuration_policy;
+
+/// Types for the `UpdateConnectorV2` operation.
+pub mod update_connector_v2;
 
 /// Types for the `UpdateFindingAggregator` operation.
 pub mod update_finding_aggregator;

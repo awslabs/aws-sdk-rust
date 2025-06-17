@@ -22,7 +22,7 @@ impl crate::operation::create_custom_model::builders::CreateCustomModelInputBuil
 }
 /// Fluent builder constructing a request to `CreateCustomModel`.
 ///
-/// <p>Creates a new custom model in Amazon Bedrock from an existing SageMaker AI-trained Amazon Nova model stored in an Amazon-managed Amazon S3 bucket. After the model is active, you can use it for inference.</p>
+/// <p>Creates a new custom model in Amazon Bedrock. After the model is active, you can use it for inference.</p>
 /// <p>To use the model for inference, you must purchase Provisioned Throughput for it. You can't use On-demand inference with these custom models. For more information about Provisioned Throughput, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/prov-throughput.html">Provisioned Throughput</a>.</p>
 /// <p>The model appears in <code>ListCustomModels</code> with a <code>customizationType</code> of <code>imported</code>. To track the status of the new model, you use the <code>GetCustomModel</code> API operation. The model can be in the following states:</p>
 /// <ul>
@@ -33,9 +33,6 @@ impl crate::operation::create_custom_model::builders::CreateCustomModelInputBuil
 /// <li>
 /// <p><code>Failed</code> - Creation process encountered an error</p></li>
 /// </ul>
-/// <p>For more information about creating custom models, including specific model requirements, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/create-custom-model-from-existing.html">Import a SageMaker AI-trained Amazon Nova model</a> in the Amazon Bedrock User Guide.</p><note>
-/// <p>You use the <code>CreateCustomModel</code> API to import only SageMaker AI-trained Amazon Nova models. To import open-source models, you use the <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_CreateModelImportJob.html">CreateModelImportJob</a>.</p>
-/// </note>
 /// <p><b>Related APIs</b></p>
 /// <ul>
 /// <li>
@@ -144,17 +141,17 @@ impl CreateCustomModelFluentBuilder {
     pub fn get_model_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_model_name()
     }
-    /// <p>The data source for the model. The Amazon S3 URI in the model source must be for the Amazon-managed Amazon S3 bucket containing your model artifacts. SageMaker AI creates this bucket when you run your first SageMaker AI training job.</p>
+    /// <p>The data source for the model. The Amazon S3 URI in the model source must be for the Amazon-managed Amazon S3 bucket containing your model artifacts.</p>
     pub fn model_source_config(mut self, input: crate::types::ModelDataSource) -> Self {
         self.inner = self.inner.model_source_config(input);
         self
     }
-    /// <p>The data source for the model. The Amazon S3 URI in the model source must be for the Amazon-managed Amazon S3 bucket containing your model artifacts. SageMaker AI creates this bucket when you run your first SageMaker AI training job.</p>
+    /// <p>The data source for the model. The Amazon S3 URI in the model source must be for the Amazon-managed Amazon S3 bucket containing your model artifacts.</p>
     pub fn set_model_source_config(mut self, input: ::std::option::Option<crate::types::ModelDataSource>) -> Self {
         self.inner = self.inner.set_model_source_config(input);
         self
     }
-    /// <p>The data source for the model. The Amazon S3 URI in the model source must be for the Amazon-managed Amazon S3 bucket containing your model artifacts. SageMaker AI creates this bucket when you run your first SageMaker AI training job.</p>
+    /// <p>The data source for the model. The Amazon S3 URI in the model source must be for the Amazon-managed Amazon S3 bucket containing your model artifacts.</p>
     pub fn get_model_source_config(&self) -> &::std::option::Option<crate::types::ModelDataSource> {
         self.inner.get_model_source_config()
     }

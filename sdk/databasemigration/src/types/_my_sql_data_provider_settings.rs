@@ -12,6 +12,10 @@ pub struct MySqlDataProviderSettings {
     pub ssl_mode: ::std::option::Option<crate::types::DmsSslModeValue>,
     /// <p>The Amazon Resource Name (ARN) of the certificate used for SSL connection.</p>
     pub certificate_arn: ::std::option::Option<::std::string::String>,
+    /// <p>The path for the Amazon S3 bucket that the application uses for accessing the user-defined schema.</p>
+    pub s3_path: ::std::option::Option<::std::string::String>,
+    /// <p>The ARN for the role the application uses to access its Amazon S3 bucket.</p>
+    pub s3_access_role_arn: ::std::option::Option<::std::string::String>,
 }
 impl MySqlDataProviderSettings {
     /// <p>The name of the MySQL server.</p>
@@ -30,6 +34,14 @@ impl MySqlDataProviderSettings {
     pub fn certificate_arn(&self) -> ::std::option::Option<&str> {
         self.certificate_arn.as_deref()
     }
+    /// <p>The path for the Amazon S3 bucket that the application uses for accessing the user-defined schema.</p>
+    pub fn s3_path(&self) -> ::std::option::Option<&str> {
+        self.s3_path.as_deref()
+    }
+    /// <p>The ARN for the role the application uses to access its Amazon S3 bucket.</p>
+    pub fn s3_access_role_arn(&self) -> ::std::option::Option<&str> {
+        self.s3_access_role_arn.as_deref()
+    }
 }
 impl MySqlDataProviderSettings {
     /// Creates a new builder-style object to manufacture [`MySqlDataProviderSettings`](crate::types::MySqlDataProviderSettings).
@@ -46,6 +58,8 @@ pub struct MySqlDataProviderSettingsBuilder {
     pub(crate) port: ::std::option::Option<i32>,
     pub(crate) ssl_mode: ::std::option::Option<crate::types::DmsSslModeValue>,
     pub(crate) certificate_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) s3_path: ::std::option::Option<::std::string::String>,
+    pub(crate) s3_access_role_arn: ::std::option::Option<::std::string::String>,
 }
 impl MySqlDataProviderSettingsBuilder {
     /// <p>The name of the MySQL server.</p>
@@ -104,6 +118,34 @@ impl MySqlDataProviderSettingsBuilder {
     pub fn get_certificate_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.certificate_arn
     }
+    /// <p>The path for the Amazon S3 bucket that the application uses for accessing the user-defined schema.</p>
+    pub fn s3_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.s3_path = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The path for the Amazon S3 bucket that the application uses for accessing the user-defined schema.</p>
+    pub fn set_s3_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.s3_path = input;
+        self
+    }
+    /// <p>The path for the Amazon S3 bucket that the application uses for accessing the user-defined schema.</p>
+    pub fn get_s3_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.s3_path
+    }
+    /// <p>The ARN for the role the application uses to access its Amazon S3 bucket.</p>
+    pub fn s3_access_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.s3_access_role_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ARN for the role the application uses to access its Amazon S3 bucket.</p>
+    pub fn set_s3_access_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.s3_access_role_arn = input;
+        self
+    }
+    /// <p>The ARN for the role the application uses to access its Amazon S3 bucket.</p>
+    pub fn get_s3_access_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.s3_access_role_arn
+    }
     /// Consumes the builder and constructs a [`MySqlDataProviderSettings`](crate::types::MySqlDataProviderSettings).
     pub fn build(self) -> crate::types::MySqlDataProviderSettings {
         crate::types::MySqlDataProviderSettings {
@@ -111,6 +153,8 @@ impl MySqlDataProviderSettingsBuilder {
             port: self.port,
             ssl_mode: self.ssl_mode,
             certificate_arn: self.certificate_arn,
+            s3_path: self.s3_path,
+            s3_access_role_arn: self.s3_access_role_arn,
         }
     }
 }

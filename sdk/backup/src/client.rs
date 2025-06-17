@@ -59,14 +59,14 @@ pub(crate) struct Handle {
 /// # Using the `Client`
 ///
 /// A client has a function for every operation that can be performed by the service.
-/// For example, the [`CancelLegalHold`](crate::operation::cancel_legal_hold) operation has
-/// a [`Client::cancel_legal_hold`], function which returns a builder for that operation.
+/// For example, the [`AssociateBackupVaultMpaApprovalTeam`](crate::operation::associate_backup_vault_mpa_approval_team) operation has
+/// a [`Client::associate_backup_vault_mpa_approval_team`], function which returns a builder for that operation.
 /// The fluent builder ultimately has a `send()` function that returns an async future that
 /// returns a result, as illustrated below:
 ///
 /// ```rust,ignore
-/// let result = client.cancel_legal_hold()
-///     .legal_hold_id("example")
+/// let result = client.associate_backup_vault_mpa_approval_team()
+///     .backup_vault_name("example")
 ///     .send()
 ///     .await;
 /// ```
@@ -136,6 +136,8 @@ impl Client {
     }
 }
 
+mod associate_backup_vault_mpa_approval_team;
+
 mod cancel_legal_hold;
 
 mod create_backup_plan;
@@ -152,6 +154,8 @@ mod create_logically_air_gapped_backup_vault;
 
 mod create_report_plan;
 
+mod create_restore_access_backup_vault;
+
 mod create_restore_testing_plan;
 
 mod create_restore_testing_selection;
@@ -167,7 +171,7 @@ mod create_restore_testing_selection;
 /// # let client: aws_sdk_backup::Client = unimplemented!();
 /// use ::http::header::{HeaderName, HeaderValue};
 ///
-/// let result = client.cancel_legal_hold()
+/// let result = client.associate_backup_vault_mpa_approval_team()
 ///     .customize()
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
@@ -226,6 +230,8 @@ mod describe_report_job;
 mod describe_report_plan;
 
 mod describe_restore_job;
+
+mod disassociate_backup_vault_mpa_approval_team;
 
 mod disassociate_recovery_point;
 
@@ -299,6 +305,8 @@ mod list_report_jobs;
 
 mod list_report_plans;
 
+mod list_restore_access_backup_vaults;
+
 mod list_restore_job_summaries;
 
 mod list_restore_jobs;
@@ -318,6 +326,8 @@ mod put_backup_vault_lock_configuration;
 mod put_backup_vault_notifications;
 
 mod put_restore_validation_result;
+
+mod revoke_restore_access_backup_vault;
 
 mod start_backup_job;
 

@@ -23,7 +23,7 @@ impl crate::operation::list_delegated_administrators::builders::ListDelegatedAdm
 /// Fluent builder constructing a request to `ListDelegatedAdministrators`.
 ///
 /// <p>Lists the Amazon Web Services accounts that are designated as delegated administrators in this organization.</p>
-/// <p>This operation can be called only from the organization's management account or by a member account that is a delegated administrator for an Amazon Web Services service.</p>
+/// <p>This operation can be called only from the organization's management account or by a member account that is a delegated administrator.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListDelegatedAdministratorsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

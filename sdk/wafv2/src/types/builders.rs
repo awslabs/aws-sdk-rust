@@ -235,6 +235,10 @@ pub use crate::types::_api_key_summary::ApiKeySummaryBuilder;
 
 pub use crate::types::_web_acl::WebAclBuilder;
 
+pub use crate::types::_application_config::ApplicationConfigBuilder;
+
+pub use crate::types::_application_attribute::ApplicationAttributeBuilder;
+
 pub use crate::types::_firewall_manager_rule_group::FirewallManagerRuleGroupBuilder;
 
 pub use crate::types::_firewall_manager_statement::FirewallManagerStatementBuilder;
