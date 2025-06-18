@@ -281,6 +281,8 @@ pub(crate) mod shape_put_public_access_block;
 
 pub(crate) mod shape_put_public_access_block_input;
 
+pub(crate) mod shape_rename_object;
+
 pub(crate) mod shape_restore_object;
 
 pub(crate) mod shape_restore_object_input;
@@ -366,6 +368,8 @@ pub(crate) mod shape_get_public_access_block_output;
 pub(crate) mod shape_head_bucket_output;
 
 pub(crate) mod shape_head_object_output;
+
+pub(crate) mod shape_idempotency_parameter_mismatch;
 
 pub(crate) mod shape_invalid_object_state;
 

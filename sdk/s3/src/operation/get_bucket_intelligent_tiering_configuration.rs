@@ -242,6 +242,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetBucketInt
                 let mut uri = ::std::string::String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
+                let builder = crate::protocol_serde::shape_get_bucket_intelligent_tiering_configuration::ser_get_bucket_intelligent_tiering_configuration_headers(input, builder)?;
                 ::std::result::Result::Ok(builder.method("GET").uri(uri))
             }
             let mut builder = update_http_builder(&input, ::http::request::Builder::new())?;

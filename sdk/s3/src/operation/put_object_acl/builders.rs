@@ -80,7 +80,7 @@ impl crate::operation::put_object_acl::builders::PutObjectAclInputBuilder {
 /// Grantee Values
 /// </dt>
 /// <dd>
-/// <p>You can specify the person (grantee) to whom you're assigning access rights (using request elements) in the following ways:</p>
+/// <p>You can specify the person (grantee) to whom you're assigning access rights (using request elements) in the following ways. For examples of how to specify these grantee values in JSON format, see the Amazon Web Services CLI example in <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/enable-server-access-logging.html"> Enabling Amazon S3 server access logging</a> in the <i>Amazon S3 User Guide</i>.</p>
 /// <ul>
 /// <li>
 /// <p>By the person's ID:</p>

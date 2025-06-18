@@ -333,6 +333,22 @@ pub(crate) fn de_storage_class_header(
     ::aws_smithy_http::header::one_or_none(headers)
 }
 
+pub(crate) fn de_tag_count_header(
+    header_map: &::aws_smithy_runtime_api::http::Headers,
+) -> ::std::result::Result<::std::option::Option<i32>, ::aws_smithy_http::header::ParseError> {
+    let headers = header_map.get_all("x-amz-tagging-count");
+    let var_9 = ::aws_smithy_http::header::read_many_primitive::<i32>(headers)?;
+    if var_9.len() > 1 {
+        Err(::aws_smithy_http::header::ParseError::new(format!(
+            "expected one item but found {}",
+            var_9.len()
+        )))
+    } else {
+        let mut var_9 = var_9;
+        Ok(var_9.pop())
+    }
+}
+
 pub(crate) fn de_version_id_header(
     header_map: &::aws_smithy_runtime_api::http::Headers,
 ) -> ::std::result::Result<::std::option::Option<::std::string::String>, ::aws_smithy_http::header::ParseError> {

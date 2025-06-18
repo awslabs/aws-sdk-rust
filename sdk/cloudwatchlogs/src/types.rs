@@ -41,6 +41,12 @@ pub use crate::types::_parse_vpc::ParseVpc;
 
 pub use crate::types::_parse_postgres::ParsePostgres;
 
+pub use crate::types::_parse_to_ocsf::ParseToOcsf;
+
+pub use crate::types::_ocsf_version::OcsfVersion;
+
+pub use crate::types::_event_source::EventSource;
+
 pub use crate::types::_parse_route53::ParseRoute53;
 
 pub use crate::types::_parse_key_value::ParseKeyValue;
@@ -285,6 +291,8 @@ mod _entity_rejection_error_type;
 
 mod _evaluation_frequency;
 
+mod _event_source;
+
 mod _export_task;
 
 mod _export_task_execution_info;
@@ -351,6 +359,8 @@ mod _move_key_entry;
 
 mod _move_keys;
 
+mod _ocsf_version;
+
 mod _open_search_application;
 
 mod _open_search_collection;
@@ -390,6 +400,8 @@ mod _parse_key_value;
 mod _parse_postgres;
 
 mod _parse_route53;
+
+mod _parse_to_ocsf;
 
 mod _parse_vpc;
 

@@ -607,6 +607,8 @@ pub(crate) mod shape_parse_postgres;
 
 pub(crate) mod shape_parse_route53;
 
+pub(crate) mod shape_parse_to_ocsf;
+
 pub(crate) mod shape_parse_vpc;
 
 pub(crate) mod shape_parse_waf;

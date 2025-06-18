@@ -6,6 +6,8 @@ pub struct DescribeAutoScalingGroupsInput {
     /// <p>The names of the Auto Scaling groups. By default, you can only specify up to 50 names. You can optionally increase this limit using the <code>MaxRecords</code> property.</p>
     /// <p>If you omit this property, all Auto Scaling groups are described.</p>
     pub auto_scaling_group_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>Specifies whether to include information about Amazon EC2 instances in the response. When set to <code>true</code> (default), the response includes instance details.</p>
+    pub include_instances: ::std::option::Option<bool>,
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of items to return with this call. The default value is <code>50</code> and the maximum value is <code>100</code>.</p>
@@ -20,6 +22,10 @@ impl DescribeAutoScalingGroupsInput {
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.auto_scaling_group_names.is_none()`.
     pub fn auto_scaling_group_names(&self) -> &[::std::string::String] {
         self.auto_scaling_group_names.as_deref().unwrap_or_default()
+    }
+    /// <p>Specifies whether to include information about Amazon EC2 instances in the response. When set to <code>true</code> (default), the response includes instance details.</p>
+    pub fn include_instances(&self) -> ::std::option::Option<bool> {
+        self.include_instances
     }
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -48,6 +54,7 @@ impl DescribeAutoScalingGroupsInput {
 #[non_exhaustive]
 pub struct DescribeAutoScalingGroupsInputBuilder {
     pub(crate) auto_scaling_group_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) include_instances: ::std::option::Option<bool>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_records: ::std::option::Option<i32>,
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
@@ -75,6 +82,20 @@ impl DescribeAutoScalingGroupsInputBuilder {
     /// <p>If you omit this property, all Auto Scaling groups are described.</p>
     pub fn get_auto_scaling_group_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.auto_scaling_group_names
+    }
+    /// <p>Specifies whether to include information about Amazon EC2 instances in the response. When set to <code>true</code> (default), the response includes instance details.</p>
+    pub fn include_instances(mut self, input: bool) -> Self {
+        self.include_instances = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies whether to include information about Amazon EC2 instances in the response. When set to <code>true</code> (default), the response includes instance details.</p>
+    pub fn set_include_instances(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.include_instances = input;
+        self
+    }
+    /// <p>Specifies whether to include information about Amazon EC2 instances in the response. When set to <code>true</code> (default), the response includes instance details.</p>
+    pub fn get_include_instances(&self) -> &::std::option::Option<bool> {
+        &self.include_instances
     }
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -133,6 +154,7 @@ impl DescribeAutoScalingGroupsInputBuilder {
     > {
         ::std::result::Result::Ok(crate::operation::describe_auto_scaling_groups::DescribeAutoScalingGroupsInput {
             auto_scaling_group_names: self.auto_scaling_group_names,
+            include_instances: self.include_instances,
             next_token: self.next_token,
             max_records: self.max_records,
             filters: self.filters,

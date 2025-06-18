@@ -9,6 +9,11 @@ pub enum Error {
     BucketAlreadyOwnedByYou(crate::types::error::BucketAlreadyOwnedByYou),
     /// <p>The existing object was created with a different encryption type. Subsequent write requests must include the appropriate encryption parameters in the request or while creating the session.</p>
     EncryptionTypeMismatch(crate::types::error::EncryptionTypeMismatch),
+    /// <p>Parameters on this idempotent request are inconsistent with parameters used in previous request(s).</p>
+    /// <p>For a list of error codes and more information on Amazon S3 errors, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html#ErrorCodeList">Error codes</a>.</p><note>
+    /// <p>Idempotency ensures that an API request completes no more than one time. With an idempotent request, if the original request completes successfully, any subsequent retries complete successfully without performing any further actions.</p>
+    /// </note>
+    IdempotencyParameterMismatch(crate::types::error::IdempotencyParameterMismatch),
     /// <p>Object is archived and inaccessible until restored.</p>
     /// <p>If the object you are retrieving is stored in the S3 Glacier Flexible Retrieval storage class, the S3 Glacier Deep Archive storage class, the S3 Intelligent-Tiering Archive Access tier, or the S3 Intelligent-Tiering Deep Archive Access tier, before you can retrieve the object you must first restore a copy using <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_RestoreObject.html">RestoreObject</a>. Otherwise, this operation returns an <code>InvalidObjectState</code> error. For information about restoring archived objects, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/restoring-objects.html">Restoring Archived Objects</a> in the <i>Amazon S3 User Guide</i>.</p>
     InvalidObjectState(crate::types::error::InvalidObjectState),
@@ -53,6 +58,7 @@ impl ::std::fmt::Display for Error {
             Error::BucketAlreadyExists(inner) => inner.fmt(f),
             Error::BucketAlreadyOwnedByYou(inner) => inner.fmt(f),
             Error::EncryptionTypeMismatch(inner) => inner.fmt(f),
+            Error::IdempotencyParameterMismatch(inner) => inner.fmt(f),
             Error::InvalidObjectState(inner) => inner.fmt(f),
             Error::InvalidRequest(inner) => inner.fmt(f),
             Error::InvalidWriteOffset(inner) => inner.fmt(f),
@@ -87,6 +93,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
             Self::BucketAlreadyExists(inner) => inner.meta(),
             Self::BucketAlreadyOwnedByYou(inner) => inner.meta(),
             Self::EncryptionTypeMismatch(inner) => inner.meta(),
+            Self::IdempotencyParameterMismatch(inner) => inner.meta(),
             Self::InvalidObjectState(inner) => inner.meta(),
             Self::InvalidRequest(inner) => inner.meta(),
             Self::InvalidWriteOffset(inner) => inner.meta(),
@@ -2414,6 +2421,28 @@ impl From<crate::operation::put_public_access_block::PutPublicAccessBlockError> 
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::rename_object::RenameObjectError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::rename_object::RenameObjectError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::rename_object::RenameObjectError> for Error {
+    fn from(err: crate::operation::rename_object::RenameObjectError) -> Self {
+        match err {
+            crate::operation::rename_object::RenameObjectError::IdempotencyParameterMismatch(inner) => Error::IdempotencyParameterMismatch(inner),
+            crate::operation::rename_object::RenameObjectError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::restore_object::RestoreObjectError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -2564,6 +2593,7 @@ impl ::std::error::Error for Error {
             Error::BucketAlreadyExists(inner) => inner.source(),
             Error::BucketAlreadyOwnedByYou(inner) => inner.source(),
             Error::EncryptionTypeMismatch(inner) => inner.source(),
+            Error::IdempotencyParameterMismatch(inner) => inner.source(),
             Error::InvalidObjectState(inner) => inner.source(),
             Error::InvalidRequest(inner) => inner.source(),
             Error::InvalidWriteOffset(inner) => inner.source(),
@@ -2584,6 +2614,7 @@ impl crate::s3_request_id::RequestIdExt for Error {
             Self::BucketAlreadyExists(e) => e.extended_request_id(),
             Self::BucketAlreadyOwnedByYou(e) => e.extended_request_id(),
             Self::EncryptionTypeMismatch(e) => e.extended_request_id(),
+            Self::IdempotencyParameterMismatch(e) => e.extended_request_id(),
             Self::InvalidObjectState(e) => e.extended_request_id(),
             Self::InvalidRequest(e) => e.extended_request_id(),
             Self::InvalidWriteOffset(e) => e.extended_request_id(),
@@ -2604,6 +2635,7 @@ impl ::aws_types::request_id::RequestId for Error {
             Self::BucketAlreadyExists(e) => e.request_id(),
             Self::BucketAlreadyOwnedByYou(e) => e.request_id(),
             Self::EncryptionTypeMismatch(e) => e.request_id(),
+            Self::IdempotencyParameterMismatch(e) => e.request_id(),
             Self::InvalidObjectState(e) => e.request_id(),
             Self::InvalidRequest(e) => e.request_id(),
             Self::InvalidWriteOffset(e) => e.request_id(),

@@ -129,6 +129,16 @@ pub(crate) fn move_keys_correct_errors(mut builder: crate::types::builders::Move
     builder
 }
 
+pub(crate) fn parse_to_ocsf_correct_errors(mut builder: crate::types::builders::ParseToOcsfBuilder) -> crate::types::builders::ParseToOcsfBuilder {
+    if builder.event_source.is_none() {
+        builder.event_source = "no value was set".parse::<crate::types::EventSource>().ok()
+    }
+    if builder.ocsf_version.is_none() {
+        builder.ocsf_version = "no value was set".parse::<crate::types::OcsfVersion>().ok()
+    }
+    builder
+}
+
 pub(crate) fn rename_keys_correct_errors(mut builder: crate::types::builders::RenameKeysBuilder) -> crate::types::builders::RenameKeysBuilder {
     if builder.entries.is_none() {
         builder.entries = Some(Default::default())

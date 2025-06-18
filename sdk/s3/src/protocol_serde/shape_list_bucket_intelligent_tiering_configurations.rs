@@ -40,6 +40,24 @@ pub fn de_list_bucket_intelligent_tiering_configurations_http_response(
     })
 }
 
+pub fn ser_list_bucket_intelligent_tiering_configurations_headers(
+    input: &crate::operation::list_bucket_intelligent_tiering_configurations::ListBucketIntelligentTieringConfigurationsInput,
+    mut builder: ::http::request::Builder,
+) -> std::result::Result<::http::request::Builder, ::aws_smithy_types::error::operation::BuildError> {
+    if let ::std::option::Option::Some(inner_1) = &input.expected_bucket_owner {
+        let formatted_2 = inner_1.as_str();
+        let header_value = formatted_2;
+        let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
+            ::aws_smithy_types::error::operation::BuildError::invalid_field(
+                "expected_bucket_owner",
+                format!("`{}` cannot be used as a header value: {}", &header_value, err),
+            )
+        })?;
+        builder = builder.header("x-amz-expected-bucket-owner", header_value);
+    }
+    Ok(builder)
+}
+
 #[allow(unused_mut)]
 pub fn de_list_bucket_intelligent_tiering_configurations(
     inp: &[u8],
@@ -63,24 +81,24 @@ pub fn de_list_bucket_intelligent_tiering_configurations(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("IntelligentTieringConfiguration") /* IntelligentTieringConfigurationList com.amazonaws.s3.synthetic#ListBucketIntelligentTieringConfigurationsOutput$IntelligentTieringConfigurationList */ =>  {
-                let var_1 =
+                let var_3 =
                     Some(
                         Result::<::std::vec::Vec::<crate::types::IntelligentTieringConfiguration>, ::aws_smithy_xml::decode::XmlDecodeError>::Ok({
-                            let mut list_2 = builder.intelligent_tiering_configuration_list.take().unwrap_or_default();
-                            list_2.push(
+                            let mut list_4 = builder.intelligent_tiering_configuration_list.take().unwrap_or_default();
+                            list_4.push(
                                 crate::protocol_serde::shape_intelligent_tiering_configuration::de_intelligent_tiering_configuration(&mut tag)
                                 ?
                             );
-                            list_2
+                            list_4
                         })
                         ?
                     )
                 ;
-                builder = builder.set_intelligent_tiering_configuration_list(var_1);
+                builder = builder.set_intelligent_tiering_configuration_list(var_3);
             }
             ,
             s if s.matches("NextContinuationToken") /* NextContinuationToken com.amazonaws.s3.synthetic#ListBucketIntelligentTieringConfigurationsOutput$NextContinuationToken */ =>  {
-                let var_3 =
+                let var_5 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -89,11 +107,11 @@ pub fn de_list_bucket_intelligent_tiering_configurations(
                         ?
                     )
                 ;
-                builder = builder.set_next_continuation_token(var_3);
+                builder = builder.set_next_continuation_token(var_5);
             }
             ,
             s if s.matches("ContinuationToken") /* ContinuationToken com.amazonaws.s3.synthetic#ListBucketIntelligentTieringConfigurationsOutput$ContinuationToken */ =>  {
-                let var_4 =
+                let var_6 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -102,11 +120,11 @@ pub fn de_list_bucket_intelligent_tiering_configurations(
                         ?
                     )
                 ;
-                builder = builder.set_continuation_token(var_4);
+                builder = builder.set_continuation_token(var_6);
             }
             ,
             s if s.matches("IsTruncated") /* IsTruncated com.amazonaws.s3.synthetic#ListBucketIntelligentTieringConfigurationsOutput$IsTruncated */ =>  {
-                let var_5 =
+                let var_7 =
                     Some(
                          {
                             <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -117,7 +135,7 @@ pub fn de_list_bucket_intelligent_tiering_configurations(
                         ?
                     )
                 ;
-                builder = builder.set_is_truncated(var_5);
+                builder = builder.set_is_truncated(var_7);
             }
             ,
             _ => {}

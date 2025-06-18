@@ -99,6 +99,8 @@ impl ::aws_types::request_id::RequestId for crate::types::error::SelectObjectCon
 
 pub use crate::types::error::_object_already_in_active_tier_error::ObjectAlreadyInActiveTierError;
 
+pub use crate::types::error::_idempotency_parameter_mismatch::IdempotencyParameterMismatch;
+
 pub use crate::types::error::_no_such_key::NoSuchKey;
 
 pub use crate::types::error::_too_many_parts::TooManyParts;
@@ -128,6 +130,8 @@ mod _bucket_already_exists;
 mod _bucket_already_owned_by_you;
 
 mod _encryption_type_mismatch;
+
+mod _idempotency_parameter_mismatch;
 
 mod _invalid_object_state;
 

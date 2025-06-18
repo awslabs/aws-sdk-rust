@@ -30,21 +30,22 @@ impl crate::operation::put_log_events::builders::PutLogEventsInputBuilder {
 /// <li>
 /// <p>The maximum batch size is 1,048,576 bytes. This size is calculated as the sum of all event messages in UTF-8, plus 26 bytes for each log event.</p></li>
 /// <li>
-/// <p>None of the log events in the batch can be more than 2 hours in the future.</p></li>
+/// <p>Events more than 2 hours in the future are rejected while processing remaining valid events.</p></li>
 /// <li>
-/// <p>None of the log events in the batch can be more than 14 days in the past. Also, none of the log events can be from earlier than the retention period of the log group.</p></li>
+/// <p>Events older than 14 days or preceding the log group's retention period are rejected while processing remaining valid events.</p></li>
 /// <li>
 /// <p>The log events in the batch must be in chronological order by their timestamp. The timestamp is the time that the event occurred, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>. (In Amazon Web Services Tools for PowerShell and the Amazon Web Services SDK for .NET, the timestamp is specified in .NET format: <code>yyyy-mm-ddThh:mm:ss</code>. For example, <code>2017-09-15T13:45:30</code>.)</p></li>
 /// <li>
-/// <p>A batch of log events in a single request cannot span more than 24 hours. Otherwise, the operation fails.</p></li>
+/// <p>A batch of log events in a single request must be in a chronological order. Otherwise, the operation fails.</p></li>
 /// <li>
 /// <p>Each log event can be no larger than 1 MB.</p></li>
 /// <li>
 /// <p>The maximum number of log events in a batch is 10,000.</p></li>
-/// <li><important>
+/// <li>
+/// <p>For valid events (within 14 days in the past to 2 hours in future), the time span in a single batch cannot exceed 24 hours. Otherwise, the operation fails.</p></li>
+/// </ul><important>
 /// <p>The quota of five requests per second per log stream has been removed. Instead, <code>PutLogEvents</code> actions are throttled based on a per-second per-account quota. You can request an increase to the per-second throttling quota by using the Service Quotas service.</p>
-/// </important></li>
-/// </ul>
+/// </important>
 /// <p>If a call to <code>PutLogEvents</code> returns "UnrecognizedClientException" the most likely cause is a non-valid Amazon Web Services access key ID or secret key.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutLogEventsFluentBuilder {

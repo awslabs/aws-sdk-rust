@@ -229,6 +229,11 @@ pub fn de_head_object_http_response(
                 crate::operation::head_object::HeadObjectError::unhandled("Failed to parse StorageClass from header `x-amz-storage-class")
             })?,
         );
+        output = output.set_tag_count(
+            crate::protocol_serde::shape_head_object_output::de_tag_count_header(_response_headers).map_err(|_| {
+                crate::operation::head_object::HeadObjectError::unhandled("Failed to parse TagCount from header `x-amz-tagging-count")
+            })?,
+        );
         output = output.set_version_id(
             crate::protocol_serde::shape_head_object_output::de_version_id_header(_response_headers)
                 .map_err(|_| crate::operation::head_object::HeadObjectError::unhandled("Failed to parse VersionId from header `x-amz-version-id"))?,

@@ -163,11 +163,13 @@ impl PutDeliverySourceFluentBuilder {
     /// <li>
     /// <p>For Elemental MediaTailor, the valid values are <code>AD_DECISION_SERVER_LOGS</code>, <code>MANIFEST_SERVICE_LOGS</code>, and <code>TRANSCODE_LOGS</code>.</p></li>
     /// <li>
+    /// <p>For Entity Resolution, the valid value is <code>WORKFLOW_LOGS</code>.</p></li>
+    /// <li>
     /// <p>For IAM Identity Center, the valid value is <code>ERROR_LOGS</code>.</p></li>
     /// <li>
     /// <p>For Amazon Q, the valid value is <code>EVENT_LOGS</code>.</p></li>
     /// <li>
-    /// <p>For Amazon SES mail manager, the valid value is <code>APPLICATION_LOG</code>.</p></li>
+    /// <p>For Amazon SES mail manager, the valid values are <code>APPLICATION_LOG</code> and <code>TRAFFIC_POLICY_DEBUG_LOGS</code>.</p></li>
     /// <li>
     /// <p>For Amazon WorkMail, the valid values are <code>ACCESS_CONTROL_LOGS</code>, <code>AUTHENTICATION_LOGS</code>, <code>WORKMAIL_AVAILABILITY_PROVIDER_LOGS</code>, <code>WORKMAIL_MAILBOX_ACCESS_LOGS</code>, and <code>WORKMAIL_PERSONAL_ACCESS_TOKEN_LOGS</code>.</p></li>
     /// </ul>
@@ -188,11 +190,13 @@ impl PutDeliverySourceFluentBuilder {
     /// <li>
     /// <p>For Elemental MediaTailor, the valid values are <code>AD_DECISION_SERVER_LOGS</code>, <code>MANIFEST_SERVICE_LOGS</code>, and <code>TRANSCODE_LOGS</code>.</p></li>
     /// <li>
+    /// <p>For Entity Resolution, the valid value is <code>WORKFLOW_LOGS</code>.</p></li>
+    /// <li>
     /// <p>For IAM Identity Center, the valid value is <code>ERROR_LOGS</code>.</p></li>
     /// <li>
     /// <p>For Amazon Q, the valid value is <code>EVENT_LOGS</code>.</p></li>
     /// <li>
-    /// <p>For Amazon SES mail manager, the valid value is <code>APPLICATION_LOG</code>.</p></li>
+    /// <p>For Amazon SES mail manager, the valid values are <code>APPLICATION_LOG</code> and <code>TRAFFIC_POLICY_DEBUG_LOGS</code>.</p></li>
     /// <li>
     /// <p>For Amazon WorkMail, the valid values are <code>ACCESS_CONTROL_LOGS</code>, <code>AUTHENTICATION_LOGS</code>, <code>WORKMAIL_AVAILABILITY_PROVIDER_LOGS</code>, <code>WORKMAIL_MAILBOX_ACCESS_LOGS</code>, and <code>WORKMAIL_PERSONAL_ACCESS_TOKEN_LOGS</code>.</p></li>
     /// </ul>
@@ -213,11 +217,13 @@ impl PutDeliverySourceFluentBuilder {
     /// <li>
     /// <p>For Elemental MediaTailor, the valid values are <code>AD_DECISION_SERVER_LOGS</code>, <code>MANIFEST_SERVICE_LOGS</code>, and <code>TRANSCODE_LOGS</code>.</p></li>
     /// <li>
+    /// <p>For Entity Resolution, the valid value is <code>WORKFLOW_LOGS</code>.</p></li>
+    /// <li>
     /// <p>For IAM Identity Center, the valid value is <code>ERROR_LOGS</code>.</p></li>
     /// <li>
     /// <p>For Amazon Q, the valid value is <code>EVENT_LOGS</code>.</p></li>
     /// <li>
-    /// <p>For Amazon SES mail manager, the valid value is <code>APPLICATION_LOG</code>.</p></li>
+    /// <p>For Amazon SES mail manager, the valid values are <code>APPLICATION_LOG</code> and <code>TRAFFIC_POLICY_DEBUG_LOGS</code>.</p></li>
     /// <li>
     /// <p>For Amazon WorkMail, the valid values are <code>ACCESS_CONTROL_LOGS</code>, <code>AUTHENTICATION_LOGS</code>, <code>WORKMAIL_AVAILABILITY_PROVIDER_LOGS</code>, <code>WORKMAIL_MAILBOX_ACCESS_LOGS</code>, and <code>WORKMAIL_PERSONAL_ACCESS_TOKEN_LOGS</code>.</p></li>
     /// </ul>

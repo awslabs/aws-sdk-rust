@@ -17,9 +17,9 @@ pub struct GetObjectAttributesParts {
     /// <p>A container for elements related to a particular part. A response can contain zero or more <code>Parts</code> elements.</p><note>
     /// <ul>
     /// <li>
-    /// <p><b>General purpose buckets</b> - For <code>GetObjectAttributes</code>, if a additional checksum (including <code>x-amz-checksum-crc32</code>, <code>x-amz-checksum-crc32c</code>, <code>x-amz-checksum-sha1</code>, or <code>x-amz-checksum-sha256</code>) isn't applied to the object specified in the request, the response doesn't return <code>Part</code>.</p></li>
+    /// <p><b>General purpose buckets</b> - For <code>GetObjectAttributes</code>, if an additional checksum (including <code>x-amz-checksum-crc32</code>, <code>x-amz-checksum-crc32c</code>, <code>x-amz-checksum-sha1</code>, or <code>x-amz-checksum-sha256</code>) isn't applied to the object specified in the request, the response doesn't return the <code>Part</code> element.</p></li>
     /// <li>
-    /// <p><b>Directory buckets</b> - For <code>GetObjectAttributes</code>, no matter whether a additional checksum is applied to the object specified in the request, the response returns <code>Part</code>.</p></li>
+    /// <p><b>Directory buckets</b> - For <code>GetObjectAttributes</code>, regardless of whether an additional checksum is applied to the object specified in the request, the response returns the <code>Part</code> element.</p></li>
     /// </ul>
     /// </note>
     pub parts: ::std::option::Option<::std::vec::Vec<crate::types::ObjectPart>>,
@@ -48,9 +48,9 @@ impl GetObjectAttributesParts {
     /// <p>A container for elements related to a particular part. A response can contain zero or more <code>Parts</code> elements.</p><note>
     /// <ul>
     /// <li>
-    /// <p><b>General purpose buckets</b> - For <code>GetObjectAttributes</code>, if a additional checksum (including <code>x-amz-checksum-crc32</code>, <code>x-amz-checksum-crc32c</code>, <code>x-amz-checksum-sha1</code>, or <code>x-amz-checksum-sha256</code>) isn't applied to the object specified in the request, the response doesn't return <code>Part</code>.</p></li>
+    /// <p><b>General purpose buckets</b> - For <code>GetObjectAttributes</code>, if an additional checksum (including <code>x-amz-checksum-crc32</code>, <code>x-amz-checksum-crc32c</code>, <code>x-amz-checksum-sha1</code>, or <code>x-amz-checksum-sha256</code>) isn't applied to the object specified in the request, the response doesn't return the <code>Part</code> element.</p></li>
     /// <li>
-    /// <p><b>Directory buckets</b> - For <code>GetObjectAttributes</code>, no matter whether a additional checksum is applied to the object specified in the request, the response returns <code>Part</code>.</p></li>
+    /// <p><b>Directory buckets</b> - For <code>GetObjectAttributes</code>, regardless of whether an additional checksum is applied to the object specified in the request, the response returns the <code>Part</code> element.</p></li>
     /// </ul>
     /// </note>
     ///
@@ -155,9 +155,9 @@ impl GetObjectAttributesPartsBuilder {
     /// <p>A container for elements related to a particular part. A response can contain zero or more <code>Parts</code> elements.</p><note>
     /// <ul>
     /// <li>
-    /// <p><b>General purpose buckets</b> - For <code>GetObjectAttributes</code>, if a additional checksum (including <code>x-amz-checksum-crc32</code>, <code>x-amz-checksum-crc32c</code>, <code>x-amz-checksum-sha1</code>, or <code>x-amz-checksum-sha256</code>) isn't applied to the object specified in the request, the response doesn't return <code>Part</code>.</p></li>
+    /// <p><b>General purpose buckets</b> - For <code>GetObjectAttributes</code>, if an additional checksum (including <code>x-amz-checksum-crc32</code>, <code>x-amz-checksum-crc32c</code>, <code>x-amz-checksum-sha1</code>, or <code>x-amz-checksum-sha256</code>) isn't applied to the object specified in the request, the response doesn't return the <code>Part</code> element.</p></li>
     /// <li>
-    /// <p><b>Directory buckets</b> - For <code>GetObjectAttributes</code>, no matter whether a additional checksum is applied to the object specified in the request, the response returns <code>Part</code>.</p></li>
+    /// <p><b>Directory buckets</b> - For <code>GetObjectAttributes</code>, regardless of whether an additional checksum is applied to the object specified in the request, the response returns the <code>Part</code> element.</p></li>
     /// </ul>
     /// </note>
     pub fn parts(mut self, input: crate::types::ObjectPart) -> Self {
@@ -169,9 +169,9 @@ impl GetObjectAttributesPartsBuilder {
     /// <p>A container for elements related to a particular part. A response can contain zero or more <code>Parts</code> elements.</p><note>
     /// <ul>
     /// <li>
-    /// <p><b>General purpose buckets</b> - For <code>GetObjectAttributes</code>, if a additional checksum (including <code>x-amz-checksum-crc32</code>, <code>x-amz-checksum-crc32c</code>, <code>x-amz-checksum-sha1</code>, or <code>x-amz-checksum-sha256</code>) isn't applied to the object specified in the request, the response doesn't return <code>Part</code>.</p></li>
+    /// <p><b>General purpose buckets</b> - For <code>GetObjectAttributes</code>, if an additional checksum (including <code>x-amz-checksum-crc32</code>, <code>x-amz-checksum-crc32c</code>, <code>x-amz-checksum-sha1</code>, or <code>x-amz-checksum-sha256</code>) isn't applied to the object specified in the request, the response doesn't return the <code>Part</code> element.</p></li>
     /// <li>
-    /// <p><b>Directory buckets</b> - For <code>GetObjectAttributes</code>, no matter whether a additional checksum is applied to the object specified in the request, the response returns <code>Part</code>.</p></li>
+    /// <p><b>Directory buckets</b> - For <code>GetObjectAttributes</code>, regardless of whether an additional checksum is applied to the object specified in the request, the response returns the <code>Part</code> element.</p></li>
     /// </ul>
     /// </note>
     pub fn set_parts(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ObjectPart>>) -> Self {
@@ -181,9 +181,9 @@ impl GetObjectAttributesPartsBuilder {
     /// <p>A container for elements related to a particular part. A response can contain zero or more <code>Parts</code> elements.</p><note>
     /// <ul>
     /// <li>
-    /// <p><b>General purpose buckets</b> - For <code>GetObjectAttributes</code>, if a additional checksum (including <code>x-amz-checksum-crc32</code>, <code>x-amz-checksum-crc32c</code>, <code>x-amz-checksum-sha1</code>, or <code>x-amz-checksum-sha256</code>) isn't applied to the object specified in the request, the response doesn't return <code>Part</code>.</p></li>
+    /// <p><b>General purpose buckets</b> - For <code>GetObjectAttributes</code>, if an additional checksum (including <code>x-amz-checksum-crc32</code>, <code>x-amz-checksum-crc32c</code>, <code>x-amz-checksum-sha1</code>, or <code>x-amz-checksum-sha256</code>) isn't applied to the object specified in the request, the response doesn't return the <code>Part</code> element.</p></li>
     /// <li>
-    /// <p><b>Directory buckets</b> - For <code>GetObjectAttributes</code>, no matter whether a additional checksum is applied to the object specified in the request, the response returns <code>Part</code>.</p></li>
+    /// <p><b>Directory buckets</b> - For <code>GetObjectAttributes</code>, regardless of whether an additional checksum is applied to the object specified in the request, the response returns the <code>Part</code> element.</p></li>
     /// </ul>
     /// </note>
     pub fn get_parts(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ObjectPart>> {

@@ -103,6 +103,20 @@ impl GroupExistsFluentBuilder {
     pub fn get_auto_scaling_group_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_auto_scaling_group_names()
     }
+    /// <p>Specifies whether to include information about Amazon EC2 instances in the response. When set to <code>true</code> (default), the response includes instance details.</p>
+    pub fn include_instances(mut self, input: bool) -> Self {
+        self.inner = self.inner.include_instances(input);
+        self
+    }
+    /// <p>Specifies whether to include information about Amazon EC2 instances in the response. When set to <code>true</code> (default), the response includes instance details.</p>
+    pub fn set_include_instances(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_include_instances(input);
+        self
+    }
+    /// <p>Specifies whether to include information about Amazon EC2 instances in the response. When set to <code>true</code> (default), the response includes instance details.</p>
+    pub fn get_include_instances(&self) -> &::std::option::Option<bool> {
+        self.inner.get_include_instances()
+    }
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());

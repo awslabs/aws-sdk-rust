@@ -81,59 +81,65 @@ pub fn ser_processor(
         crate::protocol_serde::shape_parse_route53::ser_parse_route53(&mut object_26, var_25)?;
         object_26.finish();
     }
-    if let Some(var_27) = &input.parse_postgres {
+    if let Some(var_27) = &input.parse_to_ocsf {
         #[allow(unused_mut)]
-        let mut object_28 = object.key("parsePostgres").start_object();
-        crate::protocol_serde::shape_parse_postgres::ser_parse_postgres(&mut object_28, var_27)?;
+        let mut object_28 = object.key("parseToOCSF").start_object();
+        crate::protocol_serde::shape_parse_to_ocsf::ser_parse_to_ocsf(&mut object_28, var_27)?;
         object_28.finish();
     }
-    if let Some(var_29) = &input.parse_vpc {
+    if let Some(var_29) = &input.parse_postgres {
         #[allow(unused_mut)]
-        let mut object_30 = object.key("parseVPC").start_object();
-        crate::protocol_serde::shape_parse_vpc::ser_parse_vpc(&mut object_30, var_29)?;
+        let mut object_30 = object.key("parsePostgres").start_object();
+        crate::protocol_serde::shape_parse_postgres::ser_parse_postgres(&mut object_30, var_29)?;
         object_30.finish();
     }
-    if let Some(var_31) = &input.parse_waf {
+    if let Some(var_31) = &input.parse_vpc {
         #[allow(unused_mut)]
-        let mut object_32 = object.key("parseWAF").start_object();
-        crate::protocol_serde::shape_parse_waf::ser_parse_waf(&mut object_32, var_31)?;
+        let mut object_32 = object.key("parseVPC").start_object();
+        crate::protocol_serde::shape_parse_vpc::ser_parse_vpc(&mut object_32, var_31)?;
         object_32.finish();
     }
-    if let Some(var_33) = &input.rename_keys {
+    if let Some(var_33) = &input.parse_waf {
         #[allow(unused_mut)]
-        let mut object_34 = object.key("renameKeys").start_object();
-        crate::protocol_serde::shape_rename_keys::ser_rename_keys(&mut object_34, var_33)?;
+        let mut object_34 = object.key("parseWAF").start_object();
+        crate::protocol_serde::shape_parse_waf::ser_parse_waf(&mut object_34, var_33)?;
         object_34.finish();
     }
-    if let Some(var_35) = &input.split_string {
+    if let Some(var_35) = &input.rename_keys {
         #[allow(unused_mut)]
-        let mut object_36 = object.key("splitString").start_object();
-        crate::protocol_serde::shape_split_string::ser_split_string(&mut object_36, var_35)?;
+        let mut object_36 = object.key("renameKeys").start_object();
+        crate::protocol_serde::shape_rename_keys::ser_rename_keys(&mut object_36, var_35)?;
         object_36.finish();
     }
-    if let Some(var_37) = &input.substitute_string {
+    if let Some(var_37) = &input.split_string {
         #[allow(unused_mut)]
-        let mut object_38 = object.key("substituteString").start_object();
-        crate::protocol_serde::shape_substitute_string::ser_substitute_string(&mut object_38, var_37)?;
+        let mut object_38 = object.key("splitString").start_object();
+        crate::protocol_serde::shape_split_string::ser_split_string(&mut object_38, var_37)?;
         object_38.finish();
     }
-    if let Some(var_39) = &input.trim_string {
+    if let Some(var_39) = &input.substitute_string {
         #[allow(unused_mut)]
-        let mut object_40 = object.key("trimString").start_object();
-        crate::protocol_serde::shape_trim_string::ser_trim_string(&mut object_40, var_39)?;
+        let mut object_40 = object.key("substituteString").start_object();
+        crate::protocol_serde::shape_substitute_string::ser_substitute_string(&mut object_40, var_39)?;
         object_40.finish();
     }
-    if let Some(var_41) = &input.type_converter {
+    if let Some(var_41) = &input.trim_string {
         #[allow(unused_mut)]
-        let mut object_42 = object.key("typeConverter").start_object();
-        crate::protocol_serde::shape_type_converter::ser_type_converter(&mut object_42, var_41)?;
+        let mut object_42 = object.key("trimString").start_object();
+        crate::protocol_serde::shape_trim_string::ser_trim_string(&mut object_42, var_41)?;
         object_42.finish();
     }
-    if let Some(var_43) = &input.upper_case_string {
+    if let Some(var_43) = &input.type_converter {
         #[allow(unused_mut)]
-        let mut object_44 = object.key("upperCaseString").start_object();
-        crate::protocol_serde::shape_upper_case_string::ser_upper_case_string(&mut object_44, var_43)?;
+        let mut object_44 = object.key("typeConverter").start_object();
+        crate::protocol_serde::shape_type_converter::ser_type_converter(&mut object_44, var_43)?;
         object_44.finish();
+    }
+    if let Some(var_45) = &input.upper_case_string {
+        #[allow(unused_mut)]
+        let mut object_46 = object.key("upperCaseString").start_object();
+        crate::protocol_serde::shape_upper_case_string::ser_upper_case_string(&mut object_46, var_45)?;
+        object_46.finish();
     }
     Ok(())
 }
@@ -192,6 +198,9 @@ where
                         }
                         "parseRoute53" => {
                             builder = builder.set_parse_route53(crate::protocol_serde::shape_parse_route53::de_parse_route53(tokens)?);
+                        }
+                        "parseToOCSF" => {
+                            builder = builder.set_parse_to_ocsf(crate::protocol_serde::shape_parse_to_ocsf::de_parse_to_ocsf(tokens)?);
                         }
                         "parsePostgres" => {
                             builder = builder.set_parse_postgres(crate::protocol_serde::shape_parse_postgres::de_parse_postgres(tokens)?);

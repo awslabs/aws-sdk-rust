@@ -393,6 +393,8 @@ mod put_object_tagging;
 
 mod put_public_access_block;
 
+mod rename_object;
+
 mod restore_object;
 
 mod select_object_content;

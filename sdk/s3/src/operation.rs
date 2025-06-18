@@ -282,6 +282,9 @@ pub mod put_object_tagging;
 /// Types for the `PutPublicAccessBlock` operation.
 pub mod put_public_access_block;
 
+/// Types for the `RenameObject` operation.
+pub mod rename_object;
+
 /// Types for the `RestoreObject` operation.
 pub mod restore_object;
 

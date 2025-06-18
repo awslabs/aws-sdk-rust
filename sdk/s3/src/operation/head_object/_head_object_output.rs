@@ -109,6 +109,11 @@ pub struct HeadObjectOutput {
     pub replication_status: ::std::option::Option<crate::types::ReplicationStatus>,
     /// <p>The count of parts this object has. This value is only returned if you specify <code>partNumber</code> in your request and the object was uploaded as a multipart upload.</p>
     pub parts_count: ::std::option::Option<i32>,
+    /// <p>The number of tags, if any, on the object, when you have the relevant permission to read object tags.</p>
+    /// <p>You can use <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObjectTagging.html">GetObjectTagging</a> to retrieve the tag set associated with an object.</p><note>
+    /// <p>This functionality is not supported for directory buckets.</p>
+    /// </note>
+    pub tag_count: ::std::option::Option<i32>,
     /// <p>The Object Lock mode, if any, that's in effect for this object. This header is only returned if the requester has the <code>s3:GetObjectRetention</code> permission. For more information about S3 Object Lock, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lock.html">Object Lock</a>.</p><note>
     /// <p>This functionality is not supported for directory buckets.</p>
     /// </note>
@@ -302,6 +307,13 @@ impl HeadObjectOutput {
     pub fn parts_count(&self) -> ::std::option::Option<i32> {
         self.parts_count
     }
+    /// <p>The number of tags, if any, on the object, when you have the relevant permission to read object tags.</p>
+    /// <p>You can use <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObjectTagging.html">GetObjectTagging</a> to retrieve the tag set associated with an object.</p><note>
+    /// <p>This functionality is not supported for directory buckets.</p>
+    /// </note>
+    pub fn tag_count(&self) -> ::std::option::Option<i32> {
+        self.tag_count
+    }
     /// <p>The Object Lock mode, if any, that's in effect for this object. This header is only returned if the requester has the <code>s3:GetObjectRetention</code> permission. For more information about S3 Object Lock, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lock.html">Object Lock</a>.</p><note>
     /// <p>This functionality is not supported for directory buckets.</p>
     /// </note>
@@ -366,6 +378,7 @@ impl ::std::fmt::Debug for HeadObjectOutput {
         formatter.field("request_charged", &self.request_charged);
         formatter.field("replication_status", &self.replication_status);
         formatter.field("parts_count", &self.parts_count);
+        formatter.field("tag_count", &self.tag_count);
         formatter.field("object_lock_mode", &self.object_lock_mode);
         formatter.field("object_lock_retain_until_date", &self.object_lock_retain_until_date);
         formatter.field("object_lock_legal_hold_status", &self.object_lock_legal_hold_status);
@@ -430,6 +443,7 @@ pub struct HeadObjectOutputBuilder {
     pub(crate) request_charged: ::std::option::Option<crate::types::RequestCharged>,
     pub(crate) replication_status: ::std::option::Option<crate::types::ReplicationStatus>,
     pub(crate) parts_count: ::std::option::Option<i32>,
+    pub(crate) tag_count: ::std::option::Option<i32>,
     pub(crate) object_lock_mode: ::std::option::Option<crate::types::ObjectLockMode>,
     pub(crate) object_lock_retain_until_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) object_lock_legal_hold_status: ::std::option::Option<crate::types::ObjectLockLegalHoldStatus>,
@@ -1027,6 +1041,29 @@ impl HeadObjectOutputBuilder {
     pub fn get_parts_count(&self) -> &::std::option::Option<i32> {
         &self.parts_count
     }
+    /// <p>The number of tags, if any, on the object, when you have the relevant permission to read object tags.</p>
+    /// <p>You can use <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObjectTagging.html">GetObjectTagging</a> to retrieve the tag set associated with an object.</p><note>
+    /// <p>This functionality is not supported for directory buckets.</p>
+    /// </note>
+    pub fn tag_count(mut self, input: i32) -> Self {
+        self.tag_count = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The number of tags, if any, on the object, when you have the relevant permission to read object tags.</p>
+    /// <p>You can use <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObjectTagging.html">GetObjectTagging</a> to retrieve the tag set associated with an object.</p><note>
+    /// <p>This functionality is not supported for directory buckets.</p>
+    /// </note>
+    pub fn set_tag_count(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.tag_count = input;
+        self
+    }
+    /// <p>The number of tags, if any, on the object, when you have the relevant permission to read object tags.</p>
+    /// <p>You can use <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObjectTagging.html">GetObjectTagging</a> to retrieve the tag set associated with an object.</p><note>
+    /// <p>This functionality is not supported for directory buckets.</p>
+    /// </note>
+    pub fn get_tag_count(&self) -> &::std::option::Option<i32> {
+        &self.tag_count
+    }
     /// <p>The Object Lock mode, if any, that's in effect for this object. This header is only returned if the requester has the <code>s3:GetObjectRetention</code> permission. For more information about S3 Object Lock, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lock.html">Object Lock</a>.</p><note>
     /// <p>This functionality is not supported for directory buckets.</p>
     /// </note>
@@ -1172,6 +1209,7 @@ impl HeadObjectOutputBuilder {
             request_charged: self.request_charged,
             replication_status: self.replication_status,
             parts_count: self.parts_count,
+            tag_count: self.tag_count,
             object_lock_mode: self.object_lock_mode,
             object_lock_retain_until_date: self.object_lock_retain_until_date,
             object_lock_legal_hold_status: self.object_lock_legal_hold_status,
@@ -1218,6 +1256,7 @@ impl ::std::fmt::Debug for HeadObjectOutputBuilder {
         formatter.field("request_charged", &self.request_charged);
         formatter.field("replication_status", &self.replication_status);
         formatter.field("parts_count", &self.parts_count);
+        formatter.field("tag_count", &self.tag_count);
         formatter.field("object_lock_mode", &self.object_lock_mode);
         formatter.field("object_lock_retain_until_date", &self.object_lock_retain_until_date);
         formatter.field("object_lock_legal_hold_status", &self.object_lock_legal_hold_status);

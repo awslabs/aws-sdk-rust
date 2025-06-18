@@ -33,6 +33,8 @@ pub use crate::types::_parse_vpc::ParseVpcBuilder;
 
 pub use crate::types::_parse_postgres::ParsePostgresBuilder;
 
+pub use crate::types::_parse_to_ocsf::ParseToOcsfBuilder;
+
 pub use crate::types::_parse_route53::ParseRoute53Builder;
 
 pub use crate::types::_parse_key_value::ParseKeyValueBuilder;

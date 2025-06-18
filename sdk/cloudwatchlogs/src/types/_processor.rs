@@ -32,6 +32,8 @@ pub struct Processor {
     /// <p>Use this parameter to include the <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatch-Logs-Transformation.html#CloudWatch-Logs-Transformation-parseRoute53"> parseRoute53</a> processor in your transformer.</p>
     /// <p>If you use this processor, it must be the first processor in your transformer.</p>
     pub parse_route53: ::std::option::Option<crate::types::ParseRoute53>,
+    /// <p>Use this processor to convert logs into Open Cybersecurity Schema Framework (OCSF) format</p>
+    pub parse_to_ocsf: ::std::option::Option<crate::types::ParseToOcsf>,
     /// <p>Use this parameter to include the <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatch-Logs-Transformation.html#CloudWatch-Logs-Transformation-parsePostGres"> parsePostGres</a> processor in your transformer.</p>
     /// <p>If you use this processor, it must be the first processor in your transformer.</p>
     pub parse_postgres: ::std::option::Option<crate::types::ParsePostgres>,
@@ -109,6 +111,10 @@ impl Processor {
     pub fn parse_route53(&self) -> ::std::option::Option<&crate::types::ParseRoute53> {
         self.parse_route53.as_ref()
     }
+    /// <p>Use this processor to convert logs into Open Cybersecurity Schema Framework (OCSF) format</p>
+    pub fn parse_to_ocsf(&self) -> ::std::option::Option<&crate::types::ParseToOcsf> {
+        self.parse_to_ocsf.as_ref()
+    }
     /// <p>Use this parameter to include the <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatch-Logs-Transformation.html#CloudWatch-Logs-Transformation-parsePostGres"> parsePostGres</a> processor in your transformer.</p>
     /// <p>If you use this processor, it must be the first processor in your transformer.</p>
     pub fn parse_postgres(&self) -> ::std::option::Option<&crate::types::ParsePostgres> {
@@ -173,6 +179,7 @@ pub struct ProcessorBuilder {
     pub(crate) parse_json: ::std::option::Option<crate::types::ParseJson>,
     pub(crate) parse_key_value: ::std::option::Option<crate::types::ParseKeyValue>,
     pub(crate) parse_route53: ::std::option::Option<crate::types::ParseRoute53>,
+    pub(crate) parse_to_ocsf: ::std::option::Option<crate::types::ParseToOcsf>,
     pub(crate) parse_postgres: ::std::option::Option<crate::types::ParsePostgres>,
     pub(crate) parse_vpc: ::std::option::Option<crate::types::ParseVpc>,
     pub(crate) parse_waf: ::std::option::Option<crate::types::ParseWaf>,
@@ -372,6 +379,20 @@ impl ProcessorBuilder {
     pub fn get_parse_route53(&self) -> &::std::option::Option<crate::types::ParseRoute53> {
         &self.parse_route53
     }
+    /// <p>Use this processor to convert logs into Open Cybersecurity Schema Framework (OCSF) format</p>
+    pub fn parse_to_ocsf(mut self, input: crate::types::ParseToOcsf) -> Self {
+        self.parse_to_ocsf = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Use this processor to convert logs into Open Cybersecurity Schema Framework (OCSF) format</p>
+    pub fn set_parse_to_ocsf(mut self, input: ::std::option::Option<crate::types::ParseToOcsf>) -> Self {
+        self.parse_to_ocsf = input;
+        self
+    }
+    /// <p>Use this processor to convert logs into Open Cybersecurity Schema Framework (OCSF) format</p>
+    pub fn get_parse_to_ocsf(&self) -> &::std::option::Option<crate::types::ParseToOcsf> {
+        &self.parse_to_ocsf
+    }
     /// <p>Use this parameter to include the <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatch-Logs-Transformation.html#CloudWatch-Logs-Transformation-parsePostGres"> parsePostGres</a> processor in your transformer.</p>
     /// <p>If you use this processor, it must be the first processor in your transformer.</p>
     pub fn parse_postgres(mut self, input: crate::types::ParsePostgres) -> Self {
@@ -523,6 +544,7 @@ impl ProcessorBuilder {
             parse_json: self.parse_json,
             parse_key_value: self.parse_key_value,
             parse_route53: self.parse_route53,
+            parse_to_ocsf: self.parse_to_ocsf,
             parse_postgres: self.parse_postgres,
             parse_vpc: self.parse_vpc,
             parse_waf: self.parse_waf,

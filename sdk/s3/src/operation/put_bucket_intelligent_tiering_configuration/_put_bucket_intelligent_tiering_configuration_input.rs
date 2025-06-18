@@ -7,6 +7,8 @@ pub struct PutBucketIntelligentTieringConfigurationInput {
     pub bucket: ::std::option::Option<::std::string::String>,
     /// <p>The ID used to identify the S3 Intelligent-Tiering configuration.</p>
     pub id: ::std::option::Option<::std::string::String>,
+    /// <p>The account ID of the expected bucket owner. If the account ID that you provide does not match the actual owner of the bucket, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
+    pub expected_bucket_owner: ::std::option::Option<::std::string::String>,
     /// <p>Container for S3 Intelligent-Tiering configuration.</p>
     pub intelligent_tiering_configuration: ::std::option::Option<crate::types::IntelligentTieringConfiguration>,
 }
@@ -18,6 +20,10 @@ impl PutBucketIntelligentTieringConfigurationInput {
     /// <p>The ID used to identify the S3 Intelligent-Tiering configuration.</p>
     pub fn id(&self) -> ::std::option::Option<&str> {
         self.id.as_deref()
+    }
+    /// <p>The account ID of the expected bucket owner. If the account ID that you provide does not match the actual owner of the bucket, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
+    pub fn expected_bucket_owner(&self) -> ::std::option::Option<&str> {
+        self.expected_bucket_owner.as_deref()
     }
     /// <p>Container for S3 Intelligent-Tiering configuration.</p>
     pub fn intelligent_tiering_configuration(&self) -> ::std::option::Option<&crate::types::IntelligentTieringConfiguration> {
@@ -38,6 +44,7 @@ impl PutBucketIntelligentTieringConfigurationInput {
 pub struct PutBucketIntelligentTieringConfigurationInputBuilder {
     pub(crate) bucket: ::std::option::Option<::std::string::String>,
     pub(crate) id: ::std::option::Option<::std::string::String>,
+    pub(crate) expected_bucket_owner: ::std::option::Option<::std::string::String>,
     pub(crate) intelligent_tiering_configuration: ::std::option::Option<crate::types::IntelligentTieringConfiguration>,
 }
 impl PutBucketIntelligentTieringConfigurationInputBuilder {
@@ -71,6 +78,20 @@ impl PutBucketIntelligentTieringConfigurationInputBuilder {
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.id
     }
+    /// <p>The account ID of the expected bucket owner. If the account ID that you provide does not match the actual owner of the bucket, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
+    pub fn expected_bucket_owner(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.expected_bucket_owner = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The account ID of the expected bucket owner. If the account ID that you provide does not match the actual owner of the bucket, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
+    pub fn set_expected_bucket_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.expected_bucket_owner = input;
+        self
+    }
+    /// <p>The account ID of the expected bucket owner. If the account ID that you provide does not match the actual owner of the bucket, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
+    pub fn get_expected_bucket_owner(&self) -> &::std::option::Option<::std::string::String> {
+        &self.expected_bucket_owner
+    }
     /// <p>Container for S3 Intelligent-Tiering configuration.</p>
     /// This field is required.
     pub fn intelligent_tiering_configuration(mut self, input: crate::types::IntelligentTieringConfiguration) -> Self {
@@ -97,6 +118,7 @@ impl PutBucketIntelligentTieringConfigurationInputBuilder {
             crate::operation::put_bucket_intelligent_tiering_configuration::PutBucketIntelligentTieringConfigurationInput {
                 bucket: self.bucket,
                 id: self.id,
+                expected_bucket_owner: self.expected_bucket_owner,
                 intelligent_tiering_configuration: self.intelligent_tiering_configuration,
             },
         )
