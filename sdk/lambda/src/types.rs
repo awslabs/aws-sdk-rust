@@ -93,6 +93,18 @@ pub use crate::types::_scaling_config::ScalingConfig;
 
 pub use crate::types::_self_managed_kafka_event_source_config::SelfManagedKafkaEventSourceConfig;
 
+pub use crate::types::_kafka_schema_registry_config::KafkaSchemaRegistryConfig;
+
+pub use crate::types::_kafka_schema_validation_config::KafkaSchemaValidationConfig;
+
+pub use crate::types::_kafka_schema_validation_attribute::KafkaSchemaValidationAttribute;
+
+pub use crate::types::_kafka_schema_registry_access_config::KafkaSchemaRegistryAccessConfig;
+
+pub use crate::types::_kafka_schema_registry_auth_type::KafkaSchemaRegistryAuthType;
+
+pub use crate::types::_schema_registry_event_record_format::SchemaRegistryEventRecordFormat;
+
 pub use crate::types::_amazon_managed_kafka_event_source_config::AmazonManagedKafkaEventSourceConfig;
 
 pub use crate::types::_function_response_type::FunctionResponseType;
@@ -265,6 +277,16 @@ mod _invoke_with_response_stream_complete_event;
 
 mod _invoke_with_response_stream_response_event;
 
+mod _kafka_schema_registry_access_config;
+
+mod _kafka_schema_registry_auth_type;
+
+mod _kafka_schema_registry_config;
+
+mod _kafka_schema_validation_attribute;
+
+mod _kafka_schema_validation_config;
+
 mod _last_update_status;
 
 mod _last_update_status_reason_code;
@@ -308,6 +330,8 @@ mod _runtime_version_config;
 mod _runtime_version_error;
 
 mod _scaling_config;
+
+mod _schema_registry_event_record_format;
 
 mod _self_managed_event_source;
 

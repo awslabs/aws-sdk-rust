@@ -54,7 +54,7 @@ impl crate::operation::create_event_source_mapping::builders::CreateEventSourceM
 /// <p>For stream sources (DynamoDB, Kinesis, Amazon MSK, and self-managed Apache Kafka), the following option is also available:</p>
 /// <ul>
 /// <li>
-/// <p><code>DestinationConfig</code> – Send discarded records to an Amazon SQS queue, Amazon SNS topic, or Amazon S3 bucket.</p></li>
+/// <p><code>OnFailure</code> – Send discarded records to an Amazon SQS queue, Amazon SNS topic, or Amazon S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-async-retain-records.html#invocation-async-destinations">Adding a destination</a>.</p></li>
 /// </ul>
 /// <p>For information about which configuration parameters apply to each event source, see the following topics.</p>
 /// <ul>

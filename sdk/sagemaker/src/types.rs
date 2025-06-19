@@ -159,6 +159,12 @@ pub use crate::types::_space_idle_settings::SpaceIdleSettings;
 
 pub use crate::types::_space_code_editor_app_settings::SpaceCodeEditorAppSettings;
 
+pub use crate::types::_update_template_provider::UpdateTemplateProvider;
+
+pub use crate::types::_cfn_update_template_provider::CfnUpdateTemplateProvider;
+
+pub use crate::types::_cfn_stack_update_parameter::CfnStackUpdateParameter;
+
 pub use crate::types::_tag::Tag;
 
 pub use crate::types::_service_catalog_provisioning_update_details::ServiceCatalogProvisioningUpdateDetails;
@@ -690,6 +696,14 @@ pub use crate::types::_hyperband_strategy_config::HyperbandStrategyConfig;
 pub use crate::types::_hyper_parameter_tuning_job_strategy_type::HyperParameterTuningJobStrategyType;
 
 pub use crate::types::_project::Project;
+
+pub use crate::types::_template_provider_detail::TemplateProviderDetail;
+
+pub use crate::types::_cfn_template_provider_detail::CfnTemplateProviderDetail;
+
+pub use crate::types::_cfn_stack_detail::CfnStackDetail;
+
+pub use crate::types::_cfn_stack_parameter::CfnStackParameter;
 
 pub use crate::types::_project_status::ProjectStatus;
 
@@ -1879,6 +1893,12 @@ pub use crate::types::_retention_type::RetentionType;
 
 pub use crate::types::_session_chaining_config::SessionChainingConfig;
 
+pub use crate::types::_create_template_provider::CreateTemplateProvider;
+
+pub use crate::types::_cfn_create_template_provider::CfnCreateTemplateProvider;
+
+pub use crate::types::_cfn_stack_create_parameter::CfnStackCreateParameter;
+
 pub use crate::types::_recommendation_job_output_config::RecommendationJobOutputConfig;
 
 pub use crate::types::_recommendation_job_compiled_output_config::RecommendationJobCompiledOutputConfig;
@@ -2139,6 +2159,20 @@ mod _categorical_parameter_range;
 
 mod _categorical_parameter_range_specification;
 
+mod _cfn_create_template_provider;
+
+mod _cfn_stack_create_parameter;
+
+mod _cfn_stack_detail;
+
+mod _cfn_stack_parameter;
+
+mod _cfn_stack_update_parameter;
+
+mod _cfn_template_provider_detail;
+
+mod _cfn_update_template_provider;
+
 mod _channel;
 
 mod _channel_specification;
@@ -2258,6 +2292,8 @@ mod _continuous_parameter_range;
 mod _continuous_parameter_range_specification;
 
 mod _convergence_detected;
+
+mod _create_template_provider;
 
 mod _cross_account_filter_option;
 
@@ -3593,6 +3629,8 @@ mod _target_platform_os;
 
 mod _target_tracking_scaling_policy_configuration;
 
+mod _template_provider_detail;
+
 mod _tensor_board_app_settings;
 
 mod _tensor_board_output_config;
@@ -3744,6 +3782,8 @@ mod _ui_template_info;
 mod _unified_studio_settings;
 
 mod _update_cluster_software_instance_group_specification;
+
+mod _update_template_provider;
 
 mod _usd;
 

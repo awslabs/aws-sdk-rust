@@ -54,7 +54,7 @@ impl crate::operation::update_event_source_mapping::builders::UpdateEventSourceM
 /// <p>For stream sources (DynamoDB, Kinesis, Amazon MSK, and self-managed Apache Kafka), the following option is also available:</p>
 /// <ul>
 /// <li>
-/// <p><code>DestinationConfig</code> – Send discarded records to an Amazon SQS queue, Amazon SNS topic, or Amazon S3 bucket.</p></li>
+/// <p><code>OnFailure</code> – Send discarded records to an Amazon SQS queue, Amazon SNS topic, or Amazon S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-async-retain-records.html#invocation-async-destinations">Adding a destination</a>.</p></li>
 /// </ul>
 /// <p>For information about which configuration parameters apply to each event source, see the following topics.</p>
 /// <ul>
@@ -473,6 +473,40 @@ impl UpdateEventSourceMappingFluentBuilder {
     /// <p>(Amazon SQS only) The scaling configuration for the event source. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-sqs.html#events-sqs-max-concurrency">Configuring maximum concurrency for Amazon SQS event sources</a>.</p>
     pub fn get_scaling_config(&self) -> &::std::option::Option<crate::types::ScalingConfig> {
         self.inner.get_scaling_config()
+    }
+    /// <p>Specific configuration settings for an Amazon Managed Streaming for Apache Kafka (Amazon MSK) event source.</p>
+    pub fn amazon_managed_kafka_event_source_config(mut self, input: crate::types::AmazonManagedKafkaEventSourceConfig) -> Self {
+        self.inner = self.inner.amazon_managed_kafka_event_source_config(input);
+        self
+    }
+    /// <p>Specific configuration settings for an Amazon Managed Streaming for Apache Kafka (Amazon MSK) event source.</p>
+    pub fn set_amazon_managed_kafka_event_source_config(
+        mut self,
+        input: ::std::option::Option<crate::types::AmazonManagedKafkaEventSourceConfig>,
+    ) -> Self {
+        self.inner = self.inner.set_amazon_managed_kafka_event_source_config(input);
+        self
+    }
+    /// <p>Specific configuration settings for an Amazon Managed Streaming for Apache Kafka (Amazon MSK) event source.</p>
+    pub fn get_amazon_managed_kafka_event_source_config(&self) -> &::std::option::Option<crate::types::AmazonManagedKafkaEventSourceConfig> {
+        self.inner.get_amazon_managed_kafka_event_source_config()
+    }
+    /// <p>Specific configuration settings for a self-managed Apache Kafka event source.</p>
+    pub fn self_managed_kafka_event_source_config(mut self, input: crate::types::SelfManagedKafkaEventSourceConfig) -> Self {
+        self.inner = self.inner.self_managed_kafka_event_source_config(input);
+        self
+    }
+    /// <p>Specific configuration settings for a self-managed Apache Kafka event source.</p>
+    pub fn set_self_managed_kafka_event_source_config(
+        mut self,
+        input: ::std::option::Option<crate::types::SelfManagedKafkaEventSourceConfig>,
+    ) -> Self {
+        self.inner = self.inner.set_self_managed_kafka_event_source_config(input);
+        self
+    }
+    /// <p>Specific configuration settings for a self-managed Apache Kafka event source.</p>
+    pub fn get_self_managed_kafka_event_source_config(&self) -> &::std::option::Option<crate::types::SelfManagedKafkaEventSourceConfig> {
+        self.inner.get_self_managed_kafka_event_source_config()
     }
     /// <p>Specific configuration settings for a DocumentDB event source.</p>
     pub fn document_db_event_source_config(mut self, input: crate::types::DocumentDbEventSourceConfig) -> Self {

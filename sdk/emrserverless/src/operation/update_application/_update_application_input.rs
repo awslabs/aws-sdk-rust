@@ -34,6 +34,8 @@ pub struct UpdateApplicationInput {
     pub monitoring_configuration: ::std::option::Option<crate::types::MonitoringConfiguration>,
     /// <p>The scheduler configuration for batch and streaming jobs running on this application. Supported with release labels emr-7.0.0 and above.</p>
     pub scheduler_configuration: ::std::option::Option<crate::types::SchedulerConfiguration>,
+    /// <p>Specifies the IAM Identity Center configuration used to enable or disable trusted identity propagation. When provided, this configuration determines how the application interacts with IAM Identity Center for user authentication and access control.</p>
+    pub identity_center_configuration: ::std::option::Option<crate::types::IdentityCenterConfigurationInput>,
 }
 impl UpdateApplicationInput {
     /// <p>The ID of the application to update.</p>
@@ -102,6 +104,10 @@ impl UpdateApplicationInput {
     pub fn scheduler_configuration(&self) -> ::std::option::Option<&crate::types::SchedulerConfiguration> {
         self.scheduler_configuration.as_ref()
     }
+    /// <p>Specifies the IAM Identity Center configuration used to enable or disable trusted identity propagation. When provided, this configuration determines how the application interacts with IAM Identity Center for user authentication and access control.</p>
+    pub fn identity_center_configuration(&self) -> ::std::option::Option<&crate::types::IdentityCenterConfigurationInput> {
+        self.identity_center_configuration.as_ref()
+    }
 }
 impl UpdateApplicationInput {
     /// Creates a new builder-style object to manufacture [`UpdateApplicationInput`](crate::operation::update_application::UpdateApplicationInput).
@@ -130,6 +136,7 @@ pub struct UpdateApplicationInputBuilder {
     pub(crate) runtime_configuration: ::std::option::Option<::std::vec::Vec<crate::types::Configuration>>,
     pub(crate) monitoring_configuration: ::std::option::Option<crate::types::MonitoringConfiguration>,
     pub(crate) scheduler_configuration: ::std::option::Option<crate::types::SchedulerConfiguration>,
+    pub(crate) identity_center_configuration: ::std::option::Option<crate::types::IdentityCenterConfigurationInput>,
 }
 impl UpdateApplicationInputBuilder {
     /// <p>The ID of the application to update.</p>
@@ -376,6 +383,20 @@ impl UpdateApplicationInputBuilder {
     pub fn get_scheduler_configuration(&self) -> &::std::option::Option<crate::types::SchedulerConfiguration> {
         &self.scheduler_configuration
     }
+    /// <p>Specifies the IAM Identity Center configuration used to enable or disable trusted identity propagation. When provided, this configuration determines how the application interacts with IAM Identity Center for user authentication and access control.</p>
+    pub fn identity_center_configuration(mut self, input: crate::types::IdentityCenterConfigurationInput) -> Self {
+        self.identity_center_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies the IAM Identity Center configuration used to enable or disable trusted identity propagation. When provided, this configuration determines how the application interacts with IAM Identity Center for user authentication and access control.</p>
+    pub fn set_identity_center_configuration(mut self, input: ::std::option::Option<crate::types::IdentityCenterConfigurationInput>) -> Self {
+        self.identity_center_configuration = input;
+        self
+    }
+    /// <p>Specifies the IAM Identity Center configuration used to enable or disable trusted identity propagation. When provided, this configuration determines how the application interacts with IAM Identity Center for user authentication and access control.</p>
+    pub fn get_identity_center_configuration(&self) -> &::std::option::Option<crate::types::IdentityCenterConfigurationInput> {
+        &self.identity_center_configuration
+    }
     /// Consumes the builder and constructs a [`UpdateApplicationInput`](crate::operation::update_application::UpdateApplicationInput).
     pub fn build(
         self,
@@ -396,6 +417,7 @@ impl UpdateApplicationInputBuilder {
             runtime_configuration: self.runtime_configuration,
             monitoring_configuration: self.monitoring_configuration,
             scheduler_configuration: self.scheduler_configuration,
+            identity_center_configuration: self.identity_center_configuration,
         })
     }
 }

@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum ImportKeyMaterial {
-    /// <p>Parameter information for key material import using the asymmetric ECDH key exchange method.</p>
+    /// <p>Key derivation parameter information for key material import using asymmetric ECDH key exchange method.</p>
     DiffieHellmanTr31KeyBlock(crate::types::ImportDiffieHellmanTr31KeyBlock),
     /// <p>Parameter information for key material import using asymmetric RSA wrap and unwrap key exchange method.</p>
     KeyCryptogram(crate::types::ImportKeyCryptogram),

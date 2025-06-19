@@ -29,7 +29,7 @@ pub struct EventSourceMappingConfiguration {
     pub function_arn: ::std::option::Option<::std::string::String>,
     /// <p>The date that the event source mapping was last updated or that its state changed.</p>
     pub last_modified: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>The result of the last Lambda invocation of your function.</p>
+    /// <p>The result of the event source mapping's last processing attempt.</p>
     pub last_processing_result: ::std::option::Option<::std::string::String>,
     /// <p>The state of the event source mapping. It can be one of the following: <code>Creating</code>, <code>Enabling</code>, <code>Enabled</code>, <code>Disabling</code>, <code>Disabled</code>, <code>Updating</code>, or <code>Deleting</code>.</p>
     pub state: ::std::option::Option<::std::string::String>,
@@ -122,7 +122,7 @@ impl EventSourceMappingConfiguration {
     pub fn last_modified(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_modified.as_ref()
     }
-    /// <p>The result of the last Lambda invocation of your function.</p>
+    /// <p>The result of the event source mapping's last processing attempt.</p>
     pub fn last_processing_result(&self) -> ::std::option::Option<&str> {
         self.last_processing_result.as_deref()
     }
@@ -421,17 +421,17 @@ impl EventSourceMappingConfigurationBuilder {
     pub fn get_last_modified(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_modified
     }
-    /// <p>The result of the last Lambda invocation of your function.</p>
+    /// <p>The result of the event source mapping's last processing attempt.</p>
     pub fn last_processing_result(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.last_processing_result = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The result of the last Lambda invocation of your function.</p>
+    /// <p>The result of the event source mapping's last processing attempt.</p>
     pub fn set_last_processing_result(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.last_processing_result = input;
         self
     }
-    /// <p>The result of the last Lambda invocation of your function.</p>
+    /// <p>The result of the event source mapping's last processing attempt.</p>
     pub fn get_last_processing_result(&self) -> &::std::option::Option<::std::string::String> {
         &self.last_processing_result
     }

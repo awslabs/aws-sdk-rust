@@ -169,4 +169,23 @@ impl CreateProjectFluentBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         self.inner.get_tags()
     }
+    ///
+    /// Appends an item to `TemplateProviders`.
+    ///
+    /// To override the contents of this collection use [`set_template_providers`](Self::set_template_providers).
+    ///
+    /// <p>An array of template provider configurations for creating infrastructure resources for the project.</p>
+    pub fn template_providers(mut self, input: crate::types::CreateTemplateProvider) -> Self {
+        self.inner = self.inner.template_providers(input);
+        self
+    }
+    /// <p>An array of template provider configurations for creating infrastructure resources for the project.</p>
+    pub fn set_template_providers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CreateTemplateProvider>>) -> Self {
+        self.inner = self.inner.set_template_providers(input);
+        self
+    }
+    /// <p>An array of template provider configurations for creating infrastructure resources for the project.</p>
+    pub fn get_template_providers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CreateTemplateProvider>> {
+        self.inner.get_template_providers()
+    }
 }

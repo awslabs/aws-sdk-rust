@@ -3,20 +3,20 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct GetParametersForExportOutput {
-    /// <p>The signing key certificate in PEM format (base64 encoded) of the public key for signature within the TR-34 key block. The certificate expires after 7 days.</p>
+    /// <p>The signing key certificate in PEM format (base64 encoded) of the public key for signature within the TR-34 key block. The certificate expires after 30 days.</p>
     pub signing_key_certificate: ::std::string::String,
     /// <p>The root certificate authority (CA) that signed the signing key certificate in PEM format (base64 encoded).</p>
     pub signing_key_certificate_chain: ::std::string::String,
     /// <p>The algorithm of the signing key certificate for use in TR-34 key block generation. <code>RSA_2048</code> is the only signing key algorithm allowed.</p>
     pub signing_key_algorithm: crate::types::KeyAlgorithm,
-    /// <p>The export token to initiate key export from Amazon Web Services Payment Cryptography. The export token expires after 7 days. You can use the same export token to export multiple keys from the same service account.</p>
+    /// <p>The export token to initiate key export from Amazon Web Services Payment Cryptography. The export token expires after 30 days. You can use the same export token to export multiple keys from the same service account.</p>
     pub export_token: ::std::string::String,
     /// <p>The validity period of the export token.</p>
     pub parameters_valid_until_timestamp: ::aws_smithy_types::DateTime,
     _request_id: Option<String>,
 }
 impl GetParametersForExportOutput {
-    /// <p>The signing key certificate in PEM format (base64 encoded) of the public key for signature within the TR-34 key block. The certificate expires after 7 days.</p>
+    /// <p>The signing key certificate in PEM format (base64 encoded) of the public key for signature within the TR-34 key block. The certificate expires after 30 days.</p>
     pub fn signing_key_certificate(&self) -> &str {
         use std::ops::Deref;
         self.signing_key_certificate.deref()
@@ -30,7 +30,7 @@ impl GetParametersForExportOutput {
     pub fn signing_key_algorithm(&self) -> &crate::types::KeyAlgorithm {
         &self.signing_key_algorithm
     }
-    /// <p>The export token to initiate key export from Amazon Web Services Payment Cryptography. The export token expires after 7 days. You can use the same export token to export multiple keys from the same service account.</p>
+    /// <p>The export token to initiate key export from Amazon Web Services Payment Cryptography. The export token expires after 30 days. You can use the same export token to export multiple keys from the same service account.</p>
     pub fn export_token(&self) -> &str {
         use std::ops::Deref;
         self.export_token.deref()
@@ -76,18 +76,18 @@ pub struct GetParametersForExportOutputBuilder {
     _request_id: Option<String>,
 }
 impl GetParametersForExportOutputBuilder {
-    /// <p>The signing key certificate in PEM format (base64 encoded) of the public key for signature within the TR-34 key block. The certificate expires after 7 days.</p>
+    /// <p>The signing key certificate in PEM format (base64 encoded) of the public key for signature within the TR-34 key block. The certificate expires after 30 days.</p>
     /// This field is required.
     pub fn signing_key_certificate(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.signing_key_certificate = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The signing key certificate in PEM format (base64 encoded) of the public key for signature within the TR-34 key block. The certificate expires after 7 days.</p>
+    /// <p>The signing key certificate in PEM format (base64 encoded) of the public key for signature within the TR-34 key block. The certificate expires after 30 days.</p>
     pub fn set_signing_key_certificate(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.signing_key_certificate = input;
         self
     }
-    /// <p>The signing key certificate in PEM format (base64 encoded) of the public key for signature within the TR-34 key block. The certificate expires after 7 days.</p>
+    /// <p>The signing key certificate in PEM format (base64 encoded) of the public key for signature within the TR-34 key block. The certificate expires after 30 days.</p>
     pub fn get_signing_key_certificate(&self) -> &::std::option::Option<::std::string::String> {
         &self.signing_key_certificate
     }
@@ -121,18 +121,18 @@ impl GetParametersForExportOutputBuilder {
     pub fn get_signing_key_algorithm(&self) -> &::std::option::Option<crate::types::KeyAlgorithm> {
         &self.signing_key_algorithm
     }
-    /// <p>The export token to initiate key export from Amazon Web Services Payment Cryptography. The export token expires after 7 days. You can use the same export token to export multiple keys from the same service account.</p>
+    /// <p>The export token to initiate key export from Amazon Web Services Payment Cryptography. The export token expires after 30 days. You can use the same export token to export multiple keys from the same service account.</p>
     /// This field is required.
     pub fn export_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.export_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The export token to initiate key export from Amazon Web Services Payment Cryptography. The export token expires after 7 days. You can use the same export token to export multiple keys from the same service account.</p>
+    /// <p>The export token to initiate key export from Amazon Web Services Payment Cryptography. The export token expires after 30 days. You can use the same export token to export multiple keys from the same service account.</p>
     pub fn set_export_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.export_token = input;
         self
     }
-    /// <p>The export token to initiate key export from Amazon Web Services Payment Cryptography. The export token expires after 7 days. You can use the same export token to export multiple keys from the same service account.</p>
+    /// <p>The export token to initiate key export from Amazon Web Services Payment Cryptography. The export token expires after 30 days. You can use the same export token to export multiple keys from the same service account.</p>
     pub fn get_export_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.export_token
     }

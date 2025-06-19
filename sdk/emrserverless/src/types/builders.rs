@@ -35,6 +35,8 @@ pub use crate::types::_job_run_summary::JobRunSummaryBuilder;
 
 pub use crate::types::_application::ApplicationBuilder;
 
+pub use crate::types::_identity_center_configuration::IdentityCenterConfigurationBuilder;
+
 pub use crate::types::_scheduler_configuration::SchedulerConfigurationBuilder;
 
 pub use crate::types::_interactive_configuration::InteractiveConfigurationBuilder;
@@ -52,6 +54,8 @@ pub use crate::types::_maximum_allowed_resources::MaximumAllowedResourcesBuilder
 pub use crate::types::_initial_capacity_config::InitialCapacityConfigBuilder;
 
 pub use crate::types::_worker_resource_config::WorkerResourceConfigBuilder;
+
+pub use crate::types::_identity_center_configuration_input::IdentityCenterConfigurationInputBuilder;
 
 pub use crate::types::_worker_type_specification_input::WorkerTypeSpecificationInputBuilder;
 

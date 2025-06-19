@@ -15,6 +15,10 @@
 ///     SymmetricKeyAlgorithm::Aes128 => { /* ... */ },
 ///     SymmetricKeyAlgorithm::Aes192 => { /* ... */ },
 ///     SymmetricKeyAlgorithm::Aes256 => { /* ... */ },
+///     SymmetricKeyAlgorithm::HmacSha224 => { /* ... */ },
+///     SymmetricKeyAlgorithm::HmacSha256 => { /* ... */ },
+///     SymmetricKeyAlgorithm::HmacSha384 => { /* ... */ },
+///     SymmetricKeyAlgorithm::HmacSha512 => { /* ... */ },
 ///     SymmetricKeyAlgorithm::Tdes2Key => { /* ... */ },
 ///     SymmetricKeyAlgorithm::Tdes3Key => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -52,6 +56,14 @@ pub enum SymmetricKeyAlgorithm {
     #[allow(missing_docs)] // documentation missing in model
     Aes256,
     #[allow(missing_docs)] // documentation missing in model
+    HmacSha224,
+    #[allow(missing_docs)] // documentation missing in model
+    HmacSha256,
+    #[allow(missing_docs)] // documentation missing in model
+    HmacSha384,
+    #[allow(missing_docs)] // documentation missing in model
+    HmacSha512,
+    #[allow(missing_docs)] // documentation missing in model
     Tdes2Key,
     #[allow(missing_docs)] // documentation missing in model
     Tdes3Key,
@@ -65,6 +77,10 @@ impl ::std::convert::From<&str> for SymmetricKeyAlgorithm {
             "AES_128" => SymmetricKeyAlgorithm::Aes128,
             "AES_192" => SymmetricKeyAlgorithm::Aes192,
             "AES_256" => SymmetricKeyAlgorithm::Aes256,
+            "HMAC_SHA224" => SymmetricKeyAlgorithm::HmacSha224,
+            "HMAC_SHA256" => SymmetricKeyAlgorithm::HmacSha256,
+            "HMAC_SHA384" => SymmetricKeyAlgorithm::HmacSha384,
+            "HMAC_SHA512" => SymmetricKeyAlgorithm::HmacSha512,
             "TDES_2KEY" => SymmetricKeyAlgorithm::Tdes2Key,
             "TDES_3KEY" => SymmetricKeyAlgorithm::Tdes3Key,
             other => SymmetricKeyAlgorithm::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -85,6 +101,10 @@ impl SymmetricKeyAlgorithm {
             SymmetricKeyAlgorithm::Aes128 => "AES_128",
             SymmetricKeyAlgorithm::Aes192 => "AES_192",
             SymmetricKeyAlgorithm::Aes256 => "AES_256",
+            SymmetricKeyAlgorithm::HmacSha224 => "HMAC_SHA224",
+            SymmetricKeyAlgorithm::HmacSha256 => "HMAC_SHA256",
+            SymmetricKeyAlgorithm::HmacSha384 => "HMAC_SHA384",
+            SymmetricKeyAlgorithm::HmacSha512 => "HMAC_SHA512",
             SymmetricKeyAlgorithm::Tdes2Key => "TDES_2KEY",
             SymmetricKeyAlgorithm::Tdes3Key => "TDES_3KEY",
             SymmetricKeyAlgorithm::Unknown(value) => value.as_str(),
@@ -92,7 +112,17 @@ impl SymmetricKeyAlgorithm {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["AES_128", "AES_192", "AES_256", "TDES_2KEY", "TDES_3KEY"]
+        &[
+            "AES_128",
+            "AES_192",
+            "AES_256",
+            "HMAC_SHA224",
+            "HMAC_SHA256",
+            "HMAC_SHA384",
+            "HMAC_SHA512",
+            "TDES_2KEY",
+            "TDES_3KEY",
+        ]
     }
 }
 impl ::std::convert::AsRef<str> for SymmetricKeyAlgorithm {
@@ -118,6 +148,10 @@ impl ::std::fmt::Display for SymmetricKeyAlgorithm {
             SymmetricKeyAlgorithm::Aes128 => write!(f, "AES_128"),
             SymmetricKeyAlgorithm::Aes192 => write!(f, "AES_192"),
             SymmetricKeyAlgorithm::Aes256 => write!(f, "AES_256"),
+            SymmetricKeyAlgorithm::HmacSha224 => write!(f, "HMAC_SHA224"),
+            SymmetricKeyAlgorithm::HmacSha256 => write!(f, "HMAC_SHA256"),
+            SymmetricKeyAlgorithm::HmacSha384 => write!(f, "HMAC_SHA384"),
+            SymmetricKeyAlgorithm::HmacSha512 => write!(f, "HMAC_SHA512"),
             SymmetricKeyAlgorithm::Tdes2Key => write!(f, "TDES_2KEY"),
             SymmetricKeyAlgorithm::Tdes3Key => write!(f, "TDES_3KEY"),
             SymmetricKeyAlgorithm::Unknown(value) => write!(f, "{}", value),

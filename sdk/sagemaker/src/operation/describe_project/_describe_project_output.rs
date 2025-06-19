@@ -17,6 +17,8 @@ pub struct DescribeProjectOutput {
     pub service_catalog_provisioned_product_details: ::std::option::Option<crate::types::ServiceCatalogProvisionedProductDetails>,
     /// <p>The status of the project.</p>
     pub project_status: ::std::option::Option<crate::types::ProjectStatus>,
+    /// <p>An array of template providers associated with the project.</p>
+    pub template_provider_details: ::std::option::Option<::std::vec::Vec<crate::types::TemplateProviderDetail>>,
     /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
     pub created_by: ::std::option::Option<crate::types::UserContext>,
     /// <p>The time when the project was created.</p>
@@ -55,6 +57,12 @@ impl DescribeProjectOutput {
     /// <p>The status of the project.</p>
     pub fn project_status(&self) -> ::std::option::Option<&crate::types::ProjectStatus> {
         self.project_status.as_ref()
+    }
+    /// <p>An array of template providers associated with the project.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.template_provider_details.is_none()`.
+    pub fn template_provider_details(&self) -> &[crate::types::TemplateProviderDetail] {
+        self.template_provider_details.as_deref().unwrap_or_default()
     }
     /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
     pub fn created_by(&self) -> ::std::option::Option<&crate::types::UserContext> {
@@ -96,6 +104,7 @@ pub struct DescribeProjectOutputBuilder {
     pub(crate) service_catalog_provisioning_details: ::std::option::Option<crate::types::ServiceCatalogProvisioningDetails>,
     pub(crate) service_catalog_provisioned_product_details: ::std::option::Option<crate::types::ServiceCatalogProvisionedProductDetails>,
     pub(crate) project_status: ::std::option::Option<crate::types::ProjectStatus>,
+    pub(crate) template_provider_details: ::std::option::Option<::std::vec::Vec<crate::types::TemplateProviderDetail>>,
     pub(crate) created_by: ::std::option::Option<crate::types::UserContext>,
     pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -208,6 +217,26 @@ impl DescribeProjectOutputBuilder {
     pub fn get_project_status(&self) -> &::std::option::Option<crate::types::ProjectStatus> {
         &self.project_status
     }
+    /// Appends an item to `template_provider_details`.
+    ///
+    /// To override the contents of this collection use [`set_template_provider_details`](Self::set_template_provider_details).
+    ///
+    /// <p>An array of template providers associated with the project.</p>
+    pub fn template_provider_details(mut self, input: crate::types::TemplateProviderDetail) -> Self {
+        let mut v = self.template_provider_details.unwrap_or_default();
+        v.push(input);
+        self.template_provider_details = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>An array of template providers associated with the project.</p>
+    pub fn set_template_provider_details(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TemplateProviderDetail>>) -> Self {
+        self.template_provider_details = input;
+        self
+    }
+    /// <p>An array of template providers associated with the project.</p>
+    pub fn get_template_provider_details(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TemplateProviderDetail>> {
+        &self.template_provider_details
+    }
     /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
     pub fn created_by(mut self, input: crate::types::UserContext) -> Self {
         self.created_by = ::std::option::Option::Some(input);
@@ -284,6 +313,7 @@ impl DescribeProjectOutputBuilder {
             service_catalog_provisioning_details: self.service_catalog_provisioning_details,
             service_catalog_provisioned_product_details: self.service_catalog_provisioned_product_details,
             project_status: self.project_status,
+            template_provider_details: self.template_provider_details,
             created_by: self.created_by,
             creation_time: self.creation_time,
             last_modified_time: self.last_modified_time,

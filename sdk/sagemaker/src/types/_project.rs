@@ -22,6 +22,8 @@ pub struct Project {
     pub created_by: ::std::option::Option<crate::types::UserContext>,
     /// <p>A timestamp specifying when the project was created.</p>
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>An array of template providers associated with the project.</p>
+    pub template_provider_details: ::std::option::Option<::std::vec::Vec<crate::types::TemplateProviderDetail>>,
     /// <p>An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in different ways, for example, by purpose, owner, or environment. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a>.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>A timestamp container for when the project was last modified.</p>
@@ -66,6 +68,12 @@ impl Project {
     pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
+    /// <p>An array of template providers associated with the project.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.template_provider_details.is_none()`.
+    pub fn template_provider_details(&self) -> &[crate::types::TemplateProviderDetail] {
+        self.template_provider_details.as_deref().unwrap_or_default()
+    }
     /// <p>An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in different ways, for example, by purpose, owner, or environment. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a>.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
@@ -101,6 +109,7 @@ pub struct ProjectBuilder {
     pub(crate) project_status: ::std::option::Option<crate::types::ProjectStatus>,
     pub(crate) created_by: ::std::option::Option<crate::types::UserContext>,
     pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) template_provider_details: ::std::option::Option<::std::vec::Vec<crate::types::TemplateProviderDetail>>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     pub(crate) last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_modified_by: ::std::option::Option<crate::types::UserContext>,
@@ -235,6 +244,26 @@ impl ProjectBuilder {
     pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.creation_time
     }
+    /// Appends an item to `template_provider_details`.
+    ///
+    /// To override the contents of this collection use [`set_template_provider_details`](Self::set_template_provider_details).
+    ///
+    /// <p>An array of template providers associated with the project.</p>
+    pub fn template_provider_details(mut self, input: crate::types::TemplateProviderDetail) -> Self {
+        let mut v = self.template_provider_details.unwrap_or_default();
+        v.push(input);
+        self.template_provider_details = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>An array of template providers associated with the project.</p>
+    pub fn set_template_provider_details(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TemplateProviderDetail>>) -> Self {
+        self.template_provider_details = input;
+        self
+    }
+    /// <p>An array of template providers associated with the project.</p>
+    pub fn get_template_provider_details(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TemplateProviderDetail>> {
+        &self.template_provider_details
+    }
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -295,6 +324,7 @@ impl ProjectBuilder {
             project_status: self.project_status,
             created_by: self.created_by,
             creation_time: self.creation_time,
+            template_provider_details: self.template_provider_details,
             tags: self.tags,
             last_modified_time: self.last_modified_time,
             last_modified_by: self.last_modified_by,

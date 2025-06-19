@@ -68,6 +68,11 @@ where
                                 ::aws_smithy_types::date_time::Format::EpochSeconds,
                             )?);
                         }
+                        "TemplateProviderDetails" => {
+                            builder = builder.set_template_provider_details(
+                                crate::protocol_serde::shape_template_provider_detail_list::de_template_provider_detail_list(tokens)?,
+                            );
+                        }
                         "Tags" => {
                             builder = builder.set_tags(crate::protocol_serde::shape_tag_list::de_tag_list(tokens)?);
                         }

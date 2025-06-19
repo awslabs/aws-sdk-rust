@@ -1583,6 +1583,8 @@ pub(crate) mod shape_context_source;
 
 pub(crate) mod shape_context_summaries;
 
+pub(crate) mod shape_create_template_provider;
+
 pub(crate) mod shape_customer_metadata_map;
 
 pub(crate) mod shape_data_capture_config;
@@ -2097,6 +2099,8 @@ pub(crate) mod shape_tag;
 
 pub(crate) mod shape_tag_list;
 
+pub(crate) mod shape_template_provider_detail_list;
+
 pub(crate) mod shape_tensor_board_output_config;
 
 pub(crate) mod shape_throughput_config;
@@ -2160,6 +2164,8 @@ pub(crate) mod shape_ui_template;
 pub(crate) mod shape_ui_template_info;
 
 pub(crate) mod shape_update_cluster_software_instance_group_specification;
+
+pub(crate) mod shape_update_template_provider;
 
 pub(crate) mod shape_user_context;
 
@@ -2270,6 +2276,10 @@ pub(crate) mod shape_capture_content_type_header;
 pub(crate) mod shape_capture_option;
 
 pub(crate) mod shape_capture_option_list;
+
+pub(crate) mod shape_cfn_create_template_provider;
+
+pub(crate) mod shape_cfn_update_template_provider;
 
 pub(crate) mod shape_channel_specification;
 
@@ -2763,6 +2773,8 @@ pub(crate) mod shape_target_platform;
 
 pub(crate) mod shape_task_keywords;
 
+pub(crate) mod shape_template_provider_detail;
+
 pub(crate) mod shape_tensor_board_app_settings;
 
 pub(crate) mod shape_text_classification_job_config;
@@ -2860,6 +2872,12 @@ pub(crate) mod shape_capacity_size_config;
 pub(crate) mod shape_categorical_parameter_range;
 
 pub(crate) mod shape_categorical_parameter_ranges;
+
+pub(crate) mod shape_cfn_stack_create_parameter;
+
+pub(crate) mod shape_cfn_stack_update_parameter;
+
+pub(crate) mod shape_cfn_template_provider_detail;
 
 pub(crate) mod shape_cidrs;
 
@@ -3153,6 +3171,10 @@ pub(crate) mod shape_categorical_parameter;
 
 pub(crate) mod shape_categorical_parameter_range_specification;
 
+pub(crate) mod shape_cfn_stack_detail;
+
+pub(crate) mod shape_cfn_stack_parameters;
+
 pub(crate) mod shape_clarify_check_step_metadata;
 
 pub(crate) mod shape_clarify_feature_headers;
@@ -3266,6 +3288,8 @@ pub(crate) mod shape_auto_ml_algorithms;
 pub(crate) mod shape_auto_rollback_alarms;
 
 pub(crate) mod shape_categorical_parameters;
+
+pub(crate) mod shape_cfn_stack_parameter;
 
 pub(crate) mod shape_ec2_capacity_reservation;
 

@@ -3,20 +3,20 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct GetParametersForImportOutput {
-    /// <p>The wrapping key certificate in PEM format (base64 encoded) of the wrapping key for use within the TR-34 key block. The certificate expires in 7 days.</p>
+    /// <p>The wrapping key certificate in PEM format (base64 encoded) of the wrapping key for use within the TR-34 key block. The certificate expires in 30 days.</p>
     pub wrapping_key_certificate: ::std::string::String,
     /// <p>The Amazon Web Services Payment Cryptography root certificate authority (CA) that signed the wrapping key certificate in PEM format (base64 encoded).</p>
     pub wrapping_key_certificate_chain: ::std::string::String,
     /// <p>The algorithm of the wrapping key for use within TR-34 WrappedKeyBlock or RSA WrappedKeyCryptogram.</p>
     pub wrapping_key_algorithm: crate::types::KeyAlgorithm,
-    /// <p>The import token to initiate key import into Amazon Web Services Payment Cryptography. The import token expires after 7 days. You can use the same import token to import multiple keys to the same service account.</p>
+    /// <p>The import token to initiate key import into Amazon Web Services Payment Cryptography. The import token expires after 30 days. You can use the same import token to import multiple keys to the same service account.</p>
     pub import_token: ::std::string::String,
     /// <p>The validity period of the import token.</p>
     pub parameters_valid_until_timestamp: ::aws_smithy_types::DateTime,
     _request_id: Option<String>,
 }
 impl GetParametersForImportOutput {
-    /// <p>The wrapping key certificate in PEM format (base64 encoded) of the wrapping key for use within the TR-34 key block. The certificate expires in 7 days.</p>
+    /// <p>The wrapping key certificate in PEM format (base64 encoded) of the wrapping key for use within the TR-34 key block. The certificate expires in 30 days.</p>
     pub fn wrapping_key_certificate(&self) -> &str {
         use std::ops::Deref;
         self.wrapping_key_certificate.deref()
@@ -30,7 +30,7 @@ impl GetParametersForImportOutput {
     pub fn wrapping_key_algorithm(&self) -> &crate::types::KeyAlgorithm {
         &self.wrapping_key_algorithm
     }
-    /// <p>The import token to initiate key import into Amazon Web Services Payment Cryptography. The import token expires after 7 days. You can use the same import token to import multiple keys to the same service account.</p>
+    /// <p>The import token to initiate key import into Amazon Web Services Payment Cryptography. The import token expires after 30 days. You can use the same import token to import multiple keys to the same service account.</p>
     pub fn import_token(&self) -> &str {
         use std::ops::Deref;
         self.import_token.deref()
@@ -76,18 +76,18 @@ pub struct GetParametersForImportOutputBuilder {
     _request_id: Option<String>,
 }
 impl GetParametersForImportOutputBuilder {
-    /// <p>The wrapping key certificate in PEM format (base64 encoded) of the wrapping key for use within the TR-34 key block. The certificate expires in 7 days.</p>
+    /// <p>The wrapping key certificate in PEM format (base64 encoded) of the wrapping key for use within the TR-34 key block. The certificate expires in 30 days.</p>
     /// This field is required.
     pub fn wrapping_key_certificate(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.wrapping_key_certificate = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The wrapping key certificate in PEM format (base64 encoded) of the wrapping key for use within the TR-34 key block. The certificate expires in 7 days.</p>
+    /// <p>The wrapping key certificate in PEM format (base64 encoded) of the wrapping key for use within the TR-34 key block. The certificate expires in 30 days.</p>
     pub fn set_wrapping_key_certificate(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.wrapping_key_certificate = input;
         self
     }
-    /// <p>The wrapping key certificate in PEM format (base64 encoded) of the wrapping key for use within the TR-34 key block. The certificate expires in 7 days.</p>
+    /// <p>The wrapping key certificate in PEM format (base64 encoded) of the wrapping key for use within the TR-34 key block. The certificate expires in 30 days.</p>
     pub fn get_wrapping_key_certificate(&self) -> &::std::option::Option<::std::string::String> {
         &self.wrapping_key_certificate
     }
@@ -121,18 +121,18 @@ impl GetParametersForImportOutputBuilder {
     pub fn get_wrapping_key_algorithm(&self) -> &::std::option::Option<crate::types::KeyAlgorithm> {
         &self.wrapping_key_algorithm
     }
-    /// <p>The import token to initiate key import into Amazon Web Services Payment Cryptography. The import token expires after 7 days. You can use the same import token to import multiple keys to the same service account.</p>
+    /// <p>The import token to initiate key import into Amazon Web Services Payment Cryptography. The import token expires after 30 days. You can use the same import token to import multiple keys to the same service account.</p>
     /// This field is required.
     pub fn import_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.import_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The import token to initiate key import into Amazon Web Services Payment Cryptography. The import token expires after 7 days. You can use the same import token to import multiple keys to the same service account.</p>
+    /// <p>The import token to initiate key import into Amazon Web Services Payment Cryptography. The import token expires after 30 days. You can use the same import token to import multiple keys to the same service account.</p>
     pub fn set_import_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.import_token = input;
         self
     }
-    /// <p>The import token to initiate key import into Amazon Web Services Payment Cryptography. The import token expires after 7 days. You can use the same import token to import multiple keys to the same service account.</p>
+    /// <p>The import token to initiate key import into Amazon Web Services Payment Cryptography. The import token expires after 30 days. You can use the same import token to import multiple keys to the same service account.</p>
     pub fn get_import_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.import_token
     }

@@ -174,4 +174,23 @@ impl UpdateProjectFluentBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         self.inner.get_tags()
     }
+    ///
+    /// Appends an item to `TemplateProvidersToUpdate`.
+    ///
+    /// To override the contents of this collection use [`set_template_providers_to_update`](Self::set_template_providers_to_update).
+    ///
+    /// <p>The template providers to update in the project.</p>
+    pub fn template_providers_to_update(mut self, input: crate::types::UpdateTemplateProvider) -> Self {
+        self.inner = self.inner.template_providers_to_update(input);
+        self
+    }
+    /// <p>The template providers to update in the project.</p>
+    pub fn set_template_providers_to_update(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::UpdateTemplateProvider>>) -> Self {
+        self.inner = self.inner.set_template_providers_to_update(input);
+        self
+    }
+    /// <p>The template providers to update in the project.</p>
+    pub fn get_template_providers_to_update(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UpdateTemplateProvider>> {
+        self.inner.get_template_providers_to_update()
+    }
 }

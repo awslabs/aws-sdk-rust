@@ -10,7 +10,7 @@ pub struct ImportKeyCryptogram {
     pub exportable: bool,
     /// <p>The RSA wrapped key cryptogram under import.</p>
     pub wrapped_key_cryptogram: ::std::string::String,
-    /// <p>The import token that initiates key import using the asymmetric RSA wrap and unwrap key exchange method into AWS Payment Cryptography. It expires after 7 days. You can use the same import token to import multiple keys to the same service account.</p>
+    /// <p>The import token that initiates key import using the asymmetric RSA wrap and unwrap key exchange method into AWS Payment Cryptography. It expires after 30 days. You can use the same import token to import multiple keys to the same service account.</p>
     pub import_token: ::std::string::String,
     /// <p>The wrapping spec for the wrapped key cryptogram.</p>
     pub wrapping_spec: ::std::option::Option<crate::types::WrappingKeySpec>,
@@ -29,7 +29,7 @@ impl ImportKeyCryptogram {
         use std::ops::Deref;
         self.wrapped_key_cryptogram.deref()
     }
-    /// <p>The import token that initiates key import using the asymmetric RSA wrap and unwrap key exchange method into AWS Payment Cryptography. It expires after 7 days. You can use the same import token to import multiple keys to the same service account.</p>
+    /// <p>The import token that initiates key import using the asymmetric RSA wrap and unwrap key exchange method into AWS Payment Cryptography. It expires after 30 days. You can use the same import token to import multiple keys to the same service account.</p>
     pub fn import_token(&self) -> &str {
         use std::ops::Deref;
         self.import_token.deref()
@@ -113,18 +113,18 @@ impl ImportKeyCryptogramBuilder {
     pub fn get_wrapped_key_cryptogram(&self) -> &::std::option::Option<::std::string::String> {
         &self.wrapped_key_cryptogram
     }
-    /// <p>The import token that initiates key import using the asymmetric RSA wrap and unwrap key exchange method into AWS Payment Cryptography. It expires after 7 days. You can use the same import token to import multiple keys to the same service account.</p>
+    /// <p>The import token that initiates key import using the asymmetric RSA wrap and unwrap key exchange method into AWS Payment Cryptography. It expires after 30 days. You can use the same import token to import multiple keys to the same service account.</p>
     /// This field is required.
     pub fn import_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.import_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The import token that initiates key import using the asymmetric RSA wrap and unwrap key exchange method into AWS Payment Cryptography. It expires after 7 days. You can use the same import token to import multiple keys to the same service account.</p>
+    /// <p>The import token that initiates key import using the asymmetric RSA wrap and unwrap key exchange method into AWS Payment Cryptography. It expires after 30 days. You can use the same import token to import multiple keys to the same service account.</p>
     pub fn set_import_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.import_token = input;
         self
     }
-    /// <p>The import token that initiates key import using the asymmetric RSA wrap and unwrap key exchange method into AWS Payment Cryptography. It expires after 7 days. You can use the same import token to import multiple keys to the same service account.</p>
+    /// <p>The import token that initiates key import using the asymmetric RSA wrap and unwrap key exchange method into AWS Payment Cryptography. It expires after 30 days. You can use the same import token to import multiple keys to the same service account.</p>
     pub fn get_import_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.import_token
     }

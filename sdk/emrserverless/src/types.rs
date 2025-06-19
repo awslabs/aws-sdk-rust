@@ -41,6 +41,8 @@ pub use crate::types::_job_run_summary::JobRunSummary;
 
 pub use crate::types::_application::Application;
 
+pub use crate::types::_identity_center_configuration::IdentityCenterConfiguration;
+
 pub use crate::types::_scheduler_configuration::SchedulerConfiguration;
 
 pub use crate::types::_interactive_configuration::InteractiveConfiguration;
@@ -62,6 +64,8 @@ pub use crate::types::_initial_capacity_config::InitialCapacityConfig;
 pub use crate::types::_worker_resource_config::WorkerResourceConfig;
 
 pub use crate::types::_application_state::ApplicationState;
+
+pub use crate::types::_identity_center_configuration_input::IdentityCenterConfigurationInput;
 
 pub use crate::types::_worker_type_specification_input::WorkerTypeSpecificationInput;
 
@@ -88,6 +92,10 @@ mod _configuration;
 mod _configuration_overrides;
 
 mod _hive;
+
+mod _identity_center_configuration;
+
+mod _identity_center_configuration_input;
 
 mod _image_configuration;
 

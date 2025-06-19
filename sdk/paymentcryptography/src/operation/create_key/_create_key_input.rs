@@ -19,7 +19,8 @@ pub struct CreateKeyInput {
     /// <p>Tagging or untagging an Amazon Web Services Payment Cryptography key can allow or deny permission to the key.</p>
     /// </note>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    /// <p>The cryptographic usage of an ECDH derived key as deﬁned in section A.5.2 of the TR-31 spec.</p>
+    /// <p>The intended cryptographic usage of keys derived from the ECC key pair to be created.</p>
+    /// <p>After creating an ECC key pair, you cannot change the intended cryptographic usage of keys derived from it using ECDH.</p>
     pub derive_key_usage: ::std::option::Option<crate::types::DeriveKeyUsage>,
 }
 impl CreateKeyInput {
@@ -51,7 +52,8 @@ impl CreateKeyInput {
     pub fn tags(&self) -> &[crate::types::Tag] {
         self.tags.as_deref().unwrap_or_default()
     }
-    /// <p>The cryptographic usage of an ECDH derived key as deﬁned in section A.5.2 of the TR-31 spec.</p>
+    /// <p>The intended cryptographic usage of keys derived from the ECC key pair to be created.</p>
+    /// <p>After creating an ECC key pair, you cannot change the intended cryptographic usage of keys derived from it using ECDH.</p>
     pub fn derive_key_usage(&self) -> ::std::option::Option<&crate::types::DeriveKeyUsage> {
         self.derive_key_usage.as_ref()
     }
@@ -171,17 +173,20 @@ impl CreateKeyInputBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         &self.tags
     }
-    /// <p>The cryptographic usage of an ECDH derived key as deﬁned in section A.5.2 of the TR-31 spec.</p>
+    /// <p>The intended cryptographic usage of keys derived from the ECC key pair to be created.</p>
+    /// <p>After creating an ECC key pair, you cannot change the intended cryptographic usage of keys derived from it using ECDH.</p>
     pub fn derive_key_usage(mut self, input: crate::types::DeriveKeyUsage) -> Self {
         self.derive_key_usage = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The cryptographic usage of an ECDH derived key as deﬁned in section A.5.2 of the TR-31 spec.</p>
+    /// <p>The intended cryptographic usage of keys derived from the ECC key pair to be created.</p>
+    /// <p>After creating an ECC key pair, you cannot change the intended cryptographic usage of keys derived from it using ECDH.</p>
     pub fn set_derive_key_usage(mut self, input: ::std::option::Option<crate::types::DeriveKeyUsage>) -> Self {
         self.derive_key_usage = input;
         self
     }
-    /// <p>The cryptographic usage of an ECDH derived key as deﬁned in section A.5.2 of the TR-31 spec.</p>
+    /// <p>The intended cryptographic usage of keys derived from the ECC key pair to be created.</p>
+    /// <p>After creating an ECC key pair, you cannot change the intended cryptographic usage of keys derived from it using ECDH.</p>
     pub fn get_derive_key_usage(&self) -> &::std::option::Option<crate::types::DeriveKeyUsage> {
         &self.derive_key_usage
     }

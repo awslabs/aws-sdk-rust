@@ -380,4 +380,18 @@ impl CreateApplicationFluentBuilder {
     pub fn get_scheduler_configuration(&self) -> &::std::option::Option<crate::types::SchedulerConfiguration> {
         self.inner.get_scheduler_configuration()
     }
+    /// <p>The IAM Identity Center Configuration accepts the Identity Center instance parameter required to enable trusted identity propagation. This configuration allows identity propagation between integrated services and the Identity Center instance.</p>
+    pub fn identity_center_configuration(mut self, input: crate::types::IdentityCenterConfigurationInput) -> Self {
+        self.inner = self.inner.identity_center_configuration(input);
+        self
+    }
+    /// <p>The IAM Identity Center Configuration accepts the Identity Center instance parameter required to enable trusted identity propagation. This configuration allows identity propagation between integrated services and the Identity Center instance.</p>
+    pub fn set_identity_center_configuration(mut self, input: ::std::option::Option<crate::types::IdentityCenterConfigurationInput>) -> Self {
+        self.inner = self.inner.set_identity_center_configuration(input);
+        self
+    }
+    /// <p>The IAM Identity Center Configuration accepts the Identity Center instance parameter required to enable trusted identity propagation. This configuration allows identity propagation between integrated services and the Identity Center instance.</p>
+    pub fn get_identity_center_configuration(&self) -> &::std::option::Option<crate::types::IdentityCenterConfigurationInput> {
+        self.inner.get_identity_center_configuration()
+    }
 }

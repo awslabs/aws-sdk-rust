@@ -64,6 +64,10 @@ pub struct UpdateEventSourceMappingInput {
     pub function_response_types: ::std::option::Option<::std::vec::Vec<crate::types::FunctionResponseType>>,
     /// <p>(Amazon SQS only) The scaling configuration for the event source. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-sqs.html#events-sqs-max-concurrency">Configuring maximum concurrency for Amazon SQS event sources</a>.</p>
     pub scaling_config: ::std::option::Option<crate::types::ScalingConfig>,
+    /// <p>Specific configuration settings for an Amazon Managed Streaming for Apache Kafka (Amazon MSK) event source.</p>
+    pub amazon_managed_kafka_event_source_config: ::std::option::Option<crate::types::AmazonManagedKafkaEventSourceConfig>,
+    /// <p>Specific configuration settings for a self-managed Apache Kafka event source.</p>
+    pub self_managed_kafka_event_source_config: ::std::option::Option<crate::types::SelfManagedKafkaEventSourceConfig>,
     /// <p>Specific configuration settings for a DocumentDB event source.</p>
     pub document_db_event_source_config: ::std::option::Option<crate::types::DocumentDbEventSourceConfig>,
     /// <p>The ARN of the Key Management Service (KMS) customer managed key that Lambda uses to encrypt your function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html#filtering-basics">filter criteria</a>. By default, Lambda does not encrypt your filter criteria object. Specify this property to encrypt data using your own customer managed key.</p>
@@ -169,6 +173,14 @@ impl UpdateEventSourceMappingInput {
     pub fn scaling_config(&self) -> ::std::option::Option<&crate::types::ScalingConfig> {
         self.scaling_config.as_ref()
     }
+    /// <p>Specific configuration settings for an Amazon Managed Streaming for Apache Kafka (Amazon MSK) event source.</p>
+    pub fn amazon_managed_kafka_event_source_config(&self) -> ::std::option::Option<&crate::types::AmazonManagedKafkaEventSourceConfig> {
+        self.amazon_managed_kafka_event_source_config.as_ref()
+    }
+    /// <p>Specific configuration settings for a self-managed Apache Kafka event source.</p>
+    pub fn self_managed_kafka_event_source_config(&self) -> ::std::option::Option<&crate::types::SelfManagedKafkaEventSourceConfig> {
+        self.self_managed_kafka_event_source_config.as_ref()
+    }
     /// <p>Specific configuration settings for a DocumentDB event source.</p>
     pub fn document_db_event_source_config(&self) -> ::std::option::Option<&crate::types::DocumentDbEventSourceConfig> {
         self.document_db_event_source_config.as_ref()
@@ -212,6 +224,8 @@ pub struct UpdateEventSourceMappingInputBuilder {
     pub(crate) tumbling_window_in_seconds: ::std::option::Option<i32>,
     pub(crate) function_response_types: ::std::option::Option<::std::vec::Vec<crate::types::FunctionResponseType>>,
     pub(crate) scaling_config: ::std::option::Option<crate::types::ScalingConfig>,
+    pub(crate) amazon_managed_kafka_event_source_config: ::std::option::Option<crate::types::AmazonManagedKafkaEventSourceConfig>,
+    pub(crate) self_managed_kafka_event_source_config: ::std::option::Option<crate::types::SelfManagedKafkaEventSourceConfig>,
     pub(crate) document_db_event_source_config: ::std::option::Option<crate::types::DocumentDbEventSourceConfig>,
     pub(crate) kms_key_arn: ::std::option::Option<::std::string::String>,
     pub(crate) metrics_config: ::std::option::Option<crate::types::EventSourceMappingMetricsConfig>,
@@ -537,6 +551,40 @@ impl UpdateEventSourceMappingInputBuilder {
     pub fn get_scaling_config(&self) -> &::std::option::Option<crate::types::ScalingConfig> {
         &self.scaling_config
     }
+    /// <p>Specific configuration settings for an Amazon Managed Streaming for Apache Kafka (Amazon MSK) event source.</p>
+    pub fn amazon_managed_kafka_event_source_config(mut self, input: crate::types::AmazonManagedKafkaEventSourceConfig) -> Self {
+        self.amazon_managed_kafka_event_source_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specific configuration settings for an Amazon Managed Streaming for Apache Kafka (Amazon MSK) event source.</p>
+    pub fn set_amazon_managed_kafka_event_source_config(
+        mut self,
+        input: ::std::option::Option<crate::types::AmazonManagedKafkaEventSourceConfig>,
+    ) -> Self {
+        self.amazon_managed_kafka_event_source_config = input;
+        self
+    }
+    /// <p>Specific configuration settings for an Amazon Managed Streaming for Apache Kafka (Amazon MSK) event source.</p>
+    pub fn get_amazon_managed_kafka_event_source_config(&self) -> &::std::option::Option<crate::types::AmazonManagedKafkaEventSourceConfig> {
+        &self.amazon_managed_kafka_event_source_config
+    }
+    /// <p>Specific configuration settings for a self-managed Apache Kafka event source.</p>
+    pub fn self_managed_kafka_event_source_config(mut self, input: crate::types::SelfManagedKafkaEventSourceConfig) -> Self {
+        self.self_managed_kafka_event_source_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specific configuration settings for a self-managed Apache Kafka event source.</p>
+    pub fn set_self_managed_kafka_event_source_config(
+        mut self,
+        input: ::std::option::Option<crate::types::SelfManagedKafkaEventSourceConfig>,
+    ) -> Self {
+        self.self_managed_kafka_event_source_config = input;
+        self
+    }
+    /// <p>Specific configuration settings for a self-managed Apache Kafka event source.</p>
+    pub fn get_self_managed_kafka_event_source_config(&self) -> &::std::option::Option<crate::types::SelfManagedKafkaEventSourceConfig> {
+        &self.self_managed_kafka_event_source_config
+    }
     /// <p>Specific configuration settings for a DocumentDB event source.</p>
     pub fn document_db_event_source_config(mut self, input: crate::types::DocumentDbEventSourceConfig) -> Self {
         self.document_db_event_source_config = ::std::option::Option::Some(input);
@@ -616,6 +664,8 @@ impl UpdateEventSourceMappingInputBuilder {
             tumbling_window_in_seconds: self.tumbling_window_in_seconds,
             function_response_types: self.function_response_types,
             scaling_config: self.scaling_config,
+            amazon_managed_kafka_event_source_config: self.amazon_managed_kafka_event_source_config,
+            self_managed_kafka_event_source_config: self.self_managed_kafka_event_source_config,
             document_db_event_source_config: self.document_db_event_source_config,
             kms_key_arn: self.kms_key_arn,
             metrics_config: self.metrics_config,

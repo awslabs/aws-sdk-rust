@@ -135,6 +135,11 @@ where
                                 crate::protocol_serde::shape_scheduler_configuration::de_scheduler_configuration(tokens)?,
                             );
                         }
+                        "identityCenterConfiguration" => {
+                            builder = builder.set_identity_center_configuration(
+                                crate::protocol_serde::shape_identity_center_configuration::de_identity_center_configuration(tokens)?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

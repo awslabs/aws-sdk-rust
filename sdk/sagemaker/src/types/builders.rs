@@ -121,6 +121,12 @@ pub use crate::types::_space_idle_settings::SpaceIdleSettingsBuilder;
 
 pub use crate::types::_space_code_editor_app_settings::SpaceCodeEditorAppSettingsBuilder;
 
+pub use crate::types::_update_template_provider::UpdateTemplateProviderBuilder;
+
+pub use crate::types::_cfn_update_template_provider::CfnUpdateTemplateProviderBuilder;
+
+pub use crate::types::_cfn_stack_update_parameter::CfnStackUpdateParameterBuilder;
+
 pub use crate::types::_tag::TagBuilder;
 
 pub use crate::types::_service_catalog_provisioning_update_details::ServiceCatalogProvisioningUpdateDetailsBuilder;
@@ -486,6 +492,14 @@ pub use crate::types::_hyper_parameter_tuning_job_strategy_config::HyperParamete
 pub use crate::types::_hyperband_strategy_config::HyperbandStrategyConfigBuilder;
 
 pub use crate::types::_project::ProjectBuilder;
+
+pub use crate::types::_template_provider_detail::TemplateProviderDetailBuilder;
+
+pub use crate::types::_cfn_template_provider_detail::CfnTemplateProviderDetailBuilder;
+
+pub use crate::types::_cfn_stack_detail::CfnStackDetailBuilder;
+
+pub use crate::types::_cfn_stack_parameter::CfnStackParameterBuilder;
 
 pub use crate::types::_service_catalog_provisioned_product_details::ServiceCatalogProvisionedProductDetailsBuilder;
 
@@ -1252,6 +1266,12 @@ pub use crate::types::_integer_parameter_range_specification::IntegerParameterRa
 pub use crate::types::_retention_policy::RetentionPolicyBuilder;
 
 pub use crate::types::_session_chaining_config::SessionChainingConfigBuilder;
+
+pub use crate::types::_create_template_provider::CreateTemplateProviderBuilder;
+
+pub use crate::types::_cfn_create_template_provider::CfnCreateTemplateProviderBuilder;
+
+pub use crate::types::_cfn_stack_create_parameter::CfnStackCreateParameterBuilder;
 
 pub use crate::types::_recommendation_job_output_config::RecommendationJobOutputConfigBuilder;
 

@@ -347,4 +347,18 @@ impl UpdateApplicationFluentBuilder {
     pub fn get_scheduler_configuration(&self) -> &::std::option::Option<crate::types::SchedulerConfiguration> {
         self.inner.get_scheduler_configuration()
     }
+    /// <p>Specifies the IAM Identity Center configuration used to enable or disable trusted identity propagation. When provided, this configuration determines how the application interacts with IAM Identity Center for user authentication and access control.</p>
+    pub fn identity_center_configuration(mut self, input: crate::types::IdentityCenterConfigurationInput) -> Self {
+        self.inner = self.inner.identity_center_configuration(input);
+        self
+    }
+    /// <p>Specifies the IAM Identity Center configuration used to enable or disable trusted identity propagation. When provided, this configuration determines how the application interacts with IAM Identity Center for user authentication and access control.</p>
+    pub fn set_identity_center_configuration(mut self, input: ::std::option::Option<crate::types::IdentityCenterConfigurationInput>) -> Self {
+        self.inner = self.inner.set_identity_center_configuration(input);
+        self
+    }
+    /// <p>Specifies the IAM Identity Center configuration used to enable or disable trusted identity propagation. When provided, this configuration determines how the application interacts with IAM Identity Center for user authentication and access control.</p>
+    pub fn get_identity_center_configuration(&self) -> &::std::option::Option<crate::types::IdentityCenterConfigurationInput> {
+        self.inner.get_identity_center_configuration()
+    }
 }

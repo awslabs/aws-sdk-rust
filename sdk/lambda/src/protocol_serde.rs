@@ -457,6 +457,8 @@ pub(crate) mod shape_image_config_error;
 
 pub(crate) mod shape_invoke_with_response_stream_complete_event;
 
+pub(crate) mod shape_kafka_schema_registry_config;
+
 pub(crate) mod shape_layer;
 
 pub(crate) mod shape_layer_versions_list_item;
@@ -476,6 +478,14 @@ pub(crate) mod shape_security_group_ids;
 pub(crate) mod shape_subnet_ids;
 
 pub(crate) mod shape_endpoint_lists;
+
+pub(crate) mod shape_kafka_schema_registry_access_config;
+
+pub(crate) mod shape_kafka_schema_registry_access_config_list;
+
+pub(crate) mod shape_kafka_schema_validation_config;
+
+pub(crate) mod shape_kafka_schema_validation_config_list;
 
 pub(crate) mod shape_signing_profile_version_arns;
 

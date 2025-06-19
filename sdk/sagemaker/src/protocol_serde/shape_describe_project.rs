@@ -100,6 +100,11 @@ pub(crate) fn de_describe_project(
                             .transpose()?,
                     );
                 }
+                "TemplateProviderDetails" => {
+                    builder = builder.set_template_provider_details(
+                        crate::protocol_serde::shape_template_provider_detail_list::de_template_provider_detail_list(tokens)?,
+                    );
+                }
                 "CreatedBy" => {
                     builder = builder.set_created_by(crate::protocol_serde::shape_user_context::de_user_context(tokens)?);
                 }

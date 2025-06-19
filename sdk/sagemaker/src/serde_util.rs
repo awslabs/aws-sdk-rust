@@ -5325,6 +5325,18 @@ pub(crate) fn capture_option_correct_errors(
     builder
 }
 
+pub(crate) fn cfn_template_provider_detail_correct_errors(
+    mut builder: crate::types::builders::CfnTemplateProviderDetailBuilder,
+) -> crate::types::builders::CfnTemplateProviderDetailBuilder {
+    if builder.template_name.is_none() {
+        builder.template_name = Some(Default::default())
+    }
+    if builder.template_url.is_none() {
+        builder.template_url = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn channel_specification_correct_errors(
     mut builder: crate::types::builders::ChannelSpecificationBuilder,
 ) -> crate::types::builders::ChannelSpecificationBuilder {
@@ -5920,6 +5932,15 @@ pub(crate) fn categorical_parameter_range_correct_errors(
     builder
 }
 
+pub(crate) fn cfn_stack_detail_correct_errors(
+    mut builder: crate::types::builders::CfnStackDetailBuilder,
+) -> crate::types::builders::CfnStackDetailBuilder {
+    if builder.status_message.is_none() {
+        builder.status_message = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn clarify_text_config_correct_errors(
     mut builder: crate::types::builders::ClarifyTextConfigBuilder,
 ) -> crate::types::builders::ClarifyTextConfigBuilder {
@@ -6271,6 +6292,15 @@ pub(crate) fn categorical_parameter_range_specification_correct_errors(
 ) -> crate::types::builders::CategoricalParameterRangeSpecificationBuilder {
     if builder.values.is_none() {
         builder.values = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn cfn_stack_parameter_correct_errors(
+    mut builder: crate::types::builders::CfnStackParameterBuilder,
+) -> crate::types::builders::CfnStackParameterBuilder {
+    if builder.key.is_none() {
+        builder.key = Some(Default::default())
     }
     builder
 }

@@ -11,6 +11,8 @@ pub struct UpdateProjectInput {
     pub service_catalog_provisioning_update_details: ::std::option::Option<crate::types::ServiceCatalogProvisioningUpdateDetails>,
     /// <p>An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in different ways, for example, by purpose, owner, or environment. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a>. In addition, the project must have tag update constraints set in order to include this parameter in the request. For more information, see <a href="https://docs.aws.amazon.com/servicecatalog/latest/adminguide/constraints-resourceupdate.html">Amazon Web Services Service Catalog Tag Update Constraints</a>.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    /// <p>The template providers to update in the project.</p>
+    pub template_providers_to_update: ::std::option::Option<::std::vec::Vec<crate::types::UpdateTemplateProvider>>,
 }
 impl UpdateProjectInput {
     /// <p>The name of the project.</p>
@@ -31,6 +33,12 @@ impl UpdateProjectInput {
     pub fn tags(&self) -> &[crate::types::Tag] {
         self.tags.as_deref().unwrap_or_default()
     }
+    /// <p>The template providers to update in the project.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.template_providers_to_update.is_none()`.
+    pub fn template_providers_to_update(&self) -> &[crate::types::UpdateTemplateProvider] {
+        self.template_providers_to_update.as_deref().unwrap_or_default()
+    }
 }
 impl UpdateProjectInput {
     /// Creates a new builder-style object to manufacture [`UpdateProjectInput`](crate::operation::update_project::UpdateProjectInput).
@@ -47,6 +55,7 @@ pub struct UpdateProjectInputBuilder {
     pub(crate) project_description: ::std::option::Option<::std::string::String>,
     pub(crate) service_catalog_provisioning_update_details: ::std::option::Option<crate::types::ServiceCatalogProvisioningUpdateDetails>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) template_providers_to_update: ::std::option::Option<::std::vec::Vec<crate::types::UpdateTemplateProvider>>,
 }
 impl UpdateProjectInputBuilder {
     /// <p>The name of the project.</p>
@@ -115,6 +124,26 @@ impl UpdateProjectInputBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         &self.tags
     }
+    /// Appends an item to `template_providers_to_update`.
+    ///
+    /// To override the contents of this collection use [`set_template_providers_to_update`](Self::set_template_providers_to_update).
+    ///
+    /// <p>The template providers to update in the project.</p>
+    pub fn template_providers_to_update(mut self, input: crate::types::UpdateTemplateProvider) -> Self {
+        let mut v = self.template_providers_to_update.unwrap_or_default();
+        v.push(input);
+        self.template_providers_to_update = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The template providers to update in the project.</p>
+    pub fn set_template_providers_to_update(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::UpdateTemplateProvider>>) -> Self {
+        self.template_providers_to_update = input;
+        self
+    }
+    /// <p>The template providers to update in the project.</p>
+    pub fn get_template_providers_to_update(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UpdateTemplateProvider>> {
+        &self.template_providers_to_update
+    }
     /// Consumes the builder and constructs a [`UpdateProjectInput`](crate::operation::update_project::UpdateProjectInput).
     pub fn build(
         self,
@@ -124,6 +153,7 @@ impl UpdateProjectInputBuilder {
             project_description: self.project_description,
             service_catalog_provisioning_update_details: self.service_catalog_provisioning_update_details,
             tags: self.tags,
+            template_providers_to_update: self.template_providers_to_update,
         })
     }
 }

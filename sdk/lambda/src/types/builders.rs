@@ -57,6 +57,12 @@ pub use crate::types::_scaling_config::ScalingConfigBuilder;
 
 pub use crate::types::_self_managed_kafka_event_source_config::SelfManagedKafkaEventSourceConfigBuilder;
 
+pub use crate::types::_kafka_schema_registry_config::KafkaSchemaRegistryConfigBuilder;
+
+pub use crate::types::_kafka_schema_validation_config::KafkaSchemaValidationConfigBuilder;
+
+pub use crate::types::_kafka_schema_registry_access_config::KafkaSchemaRegistryAccessConfigBuilder;
+
 pub use crate::types::_amazon_managed_kafka_event_source_config::AmazonManagedKafkaEventSourceConfigBuilder;
 
 pub use crate::types::_self_managed_event_source::SelfManagedEventSourceBuilder;

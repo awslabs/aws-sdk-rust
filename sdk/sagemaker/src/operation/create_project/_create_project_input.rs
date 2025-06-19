@@ -11,6 +11,8 @@ pub struct CreateProjectInput {
     pub service_catalog_provisioning_details: ::std::option::Option<crate::types::ServiceCatalogProvisioningDetails>,
     /// <p>An array of key-value pairs that you want to use to organize and track your Amazon Web Services resource costs. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a> in the <i>Amazon Web Services General Reference Guide</i>.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    /// <p>An array of template provider configurations for creating infrastructure resources for the project.</p>
+    pub template_providers: ::std::option::Option<::std::vec::Vec<crate::types::CreateTemplateProvider>>,
 }
 impl CreateProjectInput {
     /// <p>The name of the project.</p>
@@ -31,6 +33,12 @@ impl CreateProjectInput {
     pub fn tags(&self) -> &[crate::types::Tag] {
         self.tags.as_deref().unwrap_or_default()
     }
+    /// <p>An array of template provider configurations for creating infrastructure resources for the project.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.template_providers.is_none()`.
+    pub fn template_providers(&self) -> &[crate::types::CreateTemplateProvider] {
+        self.template_providers.as_deref().unwrap_or_default()
+    }
 }
 impl CreateProjectInput {
     /// Creates a new builder-style object to manufacture [`CreateProjectInput`](crate::operation::create_project::CreateProjectInput).
@@ -47,6 +55,7 @@ pub struct CreateProjectInputBuilder {
     pub(crate) project_description: ::std::option::Option<::std::string::String>,
     pub(crate) service_catalog_provisioning_details: ::std::option::Option<crate::types::ServiceCatalogProvisioningDetails>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) template_providers: ::std::option::Option<::std::vec::Vec<crate::types::CreateTemplateProvider>>,
 }
 impl CreateProjectInputBuilder {
     /// <p>The name of the project.</p>
@@ -112,6 +121,26 @@ impl CreateProjectInputBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         &self.tags
     }
+    /// Appends an item to `template_providers`.
+    ///
+    /// To override the contents of this collection use [`set_template_providers`](Self::set_template_providers).
+    ///
+    /// <p>An array of template provider configurations for creating infrastructure resources for the project.</p>
+    pub fn template_providers(mut self, input: crate::types::CreateTemplateProvider) -> Self {
+        let mut v = self.template_providers.unwrap_or_default();
+        v.push(input);
+        self.template_providers = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>An array of template provider configurations for creating infrastructure resources for the project.</p>
+    pub fn set_template_providers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CreateTemplateProvider>>) -> Self {
+        self.template_providers = input;
+        self
+    }
+    /// <p>An array of template provider configurations for creating infrastructure resources for the project.</p>
+    pub fn get_template_providers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CreateTemplateProvider>> {
+        &self.template_providers
+    }
     /// Consumes the builder and constructs a [`CreateProjectInput`](crate::operation::create_project::CreateProjectInput).
     pub fn build(
         self,
@@ -121,6 +150,7 @@ impl CreateProjectInputBuilder {
             project_description: self.project_description,
             service_catalog_provisioning_details: self.service_catalog_provisioning_details,
             tags: self.tags,
+            template_providers: self.template_providers,
         })
     }
 }

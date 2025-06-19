@@ -21,6 +21,11 @@ where
                                     .transpose()?,
                             );
                         }
+                        "SchemaRegistryConfig" => {
+                            builder = builder.set_schema_registry_config(
+                                crate::protocol_serde::shape_kafka_schema_registry_config::de_kafka_schema_registry_config(tokens)?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {
@@ -45,6 +50,12 @@ pub fn ser_self_managed_kafka_event_source_config(
 ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.consumer_group_id {
         object.key("ConsumerGroupId").string(var_1.as_str());
+    }
+    if let Some(var_2) = &input.schema_registry_config {
+        #[allow(unused_mut)]
+        let mut object_3 = object.key("SchemaRegistryConfig").start_object();
+        crate::protocol_serde::shape_kafka_schema_registry_config::ser_kafka_schema_registry_config(&mut object_3, var_2)?;
+        object_3.finish();
     }
     Ok(())
 }
