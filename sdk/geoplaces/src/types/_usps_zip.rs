@@ -2,7 +2,7 @@
 
 /// <p>The USPS zip code.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct UspsZip {
     /// <p>The ZIP Classification Code, or in other words what type of postal code is it.</p>
     pub zip_classification_code: ::std::option::Option<crate::types::ZipClassificationCode>,
@@ -13,6 +13,13 @@ impl UspsZip {
         self.zip_classification_code.as_ref()
     }
 }
+impl ::std::fmt::Debug for UspsZip {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("UspsZip");
+        formatter.field("zip_classification_code", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
 impl UspsZip {
     /// Creates a new builder-style object to manufacture [`UspsZip`](crate::types::UspsZip).
     pub fn builder() -> crate::types::builders::UspsZipBuilder {
@@ -21,7 +28,7 @@ impl UspsZip {
 }
 
 /// A builder for [`UspsZip`](crate::types::UspsZip).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct UspsZipBuilder {
     pub(crate) zip_classification_code: ::std::option::Option<crate::types::ZipClassificationCode>,
@@ -46,5 +53,12 @@ impl UspsZipBuilder {
         crate::types::UspsZip {
             zip_classification_code: self.zip_classification_code,
         }
+    }
+}
+impl ::std::fmt::Debug for UspsZipBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("UspsZipBuilder");
+        formatter.field("zip_classification_code", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

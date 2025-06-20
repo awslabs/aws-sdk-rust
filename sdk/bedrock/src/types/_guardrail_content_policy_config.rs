@@ -6,12 +6,18 @@
 pub struct GuardrailContentPolicyConfig {
     /// <p>Contains the type of the content filter and how strongly it should apply to prompts and model responses.</p>
     pub filters_config: ::std::vec::Vec<crate::types::GuardrailContentFilterConfig>,
+    /// <p>The tier that your guardrail uses for content filters.</p>
+    pub tier_config: ::std::option::Option<crate::types::GuardrailContentFiltersTierConfig>,
 }
 impl GuardrailContentPolicyConfig {
     /// <p>Contains the type of the content filter and how strongly it should apply to prompts and model responses.</p>
     pub fn filters_config(&self) -> &[crate::types::GuardrailContentFilterConfig] {
         use std::ops::Deref;
         self.filters_config.deref()
+    }
+    /// <p>The tier that your guardrail uses for content filters.</p>
+    pub fn tier_config(&self) -> ::std::option::Option<&crate::types::GuardrailContentFiltersTierConfig> {
+        self.tier_config.as_ref()
     }
 }
 impl GuardrailContentPolicyConfig {
@@ -26,6 +32,7 @@ impl GuardrailContentPolicyConfig {
 #[non_exhaustive]
 pub struct GuardrailContentPolicyConfigBuilder {
     pub(crate) filters_config: ::std::option::Option<::std::vec::Vec<crate::types::GuardrailContentFilterConfig>>,
+    pub(crate) tier_config: ::std::option::Option<crate::types::GuardrailContentFiltersTierConfig>,
 }
 impl GuardrailContentPolicyConfigBuilder {
     /// Appends an item to `filters_config`.
@@ -48,6 +55,20 @@ impl GuardrailContentPolicyConfigBuilder {
     pub fn get_filters_config(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GuardrailContentFilterConfig>> {
         &self.filters_config
     }
+    /// <p>The tier that your guardrail uses for content filters.</p>
+    pub fn tier_config(mut self, input: crate::types::GuardrailContentFiltersTierConfig) -> Self {
+        self.tier_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The tier that your guardrail uses for content filters.</p>
+    pub fn set_tier_config(mut self, input: ::std::option::Option<crate::types::GuardrailContentFiltersTierConfig>) -> Self {
+        self.tier_config = input;
+        self
+    }
+    /// <p>The tier that your guardrail uses for content filters.</p>
+    pub fn get_tier_config(&self) -> &::std::option::Option<crate::types::GuardrailContentFiltersTierConfig> {
+        &self.tier_config
+    }
     /// Consumes the builder and constructs a [`GuardrailContentPolicyConfig`](crate::types::GuardrailContentPolicyConfig).
     /// This method will fail if any of the following fields are not set:
     /// - [`filters_config`](crate::types::builders::GuardrailContentPolicyConfigBuilder::filters_config)
@@ -59,6 +80,7 @@ impl GuardrailContentPolicyConfigBuilder {
                     "filters_config was not specified but it is required when building GuardrailContentPolicyConfig",
                 )
             })?,
+            tier_config: self.tier_config,
         })
     }
 }

@@ -13,6 +13,7 @@
 /// # let reversegeocodeadditionalfeature = unimplemented!();
 /// match reversegeocodeadditionalfeature {
 ///     ReverseGeocodeAdditionalFeature::Access => { /* ... */ },
+///     ReverseGeocodeAdditionalFeature::Intersections => { /* ... */ },
 ///     ReverseGeocodeAdditionalFeature::TimeZone => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -45,6 +46,8 @@ pub enum ReverseGeocodeAdditionalFeature {
     #[allow(missing_docs)] // documentation missing in model
     Access,
     #[allow(missing_docs)] // documentation missing in model
+    Intersections,
+    #[allow(missing_docs)] // documentation missing in model
     TimeZone,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
@@ -54,6 +57,7 @@ impl ::std::convert::From<&str> for ReverseGeocodeAdditionalFeature {
     fn from(s: &str) -> Self {
         match s {
             "Access" => ReverseGeocodeAdditionalFeature::Access,
+            "Intersections" => ReverseGeocodeAdditionalFeature::Intersections,
             "TimeZone" => ReverseGeocodeAdditionalFeature::TimeZone,
             other => ReverseGeocodeAdditionalFeature::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -71,13 +75,14 @@ impl ReverseGeocodeAdditionalFeature {
     pub fn as_str(&self) -> &str {
         match self {
             ReverseGeocodeAdditionalFeature::Access => "Access",
+            ReverseGeocodeAdditionalFeature::Intersections => "Intersections",
             ReverseGeocodeAdditionalFeature::TimeZone => "TimeZone",
             ReverseGeocodeAdditionalFeature::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["Access", "TimeZone"]
+        &["Access", "Intersections", "TimeZone"]
     }
 }
 impl ::std::convert::AsRef<str> for ReverseGeocodeAdditionalFeature {
@@ -101,6 +106,7 @@ impl ::std::fmt::Display for ReverseGeocodeAdditionalFeature {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             ReverseGeocodeAdditionalFeature::Access => write!(f, "Access"),
+            ReverseGeocodeAdditionalFeature::Intersections => write!(f, "Intersections"),
             ReverseGeocodeAdditionalFeature::TimeZone => write!(f, "TimeZone"),
             ReverseGeocodeAdditionalFeature::Unknown(value) => write!(f, "{}", value),
         }

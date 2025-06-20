@@ -136,6 +136,9 @@ pub(crate) fn de_get_place(
                 "FoodTypes" => {
                     builder = builder.set_food_types(crate::protocol_serde::shape_food_type_list::de_food_type_list(tokens)?);
                 }
+                "MainAddress" => {
+                    builder = builder.set_main_address(crate::protocol_serde::shape_related_place::de_related_place(tokens)?);
+                }
                 "MapView" => {
                     builder = builder.set_map_view(crate::protocol_serde::shape_bounding_box::de_bounding_box(tokens)?);
                 }
@@ -173,6 +176,9 @@ pub(crate) fn de_get_place(
                     builder = builder.set_postal_code_details(crate::protocol_serde::shape_postal_code_details_list::de_postal_code_details_list(
                         tokens,
                     )?);
+                }
+                "SecondaryAddresses" => {
+                    builder = builder.set_secondary_addresses(crate::protocol_serde::shape_related_place_list::de_related_place_list(tokens)?);
                 }
                 "TimeZone" => {
                     builder = builder.set_time_zone(crate::protocol_serde::shape_time_zone::de_time_zone(tokens)?);

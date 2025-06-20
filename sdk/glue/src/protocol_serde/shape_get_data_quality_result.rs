@@ -209,6 +209,11 @@ pub(crate) fn de_get_data_quality_result(
                         tokens,
                     )?);
                 }
+                "AggregatedMetrics" => {
+                    builder = builder.set_aggregated_metrics(
+                        crate::protocol_serde::shape_data_quality_aggregated_metrics::de_data_quality_aggregated_metrics(tokens)?,
+                    );
+                }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },
             other => {

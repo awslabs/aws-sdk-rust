@@ -6,12 +6,18 @@
 pub struct GuardrailTopicPolicyConfig {
     /// <p>A list of policies related to topics that the guardrail should deny.</p>
     pub topics_config: ::std::vec::Vec<crate::types::GuardrailTopicConfig>,
+    /// <p>The tier that your guardrail uses for denied topic filters.</p>
+    pub tier_config: ::std::option::Option<crate::types::GuardrailTopicsTierConfig>,
 }
 impl GuardrailTopicPolicyConfig {
     /// <p>A list of policies related to topics that the guardrail should deny.</p>
     pub fn topics_config(&self) -> &[crate::types::GuardrailTopicConfig] {
         use std::ops::Deref;
         self.topics_config.deref()
+    }
+    /// <p>The tier that your guardrail uses for denied topic filters.</p>
+    pub fn tier_config(&self) -> ::std::option::Option<&crate::types::GuardrailTopicsTierConfig> {
+        self.tier_config.as_ref()
     }
 }
 impl GuardrailTopicPolicyConfig {
@@ -26,6 +32,7 @@ impl GuardrailTopicPolicyConfig {
 #[non_exhaustive]
 pub struct GuardrailTopicPolicyConfigBuilder {
     pub(crate) topics_config: ::std::option::Option<::std::vec::Vec<crate::types::GuardrailTopicConfig>>,
+    pub(crate) tier_config: ::std::option::Option<crate::types::GuardrailTopicsTierConfig>,
 }
 impl GuardrailTopicPolicyConfigBuilder {
     /// Appends an item to `topics_config`.
@@ -48,6 +55,20 @@ impl GuardrailTopicPolicyConfigBuilder {
     pub fn get_topics_config(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GuardrailTopicConfig>> {
         &self.topics_config
     }
+    /// <p>The tier that your guardrail uses for denied topic filters.</p>
+    pub fn tier_config(mut self, input: crate::types::GuardrailTopicsTierConfig) -> Self {
+        self.tier_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The tier that your guardrail uses for denied topic filters.</p>
+    pub fn set_tier_config(mut self, input: ::std::option::Option<crate::types::GuardrailTopicsTierConfig>) -> Self {
+        self.tier_config = input;
+        self
+    }
+    /// <p>The tier that your guardrail uses for denied topic filters.</p>
+    pub fn get_tier_config(&self) -> &::std::option::Option<crate::types::GuardrailTopicsTierConfig> {
+        &self.tier_config
+    }
     /// Consumes the builder and constructs a [`GuardrailTopicPolicyConfig`](crate::types::GuardrailTopicPolicyConfig).
     /// This method will fail if any of the following fields are not set:
     /// - [`topics_config`](crate::types::builders::GuardrailTopicPolicyConfigBuilder::topics_config)
@@ -59,6 +80,7 @@ impl GuardrailTopicPolicyConfigBuilder {
                     "topics_config was not specified but it is required when building GuardrailTopicPolicyConfig",
                 )
             })?,
+            tier_config: self.tier_config,
         })
     }
 }

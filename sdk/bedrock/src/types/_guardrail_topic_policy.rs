@@ -11,12 +11,18 @@
 pub struct GuardrailTopicPolicy {
     /// <p>A list of policies related to topics that the guardrail should deny.</p>
     pub topics: ::std::vec::Vec<crate::types::GuardrailTopic>,
+    /// <p>The tier that your guardrail uses for denied topic filters.</p>
+    pub tier: ::std::option::Option<crate::types::GuardrailTopicsTier>,
 }
 impl GuardrailTopicPolicy {
     /// <p>A list of policies related to topics that the guardrail should deny.</p>
     pub fn topics(&self) -> &[crate::types::GuardrailTopic] {
         use std::ops::Deref;
         self.topics.deref()
+    }
+    /// <p>The tier that your guardrail uses for denied topic filters.</p>
+    pub fn tier(&self) -> ::std::option::Option<&crate::types::GuardrailTopicsTier> {
+        self.tier.as_ref()
     }
 }
 impl GuardrailTopicPolicy {
@@ -31,6 +37,7 @@ impl GuardrailTopicPolicy {
 #[non_exhaustive]
 pub struct GuardrailTopicPolicyBuilder {
     pub(crate) topics: ::std::option::Option<::std::vec::Vec<crate::types::GuardrailTopic>>,
+    pub(crate) tier: ::std::option::Option<crate::types::GuardrailTopicsTier>,
 }
 impl GuardrailTopicPolicyBuilder {
     /// Appends an item to `topics`.
@@ -53,6 +60,20 @@ impl GuardrailTopicPolicyBuilder {
     pub fn get_topics(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GuardrailTopic>> {
         &self.topics
     }
+    /// <p>The tier that your guardrail uses for denied topic filters.</p>
+    pub fn tier(mut self, input: crate::types::GuardrailTopicsTier) -> Self {
+        self.tier = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The tier that your guardrail uses for denied topic filters.</p>
+    pub fn set_tier(mut self, input: ::std::option::Option<crate::types::GuardrailTopicsTier>) -> Self {
+        self.tier = input;
+        self
+    }
+    /// <p>The tier that your guardrail uses for denied topic filters.</p>
+    pub fn get_tier(&self) -> &::std::option::Option<crate::types::GuardrailTopicsTier> {
+        &self.tier
+    }
     /// Consumes the builder and constructs a [`GuardrailTopicPolicy`](crate::types::GuardrailTopicPolicy).
     /// This method will fail if any of the following fields are not set:
     /// - [`topics`](crate::types::builders::GuardrailTopicPolicyBuilder::topics)
@@ -64,6 +85,7 @@ impl GuardrailTopicPolicyBuilder {
                     "topics was not specified but it is required when building GuardrailTopicPolicy",
                 )
             })?,
+            tier: self.tier,
         })
     }
 }

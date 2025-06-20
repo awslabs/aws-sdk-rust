@@ -22,6 +22,7 @@
 ///     PlaceType::PointOfInterest => { /* ... */ },
 ///     PlaceType::PostalCode => { /* ... */ },
 ///     PlaceType::Region => { /* ... */ },
+///     PlaceType::SecondaryAddress => { /* ... */ },
 ///     PlaceType::Street => { /* ... */ },
 ///     PlaceType::SubBlock => { /* ... */ },
 ///     PlaceType::SubDistrict => { /* ... */ },
@@ -50,9 +51,7 @@
 ///
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::hash::Hash)]
 pub enum PlaceType {
     #[allow(missing_docs)] // documentation missing in model
     Block,
@@ -74,6 +73,8 @@ pub enum PlaceType {
     PostalCode,
     #[allow(missing_docs)] // documentation missing in model
     Region,
+    #[allow(missing_docs)] // documentation missing in model
+    SecondaryAddress,
     #[allow(missing_docs)] // documentation missing in model
     Street,
     #[allow(missing_docs)] // documentation missing in model
@@ -99,6 +100,7 @@ impl ::std::convert::From<&str> for PlaceType {
             "PointOfInterest" => PlaceType::PointOfInterest,
             "PostalCode" => PlaceType::PostalCode,
             "Region" => PlaceType::Region,
+            "SecondaryAddress" => PlaceType::SecondaryAddress,
             "Street" => PlaceType::Street,
             "SubBlock" => PlaceType::SubBlock,
             "SubDistrict" => PlaceType::SubDistrict,
@@ -128,6 +130,7 @@ impl PlaceType {
             PlaceType::PointOfInterest => "PointOfInterest",
             PlaceType::PostalCode => "PostalCode",
             PlaceType::Region => "Region",
+            PlaceType::SecondaryAddress => "SecondaryAddress",
             PlaceType::Street => "Street",
             PlaceType::SubBlock => "SubBlock",
             PlaceType::SubDistrict => "SubDistrict",
@@ -148,6 +151,7 @@ impl PlaceType {
             "PointOfInterest",
             "PostalCode",
             "Region",
+            "SecondaryAddress",
             "Street",
             "SubBlock",
             "SubDistrict",
@@ -185,11 +189,17 @@ impl ::std::fmt::Display for PlaceType {
             PlaceType::PointOfInterest => write!(f, "PointOfInterest"),
             PlaceType::PostalCode => write!(f, "PostalCode"),
             PlaceType::Region => write!(f, "Region"),
+            PlaceType::SecondaryAddress => write!(f, "SecondaryAddress"),
             PlaceType::Street => write!(f, "Street"),
             PlaceType::SubBlock => write!(f, "SubBlock"),
             PlaceType::SubDistrict => write!(f, "SubDistrict"),
             PlaceType::SubRegion => write!(f, "SubRegion"),
             PlaceType::Unknown(value) => write!(f, "{}", value),
         }
+    }
+}
+impl ::std::fmt::Debug for PlaceType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        ::std::write!(f, "*** Sensitive Data Redacted ***")
     }
 }

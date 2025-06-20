@@ -73,7 +73,9 @@ where
                             );
                         }
                         "Intersection" => {
-                            builder = builder.set_intersection(crate::protocol_serde::shape_intersection_list::de_intersection_list(tokens)?);
+                            builder = builder.set_intersection(crate::protocol_serde::shape_intersection_street_list::de_intersection_street_list(
+                                tokens,
+                            )?);
                         }
                         "Street" => {
                             builder = builder.set_street(
@@ -98,6 +100,11 @@ where
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
+                            );
+                        }
+                        "SecondaryAddressComponents" => {
+                            builder = builder.set_secondary_address_components(
+                                crate::protocol_serde::shape_secondary_address_component_list::de_secondary_address_component_list(tokens)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

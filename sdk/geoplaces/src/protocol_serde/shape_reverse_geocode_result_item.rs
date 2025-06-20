@@ -79,6 +79,9 @@ where
                                     .transpose()?,
                             );
                         }
+                        "Intersections" => {
+                            builder = builder.set_intersections(crate::protocol_serde::shape_intersection_list::de_intersection_list(tokens)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

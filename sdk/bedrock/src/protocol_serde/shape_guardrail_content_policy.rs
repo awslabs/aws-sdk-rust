@@ -19,6 +19,10 @@ where
                                 tokens,
                             )?);
                         }
+                        "tier" => {
+                            builder = builder
+                                .set_tier(crate::protocol_serde::shape_guardrail_content_filters_tier::de_guardrail_content_filters_tier(tokens)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

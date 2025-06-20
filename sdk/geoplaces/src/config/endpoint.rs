@@ -227,11 +227,11 @@ mod test {
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint.expect("Expected valid endpoint: https://places.geo-fips.us-gov-west-1.us-gov.api.aws/v2");
+        let endpoint = endpoint.expect("Expected valid endpoint: https://places.geo-fips.us-gov-west-1.api.aws/v2");
         assert_eq!(
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://places.geo-fips.us-gov-west-1.us-gov.api.aws/v2")
+                .url("https://places.geo-fips.us-gov-west-1.api.aws/v2")
                 .build()
         );
     }
@@ -247,11 +247,11 @@ mod test {
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint.expect("Expected valid endpoint: https://places.geo-fips.us-gov-west-1.us-gov.amazonaws.com/v2");
+        let endpoint = endpoint.expect("Expected valid endpoint: https://places.geo-fips.us-gov-west-1.amazonaws.com/v2");
         assert_eq!(
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://places.geo-fips.us-gov-west-1.us-gov.amazonaws.com/v2")
+                .url("https://places.geo-fips.us-gov-west-1.amazonaws.com/v2")
                 .build()
         );
     }
@@ -267,11 +267,11 @@ mod test {
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint.expect("Expected valid endpoint: https://places.geo.us-gov-west-1.us-gov.api.aws/v2");
+        let endpoint = endpoint.expect("Expected valid endpoint: https://places.geo.us-gov-west-1.api.aws/v2");
         assert_eq!(
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://places.geo.us-gov-west-1.us-gov.api.aws/v2")
+                .url("https://places.geo.us-gov-west-1.api.aws/v2")
                 .build()
         );
     }
@@ -287,11 +287,11 @@ mod test {
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint.expect("Expected valid endpoint: https://places.geo.us-gov-west-1.us-gov.amazonaws.com/v2");
+        let endpoint = endpoint.expect("Expected valid endpoint: https://places.geo.us-gov-west-1.amazonaws.com/v2");
         assert_eq!(
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://places.geo.us-gov-west-1.us-gov.amazonaws.com/v2")
+                .url("https://places.geo.us-gov-west-1.amazonaws.com/v2")
                 .build()
         );
     }

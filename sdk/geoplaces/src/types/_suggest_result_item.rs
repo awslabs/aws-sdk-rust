@@ -2,7 +2,7 @@
 
 /// <p>The resulting item from the suggested query.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct SuggestResultItem {
     /// <p>The display title that should be used when presenting this option to the end user.</p>
     pub title: ::std::string::String,
@@ -38,6 +38,17 @@ impl SuggestResultItem {
         self.highlights.as_ref()
     }
 }
+impl ::std::fmt::Debug for SuggestResultItem {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("SuggestResultItem");
+        formatter.field("title", &"*** Sensitive Data Redacted ***");
+        formatter.field("suggest_result_item_type", &self.suggest_result_item_type);
+        formatter.field("place", &self.place);
+        formatter.field("query", &self.query);
+        formatter.field("highlights", &self.highlights);
+        formatter.finish()
+    }
+}
 impl SuggestResultItem {
     /// Creates a new builder-style object to manufacture [`SuggestResultItem`](crate::types::SuggestResultItem).
     pub fn builder() -> crate::types::builders::SuggestResultItemBuilder {
@@ -46,7 +57,7 @@ impl SuggestResultItem {
 }
 
 /// A builder for [`SuggestResultItem`](crate::types::SuggestResultItem).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct SuggestResultItemBuilder {
     pub(crate) title: ::std::option::Option<::std::string::String>,
@@ -150,5 +161,16 @@ impl SuggestResultItemBuilder {
             query: self.query,
             highlights: self.highlights,
         })
+    }
+}
+impl ::std::fmt::Debug for SuggestResultItemBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("SuggestResultItemBuilder");
+        formatter.field("title", &"*** Sensitive Data Redacted ***");
+        formatter.field("suggest_result_item_type", &self.suggest_result_item_type);
+        formatter.field("place", &self.place);
+        formatter.field("query", &self.query);
+        formatter.field("highlights", &self.highlights);
+        formatter.finish()
     }
 }

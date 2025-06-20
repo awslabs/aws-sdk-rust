@@ -2,7 +2,7 @@
 
 /// <p>Category of the <code>Place</code> returned.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct Category {
     /// <p>The category ID.</p>
     pub id: ::std::string::String,
@@ -33,6 +33,16 @@ impl Category {
         self.primary
     }
 }
+impl ::std::fmt::Debug for Category {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("Category");
+        formatter.field("id", &"*** Sensitive Data Redacted ***");
+        formatter.field("name", &"*** Sensitive Data Redacted ***");
+        formatter.field("localized_name", &"*** Sensitive Data Redacted ***");
+        formatter.field("primary", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
 impl Category {
     /// Creates a new builder-style object to manufacture [`Category`](crate::types::Category).
     pub fn builder() -> crate::types::builders::CategoryBuilder {
@@ -41,7 +51,7 @@ impl Category {
 }
 
 /// A builder for [`Category`](crate::types::Category).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct CategoryBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
@@ -129,5 +139,15 @@ impl CategoryBuilder {
             localized_name: self.localized_name,
             primary: self.primary,
         })
+    }
+}
+impl ::std::fmt::Debug for CategoryBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("CategoryBuilder");
+        formatter.field("id", &"*** Sensitive Data Redacted ***");
+        formatter.field("name", &"*** Sensitive Data Redacted ***");
+        formatter.field("localized_name", &"*** Sensitive Data Redacted ***");
+        formatter.field("primary", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

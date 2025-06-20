@@ -629,6 +629,8 @@ pub use crate::types::_job::JobBuilder;
 
 pub use crate::types::_dev_endpoint::DevEndpointBuilder;
 
+pub use crate::types::_data_quality_aggregated_metrics::DataQualityAggregatedMetricsBuilder;
+
 pub use crate::types::_data_quality_observation::DataQualityObservationBuilder;
 
 pub use crate::types::_metric_based_observation::MetricBasedObservationBuilder;

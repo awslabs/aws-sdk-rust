@@ -27,12 +27,14 @@ pub struct ReverseGeocodeResultItem {
     pub categories: ::std::option::Option<::std::vec::Vec<crate::types::Category>>,
     /// <p>List of food types offered by this result.</p>
     pub food_types: ::std::option::Option<::std::vec::Vec<crate::types::FoodType>>,
-    /// <p>Position of the access point represent by longitude and latitude.</p>
+    /// <p>Position of the access point represented by longitude and latitude.</p>
     pub access_points: ::std::option::Option<::std::vec::Vec<crate::types::AccessPoint>>,
     /// <p>The time zone in which the place is located.</p>
     pub time_zone: ::std::option::Option<crate::types::TimeZone>,
     /// <p>The alpha-2 or alpha-3 character code for the political view of a country. The political view applies to the results of the request to represent unresolved territorial claims through the point of view of the specified country.</p>
     pub political_view: ::std::option::Option<::std::string::String>,
+    /// <p>All Intersections that are near the provided address.</p>
+    pub intersections: ::std::option::Option<::std::vec::Vec<crate::types::Intersection>>,
 }
 impl ReverseGeocodeResultItem {
     /// <p>The <code>PlaceId</code> of the place you wish to receive the information for.</p>
@@ -92,7 +94,7 @@ impl ReverseGeocodeResultItem {
     pub fn food_types(&self) -> &[crate::types::FoodType] {
         self.food_types.as_deref().unwrap_or_default()
     }
-    /// <p>Position of the access point represent by longitude and latitude.</p>
+    /// <p>Position of the access point represented by longitude and latitude.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.access_points.is_none()`.
     pub fn access_points(&self) -> &[crate::types::AccessPoint] {
@@ -106,24 +108,31 @@ impl ReverseGeocodeResultItem {
     pub fn political_view(&self) -> ::std::option::Option<&str> {
         self.political_view.as_deref()
     }
+    /// <p>All Intersections that are near the provided address.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.intersections.is_none()`.
+    pub fn intersections(&self) -> &[crate::types::Intersection] {
+        self.intersections.as_deref().unwrap_or_default()
+    }
 }
 impl ::std::fmt::Debug for ReverseGeocodeResultItem {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("ReverseGeocodeResultItem");
-        formatter.field("place_id", &self.place_id);
-        formatter.field("place_type", &self.place_type);
-        formatter.field("title", &self.title);
+        formatter.field("place_id", &"*** Sensitive Data Redacted ***");
+        formatter.field("place_type", &"*** Sensitive Data Redacted ***");
+        formatter.field("title", &"*** Sensitive Data Redacted ***");
         formatter.field("address", &self.address);
-        formatter.field("address_number_corrected", &self.address_number_corrected);
+        formatter.field("address_number_corrected", &"*** Sensitive Data Redacted ***");
         formatter.field("postal_code_details", &self.postal_code_details);
         formatter.field("position", &"*** Sensitive Data Redacted ***");
-        formatter.field("distance", &self.distance);
+        formatter.field("distance", &"*** Sensitive Data Redacted ***");
         formatter.field("map_view", &"*** Sensitive Data Redacted ***");
         formatter.field("categories", &self.categories);
         formatter.field("food_types", &self.food_types);
         formatter.field("access_points", &self.access_points);
         formatter.field("time_zone", &self.time_zone);
-        formatter.field("political_view", &self.political_view);
+        formatter.field("political_view", &"*** Sensitive Data Redacted ***");
+        formatter.field("intersections", &self.intersections);
         formatter.finish()
     }
 }
@@ -152,6 +161,7 @@ pub struct ReverseGeocodeResultItemBuilder {
     pub(crate) access_points: ::std::option::Option<::std::vec::Vec<crate::types::AccessPoint>>,
     pub(crate) time_zone: ::std::option::Option<crate::types::TimeZone>,
     pub(crate) political_view: ::std::option::Option<::std::string::String>,
+    pub(crate) intersections: ::std::option::Option<::std::vec::Vec<crate::types::Intersection>>,
 }
 impl ReverseGeocodeResultItemBuilder {
     /// <p>The <code>PlaceId</code> of the place you wish to receive the information for.</p>
@@ -348,19 +358,19 @@ impl ReverseGeocodeResultItemBuilder {
     ///
     /// To override the contents of this collection use [`set_access_points`](Self::set_access_points).
     ///
-    /// <p>Position of the access point represent by longitude and latitude.</p>
+    /// <p>Position of the access point represented by longitude and latitude.</p>
     pub fn access_points(mut self, input: crate::types::AccessPoint) -> Self {
         let mut v = self.access_points.unwrap_or_default();
         v.push(input);
         self.access_points = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Position of the access point represent by longitude and latitude.</p>
+    /// <p>Position of the access point represented by longitude and latitude.</p>
     pub fn set_access_points(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AccessPoint>>) -> Self {
         self.access_points = input;
         self
     }
-    /// <p>Position of the access point represent by longitude and latitude.</p>
+    /// <p>Position of the access point represented by longitude and latitude.</p>
     pub fn get_access_points(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AccessPoint>> {
         &self.access_points
     }
@@ -391,6 +401,26 @@ impl ReverseGeocodeResultItemBuilder {
     /// <p>The alpha-2 or alpha-3 character code for the political view of a country. The political view applies to the results of the request to represent unresolved territorial claims through the point of view of the specified country.</p>
     pub fn get_political_view(&self) -> &::std::option::Option<::std::string::String> {
         &self.political_view
+    }
+    /// Appends an item to `intersections`.
+    ///
+    /// To override the contents of this collection use [`set_intersections`](Self::set_intersections).
+    ///
+    /// <p>All Intersections that are near the provided address.</p>
+    pub fn intersections(mut self, input: crate::types::Intersection) -> Self {
+        let mut v = self.intersections.unwrap_or_default();
+        v.push(input);
+        self.intersections = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>All Intersections that are near the provided address.</p>
+    pub fn set_intersections(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Intersection>>) -> Self {
+        self.intersections = input;
+        self
+    }
+    /// <p>All Intersections that are near the provided address.</p>
+    pub fn get_intersections(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Intersection>> {
+        &self.intersections
     }
     /// Consumes the builder and constructs a [`ReverseGeocodeResultItem`](crate::types::ReverseGeocodeResultItem).
     /// This method will fail if any of the following fields are not set:
@@ -428,26 +458,28 @@ impl ReverseGeocodeResultItemBuilder {
             access_points: self.access_points,
             time_zone: self.time_zone,
             political_view: self.political_view,
+            intersections: self.intersections,
         })
     }
 }
 impl ::std::fmt::Debug for ReverseGeocodeResultItemBuilder {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("ReverseGeocodeResultItemBuilder");
-        formatter.field("place_id", &self.place_id);
-        formatter.field("place_type", &self.place_type);
-        formatter.field("title", &self.title);
+        formatter.field("place_id", &"*** Sensitive Data Redacted ***");
+        formatter.field("place_type", &"*** Sensitive Data Redacted ***");
+        formatter.field("title", &"*** Sensitive Data Redacted ***");
         formatter.field("address", &self.address);
-        formatter.field("address_number_corrected", &self.address_number_corrected);
+        formatter.field("address_number_corrected", &"*** Sensitive Data Redacted ***");
         formatter.field("postal_code_details", &self.postal_code_details);
         formatter.field("position", &"*** Sensitive Data Redacted ***");
-        formatter.field("distance", &self.distance);
+        formatter.field("distance", &"*** Sensitive Data Redacted ***");
         formatter.field("map_view", &"*** Sensitive Data Redacted ***");
         formatter.field("categories", &self.categories);
         formatter.field("food_types", &self.food_types);
         formatter.field("access_points", &self.access_points);
         formatter.field("time_zone", &self.time_zone);
-        formatter.field("political_view", &self.political_view);
+        formatter.field("political_view", &"*** Sensitive Data Redacted ***");
+        formatter.field("intersections", &self.intersections);
         formatter.finish()
     }
 }

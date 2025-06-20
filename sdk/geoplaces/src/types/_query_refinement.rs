@@ -2,7 +2,7 @@
 
 /// <p>Suggestions for refining individual query terms. Suggestions are returned as objects which note the term, suggested replacement, and its index in the query.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct QueryRefinement {
     /// <p>The term that will be suggested to the user.</p>
     pub refined_term: ::std::string::String,
@@ -33,6 +33,16 @@ impl QueryRefinement {
         self.end_index
     }
 }
+impl ::std::fmt::Debug for QueryRefinement {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("QueryRefinement");
+        formatter.field("refined_term", &"*** Sensitive Data Redacted ***");
+        formatter.field("original_term", &"*** Sensitive Data Redacted ***");
+        formatter.field("start_index", &self.start_index);
+        formatter.field("end_index", &self.end_index);
+        formatter.finish()
+    }
+}
 impl QueryRefinement {
     /// Creates a new builder-style object to manufacture [`QueryRefinement`](crate::types::QueryRefinement).
     pub fn builder() -> crate::types::builders::QueryRefinementBuilder {
@@ -41,7 +51,7 @@ impl QueryRefinement {
 }
 
 /// A builder for [`QueryRefinement`](crate::types::QueryRefinement).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct QueryRefinementBuilder {
     pub(crate) refined_term: ::std::option::Option<::std::string::String>,
@@ -143,5 +153,15 @@ impl QueryRefinementBuilder {
                 )
             })?,
         })
+    }
+}
+impl ::std::fmt::Debug for QueryRefinementBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("QueryRefinementBuilder");
+        formatter.field("refined_term", &"*** Sensitive Data Redacted ***");
+        formatter.field("original_term", &"*** Sensitive Data Redacted ***");
+        formatter.field("start_index", &self.start_index);
+        formatter.field("end_index", &self.end_index);
+        formatter.finish()
     }
 }

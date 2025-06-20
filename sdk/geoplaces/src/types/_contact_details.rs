@@ -2,7 +2,7 @@
 
 /// <p>Details related to contacts.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct ContactDetails {
     /// <p>The contact's label.</p>
     pub label: ::std::option::Option<::std::string::String>,
@@ -27,6 +27,15 @@ impl ContactDetails {
         self.categories.as_deref().unwrap_or_default()
     }
 }
+impl ::std::fmt::Debug for ContactDetails {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("ContactDetails");
+        formatter.field("label", &"*** Sensitive Data Redacted ***");
+        formatter.field("value", &"*** Sensitive Data Redacted ***");
+        formatter.field("categories", &self.categories);
+        formatter.finish()
+    }
+}
 impl ContactDetails {
     /// Creates a new builder-style object to manufacture [`ContactDetails`](crate::types::ContactDetails).
     pub fn builder() -> crate::types::builders::ContactDetailsBuilder {
@@ -35,7 +44,7 @@ impl ContactDetails {
 }
 
 /// A builder for [`ContactDetails`](crate::types::ContactDetails).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct ContactDetailsBuilder {
     pub(crate) label: ::std::option::Option<::std::string::String>,
@@ -98,5 +107,14 @@ impl ContactDetailsBuilder {
             value: self.value,
             categories: self.categories,
         }
+    }
+}
+impl ::std::fmt::Debug for ContactDetailsBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("ContactDetailsBuilder");
+        formatter.field("label", &"*** Sensitive Data Redacted ***");
+        formatter.field("value", &"*** Sensitive Data Redacted ***");
+        formatter.field("categories", &self.categories);
+        formatter.finish()
     }
 }

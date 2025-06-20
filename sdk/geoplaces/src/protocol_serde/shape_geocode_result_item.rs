@@ -82,6 +82,19 @@ where
                         "MatchScores" => {
                             builder = builder.set_match_scores(crate::protocol_serde::shape_match_score_details::de_match_score_details(tokens)?);
                         }
+                        "ParsedQuery" => {
+                            builder = builder.set_parsed_query(crate::protocol_serde::shape_geocode_parsed_query::de_geocode_parsed_query(tokens)?);
+                        }
+                        "Intersections" => {
+                            builder = builder.set_intersections(crate::protocol_serde::shape_intersection_list::de_intersection_list(tokens)?);
+                        }
+                        "MainAddress" => {
+                            builder = builder.set_main_address(crate::protocol_serde::shape_related_place::de_related_place(tokens)?);
+                        }
+                        "SecondaryAddresses" => {
+                            builder =
+                                builder.set_secondary_addresses(crate::protocol_serde::shape_related_place_list::de_related_place_list(tokens)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

@@ -11,6 +11,8 @@
 pub struct GuardrailContentPolicy {
     /// <p>Contains the type of the content filter and how strongly it should apply to prompts and model responses.</p>
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::GuardrailContentFilter>>,
+    /// <p>The tier that your guardrail uses for content filters.</p>
+    pub tier: ::std::option::Option<crate::types::GuardrailContentFiltersTier>,
 }
 impl GuardrailContentPolicy {
     /// <p>Contains the type of the content filter and how strongly it should apply to prompts and model responses.</p>
@@ -18,6 +20,10 @@ impl GuardrailContentPolicy {
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
     pub fn filters(&self) -> &[crate::types::GuardrailContentFilter] {
         self.filters.as_deref().unwrap_or_default()
+    }
+    /// <p>The tier that your guardrail uses for content filters.</p>
+    pub fn tier(&self) -> ::std::option::Option<&crate::types::GuardrailContentFiltersTier> {
+        self.tier.as_ref()
     }
 }
 impl GuardrailContentPolicy {
@@ -32,6 +38,7 @@ impl GuardrailContentPolicy {
 #[non_exhaustive]
 pub struct GuardrailContentPolicyBuilder {
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::GuardrailContentFilter>>,
+    pub(crate) tier: ::std::option::Option<crate::types::GuardrailContentFiltersTier>,
 }
 impl GuardrailContentPolicyBuilder {
     /// Appends an item to `filters`.
@@ -54,8 +61,25 @@ impl GuardrailContentPolicyBuilder {
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GuardrailContentFilter>> {
         &self.filters
     }
+    /// <p>The tier that your guardrail uses for content filters.</p>
+    pub fn tier(mut self, input: crate::types::GuardrailContentFiltersTier) -> Self {
+        self.tier = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The tier that your guardrail uses for content filters.</p>
+    pub fn set_tier(mut self, input: ::std::option::Option<crate::types::GuardrailContentFiltersTier>) -> Self {
+        self.tier = input;
+        self
+    }
+    /// <p>The tier that your guardrail uses for content filters.</p>
+    pub fn get_tier(&self) -> &::std::option::Option<crate::types::GuardrailContentFiltersTier> {
+        &self.tier
+    }
     /// Consumes the builder and constructs a [`GuardrailContentPolicy`](crate::types::GuardrailContentPolicy).
     pub fn build(self) -> crate::types::GuardrailContentPolicy {
-        crate::types::GuardrailContentPolicy { filters: self.filters }
+        crate::types::GuardrailContentPolicy {
+            filters: self.filters,
+            tier: self.tier,
+        }
     }
 }

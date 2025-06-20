@@ -35,6 +35,8 @@ pub use crate::types::_food_type::FoodTypeBuilder;
 
 pub use crate::types::_address::AddressBuilder;
 
+pub use crate::types::_secondary_address_component::SecondaryAddressComponentBuilder;
+
 pub use crate::types::_street_components::StreetComponentsBuilder;
 
 pub use crate::types::_sub_region::SubRegionBuilder;
@@ -65,6 +67,8 @@ pub use crate::types::_search_nearby_filter::SearchNearbyFilterBuilder;
 
 pub use crate::types::_reverse_geocode_result_item::ReverseGeocodeResultItemBuilder;
 
+pub use crate::types::_intersection::IntersectionBuilder;
+
 pub use crate::types::_postal_code_details::PostalCodeDetailsBuilder;
 
 pub use crate::types::_usps_zip_plus4::UspsZipPlus4Builder;
@@ -73,13 +77,25 @@ pub use crate::types::_usps_zip::UspsZipBuilder;
 
 pub use crate::types::_reverse_geocode_filter::ReverseGeocodeFilterBuilder;
 
+pub use crate::types::_related_place::RelatedPlaceBuilder;
+
 pub use crate::types::_geocode_result_item::GeocodeResultItemBuilder;
+
+pub use crate::types::_geocode_parsed_query::GeocodeParsedQueryBuilder;
+
+pub use crate::types::_geocode_parsed_query_address_components::GeocodeParsedQueryAddressComponentsBuilder;
+
+pub use crate::types::_parsed_query_secondary_address_component::ParsedQuerySecondaryAddressComponentBuilder;
+
+pub use crate::types::_parsed_query_component::ParsedQueryComponentBuilder;
 
 pub use crate::types::_match_score_details::MatchScoreDetailsBuilder;
 
 pub use crate::types::_component_match_scores::ComponentMatchScoresBuilder;
 
 pub use crate::types::_address_component_match_scores::AddressComponentMatchScoresBuilder;
+
+pub use crate::types::_secondary_address_component_match_score::SecondaryAddressComponentMatchScoreBuilder;
 
 pub use crate::types::_geocode_filter::GeocodeFilterBuilder;
 

@@ -2,17 +2,17 @@
 
 /// <p>Components of a street.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct StreetComponents {
     /// <p>Base name part of the street name.</p>
-    /// <p>Example: Younge from the “Younge street".</p>
+    /// <p>Example: Younge from the "Younge street".</p>
     pub base_name: ::std::option::Option<::std::string::String>,
     /// <p>Street type part of the street name.</p>
-    /// <p>Example: <code>“avenue"</code>.</p>
+    /// <p>Example: <code>"avenue"</code>.</p>
     pub r#type: ::std::option::Option<::std::string::String>,
     /// <p>Defines if the street type is before or after the base name.</p>
     pub type_placement: ::std::option::Option<crate::types::TypePlacement>,
-    /// <p>What character(s) separates the string from its type.</p>
+    /// <p>Defines a separator character such as <code>""</code> or <code>" "</code> between the base name and type.</p>
     pub type_separator: ::std::option::Option<::std::string::String>,
     /// <p>A prefix is a directional identifier that precedes, but is not included in, the base name of a road.</p>
     /// <p>Example: E for East.</p>
@@ -27,12 +27,12 @@ pub struct StreetComponents {
 }
 impl StreetComponents {
     /// <p>Base name part of the street name.</p>
-    /// <p>Example: Younge from the “Younge street".</p>
+    /// <p>Example: Younge from the "Younge street".</p>
     pub fn base_name(&self) -> ::std::option::Option<&str> {
         self.base_name.as_deref()
     }
     /// <p>Street type part of the street name.</p>
-    /// <p>Example: <code>“avenue"</code>.</p>
+    /// <p>Example: <code>"avenue"</code>.</p>
     pub fn r#type(&self) -> ::std::option::Option<&str> {
         self.r#type.as_deref()
     }
@@ -40,7 +40,7 @@ impl StreetComponents {
     pub fn type_placement(&self) -> ::std::option::Option<&crate::types::TypePlacement> {
         self.type_placement.as_ref()
     }
-    /// <p>What character(s) separates the string from its type.</p>
+    /// <p>Defines a separator character such as <code>""</code> or <code>" "</code> between the base name and type.</p>
     pub fn type_separator(&self) -> ::std::option::Option<&str> {
         self.type_separator.as_deref()
     }
@@ -63,6 +63,20 @@ impl StreetComponents {
         self.language.as_deref()
     }
 }
+impl ::std::fmt::Debug for StreetComponents {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("StreetComponents");
+        formatter.field("base_name", &"*** Sensitive Data Redacted ***");
+        formatter.field("r#type", &"*** Sensitive Data Redacted ***");
+        formatter.field("type_placement", &self.type_placement);
+        formatter.field("type_separator", &self.type_separator);
+        formatter.field("prefix", &"*** Sensitive Data Redacted ***");
+        formatter.field("suffix", &"*** Sensitive Data Redacted ***");
+        formatter.field("direction", &"*** Sensitive Data Redacted ***");
+        formatter.field("language", &self.language);
+        formatter.finish()
+    }
+}
 impl StreetComponents {
     /// Creates a new builder-style object to manufacture [`StreetComponents`](crate::types::StreetComponents).
     pub fn builder() -> crate::types::builders::StreetComponentsBuilder {
@@ -71,7 +85,7 @@ impl StreetComponents {
 }
 
 /// A builder for [`StreetComponents`](crate::types::StreetComponents).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct StreetComponentsBuilder {
     pub(crate) base_name: ::std::option::Option<::std::string::String>,
@@ -85,36 +99,36 @@ pub struct StreetComponentsBuilder {
 }
 impl StreetComponentsBuilder {
     /// <p>Base name part of the street name.</p>
-    /// <p>Example: Younge from the “Younge street".</p>
+    /// <p>Example: Younge from the "Younge street".</p>
     pub fn base_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.base_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Base name part of the street name.</p>
-    /// <p>Example: Younge from the “Younge street".</p>
+    /// <p>Example: Younge from the "Younge street".</p>
     pub fn set_base_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.base_name = input;
         self
     }
     /// <p>Base name part of the street name.</p>
-    /// <p>Example: Younge from the “Younge street".</p>
+    /// <p>Example: Younge from the "Younge street".</p>
     pub fn get_base_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.base_name
     }
     /// <p>Street type part of the street name.</p>
-    /// <p>Example: <code>“avenue"</code>.</p>
+    /// <p>Example: <code>"avenue"</code>.</p>
     pub fn r#type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.r#type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Street type part of the street name.</p>
-    /// <p>Example: <code>“avenue"</code>.</p>
+    /// <p>Example: <code>"avenue"</code>.</p>
     pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.r#type = input;
         self
     }
     /// <p>Street type part of the street name.</p>
-    /// <p>Example: <code>“avenue"</code>.</p>
+    /// <p>Example: <code>"avenue"</code>.</p>
     pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.r#type
     }
@@ -132,17 +146,17 @@ impl StreetComponentsBuilder {
     pub fn get_type_placement(&self) -> &::std::option::Option<crate::types::TypePlacement> {
         &self.type_placement
     }
-    /// <p>What character(s) separates the string from its type.</p>
+    /// <p>Defines a separator character such as <code>""</code> or <code>" "</code> between the base name and type.</p>
     pub fn type_separator(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.type_separator = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>What character(s) separates the string from its type.</p>
+    /// <p>Defines a separator character such as <code>""</code> or <code>" "</code> between the base name and type.</p>
     pub fn set_type_separator(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.type_separator = input;
         self
     }
-    /// <p>What character(s) separates the string from its type.</p>
+    /// <p>Defines a separator character such as <code>""</code> or <code>" "</code> between the base name and type.</p>
     pub fn get_type_separator(&self) -> &::std::option::Option<::std::string::String> {
         &self.type_separator
     }
@@ -220,5 +234,19 @@ impl StreetComponentsBuilder {
             direction: self.direction,
             language: self.language,
         }
+    }
+}
+impl ::std::fmt::Debug for StreetComponentsBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("StreetComponentsBuilder");
+        formatter.field("base_name", &"*** Sensitive Data Redacted ***");
+        formatter.field("r#type", &"*** Sensitive Data Redacted ***");
+        formatter.field("type_placement", &self.type_placement);
+        formatter.field("type_separator", &self.type_separator);
+        formatter.field("prefix", &"*** Sensitive Data Redacted ***");
+        formatter.field("suffix", &"*** Sensitive Data Redacted ***");
+        formatter.field("direction", &"*** Sensitive Data Redacted ***");
+        formatter.field("language", &self.language);
+        formatter.finish()
     }
 }

@@ -2,7 +2,7 @@
 
 /// <p>A businesschain is a chain of businesses that belong to the same brand. For example <code>7-11</code>.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct BusinessChain {
     /// <p>The business chain name.</p>
     pub name: ::std::option::Option<::std::string::String>,
@@ -19,6 +19,14 @@ impl BusinessChain {
         self.id.as_deref()
     }
 }
+impl ::std::fmt::Debug for BusinessChain {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("BusinessChain");
+        formatter.field("name", &"*** Sensitive Data Redacted ***");
+        formatter.field("id", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
 impl BusinessChain {
     /// Creates a new builder-style object to manufacture [`BusinessChain`](crate::types::BusinessChain).
     pub fn builder() -> crate::types::builders::BusinessChainBuilder {
@@ -27,7 +35,7 @@ impl BusinessChain {
 }
 
 /// A builder for [`BusinessChain`](crate::types::BusinessChain).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct BusinessChainBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -68,5 +76,13 @@ impl BusinessChainBuilder {
             name: self.name,
             id: self.id,
         }
+    }
+}
+impl ::std::fmt::Debug for BusinessChainBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("BusinessChainBuilder");
+        formatter.field("name", &"*** Sensitive Data Redacted ***");
+        formatter.field("id", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

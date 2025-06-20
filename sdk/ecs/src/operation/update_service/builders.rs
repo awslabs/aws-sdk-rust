@@ -26,11 +26,11 @@ impl crate::operation::update_service::builders::UpdateServiceInputBuilder {
 /// <p>On March 21, 2024, a change was made to resolve the task definition revision before authorization. When a task definition revision is not specified, authorization will occur using the latest revision of a task definition.</p>
 /// </note>
 /// <p>For services using the rolling update (<code>ECS</code>) you can update the desired count, deployment configuration, network configuration, load balancers, service registries, enable ECS managed tags option, propagate tags option, task placement constraints and strategies, and task definition. When you update any of these parameters, Amazon ECS starts new tasks with the new configuration.</p>
-/// <p>You can attach Amazon EBS volumes to Amazon ECS tasks by configuring the volume when starting or running a task, or when creating or updating a service. For more infomation, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ebs-volumes.html#ebs-volume-types">Amazon EBS volumes</a> in the <i>Amazon Elastic Container Service Developer Guide</i>. You can update your volume configurations and trigger a new deployment. <code>volumeConfigurations</code> is only supported for REPLICA service and not DAEMON service. If you leave <code>volumeConfigurations</code> <code>null</code>, it doesn't trigger a new deployment. For more infomation on volumes, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ebs-volumes.html#ebs-volume-types">Amazon EBS volumes</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+/// <p>You can attach Amazon EBS volumes to Amazon ECS tasks by configuring the volume when starting or running a task, or when creating or updating a service. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ebs-volumes.html#ebs-volume-types">Amazon EBS volumes</a> in the <i>Amazon Elastic Container Service Developer Guide</i>. You can update your volume configurations and trigger a new deployment. <code>volumeConfigurations</code> is only supported for REPLICA service and not DAEMON service. If you leave <code>volumeConfigurations</code> <code>null</code>, it doesn't trigger a new deployment. For more information on volumes, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ebs-volumes.html#ebs-volume-types">Amazon EBS volumes</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
 /// <p>For services using the blue/green (<code>CODE_DEPLOY</code>) deployment controller, only the desired count, deployment configuration, health check grace period, task placement constraints and strategies, enable ECS managed tags option, and propagate tags can be updated using this API. If the network configuration, platform version, task definition, or load balancer need to be updated, create a new CodeDeploy deployment. For more information, see <a href="https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_CreateDeployment.html">CreateDeployment</a> in the <i>CodeDeploy API Reference</i>.</p>
 /// <p>For services using an external deployment controller, you can update only the desired count, task placement constraints and strategies, health check grace period, enable ECS managed tags option, and propagate tags option, using this API. If the launch type, load balancer, network configuration, platform version, or task definition need to be updated, create a new task set For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_CreateTaskSet.html">CreateTaskSet</a>.</p>
 /// <p>You can add to or subtract from the number of instantiations of a task definition in a service by specifying the cluster that the service is running in and a new <code>desiredCount</code> parameter.</p>
-/// <p>You can attach Amazon EBS volumes to Amazon ECS tasks by configuring the volume when starting or running a task, or when creating or updating a service. For more infomation, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ebs-volumes.html#ebs-volume-types">Amazon EBS volumes</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+/// <p>You can attach Amazon EBS volumes to Amazon ECS tasks by configuring the volume when starting or running a task, or when creating or updating a service. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ebs-volumes.html#ebs-volume-types">Amazon EBS volumes</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
 /// <p>If you have updated the container image of your application, you can create a new task definition with that image and deploy it to your service. The service scheduler uses the minimum healthy percent and maximum percent parameters (in the service's deployment configuration) to determine the deployment strategy.</p><note>
 /// <p>If your updated Docker image uses the same tag as what is in the existing task definition for your service (for example, <code>my_image:latest</code>), you don't need to create a new revision of your task definition. You can update the service using the <code>forceNewDeployment</code> option. The new tasks launched by the deployment pull the current image/tag combination from your repository when they start.</p>
 /// </note>
@@ -218,16 +218,16 @@ impl UpdateServiceFluentBuilder {
     /// <p>The following list provides the valid transitions:</p>
     /// <ul>
     /// <li>
-    /// <p>Update the Fargate launch type to an EC2 capacity provider.</p></li>
+    /// <p>Update the Fargate launch type to an Auto Scaling group capacity provider.</p></li>
     /// <li>
     /// <p>Update the Amazon EC2 launch type to a Fargate capacity provider.</p></li>
     /// <li>
-    /// <p>Update the Fargate capacity provider to an EC2 capacity provider.</p></li>
+    /// <p>Update the Fargate capacity provider to an Auto Scaling group capacity provider.</p></li>
     /// <li>
     /// <p>Update the Amazon EC2 capacity provider to a Fargate capacity provider.</p></li>
     /// <li>
-    /// <p>Update the EC2 or Fargate capacity provider back to the launch type.</p>
-    /// <p>Pass an empty list in the <code>capacityProvider</code> parameter.</p></li>
+    /// <p>Update the Auto Scaling group or Fargate capacity provider back to the launch type.</p>
+    /// <p>Pass an empty list in the <code>capacityProviderStrategy</code> parameter.</p></li>
     /// </ul>
     /// <p>For information about Amazon Web Services CDK considerations, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/update-service-parameters.html">Amazon Web Services CDK considerations</a>.</p>
     pub fn capacity_provider_strategy(mut self, input: crate::types::CapacityProviderStrategyItem) -> Self {
@@ -241,16 +241,16 @@ impl UpdateServiceFluentBuilder {
     /// <p>The following list provides the valid transitions:</p>
     /// <ul>
     /// <li>
-    /// <p>Update the Fargate launch type to an EC2 capacity provider.</p></li>
+    /// <p>Update the Fargate launch type to an Auto Scaling group capacity provider.</p></li>
     /// <li>
     /// <p>Update the Amazon EC2 launch type to a Fargate capacity provider.</p></li>
     /// <li>
-    /// <p>Update the Fargate capacity provider to an EC2 capacity provider.</p></li>
+    /// <p>Update the Fargate capacity provider to an Auto Scaling group capacity provider.</p></li>
     /// <li>
     /// <p>Update the Amazon EC2 capacity provider to a Fargate capacity provider.</p></li>
     /// <li>
-    /// <p>Update the EC2 or Fargate capacity provider back to the launch type.</p>
-    /// <p>Pass an empty list in the <code>capacityProvider</code> parameter.</p></li>
+    /// <p>Update the Auto Scaling group or Fargate capacity provider back to the launch type.</p>
+    /// <p>Pass an empty list in the <code>capacityProviderStrategy</code> parameter.</p></li>
     /// </ul>
     /// <p>For information about Amazon Web Services CDK considerations, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/update-service-parameters.html">Amazon Web Services CDK considerations</a>.</p>
     pub fn set_capacity_provider_strategy(
@@ -267,16 +267,16 @@ impl UpdateServiceFluentBuilder {
     /// <p>The following list provides the valid transitions:</p>
     /// <ul>
     /// <li>
-    /// <p>Update the Fargate launch type to an EC2 capacity provider.</p></li>
+    /// <p>Update the Fargate launch type to an Auto Scaling group capacity provider.</p></li>
     /// <li>
     /// <p>Update the Amazon EC2 launch type to a Fargate capacity provider.</p></li>
     /// <li>
-    /// <p>Update the Fargate capacity provider to an EC2 capacity provider.</p></li>
+    /// <p>Update the Fargate capacity provider to an Auto Scaling group capacity provider.</p></li>
     /// <li>
     /// <p>Update the Amazon EC2 capacity provider to a Fargate capacity provider.</p></li>
     /// <li>
-    /// <p>Update the EC2 or Fargate capacity provider back to the launch type.</p>
-    /// <p>Pass an empty list in the <code>capacityProvider</code> parameter.</p></li>
+    /// <p>Update the Auto Scaling group or Fargate capacity provider back to the launch type.</p>
+    /// <p>Pass an empty list in the <code>capacityProviderStrategy</code> parameter.</p></li>
     /// </ul>
     /// <p>For information about Amazon Web Services CDK considerations, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/update-service-parameters.html">Amazon Web Services CDK considerations</a>.</p>
     pub fn get_capacity_provider_strategy(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CapacityProviderStrategyItem>> {

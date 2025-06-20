@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SearchTextOutput {
     /// <p>The pricing bucket for which the query is charged at.</p>
-    /// <p>For more inforamtion on pricing, please visit <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service Pricing</a>.</p>
+    /// <p>For more information on pricing, please visit <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service Pricing</a>.</p>
     pub pricing_bucket: ::std::string::String,
     /// <p>List of places or results returned for a query.</p>
     pub result_items: ::std::option::Option<::std::vec::Vec<crate::types::SearchTextResultItem>>,
@@ -14,7 +14,7 @@ pub struct SearchTextOutput {
 }
 impl SearchTextOutput {
     /// <p>The pricing bucket for which the query is charged at.</p>
-    /// <p>For more inforamtion on pricing, please visit <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service Pricing</a>.</p>
+    /// <p>For more information on pricing, please visit <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service Pricing</a>.</p>
     pub fn pricing_bucket(&self) -> &str {
         use std::ops::Deref;
         self.pricing_bucket.deref()
@@ -53,20 +53,20 @@ pub struct SearchTextOutputBuilder {
 }
 impl SearchTextOutputBuilder {
     /// <p>The pricing bucket for which the query is charged at.</p>
-    /// <p>For more inforamtion on pricing, please visit <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service Pricing</a>.</p>
+    /// <p>For more information on pricing, please visit <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service Pricing</a>.</p>
     /// This field is required.
     pub fn pricing_bucket(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pricing_bucket = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The pricing bucket for which the query is charged at.</p>
-    /// <p>For more inforamtion on pricing, please visit <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service Pricing</a>.</p>
+    /// <p>For more information on pricing, please visit <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service Pricing</a>.</p>
     pub fn set_pricing_bucket(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.pricing_bucket = input;
         self
     }
     /// <p>The pricing bucket for which the query is charged at.</p>
-    /// <p>For more inforamtion on pricing, please visit <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service Pricing</a>.</p>
+    /// <p>For more information on pricing, please visit <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service Pricing</a>.</p>
     pub fn get_pricing_bucket(&self) -> &::std::option::Option<::std::string::String> {
         &self.pricing_bucket
     }

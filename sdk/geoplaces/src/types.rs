@@ -39,6 +39,8 @@ pub use crate::types::_food_type::FoodType;
 
 pub use crate::types::_address::Address;
 
+pub use crate::types::_secondary_address_component::SecondaryAddressComponent;
+
 pub use crate::types::_street_components::StreetComponents;
 
 pub use crate::types::_type_placement::TypePlacement;
@@ -87,6 +89,8 @@ pub use crate::types::_search_nearby_filter::SearchNearbyFilter;
 
 pub use crate::types::_reverse_geocode_result_item::ReverseGeocodeResultItem;
 
+pub use crate::types::_intersection::Intersection;
+
 pub use crate::types::_postal_code_details::PostalCodeDetails;
 
 pub use crate::types::_usps_zip_plus4::UspsZipPlus4;
@@ -109,17 +113,29 @@ pub use crate::types::_reverse_geocode_filter::ReverseGeocodeFilter;
 
 pub use crate::types::_reverse_geocode_filter_place_type::ReverseGeocodeFilterPlaceType;
 
+pub use crate::types::_related_place::RelatedPlace;
+
 pub use crate::types::_get_place_intended_use::GetPlaceIntendedUse;
 
 pub use crate::types::_get_place_additional_feature::GetPlaceAdditionalFeature;
 
 pub use crate::types::_geocode_result_item::GeocodeResultItem;
 
+pub use crate::types::_geocode_parsed_query::GeocodeParsedQuery;
+
+pub use crate::types::_geocode_parsed_query_address_components::GeocodeParsedQueryAddressComponents;
+
+pub use crate::types::_parsed_query_secondary_address_component::ParsedQuerySecondaryAddressComponent;
+
+pub use crate::types::_parsed_query_component::ParsedQueryComponent;
+
 pub use crate::types::_match_score_details::MatchScoreDetails;
 
 pub use crate::types::_component_match_scores::ComponentMatchScores;
 
 pub use crate::types::_address_component_match_scores::AddressComponentMatchScores;
+
+pub use crate::types::_secondary_address_component_match_score::SecondaryAddressComponentMatchScore;
 
 pub use crate::types::_geocode_intended_use::GeocodeIntendedUse;
 
@@ -203,6 +219,10 @@ mod _geocode_filter_place_type;
 
 mod _geocode_intended_use;
 
+mod _geocode_parsed_query;
+
+mod _geocode_parsed_query_address_components;
+
 mod _geocode_query_components;
 
 mod _geocode_result_item;
@@ -213,11 +233,17 @@ mod _get_place_intended_use;
 
 mod _highlight;
 
+mod _intersection;
+
 mod _match_score_details;
 
 mod _opening_hours;
 
 mod _opening_hours_components;
+
+mod _parsed_query_component;
+
+mod _parsed_query_secondary_address_component;
 
 mod _phoneme_details;
 
@@ -242,6 +268,8 @@ mod _record_type_code;
 mod _region;
 
 mod _region_highlights;
+
+mod _related_place;
 
 mod _reverse_geocode_additional_feature;
 
@@ -268,6 +296,10 @@ mod _search_text_filter;
 mod _search_text_intended_use;
 
 mod _search_text_result_item;
+
+mod _secondary_address_component;
+
+mod _secondary_address_component_match_score;
 
 mod _street_components;
 

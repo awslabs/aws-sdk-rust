@@ -2,9 +2,9 @@
 
 /// <p>Contains details about the postal code of the place or result.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct PostalCodeDetails {
-    /// <p>An alphanumeric string included in a postal address to facilitate mail sorting, such as post code, postcode, or ZIP code for which the result should posses.</p>
+    /// <p>An alphanumeric string included in a postal address to facilitate mail sorting, such as post code, postcode, or ZIP code for which the result should possess.</p>
     pub postal_code: ::std::option::Option<::std::string::String>,
     /// <p>The postal authority or entity. This could be a governmental authority, a regulatory authority, or a designated postal operator.</p>
     pub postal_authority: ::std::option::Option<crate::types::PostalAuthority>,
@@ -16,7 +16,7 @@ pub struct PostalCodeDetails {
     pub usps_zip_plus4: ::std::option::Option<crate::types::UspsZipPlus4>,
 }
 impl PostalCodeDetails {
-    /// <p>An alphanumeric string included in a postal address to facilitate mail sorting, such as post code, postcode, or ZIP code for which the result should posses.</p>
+    /// <p>An alphanumeric string included in a postal address to facilitate mail sorting, such as post code, postcode, or ZIP code for which the result should possess.</p>
     pub fn postal_code(&self) -> ::std::option::Option<&str> {
         self.postal_code.as_deref()
     }
@@ -37,6 +37,17 @@ impl PostalCodeDetails {
         self.usps_zip_plus4.as_ref()
     }
 }
+impl ::std::fmt::Debug for PostalCodeDetails {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("PostalCodeDetails");
+        formatter.field("postal_code", &"*** Sensitive Data Redacted ***");
+        formatter.field("postal_authority", &"*** Sensitive Data Redacted ***");
+        formatter.field("postal_code_type", &"*** Sensitive Data Redacted ***");
+        formatter.field("usps_zip", &self.usps_zip);
+        formatter.field("usps_zip_plus4", &self.usps_zip_plus4);
+        formatter.finish()
+    }
+}
 impl PostalCodeDetails {
     /// Creates a new builder-style object to manufacture [`PostalCodeDetails`](crate::types::PostalCodeDetails).
     pub fn builder() -> crate::types::builders::PostalCodeDetailsBuilder {
@@ -45,7 +56,7 @@ impl PostalCodeDetails {
 }
 
 /// A builder for [`PostalCodeDetails`](crate::types::PostalCodeDetails).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct PostalCodeDetailsBuilder {
     pub(crate) postal_code: ::std::option::Option<::std::string::String>,
@@ -55,17 +66,17 @@ pub struct PostalCodeDetailsBuilder {
     pub(crate) usps_zip_plus4: ::std::option::Option<crate::types::UspsZipPlus4>,
 }
 impl PostalCodeDetailsBuilder {
-    /// <p>An alphanumeric string included in a postal address to facilitate mail sorting, such as post code, postcode, or ZIP code for which the result should posses.</p>
+    /// <p>An alphanumeric string included in a postal address to facilitate mail sorting, such as post code, postcode, or ZIP code for which the result should possess.</p>
     pub fn postal_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.postal_code = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>An alphanumeric string included in a postal address to facilitate mail sorting, such as post code, postcode, or ZIP code for which the result should posses.</p>
+    /// <p>An alphanumeric string included in a postal address to facilitate mail sorting, such as post code, postcode, or ZIP code for which the result should possess.</p>
     pub fn set_postal_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.postal_code = input;
         self
     }
-    /// <p>An alphanumeric string included in a postal address to facilitate mail sorting, such as post code, postcode, or ZIP code for which the result should posses.</p>
+    /// <p>An alphanumeric string included in a postal address to facilitate mail sorting, such as post code, postcode, or ZIP code for which the result should possess.</p>
     pub fn get_postal_code(&self) -> &::std::option::Option<::std::string::String> {
         &self.postal_code
     }
@@ -134,5 +145,16 @@ impl PostalCodeDetailsBuilder {
             usps_zip: self.usps_zip,
             usps_zip_plus4: self.usps_zip_plus4,
         }
+    }
+}
+impl ::std::fmt::Debug for PostalCodeDetailsBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("PostalCodeDetailsBuilder");
+        formatter.field("postal_code", &"*** Sensitive Data Redacted ***");
+        formatter.field("postal_authority", &"*** Sensitive Data Redacted ***");
+        formatter.field("postal_code_type", &"*** Sensitive Data Redacted ***");
+        formatter.field("usps_zip", &self.usps_zip);
+        formatter.field("usps_zip_plus4", &self.usps_zip_plus4);
+        formatter.finish()
     }
 }

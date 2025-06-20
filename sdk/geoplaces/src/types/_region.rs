@@ -3,7 +3,7 @@
 /// <p>The region or state results should be to be present in.</p>
 /// <p>Example: <code>North Rhine-Westphalia</code>.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct Region {
     /// <p>Abbreviated code for a the state, province or region of the country.</p>
     /// <p>Example: <code>BC</code>.</p>
@@ -24,6 +24,14 @@ impl Region {
         self.name.as_deref()
     }
 }
+impl ::std::fmt::Debug for Region {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("Region");
+        formatter.field("code", &"*** Sensitive Data Redacted ***");
+        formatter.field("name", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
 impl Region {
     /// Creates a new builder-style object to manufacture [`Region`](crate::types::Region).
     pub fn builder() -> crate::types::builders::RegionBuilder {
@@ -32,7 +40,7 @@ impl Region {
 }
 
 /// A builder for [`Region`](crate::types::Region).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct RegionBuilder {
     pub(crate) code: ::std::option::Option<::std::string::String>,
@@ -79,5 +87,13 @@ impl RegionBuilder {
             code: self.code,
             name: self.name,
         }
+    }
+}
+impl ::std::fmt::Debug for RegionBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("RegionBuilder");
+        formatter.field("code", &"*** Sensitive Data Redacted ***");
+        formatter.field("name", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

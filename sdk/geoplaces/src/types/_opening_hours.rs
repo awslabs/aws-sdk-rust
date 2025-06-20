@@ -2,7 +2,7 @@
 
 /// <p>List of opening hours objects.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct OpeningHours {
     /// <p>List of opening hours in the format they are displayed in. This can vary by result and in most cases represents how the result uniquely formats their opening hours.</p>
     pub display: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -37,6 +37,16 @@ impl OpeningHours {
         self.categories.as_deref().unwrap_or_default()
     }
 }
+impl ::std::fmt::Debug for OpeningHours {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("OpeningHours");
+        formatter.field("display", &"*** Sensitive Data Redacted ***");
+        formatter.field("open_now", &"*** Sensitive Data Redacted ***");
+        formatter.field("components", &self.components);
+        formatter.field("categories", &self.categories);
+        formatter.finish()
+    }
+}
 impl OpeningHours {
     /// Creates a new builder-style object to manufacture [`OpeningHours`](crate::types::OpeningHours).
     pub fn builder() -> crate::types::builders::OpeningHoursBuilder {
@@ -45,7 +55,7 @@ impl OpeningHours {
 }
 
 /// A builder for [`OpeningHours`](crate::types::OpeningHours).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct OpeningHoursBuilder {
     pub(crate) display: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -136,5 +146,15 @@ impl OpeningHoursBuilder {
             components: self.components,
             categories: self.categories,
         }
+    }
+}
+impl ::std::fmt::Debug for OpeningHoursBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("OpeningHoursBuilder");
+        formatter.field("display", &"*** Sensitive Data Redacted ***");
+        formatter.field("open_now", &"*** Sensitive Data Redacted ***");
+        formatter.field("components", &self.components);
+        formatter.field("categories", &self.categories);
+        formatter.finish()
     }
 }

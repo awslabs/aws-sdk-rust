@@ -19,7 +19,7 @@ pub struct AddressComponentMatchScores {
     /// <p>A subdivision of a district.</p>
     /// <p>Example: <code>Minden-Lübbecke</code></p>
     pub sub_district: f64,
-    /// <p>An alphanumeric string included in a postal address to facilitate mail sorting, such as post code, postcode, or ZIP code, for which the result should posses.</p>
+    /// <p>An alphanumeric string included in a postal address to facilitate mail sorting, such as post code, postcode, or ZIP code, for which the result should possess.</p>
     pub postal_code: f64,
     /// <p>Name of the block.</p>
     /// <p>Example: <code>Sunny Mansion 203 block: 2 Chome</code></p>
@@ -34,6 +34,8 @@ pub struct AddressComponentMatchScores {
     pub address_number: f64,
     /// <p>The name of the building at the address.</p>
     pub building: f64,
+    /// <p>Match scores for the secondary address components in the result.</p>
+    pub secondary_address_components: ::std::option::Option<::std::vec::Vec<crate::types::SecondaryAddressComponentMatchScore>>,
 }
 impl AddressComponentMatchScores {
     /// <p>The alpha-2 or alpha-3 character code for the country that the results will be present in.</p>
@@ -63,7 +65,7 @@ impl AddressComponentMatchScores {
     pub fn sub_district(&self) -> f64 {
         self.sub_district
     }
-    /// <p>An alphanumeric string included in a postal address to facilitate mail sorting, such as post code, postcode, or ZIP code, for which the result should posses.</p>
+    /// <p>An alphanumeric string included in a postal address to facilitate mail sorting, such as post code, postcode, or ZIP code, for which the result should possess.</p>
     pub fn postal_code(&self) -> f64 {
         self.postal_code
     }
@@ -92,6 +94,12 @@ impl AddressComponentMatchScores {
     pub fn building(&self) -> f64 {
         self.building
     }
+    /// <p>Match scores for the secondary address components in the result.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.secondary_address_components.is_none()`.
+    pub fn secondary_address_components(&self) -> &[crate::types::SecondaryAddressComponentMatchScore] {
+        self.secondary_address_components.as_deref().unwrap_or_default()
+    }
 }
 impl AddressComponentMatchScores {
     /// Creates a new builder-style object to manufacture [`AddressComponentMatchScores`](crate::types::AddressComponentMatchScores).
@@ -116,6 +124,7 @@ pub struct AddressComponentMatchScoresBuilder {
     pub(crate) intersection: ::std::option::Option<::std::vec::Vec<f64>>,
     pub(crate) address_number: ::std::option::Option<f64>,
     pub(crate) building: ::std::option::Option<f64>,
+    pub(crate) secondary_address_components: ::std::option::Option<::std::vec::Vec<crate::types::SecondaryAddressComponentMatchScore>>,
 }
 impl AddressComponentMatchScoresBuilder {
     /// <p>The alpha-2 or alpha-3 character code for the country that the results will be present in.</p>
@@ -211,17 +220,17 @@ impl AddressComponentMatchScoresBuilder {
     pub fn get_sub_district(&self) -> &::std::option::Option<f64> {
         &self.sub_district
     }
-    /// <p>An alphanumeric string included in a postal address to facilitate mail sorting, such as post code, postcode, or ZIP code, for which the result should posses.</p>
+    /// <p>An alphanumeric string included in a postal address to facilitate mail sorting, such as post code, postcode, or ZIP code, for which the result should possess.</p>
     pub fn postal_code(mut self, input: f64) -> Self {
         self.postal_code = ::std::option::Option::Some(input);
         self
     }
-    /// <p>An alphanumeric string included in a postal address to facilitate mail sorting, such as post code, postcode, or ZIP code, for which the result should posses.</p>
+    /// <p>An alphanumeric string included in a postal address to facilitate mail sorting, such as post code, postcode, or ZIP code, for which the result should possess.</p>
     pub fn set_postal_code(mut self, input: ::std::option::Option<f64>) -> Self {
         self.postal_code = input;
         self
     }
-    /// <p>An alphanumeric string included in a postal address to facilitate mail sorting, such as post code, postcode, or ZIP code, for which the result should posses.</p>
+    /// <p>An alphanumeric string included in a postal address to facilitate mail sorting, such as post code, postcode, or ZIP code, for which the result should possess.</p>
     pub fn get_postal_code(&self) -> &::std::option::Option<f64> {
         &self.postal_code
     }
@@ -310,6 +319,29 @@ impl AddressComponentMatchScoresBuilder {
     pub fn get_building(&self) -> &::std::option::Option<f64> {
         &self.building
     }
+    /// Appends an item to `secondary_address_components`.
+    ///
+    /// To override the contents of this collection use [`set_secondary_address_components`](Self::set_secondary_address_components).
+    ///
+    /// <p>Match scores for the secondary address components in the result.</p>
+    pub fn secondary_address_components(mut self, input: crate::types::SecondaryAddressComponentMatchScore) -> Self {
+        let mut v = self.secondary_address_components.unwrap_or_default();
+        v.push(input);
+        self.secondary_address_components = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Match scores for the secondary address components in the result.</p>
+    pub fn set_secondary_address_components(
+        mut self,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::SecondaryAddressComponentMatchScore>>,
+    ) -> Self {
+        self.secondary_address_components = input;
+        self
+    }
+    /// <p>Match scores for the secondary address components in the result.</p>
+    pub fn get_secondary_address_components(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SecondaryAddressComponentMatchScore>> {
+        &self.secondary_address_components
+    }
     /// Consumes the builder and constructs a [`AddressComponentMatchScores`](crate::types::AddressComponentMatchScores).
     pub fn build(self) -> crate::types::AddressComponentMatchScores {
         crate::types::AddressComponentMatchScores {
@@ -325,6 +357,7 @@ impl AddressComponentMatchScoresBuilder {
             intersection: self.intersection,
             address_number: self.address_number.unwrap_or_default(),
             building: self.building.unwrap_or_default(),
+            secondary_address_components: self.secondary_address_components,
         }
     }
 }

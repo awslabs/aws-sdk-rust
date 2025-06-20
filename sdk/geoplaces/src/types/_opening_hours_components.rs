@@ -2,7 +2,7 @@
 
 /// <p>Components of the opening hours object.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct OpeningHoursComponents {
     /// <p>String which represents the opening hours, such as <code>"T070000"</code>.</p>
     pub open_time: ::std::option::Option<::std::string::String>,
@@ -27,6 +27,15 @@ impl OpeningHoursComponents {
         self.recurrence.as_deref()
     }
 }
+impl ::std::fmt::Debug for OpeningHoursComponents {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("OpeningHoursComponents");
+        formatter.field("open_time", &"*** Sensitive Data Redacted ***");
+        formatter.field("open_duration", &"*** Sensitive Data Redacted ***");
+        formatter.field("recurrence", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
 impl OpeningHoursComponents {
     /// Creates a new builder-style object to manufacture [`OpeningHoursComponents`](crate::types::OpeningHoursComponents).
     pub fn builder() -> crate::types::builders::OpeningHoursComponentsBuilder {
@@ -35,7 +44,7 @@ impl OpeningHoursComponents {
 }
 
 /// A builder for [`OpeningHoursComponents`](crate::types::OpeningHoursComponents).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct OpeningHoursComponentsBuilder {
     pub(crate) open_time: ::std::option::Option<::std::string::String>,
@@ -95,5 +104,14 @@ impl OpeningHoursComponentsBuilder {
             open_duration: self.open_duration,
             recurrence: self.recurrence,
         }
+    }
+}
+impl ::std::fmt::Debug for OpeningHoursComponentsBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("OpeningHoursComponentsBuilder");
+        formatter.field("open_time", &"*** Sensitive Data Redacted ***");
+        formatter.field("open_duration", &"*** Sensitive Data Redacted ***");
+        formatter.field("recurrence", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

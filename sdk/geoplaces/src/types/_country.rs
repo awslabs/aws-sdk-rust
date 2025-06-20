@@ -2,7 +2,7 @@
 
 /// <p>The alpha-2 or alpha-3 character code for the country that the results will be present in.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct Country {
     /// <p>Country, represented by its alpha 2-character code.</p>
     pub code2: ::std::option::Option<::std::string::String>,
@@ -25,6 +25,15 @@ impl Country {
         self.name.as_deref()
     }
 }
+impl ::std::fmt::Debug for Country {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("Country");
+        formatter.field("code2", &"*** Sensitive Data Redacted ***");
+        formatter.field("code3", &"*** Sensitive Data Redacted ***");
+        formatter.field("name", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
 impl Country {
     /// Creates a new builder-style object to manufacture [`Country`](crate::types::Country).
     pub fn builder() -> crate::types::builders::CountryBuilder {
@@ -33,7 +42,7 @@ impl Country {
 }
 
 /// A builder for [`Country`](crate::types::Country).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct CountryBuilder {
     pub(crate) code2: ::std::option::Option<::std::string::String>,
@@ -90,5 +99,14 @@ impl CountryBuilder {
             code3: self.code3,
             name: self.name,
         }
+    }
+}
+impl ::std::fmt::Debug for CountryBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("CountryBuilder");
+        formatter.field("code2", &"*** Sensitive Data Redacted ***");
+        formatter.field("code3", &"*** Sensitive Data Redacted ***");
+        formatter.field("name", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

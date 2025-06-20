@@ -1255,6 +1255,8 @@ pub(crate) mod shape_dag_nodes;
 
 pub(crate) mod shape_data_catalog_encryption_settings;
 
+pub(crate) mod shape_data_quality_aggregated_metrics;
+
 pub(crate) mod shape_data_quality_analyzer_results;
 
 pub(crate) mod shape_data_quality_evaluation_run_additional_run_options;
@@ -2112,6 +2114,8 @@ pub(crate) mod shape_recipe_step;
 pub(crate) mod shape_reference_datasets_list;
 
 pub(crate) mod shape_retention_metrics;
+
+pub(crate) mod shape_rule_metrics_map;
 
 pub(crate) mod shape_run_identifier;
 

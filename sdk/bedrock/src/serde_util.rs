@@ -675,6 +675,15 @@ pub(crate) fn foundation_model_summary_correct_errors(
     builder
 }
 
+pub(crate) fn guardrail_content_filters_tier_correct_errors(
+    mut builder: crate::types::builders::GuardrailContentFiltersTierBuilder,
+) -> crate::types::builders::GuardrailContentFiltersTierBuilder {
+    if builder.tier_name.is_none() {
+        builder.tier_name = "no value was set".parse::<crate::types::GuardrailContentFiltersTierName>().ok()
+    }
+    builder
+}
+
 pub(crate) fn guardrail_summary_correct_errors(
     mut builder: crate::types::builders::GuardrailSummaryBuilder,
 ) -> crate::types::builders::GuardrailSummaryBuilder {
@@ -698,6 +707,15 @@ pub(crate) fn guardrail_summary_correct_errors(
     }
     if builder.updated_at.is_none() {
         builder.updated_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
+pub(crate) fn guardrail_topics_tier_correct_errors(
+    mut builder: crate::types::builders::GuardrailTopicsTierBuilder,
+) -> crate::types::builders::GuardrailTopicsTierBuilder {
+    if builder.tier_name.is_none() {
+        builder.tier_name = "no value was set".parse::<crate::types::GuardrailTopicsTierName>().ok()
     }
     builder
 }

@@ -22,13 +22,15 @@ pub struct AutocompleteAddressHighlights {
     pub sub_district: ::std::option::Option<::std::vec::Vec<crate::types::Highlight>>,
     /// <p>The name of the street results should be present in.</p>
     pub street: ::std::option::Option<::std::vec::Vec<crate::types::Highlight>>,
-    /// <p>Name of the block. Example: Sunny Mansion 203 block: 2 Chome</p>
+    /// <p>Name of the block.</p>
+    /// <p>Example: <code>Sunny Mansion 203 block: 2 Chome</code></p>
     pub block: ::std::option::Option<::std::vec::Vec<crate::types::Highlight>>,
-    /// <p>Name of sub-block. Example Sunny Mansion 203 sub-block: 4</p>
+    /// <p>Name of sub-block.</p>
+    /// <p>Example: <code>Sunny Mansion 203 sub-block: 4</code></p>
     pub sub_block: ::std::option::Option<::std::vec::Vec<crate::types::Highlight>>,
     /// <p>Name of the streets in the intersection. For example: e.g. \["Friedrichstraße","Unter den Linden"\]</p>
     pub intersection: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<crate::types::Highlight>>>,
-    /// <p>An alphanumeric string included in a postal address to facilitate mail sorting, such as post code, postcode, or ZIP code for which the result should posses.</p>
+    /// <p>An alphanumeric string included in a postal address to facilitate mail sorting, such as post code, postcode, or ZIP code for which the result should possess.</p>
     pub postal_code: ::std::option::Option<::std::vec::Vec<crate::types::Highlight>>,
     /// <p>The house number or address results should have.</p>
     pub address_number: ::std::option::Option<::std::vec::Vec<crate::types::Highlight>>,
@@ -80,13 +82,15 @@ impl AutocompleteAddressHighlights {
     pub fn street(&self) -> &[crate::types::Highlight] {
         self.street.as_deref().unwrap_or_default()
     }
-    /// <p>Name of the block. Example: Sunny Mansion 203 block: 2 Chome</p>
+    /// <p>Name of the block.</p>
+    /// <p>Example: <code>Sunny Mansion 203 block: 2 Chome</code></p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.block.is_none()`.
     pub fn block(&self) -> &[crate::types::Highlight] {
         self.block.as_deref().unwrap_or_default()
     }
-    /// <p>Name of sub-block. Example Sunny Mansion 203 sub-block: 4</p>
+    /// <p>Name of sub-block.</p>
+    /// <p>Example: <code>Sunny Mansion 203 sub-block: 4</code></p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.sub_block.is_none()`.
     pub fn sub_block(&self) -> &[crate::types::Highlight] {
@@ -98,7 +102,7 @@ impl AutocompleteAddressHighlights {
     pub fn intersection(&self) -> &[::std::vec::Vec<crate::types::Highlight>] {
         self.intersection.as_deref().unwrap_or_default()
     }
-    /// <p>An alphanumeric string included in a postal address to facilitate mail sorting, such as post code, postcode, or ZIP code for which the result should posses.</p>
+    /// <p>An alphanumeric string included in a postal address to facilitate mail sorting, such as post code, postcode, or ZIP code for which the result should possess.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.postal_code.is_none()`.
     pub fn postal_code(&self) -> &[crate::types::Highlight] {
@@ -296,19 +300,22 @@ impl AutocompleteAddressHighlightsBuilder {
     ///
     /// To override the contents of this collection use [`set_block`](Self::set_block).
     ///
-    /// <p>Name of the block. Example: Sunny Mansion 203 block: 2 Chome</p>
+    /// <p>Name of the block.</p>
+    /// <p>Example: <code>Sunny Mansion 203 block: 2 Chome</code></p>
     pub fn block(mut self, input: crate::types::Highlight) -> Self {
         let mut v = self.block.unwrap_or_default();
         v.push(input);
         self.block = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Name of the block. Example: Sunny Mansion 203 block: 2 Chome</p>
+    /// <p>Name of the block.</p>
+    /// <p>Example: <code>Sunny Mansion 203 block: 2 Chome</code></p>
     pub fn set_block(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Highlight>>) -> Self {
         self.block = input;
         self
     }
-    /// <p>Name of the block. Example: Sunny Mansion 203 block: 2 Chome</p>
+    /// <p>Name of the block.</p>
+    /// <p>Example: <code>Sunny Mansion 203 block: 2 Chome</code></p>
     pub fn get_block(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Highlight>> {
         &self.block
     }
@@ -316,19 +323,22 @@ impl AutocompleteAddressHighlightsBuilder {
     ///
     /// To override the contents of this collection use [`set_sub_block`](Self::set_sub_block).
     ///
-    /// <p>Name of sub-block. Example Sunny Mansion 203 sub-block: 4</p>
+    /// <p>Name of sub-block.</p>
+    /// <p>Example: <code>Sunny Mansion 203 sub-block: 4</code></p>
     pub fn sub_block(mut self, input: crate::types::Highlight) -> Self {
         let mut v = self.sub_block.unwrap_or_default();
         v.push(input);
         self.sub_block = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Name of sub-block. Example Sunny Mansion 203 sub-block: 4</p>
+    /// <p>Name of sub-block.</p>
+    /// <p>Example: <code>Sunny Mansion 203 sub-block: 4</code></p>
     pub fn set_sub_block(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Highlight>>) -> Self {
         self.sub_block = input;
         self
     }
-    /// <p>Name of sub-block. Example Sunny Mansion 203 sub-block: 4</p>
+    /// <p>Name of sub-block.</p>
+    /// <p>Example: <code>Sunny Mansion 203 sub-block: 4</code></p>
     pub fn get_sub_block(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Highlight>> {
         &self.sub_block
     }
@@ -356,19 +366,19 @@ impl AutocompleteAddressHighlightsBuilder {
     ///
     /// To override the contents of this collection use [`set_postal_code`](Self::set_postal_code).
     ///
-    /// <p>An alphanumeric string included in a postal address to facilitate mail sorting, such as post code, postcode, or ZIP code for which the result should posses.</p>
+    /// <p>An alphanumeric string included in a postal address to facilitate mail sorting, such as post code, postcode, or ZIP code for which the result should possess.</p>
     pub fn postal_code(mut self, input: crate::types::Highlight) -> Self {
         let mut v = self.postal_code.unwrap_or_default();
         v.push(input);
         self.postal_code = ::std::option::Option::Some(v);
         self
     }
-    /// <p>An alphanumeric string included in a postal address to facilitate mail sorting, such as post code, postcode, or ZIP code for which the result should posses.</p>
+    /// <p>An alphanumeric string included in a postal address to facilitate mail sorting, such as post code, postcode, or ZIP code for which the result should possess.</p>
     pub fn set_postal_code(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Highlight>>) -> Self {
         self.postal_code = input;
         self
     }
-    /// <p>An alphanumeric string included in a postal address to facilitate mail sorting, such as post code, postcode, or ZIP code for which the result should posses.</p>
+    /// <p>An alphanumeric string included in a postal address to facilitate mail sorting, such as post code, postcode, or ZIP code for which the result should possess.</p>
     pub fn get_postal_code(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Highlight>> {
         &self.postal_code
     }

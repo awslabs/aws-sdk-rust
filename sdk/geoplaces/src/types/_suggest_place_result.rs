@@ -110,11 +110,11 @@ impl SuggestPlaceResult {
 impl ::std::fmt::Debug for SuggestPlaceResult {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("SuggestPlaceResult");
-        formatter.field("place_id", &self.place_id);
-        formatter.field("place_type", &self.place_type);
+        formatter.field("place_id", &"*** Sensitive Data Redacted ***");
+        formatter.field("place_type", &"*** Sensitive Data Redacted ***");
         formatter.field("address", &self.address);
         formatter.field("position", &"*** Sensitive Data Redacted ***");
-        formatter.field("distance", &self.distance);
+        formatter.field("distance", &"*** Sensitive Data Redacted ***");
         formatter.field("map_view", &"*** Sensitive Data Redacted ***");
         formatter.field("categories", &self.categories);
         formatter.field("food_types", &self.food_types);
@@ -122,7 +122,7 @@ impl ::std::fmt::Debug for SuggestPlaceResult {
         formatter.field("access_points", &self.access_points);
         formatter.field("access_restrictions", &self.access_restrictions);
         formatter.field("time_zone", &self.time_zone);
-        formatter.field("political_view", &self.political_view);
+        formatter.field("political_view", &"*** Sensitive Data Redacted ***");
         formatter.field("phonemes", &self.phonemes);
         formatter.finish()
     }
@@ -418,11 +418,11 @@ impl SuggestPlaceResultBuilder {
 impl ::std::fmt::Debug for SuggestPlaceResultBuilder {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("SuggestPlaceResultBuilder");
-        formatter.field("place_id", &self.place_id);
-        formatter.field("place_type", &self.place_type);
+        formatter.field("place_id", &"*** Sensitive Data Redacted ***");
+        formatter.field("place_type", &"*** Sensitive Data Redacted ***");
         formatter.field("address", &self.address);
         formatter.field("position", &"*** Sensitive Data Redacted ***");
-        formatter.field("distance", &self.distance);
+        formatter.field("distance", &"*** Sensitive Data Redacted ***");
         formatter.field("map_view", &"*** Sensitive Data Redacted ***");
         formatter.field("categories", &self.categories);
         formatter.field("food_types", &self.food_types);
@@ -430,7 +430,7 @@ impl ::std::fmt::Debug for SuggestPlaceResultBuilder {
         formatter.field("access_points", &self.access_points);
         formatter.field("access_restrictions", &self.access_restrictions);
         formatter.field("time_zone", &self.time_zone);
-        formatter.field("political_view", &self.political_view);
+        formatter.field("political_view", &"*** Sensitive Data Redacted ***");
         formatter.field("phonemes", &self.phonemes);
         formatter.finish()
     }

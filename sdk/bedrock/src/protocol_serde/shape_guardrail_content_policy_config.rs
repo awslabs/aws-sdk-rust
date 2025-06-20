@@ -15,5 +15,11 @@ pub fn ser_guardrail_content_policy_config(
         }
         array_1.finish();
     }
+    if let Some(var_4) = &input.tier_config {
+        #[allow(unused_mut)]
+        let mut object_5 = object.key("tierConfig").start_object();
+        crate::protocol_serde::shape_guardrail_content_filters_tier_config::ser_guardrail_content_filters_tier_config(&mut object_5, var_4)?;
+        object_5.finish();
+    }
     Ok(())
 }

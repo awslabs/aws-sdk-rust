@@ -19,6 +19,8 @@
 ///     OsFamily::WindowsServer2019Full => { /* ... */ },
 ///     OsFamily::WindowsServer2022Core => { /* ... */ },
 ///     OsFamily::WindowsServer2022Full => { /* ... */ },
+///     OsFamily::WindowsServer2025Core => { /* ... */ },
+///     OsFamily::WindowsServer2025Full => { /* ... */ },
 ///     OsFamily::WindowsServer20H2Core => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -63,6 +65,10 @@ pub enum OsFamily {
     #[allow(missing_docs)] // documentation missing in model
     WindowsServer2022Full,
     #[allow(missing_docs)] // documentation missing in model
+    WindowsServer2025Core,
+    #[allow(missing_docs)] // documentation missing in model
+    WindowsServer2025Full,
+    #[allow(missing_docs)] // documentation missing in model
     WindowsServer20H2Core,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
@@ -78,6 +84,8 @@ impl ::std::convert::From<&str> for OsFamily {
             "WINDOWS_SERVER_2019_FULL" => OsFamily::WindowsServer2019Full,
             "WINDOWS_SERVER_2022_CORE" => OsFamily::WindowsServer2022Core,
             "WINDOWS_SERVER_2022_FULL" => OsFamily::WindowsServer2022Full,
+            "WINDOWS_SERVER_2025_CORE" => OsFamily::WindowsServer2025Core,
+            "WINDOWS_SERVER_2025_FULL" => OsFamily::WindowsServer2025Full,
             "WINDOWS_SERVER_20H2_CORE" => OsFamily::WindowsServer20H2Core,
             other => OsFamily::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -101,6 +109,8 @@ impl OsFamily {
             OsFamily::WindowsServer2019Full => "WINDOWS_SERVER_2019_FULL",
             OsFamily::WindowsServer2022Core => "WINDOWS_SERVER_2022_CORE",
             OsFamily::WindowsServer2022Full => "WINDOWS_SERVER_2022_FULL",
+            OsFamily::WindowsServer2025Core => "WINDOWS_SERVER_2025_CORE",
+            OsFamily::WindowsServer2025Full => "WINDOWS_SERVER_2025_FULL",
             OsFamily::WindowsServer20H2Core => "WINDOWS_SERVER_20H2_CORE",
             OsFamily::Unknown(value) => value.as_str(),
         }
@@ -115,6 +125,8 @@ impl OsFamily {
             "WINDOWS_SERVER_2019_FULL",
             "WINDOWS_SERVER_2022_CORE",
             "WINDOWS_SERVER_2022_FULL",
+            "WINDOWS_SERVER_2025_CORE",
+            "WINDOWS_SERVER_2025_FULL",
             "WINDOWS_SERVER_20H2_CORE",
         ]
     }
@@ -146,6 +158,8 @@ impl ::std::fmt::Display for OsFamily {
             OsFamily::WindowsServer2019Full => write!(f, "WINDOWS_SERVER_2019_FULL"),
             OsFamily::WindowsServer2022Core => write!(f, "WINDOWS_SERVER_2022_CORE"),
             OsFamily::WindowsServer2022Full => write!(f, "WINDOWS_SERVER_2022_FULL"),
+            OsFamily::WindowsServer2025Core => write!(f, "WINDOWS_SERVER_2025_CORE"),
+            OsFamily::WindowsServer2025Full => write!(f, "WINDOWS_SERVER_2025_FULL"),
             OsFamily::WindowsServer20H2Core => write!(f, "WINDOWS_SERVER_20H2_CORE"),
             OsFamily::Unknown(value) => write!(f, "{}", value),
         }

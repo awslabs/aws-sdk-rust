@@ -13,6 +13,8 @@
 /// # let geocodeadditionalfeature = unimplemented!();
 /// match geocodeadditionalfeature {
 ///     GeocodeAdditionalFeature::Access => { /* ... */ },
+///     GeocodeAdditionalFeature::Intersections => { /* ... */ },
+///     GeocodeAdditionalFeature::SecondaryAddresses => { /* ... */ },
 ///     GeocodeAdditionalFeature::TimeZone => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -45,6 +47,10 @@ pub enum GeocodeAdditionalFeature {
     #[allow(missing_docs)] // documentation missing in model
     Access,
     #[allow(missing_docs)] // documentation missing in model
+    Intersections,
+    #[allow(missing_docs)] // documentation missing in model
+    SecondaryAddresses,
+    #[allow(missing_docs)] // documentation missing in model
     TimeZone,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
@@ -54,6 +60,8 @@ impl ::std::convert::From<&str> for GeocodeAdditionalFeature {
     fn from(s: &str) -> Self {
         match s {
             "Access" => GeocodeAdditionalFeature::Access,
+            "Intersections" => GeocodeAdditionalFeature::Intersections,
+            "SecondaryAddresses" => GeocodeAdditionalFeature::SecondaryAddresses,
             "TimeZone" => GeocodeAdditionalFeature::TimeZone,
             other => GeocodeAdditionalFeature::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -71,13 +79,15 @@ impl GeocodeAdditionalFeature {
     pub fn as_str(&self) -> &str {
         match self {
             GeocodeAdditionalFeature::Access => "Access",
+            GeocodeAdditionalFeature::Intersections => "Intersections",
+            GeocodeAdditionalFeature::SecondaryAddresses => "SecondaryAddresses",
             GeocodeAdditionalFeature::TimeZone => "TimeZone",
             GeocodeAdditionalFeature::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["Access", "TimeZone"]
+        &["Access", "Intersections", "SecondaryAddresses", "TimeZone"]
     }
 }
 impl ::std::convert::AsRef<str> for GeocodeAdditionalFeature {
@@ -101,6 +111,8 @@ impl ::std::fmt::Display for GeocodeAdditionalFeature {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             GeocodeAdditionalFeature::Access => write!(f, "Access"),
+            GeocodeAdditionalFeature::Intersections => write!(f, "Intersections"),
+            GeocodeAdditionalFeature::SecondaryAddresses => write!(f, "SecondaryAddresses"),
             GeocodeAdditionalFeature::TimeZone => write!(f, "TimeZone"),
             GeocodeAdditionalFeature::Unknown(value) => write!(f, "{}", value),
         }

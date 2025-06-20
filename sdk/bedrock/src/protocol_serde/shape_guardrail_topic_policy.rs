@@ -17,6 +17,9 @@ where
                         "topics" => {
                             builder = builder.set_topics(crate::protocol_serde::shape_guardrail_topics::de_guardrail_topics(tokens)?);
                         }
+                        "tier" => {
+                            builder = builder.set_tier(crate::protocol_serde::shape_guardrail_topics_tier::de_guardrail_topics_tier(tokens)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

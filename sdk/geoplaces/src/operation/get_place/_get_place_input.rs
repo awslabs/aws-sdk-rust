@@ -11,7 +11,9 @@ pub struct GetPlaceInput {
     pub language: ::std::option::Option<::std::string::String>,
     /// <p>The alpha-2 or alpha-3 character code for the political view of a country. The political view applies to the results of the request to represent unresolved territorial claims through the point of view of the specified country.</p>
     pub political_view: ::std::option::Option<::std::string::String>,
-    /// <p>Indicates if the results will be stored. Defaults to <code>SingleUse</code>, if left empty.</p>
+    /// <p>Indicates if the results will be stored. Defaults to <code>SingleUse</code>, if left empty.</p><note>
+    /// <p>Storing the response of an GetPlace query is required to comply with service terms, but charged at a higher cost per request. Please review the <a href="https://aws.amazon.com/location/sla/">user agreement</a> and <a href="https://aws.amazon.com/location/pricing/">service pricing structure</a> to determine the correct setting for your use case.</p>
+    /// </note>
     pub intended_use: ::std::option::Option<crate::types::GetPlaceIntendedUse>,
     /// <p>Optional: The API key to be used for authorization. Either an API key or valid SigV4 signature must be provided when making a request.</p>
     pub key: ::std::option::Option<::std::string::String>,
@@ -35,7 +37,9 @@ impl GetPlaceInput {
     pub fn political_view(&self) -> ::std::option::Option<&str> {
         self.political_view.as_deref()
     }
-    /// <p>Indicates if the results will be stored. Defaults to <code>SingleUse</code>, if left empty.</p>
+    /// <p>Indicates if the results will be stored. Defaults to <code>SingleUse</code>, if left empty.</p><note>
+    /// <p>Storing the response of an GetPlace query is required to comply with service terms, but charged at a higher cost per request. Please review the <a href="https://aws.amazon.com/location/sla/">user agreement</a> and <a href="https://aws.amazon.com/location/pricing/">service pricing structure</a> to determine the correct setting for your use case.</p>
+    /// </note>
     pub fn intended_use(&self) -> ::std::option::Option<&crate::types::GetPlaceIntendedUse> {
         self.intended_use.as_ref()
     }
@@ -50,7 +54,7 @@ impl ::std::fmt::Debug for GetPlaceInput {
         formatter.field("place_id", &"*** Sensitive Data Redacted ***");
         formatter.field("additional_features", &self.additional_features);
         formatter.field("language", &self.language);
-        formatter.field("political_view", &self.political_view);
+        formatter.field("political_view", &"*** Sensitive Data Redacted ***");
         formatter.field("intended_use", &self.intended_use);
         formatter.field("key", &"*** Sensitive Data Redacted ***");
         formatter.finish()
@@ -138,17 +142,23 @@ impl GetPlaceInputBuilder {
     pub fn get_political_view(&self) -> &::std::option::Option<::std::string::String> {
         &self.political_view
     }
-    /// <p>Indicates if the results will be stored. Defaults to <code>SingleUse</code>, if left empty.</p>
+    /// <p>Indicates if the results will be stored. Defaults to <code>SingleUse</code>, if left empty.</p><note>
+    /// <p>Storing the response of an GetPlace query is required to comply with service terms, but charged at a higher cost per request. Please review the <a href="https://aws.amazon.com/location/sla/">user agreement</a> and <a href="https://aws.amazon.com/location/pricing/">service pricing structure</a> to determine the correct setting for your use case.</p>
+    /// </note>
     pub fn intended_use(mut self, input: crate::types::GetPlaceIntendedUse) -> Self {
         self.intended_use = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Indicates if the results will be stored. Defaults to <code>SingleUse</code>, if left empty.</p>
+    /// <p>Indicates if the results will be stored. Defaults to <code>SingleUse</code>, if left empty.</p><note>
+    /// <p>Storing the response of an GetPlace query is required to comply with service terms, but charged at a higher cost per request. Please review the <a href="https://aws.amazon.com/location/sla/">user agreement</a> and <a href="https://aws.amazon.com/location/pricing/">service pricing structure</a> to determine the correct setting for your use case.</p>
+    /// </note>
     pub fn set_intended_use(mut self, input: ::std::option::Option<crate::types::GetPlaceIntendedUse>) -> Self {
         self.intended_use = input;
         self
     }
-    /// <p>Indicates if the results will be stored. Defaults to <code>SingleUse</code>, if left empty.</p>
+    /// <p>Indicates if the results will be stored. Defaults to <code>SingleUse</code>, if left empty.</p><note>
+    /// <p>Storing the response of an GetPlace query is required to comply with service terms, but charged at a higher cost per request. Please review the <a href="https://aws.amazon.com/location/sla/">user agreement</a> and <a href="https://aws.amazon.com/location/pricing/">service pricing structure</a> to determine the correct setting for your use case.</p>
+    /// </note>
     pub fn get_intended_use(&self) -> &::std::option::Option<crate::types::GetPlaceIntendedUse> {
         &self.intended_use
     }
@@ -184,7 +194,7 @@ impl ::std::fmt::Debug for GetPlaceInputBuilder {
         formatter.field("place_id", &"*** Sensitive Data Redacted ***");
         formatter.field("additional_features", &self.additional_features);
         formatter.field("language", &self.language);
-        formatter.field("political_view", &self.political_view);
+        formatter.field("political_view", &"*** Sensitive Data Redacted ***");
         formatter.field("intended_use", &self.intended_use);
         formatter.field("key", &"*** Sensitive Data Redacted ***");
         formatter.finish()

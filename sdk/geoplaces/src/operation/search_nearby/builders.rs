@@ -22,7 +22,7 @@ impl crate::operation::search_nearby::builders::SearchNearbyInputBuilder {
 }
 /// Fluent builder constructing a request to `SearchNearby`.
 ///
-/// <p>Search nearby a specified location.</p>
+/// <p><code>SearchNearby</code> queries for points of interest within a radius from a central coordinates, returning place results with optional filters such as categories, business chains, food types and more. The API returns details such as a place name, address, phone, category, food type, contact, opening hours. Also, the API can return phonemes, time zones and more based on requested parameters.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct SearchNearbyFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -113,31 +113,37 @@ impl SearchNearbyFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_query_position`](Self::set_query_position).
     ///
-    /// <p>The position, in <code>\[lng, lat\]</code> for which you are querying nearby resultsfor. Results closer to the position will be ranked higher then results further away from the position</p>
+    /// <p>The position, in <code>\[lng, lat\]</code> for which you are querying nearby results for. Results closer to the position will be ranked higher then results further away from the position</p>
     pub fn query_position(mut self, input: f64) -> Self {
         self.inner = self.inner.query_position(input);
         self
     }
-    /// <p>The position, in <code>\[lng, lat\]</code> for which you are querying nearby resultsfor. Results closer to the position will be ranked higher then results further away from the position</p>
+    /// <p>The position, in <code>\[lng, lat\]</code> for which you are querying nearby results for. Results closer to the position will be ranked higher then results further away from the position</p>
     pub fn set_query_position(mut self, input: ::std::option::Option<::std::vec::Vec<f64>>) -> Self {
         self.inner = self.inner.set_query_position(input);
         self
     }
-    /// <p>The position, in <code>\[lng, lat\]</code> for which you are querying nearby resultsfor. Results closer to the position will be ranked higher then results further away from the position</p>
+    /// <p>The position, in <code>\[lng, lat\]</code> for which you are querying nearby results for. Results closer to the position will be ranked higher then results further away from the position</p>
     pub fn get_query_position(&self) -> &::std::option::Option<::std::vec::Vec<f64>> {
         self.inner.get_query_position()
     }
-    /// <p>The maximum distance in meters from the QueryPosition from which a result will be returned.</p>
+    /// <p>The maximum distance in meters from the QueryPosition from which a result will be returned.</p><note>
+    /// <p>The fields <code>QueryText</code>, and <code>QueryID</code> are mutually exclusive.</p>
+    /// </note>
     pub fn query_radius(mut self, input: i64) -> Self {
         self.inner = self.inner.query_radius(input);
         self
     }
-    /// <p>The maximum distance in meters from the QueryPosition from which a result will be returned.</p>
+    /// <p>The maximum distance in meters from the QueryPosition from which a result will be returned.</p><note>
+    /// <p>The fields <code>QueryText</code>, and <code>QueryID</code> are mutually exclusive.</p>
+    /// </note>
     pub fn set_query_radius(mut self, input: ::std::option::Option<i64>) -> Self {
         self.inner = self.inner.set_query_radius(input);
         self
     }
-    /// <p>The maximum distance in meters from the QueryPosition from which a result will be returned.</p>
+    /// <p>The maximum distance in meters from the QueryPosition from which a result will be returned.</p><note>
+    /// <p>The fields <code>QueryText</code>, and <code>QueryID</code> are mutually exclusive.</p>
+    /// </note>
     pub fn get_query_radius(&self) -> &::std::option::Option<i64> {
         self.inner.get_query_radius()
     }
@@ -155,17 +161,17 @@ impl SearchNearbyFluentBuilder {
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_results()
     }
-    /// <p>A structure which contains a set of inclusion/exclusion properties that results must posses in order to be returned as a result.</p>
+    /// <p>A structure which contains a set of inclusion/exclusion properties that results must possess in order to be returned as a result.</p>
     pub fn filter(mut self, input: crate::types::SearchNearbyFilter) -> Self {
         self.inner = self.inner.filter(input);
         self
     }
-    /// <p>A structure which contains a set of inclusion/exclusion properties that results must posses in order to be returned as a result.</p>
+    /// <p>A structure which contains a set of inclusion/exclusion properties that results must possess in order to be returned as a result.</p>
     pub fn set_filter(mut self, input: ::std::option::Option<crate::types::SearchNearbyFilter>) -> Self {
         self.inner = self.inner.set_filter(input);
         self
     }
-    /// <p>A structure which contains a set of inclusion/exclusion properties that results must posses in order to be returned as a result.</p>
+    /// <p>A structure which contains a set of inclusion/exclusion properties that results must possess in order to be returned as a result.</p>
     pub fn get_filter(&self) -> &::std::option::Option<crate::types::SearchNearbyFilter> {
         self.inner.get_filter()
     }
@@ -216,17 +222,23 @@ impl SearchNearbyFluentBuilder {
     pub fn get_political_view(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_political_view()
     }
-    /// <p>Indicates if the results will be stored. Defaults to <code>SingleUse</code>, if left empty.</p>
+    /// <p>Indicates if the results will be stored. Defaults to <code>SingleUse</code>, if left empty.</p><note>
+    /// <p>Storing the response of an SearchNearby query is required to comply with service terms, but charged at a higher cost per request. Please review the <a href="https://aws.amazon.com/location/sla/">user agreement</a> and <a href="https://aws.amazon.com/location/pricing/">service pricing structure</a> to determine the correct setting for your use case.</p>
+    /// </note>
     pub fn intended_use(mut self, input: crate::types::SearchNearbyIntendedUse) -> Self {
         self.inner = self.inner.intended_use(input);
         self
     }
-    /// <p>Indicates if the results will be stored. Defaults to <code>SingleUse</code>, if left empty.</p>
+    /// <p>Indicates if the results will be stored. Defaults to <code>SingleUse</code>, if left empty.</p><note>
+    /// <p>Storing the response of an SearchNearby query is required to comply with service terms, but charged at a higher cost per request. Please review the <a href="https://aws.amazon.com/location/sla/">user agreement</a> and <a href="https://aws.amazon.com/location/pricing/">service pricing structure</a> to determine the correct setting for your use case.</p>
+    /// </note>
     pub fn set_intended_use(mut self, input: ::std::option::Option<crate::types::SearchNearbyIntendedUse>) -> Self {
         self.inner = self.inner.set_intended_use(input);
         self
     }
-    /// <p>Indicates if the results will be stored. Defaults to <code>SingleUse</code>, if left empty.</p>
+    /// <p>Indicates if the results will be stored. Defaults to <code>SingleUse</code>, if left empty.</p><note>
+    /// <p>Storing the response of an SearchNearby query is required to comply with service terms, but charged at a higher cost per request. Please review the <a href="https://aws.amazon.com/location/sla/">user agreement</a> and <a href="https://aws.amazon.com/location/pricing/">service pricing structure</a> to determine the correct setting for your use case.</p>
+    /// </note>
     pub fn get_intended_use(&self) -> &::std::option::Option<crate::types::SearchNearbyIntendedUse> {
         self.inner.get_intended_use()
     }

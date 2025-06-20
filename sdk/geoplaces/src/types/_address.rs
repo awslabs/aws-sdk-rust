@@ -2,7 +2,7 @@
 
 /// <p>The place address.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct Address {
     /// <p>Assembled address value built out of the address components, according to the regional postal rules. This is the correctly formatted address.</p>
     pub label: ::std::option::Option<::std::string::String>,
@@ -13,7 +13,7 @@ pub struct Address {
     pub region: ::std::option::Option<crate::types::Region>,
     /// <p>The sub-region or county for which results should be present in.</p>
     pub sub_region: ::std::option::Option<crate::types::SubRegion>,
-    /// <p>The locality or city of the address.</p>
+    /// <p>The city or locality of the address.</p>
     /// <p>Example: <code>Vancouver</code>.</p>
     pub locality: ::std::option::Option<::std::string::String>,
     /// <p>The district or division of a locality associated with this address.</p>
@@ -21,7 +21,7 @@ pub struct Address {
     /// <p>A subdivision of a district.</p>
     /// <p>Example: <code>Minden-Lübbecke</code>.</p>
     pub sub_district: ::std::option::Option<::std::string::String>,
-    /// <p>An alphanumeric string included in a postal address to facilitate mail sorting, such as post code, postcode, or ZIP code, for which the result should posses.</p>
+    /// <p>An alphanumeric string included in a postal address to facilitate mail sorting, such as post code, postcode, or ZIP code, for which the result should possess.</p>
     pub postal_code: ::std::option::Option<::std::string::String>,
     /// <p>Name of the block.</p>
     /// <p>Example: <code>Sunny Mansion 203 block: 2 Chome</code></p>
@@ -41,6 +41,8 @@ pub struct Address {
     pub address_number: ::std::option::Option<::std::string::String>,
     /// <p>The name of the building at the address.</p>
     pub building: ::std::option::Option<::std::string::String>,
+    /// <p>Components that correspond to secondary identifiers on an Address. Secondary address components include information such as Suite or Unit Number, Building, or Floor.</p>
+    pub secondary_address_components: ::std::option::Option<::std::vec::Vec<crate::types::SecondaryAddressComponent>>,
 }
 impl Address {
     /// <p>Assembled address value built out of the address components, according to the regional postal rules. This is the correctly formatted address.</p>
@@ -60,7 +62,7 @@ impl Address {
     pub fn sub_region(&self) -> ::std::option::Option<&crate::types::SubRegion> {
         self.sub_region.as_ref()
     }
-    /// <p>The locality or city of the address.</p>
+    /// <p>The city or locality of the address.</p>
     /// <p>Example: <code>Vancouver</code>.</p>
     pub fn locality(&self) -> ::std::option::Option<&str> {
         self.locality.as_deref()
@@ -74,7 +76,7 @@ impl Address {
     pub fn sub_district(&self) -> ::std::option::Option<&str> {
         self.sub_district.as_deref()
     }
-    /// <p>An alphanumeric string included in a postal address to facilitate mail sorting, such as post code, postcode, or ZIP code, for which the result should posses.</p>
+    /// <p>An alphanumeric string included in a postal address to facilitate mail sorting, such as post code, postcode, or ZIP code, for which the result should possess.</p>
     pub fn postal_code(&self) -> ::std::option::Option<&str> {
         self.postal_code.as_deref()
     }
@@ -114,6 +116,34 @@ impl Address {
     pub fn building(&self) -> ::std::option::Option<&str> {
         self.building.as_deref()
     }
+    /// <p>Components that correspond to secondary identifiers on an Address. Secondary address components include information such as Suite or Unit Number, Building, or Floor.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.secondary_address_components.is_none()`.
+    pub fn secondary_address_components(&self) -> &[crate::types::SecondaryAddressComponent] {
+        self.secondary_address_components.as_deref().unwrap_or_default()
+    }
+}
+impl ::std::fmt::Debug for Address {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("Address");
+        formatter.field("label", &"*** Sensitive Data Redacted ***");
+        formatter.field("country", &self.country);
+        formatter.field("region", &self.region);
+        formatter.field("sub_region", &self.sub_region);
+        formatter.field("locality", &"*** Sensitive Data Redacted ***");
+        formatter.field("district", &"*** Sensitive Data Redacted ***");
+        formatter.field("sub_district", &"*** Sensitive Data Redacted ***");
+        formatter.field("postal_code", &"*** Sensitive Data Redacted ***");
+        formatter.field("block", &"*** Sensitive Data Redacted ***");
+        formatter.field("sub_block", &"*** Sensitive Data Redacted ***");
+        formatter.field("intersection", &self.intersection);
+        formatter.field("street", &"*** Sensitive Data Redacted ***");
+        formatter.field("street_components", &self.street_components);
+        formatter.field("address_number", &"*** Sensitive Data Redacted ***");
+        formatter.field("building", &"*** Sensitive Data Redacted ***");
+        formatter.field("secondary_address_components", &self.secondary_address_components);
+        formatter.finish()
+    }
 }
 impl Address {
     /// Creates a new builder-style object to manufacture [`Address`](crate::types::Address).
@@ -123,7 +153,7 @@ impl Address {
 }
 
 /// A builder for [`Address`](crate::types::Address).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct AddressBuilder {
     pub(crate) label: ::std::option::Option<::std::string::String>,
@@ -141,6 +171,7 @@ pub struct AddressBuilder {
     pub(crate) street_components: ::std::option::Option<::std::vec::Vec<crate::types::StreetComponents>>,
     pub(crate) address_number: ::std::option::Option<::std::string::String>,
     pub(crate) building: ::std::option::Option<::std::string::String>,
+    pub(crate) secondary_address_components: ::std::option::Option<::std::vec::Vec<crate::types::SecondaryAddressComponent>>,
 }
 impl AddressBuilder {
     /// <p>Assembled address value built out of the address components, according to the regional postal rules. This is the correctly formatted address.</p>
@@ -202,19 +233,19 @@ impl AddressBuilder {
     pub fn get_sub_region(&self) -> &::std::option::Option<crate::types::SubRegion> {
         &self.sub_region
     }
-    /// <p>The locality or city of the address.</p>
+    /// <p>The city or locality of the address.</p>
     /// <p>Example: <code>Vancouver</code>.</p>
     pub fn locality(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.locality = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The locality or city of the address.</p>
+    /// <p>The city or locality of the address.</p>
     /// <p>Example: <code>Vancouver</code>.</p>
     pub fn set_locality(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.locality = input;
         self
     }
-    /// <p>The locality or city of the address.</p>
+    /// <p>The city or locality of the address.</p>
     /// <p>Example: <code>Vancouver</code>.</p>
     pub fn get_locality(&self) -> &::std::option::Option<::std::string::String> {
         &self.locality
@@ -250,17 +281,17 @@ impl AddressBuilder {
     pub fn get_sub_district(&self) -> &::std::option::Option<::std::string::String> {
         &self.sub_district
     }
-    /// <p>An alphanumeric string included in a postal address to facilitate mail sorting, such as post code, postcode, or ZIP code, for which the result should posses.</p>
+    /// <p>An alphanumeric string included in a postal address to facilitate mail sorting, such as post code, postcode, or ZIP code, for which the result should possess.</p>
     pub fn postal_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.postal_code = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>An alphanumeric string included in a postal address to facilitate mail sorting, such as post code, postcode, or ZIP code, for which the result should posses.</p>
+    /// <p>An alphanumeric string included in a postal address to facilitate mail sorting, such as post code, postcode, or ZIP code, for which the result should possess.</p>
     pub fn set_postal_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.postal_code = input;
         self
     }
-    /// <p>An alphanumeric string included in a postal address to facilitate mail sorting, such as post code, postcode, or ZIP code, for which the result should posses.</p>
+    /// <p>An alphanumeric string included in a postal address to facilitate mail sorting, such as post code, postcode, or ZIP code, for which the result should possess.</p>
     pub fn get_postal_code(&self) -> &::std::option::Option<::std::string::String> {
         &self.postal_code
     }
@@ -386,6 +417,29 @@ impl AddressBuilder {
     pub fn get_building(&self) -> &::std::option::Option<::std::string::String> {
         &self.building
     }
+    /// Appends an item to `secondary_address_components`.
+    ///
+    /// To override the contents of this collection use [`set_secondary_address_components`](Self::set_secondary_address_components).
+    ///
+    /// <p>Components that correspond to secondary identifiers on an Address. Secondary address components include information such as Suite or Unit Number, Building, or Floor.</p>
+    pub fn secondary_address_components(mut self, input: crate::types::SecondaryAddressComponent) -> Self {
+        let mut v = self.secondary_address_components.unwrap_or_default();
+        v.push(input);
+        self.secondary_address_components = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Components that correspond to secondary identifiers on an Address. Secondary address components include information such as Suite or Unit Number, Building, or Floor.</p>
+    pub fn set_secondary_address_components(
+        mut self,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::SecondaryAddressComponent>>,
+    ) -> Self {
+        self.secondary_address_components = input;
+        self
+    }
+    /// <p>Components that correspond to secondary identifiers on an Address. Secondary address components include information such as Suite or Unit Number, Building, or Floor.</p>
+    pub fn get_secondary_address_components(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SecondaryAddressComponent>> {
+        &self.secondary_address_components
+    }
     /// Consumes the builder and constructs a [`Address`](crate::types::Address).
     pub fn build(self) -> crate::types::Address {
         crate::types::Address {
@@ -404,6 +458,29 @@ impl AddressBuilder {
             street_components: self.street_components,
             address_number: self.address_number,
             building: self.building,
+            secondary_address_components: self.secondary_address_components,
         }
+    }
+}
+impl ::std::fmt::Debug for AddressBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("AddressBuilder");
+        formatter.field("label", &"*** Sensitive Data Redacted ***");
+        formatter.field("country", &self.country);
+        formatter.field("region", &self.region);
+        formatter.field("sub_region", &self.sub_region);
+        formatter.field("locality", &"*** Sensitive Data Redacted ***");
+        formatter.field("district", &"*** Sensitive Data Redacted ***");
+        formatter.field("sub_district", &"*** Sensitive Data Redacted ***");
+        formatter.field("postal_code", &"*** Sensitive Data Redacted ***");
+        formatter.field("block", &"*** Sensitive Data Redacted ***");
+        formatter.field("sub_block", &"*** Sensitive Data Redacted ***");
+        formatter.field("intersection", &self.intersection);
+        formatter.field("street", &"*** Sensitive Data Redacted ***");
+        formatter.field("street_components", &self.street_components);
+        formatter.field("address_number", &"*** Sensitive Data Redacted ***");
+        formatter.field("building", &"*** Sensitive Data Redacted ***");
+        formatter.field("secondary_address_components", &self.secondary_address_components);
+        formatter.finish()
     }
 }

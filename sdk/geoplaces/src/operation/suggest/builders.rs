@@ -22,7 +22,7 @@ impl crate::operation::suggest::builders::SuggestInputBuilder {
 }
 /// Fluent builder constructing a request to `Suggest`.
 ///
-/// <p>The <code>Suggest</code> operation finds addresses or place candidates based on incomplete or misspelled queries. You then select the best query to submit based on the returned results.</p>
+/// <p><code>Suggest</code> provides intelligent predictions or recommendations based on the user's input or context, such as relevant places, points of interest, query terms or search category. It is designed to help users find places or point of interests candidates or identify a follow on query based on incomplete or misspelled queries. It returns a list of possible matches or refinements that can be used to formulate a more accurate query. Users can select the most appropriate suggestion and use it for further searching. The API provides options for filtering results by location and other attributes, and allows for additional features like phonemes and timezones. The response includes refined query terms and detailed place information.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct SuggestFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -99,17 +99,23 @@ impl SuggestFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The free-form text query to match addresses against. This is usually a partially typed address from an end user in an address box or form.</p>
+    /// <p>The free-form text query to match addresses against. This is usually a partially typed address from an end user in an address box or form.</p><note>
+    /// <p>The fields <code>QueryText</code>, and <code>QueryID</code> are mutually exclusive.</p>
+    /// </note>
     pub fn query_text(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.query_text(input.into());
         self
     }
-    /// <p>The free-form text query to match addresses against. This is usually a partially typed address from an end user in an address box or form.</p>
+    /// <p>The free-form text query to match addresses against. This is usually a partially typed address from an end user in an address box or form.</p><note>
+    /// <p>The fields <code>QueryText</code>, and <code>QueryID</code> are mutually exclusive.</p>
+    /// </note>
     pub fn set_query_text(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_query_text(input);
         self
     }
-    /// <p>The free-form text query to match addresses against. This is usually a partially typed address from an end user in an address box or form.</p>
+    /// <p>The free-form text query to match addresses against. This is usually a partially typed address from an end user in an address box or form.</p><note>
+    /// <p>The fields <code>QueryText</code>, and <code>QueryID</code> are mutually exclusive.</p>
+    /// </note>
     pub fn get_query_text(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_query_text()
     }
@@ -166,17 +172,17 @@ impl SuggestFluentBuilder {
     pub fn get_bias_position(&self) -> &::std::option::Option<::std::vec::Vec<f64>> {
         self.inner.get_bias_position()
     }
-    /// <p>A structure which contains a set of inclusion/exclusion properties that results must posses in order to be returned as a result.</p>
+    /// <p>A structure which contains a set of inclusion/exclusion properties that results must possess in order to be returned as a result.</p>
     pub fn filter(mut self, input: crate::types::SuggestFilter) -> Self {
         self.inner = self.inner.filter(input);
         self
     }
-    /// <p>A structure which contains a set of inclusion/exclusion properties that results must posses in order to be returned as a result.</p>
+    /// <p>A structure which contains a set of inclusion/exclusion properties that results must possess in order to be returned as a result.</p>
     pub fn set_filter(mut self, input: ::std::option::Option<crate::types::SuggestFilter>) -> Self {
         self.inner = self.inner.set_filter(input);
         self
     }
-    /// <p>A structure which contains a set of inclusion/exclusion properties that results must posses in order to be returned as a result.</p>
+    /// <p>A structure which contains a set of inclusion/exclusion properties that results must possess in order to be returned as a result.</p>
     pub fn get_filter(&self) -> &::std::option::Option<crate::types::SuggestFilter> {
         self.inner.get_filter()
     }

@@ -22,7 +22,7 @@ impl crate::operation::reverse_geocode::builders::ReverseGeocodeInputBuilder {
 }
 /// Fluent builder constructing a request to `ReverseGeocode`.
 ///
-/// <p>The <code>ReverseGeocode</code> operation allows you to retrieve addresses and place information from coordinates.</p>
+/// <p><code>ReverseGeocode</code> converts geographic coordinates into a human-readable address or place. You can obtain address component, and other related information such as place type, category, street information. The Reverse Geocode API supports filtering to on place type so that you can refine result based on your need. Also, The Reverse Geocode API can also provide additional features such as time zone information and the inclusion of political views.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ReverseGeocodeFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -113,17 +113,17 @@ impl ReverseGeocodeFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_query_position`](Self::set_query_position).
     ///
-    /// <p>The position, in <code>\[lng, lat\]</code> for which you are querying nearby resultsfor. Results closer to the position will be ranked higher then results further away from the position</p>
+    /// <p>The position, in <code>\[lng, lat\]</code> for which you are querying nearby results for. Results closer to the position will be ranked higher then results further away from the position</p>
     pub fn query_position(mut self, input: f64) -> Self {
         self.inner = self.inner.query_position(input);
         self
     }
-    /// <p>The position, in <code>\[lng, lat\]</code> for which you are querying nearby resultsfor. Results closer to the position will be ranked higher then results further away from the position</p>
+    /// <p>The position, in <code>\[lng, lat\]</code> for which you are querying nearby results for. Results closer to the position will be ranked higher then results further away from the position</p>
     pub fn set_query_position(mut self, input: ::std::option::Option<::std::vec::Vec<f64>>) -> Self {
         self.inner = self.inner.set_query_position(input);
         self
     }
-    /// <p>The position, in <code>\[lng, lat\]</code> for which you are querying nearby resultsfor. Results closer to the position will be ranked higher then results further away from the position</p>
+    /// <p>The position, in <code>\[lng, lat\]</code> for which you are querying nearby results for. Results closer to the position will be ranked higher then results further away from the position</p>
     pub fn get_query_position(&self) -> &::std::option::Option<::std::vec::Vec<f64>> {
         self.inner.get_query_position()
     }
@@ -155,17 +155,17 @@ impl ReverseGeocodeFluentBuilder {
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_results()
     }
-    /// <p>A structure which contains a set of inclusion/exclusion properties that results must posses in order to be returned as a result.</p>
+    /// <p>A structure which contains a set of inclusion/exclusion properties that results must possess in order to be returned as a result.</p>
     pub fn filter(mut self, input: crate::types::ReverseGeocodeFilter) -> Self {
         self.inner = self.inner.filter(input);
         self
     }
-    /// <p>A structure which contains a set of inclusion/exclusion properties that results must posses in order to be returned as a result.</p>
+    /// <p>A structure which contains a set of inclusion/exclusion properties that results must possess in order to be returned as a result.</p>
     pub fn set_filter(mut self, input: ::std::option::Option<crate::types::ReverseGeocodeFilter>) -> Self {
         self.inner = self.inner.set_filter(input);
         self
     }
-    /// <p>A structure which contains a set of inclusion/exclusion properties that results must posses in order to be returned as a result.</p>
+    /// <p>A structure which contains a set of inclusion/exclusion properties that results must possess in order to be returned as a result.</p>
     pub fn get_filter(&self) -> &::std::option::Option<crate::types::ReverseGeocodeFilter> {
         self.inner.get_filter()
     }
@@ -216,17 +216,23 @@ impl ReverseGeocodeFluentBuilder {
     pub fn get_political_view(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_political_view()
     }
-    /// <p>Indicates if the results will be stored. Defaults to <code>SingleUse</code>, if left empty.</p>
+    /// <p>Indicates if the results will be stored. Defaults to <code>SingleUse</code>, if left empty.</p><note>
+    /// <p>Storing the response of an ReverseGeocode query is required to comply with service terms, but charged at a higher cost per request. Please review the <a href="https://aws.amazon.com/location/sla/">user agreement</a> and <a href="https://aws.amazon.com/location/pricing/">service pricing structure</a> to determine the correct setting for your use case.</p>
+    /// </note>
     pub fn intended_use(mut self, input: crate::types::ReverseGeocodeIntendedUse) -> Self {
         self.inner = self.inner.intended_use(input);
         self
     }
-    /// <p>Indicates if the results will be stored. Defaults to <code>SingleUse</code>, if left empty.</p>
+    /// <p>Indicates if the results will be stored. Defaults to <code>SingleUse</code>, if left empty.</p><note>
+    /// <p>Storing the response of an ReverseGeocode query is required to comply with service terms, but charged at a higher cost per request. Please review the <a href="https://aws.amazon.com/location/sla/">user agreement</a> and <a href="https://aws.amazon.com/location/pricing/">service pricing structure</a> to determine the correct setting for your use case.</p>
+    /// </note>
     pub fn set_intended_use(mut self, input: ::std::option::Option<crate::types::ReverseGeocodeIntendedUse>) -> Self {
         self.inner = self.inner.set_intended_use(input);
         self
     }
-    /// <p>Indicates if the results will be stored. Defaults to <code>SingleUse</code>, if left empty.</p>
+    /// <p>Indicates if the results will be stored. Defaults to <code>SingleUse</code>, if left empty.</p><note>
+    /// <p>Storing the response of an ReverseGeocode query is required to comply with service terms, but charged at a higher cost per request. Please review the <a href="https://aws.amazon.com/location/sla/">user agreement</a> and <a href="https://aws.amazon.com/location/pricing/">service pricing structure</a> to determine the correct setting for your use case.</p>
+    /// </note>
     pub fn get_intended_use(&self) -> &::std::option::Option<crate::types::ReverseGeocodeIntendedUse> {
         self.inner.get_intended_use()
     }

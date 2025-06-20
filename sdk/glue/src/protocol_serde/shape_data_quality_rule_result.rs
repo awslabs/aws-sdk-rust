@@ -53,6 +53,9 @@ where
                                     .transpose()?,
                             );
                         }
+                        "RuleMetrics" => {
+                            builder = builder.set_rule_metrics(crate::protocol_serde::shape_rule_metrics_map::de_rule_metrics_map(tokens)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

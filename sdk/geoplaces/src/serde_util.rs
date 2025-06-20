@@ -113,6 +113,19 @@ pub(crate) fn suggest_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn related_place_correct_errors(mut builder: crate::types::builders::RelatedPlaceBuilder) -> crate::types::builders::RelatedPlaceBuilder {
+    if builder.place_id.is_none() {
+        builder.place_id = Some(Default::default())
+    }
+    if builder.place_type.is_none() {
+        builder.place_type = "no value was set".parse::<crate::types::PlaceType>().ok()
+    }
+    if builder.title.is_none() {
+        builder.title = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn time_zone_correct_errors(mut builder: crate::types::builders::TimeZoneBuilder) -> crate::types::builders::TimeZoneBuilder {
     if builder.name.is_none() {
         builder.name = Some(Default::default())
@@ -250,6 +263,46 @@ pub(crate) fn validation_exception_field_correct_errors(
     }
     if builder.message.is_none() {
         builder.message = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn secondary_address_component_correct_errors(
+    mut builder: crate::types::builders::SecondaryAddressComponentBuilder,
+) -> crate::types::builders::SecondaryAddressComponentBuilder {
+    if builder.number.is_none() {
+        builder.number = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn intersection_correct_errors(mut builder: crate::types::builders::IntersectionBuilder) -> crate::types::builders::IntersectionBuilder {
+    if builder.place_id.is_none() {
+        builder.place_id = Some(Default::default())
+    }
+    if builder.title.is_none() {
+        builder.title = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn parsed_query_secondary_address_component_correct_errors(
+    mut builder: crate::types::builders::ParsedQuerySecondaryAddressComponentBuilder,
+) -> crate::types::builders::ParsedQuerySecondaryAddressComponentBuilder {
+    if builder.start_index.is_none() {
+        builder.start_index = Some(Default::default())
+    }
+    if builder.end_index.is_none() {
+        builder.end_index = Some(Default::default())
+    }
+    if builder.value.is_none() {
+        builder.value = Some(Default::default())
+    }
+    if builder.number.is_none() {
+        builder.number = Some(Default::default())
+    }
+    if builder.designator.is_none() {
+        builder.designator = Some(Default::default())
     }
     builder
 }

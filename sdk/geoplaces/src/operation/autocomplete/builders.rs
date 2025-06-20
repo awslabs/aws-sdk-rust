@@ -22,7 +22,7 @@ impl crate::operation::autocomplete::builders::AutocompleteInputBuilder {
 }
 /// Fluent builder constructing a request to `Autocomplete`.
 ///
-/// <p>The autocomplete operation speeds up and increases the accuracy of entering addresses by providing a list of address candidates matching a partially entered address. Results are sorted from most to least matching. Filtering and biasing can be used to increase the relevance of the results if additional search context is known</p>
+/// <p><code>Autocomplete</code> completes potential places and addresses as the user types, based on the partial input. The API enhances the efficiency and accuracy of address by completing query based on a few entered keystrokes. It helps you by completing partial queries with valid address completion. Also, the API supports the filtering of results based on geographic location, country, or specific place types, and can be tailored using optional parameters like language and political views.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AutocompleteFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +108,23 @@ impl AutocompleteFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The free-form text query to match addresses against. This is usually a partially typed address from an end user in an address box or form.</p>
+    /// <p>The free-form text query to match addresses against. This is usually a partially typed address from an end user in an address box or form.</p><note>
+    /// <p>The fields <code>QueryText</code>, and <code>QueryID</code> are mutually exclusive.</p>
+    /// </note>
     pub fn query_text(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.query_text(input.into());
         self
     }
-    /// <p>The free-form text query to match addresses against. This is usually a partially typed address from an end user in an address box or form.</p>
+    /// <p>The free-form text query to match addresses against. This is usually a partially typed address from an end user in an address box or form.</p><note>
+    /// <p>The fields <code>QueryText</code>, and <code>QueryID</code> are mutually exclusive.</p>
+    /// </note>
     pub fn set_query_text(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_query_text(input);
         self
     }
-    /// <p>The free-form text query to match addresses against. This is usually a partially typed address from an end user in an address box or form.</p>
+    /// <p>The free-form text query to match addresses against. This is usually a partially typed address from an end user in an address box or form.</p><note>
+    /// <p>The fields <code>QueryText</code>, and <code>QueryID</code> are mutually exclusive.</p>
+    /// </note>
     pub fn get_query_text(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_query_text()
     }
@@ -161,31 +167,31 @@ impl AutocompleteFluentBuilder {
     pub fn get_bias_position(&self) -> &::std::option::Option<::std::vec::Vec<f64>> {
         self.inner.get_bias_position()
     }
-    /// <p>A structure which contains a set of inclusion/exclusion properties that results must posses in order to be returned as a result.</p>
+    /// <p>A structure which contains a set of inclusion/exclusion properties that results must possess in order to be returned as a result.</p>
     pub fn filter(mut self, input: crate::types::AutocompleteFilter) -> Self {
         self.inner = self.inner.filter(input);
         self
     }
-    /// <p>A structure which contains a set of inclusion/exclusion properties that results must posses in order to be returned as a result.</p>
+    /// <p>A structure which contains a set of inclusion/exclusion properties that results must possess in order to be returned as a result.</p>
     pub fn set_filter(mut self, input: ::std::option::Option<crate::types::AutocompleteFilter>) -> Self {
         self.inner = self.inner.set_filter(input);
         self
     }
-    /// <p>A structure which contains a set of inclusion/exclusion properties that results must posses in order to be returned as a result.</p>
+    /// <p>A structure which contains a set of inclusion/exclusion properties that results must possess in order to be returned as a result.</p>
     pub fn get_filter(&self) -> &::std::option::Option<crate::types::AutocompleteFilter> {
         self.inner.get_filter()
     }
-    /// <p>The <code>PostalCodeMode</code> affects how postal code results are returned. If a postal code spans multiple localities and this value is empty, partial district or locality information may be returned under a single postal code result entry. If it's populated with the value <code>cityLookup</code>, all cities in that postal code are returned.</p>
+    /// <p>The <code>PostalCodeMode</code> affects how postal code results are returned. If a postal code spans multiple localities and this value is empty, partial district or locality information may be returned under a single postal code result entry. If it's populated with the value <code>EnumerateSpannedLocalities</code>, all cities in that postal code are returned.</p>
     pub fn postal_code_mode(mut self, input: crate::types::PostalCodeMode) -> Self {
         self.inner = self.inner.postal_code_mode(input);
         self
     }
-    /// <p>The <code>PostalCodeMode</code> affects how postal code results are returned. If a postal code spans multiple localities and this value is empty, partial district or locality information may be returned under a single postal code result entry. If it's populated with the value <code>cityLookup</code>, all cities in that postal code are returned.</p>
+    /// <p>The <code>PostalCodeMode</code> affects how postal code results are returned. If a postal code spans multiple localities and this value is empty, partial district or locality information may be returned under a single postal code result entry. If it's populated with the value <code>EnumerateSpannedLocalities</code>, all cities in that postal code are returned.</p>
     pub fn set_postal_code_mode(mut self, input: ::std::option::Option<crate::types::PostalCodeMode>) -> Self {
         self.inner = self.inner.set_postal_code_mode(input);
         self
     }
-    /// <p>The <code>PostalCodeMode</code> affects how postal code results are returned. If a postal code spans multiple localities and this value is empty, partial district or locality information may be returned under a single postal code result entry. If it's populated with the value <code>cityLookup</code>, all cities in that postal code are returned.</p>
+    /// <p>The <code>PostalCodeMode</code> affects how postal code results are returned. If a postal code spans multiple localities and this value is empty, partial district or locality information may be returned under a single postal code result entry. If it's populated with the value <code>EnumerateSpannedLocalities</code>, all cities in that postal code are returned.</p>
     pub fn get_postal_code_mode(&self) -> &::std::option::Option<crate::types::PostalCodeMode> {
         self.inner.get_postal_code_mode()
     }
@@ -223,16 +229,109 @@ impl AutocompleteFluentBuilder {
         self.inner.get_language()
     }
     /// <p>The alpha-2 or alpha-3 character code for the political view of a country. The political view applies to the results of the request to represent unresolved territorial claims through the point of view of the specified country.</p>
+    /// <p>The following political views are currently supported:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>ARG</code>: Argentina's view on the Southern Patagonian Ice Field and Tierra Del Fuego, including the Falkland Islands, South Georgia, and South Sandwich Islands</p></li>
+    /// <li>
+    /// <p><code>EGY</code>: Egypt's view on Bir Tawil</p></li>
+    /// <li>
+    /// <p><code>IND</code>: India's view on Gilgit-Baltistan</p></li>
+    /// <li>
+    /// <p><code>KEN</code>: Kenya's view on the Ilemi Triangle</p></li>
+    /// <li>
+    /// <p><code>MAR</code>: Morocco's view on Western Sahara</p></li>
+    /// <li>
+    /// <p><code>RUS</code>: Russia's view on Crimea</p></li>
+    /// <li>
+    /// <p><code>SDN</code>: Sudan's view on the Halaib Triangle</p></li>
+    /// <li>
+    /// <p><code>SRB</code>: Serbia's view on Kosovo, Vukovar, and Sarengrad Islands</p></li>
+    /// <li>
+    /// <p><code>SUR</code>: Suriname's view on the Courantyne Headwaters and Lawa Headwaters</p></li>
+    /// <li>
+    /// <p><code>SYR</code>: Syria's view on the Golan Heights</p></li>
+    /// <li>
+    /// <p><code>TUR</code>: Turkey's view on Cyprus and Northern Cyprus</p></li>
+    /// <li>
+    /// <p><code>TZA</code>: Tanzania's view on Lake Malawi</p></li>
+    /// <li>
+    /// <p><code>URY</code>: Uruguay's view on Rincon de Artigas</p></li>
+    /// <li>
+    /// <p><code>VNM</code>: Vietnam's view on the Paracel Islands and Spratly Islands</p></li>
+    /// </ul>
     pub fn political_view(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.political_view(input.into());
         self
     }
     /// <p>The alpha-2 or alpha-3 character code for the political view of a country. The political view applies to the results of the request to represent unresolved territorial claims through the point of view of the specified country.</p>
+    /// <p>The following political views are currently supported:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>ARG</code>: Argentina's view on the Southern Patagonian Ice Field and Tierra Del Fuego, including the Falkland Islands, South Georgia, and South Sandwich Islands</p></li>
+    /// <li>
+    /// <p><code>EGY</code>: Egypt's view on Bir Tawil</p></li>
+    /// <li>
+    /// <p><code>IND</code>: India's view on Gilgit-Baltistan</p></li>
+    /// <li>
+    /// <p><code>KEN</code>: Kenya's view on the Ilemi Triangle</p></li>
+    /// <li>
+    /// <p><code>MAR</code>: Morocco's view on Western Sahara</p></li>
+    /// <li>
+    /// <p><code>RUS</code>: Russia's view on Crimea</p></li>
+    /// <li>
+    /// <p><code>SDN</code>: Sudan's view on the Halaib Triangle</p></li>
+    /// <li>
+    /// <p><code>SRB</code>: Serbia's view on Kosovo, Vukovar, and Sarengrad Islands</p></li>
+    /// <li>
+    /// <p><code>SUR</code>: Suriname's view on the Courantyne Headwaters and Lawa Headwaters</p></li>
+    /// <li>
+    /// <p><code>SYR</code>: Syria's view on the Golan Heights</p></li>
+    /// <li>
+    /// <p><code>TUR</code>: Turkey's view on Cyprus and Northern Cyprus</p></li>
+    /// <li>
+    /// <p><code>TZA</code>: Tanzania's view on Lake Malawi</p></li>
+    /// <li>
+    /// <p><code>URY</code>: Uruguay's view on Rincon de Artigas</p></li>
+    /// <li>
+    /// <p><code>VNM</code>: Vietnam's view on the Paracel Islands and Spratly Islands</p></li>
+    /// </ul>
     pub fn set_political_view(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_political_view(input);
         self
     }
     /// <p>The alpha-2 or alpha-3 character code for the political view of a country. The political view applies to the results of the request to represent unresolved territorial claims through the point of view of the specified country.</p>
+    /// <p>The following political views are currently supported:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>ARG</code>: Argentina's view on the Southern Patagonian Ice Field and Tierra Del Fuego, including the Falkland Islands, South Georgia, and South Sandwich Islands</p></li>
+    /// <li>
+    /// <p><code>EGY</code>: Egypt's view on Bir Tawil</p></li>
+    /// <li>
+    /// <p><code>IND</code>: India's view on Gilgit-Baltistan</p></li>
+    /// <li>
+    /// <p><code>KEN</code>: Kenya's view on the Ilemi Triangle</p></li>
+    /// <li>
+    /// <p><code>MAR</code>: Morocco's view on Western Sahara</p></li>
+    /// <li>
+    /// <p><code>RUS</code>: Russia's view on Crimea</p></li>
+    /// <li>
+    /// <p><code>SDN</code>: Sudan's view on the Halaib Triangle</p></li>
+    /// <li>
+    /// <p><code>SRB</code>: Serbia's view on Kosovo, Vukovar, and Sarengrad Islands</p></li>
+    /// <li>
+    /// <p><code>SUR</code>: Suriname's view on the Courantyne Headwaters and Lawa Headwaters</p></li>
+    /// <li>
+    /// <p><code>SYR</code>: Syria's view on the Golan Heights</p></li>
+    /// <li>
+    /// <p><code>TUR</code>: Turkey's view on Cyprus and Northern Cyprus</p></li>
+    /// <li>
+    /// <p><code>TZA</code>: Tanzania's view on Lake Malawi</p></li>
+    /// <li>
+    /// <p><code>URY</code>: Uruguay's view on Rincon de Artigas</p></li>
+    /// <li>
+    /// <p><code>VNM</code>: Vietnam's view on the Paracel Islands and Spratly Islands</p></li>
+    /// </ul>
     pub fn get_political_view(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_political_view()
     }

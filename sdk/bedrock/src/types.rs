@@ -163,6 +163,10 @@ pub use crate::types::_guardrail_word_config::GuardrailWordConfig;
 
 pub use crate::types::_guardrail_content_policy_config::GuardrailContentPolicyConfig;
 
+pub use crate::types::_guardrail_content_filters_tier_config::GuardrailContentFiltersTierConfig;
+
+pub use crate::types::_guardrail_content_filters_tier_name::GuardrailContentFiltersTierName;
+
 pub use crate::types::_guardrail_content_filter_config::GuardrailContentFilterConfig;
 
 pub use crate::types::_guardrail_content_filter_action::GuardrailContentFilterAction;
@@ -174,6 +178,10 @@ pub use crate::types::_guardrail_filter_strength::GuardrailFilterStrength;
 pub use crate::types::_guardrail_content_filter_type::GuardrailContentFilterType;
 
 pub use crate::types::_guardrail_topic_policy_config::GuardrailTopicPolicyConfig;
+
+pub use crate::types::_guardrail_topics_tier_config::GuardrailTopicsTierConfig;
+
+pub use crate::types::_guardrail_topics_tier_name::GuardrailTopicsTierName;
 
 pub use crate::types::_guardrail_topic_config::GuardrailTopicConfig;
 
@@ -201,9 +209,13 @@ pub use crate::types::_guardrail_word::GuardrailWord;
 
 pub use crate::types::_guardrail_content_policy::GuardrailContentPolicy;
 
+pub use crate::types::_guardrail_content_filters_tier::GuardrailContentFiltersTier;
+
 pub use crate::types::_guardrail_content_filter::GuardrailContentFilter;
 
 pub use crate::types::_guardrail_topic_policy::GuardrailTopicPolicy;
+
+pub use crate::types::_guardrail_topics_tier::GuardrailTopicsTier;
 
 pub use crate::types::_guardrail_topic::GuardrailTopic;
 
@@ -461,6 +473,12 @@ mod _guardrail_content_filter_config;
 
 mod _guardrail_content_filter_type;
 
+mod _guardrail_content_filters_tier;
+
+mod _guardrail_content_filters_tier_config;
+
+mod _guardrail_content_filters_tier_name;
+
 mod _guardrail_content_policy;
 
 mod _guardrail_content_policy_config;
@@ -522,6 +540,12 @@ mod _guardrail_topic_policy;
 mod _guardrail_topic_policy_config;
 
 mod _guardrail_topic_type;
+
+mod _guardrail_topics_tier;
+
+mod _guardrail_topics_tier_config;
+
+mod _guardrail_topics_tier_name;
 
 mod _guardrail_word;
 

@@ -353,6 +353,10 @@ pub(crate) mod shape_guardrail_content_filter_config;
 
 pub(crate) mod shape_guardrail_content_filters;
 
+pub(crate) mod shape_guardrail_content_filters_tier;
+
+pub(crate) mod shape_guardrail_content_filters_tier_config;
+
 pub(crate) mod shape_guardrail_contextual_grounding_filter_config;
 
 pub(crate) mod shape_guardrail_contextual_grounding_filters;
@@ -374,6 +378,10 @@ pub(crate) mod shape_guardrail_summary;
 pub(crate) mod shape_guardrail_topic_config;
 
 pub(crate) mod shape_guardrail_topics;
+
+pub(crate) mod shape_guardrail_topics_tier;
+
+pub(crate) mod shape_guardrail_topics_tier_config;
 
 pub(crate) mod shape_guardrail_word_config;
 

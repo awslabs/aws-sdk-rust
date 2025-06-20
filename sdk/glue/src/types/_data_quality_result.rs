@@ -32,6 +32,8 @@ pub struct DataQualityResult {
     pub analyzer_results: ::std::option::Option<::std::vec::Vec<crate::types::DataQualityAnalyzerResult>>,
     /// <p>A list of <code>DataQualityObservation</code> objects representing the observations generated after evaluating the rules and analyzers.</p>
     pub observations: ::std::option::Option<::std::vec::Vec<crate::types::DataQualityObservation>>,
+    /// <p>A summary of <code>DataQualityAggregatedMetrics</code> objects showing the total counts of processed rows and rules, including their pass/fail statistics based on row-level results.</p>
+    pub aggregated_metrics: ::std::option::Option<crate::types::DataQualityAggregatedMetrics>,
 }
 impl DataQualityResult {
     /// <p>A unique result ID for the data quality result.</p>
@@ -96,6 +98,10 @@ impl DataQualityResult {
     pub fn observations(&self) -> &[crate::types::DataQualityObservation] {
         self.observations.as_deref().unwrap_or_default()
     }
+    /// <p>A summary of <code>DataQualityAggregatedMetrics</code> objects showing the total counts of processed rows and rules, including their pass/fail statistics based on row-level results.</p>
+    pub fn aggregated_metrics(&self) -> ::std::option::Option<&crate::types::DataQualityAggregatedMetrics> {
+        self.aggregated_metrics.as_ref()
+    }
 }
 impl DataQualityResult {
     /// Creates a new builder-style object to manufacture [`DataQualityResult`](crate::types::DataQualityResult).
@@ -122,6 +128,7 @@ pub struct DataQualityResultBuilder {
     pub(crate) rule_results: ::std::option::Option<::std::vec::Vec<crate::types::DataQualityRuleResult>>,
     pub(crate) analyzer_results: ::std::option::Option<::std::vec::Vec<crate::types::DataQualityAnalyzerResult>>,
     pub(crate) observations: ::std::option::Option<::std::vec::Vec<crate::types::DataQualityObservation>>,
+    pub(crate) aggregated_metrics: ::std::option::Option<crate::types::DataQualityAggregatedMetrics>,
 }
 impl DataQualityResultBuilder {
     /// <p>A unique result ID for the data quality result.</p>
@@ -338,6 +345,20 @@ impl DataQualityResultBuilder {
     pub fn get_observations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DataQualityObservation>> {
         &self.observations
     }
+    /// <p>A summary of <code>DataQualityAggregatedMetrics</code> objects showing the total counts of processed rows and rules, including their pass/fail statistics based on row-level results.</p>
+    pub fn aggregated_metrics(mut self, input: crate::types::DataQualityAggregatedMetrics) -> Self {
+        self.aggregated_metrics = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>A summary of <code>DataQualityAggregatedMetrics</code> objects showing the total counts of processed rows and rules, including their pass/fail statistics based on row-level results.</p>
+    pub fn set_aggregated_metrics(mut self, input: ::std::option::Option<crate::types::DataQualityAggregatedMetrics>) -> Self {
+        self.aggregated_metrics = input;
+        self
+    }
+    /// <p>A summary of <code>DataQualityAggregatedMetrics</code> objects showing the total counts of processed rows and rules, including their pass/fail statistics based on row-level results.</p>
+    pub fn get_aggregated_metrics(&self) -> &::std::option::Option<crate::types::DataQualityAggregatedMetrics> {
+        &self.aggregated_metrics
+    }
     /// Consumes the builder and constructs a [`DataQualityResult`](crate::types::DataQualityResult).
     pub fn build(self) -> crate::types::DataQualityResult {
         crate::types::DataQualityResult {
@@ -355,6 +376,7 @@ impl DataQualityResultBuilder {
             rule_results: self.rule_results,
             analyzer_results: self.analyzer_results,
             observations: self.observations,
+            aggregated_metrics: self.aggregated_metrics,
         }
     }
 }

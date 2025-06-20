@@ -123,7 +123,7 @@ pub(super) fn resolve_endpoint(
                                 out.push_str("https://places.geo.");
                                 #[allow(clippy::needless_borrow)]
                                 out.push_str(&region.as_ref() as &str);
-                                out.push_str(".us-gov.");
+                                out.push('.');
                                 #[allow(clippy::needless_borrow)]
                                 out.push_str(&partition_result.dns_suffix());
                                 out.push_str("/v2");
@@ -142,7 +142,7 @@ pub(super) fn resolve_endpoint(
                                 out.push_str("https://places.geo-fips.");
                                 #[allow(clippy::needless_borrow)]
                                 out.push_str(&region.as_ref() as &str);
-                                out.push_str(".us-gov.");
+                                out.push('.');
                                 #[allow(clippy::needless_borrow)]
                                 out.push_str(&partition_result.dual_stack_dns_suffix());
                                 out.push_str("/v2");
@@ -161,7 +161,7 @@ pub(super) fn resolve_endpoint(
                                 out.push_str("https://places.geo-fips.");
                                 #[allow(clippy::needless_borrow)]
                                 out.push_str(&region.as_ref() as &str);
-                                out.push_str(".us-gov.");
+                                out.push('.');
                                 #[allow(clippy::needless_borrow)]
                                 out.push_str(&partition_result.dns_suffix());
                                 out.push_str("/v2");
@@ -180,7 +180,7 @@ pub(super) fn resolve_endpoint(
                                 out.push_str("https://places.geo.");
                                 #[allow(clippy::needless_borrow)]
                                 out.push_str(&region.as_ref() as &str);
-                                out.push_str(".us-gov.");
+                                out.push('.');
                                 #[allow(clippy::needless_borrow)]
                                 out.push_str(&partition_result.dual_stack_dns_suffix());
                                 out.push_str("/v2");

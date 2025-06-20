@@ -3,7 +3,9 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct SuggestInput {
-    /// <p>The free-form text query to match addresses against. This is usually a partially typed address from an end user in an address box or form.</p>
+    /// <p>The free-form text query to match addresses against. This is usually a partially typed address from an end user in an address box or form.</p><note>
+    /// <p>The fields <code>QueryText</code>, and <code>QueryID</code> are mutually exclusive.</p>
+    /// </note>
     pub query_text: ::std::option::Option<::std::string::String>,
     /// <p>An optional limit for the number of results returned in a single call.</p>
     pub max_results: ::std::option::Option<i32>,
@@ -13,7 +15,7 @@ pub struct SuggestInput {
     /// <p>The fields <code>BiasPosition</code>, <code>FilterBoundingBox</code>, and <code>FilterCircle</code> are mutually exclusive.</p>
     /// </note>
     pub bias_position: ::std::option::Option<::std::vec::Vec<f64>>,
-    /// <p>A structure which contains a set of inclusion/exclusion properties that results must posses in order to be returned as a result.</p>
+    /// <p>A structure which contains a set of inclusion/exclusion properties that results must possess in order to be returned as a result.</p>
     pub filter: ::std::option::Option<crate::types::SuggestFilter>,
     /// <p>A list of optional additional parameters, such as time zone, that can be requested for each result.</p>
     pub additional_features: ::std::option::Option<::std::vec::Vec<crate::types::SuggestAdditionalFeature>>,
@@ -27,7 +29,9 @@ pub struct SuggestInput {
     pub key: ::std::option::Option<::std::string::String>,
 }
 impl SuggestInput {
-    /// <p>The free-form text query to match addresses against. This is usually a partially typed address from an end user in an address box or form.</p>
+    /// <p>The free-form text query to match addresses against. This is usually a partially typed address from an end user in an address box or form.</p><note>
+    /// <p>The fields <code>QueryText</code>, and <code>QueryID</code> are mutually exclusive.</p>
+    /// </note>
     pub fn query_text(&self) -> ::std::option::Option<&str> {
         self.query_text.as_deref()
     }
@@ -47,7 +51,7 @@ impl SuggestInput {
     pub fn bias_position(&self) -> &[f64] {
         self.bias_position.as_deref().unwrap_or_default()
     }
-    /// <p>A structure which contains a set of inclusion/exclusion properties that results must posses in order to be returned as a result.</p>
+    /// <p>A structure which contains a set of inclusion/exclusion properties that results must possess in order to be returned as a result.</p>
     pub fn filter(&self) -> ::std::option::Option<&crate::types::SuggestFilter> {
         self.filter.as_ref()
     }
@@ -84,7 +88,7 @@ impl ::std::fmt::Debug for SuggestInput {
         formatter.field("filter", &self.filter);
         formatter.field("additional_features", &self.additional_features);
         formatter.field("language", &self.language);
-        formatter.field("political_view", &self.political_view);
+        formatter.field("political_view", &"*** Sensitive Data Redacted ***");
         formatter.field("intended_use", &self.intended_use);
         formatter.field("key", &"*** Sensitive Data Redacted ***");
         formatter.finish()
@@ -113,18 +117,24 @@ pub struct SuggestInputBuilder {
     pub(crate) key: ::std::option::Option<::std::string::String>,
 }
 impl SuggestInputBuilder {
-    /// <p>The free-form text query to match addresses against. This is usually a partially typed address from an end user in an address box or form.</p>
+    /// <p>The free-form text query to match addresses against. This is usually a partially typed address from an end user in an address box or form.</p><note>
+    /// <p>The fields <code>QueryText</code>, and <code>QueryID</code> are mutually exclusive.</p>
+    /// </note>
     /// This field is required.
     pub fn query_text(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.query_text = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The free-form text query to match addresses against. This is usually a partially typed address from an end user in an address box or form.</p>
+    /// <p>The free-form text query to match addresses against. This is usually a partially typed address from an end user in an address box or form.</p><note>
+    /// <p>The fields <code>QueryText</code>, and <code>QueryID</code> are mutually exclusive.</p>
+    /// </note>
     pub fn set_query_text(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.query_text = input;
         self
     }
-    /// <p>The free-form text query to match addresses against. This is usually a partially typed address from an end user in an address box or form.</p>
+    /// <p>The free-form text query to match addresses against. This is usually a partially typed address from an end user in an address box or form.</p><note>
+    /// <p>The fields <code>QueryText</code>, and <code>QueryID</code> are mutually exclusive.</p>
+    /// </note>
     pub fn get_query_text(&self) -> &::std::option::Option<::std::string::String> {
         &self.query_text
     }
@@ -182,17 +192,17 @@ impl SuggestInputBuilder {
     pub fn get_bias_position(&self) -> &::std::option::Option<::std::vec::Vec<f64>> {
         &self.bias_position
     }
-    /// <p>A structure which contains a set of inclusion/exclusion properties that results must posses in order to be returned as a result.</p>
+    /// <p>A structure which contains a set of inclusion/exclusion properties that results must possess in order to be returned as a result.</p>
     pub fn filter(mut self, input: crate::types::SuggestFilter) -> Self {
         self.filter = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A structure which contains a set of inclusion/exclusion properties that results must posses in order to be returned as a result.</p>
+    /// <p>A structure which contains a set of inclusion/exclusion properties that results must possess in order to be returned as a result.</p>
     pub fn set_filter(mut self, input: ::std::option::Option<crate::types::SuggestFilter>) -> Self {
         self.filter = input;
         self
     }
-    /// <p>A structure which contains a set of inclusion/exclusion properties that results must posses in order to be returned as a result.</p>
+    /// <p>A structure which contains a set of inclusion/exclusion properties that results must possess in order to be returned as a result.</p>
     pub fn get_filter(&self) -> &::std::option::Option<crate::types::SuggestFilter> {
         &self.filter
     }
@@ -298,7 +308,7 @@ impl ::std::fmt::Debug for SuggestInputBuilder {
         formatter.field("filter", &self.filter);
         formatter.field("additional_features", &self.additional_features);
         formatter.field("language", &self.language);
-        formatter.field("political_view", &self.political_view);
+        formatter.field("political_view", &"*** Sensitive Data Redacted ***");
         formatter.field("intended_use", &self.intended_use);
         formatter.field("key", &"*** Sensitive Data Redacted ***");
         formatter.finish()

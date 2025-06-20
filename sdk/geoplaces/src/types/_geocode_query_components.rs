@@ -11,7 +11,7 @@ pub struct GeocodeQueryComponents {
     pub region: ::std::option::Option<::std::string::String>,
     /// <p>The sub-region or county for which results should be present in.</p>
     pub sub_region: ::std::option::Option<::std::string::String>,
-    /// <p>City or locality results should be present in.</p>
+    /// <p>The city or locality results should be present in.</p>
     /// <p>Example: <code>Vancouver</code>.</p>
     pub locality: ::std::option::Option<::std::string::String>,
     /// <p>The district or division of a city the results should be present in.</p>
@@ -20,7 +20,7 @@ pub struct GeocodeQueryComponents {
     pub street: ::std::option::Option<::std::string::String>,
     /// <p>The house number or address results should have.</p>
     pub address_number: ::std::option::Option<::std::string::String>,
-    /// <p>An alphanumeric string included in a postal address to facilitate mail sorting, such as post code, postcode, or ZIP code for which the result should posses.</p>
+    /// <p>An alphanumeric string included in a postal address to facilitate mail sorting, such as post code, postcode, or ZIP code for which the result should possess.</p>
     pub postal_code: ::std::option::Option<::std::string::String>,
 }
 impl GeocodeQueryComponents {
@@ -37,7 +37,7 @@ impl GeocodeQueryComponents {
     pub fn sub_region(&self) -> ::std::option::Option<&str> {
         self.sub_region.as_deref()
     }
-    /// <p>City or locality results should be present in.</p>
+    /// <p>The city or locality results should be present in.</p>
     /// <p>Example: <code>Vancouver</code>.</p>
     pub fn locality(&self) -> ::std::option::Option<&str> {
         self.locality.as_deref()
@@ -54,7 +54,7 @@ impl GeocodeQueryComponents {
     pub fn address_number(&self) -> ::std::option::Option<&str> {
         self.address_number.as_deref()
     }
-    /// <p>An alphanumeric string included in a postal address to facilitate mail sorting, such as post code, postcode, or ZIP code for which the result should posses.</p>
+    /// <p>An alphanumeric string included in a postal address to facilitate mail sorting, such as post code, postcode, or ZIP code for which the result should possess.</p>
     pub fn postal_code(&self) -> ::std::option::Option<&str> {
         self.postal_code.as_deref()
     }
@@ -139,19 +139,19 @@ impl GeocodeQueryComponentsBuilder {
     pub fn get_sub_region(&self) -> &::std::option::Option<::std::string::String> {
         &self.sub_region
     }
-    /// <p>City or locality results should be present in.</p>
+    /// <p>The city or locality results should be present in.</p>
     /// <p>Example: <code>Vancouver</code>.</p>
     pub fn locality(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.locality = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>City or locality results should be present in.</p>
+    /// <p>The city or locality results should be present in.</p>
     /// <p>Example: <code>Vancouver</code>.</p>
     pub fn set_locality(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.locality = input;
         self
     }
-    /// <p>City or locality results should be present in.</p>
+    /// <p>The city or locality results should be present in.</p>
     /// <p>Example: <code>Vancouver</code>.</p>
     pub fn get_locality(&self) -> &::std::option::Option<::std::string::String> {
         &self.locality
@@ -198,17 +198,17 @@ impl GeocodeQueryComponentsBuilder {
     pub fn get_address_number(&self) -> &::std::option::Option<::std::string::String> {
         &self.address_number
     }
-    /// <p>An alphanumeric string included in a postal address to facilitate mail sorting, such as post code, postcode, or ZIP code for which the result should posses.</p>
+    /// <p>An alphanumeric string included in a postal address to facilitate mail sorting, such as post code, postcode, or ZIP code for which the result should possess.</p>
     pub fn postal_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.postal_code = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>An alphanumeric string included in a postal address to facilitate mail sorting, such as post code, postcode, or ZIP code for which the result should posses.</p>
+    /// <p>An alphanumeric string included in a postal address to facilitate mail sorting, such as post code, postcode, or ZIP code for which the result should possess.</p>
     pub fn set_postal_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.postal_code = input;
         self
     }
-    /// <p>An alphanumeric string included in a postal address to facilitate mail sorting, such as post code, postcode, or ZIP code for which the result should posses.</p>
+    /// <p>An alphanumeric string included in a postal address to facilitate mail sorting, such as post code, postcode, or ZIP code for which the result should possess.</p>
     pub fn get_postal_code(&self) -> &::std::option::Option<::std::string::String> {
         &self.postal_code
     }

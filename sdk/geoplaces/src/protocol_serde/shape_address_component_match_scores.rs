@@ -66,6 +66,11 @@ where
                             builder = builder
                                 .set_building(::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?.map(|v| v.to_f64_lossy()));
                         }
+                        "SecondaryAddressComponents" => {
+                            builder = builder.set_secondary_address_components(
+                                    crate::protocol_serde::shape_secondary_address_component_match_score_list::de_secondary_address_component_match_score_list(tokens)?
+                                );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

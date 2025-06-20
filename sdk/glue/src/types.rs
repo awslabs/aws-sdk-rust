@@ -835,6 +835,8 @@ pub use crate::types::_job::Job;
 
 pub use crate::types::_dev_endpoint::DevEndpoint;
 
+pub use crate::types::_data_quality_aggregated_metrics::DataQualityAggregatedMetrics;
+
 pub use crate::types::_data_quality_observation::DataQualityObservation;
 
 pub use crate::types::_metric_based_observation::MetricBasedObservation;
@@ -1236,6 +1238,8 @@ mod _data_lake_access_properties_output;
 mod _data_lake_principal;
 
 mod _data_operation;
+
+mod _data_quality_aggregated_metrics;
 
 mod _data_quality_analyzer_result;
 

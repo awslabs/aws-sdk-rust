@@ -115,6 +115,10 @@ pub(crate) mod shape_postal_code_details_list;
 
 pub(crate) mod shape_query_refinement_list;
 
+pub(crate) mod shape_related_place;
+
+pub(crate) mod shape_related_place_list;
+
 pub(crate) mod shape_reverse_geocode_filter;
 
 pub(crate) mod shape_reverse_geocode_result_item_list;
@@ -157,7 +161,7 @@ pub(crate) mod shape_food_type;
 
 pub(crate) mod shape_geocode_result_item;
 
-pub(crate) mod shape_intersection_list;
+pub(crate) mod shape_intersection_street_list;
 
 pub(crate) mod shape_opening_hours;
 
@@ -175,6 +179,8 @@ pub(crate) mod shape_search_nearby_result_item;
 
 pub(crate) mod shape_search_text_result_item;
 
+pub(crate) mod shape_secondary_address_component_list;
+
 pub(crate) mod shape_street_components_list;
 
 pub(crate) mod shape_sub_region;
@@ -187,6 +193,10 @@ pub(crate) mod shape_autocomplete_highlights;
 
 pub(crate) mod shape_contact_details;
 
+pub(crate) mod shape_geocode_parsed_query;
+
+pub(crate) mod shape_intersection_list;
+
 pub(crate) mod shape_match_score_details;
 
 pub(crate) mod shape_opening_hours_components_list;
@@ -194,6 +204,8 @@ pub(crate) mod shape_opening_hours_components_list;
 pub(crate) mod shape_opening_hours_display_list;
 
 pub(crate) mod shape_phoneme_transcription;
+
+pub(crate) mod shape_secondary_address_component;
 
 pub(crate) mod shape_street_components;
 
@@ -211,9 +223,15 @@ pub(crate) mod shape_autocomplete_address_highlights;
 
 pub(crate) mod shape_component_match_scores;
 
+pub(crate) mod shape_geocode_parsed_query_address_components;
+
 pub(crate) mod shape_highlight_list;
 
+pub(crate) mod shape_intersection;
+
 pub(crate) mod shape_opening_hours_components;
+
+pub(crate) mod shape_parsed_query_component_list;
 
 pub(crate) mod shape_suggest_address_highlights;
 
@@ -225,8 +243,18 @@ pub(crate) mod shape_highlight;
 
 pub(crate) mod shape_intersection_highlights_list;
 
+pub(crate) mod shape_parsed_query_component;
+
+pub(crate) mod shape_parsed_query_secondary_address_component_list;
+
 pub(crate) mod shape_region_highlights;
 
 pub(crate) mod shape_sub_region_highlights;
 
 pub(crate) mod shape_match_score_list;
+
+pub(crate) mod shape_parsed_query_secondary_address_component;
+
+pub(crate) mod shape_secondary_address_component_match_score_list;
+
+pub(crate) mod shape_secondary_address_component_match_score;

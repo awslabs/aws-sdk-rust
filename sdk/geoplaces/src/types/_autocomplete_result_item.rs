@@ -2,7 +2,7 @@
 
 /// <p>A result matching the input query text.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct AutocompleteResultItem {
     /// <p>The PlaceId of the place associated with this result. This can be used to look up additional details about the result via GetPlace.</p>
     pub place_id: ::std::string::String,
@@ -57,6 +57,20 @@ impl AutocompleteResultItem {
         self.highlights.as_ref()
     }
 }
+impl ::std::fmt::Debug for AutocompleteResultItem {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("AutocompleteResultItem");
+        formatter.field("place_id", &"*** Sensitive Data Redacted ***");
+        formatter.field("place_type", &"*** Sensitive Data Redacted ***");
+        formatter.field("title", &"*** Sensitive Data Redacted ***");
+        formatter.field("address", &self.address);
+        formatter.field("distance", &"*** Sensitive Data Redacted ***");
+        formatter.field("language", &self.language);
+        formatter.field("political_view", &"*** Sensitive Data Redacted ***");
+        formatter.field("highlights", &self.highlights);
+        formatter.finish()
+    }
+}
 impl AutocompleteResultItem {
     /// Creates a new builder-style object to manufacture [`AutocompleteResultItem`](crate::types::AutocompleteResultItem).
     pub fn builder() -> crate::types::builders::AutocompleteResultItemBuilder {
@@ -65,7 +79,7 @@ impl AutocompleteResultItem {
 }
 
 /// A builder for [`AutocompleteResultItem`](crate::types::AutocompleteResultItem).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct AutocompleteResultItemBuilder {
     pub(crate) place_id: ::std::option::Option<::std::string::String>,
@@ -224,5 +238,19 @@ impl AutocompleteResultItemBuilder {
             political_view: self.political_view,
             highlights: self.highlights,
         })
+    }
+}
+impl ::std::fmt::Debug for AutocompleteResultItemBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("AutocompleteResultItemBuilder");
+        formatter.field("place_id", &"*** Sensitive Data Redacted ***");
+        formatter.field("place_type", &"*** Sensitive Data Redacted ***");
+        formatter.field("title", &"*** Sensitive Data Redacted ***");
+        formatter.field("address", &self.address);
+        formatter.field("distance", &"*** Sensitive Data Redacted ***");
+        formatter.field("language", &self.language);
+        formatter.field("political_view", &"*** Sensitive Data Redacted ***");
+        formatter.field("highlights", &self.highlights);
+        formatter.finish()
     }
 }

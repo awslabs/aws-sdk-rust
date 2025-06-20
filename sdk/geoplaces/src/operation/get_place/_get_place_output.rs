@@ -10,7 +10,7 @@ pub struct GetPlaceOutput {
     /// <p>The localized display name of this result item based on request parameter <code>language</code>.</p>
     pub title: ::std::string::String,
     /// <p>The pricing bucket for which the query is charged at.</p>
-    /// <p>For more inforamtion on pricing, please visit <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service Pricing</a>.</p>
+    /// <p>For more information on pricing, please visit <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service Pricing</a>.</p>
     pub pricing_bucket: ::std::string::String,
     /// <p>The place's address.</p>
     pub address: ::std::option::Option<crate::types::Address>,
@@ -43,6 +43,10 @@ pub struct GetPlaceOutput {
     pub political_view: ::std::option::Option<::std::string::String>,
     /// <p>How the various components of the result's address are pronounced in various languages.</p>
     pub phonemes: ::std::option::Option<crate::types::PhonemeDetails>,
+    /// <p>The main address corresponding to a place of type Secondary Address.</p>
+    pub main_address: ::std::option::Option<crate::types::RelatedPlace>,
+    /// <p>All secondary addresses that are associated with a main address. A secondary address is one that includes secondary designators, such as a Suite or Unit Number, Building, or Floor information.</p>
+    pub secondary_addresses: ::std::option::Option<::std::vec::Vec<crate::types::RelatedPlace>>,
     _request_id: Option<String>,
 }
 impl GetPlaceOutput {
@@ -61,7 +65,7 @@ impl GetPlaceOutput {
         self.title.deref()
     }
     /// <p>The pricing bucket for which the query is charged at.</p>
-    /// <p>For more inforamtion on pricing, please visit <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service Pricing</a>.</p>
+    /// <p>For more information on pricing, please visit <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service Pricing</a>.</p>
     pub fn pricing_bucket(&self) -> &str {
         use std::ops::Deref;
         self.pricing_bucket.deref()
@@ -145,16 +149,26 @@ impl GetPlaceOutput {
     pub fn phonemes(&self) -> ::std::option::Option<&crate::types::PhonemeDetails> {
         self.phonemes.as_ref()
     }
+    /// <p>The main address corresponding to a place of type Secondary Address.</p>
+    pub fn main_address(&self) -> ::std::option::Option<&crate::types::RelatedPlace> {
+        self.main_address.as_ref()
+    }
+    /// <p>All secondary addresses that are associated with a main address. A secondary address is one that includes secondary designators, such as a Suite or Unit Number, Building, or Floor information.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.secondary_addresses.is_none()`.
+    pub fn secondary_addresses(&self) -> &[crate::types::RelatedPlace] {
+        self.secondary_addresses.as_deref().unwrap_or_default()
+    }
 }
 impl ::std::fmt::Debug for GetPlaceOutput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("GetPlaceOutput");
-        formatter.field("place_id", &self.place_id);
-        formatter.field("place_type", &self.place_type);
-        formatter.field("title", &self.title);
+        formatter.field("place_id", &"*** Sensitive Data Redacted ***");
+        formatter.field("place_type", &"*** Sensitive Data Redacted ***");
+        formatter.field("title", &"*** Sensitive Data Redacted ***");
         formatter.field("pricing_bucket", &self.pricing_bucket);
         formatter.field("address", &self.address);
-        formatter.field("address_number_corrected", &self.address_number_corrected);
+        formatter.field("address_number_corrected", &"*** Sensitive Data Redacted ***");
         formatter.field("postal_code_details", &self.postal_code_details);
         formatter.field("position", &"*** Sensitive Data Redacted ***");
         formatter.field("map_view", &"*** Sensitive Data Redacted ***");
@@ -166,8 +180,10 @@ impl ::std::fmt::Debug for GetPlaceOutput {
         formatter.field("access_points", &self.access_points);
         formatter.field("access_restrictions", &self.access_restrictions);
         formatter.field("time_zone", &self.time_zone);
-        formatter.field("political_view", &self.political_view);
+        formatter.field("political_view", &"*** Sensitive Data Redacted ***");
         formatter.field("phonemes", &self.phonemes);
+        formatter.field("main_address", &self.main_address);
+        formatter.field("secondary_addresses", &self.secondary_addresses);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }
@@ -207,6 +223,8 @@ pub struct GetPlaceOutputBuilder {
     pub(crate) time_zone: ::std::option::Option<crate::types::TimeZone>,
     pub(crate) political_view: ::std::option::Option<::std::string::String>,
     pub(crate) phonemes: ::std::option::Option<crate::types::PhonemeDetails>,
+    pub(crate) main_address: ::std::option::Option<crate::types::RelatedPlace>,
+    pub(crate) secondary_addresses: ::std::option::Option<::std::vec::Vec<crate::types::RelatedPlace>>,
     _request_id: Option<String>,
 }
 impl GetPlaceOutputBuilder {
@@ -256,20 +274,20 @@ impl GetPlaceOutputBuilder {
         &self.title
     }
     /// <p>The pricing bucket for which the query is charged at.</p>
-    /// <p>For more inforamtion on pricing, please visit <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service Pricing</a>.</p>
+    /// <p>For more information on pricing, please visit <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service Pricing</a>.</p>
     /// This field is required.
     pub fn pricing_bucket(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pricing_bucket = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The pricing bucket for which the query is charged at.</p>
-    /// <p>For more inforamtion on pricing, please visit <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service Pricing</a>.</p>
+    /// <p>For more information on pricing, please visit <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service Pricing</a>.</p>
     pub fn set_pricing_bucket(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.pricing_bucket = input;
         self
     }
     /// <p>The pricing bucket for which the query is charged at.</p>
-    /// <p>For more inforamtion on pricing, please visit <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service Pricing</a>.</p>
+    /// <p>For more information on pricing, please visit <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service Pricing</a>.</p>
     pub fn get_pricing_bucket(&self) -> &::std::option::Option<::std::string::String> {
         &self.pricing_bucket
     }
@@ -540,6 +558,40 @@ impl GetPlaceOutputBuilder {
     pub fn get_phonemes(&self) -> &::std::option::Option<crate::types::PhonemeDetails> {
         &self.phonemes
     }
+    /// <p>The main address corresponding to a place of type Secondary Address.</p>
+    pub fn main_address(mut self, input: crate::types::RelatedPlace) -> Self {
+        self.main_address = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The main address corresponding to a place of type Secondary Address.</p>
+    pub fn set_main_address(mut self, input: ::std::option::Option<crate::types::RelatedPlace>) -> Self {
+        self.main_address = input;
+        self
+    }
+    /// <p>The main address corresponding to a place of type Secondary Address.</p>
+    pub fn get_main_address(&self) -> &::std::option::Option<crate::types::RelatedPlace> {
+        &self.main_address
+    }
+    /// Appends an item to `secondary_addresses`.
+    ///
+    /// To override the contents of this collection use [`set_secondary_addresses`](Self::set_secondary_addresses).
+    ///
+    /// <p>All secondary addresses that are associated with a main address. A secondary address is one that includes secondary designators, such as a Suite or Unit Number, Building, or Floor information.</p>
+    pub fn secondary_addresses(mut self, input: crate::types::RelatedPlace) -> Self {
+        let mut v = self.secondary_addresses.unwrap_or_default();
+        v.push(input);
+        self.secondary_addresses = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>All secondary addresses that are associated with a main address. A secondary address is one that includes secondary designators, such as a Suite or Unit Number, Building, or Floor information.</p>
+    pub fn set_secondary_addresses(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RelatedPlace>>) -> Self {
+        self.secondary_addresses = input;
+        self
+    }
+    /// <p>All secondary addresses that are associated with a main address. A secondary address is one that includes secondary designators, such as a Suite or Unit Number, Building, or Floor information.</p>
+    pub fn get_secondary_addresses(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RelatedPlace>> {
+        &self.secondary_addresses
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -596,6 +648,8 @@ impl GetPlaceOutputBuilder {
             time_zone: self.time_zone,
             political_view: self.political_view,
             phonemes: self.phonemes,
+            main_address: self.main_address,
+            secondary_addresses: self.secondary_addresses,
             _request_id: self._request_id,
         })
     }
@@ -603,12 +657,12 @@ impl GetPlaceOutputBuilder {
 impl ::std::fmt::Debug for GetPlaceOutputBuilder {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("GetPlaceOutputBuilder");
-        formatter.field("place_id", &self.place_id);
-        formatter.field("place_type", &self.place_type);
-        formatter.field("title", &self.title);
+        formatter.field("place_id", &"*** Sensitive Data Redacted ***");
+        formatter.field("place_type", &"*** Sensitive Data Redacted ***");
+        formatter.field("title", &"*** Sensitive Data Redacted ***");
         formatter.field("pricing_bucket", &self.pricing_bucket);
         formatter.field("address", &self.address);
-        formatter.field("address_number_corrected", &self.address_number_corrected);
+        formatter.field("address_number_corrected", &"*** Sensitive Data Redacted ***");
         formatter.field("postal_code_details", &self.postal_code_details);
         formatter.field("position", &"*** Sensitive Data Redacted ***");
         formatter.field("map_view", &"*** Sensitive Data Redacted ***");
@@ -620,8 +674,10 @@ impl ::std::fmt::Debug for GetPlaceOutputBuilder {
         formatter.field("access_points", &self.access_points);
         formatter.field("access_restrictions", &self.access_restrictions);
         formatter.field("time_zone", &self.time_zone);
-        formatter.field("political_view", &self.political_view);
+        formatter.field("political_view", &"*** Sensitive Data Redacted ***");
         formatter.field("phonemes", &self.phonemes);
+        formatter.field("main_address", &self.main_address);
+        formatter.field("secondary_addresses", &self.secondary_addresses);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }

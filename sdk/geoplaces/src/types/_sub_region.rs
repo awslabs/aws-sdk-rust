@@ -2,7 +2,7 @@
 
 /// <p>The sub-region.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct SubRegion {
     /// <p>Abbreviated code for the county or sub-region.</p>
     pub code: ::std::option::Option<::std::string::String>,
@@ -19,6 +19,14 @@ impl SubRegion {
         self.name.as_deref()
     }
 }
+impl ::std::fmt::Debug for SubRegion {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("SubRegion");
+        formatter.field("code", &"*** Sensitive Data Redacted ***");
+        formatter.field("name", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
 impl SubRegion {
     /// Creates a new builder-style object to manufacture [`SubRegion`](crate::types::SubRegion).
     pub fn builder() -> crate::types::builders::SubRegionBuilder {
@@ -27,7 +35,7 @@ impl SubRegion {
 }
 
 /// A builder for [`SubRegion`](crate::types::SubRegion).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct SubRegionBuilder {
     pub(crate) code: ::std::option::Option<::std::string::String>,
@@ -68,5 +76,13 @@ impl SubRegionBuilder {
             code: self.code,
             name: self.name,
         }
+    }
+}
+impl ::std::fmt::Debug for SubRegionBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("SubRegionBuilder");
+        formatter.field("code", &"*** Sensitive Data Redacted ***");
+        formatter.field("name", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

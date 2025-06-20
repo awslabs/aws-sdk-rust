@@ -22,7 +22,7 @@ impl crate::operation::search_text::builders::SearchTextInputBuilder {
 }
 /// Fluent builder constructing a request to `SearchText`.
 ///
-/// <p>Use the <code>SearchText</code> operation to search for geocode and place information. You can then complete a follow-up query suggested from the <code>Suggest</code> API via a query id.</p>
+/// <p><code>SearchText</code> searches for geocode and place information. You can then complete a follow-up query suggested from the <code>Suggest</code> API via a query id.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct SearchTextFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,31 +108,43 @@ impl SearchTextFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The free-form text query to match addresses against. This is usually a partially typed address from an end user in an address box or form.</p>
+    /// <p>The free-form text query to match addresses against. This is usually a partially typed address from an end user in an address box or form.</p><note>
+    /// <p>The fields <code>QueryText</code>, and <code>QueryID</code> are mutually exclusive.</p>
+    /// </note>
     pub fn query_text(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.query_text(input.into());
         self
     }
-    /// <p>The free-form text query to match addresses against. This is usually a partially typed address from an end user in an address box or form.</p>
+    /// <p>The free-form text query to match addresses against. This is usually a partially typed address from an end user in an address box or form.</p><note>
+    /// <p>The fields <code>QueryText</code>, and <code>QueryID</code> are mutually exclusive.</p>
+    /// </note>
     pub fn set_query_text(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_query_text(input);
         self
     }
-    /// <p>The free-form text query to match addresses against. This is usually a partially typed address from an end user in an address box or form.</p>
+    /// <p>The free-form text query to match addresses against. This is usually a partially typed address from an end user in an address box or form.</p><note>
+    /// <p>The fields <code>QueryText</code>, and <code>QueryID</code> are mutually exclusive.</p>
+    /// </note>
     pub fn get_query_text(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_query_text()
     }
-    /// <p>The query Id.</p>
+    /// <p>The query Id returned by the suggest API. If passed in the request, the SearchText API will preform a SearchText query with the improved query terms for the original query made to the suggest API.</p><note>
+    /// <p>The fields <code>QueryText</code>, and <code>QueryID</code> are mutually exclusive.</p>
+    /// </note>
     pub fn query_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.query_id(input.into());
         self
     }
-    /// <p>The query Id.</p>
+    /// <p>The query Id returned by the suggest API. If passed in the request, the SearchText API will preform a SearchText query with the improved query terms for the original query made to the suggest API.</p><note>
+    /// <p>The fields <code>QueryText</code>, and <code>QueryID</code> are mutually exclusive.</p>
+    /// </note>
     pub fn set_query_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_query_id(input);
         self
     }
-    /// <p>The query Id.</p>
+    /// <p>The query Id returned by the suggest API. If passed in the request, the SearchText API will preform a SearchText query with the improved query terms for the original query made to the suggest API.</p><note>
+    /// <p>The fields <code>QueryText</code>, and <code>QueryID</code> are mutually exclusive.</p>
+    /// </note>
     pub fn get_query_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_query_id()
     }
@@ -175,17 +187,17 @@ impl SearchTextFluentBuilder {
     pub fn get_bias_position(&self) -> &::std::option::Option<::std::vec::Vec<f64>> {
         self.inner.get_bias_position()
     }
-    /// <p>A structure which contains a set of inclusion/exclusion properties that results must posses in order to be returned as a result.</p>
+    /// <p>A structure which contains a set of inclusion/exclusion properties that results must possess in order to be returned as a result.</p>
     pub fn filter(mut self, input: crate::types::SearchTextFilter) -> Self {
         self.inner = self.inner.filter(input);
         self
     }
-    /// <p>A structure which contains a set of inclusion/exclusion properties that results must posses in order to be returned as a result.</p>
+    /// <p>A structure which contains a set of inclusion/exclusion properties that results must possess in order to be returned as a result.</p>
     pub fn set_filter(mut self, input: ::std::option::Option<crate::types::SearchTextFilter>) -> Self {
         self.inner = self.inner.set_filter(input);
         self
     }
-    /// <p>A structure which contains a set of inclusion/exclusion properties that results must posses in order to be returned as a result.</p>
+    /// <p>A structure which contains a set of inclusion/exclusion properties that results must possess in order to be returned as a result.</p>
     pub fn get_filter(&self) -> &::std::option::Option<crate::types::SearchTextFilter> {
         self.inner.get_filter()
     }
@@ -236,17 +248,23 @@ impl SearchTextFluentBuilder {
     pub fn get_political_view(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_political_view()
     }
-    /// <p>Indicates if the results will be stored. Defaults to <code>SingleUse</code>, if left empty.</p>
+    /// <p>Indicates if the results will be stored. Defaults to <code>SingleUse</code>, if left empty.</p><note>
+    /// <p>Storing the response of an SearchText query is required to comply with service terms, but charged at a higher cost per request. Please review the <a href="https://aws.amazon.com/location/sla/">user agreement</a> and <a href="https://aws.amazon.com/location/pricing/">service pricing structure</a> to determine the correct setting for your use case.</p>
+    /// </note>
     pub fn intended_use(mut self, input: crate::types::SearchTextIntendedUse) -> Self {
         self.inner = self.inner.intended_use(input);
         self
     }
-    /// <p>Indicates if the results will be stored. Defaults to <code>SingleUse</code>, if left empty.</p>
+    /// <p>Indicates if the results will be stored. Defaults to <code>SingleUse</code>, if left empty.</p><note>
+    /// <p>Storing the response of an SearchText query is required to comply with service terms, but charged at a higher cost per request. Please review the <a href="https://aws.amazon.com/location/sla/">user agreement</a> and <a href="https://aws.amazon.com/location/pricing/">service pricing structure</a> to determine the correct setting for your use case.</p>
+    /// </note>
     pub fn set_intended_use(mut self, input: ::std::option::Option<crate::types::SearchTextIntendedUse>) -> Self {
         self.inner = self.inner.set_intended_use(input);
         self
     }
-    /// <p>Indicates if the results will be stored. Defaults to <code>SingleUse</code>, if left empty.</p>
+    /// <p>Indicates if the results will be stored. Defaults to <code>SingleUse</code>, if left empty.</p><note>
+    /// <p>Storing the response of an SearchText query is required to comply with service terms, but charged at a higher cost per request. Please review the <a href="https://aws.amazon.com/location/sla/">user agreement</a> and <a href="https://aws.amazon.com/location/pricing/">service pricing structure</a> to determine the correct setting for your use case.</p>
+    /// </note>
     pub fn get_intended_use(&self) -> &::std::option::Option<crate::types::SearchTextIntendedUse> {
         self.inner.get_intended_use()
     }

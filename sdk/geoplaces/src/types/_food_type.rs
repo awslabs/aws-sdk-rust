@@ -2,7 +2,7 @@
 
 /// <p>List of <code>Food</code> types offered by this result.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct FoodType {
     /// <p>Localized name of the food type.</p>
     pub localized_name: ::std::string::String,
@@ -26,6 +26,15 @@ impl FoodType {
         self.primary
     }
 }
+impl ::std::fmt::Debug for FoodType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("FoodType");
+        formatter.field("localized_name", &"*** Sensitive Data Redacted ***");
+        formatter.field("id", &"*** Sensitive Data Redacted ***");
+        formatter.field("primary", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
 impl FoodType {
     /// Creates a new builder-style object to manufacture [`FoodType`](crate::types::FoodType).
     pub fn builder() -> crate::types::builders::FoodTypeBuilder {
@@ -34,7 +43,7 @@ impl FoodType {
 }
 
 /// A builder for [`FoodType`](crate::types::FoodType).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct FoodTypeBuilder {
     pub(crate) localized_name: ::std::option::Option<::std::string::String>,
@@ -99,5 +108,14 @@ impl FoodTypeBuilder {
             id: self.id,
             primary: self.primary,
         })
+    }
+}
+impl ::std::fmt::Debug for FoodTypeBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("FoodTypeBuilder");
+        formatter.field("localized_name", &"*** Sensitive Data Redacted ***");
+        formatter.field("id", &"*** Sensitive Data Redacted ***");
+        formatter.field("primary", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

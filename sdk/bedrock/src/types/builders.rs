@@ -93,9 +93,13 @@ pub use crate::types::_guardrail_word_config::GuardrailWordConfigBuilder;
 
 pub use crate::types::_guardrail_content_policy_config::GuardrailContentPolicyConfigBuilder;
 
+pub use crate::types::_guardrail_content_filters_tier_config::GuardrailContentFiltersTierConfigBuilder;
+
 pub use crate::types::_guardrail_content_filter_config::GuardrailContentFilterConfigBuilder;
 
 pub use crate::types::_guardrail_topic_policy_config::GuardrailTopicPolicyConfigBuilder;
+
+pub use crate::types::_guardrail_topics_tier_config::GuardrailTopicsTierConfigBuilder;
 
 pub use crate::types::_guardrail_topic_config::GuardrailTopicConfigBuilder;
 
@@ -119,9 +123,13 @@ pub use crate::types::_guardrail_word::GuardrailWordBuilder;
 
 pub use crate::types::_guardrail_content_policy::GuardrailContentPolicyBuilder;
 
+pub use crate::types::_guardrail_content_filters_tier::GuardrailContentFiltersTierBuilder;
+
 pub use crate::types::_guardrail_content_filter::GuardrailContentFilterBuilder;
 
 pub use crate::types::_guardrail_topic_policy::GuardrailTopicPolicyBuilder;
+
+pub use crate::types::_guardrail_topics_tier::GuardrailTopicsTierBuilder;
 
 pub use crate::types::_guardrail_topic::GuardrailTopicBuilder;
 

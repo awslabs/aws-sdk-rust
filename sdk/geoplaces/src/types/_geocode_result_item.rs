@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct GeocodeResultItem {
-    /// <p>The <code>PlaceId</code> of the place you wish to receive the information for.</p>
+    /// <p>The <code>PlaceId</code> of the place result.</p>
     pub place_id: ::std::string::String,
     /// <p>A <code>PlaceType</code> is a category that the result place must belong to.</p>
     pub place_type: crate::types::PlaceType,
@@ -27,7 +27,7 @@ pub struct GeocodeResultItem {
     pub categories: ::std::option::Option<::std::vec::Vec<crate::types::Category>>,
     /// <p>List of food types offered by this result.</p>
     pub food_types: ::std::option::Option<::std::vec::Vec<crate::types::FoodType>>,
-    /// <p>Position of the access point represent by longitude and latitude.</p>
+    /// <p>Position of the access point represented by longitude and latitude.</p>
     pub access_points: ::std::option::Option<::std::vec::Vec<crate::types::AccessPoint>>,
     /// <p>The time zone in which the place is located.</p>
     pub time_zone: ::std::option::Option<crate::types::TimeZone>,
@@ -35,9 +35,17 @@ pub struct GeocodeResultItem {
     pub political_view: ::std::option::Option<::std::string::String>,
     /// <p>Indicates how well the entire input matches the returned. It is equal to 1 if all input tokens are recognized and matched.</p>
     pub match_scores: ::std::option::Option<crate::types::MatchScoreDetails>,
+    /// <p>Free-form text query.</p>
+    pub parsed_query: ::std::option::Option<crate::types::GeocodeParsedQuery>,
+    /// <p>All Intersections that are near the provided address.</p>
+    pub intersections: ::std::option::Option<::std::vec::Vec<crate::types::Intersection>>,
+    /// <p>The main address corresponding to a place of type Secondary Address.</p>
+    pub main_address: ::std::option::Option<crate::types::RelatedPlace>,
+    /// <p>All secondary addresses that are associated with a main address. A secondary address is one that includes secondary designators, such as a Suite or Unit Number, Building, or Floor information.</p>
+    pub secondary_addresses: ::std::option::Option<::std::vec::Vec<crate::types::RelatedPlace>>,
 }
 impl GeocodeResultItem {
-    /// <p>The <code>PlaceId</code> of the place you wish to receive the information for.</p>
+    /// <p>The <code>PlaceId</code> of the place result.</p>
     pub fn place_id(&self) -> &str {
         use std::ops::Deref;
         self.place_id.deref()
@@ -94,7 +102,7 @@ impl GeocodeResultItem {
     pub fn food_types(&self) -> &[crate::types::FoodType] {
         self.food_types.as_deref().unwrap_or_default()
     }
-    /// <p>Position of the access point represent by longitude and latitude.</p>
+    /// <p>Position of the access point represented by longitude and latitude.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.access_points.is_none()`.
     pub fn access_points(&self) -> &[crate::types::AccessPoint] {
@@ -112,25 +120,49 @@ impl GeocodeResultItem {
     pub fn match_scores(&self) -> ::std::option::Option<&crate::types::MatchScoreDetails> {
         self.match_scores.as_ref()
     }
+    /// <p>Free-form text query.</p>
+    pub fn parsed_query(&self) -> ::std::option::Option<&crate::types::GeocodeParsedQuery> {
+        self.parsed_query.as_ref()
+    }
+    /// <p>All Intersections that are near the provided address.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.intersections.is_none()`.
+    pub fn intersections(&self) -> &[crate::types::Intersection] {
+        self.intersections.as_deref().unwrap_or_default()
+    }
+    /// <p>The main address corresponding to a place of type Secondary Address.</p>
+    pub fn main_address(&self) -> ::std::option::Option<&crate::types::RelatedPlace> {
+        self.main_address.as_ref()
+    }
+    /// <p>All secondary addresses that are associated with a main address. A secondary address is one that includes secondary designators, such as a Suite or Unit Number, Building, or Floor information.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.secondary_addresses.is_none()`.
+    pub fn secondary_addresses(&self) -> &[crate::types::RelatedPlace] {
+        self.secondary_addresses.as_deref().unwrap_or_default()
+    }
 }
 impl ::std::fmt::Debug for GeocodeResultItem {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("GeocodeResultItem");
-        formatter.field("place_id", &self.place_id);
-        formatter.field("place_type", &self.place_type);
-        formatter.field("title", &self.title);
+        formatter.field("place_id", &"*** Sensitive Data Redacted ***");
+        formatter.field("place_type", &"*** Sensitive Data Redacted ***");
+        formatter.field("title", &"*** Sensitive Data Redacted ***");
         formatter.field("address", &self.address);
-        formatter.field("address_number_corrected", &self.address_number_corrected);
+        formatter.field("address_number_corrected", &"*** Sensitive Data Redacted ***");
         formatter.field("postal_code_details", &self.postal_code_details);
         formatter.field("position", &"*** Sensitive Data Redacted ***");
-        formatter.field("distance", &self.distance);
+        formatter.field("distance", &"*** Sensitive Data Redacted ***");
         formatter.field("map_view", &"*** Sensitive Data Redacted ***");
         formatter.field("categories", &self.categories);
         formatter.field("food_types", &self.food_types);
         formatter.field("access_points", &self.access_points);
         formatter.field("time_zone", &self.time_zone);
-        formatter.field("political_view", &self.political_view);
+        formatter.field("political_view", &"*** Sensitive Data Redacted ***");
         formatter.field("match_scores", &self.match_scores);
+        formatter.field("parsed_query", &self.parsed_query);
+        formatter.field("intersections", &self.intersections);
+        formatter.field("main_address", &self.main_address);
+        formatter.field("secondary_addresses", &self.secondary_addresses);
         formatter.finish()
     }
 }
@@ -160,20 +192,24 @@ pub struct GeocodeResultItemBuilder {
     pub(crate) time_zone: ::std::option::Option<crate::types::TimeZone>,
     pub(crate) political_view: ::std::option::Option<::std::string::String>,
     pub(crate) match_scores: ::std::option::Option<crate::types::MatchScoreDetails>,
+    pub(crate) parsed_query: ::std::option::Option<crate::types::GeocodeParsedQuery>,
+    pub(crate) intersections: ::std::option::Option<::std::vec::Vec<crate::types::Intersection>>,
+    pub(crate) main_address: ::std::option::Option<crate::types::RelatedPlace>,
+    pub(crate) secondary_addresses: ::std::option::Option<::std::vec::Vec<crate::types::RelatedPlace>>,
 }
 impl GeocodeResultItemBuilder {
-    /// <p>The <code>PlaceId</code> of the place you wish to receive the information for.</p>
+    /// <p>The <code>PlaceId</code> of the place result.</p>
     /// This field is required.
     pub fn place_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.place_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The <code>PlaceId</code> of the place you wish to receive the information for.</p>
+    /// <p>The <code>PlaceId</code> of the place result.</p>
     pub fn set_place_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.place_id = input;
         self
     }
-    /// <p>The <code>PlaceId</code> of the place you wish to receive the information for.</p>
+    /// <p>The <code>PlaceId</code> of the place result.</p>
     pub fn get_place_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.place_id
     }
@@ -356,19 +392,19 @@ impl GeocodeResultItemBuilder {
     ///
     /// To override the contents of this collection use [`set_access_points`](Self::set_access_points).
     ///
-    /// <p>Position of the access point represent by longitude and latitude.</p>
+    /// <p>Position of the access point represented by longitude and latitude.</p>
     pub fn access_points(mut self, input: crate::types::AccessPoint) -> Self {
         let mut v = self.access_points.unwrap_or_default();
         v.push(input);
         self.access_points = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Position of the access point represent by longitude and latitude.</p>
+    /// <p>Position of the access point represented by longitude and latitude.</p>
     pub fn set_access_points(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AccessPoint>>) -> Self {
         self.access_points = input;
         self
     }
-    /// <p>Position of the access point represent by longitude and latitude.</p>
+    /// <p>Position of the access point represented by longitude and latitude.</p>
     pub fn get_access_points(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AccessPoint>> {
         &self.access_points
     }
@@ -414,6 +450,74 @@ impl GeocodeResultItemBuilder {
     pub fn get_match_scores(&self) -> &::std::option::Option<crate::types::MatchScoreDetails> {
         &self.match_scores
     }
+    /// <p>Free-form text query.</p>
+    pub fn parsed_query(mut self, input: crate::types::GeocodeParsedQuery) -> Self {
+        self.parsed_query = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Free-form text query.</p>
+    pub fn set_parsed_query(mut self, input: ::std::option::Option<crate::types::GeocodeParsedQuery>) -> Self {
+        self.parsed_query = input;
+        self
+    }
+    /// <p>Free-form text query.</p>
+    pub fn get_parsed_query(&self) -> &::std::option::Option<crate::types::GeocodeParsedQuery> {
+        &self.parsed_query
+    }
+    /// Appends an item to `intersections`.
+    ///
+    /// To override the contents of this collection use [`set_intersections`](Self::set_intersections).
+    ///
+    /// <p>All Intersections that are near the provided address.</p>
+    pub fn intersections(mut self, input: crate::types::Intersection) -> Self {
+        let mut v = self.intersections.unwrap_or_default();
+        v.push(input);
+        self.intersections = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>All Intersections that are near the provided address.</p>
+    pub fn set_intersections(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Intersection>>) -> Self {
+        self.intersections = input;
+        self
+    }
+    /// <p>All Intersections that are near the provided address.</p>
+    pub fn get_intersections(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Intersection>> {
+        &self.intersections
+    }
+    /// <p>The main address corresponding to a place of type Secondary Address.</p>
+    pub fn main_address(mut self, input: crate::types::RelatedPlace) -> Self {
+        self.main_address = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The main address corresponding to a place of type Secondary Address.</p>
+    pub fn set_main_address(mut self, input: ::std::option::Option<crate::types::RelatedPlace>) -> Self {
+        self.main_address = input;
+        self
+    }
+    /// <p>The main address corresponding to a place of type Secondary Address.</p>
+    pub fn get_main_address(&self) -> &::std::option::Option<crate::types::RelatedPlace> {
+        &self.main_address
+    }
+    /// Appends an item to `secondary_addresses`.
+    ///
+    /// To override the contents of this collection use [`set_secondary_addresses`](Self::set_secondary_addresses).
+    ///
+    /// <p>All secondary addresses that are associated with a main address. A secondary address is one that includes secondary designators, such as a Suite or Unit Number, Building, or Floor information.</p>
+    pub fn secondary_addresses(mut self, input: crate::types::RelatedPlace) -> Self {
+        let mut v = self.secondary_addresses.unwrap_or_default();
+        v.push(input);
+        self.secondary_addresses = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>All secondary addresses that are associated with a main address. A secondary address is one that includes secondary designators, such as a Suite or Unit Number, Building, or Floor information.</p>
+    pub fn set_secondary_addresses(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RelatedPlace>>) -> Self {
+        self.secondary_addresses = input;
+        self
+    }
+    /// <p>All secondary addresses that are associated with a main address. A secondary address is one that includes secondary designators, such as a Suite or Unit Number, Building, or Floor information.</p>
+    pub fn get_secondary_addresses(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RelatedPlace>> {
+        &self.secondary_addresses
+    }
     /// Consumes the builder and constructs a [`GeocodeResultItem`](crate::types::GeocodeResultItem).
     /// This method will fail if any of the following fields are not set:
     /// - [`place_id`](crate::types::builders::GeocodeResultItemBuilder::place_id)
@@ -451,27 +555,35 @@ impl GeocodeResultItemBuilder {
             time_zone: self.time_zone,
             political_view: self.political_view,
             match_scores: self.match_scores,
+            parsed_query: self.parsed_query,
+            intersections: self.intersections,
+            main_address: self.main_address,
+            secondary_addresses: self.secondary_addresses,
         })
     }
 }
 impl ::std::fmt::Debug for GeocodeResultItemBuilder {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("GeocodeResultItemBuilder");
-        formatter.field("place_id", &self.place_id);
-        formatter.field("place_type", &self.place_type);
-        formatter.field("title", &self.title);
+        formatter.field("place_id", &"*** Sensitive Data Redacted ***");
+        formatter.field("place_type", &"*** Sensitive Data Redacted ***");
+        formatter.field("title", &"*** Sensitive Data Redacted ***");
         formatter.field("address", &self.address);
-        formatter.field("address_number_corrected", &self.address_number_corrected);
+        formatter.field("address_number_corrected", &"*** Sensitive Data Redacted ***");
         formatter.field("postal_code_details", &self.postal_code_details);
         formatter.field("position", &"*** Sensitive Data Redacted ***");
-        formatter.field("distance", &self.distance);
+        formatter.field("distance", &"*** Sensitive Data Redacted ***");
         formatter.field("map_view", &"*** Sensitive Data Redacted ***");
         formatter.field("categories", &self.categories);
         formatter.field("food_types", &self.food_types);
         formatter.field("access_points", &self.access_points);
         formatter.field("time_zone", &self.time_zone);
-        formatter.field("political_view", &self.political_view);
+        formatter.field("political_view", &"*** Sensitive Data Redacted ***");
         formatter.field("match_scores", &self.match_scores);
+        formatter.field("parsed_query", &self.parsed_query);
+        formatter.field("intersections", &self.intersections);
+        formatter.field("main_address", &self.main_address);
+        formatter.field("secondary_addresses", &self.secondary_addresses);
         formatter.finish()
     }
 }

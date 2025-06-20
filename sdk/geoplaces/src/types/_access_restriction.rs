@@ -2,7 +2,7 @@
 
 /// <p>Indicates if the access location is restricted. Index correlates to that of an access point and indicates if access through this point has some form of restriction.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct AccessRestriction {
     /// <p>The restriction.</p>
     pub restricted: ::std::option::Option<bool>,
@@ -21,6 +21,14 @@ impl AccessRestriction {
         self.categories.as_deref().unwrap_or_default()
     }
 }
+impl ::std::fmt::Debug for AccessRestriction {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("AccessRestriction");
+        formatter.field("restricted", &"*** Sensitive Data Redacted ***");
+        formatter.field("categories", &self.categories);
+        formatter.finish()
+    }
+}
 impl AccessRestriction {
     /// Creates a new builder-style object to manufacture [`AccessRestriction`](crate::types::AccessRestriction).
     pub fn builder() -> crate::types::builders::AccessRestrictionBuilder {
@@ -29,7 +37,7 @@ impl AccessRestriction {
 }
 
 /// A builder for [`AccessRestriction`](crate::types::AccessRestriction).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct AccessRestrictionBuilder {
     pub(crate) restricted: ::std::option::Option<bool>,
@@ -76,5 +84,13 @@ impl AccessRestrictionBuilder {
             restricted: self.restricted,
             categories: self.categories,
         }
+    }
+}
+impl ::std::fmt::Debug for AccessRestrictionBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("AccessRestrictionBuilder");
+        formatter.field("restricted", &"*** Sensitive Data Redacted ***");
+        formatter.field("categories", &self.categories);
+        formatter.finish()
     }
 }

@@ -22,7 +22,7 @@ impl crate::operation::get_place::builders::GetPlaceInputBuilder {
 }
 /// Fluent builder constructing a request to `GetPlace`.
 ///
-/// <p>Finds a place by its unique ID. A <code>PlaceId</code> is returned by other place operations.</p>
+/// <p><code>GetPlace</code> finds a place by its unique ID. A <code>PlaceId</code> is returned by other place operations.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetPlaceFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -160,17 +160,23 @@ impl GetPlaceFluentBuilder {
     pub fn get_political_view(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_political_view()
     }
-    /// <p>Indicates if the results will be stored. Defaults to <code>SingleUse</code>, if left empty.</p>
+    /// <p>Indicates if the results will be stored. Defaults to <code>SingleUse</code>, if left empty.</p><note>
+    /// <p>Storing the response of an GetPlace query is required to comply with service terms, but charged at a higher cost per request. Please review the <a href="https://aws.amazon.com/location/sla/">user agreement</a> and <a href="https://aws.amazon.com/location/pricing/">service pricing structure</a> to determine the correct setting for your use case.</p>
+    /// </note>
     pub fn intended_use(mut self, input: crate::types::GetPlaceIntendedUse) -> Self {
         self.inner = self.inner.intended_use(input);
         self
     }
-    /// <p>Indicates if the results will be stored. Defaults to <code>SingleUse</code>, if left empty.</p>
+    /// <p>Indicates if the results will be stored. Defaults to <code>SingleUse</code>, if left empty.</p><note>
+    /// <p>Storing the response of an GetPlace query is required to comply with service terms, but charged at a higher cost per request. Please review the <a href="https://aws.amazon.com/location/sla/">user agreement</a> and <a href="https://aws.amazon.com/location/pricing/">service pricing structure</a> to determine the correct setting for your use case.</p>
+    /// </note>
     pub fn set_intended_use(mut self, input: ::std::option::Option<crate::types::GetPlaceIntendedUse>) -> Self {
         self.inner = self.inner.set_intended_use(input);
         self
     }
-    /// <p>Indicates if the results will be stored. Defaults to <code>SingleUse</code>, if left empty.</p>
+    /// <p>Indicates if the results will be stored. Defaults to <code>SingleUse</code>, if left empty.</p><note>
+    /// <p>Storing the response of an GetPlace query is required to comply with service terms, but charged at a higher cost per request. Please review the <a href="https://aws.amazon.com/location/sla/">user agreement</a> and <a href="https://aws.amazon.com/location/pricing/">service pricing structure</a> to determine the correct setting for your use case.</p>
+    /// </note>
     pub fn get_intended_use(&self) -> &::std::option::Option<crate::types::GetPlaceIntendedUse> {
         self.inner.get_intended_use()
     }
