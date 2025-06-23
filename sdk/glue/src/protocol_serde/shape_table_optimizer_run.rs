@@ -46,6 +46,13 @@ where
                         "compactionMetrics" => {
                             builder = builder.set_compaction_metrics(crate::protocol_serde::shape_compaction_metrics::de_compaction_metrics(tokens)?);
                         }
+                        "compactionStrategy" => {
+                            builder = builder.set_compaction_strategy(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CompactionStrategy::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
                         "retentionMetrics" => {
                             builder = builder.set_retention_metrics(crate::protocol_serde::shape_retention_metrics::de_retention_metrics(tokens)?);
                         }

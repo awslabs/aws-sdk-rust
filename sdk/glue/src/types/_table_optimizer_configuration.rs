@@ -11,6 +11,8 @@ pub struct TableOptimizerConfiguration {
     /// <p>A <code>TableOptimizerVpcConfiguration</code> object representing the VPC configuration for a table optimizer.</p>
     /// <p>This configuration is necessary to perform optimization on tables that are in a customer VPC.</p>
     pub vpc_configuration: ::std::option::Option<crate::types::TableOptimizerVpcConfiguration>,
+    /// <p>The configuration for a compaction optimizer. This configuration defines how data files in your table will be compacted to improve query performance and reduce storage costs.</p>
+    pub compaction_configuration: ::std::option::Option<crate::types::CompactionConfiguration>,
     /// <p>The configuration for a snapshot retention optimizer.</p>
     pub retention_configuration: ::std::option::Option<crate::types::RetentionConfiguration>,
     /// <p>The configuration for an orphan file deletion optimizer.</p>
@@ -29,6 +31,10 @@ impl TableOptimizerConfiguration {
     /// <p>This configuration is necessary to perform optimization on tables that are in a customer VPC.</p>
     pub fn vpc_configuration(&self) -> ::std::option::Option<&crate::types::TableOptimizerVpcConfiguration> {
         self.vpc_configuration.as_ref()
+    }
+    /// <p>The configuration for a compaction optimizer. This configuration defines how data files in your table will be compacted to improve query performance and reduce storage costs.</p>
+    pub fn compaction_configuration(&self) -> ::std::option::Option<&crate::types::CompactionConfiguration> {
+        self.compaction_configuration.as_ref()
     }
     /// <p>The configuration for a snapshot retention optimizer.</p>
     pub fn retention_configuration(&self) -> ::std::option::Option<&crate::types::RetentionConfiguration> {
@@ -53,6 +59,7 @@ pub struct TableOptimizerConfigurationBuilder {
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) enabled: ::std::option::Option<bool>,
     pub(crate) vpc_configuration: ::std::option::Option<crate::types::TableOptimizerVpcConfiguration>,
+    pub(crate) compaction_configuration: ::std::option::Option<crate::types::CompactionConfiguration>,
     pub(crate) retention_configuration: ::std::option::Option<crate::types::RetentionConfiguration>,
     pub(crate) orphan_file_deletion_configuration: ::std::option::Option<crate::types::OrphanFileDeletionConfiguration>,
 }
@@ -102,6 +109,20 @@ impl TableOptimizerConfigurationBuilder {
     pub fn get_vpc_configuration(&self) -> &::std::option::Option<crate::types::TableOptimizerVpcConfiguration> {
         &self.vpc_configuration
     }
+    /// <p>The configuration for a compaction optimizer. This configuration defines how data files in your table will be compacted to improve query performance and reduce storage costs.</p>
+    pub fn compaction_configuration(mut self, input: crate::types::CompactionConfiguration) -> Self {
+        self.compaction_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The configuration for a compaction optimizer. This configuration defines how data files in your table will be compacted to improve query performance and reduce storage costs.</p>
+    pub fn set_compaction_configuration(mut self, input: ::std::option::Option<crate::types::CompactionConfiguration>) -> Self {
+        self.compaction_configuration = input;
+        self
+    }
+    /// <p>The configuration for a compaction optimizer. This configuration defines how data files in your table will be compacted to improve query performance and reduce storage costs.</p>
+    pub fn get_compaction_configuration(&self) -> &::std::option::Option<crate::types::CompactionConfiguration> {
+        &self.compaction_configuration
+    }
     /// <p>The configuration for a snapshot retention optimizer.</p>
     pub fn retention_configuration(mut self, input: crate::types::RetentionConfiguration) -> Self {
         self.retention_configuration = ::std::option::Option::Some(input);
@@ -136,6 +157,7 @@ impl TableOptimizerConfigurationBuilder {
             role_arn: self.role_arn,
             enabled: self.enabled,
             vpc_configuration: self.vpc_configuration,
+            compaction_configuration: self.compaction_configuration,
             retention_configuration: self.retention_configuration,
             orphan_file_deletion_configuration: self.orphan_file_deletion_configuration,
         }

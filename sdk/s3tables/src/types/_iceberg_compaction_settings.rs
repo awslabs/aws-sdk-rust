@@ -6,11 +6,17 @@
 pub struct IcebergCompactionSettings {
     /// <p>The target file size for the table in MB.</p>
     pub target_file_size_mb: ::std::option::Option<i32>,
+    /// <p>The compaction strategy to use for the table. This determines how files are selected and combined during compaction operations.</p>
+    pub strategy: ::std::option::Option<crate::types::IcebergCompactionStrategy>,
 }
 impl IcebergCompactionSettings {
     /// <p>The target file size for the table in MB.</p>
     pub fn target_file_size_mb(&self) -> ::std::option::Option<i32> {
         self.target_file_size_mb
+    }
+    /// <p>The compaction strategy to use for the table. This determines how files are selected and combined during compaction operations.</p>
+    pub fn strategy(&self) -> ::std::option::Option<&crate::types::IcebergCompactionStrategy> {
+        self.strategy.as_ref()
     }
 }
 impl IcebergCompactionSettings {
@@ -25,6 +31,7 @@ impl IcebergCompactionSettings {
 #[non_exhaustive]
 pub struct IcebergCompactionSettingsBuilder {
     pub(crate) target_file_size_mb: ::std::option::Option<i32>,
+    pub(crate) strategy: ::std::option::Option<crate::types::IcebergCompactionStrategy>,
 }
 impl IcebergCompactionSettingsBuilder {
     /// <p>The target file size for the table in MB.</p>
@@ -41,10 +48,25 @@ impl IcebergCompactionSettingsBuilder {
     pub fn get_target_file_size_mb(&self) -> &::std::option::Option<i32> {
         &self.target_file_size_mb
     }
+    /// <p>The compaction strategy to use for the table. This determines how files are selected and combined during compaction operations.</p>
+    pub fn strategy(mut self, input: crate::types::IcebergCompactionStrategy) -> Self {
+        self.strategy = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The compaction strategy to use for the table. This determines how files are selected and combined during compaction operations.</p>
+    pub fn set_strategy(mut self, input: ::std::option::Option<crate::types::IcebergCompactionStrategy>) -> Self {
+        self.strategy = input;
+        self
+    }
+    /// <p>The compaction strategy to use for the table. This determines how files are selected and combined during compaction operations.</p>
+    pub fn get_strategy(&self) -> &::std::option::Option<crate::types::IcebergCompactionStrategy> {
+        &self.strategy
+    }
     /// Consumes the builder and constructs a [`IcebergCompactionSettings`](crate::types::IcebergCompactionSettings).
     pub fn build(self) -> crate::types::IcebergCompactionSettings {
         crate::types::IcebergCompactionSettings {
             target_file_size_mb: self.target_file_size_mb,
+            strategy: self.strategy,
         }
     }
 }

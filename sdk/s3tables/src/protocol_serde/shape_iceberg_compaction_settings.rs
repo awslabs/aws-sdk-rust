@@ -9,6 +9,9 @@ pub fn ser_iceberg_compaction_settings(
             ::aws_smithy_types::Number::NegInt((*var_1).into()),
         );
     }
+    if let Some(var_2) = &input.strategy {
+        object.key("strategy").string(var_2.as_str());
+    }
     Ok(())
 }
 
@@ -31,6 +34,13 @@ where
                             builder = builder.set_target_file_size_mb(
                                 ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
                                     .map(i32::try_from)
+                                    .transpose()?,
+                            );
+                        }
+                        "strategy" => {
+                            builder = builder.set_strategy(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::IcebergCompactionStrategy::from(u.as_ref())))
                                     .transpose()?,
                             );
                         }

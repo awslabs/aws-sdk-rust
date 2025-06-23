@@ -1030,9 +1030,9 @@ model_hash = '7a8bc11f1498fcf202e15dad74c422522285ca4c8f290e50f7d08d42f31ccf26'
 
 [crates.aws-sdk-glue]
 category = 'AwsSdk'
-version = '1.101.0'
-source_hash = '4d02fd50992e2d0ac5972b0b68ca967ff1bf6287f234c0c77b6f950a2cfa7ebe'
-model_hash = 'ad99e36bd5420199dcf0c767c6fb2fa204e485c6b5697498db2a29e52374748e'
+version = '1.102.0'
+source_hash = 'a95b4003f27d172922fbb68e53cd1a03e0b84ff8b2ccfc7ed352bed76faae23c'
+model_hash = '4478c91c1e377b2c9726ac8c6038bc79fd3edaa8dfa11bfe3e764bef47a2a953'
 
 [crates.aws-sdk-grafana]
 category = 'AwsSdk'
@@ -2038,9 +2038,9 @@ model_hash = 'f9e4b75c464276658ad02e6fb32ece96389662d9e55fe7db3a5a057bd9fb5b03'
 
 [crates.aws-sdk-s3tables]
 category = 'AwsSdk'
-version = '1.26.0'
-source_hash = '1af02402cf17ac8bf4bc74eba355f5650169e8cf1a4cfb40c09b002216cf1aa0'
-model_hash = '710c60a48c0821b2f55d63ac837b6df50932e8f40849f59e19b38b3d082bc75f'
+version = '1.27.0'
+source_hash = '043984139a4f658c9f8af41802ee97658c2c5075ba1f66db7f599ecd661a9b07'
+model_hash = 'd6ec818a2a024ed1a736643f74a195456c4d24a830ff18e84c3f52ab494c9476'
 
 [crates.aws-sdk-sagemaker]
 category = 'AwsSdk'
@@ -2462,6 +2462,12 @@ version = '1.87.0'
 source_hash = 'd94e6338a3d28724a124f124e427300a146ce17498205f7d06c82b69c25536e3'
 model_hash = '0195820a8ad8416dd99e38b46c7935b0795e6093a1fbb3c4426a7748f2eba0a6'
 
+[crates.aws-sdk-workspacesinstances]
+category = 'AwsSdk'
+version = '1.0.0'
+source_hash = '0bea622cfc7b54f02d34b3f23035e04f211e3eb912330f6b75d67da3894381c8'
+model_hash = 'ea0c0698700b094af579048beb00d0935acb8d3a22bd40b92f940ee8c925d4f5'
+
 [crates.aws-sdk-workspacesthinclient]
 category = 'AwsSdk'
 version = '1.77.0'
@@ -2639,13 +2645,7 @@ source_hash = '13cfa390989f34887585e1e7a771064dde887d5e73f901339aae0a6729b6b2d9'
 category = 'AwsRuntime'
 version = '0.0.0'
 source_hash = '5c1dc8063039c8006d6bd5e1c58625107ce4afb47ee9dba9fdd9788b14e534de'
-
-[release]
-tag = 'release-2025-06-20'
-
 [release.crates]
-aws-sdk-bedrock = '1.99.0'
-aws-sdk-ecs = '1.85.0'
-aws-sdk-geoplaces = '1.27.0'
-aws-sdk-glue = '1.101.0'
-aws-sdk-mediaconvert = '1.91.0'
+aws-sdk-glue = '1.102.0'
+aws-sdk-s3tables = '1.27.0'
+aws-sdk-workspacesinstances = '1.0.0'

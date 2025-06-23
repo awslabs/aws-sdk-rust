@@ -1631,6 +1631,8 @@ pub(crate) mod shape_column_statistics_data;
 
 pub(crate) mod shape_column_statistics_error;
 
+pub(crate) mod shape_compaction_configuration;
+
 pub(crate) mod shape_compute_environment_configuration;
 
 pub(crate) mod shape_compute_environment_list;
@@ -2050,6 +2052,8 @@ pub(crate) mod shape_glue_schema;
 pub(crate) mod shape_glue_table_additional_options;
 
 pub(crate) mod shape_hudi_target_list;
+
+pub(crate) mod shape_iceberg_compaction_configuration;
 
 pub(crate) mod shape_iceberg_orphan_file_deletion_configuration;
 

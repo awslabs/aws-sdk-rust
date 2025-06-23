@@ -47,6 +47,12 @@ pub use crate::types::_retention_configuration::RetentionConfiguration;
 
 pub use crate::types::_iceberg_retention_configuration::IcebergRetentionConfiguration;
 
+pub use crate::types::_compaction_configuration::CompactionConfiguration;
+
+pub use crate::types::_iceberg_compaction_configuration::IcebergCompactionConfiguration;
+
+pub use crate::types::_compaction_strategy::CompactionStrategy;
+
 pub use crate::types::_table_optimizer_vpc_configuration::TableOptimizerVpcConfiguration;
 
 pub use crate::types::_table_optimizer_type::TableOptimizerType;
@@ -1143,7 +1149,11 @@ mod _column_statistics_task_settings;
 
 mod _column_statistics_type;
 
+mod _compaction_configuration;
+
 mod _compaction_metrics;
+
+mod _compaction_strategy;
 
 mod _comparator;
 
@@ -1436,6 +1446,8 @@ mod _hudi_target;
 mod _hudi_target_compression_type;
 
 mod _hyper_target_compression_type;
+
+mod _iceberg_compaction_configuration;
 
 mod _iceberg_compaction_metrics;
 

@@ -7,6 +7,8 @@ pub use crate::types::_iceberg_snapshot_management_settings::IcebergSnapshotMana
 
 pub use crate::types::_iceberg_compaction_settings::IcebergCompactionSettings;
 
+pub use crate::types::_iceberg_compaction_strategy::IcebergCompactionStrategy;
+
 pub use crate::types::_maintenance_status::MaintenanceStatus;
 
 pub use crate::types::_table_maintenance_type::TableMaintenanceType;
@@ -50,6 +52,8 @@ pub use crate::types::_namespace_summary::NamespaceSummary;
 mod _encryption_configuration;
 
 mod _iceberg_compaction_settings;
+
+mod _iceberg_compaction_strategy;
 
 mod _iceberg_metadata;
 

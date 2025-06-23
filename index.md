@@ -356,6 +356,7 @@ The AWS SDK for Rust contains one crate for each AWS service, as well as [aws-co
 | Amazon WorkSpaces | [aws-sdk-workspaces](https://crates.io/crates/aws-sdk-workspaces) ([docs](https://docs.rs/aws-sdk-workspaces)) |
 | Amazon WorkSpaces Thin Client | [aws-sdk-workspacesthinclient](https://crates.io/crates/aws-sdk-workspacesthinclient) ([docs](https://docs.rs/aws-sdk-workspacesthinclient)) |
 | Amazon WorkSpaces Web | [aws-sdk-workspacesweb](https://crates.io/crates/aws-sdk-workspacesweb) ([docs](https://docs.rs/aws-sdk-workspacesweb)) |
+| Amazon Workspaces Instances | [aws-sdk-workspacesinstances](https://crates.io/crates/aws-sdk-workspacesinstances) ([docs](https://docs.rs/aws-sdk-workspacesinstances)) |
 | AmazonApiGatewayManagementApi | [aws-sdk-apigatewaymanagement](https://crates.io/crates/aws-sdk-apigatewaymanagement) ([docs](https://docs.rs/aws-sdk-apigatewaymanagement)) |
 | AmazonApiGatewayV2 | [aws-sdk-apigatewayv2](https://crates.io/crates/aws-sdk-apigatewayv2) ([docs](https://docs.rs/aws-sdk-apigatewayv2)) |
 | AmazonConnectCampaignService | [aws-sdk-connectcampaigns](https://crates.io/crates/aws-sdk-connectcampaigns) ([docs](https://docs.rs/aws-sdk-connectcampaigns)) |

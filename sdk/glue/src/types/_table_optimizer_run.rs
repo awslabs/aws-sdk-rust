@@ -18,6 +18,16 @@ pub struct TableOptimizerRun {
     pub error: ::std::option::Option<::std::string::String>,
     /// <p>A <code>CompactionMetrics</code> object containing metrics for the optimizer run.</p>
     pub compaction_metrics: ::std::option::Option<crate::types::CompactionMetrics>,
+    /// <p>The strategy used for the compaction run. Indicates which algorithm was applied to determine how files were selected and combined during the compaction process. Valid values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>binpack</code>: Combines small files into larger files, typically targeting sizes over 100MB, while applying any pending deletes. This is the recommended compaction strategy for most use cases.</p></li>
+    /// <li>
+    /// <p><code>sort</code>: Organizes data based on specified columns which are sorted hierarchically during compaction, improving query performance for filtered operations. This strategy is recommended when your queries frequently filter on specific columns. To use this strategy, you must first define a sort order in your Iceberg table properties using the <code>sort_order</code> table property.</p></li>
+    /// <li>
+    /// <p><code>z-order</code>: Optimizes data organization by blending multiple attributes into a single scalar value that can be used for sorting, allowing efficient querying across multiple dimensions. This strategy is recommended when you need to query data across multiple dimensions simultaneously. To use this strategy, you must first define a sort order in your Iceberg table properties using the <code>sort_order</code> table property.</p></li>
+    /// </ul>
+    pub compaction_strategy: ::std::option::Option<crate::types::CompactionStrategy>,
     /// <p>A <code>RetentionMetrics</code> object containing metrics for the optimizer run.</p>
     pub retention_metrics: ::std::option::Option<crate::types::RetentionMetrics>,
     /// <p>An <code>OrphanFileDeletionMetrics</code> object containing metrics for the optimizer run.</p>
@@ -50,6 +60,18 @@ impl TableOptimizerRun {
     pub fn compaction_metrics(&self) -> ::std::option::Option<&crate::types::CompactionMetrics> {
         self.compaction_metrics.as_ref()
     }
+    /// <p>The strategy used for the compaction run. Indicates which algorithm was applied to determine how files were selected and combined during the compaction process. Valid values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>binpack</code>: Combines small files into larger files, typically targeting sizes over 100MB, while applying any pending deletes. This is the recommended compaction strategy for most use cases.</p></li>
+    /// <li>
+    /// <p><code>sort</code>: Organizes data based on specified columns which are sorted hierarchically during compaction, improving query performance for filtered operations. This strategy is recommended when your queries frequently filter on specific columns. To use this strategy, you must first define a sort order in your Iceberg table properties using the <code>sort_order</code> table property.</p></li>
+    /// <li>
+    /// <p><code>z-order</code>: Optimizes data organization by blending multiple attributes into a single scalar value that can be used for sorting, allowing efficient querying across multiple dimensions. This strategy is recommended when you need to query data across multiple dimensions simultaneously. To use this strategy, you must first define a sort order in your Iceberg table properties using the <code>sort_order</code> table property.</p></li>
+    /// </ul>
+    pub fn compaction_strategy(&self) -> ::std::option::Option<&crate::types::CompactionStrategy> {
+        self.compaction_strategy.as_ref()
+    }
     /// <p>A <code>RetentionMetrics</code> object containing metrics for the optimizer run.</p>
     pub fn retention_metrics(&self) -> ::std::option::Option<&crate::types::RetentionMetrics> {
         self.retention_metrics.as_ref()
@@ -76,6 +98,7 @@ pub struct TableOptimizerRunBuilder {
     pub(crate) metrics: ::std::option::Option<crate::types::RunMetrics>,
     pub(crate) error: ::std::option::Option<::std::string::String>,
     pub(crate) compaction_metrics: ::std::option::Option<crate::types::CompactionMetrics>,
+    pub(crate) compaction_strategy: ::std::option::Option<crate::types::CompactionStrategy>,
     pub(crate) retention_metrics: ::std::option::Option<crate::types::RetentionMetrics>,
     pub(crate) orphan_file_deletion_metrics: ::std::option::Option<crate::types::OrphanFileDeletionMetrics>,
 }
@@ -170,6 +193,44 @@ impl TableOptimizerRunBuilder {
     pub fn get_compaction_metrics(&self) -> &::std::option::Option<crate::types::CompactionMetrics> {
         &self.compaction_metrics
     }
+    /// <p>The strategy used for the compaction run. Indicates which algorithm was applied to determine how files were selected and combined during the compaction process. Valid values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>binpack</code>: Combines small files into larger files, typically targeting sizes over 100MB, while applying any pending deletes. This is the recommended compaction strategy for most use cases.</p></li>
+    /// <li>
+    /// <p><code>sort</code>: Organizes data based on specified columns which are sorted hierarchically during compaction, improving query performance for filtered operations. This strategy is recommended when your queries frequently filter on specific columns. To use this strategy, you must first define a sort order in your Iceberg table properties using the <code>sort_order</code> table property.</p></li>
+    /// <li>
+    /// <p><code>z-order</code>: Optimizes data organization by blending multiple attributes into a single scalar value that can be used for sorting, allowing efficient querying across multiple dimensions. This strategy is recommended when you need to query data across multiple dimensions simultaneously. To use this strategy, you must first define a sort order in your Iceberg table properties using the <code>sort_order</code> table property.</p></li>
+    /// </ul>
+    pub fn compaction_strategy(mut self, input: crate::types::CompactionStrategy) -> Self {
+        self.compaction_strategy = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The strategy used for the compaction run. Indicates which algorithm was applied to determine how files were selected and combined during the compaction process. Valid values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>binpack</code>: Combines small files into larger files, typically targeting sizes over 100MB, while applying any pending deletes. This is the recommended compaction strategy for most use cases.</p></li>
+    /// <li>
+    /// <p><code>sort</code>: Organizes data based on specified columns which are sorted hierarchically during compaction, improving query performance for filtered operations. This strategy is recommended when your queries frequently filter on specific columns. To use this strategy, you must first define a sort order in your Iceberg table properties using the <code>sort_order</code> table property.</p></li>
+    /// <li>
+    /// <p><code>z-order</code>: Optimizes data organization by blending multiple attributes into a single scalar value that can be used for sorting, allowing efficient querying across multiple dimensions. This strategy is recommended when you need to query data across multiple dimensions simultaneously. To use this strategy, you must first define a sort order in your Iceberg table properties using the <code>sort_order</code> table property.</p></li>
+    /// </ul>
+    pub fn set_compaction_strategy(mut self, input: ::std::option::Option<crate::types::CompactionStrategy>) -> Self {
+        self.compaction_strategy = input;
+        self
+    }
+    /// <p>The strategy used for the compaction run. Indicates which algorithm was applied to determine how files were selected and combined during the compaction process. Valid values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>binpack</code>: Combines small files into larger files, typically targeting sizes over 100MB, while applying any pending deletes. This is the recommended compaction strategy for most use cases.</p></li>
+    /// <li>
+    /// <p><code>sort</code>: Organizes data based on specified columns which are sorted hierarchically during compaction, improving query performance for filtered operations. This strategy is recommended when your queries frequently filter on specific columns. To use this strategy, you must first define a sort order in your Iceberg table properties using the <code>sort_order</code> table property.</p></li>
+    /// <li>
+    /// <p><code>z-order</code>: Optimizes data organization by blending multiple attributes into a single scalar value that can be used for sorting, allowing efficient querying across multiple dimensions. This strategy is recommended when you need to query data across multiple dimensions simultaneously. To use this strategy, you must first define a sort order in your Iceberg table properties using the <code>sort_order</code> table property.</p></li>
+    /// </ul>
+    pub fn get_compaction_strategy(&self) -> &::std::option::Option<crate::types::CompactionStrategy> {
+        &self.compaction_strategy
+    }
     /// <p>A <code>RetentionMetrics</code> object containing metrics for the optimizer run.</p>
     pub fn retention_metrics(mut self, input: crate::types::RetentionMetrics) -> Self {
         self.retention_metrics = ::std::option::Option::Some(input);
@@ -207,6 +268,7 @@ impl TableOptimizerRunBuilder {
             metrics: self.metrics,
             error: self.error,
             compaction_metrics: self.compaction_metrics,
+            compaction_strategy: self.compaction_strategy,
             retention_metrics: self.retention_metrics,
             orphan_file_deletion_metrics: self.orphan_file_deletion_metrics,
         }

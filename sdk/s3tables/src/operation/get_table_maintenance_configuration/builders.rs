@@ -28,7 +28,12 @@ impl crate::operation::get_table_maintenance_configuration::builders::GetTableMa
 /// Permissions
 /// </dt>
 /// <dd>
-/// <p>You must have the <code>s3tables:GetTableMaintenanceConfiguration</code> permission to use this operation.</p>
+/// <ul>
+/// <li>
+/// <p>You must have the <code>s3tables:GetTableMaintenanceConfiguration</code> permission to use this operation.</p></li>
+/// <li>
+/// <p>You must have the <code>s3tables:GetTableData</code> permission to use set the compaction strategy to <code>sort</code> or <code>zorder</code>.</p></li>
+/// </ul>
 /// </dd>
 /// </dl>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

@@ -31,6 +31,10 @@ pub use crate::types::_retention_configuration::RetentionConfigurationBuilder;
 
 pub use crate::types::_iceberg_retention_configuration::IcebergRetentionConfigurationBuilder;
 
+pub use crate::types::_compaction_configuration::CompactionConfigurationBuilder;
+
+pub use crate::types::_iceberg_compaction_configuration::IcebergCompactionConfigurationBuilder;
+
 pub use crate::types::_table_input::TableInputBuilder;
 
 pub use crate::types::_view_definition_input::ViewDefinitionInputBuilder;
