@@ -193,6 +193,10 @@ pub use crate::types::_scaling_adjustment_type::ScalingAdjustmentType;
 
 pub use crate::types::_location_model::LocationModel;
 
+pub use crate::types::_ping_beacon::PingBeacon;
+
+pub use crate::types::_udp_endpoint::UdpEndpoint;
+
 pub use crate::types::_location_filter::LocationFilter;
 
 pub use crate::types::_sort_order::SortOrder;
@@ -509,6 +513,8 @@ mod _metric_name;
 
 mod _operating_system;
 
+mod _ping_beacon;
+
 mod _placed_player_session;
 
 mod _placement_fallback_strategy;
@@ -568,6 +574,8 @@ mod _target_configuration;
 mod _target_tracking_configuration;
 
 mod _termination_mode;
+
+mod _udp_endpoint;
 
 mod _vpc_peering_authorization;
 

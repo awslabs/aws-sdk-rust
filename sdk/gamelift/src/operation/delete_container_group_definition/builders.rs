@@ -33,7 +33,7 @@ impl crate::operation::delete_container_group_definition::builders::DeleteContai
 /// <p>Keep the newest versions and delete all older versions. Specify the container group definition name and the number of versions to retain. For example, set <code>VersionCountToRetain</code> to 5 to delete all but the five most recent versions.</p></li>
 /// </ul>
 /// <p><b>Result</b></p>
-/// <p>If successful, Amazon GameLift removes the container group definition versions that you request deletion for. This request will fail for any requested versions if the following is true:</p>
+/// <p>If successful, Amazon GameLift Servers removes the container group definition versions that you request deletion for. This request will fail for any requested versions if the following is true:</p>
 /// <ul>
 /// <li>
 /// <p>If the version is being used in an active fleet</p></li>

@@ -6,17 +6,17 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ContainerGroupDefinition {
-    /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to an Amazon GameLift <code>ContainerGroupDefinition</code> resource. It uniquely identifies the resource across all Amazon Web Services Regions. Format is <code>arn:aws:gamelift:\[region\]::containergroupdefinition/\[container group definition name\]:\[version\]</code>.</p>
+    /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to an Amazon GameLift Servers <code>ContainerGroupDefinition</code> resource. It uniquely identifies the resource across all Amazon Web Services Regions. Format is <code>arn:aws:gamelift:\[region\]::containergroupdefinition/\[container group definition name\]:\[version\]</code>.</p>
     pub container_group_definition_arn: ::std::option::Option<::std::string::String>,
     /// <p>A time stamp indicating when this data object was created. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The platform that all containers in the container group definition run on.</p><note>
-    /// <p>Amazon Linux 2 (AL2) will reach end of support on 6/30/2025. See more details in the <a href="https://aws.amazon.com/amazon-linux-2/faqs/">Amazon Linux 2 FAQs</a>. For game servers that are hosted on AL2 and use server SDK version 4.x for Amazon GameLift, first update the game server build to server SDK 5.x, and then deploy to AL2023 instances. See <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-serversdk5-migration.html"> Migrate to server SDK version 5.</a></p>
+    /// <p>Amazon Linux 2 (AL2) will reach end of support on 6/30/2025. See more details in the <a href="http://aws.amazon.com/amazon-linux-2/faqs/">Amazon Linux 2 FAQs</a>. For game servers that are hosted on AL2 and use server SDK version 4.x for Amazon GameLift Servers, first update the game server build to server SDK 5.x, and then deploy to AL2023 instances. See <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-serversdk5-migration.html"> Migrate to server SDK version 5.</a></p>
     /// </note>
     pub operating_system: ::std::option::Option<crate::types::ContainerOperatingSystem>,
     /// <p>A descriptive identifier for the container group definition. The name value is unique in an Amazon Web Services Region.</p>
     pub name: ::std::option::Option<::std::string::String>,
-    /// <p>The type of container group. Container group type determines how Amazon GameLift deploys the container group on each fleet instance.</p>
+    /// <p>The type of container group. Container group type determines how Amazon GameLift Servers deploys the container group on each fleet instance.</p>
     pub container_group_type: ::std::option::Option<crate::types::ContainerGroupType>,
     /// <p>The amount of memory (in MiB) on a fleet instance to allocate for the container group. All containers in the group share these resources.</p>
     /// <p>You can set a limit for each container definition in the group. If individual containers have limits, this total value must be greater than any individual container's memory limit.</p>
@@ -34,30 +34,30 @@ pub struct ContainerGroupDefinition {
     /// <p>Current status of the container group definition resource. Values include:</p>
     /// <ul>
     /// <li>
-    /// <p><code>COPYING</code> -- Amazon GameLift is in the process of making copies of all container images that are defined in the group. While in this state, the resource can't be used to create a container fleet.</p></li>
+    /// <p><code>COPYING</code> -- Amazon GameLift Servers is in the process of making copies of all container images that are defined in the group. While in this state, the resource can't be used to create a container fleet.</p></li>
     /// <li>
-    /// <p><code>READY</code> -- Amazon GameLift has copied the registry images for all containers that are defined in the group. You can use a container group definition in this status to create a container fleet.</p></li>
+    /// <p><code>READY</code> -- Amazon GameLift Servers has copied the registry images for all containers that are defined in the group. You can use a container group definition in this status to create a container fleet.</p></li>
     /// <li>
-    /// <p><code>FAILED</code> -- Amazon GameLift failed to create a valid container group definition resource. For more details on the cause of the failure, see <code>StatusReason</code>. A container group definition resource in failed status will be deleted within a few minutes.</p></li>
+    /// <p><code>FAILED</code> -- Amazon GameLift Servers failed to create a valid container group definition resource. For more details on the cause of the failure, see <code>StatusReason</code>. A container group definition resource in failed status will be deleted within a few minutes.</p></li>
     /// </ul>
     pub status: ::std::option::Option<crate::types::ContainerGroupDefinitionStatus>,
     /// <p>Additional information about a container group definition that's in <code>FAILED</code> status. Possible reasons include:</p>
     /// <ul>
     /// <li>
-    /// <p>An internal issue prevented Amazon GameLift from creating the container group definition resource. Delete the failed resource and call <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateContainerGroupDefinition.html">CreateContainerGroupDefinition</a>again.</p></li>
+    /// <p>An internal issue prevented Amazon GameLift Servers from creating the container group definition resource. Delete the failed resource and call <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateContainerGroupDefinition.html">CreateContainerGroupDefinition</a>again.</p></li>
     /// <li>
-    /// <p>An access-denied message means that you don't have permissions to access the container image on ECR. See <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-iam-policy-examples.html.html"> IAM permission examples</a> for help setting up required IAM permissions for Amazon GameLift.</p></li>
+    /// <p>An access-denied message means that you don't have permissions to access the container image on ECR. See <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-iam-policy-examples.html.html"> IAM permission examples</a> for help setting up required IAM permissions for Amazon GameLift Servers.</p></li>
     /// <li>
     /// <p>The <code>ImageUri</code> value for at least one of the containers in the container group definition was invalid or not found in the current Amazon Web Services account.</p></li>
     /// <li>
-    /// <p>At least one of the container images referenced in the container group definition exceeds the allowed size. For size limits, see <a href="https://docs.aws.amazon.com/general/latest/gr/gamelift.html"> Amazon GameLift endpoints and quotas</a>.</p></li>
+    /// <p>At least one of the container images referenced in the container group definition exceeds the allowed size. For size limits, see <a href="https://docs.aws.amazon.com/general/latest/gr/gamelift.html"> Amazon GameLift Servers endpoints and quotas</a>.</p></li>
     /// <li>
     /// <p>At least one of the container images referenced in the container group definition uses a different operating system than the one defined for the container group.</p></li>
     /// </ul>
     pub status_reason: ::std::option::Option<::std::string::String>,
 }
 impl ContainerGroupDefinition {
-    /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to an Amazon GameLift <code>ContainerGroupDefinition</code> resource. It uniquely identifies the resource across all Amazon Web Services Regions. Format is <code>arn:aws:gamelift:\[region\]::containergroupdefinition/\[container group definition name\]:\[version\]</code>.</p>
+    /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to an Amazon GameLift Servers <code>ContainerGroupDefinition</code> resource. It uniquely identifies the resource across all Amazon Web Services Regions. Format is <code>arn:aws:gamelift:\[region\]::containergroupdefinition/\[container group definition name\]:\[version\]</code>.</p>
     pub fn container_group_definition_arn(&self) -> ::std::option::Option<&str> {
         self.container_group_definition_arn.as_deref()
     }
@@ -66,7 +66,7 @@ impl ContainerGroupDefinition {
         self.creation_time.as_ref()
     }
     /// <p>The platform that all containers in the container group definition run on.</p><note>
-    /// <p>Amazon Linux 2 (AL2) will reach end of support on 6/30/2025. See more details in the <a href="https://aws.amazon.com/amazon-linux-2/faqs/">Amazon Linux 2 FAQs</a>. For game servers that are hosted on AL2 and use server SDK version 4.x for Amazon GameLift, first update the game server build to server SDK 5.x, and then deploy to AL2023 instances. See <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-serversdk5-migration.html"> Migrate to server SDK version 5.</a></p>
+    /// <p>Amazon Linux 2 (AL2) will reach end of support on 6/30/2025. See more details in the <a href="http://aws.amazon.com/amazon-linux-2/faqs/">Amazon Linux 2 FAQs</a>. For game servers that are hosted on AL2 and use server SDK version 4.x for Amazon GameLift Servers, first update the game server build to server SDK 5.x, and then deploy to AL2023 instances. See <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-serversdk5-migration.html"> Migrate to server SDK version 5.</a></p>
     /// </note>
     pub fn operating_system(&self) -> ::std::option::Option<&crate::types::ContainerOperatingSystem> {
         self.operating_system.as_ref()
@@ -75,7 +75,7 @@ impl ContainerGroupDefinition {
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The type of container group. Container group type determines how Amazon GameLift deploys the container group on each fleet instance.</p>
+    /// <p>The type of container group. Container group type determines how Amazon GameLift Servers deploys the container group on each fleet instance.</p>
     pub fn container_group_type(&self) -> ::std::option::Option<&crate::types::ContainerGroupType> {
         self.container_group_type.as_ref()
     }
@@ -109,11 +109,11 @@ impl ContainerGroupDefinition {
     /// <p>Current status of the container group definition resource. Values include:</p>
     /// <ul>
     /// <li>
-    /// <p><code>COPYING</code> -- Amazon GameLift is in the process of making copies of all container images that are defined in the group. While in this state, the resource can't be used to create a container fleet.</p></li>
+    /// <p><code>COPYING</code> -- Amazon GameLift Servers is in the process of making copies of all container images that are defined in the group. While in this state, the resource can't be used to create a container fleet.</p></li>
     /// <li>
-    /// <p><code>READY</code> -- Amazon GameLift has copied the registry images for all containers that are defined in the group. You can use a container group definition in this status to create a container fleet.</p></li>
+    /// <p><code>READY</code> -- Amazon GameLift Servers has copied the registry images for all containers that are defined in the group. You can use a container group definition in this status to create a container fleet.</p></li>
     /// <li>
-    /// <p><code>FAILED</code> -- Amazon GameLift failed to create a valid container group definition resource. For more details on the cause of the failure, see <code>StatusReason</code>. A container group definition resource in failed status will be deleted within a few minutes.</p></li>
+    /// <p><code>FAILED</code> -- Amazon GameLift Servers failed to create a valid container group definition resource. For more details on the cause of the failure, see <code>StatusReason</code>. A container group definition resource in failed status will be deleted within a few minutes.</p></li>
     /// </ul>
     pub fn status(&self) -> ::std::option::Option<&crate::types::ContainerGroupDefinitionStatus> {
         self.status.as_ref()
@@ -121,13 +121,13 @@ impl ContainerGroupDefinition {
     /// <p>Additional information about a container group definition that's in <code>FAILED</code> status. Possible reasons include:</p>
     /// <ul>
     /// <li>
-    /// <p>An internal issue prevented Amazon GameLift from creating the container group definition resource. Delete the failed resource and call <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateContainerGroupDefinition.html">CreateContainerGroupDefinition</a>again.</p></li>
+    /// <p>An internal issue prevented Amazon GameLift Servers from creating the container group definition resource. Delete the failed resource and call <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateContainerGroupDefinition.html">CreateContainerGroupDefinition</a>again.</p></li>
     /// <li>
-    /// <p>An access-denied message means that you don't have permissions to access the container image on ECR. See <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-iam-policy-examples.html.html"> IAM permission examples</a> for help setting up required IAM permissions for Amazon GameLift.</p></li>
+    /// <p>An access-denied message means that you don't have permissions to access the container image on ECR. See <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-iam-policy-examples.html.html"> IAM permission examples</a> for help setting up required IAM permissions for Amazon GameLift Servers.</p></li>
     /// <li>
     /// <p>The <code>ImageUri</code> value for at least one of the containers in the container group definition was invalid or not found in the current Amazon Web Services account.</p></li>
     /// <li>
-    /// <p>At least one of the container images referenced in the container group definition exceeds the allowed size. For size limits, see <a href="https://docs.aws.amazon.com/general/latest/gr/gamelift.html"> Amazon GameLift endpoints and quotas</a>.</p></li>
+    /// <p>At least one of the container images referenced in the container group definition exceeds the allowed size. For size limits, see <a href="https://docs.aws.amazon.com/general/latest/gr/gamelift.html"> Amazon GameLift Servers endpoints and quotas</a>.</p></li>
     /// <li>
     /// <p>At least one of the container images referenced in the container group definition uses a different operating system than the one defined for the container group.</p></li>
     /// </ul>
@@ -161,17 +161,17 @@ pub struct ContainerGroupDefinitionBuilder {
     pub(crate) status_reason: ::std::option::Option<::std::string::String>,
 }
 impl ContainerGroupDefinitionBuilder {
-    /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to an Amazon GameLift <code>ContainerGroupDefinition</code> resource. It uniquely identifies the resource across all Amazon Web Services Regions. Format is <code>arn:aws:gamelift:\[region\]::containergroupdefinition/\[container group definition name\]:\[version\]</code>.</p>
+    /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to an Amazon GameLift Servers <code>ContainerGroupDefinition</code> resource. It uniquely identifies the resource across all Amazon Web Services Regions. Format is <code>arn:aws:gamelift:\[region\]::containergroupdefinition/\[container group definition name\]:\[version\]</code>.</p>
     pub fn container_group_definition_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.container_group_definition_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to an Amazon GameLift <code>ContainerGroupDefinition</code> resource. It uniquely identifies the resource across all Amazon Web Services Regions. Format is <code>arn:aws:gamelift:\[region\]::containergroupdefinition/\[container group definition name\]:\[version\]</code>.</p>
+    /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to an Amazon GameLift Servers <code>ContainerGroupDefinition</code> resource. It uniquely identifies the resource across all Amazon Web Services Regions. Format is <code>arn:aws:gamelift:\[region\]::containergroupdefinition/\[container group definition name\]:\[version\]</code>.</p>
     pub fn set_container_group_definition_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.container_group_definition_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to an Amazon GameLift <code>ContainerGroupDefinition</code> resource. It uniquely identifies the resource across all Amazon Web Services Regions. Format is <code>arn:aws:gamelift:\[region\]::containergroupdefinition/\[container group definition name\]:\[version\]</code>.</p>
+    /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to an Amazon GameLift Servers <code>ContainerGroupDefinition</code> resource. It uniquely identifies the resource across all Amazon Web Services Regions. Format is <code>arn:aws:gamelift:\[region\]::containergroupdefinition/\[container group definition name\]:\[version\]</code>.</p>
     pub fn get_container_group_definition_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.container_group_definition_arn
     }
@@ -190,21 +190,21 @@ impl ContainerGroupDefinitionBuilder {
         &self.creation_time
     }
     /// <p>The platform that all containers in the container group definition run on.</p><note>
-    /// <p>Amazon Linux 2 (AL2) will reach end of support on 6/30/2025. See more details in the <a href="https://aws.amazon.com/amazon-linux-2/faqs/">Amazon Linux 2 FAQs</a>. For game servers that are hosted on AL2 and use server SDK version 4.x for Amazon GameLift, first update the game server build to server SDK 5.x, and then deploy to AL2023 instances. See <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-serversdk5-migration.html"> Migrate to server SDK version 5.</a></p>
+    /// <p>Amazon Linux 2 (AL2) will reach end of support on 6/30/2025. See more details in the <a href="http://aws.amazon.com/amazon-linux-2/faqs/">Amazon Linux 2 FAQs</a>. For game servers that are hosted on AL2 and use server SDK version 4.x for Amazon GameLift Servers, first update the game server build to server SDK 5.x, and then deploy to AL2023 instances. See <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-serversdk5-migration.html"> Migrate to server SDK version 5.</a></p>
     /// </note>
     pub fn operating_system(mut self, input: crate::types::ContainerOperatingSystem) -> Self {
         self.operating_system = ::std::option::Option::Some(input);
         self
     }
     /// <p>The platform that all containers in the container group definition run on.</p><note>
-    /// <p>Amazon Linux 2 (AL2) will reach end of support on 6/30/2025. See more details in the <a href="https://aws.amazon.com/amazon-linux-2/faqs/">Amazon Linux 2 FAQs</a>. For game servers that are hosted on AL2 and use server SDK version 4.x for Amazon GameLift, first update the game server build to server SDK 5.x, and then deploy to AL2023 instances. See <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-serversdk5-migration.html"> Migrate to server SDK version 5.</a></p>
+    /// <p>Amazon Linux 2 (AL2) will reach end of support on 6/30/2025. See more details in the <a href="http://aws.amazon.com/amazon-linux-2/faqs/">Amazon Linux 2 FAQs</a>. For game servers that are hosted on AL2 and use server SDK version 4.x for Amazon GameLift Servers, first update the game server build to server SDK 5.x, and then deploy to AL2023 instances. See <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-serversdk5-migration.html"> Migrate to server SDK version 5.</a></p>
     /// </note>
     pub fn set_operating_system(mut self, input: ::std::option::Option<crate::types::ContainerOperatingSystem>) -> Self {
         self.operating_system = input;
         self
     }
     /// <p>The platform that all containers in the container group definition run on.</p><note>
-    /// <p>Amazon Linux 2 (AL2) will reach end of support on 6/30/2025. See more details in the <a href="https://aws.amazon.com/amazon-linux-2/faqs/">Amazon Linux 2 FAQs</a>. For game servers that are hosted on AL2 and use server SDK version 4.x for Amazon GameLift, first update the game server build to server SDK 5.x, and then deploy to AL2023 instances. See <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-serversdk5-migration.html"> Migrate to server SDK version 5.</a></p>
+    /// <p>Amazon Linux 2 (AL2) will reach end of support on 6/30/2025. See more details in the <a href="http://aws.amazon.com/amazon-linux-2/faqs/">Amazon Linux 2 FAQs</a>. For game servers that are hosted on AL2 and use server SDK version 4.x for Amazon GameLift Servers, first update the game server build to server SDK 5.x, and then deploy to AL2023 instances. See <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-serversdk5-migration.html"> Migrate to server SDK version 5.</a></p>
     /// </note>
     pub fn get_operating_system(&self) -> &::std::option::Option<crate::types::ContainerOperatingSystem> {
         &self.operating_system
@@ -224,17 +224,17 @@ impl ContainerGroupDefinitionBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
-    /// <p>The type of container group. Container group type determines how Amazon GameLift deploys the container group on each fleet instance.</p>
+    /// <p>The type of container group. Container group type determines how Amazon GameLift Servers deploys the container group on each fleet instance.</p>
     pub fn container_group_type(mut self, input: crate::types::ContainerGroupType) -> Self {
         self.container_group_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The type of container group. Container group type determines how Amazon GameLift deploys the container group on each fleet instance.</p>
+    /// <p>The type of container group. Container group type determines how Amazon GameLift Servers deploys the container group on each fleet instance.</p>
     pub fn set_container_group_type(mut self, input: ::std::option::Option<crate::types::ContainerGroupType>) -> Self {
         self.container_group_type = input;
         self
     }
-    /// <p>The type of container group. Container group type determines how Amazon GameLift deploys the container group on each fleet instance.</p>
+    /// <p>The type of container group. Container group type determines how Amazon GameLift Servers deploys the container group on each fleet instance.</p>
     pub fn get_container_group_type(&self) -> &::std::option::Option<crate::types::ContainerGroupType> {
         &self.container_group_type
     }
@@ -337,11 +337,11 @@ impl ContainerGroupDefinitionBuilder {
     /// <p>Current status of the container group definition resource. Values include:</p>
     /// <ul>
     /// <li>
-    /// <p><code>COPYING</code> -- Amazon GameLift is in the process of making copies of all container images that are defined in the group. While in this state, the resource can't be used to create a container fleet.</p></li>
+    /// <p><code>COPYING</code> -- Amazon GameLift Servers is in the process of making copies of all container images that are defined in the group. While in this state, the resource can't be used to create a container fleet.</p></li>
     /// <li>
-    /// <p><code>READY</code> -- Amazon GameLift has copied the registry images for all containers that are defined in the group. You can use a container group definition in this status to create a container fleet.</p></li>
+    /// <p><code>READY</code> -- Amazon GameLift Servers has copied the registry images for all containers that are defined in the group. You can use a container group definition in this status to create a container fleet.</p></li>
     /// <li>
-    /// <p><code>FAILED</code> -- Amazon GameLift failed to create a valid container group definition resource. For more details on the cause of the failure, see <code>StatusReason</code>. A container group definition resource in failed status will be deleted within a few minutes.</p></li>
+    /// <p><code>FAILED</code> -- Amazon GameLift Servers failed to create a valid container group definition resource. For more details on the cause of the failure, see <code>StatusReason</code>. A container group definition resource in failed status will be deleted within a few minutes.</p></li>
     /// </ul>
     pub fn status(mut self, input: crate::types::ContainerGroupDefinitionStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -350,11 +350,11 @@ impl ContainerGroupDefinitionBuilder {
     /// <p>Current status of the container group definition resource. Values include:</p>
     /// <ul>
     /// <li>
-    /// <p><code>COPYING</code> -- Amazon GameLift is in the process of making copies of all container images that are defined in the group. While in this state, the resource can't be used to create a container fleet.</p></li>
+    /// <p><code>COPYING</code> -- Amazon GameLift Servers is in the process of making copies of all container images that are defined in the group. While in this state, the resource can't be used to create a container fleet.</p></li>
     /// <li>
-    /// <p><code>READY</code> -- Amazon GameLift has copied the registry images for all containers that are defined in the group. You can use a container group definition in this status to create a container fleet.</p></li>
+    /// <p><code>READY</code> -- Amazon GameLift Servers has copied the registry images for all containers that are defined in the group. You can use a container group definition in this status to create a container fleet.</p></li>
     /// <li>
-    /// <p><code>FAILED</code> -- Amazon GameLift failed to create a valid container group definition resource. For more details on the cause of the failure, see <code>StatusReason</code>. A container group definition resource in failed status will be deleted within a few minutes.</p></li>
+    /// <p><code>FAILED</code> -- Amazon GameLift Servers failed to create a valid container group definition resource. For more details on the cause of the failure, see <code>StatusReason</code>. A container group definition resource in failed status will be deleted within a few minutes.</p></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ContainerGroupDefinitionStatus>) -> Self {
         self.status = input;
@@ -363,11 +363,11 @@ impl ContainerGroupDefinitionBuilder {
     /// <p>Current status of the container group definition resource. Values include:</p>
     /// <ul>
     /// <li>
-    /// <p><code>COPYING</code> -- Amazon GameLift is in the process of making copies of all container images that are defined in the group. While in this state, the resource can't be used to create a container fleet.</p></li>
+    /// <p><code>COPYING</code> -- Amazon GameLift Servers is in the process of making copies of all container images that are defined in the group. While in this state, the resource can't be used to create a container fleet.</p></li>
     /// <li>
-    /// <p><code>READY</code> -- Amazon GameLift has copied the registry images for all containers that are defined in the group. You can use a container group definition in this status to create a container fleet.</p></li>
+    /// <p><code>READY</code> -- Amazon GameLift Servers has copied the registry images for all containers that are defined in the group. You can use a container group definition in this status to create a container fleet.</p></li>
     /// <li>
-    /// <p><code>FAILED</code> -- Amazon GameLift failed to create a valid container group definition resource. For more details on the cause of the failure, see <code>StatusReason</code>. A container group definition resource in failed status will be deleted within a few minutes.</p></li>
+    /// <p><code>FAILED</code> -- Amazon GameLift Servers failed to create a valid container group definition resource. For more details on the cause of the failure, see <code>StatusReason</code>. A container group definition resource in failed status will be deleted within a few minutes.</p></li>
     /// </ul>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::ContainerGroupDefinitionStatus> {
         &self.status
@@ -375,13 +375,13 @@ impl ContainerGroupDefinitionBuilder {
     /// <p>Additional information about a container group definition that's in <code>FAILED</code> status. Possible reasons include:</p>
     /// <ul>
     /// <li>
-    /// <p>An internal issue prevented Amazon GameLift from creating the container group definition resource. Delete the failed resource and call <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateContainerGroupDefinition.html">CreateContainerGroupDefinition</a>again.</p></li>
+    /// <p>An internal issue prevented Amazon GameLift Servers from creating the container group definition resource. Delete the failed resource and call <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateContainerGroupDefinition.html">CreateContainerGroupDefinition</a>again.</p></li>
     /// <li>
-    /// <p>An access-denied message means that you don't have permissions to access the container image on ECR. See <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-iam-policy-examples.html.html"> IAM permission examples</a> for help setting up required IAM permissions for Amazon GameLift.</p></li>
+    /// <p>An access-denied message means that you don't have permissions to access the container image on ECR. See <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-iam-policy-examples.html.html"> IAM permission examples</a> for help setting up required IAM permissions for Amazon GameLift Servers.</p></li>
     /// <li>
     /// <p>The <code>ImageUri</code> value for at least one of the containers in the container group definition was invalid or not found in the current Amazon Web Services account.</p></li>
     /// <li>
-    /// <p>At least one of the container images referenced in the container group definition exceeds the allowed size. For size limits, see <a href="https://docs.aws.amazon.com/general/latest/gr/gamelift.html"> Amazon GameLift endpoints and quotas</a>.</p></li>
+    /// <p>At least one of the container images referenced in the container group definition exceeds the allowed size. For size limits, see <a href="https://docs.aws.amazon.com/general/latest/gr/gamelift.html"> Amazon GameLift Servers endpoints and quotas</a>.</p></li>
     /// <li>
     /// <p>At least one of the container images referenced in the container group definition uses a different operating system than the one defined for the container group.</p></li>
     /// </ul>
@@ -392,13 +392,13 @@ impl ContainerGroupDefinitionBuilder {
     /// <p>Additional information about a container group definition that's in <code>FAILED</code> status. Possible reasons include:</p>
     /// <ul>
     /// <li>
-    /// <p>An internal issue prevented Amazon GameLift from creating the container group definition resource. Delete the failed resource and call <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateContainerGroupDefinition.html">CreateContainerGroupDefinition</a>again.</p></li>
+    /// <p>An internal issue prevented Amazon GameLift Servers from creating the container group definition resource. Delete the failed resource and call <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateContainerGroupDefinition.html">CreateContainerGroupDefinition</a>again.</p></li>
     /// <li>
-    /// <p>An access-denied message means that you don't have permissions to access the container image on ECR. See <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-iam-policy-examples.html.html"> IAM permission examples</a> for help setting up required IAM permissions for Amazon GameLift.</p></li>
+    /// <p>An access-denied message means that you don't have permissions to access the container image on ECR. See <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-iam-policy-examples.html.html"> IAM permission examples</a> for help setting up required IAM permissions for Amazon GameLift Servers.</p></li>
     /// <li>
     /// <p>The <code>ImageUri</code> value for at least one of the containers in the container group definition was invalid or not found in the current Amazon Web Services account.</p></li>
     /// <li>
-    /// <p>At least one of the container images referenced in the container group definition exceeds the allowed size. For size limits, see <a href="https://docs.aws.amazon.com/general/latest/gr/gamelift.html"> Amazon GameLift endpoints and quotas</a>.</p></li>
+    /// <p>At least one of the container images referenced in the container group definition exceeds the allowed size. For size limits, see <a href="https://docs.aws.amazon.com/general/latest/gr/gamelift.html"> Amazon GameLift Servers endpoints and quotas</a>.</p></li>
     /// <li>
     /// <p>At least one of the container images referenced in the container group definition uses a different operating system than the one defined for the container group.</p></li>
     /// </ul>
@@ -409,13 +409,13 @@ impl ContainerGroupDefinitionBuilder {
     /// <p>Additional information about a container group definition that's in <code>FAILED</code> status. Possible reasons include:</p>
     /// <ul>
     /// <li>
-    /// <p>An internal issue prevented Amazon GameLift from creating the container group definition resource. Delete the failed resource and call <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateContainerGroupDefinition.html">CreateContainerGroupDefinition</a>again.</p></li>
+    /// <p>An internal issue prevented Amazon GameLift Servers from creating the container group definition resource. Delete the failed resource and call <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateContainerGroupDefinition.html">CreateContainerGroupDefinition</a>again.</p></li>
     /// <li>
-    /// <p>An access-denied message means that you don't have permissions to access the container image on ECR. See <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-iam-policy-examples.html.html"> IAM permission examples</a> for help setting up required IAM permissions for Amazon GameLift.</p></li>
+    /// <p>An access-denied message means that you don't have permissions to access the container image on ECR. See <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-iam-policy-examples.html.html"> IAM permission examples</a> for help setting up required IAM permissions for Amazon GameLift Servers.</p></li>
     /// <li>
     /// <p>The <code>ImageUri</code> value for at least one of the containers in the container group definition was invalid or not found in the current Amazon Web Services account.</p></li>
     /// <li>
-    /// <p>At least one of the container images referenced in the container group definition exceeds the allowed size. For size limits, see <a href="https://docs.aws.amazon.com/general/latest/gr/gamelift.html"> Amazon GameLift endpoints and quotas</a>.</p></li>
+    /// <p>At least one of the container images referenced in the container group definition exceeds the allowed size. For size limits, see <a href="https://docs.aws.amazon.com/general/latest/gr/gamelift.html"> Amazon GameLift Servers endpoints and quotas</a>.</p></li>
     /// <li>
     /// <p>At least one of the container images referenced in the container group definition uses a different operating system than the one defined for the container group.</p></li>
     /// </ul>

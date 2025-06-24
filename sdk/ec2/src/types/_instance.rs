@@ -98,7 +98,7 @@ pub struct Instance {
     /// <p>\[IPv4 only\] The private DNS hostname name assigned to the instance. This DNS hostname can only be used inside the Amazon EC2 network. This name is not available until the instance enters the running state.</p>
     /// <p>The Amazon-provided DNS server resolves Amazon-provided private DNS hostnames if you've enabled DNS resolution and DNS hostnames in your VPC. If you are not using the Amazon-provided DNS server in your VPC, your custom domain name servers must resolve the hostname as appropriate.</p>
     pub private_dns_name: ::std::option::Option<::std::string::String>,
-    /// <p>\[IPv4 only\] The public DNS name assigned to the instance. This name is not available until the instance enters the running state. This name is only available if you've enabled DNS hostnames for your VPC.</p>
+    /// <p>The public DNS name assigned to the instance. This name is not available until the instance enters the <code>running</code> state. This name is only available if you've enabled DNS hostnames for your VPC. The format of this name depends on the <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/hostname-types.html#public-hostnames">public hostname type</a>.</p>
     pub public_dns_name: ::std::option::Option<::std::string::String>,
     /// <p>The reason for the most recent state transition. This might be an empty string.</p>
     pub state_transition_reason: ::std::option::Option<::std::string::String>,
@@ -327,7 +327,7 @@ impl Instance {
     pub fn private_dns_name(&self) -> ::std::option::Option<&str> {
         self.private_dns_name.as_deref()
     }
-    /// <p>\[IPv4 only\] The public DNS name assigned to the instance. This name is not available until the instance enters the running state. This name is only available if you've enabled DNS hostnames for your VPC.</p>
+    /// <p>The public DNS name assigned to the instance. This name is not available until the instance enters the <code>running</code> state. This name is only available if you've enabled DNS hostnames for your VPC. The format of this name depends on the <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/hostname-types.html#public-hostnames">public hostname type</a>.</p>
     pub fn public_dns_name(&self) -> ::std::option::Option<&str> {
         self.public_dns_name.as_deref()
     }
@@ -1144,17 +1144,17 @@ impl InstanceBuilder {
     pub fn get_private_dns_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.private_dns_name
     }
-    /// <p>\[IPv4 only\] The public DNS name assigned to the instance. This name is not available until the instance enters the running state. This name is only available if you've enabled DNS hostnames for your VPC.</p>
+    /// <p>The public DNS name assigned to the instance. This name is not available until the instance enters the <code>running</code> state. This name is only available if you've enabled DNS hostnames for your VPC. The format of this name depends on the <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/hostname-types.html#public-hostnames">public hostname type</a>.</p>
     pub fn public_dns_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.public_dns_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>\[IPv4 only\] The public DNS name assigned to the instance. This name is not available until the instance enters the running state. This name is only available if you've enabled DNS hostnames for your VPC.</p>
+    /// <p>The public DNS name assigned to the instance. This name is not available until the instance enters the <code>running</code> state. This name is only available if you've enabled DNS hostnames for your VPC. The format of this name depends on the <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/hostname-types.html#public-hostnames">public hostname type</a>.</p>
     pub fn set_public_dns_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.public_dns_name = input;
         self
     }
-    /// <p>\[IPv4 only\] The public DNS name assigned to the instance. This name is not available until the instance enters the running state. This name is only available if you've enabled DNS hostnames for your VPC.</p>
+    /// <p>The public DNS name assigned to the instance. This name is not available until the instance enters the <code>running</code> state. This name is only available if you've enabled DNS hostnames for your VPC. The format of this name depends on the <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/hostname-types.html#public-hostnames">public hostname type</a>.</p>
     pub fn get_public_dns_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.public_dns_name
     }

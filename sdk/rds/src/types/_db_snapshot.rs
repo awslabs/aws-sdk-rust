@@ -70,7 +70,7 @@ pub struct DbSnapshot {
     /// <p>The timestamp of the most recent transaction applied to the database that you're backing up. Thus, if you restore a snapshot, SnapshotDatabaseTime is the most recent transaction in the restored DB instance. In contrast, originalSnapshotCreateTime specifies the system time that the snapshot completed.</p>
     /// <p>If you back up a read replica, you can determine the replica lag by comparing SnapshotDatabaseTime with originalSnapshotCreateTime. For example, if originalSnapshotCreateTime is two hours later than SnapshotDatabaseTime, then the replica lag is two hours.</p>
     pub snapshot_database_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>Specifies where manual snapshots are stored: Amazon Web Services Outposts or the Amazon Web Services Region.</p>
+    /// <p>Specifies where manual snapshots are stored: Dedicated Local Zones, Amazon Web Services Outposts or the Amazon Web Services Region.</p>
     pub snapshot_target: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the storage throughput for the DB snapshot.</p>
     pub storage_throughput: ::std::option::Option<i32>,
@@ -80,6 +80,8 @@ pub struct DbSnapshot {
     pub dedicated_log_volume: ::std::option::Option<bool>,
     /// <p>Indicates whether the snapshot is of a DB instance using the multi-tenant configuration (TRUE) or the single-tenant configuration (FALSE).</p>
     pub multi_tenant: ::std::option::Option<bool>,
+    /// <p>Specifies the name of the Availability Zone where RDS stores the DB snapshot. This value is valid only for snapshots that RDS stores on a Dedicated Local Zone.</p>
+    pub snapshot_availability_zone: ::std::option::Option<::std::string::String>,
 }
 impl DbSnapshot {
     /// <p>Specifies the identifier for the DB snapshot.</p>
@@ -213,7 +215,7 @@ impl DbSnapshot {
     pub fn snapshot_database_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.snapshot_database_time.as_ref()
     }
-    /// <p>Specifies where manual snapshots are stored: Amazon Web Services Outposts or the Amazon Web Services Region.</p>
+    /// <p>Specifies where manual snapshots are stored: Dedicated Local Zones, Amazon Web Services Outposts or the Amazon Web Services Region.</p>
     pub fn snapshot_target(&self) -> ::std::option::Option<&str> {
         self.snapshot_target.as_deref()
     }
@@ -232,6 +234,10 @@ impl DbSnapshot {
     /// <p>Indicates whether the snapshot is of a DB instance using the multi-tenant configuration (TRUE) or the single-tenant configuration (FALSE).</p>
     pub fn multi_tenant(&self) -> ::std::option::Option<bool> {
         self.multi_tenant
+    }
+    /// <p>Specifies the name of the Availability Zone where RDS stores the DB snapshot. This value is valid only for snapshots that RDS stores on a Dedicated Local Zone.</p>
+    pub fn snapshot_availability_zone(&self) -> ::std::option::Option<&str> {
+        self.snapshot_availability_zone.as_deref()
     }
 }
 impl DbSnapshot {
@@ -281,6 +287,7 @@ pub struct DbSnapshotBuilder {
     pub(crate) db_system_id: ::std::option::Option<::std::string::String>,
     pub(crate) dedicated_log_volume: ::std::option::Option<bool>,
     pub(crate) multi_tenant: ::std::option::Option<bool>,
+    pub(crate) snapshot_availability_zone: ::std::option::Option<::std::string::String>,
 }
 impl DbSnapshotBuilder {
     /// <p>Specifies the identifier for the DB snapshot.</p>
@@ -738,17 +745,17 @@ impl DbSnapshotBuilder {
     pub fn get_snapshot_database_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.snapshot_database_time
     }
-    /// <p>Specifies where manual snapshots are stored: Amazon Web Services Outposts or the Amazon Web Services Region.</p>
+    /// <p>Specifies where manual snapshots are stored: Dedicated Local Zones, Amazon Web Services Outposts or the Amazon Web Services Region.</p>
     pub fn snapshot_target(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.snapshot_target = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Specifies where manual snapshots are stored: Amazon Web Services Outposts or the Amazon Web Services Region.</p>
+    /// <p>Specifies where manual snapshots are stored: Dedicated Local Zones, Amazon Web Services Outposts or the Amazon Web Services Region.</p>
     pub fn set_snapshot_target(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.snapshot_target = input;
         self
     }
-    /// <p>Specifies where manual snapshots are stored: Amazon Web Services Outposts or the Amazon Web Services Region.</p>
+    /// <p>Specifies where manual snapshots are stored: Dedicated Local Zones, Amazon Web Services Outposts or the Amazon Web Services Region.</p>
     pub fn get_snapshot_target(&self) -> &::std::option::Option<::std::string::String> {
         &self.snapshot_target
     }
@@ -808,6 +815,20 @@ impl DbSnapshotBuilder {
     pub fn get_multi_tenant(&self) -> &::std::option::Option<bool> {
         &self.multi_tenant
     }
+    /// <p>Specifies the name of the Availability Zone where RDS stores the DB snapshot. This value is valid only for snapshots that RDS stores on a Dedicated Local Zone.</p>
+    pub fn snapshot_availability_zone(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.snapshot_availability_zone = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Specifies the name of the Availability Zone where RDS stores the DB snapshot. This value is valid only for snapshots that RDS stores on a Dedicated Local Zone.</p>
+    pub fn set_snapshot_availability_zone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.snapshot_availability_zone = input;
+        self
+    }
+    /// <p>Specifies the name of the Availability Zone where RDS stores the DB snapshot. This value is valid only for snapshots that RDS stores on a Dedicated Local Zone.</p>
+    pub fn get_snapshot_availability_zone(&self) -> &::std::option::Option<::std::string::String> {
+        &self.snapshot_availability_zone
+    }
     /// Consumes the builder and constructs a [`DbSnapshot`](crate::types::DbSnapshot).
     pub fn build(self) -> crate::types::DbSnapshot {
         crate::types::DbSnapshot {
@@ -847,6 +868,7 @@ impl DbSnapshotBuilder {
             db_system_id: self.db_system_id,
             dedicated_log_volume: self.dedicated_log_volume,
             multi_tenant: self.multi_tenant,
+            snapshot_availability_zone: self.snapshot_availability_zone,
         }
     }
 }

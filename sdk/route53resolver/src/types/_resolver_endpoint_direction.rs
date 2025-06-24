@@ -13,6 +13,7 @@
 /// # let resolverendpointdirection = unimplemented!();
 /// match resolverendpointdirection {
 ///     ResolverEndpointDirection::Inbound => { /* ... */ },
+///     ResolverEndpointDirection::InboundDelegation => { /* ... */ },
 ///     ResolverEndpointDirection::Outbound => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -45,6 +46,8 @@ pub enum ResolverEndpointDirection {
     #[allow(missing_docs)] // documentation missing in model
     Inbound,
     #[allow(missing_docs)] // documentation missing in model
+    InboundDelegation,
+    #[allow(missing_docs)] // documentation missing in model
     Outbound,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
@@ -54,6 +57,7 @@ impl ::std::convert::From<&str> for ResolverEndpointDirection {
     fn from(s: &str) -> Self {
         match s {
             "INBOUND" => ResolverEndpointDirection::Inbound,
+            "INBOUND_DELEGATION" => ResolverEndpointDirection::InboundDelegation,
             "OUTBOUND" => ResolverEndpointDirection::Outbound,
             other => ResolverEndpointDirection::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -71,13 +75,14 @@ impl ResolverEndpointDirection {
     pub fn as_str(&self) -> &str {
         match self {
             ResolverEndpointDirection::Inbound => "INBOUND",
+            ResolverEndpointDirection::InboundDelegation => "INBOUND_DELEGATION",
             ResolverEndpointDirection::Outbound => "OUTBOUND",
             ResolverEndpointDirection::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["INBOUND", "OUTBOUND"]
+        &["INBOUND", "INBOUND_DELEGATION", "OUTBOUND"]
     }
 }
 impl ::std::convert::AsRef<str> for ResolverEndpointDirection {
@@ -101,6 +106,7 @@ impl ::std::fmt::Display for ResolverEndpointDirection {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             ResolverEndpointDirection::Inbound => write!(f, "INBOUND"),
+            ResolverEndpointDirection::InboundDelegation => write!(f, "INBOUND_DELEGATION"),
             ResolverEndpointDirection::Outbound => write!(f, "OUTBOUND"),
             ResolverEndpointDirection::Unknown(value) => write!(f, "{}", value),
         }

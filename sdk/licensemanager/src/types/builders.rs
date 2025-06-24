@@ -55,6 +55,8 @@ pub use crate::types::_license_conversion_task::LicenseConversionTaskBuilder;
 
 pub use crate::types::_license_conversion_context::LicenseConversionContextBuilder;
 
+pub use crate::types::_product_code_list_item::ProductCodeListItemBuilder;
+
 pub use crate::types::_license_configuration::LicenseConfigurationBuilder;
 
 pub use crate::types::_automated_discovery_information::AutomatedDiscoveryInformationBuilder;

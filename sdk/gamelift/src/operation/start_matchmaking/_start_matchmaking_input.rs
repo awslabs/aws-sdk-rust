@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartMatchmakingInput {
-    /// <p>A unique identifier for a matchmaking ticket. If no ticket ID is specified here, Amazon GameLift will generate one in the form of a UUID. Use this identifier to track the matchmaking ticket status and retrieve match results.</p>
+    /// <p>A unique identifier for a matchmaking ticket. If no ticket ID is specified here, Amazon GameLift Servers will generate one in the form of a UUID. Use this identifier to track the matchmaking ticket status and retrieve match results.</p>
     pub ticket_id: ::std::option::Option<::std::string::String>,
     /// <p>Name of the matchmaking configuration to use for this request. Matchmaking configurations must exist in the same Region as this request. You can use either the configuration name or ARN value.</p>
     pub configuration_name: ::std::option::Option<::std::string::String>,
@@ -12,7 +12,7 @@ pub struct StartMatchmakingInput {
     pub players: ::std::option::Option<::std::vec::Vec<crate::types::Player>>,
 }
 impl StartMatchmakingInput {
-    /// <p>A unique identifier for a matchmaking ticket. If no ticket ID is specified here, Amazon GameLift will generate one in the form of a UUID. Use this identifier to track the matchmaking ticket status and retrieve match results.</p>
+    /// <p>A unique identifier for a matchmaking ticket. If no ticket ID is specified here, Amazon GameLift Servers will generate one in the form of a UUID. Use this identifier to track the matchmaking ticket status and retrieve match results.</p>
     pub fn ticket_id(&self) -> ::std::option::Option<&str> {
         self.ticket_id.as_deref()
     }
@@ -44,17 +44,17 @@ pub struct StartMatchmakingInputBuilder {
     pub(crate) players: ::std::option::Option<::std::vec::Vec<crate::types::Player>>,
 }
 impl StartMatchmakingInputBuilder {
-    /// <p>A unique identifier for a matchmaking ticket. If no ticket ID is specified here, Amazon GameLift will generate one in the form of a UUID. Use this identifier to track the matchmaking ticket status and retrieve match results.</p>
+    /// <p>A unique identifier for a matchmaking ticket. If no ticket ID is specified here, Amazon GameLift Servers will generate one in the form of a UUID. Use this identifier to track the matchmaking ticket status and retrieve match results.</p>
     pub fn ticket_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ticket_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A unique identifier for a matchmaking ticket. If no ticket ID is specified here, Amazon GameLift will generate one in the form of a UUID. Use this identifier to track the matchmaking ticket status and retrieve match results.</p>
+    /// <p>A unique identifier for a matchmaking ticket. If no ticket ID is specified here, Amazon GameLift Servers will generate one in the form of a UUID. Use this identifier to track the matchmaking ticket status and retrieve match results.</p>
     pub fn set_ticket_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ticket_id = input;
         self
     }
-    /// <p>A unique identifier for a matchmaking ticket. If no ticket ID is specified here, Amazon GameLift will generate one in the form of a UUID. Use this identifier to track the matchmaking ticket status and retrieve match results.</p>
+    /// <p>A unique identifier for a matchmaking ticket. If no ticket ID is specified here, Amazon GameLift Servers will generate one in the form of a UUID. Use this identifier to track the matchmaking ticket status and retrieve match results.</p>
     pub fn get_ticket_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.ticket_id
     }

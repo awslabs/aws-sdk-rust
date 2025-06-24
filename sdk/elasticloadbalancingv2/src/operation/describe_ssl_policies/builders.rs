@@ -23,7 +23,7 @@ impl crate::operation::describe_ssl_policies::builders::DescribeSslPoliciesInput
 /// Fluent builder constructing a request to `DescribeSSLPolicies`.
 ///
 /// <p>Describes the specified policies or all policies used for SSL negotiation.</p>
-/// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html#describe-ssl-policies">Security policies</a> in the <i>Application Load Balancers Guide</i> or <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-tls-listener.html#describe-ssl-policies">Security policies</a> in the <i>Network Load Balancers Guide</i>.</p>
+/// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/describe-ssl-policies.html">Security policies</a> in the <i>Application Load Balancers Guide</i> and <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/describe-ssl-policies.html">Security policies</a> in the <i>Network Load Balancers Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeSSLPoliciesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

@@ -81,6 +81,10 @@ pub use crate::types::_license_conversion_task_status::LicenseConversionTaskStat
 
 pub use crate::types::_license_conversion_context::LicenseConversionContext;
 
+pub use crate::types::_product_code_list_item::ProductCodeListItem;
+
+pub use crate::types::_product_code_type::ProductCodeType;
+
 pub use crate::types::_license_configuration::LicenseConfiguration;
 
 pub use crate::types::_automated_discovery_information::AutomatedDiscoveryInformation;
@@ -192,6 +196,10 @@ mod _metadata;
 mod _options;
 
 mod _organization_configuration;
+
+mod _product_code_list_item;
+
+mod _product_code_type;
 
 mod _product_information;
 

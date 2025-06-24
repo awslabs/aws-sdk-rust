@@ -6,7 +6,7 @@
 pub struct ResolverConfig {
     /// <p>ID for the Resolver configuration.</p>
     pub id: ::std::option::Option<::std::string::String>,
-    /// <p>The ID of the Amazon Virtual Private Cloud VPC that you're configuring Resolver for.</p>
+    /// <p>The ID of the Amazon Virtual Private Cloud VPC or a Route 53 Profile that you're configuring Resolver for.</p>
     pub resource_id: ::std::option::Option<::std::string::String>,
     /// <p>The owner account ID of the Amazon Virtual Private Cloud VPC.</p>
     pub owner_id: ::std::option::Option<::std::string::String>,
@@ -28,7 +28,7 @@ impl ResolverConfig {
     pub fn id(&self) -> ::std::option::Option<&str> {
         self.id.as_deref()
     }
-    /// <p>The ID of the Amazon Virtual Private Cloud VPC that you're configuring Resolver for.</p>
+    /// <p>The ID of the Amazon Virtual Private Cloud VPC or a Route 53 Profile that you're configuring Resolver for.</p>
     pub fn resource_id(&self) -> ::std::option::Option<&str> {
         self.resource_id.as_deref()
     }
@@ -82,17 +82,17 @@ impl ResolverConfigBuilder {
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.id
     }
-    /// <p>The ID of the Amazon Virtual Private Cloud VPC that you're configuring Resolver for.</p>
+    /// <p>The ID of the Amazon Virtual Private Cloud VPC or a Route 53 Profile that you're configuring Resolver for.</p>
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID of the Amazon Virtual Private Cloud VPC that you're configuring Resolver for.</p>
+    /// <p>The ID of the Amazon Virtual Private Cloud VPC or a Route 53 Profile that you're configuring Resolver for.</p>
     pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_id = input;
         self
     }
-    /// <p>The ID of the Amazon Virtual Private Cloud VPC that you're configuring Resolver for.</p>
+    /// <p>The ID of the Amazon Virtual Private Cloud VPC or a Route 53 Profile that you're configuring Resolver for.</p>
     pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_id
     }

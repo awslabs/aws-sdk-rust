@@ -281,6 +281,15 @@ pub struct CreateDbInstanceReadReplicaInput {
     /// <p>For more information about RDS on Outposts, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working with Amazon RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>For more information about CoIPs, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/routing.html#ip-addressing">Customer-owned IP addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.</p>
     pub enable_customer_owned_ip: ::std::option::Option<bool>,
+    /// <p>The location where RDS stores automated backups and manual snapshots.</p>
+    /// <p>Valid Values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>local</code> for Dedicated Local Zones</p></li>
+    /// <li>
+    /// <p><code>region</code> for Amazon Web Services Region</p></li>
+    /// </ul>
+    pub backup_target: ::std::option::Option<::std::string::String>,
     /// <p>The amount of storage (in gibibytes) to allocate initially for the read replica. Follow the allocation rules specified in <code>CreateDBInstance</code>.</p>
     /// <p>This setting isn't valid for RDS for SQL Server.</p><note>
     /// <p>Be sure to allocate enough storage for your read replica so that the create operation can succeed. You can also allocate additional storage for future growth.</p>
@@ -679,6 +688,17 @@ impl CreateDbInstanceReadReplicaInput {
     pub fn enable_customer_owned_ip(&self) -> ::std::option::Option<bool> {
         self.enable_customer_owned_ip
     }
+    /// <p>The location where RDS stores automated backups and manual snapshots.</p>
+    /// <p>Valid Values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>local</code> for Dedicated Local Zones</p></li>
+    /// <li>
+    /// <p><code>region</code> for Amazon Web Services Region</p></li>
+    /// </ul>
+    pub fn backup_target(&self) -> ::std::option::Option<&str> {
+        self.backup_target.as_deref()
+    }
     /// <p>The amount of storage (in gibibytes) to allocate initially for the read replica. Follow the allocation rules specified in <code>CreateDBInstance</code>.</p>
     /// <p>This setting isn't valid for RDS for SQL Server.</p><note>
     /// <p>Be sure to allocate enough storage for your read replica so that the create operation can succeed. You can also allocate additional storage for future growth.</p>
@@ -768,6 +788,7 @@ pub struct CreateDbInstanceReadReplicaInputBuilder {
     pub(crate) network_type: ::std::option::Option<::std::string::String>,
     pub(crate) storage_throughput: ::std::option::Option<i32>,
     pub(crate) enable_customer_owned_ip: ::std::option::Option<bool>,
+    pub(crate) backup_target: ::std::option::Option<::std::string::String>,
     pub(crate) allocated_storage: ::std::option::Option<i32>,
     pub(crate) source_db_cluster_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) dedicated_log_volume: ::std::option::Option<bool>,
@@ -1968,6 +1989,41 @@ impl CreateDbInstanceReadReplicaInputBuilder {
     pub fn get_enable_customer_owned_ip(&self) -> &::std::option::Option<bool> {
         &self.enable_customer_owned_ip
     }
+    /// <p>The location where RDS stores automated backups and manual snapshots.</p>
+    /// <p>Valid Values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>local</code> for Dedicated Local Zones</p></li>
+    /// <li>
+    /// <p><code>region</code> for Amazon Web Services Region</p></li>
+    /// </ul>
+    pub fn backup_target(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.backup_target = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The location where RDS stores automated backups and manual snapshots.</p>
+    /// <p>Valid Values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>local</code> for Dedicated Local Zones</p></li>
+    /// <li>
+    /// <p><code>region</code> for Amazon Web Services Region</p></li>
+    /// </ul>
+    pub fn set_backup_target(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.backup_target = input;
+        self
+    }
+    /// <p>The location where RDS stores automated backups and manual snapshots.</p>
+    /// <p>Valid Values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>local</code> for Dedicated Local Zones</p></li>
+    /// <li>
+    /// <p><code>region</code> for Amazon Web Services Region</p></li>
+    /// </ul>
+    pub fn get_backup_target(&self) -> &::std::option::Option<::std::string::String> {
+        &self.backup_target
+    }
     /// <p>The amount of storage (in gibibytes) to allocate initially for the read replica. Follow the allocation rules specified in <code>CreateDBInstance</code>.</p>
     /// <p>This setting isn't valid for RDS for SQL Server.</p><note>
     /// <p>Be sure to allocate enough storage for your read replica so that the create operation can succeed. You can also allocate additional storage for future growth.</p>
@@ -2135,6 +2191,7 @@ impl CreateDbInstanceReadReplicaInputBuilder {
             network_type: self.network_type,
             storage_throughput: self.storage_throughput,
             enable_customer_owned_ip: self.enable_customer_owned_ip,
+            backup_target: self.backup_target,
             allocated_storage: self.allocated_storage,
             source_db_cluster_identifier: self.source_db_cluster_identifier,
             dedicated_log_volume: self.dedicated_log_volume,

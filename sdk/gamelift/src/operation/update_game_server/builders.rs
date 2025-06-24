@@ -22,8 +22,8 @@ impl crate::operation::update_game_server::builders::UpdateGameServerInputBuilde
 }
 /// Fluent builder constructing a request to `UpdateGameServer`.
 ///
-/// <p><b>This operation is used with the Amazon GameLift FleetIQ solution and game server groups.</b></p>
-/// <p>Updates information about a registered game server to help Amazon GameLift FleetIQ track game server availability. This operation is called by a game server process that is running on an instance in a game server group.</p>
+/// <p><b>This operation is used with the Amazon GameLift Servers FleetIQ solution and game server groups.</b></p>
+/// <p>Updates information about a registered game server to help Amazon GameLift Servers FleetIQ track game server availability. This operation is called by a game server process that is running on an instance in a game server group.</p>
 /// <p>Use this operation to update the following types of game server information. You can make all three types of updates in the same request:</p>
 /// <ul>
 /// <li>
@@ -35,7 +35,7 @@ impl crate::operation::update_game_server::builders::UpdateGameServerInputBuilde
 /// </ul>
 /// <p>Once a game server is successfully updated, the relevant statuses and timestamps are updated.</p>
 /// <p><b>Learn more</b></p>
-/// <p><a href="https://docs.aws.amazon.com/gamelift/latest/fleetiqguide/gsg-intro.html">Amazon GameLift FleetIQ Guide</a></p>
+/// <p><a href="https://docs.aws.amazon.com/gamelift/latest/fleetiqguide/gsg-intro.html">Amazon GameLift Servers FleetIQ Guide</a></p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateGameServerFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

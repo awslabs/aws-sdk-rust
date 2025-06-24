@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListContainerGroupDefinitionsInput {
-    /// <p>The type of container group to retrieve. Container group type determines how Amazon GameLift deploys the container group on each fleet instance.</p>
+    /// <p>The type of container group to retrieve. Container group type determines how Amazon GameLift Servers deploys the container group on each fleet instance.</p>
     pub container_group_type: ::std::option::Option<crate::types::ContainerGroupType>,
     /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages.</p>
     pub limit: ::std::option::Option<i32>,
@@ -11,7 +11,7 @@ pub struct ListContainerGroupDefinitionsInput {
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListContainerGroupDefinitionsInput {
-    /// <p>The type of container group to retrieve. Container group type determines how Amazon GameLift deploys the container group on each fleet instance.</p>
+    /// <p>The type of container group to retrieve. Container group type determines how Amazon GameLift Servers deploys the container group on each fleet instance.</p>
     pub fn container_group_type(&self) -> ::std::option::Option<&crate::types::ContainerGroupType> {
         self.container_group_type.as_ref()
     }
@@ -40,17 +40,17 @@ pub struct ListContainerGroupDefinitionsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListContainerGroupDefinitionsInputBuilder {
-    /// <p>The type of container group to retrieve. Container group type determines how Amazon GameLift deploys the container group on each fleet instance.</p>
+    /// <p>The type of container group to retrieve. Container group type determines how Amazon GameLift Servers deploys the container group on each fleet instance.</p>
     pub fn container_group_type(mut self, input: crate::types::ContainerGroupType) -> Self {
         self.container_group_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The type of container group to retrieve. Container group type determines how Amazon GameLift deploys the container group on each fleet instance.</p>
+    /// <p>The type of container group to retrieve. Container group type determines how Amazon GameLift Servers deploys the container group on each fleet instance.</p>
     pub fn set_container_group_type(mut self, input: ::std::option::Option<crate::types::ContainerGroupType>) -> Self {
         self.container_group_type = input;
         self
     }
-    /// <p>The type of container group to retrieve. Container group type determines how Amazon GameLift deploys the container group on each fleet instance.</p>
+    /// <p>The type of container group to retrieve. Container group type determines how Amazon GameLift Servers deploys the container group on each fleet instance.</p>
     pub fn get_container_group_type(&self) -> &::std::option::Option<crate::types::ContainerGroupType> {
         &self.container_group_type
     }

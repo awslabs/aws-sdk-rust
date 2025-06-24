@@ -259,32 +259,37 @@ pub fn ser_create_db_instance_read_replica_input_input_input(
         scope_96.boolean(*var_97);
     }
     #[allow(unused_mut)]
-    let mut scope_98 = writer.prefix("AllocatedStorage");
-    if let Some(var_99) = &input.allocated_storage {
-        scope_98.number(
+    let mut scope_98 = writer.prefix("BackupTarget");
+    if let Some(var_99) = &input.backup_target {
+        scope_98.string(var_99);
+    }
+    #[allow(unused_mut)]
+    let mut scope_100 = writer.prefix("AllocatedStorage");
+    if let Some(var_101) = &input.allocated_storage {
+        scope_100.number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_99).into()),
+            ::aws_smithy_types::Number::NegInt((*var_101).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_100 = writer.prefix("SourceDBClusterIdentifier");
-    if let Some(var_101) = &input.source_db_cluster_identifier {
-        scope_100.string(var_101);
+    let mut scope_102 = writer.prefix("SourceDBClusterIdentifier");
+    if let Some(var_103) = &input.source_db_cluster_identifier {
+        scope_102.string(var_103);
     }
     #[allow(unused_mut)]
-    let mut scope_102 = writer.prefix("DedicatedLogVolume");
-    if let Some(var_103) = &input.dedicated_log_volume {
-        scope_102.boolean(*var_103);
-    }
-    #[allow(unused_mut)]
-    let mut scope_104 = writer.prefix("UpgradeStorageConfig");
-    if let Some(var_105) = &input.upgrade_storage_config {
+    let mut scope_104 = writer.prefix("DedicatedLogVolume");
+    if let Some(var_105) = &input.dedicated_log_volume {
         scope_104.boolean(*var_105);
     }
     #[allow(unused_mut)]
-    let mut scope_106 = writer.prefix("CACertificateIdentifier");
-    if let Some(var_107) = &input.ca_certificate_identifier {
-        scope_106.string(var_107);
+    let mut scope_106 = writer.prefix("UpgradeStorageConfig");
+    if let Some(var_107) = &input.upgrade_storage_config {
+        scope_106.boolean(*var_107);
+    }
+    #[allow(unused_mut)]
+    let mut scope_108 = writer.prefix("CACertificateIdentifier");
+    if let Some(var_109) = &input.ca_certificate_identifier {
+        scope_108.string(var_109);
     }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))

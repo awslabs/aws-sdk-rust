@@ -27,11 +27,11 @@ impl crate::operation::deregister_targets::builders::DeregisterTargetsInputBuild
 /// <p>For more information, see the following:</p>
 /// <ul>
 /// <li>
-/// <p><a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-target-groups.html#deregistration-delay"> Deregistration delay</a> in the <i>Application Load Balancers User Guide</i></p></li>
+/// <p><a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/edit-target-group-attributes.html#deregistration-delay"> Deregistration delay</a> in the <i>Application Load Balancers User Guide</i></p></li>
 /// <li>
-/// <p><a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/load-balancer-target-groups.html#deregistration-delay"> Deregistration delay</a> in the <i>Network Load Balancers User Guide</i></p></li>
+/// <p><a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/edit-target-group-attributes.html#deregistration-delay"> Deregistration delay</a> in the <i>Network Load Balancers User Guide</i></p></li>
 /// <li>
-/// <p><a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/gateway/target-groups.html#deregistration-delay"> Deregistration delay</a> in the <i>Gateway Load Balancers User Guide</i></p></li>
+/// <p><a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/gateway/edit-target-group-attributes.html#deregistration-delay"> Deregistration delay</a> in the <i>Gateway Load Balancers User Guide</i></p></li>
 /// </ul>
 /// <p>Note: If the specified target does not exist, the action returns successfully.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

@@ -23,7 +23,7 @@ impl crate::operation::create_instance_connect_endpoint::builders::CreateInstanc
 /// Fluent builder constructing a request to `CreateInstanceConnectEndpoint`.
 ///
 /// <p>Creates an EC2 Instance Connect Endpoint.</p>
-/// <p>An EC2 Instance Connect Endpoint allows you to connect to an instance, without requiring the instance to have a public IPv4 address. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Connect-using-EC2-Instance-Connect-Endpoint.html">Connect to your instances without requiring a public IPv4 address using EC2 Instance Connect Endpoint</a> in the <i>Amazon EC2 User Guide</i>.</p>
+/// <p>An EC2 Instance Connect Endpoint allows you to connect to an instance, without requiring the instance to have a public IPv4 address. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Connect-using-EC2-Instance-Connect-Endpoint.html">Connect to your instances using EC2 Instance Connect Endpoint</a> in the <i>Amazon EC2 User Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateInstanceConnectEndpointFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

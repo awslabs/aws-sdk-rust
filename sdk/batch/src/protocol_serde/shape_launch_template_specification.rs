@@ -27,6 +27,9 @@ pub fn ser_launch_template_specification(
         }
         array_5.finish();
     }
+    if let Some(var_8) = &input.userdata_type {
+        object.key("userdataType").string(var_8.as_str());
+    }
     Ok(())
 }
 
@@ -70,6 +73,13 @@ where
                             builder = builder.set_overrides(
                                     crate::protocol_serde::shape_launch_template_specification_override_list::de_launch_template_specification_override_list(tokens)?
                                 );
+                        }
+                        "userdataType" => {
+                            builder = builder.set_userdata_type(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::UserdataType::from(u.as_ref())))
+                                    .transpose()?,
+                            );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

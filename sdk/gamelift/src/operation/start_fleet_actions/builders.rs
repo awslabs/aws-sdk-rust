@@ -30,9 +30,9 @@ impl crate::operation::start_fleet_actions::builders::StartFleetActionsInputBuil
 /// <li>
 /// <p>To restart actions on instances in one of the fleet's remote locations, provide a fleet ID, a location name, and the type of actions to resume.</p></li>
 /// </ul>
-/// <p>If successful, Amazon GameLift once again initiates scaling events as triggered by the fleet's scaling policies. If actions on the fleet location were never stopped, this operation will have no effect.</p>
+/// <p>If successful, Amazon GameLift Servers once again initiates scaling events as triggered by the fleet's scaling policies. If actions on the fleet location were never stopped, this operation will have no effect.</p>
 /// <p><b>Learn more</b></p>
-/// <p><a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting up Amazon GameLift fleets</a></p>
+/// <p><a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting up Amazon GameLift Servers fleets</a></p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StartFleetActionsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

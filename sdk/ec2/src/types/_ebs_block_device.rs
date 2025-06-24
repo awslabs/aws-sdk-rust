@@ -48,6 +48,10 @@ pub struct EbsBlockDevice {
     /// <p>The ARN of the Outpost on which the snapshot is stored.</p>
     /// <p>This parameter is not supported when using <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateImage.html">CreateImage</a>.</p>
     pub outpost_arn: ::std::option::Option<::std::string::String>,
+    /// <p>The Availability Zone where the EBS volume will be created (for example, <code>us-east-1a</code>).</p>
+    /// <p>Either <code>AvailabilityZone</code> or <code>AvailabilityZoneId</code> can be specified, but not both. If neither is specified, Amazon EC2 automatically selects an Availability Zone within the Region.</p>
+    /// <p>This parameter is not supported when using <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateImage.html">CreateImage</a>.</p>
+    pub availability_zone: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether the encryption state of an EBS volume is changed while being restored from a backing snapshot. The effect of setting the encryption state to <code>true</code> depends on the volume origin (new or from a snapshot), starting encryption state, ownership, and whether encryption by default is enabled. For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-encryption.html#encryption-parameters">Amazon EBS encryption</a> in the <i>Amazon EBS User Guide</i>.</p>
     /// <p>In no case can you remove encryption from an encrypted volume.</p>
     /// <p>Encrypted volumes can only be attached to instances that support Amazon EBS encryption. For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-encryption-requirements.html#ebs-encryption_supported_instances">Supported instance types</a>.</p>
@@ -78,6 +82,10 @@ pub struct EbsBlockDevice {
     /// <p>This parameter is not supported when using <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateImage.html">CreateImage</a>.</p>
     /// <p>Valid range: 100 - 300 MiB/s</p>
     pub volume_initialization_rate: ::std::option::Option<i32>,
+    /// <p>The ID of the Availability Zone where the EBS volume will be created (for example, <code>use1-az1</code>).</p>
+    /// <p>Either <code>AvailabilityZone</code> or <code>AvailabilityZoneId</code> can be specified, but not both. If neither is specified, Amazon EC2 automatically selects an Availability Zone within the Region.</p>
+    /// <p>This parameter is not supported when using <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateImage.html">CreateImage</a>.</p>
+    pub availability_zone_id: ::std::option::Option<::std::string::String>,
 }
 impl EbsBlockDevice {
     /// <p>Indicates whether the EBS volume is deleted on instance termination. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/terminating-instances.html#preserving-volumes-on-termination">Preserving Amazon EBS volumes on instance termination</a> in the <i>Amazon EC2 User Guide</i>.</p>
@@ -140,6 +148,12 @@ impl EbsBlockDevice {
     pub fn outpost_arn(&self) -> ::std::option::Option<&str> {
         self.outpost_arn.as_deref()
     }
+    /// <p>The Availability Zone where the EBS volume will be created (for example, <code>us-east-1a</code>).</p>
+    /// <p>Either <code>AvailabilityZone</code> or <code>AvailabilityZoneId</code> can be specified, but not both. If neither is specified, Amazon EC2 automatically selects an Availability Zone within the Region.</p>
+    /// <p>This parameter is not supported when using <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateImage.html">CreateImage</a>.</p>
+    pub fn availability_zone(&self) -> ::std::option::Option<&str> {
+        self.availability_zone.as_deref()
+    }
     /// <p>Indicates whether the encryption state of an EBS volume is changed while being restored from a backing snapshot. The effect of setting the encryption state to <code>true</code> depends on the volume origin (new or from a snapshot), starting encryption state, ownership, and whether encryption by default is enabled. For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-encryption.html#encryption-parameters">Amazon EBS encryption</a> in the <i>Amazon EBS User Guide</i>.</p>
     /// <p>In no case can you remove encryption from an encrypted volume.</p>
     /// <p>Encrypted volumes can only be attached to instances that support Amazon EBS encryption. For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-encryption-requirements.html#ebs-encryption_supported_instances">Supported instance types</a>.</p>
@@ -174,6 +188,12 @@ impl EbsBlockDevice {
     pub fn volume_initialization_rate(&self) -> ::std::option::Option<i32> {
         self.volume_initialization_rate
     }
+    /// <p>The ID of the Availability Zone where the EBS volume will be created (for example, <code>use1-az1</code>).</p>
+    /// <p>Either <code>AvailabilityZone</code> or <code>AvailabilityZoneId</code> can be specified, but not both. If neither is specified, Amazon EC2 automatically selects an Availability Zone within the Region.</p>
+    /// <p>This parameter is not supported when using <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateImage.html">CreateImage</a>.</p>
+    pub fn availability_zone_id(&self) -> ::std::option::Option<&str> {
+        self.availability_zone_id.as_deref()
+    }
 }
 impl EbsBlockDevice {
     /// Creates a new builder-style object to manufacture [`EbsBlockDevice`](crate::types::EbsBlockDevice).
@@ -194,8 +214,10 @@ pub struct EbsBlockDeviceBuilder {
     pub(crate) kms_key_id: ::std::option::Option<::std::string::String>,
     pub(crate) throughput: ::std::option::Option<i32>,
     pub(crate) outpost_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) availability_zone: ::std::option::Option<::std::string::String>,
     pub(crate) encrypted: ::std::option::Option<bool>,
     pub(crate) volume_initialization_rate: ::std::option::Option<i32>,
+    pub(crate) availability_zone_id: ::std::option::Option<::std::string::String>,
 }
 impl EbsBlockDeviceBuilder {
     /// <p>Indicates whether the EBS volume is deleted on instance termination. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/terminating-instances.html#preserving-volumes-on-termination">Preserving Amazon EBS volumes on instance termination</a> in the <i>Amazon EC2 User Guide</i>.</p>
@@ -394,6 +416,26 @@ impl EbsBlockDeviceBuilder {
     pub fn get_outpost_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.outpost_arn
     }
+    /// <p>The Availability Zone where the EBS volume will be created (for example, <code>us-east-1a</code>).</p>
+    /// <p>Either <code>AvailabilityZone</code> or <code>AvailabilityZoneId</code> can be specified, but not both. If neither is specified, Amazon EC2 automatically selects an Availability Zone within the Region.</p>
+    /// <p>This parameter is not supported when using <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateImage.html">CreateImage</a>.</p>
+    pub fn availability_zone(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.availability_zone = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Availability Zone where the EBS volume will be created (for example, <code>us-east-1a</code>).</p>
+    /// <p>Either <code>AvailabilityZone</code> or <code>AvailabilityZoneId</code> can be specified, but not both. If neither is specified, Amazon EC2 automatically selects an Availability Zone within the Region.</p>
+    /// <p>This parameter is not supported when using <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateImage.html">CreateImage</a>.</p>
+    pub fn set_availability_zone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.availability_zone = input;
+        self
+    }
+    /// <p>The Availability Zone where the EBS volume will be created (for example, <code>us-east-1a</code>).</p>
+    /// <p>Either <code>AvailabilityZone</code> or <code>AvailabilityZoneId</code> can be specified, but not both. If neither is specified, Amazon EC2 automatically selects an Availability Zone within the Region.</p>
+    /// <p>This parameter is not supported when using <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateImage.html">CreateImage</a>.</p>
+    pub fn get_availability_zone(&self) -> &::std::option::Option<::std::string::String> {
+        &self.availability_zone
+    }
     /// <p>Indicates whether the encryption state of an EBS volume is changed while being restored from a backing snapshot. The effect of setting the encryption state to <code>true</code> depends on the volume origin (new or from a snapshot), starting encryption state, ownership, and whether encryption by default is enabled. For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-encryption.html#encryption-parameters">Amazon EBS encryption</a> in the <i>Amazon EBS User Guide</i>.</p>
     /// <p>In no case can you remove encryption from an encrypted volume.</p>
     /// <p>Encrypted volumes can only be attached to instances that support Amazon EBS encryption. For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-encryption-requirements.html#ebs-encryption_supported_instances">Supported instance types</a>.</p>
@@ -500,6 +542,26 @@ impl EbsBlockDeviceBuilder {
     pub fn get_volume_initialization_rate(&self) -> &::std::option::Option<i32> {
         &self.volume_initialization_rate
     }
+    /// <p>The ID of the Availability Zone where the EBS volume will be created (for example, <code>use1-az1</code>).</p>
+    /// <p>Either <code>AvailabilityZone</code> or <code>AvailabilityZoneId</code> can be specified, but not both. If neither is specified, Amazon EC2 automatically selects an Availability Zone within the Region.</p>
+    /// <p>This parameter is not supported when using <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateImage.html">CreateImage</a>.</p>
+    pub fn availability_zone_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.availability_zone_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ID of the Availability Zone where the EBS volume will be created (for example, <code>use1-az1</code>).</p>
+    /// <p>Either <code>AvailabilityZone</code> or <code>AvailabilityZoneId</code> can be specified, but not both. If neither is specified, Amazon EC2 automatically selects an Availability Zone within the Region.</p>
+    /// <p>This parameter is not supported when using <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateImage.html">CreateImage</a>.</p>
+    pub fn set_availability_zone_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.availability_zone_id = input;
+        self
+    }
+    /// <p>The ID of the Availability Zone where the EBS volume will be created (for example, <code>use1-az1</code>).</p>
+    /// <p>Either <code>AvailabilityZone</code> or <code>AvailabilityZoneId</code> can be specified, but not both. If neither is specified, Amazon EC2 automatically selects an Availability Zone within the Region.</p>
+    /// <p>This parameter is not supported when using <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateImage.html">CreateImage</a>.</p>
+    pub fn get_availability_zone_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.availability_zone_id
+    }
     /// Consumes the builder and constructs a [`EbsBlockDevice`](crate::types::EbsBlockDevice).
     pub fn build(self) -> crate::types::EbsBlockDevice {
         crate::types::EbsBlockDevice {
@@ -511,8 +573,10 @@ impl EbsBlockDeviceBuilder {
             kms_key_id: self.kms_key_id,
             throughput: self.throughput,
             outpost_arn: self.outpost_arn,
+            availability_zone: self.availability_zone,
             encrypted: self.encrypted,
             volume_initialization_rate: self.volume_initialization_rate,
+            availability_zone_id: self.availability_zone_id,
         }
     }
 }

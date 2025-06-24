@@ -16,7 +16,7 @@ pub struct ResolverRule {
     pub status: ::std::option::Option<crate::types::ResolverRuleStatus>,
     /// <p>A detailed description of the status of a Resolver rule.</p>
     pub status_message: ::std::option::Option<::std::string::String>,
-    /// <p>When you want to forward DNS queries for specified domain name to resolvers on your network, specify <code>FORWARD</code>.</p>
+    /// <p>When you want to forward DNS queries for specified domain name to resolvers on your network, specify <code>FORWARD</code> or <code>DELEGATE</code>. If a query matches multiple Resolver rules (example.com and www.example.com), outbound DNS queries are routed using the Resolver rule that contains the most specific domain name (www.example.com).</p>
     /// <p>When you have a forwarding rule to forward DNS queries for a domain to your network and you want Resolver to process queries for a subdomain of that domain, specify <code>SYSTEM</code>.</p>
     /// <p>For example, to forward DNS queries for example.com to resolvers on your network, you create a rule and specify <code>FORWARD</code> for <code>RuleType</code>. To then have Resolver process queries for apex.example.com, you create a rule and specify <code>SYSTEM</code> for <code>RuleType</code>.</p>
     /// <p>Currently, only Resolver can create rules that have a value of <code>RECURSIVE</code> for <code>RuleType</code>.</p>
@@ -35,6 +35,8 @@ pub struct ResolverRule {
     pub creation_time: ::std::option::Option<::std::string::String>,
     /// <p>The date and time that the Resolver rule was last updated, in Unix time format and Coordinated Universal Time (UTC).</p>
     pub modification_time: ::std::option::Option<::std::string::String>,
+    /// <p>DNS queries with delegation records that point to this domain name are forwarded to resolvers on your network.</p>
+    pub delegation_record: ::std::option::Option<::std::string::String>,
 }
 impl ResolverRule {
     /// <p>The ID that Resolver assigned to the Resolver rule when you created it.</p>
@@ -61,7 +63,7 @@ impl ResolverRule {
     pub fn status_message(&self) -> ::std::option::Option<&str> {
         self.status_message.as_deref()
     }
-    /// <p>When you want to forward DNS queries for specified domain name to resolvers on your network, specify <code>FORWARD</code>.</p>
+    /// <p>When you want to forward DNS queries for specified domain name to resolvers on your network, specify <code>FORWARD</code> or <code>DELEGATE</code>. If a query matches multiple Resolver rules (example.com and www.example.com), outbound DNS queries are routed using the Resolver rule that contains the most specific domain name (www.example.com).</p>
     /// <p>When you have a forwarding rule to forward DNS queries for a domain to your network and you want Resolver to process queries for a subdomain of that domain, specify <code>SYSTEM</code>.</p>
     /// <p>For example, to forward DNS queries for example.com to resolvers on your network, you create a rule and specify <code>FORWARD</code> for <code>RuleType</code>. To then have Resolver process queries for apex.example.com, you create a rule and specify <code>SYSTEM</code> for <code>RuleType</code>.</p>
     /// <p>Currently, only Resolver can create rules that have a value of <code>RECURSIVE</code> for <code>RuleType</code>.</p>
@@ -98,6 +100,10 @@ impl ResolverRule {
     pub fn modification_time(&self) -> ::std::option::Option<&str> {
         self.modification_time.as_deref()
     }
+    /// <p>DNS queries with delegation records that point to this domain name are forwarded to resolvers on your network.</p>
+    pub fn delegation_record(&self) -> ::std::option::Option<&str> {
+        self.delegation_record.as_deref()
+    }
 }
 impl ResolverRule {
     /// Creates a new builder-style object to manufacture [`ResolverRule`](crate::types::ResolverRule).
@@ -124,6 +130,7 @@ pub struct ResolverRuleBuilder {
     pub(crate) share_status: ::std::option::Option<crate::types::ShareStatus>,
     pub(crate) creation_time: ::std::option::Option<::std::string::String>,
     pub(crate) modification_time: ::std::option::Option<::std::string::String>,
+    pub(crate) delegation_record: ::std::option::Option<::std::string::String>,
 }
 impl ResolverRuleBuilder {
     /// <p>The ID that Resolver assigned to the Resolver rule when you created it.</p>
@@ -210,7 +217,7 @@ impl ResolverRuleBuilder {
     pub fn get_status_message(&self) -> &::std::option::Option<::std::string::String> {
         &self.status_message
     }
-    /// <p>When you want to forward DNS queries for specified domain name to resolvers on your network, specify <code>FORWARD</code>.</p>
+    /// <p>When you want to forward DNS queries for specified domain name to resolvers on your network, specify <code>FORWARD</code> or <code>DELEGATE</code>. If a query matches multiple Resolver rules (example.com and www.example.com), outbound DNS queries are routed using the Resolver rule that contains the most specific domain name (www.example.com).</p>
     /// <p>When you have a forwarding rule to forward DNS queries for a domain to your network and you want Resolver to process queries for a subdomain of that domain, specify <code>SYSTEM</code>.</p>
     /// <p>For example, to forward DNS queries for example.com to resolvers on your network, you create a rule and specify <code>FORWARD</code> for <code>RuleType</code>. To then have Resolver process queries for apex.example.com, you create a rule and specify <code>SYSTEM</code> for <code>RuleType</code>.</p>
     /// <p>Currently, only Resolver can create rules that have a value of <code>RECURSIVE</code> for <code>RuleType</code>.</p>
@@ -218,7 +225,7 @@ impl ResolverRuleBuilder {
         self.rule_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>When you want to forward DNS queries for specified domain name to resolvers on your network, specify <code>FORWARD</code>.</p>
+    /// <p>When you want to forward DNS queries for specified domain name to resolvers on your network, specify <code>FORWARD</code> or <code>DELEGATE</code>. If a query matches multiple Resolver rules (example.com and www.example.com), outbound DNS queries are routed using the Resolver rule that contains the most specific domain name (www.example.com).</p>
     /// <p>When you have a forwarding rule to forward DNS queries for a domain to your network and you want Resolver to process queries for a subdomain of that domain, specify <code>SYSTEM</code>.</p>
     /// <p>For example, to forward DNS queries for example.com to resolvers on your network, you create a rule and specify <code>FORWARD</code> for <code>RuleType</code>. To then have Resolver process queries for apex.example.com, you create a rule and specify <code>SYSTEM</code> for <code>RuleType</code>.</p>
     /// <p>Currently, only Resolver can create rules that have a value of <code>RECURSIVE</code> for <code>RuleType</code>.</p>
@@ -226,7 +233,7 @@ impl ResolverRuleBuilder {
         self.rule_type = input;
         self
     }
-    /// <p>When you want to forward DNS queries for specified domain name to resolvers on your network, specify <code>FORWARD</code>.</p>
+    /// <p>When you want to forward DNS queries for specified domain name to resolvers on your network, specify <code>FORWARD</code> or <code>DELEGATE</code>. If a query matches multiple Resolver rules (example.com and www.example.com), outbound DNS queries are routed using the Resolver rule that contains the most specific domain name (www.example.com).</p>
     /// <p>When you have a forwarding rule to forward DNS queries for a domain to your network and you want Resolver to process queries for a subdomain of that domain, specify <code>SYSTEM</code>.</p>
     /// <p>For example, to forward DNS queries for example.com to resolvers on your network, you create a rule and specify <code>FORWARD</code> for <code>RuleType</code>. To then have Resolver process queries for apex.example.com, you create a rule and specify <code>SYSTEM</code> for <code>RuleType</code>.</p>
     /// <p>Currently, only Resolver can create rules that have a value of <code>RECURSIVE</code> for <code>RuleType</code>.</p>
@@ -337,6 +344,20 @@ impl ResolverRuleBuilder {
     pub fn get_modification_time(&self) -> &::std::option::Option<::std::string::String> {
         &self.modification_time
     }
+    /// <p>DNS queries with delegation records that point to this domain name are forwarded to resolvers on your network.</p>
+    pub fn delegation_record(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.delegation_record = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>DNS queries with delegation records that point to this domain name are forwarded to resolvers on your network.</p>
+    pub fn set_delegation_record(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.delegation_record = input;
+        self
+    }
+    /// <p>DNS queries with delegation records that point to this domain name are forwarded to resolvers on your network.</p>
+    pub fn get_delegation_record(&self) -> &::std::option::Option<::std::string::String> {
+        &self.delegation_record
+    }
     /// Consumes the builder and constructs a [`ResolverRule`](crate::types::ResolverRule).
     pub fn build(self) -> crate::types::ResolverRule {
         crate::types::ResolverRule {
@@ -354,6 +375,7 @@ impl ResolverRuleBuilder {
             share_status: self.share_status,
             creation_time: self.creation_time,
             modification_time: self.modification_time,
+            delegation_record: self.delegation_record,
         }
     }
 }

@@ -126,17 +126,17 @@ impl ListContainerGroupDefinitionsFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::list_container_group_definitions::paginator::ListContainerGroupDefinitionsPaginator {
         crate::operation::list_container_group_definitions::paginator::ListContainerGroupDefinitionsPaginator::new(self.handle, self.inner)
     }
-    /// <p>The type of container group to retrieve. Container group type determines how Amazon GameLift deploys the container group on each fleet instance.</p>
+    /// <p>The type of container group to retrieve. Container group type determines how Amazon GameLift Servers deploys the container group on each fleet instance.</p>
     pub fn container_group_type(mut self, input: crate::types::ContainerGroupType) -> Self {
         self.inner = self.inner.container_group_type(input);
         self
     }
-    /// <p>The type of container group to retrieve. Container group type determines how Amazon GameLift deploys the container group on each fleet instance.</p>
+    /// <p>The type of container group to retrieve. Container group type determines how Amazon GameLift Servers deploys the container group on each fleet instance.</p>
     pub fn set_container_group_type(mut self, input: ::std::option::Option<crate::types::ContainerGroupType>) -> Self {
         self.inner = self.inner.set_container_group_type(input);
         self
     }
-    /// <p>The type of container group to retrieve. Container group type determines how Amazon GameLift deploys the container group on each fleet instance.</p>
+    /// <p>The type of container group to retrieve. Container group type determines how Amazon GameLift Servers deploys the container group on each fleet instance.</p>
     pub fn get_container_group_type(&self) -> &::std::option::Option<crate::types::ContainerGroupType> {
         self.inner.get_container_group_type()
     }

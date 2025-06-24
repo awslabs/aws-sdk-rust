@@ -108,17 +108,17 @@ impl UpdateResolverConfigFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>Resource ID of the Amazon VPC that you want to update the Resolver configuration for.</p>
+    /// <p>The ID of the Amazon Virtual Private Cloud VPC or a Route 53 Profile that you're configuring Resolver for.</p>
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_id(input.into());
         self
     }
-    /// <p>Resource ID of the Amazon VPC that you want to update the Resolver configuration for.</p>
+    /// <p>The ID of the Amazon Virtual Private Cloud VPC or a Route 53 Profile that you're configuring Resolver for.</p>
     pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_resource_id(input);
         self
     }
-    /// <p>Resource ID of the Amazon VPC that you want to update the Resolver configuration for.</p>
+    /// <p>The ID of the Amazon Virtual Private Cloud VPC or a Route 53 Profile that you're configuring Resolver for.</p>
     pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_resource_id()
     }

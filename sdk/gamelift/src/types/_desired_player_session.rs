@@ -6,7 +6,7 @@
 pub struct DesiredPlayerSession {
     /// <p>A unique identifier for a player to associate with the player session.</p>
     pub player_id: ::std::option::Option<::std::string::String>,
-    /// <p>Developer-defined information related to a player. Amazon GameLift does not use this data, so it can be formatted as needed for use in the game.</p>
+    /// <p>Developer-defined information related to a player. Amazon GameLift Servers does not use this data, so it can be formatted as needed for use in the game.</p>
     pub player_data: ::std::option::Option<::std::string::String>,
 }
 impl DesiredPlayerSession {
@@ -14,7 +14,7 @@ impl DesiredPlayerSession {
     pub fn player_id(&self) -> ::std::option::Option<&str> {
         self.player_id.as_deref()
     }
-    /// <p>Developer-defined information related to a player. Amazon GameLift does not use this data, so it can be formatted as needed for use in the game.</p>
+    /// <p>Developer-defined information related to a player. Amazon GameLift Servers does not use this data, so it can be formatted as needed for use in the game.</p>
     pub fn player_data(&self) -> ::std::option::Option<&str> {
         self.player_data.as_deref()
     }
@@ -56,17 +56,17 @@ impl DesiredPlayerSessionBuilder {
     pub fn get_player_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.player_id
     }
-    /// <p>Developer-defined information related to a player. Amazon GameLift does not use this data, so it can be formatted as needed for use in the game.</p>
+    /// <p>Developer-defined information related to a player. Amazon GameLift Servers does not use this data, so it can be formatted as needed for use in the game.</p>
     pub fn player_data(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.player_data = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Developer-defined information related to a player. Amazon GameLift does not use this data, so it can be formatted as needed for use in the game.</p>
+    /// <p>Developer-defined information related to a player. Amazon GameLift Servers does not use this data, so it can be formatted as needed for use in the game.</p>
     pub fn set_player_data(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.player_data = input;
         self
     }
-    /// <p>Developer-defined information related to a player. Amazon GameLift does not use this data, so it can be formatted as needed for use in the game.</p>
+    /// <p>Developer-defined information related to a player. Amazon GameLift Servers does not use this data, so it can be formatted as needed for use in the game.</p>
     pub fn get_player_data(&self) -> &::std::option::Option<::std::string::String> {
         &self.player_data
     }

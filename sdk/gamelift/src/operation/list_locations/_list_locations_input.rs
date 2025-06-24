@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListLocationsInput {
-    /// <p>Filters the list for <code>AWS</code> or <code>CUSTOM</code> locations.</p>
+    /// <p>Filters the list for <code>AWS</code> or <code>CUSTOM</code> locations. Use this parameter to narrow down results to only Amazon Web Services-managed locations (Amazon EC2 or container) or only your custom locations (such as an Amazon GameLift Servers Anywhere fleet).</p>
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::LocationFilter>>,
     /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages.</p>
     pub limit: ::std::option::Option<i32>,
@@ -11,7 +11,7 @@ pub struct ListLocationsInput {
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListLocationsInput {
-    /// <p>Filters the list for <code>AWS</code> or <code>CUSTOM</code> locations.</p>
+    /// <p>Filters the list for <code>AWS</code> or <code>CUSTOM</code> locations. Use this parameter to narrow down results to only Amazon Web Services-managed locations (Amazon EC2 or container) or only your custom locations (such as an Amazon GameLift Servers Anywhere fleet).</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
     pub fn filters(&self) -> &[crate::types::LocationFilter] {
@@ -46,19 +46,19 @@ impl ListLocationsInputBuilder {
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
     ///
-    /// <p>Filters the list for <code>AWS</code> or <code>CUSTOM</code> locations.</p>
+    /// <p>Filters the list for <code>AWS</code> or <code>CUSTOM</code> locations. Use this parameter to narrow down results to only Amazon Web Services-managed locations (Amazon EC2 or container) or only your custom locations (such as an Amazon GameLift Servers Anywhere fleet).</p>
     pub fn filters(mut self, input: crate::types::LocationFilter) -> Self {
         let mut v = self.filters.unwrap_or_default();
         v.push(input);
         self.filters = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Filters the list for <code>AWS</code> or <code>CUSTOM</code> locations.</p>
+    /// <p>Filters the list for <code>AWS</code> or <code>CUSTOM</code> locations. Use this parameter to narrow down results to only Amazon Web Services-managed locations (Amazon EC2 or container) or only your custom locations (such as an Amazon GameLift Servers Anywhere fleet).</p>
     pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LocationFilter>>) -> Self {
         self.filters = input;
         self
     }
-    /// <p>Filters the list for <code>AWS</code> or <code>CUSTOM</code> locations.</p>
+    /// <p>Filters the list for <code>AWS</code> or <code>CUSTOM</code> locations. Use this parameter to narrow down results to only Amazon Web Services-managed locations (Amazon EC2 or container) or only your custom locations (such as an Amazon GameLift Servers Anywhere fleet).</p>
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LocationFilter>> {
         &self.filters
     }

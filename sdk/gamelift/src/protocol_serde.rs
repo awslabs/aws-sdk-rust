@@ -763,6 +763,8 @@ pub(crate) mod shape_locational_deployment;
 
 pub(crate) mod shape_metric_group_list;
 
+pub(crate) mod shape_ping_beacon;
+
 pub(crate) mod shape_placed_player_session_list;
 
 pub(crate) mod shape_player_latency_list;
@@ -810,6 +812,8 @@ pub(crate) mod shape_placed_player_session;
 pub(crate) mod shape_priority_type_list;
 
 pub(crate) mod shape_support_container_definition;
+
+pub(crate) mod shape_udp_endpoint;
 
 pub(crate) mod shape_vpc_peering_connection_status;
 

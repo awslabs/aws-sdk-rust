@@ -20,7 +20,7 @@ pub struct SupportContainerDefinitionInput {
     pub essential: ::std::option::Option<bool>,
     /// <p>Configuration for a non-terminal health check. A container automatically restarts if it stops functioning. With a health check, you can define additional reasons to flag a container as unhealthy and restart it. If an essential container fails a health check, the entire container group restarts.</p>
     pub health_check: ::std::option::Option<crate::types::ContainerHealthCheck>,
-    /// <p>The location of the container image to deploy to a container fleet. Provide an image in an Amazon Elastic Container Registry public or private repository. The repository must be in the same Amazon Web Services account and Amazon Web Services Region where you're creating the container group definition. For limits on image size, see <a href="https://docs.aws.amazon.com/general/latest/gr/gamelift.html">Amazon GameLift endpoints and quotas</a>. You can use any of the following image URI formats:</p>
+    /// <p>The location of the container image to deploy to a container fleet. Provide an image in an Amazon Elastic Container Registry public or private repository. The repository must be in the same Amazon Web Services account and Amazon Web Services Region where you're creating the container group definition. For limits on image size, see <a href="https://docs.aws.amazon.com/general/latest/gr/gamelift.html">Amazon GameLift Servers endpoints and quotas</a>. You can use any of the following image URI formats:</p>
     /// <ul>
     /// <li>
     /// <p>Image ID only: <code>\[AWS account\].dkr.ecr.\[AWS region\].amazonaws.com/\[repository ID\]</code></p></li>
@@ -33,8 +33,8 @@ pub struct SupportContainerDefinitionInput {
     /// <p>A specified amount of memory (in MiB) to reserve for this container. If you don't specify a container-specific memory limit, the container shares the container group's total memory allocation.</p>
     /// <p><b>Related data type: </b> <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_ContainerGroupDefinition.html">ContainerGroupDefinition</a>TotalMemoryLimitMebibytes<code></code></p>
     pub memory_hard_limit_mebibytes: ::std::option::Option<i32>,
-    /// <p>A set of ports that Amazon GameLift can assign to processes in the container. Any processes that accept inbound traffic connections must be assigned a port from this set. The container port range must be large enough to assign one to each process in the container that needs one.</p>
-    /// <p>Container ports aren't directly accessed by inbound traffic. Amazon GameLift maps these container ports to externally accessible connection ports, which are assigned as needed from the container fleet's <code>ConnectionPortRange</code>.</p>
+    /// <p>A set of ports that Amazon GameLift Servers can assign to processes in a container. The container port configuration must have enough ports for each container process that accepts inbound traffic connections. A container port configuration can have can have one or more container port ranges. Each range specifies starting and ending values as well as the supported network protocol.</p>
+    /// <p>Container ports aren't directly accessed by inbound traffic. Amazon GameLift Servers maps each container port to an externally accessible connection port (see the container fleet property <code>ConnectionPortRange</code>).</p>
     pub port_configuration: ::std::option::Option<crate::types::ContainerPortConfiguration>,
     /// <p>The number of vCPU units to reserve for this container. The container can use more resources when needed, if available. If you don't reserve CPU units for this container, it shares the container group's total vCPU limit.</p>
     /// <p><b>Related data type: </b> <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_ContainerGroupDefinition.html">ContainerGroupDefinition</a> TotalCpuLimit</p>
@@ -73,7 +73,7 @@ impl SupportContainerDefinitionInput {
     pub fn health_check(&self) -> ::std::option::Option<&crate::types::ContainerHealthCheck> {
         self.health_check.as_ref()
     }
-    /// <p>The location of the container image to deploy to a container fleet. Provide an image in an Amazon Elastic Container Registry public or private repository. The repository must be in the same Amazon Web Services account and Amazon Web Services Region where you're creating the container group definition. For limits on image size, see <a href="https://docs.aws.amazon.com/general/latest/gr/gamelift.html">Amazon GameLift endpoints and quotas</a>. You can use any of the following image URI formats:</p>
+    /// <p>The location of the container image to deploy to a container fleet. Provide an image in an Amazon Elastic Container Registry public or private repository. The repository must be in the same Amazon Web Services account and Amazon Web Services Region where you're creating the container group definition. For limits on image size, see <a href="https://docs.aws.amazon.com/general/latest/gr/gamelift.html">Amazon GameLift Servers endpoints and quotas</a>. You can use any of the following image URI formats:</p>
     /// <ul>
     /// <li>
     /// <p>Image ID only: <code>\[AWS account\].dkr.ecr.\[AWS region\].amazonaws.com/\[repository ID\]</code></p></li>
@@ -90,8 +90,8 @@ impl SupportContainerDefinitionInput {
     pub fn memory_hard_limit_mebibytes(&self) -> ::std::option::Option<i32> {
         self.memory_hard_limit_mebibytes
     }
-    /// <p>A set of ports that Amazon GameLift can assign to processes in the container. Any processes that accept inbound traffic connections must be assigned a port from this set. The container port range must be large enough to assign one to each process in the container that needs one.</p>
-    /// <p>Container ports aren't directly accessed by inbound traffic. Amazon GameLift maps these container ports to externally accessible connection ports, which are assigned as needed from the container fleet's <code>ConnectionPortRange</code>.</p>
+    /// <p>A set of ports that Amazon GameLift Servers can assign to processes in a container. The container port configuration must have enough ports for each container process that accepts inbound traffic connections. A container port configuration can have can have one or more container port ranges. Each range specifies starting and ending values as well as the supported network protocol.</p>
+    /// <p>Container ports aren't directly accessed by inbound traffic. Amazon GameLift Servers maps each container port to an externally accessible connection port (see the container fleet property <code>ConnectionPortRange</code>).</p>
     pub fn port_configuration(&self) -> ::std::option::Option<&crate::types::ContainerPortConfiguration> {
         self.port_configuration.as_ref()
     }
@@ -233,7 +233,7 @@ impl SupportContainerDefinitionInputBuilder {
     pub fn get_health_check(&self) -> &::std::option::Option<crate::types::ContainerHealthCheck> {
         &self.health_check
     }
-    /// <p>The location of the container image to deploy to a container fleet. Provide an image in an Amazon Elastic Container Registry public or private repository. The repository must be in the same Amazon Web Services account and Amazon Web Services Region where you're creating the container group definition. For limits on image size, see <a href="https://docs.aws.amazon.com/general/latest/gr/gamelift.html">Amazon GameLift endpoints and quotas</a>. You can use any of the following image URI formats:</p>
+    /// <p>The location of the container image to deploy to a container fleet. Provide an image in an Amazon Elastic Container Registry public or private repository. The repository must be in the same Amazon Web Services account and Amazon Web Services Region where you're creating the container group definition. For limits on image size, see <a href="https://docs.aws.amazon.com/general/latest/gr/gamelift.html">Amazon GameLift Servers endpoints and quotas</a>. You can use any of the following image URI formats:</p>
     /// <ul>
     /// <li>
     /// <p>Image ID only: <code>\[AWS account\].dkr.ecr.\[AWS region\].amazonaws.com/\[repository ID\]</code></p></li>
@@ -247,7 +247,7 @@ impl SupportContainerDefinitionInputBuilder {
         self.image_uri = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The location of the container image to deploy to a container fleet. Provide an image in an Amazon Elastic Container Registry public or private repository. The repository must be in the same Amazon Web Services account and Amazon Web Services Region where you're creating the container group definition. For limits on image size, see <a href="https://docs.aws.amazon.com/general/latest/gr/gamelift.html">Amazon GameLift endpoints and quotas</a>. You can use any of the following image URI formats:</p>
+    /// <p>The location of the container image to deploy to a container fleet. Provide an image in an Amazon Elastic Container Registry public or private repository. The repository must be in the same Amazon Web Services account and Amazon Web Services Region where you're creating the container group definition. For limits on image size, see <a href="https://docs.aws.amazon.com/general/latest/gr/gamelift.html">Amazon GameLift Servers endpoints and quotas</a>. You can use any of the following image URI formats:</p>
     /// <ul>
     /// <li>
     /// <p>Image ID only: <code>\[AWS account\].dkr.ecr.\[AWS region\].amazonaws.com/\[repository ID\]</code></p></li>
@@ -260,7 +260,7 @@ impl SupportContainerDefinitionInputBuilder {
         self.image_uri = input;
         self
     }
-    /// <p>The location of the container image to deploy to a container fleet. Provide an image in an Amazon Elastic Container Registry public or private repository. The repository must be in the same Amazon Web Services account and Amazon Web Services Region where you're creating the container group definition. For limits on image size, see <a href="https://docs.aws.amazon.com/general/latest/gr/gamelift.html">Amazon GameLift endpoints and quotas</a>. You can use any of the following image URI formats:</p>
+    /// <p>The location of the container image to deploy to a container fleet. Provide an image in an Amazon Elastic Container Registry public or private repository. The repository must be in the same Amazon Web Services account and Amazon Web Services Region where you're creating the container group definition. For limits on image size, see <a href="https://docs.aws.amazon.com/general/latest/gr/gamelift.html">Amazon GameLift Servers endpoints and quotas</a>. You can use any of the following image URI formats:</p>
     /// <ul>
     /// <li>
     /// <p>Image ID only: <code>\[AWS account\].dkr.ecr.\[AWS region\].amazonaws.com/\[repository ID\]</code></p></li>
@@ -289,20 +289,20 @@ impl SupportContainerDefinitionInputBuilder {
     pub fn get_memory_hard_limit_mebibytes(&self) -> &::std::option::Option<i32> {
         &self.memory_hard_limit_mebibytes
     }
-    /// <p>A set of ports that Amazon GameLift can assign to processes in the container. Any processes that accept inbound traffic connections must be assigned a port from this set. The container port range must be large enough to assign one to each process in the container that needs one.</p>
-    /// <p>Container ports aren't directly accessed by inbound traffic. Amazon GameLift maps these container ports to externally accessible connection ports, which are assigned as needed from the container fleet's <code>ConnectionPortRange</code>.</p>
+    /// <p>A set of ports that Amazon GameLift Servers can assign to processes in a container. The container port configuration must have enough ports for each container process that accepts inbound traffic connections. A container port configuration can have can have one or more container port ranges. Each range specifies starting and ending values as well as the supported network protocol.</p>
+    /// <p>Container ports aren't directly accessed by inbound traffic. Amazon GameLift Servers maps each container port to an externally accessible connection port (see the container fleet property <code>ConnectionPortRange</code>).</p>
     pub fn port_configuration(mut self, input: crate::types::ContainerPortConfiguration) -> Self {
         self.port_configuration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A set of ports that Amazon GameLift can assign to processes in the container. Any processes that accept inbound traffic connections must be assigned a port from this set. The container port range must be large enough to assign one to each process in the container that needs one.</p>
-    /// <p>Container ports aren't directly accessed by inbound traffic. Amazon GameLift maps these container ports to externally accessible connection ports, which are assigned as needed from the container fleet's <code>ConnectionPortRange</code>.</p>
+    /// <p>A set of ports that Amazon GameLift Servers can assign to processes in a container. The container port configuration must have enough ports for each container process that accepts inbound traffic connections. A container port configuration can have can have one or more container port ranges. Each range specifies starting and ending values as well as the supported network protocol.</p>
+    /// <p>Container ports aren't directly accessed by inbound traffic. Amazon GameLift Servers maps each container port to an externally accessible connection port (see the container fleet property <code>ConnectionPortRange</code>).</p>
     pub fn set_port_configuration(mut self, input: ::std::option::Option<crate::types::ContainerPortConfiguration>) -> Self {
         self.port_configuration = input;
         self
     }
-    /// <p>A set of ports that Amazon GameLift can assign to processes in the container. Any processes that accept inbound traffic connections must be assigned a port from this set. The container port range must be large enough to assign one to each process in the container that needs one.</p>
-    /// <p>Container ports aren't directly accessed by inbound traffic. Amazon GameLift maps these container ports to externally accessible connection ports, which are assigned as needed from the container fleet's <code>ConnectionPortRange</code>.</p>
+    /// <p>A set of ports that Amazon GameLift Servers can assign to processes in a container. The container port configuration must have enough ports for each container process that accepts inbound traffic connections. A container port configuration can have can have one or more container port ranges. Each range specifies starting and ending values as well as the supported network protocol.</p>
+    /// <p>Container ports aren't directly accessed by inbound traffic. Amazon GameLift Servers maps each container port to an externally accessible connection port (see the container fleet property <code>ConnectionPortRange</code>).</p>
     pub fn get_port_configuration(&self) -> &::std::option::Option<crate::types::ContainerPortConfiguration> {
         &self.port_configuration
     }

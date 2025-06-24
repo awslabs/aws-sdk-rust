@@ -22,8 +22,8 @@ impl crate::operation::create_container_group_definition::builders::CreateContai
 }
 /// Fluent builder constructing a request to `CreateContainerGroupDefinition`.
 ///
-/// <p>Creates a <code>ContainerGroupDefinition</code> that describes a set of containers for hosting your game server with Amazon GameLift managed containers hosting. An Amazon GameLift container group is similar to a container task or pod. Use container group definitions when you create a container fleet with <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateContainerFleet.html">CreateContainerFleet</a>.</p>
-/// <p>A container group definition determines how Amazon GameLift deploys your containers to each instance in a container fleet. You can maintain multiple versions of a container group definition.</p>
+/// <p>Creates a <code>ContainerGroupDefinition</code> that describes a set of containers for hosting your game server with Amazon GameLift Servers managed containers hosting. An Amazon GameLift Servers container group is similar to a container task or pod. Use container group definitions when you create a container fleet with <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateContainerFleet.html">CreateContainerFleet</a>.</p>
+/// <p>A container group definition determines how Amazon GameLift Servers deploys your containers to each instance in a container fleet. You can maintain multiple versions of a container group definition.</p>
 /// <p>There are two types of container groups:</p>
 /// <ul>
 /// <li>
@@ -39,7 +39,7 @@ impl crate::operation::create_container_group_definition::builders::CreateContai
 /// <li>
 /// <p>A <b>per-instance container group</b> has containers for processes that aren't replicated on a container fleet instance. This might include background services, logging, test processes, or processes that need to persist independently of the game server container group. When building a per-instance container group, you can define up to 10 support containers.</p></li>
 /// </ul><note>
-/// <p>This operation requires Identity and Access Management (IAM) permissions to access container images in Amazon ECR repositories. See <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-iam-policy-examples.html"> IAM permissions for Amazon GameLift</a> for help setting the appropriate permissions.</p>
+/// <p>This operation requires Identity and Access Management (IAM) permissions to access container images in Amazon ECR repositories. See <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-iam-policy-examples.html"> IAM permissions for Amazon GameLift Servers</a> for help setting the appropriate permissions.</p>
 /// </note>
 /// <p><b>Request options</b></p>
 /// <p>Use this operation to make the following types of requests. You can specify values for the minimum required parameters and customize optional values later.</p>
@@ -194,19 +194,19 @@ impl CreateContainerGroupDefinitionFluentBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_name()
     }
-    /// <p>The type of container group being defined. Container group type determines how Amazon GameLift deploys the container group on each fleet instance.</p>
+    /// <p>The type of container group being defined. Container group type determines how Amazon GameLift Servers deploys the container group on each fleet instance.</p>
     /// <p>Default value: <code>GAME_SERVER</code></p>
     pub fn container_group_type(mut self, input: crate::types::ContainerGroupType) -> Self {
         self.inner = self.inner.container_group_type(input);
         self
     }
-    /// <p>The type of container group being defined. Container group type determines how Amazon GameLift deploys the container group on each fleet instance.</p>
+    /// <p>The type of container group being defined. Container group type determines how Amazon GameLift Servers deploys the container group on each fleet instance.</p>
     /// <p>Default value: <code>GAME_SERVER</code></p>
     pub fn set_container_group_type(mut self, input: ::std::option::Option<crate::types::ContainerGroupType>) -> Self {
         self.inner = self.inner.set_container_group_type(input);
         self
     }
-    /// <p>The type of container group being defined. Container group type determines how Amazon GameLift deploys the container group on each fleet instance.</p>
+    /// <p>The type of container group being defined. Container group type determines how Amazon GameLift Servers deploys the container group on each fleet instance.</p>
     /// <p>Default value: <code>GAME_SERVER</code></p>
     pub fn get_container_group_type(&self) -> &::std::option::Option<crate::types::ContainerGroupType> {
         self.inner.get_container_group_type()
@@ -283,7 +283,7 @@ impl CreateContainerGroupDefinitionFluentBuilder {
     }
     /// <p>The platform that all containers in the group use. Containers in a group must run on the same operating system.</p>
     /// <p>Default value: <code>AMAZON_LINUX_2023</code></p><note>
-    /// <p>Amazon Linux 2 (AL2) will reach end of support on 6/30/2025. See more details in the <a href="https://aws.amazon.com/amazon-linux-2/faqs/">Amazon Linux 2 FAQs</a>. For game servers that are hosted on AL2 and use server SDK version 4.x for Amazon GameLift, first update the game server build to server SDK 5.x, and then deploy to AL2023 instances. See <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-serversdk5-migration.html"> Migrate to server SDK version 5.</a></p>
+    /// <p>Amazon Linux 2 (AL2) will reach end of support on 6/30/2025. See more details in the <a href="http://aws.amazon.com/amazon-linux-2/faqs/">Amazon Linux 2 FAQs</a>. For game servers that are hosted on AL2 and use server SDK version 4.x for Amazon GameLift Servers, first update the game server build to server SDK 5.x, and then deploy to AL2023 instances. See <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-serversdk5-migration.html"> Migrate to server SDK version 5.</a></p>
     /// </note>
     pub fn operating_system(mut self, input: crate::types::ContainerOperatingSystem) -> Self {
         self.inner = self.inner.operating_system(input);
@@ -291,7 +291,7 @@ impl CreateContainerGroupDefinitionFluentBuilder {
     }
     /// <p>The platform that all containers in the group use. Containers in a group must run on the same operating system.</p>
     /// <p>Default value: <code>AMAZON_LINUX_2023</code></p><note>
-    /// <p>Amazon Linux 2 (AL2) will reach end of support on 6/30/2025. See more details in the <a href="https://aws.amazon.com/amazon-linux-2/faqs/">Amazon Linux 2 FAQs</a>. For game servers that are hosted on AL2 and use server SDK version 4.x for Amazon GameLift, first update the game server build to server SDK 5.x, and then deploy to AL2023 instances. See <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-serversdk5-migration.html"> Migrate to server SDK version 5.</a></p>
+    /// <p>Amazon Linux 2 (AL2) will reach end of support on 6/30/2025. See more details in the <a href="http://aws.amazon.com/amazon-linux-2/faqs/">Amazon Linux 2 FAQs</a>. For game servers that are hosted on AL2 and use server SDK version 4.x for Amazon GameLift Servers, first update the game server build to server SDK 5.x, and then deploy to AL2023 instances. See <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-serversdk5-migration.html"> Migrate to server SDK version 5.</a></p>
     /// </note>
     pub fn set_operating_system(mut self, input: ::std::option::Option<crate::types::ContainerOperatingSystem>) -> Self {
         self.inner = self.inner.set_operating_system(input);
@@ -299,7 +299,7 @@ impl CreateContainerGroupDefinitionFluentBuilder {
     }
     /// <p>The platform that all containers in the group use. Containers in a group must run on the same operating system.</p>
     /// <p>Default value: <code>AMAZON_LINUX_2023</code></p><note>
-    /// <p>Amazon Linux 2 (AL2) will reach end of support on 6/30/2025. See more details in the <a href="https://aws.amazon.com/amazon-linux-2/faqs/">Amazon Linux 2 FAQs</a>. For game servers that are hosted on AL2 and use server SDK version 4.x for Amazon GameLift, first update the game server build to server SDK 5.x, and then deploy to AL2023 instances. See <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-serversdk5-migration.html"> Migrate to server SDK version 5.</a></p>
+    /// <p>Amazon Linux 2 (AL2) will reach end of support on 6/30/2025. See more details in the <a href="http://aws.amazon.com/amazon-linux-2/faqs/">Amazon Linux 2 FAQs</a>. For game servers that are hosted on AL2 and use server SDK version 4.x for Amazon GameLift Servers, first update the game server build to server SDK 5.x, and then deploy to AL2023 instances. See <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-serversdk5-migration.html"> Migrate to server SDK version 5.</a></p>
     /// </note>
     pub fn get_operating_system(&self) -> &::std::option::Option<crate::types::ContainerOperatingSystem> {
         self.inner.get_operating_system()

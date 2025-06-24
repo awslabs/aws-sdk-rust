@@ -19,26 +19,38 @@ pub fn ser_update_investigation_group_input_input(
         }
         object_2.finish();
     }
-    if let Some(var_7) = &input.encryption_configuration {
-        #[allow(unused_mut)]
-        let mut object_8 = object.key("encryptionConfiguration").start_object();
-        crate::protocol_serde::shape_encryption_configuration::ser_encryption_configuration(&mut object_8, var_7)?;
-        object_8.finish();
-    }
-    if let Some(var_9) = &input.is_cloud_trail_event_history_enabled {
-        object.key("isCloudTrailEventHistoryEnabled").boolean(*var_9);
-    }
-    if let Some(var_10) = &input.role_arn {
-        object.key("roleArn").string(var_10.as_str());
-    }
-    if let Some(var_11) = &input.tag_key_boundaries {
-        let mut array_12 = object.key("tagKeyBoundaries").start_array();
-        for item_13 in var_11 {
+    if let Some(var_7) = &input.cross_account_configurations {
+        let mut array_8 = object.key("crossAccountConfigurations").start_array();
+        for item_9 in var_7 {
             {
-                array_12.value().string(item_13.as_str());
+                #[allow(unused_mut)]
+                let mut object_10 = array_8.value().start_object();
+                crate::protocol_serde::shape_cross_account_configuration::ser_cross_account_configuration(&mut object_10, item_9)?;
+                object_10.finish();
             }
         }
-        array_12.finish();
+        array_8.finish();
+    }
+    if let Some(var_11) = &input.encryption_configuration {
+        #[allow(unused_mut)]
+        let mut object_12 = object.key("encryptionConfiguration").start_object();
+        crate::protocol_serde::shape_encryption_configuration::ser_encryption_configuration(&mut object_12, var_11)?;
+        object_12.finish();
+    }
+    if let Some(var_13) = &input.is_cloud_trail_event_history_enabled {
+        object.key("isCloudTrailEventHistoryEnabled").boolean(*var_13);
+    }
+    if let Some(var_14) = &input.role_arn {
+        object.key("roleArn").string(var_14.as_str());
+    }
+    if let Some(var_15) = &input.tag_key_boundaries {
+        let mut array_16 = object.key("tagKeyBoundaries").start_array();
+        for item_17 in var_15 {
+            {
+                array_16.value().string(item_17.as_str());
+            }
+        }
+        array_16.finish();
     }
     Ok(())
 }

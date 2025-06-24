@@ -67,6 +67,19 @@ pub struct CopyDbSnapshotInput {
     pub target_custom_availability_zone: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether to copy the DB option group associated with the source DB snapshot to the target Amazon Web Services account and associate with the target DB snapshot. The associated option group can be copied only with cross-account snapshot copy calls.</p>
     pub copy_option_group: ::std::option::Option<bool>,
+    /// <p>Specifies the name of the Availability Zone where RDS stores the DB snapshot. This value is valid only for snapshots that RDS stores on a Dedicated Local Zone.</p>
+    pub snapshot_availability_zone: ::std::option::Option<::std::string::String>,
+    /// <p>Configures the location where RDS will store copied snapshots.</p>
+    /// <p>Valid Values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>local</code> (Dedicated Local Zone)</p></li>
+    /// <li>
+    /// <p><code>outposts</code> (Amazon Web Services Outposts)</p></li>
+    /// <li>
+    /// <p><code>region</code> (Amazon Web Services Region)</p></li>
+    /// </ul>
+    pub snapshot_target: ::std::option::Option<::std::string::String>,
 }
 impl CopyDbSnapshotInput {
     /// <p>The identifier for the source DB snapshot.</p>
@@ -152,6 +165,23 @@ impl CopyDbSnapshotInput {
     pub fn copy_option_group(&self) -> ::std::option::Option<bool> {
         self.copy_option_group
     }
+    /// <p>Specifies the name of the Availability Zone where RDS stores the DB snapshot. This value is valid only for snapshots that RDS stores on a Dedicated Local Zone.</p>
+    pub fn snapshot_availability_zone(&self) -> ::std::option::Option<&str> {
+        self.snapshot_availability_zone.as_deref()
+    }
+    /// <p>Configures the location where RDS will store copied snapshots.</p>
+    /// <p>Valid Values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>local</code> (Dedicated Local Zone)</p></li>
+    /// <li>
+    /// <p><code>outposts</code> (Amazon Web Services Outposts)</p></li>
+    /// <li>
+    /// <p><code>region</code> (Amazon Web Services Region)</p></li>
+    /// </ul>
+    pub fn snapshot_target(&self) -> ::std::option::Option<&str> {
+        self.snapshot_target.as_deref()
+    }
 }
 impl CopyDbSnapshotInput {
     /// Creates a new builder-style object to manufacture [`CopyDbSnapshotInput`](crate::operation::copy_db_snapshot::CopyDbSnapshotInput).
@@ -173,6 +203,8 @@ pub struct CopyDbSnapshotInputBuilder {
     pub(crate) option_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) target_custom_availability_zone: ::std::option::Option<::std::string::String>,
     pub(crate) copy_option_group: ::std::option::Option<bool>,
+    pub(crate) snapshot_availability_zone: ::std::option::Option<::std::string::String>,
+    pub(crate) snapshot_target: ::std::option::Option<::std::string::String>,
 }
 impl CopyDbSnapshotInputBuilder {
     /// <p>The identifier for the source DB snapshot.</p>
@@ -444,6 +476,61 @@ impl CopyDbSnapshotInputBuilder {
     pub fn get_copy_option_group(&self) -> &::std::option::Option<bool> {
         &self.copy_option_group
     }
+    /// <p>Specifies the name of the Availability Zone where RDS stores the DB snapshot. This value is valid only for snapshots that RDS stores on a Dedicated Local Zone.</p>
+    pub fn snapshot_availability_zone(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.snapshot_availability_zone = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Specifies the name of the Availability Zone where RDS stores the DB snapshot. This value is valid only for snapshots that RDS stores on a Dedicated Local Zone.</p>
+    pub fn set_snapshot_availability_zone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.snapshot_availability_zone = input;
+        self
+    }
+    /// <p>Specifies the name of the Availability Zone where RDS stores the DB snapshot. This value is valid only for snapshots that RDS stores on a Dedicated Local Zone.</p>
+    pub fn get_snapshot_availability_zone(&self) -> &::std::option::Option<::std::string::String> {
+        &self.snapshot_availability_zone
+    }
+    /// <p>Configures the location where RDS will store copied snapshots.</p>
+    /// <p>Valid Values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>local</code> (Dedicated Local Zone)</p></li>
+    /// <li>
+    /// <p><code>outposts</code> (Amazon Web Services Outposts)</p></li>
+    /// <li>
+    /// <p><code>region</code> (Amazon Web Services Region)</p></li>
+    /// </ul>
+    pub fn snapshot_target(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.snapshot_target = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Configures the location where RDS will store copied snapshots.</p>
+    /// <p>Valid Values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>local</code> (Dedicated Local Zone)</p></li>
+    /// <li>
+    /// <p><code>outposts</code> (Amazon Web Services Outposts)</p></li>
+    /// <li>
+    /// <p><code>region</code> (Amazon Web Services Region)</p></li>
+    /// </ul>
+    pub fn set_snapshot_target(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.snapshot_target = input;
+        self
+    }
+    /// <p>Configures the location where RDS will store copied snapshots.</p>
+    /// <p>Valid Values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>local</code> (Dedicated Local Zone)</p></li>
+    /// <li>
+    /// <p><code>outposts</code> (Amazon Web Services Outposts)</p></li>
+    /// <li>
+    /// <p><code>region</code> (Amazon Web Services Region)</p></li>
+    /// </ul>
+    pub fn get_snapshot_target(&self) -> &::std::option::Option<::std::string::String> {
+        &self.snapshot_target
+    }
     /// Consumes the builder and constructs a [`CopyDbSnapshotInput`](crate::operation::copy_db_snapshot::CopyDbSnapshotInput).
     pub fn build(
         self,
@@ -458,6 +545,8 @@ impl CopyDbSnapshotInputBuilder {
             option_group_name: self.option_group_name,
             target_custom_availability_zone: self.target_custom_availability_zone,
             copy_option_group: self.copy_option_group,
+            snapshot_availability_zone: self.snapshot_availability_zone,
+            snapshot_target: self.snapshot_target,
         })
     }
 }

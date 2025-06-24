@@ -22,11 +22,11 @@ impl crate::operation::deregister_game_server::builders::DeregisterGameServerInp
 }
 /// Fluent builder constructing a request to `DeregisterGameServer`.
 ///
-/// <p><b>This operation is used with the Amazon GameLift FleetIQ solution and game server groups.</b></p>
+/// <p><b>This operation is used with the Amazon GameLift Servers FleetIQ solution and game server groups.</b></p>
 /// <p>Removes the game server from a game server group. As a result of this operation, the deregistered game server can no longer be claimed and will not be returned in a list of active game servers.</p>
 /// <p>To deregister a game server, specify the game server group and game server ID. If successful, this operation emits a CloudWatch event with termination timestamp and reason.</p>
 /// <p><b>Learn more</b></p>
-/// <p><a href="https://docs.aws.amazon.com/gamelift/latest/fleetiqguide/gsg-intro.html">Amazon GameLift FleetIQ Guide</a></p>
+/// <p><a href="https://docs.aws.amazon.com/gamelift/latest/fleetiqguide/gsg-intro.html">Amazon GameLift Servers FleetIQ Guide</a></p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeregisterGameServerFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

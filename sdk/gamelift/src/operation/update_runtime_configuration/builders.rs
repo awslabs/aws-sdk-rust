@@ -22,11 +22,11 @@ impl crate::operation::update_runtime_configuration::builders::UpdateRuntimeConf
 }
 /// Fluent builder constructing a request to `UpdateRuntimeConfiguration`.
 ///
-/// <p>Updates the runtime configuration for the specified fleet. The runtime configuration tells Amazon GameLift how to launch server processes on computes in managed EC2 and Anywhere fleets. You can update a fleet's runtime configuration at any time after the fleet is created; it does not need to be in <code>ACTIVE</code> status.</p>
+/// <p>Updates the runtime configuration for the specified fleet. The runtime configuration tells Amazon GameLift Servers how to launch server processes on computes in managed EC2 and Anywhere fleets. You can update a fleet's runtime configuration at any time after the fleet is created; it does not need to be in <code>ACTIVE</code> status.</p>
 /// <p>To update runtime configuration, specify the fleet ID and provide a <code>RuntimeConfiguration</code> with an updated set of server process configurations.</p>
 /// <p>If successful, the fleet's runtime configuration settings are updated. Fleet computes that run game server processes regularly check for and receive updated runtime configurations. The computes immediately take action to comply with the new configuration by launching new server processes or by not replacing existing processes when they shut down. Updating a fleet's runtime configuration never affects existing server processes.</p>
 /// <p><b>Learn more</b></p>
-/// <p><a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting up Amazon GameLift fleets</a></p>
+/// <p><a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting up Amazon GameLift Servers fleets</a></p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateRuntimeConfigurationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -126,17 +126,17 @@ impl UpdateRuntimeConfigurationFluentBuilder {
     pub fn get_fleet_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_fleet_id()
     }
-    /// <p>Instructions for launching server processes on fleet computes. Server processes run either a custom game build executable or a Amazon GameLift Realtime script. The runtime configuration lists the types of server processes to run, how to launch them, and the number of processes to run concurrently.</p>
+    /// <p>Instructions for launching server processes on fleet computes. Server processes run either a custom game build executable or a Amazon GameLift Servers Realtime script. The runtime configuration lists the types of server processes to run, how to launch them, and the number of processes to run concurrently.</p>
     pub fn runtime_configuration(mut self, input: crate::types::RuntimeConfiguration) -> Self {
         self.inner = self.inner.runtime_configuration(input);
         self
     }
-    /// <p>Instructions for launching server processes on fleet computes. Server processes run either a custom game build executable or a Amazon GameLift Realtime script. The runtime configuration lists the types of server processes to run, how to launch them, and the number of processes to run concurrently.</p>
+    /// <p>Instructions for launching server processes on fleet computes. Server processes run either a custom game build executable or a Amazon GameLift Servers Realtime script. The runtime configuration lists the types of server processes to run, how to launch them, and the number of processes to run concurrently.</p>
     pub fn set_runtime_configuration(mut self, input: ::std::option::Option<crate::types::RuntimeConfiguration>) -> Self {
         self.inner = self.inner.set_runtime_configuration(input);
         self
     }
-    /// <p>Instructions for launching server processes on fleet computes. Server processes run either a custom game build executable or a Amazon GameLift Realtime script. The runtime configuration lists the types of server processes to run, how to launch them, and the number of processes to run concurrently.</p>
+    /// <p>Instructions for launching server processes on fleet computes. Server processes run either a custom game build executable or a Amazon GameLift Servers Realtime script. The runtime configuration lists the types of server processes to run, how to launch them, and the number of processes to run concurrently.</p>
     pub fn get_runtime_configuration(&self) -> &::std::option::Option<crate::types::RuntimeConfiguration> {
         self.inner.get_runtime_configuration()
     }

@@ -377,4 +377,59 @@ impl CopyDBSnapshotFluentBuilder {
     pub fn get_copy_option_group(&self) -> &::std::option::Option<bool> {
         self.inner.get_copy_option_group()
     }
+    /// <p>Specifies the name of the Availability Zone where RDS stores the DB snapshot. This value is valid only for snapshots that RDS stores on a Dedicated Local Zone.</p>
+    pub fn snapshot_availability_zone(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.snapshot_availability_zone(input.into());
+        self
+    }
+    /// <p>Specifies the name of the Availability Zone where RDS stores the DB snapshot. This value is valid only for snapshots that RDS stores on a Dedicated Local Zone.</p>
+    pub fn set_snapshot_availability_zone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_snapshot_availability_zone(input);
+        self
+    }
+    /// <p>Specifies the name of the Availability Zone where RDS stores the DB snapshot. This value is valid only for snapshots that RDS stores on a Dedicated Local Zone.</p>
+    pub fn get_snapshot_availability_zone(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_snapshot_availability_zone()
+    }
+    /// <p>Configures the location where RDS will store copied snapshots.</p>
+    /// <p>Valid Values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>local</code> (Dedicated Local Zone)</p></li>
+    /// <li>
+    /// <p><code>outposts</code> (Amazon Web Services Outposts)</p></li>
+    /// <li>
+    /// <p><code>region</code> (Amazon Web Services Region)</p></li>
+    /// </ul>
+    pub fn snapshot_target(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.snapshot_target(input.into());
+        self
+    }
+    /// <p>Configures the location where RDS will store copied snapshots.</p>
+    /// <p>Valid Values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>local</code> (Dedicated Local Zone)</p></li>
+    /// <li>
+    /// <p><code>outposts</code> (Amazon Web Services Outposts)</p></li>
+    /// <li>
+    /// <p><code>region</code> (Amazon Web Services Region)</p></li>
+    /// </ul>
+    pub fn set_snapshot_target(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_snapshot_target(input);
+        self
+    }
+    /// <p>Configures the location where RDS will store copied snapshots.</p>
+    /// <p>Valid Values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>local</code> (Dedicated Local Zone)</p></li>
+    /// <li>
+    /// <p><code>outposts</code> (Amazon Web Services Outposts)</p></li>
+    /// <li>
+    /// <p><code>region</code> (Amazon Web Services Region)</p></li>
+    /// </ul>
+    pub fn get_snapshot_target(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_snapshot_target()
+    }
 }

@@ -143,17 +143,17 @@ impl UpdateGameSessionQueueFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_player_latency_policies`](Self::set_player_latency_policies).
     ///
-    /// <p>A set of policies that enforce a sliding cap on player latency when processing game sessions placement requests. Use multiple policies to gradually relax the cap over time if Amazon GameLift can't make a placement. Policies are evaluated in order starting with the lowest maximum latency value. When updating policies, provide a complete collection of policies.</p>
+    /// <p>A set of policies that enforce a sliding cap on player latency when processing game sessions placement requests. Use multiple policies to gradually relax the cap over time if Amazon GameLift Servers can't make a placement. Policies are evaluated in order starting with the lowest maximum latency value. When updating policies, provide a complete collection of policies.</p>
     pub fn player_latency_policies(mut self, input: crate::types::PlayerLatencyPolicy) -> Self {
         self.inner = self.inner.player_latency_policies(input);
         self
     }
-    /// <p>A set of policies that enforce a sliding cap on player latency when processing game sessions placement requests. Use multiple policies to gradually relax the cap over time if Amazon GameLift can't make a placement. Policies are evaluated in order starting with the lowest maximum latency value. When updating policies, provide a complete collection of policies.</p>
+    /// <p>A set of policies that enforce a sliding cap on player latency when processing game sessions placement requests. Use multiple policies to gradually relax the cap over time if Amazon GameLift Servers can't make a placement. Policies are evaluated in order starting with the lowest maximum latency value. When updating policies, provide a complete collection of policies.</p>
     pub fn set_player_latency_policies(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PlayerLatencyPolicy>>) -> Self {
         self.inner = self.inner.set_player_latency_policies(input);
         self
     }
-    /// <p>A set of policies that enforce a sliding cap on player latency when processing game sessions placement requests. Use multiple policies to gradually relax the cap over time if Amazon GameLift can't make a placement. Policies are evaluated in order starting with the lowest maximum latency value. When updating policies, provide a complete collection of policies.</p>
+    /// <p>A set of policies that enforce a sliding cap on player latency when processing game sessions placement requests. Use multiple policies to gradually relax the cap over time if Amazon GameLift Servers can't make a placement. Policies are evaluated in order starting with the lowest maximum latency value. When updating policies, provide a complete collection of policies.</p>
     pub fn get_player_latency_policies(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PlayerLatencyPolicy>> {
         self.inner.get_player_latency_policies()
     }

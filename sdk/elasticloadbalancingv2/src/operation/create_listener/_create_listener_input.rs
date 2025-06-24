@@ -10,7 +10,7 @@ pub struct CreateListenerInput {
     /// <p>The port on which the load balancer is listening. You can't specify a port for a Gateway Load Balancer.</p>
     pub port: ::std::option::Option<i32>,
     /// <p>\[HTTPS and TLS listeners\] The security policy that defines which protocols and ciphers are supported.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html#describe-ssl-policies">Security policies</a> in the <i>Application Load Balancers Guide</i> and <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-tls-listener.html#describe-ssl-policies">Security policies</a> in the <i>Network Load Balancers Guide</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/describe-ssl-policies.html">Security policies</a> in the <i>Application Load Balancers Guide</i> and <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/describe-ssl-policies.html">Security policies</a> in the <i>Network Load Balancers Guide</i>.</p>
     pub ssl_policy: ::std::option::Option<::std::string::String>,
     /// <p>\[HTTPS and TLS listeners\] The default certificate for the listener. You must provide exactly one certificate. Set CertificateArn to the certificate ARN but do not set IsDefault.</p>
     pub certificates: ::std::option::Option<::std::vec::Vec<crate::types::Certificate>>,
@@ -29,7 +29,7 @@ pub struct CreateListenerInput {
     /// <li>
     /// <p><code>None</code></p></li>
     /// </ul>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-tls-listener.html#alpn-policies">ALPN policies</a> in the <i>Network Load Balancers Guide</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/load-balancer-listeners.html#alpn-policies">ALPN policies</a> in the <i>Network Load Balancers Guide</i>.</p>
     pub alpn_policy: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The tags to assign to the listener.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
@@ -50,7 +50,7 @@ impl CreateListenerInput {
         self.port
     }
     /// <p>\[HTTPS and TLS listeners\] The security policy that defines which protocols and ciphers are supported.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html#describe-ssl-policies">Security policies</a> in the <i>Application Load Balancers Guide</i> and <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-tls-listener.html#describe-ssl-policies">Security policies</a> in the <i>Network Load Balancers Guide</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/describe-ssl-policies.html">Security policies</a> in the <i>Application Load Balancers Guide</i> and <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/describe-ssl-policies.html">Security policies</a> in the <i>Network Load Balancers Guide</i>.</p>
     pub fn ssl_policy(&self) -> ::std::option::Option<&str> {
         self.ssl_policy.as_deref()
     }
@@ -79,7 +79,7 @@ impl CreateListenerInput {
     /// <li>
     /// <p><code>None</code></p></li>
     /// </ul>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-tls-listener.html#alpn-policies">ALPN policies</a> in the <i>Network Load Balancers Guide</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/load-balancer-listeners.html#alpn-policies">ALPN policies</a> in the <i>Network Load Balancers Guide</i>.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.alpn_policy.is_none()`.
     pub fn alpn_policy(&self) -> &[::std::string::String] {
@@ -162,19 +162,19 @@ impl CreateListenerInputBuilder {
         &self.port
     }
     /// <p>\[HTTPS and TLS listeners\] The security policy that defines which protocols and ciphers are supported.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html#describe-ssl-policies">Security policies</a> in the <i>Application Load Balancers Guide</i> and <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-tls-listener.html#describe-ssl-policies">Security policies</a> in the <i>Network Load Balancers Guide</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/describe-ssl-policies.html">Security policies</a> in the <i>Application Load Balancers Guide</i> and <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/describe-ssl-policies.html">Security policies</a> in the <i>Network Load Balancers Guide</i>.</p>
     pub fn ssl_policy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ssl_policy = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>\[HTTPS and TLS listeners\] The security policy that defines which protocols and ciphers are supported.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html#describe-ssl-policies">Security policies</a> in the <i>Application Load Balancers Guide</i> and <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-tls-listener.html#describe-ssl-policies">Security policies</a> in the <i>Network Load Balancers Guide</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/describe-ssl-policies.html">Security policies</a> in the <i>Application Load Balancers Guide</i> and <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/describe-ssl-policies.html">Security policies</a> in the <i>Network Load Balancers Guide</i>.</p>
     pub fn set_ssl_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ssl_policy = input;
         self
     }
     /// <p>\[HTTPS and TLS listeners\] The security policy that defines which protocols and ciphers are supported.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html#describe-ssl-policies">Security policies</a> in the <i>Application Load Balancers Guide</i> and <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-tls-listener.html#describe-ssl-policies">Security policies</a> in the <i>Network Load Balancers Guide</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/describe-ssl-policies.html">Security policies</a> in the <i>Application Load Balancers Guide</i> and <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/describe-ssl-policies.html">Security policies</a> in the <i>Network Load Balancers Guide</i>.</p>
     pub fn get_ssl_policy(&self) -> &::std::option::Option<::std::string::String> {
         &self.ssl_policy
     }
@@ -235,7 +235,7 @@ impl CreateListenerInputBuilder {
     /// <li>
     /// <p><code>None</code></p></li>
     /// </ul>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-tls-listener.html#alpn-policies">ALPN policies</a> in the <i>Network Load Balancers Guide</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/load-balancer-listeners.html#alpn-policies">ALPN policies</a> in the <i>Network Load Balancers Guide</i>.</p>
     pub fn alpn_policy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.alpn_policy.unwrap_or_default();
         v.push(input.into());
@@ -255,7 +255,7 @@ impl CreateListenerInputBuilder {
     /// <li>
     /// <p><code>None</code></p></li>
     /// </ul>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-tls-listener.html#alpn-policies">ALPN policies</a> in the <i>Network Load Balancers Guide</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/load-balancer-listeners.html#alpn-policies">ALPN policies</a> in the <i>Network Load Balancers Guide</i>.</p>
     pub fn set_alpn_policy(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.alpn_policy = input;
         self
@@ -273,7 +273,7 @@ impl CreateListenerInputBuilder {
     /// <li>
     /// <p><code>None</code></p></li>
     /// </ul>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-tls-listener.html#alpn-policies">ALPN policies</a> in the <i>Network Load Balancers Guide</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/load-balancer-listeners.html#alpn-policies">ALPN policies</a> in the <i>Network Load Balancers Guide</i>.</p>
     pub fn get_alpn_policy(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.alpn_policy
     }

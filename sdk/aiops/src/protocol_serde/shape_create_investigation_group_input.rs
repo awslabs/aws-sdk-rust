@@ -19,45 +19,57 @@ pub fn ser_create_investigation_group_input_input(
         }
         object_2.finish();
     }
-    if let Some(var_7) = &input.encryption_configuration {
+    if let Some(var_7) = &input.cross_account_configurations {
+        let mut array_8 = object.key("crossAccountConfigurations").start_array();
+        for item_9 in var_7 {
+            {
+                #[allow(unused_mut)]
+                let mut object_10 = array_8.value().start_object();
+                crate::protocol_serde::shape_cross_account_configuration::ser_cross_account_configuration(&mut object_10, item_9)?;
+                object_10.finish();
+            }
+        }
+        array_8.finish();
+    }
+    if let Some(var_11) = &input.encryption_configuration {
         #[allow(unused_mut)]
-        let mut object_8 = object.key("encryptionConfiguration").start_object();
-        crate::protocol_serde::shape_encryption_configuration::ser_encryption_configuration(&mut object_8, var_7)?;
-        object_8.finish();
+        let mut object_12 = object.key("encryptionConfiguration").start_object();
+        crate::protocol_serde::shape_encryption_configuration::ser_encryption_configuration(&mut object_12, var_11)?;
+        object_12.finish();
     }
-    if let Some(var_9) = &input.is_cloud_trail_event_history_enabled {
-        object.key("isCloudTrailEventHistoryEnabled").boolean(*var_9);
+    if let Some(var_13) = &input.is_cloud_trail_event_history_enabled {
+        object.key("isCloudTrailEventHistoryEnabled").boolean(*var_13);
     }
-    if let Some(var_10) = &input.name {
-        object.key("name").string(var_10.as_str());
+    if let Some(var_14) = &input.name {
+        object.key("name").string(var_14.as_str());
     }
-    if let Some(var_11) = &input.retention_in_days {
+    if let Some(var_15) = &input.retention_in_days {
         object.key("retentionInDays").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_11).into()),
+            ::aws_smithy_types::Number::NegInt((*var_15).into()),
         );
     }
-    if let Some(var_12) = &input.role_arn {
-        object.key("roleArn").string(var_12.as_str());
+    if let Some(var_16) = &input.role_arn {
+        object.key("roleArn").string(var_16.as_str());
     }
-    if let Some(var_13) = &input.tag_key_boundaries {
-        let mut array_14 = object.key("tagKeyBoundaries").start_array();
-        for item_15 in var_13 {
+    if let Some(var_17) = &input.tag_key_boundaries {
+        let mut array_18 = object.key("tagKeyBoundaries").start_array();
+        for item_19 in var_17 {
             {
-                array_14.value().string(item_15.as_str());
+                array_18.value().string(item_19.as_str());
             }
         }
-        array_14.finish();
+        array_18.finish();
     }
-    if let Some(var_16) = &input.tags {
+    if let Some(var_20) = &input.tags {
         #[allow(unused_mut)]
-        let mut object_17 = object.key("tags").start_object();
-        for (key_18, value_19) in var_16 {
+        let mut object_21 = object.key("tags").start_object();
+        for (key_22, value_23) in var_20 {
             {
-                object_17.key(key_18.as_str()).string(value_19.as_str());
+                object_21.key(key_22.as_str()).string(value_23.as_str());
             }
         }
-        object_17.finish();
+        object_21.finish();
     }
     Ok(())
 }

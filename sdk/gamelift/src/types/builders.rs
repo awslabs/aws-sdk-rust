@@ -109,6 +109,10 @@ pub use crate::types::_target_configuration::TargetConfigurationBuilder;
 
 pub use crate::types::_location_model::LocationModelBuilder;
 
+pub use crate::types::_ping_beacon::PingBeaconBuilder;
+
+pub use crate::types::_udp_endpoint::UdpEndpointBuilder;
+
 pub use crate::types::_fleet_deployment::FleetDeploymentBuilder;
 
 pub use crate::types::_instance_access::InstanceAccessBuilder;

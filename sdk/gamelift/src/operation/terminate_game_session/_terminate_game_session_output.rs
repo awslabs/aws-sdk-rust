@@ -5,7 +5,7 @@
 pub struct TerminateGameSessionOutput {
     /// <p>Properties describing a game session.</p>
     /// <p>A game session in ACTIVE status can host players. When a game session ends, its status is set to <code>TERMINATED</code>.</p>
-    /// <p>Amazon GameLift retains a game session resource for 30 days after the game session ends. You can reuse idempotency token values after this time. Game session logs are retained for 14 days.</p>
+    /// <p>Amazon GameLift Servers retains a game session resource for 30 days after the game session ends. You can reuse idempotency token values after this time. Game session logs are retained for 14 days.</p>
     /// <p><a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a></p>
     pub game_session: ::std::option::Option<crate::types::GameSession>,
     _request_id: Option<String>,
@@ -13,7 +13,7 @@ pub struct TerminateGameSessionOutput {
 impl TerminateGameSessionOutput {
     /// <p>Properties describing a game session.</p>
     /// <p>A game session in ACTIVE status can host players. When a game session ends, its status is set to <code>TERMINATED</code>.</p>
-    /// <p>Amazon GameLift retains a game session resource for 30 days after the game session ends. You can reuse idempotency token values after this time. Game session logs are retained for 14 days.</p>
+    /// <p>Amazon GameLift Servers retains a game session resource for 30 days after the game session ends. You can reuse idempotency token values after this time. Game session logs are retained for 14 days.</p>
     /// <p><a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a></p>
     pub fn game_session(&self) -> ::std::option::Option<&crate::types::GameSession> {
         self.game_session.as_ref()
@@ -41,7 +41,7 @@ pub struct TerminateGameSessionOutputBuilder {
 impl TerminateGameSessionOutputBuilder {
     /// <p>Properties describing a game session.</p>
     /// <p>A game session in ACTIVE status can host players. When a game session ends, its status is set to <code>TERMINATED</code>.</p>
-    /// <p>Amazon GameLift retains a game session resource for 30 days after the game session ends. You can reuse idempotency token values after this time. Game session logs are retained for 14 days.</p>
+    /// <p>Amazon GameLift Servers retains a game session resource for 30 days after the game session ends. You can reuse idempotency token values after this time. Game session logs are retained for 14 days.</p>
     /// <p><a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a></p>
     pub fn game_session(mut self, input: crate::types::GameSession) -> Self {
         self.game_session = ::std::option::Option::Some(input);
@@ -49,7 +49,7 @@ impl TerminateGameSessionOutputBuilder {
     }
     /// <p>Properties describing a game session.</p>
     /// <p>A game session in ACTIVE status can host players. When a game session ends, its status is set to <code>TERMINATED</code>.</p>
-    /// <p>Amazon GameLift retains a game session resource for 30 days after the game session ends. You can reuse idempotency token values after this time. Game session logs are retained for 14 days.</p>
+    /// <p>Amazon GameLift Servers retains a game session resource for 30 days after the game session ends. You can reuse idempotency token values after this time. Game session logs are retained for 14 days.</p>
     /// <p><a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a></p>
     pub fn set_game_session(mut self, input: ::std::option::Option<crate::types::GameSession>) -> Self {
         self.game_session = input;
@@ -57,7 +57,7 @@ impl TerminateGameSessionOutputBuilder {
     }
     /// <p>Properties describing a game session.</p>
     /// <p>A game session in ACTIVE status can host players. When a game session ends, its status is set to <code>TERMINATED</code>.</p>
-    /// <p>Amazon GameLift retains a game session resource for 30 days after the game session ends. You can reuse idempotency token values after this time. Game session logs are retained for 14 days.</p>
+    /// <p>Amazon GameLift Servers retains a game session resource for 30 days after the game session ends. You can reuse idempotency token values after this time. Game session logs are retained for 14 days.</p>
     /// <p><a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a></p>
     pub fn get_game_session(&self) -> &::std::option::Option<crate::types::GameSession> {
         &self.game_session

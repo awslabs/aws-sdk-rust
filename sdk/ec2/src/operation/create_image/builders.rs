@@ -24,6 +24,13 @@ impl crate::operation::create_image::builders::CreateImageInputBuilder {
 ///
 /// <p>Creates an Amazon EBS-backed AMI from an Amazon EBS-backed instance that is either running or stopped.</p>
 /// <p>If you customized your instance with instance store volumes or Amazon EBS volumes in addition to the root device volume, the new AMI contains block device mapping information for those volumes. When you launch an instance from this new AMI, the instance automatically launches with those additional volumes.</p>
+/// <p>The location of the source instance determines where you can create the snapshots of the AMI:</p>
+/// <ul>
+/// <li>
+/// <p>If the source instance is in a Region, you must create the snapshots in the same Region as the instance.</p></li>
+/// <li>
+/// <p>If the source instance is in a Local Zone, you can create the snapshots in the same Local Zone or in its parent Region.</p></li>
+/// </ul>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/creating-an-ami-ebs.html">Create an Amazon EBS-backed AMI</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateImageFluentBuilder {
@@ -152,6 +159,50 @@ impl CreateImageFluentBuilder {
     /// <p>To tag an AMI or snapshot after it has been created, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.</p>
     pub fn get_tag_specifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
         self.inner.get_tag_specifications()
+    }
+    /// <note>
+    /// <p>Only supported for instances in Local Zones. If the source instance is not in a Local Zone, omit this parameter.</p>
+    /// </note>
+    /// <p>The Amazon S3 location where the snapshots will be stored.</p>
+    /// <ul>
+    /// <li>
+    /// <p>To create local snapshots in the same Local Zone as the source instance, specify <code>local</code>.</p></li>
+    /// <li>
+    /// <p>To create regional snapshots in the parent Region of the Local Zone, specify <code>regional</code> or omit this parameter.</p></li>
+    /// </ul>
+    /// <p>Default: <code>regional</code></p>
+    pub fn snapshot_location(mut self, input: crate::types::SnapshotLocationEnum) -> Self {
+        self.inner = self.inner.snapshot_location(input);
+        self
+    }
+    /// <note>
+    /// <p>Only supported for instances in Local Zones. If the source instance is not in a Local Zone, omit this parameter.</p>
+    /// </note>
+    /// <p>The Amazon S3 location where the snapshots will be stored.</p>
+    /// <ul>
+    /// <li>
+    /// <p>To create local snapshots in the same Local Zone as the source instance, specify <code>local</code>.</p></li>
+    /// <li>
+    /// <p>To create regional snapshots in the parent Region of the Local Zone, specify <code>regional</code> or omit this parameter.</p></li>
+    /// </ul>
+    /// <p>Default: <code>regional</code></p>
+    pub fn set_snapshot_location(mut self, input: ::std::option::Option<crate::types::SnapshotLocationEnum>) -> Self {
+        self.inner = self.inner.set_snapshot_location(input);
+        self
+    }
+    /// <note>
+    /// <p>Only supported for instances in Local Zones. If the source instance is not in a Local Zone, omit this parameter.</p>
+    /// </note>
+    /// <p>The Amazon S3 location where the snapshots will be stored.</p>
+    /// <ul>
+    /// <li>
+    /// <p>To create local snapshots in the same Local Zone as the source instance, specify <code>local</code>.</p></li>
+    /// <li>
+    /// <p>To create regional snapshots in the parent Region of the Local Zone, specify <code>regional</code> or omit this parameter.</p></li>
+    /// </ul>
+    /// <p>Default: <code>regional</code></p>
+    pub fn get_snapshot_location(&self) -> &::std::option::Option<crate::types::SnapshotLocationEnum> {
+        self.inner.get_snapshot_location()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {

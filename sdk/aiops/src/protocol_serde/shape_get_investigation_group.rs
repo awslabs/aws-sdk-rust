@@ -187,6 +187,11 @@ pub(crate) fn de_get_investigation_group(
                             .transpose()?,
                     );
                 }
+                "crossAccountConfigurations" => {
+                    builder = builder.set_cross_account_configurations(
+                        crate::protocol_serde::shape_cross_account_configurations::de_cross_account_configurations(tokens)?,
+                    );
+                }
                 "encryptionConfiguration" => {
                     builder = builder.set_encryption_configuration(
                         crate::protocol_serde::shape_encryption_configuration::de_encryption_configuration(tokens)?,

@@ -21,7 +21,7 @@ pub struct UpdateFleetAttributesInput {
     pub resource_creation_limit_policy: ::std::option::Option<crate::types::ResourceCreationLimitPolicy>,
     /// <p>The name of a metric group to add this fleet to. Use a metric group in Amazon CloudWatch to aggregate the metrics from multiple fleets. Provide an existing metric group name, or create a new metric group by providing a new name. A fleet can only be in one metric group at a time.</p>
     pub metric_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>Amazon GameLift Anywhere configuration options.</p>
+    /// <p>Amazon GameLift Servers Anywhere configuration options.</p>
     pub anywhere_configuration: ::std::option::Option<crate::types::AnywhereConfiguration>,
 }
 impl UpdateFleetAttributesInput {
@@ -57,7 +57,7 @@ impl UpdateFleetAttributesInput {
     pub fn metric_groups(&self) -> &[::std::string::String] {
         self.metric_groups.as_deref().unwrap_or_default()
     }
-    /// <p>Amazon GameLift Anywhere configuration options.</p>
+    /// <p>Amazon GameLift Servers Anywhere configuration options.</p>
     pub fn anywhere_configuration(&self) -> ::std::option::Option<&crate::types::AnywhereConfiguration> {
         self.anywhere_configuration.as_ref()
     }
@@ -191,17 +191,17 @@ impl UpdateFleetAttributesInputBuilder {
     pub fn get_metric_groups(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.metric_groups
     }
-    /// <p>Amazon GameLift Anywhere configuration options.</p>
+    /// <p>Amazon GameLift Servers Anywhere configuration options.</p>
     pub fn anywhere_configuration(mut self, input: crate::types::AnywhereConfiguration) -> Self {
         self.anywhere_configuration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Amazon GameLift Anywhere configuration options.</p>
+    /// <p>Amazon GameLift Servers Anywhere configuration options.</p>
     pub fn set_anywhere_configuration(mut self, input: ::std::option::Option<crate::types::AnywhereConfiguration>) -> Self {
         self.anywhere_configuration = input;
         self
     }
-    /// <p>Amazon GameLift Anywhere configuration options.</p>
+    /// <p>Amazon GameLift Servers Anywhere configuration options.</p>
     pub fn get_anywhere_configuration(&self) -> &::std::option::Option<crate::types::AnywhereConfiguration> {
         &self.anywhere_configuration
     }

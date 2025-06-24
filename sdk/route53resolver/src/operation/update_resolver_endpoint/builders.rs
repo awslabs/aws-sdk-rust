@@ -177,8 +177,8 @@ impl UpdateResolverEndpointFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_protocols`](Self::set_protocols).
     ///
-    /// <p>The protocols you want to use for the endpoint. DoH-FIPS is applicable for inbound endpoints only.</p>
-    /// <p>For an inbound endpoint you can apply the protocols as follows:</p>
+    /// <p>The protocols you want to use for the endpoint. DoH-FIPS is applicable for default inbound endpoints only.</p>
+    /// <p>For a default inbound endpoint you can apply the protocols as follows:</p>
     /// <ul>
     /// <li>
     /// <p>Do53 and DoH in combination.</p></li>
@@ -193,6 +193,7 @@ impl UpdateResolverEndpointFluentBuilder {
     /// <li>
     /// <p>None, which is treated as Do53.</p></li>
     /// </ul>
+    /// <p>For a delegation inbound endpoint you can use Do53 only.</p>
     /// <p>For an outbound endpoint you can apply the protocols as follows:</p>
     /// <ul>
     /// <li>
@@ -210,8 +211,8 @@ impl UpdateResolverEndpointFluentBuilder {
         self.inner = self.inner.protocols(input);
         self
     }
-    /// <p>The protocols you want to use for the endpoint. DoH-FIPS is applicable for inbound endpoints only.</p>
-    /// <p>For an inbound endpoint you can apply the protocols as follows:</p>
+    /// <p>The protocols you want to use for the endpoint. DoH-FIPS is applicable for default inbound endpoints only.</p>
+    /// <p>For a default inbound endpoint you can apply the protocols as follows:</p>
     /// <ul>
     /// <li>
     /// <p>Do53 and DoH in combination.</p></li>
@@ -226,6 +227,7 @@ impl UpdateResolverEndpointFluentBuilder {
     /// <li>
     /// <p>None, which is treated as Do53.</p></li>
     /// </ul>
+    /// <p>For a delegation inbound endpoint you can use Do53 only.</p>
     /// <p>For an outbound endpoint you can apply the protocols as follows:</p>
     /// <ul>
     /// <li>
@@ -243,8 +245,8 @@ impl UpdateResolverEndpointFluentBuilder {
         self.inner = self.inner.set_protocols(input);
         self
     }
-    /// <p>The protocols you want to use for the endpoint. DoH-FIPS is applicable for inbound endpoints only.</p>
-    /// <p>For an inbound endpoint you can apply the protocols as follows:</p>
+    /// <p>The protocols you want to use for the endpoint. DoH-FIPS is applicable for default inbound endpoints only.</p>
+    /// <p>For a default inbound endpoint you can apply the protocols as follows:</p>
     /// <ul>
     /// <li>
     /// <p>Do53 and DoH in combination.</p></li>
@@ -259,6 +261,7 @@ impl UpdateResolverEndpointFluentBuilder {
     /// <li>
     /// <p>None, which is treated as Do53.</p></li>
     /// </ul>
+    /// <p>For a delegation inbound endpoint you can use Do53 only.</p>
     /// <p>For an outbound endpoint you can apply the protocols as follows:</p>
     /// <ul>
     /// <li>

@@ -33,7 +33,7 @@ pub struct PlayerSession {
     /// <p><b>TIMEDOUT</b> -- A player session request was received, but the player did not connect and/or was not validated within the timeout limit (60 seconds).</p></li>
     /// </ul>
     pub status: ::std::option::Option<crate::types::PlayerSessionStatus>,
-    /// <p>The IP address of the game session. To connect to a Amazon GameLift game server, an app needs both the IP address and port number.</p>
+    /// <p>The IP address of the game session. To connect to a Amazon GameLift Servers game server, an app needs both the IP address and port number.</p>
     pub ip_address: ::std::option::Option<::std::string::String>,
     /// <p>The DNS identifier assigned to the instance that is running the game session. Values have the following format:</p>
     /// <ul>
@@ -51,9 +51,9 @@ pub struct PlayerSession {
     /// </ul>
     /// <p>When connecting to a game session that is running on a TLS-enabled fleet, you must use the DNS name, not the IP address.</p>
     pub dns_name: ::std::option::Option<::std::string::String>,
-    /// <p>Port number for the game session. To connect to a Amazon GameLift server process, an app needs both the IP address and port number.</p>
+    /// <p>Port number for the game session. To connect to a Amazon GameLift Servers server process, an app needs both the IP address and port number.</p>
     pub port: ::std::option::Option<i32>,
-    /// <p>Developer-defined information related to a player. Amazon GameLift does not use this data, so it can be formatted as needed for use in the game.</p>
+    /// <p>Developer-defined information related to a player. Amazon GameLift Servers does not use this data, so it can be formatted as needed for use in the game.</p>
     pub player_data: ::std::option::Option<::std::string::String>,
 }
 impl PlayerSession {
@@ -100,7 +100,7 @@ impl PlayerSession {
     pub fn status(&self) -> ::std::option::Option<&crate::types::PlayerSessionStatus> {
         self.status.as_ref()
     }
-    /// <p>The IP address of the game session. To connect to a Amazon GameLift game server, an app needs both the IP address and port number.</p>
+    /// <p>The IP address of the game session. To connect to a Amazon GameLift Servers game server, an app needs both the IP address and port number.</p>
     pub fn ip_address(&self) -> ::std::option::Option<&str> {
         self.ip_address.as_deref()
     }
@@ -122,11 +122,11 @@ impl PlayerSession {
     pub fn dns_name(&self) -> ::std::option::Option<&str> {
         self.dns_name.as_deref()
     }
-    /// <p>Port number for the game session. To connect to a Amazon GameLift server process, an app needs both the IP address and port number.</p>
+    /// <p>Port number for the game session. To connect to a Amazon GameLift Servers server process, an app needs both the IP address and port number.</p>
     pub fn port(&self) -> ::std::option::Option<i32> {
         self.port
     }
-    /// <p>Developer-defined information related to a player. Amazon GameLift does not use this data, so it can be formatted as needed for use in the game.</p>
+    /// <p>Developer-defined information related to a player. Amazon GameLift Servers does not use this data, so it can be formatted as needed for use in the game.</p>
     pub fn player_data(&self) -> ::std::option::Option<&str> {
         self.player_data.as_deref()
     }
@@ -319,17 +319,17 @@ impl PlayerSessionBuilder {
     pub fn get_status(&self) -> &::std::option::Option<crate::types::PlayerSessionStatus> {
         &self.status
     }
-    /// <p>The IP address of the game session. To connect to a Amazon GameLift game server, an app needs both the IP address and port number.</p>
+    /// <p>The IP address of the game session. To connect to a Amazon GameLift Servers game server, an app needs both the IP address and port number.</p>
     pub fn ip_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ip_address = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The IP address of the game session. To connect to a Amazon GameLift game server, an app needs both the IP address and port number.</p>
+    /// <p>The IP address of the game session. To connect to a Amazon GameLift Servers game server, an app needs both the IP address and port number.</p>
     pub fn set_ip_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ip_address = input;
         self
     }
-    /// <p>The IP address of the game session. To connect to a Amazon GameLift game server, an app needs both the IP address and port number.</p>
+    /// <p>The IP address of the game session. To connect to a Amazon GameLift Servers game server, an app needs both the IP address and port number.</p>
     pub fn get_ip_address(&self) -> &::std::option::Option<::std::string::String> {
         &self.ip_address
     }
@@ -389,31 +389,31 @@ impl PlayerSessionBuilder {
     pub fn get_dns_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.dns_name
     }
-    /// <p>Port number for the game session. To connect to a Amazon GameLift server process, an app needs both the IP address and port number.</p>
+    /// <p>Port number for the game session. To connect to a Amazon GameLift Servers server process, an app needs both the IP address and port number.</p>
     pub fn port(mut self, input: i32) -> Self {
         self.port = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Port number for the game session. To connect to a Amazon GameLift server process, an app needs both the IP address and port number.</p>
+    /// <p>Port number for the game session. To connect to a Amazon GameLift Servers server process, an app needs both the IP address and port number.</p>
     pub fn set_port(mut self, input: ::std::option::Option<i32>) -> Self {
         self.port = input;
         self
     }
-    /// <p>Port number for the game session. To connect to a Amazon GameLift server process, an app needs both the IP address and port number.</p>
+    /// <p>Port number for the game session. To connect to a Amazon GameLift Servers server process, an app needs both the IP address and port number.</p>
     pub fn get_port(&self) -> &::std::option::Option<i32> {
         &self.port
     }
-    /// <p>Developer-defined information related to a player. Amazon GameLift does not use this data, so it can be formatted as needed for use in the game.</p>
+    /// <p>Developer-defined information related to a player. Amazon GameLift Servers does not use this data, so it can be formatted as needed for use in the game.</p>
     pub fn player_data(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.player_data = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Developer-defined information related to a player. Amazon GameLift does not use this data, so it can be formatted as needed for use in the game.</p>
+    /// <p>Developer-defined information related to a player. Amazon GameLift Servers does not use this data, so it can be formatted as needed for use in the game.</p>
     pub fn set_player_data(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.player_data = input;
         self
     }
-    /// <p>Developer-defined information related to a player. Amazon GameLift does not use this data, so it can be formatted as needed for use in the game.</p>
+    /// <p>Developer-defined information related to a player. Amazon GameLift Servers does not use this data, so it can be formatted as needed for use in the game.</p>
     pub fn get_player_data(&self) -> &::std::option::Option<::std::string::String> {
         &self.player_data
     }

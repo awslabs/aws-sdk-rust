@@ -60,6 +60,20 @@ pub struct Ec2Configuration {
     /// <dd>
     /// <p><a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-optimized-ami.html">Amazon Linux 2 (accelerated)</a>: Default for all GPU instance families (for example, <code>P4</code> and <code>G4</code>) and can be used for all non Amazon Web Services Graviton-based instance types.</p>
     /// </dd>
+    /// <dt>
+    /// EKS_AL2023
+    /// </dt>
+    /// <dd>
+    /// <p><a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-optimized-ami.html">Amazon Linux 2023</a>: Batch supports Amazon Linux 2023.</p><note>
+    /// <p>Amazon Linux 2023 does not support <code>A1</code> instances.</p>
+    /// </note>
+    /// </dd>
+    /// <dt>
+    /// EKS_AL2023_NVIDIA
+    /// </dt>
+    /// <dd>
+    /// <p><a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-optimized-ami.html">Amazon Linux 2023 (accelerated)</a>: GPU instance families and can be used for all non Amazon Web Services Graviton-based instance types.</p>
+    /// </dd>
     /// </dl>
     /// </dd>
     /// </dl>
@@ -125,6 +139,20 @@ impl Ec2Configuration {
     /// </dt>
     /// <dd>
     /// <p><a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-optimized-ami.html">Amazon Linux 2 (accelerated)</a>: Default for all GPU instance families (for example, <code>P4</code> and <code>G4</code>) and can be used for all non Amazon Web Services Graviton-based instance types.</p>
+    /// </dd>
+    /// <dt>
+    /// EKS_AL2023
+    /// </dt>
+    /// <dd>
+    /// <p><a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-optimized-ami.html">Amazon Linux 2023</a>: Batch supports Amazon Linux 2023.</p><note>
+    /// <p>Amazon Linux 2023 does not support <code>A1</code> instances.</p>
+    /// </note>
+    /// </dd>
+    /// <dt>
+    /// EKS_AL2023_NVIDIA
+    /// </dt>
+    /// <dd>
+    /// <p><a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-optimized-ami.html">Amazon Linux 2023 (accelerated)</a>: GPU instance families and can be used for all non Amazon Web Services Graviton-based instance types.</p>
     /// </dd>
     /// </dl>
     /// </dd>
@@ -213,6 +241,20 @@ impl Ec2ConfigurationBuilder {
     /// <dd>
     /// <p><a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-optimized-ami.html">Amazon Linux 2 (accelerated)</a>: Default for all GPU instance families (for example, <code>P4</code> and <code>G4</code>) and can be used for all non Amazon Web Services Graviton-based instance types.</p>
     /// </dd>
+    /// <dt>
+    /// EKS_AL2023
+    /// </dt>
+    /// <dd>
+    /// <p><a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-optimized-ami.html">Amazon Linux 2023</a>: Batch supports Amazon Linux 2023.</p><note>
+    /// <p>Amazon Linux 2023 does not support <code>A1</code> instances.</p>
+    /// </note>
+    /// </dd>
+    /// <dt>
+    /// EKS_AL2023_NVIDIA
+    /// </dt>
+    /// <dd>
+    /// <p><a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-optimized-ami.html">Amazon Linux 2023 (accelerated)</a>: GPU instance families and can be used for all non Amazon Web Services Graviton-based instance types.</p>
+    /// </dd>
     /// </dl>
     /// </dd>
     /// </dl>
@@ -275,6 +317,20 @@ impl Ec2ConfigurationBuilder {
     /// <dd>
     /// <p><a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-optimized-ami.html">Amazon Linux 2 (accelerated)</a>: Default for all GPU instance families (for example, <code>P4</code> and <code>G4</code>) and can be used for all non Amazon Web Services Graviton-based instance types.</p>
     /// </dd>
+    /// <dt>
+    /// EKS_AL2023
+    /// </dt>
+    /// <dd>
+    /// <p><a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-optimized-ami.html">Amazon Linux 2023</a>: Batch supports Amazon Linux 2023.</p><note>
+    /// <p>Amazon Linux 2023 does not support <code>A1</code> instances.</p>
+    /// </note>
+    /// </dd>
+    /// <dt>
+    /// EKS_AL2023_NVIDIA
+    /// </dt>
+    /// <dd>
+    /// <p><a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-optimized-ami.html">Amazon Linux 2023 (accelerated)</a>: GPU instance families and can be used for all non Amazon Web Services Graviton-based instance types.</p>
+    /// </dd>
     /// </dl>
     /// </dd>
     /// </dl>
@@ -335,6 +391,20 @@ impl Ec2ConfigurationBuilder {
     /// </dt>
     /// <dd>
     /// <p><a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-optimized-ami.html">Amazon Linux 2 (accelerated)</a>: Default for all GPU instance families (for example, <code>P4</code> and <code>G4</code>) and can be used for all non Amazon Web Services Graviton-based instance types.</p>
+    /// </dd>
+    /// <dt>
+    /// EKS_AL2023
+    /// </dt>
+    /// <dd>
+    /// <p><a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-optimized-ami.html">Amazon Linux 2023</a>: Batch supports Amazon Linux 2023.</p><note>
+    /// <p>Amazon Linux 2023 does not support <code>A1</code> instances.</p>
+    /// </note>
+    /// </dd>
+    /// <dt>
+    /// EKS_AL2023_NVIDIA
+    /// </dt>
+    /// <dd>
+    /// <p><a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-optimized-ami.html">Amazon Linux 2023 (accelerated)</a>: GPU instance families and can be used for all non Amazon Web Services Graviton-based instance types.</p>
     /// </dd>
     /// </dl>
     /// </dd>

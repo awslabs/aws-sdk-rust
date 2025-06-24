@@ -142,6 +142,8 @@ mod create_custom_model;
 
 mod create_evaluation_job;
 
+mod create_foundation_model_agreement;
+
 mod create_guardrail;
 
 mod create_guardrail_version;
@@ -191,6 +193,8 @@ pub mod customize;
 
 mod delete_custom_model;
 
+mod delete_foundation_model_agreement;
+
 mod delete_guardrail;
 
 mod delete_imported_model;
@@ -212,6 +216,8 @@ mod get_custom_model;
 mod get_evaluation_job;
 
 mod get_foundation_model;
+
+mod get_foundation_model_availability;
 
 mod get_guardrail;
 
@@ -235,9 +241,13 @@ mod get_prompt_router;
 
 mod get_provisioned_model_throughput;
 
+mod get_use_case_for_model_access;
+
 mod list_custom_models;
 
 mod list_evaluation_jobs;
+
+mod list_foundation_model_agreement_offers;
 
 mod list_foundation_models;
 
@@ -264,6 +274,8 @@ mod list_provisioned_model_throughputs;
 mod list_tags_for_resource;
 
 mod put_model_invocation_logging_configuration;
+
+mod put_use_case_for_model_access;
 
 mod register_marketplace_model_endpoint;
 

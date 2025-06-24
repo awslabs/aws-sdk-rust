@@ -32,7 +32,7 @@ impl crate::operation::describe_fleet_port_settings::builders::DescribeFleetPort
 /// </ul>
 /// <p>If successful, a set of <code>IpPermission</code> objects is returned for the requested fleet ID. When specifying a location, this operation returns a pending status. If the requested fleet has been deleted, the result set is empty.</p>
 /// <p><b>Learn more</b></p>
-/// <p><a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting up Amazon GameLift fleets</a></p>
+/// <p><a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting up Amazon GameLift Servers fleets</a></p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeFleetPortSettingsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

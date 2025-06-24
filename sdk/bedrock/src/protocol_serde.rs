@@ -29,6 +29,8 @@ pub(crate) mod shape_create_custom_model;
 
 pub(crate) mod shape_create_evaluation_job;
 
+pub(crate) mod shape_create_foundation_model_agreement;
+
 pub(crate) mod shape_create_guardrail;
 
 pub(crate) mod shape_create_guardrail_version;
@@ -50,6 +52,8 @@ pub(crate) mod shape_create_prompt_router;
 pub(crate) mod shape_create_provisioned_model_throughput;
 
 pub(crate) mod shape_delete_custom_model;
+
+pub(crate) mod shape_delete_foundation_model_agreement;
 
 pub(crate) mod shape_delete_guardrail;
 
@@ -73,6 +77,8 @@ pub(crate) mod shape_get_evaluation_job;
 
 pub(crate) mod shape_get_foundation_model;
 
+pub(crate) mod shape_get_foundation_model_availability;
+
 pub(crate) mod shape_get_guardrail;
 
 pub(crate) mod shape_get_imported_model;
@@ -95,9 +101,13 @@ pub(crate) mod shape_get_prompt_router;
 
 pub(crate) mod shape_get_provisioned_model_throughput;
 
+pub(crate) mod shape_get_use_case_for_model_access;
+
 pub(crate) mod shape_list_custom_models;
 
 pub(crate) mod shape_list_evaluation_jobs;
+
+pub(crate) mod shape_list_foundation_model_agreement_offers;
 
 pub(crate) mod shape_list_foundation_models;
 
@@ -124,6 +134,8 @@ pub(crate) mod shape_list_provisioned_model_throughputs;
 pub(crate) mod shape_list_tags_for_resource;
 
 pub(crate) mod shape_put_model_invocation_logging_configuration;
+
+pub(crate) mod shape_put_use_case_for_model_access;
 
 pub(crate) mod shape_register_marketplace_model_endpoint;
 
@@ -161,6 +173,8 @@ pub(crate) mod shape_create_custom_model_input;
 
 pub(crate) mod shape_create_evaluation_job_input;
 
+pub(crate) mod shape_create_foundation_model_agreement_input;
+
 pub(crate) mod shape_create_guardrail_input;
 
 pub(crate) mod shape_create_guardrail_version_input;
@@ -181,11 +195,15 @@ pub(crate) mod shape_create_prompt_router_input;
 
 pub(crate) mod shape_create_provisioned_model_throughput_input;
 
+pub(crate) mod shape_delete_foundation_model_agreement_input;
+
 pub(crate) mod shape_internal_server_exception;
 
 pub(crate) mod shape_list_tags_for_resource_input;
 
 pub(crate) mod shape_put_model_invocation_logging_configuration_input;
+
+pub(crate) mod shape_put_use_case_for_model_access_input;
 
 pub(crate) mod shape_register_marketplace_model_endpoint_input;
 
@@ -210,6 +228,8 @@ pub(crate) mod shape_update_marketplace_model_endpoint_input;
 pub(crate) mod shape_update_provisioned_model_throughput_input;
 
 pub(crate) mod shape_validation_exception;
+
+pub(crate) mod shape_agreement_availability;
 
 pub(crate) mod shape_batch_delete_evaluation_job_errors;
 
@@ -296,6 +316,8 @@ pub(crate) mod shape_model_invocation_job_input_data_config;
 pub(crate) mod shape_model_invocation_job_output_data_config;
 
 pub(crate) mod shape_model_invocation_job_summaries;
+
+pub(crate) mod shape_offers;
 
 pub(crate) mod shape_output_data_config;
 
@@ -417,6 +439,8 @@ pub(crate) mod shape_model_invocation_job_summary;
 
 pub(crate) mod shape_model_modality_list;
 
+pub(crate) mod shape_offer;
+
 pub(crate) mod shape_prompt_router_summary;
 
 pub(crate) mod shape_provisioned_model_summary;
@@ -497,6 +521,8 @@ pub(crate) mod shape_request_metadata_filters;
 
 pub(crate) mod shape_teacher_model_config;
 
+pub(crate) mod shape_term_details;
+
 pub(crate) mod shape_automated_evaluation_custom_metric_source;
 
 pub(crate) mod shape_automated_evaluation_custom_metrics;
@@ -521,7 +547,11 @@ pub(crate) mod shape_guardrail_modalities;
 
 pub(crate) mod shape_guardrail_topic_examples;
 
+pub(crate) mod shape_legal_term;
+
 pub(crate) mod shape_performance_configuration;
+
+pub(crate) mod shape_pricing_term;
 
 pub(crate) mod shape_request_metadata_base_filters;
 
@@ -532,6 +562,10 @@ pub(crate) mod shape_request_metadata_map;
 pub(crate) mod shape_retrieve_and_generate_configuration;
 
 pub(crate) mod shape_retrieve_config;
+
+pub(crate) mod shape_support_term;
+
+pub(crate) mod shape_validity_term;
 
 pub(crate) mod shape_custom_metric_bedrock_evaluator_model;
 
@@ -552,6 +586,10 @@ pub(crate) mod shape_external_sources_retrieve_and_generate_configuration;
 pub(crate) mod shape_knowledge_base_retrieval_configuration;
 
 pub(crate) mod shape_knowledge_base_retrieve_and_generate_configuration;
+
+pub(crate) mod shape_rate_card;
+
+pub(crate) mod shape_dimensional_price_rate;
 
 pub(crate) mod shape_external_source;
 

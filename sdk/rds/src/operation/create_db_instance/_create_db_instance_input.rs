@@ -792,6 +792,8 @@ pub struct CreateDbInstanceInput {
     /// <p>Valid Values:</p>
     /// <ul>
     /// <li>
+    /// <p><code>local</code> (Dedicated Local Zone)</p></li>
+    /// <li>
     /// <p><code>outposts</code> (Amazon Web Services Outposts)</p></li>
     /// <li>
     /// <p><code>region</code> (Amazon Web Services Region)</p></li>
@@ -1756,6 +1758,8 @@ impl CreateDbInstanceInput {
     /// <p>The location for storing automated backups and manual snapshots.</p>
     /// <p>Valid Values:</p>
     /// <ul>
+    /// <li>
+    /// <p><code>local</code> (Dedicated Local Zone)</p></li>
     /// <li>
     /// <p><code>outposts</code> (Amazon Web Services Outposts)</p></li>
     /// <li>
@@ -4737,6 +4741,8 @@ impl CreateDbInstanceInputBuilder {
     /// <p>Valid Values:</p>
     /// <ul>
     /// <li>
+    /// <p><code>local</code> (Dedicated Local Zone)</p></li>
+    /// <li>
     /// <p><code>outposts</code> (Amazon Web Services Outposts)</p></li>
     /// <li>
     /// <p><code>region</code> (Amazon Web Services Region)</p></li>
@@ -4751,6 +4757,8 @@ impl CreateDbInstanceInputBuilder {
     /// <p>Valid Values:</p>
     /// <ul>
     /// <li>
+    /// <p><code>local</code> (Dedicated Local Zone)</p></li>
+    /// <li>
     /// <p><code>outposts</code> (Amazon Web Services Outposts)</p></li>
     /// <li>
     /// <p><code>region</code> (Amazon Web Services Region)</p></li>
@@ -4764,6 +4772,8 @@ impl CreateDbInstanceInputBuilder {
     /// <p>The location for storing automated backups and manual snapshots.</p>
     /// <p>Valid Values:</p>
     /// <ul>
+    /// <li>
+    /// <p><code>local</code> (Dedicated Local Zone)</p></li>
     /// <li>
     /// <p><code>outposts</code> (Amazon Web Services Outposts)</p></li>
     /// <li>

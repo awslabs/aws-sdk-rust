@@ -13,6 +13,18 @@ pub struct CreateImageInput {
     /// <p>If you specify other values for <code>ResourceType</code>, the request fails.</p>
     /// <p>To tag an AMI or snapshot after it has been created, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.</p>
     pub tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
+    /// <note>
+    /// <p>Only supported for instances in Local Zones. If the source instance is not in a Local Zone, omit this parameter.</p>
+    /// </note>
+    /// <p>The Amazon S3 location where the snapshots will be stored.</p>
+    /// <ul>
+    /// <li>
+    /// <p>To create local snapshots in the same Local Zone as the source instance, specify <code>local</code>.</p></li>
+    /// <li>
+    /// <p>To create regional snapshots in the parent Region of the Local Zone, specify <code>regional</code> or omit this parameter.</p></li>
+    /// </ul>
+    /// <p>Default: <code>regional</code></p>
+    pub snapshot_location: ::std::option::Option<crate::types::SnapshotLocationEnum>,
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub dry_run: ::std::option::Option<bool>,
     /// <p>The ID of the instance.</p>
@@ -57,6 +69,20 @@ impl CreateImageInput {
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tag_specifications.is_none()`.
     pub fn tag_specifications(&self) -> &[crate::types::TagSpecification] {
         self.tag_specifications.as_deref().unwrap_or_default()
+    }
+    /// <note>
+    /// <p>Only supported for instances in Local Zones. If the source instance is not in a Local Zone, omit this parameter.</p>
+    /// </note>
+    /// <p>The Amazon S3 location where the snapshots will be stored.</p>
+    /// <ul>
+    /// <li>
+    /// <p>To create local snapshots in the same Local Zone as the source instance, specify <code>local</code>.</p></li>
+    /// <li>
+    /// <p>To create regional snapshots in the parent Region of the Local Zone, specify <code>regional</code> or omit this parameter.</p></li>
+    /// </ul>
+    /// <p>Default: <code>regional</code></p>
+    pub fn snapshot_location(&self) -> ::std::option::Option<&crate::types::SnapshotLocationEnum> {
+        self.snapshot_location.as_ref()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(&self) -> ::std::option::Option<bool> {
@@ -114,6 +140,7 @@ impl CreateImageInput {
 #[non_exhaustive]
 pub struct CreateImageInputBuilder {
     pub(crate) tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
+    pub(crate) snapshot_location: ::std::option::Option<crate::types::SnapshotLocationEnum>,
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -165,6 +192,50 @@ impl CreateImageInputBuilder {
     /// <p>To tag an AMI or snapshot after it has been created, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.</p>
     pub fn get_tag_specifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
         &self.tag_specifications
+    }
+    /// <note>
+    /// <p>Only supported for instances in Local Zones. If the source instance is not in a Local Zone, omit this parameter.</p>
+    /// </note>
+    /// <p>The Amazon S3 location where the snapshots will be stored.</p>
+    /// <ul>
+    /// <li>
+    /// <p>To create local snapshots in the same Local Zone as the source instance, specify <code>local</code>.</p></li>
+    /// <li>
+    /// <p>To create regional snapshots in the parent Region of the Local Zone, specify <code>regional</code> or omit this parameter.</p></li>
+    /// </ul>
+    /// <p>Default: <code>regional</code></p>
+    pub fn snapshot_location(mut self, input: crate::types::SnapshotLocationEnum) -> Self {
+        self.snapshot_location = ::std::option::Option::Some(input);
+        self
+    }
+    /// <note>
+    /// <p>Only supported for instances in Local Zones. If the source instance is not in a Local Zone, omit this parameter.</p>
+    /// </note>
+    /// <p>The Amazon S3 location where the snapshots will be stored.</p>
+    /// <ul>
+    /// <li>
+    /// <p>To create local snapshots in the same Local Zone as the source instance, specify <code>local</code>.</p></li>
+    /// <li>
+    /// <p>To create regional snapshots in the parent Region of the Local Zone, specify <code>regional</code> or omit this parameter.</p></li>
+    /// </ul>
+    /// <p>Default: <code>regional</code></p>
+    pub fn set_snapshot_location(mut self, input: ::std::option::Option<crate::types::SnapshotLocationEnum>) -> Self {
+        self.snapshot_location = input;
+        self
+    }
+    /// <note>
+    /// <p>Only supported for instances in Local Zones. If the source instance is not in a Local Zone, omit this parameter.</p>
+    /// </note>
+    /// <p>The Amazon S3 location where the snapshots will be stored.</p>
+    /// <ul>
+    /// <li>
+    /// <p>To create local snapshots in the same Local Zone as the source instance, specify <code>local</code>.</p></li>
+    /// <li>
+    /// <p>To create regional snapshots in the parent Region of the Local Zone, specify <code>regional</code> or omit this parameter.</p></li>
+    /// </ul>
+    /// <p>Default: <code>regional</code></p>
+    pub fn get_snapshot_location(&self) -> &::std::option::Option<crate::types::SnapshotLocationEnum> {
+        &self.snapshot_location
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
@@ -313,6 +384,7 @@ impl CreateImageInputBuilder {
     pub fn build(self) -> ::std::result::Result<crate::operation::create_image::CreateImageInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_image::CreateImageInput {
             tag_specifications: self.tag_specifications,
+            snapshot_location: self.snapshot_location,
             dry_run: self.dry_run,
             instance_id: self.instance_id,
             name: self.name,

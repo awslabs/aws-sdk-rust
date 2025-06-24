@@ -23,6 +23,8 @@ pub struct LaunchTemplateSpecification {
     /// <p>To unset all override templates for a compute environment, you can pass an empty array to the <a href="https://docs.aws.amazon.com/batch/latest/APIReference/API_UpdateComputeEnvironment.html">UpdateComputeEnvironment.overrides</a> parameter, or not include the <code>overrides</code> parameter when submitting the <code>UpdateComputeEnvironment</code> API operation.</p>
     /// </note>
     pub overrides: ::std::option::Option<::std::vec::Vec<crate::types::LaunchTemplateSpecificationOverride>>,
+    /// <p>The EKS node initialization process to use. You only need to specify this value if you are using a custom AMI. The default value is <code>EKS_BOOTSTRAP_SH</code>. If <i>imageType</i> is a custom AMI based on EKS_AL2023 or EKS_AL2023_NVIDIA then you must choose <code>EKS_NODEADM</code>.</p>
+    pub userdata_type: ::std::option::Option<crate::types::UserdataType>,
 }
 impl LaunchTemplateSpecification {
     /// <p>The ID of the launch template.</p>
@@ -51,6 +53,10 @@ impl LaunchTemplateSpecification {
     pub fn overrides(&self) -> &[crate::types::LaunchTemplateSpecificationOverride] {
         self.overrides.as_deref().unwrap_or_default()
     }
+    /// <p>The EKS node initialization process to use. You only need to specify this value if you are using a custom AMI. The default value is <code>EKS_BOOTSTRAP_SH</code>. If <i>imageType</i> is a custom AMI based on EKS_AL2023 or EKS_AL2023_NVIDIA then you must choose <code>EKS_NODEADM</code>.</p>
+    pub fn userdata_type(&self) -> ::std::option::Option<&crate::types::UserdataType> {
+        self.userdata_type.as_ref()
+    }
 }
 impl LaunchTemplateSpecification {
     /// Creates a new builder-style object to manufacture [`LaunchTemplateSpecification`](crate::types::LaunchTemplateSpecification).
@@ -67,6 +73,7 @@ pub struct LaunchTemplateSpecificationBuilder {
     pub(crate) launch_template_name: ::std::option::Option<::std::string::String>,
     pub(crate) version: ::std::option::Option<::std::string::String>,
     pub(crate) overrides: ::std::option::Option<::std::vec::Vec<crate::types::LaunchTemplateSpecificationOverride>>,
+    pub(crate) userdata_type: ::std::option::Option<crate::types::UserdataType>,
 }
 impl LaunchTemplateSpecificationBuilder {
     /// <p>The ID of the launch template.</p>
@@ -155,6 +162,20 @@ impl LaunchTemplateSpecificationBuilder {
     pub fn get_overrides(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LaunchTemplateSpecificationOverride>> {
         &self.overrides
     }
+    /// <p>The EKS node initialization process to use. You only need to specify this value if you are using a custom AMI. The default value is <code>EKS_BOOTSTRAP_SH</code>. If <i>imageType</i> is a custom AMI based on EKS_AL2023 or EKS_AL2023_NVIDIA then you must choose <code>EKS_NODEADM</code>.</p>
+    pub fn userdata_type(mut self, input: crate::types::UserdataType) -> Self {
+        self.userdata_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The EKS node initialization process to use. You only need to specify this value if you are using a custom AMI. The default value is <code>EKS_BOOTSTRAP_SH</code>. If <i>imageType</i> is a custom AMI based on EKS_AL2023 or EKS_AL2023_NVIDIA then you must choose <code>EKS_NODEADM</code>.</p>
+    pub fn set_userdata_type(mut self, input: ::std::option::Option<crate::types::UserdataType>) -> Self {
+        self.userdata_type = input;
+        self
+    }
+    /// <p>The EKS node initialization process to use. You only need to specify this value if you are using a custom AMI. The default value is <code>EKS_BOOTSTRAP_SH</code>. If <i>imageType</i> is a custom AMI based on EKS_AL2023 or EKS_AL2023_NVIDIA then you must choose <code>EKS_NODEADM</code>.</p>
+    pub fn get_userdata_type(&self) -> &::std::option::Option<crate::types::UserdataType> {
+        &self.userdata_type
+    }
     /// Consumes the builder and constructs a [`LaunchTemplateSpecification`](crate::types::LaunchTemplateSpecification).
     pub fn build(self) -> crate::types::LaunchTemplateSpecification {
         crate::types::LaunchTemplateSpecification {
@@ -162,6 +183,7 @@ impl LaunchTemplateSpecificationBuilder {
             launch_template_name: self.launch_template_name,
             version: self.version,
             overrides: self.overrides,
+            userdata_type: self.userdata_type,
         }
     }
 }

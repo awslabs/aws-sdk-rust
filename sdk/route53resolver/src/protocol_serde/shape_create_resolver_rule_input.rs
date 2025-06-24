@@ -42,5 +42,8 @@ pub fn ser_create_resolver_rule_input_input(
         }
         array_11.finish();
     }
+    if let Some(var_14) = &input.delegation_record {
+        object.key("DelegationRecord").string(var_14.as_str());
+    }
     Ok(())
 }

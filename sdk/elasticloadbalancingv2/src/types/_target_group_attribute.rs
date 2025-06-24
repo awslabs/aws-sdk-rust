@@ -27,7 +27,7 @@ pub struct TargetGroupAttribute {
     /// <li>
     /// <p><code>load_balancing.cross_zone.enabled</code> - Indicates whether cross zone load balancing is enabled. The value is <code>true</code>, <code>false</code> or <code>use_load_balancer_configuration</code>. The default is <code>use_load_balancer_configuration</code>.</p></li>
     /// <li>
-    /// <p><code>target_group_health.dns_failover.minimum_healthy_targets.count</code> - The minimum number of targets that must be healthy. If the number of healthy targets is below this value, mark the zone as unhealthy in DNS, so that traffic is routed only to healthy zones. The possible values are <code>off</code> or an integer from 1 to the maximum number of targets. The default is <code>off</code>.</p></li>
+    /// <p><code>target_group_health.dns_failover.minimum_healthy_targets.count</code> - The minimum number of targets that must be healthy. If the number of healthy targets is below this value, mark the zone as unhealthy in DNS, so that traffic is routed only to healthy zones. The possible values are <code>off</code> or an integer from 1 to the maximum number of targets. The default is 1.</p></li>
     /// <li>
     /// <p><code>target_group_health.dns_failover.minimum_healthy_targets.percentage</code> - The minimum percentage of targets that must be healthy. If the percentage of healthy targets is below this value, mark the zone as unhealthy in DNS, so that traffic is routed only to healthy zones. The possible values are <code>off</code> or an integer from 1 to 100. The default is <code>off</code>.</p></li>
     /// <li>
@@ -104,7 +104,7 @@ impl TargetGroupAttribute {
     /// <li>
     /// <p><code>load_balancing.cross_zone.enabled</code> - Indicates whether cross zone load balancing is enabled. The value is <code>true</code>, <code>false</code> or <code>use_load_balancer_configuration</code>. The default is <code>use_load_balancer_configuration</code>.</p></li>
     /// <li>
-    /// <p><code>target_group_health.dns_failover.minimum_healthy_targets.count</code> - The minimum number of targets that must be healthy. If the number of healthy targets is below this value, mark the zone as unhealthy in DNS, so that traffic is routed only to healthy zones. The possible values are <code>off</code> or an integer from 1 to the maximum number of targets. The default is <code>off</code>.</p></li>
+    /// <p><code>target_group_health.dns_failover.minimum_healthy_targets.count</code> - The minimum number of targets that must be healthy. If the number of healthy targets is below this value, mark the zone as unhealthy in DNS, so that traffic is routed only to healthy zones. The possible values are <code>off</code> or an integer from 1 to the maximum number of targets. The default is 1.</p></li>
     /// <li>
     /// <p><code>target_group_health.dns_failover.minimum_healthy_targets.percentage</code> - The minimum percentage of targets that must be healthy. If the percentage of healthy targets is below this value, mark the zone as unhealthy in DNS, so that traffic is routed only to healthy zones. The possible values are <code>off</code> or an integer from 1 to 100. The default is <code>off</code>.</p></li>
     /// <li>
@@ -199,7 +199,7 @@ impl TargetGroupAttributeBuilder {
     /// <li>
     /// <p><code>load_balancing.cross_zone.enabled</code> - Indicates whether cross zone load balancing is enabled. The value is <code>true</code>, <code>false</code> or <code>use_load_balancer_configuration</code>. The default is <code>use_load_balancer_configuration</code>.</p></li>
     /// <li>
-    /// <p><code>target_group_health.dns_failover.minimum_healthy_targets.count</code> - The minimum number of targets that must be healthy. If the number of healthy targets is below this value, mark the zone as unhealthy in DNS, so that traffic is routed only to healthy zones. The possible values are <code>off</code> or an integer from 1 to the maximum number of targets. The default is <code>off</code>.</p></li>
+    /// <p><code>target_group_health.dns_failover.minimum_healthy_targets.count</code> - The minimum number of targets that must be healthy. If the number of healthy targets is below this value, mark the zone as unhealthy in DNS, so that traffic is routed only to healthy zones. The possible values are <code>off</code> or an integer from 1 to the maximum number of targets. The default is 1.</p></li>
     /// <li>
     /// <p><code>target_group_health.dns_failover.minimum_healthy_targets.percentage</code> - The minimum percentage of targets that must be healthy. If the percentage of healthy targets is below this value, mark the zone as unhealthy in DNS, so that traffic is routed only to healthy zones. The possible values are <code>off</code> or an integer from 1 to 100. The default is <code>off</code>.</p></li>
     /// <li>
@@ -275,7 +275,7 @@ impl TargetGroupAttributeBuilder {
     /// <li>
     /// <p><code>load_balancing.cross_zone.enabled</code> - Indicates whether cross zone load balancing is enabled. The value is <code>true</code>, <code>false</code> or <code>use_load_balancer_configuration</code>. The default is <code>use_load_balancer_configuration</code>.</p></li>
     /// <li>
-    /// <p><code>target_group_health.dns_failover.minimum_healthy_targets.count</code> - The minimum number of targets that must be healthy. If the number of healthy targets is below this value, mark the zone as unhealthy in DNS, so that traffic is routed only to healthy zones. The possible values are <code>off</code> or an integer from 1 to the maximum number of targets. The default is <code>off</code>.</p></li>
+    /// <p><code>target_group_health.dns_failover.minimum_healthy_targets.count</code> - The minimum number of targets that must be healthy. If the number of healthy targets is below this value, mark the zone as unhealthy in DNS, so that traffic is routed only to healthy zones. The possible values are <code>off</code> or an integer from 1 to the maximum number of targets. The default is 1.</p></li>
     /// <li>
     /// <p><code>target_group_health.dns_failover.minimum_healthy_targets.percentage</code> - The minimum percentage of targets that must be healthy. If the percentage of healthy targets is below this value, mark the zone as unhealthy in DNS, so that traffic is routed only to healthy zones. The possible values are <code>off</code> or an integer from 1 to 100. The default is <code>off</code>.</p></li>
     /// <li>
@@ -351,7 +351,7 @@ impl TargetGroupAttributeBuilder {
     /// <li>
     /// <p><code>load_balancing.cross_zone.enabled</code> - Indicates whether cross zone load balancing is enabled. The value is <code>true</code>, <code>false</code> or <code>use_load_balancer_configuration</code>. The default is <code>use_load_balancer_configuration</code>.</p></li>
     /// <li>
-    /// <p><code>target_group_health.dns_failover.minimum_healthy_targets.count</code> - The minimum number of targets that must be healthy. If the number of healthy targets is below this value, mark the zone as unhealthy in DNS, so that traffic is routed only to healthy zones. The possible values are <code>off</code> or an integer from 1 to the maximum number of targets. The default is <code>off</code>.</p></li>
+    /// <p><code>target_group_health.dns_failover.minimum_healthy_targets.count</code> - The minimum number of targets that must be healthy. If the number of healthy targets is below this value, mark the zone as unhealthy in DNS, so that traffic is routed only to healthy zones. The possible values are <code>off</code> or an integer from 1 to the maximum number of targets. The default is 1.</p></li>
     /// <li>
     /// <p><code>target_group_health.dns_failover.minimum_healthy_targets.percentage</code> - The minimum percentage of targets that must be healthy. If the percentage of healthy targets is below this value, mark the zone as unhealthy in DNS, so that traffic is routed only to healthy zones. The possible values are <code>off</code> or an integer from 1 to 100. The default is <code>off</code>.</p></li>
     /// <li>

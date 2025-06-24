@@ -23,6 +23,8 @@ pub use crate::types::_ec2_configuration::Ec2Configuration;
 
 pub use crate::types::_launch_template_specification::LaunchTemplateSpecification;
 
+pub use crate::types::_userdata_type::UserdataType;
+
 pub use crate::types::_launch_template_specification_override::LaunchTemplateSpecificationOverride;
 
 pub use crate::types::_cr_update_allocation_strategy::CrUpdateAllocationStrategy;
@@ -480,6 +482,8 @@ mod _tmpfs;
 mod _ulimit;
 
 mod _update_policy;
+
+mod _userdata_type;
 
 mod _volume;
 

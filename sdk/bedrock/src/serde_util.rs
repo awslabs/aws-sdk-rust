@@ -29,6 +29,15 @@ pub(crate) fn create_evaluation_job_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn create_foundation_model_agreement_output_output_correct_errors(
+    mut builder: crate::operation::create_foundation_model_agreement::builders::CreateFoundationModelAgreementOutputBuilder,
+) -> crate::operation::create_foundation_model_agreement::builders::CreateFoundationModelAgreementOutputBuilder {
+    if builder.model_id.is_none() {
+        builder.model_id = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn create_guardrail_output_output_correct_errors(
     mut builder: crate::operation::create_guardrail::builders::CreateGuardrailOutputBuilder,
 ) -> crate::operation::create_guardrail::builders::CreateGuardrailOutputBuilder {
@@ -172,6 +181,30 @@ pub(crate) fn get_evaluation_job_output_output_correct_errors(
     }
     if builder.creation_time.is_none() {
         builder.creation_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
+pub(crate) fn get_foundation_model_availability_output_output_correct_errors(
+    mut builder: crate::operation::get_foundation_model_availability::builders::GetFoundationModelAvailabilityOutputBuilder,
+) -> crate::operation::get_foundation_model_availability::builders::GetFoundationModelAvailabilityOutputBuilder {
+    if builder.model_id.is_none() {
+        builder.model_id = Some(Default::default())
+    }
+    if builder.agreement_availability.is_none() {
+        builder.agreement_availability = {
+            let builder = crate::types::builders::AgreementAvailabilityBuilder::default();
+            crate::serde_util::agreement_availability_correct_errors(builder).build().ok()
+        }
+    }
+    if builder.authorization_status.is_none() {
+        builder.authorization_status = "no value was set".parse::<crate::types::AuthorizationStatus>().ok()
+    }
+    if builder.entitlement_availability.is_none() {
+        builder.entitlement_availability = "no value was set".parse::<crate::types::EntitlementAvailability>().ok()
+    }
+    if builder.region_availability.is_none() {
+        builder.region_availability = "no value was set".parse::<crate::types::RegionAvailability>().ok()
     }
     builder
 }
@@ -392,6 +425,27 @@ pub(crate) fn get_provisioned_model_throughput_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn get_use_case_for_model_access_output_output_correct_errors(
+    mut builder: crate::operation::get_use_case_for_model_access::builders::GetUseCaseForModelAccessOutputBuilder,
+) -> crate::operation::get_use_case_for_model_access::builders::GetUseCaseForModelAccessOutputBuilder {
+    if builder.form_data.is_none() {
+        builder.form_data = Some(::aws_smithy_types::Blob::new(""))
+    }
+    builder
+}
+
+pub(crate) fn list_foundation_model_agreement_offers_output_output_correct_errors(
+    mut builder: crate::operation::list_foundation_model_agreement_offers::builders::ListFoundationModelAgreementOffersOutputBuilder,
+) -> crate::operation::list_foundation_model_agreement_offers::builders::ListFoundationModelAgreementOffersOutputBuilder {
+    if builder.model_id.is_none() {
+        builder.model_id = Some(Default::default())
+    }
+    if builder.offers.is_none() {
+        builder.offers = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn list_guardrails_output_output_correct_errors(
     mut builder: crate::operation::list_guardrails::builders::ListGuardrailsOutputBuilder,
 ) -> crate::operation::list_guardrails::builders::ListGuardrailsOutputBuilder {
@@ -472,6 +526,15 @@ pub(crate) fn evaluation_output_data_config_correct_errors(
 ) -> crate::types::builders::EvaluationOutputDataConfigBuilder {
     if builder.s3_uri.is_none() {
         builder.s3_uri = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn agreement_availability_correct_errors(
+    mut builder: crate::types::builders::AgreementAvailabilityBuilder,
+) -> crate::types::builders::AgreementAvailabilityBuilder {
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::AgreementStatus>().ok()
     }
     builder
 }
@@ -903,6 +966,19 @@ pub(crate) fn model_invocation_job_summary_correct_errors(
     builder
 }
 
+pub(crate) fn offer_correct_errors(mut builder: crate::types::builders::OfferBuilder) -> crate::types::builders::OfferBuilder {
+    if builder.offer_token.is_none() {
+        builder.offer_token = Some(Default::default())
+    }
+    if builder.term_details.is_none() {
+        builder.term_details = {
+            let builder = crate::types::builders::TermDetailsBuilder::default();
+            Some(crate::serde_util::term_details_correct_errors(builder).build())
+        }
+    }
+    builder
+}
+
 pub(crate) fn prompt_router_summary_correct_errors(
     mut builder: crate::types::builders::PromptRouterSummaryBuilder,
 ) -> crate::types::builders::PromptRouterSummaryBuilder {
@@ -1130,6 +1206,28 @@ pub(crate) fn teacher_model_config_correct_errors(
     builder
 }
 
+pub(crate) fn term_details_correct_errors(mut builder: crate::types::builders::TermDetailsBuilder) -> crate::types::builders::TermDetailsBuilder {
+    if builder.usage_based_pricing_term.is_none() {
+        builder.usage_based_pricing_term = {
+            let builder = crate::types::builders::PricingTermBuilder::default();
+            crate::serde_util::pricing_term_correct_errors(builder).build().ok()
+        }
+    }
+    if builder.legal_term.is_none() {
+        builder.legal_term = {
+            let builder = crate::types::builders::LegalTermBuilder::default();
+            Some(builder.build())
+        }
+    }
+    if builder.support_term.is_none() {
+        builder.support_term = {
+            let builder = crate::types::builders::SupportTermBuilder::default();
+            Some(builder.build())
+        }
+    }
+    builder
+}
+
 pub(crate) fn validator_correct_errors(mut builder: crate::types::builders::ValidatorBuilder) -> crate::types::builders::ValidatorBuilder {
     if builder.s3_uri.is_none() {
         builder.s3_uri = Some(Default::default())
@@ -1190,6 +1288,13 @@ pub(crate) fn human_evaluation_custom_metric_correct_errors(
     }
     if builder.rating_method.is_none() {
         builder.rating_method = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn pricing_term_correct_errors(mut builder: crate::types::builders::PricingTermBuilder) -> crate::types::builders::PricingTermBuilder {
+    if builder.rate_card.is_none() {
+        builder.rate_card = Some(Default::default())
     }
     builder
 }

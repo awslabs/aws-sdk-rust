@@ -12,6 +12,7 @@
 /// ```text
 /// # let ruletypeoption = unimplemented!();
 /// match ruletypeoption {
+///     RuleTypeOption::Delegate => { /* ... */ },
 ///     RuleTypeOption::Forward => { /* ... */ },
 ///     RuleTypeOption::Recursive => { /* ... */ },
 ///     RuleTypeOption::System => { /* ... */ },
@@ -44,6 +45,8 @@
 )]
 pub enum RuleTypeOption {
     #[allow(missing_docs)] // documentation missing in model
+    Delegate,
+    #[allow(missing_docs)] // documentation missing in model
     Forward,
     #[allow(missing_docs)] // documentation missing in model
     Recursive,
@@ -56,6 +59,7 @@ pub enum RuleTypeOption {
 impl ::std::convert::From<&str> for RuleTypeOption {
     fn from(s: &str) -> Self {
         match s {
+            "DELEGATE" => RuleTypeOption::Delegate,
             "FORWARD" => RuleTypeOption::Forward,
             "RECURSIVE" => RuleTypeOption::Recursive,
             "SYSTEM" => RuleTypeOption::System,
@@ -74,6 +78,7 @@ impl RuleTypeOption {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            RuleTypeOption::Delegate => "DELEGATE",
             RuleTypeOption::Forward => "FORWARD",
             RuleTypeOption::Recursive => "RECURSIVE",
             RuleTypeOption::System => "SYSTEM",
@@ -82,7 +87,7 @@ impl RuleTypeOption {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["FORWARD", "RECURSIVE", "SYSTEM"]
+        &["DELEGATE", "FORWARD", "RECURSIVE", "SYSTEM"]
     }
 }
 impl ::std::convert::AsRef<str> for RuleTypeOption {
@@ -105,6 +110,7 @@ impl RuleTypeOption {
 impl ::std::fmt::Display for RuleTypeOption {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            RuleTypeOption::Delegate => write!(f, "DELEGATE"),
             RuleTypeOption::Forward => write!(f, "FORWARD"),
             RuleTypeOption::Recursive => write!(f, "RECURSIVE"),
             RuleTypeOption::System => write!(f, "SYSTEM"),

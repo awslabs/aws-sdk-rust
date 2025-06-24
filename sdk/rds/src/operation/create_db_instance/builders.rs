@@ -2929,6 +2929,8 @@ impl CreateDBInstanceFluentBuilder {
     /// <p>Valid Values:</p>
     /// <ul>
     /// <li>
+    /// <p><code>local</code> (Dedicated Local Zone)</p></li>
+    /// <li>
     /// <p><code>outposts</code> (Amazon Web Services Outposts)</p></li>
     /// <li>
     /// <p><code>region</code> (Amazon Web Services Region)</p></li>
@@ -2943,6 +2945,8 @@ impl CreateDBInstanceFluentBuilder {
     /// <p>Valid Values:</p>
     /// <ul>
     /// <li>
+    /// <p><code>local</code> (Dedicated Local Zone)</p></li>
+    /// <li>
     /// <p><code>outposts</code> (Amazon Web Services Outposts)</p></li>
     /// <li>
     /// <p><code>region</code> (Amazon Web Services Region)</p></li>
@@ -2956,6 +2960,8 @@ impl CreateDBInstanceFluentBuilder {
     /// <p>The location for storing automated backups and manual snapshots.</p>
     /// <p>Valid Values:</p>
     /// <ul>
+    /// <li>
+    /// <p><code>local</code> (Dedicated Local Zone)</p></li>
     /// <li>
     /// <p><code>outposts</code> (Amazon Web Services Outposts)</p></li>
     /// <li>

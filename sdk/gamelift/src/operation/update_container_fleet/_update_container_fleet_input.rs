@@ -12,9 +12,9 @@ pub struct UpdateContainerFleetInput {
     /// <p>Update a container group definition by calling <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateContainerGroupDefinition.html">UpdateContainerGroupDefinition</a>. This operation creates a <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_ContainerGroupDefinition.html">ContainerGroupDefinition</a> resource with an incremented version.</p>
     /// <p>To remove a fleet's per-instance container group definition, leave this parameter empty and use the parameter <code>RemoveAttributes</code>.</p>
     pub per_instance_container_group_definition_name: ::std::option::Option<::std::string::String>,
-    /// <p>The number of times to replicate the game server container group on each fleet instance. By default, Amazon GameLift calculates the maximum number of game server container groups that can fit on each instance. You can remove this property value to use the calculated value, or set it manually. If you set this number manually, Amazon GameLift uses your value as long as it's less than the calculated maximum.</p>
+    /// <p>The number of times to replicate the game server container group on each fleet instance. By default, Amazon GameLift Servers calculates the maximum number of game server container groups that can fit on each instance. You can remove this property value to use the calculated value, or set it manually. If you set this number manually, Amazon GameLift Servers uses your value as long as it's less than the calculated maximum.</p>
     pub game_server_container_groups_per_instance: ::std::option::Option<i32>,
-    /// <p>A revised set of port numbers to open on each fleet instance. By default, Amazon GameLift calculates an optimal port range based on your fleet configuration. If you previously set this parameter manually, you can't reset this to use the calculated settings.</p>
+    /// <p>A revised set of port numbers to open on each fleet instance. By default, Amazon GameLift Servers calculates an optimal port range based on your fleet configuration. If you previously set this parameter manually, you can't reset this to use the calculated settings.</p>
     pub instance_connection_port_range: ::std::option::Option<crate::types::ConnectionPortRange>,
     /// <p>A set of ports to add to the container fleet's inbound permissions.</p>
     pub instance_inbound_permission_authorizations: ::std::option::Option<::std::vec::Vec<crate::types::IpPermission>>,
@@ -51,11 +51,11 @@ impl UpdateContainerFleetInput {
     pub fn per_instance_container_group_definition_name(&self) -> ::std::option::Option<&str> {
         self.per_instance_container_group_definition_name.as_deref()
     }
-    /// <p>The number of times to replicate the game server container group on each fleet instance. By default, Amazon GameLift calculates the maximum number of game server container groups that can fit on each instance. You can remove this property value to use the calculated value, or set it manually. If you set this number manually, Amazon GameLift uses your value as long as it's less than the calculated maximum.</p>
+    /// <p>The number of times to replicate the game server container group on each fleet instance. By default, Amazon GameLift Servers calculates the maximum number of game server container groups that can fit on each instance. You can remove this property value to use the calculated value, or set it manually. If you set this number manually, Amazon GameLift Servers uses your value as long as it's less than the calculated maximum.</p>
     pub fn game_server_container_groups_per_instance(&self) -> ::std::option::Option<i32> {
         self.game_server_container_groups_per_instance
     }
-    /// <p>A revised set of port numbers to open on each fleet instance. By default, Amazon GameLift calculates an optimal port range based on your fleet configuration. If you previously set this parameter manually, you can't reset this to use the calculated settings.</p>
+    /// <p>A revised set of port numbers to open on each fleet instance. By default, Amazon GameLift Servers calculates an optimal port range based on your fleet configuration. If you previously set this parameter manually, you can't reset this to use the calculated settings.</p>
     pub fn instance_connection_port_range(&self) -> ::std::option::Option<&crate::types::ConnectionPortRange> {
         self.instance_connection_port_range.as_ref()
     }
@@ -183,31 +183,31 @@ impl UpdateContainerFleetInputBuilder {
     pub fn get_per_instance_container_group_definition_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.per_instance_container_group_definition_name
     }
-    /// <p>The number of times to replicate the game server container group on each fleet instance. By default, Amazon GameLift calculates the maximum number of game server container groups that can fit on each instance. You can remove this property value to use the calculated value, or set it manually. If you set this number manually, Amazon GameLift uses your value as long as it's less than the calculated maximum.</p>
+    /// <p>The number of times to replicate the game server container group on each fleet instance. By default, Amazon GameLift Servers calculates the maximum number of game server container groups that can fit on each instance. You can remove this property value to use the calculated value, or set it manually. If you set this number manually, Amazon GameLift Servers uses your value as long as it's less than the calculated maximum.</p>
     pub fn game_server_container_groups_per_instance(mut self, input: i32) -> Self {
         self.game_server_container_groups_per_instance = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The number of times to replicate the game server container group on each fleet instance. By default, Amazon GameLift calculates the maximum number of game server container groups that can fit on each instance. You can remove this property value to use the calculated value, or set it manually. If you set this number manually, Amazon GameLift uses your value as long as it's less than the calculated maximum.</p>
+    /// <p>The number of times to replicate the game server container group on each fleet instance. By default, Amazon GameLift Servers calculates the maximum number of game server container groups that can fit on each instance. You can remove this property value to use the calculated value, or set it manually. If you set this number manually, Amazon GameLift Servers uses your value as long as it's less than the calculated maximum.</p>
     pub fn set_game_server_container_groups_per_instance(mut self, input: ::std::option::Option<i32>) -> Self {
         self.game_server_container_groups_per_instance = input;
         self
     }
-    /// <p>The number of times to replicate the game server container group on each fleet instance. By default, Amazon GameLift calculates the maximum number of game server container groups that can fit on each instance. You can remove this property value to use the calculated value, or set it manually. If you set this number manually, Amazon GameLift uses your value as long as it's less than the calculated maximum.</p>
+    /// <p>The number of times to replicate the game server container group on each fleet instance. By default, Amazon GameLift Servers calculates the maximum number of game server container groups that can fit on each instance. You can remove this property value to use the calculated value, or set it manually. If you set this number manually, Amazon GameLift Servers uses your value as long as it's less than the calculated maximum.</p>
     pub fn get_game_server_container_groups_per_instance(&self) -> &::std::option::Option<i32> {
         &self.game_server_container_groups_per_instance
     }
-    /// <p>A revised set of port numbers to open on each fleet instance. By default, Amazon GameLift calculates an optimal port range based on your fleet configuration. If you previously set this parameter manually, you can't reset this to use the calculated settings.</p>
+    /// <p>A revised set of port numbers to open on each fleet instance. By default, Amazon GameLift Servers calculates an optimal port range based on your fleet configuration. If you previously set this parameter manually, you can't reset this to use the calculated settings.</p>
     pub fn instance_connection_port_range(mut self, input: crate::types::ConnectionPortRange) -> Self {
         self.instance_connection_port_range = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A revised set of port numbers to open on each fleet instance. By default, Amazon GameLift calculates an optimal port range based on your fleet configuration. If you previously set this parameter manually, you can't reset this to use the calculated settings.</p>
+    /// <p>A revised set of port numbers to open on each fleet instance. By default, Amazon GameLift Servers calculates an optimal port range based on your fleet configuration. If you previously set this parameter manually, you can't reset this to use the calculated settings.</p>
     pub fn set_instance_connection_port_range(mut self, input: ::std::option::Option<crate::types::ConnectionPortRange>) -> Self {
         self.instance_connection_port_range = input;
         self
     }
-    /// <p>A revised set of port numbers to open on each fleet instance. By default, Amazon GameLift calculates an optimal port range based on your fleet configuration. If you previously set this parameter manually, you can't reset this to use the calculated settings.</p>
+    /// <p>A revised set of port numbers to open on each fleet instance. By default, Amazon GameLift Servers calculates an optimal port range based on your fleet configuration. If you previously set this parameter manually, you can't reset this to use the calculated settings.</p>
     pub fn get_instance_connection_port_range(&self) -> &::std::option::Option<crate::types::ConnectionPortRange> {
         &self.instance_connection_port_range
     }

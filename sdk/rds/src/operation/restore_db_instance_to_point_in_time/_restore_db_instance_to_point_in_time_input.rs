@@ -295,6 +295,8 @@ pub struct RestoreDbInstanceToPointInTimeInput {
     /// <p>Valid Values:</p>
     /// <ul>
     /// <li>
+    /// <p><code>local</code> (Dedicated Local Zone)</p></li>
+    /// <li>
     /// <p><code>outposts</code> (Amazon Web Services Outposts)</p></li>
     /// <li>
     /// <p><code>region</code> (Amazon Web Services Region)</p></li>
@@ -729,6 +731,8 @@ impl RestoreDbInstanceToPointInTimeInput {
     /// <p>The location for storing automated backups and manual snapshots for the restored DB instance.</p>
     /// <p>Valid Values:</p>
     /// <ul>
+    /// <li>
+    /// <p><code>local</code> (Dedicated Local Zone)</p></li>
     /// <li>
     /// <p><code>outposts</code> (Amazon Web Services Outposts)</p></li>
     /// <li>
@@ -2072,6 +2076,8 @@ impl RestoreDbInstanceToPointInTimeInputBuilder {
     /// <p>Valid Values:</p>
     /// <ul>
     /// <li>
+    /// <p><code>local</code> (Dedicated Local Zone)</p></li>
+    /// <li>
     /// <p><code>outposts</code> (Amazon Web Services Outposts)</p></li>
     /// <li>
     /// <p><code>region</code> (Amazon Web Services Region)</p></li>
@@ -2086,6 +2092,8 @@ impl RestoreDbInstanceToPointInTimeInputBuilder {
     /// <p>Valid Values:</p>
     /// <ul>
     /// <li>
+    /// <p><code>local</code> (Dedicated Local Zone)</p></li>
+    /// <li>
     /// <p><code>outposts</code> (Amazon Web Services Outposts)</p></li>
     /// <li>
     /// <p><code>region</code> (Amazon Web Services Region)</p></li>
@@ -2099,6 +2107,8 @@ impl RestoreDbInstanceToPointInTimeInputBuilder {
     /// <p>The location for storing automated backups and manual snapshots for the restored DB instance.</p>
     /// <p>Valid Values:</p>
     /// <ul>
+    /// <li>
+    /// <p><code>local</code> (Dedicated Local Zone)</p></li>
     /// <li>
     /// <p><code>outposts</code> (Amazon Web Services Outposts)</p></li>
     /// <li>

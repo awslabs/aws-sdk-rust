@@ -4,13 +4,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdatePolicy {
-    /// <p>Specifies whether jobs are automatically terminated when the computer environment infrastructure is updated. The default value is <code>false</code>.</p>
+    /// <p>Specifies whether jobs are automatically terminated when the compute environment infrastructure is updated. The default value is <code>false</code>.</p>
     pub terminate_jobs_on_update: ::std::option::Option<bool>,
     /// <p>Specifies the job timeout (in minutes) when the compute environment infrastructure is updated. The default value is 30.</p>
     pub job_execution_timeout_minutes: ::std::option::Option<i64>,
 }
 impl UpdatePolicy {
-    /// <p>Specifies whether jobs are automatically terminated when the computer environment infrastructure is updated. The default value is <code>false</code>.</p>
+    /// <p>Specifies whether jobs are automatically terminated when the compute environment infrastructure is updated. The default value is <code>false</code>.</p>
     pub fn terminate_jobs_on_update(&self) -> ::std::option::Option<bool> {
         self.terminate_jobs_on_update
     }
@@ -34,17 +34,17 @@ pub struct UpdatePolicyBuilder {
     pub(crate) job_execution_timeout_minutes: ::std::option::Option<i64>,
 }
 impl UpdatePolicyBuilder {
-    /// <p>Specifies whether jobs are automatically terminated when the computer environment infrastructure is updated. The default value is <code>false</code>.</p>
+    /// <p>Specifies whether jobs are automatically terminated when the compute environment infrastructure is updated. The default value is <code>false</code>.</p>
     pub fn terminate_jobs_on_update(mut self, input: bool) -> Self {
         self.terminate_jobs_on_update = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies whether jobs are automatically terminated when the computer environment infrastructure is updated. The default value is <code>false</code>.</p>
+    /// <p>Specifies whether jobs are automatically terminated when the compute environment infrastructure is updated. The default value is <code>false</code>.</p>
     pub fn set_terminate_jobs_on_update(mut self, input: ::std::option::Option<bool>) -> Self {
         self.terminate_jobs_on_update = input;
         self
     }
-    /// <p>Specifies whether jobs are automatically terminated when the computer environment infrastructure is updated. The default value is <code>false</code>.</p>
+    /// <p>Specifies whether jobs are automatically terminated when the compute environment infrastructure is updated. The default value is <code>false</code>.</p>
     pub fn get_terminate_jobs_on_update(&self) -> &::std::option::Option<bool> {
         &self.terminate_jobs_on_update
     }

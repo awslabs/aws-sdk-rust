@@ -51,6 +51,32 @@ pub use crate::types::_invocation_log_source::InvocationLogSource;
 
 pub use crate::types::_tag::Tag;
 
+pub use crate::types::_offer::Offer;
+
+pub use crate::types::_term_details::TermDetails;
+
+pub use crate::types::_validity_term::ValidityTerm;
+
+pub use crate::types::_support_term::SupportTerm;
+
+pub use crate::types::_legal_term::LegalTerm;
+
+pub use crate::types::_pricing_term::PricingTerm;
+
+pub use crate::types::_dimensional_price_rate::DimensionalPriceRate;
+
+pub use crate::types::_offer_type::OfferType;
+
+pub use crate::types::_region_availability::RegionAvailability;
+
+pub use crate::types::_entitlement_availability::EntitlementAvailability;
+
+pub use crate::types::_authorization_status::AuthorizationStatus;
+
+pub use crate::types::_agreement_availability::AgreementAvailability;
+
+pub use crate::types::_agreement_status::AgreementStatus;
+
 pub use crate::types::_provisioned_model_summary::ProvisionedModelSummary;
 
 pub use crate::types::_commitment_duration::CommitmentDuration;
@@ -361,7 +387,13 @@ pub use crate::types::_status::Status;
 
 pub use crate::types::_marketplace_model_endpoint_summary::MarketplaceModelEndpointSummary;
 
+mod _agreement_availability;
+
+mod _agreement_status;
+
 mod _application_type;
+
+mod _authorization_status;
 
 mod _automated_evaluation_config;
 
@@ -397,9 +429,13 @@ mod _customization_type;
 
 mod _data_processing_details;
 
+mod _dimensional_price_rate;
+
 mod _distillation_config;
 
 mod _endpoint_config;
+
+mod _entitlement_availability;
 
 mod _evaluation_bedrock_model;
 
@@ -593,6 +629,8 @@ mod _knowledge_base_retrieve_and_generate_configuration;
 
 mod _knowledge_base_vector_search_configuration;
 
+mod _legal_term;
+
 mod _logging_config;
 
 mod _marketplace_model_endpoint;
@@ -631,6 +669,10 @@ mod _model_modality;
 
 mod _model_status;
 
+mod _offer;
+
+mod _offer_type;
+
 mod _orchestration_configuration;
 
 mod _output_data_config;
@@ -638,6 +680,8 @@ mod _output_data_config;
 mod _performance_config_latency;
 
 mod _performance_configuration;
+
+mod _pricing_term;
 
 mod _prompt_router_status;
 
@@ -662,6 +706,8 @@ mod _rag_config;
 mod _rating_scale_item;
 
 mod _rating_scale_item_value;
+
+mod _region_availability;
 
 mod _request_metadata_base_filters;
 
@@ -701,9 +747,13 @@ mod _status;
 
 mod _status_details;
 
+mod _support_term;
+
 mod _tag;
 
 mod _teacher_model_config;
+
+mod _term_details;
 
 mod _text_inference_config;
 
@@ -720,6 +770,8 @@ mod _validation_details;
 mod _validator;
 
 mod _validator_metric;
+
+mod _validity_term;
 
 mod _vpc_config;
 

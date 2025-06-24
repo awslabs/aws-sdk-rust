@@ -43,6 +43,7 @@
 ///     LanguageCode::EnZa => { /* ... */ },
 ///     LanguageCode::EsEs => { /* ... */ },
 ///     LanguageCode::EsUs => { /* ... */ },
+///     LanguageCode::EtEe => { /* ... */ },
 ///     LanguageCode::EtEt => { /* ... */ },
 ///     LanguageCode::EuEs => { /* ... */ },
 ///     LanguageCode::FaIr => { /* ... */ },
@@ -206,6 +207,8 @@ pub enum LanguageCode {
     EsEs,
     #[allow(missing_docs)] // documentation missing in model
     EsUs,
+    #[allow(missing_docs)] // documentation missing in model
+    EtEe,
     #[allow(missing_docs)] // documentation missing in model
     EtEt,
     #[allow(missing_docs)] // documentation missing in model
@@ -390,6 +393,7 @@ impl ::std::convert::From<&str> for LanguageCode {
             "en-ZA" => LanguageCode::EnZa,
             "es-ES" => LanguageCode::EsEs,
             "es-US" => LanguageCode::EsUs,
+            "et-EE" => LanguageCode::EtEe,
             "et-ET" => LanguageCode::EtEt,
             "eu-ES" => LanguageCode::EuEs,
             "fa-IR" => LanguageCode::FaIr,
@@ -509,6 +513,7 @@ impl LanguageCode {
             LanguageCode::EnZa => "en-ZA",
             LanguageCode::EsEs => "es-ES",
             LanguageCode::EsUs => "es-US",
+            LanguageCode::EtEe => "et-EE",
             LanguageCode::EtEt => "et-ET",
             LanguageCode::EuEs => "eu-ES",
             LanguageCode::FaIr => "fa-IR",
@@ -590,11 +595,11 @@ impl LanguageCode {
         &[
             "ab-GE", "af-ZA", "ar-AE", "ar-SA", "ast-ES", "az-AZ", "ba-RU", "be-BY", "bg-BG", "bn-IN", "bs-BA", "ca-ES", "ckb-IQ", "ckb-IR", "cs-CZ",
             "cy-WL", "da-DK", "de-CH", "de-DE", "el-GR", "en-AB", "en-AU", "en-GB", "en-IE", "en-IN", "en-NZ", "en-US", "en-WL", "en-ZA", "es-ES",
-            "es-US", "et-ET", "eu-ES", "fa-IR", "fi-FI", "fr-CA", "fr-FR", "gl-ES", "gu-IN", "ha-NG", "he-IL", "hi-IN", "hr-HR", "hu-HU", "hy-AM",
-            "id-ID", "is-IS", "it-IT", "ja-JP", "ka-GE", "kab-DZ", "kk-KZ", "kn-IN", "ko-KR", "ky-KG", "lg-IN", "lt-LT", "lv-LV", "mhr-RU", "mi-NZ",
-            "mk-MK", "ml-IN", "mn-MN", "mr-IN", "ms-MY", "mt-MT", "nl-NL", "no-NO", "or-IN", "pa-IN", "pl-PL", "ps-AF", "pt-BR", "pt-PT", "ro-RO",
-            "ru-RU", "rw-RW", "si-LK", "sk-SK", "sl-SI", "so-SO", "sr-RS", "su-ID", "sv-SE", "sw-BI", "sw-KE", "sw-RW", "sw-TZ", "sw-UG", "ta-IN",
-            "te-IN", "th-TH", "tl-PH", "tr-TR", "tt-RU", "ug-CN", "uk-UA", "uz-UZ", "vi-VN", "wo-SN", "zh-CN", "zh-HK", "zh-TW", "zu-ZA",
+            "es-US", "et-EE", "et-ET", "eu-ES", "fa-IR", "fi-FI", "fr-CA", "fr-FR", "gl-ES", "gu-IN", "ha-NG", "he-IL", "hi-IN", "hr-HR", "hu-HU",
+            "hy-AM", "id-ID", "is-IS", "it-IT", "ja-JP", "ka-GE", "kab-DZ", "kk-KZ", "kn-IN", "ko-KR", "ky-KG", "lg-IN", "lt-LT", "lv-LV", "mhr-RU",
+            "mi-NZ", "mk-MK", "ml-IN", "mn-MN", "mr-IN", "ms-MY", "mt-MT", "nl-NL", "no-NO", "or-IN", "pa-IN", "pl-PL", "ps-AF", "pt-BR", "pt-PT",
+            "ro-RO", "ru-RU", "rw-RW", "si-LK", "sk-SK", "sl-SI", "so-SO", "sr-RS", "su-ID", "sv-SE", "sw-BI", "sw-KE", "sw-RW", "sw-TZ", "sw-UG",
+            "ta-IN", "te-IN", "th-TH", "tl-PH", "tr-TR", "tt-RU", "ug-CN", "uk-UA", "uz-UZ", "vi-VN", "wo-SN", "zh-CN", "zh-HK", "zh-TW", "zu-ZA",
         ]
     }
 }
@@ -649,6 +654,7 @@ impl ::std::fmt::Display for LanguageCode {
             LanguageCode::EnZa => write!(f, "en-ZA"),
             LanguageCode::EsEs => write!(f, "es-ES"),
             LanguageCode::EsUs => write!(f, "es-US"),
+            LanguageCode::EtEe => write!(f, "et-EE"),
             LanguageCode::EtEt => write!(f, "et-ET"),
             LanguageCode::EuEs => write!(f, "eu-ES"),
             LanguageCode::FaIr => write!(f, "fa-IR"),

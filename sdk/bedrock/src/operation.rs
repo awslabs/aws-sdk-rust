@@ -10,6 +10,9 @@ pub mod create_custom_model;
 /// Types for the `CreateEvaluationJob` operation.
 pub mod create_evaluation_job;
 
+/// Types for the `CreateFoundationModelAgreement` operation.
+pub mod create_foundation_model_agreement;
+
 /// Types for the `CreateGuardrail` operation.
 pub mod create_guardrail;
 
@@ -42,6 +45,9 @@ pub mod create_provisioned_model_throughput;
 
 /// Types for the `DeleteCustomModel` operation.
 pub mod delete_custom_model;
+
+/// Types for the `DeleteFoundationModelAgreement` operation.
+pub mod delete_foundation_model_agreement;
 
 /// Types for the `DeleteGuardrail` operation.
 pub mod delete_guardrail;
@@ -76,6 +82,9 @@ pub mod get_evaluation_job;
 /// Types for the `GetFoundationModel` operation.
 pub mod get_foundation_model;
 
+/// Types for the `GetFoundationModelAvailability` operation.
+pub mod get_foundation_model_availability;
+
 /// Types for the `GetGuardrail` operation.
 pub mod get_guardrail;
 
@@ -109,11 +118,17 @@ pub mod get_prompt_router;
 /// Types for the `GetProvisionedModelThroughput` operation.
 pub mod get_provisioned_model_throughput;
 
+/// Types for the `GetUseCaseForModelAccess` operation.
+pub mod get_use_case_for_model_access;
+
 /// Types for the `ListCustomModels` operation.
 pub mod list_custom_models;
 
 /// Types for the `ListEvaluationJobs` operation.
 pub mod list_evaluation_jobs;
+
+/// Types for the `ListFoundationModelAgreementOffers` operation.
+pub mod list_foundation_model_agreement_offers;
 
 /// Types for the `ListFoundationModels` operation.
 pub mod list_foundation_models;
@@ -153,6 +168,9 @@ pub mod list_tags_for_resource;
 
 /// Types for the `PutModelInvocationLoggingConfiguration` operation.
 pub mod put_model_invocation_logging_configuration;
+
+/// Types for the `PutUseCaseForModelAccess` operation.
+pub mod put_use_case_for_model_access;
 
 /// Types for the `RegisterMarketplaceModelEndpoint` operation.
 pub mod register_marketplace_model_endpoint;

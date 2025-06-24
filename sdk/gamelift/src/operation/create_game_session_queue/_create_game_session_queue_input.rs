@@ -7,7 +7,7 @@ pub struct CreateGameSessionQueueInput {
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The maximum time, in seconds, that a new game session placement request remains in the queue. When a request exceeds this time, the game session placement changes to a <code>TIMED_OUT</code> status. If you don't specify a request timeout, the queue uses a default value.</p>
     pub timeout_in_seconds: ::std::option::Option<i32>,
-    /// <p>A set of policies that enforce a sliding cap on player latency when processing game sessions placement requests. Use multiple policies to gradually relax the cap over time if Amazon GameLift can't make a placement. Policies are evaluated in order starting with the lowest maximum latency value.</p>
+    /// <p>A set of policies that enforce a sliding cap on player latency when processing game sessions placement requests. Use multiple policies to gradually relax the cap over time if Amazon GameLift Servers can't make a placement. Policies are evaluated in order starting with the lowest maximum latency value.</p>
     pub player_latency_policies: ::std::option::Option<::std::vec::Vec<crate::types::PlayerLatencyPolicy>>,
     /// <p>A list of fleets and/or fleet aliases that can be used to fulfill game session placement requests in the queue. Destinations are identified by either a fleet ARN or a fleet alias ARN, and are listed in order of placement preference.</p>
     pub destinations: ::std::option::Option<::std::vec::Vec<crate::types::GameSessionQueueDestination>>,
@@ -31,7 +31,7 @@ impl CreateGameSessionQueueInput {
     pub fn timeout_in_seconds(&self) -> ::std::option::Option<i32> {
         self.timeout_in_seconds
     }
-    /// <p>A set of policies that enforce a sliding cap on player latency when processing game sessions placement requests. Use multiple policies to gradually relax the cap over time if Amazon GameLift can't make a placement. Policies are evaluated in order starting with the lowest maximum latency value.</p>
+    /// <p>A set of policies that enforce a sliding cap on player latency when processing game sessions placement requests. Use multiple policies to gradually relax the cap over time if Amazon GameLift Servers can't make a placement. Policies are evaluated in order starting with the lowest maximum latency value.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.player_latency_policies.is_none()`.
     pub fn player_latency_policies(&self) -> &[crate::types::PlayerLatencyPolicy] {
@@ -121,19 +121,19 @@ impl CreateGameSessionQueueInputBuilder {
     ///
     /// To override the contents of this collection use [`set_player_latency_policies`](Self::set_player_latency_policies).
     ///
-    /// <p>A set of policies that enforce a sliding cap on player latency when processing game sessions placement requests. Use multiple policies to gradually relax the cap over time if Amazon GameLift can't make a placement. Policies are evaluated in order starting with the lowest maximum latency value.</p>
+    /// <p>A set of policies that enforce a sliding cap on player latency when processing game sessions placement requests. Use multiple policies to gradually relax the cap over time if Amazon GameLift Servers can't make a placement. Policies are evaluated in order starting with the lowest maximum latency value.</p>
     pub fn player_latency_policies(mut self, input: crate::types::PlayerLatencyPolicy) -> Self {
         let mut v = self.player_latency_policies.unwrap_or_default();
         v.push(input);
         self.player_latency_policies = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A set of policies that enforce a sliding cap on player latency when processing game sessions placement requests. Use multiple policies to gradually relax the cap over time if Amazon GameLift can't make a placement. Policies are evaluated in order starting with the lowest maximum latency value.</p>
+    /// <p>A set of policies that enforce a sliding cap on player latency when processing game sessions placement requests. Use multiple policies to gradually relax the cap over time if Amazon GameLift Servers can't make a placement. Policies are evaluated in order starting with the lowest maximum latency value.</p>
     pub fn set_player_latency_policies(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PlayerLatencyPolicy>>) -> Self {
         self.player_latency_policies = input;
         self
     }
-    /// <p>A set of policies that enforce a sliding cap on player latency when processing game sessions placement requests. Use multiple policies to gradually relax the cap over time if Amazon GameLift can't make a placement. Policies are evaluated in order starting with the lowest maximum latency value.</p>
+    /// <p>A set of policies that enforce a sliding cap on player latency when processing game sessions placement requests. Use multiple policies to gradually relax the cap over time if Amazon GameLift Servers can't make a placement. Policies are evaluated in order starting with the lowest maximum latency value.</p>
     pub fn get_player_latency_policies(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PlayerLatencyPolicy>> {
         &self.player_latency_policies
     }

@@ -6,11 +6,19 @@
 pub struct LicenseConversionContext {
     /// <p>The Usage operation value that corresponds to the license type you are converting your resource from. For more information about which platforms correspond to which usage operation values see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/billing-info-fields.html#billing-info">Sample data: usage operation by platform </a></p>
     pub usage_operation: ::std::option::Option<::std::string::String>,
+    /// <p>Product codes referred to in the license conversion process.</p>
+    pub product_codes: ::std::option::Option<::std::vec::Vec<crate::types::ProductCodeListItem>>,
 }
 impl LicenseConversionContext {
     /// <p>The Usage operation value that corresponds to the license type you are converting your resource from. For more information about which platforms correspond to which usage operation values see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/billing-info-fields.html#billing-info">Sample data: usage operation by platform </a></p>
     pub fn usage_operation(&self) -> ::std::option::Option<&str> {
         self.usage_operation.as_deref()
+    }
+    /// <p>Product codes referred to in the license conversion process.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.product_codes.is_none()`.
+    pub fn product_codes(&self) -> &[crate::types::ProductCodeListItem] {
+        self.product_codes.as_deref().unwrap_or_default()
     }
 }
 impl LicenseConversionContext {
@@ -25,6 +33,7 @@ impl LicenseConversionContext {
 #[non_exhaustive]
 pub struct LicenseConversionContextBuilder {
     pub(crate) usage_operation: ::std::option::Option<::std::string::String>,
+    pub(crate) product_codes: ::std::option::Option<::std::vec::Vec<crate::types::ProductCodeListItem>>,
 }
 impl LicenseConversionContextBuilder {
     /// <p>The Usage operation value that corresponds to the license type you are converting your resource from. For more information about which platforms correspond to which usage operation values see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/billing-info-fields.html#billing-info">Sample data: usage operation by platform </a></p>
@@ -41,10 +50,31 @@ impl LicenseConversionContextBuilder {
     pub fn get_usage_operation(&self) -> &::std::option::Option<::std::string::String> {
         &self.usage_operation
     }
+    /// Appends an item to `product_codes`.
+    ///
+    /// To override the contents of this collection use [`set_product_codes`](Self::set_product_codes).
+    ///
+    /// <p>Product codes referred to in the license conversion process.</p>
+    pub fn product_codes(mut self, input: crate::types::ProductCodeListItem) -> Self {
+        let mut v = self.product_codes.unwrap_or_default();
+        v.push(input);
+        self.product_codes = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Product codes referred to in the license conversion process.</p>
+    pub fn set_product_codes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ProductCodeListItem>>) -> Self {
+        self.product_codes = input;
+        self
+    }
+    /// <p>Product codes referred to in the license conversion process.</p>
+    pub fn get_product_codes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ProductCodeListItem>> {
+        &self.product_codes
+    }
     /// Consumes the builder and constructs a [`LicenseConversionContext`](crate::types::LicenseConversionContext).
     pub fn build(self) -> crate::types::LicenseConversionContext {
         crate::types::LicenseConversionContext {
             usage_operation: self.usage_operation,
+            product_codes: self.product_codes,
         }
     }
 }

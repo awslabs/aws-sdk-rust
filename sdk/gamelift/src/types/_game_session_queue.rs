@@ -6,14 +6,14 @@
 pub struct GameSessionQueue {
     /// <p>A descriptive label that is associated with game session queue. Queue names must be unique within each Region.</p>
     pub name: ::std::option::Option<::std::string::String>,
-    /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a Amazon GameLift game session queue resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:<region>
+    /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a Amazon GameLift Servers game session queue resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:<region>
     /// ::gamesessionqueue/
     /// <queue name></queue>
-    /// </region></code>. In a Amazon GameLift game session queue ARN, the resource ID matches the <i>Name</i> value.</p>
+    /// </region></code>. In a Amazon GameLift Servers game session queue ARN, the resource ID matches the <i>Name</i> value.</p>
     pub game_session_queue_arn: ::std::option::Option<::std::string::String>,
     /// <p>The maximum time, in seconds, that a new game session placement request remains in the queue. When a request exceeds this time, the game session placement changes to a <code>TIMED_OUT</code> status.</p>
     pub timeout_in_seconds: ::std::option::Option<i32>,
-    /// <p>A set of policies that enforce a sliding cap on player latency when processing game sessions placement requests. Use multiple policies to gradually relax the cap over time if Amazon GameLift can't make a placement. Policies are evaluated in order starting with the lowest maximum latency value.</p>
+    /// <p>A set of policies that enforce a sliding cap on player latency when processing game sessions placement requests. Use multiple policies to gradually relax the cap over time if Amazon GameLift Servers can't make a placement. Policies are evaluated in order starting with the lowest maximum latency value.</p>
     pub player_latency_policies: ::std::option::Option<::std::vec::Vec<crate::types::PlayerLatencyPolicy>>,
     /// <p>A list of fleets and/or fleet aliases that can be used to fulfill game session placement requests in the queue. Destinations are identified by either a fleet ARN or a fleet alias ARN, and are listed in order of placement preference.</p>
     pub destinations: ::std::option::Option<::std::vec::Vec<crate::types::GameSessionQueueDestination>>,
@@ -31,10 +31,10 @@ impl GameSessionQueue {
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a Amazon GameLift game session queue resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:<region>
+    /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a Amazon GameLift Servers game session queue resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:<region>
     /// ::gamesessionqueue/
     /// <queue name></queue>
-    /// </region></code>. In a Amazon GameLift game session queue ARN, the resource ID matches the <i>Name</i> value.</p>
+    /// </region></code>. In a Amazon GameLift Servers game session queue ARN, the resource ID matches the <i>Name</i> value.</p>
     pub fn game_session_queue_arn(&self) -> ::std::option::Option<&str> {
         self.game_session_queue_arn.as_deref()
     }
@@ -42,7 +42,7 @@ impl GameSessionQueue {
     pub fn timeout_in_seconds(&self) -> ::std::option::Option<i32> {
         self.timeout_in_seconds
     }
-    /// <p>A set of policies that enforce a sliding cap on player latency when processing game sessions placement requests. Use multiple policies to gradually relax the cap over time if Amazon GameLift can't make a placement. Policies are evaluated in order starting with the lowest maximum latency value.</p>
+    /// <p>A set of policies that enforce a sliding cap on player latency when processing game sessions placement requests. Use multiple policies to gradually relax the cap over time if Amazon GameLift Servers can't make a placement. Policies are evaluated in order starting with the lowest maximum latency value.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.player_latency_policies.is_none()`.
     pub fn player_latency_policies(&self) -> &[crate::types::PlayerLatencyPolicy] {
@@ -107,26 +107,26 @@ impl GameSessionQueueBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
-    /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a Amazon GameLift game session queue resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:<region>
+    /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a Amazon GameLift Servers game session queue resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:<region>
     /// ::gamesessionqueue/
     /// <queue name></queue>
-    /// </region></code>. In a Amazon GameLift game session queue ARN, the resource ID matches the <i>Name</i> value.</p>
+    /// </region></code>. In a Amazon GameLift Servers game session queue ARN, the resource ID matches the <i>Name</i> value.</p>
     pub fn game_session_queue_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.game_session_queue_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a Amazon GameLift game session queue resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:<region>
+    /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a Amazon GameLift Servers game session queue resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:<region>
     /// ::gamesessionqueue/
     /// <queue name></queue>
-    /// </region></code>. In a Amazon GameLift game session queue ARN, the resource ID matches the <i>Name</i> value.</p>
+    /// </region></code>. In a Amazon GameLift Servers game session queue ARN, the resource ID matches the <i>Name</i> value.</p>
     pub fn set_game_session_queue_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.game_session_queue_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a Amazon GameLift game session queue resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:<region>
+    /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a Amazon GameLift Servers game session queue resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:<region>
     /// ::gamesessionqueue/
     /// <queue name></queue>
-    /// </region></code>. In a Amazon GameLift game session queue ARN, the resource ID matches the <i>Name</i> value.</p>
+    /// </region></code>. In a Amazon GameLift Servers game session queue ARN, the resource ID matches the <i>Name</i> value.</p>
     pub fn get_game_session_queue_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.game_session_queue_arn
     }
@@ -148,19 +148,19 @@ impl GameSessionQueueBuilder {
     ///
     /// To override the contents of this collection use [`set_player_latency_policies`](Self::set_player_latency_policies).
     ///
-    /// <p>A set of policies that enforce a sliding cap on player latency when processing game sessions placement requests. Use multiple policies to gradually relax the cap over time if Amazon GameLift can't make a placement. Policies are evaluated in order starting with the lowest maximum latency value.</p>
+    /// <p>A set of policies that enforce a sliding cap on player latency when processing game sessions placement requests. Use multiple policies to gradually relax the cap over time if Amazon GameLift Servers can't make a placement. Policies are evaluated in order starting with the lowest maximum latency value.</p>
     pub fn player_latency_policies(mut self, input: crate::types::PlayerLatencyPolicy) -> Self {
         let mut v = self.player_latency_policies.unwrap_or_default();
         v.push(input);
         self.player_latency_policies = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A set of policies that enforce a sliding cap on player latency when processing game sessions placement requests. Use multiple policies to gradually relax the cap over time if Amazon GameLift can't make a placement. Policies are evaluated in order starting with the lowest maximum latency value.</p>
+    /// <p>A set of policies that enforce a sliding cap on player latency when processing game sessions placement requests. Use multiple policies to gradually relax the cap over time if Amazon GameLift Servers can't make a placement. Policies are evaluated in order starting with the lowest maximum latency value.</p>
     pub fn set_player_latency_policies(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PlayerLatencyPolicy>>) -> Self {
         self.player_latency_policies = input;
         self
     }
-    /// <p>A set of policies that enforce a sliding cap on player latency when processing game sessions placement requests. Use multiple policies to gradually relax the cap over time if Amazon GameLift can't make a placement. Policies are evaluated in order starting with the lowest maximum latency value.</p>
+    /// <p>A set of policies that enforce a sliding cap on player latency when processing game sessions placement requests. Use multiple policies to gradually relax the cap over time if Amazon GameLift Servers can't make a placement. Policies are evaluated in order starting with the lowest maximum latency value.</p>
     pub fn get_player_latency_policies(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PlayerLatencyPolicy>> {
         &self.player_latency_policies
     }

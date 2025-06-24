@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateResolverConfigInput {
-    /// <p>Resource ID of the Amazon VPC that you want to update the Resolver configuration for.</p>
+    /// <p>The ID of the Amazon Virtual Private Cloud VPC or a Route 53 Profile that you're configuring Resolver for.</p>
     pub resource_id: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether or not the Resolver will create autodefined rules for reverse DNS lookups. This is enabled by default. Disabling this option will also affect EC2-Classic instances using ClassicLink. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a> in the <i>Amazon EC2 guide</i>.</p><important>
     /// <p>We are retiring EC2-Classic on August 15, 2022. We recommend that you migrate from EC2-Classic to a VPC. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate from EC2-Classic to a VPC</a> in the <i>Amazon EC2 guide</i> and the blog <a href="http://aws.amazon.com/blogs/aws/ec2-classic-is-retiring-heres-how-to-prepare/">EC2-Classic Networking is Retiring – Here’s How to Prepare</a>.</p>
@@ -14,7 +14,7 @@ pub struct UpdateResolverConfigInput {
     pub autodefined_reverse_flag: ::std::option::Option<crate::types::AutodefinedReverseFlag>,
 }
 impl UpdateResolverConfigInput {
-    /// <p>Resource ID of the Amazon VPC that you want to update the Resolver configuration for.</p>
+    /// <p>The ID of the Amazon Virtual Private Cloud VPC or a Route 53 Profile that you're configuring Resolver for.</p>
     pub fn resource_id(&self) -> ::std::option::Option<&str> {
         self.resource_id.as_deref()
     }
@@ -43,18 +43,18 @@ pub struct UpdateResolverConfigInputBuilder {
     pub(crate) autodefined_reverse_flag: ::std::option::Option<crate::types::AutodefinedReverseFlag>,
 }
 impl UpdateResolverConfigInputBuilder {
-    /// <p>Resource ID of the Amazon VPC that you want to update the Resolver configuration for.</p>
+    /// <p>The ID of the Amazon Virtual Private Cloud VPC or a Route 53 Profile that you're configuring Resolver for.</p>
     /// This field is required.
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Resource ID of the Amazon VPC that you want to update the Resolver configuration for.</p>
+    /// <p>The ID of the Amazon Virtual Private Cloud VPC or a Route 53 Profile that you're configuring Resolver for.</p>
     pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_id = input;
         self
     }
-    /// <p>Resource ID of the Amazon VPC that you want to update the Resolver configuration for.</p>
+    /// <p>The ID of the Amazon Virtual Private Cloud VPC or a Route 53 Profile that you're configuring Resolver for.</p>
     pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_id
     }

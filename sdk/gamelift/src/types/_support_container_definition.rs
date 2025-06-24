@@ -19,12 +19,12 @@ pub struct SupportContainerDefinition {
     pub essential: ::std::option::Option<bool>,
     /// <p>A configuration for a non-terminal health check. A support container automatically restarts if it stops functioning or if it fails this health check.</p>
     pub health_check: ::std::option::Option<crate::types::ContainerHealthCheck>,
-    /// <p>The URI to the image that Amazon GameLift deploys to a container fleet. For a more specific identifier, see <code>ResolvedImageDigest</code>.</p>
+    /// <p>The URI to the image that Amazon GameLift Servers deploys to a container fleet. For a more specific identifier, see <code>ResolvedImageDigest</code>.</p>
     pub image_uri: ::std::option::Option<::std::string::String>,
-    /// <p>The amount of memory that Amazon GameLift makes available to the container. If memory limits aren't set for an individual container, the container shares the container group's total memory allocation.</p>
+    /// <p>The amount of memory that Amazon GameLift Servers makes available to the container. If memory limits aren't set for an individual container, the container shares the container group's total memory allocation.</p>
     /// <p><b>Related data type: </b> <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_ContainerGroupDefinition.html">ContainerGroupDefinition TotalMemoryLimitMebibytes</a></p>
     pub memory_hard_limit_mebibytes: ::std::option::Option<i32>,
-    /// <p>A set of ports that allow access to the container from external users. Processes running in the container can bind to a one of these ports. Container ports aren't directly accessed by inbound traffic. Amazon GameLift maps these container ports to externally accessible connection ports, which are assigned as needed from the container fleet's <code>ConnectionPortRange</code>.</p>
+    /// <p>A set of ports that allow access to the container from external users. Processes running in the container can bind to a one of these ports. Container ports aren't directly accessed by inbound traffic. Amazon GameLift Servers maps these container ports to externally accessible connection ports, which are assigned as needed from the container fleet's <code>ConnectionPortRange</code>.</p>
     pub port_configuration: ::std::option::Option<crate::types::ContainerPortConfiguration>,
     /// <p>A unique and immutable identifier for the container image. The digest is a SHA 256 hash of the container image manifest.</p>
     pub resolved_image_digest: ::std::option::Option<::std::string::String>,
@@ -63,16 +63,16 @@ impl SupportContainerDefinition {
     pub fn health_check(&self) -> ::std::option::Option<&crate::types::ContainerHealthCheck> {
         self.health_check.as_ref()
     }
-    /// <p>The URI to the image that Amazon GameLift deploys to a container fleet. For a more specific identifier, see <code>ResolvedImageDigest</code>.</p>
+    /// <p>The URI to the image that Amazon GameLift Servers deploys to a container fleet. For a more specific identifier, see <code>ResolvedImageDigest</code>.</p>
     pub fn image_uri(&self) -> ::std::option::Option<&str> {
         self.image_uri.as_deref()
     }
-    /// <p>The amount of memory that Amazon GameLift makes available to the container. If memory limits aren't set for an individual container, the container shares the container group's total memory allocation.</p>
+    /// <p>The amount of memory that Amazon GameLift Servers makes available to the container. If memory limits aren't set for an individual container, the container shares the container group's total memory allocation.</p>
     /// <p><b>Related data type: </b> <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_ContainerGroupDefinition.html">ContainerGroupDefinition TotalMemoryLimitMebibytes</a></p>
     pub fn memory_hard_limit_mebibytes(&self) -> ::std::option::Option<i32> {
         self.memory_hard_limit_mebibytes
     }
-    /// <p>A set of ports that allow access to the container from external users. Processes running in the container can bind to a one of these ports. Container ports aren't directly accessed by inbound traffic. Amazon GameLift maps these container ports to externally accessible connection ports, which are assigned as needed from the container fleet's <code>ConnectionPortRange</code>.</p>
+    /// <p>A set of ports that allow access to the container from external users. Processes running in the container can bind to a one of these ports. Container ports aren't directly accessed by inbound traffic. Amazon GameLift Servers maps these container ports to externally accessible connection ports, which are assigned as needed from the container fleet's <code>ConnectionPortRange</code>.</p>
     pub fn port_configuration(&self) -> ::std::option::Option<&crate::types::ContainerPortConfiguration> {
         self.port_configuration.as_ref()
     }
@@ -212,48 +212,48 @@ impl SupportContainerDefinitionBuilder {
     pub fn get_health_check(&self) -> &::std::option::Option<crate::types::ContainerHealthCheck> {
         &self.health_check
     }
-    /// <p>The URI to the image that Amazon GameLift deploys to a container fleet. For a more specific identifier, see <code>ResolvedImageDigest</code>.</p>
+    /// <p>The URI to the image that Amazon GameLift Servers deploys to a container fleet. For a more specific identifier, see <code>ResolvedImageDigest</code>.</p>
     pub fn image_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.image_uri = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The URI to the image that Amazon GameLift deploys to a container fleet. For a more specific identifier, see <code>ResolvedImageDigest</code>.</p>
+    /// <p>The URI to the image that Amazon GameLift Servers deploys to a container fleet. For a more specific identifier, see <code>ResolvedImageDigest</code>.</p>
     pub fn set_image_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.image_uri = input;
         self
     }
-    /// <p>The URI to the image that Amazon GameLift deploys to a container fleet. For a more specific identifier, see <code>ResolvedImageDigest</code>.</p>
+    /// <p>The URI to the image that Amazon GameLift Servers deploys to a container fleet. For a more specific identifier, see <code>ResolvedImageDigest</code>.</p>
     pub fn get_image_uri(&self) -> &::std::option::Option<::std::string::String> {
         &self.image_uri
     }
-    /// <p>The amount of memory that Amazon GameLift makes available to the container. If memory limits aren't set for an individual container, the container shares the container group's total memory allocation.</p>
+    /// <p>The amount of memory that Amazon GameLift Servers makes available to the container. If memory limits aren't set for an individual container, the container shares the container group's total memory allocation.</p>
     /// <p><b>Related data type: </b> <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_ContainerGroupDefinition.html">ContainerGroupDefinition TotalMemoryLimitMebibytes</a></p>
     pub fn memory_hard_limit_mebibytes(mut self, input: i32) -> Self {
         self.memory_hard_limit_mebibytes = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The amount of memory that Amazon GameLift makes available to the container. If memory limits aren't set for an individual container, the container shares the container group's total memory allocation.</p>
+    /// <p>The amount of memory that Amazon GameLift Servers makes available to the container. If memory limits aren't set for an individual container, the container shares the container group's total memory allocation.</p>
     /// <p><b>Related data type: </b> <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_ContainerGroupDefinition.html">ContainerGroupDefinition TotalMemoryLimitMebibytes</a></p>
     pub fn set_memory_hard_limit_mebibytes(mut self, input: ::std::option::Option<i32>) -> Self {
         self.memory_hard_limit_mebibytes = input;
         self
     }
-    /// <p>The amount of memory that Amazon GameLift makes available to the container. If memory limits aren't set for an individual container, the container shares the container group's total memory allocation.</p>
+    /// <p>The amount of memory that Amazon GameLift Servers makes available to the container. If memory limits aren't set for an individual container, the container shares the container group's total memory allocation.</p>
     /// <p><b>Related data type: </b> <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_ContainerGroupDefinition.html">ContainerGroupDefinition TotalMemoryLimitMebibytes</a></p>
     pub fn get_memory_hard_limit_mebibytes(&self) -> &::std::option::Option<i32> {
         &self.memory_hard_limit_mebibytes
     }
-    /// <p>A set of ports that allow access to the container from external users. Processes running in the container can bind to a one of these ports. Container ports aren't directly accessed by inbound traffic. Amazon GameLift maps these container ports to externally accessible connection ports, which are assigned as needed from the container fleet's <code>ConnectionPortRange</code>.</p>
+    /// <p>A set of ports that allow access to the container from external users. Processes running in the container can bind to a one of these ports. Container ports aren't directly accessed by inbound traffic. Amazon GameLift Servers maps these container ports to externally accessible connection ports, which are assigned as needed from the container fleet's <code>ConnectionPortRange</code>.</p>
     pub fn port_configuration(mut self, input: crate::types::ContainerPortConfiguration) -> Self {
         self.port_configuration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A set of ports that allow access to the container from external users. Processes running in the container can bind to a one of these ports. Container ports aren't directly accessed by inbound traffic. Amazon GameLift maps these container ports to externally accessible connection ports, which are assigned as needed from the container fleet's <code>ConnectionPortRange</code>.</p>
+    /// <p>A set of ports that allow access to the container from external users. Processes running in the container can bind to a one of these ports. Container ports aren't directly accessed by inbound traffic. Amazon GameLift Servers maps these container ports to externally accessible connection ports, which are assigned as needed from the container fleet's <code>ConnectionPortRange</code>.</p>
     pub fn set_port_configuration(mut self, input: ::std::option::Option<crate::types::ContainerPortConfiguration>) -> Self {
         self.port_configuration = input;
         self
     }
-    /// <p>A set of ports that allow access to the container from external users. Processes running in the container can bind to a one of these ports. Container ports aren't directly accessed by inbound traffic. Amazon GameLift maps these container ports to externally accessible connection ports, which are assigned as needed from the container fleet's <code>ConnectionPortRange</code>.</p>
+    /// <p>A set of ports that allow access to the container from external users. Processes running in the container can bind to a one of these ports. Container ports aren't directly accessed by inbound traffic. Amazon GameLift Servers maps these container ports to externally accessible connection ports, which are assigned as needed from the container fleet's <code>ConnectionPortRange</code>.</p>
     pub fn get_port_configuration(&self) -> &::std::option::Option<crate::types::ContainerPortConfiguration> {
         &self.port_configuration
     }

@@ -22,7 +22,7 @@ impl crate::operation::get_compute_access::builders::GetComputeAccessInputBuilde
 }
 /// Fluent builder constructing a request to `GetComputeAccess`.
 ///
-/// <p>Requests authorization to remotely connect to a hosting resource in a Amazon GameLift managed fleet. This operation is not used with Amazon GameLift Anywhere fleets.</p>
+/// <p>Requests authorization to remotely connect to a hosting resource in a Amazon GameLift Servers managed fleet. This operation is not used with Amazon GameLift Servers Anywhere fleets.</p>
 /// <p><b>Request options</b></p>
 /// <p>Provide the fleet ID and compute name. The compute name varies depending on the type of fleet.</p>
 /// <ul>

@@ -28,6 +28,9 @@ where
                                     .transpose()?,
                             );
                         }
+                        "PingBeacon" => {
+                            builder = builder.set_ping_beacon(crate::protocol_serde::shape_ping_beacon::de_ping_beacon(tokens)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

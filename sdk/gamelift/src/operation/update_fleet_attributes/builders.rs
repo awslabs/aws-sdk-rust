@@ -23,9 +23,9 @@ impl crate::operation::update_fleet_attributes::builders::UpdateFleetAttributesI
 /// Fluent builder constructing a request to `UpdateFleetAttributes`.
 ///
 /// <p>Updates a fleet's mutable attributes, such as game session protection and resource creation limits.</p>
-/// <p>To update fleet attributes, specify the fleet ID and the property values that you want to change. If successful, Amazon GameLift returns the identifiers for the updated fleet.</p>
+/// <p>To update fleet attributes, specify the fleet ID and the property values that you want to change. If successful, Amazon GameLift Servers returns the identifiers for the updated fleet.</p>
 /// <p><b>Learn more</b></p>
-/// <p><a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting up Amazon GameLift fleets</a></p>
+/// <p><a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting up Amazon GameLift Servers fleets</a></p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateFleetAttributesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -218,17 +218,17 @@ impl UpdateFleetAttributesFluentBuilder {
     pub fn get_metric_groups(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_metric_groups()
     }
-    /// <p>Amazon GameLift Anywhere configuration options.</p>
+    /// <p>Amazon GameLift Servers Anywhere configuration options.</p>
     pub fn anywhere_configuration(mut self, input: crate::types::AnywhereConfiguration) -> Self {
         self.inner = self.inner.anywhere_configuration(input);
         self
     }
-    /// <p>Amazon GameLift Anywhere configuration options.</p>
+    /// <p>Amazon GameLift Servers Anywhere configuration options.</p>
     pub fn set_anywhere_configuration(mut self, input: ::std::option::Option<crate::types::AnywhereConfiguration>) -> Self {
         self.inner = self.inner.set_anywhere_configuration(input);
         self
     }
-    /// <p>Amazon GameLift Anywhere configuration options.</p>
+    /// <p>Amazon GameLift Servers Anywhere configuration options.</p>
     pub fn get_anywhere_configuration(&self) -> &::std::option::Option<crate::types::AnywhereConfiguration> {
         self.inner.get_anywhere_configuration()
     }

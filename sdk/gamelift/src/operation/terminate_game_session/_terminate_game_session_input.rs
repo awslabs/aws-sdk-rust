@@ -14,10 +14,10 @@ pub struct TerminateGameSessionInput {
     /// <p>The method to use to terminate the game session. Available methods include:</p>
     /// <ul>
     /// <li>
-    /// <p><code>TRIGGER_ON_PROCESS_TERMINATE</code> – Prompts the Amazon GameLift service to send an <code>OnProcessTerminate()</code> callback to the server process and initiate the normal game session shutdown sequence. The <code>OnProcessTerminate</code> method, which is implemented in the game server code, must include a call to the server SDK action <code>ProcessEnding()</code>, which is how the server process signals to Amazon GameLift that a game session is ending. If the server process doesn't call <code>ProcessEnding()</code>, the game session termination won't conclude successfully.</p></li>
+    /// <p><code>TRIGGER_ON_PROCESS_TERMINATE</code> – Prompts the Amazon GameLift Servers service to send an <code>OnProcessTerminate()</code> callback to the server process and initiate the normal game session shutdown sequence. The <code>OnProcessTerminate</code> method, which is implemented in the game server code, must include a call to the server SDK action <code>ProcessEnding()</code>, which is how the server process signals to Amazon GameLift Servers that a game session is ending. If the server process doesn't call <code>ProcessEnding()</code>, the game session termination won't conclude successfully.</p></li>
     /// <li>
-    /// <p><code>FORCE_TERMINATE</code> – Prompts the Amazon GameLift service to stop the server process immediately. Amazon GameLift takes action (depending on the type of fleet) to shut down the server process without the normal game session shutdown sequence.</p><note>
-    /// <p>This method is not available for game sessions that are running on Anywhere fleets unless the fleet is deployed with the Amazon GameLift Agent. In this scenario, a force terminate request results in an invalid or bad request exception.</p>
+    /// <p><code>FORCE_TERMINATE</code> – Prompts the Amazon GameLift Servers service to stop the server process immediately. Amazon GameLift Servers takes action (depending on the type of fleet) to shut down the server process without the normal game session shutdown sequence.</p><note>
+    /// <p>This method is not available for game sessions that are running on Anywhere fleets unless the fleet is deployed with the Amazon GameLift Servers Agent. In this scenario, a force terminate request results in an invalid or bad request exception.</p>
     /// </note></li>
     /// </ul>
     pub termination_mode: ::std::option::Option<crate::types::TerminationMode>,
@@ -36,10 +36,10 @@ impl TerminateGameSessionInput {
     /// <p>The method to use to terminate the game session. Available methods include:</p>
     /// <ul>
     /// <li>
-    /// <p><code>TRIGGER_ON_PROCESS_TERMINATE</code> – Prompts the Amazon GameLift service to send an <code>OnProcessTerminate()</code> callback to the server process and initiate the normal game session shutdown sequence. The <code>OnProcessTerminate</code> method, which is implemented in the game server code, must include a call to the server SDK action <code>ProcessEnding()</code>, which is how the server process signals to Amazon GameLift that a game session is ending. If the server process doesn't call <code>ProcessEnding()</code>, the game session termination won't conclude successfully.</p></li>
+    /// <p><code>TRIGGER_ON_PROCESS_TERMINATE</code> – Prompts the Amazon GameLift Servers service to send an <code>OnProcessTerminate()</code> callback to the server process and initiate the normal game session shutdown sequence. The <code>OnProcessTerminate</code> method, which is implemented in the game server code, must include a call to the server SDK action <code>ProcessEnding()</code>, which is how the server process signals to Amazon GameLift Servers that a game session is ending. If the server process doesn't call <code>ProcessEnding()</code>, the game session termination won't conclude successfully.</p></li>
     /// <li>
-    /// <p><code>FORCE_TERMINATE</code> – Prompts the Amazon GameLift service to stop the server process immediately. Amazon GameLift takes action (depending on the type of fleet) to shut down the server process without the normal game session shutdown sequence.</p><note>
-    /// <p>This method is not available for game sessions that are running on Anywhere fleets unless the fleet is deployed with the Amazon GameLift Agent. In this scenario, a force terminate request results in an invalid or bad request exception.</p>
+    /// <p><code>FORCE_TERMINATE</code> – Prompts the Amazon GameLift Servers service to stop the server process immediately. Amazon GameLift Servers takes action (depending on the type of fleet) to shut down the server process without the normal game session shutdown sequence.</p><note>
+    /// <p>This method is not available for game sessions that are running on Anywhere fleets unless the fleet is deployed with the Amazon GameLift Servers Agent. In this scenario, a force terminate request results in an invalid or bad request exception.</p>
     /// </note></li>
     /// </ul>
     pub fn termination_mode(&self) -> ::std::option::Option<&crate::types::TerminationMode> {
@@ -97,10 +97,10 @@ impl TerminateGameSessionInputBuilder {
     /// <p>The method to use to terminate the game session. Available methods include:</p>
     /// <ul>
     /// <li>
-    /// <p><code>TRIGGER_ON_PROCESS_TERMINATE</code> – Prompts the Amazon GameLift service to send an <code>OnProcessTerminate()</code> callback to the server process and initiate the normal game session shutdown sequence. The <code>OnProcessTerminate</code> method, which is implemented in the game server code, must include a call to the server SDK action <code>ProcessEnding()</code>, which is how the server process signals to Amazon GameLift that a game session is ending. If the server process doesn't call <code>ProcessEnding()</code>, the game session termination won't conclude successfully.</p></li>
+    /// <p><code>TRIGGER_ON_PROCESS_TERMINATE</code> – Prompts the Amazon GameLift Servers service to send an <code>OnProcessTerminate()</code> callback to the server process and initiate the normal game session shutdown sequence. The <code>OnProcessTerminate</code> method, which is implemented in the game server code, must include a call to the server SDK action <code>ProcessEnding()</code>, which is how the server process signals to Amazon GameLift Servers that a game session is ending. If the server process doesn't call <code>ProcessEnding()</code>, the game session termination won't conclude successfully.</p></li>
     /// <li>
-    /// <p><code>FORCE_TERMINATE</code> – Prompts the Amazon GameLift service to stop the server process immediately. Amazon GameLift takes action (depending on the type of fleet) to shut down the server process without the normal game session shutdown sequence.</p><note>
-    /// <p>This method is not available for game sessions that are running on Anywhere fleets unless the fleet is deployed with the Amazon GameLift Agent. In this scenario, a force terminate request results in an invalid or bad request exception.</p>
+    /// <p><code>FORCE_TERMINATE</code> – Prompts the Amazon GameLift Servers service to stop the server process immediately. Amazon GameLift Servers takes action (depending on the type of fleet) to shut down the server process without the normal game session shutdown sequence.</p><note>
+    /// <p>This method is not available for game sessions that are running on Anywhere fleets unless the fleet is deployed with the Amazon GameLift Servers Agent. In this scenario, a force terminate request results in an invalid or bad request exception.</p>
     /// </note></li>
     /// </ul>
     /// This field is required.
@@ -111,10 +111,10 @@ impl TerminateGameSessionInputBuilder {
     /// <p>The method to use to terminate the game session. Available methods include:</p>
     /// <ul>
     /// <li>
-    /// <p><code>TRIGGER_ON_PROCESS_TERMINATE</code> – Prompts the Amazon GameLift service to send an <code>OnProcessTerminate()</code> callback to the server process and initiate the normal game session shutdown sequence. The <code>OnProcessTerminate</code> method, which is implemented in the game server code, must include a call to the server SDK action <code>ProcessEnding()</code>, which is how the server process signals to Amazon GameLift that a game session is ending. If the server process doesn't call <code>ProcessEnding()</code>, the game session termination won't conclude successfully.</p></li>
+    /// <p><code>TRIGGER_ON_PROCESS_TERMINATE</code> – Prompts the Amazon GameLift Servers service to send an <code>OnProcessTerminate()</code> callback to the server process and initiate the normal game session shutdown sequence. The <code>OnProcessTerminate</code> method, which is implemented in the game server code, must include a call to the server SDK action <code>ProcessEnding()</code>, which is how the server process signals to Amazon GameLift Servers that a game session is ending. If the server process doesn't call <code>ProcessEnding()</code>, the game session termination won't conclude successfully.</p></li>
     /// <li>
-    /// <p><code>FORCE_TERMINATE</code> – Prompts the Amazon GameLift service to stop the server process immediately. Amazon GameLift takes action (depending on the type of fleet) to shut down the server process without the normal game session shutdown sequence.</p><note>
-    /// <p>This method is not available for game sessions that are running on Anywhere fleets unless the fleet is deployed with the Amazon GameLift Agent. In this scenario, a force terminate request results in an invalid or bad request exception.</p>
+    /// <p><code>FORCE_TERMINATE</code> – Prompts the Amazon GameLift Servers service to stop the server process immediately. Amazon GameLift Servers takes action (depending on the type of fleet) to shut down the server process without the normal game session shutdown sequence.</p><note>
+    /// <p>This method is not available for game sessions that are running on Anywhere fleets unless the fleet is deployed with the Amazon GameLift Servers Agent. In this scenario, a force terminate request results in an invalid or bad request exception.</p>
     /// </note></li>
     /// </ul>
     pub fn set_termination_mode(mut self, input: ::std::option::Option<crate::types::TerminationMode>) -> Self {
@@ -124,10 +124,10 @@ impl TerminateGameSessionInputBuilder {
     /// <p>The method to use to terminate the game session. Available methods include:</p>
     /// <ul>
     /// <li>
-    /// <p><code>TRIGGER_ON_PROCESS_TERMINATE</code> – Prompts the Amazon GameLift service to send an <code>OnProcessTerminate()</code> callback to the server process and initiate the normal game session shutdown sequence. The <code>OnProcessTerminate</code> method, which is implemented in the game server code, must include a call to the server SDK action <code>ProcessEnding()</code>, which is how the server process signals to Amazon GameLift that a game session is ending. If the server process doesn't call <code>ProcessEnding()</code>, the game session termination won't conclude successfully.</p></li>
+    /// <p><code>TRIGGER_ON_PROCESS_TERMINATE</code> – Prompts the Amazon GameLift Servers service to send an <code>OnProcessTerminate()</code> callback to the server process and initiate the normal game session shutdown sequence. The <code>OnProcessTerminate</code> method, which is implemented in the game server code, must include a call to the server SDK action <code>ProcessEnding()</code>, which is how the server process signals to Amazon GameLift Servers that a game session is ending. If the server process doesn't call <code>ProcessEnding()</code>, the game session termination won't conclude successfully.</p></li>
     /// <li>
-    /// <p><code>FORCE_TERMINATE</code> – Prompts the Amazon GameLift service to stop the server process immediately. Amazon GameLift takes action (depending on the type of fleet) to shut down the server process without the normal game session shutdown sequence.</p><note>
-    /// <p>This method is not available for game sessions that are running on Anywhere fleets unless the fleet is deployed with the Amazon GameLift Agent. In this scenario, a force terminate request results in an invalid or bad request exception.</p>
+    /// <p><code>FORCE_TERMINATE</code> – Prompts the Amazon GameLift Servers service to stop the server process immediately. Amazon GameLift Servers takes action (depending on the type of fleet) to shut down the server process without the normal game session shutdown sequence.</p><note>
+    /// <p>This method is not available for game sessions that are running on Anywhere fleets unless the fleet is deployed with the Amazon GameLift Servers Agent. In this scenario, a force terminate request results in an invalid or bad request exception.</p>
     /// </note></li>
     /// </ul>
     pub fn get_termination_mode(&self) -> &::std::option::Option<crate::types::TerminationMode> {

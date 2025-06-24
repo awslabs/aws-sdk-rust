@@ -1313,6 +1313,8 @@ impl RestoreDBInstanceToPointInTimeFluentBuilder {
     /// <p>Valid Values:</p>
     /// <ul>
     /// <li>
+    /// <p><code>local</code> (Dedicated Local Zone)</p></li>
+    /// <li>
     /// <p><code>outposts</code> (Amazon Web Services Outposts)</p></li>
     /// <li>
     /// <p><code>region</code> (Amazon Web Services Region)</p></li>
@@ -1327,6 +1329,8 @@ impl RestoreDBInstanceToPointInTimeFluentBuilder {
     /// <p>Valid Values:</p>
     /// <ul>
     /// <li>
+    /// <p><code>local</code> (Dedicated Local Zone)</p></li>
+    /// <li>
     /// <p><code>outposts</code> (Amazon Web Services Outposts)</p></li>
     /// <li>
     /// <p><code>region</code> (Amazon Web Services Region)</p></li>
@@ -1340,6 +1344,8 @@ impl RestoreDBInstanceToPointInTimeFluentBuilder {
     /// <p>The location for storing automated backups and manual snapshots for the restored DB instance.</p>
     /// <p>Valid Values:</p>
     /// <ul>
+    /// <li>
+    /// <p><code>local</code> (Dedicated Local Zone)</p></li>
     /// <li>
     /// <p><code>outposts</code> (Amazon Web Services Outposts)</p></li>
     /// <li>

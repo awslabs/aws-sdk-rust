@@ -22,7 +22,7 @@ impl crate::operation::suspend_game_server_group::builders::SuspendGameServerGro
 }
 /// Fluent builder constructing a request to `SuspendGameServerGroup`.
 ///
-/// <p><b>This operation is used with the Amazon GameLift FleetIQ solution and game server groups.</b></p>
+/// <p><b>This operation is used with the Amazon GameLift Servers FleetIQ solution and game server groups.</b></p>
 /// <p>Temporarily stops activity on a game server group without terminating instances or the game server group. You can restart activity by calling <a href="gamelift/latest/apireference/API_ResumeGameServerGroup.html">ResumeGameServerGroup</a>. You can suspend the following activity:</p>
 /// <ul>
 /// <li>
@@ -30,7 +30,7 @@ impl crate::operation::suspend_game_server_group::builders::SuspendGameServerGro
 /// </ul>
 /// <p>To suspend activity, specify a game server group ARN and the type of activity to be suspended. If successful, a <code>GameServerGroup</code> object is returned showing that the activity is listed in <code>SuspendedActions</code>.</p>
 /// <p><b>Learn more</b></p>
-/// <p><a href="https://docs.aws.amazon.com/gamelift/latest/fleetiqguide/gsg-intro.html">Amazon GameLift FleetIQ Guide</a></p>
+/// <p><a href="https://docs.aws.amazon.com/gamelift/latest/fleetiqguide/gsg-intro.html">Amazon GameLift Servers FleetIQ Guide</a></p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct SuspendGameServerGroupFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

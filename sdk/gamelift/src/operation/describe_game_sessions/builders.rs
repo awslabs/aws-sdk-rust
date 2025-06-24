@@ -35,7 +35,7 @@ impl crate::operation::describe_game_sessions::builders::DescribeGameSessionsInp
 /// <p>Use the pagination parameters to retrieve results as a set of sequential pages.</p>
 /// <p>If successful, a <code>GameSession</code> object is returned for each game session that matches the request.</p>
 /// <p>This operation is not designed to be continually called to track game session status. This practice can cause you to exceed your API limit, which results in errors. Instead, you must configure an Amazon Simple Notification Service (SNS) topic to receive notifications from FlexMatch or queues. Continuously polling with <code>DescribeGameSessions</code> should only be used for games in development with low game session usage.</p>
-/// <p><i>Available in Amazon GameLift Local.</i></p>
+/// <p><i>Available in Amazon GameLift Servers Local.</i></p>
 /// <p><b>Learn more</b></p>
 /// <p><a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-client-api.html#gamelift-sdk-client-api-find">Find a game session</a></p>
 /// <p><a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a></p>

@@ -79,6 +79,10 @@ pub(crate) mod shape_validation_exception;
 
 pub(crate) mod shape_chatbot_notification_channel;
 
+pub(crate) mod shape_cross_account_configuration;
+
+pub(crate) mod shape_cross_account_configurations;
+
 pub(crate) mod shape_encryption_configuration;
 
 pub(crate) mod shape_investigation_groups;

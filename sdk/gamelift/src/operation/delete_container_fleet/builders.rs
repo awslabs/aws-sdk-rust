@@ -25,7 +25,7 @@ impl crate::operation::delete_container_fleet::builders::DeleteContainerFleetInp
 /// <p>Deletes all resources and information related to a container fleet and shuts down currently running fleet instances, including those in remote locations. The container fleet must be in <code>ACTIVE</code> status to be deleted.</p>
 /// <p>To delete a fleet, specify the fleet ID to be terminated. During the deletion process, the fleet status is changed to <code>DELETING</code>.</p>
 /// <p><b>Learn more</b></p>
-/// <p><a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting up Amazon GameLift Fleets</a></p>
+/// <p><a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting up Amazon GameLift Servers Fleets</a></p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteContainerFleetFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

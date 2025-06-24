@@ -30,7 +30,7 @@ impl crate::operation::list_fleets::builders::ListFleetsInputBuilder {
 /// <li>
 /// <p>To get a list of all fleets where a specific game build is deployed, provide the build ID.</p></li>
 /// <li>
-/// <p>To get a list of all Amazon GameLift Realtime fleets with a specific configuration script, provide the script ID.</p></li>
+/// <p>To get a list of all Amazon GameLift Servers Realtime fleets with a specific configuration script, provide the script ID.</p></li>
 /// </ul>
 /// <p>Use the pagination parameters to retrieve results as a set of sequential pages.</p>
 /// <p>If successful, this operation returns a list of fleet IDs that match the request parameters. A NextToken value is also returned if there are more result pages to retrieve.</p><note>

@@ -25,7 +25,7 @@ pub struct PutScalingPolicyInput {
     pub comparison_operator: ::std::option::Option<crate::types::ComparisonOperatorType>,
     /// <p>Length of time (in minutes) the metric must be at or beyond the threshold before a scaling event is triggered.</p>
     pub evaluation_periods: ::std::option::Option<i32>,
-    /// <p>Name of the Amazon GameLift-defined metric that is used to trigger a scaling adjustment. For detailed descriptions of fleet metrics, see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/monitoring-cloudwatch.html">Monitor Amazon GameLift with Amazon CloudWatch</a>.</p>
+    /// <p>Name of the Amazon GameLift Servers-defined metric that is used to trigger a scaling adjustment. For detailed descriptions of fleet metrics, see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/monitoring-cloudwatch.html">Monitor Amazon GameLift Servers with Amazon CloudWatch</a>.</p>
     /// <ul>
     /// <li>
     /// <p><b>ActivatingGameSessions</b> -- Game sessions in the process of being created.</p></li>
@@ -93,7 +93,7 @@ impl PutScalingPolicyInput {
     pub fn evaluation_periods(&self) -> ::std::option::Option<i32> {
         self.evaluation_periods
     }
-    /// <p>Name of the Amazon GameLift-defined metric that is used to trigger a scaling adjustment. For detailed descriptions of fleet metrics, see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/monitoring-cloudwatch.html">Monitor Amazon GameLift with Amazon CloudWatch</a>.</p>
+    /// <p>Name of the Amazon GameLift Servers-defined metric that is used to trigger a scaling adjustment. For detailed descriptions of fleet metrics, see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/monitoring-cloudwatch.html">Monitor Amazon GameLift Servers with Amazon CloudWatch</a>.</p>
     /// <ul>
     /// <li>
     /// <p><b>ActivatingGameSessions</b> -- Game sessions in the process of being created.</p></li>
@@ -277,7 +277,7 @@ impl PutScalingPolicyInputBuilder {
     pub fn get_evaluation_periods(&self) -> &::std::option::Option<i32> {
         &self.evaluation_periods
     }
-    /// <p>Name of the Amazon GameLift-defined metric that is used to trigger a scaling adjustment. For detailed descriptions of fleet metrics, see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/monitoring-cloudwatch.html">Monitor Amazon GameLift with Amazon CloudWatch</a>.</p>
+    /// <p>Name of the Amazon GameLift Servers-defined metric that is used to trigger a scaling adjustment. For detailed descriptions of fleet metrics, see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/monitoring-cloudwatch.html">Monitor Amazon GameLift Servers with Amazon CloudWatch</a>.</p>
     /// <ul>
     /// <li>
     /// <p><b>ActivatingGameSessions</b> -- Game sessions in the process of being created.</p></li>
@@ -307,7 +307,7 @@ impl PutScalingPolicyInputBuilder {
         self.metric_name = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Name of the Amazon GameLift-defined metric that is used to trigger a scaling adjustment. For detailed descriptions of fleet metrics, see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/monitoring-cloudwatch.html">Monitor Amazon GameLift with Amazon CloudWatch</a>.</p>
+    /// <p>Name of the Amazon GameLift Servers-defined metric that is used to trigger a scaling adjustment. For detailed descriptions of fleet metrics, see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/monitoring-cloudwatch.html">Monitor Amazon GameLift Servers with Amazon CloudWatch</a>.</p>
     /// <ul>
     /// <li>
     /// <p><b>ActivatingGameSessions</b> -- Game sessions in the process of being created.</p></li>
@@ -336,7 +336,7 @@ impl PutScalingPolicyInputBuilder {
         self.metric_name = input;
         self
     }
-    /// <p>Name of the Amazon GameLift-defined metric that is used to trigger a scaling adjustment. For detailed descriptions of fleet metrics, see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/monitoring-cloudwatch.html">Monitor Amazon GameLift with Amazon CloudWatch</a>.</p>
+    /// <p>Name of the Amazon GameLift Servers-defined metric that is used to trigger a scaling adjustment. For detailed descriptions of fleet metrics, see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/monitoring-cloudwatch.html">Monitor Amazon GameLift Servers with Amazon CloudWatch</a>.</p>
     /// <ul>
     /// <li>
     /// <p><b>ActivatingGameSessions</b> -- Game sessions in the process of being created.</p></li>

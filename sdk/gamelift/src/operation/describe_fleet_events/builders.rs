@@ -26,7 +26,7 @@ impl crate::operation::describe_fleet_events::builders::DescribeFleetEventsInput
 /// <p>You can specify a time range to limit the result set. Use the pagination parameters to retrieve results as a set of sequential pages.</p>
 /// <p>If successful, a collection of event log entries matching the request are returned.</p>
 /// <p><b>Learn more</b></p>
-/// <p><a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting up Amazon GameLift fleets</a></p>
+/// <p><a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting up Amazon GameLift Servers fleets</a></p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeFleetEventsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

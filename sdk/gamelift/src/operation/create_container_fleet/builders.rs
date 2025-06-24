@@ -22,11 +22,11 @@ impl crate::operation::create_container_fleet::builders::CreateContainerFleetInp
 }
 /// Fluent builder constructing a request to `CreateContainerFleet`.
 ///
-/// <p>Creates a managed fleet of Amazon Elastic Compute Cloud (Amazon EC2) instances to host your containerized game servers. Use this operation to define how to deploy a container architecture onto each fleet instance and configure fleet settings. You can create a container fleet in any Amazon Web Services Regions that Amazon GameLift supports for multi-location fleets. A container fleet can be deployed to a single location or multiple locations. Container fleets are deployed with Amazon Linux 2023 as the instance operating system.</p>
+/// <p>Creates a managed fleet of Amazon Elastic Compute Cloud (Amazon EC2) instances to host your containerized game servers. Use this operation to define how to deploy a container architecture onto each fleet instance and configure fleet settings. You can create a container fleet in any Amazon Web Services Regions that Amazon GameLift Servers supports for multi-location fleets. A container fleet can be deployed to a single location or multiple locations. Container fleets are deployed with Amazon Linux 2023 as the instance operating system.</p>
 /// <p>Define the fleet's container architecture using container group definitions. Each fleet can have one of the following container group types:</p>
 /// <ul>
 /// <li>
-/// <p>The game server container group runs your game server build and dependent software. Amazon GameLift deploys one or more replicas of this container group to each fleet instance. The number of replicas depends on the computing capabilities of the fleet instance in use.</p></li>
+/// <p>The game server container group runs your game server build and dependent software. Amazon GameLift Servers deploys one or more replicas of this container group to each fleet instance. The number of replicas depends on the computing capabilities of the fleet instance in use.</p></li>
 /// <li>
 /// <p>An optional per-instance container group might be used to run other software that only needs to run once per instance, such as background services, logging, or test processes. One per-instance container group is deployed to each fleet instance.</p></li>
 /// </ul>
@@ -147,19 +147,19 @@ impl CreateContainerFleetFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The unique identifier for an Identity and Access Management (IAM) role with permissions to run your containers on resources that are managed by Amazon GameLift. Use an IAM service role with the <code>GameLiftContainerFleetPolicy</code> managed policy attached. For more information, see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/setting-up-role.html">Set up an IAM service role</a>. You can't change this fleet property after the fleet is created.</p>
+    /// <p>The unique identifier for an Identity and Access Management (IAM) role with permissions to run your containers on resources that are managed by Amazon GameLift Servers. Use an IAM service role with the <code>GameLiftContainerFleetPolicy</code> managed policy attached. For more information, see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/setting-up-role.html">Set up an IAM service role</a>. You can't change this fleet property after the fleet is created.</p>
     /// <p>IAM role ARN values use the following pattern: <code>arn:aws:iam::\[Amazon Web Services account\]:role/\[role name\]</code>.</p>
     pub fn fleet_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.fleet_role_arn(input.into());
         self
     }
-    /// <p>The unique identifier for an Identity and Access Management (IAM) role with permissions to run your containers on resources that are managed by Amazon GameLift. Use an IAM service role with the <code>GameLiftContainerFleetPolicy</code> managed policy attached. For more information, see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/setting-up-role.html">Set up an IAM service role</a>. You can't change this fleet property after the fleet is created.</p>
+    /// <p>The unique identifier for an Identity and Access Management (IAM) role with permissions to run your containers on resources that are managed by Amazon GameLift Servers. Use an IAM service role with the <code>GameLiftContainerFleetPolicy</code> managed policy attached. For more information, see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/setting-up-role.html">Set up an IAM service role</a>. You can't change this fleet property after the fleet is created.</p>
     /// <p>IAM role ARN values use the following pattern: <code>arn:aws:iam::\[Amazon Web Services account\]:role/\[role name\]</code>.</p>
     pub fn set_fleet_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_fleet_role_arn(input);
         self
     }
-    /// <p>The unique identifier for an Identity and Access Management (IAM) role with permissions to run your containers on resources that are managed by Amazon GameLift. Use an IAM service role with the <code>GameLiftContainerFleetPolicy</code> managed policy attached. For more information, see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/setting-up-role.html">Set up an IAM service role</a>. You can't change this fleet property after the fleet is created.</p>
+    /// <p>The unique identifier for an Identity and Access Management (IAM) role with permissions to run your containers on resources that are managed by Amazon GameLift Servers. Use an IAM service role with the <code>GameLiftContainerFleetPolicy</code> managed policy attached. For more information, see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/setting-up-role.html">Set up an IAM service role</a>. You can't change this fleet property after the fleet is created.</p>
     /// <p>IAM role ARN values use the following pattern: <code>arn:aws:iam::\[Amazon Web Services account\]:role/\[role name\]</code>.</p>
     pub fn get_fleet_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_fleet_role_arn()
@@ -213,39 +213,39 @@ impl CreateContainerFleetFluentBuilder {
         self.inner.get_per_instance_container_group_definition_name()
     }
     /// <p>The set of port numbers to open on each fleet instance. A fleet's connection ports map to container ports that are configured in the fleet's container group definitions.</p>
-    /// <p>By default, Amazon GameLift calculates an optimal port range based on your fleet configuration. To use the calculated range, don't set this parameter. The values are:</p>
+    /// <p>By default, Amazon GameLift Servers calculates an optimal port range based on your fleet configuration. To use the calculated range, don't set this parameter. The values are:</p>
     /// <ul>
     /// <li>
-    /// <p>Port range: 4192 to a number calculated based on your fleet configuration. Amazon GameLift uses the following formula: <code>4192 + \[# of game server container groups per fleet instance\] * \[# of container ports in the game server container group definition\] + \[# of container ports in the game server container group definition\]</code></p></li>
+    /// <p>Port range: 4192 to a number calculated based on your fleet configuration. Amazon GameLift Servers uses the following formula: <code>4192 + \[# of game server container groups per fleet instance\] * \[# of container ports in the game server container group definition\] + \[# of container ports in the game server container group definition\]</code></p></li>
     /// </ul>
     /// <p>You can also choose to manually set this parameter. When manually setting this parameter, you must use port numbers that match the fleet's inbound permissions port range.</p><note>
-    /// <p>If you set values manually, Amazon GameLift no longer calculates a port range for you, even if you later remove the manual settings.</p>
+    /// <p>If you set values manually, Amazon GameLift Servers no longer calculates a port range for you, even if you later remove the manual settings.</p>
     /// </note>
     pub fn instance_connection_port_range(mut self, input: crate::types::ConnectionPortRange) -> Self {
         self.inner = self.inner.instance_connection_port_range(input);
         self
     }
     /// <p>The set of port numbers to open on each fleet instance. A fleet's connection ports map to container ports that are configured in the fleet's container group definitions.</p>
-    /// <p>By default, Amazon GameLift calculates an optimal port range based on your fleet configuration. To use the calculated range, don't set this parameter. The values are:</p>
+    /// <p>By default, Amazon GameLift Servers calculates an optimal port range based on your fleet configuration. To use the calculated range, don't set this parameter. The values are:</p>
     /// <ul>
     /// <li>
-    /// <p>Port range: 4192 to a number calculated based on your fleet configuration. Amazon GameLift uses the following formula: <code>4192 + \[# of game server container groups per fleet instance\] * \[# of container ports in the game server container group definition\] + \[# of container ports in the game server container group definition\]</code></p></li>
+    /// <p>Port range: 4192 to a number calculated based on your fleet configuration. Amazon GameLift Servers uses the following formula: <code>4192 + \[# of game server container groups per fleet instance\] * \[# of container ports in the game server container group definition\] + \[# of container ports in the game server container group definition\]</code></p></li>
     /// </ul>
     /// <p>You can also choose to manually set this parameter. When manually setting this parameter, you must use port numbers that match the fleet's inbound permissions port range.</p><note>
-    /// <p>If you set values manually, Amazon GameLift no longer calculates a port range for you, even if you later remove the manual settings.</p>
+    /// <p>If you set values manually, Amazon GameLift Servers no longer calculates a port range for you, even if you later remove the manual settings.</p>
     /// </note>
     pub fn set_instance_connection_port_range(mut self, input: ::std::option::Option<crate::types::ConnectionPortRange>) -> Self {
         self.inner = self.inner.set_instance_connection_port_range(input);
         self
     }
     /// <p>The set of port numbers to open on each fleet instance. A fleet's connection ports map to container ports that are configured in the fleet's container group definitions.</p>
-    /// <p>By default, Amazon GameLift calculates an optimal port range based on your fleet configuration. To use the calculated range, don't set this parameter. The values are:</p>
+    /// <p>By default, Amazon GameLift Servers calculates an optimal port range based on your fleet configuration. To use the calculated range, don't set this parameter. The values are:</p>
     /// <ul>
     /// <li>
-    /// <p>Port range: 4192 to a number calculated based on your fleet configuration. Amazon GameLift uses the following formula: <code>4192 + \[# of game server container groups per fleet instance\] * \[# of container ports in the game server container group definition\] + \[# of container ports in the game server container group definition\]</code></p></li>
+    /// <p>Port range: 4192 to a number calculated based on your fleet configuration. Amazon GameLift Servers uses the following formula: <code>4192 + \[# of game server container groups per fleet instance\] * \[# of container ports in the game server container group definition\] + \[# of container ports in the game server container group definition\]</code></p></li>
     /// </ul>
     /// <p>You can also choose to manually set this parameter. When manually setting this parameter, you must use port numbers that match the fleet's inbound permissions port range.</p><note>
-    /// <p>If you set values manually, Amazon GameLift no longer calculates a port range for you, even if you later remove the manual settings.</p>
+    /// <p>If you set values manually, Amazon GameLift Servers no longer calculates a port range for you, even if you later remove the manual settings.</p>
     /// </note>
     pub fn get_instance_connection_port_range(&self) -> &::std::option::Option<crate::types::ConnectionPortRange> {
         self.inner.get_instance_connection_port_range()
@@ -256,82 +256,82 @@ impl CreateContainerFleetFluentBuilder {
     /// To override the contents of this collection use [`set_instance_inbound_permissions`](Self::set_instance_inbound_permissions).
     ///
     /// <p>The IP address ranges and port settings that allow inbound traffic to access game server processes and other processes on this fleet. As a best practice, when remotely accessing a fleet instance, we recommend opening ports only when you need them and closing them when you're finished.</p>
-    /// <p>By default, Amazon GameLift calculates an optimal port range based on your fleet configuration. To use the calculated range, don't set this parameter. The values are:</p>
+    /// <p>By default, Amazon GameLift Servers calculates an optimal port range based on your fleet configuration. To use the calculated range, don't set this parameter. The values are:</p>
     /// <ul>
     /// <li>
     /// <p>Protocol: UDP</p></li>
     /// <li>
-    /// <p>Port range: 4192 to a number calculated based on your fleet configuration. Amazon GameLift uses the following formula: <code>4192 + \[# of game server container groups per fleet instance\] * \[# of container ports in the game server container group definition\] + \[# of container ports in the game server container group definition\]</code></p></li>
+    /// <p>Port range: 4192 to a number calculated based on your fleet configuration. Amazon GameLift Servers uses the following formula: <code>4192 + \[# of game server container groups per fleet instance\] * \[# of container ports in the game server container group definition\] + \[# of container ports in the game server container group definition\]</code></p></li>
     /// </ul>
     /// <p>You can also choose to manually set this parameter. When manually setting this parameter, you must use port numbers that match the fleet's connection port range.</p><note>
-    /// <p>If you set values manually, Amazon GameLift no longer calculates a port range for you, even if you later remove the manual settings.</p>
+    /// <p>If you set values manually, Amazon GameLift Servers no longer calculates a port range for you, even if you later remove the manual settings.</p>
     /// </note>
     pub fn instance_inbound_permissions(mut self, input: crate::types::IpPermission) -> Self {
         self.inner = self.inner.instance_inbound_permissions(input);
         self
     }
     /// <p>The IP address ranges and port settings that allow inbound traffic to access game server processes and other processes on this fleet. As a best practice, when remotely accessing a fleet instance, we recommend opening ports only when you need them and closing them when you're finished.</p>
-    /// <p>By default, Amazon GameLift calculates an optimal port range based on your fleet configuration. To use the calculated range, don't set this parameter. The values are:</p>
+    /// <p>By default, Amazon GameLift Servers calculates an optimal port range based on your fleet configuration. To use the calculated range, don't set this parameter. The values are:</p>
     /// <ul>
     /// <li>
     /// <p>Protocol: UDP</p></li>
     /// <li>
-    /// <p>Port range: 4192 to a number calculated based on your fleet configuration. Amazon GameLift uses the following formula: <code>4192 + \[# of game server container groups per fleet instance\] * \[# of container ports in the game server container group definition\] + \[# of container ports in the game server container group definition\]</code></p></li>
+    /// <p>Port range: 4192 to a number calculated based on your fleet configuration. Amazon GameLift Servers uses the following formula: <code>4192 + \[# of game server container groups per fleet instance\] * \[# of container ports in the game server container group definition\] + \[# of container ports in the game server container group definition\]</code></p></li>
     /// </ul>
     /// <p>You can also choose to manually set this parameter. When manually setting this parameter, you must use port numbers that match the fleet's connection port range.</p><note>
-    /// <p>If you set values manually, Amazon GameLift no longer calculates a port range for you, even if you later remove the manual settings.</p>
+    /// <p>If you set values manually, Amazon GameLift Servers no longer calculates a port range for you, even if you later remove the manual settings.</p>
     /// </note>
     pub fn set_instance_inbound_permissions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::IpPermission>>) -> Self {
         self.inner = self.inner.set_instance_inbound_permissions(input);
         self
     }
     /// <p>The IP address ranges and port settings that allow inbound traffic to access game server processes and other processes on this fleet. As a best practice, when remotely accessing a fleet instance, we recommend opening ports only when you need them and closing them when you're finished.</p>
-    /// <p>By default, Amazon GameLift calculates an optimal port range based on your fleet configuration. To use the calculated range, don't set this parameter. The values are:</p>
+    /// <p>By default, Amazon GameLift Servers calculates an optimal port range based on your fleet configuration. To use the calculated range, don't set this parameter. The values are:</p>
     /// <ul>
     /// <li>
     /// <p>Protocol: UDP</p></li>
     /// <li>
-    /// <p>Port range: 4192 to a number calculated based on your fleet configuration. Amazon GameLift uses the following formula: <code>4192 + \[# of game server container groups per fleet instance\] * \[# of container ports in the game server container group definition\] + \[# of container ports in the game server container group definition\]</code></p></li>
+    /// <p>Port range: 4192 to a number calculated based on your fleet configuration. Amazon GameLift Servers uses the following formula: <code>4192 + \[# of game server container groups per fleet instance\] * \[# of container ports in the game server container group definition\] + \[# of container ports in the game server container group definition\]</code></p></li>
     /// </ul>
     /// <p>You can also choose to manually set this parameter. When manually setting this parameter, you must use port numbers that match the fleet's connection port range.</p><note>
-    /// <p>If you set values manually, Amazon GameLift no longer calculates a port range for you, even if you later remove the manual settings.</p>
+    /// <p>If you set values manually, Amazon GameLift Servers no longer calculates a port range for you, even if you later remove the manual settings.</p>
     /// </note>
     pub fn get_instance_inbound_permissions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::IpPermission>> {
         self.inner.get_instance_inbound_permissions()
     }
     /// <p>The number of times to replicate the game server container group on each fleet instance.</p>
-    /// <p>By default, Amazon GameLift calculates the maximum number of game server container groups that can fit on each instance. This calculation is based on the CPU and memory resources of the fleet's instance type). To use the calculated maximum, don't set this parameter. If you set this number manually, Amazon GameLift uses your value as long as it's less than the calculated maximum.</p>
+    /// <p>By default, Amazon GameLift Servers calculates the maximum number of game server container groups that can fit on each instance. This calculation is based on the CPU and memory resources of the fleet's instance type). To use the calculated maximum, don't set this parameter. If you set this number manually, Amazon GameLift Servers uses your value as long as it's less than the calculated maximum.</p>
     pub fn game_server_container_groups_per_instance(mut self, input: i32) -> Self {
         self.inner = self.inner.game_server_container_groups_per_instance(input);
         self
     }
     /// <p>The number of times to replicate the game server container group on each fleet instance.</p>
-    /// <p>By default, Amazon GameLift calculates the maximum number of game server container groups that can fit on each instance. This calculation is based on the CPU and memory resources of the fleet's instance type). To use the calculated maximum, don't set this parameter. If you set this number manually, Amazon GameLift uses your value as long as it's less than the calculated maximum.</p>
+    /// <p>By default, Amazon GameLift Servers calculates the maximum number of game server container groups that can fit on each instance. This calculation is based on the CPU and memory resources of the fleet's instance type). To use the calculated maximum, don't set this parameter. If you set this number manually, Amazon GameLift Servers uses your value as long as it's less than the calculated maximum.</p>
     pub fn set_game_server_container_groups_per_instance(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_game_server_container_groups_per_instance(input);
         self
     }
     /// <p>The number of times to replicate the game server container group on each fleet instance.</p>
-    /// <p>By default, Amazon GameLift calculates the maximum number of game server container groups that can fit on each instance. This calculation is based on the CPU and memory resources of the fleet's instance type). To use the calculated maximum, don't set this parameter. If you set this number manually, Amazon GameLift uses your value as long as it's less than the calculated maximum.</p>
+    /// <p>By default, Amazon GameLift Servers calculates the maximum number of game server container groups that can fit on each instance. This calculation is based on the CPU and memory resources of the fleet's instance type). To use the calculated maximum, don't set this parameter. If you set this number manually, Amazon GameLift Servers uses your value as long as it's less than the calculated maximum.</p>
     pub fn get_game_server_container_groups_per_instance(&self) -> &::std::option::Option<i32> {
         self.inner.get_game_server_container_groups_per_instance()
     }
     /// <p>The Amazon EC2 instance type to use for all instances in the fleet. For multi-location fleets, the instance type must be available in the home region and all remote locations. Instance type determines the computing resources and processing power that's available to host your game servers. This includes including CPU, memory, storage, and networking capacity.</p>
-    /// <p>By default, Amazon GameLift selects an instance type that fits the needs of your container groups and is available in all selected fleet locations. You can also choose to manually set this parameter. See <a href="http://aws.amazon.com/ec2/instance-types/">Amazon Elastic Compute Cloud Instance Types</a> for detailed descriptions of Amazon EC2 instance types.</p>
+    /// <p>By default, Amazon GameLift Servers selects an instance type that fits the needs of your container groups and is available in all selected fleet locations. You can also choose to manually set this parameter. See <a href="http://aws.amazon.com/ec2/instance-types/">Amazon Elastic Compute Cloud Instance Types</a> for detailed descriptions of Amazon EC2 instance types.</p>
     /// <p>You can't update this fleet property later.</p>
     pub fn instance_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.instance_type(input.into());
         self
     }
     /// <p>The Amazon EC2 instance type to use for all instances in the fleet. For multi-location fleets, the instance type must be available in the home region and all remote locations. Instance type determines the computing resources and processing power that's available to host your game servers. This includes including CPU, memory, storage, and networking capacity.</p>
-    /// <p>By default, Amazon GameLift selects an instance type that fits the needs of your container groups and is available in all selected fleet locations. You can also choose to manually set this parameter. See <a href="http://aws.amazon.com/ec2/instance-types/">Amazon Elastic Compute Cloud Instance Types</a> for detailed descriptions of Amazon EC2 instance types.</p>
+    /// <p>By default, Amazon GameLift Servers selects an instance type that fits the needs of your container groups and is available in all selected fleet locations. You can also choose to manually set this parameter. See <a href="http://aws.amazon.com/ec2/instance-types/">Amazon Elastic Compute Cloud Instance Types</a> for detailed descriptions of Amazon EC2 instance types.</p>
     /// <p>You can't update this fleet property later.</p>
     pub fn set_instance_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_instance_type(input);
         self
     }
     /// <p>The Amazon EC2 instance type to use for all instances in the fleet. For multi-location fleets, the instance type must be available in the home region and all remote locations. Instance type determines the computing resources and processing power that's available to host your game servers. This includes including CPU, memory, storage, and networking capacity.</p>
-    /// <p>By default, Amazon GameLift selects an instance type that fits the needs of your container groups and is available in all selected fleet locations. You can also choose to manually set this parameter. See <a href="http://aws.amazon.com/ec2/instance-types/">Amazon Elastic Compute Cloud Instance Types</a> for detailed descriptions of Amazon EC2 instance types.</p>
+    /// <p>By default, Amazon GameLift Servers selects an instance type that fits the needs of your container groups and is available in all selected fleet locations. You can also choose to manually set this parameter. See <a href="http://aws.amazon.com/ec2/instance-types/">Amazon Elastic Compute Cloud Instance Types</a> for detailed descriptions of Amazon EC2 instance types.</p>
     /// <p>You can't update this fleet property later.</p>
     pub fn get_instance_type(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_instance_type()
@@ -361,17 +361,17 @@ impl CreateContainerFleetFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_locations`](Self::set_locations).
     ///
-    /// <p>A set of locations to deploy container fleet instances to. You can add any Amazon Web Services Region or Local Zone that's supported by Amazon GameLift. Provide a list of one or more Amazon Web Services Region codes, such as <code>us-west-2</code>, or Local Zone names. Also include the fleet's home Region, which is the Amazon Web Services Region where the fleet is created. For a list of supported Regions and Local Zones, see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-regions.html"> Amazon GameLift service locations</a> for managed hosting.</p>
+    /// <p>A set of locations to deploy container fleet instances to. You can add any Amazon Web Services Region or Local Zone that's supported by Amazon GameLift Servers. Provide a list of one or more Amazon Web Services Region codes, such as <code>us-west-2</code>, or Local Zone names. Also include the fleet's home Region, which is the Amazon Web Services Region where the fleet is created. For a list of supported Regions and Local Zones, see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-regions.html"> Amazon GameLift Servers service locations</a> for managed hosting.</p>
     pub fn locations(mut self, input: crate::types::LocationConfiguration) -> Self {
         self.inner = self.inner.locations(input);
         self
     }
-    /// <p>A set of locations to deploy container fleet instances to. You can add any Amazon Web Services Region or Local Zone that's supported by Amazon GameLift. Provide a list of one or more Amazon Web Services Region codes, such as <code>us-west-2</code>, or Local Zone names. Also include the fleet's home Region, which is the Amazon Web Services Region where the fleet is created. For a list of supported Regions and Local Zones, see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-regions.html"> Amazon GameLift service locations</a> for managed hosting.</p>
+    /// <p>A set of locations to deploy container fleet instances to. You can add any Amazon Web Services Region or Local Zone that's supported by Amazon GameLift Servers. Provide a list of one or more Amazon Web Services Region codes, such as <code>us-west-2</code>, or Local Zone names. Also include the fleet's home Region, which is the Amazon Web Services Region where the fleet is created. For a list of supported Regions and Local Zones, see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-regions.html"> Amazon GameLift Servers service locations</a> for managed hosting.</p>
     pub fn set_locations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LocationConfiguration>>) -> Self {
         self.inner = self.inner.set_locations(input);
         self
     }
-    /// <p>A set of locations to deploy container fleet instances to. You can add any Amazon Web Services Region or Local Zone that's supported by Amazon GameLift. Provide a list of one or more Amazon Web Services Region codes, such as <code>us-west-2</code>, or Local Zone names. Also include the fleet's home Region, which is the Amazon Web Services Region where the fleet is created. For a list of supported Regions and Local Zones, see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-regions.html"> Amazon GameLift service locations</a> for managed hosting.</p>
+    /// <p>A set of locations to deploy container fleet instances to. You can add any Amazon Web Services Region or Local Zone that's supported by Amazon GameLift Servers. Provide a list of one or more Amazon Web Services Region codes, such as <code>us-west-2</code>, or Local Zone names. Also include the fleet's home Region, which is the Amazon Web Services Region where the fleet is created. For a list of supported Regions and Local Zones, see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-regions.html"> Amazon GameLift Servers service locations</a> for managed hosting.</p>
     pub fn get_locations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LocationConfiguration>> {
         self.inner.get_locations()
     }
@@ -394,7 +394,7 @@ impl CreateContainerFleetFluentBuilder {
     pub fn get_metric_groups(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_metric_groups()
     }
-    /// <p>Determines whether Amazon GameLift can shut down game sessions on the fleet that are actively running and hosting players. Amazon GameLift might prompt an instance shutdown when scaling down fleet capacity or when retiring unhealthy instances. You can also set game session protection for individual game sessions using <a href="gamelift/latest/apireference/API_UpdateGameSession.html">UpdateGameSession</a>.</p>
+    /// <p>Determines whether Amazon GameLift Servers can shut down game sessions on the fleet that are actively running and hosting players. Amazon GameLift Servers might prompt an instance shutdown when scaling down fleet capacity or when retiring unhealthy instances. You can also set game session protection for individual game sessions using <a href="gamelift/latest/apireference/API_UpdateGameSession.html">UpdateGameSession</a>.</p>
     /// <ul>
     /// <li>
     /// <p><b>NoProtection</b> -- Game sessions can be shut down during active gameplay.</p></li>
@@ -406,7 +406,7 @@ impl CreateContainerFleetFluentBuilder {
         self.inner = self.inner.new_game_session_protection_policy(input);
         self
     }
-    /// <p>Determines whether Amazon GameLift can shut down game sessions on the fleet that are actively running and hosting players. Amazon GameLift might prompt an instance shutdown when scaling down fleet capacity or when retiring unhealthy instances. You can also set game session protection for individual game sessions using <a href="gamelift/latest/apireference/API_UpdateGameSession.html">UpdateGameSession</a>.</p>
+    /// <p>Determines whether Amazon GameLift Servers can shut down game sessions on the fleet that are actively running and hosting players. Amazon GameLift Servers might prompt an instance shutdown when scaling down fleet capacity or when retiring unhealthy instances. You can also set game session protection for individual game sessions using <a href="gamelift/latest/apireference/API_UpdateGameSession.html">UpdateGameSession</a>.</p>
     /// <ul>
     /// <li>
     /// <p><b>NoProtection</b> -- Game sessions can be shut down during active gameplay.</p></li>
@@ -418,7 +418,7 @@ impl CreateContainerFleetFluentBuilder {
         self.inner = self.inner.set_new_game_session_protection_policy(input);
         self
     }
-    /// <p>Determines whether Amazon GameLift can shut down game sessions on the fleet that are actively running and hosting players. Amazon GameLift might prompt an instance shutdown when scaling down fleet capacity or when retiring unhealthy instances. You can also set game session protection for individual game sessions using <a href="gamelift/latest/apireference/API_UpdateGameSession.html">UpdateGameSession</a>.</p>
+    /// <p>Determines whether Amazon GameLift Servers can shut down game sessions on the fleet that are actively running and hosting players. Amazon GameLift Servers might prompt an instance shutdown when scaling down fleet capacity or when retiring unhealthy instances. You can also set game session protection for individual game sessions using <a href="gamelift/latest/apireference/API_UpdateGameSession.html">UpdateGameSession</a>.</p>
     /// <ul>
     /// <li>
     /// <p><b>NoProtection</b> -- Game sessions can be shut down during active gameplay.</p></li>
@@ -443,7 +443,7 @@ impl CreateContainerFleetFluentBuilder {
     pub fn get_game_session_creation_limit_policy(&self) -> &::std::option::Option<crate::types::GameSessionCreationLimitPolicy> {
         self.inner.get_game_session_creation_limit_policy()
     }
-    /// <p>A method for collecting container logs for the fleet. Amazon GameLift saves all standard output for each container in logs, including game session logs. You can select from the following methods:</p>
+    /// <p>A method for collecting container logs for the fleet. Amazon GameLift Servers saves all standard output for each container in logs, including game session logs. You can select from the following methods:</p>
     /// <ul>
     /// <li>
     /// <p><code>CLOUDWATCH</code> -- Send logs to an Amazon CloudWatch log group that you define. Each container emits a log stream, which is organized in the log group.</p></li>
@@ -453,12 +453,12 @@ impl CreateContainerFleetFluentBuilder {
     /// <p><code>NONE</code> -- Don't collect container logs.</p></li>
     /// </ul>
     /// <p>By default, this property is set to <code>CLOUDWATCH</code>.</p>
-    /// <p>Amazon GameLift requires permissions to send logs other Amazon Web Services services in your account. These permissions are included in the IAM fleet role for this container fleet (see <code>FleetRoleArn)</code>.</p>
+    /// <p>Amazon GameLift Servers requires permissions to send logs other Amazon Web Services services in your account. These permissions are included in the IAM fleet role for this container fleet (see <code>FleetRoleArn)</code>.</p>
     pub fn log_configuration(mut self, input: crate::types::LogConfiguration) -> Self {
         self.inner = self.inner.log_configuration(input);
         self
     }
-    /// <p>A method for collecting container logs for the fleet. Amazon GameLift saves all standard output for each container in logs, including game session logs. You can select from the following methods:</p>
+    /// <p>A method for collecting container logs for the fleet. Amazon GameLift Servers saves all standard output for each container in logs, including game session logs. You can select from the following methods:</p>
     /// <ul>
     /// <li>
     /// <p><code>CLOUDWATCH</code> -- Send logs to an Amazon CloudWatch log group that you define. Each container emits a log stream, which is organized in the log group.</p></li>
@@ -468,12 +468,12 @@ impl CreateContainerFleetFluentBuilder {
     /// <p><code>NONE</code> -- Don't collect container logs.</p></li>
     /// </ul>
     /// <p>By default, this property is set to <code>CLOUDWATCH</code>.</p>
-    /// <p>Amazon GameLift requires permissions to send logs other Amazon Web Services services in your account. These permissions are included in the IAM fleet role for this container fleet (see <code>FleetRoleArn)</code>.</p>
+    /// <p>Amazon GameLift Servers requires permissions to send logs other Amazon Web Services services in your account. These permissions are included in the IAM fleet role for this container fleet (see <code>FleetRoleArn)</code>.</p>
     pub fn set_log_configuration(mut self, input: ::std::option::Option<crate::types::LogConfiguration>) -> Self {
         self.inner = self.inner.set_log_configuration(input);
         self
     }
-    /// <p>A method for collecting container logs for the fleet. Amazon GameLift saves all standard output for each container in logs, including game session logs. You can select from the following methods:</p>
+    /// <p>A method for collecting container logs for the fleet. Amazon GameLift Servers saves all standard output for each container in logs, including game session logs. You can select from the following methods:</p>
     /// <ul>
     /// <li>
     /// <p><code>CLOUDWATCH</code> -- Send logs to an Amazon CloudWatch log group that you define. Each container emits a log stream, which is organized in the log group.</p></li>
@@ -483,7 +483,7 @@ impl CreateContainerFleetFluentBuilder {
     /// <p><code>NONE</code> -- Don't collect container logs.</p></li>
     /// </ul>
     /// <p>By default, this property is set to <code>CLOUDWATCH</code>.</p>
-    /// <p>Amazon GameLift requires permissions to send logs other Amazon Web Services services in your account. These permissions are included in the IAM fleet role for this container fleet (see <code>FleetRoleArn)</code>.</p>
+    /// <p>Amazon GameLift Servers requires permissions to send logs other Amazon Web Services services in your account. These permissions are included in the IAM fleet role for this container fleet (see <code>FleetRoleArn)</code>.</p>
     pub fn get_log_configuration(&self) -> &::std::option::Option<crate::types::LogConfiguration> {
         self.inner.get_log_configuration()
     }

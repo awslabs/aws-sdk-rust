@@ -67,7 +67,7 @@ pub struct DbInstanceAutomatedBackup {
     pub db_instance_automated_backups_arn: ::std::option::Option<::std::string::String>,
     /// <p>The list of replications to different Amazon Web Services Regions associated with the automated backup.</p>
     pub db_instance_automated_backups_replications: ::std::option::Option<::std::vec::Vec<crate::types::DbInstanceAutomatedBackupsReplication>>,
-    /// <p>The location where automated backups are stored: Amazon Web Services Outposts or the Amazon Web Services Region.</p>
+    /// <p>The location where automated backups are stored: Dedicated Local Zones, Amazon Web Services Outposts or the Amazon Web Services Region.</p>
     pub backup_target: ::std::option::Option<::std::string::String>,
     /// <p>The storage throughput for the automated backup.</p>
     pub storage_throughput: ::std::option::Option<i32>,
@@ -196,7 +196,7 @@ impl DbInstanceAutomatedBackup {
     pub fn db_instance_automated_backups_replications(&self) -> &[crate::types::DbInstanceAutomatedBackupsReplication] {
         self.db_instance_automated_backups_replications.as_deref().unwrap_or_default()
     }
-    /// <p>The location where automated backups are stored: Amazon Web Services Outposts or the Amazon Web Services Region.</p>
+    /// <p>The location where automated backups are stored: Dedicated Local Zones, Amazon Web Services Outposts or the Amazon Web Services Region.</p>
     pub fn backup_target(&self) -> ::std::option::Option<&str> {
         self.backup_target.as_deref()
     }
@@ -670,17 +670,17 @@ impl DbInstanceAutomatedBackupBuilder {
     ) -> &::std::option::Option<::std::vec::Vec<crate::types::DbInstanceAutomatedBackupsReplication>> {
         &self.db_instance_automated_backups_replications
     }
-    /// <p>The location where automated backups are stored: Amazon Web Services Outposts or the Amazon Web Services Region.</p>
+    /// <p>The location where automated backups are stored: Dedicated Local Zones, Amazon Web Services Outposts or the Amazon Web Services Region.</p>
     pub fn backup_target(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.backup_target = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The location where automated backups are stored: Amazon Web Services Outposts or the Amazon Web Services Region.</p>
+    /// <p>The location where automated backups are stored: Dedicated Local Zones, Amazon Web Services Outposts or the Amazon Web Services Region.</p>
     pub fn set_backup_target(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.backup_target = input;
         self
     }
-    /// <p>The location where automated backups are stored: Amazon Web Services Outposts or the Amazon Web Services Region.</p>
+    /// <p>The location where automated backups are stored: Dedicated Local Zones, Amazon Web Services Outposts or the Amazon Web Services Region.</p>
     pub fn get_backup_target(&self) -> &::std::option::Option<::std::string::String> {
         &self.backup_target
     }

@@ -3,14 +3,14 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListLocationsOutput {
-    /// <p>A collection of locations.</p>
+    /// <p>A collection of locations, including both Amazon Web Services and custom locations. Each location includes a name and ping beacon information that can be used to measure network latency between player devices and the location.</p>
     pub locations: ::std::option::Option<::std::vec::Vec<crate::types::LocationModel>>,
     /// <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListLocationsOutput {
-    /// <p>A collection of locations.</p>
+    /// <p>A collection of locations, including both Amazon Web Services and custom locations. Each location includes a name and ping beacon information that can be used to measure network latency between player devices and the location.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.locations.is_none()`.
     pub fn locations(&self) -> &[crate::types::LocationModel] {
@@ -46,19 +46,19 @@ impl ListLocationsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_locations`](Self::set_locations).
     ///
-    /// <p>A collection of locations.</p>
+    /// <p>A collection of locations, including both Amazon Web Services and custom locations. Each location includes a name and ping beacon information that can be used to measure network latency between player devices and the location.</p>
     pub fn locations(mut self, input: crate::types::LocationModel) -> Self {
         let mut v = self.locations.unwrap_or_default();
         v.push(input);
         self.locations = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A collection of locations.</p>
+    /// <p>A collection of locations, including both Amazon Web Services and custom locations. Each location includes a name and ping beacon information that can be used to measure network latency between player devices and the location.</p>
     pub fn set_locations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LocationModel>>) -> Self {
         self.locations = input;
         self
     }
-    /// <p>A collection of locations.</p>
+    /// <p>A collection of locations, including both Amazon Web Services and custom locations. Each location includes a name and ping beacon information that can be used to measure network latency between player devices and the location.</p>
     pub fn get_locations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LocationModel>> {
         &self.locations
     }

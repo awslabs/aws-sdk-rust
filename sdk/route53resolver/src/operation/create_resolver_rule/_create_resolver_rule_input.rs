@@ -7,7 +7,7 @@ pub struct CreateResolverRuleInput {
     pub creator_request_id: ::std::option::Option<::std::string::String>,
     /// <p>A friendly name that lets you easily find a rule in the Resolver dashboard in the Route 53 console.</p>
     pub name: ::std::option::Option<::std::string::String>,
-    /// <p>When you want to forward DNS queries for specified domain name to resolvers on your network, specify <code>FORWARD</code>.</p>
+    /// <p>When you want to forward DNS queries for specified domain name to resolvers on your network, specify <code>FORWARD</code> or <code>DELEGATE</code>.</p>
     /// <p>When you have a forwarding rule to forward DNS queries for a domain to your network and you want Resolver to process queries for a subdomain of that domain, specify <code>SYSTEM</code>.</p>
     /// <p>For example, to forward DNS queries for example.com to resolvers on your network, you create a rule and specify <code>FORWARD</code> for <code>RuleType</code>. To then have Resolver process queries for apex.example.com, you create a rule and specify <code>SYSTEM</code> for <code>RuleType</code>.</p>
     /// <p>Currently, only Resolver can create rules that have a value of <code>RECURSIVE</code> for <code>RuleType</code>.</p>
@@ -21,6 +21,8 @@ pub struct CreateResolverRuleInput {
     pub resolver_endpoint_id: ::std::option::Option<::std::string::String>,
     /// <p>A list of the tag keys and values that you want to associate with the endpoint.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    /// <p>DNS queries with the delegation records that match this domain name are forwarded to the resolvers on your network.</p>
+    pub delegation_record: ::std::option::Option<::std::string::String>,
 }
 impl CreateResolverRuleInput {
     /// <p>A unique string that identifies the request and that allows failed requests to be retried without the risk of running the operation twice. <code>CreatorRequestId</code> can be any unique string, for example, a date/time stamp.</p>
@@ -31,7 +33,7 @@ impl CreateResolverRuleInput {
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>When you want to forward DNS queries for specified domain name to resolvers on your network, specify <code>FORWARD</code>.</p>
+    /// <p>When you want to forward DNS queries for specified domain name to resolvers on your network, specify <code>FORWARD</code> or <code>DELEGATE</code>.</p>
     /// <p>When you have a forwarding rule to forward DNS queries for a domain to your network and you want Resolver to process queries for a subdomain of that domain, specify <code>SYSTEM</code>.</p>
     /// <p>For example, to forward DNS queries for example.com to resolvers on your network, you create a rule and specify <code>FORWARD</code> for <code>RuleType</code>. To then have Resolver process queries for apex.example.com, you create a rule and specify <code>SYSTEM</code> for <code>RuleType</code>.</p>
     /// <p>Currently, only Resolver can create rules that have a value of <code>RECURSIVE</code> for <code>RuleType</code>.</p>
@@ -59,6 +61,10 @@ impl CreateResolverRuleInput {
     pub fn tags(&self) -> &[crate::types::Tag] {
         self.tags.as_deref().unwrap_or_default()
     }
+    /// <p>DNS queries with the delegation records that match this domain name are forwarded to the resolvers on your network.</p>
+    pub fn delegation_record(&self) -> ::std::option::Option<&str> {
+        self.delegation_record.as_deref()
+    }
 }
 impl CreateResolverRuleInput {
     /// Creates a new builder-style object to manufacture [`CreateResolverRuleInput`](crate::operation::create_resolver_rule::CreateResolverRuleInput).
@@ -78,6 +84,7 @@ pub struct CreateResolverRuleInputBuilder {
     pub(crate) target_ips: ::std::option::Option<::std::vec::Vec<crate::types::TargetAddress>>,
     pub(crate) resolver_endpoint_id: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) delegation_record: ::std::option::Option<::std::string::String>,
 }
 impl CreateResolverRuleInputBuilder {
     /// <p>A unique string that identifies the request and that allows failed requests to be retried without the risk of running the operation twice. <code>CreatorRequestId</code> can be any unique string, for example, a date/time stamp.</p>
@@ -109,7 +116,7 @@ impl CreateResolverRuleInputBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
-    /// <p>When you want to forward DNS queries for specified domain name to resolvers on your network, specify <code>FORWARD</code>.</p>
+    /// <p>When you want to forward DNS queries for specified domain name to resolvers on your network, specify <code>FORWARD</code> or <code>DELEGATE</code>.</p>
     /// <p>When you have a forwarding rule to forward DNS queries for a domain to your network and you want Resolver to process queries for a subdomain of that domain, specify <code>SYSTEM</code>.</p>
     /// <p>For example, to forward DNS queries for example.com to resolvers on your network, you create a rule and specify <code>FORWARD</code> for <code>RuleType</code>. To then have Resolver process queries for apex.example.com, you create a rule and specify <code>SYSTEM</code> for <code>RuleType</code>.</p>
     /// <p>Currently, only Resolver can create rules that have a value of <code>RECURSIVE</code> for <code>RuleType</code>.</p>
@@ -118,7 +125,7 @@ impl CreateResolverRuleInputBuilder {
         self.rule_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>When you want to forward DNS queries for specified domain name to resolvers on your network, specify <code>FORWARD</code>.</p>
+    /// <p>When you want to forward DNS queries for specified domain name to resolvers on your network, specify <code>FORWARD</code> or <code>DELEGATE</code>.</p>
     /// <p>When you have a forwarding rule to forward DNS queries for a domain to your network and you want Resolver to process queries for a subdomain of that domain, specify <code>SYSTEM</code>.</p>
     /// <p>For example, to forward DNS queries for example.com to resolvers on your network, you create a rule and specify <code>FORWARD</code> for <code>RuleType</code>. To then have Resolver process queries for apex.example.com, you create a rule and specify <code>SYSTEM</code> for <code>RuleType</code>.</p>
     /// <p>Currently, only Resolver can create rules that have a value of <code>RECURSIVE</code> for <code>RuleType</code>.</p>
@@ -126,7 +133,7 @@ impl CreateResolverRuleInputBuilder {
         self.rule_type = input;
         self
     }
-    /// <p>When you want to forward DNS queries for specified domain name to resolvers on your network, specify <code>FORWARD</code>.</p>
+    /// <p>When you want to forward DNS queries for specified domain name to resolvers on your network, specify <code>FORWARD</code> or <code>DELEGATE</code>.</p>
     /// <p>When you have a forwarding rule to forward DNS queries for a domain to your network and you want Resolver to process queries for a subdomain of that domain, specify <code>SYSTEM</code>.</p>
     /// <p>For example, to forward DNS queries for example.com to resolvers on your network, you create a rule and specify <code>FORWARD</code> for <code>RuleType</code>. To then have Resolver process queries for apex.example.com, you create a rule and specify <code>SYSTEM</code> for <code>RuleType</code>.</p>
     /// <p>Currently, only Resolver can create rules that have a value of <code>RECURSIVE</code> for <code>RuleType</code>.</p>
@@ -204,6 +211,20 @@ impl CreateResolverRuleInputBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         &self.tags
     }
+    /// <p>DNS queries with the delegation records that match this domain name are forwarded to the resolvers on your network.</p>
+    pub fn delegation_record(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.delegation_record = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>DNS queries with the delegation records that match this domain name are forwarded to the resolvers on your network.</p>
+    pub fn set_delegation_record(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.delegation_record = input;
+        self
+    }
+    /// <p>DNS queries with the delegation records that match this domain name are forwarded to the resolvers on your network.</p>
+    pub fn get_delegation_record(&self) -> &::std::option::Option<::std::string::String> {
+        &self.delegation_record
+    }
     /// Consumes the builder and constructs a [`CreateResolverRuleInput`](crate::operation::create_resolver_rule::CreateResolverRuleInput).
     pub fn build(
         self,
@@ -217,6 +238,7 @@ impl CreateResolverRuleInputBuilder {
             target_ips: self.target_ips,
             resolver_endpoint_id: self.resolver_endpoint_id,
             tags: self.tags,
+            delegation_record: self.delegation_record,
         })
     }
 }

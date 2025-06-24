@@ -20,6 +20,7 @@
 ///     IpAddressStatus::Detaching => { /* ... */ },
 ///     IpAddressStatus::FailedCreation => { /* ... */ },
 ///     IpAddressStatus::FailedResourceGone => { /* ... */ },
+///     IpAddressStatus::Isolated => { /* ... */ },
 ///     IpAddressStatus::RemapAttaching => { /* ... */ },
 ///     IpAddressStatus::RemapDetaching => { /* ... */ },
 ///     IpAddressStatus::UpdateFailed => { /* ... */ },
@@ -69,6 +70,8 @@ pub enum IpAddressStatus {
     #[allow(missing_docs)] // documentation missing in model
     FailedResourceGone,
     #[allow(missing_docs)] // documentation missing in model
+    Isolated,
+    #[allow(missing_docs)] // documentation missing in model
     RemapAttaching,
     #[allow(missing_docs)] // documentation missing in model
     RemapDetaching,
@@ -91,6 +94,7 @@ impl ::std::convert::From<&str> for IpAddressStatus {
             "DETACHING" => IpAddressStatus::Detaching,
             "FAILED_CREATION" => IpAddressStatus::FailedCreation,
             "FAILED_RESOURCE_GONE" => IpAddressStatus::FailedResourceGone,
+            "ISOLATED" => IpAddressStatus::Isolated,
             "REMAP_ATTACHING" => IpAddressStatus::RemapAttaching,
             "REMAP_DETACHING" => IpAddressStatus::RemapDetaching,
             "UPDATE_FAILED" => IpAddressStatus::UpdateFailed,
@@ -118,6 +122,7 @@ impl IpAddressStatus {
             IpAddressStatus::Detaching => "DETACHING",
             IpAddressStatus::FailedCreation => "FAILED_CREATION",
             IpAddressStatus::FailedResourceGone => "FAILED_RESOURCE_GONE",
+            IpAddressStatus::Isolated => "ISOLATED",
             IpAddressStatus::RemapAttaching => "REMAP_ATTACHING",
             IpAddressStatus::RemapDetaching => "REMAP_DETACHING",
             IpAddressStatus::UpdateFailed => "UPDATE_FAILED",
@@ -136,6 +141,7 @@ impl IpAddressStatus {
             "DETACHING",
             "FAILED_CREATION",
             "FAILED_RESOURCE_GONE",
+            "ISOLATED",
             "REMAP_ATTACHING",
             "REMAP_DETACHING",
             "UPDATE_FAILED",
@@ -171,6 +177,7 @@ impl ::std::fmt::Display for IpAddressStatus {
             IpAddressStatus::Detaching => write!(f, "DETACHING"),
             IpAddressStatus::FailedCreation => write!(f, "FAILED_CREATION"),
             IpAddressStatus::FailedResourceGone => write!(f, "FAILED_RESOURCE_GONE"),
+            IpAddressStatus::Isolated => write!(f, "ISOLATED"),
             IpAddressStatus::RemapAttaching => write!(f, "REMAP_ATTACHING"),
             IpAddressStatus::RemapDetaching => write!(f, "REMAP_DETACHING"),
             IpAddressStatus::UpdateFailed => write!(f, "UPDATE_FAILED"),

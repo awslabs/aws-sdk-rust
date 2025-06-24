@@ -27,6 +27,14 @@ impl DescribeTrustStoreAssociationsPaginator {
         self
     }
 
+    /// Create a flattened paginator
+    ///
+    /// This paginator automatically flattens results using `trust_store_associations`. Queries to the underlying service
+    /// are dispatched lazily.
+    pub fn items(self) -> crate::operation::describe_trust_store_associations::paginator::DescribeTrustStoreAssociationsPaginatorItems {
+        crate::operation::describe_trust_store_associations::paginator::DescribeTrustStoreAssociationsPaginatorItems(self)
+    }
+
     /// Stop paginating when the service returns the same pagination token twice in a row.
     ///
     /// Defaults to true.
@@ -109,5 +117,36 @@ impl DescribeTrustStoreAssociationsPaginator {
                 })
             },
         ))
+    }
+}
+
+/// Flattened paginator for `DescribeTrustStoreAssociationsPaginator`
+///
+/// This is created with [`.items()`](DescribeTrustStoreAssociationsPaginator::items)
+pub struct DescribeTrustStoreAssociationsPaginatorItems(DescribeTrustStoreAssociationsPaginator);
+
+impl DescribeTrustStoreAssociationsPaginatorItems {
+    /// Create the pagination stream
+    ///
+    /// _Note_: No requests will be dispatched until the stream is used
+    /// (e.g. with the [`.next().await`](aws_smithy_async::future::pagination_stream::PaginationStream::next) method).
+    ///
+    /// To read the entirety of the paginator, use [`.collect::<Result<Vec<_>, _>()`](aws_smithy_async::future::pagination_stream::PaginationStream::collect).
+    pub fn send(
+        self,
+    ) -> ::aws_smithy_async::future::pagination_stream::PaginationStream<
+        ::std::result::Result<
+            crate::types::TrustStoreAssociation,
+            ::aws_smithy_runtime_api::client::result::SdkError<
+                crate::operation::describe_trust_store_associations::DescribeTrustStoreAssociationsError,
+                ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
+            >,
+        >,
+    > {
+        ::aws_smithy_async::future::pagination_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
+            crate::lens::lens_describe_trust_store_associations_output_output_trust_store_associations(page)
+                .unwrap_or_default()
+                .into_iter()
+        })
     }
 }

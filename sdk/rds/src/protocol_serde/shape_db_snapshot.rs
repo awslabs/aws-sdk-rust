@@ -491,6 +491,19 @@ pub fn de_db_snapshot(
                 builder = builder.set_multi_tenant(var_36);
             }
             ,
+            s if s.matches("SnapshotAvailabilityZone") /* SnapshotAvailabilityZone com.amazonaws.rds#DBSnapshot$SnapshotAvailabilityZone */ =>  {
+                let var_37 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_snapshot_availability_zone(var_37);
+            }
+            ,
             _ => {}
         }
     }

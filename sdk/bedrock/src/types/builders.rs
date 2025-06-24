@@ -33,6 +33,22 @@ pub use crate::types::_request_metadata_base_filters::RequestMetadataBaseFilters
 
 pub use crate::types::_tag::TagBuilder;
 
+pub use crate::types::_offer::OfferBuilder;
+
+pub use crate::types::_term_details::TermDetailsBuilder;
+
+pub use crate::types::_validity_term::ValidityTermBuilder;
+
+pub use crate::types::_support_term::SupportTermBuilder;
+
+pub use crate::types::_legal_term::LegalTermBuilder;
+
+pub use crate::types::_pricing_term::PricingTermBuilder;
+
+pub use crate::types::_dimensional_price_rate::DimensionalPriceRateBuilder;
+
+pub use crate::types::_agreement_availability::AgreementAvailabilityBuilder;
+
 pub use crate::types::_provisioned_model_summary::ProvisionedModelSummaryBuilder;
 
 pub use crate::types::_prompt_router_target_model::PromptRouterTargetModelBuilder;

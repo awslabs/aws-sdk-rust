@@ -6,6 +6,18 @@ pub fn ser_license_conversion_context(
     if let Some(var_1) = &input.usage_operation {
         object.key("UsageOperation").string(var_1.as_str());
     }
+    if let Some(var_2) = &input.product_codes {
+        let mut array_3 = object.key("ProductCodes").start_array();
+        for item_4 in var_2 {
+            {
+                #[allow(unused_mut)]
+                let mut object_5 = array_3.value().start_object();
+                crate::protocol_serde::shape_product_code_list_item::ser_product_code_list_item(&mut object_5, item_4)?;
+                object_5.finish();
+            }
+        }
+        array_3.finish();
+    }
     Ok(())
 }
 
@@ -30,6 +42,9 @@ where
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
                             );
+                        }
+                        "ProductCodes" => {
+                            builder = builder.set_product_codes(crate::protocol_serde::shape_product_code_list::de_product_code_list(tokens)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

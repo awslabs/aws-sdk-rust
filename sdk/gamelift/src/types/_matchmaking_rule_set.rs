@@ -17,7 +17,7 @@
 pub struct MatchmakingRuleSet {
     /// <p>A unique identifier for the matchmaking rule set</p>
     pub rule_set_name: ::std::option::Option<::std::string::String>,
-    /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a Amazon GameLift matchmaking rule set resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:<region>
+    /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a Amazon GameLift Servers matchmaking rule set resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:<region>
     /// ::matchmakingruleset/
     /// <ruleset name></ruleset>
     /// </region></code>. In a GameLift rule set ARN, the resource ID matches the <i>RuleSetName</i> value.</p>
@@ -32,7 +32,7 @@ impl MatchmakingRuleSet {
     pub fn rule_set_name(&self) -> ::std::option::Option<&str> {
         self.rule_set_name.as_deref()
     }
-    /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a Amazon GameLift matchmaking rule set resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:<region>
+    /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a Amazon GameLift Servers matchmaking rule set resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:<region>
     /// ::matchmakingruleset/
     /// <ruleset name></ruleset>
     /// </region></code>. In a GameLift rule set ARN, the resource ID matches the <i>RuleSetName</i> value.</p>
@@ -79,7 +79,7 @@ impl MatchmakingRuleSetBuilder {
     pub fn get_rule_set_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.rule_set_name
     }
-    /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a Amazon GameLift matchmaking rule set resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:<region>
+    /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a Amazon GameLift Servers matchmaking rule set resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:<region>
     /// ::matchmakingruleset/
     /// <ruleset name></ruleset>
     /// </region></code>. In a GameLift rule set ARN, the resource ID matches the <i>RuleSetName</i> value.</p>
@@ -87,7 +87,7 @@ impl MatchmakingRuleSetBuilder {
         self.rule_set_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a Amazon GameLift matchmaking rule set resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:<region>
+    /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a Amazon GameLift Servers matchmaking rule set resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:<region>
     /// ::matchmakingruleset/
     /// <ruleset name></ruleset>
     /// </region></code>. In a GameLift rule set ARN, the resource ID matches the <i>RuleSetName</i> value.</p>
@@ -95,7 +95,7 @@ impl MatchmakingRuleSetBuilder {
         self.rule_set_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a Amazon GameLift matchmaking rule set resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:<region>
+    /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a Amazon GameLift Servers matchmaking rule set resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:<region>
     /// ::matchmakingruleset/
     /// <ruleset name></ruleset>
     /// </region></code>. In a GameLift rule set ARN, the resource ID matches the <i>RuleSetName</i> value.</p>

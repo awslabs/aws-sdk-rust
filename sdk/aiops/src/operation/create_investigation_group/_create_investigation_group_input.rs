@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateInvestigationGroupInput {
-    /// <p>A name for the investigation group.</p>
+    /// <p>Provides a name for the investigation group.</p>
     pub name: ::std::option::Option<::std::string::String>,
-    /// <p>Specify the ARN of the IAM role that Amazon Q Developer operational investigations will use when it gathers investigation data. The permissions in this role determine which of your resources that Amazon Q Developer operational investigations will have access to during investigations.</p>
+    /// <p>Specify the ARN of the IAM role that CloudWatch investigations will use when it gathers investigation data. The permissions in this role determine which of your resources that CloudWatch investigations will have access to during investigations.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Investigations-Security.html#Investigations-Security-Data">How to control what data Amazon Q has access to during investigations</a>.</p>
     pub role_arn: ::std::option::Option<::std::string::String>,
-    /// <p>Use this structure if you want to use a customer managed KMS key to encrypt your investigation data. If you omit this parameter, Amazon Q Developer operational investigations will use an Amazon Web Services key to encrypt the data. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Investigations-Security.html#Investigations-KMS">Encryption of investigation data</a>.</p>
+    /// <p>Use this structure if you want to use a customer managed KMS key to encrypt your investigation data. If you omit this parameter, CloudWatch investigations will use an Amazon Web Services key to encrypt the data. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Investigations-Security.html#Investigations-KMS">Encryption of investigation data</a>.</p>
     pub encryption_configuration: ::std::option::Option<crate::types::EncryptionConfiguration>,
     /// <p>Specify how long that investigation data is kept. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Investigations-Retention.html">Operational investigation data retention</a>.</p>
     /// <p>If you omit this parameter, the default of 90 days is used.</p>
@@ -19,23 +19,25 @@ pub struct CreateInvestigationGroupInput {
     /// <p>Enter the existing custom tag keys for custom applications in your system. Resource tags help Amazon Q narrow the search space when it is unable to discover definite relationships between resources. For example, to discover that an Amazon ECS service depends on an Amazon RDS database, Amazon Q can discover this relationship using data sources such as X-Ray and CloudWatch Application Signals. However, if you haven't deployed these features, Amazon Q will attempt to identify possible relationships. Tag boundaries can be used to narrow the resources that will be discovered by Amazon Q in these cases.</p>
     /// <p>You don't need to enter tags created by myApplications or CloudFormation, because Amazon Q can automatically detect those tags.</p>
     pub tag_key_boundaries: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>Use this structure to integrate Amazon Q Developer operational investigations with Amazon Q in chat applications. This structure is a string array. For the first string, specify the ARN of an Amazon SNS topic. For the array of strings, specify the ARNs of one or more Amazon Q in chat applications configurations that you want to associate with that topic. For more information about these configuration ARNs, see <a href="https://docs.aws.amazon.com/chatbot/latest/adminguide/getting-started.html">Getting started with Amazon Q in chat applications</a> and <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awschatbot.html#awschatbot-resources-for-iam-policies">Resource type defined by Amazon Web Services Chatbot</a>.</p>
+    /// <p>Use this structure to integrate CloudWatch investigations with Amazon Q in chat applications. This structure is a string array. For the first string, specify the ARN of an Amazon SNS topic. For the array of strings, specify the ARNs of one or more Amazon Q in chat applications configurations that you want to associate with that topic. For more information about these configuration ARNs, see <a href="https://docs.aws.amazon.com/chatbot/latest/adminguide/getting-started.html">Getting started with Amazon Q in chat applications</a> and <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awschatbot.html#awschatbot-resources-for-iam-policies">Resource type defined by Amazon Web Services Chatbot</a>.</p>
     pub chatbot_notification_channel:
         ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
-    /// <p>Specify <code>true</code> to enable Amazon Q Developer operational investigations to have access to change events that are recorded by CloudTrail. The default is <code>true</code>.</p>
+    /// <p>Specify <code>true</code> to enable CloudWatch investigations to have access to change events that are recorded by CloudTrail. The default is <code>true</code>.</p>
     pub is_cloud_trail_event_history_enabled: ::std::option::Option<bool>,
+    /// <p>Number of <code>sourceAccountId</code> values that have been configured for cross-account access.</p>
+    pub cross_account_configurations: ::std::option::Option<::std::vec::Vec<crate::types::CrossAccountConfiguration>>,
 }
 impl CreateInvestigationGroupInput {
-    /// <p>A name for the investigation group.</p>
+    /// <p>Provides a name for the investigation group.</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>Specify the ARN of the IAM role that Amazon Q Developer operational investigations will use when it gathers investigation data. The permissions in this role determine which of your resources that Amazon Q Developer operational investigations will have access to during investigations.</p>
+    /// <p>Specify the ARN of the IAM role that CloudWatch investigations will use when it gathers investigation data. The permissions in this role determine which of your resources that CloudWatch investigations will have access to during investigations.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Investigations-Security.html#Investigations-Security-Data">How to control what data Amazon Q has access to during investigations</a>.</p>
     pub fn role_arn(&self) -> ::std::option::Option<&str> {
         self.role_arn.as_deref()
     }
-    /// <p>Use this structure if you want to use a customer managed KMS key to encrypt your investigation data. If you omit this parameter, Amazon Q Developer operational investigations will use an Amazon Web Services key to encrypt the data. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Investigations-Security.html#Investigations-KMS">Encryption of investigation data</a>.</p>
+    /// <p>Use this structure if you want to use a customer managed KMS key to encrypt your investigation data. If you omit this parameter, CloudWatch investigations will use an Amazon Web Services key to encrypt the data. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Investigations-Security.html#Investigations-KMS">Encryption of investigation data</a>.</p>
     pub fn encryption_configuration(&self) -> ::std::option::Option<&crate::types::EncryptionConfiguration> {
         self.encryption_configuration.as_ref()
     }
@@ -56,15 +58,21 @@ impl CreateInvestigationGroupInput {
     pub fn tag_key_boundaries(&self) -> &[::std::string::String] {
         self.tag_key_boundaries.as_deref().unwrap_or_default()
     }
-    /// <p>Use this structure to integrate Amazon Q Developer operational investigations with Amazon Q in chat applications. This structure is a string array. For the first string, specify the ARN of an Amazon SNS topic. For the array of strings, specify the ARNs of one or more Amazon Q in chat applications configurations that you want to associate with that topic. For more information about these configuration ARNs, see <a href="https://docs.aws.amazon.com/chatbot/latest/adminguide/getting-started.html">Getting started with Amazon Q in chat applications</a> and <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awschatbot.html#awschatbot-resources-for-iam-policies">Resource type defined by Amazon Web Services Chatbot</a>.</p>
+    /// <p>Use this structure to integrate CloudWatch investigations with Amazon Q in chat applications. This structure is a string array. For the first string, specify the ARN of an Amazon SNS topic. For the array of strings, specify the ARNs of one or more Amazon Q in chat applications configurations that you want to associate with that topic. For more information about these configuration ARNs, see <a href="https://docs.aws.amazon.com/chatbot/latest/adminguide/getting-started.html">Getting started with Amazon Q in chat applications</a> and <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awschatbot.html#awschatbot-resources-for-iam-policies">Resource type defined by Amazon Web Services Chatbot</a>.</p>
     pub fn chatbot_notification_channel(
         &self,
     ) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>> {
         self.chatbot_notification_channel.as_ref()
     }
-    /// <p>Specify <code>true</code> to enable Amazon Q Developer operational investigations to have access to change events that are recorded by CloudTrail. The default is <code>true</code>.</p>
+    /// <p>Specify <code>true</code> to enable CloudWatch investigations to have access to change events that are recorded by CloudTrail. The default is <code>true</code>.</p>
     pub fn is_cloud_trail_event_history_enabled(&self) -> ::std::option::Option<bool> {
         self.is_cloud_trail_event_history_enabled
+    }
+    /// <p>Number of <code>sourceAccountId</code> values that have been configured for cross-account access.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cross_account_configurations.is_none()`.
+    pub fn cross_account_configurations(&self) -> &[crate::types::CrossAccountConfiguration] {
+        self.cross_account_configurations.as_deref().unwrap_or_default()
     }
 }
 impl CreateInvestigationGroupInput {
@@ -87,52 +95,53 @@ pub struct CreateInvestigationGroupInputBuilder {
     pub(crate) chatbot_notification_channel:
         ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
     pub(crate) is_cloud_trail_event_history_enabled: ::std::option::Option<bool>,
+    pub(crate) cross_account_configurations: ::std::option::Option<::std::vec::Vec<crate::types::CrossAccountConfiguration>>,
 }
 impl CreateInvestigationGroupInputBuilder {
-    /// <p>A name for the investigation group.</p>
+    /// <p>Provides a name for the investigation group.</p>
     /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A name for the investigation group.</p>
+    /// <p>Provides a name for the investigation group.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
-    /// <p>A name for the investigation group.</p>
+    /// <p>Provides a name for the investigation group.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
-    /// <p>Specify the ARN of the IAM role that Amazon Q Developer operational investigations will use when it gathers investigation data. The permissions in this role determine which of your resources that Amazon Q Developer operational investigations will have access to during investigations.</p>
+    /// <p>Specify the ARN of the IAM role that CloudWatch investigations will use when it gathers investigation data. The permissions in this role determine which of your resources that CloudWatch investigations will have access to during investigations.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Investigations-Security.html#Investigations-Security-Data">How to control what data Amazon Q has access to during investigations</a>.</p>
     /// This field is required.
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Specify the ARN of the IAM role that Amazon Q Developer operational investigations will use when it gathers investigation data. The permissions in this role determine which of your resources that Amazon Q Developer operational investigations will have access to during investigations.</p>
+    /// <p>Specify the ARN of the IAM role that CloudWatch investigations will use when it gathers investigation data. The permissions in this role determine which of your resources that CloudWatch investigations will have access to during investigations.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Investigations-Security.html#Investigations-Security-Data">How to control what data Amazon Q has access to during investigations</a>.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
     }
-    /// <p>Specify the ARN of the IAM role that Amazon Q Developer operational investigations will use when it gathers investigation data. The permissions in this role determine which of your resources that Amazon Q Developer operational investigations will have access to during investigations.</p>
+    /// <p>Specify the ARN of the IAM role that CloudWatch investigations will use when it gathers investigation data. The permissions in this role determine which of your resources that CloudWatch investigations will have access to during investigations.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Investigations-Security.html#Investigations-Security-Data">How to control what data Amazon Q has access to during investigations</a>.</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.role_arn
     }
-    /// <p>Use this structure if you want to use a customer managed KMS key to encrypt your investigation data. If you omit this parameter, Amazon Q Developer operational investigations will use an Amazon Web Services key to encrypt the data. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Investigations-Security.html#Investigations-KMS">Encryption of investigation data</a>.</p>
+    /// <p>Use this structure if you want to use a customer managed KMS key to encrypt your investigation data. If you omit this parameter, CloudWatch investigations will use an Amazon Web Services key to encrypt the data. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Investigations-Security.html#Investigations-KMS">Encryption of investigation data</a>.</p>
     pub fn encryption_configuration(mut self, input: crate::types::EncryptionConfiguration) -> Self {
         self.encryption_configuration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Use this structure if you want to use a customer managed KMS key to encrypt your investigation data. If you omit this parameter, Amazon Q Developer operational investigations will use an Amazon Web Services key to encrypt the data. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Investigations-Security.html#Investigations-KMS">Encryption of investigation data</a>.</p>
+    /// <p>Use this structure if you want to use a customer managed KMS key to encrypt your investigation data. If you omit this parameter, CloudWatch investigations will use an Amazon Web Services key to encrypt the data. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Investigations-Security.html#Investigations-KMS">Encryption of investigation data</a>.</p>
     pub fn set_encryption_configuration(mut self, input: ::std::option::Option<crate::types::EncryptionConfiguration>) -> Self {
         self.encryption_configuration = input;
         self
     }
-    /// <p>Use this structure if you want to use a customer managed KMS key to encrypt your investigation data. If you omit this parameter, Amazon Q Developer operational investigations will use an Amazon Web Services key to encrypt the data. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Investigations-Security.html#Investigations-KMS">Encryption of investigation data</a>.</p>
+    /// <p>Use this structure if you want to use a customer managed KMS key to encrypt your investigation data. If you omit this parameter, CloudWatch investigations will use an Amazon Web Services key to encrypt the data. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Investigations-Security.html#Investigations-KMS">Encryption of investigation data</a>.</p>
     pub fn get_encryption_configuration(&self) -> &::std::option::Option<crate::types::EncryptionConfiguration> {
         &self.encryption_configuration
     }
@@ -203,7 +212,7 @@ impl CreateInvestigationGroupInputBuilder {
     ///
     /// To override the contents of this collection use [`set_chatbot_notification_channel`](Self::set_chatbot_notification_channel).
     ///
-    /// <p>Use this structure to integrate Amazon Q Developer operational investigations with Amazon Q in chat applications. This structure is a string array. For the first string, specify the ARN of an Amazon SNS topic. For the array of strings, specify the ARNs of one or more Amazon Q in chat applications configurations that you want to associate with that topic. For more information about these configuration ARNs, see <a href="https://docs.aws.amazon.com/chatbot/latest/adminguide/getting-started.html">Getting started with Amazon Q in chat applications</a> and <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awschatbot.html#awschatbot-resources-for-iam-policies">Resource type defined by Amazon Web Services Chatbot</a>.</p>
+    /// <p>Use this structure to integrate CloudWatch investigations with Amazon Q in chat applications. This structure is a string array. For the first string, specify the ARN of an Amazon SNS topic. For the array of strings, specify the ARNs of one or more Amazon Q in chat applications configurations that you want to associate with that topic. For more information about these configuration ARNs, see <a href="https://docs.aws.amazon.com/chatbot/latest/adminguide/getting-started.html">Getting started with Amazon Q in chat applications</a> and <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awschatbot.html#awschatbot-resources-for-iam-policies">Resource type defined by Amazon Web Services Chatbot</a>.</p>
     pub fn chatbot_notification_channel(
         mut self,
         k: impl ::std::convert::Into<::std::string::String>,
@@ -214,7 +223,7 @@ impl CreateInvestigationGroupInputBuilder {
         self.chatbot_notification_channel = ::std::option::Option::Some(hash_map);
         self
     }
-    /// <p>Use this structure to integrate Amazon Q Developer operational investigations with Amazon Q in chat applications. This structure is a string array. For the first string, specify the ARN of an Amazon SNS topic. For the array of strings, specify the ARNs of one or more Amazon Q in chat applications configurations that you want to associate with that topic. For more information about these configuration ARNs, see <a href="https://docs.aws.amazon.com/chatbot/latest/adminguide/getting-started.html">Getting started with Amazon Q in chat applications</a> and <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awschatbot.html#awschatbot-resources-for-iam-policies">Resource type defined by Amazon Web Services Chatbot</a>.</p>
+    /// <p>Use this structure to integrate CloudWatch investigations with Amazon Q in chat applications. This structure is a string array. For the first string, specify the ARN of an Amazon SNS topic. For the array of strings, specify the ARNs of one or more Amazon Q in chat applications configurations that you want to associate with that topic. For more information about these configuration ARNs, see <a href="https://docs.aws.amazon.com/chatbot/latest/adminguide/getting-started.html">Getting started with Amazon Q in chat applications</a> and <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awschatbot.html#awschatbot-resources-for-iam-policies">Resource type defined by Amazon Web Services Chatbot</a>.</p>
     pub fn set_chatbot_notification_channel(
         mut self,
         input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
@@ -222,25 +231,48 @@ impl CreateInvestigationGroupInputBuilder {
         self.chatbot_notification_channel = input;
         self
     }
-    /// <p>Use this structure to integrate Amazon Q Developer operational investigations with Amazon Q in chat applications. This structure is a string array. For the first string, specify the ARN of an Amazon SNS topic. For the array of strings, specify the ARNs of one or more Amazon Q in chat applications configurations that you want to associate with that topic. For more information about these configuration ARNs, see <a href="https://docs.aws.amazon.com/chatbot/latest/adminguide/getting-started.html">Getting started with Amazon Q in chat applications</a> and <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awschatbot.html#awschatbot-resources-for-iam-policies">Resource type defined by Amazon Web Services Chatbot</a>.</p>
+    /// <p>Use this structure to integrate CloudWatch investigations with Amazon Q in chat applications. This structure is a string array. For the first string, specify the ARN of an Amazon SNS topic. For the array of strings, specify the ARNs of one or more Amazon Q in chat applications configurations that you want to associate with that topic. For more information about these configuration ARNs, see <a href="https://docs.aws.amazon.com/chatbot/latest/adminguide/getting-started.html">Getting started with Amazon Q in chat applications</a> and <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awschatbot.html#awschatbot-resources-for-iam-policies">Resource type defined by Amazon Web Services Chatbot</a>.</p>
     pub fn get_chatbot_notification_channel(
         &self,
     ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>> {
         &self.chatbot_notification_channel
     }
-    /// <p>Specify <code>true</code> to enable Amazon Q Developer operational investigations to have access to change events that are recorded by CloudTrail. The default is <code>true</code>.</p>
+    /// <p>Specify <code>true</code> to enable CloudWatch investigations to have access to change events that are recorded by CloudTrail. The default is <code>true</code>.</p>
     pub fn is_cloud_trail_event_history_enabled(mut self, input: bool) -> Self {
         self.is_cloud_trail_event_history_enabled = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specify <code>true</code> to enable Amazon Q Developer operational investigations to have access to change events that are recorded by CloudTrail. The default is <code>true</code>.</p>
+    /// <p>Specify <code>true</code> to enable CloudWatch investigations to have access to change events that are recorded by CloudTrail. The default is <code>true</code>.</p>
     pub fn set_is_cloud_trail_event_history_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_cloud_trail_event_history_enabled = input;
         self
     }
-    /// <p>Specify <code>true</code> to enable Amazon Q Developer operational investigations to have access to change events that are recorded by CloudTrail. The default is <code>true</code>.</p>
+    /// <p>Specify <code>true</code> to enable CloudWatch investigations to have access to change events that are recorded by CloudTrail. The default is <code>true</code>.</p>
     pub fn get_is_cloud_trail_event_history_enabled(&self) -> &::std::option::Option<bool> {
         &self.is_cloud_trail_event_history_enabled
+    }
+    /// Appends an item to `cross_account_configurations`.
+    ///
+    /// To override the contents of this collection use [`set_cross_account_configurations`](Self::set_cross_account_configurations).
+    ///
+    /// <p>Number of <code>sourceAccountId</code> values that have been configured for cross-account access.</p>
+    pub fn cross_account_configurations(mut self, input: crate::types::CrossAccountConfiguration) -> Self {
+        let mut v = self.cross_account_configurations.unwrap_or_default();
+        v.push(input);
+        self.cross_account_configurations = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Number of <code>sourceAccountId</code> values that have been configured for cross-account access.</p>
+    pub fn set_cross_account_configurations(
+        mut self,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::CrossAccountConfiguration>>,
+    ) -> Self {
+        self.cross_account_configurations = input;
+        self
+    }
+    /// <p>Number of <code>sourceAccountId</code> values that have been configured for cross-account access.</p>
+    pub fn get_cross_account_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CrossAccountConfiguration>> {
+        &self.cross_account_configurations
     }
     /// Consumes the builder and constructs a [`CreateInvestigationGroupInput`](crate::operation::create_investigation_group::CreateInvestigationGroupInput).
     pub fn build(
@@ -258,6 +290,7 @@ impl CreateInvestigationGroupInputBuilder {
             tag_key_boundaries: self.tag_key_boundaries,
             chatbot_notification_channel: self.chatbot_notification_channel,
             is_cloud_trail_event_history_enabled: self.is_cloud_trail_event_history_enabled,
+            cross_account_configurations: self.cross_account_configurations,
         })
     }
 }

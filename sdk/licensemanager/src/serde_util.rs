@@ -127,6 +127,18 @@ pub(crate) fn entitlement_usage_correct_errors(
     builder
 }
 
+pub(crate) fn product_code_list_item_correct_errors(
+    mut builder: crate::types::builders::ProductCodeListItemBuilder,
+) -> crate::types::builders::ProductCodeListItemBuilder {
+    if builder.product_code_id.is_none() {
+        builder.product_code_id = Some(Default::default())
+    }
+    if builder.product_code_type.is_none() {
+        builder.product_code_type = "no value was set".parse::<crate::types::ProductCodeType>().ok()
+    }
+    builder
+}
+
 pub(crate) fn provisional_configuration_correct_errors(
     mut builder: crate::types::builders::ProvisionalConfigurationBuilder,
 ) -> crate::types::builders::ProvisionalConfigurationBuilder {

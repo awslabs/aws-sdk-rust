@@ -26,8 +26,10 @@ pub struct GetInvestigationGroupOutput {
         ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
     /// <p>Displays the custom tag keys for custom applications in your system that you have specified in the investigation group. Resource tags help Amazon Q narrow the search space when it is unable to discover definite relationships between resources.</p>
     pub tag_key_boundaries: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>Specifies whether Amazon Q Developer operational investigationshas access to change events that are recorded by CloudTrail.</p>
+    /// <p>Specifies whether CloudWatch investigationshas access to change events that are recorded by CloudTrail.</p>
     pub is_cloud_trail_event_history_enabled: ::std::option::Option<bool>,
+    /// <p>Lists the <code>AWSAccountId</code> of the accounts configured for cross-account access and the results of the last scan performed on each account.</p>
+    pub cross_account_configurations: ::std::option::Option<::std::vec::Vec<crate::types::CrossAccountConfiguration>>,
     _request_id: Option<String>,
 }
 impl GetInvestigationGroupOutput {
@@ -79,9 +81,15 @@ impl GetInvestigationGroupOutput {
     pub fn tag_key_boundaries(&self) -> &[::std::string::String] {
         self.tag_key_boundaries.as_deref().unwrap_or_default()
     }
-    /// <p>Specifies whether Amazon Q Developer operational investigationshas access to change events that are recorded by CloudTrail.</p>
+    /// <p>Specifies whether CloudWatch investigationshas access to change events that are recorded by CloudTrail.</p>
     pub fn is_cloud_trail_event_history_enabled(&self) -> ::std::option::Option<bool> {
         self.is_cloud_trail_event_history_enabled
+    }
+    /// <p>Lists the <code>AWSAccountId</code> of the accounts configured for cross-account access and the results of the last scan performed on each account.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cross_account_configurations.is_none()`.
+    pub fn cross_account_configurations(&self) -> &[crate::types::CrossAccountConfiguration] {
+        self.cross_account_configurations.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for GetInvestigationGroupOutput {
@@ -113,6 +121,7 @@ pub struct GetInvestigationGroupOutputBuilder {
         ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
     pub(crate) tag_key_boundaries: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) is_cloud_trail_event_history_enabled: ::std::option::Option<bool>,
+    pub(crate) cross_account_configurations: ::std::option::Option<::std::vec::Vec<crate::types::CrossAccountConfiguration>>,
     _request_id: Option<String>,
 }
 impl GetInvestigationGroupOutputBuilder {
@@ -291,19 +300,42 @@ impl GetInvestigationGroupOutputBuilder {
     pub fn get_tag_key_boundaries(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.tag_key_boundaries
     }
-    /// <p>Specifies whether Amazon Q Developer operational investigationshas access to change events that are recorded by CloudTrail.</p>
+    /// <p>Specifies whether CloudWatch investigationshas access to change events that are recorded by CloudTrail.</p>
     pub fn is_cloud_trail_event_history_enabled(mut self, input: bool) -> Self {
         self.is_cloud_trail_event_history_enabled = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies whether Amazon Q Developer operational investigationshas access to change events that are recorded by CloudTrail.</p>
+    /// <p>Specifies whether CloudWatch investigationshas access to change events that are recorded by CloudTrail.</p>
     pub fn set_is_cloud_trail_event_history_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_cloud_trail_event_history_enabled = input;
         self
     }
-    /// <p>Specifies whether Amazon Q Developer operational investigationshas access to change events that are recorded by CloudTrail.</p>
+    /// <p>Specifies whether CloudWatch investigationshas access to change events that are recorded by CloudTrail.</p>
     pub fn get_is_cloud_trail_event_history_enabled(&self) -> &::std::option::Option<bool> {
         &self.is_cloud_trail_event_history_enabled
+    }
+    /// Appends an item to `cross_account_configurations`.
+    ///
+    /// To override the contents of this collection use [`set_cross_account_configurations`](Self::set_cross_account_configurations).
+    ///
+    /// <p>Lists the <code>AWSAccountId</code> of the accounts configured for cross-account access and the results of the last scan performed on each account.</p>
+    pub fn cross_account_configurations(mut self, input: crate::types::CrossAccountConfiguration) -> Self {
+        let mut v = self.cross_account_configurations.unwrap_or_default();
+        v.push(input);
+        self.cross_account_configurations = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Lists the <code>AWSAccountId</code> of the accounts configured for cross-account access and the results of the last scan performed on each account.</p>
+    pub fn set_cross_account_configurations(
+        mut self,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::CrossAccountConfiguration>>,
+    ) -> Self {
+        self.cross_account_configurations = input;
+        self
+    }
+    /// <p>Lists the <code>AWSAccountId</code> of the accounts configured for cross-account access and the results of the last scan performed on each account.</p>
+    pub fn get_cross_account_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CrossAccountConfiguration>> {
+        &self.cross_account_configurations
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
@@ -329,6 +361,7 @@ impl GetInvestigationGroupOutputBuilder {
             chatbot_notification_channel: self.chatbot_notification_channel,
             tag_key_boundaries: self.tag_key_boundaries,
             is_cloud_trail_event_history_enabled: self.is_cloud_trail_event_history_enabled,
+            cross_account_configurations: self.cross_account_configurations,
             _request_id: self._request_id,
         }
     }

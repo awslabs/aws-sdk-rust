@@ -7,7 +7,7 @@ pub struct CreatePlayerSessionsInput {
     pub game_session_id: ::std::option::Option<::std::string::String>,
     /// <p>List of unique identifiers for the players to be added.</p>
     pub player_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>Map of string pairs, each specifying a player ID and a set of developer-defined information related to the player. Amazon GameLift does not use this data, so it can be formatted as needed for use in the game. Any player data strings for player IDs that are not included in the <code>PlayerIds</code> parameter are ignored.</p>
+    /// <p>Map of string pairs, each specifying a player ID and a set of developer-defined information related to the player. Amazon GameLift Servers does not use this data, so it can be formatted as needed for use in the game. Any player data strings for player IDs that are not included in the <code>PlayerIds</code> parameter are ignored.</p>
     pub player_data_map: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreatePlayerSessionsInput {
@@ -21,7 +21,7 @@ impl CreatePlayerSessionsInput {
     pub fn player_ids(&self) -> &[::std::string::String] {
         self.player_ids.as_deref().unwrap_or_default()
     }
-    /// <p>Map of string pairs, each specifying a player ID and a set of developer-defined information related to the player. Amazon GameLift does not use this data, so it can be formatted as needed for use in the game. Any player data strings for player IDs that are not included in the <code>PlayerIds</code> parameter are ignored.</p>
+    /// <p>Map of string pairs, each specifying a player ID and a set of developer-defined information related to the player. Amazon GameLift Servers does not use this data, so it can be formatted as needed for use in the game. Any player data strings for player IDs that are not included in the <code>PlayerIds</code> parameter are ignored.</p>
     pub fn player_data_map(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.player_data_map.as_ref()
     }
@@ -90,7 +90,7 @@ impl CreatePlayerSessionsInputBuilder {
     ///
     /// To override the contents of this collection use [`set_player_data_map`](Self::set_player_data_map).
     ///
-    /// <p>Map of string pairs, each specifying a player ID and a set of developer-defined information related to the player. Amazon GameLift does not use this data, so it can be formatted as needed for use in the game. Any player data strings for player IDs that are not included in the <code>PlayerIds</code> parameter are ignored.</p>
+    /// <p>Map of string pairs, each specifying a player ID and a set of developer-defined information related to the player. Amazon GameLift Servers does not use this data, so it can be formatted as needed for use in the game. Any player data strings for player IDs that are not included in the <code>PlayerIds</code> parameter are ignored.</p>
     pub fn player_data_map(
         mut self,
         k: impl ::std::convert::Into<::std::string::String>,
@@ -101,7 +101,7 @@ impl CreatePlayerSessionsInputBuilder {
         self.player_data_map = ::std::option::Option::Some(hash_map);
         self
     }
-    /// <p>Map of string pairs, each specifying a player ID and a set of developer-defined information related to the player. Amazon GameLift does not use this data, so it can be formatted as needed for use in the game. Any player data strings for player IDs that are not included in the <code>PlayerIds</code> parameter are ignored.</p>
+    /// <p>Map of string pairs, each specifying a player ID and a set of developer-defined information related to the player. Amazon GameLift Servers does not use this data, so it can be formatted as needed for use in the game. Any player data strings for player IDs that are not included in the <code>PlayerIds</code> parameter are ignored.</p>
     pub fn set_player_data_map(
         mut self,
         input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
@@ -109,7 +109,7 @@ impl CreatePlayerSessionsInputBuilder {
         self.player_data_map = input;
         self
     }
-    /// <p>Map of string pairs, each specifying a player ID and a set of developer-defined information related to the player. Amazon GameLift does not use this data, so it can be formatted as needed for use in the game. Any player data strings for player IDs that are not included in the <code>PlayerIds</code> parameter are ignored.</p>
+    /// <p>Map of string pairs, each specifying a player ID and a set of developer-defined information related to the player. Amazon GameLift Servers does not use this data, so it can be formatted as needed for use in the game. Any player data strings for player IDs that are not included in the <code>PlayerIds</code> parameter are ignored.</p>
     pub fn get_player_data_map(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.player_data_map
     }

@@ -117,6 +117,12 @@ impl DescribeAccountLimitsFluentBuilder {
         self.config_override = config_override;
         self
     }
+    /// Create a paginator for this request
+    ///
+    /// Paginators are used by calling [`send().await`](crate::operation::describe_account_limits::paginator::DescribeAccountLimitsPaginator::send) which returns a [`PaginationStream`](aws_smithy_async::future::pagination_stream::PaginationStream).
+    pub fn into_paginator(self) -> crate::operation::describe_account_limits::paginator::DescribeAccountLimitsPaginator {
+        crate::operation::describe_account_limits::paginator::DescribeAccountLimitsPaginator::new(self.handle, self.inner)
+    }
     /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
     pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.marker(input.into());

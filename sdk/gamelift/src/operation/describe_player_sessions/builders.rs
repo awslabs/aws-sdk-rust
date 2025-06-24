@@ -32,7 +32,7 @@ impl crate::operation::describe_player_sessions::builders::DescribePlayerSession
 /// <li>
 /// <p>To retrieve all player sessions for a specific player, provide a player ID only.</p></li>
 /// </ul>
-/// <p>To request player sessions, specify either a player session ID, game session ID, or player ID. You can filter this request by player session status. If you provide a specific <code>PlayerSessionId</code> or <code>PlayerId</code>, Amazon GameLift ignores the filter criteria. Use the pagination parameters to retrieve results as a set of sequential pages.</p>
+/// <p>To request player sessions, specify either a player session ID, game session ID, or player ID. You can filter this request by player session status. If you provide a specific <code>PlayerSessionId</code> or <code>PlayerId</code>, Amazon GameLift Servers ignores the filter criteria. Use the pagination parameters to retrieve results as a set of sequential pages.</p>
 /// <p>If successful, a <code>PlayerSession</code> object is returned for each session that matches the request.</p>
 /// <p><b>Related actions</b></p>
 /// <p><a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a></p>

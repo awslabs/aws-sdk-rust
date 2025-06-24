@@ -369,6 +369,10 @@ pub(crate) mod shape_license_operation_failure;
 
 pub(crate) mod shape_managed_resource_summary;
 
+pub(crate) mod shape_product_code_list;
+
+pub(crate) mod shape_product_code_list_item;
+
 pub(crate) mod shape_product_information_filter;
 
 pub(crate) mod shape_provisional_configuration;

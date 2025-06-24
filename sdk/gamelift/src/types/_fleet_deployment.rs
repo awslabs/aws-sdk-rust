@@ -10,11 +10,11 @@ pub struct FleetDeployment {
     pub fleet_id: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier for the version of the game server container group definition that is being deployed.</p>
     pub game_server_binary_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The unique identifier for the version of the game server container group definition to roll back to if deployment fails. Amazon GameLift sets this property to the container group definition version that the fleet used when it was last active.</p>
+    /// <p>The unique identifier for the version of the game server container group definition to roll back to if deployment fails. Amazon GameLift Servers sets this property to the container group definition version that the fleet used when it was last active.</p>
     pub rollback_game_server_binary_arn: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier for the version of the per-instance container group definition that is being deployed.</p>
     pub per_instance_binary_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The unique identifier for the version of the per-instance container group definition to roll back to if deployment fails. Amazon GameLift sets this property to the container group definition version that the fleet used when it was last active.</p>
+    /// <p>The unique identifier for the version of the per-instance container group definition to roll back to if deployment fails. Amazon GameLift Servers sets this property to the container group definition version that the fleet used when it was last active.</p>
     pub rollback_per_instance_binary_arn: ::std::option::Option<::std::string::String>,
     /// <p>The status of fleet deployment activity in the location.</p>
     /// <ul>
@@ -50,7 +50,7 @@ impl FleetDeployment {
     pub fn game_server_binary_arn(&self) -> ::std::option::Option<&str> {
         self.game_server_binary_arn.as_deref()
     }
-    /// <p>The unique identifier for the version of the game server container group definition to roll back to if deployment fails. Amazon GameLift sets this property to the container group definition version that the fleet used when it was last active.</p>
+    /// <p>The unique identifier for the version of the game server container group definition to roll back to if deployment fails. Amazon GameLift Servers sets this property to the container group definition version that the fleet used when it was last active.</p>
     pub fn rollback_game_server_binary_arn(&self) -> ::std::option::Option<&str> {
         self.rollback_game_server_binary_arn.as_deref()
     }
@@ -58,7 +58,7 @@ impl FleetDeployment {
     pub fn per_instance_binary_arn(&self) -> ::std::option::Option<&str> {
         self.per_instance_binary_arn.as_deref()
     }
-    /// <p>The unique identifier for the version of the per-instance container group definition to roll back to if deployment fails. Amazon GameLift sets this property to the container group definition version that the fleet used when it was last active.</p>
+    /// <p>The unique identifier for the version of the per-instance container group definition to roll back to if deployment fails. Amazon GameLift Servers sets this property to the container group definition version that the fleet used when it was last active.</p>
     pub fn rollback_per_instance_binary_arn(&self) -> ::std::option::Option<&str> {
         self.rollback_per_instance_binary_arn.as_deref()
     }
@@ -153,17 +153,17 @@ impl FleetDeploymentBuilder {
     pub fn get_game_server_binary_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.game_server_binary_arn
     }
-    /// <p>The unique identifier for the version of the game server container group definition to roll back to if deployment fails. Amazon GameLift sets this property to the container group definition version that the fleet used when it was last active.</p>
+    /// <p>The unique identifier for the version of the game server container group definition to roll back to if deployment fails. Amazon GameLift Servers sets this property to the container group definition version that the fleet used when it was last active.</p>
     pub fn rollback_game_server_binary_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rollback_game_server_binary_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The unique identifier for the version of the game server container group definition to roll back to if deployment fails. Amazon GameLift sets this property to the container group definition version that the fleet used when it was last active.</p>
+    /// <p>The unique identifier for the version of the game server container group definition to roll back to if deployment fails. Amazon GameLift Servers sets this property to the container group definition version that the fleet used when it was last active.</p>
     pub fn set_rollback_game_server_binary_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.rollback_game_server_binary_arn = input;
         self
     }
-    /// <p>The unique identifier for the version of the game server container group definition to roll back to if deployment fails. Amazon GameLift sets this property to the container group definition version that the fleet used when it was last active.</p>
+    /// <p>The unique identifier for the version of the game server container group definition to roll back to if deployment fails. Amazon GameLift Servers sets this property to the container group definition version that the fleet used when it was last active.</p>
     pub fn get_rollback_game_server_binary_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.rollback_game_server_binary_arn
     }
@@ -181,17 +181,17 @@ impl FleetDeploymentBuilder {
     pub fn get_per_instance_binary_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.per_instance_binary_arn
     }
-    /// <p>The unique identifier for the version of the per-instance container group definition to roll back to if deployment fails. Amazon GameLift sets this property to the container group definition version that the fleet used when it was last active.</p>
+    /// <p>The unique identifier for the version of the per-instance container group definition to roll back to if deployment fails. Amazon GameLift Servers sets this property to the container group definition version that the fleet used when it was last active.</p>
     pub fn rollback_per_instance_binary_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rollback_per_instance_binary_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The unique identifier for the version of the per-instance container group definition to roll back to if deployment fails. Amazon GameLift sets this property to the container group definition version that the fleet used when it was last active.</p>
+    /// <p>The unique identifier for the version of the per-instance container group definition to roll back to if deployment fails. Amazon GameLift Servers sets this property to the container group definition version that the fleet used when it was last active.</p>
     pub fn set_rollback_per_instance_binary_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.rollback_per_instance_binary_arn = input;
         self
     }
-    /// <p>The unique identifier for the version of the per-instance container group definition to roll back to if deployment fails. Amazon GameLift sets this property to the container group definition version that the fleet used when it was last active.</p>
+    /// <p>The unique identifier for the version of the per-instance container group definition to roll back to if deployment fails. Amazon GameLift Servers sets this property to the container group definition version that the fleet used when it was last active.</p>
     pub fn get_rollback_per_instance_binary_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.rollback_per_instance_binary_arn
     }

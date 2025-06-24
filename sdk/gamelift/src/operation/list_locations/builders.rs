@@ -22,7 +22,11 @@ impl crate::operation::list_locations::builders::ListLocationsInputBuilder {
 }
 /// Fluent builder constructing a request to `ListLocations`.
 ///
-/// <p>Lists all custom and Amazon Web Services locations.</p>
+/// <p>Lists all custom and Amazon Web Services locations where Amazon GameLift Servers can host game servers.</p>
+/// <p>Note that if you call this API using a location that doesn't have a service endpoint, such as one that can only be a remote location in a multi-location fleet, the API returns an error.</p>
+/// <p>Consult the table of supported locations in <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-regions.html">Amazon GameLift Servers service locations</a> to identify home Regions that support single and multi-location fleets.</p>
+/// <p><b>Learn more</b></p>
+/// <p><a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-regions.html">Service locations</a></p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListLocationsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -119,17 +123,17 @@ impl ListLocationsFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
     ///
-    /// <p>Filters the list for <code>AWS</code> or <code>CUSTOM</code> locations.</p>
+    /// <p>Filters the list for <code>AWS</code> or <code>CUSTOM</code> locations. Use this parameter to narrow down results to only Amazon Web Services-managed locations (Amazon EC2 or container) or only your custom locations (such as an Amazon GameLift Servers Anywhere fleet).</p>
     pub fn filters(mut self, input: crate::types::LocationFilter) -> Self {
         self.inner = self.inner.filters(input);
         self
     }
-    /// <p>Filters the list for <code>AWS</code> or <code>CUSTOM</code> locations.</p>
+    /// <p>Filters the list for <code>AWS</code> or <code>CUSTOM</code> locations. Use this parameter to narrow down results to only Amazon Web Services-managed locations (Amazon EC2 or container) or only your custom locations (such as an Amazon GameLift Servers Anywhere fleet).</p>
     pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LocationFilter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
-    /// <p>Filters the list for <code>AWS</code> or <code>CUSTOM</code> locations.</p>
+    /// <p>Filters the list for <code>AWS</code> or <code>CUSTOM</code> locations. Use this parameter to narrow down results to only Amazon Web Services-managed locations (Amazon EC2 or container) or only your custom locations (such as an Amazon GameLift Servers Anywhere fleet).</p>
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LocationFilter>> {
         self.inner.get_filters()
     }

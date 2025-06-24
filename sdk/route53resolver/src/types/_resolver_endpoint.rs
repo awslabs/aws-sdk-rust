@@ -20,6 +20,8 @@ pub struct ResolverEndpoint {
     /// <p><code>INBOUND</code>: allows DNS queries to your VPC from your network</p></li>
     /// <li>
     /// <p><code>OUTBOUND</code>: allows DNS queries from your VPC to your network</p></li>
+    /// <li>
+    /// <p><code>INBOUND_DELEGATION</code>: Resolver delegates queries to Route 53 private hosted zones from your network.</p></li>
     /// </ul>
     pub direction: ::std::option::Option<crate::types::ResolverEndpointDirection>,
     /// <p>The number of IP addresses that the Resolver endpoint can use for DNS queries.</p>
@@ -60,7 +62,7 @@ pub struct ResolverEndpoint {
     pub preferred_instance_type: ::std::option::Option<::std::string::String>,
     /// <p>The Resolver endpoint IP address type.</p>
     pub resolver_endpoint_type: ::std::option::Option<crate::types::ResolverEndpointType>,
-    /// <p>Protocols used for the endpoint. DoH-FIPS is applicable for inbound endpoints only.</p>
+    /// <p>Protocols used for the endpoint. DoH-FIPS is applicable for a default inbound endpoints only.</p>
     /// <p>For an inbound endpoint you can apply the protocols as follows:</p>
     /// <ul>
     /// <li>
@@ -76,6 +78,7 @@ pub struct ResolverEndpoint {
     /// <li>
     /// <p>None, which is treated as Do53.</p></li>
     /// </ul>
+    /// <p>For a delegation inbound endpoint you can use Do53 only.</p>
     /// <p>For an outbound endpoint you can apply the protocols as follows:</p>
     /// <ul>
     /// <li>
@@ -118,6 +121,8 @@ impl ResolverEndpoint {
     /// <p><code>INBOUND</code>: allows DNS queries to your VPC from your network</p></li>
     /// <li>
     /// <p><code>OUTBOUND</code>: allows DNS queries from your VPC to your network</p></li>
+    /// <li>
+    /// <p><code>INBOUND_DELEGATION</code>: Resolver delegates queries to Route 53 private hosted zones from your network.</p></li>
     /// </ul>
     pub fn direction(&self) -> ::std::option::Option<&crate::types::ResolverEndpointDirection> {
         self.direction.as_ref()
@@ -178,7 +183,7 @@ impl ResolverEndpoint {
     pub fn resolver_endpoint_type(&self) -> ::std::option::Option<&crate::types::ResolverEndpointType> {
         self.resolver_endpoint_type.as_ref()
     }
-    /// <p>Protocols used for the endpoint. DoH-FIPS is applicable for inbound endpoints only.</p>
+    /// <p>Protocols used for the endpoint. DoH-FIPS is applicable for a default inbound endpoints only.</p>
     /// <p>For an inbound endpoint you can apply the protocols as follows:</p>
     /// <ul>
     /// <li>
@@ -194,6 +199,7 @@ impl ResolverEndpoint {
     /// <li>
     /// <p>None, which is treated as Do53.</p></li>
     /// </ul>
+    /// <p>For a delegation inbound endpoint you can use Do53 only.</p>
     /// <p>For an outbound endpoint you can apply the protocols as follows:</p>
     /// <ul>
     /// <li>
@@ -322,6 +328,8 @@ impl ResolverEndpointBuilder {
     /// <p><code>INBOUND</code>: allows DNS queries to your VPC from your network</p></li>
     /// <li>
     /// <p><code>OUTBOUND</code>: allows DNS queries from your VPC to your network</p></li>
+    /// <li>
+    /// <p><code>INBOUND_DELEGATION</code>: Resolver delegates queries to Route 53 private hosted zones from your network.</p></li>
     /// </ul>
     pub fn direction(mut self, input: crate::types::ResolverEndpointDirection) -> Self {
         self.direction = ::std::option::Option::Some(input);
@@ -333,6 +341,8 @@ impl ResolverEndpointBuilder {
     /// <p><code>INBOUND</code>: allows DNS queries to your VPC from your network</p></li>
     /// <li>
     /// <p><code>OUTBOUND</code>: allows DNS queries from your VPC to your network</p></li>
+    /// <li>
+    /// <p><code>INBOUND_DELEGATION</code>: Resolver delegates queries to Route 53 private hosted zones from your network.</p></li>
     /// </ul>
     pub fn set_direction(mut self, input: ::std::option::Option<crate::types::ResolverEndpointDirection>) -> Self {
         self.direction = input;
@@ -344,6 +354,8 @@ impl ResolverEndpointBuilder {
     /// <p><code>INBOUND</code>: allows DNS queries to your VPC from your network</p></li>
     /// <li>
     /// <p><code>OUTBOUND</code>: allows DNS queries from your VPC to your network</p></li>
+    /// <li>
+    /// <p><code>INBOUND_DELEGATION</code>: Resolver delegates queries to Route 53 private hosted zones from your network.</p></li>
     /// </ul>
     pub fn get_direction(&self) -> &::std::option::Option<crate::types::ResolverEndpointDirection> {
         &self.direction
@@ -538,7 +550,7 @@ impl ResolverEndpointBuilder {
     ///
     /// To override the contents of this collection use [`set_protocols`](Self::set_protocols).
     ///
-    /// <p>Protocols used for the endpoint. DoH-FIPS is applicable for inbound endpoints only.</p>
+    /// <p>Protocols used for the endpoint. DoH-FIPS is applicable for a default inbound endpoints only.</p>
     /// <p>For an inbound endpoint you can apply the protocols as follows:</p>
     /// <ul>
     /// <li>
@@ -554,6 +566,7 @@ impl ResolverEndpointBuilder {
     /// <li>
     /// <p>None, which is treated as Do53.</p></li>
     /// </ul>
+    /// <p>For a delegation inbound endpoint you can use Do53 only.</p>
     /// <p>For an outbound endpoint you can apply the protocols as follows:</p>
     /// <ul>
     /// <li>
@@ -571,7 +584,7 @@ impl ResolverEndpointBuilder {
         self.protocols = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Protocols used for the endpoint. DoH-FIPS is applicable for inbound endpoints only.</p>
+    /// <p>Protocols used for the endpoint. DoH-FIPS is applicable for a default inbound endpoints only.</p>
     /// <p>For an inbound endpoint you can apply the protocols as follows:</p>
     /// <ul>
     /// <li>
@@ -587,6 +600,7 @@ impl ResolverEndpointBuilder {
     /// <li>
     /// <p>None, which is treated as Do53.</p></li>
     /// </ul>
+    /// <p>For a delegation inbound endpoint you can use Do53 only.</p>
     /// <p>For an outbound endpoint you can apply the protocols as follows:</p>
     /// <ul>
     /// <li>
@@ -602,7 +616,7 @@ impl ResolverEndpointBuilder {
         self.protocols = input;
         self
     }
-    /// <p>Protocols used for the endpoint. DoH-FIPS is applicable for inbound endpoints only.</p>
+    /// <p>Protocols used for the endpoint. DoH-FIPS is applicable for a default inbound endpoints only.</p>
     /// <p>For an inbound endpoint you can apply the protocols as follows:</p>
     /// <ul>
     /// <li>
@@ -618,6 +632,7 @@ impl ResolverEndpointBuilder {
     /// <li>
     /// <p>None, which is treated as Do53.</p></li>
     /// </ul>
+    /// <p>For a delegation inbound endpoint you can use Do53 only.</p>
     /// <p>For an outbound endpoint you can apply the protocols as follows:</p>
     /// <ul>
     /// <li>

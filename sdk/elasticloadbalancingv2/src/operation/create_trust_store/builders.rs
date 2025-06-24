@@ -23,6 +23,7 @@ impl crate::operation::create_trust_store::builders::CreateTrustStoreInputBuilde
 /// Fluent builder constructing a request to `CreateTrustStore`.
 ///
 /// <p>Creates a trust store.</p>
+/// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/mutual-authentication.html">Mutual TLS for Application Load Balancers</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateTrustStoreFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

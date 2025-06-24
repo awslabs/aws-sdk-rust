@@ -183,6 +183,56 @@ impl From<crate::operation::create_evaluation_job::CreateEvaluationJobError> for
         }
     }
 }
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::create_foundation_model_agreement::CreateFoundationModelAgreementError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::create_foundation_model_agreement::CreateFoundationModelAgreementError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_foundation_model_agreement::CreateFoundationModelAgreementError> for Error {
+    fn from(err: crate::operation::create_foundation_model_agreement::CreateFoundationModelAgreementError) -> Self {
+        match err {
+            crate::operation::create_foundation_model_agreement::CreateFoundationModelAgreementError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::create_foundation_model_agreement::CreateFoundationModelAgreementError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::create_foundation_model_agreement::CreateFoundationModelAgreementError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::create_foundation_model_agreement::CreateFoundationModelAgreementError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::create_foundation_model_agreement::CreateFoundationModelAgreementError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::create_foundation_model_agreement::CreateFoundationModelAgreementError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::create_foundation_model_agreement::CreateFoundationModelAgreementError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_guardrail::CreateGuardrailError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -620,6 +670,56 @@ impl From<crate::operation::delete_custom_model::DeleteCustomModelError> for Err
         }
     }
 }
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::delete_foundation_model_agreement::DeleteFoundationModelAgreementError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::delete_foundation_model_agreement::DeleteFoundationModelAgreementError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_foundation_model_agreement::DeleteFoundationModelAgreementError> for Error {
+    fn from(err: crate::operation::delete_foundation_model_agreement::DeleteFoundationModelAgreementError) -> Self {
+        match err {
+            crate::operation::delete_foundation_model_agreement::DeleteFoundationModelAgreementError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::delete_foundation_model_agreement::DeleteFoundationModelAgreementError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::delete_foundation_model_agreement::DeleteFoundationModelAgreementError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::delete_foundation_model_agreement::DeleteFoundationModelAgreementError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::delete_foundation_model_agreement::DeleteFoundationModelAgreementError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::delete_foundation_model_agreement::DeleteFoundationModelAgreementError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::delete_foundation_model_agreement::DeleteFoundationModelAgreementError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_guardrail::DeleteGuardrailError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1005,6 +1105,53 @@ impl From<crate::operation::get_foundation_model::GetFoundationModelError> for E
         }
     }
 }
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_foundation_model_availability::GetFoundationModelAvailabilityError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_foundation_model_availability::GetFoundationModelAvailabilityError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_foundation_model_availability::GetFoundationModelAvailabilityError> for Error {
+    fn from(err: crate::operation::get_foundation_model_availability::GetFoundationModelAvailabilityError) -> Self {
+        match err {
+            crate::operation::get_foundation_model_availability::GetFoundationModelAvailabilityError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::get_foundation_model_availability::GetFoundationModelAvailabilityError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::get_foundation_model_availability::GetFoundationModelAvailabilityError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_foundation_model_availability::GetFoundationModelAvailabilityError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::get_foundation_model_availability::GetFoundationModelAvailabilityError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::get_foundation_model_availability::GetFoundationModelAvailabilityError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_guardrail::GetGuardrailError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1370,6 +1517,42 @@ impl From<crate::operation::get_provisioned_model_throughput::GetProvisionedMode
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_use_case_for_model_access::GetUseCaseForModelAccessError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_use_case_for_model_access::GetUseCaseForModelAccessError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_use_case_for_model_access::GetUseCaseForModelAccessError> for Error {
+    fn from(err: crate::operation::get_use_case_for_model_access::GetUseCaseForModelAccessError) -> Self {
+        match err {
+            crate::operation::get_use_case_for_model_access::GetUseCaseForModelAccessError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::get_use_case_for_model_access::GetUseCaseForModelAccessError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_use_case_for_model_access::GetUseCaseForModelAccessError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::get_use_case_for_model_access::GetUseCaseForModelAccessError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::get_use_case_for_model_access::GetUseCaseForModelAccessError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_custom_models::ListCustomModelsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1417,6 +1600,55 @@ impl From<crate::operation::list_evaluation_jobs::ListEvaluationJobsError> for E
             crate::operation::list_evaluation_jobs::ListEvaluationJobsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::list_evaluation_jobs::ListEvaluationJobsError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::list_evaluation_jobs::ListEvaluationJobsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_foundation_model_agreement_offers::ListFoundationModelAgreementOffersError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_foundation_model_agreement_offers::ListFoundationModelAgreementOffersError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_foundation_model_agreement_offers::ListFoundationModelAgreementOffersError> for Error {
+    fn from(err: crate::operation::list_foundation_model_agreement_offers::ListFoundationModelAgreementOffersError) -> Self {
+        match err {
+            crate::operation::list_foundation_model_agreement_offers::ListFoundationModelAgreementOffersError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::list_foundation_model_agreement_offers::ListFoundationModelAgreementOffersError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::list_foundation_model_agreement_offers::ListFoundationModelAgreementOffersError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::list_foundation_model_agreement_offers::ListFoundationModelAgreementOffersError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::list_foundation_model_agreement_offers::ListFoundationModelAgreementOffersError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::list_foundation_model_agreement_offers::ListFoundationModelAgreementOffersError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
         }
     }
 }
@@ -1842,6 +2074,42 @@ impl From<crate::operation::put_model_invocation_logging_configuration::PutModel
             crate::operation::put_model_invocation_logging_configuration::PutModelInvocationLoggingConfigurationError::Unhandled(inner) => {
                 Error::Unhandled(inner)
             }
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::put_use_case_for_model_access::PutUseCaseForModelAccessError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::put_use_case_for_model_access::PutUseCaseForModelAccessError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::put_use_case_for_model_access::PutUseCaseForModelAccessError> for Error {
+    fn from(err: crate::operation::put_use_case_for_model_access::PutUseCaseForModelAccessError) -> Self {
+        match err {
+            crate::operation::put_use_case_for_model_access::PutUseCaseForModelAccessError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::put_use_case_for_model_access::PutUseCaseForModelAccessError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::put_use_case_for_model_access::PutUseCaseForModelAccessError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::put_use_case_for_model_access::PutUseCaseForModelAccessError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::put_use_case_for_model_access::PutUseCaseForModelAccessError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

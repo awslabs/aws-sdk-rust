@@ -4,9 +4,9 @@
 /// <p>By default, a queue makes game session placements based on the following criteria:</p>
 /// <ul>
 /// <li>
-/// <p>When a game session request does not include player latency data, Amazon GameLift places game sessions based on the following priorities: (1) the queue's default destination order, and (2) for multi-location fleets, an alphabetic list of locations.</p></li>
+/// <p>When a game session request does not include player latency data, Amazon GameLift Servers places game sessions based on the following priorities: (1) the queue's default destination order, and (2) for multi-location fleets, an alphabetic list of locations.</p></li>
 /// <li>
-/// <p>When a game session request includes player latency data, Amazon GameLift re-orders the queue's destinations to make placements where the average player latency is lowest. It reorders based the following priorities: (1) the lowest average latency across all players, (2) the lowest hosting cost, (3) the queue's default destination order, and (4) for multi-location fleets, an alphabetic list of locations.</p></li>
+/// <p>When a game session request includes player latency data, Amazon GameLift Servers re-orders the queue's destinations to make placements where the average player latency is lowest. It reorders based the following priorities: (1) the lowest average latency across all players, (2) the lowest hosting cost, (3) the queue's default destination order, and (4) for multi-location fleets, an alphabetic list of locations.</p></li>
 /// </ul>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
@@ -14,36 +14,36 @@ pub struct PriorityConfiguration {
     /// <p>A custom sequence to use when prioritizing where to place new game sessions. Each priority type is listed once.</p>
     /// <ul>
     /// <li>
-    /// <p><code>LATENCY</code> -- Amazon GameLift prioritizes locations where the average player latency is lowest. Player latency data is provided in each game session placement request.</p></li>
+    /// <p><code>LATENCY</code> -- Amazon GameLift Servers prioritizes locations where the average player latency is lowest. Player latency data is provided in each game session placement request.</p></li>
     /// <li>
-    /// <p><code>COST</code> -- Amazon GameLift prioritizes queue destinations with the lowest current hosting costs. Cost is evaluated based on the destination's location, instance type, and fleet type (Spot or On-Demand).</p></li>
+    /// <p><code>COST</code> -- Amazon GameLift Servers prioritizes queue destinations with the lowest current hosting costs. Cost is evaluated based on the destination's location, instance type, and fleet type (Spot or On-Demand).</p></li>
     /// <li>
-    /// <p><code>DESTINATION</code> -- Amazon GameLift prioritizes based on the list order of destinations in the queue configuration.</p></li>
+    /// <p><code>DESTINATION</code> -- Amazon GameLift Servers prioritizes based on the list order of destinations in the queue configuration.</p></li>
     /// <li>
-    /// <p><code>LOCATION</code> -- Amazon GameLift prioritizes based on the provided order of locations, as defined in <code>LocationOrder</code>.</p></li>
+    /// <p><code>LOCATION</code> -- Amazon GameLift Servers prioritizes based on the provided order of locations, as defined in <code>LocationOrder</code>.</p></li>
     /// </ul>
     pub priority_order: ::std::option::Option<::std::vec::Vec<crate::types::PriorityType>>,
-    /// <p>The prioritization order to use for fleet locations, when the <code>PriorityOrder</code> property includes <code>LOCATION</code>. Locations can include Amazon Web Services Region codes (such as <code>us-west-2</code>), local zones, and custom locations (for Anywhere fleets). Each location must be listed only once. For details, see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-regions.html">Amazon GameLift service locations.</a></p>
+    /// <p>The prioritization order to use for fleet locations, when the <code>PriorityOrder</code> property includes <code>LOCATION</code>. Locations can include Amazon Web Services Region codes (such as <code>us-west-2</code>), local zones, and custom locations (for Anywhere fleets). Each location must be listed only once. For details, see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-regions.html">Amazon GameLift Servers service locations.</a></p>
     pub location_order: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl PriorityConfiguration {
     /// <p>A custom sequence to use when prioritizing where to place new game sessions. Each priority type is listed once.</p>
     /// <ul>
     /// <li>
-    /// <p><code>LATENCY</code> -- Amazon GameLift prioritizes locations where the average player latency is lowest. Player latency data is provided in each game session placement request.</p></li>
+    /// <p><code>LATENCY</code> -- Amazon GameLift Servers prioritizes locations where the average player latency is lowest. Player latency data is provided in each game session placement request.</p></li>
     /// <li>
-    /// <p><code>COST</code> -- Amazon GameLift prioritizes queue destinations with the lowest current hosting costs. Cost is evaluated based on the destination's location, instance type, and fleet type (Spot or On-Demand).</p></li>
+    /// <p><code>COST</code> -- Amazon GameLift Servers prioritizes queue destinations with the lowest current hosting costs. Cost is evaluated based on the destination's location, instance type, and fleet type (Spot or On-Demand).</p></li>
     /// <li>
-    /// <p><code>DESTINATION</code> -- Amazon GameLift prioritizes based on the list order of destinations in the queue configuration.</p></li>
+    /// <p><code>DESTINATION</code> -- Amazon GameLift Servers prioritizes based on the list order of destinations in the queue configuration.</p></li>
     /// <li>
-    /// <p><code>LOCATION</code> -- Amazon GameLift prioritizes based on the provided order of locations, as defined in <code>LocationOrder</code>.</p></li>
+    /// <p><code>LOCATION</code> -- Amazon GameLift Servers prioritizes based on the provided order of locations, as defined in <code>LocationOrder</code>.</p></li>
     /// </ul>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.priority_order.is_none()`.
     pub fn priority_order(&self) -> &[crate::types::PriorityType] {
         self.priority_order.as_deref().unwrap_or_default()
     }
-    /// <p>The prioritization order to use for fleet locations, when the <code>PriorityOrder</code> property includes <code>LOCATION</code>. Locations can include Amazon Web Services Region codes (such as <code>us-west-2</code>), local zones, and custom locations (for Anywhere fleets). Each location must be listed only once. For details, see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-regions.html">Amazon GameLift service locations.</a></p>
+    /// <p>The prioritization order to use for fleet locations, when the <code>PriorityOrder</code> property includes <code>LOCATION</code>. Locations can include Amazon Web Services Region codes (such as <code>us-west-2</code>), local zones, and custom locations (for Anywhere fleets). Each location must be listed only once. For details, see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-regions.html">Amazon GameLift Servers service locations.</a></p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.location_order.is_none()`.
     pub fn location_order(&self) -> &[::std::string::String] {
@@ -72,13 +72,13 @@ impl PriorityConfigurationBuilder {
     /// <p>A custom sequence to use when prioritizing where to place new game sessions. Each priority type is listed once.</p>
     /// <ul>
     /// <li>
-    /// <p><code>LATENCY</code> -- Amazon GameLift prioritizes locations where the average player latency is lowest. Player latency data is provided in each game session placement request.</p></li>
+    /// <p><code>LATENCY</code> -- Amazon GameLift Servers prioritizes locations where the average player latency is lowest. Player latency data is provided in each game session placement request.</p></li>
     /// <li>
-    /// <p><code>COST</code> -- Amazon GameLift prioritizes queue destinations with the lowest current hosting costs. Cost is evaluated based on the destination's location, instance type, and fleet type (Spot or On-Demand).</p></li>
+    /// <p><code>COST</code> -- Amazon GameLift Servers prioritizes queue destinations with the lowest current hosting costs. Cost is evaluated based on the destination's location, instance type, and fleet type (Spot or On-Demand).</p></li>
     /// <li>
-    /// <p><code>DESTINATION</code> -- Amazon GameLift prioritizes based on the list order of destinations in the queue configuration.</p></li>
+    /// <p><code>DESTINATION</code> -- Amazon GameLift Servers prioritizes based on the list order of destinations in the queue configuration.</p></li>
     /// <li>
-    /// <p><code>LOCATION</code> -- Amazon GameLift prioritizes based on the provided order of locations, as defined in <code>LocationOrder</code>.</p></li>
+    /// <p><code>LOCATION</code> -- Amazon GameLift Servers prioritizes based on the provided order of locations, as defined in <code>LocationOrder</code>.</p></li>
     /// </ul>
     pub fn priority_order(mut self, input: crate::types::PriorityType) -> Self {
         let mut v = self.priority_order.unwrap_or_default();
@@ -89,13 +89,13 @@ impl PriorityConfigurationBuilder {
     /// <p>A custom sequence to use when prioritizing where to place new game sessions. Each priority type is listed once.</p>
     /// <ul>
     /// <li>
-    /// <p><code>LATENCY</code> -- Amazon GameLift prioritizes locations where the average player latency is lowest. Player latency data is provided in each game session placement request.</p></li>
+    /// <p><code>LATENCY</code> -- Amazon GameLift Servers prioritizes locations where the average player latency is lowest. Player latency data is provided in each game session placement request.</p></li>
     /// <li>
-    /// <p><code>COST</code> -- Amazon GameLift prioritizes queue destinations with the lowest current hosting costs. Cost is evaluated based on the destination's location, instance type, and fleet type (Spot or On-Demand).</p></li>
+    /// <p><code>COST</code> -- Amazon GameLift Servers prioritizes queue destinations with the lowest current hosting costs. Cost is evaluated based on the destination's location, instance type, and fleet type (Spot or On-Demand).</p></li>
     /// <li>
-    /// <p><code>DESTINATION</code> -- Amazon GameLift prioritizes based on the list order of destinations in the queue configuration.</p></li>
+    /// <p><code>DESTINATION</code> -- Amazon GameLift Servers prioritizes based on the list order of destinations in the queue configuration.</p></li>
     /// <li>
-    /// <p><code>LOCATION</code> -- Amazon GameLift prioritizes based on the provided order of locations, as defined in <code>LocationOrder</code>.</p></li>
+    /// <p><code>LOCATION</code> -- Amazon GameLift Servers prioritizes based on the provided order of locations, as defined in <code>LocationOrder</code>.</p></li>
     /// </ul>
     pub fn set_priority_order(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PriorityType>>) -> Self {
         self.priority_order = input;
@@ -104,13 +104,13 @@ impl PriorityConfigurationBuilder {
     /// <p>A custom sequence to use when prioritizing where to place new game sessions. Each priority type is listed once.</p>
     /// <ul>
     /// <li>
-    /// <p><code>LATENCY</code> -- Amazon GameLift prioritizes locations where the average player latency is lowest. Player latency data is provided in each game session placement request.</p></li>
+    /// <p><code>LATENCY</code> -- Amazon GameLift Servers prioritizes locations where the average player latency is lowest. Player latency data is provided in each game session placement request.</p></li>
     /// <li>
-    /// <p><code>COST</code> -- Amazon GameLift prioritizes queue destinations with the lowest current hosting costs. Cost is evaluated based on the destination's location, instance type, and fleet type (Spot or On-Demand).</p></li>
+    /// <p><code>COST</code> -- Amazon GameLift Servers prioritizes queue destinations with the lowest current hosting costs. Cost is evaluated based on the destination's location, instance type, and fleet type (Spot or On-Demand).</p></li>
     /// <li>
-    /// <p><code>DESTINATION</code> -- Amazon GameLift prioritizes based on the list order of destinations in the queue configuration.</p></li>
+    /// <p><code>DESTINATION</code> -- Amazon GameLift Servers prioritizes based on the list order of destinations in the queue configuration.</p></li>
     /// <li>
-    /// <p><code>LOCATION</code> -- Amazon GameLift prioritizes based on the provided order of locations, as defined in <code>LocationOrder</code>.</p></li>
+    /// <p><code>LOCATION</code> -- Amazon GameLift Servers prioritizes based on the provided order of locations, as defined in <code>LocationOrder</code>.</p></li>
     /// </ul>
     pub fn get_priority_order(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PriorityType>> {
         &self.priority_order
@@ -119,19 +119,19 @@ impl PriorityConfigurationBuilder {
     ///
     /// To override the contents of this collection use [`set_location_order`](Self::set_location_order).
     ///
-    /// <p>The prioritization order to use for fleet locations, when the <code>PriorityOrder</code> property includes <code>LOCATION</code>. Locations can include Amazon Web Services Region codes (such as <code>us-west-2</code>), local zones, and custom locations (for Anywhere fleets). Each location must be listed only once. For details, see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-regions.html">Amazon GameLift service locations.</a></p>
+    /// <p>The prioritization order to use for fleet locations, when the <code>PriorityOrder</code> property includes <code>LOCATION</code>. Locations can include Amazon Web Services Region codes (such as <code>us-west-2</code>), local zones, and custom locations (for Anywhere fleets). Each location must be listed only once. For details, see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-regions.html">Amazon GameLift Servers service locations.</a></p>
     pub fn location_order(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.location_order.unwrap_or_default();
         v.push(input.into());
         self.location_order = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The prioritization order to use for fleet locations, when the <code>PriorityOrder</code> property includes <code>LOCATION</code>. Locations can include Amazon Web Services Region codes (such as <code>us-west-2</code>), local zones, and custom locations (for Anywhere fleets). Each location must be listed only once. For details, see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-regions.html">Amazon GameLift service locations.</a></p>
+    /// <p>The prioritization order to use for fleet locations, when the <code>PriorityOrder</code> property includes <code>LOCATION</code>. Locations can include Amazon Web Services Region codes (such as <code>us-west-2</code>), local zones, and custom locations (for Anywhere fleets). Each location must be listed only once. For details, see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-regions.html">Amazon GameLift Servers service locations.</a></p>
     pub fn set_location_order(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.location_order = input;
         self
     }
-    /// <p>The prioritization order to use for fleet locations, when the <code>PriorityOrder</code> property includes <code>LOCATION</code>. Locations can include Amazon Web Services Region codes (such as <code>us-west-2</code>), local zones, and custom locations (for Anywhere fleets). Each location must be listed only once. For details, see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-regions.html">Amazon GameLift service locations.</a></p>
+    /// <p>The prioritization order to use for fleet locations, when the <code>PriorityOrder</code> property includes <code>LOCATION</code>. Locations can include Amazon Web Services Region codes (such as <code>us-west-2</code>), local zones, and custom locations (for Anywhere fleets). Each location must be listed only once. For details, see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-regions.html">Amazon GameLift Servers service locations.</a></p>
     pub fn get_location_order(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.location_order
     }

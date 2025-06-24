@@ -1300,6 +1300,41 @@ impl CreateDBInstanceReadReplicaFluentBuilder {
     pub fn get_enable_customer_owned_ip(&self) -> &::std::option::Option<bool> {
         self.inner.get_enable_customer_owned_ip()
     }
+    /// <p>The location where RDS stores automated backups and manual snapshots.</p>
+    /// <p>Valid Values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>local</code> for Dedicated Local Zones</p></li>
+    /// <li>
+    /// <p><code>region</code> for Amazon Web Services Region</p></li>
+    /// </ul>
+    pub fn backup_target(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.backup_target(input.into());
+        self
+    }
+    /// <p>The location where RDS stores automated backups and manual snapshots.</p>
+    /// <p>Valid Values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>local</code> for Dedicated Local Zones</p></li>
+    /// <li>
+    /// <p><code>region</code> for Amazon Web Services Region</p></li>
+    /// </ul>
+    pub fn set_backup_target(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_backup_target(input);
+        self
+    }
+    /// <p>The location where RDS stores automated backups and manual snapshots.</p>
+    /// <p>Valid Values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>local</code> for Dedicated Local Zones</p></li>
+    /// <li>
+    /// <p><code>region</code> for Amazon Web Services Region</p></li>
+    /// </ul>
+    pub fn get_backup_target(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_backup_target()
+    }
     /// <p>The amount of storage (in gibibytes) to allocate initially for the read replica. Follow the allocation rules specified in <code>CreateDBInstance</code>.</p>
     /// <p>This setting isn't valid for RDS for SQL Server.</p><note>
     /// <p>Be sure to allocate enough storage for your read replica so that the create operation can succeed. You can also allocate additional storage for future growth.</p>

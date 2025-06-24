@@ -22,10 +22,10 @@ impl crate::operation::register_compute::builders::RegisterComputeInputBuilder {
 }
 /// Fluent builder constructing a request to `RegisterCompute`.
 ///
-/// <p>Registers a compute resource in an Amazon GameLift Anywhere fleet.</p>
-/// <p>For an Anywhere fleet that's running the Amazon GameLift Agent, the Agent handles all compute registry tasks for you. For an Anywhere fleet that doesn't use the Agent, call this operation to register fleet computes.</p>
+/// <p>Registers a compute resource in an Amazon GameLift Servers Anywhere fleet.</p>
+/// <p>For an Anywhere fleet that's running the Amazon GameLift Servers Agent, the Agent handles all compute registry tasks for you. For an Anywhere fleet that doesn't use the Agent, call this operation to register fleet computes.</p>
 /// <p>To register a compute, give the compute a name (must be unique within the fleet) and specify the compute resource's DNS name or IP address. Provide a fleet ID and a fleet location to associate with the compute being registered. You can optionally include the path to a TLS certificate on the compute resource.</p>
-/// <p>If successful, this operation returns compute details, including an Amazon GameLift SDK endpoint or Agent endpoint. Game server processes running on the compute can use this endpoint to communicate with the Amazon GameLift service. Each server process includes the SDK endpoint in its call to the Amazon GameLift server SDK action <code>InitSDK()</code>.</p>
+/// <p>If successful, this operation returns compute details, including an Amazon GameLift Servers SDK endpoint or Agent endpoint. Game server processes running on the compute can use this endpoint to communicate with the Amazon GameLift Servers service. Each server process includes the SDK endpoint in its call to the Amazon GameLift Servers server SDK action <code>InitSDK()</code>.</p>
 /// <p>To view compute details, call <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeCompute.html">DescribeCompute</a> with the compute name.</p>
 /// <p><b>Learn more</b></p>
 /// <ul>
@@ -149,45 +149,45 @@ impl RegisterComputeFluentBuilder {
     pub fn get_compute_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_compute_name()
     }
-    /// <p>The path to a TLS certificate on your compute resource. Amazon GameLift doesn't validate the path and certificate.</p>
+    /// <p>The path to a TLS certificate on your compute resource. Amazon GameLift Servers doesn't validate the path and certificate.</p>
     pub fn certificate_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.certificate_path(input.into());
         self
     }
-    /// <p>The path to a TLS certificate on your compute resource. Amazon GameLift doesn't validate the path and certificate.</p>
+    /// <p>The path to a TLS certificate on your compute resource. Amazon GameLift Servers doesn't validate the path and certificate.</p>
     pub fn set_certificate_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_certificate_path(input);
         self
     }
-    /// <p>The path to a TLS certificate on your compute resource. Amazon GameLift doesn't validate the path and certificate.</p>
+    /// <p>The path to a TLS certificate on your compute resource. Amazon GameLift Servers doesn't validate the path and certificate.</p>
     pub fn get_certificate_path(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_certificate_path()
     }
-    /// <p>The DNS name of the compute resource. Amazon GameLift requires either a DNS name or IP address.</p>
+    /// <p>The DNS name of the compute resource. Amazon GameLift Servers requires either a DNS name or IP address.</p>
     pub fn dns_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.dns_name(input.into());
         self
     }
-    /// <p>The DNS name of the compute resource. Amazon GameLift requires either a DNS name or IP address.</p>
+    /// <p>The DNS name of the compute resource. Amazon GameLift Servers requires either a DNS name or IP address.</p>
     pub fn set_dns_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_dns_name(input);
         self
     }
-    /// <p>The DNS name of the compute resource. Amazon GameLift requires either a DNS name or IP address.</p>
+    /// <p>The DNS name of the compute resource. Amazon GameLift Servers requires either a DNS name or IP address.</p>
     pub fn get_dns_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_dns_name()
     }
-    /// <p>The IP address of the compute resource. Amazon GameLift requires either a DNS name or IP address. When registering an Anywhere fleet, an IP address is required.</p>
+    /// <p>The IP address of the compute resource. Amazon GameLift Servers requires either a DNS name or IP address. When registering an Anywhere fleet, an IP address is required.</p>
     pub fn ip_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.ip_address(input.into());
         self
     }
-    /// <p>The IP address of the compute resource. Amazon GameLift requires either a DNS name or IP address. When registering an Anywhere fleet, an IP address is required.</p>
+    /// <p>The IP address of the compute resource. Amazon GameLift Servers requires either a DNS name or IP address. When registering an Anywhere fleet, an IP address is required.</p>
     pub fn set_ip_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_ip_address(input);
         self
     }
-    /// <p>The IP address of the compute resource. Amazon GameLift requires either a DNS name or IP address. When registering an Anywhere fleet, an IP address is required.</p>
+    /// <p>The IP address of the compute resource. Amazon GameLift Servers requires either a DNS name or IP address. When registering an Anywhere fleet, an IP address is required.</p>
     pub fn get_ip_address(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_ip_address()
     }

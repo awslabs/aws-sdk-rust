@@ -31,7 +31,7 @@ pub struct CreateSnapshotsInput {
     /// <li>
     /// <p>To create local snapshots in the same Local Zone as the source instance, specify <code>local</code>.</p></li>
     /// <li>
-    /// <p>To create a regional snapshots in the parent Region of the Local Zone, specify <code>regional</code> or omit this parameter.</p></li>
+    /// <p>To create regional snapshots in the parent Region of the Local Zone, specify <code>regional</code> or omit this parameter.</p></li>
     /// </ul>
     /// <p>Default value: <code>regional</code></p>
     pub location: ::std::option::Option<crate::types::SnapshotLocationEnum>,
@@ -79,7 +79,7 @@ impl CreateSnapshotsInput {
     /// <li>
     /// <p>To create local snapshots in the same Local Zone as the source instance, specify <code>local</code>.</p></li>
     /// <li>
-    /// <p>To create a regional snapshots in the parent Region of the Local Zone, specify <code>regional</code> or omit this parameter.</p></li>
+    /// <p>To create regional snapshots in the parent Region of the Local Zone, specify <code>regional</code> or omit this parameter.</p></li>
     /// </ul>
     /// <p>Default value: <code>regional</code></p>
     pub fn location(&self) -> ::std::option::Option<&crate::types::SnapshotLocationEnum> {
@@ -231,7 +231,7 @@ impl CreateSnapshotsInputBuilder {
     /// <li>
     /// <p>To create local snapshots in the same Local Zone as the source instance, specify <code>local</code>.</p></li>
     /// <li>
-    /// <p>To create a regional snapshots in the parent Region of the Local Zone, specify <code>regional</code> or omit this parameter.</p></li>
+    /// <p>To create regional snapshots in the parent Region of the Local Zone, specify <code>regional</code> or omit this parameter.</p></li>
     /// </ul>
     /// <p>Default value: <code>regional</code></p>
     pub fn location(mut self, input: crate::types::SnapshotLocationEnum) -> Self {
@@ -245,7 +245,7 @@ impl CreateSnapshotsInputBuilder {
     /// <li>
     /// <p>To create local snapshots in the same Local Zone as the source instance, specify <code>local</code>.</p></li>
     /// <li>
-    /// <p>To create a regional snapshots in the parent Region of the Local Zone, specify <code>regional</code> or omit this parameter.</p></li>
+    /// <p>To create regional snapshots in the parent Region of the Local Zone, specify <code>regional</code> or omit this parameter.</p></li>
     /// </ul>
     /// <p>Default value: <code>regional</code></p>
     pub fn set_location(mut self, input: ::std::option::Option<crate::types::SnapshotLocationEnum>) -> Self {
@@ -259,7 +259,7 @@ impl CreateSnapshotsInputBuilder {
     /// <li>
     /// <p>To create local snapshots in the same Local Zone as the source instance, specify <code>local</code>.</p></li>
     /// <li>
-    /// <p>To create a regional snapshots in the parent Region of the Local Zone, specify <code>regional</code> or omit this parameter.</p></li>
+    /// <p>To create regional snapshots in the parent Region of the Local Zone, specify <code>regional</code> or omit this parameter.</p></li>
     /// </ul>
     /// <p>Default value: <code>regional</code></p>
     pub fn get_location(&self) -> &::std::option::Option<crate::types::SnapshotLocationEnum> {

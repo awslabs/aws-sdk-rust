@@ -25,7 +25,7 @@ impl crate::operation::describe_script::builders::DescribeScriptInputBuilder {
 /// <p>Retrieves properties for a Realtime script.</p>
 /// <p>To request a script record, specify the script ID. If successful, an object containing the script properties is returned.</p>
 /// <p><b>Learn more</b></p>
-/// <p><a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/realtime-intro.html">Amazon GameLift Amazon GameLift Realtime</a></p>
+/// <p><a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/realtime-intro.html">Amazon GameLift Servers Amazon GameLift Servers Realtime</a></p>
 /// <p><b>Related actions</b></p>
 /// <p><a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a></p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

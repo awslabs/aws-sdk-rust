@@ -15,13 +15,13 @@ pub struct GameServerContainerDefinition {
     pub mount_points: ::std::option::Option<::std::vec::Vec<crate::types::ContainerMountPoint>>,
     /// <p>A set of environment variables that's passed to the container on startup. See the <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ContainerDefinition.html#ECS-Type-ContainerDefinition-environment">ContainerDefinition::environment</a> parameter in the <i>Amazon Elastic Container Service API Reference</i>.</p>
     pub environment_override: ::std::option::Option<::std::vec::Vec<crate::types::ContainerEnvironment>>,
-    /// <p>The URI to the image that Amazon GameLift uses when deploying this container to a container fleet. For a more specific identifier, see <code>ResolvedImageDigest</code>.</p>
+    /// <p>The URI to the image that Amazon GameLift Servers uses when deploying this container to a container fleet. For a more specific identifier, see <code>ResolvedImageDigest</code>.</p>
     pub image_uri: ::std::option::Option<::std::string::String>,
-    /// <p>The set of ports that are available to bind to processes in the container. For example, a game server process requires a container port to allow game clients to connect to it. Container ports aren't directly accessed by inbound traffic. Amazon GameLift maps these container ports to externally accessible connection ports, which are assigned as needed from the container fleet's <code>ConnectionPortRange</code>.</p>
+    /// <p>The set of ports that are available to bind to processes in the container. For example, a game server process requires a container port to allow game clients to connect to it. Container ports aren't directly accessed by inbound traffic. Amazon GameLift Servers maps these container ports to externally accessible connection ports, which are assigned as needed from the container fleet's <code>ConnectionPortRange</code>.</p>
     pub port_configuration: ::std::option::Option<crate::types::ContainerPortConfiguration>,
     /// <p>A unique and immutable identifier for the container image. The digest is a SHA 256 hash of the container image manifest.</p>
     pub resolved_image_digest: ::std::option::Option<::std::string::String>,
-    /// <p>The Amazon GameLift server SDK version that the game server is integrated with. Only game servers using 5.2.0 or higher are compatible with container fleets.</p>
+    /// <p>The Amazon GameLift Servers server SDK version that the game server is integrated with. Only game servers using 5.2.0 or higher are compatible with container fleets.</p>
     pub server_sdk_version: ::std::option::Option<::std::string::String>,
 }
 impl GameServerContainerDefinition {
@@ -47,11 +47,11 @@ impl GameServerContainerDefinition {
     pub fn environment_override(&self) -> &[crate::types::ContainerEnvironment] {
         self.environment_override.as_deref().unwrap_or_default()
     }
-    /// <p>The URI to the image that Amazon GameLift uses when deploying this container to a container fleet. For a more specific identifier, see <code>ResolvedImageDigest</code>.</p>
+    /// <p>The URI to the image that Amazon GameLift Servers uses when deploying this container to a container fleet. For a more specific identifier, see <code>ResolvedImageDigest</code>.</p>
     pub fn image_uri(&self) -> ::std::option::Option<&str> {
         self.image_uri.as_deref()
     }
-    /// <p>The set of ports that are available to bind to processes in the container. For example, a game server process requires a container port to allow game clients to connect to it. Container ports aren't directly accessed by inbound traffic. Amazon GameLift maps these container ports to externally accessible connection ports, which are assigned as needed from the container fleet's <code>ConnectionPortRange</code>.</p>
+    /// <p>The set of ports that are available to bind to processes in the container. For example, a game server process requires a container port to allow game clients to connect to it. Container ports aren't directly accessed by inbound traffic. Amazon GameLift Servers maps these container ports to externally accessible connection ports, which are assigned as needed from the container fleet's <code>ConnectionPortRange</code>.</p>
     pub fn port_configuration(&self) -> ::std::option::Option<&crate::types::ContainerPortConfiguration> {
         self.port_configuration.as_ref()
     }
@@ -59,7 +59,7 @@ impl GameServerContainerDefinition {
     pub fn resolved_image_digest(&self) -> ::std::option::Option<&str> {
         self.resolved_image_digest.as_deref()
     }
-    /// <p>The Amazon GameLift server SDK version that the game server is integrated with. Only game servers using 5.2.0 or higher are compatible with container fleets.</p>
+    /// <p>The Amazon GameLift Servers server SDK version that the game server is integrated with. Only game servers using 5.2.0 or higher are compatible with container fleets.</p>
     pub fn server_sdk_version(&self) -> ::std::option::Option<&str> {
         self.server_sdk_version.as_deref()
     }
@@ -159,31 +159,31 @@ impl GameServerContainerDefinitionBuilder {
     pub fn get_environment_override(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ContainerEnvironment>> {
         &self.environment_override
     }
-    /// <p>The URI to the image that Amazon GameLift uses when deploying this container to a container fleet. For a more specific identifier, see <code>ResolvedImageDigest</code>.</p>
+    /// <p>The URI to the image that Amazon GameLift Servers uses when deploying this container to a container fleet. For a more specific identifier, see <code>ResolvedImageDigest</code>.</p>
     pub fn image_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.image_uri = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The URI to the image that Amazon GameLift uses when deploying this container to a container fleet. For a more specific identifier, see <code>ResolvedImageDigest</code>.</p>
+    /// <p>The URI to the image that Amazon GameLift Servers uses when deploying this container to a container fleet. For a more specific identifier, see <code>ResolvedImageDigest</code>.</p>
     pub fn set_image_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.image_uri = input;
         self
     }
-    /// <p>The URI to the image that Amazon GameLift uses when deploying this container to a container fleet. For a more specific identifier, see <code>ResolvedImageDigest</code>.</p>
+    /// <p>The URI to the image that Amazon GameLift Servers uses when deploying this container to a container fleet. For a more specific identifier, see <code>ResolvedImageDigest</code>.</p>
     pub fn get_image_uri(&self) -> &::std::option::Option<::std::string::String> {
         &self.image_uri
     }
-    /// <p>The set of ports that are available to bind to processes in the container. For example, a game server process requires a container port to allow game clients to connect to it. Container ports aren't directly accessed by inbound traffic. Amazon GameLift maps these container ports to externally accessible connection ports, which are assigned as needed from the container fleet's <code>ConnectionPortRange</code>.</p>
+    /// <p>The set of ports that are available to bind to processes in the container. For example, a game server process requires a container port to allow game clients to connect to it. Container ports aren't directly accessed by inbound traffic. Amazon GameLift Servers maps these container ports to externally accessible connection ports, which are assigned as needed from the container fleet's <code>ConnectionPortRange</code>.</p>
     pub fn port_configuration(mut self, input: crate::types::ContainerPortConfiguration) -> Self {
         self.port_configuration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The set of ports that are available to bind to processes in the container. For example, a game server process requires a container port to allow game clients to connect to it. Container ports aren't directly accessed by inbound traffic. Amazon GameLift maps these container ports to externally accessible connection ports, which are assigned as needed from the container fleet's <code>ConnectionPortRange</code>.</p>
+    /// <p>The set of ports that are available to bind to processes in the container. For example, a game server process requires a container port to allow game clients to connect to it. Container ports aren't directly accessed by inbound traffic. Amazon GameLift Servers maps these container ports to externally accessible connection ports, which are assigned as needed from the container fleet's <code>ConnectionPortRange</code>.</p>
     pub fn set_port_configuration(mut self, input: ::std::option::Option<crate::types::ContainerPortConfiguration>) -> Self {
         self.port_configuration = input;
         self
     }
-    /// <p>The set of ports that are available to bind to processes in the container. For example, a game server process requires a container port to allow game clients to connect to it. Container ports aren't directly accessed by inbound traffic. Amazon GameLift maps these container ports to externally accessible connection ports, which are assigned as needed from the container fleet's <code>ConnectionPortRange</code>.</p>
+    /// <p>The set of ports that are available to bind to processes in the container. For example, a game server process requires a container port to allow game clients to connect to it. Container ports aren't directly accessed by inbound traffic. Amazon GameLift Servers maps these container ports to externally accessible connection ports, which are assigned as needed from the container fleet's <code>ConnectionPortRange</code>.</p>
     pub fn get_port_configuration(&self) -> &::std::option::Option<crate::types::ContainerPortConfiguration> {
         &self.port_configuration
     }
@@ -201,17 +201,17 @@ impl GameServerContainerDefinitionBuilder {
     pub fn get_resolved_image_digest(&self) -> &::std::option::Option<::std::string::String> {
         &self.resolved_image_digest
     }
-    /// <p>The Amazon GameLift server SDK version that the game server is integrated with. Only game servers using 5.2.0 or higher are compatible with container fleets.</p>
+    /// <p>The Amazon GameLift Servers server SDK version that the game server is integrated with. Only game servers using 5.2.0 or higher are compatible with container fleets.</p>
     pub fn server_sdk_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.server_sdk_version = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon GameLift server SDK version that the game server is integrated with. Only game servers using 5.2.0 or higher are compatible with container fleets.</p>
+    /// <p>The Amazon GameLift Servers server SDK version that the game server is integrated with. Only game servers using 5.2.0 or higher are compatible with container fleets.</p>
     pub fn set_server_sdk_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.server_sdk_version = input;
         self
     }
-    /// <p>The Amazon GameLift server SDK version that the game server is integrated with. Only game servers using 5.2.0 or higher are compatible with container fleets.</p>
+    /// <p>The Amazon GameLift Servers server SDK version that the game server is integrated with. Only game servers using 5.2.0 or higher are compatible with container fleets.</p>
     pub fn get_server_sdk_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.server_sdk_version
     }
