@@ -35,6 +35,8 @@ pub use crate::types::error::_resource_does_not_support_tagging::ResourceDoesNot
 
 pub use crate::types::error::_not_service_resource_error::NotServiceResourceErrorBuilder;
 
+pub use crate::types::error::_s3_access_point_attachment_not_found::S3AccessPointAttachmentNotFoundBuilder;
+
 pub use crate::types::error::_data_repository_task_not_found::DataRepositoryTaskNotFoundBuilder;
 
 pub use crate::types::error::_invalid_data_repository_type::InvalidDataRepositoryTypeBuilder;
@@ -56,6 +58,14 @@ pub use crate::types::error::_invalid_import_path::InvalidImportPathBuilder;
 pub use crate::types::error::_invalid_export_path::InvalidExportPathBuilder;
 
 pub use crate::types::error::_data_repository_task_executing::DataRepositoryTaskExecutingBuilder;
+
+pub use crate::types::error::_too_many_access_points::TooManyAccessPointsBuilder;
+
+pub use crate::types::error::_invalid_request::InvalidRequestBuilder;
+
+pub use crate::types::error::_invalid_access_point::InvalidAccessPointBuilder;
+
+pub use crate::types::error::_access_point_already_owned_by_you::AccessPointAlreadyOwnedByYouBuilder;
 
 pub use crate::types::error::_source_backup_unavailable::SourceBackupUnavailableBuilder;
 

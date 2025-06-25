@@ -11,7 +11,7 @@ pub struct AttachVolumeInput {
     pub target_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the volume to attach to the specified gateway.</p>
     pub volume_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The network interface of the gateway on which to expose the iSCSI target. Only IPv4 addresses are accepted. Use <code>DescribeGatewayInformation</code> to get a list of the network interfaces available on a gateway.</p>
+    /// <p>The network interface of the gateway on which to expose the iSCSI target. Accepts IPv4 and IPv6 addresses. Use <code>DescribeGatewayInformation</code> to get a list of the network interfaces available on a gateway.</p>
     /// <p>Valid Values: A valid IP address.</p>
     pub network_interface_id: ::std::option::Option<::std::string::String>,
     /// <p>The unique device ID or other distinguishing data that identifies the local disk used to create the volume. This value is only required when you are attaching a stored volume.</p>
@@ -31,7 +31,7 @@ impl AttachVolumeInput {
     pub fn volume_arn(&self) -> ::std::option::Option<&str> {
         self.volume_arn.as_deref()
     }
-    /// <p>The network interface of the gateway on which to expose the iSCSI target. Only IPv4 addresses are accepted. Use <code>DescribeGatewayInformation</code> to get a list of the network interfaces available on a gateway.</p>
+    /// <p>The network interface of the gateway on which to expose the iSCSI target. Accepts IPv4 and IPv6 addresses. Use <code>DescribeGatewayInformation</code> to get a list of the network interfaces available on a gateway.</p>
     /// <p>Valid Values: A valid IP address.</p>
     pub fn network_interface_id(&self) -> ::std::option::Option<&str> {
         self.network_interface_id.as_deref()
@@ -106,20 +106,20 @@ impl AttachVolumeInputBuilder {
     pub fn get_volume_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.volume_arn
     }
-    /// <p>The network interface of the gateway on which to expose the iSCSI target. Only IPv4 addresses are accepted. Use <code>DescribeGatewayInformation</code> to get a list of the network interfaces available on a gateway.</p>
+    /// <p>The network interface of the gateway on which to expose the iSCSI target. Accepts IPv4 and IPv6 addresses. Use <code>DescribeGatewayInformation</code> to get a list of the network interfaces available on a gateway.</p>
     /// <p>Valid Values: A valid IP address.</p>
     /// This field is required.
     pub fn network_interface_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.network_interface_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The network interface of the gateway on which to expose the iSCSI target. Only IPv4 addresses are accepted. Use <code>DescribeGatewayInformation</code> to get a list of the network interfaces available on a gateway.</p>
+    /// <p>The network interface of the gateway on which to expose the iSCSI target. Accepts IPv4 and IPv6 addresses. Use <code>DescribeGatewayInformation</code> to get a list of the network interfaces available on a gateway.</p>
     /// <p>Valid Values: A valid IP address.</p>
     pub fn set_network_interface_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.network_interface_id = input;
         self
     }
-    /// <p>The network interface of the gateway on which to expose the iSCSI target. Only IPv4 addresses are accepted. Use <code>DescribeGatewayInformation</code> to get a list of the network interfaces available on a gateway.</p>
+    /// <p>The network interface of the gateway on which to expose the iSCSI target. Accepts IPv4 and IPv6 addresses. Use <code>DescribeGatewayInformation</code> to get a list of the network interfaces available on a gateway.</p>
     /// <p>Valid Values: A valid IP address.</p>
     pub fn get_network_interface_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.network_interface_id

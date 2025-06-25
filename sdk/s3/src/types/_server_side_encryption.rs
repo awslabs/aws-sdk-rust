@@ -13,6 +13,7 @@
 /// # let serversideencryption = unimplemented!();
 /// match serversideencryption {
 ///     ServerSideEncryption::Aes256 => { /* ... */ },
+///     ServerSideEncryption::AwsFsx => { /* ... */ },
 ///     ServerSideEncryption::AwsKms => { /* ... */ },
 ///     ServerSideEncryption::AwsKmsDsse => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -46,6 +47,8 @@ pub enum ServerSideEncryption {
     #[allow(missing_docs)] // documentation missing in model
     Aes256,
     #[allow(missing_docs)] // documentation missing in model
+    AwsFsx,
+    #[allow(missing_docs)] // documentation missing in model
     AwsKms,
     #[allow(missing_docs)] // documentation missing in model
     AwsKmsDsse,
@@ -57,6 +60,7 @@ impl ::std::convert::From<&str> for ServerSideEncryption {
     fn from(s: &str) -> Self {
         match s {
             "AES256" => ServerSideEncryption::Aes256,
+            "aws:fsx" => ServerSideEncryption::AwsFsx,
             "aws:kms" => ServerSideEncryption::AwsKms,
             "aws:kms:dsse" => ServerSideEncryption::AwsKmsDsse,
             other => ServerSideEncryption::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -75,6 +79,7 @@ impl ServerSideEncryption {
     pub fn as_str(&self) -> &str {
         match self {
             ServerSideEncryption::Aes256 => "AES256",
+            ServerSideEncryption::AwsFsx => "aws:fsx",
             ServerSideEncryption::AwsKms => "aws:kms",
             ServerSideEncryption::AwsKmsDsse => "aws:kms:dsse",
             ServerSideEncryption::Unknown(value) => value.as_str(),
@@ -82,7 +87,7 @@ impl ServerSideEncryption {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["AES256", "aws:kms", "aws:kms:dsse"]
+        &["AES256", "aws:fsx", "aws:kms", "aws:kms:dsse"]
     }
 }
 impl ::std::convert::AsRef<str> for ServerSideEncryption {
@@ -106,6 +111,7 @@ impl ::std::fmt::Display for ServerSideEncryption {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             ServerSideEncryption::Aes256 => write!(f, "AES256"),
+            ServerSideEncryption::AwsFsx => write!(f, "aws:fsx"),
             ServerSideEncryption::AwsKms => write!(f, "aws:kms"),
             ServerSideEncryption::AwsKmsDsse => write!(f, "aws:kms:dsse"),
             ServerSideEncryption::Unknown(value) => write!(f, "{}", value),

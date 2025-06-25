@@ -31,6 +31,8 @@ pub(crate) mod shape_copy_backup;
 
 pub(crate) mod shape_copy_snapshot_and_update_volume;
 
+pub(crate) mod shape_create_and_attach_s3_access_point;
+
 pub(crate) mod shape_create_backup;
 
 pub(crate) mod shape_create_data_repository_association;
@@ -77,6 +79,8 @@ pub(crate) mod shape_describe_file_system_aliases;
 
 pub(crate) mod shape_describe_file_systems;
 
+pub(crate) mod shape_describe_s3_access_point_attachments;
+
 pub(crate) mod shape_describe_shared_vpc_configuration;
 
 pub(crate) mod shape_describe_snapshots;
@@ -84,6 +88,8 @@ pub(crate) mod shape_describe_snapshots;
 pub(crate) mod shape_describe_storage_virtual_machines;
 
 pub(crate) mod shape_describe_volumes;
+
+pub(crate) mod shape_detach_and_delete_s3_access_point;
 
 pub(crate) mod shape_disassociate_file_system_aliases;
 
@@ -121,6 +127,8 @@ pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
     }
 }
 
+pub(crate) mod shape_access_point_already_owned_by_you;
+
 pub(crate) mod shape_active_directory_error;
 
 pub(crate) mod shape_associate_file_system_aliases_input;
@@ -140,6 +148,8 @@ pub(crate) mod shape_cancel_data_repository_task_input;
 pub(crate) mod shape_copy_backup_input;
 
 pub(crate) mod shape_copy_snapshot_and_update_volume_input;
+
+pub(crate) mod shape_create_and_attach_s3_access_point_input;
 
 pub(crate) mod shape_create_backup_input;
 
@@ -195,11 +205,15 @@ pub(crate) mod shape_describe_file_system_aliases_input;
 
 pub(crate) mod shape_describe_file_systems_input;
 
+pub(crate) mod shape_describe_s3_access_point_attachments_input;
+
 pub(crate) mod shape_describe_snapshots_input;
 
 pub(crate) mod shape_describe_storage_virtual_machines_input;
 
 pub(crate) mod shape_describe_volumes_input;
+
+pub(crate) mod shape_detach_and_delete_s3_access_point_input;
 
 pub(crate) mod shape_disassociate_file_system_aliases_input;
 
@@ -212,6 +226,8 @@ pub(crate) mod shape_incompatible_parameter_error;
 pub(crate) mod shape_incompatible_region_for_multi_az;
 
 pub(crate) mod shape_internal_server_error;
+
+pub(crate) mod shape_invalid_access_point;
 
 pub(crate) mod shape_invalid_data_repository_type;
 
@@ -226,6 +242,8 @@ pub(crate) mod shape_invalid_network_settings;
 pub(crate) mod shape_invalid_per_unit_storage_throughput;
 
 pub(crate) mod shape_invalid_region;
+
+pub(crate) mod shape_invalid_request;
 
 pub(crate) mod shape_invalid_source_kms_key;
 
@@ -247,6 +265,8 @@ pub(crate) mod shape_resource_not_found;
 
 pub(crate) mod shape_restore_volume_from_snapshot_input;
 
+pub(crate) mod shape_s3_access_point_attachment_not_found;
+
 pub(crate) mod shape_service_limit_exceeded;
 
 pub(crate) mod shape_snapshot_not_found;
@@ -258,6 +278,8 @@ pub(crate) mod shape_start_misconfigured_state_recovery_input;
 pub(crate) mod shape_storage_virtual_machine_not_found;
 
 pub(crate) mod shape_tag_resource_input;
+
+pub(crate) mod shape_too_many_access_points;
 
 pub(crate) mod shape_unsupported_operation;
 
@@ -288,6 +310,10 @@ pub(crate) mod shape_backup;
 pub(crate) mod shape_backups;
 
 pub(crate) mod shape_completion_report;
+
+pub(crate) mod shape_create_and_attach_s3_access_point_open_zfs_configuration;
+
+pub(crate) mod shape_create_and_attach_s3_access_point_s3_configuration;
 
 pub(crate) mod shape_create_file_cache_lustre_configuration;
 
@@ -348,6 +374,12 @@ pub(crate) mod shape_file_systems;
 pub(crate) mod shape_filter;
 
 pub(crate) mod shape_release_configuration;
+
+pub(crate) mod shape_s3_access_point_attachment;
+
+pub(crate) mod shape_s3_access_point_attachments;
+
+pub(crate) mod shape_s3_access_point_attachments_filter;
 
 pub(crate) mod shape_s3_data_repository_configuration;
 
@@ -455,6 +487,8 @@ pub(crate) mod shape_open_zfs_create_root_volume_configuration;
 
 pub(crate) mod shape_open_zfs_file_system_configuration;
 
+pub(crate) mod shape_open_zfs_file_system_identity;
+
 pub(crate) mod shape_open_zfs_nfs_export;
 
 pub(crate) mod shape_open_zfs_read_cache_configuration;
@@ -462,6 +496,12 @@ pub(crate) mod shape_open_zfs_read_cache_configuration;
 pub(crate) mod shape_open_zfs_user_or_group_quota;
 
 pub(crate) mod shape_open_zfs_volume_configuration;
+
+pub(crate) mod shape_s3_access_point;
+
+pub(crate) mod shape_s3_access_point_open_zfs_configuration;
+
+pub(crate) mod shape_s3_access_point_vpc_configuration;
 
 pub(crate) mod shape_self_managed_active_directory_configuration;
 
@@ -507,6 +547,8 @@ pub(crate) mod shape_open_zfs_nfs_exports;
 
 pub(crate) mod shape_open_zfs_origin_snapshot_configuration;
 
+pub(crate) mod shape_open_zfs_posix_file_system_user;
+
 pub(crate) mod shape_open_zfs_user_and_group_quotas;
 
 pub(crate) mod shape_repository_dns_ips;
@@ -536,6 +578,8 @@ pub(crate) mod shape_lustre_no_squash_nids;
 pub(crate) mod shape_ontap_endpoint_ip_addresses;
 
 pub(crate) mod shape_retention_period;
+
+pub(crate) mod shape_file_system_secondary_gids;
 
 pub(crate) mod shape_open_zfs_client_configurations;
 

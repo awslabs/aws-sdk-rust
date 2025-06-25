@@ -3,6 +3,8 @@
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum Error {
+    /// <p>An access point with that name already exists in the Amazon Web Services Region in your Amazon Web Services account.</p>
+    AccessPointAlreadyOwnedByYou(crate::types::error::AccessPointAlreadyOwnedByYou),
     /// <p>An Active Directory error.</p>
     ActiveDirectoryError(crate::types::error::ActiveDirectoryError),
     /// <p>You can't delete a backup while it's being copied.</p>
@@ -33,6 +35,8 @@ pub enum Error {
     IncompatibleRegionForMultiAz(crate::types::error::IncompatibleRegionForMultiAz),
     /// <p>A generic error indicating a server-side failure.</p>
     InternalServerError(crate::types::error::InternalServerError),
+    /// <p>The access point specified doesn't exist.</p>
+    InvalidAccessPoint(crate::types::error::InvalidAccessPoint),
     /// <p>You have filtered the response to a data repository type that is not supported.</p>
     InvalidDataRepositoryType(crate::types::error::InvalidDataRepositoryType),
     /// <p>The Key Management Service (KMS) key of the destination backup is not valid.</p>
@@ -47,6 +51,8 @@ pub enum Error {
     InvalidPerUnitStorageThroughput(crate::types::error::InvalidPerUnitStorageThroughput),
     /// <p>The Region provided for <code>SourceRegion</code> is not valid or is in a different Amazon Web Services partition.</p>
     InvalidRegion(crate::types::error::InvalidRegion),
+    /// <p>The action or operation requested is invalid. Verify that the action is typed correctly.</p>
+    InvalidRequest(crate::types::error::InvalidRequest),
     /// <p>The Key Management Service (KMS) key of the source backup is not valid.</p>
     InvalidSourceKmsKey(crate::types::error::InvalidSourceKmsKey),
     /// <p>A cache configuration is required for this operation.</p>
@@ -61,6 +67,8 @@ pub enum Error {
     ResourceDoesNotSupportTagging(crate::types::error::ResourceDoesNotSupportTagging),
     /// <p>The resource specified by the Amazon Resource Name (ARN) can't be found.</p>
     ResourceNotFound(crate::types::error::ResourceNotFound),
+    /// <p>The access point specified was not found.</p>
+    S3AccessPointAttachmentNotFound(crate::types::error::S3AccessPointAttachmentNotFound),
     /// <p>An error indicating that a particular service limit was exceeded. You can increase some service limits by contacting Amazon Web ServicesSupport.</p>
     ServiceLimitExceeded(crate::types::error::ServiceLimitExceeded),
     /// <p>No Amazon FSx snapshots were found based on the supplied parameters.</p>
@@ -69,6 +77,8 @@ pub enum Error {
     SourceBackupUnavailable(crate::types::error::SourceBackupUnavailable),
     /// <p>No FSx for ONTAP SVMs were found based upon the supplied parameters.</p>
     StorageVirtualMachineNotFound(crate::types::error::StorageVirtualMachineNotFound),
+    /// <p>You have reached the maximum number of S3 access points attachments allowed for your account in this Amazon Web Services Region, or for the file system. For more information, or to request an increase, see <a href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/limits.html">Service quotas on FSx resources</a> in the FSx for OpenZFS User Guide.</p>
+    TooManyAccessPoints(crate::types::error::TooManyAccessPoints),
     /// <p>The requested operation is not supported for this resource or API.</p>
     UnsupportedOperation(crate::types::error::UnsupportedOperation),
     /// <p>No Amazon FSx volumes were found based upon the supplied parameters.</p>
@@ -85,6 +95,7 @@ pub enum Error {
 impl ::std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match self {
+            Error::AccessPointAlreadyOwnedByYou(inner) => inner.fmt(f),
             Error::ActiveDirectoryError(inner) => inner.fmt(f),
             Error::BackupBeingCopied(inner) => inner.fmt(f),
             Error::BackupInProgress(inner) => inner.fmt(f),
@@ -100,6 +111,7 @@ impl ::std::fmt::Display for Error {
             Error::IncompatibleParameterError(inner) => inner.fmt(f),
             Error::IncompatibleRegionForMultiAz(inner) => inner.fmt(f),
             Error::InternalServerError(inner) => inner.fmt(f),
+            Error::InvalidAccessPoint(inner) => inner.fmt(f),
             Error::InvalidDataRepositoryType(inner) => inner.fmt(f),
             Error::InvalidDestinationKmsKey(inner) => inner.fmt(f),
             Error::InvalidExportPath(inner) => inner.fmt(f),
@@ -107,6 +119,7 @@ impl ::std::fmt::Display for Error {
             Error::InvalidNetworkSettings(inner) => inner.fmt(f),
             Error::InvalidPerUnitStorageThroughput(inner) => inner.fmt(f),
             Error::InvalidRegion(inner) => inner.fmt(f),
+            Error::InvalidRequest(inner) => inner.fmt(f),
             Error::InvalidSourceKmsKey(inner) => inner.fmt(f),
             Error::MissingFileCacheConfiguration(inner) => inner.fmt(f),
             Error::MissingFileSystemConfiguration(inner) => inner.fmt(f),
@@ -114,10 +127,12 @@ impl ::std::fmt::Display for Error {
             Error::NotServiceResourceError(inner) => inner.fmt(f),
             Error::ResourceDoesNotSupportTagging(inner) => inner.fmt(f),
             Error::ResourceNotFound(inner) => inner.fmt(f),
+            Error::S3AccessPointAttachmentNotFound(inner) => inner.fmt(f),
             Error::ServiceLimitExceeded(inner) => inner.fmt(f),
             Error::SnapshotNotFound(inner) => inner.fmt(f),
             Error::SourceBackupUnavailable(inner) => inner.fmt(f),
             Error::StorageVirtualMachineNotFound(inner) => inner.fmt(f),
+            Error::TooManyAccessPoints(inner) => inner.fmt(f),
             Error::UnsupportedOperation(inner) => inner.fmt(f),
             Error::VolumeNotFound(inner) => inner.fmt(f),
             Error::Unhandled(_) => {
@@ -141,6 +156,7 @@ impl From<::aws_smithy_types::error::operation::BuildError> for Error {
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
     fn meta(&self) -> &::aws_smithy_types::error::metadata::ErrorMetadata {
         match self {
+            Self::AccessPointAlreadyOwnedByYou(inner) => inner.meta(),
             Self::ActiveDirectoryError(inner) => inner.meta(),
             Self::BackupBeingCopied(inner) => inner.meta(),
             Self::BackupInProgress(inner) => inner.meta(),
@@ -156,6 +172,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
             Self::IncompatibleParameterError(inner) => inner.meta(),
             Self::IncompatibleRegionForMultiAz(inner) => inner.meta(),
             Self::InternalServerError(inner) => inner.meta(),
+            Self::InvalidAccessPoint(inner) => inner.meta(),
             Self::InvalidDataRepositoryType(inner) => inner.meta(),
             Self::InvalidDestinationKmsKey(inner) => inner.meta(),
             Self::InvalidExportPath(inner) => inner.meta(),
@@ -163,6 +180,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
             Self::InvalidNetworkSettings(inner) => inner.meta(),
             Self::InvalidPerUnitStorageThroughput(inner) => inner.meta(),
             Self::InvalidRegion(inner) => inner.meta(),
+            Self::InvalidRequest(inner) => inner.meta(),
             Self::InvalidSourceKmsKey(inner) => inner.meta(),
             Self::MissingFileCacheConfiguration(inner) => inner.meta(),
             Self::MissingFileSystemConfiguration(inner) => inner.meta(),
@@ -170,10 +188,12 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
             Self::NotServiceResourceError(inner) => inner.meta(),
             Self::ResourceDoesNotSupportTagging(inner) => inner.meta(),
             Self::ResourceNotFound(inner) => inner.meta(),
+            Self::S3AccessPointAttachmentNotFound(inner) => inner.meta(),
             Self::ServiceLimitExceeded(inner) => inner.meta(),
             Self::SnapshotNotFound(inner) => inner.meta(),
             Self::SourceBackupUnavailable(inner) => inner.meta(),
             Self::StorageVirtualMachineNotFound(inner) => inner.meta(),
+            Self::TooManyAccessPoints(inner) => inner.meta(),
             Self::UnsupportedOperation(inner) => inner.meta(),
             Self::VolumeNotFound(inner) => inner.meta(),
             Self::Unhandled(inner) => &inner.meta,
@@ -315,6 +335,60 @@ impl From<crate::operation::copy_snapshot_and_update_volume::CopySnapshotAndUpda
                 Error::ServiceLimitExceeded(inner)
             }
             crate::operation::copy_snapshot_and_update_volume::CopySnapshotAndUpdateVolumeError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_and_attach_s3_access_point::CreateAndAttachS3AccessPointError, R>,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::create_and_attach_s3_access_point::CreateAndAttachS3AccessPointError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_and_attach_s3_access_point::CreateAndAttachS3AccessPointError> for Error {
+    fn from(err: crate::operation::create_and_attach_s3_access_point::CreateAndAttachS3AccessPointError) -> Self {
+        match err {
+            crate::operation::create_and_attach_s3_access_point::CreateAndAttachS3AccessPointError::AccessPointAlreadyOwnedByYou(inner) => {
+                Error::AccessPointAlreadyOwnedByYou(inner)
+            }
+            crate::operation::create_and_attach_s3_access_point::CreateAndAttachS3AccessPointError::BadRequest(inner) => Error::BadRequest(inner),
+            crate::operation::create_and_attach_s3_access_point::CreateAndAttachS3AccessPointError::IncompatibleParameterError(inner) => {
+                Error::IncompatibleParameterError(inner)
+            }
+            crate::operation::create_and_attach_s3_access_point::CreateAndAttachS3AccessPointError::InternalServerError(inner) => {
+                Error::InternalServerError(inner)
+            }
+            crate::operation::create_and_attach_s3_access_point::CreateAndAttachS3AccessPointError::InvalidAccessPoint(inner) => {
+                Error::InvalidAccessPoint(inner)
+            }
+            crate::operation::create_and_attach_s3_access_point::CreateAndAttachS3AccessPointError::InvalidRequest(inner) => {
+                Error::InvalidRequest(inner)
+            }
+            crate::operation::create_and_attach_s3_access_point::CreateAndAttachS3AccessPointError::TooManyAccessPoints(inner) => {
+                Error::TooManyAccessPoints(inner)
+            }
+            crate::operation::create_and_attach_s3_access_point::CreateAndAttachS3AccessPointError::UnsupportedOperation(inner) => {
+                Error::UnsupportedOperation(inner)
+            }
+            crate::operation::create_and_attach_s3_access_point::CreateAndAttachS3AccessPointError::VolumeNotFound(inner) => {
+                Error::VolumeNotFound(inner)
+            }
+            crate::operation::create_and_attach_s3_access_point::CreateAndAttachS3AccessPointError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1105,6 +1179,52 @@ impl From<crate::operation::describe_file_systems::DescribeFileSystemsError> for
 impl<R>
     From<
         ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::describe_s3_access_point_attachments::DescribeS3AccessPointAttachmentsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::describe_s3_access_point_attachments::DescribeS3AccessPointAttachmentsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::describe_s3_access_point_attachments::DescribeS3AccessPointAttachmentsError> for Error {
+    fn from(err: crate::operation::describe_s3_access_point_attachments::DescribeS3AccessPointAttachmentsError) -> Self {
+        match err {
+            crate::operation::describe_s3_access_point_attachments::DescribeS3AccessPointAttachmentsError::BadRequest(inner) => {
+                Error::BadRequest(inner)
+            }
+            crate::operation::describe_s3_access_point_attachments::DescribeS3AccessPointAttachmentsError::InternalServerError(inner) => {
+                Error::InternalServerError(inner)
+            }
+            crate::operation::describe_s3_access_point_attachments::DescribeS3AccessPointAttachmentsError::S3AccessPointAttachmentNotFound(inner) => {
+                Error::S3AccessPointAttachmentNotFound(inner)
+            }
+            crate::operation::describe_s3_access_point_attachments::DescribeS3AccessPointAttachmentsError::UnsupportedOperation(inner) => {
+                Error::UnsupportedOperation(inner)
+            }
+            crate::operation::describe_s3_access_point_attachments::DescribeS3AccessPointAttachmentsError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::describe_shared_vpc_configuration::DescribeSharedVpcConfigurationError,
             R,
         >,
@@ -1222,6 +1342,48 @@ impl From<crate::operation::describe_volumes::DescribeVolumesError> for Error {
             crate::operation::describe_volumes::DescribeVolumesError::InternalServerError(inner) => Error::InternalServerError(inner),
             crate::operation::describe_volumes::DescribeVolumesError::VolumeNotFound(inner) => Error::VolumeNotFound(inner),
             crate::operation::describe_volumes::DescribeVolumesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::detach_and_delete_s3_access_point::DetachAndDeleteS3AccessPointError, R>,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::detach_and_delete_s3_access_point::DetachAndDeleteS3AccessPointError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::detach_and_delete_s3_access_point::DetachAndDeleteS3AccessPointError> for Error {
+    fn from(err: crate::operation::detach_and_delete_s3_access_point::DetachAndDeleteS3AccessPointError) -> Self {
+        match err {
+            crate::operation::detach_and_delete_s3_access_point::DetachAndDeleteS3AccessPointError::BadRequest(inner) => Error::BadRequest(inner),
+            crate::operation::detach_and_delete_s3_access_point::DetachAndDeleteS3AccessPointError::IncompatibleParameterError(inner) => {
+                Error::IncompatibleParameterError(inner)
+            }
+            crate::operation::detach_and_delete_s3_access_point::DetachAndDeleteS3AccessPointError::InternalServerError(inner) => {
+                Error::InternalServerError(inner)
+            }
+            crate::operation::detach_and_delete_s3_access_point::DetachAndDeleteS3AccessPointError::S3AccessPointAttachmentNotFound(inner) => {
+                Error::S3AccessPointAttachmentNotFound(inner)
+            }
+            crate::operation::detach_and_delete_s3_access_point::DetachAndDeleteS3AccessPointError::UnsupportedOperation(inner) => {
+                Error::UnsupportedOperation(inner)
+            }
+            crate::operation::detach_and_delete_s3_access_point::DetachAndDeleteS3AccessPointError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1689,6 +1851,7 @@ impl From<crate::operation::update_volume::UpdateVolumeError> for Error {
 impl ::std::error::Error for Error {
     fn source(&self) -> std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
+            Error::AccessPointAlreadyOwnedByYou(inner) => inner.source(),
             Error::ActiveDirectoryError(inner) => inner.source(),
             Error::BackupBeingCopied(inner) => inner.source(),
             Error::BackupInProgress(inner) => inner.source(),
@@ -1704,6 +1867,7 @@ impl ::std::error::Error for Error {
             Error::IncompatibleParameterError(inner) => inner.source(),
             Error::IncompatibleRegionForMultiAz(inner) => inner.source(),
             Error::InternalServerError(inner) => inner.source(),
+            Error::InvalidAccessPoint(inner) => inner.source(),
             Error::InvalidDataRepositoryType(inner) => inner.source(),
             Error::InvalidDestinationKmsKey(inner) => inner.source(),
             Error::InvalidExportPath(inner) => inner.source(),
@@ -1711,6 +1875,7 @@ impl ::std::error::Error for Error {
             Error::InvalidNetworkSettings(inner) => inner.source(),
             Error::InvalidPerUnitStorageThroughput(inner) => inner.source(),
             Error::InvalidRegion(inner) => inner.source(),
+            Error::InvalidRequest(inner) => inner.source(),
             Error::InvalidSourceKmsKey(inner) => inner.source(),
             Error::MissingFileCacheConfiguration(inner) => inner.source(),
             Error::MissingFileSystemConfiguration(inner) => inner.source(),
@@ -1718,10 +1883,12 @@ impl ::std::error::Error for Error {
             Error::NotServiceResourceError(inner) => inner.source(),
             Error::ResourceDoesNotSupportTagging(inner) => inner.source(),
             Error::ResourceNotFound(inner) => inner.source(),
+            Error::S3AccessPointAttachmentNotFound(inner) => inner.source(),
             Error::ServiceLimitExceeded(inner) => inner.source(),
             Error::SnapshotNotFound(inner) => inner.source(),
             Error::SourceBackupUnavailable(inner) => inner.source(),
             Error::StorageVirtualMachineNotFound(inner) => inner.source(),
+            Error::TooManyAccessPoints(inner) => inner.source(),
             Error::UnsupportedOperation(inner) => inner.source(),
             Error::VolumeNotFound(inner) => inner.source(),
             Error::Unhandled(inner) => ::std::option::Option::Some(&*inner.source),
@@ -1731,6 +1898,7 @@ impl ::std::error::Error for Error {
 impl ::aws_types::request_id::RequestId for Error {
     fn request_id(&self) -> Option<&str> {
         match self {
+            Self::AccessPointAlreadyOwnedByYou(e) => e.request_id(),
             Self::ActiveDirectoryError(e) => e.request_id(),
             Self::BackupBeingCopied(e) => e.request_id(),
             Self::BackupInProgress(e) => e.request_id(),
@@ -1746,6 +1914,7 @@ impl ::aws_types::request_id::RequestId for Error {
             Self::IncompatibleParameterError(e) => e.request_id(),
             Self::IncompatibleRegionForMultiAz(e) => e.request_id(),
             Self::InternalServerError(e) => e.request_id(),
+            Self::InvalidAccessPoint(e) => e.request_id(),
             Self::InvalidDataRepositoryType(e) => e.request_id(),
             Self::InvalidDestinationKmsKey(e) => e.request_id(),
             Self::InvalidExportPath(e) => e.request_id(),
@@ -1753,6 +1922,7 @@ impl ::aws_types::request_id::RequestId for Error {
             Self::InvalidNetworkSettings(e) => e.request_id(),
             Self::InvalidPerUnitStorageThroughput(e) => e.request_id(),
             Self::InvalidRegion(e) => e.request_id(),
+            Self::InvalidRequest(e) => e.request_id(),
             Self::InvalidSourceKmsKey(e) => e.request_id(),
             Self::MissingFileCacheConfiguration(e) => e.request_id(),
             Self::MissingFileSystemConfiguration(e) => e.request_id(),
@@ -1760,10 +1930,12 @@ impl ::aws_types::request_id::RequestId for Error {
             Self::NotServiceResourceError(e) => e.request_id(),
             Self::ResourceDoesNotSupportTagging(e) => e.request_id(),
             Self::ResourceNotFound(e) => e.request_id(),
+            Self::S3AccessPointAttachmentNotFound(e) => e.request_id(),
             Self::ServiceLimitExceeded(e) => e.request_id(),
             Self::SnapshotNotFound(e) => e.request_id(),
             Self::SourceBackupUnavailable(e) => e.request_id(),
             Self::StorageVirtualMachineNotFound(e) => e.request_id(),
+            Self::TooManyAccessPoints(e) => e.request_id(),
             Self::UnsupportedOperation(e) => e.request_id(),
             Self::VolumeNotFound(e) => e.request_id(),
             Self::Unhandled(e) => e.meta.request_id(),

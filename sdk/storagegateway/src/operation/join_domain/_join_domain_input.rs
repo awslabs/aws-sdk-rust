@@ -10,7 +10,10 @@ pub struct JoinDomainInput {
     pub domain_name: ::std::option::Option<::std::string::String>,
     /// <p>The organizational unit (OU) is a container in an Active Directory that can hold users, groups, computers, and other OUs and this parameter specifies the OU that the gateway will join within the AD domain.</p>
     pub organizational_unit: ::std::option::Option<::std::string::String>,
-    /// <p>List of IPv4 addresses, NetBIOS names, or host names of your domain server. If you need to specify the port number include it after the colon (“:”). For example, <code>mydc.mydomain.com:389</code>.</p>
+    /// <p>List of IP addresses, NetBIOS names, or host names of your domain server. If you need to specify the port number include it after the colon (“:”). For example, <code>mydc.mydomain.com:389</code>.</p><note>
+    /// <p>S3 File Gateway supports IPv6 addresses in addition to IPv4 and other existing formats.</p>
+    /// <p>FSx File Gateway does not support IPv6.</p>
+    /// </note>
     pub domain_controllers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Specifies the time in seconds, in which the <code>JoinDomain</code> operation must complete. The default is 20 seconds.</p>
     pub timeout_in_seconds: ::std::option::Option<i32>,
@@ -32,7 +35,10 @@ impl JoinDomainInput {
     pub fn organizational_unit(&self) -> ::std::option::Option<&str> {
         self.organizational_unit.as_deref()
     }
-    /// <p>List of IPv4 addresses, NetBIOS names, or host names of your domain server. If you need to specify the port number include it after the colon (“:”). For example, <code>mydc.mydomain.com:389</code>.</p>
+    /// <p>List of IP addresses, NetBIOS names, or host names of your domain server. If you need to specify the port number include it after the colon (“:”). For example, <code>mydc.mydomain.com:389</code>.</p><note>
+    /// <p>S3 File Gateway supports IPv6 addresses in addition to IPv4 and other existing formats.</p>
+    /// <p>FSx File Gateway does not support IPv6.</p>
+    /// </note>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.domain_controllers.is_none()`.
     pub fn domain_controllers(&self) -> &[::std::string::String] {
@@ -132,19 +138,28 @@ impl JoinDomainInputBuilder {
     ///
     /// To override the contents of this collection use [`set_domain_controllers`](Self::set_domain_controllers).
     ///
-    /// <p>List of IPv4 addresses, NetBIOS names, or host names of your domain server. If you need to specify the port number include it after the colon (“:”). For example, <code>mydc.mydomain.com:389</code>.</p>
+    /// <p>List of IP addresses, NetBIOS names, or host names of your domain server. If you need to specify the port number include it after the colon (“:”). For example, <code>mydc.mydomain.com:389</code>.</p><note>
+    /// <p>S3 File Gateway supports IPv6 addresses in addition to IPv4 and other existing formats.</p>
+    /// <p>FSx File Gateway does not support IPv6.</p>
+    /// </note>
     pub fn domain_controllers(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.domain_controllers.unwrap_or_default();
         v.push(input.into());
         self.domain_controllers = ::std::option::Option::Some(v);
         self
     }
-    /// <p>List of IPv4 addresses, NetBIOS names, or host names of your domain server. If you need to specify the port number include it after the colon (“:”). For example, <code>mydc.mydomain.com:389</code>.</p>
+    /// <p>List of IP addresses, NetBIOS names, or host names of your domain server. If you need to specify the port number include it after the colon (“:”). For example, <code>mydc.mydomain.com:389</code>.</p><note>
+    /// <p>S3 File Gateway supports IPv6 addresses in addition to IPv4 and other existing formats.</p>
+    /// <p>FSx File Gateway does not support IPv6.</p>
+    /// </note>
     pub fn set_domain_controllers(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.domain_controllers = input;
         self
     }
-    /// <p>List of IPv4 addresses, NetBIOS names, or host names of your domain server. If you need to specify the port number include it after the colon (“:”). For example, <code>mydc.mydomain.com:389</code>.</p>
+    /// <p>List of IP addresses, NetBIOS names, or host names of your domain server. If you need to specify the port number include it after the colon (“:”). For example, <code>mydc.mydomain.com:389</code>.</p><note>
+    /// <p>S3 File Gateway supports IPv6 addresses in addition to IPv4 and other existing formats.</p>
+    /// <p>FSx File Gateway does not support IPv6.</p>
+    /// </note>
     pub fn get_domain_controllers(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.domain_controllers
     }

@@ -49,6 +49,16 @@ pub(crate) fn reflens_describe_file_systems_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_describe_s3_access_point_attachments_output_output_next_token(
+    input: &crate::operation::describe_s3_access_point_attachments::DescribeS3AccessPointAttachmentsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_describe_snapshots_output_output_next_token(
     input: &crate::operation::describe_snapshots::DescribeSnapshotsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -86,6 +96,20 @@ pub(crate) fn reflens_list_tags_for_resource_output_output_next_token(
         ::std::option::Option::None => return ::std::option::Option::None,
         ::std::option::Option::Some(t) => t,
     };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_describe_s3_access_point_attachments_output_output_s3_access_point_attachments(
+    input: crate::operation::describe_s3_access_point_attachments::DescribeS3AccessPointAttachmentsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::S3AccessPointAttachment>> {
+    let input = input.s3_access_point_attachments?;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_describe_snapshots_output_output_snapshots(
+    input: crate::operation::describe_snapshots::DescribeSnapshotsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::Snapshot>> {
+    let input = input.snapshots?;
     ::std::option::Option::Some(input)
 }
 

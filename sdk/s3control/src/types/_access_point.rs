@@ -20,6 +20,10 @@ pub struct AccessPoint {
     pub alias: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services account ID associated with the S3 bucket associated with this access point.</p>
     pub bucket_account_id: ::std::option::Option<::std::string::String>,
+    /// <p>A unique identifier for the data source of the access point.</p>
+    pub data_source_id: ::std::option::Option<::std::string::String>,
+    /// <p>The type of the data source that the access point is attached to.</p>
+    pub data_source_type: ::std::option::Option<::std::string::String>,
 }
 impl AccessPoint {
     /// <p>The name of this access point.</p>
@@ -54,6 +58,14 @@ impl AccessPoint {
     pub fn bucket_account_id(&self) -> ::std::option::Option<&str> {
         self.bucket_account_id.as_deref()
     }
+    /// <p>A unique identifier for the data source of the access point.</p>
+    pub fn data_source_id(&self) -> ::std::option::Option<&str> {
+        self.data_source_id.as_deref()
+    }
+    /// <p>The type of the data source that the access point is attached to.</p>
+    pub fn data_source_type(&self) -> ::std::option::Option<&str> {
+        self.data_source_type.as_deref()
+    }
 }
 impl AccessPoint {
     /// Creates a new builder-style object to manufacture [`AccessPoint`](crate::types::AccessPoint).
@@ -73,6 +85,8 @@ pub struct AccessPointBuilder {
     pub(crate) access_point_arn: ::std::option::Option<::std::string::String>,
     pub(crate) alias: ::std::option::Option<::std::string::String>,
     pub(crate) bucket_account_id: ::std::option::Option<::std::string::String>,
+    pub(crate) data_source_id: ::std::option::Option<::std::string::String>,
+    pub(crate) data_source_type: ::std::option::Option<::std::string::String>,
 }
 impl AccessPointBuilder {
     /// <p>The name of this access point.</p>
@@ -182,6 +196,34 @@ impl AccessPointBuilder {
     pub fn get_bucket_account_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.bucket_account_id
     }
+    /// <p>A unique identifier for the data source of the access point.</p>
+    pub fn data_source_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.data_source_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>A unique identifier for the data source of the access point.</p>
+    pub fn set_data_source_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.data_source_id = input;
+        self
+    }
+    /// <p>A unique identifier for the data source of the access point.</p>
+    pub fn get_data_source_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.data_source_id
+    }
+    /// <p>The type of the data source that the access point is attached to.</p>
+    pub fn data_source_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.data_source_type = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The type of the data source that the access point is attached to.</p>
+    pub fn set_data_source_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.data_source_type = input;
+        self
+    }
+    /// <p>The type of the data source that the access point is attached to.</p>
+    pub fn get_data_source_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.data_source_type
+    }
     /// Consumes the builder and constructs a [`AccessPoint`](crate::types::AccessPoint).
     /// This method will fail if any of the following fields are not set:
     /// - [`name`](crate::types::builders::AccessPointBuilder::name)
@@ -211,6 +253,8 @@ impl AccessPointBuilder {
             access_point_arn: self.access_point_arn,
             alias: self.alias,
             bucket_account_id: self.bucket_account_id,
+            data_source_id: self.data_source_id,
+            data_source_type: self.data_source_type,
         })
     }
 }

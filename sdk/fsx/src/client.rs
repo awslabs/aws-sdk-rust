@@ -144,6 +144,8 @@ mod copy_backup;
 
 mod copy_snapshot_and_update_volume;
 
+mod create_and_attach_s3_access_point;
+
 mod create_backup;
 
 mod create_data_repository_association;
@@ -217,6 +219,8 @@ mod describe_file_system_aliases;
 
 mod describe_file_systems;
 
+mod describe_s3_access_point_attachments;
+
 mod describe_shared_vpc_configuration;
 
 mod describe_snapshots;
@@ -224,6 +228,8 @@ mod describe_snapshots;
 mod describe_storage_virtual_machines;
 
 mod describe_volumes;
+
+mod detach_and_delete_s3_access_point;
 
 mod disassociate_file_system_aliases;
 

@@ -29,7 +29,10 @@ pub struct CompleteMultipartUploadOutput {
     pub checksum_sha256: ::std::option::Option<::std::string::String>,
     /// <p>The checksum type, which determines how part-level checksums are combined to create an object-level checksum for multipart objects. You can use this header as a data integrity check to verify that the checksum type that is received is the same checksum type that was specified during the <code>CreateMultipartUpload</code> request. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity in the Amazon S3 User Guide</a>.</p>
     pub checksum_type: ::std::option::Option<crate::types::ChecksumType>,
-    /// <p>The server-side encryption algorithm used when storing this object in Amazon S3 (for example, <code>AES256</code>, <code>aws:kms</code>).</p>
+    /// <p>The server-side encryption algorithm used when storing this object in Amazon S3.</p><note>
+    /// <p>When accessing data stored in Amazon FSx file systems using S3 access points, the only valid server side encryption option is <code>aws:fsx</code>.</p>
+    /// </note>
+    /// <p></p>
     pub server_side_encryption: ::std::option::Option<crate::types::ServerSideEncryption>,
     /// <p>Version ID of the newly created object, in case the bucket has versioning turned on.</p><note>
     /// <p>This functionality is not supported for directory buckets.</p>
@@ -95,7 +98,10 @@ impl CompleteMultipartUploadOutput {
     pub fn checksum_type(&self) -> ::std::option::Option<&crate::types::ChecksumType> {
         self.checksum_type.as_ref()
     }
-    /// <p>The server-side encryption algorithm used when storing this object in Amazon S3 (for example, <code>AES256</code>, <code>aws:kms</code>).</p>
+    /// <p>The server-side encryption algorithm used when storing this object in Amazon S3.</p><note>
+    /// <p>When accessing data stored in Amazon FSx file systems using S3 access points, the only valid server side encryption option is <code>aws:fsx</code>.</p>
+    /// </note>
+    /// <p></p>
     pub fn server_side_encryption(&self) -> ::std::option::Option<&crate::types::ServerSideEncryption> {
         self.server_side_encryption.as_ref()
     }
@@ -351,17 +357,26 @@ impl CompleteMultipartUploadOutputBuilder {
     pub fn get_checksum_type(&self) -> &::std::option::Option<crate::types::ChecksumType> {
         &self.checksum_type
     }
-    /// <p>The server-side encryption algorithm used when storing this object in Amazon S3 (for example, <code>AES256</code>, <code>aws:kms</code>).</p>
+    /// <p>The server-side encryption algorithm used when storing this object in Amazon S3.</p><note>
+    /// <p>When accessing data stored in Amazon FSx file systems using S3 access points, the only valid server side encryption option is <code>aws:fsx</code>.</p>
+    /// </note>
+    /// <p></p>
     pub fn server_side_encryption(mut self, input: crate::types::ServerSideEncryption) -> Self {
         self.server_side_encryption = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The server-side encryption algorithm used when storing this object in Amazon S3 (for example, <code>AES256</code>, <code>aws:kms</code>).</p>
+    /// <p>The server-side encryption algorithm used when storing this object in Amazon S3.</p><note>
+    /// <p>When accessing data stored in Amazon FSx file systems using S3 access points, the only valid server side encryption option is <code>aws:fsx</code>.</p>
+    /// </note>
+    /// <p></p>
     pub fn set_server_side_encryption(mut self, input: ::std::option::Option<crate::types::ServerSideEncryption>) -> Self {
         self.server_side_encryption = input;
         self
     }
-    /// <p>The server-side encryption algorithm used when storing this object in Amazon S3 (for example, <code>AES256</code>, <code>aws:kms</code>).</p>
+    /// <p>The server-side encryption algorithm used when storing this object in Amazon S3.</p><note>
+    /// <p>When accessing data stored in Amazon FSx file systems using S3 access points, the only valid server side encryption option is <code>aws:fsx</code>.</p>
+    /// </note>
+    /// <p></p>
     pub fn get_server_side_encryption(&self) -> &::std::option::Option<crate::types::ServerSideEncryption> {
         &self.server_side_encryption
     }

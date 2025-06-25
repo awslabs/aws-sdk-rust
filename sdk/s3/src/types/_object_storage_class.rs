@@ -14,6 +14,7 @@
 /// match objectstorageclass {
 ///     ObjectStorageClass::DeepArchive => { /* ... */ },
 ///     ObjectStorageClass::ExpressOnezone => { /* ... */ },
+///     ObjectStorageClass::FsxOpenzfs => { /* ... */ },
 ///     ObjectStorageClass::Glacier => { /* ... */ },
 ///     ObjectStorageClass::GlacierIr => { /* ... */ },
 ///     ObjectStorageClass::IntelligentTiering => { /* ... */ },
@@ -56,6 +57,8 @@ pub enum ObjectStorageClass {
     #[allow(missing_docs)] // documentation missing in model
     ExpressOnezone,
     #[allow(missing_docs)] // documentation missing in model
+    FsxOpenzfs,
+    #[allow(missing_docs)] // documentation missing in model
     Glacier,
     #[allow(missing_docs)] // documentation missing in model
     GlacierIr,
@@ -82,6 +85,7 @@ impl ::std::convert::From<&str> for ObjectStorageClass {
         match s {
             "DEEP_ARCHIVE" => ObjectStorageClass::DeepArchive,
             "EXPRESS_ONEZONE" => ObjectStorageClass::ExpressOnezone,
+            "FSX_OPENZFS" => ObjectStorageClass::FsxOpenzfs,
             "GLACIER" => ObjectStorageClass::Glacier,
             "GLACIER_IR" => ObjectStorageClass::GlacierIr,
             "INTELLIGENT_TIERING" => ObjectStorageClass::IntelligentTiering,
@@ -108,6 +112,7 @@ impl ObjectStorageClass {
         match self {
             ObjectStorageClass::DeepArchive => "DEEP_ARCHIVE",
             ObjectStorageClass::ExpressOnezone => "EXPRESS_ONEZONE",
+            ObjectStorageClass::FsxOpenzfs => "FSX_OPENZFS",
             ObjectStorageClass::Glacier => "GLACIER",
             ObjectStorageClass::GlacierIr => "GLACIER_IR",
             ObjectStorageClass::IntelligentTiering => "INTELLIGENT_TIERING",
@@ -125,6 +130,7 @@ impl ObjectStorageClass {
         &[
             "DEEP_ARCHIVE",
             "EXPRESS_ONEZONE",
+            "FSX_OPENZFS",
             "GLACIER",
             "GLACIER_IR",
             "INTELLIGENT_TIERING",
@@ -159,6 +165,7 @@ impl ::std::fmt::Display for ObjectStorageClass {
         match self {
             ObjectStorageClass::DeepArchive => write!(f, "DEEP_ARCHIVE"),
             ObjectStorageClass::ExpressOnezone => write!(f, "EXPRESS_ONEZONE"),
+            ObjectStorageClass::FsxOpenzfs => write!(f, "FSX_OPENZFS"),
             ObjectStorageClass::Glacier => write!(f, "GLACIER"),
             ObjectStorageClass::GlacierIr => write!(f, "GLACIER_IR"),
             ObjectStorageClass::IntelligentTiering => write!(f, "INTELLIGENT_TIERING"),

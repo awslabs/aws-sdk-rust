@@ -217,6 +217,8 @@ pub use crate::types::_auto_import_policy::AutoImportPolicy;
 
 pub use crate::types::_restore_open_zfs_volume_option::RestoreOpenZfsVolumeOption;
 
+pub use crate::types::_s3_access_point_attachment_lifecycle::S3AccessPointAttachmentLifecycle;
+
 pub use crate::types::_volume_filter::VolumeFilter;
 
 pub use crate::types::_volume_filter_name::VolumeFilterName;
@@ -228,6 +230,26 @@ pub use crate::types::_storage_virtual_machine_filter_name::StorageVirtualMachin
 pub use crate::types::_snapshot_filter::SnapshotFilter;
 
 pub use crate::types::_snapshot_filter_name::SnapshotFilterName;
+
+pub use crate::types::_s3_access_point_attachment::S3AccessPointAttachment;
+
+pub use crate::types::_s3_access_point::S3AccessPoint;
+
+pub use crate::types::_s3_access_point_vpc_configuration::S3AccessPointVpcConfiguration;
+
+pub use crate::types::_s3_access_point_open_zfs_configuration::S3AccessPointOpenZfsConfiguration;
+
+pub use crate::types::_open_zfs_file_system_identity::OpenZfsFileSystemIdentity;
+
+pub use crate::types::_open_zfs_posix_file_system_user::OpenZfsPosixFileSystemUser;
+
+pub use crate::types::_open_zfs_file_system_user_type::OpenZfsFileSystemUserType;
+
+pub use crate::types::_s3_access_point_attachment_type::S3AccessPointAttachmentType;
+
+pub use crate::types::_s3_access_point_attachments_filter::S3AccessPointAttachmentsFilter;
+
+pub use crate::types::_s3_access_point_attachments_filter_name::S3AccessPointAttachmentsFilterName;
 
 pub use crate::types::_data_repository_task::DataRepositoryTask;
 
@@ -331,6 +353,10 @@ pub use crate::types::_file_cache_nfs_configuration::FileCacheNfsConfiguration;
 
 pub use crate::types::_create_file_cache_lustre_configuration::CreateFileCacheLustreConfiguration;
 
+pub use crate::types::_create_and_attach_s3_access_point_s3_configuration::CreateAndAttachS3AccessPointS3Configuration;
+
+pub use crate::types::_create_and_attach_s3_access_point_open_zfs_configuration::CreateAndAttachS3AccessPointOpenZfsConfiguration;
+
 pub use crate::types::_update_open_zfs_volume_option::UpdateOpenZfsVolumeOption;
 
 mod _active_directory_backup_attributes;
@@ -370,6 +396,10 @@ mod _backup_type;
 mod _completion_report;
 
 mod _create_aggregate_configuration;
+
+mod _create_and_attach_s3_access_point_open_zfs_configuration;
+
+mod _create_and_attach_s3_access_point_s3_configuration;
 
 mod _create_file_cache_lustre_configuration;
 
@@ -537,9 +567,15 @@ mod _open_zfs_deployment_type;
 
 mod _open_zfs_file_system_configuration;
 
+mod _open_zfs_file_system_identity;
+
+mod _open_zfs_file_system_user_type;
+
 mod _open_zfs_nfs_export;
 
 mod _open_zfs_origin_snapshot_configuration;
+
+mod _open_zfs_posix_file_system_user;
 
 mod _open_zfs_quota_type;
 
@@ -566,6 +602,22 @@ mod _restore_open_zfs_volume_option;
 mod _retention_period;
 
 mod _retention_period_type;
+
+mod _s3_access_point;
+
+mod _s3_access_point_attachment;
+
+mod _s3_access_point_attachment_lifecycle;
+
+mod _s3_access_point_attachment_type;
+
+mod _s3_access_point_attachments_filter;
+
+mod _s3_access_point_attachments_filter_name;
+
+mod _s3_access_point_open_zfs_configuration;
+
+mod _s3_access_point_vpc_configuration;
 
 mod _s3_data_repository_configuration;
 

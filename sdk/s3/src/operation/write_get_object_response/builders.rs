@@ -708,17 +708,23 @@ impl WriteGetObjectResponseFluentBuilder {
     pub fn get_restore(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_restore()
     }
-    /// <p>The server-side encryption algorithm used when storing requested object in Amazon S3 (for example, AES256, <code>aws:kms</code>).</p>
+    /// <p>The server-side encryption algorithm used when storing requested object in Amazon S3 or Amazon FSx.</p><note>
+    /// <p>When accessing data stored in Amazon FSx file systems using S3 access points, the only valid server side encryption option is <code>aws:fsx</code>.</p>
+    /// </note>
     pub fn server_side_encryption(mut self, input: crate::types::ServerSideEncryption) -> Self {
         self.inner = self.inner.server_side_encryption(input);
         self
     }
-    /// <p>The server-side encryption algorithm used when storing requested object in Amazon S3 (for example, AES256, <code>aws:kms</code>).</p>
+    /// <p>The server-side encryption algorithm used when storing requested object in Amazon S3 or Amazon FSx.</p><note>
+    /// <p>When accessing data stored in Amazon FSx file systems using S3 access points, the only valid server side encryption option is <code>aws:fsx</code>.</p>
+    /// </note>
     pub fn set_server_side_encryption(mut self, input: ::std::option::Option<crate::types::ServerSideEncryption>) -> Self {
         self.inner = self.inner.set_server_side_encryption(input);
         self
     }
-    /// <p>The server-side encryption algorithm used when storing requested object in Amazon S3 (for example, AES256, <code>aws:kms</code>).</p>
+    /// <p>The server-side encryption algorithm used when storing requested object in Amazon S3 or Amazon FSx.</p><note>
+    /// <p>When accessing data stored in Amazon FSx file systems using S3 access points, the only valid server side encryption option is <code>aws:fsx</code>.</p>
+    /// </note>
     pub fn get_server_side_encryption(&self) -> &::std::option::Option<crate::types::ServerSideEncryption> {
         self.inner.get_server_side_encryption()
     }

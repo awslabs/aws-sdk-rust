@@ -28,7 +28,7 @@ impl crate::operation::start_cache_report::builders::StartCacheReportInputBuilde
 /// <p>The following requirements must be met to successfully generate a cache report:</p>
 /// <ul>
 /// <li>
-/// <p>You must have permissions to list the entire Amazon S3 bucket associated with the specified file share.</p></li>
+/// <p>You must have <code>s3:PutObject</code> and <code>s3:AbortMultipartUpload</code> permissions for the Amazon S3 bucket where you want to store the cache report.</p></li>
 /// <li>
 /// <p>No other cache reports can currently be in-progress for the specified file share.</p></li>
 /// <li>

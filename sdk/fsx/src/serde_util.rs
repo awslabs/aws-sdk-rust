@@ -148,6 +148,15 @@ pub(crate) fn lustre_log_configuration_correct_errors(
     builder
 }
 
+pub(crate) fn open_zfs_file_system_identity_correct_errors(
+    mut builder: crate::types::builders::OpenZfsFileSystemIdentityBuilder,
+) -> crate::types::builders::OpenZfsFileSystemIdentityBuilder {
+    if builder.r#type.is_none() {
+        builder.r#type = "no value was set".parse::<crate::types::OpenZfsFileSystemUserType>().ok()
+    }
+    builder
+}
+
 pub(crate) fn windows_audit_log_configuration_correct_errors(
     mut builder: crate::types::builders::WindowsAuditLogConfigurationBuilder,
 ) -> crate::types::builders::WindowsAuditLogConfigurationBuilder {
@@ -174,6 +183,18 @@ pub(crate) fn open_zfs_nfs_export_correct_errors(
 ) -> crate::types::builders::OpenZfsNfsExportBuilder {
     if builder.client_configurations.is_none() {
         builder.client_configurations = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn open_zfs_posix_file_system_user_correct_errors(
+    mut builder: crate::types::builders::OpenZfsPosixFileSystemUserBuilder,
+) -> crate::types::builders::OpenZfsPosixFileSystemUserBuilder {
+    if builder.uid.is_none() {
+        builder.uid = Some(Default::default())
+    }
+    if builder.gid.is_none() {
+        builder.gid = Some(Default::default())
     }
     builder
 }

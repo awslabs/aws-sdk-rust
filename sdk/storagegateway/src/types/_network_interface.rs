@@ -10,7 +10,9 @@ pub struct NetworkInterface {
     /// <p>This is currently unsupported and will not be returned in output.</p>
     /// </note>
     pub mac_address: ::std::option::Option<::std::string::String>,
-    /// <p>The Internet Protocol version 6 (IPv6) address of the interface. <i>Currently not supported</i>.</p>
+    /// <p>The Internet Protocol version 6 (IPv6) address of the interface.</p><note>
+    /// <p>This element returns IPv6 addresses for all gateway types except FSx File Gateway.</p>
+    /// </note>
     pub ipv6_address: ::std::option::Option<::std::string::String>,
 }
 impl NetworkInterface {
@@ -24,7 +26,9 @@ impl NetworkInterface {
     pub fn mac_address(&self) -> ::std::option::Option<&str> {
         self.mac_address.as_deref()
     }
-    /// <p>The Internet Protocol version 6 (IPv6) address of the interface. <i>Currently not supported</i>.</p>
+    /// <p>The Internet Protocol version 6 (IPv6) address of the interface.</p><note>
+    /// <p>This element returns IPv6 addresses for all gateway types except FSx File Gateway.</p>
+    /// </note>
     pub fn ipv6_address(&self) -> ::std::option::Option<&str> {
         self.ipv6_address.as_deref()
     }
@@ -88,17 +92,23 @@ impl NetworkInterfaceBuilder {
     pub fn get_mac_address(&self) -> &::std::option::Option<::std::string::String> {
         &self.mac_address
     }
-    /// <p>The Internet Protocol version 6 (IPv6) address of the interface. <i>Currently not supported</i>.</p>
+    /// <p>The Internet Protocol version 6 (IPv6) address of the interface.</p><note>
+    /// <p>This element returns IPv6 addresses for all gateway types except FSx File Gateway.</p>
+    /// </note>
     pub fn ipv6_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ipv6_address = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Internet Protocol version 6 (IPv6) address of the interface. <i>Currently not supported</i>.</p>
+    /// <p>The Internet Protocol version 6 (IPv6) address of the interface.</p><note>
+    /// <p>This element returns IPv6 addresses for all gateway types except FSx File Gateway.</p>
+    /// </note>
     pub fn set_ipv6_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ipv6_address = input;
         self
     }
-    /// <p>The Internet Protocol version 6 (IPv6) address of the interface. <i>Currently not supported</i>.</p>
+    /// <p>The Internet Protocol version 6 (IPv6) address of the interface.</p><note>
+    /// <p>This element returns IPv6 addresses for all gateway types except FSx File Gateway.</p>
+    /// </note>
     pub fn get_ipv6_address(&self) -> &::std::option::Option<::std::string::String> {
         &self.ipv6_address
     }

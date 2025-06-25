@@ -27,6 +27,10 @@ pub struct GetAccessPointOutput {
     pub endpoints: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The Amazon Web Services account ID associated with the S3 bucket associated with this access point.</p>
     pub bucket_account_id: ::std::option::Option<::std::string::String>,
+    /// <p>The unique identifier for the data source of the access point.</p>
+    pub data_source_id: ::std::option::Option<::std::string::String>,
+    /// <p>The type of the data source that the access point is attached to.</p>
+    pub data_source_type: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetAccessPointOutput {
@@ -74,6 +78,14 @@ impl GetAccessPointOutput {
     pub fn bucket_account_id(&self) -> ::std::option::Option<&str> {
         self.bucket_account_id.as_deref()
     }
+    /// <p>The unique identifier for the data source of the access point.</p>
+    pub fn data_source_id(&self) -> ::std::option::Option<&str> {
+        self.data_source_id.as_deref()
+    }
+    /// <p>The type of the data source that the access point is attached to.</p>
+    pub fn data_source_type(&self) -> ::std::option::Option<&str> {
+        self.data_source_type.as_deref()
+    }
 }
 impl ::aws_types::request_id::RequestId for GetAccessPointOutput {
     fn request_id(&self) -> Option<&str> {
@@ -101,6 +113,8 @@ pub struct GetAccessPointOutputBuilder {
     pub(crate) access_point_arn: ::std::option::Option<::std::string::String>,
     pub(crate) endpoints: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) bucket_account_id: ::std::option::Option<::std::string::String>,
+    pub(crate) data_source_id: ::std::option::Option<::std::string::String>,
+    pub(crate) data_source_type: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetAccessPointOutputBuilder {
@@ -262,6 +276,34 @@ impl GetAccessPointOutputBuilder {
     pub fn get_bucket_account_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.bucket_account_id
     }
+    /// <p>The unique identifier for the data source of the access point.</p>
+    pub fn data_source_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.data_source_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The unique identifier for the data source of the access point.</p>
+    pub fn set_data_source_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.data_source_id = input;
+        self
+    }
+    /// <p>The unique identifier for the data source of the access point.</p>
+    pub fn get_data_source_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.data_source_id
+    }
+    /// <p>The type of the data source that the access point is attached to.</p>
+    pub fn data_source_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.data_source_type = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The type of the data source that the access point is attached to.</p>
+    pub fn set_data_source_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.data_source_type = input;
+        self
+    }
+    /// <p>The type of the data source that the access point is attached to.</p>
+    pub fn get_data_source_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.data_source_type
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -284,6 +326,8 @@ impl GetAccessPointOutputBuilder {
             access_point_arn: self.access_point_arn,
             endpoints: self.endpoints,
             bucket_account_id: self.bucket_account_id,
+            data_source_id: self.data_source_id,
+            data_source_type: self.data_source_type,
             _request_id: self._request_id,
         }
     }

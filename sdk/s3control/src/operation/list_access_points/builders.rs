@@ -25,7 +25,8 @@ impl crate::operation::list_access_points::builders::ListAccessPointsInputBuilde
 /// <note>
 /// <p>This operation is not supported by directory buckets.</p>
 /// </note>
-/// <p>Returns a list of the access points that are owned by the current account that's associated with the specified bucket. You can retrieve up to 1000 access points per call. If the specified bucket has more than 1,000 access points (or the number specified in <code>maxResults</code>, whichever is less), the response will include a continuation token that you can use to list the additional access points.</p>
+/// <p>Returns a list of the access points. You can retrieve up to 1,000 access points per call. If the call returns more than 1,000 access points (or the number specified in <code>maxResults</code>, whichever is less), the response will include a continuation token that you can use to list the additional access points.</p>
+/// <p>Returns only access points attached to S3 buckets by default. To return all access points specify <code>DataSourceType</code> as <code>ALL</code>.</p>
 /// <p></p>
 /// <p>All Amazon S3 on Outposts REST API requests for this action require an additional parameter of <code>x-amz-outpost-id</code> to be passed with the request. In addition, you must use an S3 on Outposts endpoint hostname prefix instead of <code>s3-control</code>. For an example of the request syntax for Amazon S3 on Outposts that uses the S3 on Outposts endpoint hostname prefix and the <code>x-amz-outpost-id</code> derived by using the access point ARN, see the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetAccessPoint.html#API_control_GetAccessPoint_Examples">Examples</a> section.</p>
 /// <p>The following actions are related to <code>ListAccessPoints</code>:</p>
@@ -216,5 +217,33 @@ impl ListAccessPointsFluentBuilder {
     /// <p>The maximum number of access points that you want to include in the list. If the specified bucket has more than this number of access points, then the response will include a continuation token in the <code>NextToken</code> field that you can use to retrieve the next page of access points.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_results()
+    }
+    /// <p>The unique identifier for the data source of the access point.</p>
+    pub fn data_source_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.data_source_id(input.into());
+        self
+    }
+    /// <p>The unique identifier for the data source of the access point.</p>
+    pub fn set_data_source_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_data_source_id(input);
+        self
+    }
+    /// <p>The unique identifier for the data source of the access point.</p>
+    pub fn get_data_source_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_data_source_id()
+    }
+    /// <p>The type of the data source that the access point is attached to. Returns only access points attached to S3 buckets by default. To return all access points specify <code>DataSourceType</code> as <code>ALL</code>.</p>
+    pub fn data_source_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.data_source_type(input.into());
+        self
+    }
+    /// <p>The type of the data source that the access point is attached to. Returns only access points attached to S3 buckets by default. To return all access points specify <code>DataSourceType</code> as <code>ALL</code>.</p>
+    pub fn set_data_source_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_data_source_type(input);
+        self
+    }
+    /// <p>The type of the data source that the access point is attached to. Returns only access points attached to S3 buckets by default. To return all access points specify <code>DataSourceType</code> as <code>ALL</code>.</p>
+    pub fn get_data_source_type(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_data_source_type()
     }
 }

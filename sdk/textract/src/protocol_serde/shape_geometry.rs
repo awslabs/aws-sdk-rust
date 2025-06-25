@@ -20,6 +20,11 @@ where
                         "Polygon" => {
                             builder = builder.set_polygon(crate::protocol_serde::shape_polygon::de_polygon(tokens)?);
                         }
+                        "RotationAngle" => {
+                            builder = builder.set_rotation_angle(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?.map(|v| v.to_f32_lossy()),
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

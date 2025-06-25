@@ -14,6 +14,7 @@
 /// match storageclass {
 ///     StorageClass::DeepArchive => { /* ... */ },
 ///     StorageClass::ExpressOnezone => { /* ... */ },
+///     StorageClass::FsxOpenzfs => { /* ... */ },
 ///     StorageClass::Glacier => { /* ... */ },
 ///     StorageClass::GlacierIr => { /* ... */ },
 ///     StorageClass::IntelligentTiering => { /* ... */ },
@@ -56,6 +57,8 @@ pub enum StorageClass {
     #[allow(missing_docs)] // documentation missing in model
     ExpressOnezone,
     #[allow(missing_docs)] // documentation missing in model
+    FsxOpenzfs,
+    #[allow(missing_docs)] // documentation missing in model
     Glacier,
     #[allow(missing_docs)] // documentation missing in model
     GlacierIr,
@@ -82,6 +85,7 @@ impl ::std::convert::From<&str> for StorageClass {
         match s {
             "DEEP_ARCHIVE" => StorageClass::DeepArchive,
             "EXPRESS_ONEZONE" => StorageClass::ExpressOnezone,
+            "FSX_OPENZFS" => StorageClass::FsxOpenzfs,
             "GLACIER" => StorageClass::Glacier,
             "GLACIER_IR" => StorageClass::GlacierIr,
             "INTELLIGENT_TIERING" => StorageClass::IntelligentTiering,
@@ -108,6 +112,7 @@ impl StorageClass {
         match self {
             StorageClass::DeepArchive => "DEEP_ARCHIVE",
             StorageClass::ExpressOnezone => "EXPRESS_ONEZONE",
+            StorageClass::FsxOpenzfs => "FSX_OPENZFS",
             StorageClass::Glacier => "GLACIER",
             StorageClass::GlacierIr => "GLACIER_IR",
             StorageClass::IntelligentTiering => "INTELLIGENT_TIERING",
@@ -125,6 +130,7 @@ impl StorageClass {
         &[
             "DEEP_ARCHIVE",
             "EXPRESS_ONEZONE",
+            "FSX_OPENZFS",
             "GLACIER",
             "GLACIER_IR",
             "INTELLIGENT_TIERING",
@@ -159,6 +165,7 @@ impl ::std::fmt::Display for StorageClass {
         match self {
             StorageClass::DeepArchive => write!(f, "DEEP_ARCHIVE"),
             StorageClass::ExpressOnezone => write!(f, "EXPRESS_ONEZONE"),
+            StorageClass::FsxOpenzfs => write!(f, "FSX_OPENZFS"),
             StorageClass::Glacier => write!(f, "GLACIER"),
             StorageClass::GlacierIr => write!(f, "GLACIER_IR"),
             StorageClass::IntelligentTiering => write!(f, "INTELLIGENT_TIERING"),

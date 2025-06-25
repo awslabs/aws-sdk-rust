@@ -1,13 +1,13 @@
 [workspace]
 resolver = "2"
 exclude = [
-    "examples/lambda",
     "examples/cross_service",
-    "examples/test-utils",
     "examples/webassembly",
+    "examples/lambda",
     "examples/examples",
-    "tests/telemetry",
+    "examples/test-utils",
     "tests/webassembly",
+    "tests/telemetry",
     "tests/no-default-features"
 ]
 members = [

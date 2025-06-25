@@ -139,7 +139,7 @@ pub fn de_get_access_point(
                 builder = builder.set_access_point_arn(var_8);
             }
             ,
-            s if s.matches("BucketAccountId") /* BucketAccountId com.amazonaws.s3control.synthetic#GetAccessPointOutput$BucketAccountId */ =>  {
+            s if s.matches("DataSourceType") /* DataSourceType com.amazonaws.s3control.synthetic#GetAccessPointOutput$DataSourceType */ =>  {
                 let var_9 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -149,21 +149,34 @@ pub fn de_get_access_point(
                         ?
                     )
                 ;
-                builder = builder.set_bucket_account_id(var_9);
+                builder = builder.set_data_source_type(var_9);
+            }
+            ,
+            s if s.matches("BucketAccountId") /* BucketAccountId com.amazonaws.s3control.synthetic#GetAccessPointOutput$BucketAccountId */ =>  {
+                let var_10 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_bucket_account_id(var_10);
             }
             ,
             s if s.matches("VpcConfiguration") /* VpcConfiguration com.amazonaws.s3control.synthetic#GetAccessPointOutput$VpcConfiguration */ =>  {
-                let var_10 =
+                let var_11 =
                     Some(
                         crate::protocol_serde::shape_vpc_configuration::de_vpc_configuration(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_vpc_configuration(var_10);
+                builder = builder.set_vpc_configuration(var_11);
             }
             ,
             s if s.matches("NetworkOrigin") /* NetworkOrigin com.amazonaws.s3control.synthetic#GetAccessPointOutput$NetworkOrigin */ =>  {
-                let var_11 =
+                let var_12 =
                     Some(
                         Result::<crate::types::NetworkOrigin, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             crate::types::NetworkOrigin::from(
@@ -173,11 +186,11 @@ pub fn de_get_access_point(
                         ?
                     )
                 ;
-                builder = builder.set_network_origin(var_11);
+                builder = builder.set_network_origin(var_12);
             }
             ,
-            s if s.matches("Name") /* Name com.amazonaws.s3control.synthetic#GetAccessPointOutput$Name */ =>  {
-                let var_12 =
+            s if s.matches("DataSourceId") /* DataSourceId com.amazonaws.s3control.synthetic#GetAccessPointOutput$DataSourceId */ =>  {
+                let var_13 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -186,7 +199,20 @@ pub fn de_get_access_point(
                         ?
                     )
                 ;
-                builder = builder.set_name(var_12);
+                builder = builder.set_data_source_id(var_13);
+            }
+            ,
+            s if s.matches("Name") /* Name com.amazonaws.s3control.synthetic#GetAccessPointOutput$Name */ =>  {
+                let var_14 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_name(var_14);
             }
             ,
             _ => {}

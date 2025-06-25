@@ -22,6 +22,10 @@ pub struct ListAccessPointsInput {
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of access points that you want to include in the list. If the specified bucket has more than this number of access points, then the response will include a continuation token in the <code>NextToken</code> field that you can use to retrieve the next page of access points.</p>
     pub max_results: ::std::option::Option<i32>,
+    /// <p>The unique identifier for the data source of the access point.</p>
+    pub data_source_id: ::std::option::Option<::std::string::String>,
+    /// <p>The type of the data source that the access point is attached to. Returns only access points attached to S3 buckets by default. To return all access points specify <code>DataSourceType</code> as <code>ALL</code>.</p>
+    pub data_source_type: ::std::option::Option<::std::string::String>,
 }
 impl ListAccessPointsInput {
     /// <p>The Amazon Web Services account ID for the account that owns the specified access points.</p>
@@ -51,6 +55,14 @@ impl ListAccessPointsInput {
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
+    /// <p>The unique identifier for the data source of the access point.</p>
+    pub fn data_source_id(&self) -> ::std::option::Option<&str> {
+        self.data_source_id.as_deref()
+    }
+    /// <p>The type of the data source that the access point is attached to. Returns only access points attached to S3 buckets by default. To return all access points specify <code>DataSourceType</code> as <code>ALL</code>.</p>
+    pub fn data_source_type(&self) -> ::std::option::Option<&str> {
+        self.data_source_type.as_deref()
+    }
 }
 impl ListAccessPointsInput {
     /// Creates a new builder-style object to manufacture [`ListAccessPointsInput`](crate::operation::list_access_points::ListAccessPointsInput).
@@ -67,6 +79,8 @@ pub struct ListAccessPointsInputBuilder {
     pub(crate) bucket: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
+    pub(crate) data_source_id: ::std::option::Option<::std::string::String>,
+    pub(crate) data_source_type: ::std::option::Option<::std::string::String>,
 }
 impl ListAccessPointsInputBuilder {
     /// <p>The Amazon Web Services account ID for the account that owns the specified access points.</p>
@@ -159,6 +173,34 @@ impl ListAccessPointsInputBuilder {
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
+    /// <p>The unique identifier for the data source of the access point.</p>
+    pub fn data_source_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.data_source_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The unique identifier for the data source of the access point.</p>
+    pub fn set_data_source_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.data_source_id = input;
+        self
+    }
+    /// <p>The unique identifier for the data source of the access point.</p>
+    pub fn get_data_source_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.data_source_id
+    }
+    /// <p>The type of the data source that the access point is attached to. Returns only access points attached to S3 buckets by default. To return all access points specify <code>DataSourceType</code> as <code>ALL</code>.</p>
+    pub fn data_source_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.data_source_type = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The type of the data source that the access point is attached to. Returns only access points attached to S3 buckets by default. To return all access points specify <code>DataSourceType</code> as <code>ALL</code>.</p>
+    pub fn set_data_source_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.data_source_type = input;
+        self
+    }
+    /// <p>The type of the data source that the access point is attached to. Returns only access points attached to S3 buckets by default. To return all access points specify <code>DataSourceType</code> as <code>ALL</code>.</p>
+    pub fn get_data_source_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.data_source_type
+    }
     /// Consumes the builder and constructs a [`ListAccessPointsInput`](crate::operation::list_access_points::ListAccessPointsInput).
     pub fn build(
         self,
@@ -168,6 +210,8 @@ impl ListAccessPointsInputBuilder {
             bucket: self.bucket,
             next_token: self.next_token,
             max_results: self.max_results,
+            data_source_id: self.data_source_id,
+            data_source_type: self.data_source_type,
         })
     }
 }

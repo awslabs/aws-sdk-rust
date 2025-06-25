@@ -28,7 +28,9 @@ pub struct RenameObjectInput {
     pub source_if_modified_since: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Renames the object if the source exists and hasn't been modified since the specified time.</p>
     pub source_if_unmodified_since: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>A unique string with a max of 64 ASCII characters in the ASCII range of 33 - 126. <code>RenameObject</code> supports idempotency using a client token. To make an idempotent API request using <code>RenameObject</code>, specify a client token in the request. You should not reuse the same client token for other API requests. If you retry a request that completed successfully using the same client token and the same parameters, the retry succeeds without performing any further actions. If you retry a successful request using the same client token, but one or more of the parameters are different, the retry fails and an <code>IdempotentParameterMismatch</code> error is returned.</p>
+    /// <p>A unique string with a max of 64 ASCII characters in the ASCII range of 33 - 126.</p><note>
+    /// <p><code>RenameObject</code> supports idempotency using a client token. To make an idempotent API request using <code>RenameObject</code>, specify a client token in the request. You should not reuse the same client token for other API requests. If you retry a request that completed successfully using the same client token and the same parameters, the retry succeeds without performing any further actions. If you retry a successful request using the same client token, but one or more of the parameters are different, the retry fails and an <code>IdempotentParameterMismatch</code> error is returned.</p>
+    /// </note>
     pub client_token: ::std::option::Option<::std::string::String>,
 }
 impl RenameObjectInput {
@@ -79,7 +81,9 @@ impl RenameObjectInput {
     pub fn source_if_unmodified_since(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.source_if_unmodified_since.as_ref()
     }
-    /// <p>A unique string with a max of 64 ASCII characters in the ASCII range of 33 - 126. <code>RenameObject</code> supports idempotency using a client token. To make an idempotent API request using <code>RenameObject</code>, specify a client token in the request. You should not reuse the same client token for other API requests. If you retry a request that completed successfully using the same client token and the same parameters, the retry succeeds without performing any further actions. If you retry a successful request using the same client token, but one or more of the parameters are different, the retry fails and an <code>IdempotentParameterMismatch</code> error is returned.</p>
+    /// <p>A unique string with a max of 64 ASCII characters in the ASCII range of 33 - 126.</p><note>
+    /// <p><code>RenameObject</code> supports idempotency using a client token. To make an idempotent API request using <code>RenameObject</code>, specify a client token in the request. You should not reuse the same client token for other API requests. If you retry a request that completed successfully using the same client token and the same parameters, the retry succeeds without performing any further actions. If you retry a successful request using the same client token, but one or more of the parameters are different, the retry fails and an <code>IdempotentParameterMismatch</code> error is returned.</p>
+    /// </note>
     pub fn client_token(&self) -> ::std::option::Option<&str> {
         self.client_token.as_deref()
     }
@@ -275,17 +279,23 @@ impl RenameObjectInputBuilder {
     pub fn get_source_if_unmodified_since(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.source_if_unmodified_since
     }
-    /// <p>A unique string with a max of 64 ASCII characters in the ASCII range of 33 - 126. <code>RenameObject</code> supports idempotency using a client token. To make an idempotent API request using <code>RenameObject</code>, specify a client token in the request. You should not reuse the same client token for other API requests. If you retry a request that completed successfully using the same client token and the same parameters, the retry succeeds without performing any further actions. If you retry a successful request using the same client token, but one or more of the parameters are different, the retry fails and an <code>IdempotentParameterMismatch</code> error is returned.</p>
+    /// <p>A unique string with a max of 64 ASCII characters in the ASCII range of 33 - 126.</p><note>
+    /// <p><code>RenameObject</code> supports idempotency using a client token. To make an idempotent API request using <code>RenameObject</code>, specify a client token in the request. You should not reuse the same client token for other API requests. If you retry a request that completed successfully using the same client token and the same parameters, the retry succeeds without performing any further actions. If you retry a successful request using the same client token, but one or more of the parameters are different, the retry fails and an <code>IdempotentParameterMismatch</code> error is returned.</p>
+    /// </note>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A unique string with a max of 64 ASCII characters in the ASCII range of 33 - 126. <code>RenameObject</code> supports idempotency using a client token. To make an idempotent API request using <code>RenameObject</code>, specify a client token in the request. You should not reuse the same client token for other API requests. If you retry a request that completed successfully using the same client token and the same parameters, the retry succeeds without performing any further actions. If you retry a successful request using the same client token, but one or more of the parameters are different, the retry fails and an <code>IdempotentParameterMismatch</code> error is returned.</p>
+    /// <p>A unique string with a max of 64 ASCII characters in the ASCII range of 33 - 126.</p><note>
+    /// <p><code>RenameObject</code> supports idempotency using a client token. To make an idempotent API request using <code>RenameObject</code>, specify a client token in the request. You should not reuse the same client token for other API requests. If you retry a request that completed successfully using the same client token and the same parameters, the retry succeeds without performing any further actions. If you retry a successful request using the same client token, but one or more of the parameters are different, the retry fails and an <code>IdempotentParameterMismatch</code> error is returned.</p>
+    /// </note>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_token = input;
         self
     }
-    /// <p>A unique string with a max of 64 ASCII characters in the ASCII range of 33 - 126. <code>RenameObject</code> supports idempotency using a client token. To make an idempotent API request using <code>RenameObject</code>, specify a client token in the request. You should not reuse the same client token for other API requests. If you retry a request that completed successfully using the same client token and the same parameters, the retry succeeds without performing any further actions. If you retry a successful request using the same client token, but one or more of the parameters are different, the retry fails and an <code>IdempotentParameterMismatch</code> error is returned.</p>
+    /// <p>A unique string with a max of 64 ASCII characters in the ASCII range of 33 - 126.</p><note>
+    /// <p><code>RenameObject</code> supports idempotency using a client token. To make an idempotent API request using <code>RenameObject</code>, specify a client token in the request. You should not reuse the same client token for other API requests. If you retry a request that completed successfully using the same client token and the same parameters, the retry succeeds without performing any further actions. If you retry a successful request using the same client token, but one or more of the parameters are different, the retry fails and an <code>IdempotentParameterMismatch</code> error is returned.</p>
+    /// </note>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }

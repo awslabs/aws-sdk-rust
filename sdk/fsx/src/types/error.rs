@@ -35,6 +35,8 @@ pub use crate::types::error::_resource_does_not_support_tagging::ResourceDoesNot
 
 pub use crate::types::error::_not_service_resource_error::NotServiceResourceError;
 
+pub use crate::types::error::_s3_access_point_attachment_not_found::S3AccessPointAttachmentNotFound;
+
 pub use crate::types::error::_data_repository_task_not_found::DataRepositoryTaskNotFound;
 
 pub use crate::types::error::_invalid_data_repository_type::InvalidDataRepositoryType;
@@ -57,6 +59,14 @@ pub use crate::types::error::_invalid_export_path::InvalidExportPath;
 
 pub use crate::types::error::_data_repository_task_executing::DataRepositoryTaskExecuting;
 
+pub use crate::types::error::_too_many_access_points::TooManyAccessPoints;
+
+pub use crate::types::error::_invalid_request::InvalidRequest;
+
+pub use crate::types::error::_invalid_access_point::InvalidAccessPoint;
+
+pub use crate::types::error::_access_point_already_owned_by_you::AccessPointAlreadyOwnedByYou;
+
 pub use crate::types::error::_source_backup_unavailable::SourceBackupUnavailable;
 
 pub use crate::types::error::_invalid_source_kms_key::InvalidSourceKmsKey;
@@ -68,6 +78,8 @@ pub use crate::types::error::_invalid_destination_kms_key::InvalidDestinationKms
 pub use crate::types::error::_incompatible_region_for_multi_az::IncompatibleRegionForMultiAz;
 
 pub use crate::types::error::_data_repository_task_ended::DataRepositoryTaskEnded;
+
+mod _access_point_already_owned_by_you;
 
 mod _active_directory_error;
 
@@ -99,6 +111,8 @@ mod _incompatible_region_for_multi_az;
 
 mod _internal_server_error;
 
+mod _invalid_access_point;
+
 mod _invalid_data_repository_type;
 
 mod _invalid_destination_kms_key;
@@ -112,6 +126,8 @@ mod _invalid_network_settings;
 mod _invalid_per_unit_storage_throughput;
 
 mod _invalid_region;
+
+mod _invalid_request;
 
 mod _invalid_source_kms_key;
 
@@ -127,6 +143,8 @@ mod _resource_does_not_support_tagging;
 
 mod _resource_not_found;
 
+mod _s3_access_point_attachment_not_found;
+
 mod _service_limit_exceeded;
 
 mod _snapshot_not_found;
@@ -134,6 +152,8 @@ mod _snapshot_not_found;
 mod _source_backup_unavailable;
 
 mod _storage_virtual_machine_not_found;
+
+mod _too_many_access_points;
 
 mod _unsupported_operation;
 

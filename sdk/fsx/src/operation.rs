@@ -13,6 +13,9 @@ pub mod copy_backup;
 /// Types for the `CopySnapshotAndUpdateVolume` operation.
 pub mod copy_snapshot_and_update_volume;
 
+/// Types for the `CreateAndAttachS3AccessPoint` operation.
+pub mod create_and_attach_s3_access_point;
+
 /// Types for the `CreateBackup` operation.
 pub mod create_backup;
 
@@ -82,6 +85,9 @@ pub mod describe_file_system_aliases;
 /// Types for the `DescribeFileSystems` operation.
 pub mod describe_file_systems;
 
+/// Types for the `DescribeS3AccessPointAttachments` operation.
+pub mod describe_s3_access_point_attachments;
+
 /// Types for the `DescribeSharedVpcConfiguration` operation.
 pub mod describe_shared_vpc_configuration;
 
@@ -93,6 +99,9 @@ pub mod describe_storage_virtual_machines;
 
 /// Types for the `DescribeVolumes` operation.
 pub mod describe_volumes;
+
+/// Types for the `DetachAndDeleteS3AccessPoint` operation.
+pub mod detach_and_delete_s3_access_point;
 
 /// Types for the `DisassociateFileSystemAliases` operation.
 pub mod disassociate_file_system_aliases;

@@ -137,9 +137,6 @@ where
                                     .transpose()?,
                             );
                         }
-                        "tags" => {
-                            builder = builder.set_tags(crate::protocol_serde::shape_tags_map::de_tags_map(tokens)?);
-                        }
                         "deviceCreationTags" => {
                             builder = builder.set_device_creation_tags(
                                 crate::protocol_serde::shape_device_creation_tags_map::de_device_creation_tags_map(tokens)?,

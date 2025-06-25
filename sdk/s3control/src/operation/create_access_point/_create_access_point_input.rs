@@ -6,7 +6,7 @@ pub struct CreateAccessPointInput {
     /// <p>The Amazon Web Services account ID for the account that owns the specified access point.</p>
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>The name you want to assign to this access point.</p>
-    /// <p>For directory buckets, the access point name must consist of a base name that you provide and suffix that includes the <code>ZoneID</code> (Amazon Web Services Availability Zone or Local Zone) of your bucket location, followed by <code>--xa-s3</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points-directory-buckets.html">Managing access to shared datasets in directory buckets with access points</a> in the Amazon S3 User Guide.</p>
+    /// <p>For directory buckets, the access point name must consist of a base name that you provide and suffix that includes the <code>ZoneID</code> (Amazon Web Services Availability Zone or Local Zone) of your bucket location, followed by <code>--xa-s3</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points-directory-buckets.html">Managing access to shared datasets in directory buckets with access points</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the bucket that you want to associate this access point with.</p>
     /// <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p>
@@ -30,8 +30,8 @@ pub struct CreateAccessPointInput {
     /// <p>The Amazon Web Services account ID associated with the S3 bucket associated with this access point.</p>
     /// <p>For same account access point when your bucket and access point belong to the same account owner, the <code>BucketAccountId</code> is not required. For cross-account access point when your bucket and access point are not in the same account, the <code>BucketAccountId</code> is required.</p>
     pub bucket_account_id: ::std::option::Option<::std::string::String>,
-    /// <p>For directory buckets, you can filter access control to specific prefixes, API operations, or a combination of both. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points-directory-buckets.html">Managing access to shared datasets in directory buckets with access points</a> in the Amazon S3 User Guide.</p><note>
-    /// <p>Scope is not supported for access points for general purpose buckets.</p>
+    /// <p>For directory buckets, you can filter access control to specific prefixes, API operations, or a combination of both. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points-directory-buckets.html">Managing access to shared datasets in directory buckets with access points</a> in the <i>Amazon S3 User Guide</i>.</p><note>
+    /// <p>Scope is only supported for access points attached to directory buckets.</p>
     /// </note>
     pub scope: ::std::option::Option<crate::types::Scope>,
 }
@@ -41,7 +41,7 @@ impl CreateAccessPointInput {
         self.account_id.as_deref()
     }
     /// <p>The name you want to assign to this access point.</p>
-    /// <p>For directory buckets, the access point name must consist of a base name that you provide and suffix that includes the <code>ZoneID</code> (Amazon Web Services Availability Zone or Local Zone) of your bucket location, followed by <code>--xa-s3</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points-directory-buckets.html">Managing access to shared datasets in directory buckets with access points</a> in the Amazon S3 User Guide.</p>
+    /// <p>For directory buckets, the access point name must consist of a base name that you provide and suffix that includes the <code>ZoneID</code> (Amazon Web Services Availability Zone or Local Zone) of your bucket location, followed by <code>--xa-s3</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points-directory-buckets.html">Managing access to shared datasets in directory buckets with access points</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
@@ -75,8 +75,8 @@ impl CreateAccessPointInput {
     pub fn bucket_account_id(&self) -> ::std::option::Option<&str> {
         self.bucket_account_id.as_deref()
     }
-    /// <p>For directory buckets, you can filter access control to specific prefixes, API operations, or a combination of both. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points-directory-buckets.html">Managing access to shared datasets in directory buckets with access points</a> in the Amazon S3 User Guide.</p><note>
-    /// <p>Scope is not supported for access points for general purpose buckets.</p>
+    /// <p>For directory buckets, you can filter access control to specific prefixes, API operations, or a combination of both. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points-directory-buckets.html">Managing access to shared datasets in directory buckets with access points</a> in the <i>Amazon S3 User Guide</i>.</p><note>
+    /// <p>Scope is only supported for access points attached to directory buckets.</p>
     /// </note>
     pub fn scope(&self) -> ::std::option::Option<&crate::types::Scope> {
         self.scope.as_ref()
@@ -118,20 +118,20 @@ impl CreateAccessPointInputBuilder {
         &self.account_id
     }
     /// <p>The name you want to assign to this access point.</p>
-    /// <p>For directory buckets, the access point name must consist of a base name that you provide and suffix that includes the <code>ZoneID</code> (Amazon Web Services Availability Zone or Local Zone) of your bucket location, followed by <code>--xa-s3</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points-directory-buckets.html">Managing access to shared datasets in directory buckets with access points</a> in the Amazon S3 User Guide.</p>
+    /// <p>For directory buckets, the access point name must consist of a base name that you provide and suffix that includes the <code>ZoneID</code> (Amazon Web Services Availability Zone or Local Zone) of your bucket location, followed by <code>--xa-s3</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points-directory-buckets.html">Managing access to shared datasets in directory buckets with access points</a> in the <i>Amazon S3 User Guide</i>.</p>
     /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name you want to assign to this access point.</p>
-    /// <p>For directory buckets, the access point name must consist of a base name that you provide and suffix that includes the <code>ZoneID</code> (Amazon Web Services Availability Zone or Local Zone) of your bucket location, followed by <code>--xa-s3</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points-directory-buckets.html">Managing access to shared datasets in directory buckets with access points</a> in the Amazon S3 User Guide.</p>
+    /// <p>For directory buckets, the access point name must consist of a base name that you provide and suffix that includes the <code>ZoneID</code> (Amazon Web Services Availability Zone or Local Zone) of your bucket location, followed by <code>--xa-s3</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points-directory-buckets.html">Managing access to shared datasets in directory buckets with access points</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>The name you want to assign to this access point.</p>
-    /// <p>For directory buckets, the access point name must consist of a base name that you provide and suffix that includes the <code>ZoneID</code> (Amazon Web Services Availability Zone or Local Zone) of your bucket location, followed by <code>--xa-s3</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points-directory-buckets.html">Managing access to shared datasets in directory buckets with access points</a> in the Amazon S3 User Guide.</p>
+    /// <p>For directory buckets, the access point name must consist of a base name that you provide and suffix that includes the <code>ZoneID</code> (Amazon Web Services Availability Zone or Local Zone) of your bucket location, followed by <code>--xa-s3</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points-directory-buckets.html">Managing access to shared datasets in directory buckets with access points</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
@@ -234,22 +234,22 @@ impl CreateAccessPointInputBuilder {
     pub fn get_bucket_account_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.bucket_account_id
     }
-    /// <p>For directory buckets, you can filter access control to specific prefixes, API operations, or a combination of both. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points-directory-buckets.html">Managing access to shared datasets in directory buckets with access points</a> in the Amazon S3 User Guide.</p><note>
-    /// <p>Scope is not supported for access points for general purpose buckets.</p>
+    /// <p>For directory buckets, you can filter access control to specific prefixes, API operations, or a combination of both. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points-directory-buckets.html">Managing access to shared datasets in directory buckets with access points</a> in the <i>Amazon S3 User Guide</i>.</p><note>
+    /// <p>Scope is only supported for access points attached to directory buckets.</p>
     /// </note>
     pub fn scope(mut self, input: crate::types::Scope) -> Self {
         self.scope = ::std::option::Option::Some(input);
         self
     }
-    /// <p>For directory buckets, you can filter access control to specific prefixes, API operations, or a combination of both. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points-directory-buckets.html">Managing access to shared datasets in directory buckets with access points</a> in the Amazon S3 User Guide.</p><note>
-    /// <p>Scope is not supported for access points for general purpose buckets.</p>
+    /// <p>For directory buckets, you can filter access control to specific prefixes, API operations, or a combination of both. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points-directory-buckets.html">Managing access to shared datasets in directory buckets with access points</a> in the <i>Amazon S3 User Guide</i>.</p><note>
+    /// <p>Scope is only supported for access points attached to directory buckets.</p>
     /// </note>
     pub fn set_scope(mut self, input: ::std::option::Option<crate::types::Scope>) -> Self {
         self.scope = input;
         self
     }
-    /// <p>For directory buckets, you can filter access control to specific prefixes, API operations, or a combination of both. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points-directory-buckets.html">Managing access to shared datasets in directory buckets with access points</a> in the Amazon S3 User Guide.</p><note>
-    /// <p>Scope is not supported for access points for general purpose buckets.</p>
+    /// <p>For directory buckets, you can filter access control to specific prefixes, API operations, or a combination of both. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points-directory-buckets.html">Managing access to shared datasets in directory buckets with access points</a> in the <i>Amazon S3 User Guide</i>.</p><note>
+    /// <p>Scope is only supported for access points attached to directory buckets.</p>
     /// </note>
     pub fn get_scope(&self) -> &::std::option::Option<crate::types::Scope> {
         &self.scope

@@ -8,6 +8,8 @@ pub struct Geometry {
     pub bounding_box: ::std::option::Option<crate::types::BoundingBox>,
     /// <p>Within the bounding box, a fine-grained polygon around the recognized item.</p>
     pub polygon: ::std::option::Option<::std::vec::Vec<crate::types::Point>>,
+    /// <p>Provides a numerical value corresponding to the rotation of the text.</p>
+    pub rotation_angle: ::std::option::Option<f32>,
 }
 impl Geometry {
     /// <p>An axis-aligned coarse representation of the location of the recognized item on the document page.</p>
@@ -19,6 +21,10 @@ impl Geometry {
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.polygon.is_none()`.
     pub fn polygon(&self) -> &[crate::types::Point] {
         self.polygon.as_deref().unwrap_or_default()
+    }
+    /// <p>Provides a numerical value corresponding to the rotation of the text.</p>
+    pub fn rotation_angle(&self) -> ::std::option::Option<f32> {
+        self.rotation_angle
     }
 }
 impl Geometry {
@@ -34,6 +40,7 @@ impl Geometry {
 pub struct GeometryBuilder {
     pub(crate) bounding_box: ::std::option::Option<crate::types::BoundingBox>,
     pub(crate) polygon: ::std::option::Option<::std::vec::Vec<crate::types::Point>>,
+    pub(crate) rotation_angle: ::std::option::Option<f32>,
 }
 impl GeometryBuilder {
     /// <p>An axis-aligned coarse representation of the location of the recognized item on the document page.</p>
@@ -70,11 +77,26 @@ impl GeometryBuilder {
     pub fn get_polygon(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Point>> {
         &self.polygon
     }
+    /// <p>Provides a numerical value corresponding to the rotation of the text.</p>
+    pub fn rotation_angle(mut self, input: f32) -> Self {
+        self.rotation_angle = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Provides a numerical value corresponding to the rotation of the text.</p>
+    pub fn set_rotation_angle(mut self, input: ::std::option::Option<f32>) -> Self {
+        self.rotation_angle = input;
+        self
+    }
+    /// <p>Provides a numerical value corresponding to the rotation of the text.</p>
+    pub fn get_rotation_angle(&self) -> &::std::option::Option<f32> {
+        &self.rotation_angle
+    }
     /// Consumes the builder and constructs a [`Geometry`](crate::types::Geometry).
     pub fn build(self) -> crate::types::Geometry {
         crate::types::Geometry {
             bounding_box: self.bounding_box,
             polygon: self.polygon,
+            rotation_angle: self.rotation_angle,
         }
     }
 }

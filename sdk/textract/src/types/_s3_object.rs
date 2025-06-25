@@ -8,7 +8,7 @@
 pub struct S3Object {
     /// <p>The name of the S3 bucket. Note that the # character is not valid in the file name.</p>
     pub bucket: ::std::option::Option<::std::string::String>,
-    /// <p>The file name of the input document. Synchronous operations can use image files that are in JPEG or PNG format. Asynchronous operations also support PDF and TIFF format files.</p>
+    /// <p>The file name of the input document. Image files may be in PDF, TIFF, JPEG, or PNG format.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>If the bucket has versioning enabled, you can specify the object version.</p>
     pub version: ::std::option::Option<::std::string::String>,
@@ -18,7 +18,7 @@ impl S3Object {
     pub fn bucket(&self) -> ::std::option::Option<&str> {
         self.bucket.as_deref()
     }
-    /// <p>The file name of the input document. Synchronous operations can use image files that are in JPEG or PNG format. Asynchronous operations also support PDF and TIFF format files.</p>
+    /// <p>The file name of the input document. Image files may be in PDF, TIFF, JPEG, or PNG format.</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
@@ -57,17 +57,17 @@ impl S3ObjectBuilder {
     pub fn get_bucket(&self) -> &::std::option::Option<::std::string::String> {
         &self.bucket
     }
-    /// <p>The file name of the input document. Synchronous operations can use image files that are in JPEG or PNG format. Asynchronous operations also support PDF and TIFF format files.</p>
+    /// <p>The file name of the input document. Image files may be in PDF, TIFF, JPEG, or PNG format.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The file name of the input document. Synchronous operations can use image files that are in JPEG or PNG format. Asynchronous operations also support PDF and TIFF format files.</p>
+    /// <p>The file name of the input document. Image files may be in PDF, TIFF, JPEG, or PNG format.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
-    /// <p>The file name of the input document. Synchronous operations can use image files that are in JPEG or PNG format. Asynchronous operations also support PDF and TIFF format files.</p>
+    /// <p>The file name of the input document. Image files may be in PDF, TIFF, JPEG, or PNG format.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }

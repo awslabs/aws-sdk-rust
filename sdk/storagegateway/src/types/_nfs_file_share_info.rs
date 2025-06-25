@@ -49,7 +49,7 @@ pub struct NfsFileShareInfo {
     pub default_storage_class: ::std::option::Option<::std::string::String>,
     /// <p>A value that sets the access control list (ACL) permission for objects in the S3 bucket that an S3 File Gateway puts objects into. The default value is <code>private</code>.</p>
     pub object_acl: ::std::option::Option<crate::types::ObjectAcl>,
-    /// <p>The list of clients that are allowed to access the S3 File Gateway. The list must contain either valid IP addresses or valid CIDR blocks.</p>
+    /// <p>The list of clients that are allowed to access the S3 File Gateway. The list must contain either valid IPv4/IPv6 addresses or valid CIDR blocks.</p>
     pub client_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The user mapped to anonymous user. Valid options are the following:</p>
     /// <ul>
@@ -172,7 +172,7 @@ impl NfsFileShareInfo {
     pub fn object_acl(&self) -> ::std::option::Option<&crate::types::ObjectAcl> {
         self.object_acl.as_ref()
     }
-    /// <p>The list of clients that are allowed to access the S3 File Gateway. The list must contain either valid IP addresses or valid CIDR blocks.</p>
+    /// <p>The list of clients that are allowed to access the S3 File Gateway. The list must contain either valid IPv4/IPv6 addresses or valid CIDR blocks.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.client_list.is_none()`.
     pub fn client_list(&self) -> &[::std::string::String] {
@@ -532,19 +532,19 @@ impl NfsFileShareInfoBuilder {
     ///
     /// To override the contents of this collection use [`set_client_list`](Self::set_client_list).
     ///
-    /// <p>The list of clients that are allowed to access the S3 File Gateway. The list must contain either valid IP addresses or valid CIDR blocks.</p>
+    /// <p>The list of clients that are allowed to access the S3 File Gateway. The list must contain either valid IPv4/IPv6 addresses or valid CIDR blocks.</p>
     pub fn client_list(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.client_list.unwrap_or_default();
         v.push(input.into());
         self.client_list = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The list of clients that are allowed to access the S3 File Gateway. The list must contain either valid IP addresses or valid CIDR blocks.</p>
+    /// <p>The list of clients that are allowed to access the S3 File Gateway. The list must contain either valid IPv4/IPv6 addresses or valid CIDR blocks.</p>
     pub fn set_client_list(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.client_list = input;
         self
     }
-    /// <p>The list of clients that are allowed to access the S3 File Gateway. The list must contain either valid IP addresses or valid CIDR blocks.</p>
+    /// <p>The list of clients that are allowed to access the S3 File Gateway. The list must contain either valid IPv4/IPv6 addresses or valid CIDR blocks.</p>
     pub fn get_client_list(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.client_list
     }

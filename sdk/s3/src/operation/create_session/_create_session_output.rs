@@ -3,7 +3,9 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct CreateSessionOutput {
-    /// <p>The server-side encryption algorithm used when you store objects in the directory bucket.</p>
+    /// <p>The server-side encryption algorithm used when you store objects in the directory bucket.</p><note>
+    /// <p>When accessing data stored in Amazon FSx file systems using S3 access points, the only valid server side encryption option is <code>aws:fsx</code>.</p>
+    /// </note>
     pub server_side_encryption: ::std::option::Option<crate::types::ServerSideEncryption>,
     /// <p>If you specify <code>x-amz-server-side-encryption</code> with <code>aws:kms</code>, this header indicates the ID of the KMS symmetric encryption customer managed key that was used for object encryption.</p>
     pub ssekms_key_id: ::std::option::Option<::std::string::String>,
@@ -17,7 +19,9 @@ pub struct CreateSessionOutput {
     _request_id: Option<String>,
 }
 impl CreateSessionOutput {
-    /// <p>The server-side encryption algorithm used when you store objects in the directory bucket.</p>
+    /// <p>The server-side encryption algorithm used when you store objects in the directory bucket.</p><note>
+    /// <p>When accessing data stored in Amazon FSx file systems using S3 access points, the only valid server side encryption option is <code>aws:fsx</code>.</p>
+    /// </note>
     pub fn server_side_encryption(&self) -> ::std::option::Option<&crate::types::ServerSideEncryption> {
         self.server_side_encryption.as_ref()
     }
@@ -81,17 +85,23 @@ pub struct CreateSessionOutputBuilder {
     _request_id: Option<String>,
 }
 impl CreateSessionOutputBuilder {
-    /// <p>The server-side encryption algorithm used when you store objects in the directory bucket.</p>
+    /// <p>The server-side encryption algorithm used when you store objects in the directory bucket.</p><note>
+    /// <p>When accessing data stored in Amazon FSx file systems using S3 access points, the only valid server side encryption option is <code>aws:fsx</code>.</p>
+    /// </note>
     pub fn server_side_encryption(mut self, input: crate::types::ServerSideEncryption) -> Self {
         self.server_side_encryption = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The server-side encryption algorithm used when you store objects in the directory bucket.</p>
+    /// <p>The server-side encryption algorithm used when you store objects in the directory bucket.</p><note>
+    /// <p>When accessing data stored in Amazon FSx file systems using S3 access points, the only valid server side encryption option is <code>aws:fsx</code>.</p>
+    /// </note>
     pub fn set_server_side_encryption(mut self, input: ::std::option::Option<crate::types::ServerSideEncryption>) -> Self {
         self.server_side_encryption = input;
         self
     }
-    /// <p>The server-side encryption algorithm used when you store objects in the directory bucket.</p>
+    /// <p>The server-side encryption algorithm used when you store objects in the directory bucket.</p><note>
+    /// <p>When accessing data stored in Amazon FSx file systems using S3 access points, the only valid server side encryption option is <code>aws:fsx</code>.</p>
+    /// </note>
     pub fn get_server_side_encryption(&self) -> &::std::option::Option<crate::types::ServerSideEncryption> {
         &self.server_side_encryption
     }

@@ -131,6 +131,20 @@ pub use crate::types::_storage_virtual_machine_filter::StorageVirtualMachineFilt
 
 pub use crate::types::_snapshot_filter::SnapshotFilterBuilder;
 
+pub use crate::types::_s3_access_point_attachment::S3AccessPointAttachmentBuilder;
+
+pub use crate::types::_s3_access_point::S3AccessPointBuilder;
+
+pub use crate::types::_s3_access_point_vpc_configuration::S3AccessPointVpcConfigurationBuilder;
+
+pub use crate::types::_s3_access_point_open_zfs_configuration::S3AccessPointOpenZfsConfigurationBuilder;
+
+pub use crate::types::_open_zfs_file_system_identity::OpenZfsFileSystemIdentityBuilder;
+
+pub use crate::types::_open_zfs_posix_file_system_user::OpenZfsPosixFileSystemUserBuilder;
+
+pub use crate::types::_s3_access_point_attachments_filter::S3AccessPointAttachmentsFilterBuilder;
+
 pub use crate::types::_data_repository_task::DataRepositoryTaskBuilder;
 
 pub use crate::types::_release_configuration::ReleaseConfigurationBuilder;
@@ -204,3 +218,7 @@ pub use crate::types::_file_cache_data_repository_association::FileCacheDataRepo
 pub use crate::types::_file_cache_nfs_configuration::FileCacheNfsConfigurationBuilder;
 
 pub use crate::types::_create_file_cache_lustre_configuration::CreateFileCacheLustreConfigurationBuilder;
+
+pub use crate::types::_create_and_attach_s3_access_point_s3_configuration::CreateAndAttachS3AccessPointS3ConfigurationBuilder;
+
+pub use crate::types::_create_and_attach_s3_access_point_open_zfs_configuration::CreateAndAttachS3AccessPointOpenZfsConfigurationBuilder;
