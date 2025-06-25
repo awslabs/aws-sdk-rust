@@ -2645,6 +2645,10 @@ source_hash = '13cfa390989f34887585e1e7a771064dde887d5e73f901339aae0a6729b6b2d9'
 category = 'AwsRuntime'
 version = '0.0.0'
 source_hash = '5c1dc8063039c8006d6bd5e1c58625107ce4afb47ee9dba9fdd9788b14e534de'
+
+[release]
+tag = 'release-2025-06-25'
+
 [release.crates]
 aws-sdk-ecs = '1.85.1'
 aws-sdk-fsx = '1.82.0'
