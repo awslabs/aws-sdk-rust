@@ -49,6 +49,11 @@ where
                                     .transpose()?,
                             );
                         }
+                        "authenticationDetail" => {
+                            builder = builder.set_authentication_detail(
+                                crate::protocol_serde::shape_data_accessor_authentication_detail::de_data_accessor_authentication_detail(tokens)?,
+                            );
+                        }
                         "createdAt" => {
                             builder = builder.set_created_at(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                                 tokens.next(),

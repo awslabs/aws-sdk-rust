@@ -195,6 +195,9 @@ pub(crate) fn de_get_ota_task(
                             .transpose()?,
                     );
                 }
+                "Tags" => {
+                    builder = builder.set_tags(crate::protocol_serde::shape_tags_map::de_tags_map(tokens)?);
+                }
                 "Target" => {
                     builder = builder.set_target(crate::protocol_serde::shape_target::de_target(tokens)?);
                 }

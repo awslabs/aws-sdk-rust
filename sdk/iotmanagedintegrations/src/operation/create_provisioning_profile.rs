@@ -277,6 +277,8 @@ pub enum CreateProvisioningProfileError {
     ConflictException(crate::types::error::ConflictException),
     /// <p>Internal error from the service that indicates an unexpected error or that the service is unavailable.</p>
     InternalServerException(crate::types::error::InternalServerException),
+    /// <p>The specified resource does not exist.</p>
+    ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
     /// <p>The service is temporarily unavailable.</p>
     ServiceUnavailableException(crate::types::error::ServiceUnavailableException),
     /// <p>The rate exceeds the limit.</p>
@@ -321,6 +323,7 @@ impl CreateProvisioningProfileError {
             Self::AccessDeniedException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ConflictException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InternalServerException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::ResourceNotFoundException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ServiceUnavailableException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ThrottlingException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::UnauthorizedException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
@@ -339,6 +342,10 @@ impl CreateProvisioningProfileError {
     /// Returns `true` if the error kind is `CreateProvisioningProfileError::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(self, Self::InternalServerException(_))
+    }
+    /// Returns `true` if the error kind is `CreateProvisioningProfileError::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(self, Self::ResourceNotFoundException(_))
     }
     /// Returns `true` if the error kind is `CreateProvisioningProfileError::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
@@ -363,6 +370,7 @@ impl ::std::error::Error for CreateProvisioningProfileError {
             Self::AccessDeniedException(_inner) => ::std::option::Option::Some(_inner),
             Self::ConflictException(_inner) => ::std::option::Option::Some(_inner),
             Self::InternalServerException(_inner) => ::std::option::Option::Some(_inner),
+            Self::ResourceNotFoundException(_inner) => ::std::option::Option::Some(_inner),
             Self::ServiceUnavailableException(_inner) => ::std::option::Option::Some(_inner),
             Self::ThrottlingException(_inner) => ::std::option::Option::Some(_inner),
             Self::UnauthorizedException(_inner) => ::std::option::Option::Some(_inner),
@@ -377,6 +385,7 @@ impl ::std::fmt::Display for CreateProvisioningProfileError {
             Self::AccessDeniedException(_inner) => _inner.fmt(f),
             Self::ConflictException(_inner) => _inner.fmt(f),
             Self::InternalServerException(_inner) => _inner.fmt(f),
+            Self::ResourceNotFoundException(_inner) => _inner.fmt(f),
             Self::ServiceUnavailableException(_inner) => _inner.fmt(f),
             Self::ThrottlingException(_inner) => _inner.fmt(f),
             Self::UnauthorizedException(_inner) => _inner.fmt(f),
@@ -405,6 +414,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for CreateProvisi
             Self::AccessDeniedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ConflictException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InternalServerException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::ResourceNotFoundException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ServiceUnavailableException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ThrottlingException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::UnauthorizedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),

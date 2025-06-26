@@ -105,6 +105,13 @@ where
                             builder = builder
                                 .set_task_run_status_counts(crate::protocol_serde::shape_task_run_status_counts::de_task_run_status_counts(tokens)?);
                         }
+                        "taskFailureRetryCount" => {
+                            builder = builder.set_task_failure_retry_count(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
+                            );
+                        }
                         "maxFailedTasksCount" => {
                             builder = builder.set_max_failed_tasks_count(
                                 ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?

@@ -12,6 +12,7 @@ impl super::Client {
     ///   - [`started_at(DateTime)`](crate::operation::get_device_discovery::GetDeviceDiscoveryOutput::started_at): <p>The timestamp value for the start time of the device discovery.</p>
     ///   - [`controller_id(Option<String>)`](crate::operation::get_device_discovery::GetDeviceDiscoveryOutput::controller_id): <p>The id of the end-user's IoT hub.</p>
     ///   - [`connector_association_id(Option<String>)`](crate::operation::get_device_discovery::GetDeviceDiscoveryOutput::connector_association_id): <p>The ID tracking the current discovery process for one connector association.</p>
+    ///   - [`account_association_id(Option<String>)`](crate::operation::get_device_discovery::GetDeviceDiscoveryOutput::account_association_id): <p>The identifier of the account association used for the device discovery.</p>
     ///   - [`finished_at(Option<DateTime>)`](crate::operation::get_device_discovery::GetDeviceDiscoveryOutput::finished_at): <p>The timestamp value for the completion time of the device discovery.</p>
     ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::get_device_discovery::GetDeviceDiscoveryOutput::tags): <p>A set of key/value pairs that are used to manage the device discovery request.</p>
     /// - On failure, responds with [`SdkError<GetDeviceDiscoveryError>`](crate::operation::get_device_discovery::GetDeviceDiscoveryError)

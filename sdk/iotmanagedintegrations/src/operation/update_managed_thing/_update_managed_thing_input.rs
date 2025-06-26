@@ -19,6 +19,8 @@ pub struct UpdateManagedThingInput {
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A report of the capabilities for the managed thing.</p>
     pub capability_report: ::std::option::Option<crate::types::CapabilityReport>,
+    /// <p>The updated capability schemas that define the functionality and features supported by the managed thing.</p>
+    pub capability_schemas: ::std::option::Option<::std::vec::Vec<crate::types::CapabilitySchemaItem>>,
     /// <p>The capabilities of the device such as light bulb.</p>
     pub capabilities: ::std::option::Option<::std::string::String>,
     /// <p>The classification of the managed thing such as light bulb or thermostat.</p>
@@ -61,6 +63,12 @@ impl UpdateManagedThingInput {
     pub fn capability_report(&self) -> ::std::option::Option<&crate::types::CapabilityReport> {
         self.capability_report.as_ref()
     }
+    /// <p>The updated capability schemas that define the functionality and features supported by the managed thing.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.capability_schemas.is_none()`.
+    pub fn capability_schemas(&self) -> &[crate::types::CapabilitySchemaItem] {
+        self.capability_schemas.as_deref().unwrap_or_default()
+    }
     /// <p>The capabilities of the device such as light bulb.</p>
     pub fn capabilities(&self) -> ::std::option::Option<&str> {
         self.capabilities.as_deref()
@@ -89,6 +97,7 @@ impl ::std::fmt::Debug for UpdateManagedThingInput {
         formatter.field("model", &"*** Sensitive Data Redacted ***");
         formatter.field("name", &self.name);
         formatter.field("capability_report", &self.capability_report);
+        formatter.field("capability_schemas", &self.capability_schemas);
         formatter.field("capabilities", &self.capabilities);
         formatter.field("classification", &"*** Sensitive Data Redacted ***");
         formatter.field("hub_network_mode", &self.hub_network_mode);
@@ -115,6 +124,7 @@ pub struct UpdateManagedThingInputBuilder {
     pub(crate) model: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) capability_report: ::std::option::Option<crate::types::CapabilityReport>,
+    pub(crate) capability_schemas: ::std::option::Option<::std::vec::Vec<crate::types::CapabilitySchemaItem>>,
     pub(crate) capabilities: ::std::option::Option<::std::string::String>,
     pub(crate) classification: ::std::option::Option<::std::string::String>,
     pub(crate) hub_network_mode: ::std::option::Option<crate::types::HubNetworkMode>,
@@ -234,6 +244,26 @@ impl UpdateManagedThingInputBuilder {
     pub fn get_capability_report(&self) -> &::std::option::Option<crate::types::CapabilityReport> {
         &self.capability_report
     }
+    /// Appends an item to `capability_schemas`.
+    ///
+    /// To override the contents of this collection use [`set_capability_schemas`](Self::set_capability_schemas).
+    ///
+    /// <p>The updated capability schemas that define the functionality and features supported by the managed thing.</p>
+    pub fn capability_schemas(mut self, input: crate::types::CapabilitySchemaItem) -> Self {
+        let mut v = self.capability_schemas.unwrap_or_default();
+        v.push(input);
+        self.capability_schemas = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The updated capability schemas that define the functionality and features supported by the managed thing.</p>
+    pub fn set_capability_schemas(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CapabilitySchemaItem>>) -> Self {
+        self.capability_schemas = input;
+        self
+    }
+    /// <p>The updated capability schemas that define the functionality and features supported by the managed thing.</p>
+    pub fn get_capability_schemas(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CapabilitySchemaItem>> {
+        &self.capability_schemas
+    }
     /// <p>The capabilities of the device such as light bulb.</p>
     pub fn capabilities(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.capabilities = ::std::option::Option::Some(input.into());
@@ -310,6 +340,7 @@ impl UpdateManagedThingInputBuilder {
             model: self.model,
             name: self.name,
             capability_report: self.capability_report,
+            capability_schemas: self.capability_schemas,
             capabilities: self.capabilities,
             classification: self.classification,
             hub_network_mode: self.hub_network_mode,
@@ -328,6 +359,7 @@ impl ::std::fmt::Debug for UpdateManagedThingInputBuilder {
         formatter.field("model", &"*** Sensitive Data Redacted ***");
         formatter.field("name", &self.name);
         formatter.field("capability_report", &self.capability_report);
+        formatter.field("capability_schemas", &self.capability_schemas);
         formatter.field("capabilities", &self.capabilities);
         formatter.field("classification", &"*** Sensitive Data Redacted ***");
         formatter.field("hub_network_mode", &self.hub_network_mode);

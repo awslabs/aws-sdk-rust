@@ -30,6 +30,12 @@ pub fn ser_workspace_access_properties(
     if let Some(var_9) = &input.device_type_work_spaces_thin_client {
         object.key("DeviceTypeWorkSpacesThinClient").string(var_9.as_str());
     }
+    if let Some(var_10) = &input.access_endpoint_config {
+        #[allow(unused_mut)]
+        let mut object_11 = object.key("AccessEndpointConfig").start_object();
+        crate::protocol_serde::shape_access_endpoint_config::ser_access_endpoint_config(&mut object_11, var_10)?;
+        object_11.finish();
+    }
     Ok(())
 }
 
@@ -110,6 +116,10 @@ where
                                     .map(|s| s.to_unescaped().map(|u| crate::types::AccessPropertyValue::from(u.as_ref())))
                                     .transpose()?,
                             );
+                        }
+                        "AccessEndpointConfig" => {
+                            builder = builder
+                                .set_access_endpoint_config(crate::protocol_serde::shape_access_endpoint_config::de_access_endpoint_config(tokens)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

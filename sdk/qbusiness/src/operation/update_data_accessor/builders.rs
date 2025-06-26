@@ -155,6 +155,20 @@ impl UpdateDataAccessorFluentBuilder {
     pub fn get_action_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ActionConfiguration>> {
         self.inner.get_action_configurations()
     }
+    /// <p>The updated authentication configuration details for the data accessor. This specifies how the ISV will authenticate when accessing data through this data accessor.</p>
+    pub fn authentication_detail(mut self, input: crate::types::DataAccessorAuthenticationDetail) -> Self {
+        self.inner = self.inner.authentication_detail(input);
+        self
+    }
+    /// <p>The updated authentication configuration details for the data accessor. This specifies how the ISV will authenticate when accessing data through this data accessor.</p>
+    pub fn set_authentication_detail(mut self, input: ::std::option::Option<crate::types::DataAccessorAuthenticationDetail>) -> Self {
+        self.inner = self.inner.set_authentication_detail(input);
+        self
+    }
+    /// <p>The updated authentication configuration details for the data accessor. This specifies how the ISV will authenticate when accessing data through this data accessor.</p>
+    pub fn get_authentication_detail(&self) -> &::std::option::Option<crate::types::DataAccessorAuthenticationDetail> {
+        self.inner.get_authentication_detail()
+    }
     /// <p>The updated friendly name for the data accessor.</p>
     pub fn display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.display_name(input.into());

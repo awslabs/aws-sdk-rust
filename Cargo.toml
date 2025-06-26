@@ -2,13 +2,13 @@
 resolver = "2"
 exclude = [
     "examples/cross_service",
+    "examples/test-utils",
+    "examples/examples",
     "examples/webassembly",
     "examples/lambda",
-    "examples/examples",
-    "examples/test-utils",
-    "tests/webassembly",
+    "tests/no-default-features",
     "tests/telemetry",
-    "tests/no-default-features"
+    "tests/webassembly"
 ]
 members = [
     "sdk/accessanalyzer",
@@ -249,6 +249,7 @@ members = [
     "sdk/kendra",
     "sdk/kendraranking",
     "sdk/keyspaces",
+    "sdk/keyspacesstreams",
     "sdk/kinesis",
     "sdk/kinesisanalytics",
     "sdk/kinesisanalyticsv2",

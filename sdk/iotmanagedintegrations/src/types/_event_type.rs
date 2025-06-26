@@ -12,10 +12,12 @@
 /// ```text
 /// # let eventtype = unimplemented!();
 /// match eventtype {
+///     EventType::AccountAssociation => { /* ... */ },
 ///     EventType::ConnectorAssociation => { /* ... */ },
 ///     EventType::ConnectorErrorReport => { /* ... */ },
 ///     EventType::DeviceCommand => { /* ... */ },
 ///     EventType::DeviceCommandRequest => { /* ... */ },
+///     EventType::DeviceDiscoveryStatus => { /* ... */ },
 ///     EventType::DeviceEvent => { /* ... */ },
 ///     EventType::DeviceLifeCycle => { /* ... */ },
 ///     EventType::DeviceOta => { /* ... */ },
@@ -49,6 +51,9 @@
 )]
 pub enum EventType {
     #[allow(missing_docs)] // documentation missing in model
+    AccountAssociation,
+    #[allow(missing_docs)] // documentation missing in model
+    #[deprecated]
     ConnectorAssociation,
     #[allow(missing_docs)] // documentation missing in model
     ConnectorErrorReport,
@@ -56,6 +61,8 @@ pub enum EventType {
     DeviceCommand,
     #[allow(missing_docs)] // documentation missing in model
     DeviceCommandRequest,
+    #[allow(missing_docs)] // documentation missing in model
+    DeviceDiscoveryStatus,
     #[allow(missing_docs)] // documentation missing in model
     DeviceEvent,
     #[allow(missing_docs)] // documentation missing in model
@@ -71,10 +78,12 @@ pub enum EventType {
 impl ::std::convert::From<&str> for EventType {
     fn from(s: &str) -> Self {
         match s {
+            "ACCOUNT_ASSOCIATION" => EventType::AccountAssociation,
             "CONNECTOR_ASSOCIATION" => EventType::ConnectorAssociation,
             "CONNECTOR_ERROR_REPORT" => EventType::ConnectorErrorReport,
             "DEVICE_COMMAND" => EventType::DeviceCommand,
             "DEVICE_COMMAND_REQUEST" => EventType::DeviceCommandRequest,
+            "DEVICE_DISCOVERY_STATUS" => EventType::DeviceDiscoveryStatus,
             "DEVICE_EVENT" => EventType::DeviceEvent,
             "DEVICE_LIFE_CYCLE" => EventType::DeviceLifeCycle,
             "DEVICE_OTA" => EventType::DeviceOta,
@@ -94,10 +103,12 @@ impl EventType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            EventType::AccountAssociation => "ACCOUNT_ASSOCIATION",
             EventType::ConnectorAssociation => "CONNECTOR_ASSOCIATION",
             EventType::ConnectorErrorReport => "CONNECTOR_ERROR_REPORT",
             EventType::DeviceCommand => "DEVICE_COMMAND",
             EventType::DeviceCommandRequest => "DEVICE_COMMAND_REQUEST",
+            EventType::DeviceDiscoveryStatus => "DEVICE_DISCOVERY_STATUS",
             EventType::DeviceEvent => "DEVICE_EVENT",
             EventType::DeviceLifeCycle => "DEVICE_LIFE_CYCLE",
             EventType::DeviceOta => "DEVICE_OTA",
@@ -108,10 +119,12 @@ impl EventType {
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
+            "ACCOUNT_ASSOCIATION",
             "CONNECTOR_ASSOCIATION",
             "CONNECTOR_ERROR_REPORT",
             "DEVICE_COMMAND",
             "DEVICE_COMMAND_REQUEST",
+            "DEVICE_DISCOVERY_STATUS",
             "DEVICE_EVENT",
             "DEVICE_LIFE_CYCLE",
             "DEVICE_OTA",
@@ -139,10 +152,12 @@ impl EventType {
 impl ::std::fmt::Display for EventType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            EventType::AccountAssociation => write!(f, "ACCOUNT_ASSOCIATION"),
             EventType::ConnectorAssociation => write!(f, "CONNECTOR_ASSOCIATION"),
             EventType::ConnectorErrorReport => write!(f, "CONNECTOR_ERROR_REPORT"),
             EventType::DeviceCommand => write!(f, "DEVICE_COMMAND"),
             EventType::DeviceCommandRequest => write!(f, "DEVICE_COMMAND_REQUEST"),
+            EventType::DeviceDiscoveryStatus => write!(f, "DEVICE_DISCOVERY_STATUS"),
             EventType::DeviceEvent => write!(f, "DEVICE_EVENT"),
             EventType::DeviceLifeCycle => write!(f, "DEVICE_LIFE_CYCLE"),
             EventType::DeviceOta => write!(f, "DEVICE_OTA"),

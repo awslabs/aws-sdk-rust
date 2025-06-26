@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AcceleratorSelection {
     /// <p>The name of the chip used by the GPU accelerator.</p>
-    /// <p>If you specify <code>l4</code> as the name of the accelerator, you must specify <code>latest</code> or <code>grid:r550</code> as the runtime.</p>
+    /// <p>If you specify <code>l4</code> as the name of the accelerator, you must specify <code>latest</code> or <code>grid:r570</code> as the runtime.</p>
     /// <p>The available GPU accelerators are:</p>
     /// <ul>
     /// <li>
@@ -24,7 +24,7 @@ pub struct AcceleratorSelection {
     /// <li>
     /// <p><code>latest</code> - Use the latest runtime available for the chip. If you specify <code>latest</code> and a new version of the runtime is released, the new version of the runtime is used.</p></li>
     /// <li>
-    /// <p><code>grid:r550</code> - <a href="https://docs.nvidia.com/vgpu/17.0/index.html">NVIDIA vGPU software 17</a></p></li>
+    /// <p><code>grid:r570</code> - <a href="https://docs.nvidia.com/vgpu/18.0/index.html">NVIDIA vGPU software 18</a></p></li>
     /// <li>
     /// <p><code>grid:r535</code> - <a href="https://docs.nvidia.com/vgpu/16.0/index.html">NVIDIA vGPU software 16</a></p></li>
     /// </ul>
@@ -33,7 +33,7 @@ pub struct AcceleratorSelection {
 }
 impl AcceleratorSelection {
     /// <p>The name of the chip used by the GPU accelerator.</p>
-    /// <p>If you specify <code>l4</code> as the name of the accelerator, you must specify <code>latest</code> or <code>grid:r550</code> as the runtime.</p>
+    /// <p>If you specify <code>l4</code> as the name of the accelerator, you must specify <code>latest</code> or <code>grid:r570</code> as the runtime.</p>
     /// <p>The available GPU accelerators are:</p>
     /// <ul>
     /// <li>
@@ -54,7 +54,7 @@ impl AcceleratorSelection {
     /// <li>
     /// <p><code>latest</code> - Use the latest runtime available for the chip. If you specify <code>latest</code> and a new version of the runtime is released, the new version of the runtime is used.</p></li>
     /// <li>
-    /// <p><code>grid:r550</code> - <a href="https://docs.nvidia.com/vgpu/17.0/index.html">NVIDIA vGPU software 17</a></p></li>
+    /// <p><code>grid:r570</code> - <a href="https://docs.nvidia.com/vgpu/18.0/index.html">NVIDIA vGPU software 18</a></p></li>
     /// <li>
     /// <p><code>grid:r535</code> - <a href="https://docs.nvidia.com/vgpu/16.0/index.html">NVIDIA vGPU software 16</a></p></li>
     /// </ul>
@@ -80,7 +80,7 @@ pub struct AcceleratorSelectionBuilder {
 }
 impl AcceleratorSelectionBuilder {
     /// <p>The name of the chip used by the GPU accelerator.</p>
-    /// <p>If you specify <code>l4</code> as the name of the accelerator, you must specify <code>latest</code> or <code>grid:r550</code> as the runtime.</p>
+    /// <p>If you specify <code>l4</code> as the name of the accelerator, you must specify <code>latest</code> or <code>grid:r570</code> as the runtime.</p>
     /// <p>The available GPU accelerators are:</p>
     /// <ul>
     /// <li>
@@ -98,7 +98,7 @@ impl AcceleratorSelectionBuilder {
         self
     }
     /// <p>The name of the chip used by the GPU accelerator.</p>
-    /// <p>If you specify <code>l4</code> as the name of the accelerator, you must specify <code>latest</code> or <code>grid:r550</code> as the runtime.</p>
+    /// <p>If you specify <code>l4</code> as the name of the accelerator, you must specify <code>latest</code> or <code>grid:r570</code> as the runtime.</p>
     /// <p>The available GPU accelerators are:</p>
     /// <ul>
     /// <li>
@@ -115,7 +115,7 @@ impl AcceleratorSelectionBuilder {
         self
     }
     /// <p>The name of the chip used by the GPU accelerator.</p>
-    /// <p>If you specify <code>l4</code> as the name of the accelerator, you must specify <code>latest</code> or <code>grid:r550</code> as the runtime.</p>
+    /// <p>If you specify <code>l4</code> as the name of the accelerator, you must specify <code>latest</code> or <code>grid:r570</code> as the runtime.</p>
     /// <p>The available GPU accelerators are:</p>
     /// <ul>
     /// <li>
@@ -136,7 +136,7 @@ impl AcceleratorSelectionBuilder {
     /// <li>
     /// <p><code>latest</code> - Use the latest runtime available for the chip. If you specify <code>latest</code> and a new version of the runtime is released, the new version of the runtime is used.</p></li>
     /// <li>
-    /// <p><code>grid:r550</code> - <a href="https://docs.nvidia.com/vgpu/17.0/index.html">NVIDIA vGPU software 17</a></p></li>
+    /// <p><code>grid:r570</code> - <a href="https://docs.nvidia.com/vgpu/18.0/index.html">NVIDIA vGPU software 18</a></p></li>
     /// <li>
     /// <p><code>grid:r535</code> - <a href="https://docs.nvidia.com/vgpu/16.0/index.html">NVIDIA vGPU software 16</a></p></li>
     /// </ul>
@@ -151,7 +151,7 @@ impl AcceleratorSelectionBuilder {
     /// <li>
     /// <p><code>latest</code> - Use the latest runtime available for the chip. If you specify <code>latest</code> and a new version of the runtime is released, the new version of the runtime is used.</p></li>
     /// <li>
-    /// <p><code>grid:r550</code> - <a href="https://docs.nvidia.com/vgpu/17.0/index.html">NVIDIA vGPU software 17</a></p></li>
+    /// <p><code>grid:r570</code> - <a href="https://docs.nvidia.com/vgpu/18.0/index.html">NVIDIA vGPU software 18</a></p></li>
     /// <li>
     /// <p><code>grid:r535</code> - <a href="https://docs.nvidia.com/vgpu/16.0/index.html">NVIDIA vGPU software 16</a></p></li>
     /// </ul>
@@ -166,7 +166,7 @@ impl AcceleratorSelectionBuilder {
     /// <li>
     /// <p><code>latest</code> - Use the latest runtime available for the chip. If you specify <code>latest</code> and a new version of the runtime is released, the new version of the runtime is used.</p></li>
     /// <li>
-    /// <p><code>grid:r550</code> - <a href="https://docs.nvidia.com/vgpu/17.0/index.html">NVIDIA vGPU software 17</a></p></li>
+    /// <p><code>grid:r570</code> - <a href="https://docs.nvidia.com/vgpu/18.0/index.html">NVIDIA vGPU software 18</a></p></li>
     /// <li>
     /// <p><code>grid:r535</code> - <a href="https://docs.nvidia.com/vgpu/16.0/index.html">NVIDIA vGPU software 16</a></p></li>
     /// </ul>

@@ -266,17 +266,17 @@ impl ImportKeyMaterialFluentBuilder {
     pub fn get_expiration_model(&self) -> &::std::option::Option<crate::types::ExpirationModelType> {
         self.inner.get_expiration_model()
     }
-    /// <p>Indicates whether the key material being imported is previously associated with this KMS key or not. This parameter is optional and only usable with symmetric encryption keys. The default is <code>EXISTING_KEY_MATERIAL</code>. If no key material has ever been imported into the KMS key, and this parameter is omitted, the parameter defaults to <code>NEW_KEY_MATERIAL</code>.</p>
+    /// <p>Indicates whether the key material being imported is previously associated with this KMS key or not. This parameter is optional and only usable with symmetric encryption keys. If no key material has ever been imported into the KMS key, and this parameter is omitted, the parameter defaults to <code>NEW_KEY_MATERIAL</code>. After the first key material is imported, if this parameter is omitted then the parameter defaults to <code>EXISTING_KEY_MATERIAL</code>.</p>
     pub fn import_type(mut self, input: crate::types::ImportType) -> Self {
         self.inner = self.inner.import_type(input);
         self
     }
-    /// <p>Indicates whether the key material being imported is previously associated with this KMS key or not. This parameter is optional and only usable with symmetric encryption keys. The default is <code>EXISTING_KEY_MATERIAL</code>. If no key material has ever been imported into the KMS key, and this parameter is omitted, the parameter defaults to <code>NEW_KEY_MATERIAL</code>.</p>
+    /// <p>Indicates whether the key material being imported is previously associated with this KMS key or not. This parameter is optional and only usable with symmetric encryption keys. If no key material has ever been imported into the KMS key, and this parameter is omitted, the parameter defaults to <code>NEW_KEY_MATERIAL</code>. After the first key material is imported, if this parameter is omitted then the parameter defaults to <code>EXISTING_KEY_MATERIAL</code>.</p>
     pub fn set_import_type(mut self, input: ::std::option::Option<crate::types::ImportType>) -> Self {
         self.inner = self.inner.set_import_type(input);
         self
     }
-    /// <p>Indicates whether the key material being imported is previously associated with this KMS key or not. This parameter is optional and only usable with symmetric encryption keys. The default is <code>EXISTING_KEY_MATERIAL</code>. If no key material has ever been imported into the KMS key, and this parameter is omitted, the parameter defaults to <code>NEW_KEY_MATERIAL</code>.</p>
+    /// <p>Indicates whether the key material being imported is previously associated with this KMS key or not. This parameter is optional and only usable with symmetric encryption keys. If no key material has ever been imported into the KMS key, and this parameter is omitted, the parameter defaults to <code>NEW_KEY_MATERIAL</code>. After the first key material is imported, if this parameter is omitted then the parameter defaults to <code>EXISTING_KEY_MATERIAL</code>.</p>
     pub fn get_import_type(&self) -> &::std::option::Option<crate::types::ImportType> {
         self.inner.get_import_type()
     }

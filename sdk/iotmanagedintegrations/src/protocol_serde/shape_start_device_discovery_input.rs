@@ -3,33 +3,46 @@ pub fn ser_start_device_discovery_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::start_device_discovery::StartDeviceDiscoveryInput,
 ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
-    if let Some(var_1) = &input.authentication_material {
-        object.key("AuthenticationMaterial").string(var_1.as_str());
+    if let Some(var_1) = &input.account_association_id {
+        object.key("AccountAssociationId").string(var_1.as_str());
     }
-    if let Some(var_2) = &input.authentication_material_type {
-        object.key("AuthenticationMaterialType").string(var_2.as_str());
+    if let Some(var_2) = &input.authentication_material {
+        object.key("AuthenticationMaterial").string(var_2.as_str());
     }
-    if let Some(var_3) = &input.client_token {
-        object.key("ClientToken").string(var_3.as_str());
+    if let Some(var_3) = &input.authentication_material_type {
+        object.key("AuthenticationMaterialType").string(var_3.as_str());
     }
-    if let Some(var_4) = &input.connector_association_identifier {
-        object.key("ConnectorAssociationIdentifier").string(var_4.as_str());
+    if let Some(var_4) = &input.client_token {
+        object.key("ClientToken").string(var_4.as_str());
     }
-    if let Some(var_5) = &input.controller_identifier {
-        object.key("ControllerIdentifier").string(var_5.as_str());
+    if let Some(var_5) = &input.connector_association_identifier {
+        object.key("ConnectorAssociationIdentifier").string(var_5.as_str());
     }
-    if let Some(var_6) = &input.discovery_type {
-        object.key("DiscoveryType").string(var_6.as_str());
+    if let Some(var_6) = &input.controller_identifier {
+        object.key("ControllerIdentifier").string(var_6.as_str());
     }
-    if let Some(var_7) = &input.tags {
+    if let Some(var_7) = &input.custom_protocol_detail {
         #[allow(unused_mut)]
-        let mut object_8 = object.key("Tags").start_object();
+        let mut object_8 = object.key("CustomProtocolDetail").start_object();
         for (key_9, value_10) in var_7 {
             {
                 object_8.key(key_9.as_str()).string(value_10.as_str());
             }
         }
         object_8.finish();
+    }
+    if let Some(var_11) = &input.discovery_type {
+        object.key("DiscoveryType").string(var_11.as_str());
+    }
+    if let Some(var_12) = &input.tags {
+        #[allow(unused_mut)]
+        let mut object_13 = object.key("Tags").start_object();
+        for (key_14, value_15) in var_12 {
+            {
+                object_13.key(key_14.as_str()).string(value_15.as_str());
+            }
+        }
+        object_13.finish();
     }
     Ok(())
 }

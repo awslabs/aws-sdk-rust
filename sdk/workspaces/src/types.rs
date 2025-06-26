@@ -79,6 +79,14 @@ pub use crate::types::_workspace_creation_properties::WorkspaceCreationPropertie
 
 pub use crate::types::_workspace_access_properties::WorkspaceAccessProperties;
 
+pub use crate::types::_access_endpoint_config::AccessEndpointConfig;
+
+pub use crate::types::_internet_fallback_protocol::InternetFallbackProtocol;
+
+pub use crate::types::_access_endpoint::AccessEndpoint;
+
+pub use crate::types::_access_endpoint_type::AccessEndpointType;
+
 pub use crate::types::_access_property_value::AccessPropertyValue;
 
 pub use crate::types::_streaming_properties::StreamingProperties;
@@ -285,6 +293,12 @@ pub use crate::types::_failed_create_standby_workspaces_request::FailedCreateSta
 
 pub use crate::types::_standby_workspace::StandbyWorkspace;
 
+mod _access_endpoint;
+
+mod _access_endpoint_config;
+
+mod _access_endpoint_type;
+
 mod _access_property_value;
 
 mod _account_link;
@@ -416,6 +430,8 @@ mod _image_permission;
 mod _image_resource_association;
 
 mod _image_type;
+
+mod _internet_fallback_protocol;
 
 mod _ios_client_branding_attributes;
 

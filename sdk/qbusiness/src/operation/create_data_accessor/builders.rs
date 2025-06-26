@@ -183,6 +183,20 @@ impl CreateDataAccessorFluentBuilder {
     pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_display_name()
     }
+    /// <p>The authentication configuration details for the data accessor. This specifies how the ISV will authenticate when accessing data through this data accessor.</p>
+    pub fn authentication_detail(mut self, input: crate::types::DataAccessorAuthenticationDetail) -> Self {
+        self.inner = self.inner.authentication_detail(input);
+        self
+    }
+    /// <p>The authentication configuration details for the data accessor. This specifies how the ISV will authenticate when accessing data through this data accessor.</p>
+    pub fn set_authentication_detail(mut self, input: ::std::option::Option<crate::types::DataAccessorAuthenticationDetail>) -> Self {
+        self.inner = self.inner.set_authentication_detail(input);
+        self
+    }
+    /// <p>The authentication configuration details for the data accessor. This specifies how the ISV will authenticate when accessing data through this data accessor.</p>
+    pub fn get_authentication_detail(&self) -> &::std::option::Option<crate::types::DataAccessorAuthenticationDetail> {
+        self.inner.get_authentication_detail()
+    }
     ///
     /// Appends an item to `tags`.
     ///

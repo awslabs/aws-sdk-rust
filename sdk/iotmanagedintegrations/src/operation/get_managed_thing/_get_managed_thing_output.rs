@@ -32,7 +32,10 @@ pub struct GetManagedThingOutput {
     /// <p>The id of the connector policy.</p><note>
     /// <p>This parameter is used for cloud-to-cloud devices only.</p>
     /// </note>
+    #[deprecated(note = "ConnectorPolicyId is deprecated", since = "2025-06-25")]
     pub connector_policy_id: ::std::option::Option<::std::string::String>,
+    /// <p>The identifier of the connector destination associated with this managed thing.</p>
+    pub connector_destination_id: ::std::option::Option<::std::string::String>,
     /// <p>The third-party device id as defined by the connector. This device id must not contain personal identifiable information (PII).</p><note>
     /// <p>This parameter is used for cloud-to-cloud devices only.</p>
     /// </note>
@@ -119,8 +122,13 @@ impl GetManagedThingOutput {
     /// <p>The id of the connector policy.</p><note>
     /// <p>This parameter is used for cloud-to-cloud devices only.</p>
     /// </note>
+    #[deprecated(note = "ConnectorPolicyId is deprecated", since = "2025-06-25")]
     pub fn connector_policy_id(&self) -> ::std::option::Option<&str> {
         self.connector_policy_id.as_deref()
+    }
+    /// <p>The identifier of the connector destination associated with this managed thing.</p>
+    pub fn connector_destination_id(&self) -> ::std::option::Option<&str> {
+        self.connector_destination_id.as_deref()
     }
     /// <p>The third-party device id as defined by the connector. This device id must not contain personal identifiable information (PII).</p><note>
     /// <p>This parameter is used for cloud-to-cloud devices only.</p>
@@ -190,6 +198,7 @@ impl ::std::fmt::Debug for GetManagedThingOutput {
         formatter.field("universal_product_code", &"*** Sensitive Data Redacted ***");
         formatter.field("international_article_number", &"*** Sensitive Data Redacted ***");
         formatter.field("connector_policy_id", &self.connector_policy_id);
+        formatter.field("connector_destination_id", &self.connector_destination_id);
         formatter.field("connector_device_id", &"*** Sensitive Data Redacted ***");
         formatter.field("device_specific_key", &"*** Sensitive Data Redacted ***");
         formatter.field("mac_address", &"*** Sensitive Data Redacted ***");
@@ -235,6 +244,7 @@ pub struct GetManagedThingOutputBuilder {
     pub(crate) universal_product_code: ::std::option::Option<::std::string::String>,
     pub(crate) international_article_number: ::std::option::Option<::std::string::String>,
     pub(crate) connector_policy_id: ::std::option::Option<::std::string::String>,
+    pub(crate) connector_destination_id: ::std::option::Option<::std::string::String>,
     pub(crate) connector_device_id: ::std::option::Option<::std::string::String>,
     pub(crate) device_specific_key: ::std::option::Option<::std::string::String>,
     pub(crate) mac_address: ::std::option::Option<::std::string::String>,
@@ -434,6 +444,7 @@ impl GetManagedThingOutputBuilder {
     /// <p>The id of the connector policy.</p><note>
     /// <p>This parameter is used for cloud-to-cloud devices only.</p>
     /// </note>
+    #[deprecated(note = "ConnectorPolicyId is deprecated", since = "2025-06-25")]
     pub fn connector_policy_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.connector_policy_id = ::std::option::Option::Some(input.into());
         self
@@ -441,6 +452,7 @@ impl GetManagedThingOutputBuilder {
     /// <p>The id of the connector policy.</p><note>
     /// <p>This parameter is used for cloud-to-cloud devices only.</p>
     /// </note>
+    #[deprecated(note = "ConnectorPolicyId is deprecated", since = "2025-06-25")]
     pub fn set_connector_policy_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.connector_policy_id = input;
         self
@@ -448,8 +460,23 @@ impl GetManagedThingOutputBuilder {
     /// <p>The id of the connector policy.</p><note>
     /// <p>This parameter is used for cloud-to-cloud devices only.</p>
     /// </note>
+    #[deprecated(note = "ConnectorPolicyId is deprecated", since = "2025-06-25")]
     pub fn get_connector_policy_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.connector_policy_id
+    }
+    /// <p>The identifier of the connector destination associated with this managed thing.</p>
+    pub fn connector_destination_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.connector_destination_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The identifier of the connector destination associated with this managed thing.</p>
+    pub fn set_connector_destination_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.connector_destination_id = input;
+        self
+    }
+    /// <p>The identifier of the connector destination associated with this managed thing.</p>
+    pub fn get_connector_destination_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.connector_destination_id
     }
     /// <p>The third-party device id as defined by the connector. This device id must not contain personal identifiable information (PII).</p><note>
     /// <p>This parameter is used for cloud-to-cloud devices only.</p>
@@ -661,6 +688,7 @@ impl GetManagedThingOutputBuilder {
             universal_product_code: self.universal_product_code,
             international_article_number: self.international_article_number,
             connector_policy_id: self.connector_policy_id,
+            connector_destination_id: self.connector_destination_id,
             connector_device_id: self.connector_device_id,
             device_specific_key: self.device_specific_key,
             mac_address: self.mac_address,
@@ -693,6 +721,7 @@ impl ::std::fmt::Debug for GetManagedThingOutputBuilder {
         formatter.field("universal_product_code", &"*** Sensitive Data Redacted ***");
         formatter.field("international_article_number", &"*** Sensitive Data Redacted ***");
         formatter.field("connector_policy_id", &self.connector_policy_id);
+        formatter.field("connector_destination_id", &self.connector_destination_id);
         formatter.field("connector_device_id", &"*** Sensitive Data Redacted ***");
         formatter.field("device_specific_key", &"*** Sensitive Data Redacted ***");
         formatter.field("mac_address", &"*** Sensitive Data Redacted ***");

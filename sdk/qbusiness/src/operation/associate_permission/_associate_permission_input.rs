@@ -9,6 +9,8 @@ pub struct AssociatePermissionInput {
     pub statement_id: ::std::option::Option<::std::string::String>,
     /// <p>The list of Amazon Q Business actions that the ISV is allowed to perform.</p>
     pub actions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>The conditions that restrict when the permission is effective. These conditions can be used to limit the permission based on specific attributes of the request.</p>
+    pub conditions: ::std::option::Option<::std::vec::Vec<crate::types::PermissionCondition>>,
     /// <p>The Amazon Resource Name of the IAM role for the ISV that is being granted permission.</p>
     pub principal: ::std::option::Option<::std::string::String>,
 }
@@ -26,6 +28,12 @@ impl AssociatePermissionInput {
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.actions.is_none()`.
     pub fn actions(&self) -> &[::std::string::String] {
         self.actions.as_deref().unwrap_or_default()
+    }
+    /// <p>The conditions that restrict when the permission is effective. These conditions can be used to limit the permission based on specific attributes of the request.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.conditions.is_none()`.
+    pub fn conditions(&self) -> &[crate::types::PermissionCondition] {
+        self.conditions.as_deref().unwrap_or_default()
     }
     /// <p>The Amazon Resource Name of the IAM role for the ISV that is being granted permission.</p>
     pub fn principal(&self) -> ::std::option::Option<&str> {
@@ -46,6 +54,7 @@ pub struct AssociatePermissionInputBuilder {
     pub(crate) application_id: ::std::option::Option<::std::string::String>,
     pub(crate) statement_id: ::std::option::Option<::std::string::String>,
     pub(crate) actions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) conditions: ::std::option::Option<::std::vec::Vec<crate::types::PermissionCondition>>,
     pub(crate) principal: ::std::option::Option<::std::string::String>,
 }
 impl AssociatePermissionInputBuilder {
@@ -99,6 +108,26 @@ impl AssociatePermissionInputBuilder {
     pub fn get_actions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.actions
     }
+    /// Appends an item to `conditions`.
+    ///
+    /// To override the contents of this collection use [`set_conditions`](Self::set_conditions).
+    ///
+    /// <p>The conditions that restrict when the permission is effective. These conditions can be used to limit the permission based on specific attributes of the request.</p>
+    pub fn conditions(mut self, input: crate::types::PermissionCondition) -> Self {
+        let mut v = self.conditions.unwrap_or_default();
+        v.push(input);
+        self.conditions = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The conditions that restrict when the permission is effective. These conditions can be used to limit the permission based on specific attributes of the request.</p>
+    pub fn set_conditions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PermissionCondition>>) -> Self {
+        self.conditions = input;
+        self
+    }
+    /// <p>The conditions that restrict when the permission is effective. These conditions can be used to limit the permission based on specific attributes of the request.</p>
+    pub fn get_conditions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PermissionCondition>> {
+        &self.conditions
+    }
     /// <p>The Amazon Resource Name of the IAM role for the ISV that is being granted permission.</p>
     /// This field is required.
     pub fn principal(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -123,6 +152,7 @@ impl AssociatePermissionInputBuilder {
             application_id: self.application_id,
             statement_id: self.statement_id,
             actions: self.actions,
+            conditions: self.conditions,
             principal: self.principal,
         })
     }

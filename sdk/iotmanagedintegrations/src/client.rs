@@ -59,14 +59,14 @@ pub(crate) struct Handle {
 /// # Using the `Client`
 ///
 /// A client has a function for every operation that can be performed by the service.
-/// For example, the [`CreateCredentialLocker`](crate::operation::create_credential_locker) operation has
-/// a [`Client::create_credential_locker`], function which returns a builder for that operation.
+/// For example, the [`CreateAccountAssociation`](crate::operation::create_account_association) operation has
+/// a [`Client::create_account_association`], function which returns a builder for that operation.
 /// The fluent builder ultimately has a `send()` function that returns an async future that
 /// returns a result, as illustrated below:
 ///
 /// ```rust,ignore
-/// let result = client.create_credential_locker()
-///     .name("example")
+/// let result = client.create_account_association()
+///     .client_token("example")
 ///     .send()
 ///     .await;
 /// ```
@@ -136,6 +136,12 @@ impl Client {
     }
 }
 
+mod create_account_association;
+
+mod create_cloud_connector;
+
+mod create_connector_destination;
+
 mod create_credential_locker;
 
 mod create_destination;
@@ -163,7 +169,7 @@ mod create_provisioning_profile;
 /// # let client: aws_sdk_iotmanagedintegrations::Client = unimplemented!();
 /// use ::http::header::{HeaderName, HeaderValue};
 ///
-/// let result = client.create_credential_locker()
+/// let result = client.create_account_association()
 ///     .customize()
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
@@ -178,6 +184,12 @@ mod create_provisioning_profile;
 /// # }
 /// ```
 pub mod customize;
+
+mod delete_account_association;
+
+mod delete_cloud_connector;
+
+mod delete_connector_destination;
 
 mod delete_credential_locker;
 
@@ -194,6 +206,14 @@ mod delete_ota_task;
 mod delete_ota_task_configuration;
 
 mod delete_provisioning_profile;
+
+mod deregister_account_association;
+
+mod get_account_association;
+
+mod get_cloud_connector;
+
+mod get_connector_destination;
 
 mod get_credential_locker;
 
@@ -231,11 +251,23 @@ mod get_runtime_log_configuration;
 
 mod get_schema_version;
 
+mod list_account_associations;
+
+mod list_cloud_connectors;
+
+mod list_connector_destinations;
+
 mod list_credential_lockers;
 
 mod list_destinations;
 
+mod list_device_discoveries;
+
+mod list_discovered_devices;
+
 mod list_event_log_configurations;
+
+mod list_managed_thing_account_associations;
 
 mod list_managed_thing_schemas;
 
@@ -253,19 +285,37 @@ mod list_provisioning_profiles;
 
 mod list_schema_versions;
 
+mod list_tags_for_resource;
+
 mod put_default_encryption_configuration;
 
 mod put_hub_configuration;
 
 mod put_runtime_log_configuration;
 
+mod register_account_association;
+
 mod register_custom_endpoint;
 
 mod reset_runtime_log_configuration;
 
+mod send_connector_event;
+
 mod send_managed_thing_command;
 
+mod start_account_association_refresh;
+
 mod start_device_discovery;
+
+mod tag_resource;
+
+mod untag_resource;
+
+mod update_account_association;
+
+mod update_cloud_connector;
+
+mod update_connector_destination;
 
 mod update_destination;
 

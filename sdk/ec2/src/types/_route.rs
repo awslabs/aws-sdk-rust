@@ -44,6 +44,8 @@ pub struct Route {
     pub vpc_peering_connection_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the core network.</p>
     pub core_network_arn: ::std::option::Option<::std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) of the ODB network.</p>
+    pub odb_network_arn: ::std::option::Option<::std::string::String>,
 }
 impl Route {
     /// <p>The IPv4 CIDR block used for the destination match.</p>
@@ -118,6 +120,10 @@ impl Route {
     pub fn core_network_arn(&self) -> ::std::option::Option<&str> {
         self.core_network_arn.as_deref()
     }
+    /// <p>The Amazon Resource Name (ARN) of the ODB network.</p>
+    pub fn odb_network_arn(&self) -> ::std::option::Option<&str> {
+        self.odb_network_arn.as_deref()
+    }
 }
 impl Route {
     /// Creates a new builder-style object to manufacture [`Route`](crate::types::Route).
@@ -146,6 +152,7 @@ pub struct RouteBuilder {
     pub(crate) state: ::std::option::Option<crate::types::RouteState>,
     pub(crate) vpc_peering_connection_id: ::std::option::Option<::std::string::String>,
     pub(crate) core_network_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) odb_network_arn: ::std::option::Option<::std::string::String>,
 }
 impl RouteBuilder {
     /// <p>The IPv4 CIDR block used for the destination match.</p>
@@ -396,6 +403,20 @@ impl RouteBuilder {
     pub fn get_core_network_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.core_network_arn
     }
+    /// <p>The Amazon Resource Name (ARN) of the ODB network.</p>
+    pub fn odb_network_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.odb_network_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the ODB network.</p>
+    pub fn set_odb_network_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.odb_network_arn = input;
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the ODB network.</p>
+    pub fn get_odb_network_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.odb_network_arn
+    }
     /// Consumes the builder and constructs a [`Route`](crate::types::Route).
     pub fn build(self) -> crate::types::Route {
         crate::types::Route {
@@ -415,6 +436,7 @@ impl RouteBuilder {
             state: self.state,
             vpc_peering_connection_id: self.vpc_peering_connection_id,
             core_network_arn: self.core_network_arn,
+            odb_network_arn: self.odb_network_arn,
         }
     }
 }

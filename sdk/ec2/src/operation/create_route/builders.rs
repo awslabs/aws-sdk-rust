@@ -205,6 +205,20 @@ impl CreateRouteFluentBuilder {
     pub fn get_core_network_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_core_network_arn()
     }
+    /// <p>The Amazon Resource Name (ARN) of the ODB network.</p>
+    pub fn odb_network_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.odb_network_arn(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the ODB network.</p>
+    pub fn set_odb_network_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_odb_network_arn(input);
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the ODB network.</p>
+    pub fn get_odb_network_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_odb_network_arn()
+    }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.inner = self.inner.dry_run(input);

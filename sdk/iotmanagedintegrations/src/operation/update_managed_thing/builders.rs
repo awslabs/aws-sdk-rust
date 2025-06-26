@@ -220,6 +220,25 @@ impl UpdateManagedThingFluentBuilder {
     pub fn get_capability_report(&self) -> &::std::option::Option<crate::types::CapabilityReport> {
         self.inner.get_capability_report()
     }
+    ///
+    /// Appends an item to `CapabilitySchemas`.
+    ///
+    /// To override the contents of this collection use [`set_capability_schemas`](Self::set_capability_schemas).
+    ///
+    /// <p>The updated capability schemas that define the functionality and features supported by the managed thing.</p>
+    pub fn capability_schemas(mut self, input: crate::types::CapabilitySchemaItem) -> Self {
+        self.inner = self.inner.capability_schemas(input);
+        self
+    }
+    /// <p>The updated capability schemas that define the functionality and features supported by the managed thing.</p>
+    pub fn set_capability_schemas(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CapabilitySchemaItem>>) -> Self {
+        self.inner = self.inner.set_capability_schemas(input);
+        self
+    }
+    /// <p>The updated capability schemas that define the functionality and features supported by the managed thing.</p>
+    pub fn get_capability_schemas(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CapabilitySchemaItem>> {
+        self.inner.get_capability_schemas()
+    }
     /// <p>The capabilities of the device such as light bulb.</p>
     pub fn capabilities(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.capabilities(input.into());

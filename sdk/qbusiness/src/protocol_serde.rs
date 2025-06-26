@@ -337,6 +337,8 @@ pub(crate) mod shape_custom_plugin_configuration;
 
 pub(crate) mod shape_customization_configuration;
 
+pub(crate) mod shape_data_accessor_authentication_detail;
+
 pub(crate) mod shape_data_accessors;
 
 pub(crate) mod shape_data_source_sync_jobs;
@@ -394,6 +396,8 @@ pub(crate) mod shape_message_usefulness_feedback;
 pub(crate) mod shape_messages;
 
 pub(crate) mod shape_orchestration_configuration;
+
+pub(crate) mod shape_permission_condition;
 
 pub(crate) mod shape_personalization_configuration;
 
@@ -480,6 +484,10 @@ pub(crate) mod shape_conversation;
 pub(crate) mod shape_copy_from_source;
 
 pub(crate) mod shape_data_accessor;
+
+pub(crate) mod shape_data_accessor_authentication_configuration;
+
+pub(crate) mod shape_data_accessor_external_ids;
 
 pub(crate) mod shape_data_source;
 
@@ -572,6 +580,8 @@ pub(crate) mod shape_access_control;
 pub(crate) mod shape_action_review_payload_field;
 
 pub(crate) mod shape_conversation_source;
+
+pub(crate) mod shape_data_accessor_idc_trusted_token_issuer_configuration;
 
 pub(crate) mod shape_data_source_sync_job_metrics;
 

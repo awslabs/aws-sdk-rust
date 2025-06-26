@@ -22,7 +22,7 @@ impl crate::operation::list_managed_things::builders::ListManagedThingsInputBuil
 }
 /// Fluent builder constructing a request to `ListManagedThings`.
 ///
-/// <p>List all of the associations and statuses for a managed thing by its owner.</p>
+/// <p>Listing all managed things with provision for filters.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListManagedThingsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -171,18 +171,49 @@ impl ListManagedThingsFluentBuilder {
         self.inner.get_parent_controller_identifier_filter()
     }
     /// <p>Filter on a connector policy id for a managed thing.</p>
+    #[deprecated(note = "ConnectorPolicyIdFilter is deprecated", since = "06-25-2025")]
     pub fn connector_policy_id_filter(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.connector_policy_id_filter(input.into());
         self
     }
     /// <p>Filter on a connector policy id for a managed thing.</p>
+    #[deprecated(note = "ConnectorPolicyIdFilter is deprecated", since = "06-25-2025")]
     pub fn set_connector_policy_id_filter(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_connector_policy_id_filter(input);
         self
     }
     /// <p>Filter on a connector policy id for a managed thing.</p>
+    #[deprecated(note = "ConnectorPolicyIdFilter is deprecated", since = "06-25-2025")]
     pub fn get_connector_policy_id_filter(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_connector_policy_id_filter()
+    }
+    /// <p>Filter managed things by the connector destination ID they are associated with.</p>
+    pub fn connector_destination_id_filter(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.connector_destination_id_filter(input.into());
+        self
+    }
+    /// <p>Filter managed things by the connector destination ID they are associated with.</p>
+    pub fn set_connector_destination_id_filter(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_connector_destination_id_filter(input);
+        self
+    }
+    /// <p>Filter managed things by the connector destination ID they are associated with.</p>
+    pub fn get_connector_destination_id_filter(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_connector_destination_id_filter()
+    }
+    /// <p>Filter managed things by the connector device ID they are associated with. When specified, only managed things with this connector device ID will be returned.</p>
+    pub fn connector_device_id_filter(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.connector_device_id_filter(input.into());
+        self
+    }
+    /// <p>Filter managed things by the connector device ID they are associated with. When specified, only managed things with this connector device ID will be returned.</p>
+    pub fn set_connector_device_id_filter(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_connector_device_id_filter(input);
+        self
+    }
+    /// <p>Filter managed things by the connector device ID they are associated with. When specified, only managed things with this connector device ID will be returned.</p>
+    pub fn get_connector_device_id_filter(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_connector_device_id_filter()
     }
     /// <p>Filter on the serial number of the device.</p>
     pub fn serial_number_filter(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {

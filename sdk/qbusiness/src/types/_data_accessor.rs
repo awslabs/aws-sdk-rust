@@ -14,6 +14,8 @@ pub struct DataAccessor {
     pub idc_application_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the IAM role for the ISV associated with this data accessor.</p>
     pub principal: ::std::option::Option<::std::string::String>,
+    /// <p>The authentication configuration details for the data accessor. This specifies how the ISV authenticates when accessing data through this data accessor.</p>
+    pub authentication_detail: ::std::option::Option<crate::types::DataAccessorAuthenticationDetail>,
     /// <p>The timestamp when the data accessor was created.</p>
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The timestamp when the data accessor was last updated.</p>
@@ -40,6 +42,10 @@ impl DataAccessor {
     pub fn principal(&self) -> ::std::option::Option<&str> {
         self.principal.as_deref()
     }
+    /// <p>The authentication configuration details for the data accessor. This specifies how the ISV authenticates when accessing data through this data accessor.</p>
+    pub fn authentication_detail(&self) -> ::std::option::Option<&crate::types::DataAccessorAuthenticationDetail> {
+        self.authentication_detail.as_ref()
+    }
     /// <p>The timestamp when the data accessor was created.</p>
     pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
@@ -57,6 +63,7 @@ impl ::std::fmt::Debug for DataAccessor {
         formatter.field("data_accessor_arn", &self.data_accessor_arn);
         formatter.field("idc_application_arn", &self.idc_application_arn);
         formatter.field("principal", &self.principal);
+        formatter.field("authentication_detail", &self.authentication_detail);
         formatter.field("created_at", &self.created_at);
         formatter.field("updated_at", &self.updated_at);
         formatter.finish()
@@ -78,6 +85,7 @@ pub struct DataAccessorBuilder {
     pub(crate) data_accessor_arn: ::std::option::Option<::std::string::String>,
     pub(crate) idc_application_arn: ::std::option::Option<::std::string::String>,
     pub(crate) principal: ::std::option::Option<::std::string::String>,
+    pub(crate) authentication_detail: ::std::option::Option<crate::types::DataAccessorAuthenticationDetail>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
@@ -152,6 +160,20 @@ impl DataAccessorBuilder {
     pub fn get_principal(&self) -> &::std::option::Option<::std::string::String> {
         &self.principal
     }
+    /// <p>The authentication configuration details for the data accessor. This specifies how the ISV authenticates when accessing data through this data accessor.</p>
+    pub fn authentication_detail(mut self, input: crate::types::DataAccessorAuthenticationDetail) -> Self {
+        self.authentication_detail = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The authentication configuration details for the data accessor. This specifies how the ISV authenticates when accessing data through this data accessor.</p>
+    pub fn set_authentication_detail(mut self, input: ::std::option::Option<crate::types::DataAccessorAuthenticationDetail>) -> Self {
+        self.authentication_detail = input;
+        self
+    }
+    /// <p>The authentication configuration details for the data accessor. This specifies how the ISV authenticates when accessing data through this data accessor.</p>
+    pub fn get_authentication_detail(&self) -> &::std::option::Option<crate::types::DataAccessorAuthenticationDetail> {
+        &self.authentication_detail
+    }
     /// <p>The timestamp when the data accessor was created.</p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_at = ::std::option::Option::Some(input);
@@ -188,6 +210,7 @@ impl DataAccessorBuilder {
             data_accessor_arn: self.data_accessor_arn,
             idc_application_arn: self.idc_application_arn,
             principal: self.principal,
+            authentication_detail: self.authentication_detail,
             created_at: self.created_at,
             updated_at: self.updated_at,
         }
@@ -201,6 +224,7 @@ impl ::std::fmt::Debug for DataAccessorBuilder {
         formatter.field("data_accessor_arn", &self.data_accessor_arn);
         formatter.field("idc_application_arn", &self.idc_application_arn);
         formatter.field("principal", &self.principal);
+        formatter.field("authentication_detail", &self.authentication_detail);
         formatter.field("created_at", &self.created_at);
         formatter.field("updated_at", &self.updated_at);
         formatter.finish()

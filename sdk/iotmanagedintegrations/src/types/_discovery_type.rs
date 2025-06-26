@@ -13,6 +13,7 @@
 /// # let discoverytype = unimplemented!();
 /// match discoverytype {
 ///     DiscoveryType::Cloud => { /* ... */ },
+///     DiscoveryType::Custom => { /* ... */ },
 ///     DiscoveryType::Zigbee => { /* ... */ },
 ///     DiscoveryType::Zwave => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -46,6 +47,8 @@ pub enum DiscoveryType {
     #[allow(missing_docs)] // documentation missing in model
     Cloud,
     #[allow(missing_docs)] // documentation missing in model
+    Custom,
+    #[allow(missing_docs)] // documentation missing in model
     Zigbee,
     #[allow(missing_docs)] // documentation missing in model
     Zwave,
@@ -57,6 +60,7 @@ impl ::std::convert::From<&str> for DiscoveryType {
     fn from(s: &str) -> Self {
         match s {
             "CLOUD" => DiscoveryType::Cloud,
+            "CUSTOM" => DiscoveryType::Custom,
             "ZIGBEE" => DiscoveryType::Zigbee,
             "ZWAVE" => DiscoveryType::Zwave,
             other => DiscoveryType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -75,6 +79,7 @@ impl DiscoveryType {
     pub fn as_str(&self) -> &str {
         match self {
             DiscoveryType::Cloud => "CLOUD",
+            DiscoveryType::Custom => "CUSTOM",
             DiscoveryType::Zigbee => "ZIGBEE",
             DiscoveryType::Zwave => "ZWAVE",
             DiscoveryType::Unknown(value) => value.as_str(),
@@ -82,7 +87,7 @@ impl DiscoveryType {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["CLOUD", "ZIGBEE", "ZWAVE"]
+        &["CLOUD", "CUSTOM", "ZIGBEE", "ZWAVE"]
     }
 }
 impl ::std::convert::AsRef<str> for DiscoveryType {
@@ -106,6 +111,7 @@ impl ::std::fmt::Display for DiscoveryType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             DiscoveryType::Cloud => write!(f, "CLOUD"),
+            DiscoveryType::Custom => write!(f, "CUSTOM"),
             DiscoveryType::Zigbee => write!(f, "ZIGBEE"),
             DiscoveryType::Zwave => write!(f, "ZWAVE"),
             DiscoveryType::Unknown(value) => write!(f, "{}", value),

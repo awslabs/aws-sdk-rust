@@ -21,49 +21,61 @@ pub fn ser_create_managed_thing_input_input(
         crate::protocol_serde::shape_capability_report::ser_capability_report(&mut object_6, var_5)?;
         object_6.finish();
     }
-    if let Some(var_7) = &input.classification {
-        object.key("Classification").string(var_7.as_str());
-    }
-    if let Some(var_8) = &input.client_token {
-        object.key("ClientToken").string(var_8.as_str());
-    }
-    if let Some(var_9) = &input.credential_locker_id {
-        object.key("CredentialLockerId").string(var_9.as_str());
-    }
-    if let Some(var_10) = &input.meta_data {
-        #[allow(unused_mut)]
-        let mut object_11 = object.key("MetaData").start_object();
-        for (key_12, value_13) in var_10 {
+    if let Some(var_7) = &input.capability_schemas {
+        let mut array_8 = object.key("CapabilitySchemas").start_array();
+        for item_9 in var_7 {
             {
-                object_11.key(key_12.as_str()).string(value_13.as_str());
+                #[allow(unused_mut)]
+                let mut object_10 = array_8.value().start_object();
+                crate::protocol_serde::shape_capability_schema_item::ser_capability_schema_item(&mut object_10, item_9)?;
+                object_10.finish();
             }
         }
-        object_11.finish();
+        array_8.finish();
     }
-    if let Some(var_14) = &input.model {
-        object.key("Model").string(var_14.as_str());
+    if let Some(var_11) = &input.classification {
+        object.key("Classification").string(var_11.as_str());
     }
-    if let Some(var_15) = &input.name {
-        object.key("Name").string(var_15.as_str());
+    if let Some(var_12) = &input.client_token {
+        object.key("ClientToken").string(var_12.as_str());
     }
-    if let Some(var_16) = &input.owner {
-        object.key("Owner").string(var_16.as_str());
+    if let Some(var_13) = &input.credential_locker_id {
+        object.key("CredentialLockerId").string(var_13.as_str());
     }
-    if let Some(var_17) = &input.role {
-        object.key("Role").string(var_17.as_str());
-    }
-    if let Some(var_18) = &input.serial_number {
-        object.key("SerialNumber").string(var_18.as_str());
-    }
-    if let Some(var_19) = &input.tags {
+    if let Some(var_14) = &input.meta_data {
         #[allow(unused_mut)]
-        let mut object_20 = object.key("Tags").start_object();
-        for (key_21, value_22) in var_19 {
+        let mut object_15 = object.key("MetaData").start_object();
+        for (key_16, value_17) in var_14 {
             {
-                object_20.key(key_21.as_str()).string(value_22.as_str());
+                object_15.key(key_16.as_str()).string(value_17.as_str());
             }
         }
-        object_20.finish();
+        object_15.finish();
+    }
+    if let Some(var_18) = &input.model {
+        object.key("Model").string(var_18.as_str());
+    }
+    if let Some(var_19) = &input.name {
+        object.key("Name").string(var_19.as_str());
+    }
+    if let Some(var_20) = &input.owner {
+        object.key("Owner").string(var_20.as_str());
+    }
+    if let Some(var_21) = &input.role {
+        object.key("Role").string(var_21.as_str());
+    }
+    if let Some(var_22) = &input.serial_number {
+        object.key("SerialNumber").string(var_22.as_str());
+    }
+    if let Some(var_23) = &input.tags {
+        #[allow(unused_mut)]
+        let mut object_24 = object.key("Tags").start_object();
+        for (key_25, value_26) in var_23 {
+            {
+                object_24.key(key_25.as_str()).string(value_26.as_str());
+            }
+        }
+        object_24.finish();
     }
     Ok(())
 }

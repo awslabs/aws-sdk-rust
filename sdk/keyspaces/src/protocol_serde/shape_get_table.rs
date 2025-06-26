@@ -212,6 +212,18 @@ pub(crate) fn de_get_table(
                         crate::protocol_serde::shape_replica_specification_summary_list::de_replica_specification_summary_list(tokens)?,
                     );
                 }
+                "latestStreamArn" => {
+                    builder = builder.set_latest_stream_arn(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
+                "cdcSpecification" => {
+                    builder = builder.set_cdc_specification(crate::protocol_serde::shape_cdc_specification_summary::de_cdc_specification_summary(
+                        tokens,
+                    )?);
+                }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },
             other => {

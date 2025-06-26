@@ -31,6 +31,8 @@ pub use crate::types::error::_resource_already_exists_exception::ResourceAlready
 
 pub use crate::types::error::_unsupported_workspace_configuration_exception::UnsupportedWorkspaceConfigurationExceptionBuilder;
 
+pub use crate::types::error::_invalid_parameter_combination_exception::InvalidParameterCombinationExceptionBuilder;
+
 pub use crate::types::error::_resource_in_use_exception::ResourceInUseExceptionBuilder;
 
 pub use crate::types::error::_incompatible_applications_exception::IncompatibleApplicationsExceptionBuilder;

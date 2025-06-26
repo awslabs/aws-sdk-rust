@@ -217,6 +217,19 @@ pub fn de_route(
                 builder = builder.set_core_network_arn(var_16);
             }
             ,
+            s if s.matches("odbNetworkArn") /* OdbNetworkArn com.amazonaws.ec2#Route$OdbNetworkArn */ =>  {
+                let var_17 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_odb_network_arn(var_17);
+            }
+            ,
             _ => {}
         }
     }

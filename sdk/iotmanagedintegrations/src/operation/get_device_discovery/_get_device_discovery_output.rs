@@ -16,10 +16,14 @@ pub struct GetDeviceDiscoveryOutput {
     /// <p>The id of the end-user's IoT hub.</p>
     pub controller_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID tracking the current discovery process for one connector association.</p>
+    #[deprecated(note = "ConnectorAssociationId has been deprecated", since = "2025-06-25")]
     pub connector_association_id: ::std::option::Option<::std::string::String>,
+    /// <p>The identifier of the account association used for the device discovery.</p>
+    pub account_association_id: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp value for the completion time of the device discovery.</p>
     pub finished_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A set of key/value pairs that are used to manage the device discovery request.</p>
+    #[deprecated(note = "Tags have been deprecated from this api", since = "06-25-2025")]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
@@ -51,14 +55,20 @@ impl GetDeviceDiscoveryOutput {
         self.controller_id.as_deref()
     }
     /// <p>The ID tracking the current discovery process for one connector association.</p>
+    #[deprecated(note = "ConnectorAssociationId has been deprecated", since = "2025-06-25")]
     pub fn connector_association_id(&self) -> ::std::option::Option<&str> {
         self.connector_association_id.as_deref()
+    }
+    /// <p>The identifier of the account association used for the device discovery.</p>
+    pub fn account_association_id(&self) -> ::std::option::Option<&str> {
+        self.account_association_id.as_deref()
     }
     /// <p>The timestamp value for the completion time of the device discovery.</p>
     pub fn finished_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.finished_at.as_ref()
     }
     /// <p>A set of key/value pairs that are used to manage the device discovery request.</p>
+    #[deprecated(note = "Tags have been deprecated from this api", since = "06-25-2025")]
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
@@ -73,6 +83,7 @@ impl ::std::fmt::Debug for GetDeviceDiscoveryOutput {
         formatter.field("started_at", &self.started_at);
         formatter.field("controller_id", &self.controller_id);
         formatter.field("connector_association_id", &self.connector_association_id);
+        formatter.field("account_association_id", &self.account_association_id);
         formatter.field("finished_at", &self.finished_at);
         formatter.field("tags", &"*** Sensitive Data Redacted ***");
         formatter.field("_request_id", &self._request_id);
@@ -102,6 +113,7 @@ pub struct GetDeviceDiscoveryOutputBuilder {
     pub(crate) started_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) controller_id: ::std::option::Option<::std::string::String>,
     pub(crate) connector_association_id: ::std::option::Option<::std::string::String>,
+    pub(crate) account_association_id: ::std::option::Option<::std::string::String>,
     pub(crate) finished_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
@@ -197,18 +209,35 @@ impl GetDeviceDiscoveryOutputBuilder {
         &self.controller_id
     }
     /// <p>The ID tracking the current discovery process for one connector association.</p>
+    #[deprecated(note = "ConnectorAssociationId has been deprecated", since = "2025-06-25")]
     pub fn connector_association_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.connector_association_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID tracking the current discovery process for one connector association.</p>
+    #[deprecated(note = "ConnectorAssociationId has been deprecated", since = "2025-06-25")]
     pub fn set_connector_association_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.connector_association_id = input;
         self
     }
     /// <p>The ID tracking the current discovery process for one connector association.</p>
+    #[deprecated(note = "ConnectorAssociationId has been deprecated", since = "2025-06-25")]
     pub fn get_connector_association_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.connector_association_id
+    }
+    /// <p>The identifier of the account association used for the device discovery.</p>
+    pub fn account_association_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.account_association_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The identifier of the account association used for the device discovery.</p>
+    pub fn set_account_association_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.account_association_id = input;
+        self
+    }
+    /// <p>The identifier of the account association used for the device discovery.</p>
+    pub fn get_account_association_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account_association_id
     }
     /// <p>The timestamp value for the completion time of the device discovery.</p>
     pub fn finished_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -229,6 +258,7 @@ impl GetDeviceDiscoveryOutputBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>A set of key/value pairs that are used to manage the device discovery request.</p>
+    #[deprecated(note = "Tags have been deprecated from this api", since = "06-25-2025")]
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
@@ -236,11 +266,13 @@ impl GetDeviceDiscoveryOutputBuilder {
         self
     }
     /// <p>A set of key/value pairs that are used to manage the device discovery request.</p>
+    #[deprecated(note = "Tags have been deprecated from this api", since = "06-25-2025")]
     pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// <p>A set of key/value pairs that are used to manage the device discovery request.</p>
+    #[deprecated(note = "Tags have been deprecated from this api", since = "06-25-2025")]
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
@@ -297,6 +329,7 @@ impl GetDeviceDiscoveryOutputBuilder {
             })?,
             controller_id: self.controller_id,
             connector_association_id: self.connector_association_id,
+            account_association_id: self.account_association_id,
             finished_at: self.finished_at,
             tags: self.tags,
             _request_id: self._request_id,
@@ -313,6 +346,7 @@ impl ::std::fmt::Debug for GetDeviceDiscoveryOutputBuilder {
         formatter.field("started_at", &self.started_at);
         formatter.field("controller_id", &self.controller_id);
         formatter.field("connector_association_id", &self.connector_association_id);
+        formatter.field("account_association_id", &self.account_association_id);
         formatter.field("finished_at", &self.finished_at);
         formatter.field("tags", &"*** Sensitive Data Redacted ***");
         formatter.field("_request_id", &self._request_id);

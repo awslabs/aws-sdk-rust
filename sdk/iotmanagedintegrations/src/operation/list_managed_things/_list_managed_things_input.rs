@@ -12,7 +12,12 @@ pub struct ListManagedThingsInput {
     /// <p>Filter on a parent controller id for a managed thing.</p>
     pub parent_controller_identifier_filter: ::std::option::Option<::std::string::String>,
     /// <p>Filter on a connector policy id for a managed thing.</p>
+    #[deprecated(note = "ConnectorPolicyIdFilter is deprecated", since = "06-25-2025")]
     pub connector_policy_id_filter: ::std::option::Option<::std::string::String>,
+    /// <p>Filter managed things by the connector destination ID they are associated with.</p>
+    pub connector_destination_id_filter: ::std::option::Option<::std::string::String>,
+    /// <p>Filter managed things by the connector device ID they are associated with. When specified, only managed things with this connector device ID will be returned.</p>
+    pub connector_device_id_filter: ::std::option::Option<::std::string::String>,
     /// <p>Filter on the serial number of the device.</p>
     pub serial_number_filter: ::std::option::Option<::std::string::String>,
     /// <p>Filter on the status of the device.</p>
@@ -40,8 +45,17 @@ impl ListManagedThingsInput {
         self.parent_controller_identifier_filter.as_deref()
     }
     /// <p>Filter on a connector policy id for a managed thing.</p>
+    #[deprecated(note = "ConnectorPolicyIdFilter is deprecated", since = "06-25-2025")]
     pub fn connector_policy_id_filter(&self) -> ::std::option::Option<&str> {
         self.connector_policy_id_filter.as_deref()
+    }
+    /// <p>Filter managed things by the connector destination ID they are associated with.</p>
+    pub fn connector_destination_id_filter(&self) -> ::std::option::Option<&str> {
+        self.connector_destination_id_filter.as_deref()
+    }
+    /// <p>Filter managed things by the connector device ID they are associated with. When specified, only managed things with this connector device ID will be returned.</p>
+    pub fn connector_device_id_filter(&self) -> ::std::option::Option<&str> {
+        self.connector_device_id_filter.as_deref()
     }
     /// <p>Filter on the serial number of the device.</p>
     pub fn serial_number_filter(&self) -> ::std::option::Option<&str> {
@@ -68,6 +82,8 @@ impl ::std::fmt::Debug for ListManagedThingsInput {
         formatter.field("role_filter", &self.role_filter);
         formatter.field("parent_controller_identifier_filter", &self.parent_controller_identifier_filter);
         formatter.field("connector_policy_id_filter", &self.connector_policy_id_filter);
+        formatter.field("connector_destination_id_filter", &self.connector_destination_id_filter);
+        formatter.field("connector_device_id_filter", &"*** Sensitive Data Redacted ***");
         formatter.field("serial_number_filter", &"*** Sensitive Data Redacted ***");
         formatter.field("provisioning_status_filter", &self.provisioning_status_filter);
         formatter.field("next_token", &self.next_token);
@@ -91,6 +107,8 @@ pub struct ListManagedThingsInputBuilder {
     pub(crate) role_filter: ::std::option::Option<crate::types::Role>,
     pub(crate) parent_controller_identifier_filter: ::std::option::Option<::std::string::String>,
     pub(crate) connector_policy_id_filter: ::std::option::Option<::std::string::String>,
+    pub(crate) connector_destination_id_filter: ::std::option::Option<::std::string::String>,
+    pub(crate) connector_device_id_filter: ::std::option::Option<::std::string::String>,
     pub(crate) serial_number_filter: ::std::option::Option<::std::string::String>,
     pub(crate) provisioning_status_filter: ::std::option::Option<crate::types::ProvisioningStatus>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -154,18 +172,49 @@ impl ListManagedThingsInputBuilder {
         &self.parent_controller_identifier_filter
     }
     /// <p>Filter on a connector policy id for a managed thing.</p>
+    #[deprecated(note = "ConnectorPolicyIdFilter is deprecated", since = "06-25-2025")]
     pub fn connector_policy_id_filter(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.connector_policy_id_filter = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Filter on a connector policy id for a managed thing.</p>
+    #[deprecated(note = "ConnectorPolicyIdFilter is deprecated", since = "06-25-2025")]
     pub fn set_connector_policy_id_filter(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.connector_policy_id_filter = input;
         self
     }
     /// <p>Filter on a connector policy id for a managed thing.</p>
+    #[deprecated(note = "ConnectorPolicyIdFilter is deprecated", since = "06-25-2025")]
     pub fn get_connector_policy_id_filter(&self) -> &::std::option::Option<::std::string::String> {
         &self.connector_policy_id_filter
+    }
+    /// <p>Filter managed things by the connector destination ID they are associated with.</p>
+    pub fn connector_destination_id_filter(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.connector_destination_id_filter = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Filter managed things by the connector destination ID they are associated with.</p>
+    pub fn set_connector_destination_id_filter(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.connector_destination_id_filter = input;
+        self
+    }
+    /// <p>Filter managed things by the connector destination ID they are associated with.</p>
+    pub fn get_connector_destination_id_filter(&self) -> &::std::option::Option<::std::string::String> {
+        &self.connector_destination_id_filter
+    }
+    /// <p>Filter managed things by the connector device ID they are associated with. When specified, only managed things with this connector device ID will be returned.</p>
+    pub fn connector_device_id_filter(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.connector_device_id_filter = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Filter managed things by the connector device ID they are associated with. When specified, only managed things with this connector device ID will be returned.</p>
+    pub fn set_connector_device_id_filter(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.connector_device_id_filter = input;
+        self
+    }
+    /// <p>Filter managed things by the connector device ID they are associated with. When specified, only managed things with this connector device ID will be returned.</p>
+    pub fn get_connector_device_id_filter(&self) -> &::std::option::Option<::std::string::String> {
+        &self.connector_device_id_filter
     }
     /// <p>Filter on the serial number of the device.</p>
     pub fn serial_number_filter(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -233,6 +282,8 @@ impl ListManagedThingsInputBuilder {
             role_filter: self.role_filter,
             parent_controller_identifier_filter: self.parent_controller_identifier_filter,
             connector_policy_id_filter: self.connector_policy_id_filter,
+            connector_destination_id_filter: self.connector_destination_id_filter,
+            connector_device_id_filter: self.connector_device_id_filter,
             serial_number_filter: self.serial_number_filter,
             provisioning_status_filter: self.provisioning_status_filter,
             next_token: self.next_token,
@@ -248,6 +299,8 @@ impl ::std::fmt::Debug for ListManagedThingsInputBuilder {
         formatter.field("role_filter", &self.role_filter);
         formatter.field("parent_controller_identifier_filter", &self.parent_controller_identifier_filter);
         formatter.field("connector_policy_id_filter", &self.connector_policy_id_filter);
+        formatter.field("connector_destination_id_filter", &self.connector_destination_id_filter);
+        formatter.field("connector_device_id_filter", &"*** Sensitive Data Redacted ***");
         formatter.field("serial_number_filter", &"*** Sensitive Data Redacted ***");
         formatter.field("provisioning_status_filter", &self.provisioning_status_filter);
         formatter.field("next_token", &self.next_token);

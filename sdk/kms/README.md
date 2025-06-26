@@ -4,7 +4,7 @@ Key Management Service (KMS) is an encryption and key management web service. Th
 
 We recommend that you use the Amazon Web Services SDKs to make programmatic API calls to KMS.
 
-If you need to use FIPS 140-2 validated cryptographic modules when communicating with Amazon Web Services, use the FIPS endpoint in your preferred Amazon Web Services Region. For more information about the available FIPS endpoints, see [Service endpoints](https://docs.aws.amazon.com/general/latest/gr/kms.html#kms_region) in the Key Management Service topic of the _Amazon Web Services General Reference_.
+If you need to use FIPS 140-2 validated cryptographic modules when communicating with Amazon Web Services, use one of the FIPS endpoints in your preferred Amazon Web Services Region. If you need communicate over IPv6, use the dual-stack endpoint in your preferred Amazon Web Services Region. For more information see [Service endpoints](https://docs.aws.amazon.com/general/latest/gr/kms.html#kms_region) in the Key Management Service topic of the _Amazon Web Services General Reference_ and [Dual-stack endpoint support](https://docs.aws.amazon.com/kms/latest/developerguide/ipv6-kms.html) in the KMS Developer Guide.
 
 All KMS API calls must be signed and be transmitted using Transport Layer Security (TLS). KMS recommends you always use the latest supported TLS version. Clients must also support cipher suites with Perfect Forward Secrecy (PFS) such as Ephemeral Diffie-Hellman (DHE) or Elliptic Curve Ephemeral Diffie-Hellman (ECDHE). Most modern systems such as Java 7 and later support these modes.
 
@@ -45,7 +45,7 @@ your project, add the following to your **Cargo.toml** file:
 ```toml
 [dependencies]
 aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-aws-sdk-kms = "1.76.0"
+aws-sdk-kms = "1.76.1"
 tokio = { version = "1", features = ["full"] }
 ```
 

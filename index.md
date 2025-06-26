@@ -271,6 +271,7 @@ The AWS SDK for Rust contains one crate for each AWS service, as well as [aws-co
 | Amazon Interactive Video Service RealTime | [aws-sdk-ivsrealtime](https://crates.io/crates/aws-sdk-ivsrealtime) ([docs](https://docs.rs/aws-sdk-ivsrealtime)) |
 | Amazon Kendra Intelligent Ranking | [aws-sdk-kendraranking](https://crates.io/crates/aws-sdk-kendraranking) ([docs](https://docs.rs/aws-sdk-kendraranking)) |
 | Amazon Keyspaces | [aws-sdk-keyspaces](https://crates.io/crates/aws-sdk-keyspaces) ([docs](https://docs.rs/aws-sdk-keyspaces)) |
+| Amazon Keyspaces Streams | [aws-sdk-keyspacesstreams](https://crates.io/crates/aws-sdk-keyspacesstreams) ([docs](https://docs.rs/aws-sdk-keyspacesstreams)) |
 | Amazon Kinesis | [aws-sdk-kinesis](https://crates.io/crates/aws-sdk-kinesis) ([docs](https://docs.rs/aws-sdk-kinesis)) |
 | Amazon Kinesis Analytics | [aws-sdk-kinesisanalytics](https://crates.io/crates/aws-sdk-kinesisanalytics) ([docs](https://docs.rs/aws-sdk-kinesisanalytics)) |
 | Amazon Kinesis Analytics | [aws-sdk-kinesisanalyticsv2](https://crates.io/crates/aws-sdk-kinesisanalyticsv2) ([docs](https://docs.rs/aws-sdk-kinesisanalyticsv2)) |

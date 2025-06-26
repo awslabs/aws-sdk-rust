@@ -15,26 +15,32 @@ pub fn ser_create_data_accessor_input_input(
         }
         array_2.finish();
     }
-    if let Some(var_5) = &input.client_token {
-        object.key("clientToken").string(var_5.as_str());
+    if let Some(var_5) = &input.authentication_detail {
+        #[allow(unused_mut)]
+        let mut object_6 = object.key("authenticationDetail").start_object();
+        crate::protocol_serde::shape_data_accessor_authentication_detail::ser_data_accessor_authentication_detail(&mut object_6, var_5)?;
+        object_6.finish();
     }
-    if let Some(var_6) = &input.display_name {
-        object.key("displayName").string(var_6.as_str());
+    if let Some(var_7) = &input.client_token {
+        object.key("clientToken").string(var_7.as_str());
     }
-    if let Some(var_7) = &input.principal {
-        object.key("principal").string(var_7.as_str());
+    if let Some(var_8) = &input.display_name {
+        object.key("displayName").string(var_8.as_str());
     }
-    if let Some(var_8) = &input.tags {
-        let mut array_9 = object.key("tags").start_array();
-        for item_10 in var_8 {
+    if let Some(var_9) = &input.principal {
+        object.key("principal").string(var_9.as_str());
+    }
+    if let Some(var_10) = &input.tags {
+        let mut array_11 = object.key("tags").start_array();
+        for item_12 in var_10 {
             {
                 #[allow(unused_mut)]
-                let mut object_11 = array_9.value().start_object();
-                crate::protocol_serde::shape_tag::ser_tag(&mut object_11, item_10)?;
-                object_11.finish();
+                let mut object_13 = array_11.value().start_object();
+                crate::protocol_serde::shape_tag::ser_tag(&mut object_13, item_12)?;
+                object_13.finish();
             }
         }
-        array_9.finish();
+        array_11.finish();
     }
     Ok(())
 }

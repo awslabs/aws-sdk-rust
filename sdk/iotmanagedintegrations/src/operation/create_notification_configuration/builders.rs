@@ -156,16 +156,19 @@ impl CreateNotificationConfigurationFluentBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>A set of key/value pairs that are used to manage the notification configuration.</p>
+    #[deprecated(note = "Tags has been deprecated from this api", since = "06-25-2025")]
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
     /// <p>A set of key/value pairs that are used to manage the notification configuration.</p>
+    #[deprecated(note = "Tags has been deprecated from this api", since = "06-25-2025")]
     pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
     /// <p>A set of key/value pairs that are used to manage the notification configuration.</p>
+    #[deprecated(note = "Tags has been deprecated from this api", since = "06-25-2025")]
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }

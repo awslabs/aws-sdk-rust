@@ -224,24 +224,34 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListManagedT
                         query.push_kv("ConnectorPolicyIdFilter", &::aws_smithy_http::query::fmt_string(inner_5));
                     }
                 }
-                if let ::std::option::Option::Some(inner_6) = &_input.serial_number_filter {
+                if let ::std::option::Option::Some(inner_6) = &_input.connector_destination_id_filter {
                     {
-                        query.push_kv("SerialNumberFilter", &::aws_smithy_http::query::fmt_string(inner_6));
+                        query.push_kv("ConnectorDestinationIdFilter", &::aws_smithy_http::query::fmt_string(inner_6));
                     }
                 }
-                if let ::std::option::Option::Some(inner_7) = &_input.provisioning_status_filter {
+                if let ::std::option::Option::Some(inner_7) = &_input.connector_device_id_filter {
                     {
-                        query.push_kv("ProvisioningStatusFilter", &::aws_smithy_http::query::fmt_string(inner_7));
+                        query.push_kv("ConnectorDeviceIdFilter", &::aws_smithy_http::query::fmt_string(inner_7));
                     }
                 }
-                if let ::std::option::Option::Some(inner_8) = &_input.next_token {
+                if let ::std::option::Option::Some(inner_8) = &_input.serial_number_filter {
                     {
-                        query.push_kv("NextToken", &::aws_smithy_http::query::fmt_string(inner_8));
+                        query.push_kv("SerialNumberFilter", &::aws_smithy_http::query::fmt_string(inner_8));
                     }
                 }
-                if let ::std::option::Option::Some(inner_9) = &_input.max_results {
+                if let ::std::option::Option::Some(inner_9) = &_input.provisioning_status_filter {
                     {
-                        query.push_kv("MaxResults", ::aws_smithy_types::primitive::Encoder::from(*inner_9).encode());
+                        query.push_kv("ProvisioningStatusFilter", &::aws_smithy_http::query::fmt_string(inner_9));
+                    }
+                }
+                if let ::std::option::Option::Some(inner_10) = &_input.next_token {
+                    {
+                        query.push_kv("NextToken", &::aws_smithy_http::query::fmt_string(inner_10));
+                    }
+                }
+                if let ::std::option::Option::Some(inner_11) = &_input.max_results {
+                    {
+                        query.push_kv("MaxResults", ::aws_smithy_types::primitive::Encoder::from(*inner_11).encode());
                     }
                 }
                 ::std::result::Result::Ok(())

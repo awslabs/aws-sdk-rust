@@ -21,6 +21,7 @@ impl super::Client {
     ///   - [`ota_scheduling_config(Option<OtaTaskSchedulingConfig>)`](crate::operation::get_ota_task::GetOtaTaskOutput::ota_scheduling_config): <p>Over-the-air (OTA) task scheduling config.</p>
     ///   - [`ota_task_execution_retry_config(Option<OtaTaskExecutionRetryConfig>)`](crate::operation::get_ota_task::GetOtaTaskOutput::ota_task_execution_retry_config): <p>Over-the-air (OTA) task retry config.</p>
     ///   - [`status(Option<OtaStatus>)`](crate::operation::get_ota_task::GetOtaTaskOutput::status): <p>The status of the over-the-air (OTA) task.</p>
+    ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::get_ota_task::GetOtaTaskOutput::tags): <p>A set of key/value pairs that are used to manage the over-the-air (OTA) task.</p>
     /// - On failure, responds with [`SdkError<GetOtaTaskError>`](crate::operation::get_ota_task::GetOtaTaskError)
     pub fn get_ota_task(&self) -> crate::operation::get_ota_task::builders::GetOtaTaskFluentBuilder {
         crate::operation::get_ota_task::builders::GetOtaTaskFluentBuilder::new(self.handle.clone())

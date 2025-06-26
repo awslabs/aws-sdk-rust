@@ -15,6 +15,8 @@ pub struct GetStepOutput {
     pub task_run_status: crate::types::TaskRunStatus,
     /// <p>The number of tasks running on the job.</p>
     pub task_run_status_counts: ::std::collections::HashMap<crate::types::TaskRunStatus, i32>,
+    /// <p>The total number of times tasks from the step failed and were retried.</p>
+    pub task_failure_retry_count: ::std::option::Option<i32>,
     /// <p>The task status with which the job started.</p>
     pub target_task_run_status: ::std::option::Option<crate::types::StepTargetTaskRunStatus>,
     /// <p>The date and time the resource was created.</p>
@@ -67,6 +69,10 @@ impl GetStepOutput {
     /// <p>The number of tasks running on the job.</p>
     pub fn task_run_status_counts(&self) -> &::std::collections::HashMap<crate::types::TaskRunStatus, i32> {
         &self.task_run_status_counts
+    }
+    /// <p>The total number of times tasks from the step failed and were retried.</p>
+    pub fn task_failure_retry_count(&self) -> ::std::option::Option<i32> {
+        self.task_failure_retry_count
     }
     /// <p>The task status with which the job started.</p>
     pub fn target_task_run_status(&self) -> ::std::option::Option<&crate::types::StepTargetTaskRunStatus> {
@@ -125,6 +131,7 @@ impl ::std::fmt::Debug for GetStepOutput {
         formatter.field("lifecycle_status_message", &self.lifecycle_status_message);
         formatter.field("task_run_status", &self.task_run_status);
         formatter.field("task_run_status_counts", &self.task_run_status_counts);
+        formatter.field("task_failure_retry_count", &self.task_failure_retry_count);
         formatter.field("target_task_run_status", &self.target_task_run_status);
         formatter.field("created_at", &self.created_at);
         formatter.field("created_by", &self.created_by);
@@ -162,6 +169,7 @@ pub struct GetStepOutputBuilder {
     pub(crate) lifecycle_status_message: ::std::option::Option<::std::string::String>,
     pub(crate) task_run_status: ::std::option::Option<crate::types::TaskRunStatus>,
     pub(crate) task_run_status_counts: ::std::option::Option<::std::collections::HashMap<crate::types::TaskRunStatus, i32>>,
+    pub(crate) task_failure_retry_count: ::std::option::Option<i32>,
     pub(crate) target_task_run_status: ::std::option::Option<crate::types::StepTargetTaskRunStatus>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) created_by: ::std::option::Option<::std::string::String>,
@@ -269,6 +277,20 @@ impl GetStepOutputBuilder {
     /// <p>The number of tasks running on the job.</p>
     pub fn get_task_run_status_counts(&self) -> &::std::option::Option<::std::collections::HashMap<crate::types::TaskRunStatus, i32>> {
         &self.task_run_status_counts
+    }
+    /// <p>The total number of times tasks from the step failed and were retried.</p>
+    pub fn task_failure_retry_count(mut self, input: i32) -> Self {
+        self.task_failure_retry_count = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The total number of times tasks from the step failed and were retried.</p>
+    pub fn set_task_failure_retry_count(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.task_failure_retry_count = input;
+        self
+    }
+    /// <p>The total number of times tasks from the step failed and were retried.</p>
+    pub fn get_task_failure_retry_count(&self) -> &::std::option::Option<i32> {
+        &self.task_failure_retry_count
     }
     /// <p>The task status with which the job started.</p>
     pub fn target_task_run_status(mut self, input: crate::types::StepTargetTaskRunStatus) -> Self {
@@ -483,6 +505,7 @@ impl GetStepOutputBuilder {
                     "task_run_status_counts was not specified but it is required when building GetStepOutput",
                 )
             })?,
+            task_failure_retry_count: self.task_failure_retry_count,
             target_task_run_status: self.target_task_run_status,
             created_at: self.created_at.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
@@ -517,6 +540,7 @@ impl ::std::fmt::Debug for GetStepOutputBuilder {
         formatter.field("lifecycle_status_message", &self.lifecycle_status_message);
         formatter.field("task_run_status", &self.task_run_status);
         formatter.field("task_run_status_counts", &self.task_run_status_counts);
+        formatter.field("task_failure_retry_count", &self.task_failure_retry_count);
         formatter.field("target_task_run_status", &self.target_task_run_status);
         formatter.field("created_at", &self.created_at);
         formatter.field("created_by", &self.created_by);

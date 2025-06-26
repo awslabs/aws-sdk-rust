@@ -13,6 +13,8 @@ pub struct CreateDataAccessorInput {
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>A friendly name for the data accessor.</p>
     pub display_name: ::std::option::Option<::std::string::String>,
+    /// <p>The authentication configuration details for the data accessor. This specifies how the ISV will authenticate when accessing data through this data accessor.</p>
+    pub authentication_detail: ::std::option::Option<crate::types::DataAccessorAuthenticationDetail>,
     /// <p>The tags to associate with the data accessor.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
@@ -39,6 +41,10 @@ impl CreateDataAccessorInput {
     pub fn display_name(&self) -> ::std::option::Option<&str> {
         self.display_name.as_deref()
     }
+    /// <p>The authentication configuration details for the data accessor. This specifies how the ISV will authenticate when accessing data through this data accessor.</p>
+    pub fn authentication_detail(&self) -> ::std::option::Option<&crate::types::DataAccessorAuthenticationDetail> {
+        self.authentication_detail.as_ref()
+    }
     /// <p>The tags to associate with the data accessor.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
@@ -54,6 +60,7 @@ impl ::std::fmt::Debug for CreateDataAccessorInput {
         formatter.field("action_configurations", &self.action_configurations);
         formatter.field("client_token", &self.client_token);
         formatter.field("display_name", &"*** Sensitive Data Redacted ***");
+        formatter.field("authentication_detail", &self.authentication_detail);
         formatter.field("tags", &self.tags);
         formatter.finish()
     }
@@ -74,6 +81,7 @@ pub struct CreateDataAccessorInputBuilder {
     pub(crate) action_configurations: ::std::option::Option<::std::vec::Vec<crate::types::ActionConfiguration>>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) display_name: ::std::option::Option<::std::string::String>,
+    pub(crate) authentication_detail: ::std::option::Option<crate::types::DataAccessorAuthenticationDetail>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateDataAccessorInputBuilder {
@@ -156,6 +164,20 @@ impl CreateDataAccessorInputBuilder {
     pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.display_name
     }
+    /// <p>The authentication configuration details for the data accessor. This specifies how the ISV will authenticate when accessing data through this data accessor.</p>
+    pub fn authentication_detail(mut self, input: crate::types::DataAccessorAuthenticationDetail) -> Self {
+        self.authentication_detail = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The authentication configuration details for the data accessor. This specifies how the ISV will authenticate when accessing data through this data accessor.</p>
+    pub fn set_authentication_detail(mut self, input: ::std::option::Option<crate::types::DataAccessorAuthenticationDetail>) -> Self {
+        self.authentication_detail = input;
+        self
+    }
+    /// <p>The authentication configuration details for the data accessor. This specifies how the ISV will authenticate when accessing data through this data accessor.</p>
+    pub fn get_authentication_detail(&self) -> &::std::option::Option<crate::types::DataAccessorAuthenticationDetail> {
+        &self.authentication_detail
+    }
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -187,6 +209,7 @@ impl CreateDataAccessorInputBuilder {
             action_configurations: self.action_configurations,
             client_token: self.client_token,
             display_name: self.display_name,
+            authentication_detail: self.authentication_detail,
             tags: self.tags,
         })
     }
@@ -199,6 +222,7 @@ impl ::std::fmt::Debug for CreateDataAccessorInputBuilder {
         formatter.field("action_configurations", &self.action_configurations);
         formatter.field("client_token", &self.client_token);
         formatter.field("display_name", &"*** Sensitive Data Redacted ***");
+        formatter.field("authentication_detail", &self.authentication_detail);
         formatter.field("tags", &self.tags);
         formatter.finish()
     }

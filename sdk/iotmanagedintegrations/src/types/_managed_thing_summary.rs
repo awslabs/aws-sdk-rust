@@ -21,7 +21,10 @@ pub struct ManagedThingSummary {
     /// <p>The id of the connector policy.</p><note>
     /// <p>This parameter is used for cloud-to-cloud devices only.</p>
     /// </note>
+    #[deprecated(note = "ConnectorPolicyId has been deprecated", since = "06-25-2025")]
     pub connector_policy_id: ::std::option::Option<::std::string::String>,
+    /// <p>The identifier of the connector destination associated with this managed thing, if applicable.</p>
+    pub connector_destination_id: ::std::option::Option<::std::string::String>,
     /// <p>The model of the device.</p>
     pub model: ::std::option::Option<::std::string::String>,
     /// <p>The name of the managed thing representing the physical device.</p>
@@ -75,8 +78,13 @@ impl ManagedThingSummary {
     /// <p>The id of the connector policy.</p><note>
     /// <p>This parameter is used for cloud-to-cloud devices only.</p>
     /// </note>
+    #[deprecated(note = "ConnectorPolicyId has been deprecated", since = "06-25-2025")]
     pub fn connector_policy_id(&self) -> ::std::option::Option<&str> {
         self.connector_policy_id.as_deref()
+    }
+    /// <p>The identifier of the connector destination associated with this managed thing, if applicable.</p>
+    pub fn connector_destination_id(&self) -> ::std::option::Option<&str> {
+        self.connector_destination_id.as_deref()
     }
     /// <p>The model of the device.</p>
     pub fn model(&self) -> ::std::option::Option<&str> {
@@ -133,6 +141,7 @@ impl ::std::fmt::Debug for ManagedThingSummary {
         formatter.field("classification", &"*** Sensitive Data Redacted ***");
         formatter.field("connector_device_id", &"*** Sensitive Data Redacted ***");
         formatter.field("connector_policy_id", &self.connector_policy_id);
+        formatter.field("connector_destination_id", &self.connector_destination_id);
         formatter.field("model", &"*** Sensitive Data Redacted ***");
         formatter.field("name", &self.name);
         formatter.field("owner", &"*** Sensitive Data Redacted ***");
@@ -165,6 +174,7 @@ pub struct ManagedThingSummaryBuilder {
     pub(crate) classification: ::std::option::Option<::std::string::String>,
     pub(crate) connector_device_id: ::std::option::Option<::std::string::String>,
     pub(crate) connector_policy_id: ::std::option::Option<::std::string::String>,
+    pub(crate) connector_destination_id: ::std::option::Option<::std::string::String>,
     pub(crate) model: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) owner: ::std::option::Option<::std::string::String>,
@@ -271,6 +281,7 @@ impl ManagedThingSummaryBuilder {
     /// <p>The id of the connector policy.</p><note>
     /// <p>This parameter is used for cloud-to-cloud devices only.</p>
     /// </note>
+    #[deprecated(note = "ConnectorPolicyId has been deprecated", since = "06-25-2025")]
     pub fn connector_policy_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.connector_policy_id = ::std::option::Option::Some(input.into());
         self
@@ -278,6 +289,7 @@ impl ManagedThingSummaryBuilder {
     /// <p>The id of the connector policy.</p><note>
     /// <p>This parameter is used for cloud-to-cloud devices only.</p>
     /// </note>
+    #[deprecated(note = "ConnectorPolicyId has been deprecated", since = "06-25-2025")]
     pub fn set_connector_policy_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.connector_policy_id = input;
         self
@@ -285,8 +297,23 @@ impl ManagedThingSummaryBuilder {
     /// <p>The id of the connector policy.</p><note>
     /// <p>This parameter is used for cloud-to-cloud devices only.</p>
     /// </note>
+    #[deprecated(note = "ConnectorPolicyId has been deprecated", since = "06-25-2025")]
     pub fn get_connector_policy_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.connector_policy_id
+    }
+    /// <p>The identifier of the connector destination associated with this managed thing, if applicable.</p>
+    pub fn connector_destination_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.connector_destination_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The identifier of the connector destination associated with this managed thing, if applicable.</p>
+    pub fn set_connector_destination_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.connector_destination_id = input;
+        self
+    }
+    /// <p>The identifier of the connector destination associated with this managed thing, if applicable.</p>
+    pub fn get_connector_destination_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.connector_destination_id
     }
     /// <p>The model of the device.</p>
     pub fn model(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -452,6 +479,7 @@ impl ManagedThingSummaryBuilder {
             classification: self.classification,
             connector_device_id: self.connector_device_id,
             connector_policy_id: self.connector_policy_id,
+            connector_destination_id: self.connector_destination_id,
             model: self.model,
             name: self.name,
             owner: self.owner,
@@ -476,6 +504,7 @@ impl ::std::fmt::Debug for ManagedThingSummaryBuilder {
         formatter.field("classification", &"*** Sensitive Data Redacted ***");
         formatter.field("connector_device_id", &"*** Sensitive Data Redacted ***");
         formatter.field("connector_policy_id", &self.connector_policy_id);
+        formatter.field("connector_destination_id", &self.connector_destination_id);
         formatter.field("model", &"*** Sensitive Data Redacted ***");
         formatter.field("name", &self.name);
         formatter.field("owner", &"*** Sensitive Data Redacted ***");

@@ -171,6 +171,14 @@ pub use crate::types::_data_source_status::DataSourceStatus;
 
 pub use crate::types::_data_source::DataSource;
 
+pub use crate::types::_data_accessor_authentication_detail::DataAccessorAuthenticationDetail;
+
+pub use crate::types::_data_accessor_authentication_configuration::DataAccessorAuthenticationConfiguration;
+
+pub use crate::types::_data_accessor_idc_trusted_token_issuer_configuration::DataAccessorIdcTrustedTokenIssuerConfiguration;
+
+pub use crate::types::_data_accessor_authentication_type::DataAccessorAuthenticationType;
+
 pub use crate::types::_action_configuration::ActionConfiguration;
 
 pub use crate::types::_action_filter_configuration::ActionFilterConfiguration;
@@ -397,6 +405,10 @@ pub use crate::types::_document_content::DocumentContent;
 
 pub use crate::types::_delete_document::DeleteDocument;
 
+pub use crate::types::_permission_condition::PermissionCondition;
+
+pub use crate::types::_permission_condition_operator::PermissionConditionOperator;
+
 mod _access_configuration;
 
 mod _access_control;
@@ -524,6 +536,14 @@ mod _custom_plugin_configuration;
 mod _customization_configuration;
 
 mod _data_accessor;
+
+mod _data_accessor_authentication_configuration;
+
+mod _data_accessor_authentication_detail;
+
+mod _data_accessor_authentication_type;
+
+mod _data_accessor_idc_trusted_token_issuer_configuration;
 
 mod _data_source;
 
@@ -670,6 +690,10 @@ mod _open_id_connect_provider_configuration;
 mod _orchestration_configuration;
 
 mod _orchestration_control;
+
+mod _permission_condition;
+
+mod _permission_condition_operator;
 
 mod _personalization_configuration;
 

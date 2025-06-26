@@ -15,6 +15,8 @@ pub enum Error {
     IncompatibleApplicationsException(crate::types::error::IncompatibleApplicationsException),
     /// <p>Unexpected server error occured.</p>
     InternalServerException(crate::types::error::InternalServerException),
+    /// <p>Two or more of the selected parameter values cannot be used together.</p>
+    InvalidParameterCombinationException(crate::types::error::InvalidParameterCombinationException),
     /// <p>One or more parameter values are not valid.</p>
     InvalidParameterValuesException(crate::types::error::InvalidParameterValuesException),
     /// <p>The state of the resource is not valid for this operation.</p>
@@ -65,6 +67,7 @@ impl ::std::fmt::Display for Error {
             Error::ConflictException(inner) => inner.fmt(f),
             Error::IncompatibleApplicationsException(inner) => inner.fmt(f),
             Error::InternalServerException(inner) => inner.fmt(f),
+            Error::InvalidParameterCombinationException(inner) => inner.fmt(f),
             Error::InvalidParameterValuesException(inner) => inner.fmt(f),
             Error::InvalidResourceStateException(inner) => inner.fmt(f),
             Error::OperatingSystemNotCompatibleException(inner) => inner.fmt(f),
@@ -108,6 +111,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
             Self::ConflictException(inner) => inner.meta(),
             Self::IncompatibleApplicationsException(inner) => inner.meta(),
             Self::InternalServerException(inner) => inner.meta(),
+            Self::InvalidParameterCombinationException(inner) => inner.meta(),
             Self::InvalidParameterValuesException(inner) => inner.meta(),
             Self::InvalidResourceStateException(inner) => inner.meta(),
             Self::OperatingSystemNotCompatibleException(inner) => inner.meta(),
@@ -2487,6 +2491,15 @@ impl From<crate::operation::modify_workspace_access_properties::ModifyWorkspaceA
             crate::operation::modify_workspace_access_properties::ModifyWorkspaceAccessPropertiesError::AccessDeniedException(inner) => {
                 Error::AccessDeniedException(inner)
             }
+            crate::operation::modify_workspace_access_properties::ModifyWorkspaceAccessPropertiesError::InvalidParameterCombinationException(
+                inner,
+            ) => Error::InvalidParameterCombinationException(inner),
+            crate::operation::modify_workspace_access_properties::ModifyWorkspaceAccessPropertiesError::InvalidParameterValuesException(inner) => {
+                Error::InvalidParameterValuesException(inner)
+            }
+            crate::operation::modify_workspace_access_properties::ModifyWorkspaceAccessPropertiesError::OperationNotSupportedException(inner) => {
+                Error::OperationNotSupportedException(inner)
+            }
             crate::operation::modify_workspace_access_properties::ModifyWorkspaceAccessPropertiesError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }
@@ -3299,6 +3312,7 @@ impl ::std::error::Error for Error {
             Error::ConflictException(inner) => inner.source(),
             Error::IncompatibleApplicationsException(inner) => inner.source(),
             Error::InternalServerException(inner) => inner.source(),
+            Error::InvalidParameterCombinationException(inner) => inner.source(),
             Error::InvalidParameterValuesException(inner) => inner.source(),
             Error::InvalidResourceStateException(inner) => inner.source(),
             Error::OperatingSystemNotCompatibleException(inner) => inner.source(),
@@ -3328,6 +3342,7 @@ impl ::aws_types::request_id::RequestId for Error {
             Self::ConflictException(e) => e.request_id(),
             Self::IncompatibleApplicationsException(e) => e.request_id(),
             Self::InternalServerException(e) => e.request_id(),
+            Self::InvalidParameterCombinationException(e) => e.request_id(),
             Self::InvalidParameterValuesException(e) => e.request_id(),
             Self::InvalidResourceStateException(e) => e.request_id(),
             Self::OperatingSystemNotCompatibleException(e) => e.request_id(),

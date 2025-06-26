@@ -331,6 +331,8 @@ pub(crate) mod shape_incompatible_applications_exception;
 
 pub(crate) mod shape_internal_server_exception;
 
+pub(crate) mod shape_invalid_parameter_combination_exception;
+
 pub(crate) mod shape_invalid_parameter_values_exception;
 
 pub(crate) mod shape_invalid_resource_state_exception;
@@ -567,6 +569,8 @@ pub(crate) mod shape_workspaces_pool_sessions;
 
 pub(crate) mod shape_workspaces_pools;
 
+pub(crate) mod shape_access_endpoint_config;
+
 pub(crate) mod shape_account_modification;
 
 pub(crate) mod shape_application_resource_association;
@@ -625,6 +629,8 @@ pub(crate) mod shape_workspaces_pool_errors;
 
 pub(crate) mod shape_workspaces_pool_session;
 
+pub(crate) mod shape_access_endpoint;
+
 pub(crate) mod shape_compute_list;
 
 pub(crate) mod shape_connection_alias_association_list;
@@ -674,3 +680,7 @@ pub(crate) mod shape_standby_workspaces_properties;
 pub(crate) mod shape_storage_connectors;
 
 pub(crate) mod shape_user_settings;
+
+pub(crate) mod shape_access_endpoint_list;
+
+pub(crate) mod shape_internet_fallback_protocol_list;

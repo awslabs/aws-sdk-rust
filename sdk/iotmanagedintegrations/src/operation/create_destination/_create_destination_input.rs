@@ -16,6 +16,7 @@ pub struct CreateDestinationInput {
     /// <p>The description of the customer-managed destination.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>A set of key/value pairs that are used to manage the destination.</p>
+    #[deprecated(note = "Tags have been deprecated from this api", since = "06-25-2025")]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateDestinationInput {
@@ -44,6 +45,7 @@ impl CreateDestinationInput {
         self.description.as_deref()
     }
     /// <p>A set of key/value pairs that are used to manage the destination.</p>
+    #[deprecated(note = "Tags have been deprecated from this api", since = "06-25-2025")]
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
@@ -174,6 +176,7 @@ impl CreateDestinationInputBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>A set of key/value pairs that are used to manage the destination.</p>
+    #[deprecated(note = "Tags have been deprecated from this api", since = "06-25-2025")]
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
@@ -181,11 +184,13 @@ impl CreateDestinationInputBuilder {
         self
     }
     /// <p>A set of key/value pairs that are used to manage the destination.</p>
+    #[deprecated(note = "Tags have been deprecated from this api", since = "06-25-2025")]
     pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// <p>A set of key/value pairs that are used to manage the destination.</p>
+    #[deprecated(note = "Tags have been deprecated from this api", since = "06-25-2025")]
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }

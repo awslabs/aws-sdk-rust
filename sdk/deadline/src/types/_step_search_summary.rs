@@ -44,6 +44,8 @@ pub struct StepSearchSummary {
     pub target_task_run_status: ::std::option::Option<crate::types::StepTargetTaskRunStatus>,
     /// <p>The number of tasks running on the job.</p>
     pub task_run_status_counts: ::std::option::Option<::std::collections::HashMap<crate::types::TaskRunStatus, i32>>,
+    /// <p>The total number of times tasks from the step failed and were retried.</p>
+    pub task_failure_retry_count: ::std::option::Option<i32>,
     /// <p>The date and time the resource was created.</p>
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time the resource started running.</p>
@@ -112,6 +114,10 @@ impl StepSearchSummary {
     pub fn task_run_status_counts(&self) -> ::std::option::Option<&::std::collections::HashMap<crate::types::TaskRunStatus, i32>> {
         self.task_run_status_counts.as_ref()
     }
+    /// <p>The total number of times tasks from the step failed and were retried.</p>
+    pub fn task_failure_retry_count(&self) -> ::std::option::Option<i32> {
+        self.task_failure_retry_count
+    }
     /// <p>The date and time the resource was created.</p>
     pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
@@ -149,6 +155,7 @@ pub struct StepSearchSummaryBuilder {
     pub(crate) task_run_status: ::std::option::Option<crate::types::TaskRunStatus>,
     pub(crate) target_task_run_status: ::std::option::Option<crate::types::StepTargetTaskRunStatus>,
     pub(crate) task_run_status_counts: ::std::option::Option<::std::collections::HashMap<crate::types::TaskRunStatus, i32>>,
+    pub(crate) task_failure_retry_count: ::std::option::Option<i32>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) started_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) ended_at: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -353,6 +360,20 @@ impl StepSearchSummaryBuilder {
     pub fn get_task_run_status_counts(&self) -> &::std::option::Option<::std::collections::HashMap<crate::types::TaskRunStatus, i32>> {
         &self.task_run_status_counts
     }
+    /// <p>The total number of times tasks from the step failed and were retried.</p>
+    pub fn task_failure_retry_count(mut self, input: i32) -> Self {
+        self.task_failure_retry_count = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The total number of times tasks from the step failed and were retried.</p>
+    pub fn set_task_failure_retry_count(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.task_failure_retry_count = input;
+        self
+    }
+    /// <p>The total number of times tasks from the step failed and were retried.</p>
+    pub fn get_task_failure_retry_count(&self) -> &::std::option::Option<i32> {
+        &self.task_failure_retry_count
+    }
     /// <p>The date and time the resource was created.</p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_at = ::std::option::Option::Some(input);
@@ -421,6 +442,7 @@ impl StepSearchSummaryBuilder {
             task_run_status: self.task_run_status,
             target_task_run_status: self.target_task_run_status,
             task_run_status_counts: self.task_run_status_counts,
+            task_failure_retry_count: self.task_failure_retry_count,
             created_at: self.created_at,
             started_at: self.started_at,
             ended_at: self.ended_at,

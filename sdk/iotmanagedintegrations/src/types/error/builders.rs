@@ -15,6 +15,10 @@ pub use crate::types::error::_access_denied_exception::AccessDeniedExceptionBuil
 
 pub use crate::types::error::_unauthorized_exception::UnauthorizedExceptionBuilder;
 
+pub use crate::types::error::_limit_exceeded_exception::LimitExceededExceptionBuilder;
+
 pub use crate::types::error::_internal_failure_exception::InternalFailureExceptionBuilder;
 
 pub use crate::types::error::_service_quota_exceeded_exception::ServiceQuotaExceededExceptionBuilder;
+
+pub use crate::types::error::_invalid_request_exception::InvalidRequestExceptionBuilder;

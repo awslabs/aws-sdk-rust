@@ -22,6 +22,8 @@ pub struct WorkspaceAccessProperties {
     pub device_type_linux: ::std::option::Option<crate::types::AccessPropertyValue>,
     /// <p>Indicates whether users can access their WorkSpaces through a WorkSpaces Thin Client.</p>
     pub device_type_work_spaces_thin_client: ::std::option::Option<crate::types::AccessPropertyValue>,
+    /// <p>Specifies the configuration for accessing the WorkSpace.</p>
+    pub access_endpoint_config: ::std::option::Option<crate::types::AccessEndpointConfig>,
 }
 impl WorkspaceAccessProperties {
     /// <p>Indicates whether users can use Windows clients to access their WorkSpaces.</p>
@@ -60,6 +62,10 @@ impl WorkspaceAccessProperties {
     pub fn device_type_work_spaces_thin_client(&self) -> ::std::option::Option<&crate::types::AccessPropertyValue> {
         self.device_type_work_spaces_thin_client.as_ref()
     }
+    /// <p>Specifies the configuration for accessing the WorkSpace.</p>
+    pub fn access_endpoint_config(&self) -> ::std::option::Option<&crate::types::AccessEndpointConfig> {
+        self.access_endpoint_config.as_ref()
+    }
 }
 impl WorkspaceAccessProperties {
     /// Creates a new builder-style object to manufacture [`WorkspaceAccessProperties`](crate::types::WorkspaceAccessProperties).
@@ -81,6 +87,7 @@ pub struct WorkspaceAccessPropertiesBuilder {
     pub(crate) device_type_zero_client: ::std::option::Option<crate::types::AccessPropertyValue>,
     pub(crate) device_type_linux: ::std::option::Option<crate::types::AccessPropertyValue>,
     pub(crate) device_type_work_spaces_thin_client: ::std::option::Option<crate::types::AccessPropertyValue>,
+    pub(crate) access_endpoint_config: ::std::option::Option<crate::types::AccessEndpointConfig>,
 }
 impl WorkspaceAccessPropertiesBuilder {
     /// <p>Indicates whether users can use Windows clients to access their WorkSpaces.</p>
@@ -209,6 +216,20 @@ impl WorkspaceAccessPropertiesBuilder {
     pub fn get_device_type_work_spaces_thin_client(&self) -> &::std::option::Option<crate::types::AccessPropertyValue> {
         &self.device_type_work_spaces_thin_client
     }
+    /// <p>Specifies the configuration for accessing the WorkSpace.</p>
+    pub fn access_endpoint_config(mut self, input: crate::types::AccessEndpointConfig) -> Self {
+        self.access_endpoint_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies the configuration for accessing the WorkSpace.</p>
+    pub fn set_access_endpoint_config(mut self, input: ::std::option::Option<crate::types::AccessEndpointConfig>) -> Self {
+        self.access_endpoint_config = input;
+        self
+    }
+    /// <p>Specifies the configuration for accessing the WorkSpace.</p>
+    pub fn get_access_endpoint_config(&self) -> &::std::option::Option<crate::types::AccessEndpointConfig> {
+        &self.access_endpoint_config
+    }
     /// Consumes the builder and constructs a [`WorkspaceAccessProperties`](crate::types::WorkspaceAccessProperties).
     pub fn build(self) -> crate::types::WorkspaceAccessProperties {
         crate::types::WorkspaceAccessProperties {
@@ -221,6 +242,7 @@ impl WorkspaceAccessPropertiesBuilder {
             device_type_zero_client: self.device_type_zero_client,
             device_type_linux: self.device_type_linux,
             device_type_work_spaces_thin_client: self.device_type_work_spaces_thin_client,
+            access_endpoint_config: self.access_endpoint_config,
         }
     }
 }

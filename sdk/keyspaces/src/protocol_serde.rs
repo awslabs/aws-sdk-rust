@@ -125,6 +125,10 @@ pub(crate) mod shape_capacity_specification;
 
 pub(crate) mod shape_capacity_specification_summary;
 
+pub(crate) mod shape_cdc_specification;
+
+pub(crate) mod shape_cdc_specification_summary;
+
 pub(crate) mod shape_client_side_timestamps;
 
 pub(crate) mod shape_column_definition;

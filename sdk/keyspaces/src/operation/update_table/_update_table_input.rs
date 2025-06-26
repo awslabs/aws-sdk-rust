@@ -71,6 +71,8 @@ pub struct UpdateTableInput {
     pub auto_scaling_specification: ::std::option::Option<crate::types::AutoScalingSpecification>,
     /// <p>The Region specific settings of a multi-Regional table.</p>
     pub replica_specifications: ::std::option::Option<::std::vec::Vec<crate::types::ReplicaSpecification>>,
+    /// <p>The CDC stream settings of the table.</p>
+    pub cdc_specification: ::std::option::Option<crate::types::CdcSpecification>,
 }
 impl UpdateTableInput {
     /// <p>The name of the keyspace the specified table is stored in.</p>
@@ -167,6 +169,10 @@ impl UpdateTableInput {
     pub fn replica_specifications(&self) -> &[crate::types::ReplicaSpecification] {
         self.replica_specifications.as_deref().unwrap_or_default()
     }
+    /// <p>The CDC stream settings of the table.</p>
+    pub fn cdc_specification(&self) -> ::std::option::Option<&crate::types::CdcSpecification> {
+        self.cdc_specification.as_ref()
+    }
 }
 impl UpdateTableInput {
     /// Creates a new builder-style object to manufacture [`UpdateTableInput`](crate::operation::update_table::UpdateTableInput).
@@ -190,6 +196,7 @@ pub struct UpdateTableInputBuilder {
     pub(crate) client_side_timestamps: ::std::option::Option<crate::types::ClientSideTimestamps>,
     pub(crate) auto_scaling_specification: ::std::option::Option<crate::types::AutoScalingSpecification>,
     pub(crate) replica_specifications: ::std::option::Option<::std::vec::Vec<crate::types::ReplicaSpecification>>,
+    pub(crate) cdc_specification: ::std::option::Option<crate::types::CdcSpecification>,
 }
 impl UpdateTableInputBuilder {
     /// <p>The name of the keyspace the specified table is stored in.</p>
@@ -498,6 +505,20 @@ impl UpdateTableInputBuilder {
     pub fn get_replica_specifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ReplicaSpecification>> {
         &self.replica_specifications
     }
+    /// <p>The CDC stream settings of the table.</p>
+    pub fn cdc_specification(mut self, input: crate::types::CdcSpecification) -> Self {
+        self.cdc_specification = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The CDC stream settings of the table.</p>
+    pub fn set_cdc_specification(mut self, input: ::std::option::Option<crate::types::CdcSpecification>) -> Self {
+        self.cdc_specification = input;
+        self
+    }
+    /// <p>The CDC stream settings of the table.</p>
+    pub fn get_cdc_specification(&self) -> &::std::option::Option<crate::types::CdcSpecification> {
+        &self.cdc_specification
+    }
     /// Consumes the builder and constructs a [`UpdateTableInput`](crate::operation::update_table::UpdateTableInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::update_table::UpdateTableInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_table::UpdateTableInput {
@@ -512,6 +533,7 @@ impl UpdateTableInputBuilder {
             client_side_timestamps: self.client_side_timestamps,
             auto_scaling_specification: self.auto_scaling_specification,
             replica_specifications: self.replica_specifications,
+            cdc_specification: self.cdc_specification,
         })
     }
 }

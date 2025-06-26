@@ -32,7 +32,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-//! aws-sdk-iotmanagedintegrations = "1.13.0"
+//! aws-sdk-iotmanagedintegrations = "1.14.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!
@@ -149,14 +149,14 @@ pub use config::Config;
 /// # Using the `Client`
 ///
 /// A client has a function for every operation that can be performed by the service.
-/// For example, the [`CreateCredentialLocker`](crate::operation::create_credential_locker) operation has
-/// a [`Client::create_credential_locker`], function which returns a builder for that operation.
+/// For example, the [`CreateAccountAssociation`](crate::operation::create_account_association) operation has
+/// a [`Client::create_account_association`], function which returns a builder for that operation.
 /// The fluent builder ultimately has a `send()` function that returns an async future that
 /// returns a result, as illustrated below:
 ///
 /// ```rust,ignore
-/// let result = client.create_credential_locker()
-///     .name("example")
+/// let result = client.create_account_association()
+///     .client_token("example")
 ///     .send()
 ///     .await;
 /// ```

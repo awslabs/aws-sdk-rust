@@ -31,6 +31,8 @@ pub struct GetJobOutput {
     pub target_task_run_status: ::std::option::Option<crate::types::JobTargetTaskRunStatus>,
     /// <p>The number of tasks running on the job.</p>
     pub task_run_status_counts: ::std::option::Option<::std::collections::HashMap<crate::types::TaskRunStatus, i32>>,
+    /// <p>The total number of times tasks from the job failed and were retried.</p>
+    pub task_failure_retry_count: ::std::option::Option<i32>,
     /// <p>The storage profile ID associated with the job.</p>
     pub storage_profile_id: ::std::option::Option<::std::string::String>,
     /// <p>The number of task failures before the job stops running and is marked as <code>FAILED</code>.</p>
@@ -113,6 +115,10 @@ impl GetJobOutput {
     pub fn task_run_status_counts(&self) -> ::std::option::Option<&::std::collections::HashMap<crate::types::TaskRunStatus, i32>> {
         self.task_run_status_counts.as_ref()
     }
+    /// <p>The total number of times tasks from the job failed and were retried.</p>
+    pub fn task_failure_retry_count(&self) -> ::std::option::Option<i32> {
+        self.task_failure_retry_count
+    }
     /// <p>The storage profile ID associated with the job.</p>
     pub fn storage_profile_id(&self) -> ::std::option::Option<&str> {
         self.storage_profile_id.as_deref()
@@ -166,6 +172,7 @@ impl ::std::fmt::Debug for GetJobOutput {
         formatter.field("task_run_status", &self.task_run_status);
         formatter.field("target_task_run_status", &self.target_task_run_status);
         formatter.field("task_run_status_counts", &self.task_run_status_counts);
+        formatter.field("task_failure_retry_count", &self.task_failure_retry_count);
         formatter.field("storage_profile_id", &self.storage_profile_id);
         formatter.field("max_failed_tasks_count", &self.max_failed_tasks_count);
         formatter.field("max_retries_per_task", &self.max_retries_per_task);
@@ -208,6 +215,7 @@ pub struct GetJobOutputBuilder {
     pub(crate) task_run_status: ::std::option::Option<crate::types::TaskRunStatus>,
     pub(crate) target_task_run_status: ::std::option::Option<crate::types::JobTargetTaskRunStatus>,
     pub(crate) task_run_status_counts: ::std::option::Option<::std::collections::HashMap<crate::types::TaskRunStatus, i32>>,
+    pub(crate) task_failure_retry_count: ::std::option::Option<i32>,
     pub(crate) storage_profile_id: ::std::option::Option<::std::string::String>,
     pub(crate) max_failed_tasks_count: ::std::option::Option<i32>,
     pub(crate) max_retries_per_task: ::std::option::Option<i32>,
@@ -428,6 +436,20 @@ impl GetJobOutputBuilder {
     pub fn get_task_run_status_counts(&self) -> &::std::option::Option<::std::collections::HashMap<crate::types::TaskRunStatus, i32>> {
         &self.task_run_status_counts
     }
+    /// <p>The total number of times tasks from the job failed and were retried.</p>
+    pub fn task_failure_retry_count(mut self, input: i32) -> Self {
+        self.task_failure_retry_count = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The total number of times tasks from the job failed and were retried.</p>
+    pub fn set_task_failure_retry_count(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.task_failure_retry_count = input;
+        self
+    }
+    /// <p>The total number of times tasks from the job failed and were retried.</p>
+    pub fn get_task_failure_retry_count(&self) -> &::std::option::Option<i32> {
+        &self.task_failure_retry_count
+    }
     /// <p>The storage profile ID associated with the job.</p>
     pub fn storage_profile_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.storage_profile_id = ::std::option::Option::Some(input.into());
@@ -627,6 +649,7 @@ impl GetJobOutputBuilder {
             task_run_status: self.task_run_status,
             target_task_run_status: self.target_task_run_status,
             task_run_status_counts: self.task_run_status_counts,
+            task_failure_retry_count: self.task_failure_retry_count,
             storage_profile_id: self.storage_profile_id,
             max_failed_tasks_count: self.max_failed_tasks_count,
             max_retries_per_task: self.max_retries_per_task,
@@ -656,6 +679,7 @@ impl ::std::fmt::Debug for GetJobOutputBuilder {
         formatter.field("task_run_status", &self.task_run_status);
         formatter.field("target_task_run_status", &self.target_task_run_status);
         formatter.field("task_run_status_counts", &self.task_run_status_counts);
+        formatter.field("task_failure_retry_count", &self.task_failure_retry_count);
         formatter.field("storage_profile_id", &self.storage_profile_id);
         formatter.field("max_failed_tasks_count", &self.max_failed_tasks_count);
         formatter.field("max_retries_per_task", &self.max_retries_per_task);

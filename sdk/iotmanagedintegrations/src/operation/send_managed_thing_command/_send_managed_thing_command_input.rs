@@ -8,7 +8,10 @@ pub struct SendManagedThingCommandInput {
     /// <p>The device endpoint.</p>
     pub endpoints: ::std::option::Option<::std::vec::Vec<crate::types::CommandEndpoint>>,
     /// <p>The ID tracking the current discovery process for one connector association.</p>
+    #[deprecated(note = "ConnectorAssociationId has been deprecated", since = "06-25-2025")]
     pub connector_association_id: ::std::option::Option<::std::string::String>,
+    /// <p>The identifier of the account association to use when sending a command to a managed thing.</p>
+    pub account_association_id: ::std::option::Option<::std::string::String>,
 }
 impl SendManagedThingCommandInput {
     /// <p>The id of the device.</p>
@@ -22,8 +25,13 @@ impl SendManagedThingCommandInput {
         self.endpoints.as_deref().unwrap_or_default()
     }
     /// <p>The ID tracking the current discovery process for one connector association.</p>
+    #[deprecated(note = "ConnectorAssociationId has been deprecated", since = "06-25-2025")]
     pub fn connector_association_id(&self) -> ::std::option::Option<&str> {
         self.connector_association_id.as_deref()
+    }
+    /// <p>The identifier of the account association to use when sending a command to a managed thing.</p>
+    pub fn account_association_id(&self) -> ::std::option::Option<&str> {
+        self.account_association_id.as_deref()
     }
 }
 impl SendManagedThingCommandInput {
@@ -40,6 +48,7 @@ pub struct SendManagedThingCommandInputBuilder {
     pub(crate) managed_thing_id: ::std::option::Option<::std::string::String>,
     pub(crate) endpoints: ::std::option::Option<::std::vec::Vec<crate::types::CommandEndpoint>>,
     pub(crate) connector_association_id: ::std::option::Option<::std::string::String>,
+    pub(crate) account_association_id: ::std::option::Option<::std::string::String>,
 }
 impl SendManagedThingCommandInputBuilder {
     /// <p>The id of the device.</p>
@@ -78,18 +87,35 @@ impl SendManagedThingCommandInputBuilder {
         &self.endpoints
     }
     /// <p>The ID tracking the current discovery process for one connector association.</p>
+    #[deprecated(note = "ConnectorAssociationId has been deprecated", since = "06-25-2025")]
     pub fn connector_association_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.connector_association_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID tracking the current discovery process for one connector association.</p>
+    #[deprecated(note = "ConnectorAssociationId has been deprecated", since = "06-25-2025")]
     pub fn set_connector_association_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.connector_association_id = input;
         self
     }
     /// <p>The ID tracking the current discovery process for one connector association.</p>
+    #[deprecated(note = "ConnectorAssociationId has been deprecated", since = "06-25-2025")]
     pub fn get_connector_association_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.connector_association_id
+    }
+    /// <p>The identifier of the account association to use when sending a command to a managed thing.</p>
+    pub fn account_association_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.account_association_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The identifier of the account association to use when sending a command to a managed thing.</p>
+    pub fn set_account_association_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.account_association_id = input;
+        self
+    }
+    /// <p>The identifier of the account association to use when sending a command to a managed thing.</p>
+    pub fn get_account_association_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account_association_id
     }
     /// Consumes the builder and constructs a [`SendManagedThingCommandInput`](crate::operation::send_managed_thing_command::SendManagedThingCommandInput).
     pub fn build(
@@ -102,6 +128,7 @@ impl SendManagedThingCommandInputBuilder {
             managed_thing_id: self.managed_thing_id,
             endpoints: self.endpoints,
             connector_association_id: self.connector_association_id,
+            account_association_id: self.account_association_id,
         })
     }
 }

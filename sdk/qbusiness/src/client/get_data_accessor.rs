@@ -13,6 +13,7 @@ impl super::Client {
     ///   - [`idc_application_arn(Option<String>)`](crate::operation::get_data_accessor::GetDataAccessorOutput::idc_application_arn): <p>The Amazon Resource Name (ARN) of the IAM Identity Center application associated with this data accessor.</p>
     ///   - [`principal(Option<String>)`](crate::operation::get_data_accessor::GetDataAccessorOutput::principal): <p>The Amazon Resource Name (ARN) of the IAM role for the ISV associated with this data accessor.</p>
     ///   - [`action_configurations(Option<Vec::<ActionConfiguration>>)`](crate::operation::get_data_accessor::GetDataAccessorOutput::action_configurations): <p>The list of action configurations specifying the allowed actions and any associated filters.</p>
+    ///   - [`authentication_detail(Option<DataAccessorAuthenticationDetail>)`](crate::operation::get_data_accessor::GetDataAccessorOutput::authentication_detail): <p>The authentication configuration details for the data accessor. This specifies how the ISV authenticates when accessing data through this data accessor.</p>
     ///   - [`created_at(Option<DateTime>)`](crate::operation::get_data_accessor::GetDataAccessorOutput::created_at): <p>The timestamp when the data accessor was created.</p>
     ///   - [`updated_at(Option<DateTime>)`](crate::operation::get_data_accessor::GetDataAccessorOutput::updated_at): <p>The timestamp when the data accessor was last updated.</p>
     /// - On failure, responds with [`SdkError<GetDataAccessorError>`](crate::operation::get_data_accessor::GetDataAccessorError)

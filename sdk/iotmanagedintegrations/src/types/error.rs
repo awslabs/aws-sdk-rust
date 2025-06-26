@@ -15,9 +15,13 @@ pub use crate::types::error::_access_denied_exception::AccessDeniedException;
 
 pub use crate::types::error::_unauthorized_exception::UnauthorizedException;
 
+pub use crate::types::error::_limit_exceeded_exception::LimitExceededException;
+
 pub use crate::types::error::_internal_failure_exception::InternalFailureException;
 
 pub use crate::types::error::_service_quota_exceeded_exception::ServiceQuotaExceededException;
+
+pub use crate::types::error::_invalid_request_exception::InvalidRequestException;
 
 mod _access_denied_exception;
 
@@ -26,6 +30,10 @@ mod _conflict_exception;
 mod _internal_failure_exception;
 
 mod _internal_server_exception;
+
+mod _invalid_request_exception;
+
+mod _limit_exceeded_exception;
 
 mod _resource_not_found_exception;
 

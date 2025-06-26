@@ -54,6 +54,8 @@ pub struct JobSummary {
     pub target_task_run_status: ::std::option::Option<crate::types::JobTargetTaskRunStatus>,
     /// <p>The number of tasks running on the job.</p>
     pub task_run_status_counts: ::std::option::Option<::std::collections::HashMap<crate::types::TaskRunStatus, i32>>,
+    /// <p>The total number of times tasks from the job failed and were retried.</p>
+    pub task_failure_retry_count: ::std::option::Option<i32>,
     /// <p>The number of task failures before the job stops running and is marked as <code>FAILED</code>.</p>
     pub max_failed_tasks_count: ::std::option::Option<i32>,
     /// <p>The maximum number of retries for a job.</p>
@@ -148,6 +150,10 @@ impl JobSummary {
     pub fn task_run_status_counts(&self) -> ::std::option::Option<&::std::collections::HashMap<crate::types::TaskRunStatus, i32>> {
         self.task_run_status_counts.as_ref()
     }
+    /// <p>The total number of times tasks from the job failed and were retried.</p>
+    pub fn task_failure_retry_count(&self) -> ::std::option::Option<i32> {
+        self.task_failure_retry_count
+    }
     /// <p>The number of task failures before the job stops running and is marked as <code>FAILED</code>.</p>
     pub fn max_failed_tasks_count(&self) -> ::std::option::Option<i32> {
         self.max_failed_tasks_count
@@ -192,6 +198,7 @@ pub struct JobSummaryBuilder {
     pub(crate) task_run_status: ::std::option::Option<crate::types::TaskRunStatus>,
     pub(crate) target_task_run_status: ::std::option::Option<crate::types::JobTargetTaskRunStatus>,
     pub(crate) task_run_status_counts: ::std::option::Option<::std::collections::HashMap<crate::types::TaskRunStatus, i32>>,
+    pub(crate) task_failure_retry_count: ::std::option::Option<i32>,
     pub(crate) max_failed_tasks_count: ::std::option::Option<i32>,
     pub(crate) max_retries_per_task: ::std::option::Option<i32>,
     pub(crate) max_worker_count: ::std::option::Option<i32>,
@@ -473,6 +480,20 @@ impl JobSummaryBuilder {
     pub fn get_task_run_status_counts(&self) -> &::std::option::Option<::std::collections::HashMap<crate::types::TaskRunStatus, i32>> {
         &self.task_run_status_counts
     }
+    /// <p>The total number of times tasks from the job failed and were retried.</p>
+    pub fn task_failure_retry_count(mut self, input: i32) -> Self {
+        self.task_failure_retry_count = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The total number of times tasks from the job failed and were retried.</p>
+    pub fn set_task_failure_retry_count(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.task_failure_retry_count = input;
+        self
+    }
+    /// <p>The total number of times tasks from the job failed and were retried.</p>
+    pub fn get_task_failure_retry_count(&self) -> &::std::option::Option<i32> {
+        &self.task_failure_retry_count
+    }
     /// <p>The number of task failures before the job stops running and is marked as <code>FAILED</code>.</p>
     pub fn max_failed_tasks_count(mut self, input: i32) -> Self {
         self.max_failed_tasks_count = ::std::option::Option::Some(input);
@@ -595,6 +616,7 @@ impl JobSummaryBuilder {
             task_run_status: self.task_run_status,
             target_task_run_status: self.target_task_run_status,
             task_run_status_counts: self.task_run_status_counts,
+            task_failure_retry_count: self.task_failure_retry_count,
             max_failed_tasks_count: self.max_failed_tasks_count,
             max_retries_per_task: self.max_retries_per_task,
             max_worker_count: self.max_worker_count,

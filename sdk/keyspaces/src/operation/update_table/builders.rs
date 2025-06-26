@@ -410,4 +410,18 @@ impl UpdateTableFluentBuilder {
     pub fn get_replica_specifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ReplicaSpecification>> {
         self.inner.get_replica_specifications()
     }
+    /// <p>The CDC stream settings of the table.</p>
+    pub fn cdc_specification(mut self, input: crate::types::CdcSpecification) -> Self {
+        self.inner = self.inner.cdc_specification(input);
+        self
+    }
+    /// <p>The CDC stream settings of the table.</p>
+    pub fn set_cdc_specification(mut self, input: ::std::option::Option<crate::types::CdcSpecification>) -> Self {
+        self.inner = self.inner.set_cdc_specification(input);
+        self
+    }
+    /// <p>The CDC stream settings of the table.</p>
+    pub fn get_cdc_specification(&self) -> &::std::option::Option<crate::types::CdcSpecification> {
+        self.inner.get_cdc_specification()
+    }
 }

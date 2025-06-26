@@ -155,6 +155,25 @@ impl AssociatePermissionFluentBuilder {
     pub fn get_actions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_actions()
     }
+    ///
+    /// Appends an item to `conditions`.
+    ///
+    /// To override the contents of this collection use [`set_conditions`](Self::set_conditions).
+    ///
+    /// <p>The conditions that restrict when the permission is effective. These conditions can be used to limit the permission based on specific attributes of the request.</p>
+    pub fn conditions(mut self, input: crate::types::PermissionCondition) -> Self {
+        self.inner = self.inner.conditions(input);
+        self
+    }
+    /// <p>The conditions that restrict when the permission is effective. These conditions can be used to limit the permission based on specific attributes of the request.</p>
+    pub fn set_conditions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PermissionCondition>>) -> Self {
+        self.inner = self.inner.set_conditions(input);
+        self
+    }
+    /// <p>The conditions that restrict when the permission is effective. These conditions can be used to limit the permission based on specific attributes of the request.</p>
+    pub fn get_conditions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PermissionCondition>> {
+        self.inner.get_conditions()
+    }
     /// <p>The Amazon Resource Name of the IAM role for the ISV that is being granted permission.</p>
     pub fn principal(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.principal(input.into());

@@ -246,6 +246,13 @@ pub(crate) fn de_get_job(
                             .transpose()?,
                     );
                 }
+                "taskFailureRetryCount" => {
+                    builder = builder.set_task_failure_retry_count(
+                        ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                            .map(i32::try_from)
+                            .transpose()?,
+                    );
+                }
                 "taskRunStatus" => {
                     builder = builder.set_task_run_status(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

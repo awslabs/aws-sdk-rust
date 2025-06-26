@@ -142,17 +142,34 @@ impl SendManagedThingCommandFluentBuilder {
         self.inner.get_endpoints()
     }
     /// <p>The ID tracking the current discovery process for one connector association.</p>
+    #[deprecated(note = "ConnectorAssociationId has been deprecated", since = "06-25-2025")]
     pub fn connector_association_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.connector_association_id(input.into());
         self
     }
     /// <p>The ID tracking the current discovery process for one connector association.</p>
+    #[deprecated(note = "ConnectorAssociationId has been deprecated", since = "06-25-2025")]
     pub fn set_connector_association_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_connector_association_id(input);
         self
     }
     /// <p>The ID tracking the current discovery process for one connector association.</p>
+    #[deprecated(note = "ConnectorAssociationId has been deprecated", since = "06-25-2025")]
     pub fn get_connector_association_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_connector_association_id()
+    }
+    /// <p>The identifier of the account association to use when sending a command to a managed thing.</p>
+    pub fn account_association_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.account_association_id(input.into());
+        self
+    }
+    /// <p>The identifier of the account association to use when sending a command to a managed thing.</p>
+    pub fn set_account_association_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_account_association_id(input);
+        self
+    }
+    /// <p>The identifier of the account association to use when sending a command to a managed thing.</p>
+    pub fn get_account_association_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_account_association_id()
     }
 }

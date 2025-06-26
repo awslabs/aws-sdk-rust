@@ -20,6 +20,8 @@ impl super::Client {
     ///   - [`comment(Option<Comment>)`](crate::operation::get_table::GetTableOutput::comment): <p>The the description of the specified table.</p>
     ///   - [`client_side_timestamps(Option<ClientSideTimestamps>)`](crate::operation::get_table::GetTableOutput::client_side_timestamps): <p>The client-side timestamps setting of the table.</p>
     ///   - [`replica_specifications(Option<Vec::<ReplicaSpecificationSummary>>)`](crate::operation::get_table::GetTableOutput::replica_specifications): <p>Returns the Amazon Web Services Region specific settings of all Regions a multi-Region table is replicated in.</p>
+    ///   - [`latest_stream_arn(Option<String>)`](crate::operation::get_table::GetTableOutput::latest_stream_arn): <p>The Amazon Resource Name (ARN) of the stream.</p>
+    ///   - [`cdc_specification(Option<CdcSpecificationSummary>)`](crate::operation::get_table::GetTableOutput::cdc_specification): <p>The CDC stream settings of the table.</p>
     /// - On failure, responds with [`SdkError<GetTableError>`](crate::operation::get_table::GetTableError)
     pub fn get_table(&self) -> crate::operation::get_table::builders::GetTableFluentBuilder {
         crate::operation::get_table::builders::GetTableFluentBuilder::new(self.handle.clone())

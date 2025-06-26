@@ -93,6 +93,10 @@ pub use crate::types::_data_source_vpc_configuration::DataSourceVpcConfiguration
 
 pub use crate::types::_data_source::DataSourceBuilder;
 
+pub use crate::types::_data_accessor_authentication_detail::DataAccessorAuthenticationDetailBuilder;
+
+pub use crate::types::_data_accessor_idc_trusted_token_issuer_configuration::DataAccessorIdcTrustedTokenIssuerConfigurationBuilder;
+
 pub use crate::types::_action_configuration::ActionConfigurationBuilder;
 
 pub use crate::types::_action_filter_configuration::ActionFilterConfigurationBuilder;
@@ -252,3 +256,5 @@ pub use crate::types::_principal_group::PrincipalGroupBuilder;
 pub use crate::types::_principal_user::PrincipalUserBuilder;
 
 pub use crate::types::_delete_document::DeleteDocumentBuilder;
+
+pub use crate::types::_permission_condition::PermissionConditionBuilder;

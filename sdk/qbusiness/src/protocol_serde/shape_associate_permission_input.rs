@@ -12,11 +12,23 @@ pub fn ser_associate_permission_input_input(
         }
         array_2.finish();
     }
-    if let Some(var_4) = &input.principal {
-        object.key("principal").string(var_4.as_str());
+    if let Some(var_4) = &input.conditions {
+        let mut array_5 = object.key("conditions").start_array();
+        for item_6 in var_4 {
+            {
+                #[allow(unused_mut)]
+                let mut object_7 = array_5.value().start_object();
+                crate::protocol_serde::shape_permission_condition::ser_permission_condition(&mut object_7, item_6)?;
+                object_7.finish();
+            }
+        }
+        array_5.finish();
     }
-    if let Some(var_5) = &input.statement_id {
-        object.key("statementId").string(var_5.as_str());
+    if let Some(var_8) = &input.principal {
+        object.key("principal").string(var_8.as_str());
+    }
+    if let Some(var_9) = &input.statement_id {
+        object.key("statementId").string(var_9.as_str());
     }
     Ok(())
 }

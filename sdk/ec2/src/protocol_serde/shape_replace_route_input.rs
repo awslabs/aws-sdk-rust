@@ -41,54 +41,59 @@ pub fn ser_replace_route_input_input_input(
         scope_13.string(var_14);
     }
     #[allow(unused_mut)]
-    let mut scope_15 = writer.prefix("DryRun");
-    if let Some(var_16) = &input.dry_run {
-        scope_15.boolean(*var_16);
+    let mut scope_15 = writer.prefix("OdbNetworkArn");
+    if let Some(var_16) = &input.odb_network_arn {
+        scope_15.string(var_16);
     }
     #[allow(unused_mut)]
-    let mut scope_17 = writer.prefix("RouteTableId");
-    if let Some(var_18) = &input.route_table_id {
-        scope_17.string(var_18);
+    let mut scope_17 = writer.prefix("DryRun");
+    if let Some(var_18) = &input.dry_run {
+        scope_17.boolean(*var_18);
     }
     #[allow(unused_mut)]
-    let mut scope_19 = writer.prefix("DestinationCidrBlock");
-    if let Some(var_20) = &input.destination_cidr_block {
+    let mut scope_19 = writer.prefix("RouteTableId");
+    if let Some(var_20) = &input.route_table_id {
         scope_19.string(var_20);
     }
     #[allow(unused_mut)]
-    let mut scope_21 = writer.prefix("GatewayId");
-    if let Some(var_22) = &input.gateway_id {
+    let mut scope_21 = writer.prefix("DestinationCidrBlock");
+    if let Some(var_22) = &input.destination_cidr_block {
         scope_21.string(var_22);
     }
     #[allow(unused_mut)]
-    let mut scope_23 = writer.prefix("DestinationIpv6CidrBlock");
-    if let Some(var_24) = &input.destination_ipv6_cidr_block {
+    let mut scope_23 = writer.prefix("GatewayId");
+    if let Some(var_24) = &input.gateway_id {
         scope_23.string(var_24);
     }
     #[allow(unused_mut)]
-    let mut scope_25 = writer.prefix("EgressOnlyInternetGatewayId");
-    if let Some(var_26) = &input.egress_only_internet_gateway_id {
+    let mut scope_25 = writer.prefix("DestinationIpv6CidrBlock");
+    if let Some(var_26) = &input.destination_ipv6_cidr_block {
         scope_25.string(var_26);
     }
     #[allow(unused_mut)]
-    let mut scope_27 = writer.prefix("InstanceId");
-    if let Some(var_28) = &input.instance_id {
+    let mut scope_27 = writer.prefix("EgressOnlyInternetGatewayId");
+    if let Some(var_28) = &input.egress_only_internet_gateway_id {
         scope_27.string(var_28);
     }
     #[allow(unused_mut)]
-    let mut scope_29 = writer.prefix("NetworkInterfaceId");
-    if let Some(var_30) = &input.network_interface_id {
+    let mut scope_29 = writer.prefix("InstanceId");
+    if let Some(var_30) = &input.instance_id {
         scope_29.string(var_30);
     }
     #[allow(unused_mut)]
-    let mut scope_31 = writer.prefix("VpcPeeringConnectionId");
-    if let Some(var_32) = &input.vpc_peering_connection_id {
+    let mut scope_31 = writer.prefix("NetworkInterfaceId");
+    if let Some(var_32) = &input.network_interface_id {
         scope_31.string(var_32);
     }
     #[allow(unused_mut)]
-    let mut scope_33 = writer.prefix("NatGatewayId");
-    if let Some(var_34) = &input.nat_gateway_id {
+    let mut scope_33 = writer.prefix("VpcPeeringConnectionId");
+    if let Some(var_34) = &input.vpc_peering_connection_id {
         scope_33.string(var_34);
+    }
+    #[allow(unused_mut)]
+    let mut scope_35 = writer.prefix("NatGatewayId");
+    if let Some(var_36) = &input.nat_gateway_id {
+        scope_35.string(var_36);
     }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))

@@ -45,6 +45,10 @@ pub use crate::types::_workspace_creation_properties::WorkspaceCreationPropertie
 
 pub use crate::types::_workspace_access_properties::WorkspaceAccessPropertiesBuilder;
 
+pub use crate::types::_access_endpoint_config::AccessEndpointConfigBuilder;
+
+pub use crate::types::_access_endpoint::AccessEndpointBuilder;
+
 pub use crate::types::_streaming_properties::StreamingPropertiesBuilder;
 
 pub use crate::types::_global_accelerator_for_directory::GlobalAcceleratorForDirectoryBuilder;

@@ -15,7 +15,7 @@ pub struct GetFleetOutput {
     /// <p>This field can store any content. Escape or encode this content before displaying it on a webpage or any other system that might interpret the content of this field.</p>
     /// </important>
     pub description: ::std::option::Option<::std::string::String>,
-    /// <p>The Auto Scaling status of the fleet.</p>
+    /// <p>The status of the fleet.</p>
     pub status: crate::types::FleetStatus,
     /// <p>The Auto Scaling status of the fleet. Either <code>GROWING</code>, <code>STEADY</code>, or <code>SHRINKING</code>.</p>
     pub auto_scaling_status: ::std::option::Option<crate::types::AutoScalingStatus>,
@@ -69,7 +69,7 @@ impl GetFleetOutput {
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The Auto Scaling status of the fleet.</p>
+    /// <p>The status of the fleet.</p>
     pub fn status(&self) -> &crate::types::FleetStatus {
         &self.status
     }
@@ -261,18 +261,18 @@ impl GetFleetOutputBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
-    /// <p>The Auto Scaling status of the fleet.</p>
+    /// <p>The status of the fleet.</p>
     /// This field is required.
     pub fn status(mut self, input: crate::types::FleetStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The Auto Scaling status of the fleet.</p>
+    /// <p>The status of the fleet.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::FleetStatus>) -> Self {
         self.status = input;
         self
     }
-    /// <p>The Auto Scaling status of the fleet.</p>
+    /// <p>The status of the fleet.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::FleetStatus> {
         &self.status
     }

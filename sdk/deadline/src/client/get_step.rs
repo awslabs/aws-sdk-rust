@@ -14,6 +14,7 @@ impl super::Client {
     ///   - [`lifecycle_status_message(Option<String>)`](crate::operation::get_step::GetStepOutput::lifecycle_status_message): <p>A message that describes the lifecycle status of the step.</p>
     ///   - [`task_run_status(TaskRunStatus)`](crate::operation::get_step::GetStepOutput::task_run_status): <p>The task run status for the job.</p>
     ///   - [`task_run_status_counts(HashMap::<TaskRunStatus, i32>)`](crate::operation::get_step::GetStepOutput::task_run_status_counts): <p>The number of tasks running on the job.</p>
+    ///   - [`task_failure_retry_count(Option<i32>)`](crate::operation::get_step::GetStepOutput::task_failure_retry_count): <p>The total number of times tasks from the step failed and were retried.</p>
     ///   - [`target_task_run_status(Option<StepTargetTaskRunStatus>)`](crate::operation::get_step::GetStepOutput::target_task_run_status): <p>The task status with which the job started.</p>
     ///   - [`created_at(DateTime)`](crate::operation::get_step::GetStepOutput::created_at): <p>The date and time the resource was created.</p>
     ///   - [`created_by(String)`](crate::operation::get_step::GetStepOutput::created_by): <p>The user or system that created this resource.</p>

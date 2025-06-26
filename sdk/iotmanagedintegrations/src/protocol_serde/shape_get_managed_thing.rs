@@ -191,6 +191,13 @@ pub(crate) fn de_get_managed_thing(
                             .transpose()?,
                     );
                 }
+                "ConnectorDestinationId" => {
+                    builder = builder.set_connector_destination_id(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
                 "ConnectorDeviceId" => {
                     builder = builder.set_connector_device_id(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

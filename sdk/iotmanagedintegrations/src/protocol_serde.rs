@@ -23,6 +23,12 @@ pub fn parse_http_error_metadata(
     crate::json_errors::parse_error_metadata(response_body, response_headers)
 }
 
+pub(crate) mod shape_create_account_association;
+
+pub(crate) mod shape_create_cloud_connector;
+
+pub(crate) mod shape_create_connector_destination;
+
 pub(crate) mod shape_create_credential_locker;
 
 pub(crate) mod shape_create_destination;
@@ -39,6 +45,12 @@ pub(crate) mod shape_create_ota_task_configuration;
 
 pub(crate) mod shape_create_provisioning_profile;
 
+pub(crate) mod shape_delete_account_association;
+
+pub(crate) mod shape_delete_cloud_connector;
+
+pub(crate) mod shape_delete_connector_destination;
+
 pub(crate) mod shape_delete_credential_locker;
 
 pub(crate) mod shape_delete_destination;
@@ -54,6 +66,14 @@ pub(crate) mod shape_delete_ota_task;
 pub(crate) mod shape_delete_ota_task_configuration;
 
 pub(crate) mod shape_delete_provisioning_profile;
+
+pub(crate) mod shape_deregister_account_association;
+
+pub(crate) mod shape_get_account_association;
+
+pub(crate) mod shape_get_cloud_connector;
+
+pub(crate) mod shape_get_connector_destination;
 
 pub(crate) mod shape_get_credential_locker;
 
@@ -91,11 +111,23 @@ pub(crate) mod shape_get_runtime_log_configuration;
 
 pub(crate) mod shape_get_schema_version;
 
+pub(crate) mod shape_list_account_associations;
+
+pub(crate) mod shape_list_cloud_connectors;
+
+pub(crate) mod shape_list_connector_destinations;
+
 pub(crate) mod shape_list_credential_lockers;
 
 pub(crate) mod shape_list_destinations;
 
+pub(crate) mod shape_list_device_discoveries;
+
+pub(crate) mod shape_list_discovered_devices;
+
 pub(crate) mod shape_list_event_log_configurations;
+
+pub(crate) mod shape_list_managed_thing_account_associations;
 
 pub(crate) mod shape_list_managed_thing_schemas;
 
@@ -113,19 +145,37 @@ pub(crate) mod shape_list_provisioning_profiles;
 
 pub(crate) mod shape_list_schema_versions;
 
+pub(crate) mod shape_list_tags_for_resource;
+
 pub(crate) mod shape_put_default_encryption_configuration;
 
 pub(crate) mod shape_put_hub_configuration;
 
 pub(crate) mod shape_put_runtime_log_configuration;
 
+pub(crate) mod shape_register_account_association;
+
 pub(crate) mod shape_register_custom_endpoint;
 
 pub(crate) mod shape_reset_runtime_log_configuration;
 
+pub(crate) mod shape_send_connector_event;
+
 pub(crate) mod shape_send_managed_thing_command;
 
+pub(crate) mod shape_start_account_association_refresh;
+
 pub(crate) mod shape_start_device_discovery;
+
+pub(crate) mod shape_tag_resource;
+
+pub(crate) mod shape_untag_resource;
+
+pub(crate) mod shape_update_account_association;
+
+pub(crate) mod shape_update_cloud_connector;
+
+pub(crate) mod shape_update_connector_destination;
 
 pub(crate) mod shape_update_destination;
 
@@ -149,6 +199,12 @@ pub(crate) mod shape_access_denied_exception;
 
 pub(crate) mod shape_conflict_exception;
 
+pub(crate) mod shape_create_account_association_input;
+
+pub(crate) mod shape_create_cloud_connector_input;
+
+pub(crate) mod shape_create_connector_destination_input;
+
 pub(crate) mod shape_create_credential_locker_input;
 
 pub(crate) mod shape_create_destination_input;
@@ -165,9 +221,15 @@ pub(crate) mod shape_create_ota_task_input;
 
 pub(crate) mod shape_create_provisioning_profile_input;
 
+pub(crate) mod shape_deregister_account_association_input;
+
 pub(crate) mod shape_internal_failure_exception;
 
 pub(crate) mod shape_internal_server_exception;
+
+pub(crate) mod shape_invalid_request_exception;
+
+pub(crate) mod shape_limit_exceeded_exception;
 
 pub(crate) mod shape_put_default_encryption_configuration_input;
 
@@ -175,7 +237,11 @@ pub(crate) mod shape_put_hub_configuration_input;
 
 pub(crate) mod shape_put_runtime_log_configuration_input;
 
+pub(crate) mod shape_register_account_association_input;
+
 pub(crate) mod shape_resource_not_found_exception;
+
+pub(crate) mod shape_send_connector_event_input;
 
 pub(crate) mod shape_send_managed_thing_command_input;
 
@@ -185,9 +251,17 @@ pub(crate) mod shape_service_unavailable_exception;
 
 pub(crate) mod shape_start_device_discovery_input;
 
+pub(crate) mod shape_tag_resource_input;
+
 pub(crate) mod shape_throttling_exception;
 
 pub(crate) mod shape_unauthorized_exception;
+
+pub(crate) mod shape_update_account_association_input;
+
+pub(crate) mod shape_update_cloud_connector_input;
+
+pub(crate) mod shape_update_connector_destination_input;
 
 pub(crate) mod shape_update_destination_input;
 
@@ -201,21 +275,45 @@ pub(crate) mod shape_update_ota_task_input;
 
 pub(crate) mod shape_validation_exception;
 
+pub(crate) mod shape_account_association_list_definition;
+
+pub(crate) mod shape_auth_config;
+
+pub(crate) mod shape_auth_config_update;
+
 pub(crate) mod shape_capability_report;
+
+pub(crate) mod shape_capability_schema_item;
 
 pub(crate) mod shape_command_endpoint;
 
 pub(crate) mod shape_configuration_status;
 
+pub(crate) mod shape_connector_destination_list_definition;
+
+pub(crate) mod shape_connector_list;
+
 pub(crate) mod shape_credential_locker_list_definition;
 
 pub(crate) mod shape_destination_list_definition;
 
+pub(crate) mod shape_device;
+
+pub(crate) mod shape_device_discovery_list_definition;
+
+pub(crate) mod shape_discovered_device_list_definition;
+
+pub(crate) mod shape_endpoint_config;
+
 pub(crate) mod shape_event_log_configuration_list_definition;
+
+pub(crate) mod shape_managed_thing_association_list;
 
 pub(crate) mod shape_managed_thing_list_definition;
 
 pub(crate) mod shape_managed_thing_schema_list_definition;
+
+pub(crate) mod shape_matter_endpoint;
 
 pub(crate) mod shape_meta_data;
 
@@ -239,6 +337,8 @@ pub(crate) mod shape_runtime_log_configurations;
 
 pub(crate) mod shape_schema_version_list;
 
+pub(crate) mod shape_secrets_manager;
+
 pub(crate) mod shape_state_endpoints;
 
 pub(crate) mod shape_tags_map;
@@ -246,6 +346,8 @@ pub(crate) mod shape_tags_map;
 pub(crate) mod shape_target;
 
 pub(crate) mod shape_task_processing_details;
+
+pub(crate) mod shape_account_association_item;
 
 pub(crate) mod shape_capability_report_endpoint;
 
@@ -255,17 +357,37 @@ pub(crate) mod shape_command_capability;
 
 pub(crate) mod shape_configuration_error;
 
+pub(crate) mod shape_connector_destination_summary;
+
+pub(crate) mod shape_connector_item;
+
 pub(crate) mod shape_credential_locker_summary;
 
 pub(crate) mod shape_destination_summary;
 
+pub(crate) mod shape_device_discovery_summary;
+
+pub(crate) mod shape_discovered_device_summary;
+
 pub(crate) mod shape_event_log_configuration_summary;
+
+pub(crate) mod shape_lambda_config;
+
+pub(crate) mod shape_managed_thing_association;
 
 pub(crate) mod shape_managed_thing_schema_list_item;
 
 pub(crate) mod shape_managed_thing_summary;
 
+pub(crate) mod shape_matter_capability_report;
+
+pub(crate) mod shape_matter_cluster;
+
 pub(crate) mod shape_notification_configuration_summary;
+
+pub(crate) mod shape_o_auth_config;
+
+pub(crate) mod shape_o_auth_update;
 
 pub(crate) mod shape_ota_task_abort_config;
 
@@ -301,9 +423,15 @@ pub(crate) mod shape_capability_action;
 
 pub(crate) mod shape_capability_report_capability;
 
+pub(crate) mod shape_device_type_list;
+
 pub(crate) mod shape_exponential_rollout_rate;
 
+pub(crate) mod shape_matter_capability_report_endpoint;
+
 pub(crate) mod shape_ota_task_execution_summary;
+
+pub(crate) mod shape_proactive_refresh_token_renewal;
 
 pub(crate) mod shape_state_capabilities;
 
@@ -311,9 +439,13 @@ pub(crate) mod shape_capability_report_capabilities;
 
 pub(crate) mod shape_device_types;
 
+pub(crate) mod shape_matter_capability_report_cluster;
+
 pub(crate) mod shape_rollout_rate_increase_criteria;
 
 pub(crate) mod shape_state_capability;
+
+pub(crate) mod shape_matter_capability_report_attribute;
 
 pub(crate) mod shape_capability_report_actions;
 

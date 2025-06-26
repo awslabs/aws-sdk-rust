@@ -37,6 +37,10 @@ pub struct GetTableOutput {
     pub client_side_timestamps: ::std::option::Option<crate::types::ClientSideTimestamps>,
     /// <p>Returns the Amazon Web Services Region specific settings of all Regions a multi-Region table is replicated in.</p>
     pub replica_specifications: ::std::option::Option<::std::vec::Vec<crate::types::ReplicaSpecificationSummary>>,
+    /// <p>The Amazon Resource Name (ARN) of the stream.</p>
+    pub latest_stream_arn: ::std::option::Option<::std::string::String>,
+    /// <p>The CDC stream settings of the table.</p>
+    pub cdc_specification: ::std::option::Option<crate::types::CdcSpecificationSummary>,
     _request_id: Option<String>,
 }
 impl GetTableOutput {
@@ -107,6 +111,14 @@ impl GetTableOutput {
     pub fn replica_specifications(&self) -> &[crate::types::ReplicaSpecificationSummary] {
         self.replica_specifications.as_deref().unwrap_or_default()
     }
+    /// <p>The Amazon Resource Name (ARN) of the stream.</p>
+    pub fn latest_stream_arn(&self) -> ::std::option::Option<&str> {
+        self.latest_stream_arn.as_deref()
+    }
+    /// <p>The CDC stream settings of the table.</p>
+    pub fn cdc_specification(&self) -> ::std::option::Option<&crate::types::CdcSpecificationSummary> {
+        self.cdc_specification.as_ref()
+    }
 }
 impl ::aws_types::request_id::RequestId for GetTableOutput {
     fn request_id(&self) -> Option<&str> {
@@ -138,6 +150,8 @@ pub struct GetTableOutputBuilder {
     pub(crate) comment: ::std::option::Option<crate::types::Comment>,
     pub(crate) client_side_timestamps: ::std::option::Option<crate::types::ClientSideTimestamps>,
     pub(crate) replica_specifications: ::std::option::Option<::std::vec::Vec<crate::types::ReplicaSpecificationSummary>>,
+    pub(crate) latest_stream_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) cdc_specification: ::std::option::Option<crate::types::CdcSpecificationSummary>,
     _request_id: Option<String>,
 }
 impl GetTableOutputBuilder {
@@ -364,6 +378,34 @@ impl GetTableOutputBuilder {
     pub fn get_replica_specifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ReplicaSpecificationSummary>> {
         &self.replica_specifications
     }
+    /// <p>The Amazon Resource Name (ARN) of the stream.</p>
+    pub fn latest_stream_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.latest_stream_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the stream.</p>
+    pub fn set_latest_stream_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.latest_stream_arn = input;
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the stream.</p>
+    pub fn get_latest_stream_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.latest_stream_arn
+    }
+    /// <p>The CDC stream settings of the table.</p>
+    pub fn cdc_specification(mut self, input: crate::types::CdcSpecificationSummary) -> Self {
+        self.cdc_specification = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The CDC stream settings of the table.</p>
+    pub fn set_cdc_specification(mut self, input: ::std::option::Option<crate::types::CdcSpecificationSummary>) -> Self {
+        self.cdc_specification = input;
+        self
+    }
+    /// <p>The CDC stream settings of the table.</p>
+    pub fn get_cdc_specification(&self) -> &::std::option::Option<crate::types::CdcSpecificationSummary> {
+        &self.cdc_specification
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -409,6 +451,8 @@ impl GetTableOutputBuilder {
             comment: self.comment,
             client_side_timestamps: self.client_side_timestamps,
             replica_specifications: self.replica_specifications,
+            latest_stream_arn: self.latest_stream_arn,
+            cdc_specification: self.cdc_specification,
             _request_id: self._request_id,
         })
     }

@@ -155,6 +155,15 @@ pub(crate) fn capacity_specification_summary_correct_errors(
     builder
 }
 
+pub(crate) fn cdc_specification_summary_correct_errors(
+    mut builder: crate::types::builders::CdcSpecificationSummaryBuilder,
+) -> crate::types::builders::CdcSpecificationSummaryBuilder {
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::CdcStatus>().ok()
+    }
+    builder
+}
+
 pub(crate) fn client_side_timestamps_correct_errors(
     mut builder: crate::types::builders::ClientSideTimestampsBuilder,
 ) -> crate::types::builders::ClientSideTimestampsBuilder {

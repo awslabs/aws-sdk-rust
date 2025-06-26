@@ -22,7 +22,7 @@ impl crate::operation::start_device_discovery::builders::StartDeviceDiscoveryInp
 }
 /// Fluent builder constructing a request to `StartDeviceDiscovery`.
 ///
-/// <p>During user-guided setup, this is used to start device discovery. The authentication material (install code) is passed as a message to the controller telling it to start the discovery.</p>
+/// <p>This API is used to start device discovery for hub-connected and third-party-connected devices. The authentication material (install code) is passed as a message to the controller telling it to start the discovery.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StartDeviceDiscoveryFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,19 +108,51 @@ impl StartDeviceDiscoveryFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The discovery type supporting the type of device to be discovered in the device discovery job request.</p>
+    /// <p>The discovery type supporting the type of device to be discovered in the device discovery task request.</p>
     pub fn discovery_type(mut self, input: crate::types::DiscoveryType) -> Self {
         self.inner = self.inner.discovery_type(input);
         self
     }
-    /// <p>The discovery type supporting the type of device to be discovered in the device discovery job request.</p>
+    /// <p>The discovery type supporting the type of device to be discovered in the device discovery task request.</p>
     pub fn set_discovery_type(mut self, input: ::std::option::Option<crate::types::DiscoveryType>) -> Self {
         self.inner = self.inner.set_discovery_type(input);
         self
     }
-    /// <p>The discovery type supporting the type of device to be discovered in the device discovery job request.</p>
+    /// <p>The discovery type supporting the type of device to be discovered in the device discovery task request.</p>
     pub fn get_discovery_type(&self) -> &::std::option::Option<crate::types::DiscoveryType> {
         self.inner.get_discovery_type()
+    }
+    ///
+    /// Adds a key-value pair to `CustomProtocolDetail`.
+    ///
+    /// To override the contents of this collection use [`set_custom_protocol_detail`](Self::set_custom_protocol_detail).
+    ///
+    /// <p>Additional protocol-specific details required for device discovery, which vary based on the discovery type.</p><note>
+    /// <p>For a <code>DiscoveryType</code> of <code>CUSTOM</code>, the string-to-string map must have a key value of <code>Name</code> set to a non-empty-string.</p>
+    /// </note>
+    pub fn custom_protocol_detail(
+        mut self,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.inner = self.inner.custom_protocol_detail(k.into(), v.into());
+        self
+    }
+    /// <p>Additional protocol-specific details required for device discovery, which vary based on the discovery type.</p><note>
+    /// <p>For a <code>DiscoveryType</code> of <code>CUSTOM</code>, the string-to-string map must have a key value of <code>Name</code> set to a non-empty-string.</p>
+    /// </note>
+    pub fn set_custom_protocol_detail(
+        mut self,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    ) -> Self {
+        self.inner = self.inner.set_custom_protocol_detail(input);
+        self
+    }
+    /// <p>Additional protocol-specific details required for device discovery, which vary based on the discovery type.</p><note>
+    /// <p>For a <code>DiscoveryType</code> of <code>CUSTOM</code>, the string-to-string map must have a key value of <code>Name</code> set to a non-empty-string.</p>
+    /// </note>
+    pub fn get_custom_protocol_detail(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        self.inner.get_custom_protocol_detail()
     }
     /// <p>The id of the end-user's IoT hub.</p>
     pub fn controller_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -137,18 +169,35 @@ impl StartDeviceDiscoveryFluentBuilder {
         self.inner.get_controller_identifier()
     }
     /// <p>The id of the connector association.</p>
+    #[deprecated(note = "ConnectorAssociationIdentifier is deprecated", since = "06-25-2025")]
     pub fn connector_association_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.connector_association_identifier(input.into());
         self
     }
     /// <p>The id of the connector association.</p>
+    #[deprecated(note = "ConnectorAssociationIdentifier is deprecated", since = "06-25-2025")]
     pub fn set_connector_association_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_connector_association_identifier(input);
         self
     }
     /// <p>The id of the connector association.</p>
+    #[deprecated(note = "ConnectorAssociationIdentifier is deprecated", since = "06-25-2025")]
     pub fn get_connector_association_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_connector_association_identifier()
+    }
+    /// <p>The identifier of the cloud-to-cloud account association to use for discovery of third-party devices.</p>
+    pub fn account_association_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.account_association_id(input.into());
+        self
+    }
+    /// <p>The identifier of the cloud-to-cloud account association to use for discovery of third-party devices.</p>
+    pub fn set_account_association_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_account_association_id(input);
+        self
+    }
+    /// <p>The identifier of the cloud-to-cloud account association to use for discovery of third-party devices.</p>
+    pub fn get_account_association_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_account_association_id()
     }
     /// <p>The authentication material required to start the local device discovery job request.</p>
     pub fn authentication_material(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -198,16 +247,19 @@ impl StartDeviceDiscoveryFluentBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>A set of key/value pairs that are used to manage the device discovery request.</p>
+    #[deprecated(note = "Tags have been deprecated from this api", since = "06-25-2025")]
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
     /// <p>A set of key/value pairs that are used to manage the device discovery request.</p>
+    #[deprecated(note = "Tags have been deprecated from this api", since = "06-25-2025")]
     pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
     /// <p>A set of key/value pairs that are used to manage the device discovery request.</p>
+    #[deprecated(note = "Tags have been deprecated from this api", since = "06-25-2025")]
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }

@@ -21,6 +21,7 @@ impl super::Client {
     ///   - [`task_run_status(Option<TaskRunStatus>)`](crate::operation::get_job::GetJobOutput::task_run_status): <p>The task run status for the job.</p>
     ///   - [`target_task_run_status(Option<JobTargetTaskRunStatus>)`](crate::operation::get_job::GetJobOutput::target_task_run_status): <p>The task status with which the job started.</p>
     ///   - [`task_run_status_counts(Option<HashMap::<TaskRunStatus, i32>>)`](crate::operation::get_job::GetJobOutput::task_run_status_counts): <p>The number of tasks running on the job.</p>
+    ///   - [`task_failure_retry_count(Option<i32>)`](crate::operation::get_job::GetJobOutput::task_failure_retry_count): <p>The total number of times tasks from the job failed and were retried.</p>
     ///   - [`storage_profile_id(Option<String>)`](crate::operation::get_job::GetJobOutput::storage_profile_id): <p>The storage profile ID associated with the job.</p>
     ///   - [`max_failed_tasks_count(Option<i32>)`](crate::operation::get_job::GetJobOutput::max_failed_tasks_count): <p>The number of task failures before the job stops running and is marked as <code>FAILED</code>.</p>
     ///   - [`max_retries_per_task(Option<i32>)`](crate::operation::get_job::GetJobOutput::max_retries_per_task): <p>The maximum number of retries per failed tasks.</p>

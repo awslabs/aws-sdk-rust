@@ -87,5 +87,11 @@ pub fn ser_create_table_input_input(
         }
         array_25.finish();
     }
+    if let Some(var_28) = &input.cdc_specification {
+        #[allow(unused_mut)]
+        let mut object_29 = object.key("cdcSpecification").start_object();
+        crate::protocol_serde::shape_cdc_specification::ser_cdc_specification(&mut object_29, var_28)?;
+        object_29.finish();
+    }
     Ok(())
 }

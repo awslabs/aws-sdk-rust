@@ -17,6 +17,8 @@ pub struct GetDataAccessorOutput {
     pub principal: ::std::option::Option<::std::string::String>,
     /// <p>The list of action configurations specifying the allowed actions and any associated filters.</p>
     pub action_configurations: ::std::option::Option<::std::vec::Vec<crate::types::ActionConfiguration>>,
+    /// <p>The authentication configuration details for the data accessor. This specifies how the ISV authenticates when accessing data through this data accessor.</p>
+    pub authentication_detail: ::std::option::Option<crate::types::DataAccessorAuthenticationDetail>,
     /// <p>The timestamp when the data accessor was created.</p>
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The timestamp when the data accessor was last updated.</p>
@@ -54,6 +56,10 @@ impl GetDataAccessorOutput {
     pub fn action_configurations(&self) -> &[crate::types::ActionConfiguration] {
         self.action_configurations.as_deref().unwrap_or_default()
     }
+    /// <p>The authentication configuration details for the data accessor. This specifies how the ISV authenticates when accessing data through this data accessor.</p>
+    pub fn authentication_detail(&self) -> ::std::option::Option<&crate::types::DataAccessorAuthenticationDetail> {
+        self.authentication_detail.as_ref()
+    }
     /// <p>The timestamp when the data accessor was created.</p>
     pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
@@ -73,6 +79,7 @@ impl ::std::fmt::Debug for GetDataAccessorOutput {
         formatter.field("idc_application_arn", &self.idc_application_arn);
         formatter.field("principal", &self.principal);
         formatter.field("action_configurations", &self.action_configurations);
+        formatter.field("authentication_detail", &self.authentication_detail);
         formatter.field("created_at", &self.created_at);
         formatter.field("updated_at", &self.updated_at);
         formatter.field("_request_id", &self._request_id);
@@ -102,6 +109,7 @@ pub struct GetDataAccessorOutputBuilder {
     pub(crate) idc_application_arn: ::std::option::Option<::std::string::String>,
     pub(crate) principal: ::std::option::Option<::std::string::String>,
     pub(crate) action_configurations: ::std::option::Option<::std::vec::Vec<crate::types::ActionConfiguration>>,
+    pub(crate) authentication_detail: ::std::option::Option<crate::types::DataAccessorAuthenticationDetail>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
@@ -211,6 +219,20 @@ impl GetDataAccessorOutputBuilder {
     pub fn get_action_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ActionConfiguration>> {
         &self.action_configurations
     }
+    /// <p>The authentication configuration details for the data accessor. This specifies how the ISV authenticates when accessing data through this data accessor.</p>
+    pub fn authentication_detail(mut self, input: crate::types::DataAccessorAuthenticationDetail) -> Self {
+        self.authentication_detail = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The authentication configuration details for the data accessor. This specifies how the ISV authenticates when accessing data through this data accessor.</p>
+    pub fn set_authentication_detail(mut self, input: ::std::option::Option<crate::types::DataAccessorAuthenticationDetail>) -> Self {
+        self.authentication_detail = input;
+        self
+    }
+    /// <p>The authentication configuration details for the data accessor. This specifies how the ISV authenticates when accessing data through this data accessor.</p>
+    pub fn get_authentication_detail(&self) -> &::std::option::Option<crate::types::DataAccessorAuthenticationDetail> {
+        &self.authentication_detail
+    }
     /// <p>The timestamp when the data accessor was created.</p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_at = ::std::option::Option::Some(input);
@@ -258,6 +280,7 @@ impl GetDataAccessorOutputBuilder {
             idc_application_arn: self.idc_application_arn,
             principal: self.principal,
             action_configurations: self.action_configurations,
+            authentication_detail: self.authentication_detail,
             created_at: self.created_at,
             updated_at: self.updated_at,
             _request_id: self._request_id,
@@ -274,6 +297,7 @@ impl ::std::fmt::Debug for GetDataAccessorOutputBuilder {
         formatter.field("idc_application_arn", &self.idc_application_arn);
         formatter.field("principal", &self.principal);
         formatter.field("action_configurations", &self.action_configurations);
+        formatter.field("authentication_detail", &self.authentication_detail);
         formatter.field("created_at", &self.created_at);
         formatter.field("updated_at", &self.updated_at);
         formatter.field("_request_id", &self._request_id);

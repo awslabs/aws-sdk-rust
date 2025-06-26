@@ -85,6 +85,8 @@ pub use crate::types::_capability_report_capability::CapabilityReportCapability;
 
 pub use crate::types::_hub_network_mode::HubNetworkMode;
 
+pub use crate::types::_capability_schema_item::CapabilitySchemaItem;
+
 pub use crate::types::_provisioning_status::ProvisioningStatus;
 
 pub use crate::types::_role::Role;
@@ -99,6 +101,8 @@ pub use crate::types::_command_capability::CommandCapability;
 
 pub use crate::types::_capability_action::CapabilityAction;
 
+pub use crate::types::_managed_thing_association::ManagedThingAssociation;
+
 pub use crate::types::_encryption_type::EncryptionType;
 
 pub use crate::types::_configuration_status::ConfigurationStatus;
@@ -109,11 +113,17 @@ pub use crate::types::_configuration_error::ConfigurationError;
 
 pub use crate::types::_event_log_configuration_summary::EventLogConfigurationSummary;
 
+pub use crate::types::_discovered_device_summary::DiscoveredDeviceSummary;
+
+pub use crate::types::_discovery_modification::DiscoveryModification;
+
 pub use crate::types::_device_discovery_status::DeviceDiscoveryStatus;
 
 pub use crate::types::_discovery_type::DiscoveryType;
 
 pub use crate::types::_discovery_auth_material_type::DiscoveryAuthMaterialType;
+
+pub use crate::types::_device_discovery_summary::DeviceDiscoverySummary;
 
 pub use crate::types::_delivery_destination_type::DeliveryDestinationType;
 
@@ -121,13 +131,71 @@ pub use crate::types::_destination_summary::DestinationSummary;
 
 pub use crate::types::_credential_locker_summary::CredentialLockerSummary;
 
+pub use crate::types::_secrets_manager::SecretsManager;
+
+pub use crate::types::_auth_config_update::AuthConfigUpdate;
+
+pub use crate::types::_o_auth_update::OAuthUpdate;
+
+pub use crate::types::_proactive_refresh_token_renewal::ProactiveRefreshTokenRenewal;
+
+pub use crate::types::_auth_type::AuthType;
+
+pub use crate::types::_auth_config::AuthConfig;
+
+pub use crate::types::_o_auth_config::OAuthConfig;
+
+pub use crate::types::_token_endpoint_authentication_scheme::TokenEndpointAuthenticationScheme;
+
+pub use crate::types::_connector_destination_summary::ConnectorDestinationSummary;
+
+pub use crate::types::_cloud_connector_type::CloudConnectorType;
+
+pub use crate::types::_endpoint_type::EndpointType;
+
+pub use crate::types::_endpoint_config::EndpointConfig;
+
+pub use crate::types::_lambda_config::LambdaConfig;
+
+pub use crate::types::_connector_item::ConnectorItem;
+
+pub use crate::types::_association_state::AssociationState;
+
+pub use crate::types::_account_association_item::AccountAssociationItem;
+
+pub use crate::types::_matter_endpoint::MatterEndpoint;
+
+pub use crate::types::_matter_cluster::MatterCluster;
+
+pub use crate::types::_device::Device;
+
+pub use crate::types::_matter_capability_report::MatterCapabilityReport;
+
+pub use crate::types::_matter_capability_report_endpoint::MatterCapabilityReportEndpoint;
+
+pub use crate::types::_matter_capability_report_cluster::MatterCapabilityReportCluster;
+
+pub use crate::types::_matter_capability_report_attribute::MatterCapabilityReportAttribute;
+
+pub use crate::types::_connector_event_operation::ConnectorEventOperation;
+
 mod _abort_config_criteria;
 
 mod _abort_criteria_action;
 
 mod _abort_criteria_failure_type;
 
+mod _account_association_item;
+
+mod _association_state;
+
+mod _auth_config;
+
+mod _auth_config_update;
+
 mod _auth_material_type;
+
+mod _auth_type;
 
 mod _capability_action;
 
@@ -136,6 +204,10 @@ mod _capability_report;
 mod _capability_report_capability;
 
 mod _capability_report_endpoint;
+
+mod _capability_schema_item;
+
+mod _cloud_connector_type;
 
 mod _command_capability;
 
@@ -147,21 +219,39 @@ mod _configuration_state;
 
 mod _configuration_status;
 
+mod _connector_destination_summary;
+
+mod _connector_event_operation;
+
+mod _connector_item;
+
 mod _credential_locker_summary;
 
 mod _delivery_destination_type;
 
 mod _destination_summary;
 
+mod _device;
+
 mod _device_discovery_status;
+
+mod _device_discovery_summary;
 
 mod _disconnect_reason_value;
 
+mod _discovered_device_summary;
+
 mod _discovery_auth_material_type;
+
+mod _discovery_modification;
 
 mod _discovery_type;
 
 mod _encryption_type;
+
+mod _endpoint_config;
+
+mod _endpoint_type;
 
 mod _event_log_configuration_summary;
 
@@ -171,13 +261,33 @@ mod _exponential_rollout_rate;
 
 mod _hub_network_mode;
 
+mod _lambda_config;
+
 mod _log_level;
+
+mod _managed_thing_association;
 
 mod _managed_thing_schema_list_item;
 
 mod _managed_thing_summary;
 
+mod _matter_capability_report;
+
+mod _matter_capability_report_attribute;
+
+mod _matter_capability_report_cluster;
+
+mod _matter_capability_report_endpoint;
+
+mod _matter_cluster;
+
+mod _matter_endpoint;
+
 mod _notification_configuration_summary;
+
+mod _o_auth_config;
+
+mod _o_auth_update;
 
 mod _ota_mechanism;
 
@@ -206,6 +316,8 @@ mod _ota_task_summary;
 mod _ota_task_timeout_config;
 
 mod _ota_type;
+
+mod _proactive_refresh_token_renewal;
 
 mod _provisioning_profile_summary;
 
@@ -237,11 +349,15 @@ mod _schema_version_type;
 
 mod _schema_version_visibility;
 
+mod _secrets_manager;
+
 mod _state_capability;
 
 mod _state_endpoint;
 
 mod _task_processing_details;
+
+mod _token_endpoint_authentication_scheme;
 
 /// Builders
 pub mod builders;

@@ -185,6 +185,15 @@ pub(crate) fn custom_plugin_configuration_correct_errors(
     builder
 }
 
+pub(crate) fn data_accessor_authentication_detail_correct_errors(
+    mut builder: crate::types::builders::DataAccessorAuthenticationDetailBuilder,
+) -> crate::types::builders::DataAccessorAuthenticationDetailBuilder {
+    if builder.authentication_type.is_none() {
+        builder.authentication_type = "no value was set".parse::<crate::types::DataAccessorAuthenticationType>().ok()
+    }
+    builder
+}
+
 pub(crate) fn data_source_vpc_configuration_correct_errors(
     mut builder: crate::types::builders::DataSourceVpcConfigurationBuilder,
 ) -> crate::types::builders::DataSourceVpcConfigurationBuilder {
@@ -423,6 +432,15 @@ pub(crate) fn auth_challenge_request_event_correct_errors(
 ) -> crate::types::builders::AuthChallengeRequestEventBuilder {
     if builder.authorization_url.is_none() {
         builder.authorization_url = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn data_accessor_idc_trusted_token_issuer_configuration_correct_errors(
+    mut builder: crate::types::builders::DataAccessorIdcTrustedTokenIssuerConfigurationBuilder,
+) -> crate::types::builders::DataAccessorIdcTrustedTokenIssuerConfigurationBuilder {
+    if builder.idc_trusted_token_issuer_arn.is_none() {
+        builder.idc_trusted_token_issuer_arn = Some(Default::default())
     }
     builder
 }

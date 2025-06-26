@@ -15,8 +15,14 @@ pub fn ser_update_data_accessor_input_input(
         }
         array_2.finish();
     }
-    if let Some(var_5) = &input.display_name {
-        object.key("displayName").string(var_5.as_str());
+    if let Some(var_5) = &input.authentication_detail {
+        #[allow(unused_mut)]
+        let mut object_6 = object.key("authenticationDetail").start_object();
+        crate::protocol_serde::shape_data_accessor_authentication_detail::ser_data_accessor_authentication_detail(&mut object_6, var_5)?;
+        object_6.finish();
+    }
+    if let Some(var_7) = &input.display_name {
+        object.key("displayName").string(var_7.as_str());
     }
     Ok(())
 }

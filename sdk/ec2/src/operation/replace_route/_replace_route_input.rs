@@ -17,6 +17,8 @@ pub struct ReplaceRouteInput {
     pub carrier_gateway_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the core network.</p>
     pub core_network_arn: ::std::option::Option<::std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) of the ODB network.</p>
+    pub odb_network_arn: ::std::option::Option<::std::string::String>,
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub dry_run: ::std::option::Option<bool>,
     /// <p>The ID of the route table.</p>
@@ -66,6 +68,10 @@ impl ReplaceRouteInput {
     /// <p>The Amazon Resource Name (ARN) of the core network.</p>
     pub fn core_network_arn(&self) -> ::std::option::Option<&str> {
         self.core_network_arn.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the ODB network.</p>
+    pub fn odb_network_arn(&self) -> ::std::option::Option<&str> {
+        self.odb_network_arn.as_deref()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(&self) -> ::std::option::Option<bool> {
@@ -126,6 +132,7 @@ pub struct ReplaceRouteInputBuilder {
     pub(crate) local_gateway_id: ::std::option::Option<::std::string::String>,
     pub(crate) carrier_gateway_id: ::std::option::Option<::std::string::String>,
     pub(crate) core_network_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) odb_network_arn: ::std::option::Option<::std::string::String>,
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) route_table_id: ::std::option::Option<::std::string::String>,
     pub(crate) destination_cidr_block: ::std::option::Option<::std::string::String>,
@@ -235,6 +242,20 @@ impl ReplaceRouteInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the core network.</p>
     pub fn get_core_network_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.core_network_arn
+    }
+    /// <p>The Amazon Resource Name (ARN) of the ODB network.</p>
+    pub fn odb_network_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.odb_network_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the ODB network.</p>
+    pub fn set_odb_network_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.odb_network_arn = input;
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the ODB network.</p>
+    pub fn get_odb_network_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.odb_network_arn
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
@@ -389,6 +410,7 @@ impl ReplaceRouteInputBuilder {
             local_gateway_id: self.local_gateway_id,
             carrier_gateway_id: self.carrier_gateway_id,
             core_network_arn: self.core_network_arn,
+            odb_network_arn: self.odb_network_arn,
             dry_run: self.dry_run,
             route_table_id: self.route_table_id,
             destination_cidr_block: self.destination_cidr_block,

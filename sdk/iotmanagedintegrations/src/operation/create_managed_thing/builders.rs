@@ -248,6 +248,25 @@ impl CreateManagedThingFluentBuilder {
     pub fn get_capability_report(&self) -> &::std::option::Option<crate::types::CapabilityReport> {
         self.inner.get_capability_report()
     }
+    ///
+    /// Appends an item to `CapabilitySchemas`.
+    ///
+    /// To override the contents of this collection use [`set_capability_schemas`](Self::set_capability_schemas).
+    ///
+    /// <p>The capability schemas that define the functionality and features supported by the managed thing, including device capabilities and their associated properties.</p>
+    pub fn capability_schemas(mut self, input: crate::types::CapabilitySchemaItem) -> Self {
+        self.inner = self.inner.capability_schemas(input);
+        self
+    }
+    /// <p>The capability schemas that define the functionality and features supported by the managed thing, including device capabilities and their associated properties.</p>
+    pub fn set_capability_schemas(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CapabilitySchemaItem>>) -> Self {
+        self.inner = self.inner.set_capability_schemas(input);
+        self
+    }
+    /// <p>The capability schemas that define the functionality and features supported by the managed thing, including device capabilities and their associated properties.</p>
+    pub fn get_capability_schemas(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CapabilitySchemaItem>> {
+        self.inner.get_capability_schemas()
+    }
     /// <p>The capabilities of the device such as light bulb.</p>
     pub fn capabilities(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.capabilities(input.into());
@@ -314,17 +333,23 @@ impl CreateManagedThingFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_meta_data`](Self::set_meta_data).
     ///
-    /// <p>The metadata for the managed thing.</p>
+    /// <p>The metadata for the managed thing.</p><note>
+    /// <p>The <code>managedThing</code> <code>metadata</code> parameter is used for associating attributes with a <code>managedThing</code> that can be used for grouping over-the-air (OTA) tasks. Name value pairs in <code>metadata</code> can be used in the <code>OtaTargetQueryString</code> parameter for the <code>CreateOtaTask</code> API operation.</p>
+    /// </note>
     pub fn meta_data(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.meta_data(k.into(), v.into());
         self
     }
-    /// <p>The metadata for the managed thing.</p>
+    /// <p>The metadata for the managed thing.</p><note>
+    /// <p>The <code>managedThing</code> <code>metadata</code> parameter is used for associating attributes with a <code>managedThing</code> that can be used for grouping over-the-air (OTA) tasks. Name value pairs in <code>metadata</code> can be used in the <code>OtaTargetQueryString</code> parameter for the <code>CreateOtaTask</code> API operation.</p>
+    /// </note>
     pub fn set_meta_data(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_meta_data(input);
         self
     }
-    /// <p>The metadata for the managed thing.</p>
+    /// <p>The metadata for the managed thing.</p><note>
+    /// <p>The <code>managedThing</code> <code>metadata</code> parameter is used for associating attributes with a <code>managedThing</code> that can be used for grouping over-the-air (OTA) tasks. Name value pairs in <code>metadata</code> can be used in the <code>OtaTargetQueryString</code> parameter for the <code>CreateOtaTask</code> API operation.</p>
+    /// </note>
     pub fn get_meta_data(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_meta_data()
     }

@@ -7,7 +7,7 @@ pub struct DeprovisionPublicIpv4PoolCidrInput {
     pub dry_run: ::std::option::Option<bool>,
     /// <p>The ID of the pool that you want to deprovision the CIDR from.</p>
     pub pool_id: ::std::option::Option<::std::string::String>,
-    /// <p>The CIDR you want to deprovision from the pool. Enter the CIDR you want to deprovision with a netmask of <code>/32</code>. You must rerun this command for each IP address in the CIDR range. If your CIDR is a <code>/24</code>, you will have to run this command to deprovision each of the 256 IP addresses in the <code>/24</code> CIDR.</p>
+    /// <p>The CIDR you want to deprovision from the pool.</p>
     pub cidr: ::std::option::Option<::std::string::String>,
 }
 impl DeprovisionPublicIpv4PoolCidrInput {
@@ -19,7 +19,7 @@ impl DeprovisionPublicIpv4PoolCidrInput {
     pub fn pool_id(&self) -> ::std::option::Option<&str> {
         self.pool_id.as_deref()
     }
-    /// <p>The CIDR you want to deprovision from the pool. Enter the CIDR you want to deprovision with a netmask of <code>/32</code>. You must rerun this command for each IP address in the CIDR range. If your CIDR is a <code>/24</code>, you will have to run this command to deprovision each of the 256 IP addresses in the <code>/24</code> CIDR.</p>
+    /// <p>The CIDR you want to deprovision from the pool.</p>
     pub fn cidr(&self) -> ::std::option::Option<&str> {
         self.cidr.as_deref()
     }
@@ -69,18 +69,18 @@ impl DeprovisionPublicIpv4PoolCidrInputBuilder {
     pub fn get_pool_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.pool_id
     }
-    /// <p>The CIDR you want to deprovision from the pool. Enter the CIDR you want to deprovision with a netmask of <code>/32</code>. You must rerun this command for each IP address in the CIDR range. If your CIDR is a <code>/24</code>, you will have to run this command to deprovision each of the 256 IP addresses in the <code>/24</code> CIDR.</p>
+    /// <p>The CIDR you want to deprovision from the pool.</p>
     /// This field is required.
     pub fn cidr(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cidr = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The CIDR you want to deprovision from the pool. Enter the CIDR you want to deprovision with a netmask of <code>/32</code>. You must rerun this command for each IP address in the CIDR range. If your CIDR is a <code>/24</code>, you will have to run this command to deprovision each of the 256 IP addresses in the <code>/24</code> CIDR.</p>
+    /// <p>The CIDR you want to deprovision from the pool.</p>
     pub fn set_cidr(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cidr = input;
         self
     }
-    /// <p>The CIDR you want to deprovision from the pool. Enter the CIDR you want to deprovision with a netmask of <code>/32</code>. You must rerun this command for each IP address in the CIDR range. If your CIDR is a <code>/24</code>, you will have to run this command to deprovision each of the 256 IP addresses in the <code>/24</code> CIDR.</p>
+    /// <p>The CIDR you want to deprovision from the pool.</p>
     pub fn get_cidr(&self) -> &::std::option::Option<::std::string::String> {
         &self.cidr
     }

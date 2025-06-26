@@ -149,6 +149,15 @@ pub(crate) fn workspace_request_correct_errors(
     builder
 }
 
+pub(crate) fn access_endpoint_config_correct_errors(
+    mut builder: crate::types::builders::AccessEndpointConfigBuilder,
+) -> crate::types::builders::AccessEndpointConfigBuilder {
+    if builder.access_endpoints.is_none() {
+        builder.access_endpoints = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn global_accelerator_for_directory_correct_errors(
     mut builder: crate::types::builders::GlobalAcceleratorForDirectoryBuilder,
 ) -> crate::types::builders::GlobalAcceleratorForDirectoryBuilder {

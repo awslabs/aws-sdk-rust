@@ -22,7 +22,9 @@ impl crate::operation::get_managed_thing_meta_data::builders::GetManagedThingMet
 }
 /// Fluent builder constructing a request to `GetManagedThingMetaData`.
 ///
-/// <p>Get the metadata information for a managed thing.</p>
+/// <p>Get the metadata information for a managed thing.</p><note>
+/// <p>The <code>managedThing</code> <code>metadata</code> parameter is used for associating attributes with a <code>managedThing</code> that can be used for grouping over-the-air (OTA) tasks. Name value pairs in <code>metadata</code> can be used in the <code>OtaTargetQueryString</code> parameter for the <code>CreateOtaTask</code> API operation.</p>
+/// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetManagedThingMetaDataFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
