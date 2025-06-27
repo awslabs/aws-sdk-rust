@@ -54,6 +54,21 @@ pub fn de_delete_content_association_http_error(
             }
             tmp
         }),
+        "UnauthorizedException" => crate::operation::delete_content_association::DeleteContentAssociationError::UnauthorizedException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::UnauthorizedExceptionBuilder::default();
+                output = crate::protocol_serde::shape_unauthorized_exception::de_unauthorized_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::delete_content_association::DeleteContentAssociationError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "ValidationException" => crate::operation::delete_content_association::DeleteContentAssociationError::ValidationException({
             #[allow(unused_mut)]
             let mut tmp = {

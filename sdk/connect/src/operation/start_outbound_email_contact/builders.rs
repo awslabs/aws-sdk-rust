@@ -136,17 +136,17 @@ impl StartOutboundEmailContactFluentBuilder {
     pub fn get_contact_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_contact_id()
     }
-    /// <p>The email address associated with the instance.</p>
+    /// <p>The email address associated with the Amazon Connect instance.</p>
     pub fn from_email_address(mut self, input: crate::types::EmailAddressInfo) -> Self {
         self.inner = self.inner.from_email_address(input);
         self
     }
-    /// <p>The email address associated with the instance.</p>
+    /// <p>The email address associated with the Amazon Connect instance.</p>
     pub fn set_from_email_address(mut self, input: ::std::option::Option<crate::types::EmailAddressInfo>) -> Self {
         self.inner = self.inner.set_from_email_address(input);
         self
     }
-    /// <p>The email address associated with the instance.</p>
+    /// <p>The email address associated with the Amazon Connect instance.</p>
     pub fn get_from_email_address(&self) -> &::std::option::Option<crate::types::EmailAddressInfo> {
         self.inner.get_from_email_address()
     }
@@ -164,17 +164,17 @@ impl StartOutboundEmailContactFluentBuilder {
     pub fn get_destination_email_address(&self) -> &::std::option::Option<crate::types::EmailAddressInfo> {
         self.inner.get_destination_email_address()
     }
-    /// <p>The addtional recipients address of email in CC.</p>
+    /// <p>The additional recipients address of email in CC.</p>
     pub fn additional_recipients(mut self, input: crate::types::OutboundAdditionalRecipients) -> Self {
         self.inner = self.inner.additional_recipients(input);
         self
     }
-    /// <p>The addtional recipients address of email in CC.</p>
+    /// <p>The additional recipients address of email in CC.</p>
     pub fn set_additional_recipients(mut self, input: ::std::option::Option<crate::types::OutboundAdditionalRecipients>) -> Self {
         self.inner = self.inner.set_additional_recipients(input);
         self
     }
-    /// <p>The addtional recipients address of email in CC.</p>
+    /// <p>The additional recipients address of email in CC.</p>
     pub fn get_additional_recipients(&self) -> &::std::option::Option<crate::types::OutboundAdditionalRecipients> {
         self.inner.get_additional_recipients()
     }

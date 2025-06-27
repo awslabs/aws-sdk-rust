@@ -7,7 +7,7 @@ pub struct DescribeEmailAddressOutput {
     pub email_address_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the email address.</p>
     pub email_address_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The email address with the instance, in \[^\s@\]+@\[^\s@\]+\.\[^\s@\]+ format.</p>
+    /// <p>The email address, including the domain.</p>
     pub email_address: ::std::option::Option<::std::string::String>,
     /// <p>The display name of email address</p>
     pub display_name: ::std::option::Option<::std::string::String>,
@@ -30,7 +30,7 @@ impl DescribeEmailAddressOutput {
     pub fn email_address_arn(&self) -> ::std::option::Option<&str> {
         self.email_address_arn.as_deref()
     }
-    /// <p>The email address with the instance, in \[^\s@\]+@\[^\s@\]+\.\[^\s@\]+ format.</p>
+    /// <p>The email address, including the domain.</p>
     pub fn email_address(&self) -> ::std::option::Option<&str> {
         self.email_address.as_deref()
     }
@@ -125,17 +125,17 @@ impl DescribeEmailAddressOutputBuilder {
     pub fn get_email_address_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.email_address_arn
     }
-    /// <p>The email address with the instance, in \[^\s@\]+@\[^\s@\]+\.\[^\s@\]+ format.</p>
+    /// <p>The email address, including the domain.</p>
     pub fn email_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.email_address = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The email address with the instance, in \[^\s@\]+@\[^\s@\]+\.\[^\s@\]+ format.</p>
+    /// <p>The email address, including the domain.</p>
     pub fn set_email_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.email_address = input;
         self
     }
-    /// <p>The email address with the instance, in \[^\s@\]+@\[^\s@\]+\.\[^\s@\]+ format.</p>
+    /// <p>The email address, including the domain.</p>
     pub fn get_email_address(&self) -> &::std::option::Option<::std::string::String> {
         &self.email_address
     }

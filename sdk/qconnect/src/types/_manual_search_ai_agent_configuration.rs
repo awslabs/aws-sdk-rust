@@ -10,7 +10,9 @@ pub struct ManualSearchAiAgentConfiguration {
     pub answer_generation_ai_guardrail_id: ::std::option::Option<::std::string::String>,
     /// <p>The association configurations for overriding behavior on this AI Agent.</p>
     pub association_configurations: ::std::option::Option<::std::vec::Vec<crate::types::AssociationConfiguration>>,
-    /// <p>The locale to which specifies the language and region settings that determine the response language for <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_amazon-q-connect_QueryAssistant.html">QueryAssistant</a>.</p>
+    /// <p>The locale to which specifies the language and region settings that determine the response language for <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_amazon-q-connect_QueryAssistant.html">QueryAssistant</a>.</p><note>
+    /// <p>For more information on supported locales, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/supported-languages.html#qic-notes-languages">Language support for Amazon Q in Connect</a>.</p>
+    /// </note>
     pub locale: ::std::option::Option<::std::string::String>,
 }
 impl ManualSearchAiAgentConfiguration {
@@ -28,7 +30,9 @@ impl ManualSearchAiAgentConfiguration {
     pub fn association_configurations(&self) -> &[crate::types::AssociationConfiguration] {
         self.association_configurations.as_deref().unwrap_or_default()
     }
-    /// <p>The locale to which specifies the language and region settings that determine the response language for <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_amazon-q-connect_QueryAssistant.html">QueryAssistant</a>.</p>
+    /// <p>The locale to which specifies the language and region settings that determine the response language for <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_amazon-q-connect_QueryAssistant.html">QueryAssistant</a>.</p><note>
+    /// <p>For more information on supported locales, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/supported-languages.html#qic-notes-languages">Language support for Amazon Q in Connect</a>.</p>
+    /// </note>
     pub fn locale(&self) -> ::std::option::Option<&str> {
         self.locale.as_deref()
     }
@@ -98,17 +102,23 @@ impl ManualSearchAiAgentConfigurationBuilder {
     pub fn get_association_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AssociationConfiguration>> {
         &self.association_configurations
     }
-    /// <p>The locale to which specifies the language and region settings that determine the response language for <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_amazon-q-connect_QueryAssistant.html">QueryAssistant</a>.</p>
+    /// <p>The locale to which specifies the language and region settings that determine the response language for <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_amazon-q-connect_QueryAssistant.html">QueryAssistant</a>.</p><note>
+    /// <p>For more information on supported locales, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/supported-languages.html#qic-notes-languages">Language support for Amazon Q in Connect</a>.</p>
+    /// </note>
     pub fn locale(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.locale = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The locale to which specifies the language and region settings that determine the response language for <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_amazon-q-connect_QueryAssistant.html">QueryAssistant</a>.</p>
+    /// <p>The locale to which specifies the language and region settings that determine the response language for <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_amazon-q-connect_QueryAssistant.html">QueryAssistant</a>.</p><note>
+    /// <p>For more information on supported locales, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/supported-languages.html#qic-notes-languages">Language support for Amazon Q in Connect</a>.</p>
+    /// </note>
     pub fn set_locale(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.locale = input;
         self
     }
-    /// <p>The locale to which specifies the language and region settings that determine the response language for <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_amazon-q-connect_QueryAssistant.html">QueryAssistant</a>.</p>
+    /// <p>The locale to which specifies the language and region settings that determine the response language for <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_amazon-q-connect_QueryAssistant.html">QueryAssistant</a>.</p><note>
+    /// <p>For more information on supported locales, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/supported-languages.html#qic-notes-languages">Language support for Amazon Q in Connect</a>.</p>
+    /// </note>
     pub fn get_locale(&self) -> &::std::option::Option<::std::string::String> {
         &self.locale
     }

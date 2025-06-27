@@ -6,7 +6,7 @@ pub struct PutServiceLinkedConfigurationRecorderOutput {
     /// <p>The Amazon Resource Name (ARN) of the specified configuration recorder.</p>
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the specified configuration recorder.</p>
-    /// <p>For service-linked configuration recorders, Config automatically assigns a name that has the prefix "<code>AWS</code>" to the new service-linked configuration recorder.</p>
+    /// <p>For service-linked configuration recorders, Config automatically assigns a name that has the prefix "<code>AWSConfigurationRecorderFor</code>" to the new service-linked configuration recorder.</p>
     pub name: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -16,7 +16,7 @@ impl PutServiceLinkedConfigurationRecorderOutput {
         self.arn.as_deref()
     }
     /// <p>The name of the specified configuration recorder.</p>
-    /// <p>For service-linked configuration recorders, Config automatically assigns a name that has the prefix "<code>AWS</code>" to the new service-linked configuration recorder.</p>
+    /// <p>For service-linked configuration recorders, Config automatically assigns a name that has the prefix "<code>AWSConfigurationRecorderFor</code>" to the new service-linked configuration recorder.</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
@@ -57,19 +57,19 @@ impl PutServiceLinkedConfigurationRecorderOutputBuilder {
         &self.arn
     }
     /// <p>The name of the specified configuration recorder.</p>
-    /// <p>For service-linked configuration recorders, Config automatically assigns a name that has the prefix "<code>AWS</code>" to the new service-linked configuration recorder.</p>
+    /// <p>For service-linked configuration recorders, Config automatically assigns a name that has the prefix "<code>AWSConfigurationRecorderFor</code>" to the new service-linked configuration recorder.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the specified configuration recorder.</p>
-    /// <p>For service-linked configuration recorders, Config automatically assigns a name that has the prefix "<code>AWS</code>" to the new service-linked configuration recorder.</p>
+    /// <p>For service-linked configuration recorders, Config automatically assigns a name that has the prefix "<code>AWSConfigurationRecorderFor</code>" to the new service-linked configuration recorder.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>The name of the specified configuration recorder.</p>
-    /// <p>For service-linked configuration recorders, Config automatically assigns a name that has the prefix "<code>AWS</code>" to the new service-linked configuration recorder.</p>
+    /// <p>For service-linked configuration recorders, Config automatically assigns a name that has the prefix "<code>AWSConfigurationRecorderFor</code>" to the new service-linked configuration recorder.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }

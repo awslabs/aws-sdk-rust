@@ -7,11 +7,11 @@ pub struct StartOutboundEmailContactInput {
     pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the contact in this instance of Amazon Connect.</p>
     pub contact_id: ::std::option::Option<::std::string::String>,
-    /// <p>The email address associated with the instance.</p>
+    /// <p>The email address associated with the Amazon Connect instance.</p>
     pub from_email_address: ::std::option::Option<crate::types::EmailAddressInfo>,
     /// <p>The email address of the customer.</p>
     pub destination_email_address: ::std::option::Option<crate::types::EmailAddressInfo>,
-    /// <p>The addtional recipients address of email in CC.</p>
+    /// <p>The additional recipients address of email in CC.</p>
     pub additional_recipients: ::std::option::Option<crate::types::OutboundAdditionalRecipients>,
     /// <p>The email message body to be sent to the newly created email.</p>
     pub email_message: ::std::option::Option<crate::types::OutboundEmailContent>,
@@ -27,7 +27,7 @@ impl StartOutboundEmailContactInput {
     pub fn contact_id(&self) -> ::std::option::Option<&str> {
         self.contact_id.as_deref()
     }
-    /// <p>The email address associated with the instance.</p>
+    /// <p>The email address associated with the Amazon Connect instance.</p>
     pub fn from_email_address(&self) -> ::std::option::Option<&crate::types::EmailAddressInfo> {
         self.from_email_address.as_ref()
     }
@@ -35,7 +35,7 @@ impl StartOutboundEmailContactInput {
     pub fn destination_email_address(&self) -> ::std::option::Option<&crate::types::EmailAddressInfo> {
         self.destination_email_address.as_ref()
     }
-    /// <p>The addtional recipients address of email in CC.</p>
+    /// <p>The additional recipients address of email in CC.</p>
     pub fn additional_recipients(&self) -> ::std::option::Option<&crate::types::OutboundAdditionalRecipients> {
         self.additional_recipients.as_ref()
     }
@@ -98,17 +98,17 @@ impl StartOutboundEmailContactInputBuilder {
     pub fn get_contact_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.contact_id
     }
-    /// <p>The email address associated with the instance.</p>
+    /// <p>The email address associated with the Amazon Connect instance.</p>
     pub fn from_email_address(mut self, input: crate::types::EmailAddressInfo) -> Self {
         self.from_email_address = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The email address associated with the instance.</p>
+    /// <p>The email address associated with the Amazon Connect instance.</p>
     pub fn set_from_email_address(mut self, input: ::std::option::Option<crate::types::EmailAddressInfo>) -> Self {
         self.from_email_address = input;
         self
     }
-    /// <p>The email address associated with the instance.</p>
+    /// <p>The email address associated with the Amazon Connect instance.</p>
     pub fn get_from_email_address(&self) -> &::std::option::Option<crate::types::EmailAddressInfo> {
         &self.from_email_address
     }
@@ -127,17 +127,17 @@ impl StartOutboundEmailContactInputBuilder {
     pub fn get_destination_email_address(&self) -> &::std::option::Option<crate::types::EmailAddressInfo> {
         &self.destination_email_address
     }
-    /// <p>The addtional recipients address of email in CC.</p>
+    /// <p>The additional recipients address of email in CC.</p>
     pub fn additional_recipients(mut self, input: crate::types::OutboundAdditionalRecipients) -> Self {
         self.additional_recipients = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The addtional recipients address of email in CC.</p>
+    /// <p>The additional recipients address of email in CC.</p>
     pub fn set_additional_recipients(mut self, input: ::std::option::Option<crate::types::OutboundAdditionalRecipients>) -> Self {
         self.additional_recipients = input;
         self
     }
-    /// <p>The addtional recipients address of email in CC.</p>
+    /// <p>The additional recipients address of email in CC.</p>
     pub fn get_additional_recipients(&self) -> &::std::option::Option<crate::types::OutboundAdditionalRecipients> {
         &self.additional_recipients
     }

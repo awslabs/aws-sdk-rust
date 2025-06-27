@@ -5,6 +5,8 @@ pub use crate::types::error::_resource_not_found_exception::ResourceNotFoundExce
 
 pub use crate::types::error::_access_denied_exception::AccessDeniedExceptionBuilder;
 
+pub use crate::types::error::_unauthorized_exception::UnauthorizedExceptionBuilder;
+
 pub use crate::types::error::_service_quota_exceeded_exception::ServiceQuotaExceededExceptionBuilder;
 
 pub use crate::types::error::_conflict_exception::ConflictExceptionBuilder;

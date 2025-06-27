@@ -31,7 +31,9 @@ pub struct CreateContactInput {
     pub initiation_method: ::std::option::Option<crate::types::ContactInitiationMethod>,
     /// <p>Number of minutes the contact will be active for before expiring</p>
     pub expiry_duration_in_minutes: ::std::option::Option<i32>,
-    /// <p>User details for the contact</p>
+    /// <p>User details for the contact</p><important>
+    /// <p>UserInfo is required when creating an EMAIL contact with OUTBOUND and AGENT_REPLY contact initiation methods.</p>
+    /// </important>
     pub user_info: ::std::option::Option<crate::types::UserInfo>,
     /// <p>Initial state of the contact when it's created</p>
     pub initiate_as: ::std::option::Option<crate::types::InitiateAs>,
@@ -93,7 +95,9 @@ impl CreateContactInput {
     pub fn expiry_duration_in_minutes(&self) -> ::std::option::Option<i32> {
         self.expiry_duration_in_minutes
     }
-    /// <p>User details for the contact</p>
+    /// <p>User details for the contact</p><important>
+    /// <p>UserInfo is required when creating an EMAIL contact with OUTBOUND and AGENT_REPLY contact initiation methods.</p>
+    /// </important>
     pub fn user_info(&self) -> ::std::option::Option<&crate::types::UserInfo> {
         self.user_info.as_ref()
     }
@@ -337,17 +341,23 @@ impl CreateContactInputBuilder {
     pub fn get_expiry_duration_in_minutes(&self) -> &::std::option::Option<i32> {
         &self.expiry_duration_in_minutes
     }
-    /// <p>User details for the contact</p>
+    /// <p>User details for the contact</p><important>
+    /// <p>UserInfo is required when creating an EMAIL contact with OUTBOUND and AGENT_REPLY contact initiation methods.</p>
+    /// </important>
     pub fn user_info(mut self, input: crate::types::UserInfo) -> Self {
         self.user_info = ::std::option::Option::Some(input);
         self
     }
-    /// <p>User details for the contact</p>
+    /// <p>User details for the contact</p><important>
+    /// <p>UserInfo is required when creating an EMAIL contact with OUTBOUND and AGENT_REPLY contact initiation methods.</p>
+    /// </important>
     pub fn set_user_info(mut self, input: ::std::option::Option<crate::types::UserInfo>) -> Self {
         self.user_info = input;
         self
     }
-    /// <p>User details for the contact</p>
+    /// <p>User details for the contact</p><important>
+    /// <p>UserInfo is required when creating an EMAIL contact with OUTBOUND and AGENT_REPLY contact initiation methods.</p>
+    /// </important>
     pub fn get_user_info(&self) -> &::std::option::Option<crate::types::UserInfo> {
         &self.user_info
     }

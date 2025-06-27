@@ -19,6 +19,8 @@ pub use crate::types::error::_snapshot_quota_exceeded_fault::SnapshotQuotaExceed
 
 pub use crate::types::error::_db_snapshot_already_exists_fault::DbSnapshotAlreadyExistsFaultBuilder;
 
+pub use crate::types::error::_invalid_db_shard_group_state_fault::InvalidDbShardGroupStateFaultBuilder;
+
 pub use crate::types::error::_resource_not_found_fault::ResourceNotFoundFaultBuilder;
 
 pub use crate::types::error::_kms_key_not_accessible_fault::KmsKeyNotAccessibleFaultBuilder;
@@ -130,8 +132,6 @@ pub use crate::types::error::_invalid_db_proxy_state_fault::InvalidDbProxyStateF
 pub use crate::types::error::_insufficient_available_ips_in_subnet_fault::InsufficientAvailableIPsInSubnetFaultBuilder;
 
 pub use crate::types::error::_db_proxy_target_already_registered_fault::DbProxyTargetAlreadyRegisteredFaultBuilder;
-
-pub use crate::types::error::_invalid_db_shard_group_state_fault::InvalidDbShardGroupStateFaultBuilder;
 
 pub use crate::types::error::_db_shard_group_not_found_fault::DbShardGroupNotFoundFaultBuilder;
 

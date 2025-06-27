@@ -289,6 +289,8 @@ pub(crate) mod shape_throttling_exception;
 
 pub(crate) mod shape_too_many_tags_exception;
 
+pub(crate) mod shape_unauthorized_exception;
+
 pub(crate) mod shape_update_ai_agent_input;
 
 pub(crate) mod shape_update_ai_guardrail_input;

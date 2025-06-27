@@ -7,6 +7,8 @@ pub struct UpdateTableInput {
     pub catalog_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the catalog database in which the table resides. For Hive compatibility, this name is entirely lowercase.</p>
     pub database_name: ::std::option::Option<::std::string::String>,
+    /// <p>The unique identifier for the table within the specified database that will be created in the Glue Data Catalog.</p>
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>An updated <code>TableInput</code> object to define the metadata table in the catalog.</p>
     pub table_input: ::std::option::Option<crate::types::TableInput>,
     /// <p>By default, <code>UpdateTable</code> always creates an archived version of the table before updating it. However, if <code>skipArchive</code> is set to true, <code>UpdateTable</code> does not create the archived version.</p>
@@ -19,6 +21,8 @@ pub struct UpdateTableInput {
     pub view_update_action: ::std::option::Option<crate::types::ViewUpdateAction>,
     /// <p>A flag that can be set to true to ignore matching storage descriptor and subobject matching requirements.</p>
     pub force: ::std::option::Option<bool>,
+    /// <p>Input parameters for updating open table format tables in GlueData Catalog, serving as a wrapper for format-specific update operations such as Apache Iceberg.</p>
+    pub update_open_table_format_input: ::std::option::Option<crate::types::UpdateOpenTableFormatInput>,
 }
 impl UpdateTableInput {
     /// <p>The ID of the Data Catalog where the table resides. If none is provided, the Amazon Web Services account ID is used by default.</p>
@@ -28,6 +32,10 @@ impl UpdateTableInput {
     /// <p>The name of the catalog database in which the table resides. For Hive compatibility, this name is entirely lowercase.</p>
     pub fn database_name(&self) -> ::std::option::Option<&str> {
         self.database_name.as_deref()
+    }
+    /// <p>The unique identifier for the table within the specified database that will be created in the Glue Data Catalog.</p>
+    pub fn name(&self) -> ::std::option::Option<&str> {
+        self.name.as_deref()
     }
     /// <p>An updated <code>TableInput</code> object to define the metadata table in the catalog.</p>
     pub fn table_input(&self) -> ::std::option::Option<&crate::types::TableInput> {
@@ -53,6 +61,10 @@ impl UpdateTableInput {
     pub fn force(&self) -> ::std::option::Option<bool> {
         self.force
     }
+    /// <p>Input parameters for updating open table format tables in GlueData Catalog, serving as a wrapper for format-specific update operations such as Apache Iceberg.</p>
+    pub fn update_open_table_format_input(&self) -> ::std::option::Option<&crate::types::UpdateOpenTableFormatInput> {
+        self.update_open_table_format_input.as_ref()
+    }
 }
 impl UpdateTableInput {
     /// Creates a new builder-style object to manufacture [`UpdateTableInput`](crate::operation::update_table::UpdateTableInput).
@@ -67,12 +79,14 @@ impl UpdateTableInput {
 pub struct UpdateTableInputBuilder {
     pub(crate) catalog_id: ::std::option::Option<::std::string::String>,
     pub(crate) database_name: ::std::option::Option<::std::string::String>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) table_input: ::std::option::Option<crate::types::TableInput>,
     pub(crate) skip_archive: ::std::option::Option<bool>,
     pub(crate) transaction_id: ::std::option::Option<::std::string::String>,
     pub(crate) version_id: ::std::option::Option<::std::string::String>,
     pub(crate) view_update_action: ::std::option::Option<crate::types::ViewUpdateAction>,
     pub(crate) force: ::std::option::Option<bool>,
+    pub(crate) update_open_table_format_input: ::std::option::Option<crate::types::UpdateOpenTableFormatInput>,
 }
 impl UpdateTableInputBuilder {
     /// <p>The ID of the Data Catalog where the table resides. If none is provided, the Amazon Web Services account ID is used by default.</p>
@@ -104,8 +118,21 @@ impl UpdateTableInputBuilder {
     pub fn get_database_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.database_name
     }
+    /// <p>The unique identifier for the table within the specified database that will be created in the Glue Data Catalog.</p>
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The unique identifier for the table within the specified database that will be created in the Glue Data Catalog.</p>
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.name = input;
+        self
+    }
+    /// <p>The unique identifier for the table within the specified database that will be created in the Glue Data Catalog.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>An updated <code>TableInput</code> object to define the metadata table in the catalog.</p>
-    /// This field is required.
     pub fn table_input(mut self, input: crate::types::TableInput) -> Self {
         self.table_input = ::std::option::Option::Some(input);
         self
@@ -189,17 +216,33 @@ impl UpdateTableInputBuilder {
     pub fn get_force(&self) -> &::std::option::Option<bool> {
         &self.force
     }
+    /// <p>Input parameters for updating open table format tables in GlueData Catalog, serving as a wrapper for format-specific update operations such as Apache Iceberg.</p>
+    pub fn update_open_table_format_input(mut self, input: crate::types::UpdateOpenTableFormatInput) -> Self {
+        self.update_open_table_format_input = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Input parameters for updating open table format tables in GlueData Catalog, serving as a wrapper for format-specific update operations such as Apache Iceberg.</p>
+    pub fn set_update_open_table_format_input(mut self, input: ::std::option::Option<crate::types::UpdateOpenTableFormatInput>) -> Self {
+        self.update_open_table_format_input = input;
+        self
+    }
+    /// <p>Input parameters for updating open table format tables in GlueData Catalog, serving as a wrapper for format-specific update operations such as Apache Iceberg.</p>
+    pub fn get_update_open_table_format_input(&self) -> &::std::option::Option<crate::types::UpdateOpenTableFormatInput> {
+        &self.update_open_table_format_input
+    }
     /// Consumes the builder and constructs a [`UpdateTableInput`](crate::operation::update_table::UpdateTableInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::update_table::UpdateTableInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_table::UpdateTableInput {
             catalog_id: self.catalog_id,
             database_name: self.database_name,
+            name: self.name,
             table_input: self.table_input,
             skip_archive: self.skip_archive,
             transaction_id: self.transaction_id,
             version_id: self.version_id,
             view_update_action: self.view_update_action,
             force: self.force,
+            update_open_table_format_input: self.update_open_table_format_input,
         })
     }
 }

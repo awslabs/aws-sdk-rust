@@ -19,6 +19,8 @@ pub enum Error {
     ThrottlingException(crate::types::error::ThrottlingException),
     /// <p>Amazon Q in Connect throws this exception if you have too many tags in your tag set.</p>
     TooManyTagsException(crate::types::error::TooManyTagsException),
+    /// <p>You do not have permission to perform this action.</p>
+    UnauthorizedException(crate::types::error::UnauthorizedException),
     /// <p>The input fails to satisfy the constraints specified by a service.</p>
     ValidationException(crate::types::error::ValidationException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
@@ -41,6 +43,7 @@ impl ::std::fmt::Display for Error {
             Error::ServiceQuotaExceededException(inner) => inner.fmt(f),
             Error::ThrottlingException(inner) => inner.fmt(f),
             Error::TooManyTagsException(inner) => inner.fmt(f),
+            Error::UnauthorizedException(inner) => inner.fmt(f),
             Error::ValidationException(inner) => inner.fmt(f),
             Error::Unhandled(_) => {
                 if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self) {
@@ -71,6 +74,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
             Self::ServiceQuotaExceededException(inner) => inner.meta(),
             Self::ThrottlingException(inner) => inner.meta(),
             Self::TooManyTagsException(inner) => inner.meta(),
+            Self::UnauthorizedException(inner) => inner.meta(),
             Self::ValidationException(inner) => inner.meta(),
             Self::Unhandled(inner) => &inner.meta,
         }
@@ -137,6 +141,7 @@ impl From<crate::operation::create_ai_agent::CreateAIAgentError> for Error {
                 Error::ServiceQuotaExceededException(inner)
             }
             crate::operation::create_ai_agent::CreateAIAgentError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::create_ai_agent::CreateAIAgentError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
             crate::operation::create_ai_agent::CreateAIAgentError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::create_ai_agent::CreateAIAgentError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -170,6 +175,7 @@ impl From<crate::operation::create_ai_agent_version::CreateAIAgentVersionError> 
                 Error::ServiceQuotaExceededException(inner)
             }
             crate::operation::create_ai_agent_version::CreateAIAgentVersionError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::create_ai_agent_version::CreateAIAgentVersionError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
             crate::operation::create_ai_agent_version::CreateAIAgentVersionError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::create_ai_agent_version::CreateAIAgentVersionError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -201,6 +207,7 @@ impl From<crate::operation::create_ai_guardrail::CreateAIGuardrailError> for Err
                 Error::ServiceQuotaExceededException(inner)
             }
             crate::operation::create_ai_guardrail::CreateAIGuardrailError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::create_ai_guardrail::CreateAIGuardrailError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
             crate::operation::create_ai_guardrail::CreateAIGuardrailError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::create_ai_guardrail::CreateAIGuardrailError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -239,6 +246,9 @@ impl From<crate::operation::create_ai_guardrail_version::CreateAIGuardrailVersio
             crate::operation::create_ai_guardrail_version::CreateAIGuardrailVersionError::ThrottlingException(inner) => {
                 Error::ThrottlingException(inner)
             }
+            crate::operation::create_ai_guardrail_version::CreateAIGuardrailVersionError::UnauthorizedException(inner) => {
+                Error::UnauthorizedException(inner)
+            }
             crate::operation::create_ai_guardrail_version::CreateAIGuardrailVersionError::ValidationException(inner) => {
                 Error::ValidationException(inner)
             }
@@ -270,6 +280,7 @@ impl From<crate::operation::create_ai_prompt::CreateAIPromptError> for Error {
                 Error::ServiceQuotaExceededException(inner)
             }
             crate::operation::create_ai_prompt::CreateAIPromptError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::create_ai_prompt::CreateAIPromptError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
             crate::operation::create_ai_prompt::CreateAIPromptError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::create_ai_prompt::CreateAIPromptError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -305,6 +316,9 @@ impl From<crate::operation::create_ai_prompt_version::CreateAIPromptVersionError
                 Error::ServiceQuotaExceededException(inner)
             }
             crate::operation::create_ai_prompt_version::CreateAIPromptVersionError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::create_ai_prompt_version::CreateAIPromptVersionError::UnauthorizedException(inner) => {
+                Error::UnauthorizedException(inner)
+            }
             crate::operation::create_ai_prompt_version::CreateAIPromptVersionError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::create_ai_prompt_version::CreateAIPromptVersionError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -332,6 +346,7 @@ impl From<crate::operation::create_assistant::CreateAssistantError> for Error {
             crate::operation::create_assistant::CreateAssistantError::ServiceQuotaExceededException(inner) => {
                 Error::ServiceQuotaExceededException(inner)
             }
+            crate::operation::create_assistant::CreateAssistantError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
             crate::operation::create_assistant::CreateAssistantError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::create_assistant::CreateAssistantError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -397,6 +412,7 @@ impl From<crate::operation::create_content::CreateContentError> for Error {
             crate::operation::create_content::CreateContentError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::create_content::CreateContentError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::create_content::CreateContentError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::operation::create_content::CreateContentError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
             crate::operation::create_content::CreateContentError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::create_content::CreateContentError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -435,6 +451,9 @@ impl From<crate::operation::create_content_association::CreateContentAssociation
             crate::operation::create_content_association::CreateContentAssociationError::ThrottlingException(inner) => {
                 Error::ThrottlingException(inner)
             }
+            crate::operation::create_content_association::CreateContentAssociationError::UnauthorizedException(inner) => {
+                Error::UnauthorizedException(inner)
+            }
             crate::operation::create_content_association::CreateContentAssociationError::ValidationException(inner) => {
                 Error::ValidationException(inner)
             }
@@ -464,6 +483,7 @@ impl From<crate::operation::create_knowledge_base::CreateKnowledgeBaseError> for
             crate::operation::create_knowledge_base::CreateKnowledgeBaseError::ServiceQuotaExceededException(inner) => {
                 Error::ServiceQuotaExceededException(inner)
             }
+            crate::operation::create_knowledge_base::CreateKnowledgeBaseError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
             crate::operation::create_knowledge_base::CreateKnowledgeBaseError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::create_knowledge_base::CreateKnowledgeBaseError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -547,6 +567,9 @@ impl From<crate::operation::create_message_template_attachment::CreateMessageTem
             crate::operation::create_message_template_attachment::CreateMessageTemplateAttachmentError::ThrottlingException(inner) => {
                 Error::ThrottlingException(inner)
             }
+            crate::operation::create_message_template_attachment::CreateMessageTemplateAttachmentError::UnauthorizedException(inner) => {
+                Error::UnauthorizedException(inner)
+            }
             crate::operation::create_message_template_attachment::CreateMessageTemplateAttachmentError::ValidationException(inner) => {
                 Error::ValidationException(inner)
             }
@@ -625,6 +648,7 @@ impl From<crate::operation::create_quick_response::CreateQuickResponseError> for
             crate::operation::create_quick_response::CreateQuickResponseError::ServiceQuotaExceededException(inner) => {
                 Error::ServiceQuotaExceededException(inner)
             }
+            crate::operation::create_quick_response::CreateQuickResponseError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
             crate::operation::create_quick_response::CreateQuickResponseError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::create_quick_response::CreateQuickResponseError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -650,6 +674,7 @@ impl From<crate::operation::create_session::CreateSessionError> for Error {
             crate::operation::create_session::CreateSessionError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::create_session::CreateSessionError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::create_session::CreateSessionError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::create_session::CreateSessionError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
             crate::operation::create_session::CreateSessionError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::create_session::CreateSessionError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -714,6 +739,7 @@ impl From<crate::operation::delete_ai_agent::DeleteAIAgentError> for Error {
             crate::operation::delete_ai_agent::DeleteAIAgentError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::delete_ai_agent::DeleteAIAgentError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::delete_ai_agent::DeleteAIAgentError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::delete_ai_agent::DeleteAIAgentError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
             crate::operation::delete_ai_agent::DeleteAIAgentError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::delete_ai_agent::DeleteAIAgentError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -744,6 +770,7 @@ impl From<crate::operation::delete_ai_agent_version::DeleteAIAgentVersionError> 
                 Error::ResourceNotFoundException(inner)
             }
             crate::operation::delete_ai_agent_version::DeleteAIAgentVersionError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::delete_ai_agent_version::DeleteAIAgentVersionError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
             crate::operation::delete_ai_agent_version::DeleteAIAgentVersionError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::delete_ai_agent_version::DeleteAIAgentVersionError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -772,6 +799,7 @@ impl From<crate::operation::delete_ai_guardrail::DeleteAIGuardrailError> for Err
                 Error::ResourceNotFoundException(inner)
             }
             crate::operation::delete_ai_guardrail::DeleteAIGuardrailError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::delete_ai_guardrail::DeleteAIGuardrailError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
             crate::operation::delete_ai_guardrail::DeleteAIGuardrailError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::delete_ai_guardrail::DeleteAIGuardrailError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -807,6 +835,9 @@ impl From<crate::operation::delete_ai_guardrail_version::DeleteAIGuardrailVersio
             crate::operation::delete_ai_guardrail_version::DeleteAIGuardrailVersionError::ThrottlingException(inner) => {
                 Error::ThrottlingException(inner)
             }
+            crate::operation::delete_ai_guardrail_version::DeleteAIGuardrailVersionError::UnauthorizedException(inner) => {
+                Error::UnauthorizedException(inner)
+            }
             crate::operation::delete_ai_guardrail_version::DeleteAIGuardrailVersionError::ValidationException(inner) => {
                 Error::ValidationException(inner)
             }
@@ -834,6 +865,7 @@ impl From<crate::operation::delete_ai_prompt::DeleteAIPromptError> for Error {
             crate::operation::delete_ai_prompt::DeleteAIPromptError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::delete_ai_prompt::DeleteAIPromptError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::delete_ai_prompt::DeleteAIPromptError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::delete_ai_prompt::DeleteAIPromptError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
             crate::operation::delete_ai_prompt::DeleteAIPromptError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::delete_ai_prompt::DeleteAIPromptError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -866,6 +898,9 @@ impl From<crate::operation::delete_ai_prompt_version::DeleteAIPromptVersionError
                 Error::ResourceNotFoundException(inner)
             }
             crate::operation::delete_ai_prompt_version::DeleteAIPromptVersionError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::delete_ai_prompt_version::DeleteAIPromptVersionError::UnauthorizedException(inner) => {
+                Error::UnauthorizedException(inner)
+            }
             crate::operation::delete_ai_prompt_version::DeleteAIPromptVersionError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::delete_ai_prompt_version::DeleteAIPromptVersionError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -890,6 +925,7 @@ impl From<crate::operation::delete_assistant::DeleteAssistantError> for Error {
         match err {
             crate::operation::delete_assistant::DeleteAssistantError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::delete_assistant::DeleteAssistantError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::delete_assistant::DeleteAssistantError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
             crate::operation::delete_assistant::DeleteAssistantError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::delete_assistant::DeleteAssistantError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -921,6 +957,9 @@ impl From<crate::operation::delete_assistant_association::DeleteAssistantAssocia
             crate::operation::delete_assistant_association::DeleteAssistantAssociationError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }
+            crate::operation::delete_assistant_association::DeleteAssistantAssociationError::UnauthorizedException(inner) => {
+                Error::UnauthorizedException(inner)
+            }
             crate::operation::delete_assistant_association::DeleteAssistantAssociationError::ValidationException(inner) => {
                 Error::ValidationException(inner)
             }
@@ -948,6 +987,7 @@ impl From<crate::operation::delete_content::DeleteContentError> for Error {
             crate::operation::delete_content::DeleteContentError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::delete_content::DeleteContentError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::delete_content::DeleteContentError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::delete_content::DeleteContentError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
             crate::operation::delete_content::DeleteContentError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::delete_content::DeleteContentError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -979,6 +1019,9 @@ impl From<crate::operation::delete_content_association::DeleteContentAssociation
             crate::operation::delete_content_association::DeleteContentAssociationError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }
+            crate::operation::delete_content_association::DeleteContentAssociationError::UnauthorizedException(inner) => {
+                Error::UnauthorizedException(inner)
+            }
             crate::operation::delete_content_association::DeleteContentAssociationError::ValidationException(inner) => {
                 Error::ValidationException(inner)
             }
@@ -1006,6 +1049,7 @@ impl From<crate::operation::delete_import_job::DeleteImportJobError> for Error {
             crate::operation::delete_import_job::DeleteImportJobError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::delete_import_job::DeleteImportJobError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::delete_import_job::DeleteImportJobError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::delete_import_job::DeleteImportJobError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
             crate::operation::delete_import_job::DeleteImportJobError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::delete_import_job::DeleteImportJobError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -1033,6 +1077,7 @@ impl From<crate::operation::delete_knowledge_base::DeleteKnowledgeBaseError> for
             crate::operation::delete_knowledge_base::DeleteKnowledgeBaseError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }
+            crate::operation::delete_knowledge_base::DeleteKnowledgeBaseError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
             crate::operation::delete_knowledge_base::DeleteKnowledgeBaseError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::delete_knowledge_base::DeleteKnowledgeBaseError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -1138,6 +1183,7 @@ impl From<crate::operation::delete_quick_response::DeleteQuickResponseError> for
             crate::operation::delete_quick_response::DeleteQuickResponseError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }
+            crate::operation::delete_quick_response::DeleteQuickResponseError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
             crate::operation::delete_quick_response::DeleteQuickResponseError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::delete_quick_response::DeleteQuickResponseError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -1163,6 +1209,7 @@ impl From<crate::operation::get_ai_agent::GetAIAgentError> for Error {
             crate::operation::get_ai_agent::GetAIAgentError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::get_ai_agent::GetAIAgentError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::get_ai_agent::GetAIAgentError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_ai_agent::GetAIAgentError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
             crate::operation::get_ai_agent::GetAIAgentError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::get_ai_agent::GetAIAgentError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -1188,6 +1235,7 @@ impl From<crate::operation::get_ai_guardrail::GetAIGuardrailError> for Error {
             crate::operation::get_ai_guardrail::GetAIGuardrailError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::get_ai_guardrail::GetAIGuardrailError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::get_ai_guardrail::GetAIGuardrailError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_ai_guardrail::GetAIGuardrailError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
             crate::operation::get_ai_guardrail::GetAIGuardrailError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::get_ai_guardrail::GetAIGuardrailError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -1213,6 +1261,7 @@ impl From<crate::operation::get_ai_prompt::GetAIPromptError> for Error {
             crate::operation::get_ai_prompt::GetAIPromptError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::get_ai_prompt::GetAIPromptError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::get_ai_prompt::GetAIPromptError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_ai_prompt::GetAIPromptError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
             crate::operation::get_ai_prompt::GetAIPromptError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::get_ai_prompt::GetAIPromptError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -1237,6 +1286,7 @@ impl From<crate::operation::get_assistant::GetAssistantError> for Error {
         match err {
             crate::operation::get_assistant::GetAssistantError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::get_assistant::GetAssistantError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_assistant::GetAssistantError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
             crate::operation::get_assistant::GetAssistantError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::get_assistant::GetAssistantError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -1268,6 +1318,9 @@ impl From<crate::operation::get_assistant_association::GetAssistantAssociationEr
             crate::operation::get_assistant_association::GetAssistantAssociationError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }
+            crate::operation::get_assistant_association::GetAssistantAssociationError::UnauthorizedException(inner) => {
+                Error::UnauthorizedException(inner)
+            }
             crate::operation::get_assistant_association::GetAssistantAssociationError::ValidationException(inner) => {
                 Error::ValidationException(inner)
             }
@@ -1294,6 +1347,7 @@ impl From<crate::operation::get_content::GetContentError> for Error {
         match err {
             crate::operation::get_content::GetContentError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::get_content::GetContentError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_content::GetContentError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
             crate::operation::get_content::GetContentError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::get_content::GetContentError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -1324,6 +1378,9 @@ impl From<crate::operation::get_content_association::GetContentAssociationError>
             crate::operation::get_content_association::GetContentAssociationError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }
+            crate::operation::get_content_association::GetContentAssociationError::UnauthorizedException(inner) => {
+                Error::UnauthorizedException(inner)
+            }
             crate::operation::get_content_association::GetContentAssociationError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::get_content_association::GetContentAssociationError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -1350,6 +1407,7 @@ impl From<crate::operation::get_content_summary::GetContentSummaryError> for Err
             crate::operation::get_content_summary::GetContentSummaryError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }
+            crate::operation::get_content_summary::GetContentSummaryError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
             crate::operation::get_content_summary::GetContentSummaryError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::get_content_summary::GetContentSummaryError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -1398,6 +1456,7 @@ impl From<crate::operation::get_knowledge_base::GetKnowledgeBaseError> for Error
         match err {
             crate::operation::get_knowledge_base::GetKnowledgeBaseError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::get_knowledge_base::GetKnowledgeBaseError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_knowledge_base::GetKnowledgeBaseError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
             crate::operation::get_knowledge_base::GetKnowledgeBaseError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::get_knowledge_base::GetKnowledgeBaseError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -1425,6 +1484,7 @@ impl From<crate::operation::get_message_template::GetMessageTemplateError> for E
                 Error::ResourceNotFoundException(inner)
             }
             crate::operation::get_message_template::GetMessageTemplateError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_message_template::GetMessageTemplateError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
             crate::operation::get_message_template::GetMessageTemplateError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::get_message_template::GetMessageTemplateError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -1473,6 +1533,7 @@ impl From<crate::operation::get_quick_response::GetQuickResponseError> for Error
         match err {
             crate::operation::get_quick_response::GetQuickResponseError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::get_quick_response::GetQuickResponseError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_quick_response::GetQuickResponseError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
             crate::operation::get_quick_response::GetQuickResponseError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::get_quick_response::GetQuickResponseError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -1523,6 +1584,7 @@ impl From<crate::operation::get_session::GetSessionError> for Error {
         match err {
             crate::operation::get_session::GetSessionError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::get_session::GetSessionError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_session::GetSessionError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
             crate::operation::get_session::GetSessionError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::get_session::GetSessionError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -1548,6 +1610,7 @@ impl From<crate::operation::list_ai_agents::ListAIAgentsError> for Error {
             crate::operation::list_ai_agents::ListAIAgentsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::list_ai_agents::ListAIAgentsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::list_ai_agents::ListAIAgentsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_ai_agents::ListAIAgentsError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
             crate::operation::list_ai_agents::ListAIAgentsError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::list_ai_agents::ListAIAgentsError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -1575,6 +1638,7 @@ impl From<crate::operation::list_ai_agent_versions::ListAIAgentVersionsError> fo
                 Error::ResourceNotFoundException(inner)
             }
             crate::operation::list_ai_agent_versions::ListAIAgentVersionsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_ai_agent_versions::ListAIAgentVersionsError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
             crate::operation::list_ai_agent_versions::ListAIAgentVersionsError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::list_ai_agent_versions::ListAIAgentVersionsError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -1600,6 +1664,7 @@ impl From<crate::operation::list_ai_guardrails::ListAIGuardrailsError> for Error
             crate::operation::list_ai_guardrails::ListAIGuardrailsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::list_ai_guardrails::ListAIGuardrailsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::list_ai_guardrails::ListAIGuardrailsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_ai_guardrails::ListAIGuardrailsError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
             crate::operation::list_ai_guardrails::ListAIGuardrailsError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::list_ai_guardrails::ListAIGuardrailsError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -1634,6 +1699,9 @@ impl From<crate::operation::list_ai_guardrail_versions::ListAIGuardrailVersionsE
             crate::operation::list_ai_guardrail_versions::ListAIGuardrailVersionsError::ThrottlingException(inner) => {
                 Error::ThrottlingException(inner)
             }
+            crate::operation::list_ai_guardrail_versions::ListAIGuardrailVersionsError::UnauthorizedException(inner) => {
+                Error::UnauthorizedException(inner)
+            }
             crate::operation::list_ai_guardrail_versions::ListAIGuardrailVersionsError::ValidationException(inner) => {
                 Error::ValidationException(inner)
             }
@@ -1661,6 +1729,7 @@ impl From<crate::operation::list_ai_prompts::ListAIPromptsError> for Error {
             crate::operation::list_ai_prompts::ListAIPromptsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::list_ai_prompts::ListAIPromptsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::list_ai_prompts::ListAIPromptsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_ai_prompts::ListAIPromptsError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
             crate::operation::list_ai_prompts::ListAIPromptsError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::list_ai_prompts::ListAIPromptsError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -1690,6 +1759,7 @@ impl From<crate::operation::list_ai_prompt_versions::ListAIPromptVersionsError> 
                 Error::ResourceNotFoundException(inner)
             }
             crate::operation::list_ai_prompt_versions::ListAIPromptVersionsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_ai_prompt_versions::ListAIPromptVersionsError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
             crate::operation::list_ai_prompt_versions::ListAIPromptVersionsError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::list_ai_prompt_versions::ListAIPromptVersionsError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -1746,6 +1816,7 @@ impl From<crate::operation::list_assistants::ListAssistantsError> for Error {
     fn from(err: crate::operation::list_assistants::ListAssistantsError) -> Self {
         match err {
             crate::operation::list_assistants::ListAssistantsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_assistants::ListAssistantsError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
             crate::operation::list_assistants::ListAssistantsError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::list_assistants::ListAssistantsError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -1776,6 +1847,9 @@ impl From<crate::operation::list_content_associations::ListContentAssociationsEr
             }
             crate::operation::list_content_associations::ListContentAssociationsError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::list_content_associations::ListContentAssociationsError::UnauthorizedException(inner) => {
+                Error::UnauthorizedException(inner)
             }
             crate::operation::list_content_associations::ListContentAssociationsError::ValidationException(inner) => {
                 Error::ValidationException(inner)
@@ -2204,6 +2278,7 @@ impl From<crate::operation::search_content::SearchContentError> for Error {
         match err {
             crate::operation::search_content::SearchContentError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::search_content::SearchContentError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::search_content::SearchContentError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
             crate::operation::search_content::SearchContentError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::search_content::SearchContentError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -2235,6 +2310,9 @@ impl From<crate::operation::search_message_templates::SearchMessageTemplatesErro
                 Error::ResourceNotFoundException(inner)
             }
             crate::operation::search_message_templates::SearchMessageTemplatesError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::search_message_templates::SearchMessageTemplatesError::UnauthorizedException(inner) => {
+                Error::UnauthorizedException(inner)
+            }
             crate::operation::search_message_templates::SearchMessageTemplatesError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::search_message_templates::SearchMessageTemplatesError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -2264,6 +2342,7 @@ impl From<crate::operation::search_quick_responses::SearchQuickResponsesError> f
             crate::operation::search_quick_responses::SearchQuickResponsesError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }
+            crate::operation::search_quick_responses::SearchQuickResponsesError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
             crate::operation::search_quick_responses::SearchQuickResponsesError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::search_quick_responses::SearchQuickResponsesError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -2288,6 +2367,7 @@ impl From<crate::operation::search_sessions::SearchSessionsError> for Error {
         match err {
             crate::operation::search_sessions::SearchSessionsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::search_sessions::SearchSessionsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::search_sessions::SearchSessionsError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
             crate::operation::search_sessions::SearchSessionsError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::search_sessions::SearchSessionsError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -2341,6 +2421,7 @@ impl From<crate::operation::start_content_upload::StartContentUploadError> for E
             crate::operation::start_content_upload::StartContentUploadError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }
+            crate::operation::start_content_upload::StartContentUploadError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
             crate::operation::start_content_upload::StartContentUploadError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::start_content_upload::StartContentUploadError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -2369,6 +2450,7 @@ impl From<crate::operation::start_import_job::StartImportJobError> for Error {
             crate::operation::start_import_job::StartImportJobError::ServiceQuotaExceededException(inner) => {
                 Error::ServiceQuotaExceededException(inner)
             }
+            crate::operation::start_import_job::StartImportJobError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
             crate::operation::start_import_job::StartImportJobError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::start_import_job::StartImportJobError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -2440,6 +2522,7 @@ impl From<crate::operation::update_ai_agent::UpdateAIAgentError> for Error {
             crate::operation::update_ai_agent::UpdateAIAgentError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::update_ai_agent::UpdateAIAgentError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::update_ai_agent::UpdateAIAgentError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::update_ai_agent::UpdateAIAgentError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
             crate::operation::update_ai_agent::UpdateAIAgentError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::update_ai_agent::UpdateAIAgentError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -2468,6 +2551,7 @@ impl From<crate::operation::update_ai_guardrail::UpdateAIGuardrailError> for Err
                 Error::ResourceNotFoundException(inner)
             }
             crate::operation::update_ai_guardrail::UpdateAIGuardrailError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::update_ai_guardrail::UpdateAIGuardrailError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
             crate::operation::update_ai_guardrail::UpdateAIGuardrailError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::update_ai_guardrail::UpdateAIGuardrailError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -2494,6 +2578,7 @@ impl From<crate::operation::update_ai_prompt::UpdateAIPromptError> for Error {
             crate::operation::update_ai_prompt::UpdateAIPromptError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::update_ai_prompt::UpdateAIPromptError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::update_ai_prompt::UpdateAIPromptError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::update_ai_prompt::UpdateAIPromptError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
             crate::operation::update_ai_prompt::UpdateAIPromptError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::update_ai_prompt::UpdateAIPromptError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -2551,6 +2636,7 @@ impl From<crate::operation::update_content::UpdateContentError> for Error {
             crate::operation::update_content::UpdateContentError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::update_content::UpdateContentError::PreconditionFailedException(inner) => Error::PreconditionFailedException(inner),
             crate::operation::update_content::UpdateContentError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::update_content::UpdateContentError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
             crate::operation::update_content::UpdateContentError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::update_content::UpdateContentError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -2698,6 +2784,7 @@ impl From<crate::operation::update_quick_response::UpdateQuickResponseError> for
             crate::operation::update_quick_response::UpdateQuickResponseError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }
+            crate::operation::update_quick_response::UpdateQuickResponseError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
             crate::operation::update_quick_response::UpdateQuickResponseError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::update_quick_response::UpdateQuickResponseError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -2722,6 +2809,7 @@ impl From<crate::operation::update_session::UpdateSessionError> for Error {
         match err {
             crate::operation::update_session::UpdateSessionError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::update_session::UpdateSessionError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::update_session::UpdateSessionError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
             crate::operation::update_session::UpdateSessionError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::update_session::UpdateSessionError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -2748,6 +2836,7 @@ impl From<crate::operation::update_session_data::UpdateSessionDataError> for Err
             crate::operation::update_session_data::UpdateSessionDataError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }
+            crate::operation::update_session_data::UpdateSessionDataError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
             crate::operation::update_session_data::UpdateSessionDataError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::update_session_data::UpdateSessionDataError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -2764,6 +2853,7 @@ impl ::std::error::Error for Error {
             Error::ServiceQuotaExceededException(inner) => inner.source(),
             Error::ThrottlingException(inner) => inner.source(),
             Error::TooManyTagsException(inner) => inner.source(),
+            Error::UnauthorizedException(inner) => inner.source(),
             Error::ValidationException(inner) => inner.source(),
             Error::Unhandled(inner) => ::std::option::Option::Some(&*inner.source),
         }
@@ -2780,6 +2870,7 @@ impl ::aws_types::request_id::RequestId for Error {
             Self::ServiceQuotaExceededException(e) => e.request_id(),
             Self::ThrottlingException(e) => e.request_id(),
             Self::TooManyTagsException(e) => e.request_id(),
+            Self::UnauthorizedException(e) => e.request_id(),
             Self::ValidationException(e) => e.request_id(),
             Self::Unhandled(e) => e.meta.request_id(),
         }

@@ -8,6 +8,8 @@ pub struct IcebergInput {
     pub metadata_operation: crate::types::MetadataOperation,
     /// <p>The table version for the Iceberg table. Defaults to 2.</p>
     pub version: ::std::option::Option<::std::string::String>,
+    /// <p>The configuration parameters required to create a new Iceberg table in the Glue Data Catalog, including table properties and metadata specifications.</p>
+    pub create_iceberg_table_input: ::std::option::Option<crate::types::CreateIcebergTableInput>,
 }
 impl IcebergInput {
     /// <p>A required metadata operation. Can only be set to <code>CREATE</code>.</p>
@@ -17,6 +19,10 @@ impl IcebergInput {
     /// <p>The table version for the Iceberg table. Defaults to 2.</p>
     pub fn version(&self) -> ::std::option::Option<&str> {
         self.version.as_deref()
+    }
+    /// <p>The configuration parameters required to create a new Iceberg table in the Glue Data Catalog, including table properties and metadata specifications.</p>
+    pub fn create_iceberg_table_input(&self) -> ::std::option::Option<&crate::types::CreateIcebergTableInput> {
+        self.create_iceberg_table_input.as_ref()
     }
 }
 impl IcebergInput {
@@ -32,6 +38,7 @@ impl IcebergInput {
 pub struct IcebergInputBuilder {
     pub(crate) metadata_operation: ::std::option::Option<crate::types::MetadataOperation>,
     pub(crate) version: ::std::option::Option<::std::string::String>,
+    pub(crate) create_iceberg_table_input: ::std::option::Option<crate::types::CreateIcebergTableInput>,
 }
 impl IcebergInputBuilder {
     /// <p>A required metadata operation. Can only be set to <code>CREATE</code>.</p>
@@ -63,6 +70,20 @@ impl IcebergInputBuilder {
     pub fn get_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.version
     }
+    /// <p>The configuration parameters required to create a new Iceberg table in the Glue Data Catalog, including table properties and metadata specifications.</p>
+    pub fn create_iceberg_table_input(mut self, input: crate::types::CreateIcebergTableInput) -> Self {
+        self.create_iceberg_table_input = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The configuration parameters required to create a new Iceberg table in the Glue Data Catalog, including table properties and metadata specifications.</p>
+    pub fn set_create_iceberg_table_input(mut self, input: ::std::option::Option<crate::types::CreateIcebergTableInput>) -> Self {
+        self.create_iceberg_table_input = input;
+        self
+    }
+    /// <p>The configuration parameters required to create a new Iceberg table in the Glue Data Catalog, including table properties and metadata specifications.</p>
+    pub fn get_create_iceberg_table_input(&self) -> &::std::option::Option<crate::types::CreateIcebergTableInput> {
+        &self.create_iceberg_table_input
+    }
     /// Consumes the builder and constructs a [`IcebergInput`](crate::types::IcebergInput).
     /// This method will fail if any of the following fields are not set:
     /// - [`metadata_operation`](crate::types::builders::IcebergInputBuilder::metadata_operation)
@@ -75,6 +96,7 @@ impl IcebergInputBuilder {
                 )
             })?,
             version: self.version,
+            create_iceberg_table_input: self.create_iceberg_table_input,
         })
     }
 }

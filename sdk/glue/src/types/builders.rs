@@ -35,6 +35,26 @@ pub use crate::types::_compaction_configuration::CompactionConfigurationBuilder;
 
 pub use crate::types::_iceberg_compaction_configuration::IcebergCompactionConfigurationBuilder;
 
+pub use crate::types::_update_open_table_format_input::UpdateOpenTableFormatInputBuilder;
+
+pub use crate::types::_update_iceberg_input::UpdateIcebergInputBuilder;
+
+pub use crate::types::_update_iceberg_table_input::UpdateIcebergTableInputBuilder;
+
+pub use crate::types::_iceberg_table_update::IcebergTableUpdateBuilder;
+
+pub use crate::types::_iceberg_sort_order::IcebergSortOrderBuilder;
+
+pub use crate::types::_iceberg_sort_field::IcebergSortFieldBuilder;
+
+pub use crate::types::_iceberg_partition_spec::IcebergPartitionSpecBuilder;
+
+pub use crate::types::_iceberg_partition_field::IcebergPartitionFieldBuilder;
+
+pub use crate::types::_iceberg_schema::IcebergSchemaBuilder;
+
+pub use crate::types::_iceberg_struct_field::IcebergStructFieldBuilder;
+
 pub use crate::types::_table_input::TableInputBuilder;
 
 pub use crate::types::_view_definition_input::ViewDefinitionInputBuilder;
@@ -726,6 +746,8 @@ pub use crate::types::_error_details::ErrorDetailsBuilder;
 pub use crate::types::_open_table_format_input::OpenTableFormatInputBuilder;
 
 pub use crate::types::_iceberg_input::IcebergInputBuilder;
+
+pub use crate::types::_create_iceberg_table_input::CreateIcebergTableInputBuilder;
 
 pub use crate::types::_partition_index::PartitionIndexBuilder;
 

@@ -8,6 +8,8 @@ pub struct FederatedDatabase {
     pub identifier: ::std::option::Option<::std::string::String>,
     /// <p>The name of the connection to the external metastore.</p>
     pub connection_name: ::std::option::Option<::std::string::String>,
+    /// <p>The type of connection used to access the federated database, such as JDBC, ODBC, or other supported connection protocols.</p>
+    pub connection_type: ::std::option::Option<::std::string::String>,
 }
 impl FederatedDatabase {
     /// <p>A unique identifier for the federated database.</p>
@@ -17,6 +19,10 @@ impl FederatedDatabase {
     /// <p>The name of the connection to the external metastore.</p>
     pub fn connection_name(&self) -> ::std::option::Option<&str> {
         self.connection_name.as_deref()
+    }
+    /// <p>The type of connection used to access the federated database, such as JDBC, ODBC, or other supported connection protocols.</p>
+    pub fn connection_type(&self) -> ::std::option::Option<&str> {
+        self.connection_type.as_deref()
     }
 }
 impl FederatedDatabase {
@@ -32,6 +38,7 @@ impl FederatedDatabase {
 pub struct FederatedDatabaseBuilder {
     pub(crate) identifier: ::std::option::Option<::std::string::String>,
     pub(crate) connection_name: ::std::option::Option<::std::string::String>,
+    pub(crate) connection_type: ::std::option::Option<::std::string::String>,
 }
 impl FederatedDatabaseBuilder {
     /// <p>A unique identifier for the federated database.</p>
@@ -62,11 +69,26 @@ impl FederatedDatabaseBuilder {
     pub fn get_connection_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.connection_name
     }
+    /// <p>The type of connection used to access the federated database, such as JDBC, ODBC, or other supported connection protocols.</p>
+    pub fn connection_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.connection_type = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The type of connection used to access the federated database, such as JDBC, ODBC, or other supported connection protocols.</p>
+    pub fn set_connection_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.connection_type = input;
+        self
+    }
+    /// <p>The type of connection used to access the federated database, such as JDBC, ODBC, or other supported connection protocols.</p>
+    pub fn get_connection_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.connection_type
+    }
     /// Consumes the builder and constructs a [`FederatedDatabase`](crate::types::FederatedDatabase).
     pub fn build(self) -> crate::types::FederatedDatabase {
         crate::types::FederatedDatabase {
             identifier: self.identifier,
             connection_name: self.connection_name,
+            connection_type: self.connection_type,
         }
     }
 }

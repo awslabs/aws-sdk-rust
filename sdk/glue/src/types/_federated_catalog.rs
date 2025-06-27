@@ -8,6 +8,8 @@ pub struct FederatedCatalog {
     pub identifier: ::std::option::Option<::std::string::String>,
     /// <p>The name of the connection to an external data source, for example a Redshift-federated catalog.</p>
     pub connection_name: ::std::option::Option<::std::string::String>,
+    /// <p>The type of connection used to access the federated catalog, specifying the protocol or method for connection to the external data source.</p>
+    pub connection_type: ::std::option::Option<::std::string::String>,
 }
 impl FederatedCatalog {
     /// <p>A unique identifier for the federated catalog.</p>
@@ -17,6 +19,10 @@ impl FederatedCatalog {
     /// <p>The name of the connection to an external data source, for example a Redshift-federated catalog.</p>
     pub fn connection_name(&self) -> ::std::option::Option<&str> {
         self.connection_name.as_deref()
+    }
+    /// <p>The type of connection used to access the federated catalog, specifying the protocol or method for connection to the external data source.</p>
+    pub fn connection_type(&self) -> ::std::option::Option<&str> {
+        self.connection_type.as_deref()
     }
 }
 impl FederatedCatalog {
@@ -32,6 +38,7 @@ impl FederatedCatalog {
 pub struct FederatedCatalogBuilder {
     pub(crate) identifier: ::std::option::Option<::std::string::String>,
     pub(crate) connection_name: ::std::option::Option<::std::string::String>,
+    pub(crate) connection_type: ::std::option::Option<::std::string::String>,
 }
 impl FederatedCatalogBuilder {
     /// <p>A unique identifier for the federated catalog.</p>
@@ -62,11 +69,26 @@ impl FederatedCatalogBuilder {
     pub fn get_connection_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.connection_name
     }
+    /// <p>The type of connection used to access the federated catalog, specifying the protocol or method for connection to the external data source.</p>
+    pub fn connection_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.connection_type = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The type of connection used to access the federated catalog, specifying the protocol or method for connection to the external data source.</p>
+    pub fn set_connection_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.connection_type = input;
+        self
+    }
+    /// <p>The type of connection used to access the federated catalog, specifying the protocol or method for connection to the external data source.</p>
+    pub fn get_connection_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.connection_type
+    }
     /// Consumes the builder and constructs a [`FederatedCatalog`](crate::types::FederatedCatalog).
     pub fn build(self) -> crate::types::FederatedCatalog {
         crate::types::FederatedCatalog {
             identifier: self.identifier,
             connection_name: self.connection_name,
+            connection_type: self.connection_type,
         }
     }
 }

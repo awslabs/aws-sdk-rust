@@ -9,26 +9,35 @@ pub fn ser_update_table_input_input(
     if let Some(var_2) = &input.database_name {
         object.key("DatabaseName").string(var_2.as_str());
     }
-    if let Some(var_3) = &input.table_input {
+    if let Some(var_3) = &input.name {
+        object.key("Name").string(var_3.as_str());
+    }
+    if let Some(var_4) = &input.table_input {
         #[allow(unused_mut)]
-        let mut object_4 = object.key("TableInput").start_object();
-        crate::protocol_serde::shape_table_input::ser_table_input(&mut object_4, var_3)?;
-        object_4.finish();
+        let mut object_5 = object.key("TableInput").start_object();
+        crate::protocol_serde::shape_table_input::ser_table_input(&mut object_5, var_4)?;
+        object_5.finish();
     }
-    if let Some(var_5) = &input.skip_archive {
-        object.key("SkipArchive").boolean(*var_5);
+    if let Some(var_6) = &input.skip_archive {
+        object.key("SkipArchive").boolean(*var_6);
     }
-    if let Some(var_6) = &input.transaction_id {
-        object.key("TransactionId").string(var_6.as_str());
+    if let Some(var_7) = &input.transaction_id {
+        object.key("TransactionId").string(var_7.as_str());
     }
-    if let Some(var_7) = &input.version_id {
-        object.key("VersionId").string(var_7.as_str());
+    if let Some(var_8) = &input.version_id {
+        object.key("VersionId").string(var_8.as_str());
     }
-    if let Some(var_8) = &input.view_update_action {
-        object.key("ViewUpdateAction").string(var_8.as_str());
+    if let Some(var_9) = &input.view_update_action {
+        object.key("ViewUpdateAction").string(var_9.as_str());
     }
-    if let Some(var_9) = &input.force {
-        object.key("Force").boolean(*var_9);
+    if let Some(var_10) = &input.force {
+        object.key("Force").boolean(*var_10);
+    }
+    if let Some(var_11) = &input.update_open_table_format_input {
+        #[allow(unused_mut)]
+        let mut object_12 = object.key("UpdateOpenTableFormatInput").start_object();
+        crate::protocol_serde::shape_update_open_table_format_input::ser_update_open_table_format_input(&mut object_12, var_11)?;
+        object_12.finish();
     }
     Ok(())
 }

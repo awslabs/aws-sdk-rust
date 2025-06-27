@@ -26,7 +26,7 @@ pub struct EventDestination {
     /// <li>
     /// <p><code>CLICK</code> - The recipient clicked one or more links in the email.</p></li>
     /// <li>
-    /// <p><code>RENDERING_FAILURE</code> - The email wasn't sent because of a template rendering issue. This event type can occur when template data is missing, or when there is a mismatch between template parameters and data. (This event type only occurs when you send email using the <a href="https://docs.aws.amazon.com/ses/latest/APIReference/API_SendTemplatedEmail.html"> <code>SendTemplatedEmail</code> </a> or <a href="https://docs.aws.amazon.com/ses/latest/APIReference/API_SendBulkTemplatedEmail.html"> <code>SendBulkTemplatedEmail</code> </a> API operations.)</p></li>
+    /// <p><code>RENDERING_FAILURE</code> - The email wasn't sent because of a template rendering issue. This event type can occur when template data is missing, or when there is a mismatch between template parameters and data. (This event type only occurs when you send email using the <a href="https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_SendEmail.html"> <code>SendEmail</code> </a> or <a href="https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_SendBulkEmail.html"> <code>SendBulkEmail</code> </a> API operations.)</p></li>
     /// <li>
     /// <p><code>DELIVERY_DELAY</code> - The email couldn't be delivered to the recipient’s mail server because a temporary issue occurred. Delivery delays can occur, for example, when the recipient's inbox is full, or when the receiving email server experiences a transient issue.</p></li>
     /// <li>
@@ -72,7 +72,7 @@ impl EventDestination {
     /// <li>
     /// <p><code>CLICK</code> - The recipient clicked one or more links in the email.</p></li>
     /// <li>
-    /// <p><code>RENDERING_FAILURE</code> - The email wasn't sent because of a template rendering issue. This event type can occur when template data is missing, or when there is a mismatch between template parameters and data. (This event type only occurs when you send email using the <a href="https://docs.aws.amazon.com/ses/latest/APIReference/API_SendTemplatedEmail.html"> <code>SendTemplatedEmail</code> </a> or <a href="https://docs.aws.amazon.com/ses/latest/APIReference/API_SendBulkTemplatedEmail.html"> <code>SendBulkTemplatedEmail</code> </a> API operations.)</p></li>
+    /// <p><code>RENDERING_FAILURE</code> - The email wasn't sent because of a template rendering issue. This event type can occur when template data is missing, or when there is a mismatch between template parameters and data. (This event type only occurs when you send email using the <a href="https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_SendEmail.html"> <code>SendEmail</code> </a> or <a href="https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_SendBulkEmail.html"> <code>SendBulkEmail</code> </a> API operations.)</p></li>
     /// <li>
     /// <p><code>DELIVERY_DELAY</code> - The email couldn't be delivered to the recipient’s mail server because a temporary issue occurred. Delivery delays can occur, for example, when the recipient's inbox is full, or when the receiving email server experiences a transient issue.</p></li>
     /// <li>
@@ -177,7 +177,7 @@ impl EventDestinationBuilder {
     /// <li>
     /// <p><code>CLICK</code> - The recipient clicked one or more links in the email.</p></li>
     /// <li>
-    /// <p><code>RENDERING_FAILURE</code> - The email wasn't sent because of a template rendering issue. This event type can occur when template data is missing, or when there is a mismatch between template parameters and data. (This event type only occurs when you send email using the <a href="https://docs.aws.amazon.com/ses/latest/APIReference/API_SendTemplatedEmail.html"> <code>SendTemplatedEmail</code> </a> or <a href="https://docs.aws.amazon.com/ses/latest/APIReference/API_SendBulkTemplatedEmail.html"> <code>SendBulkTemplatedEmail</code> </a> API operations.)</p></li>
+    /// <p><code>RENDERING_FAILURE</code> - The email wasn't sent because of a template rendering issue. This event type can occur when template data is missing, or when there is a mismatch between template parameters and data. (This event type only occurs when you send email using the <a href="https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_SendEmail.html"> <code>SendEmail</code> </a> or <a href="https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_SendBulkEmail.html"> <code>SendBulkEmail</code> </a> API operations.)</p></li>
     /// <li>
     /// <p><code>DELIVERY_DELAY</code> - The email couldn't be delivered to the recipient’s mail server because a temporary issue occurred. Delivery delays can occur, for example, when the recipient's inbox is full, or when the receiving email server experiences a transient issue.</p></li>
     /// <li>
@@ -206,7 +206,7 @@ impl EventDestinationBuilder {
     /// <li>
     /// <p><code>CLICK</code> - The recipient clicked one or more links in the email.</p></li>
     /// <li>
-    /// <p><code>RENDERING_FAILURE</code> - The email wasn't sent because of a template rendering issue. This event type can occur when template data is missing, or when there is a mismatch between template parameters and data. (This event type only occurs when you send email using the <a href="https://docs.aws.amazon.com/ses/latest/APIReference/API_SendTemplatedEmail.html"> <code>SendTemplatedEmail</code> </a> or <a href="https://docs.aws.amazon.com/ses/latest/APIReference/API_SendBulkTemplatedEmail.html"> <code>SendBulkTemplatedEmail</code> </a> API operations.)</p></li>
+    /// <p><code>RENDERING_FAILURE</code> - The email wasn't sent because of a template rendering issue. This event type can occur when template data is missing, or when there is a mismatch between template parameters and data. (This event type only occurs when you send email using the <a href="https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_SendEmail.html"> <code>SendEmail</code> </a> or <a href="https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_SendBulkEmail.html"> <code>SendBulkEmail</code> </a> API operations.)</p></li>
     /// <li>
     /// <p><code>DELIVERY_DELAY</code> - The email couldn't be delivered to the recipient’s mail server because a temporary issue occurred. Delivery delays can occur, for example, when the recipient's inbox is full, or when the receiving email server experiences a transient issue.</p></li>
     /// <li>
@@ -233,7 +233,7 @@ impl EventDestinationBuilder {
     /// <li>
     /// <p><code>CLICK</code> - The recipient clicked one or more links in the email.</p></li>
     /// <li>
-    /// <p><code>RENDERING_FAILURE</code> - The email wasn't sent because of a template rendering issue. This event type can occur when template data is missing, or when there is a mismatch between template parameters and data. (This event type only occurs when you send email using the <a href="https://docs.aws.amazon.com/ses/latest/APIReference/API_SendTemplatedEmail.html"> <code>SendTemplatedEmail</code> </a> or <a href="https://docs.aws.amazon.com/ses/latest/APIReference/API_SendBulkTemplatedEmail.html"> <code>SendBulkTemplatedEmail</code> </a> API operations.)</p></li>
+    /// <p><code>RENDERING_FAILURE</code> - The email wasn't sent because of a template rendering issue. This event type can occur when template data is missing, or when there is a mismatch between template parameters and data. (This event type only occurs when you send email using the <a href="https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_SendEmail.html"> <code>SendEmail</code> </a> or <a href="https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_SendBulkEmail.html"> <code>SendBulkEmail</code> </a> API operations.)</p></li>
     /// <li>
     /// <p><code>DELIVERY_DELAY</code> - The email couldn't be delivered to the recipient’s mail server because a temporary issue occurred. Delivery delays can occur, for example, when the recipient's inbox is full, or when the receiving email server experiences a transient issue.</p></li>
     /// <li>

@@ -269,6 +269,8 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ListAssistant
 pub enum ListAssistantsError {
     /// <p>You do not have sufficient access to perform this action.</p>
     AccessDeniedException(crate::types::error::AccessDeniedException),
+    /// <p>You do not have permission to perform this action.</p>
+    UnauthorizedException(crate::types::error::UnauthorizedException),
     /// <p>The input fails to satisfy the constraints specified by a service.</p>
     ValidationException(crate::types::error::ValidationException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
@@ -305,6 +307,7 @@ impl ListAssistantsError {
     pub fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
             Self::AccessDeniedException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::UnauthorizedException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ValidationException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::Unhandled(e) => &e.meta,
         }
@@ -312,6 +315,10 @@ impl ListAssistantsError {
     /// Returns `true` if the error kind is `ListAssistantsError::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(self, Self::AccessDeniedException(_))
+    }
+    /// Returns `true` if the error kind is `ListAssistantsError::UnauthorizedException`.
+    pub fn is_unauthorized_exception(&self) -> bool {
+        matches!(self, Self::UnauthorizedException(_))
     }
     /// Returns `true` if the error kind is `ListAssistantsError::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
@@ -322,6 +329,7 @@ impl ::std::error::Error for ListAssistantsError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
             Self::AccessDeniedException(_inner) => ::std::option::Option::Some(_inner),
+            Self::UnauthorizedException(_inner) => ::std::option::Option::Some(_inner),
             Self::ValidationException(_inner) => ::std::option::Option::Some(_inner),
             Self::Unhandled(_inner) => ::std::option::Option::Some(&*_inner.source),
         }
@@ -331,6 +339,7 @@ impl ::std::fmt::Display for ListAssistantsError {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         match self {
             Self::AccessDeniedException(_inner) => _inner.fmt(f),
+            Self::UnauthorizedException(_inner) => _inner.fmt(f),
             Self::ValidationException(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => {
                 if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self) {
@@ -354,6 +363,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for ListAssistant
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
             Self::AccessDeniedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::UnauthorizedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ValidationException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::Unhandled(_inner) => &_inner.meta,
         }

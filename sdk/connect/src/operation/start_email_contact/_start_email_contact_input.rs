@@ -7,7 +7,7 @@ pub struct StartEmailContactInput {
     pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>The email address of the customer.</p>
     pub from_email_address: ::std::option::Option<crate::types::EmailAddressInfo>,
-    /// <p>The email address associated with the instance.</p>
+    /// <p>The email address associated with the Amazon Connect instance.</p>
     pub destination_email_address: ::std::option::Option<::std::string::String>,
     /// <p>A description of the email contact.</p>
     pub description: ::std::option::Option<::std::string::String>,
@@ -47,7 +47,7 @@ impl StartEmailContactInput {
     pub fn from_email_address(&self) -> ::std::option::Option<&crate::types::EmailAddressInfo> {
         self.from_email_address.as_ref()
     }
-    /// <p>The email address associated with the instance.</p>
+    /// <p>The email address associated with the Amazon Connect instance.</p>
     pub fn destination_email_address(&self) -> ::std::option::Option<&str> {
         self.destination_email_address.as_deref()
     }
@@ -183,18 +183,18 @@ impl StartEmailContactInputBuilder {
     pub fn get_from_email_address(&self) -> &::std::option::Option<crate::types::EmailAddressInfo> {
         &self.from_email_address
     }
-    /// <p>The email address associated with the instance.</p>
+    /// <p>The email address associated with the Amazon Connect instance.</p>
     /// This field is required.
     pub fn destination_email_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination_email_address = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The email address associated with the instance.</p>
+    /// <p>The email address associated with the Amazon Connect instance.</p>
     pub fn set_destination_email_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.destination_email_address = input;
         self
     }
-    /// <p>The email address associated with the instance.</p>
+    /// <p>The email address associated with the Amazon Connect instance.</p>
     pub fn get_destination_email_address(&self) -> &::std::option::Option<::std::string::String> {
         &self.destination_email_address
     }

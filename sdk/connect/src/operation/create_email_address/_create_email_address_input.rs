@@ -7,7 +7,7 @@ pub struct CreateEmailAddressInput {
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub instance_id: ::std::option::Option<::std::string::String>,
-    /// <p>The email address with the instance, in \[^\s@\]+@\[^\s@\]+\.\[^\s@\]+ format.</p>
+    /// <p>The email address, including the domain.</p>
     pub email_address: ::std::option::Option<::std::string::String>,
     /// <p>The display name of email address</p>
     pub display_name: ::std::option::Option<::std::string::String>,
@@ -25,7 +25,7 @@ impl CreateEmailAddressInput {
     pub fn instance_id(&self) -> ::std::option::Option<&str> {
         self.instance_id.as_deref()
     }
-    /// <p>The email address with the instance, in \[^\s@\]+@\[^\s@\]+\.\[^\s@\]+ format.</p>
+    /// <p>The email address, including the domain.</p>
     pub fn email_address(&self) -> ::std::option::Option<&str> {
         self.email_address.as_deref()
     }
@@ -102,18 +102,18 @@ impl CreateEmailAddressInputBuilder {
     pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.instance_id
     }
-    /// <p>The email address with the instance, in \[^\s@\]+@\[^\s@\]+\.\[^\s@\]+ format.</p>
+    /// <p>The email address, including the domain.</p>
     /// This field is required.
     pub fn email_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.email_address = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The email address with the instance, in \[^\s@\]+@\[^\s@\]+\.\[^\s@\]+ format.</p>
+    /// <p>The email address, including the domain.</p>
     pub fn set_email_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.email_address = input;
         self
     }
-    /// <p>The email address with the instance, in \[^\s@\]+@\[^\s@\]+\.\[^\s@\]+ format.</p>
+    /// <p>The email address, including the domain.</p>
     pub fn get_email_address(&self) -> &::std::option::Option<::std::string::String> {
         &self.email_address
     }

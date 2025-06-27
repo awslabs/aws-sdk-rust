@@ -22,7 +22,9 @@ impl crate::operation::search_routing_profiles::builders::SearchRoutingProfilesI
 }
 /// Fluent builder constructing a request to `SearchRoutingProfiles`.
 ///
-/// <p>Searches routing profiles in an Amazon Connect instance, with optional filtering.</p>
+/// <p>Searches routing profiles in an Amazon Connect instance, with optional filtering.</p><note>
+/// <p><code>SearchRoutingProfiles</code> does not populate LastModifiedRegion, LastModifiedTime, MediaConcurrencies.CrossChannelBehavior, and AgentAvailabilityTimer in its response, but <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribeRoutingProfile.html">DescribeRoutingProfile</a> does.</p>
+/// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct SearchRoutingProfilesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

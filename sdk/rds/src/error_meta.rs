@@ -5999,6 +5999,9 @@ impl From<crate::operation::start_db_cluster::StartDBClusterError> for Error {
             crate::operation::start_db_cluster::StartDBClusterError::DbClusterNotFoundFault(inner) => Error::DbClusterNotFoundFault(inner),
             crate::operation::start_db_cluster::StartDBClusterError::InvalidDbClusterStateFault(inner) => Error::InvalidDbClusterStateFault(inner),
             crate::operation::start_db_cluster::StartDBClusterError::InvalidDbInstanceStateFault(inner) => Error::InvalidDbInstanceStateFault(inner),
+            crate::operation::start_db_cluster::StartDBClusterError::InvalidDbShardGroupStateFault(inner) => {
+                Error::InvalidDbShardGroupStateFault(inner)
+            }
             crate::operation::start_db_cluster::StartDBClusterError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -6169,6 +6172,9 @@ impl From<crate::operation::stop_db_cluster::StopDBClusterError> for Error {
             crate::operation::stop_db_cluster::StopDBClusterError::DbClusterNotFoundFault(inner) => Error::DbClusterNotFoundFault(inner),
             crate::operation::stop_db_cluster::StopDBClusterError::InvalidDbClusterStateFault(inner) => Error::InvalidDbClusterStateFault(inner),
             crate::operation::stop_db_cluster::StopDBClusterError::InvalidDbInstanceStateFault(inner) => Error::InvalidDbInstanceStateFault(inner),
+            crate::operation::stop_db_cluster::StopDBClusterError::InvalidDbShardGroupStateFault(inner) => {
+                Error::InvalidDbShardGroupStateFault(inner)
+            }
             crate::operation::stop_db_cluster::StopDBClusterError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }

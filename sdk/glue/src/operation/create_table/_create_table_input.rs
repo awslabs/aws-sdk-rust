@@ -7,6 +7,8 @@ pub struct CreateTableInput {
     pub catalog_id: ::std::option::Option<::std::string::String>,
     /// <p>The catalog database in which to create the new table. For Hive compatibility, this name is entirely lowercase.</p>
     pub database_name: ::std::option::Option<::std::string::String>,
+    /// <p>The unique identifier for the table within the specified database that will be created in the Glue Data Catalog.</p>
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>The <code>TableInput</code> object that defines the metadata table to create in the catalog.</p>
     pub table_input: ::std::option::Option<crate::types::TableInput>,
     /// <p>A list of partition indexes, <code>PartitionIndex</code> structures, to create in the table.</p>
@@ -24,6 +26,10 @@ impl CreateTableInput {
     /// <p>The catalog database in which to create the new table. For Hive compatibility, this name is entirely lowercase.</p>
     pub fn database_name(&self) -> ::std::option::Option<&str> {
         self.database_name.as_deref()
+    }
+    /// <p>The unique identifier for the table within the specified database that will be created in the Glue Data Catalog.</p>
+    pub fn name(&self) -> ::std::option::Option<&str> {
+        self.name.as_deref()
     }
     /// <p>The <code>TableInput</code> object that defines the metadata table to create in the catalog.</p>
     pub fn table_input(&self) -> ::std::option::Option<&crate::types::TableInput> {
@@ -57,6 +63,7 @@ impl CreateTableInput {
 pub struct CreateTableInputBuilder {
     pub(crate) catalog_id: ::std::option::Option<::std::string::String>,
     pub(crate) database_name: ::std::option::Option<::std::string::String>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) table_input: ::std::option::Option<crate::types::TableInput>,
     pub(crate) partition_indexes: ::std::option::Option<::std::vec::Vec<crate::types::PartitionIndex>>,
     pub(crate) transaction_id: ::std::option::Option<::std::string::String>,
@@ -91,6 +98,20 @@ impl CreateTableInputBuilder {
     /// <p>The catalog database in which to create the new table. For Hive compatibility, this name is entirely lowercase.</p>
     pub fn get_database_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.database_name
+    }
+    /// <p>The unique identifier for the table within the specified database that will be created in the Glue Data Catalog.</p>
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The unique identifier for the table within the specified database that will be created in the Glue Data Catalog.</p>
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.name = input;
+        self
+    }
+    /// <p>The unique identifier for the table within the specified database that will be created in the Glue Data Catalog.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The <code>TableInput</code> object that defines the metadata table to create in the catalog.</p>
     /// This field is required.
@@ -160,6 +181,7 @@ impl CreateTableInputBuilder {
         ::std::result::Result::Ok(crate::operation::create_table::CreateTableInput {
             catalog_id: self.catalog_id,
             database_name: self.database_name,
+            name: self.name,
             table_input: self.table_input,
             partition_indexes: self.partition_indexes,
             transaction_id: self.transaction_id,

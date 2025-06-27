@@ -8,7 +8,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeEmailAddressOutput`](crate::operation::describe_email_address::DescribeEmailAddressOutput) with field(s):
     ///   - [`email_address_id(Option<String>)`](crate::operation::describe_email_address::DescribeEmailAddressOutput::email_address_id): <p>The identifier of the email address.</p>
     ///   - [`email_address_arn(Option<String>)`](crate::operation::describe_email_address::DescribeEmailAddressOutput::email_address_arn): <p>The Amazon Resource Name (ARN) of the email address.</p>
-    ///   - [`email_address(Option<String>)`](crate::operation::describe_email_address::DescribeEmailAddressOutput::email_address): <p>The email address with the instance, in \[^\s@\]+@\[^\s@\]+\.\[^\s@\]+ format.</p>
+    ///   - [`email_address(Option<String>)`](crate::operation::describe_email_address::DescribeEmailAddressOutput::email_address): <p>The email address, including the domain.</p>
     ///   - [`display_name(Option<String>)`](crate::operation::describe_email_address::DescribeEmailAddressOutput::display_name): <p>The display name of email address</p>
     ///   - [`description(Option<String>)`](crate::operation::describe_email_address::DescribeEmailAddressOutput::description): <p>The description of the email address.</p>
     ///   - [`create_timestamp(Option<String>)`](crate::operation::describe_email_address::DescribeEmailAddressOutput::create_timestamp): <p>The email address creation timestamp in ISO 8601 Datetime.</p>

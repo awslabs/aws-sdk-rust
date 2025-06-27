@@ -64,6 +64,24 @@ pub fn de_stop_db_cluster_http_error(
             }
             tmp
         }),
+        "InvalidDBShardGroupState" => crate::operation::stop_db_cluster::StopDBClusterError::InvalidDbShardGroupStateFault({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::InvalidDbShardGroupStateFaultBuilder::default();
+                output = crate::protocol_serde::shape_invalid_db_shard_group_state_fault::de_invalid_db_shard_group_state_fault_xml_err(
+                    _response_body,
+                    output,
+                )
+                .map_err(crate::operation::stop_db_cluster::StopDBClusterError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::operation::stop_db_cluster::StopDBClusterError::generic(generic),
     })
 }

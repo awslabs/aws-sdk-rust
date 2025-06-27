@@ -48,6 +48,21 @@ pub fn de_update_session_data_http_error(
             }
             tmp
         }),
+        "UnauthorizedException" => crate::operation::update_session_data::UpdateSessionDataError::UnauthorizedException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::UnauthorizedExceptionBuilder::default();
+                output = crate::protocol_serde::shape_unauthorized_exception::de_unauthorized_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::update_session_data::UpdateSessionDataError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "ValidationException" => crate::operation::update_session_data::UpdateSessionDataError::ValidationException({
             #[allow(unused_mut)]
             let mut tmp = {

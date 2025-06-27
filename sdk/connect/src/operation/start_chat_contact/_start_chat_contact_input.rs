@@ -13,7 +13,7 @@ pub struct StartChatContactInput {
     pub attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Information identifying the participant.</p>
     pub participant_details: ::std::option::Option<crate::types::ParticipantDetails>,
-    /// <p>The initial message to be sent to the newly created chat. If you have a Lex bot in your flow, the initial message is not delivered to the Lex bot.</p>
+    /// <p>The initial message to be sent to the newly created chat.</p>
     pub initial_message: ::std::option::Option<crate::types::ChatMessage>,
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
@@ -58,7 +58,7 @@ impl StartChatContactInput {
     pub fn participant_details(&self) -> ::std::option::Option<&crate::types::ParticipantDetails> {
         self.participant_details.as_ref()
     }
-    /// <p>The initial message to be sent to the newly created chat. If you have a Lex bot in your flow, the initial message is not delivered to the Lex bot.</p>
+    /// <p>The initial message to be sent to the newly created chat.</p>
     pub fn initial_message(&self) -> ::std::option::Option<&crate::types::ChatMessage> {
         self.initial_message.as_ref()
     }
@@ -218,17 +218,17 @@ impl StartChatContactInputBuilder {
     pub fn get_participant_details(&self) -> &::std::option::Option<crate::types::ParticipantDetails> {
         &self.participant_details
     }
-    /// <p>The initial message to be sent to the newly created chat. If you have a Lex bot in your flow, the initial message is not delivered to the Lex bot.</p>
+    /// <p>The initial message to be sent to the newly created chat.</p>
     pub fn initial_message(mut self, input: crate::types::ChatMessage) -> Self {
         self.initial_message = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The initial message to be sent to the newly created chat. If you have a Lex bot in your flow, the initial message is not delivered to the Lex bot.</p>
+    /// <p>The initial message to be sent to the newly created chat.</p>
     pub fn set_initial_message(mut self, input: ::std::option::Option<crate::types::ChatMessage>) -> Self {
         self.initial_message = input;
         self
     }
-    /// <p>The initial message to be sent to the newly created chat. If you have a Lex bot in your flow, the initial message is not delivered to the Lex bot.</p>
+    /// <p>The initial message to be sent to the newly created chat.</p>
     pub fn get_initial_message(&self) -> &::std::option::Option<crate::types::ChatMessage> {
         &self.initial_message
     }

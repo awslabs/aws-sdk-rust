@@ -10,6 +10,8 @@ pub struct FederatedTable {
     pub database_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The name of the connection to the external metastore.</p>
     pub connection_name: ::std::option::Option<::std::string::String>,
+    /// <p>The type of connection used to access the federated table, specifying the protocol or method for connecting to the external data source.</p>
+    pub connection_type: ::std::option::Option<::std::string::String>,
 }
 impl FederatedTable {
     /// <p>A unique identifier for the federated table.</p>
@@ -23,6 +25,10 @@ impl FederatedTable {
     /// <p>The name of the connection to the external metastore.</p>
     pub fn connection_name(&self) -> ::std::option::Option<&str> {
         self.connection_name.as_deref()
+    }
+    /// <p>The type of connection used to access the federated table, specifying the protocol or method for connecting to the external data source.</p>
+    pub fn connection_type(&self) -> ::std::option::Option<&str> {
+        self.connection_type.as_deref()
     }
 }
 impl FederatedTable {
@@ -39,6 +45,7 @@ pub struct FederatedTableBuilder {
     pub(crate) identifier: ::std::option::Option<::std::string::String>,
     pub(crate) database_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) connection_name: ::std::option::Option<::std::string::String>,
+    pub(crate) connection_type: ::std::option::Option<::std::string::String>,
 }
 impl FederatedTableBuilder {
     /// <p>A unique identifier for the federated table.</p>
@@ -83,12 +90,27 @@ impl FederatedTableBuilder {
     pub fn get_connection_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.connection_name
     }
+    /// <p>The type of connection used to access the federated table, specifying the protocol or method for connecting to the external data source.</p>
+    pub fn connection_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.connection_type = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The type of connection used to access the federated table, specifying the protocol or method for connecting to the external data source.</p>
+    pub fn set_connection_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.connection_type = input;
+        self
+    }
+    /// <p>The type of connection used to access the federated table, specifying the protocol or method for connecting to the external data source.</p>
+    pub fn get_connection_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.connection_type
+    }
     /// Consumes the builder and constructs a [`FederatedTable`](crate::types::FederatedTable).
     pub fn build(self) -> crate::types::FederatedTable {
         crate::types::FederatedTable {
             identifier: self.identifier,
             database_identifier: self.database_identifier,
             connection_name: self.connection_name,
+            connection_type: self.connection_type,
         }
     }
 }

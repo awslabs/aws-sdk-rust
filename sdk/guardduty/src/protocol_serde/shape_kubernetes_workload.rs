@@ -24,7 +24,7 @@ where
                                     .transpose()?,
                             );
                         }
-                        "kubernetesResourcesTypes" => {
+                        "type" => {
                             builder = builder.set_kubernetes_resources_types(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| crate::types::KubernetesResourcesTypes::from(u.as_ref())))

@@ -5,6 +5,8 @@ pub use crate::types::error::_resource_not_found_exception::ResourceNotFoundExce
 
 pub use crate::types::error::_access_denied_exception::AccessDeniedException;
 
+pub use crate::types::error::_unauthorized_exception::UnauthorizedException;
+
 pub use crate::types::error::_service_quota_exceeded_exception::ServiceQuotaExceededException;
 
 pub use crate::types::error::_conflict_exception::ConflictException;
@@ -32,6 +34,8 @@ mod _service_quota_exceeded_exception;
 mod _throttling_exception;
 
 mod _too_many_tags_exception;
+
+mod _unauthorized_exception;
 
 mod _validation_exception;
 

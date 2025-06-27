@@ -136,6 +136,20 @@ impl CreateTableFluentBuilder {
     pub fn get_database_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_database_name()
     }
+    /// <p>The unique identifier for the table within the specified database that will be created in the Glue Data Catalog.</p>
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.name(input.into());
+        self
+    }
+    /// <p>The unique identifier for the table within the specified database that will be created in the Glue Data Catalog.</p>
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_name(input);
+        self
+    }
+    /// <p>The unique identifier for the table within the specified database that will be created in the Glue Data Catalog.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>The <code>TableInput</code> object that defines the metadata table to create in the catalog.</p>
     pub fn table_input(mut self, input: crate::types::TableInput) -> Self {
         self.inner = self.inner.table_input(input);

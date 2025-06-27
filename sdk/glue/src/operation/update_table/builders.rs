@@ -136,6 +136,20 @@ impl UpdateTableFluentBuilder {
     pub fn get_database_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_database_name()
     }
+    /// <p>The unique identifier for the table within the specified database that will be created in the Glue Data Catalog.</p>
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.name(input.into());
+        self
+    }
+    /// <p>The unique identifier for the table within the specified database that will be created in the Glue Data Catalog.</p>
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_name(input);
+        self
+    }
+    /// <p>The unique identifier for the table within the specified database that will be created in the Glue Data Catalog.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>An updated <code>TableInput</code> object to define the metadata table in the catalog.</p>
     pub fn table_input(mut self, input: crate::types::TableInput) -> Self {
         self.inner = self.inner.table_input(input);
@@ -219,5 +233,19 @@ impl UpdateTableFluentBuilder {
     /// <p>A flag that can be set to true to ignore matching storage descriptor and subobject matching requirements.</p>
     pub fn get_force(&self) -> &::std::option::Option<bool> {
         self.inner.get_force()
+    }
+    /// <p>Input parameters for updating open table format tables in GlueData Catalog, serving as a wrapper for format-specific update operations such as Apache Iceberg.</p>
+    pub fn update_open_table_format_input(mut self, input: crate::types::UpdateOpenTableFormatInput) -> Self {
+        self.inner = self.inner.update_open_table_format_input(input);
+        self
+    }
+    /// <p>Input parameters for updating open table format tables in GlueData Catalog, serving as a wrapper for format-specific update operations such as Apache Iceberg.</p>
+    pub fn set_update_open_table_format_input(mut self, input: ::std::option::Option<crate::types::UpdateOpenTableFormatInput>) -> Self {
+        self.inner = self.inner.set_update_open_table_format_input(input);
+        self
+    }
+    /// <p>Input parameters for updating open table format tables in GlueData Catalog, serving as a wrapper for format-specific update operations such as Apache Iceberg.</p>
+    pub fn get_update_open_table_format_input(&self) -> &::std::option::Option<crate::types::UpdateOpenTableFormatInput> {
+        self.inner.get_update_open_table_format_input()
     }
 }

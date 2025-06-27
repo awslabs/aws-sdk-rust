@@ -136,17 +136,17 @@ impl CreateEmailAddressFluentBuilder {
     pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_instance_id()
     }
-    /// <p>The email address with the instance, in \[^\s@\]+@\[^\s@\]+\.\[^\s@\]+ format.</p>
+    /// <p>The email address, including the domain.</p>
     pub fn email_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.email_address(input.into());
         self
     }
-    /// <p>The email address with the instance, in \[^\s@\]+@\[^\s@\]+\.\[^\s@\]+ format.</p>
+    /// <p>The email address, including the domain.</p>
     pub fn set_email_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_email_address(input);
         self
     }
-    /// <p>The email address with the instance, in \[^\s@\]+@\[^\s@\]+\.\[^\s@\]+ format.</p>
+    /// <p>The email address, including the domain.</p>
     pub fn get_email_address(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_email_address()
     }

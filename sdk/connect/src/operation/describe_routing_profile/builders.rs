@@ -22,7 +22,9 @@ impl crate::operation::describe_routing_profile::builders::DescribeRoutingProfil
 }
 /// Fluent builder constructing a request to `DescribeRoutingProfile`.
 ///
-/// <p>Describes the specified routing profile.</p>
+/// <p>Describes the specified routing profile.</p><note>
+/// <p><code>DescribeRoutingProfile</code> does not populate AssociatedQueueIds in its response. The example Response Syntax shown on this page is incorrect; we are working to update it. <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_SearchRoutingProfiles.html">SearchRoutingProfiles</a> does include AssociatedQueueIds.</p>
+/// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeRoutingProfileFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

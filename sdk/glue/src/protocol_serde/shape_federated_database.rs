@@ -28,6 +28,13 @@ where
                                     .transpose()?,
                             );
                         }
+                        "ConnectionType" => {
+                            builder = builder.set_connection_type(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {
@@ -55,6 +62,9 @@ pub fn ser_federated_database(
     }
     if let Some(var_2) = &input.connection_name {
         object.key("ConnectionName").string(var_2.as_str());
+    }
+    if let Some(var_3) = &input.connection_type {
+        object.key("ConnectionType").string(var_3.as_str());
     }
     Ok(())
 }

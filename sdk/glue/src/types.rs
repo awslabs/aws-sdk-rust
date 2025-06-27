@@ -59,6 +59,32 @@ pub use crate::types::_table_optimizer_type::TableOptimizerType;
 
 pub use crate::types::_federation_source_error_code::FederationSourceErrorCode;
 
+pub use crate::types::_update_open_table_format_input::UpdateOpenTableFormatInput;
+
+pub use crate::types::_update_iceberg_input::UpdateIcebergInput;
+
+pub use crate::types::_update_iceberg_table_input::UpdateIcebergTableInput;
+
+pub use crate::types::_iceberg_table_update::IcebergTableUpdate;
+
+pub use crate::types::_iceberg_sort_order::IcebergSortOrder;
+
+pub use crate::types::_iceberg_sort_field::IcebergSortField;
+
+pub use crate::types::_iceberg_null_order::IcebergNullOrder;
+
+pub use crate::types::_iceberg_sort_direction::IcebergSortDirection;
+
+pub use crate::types::_iceberg_partition_spec::IcebergPartitionSpec;
+
+pub use crate::types::_iceberg_partition_field::IcebergPartitionField;
+
+pub use crate::types::_iceberg_schema::IcebergSchema;
+
+pub use crate::types::_iceberg_struct_field::IcebergStructField;
+
+pub use crate::types::_iceberg_struct_type_enum::IcebergStructTypeEnum;
+
 pub use crate::types::_view_update_action::ViewUpdateAction;
 
 pub use crate::types::_table_input::TableInput;
@@ -969,6 +995,8 @@ pub use crate::types::_open_table_format_input::OpenTableFormatInput;
 
 pub use crate::types::_iceberg_input::IcebergInput;
 
+pub use crate::types::_create_iceberg_table_input::CreateIcebergTableInput;
+
 pub use crate::types::_metadata_operation::MetadataOperation;
 
 pub use crate::types::_partition_index::PartitionIndex;
@@ -1223,6 +1251,8 @@ mod _create_csv_classifier_request;
 
 mod _create_grok_classifier_request;
 
+mod _create_iceberg_table_input;
+
 mod _create_json_classifier_request;
 
 mod _create_xml_classifier_request;
@@ -1453,13 +1483,33 @@ mod _iceberg_compaction_metrics;
 
 mod _iceberg_input;
 
+mod _iceberg_null_order;
+
 mod _iceberg_orphan_file_deletion_configuration;
 
 mod _iceberg_orphan_file_deletion_metrics;
 
+mod _iceberg_partition_field;
+
+mod _iceberg_partition_spec;
+
 mod _iceberg_retention_configuration;
 
 mod _iceberg_retention_metrics;
+
+mod _iceberg_schema;
+
+mod _iceberg_sort_direction;
+
+mod _iceberg_sort_field;
+
+mod _iceberg_sort_order;
+
+mod _iceberg_struct_field;
+
+mod _iceberg_struct_type_enum;
+
+mod _iceberg_table_update;
 
 mod _iceberg_target;
 
@@ -1975,7 +2025,13 @@ mod _update_csv_classifier_request;
 
 mod _update_grok_classifier_request;
 
+mod _update_iceberg_input;
+
+mod _update_iceberg_table_input;
+
 mod _update_json_classifier_request;
+
+mod _update_open_table_format_input;
 
 mod _update_xml_classifier_request;
 

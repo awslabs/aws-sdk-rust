@@ -9,5 +9,11 @@ pub fn ser_iceberg_input(
     if let Some(var_1) = &input.version {
         object.key("Version").string(var_1.as_str());
     }
+    if let Some(var_2) = &input.create_iceberg_table_input {
+        #[allow(unused_mut)]
+        let mut object_3 = object.key("CreateIcebergTableInput").start_object();
+        crate::protocol_serde::shape_create_iceberg_table_input::ser_create_iceberg_table_input(&mut object_3, var_2)?;
+        object_3.finish();
+    }
     Ok(())
 }

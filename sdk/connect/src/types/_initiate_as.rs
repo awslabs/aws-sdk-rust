@@ -12,6 +12,7 @@
 /// ```text
 /// # let initiateas = unimplemented!();
 /// match initiateas {
+///     InitiateAs::Completed => { /* ... */ },
 ///     InitiateAs::ConnectedToUser => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -42,6 +43,8 @@
 )]
 pub enum InitiateAs {
     #[allow(missing_docs)] // documentation missing in model
+    Completed,
+    #[allow(missing_docs)] // documentation missing in model
     ConnectedToUser,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
@@ -50,6 +53,7 @@ pub enum InitiateAs {
 impl ::std::convert::From<&str> for InitiateAs {
     fn from(s: &str) -> Self {
         match s {
+            "COMPLETED" => InitiateAs::Completed,
             "CONNECTED_TO_USER" => InitiateAs::ConnectedToUser,
             other => InitiateAs::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -66,13 +70,14 @@ impl InitiateAs {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            InitiateAs::Completed => "COMPLETED",
             InitiateAs::ConnectedToUser => "CONNECTED_TO_USER",
             InitiateAs::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["CONNECTED_TO_USER"]
+        &["COMPLETED", "CONNECTED_TO_USER"]
     }
 }
 impl ::std::convert::AsRef<str> for InitiateAs {
@@ -95,6 +100,7 @@ impl InitiateAs {
 impl ::std::fmt::Display for InitiateAs {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            InitiateAs::Completed => write!(f, "COMPLETED"),
             InitiateAs::ConnectedToUser => write!(f, "CONNECTED_TO_USER"),
             InitiateAs::Unknown(value) => write!(f, "{}", value),
         }

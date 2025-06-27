@@ -1537,6 +1537,8 @@ pub(crate) mod shape_update_grok_classifier_request;
 
 pub(crate) mod shape_update_json_classifier_request;
 
+pub(crate) mod shape_update_open_table_format_input;
+
 pub(crate) mod shape_update_xml_classifier_request;
 
 pub(crate) mod shape_usage_profile_definition_list;
@@ -1961,6 +1963,8 @@ pub(crate) mod shape_unfiltered_partition;
 
 pub(crate) mod shape_union;
 
+pub(crate) mod shape_update_iceberg_input;
+
 pub(crate) mod shape_usage_profile_definition;
 
 pub(crate) mod shape_value_string_list;
@@ -2008,6 +2012,8 @@ pub(crate) mod shape_confusion_matrix;
 pub(crate) mod shape_connection_string_list;
 
 pub(crate) mod shape_connection_type_variant_list;
+
+pub(crate) mod shape_create_iceberg_table_input;
 
 pub(crate) mod shape_csv_header;
 
@@ -2159,6 +2165,8 @@ pub(crate) mod shape_timestamped_inclusion_annotation;
 
 pub(crate) mod shape_transform_config_parameter;
 
+pub(crate) mod shape_update_iceberg_table_input;
+
 pub(crate) mod shape_upsert_redshift_target_options;
 
 pub(crate) mod shape_view_representation_input;
@@ -2201,7 +2209,15 @@ pub(crate) mod shape_iceberg_compaction_metrics;
 
 pub(crate) mod shape_iceberg_orphan_file_deletion_metrics;
 
+pub(crate) mod shape_iceberg_partition_spec;
+
 pub(crate) mod shape_iceberg_retention_metrics;
+
+pub(crate) mod shape_iceberg_schema;
+
+pub(crate) mod shape_iceberg_sort_order;
+
+pub(crate) mod shape_iceberg_table_update;
 
 pub(crate) mod shape_key_schema_element;
 
@@ -2252,6 +2268,12 @@ pub(crate) mod shape_filter_expressions;
 pub(crate) mod shape_glue_schemas;
 
 pub(crate) mod shape_glue_studio_path_list;
+
+pub(crate) mod shape_iceberg_partition_field;
+
+pub(crate) mod shape_iceberg_sort_field;
+
+pub(crate) mod shape_iceberg_struct_field;
 
 pub(crate) mod shape_job_node_details;
 
