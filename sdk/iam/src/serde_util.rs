@@ -704,12 +704,6 @@ pub(crate) fn service_specific_credential_correct_errors(
     if builder.service_name.is_none() {
         builder.service_name = Some(Default::default())
     }
-    if builder.service_user_name.is_none() {
-        builder.service_user_name = Some(Default::default())
-    }
-    if builder.service_password.is_none() {
-        builder.service_password = Some(Default::default())
-    }
     if builder.service_specific_credential_id.is_none() {
         builder.service_specific_credential_id = Some(Default::default())
     }
@@ -808,9 +802,6 @@ pub(crate) fn service_specific_credential_metadata_correct_errors(
     }
     if builder.status.is_none() {
         builder.status = "no value was set".parse::<crate::types::StatusType>().ok()
-    }
-    if builder.service_user_name.is_none() {
-        builder.service_user_name = Some(Default::default())
     }
     if builder.create_date.is_none() {
         builder.create_date = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))

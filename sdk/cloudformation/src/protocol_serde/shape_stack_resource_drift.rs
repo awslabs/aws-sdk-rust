@@ -143,6 +143,19 @@ pub fn de_stack_resource_drift(
                 builder = builder.set_module_info(var_11);
             }
             ,
+            s if s.matches("DriftStatusReason") /* DriftStatusReason com.amazonaws.cloudformation#StackResourceDrift$DriftStatusReason */ =>  {
+                let var_12 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_drift_status_reason(var_12);
+            }
+            ,
             _ => {}
         }
     }

@@ -12,6 +12,7 @@
 /// ```text
 /// # let sessionfilterkey = unimplemented!();
 /// match sessionfilterkey {
+///     SessionFilterKey::AccessType => { /* ... */ },
 ///     SessionFilterKey::InvokedAfter => { /* ... */ },
 ///     SessionFilterKey::InvokedBefore => { /* ... */ },
 ///     SessionFilterKey::Owner => { /* ... */ },
@@ -47,6 +48,8 @@
 )]
 pub enum SessionFilterKey {
     #[allow(missing_docs)] // documentation missing in model
+    AccessType,
+    #[allow(missing_docs)] // documentation missing in model
     InvokedAfter,
     #[allow(missing_docs)] // documentation missing in model
     InvokedBefore,
@@ -65,6 +68,7 @@ pub enum SessionFilterKey {
 impl ::std::convert::From<&str> for SessionFilterKey {
     fn from(s: &str) -> Self {
         match s {
+            "AccessType" => SessionFilterKey::AccessType,
             "InvokedAfter" => SessionFilterKey::InvokedAfter,
             "InvokedBefore" => SessionFilterKey::InvokedBefore,
             "Owner" => SessionFilterKey::Owner,
@@ -86,6 +90,7 @@ impl SessionFilterKey {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            SessionFilterKey::AccessType => "AccessType",
             SessionFilterKey::InvokedAfter => "InvokedAfter",
             SessionFilterKey::InvokedBefore => "InvokedBefore",
             SessionFilterKey::Owner => "Owner",
@@ -97,7 +102,7 @@ impl SessionFilterKey {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["InvokedAfter", "InvokedBefore", "Owner", "SessionId", "Status", "Target"]
+        &["AccessType", "InvokedAfter", "InvokedBefore", "Owner", "SessionId", "Status", "Target"]
     }
 }
 impl ::std::convert::AsRef<str> for SessionFilterKey {
@@ -120,6 +125,7 @@ impl SessionFilterKey {
 impl ::std::fmt::Display for SessionFilterKey {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            SessionFilterKey::AccessType => write!(f, "AccessType"),
             SessionFilterKey::InvokedAfter => write!(f, "InvokedAfter"),
             SessionFilterKey::InvokedBefore => write!(f, "InvokedBefore"),
             SessionFilterKey::Owner => write!(f, "Owner"),

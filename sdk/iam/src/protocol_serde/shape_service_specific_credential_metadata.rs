@@ -47,8 +47,21 @@ pub fn de_service_specific_credential_metadata(
                 builder = builder.set_service_user_name(var_3);
             }
             ,
-            s if s.matches("CreateDate") /* CreateDate com.amazonaws.iam#ServiceSpecificCredentialMetadata$CreateDate */ =>  {
+            s if s.matches("ServiceCredentialAlias") /* ServiceCredentialAlias com.amazonaws.iam#ServiceSpecificCredentialMetadata$ServiceCredentialAlias */ =>  {
                 let var_4 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_service_credential_alias(var_4);
+            }
+            ,
+            s if s.matches("CreateDate") /* CreateDate com.amazonaws.iam#ServiceSpecificCredentialMetadata$CreateDate */ =>  {
+                let var_5 =
                     Some(
                         ::aws_smithy_types::DateTime::from_str(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -58,11 +71,25 @@ pub fn de_service_specific_credential_metadata(
                         ?
                     )
                 ;
-                builder = builder.set_create_date(var_4);
+                builder = builder.set_create_date(var_5);
+            }
+            ,
+            s if s.matches("ExpirationDate") /* ExpirationDate com.amazonaws.iam#ServiceSpecificCredentialMetadata$ExpirationDate */ =>  {
+                let var_6 =
+                    Some(
+                        ::aws_smithy_types::DateTime::from_str(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            , ::aws_smithy_types::date_time::Format::DateTimeWithOffset
+                        )
+                        .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (timestamp: `com.amazonaws.iam#dateType`)"))
+                        ?
+                    )
+                ;
+                builder = builder.set_expiration_date(var_6);
             }
             ,
             s if s.matches("ServiceSpecificCredentialId") /* ServiceSpecificCredentialId com.amazonaws.iam#ServiceSpecificCredentialMetadata$ServiceSpecificCredentialId */ =>  {
-                let var_5 =
+                let var_7 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -71,11 +98,11 @@ pub fn de_service_specific_credential_metadata(
                         ?
                     )
                 ;
-                builder = builder.set_service_specific_credential_id(var_5);
+                builder = builder.set_service_specific_credential_id(var_7);
             }
             ,
             s if s.matches("ServiceName") /* ServiceName com.amazonaws.iam#ServiceSpecificCredentialMetadata$ServiceName */ =>  {
-                let var_6 =
+                let var_8 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -84,7 +111,7 @@ pub fn de_service_specific_credential_metadata(
                         ?
                     )
                 ;
-                builder = builder.set_service_name(var_6);
+                builder = builder.set_service_name(var_8);
             }
             ,
             _ => {}

@@ -17,7 +17,7 @@ pub struct DescribeStackDriftDetectionStatusOutput {
     /// <li>
     /// <p><code>IN_SYNC</code>: The stack's actual configuration matches its expected template configuration.</p></li>
     /// <li>
-    /// <p><code>UNKNOWN</code>: This value is reserved for future use.</p></li>
+    /// <p><code>UNKNOWN</code>: CloudFormation could not run drift detection for a resource in the stack. See the <code>DetectionStatusReason</code> for details.</p></li>
     /// </ul>
     pub stack_drift_status: ::std::option::Option<crate::types::StackDriftStatus>,
     /// <p>The status of the stack drift detection operation.</p>
@@ -58,7 +58,7 @@ impl DescribeStackDriftDetectionStatusOutput {
     /// <li>
     /// <p><code>IN_SYNC</code>: The stack's actual configuration matches its expected template configuration.</p></li>
     /// <li>
-    /// <p><code>UNKNOWN</code>: This value is reserved for future use.</p></li>
+    /// <p><code>UNKNOWN</code>: CloudFormation could not run drift detection for a resource in the stack. See the <code>DetectionStatusReason</code> for details.</p></li>
     /// </ul>
     pub fn stack_drift_status(&self) -> ::std::option::Option<&crate::types::StackDriftStatus> {
         self.stack_drift_status.as_ref()
@@ -157,7 +157,7 @@ impl DescribeStackDriftDetectionStatusOutputBuilder {
     /// <li>
     /// <p><code>IN_SYNC</code>: The stack's actual configuration matches its expected template configuration.</p></li>
     /// <li>
-    /// <p><code>UNKNOWN</code>: This value is reserved for future use.</p></li>
+    /// <p><code>UNKNOWN</code>: CloudFormation could not run drift detection for a resource in the stack. See the <code>DetectionStatusReason</code> for details.</p></li>
     /// </ul>
     pub fn stack_drift_status(mut self, input: crate::types::StackDriftStatus) -> Self {
         self.stack_drift_status = ::std::option::Option::Some(input);
@@ -172,7 +172,7 @@ impl DescribeStackDriftDetectionStatusOutputBuilder {
     /// <li>
     /// <p><code>IN_SYNC</code>: The stack's actual configuration matches its expected template configuration.</p></li>
     /// <li>
-    /// <p><code>UNKNOWN</code>: This value is reserved for future use.</p></li>
+    /// <p><code>UNKNOWN</code>: CloudFormation could not run drift detection for a resource in the stack. See the <code>DetectionStatusReason</code> for details.</p></li>
     /// </ul>
     pub fn set_stack_drift_status(mut self, input: ::std::option::Option<crate::types::StackDriftStatus>) -> Self {
         self.stack_drift_status = input;
@@ -187,7 +187,7 @@ impl DescribeStackDriftDetectionStatusOutputBuilder {
     /// <li>
     /// <p><code>IN_SYNC</code>: The stack's actual configuration matches its expected template configuration.</p></li>
     /// <li>
-    /// <p><code>UNKNOWN</code>: This value is reserved for future use.</p></li>
+    /// <p><code>UNKNOWN</code>: CloudFormation could not run drift detection for a resource in the stack. See the <code>DetectionStatusReason</code> for details.</p></li>
     /// </ul>
     pub fn get_stack_drift_status(&self) -> &::std::option::Option<crate::types::StackDriftStatus> {
         &self.stack_drift_status

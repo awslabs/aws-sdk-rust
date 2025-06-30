@@ -15,6 +15,14 @@ pub fn ser_create_service_specific_credential_input_input_input(
     if let Some(var_4) = &input.service_name {
         scope_3.string(var_4);
     }
+    #[allow(unused_mut)]
+    let mut scope_5 = writer.prefix("CredentialAgeDays");
+    if let Some(var_6) = &input.credential_age_days {
+        scope_5.number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_6).into()),
+        );
+    }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

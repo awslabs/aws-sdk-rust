@@ -24,6 +24,9 @@ where
                         "formatOptions" => {
                             builder = builder.set_format_options(crate::protocol_serde::shape_format_options::de_format_options(tokens)?);
                         }
+                        "advancedOptions" => {
+                            builder = builder.set_advanced_options(crate::protocol_serde::shape_advanced_options::de_advanced_options(tokens)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {
@@ -56,6 +59,12 @@ pub fn ser_input_conversion(
         let mut object_2 = object.key("formatOptions").start_object();
         crate::protocol_serde::shape_format_options::ser_format_options(&mut object_2, var_1)?;
         object_2.finish();
+    }
+    if let Some(var_3) = &input.advanced_options {
+        #[allow(unused_mut)]
+        let mut object_4 = object.key("advancedOptions").start_object();
+        crate::protocol_serde::shape_advanced_options::ser_advanced_options(&mut object_4, var_3)?;
+        object_4.finish();
     }
     Ok(())
 }

@@ -13,8 +13,12 @@
 /// # let conflictexceptionreason = unimplemented!();
 /// match conflictexceptionreason {
 ///     ConflictExceptionReason::AutoshiftEnabled => { /* ... */ },
+///     ConflictExceptionReason::PracticeBlockingAlarmsRed => { /* ... */ },
 ///     ConflictExceptionReason::PracticeConfigurationAlreadyExists => { /* ... */ },
 ///     ConflictExceptionReason::PracticeConfigurationDoesNotExist => { /* ... */ },
+///     ConflictExceptionReason::PracticeInBlockedDates => { /* ... */ },
+///     ConflictExceptionReason::PracticeInBlockedWindows => { /* ... */ },
+///     ConflictExceptionReason::PracticeOutcomeAlarmsRed => { /* ... */ },
 ///     ConflictExceptionReason::SimultaneousZonalShiftsConflict => { /* ... */ },
 ///     ConflictExceptionReason::ZonalAutoshiftActive => { /* ... */ },
 ///     ConflictExceptionReason::ZonalShiftAlreadyExists => { /* ... */ },
@@ -50,9 +54,17 @@ pub enum ConflictExceptionReason {
     #[allow(missing_docs)] // documentation missing in model
     AutoshiftEnabled,
     #[allow(missing_docs)] // documentation missing in model
+    PracticeBlockingAlarmsRed,
+    #[allow(missing_docs)] // documentation missing in model
     PracticeConfigurationAlreadyExists,
     #[allow(missing_docs)] // documentation missing in model
     PracticeConfigurationDoesNotExist,
+    #[allow(missing_docs)] // documentation missing in model
+    PracticeInBlockedDates,
+    #[allow(missing_docs)] // documentation missing in model
+    PracticeInBlockedWindows,
+    #[allow(missing_docs)] // documentation missing in model
+    PracticeOutcomeAlarmsRed,
     #[allow(missing_docs)] // documentation missing in model
     SimultaneousZonalShiftsConflict,
     #[allow(missing_docs)] // documentation missing in model
@@ -69,8 +81,12 @@ impl ::std::convert::From<&str> for ConflictExceptionReason {
     fn from(s: &str) -> Self {
         match s {
             "AutoShiftEnabled" => ConflictExceptionReason::AutoshiftEnabled,
+            "PracticeBlockingAlarmsRed" => ConflictExceptionReason::PracticeBlockingAlarmsRed,
             "PracticeConfigurationAlreadyExists" => ConflictExceptionReason::PracticeConfigurationAlreadyExists,
             "PracticeConfigurationDoesNotExist" => ConflictExceptionReason::PracticeConfigurationDoesNotExist,
+            "PracticeInBlockedDates" => ConflictExceptionReason::PracticeInBlockedDates,
+            "PracticeInBlockedWindows" => ConflictExceptionReason::PracticeInBlockedWindows,
+            "PracticeOutcomeAlarmsRed" => ConflictExceptionReason::PracticeOutcomeAlarmsRed,
             "SimultaneousZonalShiftsConflict" => ConflictExceptionReason::SimultaneousZonalShiftsConflict,
             "ZonalAutoshiftActive" => ConflictExceptionReason::ZonalAutoshiftActive,
             "ZonalShiftAlreadyExists" => ConflictExceptionReason::ZonalShiftAlreadyExists,
@@ -91,8 +107,12 @@ impl ConflictExceptionReason {
     pub fn as_str(&self) -> &str {
         match self {
             ConflictExceptionReason::AutoshiftEnabled => "AutoShiftEnabled",
+            ConflictExceptionReason::PracticeBlockingAlarmsRed => "PracticeBlockingAlarmsRed",
             ConflictExceptionReason::PracticeConfigurationAlreadyExists => "PracticeConfigurationAlreadyExists",
             ConflictExceptionReason::PracticeConfigurationDoesNotExist => "PracticeConfigurationDoesNotExist",
+            ConflictExceptionReason::PracticeInBlockedDates => "PracticeInBlockedDates",
+            ConflictExceptionReason::PracticeInBlockedWindows => "PracticeInBlockedWindows",
+            ConflictExceptionReason::PracticeOutcomeAlarmsRed => "PracticeOutcomeAlarmsRed",
             ConflictExceptionReason::SimultaneousZonalShiftsConflict => "SimultaneousZonalShiftsConflict",
             ConflictExceptionReason::ZonalAutoshiftActive => "ZonalAutoshiftActive",
             ConflictExceptionReason::ZonalShiftAlreadyExists => "ZonalShiftAlreadyExists",
@@ -104,8 +124,12 @@ impl ConflictExceptionReason {
     pub const fn values() -> &'static [&'static str] {
         &[
             "AutoShiftEnabled",
+            "PracticeBlockingAlarmsRed",
             "PracticeConfigurationAlreadyExists",
             "PracticeConfigurationDoesNotExist",
+            "PracticeInBlockedDates",
+            "PracticeInBlockedWindows",
+            "PracticeOutcomeAlarmsRed",
             "SimultaneousZonalShiftsConflict",
             "ZonalAutoshiftActive",
             "ZonalShiftAlreadyExists",
@@ -134,8 +158,12 @@ impl ::std::fmt::Display for ConflictExceptionReason {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             ConflictExceptionReason::AutoshiftEnabled => write!(f, "AutoShiftEnabled"),
+            ConflictExceptionReason::PracticeBlockingAlarmsRed => write!(f, "PracticeBlockingAlarmsRed"),
             ConflictExceptionReason::PracticeConfigurationAlreadyExists => write!(f, "PracticeConfigurationAlreadyExists"),
             ConflictExceptionReason::PracticeConfigurationDoesNotExist => write!(f, "PracticeConfigurationDoesNotExist"),
+            ConflictExceptionReason::PracticeInBlockedDates => write!(f, "PracticeInBlockedDates"),
+            ConflictExceptionReason::PracticeInBlockedWindows => write!(f, "PracticeInBlockedWindows"),
+            ConflictExceptionReason::PracticeOutcomeAlarmsRed => write!(f, "PracticeOutcomeAlarmsRed"),
             ConflictExceptionReason::SimultaneousZonalShiftsConflict => write!(f, "SimultaneousZonalShiftsConflict"),
             ConflictExceptionReason::ZonalAutoshiftActive => write!(f, "ZonalAutoshiftActive"),
             ConflictExceptionReason::ZonalShiftAlreadyExists => write!(f, "ZonalShiftAlreadyExists"),

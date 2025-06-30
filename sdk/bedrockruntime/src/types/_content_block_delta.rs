@@ -4,6 +4,8 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub enum ContentBlockDelta {
+    /// <p>Incremental citation information that is streamed as part of the response generation process.</p>
+    Citation(crate::types::CitationsDelta),
     /// <p>Contains content regarding the reasoning that is carried out by the model. Reasoning refers to a Chain of Thought (CoT) that the model generates to enhance the accuracy of its final response.</p>
     ReasoningContent(crate::types::ReasoningContentBlockDelta),
     /// <p>The content text.</p>
@@ -21,6 +23,19 @@ pub enum ContentBlockDelta {
     Unknown,
 }
 impl ContentBlockDelta {
+    /// Tries to convert the enum instance into [`Citation`](crate::types::ContentBlockDelta::Citation), extracting the inner [`CitationsDelta`](crate::types::CitationsDelta).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_citation(&self) -> ::std::result::Result<&crate::types::CitationsDelta, &Self> {
+        if let ContentBlockDelta::Citation(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`Citation`](crate::types::ContentBlockDelta::Citation).
+    pub fn is_citation(&self) -> bool {
+        self.as_citation().is_ok()
+    }
     /// Tries to convert the enum instance into [`ReasoningContent`](crate::types::ContentBlockDelta::ReasoningContent), extracting the inner [`ReasoningContentBlockDelta`](crate::types::ReasoningContentBlockDelta).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_reasoning_content(&self) -> ::std::result::Result<&crate::types::ReasoningContentBlockDelta, &Self> {
@@ -68,6 +83,7 @@ impl ContentBlockDelta {
 impl ::std::fmt::Debug for ContentBlockDelta {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         match self {
+            ContentBlockDelta::Citation(val) => f.debug_tuple("Citation").field(&val).finish(),
             ContentBlockDelta::ReasoningContent(_) => f.debug_tuple("*** Sensitive Data Redacted ***").finish(),
             ContentBlockDelta::Text(val) => f.debug_tuple("Text").field(&val).finish(),
             ContentBlockDelta::ToolUse(val) => f.debug_tuple("ToolUse").field(&val).finish(),

@@ -101,6 +101,18 @@ pub use crate::types::_content_block_delta_event::ContentBlockDeltaEvent;
 
 pub use crate::types::_content_block_delta::ContentBlockDelta;
 
+pub use crate::types::_citations_delta::CitationsDelta;
+
+pub use crate::types::_citation_location::CitationLocation;
+
+pub use crate::types::_document_chunk_location::DocumentChunkLocation;
+
+pub use crate::types::_document_page_location::DocumentPageLocation;
+
+pub use crate::types::_document_char_location::DocumentCharLocation;
+
+pub use crate::types::_citation_source_content_delta::CitationSourceContentDelta;
+
 pub use crate::types::_reasoning_content_block_delta::ReasoningContentBlockDelta;
 
 pub use crate::types::_tool_use_block_delta::ToolUseBlockDelta;
@@ -163,6 +175,14 @@ pub use crate::types::_message::Message;
 
 pub use crate::types::_content_block::ContentBlock;
 
+pub use crate::types::_citations_content_block::CitationsContentBlock;
+
+pub use crate::types::_citation::Citation;
+
+pub use crate::types::_citation_source_content::CitationSourceContent;
+
+pub use crate::types::_citation_generated_content::CitationGeneratedContent;
+
 pub use crate::types::_reasoning_content_block::ReasoningContentBlock;
 
 pub use crate::types::_reasoning_text_block::ReasoningTextBlock;
@@ -183,7 +203,11 @@ pub use crate::types::_video_format::VideoFormat;
 
 pub use crate::types::_document_block::DocumentBlock;
 
+pub use crate::types::_citations_config::CitationsConfig;
+
 pub use crate::types::_document_source::DocumentSource;
+
+pub use crate::types::_document_content_block::DocumentContentBlock;
 
 pub use crate::types::_document_format::DocumentFormat;
 
@@ -257,6 +281,22 @@ mod _cache_point_block;
 
 mod _cache_point_type;
 
+mod _citation;
+
+mod _citation_generated_content;
+
+mod _citation_location;
+
+mod _citation_source_content;
+
+mod _citation_source_content_delta;
+
+mod _citations_config;
+
+mod _citations_content_block;
+
+mod _citations_delta;
+
 mod _content_block;
 
 mod _content_block_delta;
@@ -287,7 +327,15 @@ mod _converse_trace;
 
 mod _document_block;
 
+mod _document_char_location;
+
+mod _document_chunk_location;
+
+mod _document_content_block;
+
 mod _document_format;
+
+mod _document_page_location;
 
 mod _document_source;
 

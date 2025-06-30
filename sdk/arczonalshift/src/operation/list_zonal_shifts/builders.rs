@@ -22,7 +22,8 @@ impl crate::operation::list_zonal_shifts::builders::ListZonalShiftsInputBuilder 
 }
 /// Fluent builder constructing a request to `ListZonalShifts`.
 ///
-/// <p>Lists all active and completed zonal shifts in Amazon Route 53 Application Recovery Controller in your Amazon Web Services account in this Amazon Web Services Region.</p>
+/// <p>Lists all active and completed zonal shifts in Amazon Application Recovery Controller in your Amazon Web Services account in this Amazon Web Services Region. <code>ListZonalShifts</code> returns customer-initiated zonal shifts, as well as practice run zonal shifts that ARC started on your behalf for zonal autoshift.</p>
+/// <p>For more information about listing autoshifts, see <a href="https://docs.aws.amazon.com/arc-zonal-shift/latest/api/API_ListAutoshifts.html">"&gt;ListAutoshifts</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListZonalShiftsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -132,7 +133,7 @@ impl ListZonalShiftsFluentBuilder {
     /// <p>The <code>Status</code> for a zonal shift can have one of the following values:</p>
     /// <ul>
     /// <li>
-    /// <p><b>ACTIVE</b>: The zonal shift has been started and active.</p></li>
+    /// <p><b>ACTIVE</b>: The zonal shift has been started and is active.</p></li>
     /// <li>
     /// <p><b>EXPIRED</b>: The zonal shift has expired (the expiry time was exceeded).</p></li>
     /// <li>
@@ -146,7 +147,7 @@ impl ListZonalShiftsFluentBuilder {
     /// <p>The <code>Status</code> for a zonal shift can have one of the following values:</p>
     /// <ul>
     /// <li>
-    /// <p><b>ACTIVE</b>: The zonal shift has been started and active.</p></li>
+    /// <p><b>ACTIVE</b>: The zonal shift has been started and is active.</p></li>
     /// <li>
     /// <p><b>EXPIRED</b>: The zonal shift has expired (the expiry time was exceeded).</p></li>
     /// <li>
@@ -160,7 +161,7 @@ impl ListZonalShiftsFluentBuilder {
     /// <p>The <code>Status</code> for a zonal shift can have one of the following values:</p>
     /// <ul>
     /// <li>
-    /// <p><b>ACTIVE</b>: The zonal shift has been started and active.</p></li>
+    /// <p><b>ACTIVE</b>: The zonal shift has been started and is active.</p></li>
     /// <li>
     /// <p><b>EXPIRED</b>: The zonal shift has expired (the expiry time was exceeded).</p></li>
     /// <li>

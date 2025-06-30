@@ -619,6 +619,12 @@ pub use crate::types::_email_recipient::EmailRecipientBuilder;
 
 pub use crate::types::_disconnect_details::DisconnectDetailsBuilder;
 
+pub use crate::types::_chat_metrics::ChatMetricsBuilder;
+
+pub use crate::types::_participant_metrics::ParticipantMetricsBuilder;
+
+pub use crate::types::_chat_contact_metrics::ChatContactMetricsBuilder;
+
 pub use crate::types::_quality_metrics::QualityMetricsBuilder;
 
 pub use crate::types::_customer_quality_metrics::CustomerQualityMetricsBuilder;

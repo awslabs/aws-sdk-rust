@@ -25,6 +25,8 @@ pub struct EndpointDetails {
     /// <p><code>AddressAllocationIds</code> can't contain duplicates, and must be equal in length to <code>SubnetIds</code>. For example, if you have three subnet IDs, you must also specify three address allocation IDs.</p></li>
     /// <li>
     /// <p>Call the <code>UpdateServer</code> API to set or change this parameter.</p></li>
+    /// <li>
+    /// <p>You can't set address allocation IDs for servers that have an <code>IpAddressType</code> set to <code>DUALSTACK</code> You can only set this property if <code>IpAddressType</code> is set to <code>IPV4</code>.</p></li>
     /// </ul>
     /// </note>
     pub address_allocation_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -65,6 +67,8 @@ impl EndpointDetails {
     /// <p><code>AddressAllocationIds</code> can't contain duplicates, and must be equal in length to <code>SubnetIds</code>. For example, if you have three subnet IDs, you must also specify three address allocation IDs.</p></li>
     /// <li>
     /// <p>Call the <code>UpdateServer</code> API to set or change this parameter.</p></li>
+    /// <li>
+    /// <p>You can't set address allocation IDs for servers that have an <code>IpAddressType</code> set to <code>DUALSTACK</code> You can only set this property if <code>IpAddressType</code> is set to <code>IPV4</code>.</p></li>
     /// </ul>
     /// </note>
     ///
@@ -142,6 +146,8 @@ impl EndpointDetailsBuilder {
     /// <p><code>AddressAllocationIds</code> can't contain duplicates, and must be equal in length to <code>SubnetIds</code>. For example, if you have three subnet IDs, you must also specify three address allocation IDs.</p></li>
     /// <li>
     /// <p>Call the <code>UpdateServer</code> API to set or change this parameter.</p></li>
+    /// <li>
+    /// <p>You can't set address allocation IDs for servers that have an <code>IpAddressType</code> set to <code>DUALSTACK</code> You can only set this property if <code>IpAddressType</code> is set to <code>IPV4</code>.</p></li>
     /// </ul>
     /// </note>
     pub fn address_allocation_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -167,6 +173,8 @@ impl EndpointDetailsBuilder {
     /// <p><code>AddressAllocationIds</code> can't contain duplicates, and must be equal in length to <code>SubnetIds</code>. For example, if you have three subnet IDs, you must also specify three address allocation IDs.</p></li>
     /// <li>
     /// <p>Call the <code>UpdateServer</code> API to set or change this parameter.</p></li>
+    /// <li>
+    /// <p>You can't set address allocation IDs for servers that have an <code>IpAddressType</code> set to <code>DUALSTACK</code> You can only set this property if <code>IpAddressType</code> is set to <code>IPV4</code>.</p></li>
     /// </ul>
     /// </note>
     pub fn set_address_allocation_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
@@ -190,6 +198,8 @@ impl EndpointDetailsBuilder {
     /// <p><code>AddressAllocationIds</code> can't contain duplicates, and must be equal in length to <code>SubnetIds</code>. For example, if you have three subnet IDs, you must also specify three address allocation IDs.</p></li>
     /// <li>
     /// <p>Call the <code>UpdateServer</code> API to set or change this parameter.</p></li>
+    /// <li>
+    /// <p>You can't set address allocation IDs for servers that have an <code>IpAddressType</code> set to <code>DUALSTACK</code> You can only set this property if <code>IpAddressType</code> is set to <code>IPV4</code>.</p></li>
     /// </ul>
     /// </note>
     pub fn get_address_allocation_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {

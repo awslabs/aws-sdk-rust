@@ -6,7 +6,7 @@
 pub struct Tag {
     /// <p><i>Required</i>. A string used to identify this tag. You can specify a maximum of 128 characters for a tag key. Tags owned by Amazon Web Services have the reserved prefix: <code>aws:</code>.</p>
     pub key: ::std::option::Option<::std::string::String>,
-    /// <p><i>Required</i>. A string containing the value for this tag. You can specify a maximum of 256 characters for a tag value.</p>
+    /// <p><i>Required</i>. A string that contains the value for this tag. You can specify a maximum of 256 characters for a tag value.</p>
     pub value: ::std::option::Option<::std::string::String>,
 }
 impl Tag {
@@ -14,7 +14,7 @@ impl Tag {
     pub fn key(&self) -> ::std::option::Option<&str> {
         self.key.as_deref()
     }
-    /// <p><i>Required</i>. A string containing the value for this tag. You can specify a maximum of 256 characters for a tag value.</p>
+    /// <p><i>Required</i>. A string that contains the value for this tag. You can specify a maximum of 256 characters for a tag value.</p>
     pub fn value(&self) -> ::std::option::Option<&str> {
         self.value.as_deref()
     }
@@ -49,18 +49,18 @@ impl TagBuilder {
     pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
         &self.key
     }
-    /// <p><i>Required</i>. A string containing the value for this tag. You can specify a maximum of 256 characters for a tag value.</p>
+    /// <p><i>Required</i>. A string that contains the value for this tag. You can specify a maximum of 256 characters for a tag value.</p>
     /// This field is required.
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.value = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p><i>Required</i>. A string containing the value for this tag. You can specify a maximum of 256 characters for a tag value.</p>
+    /// <p><i>Required</i>. A string that contains the value for this tag. You can specify a maximum of 256 characters for a tag value.</p>
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.value = input;
         self
     }
-    /// <p><i>Required</i>. A string containing the value for this tag. You can specify a maximum of 256 characters for a tag value.</p>
+    /// <p><i>Required</i>. A string that contains the value for this tag. You can specify a maximum of 256 characters for a tag value.</p>
     pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
         &self.value
     }

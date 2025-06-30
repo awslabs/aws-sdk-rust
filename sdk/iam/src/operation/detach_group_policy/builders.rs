@@ -23,7 +23,7 @@ impl crate::operation::detach_group_policy::builders::DetachGroupPolicyInputBuil
 /// Fluent builder constructing a request to `DetachGroupPolicy`.
 ///
 /// <p>Removes the specified managed policy from the specified IAM group.</p>
-/// <p>A group can also have inline policies embedded with it. To delete an inline policy, use <code>DeleteGroupPolicy</code>. For information about policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed policies and inline policies</a> in the <i>IAM User Guide</i>.</p>
+/// <p>A group can also have inline policies embedded with it. To delete an inline policy, use <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_DeleteGroupPolicy.html">DeleteGroupPolicy</a>. For information about policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed policies and inline policies</a> in the <i>IAM User Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DetachGroupPolicyFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

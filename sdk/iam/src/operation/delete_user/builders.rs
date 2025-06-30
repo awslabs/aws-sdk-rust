@@ -25,23 +25,23 @@ impl crate::operation::delete_user::builders::DeleteUserInputBuilder {
 /// <p>Deletes the specified IAM user. Unlike the Amazon Web Services Management Console, when you delete a user programmatically, you must delete the items attached to the user manually, or the deletion fails. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_users_manage.html#id_users_deleting_cli">Deleting an IAM user</a>. Before attempting to delete a user, remove the following items:</p>
 /// <ul>
 /// <li>
-/// <p>Password (<code>DeleteLoginProfile</code>)</p></li>
+/// <p>Password (<a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_DeleteLoginProfile.html">DeleteLoginProfile</a>)</p></li>
 /// <li>
-/// <p>Access keys (<code>DeleteAccessKey</code>)</p></li>
+/// <p>Access keys (<a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_DeleteAccessKey.html">DeleteAccessKey</a>)</p></li>
 /// <li>
-/// <p>Signing certificate (<code>DeleteSigningCertificate</code>)</p></li>
+/// <p>Signing certificate (<a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_DeleteSigningCertificate.html">DeleteSigningCertificate</a>)</p></li>
 /// <li>
-/// <p>SSH public key (<code>DeleteSSHPublicKey</code>)</p></li>
+/// <p>SSH public key (<a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_DeleteSSHPublicKey.html">DeleteSSHPublicKey</a>)</p></li>
 /// <li>
-/// <p>Git credentials (<code>DeleteServiceSpecificCredential</code>)</p></li>
+/// <p>Git credentials (<a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_DeleteServiceSpecificCredential.html">DeleteServiceSpecificCredential</a>)</p></li>
 /// <li>
-/// <p>Multi-factor authentication (MFA) device (<code>DeactivateMFADevice</code>, <code>DeleteVirtualMFADevice</code>)</p></li>
+/// <p>Multi-factor authentication (MFA) device (<a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_DeactivateMFADevice.html">DeactivateMFADevice</a>, <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_DeleteVirtualMFADevice.html">DeleteVirtualMFADevice</a>)</p></li>
 /// <li>
-/// <p>Inline policies (<code>DeleteUserPolicy</code>)</p></li>
+/// <p>Inline policies (<a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_DeleteUserPolicy.html">DeleteUserPolicy</a>)</p></li>
 /// <li>
-/// <p>Attached managed policies (<code>DetachUserPolicy</code>)</p></li>
+/// <p>Attached managed policies (<a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_DetachUserPolicy.html">DetachUserPolicy</a>)</p></li>
 /// <li>
-/// <p>Group memberships (<code>RemoveUserFromGroup</code>)</p></li>
+/// <p>Group memberships (<a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_RemoveUserFromGroup.html">RemoveUserFromGroup</a>)</p></li>
 /// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteUserFluentBuilder {

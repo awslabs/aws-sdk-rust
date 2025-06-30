@@ -9,9 +9,9 @@ pub enum Error {
     CallerIsNotManagementAccountException(crate::types::error::CallerIsNotManagementAccountException),
     /// <p>The request was rejected because multiple requests to change this object were submitted simultaneously. Wait a few minutes and submit your request again.</p>
     ConcurrentModificationException(crate::types::error::ConcurrentModificationException),
-    /// <p>The request was rejected because the most recent credential report has expired. To generate a new credential report, use <code>GenerateCredentialReport</code>. For more information about credential report expiration, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/credential-reports.html">Getting credential reports</a> in the <i>IAM User Guide</i>.</p>
+    /// <p>The request was rejected because the most recent credential report has expired. To generate a new credential report, use <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_GenerateCredentialReport.html">GenerateCredentialReport</a>. For more information about credential report expiration, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/credential-reports.html">Getting credential reports</a> in the <i>IAM User Guide</i>.</p>
     CredentialReportExpiredException(crate::types::error::CredentialReportExpiredException),
-    /// <p>The request was rejected because the credential report does not exist. To generate a credential report, use <code>GenerateCredentialReport</code>.</p>
+    /// <p>The request was rejected because the credential report does not exist. To generate a credential report, use <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_GenerateCredentialReport.html">GenerateCredentialReport</a>.</p>
     CredentialReportNotPresentException(crate::types::error::CredentialReportNotPresentException),
     /// <p>The request was rejected because the credential report is still being generated.</p>
     CredentialReportNotReadyException(crate::types::error::CredentialReportNotReadyException),
@@ -4551,6 +4551,7 @@ where
 impl From<crate::operation::update_access_key::UpdateAccessKeyError> for Error {
     fn from(err: crate::operation::update_access_key::UpdateAccessKeyError) -> Self {
         match err {
+            crate::operation::update_access_key::UpdateAccessKeyError::InvalidInputException(inner) => Error::InvalidInputException(inner),
             crate::operation::update_access_key::UpdateAccessKeyError::LimitExceededException(inner) => Error::LimitExceededException(inner),
             crate::operation::update_access_key::UpdateAccessKeyError::NoSuchEntityException(inner) => Error::NoSuchEntityException(inner),
             crate::operation::update_access_key::UpdateAccessKeyError::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
@@ -4907,6 +4908,9 @@ where
 impl From<crate::operation::update_signing_certificate::UpdateSigningCertificateError> for Error {
     fn from(err: crate::operation::update_signing_certificate::UpdateSigningCertificateError) -> Self {
         match err {
+            crate::operation::update_signing_certificate::UpdateSigningCertificateError::InvalidInputException(inner) => {
+                Error::InvalidInputException(inner)
+            }
             crate::operation::update_signing_certificate::UpdateSigningCertificateError::LimitExceededException(inner) => {
                 Error::LimitExceededException(inner)
             }
@@ -4937,6 +4941,7 @@ where
 impl From<crate::operation::update_ssh_public_key::UpdateSSHPublicKeyError> for Error {
     fn from(err: crate::operation::update_ssh_public_key::UpdateSSHPublicKeyError) -> Self {
         match err {
+            crate::operation::update_ssh_public_key::UpdateSSHPublicKeyError::InvalidInputException(inner) => Error::InvalidInputException(inner),
             crate::operation::update_ssh_public_key::UpdateSSHPublicKeyError::NoSuchEntityException(inner) => Error::NoSuchEntityException(inner),
             crate::operation::update_ssh_public_key::UpdateSSHPublicKeyError::Unhandled(inner) => Error::Unhandled(inner),
         }

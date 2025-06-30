@@ -22,7 +22,9 @@ impl crate::operation::describe_stack_set_operation::builders::DescribeStackSetO
 }
 /// Fluent builder constructing a request to `DescribeStackSetOperation`.
 ///
-/// <p>Returns the description of the specified StackSet operation.</p>
+/// <p>Returns the description of the specified StackSet operation.</p><note>
+/// <p>This API provides <i>strongly consistent</i> reads meaning it will always return the most up-to-date data.</p>
+/// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeStackSetOperationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

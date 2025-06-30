@@ -22,7 +22,7 @@ impl crate::operation::get_service_linked_role_deletion_status::builders::GetSer
 }
 /// Fluent builder constructing a request to `GetServiceLinkedRoleDeletionStatus`.
 ///
-/// <p>Retrieves the status of your service-linked role deletion. After you use <code>DeleteServiceLinkedRole</code> to submit a service-linked role for deletion, you can use the <code>DeletionTaskId</code> parameter in <code>GetServiceLinkedRoleDeletionStatus</code> to check the status of the deletion. If the deletion fails, this operation returns the reason that it failed, if that information is returned by the service.</p>
+/// <p>Retrieves the status of your service-linked role deletion. After you use <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_DeleteServiceLinkedRole.html">DeleteServiceLinkedRole</a> to submit a service-linked role for deletion, you can use the <code>DeletionTaskId</code> parameter in <code>GetServiceLinkedRoleDeletionStatus</code> to check the status of the deletion. If the deletion fails, this operation returns the reason that it failed, if that information is returned by the service.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetServiceLinkedRoleDeletionStatusFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -109,7 +109,7 @@ impl GetServiceLinkedRoleDeletionStatusFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The deletion task identifier. This identifier is returned by the <code>DeleteServiceLinkedRole</code> operation in the format <code>task/aws-service-role/<service-principal-name>
+    /// <p>The deletion task identifier. This identifier is returned by the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_DeleteServiceLinkedRole.html">DeleteServiceLinkedRole</a> operation in the format <code>task/aws-service-role/<service-principal-name>
     /// /
     /// <role-name>
     /// /
@@ -120,7 +120,7 @@ impl GetServiceLinkedRoleDeletionStatusFluentBuilder {
         self.inner = self.inner.deletion_task_id(input.into());
         self
     }
-    /// <p>The deletion task identifier. This identifier is returned by the <code>DeleteServiceLinkedRole</code> operation in the format <code>task/aws-service-role/<service-principal-name>
+    /// <p>The deletion task identifier. This identifier is returned by the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_DeleteServiceLinkedRole.html">DeleteServiceLinkedRole</a> operation in the format <code>task/aws-service-role/<service-principal-name>
     /// /
     /// <role-name>
     /// /
@@ -131,7 +131,7 @@ impl GetServiceLinkedRoleDeletionStatusFluentBuilder {
         self.inner = self.inner.set_deletion_task_id(input);
         self
     }
-    /// <p>The deletion task identifier. This identifier is returned by the <code>DeleteServiceLinkedRole</code> operation in the format <code>task/aws-service-role/<service-principal-name>
+    /// <p>The deletion task identifier. This identifier is returned by the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_DeleteServiceLinkedRole.html">DeleteServiceLinkedRole</a> operation in the format <code>task/aws-service-role/<service-principal-name>
     /// /
     /// <role-name>
     /// /

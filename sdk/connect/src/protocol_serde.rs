@@ -1427,6 +1427,8 @@ pub(crate) mod shape_available_number_summary;
 
 pub(crate) mod shape_campaign;
 
+pub(crate) mod shape_chat_metrics;
+
 pub(crate) mod shape_chat_participant_role_config;
 
 pub(crate) mod shape_contact_analysis;
@@ -1721,6 +1723,8 @@ pub(crate) mod shape_case_sla_configuration;
 
 pub(crate) mod shape_channel_to_count_map;
 
+pub(crate) mod shape_chat_contact_metrics;
+
 pub(crate) mod shape_common_attribute_and_condition;
 
 pub(crate) mod shape_condition;
@@ -1782,6 +1786,8 @@ pub(crate) mod shape_notification_recipient_type;
 pub(crate) mod shape_number_reference;
 
 pub(crate) mod shape_operational_hours;
+
+pub(crate) mod shape_participant_metrics;
 
 pub(crate) mod shape_participant_timer_configuration;
 

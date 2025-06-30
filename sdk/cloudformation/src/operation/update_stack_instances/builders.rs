@@ -25,7 +25,16 @@ impl crate::operation::update_stack_instances::builders::UpdateStackInstancesInp
 /// <p>Updates the parameter values for stack instances for the specified accounts, within the specified Amazon Web Services Regions. A stack instance refers to a stack in a specific account and Region.</p>
 /// <p>You can only update stack instances in Amazon Web Services Regions and accounts where they already exist; to create additional stack instances, use <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_CreateStackInstances.html">CreateStackInstances</a>.</p>
 /// <p>During stack set updates, any parameters overridden for a stack instance aren't updated, but retain their overridden value.</p>
-/// <p>You can only update the parameter <i>values</i> that are specified in the stack set; to add or delete a parameter itself, use <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_UpdateStackSet.html">UpdateStackSet</a> to update the stack set template. If you add a parameter to a template, before you can override the parameter value specified in the stack set you must first use <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_UpdateStackSet.html">UpdateStackSet</a> to update all stack instances with the updated template and parameter value specified in the stack set. Once a stack instance has been updated with the new parameter, you can then override the parameter value using <code>UpdateStackInstances</code>.</p>
+/// <p>You can only update the parameter <i>values</i> that are specified in the stack set; to add or delete a parameter itself, use <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_UpdateStackSet.html">UpdateStackSet</a> to update the stack set template. If you add a parameter to a template, before you can override the parameter value specified in the stack set you must first use <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_UpdateStackSet.html">UpdateStackSet</a> to update all stack instances with the updated template and parameter value specified in the stack set. Once a stack instance has been updated with the new parameter, you can then override the parameter value using <code>UpdateStackInstances</code>.</p><note>
+/// <p>The maximum number of organizational unit (OUs) supported by a <code>UpdateStackInstances</code> operation is 50.</p>
+/// <p>If you need more than 50, consider the following options:</p>
+/// <ul>
+/// <li>
+/// <p><i>Batch processing:</i> If you don't want to expose your OU hierarchy, split up the operations into multiple calls with less than 50 OUs each.</p></li>
+/// <li>
+/// <p><i>Parent OU strategy:</i> If you don't mind exposing the OU hierarchy, target a parent OU that contains all desired child OUs.</p></li>
+/// </ul>
+/// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateStackInstancesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

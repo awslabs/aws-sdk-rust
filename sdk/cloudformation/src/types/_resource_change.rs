@@ -39,9 +39,9 @@ pub struct ResourceChange {
     pub change_set_id: ::std::option::Option<::std::string::String>,
     /// <p>Contains information about the module from which the resource was created, if the resource was created from a module included in the stack template.</p>
     pub module_info: ::std::option::Option<crate::types::ModuleInfo>,
-    /// <p>An encoded JSON string containing the context of the resource before the change is executed.</p>
+    /// <p>An encoded JSON string that contains the context of the resource before the change is executed.</p>
     pub before_context: ::std::option::Option<::std::string::String>,
-    /// <p>An encoded JSON string containing the context of the resource after the change is executed.</p>
+    /// <p>An encoded JSON string that contains the context of the resource after the change is executed.</p>
     pub after_context: ::std::option::Option<::std::string::String>,
 }
 impl ResourceChange {
@@ -104,11 +104,11 @@ impl ResourceChange {
     pub fn module_info(&self) -> ::std::option::Option<&crate::types::ModuleInfo> {
         self.module_info.as_ref()
     }
-    /// <p>An encoded JSON string containing the context of the resource before the change is executed.</p>
+    /// <p>An encoded JSON string that contains the context of the resource before the change is executed.</p>
     pub fn before_context(&self) -> ::std::option::Option<&str> {
         self.before_context.as_deref()
     }
-    /// <p>An encoded JSON string containing the context of the resource after the change is executed.</p>
+    /// <p>An encoded JSON string that contains the context of the resource after the change is executed.</p>
     pub fn after_context(&self) -> ::std::option::Option<&str> {
         self.after_context.as_deref()
     }
@@ -335,31 +335,31 @@ impl ResourceChangeBuilder {
     pub fn get_module_info(&self) -> &::std::option::Option<crate::types::ModuleInfo> {
         &self.module_info
     }
-    /// <p>An encoded JSON string containing the context of the resource before the change is executed.</p>
+    /// <p>An encoded JSON string that contains the context of the resource before the change is executed.</p>
     pub fn before_context(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.before_context = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>An encoded JSON string containing the context of the resource before the change is executed.</p>
+    /// <p>An encoded JSON string that contains the context of the resource before the change is executed.</p>
     pub fn set_before_context(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.before_context = input;
         self
     }
-    /// <p>An encoded JSON string containing the context of the resource before the change is executed.</p>
+    /// <p>An encoded JSON string that contains the context of the resource before the change is executed.</p>
     pub fn get_before_context(&self) -> &::std::option::Option<::std::string::String> {
         &self.before_context
     }
-    /// <p>An encoded JSON string containing the context of the resource after the change is executed.</p>
+    /// <p>An encoded JSON string that contains the context of the resource after the change is executed.</p>
     pub fn after_context(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.after_context = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>An encoded JSON string containing the context of the resource after the change is executed.</p>
+    /// <p>An encoded JSON string that contains the context of the resource after the change is executed.</p>
     pub fn set_after_context(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.after_context = input;
         self
     }
-    /// <p>An encoded JSON string containing the context of the resource after the change is executed.</p>
+    /// <p>An encoded JSON string that contains the context of the resource after the change is executed.</p>
     pub fn get_after_context(&self) -> &::std::option::Option<::std::string::String> {
         &self.after_context
     }

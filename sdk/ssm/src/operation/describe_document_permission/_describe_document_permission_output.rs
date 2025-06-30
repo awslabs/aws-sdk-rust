@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeDocumentPermissionOutput {
-    /// <p>The account IDs that have permission to use this document. The ID can be either an Amazon Web Services account or <i>All</i>.</p>
+    /// <p>The account IDs that have permission to use this document. The ID can be either an Amazon Web Services account number or <code>all</code>.</p>
     pub account_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A list of Amazon Web Services accounts where the current document is shared and the version shared with each account.</p>
     pub account_sharing_info_list: ::std::option::Option<::std::vec::Vec<crate::types::AccountSharingInfo>>,
@@ -12,7 +12,7 @@ pub struct DescribeDocumentPermissionOutput {
     _request_id: Option<String>,
 }
 impl DescribeDocumentPermissionOutput {
-    /// <p>The account IDs that have permission to use this document. The ID can be either an Amazon Web Services account or <i>All</i>.</p>
+    /// <p>The account IDs that have permission to use this document. The ID can be either an Amazon Web Services account number or <code>all</code>.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.account_ids.is_none()`.
     pub fn account_ids(&self) -> &[::std::string::String] {
@@ -55,19 +55,19 @@ impl DescribeDocumentPermissionOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_account_ids`](Self::set_account_ids).
     ///
-    /// <p>The account IDs that have permission to use this document. The ID can be either an Amazon Web Services account or <i>All</i>.</p>
+    /// <p>The account IDs that have permission to use this document. The ID can be either an Amazon Web Services account number or <code>all</code>.</p>
     pub fn account_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.account_ids.unwrap_or_default();
         v.push(input.into());
         self.account_ids = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The account IDs that have permission to use this document. The ID can be either an Amazon Web Services account or <i>All</i>.</p>
+    /// <p>The account IDs that have permission to use this document. The ID can be either an Amazon Web Services account number or <code>all</code>.</p>
     pub fn set_account_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.account_ids = input;
         self
     }
-    /// <p>The account IDs that have permission to use this document. The ID can be either an Amazon Web Services account or <i>All</i>.</p>
+    /// <p>The account IDs that have permission to use this document. The ID can be either an Amazon Web Services account number or <code>all</code>.</p>
     pub fn get_account_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.account_ids
     }

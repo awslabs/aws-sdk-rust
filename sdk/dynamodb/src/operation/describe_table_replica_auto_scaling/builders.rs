@@ -22,9 +22,7 @@ impl crate::operation::describe_table_replica_auto_scaling::builders::DescribeTa
 }
 /// Fluent builder constructing a request to `DescribeTableReplicaAutoScaling`.
 ///
-/// <p>Describes auto scaling settings across replicas of the global table at once.</p><important>
-/// <p>For global tables, this operation only applies to global tables using Version 2019.11.21 (Current version).</p>
-/// </important>
+/// <p>Describes auto scaling settings across replicas of the global table at once.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeTableReplicaAutoScalingFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

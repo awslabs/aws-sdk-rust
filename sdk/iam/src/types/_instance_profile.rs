@@ -4,13 +4,13 @@
 /// <p>This data type is used as a response element in the following operations:</p>
 /// <ul>
 /// <li>
-/// <p><code>CreateInstanceProfile</code></p></li>
+/// <p><a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateInstanceProfile.html">CreateInstanceProfile</a></p></li>
 /// <li>
-/// <p><code>GetInstanceProfile</code></p></li>
+/// <p><a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetInstanceProfile.html">GetInstanceProfile</a></p></li>
 /// <li>
-/// <p><code>ListInstanceProfiles</code></p></li>
+/// <p><a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_ListInstanceProfiles.html">ListInstanceProfiles</a></p></li>
 /// <li>
-/// <p><code>ListInstanceProfilesForRole</code></p></li>
+/// <p><a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_ListInstanceProfilesForRole.html">ListInstanceProfilesForRole</a></p></li>
 /// </ul>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]

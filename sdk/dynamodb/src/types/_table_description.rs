@@ -159,6 +159,8 @@ pub struct TableDescription {
     pub global_table_version: ::std::option::Option<::std::string::String>,
     /// <p>Represents replicas of the table.</p>
     pub replicas: ::std::option::Option<::std::vec::Vec<crate::types::ReplicaDescription>>,
+    /// <p>The witness Region and its current status in the MRSC global table. Only one witness Region can be configured per MRSC global table.</p>
+    pub global_table_witnesses: ::std::option::Option<::std::vec::Vec<crate::types::GlobalTableWitnessDescription>>,
     /// <p>Contains details for the restore.</p>
     pub restore_summary: ::std::option::Option<crate::types::RestoreSummary>,
     /// <p>The description of the server-side encryption status on the specified table.</p>
@@ -176,13 +178,11 @@ pub struct TableDescription {
     /// <p>Indicates one of the following consistency modes for a global table:</p>
     /// <ul>
     /// <li>
-    /// <p><code>EVENTUAL</code>: Indicates that the global table is configured for multi-Region eventual consistency.</p></li>
+    /// <p><code>EVENTUAL</code>: Indicates that the global table is configured for multi-Region eventual consistency (MREC).</p></li>
     /// <li>
-    /// <p><code>STRONG</code>: Indicates that the global table is configured for multi-Region strong consistency (preview).</p><note>
-    /// <p>Multi-Region strong consistency (MRSC) is a new DynamoDB global tables capability currently available in preview mode. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/PreviewFeatures.html#multi-region-strong-consistency-gt">Global tables multi-Region strong consistency</a>.</p>
-    /// </note></li>
+    /// <p><code>STRONG</code>: Indicates that the global table is configured for multi-Region strong consistency (MRSC).</p></li>
     /// </ul>
-    /// <p>If you don't specify this field, the global table consistency mode defaults to <code>EVENTUAL</code>.</p>
+    /// <p>If you don't specify this field, the global table consistency mode defaults to <code>EVENTUAL</code>. For more information about global tables consistency modes, see <a href="https://docs.aws.amazon.com/V2globaltables_HowItWorks.html#V2globaltables_HowItWorks.consistency-modes"> Consistency modes</a> in DynamoDB developer guide.</p>
     pub multi_region_consistency: ::std::option::Option<crate::types::MultiRegionConsistency>,
 }
 impl TableDescription {
@@ -387,6 +387,12 @@ impl TableDescription {
     pub fn replicas(&self) -> &[crate::types::ReplicaDescription] {
         self.replicas.as_deref().unwrap_or_default()
     }
+    /// <p>The witness Region and its current status in the MRSC global table. Only one witness Region can be configured per MRSC global table.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.global_table_witnesses.is_none()`.
+    pub fn global_table_witnesses(&self) -> &[crate::types::GlobalTableWitnessDescription] {
+        self.global_table_witnesses.as_deref().unwrap_or_default()
+    }
     /// <p>Contains details for the restore.</p>
     pub fn restore_summary(&self) -> ::std::option::Option<&crate::types::RestoreSummary> {
         self.restore_summary.as_ref()
@@ -418,13 +424,11 @@ impl TableDescription {
     /// <p>Indicates one of the following consistency modes for a global table:</p>
     /// <ul>
     /// <li>
-    /// <p><code>EVENTUAL</code>: Indicates that the global table is configured for multi-Region eventual consistency.</p></li>
+    /// <p><code>EVENTUAL</code>: Indicates that the global table is configured for multi-Region eventual consistency (MREC).</p></li>
     /// <li>
-    /// <p><code>STRONG</code>: Indicates that the global table is configured for multi-Region strong consistency (preview).</p><note>
-    /// <p>Multi-Region strong consistency (MRSC) is a new DynamoDB global tables capability currently available in preview mode. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/PreviewFeatures.html#multi-region-strong-consistency-gt">Global tables multi-Region strong consistency</a>.</p>
-    /// </note></li>
+    /// <p><code>STRONG</code>: Indicates that the global table is configured for multi-Region strong consistency (MRSC).</p></li>
     /// </ul>
-    /// <p>If you don't specify this field, the global table consistency mode defaults to <code>EVENTUAL</code>.</p>
+    /// <p>If you don't specify this field, the global table consistency mode defaults to <code>EVENTUAL</code>. For more information about global tables consistency modes, see <a href="https://docs.aws.amazon.com/V2globaltables_HowItWorks.html#V2globaltables_HowItWorks.consistency-modes"> Consistency modes</a> in DynamoDB developer guide.</p>
     pub fn multi_region_consistency(&self) -> ::std::option::Option<&crate::types::MultiRegionConsistency> {
         self.multi_region_consistency.as_ref()
     }
@@ -458,6 +462,7 @@ pub struct TableDescriptionBuilder {
     pub(crate) latest_stream_arn: ::std::option::Option<::std::string::String>,
     pub(crate) global_table_version: ::std::option::Option<::std::string::String>,
     pub(crate) replicas: ::std::option::Option<::std::vec::Vec<crate::types::ReplicaDescription>>,
+    pub(crate) global_table_witnesses: ::std::option::Option<::std::vec::Vec<crate::types::GlobalTableWitnessDescription>>,
     pub(crate) restore_summary: ::std::option::Option<crate::types::RestoreSummary>,
     pub(crate) sse_description: ::std::option::Option<crate::types::SseDescription>,
     pub(crate) archival_summary: ::std::option::Option<crate::types::ArchivalSummary>,
@@ -1113,6 +1118,26 @@ impl TableDescriptionBuilder {
     pub fn get_replicas(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ReplicaDescription>> {
         &self.replicas
     }
+    /// Appends an item to `global_table_witnesses`.
+    ///
+    /// To override the contents of this collection use [`set_global_table_witnesses`](Self::set_global_table_witnesses).
+    ///
+    /// <p>The witness Region and its current status in the MRSC global table. Only one witness Region can be configured per MRSC global table.</p>
+    pub fn global_table_witnesses(mut self, input: crate::types::GlobalTableWitnessDescription) -> Self {
+        let mut v = self.global_table_witnesses.unwrap_or_default();
+        v.push(input);
+        self.global_table_witnesses = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The witness Region and its current status in the MRSC global table. Only one witness Region can be configured per MRSC global table.</p>
+    pub fn set_global_table_witnesses(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::GlobalTableWitnessDescription>>) -> Self {
+        self.global_table_witnesses = input;
+        self
+    }
+    /// <p>The witness Region and its current status in the MRSC global table. Only one witness Region can be configured per MRSC global table.</p>
+    pub fn get_global_table_witnesses(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GlobalTableWitnessDescription>> {
+        &self.global_table_witnesses
+    }
     /// <p>Contains details for the restore.</p>
     pub fn restore_summary(mut self, input: crate::types::RestoreSummary) -> Self {
         self.restore_summary = ::std::option::Option::Some(input);
@@ -1214,13 +1239,11 @@ impl TableDescriptionBuilder {
     /// <p>Indicates one of the following consistency modes for a global table:</p>
     /// <ul>
     /// <li>
-    /// <p><code>EVENTUAL</code>: Indicates that the global table is configured for multi-Region eventual consistency.</p></li>
+    /// <p><code>EVENTUAL</code>: Indicates that the global table is configured for multi-Region eventual consistency (MREC).</p></li>
     /// <li>
-    /// <p><code>STRONG</code>: Indicates that the global table is configured for multi-Region strong consistency (preview).</p><note>
-    /// <p>Multi-Region strong consistency (MRSC) is a new DynamoDB global tables capability currently available in preview mode. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/PreviewFeatures.html#multi-region-strong-consistency-gt">Global tables multi-Region strong consistency</a>.</p>
-    /// </note></li>
+    /// <p><code>STRONG</code>: Indicates that the global table is configured for multi-Region strong consistency (MRSC).</p></li>
     /// </ul>
-    /// <p>If you don't specify this field, the global table consistency mode defaults to <code>EVENTUAL</code>.</p>
+    /// <p>If you don't specify this field, the global table consistency mode defaults to <code>EVENTUAL</code>. For more information about global tables consistency modes, see <a href="https://docs.aws.amazon.com/V2globaltables_HowItWorks.html#V2globaltables_HowItWorks.consistency-modes"> Consistency modes</a> in DynamoDB developer guide.</p>
     pub fn multi_region_consistency(mut self, input: crate::types::MultiRegionConsistency) -> Self {
         self.multi_region_consistency = ::std::option::Option::Some(input);
         self
@@ -1228,13 +1251,11 @@ impl TableDescriptionBuilder {
     /// <p>Indicates one of the following consistency modes for a global table:</p>
     /// <ul>
     /// <li>
-    /// <p><code>EVENTUAL</code>: Indicates that the global table is configured for multi-Region eventual consistency.</p></li>
+    /// <p><code>EVENTUAL</code>: Indicates that the global table is configured for multi-Region eventual consistency (MREC).</p></li>
     /// <li>
-    /// <p><code>STRONG</code>: Indicates that the global table is configured for multi-Region strong consistency (preview).</p><note>
-    /// <p>Multi-Region strong consistency (MRSC) is a new DynamoDB global tables capability currently available in preview mode. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/PreviewFeatures.html#multi-region-strong-consistency-gt">Global tables multi-Region strong consistency</a>.</p>
-    /// </note></li>
+    /// <p><code>STRONG</code>: Indicates that the global table is configured for multi-Region strong consistency (MRSC).</p></li>
     /// </ul>
-    /// <p>If you don't specify this field, the global table consistency mode defaults to <code>EVENTUAL</code>.</p>
+    /// <p>If you don't specify this field, the global table consistency mode defaults to <code>EVENTUAL</code>. For more information about global tables consistency modes, see <a href="https://docs.aws.amazon.com/V2globaltables_HowItWorks.html#V2globaltables_HowItWorks.consistency-modes"> Consistency modes</a> in DynamoDB developer guide.</p>
     pub fn set_multi_region_consistency(mut self, input: ::std::option::Option<crate::types::MultiRegionConsistency>) -> Self {
         self.multi_region_consistency = input;
         self
@@ -1242,13 +1263,11 @@ impl TableDescriptionBuilder {
     /// <p>Indicates one of the following consistency modes for a global table:</p>
     /// <ul>
     /// <li>
-    /// <p><code>EVENTUAL</code>: Indicates that the global table is configured for multi-Region eventual consistency.</p></li>
+    /// <p><code>EVENTUAL</code>: Indicates that the global table is configured for multi-Region eventual consistency (MREC).</p></li>
     /// <li>
-    /// <p><code>STRONG</code>: Indicates that the global table is configured for multi-Region strong consistency (preview).</p><note>
-    /// <p>Multi-Region strong consistency (MRSC) is a new DynamoDB global tables capability currently available in preview mode. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/PreviewFeatures.html#multi-region-strong-consistency-gt">Global tables multi-Region strong consistency</a>.</p>
-    /// </note></li>
+    /// <p><code>STRONG</code>: Indicates that the global table is configured for multi-Region strong consistency (MRSC).</p></li>
     /// </ul>
-    /// <p>If you don't specify this field, the global table consistency mode defaults to <code>EVENTUAL</code>.</p>
+    /// <p>If you don't specify this field, the global table consistency mode defaults to <code>EVENTUAL</code>. For more information about global tables consistency modes, see <a href="https://docs.aws.amazon.com/V2globaltables_HowItWorks.html#V2globaltables_HowItWorks.consistency-modes"> Consistency modes</a> in DynamoDB developer guide.</p>
     pub fn get_multi_region_consistency(&self) -> &::std::option::Option<crate::types::MultiRegionConsistency> {
         &self.multi_region_consistency
     }
@@ -1273,6 +1292,7 @@ impl TableDescriptionBuilder {
             latest_stream_arn: self.latest_stream_arn,
             global_table_version: self.global_table_version,
             replicas: self.replicas,
+            global_table_witnesses: self.global_table_witnesses,
             restore_summary: self.restore_summary,
             sse_description: self.sse_description,
             archival_summary: self.archival_summary,

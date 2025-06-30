@@ -72,6 +72,8 @@ pub struct Contact {
     pub customer_voice_activity: ::std::option::Option<crate::types::CustomerVoiceActivity>,
     /// <p>Information about the quality of the participant's media connection.</p>
     pub quality_metrics: ::std::option::Option<crate::types::QualityMetrics>,
+    /// <p>Information about how agent, bot, and customer interact in a chat contact.</p>
+    pub chat_metrics: ::std::option::Option<crate::types::ChatMetrics>,
     /// <p>Information about the call disconnect experience.</p>
     pub disconnect_details: ::std::option::Option<crate::types::DisconnectDetails>,
     /// <p>List of additional email addresses for an email contact.</p>
@@ -226,6 +228,10 @@ impl Contact {
     pub fn quality_metrics(&self) -> ::std::option::Option<&crate::types::QualityMetrics> {
         self.quality_metrics.as_ref()
     }
+    /// <p>Information about how agent, bot, and customer interact in a chat contact.</p>
+    pub fn chat_metrics(&self) -> ::std::option::Option<&crate::types::ChatMetrics> {
+        self.chat_metrics.as_ref()
+    }
     /// <p>Information about the call disconnect experience.</p>
     pub fn disconnect_details(&self) -> ::std::option::Option<&crate::types::DisconnectDetails> {
         self.disconnect_details.as_ref()
@@ -300,6 +306,7 @@ impl ::std::fmt::Debug for Contact {
         formatter.field("answering_machine_detection_status", &self.answering_machine_detection_status);
         formatter.field("customer_voice_activity", &self.customer_voice_activity);
         formatter.field("quality_metrics", &self.quality_metrics);
+        formatter.field("chat_metrics", &self.chat_metrics);
         formatter.field("disconnect_details", &self.disconnect_details);
         formatter.field("additional_email_recipients", &self.additional_email_recipients);
         formatter.field("segment_attributes", &self.segment_attributes);
@@ -356,6 +363,7 @@ pub struct ContactBuilder {
     pub(crate) answering_machine_detection_status: ::std::option::Option<crate::types::AnsweringMachineDetectionStatus>,
     pub(crate) customer_voice_activity: ::std::option::Option<crate::types::CustomerVoiceActivity>,
     pub(crate) quality_metrics: ::std::option::Option<crate::types::QualityMetrics>,
+    pub(crate) chat_metrics: ::std::option::Option<crate::types::ChatMetrics>,
     pub(crate) disconnect_details: ::std::option::Option<crate::types::DisconnectDetails>,
     pub(crate) additional_email_recipients: ::std::option::Option<crate::types::AdditionalEmailRecipients>,
     pub(crate) segment_attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::SegmentAttributeValue>>,
@@ -848,6 +856,20 @@ impl ContactBuilder {
     pub fn get_quality_metrics(&self) -> &::std::option::Option<crate::types::QualityMetrics> {
         &self.quality_metrics
     }
+    /// <p>Information about how agent, bot, and customer interact in a chat contact.</p>
+    pub fn chat_metrics(mut self, input: crate::types::ChatMetrics) -> Self {
+        self.chat_metrics = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Information about how agent, bot, and customer interact in a chat contact.</p>
+    pub fn set_chat_metrics(mut self, input: ::std::option::Option<crate::types::ChatMetrics>) -> Self {
+        self.chat_metrics = input;
+        self
+    }
+    /// <p>Information about how agent, bot, and customer interact in a chat contact.</p>
+    pub fn get_chat_metrics(&self) -> &::std::option::Option<crate::types::ChatMetrics> {
+        &self.chat_metrics
+    }
     /// <p>Information about the call disconnect experience.</p>
     pub fn disconnect_details(mut self, input: crate::types::DisconnectDetails) -> Self {
         self.disconnect_details = ::std::option::Option::Some(input);
@@ -1031,6 +1053,7 @@ impl ContactBuilder {
             answering_machine_detection_status: self.answering_machine_detection_status,
             customer_voice_activity: self.customer_voice_activity,
             quality_metrics: self.quality_metrics,
+            chat_metrics: self.chat_metrics,
             disconnect_details: self.disconnect_details,
             additional_email_recipients: self.additional_email_recipients,
             segment_attributes: self.segment_attributes,
@@ -1079,6 +1102,7 @@ impl ::std::fmt::Debug for ContactBuilder {
         formatter.field("answering_machine_detection_status", &self.answering_machine_detection_status);
         formatter.field("customer_voice_activity", &self.customer_voice_activity);
         formatter.field("quality_metrics", &self.quality_metrics);
+        formatter.field("chat_metrics", &self.chat_metrics);
         formatter.field("disconnect_details", &self.disconnect_details);
         formatter.field("additional_email_recipients", &self.additional_email_recipients);
         formatter.field("segment_attributes", &self.segment_attributes);

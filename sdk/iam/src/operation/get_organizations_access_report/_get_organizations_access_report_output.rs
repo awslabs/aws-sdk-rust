@@ -21,7 +21,7 @@ pub struct GetOrganizationsAccessReportOutput {
     /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
     pub marker: ::std::option::Option<::std::string::String>,
     /// <p>Contains information about the reason that the operation failed.</p>
-    /// <p>This data type is used as a response element in the <code>GetOrganizationsAccessReport</code>, <code>GetServiceLastAccessedDetails</code>, and <code>GetServiceLastAccessedDetailsWithEntities</code> operations.</p>
+    /// <p>This data type is used as a response element in the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetOrganizationsAccessReport.html">GetOrganizationsAccessReport</a>, <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetServiceLastAccessedDetails.html">GetServiceLastAccessedDetails</a>, and <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetServiceLastAccessedDetailsWithEntities.html">GetServiceLastAccessedDetailsWithEntities</a> operations.</p>
     pub error_details: ::std::option::Option<crate::types::ErrorDetails>,
     _request_id: Option<String>,
 }
@@ -62,7 +62,7 @@ impl GetOrganizationsAccessReportOutput {
         self.marker.as_deref()
     }
     /// <p>Contains information about the reason that the operation failed.</p>
-    /// <p>This data type is used as a response element in the <code>GetOrganizationsAccessReport</code>, <code>GetServiceLastAccessedDetails</code>, and <code>GetServiceLastAccessedDetailsWithEntities</code> operations.</p>
+    /// <p>This data type is used as a response element in the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetOrganizationsAccessReport.html">GetOrganizationsAccessReport</a>, <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetServiceLastAccessedDetails.html">GetServiceLastAccessedDetails</a>, and <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetServiceLastAccessedDetailsWithEntities.html">GetServiceLastAccessedDetailsWithEntities</a> operations.</p>
     pub fn error_details(&self) -> ::std::option::Option<&crate::types::ErrorDetails> {
         self.error_details.as_ref()
     }
@@ -219,19 +219,19 @@ impl GetOrganizationsAccessReportOutputBuilder {
         &self.marker
     }
     /// <p>Contains information about the reason that the operation failed.</p>
-    /// <p>This data type is used as a response element in the <code>GetOrganizationsAccessReport</code>, <code>GetServiceLastAccessedDetails</code>, and <code>GetServiceLastAccessedDetailsWithEntities</code> operations.</p>
+    /// <p>This data type is used as a response element in the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetOrganizationsAccessReport.html">GetOrganizationsAccessReport</a>, <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetServiceLastAccessedDetails.html">GetServiceLastAccessedDetails</a>, and <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetServiceLastAccessedDetailsWithEntities.html">GetServiceLastAccessedDetailsWithEntities</a> operations.</p>
     pub fn error_details(mut self, input: crate::types::ErrorDetails) -> Self {
         self.error_details = ::std::option::Option::Some(input);
         self
     }
     /// <p>Contains information about the reason that the operation failed.</p>
-    /// <p>This data type is used as a response element in the <code>GetOrganizationsAccessReport</code>, <code>GetServiceLastAccessedDetails</code>, and <code>GetServiceLastAccessedDetailsWithEntities</code> operations.</p>
+    /// <p>This data type is used as a response element in the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetOrganizationsAccessReport.html">GetOrganizationsAccessReport</a>, <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetServiceLastAccessedDetails.html">GetServiceLastAccessedDetails</a>, and <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetServiceLastAccessedDetailsWithEntities.html">GetServiceLastAccessedDetailsWithEntities</a> operations.</p>
     pub fn set_error_details(mut self, input: ::std::option::Option<crate::types::ErrorDetails>) -> Self {
         self.error_details = input;
         self
     }
     /// <p>Contains information about the reason that the operation failed.</p>
-    /// <p>This data type is used as a response element in the <code>GetOrganizationsAccessReport</code>, <code>GetServiceLastAccessedDetails</code>, and <code>GetServiceLastAccessedDetailsWithEntities</code> operations.</p>
+    /// <p>This data type is used as a response element in the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetOrganizationsAccessReport.html">GetOrganizationsAccessReport</a>, <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetServiceLastAccessedDetails.html">GetServiceLastAccessedDetails</a>, and <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetServiceLastAccessedDetailsWithEntities.html">GetServiceLastAccessedDetailsWithEntities</a> operations.</p>
     pub fn get_error_details(&self) -> &::std::option::Option<crate::types::ErrorDetails> {
         &self.error_details
     }

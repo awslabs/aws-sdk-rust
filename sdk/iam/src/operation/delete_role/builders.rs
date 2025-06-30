@@ -25,13 +25,13 @@ impl crate::operation::delete_role::builders::DeleteRoleInputBuilder {
 /// <p>Deletes the specified role. Unlike the Amazon Web Services Management Console, when you delete a role programmatically, you must delete the items attached to the role manually, or the deletion fails. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_manage_delete.html#roles-managingrole-deleting-cli">Deleting an IAM role</a>. Before attempting to delete a role, remove the following attached items:</p>
 /// <ul>
 /// <li>
-/// <p>Inline policies (<code>DeleteRolePolicy</code>)</p></li>
+/// <p>Inline policies (<a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_DeleteRolePolicy.html">DeleteRolePolicy</a>)</p></li>
 /// <li>
-/// <p>Attached managed policies (<code>DetachRolePolicy</code>)</p></li>
+/// <p>Attached managed policies (<a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_DetachRolePolicy.html">DetachRolePolicy</a>)</p></li>
 /// <li>
-/// <p>Instance profile (<code>RemoveRoleFromInstanceProfile</code>)</p></li>
+/// <p>Instance profile (<a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_RemoveRoleFromInstanceProfile.html">RemoveRoleFromInstanceProfile</a>)</p></li>
 /// <li>
-/// <p>Optional – Delete instance profile after detaching from role for resource clean up (<code>DeleteInstanceProfile</code>)</p></li>
+/// <p>Optional – Delete instance profile after detaching from role for resource clean up (<a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_DeleteInstanceProfile.html">DeleteInstanceProfile</a>)</p></li>
 /// </ul><important>
 /// <p>Make sure that you do not have any Amazon EC2 instances running with the role you are about to delete. Deleting a role or instance profile that is associated with a running instance will break any applications running on the instance.</p>
 /// </important>

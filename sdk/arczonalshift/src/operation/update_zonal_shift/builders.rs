@@ -22,7 +22,7 @@ impl crate::operation::update_zonal_shift::builders::UpdateZonalShiftInputBuilde
 }
 /// Fluent builder constructing a request to `UpdateZonalShift`.
 ///
-/// <p>Update an active zonal shift in Amazon Route 53 Application Recovery Controller in your Amazon Web Services account. You can update a zonal shift to set a new expiration, or edit or replace the comment for the zonal shift.</p>
+/// <p>Update an active zonal shift in Amazon Application Recovery Controller in your Amazon Web Services account. You can update a zonal shift to set a new expiration, or edit or replace the comment for the zonal shift.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateZonalShiftFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

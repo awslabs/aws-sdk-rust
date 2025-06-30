@@ -166,6 +166,7 @@ impl From<crate::operation::delete_scope::DeleteScopeError> for Error {
     fn from(err: crate::operation::delete_scope::DeleteScopeError) -> Self {
         match err {
             crate::operation::delete_scope::DeleteScopeError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::delete_scope::DeleteScopeError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::delete_scope::DeleteScopeError::InternalServerException(inner) => Error::InternalServerException(inner),
             crate::operation::delete_scope::DeleteScopeError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::delete_scope::DeleteScopeError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
@@ -899,6 +900,7 @@ impl From<crate::operation::update_scope::UpdateScopeError> for Error {
     fn from(err: crate::operation::update_scope::UpdateScopeError) -> Self {
         match err {
             crate::operation::update_scope::UpdateScopeError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::update_scope::UpdateScopeError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::update_scope::UpdateScopeError::InternalServerException(inner) => Error::InternalServerException(inner),
             crate::operation::update_scope::UpdateScopeError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::update_scope::UpdateScopeError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),

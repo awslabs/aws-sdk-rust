@@ -432,6 +432,9 @@ impl From<crate::operation::batch_write_item::BatchWriteItemError> for Error {
             crate::operation::batch_write_item::BatchWriteItemError::ProvisionedThroughputExceededException(inner) => {
                 Error::ProvisionedThroughputExceededException(inner)
             }
+            crate::operation::batch_write_item::BatchWriteItemError::ReplicatedWriteConflictException(inner) => {
+                Error::ReplicatedWriteConflictException(inner)
+            }
             crate::operation::batch_write_item::BatchWriteItemError::RequestLimitExceeded(inner) => Error::RequestLimitExceeded(inner),
             crate::operation::batch_write_item::BatchWriteItemError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::batch_write_item::BatchWriteItemError::Unhandled(inner) => Error::Unhandled(inner),

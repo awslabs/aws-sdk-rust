@@ -5,6 +5,8 @@
 pub struct TestParsingOutput {
     /// <p>Returns the contents of the input file being tested, parsed according to the specified EDI (electronic data interchange) type.</p>
     pub parsed_file_content: ::std::string::String,
+    /// <p>Returns an array of parsed file contents when the input file is split according to the specified split options. Each element in the array represents a separate split file's parsed content.</p>
+    pub parsed_split_file_contents: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     _request_id: Option<String>,
 }
 impl TestParsingOutput {
@@ -12,6 +14,12 @@ impl TestParsingOutput {
     pub fn parsed_file_content(&self) -> &str {
         use std::ops::Deref;
         self.parsed_file_content.deref()
+    }
+    /// <p>Returns an array of parsed file contents when the input file is split according to the specified split options. Each element in the array represents a separate split file's parsed content.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.parsed_split_file_contents.is_none()`.
+    pub fn parsed_split_file_contents(&self) -> &[::std::string::String] {
+        self.parsed_split_file_contents.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for TestParsingOutput {
@@ -31,6 +39,7 @@ impl TestParsingOutput {
 #[non_exhaustive]
 pub struct TestParsingOutputBuilder {
     pub(crate) parsed_file_content: ::std::option::Option<::std::string::String>,
+    pub(crate) parsed_split_file_contents: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     _request_id: Option<String>,
 }
 impl TestParsingOutputBuilder {
@@ -48,6 +57,26 @@ impl TestParsingOutputBuilder {
     /// <p>Returns the contents of the input file being tested, parsed according to the specified EDI (electronic data interchange) type.</p>
     pub fn get_parsed_file_content(&self) -> &::std::option::Option<::std::string::String> {
         &self.parsed_file_content
+    }
+    /// Appends an item to `parsed_split_file_contents`.
+    ///
+    /// To override the contents of this collection use [`set_parsed_split_file_contents`](Self::set_parsed_split_file_contents).
+    ///
+    /// <p>Returns an array of parsed file contents when the input file is split according to the specified split options. Each element in the array represents a separate split file's parsed content.</p>
+    pub fn parsed_split_file_contents(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.parsed_split_file_contents.unwrap_or_default();
+        v.push(input.into());
+        self.parsed_split_file_contents = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Returns an array of parsed file contents when the input file is split according to the specified split options. Each element in the array represents a separate split file's parsed content.</p>
+    pub fn set_parsed_split_file_contents(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.parsed_split_file_contents = input;
+        self
+    }
+    /// <p>Returns an array of parsed file contents when the input file is split according to the specified split options. Each element in the array represents a separate split file's parsed content.</p>
+    pub fn get_parsed_split_file_contents(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.parsed_split_file_contents
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
@@ -69,6 +98,7 @@ impl TestParsingOutputBuilder {
                     "parsed_file_content was not specified but it is required when building TestParsingOutput",
                 )
             })?,
+            parsed_split_file_contents: self.parsed_split_file_contents,
             _request_id: self._request_id,
         })
     }

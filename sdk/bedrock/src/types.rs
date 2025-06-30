@@ -315,6 +315,28 @@ pub use crate::types::_knowledge_base_retrieval_configuration::KnowledgeBaseRetr
 
 pub use crate::types::_knowledge_base_vector_search_configuration::KnowledgeBaseVectorSearchConfiguration;
 
+pub use crate::types::_vector_search_reranking_configuration::VectorSearchRerankingConfiguration;
+
+pub use crate::types::_vector_search_bedrock_reranking_configuration::VectorSearchBedrockRerankingConfiguration;
+
+pub use crate::types::_metadata_configuration_for_reranking::MetadataConfigurationForReranking;
+
+pub use crate::types::_reranking_metadata_selective_mode_configuration::RerankingMetadataSelectiveModeConfiguration;
+
+pub use crate::types::_field_for_reranking::FieldForReranking;
+
+pub use crate::types::_reranking_metadata_selection_mode::RerankingMetadataSelectionMode;
+
+pub use crate::types::_vector_search_bedrock_reranking_model_configuration::VectorSearchBedrockRerankingModelConfiguration;
+
+pub use crate::types::_vector_search_reranking_configuration_type::VectorSearchRerankingConfigurationType;
+
+pub use crate::types::_implicit_filter_configuration::ImplicitFilterConfiguration;
+
+pub use crate::types::_metadata_attribute_schema::MetadataAttributeSchema;
+
+pub use crate::types::_attribute_type::AttributeType;
+
 pub use crate::types::_retrieval_filter::RetrievalFilter;
 
 pub use crate::types::_filter_attribute::FilterAttribute;
@@ -392,6 +414,8 @@ mod _agreement_availability;
 mod _agreement_status;
 
 mod _application_type;
+
+mod _attribute_type;
 
 mod _authorization_status;
 
@@ -484,6 +508,8 @@ mod _external_source_type;
 mod _external_sources_generation_configuration;
 
 mod _external_sources_retrieve_and_generate_configuration;
+
+mod _field_for_reranking;
 
 mod _filter_attribute;
 
@@ -599,6 +625,8 @@ mod _human_evaluation_custom_metric;
 
 mod _human_workflow_config;
 
+mod _implicit_filter_configuration;
+
 mod _imported_model_summary;
 
 mod _inference_profile_model;
@@ -636,6 +664,10 @@ mod _logging_config;
 mod _marketplace_model_endpoint;
 
 mod _marketplace_model_endpoint_summary;
+
+mod _metadata_attribute_schema;
+
+mod _metadata_configuration_for_reranking;
 
 mod _model_copy_job_status;
 
@@ -713,6 +745,10 @@ mod _request_metadata_base_filters;
 
 mod _request_metadata_filters;
 
+mod _reranking_metadata_selection_mode;
+
+mod _reranking_metadata_selective_mode_configuration;
+
 mod _retrieval_filter;
 
 mod _retrieve_and_generate_configuration;
@@ -772,6 +808,14 @@ mod _validator;
 mod _validator_metric;
 
 mod _validity_term;
+
+mod _vector_search_bedrock_reranking_configuration;
+
+mod _vector_search_bedrock_reranking_model_configuration;
+
+mod _vector_search_reranking_configuration;
+
+mod _vector_search_reranking_configuration_type;
 
 mod _vpc_config;
 

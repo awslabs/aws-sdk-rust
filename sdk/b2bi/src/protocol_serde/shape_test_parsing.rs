@@ -138,6 +138,11 @@ pub(crate) fn de_test_parsing(
                             .transpose()?,
                     );
                 }
+                "parsedSplitFileContents" => {
+                    builder = builder.set_parsed_split_file_contents(
+                        crate::protocol_serde::shape_parsed_split_file_contents_list::de_parsed_split_file_contents_list(tokens)?,
+                    );
+                }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },
             other => {

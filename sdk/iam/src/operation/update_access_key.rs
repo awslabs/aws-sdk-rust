@@ -252,6 +252,8 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for UpdateAccessK
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum UpdateAccessKeyError {
+    /// <p>The request was rejected because an invalid or out-of-range value was supplied for an input parameter.</p>
+    InvalidInputException(crate::types::error::InvalidInputException),
     /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services account limits. The error message describes the limit exceeded.</p>
     LimitExceededException(crate::types::error::LimitExceededException),
     /// <p>The request was rejected because it referenced a resource entity that does not exist. The error message describes the resource.</p>
@@ -291,11 +293,16 @@ impl UpdateAccessKeyError {
     ///
     pub fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
+            Self::InvalidInputException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::LimitExceededException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::NoSuchEntityException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ServiceFailureException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::Unhandled(e) => &e.meta,
         }
+    }
+    /// Returns `true` if the error kind is `UpdateAccessKeyError::InvalidInputException`.
+    pub fn is_invalid_input_exception(&self) -> bool {
+        matches!(self, Self::InvalidInputException(_))
     }
     /// Returns `true` if the error kind is `UpdateAccessKeyError::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
@@ -313,6 +320,7 @@ impl UpdateAccessKeyError {
 impl ::std::error::Error for UpdateAccessKeyError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
+            Self::InvalidInputException(_inner) => ::std::option::Option::Some(_inner),
             Self::LimitExceededException(_inner) => ::std::option::Option::Some(_inner),
             Self::NoSuchEntityException(_inner) => ::std::option::Option::Some(_inner),
             Self::ServiceFailureException(_inner) => ::std::option::Option::Some(_inner),
@@ -323,6 +331,7 @@ impl ::std::error::Error for UpdateAccessKeyError {
 impl ::std::fmt::Display for UpdateAccessKeyError {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         match self {
+            Self::InvalidInputException(_inner) => _inner.fmt(f),
             Self::LimitExceededException(_inner) => _inner.fmt(f),
             Self::NoSuchEntityException(_inner) => _inner.fmt(f),
             Self::ServiceFailureException(_inner) => _inner.fmt(f),
@@ -347,6 +356,7 @@ impl ::aws_smithy_types::retry::ProvideErrorKind for UpdateAccessKeyError {
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for UpdateAccessKeyError {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
+            Self::InvalidInputException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::LimitExceededException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::NoSuchEntityException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ServiceFailureException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),

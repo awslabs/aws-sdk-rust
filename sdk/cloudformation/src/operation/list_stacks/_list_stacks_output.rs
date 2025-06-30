@@ -4,14 +4,14 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListStacksOutput {
-    /// <p>A list of <code>StackSummary</code> structures containing information about the specified stacks.</p>
+    /// <p>A list of <code>StackSummary</code> structures that contains information about the specified stacks.</p>
     pub stack_summaries: ::std::option::Option<::std::vec::Vec<crate::types::StackSummary>>,
     /// <p>If the output exceeds 1 MB in size, a string that identifies the next page of stacks. If no additional page exists, this value is null.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListStacksOutput {
-    /// <p>A list of <code>StackSummary</code> structures containing information about the specified stacks.</p>
+    /// <p>A list of <code>StackSummary</code> structures that contains information about the specified stacks.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.stack_summaries.is_none()`.
     pub fn stack_summaries(&self) -> &[crate::types::StackSummary] {
@@ -47,19 +47,19 @@ impl ListStacksOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_stack_summaries`](Self::set_stack_summaries).
     ///
-    /// <p>A list of <code>StackSummary</code> structures containing information about the specified stacks.</p>
+    /// <p>A list of <code>StackSummary</code> structures that contains information about the specified stacks.</p>
     pub fn stack_summaries(mut self, input: crate::types::StackSummary) -> Self {
         let mut v = self.stack_summaries.unwrap_or_default();
         v.push(input);
         self.stack_summaries = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of <code>StackSummary</code> structures containing information about the specified stacks.</p>
+    /// <p>A list of <code>StackSummary</code> structures that contains information about the specified stacks.</p>
     pub fn set_stack_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StackSummary>>) -> Self {
         self.stack_summaries = input;
         self
     }
-    /// <p>A list of <code>StackSummary</code> structures containing information about the specified stacks.</p>
+    /// <p>A list of <code>StackSummary</code> structures that contains information about the specified stacks.</p>
     pub fn get_stack_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StackSummary>> {
         &self.stack_summaries
     }

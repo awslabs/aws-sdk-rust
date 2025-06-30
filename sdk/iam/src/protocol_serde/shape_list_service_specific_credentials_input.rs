@@ -15,6 +15,24 @@ pub fn ser_list_service_specific_credentials_input_input_input(
     if let Some(var_4) = &input.service_name {
         scope_3.string(var_4);
     }
+    #[allow(unused_mut)]
+    let mut scope_5 = writer.prefix("AllUsers");
+    if let Some(var_6) = &input.all_users {
+        scope_5.boolean(*var_6);
+    }
+    #[allow(unused_mut)]
+    let mut scope_7 = writer.prefix("Marker");
+    if let Some(var_8) = &input.marker {
+        scope_7.string(var_8);
+    }
+    #[allow(unused_mut)]
+    let mut scope_9 = writer.prefix("MaxItems");
+    if let Some(var_10) = &input.max_items {
+        scope_9.number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_10).into()),
+        );
+    }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

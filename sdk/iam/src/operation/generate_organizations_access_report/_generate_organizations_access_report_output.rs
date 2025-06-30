@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GenerateOrganizationsAccessReportOutput {
-    /// <p>The job identifier that you can use in the <code>GetOrganizationsAccessReport</code> operation.</p>
+    /// <p>The job identifier that you can use in the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetOrganizationsAccessReport.html">GetOrganizationsAccessReport</a> operation.</p>
     pub job_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GenerateOrganizationsAccessReportOutput {
-    /// <p>The job identifier that you can use in the <code>GetOrganizationsAccessReport</code> operation.</p>
+    /// <p>The job identifier that you can use in the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetOrganizationsAccessReport.html">GetOrganizationsAccessReport</a> operation.</p>
     pub fn job_id(&self) -> ::std::option::Option<&str> {
         self.job_id.as_deref()
     }
@@ -33,17 +33,17 @@ pub struct GenerateOrganizationsAccessReportOutputBuilder {
     _request_id: Option<String>,
 }
 impl GenerateOrganizationsAccessReportOutputBuilder {
-    /// <p>The job identifier that you can use in the <code>GetOrganizationsAccessReport</code> operation.</p>
+    /// <p>The job identifier that you can use in the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetOrganizationsAccessReport.html">GetOrganizationsAccessReport</a> operation.</p>
     pub fn job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The job identifier that you can use in the <code>GetOrganizationsAccessReport</code> operation.</p>
+    /// <p>The job identifier that you can use in the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetOrganizationsAccessReport.html">GetOrganizationsAccessReport</a> operation.</p>
     pub fn set_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.job_id = input;
         self
     }
-    /// <p>The job identifier that you can use in the <code>GetOrganizationsAccessReport</code> operation.</p>
+    /// <p>The job identifier that you can use in the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetOrganizationsAccessReport.html">GetOrganizationsAccessReport</a> operation.</p>
     pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.job_id
     }

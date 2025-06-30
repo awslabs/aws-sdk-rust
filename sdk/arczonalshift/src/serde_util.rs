@@ -32,6 +32,33 @@ pub(crate) fn validation_exception_correct_errors(
     builder
 }
 
+pub(crate) fn cancel_practice_run_output_output_correct_errors(
+    mut builder: crate::operation::cancel_practice_run::builders::CancelPracticeRunOutputBuilder,
+) -> crate::operation::cancel_practice_run::builders::CancelPracticeRunOutputBuilder {
+    if builder.zonal_shift_id.is_none() {
+        builder.zonal_shift_id = Some(Default::default())
+    }
+    if builder.resource_identifier.is_none() {
+        builder.resource_identifier = Some(Default::default())
+    }
+    if builder.away_from.is_none() {
+        builder.away_from = Some(Default::default())
+    }
+    if builder.expiry_time.is_none() {
+        builder.expiry_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.start_time.is_none() {
+        builder.start_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::ZonalShiftStatus>().ok()
+    }
+    if builder.comment.is_none() {
+        builder.comment = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn cancel_zonal_shift_output_output_correct_errors(
     mut builder: crate::operation::cancel_zonal_shift::builders::CancelZonalShiftOutputBuilder,
 ) -> crate::operation::cancel_zonal_shift::builders::CancelZonalShiftOutputBuilder {
@@ -121,6 +148,33 @@ pub(crate) fn list_managed_resources_output_output_correct_errors(
 ) -> crate::operation::list_managed_resources::builders::ListManagedResourcesOutputBuilder {
     if builder.items.is_none() {
         builder.items = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn start_practice_run_output_output_correct_errors(
+    mut builder: crate::operation::start_practice_run::builders::StartPracticeRunOutputBuilder,
+) -> crate::operation::start_practice_run::builders::StartPracticeRunOutputBuilder {
+    if builder.zonal_shift_id.is_none() {
+        builder.zonal_shift_id = Some(Default::default())
+    }
+    if builder.resource_identifier.is_none() {
+        builder.resource_identifier = Some(Default::default())
+    }
+    if builder.away_from.is_none() {
+        builder.away_from = Some(Default::default())
+    }
+    if builder.expiry_time.is_none() {
+        builder.expiry_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.start_time.is_none() {
+        builder.start_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::ZonalShiftStatus>().ok()
+    }
+    if builder.comment.is_none() {
+        builder.comment = Some(Default::default())
     }
     builder
 }

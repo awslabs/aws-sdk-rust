@@ -22,6 +22,8 @@ pub struct ImageSetProperties {
     pub message: ::std::option::Option<::std::string::String>,
     /// <p>Contains details on overrides used when creating the returned version of an image set. For example, if <code>forced</code> exists, the <code>forced</code> flag was used when creating the image set.</p>
     pub overrides: ::std::option::Option<crate::types::Overrides>,
+    /// <p>The flag to determine whether the image set is primary or not.</p>
+    pub is_primary: ::std::option::Option<bool>,
 }
 impl ImageSetProperties {
     /// <p>The image set identifier.</p>
@@ -62,6 +64,10 @@ impl ImageSetProperties {
     pub fn overrides(&self) -> ::std::option::Option<&crate::types::Overrides> {
         self.overrides.as_ref()
     }
+    /// <p>The flag to determine whether the image set is primary or not.</p>
+    pub fn is_primary(&self) -> ::std::option::Option<bool> {
+        self.is_primary
+    }
 }
 impl ImageSetProperties {
     /// Creates a new builder-style object to manufacture [`ImageSetProperties`](crate::types::ImageSetProperties).
@@ -83,6 +89,7 @@ pub struct ImageSetPropertiesBuilder {
     pub(crate) deleted_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) message: ::std::option::Option<::std::string::String>,
     pub(crate) overrides: ::std::option::Option<crate::types::Overrides>,
+    pub(crate) is_primary: ::std::option::Option<bool>,
 }
 impl ImageSetPropertiesBuilder {
     /// <p>The image set identifier.</p>
@@ -214,6 +221,20 @@ impl ImageSetPropertiesBuilder {
     pub fn get_overrides(&self) -> &::std::option::Option<crate::types::Overrides> {
         &self.overrides
     }
+    /// <p>The flag to determine whether the image set is primary or not.</p>
+    pub fn is_primary(mut self, input: bool) -> Self {
+        self.is_primary = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The flag to determine whether the image set is primary or not.</p>
+    pub fn set_is_primary(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.is_primary = input;
+        self
+    }
+    /// <p>The flag to determine whether the image set is primary or not.</p>
+    pub fn get_is_primary(&self) -> &::std::option::Option<bool> {
+        &self.is_primary
+    }
     /// Consumes the builder and constructs a [`ImageSetProperties`](crate::types::ImageSetProperties).
     /// This method will fail if any of the following fields are not set:
     /// - [`image_set_id`](crate::types::builders::ImageSetPropertiesBuilder::image_set_id)
@@ -245,6 +266,7 @@ impl ImageSetPropertiesBuilder {
             deleted_at: self.deleted_at,
             message: self.message,
             overrides: self.overrides,
+            is_primary: self.is_primary,
         })
     }
 }

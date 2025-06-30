@@ -12,6 +12,7 @@
 /// ```text
 /// # let servicetype = unimplemented!();
 /// match servicetype {
+///     ServiceType::Athena => { /* ... */ },
 ///     ServiceType::Qbusiness => { /* ... */ },
 ///     ServiceType::Redshift => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -43,6 +44,8 @@
 )]
 pub enum ServiceType {
     #[allow(missing_docs)] // documentation missing in model
+    Athena,
+    #[allow(missing_docs)] // documentation missing in model
     Qbusiness,
     #[allow(missing_docs)] // documentation missing in model
     Redshift,
@@ -53,6 +56,7 @@ pub enum ServiceType {
 impl ::std::convert::From<&str> for ServiceType {
     fn from(s: &str) -> Self {
         match s {
+            "ATHENA" => ServiceType::Athena,
             "QBUSINESS" => ServiceType::Qbusiness,
             "REDSHIFT" => ServiceType::Redshift,
             other => ServiceType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -70,6 +74,7 @@ impl ServiceType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            ServiceType::Athena => "ATHENA",
             ServiceType::Qbusiness => "QBUSINESS",
             ServiceType::Redshift => "REDSHIFT",
             ServiceType::Unknown(value) => value.as_str(),
@@ -77,7 +82,7 @@ impl ServiceType {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["QBUSINESS", "REDSHIFT"]
+        &["ATHENA", "QBUSINESS", "REDSHIFT"]
     }
 }
 impl ::std::convert::AsRef<str> for ServiceType {
@@ -100,6 +105,7 @@ impl ServiceType {
 impl ::std::fmt::Display for ServiceType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            ServiceType::Athena => write!(f, "ATHENA"),
             ServiceType::Qbusiness => write!(f, "QBUSINESS"),
             ServiceType::Redshift => write!(f, "REDSHIFT"),
             ServiceType::Unknown(value) => write!(f, "{}", value),

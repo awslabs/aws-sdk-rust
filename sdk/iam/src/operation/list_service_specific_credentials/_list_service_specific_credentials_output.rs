@@ -5,6 +5,10 @@
 pub struct ListServiceSpecificCredentialsOutput {
     /// <p>A list of structures that each contain details about a service-specific credential.</p>
     pub service_specific_credentials: ::std::option::Option<::std::vec::Vec<crate::types::ServiceSpecificCredentialMetadata>>,
+    /// <p>When IsTruncated is true, this element is present and contains the value to use for the Marker parameter in a subsequent pagination request.</p>
+    pub marker: ::std::option::Option<::std::string::String>,
+    /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the Marker request parameter to retrieve more items.</p>
+    pub is_truncated: bool,
     _request_id: Option<String>,
 }
 impl ListServiceSpecificCredentialsOutput {
@@ -13,6 +17,14 @@ impl ListServiceSpecificCredentialsOutput {
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.service_specific_credentials.is_none()`.
     pub fn service_specific_credentials(&self) -> &[crate::types::ServiceSpecificCredentialMetadata] {
         self.service_specific_credentials.as_deref().unwrap_or_default()
+    }
+    /// <p>When IsTruncated is true, this element is present and contains the value to use for the Marker parameter in a subsequent pagination request.</p>
+    pub fn marker(&self) -> ::std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+    /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the Marker request parameter to retrieve more items.</p>
+    pub fn is_truncated(&self) -> bool {
+        self.is_truncated
     }
 }
 impl ::aws_types::request_id::RequestId for ListServiceSpecificCredentialsOutput {
@@ -32,6 +44,8 @@ impl ListServiceSpecificCredentialsOutput {
 #[non_exhaustive]
 pub struct ListServiceSpecificCredentialsOutputBuilder {
     pub(crate) service_specific_credentials: ::std::option::Option<::std::vec::Vec<crate::types::ServiceSpecificCredentialMetadata>>,
+    pub(crate) marker: ::std::option::Option<::std::string::String>,
+    pub(crate) is_truncated: ::std::option::Option<bool>,
     _request_id: Option<String>,
 }
 impl ListServiceSpecificCredentialsOutputBuilder {
@@ -58,6 +72,34 @@ impl ListServiceSpecificCredentialsOutputBuilder {
     pub fn get_service_specific_credentials(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ServiceSpecificCredentialMetadata>> {
         &self.service_specific_credentials
     }
+    /// <p>When IsTruncated is true, this element is present and contains the value to use for the Marker parameter in a subsequent pagination request.</p>
+    pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.marker = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>When IsTruncated is true, this element is present and contains the value to use for the Marker parameter in a subsequent pagination request.</p>
+    pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.marker = input;
+        self
+    }
+    /// <p>When IsTruncated is true, this element is present and contains the value to use for the Marker parameter in a subsequent pagination request.</p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        &self.marker
+    }
+    /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the Marker request parameter to retrieve more items.</p>
+    pub fn is_truncated(mut self, input: bool) -> Self {
+        self.is_truncated = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the Marker request parameter to retrieve more items.</p>
+    pub fn set_is_truncated(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.is_truncated = input;
+        self
+    }
+    /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the Marker request parameter to retrieve more items.</p>
+    pub fn get_is_truncated(&self) -> &::std::option::Option<bool> {
+        &self.is_truncated
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -71,6 +113,8 @@ impl ListServiceSpecificCredentialsOutputBuilder {
     pub fn build(self) -> crate::operation::list_service_specific_credentials::ListServiceSpecificCredentialsOutput {
         crate::operation::list_service_specific_credentials::ListServiceSpecificCredentialsOutput {
             service_specific_credentials: self.service_specific_credentials,
+            marker: self.marker,
+            is_truncated: self.is_truncated.unwrap_or_default(),
             _request_id: self._request_id,
         }
     }

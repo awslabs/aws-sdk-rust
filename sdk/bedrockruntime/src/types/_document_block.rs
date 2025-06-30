@@ -24,6 +24,10 @@ pub struct DocumentBlock {
     pub name: ::std::string::String,
     /// <p>Contains the content of the document.</p>
     pub source: ::std::option::Option<crate::types::DocumentSource>,
+    /// <p>Contextual information about how the document should be processed or interpreted by the model when generating citations.</p>
+    pub context: ::std::option::Option<::std::string::String>,
+    /// <p>Configuration settings that control how citations should be generated for this specific document.</p>
+    pub citations: ::std::option::Option<crate::types::CitationsConfig>,
 }
 impl DocumentBlock {
     /// <p>The format of a document, or its extension.</p>
@@ -53,6 +57,14 @@ impl DocumentBlock {
     pub fn source(&self) -> ::std::option::Option<&crate::types::DocumentSource> {
         self.source.as_ref()
     }
+    /// <p>Contextual information about how the document should be processed or interpreted by the model when generating citations.</p>
+    pub fn context(&self) -> ::std::option::Option<&str> {
+        self.context.as_deref()
+    }
+    /// <p>Configuration settings that control how citations should be generated for this specific document.</p>
+    pub fn citations(&self) -> ::std::option::Option<&crate::types::CitationsConfig> {
+        self.citations.as_ref()
+    }
 }
 impl DocumentBlock {
     /// Creates a new builder-style object to manufacture [`DocumentBlock`](crate::types::DocumentBlock).
@@ -68,10 +80,11 @@ pub struct DocumentBlockBuilder {
     pub(crate) format: ::std::option::Option<crate::types::DocumentFormat>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) source: ::std::option::Option<crate::types::DocumentSource>,
+    pub(crate) context: ::std::option::Option<::std::string::String>,
+    pub(crate) citations: ::std::option::Option<crate::types::CitationsConfig>,
 }
 impl DocumentBlockBuilder {
     /// <p>The format of a document, or its extension.</p>
-    /// This field is required.
     pub fn format(mut self, input: crate::types::DocumentFormat) -> Self {
         self.format = ::std::option::Option::Some(input);
         self
@@ -157,18 +170,42 @@ impl DocumentBlockBuilder {
     pub fn get_source(&self) -> &::std::option::Option<crate::types::DocumentSource> {
         &self.source
     }
+    /// <p>Contextual information about how the document should be processed or interpreted by the model when generating citations.</p>
+    pub fn context(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.context = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Contextual information about how the document should be processed or interpreted by the model when generating citations.</p>
+    pub fn set_context(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.context = input;
+        self
+    }
+    /// <p>Contextual information about how the document should be processed or interpreted by the model when generating citations.</p>
+    pub fn get_context(&self) -> &::std::option::Option<::std::string::String> {
+        &self.context
+    }
+    /// <p>Configuration settings that control how citations should be generated for this specific document.</p>
+    pub fn citations(mut self, input: crate::types::CitationsConfig) -> Self {
+        self.citations = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Configuration settings that control how citations should be generated for this specific document.</p>
+    pub fn set_citations(mut self, input: ::std::option::Option<crate::types::CitationsConfig>) -> Self {
+        self.citations = input;
+        self
+    }
+    /// <p>Configuration settings that control how citations should be generated for this specific document.</p>
+    pub fn get_citations(&self) -> &::std::option::Option<crate::types::CitationsConfig> {
+        &self.citations
+    }
     /// Consumes the builder and constructs a [`DocumentBlock`](crate::types::DocumentBlock).
     /// This method will fail if any of the following fields are not set:
-    /// - [`format`](crate::types::builders::DocumentBlockBuilder::format)
     /// - [`name`](crate::types::builders::DocumentBlockBuilder::name)
     pub fn build(self) -> ::std::result::Result<crate::types::DocumentBlock, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::DocumentBlock {
-            format: self.format.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "format",
-                    "format was not specified but it is required when building DocumentBlock",
-                )
-            })?,
+            format: self
+                .format
+                .unwrap_or("txt".parse::<crate::types::DocumentFormat>().expect("static value validated to member")),
             name: self.name.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
@@ -176,6 +213,8 @@ impl DocumentBlockBuilder {
                 )
             })?,
             source: self.source,
+            context: self.context,
+            citations: self.citations,
         })
     }
 }

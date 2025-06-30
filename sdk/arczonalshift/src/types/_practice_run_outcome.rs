@@ -12,6 +12,7 @@
 /// ```text
 /// # let practicerunoutcome = unimplemented!();
 /// match practicerunoutcome {
+///     PracticeRunOutcome::CapacityCheckFailed => { /* ... */ },
 ///     PracticeRunOutcome::Failed => { /* ... */ },
 ///     PracticeRunOutcome::Interrupted => { /* ... */ },
 ///     PracticeRunOutcome::Pending => { /* ... */ },
@@ -45,6 +46,8 @@
 )]
 pub enum PracticeRunOutcome {
     #[allow(missing_docs)] // documentation missing in model
+    CapacityCheckFailed,
+    #[allow(missing_docs)] // documentation missing in model
     Failed,
     #[allow(missing_docs)] // documentation missing in model
     Interrupted,
@@ -59,6 +62,7 @@ pub enum PracticeRunOutcome {
 impl ::std::convert::From<&str> for PracticeRunOutcome {
     fn from(s: &str) -> Self {
         match s {
+            "CAPACITY_CHECK_FAILED" => PracticeRunOutcome::CapacityCheckFailed,
             "FAILED" => PracticeRunOutcome::Failed,
             "INTERRUPTED" => PracticeRunOutcome::Interrupted,
             "PENDING" => PracticeRunOutcome::Pending,
@@ -78,6 +82,7 @@ impl PracticeRunOutcome {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            PracticeRunOutcome::CapacityCheckFailed => "CAPACITY_CHECK_FAILED",
             PracticeRunOutcome::Failed => "FAILED",
             PracticeRunOutcome::Interrupted => "INTERRUPTED",
             PracticeRunOutcome::Pending => "PENDING",
@@ -87,7 +92,7 @@ impl PracticeRunOutcome {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["FAILED", "INTERRUPTED", "PENDING", "SUCCEEDED"]
+        &["CAPACITY_CHECK_FAILED", "FAILED", "INTERRUPTED", "PENDING", "SUCCEEDED"]
     }
 }
 impl ::std::convert::AsRef<str> for PracticeRunOutcome {
@@ -110,6 +115,7 @@ impl PracticeRunOutcome {
 impl ::std::fmt::Display for PracticeRunOutcome {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            PracticeRunOutcome::CapacityCheckFailed => write!(f, "CAPACITY_CHECK_FAILED"),
             PracticeRunOutcome::Failed => write!(f, "FAILED"),
             PracticeRunOutcome::Interrupted => write!(f, "INTERRUPTED"),
             PracticeRunOutcome::Pending => write!(f, "PENDING"),

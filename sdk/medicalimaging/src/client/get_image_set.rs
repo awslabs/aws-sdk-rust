@@ -18,6 +18,7 @@ impl super::Client {
     ///   - [`message(Option<String>)`](crate::operation::get_image_set::GetImageSetOutput::message): <p>The error message thrown if an image set action fails.</p>
     ///   - [`image_set_arn(Option<String>)`](crate::operation::get_image_set::GetImageSetOutput::image_set_arn): <p>The Amazon Resource Name (ARN) assigned to the image set.</p>
     ///   - [`overrides(Option<Overrides>)`](crate::operation::get_image_set::GetImageSetOutput::overrides): <p>This object contains the details of any overrides used while creating a specific image set version. If an image set was copied or updated using the <code>force</code> flag, this object will contain the <code>forced</code> flag.</p>
+    ///   - [`is_primary(Option<bool>)`](crate::operation::get_image_set::GetImageSetOutput::is_primary): <p>The flag to determine whether the image set is primary or not.</p>
     /// - On failure, responds with [`SdkError<GetImageSetError>`](crate::operation::get_image_set::GetImageSetError)
     pub fn get_image_set(&self) -> crate::operation::get_image_set::builders::GetImageSetFluentBuilder {
         crate::operation::get_image_set::builders::GetImageSetFluentBuilder::new(self.handle.clone())

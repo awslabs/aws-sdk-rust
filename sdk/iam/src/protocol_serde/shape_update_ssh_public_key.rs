@@ -20,6 +20,21 @@ pub fn de_update_ssh_public_key_http_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
+        "InvalidInput" => crate::operation::update_ssh_public_key::UpdateSSHPublicKeyError::InvalidInputException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::InvalidInputExceptionBuilder::default();
+                output = crate::protocol_serde::shape_invalid_input_exception::de_invalid_input_exception_xml_err(_response_body, output)
+                    .map_err(crate::operation::update_ssh_public_key::UpdateSSHPublicKeyError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "NoSuchEntity" => crate::operation::update_ssh_public_key::UpdateSSHPublicKeyError::NoSuchEntityException({
             #[allow(unused_mut)]
             let mut tmp = {

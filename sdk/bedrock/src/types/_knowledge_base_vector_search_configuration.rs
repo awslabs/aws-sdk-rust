@@ -10,6 +10,10 @@ pub struct KnowledgeBaseVectorSearchConfiguration {
     pub override_search_type: ::std::option::Option<crate::types::SearchType>,
     /// <p>Specifies the filters to use on the metadata fields in the knowledge base data sources before returning results.</p>
     pub filter: ::std::option::Option<crate::types::RetrievalFilter>,
+    /// <p>Configuration for implicit filtering in Knowledge Base vector searches. This allows the system to automatically apply filters based on the query context without requiring explicit filter expressions.</p>
+    pub implicit_filter_configuration: ::std::option::Option<crate::types::ImplicitFilterConfiguration>,
+    /// <p>Configuration for reranking search results in Knowledge Base vector searches. Reranking improves search relevance by reordering initial vector search results using more sophisticated relevance models.</p>
+    pub reranking_configuration: ::std::option::Option<crate::types::VectorSearchRerankingConfiguration>,
 }
 impl KnowledgeBaseVectorSearchConfiguration {
     /// <p>The number of text chunks to retrieve; the number of results to return.</p>
@@ -24,6 +28,14 @@ impl KnowledgeBaseVectorSearchConfiguration {
     pub fn filter(&self) -> ::std::option::Option<&crate::types::RetrievalFilter> {
         self.filter.as_ref()
     }
+    /// <p>Configuration for implicit filtering in Knowledge Base vector searches. This allows the system to automatically apply filters based on the query context without requiring explicit filter expressions.</p>
+    pub fn implicit_filter_configuration(&self) -> ::std::option::Option<&crate::types::ImplicitFilterConfiguration> {
+        self.implicit_filter_configuration.as_ref()
+    }
+    /// <p>Configuration for reranking search results in Knowledge Base vector searches. Reranking improves search relevance by reordering initial vector search results using more sophisticated relevance models.</p>
+    pub fn reranking_configuration(&self) -> ::std::option::Option<&crate::types::VectorSearchRerankingConfiguration> {
+        self.reranking_configuration.as_ref()
+    }
 }
 impl ::std::fmt::Debug for KnowledgeBaseVectorSearchConfiguration {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -31,6 +43,8 @@ impl ::std::fmt::Debug for KnowledgeBaseVectorSearchConfiguration {
         formatter.field("number_of_results", &self.number_of_results);
         formatter.field("override_search_type", &self.override_search_type);
         formatter.field("filter", &"*** Sensitive Data Redacted ***");
+        formatter.field("implicit_filter_configuration", &self.implicit_filter_configuration);
+        formatter.field("reranking_configuration", &self.reranking_configuration);
         formatter.finish()
     }
 }
@@ -48,6 +62,8 @@ pub struct KnowledgeBaseVectorSearchConfigurationBuilder {
     pub(crate) number_of_results: ::std::option::Option<i32>,
     pub(crate) override_search_type: ::std::option::Option<crate::types::SearchType>,
     pub(crate) filter: ::std::option::Option<crate::types::RetrievalFilter>,
+    pub(crate) implicit_filter_configuration: ::std::option::Option<crate::types::ImplicitFilterConfiguration>,
+    pub(crate) reranking_configuration: ::std::option::Option<crate::types::VectorSearchRerankingConfiguration>,
 }
 impl KnowledgeBaseVectorSearchConfigurationBuilder {
     /// <p>The number of text chunks to retrieve; the number of results to return.</p>
@@ -92,12 +108,42 @@ impl KnowledgeBaseVectorSearchConfigurationBuilder {
     pub fn get_filter(&self) -> &::std::option::Option<crate::types::RetrievalFilter> {
         &self.filter
     }
+    /// <p>Configuration for implicit filtering in Knowledge Base vector searches. This allows the system to automatically apply filters based on the query context without requiring explicit filter expressions.</p>
+    pub fn implicit_filter_configuration(mut self, input: crate::types::ImplicitFilterConfiguration) -> Self {
+        self.implicit_filter_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Configuration for implicit filtering in Knowledge Base vector searches. This allows the system to automatically apply filters based on the query context without requiring explicit filter expressions.</p>
+    pub fn set_implicit_filter_configuration(mut self, input: ::std::option::Option<crate::types::ImplicitFilterConfiguration>) -> Self {
+        self.implicit_filter_configuration = input;
+        self
+    }
+    /// <p>Configuration for implicit filtering in Knowledge Base vector searches. This allows the system to automatically apply filters based on the query context without requiring explicit filter expressions.</p>
+    pub fn get_implicit_filter_configuration(&self) -> &::std::option::Option<crate::types::ImplicitFilterConfiguration> {
+        &self.implicit_filter_configuration
+    }
+    /// <p>Configuration for reranking search results in Knowledge Base vector searches. Reranking improves search relevance by reordering initial vector search results using more sophisticated relevance models.</p>
+    pub fn reranking_configuration(mut self, input: crate::types::VectorSearchRerankingConfiguration) -> Self {
+        self.reranking_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Configuration for reranking search results in Knowledge Base vector searches. Reranking improves search relevance by reordering initial vector search results using more sophisticated relevance models.</p>
+    pub fn set_reranking_configuration(mut self, input: ::std::option::Option<crate::types::VectorSearchRerankingConfiguration>) -> Self {
+        self.reranking_configuration = input;
+        self
+    }
+    /// <p>Configuration for reranking search results in Knowledge Base vector searches. Reranking improves search relevance by reordering initial vector search results using more sophisticated relevance models.</p>
+    pub fn get_reranking_configuration(&self) -> &::std::option::Option<crate::types::VectorSearchRerankingConfiguration> {
+        &self.reranking_configuration
+    }
     /// Consumes the builder and constructs a [`KnowledgeBaseVectorSearchConfiguration`](crate::types::KnowledgeBaseVectorSearchConfiguration).
     pub fn build(self) -> crate::types::KnowledgeBaseVectorSearchConfiguration {
         crate::types::KnowledgeBaseVectorSearchConfiguration {
             number_of_results: self.number_of_results,
             override_search_type: self.override_search_type,
             filter: self.filter,
+            implicit_filter_configuration: self.implicit_filter_configuration,
+            reranking_configuration: self.reranking_configuration,
         }
     }
 }
@@ -107,6 +153,8 @@ impl ::std::fmt::Debug for KnowledgeBaseVectorSearchConfigurationBuilder {
         formatter.field("number_of_results", &self.number_of_results);
         formatter.field("override_search_type", &self.override_search_type);
         formatter.field("filter", &"*** Sensitive Data Redacted ***");
+        formatter.field("implicit_filter_configuration", &self.implicit_filter_configuration);
+        formatter.field("reranking_configuration", &self.reranking_configuration);
         formatter.finish()
     }
 }

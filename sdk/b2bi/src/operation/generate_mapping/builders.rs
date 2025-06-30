@@ -25,6 +25,15 @@ impl crate::operation::generate_mapping::builders::GenerateMappingInputBuilder {
 /// <p>Takes sample input and output documents and uses Amazon Bedrock to generate a mapping automatically. Depending on the accuracy and other factors, you can then edit the mapping for your needs.</p><note>
 /// <p>Before you can use the AI-assisted feature for Amazon Web Services B2B Data Interchange you must enable models in Amazon Bedrock. For details, see <a href="https://docs.aws.amazon.com/b2bi/latest/userguide/ai-assisted-mapping.html#ai-assist-prereq">AI-assisted template mapping prerequisites</a> in the <i>Amazon Web Services B2B Data Interchange User guide</i>.</p>
 /// </note>
+/// <p>To generate a mapping, perform the following steps:</p>
+/// <ol>
+/// <li>
+/// <p>Start with an X12 EDI document to use as the input.</p></li>
+/// <li>
+/// <p>Call <code>TestMapping</code> using your EDI document.</p></li>
+/// <li>
+/// <p>Use the output from the <code>TestMapping</code> operation as either input or output for your GenerateMapping call, along with your sample file.</p></li>
+/// </ol>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GenerateMappingFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -110,31 +119,31 @@ impl GenerateMappingFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>Provide the contents of a sample X12 EDI file (for inbound EDI) or JSON/XML file (for outbound EDI) to use as a starting point for the mapping.</p>
+    /// <p>Provide the contents of a sample X12 EDI file, either in JSON or XML format, to use as a starting point for the mapping.</p>
     pub fn input_file_content(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.input_file_content(input.into());
         self
     }
-    /// <p>Provide the contents of a sample X12 EDI file (for inbound EDI) or JSON/XML file (for outbound EDI) to use as a starting point for the mapping.</p>
+    /// <p>Provide the contents of a sample X12 EDI file, either in JSON or XML format, to use as a starting point for the mapping.</p>
     pub fn set_input_file_content(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_input_file_content(input);
         self
     }
-    /// <p>Provide the contents of a sample X12 EDI file (for inbound EDI) or JSON/XML file (for outbound EDI) to use as a starting point for the mapping.</p>
+    /// <p>Provide the contents of a sample X12 EDI file, either in JSON or XML format, to use as a starting point for the mapping.</p>
     pub fn get_input_file_content(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_input_file_content()
     }
-    /// <p>Provide the contents of a sample X12 EDI file (for outbound EDI) or JSON/XML file (for inbound EDI) to use as a target for the mapping.</p>
+    /// <p>Provide the contents of a sample X12 EDI file, either in JSON or XML format, to use as a target for the mapping.</p>
     pub fn output_file_content(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.output_file_content(input.into());
         self
     }
-    /// <p>Provide the contents of a sample X12 EDI file (for outbound EDI) or JSON/XML file (for inbound EDI) to use as a target for the mapping.</p>
+    /// <p>Provide the contents of a sample X12 EDI file, either in JSON or XML format, to use as a target for the mapping.</p>
     pub fn set_output_file_content(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_output_file_content(input);
         self
     }
-    /// <p>Provide the contents of a sample X12 EDI file (for outbound EDI) or JSON/XML file (for inbound EDI) to use as a target for the mapping.</p>
+    /// <p>Provide the contents of a sample X12 EDI file, either in JSON or XML format, to use as a target for the mapping.</p>
     pub fn get_output_file_content(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_output_file_content()
     }

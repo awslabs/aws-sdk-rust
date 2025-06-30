@@ -4,14 +4,14 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetResourceConfigHistoryOutput {
-    /// <p>An array of <code>ConfigurationItems</code> Objects. Contatins the configuration history for one or more resources.</p>
+    /// <p>A list that contains the configuration history of one or more resources.</p>
     pub configuration_items: ::std::option::Option<::std::vec::Vec<crate::types::ConfigurationItem>>,
     /// <p>The string that you use in a subsequent request to get the next page of results in a paginated response.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetResourceConfigHistoryOutput {
-    /// <p>An array of <code>ConfigurationItems</code> Objects. Contatins the configuration history for one or more resources.</p>
+    /// <p>A list that contains the configuration history of one or more resources.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.configuration_items.is_none()`.
     pub fn configuration_items(&self) -> &[crate::types::ConfigurationItem] {
@@ -47,19 +47,19 @@ impl GetResourceConfigHistoryOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_configuration_items`](Self::set_configuration_items).
     ///
-    /// <p>An array of <code>ConfigurationItems</code> Objects. Contatins the configuration history for one or more resources.</p>
+    /// <p>A list that contains the configuration history of one or more resources.</p>
     pub fn configuration_items(mut self, input: crate::types::ConfigurationItem) -> Self {
         let mut v = self.configuration_items.unwrap_or_default();
         v.push(input);
         self.configuration_items = ::std::option::Option::Some(v);
         self
     }
-    /// <p>An array of <code>ConfigurationItems</code> Objects. Contatins the configuration history for one or more resources.</p>
+    /// <p>A list that contains the configuration history of one or more resources.</p>
     pub fn set_configuration_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ConfigurationItem>>) -> Self {
         self.configuration_items = input;
         self
     }
-    /// <p>An array of <code>ConfigurationItems</code> Objects. Contatins the configuration history for one or more resources.</p>
+    /// <p>A list that contains the configuration history of one or more resources.</p>
     pub fn get_configuration_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ConfigurationItem>> {
         &self.configuration_items
     }

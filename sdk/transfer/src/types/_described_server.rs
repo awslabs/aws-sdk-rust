@@ -96,6 +96,18 @@ pub struct DescribedServer {
     /// <p>The list of egress IP addresses of this server. These IP addresses are only relevant for servers that use the AS2 protocol. They are used for sending asynchronous MDNs.</p>
     /// <p>These IP addresses are assigned automatically when you create an AS2 server. Additionally, if you update an existing server and add the AS2 protocol, static IP addresses are assigned as well.</p>
     pub as2_service_managed_egress_ip_addresses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>Specifies whether to use IPv4 only, or to use dual-stack (IPv4 and IPv6) for your Transfer Family endpoint. The default value is <code>IPV4</code>.</p><important>
+    /// <p>The <code>IpAddressType</code> parameter has the following limitations:</p>
+    /// <ul>
+    /// <li>
+    /// <p>It cannot be changed while the server is online. You must stop the server before modifying this parameter.</p></li>
+    /// <li>
+    /// <p>It cannot be updated to <code>DUALSTACK</code> if the server has <code>AddressAllocationIds</code> specified.</p></li>
+    /// </ul>
+    /// </important> <note>
+    /// <p>When using <code>DUALSTACK</code> as the <code>IpAddressType</code>, you cannot set the <code>AddressAllocationIds</code> parameter for the <a href="https://docs.aws.amazon.com/transfer/latest/APIReference/API_EndpointDetails.html">EndpointDetails</a> for the server.</p>
+    /// </note>
+    pub ip_address_type: ::std::option::Option<crate::types::IpAddressType>,
 }
 impl DescribedServer {
     /// <p>Specifies the unique Amazon Resource Name (ARN) of the server.</p>
@@ -243,6 +255,20 @@ impl DescribedServer {
     pub fn as2_service_managed_egress_ip_addresses(&self) -> &[::std::string::String] {
         self.as2_service_managed_egress_ip_addresses.as_deref().unwrap_or_default()
     }
+    /// <p>Specifies whether to use IPv4 only, or to use dual-stack (IPv4 and IPv6) for your Transfer Family endpoint. The default value is <code>IPV4</code>.</p><important>
+    /// <p>The <code>IpAddressType</code> parameter has the following limitations:</p>
+    /// <ul>
+    /// <li>
+    /// <p>It cannot be changed while the server is online. You must stop the server before modifying this parameter.</p></li>
+    /// <li>
+    /// <p>It cannot be updated to <code>DUALSTACK</code> if the server has <code>AddressAllocationIds</code> specified.</p></li>
+    /// </ul>
+    /// </important> <note>
+    /// <p>When using <code>DUALSTACK</code> as the <code>IpAddressType</code>, you cannot set the <code>AddressAllocationIds</code> parameter for the <a href="https://docs.aws.amazon.com/transfer/latest/APIReference/API_EndpointDetails.html">EndpointDetails</a> for the server.</p>
+    /// </note>
+    pub fn ip_address_type(&self) -> ::std::option::Option<&crate::types::IpAddressType> {
+        self.ip_address_type.as_ref()
+    }
 }
 impl DescribedServer {
     /// Creates a new builder-style object to manufacture [`DescribedServer`](crate::types::DescribedServer).
@@ -277,6 +303,7 @@ pub struct DescribedServerBuilder {
     pub(crate) structured_log_destinations: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) s3_storage_options: ::std::option::Option<crate::types::S3StorageOptions>,
     pub(crate) as2_service_managed_egress_ip_addresses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) ip_address_type: ::std::option::Option<crate::types::IpAddressType>,
 }
 impl DescribedServerBuilder {
     /// <p>Specifies the unique Amazon Resource Name (ARN) of the server.</p>
@@ -756,6 +783,50 @@ impl DescribedServerBuilder {
     pub fn get_as2_service_managed_egress_ip_addresses(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.as2_service_managed_egress_ip_addresses
     }
+    /// <p>Specifies whether to use IPv4 only, or to use dual-stack (IPv4 and IPv6) for your Transfer Family endpoint. The default value is <code>IPV4</code>.</p><important>
+    /// <p>The <code>IpAddressType</code> parameter has the following limitations:</p>
+    /// <ul>
+    /// <li>
+    /// <p>It cannot be changed while the server is online. You must stop the server before modifying this parameter.</p></li>
+    /// <li>
+    /// <p>It cannot be updated to <code>DUALSTACK</code> if the server has <code>AddressAllocationIds</code> specified.</p></li>
+    /// </ul>
+    /// </important> <note>
+    /// <p>When using <code>DUALSTACK</code> as the <code>IpAddressType</code>, you cannot set the <code>AddressAllocationIds</code> parameter for the <a href="https://docs.aws.amazon.com/transfer/latest/APIReference/API_EndpointDetails.html">EndpointDetails</a> for the server.</p>
+    /// </note>
+    pub fn ip_address_type(mut self, input: crate::types::IpAddressType) -> Self {
+        self.ip_address_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies whether to use IPv4 only, or to use dual-stack (IPv4 and IPv6) for your Transfer Family endpoint. The default value is <code>IPV4</code>.</p><important>
+    /// <p>The <code>IpAddressType</code> parameter has the following limitations:</p>
+    /// <ul>
+    /// <li>
+    /// <p>It cannot be changed while the server is online. You must stop the server before modifying this parameter.</p></li>
+    /// <li>
+    /// <p>It cannot be updated to <code>DUALSTACK</code> if the server has <code>AddressAllocationIds</code> specified.</p></li>
+    /// </ul>
+    /// </important> <note>
+    /// <p>When using <code>DUALSTACK</code> as the <code>IpAddressType</code>, you cannot set the <code>AddressAllocationIds</code> parameter for the <a href="https://docs.aws.amazon.com/transfer/latest/APIReference/API_EndpointDetails.html">EndpointDetails</a> for the server.</p>
+    /// </note>
+    pub fn set_ip_address_type(mut self, input: ::std::option::Option<crate::types::IpAddressType>) -> Self {
+        self.ip_address_type = input;
+        self
+    }
+    /// <p>Specifies whether to use IPv4 only, or to use dual-stack (IPv4 and IPv6) for your Transfer Family endpoint. The default value is <code>IPV4</code>.</p><important>
+    /// <p>The <code>IpAddressType</code> parameter has the following limitations:</p>
+    /// <ul>
+    /// <li>
+    /// <p>It cannot be changed while the server is online. You must stop the server before modifying this parameter.</p></li>
+    /// <li>
+    /// <p>It cannot be updated to <code>DUALSTACK</code> if the server has <code>AddressAllocationIds</code> specified.</p></li>
+    /// </ul>
+    /// </important> <note>
+    /// <p>When using <code>DUALSTACK</code> as the <code>IpAddressType</code>, you cannot set the <code>AddressAllocationIds</code> parameter for the <a href="https://docs.aws.amazon.com/transfer/latest/APIReference/API_EndpointDetails.html">EndpointDetails</a> for the server.</p>
+    /// </note>
+    pub fn get_ip_address_type(&self) -> &::std::option::Option<crate::types::IpAddressType> {
+        &self.ip_address_type
+    }
     /// Consumes the builder and constructs a [`DescribedServer`](crate::types::DescribedServer).
     /// This method will fail if any of the following fields are not set:
     /// - [`arn`](crate::types::builders::DescribedServerBuilder::arn)
@@ -788,6 +859,7 @@ impl DescribedServerBuilder {
             structured_log_destinations: self.structured_log_destinations,
             s3_storage_options: self.s3_storage_options,
             as2_service_managed_egress_ip_addresses: self.as2_service_managed_egress_ip_addresses,
+            ip_address_type: self.ip_address_type,
         })
     }
 }

@@ -119,6 +119,18 @@ pub struct CreateServerInput {
     /// <p>Specifies whether or not performance for your Amazon S3 directories is optimized. This is disabled by default.</p>
     /// <p>By default, home directory mappings have a <code>TYPE</code> of <code>DIRECTORY</code>. If you enable this option, you would then need to explicitly set the <code>HomeDirectoryMapEntry</code> <code>Type</code> to <code>FILE</code> if you want a mapping to have a file target.</p>
     pub s3_storage_options: ::std::option::Option<crate::types::S3StorageOptions>,
+    /// <p>Specifies whether to use IPv4 only, or to use dual-stack (IPv4 and IPv6) for your Transfer Family endpoint. The default value is <code>IPV4</code>.</p><important>
+    /// <p>The <code>IpAddressType</code> parameter has the following limitations:</p>
+    /// <ul>
+    /// <li>
+    /// <p>It cannot be changed while the server is online. You must stop the server before modifying this parameter.</p></li>
+    /// <li>
+    /// <p>It cannot be updated to <code>DUALSTACK</code> if the server has <code>AddressAllocationIds</code> specified.</p></li>
+    /// </ul>
+    /// </important> <note>
+    /// <p>When using <code>DUALSTACK</code> as the <code>IpAddressType</code>, you cannot set the <code>AddressAllocationIds</code> parameter for the <a href="https://docs.aws.amazon.com/transfer/latest/APIReference/API_EndpointDetails.html">EndpointDetails</a> for the server.</p>
+    /// </note>
+    pub ip_address_type: ::std::option::Option<crate::types::IpAddressType>,
 }
 impl CreateServerInput {
     /// <p>The Amazon Resource Name (ARN) of the Certificate Manager (ACM) certificate. Required when <code>Protocols</code> is set to <code>FTPS</code>.</p>
@@ -277,6 +289,20 @@ impl CreateServerInput {
     pub fn s3_storage_options(&self) -> ::std::option::Option<&crate::types::S3StorageOptions> {
         self.s3_storage_options.as_ref()
     }
+    /// <p>Specifies whether to use IPv4 only, or to use dual-stack (IPv4 and IPv6) for your Transfer Family endpoint. The default value is <code>IPV4</code>.</p><important>
+    /// <p>The <code>IpAddressType</code> parameter has the following limitations:</p>
+    /// <ul>
+    /// <li>
+    /// <p>It cannot be changed while the server is online. You must stop the server before modifying this parameter.</p></li>
+    /// <li>
+    /// <p>It cannot be updated to <code>DUALSTACK</code> if the server has <code>AddressAllocationIds</code> specified.</p></li>
+    /// </ul>
+    /// </important> <note>
+    /// <p>When using <code>DUALSTACK</code> as the <code>IpAddressType</code>, you cannot set the <code>AddressAllocationIds</code> parameter for the <a href="https://docs.aws.amazon.com/transfer/latest/APIReference/API_EndpointDetails.html">EndpointDetails</a> for the server.</p>
+    /// </note>
+    pub fn ip_address_type(&self) -> ::std::option::Option<&crate::types::IpAddressType> {
+        self.ip_address_type.as_ref()
+    }
 }
 impl ::std::fmt::Debug for CreateServerInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -298,6 +324,7 @@ impl ::std::fmt::Debug for CreateServerInput {
         formatter.field("workflow_details", &self.workflow_details);
         formatter.field("structured_log_destinations", &self.structured_log_destinations);
         formatter.field("s3_storage_options", &self.s3_storage_options);
+        formatter.field("ip_address_type", &self.ip_address_type);
         formatter.finish()
     }
 }
@@ -329,6 +356,7 @@ pub struct CreateServerInputBuilder {
     pub(crate) workflow_details: ::std::option::Option<crate::types::WorkflowDetails>,
     pub(crate) structured_log_destinations: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) s3_storage_options: ::std::option::Option<crate::types::S3StorageOptions>,
+    pub(crate) ip_address_type: ::std::option::Option<crate::types::IpAddressType>,
 }
 impl CreateServerInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the Certificate Manager (ACM) certificate. Required when <code>Protocols</code> is set to <code>FTPS</code>.</p>
@@ -833,6 +861,50 @@ impl CreateServerInputBuilder {
     pub fn get_s3_storage_options(&self) -> &::std::option::Option<crate::types::S3StorageOptions> {
         &self.s3_storage_options
     }
+    /// <p>Specifies whether to use IPv4 only, or to use dual-stack (IPv4 and IPv6) for your Transfer Family endpoint. The default value is <code>IPV4</code>.</p><important>
+    /// <p>The <code>IpAddressType</code> parameter has the following limitations:</p>
+    /// <ul>
+    /// <li>
+    /// <p>It cannot be changed while the server is online. You must stop the server before modifying this parameter.</p></li>
+    /// <li>
+    /// <p>It cannot be updated to <code>DUALSTACK</code> if the server has <code>AddressAllocationIds</code> specified.</p></li>
+    /// </ul>
+    /// </important> <note>
+    /// <p>When using <code>DUALSTACK</code> as the <code>IpAddressType</code>, you cannot set the <code>AddressAllocationIds</code> parameter for the <a href="https://docs.aws.amazon.com/transfer/latest/APIReference/API_EndpointDetails.html">EndpointDetails</a> for the server.</p>
+    /// </note>
+    pub fn ip_address_type(mut self, input: crate::types::IpAddressType) -> Self {
+        self.ip_address_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies whether to use IPv4 only, or to use dual-stack (IPv4 and IPv6) for your Transfer Family endpoint. The default value is <code>IPV4</code>.</p><important>
+    /// <p>The <code>IpAddressType</code> parameter has the following limitations:</p>
+    /// <ul>
+    /// <li>
+    /// <p>It cannot be changed while the server is online. You must stop the server before modifying this parameter.</p></li>
+    /// <li>
+    /// <p>It cannot be updated to <code>DUALSTACK</code> if the server has <code>AddressAllocationIds</code> specified.</p></li>
+    /// </ul>
+    /// </important> <note>
+    /// <p>When using <code>DUALSTACK</code> as the <code>IpAddressType</code>, you cannot set the <code>AddressAllocationIds</code> parameter for the <a href="https://docs.aws.amazon.com/transfer/latest/APIReference/API_EndpointDetails.html">EndpointDetails</a> for the server.</p>
+    /// </note>
+    pub fn set_ip_address_type(mut self, input: ::std::option::Option<crate::types::IpAddressType>) -> Self {
+        self.ip_address_type = input;
+        self
+    }
+    /// <p>Specifies whether to use IPv4 only, or to use dual-stack (IPv4 and IPv6) for your Transfer Family endpoint. The default value is <code>IPV4</code>.</p><important>
+    /// <p>The <code>IpAddressType</code> parameter has the following limitations:</p>
+    /// <ul>
+    /// <li>
+    /// <p>It cannot be changed while the server is online. You must stop the server before modifying this parameter.</p></li>
+    /// <li>
+    /// <p>It cannot be updated to <code>DUALSTACK</code> if the server has <code>AddressAllocationIds</code> specified.</p></li>
+    /// </ul>
+    /// </important> <note>
+    /// <p>When using <code>DUALSTACK</code> as the <code>IpAddressType</code>, you cannot set the <code>AddressAllocationIds</code> parameter for the <a href="https://docs.aws.amazon.com/transfer/latest/APIReference/API_EndpointDetails.html">EndpointDetails</a> for the server.</p>
+    /// </note>
+    pub fn get_ip_address_type(&self) -> &::std::option::Option<crate::types::IpAddressType> {
+        &self.ip_address_type
+    }
     /// Consumes the builder and constructs a [`CreateServerInput`](crate::operation::create_server::CreateServerInput).
     pub fn build(
         self,
@@ -855,6 +927,7 @@ impl CreateServerInputBuilder {
             workflow_details: self.workflow_details,
             structured_log_destinations: self.structured_log_destinations,
             s3_storage_options: self.s3_storage_options,
+            ip_address_type: self.ip_address_type,
         })
     }
 }
@@ -878,6 +951,7 @@ impl ::std::fmt::Debug for CreateServerInputBuilder {
         formatter.field("workflow_details", &self.workflow_details);
         formatter.field("structured_log_destinations", &self.structured_log_destinations);
         formatter.field("s3_storage_options", &self.s3_storage_options);
+        formatter.field("ip_address_type", &self.ip_address_type);
         formatter.finish()
     }
 }

@@ -22,7 +22,9 @@ impl crate::operation::list_stack_set_operation_results::builders::ListStackSetO
 }
 /// Fluent builder constructing a request to `ListStackSetOperationResults`.
 ///
-/// <p>Returns summary information about the results of a stack set operation.</p>
+/// <p>Returns summary information about the results of a stack set operation.</p><note>
+/// <p>This API provides <i>eventually consistent</i> reads meaning it may take some time but will eventually return the most up-to-date data.</p>
+/// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListStackSetOperationResultsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

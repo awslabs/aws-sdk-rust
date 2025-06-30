@@ -25,6 +25,8 @@ pub struct GetImageSetOutput {
     pub image_set_arn: ::std::option::Option<::std::string::String>,
     /// <p>This object contains the details of any overrides used while creating a specific image set version. If an image set was copied or updated using the <code>force</code> flag, this object will contain the <code>forced</code> flag.</p>
     pub overrides: ::std::option::Option<crate::types::Overrides>,
+    /// <p>The flag to determine whether the image set is primary or not.</p>
+    pub is_primary: ::std::option::Option<bool>,
     _request_id: Option<String>,
 }
 impl GetImageSetOutput {
@@ -75,6 +77,10 @@ impl GetImageSetOutput {
     pub fn overrides(&self) -> ::std::option::Option<&crate::types::Overrides> {
         self.overrides.as_ref()
     }
+    /// <p>The flag to determine whether the image set is primary or not.</p>
+    pub fn is_primary(&self) -> ::std::option::Option<bool> {
+        self.is_primary
+    }
 }
 impl ::aws_types::request_id::RequestId for GetImageSetOutput {
     fn request_id(&self) -> Option<&str> {
@@ -103,6 +109,7 @@ pub struct GetImageSetOutputBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
     pub(crate) image_set_arn: ::std::option::Option<::std::string::String>,
     pub(crate) overrides: ::std::option::Option<crate::types::Overrides>,
+    pub(crate) is_primary: ::std::option::Option<bool>,
     _request_id: Option<String>,
 }
 impl GetImageSetOutputBuilder {
@@ -264,6 +271,20 @@ impl GetImageSetOutputBuilder {
     pub fn get_overrides(&self) -> &::std::option::Option<crate::types::Overrides> {
         &self.overrides
     }
+    /// <p>The flag to determine whether the image set is primary or not.</p>
+    pub fn is_primary(mut self, input: bool) -> Self {
+        self.is_primary = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The flag to determine whether the image set is primary or not.</p>
+    pub fn set_is_primary(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.is_primary = input;
+        self
+    }
+    /// <p>The flag to determine whether the image set is primary or not.</p>
+    pub fn get_is_primary(&self) -> &::std::option::Option<bool> {
+        &self.is_primary
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -314,6 +335,7 @@ impl GetImageSetOutputBuilder {
             message: self.message,
             image_set_arn: self.image_set_arn,
             overrides: self.overrides,
+            is_primary: self.is_primary,
             _request_id: self._request_id,
         })
     }

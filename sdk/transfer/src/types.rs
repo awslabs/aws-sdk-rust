@@ -67,6 +67,8 @@ pub use crate::types::_ssh_public_key::SshPublicKey;
 
 pub use crate::types::_listed_user::ListedUser;
 
+pub use crate::types::_ip_address_type::IpAddressType;
+
 pub use crate::types::_s3_storage_options::S3StorageOptions;
 
 pub use crate::types::_directory_listing_optimization::DirectoryListingOptimization;
@@ -294,6 +296,8 @@ mod _identity_provider_details;
 mod _identity_provider_type;
 
 mod _input_file_location;
+
+mod _ip_address_type;
 
 mod _listed_access;
 

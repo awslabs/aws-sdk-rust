@@ -23,7 +23,7 @@ impl crate::operation::list_user_policies::builders::ListUserPoliciesInputBuilde
 /// Fluent builder constructing a request to `ListUserPolicies`.
 ///
 /// <p>Lists the names of the inline policies embedded in the specified IAM user.</p>
-/// <p>An IAM user can also have managed policies attached to it. To list the managed policies that are attached to a user, use <code>ListAttachedUserPolicies</code>. For more information about policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed policies and inline policies</a> in the <i>IAM User Guide</i>.</p>
+/// <p>An IAM user can also have managed policies attached to it. To list the managed policies that are attached to a user, use <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_ListAttachedUserPolicies.html">ListAttachedUserPolicies</a>. For more information about policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed policies and inline policies</a> in the <i>IAM User Guide</i>.</p>
 /// <p>You can paginate the results using the <code>MaxItems</code> and <code>Marker</code> parameters. If there are no inline policies embedded with the specified user, the operation returns an empty list.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListUserPoliciesFluentBuilder {

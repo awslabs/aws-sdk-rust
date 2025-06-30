@@ -4,11 +4,11 @@
 /// <p>This data type is used as a response element in the following operations:</p>
 /// <ul>
 /// <li>
-/// <p><code>CreateUser</code></p></li>
+/// <p><a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateUser.html">CreateUser</a></p></li>
 /// <li>
-/// <p><code>GetUser</code></p></li>
+/// <p><a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetUser.html">GetUser</a></p></li>
 /// <li>
-/// <p><code>ListUsers</code></p></li>
+/// <p><a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_ListUsers.html">ListUsers</a></p></li>
 /// </ul>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
@@ -32,7 +32,7 @@ pub struct User {
     /// <p>A password exists but has not been used since IAM started tracking this information on October 20, 2014.</p></li>
     /// </ul>
     /// <p>A null value does not mean that the user <i>never</i> had a password. Also, if the user does not currently have a password but had one in the past, then this field contains the date and time the most recent password was used.</p>
-    /// <p>This value is returned only in the <code>GetUser</code> and <code>ListUsers</code> operations.</p>
+    /// <p>This value is returned only in the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetUser.html">GetUser</a> and <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_ListUsers.html">ListUsers</a> operations.</p>
     pub password_last_used: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>For more information about permissions boundaries, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions boundaries for IAM identities </a> in the <i>IAM User Guide</i>.</p>
     pub permissions_boundary: ::std::option::Option<crate::types::AttachedPermissionsBoundary>,
@@ -73,7 +73,7 @@ impl User {
     /// <p>A password exists but has not been used since IAM started tracking this information on October 20, 2014.</p></li>
     /// </ul>
     /// <p>A null value does not mean that the user <i>never</i> had a password. Also, if the user does not currently have a password but had one in the past, then this field contains the date and time the most recent password was used.</p>
-    /// <p>This value is returned only in the <code>GetUser</code> and <code>ListUsers</code> operations.</p>
+    /// <p>This value is returned only in the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetUser.html">GetUser</a> and <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_ListUsers.html">ListUsers</a> operations.</p>
     pub fn password_last_used(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.password_last_used.as_ref()
     }
@@ -195,7 +195,7 @@ impl UserBuilder {
     /// <p>A password exists but has not been used since IAM started tracking this information on October 20, 2014.</p></li>
     /// </ul>
     /// <p>A null value does not mean that the user <i>never</i> had a password. Also, if the user does not currently have a password but had one in the past, then this field contains the date and time the most recent password was used.</p>
-    /// <p>This value is returned only in the <code>GetUser</code> and <code>ListUsers</code> operations.</p>
+    /// <p>This value is returned only in the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetUser.html">GetUser</a> and <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_ListUsers.html">ListUsers</a> operations.</p>
     pub fn password_last_used(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.password_last_used = ::std::option::Option::Some(input);
         self
@@ -208,7 +208,7 @@ impl UserBuilder {
     /// <p>A password exists but has not been used since IAM started tracking this information on October 20, 2014.</p></li>
     /// </ul>
     /// <p>A null value does not mean that the user <i>never</i> had a password. Also, if the user does not currently have a password but had one in the past, then this field contains the date and time the most recent password was used.</p>
-    /// <p>This value is returned only in the <code>GetUser</code> and <code>ListUsers</code> operations.</p>
+    /// <p>This value is returned only in the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetUser.html">GetUser</a> and <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_ListUsers.html">ListUsers</a> operations.</p>
     pub fn set_password_last_used(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.password_last_used = input;
         self
@@ -221,7 +221,7 @@ impl UserBuilder {
     /// <p>A password exists but has not been used since IAM started tracking this information on October 20, 2014.</p></li>
     /// </ul>
     /// <p>A null value does not mean that the user <i>never</i> had a password. Also, if the user does not currently have a password but had one in the past, then this field contains the date and time the most recent password was used.</p>
-    /// <p>This value is returned only in the <code>GetUser</code> and <code>ListUsers</code> operations.</p>
+    /// <p>This value is returned only in the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetUser.html">GetUser</a> and <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_ListUsers.html">ListUsers</a> operations.</p>
     pub fn get_password_last_used(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.password_last_used
     }

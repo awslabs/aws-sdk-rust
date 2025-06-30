@@ -371,6 +371,8 @@ pub use crate::types::_credentials::Credentials;
 
 pub use crate::types::_session::Session;
 
+pub use crate::types::_access_type::AccessType;
+
 pub use crate::types::_session_manager_output_url::SessionManagerOutputUrl;
 
 pub use crate::types::_session_status::SessionStatus;
@@ -532,6 +534,8 @@ pub use crate::types::_create_association_batch_request_entry::CreateAssociation
 pub use crate::types::_registration_metadata_item::RegistrationMetadataItem;
 
 mod _access_request_status;
+
+mod _access_type;
 
 mod _account_sharing_info;
 

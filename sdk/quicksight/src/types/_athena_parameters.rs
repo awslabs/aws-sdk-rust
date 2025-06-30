@@ -8,6 +8,9 @@ pub struct AthenaParameters {
     pub work_group: ::std::option::Option<::std::string::String>,
     /// <p>Use the <code>RoleArn</code> structure to override an account-wide role for a specific Athena data source. For example, say an account administrator has turned off all Athena access with an account-wide role. The administrator can then use <code>RoleArn</code> to bypass the account-wide role and allow Athena access for the single Athena data source that is specified in the structure, even if the account-wide role forbidding Athena access is still active.</p>
     pub role_arn: ::std::option::Option<::std::string::String>,
+    /// <p>An optional parameter that configures IAM Identity Center authentication to grant Amazon QuickSight access to your workgroup.</p>
+    /// <p>This parameter can only be specified if your Amazon QuickSight account is configured with IAM Identity Center.</p>
+    pub identity_center_configuration: ::std::option::Option<crate::types::IdentityCenterConfiguration>,
 }
 impl AthenaParameters {
     /// <p>The workgroup that Amazon Athena uses.</p>
@@ -17,6 +20,11 @@ impl AthenaParameters {
     /// <p>Use the <code>RoleArn</code> structure to override an account-wide role for a specific Athena data source. For example, say an account administrator has turned off all Athena access with an account-wide role. The administrator can then use <code>RoleArn</code> to bypass the account-wide role and allow Athena access for the single Athena data source that is specified in the structure, even if the account-wide role forbidding Athena access is still active.</p>
     pub fn role_arn(&self) -> ::std::option::Option<&str> {
         self.role_arn.as_deref()
+    }
+    /// <p>An optional parameter that configures IAM Identity Center authentication to grant Amazon QuickSight access to your workgroup.</p>
+    /// <p>This parameter can only be specified if your Amazon QuickSight account is configured with IAM Identity Center.</p>
+    pub fn identity_center_configuration(&self) -> ::std::option::Option<&crate::types::IdentityCenterConfiguration> {
+        self.identity_center_configuration.as_ref()
     }
 }
 impl AthenaParameters {
@@ -32,6 +40,7 @@ impl AthenaParameters {
 pub struct AthenaParametersBuilder {
     pub(crate) work_group: ::std::option::Option<::std::string::String>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) identity_center_configuration: ::std::option::Option<crate::types::IdentityCenterConfiguration>,
 }
 impl AthenaParametersBuilder {
     /// <p>The workgroup that Amazon Athena uses.</p>
@@ -62,11 +71,29 @@ impl AthenaParametersBuilder {
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.role_arn
     }
+    /// <p>An optional parameter that configures IAM Identity Center authentication to grant Amazon QuickSight access to your workgroup.</p>
+    /// <p>This parameter can only be specified if your Amazon QuickSight account is configured with IAM Identity Center.</p>
+    pub fn identity_center_configuration(mut self, input: crate::types::IdentityCenterConfiguration) -> Self {
+        self.identity_center_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>An optional parameter that configures IAM Identity Center authentication to grant Amazon QuickSight access to your workgroup.</p>
+    /// <p>This parameter can only be specified if your Amazon QuickSight account is configured with IAM Identity Center.</p>
+    pub fn set_identity_center_configuration(mut self, input: ::std::option::Option<crate::types::IdentityCenterConfiguration>) -> Self {
+        self.identity_center_configuration = input;
+        self
+    }
+    /// <p>An optional parameter that configures IAM Identity Center authentication to grant Amazon QuickSight access to your workgroup.</p>
+    /// <p>This parameter can only be specified if your Amazon QuickSight account is configured with IAM Identity Center.</p>
+    pub fn get_identity_center_configuration(&self) -> &::std::option::Option<crate::types::IdentityCenterConfiguration> {
+        &self.identity_center_configuration
+    }
     /// Consumes the builder and constructs a [`AthenaParameters`](crate::types::AthenaParameters).
     pub fn build(self) -> crate::types::AthenaParameters {
         crate::types::AthenaParameters {
             work_group: self.work_group,
             role_arn: self.role_arn,
+            identity_center_configuration: self.identity_center_configuration,
         }
     }
 }

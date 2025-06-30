@@ -5,7 +5,7 @@
 pub struct StopQueryWorkloadInsightsTopContributorsDataInput {
     /// <p>The identifier for the scope that includes the resources you want to get data results for. A scope ID is an internally-generated identifier that includes all the resources for a specific root account.</p>
     pub scope_id: ::std::option::Option<::std::string::String>,
-    /// <p>The identifier for the query. A query ID is an internally-generated identifier for a specific query returned from an API call to start a query.</p>
+    /// <p>The identifier for the query. A query ID is an internally-generated identifier for a specific query returned from an API call to create a query.</p>
     pub query_id: ::std::option::Option<::std::string::String>,
 }
 impl StopQueryWorkloadInsightsTopContributorsDataInput {
@@ -13,7 +13,7 @@ impl StopQueryWorkloadInsightsTopContributorsDataInput {
     pub fn scope_id(&self) -> ::std::option::Option<&str> {
         self.scope_id.as_deref()
     }
-    /// <p>The identifier for the query. A query ID is an internally-generated identifier for a specific query returned from an API call to start a query.</p>
+    /// <p>The identifier for the query. A query ID is an internally-generated identifier for a specific query returned from an API call to create a query.</p>
     pub fn query_id(&self) -> ::std::option::Option<&str> {
         self.query_id.as_deref()
     }
@@ -50,18 +50,18 @@ impl StopQueryWorkloadInsightsTopContributorsDataInputBuilder {
     pub fn get_scope_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.scope_id
     }
-    /// <p>The identifier for the query. A query ID is an internally-generated identifier for a specific query returned from an API call to start a query.</p>
+    /// <p>The identifier for the query. A query ID is an internally-generated identifier for a specific query returned from an API call to create a query.</p>
     /// This field is required.
     pub fn query_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.query_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The identifier for the query. A query ID is an internally-generated identifier for a specific query returned from an API call to start a query.</p>
+    /// <p>The identifier for the query. A query ID is an internally-generated identifier for a specific query returned from an API call to create a query.</p>
     pub fn set_query_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.query_id = input;
         self
     }
-    /// <p>The identifier for the query. A query ID is an internally-generated identifier for a specific query returned from an API call to start a query.</p>
+    /// <p>The identifier for the query. A query ID is an internally-generated identifier for a specific query returned from an API call to create a query.</p>
     pub fn get_query_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.query_id
     }

@@ -268,6 +268,8 @@ pub enum UpdateDocumentMetadataError {
     InvalidDocumentOperation(crate::types::error::InvalidDocumentOperation),
     /// <p>The document version isn't valid or doesn't exist.</p>
     InvalidDocumentVersion(crate::types::error::InvalidDocumentVersion),
+    /// <p>There are concurrent updates for a resource that supports one update at a time.</p>
+    TooManyUpdates(crate::types::error::TooManyUpdates),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \
     variable wildcard pattern and check `.code()`:
@@ -305,6 +307,7 @@ impl UpdateDocumentMetadataError {
             Self::InvalidDocument(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidDocumentOperation(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidDocumentVersion(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::TooManyUpdates(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::Unhandled(e) => &e.meta,
         }
     }
@@ -324,6 +327,10 @@ impl UpdateDocumentMetadataError {
     pub fn is_invalid_document_version(&self) -> bool {
         matches!(self, Self::InvalidDocumentVersion(_))
     }
+    /// Returns `true` if the error kind is `UpdateDocumentMetadataError::TooManyUpdates`.
+    pub fn is_too_many_updates(&self) -> bool {
+        matches!(self, Self::TooManyUpdates(_))
+    }
 }
 impl ::std::error::Error for UpdateDocumentMetadataError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
@@ -332,6 +339,7 @@ impl ::std::error::Error for UpdateDocumentMetadataError {
             Self::InvalidDocument(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidDocumentOperation(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidDocumentVersion(_inner) => ::std::option::Option::Some(_inner),
+            Self::TooManyUpdates(_inner) => ::std::option::Option::Some(_inner),
             Self::Unhandled(_inner) => ::std::option::Option::Some(&*_inner.source),
         }
     }
@@ -343,6 +351,7 @@ impl ::std::fmt::Display for UpdateDocumentMetadataError {
             Self::InvalidDocument(_inner) => _inner.fmt(f),
             Self::InvalidDocumentOperation(_inner) => _inner.fmt(f),
             Self::InvalidDocumentVersion(_inner) => _inner.fmt(f),
+            Self::TooManyUpdates(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => {
                 if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self) {
                     write!(f, "unhandled error ({code})")
@@ -368,6 +377,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for UpdateDocumen
             Self::InvalidDocument(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidDocumentOperation(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidDocumentVersion(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::TooManyUpdates(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::Unhandled(_inner) => &_inner.meta,
         }
     }

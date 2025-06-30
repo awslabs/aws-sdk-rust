@@ -18,6 +18,8 @@ pub enum SearchByAttributeValue {
     DicomStudyId(::std::string::String),
     /// <p>The DICOM study instance UID for search.</p>
     DicomStudyInstanceUid(::std::string::String),
+    /// <p>The primary image set flag provided for search.</p>
+    IsPrimary(bool),
     /// <p>The timestamp input for search.</p>
     UpdatedAt(::aws_smithy_types::DateTime),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
@@ -122,6 +124,19 @@ impl SearchByAttributeValue {
     pub fn is_dicom_study_instance_uid(&self) -> bool {
         self.as_dicom_study_instance_uid().is_ok()
     }
+    /// Tries to convert the enum instance into [`IsPrimary`](crate::types::SearchByAttributeValue::IsPrimary), extracting the inner [`bool`](bool).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_is_primary(&self) -> ::std::result::Result<&bool, &Self> {
+        if let SearchByAttributeValue::IsPrimary(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`IsPrimary`](crate::types::SearchByAttributeValue::IsPrimary).
+    pub fn is_is_primary(&self) -> bool {
+        self.as_is_primary().is_ok()
+    }
     /// Tries to convert the enum instance into [`UpdatedAt`](crate::types::SearchByAttributeValue::UpdatedAt), extracting the inner [`DateTime`](::aws_smithy_types::DateTime).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_updated_at(&self) -> ::std::result::Result<&::aws_smithy_types::DateTime, &Self> {
@@ -150,6 +165,7 @@ impl ::std::fmt::Debug for SearchByAttributeValue {
             SearchByAttributeValue::DicomStudyDateAndTime(val) => f.debug_tuple("DicomStudyDateAndTime").field(&val).finish(),
             SearchByAttributeValue::DicomStudyId(_) => f.debug_tuple("*** Sensitive Data Redacted ***").finish(),
             SearchByAttributeValue::DicomStudyInstanceUid(_) => f.debug_tuple("*** Sensitive Data Redacted ***").finish(),
+            SearchByAttributeValue::IsPrimary(val) => f.debug_tuple("IsPrimary").field(&val).finish(),
             SearchByAttributeValue::UpdatedAt(val) => f.debug_tuple("UpdatedAt").field(&val).finish(),
             SearchByAttributeValue::Unknown => f.debug_tuple("Unknown").finish(),
         }

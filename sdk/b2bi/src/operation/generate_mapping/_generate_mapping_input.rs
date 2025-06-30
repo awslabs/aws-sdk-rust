@@ -3,19 +3,19 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GenerateMappingInput {
-    /// <p>Provide the contents of a sample X12 EDI file (for inbound EDI) or JSON/XML file (for outbound EDI) to use as a starting point for the mapping.</p>
+    /// <p>Provide the contents of a sample X12 EDI file, either in JSON or XML format, to use as a starting point for the mapping.</p>
     pub input_file_content: ::std::option::Option<::std::string::String>,
-    /// <p>Provide the contents of a sample X12 EDI file (for outbound EDI) or JSON/XML file (for inbound EDI) to use as a target for the mapping.</p>
+    /// <p>Provide the contents of a sample X12 EDI file, either in JSON or XML format, to use as a target for the mapping.</p>
     pub output_file_content: ::std::option::Option<::std::string::String>,
     /// <p>Specify the mapping type: either <code>JSONATA</code> or <code>XSLT.</code></p>
     pub mapping_type: ::std::option::Option<crate::types::MappingType>,
 }
 impl GenerateMappingInput {
-    /// <p>Provide the contents of a sample X12 EDI file (for inbound EDI) or JSON/XML file (for outbound EDI) to use as a starting point for the mapping.</p>
+    /// <p>Provide the contents of a sample X12 EDI file, either in JSON or XML format, to use as a starting point for the mapping.</p>
     pub fn input_file_content(&self) -> ::std::option::Option<&str> {
         self.input_file_content.as_deref()
     }
-    /// <p>Provide the contents of a sample X12 EDI file (for outbound EDI) or JSON/XML file (for inbound EDI) to use as a target for the mapping.</p>
+    /// <p>Provide the contents of a sample X12 EDI file, either in JSON or XML format, to use as a target for the mapping.</p>
     pub fn output_file_content(&self) -> ::std::option::Option<&str> {
         self.output_file_content.as_deref()
     }
@@ -40,33 +40,33 @@ pub struct GenerateMappingInputBuilder {
     pub(crate) mapping_type: ::std::option::Option<crate::types::MappingType>,
 }
 impl GenerateMappingInputBuilder {
-    /// <p>Provide the contents of a sample X12 EDI file (for inbound EDI) or JSON/XML file (for outbound EDI) to use as a starting point for the mapping.</p>
+    /// <p>Provide the contents of a sample X12 EDI file, either in JSON or XML format, to use as a starting point for the mapping.</p>
     /// This field is required.
     pub fn input_file_content(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.input_file_content = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Provide the contents of a sample X12 EDI file (for inbound EDI) or JSON/XML file (for outbound EDI) to use as a starting point for the mapping.</p>
+    /// <p>Provide the contents of a sample X12 EDI file, either in JSON or XML format, to use as a starting point for the mapping.</p>
     pub fn set_input_file_content(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.input_file_content = input;
         self
     }
-    /// <p>Provide the contents of a sample X12 EDI file (for inbound EDI) or JSON/XML file (for outbound EDI) to use as a starting point for the mapping.</p>
+    /// <p>Provide the contents of a sample X12 EDI file, either in JSON or XML format, to use as a starting point for the mapping.</p>
     pub fn get_input_file_content(&self) -> &::std::option::Option<::std::string::String> {
         &self.input_file_content
     }
-    /// <p>Provide the contents of a sample X12 EDI file (for outbound EDI) or JSON/XML file (for inbound EDI) to use as a target for the mapping.</p>
+    /// <p>Provide the contents of a sample X12 EDI file, either in JSON or XML format, to use as a target for the mapping.</p>
     /// This field is required.
     pub fn output_file_content(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.output_file_content = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Provide the contents of a sample X12 EDI file (for outbound EDI) or JSON/XML file (for inbound EDI) to use as a target for the mapping.</p>
+    /// <p>Provide the contents of a sample X12 EDI file, either in JSON or XML format, to use as a target for the mapping.</p>
     pub fn set_output_file_content(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.output_file_content = input;
         self
     }
-    /// <p>Provide the contents of a sample X12 EDI file (for outbound EDI) or JSON/XML file (for inbound EDI) to use as a target for the mapping.</p>
+    /// <p>Provide the contents of a sample X12 EDI file, either in JSON or XML format, to use as a target for the mapping.</p>
     pub fn get_output_file_content(&self) -> &::std::option::Option<::std::string::String> {
         &self.output_file_content
     }

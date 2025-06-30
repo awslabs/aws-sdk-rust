@@ -1449,6 +1449,18 @@ pub(crate) fn guardrail_configuration_correct_errors(
     builder
 }
 
+pub(crate) fn implicit_filter_configuration_correct_errors(
+    mut builder: crate::types::builders::ImplicitFilterConfigurationBuilder,
+) -> crate::types::builders::ImplicitFilterConfigurationBuilder {
+    if builder.metadata_attributes.is_none() {
+        builder.metadata_attributes = Some(Default::default())
+    }
+    if builder.model_arn.is_none() {
+        builder.model_arn = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn query_transformation_configuration_correct_errors(
     mut builder: crate::types::builders::QueryTransformationConfigurationBuilder,
 ) -> crate::types::builders::QueryTransformationConfigurationBuilder {
@@ -1466,6 +1478,15 @@ pub(crate) fn rating_scale_item_correct_errors(
     }
     if builder.value.is_none() {
         builder.value = Some(crate::types::RatingScaleItemValue::Unknown)
+    }
+    builder
+}
+
+pub(crate) fn vector_search_reranking_configuration_correct_errors(
+    mut builder: crate::types::builders::VectorSearchRerankingConfigurationBuilder,
+) -> crate::types::builders::VectorSearchRerankingConfigurationBuilder {
+    if builder.r#type.is_none() {
+        builder.r#type = "no value was set".parse::<crate::types::VectorSearchRerankingConfigurationType>().ok()
     }
     builder
 }
@@ -1500,6 +1521,62 @@ pub(crate) fn filter_attribute_correct_errors(
 pub(crate) fn s3_object_doc_correct_errors(mut builder: crate::types::builders::S3ObjectDocBuilder) -> crate::types::builders::S3ObjectDocBuilder {
     if builder.uri.is_none() {
         builder.uri = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn vector_search_bedrock_reranking_configuration_correct_errors(
+    mut builder: crate::types::builders::VectorSearchBedrockRerankingConfigurationBuilder,
+) -> crate::types::builders::VectorSearchBedrockRerankingConfigurationBuilder {
+    if builder.model_configuration.is_none() {
+        builder.model_configuration = {
+            let builder = crate::types::builders::VectorSearchBedrockRerankingModelConfigurationBuilder::default();
+            crate::serde_util::vector_search_bedrock_reranking_model_configuration_correct_errors(builder)
+                .build()
+                .ok()
+        }
+    }
+    builder
+}
+
+pub(crate) fn metadata_attribute_schema_correct_errors(
+    mut builder: crate::types::builders::MetadataAttributeSchemaBuilder,
+) -> crate::types::builders::MetadataAttributeSchemaBuilder {
+    if builder.key.is_none() {
+        builder.key = Some(Default::default())
+    }
+    if builder.r#type.is_none() {
+        builder.r#type = "no value was set".parse::<crate::types::AttributeType>().ok()
+    }
+    if builder.description.is_none() {
+        builder.description = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn metadata_configuration_for_reranking_correct_errors(
+    mut builder: crate::types::builders::MetadataConfigurationForRerankingBuilder,
+) -> crate::types::builders::MetadataConfigurationForRerankingBuilder {
+    if builder.selection_mode.is_none() {
+        builder.selection_mode = "no value was set".parse::<crate::types::RerankingMetadataSelectionMode>().ok()
+    }
+    builder
+}
+
+pub(crate) fn vector_search_bedrock_reranking_model_configuration_correct_errors(
+    mut builder: crate::types::builders::VectorSearchBedrockRerankingModelConfigurationBuilder,
+) -> crate::types::builders::VectorSearchBedrockRerankingModelConfigurationBuilder {
+    if builder.model_arn.is_none() {
+        builder.model_arn = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn field_for_reranking_correct_errors(
+    mut builder: crate::types::builders::FieldForRerankingBuilder,
+) -> crate::types::builders::FieldForRerankingBuilder {
+    if builder.field_name.is_none() {
+        builder.field_name = Some(Default::default())
     }
     builder
 }

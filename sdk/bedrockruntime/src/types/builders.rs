@@ -61,6 +61,16 @@ pub use crate::types::_content_block_stop_event::ContentBlockStopEventBuilder;
 
 pub use crate::types::_content_block_delta_event::ContentBlockDeltaEventBuilder;
 
+pub use crate::types::_citations_delta::CitationsDeltaBuilder;
+
+pub use crate::types::_document_chunk_location::DocumentChunkLocationBuilder;
+
+pub use crate::types::_document_page_location::DocumentPageLocationBuilder;
+
+pub use crate::types::_document_char_location::DocumentCharLocationBuilder;
+
+pub use crate::types::_citation_source_content_delta::CitationSourceContentDeltaBuilder;
+
 pub use crate::types::_tool_use_block_delta::ToolUseBlockDeltaBuilder;
 
 pub use crate::types::_content_block_start_event::ContentBlockStartEventBuilder;
@@ -91,6 +101,10 @@ pub use crate::types::_guardrail_converse_text_block::GuardrailConverseTextBlock
 
 pub use crate::types::_message::MessageBuilder;
 
+pub use crate::types::_citations_content_block::CitationsContentBlockBuilder;
+
+pub use crate::types::_citation::CitationBuilder;
+
 pub use crate::types::_reasoning_text_block::ReasoningTextBlockBuilder;
 
 pub use crate::types::_tool_result_block::ToolResultBlockBuilder;
@@ -100,6 +114,8 @@ pub use crate::types::_video_block::VideoBlockBuilder;
 pub use crate::types::_s3_location::S3LocationBuilder;
 
 pub use crate::types::_document_block::DocumentBlockBuilder;
+
+pub use crate::types::_citations_config::CitationsConfigBuilder;
 
 pub use crate::types::_image_block::ImageBlockBuilder;
 

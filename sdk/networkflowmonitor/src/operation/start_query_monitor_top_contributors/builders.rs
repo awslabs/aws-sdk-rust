@@ -22,8 +22,9 @@ impl crate::operation::start_query_monitor_top_contributors::builders::StartQuer
 }
 /// Fluent builder constructing a request to `StartQueryMonitorTopContributors`.
 ///
-/// <p>Start a query to return the data with the Network Flow Monitor query interface. Specify the query that you want to return results for by providing a query ID and a monitor name. This query returns the top contributors for a specific monitor.</p>
-/// <p>Top contributors in Network Flow Monitor are network flows with the highest values for a specific metric type, related to a scope (for workload insights) or a monitor.</p>
+/// <p>Create a query that you can use with the Network Flow Monitor query interface to return the top contributors for a monitor. Specify the monitor that you want to create the query for.</p>
+/// <p>The call returns a query ID that you can use with <a href="https://docs.aws.amazon.com/networkflowmonitor/2.0/APIReference/API_GetQueryResultsMonitorTopContributors.html"> GetQueryResultsMonitorTopContributors</a> to run the query and return the top contributors for a specific monitor.</p>
+/// <p>Top contributors in Network Flow Monitor are network flows with the highest values for a specific metric type. Top contributors can be across all workload insights, for a given scope, or for a specific monitor. Use the applicable APIs for the top contributors that you want to be returned.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StartQueryMonitorTopContributorsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -151,17 +152,17 @@ impl StartQueryMonitorTopContributorsFluentBuilder {
     pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         self.inner.get_end_time()
     }
-    /// <p>The metric that you want to query top contributors for. That is, you can specify this metric to return the top contributor network flows, for this type of metric, for a monitor and (optionally) within a specific category, such as network flows between Availability Zones.</p>
+    /// <p>The metric that you want to query top contributors for. That is, you can specify a metric with this call and return the top contributor network flows, for that type of metric, for a monitor and (optionally) within a specific category, such as network flows between Availability Zones.</p>
     pub fn metric_name(mut self, input: crate::types::MonitorMetric) -> Self {
         self.inner = self.inner.metric_name(input);
         self
     }
-    /// <p>The metric that you want to query top contributors for. That is, you can specify this metric to return the top contributor network flows, for this type of metric, for a monitor and (optionally) within a specific category, such as network flows between Availability Zones.</p>
+    /// <p>The metric that you want to query top contributors for. That is, you can specify a metric with this call and return the top contributor network flows, for that type of metric, for a monitor and (optionally) within a specific category, such as network flows between Availability Zones.</p>
     pub fn set_metric_name(mut self, input: ::std::option::Option<crate::types::MonitorMetric>) -> Self {
         self.inner = self.inner.set_metric_name(input);
         self
     }
-    /// <p>The metric that you want to query top contributors for. That is, you can specify this metric to return the top contributor network flows, for this type of metric, for a monitor and (optionally) within a specific category, such as network flows between Availability Zones.</p>
+    /// <p>The metric that you want to query top contributors for. That is, you can specify a metric with this call and return the top contributor network flows, for that type of metric, for a monitor and (optionally) within a specific category, such as network flows between Availability Zones.</p>
     pub fn get_metric_name(&self) -> &::std::option::Option<crate::types::MonitorMetric> {
         self.inner.get_metric_name()
     }

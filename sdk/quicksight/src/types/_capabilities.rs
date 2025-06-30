@@ -4,10 +4,14 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Capabilities {
-    /// <p>The ability to export to CSV files.</p>
+    /// <p>The ability to export to CSV files from the UI.</p>
     pub export_to_csv: ::std::option::Option<crate::types::CapabilityState>,
-    /// <p>The ability to export to Excel files.</p>
+    /// <p>The ability to export to Excel files from the UI.</p>
     pub export_to_excel: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to export to PDF files from the UI.</p>
+    pub export_to_pdf: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to print reports.</p>
+    pub print_reports: ::std::option::Option<crate::types::CapabilityState>,
     /// <p>The ability to export to Create and Update themes.</p>
     pub create_and_update_themes: ::std::option::Option<crate::types::CapabilityState>,
     /// <p>The ability to add or run anomaly detection.</p>
@@ -38,15 +42,31 @@ pub struct Capabilities {
     pub view_account_spice_capacity: ::std::option::Option<crate::types::CapabilityState>,
     /// <p>The ability to create a SPICE dataset.</p>
     pub create_spice_dataset: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to export to PDF files in scheduled email reports.</p>
+    pub export_to_pdf_in_scheduled_reports: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to export to CSV files in scheduled email reports.</p>
+    pub export_to_csv_in_scheduled_reports: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to export to Excel files in scheduled email reports.</p>
+    pub export_to_excel_in_scheduled_reports: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to include content in scheduled email reports.</p>
+    pub include_content_in_scheduled_reports_email: ::std::option::Option<crate::types::CapabilityState>,
 }
 impl Capabilities {
-    /// <p>The ability to export to CSV files.</p>
+    /// <p>The ability to export to CSV files from the UI.</p>
     pub fn export_to_csv(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
         self.export_to_csv.as_ref()
     }
-    /// <p>The ability to export to Excel files.</p>
+    /// <p>The ability to export to Excel files from the UI.</p>
     pub fn export_to_excel(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
         self.export_to_excel.as_ref()
+    }
+    /// <p>The ability to export to PDF files from the UI.</p>
+    pub fn export_to_pdf(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.export_to_pdf.as_ref()
+    }
+    /// <p>The ability to print reports.</p>
+    pub fn print_reports(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.print_reports.as_ref()
     }
     /// <p>The ability to export to Create and Update themes.</p>
     pub fn create_and_update_themes(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
@@ -108,6 +128,22 @@ impl Capabilities {
     pub fn create_spice_dataset(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
         self.create_spice_dataset.as_ref()
     }
+    /// <p>The ability to export to PDF files in scheduled email reports.</p>
+    pub fn export_to_pdf_in_scheduled_reports(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.export_to_pdf_in_scheduled_reports.as_ref()
+    }
+    /// <p>The ability to export to CSV files in scheduled email reports.</p>
+    pub fn export_to_csv_in_scheduled_reports(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.export_to_csv_in_scheduled_reports.as_ref()
+    }
+    /// <p>The ability to export to Excel files in scheduled email reports.</p>
+    pub fn export_to_excel_in_scheduled_reports(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.export_to_excel_in_scheduled_reports.as_ref()
+    }
+    /// <p>The ability to include content in scheduled email reports.</p>
+    pub fn include_content_in_scheduled_reports_email(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.include_content_in_scheduled_reports_email.as_ref()
+    }
 }
 impl Capabilities {
     /// Creates a new builder-style object to manufacture [`Capabilities`](crate::types::Capabilities).
@@ -122,6 +158,8 @@ impl Capabilities {
 pub struct CapabilitiesBuilder {
     pub(crate) export_to_csv: ::std::option::Option<crate::types::CapabilityState>,
     pub(crate) export_to_excel: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) export_to_pdf: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) print_reports: ::std::option::Option<crate::types::CapabilityState>,
     pub(crate) create_and_update_themes: ::std::option::Option<crate::types::CapabilityState>,
     pub(crate) add_or_run_anomaly_detection_for_analyses: ::std::option::Option<crate::types::CapabilityState>,
     pub(crate) share_analyses: ::std::option::Option<crate::types::CapabilityState>,
@@ -137,35 +175,67 @@ pub struct CapabilitiesBuilder {
     pub(crate) share_data_sources: ::std::option::Option<crate::types::CapabilityState>,
     pub(crate) view_account_spice_capacity: ::std::option::Option<crate::types::CapabilityState>,
     pub(crate) create_spice_dataset: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) export_to_pdf_in_scheduled_reports: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) export_to_csv_in_scheduled_reports: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) export_to_excel_in_scheduled_reports: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) include_content_in_scheduled_reports_email: ::std::option::Option<crate::types::CapabilityState>,
 }
 impl CapabilitiesBuilder {
-    /// <p>The ability to export to CSV files.</p>
+    /// <p>The ability to export to CSV files from the UI.</p>
     pub fn export_to_csv(mut self, input: crate::types::CapabilityState) -> Self {
         self.export_to_csv = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The ability to export to CSV files.</p>
+    /// <p>The ability to export to CSV files from the UI.</p>
     pub fn set_export_to_csv(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
         self.export_to_csv = input;
         self
     }
-    /// <p>The ability to export to CSV files.</p>
+    /// <p>The ability to export to CSV files from the UI.</p>
     pub fn get_export_to_csv(&self) -> &::std::option::Option<crate::types::CapabilityState> {
         &self.export_to_csv
     }
-    /// <p>The ability to export to Excel files.</p>
+    /// <p>The ability to export to Excel files from the UI.</p>
     pub fn export_to_excel(mut self, input: crate::types::CapabilityState) -> Self {
         self.export_to_excel = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The ability to export to Excel files.</p>
+    /// <p>The ability to export to Excel files from the UI.</p>
     pub fn set_export_to_excel(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
         self.export_to_excel = input;
         self
     }
-    /// <p>The ability to export to Excel files.</p>
+    /// <p>The ability to export to Excel files from the UI.</p>
     pub fn get_export_to_excel(&self) -> &::std::option::Option<crate::types::CapabilityState> {
         &self.export_to_excel
+    }
+    /// <p>The ability to export to PDF files from the UI.</p>
+    pub fn export_to_pdf(mut self, input: crate::types::CapabilityState) -> Self {
+        self.export_to_pdf = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to export to PDF files from the UI.</p>
+    pub fn set_export_to_pdf(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.export_to_pdf = input;
+        self
+    }
+    /// <p>The ability to export to PDF files from the UI.</p>
+    pub fn get_export_to_pdf(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.export_to_pdf
+    }
+    /// <p>The ability to print reports.</p>
+    pub fn print_reports(mut self, input: crate::types::CapabilityState) -> Self {
+        self.print_reports = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to print reports.</p>
+    pub fn set_print_reports(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.print_reports = input;
+        self
+    }
+    /// <p>The ability to print reports.</p>
+    pub fn get_print_reports(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.print_reports
     }
     /// <p>The ability to export to Create and Update themes.</p>
     pub fn create_and_update_themes(mut self, input: crate::types::CapabilityState) -> Self {
@@ -377,11 +447,69 @@ impl CapabilitiesBuilder {
     pub fn get_create_spice_dataset(&self) -> &::std::option::Option<crate::types::CapabilityState> {
         &self.create_spice_dataset
     }
+    /// <p>The ability to export to PDF files in scheduled email reports.</p>
+    pub fn export_to_pdf_in_scheduled_reports(mut self, input: crate::types::CapabilityState) -> Self {
+        self.export_to_pdf_in_scheduled_reports = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to export to PDF files in scheduled email reports.</p>
+    pub fn set_export_to_pdf_in_scheduled_reports(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.export_to_pdf_in_scheduled_reports = input;
+        self
+    }
+    /// <p>The ability to export to PDF files in scheduled email reports.</p>
+    pub fn get_export_to_pdf_in_scheduled_reports(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.export_to_pdf_in_scheduled_reports
+    }
+    /// <p>The ability to export to CSV files in scheduled email reports.</p>
+    pub fn export_to_csv_in_scheduled_reports(mut self, input: crate::types::CapabilityState) -> Self {
+        self.export_to_csv_in_scheduled_reports = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to export to CSV files in scheduled email reports.</p>
+    pub fn set_export_to_csv_in_scheduled_reports(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.export_to_csv_in_scheduled_reports = input;
+        self
+    }
+    /// <p>The ability to export to CSV files in scheduled email reports.</p>
+    pub fn get_export_to_csv_in_scheduled_reports(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.export_to_csv_in_scheduled_reports
+    }
+    /// <p>The ability to export to Excel files in scheduled email reports.</p>
+    pub fn export_to_excel_in_scheduled_reports(mut self, input: crate::types::CapabilityState) -> Self {
+        self.export_to_excel_in_scheduled_reports = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to export to Excel files in scheduled email reports.</p>
+    pub fn set_export_to_excel_in_scheduled_reports(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.export_to_excel_in_scheduled_reports = input;
+        self
+    }
+    /// <p>The ability to export to Excel files in scheduled email reports.</p>
+    pub fn get_export_to_excel_in_scheduled_reports(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.export_to_excel_in_scheduled_reports
+    }
+    /// <p>The ability to include content in scheduled email reports.</p>
+    pub fn include_content_in_scheduled_reports_email(mut self, input: crate::types::CapabilityState) -> Self {
+        self.include_content_in_scheduled_reports_email = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to include content in scheduled email reports.</p>
+    pub fn set_include_content_in_scheduled_reports_email(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.include_content_in_scheduled_reports_email = input;
+        self
+    }
+    /// <p>The ability to include content in scheduled email reports.</p>
+    pub fn get_include_content_in_scheduled_reports_email(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.include_content_in_scheduled_reports_email
+    }
     /// Consumes the builder and constructs a [`Capabilities`](crate::types::Capabilities).
     pub fn build(self) -> crate::types::Capabilities {
         crate::types::Capabilities {
             export_to_csv: self.export_to_csv,
             export_to_excel: self.export_to_excel,
+            export_to_pdf: self.export_to_pdf,
+            print_reports: self.print_reports,
             create_and_update_themes: self.create_and_update_themes,
             add_or_run_anomaly_detection_for_analyses: self.add_or_run_anomaly_detection_for_analyses,
             share_analyses: self.share_analyses,
@@ -397,6 +525,10 @@ impl CapabilitiesBuilder {
             share_data_sources: self.share_data_sources,
             view_account_spice_capacity: self.view_account_spice_capacity,
             create_spice_dataset: self.create_spice_dataset,
+            export_to_pdf_in_scheduled_reports: self.export_to_pdf_in_scheduled_reports,
+            export_to_csv_in_scheduled_reports: self.export_to_csv_in_scheduled_reports,
+            export_to_excel_in_scheduled_reports: self.export_to_excel_in_scheduled_reports,
+            include_content_in_scheduled_reports_email: self.include_content_in_scheduled_reports_email,
         }
     }
 }

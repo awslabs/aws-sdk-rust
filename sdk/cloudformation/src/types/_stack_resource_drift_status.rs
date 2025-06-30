@@ -16,6 +16,7 @@
 ///     StackResourceDriftStatus::InSync => { /* ... */ },
 ///     StackResourceDriftStatus::Modified => { /* ... */ },
 ///     StackResourceDriftStatus::NotChecked => { /* ... */ },
+///     StackResourceDriftStatus::UnknownValue => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -38,7 +39,8 @@
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 ///
-#[allow(missing_docs)] // documentation missing in model
+///
+/// _Note: `StackResourceDriftStatus::Unknown` has been renamed to `::UnknownValue`._
 #[non_exhaustive]
 #[derive(
     ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
@@ -52,6 +54,9 @@ pub enum StackResourceDriftStatus {
     Modified,
     #[allow(missing_docs)] // documentation missing in model
     NotChecked,
+    ///
+    /// _Note: `::Unknown` has been renamed to `::UnknownValue`._
+    UnknownValue,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -63,6 +68,7 @@ impl ::std::convert::From<&str> for StackResourceDriftStatus {
             "IN_SYNC" => StackResourceDriftStatus::InSync,
             "MODIFIED" => StackResourceDriftStatus::Modified,
             "NOT_CHECKED" => StackResourceDriftStatus::NotChecked,
+            "UNKNOWN" => StackResourceDriftStatus::UnknownValue,
             other => StackResourceDriftStatus::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -82,12 +88,13 @@ impl StackResourceDriftStatus {
             StackResourceDriftStatus::InSync => "IN_SYNC",
             StackResourceDriftStatus::Modified => "MODIFIED",
             StackResourceDriftStatus::NotChecked => "NOT_CHECKED",
+            StackResourceDriftStatus::UnknownValue => "UNKNOWN",
             StackResourceDriftStatus::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["DELETED", "IN_SYNC", "MODIFIED", "NOT_CHECKED"]
+        &["DELETED", "IN_SYNC", "MODIFIED", "NOT_CHECKED", "UNKNOWN"]
     }
 }
 impl ::std::convert::AsRef<str> for StackResourceDriftStatus {
@@ -114,6 +121,7 @@ impl ::std::fmt::Display for StackResourceDriftStatus {
             StackResourceDriftStatus::InSync => write!(f, "IN_SYNC"),
             StackResourceDriftStatus::Modified => write!(f, "MODIFIED"),
             StackResourceDriftStatus::NotChecked => write!(f, "NOT_CHECKED"),
+            StackResourceDriftStatus::UnknownValue => write!(f, "UNKNOWN"),
             StackResourceDriftStatus::Unknown(value) => write!(f, "{}", value),
         }
     }

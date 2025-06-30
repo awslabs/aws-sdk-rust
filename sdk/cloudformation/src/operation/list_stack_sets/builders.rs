@@ -22,7 +22,9 @@ impl crate::operation::list_stack_sets::builders::ListStackSetsInputBuilder {
 }
 /// Fluent builder constructing a request to `ListStackSets`.
 ///
-/// <p>Returns summary information about stack sets that are associated with the user.</p>
+/// <p>Returns summary information about stack sets that are associated with the user.</p><note>
+/// <p>This API provides <i>strongly consistent</i> reads meaning it will always return the most up-to-date data.</p>
+/// </note>
 /// <ul>
 /// <li>
 /// <p>\[Self-managed permissions\] If you set the CallAs parameter to SELF while signed in to your Amazon Web Services account, ListStackSets returns all self-managed stack sets in your Amazon Web Services account.</p></li>

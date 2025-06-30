@@ -310,9 +310,6 @@ pub(crate) fn cache_point_block_correct_errors(
 pub(crate) fn document_block_correct_errors(
     mut builder: crate::types::builders::DocumentBlockBuilder,
 ) -> crate::types::builders::DocumentBlockBuilder {
-    if builder.format.is_none() {
-        builder.format = "no value was set".parse::<crate::types::DocumentFormat>().ok()
-    }
     if builder.name.is_none() {
         builder.name = Some(Default::default())
     }
@@ -483,6 +480,15 @@ pub(crate) fn video_block_correct_errors(mut builder: crate::types::builders::Vi
     }
     if builder.source.is_none() {
         builder.source = Some(crate::types::VideoSource::Unknown)
+    }
+    builder
+}
+
+pub(crate) fn citations_config_correct_errors(
+    mut builder: crate::types::builders::CitationsConfigBuilder,
+) -> crate::types::builders::CitationsConfigBuilder {
+    if builder.enabled.is_none() {
+        builder.enabled = Some(Default::default())
     }
     builder
 }

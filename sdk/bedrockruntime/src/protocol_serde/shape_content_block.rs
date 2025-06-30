@@ -55,6 +55,12 @@ pub fn ser_content_block(
             crate::protocol_serde::shape_reasoning_content_block::ser_reasoning_content_block(&mut object_8, inner)?;
             object_8.finish();
         }
+        crate::types::ContentBlock::CitationsContent(inner) => {
+            #[allow(unused_mut)]
+            let mut object_9 = object_3.key("citationsContent").start_object();
+            crate::protocol_serde::shape_citations_content_block::ser_citations_content_block(&mut object_9, inner)?;
+            object_9.finish();
+        }
         crate::types::ContentBlock::Unknown => return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant("ContentBlock")),
     }
     Ok(())
@@ -132,6 +138,11 @@ where
                         "reasoningContent" => Some(crate::types::ContentBlock::ReasoningContent(
                             crate::protocol_serde::shape_reasoning_content_block::de_reasoning_content_block(tokens)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'reasoningContent' cannot be null")
+                            })?,
+                        )),
+                        "citationsContent" => Some(crate::types::ContentBlock::CitationsContent(
+                            crate::protocol_serde::shape_citations_content_block::de_citations_content_block(tokens)?.ok_or_else(|| {
+                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'citationsContent' cannot be null")
                             })?,
                         )),
                         _ => {

@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateServiceLinkedRoleOutput {
-    /// <p>A <code>Role</code> object that contains details about the newly created role.</p>
+    /// <p>A <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_Role.html">Role</a> object that contains details about the newly created role.</p>
     pub role: ::std::option::Option<crate::types::Role>,
     _request_id: Option<String>,
 }
 impl CreateServiceLinkedRoleOutput {
-    /// <p>A <code>Role</code> object that contains details about the newly created role.</p>
+    /// <p>A <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_Role.html">Role</a> object that contains details about the newly created role.</p>
     pub fn role(&self) -> ::std::option::Option<&crate::types::Role> {
         self.role.as_ref()
     }
@@ -33,17 +33,17 @@ pub struct CreateServiceLinkedRoleOutputBuilder {
     _request_id: Option<String>,
 }
 impl CreateServiceLinkedRoleOutputBuilder {
-    /// <p>A <code>Role</code> object that contains details about the newly created role.</p>
+    /// <p>A <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_Role.html">Role</a> object that contains details about the newly created role.</p>
     pub fn role(mut self, input: crate::types::Role) -> Self {
         self.role = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A <code>Role</code> object that contains details about the newly created role.</p>
+    /// <p>A <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_Role.html">Role</a> object that contains details about the newly created role.</p>
     pub fn set_role(mut self, input: ::std::option::Option<crate::types::Role>) -> Self {
         self.role = input;
         self
     }
-    /// <p>A <code>Role</code> object that contains details about the newly created role.</p>
+    /// <p>A <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_Role.html">Role</a> object that contains details about the newly created role.</p>
     pub fn get_role(&self) -> &::std::option::Option<crate::types::Role> {
         &self.role
     }

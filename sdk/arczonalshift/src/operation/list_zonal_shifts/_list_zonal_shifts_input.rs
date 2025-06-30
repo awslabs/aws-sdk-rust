@@ -9,7 +9,7 @@ pub struct ListZonalShiftsInput {
     /// <p>The <code>Status</code> for a zonal shift can have one of the following values:</p>
     /// <ul>
     /// <li>
-    /// <p><b>ACTIVE</b>: The zonal shift has been started and active.</p></li>
+    /// <p><b>ACTIVE</b>: The zonal shift has been started and is active.</p></li>
     /// <li>
     /// <p><b>EXPIRED</b>: The zonal shift has expired (the expiry time was exceeded).</p></li>
     /// <li>
@@ -30,7 +30,7 @@ impl ListZonalShiftsInput {
     /// <p>The <code>Status</code> for a zonal shift can have one of the following values:</p>
     /// <ul>
     /// <li>
-    /// <p><b>ACTIVE</b>: The zonal shift has been started and active.</p></li>
+    /// <p><b>ACTIVE</b>: The zonal shift has been started and is active.</p></li>
     /// <li>
     /// <p><b>EXPIRED</b>: The zonal shift has expired (the expiry time was exceeded).</p></li>
     /// <li>
@@ -83,7 +83,7 @@ impl ListZonalShiftsInputBuilder {
     /// <p>The <code>Status</code> for a zonal shift can have one of the following values:</p>
     /// <ul>
     /// <li>
-    /// <p><b>ACTIVE</b>: The zonal shift has been started and active.</p></li>
+    /// <p><b>ACTIVE</b>: The zonal shift has been started and is active.</p></li>
     /// <li>
     /// <p><b>EXPIRED</b>: The zonal shift has expired (the expiry time was exceeded).</p></li>
     /// <li>
@@ -97,7 +97,7 @@ impl ListZonalShiftsInputBuilder {
     /// <p>The <code>Status</code> for a zonal shift can have one of the following values:</p>
     /// <ul>
     /// <li>
-    /// <p><b>ACTIVE</b>: The zonal shift has been started and active.</p></li>
+    /// <p><b>ACTIVE</b>: The zonal shift has been started and is active.</p></li>
     /// <li>
     /// <p><b>EXPIRED</b>: The zonal shift has expired (the expiry time was exceeded).</p></li>
     /// <li>
@@ -111,7 +111,7 @@ impl ListZonalShiftsInputBuilder {
     /// <p>The <code>Status</code> for a zonal shift can have one of the following values:</p>
     /// <ul>
     /// <li>
-    /// <p><b>ACTIVE</b>: The zonal shift has been started and active.</p></li>
+    /// <p><b>ACTIVE</b>: The zonal shift has been started and is active.</p></li>
     /// <li>
     /// <p><b>EXPIRED</b>: The zonal shift has expired (the expiry time was exceeded).</p></li>
     /// <li>

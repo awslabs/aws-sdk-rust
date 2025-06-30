@@ -4,11 +4,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Overrides {
-    /// <p>Setting this flag will force the <code>CopyImageSet</code> and <code>UpdateImageSetMetadata</code> operations, even if Patient, Study, or Series level metadata are mismatched.</p>
+    /// <p>Providing this parameter will force completion of the <code>CopyImageSet</code> and <code>UpdateImageSetMetadata</code> actions, even if metadata is inconsistent at the Patient, Study, and/or Series levels.</p>
     pub forced: ::std::option::Option<bool>,
 }
 impl Overrides {
-    /// <p>Setting this flag will force the <code>CopyImageSet</code> and <code>UpdateImageSetMetadata</code> operations, even if Patient, Study, or Series level metadata are mismatched.</p>
+    /// <p>Providing this parameter will force completion of the <code>CopyImageSet</code> and <code>UpdateImageSetMetadata</code> actions, even if metadata is inconsistent at the Patient, Study, and/or Series levels.</p>
     pub fn forced(&self) -> ::std::option::Option<bool> {
         self.forced
     }
@@ -27,17 +27,17 @@ pub struct OverridesBuilder {
     pub(crate) forced: ::std::option::Option<bool>,
 }
 impl OverridesBuilder {
-    /// <p>Setting this flag will force the <code>CopyImageSet</code> and <code>UpdateImageSetMetadata</code> operations, even if Patient, Study, or Series level metadata are mismatched.</p>
+    /// <p>Providing this parameter will force completion of the <code>CopyImageSet</code> and <code>UpdateImageSetMetadata</code> actions, even if metadata is inconsistent at the Patient, Study, and/or Series levels.</p>
     pub fn forced(mut self, input: bool) -> Self {
         self.forced = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Setting this flag will force the <code>CopyImageSet</code> and <code>UpdateImageSetMetadata</code> operations, even if Patient, Study, or Series level metadata are mismatched.</p>
+    /// <p>Providing this parameter will force completion of the <code>CopyImageSet</code> and <code>UpdateImageSetMetadata</code> actions, even if metadata is inconsistent at the Patient, Study, and/or Series levels.</p>
     pub fn set_forced(mut self, input: ::std::option::Option<bool>) -> Self {
         self.forced = input;
         self
     }
-    /// <p>Setting this flag will force the <code>CopyImageSet</code> and <code>UpdateImageSetMetadata</code> operations, even if Patient, Study, or Series level metadata are mismatched.</p>
+    /// <p>Providing this parameter will force completion of the <code>CopyImageSet</code> and <code>UpdateImageSetMetadata</code> actions, even if metadata is inconsistent at the Patient, Study, and/or Series levels.</p>
     pub fn get_forced(&self) -> &::std::option::Option<bool> {
         &self.forced
     }

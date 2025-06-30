@@ -49,11 +49,11 @@ pub struct Stack {
     /// <p>Whether termination protection is enabled for the stack.</p>
     /// <p>For <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">nested stacks</a>, termination protection is set on the root stack and can't be changed directly on the nested stack. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-protect-stacks.html">Protect a CloudFormation stack from being deleted</a> in the <i>CloudFormation User Guide</i>.</p>
     pub enable_termination_protection: ::std::option::Option<bool>,
-    /// <p>For nested stacks--stacks created as resources for another stack--the stack ID of the direct parent of this stack. For the first level of nested stacks, the root stack is also the parent stack.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">Embed stacks within other stacks using nested stacks</a> in the <i>CloudFormation User Guide</i>.</p>
+    /// <p>For nested stacks, the stack ID of the direct parent of this stack. For the first level of nested stacks, the root stack is also the parent stack.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">Nested stacks</a> in the <i>CloudFormation User Guide</i>.</p>
     pub parent_id: ::std::option::Option<::std::string::String>,
-    /// <p>For nested stacks--stacks created as resources for another stack--the stack ID of the top-level stack to which the nested stack ultimately belongs.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">Embed stacks within other stacks using nested stacks</a> in the <i>CloudFormation User Guide</i>.</p>
+    /// <p>For nested stacks, the stack ID of the top-level stack to which the nested stack ultimately belongs.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">Nested stacks</a> in the <i>CloudFormation User Guide</i>.</p>
     pub root_id: ::std::option::Option<::std::string::String>,
     /// <p>Information about whether a stack's actual configuration differs, or has <i>drifted</i>, from its expected configuration, as defined in the stack template and any values specified as template parameters. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detect unmanaged configuration changes to stacks and resources with drift detection</a>.</p>
     pub drift_information: ::std::option::Option<crate::types::StackDriftInformation>,
@@ -165,13 +165,13 @@ impl Stack {
     pub fn enable_termination_protection(&self) -> ::std::option::Option<bool> {
         self.enable_termination_protection
     }
-    /// <p>For nested stacks--stacks created as resources for another stack--the stack ID of the direct parent of this stack. For the first level of nested stacks, the root stack is also the parent stack.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">Embed stacks within other stacks using nested stacks</a> in the <i>CloudFormation User Guide</i>.</p>
+    /// <p>For nested stacks, the stack ID of the direct parent of this stack. For the first level of nested stacks, the root stack is also the parent stack.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">Nested stacks</a> in the <i>CloudFormation User Guide</i>.</p>
     pub fn parent_id(&self) -> ::std::option::Option<&str> {
         self.parent_id.as_deref()
     }
-    /// <p>For nested stacks--stacks created as resources for another stack--the stack ID of the top-level stack to which the nested stack ultimately belongs.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">Embed stacks within other stacks using nested stacks</a> in the <i>CloudFormation User Guide</i>.</p>
+    /// <p>For nested stacks, the stack ID of the top-level stack to which the nested stack ultimately belongs.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">Nested stacks</a> in the <i>CloudFormation User Guide</i>.</p>
     pub fn root_id(&self) -> ::std::option::Option<&str> {
         self.root_id.as_deref()
     }
@@ -557,37 +557,37 @@ impl StackBuilder {
     pub fn get_enable_termination_protection(&self) -> &::std::option::Option<bool> {
         &self.enable_termination_protection
     }
-    /// <p>For nested stacks--stacks created as resources for another stack--the stack ID of the direct parent of this stack. For the first level of nested stacks, the root stack is also the parent stack.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">Embed stacks within other stacks using nested stacks</a> in the <i>CloudFormation User Guide</i>.</p>
+    /// <p>For nested stacks, the stack ID of the direct parent of this stack. For the first level of nested stacks, the root stack is also the parent stack.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">Nested stacks</a> in the <i>CloudFormation User Guide</i>.</p>
     pub fn parent_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.parent_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>For nested stacks--stacks created as resources for another stack--the stack ID of the direct parent of this stack. For the first level of nested stacks, the root stack is also the parent stack.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">Embed stacks within other stacks using nested stacks</a> in the <i>CloudFormation User Guide</i>.</p>
+    /// <p>For nested stacks, the stack ID of the direct parent of this stack. For the first level of nested stacks, the root stack is also the parent stack.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">Nested stacks</a> in the <i>CloudFormation User Guide</i>.</p>
     pub fn set_parent_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.parent_id = input;
         self
     }
-    /// <p>For nested stacks--stacks created as resources for another stack--the stack ID of the direct parent of this stack. For the first level of nested stacks, the root stack is also the parent stack.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">Embed stacks within other stacks using nested stacks</a> in the <i>CloudFormation User Guide</i>.</p>
+    /// <p>For nested stacks, the stack ID of the direct parent of this stack. For the first level of nested stacks, the root stack is also the parent stack.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">Nested stacks</a> in the <i>CloudFormation User Guide</i>.</p>
     pub fn get_parent_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.parent_id
     }
-    /// <p>For nested stacks--stacks created as resources for another stack--the stack ID of the top-level stack to which the nested stack ultimately belongs.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">Embed stacks within other stacks using nested stacks</a> in the <i>CloudFormation User Guide</i>.</p>
+    /// <p>For nested stacks, the stack ID of the top-level stack to which the nested stack ultimately belongs.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">Nested stacks</a> in the <i>CloudFormation User Guide</i>.</p>
     pub fn root_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.root_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>For nested stacks--stacks created as resources for another stack--the stack ID of the top-level stack to which the nested stack ultimately belongs.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">Embed stacks within other stacks using nested stacks</a> in the <i>CloudFormation User Guide</i>.</p>
+    /// <p>For nested stacks, the stack ID of the top-level stack to which the nested stack ultimately belongs.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">Nested stacks</a> in the <i>CloudFormation User Guide</i>.</p>
     pub fn set_root_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.root_id = input;
         self
     }
-    /// <p>For nested stacks--stacks created as resources for another stack--the stack ID of the top-level stack to which the nested stack ultimately belongs.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">Embed stacks within other stacks using nested stacks</a> in the <i>CloudFormation User Guide</i>.</p>
+    /// <p>For nested stacks, the stack ID of the top-level stack to which the nested stack ultimately belongs.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">Nested stacks</a> in the <i>CloudFormation User Guide</i>.</p>
     pub fn get_root_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.root_id
     }

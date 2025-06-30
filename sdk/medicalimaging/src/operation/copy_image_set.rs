@@ -225,6 +225,11 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for CopyImageSet
                         query.push_kv("force", ::aws_smithy_types::primitive::Encoder::from(*inner_3).encode());
                     }
                 }
+                if let ::std::option::Option::Some(inner_4) = &_input.promote_to_primary {
+                    {
+                        query.push_kv("promoteToPrimary", ::aws_smithy_types::primitive::Encoder::from(*inner_4).encode());
+                    }
+                }
                 ::std::result::Result::Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]

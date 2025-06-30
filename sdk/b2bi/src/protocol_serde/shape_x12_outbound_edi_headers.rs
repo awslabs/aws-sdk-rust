@@ -30,6 +30,16 @@ where
                         "validateEdi" => {
                             builder = builder.set_validate_edi(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
+                        "controlNumbers" => {
+                            builder = builder.set_control_numbers(crate::protocol_serde::shape_x12_control_numbers::de_x12_control_numbers(tokens)?);
+                        }
+                        "gs05TimeFormat" => {
+                            builder = builder.set_gs05_time_format(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::X12Gs05TimeFormat::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {
@@ -72,6 +82,15 @@ pub fn ser_x12_outbound_edi_headers(
     }
     if let Some(var_7) = &input.validate_edi {
         object.key("validateEdi").boolean(*var_7);
+    }
+    if let Some(var_8) = &input.control_numbers {
+        #[allow(unused_mut)]
+        let mut object_9 = object.key("controlNumbers").start_object();
+        crate::protocol_serde::shape_x12_control_numbers::ser_x12_control_numbers(&mut object_9, var_8)?;
+        object_9.finish();
+    }
+    if let Some(var_10) = &input.gs05_time_format {
+        object.key("gs05TimeFormat").string(var_10.as_str());
     }
     Ok(())
 }

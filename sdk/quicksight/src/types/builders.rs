@@ -409,6 +409,10 @@ pub use crate::types::_sheet_image_static_file_source::SheetImageStaticFileSourc
 
 pub use crate::types::_sheet_text_box::SheetTextBoxBuilder;
 
+pub use crate::types::_text_box_interaction_options::TextBoxInteractionOptionsBuilder;
+
+pub use crate::types::_text_box_menu_option::TextBoxMenuOptionBuilder;
+
 pub use crate::types::_visual::VisualBuilder;
 
 pub use crate::types::_plugin_visual::PluginVisualBuilder;

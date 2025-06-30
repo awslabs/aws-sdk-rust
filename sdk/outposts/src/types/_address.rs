@@ -5,9 +5,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Address {
     /// <p>The name of the contact.</p>
-    pub contact_name: ::std::option::Option<::std::string::String>,
+    pub contact_name: ::std::string::String,
     /// <p>The phone number of the contact.</p>
-    pub contact_phone_number: ::std::option::Option<::std::string::String>,
+    pub contact_phone_number: ::std::string::String,
     /// <p>The first line of the address.</p>
     pub address_line1: ::std::string::String,
     /// <p>The second line of the address.</p>
@@ -29,12 +29,14 @@ pub struct Address {
 }
 impl Address {
     /// <p>The name of the contact.</p>
-    pub fn contact_name(&self) -> ::std::option::Option<&str> {
-        self.contact_name.as_deref()
+    pub fn contact_name(&self) -> &str {
+        use std::ops::Deref;
+        self.contact_name.deref()
     }
     /// <p>The phone number of the contact.</p>
-    pub fn contact_phone_number(&self) -> ::std::option::Option<&str> {
-        self.contact_phone_number.as_deref()
+    pub fn contact_phone_number(&self) -> &str {
+        use std::ops::Deref;
+        self.contact_phone_number.deref()
     }
     /// <p>The first line of the address.</p>
     pub fn address_line1(&self) -> &str {
@@ -103,6 +105,7 @@ pub struct AddressBuilder {
 }
 impl AddressBuilder {
     /// <p>The name of the contact.</p>
+    /// This field is required.
     pub fn contact_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.contact_name = ::std::option::Option::Some(input.into());
         self
@@ -117,6 +120,7 @@ impl AddressBuilder {
         &self.contact_name
     }
     /// <p>The phone number of the contact.</p>
+    /// This field is required.
     pub fn contact_phone_number(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.contact_phone_number = ::std::option::Option::Some(input.into());
         self
@@ -263,6 +267,8 @@ impl AddressBuilder {
     }
     /// Consumes the builder and constructs a [`Address`](crate::types::Address).
     /// This method will fail if any of the following fields are not set:
+    /// - [`contact_name`](crate::types::builders::AddressBuilder::contact_name)
+    /// - [`contact_phone_number`](crate::types::builders::AddressBuilder::contact_phone_number)
     /// - [`address_line1`](crate::types::builders::AddressBuilder::address_line1)
     /// - [`city`](crate::types::builders::AddressBuilder::city)
     /// - [`state_or_region`](crate::types::builders::AddressBuilder::state_or_region)
@@ -270,8 +276,18 @@ impl AddressBuilder {
     /// - [`country_code`](crate::types::builders::AddressBuilder::country_code)
     pub fn build(self) -> ::std::result::Result<crate::types::Address, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::Address {
-            contact_name: self.contact_name,
-            contact_phone_number: self.contact_phone_number,
+            contact_name: self.contact_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "contact_name",
+                    "contact_name was not specified but it is required when building Address",
+                )
+            })?,
+            contact_phone_number: self.contact_phone_number.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "contact_phone_number",
+                    "contact_phone_number was not specified but it is required when building Address",
+                )
+            })?,
             address_line1: self.address_line1.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "address_line1",

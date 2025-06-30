@@ -23,6 +23,8 @@ pub fn parse_http_error_metadata(
     crate::json_errors::parse_error_metadata(response_body, response_headers)
 }
 
+pub(crate) mod shape_cancel_practice_run;
+
 pub(crate) mod shape_cancel_zonal_shift;
 
 pub(crate) mod shape_create_practice_run_configuration;
@@ -38,6 +40,8 @@ pub(crate) mod shape_list_autoshifts;
 pub(crate) mod shape_list_managed_resources;
 
 pub(crate) mod shape_list_zonal_shifts;
+
+pub(crate) mod shape_start_practice_run;
 
 pub(crate) mod shape_start_zonal_shift;
 
@@ -66,6 +70,8 @@ pub(crate) mod shape_create_practice_run_configuration_input;
 pub(crate) mod shape_internal_server_exception;
 
 pub(crate) mod shape_resource_not_found_exception;
+
+pub(crate) mod shape_start_practice_run_input;
 
 pub(crate) mod shape_start_zonal_shift_input;
 

@@ -15,6 +15,15 @@ pub fn ser_document_block(
         crate::protocol_serde::shape_document_source::ser_document_source(&mut object_2, var_1)?;
         object_2.finish();
     }
+    if let Some(var_3) = &input.context {
+        object.key("context").string(var_3.as_str());
+    }
+    if let Some(var_4) = &input.citations {
+        #[allow(unused_mut)]
+        let mut object_5 = object.key("citations").start_object();
+        crate::protocol_serde::shape_citations_config::ser_citations_config(&mut object_5, var_4)?;
+        object_5.finish();
+    }
     Ok(())
 }
 
@@ -49,6 +58,16 @@ where
                         }
                         "source" => {
                             builder = builder.set_source(crate::protocol_serde::shape_document_source::de_document_source(tokens)?);
+                        }
+                        "context" => {
+                            builder = builder.set_context(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "citations" => {
+                            builder = builder.set_citations(crate::protocol_serde::shape_citations_config::de_citations_config(tokens)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

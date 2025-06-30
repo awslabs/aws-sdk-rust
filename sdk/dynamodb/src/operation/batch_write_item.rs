@@ -280,6 +280,8 @@ pub enum BatchWriteItemError {
     ItemCollectionSizeLimitExceededException(crate::types::error::ItemCollectionSizeLimitExceededException),
     /// <p>Your request rate is too high. The Amazon Web Services SDKs for DynamoDB automatically retry requests that receive this exception. Your request is eventually successful, unless your retry queue is too large to finish. Reduce the frequency of requests and use exponential backoff. For more information, go to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Programming.Errors.html#Programming.Errors.RetryAndBackoff">Error Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
     ProvisionedThroughputExceededException(crate::types::error::ProvisionedThroughputExceededException),
+    /// <p>The request was rejected because one or more items in the request are being modified by a request in another Region.</p>
+    ReplicatedWriteConflictException(crate::types::error::ReplicatedWriteConflictException),
     /// <p>Throughput exceeds the current throughput quota for your account. Please contact <a href="https://aws.amazon.com/support">Amazon Web ServicesSupport</a> to request a quota increase.</p>
     RequestLimitExceeded(crate::types::error::RequestLimitExceeded),
     /// <p>The operation tried to access a nonexistent table or index. The resource might not be specified correctly, or its status might not be <code>ACTIVE</code>.</p>
@@ -321,6 +323,7 @@ impl BatchWriteItemError {
             Self::InvalidEndpointException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ItemCollectionSizeLimitExceededException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ProvisionedThroughputExceededException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::ReplicatedWriteConflictException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::RequestLimitExceeded(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ResourceNotFoundException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::Unhandled(e) => &e.meta,
@@ -342,6 +345,10 @@ impl BatchWriteItemError {
     pub fn is_provisioned_throughput_exceeded_exception(&self) -> bool {
         matches!(self, Self::ProvisionedThroughputExceededException(_))
     }
+    /// Returns `true` if the error kind is `BatchWriteItemError::ReplicatedWriteConflictException`.
+    pub fn is_replicated_write_conflict_exception(&self) -> bool {
+        matches!(self, Self::ReplicatedWriteConflictException(_))
+    }
     /// Returns `true` if the error kind is `BatchWriteItemError::RequestLimitExceeded`.
     pub fn is_request_limit_exceeded(&self) -> bool {
         matches!(self, Self::RequestLimitExceeded(_))
@@ -358,6 +365,7 @@ impl ::std::error::Error for BatchWriteItemError {
             Self::InvalidEndpointException(_inner) => ::std::option::Option::Some(_inner),
             Self::ItemCollectionSizeLimitExceededException(_inner) => ::std::option::Option::Some(_inner),
             Self::ProvisionedThroughputExceededException(_inner) => ::std::option::Option::Some(_inner),
+            Self::ReplicatedWriteConflictException(_inner) => ::std::option::Option::Some(_inner),
             Self::RequestLimitExceeded(_inner) => ::std::option::Option::Some(_inner),
             Self::ResourceNotFoundException(_inner) => ::std::option::Option::Some(_inner),
             Self::Unhandled(_inner) => ::std::option::Option::Some(&*_inner.source),
@@ -371,6 +379,7 @@ impl ::std::fmt::Display for BatchWriteItemError {
             Self::InvalidEndpointException(_inner) => _inner.fmt(f),
             Self::ItemCollectionSizeLimitExceededException(_inner) => _inner.fmt(f),
             Self::ProvisionedThroughputExceededException(_inner) => _inner.fmt(f),
+            Self::ReplicatedWriteConflictException(_inner) => _inner.fmt(f),
             Self::RequestLimitExceeded(_inner) => _inner.fmt(f),
             Self::ResourceNotFoundException(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => {
@@ -388,7 +397,10 @@ impl ::aws_smithy_types::retry::ProvideErrorKind for BatchWriteItemError {
         ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self)
     }
     fn retryable_error_kind(&self) -> ::std::option::Option<::aws_smithy_types::retry::ErrorKind> {
-        ::std::option::Option::None
+        match self {
+            Self::ReplicatedWriteConflictException(inner) => ::std::option::Option::Some(inner.retryable_error_kind()),
+            _ => ::std::option::Option::None,
+        }
     }
 }
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for BatchWriteItemError {
@@ -398,6 +410,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for BatchWriteIte
             Self::InvalidEndpointException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ItemCollectionSizeLimitExceededException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ProvisionedThroughputExceededException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::ReplicatedWriteConflictException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::RequestLimitExceeded(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ResourceNotFoundException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::Unhandled(_inner) => &_inner.meta,

@@ -32,7 +32,7 @@ impl crate::operation::list_roles::builders::ListRolesInputBuilder {
 /// <li>
 /// <p>Tags</p></li>
 /// </ul>
-/// <p>To view all of the information for a role, see <code>GetRole</code>.</p>
+/// <p>To view all of the information for a role, see <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetRole.html">GetRole</a>.</p>
 /// </note>
 /// <p>You can paginate the results using the <code>MaxItems</code> and <code>Marker</code> parameters.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

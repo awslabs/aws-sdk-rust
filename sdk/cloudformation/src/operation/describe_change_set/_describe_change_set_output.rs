@@ -53,7 +53,7 @@ pub struct DescribeChangeSetOutput {
     /// </ul>
     pub on_stack_failure: ::std::option::Option<crate::types::OnStackFailure>,
     /// <p>Indicates if the change set imports resources that already exist.</p><note>
-    /// <p>This parameter can only import resources that have <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-name.html">custom names</a> in templates. To import resources that do not accept custom names, such as EC2 instances, use the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resource-import.html">resource import</a> feature instead.</p>
+    /// <p>This parameter can only import resources that have <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/TemplateReference/aws-properties-name.html">custom names</a> in templates. To import resources that do not accept custom names, such as EC2 instances, use the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resource-import.html">resource import</a> feature instead.</p>
     /// </note>
     pub import_existing_resources: ::std::option::Option<bool>,
     _request_id: Option<String>,
@@ -158,7 +158,7 @@ impl DescribeChangeSetOutput {
         self.on_stack_failure.as_ref()
     }
     /// <p>Indicates if the change set imports resources that already exist.</p><note>
-    /// <p>This parameter can only import resources that have <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-name.html">custom names</a> in templates. To import resources that do not accept custom names, such as EC2 instances, use the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resource-import.html">resource import</a> feature instead.</p>
+    /// <p>This parameter can only import resources that have <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/TemplateReference/aws-properties-name.html">custom names</a> in templates. To import resources that do not accept custom names, such as EC2 instances, use the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resource-import.html">resource import</a> feature instead.</p>
     /// </note>
     pub fn import_existing_resources(&self) -> ::std::option::Option<bool> {
         self.import_existing_resources
@@ -539,21 +539,21 @@ impl DescribeChangeSetOutputBuilder {
         &self.on_stack_failure
     }
     /// <p>Indicates if the change set imports resources that already exist.</p><note>
-    /// <p>This parameter can only import resources that have <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-name.html">custom names</a> in templates. To import resources that do not accept custom names, such as EC2 instances, use the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resource-import.html">resource import</a> feature instead.</p>
+    /// <p>This parameter can only import resources that have <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/TemplateReference/aws-properties-name.html">custom names</a> in templates. To import resources that do not accept custom names, such as EC2 instances, use the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resource-import.html">resource import</a> feature instead.</p>
     /// </note>
     pub fn import_existing_resources(mut self, input: bool) -> Self {
         self.import_existing_resources = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates if the change set imports resources that already exist.</p><note>
-    /// <p>This parameter can only import resources that have <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-name.html">custom names</a> in templates. To import resources that do not accept custom names, such as EC2 instances, use the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resource-import.html">resource import</a> feature instead.</p>
+    /// <p>This parameter can only import resources that have <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/TemplateReference/aws-properties-name.html">custom names</a> in templates. To import resources that do not accept custom names, such as EC2 instances, use the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resource-import.html">resource import</a> feature instead.</p>
     /// </note>
     pub fn set_import_existing_resources(mut self, input: ::std::option::Option<bool>) -> Self {
         self.import_existing_resources = input;
         self
     }
     /// <p>Indicates if the change set imports resources that already exist.</p><note>
-    /// <p>This parameter can only import resources that have <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-name.html">custom names</a> in templates. To import resources that do not accept custom names, such as EC2 instances, use the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resource-import.html">resource import</a> feature instead.</p>
+    /// <p>This parameter can only import resources that have <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/TemplateReference/aws-properties-name.html">custom names</a> in templates. To import resources that do not accept custom names, such as EC2 instances, use the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resource-import.html">resource import</a> feature instead.</p>
     /// </note>
     pub fn get_import_existing_resources(&self) -> &::std::option::Option<bool> {
         &self.import_existing_resources

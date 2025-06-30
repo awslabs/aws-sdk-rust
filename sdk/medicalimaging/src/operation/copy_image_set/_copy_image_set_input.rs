@@ -9,8 +9,10 @@ pub struct CopyImageSetInput {
     pub source_image_set_id: ::std::option::Option<::std::string::String>,
     /// <p>Copy image set information.</p>
     pub copy_image_set_information: ::std::option::Option<crate::types::CopyImageSetInformation>,
-    /// <p>Setting this flag will force the <code>CopyImageSet</code> operation, even if Patient, Study, or Series level metadata are mismatched across the <code>sourceImageSet</code> and <code>destinationImageSet</code>.</p>
+    /// <p>Providing this parameter will force completion of the <code>CopyImageSet</code> operation, even if there are inconsistent Patient, Study, and/or Series level metadata elements between the <code>sourceImageSet</code> and <code>destinationImageSet</code>.</p>
     pub force: ::std::option::Option<bool>,
+    /// <p>Providing this parameter will configure the <code>CopyImageSet</code> operation to promote the given image set to the primary DICOM hierarchy. If successful, a new primary image set ID will be returned as the destination image set.</p>
+    pub promote_to_primary: ::std::option::Option<bool>,
 }
 impl CopyImageSetInput {
     /// <p>The data store identifier.</p>
@@ -25,9 +27,13 @@ impl CopyImageSetInput {
     pub fn copy_image_set_information(&self) -> ::std::option::Option<&crate::types::CopyImageSetInformation> {
         self.copy_image_set_information.as_ref()
     }
-    /// <p>Setting this flag will force the <code>CopyImageSet</code> operation, even if Patient, Study, or Series level metadata are mismatched across the <code>sourceImageSet</code> and <code>destinationImageSet</code>.</p>
+    /// <p>Providing this parameter will force completion of the <code>CopyImageSet</code> operation, even if there are inconsistent Patient, Study, and/or Series level metadata elements between the <code>sourceImageSet</code> and <code>destinationImageSet</code>.</p>
     pub fn force(&self) -> ::std::option::Option<bool> {
         self.force
+    }
+    /// <p>Providing this parameter will configure the <code>CopyImageSet</code> operation to promote the given image set to the primary DICOM hierarchy. If successful, a new primary image set ID will be returned as the destination image set.</p>
+    pub fn promote_to_primary(&self) -> ::std::option::Option<bool> {
+        self.promote_to_primary
     }
 }
 impl CopyImageSetInput {
@@ -45,6 +51,7 @@ pub struct CopyImageSetInputBuilder {
     pub(crate) source_image_set_id: ::std::option::Option<::std::string::String>,
     pub(crate) copy_image_set_information: ::std::option::Option<crate::types::CopyImageSetInformation>,
     pub(crate) force: ::std::option::Option<bool>,
+    pub(crate) promote_to_primary: ::std::option::Option<bool>,
 }
 impl CopyImageSetInputBuilder {
     /// <p>The data store identifier.</p>
@@ -92,19 +99,33 @@ impl CopyImageSetInputBuilder {
     pub fn get_copy_image_set_information(&self) -> &::std::option::Option<crate::types::CopyImageSetInformation> {
         &self.copy_image_set_information
     }
-    /// <p>Setting this flag will force the <code>CopyImageSet</code> operation, even if Patient, Study, or Series level metadata are mismatched across the <code>sourceImageSet</code> and <code>destinationImageSet</code>.</p>
+    /// <p>Providing this parameter will force completion of the <code>CopyImageSet</code> operation, even if there are inconsistent Patient, Study, and/or Series level metadata elements between the <code>sourceImageSet</code> and <code>destinationImageSet</code>.</p>
     pub fn force(mut self, input: bool) -> Self {
         self.force = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Setting this flag will force the <code>CopyImageSet</code> operation, even if Patient, Study, or Series level metadata are mismatched across the <code>sourceImageSet</code> and <code>destinationImageSet</code>.</p>
+    /// <p>Providing this parameter will force completion of the <code>CopyImageSet</code> operation, even if there are inconsistent Patient, Study, and/or Series level metadata elements between the <code>sourceImageSet</code> and <code>destinationImageSet</code>.</p>
     pub fn set_force(mut self, input: ::std::option::Option<bool>) -> Self {
         self.force = input;
         self
     }
-    /// <p>Setting this flag will force the <code>CopyImageSet</code> operation, even if Patient, Study, or Series level metadata are mismatched across the <code>sourceImageSet</code> and <code>destinationImageSet</code>.</p>
+    /// <p>Providing this parameter will force completion of the <code>CopyImageSet</code> operation, even if there are inconsistent Patient, Study, and/or Series level metadata elements between the <code>sourceImageSet</code> and <code>destinationImageSet</code>.</p>
     pub fn get_force(&self) -> &::std::option::Option<bool> {
         &self.force
+    }
+    /// <p>Providing this parameter will configure the <code>CopyImageSet</code> operation to promote the given image set to the primary DICOM hierarchy. If successful, a new primary image set ID will be returned as the destination image set.</p>
+    pub fn promote_to_primary(mut self, input: bool) -> Self {
+        self.promote_to_primary = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Providing this parameter will configure the <code>CopyImageSet</code> operation to promote the given image set to the primary DICOM hierarchy. If successful, a new primary image set ID will be returned as the destination image set.</p>
+    pub fn set_promote_to_primary(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.promote_to_primary = input;
+        self
+    }
+    /// <p>Providing this parameter will configure the <code>CopyImageSet</code> operation to promote the given image set to the primary DICOM hierarchy. If successful, a new primary image set ID will be returned as the destination image set.</p>
+    pub fn get_promote_to_primary(&self) -> &::std::option::Option<bool> {
+        &self.promote_to_primary
     }
     /// Consumes the builder and constructs a [`CopyImageSetInput`](crate::operation::copy_image_set::CopyImageSetInput).
     pub fn build(
@@ -115,6 +136,7 @@ impl CopyImageSetInputBuilder {
             source_image_set_id: self.source_image_set_id,
             copy_image_set_information: self.copy_image_set_information,
             force: self.force,
+            promote_to_primary: self.promote_to_primary,
         })
     }
 }

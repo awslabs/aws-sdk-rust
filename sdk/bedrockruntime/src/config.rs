@@ -275,6 +275,21 @@ impl Builder {
         self.runtime_components.set_http_client(http_client);
         self
     }
+    /// Sets the bearer token that will be used for HTTP bearer auth.
+    pub fn bearer_token(self, bearer_token: crate::config::Token) -> Self {
+        self.bearer_token_resolver(bearer_token)
+    }
+
+    /// Sets a bearer token provider that will be used for HTTP bearer auth.
+    pub fn bearer_token_resolver(mut self, bearer_token_resolver: impl crate::config::ResolveIdentity + 'static) -> Self {
+        self.runtime_components.set_identity_resolver(
+            ::aws_smithy_runtime_api::client::auth::http::HTTP_BEARER_AUTH_SCHEME_ID,
+            ::aws_smithy_runtime_api::shared::IntoShared::<::aws_smithy_runtime_api::client::identity::SharedIdentityResolver>::into_shared(
+                bearer_token_resolver,
+            ),
+        );
+        self
+    }
     /// Sets the endpoint resolver to use when making requests.
     ///
     ///
@@ -897,6 +912,36 @@ impl Builder {
         self.config.store_or_unset(app_name);
         self
     }
+    /// Sets the access token provider for this service
+    ///
+    /// Note: the [`Self::bearer_token`] and [`Self::bearer_token_resolver`] methods are
+    /// equivalent to this method, but take the [`Token`] and [`ResolveIdentity`] types
+    /// respectively.
+    ///
+    /// [`Token`]: crate::config::Token
+    /// [`ResolveIdentity`]: crate::config::ResolveIdentity
+    pub fn token_provider(mut self, token_provider: impl crate::config::ProvideToken + 'static) -> Self {
+        self.set_token_provider(::std::option::Option::Some(::aws_smithy_runtime_api::shared::IntoShared::<
+            crate::config::SharedTokenProvider,
+        >::into_shared(token_provider)));
+        self
+    }
+
+    /// Sets the access token provider for this service
+    ///
+    /// Note: the [`Self::bearer_token`] and [`Self::bearer_token_resolver`] methods are
+    /// equivalent to this method, but take the [`Token`] and [`ResolveIdentity`] types
+    /// respectively.
+    ///
+    /// [`Token`]: crate::config::Token
+    /// [`ResolveIdentity`]: crate::config::ResolveIdentity
+    pub fn set_token_provider(&mut self, token_provider: ::std::option::Option<crate::config::SharedTokenProvider>) -> &mut Self {
+        if let Some(token_provider) = token_provider {
+            self.runtime_components
+                .set_identity_resolver(::aws_smithy_runtime_api::client::auth::http::HTTP_BEARER_AUTH_SCHEME_ID, token_provider);
+        }
+        self
+    }
     /// Overrides the default invocation ID generator.
     ///
     /// The invocation ID generator generates ID values for the `amz-sdk-invocation-id` header. By default, this will be a random UUID. Overriding it may be useful in tests that examine the HTTP request and need to be deterministic.
@@ -1087,6 +1132,7 @@ impl Builder {
             ::aws_smithy_async::time::StaticTimeSource::new(::std::time::UNIX_EPOCH + ::std::time::Duration::from_secs(1234567890)),
         )));
         self.config.store_put(::aws_runtime::user_agent::AwsUserAgent::for_tests());
+        self.set_token_provider(Some(crate::config::SharedTokenProvider::new(::aws_credential_types::Token::for_tests())));
         self.set_credentials_provider(Some(crate::config::SharedCredentialsProvider::new(
             ::aws_credential_types::Credentials::for_tests(),
         )));
@@ -1140,6 +1186,9 @@ impl ServiceRuntimePlugin {
             ::std::option::Option::Some(cfg.freeze())
         };
         let mut runtime_components = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("ServiceRuntimePlugin");
+        runtime_components.push_auth_scheme(::aws_smithy_runtime_api::client::auth::SharedAuthScheme::new(
+            ::aws_smithy_runtime::client::auth::http::BearerAuthScheme::new(),
+        ));
         runtime_components.set_endpoint_resolver(Some({
             use crate::config::endpoint::ResolveEndpoint;
             crate::config::endpoint::DefaultResolver::new().into_shared_resolver()
@@ -1272,6 +1321,7 @@ impl From<&::aws_types::sdk_config::SdkConfig> for Builder {
         if let Some(cache) = input.identity_cache() {
             builder.set_identity_cache(cache);
         }
+        builder.set_token_provider(input.token_provider());
         builder.set_app_name(input.app_name().cloned());
 
         builder
@@ -1372,11 +1422,19 @@ pub use ::aws_smithy_runtime_api::client::http::HttpClient;
 
 pub use ::aws_smithy_runtime_api::shared::IntoShared;
 
+pub use ::aws_smithy_runtime_api::client::identity::http::Token;
+
+pub use ::aws_smithy_runtime_api::client::identity::ResolveIdentity;
+
 pub use ::aws_smithy_async::rt::sleep::AsyncSleep;
 
 pub use ::aws_smithy_runtime_api::client::identity::ResolveCachedIdentity;
 
 pub use ::aws_smithy_runtime_api::client::interceptors::Intercept;
+
+pub use ::aws_credential_types::provider::token::ProvideToken;
+
+pub use ::aws_credential_types::provider::token::SharedTokenProvider;
 
 pub use ::aws_credential_types::provider::ProvideCredentials;
 

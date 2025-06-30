@@ -23,7 +23,7 @@ impl crate::operation::detach_user_policy::builders::DetachUserPolicyInputBuilde
 /// Fluent builder constructing a request to `DetachUserPolicy`.
 ///
 /// <p>Removes the specified managed policy from the specified user.</p>
-/// <p>A user can also have inline policies embedded with it. To delete an inline policy, use <code>DeleteUserPolicy</code>. For information about policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed policies and inline policies</a> in the <i>IAM User Guide</i>.</p>
+/// <p>A user can also have inline policies embedded with it. To delete an inline policy, use <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_DeleteUserPolicy.html">DeleteUserPolicy</a>. For information about policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed policies and inline policies</a> in the <i>IAM User Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DetachUserPolicyFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

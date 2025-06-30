@@ -11,6 +11,12 @@ pub use crate::types::_mapping::MappingBuilder;
 
 pub use crate::types::_input_conversion::InputConversionBuilder;
 
+pub use crate::types::_advanced_options::AdvancedOptionsBuilder;
+
+pub use crate::types::_x12_advanced_options::X12AdvancedOptionsBuilder;
+
+pub use crate::types::_x12_split_options::X12SplitOptionsBuilder;
+
 pub use crate::types::_tag::TagBuilder;
 
 pub use crate::types::_transformer_summary::TransformerSummaryBuilder;
@@ -19,9 +25,19 @@ pub use crate::types::_profile_summary::ProfileSummaryBuilder;
 
 pub use crate::types::_capability_options::CapabilityOptionsBuilder;
 
+pub use crate::types::_inbound_edi_options::InboundEdiOptionsBuilder;
+
+pub use crate::types::_x12_inbound_edi_options::X12InboundEdiOptionsBuilder;
+
+pub use crate::types::_x12_acknowledgment_options::X12AcknowledgmentOptionsBuilder;
+
 pub use crate::types::_x12_envelope::X12EnvelopeBuilder;
 
+pub use crate::types::_wrap_options::WrapOptionsBuilder;
+
 pub use crate::types::_x12_outbound_edi_headers::X12OutboundEdiHeadersBuilder;
+
+pub use crate::types::_x12_control_numbers::X12ControlNumbersBuilder;
 
 pub use crate::types::_x12_delimiters::X12DelimitersBuilder;
 

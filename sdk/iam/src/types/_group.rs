@@ -4,11 +4,11 @@
 /// <p>This data type is used as a response element in the following operations:</p>
 /// <ul>
 /// <li>
-/// <p><code>CreateGroup</code></p></li>
+/// <p><a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateGroup.html">CreateGroup</a></p></li>
 /// <li>
-/// <p><code>GetGroup</code></p></li>
+/// <p><a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetGroup.html">GetGroup</a></p></li>
 /// <li>
-/// <p><code>ListGroups</code></p></li>
+/// <p><a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_ListGroups.html">ListGroups</a></p></li>
 /// </ul>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]

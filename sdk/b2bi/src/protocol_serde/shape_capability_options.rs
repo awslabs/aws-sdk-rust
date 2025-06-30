@@ -17,6 +17,9 @@ where
                         "outboundEdi" => {
                             builder = builder.set_outbound_edi(crate::protocol_serde::shape_outbound_edi_options::de_outbound_edi_options(tokens)?);
                         }
+                        "inboundEdi" => {
+                            builder = builder.set_inbound_edi(crate::protocol_serde::shape_inbound_edi_options::de_inbound_edi_options(tokens)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {
@@ -44,6 +47,12 @@ pub fn ser_capability_options(
         let mut object_2 = object.key("outboundEdi").start_object();
         crate::protocol_serde::shape_outbound_edi_options::ser_outbound_edi_options(&mut object_2, var_1)?;
         object_2.finish();
+    }
+    if let Some(var_3) = &input.inbound_edi {
+        #[allow(unused_mut)]
+        let mut object_4 = object.key("inboundEdi").start_object();
+        crate::protocol_serde::shape_inbound_edi_options::ser_inbound_edi_options(&mut object_4, var_3)?;
+        object_4.finish();
     }
     Ok(())
 }

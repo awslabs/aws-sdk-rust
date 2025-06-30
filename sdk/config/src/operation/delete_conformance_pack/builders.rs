@@ -23,12 +23,7 @@ impl crate::operation::delete_conformance_pack::builders::DeleteConformancePackI
 /// Fluent builder constructing a request to `DeleteConformancePack`.
 ///
 /// <p>Deletes the specified conformance pack and all the Config rules, remediation actions, and all evaluation results within that conformance pack.</p>
-/// <p>Config sets the conformance pack to <code>DELETE_IN_PROGRESS</code> until the deletion is complete. You cannot update a conformance pack while it is in this state.</p><note>
-/// <p><b>Recommendation: Consider excluding the <code>AWS::Config::ResourceCompliance</code> resource type from recording before deleting rules</b></p>
-/// <p>Deleting rules creates configuration items (CIs) for <code>AWS::Config::ResourceCompliance</code> that can affect your costs for the configuration recorder. If you are deleting rules which evaluate a large number of resource types, this can lead to a spike in the number of CIs recorded.</p>
-/// <p>To avoid the associated costs, you can opt to disable recording for the <code>AWS::Config::ResourceCompliance</code> resource type before deleting rules, and re-enable recording after the rules have been deleted.</p>
-/// <p>However, since deleting rules is an asynchronous process, it might take an hour or more to complete. During the time when recording is disabled for <code>AWS::Config::ResourceCompliance</code>, rule evaluations will not be recorded in the associated resource’s history.</p>
-/// </note>
+/// <p>Config sets the conformance pack to <code>DELETE_IN_PROGRESS</code> until the deletion is complete. You cannot update a conformance pack while it is in this state.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteConformancePackFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

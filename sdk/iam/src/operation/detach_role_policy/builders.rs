@@ -23,7 +23,7 @@ impl crate::operation::detach_role_policy::builders::DetachRolePolicyInputBuilde
 /// Fluent builder constructing a request to `DetachRolePolicy`.
 ///
 /// <p>Removes the specified managed policy from the specified role.</p>
-/// <p>A role can also have inline policies embedded with it. To delete an inline policy, use <code>DeleteRolePolicy</code>. For information about policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed policies and inline policies</a> in the <i>IAM User Guide</i>.</p>
+/// <p>A role can also have inline policies embedded with it. To delete an inline policy, use <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_DeleteRolePolicy.html">DeleteRolePolicy</a>. For information about policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed policies and inline policies</a> in the <i>IAM User Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DetachRolePolicyFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

@@ -21,6 +21,11 @@ where
                                     .transpose()?,
                             );
                         }
+                        "SourceProperties" => {
+                            builder = builder.set_source_properties(
+                                crate::protocol_serde::shape_integration_source_properties_map::de_integration_source_properties_map(tokens)?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {
@@ -45,6 +50,16 @@ pub fn ser_integration_config(
 ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.refresh_interval {
         object.key("RefreshInterval").string(var_1.as_str());
+    }
+    if let Some(var_2) = &input.source_properties {
+        #[allow(unused_mut)]
+        let mut object_3 = object.key("SourceProperties").start_object();
+        for (key_4, value_5) in var_2 {
+            {
+                object_3.key(key_4.as_str()).string(value_5.as_str());
+            }
+        }
+        object_3.finish();
     }
     Ok(())
 }

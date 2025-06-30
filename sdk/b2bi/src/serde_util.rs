@@ -576,3 +576,31 @@ pub(crate) fn transformer_summary_correct_errors(
     }
     builder
 }
+
+pub(crate) fn wrap_options_correct_errors(mut builder: crate::types::builders::WrapOptionsBuilder) -> crate::types::builders::WrapOptionsBuilder {
+    if builder.wrap_by.is_none() {
+        builder.wrap_by = "no value was set".parse::<crate::types::WrapFormat>().ok()
+    }
+    builder
+}
+
+pub(crate) fn x12_acknowledgment_options_correct_errors(
+    mut builder: crate::types::builders::X12AcknowledgmentOptionsBuilder,
+) -> crate::types::builders::X12AcknowledgmentOptionsBuilder {
+    if builder.functional_acknowledgment.is_none() {
+        builder.functional_acknowledgment = "no value was set".parse::<crate::types::X12FunctionalAcknowledgment>().ok()
+    }
+    if builder.technical_acknowledgment.is_none() {
+        builder.technical_acknowledgment = "no value was set".parse::<crate::types::X12TechnicalAcknowledgment>().ok()
+    }
+    builder
+}
+
+pub(crate) fn x12_split_options_correct_errors(
+    mut builder: crate::types::builders::X12SplitOptionsBuilder,
+) -> crate::types::builders::X12SplitOptionsBuilder {
+    if builder.split_by.is_none() {
+        builder.split_by = "no value was set".parse::<crate::types::X12SplitBy>().ok()
+    }
+    builder
+}

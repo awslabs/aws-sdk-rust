@@ -5,7 +5,40 @@
 pub struct GetImageFrameOutput {
     /// <p>The blob containing the aggregated image frame information.</p>
     pub image_frame_blob: ::aws_smithy_types::byte_stream::ByteStream,
-    /// <p>The format in which the image frame information is returned to the customer. Default is <code>application/octet-stream</code>.</p>
+    /// <p>The format in which the image frame information is returned to the customer. Default is <code>application/octet-stream</code>.</p><note>
+    /// <ul>
+    /// <li>
+    /// <p>If the stored transfer syntax is <code>1.2.840.10008.1.2.1</code>, the returned <code>contentType</code> is <code>application/octet-stream</code>.</p></li>
+    /// </ul>
+    /// <ul>
+    /// <li>
+    /// <p>If the stored transfer syntax is <code>1.2.840.10008.1.2.4.50</code>, the returned <code>contentType</code> is <code>image/jpeg</code>.</p></li>
+    /// </ul>
+    /// <ul>
+    /// <li>
+    /// <p>If the stored transfer syntax is <code>1.2.840.10008.1.2.4.91</code>, the returned <code>contentType</code> is <code>image/j2c</code>.</p></li>
+    /// </ul>
+    /// <ul>
+    /// <li>
+    /// <p>If the stored transfer syntax is MPEG2, <code>1.2.840.10008.1.2.4.100</code>, <code>1.2.840.10008.1.2.4.100.1</code>, <code>1.2.840.10008.1.2.4.101</code>, or <code>1.2.840.10008.1.2.4.101.1</code>, the returned <code>contentType</code> is <code>video/mpeg</code>.</p></li>
+    /// </ul>
+    /// <ul>
+    /// <li>
+    /// <p>If the stored transfer syntax is MPEG-4 AVC/H.264, UID <code>1.2.840.10008.1.2.4.102</code>, <code>1.2.840.10008.1.2.4.102.1</code>, <code>1.2.840.10008.1.2.4.103</code>, <code>1.2.840.10008.1.2.4.103.1</code>, <code>1.2.840.10008.1.2.4.104</code>, <code>1.2.840.10008.1.2.4.104.1</code>, <code>1.2.840.10008.1.2.4.105</code>, <code>1.2.840.10008.1.2.4.105.1</code>, <code>1.2.840.10008.1.2.4.106</code>, or <code>1.2.840.10008.1.2.4.106.1</code>, the returned <code>contentType</code> is <code>video/mp4</code>.</p></li>
+    /// </ul>
+    /// <ul>
+    /// <li>
+    /// <p>If the stored transfer syntax is HEVC/H.265, UID <code>1.2.840.10008.1.2.4.107</code> or <code>1.2.840.10008.1.2.4.108</code>, the returned <code>contentType</code> is <code>video/H256</code>.</p></li>
+    /// </ul>
+    /// <ul>
+    /// <li>
+    /// <p>If the stored transfer syntax is <code>1.2.840.10008.1.2.4.202</code> or if the stored transfer syntax is <i>missing</i>, the returned <code>contentType</code> is <code>image/jph</code>.</p></li>
+    /// </ul>
+    /// <ul>
+    /// <li>
+    /// <p>If the stored transfer syntax is <code>1.2.840.10008.1.2.4.203</code>, the returned contentType is <code>image/jphc</code>.</p></li>
+    /// </ul>
+    /// </note>
     pub content_type: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -14,7 +47,40 @@ impl GetImageFrameOutput {
     pub fn image_frame_blob(&self) -> &::aws_smithy_types::byte_stream::ByteStream {
         &self.image_frame_blob
     }
-    /// <p>The format in which the image frame information is returned to the customer. Default is <code>application/octet-stream</code>.</p>
+    /// <p>The format in which the image frame information is returned to the customer. Default is <code>application/octet-stream</code>.</p><note>
+    /// <ul>
+    /// <li>
+    /// <p>If the stored transfer syntax is <code>1.2.840.10008.1.2.1</code>, the returned <code>contentType</code> is <code>application/octet-stream</code>.</p></li>
+    /// </ul>
+    /// <ul>
+    /// <li>
+    /// <p>If the stored transfer syntax is <code>1.2.840.10008.1.2.4.50</code>, the returned <code>contentType</code> is <code>image/jpeg</code>.</p></li>
+    /// </ul>
+    /// <ul>
+    /// <li>
+    /// <p>If the stored transfer syntax is <code>1.2.840.10008.1.2.4.91</code>, the returned <code>contentType</code> is <code>image/j2c</code>.</p></li>
+    /// </ul>
+    /// <ul>
+    /// <li>
+    /// <p>If the stored transfer syntax is MPEG2, <code>1.2.840.10008.1.2.4.100</code>, <code>1.2.840.10008.1.2.4.100.1</code>, <code>1.2.840.10008.1.2.4.101</code>, or <code>1.2.840.10008.1.2.4.101.1</code>, the returned <code>contentType</code> is <code>video/mpeg</code>.</p></li>
+    /// </ul>
+    /// <ul>
+    /// <li>
+    /// <p>If the stored transfer syntax is MPEG-4 AVC/H.264, UID <code>1.2.840.10008.1.2.4.102</code>, <code>1.2.840.10008.1.2.4.102.1</code>, <code>1.2.840.10008.1.2.4.103</code>, <code>1.2.840.10008.1.2.4.103.1</code>, <code>1.2.840.10008.1.2.4.104</code>, <code>1.2.840.10008.1.2.4.104.1</code>, <code>1.2.840.10008.1.2.4.105</code>, <code>1.2.840.10008.1.2.4.105.1</code>, <code>1.2.840.10008.1.2.4.106</code>, or <code>1.2.840.10008.1.2.4.106.1</code>, the returned <code>contentType</code> is <code>video/mp4</code>.</p></li>
+    /// </ul>
+    /// <ul>
+    /// <li>
+    /// <p>If the stored transfer syntax is HEVC/H.265, UID <code>1.2.840.10008.1.2.4.107</code> or <code>1.2.840.10008.1.2.4.108</code>, the returned <code>contentType</code> is <code>video/H256</code>.</p></li>
+    /// </ul>
+    /// <ul>
+    /// <li>
+    /// <p>If the stored transfer syntax is <code>1.2.840.10008.1.2.4.202</code> or if the stored transfer syntax is <i>missing</i>, the returned <code>contentType</code> is <code>image/jph</code>.</p></li>
+    /// </ul>
+    /// <ul>
+    /// <li>
+    /// <p>If the stored transfer syntax is <code>1.2.840.10008.1.2.4.203</code>, the returned contentType is <code>image/jphc</code>.</p></li>
+    /// </ul>
+    /// </note>
     pub fn content_type(&self) -> ::std::option::Option<&str> {
         self.content_type.as_deref()
     }
@@ -55,17 +121,116 @@ impl GetImageFrameOutputBuilder {
     pub fn get_image_frame_blob(&self) -> &::std::option::Option<::aws_smithy_types::byte_stream::ByteStream> {
         &self.image_frame_blob
     }
-    /// <p>The format in which the image frame information is returned to the customer. Default is <code>application/octet-stream</code>.</p>
+    /// <p>The format in which the image frame information is returned to the customer. Default is <code>application/octet-stream</code>.</p><note>
+    /// <ul>
+    /// <li>
+    /// <p>If the stored transfer syntax is <code>1.2.840.10008.1.2.1</code>, the returned <code>contentType</code> is <code>application/octet-stream</code>.</p></li>
+    /// </ul>
+    /// <ul>
+    /// <li>
+    /// <p>If the stored transfer syntax is <code>1.2.840.10008.1.2.4.50</code>, the returned <code>contentType</code> is <code>image/jpeg</code>.</p></li>
+    /// </ul>
+    /// <ul>
+    /// <li>
+    /// <p>If the stored transfer syntax is <code>1.2.840.10008.1.2.4.91</code>, the returned <code>contentType</code> is <code>image/j2c</code>.</p></li>
+    /// </ul>
+    /// <ul>
+    /// <li>
+    /// <p>If the stored transfer syntax is MPEG2, <code>1.2.840.10008.1.2.4.100</code>, <code>1.2.840.10008.1.2.4.100.1</code>, <code>1.2.840.10008.1.2.4.101</code>, or <code>1.2.840.10008.1.2.4.101.1</code>, the returned <code>contentType</code> is <code>video/mpeg</code>.</p></li>
+    /// </ul>
+    /// <ul>
+    /// <li>
+    /// <p>If the stored transfer syntax is MPEG-4 AVC/H.264, UID <code>1.2.840.10008.1.2.4.102</code>, <code>1.2.840.10008.1.2.4.102.1</code>, <code>1.2.840.10008.1.2.4.103</code>, <code>1.2.840.10008.1.2.4.103.1</code>, <code>1.2.840.10008.1.2.4.104</code>, <code>1.2.840.10008.1.2.4.104.1</code>, <code>1.2.840.10008.1.2.4.105</code>, <code>1.2.840.10008.1.2.4.105.1</code>, <code>1.2.840.10008.1.2.4.106</code>, or <code>1.2.840.10008.1.2.4.106.1</code>, the returned <code>contentType</code> is <code>video/mp4</code>.</p></li>
+    /// </ul>
+    /// <ul>
+    /// <li>
+    /// <p>If the stored transfer syntax is HEVC/H.265, UID <code>1.2.840.10008.1.2.4.107</code> or <code>1.2.840.10008.1.2.4.108</code>, the returned <code>contentType</code> is <code>video/H256</code>.</p></li>
+    /// </ul>
+    /// <ul>
+    /// <li>
+    /// <p>If the stored transfer syntax is <code>1.2.840.10008.1.2.4.202</code> or if the stored transfer syntax is <i>missing</i>, the returned <code>contentType</code> is <code>image/jph</code>.</p></li>
+    /// </ul>
+    /// <ul>
+    /// <li>
+    /// <p>If the stored transfer syntax is <code>1.2.840.10008.1.2.4.203</code>, the returned contentType is <code>image/jphc</code>.</p></li>
+    /// </ul>
+    /// </note>
     pub fn content_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.content_type = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The format in which the image frame information is returned to the customer. Default is <code>application/octet-stream</code>.</p>
+    /// <p>The format in which the image frame information is returned to the customer. Default is <code>application/octet-stream</code>.</p><note>
+    /// <ul>
+    /// <li>
+    /// <p>If the stored transfer syntax is <code>1.2.840.10008.1.2.1</code>, the returned <code>contentType</code> is <code>application/octet-stream</code>.</p></li>
+    /// </ul>
+    /// <ul>
+    /// <li>
+    /// <p>If the stored transfer syntax is <code>1.2.840.10008.1.2.4.50</code>, the returned <code>contentType</code> is <code>image/jpeg</code>.</p></li>
+    /// </ul>
+    /// <ul>
+    /// <li>
+    /// <p>If the stored transfer syntax is <code>1.2.840.10008.1.2.4.91</code>, the returned <code>contentType</code> is <code>image/j2c</code>.</p></li>
+    /// </ul>
+    /// <ul>
+    /// <li>
+    /// <p>If the stored transfer syntax is MPEG2, <code>1.2.840.10008.1.2.4.100</code>, <code>1.2.840.10008.1.2.4.100.1</code>, <code>1.2.840.10008.1.2.4.101</code>, or <code>1.2.840.10008.1.2.4.101.1</code>, the returned <code>contentType</code> is <code>video/mpeg</code>.</p></li>
+    /// </ul>
+    /// <ul>
+    /// <li>
+    /// <p>If the stored transfer syntax is MPEG-4 AVC/H.264, UID <code>1.2.840.10008.1.2.4.102</code>, <code>1.2.840.10008.1.2.4.102.1</code>, <code>1.2.840.10008.1.2.4.103</code>, <code>1.2.840.10008.1.2.4.103.1</code>, <code>1.2.840.10008.1.2.4.104</code>, <code>1.2.840.10008.1.2.4.104.1</code>, <code>1.2.840.10008.1.2.4.105</code>, <code>1.2.840.10008.1.2.4.105.1</code>, <code>1.2.840.10008.1.2.4.106</code>, or <code>1.2.840.10008.1.2.4.106.1</code>, the returned <code>contentType</code> is <code>video/mp4</code>.</p></li>
+    /// </ul>
+    /// <ul>
+    /// <li>
+    /// <p>If the stored transfer syntax is HEVC/H.265, UID <code>1.2.840.10008.1.2.4.107</code> or <code>1.2.840.10008.1.2.4.108</code>, the returned <code>contentType</code> is <code>video/H256</code>.</p></li>
+    /// </ul>
+    /// <ul>
+    /// <li>
+    /// <p>If the stored transfer syntax is <code>1.2.840.10008.1.2.4.202</code> or if the stored transfer syntax is <i>missing</i>, the returned <code>contentType</code> is <code>image/jph</code>.</p></li>
+    /// </ul>
+    /// <ul>
+    /// <li>
+    /// <p>If the stored transfer syntax is <code>1.2.840.10008.1.2.4.203</code>, the returned contentType is <code>image/jphc</code>.</p></li>
+    /// </ul>
+    /// </note>
     pub fn set_content_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.content_type = input;
         self
     }
-    /// <p>The format in which the image frame information is returned to the customer. Default is <code>application/octet-stream</code>.</p>
+    /// <p>The format in which the image frame information is returned to the customer. Default is <code>application/octet-stream</code>.</p><note>
+    /// <ul>
+    /// <li>
+    /// <p>If the stored transfer syntax is <code>1.2.840.10008.1.2.1</code>, the returned <code>contentType</code> is <code>application/octet-stream</code>.</p></li>
+    /// </ul>
+    /// <ul>
+    /// <li>
+    /// <p>If the stored transfer syntax is <code>1.2.840.10008.1.2.4.50</code>, the returned <code>contentType</code> is <code>image/jpeg</code>.</p></li>
+    /// </ul>
+    /// <ul>
+    /// <li>
+    /// <p>If the stored transfer syntax is <code>1.2.840.10008.1.2.4.91</code>, the returned <code>contentType</code> is <code>image/j2c</code>.</p></li>
+    /// </ul>
+    /// <ul>
+    /// <li>
+    /// <p>If the stored transfer syntax is MPEG2, <code>1.2.840.10008.1.2.4.100</code>, <code>1.2.840.10008.1.2.4.100.1</code>, <code>1.2.840.10008.1.2.4.101</code>, or <code>1.2.840.10008.1.2.4.101.1</code>, the returned <code>contentType</code> is <code>video/mpeg</code>.</p></li>
+    /// </ul>
+    /// <ul>
+    /// <li>
+    /// <p>If the stored transfer syntax is MPEG-4 AVC/H.264, UID <code>1.2.840.10008.1.2.4.102</code>, <code>1.2.840.10008.1.2.4.102.1</code>, <code>1.2.840.10008.1.2.4.103</code>, <code>1.2.840.10008.1.2.4.103.1</code>, <code>1.2.840.10008.1.2.4.104</code>, <code>1.2.840.10008.1.2.4.104.1</code>, <code>1.2.840.10008.1.2.4.105</code>, <code>1.2.840.10008.1.2.4.105.1</code>, <code>1.2.840.10008.1.2.4.106</code>, or <code>1.2.840.10008.1.2.4.106.1</code>, the returned <code>contentType</code> is <code>video/mp4</code>.</p></li>
+    /// </ul>
+    /// <ul>
+    /// <li>
+    /// <p>If the stored transfer syntax is HEVC/H.265, UID <code>1.2.840.10008.1.2.4.107</code> or <code>1.2.840.10008.1.2.4.108</code>, the returned <code>contentType</code> is <code>video/H256</code>.</p></li>
+    /// </ul>
+    /// <ul>
+    /// <li>
+    /// <p>If the stored transfer syntax is <code>1.2.840.10008.1.2.4.202</code> or if the stored transfer syntax is <i>missing</i>, the returned <code>contentType</code> is <code>image/jph</code>.</p></li>
+    /// </ul>
+    /// <ul>
+    /// <li>
+    /// <p>If the stored transfer syntax is <code>1.2.840.10008.1.2.4.203</code>, the returned contentType is <code>image/jphc</code>.</p></li>
+    /// </ul>
+    /// </note>
     pub fn get_content_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.content_type
     }

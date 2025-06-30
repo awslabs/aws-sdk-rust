@@ -559,6 +559,10 @@ pub use crate::types::_sheet_image_static_file_source::SheetImageStaticFileSourc
 
 pub use crate::types::_sheet_text_box::SheetTextBox;
 
+pub use crate::types::_text_box_interaction_options::TextBoxInteractionOptions;
+
+pub use crate::types::_text_box_menu_option::TextBoxMenuOption;
+
 pub use crate::types::_visual::Visual;
 
 pub use crate::types::_plugin_visual::PluginVisual;
@@ -4368,6 +4372,10 @@ mod _template_version_summary;
 mod _teradata_parameters;
 
 mod _text_area_control_display_options;
+
+mod _text_box_interaction_options;
+
+mod _text_box_menu_option;
 
 mod _text_conditional_format;
 

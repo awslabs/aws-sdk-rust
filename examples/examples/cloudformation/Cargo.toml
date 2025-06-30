@@ -8,7 +8,7 @@ publish = false
 
 [dependencies]
 aws-config= { version = "1.8.0", path = "../../../sdk/aws-config", features = ["behavior-version-latest"] }
-aws-sdk-cloudformation= { version = "1.81.0", path = "../../../sdk/cloudformation" }
+aws-sdk-cloudformation= { version = "1.82.0", path = "../../../sdk/cloudformation" }
 
 [dependencies.tokio]
 version = "1.20.1"

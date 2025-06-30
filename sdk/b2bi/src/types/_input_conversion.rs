@@ -8,6 +8,8 @@ pub struct InputConversion {
     pub from_format: crate::types::FromFormat,
     /// <p>A structure that contains the formatting options for an inbound transformer.</p>
     pub format_options: ::std::option::Option<crate::types::FormatOptions>,
+    /// <p>Specifies advanced options for the input conversion process. These options provide additional control over how EDI files are processed during transformation.</p>
+    pub advanced_options: ::std::option::Option<crate::types::AdvancedOptions>,
 }
 impl InputConversion {
     /// <p>The format for the transformer input: currently on <code>X12</code> is supported.</p>
@@ -17,6 +19,10 @@ impl InputConversion {
     /// <p>A structure that contains the formatting options for an inbound transformer.</p>
     pub fn format_options(&self) -> ::std::option::Option<&crate::types::FormatOptions> {
         self.format_options.as_ref()
+    }
+    /// <p>Specifies advanced options for the input conversion process. These options provide additional control over how EDI files are processed during transformation.</p>
+    pub fn advanced_options(&self) -> ::std::option::Option<&crate::types::AdvancedOptions> {
+        self.advanced_options.as_ref()
     }
 }
 impl InputConversion {
@@ -32,6 +38,7 @@ impl InputConversion {
 pub struct InputConversionBuilder {
     pub(crate) from_format: ::std::option::Option<crate::types::FromFormat>,
     pub(crate) format_options: ::std::option::Option<crate::types::FormatOptions>,
+    pub(crate) advanced_options: ::std::option::Option<crate::types::AdvancedOptions>,
 }
 impl InputConversionBuilder {
     /// <p>The format for the transformer input: currently on <code>X12</code> is supported.</p>
@@ -63,6 +70,20 @@ impl InputConversionBuilder {
     pub fn get_format_options(&self) -> &::std::option::Option<crate::types::FormatOptions> {
         &self.format_options
     }
+    /// <p>Specifies advanced options for the input conversion process. These options provide additional control over how EDI files are processed during transformation.</p>
+    pub fn advanced_options(mut self, input: crate::types::AdvancedOptions) -> Self {
+        self.advanced_options = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies advanced options for the input conversion process. These options provide additional control over how EDI files are processed during transformation.</p>
+    pub fn set_advanced_options(mut self, input: ::std::option::Option<crate::types::AdvancedOptions>) -> Self {
+        self.advanced_options = input;
+        self
+    }
+    /// <p>Specifies advanced options for the input conversion process. These options provide additional control over how EDI files are processed during transformation.</p>
+    pub fn get_advanced_options(&self) -> &::std::option::Option<crate::types::AdvancedOptions> {
+        &self.advanced_options
+    }
     /// Consumes the builder and constructs a [`InputConversion`](crate::types::InputConversion).
     /// This method will fail if any of the following fields are not set:
     /// - [`from_format`](crate::types::builders::InputConversionBuilder::from_format)
@@ -75,6 +96,7 @@ impl InputConversionBuilder {
                 )
             })?,
             format_options: self.format_options,
+            advanced_options: self.advanced_options,
         })
     }
 }

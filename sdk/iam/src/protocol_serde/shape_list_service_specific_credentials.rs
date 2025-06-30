@@ -118,6 +118,34 @@ pub fn de_list_service_specific_credentials(
                 builder = builder.set_service_specific_credentials(var_1);
             }
             ,
+            s if s.matches("Marker") /* Marker com.amazonaws.iam.synthetic#ListServiceSpecificCredentialsOutput$Marker */ =>  {
+                let var_2 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_marker(var_2);
+            }
+            ,
+            s if s.matches("IsTruncated") /* IsTruncated com.amazonaws.iam.synthetic#ListServiceSpecificCredentialsOutput$IsTruncated */ =>  {
+                let var_3 =
+                    Some(
+                         {
+                            <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (boolean: `com.amazonaws.iam#booleanType`)"))
+                        }
+                        ?
+                    )
+                ;
+                builder = builder.set_is_truncated(var_3);
+            }
+            ,
             _ => {}
         }
         }

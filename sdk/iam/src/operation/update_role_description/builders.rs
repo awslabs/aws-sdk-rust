@@ -22,7 +22,7 @@ impl crate::operation::update_role_description::builders::UpdateRoleDescriptionI
 }
 /// Fluent builder constructing a request to `UpdateRoleDescription`.
 ///
-/// <p>Use <code>UpdateRole</code> instead.</p>
+/// <p>Use <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_UpdateRole.html">UpdateRole</a> instead.</p>
 /// <p>Modifies only the description of a role. This operation performs the same function as the <code>Description</code> parameter in the <code>UpdateRole</code> operation.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateRoleDescriptionFluentBuilder {

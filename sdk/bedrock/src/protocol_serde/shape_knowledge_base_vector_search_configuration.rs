@@ -18,6 +18,18 @@ pub fn ser_knowledge_base_vector_search_configuration(
         crate::protocol_serde::shape_retrieval_filter::ser_retrieval_filter(&mut object_4, var_3)?;
         object_4.finish();
     }
+    if let Some(var_5) = &input.implicit_filter_configuration {
+        #[allow(unused_mut)]
+        let mut object_6 = object.key("implicitFilterConfiguration").start_object();
+        crate::protocol_serde::shape_implicit_filter_configuration::ser_implicit_filter_configuration(&mut object_6, var_5)?;
+        object_6.finish();
+    }
+    if let Some(var_7) = &input.reranking_configuration {
+        #[allow(unused_mut)]
+        let mut object_8 = object.key("rerankingConfiguration").start_object();
+        crate::protocol_serde::shape_vector_search_reranking_configuration::ser_vector_search_reranking_configuration(&mut object_8, var_7)?;
+        object_8.finish();
+    }
     Ok(())
 }
 
@@ -52,6 +64,16 @@ where
                         }
                         "filter" => {
                             builder = builder.set_filter(crate::protocol_serde::shape_retrieval_filter::de_retrieval_filter(tokens)?);
+                        }
+                        "implicitFilterConfiguration" => {
+                            builder = builder.set_implicit_filter_configuration(
+                                crate::protocol_serde::shape_implicit_filter_configuration::de_implicit_filter_configuration(tokens)?,
+                            );
+                        }
+                        "rerankingConfiguration" => {
+                            builder = builder.set_reranking_configuration(
+                                crate::protocol_serde::shape_vector_search_reranking_configuration::de_vector_search_reranking_configuration(tokens)?,
+                            );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

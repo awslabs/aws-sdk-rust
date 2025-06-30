@@ -22,9 +22,7 @@ impl crate::operation::update_table::builders::UpdateTableInputBuilder {
 }
 /// Fluent builder constructing a request to `UpdateTable`.
 ///
-/// <p>Modifies the provisioned throughput settings, global secondary indexes, or DynamoDB Streams settings for a given table.</p><important>
-/// <p>For global tables, this operation only applies to global tables using Version 2019.11.21 (Current version).</p>
-/// </important>
+/// <p>Modifies the provisioned throughput settings, global secondary indexes, or DynamoDB Streams settings for a given table.</p>
 /// <p>You can only perform one of the following operations at once:</p>
 /// <ul>
 /// <li>
@@ -290,23 +288,17 @@ impl UpdateTableFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_replica_updates`](Self::set_replica_updates).
     ///
-    /// <p>A list of replica update actions (create, delete, or update) for the table.</p><note>
-    /// <p>For global tables, this property only applies to global tables using Version 2019.11.21 (Current version).</p>
-    /// </note>
+    /// <p>A list of replica update actions (create, delete, or update) for the table.</p>
     pub fn replica_updates(mut self, input: crate::types::ReplicationGroupUpdate) -> Self {
         self.inner = self.inner.replica_updates(input);
         self
     }
-    /// <p>A list of replica update actions (create, delete, or update) for the table.</p><note>
-    /// <p>For global tables, this property only applies to global tables using Version 2019.11.21 (Current version).</p>
-    /// </note>
+    /// <p>A list of replica update actions (create, delete, or update) for the table.</p>
     pub fn set_replica_updates(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ReplicationGroupUpdate>>) -> Self {
         self.inner = self.inner.set_replica_updates(input);
         self
     }
-    /// <p>A list of replica update actions (create, delete, or update) for the table.</p><note>
-    /// <p>For global tables, this property only applies to global tables using Version 2019.11.21 (Current version).</p>
-    /// </note>
+    /// <p>A list of replica update actions (create, delete, or update) for the table.</p>
     pub fn get_replica_updates(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ReplicationGroupUpdate>> {
         self.inner.get_replica_updates()
     }
@@ -342,13 +334,11 @@ impl UpdateTableFluentBuilder {
     /// <p>You can specify one of the following consistency modes:</p>
     /// <ul>
     /// <li>
-    /// <p><code>EVENTUAL</code>: Configures a new global table for multi-Region eventual consistency. This is the default consistency mode for global tables.</p></li>
+    /// <p><code>EVENTUAL</code>: Configures a new global table for multi-Region eventual consistency (MREC). This is the default consistency mode for global tables.</p></li>
     /// <li>
-    /// <p><code>STRONG</code>: Configures a new global table for multi-Region strong consistency (preview).</p><note>
-    /// <p>Multi-Region strong consistency (MRSC) is a new DynamoDB global tables capability currently available in preview mode. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/PreviewFeatures.html#multi-region-strong-consistency-gt">Global tables multi-Region strong consistency</a>.</p>
-    /// </note></li>
+    /// <p><code>STRONG</code>: Configures a new global table for multi-Region strong consistency (MRSC).</p></li>
     /// </ul>
-    /// <p>If you don't specify this parameter, the global table consistency mode defaults to <code>EVENTUAL</code>.</p>
+    /// <p>If you don't specify this field, the global table consistency mode defaults to <code>EVENTUAL</code>. For more information about global tables consistency modes, see <a href="https://docs.aws.amazon.com/V2globaltables_HowItWorks.html#V2globaltables_HowItWorks.consistency-modes"> Consistency modes</a> in DynamoDB developer guide.</p>
     pub fn multi_region_consistency(mut self, input: crate::types::MultiRegionConsistency) -> Self {
         self.inner = self.inner.multi_region_consistency(input);
         self
@@ -357,13 +347,11 @@ impl UpdateTableFluentBuilder {
     /// <p>You can specify one of the following consistency modes:</p>
     /// <ul>
     /// <li>
-    /// <p><code>EVENTUAL</code>: Configures a new global table for multi-Region eventual consistency. This is the default consistency mode for global tables.</p></li>
+    /// <p><code>EVENTUAL</code>: Configures a new global table for multi-Region eventual consistency (MREC). This is the default consistency mode for global tables.</p></li>
     /// <li>
-    /// <p><code>STRONG</code>: Configures a new global table for multi-Region strong consistency (preview).</p><note>
-    /// <p>Multi-Region strong consistency (MRSC) is a new DynamoDB global tables capability currently available in preview mode. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/PreviewFeatures.html#multi-region-strong-consistency-gt">Global tables multi-Region strong consistency</a>.</p>
-    /// </note></li>
+    /// <p><code>STRONG</code>: Configures a new global table for multi-Region strong consistency (MRSC).</p></li>
     /// </ul>
-    /// <p>If you don't specify this parameter, the global table consistency mode defaults to <code>EVENTUAL</code>.</p>
+    /// <p>If you don't specify this field, the global table consistency mode defaults to <code>EVENTUAL</code>. For more information about global tables consistency modes, see <a href="https://docs.aws.amazon.com/V2globaltables_HowItWorks.html#V2globaltables_HowItWorks.consistency-modes"> Consistency modes</a> in DynamoDB developer guide.</p>
     pub fn set_multi_region_consistency(mut self, input: ::std::option::Option<crate::types::MultiRegionConsistency>) -> Self {
         self.inner = self.inner.set_multi_region_consistency(input);
         self
@@ -372,15 +360,59 @@ impl UpdateTableFluentBuilder {
     /// <p>You can specify one of the following consistency modes:</p>
     /// <ul>
     /// <li>
-    /// <p><code>EVENTUAL</code>: Configures a new global table for multi-Region eventual consistency. This is the default consistency mode for global tables.</p></li>
+    /// <p><code>EVENTUAL</code>: Configures a new global table for multi-Region eventual consistency (MREC). This is the default consistency mode for global tables.</p></li>
     /// <li>
-    /// <p><code>STRONG</code>: Configures a new global table for multi-Region strong consistency (preview).</p><note>
-    /// <p>Multi-Region strong consistency (MRSC) is a new DynamoDB global tables capability currently available in preview mode. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/PreviewFeatures.html#multi-region-strong-consistency-gt">Global tables multi-Region strong consistency</a>.</p>
-    /// </note></li>
+    /// <p><code>STRONG</code>: Configures a new global table for multi-Region strong consistency (MRSC).</p></li>
     /// </ul>
-    /// <p>If you don't specify this parameter, the global table consistency mode defaults to <code>EVENTUAL</code>.</p>
+    /// <p>If you don't specify this field, the global table consistency mode defaults to <code>EVENTUAL</code>. For more information about global tables consistency modes, see <a href="https://docs.aws.amazon.com/V2globaltables_HowItWorks.html#V2globaltables_HowItWorks.consistency-modes"> Consistency modes</a> in DynamoDB developer guide.</p>
     pub fn get_multi_region_consistency(&self) -> &::std::option::Option<crate::types::MultiRegionConsistency> {
         self.inner.get_multi_region_consistency()
+    }
+    ///
+    /// Appends an item to `GlobalTableWitnessUpdates`.
+    ///
+    /// To override the contents of this collection use [`set_global_table_witness_updates`](Self::set_global_table_witness_updates).
+    ///
+    /// <p>A list of witness updates for a MRSC global table. A witness provides a cost-effective alternative to a full replica in a MRSC global table by maintaining replicated change data written to global table replicas. You cannot perform read or write operations on a witness. For each witness, you can request one action:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>Create</code> - add a new witness to the global table.</p></li>
+    /// <li>
+    /// <p><code>Delete</code> - remove a witness from the global table.</p></li>
+    /// </ul>
+    /// <p>You can create or delete only one witness per <code>UpdateTable</code> operation.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/V2globaltables_HowItWorks.html#V2globaltables_HowItWorks.consistency-modes">Multi-Region strong consistency (MRSC)</a> in the Amazon DynamoDB Developer Guide</p>
+    pub fn global_table_witness_updates(mut self, input: crate::types::GlobalTableWitnessGroupUpdate) -> Self {
+        self.inner = self.inner.global_table_witness_updates(input);
+        self
+    }
+    /// <p>A list of witness updates for a MRSC global table. A witness provides a cost-effective alternative to a full replica in a MRSC global table by maintaining replicated change data written to global table replicas. You cannot perform read or write operations on a witness. For each witness, you can request one action:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>Create</code> - add a new witness to the global table.</p></li>
+    /// <li>
+    /// <p><code>Delete</code> - remove a witness from the global table.</p></li>
+    /// </ul>
+    /// <p>You can create or delete only one witness per <code>UpdateTable</code> operation.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/V2globaltables_HowItWorks.html#V2globaltables_HowItWorks.consistency-modes">Multi-Region strong consistency (MRSC)</a> in the Amazon DynamoDB Developer Guide</p>
+    pub fn set_global_table_witness_updates(
+        mut self,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::GlobalTableWitnessGroupUpdate>>,
+    ) -> Self {
+        self.inner = self.inner.set_global_table_witness_updates(input);
+        self
+    }
+    /// <p>A list of witness updates for a MRSC global table. A witness provides a cost-effective alternative to a full replica in a MRSC global table by maintaining replicated change data written to global table replicas. You cannot perform read or write operations on a witness. For each witness, you can request one action:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>Create</code> - add a new witness to the global table.</p></li>
+    /// <li>
+    /// <p><code>Delete</code> - remove a witness from the global table.</p></li>
+    /// </ul>
+    /// <p>You can create or delete only one witness per <code>UpdateTable</code> operation.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/V2globaltables_HowItWorks.html#V2globaltables_HowItWorks.consistency-modes">Multi-Region strong consistency (MRSC)</a> in the Amazon DynamoDB Developer Guide</p>
+    pub fn get_global_table_witness_updates(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GlobalTableWitnessGroupUpdate>> {
+        self.inner.get_global_table_witness_updates()
     }
     /// <p>Updates the maximum number of read and write units for the specified table in on-demand capacity mode. If you use this parameter, you must specify <code>MaxReadRequestUnits</code>, <code>MaxWriteRequestUnits</code>, or both.</p>
     pub fn on_demand_throughput(mut self, input: crate::types::OnDemandThroughput) -> Self {

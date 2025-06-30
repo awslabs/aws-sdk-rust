@@ -182,6 +182,9 @@ pub(crate) fn de_get_image_set(
                             .transpose()?,
                     );
                 }
+                "isPrimary" => {
+                    builder = builder.set_is_primary(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                }
                 "message" => {
                     builder = builder.set_message(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

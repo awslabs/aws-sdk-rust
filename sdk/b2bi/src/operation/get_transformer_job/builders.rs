@@ -22,7 +22,9 @@ impl crate::operation::get_transformer_job::builders::GetTransformerJobInputBuil
 }
 /// Fluent builder constructing a request to `GetTransformerJob`.
 ///
-/// <p>Returns the details of the transformer run, based on the Transformer job ID.</p>
+/// <p>Returns the details of the transformer run, based on the Transformer job ID.</p><note>
+/// <p>If 30 days have elapsed since your transformer job was started, the system deletes it. So, if you run <code>GetTransformerJob</code> and supply a <code>transformerId</code> and <code>transformerJobId</code> for a job that was started more than 30 days previously, you receive a 404 response.</p>
+/// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetTransformerJobFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

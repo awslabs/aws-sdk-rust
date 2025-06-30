@@ -6,11 +6,17 @@
 pub struct CapabilityOptions {
     /// <p>A structure that contains the outbound EDI options.</p>
     pub outbound_edi: ::std::option::Option<crate::types::OutboundEdiOptions>,
+    /// <p>A structure that contains the inbound EDI options for the capability.</p>
+    pub inbound_edi: ::std::option::Option<crate::types::InboundEdiOptions>,
 }
 impl CapabilityOptions {
     /// <p>A structure that contains the outbound EDI options.</p>
     pub fn outbound_edi(&self) -> ::std::option::Option<&crate::types::OutboundEdiOptions> {
         self.outbound_edi.as_ref()
+    }
+    /// <p>A structure that contains the inbound EDI options for the capability.</p>
+    pub fn inbound_edi(&self) -> ::std::option::Option<&crate::types::InboundEdiOptions> {
+        self.inbound_edi.as_ref()
     }
 }
 impl CapabilityOptions {
@@ -25,6 +31,7 @@ impl CapabilityOptions {
 #[non_exhaustive]
 pub struct CapabilityOptionsBuilder {
     pub(crate) outbound_edi: ::std::option::Option<crate::types::OutboundEdiOptions>,
+    pub(crate) inbound_edi: ::std::option::Option<crate::types::InboundEdiOptions>,
 }
 impl CapabilityOptionsBuilder {
     /// <p>A structure that contains the outbound EDI options.</p>
@@ -41,10 +48,25 @@ impl CapabilityOptionsBuilder {
     pub fn get_outbound_edi(&self) -> &::std::option::Option<crate::types::OutboundEdiOptions> {
         &self.outbound_edi
     }
+    /// <p>A structure that contains the inbound EDI options for the capability.</p>
+    pub fn inbound_edi(mut self, input: crate::types::InboundEdiOptions) -> Self {
+        self.inbound_edi = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>A structure that contains the inbound EDI options for the capability.</p>
+    pub fn set_inbound_edi(mut self, input: ::std::option::Option<crate::types::InboundEdiOptions>) -> Self {
+        self.inbound_edi = input;
+        self
+    }
+    /// <p>A structure that contains the inbound EDI options for the capability.</p>
+    pub fn get_inbound_edi(&self) -> &::std::option::Option<crate::types::InboundEdiOptions> {
+        &self.inbound_edi
+    }
     /// Consumes the builder and constructs a [`CapabilityOptions`](crate::types::CapabilityOptions).
     pub fn build(self) -> crate::types::CapabilityOptions {
         crate::types::CapabilityOptions {
             outbound_edi: self.outbound_edi,
+            inbound_edi: self.inbound_edi,
         }
     }
 }

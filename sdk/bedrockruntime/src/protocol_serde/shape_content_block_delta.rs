@@ -45,6 +45,11 @@ where
                                 || ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'reasoningContent' cannot be null"),
                             )?,
                         )),
+                        "citation" => Some(crate::types::ContentBlockDelta::Citation(
+                            crate::protocol_serde::shape_citations_delta::de_citations_delta(tokens)?.ok_or_else(|| {
+                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'citation' cannot be null")
+                            })?,
+                        )),
                         _ => {
                             ::aws_smithy_json::deserialize::token::skip_value(tokens)?;
                             Some(crate::types::ContentBlockDelta::Unknown)

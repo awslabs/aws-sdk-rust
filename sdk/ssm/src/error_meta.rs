@@ -868,6 +868,7 @@ impl From<crate::operation::create_document::CreateDocumentError> for Error {
             crate::operation::create_document::CreateDocumentError::InvalidDocumentContent(inner) => Error::InvalidDocumentContent(inner),
             crate::operation::create_document::CreateDocumentError::InvalidDocumentSchemaVersion(inner) => Error::InvalidDocumentSchemaVersion(inner),
             crate::operation::create_document::CreateDocumentError::MaxDocumentSizeExceeded(inner) => Error::MaxDocumentSizeExceeded(inner),
+            crate::operation::create_document::CreateDocumentError::TooManyUpdates(inner) => Error::TooManyUpdates(inner),
             crate::operation::create_document::CreateDocumentError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -1105,6 +1106,7 @@ impl From<crate::operation::delete_document::DeleteDocumentError> for Error {
             crate::operation::delete_document::DeleteDocumentError::InternalServerError(inner) => Error::InternalServerError(inner),
             crate::operation::delete_document::DeleteDocumentError::InvalidDocument(inner) => Error::InvalidDocument(inner),
             crate::operation::delete_document::DeleteDocumentError::InvalidDocumentOperation(inner) => Error::InvalidDocumentOperation(inner),
+            crate::operation::delete_document::DeleteDocumentError::TooManyUpdates(inner) => Error::TooManyUpdates(inner),
             crate::operation::delete_document::DeleteDocumentError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -4939,6 +4941,7 @@ impl From<crate::operation::update_document_metadata::UpdateDocumentMetadataErro
             crate::operation::update_document_metadata::UpdateDocumentMetadataError::InvalidDocumentVersion(inner) => {
                 Error::InvalidDocumentVersion(inner)
             }
+            crate::operation::update_document_metadata::UpdateDocumentMetadataError::TooManyUpdates(inner) => Error::TooManyUpdates(inner),
             crate::operation::update_document_metadata::UpdateDocumentMetadataError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }

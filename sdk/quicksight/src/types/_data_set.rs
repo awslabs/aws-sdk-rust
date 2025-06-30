@@ -6,7 +6,7 @@
 pub struct DataSet {
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
     pub arn: ::std::option::Option<::std::string::String>,
-    /// <p>The ID of the dataset.</p>
+    /// <p>The ID of the dataset. Limited to 96 characters.</p>
     pub data_set_id: ::std::option::Option<::std::string::String>,
     /// <p>A display name for the dataset.</p>
     pub name: ::std::option::Option<::std::string::String>,
@@ -48,7 +48,7 @@ impl DataSet {
     pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
     }
-    /// <p>The ID of the dataset.</p>
+    /// <p>The ID of the dataset. Limited to 96 characters.</p>
     pub fn data_set_id(&self) -> ::std::option::Option<&str> {
         self.data_set_id.as_deref()
     }
@@ -175,17 +175,17 @@ impl DataSetBuilder {
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.arn
     }
-    /// <p>The ID of the dataset.</p>
+    /// <p>The ID of the dataset. Limited to 96 characters.</p>
     pub fn data_set_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_set_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID of the dataset.</p>
+    /// <p>The ID of the dataset. Limited to 96 characters.</p>
     pub fn set_data_set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.data_set_id = input;
         self
     }
-    /// <p>The ID of the dataset.</p>
+    /// <p>The ID of the dataset. Limited to 96 characters.</p>
     pub fn get_data_set_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.data_set_id
     }

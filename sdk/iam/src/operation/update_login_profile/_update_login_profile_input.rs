@@ -16,7 +16,7 @@ pub struct UpdateLoginProfileInput {
     /// <li>
     /// <p>The special characters tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and carriage return (<code>\u000D</code>)</p></li>
     /// </ul>
-    /// <p>However, the format can be further restricted by the account administrator by setting a password policy on the Amazon Web Services account. For more information, see <code>UpdateAccountPasswordPolicy</code>.</p>
+    /// <p>However, the format can be further restricted by the account administrator by setting a password policy on the Amazon Web Services account. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_UpdateAccountPasswordPolicy.html">UpdateAccountPasswordPolicy</a>.</p>
     pub password: ::std::option::Option<::std::string::String>,
     /// <p>Allows this new password to be used only once by requiring the specified IAM user to set a new password on next sign-in.</p>
     pub password_reset_required: ::std::option::Option<bool>,
@@ -37,7 +37,7 @@ impl UpdateLoginProfileInput {
     /// <li>
     /// <p>The special characters tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and carriage return (<code>\u000D</code>)</p></li>
     /// </ul>
-    /// <p>However, the format can be further restricted by the account administrator by setting a password policy on the Amazon Web Services account. For more information, see <code>UpdateAccountPasswordPolicy</code>.</p>
+    /// <p>However, the format can be further restricted by the account administrator by setting a password policy on the Amazon Web Services account. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_UpdateAccountPasswordPolicy.html">UpdateAccountPasswordPolicy</a>.</p>
     pub fn password(&self) -> ::std::option::Option<&str> {
         self.password.as_deref()
     }
@@ -99,7 +99,7 @@ impl UpdateLoginProfileInputBuilder {
     /// <li>
     /// <p>The special characters tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and carriage return (<code>\u000D</code>)</p></li>
     /// </ul>
-    /// <p>However, the format can be further restricted by the account administrator by setting a password policy on the Amazon Web Services account. For more information, see <code>UpdateAccountPasswordPolicy</code>.</p>
+    /// <p>However, the format can be further restricted by the account administrator by setting a password policy on the Amazon Web Services account. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_UpdateAccountPasswordPolicy.html">UpdateAccountPasswordPolicy</a>.</p>
     pub fn password(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.password = ::std::option::Option::Some(input.into());
         self
@@ -114,7 +114,7 @@ impl UpdateLoginProfileInputBuilder {
     /// <li>
     /// <p>The special characters tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and carriage return (<code>\u000D</code>)</p></li>
     /// </ul>
-    /// <p>However, the format can be further restricted by the account administrator by setting a password policy on the Amazon Web Services account. For more information, see <code>UpdateAccountPasswordPolicy</code>.</p>
+    /// <p>However, the format can be further restricted by the account administrator by setting a password policy on the Amazon Web Services account. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_UpdateAccountPasswordPolicy.html">UpdateAccountPasswordPolicy</a>.</p>
     pub fn set_password(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.password = input;
         self
@@ -129,7 +129,7 @@ impl UpdateLoginProfileInputBuilder {
     /// <li>
     /// <p>The special characters tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and carriage return (<code>\u000D</code>)</p></li>
     /// </ul>
-    /// <p>However, the format can be further restricted by the account administrator by setting a password policy on the Amazon Web Services account. For more information, see <code>UpdateAccountPasswordPolicy</code>.</p>
+    /// <p>However, the format can be further restricted by the account administrator by setting a password policy on the Amazon Web Services account. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_UpdateAccountPasswordPolicy.html">UpdateAccountPasswordPolicy</a>.</p>
     pub fn get_password(&self) -> &::std::option::Option<::std::string::String> {
         &self.password
     }

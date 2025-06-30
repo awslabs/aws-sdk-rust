@@ -21,6 +21,14 @@ pub use crate::types::_mapping_template_language::MappingTemplateLanguage;
 
 pub use crate::types::_input_conversion::InputConversion;
 
+pub use crate::types::_advanced_options::AdvancedOptions;
+
+pub use crate::types::_x12_advanced_options::X12AdvancedOptions;
+
+pub use crate::types::_x12_split_options::X12SplitOptions;
+
+pub use crate::types::_x12_split_by::X12SplitBy;
+
 pub use crate::types::_from_format::FromFormat;
 
 pub use crate::types::_edi_type::EdiType;
@@ -39,11 +47,31 @@ pub use crate::types::_profile_summary::ProfileSummary;
 
 pub use crate::types::_capability_options::CapabilityOptions;
 
+pub use crate::types::_inbound_edi_options::InboundEdiOptions;
+
+pub use crate::types::_x12_inbound_edi_options::X12InboundEdiOptions;
+
+pub use crate::types::_x12_acknowledgment_options::X12AcknowledgmentOptions;
+
+pub use crate::types::_x12_technical_acknowledgment::X12TechnicalAcknowledgment;
+
+pub use crate::types::_x12_functional_acknowledgment::X12FunctionalAcknowledgment;
+
 pub use crate::types::_outbound_edi_options::OutboundEdiOptions;
 
 pub use crate::types::_x12_envelope::X12Envelope;
 
+pub use crate::types::_wrap_options::WrapOptions;
+
+pub use crate::types::_line_terminator::LineTerminator;
+
+pub use crate::types::_wrap_format::WrapFormat;
+
 pub use crate::types::_x12_outbound_edi_headers::X12OutboundEdiHeaders;
+
+pub use crate::types::_x12_gs05_time_format::X12Gs05TimeFormat;
+
+pub use crate::types::_x12_control_numbers::X12ControlNumbers;
 
 pub use crate::types::_x12_delimiters::X12Delimiters;
 
@@ -85,6 +113,8 @@ pub use crate::types::_mapping_type::MappingType;
 
 pub use crate::types::_template_details::TemplateDetails;
 
+mod _advanced_options;
+
 mod _capability_configuration;
 
 mod _capability_direction;
@@ -115,9 +145,13 @@ mod _format_options;
 
 mod _from_format;
 
+mod _inbound_edi_options;
+
 mod _input_conversion;
 
 mod _input_file_source;
+
+mod _line_terminator;
 
 mod _logging;
 
@@ -155,17 +189,39 @@ mod _transformer_status;
 
 mod _transformer_summary;
 
+mod _wrap_format;
+
+mod _wrap_options;
+
+mod _x12_acknowledgment_options;
+
+mod _x12_advanced_options;
+
+mod _x12_control_numbers;
+
 mod _x12_delimiters;
 
 mod _x12_details;
 
 mod _x12_envelope;
 
+mod _x12_functional_acknowledgment;
+
 mod _x12_functional_group_headers;
+
+mod _x12_gs05_time_format;
+
+mod _x12_inbound_edi_options;
 
 mod _x12_interchange_control_headers;
 
 mod _x12_outbound_edi_headers;
+
+mod _x12_split_by;
+
+mod _x12_split_options;
+
+mod _x12_technical_acknowledgment;
 
 mod _x12_transaction_set;
 

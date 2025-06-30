@@ -12,30 +12,32 @@ pub struct CreateContactInput {
     /// <p>A custom key-value pair using an attribute map. The attributes are standard Amazon Connect attributes, and can be accessed in flows just like any other contact attributes.</p>
     /// <p>There can be up to 32,768 UTF-8 bytes across all key-value pairs per contact. Attribute keys can include only alphanumeric, dash, and underscore characters.</p>
     pub attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    /// <p>A formatted URL that is shown to an agent in the Contact Control Panel (CCP). Tasks can have the following reference types at the time of creation: URL | NUMBER | STRING | DATE | EMAIL | ATTACHMENT.</p>
+    /// <p>A formatted URL that is shown to an agent in the Contact Control Panel (CCP). Tasks can have the following reference types at the time of creation: <code>URL</code> | <code>NUMBER</code> | <code>STRING</code> | <code>DATE</code> | <code>EMAIL</code> | <code>ATTACHMENT</code>.</p>
     pub references: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::Reference>>,
-    /// <p>The channel for the contact</p><important>
-    /// <p>CreateContact only supports the EMAIL and VOICE channels. The following information that states other channels are supported is incorrect. We are working to update this topic.</p>
+    /// <p>The channel for the contact.</p><important>
+    /// <p>The CHAT channel is not supported. The following information is incorrect. We're working to correct it.</p>
     /// </important>
     pub channel: ::std::option::Option<crate::types::Channel>,
     /// <p>Indicates how the contact was initiated.</p><important>
-    /// <p>CreateContact only supports the following initiation methods:</p>
+    /// <p>CreateContact only supports the following initiation methods. Valid values by channel are:</p>
     /// <ul>
     /// <li>
-    /// <p>For EMAIL: OUTBOUND, AGENT_REPLY, and FLOW.</p></li>
+    /// <p>For VOICE: <code>TRANSFER</code> and the subtype <code>connect:ExternalAudio</code></p></li>
     /// <li>
-    /// <p>For VOICE: TRANSFER and the subtype connect:ExternalAudio.</p></li>
+    /// <p>For EMAIL: <code>OUTBOUND</code> | <code>AGENT_REPLY</code> | <code>FLOW</code></p></li>
+    /// <li>
+    /// <p>For TASK: <code>API</code></p></li>
     /// </ul>
-    /// <p>The following information that states other initiation methods are supported is incorrect. We are working to update this topic.</p>
+    /// <p>The other channels listed below are incorrect. We're working to correct this information.</p>
     /// </important>
     pub initiation_method: ::std::option::Option<crate::types::ContactInitiationMethod>,
     /// <p>Number of minutes the contact will be active for before expiring</p>
     pub expiry_duration_in_minutes: ::std::option::Option<i32>,
     /// <p>User details for the contact</p><important>
-    /// <p>UserInfo is required when creating an EMAIL contact with OUTBOUND and AGENT_REPLY contact initiation methods.</p>
+    /// <p>UserInfo is required when creating an EMAIL contact with <code>OUTBOUND</code> and <code>AGENT_REPLY</code> contact initiation methods.</p>
     /// </important>
     pub user_info: ::std::option::Option<crate::types::UserInfo>,
-    /// <p>Initial state of the contact when it's created</p>
+    /// <p>Initial state of the contact when it's created. Only TASK channel contacts can be initiated with <code>COMPLETED</code> state.</p>
     pub initiate_as: ::std::option::Option<crate::types::InitiateAs>,
     /// <p>The name of a the contact.</p>
     pub name: ::std::option::Option<::std::string::String>,
@@ -68,25 +70,27 @@ impl CreateContactInput {
     pub fn attributes(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.attributes.as_ref()
     }
-    /// <p>A formatted URL that is shown to an agent in the Contact Control Panel (CCP). Tasks can have the following reference types at the time of creation: URL | NUMBER | STRING | DATE | EMAIL | ATTACHMENT.</p>
+    /// <p>A formatted URL that is shown to an agent in the Contact Control Panel (CCP). Tasks can have the following reference types at the time of creation: <code>URL</code> | <code>NUMBER</code> | <code>STRING</code> | <code>DATE</code> | <code>EMAIL</code> | <code>ATTACHMENT</code>.</p>
     pub fn references(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::Reference>> {
         self.references.as_ref()
     }
-    /// <p>The channel for the contact</p><important>
-    /// <p>CreateContact only supports the EMAIL and VOICE channels. The following information that states other channels are supported is incorrect. We are working to update this topic.</p>
+    /// <p>The channel for the contact.</p><important>
+    /// <p>The CHAT channel is not supported. The following information is incorrect. We're working to correct it.</p>
     /// </important>
     pub fn channel(&self) -> ::std::option::Option<&crate::types::Channel> {
         self.channel.as_ref()
     }
     /// <p>Indicates how the contact was initiated.</p><important>
-    /// <p>CreateContact only supports the following initiation methods:</p>
+    /// <p>CreateContact only supports the following initiation methods. Valid values by channel are:</p>
     /// <ul>
     /// <li>
-    /// <p>For EMAIL: OUTBOUND, AGENT_REPLY, and FLOW.</p></li>
+    /// <p>For VOICE: <code>TRANSFER</code> and the subtype <code>connect:ExternalAudio</code></p></li>
     /// <li>
-    /// <p>For VOICE: TRANSFER and the subtype connect:ExternalAudio.</p></li>
+    /// <p>For EMAIL: <code>OUTBOUND</code> | <code>AGENT_REPLY</code> | <code>FLOW</code></p></li>
+    /// <li>
+    /// <p>For TASK: <code>API</code></p></li>
     /// </ul>
-    /// <p>The following information that states other initiation methods are supported is incorrect. We are working to update this topic.</p>
+    /// <p>The other channels listed below are incorrect. We're working to correct this information.</p>
     /// </important>
     pub fn initiation_method(&self) -> ::std::option::Option<&crate::types::ContactInitiationMethod> {
         self.initiation_method.as_ref()
@@ -96,12 +100,12 @@ impl CreateContactInput {
         self.expiry_duration_in_minutes
     }
     /// <p>User details for the contact</p><important>
-    /// <p>UserInfo is required when creating an EMAIL contact with OUTBOUND and AGENT_REPLY contact initiation methods.</p>
+    /// <p>UserInfo is required when creating an EMAIL contact with <code>OUTBOUND</code> and <code>AGENT_REPLY</code> contact initiation methods.</p>
     /// </important>
     pub fn user_info(&self) -> ::std::option::Option<&crate::types::UserInfo> {
         self.user_info.as_ref()
     }
-    /// <p>Initial state of the contact when it's created</p>
+    /// <p>Initial state of the contact when it's created. Only TASK channel contacts can be initiated with <code>COMPLETED</code> state.</p>
     pub fn initiate_as(&self) -> ::std::option::Option<&crate::types::InitiateAs> {
         self.initiate_as.as_ref()
     }
@@ -245,14 +249,14 @@ impl CreateContactInputBuilder {
     ///
     /// To override the contents of this collection use [`set_references`](Self::set_references).
     ///
-    /// <p>A formatted URL that is shown to an agent in the Contact Control Panel (CCP). Tasks can have the following reference types at the time of creation: URL | NUMBER | STRING | DATE | EMAIL | ATTACHMENT.</p>
+    /// <p>A formatted URL that is shown to an agent in the Contact Control Panel (CCP). Tasks can have the following reference types at the time of creation: <code>URL</code> | <code>NUMBER</code> | <code>STRING</code> | <code>DATE</code> | <code>EMAIL</code> | <code>ATTACHMENT</code>.</p>
     pub fn references(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::Reference) -> Self {
         let mut hash_map = self.references.unwrap_or_default();
         hash_map.insert(k.into(), v);
         self.references = ::std::option::Option::Some(hash_map);
         self
     }
-    /// <p>A formatted URL that is shown to an agent in the Contact Control Panel (CCP). Tasks can have the following reference types at the time of creation: URL | NUMBER | STRING | DATE | EMAIL | ATTACHMENT.</p>
+    /// <p>A formatted URL that is shown to an agent in the Contact Control Panel (CCP). Tasks can have the following reference types at the time of creation: <code>URL</code> | <code>NUMBER</code> | <code>STRING</code> | <code>DATE</code> | <code>EMAIL</code> | <code>ATTACHMENT</code>.</p>
     pub fn set_references(
         mut self,
         input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::Reference>>,
@@ -260,40 +264,42 @@ impl CreateContactInputBuilder {
         self.references = input;
         self
     }
-    /// <p>A formatted URL that is shown to an agent in the Contact Control Panel (CCP). Tasks can have the following reference types at the time of creation: URL | NUMBER | STRING | DATE | EMAIL | ATTACHMENT.</p>
+    /// <p>A formatted URL that is shown to an agent in the Contact Control Panel (CCP). Tasks can have the following reference types at the time of creation: <code>URL</code> | <code>NUMBER</code> | <code>STRING</code> | <code>DATE</code> | <code>EMAIL</code> | <code>ATTACHMENT</code>.</p>
     pub fn get_references(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::Reference>> {
         &self.references
     }
-    /// <p>The channel for the contact</p><important>
-    /// <p>CreateContact only supports the EMAIL and VOICE channels. The following information that states other channels are supported is incorrect. We are working to update this topic.</p>
+    /// <p>The channel for the contact.</p><important>
+    /// <p>The CHAT channel is not supported. The following information is incorrect. We're working to correct it.</p>
     /// </important>
     /// This field is required.
     pub fn channel(mut self, input: crate::types::Channel) -> Self {
         self.channel = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The channel for the contact</p><important>
-    /// <p>CreateContact only supports the EMAIL and VOICE channels. The following information that states other channels are supported is incorrect. We are working to update this topic.</p>
+    /// <p>The channel for the contact.</p><important>
+    /// <p>The CHAT channel is not supported. The following information is incorrect. We're working to correct it.</p>
     /// </important>
     pub fn set_channel(mut self, input: ::std::option::Option<crate::types::Channel>) -> Self {
         self.channel = input;
         self
     }
-    /// <p>The channel for the contact</p><important>
-    /// <p>CreateContact only supports the EMAIL and VOICE channels. The following information that states other channels are supported is incorrect. We are working to update this topic.</p>
+    /// <p>The channel for the contact.</p><important>
+    /// <p>The CHAT channel is not supported. The following information is incorrect. We're working to correct it.</p>
     /// </important>
     pub fn get_channel(&self) -> &::std::option::Option<crate::types::Channel> {
         &self.channel
     }
     /// <p>Indicates how the contact was initiated.</p><important>
-    /// <p>CreateContact only supports the following initiation methods:</p>
+    /// <p>CreateContact only supports the following initiation methods. Valid values by channel are:</p>
     /// <ul>
     /// <li>
-    /// <p>For EMAIL: OUTBOUND, AGENT_REPLY, and FLOW.</p></li>
+    /// <p>For VOICE: <code>TRANSFER</code> and the subtype <code>connect:ExternalAudio</code></p></li>
     /// <li>
-    /// <p>For VOICE: TRANSFER and the subtype connect:ExternalAudio.</p></li>
+    /// <p>For EMAIL: <code>OUTBOUND</code> | <code>AGENT_REPLY</code> | <code>FLOW</code></p></li>
+    /// <li>
+    /// <p>For TASK: <code>API</code></p></li>
     /// </ul>
-    /// <p>The following information that states other initiation methods are supported is incorrect. We are working to update this topic.</p>
+    /// <p>The other channels listed below are incorrect. We're working to correct this information.</p>
     /// </important>
     /// This field is required.
     pub fn initiation_method(mut self, input: crate::types::ContactInitiationMethod) -> Self {
@@ -301,28 +307,32 @@ impl CreateContactInputBuilder {
         self
     }
     /// <p>Indicates how the contact was initiated.</p><important>
-    /// <p>CreateContact only supports the following initiation methods:</p>
+    /// <p>CreateContact only supports the following initiation methods. Valid values by channel are:</p>
     /// <ul>
     /// <li>
-    /// <p>For EMAIL: OUTBOUND, AGENT_REPLY, and FLOW.</p></li>
+    /// <p>For VOICE: <code>TRANSFER</code> and the subtype <code>connect:ExternalAudio</code></p></li>
     /// <li>
-    /// <p>For VOICE: TRANSFER and the subtype connect:ExternalAudio.</p></li>
+    /// <p>For EMAIL: <code>OUTBOUND</code> | <code>AGENT_REPLY</code> | <code>FLOW</code></p></li>
+    /// <li>
+    /// <p>For TASK: <code>API</code></p></li>
     /// </ul>
-    /// <p>The following information that states other initiation methods are supported is incorrect. We are working to update this topic.</p>
+    /// <p>The other channels listed below are incorrect. We're working to correct this information.</p>
     /// </important>
     pub fn set_initiation_method(mut self, input: ::std::option::Option<crate::types::ContactInitiationMethod>) -> Self {
         self.initiation_method = input;
         self
     }
     /// <p>Indicates how the contact was initiated.</p><important>
-    /// <p>CreateContact only supports the following initiation methods:</p>
+    /// <p>CreateContact only supports the following initiation methods. Valid values by channel are:</p>
     /// <ul>
     /// <li>
-    /// <p>For EMAIL: OUTBOUND, AGENT_REPLY, and FLOW.</p></li>
+    /// <p>For VOICE: <code>TRANSFER</code> and the subtype <code>connect:ExternalAudio</code></p></li>
     /// <li>
-    /// <p>For VOICE: TRANSFER and the subtype connect:ExternalAudio.</p></li>
+    /// <p>For EMAIL: <code>OUTBOUND</code> | <code>AGENT_REPLY</code> | <code>FLOW</code></p></li>
+    /// <li>
+    /// <p>For TASK: <code>API</code></p></li>
     /// </ul>
-    /// <p>The following information that states other initiation methods are supported is incorrect. We are working to update this topic.</p>
+    /// <p>The other channels listed below are incorrect. We're working to correct this information.</p>
     /// </important>
     pub fn get_initiation_method(&self) -> &::std::option::Option<crate::types::ContactInitiationMethod> {
         &self.initiation_method
@@ -342,36 +352,36 @@ impl CreateContactInputBuilder {
         &self.expiry_duration_in_minutes
     }
     /// <p>User details for the contact</p><important>
-    /// <p>UserInfo is required when creating an EMAIL contact with OUTBOUND and AGENT_REPLY contact initiation methods.</p>
+    /// <p>UserInfo is required when creating an EMAIL contact with <code>OUTBOUND</code> and <code>AGENT_REPLY</code> contact initiation methods.</p>
     /// </important>
     pub fn user_info(mut self, input: crate::types::UserInfo) -> Self {
         self.user_info = ::std::option::Option::Some(input);
         self
     }
     /// <p>User details for the contact</p><important>
-    /// <p>UserInfo is required when creating an EMAIL contact with OUTBOUND and AGENT_REPLY contact initiation methods.</p>
+    /// <p>UserInfo is required when creating an EMAIL contact with <code>OUTBOUND</code> and <code>AGENT_REPLY</code> contact initiation methods.</p>
     /// </important>
     pub fn set_user_info(mut self, input: ::std::option::Option<crate::types::UserInfo>) -> Self {
         self.user_info = input;
         self
     }
     /// <p>User details for the contact</p><important>
-    /// <p>UserInfo is required when creating an EMAIL contact with OUTBOUND and AGENT_REPLY contact initiation methods.</p>
+    /// <p>UserInfo is required when creating an EMAIL contact with <code>OUTBOUND</code> and <code>AGENT_REPLY</code> contact initiation methods.</p>
     /// </important>
     pub fn get_user_info(&self) -> &::std::option::Option<crate::types::UserInfo> {
         &self.user_info
     }
-    /// <p>Initial state of the contact when it's created</p>
+    /// <p>Initial state of the contact when it's created. Only TASK channel contacts can be initiated with <code>COMPLETED</code> state.</p>
     pub fn initiate_as(mut self, input: crate::types::InitiateAs) -> Self {
         self.initiate_as = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Initial state of the contact when it's created</p>
+    /// <p>Initial state of the contact when it's created. Only TASK channel contacts can be initiated with <code>COMPLETED</code> state.</p>
     pub fn set_initiate_as(mut self, input: ::std::option::Option<crate::types::InitiateAs>) -> Self {
         self.initiate_as = input;
         self
     }
-    /// <p>Initial state of the contact when it's created</p>
+    /// <p>Initial state of the contact when it's created. Only TASK channel contacts can be initiated with <code>COMPLETED</code> state.</p>
     pub fn get_initiate_as(&self) -> &::std::option::Option<crate::types::InitiateAs> {
         &self.initiate_as
     }

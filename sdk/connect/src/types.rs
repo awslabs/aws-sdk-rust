@@ -869,6 +869,12 @@ pub use crate::types::_email_recipient::EmailRecipient;
 
 pub use crate::types::_disconnect_details::DisconnectDetails;
 
+pub use crate::types::_chat_metrics::ChatMetrics;
+
+pub use crate::types::_participant_metrics::ParticipantMetrics;
+
+pub use crate::types::_chat_contact_metrics::ChatContactMetrics;
+
 pub use crate::types::_quality_metrics::QualityMetrics;
 
 pub use crate::types::_customer_quality_metrics::CustomerQualityMetrics;
@@ -1029,11 +1035,15 @@ mod _case_sla_configuration;
 
 mod _channel;
 
+mod _chat_contact_metrics;
+
 mod _chat_event;
 
 mod _chat_event_type;
 
 mod _chat_message;
+
+mod _chat_metrics;
 
 mod _chat_participant_role_config;
 
@@ -1464,6 +1474,8 @@ mod _participant_capabilities;
 mod _participant_details;
 
 mod _participant_details_to_add;
+
+mod _participant_metrics;
 
 mod _participant_role;
 

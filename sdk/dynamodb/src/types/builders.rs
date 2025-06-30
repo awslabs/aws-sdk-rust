@@ -39,6 +39,8 @@ pub use crate::types::_sse_description::SseDescriptionBuilder;
 
 pub use crate::types::_restore_summary::RestoreSummaryBuilder;
 
+pub use crate::types::_global_table_witness_description::GlobalTableWitnessDescriptionBuilder;
+
 pub use crate::types::_replica_description::ReplicaDescriptionBuilder;
 
 pub use crate::types::_replica_global_secondary_index_description::ReplicaGlobalSecondaryIndexDescriptionBuilder;
@@ -66,6 +68,12 @@ pub use crate::types::_billing_mode_summary::BillingModeSummaryBuilder;
 pub use crate::types::_attribute_definition::AttributeDefinitionBuilder;
 
 pub use crate::types::_warm_throughput::WarmThroughputBuilder;
+
+pub use crate::types::_global_table_witness_group_update::GlobalTableWitnessGroupUpdateBuilder;
+
+pub use crate::types::_delete_global_table_witness_group_member_action::DeleteGlobalTableWitnessGroupMemberActionBuilder;
+
+pub use crate::types::_create_global_table_witness_group_member_action::CreateGlobalTableWitnessGroupMemberActionBuilder;
 
 pub use crate::types::_replication_group_update::ReplicationGroupUpdateBuilder;
 

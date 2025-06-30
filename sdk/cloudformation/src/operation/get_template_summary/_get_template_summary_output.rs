@@ -23,7 +23,7 @@ pub struct GetTemplateSummaryOutput {
     pub declared_transforms: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A list of resource identifier summaries that describe the target resources of an import operation and the properties you can provide during the import to identify the target resources. For example, <code>BucketName</code> is a possible identifier property for an <code>AWS::S3::Bucket</code> resource.</p>
     pub resource_identifier_summaries: ::std::option::Option<::std::vec::Vec<crate::types::ResourceIdentifierSummary>>,
-    /// <p>An object containing any warnings returned.</p>
+    /// <p>An object that contains any warnings returned.</p>
     pub warnings: ::std::option::Option<crate::types::Warnings>,
     _request_id: Option<String>,
 }
@@ -75,7 +75,7 @@ impl GetTemplateSummaryOutput {
     pub fn resource_identifier_summaries(&self) -> &[crate::types::ResourceIdentifierSummary] {
         self.resource_identifier_summaries.as_deref().unwrap_or_default()
     }
-    /// <p>An object containing any warnings returned.</p>
+    /// <p>An object that contains any warnings returned.</p>
     pub fn warnings(&self) -> ::std::option::Option<&crate::types::Warnings> {
         self.warnings.as_ref()
     }
@@ -271,17 +271,17 @@ impl GetTemplateSummaryOutputBuilder {
     pub fn get_resource_identifier_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceIdentifierSummary>> {
         &self.resource_identifier_summaries
     }
-    /// <p>An object containing any warnings returned.</p>
+    /// <p>An object that contains any warnings returned.</p>
     pub fn warnings(mut self, input: crate::types::Warnings) -> Self {
         self.warnings = ::std::option::Option::Some(input);
         self
     }
-    /// <p>An object containing any warnings returned.</p>
+    /// <p>An object that contains any warnings returned.</p>
     pub fn set_warnings(mut self, input: ::std::option::Option<crate::types::Warnings>) -> Self {
         self.warnings = input;
         self
     }
-    /// <p>An object containing any warnings returned.</p>
+    /// <p>An object that contains any warnings returned.</p>
     pub fn get_warnings(&self) -> &::std::option::Option<crate::types::Warnings> {
         &self.warnings
     }

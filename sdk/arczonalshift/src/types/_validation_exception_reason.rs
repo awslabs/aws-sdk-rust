@@ -24,6 +24,7 @@
 ///     ValidationExceptionReason::InvalidToken => { /* ... */ },
 ///     ValidationExceptionReason::MissingValue => { /* ... */ },
 ///     ValidationExceptionReason::UnsupportedAz => { /* ... */ },
+///     ValidationExceptionReason::UnsupportedPracticeCancelShiftType => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -76,6 +77,8 @@ pub enum ValidationExceptionReason {
     MissingValue,
     #[allow(missing_docs)] // documentation missing in model
     UnsupportedAz,
+    #[allow(missing_docs)] // documentation missing in model
+    UnsupportedPracticeCancelShiftType,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -95,6 +98,7 @@ impl ::std::convert::From<&str> for ValidationExceptionReason {
             "InvalidToken" => ValidationExceptionReason::InvalidToken,
             "MissingValue" => ValidationExceptionReason::MissingValue,
             "UnsupportedAz" => ValidationExceptionReason::UnsupportedAz,
+            "UnsupportedPracticeCancelShiftType" => ValidationExceptionReason::UnsupportedPracticeCancelShiftType,
             other => ValidationExceptionReason::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -122,6 +126,7 @@ impl ValidationExceptionReason {
             ValidationExceptionReason::InvalidToken => "InvalidToken",
             ValidationExceptionReason::MissingValue => "MissingValue",
             ValidationExceptionReason::UnsupportedAz => "UnsupportedAz",
+            ValidationExceptionReason::UnsupportedPracticeCancelShiftType => "UnsupportedPracticeCancelShiftType",
             ValidationExceptionReason::Unknown(value) => value.as_str(),
         }
     }
@@ -140,6 +145,7 @@ impl ValidationExceptionReason {
             "InvalidToken",
             "MissingValue",
             "UnsupportedAz",
+            "UnsupportedPracticeCancelShiftType",
         ]
     }
 }
@@ -175,6 +181,7 @@ impl ::std::fmt::Display for ValidationExceptionReason {
             ValidationExceptionReason::InvalidToken => write!(f, "InvalidToken"),
             ValidationExceptionReason::MissingValue => write!(f, "MissingValue"),
             ValidationExceptionReason::UnsupportedAz => write!(f, "UnsupportedAz"),
+            ValidationExceptionReason::UnsupportedPracticeCancelShiftType => write!(f, "UnsupportedPracticeCancelShiftType"),
             ValidationExceptionReason::Unknown(value) => write!(f, "{}", value),
         }
     }

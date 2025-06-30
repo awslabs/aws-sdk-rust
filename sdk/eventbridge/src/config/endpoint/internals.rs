@@ -22,6 +22,32 @@ pub(super) fn resolve_endpoint(
     let endpoint = &_params.endpoint;
     #[allow(unused_variables)]
     let endpoint_id = &_params.endpoint_id;
+    if !(endpoint.is_some()) {
+        #[allow(unused_variables)]
+        if let Some(region) = region {
+            #[allow(unused_variables)]
+            if let Some(partition_result) = partition_resolver.resolve_partition(region.as_ref() as &str, _diagnostic_collector) {
+                if (partition_result.name()) == ("aws-us-gov") {
+                    if (*use_fips) == (true) {
+                        if (*use_dual_stack) == (true) {
+                            return Ok(::aws_smithy_types::endpoint::Endpoint::builder()
+                                .url({
+                                    let mut out = String::new();
+                                    out.push_str("https://events.");
+                                    #[allow(clippy::needless_borrow)]
+                                    out.push_str(&region.as_ref() as &str);
+                                    out.push('.');
+                                    #[allow(clippy::needless_borrow)]
+                                    out.push_str(&partition_result.dual_stack_dns_suffix());
+                                    out
+                                })
+                                .build());
+                        }
+                    }
+                }
+            }
+        }
+    }
     #[allow(unused_variables)]
     if let Some(endpoint_id) = endpoint_id {
         #[allow(unused_variables)]

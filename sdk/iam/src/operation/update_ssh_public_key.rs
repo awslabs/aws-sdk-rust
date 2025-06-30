@@ -252,6 +252,8 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for UpdateSSHPubl
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum UpdateSSHPublicKeyError {
+    /// <p>The request was rejected because an invalid or out-of-range value was supplied for an input parameter.</p>
+    InvalidInputException(crate::types::error::InvalidInputException),
     /// <p>The request was rejected because it referenced a resource entity that does not exist. The error message describes the resource.</p>
     NoSuchEntityException(crate::types::error::NoSuchEntityException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
@@ -287,9 +289,14 @@ impl UpdateSSHPublicKeyError {
     ///
     pub fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
+            Self::InvalidInputException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::NoSuchEntityException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::Unhandled(e) => &e.meta,
         }
+    }
+    /// Returns `true` if the error kind is `UpdateSSHPublicKeyError::InvalidInputException`.
+    pub fn is_invalid_input_exception(&self) -> bool {
+        matches!(self, Self::InvalidInputException(_))
     }
     /// Returns `true` if the error kind is `UpdateSSHPublicKeyError::NoSuchEntityException`.
     pub fn is_no_such_entity_exception(&self) -> bool {
@@ -299,6 +306,7 @@ impl UpdateSSHPublicKeyError {
 impl ::std::error::Error for UpdateSSHPublicKeyError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
+            Self::InvalidInputException(_inner) => ::std::option::Option::Some(_inner),
             Self::NoSuchEntityException(_inner) => ::std::option::Option::Some(_inner),
             Self::Unhandled(_inner) => ::std::option::Option::Some(&*_inner.source),
         }
@@ -307,6 +315,7 @@ impl ::std::error::Error for UpdateSSHPublicKeyError {
 impl ::std::fmt::Display for UpdateSSHPublicKeyError {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         match self {
+            Self::InvalidInputException(_inner) => _inner.fmt(f),
             Self::NoSuchEntityException(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => {
                 if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self) {
@@ -329,6 +338,7 @@ impl ::aws_smithy_types::retry::ProvideErrorKind for UpdateSSHPublicKeyError {
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for UpdateSSHPublicKeyError {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
+            Self::InvalidInputException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::NoSuchEntityException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::Unhandled(_inner) => &_inner.meta,
         }

@@ -23,7 +23,7 @@ impl crate::operation::delete_role_policy::builders::DeleteRolePolicyInputBuilde
 /// Fluent builder constructing a request to `DeleteRolePolicy`.
 ///
 /// <p>Deletes the specified inline policy that is embedded in the specified IAM role.</p>
-/// <p>A role can also have managed policies attached to it. To detach a managed policy from a role, use <code>DetachRolePolicy</code>. For more information about policies, refer to <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed policies and inline policies</a> in the <i>IAM User Guide</i>.</p>
+/// <p>A role can also have managed policies attached to it. To detach a managed policy from a role, use <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_DetachRolePolicy.html">DetachRolePolicy</a>. For more information about policies, refer to <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed policies and inline policies</a> in the <i>IAM User Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteRolePolicyFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

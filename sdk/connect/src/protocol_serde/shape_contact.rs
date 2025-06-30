@@ -203,6 +203,9 @@ where
                         "QualityMetrics" => {
                             builder = builder.set_quality_metrics(crate::protocol_serde::shape_quality_metrics::de_quality_metrics(tokens)?);
                         }
+                        "ChatMetrics" => {
+                            builder = builder.set_chat_metrics(crate::protocol_serde::shape_chat_metrics::de_chat_metrics(tokens)?);
+                        }
                         "DisconnectDetails" => {
                             builder = builder.set_disconnect_details(crate::protocol_serde::shape_disconnect_details::de_disconnect_details(tokens)?);
                         }

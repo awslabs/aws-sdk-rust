@@ -13,6 +13,7 @@
 /// # let statustype = unimplemented!();
 /// match statustype {
 ///     StatusType::Active => { /* ... */ },
+///     StatusType::Expired => { /* ... */ },
 ///     StatusType::Inactive => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -45,6 +46,8 @@ pub enum StatusType {
     #[allow(missing_docs)] // documentation missing in model
     Active,
     #[allow(missing_docs)] // documentation missing in model
+    Expired,
+    #[allow(missing_docs)] // documentation missing in model
     Inactive,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
@@ -54,6 +57,7 @@ impl ::std::convert::From<&str> for StatusType {
     fn from(s: &str) -> Self {
         match s {
             "Active" => StatusType::Active,
+            "Expired" => StatusType::Expired,
             "Inactive" => StatusType::Inactive,
             other => StatusType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -71,13 +75,14 @@ impl StatusType {
     pub fn as_str(&self) -> &str {
         match self {
             StatusType::Active => "Active",
+            StatusType::Expired => "Expired",
             StatusType::Inactive => "Inactive",
             StatusType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["Active", "Inactive"]
+        &["Active", "Expired", "Inactive"]
     }
 }
 impl ::std::convert::AsRef<str> for StatusType {
@@ -101,6 +106,7 @@ impl ::std::fmt::Display for StatusType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             StatusType::Active => write!(f, "Active"),
+            StatusType::Expired => write!(f, "Expired"),
             StatusType::Inactive => write!(f, "Inactive"),
             StatusType::Unknown(value) => write!(f, "{}", value),
         }

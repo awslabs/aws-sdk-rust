@@ -59,13 +59,13 @@ pub(crate) struct Handle {
 /// # Using the `Client`
 ///
 /// A client has a function for every operation that can be performed by the service.
-/// For example, the [`CancelZonalShift`](crate::operation::cancel_zonal_shift) operation has
-/// a [`Client::cancel_zonal_shift`], function which returns a builder for that operation.
+/// For example, the [`CancelPracticeRun`](crate::operation::cancel_practice_run) operation has
+/// a [`Client::cancel_practice_run`], function which returns a builder for that operation.
 /// The fluent builder ultimately has a `send()` function that returns an async future that
 /// returns a result, as illustrated below:
 ///
 /// ```rust,ignore
-/// let result = client.cancel_zonal_shift()
+/// let result = client.cancel_practice_run()
 ///     .zonal_shift_id("example")
 ///     .send()
 ///     .await;
@@ -136,6 +136,8 @@ impl Client {
     }
 }
 
+mod cancel_practice_run;
+
 mod cancel_zonal_shift;
 
 mod create_practice_run_configuration;
@@ -151,7 +153,7 @@ mod create_practice_run_configuration;
 /// # let client: aws_sdk_arczonalshift::Client = unimplemented!();
 /// use ::http::header::{HeaderName, HeaderValue};
 ///
-/// let result = client.cancel_zonal_shift()
+/// let result = client.cancel_practice_run()
 ///     .customize()
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
@@ -178,6 +180,8 @@ mod list_autoshifts;
 mod list_managed_resources;
 
 mod list_zonal_shifts;
+
+mod start_practice_run;
 
 mod start_zonal_shift;
 

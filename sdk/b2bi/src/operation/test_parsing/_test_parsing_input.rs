@@ -9,6 +9,8 @@ pub struct TestParsingInput {
     pub file_format: ::std::option::Option<crate::types::FileFormat>,
     /// <p>Specifies the details for the EDI standard that is being used for the transformer. Currently, only X12 is supported. X12 is a set of standards and corresponding messages that define specific business documents.</p>
     pub edi_type: ::std::option::Option<crate::types::EdiType>,
+    /// <p>Specifies advanced options for parsing the input EDI file. These options allow for more granular control over the parsing process, including split options for X12 files.</p>
+    pub advanced_options: ::std::option::Option<crate::types::AdvancedOptions>,
 }
 impl TestParsingInput {
     /// <p>Specifies an <code>S3Location</code> object, which contains the Amazon S3 bucket and prefix for the location of the input file.</p>
@@ -22,6 +24,10 @@ impl TestParsingInput {
     /// <p>Specifies the details for the EDI standard that is being used for the transformer. Currently, only X12 is supported. X12 is a set of standards and corresponding messages that define specific business documents.</p>
     pub fn edi_type(&self) -> ::std::option::Option<&crate::types::EdiType> {
         self.edi_type.as_ref()
+    }
+    /// <p>Specifies advanced options for parsing the input EDI file. These options allow for more granular control over the parsing process, including split options for X12 files.</p>
+    pub fn advanced_options(&self) -> ::std::option::Option<&crate::types::AdvancedOptions> {
+        self.advanced_options.as_ref()
     }
 }
 impl TestParsingInput {
@@ -38,6 +44,7 @@ pub struct TestParsingInputBuilder {
     pub(crate) input_file: ::std::option::Option<crate::types::S3Location>,
     pub(crate) file_format: ::std::option::Option<crate::types::FileFormat>,
     pub(crate) edi_type: ::std::option::Option<crate::types::EdiType>,
+    pub(crate) advanced_options: ::std::option::Option<crate::types::AdvancedOptions>,
 }
 impl TestParsingInputBuilder {
     /// <p>Specifies an <code>S3Location</code> object, which contains the Amazon S3 bucket and prefix for the location of the input file.</p>
@@ -85,12 +92,27 @@ impl TestParsingInputBuilder {
     pub fn get_edi_type(&self) -> &::std::option::Option<crate::types::EdiType> {
         &self.edi_type
     }
+    /// <p>Specifies advanced options for parsing the input EDI file. These options allow for more granular control over the parsing process, including split options for X12 files.</p>
+    pub fn advanced_options(mut self, input: crate::types::AdvancedOptions) -> Self {
+        self.advanced_options = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies advanced options for parsing the input EDI file. These options allow for more granular control over the parsing process, including split options for X12 files.</p>
+    pub fn set_advanced_options(mut self, input: ::std::option::Option<crate::types::AdvancedOptions>) -> Self {
+        self.advanced_options = input;
+        self
+    }
+    /// <p>Specifies advanced options for parsing the input EDI file. These options allow for more granular control over the parsing process, including split options for X12 files.</p>
+    pub fn get_advanced_options(&self) -> &::std::option::Option<crate::types::AdvancedOptions> {
+        &self.advanced_options
+    }
     /// Consumes the builder and constructs a [`TestParsingInput`](crate::operation::test_parsing::TestParsingInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::test_parsing::TestParsingInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::test_parsing::TestParsingInput {
             input_file: self.input_file,
             file_format: self.file_format,
             edi_type: self.edi_type,
+            advanced_options: self.advanced_options,
         })
     }
 }

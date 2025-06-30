@@ -22,8 +22,8 @@ impl crate::operation::stop_query_monitor_top_contributors::builders::StopQueryM
 }
 /// Fluent builder constructing a request to `StopQueryMonitorTopContributors`.
 ///
-/// <p>Stop a query with the Network Flow Monitor query interface. Specify the query that you want to stop by providing a query ID and a monitor name. This query returns the top contributors for a specific monitor.</p>
-/// <p>Top contributors in Network Flow Monitor are network flows with the highest values for a specific metric type, related to a scope (for workload insights) or a monitor.</p>
+/// <p>Stop a top contributors query for a monitor. Specify the query that you want to stop by providing a query ID and a monitor name.</p>
+/// <p>Top contributors in Network Flow Monitor are network flows with the highest values for a specific metric type. Top contributors can be across all workload insights, for a given scope, or for a specific monitor. Use the applicable call for the top contributors that you want to be returned.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StopQueryMonitorTopContributorsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -123,17 +123,17 @@ impl StopQueryMonitorTopContributorsFluentBuilder {
     pub fn get_monitor_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_monitor_name()
     }
-    /// <p>The identifier for the query. A query ID is an internally-generated identifier for a specific query returned from an API call to start a query.</p>
+    /// <p>The identifier for the query. A query ID is an internally-generated identifier for a specific query returned from an API call to create a query.</p>
     pub fn query_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.query_id(input.into());
         self
     }
-    /// <p>The identifier for the query. A query ID is an internally-generated identifier for a specific query returned from an API call to start a query.</p>
+    /// <p>The identifier for the query. A query ID is an internally-generated identifier for a specific query returned from an API call to create a query.</p>
     pub fn set_query_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_query_id(input);
         self
     }
-    /// <p>The identifier for the query. A query ID is an internally-generated identifier for a specific query returned from an API call to start a query.</p>
+    /// <p>The identifier for the query. A query ID is an internally-generated identifier for a specific query returned from an API call to create a query.</p>
     pub fn get_query_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_query_id()
     }

@@ -35,6 +35,9 @@ pub fn ser_search_by_attribute_value(
             crate::protocol_serde::shape_dicom_study_date_and_time::ser_dicom_study_date_and_time(&mut object_1, inner)?;
             object_1.finish();
         }
+        crate::types::SearchByAttributeValue::IsPrimary(inner) => {
+            object_3.key("isPrimary").boolean(*inner);
+        }
         crate::types::SearchByAttributeValue::Unknown => {
             return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant(
                 "SearchByAttributeValue",

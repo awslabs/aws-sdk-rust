@@ -125,19 +125,19 @@ impl DeleteServiceSpecificCredentialFluentBuilder {
     pub fn get_user_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_user_name()
     }
-    /// <p>The unique identifier of the service-specific credential. You can get this value by calling <code>ListServiceSpecificCredentials</code>.</p>
+    /// <p>The unique identifier of the service-specific credential. You can get this value by calling <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_ListServiceSpecificCredentials.html">ListServiceSpecificCredentials</a>.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters that can consist of any upper or lowercased letter or digit.</p>
     pub fn service_specific_credential_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.service_specific_credential_id(input.into());
         self
     }
-    /// <p>The unique identifier of the service-specific credential. You can get this value by calling <code>ListServiceSpecificCredentials</code>.</p>
+    /// <p>The unique identifier of the service-specific credential. You can get this value by calling <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_ListServiceSpecificCredentials.html">ListServiceSpecificCredentials</a>.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters that can consist of any upper or lowercased letter or digit.</p>
     pub fn set_service_specific_credential_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_service_specific_credential_id(input);
         self
     }
-    /// <p>The unique identifier of the service-specific credential. You can get this value by calling <code>ListServiceSpecificCredentials</code>.</p>
+    /// <p>The unique identifier of the service-specific credential. You can get this value by calling <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_ListServiceSpecificCredentials.html">ListServiceSpecificCredentials</a>.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters that can consist of any upper or lowercased letter or digit.</p>
     pub fn get_service_specific_credential_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_service_specific_credential_id()

@@ -1769,6 +1769,8 @@ pub(crate) mod shape_integration_partition;
 
 pub(crate) mod shape_integration_partition_spec_list;
 
+pub(crate) mod shape_integration_source_properties_map;
+
 pub(crate) mod shape_jdbc_connector_source;
 
 pub(crate) mod shape_jdbc_connector_target;

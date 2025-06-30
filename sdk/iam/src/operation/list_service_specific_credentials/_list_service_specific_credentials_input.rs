@@ -8,6 +8,12 @@ pub struct ListServiceSpecificCredentialsInput {
     pub user_name: ::std::option::Option<::std::string::String>,
     /// <p>Filters the returned results to only those for the specified Amazon Web Services service. If not specified, then Amazon Web Services returns service-specific credentials for all services.</p>
     pub service_name: ::std::option::Option<::std::string::String>,
+    /// <p>A flag indicating whether to list service specific credentials for all users. This parameter cannot be specified together with UserName. When true, returns all credentials associated with the specified service.</p>
+    pub all_users: ::std::option::Option<bool>,
+    /// <p>Use this parameter only when paginating results and only after you receive a response indicating that the results are truncated. Set it to the value of the Marker from the response that you received to indicate where the next call should start.</p>
+    pub marker: ::std::option::Option<::std::string::String>,
+    /// <p>Use this only when paginating results to indicate the maximum number of items you want in the response. If additional items exist beyond the maximum you specify, the IsTruncated response element is true.</p>
+    pub max_items: ::std::option::Option<i32>,
 }
 impl ListServiceSpecificCredentialsInput {
     /// <p>The name of the user whose service-specific credentials you want information about. If this value is not specified, then the operation assumes the user whose credentials are used to call the operation.</p>
@@ -18,6 +24,18 @@ impl ListServiceSpecificCredentialsInput {
     /// <p>Filters the returned results to only those for the specified Amazon Web Services service. If not specified, then Amazon Web Services returns service-specific credentials for all services.</p>
     pub fn service_name(&self) -> ::std::option::Option<&str> {
         self.service_name.as_deref()
+    }
+    /// <p>A flag indicating whether to list service specific credentials for all users. This parameter cannot be specified together with UserName. When true, returns all credentials associated with the specified service.</p>
+    pub fn all_users(&self) -> ::std::option::Option<bool> {
+        self.all_users
+    }
+    /// <p>Use this parameter only when paginating results and only after you receive a response indicating that the results are truncated. Set it to the value of the Marker from the response that you received to indicate where the next call should start.</p>
+    pub fn marker(&self) -> ::std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+    /// <p>Use this only when paginating results to indicate the maximum number of items you want in the response. If additional items exist beyond the maximum you specify, the IsTruncated response element is true.</p>
+    pub fn max_items(&self) -> ::std::option::Option<i32> {
+        self.max_items
     }
 }
 impl ListServiceSpecificCredentialsInput {
@@ -33,6 +51,9 @@ impl ListServiceSpecificCredentialsInput {
 pub struct ListServiceSpecificCredentialsInputBuilder {
     pub(crate) user_name: ::std::option::Option<::std::string::String>,
     pub(crate) service_name: ::std::option::Option<::std::string::String>,
+    pub(crate) all_users: ::std::option::Option<bool>,
+    pub(crate) marker: ::std::option::Option<::std::string::String>,
+    pub(crate) max_items: ::std::option::Option<i32>,
 }
 impl ListServiceSpecificCredentialsInputBuilder {
     /// <p>The name of the user whose service-specific credentials you want information about. If this value is not specified, then the operation assumes the user whose credentials are used to call the operation.</p>
@@ -66,6 +87,48 @@ impl ListServiceSpecificCredentialsInputBuilder {
     pub fn get_service_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.service_name
     }
+    /// <p>A flag indicating whether to list service specific credentials for all users. This parameter cannot be specified together with UserName. When true, returns all credentials associated with the specified service.</p>
+    pub fn all_users(mut self, input: bool) -> Self {
+        self.all_users = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>A flag indicating whether to list service specific credentials for all users. This parameter cannot be specified together with UserName. When true, returns all credentials associated with the specified service.</p>
+    pub fn set_all_users(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.all_users = input;
+        self
+    }
+    /// <p>A flag indicating whether to list service specific credentials for all users. This parameter cannot be specified together with UserName. When true, returns all credentials associated with the specified service.</p>
+    pub fn get_all_users(&self) -> &::std::option::Option<bool> {
+        &self.all_users
+    }
+    /// <p>Use this parameter only when paginating results and only after you receive a response indicating that the results are truncated. Set it to the value of the Marker from the response that you received to indicate where the next call should start.</p>
+    pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.marker = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Use this parameter only when paginating results and only after you receive a response indicating that the results are truncated. Set it to the value of the Marker from the response that you received to indicate where the next call should start.</p>
+    pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.marker = input;
+        self
+    }
+    /// <p>Use this parameter only when paginating results and only after you receive a response indicating that the results are truncated. Set it to the value of the Marker from the response that you received to indicate where the next call should start.</p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        &self.marker
+    }
+    /// <p>Use this only when paginating results to indicate the maximum number of items you want in the response. If additional items exist beyond the maximum you specify, the IsTruncated response element is true.</p>
+    pub fn max_items(mut self, input: i32) -> Self {
+        self.max_items = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Use this only when paginating results to indicate the maximum number of items you want in the response. If additional items exist beyond the maximum you specify, the IsTruncated response element is true.</p>
+    pub fn set_max_items(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.max_items = input;
+        self
+    }
+    /// <p>Use this only when paginating results to indicate the maximum number of items you want in the response. If additional items exist beyond the maximum you specify, the IsTruncated response element is true.</p>
+    pub fn get_max_items(&self) -> &::std::option::Option<i32> {
+        &self.max_items
+    }
     /// Consumes the builder and constructs a [`ListServiceSpecificCredentialsInput`](crate::operation::list_service_specific_credentials::ListServiceSpecificCredentialsInput).
     pub fn build(
         self,
@@ -76,6 +139,9 @@ impl ListServiceSpecificCredentialsInputBuilder {
         ::std::result::Result::Ok(crate::operation::list_service_specific_credentials::ListServiceSpecificCredentialsInput {
             user_name: self.user_name,
             service_name: self.service_name,
+            all_users: self.all_users,
+            marker: self.marker,
+            max_items: self.max_items,
         })
     }
 }

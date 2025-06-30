@@ -252,9 +252,9 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for GetCredential
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum GetCredentialReportError {
-    /// <p>The request was rejected because the most recent credential report has expired. To generate a new credential report, use <code>GenerateCredentialReport</code>. For more information about credential report expiration, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/credential-reports.html">Getting credential reports</a> in the <i>IAM User Guide</i>.</p>
+    /// <p>The request was rejected because the most recent credential report has expired. To generate a new credential report, use <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_GenerateCredentialReport.html">GenerateCredentialReport</a>. For more information about credential report expiration, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/credential-reports.html">Getting credential reports</a> in the <i>IAM User Guide</i>.</p>
     CredentialReportExpiredException(crate::types::error::CredentialReportExpiredException),
-    /// <p>The request was rejected because the credential report does not exist. To generate a credential report, use <code>GenerateCredentialReport</code>.</p>
+    /// <p>The request was rejected because the credential report does not exist. To generate a credential report, use <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_GenerateCredentialReport.html">GenerateCredentialReport</a>.</p>
     CredentialReportNotPresentException(crate::types::error::CredentialReportNotPresentException),
     /// <p>The request was rejected because the credential report is still being generated.</p>
     CredentialReportNotReadyException(crate::types::error::CredentialReportNotReadyException),

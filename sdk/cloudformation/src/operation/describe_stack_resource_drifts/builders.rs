@@ -145,6 +145,8 @@ impl DescribeStackResourceDriftsFluentBuilder {
     /// <p><code>IN_SYNC</code>: The resource's actual configuration matches its expected template configuration.</p></li>
     /// <li>
     /// <p><code>NOT_CHECKED</code>: CloudFormation doesn't currently return this value.</p></li>
+    /// <li>
+    /// <p><code>UNKNOWN</code>: CloudFormation could not run drift detection for the resource.</p></li>
     /// </ul>
     pub fn stack_resource_drift_status_filters(mut self, input: crate::types::StackResourceDriftStatus) -> Self {
         self.inner = self.inner.stack_resource_drift_status_filters(input);
@@ -160,6 +162,8 @@ impl DescribeStackResourceDriftsFluentBuilder {
     /// <p><code>IN_SYNC</code>: The resource's actual configuration matches its expected template configuration.</p></li>
     /// <li>
     /// <p><code>NOT_CHECKED</code>: CloudFormation doesn't currently return this value.</p></li>
+    /// <li>
+    /// <p><code>UNKNOWN</code>: CloudFormation could not run drift detection for the resource.</p></li>
     /// </ul>
     pub fn set_stack_resource_drift_status_filters(
         mut self,
@@ -178,6 +182,8 @@ impl DescribeStackResourceDriftsFluentBuilder {
     /// <p><code>IN_SYNC</code>: The resource's actual configuration matches its expected template configuration.</p></li>
     /// <li>
     /// <p><code>NOT_CHECKED</code>: CloudFormation doesn't currently return this value.</p></li>
+    /// <li>
+    /// <p><code>UNKNOWN</code>: CloudFormation could not run drift detection for the resource.</p></li>
     /// </ul>
     pub fn get_stack_resource_drift_status_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StackResourceDriftStatus>> {
         self.inner.get_stack_resource_drift_status_filters()

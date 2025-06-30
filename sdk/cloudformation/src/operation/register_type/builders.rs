@@ -223,7 +223,7 @@ impl RegisterTypeFluentBuilder {
     pub fn get_type_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_type_name()
     }
-    /// <p>A URL to the S3 bucket containing the extension project package that contains the necessary files for the extension you want to register.</p>
+    /// <p>A URL to the S3 bucket that contains the extension project package that contains the necessary files for the extension you want to register.</p>
     /// <p>For information about generating a schema handler package for the extension you want to register, see <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-cli-submit.html">submit</a> in the <i>CloudFormation Command Line Interface (CLI) User Guide</i>.</p><note>
     /// <p>The user registering the extension must be able to access the package in the S3 bucket. That's, the user needs to have <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html">GetObject</a> permissions for the schema handler package. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazons3.html">Actions, Resources, and Condition Keys for Amazon S3</a> in the <i>Identity and Access Management User Guide</i>.</p>
     /// </note>
@@ -231,7 +231,7 @@ impl RegisterTypeFluentBuilder {
         self.inner = self.inner.schema_handler_package(input.into());
         self
     }
-    /// <p>A URL to the S3 bucket containing the extension project package that contains the necessary files for the extension you want to register.</p>
+    /// <p>A URL to the S3 bucket that contains the extension project package that contains the necessary files for the extension you want to register.</p>
     /// <p>For information about generating a schema handler package for the extension you want to register, see <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-cli-submit.html">submit</a> in the <i>CloudFormation Command Line Interface (CLI) User Guide</i>.</p><note>
     /// <p>The user registering the extension must be able to access the package in the S3 bucket. That's, the user needs to have <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html">GetObject</a> permissions for the schema handler package. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazons3.html">Actions, Resources, and Condition Keys for Amazon S3</a> in the <i>Identity and Access Management User Guide</i>.</p>
     /// </note>
@@ -239,7 +239,7 @@ impl RegisterTypeFluentBuilder {
         self.inner = self.inner.set_schema_handler_package(input);
         self
     }
-    /// <p>A URL to the S3 bucket containing the extension project package that contains the necessary files for the extension you want to register.</p>
+    /// <p>A URL to the S3 bucket that contains the extension project package that contains the necessary files for the extension you want to register.</p>
     /// <p>For information about generating a schema handler package for the extension you want to register, see <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-cli-submit.html">submit</a> in the <i>CloudFormation Command Line Interface (CLI) User Guide</i>.</p><note>
     /// <p>The user registering the extension must be able to access the package in the S3 bucket. That's, the user needs to have <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html">GetObject</a> permissions for the schema handler package. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazons3.html">Actions, Resources, and Condition Keys for Amazon S3</a> in the <i>Identity and Access Management User Guide</i>.</p>
     /// </note>

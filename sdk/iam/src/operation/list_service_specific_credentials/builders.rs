@@ -139,4 +139,46 @@ impl ListServiceSpecificCredentialsFluentBuilder {
     pub fn get_service_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_service_name()
     }
+    /// <p>A flag indicating whether to list service specific credentials for all users. This parameter cannot be specified together with UserName. When true, returns all credentials associated with the specified service.</p>
+    pub fn all_users(mut self, input: bool) -> Self {
+        self.inner = self.inner.all_users(input);
+        self
+    }
+    /// <p>A flag indicating whether to list service specific credentials for all users. This parameter cannot be specified together with UserName. When true, returns all credentials associated with the specified service.</p>
+    pub fn set_all_users(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_all_users(input);
+        self
+    }
+    /// <p>A flag indicating whether to list service specific credentials for all users. This parameter cannot be specified together with UserName. When true, returns all credentials associated with the specified service.</p>
+    pub fn get_all_users(&self) -> &::std::option::Option<bool> {
+        self.inner.get_all_users()
+    }
+    /// <p>Use this parameter only when paginating results and only after you receive a response indicating that the results are truncated. Set it to the value of the Marker from the response that you received to indicate where the next call should start.</p>
+    pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.marker(input.into());
+        self
+    }
+    /// <p>Use this parameter only when paginating results and only after you receive a response indicating that the results are truncated. Set it to the value of the Marker from the response that you received to indicate where the next call should start.</p>
+    pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_marker(input);
+        self
+    }
+    /// <p>Use this parameter only when paginating results and only after you receive a response indicating that the results are truncated. Set it to the value of the Marker from the response that you received to indicate where the next call should start.</p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_marker()
+    }
+    /// <p>Use this only when paginating results to indicate the maximum number of items you want in the response. If additional items exist beyond the maximum you specify, the IsTruncated response element is true.</p>
+    pub fn max_items(mut self, input: i32) -> Self {
+        self.inner = self.inner.max_items(input);
+        self
+    }
+    /// <p>Use this only when paginating results to indicate the maximum number of items you want in the response. If additional items exist beyond the maximum you specify, the IsTruncated response element is true.</p>
+    pub fn set_max_items(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.inner = self.inner.set_max_items(input);
+        self
+    }
+    /// <p>Use this only when paginating results to indicate the maximum number of items you want in the response. If additional items exist beyond the maximum you specify, the IsTruncated response element is true.</p>
+    pub fn get_max_items(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_items()
+    }
 }

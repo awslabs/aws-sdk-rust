@@ -9,6 +9,12 @@ pub fn ser_athena_parameters(
     if let Some(var_2) = &input.role_arn {
         object.key("RoleArn").string(var_2.as_str());
     }
+    if let Some(var_3) = &input.identity_center_configuration {
+        #[allow(unused_mut)]
+        let mut object_4 = object.key("IdentityCenterConfiguration").start_object();
+        crate::protocol_serde::shape_identity_center_configuration::ser_identity_center_configuration(&mut object_4, var_3)?;
+        object_4.finish();
+    }
     Ok(())
 }
 
@@ -39,6 +45,11 @@ where
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
+                            );
+                        }
+                        "IdentityCenterConfiguration" => {
+                            builder = builder.set_identity_center_configuration(
+                                crate::protocol_serde::shape_identity_center_configuration::de_identity_center_configuration(tokens)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

@@ -4,7 +4,17 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartZonalShiftInput {
     /// <p>The identifier for the resource that Amazon Web Services shifts traffic for. The identifier is the Amazon Resource Name (ARN) for the resource.</p>
-    /// <p>At this time, supported resources are Network Load Balancers and Application Load Balancers with cross-zone load balancing turned off.</p>
+    /// <p>Amazon Application Recovery Controller currently supports enabling the following resources for zonal shift and zonal autoshift:</p>
+    /// <ul>
+    /// <li>
+    /// <p><a href="https://docs.aws.amazon.com/r53recovery/latest/dg/arc-zonal-shift.resource-types.ec2-auto-scaling-groups.html">Amazon EC2 Auto Scaling groups</a></p></li>
+    /// <li>
+    /// <p><a href="https://docs.aws.amazon.com/r53recovery/latest/dg/arc-zonal-shift.resource-types.eks.html">Amazon Elastic Kubernetes Service</a></p></li>
+    /// <li>
+    /// <p><a href="https://docs.aws.amazon.com/r53recovery/latest/dg/arc-zonal-shift.resource-types.app-load-balancers.html">Application Load Balancer</a></p></li>
+    /// <li>
+    /// <p><a href="https://docs.aws.amazon.com/r53recovery/latest/dg/arc-zonal-shift.resource-types.network-load-balancers.html">Network Load Balancer</a></p></li>
+    /// </ul>
     pub resource_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The Availability Zone (for example, <code>use1-az1</code>) that traffic is moved away from for a resource when you start a zonal shift. Until the zonal shift expires or you cancel it, traffic for the resource is instead moved to other Availability Zones in the Amazon Web Services Region.</p>
     pub away_from: ::std::option::Option<::std::string::String>,
@@ -24,7 +34,17 @@ pub struct StartZonalShiftInput {
 }
 impl StartZonalShiftInput {
     /// <p>The identifier for the resource that Amazon Web Services shifts traffic for. The identifier is the Amazon Resource Name (ARN) for the resource.</p>
-    /// <p>At this time, supported resources are Network Load Balancers and Application Load Balancers with cross-zone load balancing turned off.</p>
+    /// <p>Amazon Application Recovery Controller currently supports enabling the following resources for zonal shift and zonal autoshift:</p>
+    /// <ul>
+    /// <li>
+    /// <p><a href="https://docs.aws.amazon.com/r53recovery/latest/dg/arc-zonal-shift.resource-types.ec2-auto-scaling-groups.html">Amazon EC2 Auto Scaling groups</a></p></li>
+    /// <li>
+    /// <p><a href="https://docs.aws.amazon.com/r53recovery/latest/dg/arc-zonal-shift.resource-types.eks.html">Amazon Elastic Kubernetes Service</a></p></li>
+    /// <li>
+    /// <p><a href="https://docs.aws.amazon.com/r53recovery/latest/dg/arc-zonal-shift.resource-types.app-load-balancers.html">Application Load Balancer</a></p></li>
+    /// <li>
+    /// <p><a href="https://docs.aws.amazon.com/r53recovery/latest/dg/arc-zonal-shift.resource-types.network-load-balancers.html">Network Load Balancer</a></p></li>
+    /// </ul>
     pub fn resource_identifier(&self) -> ::std::option::Option<&str> {
         self.resource_identifier.as_deref()
     }
@@ -68,20 +88,50 @@ pub struct StartZonalShiftInputBuilder {
 }
 impl StartZonalShiftInputBuilder {
     /// <p>The identifier for the resource that Amazon Web Services shifts traffic for. The identifier is the Amazon Resource Name (ARN) for the resource.</p>
-    /// <p>At this time, supported resources are Network Load Balancers and Application Load Balancers with cross-zone load balancing turned off.</p>
+    /// <p>Amazon Application Recovery Controller currently supports enabling the following resources for zonal shift and zonal autoshift:</p>
+    /// <ul>
+    /// <li>
+    /// <p><a href="https://docs.aws.amazon.com/r53recovery/latest/dg/arc-zonal-shift.resource-types.ec2-auto-scaling-groups.html">Amazon EC2 Auto Scaling groups</a></p></li>
+    /// <li>
+    /// <p><a href="https://docs.aws.amazon.com/r53recovery/latest/dg/arc-zonal-shift.resource-types.eks.html">Amazon Elastic Kubernetes Service</a></p></li>
+    /// <li>
+    /// <p><a href="https://docs.aws.amazon.com/r53recovery/latest/dg/arc-zonal-shift.resource-types.app-load-balancers.html">Application Load Balancer</a></p></li>
+    /// <li>
+    /// <p><a href="https://docs.aws.amazon.com/r53recovery/latest/dg/arc-zonal-shift.resource-types.network-load-balancers.html">Network Load Balancer</a></p></li>
+    /// </ul>
     /// This field is required.
     pub fn resource_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier for the resource that Amazon Web Services shifts traffic for. The identifier is the Amazon Resource Name (ARN) for the resource.</p>
-    /// <p>At this time, supported resources are Network Load Balancers and Application Load Balancers with cross-zone load balancing turned off.</p>
+    /// <p>Amazon Application Recovery Controller currently supports enabling the following resources for zonal shift and zonal autoshift:</p>
+    /// <ul>
+    /// <li>
+    /// <p><a href="https://docs.aws.amazon.com/r53recovery/latest/dg/arc-zonal-shift.resource-types.ec2-auto-scaling-groups.html">Amazon EC2 Auto Scaling groups</a></p></li>
+    /// <li>
+    /// <p><a href="https://docs.aws.amazon.com/r53recovery/latest/dg/arc-zonal-shift.resource-types.eks.html">Amazon Elastic Kubernetes Service</a></p></li>
+    /// <li>
+    /// <p><a href="https://docs.aws.amazon.com/r53recovery/latest/dg/arc-zonal-shift.resource-types.app-load-balancers.html">Application Load Balancer</a></p></li>
+    /// <li>
+    /// <p><a href="https://docs.aws.amazon.com/r53recovery/latest/dg/arc-zonal-shift.resource-types.network-load-balancers.html">Network Load Balancer</a></p></li>
+    /// </ul>
     pub fn set_resource_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_identifier = input;
         self
     }
     /// <p>The identifier for the resource that Amazon Web Services shifts traffic for. The identifier is the Amazon Resource Name (ARN) for the resource.</p>
-    /// <p>At this time, supported resources are Network Load Balancers and Application Load Balancers with cross-zone load balancing turned off.</p>
+    /// <p>Amazon Application Recovery Controller currently supports enabling the following resources for zonal shift and zonal autoshift:</p>
+    /// <ul>
+    /// <li>
+    /// <p><a href="https://docs.aws.amazon.com/r53recovery/latest/dg/arc-zonal-shift.resource-types.ec2-auto-scaling-groups.html">Amazon EC2 Auto Scaling groups</a></p></li>
+    /// <li>
+    /// <p><a href="https://docs.aws.amazon.com/r53recovery/latest/dg/arc-zonal-shift.resource-types.eks.html">Amazon Elastic Kubernetes Service</a></p></li>
+    /// <li>
+    /// <p><a href="https://docs.aws.amazon.com/r53recovery/latest/dg/arc-zonal-shift.resource-types.app-load-balancers.html">Application Load Balancer</a></p></li>
+    /// <li>
+    /// <p><a href="https://docs.aws.amazon.com/r53recovery/latest/dg/arc-zonal-shift.resource-types.network-load-balancers.html">Network Load Balancer</a></p></li>
+    /// </ul>
     pub fn get_resource_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_identifier
     }

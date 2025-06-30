@@ -22,9 +22,7 @@ impl crate::operation::describe_table::builders::DescribeTableInputBuilder {
 }
 /// Fluent builder constructing a request to `DescribeTable`.
 ///
-/// <p>Returns information about the table, including the current status of the table, when it was created, the primary key schema, and any indexes on the table.</p><important>
-/// <p>For global tables, this operation only applies to global tables using Version 2019.11.21 (Current version).</p>
-/// </important> <note>
+/// <p>Returns information about the table, including the current status of the table, when it was created, the primary key schema, and any indexes on the table.</p><note>
 /// <p>If you issue a <code>DescribeTable</code> request immediately after a <code>CreateTable</code> request, DynamoDB might return a <code>ResourceNotFoundException</code>. This is because <code>DescribeTable</code> uses an eventually consistent query, and the metadata for your table might not be available at that moment. Wait for a few seconds, and then try the <code>DescribeTable</code> request again.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

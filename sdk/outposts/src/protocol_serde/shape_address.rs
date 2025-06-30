@@ -3,20 +3,20 @@ pub fn ser_address(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Address,
 ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
-    if let Some(var_1) = &input.contact_name {
-        object.key("ContactName").string(var_1.as_str());
+    {
+        object.key("ContactName").string(input.contact_name.as_str());
     }
-    if let Some(var_2) = &input.contact_phone_number {
-        object.key("ContactPhoneNumber").string(var_2.as_str());
+    {
+        object.key("ContactPhoneNumber").string(input.contact_phone_number.as_str());
     }
     {
         object.key("AddressLine1").string(input.address_line1.as_str());
     }
-    if let Some(var_3) = &input.address_line2 {
-        object.key("AddressLine2").string(var_3.as_str());
+    if let Some(var_1) = &input.address_line2 {
+        object.key("AddressLine2").string(var_1.as_str());
     }
-    if let Some(var_4) = &input.address_line3 {
-        object.key("AddressLine3").string(var_4.as_str());
+    if let Some(var_2) = &input.address_line3 {
+        object.key("AddressLine3").string(var_2.as_str());
     }
     {
         object.key("City").string(input.city.as_str());
@@ -24,8 +24,8 @@ pub fn ser_address(
     {
         object.key("StateOrRegion").string(input.state_or_region.as_str());
     }
-    if let Some(var_5) = &input.district_or_county {
-        object.key("DistrictOrCounty").string(var_5.as_str());
+    if let Some(var_3) = &input.district_or_county {
+        object.key("DistrictOrCounty").string(var_3.as_str());
     }
     {
         object.key("PostalCode").string(input.postal_code.as_str());
@@ -33,8 +33,8 @@ pub fn ser_address(
     {
         object.key("CountryCode").string(input.country_code.as_str());
     }
-    if let Some(var_6) = &input.municipality {
-        object.key("Municipality").string(var_6.as_str());
+    if let Some(var_4) = &input.municipality {
+        object.key("Municipality").string(var_4.as_str());
     }
     Ok(())
 }

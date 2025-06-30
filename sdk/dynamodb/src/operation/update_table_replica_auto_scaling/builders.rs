@@ -22,9 +22,7 @@ impl crate::operation::update_table_replica_auto_scaling::builders::UpdateTableR
 }
 /// Fluent builder constructing a request to `UpdateTableReplicaAutoScaling`.
 ///
-/// <p>Updates auto scaling settings on your global tables at once.</p><important>
-/// <p>For global tables, this operation only applies to global tables using Version 2019.11.21 (Current version).</p>
-/// </important>
+/// <p>Updates auto scaling settings on your global tables at once.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateTableReplicaAutoScalingFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

@@ -9,50 +9,68 @@ pub fn ser_capabilities(
     if let Some(var_2) = &input.export_to_excel {
         object.key("ExportToExcel").string(var_2.as_str());
     }
-    if let Some(var_3) = &input.create_and_update_themes {
-        object.key("CreateAndUpdateThemes").string(var_3.as_str());
+    if let Some(var_3) = &input.export_to_pdf {
+        object.key("ExportToPdf").string(var_3.as_str());
     }
-    if let Some(var_4) = &input.add_or_run_anomaly_detection_for_analyses {
-        object.key("AddOrRunAnomalyDetectionForAnalyses").string(var_4.as_str());
+    if let Some(var_4) = &input.print_reports {
+        object.key("PrintReports").string(var_4.as_str());
     }
-    if let Some(var_5) = &input.share_analyses {
-        object.key("ShareAnalyses").string(var_5.as_str());
+    if let Some(var_5) = &input.create_and_update_themes {
+        object.key("CreateAndUpdateThemes").string(var_5.as_str());
     }
-    if let Some(var_6) = &input.create_and_update_datasets {
-        object.key("CreateAndUpdateDatasets").string(var_6.as_str());
+    if let Some(var_6) = &input.add_or_run_anomaly_detection_for_analyses {
+        object.key("AddOrRunAnomalyDetectionForAnalyses").string(var_6.as_str());
     }
-    if let Some(var_7) = &input.share_datasets {
-        object.key("ShareDatasets").string(var_7.as_str());
+    if let Some(var_7) = &input.share_analyses {
+        object.key("ShareAnalyses").string(var_7.as_str());
     }
-    if let Some(var_8) = &input.subscribe_dashboard_email_reports {
-        object.key("SubscribeDashboardEmailReports").string(var_8.as_str());
+    if let Some(var_8) = &input.create_and_update_datasets {
+        object.key("CreateAndUpdateDatasets").string(var_8.as_str());
     }
-    if let Some(var_9) = &input.create_and_update_dashboard_email_reports {
-        object.key("CreateAndUpdateDashboardEmailReports").string(var_9.as_str());
+    if let Some(var_9) = &input.share_datasets {
+        object.key("ShareDatasets").string(var_9.as_str());
     }
-    if let Some(var_10) = &input.share_dashboards {
-        object.key("ShareDashboards").string(var_10.as_str());
+    if let Some(var_10) = &input.subscribe_dashboard_email_reports {
+        object.key("SubscribeDashboardEmailReports").string(var_10.as_str());
     }
-    if let Some(var_11) = &input.create_and_update_threshold_alerts {
-        object.key("CreateAndUpdateThresholdAlerts").string(var_11.as_str());
+    if let Some(var_11) = &input.create_and_update_dashboard_email_reports {
+        object.key("CreateAndUpdateDashboardEmailReports").string(var_11.as_str());
     }
-    if let Some(var_12) = &input.rename_shared_folders {
-        object.key("RenameSharedFolders").string(var_12.as_str());
+    if let Some(var_12) = &input.share_dashboards {
+        object.key("ShareDashboards").string(var_12.as_str());
     }
-    if let Some(var_13) = &input.create_shared_folders {
-        object.key("CreateSharedFolders").string(var_13.as_str());
+    if let Some(var_13) = &input.create_and_update_threshold_alerts {
+        object.key("CreateAndUpdateThresholdAlerts").string(var_13.as_str());
     }
-    if let Some(var_14) = &input.create_and_update_data_sources {
-        object.key("CreateAndUpdateDataSources").string(var_14.as_str());
+    if let Some(var_14) = &input.rename_shared_folders {
+        object.key("RenameSharedFolders").string(var_14.as_str());
     }
-    if let Some(var_15) = &input.share_data_sources {
-        object.key("ShareDataSources").string(var_15.as_str());
+    if let Some(var_15) = &input.create_shared_folders {
+        object.key("CreateSharedFolders").string(var_15.as_str());
     }
-    if let Some(var_16) = &input.view_account_spice_capacity {
-        object.key("ViewAccountSPICECapacity").string(var_16.as_str());
+    if let Some(var_16) = &input.create_and_update_data_sources {
+        object.key("CreateAndUpdateDataSources").string(var_16.as_str());
     }
-    if let Some(var_17) = &input.create_spice_dataset {
-        object.key("CreateSPICEDataset").string(var_17.as_str());
+    if let Some(var_17) = &input.share_data_sources {
+        object.key("ShareDataSources").string(var_17.as_str());
+    }
+    if let Some(var_18) = &input.view_account_spice_capacity {
+        object.key("ViewAccountSPICECapacity").string(var_18.as_str());
+    }
+    if let Some(var_19) = &input.create_spice_dataset {
+        object.key("CreateSPICEDataset").string(var_19.as_str());
+    }
+    if let Some(var_20) = &input.export_to_pdf_in_scheduled_reports {
+        object.key("ExportToPdfInScheduledReports").string(var_20.as_str());
+    }
+    if let Some(var_21) = &input.export_to_csv_in_scheduled_reports {
+        object.key("ExportToCsvInScheduledReports").string(var_21.as_str());
+    }
+    if let Some(var_22) = &input.export_to_excel_in_scheduled_reports {
+        object.key("ExportToExcelInScheduledReports").string(var_22.as_str());
+    }
+    if let Some(var_23) = &input.include_content_in_scheduled_reports_email {
+        object.key("IncludeContentInScheduledReportsEmail").string(var_23.as_str());
     }
     Ok(())
 }
@@ -81,6 +99,20 @@ where
                         }
                         "ExportToExcel" => {
                             builder = builder.set_export_to_excel(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "ExportToPdf" => {
+                            builder = builder.set_export_to_pdf(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "PrintReports" => {
+                            builder = builder.set_print_reports(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
                                     .transpose()?,
@@ -186,6 +218,34 @@ where
                         }
                         "CreateSPICEDataset" => {
                             builder = builder.set_create_spice_dataset(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "ExportToPdfInScheduledReports" => {
+                            builder = builder.set_export_to_pdf_in_scheduled_reports(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "ExportToCsvInScheduledReports" => {
+                            builder = builder.set_export_to_csv_in_scheduled_reports(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "ExportToExcelInScheduledReports" => {
+                            builder = builder.set_export_to_excel_in_scheduled_reports(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "IncludeContentInScheduledReportsEmail" => {
+                            builder = builder.set_include_content_in_scheduled_reports_email(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
                                     .transpose()?,

@@ -5,24 +5,24 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ModuleInfo {
-    /// <p>A concatenated list of the module type or types containing the resource. Module types are listed starting with the inner-most nested module, and separated by <code>/</code>.</p>
+    /// <p>A concatenated list of the module type or types that contains the resource. Module types are listed starting with the inner-most nested module, and separated by <code>/</code>.</p>
     /// <p>In the following example, the resource was created from a module of type <code>AWS::First::Example::MODULE</code>, that's nested inside a parent module of type <code>AWS::Second::Example::MODULE</code>.</p>
     /// <p><code>AWS::First::Example::MODULE/AWS::Second::Example::MODULE</code></p>
     pub type_hierarchy: ::std::option::Option<::std::string::String>,
-    /// <p>A concatenated list of the logical IDs of the module or modules containing the resource. Modules are listed starting with the inner-most nested module, and separated by <code>/</code>.</p>
+    /// <p>A concatenated list of the logical IDs of the module or modules that contains the resource. Modules are listed starting with the inner-most nested module, and separated by <code>/</code>.</p>
     /// <p>In the following example, the resource was created from a module, <code>moduleA</code>, that's nested inside a parent module, <code>moduleB</code>.</p>
     /// <p><code>moduleA/moduleB</code></p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/module-ref-resources.html">Reference module resources in CloudFormation templates</a> in the <i>CloudFormation User Guide</i>.</p>
     pub logical_id_hierarchy: ::std::option::Option<::std::string::String>,
 }
 impl ModuleInfo {
-    /// <p>A concatenated list of the module type or types containing the resource. Module types are listed starting with the inner-most nested module, and separated by <code>/</code>.</p>
+    /// <p>A concatenated list of the module type or types that contains the resource. Module types are listed starting with the inner-most nested module, and separated by <code>/</code>.</p>
     /// <p>In the following example, the resource was created from a module of type <code>AWS::First::Example::MODULE</code>, that's nested inside a parent module of type <code>AWS::Second::Example::MODULE</code>.</p>
     /// <p><code>AWS::First::Example::MODULE/AWS::Second::Example::MODULE</code></p>
     pub fn type_hierarchy(&self) -> ::std::option::Option<&str> {
         self.type_hierarchy.as_deref()
     }
-    /// <p>A concatenated list of the logical IDs of the module or modules containing the resource. Modules are listed starting with the inner-most nested module, and separated by <code>/</code>.</p>
+    /// <p>A concatenated list of the logical IDs of the module or modules that contains the resource. Modules are listed starting with the inner-most nested module, and separated by <code>/</code>.</p>
     /// <p>In the following example, the resource was created from a module, <code>moduleA</code>, that's nested inside a parent module, <code>moduleB</code>.</p>
     /// <p><code>moduleA/moduleB</code></p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/module-ref-resources.html">Reference module resources in CloudFormation templates</a> in the <i>CloudFormation User Guide</i>.</p>
@@ -45,27 +45,27 @@ pub struct ModuleInfoBuilder {
     pub(crate) logical_id_hierarchy: ::std::option::Option<::std::string::String>,
 }
 impl ModuleInfoBuilder {
-    /// <p>A concatenated list of the module type or types containing the resource. Module types are listed starting with the inner-most nested module, and separated by <code>/</code>.</p>
+    /// <p>A concatenated list of the module type or types that contains the resource. Module types are listed starting with the inner-most nested module, and separated by <code>/</code>.</p>
     /// <p>In the following example, the resource was created from a module of type <code>AWS::First::Example::MODULE</code>, that's nested inside a parent module of type <code>AWS::Second::Example::MODULE</code>.</p>
     /// <p><code>AWS::First::Example::MODULE/AWS::Second::Example::MODULE</code></p>
     pub fn type_hierarchy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.type_hierarchy = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A concatenated list of the module type or types containing the resource. Module types are listed starting with the inner-most nested module, and separated by <code>/</code>.</p>
+    /// <p>A concatenated list of the module type or types that contains the resource. Module types are listed starting with the inner-most nested module, and separated by <code>/</code>.</p>
     /// <p>In the following example, the resource was created from a module of type <code>AWS::First::Example::MODULE</code>, that's nested inside a parent module of type <code>AWS::Second::Example::MODULE</code>.</p>
     /// <p><code>AWS::First::Example::MODULE/AWS::Second::Example::MODULE</code></p>
     pub fn set_type_hierarchy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.type_hierarchy = input;
         self
     }
-    /// <p>A concatenated list of the module type or types containing the resource. Module types are listed starting with the inner-most nested module, and separated by <code>/</code>.</p>
+    /// <p>A concatenated list of the module type or types that contains the resource. Module types are listed starting with the inner-most nested module, and separated by <code>/</code>.</p>
     /// <p>In the following example, the resource was created from a module of type <code>AWS::First::Example::MODULE</code>, that's nested inside a parent module of type <code>AWS::Second::Example::MODULE</code>.</p>
     /// <p><code>AWS::First::Example::MODULE/AWS::Second::Example::MODULE</code></p>
     pub fn get_type_hierarchy(&self) -> &::std::option::Option<::std::string::String> {
         &self.type_hierarchy
     }
-    /// <p>A concatenated list of the logical IDs of the module or modules containing the resource. Modules are listed starting with the inner-most nested module, and separated by <code>/</code>.</p>
+    /// <p>A concatenated list of the logical IDs of the module or modules that contains the resource. Modules are listed starting with the inner-most nested module, and separated by <code>/</code>.</p>
     /// <p>In the following example, the resource was created from a module, <code>moduleA</code>, that's nested inside a parent module, <code>moduleB</code>.</p>
     /// <p><code>moduleA/moduleB</code></p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/module-ref-resources.html">Reference module resources in CloudFormation templates</a> in the <i>CloudFormation User Guide</i>.</p>
@@ -73,7 +73,7 @@ impl ModuleInfoBuilder {
         self.logical_id_hierarchy = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A concatenated list of the logical IDs of the module or modules containing the resource. Modules are listed starting with the inner-most nested module, and separated by <code>/</code>.</p>
+    /// <p>A concatenated list of the logical IDs of the module or modules that contains the resource. Modules are listed starting with the inner-most nested module, and separated by <code>/</code>.</p>
     /// <p>In the following example, the resource was created from a module, <code>moduleA</code>, that's nested inside a parent module, <code>moduleB</code>.</p>
     /// <p><code>moduleA/moduleB</code></p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/module-ref-resources.html">Reference module resources in CloudFormation templates</a> in the <i>CloudFormation User Guide</i>.</p>
@@ -81,7 +81,7 @@ impl ModuleInfoBuilder {
         self.logical_id_hierarchy = input;
         self
     }
-    /// <p>A concatenated list of the logical IDs of the module or modules containing the resource. Modules are listed starting with the inner-most nested module, and separated by <code>/</code>.</p>
+    /// <p>A concatenated list of the logical IDs of the module or modules that contains the resource. Modules are listed starting with the inner-most nested module, and separated by <code>/</code>.</p>
     /// <p>In the following example, the resource was created from a module, <code>moduleA</code>, that's nested inside a parent module, <code>moduleB</code>.</p>
     /// <p><code>moduleA/moduleB</code></p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/module-ref-resources.html">Reference module resources in CloudFormation templates</a> in the <i>CloudFormation User Guide</i>.</p>

@@ -150,4 +150,18 @@ impl TestParsingFluentBuilder {
     pub fn get_edi_type(&self) -> &::std::option::Option<crate::types::EdiType> {
         self.inner.get_edi_type()
     }
+    /// <p>Specifies advanced options for parsing the input EDI file. These options allow for more granular control over the parsing process, including split options for X12 files.</p>
+    pub fn advanced_options(mut self, input: crate::types::AdvancedOptions) -> Self {
+        self.inner = self.inner.advanced_options(input);
+        self
+    }
+    /// <p>Specifies advanced options for parsing the input EDI file. These options allow for more granular control over the parsing process, including split options for X12 files.</p>
+    pub fn set_advanced_options(mut self, input: ::std::option::Option<crate::types::AdvancedOptions>) -> Self {
+        self.inner = self.inner.set_advanced_options(input);
+        self
+    }
+    /// <p>Specifies advanced options for parsing the input EDI file. These options allow for more granular control over the parsing process, including split options for X12 files.</p>
+    pub fn get_advanced_options(&self) -> &::std::option::Option<crate::types::AdvancedOptions> {
+        self.inner.get_advanced_options()
+    }
 }

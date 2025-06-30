@@ -26,6 +26,8 @@ pub struct Session {
     pub output_url: ::std::option::Option<crate::types::SessionManagerOutputUrl>,
     /// <p>The maximum duration of a session before it terminates.</p>
     pub max_session_duration: ::std::option::Option<::std::string::String>,
+    /// <p><code>Standard</code> access type is the default for Session Manager sessions. <code>JustInTime</code> is the access type for <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-just-in-time-node-access.html">Just-in-time node access</a>.</p>
+    pub access_type: ::std::option::Option<crate::types::AccessType>,
 }
 impl Session {
     /// <p>The ID of the session.</p>
@@ -72,6 +74,10 @@ impl Session {
     pub fn max_session_duration(&self) -> ::std::option::Option<&str> {
         self.max_session_duration.as_deref()
     }
+    /// <p><code>Standard</code> access type is the default for Session Manager sessions. <code>JustInTime</code> is the access type for <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-just-in-time-node-access.html">Just-in-time node access</a>.</p>
+    pub fn access_type(&self) -> ::std::option::Option<&crate::types::AccessType> {
+        self.access_type.as_ref()
+    }
 }
 impl Session {
     /// Creates a new builder-style object to manufacture [`Session`](crate::types::Session).
@@ -95,6 +101,7 @@ pub struct SessionBuilder {
     pub(crate) details: ::std::option::Option<::std::string::String>,
     pub(crate) output_url: ::std::option::Option<crate::types::SessionManagerOutputUrl>,
     pub(crate) max_session_duration: ::std::option::Option<::std::string::String>,
+    pub(crate) access_type: ::std::option::Option<crate::types::AccessType>,
 }
 impl SessionBuilder {
     /// <p>The ID of the session.</p>
@@ -251,6 +258,20 @@ impl SessionBuilder {
     pub fn get_max_session_duration(&self) -> &::std::option::Option<::std::string::String> {
         &self.max_session_duration
     }
+    /// <p><code>Standard</code> access type is the default for Session Manager sessions. <code>JustInTime</code> is the access type for <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-just-in-time-node-access.html">Just-in-time node access</a>.</p>
+    pub fn access_type(mut self, input: crate::types::AccessType) -> Self {
+        self.access_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p><code>Standard</code> access type is the default for Session Manager sessions. <code>JustInTime</code> is the access type for <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-just-in-time-node-access.html">Just-in-time node access</a>.</p>
+    pub fn set_access_type(mut self, input: ::std::option::Option<crate::types::AccessType>) -> Self {
+        self.access_type = input;
+        self
+    }
+    /// <p><code>Standard</code> access type is the default for Session Manager sessions. <code>JustInTime</code> is the access type for <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-just-in-time-node-access.html">Just-in-time node access</a>.</p>
+    pub fn get_access_type(&self) -> &::std::option::Option<crate::types::AccessType> {
+        &self.access_type
+    }
     /// Consumes the builder and constructs a [`Session`](crate::types::Session).
     pub fn build(self) -> crate::types::Session {
         crate::types::Session {
@@ -265,6 +286,7 @@ impl SessionBuilder {
             details: self.details,
             output_url: self.output_url,
             max_session_duration: self.max_session_duration,
+            access_type: self.access_type,
         }
     }
 }

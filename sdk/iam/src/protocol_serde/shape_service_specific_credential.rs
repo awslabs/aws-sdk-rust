@@ -21,20 +21,21 @@ pub fn de_service_specific_credential(
                 builder = builder.set_create_date(var_1);
             }
             ,
-            s if s.matches("ServiceName") /* ServiceName com.amazonaws.iam#ServiceSpecificCredential$ServiceName */ =>  {
+            s if s.matches("ExpirationDate") /* ExpirationDate com.amazonaws.iam#ServiceSpecificCredential$ExpirationDate */ =>  {
                 let var_2 =
                     Some(
-                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                        ::aws_smithy_types::DateTime::from_str(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
+                            , ::aws_smithy_types::date_time::Format::DateTimeWithOffset
                         )
+                        .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (timestamp: `com.amazonaws.iam#dateType`)"))
                         ?
                     )
                 ;
-                builder = builder.set_service_name(var_2);
+                builder = builder.set_expiration_date(var_2);
             }
             ,
-            s if s.matches("ServiceUserName") /* ServiceUserName com.amazonaws.iam#ServiceSpecificCredential$ServiceUserName */ =>  {
+            s if s.matches("ServiceName") /* ServiceName com.amazonaws.iam#ServiceSpecificCredential$ServiceName */ =>  {
                 let var_3 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -44,10 +45,10 @@ pub fn de_service_specific_credential(
                         ?
                     )
                 ;
-                builder = builder.set_service_user_name(var_3);
+                builder = builder.set_service_name(var_3);
             }
             ,
-            s if s.matches("ServicePassword") /* ServicePassword com.amazonaws.iam#ServiceSpecificCredential$ServicePassword */ =>  {
+            s if s.matches("ServiceUserName") /* ServiceUserName com.amazonaws.iam#ServiceSpecificCredential$ServiceUserName */ =>  {
                 let var_4 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -57,10 +58,10 @@ pub fn de_service_specific_credential(
                         ?
                     )
                 ;
-                builder = builder.set_service_password(var_4);
+                builder = builder.set_service_user_name(var_4);
             }
             ,
-            s if s.matches("ServiceSpecificCredentialId") /* ServiceSpecificCredentialId com.amazonaws.iam#ServiceSpecificCredential$ServiceSpecificCredentialId */ =>  {
+            s if s.matches("ServicePassword") /* ServicePassword com.amazonaws.iam#ServiceSpecificCredential$ServicePassword */ =>  {
                 let var_5 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -70,10 +71,10 @@ pub fn de_service_specific_credential(
                         ?
                     )
                 ;
-                builder = builder.set_service_specific_credential_id(var_5);
+                builder = builder.set_service_password(var_5);
             }
             ,
-            s if s.matches("UserName") /* UserName com.amazonaws.iam#ServiceSpecificCredential$UserName */ =>  {
+            s if s.matches("ServiceCredentialAlias") /* ServiceCredentialAlias com.amazonaws.iam#ServiceSpecificCredential$ServiceCredentialAlias */ =>  {
                 let var_6 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -83,11 +84,50 @@ pub fn de_service_specific_credential(
                         ?
                     )
                 ;
-                builder = builder.set_user_name(var_6);
+                builder = builder.set_service_credential_alias(var_6);
+            }
+            ,
+            s if s.matches("ServiceCredentialSecret") /* ServiceCredentialSecret com.amazonaws.iam#ServiceSpecificCredential$ServiceCredentialSecret */ =>  {
+                let var_7 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_service_credential_secret(var_7);
+            }
+            ,
+            s if s.matches("ServiceSpecificCredentialId") /* ServiceSpecificCredentialId com.amazonaws.iam#ServiceSpecificCredential$ServiceSpecificCredentialId */ =>  {
+                let var_8 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_service_specific_credential_id(var_8);
+            }
+            ,
+            s if s.matches("UserName") /* UserName com.amazonaws.iam#ServiceSpecificCredential$UserName */ =>  {
+                let var_9 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_user_name(var_9);
             }
             ,
             s if s.matches("Status") /* Status com.amazonaws.iam#ServiceSpecificCredential$Status */ =>  {
-                let var_7 =
+                let var_10 =
                     Some(
                         Result::<crate::types::StatusType, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             crate::types::StatusType::from(
@@ -97,7 +137,7 @@ pub fn de_service_specific_credential(
                         ?
                     )
                 ;
-                builder = builder.set_status(var_7);
+                builder = builder.set_status(var_10);
             }
             ,
             _ => {}

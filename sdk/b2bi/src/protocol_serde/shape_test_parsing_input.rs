@@ -18,5 +18,11 @@ pub fn ser_test_parsing_input_input(
         crate::protocol_serde::shape_edi_type::ser_edi_type(&mut object_5, var_4)?;
         object_5.finish();
     }
+    if let Some(var_6) = &input.advanced_options {
+        #[allow(unused_mut)]
+        let mut object_7 = object.key("advancedOptions").start_object();
+        crate::protocol_serde::shape_advanced_options::ser_advanced_options(&mut object_7, var_6)?;
+        object_7.finish();
+    }
     Ok(())
 }

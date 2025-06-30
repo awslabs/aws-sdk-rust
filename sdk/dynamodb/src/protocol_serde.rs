@@ -385,6 +385,8 @@ pub(crate) mod shape_global_table_global_secondary_index_settings_update;
 
 pub(crate) mod shape_global_table_list;
 
+pub(crate) mod shape_global_table_witness_group_update;
+
 pub(crate) mod shape_import_summary_list;
 
 pub(crate) mod shape_import_table_description;
@@ -487,6 +489,8 @@ pub(crate) mod shape_contributor_insights_summary;
 
 pub(crate) mod shape_create_global_secondary_index_action;
 
+pub(crate) mod shape_create_global_table_witness_group_member_action;
+
 pub(crate) mod shape_create_replica_action;
 
 pub(crate) mod shape_create_replication_group_member_action;
@@ -496,6 +500,8 @@ pub(crate) mod shape_csv_options;
 pub(crate) mod shape_delete;
 
 pub(crate) mod shape_delete_global_secondary_index_action;
+
+pub(crate) mod shape_delete_global_table_witness_group_member_action;
 
 pub(crate) mod shape_delete_replica_action;
 
@@ -512,6 +518,8 @@ pub(crate) mod shape_get;
 pub(crate) mod shape_global_secondary_index_description_list;
 
 pub(crate) mod shape_global_table;
+
+pub(crate) mod shape_global_table_witness_description_list;
 
 pub(crate) mod shape_import_summary;
 
@@ -588,6 +596,8 @@ pub(crate) mod shape_global_secondary_index_description;
 pub(crate) mod shape_global_secondary_index_list;
 
 pub(crate) mod shape_global_secondary_indexes;
+
+pub(crate) mod shape_global_table_witness_description;
 
 pub(crate) mod shape_key_list;
 

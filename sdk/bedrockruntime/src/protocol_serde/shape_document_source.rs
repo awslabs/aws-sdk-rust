@@ -13,6 +13,21 @@ pub fn ser_document_source(
             crate::protocol_serde::shape_s3_location::ser_s3_location(&mut object_1, inner)?;
             object_1.finish();
         }
+        crate::types::DocumentSource::Text(inner) => {
+            object_2.key("text").string(inner.as_str());
+        }
+        crate::types::DocumentSource::Content(inner) => {
+            let mut array_2 = object_2.key("content").start_array();
+            for item_3 in inner {
+                {
+                    #[allow(unused_mut)]
+                    let mut object_4 = array_2.value().start_object();
+                    crate::protocol_serde::shape_document_content_block::ser_document_content_block(&mut object_4, item_3)?;
+                    object_4.finish();
+                }
+            }
+            array_2.finish();
+        }
         crate::types::DocumentSource::Unknown => {
             return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant(
                 "DocumentSource",
@@ -59,6 +74,17 @@ where
                         "s3Location" => Some(crate::types::DocumentSource::S3Location(
                             crate::protocol_serde::shape_s3_location::de_s3_location(tokens)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 's3Location' cannot be null")
+                            })?,
+                        )),
+                        "text" => Some(crate::types::DocumentSource::Text(
+                            ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                .transpose()?
+                                .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'text' cannot be null"))?,
+                        )),
+                        "content" => Some(crate::types::DocumentSource::Content(
+                            crate::protocol_serde::shape_document_content_blocks::de_document_content_blocks(tokens)?.ok_or_else(|| {
+                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'content' cannot be null")
                             })?,
                         )),
                         _ => {

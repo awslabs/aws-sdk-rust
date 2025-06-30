@@ -84,6 +84,21 @@ pub fn de_update_document_metadata_http_error(
             }
             tmp
         }),
+        "TooManyUpdates" => crate::operation::update_document_metadata::UpdateDocumentMetadataError::TooManyUpdates({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::TooManyUpdatesBuilder::default();
+                output = crate::protocol_serde::shape_too_many_updates::de_too_many_updates_json_err(_response_body, output)
+                    .map_err(crate::operation::update_document_metadata::UpdateDocumentMetadataError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::operation::update_document_metadata::UpdateDocumentMetadataError::generic(generic),
     })
 }

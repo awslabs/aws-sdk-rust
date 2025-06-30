@@ -193,6 +193,8 @@ pub(crate) mod shape_any_tool_choice;
 
 pub(crate) mod shape_auto_tool_choice;
 
+pub(crate) mod shape_citations_content_block;
+
 pub(crate) mod shape_content_blocks;
 
 pub(crate) mod shape_document_block;
@@ -235,6 +237,12 @@ pub(crate) mod shape_tool_use_block;
 
 pub(crate) mod shape_video_block;
 
+pub(crate) mod shape_citation;
+
+pub(crate) mod shape_citation_generated_content;
+
+pub(crate) mod shape_citations_config;
+
 pub(crate) mod shape_content_block_delta;
 
 pub(crate) mod shape_content_block_start;
@@ -271,6 +279,14 @@ pub(crate) mod shape_tool_result_content_block;
 
 pub(crate) mod shape_video_source;
 
+pub(crate) mod shape_citation_location;
+
+pub(crate) mod shape_citation_source_content;
+
+pub(crate) mod shape_citations_delta;
+
+pub(crate) mod shape_document_content_block;
+
 pub(crate) mod shape_guardrail_content_filter;
 
 pub(crate) mod shape_guardrail_contextual_grounding_filter;
@@ -293,6 +309,24 @@ pub(crate) mod shape_tool_use_block_delta;
 
 pub(crate) mod shape_tool_use_block_start;
 
+pub(crate) mod shape_citation_generated_content_list;
+
+pub(crate) mod shape_citation_source_content_list_delta;
+
+pub(crate) mod shape_citations;
+
+pub(crate) mod shape_document_char_location;
+
+pub(crate) mod shape_document_chunk_location;
+
+pub(crate) mod shape_document_page_location;
+
 pub(crate) mod shape_tool_result_content_blocks;
 
+pub(crate) mod shape_citation_source_content_delta;
+
+pub(crate) mod shape_document_content_blocks;
+
 pub(crate) mod shape_guardrail_converse_content_qualifier_list;
+
+pub(crate) mod shape_citation_source_content_list;

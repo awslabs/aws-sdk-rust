@@ -39,7 +39,7 @@ impl crate::operation::create_open_id_connect_provider::builders::CreateOpenIdCo
 /// <p>You get all of this information from the OIDC IdP you want to use to access Amazon Web Services.</p><note>
 /// <p>Amazon Web Services secures communication with OIDC identity providers (IdPs) using our library of trusted root certificate authorities (CAs) to verify the JSON Web Key Set (JWKS) endpoint's TLS certificate. If your OIDC IdP relies on a certificate that is not signed by one of these trusted CAs, only then we secure communication using the thumbprints set in the IdP's configuration.</p>
 /// </note> <note>
-/// <p>The trust for the OIDC provider is derived from the IAM provider that this operation creates. Therefore, it is best to limit access to the <code>CreateOpenIDConnectProvider</code> operation to highly privileged users.</p>
+/// <p>The trust for the OIDC provider is derived from the IAM provider that this operation creates. Therefore, it is best to limit access to the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateOpenIDConnectProvider.html">CreateOpenIDConnectProvider</a> operation to highly privileged users.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateOpenIDConnectProviderFluentBuilder {

@@ -90,5 +90,8 @@ pub fn ser_create_server_input_input(
         crate::protocol_serde::shape_s3_storage_options::ser_s3_storage_options(&mut object_29, var_28)?;
         object_29.finish();
     }
+    if let Some(var_30) = &input.ip_address_type {
+        object.key("IpAddressType").string(var_30.as_str());
+    }
     Ok(())
 }

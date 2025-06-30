@@ -13,11 +13,14 @@
 /// # let replicastatus = unimplemented!();
 /// match replicastatus {
 ///     ReplicaStatus::Active => { /* ... */ },
+///     ReplicaStatus::Archived => { /* ... */ },
+///     ReplicaStatus::Archiving => { /* ... */ },
 ///     ReplicaStatus::Creating => { /* ... */ },
 ///     ReplicaStatus::CreationFailed => { /* ... */ },
 ///     ReplicaStatus::Deleting => { /* ... */ },
 ///     ReplicaStatus::InaccessibleEncryptionCredentials => { /* ... */ },
 ///     ReplicaStatus::RegionDisabled => { /* ... */ },
+///     ReplicaStatus::ReplicationNotAuthorized => { /* ... */ },
 ///     ReplicaStatus::Updating => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -50,6 +53,10 @@ pub enum ReplicaStatus {
     #[allow(missing_docs)] // documentation missing in model
     Active,
     #[allow(missing_docs)] // documentation missing in model
+    Archived,
+    #[allow(missing_docs)] // documentation missing in model
+    Archiving,
+    #[allow(missing_docs)] // documentation missing in model
     Creating,
     #[allow(missing_docs)] // documentation missing in model
     CreationFailed,
@@ -60,6 +67,8 @@ pub enum ReplicaStatus {
     #[allow(missing_docs)] // documentation missing in model
     RegionDisabled,
     #[allow(missing_docs)] // documentation missing in model
+    ReplicationNotAuthorized,
+    #[allow(missing_docs)] // documentation missing in model
     Updating,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
@@ -69,11 +78,14 @@ impl ::std::convert::From<&str> for ReplicaStatus {
     fn from(s: &str) -> Self {
         match s {
             "ACTIVE" => ReplicaStatus::Active,
+            "ARCHIVED" => ReplicaStatus::Archived,
+            "ARCHIVING" => ReplicaStatus::Archiving,
             "CREATING" => ReplicaStatus::Creating,
             "CREATION_FAILED" => ReplicaStatus::CreationFailed,
             "DELETING" => ReplicaStatus::Deleting,
             "INACCESSIBLE_ENCRYPTION_CREDENTIALS" => ReplicaStatus::InaccessibleEncryptionCredentials,
             "REGION_DISABLED" => ReplicaStatus::RegionDisabled,
+            "REPLICATION_NOT_AUTHORIZED" => ReplicaStatus::ReplicationNotAuthorized,
             "UPDATING" => ReplicaStatus::Updating,
             other => ReplicaStatus::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -91,11 +103,14 @@ impl ReplicaStatus {
     pub fn as_str(&self) -> &str {
         match self {
             ReplicaStatus::Active => "ACTIVE",
+            ReplicaStatus::Archived => "ARCHIVED",
+            ReplicaStatus::Archiving => "ARCHIVING",
             ReplicaStatus::Creating => "CREATING",
             ReplicaStatus::CreationFailed => "CREATION_FAILED",
             ReplicaStatus::Deleting => "DELETING",
             ReplicaStatus::InaccessibleEncryptionCredentials => "INACCESSIBLE_ENCRYPTION_CREDENTIALS",
             ReplicaStatus::RegionDisabled => "REGION_DISABLED",
+            ReplicaStatus::ReplicationNotAuthorized => "REPLICATION_NOT_AUTHORIZED",
             ReplicaStatus::Updating => "UPDATING",
             ReplicaStatus::Unknown(value) => value.as_str(),
         }
@@ -104,11 +119,14 @@ impl ReplicaStatus {
     pub const fn values() -> &'static [&'static str] {
         &[
             "ACTIVE",
+            "ARCHIVED",
+            "ARCHIVING",
             "CREATING",
             "CREATION_FAILED",
             "DELETING",
             "INACCESSIBLE_ENCRYPTION_CREDENTIALS",
             "REGION_DISABLED",
+            "REPLICATION_NOT_AUTHORIZED",
             "UPDATING",
         ]
     }
@@ -134,11 +152,14 @@ impl ::std::fmt::Display for ReplicaStatus {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             ReplicaStatus::Active => write!(f, "ACTIVE"),
+            ReplicaStatus::Archived => write!(f, "ARCHIVED"),
+            ReplicaStatus::Archiving => write!(f, "ARCHIVING"),
             ReplicaStatus::Creating => write!(f, "CREATING"),
             ReplicaStatus::CreationFailed => write!(f, "CREATION_FAILED"),
             ReplicaStatus::Deleting => write!(f, "DELETING"),
             ReplicaStatus::InaccessibleEncryptionCredentials => write!(f, "INACCESSIBLE_ENCRYPTION_CREDENTIALS"),
             ReplicaStatus::RegionDisabled => write!(f, "REGION_DISABLED"),
+            ReplicaStatus::ReplicationNotAuthorized => write!(f, "REPLICATION_NOT_AUTHORIZED"),
             ReplicaStatus::Updating => write!(f, "UPDATING"),
             ReplicaStatus::Unknown(value) => write!(f, "{}", value),
         }

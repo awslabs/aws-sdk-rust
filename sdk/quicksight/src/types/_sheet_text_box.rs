@@ -8,6 +8,8 @@ pub struct SheetTextBox {
     pub sheet_text_box_id: ::std::string::String,
     /// <p>The content that is displayed in the text box.</p>
     pub content: ::std::option::Option<::std::string::String>,
+    /// <p>The general textbox interactions setup for a textbox.</p>
+    pub interactions: ::std::option::Option<crate::types::TextBoxInteractionOptions>,
 }
 impl SheetTextBox {
     /// <p>The unique identifier for a text box. This identifier must be unique within the context of a dashboard, template, or analysis. Two dashboards, analyses, or templates can have text boxes that share identifiers.</p>
@@ -18,6 +20,10 @@ impl SheetTextBox {
     /// <p>The content that is displayed in the text box.</p>
     pub fn content(&self) -> ::std::option::Option<&str> {
         self.content.as_deref()
+    }
+    /// <p>The general textbox interactions setup for a textbox.</p>
+    pub fn interactions(&self) -> ::std::option::Option<&crate::types::TextBoxInteractionOptions> {
+        self.interactions.as_ref()
     }
 }
 impl SheetTextBox {
@@ -33,6 +39,7 @@ impl SheetTextBox {
 pub struct SheetTextBoxBuilder {
     pub(crate) sheet_text_box_id: ::std::option::Option<::std::string::String>,
     pub(crate) content: ::std::option::Option<::std::string::String>,
+    pub(crate) interactions: ::std::option::Option<crate::types::TextBoxInteractionOptions>,
 }
 impl SheetTextBoxBuilder {
     /// <p>The unique identifier for a text box. This identifier must be unique within the context of a dashboard, template, or analysis. Two dashboards, analyses, or templates can have text boxes that share identifiers.</p>
@@ -64,6 +71,20 @@ impl SheetTextBoxBuilder {
     pub fn get_content(&self) -> &::std::option::Option<::std::string::String> {
         &self.content
     }
+    /// <p>The general textbox interactions setup for a textbox.</p>
+    pub fn interactions(mut self, input: crate::types::TextBoxInteractionOptions) -> Self {
+        self.interactions = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The general textbox interactions setup for a textbox.</p>
+    pub fn set_interactions(mut self, input: ::std::option::Option<crate::types::TextBoxInteractionOptions>) -> Self {
+        self.interactions = input;
+        self
+    }
+    /// <p>The general textbox interactions setup for a textbox.</p>
+    pub fn get_interactions(&self) -> &::std::option::Option<crate::types::TextBoxInteractionOptions> {
+        &self.interactions
+    }
     /// Consumes the builder and constructs a [`SheetTextBox`](crate::types::SheetTextBox).
     /// This method will fail if any of the following fields are not set:
     /// - [`sheet_text_box_id`](crate::types::builders::SheetTextBoxBuilder::sheet_text_box_id)
@@ -76,6 +97,7 @@ impl SheetTextBoxBuilder {
                 )
             })?,
             content: self.content,
+            interactions: self.interactions,
         })
     }
 }

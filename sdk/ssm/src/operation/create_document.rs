@@ -267,6 +267,8 @@ pub enum CreateDocumentError {
     InvalidDocumentSchemaVersion(crate::types::error::InvalidDocumentSchemaVersion),
     /// <p>The size limit of a document is 64 KB.</p>
     MaxDocumentSizeExceeded(crate::types::error::MaxDocumentSizeExceeded),
+    /// <p>There are concurrent updates for a resource that supports one update at a time.</p>
+    TooManyUpdates(crate::types::error::TooManyUpdates),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \
     variable wildcard pattern and check `.code()`:
@@ -306,6 +308,7 @@ impl CreateDocumentError {
             Self::InvalidDocumentContent(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidDocumentSchemaVersion(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::MaxDocumentSizeExceeded(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::TooManyUpdates(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::Unhandled(e) => &e.meta,
         }
     }
@@ -333,6 +336,10 @@ impl CreateDocumentError {
     pub fn is_max_document_size_exceeded(&self) -> bool {
         matches!(self, Self::MaxDocumentSizeExceeded(_))
     }
+    /// Returns `true` if the error kind is `CreateDocumentError::TooManyUpdates`.
+    pub fn is_too_many_updates(&self) -> bool {
+        matches!(self, Self::TooManyUpdates(_))
+    }
 }
 impl ::std::error::Error for CreateDocumentError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
@@ -343,6 +350,7 @@ impl ::std::error::Error for CreateDocumentError {
             Self::InvalidDocumentContent(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidDocumentSchemaVersion(_inner) => ::std::option::Option::Some(_inner),
             Self::MaxDocumentSizeExceeded(_inner) => ::std::option::Option::Some(_inner),
+            Self::TooManyUpdates(_inner) => ::std::option::Option::Some(_inner),
             Self::Unhandled(_inner) => ::std::option::Option::Some(&*_inner.source),
         }
     }
@@ -356,6 +364,7 @@ impl ::std::fmt::Display for CreateDocumentError {
             Self::InvalidDocumentContent(_inner) => _inner.fmt(f),
             Self::InvalidDocumentSchemaVersion(_inner) => _inner.fmt(f),
             Self::MaxDocumentSizeExceeded(_inner) => _inner.fmt(f),
+            Self::TooManyUpdates(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => {
                 if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self) {
                     write!(f, "unhandled error ({code})")
@@ -383,6 +392,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for CreateDocumen
             Self::InvalidDocumentContent(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidDocumentSchemaVersion(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::MaxDocumentSizeExceeded(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::TooManyUpdates(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::Unhandled(_inner) => &_inner.meta,
         }
     }

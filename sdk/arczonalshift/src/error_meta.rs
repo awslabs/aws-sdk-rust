@@ -64,6 +64,35 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::cancel_practice_run::CancelPracticeRunError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::cancel_practice_run::CancelPracticeRunError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::cancel_practice_run::CancelPracticeRunError> for Error {
+    fn from(err: crate::operation::cancel_practice_run::CancelPracticeRunError) -> Self {
+        match err {
+            crate::operation::cancel_practice_run::CancelPracticeRunError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::cancel_practice_run::CancelPracticeRunError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::cancel_practice_run::CancelPracticeRunError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::cancel_practice_run::CancelPracticeRunError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::cancel_practice_run::CancelPracticeRunError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::cancel_practice_run::CancelPracticeRunError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::cancel_practice_run::CancelPracticeRunError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::cancel_zonal_shift::CancelZonalShiftError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -336,6 +365,33 @@ impl From<crate::operation::list_zonal_shifts::ListZonalShiftsError> for Error {
             crate::operation::list_zonal_shifts::ListZonalShiftsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::list_zonal_shifts::ListZonalShiftsError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::list_zonal_shifts::ListZonalShiftsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_practice_run::StartPracticeRunError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_practice_run::StartPracticeRunError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::start_practice_run::StartPracticeRunError> for Error {
+    fn from(err: crate::operation::start_practice_run::StartPracticeRunError) -> Self {
+        match err {
+            crate::operation::start_practice_run::StartPracticeRunError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::start_practice_run::StartPracticeRunError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::start_practice_run::StartPracticeRunError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::start_practice_run::StartPracticeRunError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::start_practice_run::StartPracticeRunError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::start_practice_run::StartPracticeRunError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::start_practice_run::StartPracticeRunError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

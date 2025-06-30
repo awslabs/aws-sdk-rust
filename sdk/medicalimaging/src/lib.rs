@@ -18,37 +18,7 @@
 #![forbid(unsafe_code)]
 #![warn(missing_docs)]
 #![cfg_attr(docsrs, feature(doc_auto_cfg))]
-//! This is the _AWS HealthImaging API Reference_. AWS HealthImaging is a HIPAA eligible service that empowers healthcare providers, life science organizations, and their software partners to store, analyze, and share medical images in the cloud at petabyte scale. For an introduction to the service, see the [_AWS HealthImaging Developer Guide_](https://docs.aws.amazon.com/healthimaging/latest/devguide/what-is.html).
-//!
-//! The following sections list AWS HealthImaging API actions categorized according to functionality. Links are provided to actions within this Reference, along with links back to corresponding sections in the _AWS HealthImaging Developer Guide_ where you can view tested code examples.
-//!
-//! __Data store actions__
-//!   - [CreateDatastore](https://docs.aws.amazon.com/healthimaging/latest/APIReference/API_CreateDatastore.html) – See [Creating a data store](https://docs.aws.amazon.com/healthimaging/latest/devguide/create-data-store.html).
-//!   - [GetDatastore](https://docs.aws.amazon.com/healthimaging/latest/APIReference/API_GetDatastore.html) – See [Getting data store properties](https://docs.aws.amazon.com/healthimaging/latest/devguide/get-data-store.html).
-//!   - [ListDatastores](https://docs.aws.amazon.com/healthimaging/latest/APIReference/API_ListDatastores.html) – See [Listing data stores](https://docs.aws.amazon.com/healthimaging/latest/devguide/list-data-stores.html).
-//!   - [DeleteDatastore](https://docs.aws.amazon.com/healthimaging/latest/APIReference/API_DeleteDatastore.html) – See [Deleting a data store](https://docs.aws.amazon.com/healthimaging/latest/devguide/delete-data-store.html).
-//!
-//! __Import job actions__
-//!   - [StartDICOMImportJob](https://docs.aws.amazon.com/healthimaging/latest/APIReference/API_StartDICOMImportJob.html) – See [Starting an import job](https://docs.aws.amazon.com/healthimaging/latest/devguide/start-dicom-import-job.html).
-//!   - [GetDICOMImportJob](https://docs.aws.amazon.com/healthimaging/latest/APIReference/API_GetDICOMImportJob.html) – See [Getting import job properties](https://docs.aws.amazon.com/healthimaging/latest/devguide/get-dicom-import-job.html).
-//!   - [ListDICOMImportJobs](https://docs.aws.amazon.com/healthimaging/latest/APIReference/API_ListDICOMImportJobs.html) – See [Listing import jobs](https://docs.aws.amazon.com/healthimaging/latest/devguide/list-dicom-import-jobs.html).
-//!
-//! __Image set access actions__
-//!   - [SearchImageSets](https://docs.aws.amazon.com/healthimaging/latest/APIReference/API_SearchImageSets.html) – See [Searching image sets](https://docs.aws.amazon.com/healthimaging/latest/devguide/search-image-sets.html).
-//!   - [GetImageSet](https://docs.aws.amazon.com/healthimaging/latest/APIReference/API_GetImageSet.html) – See [Getting image set properties](https://docs.aws.amazon.com/healthimaging/latest/devguide/get-image-set-properties.html).
-//!   - [GetImageSetMetadata](https://docs.aws.amazon.com/healthimaging/latest/APIReference/API_GetImageSetMetadata.html) – See [Getting image set metadata](https://docs.aws.amazon.com/healthimaging/latest/devguide/get-image-set-metadata.html).
-//!   - [GetImageFrame](https://docs.aws.amazon.com/healthimaging/latest/APIReference/API_GetImageFrame.html) – See [Getting image set pixel data](https://docs.aws.amazon.com/healthimaging/latest/devguide/get-image-frame.html).
-//!
-//! __Image set modification actions__
-//!   - [ListImageSetVersions](https://docs.aws.amazon.com/healthimaging/latest/APIReference/API_ListImageSetVersions.html) – See [Listing image set versions](https://docs.aws.amazon.com/healthimaging/latest/devguide/list-image-set-versions.html).
-//!   - [UpdateImageSetMetadata](https://docs.aws.amazon.com/healthimaging/latest/APIReference/API_UpdateImageSetMetadata.html) – See [Updating image set metadata](https://docs.aws.amazon.com/healthimaging/latest/devguide/update-image-set-metadata.html).
-//!   - [CopyImageSet](https://docs.aws.amazon.com/healthimaging/latest/APIReference/API_CopyImageSet.html) – See [Copying an image set](https://docs.aws.amazon.com/healthimaging/latest/devguide/copy-image-set.html).
-//!   - [DeleteImageSet](https://docs.aws.amazon.com/healthimaging/latest/APIReference/API_DeleteImageSet.html) – See [Deleting an image set](https://docs.aws.amazon.com/healthimaging/latest/devguide/delete-image-set.html).
-//!
-//! __Tagging actions__
-//!   - [TagResource](https://docs.aws.amazon.com/healthimaging/latest/APIReference/API_TagResource.html) – See [Tagging a resource](https://docs.aws.amazon.com/healthimaging/latest/devguide/tag-resource.html).
-//!   - [ListTagsForResource](https://docs.aws.amazon.com/healthimaging/latest/APIReference/API_ListTagsForResource.html) – See [Listing tags for a resource](https://docs.aws.amazon.com/healthimaging/latest/devguide/list-tag-resource.html).
-//!   - [UntagResource](https://docs.aws.amazon.com/healthimaging/latest/APIReference/API_UntagResource.html) – See [Untagging a resource](https://docs.aws.amazon.com/healthimaging/latest/devguide/untag-resource.html).
+//! This is the _AWS HealthImaging API Reference_. For an introduction to the service, see [What is AWS HealthImaging?](https://docs.aws.amazon.com/healthimaging/latest/devguide/what-is.html) in the _AWS HealthImaging Developer Guide_.
 //!
 //! ## Getting Started
 //!
@@ -62,7 +32,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-//! aws-sdk-medicalimaging = "1.76.0"
+//! aws-sdk-medicalimaging = "1.77.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!

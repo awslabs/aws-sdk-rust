@@ -12,6 +12,29 @@ pub struct X12OutboundEdiHeaders {
     pub delimiters: ::std::option::Option<crate::types::X12Delimiters>,
     /// <p>Specifies whether or not to validate the EDI for this X12 object: <code>TRUE</code> or <code>FALSE</code>.</p>
     pub validate_edi: ::std::option::Option<bool>,
+    /// <p>Specifies control number configuration for outbound X12 EDI headers. These settings determine the starting values for interchange, functional group, and transaction set control numbers.</p>
+    pub control_numbers: ::std::option::Option<crate::types::X12ControlNumbers>,
+    /// <p>Specifies the time format in the GS05 element (time) of the functional group header. The following formats use 24-hour clock time:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>HHMM</code> - Hours and minutes</p></li>
+    /// <li>
+    /// <p><code>HHMMSS</code> - Hours, minutes, and seconds</p></li>
+    /// <li>
+    /// <p><code>HHMMSSDD</code> - Hours, minutes, seconds, and decimal seconds</p></li>
+    /// </ul>
+    /// <p>Where:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>HH</code> - Hours (00-23)</p></li>
+    /// <li>
+    /// <p><code>MM</code> - Minutes (00-59)</p></li>
+    /// <li>
+    /// <p><code>SS</code> - Seconds (00-59)</p></li>
+    /// <li>
+    /// <p><code>DD</code> - Hundredths of seconds (00-99)</p></li>
+    /// </ul>
+    pub gs05_time_format: ::std::option::Option<crate::types::X12Gs05TimeFormat>,
 }
 impl X12OutboundEdiHeaders {
     /// <p>In X12 EDI messages, delimiters are used to mark the end of segments or elements, and are defined in the interchange control header.</p>
@@ -30,6 +53,33 @@ impl X12OutboundEdiHeaders {
     pub fn validate_edi(&self) -> ::std::option::Option<bool> {
         self.validate_edi
     }
+    /// <p>Specifies control number configuration for outbound X12 EDI headers. These settings determine the starting values for interchange, functional group, and transaction set control numbers.</p>
+    pub fn control_numbers(&self) -> ::std::option::Option<&crate::types::X12ControlNumbers> {
+        self.control_numbers.as_ref()
+    }
+    /// <p>Specifies the time format in the GS05 element (time) of the functional group header. The following formats use 24-hour clock time:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>HHMM</code> - Hours and minutes</p></li>
+    /// <li>
+    /// <p><code>HHMMSS</code> - Hours, minutes, and seconds</p></li>
+    /// <li>
+    /// <p><code>HHMMSSDD</code> - Hours, minutes, seconds, and decimal seconds</p></li>
+    /// </ul>
+    /// <p>Where:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>HH</code> - Hours (00-23)</p></li>
+    /// <li>
+    /// <p><code>MM</code> - Minutes (00-59)</p></li>
+    /// <li>
+    /// <p><code>SS</code> - Seconds (00-59)</p></li>
+    /// <li>
+    /// <p><code>DD</code> - Hundredths of seconds (00-99)</p></li>
+    /// </ul>
+    pub fn gs05_time_format(&self) -> ::std::option::Option<&crate::types::X12Gs05TimeFormat> {
+        self.gs05_time_format.as_ref()
+    }
 }
 impl X12OutboundEdiHeaders {
     /// Creates a new builder-style object to manufacture [`X12OutboundEdiHeaders`](crate::types::X12OutboundEdiHeaders).
@@ -46,6 +96,8 @@ pub struct X12OutboundEdiHeadersBuilder {
     pub(crate) functional_group_headers: ::std::option::Option<crate::types::X12FunctionalGroupHeaders>,
     pub(crate) delimiters: ::std::option::Option<crate::types::X12Delimiters>,
     pub(crate) validate_edi: ::std::option::Option<bool>,
+    pub(crate) control_numbers: ::std::option::Option<crate::types::X12ControlNumbers>,
+    pub(crate) gs05_time_format: ::std::option::Option<crate::types::X12Gs05TimeFormat>,
 }
 impl X12OutboundEdiHeadersBuilder {
     /// <p>In X12 EDI messages, delimiters are used to mark the end of segments or elements, and are defined in the interchange control header.</p>
@@ -104,6 +156,91 @@ impl X12OutboundEdiHeadersBuilder {
     pub fn get_validate_edi(&self) -> &::std::option::Option<bool> {
         &self.validate_edi
     }
+    /// <p>Specifies control number configuration for outbound X12 EDI headers. These settings determine the starting values for interchange, functional group, and transaction set control numbers.</p>
+    pub fn control_numbers(mut self, input: crate::types::X12ControlNumbers) -> Self {
+        self.control_numbers = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies control number configuration for outbound X12 EDI headers. These settings determine the starting values for interchange, functional group, and transaction set control numbers.</p>
+    pub fn set_control_numbers(mut self, input: ::std::option::Option<crate::types::X12ControlNumbers>) -> Self {
+        self.control_numbers = input;
+        self
+    }
+    /// <p>Specifies control number configuration for outbound X12 EDI headers. These settings determine the starting values for interchange, functional group, and transaction set control numbers.</p>
+    pub fn get_control_numbers(&self) -> &::std::option::Option<crate::types::X12ControlNumbers> {
+        &self.control_numbers
+    }
+    /// <p>Specifies the time format in the GS05 element (time) of the functional group header. The following formats use 24-hour clock time:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>HHMM</code> - Hours and minutes</p></li>
+    /// <li>
+    /// <p><code>HHMMSS</code> - Hours, minutes, and seconds</p></li>
+    /// <li>
+    /// <p><code>HHMMSSDD</code> - Hours, minutes, seconds, and decimal seconds</p></li>
+    /// </ul>
+    /// <p>Where:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>HH</code> - Hours (00-23)</p></li>
+    /// <li>
+    /// <p><code>MM</code> - Minutes (00-59)</p></li>
+    /// <li>
+    /// <p><code>SS</code> - Seconds (00-59)</p></li>
+    /// <li>
+    /// <p><code>DD</code> - Hundredths of seconds (00-99)</p></li>
+    /// </ul>
+    pub fn gs05_time_format(mut self, input: crate::types::X12Gs05TimeFormat) -> Self {
+        self.gs05_time_format = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies the time format in the GS05 element (time) of the functional group header. The following formats use 24-hour clock time:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>HHMM</code> - Hours and minutes</p></li>
+    /// <li>
+    /// <p><code>HHMMSS</code> - Hours, minutes, and seconds</p></li>
+    /// <li>
+    /// <p><code>HHMMSSDD</code> - Hours, minutes, seconds, and decimal seconds</p></li>
+    /// </ul>
+    /// <p>Where:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>HH</code> - Hours (00-23)</p></li>
+    /// <li>
+    /// <p><code>MM</code> - Minutes (00-59)</p></li>
+    /// <li>
+    /// <p><code>SS</code> - Seconds (00-59)</p></li>
+    /// <li>
+    /// <p><code>DD</code> - Hundredths of seconds (00-99)</p></li>
+    /// </ul>
+    pub fn set_gs05_time_format(mut self, input: ::std::option::Option<crate::types::X12Gs05TimeFormat>) -> Self {
+        self.gs05_time_format = input;
+        self
+    }
+    /// <p>Specifies the time format in the GS05 element (time) of the functional group header. The following formats use 24-hour clock time:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>HHMM</code> - Hours and minutes</p></li>
+    /// <li>
+    /// <p><code>HHMMSS</code> - Hours, minutes, and seconds</p></li>
+    /// <li>
+    /// <p><code>HHMMSSDD</code> - Hours, minutes, seconds, and decimal seconds</p></li>
+    /// </ul>
+    /// <p>Where:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>HH</code> - Hours (00-23)</p></li>
+    /// <li>
+    /// <p><code>MM</code> - Minutes (00-59)</p></li>
+    /// <li>
+    /// <p><code>SS</code> - Seconds (00-59)</p></li>
+    /// <li>
+    /// <p><code>DD</code> - Hundredths of seconds (00-99)</p></li>
+    /// </ul>
+    pub fn get_gs05_time_format(&self) -> &::std::option::Option<crate::types::X12Gs05TimeFormat> {
+        &self.gs05_time_format
+    }
     /// Consumes the builder and constructs a [`X12OutboundEdiHeaders`](crate::types::X12OutboundEdiHeaders).
     pub fn build(self) -> crate::types::X12OutboundEdiHeaders {
         crate::types::X12OutboundEdiHeaders {
@@ -111,6 +248,8 @@ impl X12OutboundEdiHeadersBuilder {
             functional_group_headers: self.functional_group_headers,
             delimiters: self.delimiters,
             validate_edi: self.validate_edi,
+            control_numbers: self.control_numbers,
+            gs05_time_format: self.gs05_time_format,
         }
     }
 }

@@ -263,6 +263,8 @@ pub enum DeleteDocumentError {
     InvalidDocument(crate::types::error::InvalidDocument),
     /// <p>You attempted to delete a document while it is still shared. You must stop sharing the document before you can delete it.</p>
     InvalidDocumentOperation(crate::types::error::InvalidDocumentOperation),
+    /// <p>There are concurrent updates for a resource that supports one update at a time.</p>
+    TooManyUpdates(crate::types::error::TooManyUpdates),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \
     variable wildcard pattern and check `.code()`:
@@ -300,6 +302,7 @@ impl DeleteDocumentError {
             Self::InternalServerError(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidDocument(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidDocumentOperation(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::TooManyUpdates(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::Unhandled(e) => &e.meta,
         }
     }
@@ -319,6 +322,10 @@ impl DeleteDocumentError {
     pub fn is_invalid_document_operation(&self) -> bool {
         matches!(self, Self::InvalidDocumentOperation(_))
     }
+    /// Returns `true` if the error kind is `DeleteDocumentError::TooManyUpdates`.
+    pub fn is_too_many_updates(&self) -> bool {
+        matches!(self, Self::TooManyUpdates(_))
+    }
 }
 impl ::std::error::Error for DeleteDocumentError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
@@ -327,6 +334,7 @@ impl ::std::error::Error for DeleteDocumentError {
             Self::InternalServerError(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidDocument(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidDocumentOperation(_inner) => ::std::option::Option::Some(_inner),
+            Self::TooManyUpdates(_inner) => ::std::option::Option::Some(_inner),
             Self::Unhandled(_inner) => ::std::option::Option::Some(&*_inner.source),
         }
     }
@@ -338,6 +346,7 @@ impl ::std::fmt::Display for DeleteDocumentError {
             Self::InternalServerError(_inner) => _inner.fmt(f),
             Self::InvalidDocument(_inner) => _inner.fmt(f),
             Self::InvalidDocumentOperation(_inner) => _inner.fmt(f),
+            Self::TooManyUpdates(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => {
                 if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self) {
                     write!(f, "unhandled error ({code})")
@@ -363,6 +372,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for DeleteDocumen
             Self::InternalServerError(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidDocument(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidDocumentOperation(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::TooManyUpdates(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::Unhandled(_inner) => &_inner.meta,
         }
     }

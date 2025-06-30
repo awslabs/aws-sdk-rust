@@ -607,4 +607,48 @@ impl CreateServerFluentBuilder {
     pub fn get_s3_storage_options(&self) -> &::std::option::Option<crate::types::S3StorageOptions> {
         self.inner.get_s3_storage_options()
     }
+    /// <p>Specifies whether to use IPv4 only, or to use dual-stack (IPv4 and IPv6) for your Transfer Family endpoint. The default value is <code>IPV4</code>.</p><important>
+    /// <p>The <code>IpAddressType</code> parameter has the following limitations:</p>
+    /// <ul>
+    /// <li>
+    /// <p>It cannot be changed while the server is online. You must stop the server before modifying this parameter.</p></li>
+    /// <li>
+    /// <p>It cannot be updated to <code>DUALSTACK</code> if the server has <code>AddressAllocationIds</code> specified.</p></li>
+    /// </ul>
+    /// </important> <note>
+    /// <p>When using <code>DUALSTACK</code> as the <code>IpAddressType</code>, you cannot set the <code>AddressAllocationIds</code> parameter for the <a href="https://docs.aws.amazon.com/transfer/latest/APIReference/API_EndpointDetails.html">EndpointDetails</a> for the server.</p>
+    /// </note>
+    pub fn ip_address_type(mut self, input: crate::types::IpAddressType) -> Self {
+        self.inner = self.inner.ip_address_type(input);
+        self
+    }
+    /// <p>Specifies whether to use IPv4 only, or to use dual-stack (IPv4 and IPv6) for your Transfer Family endpoint. The default value is <code>IPV4</code>.</p><important>
+    /// <p>The <code>IpAddressType</code> parameter has the following limitations:</p>
+    /// <ul>
+    /// <li>
+    /// <p>It cannot be changed while the server is online. You must stop the server before modifying this parameter.</p></li>
+    /// <li>
+    /// <p>It cannot be updated to <code>DUALSTACK</code> if the server has <code>AddressAllocationIds</code> specified.</p></li>
+    /// </ul>
+    /// </important> <note>
+    /// <p>When using <code>DUALSTACK</code> as the <code>IpAddressType</code>, you cannot set the <code>AddressAllocationIds</code> parameter for the <a href="https://docs.aws.amazon.com/transfer/latest/APIReference/API_EndpointDetails.html">EndpointDetails</a> for the server.</p>
+    /// </note>
+    pub fn set_ip_address_type(mut self, input: ::std::option::Option<crate::types::IpAddressType>) -> Self {
+        self.inner = self.inner.set_ip_address_type(input);
+        self
+    }
+    /// <p>Specifies whether to use IPv4 only, or to use dual-stack (IPv4 and IPv6) for your Transfer Family endpoint. The default value is <code>IPV4</code>.</p><important>
+    /// <p>The <code>IpAddressType</code> parameter has the following limitations:</p>
+    /// <ul>
+    /// <li>
+    /// <p>It cannot be changed while the server is online. You must stop the server before modifying this parameter.</p></li>
+    /// <li>
+    /// <p>It cannot be updated to <code>DUALSTACK</code> if the server has <code>AddressAllocationIds</code> specified.</p></li>
+    /// </ul>
+    /// </important> <note>
+    /// <p>When using <code>DUALSTACK</code> as the <code>IpAddressType</code>, you cannot set the <code>AddressAllocationIds</code> parameter for the <a href="https://docs.aws.amazon.com/transfer/latest/APIReference/API_EndpointDetails.html">EndpointDetails</a> for the server.</p>
+    /// </note>
+    pub fn get_ip_address_type(&self) -> &::std::option::Option<crate::types::IpAddressType> {
+        self.inner.get_ip_address_type()
+    }
 }

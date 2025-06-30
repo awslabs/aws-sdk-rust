@@ -10,8 +10,12 @@ pub struct ServiceSpecificCredentialMetadata {
     pub status: crate::types::StatusType,
     /// <p>The generated user name for the service-specific credential.</p>
     pub service_user_name: ::std::string::String,
+    /// <p>For Bedrock API keys, this is the public portion of the credential that includes the IAM user name and a suffix containing version and creation information.</p>
+    pub service_credential_alias: ::std::option::Option<::std::string::String>,
     /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the service-specific credential were created.</p>
     pub create_date: ::aws_smithy_types::DateTime,
+    /// <p>The date and time when the service specific credential expires. This field is only present for Bedrock API keys that were created with an expiration period.</p>
+    pub expiration_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The unique identifier for the service-specific credential.</p>
     pub service_specific_credential_id: ::std::string::String,
     /// <p>The name of the service associated with the service-specific credential.</p>
@@ -32,9 +36,17 @@ impl ServiceSpecificCredentialMetadata {
         use std::ops::Deref;
         self.service_user_name.deref()
     }
+    /// <p>For Bedrock API keys, this is the public portion of the credential that includes the IAM user name and a suffix containing version and creation information.</p>
+    pub fn service_credential_alias(&self) -> ::std::option::Option<&str> {
+        self.service_credential_alias.as_deref()
+    }
     /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the service-specific credential were created.</p>
     pub fn create_date(&self) -> &::aws_smithy_types::DateTime {
         &self.create_date
+    }
+    /// <p>The date and time when the service specific credential expires. This field is only present for Bedrock API keys that were created with an expiration period.</p>
+    pub fn expiration_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+        self.expiration_date.as_ref()
     }
     /// <p>The unique identifier for the service-specific credential.</p>
     pub fn service_specific_credential_id(&self) -> &str {
@@ -61,7 +73,9 @@ pub struct ServiceSpecificCredentialMetadataBuilder {
     pub(crate) user_name: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::StatusType>,
     pub(crate) service_user_name: ::std::option::Option<::std::string::String>,
+    pub(crate) service_credential_alias: ::std::option::Option<::std::string::String>,
     pub(crate) create_date: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) expiration_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) service_specific_credential_id: ::std::option::Option<::std::string::String>,
     pub(crate) service_name: ::std::option::Option<::std::string::String>,
 }
@@ -97,7 +111,6 @@ impl ServiceSpecificCredentialMetadataBuilder {
         &self.status
     }
     /// <p>The generated user name for the service-specific credential.</p>
-    /// This field is required.
     pub fn service_user_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_user_name = ::std::option::Option::Some(input.into());
         self
@@ -110,6 +123,20 @@ impl ServiceSpecificCredentialMetadataBuilder {
     /// <p>The generated user name for the service-specific credential.</p>
     pub fn get_service_user_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.service_user_name
+    }
+    /// <p>For Bedrock API keys, this is the public portion of the credential that includes the IAM user name and a suffix containing version and creation information.</p>
+    pub fn service_credential_alias(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.service_credential_alias = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>For Bedrock API keys, this is the public portion of the credential that includes the IAM user name and a suffix containing version and creation information.</p>
+    pub fn set_service_credential_alias(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.service_credential_alias = input;
+        self
+    }
+    /// <p>For Bedrock API keys, this is the public portion of the credential that includes the IAM user name and a suffix containing version and creation information.</p>
+    pub fn get_service_credential_alias(&self) -> &::std::option::Option<::std::string::String> {
+        &self.service_credential_alias
     }
     /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the service-specific credential were created.</p>
     /// This field is required.
@@ -125,6 +152,20 @@ impl ServiceSpecificCredentialMetadataBuilder {
     /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the service-specific credential were created.</p>
     pub fn get_create_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.create_date
+    }
+    /// <p>The date and time when the service specific credential expires. This field is only present for Bedrock API keys that were created with an expiration period.</p>
+    pub fn expiration_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.expiration_date = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The date and time when the service specific credential expires. This field is only present for Bedrock API keys that were created with an expiration period.</p>
+    pub fn set_expiration_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.expiration_date = input;
+        self
+    }
+    /// <p>The date and time when the service specific credential expires. This field is only present for Bedrock API keys that were created with an expiration period.</p>
+    pub fn get_expiration_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.expiration_date
     }
     /// <p>The unique identifier for the service-specific credential.</p>
     /// This field is required.
@@ -160,7 +201,6 @@ impl ServiceSpecificCredentialMetadataBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`user_name`](crate::types::builders::ServiceSpecificCredentialMetadataBuilder::user_name)
     /// - [`status`](crate::types::builders::ServiceSpecificCredentialMetadataBuilder::status)
-    /// - [`service_user_name`](crate::types::builders::ServiceSpecificCredentialMetadataBuilder::service_user_name)
     /// - [`create_date`](crate::types::builders::ServiceSpecificCredentialMetadataBuilder::create_date)
     /// - [`service_specific_credential_id`](crate::types::builders::ServiceSpecificCredentialMetadataBuilder::service_specific_credential_id)
     /// - [`service_name`](crate::types::builders::ServiceSpecificCredentialMetadataBuilder::service_name)
@@ -178,18 +218,15 @@ impl ServiceSpecificCredentialMetadataBuilder {
                     "status was not specified but it is required when building ServiceSpecificCredentialMetadata",
                 )
             })?,
-            service_user_name: self.service_user_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "service_user_name",
-                    "service_user_name was not specified but it is required when building ServiceSpecificCredentialMetadata",
-                )
-            })?,
+            service_user_name: self.service_user_name.unwrap_or_default(),
+            service_credential_alias: self.service_credential_alias,
             create_date: self.create_date.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "create_date",
                     "create_date was not specified but it is required when building ServiceSpecificCredentialMetadata",
                 )
             })?,
+            expiration_date: self.expiration_date,
             service_specific_credential_id: self.service_specific_credential_id.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "service_specific_credential_id",

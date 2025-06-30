@@ -6,6 +6,8 @@
 pub enum ContentBlock {
     /// <p>CachePoint to include in the message.</p>
     CachePoint(crate::types::CachePointBlock),
+    /// <p>A content block that contains both generated text and associated citation information, providing traceability between the response and source documents.</p>
+    CitationsContent(crate::types::CitationsContentBlock),
     /// <p>A document to include in the message.</p>
     Document(crate::types::DocumentBlock),
     /// <p>Contains the content to assess with the guardrail. If you don't specify <code>guardContent</code> in a call to the Converse API, the guardrail (if passed in the Converse API) assesses the entire message.</p>
@@ -48,6 +50,19 @@ impl ContentBlock {
     /// Returns true if this is a [`CachePoint`](crate::types::ContentBlock::CachePoint).
     pub fn is_cache_point(&self) -> bool {
         self.as_cache_point().is_ok()
+    }
+    /// Tries to convert the enum instance into [`CitationsContent`](crate::types::ContentBlock::CitationsContent), extracting the inner [`CitationsContentBlock`](crate::types::CitationsContentBlock).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_citations_content(&self) -> ::std::result::Result<&crate::types::CitationsContentBlock, &Self> {
+        if let ContentBlock::CitationsContent(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`CitationsContent`](crate::types::ContentBlock::CitationsContent).
+    pub fn is_citations_content(&self) -> bool {
+        self.as_citations_content().is_ok()
     }
     /// Tries to convert the enum instance into [`Document`](crate::types::ContentBlock::Document), extracting the inner [`DocumentBlock`](crate::types::DocumentBlock).
     /// Returns `Err(&Self)` if it can't be converted.
@@ -162,6 +177,7 @@ impl ::std::fmt::Debug for ContentBlock {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         match self {
             ContentBlock::CachePoint(val) => f.debug_tuple("CachePoint").field(&val).finish(),
+            ContentBlock::CitationsContent(val) => f.debug_tuple("CitationsContent").field(&val).finish(),
             ContentBlock::Document(val) => f.debug_tuple("Document").field(&val).finish(),
             ContentBlock::GuardContent(val) => f.debug_tuple("GuardContent").field(&val).finish(),
             ContentBlock::Image(val) => f.debug_tuple("Image").field(&val).finish(),

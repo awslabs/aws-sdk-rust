@@ -197,6 +197,20 @@ pub use crate::types::_knowledge_base_retrieval_configuration::KnowledgeBaseRetr
 
 pub use crate::types::_knowledge_base_vector_search_configuration::KnowledgeBaseVectorSearchConfigurationBuilder;
 
+pub use crate::types::_vector_search_reranking_configuration::VectorSearchRerankingConfigurationBuilder;
+
+pub use crate::types::_vector_search_bedrock_reranking_configuration::VectorSearchBedrockRerankingConfigurationBuilder;
+
+pub use crate::types::_metadata_configuration_for_reranking::MetadataConfigurationForRerankingBuilder;
+
+pub use crate::types::_field_for_reranking::FieldForRerankingBuilder;
+
+pub use crate::types::_vector_search_bedrock_reranking_model_configuration::VectorSearchBedrockRerankingModelConfigurationBuilder;
+
+pub use crate::types::_implicit_filter_configuration::ImplicitFilterConfigurationBuilder;
+
+pub use crate::types::_metadata_attribute_schema::MetadataAttributeSchemaBuilder;
+
 pub use crate::types::_filter_attribute::FilterAttributeBuilder;
 
 pub use crate::types::_retrieve_config::RetrieveConfigBuilder;

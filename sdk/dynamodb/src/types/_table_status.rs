@@ -18,6 +18,7 @@
 ///     TableStatus::Creating => { /* ... */ },
 ///     TableStatus::Deleting => { /* ... */ },
 ///     TableStatus::InaccessibleEncryptionCredentials => { /* ... */ },
+///     TableStatus::ReplicationNotAuthorized => { /* ... */ },
 ///     TableStatus::Updating => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -60,6 +61,8 @@ pub enum TableStatus {
     #[allow(missing_docs)] // documentation missing in model
     InaccessibleEncryptionCredentials,
     #[allow(missing_docs)] // documentation missing in model
+    ReplicationNotAuthorized,
+    #[allow(missing_docs)] // documentation missing in model
     Updating,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
@@ -74,6 +77,7 @@ impl ::std::convert::From<&str> for TableStatus {
             "CREATING" => TableStatus::Creating,
             "DELETING" => TableStatus::Deleting,
             "INACCESSIBLE_ENCRYPTION_CREDENTIALS" => TableStatus::InaccessibleEncryptionCredentials,
+            "REPLICATION_NOT_AUTHORIZED" => TableStatus::ReplicationNotAuthorized,
             "UPDATING" => TableStatus::Updating,
             other => TableStatus::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -96,6 +100,7 @@ impl TableStatus {
             TableStatus::Creating => "CREATING",
             TableStatus::Deleting => "DELETING",
             TableStatus::InaccessibleEncryptionCredentials => "INACCESSIBLE_ENCRYPTION_CREDENTIALS",
+            TableStatus::ReplicationNotAuthorized => "REPLICATION_NOT_AUTHORIZED",
             TableStatus::Updating => "UPDATING",
             TableStatus::Unknown(value) => value.as_str(),
         }
@@ -109,6 +114,7 @@ impl TableStatus {
             "CREATING",
             "DELETING",
             "INACCESSIBLE_ENCRYPTION_CREDENTIALS",
+            "REPLICATION_NOT_AUTHORIZED",
             "UPDATING",
         ]
     }
@@ -139,6 +145,7 @@ impl ::std::fmt::Display for TableStatus {
             TableStatus::Creating => write!(f, "CREATING"),
             TableStatus::Deleting => write!(f, "DELETING"),
             TableStatus::InaccessibleEncryptionCredentials => write!(f, "INACCESSIBLE_ENCRYPTION_CREDENTIALS"),
+            TableStatus::ReplicationNotAuthorized => write!(f, "REPLICATION_NOT_AUTHORIZED"),
             TableStatus::Updating => write!(f, "UPDATING"),
             TableStatus::Unknown(value) => write!(f, "{}", value),
         }

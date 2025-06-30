@@ -122,6 +122,11 @@ where
                                 tokens,
                             )?);
                         }
+                        "GlobalTableWitnesses" => {
+                            builder = builder.set_global_table_witnesses(
+                                crate::protocol_serde::shape_global_table_witness_description_list::de_global_table_witness_description_list(tokens)?,
+                            );
+                        }
                         "RestoreSummary" => {
                             builder = builder.set_restore_summary(crate::protocol_serde::shape_restore_summary::de_restore_summary(tokens)?);
                         }

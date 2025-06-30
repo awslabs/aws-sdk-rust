@@ -43,6 +43,9 @@ where
                         "DICOMTags" => {
                             builder = builder.set_dicom_tags(crate::protocol_serde::shape_dicom_tags::de_dicom_tags(tokens)?);
                         }
+                        "isPrimary" => {
+                            builder = builder.set_is_primary(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

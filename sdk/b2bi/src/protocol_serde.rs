@@ -165,6 +165,8 @@ pub(crate) mod shape_update_transformer_input;
 
 pub(crate) mod shape_validation_exception;
 
+pub(crate) mod shape_advanced_options;
+
 pub(crate) mod shape_capability_configuration;
 
 pub(crate) mod shape_capability_list;
@@ -184,6 +186,8 @@ pub(crate) mod shape_instructions_documents;
 pub(crate) mod shape_mapping;
 
 pub(crate) mod shape_output_conversion;
+
+pub(crate) mod shape_parsed_split_file_contents_list;
 
 pub(crate) mod shape_partnership_capabilities;
 
@@ -215,6 +219,8 @@ pub(crate) mod shape_edi_configuration;
 
 pub(crate) mod shape_format_options;
 
+pub(crate) mod shape_inbound_edi_options;
+
 pub(crate) mod shape_input_file_source;
 
 pub(crate) mod shape_key_list;
@@ -231,11 +237,23 @@ pub(crate) mod shape_sample_document_keys;
 
 pub(crate) mod shape_transformer_summary;
 
+pub(crate) mod shape_x12_advanced_options;
+
 pub(crate) mod shape_x12_details;
 
 pub(crate) mod shape_x12_envelope;
 
+pub(crate) mod shape_x12_inbound_edi_options;
+
+pub(crate) mod shape_x12_split_options;
+
+pub(crate) mod shape_wrap_options;
+
+pub(crate) mod shape_x12_acknowledgment_options;
+
 pub(crate) mod shape_x12_outbound_edi_headers;
+
+pub(crate) mod shape_x12_control_numbers;
 
 pub(crate) mod shape_x12_delimiters;
 

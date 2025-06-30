@@ -108,17 +108,23 @@ impl DescribeDocumentFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The name of the SSM document.</p>
+    /// <p>The name of the SSM document.</p><note>
+    /// <p>If you're calling a shared SSM document from a different Amazon Web Services account, <code>Name</code> is the full Amazon Resource Name (ARN) of the document.</p>
+    /// </note>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
         self
     }
-    /// <p>The name of the SSM document.</p>
+    /// <p>The name of the SSM document.</p><note>
+    /// <p>If you're calling a shared SSM document from a different Amazon Web Services account, <code>Name</code> is the full Amazon Resource Name (ARN) of the document.</p>
+    /// </note>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
     }
-    /// <p>The name of the SSM document.</p>
+    /// <p>The name of the SSM document.</p><note>
+    /// <p>If you're calling a shared SSM document from a different Amazon Web Services account, <code>Name</code> is the full Amazon Resource Name (ARN) of the document.</p>
+    /// </note>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_name()
     }

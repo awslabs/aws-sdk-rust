@@ -44,7 +44,7 @@ pub struct StackEvent {
     /// <p><code>WARN</code> Allows provisioning to continue with a warning message.</p></li>
     /// </ul>
     pub hook_failure_mode: ::std::option::Option<crate::types::HookFailureMode>,
-    /// <p>An optional field containing information about the detailed status of the stack event.</p>
+    /// <p>An optional field that contains information about the detailed status of the stack event.</p>
     /// <ul>
     /// <li>
     /// <p><code>CONFIGURATION_COMPLETE</code> - all of the resources in the stack have reached that event. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stack-resource-configuration-complete.html">Understand CloudFormation stack creation events</a> in the <i>CloudFormation User Guide</i>.</p></li>
@@ -128,7 +128,7 @@ impl StackEvent {
     pub fn hook_failure_mode(&self) -> ::std::option::Option<&crate::types::HookFailureMode> {
         self.hook_failure_mode.as_ref()
     }
-    /// <p>An optional field containing information about the detailed status of the stack event.</p>
+    /// <p>An optional field that contains information about the detailed status of the stack event.</p>
     /// <ul>
     /// <li>
     /// <p><code>CONFIGURATION_COMPLETE</code> - all of the resources in the stack have reached that event. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stack-resource-configuration-complete.html">Understand CloudFormation stack creation events</a> in the <i>CloudFormation User Guide</i>.</p></li>
@@ -423,7 +423,7 @@ impl StackEventBuilder {
     pub fn get_hook_failure_mode(&self) -> &::std::option::Option<crate::types::HookFailureMode> {
         &self.hook_failure_mode
     }
-    /// <p>An optional field containing information about the detailed status of the stack event.</p>
+    /// <p>An optional field that contains information about the detailed status of the stack event.</p>
     /// <ul>
     /// <li>
     /// <p><code>CONFIGURATION_COMPLETE</code> - all of the resources in the stack have reached that event. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stack-resource-configuration-complete.html">Understand CloudFormation stack creation events</a> in the <i>CloudFormation User Guide</i>.</p></li>
@@ -436,7 +436,7 @@ impl StackEventBuilder {
         self.detailed_status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>An optional field containing information about the detailed status of the stack event.</p>
+    /// <p>An optional field that contains information about the detailed status of the stack event.</p>
     /// <ul>
     /// <li>
     /// <p><code>CONFIGURATION_COMPLETE</code> - all of the resources in the stack have reached that event. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stack-resource-configuration-complete.html">Understand CloudFormation stack creation events</a> in the <i>CloudFormation User Guide</i>.</p></li>
@@ -449,7 +449,7 @@ impl StackEventBuilder {
         self.detailed_status = input;
         self
     }
-    /// <p>An optional field containing information about the detailed status of the stack event.</p>
+    /// <p>An optional field that contains information about the detailed status of the stack event.</p>
     /// <ul>
     /// <li>
     /// <p><code>CONFIGURATION_COMPLETE</code> - all of the resources in the stack have reached that event. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stack-resource-configuration-complete.html">Understand CloudFormation stack creation events</a> in the <i>CloudFormation User Guide</i>.</p></li>

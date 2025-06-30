@@ -6,11 +6,17 @@
 pub struct IntegrationConfig {
     /// <p>Specifies the frequency at which CDC (Change Data Capture) pulls or incremental loads should occur. This parameter provides flexibility to align the refresh rate with your specific data update patterns, system load considerations, and performance optimization goals. Time increment can be set from 15 minutes to 8640 minutes (six days). Currently supports creation of <code>RefreshInterval</code> only.</p>
     pub refresh_interval: ::std::option::Option<::std::string::String>,
+    /// <p>A collection of key-value pairs that specify additional properties for the integration source. These properties provide configuration options that can be used to customize the behavior of the ODB source during data integration operations.</p>
+    pub source_properties: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl IntegrationConfig {
     /// <p>Specifies the frequency at which CDC (Change Data Capture) pulls or incremental loads should occur. This parameter provides flexibility to align the refresh rate with your specific data update patterns, system load considerations, and performance optimization goals. Time increment can be set from 15 minutes to 8640 minutes (six days). Currently supports creation of <code>RefreshInterval</code> only.</p>
     pub fn refresh_interval(&self) -> ::std::option::Option<&str> {
         self.refresh_interval.as_deref()
+    }
+    /// <p>A collection of key-value pairs that specify additional properties for the integration source. These properties provide configuration options that can be used to customize the behavior of the ODB source during data integration operations.</p>
+    pub fn source_properties(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        self.source_properties.as_ref()
     }
 }
 impl IntegrationConfig {
@@ -25,6 +31,7 @@ impl IntegrationConfig {
 #[non_exhaustive]
 pub struct IntegrationConfigBuilder {
     pub(crate) refresh_interval: ::std::option::Option<::std::string::String>,
+    pub(crate) source_properties: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl IntegrationConfigBuilder {
     /// <p>Specifies the frequency at which CDC (Change Data Capture) pulls or incremental loads should occur. This parameter provides flexibility to align the refresh rate with your specific data update patterns, system load considerations, and performance optimization goals. Time increment can be set from 15 minutes to 8640 minutes (six days). Currently supports creation of <code>RefreshInterval</code> only.</p>
@@ -41,10 +48,38 @@ impl IntegrationConfigBuilder {
     pub fn get_refresh_interval(&self) -> &::std::option::Option<::std::string::String> {
         &self.refresh_interval
     }
+    /// Adds a key-value pair to `source_properties`.
+    ///
+    /// To override the contents of this collection use [`set_source_properties`](Self::set_source_properties).
+    ///
+    /// <p>A collection of key-value pairs that specify additional properties for the integration source. These properties provide configuration options that can be used to customize the behavior of the ODB source during data integration operations.</p>
+    pub fn source_properties(
+        mut self,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        let mut hash_map = self.source_properties.unwrap_or_default();
+        hash_map.insert(k.into(), v.into());
+        self.source_properties = ::std::option::Option::Some(hash_map);
+        self
+    }
+    /// <p>A collection of key-value pairs that specify additional properties for the integration source. These properties provide configuration options that can be used to customize the behavior of the ODB source during data integration operations.</p>
+    pub fn set_source_properties(
+        mut self,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    ) -> Self {
+        self.source_properties = input;
+        self
+    }
+    /// <p>A collection of key-value pairs that specify additional properties for the integration source. These properties provide configuration options that can be used to customize the behavior of the ODB source during data integration operations.</p>
+    pub fn get_source_properties(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        &self.source_properties
+    }
     /// Consumes the builder and constructs a [`IntegrationConfig`](crate::types::IntegrationConfig).
     pub fn build(self) -> crate::types::IntegrationConfig {
         crate::types::IntegrationConfig {
             refresh_interval: self.refresh_interval,
+            source_properties: self.source_properties,
         }
     }
 }

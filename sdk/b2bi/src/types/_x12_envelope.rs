@@ -15,11 +15,17 @@
 pub struct X12Envelope {
     /// <p>A container for the X12 outbound EDI headers.</p>
     pub common: ::std::option::Option<crate::types::X12OutboundEdiHeaders>,
+    /// <p>Contains options for wrapping (line folding) in X12 EDI files. Wrapping controls how long lines are handled in the EDI output.</p>
+    pub wrap_options: ::std::option::Option<crate::types::WrapOptions>,
 }
 impl X12Envelope {
     /// <p>A container for the X12 outbound EDI headers.</p>
     pub fn common(&self) -> ::std::option::Option<&crate::types::X12OutboundEdiHeaders> {
         self.common.as_ref()
+    }
+    /// <p>Contains options for wrapping (line folding) in X12 EDI files. Wrapping controls how long lines are handled in the EDI output.</p>
+    pub fn wrap_options(&self) -> ::std::option::Option<&crate::types::WrapOptions> {
+        self.wrap_options.as_ref()
     }
 }
 impl X12Envelope {
@@ -34,6 +40,7 @@ impl X12Envelope {
 #[non_exhaustive]
 pub struct X12EnvelopeBuilder {
     pub(crate) common: ::std::option::Option<crate::types::X12OutboundEdiHeaders>,
+    pub(crate) wrap_options: ::std::option::Option<crate::types::WrapOptions>,
 }
 impl X12EnvelopeBuilder {
     /// <p>A container for the X12 outbound EDI headers.</p>
@@ -50,8 +57,25 @@ impl X12EnvelopeBuilder {
     pub fn get_common(&self) -> &::std::option::Option<crate::types::X12OutboundEdiHeaders> {
         &self.common
     }
+    /// <p>Contains options for wrapping (line folding) in X12 EDI files. Wrapping controls how long lines are handled in the EDI output.</p>
+    pub fn wrap_options(mut self, input: crate::types::WrapOptions) -> Self {
+        self.wrap_options = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Contains options for wrapping (line folding) in X12 EDI files. Wrapping controls how long lines are handled in the EDI output.</p>
+    pub fn set_wrap_options(mut self, input: ::std::option::Option<crate::types::WrapOptions>) -> Self {
+        self.wrap_options = input;
+        self
+    }
+    /// <p>Contains options for wrapping (line folding) in X12 EDI files. Wrapping controls how long lines are handled in the EDI output.</p>
+    pub fn get_wrap_options(&self) -> &::std::option::Option<crate::types::WrapOptions> {
+        &self.wrap_options
+    }
     /// Consumes the builder and constructs a [`X12Envelope`](crate::types::X12Envelope).
     pub fn build(self) -> crate::types::X12Envelope {
-        crate::types::X12Envelope { common: self.common }
+        crate::types::X12Envelope {
+            common: self.common,
+            wrap_options: self.wrap_options,
+        }
     }
 }

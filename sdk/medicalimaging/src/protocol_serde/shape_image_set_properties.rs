@@ -70,6 +70,9 @@ where
                         "overrides" => {
                             builder = builder.set_overrides(crate::protocol_serde::shape_overrides::de_overrides(tokens)?);
                         }
+                        "isPrimary" => {
+                            builder = builder.set_is_primary(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

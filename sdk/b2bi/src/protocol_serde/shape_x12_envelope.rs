@@ -19,6 +19,9 @@ where
                                 tokens,
                             )?);
                         }
+                        "wrapOptions" => {
+                            builder = builder.set_wrap_options(crate::protocol_serde::shape_wrap_options::de_wrap_options(tokens)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {
@@ -46,6 +49,12 @@ pub fn ser_x12_envelope(
         let mut object_2 = object.key("common").start_object();
         crate::protocol_serde::shape_x12_outbound_edi_headers::ser_x12_outbound_edi_headers(&mut object_2, var_1)?;
         object_2.finish();
+    }
+    if let Some(var_3) = &input.wrap_options {
+        #[allow(unused_mut)]
+        let mut object_4 = object.key("wrapOptions").start_object();
+        crate::protocol_serde::shape_wrap_options::ser_wrap_options(&mut object_4, var_3)?;
+        object_4.finish();
     }
     Ok(())
 }

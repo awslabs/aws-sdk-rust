@@ -1835,6 +1835,8 @@ pub(crate) mod shape_subnet_id_list;
 
 pub(crate) mod shape_table_visual;
 
+pub(crate) mod shape_text_box_interaction_options;
+
 pub(crate) mod shape_theme_error;
 
 pub(crate) mod shape_threshold_alerts_configurations;
@@ -2058,6 +2060,8 @@ pub(crate) mod shape_table_conditional_formatting;
 pub(crate) mod shape_table_configuration;
 
 pub(crate) mod shape_text_area_control_display_options;
+
+pub(crate) mod shape_text_box_menu_option;
 
 pub(crate) mod shape_text_field_control_display_options;
 

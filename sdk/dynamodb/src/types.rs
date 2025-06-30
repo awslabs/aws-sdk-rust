@@ -53,6 +53,10 @@ pub use crate::types::_sse_status::SseStatus;
 
 pub use crate::types::_restore_summary::RestoreSummary;
 
+pub use crate::types::_global_table_witness_description::GlobalTableWitnessDescription;
+
+pub use crate::types::_witness_status::WitnessStatus;
+
 pub use crate::types::_replica_description::ReplicaDescription;
 
 pub use crate::types::_replica_global_secondary_index_description::ReplicaGlobalSecondaryIndexDescription;
@@ -90,6 +94,12 @@ pub use crate::types::_attribute_definition::AttributeDefinition;
 pub use crate::types::_scalar_attribute_type::ScalarAttributeType;
 
 pub use crate::types::_warm_throughput::WarmThroughput;
+
+pub use crate::types::_global_table_witness_group_update::GlobalTableWitnessGroupUpdate;
+
+pub use crate::types::_delete_global_table_witness_group_member_action::DeleteGlobalTableWitnessGroupMemberAction;
+
+pub use crate::types::_create_global_table_witness_group_member_action::CreateGlobalTableWitnessGroupMemberAction;
 
 pub use crate::types::_replication_group_update::ReplicationGroupUpdate;
 
@@ -371,6 +381,8 @@ mod _contributor_insights_summary;
 
 mod _create_global_secondary_index_action;
 
+mod _create_global_table_witness_group_member_action;
+
 mod _create_replica_action;
 
 mod _create_replication_group_member_action;
@@ -380,6 +392,8 @@ mod _csv_options;
 mod _delete;
 
 mod _delete_global_secondary_index_action;
+
+mod _delete_global_table_witness_group_member_action;
 
 mod _delete_replica_action;
 
@@ -430,6 +444,10 @@ mod _global_table_description;
 mod _global_table_global_secondary_index_settings_update;
 
 mod _global_table_status;
+
+mod _global_table_witness_description;
+
+mod _global_table_witness_group_update;
 
 mod _import_status;
 
@@ -592,6 +610,8 @@ mod _update_kinesis_streaming_configuration;
 mod _update_replication_group_member_action;
 
 mod _warm_throughput;
+
+mod _witness_status;
 
 mod _write_request;
 

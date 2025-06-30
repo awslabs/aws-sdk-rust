@@ -4,12 +4,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeStackResourceOutput {
-    /// <p>A <code>StackResourceDetail</code> structure containing the description of the specified resource in the specified stack.</p>
+    /// <p>A <code>StackResourceDetail</code> structure that contains the description of the specified resource in the specified stack.</p>
     pub stack_resource_detail: ::std::option::Option<crate::types::StackResourceDetail>,
     _request_id: Option<String>,
 }
 impl DescribeStackResourceOutput {
-    /// <p>A <code>StackResourceDetail</code> structure containing the description of the specified resource in the specified stack.</p>
+    /// <p>A <code>StackResourceDetail</code> structure that contains the description of the specified resource in the specified stack.</p>
     pub fn stack_resource_detail(&self) -> ::std::option::Option<&crate::types::StackResourceDetail> {
         self.stack_resource_detail.as_ref()
     }
@@ -34,17 +34,17 @@ pub struct DescribeStackResourceOutputBuilder {
     _request_id: Option<String>,
 }
 impl DescribeStackResourceOutputBuilder {
-    /// <p>A <code>StackResourceDetail</code> structure containing the description of the specified resource in the specified stack.</p>
+    /// <p>A <code>StackResourceDetail</code> structure that contains the description of the specified resource in the specified stack.</p>
     pub fn stack_resource_detail(mut self, input: crate::types::StackResourceDetail) -> Self {
         self.stack_resource_detail = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A <code>StackResourceDetail</code> structure containing the description of the specified resource in the specified stack.</p>
+    /// <p>A <code>StackResourceDetail</code> structure that contains the description of the specified resource in the specified stack.</p>
     pub fn set_stack_resource_detail(mut self, input: ::std::option::Option<crate::types::StackResourceDetail>) -> Self {
         self.stack_resource_detail = input;
         self
     }
-    /// <p>A <code>StackResourceDetail</code> structure containing the description of the specified resource in the specified stack.</p>
+    /// <p>A <code>StackResourceDetail</code> structure that contains the description of the specified resource in the specified stack.</p>
     pub fn get_stack_resource_detail(&self) -> &::std::option::Option<crate::types::StackResourceDetail> {
         &self.stack_resource_detail
     }

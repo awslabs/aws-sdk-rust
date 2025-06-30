@@ -22,7 +22,16 @@ impl crate::operation::create_stack_instances::builders::CreateStackInstancesInp
 }
 /// Fluent builder constructing a request to `CreateStackInstances`.
 ///
-/// <p>Creates stack instances for the specified accounts, within the specified Amazon Web Services Regions. A stack instance refers to a stack in a specific account and Region. You must specify at least one value for either <code>Accounts</code> or <code>DeploymentTargets</code>, and you must specify at least one value for <code>Regions</code>.</p>
+/// <p>Creates stack instances for the specified accounts, within the specified Amazon Web Services Regions. A stack instance refers to a stack in a specific account and Region. You must specify at least one value for either <code>Accounts</code> or <code>DeploymentTargets</code>, and you must specify at least one value for <code>Regions</code>.</p><note>
+/// <p>The maximum number of organizational unit (OUs) supported by a <code>CreateStackInstances</code> operation is 50.</p>
+/// <p>If you need more than 50, consider the following options:</p>
+/// <ul>
+/// <li>
+/// <p><i>Batch processing:</i> If you don't want to expose your OU hierarchy, split up the operations into multiple calls with less than 50 OUs each.</p></li>
+/// <li>
+/// <p><i>Parent OU strategy:</i> If you don't mind exposing the OU hierarchy, target a parent OU that contains all desired child OUs.</p></li>
+/// </ul>
+/// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateStackInstancesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

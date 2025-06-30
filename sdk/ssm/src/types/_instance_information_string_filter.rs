@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InstanceInformationStringFilter {
     /// <p>The filter key name to describe your managed nodes.</p>
-    /// <p>Valid filter key values: ActivationIds | AgentVersion | AssociationStatus | IamRole | InstanceIds | PingStatus | PlatformTypes | ResourceType | SourceIds | SourceTypes | "tag-key" | "tag:<code>{keyname}</code></p>
+    /// <p>Valid filter key values: ActivationIds | AgentVersion | AssociationStatus | IamRole | InstanceIds | PingStatus | PlatformType | ResourceType | SourceIds | SourceTypes | "tag-key" | "tag:<code>{keyname}</code></p>
     /// <ul>
     /// <li>
     /// <p>Valid values for the <code>AssociationStatus</code> filter key: Success | Pending | Failed</p></li>
@@ -26,7 +26,7 @@ pub struct InstanceInformationStringFilter {
 }
 impl InstanceInformationStringFilter {
     /// <p>The filter key name to describe your managed nodes.</p>
-    /// <p>Valid filter key values: ActivationIds | AgentVersion | AssociationStatus | IamRole | InstanceIds | PingStatus | PlatformTypes | ResourceType | SourceIds | SourceTypes | "tag-key" | "tag:<code>{keyname}</code></p>
+    /// <p>Valid filter key values: ActivationIds | AgentVersion | AssociationStatus | IamRole | InstanceIds | PingStatus | PlatformType | ResourceType | SourceIds | SourceTypes | "tag-key" | "tag:<code>{keyname}</code></p>
     /// <ul>
     /// <li>
     /// <p>Valid values for the <code>AssociationStatus</code> filter key: Success | Pending | Failed</p></li>
@@ -67,7 +67,7 @@ pub struct InstanceInformationStringFilterBuilder {
 }
 impl InstanceInformationStringFilterBuilder {
     /// <p>The filter key name to describe your managed nodes.</p>
-    /// <p>Valid filter key values: ActivationIds | AgentVersion | AssociationStatus | IamRole | InstanceIds | PingStatus | PlatformTypes | ResourceType | SourceIds | SourceTypes | "tag-key" | "tag:<code>{keyname}</code></p>
+    /// <p>Valid filter key values: ActivationIds | AgentVersion | AssociationStatus | IamRole | InstanceIds | PingStatus | PlatformType | ResourceType | SourceIds | SourceTypes | "tag-key" | "tag:<code>{keyname}</code></p>
     /// <ul>
     /// <li>
     /// <p>Valid values for the <code>AssociationStatus</code> filter key: Success | Pending | Failed</p></li>
@@ -88,7 +88,7 @@ impl InstanceInformationStringFilterBuilder {
         self
     }
     /// <p>The filter key name to describe your managed nodes.</p>
-    /// <p>Valid filter key values: ActivationIds | AgentVersion | AssociationStatus | IamRole | InstanceIds | PingStatus | PlatformTypes | ResourceType | SourceIds | SourceTypes | "tag-key" | "tag:<code>{keyname}</code></p>
+    /// <p>Valid filter key values: ActivationIds | AgentVersion | AssociationStatus | IamRole | InstanceIds | PingStatus | PlatformType | ResourceType | SourceIds | SourceTypes | "tag-key" | "tag:<code>{keyname}</code></p>
     /// <ul>
     /// <li>
     /// <p>Valid values for the <code>AssociationStatus</code> filter key: Success | Pending | Failed</p></li>
@@ -108,7 +108,7 @@ impl InstanceInformationStringFilterBuilder {
         self
     }
     /// <p>The filter key name to describe your managed nodes.</p>
-    /// <p>Valid filter key values: ActivationIds | AgentVersion | AssociationStatus | IamRole | InstanceIds | PingStatus | PlatformTypes | ResourceType | SourceIds | SourceTypes | "tag-key" | "tag:<code>{keyname}</code></p>
+    /// <p>Valid filter key values: ActivationIds | AgentVersion | AssociationStatus | IamRole | InstanceIds | PingStatus | PlatformType | ResourceType | SourceIds | SourceTypes | "tag-key" | "tag:<code>{keyname}</code></p>
     /// <ul>
     /// <li>
     /// <p>Valid values for the <code>AssociationStatus</code> filter key: Success | Pending | Failed</p></li>

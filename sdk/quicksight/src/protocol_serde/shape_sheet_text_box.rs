@@ -9,6 +9,12 @@ pub fn ser_sheet_text_box(
     if let Some(var_1) = &input.content {
         object.key("Content").string(var_1.as_str());
     }
+    if let Some(var_2) = &input.interactions {
+        #[allow(unused_mut)]
+        let mut object_3 = object.key("Interactions").start_object();
+        crate::protocol_serde::shape_text_box_interaction_options::ser_text_box_interaction_options(&mut object_3, var_2)?;
+        object_3.finish();
+    }
     Ok(())
 }
 
@@ -39,6 +45,11 @@ where
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
+                            );
+                        }
+                        "Interactions" => {
+                            builder = builder.set_interactions(
+                                crate::protocol_serde::shape_text_box_interaction_options::de_text_box_interaction_options(tokens)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

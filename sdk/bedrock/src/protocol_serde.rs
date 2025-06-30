@@ -609,6 +609,8 @@ pub(crate) mod shape_external_sources;
 
 pub(crate) mod shape_guardrail_configuration;
 
+pub(crate) mod shape_implicit_filter_configuration;
+
 pub(crate) mod shape_kb_inference_config;
 
 pub(crate) mod shape_prompt_template;
@@ -623,12 +625,30 @@ pub(crate) mod shape_retrieval_filter;
 
 pub(crate) mod shape_s3_object_doc;
 
+pub(crate) mod shape_vector_search_reranking_configuration;
+
 pub(crate) mod shape_additional_model_request_fields;
 
 pub(crate) mod shape_filter_attribute;
 
+pub(crate) mod shape_metadata_attribute_schema;
+
 pub(crate) mod shape_text_inference_config;
+
+pub(crate) mod shape_vector_search_bedrock_reranking_configuration;
+
+pub(crate) mod shape_metadata_attribute_schema_list;
+
+pub(crate) mod shape_metadata_configuration_for_reranking;
 
 pub(crate) mod shape_retrieval_filter_list;
 
+pub(crate) mod shape_vector_search_bedrock_reranking_model_configuration;
+
 pub(crate) mod shape_rag_stop_sequences;
+
+pub(crate) mod shape_reranking_metadata_selective_mode_configuration;
+
+pub(crate) mod shape_field_for_reranking;
+
+pub(crate) mod shape_fields_for_reranking;

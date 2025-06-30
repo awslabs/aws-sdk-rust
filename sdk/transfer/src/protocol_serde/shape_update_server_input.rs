@@ -75,5 +75,8 @@ pub fn ser_update_server_input_input(
         crate::protocol_serde::shape_s3_storage_options::ser_s3_storage_options(&mut object_24, var_23)?;
         object_24.finish();
     }
+    if let Some(var_25) = &input.ip_address_type {
+        object.key("IpAddressType").string(var_25.as_str());
+    }
     Ok(())
 }

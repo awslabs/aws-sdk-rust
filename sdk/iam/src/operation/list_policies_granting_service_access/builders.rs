@@ -35,7 +35,7 @@ impl crate::operation::list_policies_granting_service_access::builders::ListPoli
 /// <p><b>Role</b> – The list of policies includes only the managed and inline policies that are attached to the role.</p></li>
 /// </ul>
 /// <p>For each managed policy, this operation returns the ARN and policy name. For each inline policy, it returns the policy name and the entity to which it is attached. Inline policies do not have an ARN. For more information about these policy types, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_managed-vs-inline.html">Managed policies and inline policies</a> in the <i>IAM User Guide</i>.</p>
-/// <p>Policies that are attached to users and roles as permissions boundaries are not returned. To view which managed policy is currently used to set the permissions boundary for a user or role, use the <code>GetUser</code> or <code>GetRole</code> operations.</p>
+/// <p>Policies that are attached to users and roles as permissions boundaries are not returned. To view which managed policy is currently used to set the permissions boundary for a user or role, use the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetUser.html">GetUser</a> or <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetRole.html">GetRole</a> operations.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListPoliciesGrantingServiceAccessFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

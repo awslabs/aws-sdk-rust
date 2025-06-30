@@ -14,6 +14,8 @@ pub struct ImageSetsMetadataSummary {
     pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The DICOM tags associated with the image set.</p>
     pub dicom_tags: ::std::option::Option<crate::types::DicomTags>,
+    /// <p>The flag to determine whether the image set is primary or not.</p>
+    pub is_primary: ::std::option::Option<bool>,
 }
 impl ImageSetsMetadataSummary {
     /// <p>The image set identifier.</p>
@@ -37,6 +39,10 @@ impl ImageSetsMetadataSummary {
     pub fn dicom_tags(&self) -> ::std::option::Option<&crate::types::DicomTags> {
         self.dicom_tags.as_ref()
     }
+    /// <p>The flag to determine whether the image set is primary or not.</p>
+    pub fn is_primary(&self) -> ::std::option::Option<bool> {
+        self.is_primary
+    }
 }
 impl ImageSetsMetadataSummary {
     /// Creates a new builder-style object to manufacture [`ImageSetsMetadataSummary`](crate::types::ImageSetsMetadataSummary).
@@ -54,6 +60,7 @@ pub struct ImageSetsMetadataSummaryBuilder {
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) dicom_tags: ::std::option::Option<crate::types::DicomTags>,
+    pub(crate) is_primary: ::std::option::Option<bool>,
 }
 impl ImageSetsMetadataSummaryBuilder {
     /// <p>The image set identifier.</p>
@@ -127,6 +134,20 @@ impl ImageSetsMetadataSummaryBuilder {
     pub fn get_dicom_tags(&self) -> &::std::option::Option<crate::types::DicomTags> {
         &self.dicom_tags
     }
+    /// <p>The flag to determine whether the image set is primary or not.</p>
+    pub fn is_primary(mut self, input: bool) -> Self {
+        self.is_primary = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The flag to determine whether the image set is primary or not.</p>
+    pub fn set_is_primary(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.is_primary = input;
+        self
+    }
+    /// <p>The flag to determine whether the image set is primary or not.</p>
+    pub fn get_is_primary(&self) -> &::std::option::Option<bool> {
+        &self.is_primary
+    }
     /// Consumes the builder and constructs a [`ImageSetsMetadataSummary`](crate::types::ImageSetsMetadataSummary).
     /// This method will fail if any of the following fields are not set:
     /// - [`image_set_id`](crate::types::builders::ImageSetsMetadataSummaryBuilder::image_set_id)
@@ -142,6 +163,7 @@ impl ImageSetsMetadataSummaryBuilder {
             created_at: self.created_at,
             updated_at: self.updated_at,
             dicom_tags: self.dicom_tags,
+            is_primary: self.is_primary,
         })
     }
 }
