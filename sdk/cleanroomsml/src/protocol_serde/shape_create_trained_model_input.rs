@@ -41,33 +41,48 @@ pub fn ser_create_trained_model_input_input(
         }
         object_12.finish();
     }
-    if let Some(var_15) = &input.kms_key_arn {
-        object.key("kmsKeyArn").string(var_15.as_str());
-    }
-    if let Some(var_16) = &input.name {
-        object.key("name").string(var_16.as_str());
-    }
-    if let Some(var_17) = &input.resource_config {
-        #[allow(unused_mut)]
-        let mut object_18 = object.key("resourceConfig").start_object();
-        crate::protocol_serde::shape_resource_config::ser_resource_config(&mut object_18, var_17)?;
-        object_18.finish();
-    }
-    if let Some(var_19) = &input.stopping_condition {
-        #[allow(unused_mut)]
-        let mut object_20 = object.key("stoppingCondition").start_object();
-        crate::protocol_serde::shape_stopping_condition::ser_stopping_condition(&mut object_20, var_19)?;
-        object_20.finish();
-    }
-    if let Some(var_21) = &input.tags {
-        #[allow(unused_mut)]
-        let mut object_22 = object.key("tags").start_object();
-        for (key_23, value_24) in var_21 {
+    if let Some(var_15) = &input.incremental_training_data_channels {
+        let mut array_16 = object.key("incrementalTrainingDataChannels").start_array();
+        for item_17 in var_15 {
             {
-                object_22.key(key_23.as_str()).string(value_24.as_str());
+                #[allow(unused_mut)]
+                let mut object_18 = array_16.value().start_object();
+                crate::protocol_serde::shape_incremental_training_data_channel::ser_incremental_training_data_channel(&mut object_18, item_17)?;
+                object_18.finish();
             }
         }
+        array_16.finish();
+    }
+    if let Some(var_19) = &input.kms_key_arn {
+        object.key("kmsKeyArn").string(var_19.as_str());
+    }
+    if let Some(var_20) = &input.name {
+        object.key("name").string(var_20.as_str());
+    }
+    if let Some(var_21) = &input.resource_config {
+        #[allow(unused_mut)]
+        let mut object_22 = object.key("resourceConfig").start_object();
+        crate::protocol_serde::shape_resource_config::ser_resource_config(&mut object_22, var_21)?;
         object_22.finish();
+    }
+    if let Some(var_23) = &input.stopping_condition {
+        #[allow(unused_mut)]
+        let mut object_24 = object.key("stoppingCondition").start_object();
+        crate::protocol_serde::shape_stopping_condition::ser_stopping_condition(&mut object_24, var_23)?;
+        object_24.finish();
+    }
+    if let Some(var_25) = &input.tags {
+        #[allow(unused_mut)]
+        let mut object_26 = object.key("tags").start_object();
+        for (key_27, value_28) in var_25 {
+            {
+                object_26.key(key_27.as_str()).string(value_28.as_str());
+            }
+        }
+        object_26.finish();
+    }
+    if let Some(var_29) = &input.training_input_mode {
+        object.key("trainingInputMode").string(var_29.as_str());
     }
     Ok(())
 }

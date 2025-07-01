@@ -369,6 +369,59 @@ impl From<crate::operation::create_application::CreateApplicationError> for Erro
         }
     }
 }
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::create_chat_response_configuration::CreateChatResponseConfigurationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::create_chat_response_configuration::CreateChatResponseConfigurationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_chat_response_configuration::CreateChatResponseConfigurationError> for Error {
+    fn from(err: crate::operation::create_chat_response_configuration::CreateChatResponseConfigurationError) -> Self {
+        match err {
+            crate::operation::create_chat_response_configuration::CreateChatResponseConfigurationError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::create_chat_response_configuration::CreateChatResponseConfigurationError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::create_chat_response_configuration::CreateChatResponseConfigurationError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::create_chat_response_configuration::CreateChatResponseConfigurationError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::create_chat_response_configuration::CreateChatResponseConfigurationError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::create_chat_response_configuration::CreateChatResponseConfigurationError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::create_chat_response_configuration::CreateChatResponseConfigurationError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::create_chat_response_configuration::CreateChatResponseConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_data_accessor::CreateDataAccessorError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -706,6 +759,56 @@ impl From<crate::operation::delete_chat_controls_configuration::DeleteChatContro
                 Error::ValidationException(inner)
             }
             crate::operation::delete_chat_controls_configuration::DeleteChatControlsConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::delete_chat_response_configuration::DeleteChatResponseConfigurationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::delete_chat_response_configuration::DeleteChatResponseConfigurationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_chat_response_configuration::DeleteChatResponseConfigurationError> for Error {
+    fn from(err: crate::operation::delete_chat_response_configuration::DeleteChatResponseConfigurationError) -> Self {
+        match err {
+            crate::operation::delete_chat_response_configuration::DeleteChatResponseConfigurationError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::delete_chat_response_configuration::DeleteChatResponseConfigurationError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::delete_chat_response_configuration::DeleteChatResponseConfigurationError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::delete_chat_response_configuration::DeleteChatResponseConfigurationError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::delete_chat_response_configuration::DeleteChatResponseConfigurationError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::delete_chat_response_configuration::DeleteChatResponseConfigurationError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::delete_chat_response_configuration::DeleteChatResponseConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1064,6 +1167,49 @@ impl From<crate::operation::get_chat_controls_configuration::GetChatControlsConf
         }
     }
 }
+impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_chat_response_configuration::GetChatResponseConfigurationError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_chat_response_configuration::GetChatResponseConfigurationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_chat_response_configuration::GetChatResponseConfigurationError> for Error {
+    fn from(err: crate::operation::get_chat_response_configuration::GetChatResponseConfigurationError) -> Self {
+        match err {
+            crate::operation::get_chat_response_configuration::GetChatResponseConfigurationError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::get_chat_response_configuration::GetChatResponseConfigurationError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::get_chat_response_configuration::GetChatResponseConfigurationError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_chat_response_configuration::GetChatResponseConfigurationError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::get_chat_response_configuration::GetChatResponseConfigurationError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::get_chat_response_configuration::GetChatResponseConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_data_accessor::GetDataAccessorError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1377,6 +1523,53 @@ impl From<crate::operation::list_attachments::ListAttachmentsError> for Error {
             crate::operation::list_attachments::ListAttachmentsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::list_attachments::ListAttachmentsError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::list_attachments::ListAttachmentsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_chat_response_configurations::ListChatResponseConfigurationsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_chat_response_configurations::ListChatResponseConfigurationsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_chat_response_configurations::ListChatResponseConfigurationsError> for Error {
+    fn from(err: crate::operation::list_chat_response_configurations::ListChatResponseConfigurationsError) -> Self {
+        match err {
+            crate::operation::list_chat_response_configurations::ListChatResponseConfigurationsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::list_chat_response_configurations::ListChatResponseConfigurationsError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::list_chat_response_configurations::ListChatResponseConfigurationsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::list_chat_response_configurations::ListChatResponseConfigurationsError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::list_chat_response_configurations::ListChatResponseConfigurationsError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::list_chat_response_configurations::ListChatResponseConfigurationsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -2134,6 +2327,56 @@ impl From<crate::operation::update_chat_controls_configuration::UpdateChatContro
                 Error::ValidationException(inner)
             }
             crate::operation::update_chat_controls_configuration::UpdateChatControlsConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::update_chat_response_configuration::UpdateChatResponseConfigurationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::update_chat_response_configuration::UpdateChatResponseConfigurationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_chat_response_configuration::UpdateChatResponseConfigurationError> for Error {
+    fn from(err: crate::operation::update_chat_response_configuration::UpdateChatResponseConfigurationError) -> Self {
+        match err {
+            crate::operation::update_chat_response_configuration::UpdateChatResponseConfigurationError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::update_chat_response_configuration::UpdateChatResponseConfigurationError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::update_chat_response_configuration::UpdateChatResponseConfigurationError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::update_chat_response_configuration::UpdateChatResponseConfigurationError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::update_chat_response_configuration::UpdateChatResponseConfigurationError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::update_chat_response_configuration::UpdateChatResponseConfigurationError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::update_chat_response_configuration::UpdateChatResponseConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

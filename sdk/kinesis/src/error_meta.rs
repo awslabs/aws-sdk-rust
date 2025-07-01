@@ -123,8 +123,8 @@ impl From<crate::operation::add_tags_to_stream::AddTagsToStreamError> for Error 
         match err {
             crate::operation::add_tags_to_stream::AddTagsToStreamError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::add_tags_to_stream::AddTagsToStreamError::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
-            crate::operation::add_tags_to_stream::AddTagsToStreamError::ResourceInUseException(inner) => Error::ResourceInUseException(inner),
             crate::operation::add_tags_to_stream::AddTagsToStreamError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::add_tags_to_stream::AddTagsToStreamError::ResourceInUseException(inner) => Error::ResourceInUseException(inner),
             crate::operation::add_tags_to_stream::AddTagsToStreamError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::add_tags_to_stream::AddTagsToStreamError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -148,8 +148,8 @@ impl From<crate::operation::create_stream::CreateStreamError> for Error {
     fn from(err: crate::operation::create_stream::CreateStreamError) -> Self {
         match err {
             crate::operation::create_stream::CreateStreamError::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
-            crate::operation::create_stream::CreateStreamError::ResourceInUseException(inner) => Error::ResourceInUseException(inner),
             crate::operation::create_stream::CreateStreamError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::create_stream::CreateStreamError::ResourceInUseException(inner) => Error::ResourceInUseException(inner),
             crate::operation::create_stream::CreateStreamError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -185,11 +185,11 @@ impl From<crate::operation::decrease_stream_retention_period::DecreaseStreamRete
             crate::operation::decrease_stream_retention_period::DecreaseStreamRetentionPeriodError::InvalidArgumentException(inner) => {
                 Error::InvalidArgumentException(inner)
             }
-            crate::operation::decrease_stream_retention_period::DecreaseStreamRetentionPeriodError::ResourceInUseException(inner) => {
-                Error::ResourceInUseException(inner)
-            }
             crate::operation::decrease_stream_retention_period::DecreaseStreamRetentionPeriodError::LimitExceededException(inner) => {
                 Error::LimitExceededException(inner)
+            }
+            crate::operation::decrease_stream_retention_period::DecreaseStreamRetentionPeriodError::ResourceInUseException(inner) => {
+                Error::ResourceInUseException(inner)
             }
             crate::operation::decrease_stream_retention_period::DecreaseStreamRetentionPeriodError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
@@ -219,11 +219,11 @@ impl From<crate::operation::delete_resource_policy::DeleteResourcePolicyError> f
             crate::operation::delete_resource_policy::DeleteResourcePolicyError::InvalidArgumentException(inner) => {
                 Error::InvalidArgumentException(inner)
             }
-            crate::operation::delete_resource_policy::DeleteResourcePolicyError::ResourceInUseException(inner) => {
-                Error::ResourceInUseException(inner)
-            }
             crate::operation::delete_resource_policy::DeleteResourcePolicyError::LimitExceededException(inner) => {
                 Error::LimitExceededException(inner)
+            }
+            crate::operation::delete_resource_policy::DeleteResourcePolicyError::ResourceInUseException(inner) => {
+                Error::ResourceInUseException(inner)
             }
             crate::operation::delete_resource_policy::DeleteResourcePolicyError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
@@ -251,8 +251,8 @@ impl From<crate::operation::delete_stream::DeleteStreamError> for Error {
         match err {
             crate::operation::delete_stream::DeleteStreamError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::delete_stream::DeleteStreamError::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
-            crate::operation::delete_stream::DeleteStreamError::ResourceInUseException(inner) => Error::ResourceInUseException(inner),
             crate::operation::delete_stream::DeleteStreamError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::delete_stream::DeleteStreamError::ResourceInUseException(inner) => Error::ResourceInUseException(inner),
             crate::operation::delete_stream::DeleteStreamError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::delete_stream::DeleteStreamError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -431,11 +431,11 @@ impl From<crate::operation::disable_enhanced_monitoring::DisableEnhancedMonitori
             crate::operation::disable_enhanced_monitoring::DisableEnhancedMonitoringError::InvalidArgumentException(inner) => {
                 Error::InvalidArgumentException(inner)
             }
-            crate::operation::disable_enhanced_monitoring::DisableEnhancedMonitoringError::ResourceInUseException(inner) => {
-                Error::ResourceInUseException(inner)
-            }
             crate::operation::disable_enhanced_monitoring::DisableEnhancedMonitoringError::LimitExceededException(inner) => {
                 Error::LimitExceededException(inner)
+            }
+            crate::operation::disable_enhanced_monitoring::DisableEnhancedMonitoringError::ResourceInUseException(inner) => {
+                Error::ResourceInUseException(inner)
             }
             crate::operation::disable_enhanced_monitoring::DisableEnhancedMonitoringError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
@@ -470,11 +470,11 @@ impl From<crate::operation::enable_enhanced_monitoring::EnableEnhancedMonitoring
             crate::operation::enable_enhanced_monitoring::EnableEnhancedMonitoringError::InvalidArgumentException(inner) => {
                 Error::InvalidArgumentException(inner)
             }
-            crate::operation::enable_enhanced_monitoring::EnableEnhancedMonitoringError::ResourceInUseException(inner) => {
-                Error::ResourceInUseException(inner)
-            }
             crate::operation::enable_enhanced_monitoring::EnableEnhancedMonitoringError::LimitExceededException(inner) => {
                 Error::LimitExceededException(inner)
+            }
+            crate::operation::enable_enhanced_monitoring::EnableEnhancedMonitoringError::ResourceInUseException(inner) => {
+                Error::ResourceInUseException(inner)
             }
             crate::operation::enable_enhanced_monitoring::EnableEnhancedMonitoringError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
@@ -501,19 +501,19 @@ impl From<crate::operation::get_records::GetRecordsError> for Error {
     fn from(err: crate::operation::get_records::GetRecordsError) -> Self {
         match err {
             crate::operation::get_records::GetRecordsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::operation::get_records::GetRecordsError::KmsNotFoundException(inner) => Error::KmsNotFoundException(inner),
             crate::operation::get_records::GetRecordsError::ExpiredIteratorException(inner) => Error::ExpiredIteratorException(inner),
+            crate::operation::get_records::GetRecordsError::InternalFailureException(inner) => Error::InternalFailureException(inner),
+            crate::operation::get_records::GetRecordsError::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
+            crate::operation::get_records::GetRecordsError::KmsAccessDeniedException(inner) => Error::KmsAccessDeniedException(inner),
+            crate::operation::get_records::GetRecordsError::KmsDisabledException(inner) => Error::KmsDisabledException(inner),
+            crate::operation::get_records::GetRecordsError::KmsInvalidStateException(inner) => Error::KmsInvalidStateException(inner),
+            crate::operation::get_records::GetRecordsError::KmsNotFoundException(inner) => Error::KmsNotFoundException(inner),
             crate::operation::get_records::GetRecordsError::KmsOptInRequired(inner) => Error::KmsOptInRequired(inner),
+            crate::operation::get_records::GetRecordsError::KmsThrottlingException(inner) => Error::KmsThrottlingException(inner),
             crate::operation::get_records::GetRecordsError::ProvisionedThroughputExceededException(inner) => {
                 Error::ProvisionedThroughputExceededException(inner)
             }
             crate::operation::get_records::GetRecordsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::operation::get_records::GetRecordsError::InternalFailureException(inner) => Error::InternalFailureException(inner),
-            crate::operation::get_records::GetRecordsError::KmsAccessDeniedException(inner) => Error::KmsAccessDeniedException(inner),
-            crate::operation::get_records::GetRecordsError::KmsDisabledException(inner) => Error::KmsDisabledException(inner),
-            crate::operation::get_records::GetRecordsError::KmsThrottlingException(inner) => Error::KmsThrottlingException(inner),
-            crate::operation::get_records::GetRecordsError::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
-            crate::operation::get_records::GetRecordsError::KmsInvalidStateException(inner) => Error::KmsInvalidStateException(inner),
             crate::operation::get_records::GetRecordsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -537,8 +537,8 @@ impl From<crate::operation::get_resource_policy::GetResourcePolicyError> for Err
         match err {
             crate::operation::get_resource_policy::GetResourcePolicyError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::get_resource_policy::GetResourcePolicyError::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
-            crate::operation::get_resource_policy::GetResourcePolicyError::ResourceInUseException(inner) => Error::ResourceInUseException(inner),
             crate::operation::get_resource_policy::GetResourcePolicyError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::get_resource_policy::GetResourcePolicyError::ResourceInUseException(inner) => Error::ResourceInUseException(inner),
             crate::operation::get_resource_policy::GetResourcePolicyError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }
@@ -563,12 +563,12 @@ where
 impl From<crate::operation::get_shard_iterator::GetShardIteratorError> for Error {
     fn from(err: crate::operation::get_shard_iterator::GetShardIteratorError) -> Self {
         match err {
-            crate::operation::get_shard_iterator::GetShardIteratorError::InternalFailureException(inner) => Error::InternalFailureException(inner),
             crate::operation::get_shard_iterator::GetShardIteratorError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_shard_iterator::GetShardIteratorError::InternalFailureException(inner) => Error::InternalFailureException(inner),
+            crate::operation::get_shard_iterator::GetShardIteratorError::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
             crate::operation::get_shard_iterator::GetShardIteratorError::ProvisionedThroughputExceededException(inner) => {
                 Error::ProvisionedThroughputExceededException(inner)
             }
-            crate::operation::get_shard_iterator::GetShardIteratorError::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
             crate::operation::get_shard_iterator::GetShardIteratorError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::get_shard_iterator::GetShardIteratorError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -605,11 +605,11 @@ impl From<crate::operation::increase_stream_retention_period::IncreaseStreamRete
             crate::operation::increase_stream_retention_period::IncreaseStreamRetentionPeriodError::InvalidArgumentException(inner) => {
                 Error::InvalidArgumentException(inner)
             }
-            crate::operation::increase_stream_retention_period::IncreaseStreamRetentionPeriodError::ResourceInUseException(inner) => {
-                Error::ResourceInUseException(inner)
-            }
             crate::operation::increase_stream_retention_period::IncreaseStreamRetentionPeriodError::LimitExceededException(inner) => {
                 Error::LimitExceededException(inner)
+            }
+            crate::operation::increase_stream_retention_period::IncreaseStreamRetentionPeriodError::ResourceInUseException(inner) => {
+                Error::ResourceInUseException(inner)
             }
             crate::operation::increase_stream_retention_period::IncreaseStreamRetentionPeriodError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
@@ -638,8 +638,8 @@ impl From<crate::operation::list_shards::ListShardsError> for Error {
             crate::operation::list_shards::ListShardsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::list_shards::ListShardsError::ExpiredNextTokenException(inner) => Error::ExpiredNextTokenException(inner),
             crate::operation::list_shards::ListShardsError::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
-            crate::operation::list_shards::ListShardsError::ResourceInUseException(inner) => Error::ResourceInUseException(inner),
             crate::operation::list_shards::ListShardsError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::list_shards::ListShardsError::ResourceInUseException(inner) => Error::ResourceInUseException(inner),
             crate::operation::list_shards::ListShardsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::list_shards::ListShardsError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -668,8 +668,8 @@ impl From<crate::operation::list_stream_consumers::ListStreamConsumersError> for
             crate::operation::list_stream_consumers::ListStreamConsumersError::InvalidArgumentException(inner) => {
                 Error::InvalidArgumentException(inner)
             }
-            crate::operation::list_stream_consumers::ListStreamConsumersError::ResourceInUseException(inner) => Error::ResourceInUseException(inner),
             crate::operation::list_stream_consumers::ListStreamConsumersError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::list_stream_consumers::ListStreamConsumersError::ResourceInUseException(inner) => Error::ResourceInUseException(inner),
             crate::operation::list_stream_consumers::ListStreamConsumersError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }
@@ -722,8 +722,8 @@ impl From<crate::operation::list_tags_for_resource::ListTagsForResourceError> fo
             crate::operation::list_tags_for_resource::ListTagsForResourceError::InvalidArgumentException(inner) => {
                 Error::InvalidArgumentException(inner)
             }
-            crate::operation::list_tags_for_resource::ListTagsForResourceError::ResourceInUseException(inner) => Error::ResourceInUseException(inner),
             crate::operation::list_tags_for_resource::ListTagsForResourceError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::ResourceInUseException(inner) => Error::ResourceInUseException(inner),
             crate::operation::list_tags_for_resource::ListTagsForResourceError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }
@@ -776,11 +776,11 @@ impl From<crate::operation::merge_shards::MergeShardsError> for Error {
     fn from(err: crate::operation::merge_shards::MergeShardsError) -> Self {
         match err {
             crate::operation::merge_shards::MergeShardsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::operation::merge_shards::MergeShardsError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::merge_shards::MergeShardsError::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
-            crate::operation::merge_shards::MergeShardsError::ResourceInUseException(inner) => Error::ResourceInUseException(inner),
             crate::operation::merge_shards::MergeShardsError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::merge_shards::MergeShardsError::ResourceInUseException(inner) => Error::ResourceInUseException(inner),
             crate::operation::merge_shards::MergeShardsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::merge_shards::MergeShardsError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::merge_shards::MergeShardsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -802,18 +802,18 @@ where
 impl From<crate::operation::put_record::PutRecordError> for Error {
     fn from(err: crate::operation::put_record::PutRecordError) -> Self {
         match err {
+            crate::operation::put_record::PutRecordError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::put_record::PutRecordError::InternalFailureException(inner) => Error::InternalFailureException(inner),
+            crate::operation::put_record::PutRecordError::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
             crate::operation::put_record::PutRecordError::KmsAccessDeniedException(inner) => Error::KmsAccessDeniedException(inner),
             crate::operation::put_record::PutRecordError::KmsDisabledException(inner) => Error::KmsDisabledException(inner),
-            crate::operation::put_record::PutRecordError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::put_record::PutRecordError::KmsInvalidStateException(inner) => Error::KmsInvalidStateException(inner),
             crate::operation::put_record::PutRecordError::KmsNotFoundException(inner) => Error::KmsNotFoundException(inner),
             crate::operation::put_record::PutRecordError::KmsOptInRequired(inner) => Error::KmsOptInRequired(inner),
             crate::operation::put_record::PutRecordError::KmsThrottlingException(inner) => Error::KmsThrottlingException(inner),
             crate::operation::put_record::PutRecordError::ProvisionedThroughputExceededException(inner) => {
                 Error::ProvisionedThroughputExceededException(inner)
             }
-            crate::operation::put_record::PutRecordError::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
-            crate::operation::put_record::PutRecordError::KmsInvalidStateException(inner) => Error::KmsInvalidStateException(inner),
             crate::operation::put_record::PutRecordError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::put_record::PutRecordError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -836,18 +836,18 @@ where
 impl From<crate::operation::put_records::PutRecordsError> for Error {
     fn from(err: crate::operation::put_records::PutRecordsError) -> Self {
         match err {
+            crate::operation::put_records::PutRecordsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::put_records::PutRecordsError::InternalFailureException(inner) => Error::InternalFailureException(inner),
+            crate::operation::put_records::PutRecordsError::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
             crate::operation::put_records::PutRecordsError::KmsAccessDeniedException(inner) => Error::KmsAccessDeniedException(inner),
             crate::operation::put_records::PutRecordsError::KmsDisabledException(inner) => Error::KmsDisabledException(inner),
-            crate::operation::put_records::PutRecordsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::put_records::PutRecordsError::KmsInvalidStateException(inner) => Error::KmsInvalidStateException(inner),
             crate::operation::put_records::PutRecordsError::KmsNotFoundException(inner) => Error::KmsNotFoundException(inner),
             crate::operation::put_records::PutRecordsError::KmsOptInRequired(inner) => Error::KmsOptInRequired(inner),
             crate::operation::put_records::PutRecordsError::KmsThrottlingException(inner) => Error::KmsThrottlingException(inner),
             crate::operation::put_records::PutRecordsError::ProvisionedThroughputExceededException(inner) => {
                 Error::ProvisionedThroughputExceededException(inner)
             }
-            crate::operation::put_records::PutRecordsError::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
-            crate::operation::put_records::PutRecordsError::KmsInvalidStateException(inner) => Error::KmsInvalidStateException(inner),
             crate::operation::put_records::PutRecordsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::put_records::PutRecordsError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -872,8 +872,8 @@ impl From<crate::operation::put_resource_policy::PutResourcePolicyError> for Err
         match err {
             crate::operation::put_resource_policy::PutResourcePolicyError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::put_resource_policy::PutResourcePolicyError::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
-            crate::operation::put_resource_policy::PutResourcePolicyError::ResourceInUseException(inner) => Error::ResourceInUseException(inner),
             crate::operation::put_resource_policy::PutResourcePolicyError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::put_resource_policy::PutResourcePolicyError::ResourceInUseException(inner) => Error::ResourceInUseException(inner),
             crate::operation::put_resource_policy::PutResourcePolicyError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }
@@ -903,11 +903,11 @@ impl From<crate::operation::register_stream_consumer::RegisterStreamConsumerErro
             crate::operation::register_stream_consumer::RegisterStreamConsumerError::InvalidArgumentException(inner) => {
                 Error::InvalidArgumentException(inner)
             }
-            crate::operation::register_stream_consumer::RegisterStreamConsumerError::ResourceInUseException(inner) => {
-                Error::ResourceInUseException(inner)
-            }
             crate::operation::register_stream_consumer::RegisterStreamConsumerError::LimitExceededException(inner) => {
                 Error::LimitExceededException(inner)
+            }
+            crate::operation::register_stream_consumer::RegisterStreamConsumerError::ResourceInUseException(inner) => {
+                Error::ResourceInUseException(inner)
             }
             crate::operation::register_stream_consumer::RegisterStreamConsumerError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
@@ -939,11 +939,11 @@ impl From<crate::operation::remove_tags_from_stream::RemoveTagsFromStreamError> 
             crate::operation::remove_tags_from_stream::RemoveTagsFromStreamError::InvalidArgumentException(inner) => {
                 Error::InvalidArgumentException(inner)
             }
-            crate::operation::remove_tags_from_stream::RemoveTagsFromStreamError::ResourceInUseException(inner) => {
-                Error::ResourceInUseException(inner)
-            }
             crate::operation::remove_tags_from_stream::RemoveTagsFromStreamError::LimitExceededException(inner) => {
                 Error::LimitExceededException(inner)
+            }
+            crate::operation::remove_tags_from_stream::RemoveTagsFromStreamError::ResourceInUseException(inner) => {
+                Error::ResourceInUseException(inner)
             }
             crate::operation::remove_tags_from_stream::RemoveTagsFromStreamError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
@@ -970,11 +970,11 @@ impl From<crate::operation::split_shard::SplitShardError> for Error {
     fn from(err: crate::operation::split_shard::SplitShardError) -> Self {
         match err {
             crate::operation::split_shard::SplitShardError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::operation::split_shard::SplitShardError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::split_shard::SplitShardError::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
-            crate::operation::split_shard::SplitShardError::ResourceInUseException(inner) => Error::ResourceInUseException(inner),
             crate::operation::split_shard::SplitShardError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::split_shard::SplitShardError::ResourceInUseException(inner) => Error::ResourceInUseException(inner),
             crate::operation::split_shard::SplitShardError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::split_shard::SplitShardError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::split_shard::SplitShardError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -998,29 +998,29 @@ where
 impl From<crate::operation::start_stream_encryption::StartStreamEncryptionError> for Error {
     fn from(err: crate::operation::start_stream_encryption::StartStreamEncryptionError) -> Self {
         match err {
+            crate::operation::start_stream_encryption::StartStreamEncryptionError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::start_stream_encryption::StartStreamEncryptionError::InvalidArgumentException(inner) => {
+                Error::InvalidArgumentException(inner)
+            }
             crate::operation::start_stream_encryption::StartStreamEncryptionError::KmsAccessDeniedException(inner) => {
                 Error::KmsAccessDeniedException(inner)
             }
             crate::operation::start_stream_encryption::StartStreamEncryptionError::KmsDisabledException(inner) => Error::KmsDisabledException(inner),
-            crate::operation::start_stream_encryption::StartStreamEncryptionError::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
+            crate::operation::start_stream_encryption::StartStreamEncryptionError::KmsInvalidStateException(inner) => {
+                Error::KmsInvalidStateException(inner)
             }
             crate::operation::start_stream_encryption::StartStreamEncryptionError::KmsNotFoundException(inner) => Error::KmsNotFoundException(inner),
             crate::operation::start_stream_encryption::StartStreamEncryptionError::KmsOptInRequired(inner) => Error::KmsOptInRequired(inner),
             crate::operation::start_stream_encryption::StartStreamEncryptionError::KmsThrottlingException(inner) => {
                 Error::KmsThrottlingException(inner)
             }
-            crate::operation::start_stream_encryption::StartStreamEncryptionError::InvalidArgumentException(inner) => {
-                Error::InvalidArgumentException(inner)
-            }
-            crate::operation::start_stream_encryption::StartStreamEncryptionError::KmsInvalidStateException(inner) => {
-                Error::KmsInvalidStateException(inner)
+            crate::operation::start_stream_encryption::StartStreamEncryptionError::LimitExceededException(inner) => {
+                Error::LimitExceededException(inner)
             }
             crate::operation::start_stream_encryption::StartStreamEncryptionError::ResourceInUseException(inner) => {
                 Error::ResourceInUseException(inner)
-            }
-            crate::operation::start_stream_encryption::StartStreamEncryptionError::LimitExceededException(inner) => {
-                Error::LimitExceededException(inner)
             }
             crate::operation::start_stream_encryption::StartStreamEncryptionError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
@@ -1050,11 +1050,11 @@ impl From<crate::operation::stop_stream_encryption::StopStreamEncryptionError> f
             crate::operation::stop_stream_encryption::StopStreamEncryptionError::InvalidArgumentException(inner) => {
                 Error::InvalidArgumentException(inner)
             }
-            crate::operation::stop_stream_encryption::StopStreamEncryptionError::ResourceInUseException(inner) => {
-                Error::ResourceInUseException(inner)
-            }
             crate::operation::stop_stream_encryption::StopStreamEncryptionError::LimitExceededException(inner) => {
                 Error::LimitExceededException(inner)
+            }
+            crate::operation::stop_stream_encryption::StopStreamEncryptionError::ResourceInUseException(inner) => {
+                Error::ResourceInUseException(inner)
             }
             crate::operation::stop_stream_encryption::StopStreamEncryptionError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
@@ -1115,8 +1115,8 @@ impl From<crate::operation::tag_resource::TagResourceError> for Error {
         match err {
             crate::operation::tag_resource::TagResourceError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::tag_resource::TagResourceError::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
-            crate::operation::tag_resource::TagResourceError::ResourceInUseException(inner) => Error::ResourceInUseException(inner),
             crate::operation::tag_resource::TagResourceError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::tag_resource::TagResourceError::ResourceInUseException(inner) => Error::ResourceInUseException(inner),
             crate::operation::tag_resource::TagResourceError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::tag_resource::TagResourceError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -1141,8 +1141,8 @@ impl From<crate::operation::untag_resource::UntagResourceError> for Error {
         match err {
             crate::operation::untag_resource::UntagResourceError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::untag_resource::UntagResourceError::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
-            crate::operation::untag_resource::UntagResourceError::ResourceInUseException(inner) => Error::ResourceInUseException(inner),
             crate::operation::untag_resource::UntagResourceError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::untag_resource::UntagResourceError::ResourceInUseException(inner) => Error::ResourceInUseException(inner),
             crate::operation::untag_resource::UntagResourceError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::untag_resource::UntagResourceError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -1166,11 +1166,11 @@ impl From<crate::operation::update_shard_count::UpdateShardCountError> for Error
     fn from(err: crate::operation::update_shard_count::UpdateShardCountError) -> Self {
         match err {
             crate::operation::update_shard_count::UpdateShardCountError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::operation::update_shard_count::UpdateShardCountError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::update_shard_count::UpdateShardCountError::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
-            crate::operation::update_shard_count::UpdateShardCountError::ResourceInUseException(inner) => Error::ResourceInUseException(inner),
             crate::operation::update_shard_count::UpdateShardCountError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::update_shard_count::UpdateShardCountError::ResourceInUseException(inner) => Error::ResourceInUseException(inner),
             crate::operation::update_shard_count::UpdateShardCountError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::update_shard_count::UpdateShardCountError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::update_shard_count::UpdateShardCountError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -1193,8 +1193,8 @@ impl From<crate::operation::update_stream_mode::UpdateStreamModeError> for Error
     fn from(err: crate::operation::update_stream_mode::UpdateStreamModeError) -> Self {
         match err {
             crate::operation::update_stream_mode::UpdateStreamModeError::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
-            crate::operation::update_stream_mode::UpdateStreamModeError::ResourceInUseException(inner) => Error::ResourceInUseException(inner),
             crate::operation::update_stream_mode::UpdateStreamModeError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::update_stream_mode::UpdateStreamModeError::ResourceInUseException(inner) => Error::ResourceInUseException(inner),
             crate::operation::update_stream_mode::UpdateStreamModeError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::update_stream_mode::UpdateStreamModeError::Unhandled(inner) => Error::Unhandled(inner),
         }

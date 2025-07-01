@@ -11,6 +11,8 @@ pub struct ListTrainedModelInferenceJobsInput {
     pub membership_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of a trained model that was used to create the trained model inference jobs that you are interested in.</p>
     pub trained_model_arn: ::std::option::Option<::std::string::String>,
+    /// <p>The version identifier of the trained model to filter inference jobs by. When specified, only inference jobs that used this specific version of the trained model are returned.</p>
+    pub trained_model_version_identifier: ::std::option::Option<::std::string::String>,
 }
 impl ListTrainedModelInferenceJobsInput {
     /// <p>The token value retrieved from a previous call to access the next page of results.</p>
@@ -29,6 +31,10 @@ impl ListTrainedModelInferenceJobsInput {
     pub fn trained_model_arn(&self) -> ::std::option::Option<&str> {
         self.trained_model_arn.as_deref()
     }
+    /// <p>The version identifier of the trained model to filter inference jobs by. When specified, only inference jobs that used this specific version of the trained model are returned.</p>
+    pub fn trained_model_version_identifier(&self) -> ::std::option::Option<&str> {
+        self.trained_model_version_identifier.as_deref()
+    }
 }
 impl ListTrainedModelInferenceJobsInput {
     /// Creates a new builder-style object to manufacture [`ListTrainedModelInferenceJobsInput`](crate::operation::list_trained_model_inference_jobs::ListTrainedModelInferenceJobsInput).
@@ -45,6 +51,7 @@ pub struct ListTrainedModelInferenceJobsInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) membership_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) trained_model_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) trained_model_version_identifier: ::std::option::Option<::std::string::String>,
 }
 impl ListTrainedModelInferenceJobsInputBuilder {
     /// <p>The token value retrieved from a previous call to access the next page of results.</p>
@@ -104,6 +111,20 @@ impl ListTrainedModelInferenceJobsInputBuilder {
     pub fn get_trained_model_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.trained_model_arn
     }
+    /// <p>The version identifier of the trained model to filter inference jobs by. When specified, only inference jobs that used this specific version of the trained model are returned.</p>
+    pub fn trained_model_version_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.trained_model_version_identifier = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The version identifier of the trained model to filter inference jobs by. When specified, only inference jobs that used this specific version of the trained model are returned.</p>
+    pub fn set_trained_model_version_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.trained_model_version_identifier = input;
+        self
+    }
+    /// <p>The version identifier of the trained model to filter inference jobs by. When specified, only inference jobs that used this specific version of the trained model are returned.</p>
+    pub fn get_trained_model_version_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.trained_model_version_identifier
+    }
     /// Consumes the builder and constructs a [`ListTrainedModelInferenceJobsInput`](crate::operation::list_trained_model_inference_jobs::ListTrainedModelInferenceJobsInput).
     pub fn build(
         self,
@@ -116,6 +137,7 @@ impl ListTrainedModelInferenceJobsInputBuilder {
             max_results: self.max_results,
             membership_identifier: self.membership_identifier,
             trained_model_arn: self.trained_model_arn,
+            trained_model_version_identifier: self.trained_model_version_identifier,
         })
     }
 }

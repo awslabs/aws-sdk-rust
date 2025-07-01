@@ -77,34 +77,6 @@ pub fn de_put_session_http_error(
             };
             tmp
         }),
-        "ResourceNotFoundException" => crate::operation::put_session::PutSessionError::ResourceNotFoundException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
-                output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(_response_body, output)
-                    .map_err(crate::operation::put_session::PutSessionError::unhandled)?;
-                let output = output.meta(generic);
-                crate::serde_util::resource_not_found_exception_correct_errors(output)
-                    .build()
-                    .map_err(crate::operation::put_session::PutSessionError::unhandled)?
-            };
-            tmp
-        }),
-        "ThrottlingException" => crate::operation::put_session::PutSessionError::ThrottlingException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::types::error::builders::ThrottlingExceptionBuilder::default();
-                output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(_response_body, output)
-                    .map_err(crate::operation::put_session::PutSessionError::unhandled)?;
-                let output = output.meta(generic);
-                crate::serde_util::throttling_exception_correct_errors(output)
-                    .build()
-                    .map_err(crate::operation::put_session::PutSessionError::unhandled)?
-            };
-            tmp
-        }),
         "BadGatewayException" => crate::operation::put_session::PutSessionError::BadGatewayException({
             #[allow(unused_mut)]
             let mut tmp = {
@@ -119,15 +91,15 @@ pub fn de_put_session_http_error(
             };
             tmp
         }),
-        "ValidationException" => crate::operation::put_session::PutSessionError::ValidationException({
+        "ConflictException" => crate::operation::put_session::PutSessionError::ConflictException({
             #[allow(unused_mut)]
             let mut tmp = {
                 #[allow(unused_mut)]
-                let mut output = crate::types::error::builders::ValidationExceptionBuilder::default();
-                output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(_response_body, output)
+                let mut output = crate::types::error::builders::ConflictExceptionBuilder::default();
+                output = crate::protocol_serde::shape_conflict_exception::de_conflict_exception_json_err(_response_body, output)
                     .map_err(crate::operation::put_session::PutSessionError::unhandled)?;
                 let output = output.meta(generic);
-                crate::serde_util::validation_exception_correct_errors(output)
+                crate::serde_util::conflict_exception_correct_errors(output)
                     .build()
                     .map_err(crate::operation::put_session::PutSessionError::unhandled)?
             };
@@ -161,15 +133,43 @@ pub fn de_put_session_http_error(
             };
             tmp
         }),
-        "ConflictException" => crate::operation::put_session::PutSessionError::ConflictException({
+        "ResourceNotFoundException" => crate::operation::put_session::PutSessionError::ResourceNotFoundException({
             #[allow(unused_mut)]
             let mut tmp = {
                 #[allow(unused_mut)]
-                let mut output = crate::types::error::builders::ConflictExceptionBuilder::default();
-                output = crate::protocol_serde::shape_conflict_exception::de_conflict_exception_json_err(_response_body, output)
+                let mut output = crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
+                output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(_response_body, output)
                     .map_err(crate::operation::put_session::PutSessionError::unhandled)?;
                 let output = output.meta(generic);
-                crate::serde_util::conflict_exception_correct_errors(output)
+                crate::serde_util::resource_not_found_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::put_session::PutSessionError::unhandled)?
+            };
+            tmp
+        }),
+        "ThrottlingException" => crate::operation::put_session::PutSessionError::ThrottlingException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ThrottlingExceptionBuilder::default();
+                output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::put_session::PutSessionError::unhandled)?;
+                let output = output.meta(generic);
+                crate::serde_util::throttling_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::put_session::PutSessionError::unhandled)?
+            };
+            tmp
+        }),
+        "ValidationException" => crate::operation::put_session::PutSessionError::ValidationException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ValidationExceptionBuilder::default();
+                output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::put_session::PutSessionError::unhandled)?;
+                let output = output.meta(generic);
+                crate::serde_util::validation_exception_correct_errors(output)
                     .build()
                     .map_err(crate::operation::put_session::PutSessionError::unhandled)?
             };

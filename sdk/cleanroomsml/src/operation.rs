@@ -142,6 +142,9 @@ pub mod list_tags_for_resource;
 /// Types for the `ListTrainedModelInferenceJobs` operation.
 pub mod list_trained_model_inference_jobs;
 
+/// Types for the `ListTrainedModelVersions` operation.
+pub mod list_trained_model_versions;
+
 /// Types for the `ListTrainedModels` operation.
 pub mod list_trained_models;
 

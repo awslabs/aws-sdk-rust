@@ -304,15 +304,15 @@ pub enum DeleteSessionError {
     /// <p></p>
     AccessDeniedException(crate::types::error::AccessDeniedException),
     /// <p></p>
+    ConflictException(crate::types::error::ConflictException),
+    /// <p></p>
+    InternalServerException(crate::types::error::InternalServerException),
+    /// <p></p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
     /// <p></p>
     ThrottlingException(crate::types::error::ThrottlingException),
     /// <p></p>
     ValidationException(crate::types::error::ValidationException),
-    /// <p></p>
-    InternalServerException(crate::types::error::InternalServerException),
-    /// <p></p>
-    ConflictException(crate::types::error::ConflictException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \
     variable wildcard pattern and check `.code()`:
@@ -347,17 +347,25 @@ impl DeleteSessionError {
     pub fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
             Self::AccessDeniedException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::ConflictException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::InternalServerException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ResourceNotFoundException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ThrottlingException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ValidationException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
-            Self::InternalServerException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
-            Self::ConflictException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::Unhandled(e) => &e.meta,
         }
     }
     /// Returns `true` if the error kind is `DeleteSessionError::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(self, Self::AccessDeniedException(_))
+    }
+    /// Returns `true` if the error kind is `DeleteSessionError::ConflictException`.
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(self, Self::ConflictException(_))
+    }
+    /// Returns `true` if the error kind is `DeleteSessionError::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(self, Self::InternalServerException(_))
     }
     /// Returns `true` if the error kind is `DeleteSessionError::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
@@ -371,24 +379,16 @@ impl DeleteSessionError {
     pub fn is_validation_exception(&self) -> bool {
         matches!(self, Self::ValidationException(_))
     }
-    /// Returns `true` if the error kind is `DeleteSessionError::InternalServerException`.
-    pub fn is_internal_server_exception(&self) -> bool {
-        matches!(self, Self::InternalServerException(_))
-    }
-    /// Returns `true` if the error kind is `DeleteSessionError::ConflictException`.
-    pub fn is_conflict_exception(&self) -> bool {
-        matches!(self, Self::ConflictException(_))
-    }
 }
 impl ::std::error::Error for DeleteSessionError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
             Self::AccessDeniedException(_inner) => ::std::option::Option::Some(_inner),
+            Self::ConflictException(_inner) => ::std::option::Option::Some(_inner),
+            Self::InternalServerException(_inner) => ::std::option::Option::Some(_inner),
             Self::ResourceNotFoundException(_inner) => ::std::option::Option::Some(_inner),
             Self::ThrottlingException(_inner) => ::std::option::Option::Some(_inner),
             Self::ValidationException(_inner) => ::std::option::Option::Some(_inner),
-            Self::InternalServerException(_inner) => ::std::option::Option::Some(_inner),
-            Self::ConflictException(_inner) => ::std::option::Option::Some(_inner),
             Self::Unhandled(_inner) => ::std::option::Option::Some(&*_inner.source),
         }
     }
@@ -397,11 +397,11 @@ impl ::std::fmt::Display for DeleteSessionError {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         match self {
             Self::AccessDeniedException(_inner) => _inner.fmt(f),
+            Self::ConflictException(_inner) => _inner.fmt(f),
+            Self::InternalServerException(_inner) => _inner.fmt(f),
             Self::ResourceNotFoundException(_inner) => _inner.fmt(f),
             Self::ThrottlingException(_inner) => _inner.fmt(f),
             Self::ValidationException(_inner) => _inner.fmt(f),
-            Self::InternalServerException(_inner) => _inner.fmt(f),
-            Self::ConflictException(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => {
                 if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self) {
                     write!(f, "unhandled error ({code})")
@@ -424,11 +424,11 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for DeleteSession
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
             Self::AccessDeniedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::ConflictException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::InternalServerException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ResourceNotFoundException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ThrottlingException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ValidationException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::InternalServerException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::ConflictException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::Unhandled(_inner) => &_inner.meta,
         }
     }

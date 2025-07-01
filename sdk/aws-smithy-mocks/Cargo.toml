@@ -28,7 +28,7 @@ version = "1.8.1"
 [dependencies.aws-smithy-http-client]
 path = "../aws-smithy-http-client"
 features = ["test-util"]
-version = "1.0.5"
+version = "1.0.6"
 [dev-dependencies.tokio]
 version = "1"
 features = ["full"]

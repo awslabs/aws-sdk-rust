@@ -136,4 +136,18 @@ impl GetCollaborationTrainedModelFluentBuilder {
     pub fn get_collaboration_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_collaboration_identifier()
     }
+    /// <p>The version identifier of the trained model to retrieve. If not specified, the operation returns information about the latest version of the trained model.</p>
+    pub fn version_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.version_identifier(input.into());
+        self
+    }
+    /// <p>The version identifier of the trained model to retrieve. If not specified, the operation returns information about the latest version of the trained model.</p>
+    pub fn set_version_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_version_identifier(input);
+        self
+    }
+    /// <p>The version identifier of the trained model to retrieve. If not specified, the operation returns information about the latest version of the trained model.</p>
+    pub fn get_version_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_version_identifier()
+    }
 }

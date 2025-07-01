@@ -15,6 +15,8 @@ pub struct GetInstanceTypesFromInstanceRequirementsInput {
     pub max_results: ::std::option::Option<i32>,
     /// <p>The token returned from a previous paginated request. Pagination continues from the end of the items returned by the previous request.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
+    /// <p>Reserved.</p>
+    pub context: ::std::option::Option<::std::string::String>,
 }
 impl GetInstanceTypesFromInstanceRequirementsInput {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -45,6 +47,10 @@ impl GetInstanceTypesFromInstanceRequirementsInput {
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
+    /// <p>Reserved.</p>
+    pub fn context(&self) -> ::std::option::Option<&str> {
+        self.context.as_deref()
+    }
 }
 impl GetInstanceTypesFromInstanceRequirementsInput {
     /// Creates a new builder-style object to manufacture [`GetInstanceTypesFromInstanceRequirementsInput`](crate::operation::get_instance_types_from_instance_requirements::GetInstanceTypesFromInstanceRequirementsInput).
@@ -64,6 +70,7 @@ pub struct GetInstanceTypesFromInstanceRequirementsInputBuilder {
     pub(crate) instance_requirements: ::std::option::Option<crate::types::InstanceRequirementsRequest>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
+    pub(crate) context: ::std::option::Option<::std::string::String>,
 }
 impl GetInstanceTypesFromInstanceRequirementsInputBuilder {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -163,6 +170,20 @@ impl GetInstanceTypesFromInstanceRequirementsInputBuilder {
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
+    /// <p>Reserved.</p>
+    pub fn context(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.context = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Reserved.</p>
+    pub fn set_context(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.context = input;
+        self
+    }
+    /// <p>Reserved.</p>
+    pub fn get_context(&self) -> &::std::option::Option<::std::string::String> {
+        &self.context
+    }
     /// Consumes the builder and constructs a [`GetInstanceTypesFromInstanceRequirementsInput`](crate::operation::get_instance_types_from_instance_requirements::GetInstanceTypesFromInstanceRequirementsInput).
     pub fn build(
         self,
@@ -178,6 +199,7 @@ impl GetInstanceTypesFromInstanceRequirementsInputBuilder {
                 instance_requirements: self.instance_requirements,
                 max_results: self.max_results,
                 next_token: self.next_token,
+                context: self.context,
             },
         )
     }

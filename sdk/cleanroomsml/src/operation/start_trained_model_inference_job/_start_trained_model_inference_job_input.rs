@@ -9,6 +9,8 @@ pub struct StartTrainedModelInferenceJobInput {
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the trained model that is used for this trained model inference job.</p>
     pub trained_model_arn: ::std::option::Option<::std::string::String>,
+    /// <p>The version identifier of the trained model to use for inference. This specifies which version of the trained model should be used to generate predictions on the input data.</p>
+    pub trained_model_version_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the configured model algorithm association that is used for this trained model inference job.</p>
     pub configured_model_algorithm_association_arn: ::std::option::Option<::std::string::String>,
     /// <p>Defines the resource configuration for the trained model inference job.</p>
@@ -57,6 +59,10 @@ impl StartTrainedModelInferenceJobInput {
     /// <p>The Amazon Resource Name (ARN) of the trained model that is used for this trained model inference job.</p>
     pub fn trained_model_arn(&self) -> ::std::option::Option<&str> {
         self.trained_model_arn.as_deref()
+    }
+    /// <p>The version identifier of the trained model to use for inference. This specifies which version of the trained model should be used to generate predictions on the input data.</p>
+    pub fn trained_model_version_identifier(&self) -> ::std::option::Option<&str> {
+        self.trained_model_version_identifier.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the configured model algorithm association that is used for this trained model inference job.</p>
     pub fn configured_model_algorithm_association_arn(&self) -> ::std::option::Option<&str> {
@@ -126,6 +132,7 @@ pub struct StartTrainedModelInferenceJobInputBuilder {
     pub(crate) membership_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) trained_model_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) trained_model_version_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) configured_model_algorithm_association_arn: ::std::option::Option<::std::string::String>,
     pub(crate) resource_config: ::std::option::Option<crate::types::InferenceResourceConfig>,
     pub(crate) output_configuration: ::std::option::Option<crate::types::InferenceOutputConfiguration>,
@@ -181,6 +188,20 @@ impl StartTrainedModelInferenceJobInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the trained model that is used for this trained model inference job.</p>
     pub fn get_trained_model_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.trained_model_arn
+    }
+    /// <p>The version identifier of the trained model to use for inference. This specifies which version of the trained model should be used to generate predictions on the input data.</p>
+    pub fn trained_model_version_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.trained_model_version_identifier = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The version identifier of the trained model to use for inference. This specifies which version of the trained model should be used to generate predictions on the input data.</p>
+    pub fn set_trained_model_version_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.trained_model_version_identifier = input;
+        self
+    }
+    /// <p>The version identifier of the trained model to use for inference. This specifies which version of the trained model should be used to generate predictions on the input data.</p>
+    pub fn get_trained_model_version_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.trained_model_version_identifier
     }
     /// <p>The Amazon Resource Name (ARN) of the configured model algorithm association that is used for this trained model inference job.</p>
     pub fn configured_model_algorithm_association_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -388,6 +409,7 @@ impl StartTrainedModelInferenceJobInputBuilder {
             membership_identifier: self.membership_identifier,
             name: self.name,
             trained_model_arn: self.trained_model_arn,
+            trained_model_version_identifier: self.trained_model_version_identifier,
             configured_model_algorithm_association_arn: self.configured_model_algorithm_association_arn,
             resource_config: self.resource_config,
             output_configuration: self.output_configuration,

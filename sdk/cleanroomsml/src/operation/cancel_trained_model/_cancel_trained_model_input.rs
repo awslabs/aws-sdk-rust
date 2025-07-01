@@ -7,6 +7,9 @@ pub struct CancelTrainedModelInput {
     pub membership_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the trained model job that you want to cancel.</p>
     pub trained_model_arn: ::std::option::Option<::std::string::String>,
+    /// <p>The version identifier of the trained model to cancel. This parameter allows you to specify which version of the trained model you want to cancel when multiple versions exist.</p>
+    /// <p>If <code>versionIdentifier</code> is not specified, the base model will be cancelled.</p>
+    pub version_identifier: ::std::option::Option<::std::string::String>,
 }
 impl CancelTrainedModelInput {
     /// <p>The membership ID of the trained model job that you want to cancel.</p>
@@ -16,6 +19,11 @@ impl CancelTrainedModelInput {
     /// <p>The Amazon Resource Name (ARN) of the trained model job that you want to cancel.</p>
     pub fn trained_model_arn(&self) -> ::std::option::Option<&str> {
         self.trained_model_arn.as_deref()
+    }
+    /// <p>The version identifier of the trained model to cancel. This parameter allows you to specify which version of the trained model you want to cancel when multiple versions exist.</p>
+    /// <p>If <code>versionIdentifier</code> is not specified, the base model will be cancelled.</p>
+    pub fn version_identifier(&self) -> ::std::option::Option<&str> {
+        self.version_identifier.as_deref()
     }
 }
 impl CancelTrainedModelInput {
@@ -31,6 +39,7 @@ impl CancelTrainedModelInput {
 pub struct CancelTrainedModelInputBuilder {
     pub(crate) membership_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) trained_model_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) version_identifier: ::std::option::Option<::std::string::String>,
 }
 impl CancelTrainedModelInputBuilder {
     /// <p>The membership ID of the trained model job that you want to cancel.</p>
@@ -63,6 +72,23 @@ impl CancelTrainedModelInputBuilder {
     pub fn get_trained_model_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.trained_model_arn
     }
+    /// <p>The version identifier of the trained model to cancel. This parameter allows you to specify which version of the trained model you want to cancel when multiple versions exist.</p>
+    /// <p>If <code>versionIdentifier</code> is not specified, the base model will be cancelled.</p>
+    pub fn version_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.version_identifier = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The version identifier of the trained model to cancel. This parameter allows you to specify which version of the trained model you want to cancel when multiple versions exist.</p>
+    /// <p>If <code>versionIdentifier</code> is not specified, the base model will be cancelled.</p>
+    pub fn set_version_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.version_identifier = input;
+        self
+    }
+    /// <p>The version identifier of the trained model to cancel. This parameter allows you to specify which version of the trained model you want to cancel when multiple versions exist.</p>
+    /// <p>If <code>versionIdentifier</code> is not specified, the base model will be cancelled.</p>
+    pub fn get_version_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.version_identifier
+    }
     /// Consumes the builder and constructs a [`CancelTrainedModelInput`](crate::operation::cancel_trained_model::CancelTrainedModelInput).
     pub fn build(
         self,
@@ -71,6 +97,7 @@ impl CancelTrainedModelInputBuilder {
         ::std::result::Result::Ok(crate::operation::cancel_trained_model::CancelTrainedModelInput {
             membership_identifier: self.membership_identifier,
             trained_model_arn: self.trained_model_arn,
+            version_identifier: self.version_identifier,
         })
     }
 }

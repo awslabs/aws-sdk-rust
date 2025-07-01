@@ -70,6 +70,13 @@ where
                                         .transpose()?,
                                 );
                             }
+                            "trainedModelVersionIdentifier" => {
+                                builder = builder.set_trained_model_version_identifier(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
+                                );
+                            }
                             "membershipIdentifier" => {
                                 builder = builder.set_membership_identifier(
                                     ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

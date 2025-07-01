@@ -17,12 +17,42 @@ pub fn de_put_records_http_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
+        "AccessDeniedException" => crate::operation::put_records::PutRecordsError::AccessDeniedException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::AccessDeniedExceptionBuilder::default();
+                output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::put_records::PutRecordsError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "InternalFailureException" => crate::operation::put_records::PutRecordsError::InternalFailureException({
             #[allow(unused_mut)]
             let mut tmp = {
                 #[allow(unused_mut)]
                 let mut output = crate::types::error::builders::InternalFailureExceptionBuilder::default();
                 output = crate::protocol_serde::shape_internal_failure_exception::de_internal_failure_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::put_records::PutRecordsError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "InvalidArgumentException" => crate::operation::put_records::PutRecordsError::InvalidArgumentException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::InvalidArgumentExceptionBuilder::default();
+                output = crate::protocol_serde::shape_invalid_argument_exception::de_invalid_argument_exception_json_err(_response_body, output)
                     .map_err(crate::operation::put_records::PutRecordsError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
@@ -62,12 +92,12 @@ pub fn de_put_records_http_error(
             }
             tmp
         }),
-        "AccessDeniedException" => crate::operation::put_records::PutRecordsError::AccessDeniedException({
+        "KMSInvalidStateException" => crate::operation::put_records::PutRecordsError::KmsInvalidStateException({
             #[allow(unused_mut)]
             let mut tmp = {
                 #[allow(unused_mut)]
-                let mut output = crate::types::error::builders::AccessDeniedExceptionBuilder::default();
-                output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(_response_body, output)
+                let mut output = crate::types::error::builders::KmsInvalidStateExceptionBuilder::default();
+                output = crate::protocol_serde::shape_kms_invalid_state_exception::de_kms_invalid_state_exception_json_err(_response_body, output)
                     .map_err(crate::operation::put_records::PutRecordsError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
@@ -138,36 +168,6 @@ pub fn de_put_records_http_error(
                 tmp
             })
         }
-        "InvalidArgumentException" => crate::operation::put_records::PutRecordsError::InvalidArgumentException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::types::error::builders::InvalidArgumentExceptionBuilder::default();
-                output = crate::protocol_serde::shape_invalid_argument_exception::de_invalid_argument_exception_json_err(_response_body, output)
-                    .map_err(crate::operation::put_records::PutRecordsError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "KMSInvalidStateException" => crate::operation::put_records::PutRecordsError::KmsInvalidStateException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::types::error::builders::KmsInvalidStateExceptionBuilder::default();
-                output = crate::protocol_serde::shape_kms_invalid_state_exception::de_kms_invalid_state_exception_json_err(_response_body, output)
-                    .map_err(crate::operation::put_records::PutRecordsError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
         "ResourceNotFoundException" => crate::operation::put_records::PutRecordsError::ResourceNotFoundException({
             #[allow(unused_mut)]
             let mut tmp = {

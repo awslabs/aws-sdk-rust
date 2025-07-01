@@ -32,21 +32,6 @@ pub fn de_get_records_http_error(
             }
             tmp
         }),
-        "KMSNotFoundException" => crate::operation::get_records::GetRecordsError::KmsNotFoundException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::types::error::builders::KmsNotFoundExceptionBuilder::default();
-                output = crate::protocol_serde::shape_kms_not_found_exception::de_kms_not_found_exception_json_err(_response_body, output)
-                    .map_err(crate::operation::get_records::GetRecordsError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
         "ExpiredIteratorException" => crate::operation::get_records::GetRecordsError::ExpiredIteratorException({
             #[allow(unused_mut)]
             let mut tmp = {
@@ -62,58 +47,27 @@ pub fn de_get_records_http_error(
             }
             tmp
         }),
-        "KMSOptInRequired" => crate::operation::get_records::GetRecordsError::KmsOptInRequired({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::types::error::builders::KmsOptInRequiredBuilder::default();
-                output = crate::protocol_serde::shape_kms_opt_in_required::de_kms_opt_in_required_json_err(_response_body, output)
-                    .map_err(crate::operation::get_records::GetRecordsError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "ProvisionedThroughputExceededException" => {
-            crate::operation::get_records::GetRecordsError::ProvisionedThroughputExceededException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::ProvisionedThroughputExceededExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_provisioned_throughput_exceeded_exception::de_provisioned_throughput_exceeded_exception_json_err(_response_body, output).map_err(crate::operation::get_records::GetRecordsError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "ResourceNotFoundException" => crate::operation::get_records::GetRecordsError::ResourceNotFoundException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
-                output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(_response_body, output)
-                    .map_err(crate::operation::get_records::GetRecordsError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
         "InternalFailureException" => crate::operation::get_records::GetRecordsError::InternalFailureException({
             #[allow(unused_mut)]
             let mut tmp = {
                 #[allow(unused_mut)]
                 let mut output = crate::types::error::builders::InternalFailureExceptionBuilder::default();
                 output = crate::protocol_serde::shape_internal_failure_exception::de_internal_failure_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::get_records::GetRecordsError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "InvalidArgumentException" => crate::operation::get_records::GetRecordsError::InvalidArgumentException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::InvalidArgumentExceptionBuilder::default();
+                output = crate::protocol_serde::shape_invalid_argument_exception::de_invalid_argument_exception_json_err(_response_body, output)
                     .map_err(crate::operation::get_records::GetRecordsError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
@@ -153,6 +107,51 @@ pub fn de_get_records_http_error(
             }
             tmp
         }),
+        "KMSInvalidStateException" => crate::operation::get_records::GetRecordsError::KmsInvalidStateException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::KmsInvalidStateExceptionBuilder::default();
+                output = crate::protocol_serde::shape_kms_invalid_state_exception::de_kms_invalid_state_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::get_records::GetRecordsError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "KMSNotFoundException" => crate::operation::get_records::GetRecordsError::KmsNotFoundException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::KmsNotFoundExceptionBuilder::default();
+                output = crate::protocol_serde::shape_kms_not_found_exception::de_kms_not_found_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::get_records::GetRecordsError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "KMSOptInRequired" => crate::operation::get_records::GetRecordsError::KmsOptInRequired({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::KmsOptInRequiredBuilder::default();
+                output = crate::protocol_serde::shape_kms_opt_in_required::de_kms_opt_in_required_json_err(_response_body, output)
+                    .map_err(crate::operation::get_records::GetRecordsError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "KMSThrottlingException" => crate::operation::get_records::GetRecordsError::KmsThrottlingException({
             #[allow(unused_mut)]
             let mut tmp = {
@@ -168,27 +167,28 @@ pub fn de_get_records_http_error(
             }
             tmp
         }),
-        "InvalidArgumentException" => crate::operation::get_records::GetRecordsError::InvalidArgumentException({
+        "ProvisionedThroughputExceededException" => {
+            crate::operation::get_records::GetRecordsError::ProvisionedThroughputExceededException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::ProvisionedThroughputExceededExceptionBuilder::default();
+                    output = crate::protocol_serde::shape_provisioned_throughput_exceeded_exception::de_provisioned_throughput_exceeded_exception_json_err(_response_body, output).map_err(crate::operation::get_records::GetRecordsError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "ResourceNotFoundException" => crate::operation::get_records::GetRecordsError::ResourceNotFoundException({
             #[allow(unused_mut)]
             let mut tmp = {
                 #[allow(unused_mut)]
-                let mut output = crate::types::error::builders::InvalidArgumentExceptionBuilder::default();
-                output = crate::protocol_serde::shape_invalid_argument_exception::de_invalid_argument_exception_json_err(_response_body, output)
-                    .map_err(crate::operation::get_records::GetRecordsError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "KMSInvalidStateException" => crate::operation::get_records::GetRecordsError::KmsInvalidStateException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::types::error::builders::KmsInvalidStateExceptionBuilder::default();
-                output = crate::protocol_serde::shape_kms_invalid_state_exception::de_kms_invalid_state_exception_json_err(_response_body, output)
+                let mut output = crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
+                output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(_response_body, output)
                     .map_err(crate::operation::get_records::GetRecordsError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()

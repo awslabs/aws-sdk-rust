@@ -20,6 +20,22 @@ pub fn de_batch_get_asset_property_aggregates_http_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
+        "InternalFailureException" => {
+            crate::operation::batch_get_asset_property_aggregates::BatchGetAssetPropertyAggregatesError::InternalFailureException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::InternalFailureExceptionBuilder::default();
+                    output = crate::protocol_serde::shape_internal_failure_exception::de_internal_failure_exception_json_err(_response_body, output)
+                        .map_err(crate::operation::batch_get_asset_property_aggregates::BatchGetAssetPropertyAggregatesError::unhandled)?;
+                    let output = output.meta(generic);
+                    crate::serde_util::internal_failure_exception_correct_errors(output)
+                        .build()
+                        .map_err(crate::operation::batch_get_asset_property_aggregates::BatchGetAssetPropertyAggregatesError::unhandled)?
+                };
+                tmp
+            })
+        }
         "InvalidRequestException" => {
             crate::operation::batch_get_asset_property_aggregates::BatchGetAssetPropertyAggregatesError::InvalidRequestException({
                 #[allow(unused_mut)]
@@ -30,6 +46,23 @@ pub fn de_batch_get_asset_property_aggregates_http_error(
                         .map_err(crate::operation::batch_get_asset_property_aggregates::BatchGetAssetPropertyAggregatesError::unhandled)?;
                     let output = output.meta(generic);
                     crate::serde_util::invalid_request_exception_correct_errors(output)
+                        .build()
+                        .map_err(crate::operation::batch_get_asset_property_aggregates::BatchGetAssetPropertyAggregatesError::unhandled)?
+                };
+                tmp
+            })
+        }
+        "ServiceUnavailableException" => {
+            crate::operation::batch_get_asset_property_aggregates::BatchGetAssetPropertyAggregatesError::ServiceUnavailableException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::ServiceUnavailableExceptionBuilder::default();
+                    output =
+                        crate::protocol_serde::shape_service_unavailable_exception::de_service_unavailable_exception_json_err(_response_body, output)
+                            .map_err(crate::operation::batch_get_asset_property_aggregates::BatchGetAssetPropertyAggregatesError::unhandled)?;
+                    let output = output.meta(generic);
+                    crate::serde_util::service_unavailable_exception_correct_errors(output)
                         .build()
                         .map_err(crate::operation::batch_get_asset_property_aggregates::BatchGetAssetPropertyAggregatesError::unhandled)?
                 };
@@ -50,39 +83,6 @@ pub fn de_batch_get_asset_property_aggregates_http_error(
             };
             tmp
         }),
-        "ServiceUnavailableException" => {
-            crate::operation::batch_get_asset_property_aggregates::BatchGetAssetPropertyAggregatesError::ServiceUnavailableException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::ServiceUnavailableExceptionBuilder::default();
-                    output =
-                        crate::protocol_serde::shape_service_unavailable_exception::de_service_unavailable_exception_json_err(_response_body, output)
-                            .map_err(crate::operation::batch_get_asset_property_aggregates::BatchGetAssetPropertyAggregatesError::unhandled)?;
-                    let output = output.meta(generic);
-                    crate::serde_util::service_unavailable_exception_correct_errors(output)
-                        .build()
-                        .map_err(crate::operation::batch_get_asset_property_aggregates::BatchGetAssetPropertyAggregatesError::unhandled)?
-                };
-                tmp
-            })
-        }
-        "InternalFailureException" => {
-            crate::operation::batch_get_asset_property_aggregates::BatchGetAssetPropertyAggregatesError::InternalFailureException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::InternalFailureExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_internal_failure_exception::de_internal_failure_exception_json_err(_response_body, output)
-                        .map_err(crate::operation::batch_get_asset_property_aggregates::BatchGetAssetPropertyAggregatesError::unhandled)?;
-                    let output = output.meta(generic);
-                    crate::serde_util::internal_failure_exception_correct_errors(output)
-                        .build()
-                        .map_err(crate::operation::batch_get_asset_property_aggregates::BatchGetAssetPropertyAggregatesError::unhandled)?
-                };
-                tmp
-            })
-        }
         _ => crate::operation::batch_get_asset_property_aggregates::BatchGetAssetPropertyAggregatesError::generic(generic),
     })
 }

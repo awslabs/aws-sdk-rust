@@ -257,6 +257,8 @@ mod list_tags_for_resource;
 
 mod list_trained_model_inference_jobs;
 
+mod list_trained_model_versions;
+
 mod list_trained_models;
 
 mod list_training_datasets;

@@ -16,6 +16,8 @@
 ///     DocumentAttributeBoostingLevel::Low => { /* ... */ },
 ///     DocumentAttributeBoostingLevel::Medium => { /* ... */ },
 ///     DocumentAttributeBoostingLevel::None => { /* ... */ },
+///     DocumentAttributeBoostingLevel::One => { /* ... */ },
+///     DocumentAttributeBoostingLevel::Two => { /* ... */ },
 ///     DocumentAttributeBoostingLevel::VeryHigh => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -54,6 +56,10 @@ pub enum DocumentAttributeBoostingLevel {
     #[allow(missing_docs)] // documentation missing in model
     None,
     #[allow(missing_docs)] // documentation missing in model
+    One,
+    #[allow(missing_docs)] // documentation missing in model
+    Two,
+    #[allow(missing_docs)] // documentation missing in model
     VeryHigh,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
@@ -66,6 +72,8 @@ impl ::std::convert::From<&str> for DocumentAttributeBoostingLevel {
             "LOW" => DocumentAttributeBoostingLevel::Low,
             "MEDIUM" => DocumentAttributeBoostingLevel::Medium,
             "NONE" => DocumentAttributeBoostingLevel::None,
+            "ONE" => DocumentAttributeBoostingLevel::One,
+            "TWO" => DocumentAttributeBoostingLevel::Two,
             "VERY_HIGH" => DocumentAttributeBoostingLevel::VeryHigh,
             other => DocumentAttributeBoostingLevel::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -86,13 +94,15 @@ impl DocumentAttributeBoostingLevel {
             DocumentAttributeBoostingLevel::Low => "LOW",
             DocumentAttributeBoostingLevel::Medium => "MEDIUM",
             DocumentAttributeBoostingLevel::None => "NONE",
+            DocumentAttributeBoostingLevel::One => "ONE",
+            DocumentAttributeBoostingLevel::Two => "TWO",
             DocumentAttributeBoostingLevel::VeryHigh => "VERY_HIGH",
             DocumentAttributeBoostingLevel::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["HIGH", "LOW", "MEDIUM", "NONE", "VERY_HIGH"]
+        &["HIGH", "LOW", "MEDIUM", "NONE", "ONE", "TWO", "VERY_HIGH"]
     }
 }
 impl ::std::convert::AsRef<str> for DocumentAttributeBoostingLevel {
@@ -119,6 +129,8 @@ impl ::std::fmt::Display for DocumentAttributeBoostingLevel {
             DocumentAttributeBoostingLevel::Low => write!(f, "LOW"),
             DocumentAttributeBoostingLevel::Medium => write!(f, "MEDIUM"),
             DocumentAttributeBoostingLevel::None => write!(f, "NONE"),
+            DocumentAttributeBoostingLevel::One => write!(f, "ONE"),
+            DocumentAttributeBoostingLevel::Two => write!(f, "TWO"),
             DocumentAttributeBoostingLevel::VeryHigh => write!(f, "VERY_HIGH"),
             DocumentAttributeBoostingLevel::Unknown(value) => write!(f, "{}", value),
         }

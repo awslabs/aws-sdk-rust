@@ -7,10 +7,14 @@ pub enum Error {
     AccessDeniedException(crate::types::error::AccessDeniedException),
     /// <p>You can't complete this action because another resource depends on this resource.</p>
     ConflictException(crate::types::error::ConflictException),
+    /// <p>An internal service error occurred. Retry your request. If the problem persists, contact AWS Support.</p>
+    InternalServiceException(crate::types::error::InternalServiceException),
     /// <p>The resource you are requesting does not exist.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
     /// <p>You have exceeded your service quota.</p>
     ServiceQuotaExceededException(crate::types::error::ServiceQuotaExceededException),
+    /// <p>The request was denied due to request throttling.</p>
+    ThrottlingException(crate::types::error::ThrottlingException),
     /// <p>The request parameters for this request are incorrect.</p>
     ValidationException(crate::types::error::ValidationException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
@@ -27,8 +31,10 @@ impl ::std::fmt::Display for Error {
         match self {
             Error::AccessDeniedException(inner) => inner.fmt(f),
             Error::ConflictException(inner) => inner.fmt(f),
+            Error::InternalServiceException(inner) => inner.fmt(f),
             Error::ResourceNotFoundException(inner) => inner.fmt(f),
             Error::ServiceQuotaExceededException(inner) => inner.fmt(f),
+            Error::ThrottlingException(inner) => inner.fmt(f),
             Error::ValidationException(inner) => inner.fmt(f),
             Error::Unhandled(_) => {
                 if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self) {
@@ -53,8 +59,10 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
         match self {
             Self::AccessDeniedException(inner) => inner.meta(),
             Self::ConflictException(inner) => inner.meta(),
+            Self::InternalServiceException(inner) => inner.meta(),
             Self::ResourceNotFoundException(inner) => inner.meta(),
             Self::ServiceQuotaExceededException(inner) => inner.meta(),
+            Self::ThrottlingException(inner) => inner.meta(),
             Self::ValidationException(inner) => inner.meta(),
             Self::Unhandled(inner) => &inner.meta,
         }
@@ -82,6 +90,7 @@ impl From<crate::operation::cancel_trained_model::CancelTrainedModelError> for E
             crate::operation::cancel_trained_model::CancelTrainedModelError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }
+            crate::operation::cancel_trained_model::CancelTrainedModelError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::cancel_trained_model::CancelTrainedModelError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::cancel_trained_model::CancelTrainedModelError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -123,6 +132,9 @@ impl From<crate::operation::cancel_trained_model_inference_job::CancelTrainedMod
             }
             crate::operation::cancel_trained_model_inference_job::CancelTrainedModelInferenceJobError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::cancel_trained_model_inference_job::CancelTrainedModelInferenceJobError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
             }
             crate::operation::cancel_trained_model_inference_job::CancelTrainedModelInferenceJobError::ValidationException(inner) => {
                 Error::ValidationException(inner)
@@ -281,6 +293,7 @@ impl From<crate::operation::create_configured_model_algorithm_association::Creat
             crate::operation::create_configured_model_algorithm_association::CreateConfiguredModelAlgorithmAssociationError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::create_configured_model_algorithm_association::CreateConfiguredModelAlgorithmAssociationError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::create_configured_model_algorithm_association::CreateConfiguredModelAlgorithmAssociationError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::operation::create_configured_model_algorithm_association::CreateConfiguredModelAlgorithmAssociationError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::create_configured_model_algorithm_association::CreateConfiguredModelAlgorithmAssociationError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::create_configured_model_algorithm_association::CreateConfiguredModelAlgorithmAssociationError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -313,6 +326,7 @@ impl From<crate::operation::create_ml_input_channel::CreateMLInputChannelError> 
             crate::operation::create_ml_input_channel::CreateMLInputChannelError::ServiceQuotaExceededException(inner) => {
                 Error::ServiceQuotaExceededException(inner)
             }
+            crate::operation::create_ml_input_channel::CreateMLInputChannelError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::create_ml_input_channel::CreateMLInputChannelError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::create_ml_input_channel::CreateMLInputChannelError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -337,12 +351,16 @@ impl From<crate::operation::create_trained_model::CreateTrainedModelError> for E
         match err {
             crate::operation::create_trained_model::CreateTrainedModelError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::create_trained_model::CreateTrainedModelError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::create_trained_model::CreateTrainedModelError::InternalServiceException(inner) => {
+                Error::InternalServiceException(inner)
+            }
             crate::operation::create_trained_model::CreateTrainedModelError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }
             crate::operation::create_trained_model::CreateTrainedModelError::ServiceQuotaExceededException(inner) => {
                 Error::ServiceQuotaExceededException(inner)
             }
+            crate::operation::create_trained_model::CreateTrainedModelError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::create_trained_model::CreateTrainedModelError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::create_trained_model::CreateTrainedModelError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -602,6 +620,7 @@ impl From<crate::operation::delete_configured_model_algorithm_association::Delet
             crate::operation::delete_configured_model_algorithm_association::DeleteConfiguredModelAlgorithmAssociationError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::delete_configured_model_algorithm_association::DeleteConfiguredModelAlgorithmAssociationError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::delete_configured_model_algorithm_association::DeleteConfiguredModelAlgorithmAssociationError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::delete_configured_model_algorithm_association::DeleteConfiguredModelAlgorithmAssociationError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::delete_configured_model_algorithm_association::DeleteConfiguredModelAlgorithmAssociationError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::delete_configured_model_algorithm_association::DeleteConfiguredModelAlgorithmAssociationError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -632,6 +651,7 @@ impl From<crate::operation::delete_ml_configuration::DeleteMLConfigurationError>
             crate::operation::delete_ml_configuration::DeleteMLConfigurationError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }
+            crate::operation::delete_ml_configuration::DeleteMLConfigurationError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::delete_ml_configuration::DeleteMLConfigurationError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::delete_ml_configuration::DeleteMLConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -666,6 +686,9 @@ impl From<crate::operation::delete_ml_input_channel_data::DeleteMLInputChannelDa
             crate::operation::delete_ml_input_channel_data::DeleteMLInputChannelDataError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }
+            crate::operation::delete_ml_input_channel_data::DeleteMLInputChannelDataError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
             crate::operation::delete_ml_input_channel_data::DeleteMLInputChannelDataError::ValidationException(inner) => {
                 Error::ValidationException(inner)
             }
@@ -699,6 +722,9 @@ impl From<crate::operation::delete_trained_model_output::DeleteTrainedModelOutpu
             crate::operation::delete_trained_model_output::DeleteTrainedModelOutputError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::delete_trained_model_output::DeleteTrainedModelOutputError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::delete_trained_model_output::DeleteTrainedModelOutputError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
             }
             crate::operation::delete_trained_model_output::DeleteTrainedModelOutputError::ValidationException(inner) => {
                 Error::ValidationException(inner)
@@ -829,6 +855,7 @@ impl From<crate::operation::get_collaboration_configured_model_algorithm_associa
         match err {
             crate::operation::get_collaboration_configured_model_algorithm_association::GetCollaborationConfiguredModelAlgorithmAssociationError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::get_collaboration_configured_model_algorithm_association::GetCollaborationConfiguredModelAlgorithmAssociationError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_collaboration_configured_model_algorithm_association::GetCollaborationConfiguredModelAlgorithmAssociationError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::get_collaboration_configured_model_algorithm_association::GetCollaborationConfiguredModelAlgorithmAssociationError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::get_collaboration_configured_model_algorithm_association::GetCollaborationConfiguredModelAlgorithmAssociationError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -868,6 +895,9 @@ impl From<crate::operation::get_collaboration_ml_input_channel::GetCollaboration
             crate::operation::get_collaboration_ml_input_channel::GetCollaborationMLInputChannelError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }
+            crate::operation::get_collaboration_ml_input_channel::GetCollaborationMLInputChannelError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
             crate::operation::get_collaboration_ml_input_channel::GetCollaborationMLInputChannelError::ValidationException(inner) => {
                 Error::ValidationException(inner)
             }
@@ -904,6 +934,9 @@ impl From<crate::operation::get_collaboration_trained_model::GetCollaborationTra
             }
             crate::operation::get_collaboration_trained_model::GetCollaborationTrainedModelError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_collaboration_trained_model::GetCollaborationTrainedModelError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
             }
             crate::operation::get_collaboration_trained_model::GetCollaborationTrainedModelError::ValidationException(inner) => {
                 Error::ValidationException(inner)
@@ -1059,6 +1092,9 @@ impl From<crate::operation::get_configured_model_algorithm_association::GetConfi
             crate::operation::get_configured_model_algorithm_association::GetConfiguredModelAlgorithmAssociationError::ResourceNotFoundException(
                 inner,
             ) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_configured_model_algorithm_association::GetConfiguredModelAlgorithmAssociationError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
             crate::operation::get_configured_model_algorithm_association::GetConfiguredModelAlgorithmAssociationError::ValidationException(inner) => {
                 Error::ValidationException(inner)
             }
@@ -1089,6 +1125,7 @@ impl From<crate::operation::get_ml_configuration::GetMLConfigurationError> for E
             crate::operation::get_ml_configuration::GetMLConfigurationError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }
+            crate::operation::get_ml_configuration::GetMLConfigurationError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::get_ml_configuration::GetMLConfigurationError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::get_ml_configuration::GetMLConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -1115,6 +1152,7 @@ impl From<crate::operation::get_ml_input_channel::GetMLInputChannelError> for Er
             crate::operation::get_ml_input_channel::GetMLInputChannelError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }
+            crate::operation::get_ml_input_channel::GetMLInputChannelError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::get_ml_input_channel::GetMLInputChannelError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::get_ml_input_channel::GetMLInputChannelError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -1139,6 +1177,7 @@ impl From<crate::operation::get_trained_model::GetTrainedModelError> for Error {
         match err {
             crate::operation::get_trained_model::GetTrainedModelError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::get_trained_model::GetTrainedModelError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_trained_model::GetTrainedModelError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::get_trained_model::GetTrainedModelError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::get_trained_model::GetTrainedModelError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -1173,6 +1212,9 @@ impl From<crate::operation::get_trained_model_inference_job::GetTrainedModelInfe
             }
             crate::operation::get_trained_model_inference_job::GetTrainedModelInferenceJobError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_trained_model_inference_job::GetTrainedModelInferenceJobError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
             }
             crate::operation::get_trained_model_inference_job::GetTrainedModelInferenceJobError::ValidationException(inner) => {
                 Error::ValidationException(inner)
@@ -1321,6 +1363,7 @@ impl From<crate::operation::list_collaboration_configured_model_algorithm_associ
     ) -> Self {
         match err {
             crate::operation::list_collaboration_configured_model_algorithm_associations::ListCollaborationConfiguredModelAlgorithmAssociationsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_collaboration_configured_model_algorithm_associations::ListCollaborationConfiguredModelAlgorithmAssociationsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::list_collaboration_configured_model_algorithm_associations::ListCollaborationConfiguredModelAlgorithmAssociationsError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::list_collaboration_configured_model_algorithm_associations::ListCollaborationConfiguredModelAlgorithmAssociationsError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -1356,6 +1399,9 @@ impl From<crate::operation::list_collaboration_ml_input_channels::ListCollaborat
         match err {
             crate::operation::list_collaboration_ml_input_channels::ListCollaborationMLInputChannelsError::AccessDeniedException(inner) => {
                 Error::AccessDeniedException(inner)
+            }
+            crate::operation::list_collaboration_ml_input_channels::ListCollaborationMLInputChannelsError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
             }
             crate::operation::list_collaboration_ml_input_channels::ListCollaborationMLInputChannelsError::ValidationException(inner) => {
                 Error::ValidationException(inner)
@@ -1397,6 +1443,9 @@ impl From<crate::operation::list_collaboration_trained_model_export_jobs::ListCo
             crate::operation::list_collaboration_trained_model_export_jobs::ListCollaborationTrainedModelExportJobsError::AccessDeniedException(
                 inner,
             ) => Error::AccessDeniedException(inner),
+            crate::operation::list_collaboration_trained_model_export_jobs::ListCollaborationTrainedModelExportJobsError::ThrottlingException(
+                inner,
+            ) => Error::ThrottlingException(inner),
             crate::operation::list_collaboration_trained_model_export_jobs::ListCollaborationTrainedModelExportJobsError::ValidationException(
                 inner,
             ) => Error::ValidationException(inner),
@@ -1435,6 +1484,7 @@ impl From<crate::operation::list_collaboration_trained_model_inference_jobs::Lis
     fn from(err: crate::operation::list_collaboration_trained_model_inference_jobs::ListCollaborationTrainedModelInferenceJobsError) -> Self {
         match err {
             crate::operation::list_collaboration_trained_model_inference_jobs::ListCollaborationTrainedModelInferenceJobsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_collaboration_trained_model_inference_jobs::ListCollaborationTrainedModelInferenceJobsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::list_collaboration_trained_model_inference_jobs::ListCollaborationTrainedModelInferenceJobsError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::list_collaboration_trained_model_inference_jobs::ListCollaborationTrainedModelInferenceJobsError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -1470,6 +1520,9 @@ impl From<crate::operation::list_collaboration_trained_models::ListCollaboration
         match err {
             crate::operation::list_collaboration_trained_models::ListCollaborationTrainedModelsError::AccessDeniedException(inner) => {
                 Error::AccessDeniedException(inner)
+            }
+            crate::operation::list_collaboration_trained_models::ListCollaborationTrainedModelsError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
             }
             crate::operation::list_collaboration_trained_models::ListCollaborationTrainedModelsError::ValidationException(inner) => {
                 Error::ValidationException(inner)
@@ -1543,6 +1596,9 @@ impl From<crate::operation::list_configured_model_algorithm_associations::ListCo
             crate::operation::list_configured_model_algorithm_associations::ListConfiguredModelAlgorithmAssociationsError::AccessDeniedException(
                 inner,
             ) => Error::AccessDeniedException(inner),
+            crate::operation::list_configured_model_algorithm_associations::ListConfiguredModelAlgorithmAssociationsError::ThrottlingException(
+                inner,
+            ) => Error::ThrottlingException(inner),
             crate::operation::list_configured_model_algorithm_associations::ListConfiguredModelAlgorithmAssociationsError::ValidationException(
                 inner,
             ) => Error::ValidationException(inner),
@@ -1605,6 +1661,7 @@ impl From<crate::operation::list_ml_input_channels::ListMLInputChannelsError> fo
     fn from(err: crate::operation::list_ml_input_channels::ListMLInputChannelsError) -> Self {
         match err {
             crate::operation::list_ml_input_channels::ListMLInputChannelsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_ml_input_channels::ListMLInputChannelsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::list_ml_input_channels::ListMLInputChannelsError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::list_ml_input_channels::ListMLInputChannelsError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -1667,6 +1724,9 @@ impl From<crate::operation::list_trained_model_inference_jobs::ListTrainedModelI
             crate::operation::list_trained_model_inference_jobs::ListTrainedModelInferenceJobsError::AccessDeniedException(inner) => {
                 Error::AccessDeniedException(inner)
             }
+            crate::operation::list_trained_model_inference_jobs::ListTrainedModelInferenceJobsError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
             crate::operation::list_trained_model_inference_jobs::ListTrainedModelInferenceJobsError::ValidationException(inner) => {
                 Error::ValidationException(inner)
             }
@@ -1692,8 +1752,45 @@ impl From<crate::operation::list_trained_models::ListTrainedModelsError> for Err
     fn from(err: crate::operation::list_trained_models::ListTrainedModelsError) -> Self {
         match err {
             crate::operation::list_trained_models::ListTrainedModelsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_trained_models::ListTrainedModelsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::list_trained_models::ListTrainedModelsError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::list_trained_models::ListTrainedModelsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_trained_model_versions::ListTrainedModelVersionsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_trained_model_versions::ListTrainedModelVersionsError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_trained_model_versions::ListTrainedModelVersionsError> for Error {
+    fn from(err: crate::operation::list_trained_model_versions::ListTrainedModelVersionsError) -> Self {
+        match err {
+            crate::operation::list_trained_model_versions::ListTrainedModelVersionsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::list_trained_model_versions::ListTrainedModelVersionsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::list_trained_model_versions::ListTrainedModelVersionsError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::list_trained_model_versions::ListTrainedModelVersionsError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::list_trained_model_versions::ListTrainedModelVersionsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1781,6 +1878,7 @@ impl From<crate::operation::put_ml_configuration::PutMLConfigurationError> for E
     fn from(err: crate::operation::put_ml_configuration::PutMLConfigurationError) -> Self {
         match err {
             crate::operation::put_ml_configuration::PutMLConfigurationError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::put_ml_configuration::PutMLConfigurationError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::put_ml_configuration::PutMLConfigurationError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::put_ml_configuration::PutMLConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -1853,6 +1951,9 @@ impl From<crate::operation::start_audience_generation_job::StartAudienceGenerati
             crate::operation::start_audience_generation_job::StartAudienceGenerationJobError::ServiceQuotaExceededException(inner) => {
                 Error::ServiceQuotaExceededException(inner)
             }
+            crate::operation::start_audience_generation_job::StartAudienceGenerationJobError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
             crate::operation::start_audience_generation_job::StartAudienceGenerationJobError::ValidationException(inner) => {
                 Error::ValidationException(inner)
             }
@@ -1888,6 +1989,9 @@ impl From<crate::operation::start_trained_model_export_job::StartTrainedModelExp
             }
             crate::operation::start_trained_model_export_job::StartTrainedModelExportJobError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::start_trained_model_export_job::StartTrainedModelExportJobError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
             }
             crate::operation::start_trained_model_export_job::StartTrainedModelExportJobError::ValidationException(inner) => {
                 Error::ValidationException(inner)
@@ -1935,6 +2039,9 @@ impl From<crate::operation::start_trained_model_inference_job::StartTrainedModel
             }
             crate::operation::start_trained_model_inference_job::StartTrainedModelInferenceJobError::ServiceQuotaExceededException(inner) => {
                 Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::start_trained_model_inference_job::StartTrainedModelInferenceJobError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
             }
             crate::operation::start_trained_model_inference_job::StartTrainedModelInferenceJobError::ValidationException(inner) => {
                 Error::ValidationException(inner)
@@ -2037,8 +2144,10 @@ impl ::std::error::Error for Error {
         match self {
             Error::AccessDeniedException(inner) => inner.source(),
             Error::ConflictException(inner) => inner.source(),
+            Error::InternalServiceException(inner) => inner.source(),
             Error::ResourceNotFoundException(inner) => inner.source(),
             Error::ServiceQuotaExceededException(inner) => inner.source(),
+            Error::ThrottlingException(inner) => inner.source(),
             Error::ValidationException(inner) => inner.source(),
             Error::Unhandled(inner) => ::std::option::Option::Some(&*inner.source),
         }
@@ -2049,8 +2158,10 @@ impl ::aws_types::request_id::RequestId for Error {
         match self {
             Self::AccessDeniedException(e) => e.request_id(),
             Self::ConflictException(e) => e.request_id(),
+            Self::InternalServiceException(e) => e.request_id(),
             Self::ResourceNotFoundException(e) => e.request_id(),
             Self::ServiceQuotaExceededException(e) => e.request_id(),
+            Self::ThrottlingException(e) => e.request_id(),
             Self::ValidationException(e) => e.request_id(),
             Self::Unhandled(e) => e.meta.request_id(),
         }

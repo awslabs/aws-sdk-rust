@@ -17,6 +17,8 @@ pub struct GetTrainedModelInferenceJobOutput {
     pub status: crate::types::TrainedModelInferenceJobStatus,
     /// <p>The Amazon Resource Name (ARN) for the trained model that was used for the trained model inference job.</p>
     pub trained_model_arn: ::std::string::String,
+    /// <p>The version identifier of the trained model used for this inference job. This identifies the specific version of the trained model that was used to generate the inference results.</p>
+    pub trained_model_version_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The resource configuration information for the trained model inference job.</p>
     pub resource_config: ::std::option::Option<crate::types::InferenceResourceConfig>,
     /// <p>The output configuration information for the trained model inference job.</p>
@@ -97,6 +99,10 @@ impl GetTrainedModelInferenceJobOutput {
     pub fn trained_model_arn(&self) -> &str {
         use std::ops::Deref;
         self.trained_model_arn.deref()
+    }
+    /// <p>The version identifier of the trained model used for this inference job. This identifies the specific version of the trained model that was used to generate the inference results.</p>
+    pub fn trained_model_version_identifier(&self) -> ::std::option::Option<&str> {
+        self.trained_model_version_identifier.as_deref()
     }
     /// <p>The resource configuration information for the trained model inference job.</p>
     pub fn resource_config(&self) -> ::std::option::Option<&crate::types::InferenceResourceConfig> {
@@ -200,6 +206,7 @@ pub struct GetTrainedModelInferenceJobOutputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::TrainedModelInferenceJobStatus>,
     pub(crate) trained_model_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) trained_model_version_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) resource_config: ::std::option::Option<crate::types::InferenceResourceConfig>,
     pub(crate) output_configuration: ::std::option::Option<crate::types::InferenceOutputConfiguration>,
     pub(crate) membership_identifier: ::std::option::Option<::std::string::String>,
@@ -321,6 +328,20 @@ impl GetTrainedModelInferenceJobOutputBuilder {
     /// <p>The Amazon Resource Name (ARN) for the trained model that was used for the trained model inference job.</p>
     pub fn get_trained_model_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.trained_model_arn
+    }
+    /// <p>The version identifier of the trained model used for this inference job. This identifies the specific version of the trained model that was used to generate the inference results.</p>
+    pub fn trained_model_version_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.trained_model_version_identifier = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The version identifier of the trained model used for this inference job. This identifies the specific version of the trained model that was used to generate the inference results.</p>
+    pub fn set_trained_model_version_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.trained_model_version_identifier = input;
+        self
+    }
+    /// <p>The version identifier of the trained model used for this inference job. This identifies the specific version of the trained model that was used to generate the inference results.</p>
+    pub fn get_trained_model_version_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.trained_model_version_identifier
     }
     /// <p>The resource configuration information for the trained model inference job.</p>
     /// This field is required.
@@ -664,6 +685,7 @@ impl GetTrainedModelInferenceJobOutputBuilder {
                     "trained_model_arn was not specified but it is required when building GetTrainedModelInferenceJobOutput",
                 )
             })?,
+            trained_model_version_identifier: self.trained_model_version_identifier,
             resource_config: self.resource_config,
             output_configuration: self.output_configuration,
             membership_identifier: self.membership_identifier.ok_or_else(|| {

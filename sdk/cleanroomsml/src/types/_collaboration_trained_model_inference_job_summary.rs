@@ -12,6 +12,8 @@ pub struct CollaborationTrainedModelInferenceJobSummary {
     pub membership_identifier: ::std::string::String,
     /// <p>The Amazon Resource Name (ARN) of the trained model that is used for the trained model inference job.</p>
     pub trained_model_arn: ::std::string::String,
+    /// <p>The version identifier of the trained model that was used for inference in this job.</p>
+    pub trained_model_version_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The collaboration ID of the collaboration that contains the trained model inference job.</p>
     pub collaboration_identifier: ::std::string::String,
     /// <p>The status of the trained model inference job.</p>
@@ -56,6 +58,10 @@ impl CollaborationTrainedModelInferenceJobSummary {
     pub fn trained_model_arn(&self) -> &str {
         use std::ops::Deref;
         self.trained_model_arn.deref()
+    }
+    /// <p>The version identifier of the trained model that was used for inference in this job.</p>
+    pub fn trained_model_version_identifier(&self) -> ::std::option::Option<&str> {
+        self.trained_model_version_identifier.as_deref()
     }
     /// <p>The collaboration ID of the collaboration that contains the trained model inference job.</p>
     pub fn collaboration_identifier(&self) -> &str {
@@ -124,6 +130,7 @@ pub struct CollaborationTrainedModelInferenceJobSummaryBuilder {
     pub(crate) configured_model_algorithm_association_arn: ::std::option::Option<::std::string::String>,
     pub(crate) membership_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) trained_model_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) trained_model_version_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) collaboration_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::TrainedModelInferenceJobStatus>,
     pub(crate) output_configuration: ::std::option::Option<crate::types::InferenceOutputConfiguration>,
@@ -196,6 +203,20 @@ impl CollaborationTrainedModelInferenceJobSummaryBuilder {
     /// <p>The Amazon Resource Name (ARN) of the trained model that is used for the trained model inference job.</p>
     pub fn get_trained_model_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.trained_model_arn
+    }
+    /// <p>The version identifier of the trained model that was used for inference in this job.</p>
+    pub fn trained_model_version_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.trained_model_version_identifier = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The version identifier of the trained model that was used for inference in this job.</p>
+    pub fn set_trained_model_version_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.trained_model_version_identifier = input;
+        self
+    }
+    /// <p>The version identifier of the trained model that was used for inference in this job.</p>
+    pub fn get_trained_model_version_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.trained_model_version_identifier
     }
     /// <p>The collaboration ID of the collaboration that contains the trained model inference job.</p>
     /// This field is required.
@@ -406,6 +427,7 @@ impl CollaborationTrainedModelInferenceJobSummaryBuilder {
                     "trained_model_arn was not specified but it is required when building CollaborationTrainedModelInferenceJobSummary",
                 )
             })?,
+            trained_model_version_identifier: self.trained_model_version_identifier,
             collaboration_identifier: self.collaboration_identifier.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "collaboration_identifier",

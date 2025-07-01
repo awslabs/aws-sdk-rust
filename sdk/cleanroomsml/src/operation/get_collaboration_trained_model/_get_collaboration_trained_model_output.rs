@@ -9,6 +9,10 @@ pub struct GetCollaborationTrainedModelOutput {
     pub collaboration_identifier: ::std::string::String,
     /// <p>The Amazon Resource Name (ARN) of the trained model.</p>
     pub trained_model_arn: ::std::string::String,
+    /// <p>The version identifier of the trained model. This unique identifier distinguishes this version from other versions of the same trained model.</p>
+    pub version_identifier: ::std::option::Option<::std::string::String>,
+    /// <p>Information about the incremental training data channels used to create this version of the trained model. This includes details about the base model that was used for incremental training and the channel configuration.</p>
+    pub incremental_training_data_channels: ::std::option::Option<::std::vec::Vec<crate::types::IncrementalTrainingDataChannelOutput>>,
     /// <p>The name of the trained model.</p>
     pub name: ::std::string::String,
     /// <p>The description of the trained model.</p>
@@ -21,6 +25,8 @@ pub struct GetCollaborationTrainedModelOutput {
     pub configured_model_algorithm_association_arn: ::std::string::String,
     /// <p>The EC2 resource configuration that was used to train this model.</p>
     pub resource_config: ::std::option::Option<crate::types::ResourceConfig>,
+    /// <p>The input mode that was used for accessing the training data when this trained model was created. This indicates how the training data was made available to the training algorithm.</p>
+    pub training_input_mode: ::std::option::Option<crate::types::TrainingInputMode>,
     /// <p>The stopping condition that determined when model training ended.</p>
     pub stopping_condition: ::std::option::Option<crate::types::StoppingCondition>,
     /// <p>The status of the model metrics.</p>
@@ -57,6 +63,16 @@ impl GetCollaborationTrainedModelOutput {
         use std::ops::Deref;
         self.trained_model_arn.deref()
     }
+    /// <p>The version identifier of the trained model. This unique identifier distinguishes this version from other versions of the same trained model.</p>
+    pub fn version_identifier(&self) -> ::std::option::Option<&str> {
+        self.version_identifier.as_deref()
+    }
+    /// <p>Information about the incremental training data channels used to create this version of the trained model. This includes details about the base model that was used for incremental training and the channel configuration.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.incremental_training_data_channels.is_none()`.
+    pub fn incremental_training_data_channels(&self) -> &[crate::types::IncrementalTrainingDataChannelOutput] {
+        self.incremental_training_data_channels.as_deref().unwrap_or_default()
+    }
     /// <p>The name of the trained model.</p>
     pub fn name(&self) -> &str {
         use std::ops::Deref;
@@ -82,6 +98,10 @@ impl GetCollaborationTrainedModelOutput {
     /// <p>The EC2 resource configuration that was used to train this model.</p>
     pub fn resource_config(&self) -> ::std::option::Option<&crate::types::ResourceConfig> {
         self.resource_config.as_ref()
+    }
+    /// <p>The input mode that was used for accessing the training data when this trained model was created. This indicates how the training data was made available to the training algorithm.</p>
+    pub fn training_input_mode(&self) -> ::std::option::Option<&crate::types::TrainingInputMode> {
+        self.training_input_mode.as_ref()
     }
     /// <p>The stopping condition that determined when model training ended.</p>
     pub fn stopping_condition(&self) -> ::std::option::Option<&crate::types::StoppingCondition> {
@@ -140,12 +160,15 @@ pub struct GetCollaborationTrainedModelOutputBuilder {
     pub(crate) membership_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) collaboration_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) trained_model_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) version_identifier: ::std::option::Option<::std::string::String>,
+    pub(crate) incremental_training_data_channels: ::std::option::Option<::std::vec::Vec<crate::types::IncrementalTrainingDataChannelOutput>>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::TrainedModelStatus>,
     pub(crate) status_details: ::std::option::Option<crate::types::StatusDetails>,
     pub(crate) configured_model_algorithm_association_arn: ::std::option::Option<::std::string::String>,
     pub(crate) resource_config: ::std::option::Option<crate::types::ResourceConfig>,
+    pub(crate) training_input_mode: ::std::option::Option<crate::types::TrainingInputMode>,
     pub(crate) stopping_condition: ::std::option::Option<crate::types::StoppingCondition>,
     pub(crate) metrics_status: ::std::option::Option<crate::types::MetricsStatus>,
     pub(crate) metrics_status_details: ::std::option::Option<::std::string::String>,
@@ -202,6 +225,45 @@ impl GetCollaborationTrainedModelOutputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the trained model.</p>
     pub fn get_trained_model_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.trained_model_arn
+    }
+    /// <p>The version identifier of the trained model. This unique identifier distinguishes this version from other versions of the same trained model.</p>
+    pub fn version_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.version_identifier = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The version identifier of the trained model. This unique identifier distinguishes this version from other versions of the same trained model.</p>
+    pub fn set_version_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.version_identifier = input;
+        self
+    }
+    /// <p>The version identifier of the trained model. This unique identifier distinguishes this version from other versions of the same trained model.</p>
+    pub fn get_version_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.version_identifier
+    }
+    /// Appends an item to `incremental_training_data_channels`.
+    ///
+    /// To override the contents of this collection use [`set_incremental_training_data_channels`](Self::set_incremental_training_data_channels).
+    ///
+    /// <p>Information about the incremental training data channels used to create this version of the trained model. This includes details about the base model that was used for incremental training and the channel configuration.</p>
+    pub fn incremental_training_data_channels(mut self, input: crate::types::IncrementalTrainingDataChannelOutput) -> Self {
+        let mut v = self.incremental_training_data_channels.unwrap_or_default();
+        v.push(input);
+        self.incremental_training_data_channels = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Information about the incremental training data channels used to create this version of the trained model. This includes details about the base model that was used for incremental training and the channel configuration.</p>
+    pub fn set_incremental_training_data_channels(
+        mut self,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::IncrementalTrainingDataChannelOutput>>,
+    ) -> Self {
+        self.incremental_training_data_channels = input;
+        self
+    }
+    /// <p>Information about the incremental training data channels used to create this version of the trained model. This includes details about the base model that was used for incremental training and the channel configuration.</p>
+    pub fn get_incremental_training_data_channels(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::IncrementalTrainingDataChannelOutput>> {
+        &self.incremental_training_data_channels
     }
     /// <p>The name of the trained model.</p>
     /// This field is required.
@@ -289,6 +351,20 @@ impl GetCollaborationTrainedModelOutputBuilder {
     /// <p>The EC2 resource configuration that was used to train this model.</p>
     pub fn get_resource_config(&self) -> &::std::option::Option<crate::types::ResourceConfig> {
         &self.resource_config
+    }
+    /// <p>The input mode that was used for accessing the training data when this trained model was created. This indicates how the training data was made available to the training algorithm.</p>
+    pub fn training_input_mode(mut self, input: crate::types::TrainingInputMode) -> Self {
+        self.training_input_mode = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The input mode that was used for accessing the training data when this trained model was created. This indicates how the training data was made available to the training algorithm.</p>
+    pub fn set_training_input_mode(mut self, input: ::std::option::Option<crate::types::TrainingInputMode>) -> Self {
+        self.training_input_mode = input;
+        self
+    }
+    /// <p>The input mode that was used for accessing the training data when this trained model was created. This indicates how the training data was made available to the training algorithm.</p>
+    pub fn get_training_input_mode(&self) -> &::std::option::Option<crate::types::TrainingInputMode> {
+        &self.training_input_mode
     }
     /// <p>The stopping condition that determined when model training ended.</p>
     pub fn stopping_condition(mut self, input: crate::types::StoppingCondition) -> Self {
@@ -462,6 +538,10 @@ impl GetCollaborationTrainedModelOutputBuilder {
                         ::aws_smithy_types::error::operation::BuildError::missing_field("trained_model_arn", "trained_model_arn was not specified but it is required when building GetCollaborationTrainedModelOutput")
                     )?
                 ,
+                version_identifier: self.version_identifier
+                ,
+                incremental_training_data_channels: self.incremental_training_data_channels
+                ,
                 name: self.name
                     .ok_or_else(||
                         ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building GetCollaborationTrainedModelOutput")
@@ -482,6 +562,8 @@ impl GetCollaborationTrainedModelOutputBuilder {
                     )?
                 ,
                 resource_config: self.resource_config
+                ,
+                training_input_mode: self.training_input_mode
                 ,
                 stopping_condition: self.stopping_condition
                 ,

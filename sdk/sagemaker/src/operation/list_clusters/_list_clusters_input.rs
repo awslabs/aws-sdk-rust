@@ -19,7 +19,7 @@ pub struct ListClustersInput {
     pub creation_time_after: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Set an end time for the time range during which you want to list SageMaker HyperPod clusters. A filter that returns nodes in a SageMaker HyperPod cluster created before the specified time. The acceptable formats are the same as the timestamp formats for <code>CreationTimeAfter</code>. For more information about the timestamp format, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-parameters-types.html#parameter-type-timestamp">Timestamp</a> in the <i>Amazon Web Services Command Line Interface User Guide</i>.</p>
     pub creation_time_before: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>Set the maximum number of SageMaker HyperPod clusters to list.</p>
+    /// <p>Specifies the maximum number of clusters to evaluate for the operation (not necessarily the number of matching items). After SageMaker processes the number of clusters up to <code>MaxResults</code>, it stops the operation and returns the matching clusters up to that point. If all the matching clusters are desired, SageMaker will go through all the clusters until <code>NextToken</code> is empty.</p>
     pub max_results: ::std::option::Option<i32>,
     /// <p>Set the maximum number of instances to print in the list.</p>
     pub name_contains: ::std::option::Option<::std::string::String>,
@@ -53,7 +53,7 @@ impl ListClustersInput {
     pub fn creation_time_before(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.creation_time_before.as_ref()
     }
-    /// <p>Set the maximum number of SageMaker HyperPod clusters to list.</p>
+    /// <p>Specifies the maximum number of clusters to evaluate for the operation (not necessarily the number of matching items). After SageMaker processes the number of clusters up to <code>MaxResults</code>, it stops the operation and returns the matching clusters up to that point. If all the matching clusters are desired, SageMaker will go through all the clusters until <code>NextToken</code> is empty.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
@@ -163,17 +163,17 @@ impl ListClustersInputBuilder {
     pub fn get_creation_time_before(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.creation_time_before
     }
-    /// <p>Set the maximum number of SageMaker HyperPod clusters to list.</p>
+    /// <p>Specifies the maximum number of clusters to evaluate for the operation (not necessarily the number of matching items). After SageMaker processes the number of clusters up to <code>MaxResults</code>, it stops the operation and returns the matching clusters up to that point. If all the matching clusters are desired, SageMaker will go through all the clusters until <code>NextToken</code> is empty.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Set the maximum number of SageMaker HyperPod clusters to list.</p>
+    /// <p>Specifies the maximum number of clusters to evaluate for the operation (not necessarily the number of matching items). After SageMaker processes the number of clusters up to <code>MaxResults</code>, it stops the operation and returns the matching clusters up to that point. If all the matching clusters are desired, SageMaker will go through all the clusters until <code>NextToken</code> is empty.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
     }
-    /// <p>Set the maximum number of SageMaker HyperPod clusters to list.</p>
+    /// <p>Specifies the maximum number of clusters to evaluate for the operation (not necessarily the number of matching items). After SageMaker processes the number of clusters up to <code>MaxResults</code>, it stops the operation and returns the matching clusters up to that point. If all the matching clusters are desired, SageMaker will go through all the clusters until <code>NextToken</code> is empty.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }

@@ -32,12 +32,12 @@ pub fn de_generate_query_http_error(
             }
             tmp
         }),
-        "DependencyFailedException" => crate::operation::generate_query::GenerateQueryError::DependencyFailedException({
+        "BadGatewayException" => crate::operation::generate_query::GenerateQueryError::BadGatewayException({
             #[allow(unused_mut)]
             let mut tmp = {
                 #[allow(unused_mut)]
-                let mut output = crate::types::error::builders::DependencyFailedExceptionBuilder::default();
-                output = crate::protocol_serde::shape_dependency_failed_exception::de_dependency_failed_exception_json_err(_response_body, output)
+                let mut output = crate::types::error::builders::BadGatewayExceptionBuilder::default();
+                output = crate::protocol_serde::shape_bad_gateway_exception::de_bad_gateway_exception_json_err(_response_body, output)
                     .map_err(crate::operation::generate_query::GenerateQueryError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
@@ -47,12 +47,27 @@ pub fn de_generate_query_http_error(
             }
             tmp
         }),
-        "ValidationException" => crate::operation::generate_query::GenerateQueryError::ValidationException({
+        "ConflictException" => crate::operation::generate_query::GenerateQueryError::ConflictException({
             #[allow(unused_mut)]
             let mut tmp = {
                 #[allow(unused_mut)]
-                let mut output = crate::types::error::builders::ValidationExceptionBuilder::default();
-                output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(_response_body, output)
+                let mut output = crate::types::error::builders::ConflictExceptionBuilder::default();
+                output = crate::protocol_serde::shape_conflict_exception::de_conflict_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::generate_query::GenerateQueryError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "DependencyFailedException" => crate::operation::generate_query::GenerateQueryError::DependencyFailedException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::DependencyFailedExceptionBuilder::default();
+                output = crate::protocol_serde::shape_dependency_failed_exception::de_dependency_failed_exception_json_err(_response_body, output)
                     .map_err(crate::operation::generate_query::GenerateQueryError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
@@ -92,6 +107,24 @@ pub fn de_generate_query_http_error(
             }
             tmp
         }),
+        "ServiceQuotaExceededException" => crate::operation::generate_query::GenerateQueryError::ServiceQuotaExceededException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ServiceQuotaExceededExceptionBuilder::default();
+                output = crate::protocol_serde::shape_service_quota_exceeded_exception::de_service_quota_exceeded_exception_json_err(
+                    _response_body,
+                    output,
+                )
+                .map_err(crate::operation::generate_query::GenerateQueryError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "ThrottlingException" => crate::operation::generate_query::GenerateQueryError::ThrottlingException({
             #[allow(unused_mut)]
             let mut tmp = {
@@ -107,46 +140,13 @@ pub fn de_generate_query_http_error(
             }
             tmp
         }),
-        "BadGatewayException" => crate::operation::generate_query::GenerateQueryError::BadGatewayException({
+        "ValidationException" => crate::operation::generate_query::GenerateQueryError::ValidationException({
             #[allow(unused_mut)]
             let mut tmp = {
                 #[allow(unused_mut)]
-                let mut output = crate::types::error::builders::BadGatewayExceptionBuilder::default();
-                output = crate::protocol_serde::shape_bad_gateway_exception::de_bad_gateway_exception_json_err(_response_body, output)
+                let mut output = crate::types::error::builders::ValidationExceptionBuilder::default();
+                output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(_response_body, output)
                     .map_err(crate::operation::generate_query::GenerateQueryError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "ConflictException" => crate::operation::generate_query::GenerateQueryError::ConflictException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::types::error::builders::ConflictExceptionBuilder::default();
-                output = crate::protocol_serde::shape_conflict_exception::de_conflict_exception_json_err(_response_body, output)
-                    .map_err(crate::operation::generate_query::GenerateQueryError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "ServiceQuotaExceededException" => crate::operation::generate_query::GenerateQueryError::ServiceQuotaExceededException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::types::error::builders::ServiceQuotaExceededExceptionBuilder::default();
-                output = crate::protocol_serde::shape_service_quota_exceeded_exception::de_service_quota_exceeded_exception_json_err(
-                    _response_body,
-                    output,
-                )
-                .map_err(crate::operation::generate_query::GenerateQueryError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
             };

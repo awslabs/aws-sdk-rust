@@ -20,14 +20,14 @@ pub fn de_describe_subscription_filters_http_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ResourceNotFoundException" => {
-            crate::operation::describe_subscription_filters::DescribeSubscriptionFiltersError::ResourceNotFoundException({
+        "InvalidParameterException" => {
+            crate::operation::describe_subscription_filters::DescribeSubscriptionFiltersError::InvalidParameterException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
+                    let mut output = crate::types::error::builders::InvalidParameterExceptionBuilder::default();
                     output =
-                        crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(_response_body, output)
+                        crate::protocol_serde::shape_invalid_parameter_exception::de_invalid_parameter_exception_json_err(_response_body, output)
                             .map_err(crate::operation::describe_subscription_filters::DescribeSubscriptionFiltersError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
@@ -38,14 +38,14 @@ pub fn de_describe_subscription_filters_http_error(
                 tmp
             })
         }
-        "InvalidParameterException" => {
-            crate::operation::describe_subscription_filters::DescribeSubscriptionFiltersError::InvalidParameterException({
+        "ResourceNotFoundException" => {
+            crate::operation::describe_subscription_filters::DescribeSubscriptionFiltersError::ResourceNotFoundException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::InvalidParameterExceptionBuilder::default();
+                    let mut output = crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
                     output =
-                        crate::protocol_serde::shape_invalid_parameter_exception::de_invalid_parameter_exception_json_err(_response_body, output)
+                        crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(_response_body, output)
                             .map_err(crate::operation::describe_subscription_filters::DescribeSubscriptionFiltersError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()

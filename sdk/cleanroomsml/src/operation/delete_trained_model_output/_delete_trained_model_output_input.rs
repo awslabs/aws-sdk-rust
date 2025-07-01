@@ -7,6 +7,8 @@ pub struct DeleteTrainedModelOutputInput {
     pub trained_model_arn: ::std::option::Option<::std::string::String>,
     /// <p>The membership ID of the member that is deleting the trained model output.</p>
     pub membership_identifier: ::std::option::Option<::std::string::String>,
+    /// <p>The version identifier of the trained model to delete. If not specified, the operation will delete the base version of the trained model. When specified, only the particular version will be deleted.</p>
+    pub version_identifier: ::std::option::Option<::std::string::String>,
 }
 impl DeleteTrainedModelOutputInput {
     /// <p>The Amazon Resource Name (ARN) of the trained model whose output you want to delete.</p>
@@ -16,6 +18,10 @@ impl DeleteTrainedModelOutputInput {
     /// <p>The membership ID of the member that is deleting the trained model output.</p>
     pub fn membership_identifier(&self) -> ::std::option::Option<&str> {
         self.membership_identifier.as_deref()
+    }
+    /// <p>The version identifier of the trained model to delete. If not specified, the operation will delete the base version of the trained model. When specified, only the particular version will be deleted.</p>
+    pub fn version_identifier(&self) -> ::std::option::Option<&str> {
+        self.version_identifier.as_deref()
     }
 }
 impl DeleteTrainedModelOutputInput {
@@ -31,6 +37,7 @@ impl DeleteTrainedModelOutputInput {
 pub struct DeleteTrainedModelOutputInputBuilder {
     pub(crate) trained_model_arn: ::std::option::Option<::std::string::String>,
     pub(crate) membership_identifier: ::std::option::Option<::std::string::String>,
+    pub(crate) version_identifier: ::std::option::Option<::std::string::String>,
 }
 impl DeleteTrainedModelOutputInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the trained model whose output you want to delete.</p>
@@ -63,6 +70,20 @@ impl DeleteTrainedModelOutputInputBuilder {
     pub fn get_membership_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.membership_identifier
     }
+    /// <p>The version identifier of the trained model to delete. If not specified, the operation will delete the base version of the trained model. When specified, only the particular version will be deleted.</p>
+    pub fn version_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.version_identifier = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The version identifier of the trained model to delete. If not specified, the operation will delete the base version of the trained model. When specified, only the particular version will be deleted.</p>
+    pub fn set_version_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.version_identifier = input;
+        self
+    }
+    /// <p>The version identifier of the trained model to delete. If not specified, the operation will delete the base version of the trained model. When specified, only the particular version will be deleted.</p>
+    pub fn get_version_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.version_identifier
+    }
     /// Consumes the builder and constructs a [`DeleteTrainedModelOutputInput`](crate::operation::delete_trained_model_output::DeleteTrainedModelOutputInput).
     pub fn build(
         self,
@@ -73,6 +94,7 @@ impl DeleteTrainedModelOutputInputBuilder {
         ::std::result::Result::Ok(crate::operation::delete_trained_model_output::DeleteTrainedModelOutputInput {
             trained_model_arn: self.trained_model_arn,
             membership_identifier: self.membership_identifier,
+            version_identifier: self.version_identifier,
         })
     }
 }

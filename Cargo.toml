@@ -1,13 +1,13 @@
 [workspace]
 resolver = "2"
 exclude = [
-    "examples/lambda",
+    "examples/examples",
     "examples/webassembly",
     "examples/cross_service",
-    "examples/examples",
+    "examples/lambda",
     "examples/test-utils",
-    "tests/webassembly",
     "tests/no-default-features",
+    "tests/webassembly",
     "tests/telemetry"
 ]
 members = [
@@ -319,6 +319,7 @@ members = [
     "sdk/notificationscontacts",
     "sdk/oam",
     "sdk/observabilityadmin",
+    "sdk/odb",
     "sdk/omics",
     "sdk/opensearch",
     "sdk/opensearchserverless",

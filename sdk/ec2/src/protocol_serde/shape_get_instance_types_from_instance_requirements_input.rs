@@ -54,6 +54,11 @@ pub fn ser_get_instance_types_from_instance_requirements_input_input_input(
     if let Some(var_18) = &input.next_token {
         scope_17.string(var_18);
     }
+    #[allow(unused_mut)]
+    let mut scope_19 = writer.prefix("Context");
+    if let Some(var_20) = &input.context {
+        scope_19.string(var_20);
+    }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

@@ -31,34 +31,6 @@ pub fn de_recognize_text_http_error(
             };
             tmp
         }),
-        "ResourceNotFoundException" => crate::operation::recognize_text::RecognizeTextError::ResourceNotFoundException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
-                output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(_response_body, output)
-                    .map_err(crate::operation::recognize_text::RecognizeTextError::unhandled)?;
-                let output = output.meta(generic);
-                crate::serde_util::resource_not_found_exception_correct_errors(output)
-                    .build()
-                    .map_err(crate::operation::recognize_text::RecognizeTextError::unhandled)?
-            };
-            tmp
-        }),
-        "ThrottlingException" => crate::operation::recognize_text::RecognizeTextError::ThrottlingException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::types::error::builders::ThrottlingExceptionBuilder::default();
-                output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(_response_body, output)
-                    .map_err(crate::operation::recognize_text::RecognizeTextError::unhandled)?;
-                let output = output.meta(generic);
-                crate::serde_util::throttling_exception_correct_errors(output)
-                    .build()
-                    .map_err(crate::operation::recognize_text::RecognizeTextError::unhandled)?
-            };
-            tmp
-        }),
         "BadGatewayException" => crate::operation::recognize_text::RecognizeTextError::BadGatewayException({
             #[allow(unused_mut)]
             let mut tmp = {
@@ -73,15 +45,15 @@ pub fn de_recognize_text_http_error(
             };
             tmp
         }),
-        "ValidationException" => crate::operation::recognize_text::RecognizeTextError::ValidationException({
+        "ConflictException" => crate::operation::recognize_text::RecognizeTextError::ConflictException({
             #[allow(unused_mut)]
             let mut tmp = {
                 #[allow(unused_mut)]
-                let mut output = crate::types::error::builders::ValidationExceptionBuilder::default();
-                output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(_response_body, output)
+                let mut output = crate::types::error::builders::ConflictExceptionBuilder::default();
+                output = crate::protocol_serde::shape_conflict_exception::de_conflict_exception_json_err(_response_body, output)
                     .map_err(crate::operation::recognize_text::RecognizeTextError::unhandled)?;
                 let output = output.meta(generic);
-                crate::serde_util::validation_exception_correct_errors(output)
+                crate::serde_util::conflict_exception_correct_errors(output)
                     .build()
                     .map_err(crate::operation::recognize_text::RecognizeTextError::unhandled)?
             };
@@ -115,15 +87,43 @@ pub fn de_recognize_text_http_error(
             };
             tmp
         }),
-        "ConflictException" => crate::operation::recognize_text::RecognizeTextError::ConflictException({
+        "ResourceNotFoundException" => crate::operation::recognize_text::RecognizeTextError::ResourceNotFoundException({
             #[allow(unused_mut)]
             let mut tmp = {
                 #[allow(unused_mut)]
-                let mut output = crate::types::error::builders::ConflictExceptionBuilder::default();
-                output = crate::protocol_serde::shape_conflict_exception::de_conflict_exception_json_err(_response_body, output)
+                let mut output = crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
+                output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(_response_body, output)
                     .map_err(crate::operation::recognize_text::RecognizeTextError::unhandled)?;
                 let output = output.meta(generic);
-                crate::serde_util::conflict_exception_correct_errors(output)
+                crate::serde_util::resource_not_found_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::recognize_text::RecognizeTextError::unhandled)?
+            };
+            tmp
+        }),
+        "ThrottlingException" => crate::operation::recognize_text::RecognizeTextError::ThrottlingException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ThrottlingExceptionBuilder::default();
+                output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::recognize_text::RecognizeTextError::unhandled)?;
+                let output = output.meta(generic);
+                crate::serde_util::throttling_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::recognize_text::RecognizeTextError::unhandled)?
+            };
+            tmp
+        }),
+        "ValidationException" => crate::operation::recognize_text::RecognizeTextError::ValidationException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ValidationExceptionBuilder::default();
+                output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::recognize_text::RecognizeTextError::unhandled)?;
+                let output = output.meta(generic);
+                crate::serde_util::validation_exception_correct_errors(output)
                     .build()
                     .map_err(crate::operation::recognize_text::RecognizeTextError::unhandled)?
             };

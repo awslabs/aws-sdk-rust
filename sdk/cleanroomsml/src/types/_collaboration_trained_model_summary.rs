@@ -12,6 +12,10 @@ pub struct CollaborationTrainedModelSummary {
     pub trained_model_arn: ::std::string::String,
     /// <p>The name of the trained model.</p>
     pub name: ::std::string::String,
+    /// <p>The version identifier of this trained model version.</p>
+    pub version_identifier: ::std::option::Option<::std::string::String>,
+    /// <p>Information about the incremental training data channels used to create this version of the trained model.</p>
+    pub incremental_training_data_channels: ::std::option::Option<::std::vec::Vec<crate::types::IncrementalTrainingDataChannelOutput>>,
     /// <p>The description of the trained model.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The membership ID of the member that created the trained model.</p>
@@ -43,6 +47,16 @@ impl CollaborationTrainedModelSummary {
     pub fn name(&self) -> &str {
         use std::ops::Deref;
         self.name.deref()
+    }
+    /// <p>The version identifier of this trained model version.</p>
+    pub fn version_identifier(&self) -> ::std::option::Option<&str> {
+        self.version_identifier.as_deref()
+    }
+    /// <p>Information about the incremental training data channels used to create this version of the trained model.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.incremental_training_data_channels.is_none()`.
+    pub fn incremental_training_data_channels(&self) -> &[crate::types::IncrementalTrainingDataChannelOutput] {
+        self.incremental_training_data_channels.as_deref().unwrap_or_default()
     }
     /// <p>The description of the trained model.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
@@ -88,6 +102,8 @@ pub struct CollaborationTrainedModelSummaryBuilder {
     pub(crate) update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) trained_model_arn: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) version_identifier: ::std::option::Option<::std::string::String>,
+    pub(crate) incremental_training_data_channels: ::std::option::Option<::std::vec::Vec<crate::types::IncrementalTrainingDataChannelOutput>>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) membership_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) collaboration_identifier: ::std::option::Option<::std::string::String>,
@@ -155,6 +171,45 @@ impl CollaborationTrainedModelSummaryBuilder {
     /// <p>The name of the trained model.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
+    }
+    /// <p>The version identifier of this trained model version.</p>
+    pub fn version_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.version_identifier = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The version identifier of this trained model version.</p>
+    pub fn set_version_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.version_identifier = input;
+        self
+    }
+    /// <p>The version identifier of this trained model version.</p>
+    pub fn get_version_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.version_identifier
+    }
+    /// Appends an item to `incremental_training_data_channels`.
+    ///
+    /// To override the contents of this collection use [`set_incremental_training_data_channels`](Self::set_incremental_training_data_channels).
+    ///
+    /// <p>Information about the incremental training data channels used to create this version of the trained model.</p>
+    pub fn incremental_training_data_channels(mut self, input: crate::types::IncrementalTrainingDataChannelOutput) -> Self {
+        let mut v = self.incremental_training_data_channels.unwrap_or_default();
+        v.push(input);
+        self.incremental_training_data_channels = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Information about the incremental training data channels used to create this version of the trained model.</p>
+    pub fn set_incremental_training_data_channels(
+        mut self,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::IncrementalTrainingDataChannelOutput>>,
+    ) -> Self {
+        self.incremental_training_data_channels = input;
+        self
+    }
+    /// <p>Information about the incremental training data channels used to create this version of the trained model.</p>
+    pub fn get_incremental_training_data_channels(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::IncrementalTrainingDataChannelOutput>> {
+        &self.incremental_training_data_channels
     }
     /// <p>The description of the trained model.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -282,6 +337,8 @@ impl CollaborationTrainedModelSummaryBuilder {
                     "name was not specified but it is required when building CollaborationTrainedModelSummary",
                 )
             })?,
+            version_identifier: self.version_identifier,
+            incremental_training_data_channels: self.incremental_training_data_channels,
             description: self.description,
             membership_identifier: self.membership_identifier.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(

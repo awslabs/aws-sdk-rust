@@ -39,12 +39,12 @@ pub fn de_register_stream_consumer_http_error(
             }
             tmp
         }),
-        "ResourceInUseException" => crate::operation::register_stream_consumer::RegisterStreamConsumerError::ResourceInUseException({
+        "LimitExceededException" => crate::operation::register_stream_consumer::RegisterStreamConsumerError::LimitExceededException({
             #[allow(unused_mut)]
             let mut tmp = {
                 #[allow(unused_mut)]
-                let mut output = crate::types::error::builders::ResourceInUseExceptionBuilder::default();
-                output = crate::protocol_serde::shape_resource_in_use_exception::de_resource_in_use_exception_json_err(_response_body, output)
+                let mut output = crate::types::error::builders::LimitExceededExceptionBuilder::default();
+                output = crate::protocol_serde::shape_limit_exceeded_exception::de_limit_exceeded_exception_json_err(_response_body, output)
                     .map_err(crate::operation::register_stream_consumer::RegisterStreamConsumerError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
@@ -54,12 +54,12 @@ pub fn de_register_stream_consumer_http_error(
             }
             tmp
         }),
-        "LimitExceededException" => crate::operation::register_stream_consumer::RegisterStreamConsumerError::LimitExceededException({
+        "ResourceInUseException" => crate::operation::register_stream_consumer::RegisterStreamConsumerError::ResourceInUseException({
             #[allow(unused_mut)]
             let mut tmp = {
                 #[allow(unused_mut)]
-                let mut output = crate::types::error::builders::LimitExceededExceptionBuilder::default();
-                output = crate::protocol_serde::shape_limit_exceeded_exception::de_limit_exceeded_exception_json_err(_response_body, output)
+                let mut output = crate::types::error::builders::ResourceInUseExceptionBuilder::default();
+                output = crate::protocol_serde::shape_resource_in_use_exception::de_resource_in_use_exception_json_err(_response_body, output)
                     .map_err(crate::operation::register_stream_consumer::RegisterStreamConsumerError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()

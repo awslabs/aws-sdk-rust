@@ -32,42 +32,12 @@ pub fn de_merge_shards_http_error(
             }
             tmp
         }),
-        "ValidationException" => crate::operation::merge_shards::MergeShardsError::ValidationException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::types::error::builders::ValidationExceptionBuilder::default();
-                output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(_response_body, output)
-                    .map_err(crate::operation::merge_shards::MergeShardsError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
         "InvalidArgumentException" => crate::operation::merge_shards::MergeShardsError::InvalidArgumentException({
             #[allow(unused_mut)]
             let mut tmp = {
                 #[allow(unused_mut)]
                 let mut output = crate::types::error::builders::InvalidArgumentExceptionBuilder::default();
                 output = crate::protocol_serde::shape_invalid_argument_exception::de_invalid_argument_exception_json_err(_response_body, output)
-                    .map_err(crate::operation::merge_shards::MergeShardsError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "ResourceInUseException" => crate::operation::merge_shards::MergeShardsError::ResourceInUseException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::types::error::builders::ResourceInUseExceptionBuilder::default();
-                output = crate::protocol_serde::shape_resource_in_use_exception::de_resource_in_use_exception_json_err(_response_body, output)
                     .map_err(crate::operation::merge_shards::MergeShardsError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
@@ -92,12 +62,42 @@ pub fn de_merge_shards_http_error(
             }
             tmp
         }),
+        "ResourceInUseException" => crate::operation::merge_shards::MergeShardsError::ResourceInUseException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ResourceInUseExceptionBuilder::default();
+                output = crate::protocol_serde::shape_resource_in_use_exception::de_resource_in_use_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::merge_shards::MergeShardsError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "ResourceNotFoundException" => crate::operation::merge_shards::MergeShardsError::ResourceNotFoundException({
             #[allow(unused_mut)]
             let mut tmp = {
                 #[allow(unused_mut)]
                 let mut output = crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
                 output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::merge_shards::MergeShardsError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ValidationException" => crate::operation::merge_shards::MergeShardsError::ValidationException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ValidationExceptionBuilder::default();
+                output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(_response_body, output)
                     .map_err(crate::operation::merge_shards::MergeShardsError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()

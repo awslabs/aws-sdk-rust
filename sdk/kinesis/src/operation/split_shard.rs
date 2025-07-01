@@ -257,16 +257,16 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for SplitShardEnd
 pub enum SplitShardError {
     /// <p>Specifies that you do not have the permissions required to perform this operation.</p>
     AccessDeniedException(crate::types::error::AccessDeniedException),
-    /// <p>Specifies that you tried to invoke this API for a data stream with the on-demand capacity mode. This API is only supported for data streams with the provisioned capacity mode.</p>
-    ValidationException(crate::types::error::ValidationException),
     /// <p>A specified parameter exceeds its restrictions, is not supported, or can't be used. For more information, see the returned message.</p>
     InvalidArgumentException(crate::types::error::InvalidArgumentException),
-    /// <p>The resource is not available for this operation. For successful operation, the resource must be in the <code>ACTIVE</code> state.</p>
-    ResourceInUseException(crate::types::error::ResourceInUseException),
     /// <p>The requested resource exceeds the maximum number allowed, or the number of concurrent stream requests exceeds the maximum number allowed.</p>
     LimitExceededException(crate::types::error::LimitExceededException),
+    /// <p>The resource is not available for this operation. For successful operation, the resource must be in the <code>ACTIVE</code> state.</p>
+    ResourceInUseException(crate::types::error::ResourceInUseException),
     /// <p>The requested resource could not be found. The stream might not be specified correctly.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
+    /// <p>Specifies that you tried to invoke this API for a data stream with the on-demand capacity mode. This API is only supported for data streams with the provisioned capacity mode.</p>
+    ValidationException(crate::types::error::ValidationException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \
     variable wildcard pattern and check `.code()`:
@@ -301,11 +301,11 @@ impl SplitShardError {
     pub fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
             Self::AccessDeniedException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
-            Self::ValidationException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidArgumentException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
-            Self::ResourceInUseException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::LimitExceededException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::ResourceInUseException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ResourceNotFoundException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::ValidationException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::Unhandled(e) => &e.meta,
         }
     }
@@ -313,36 +313,36 @@ impl SplitShardError {
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(self, Self::AccessDeniedException(_))
     }
-    /// Returns `true` if the error kind is `SplitShardError::ValidationException`.
-    pub fn is_validation_exception(&self) -> bool {
-        matches!(self, Self::ValidationException(_))
-    }
     /// Returns `true` if the error kind is `SplitShardError::InvalidArgumentException`.
     pub fn is_invalid_argument_exception(&self) -> bool {
         matches!(self, Self::InvalidArgumentException(_))
-    }
-    /// Returns `true` if the error kind is `SplitShardError::ResourceInUseException`.
-    pub fn is_resource_in_use_exception(&self) -> bool {
-        matches!(self, Self::ResourceInUseException(_))
     }
     /// Returns `true` if the error kind is `SplitShardError::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(self, Self::LimitExceededException(_))
     }
+    /// Returns `true` if the error kind is `SplitShardError::ResourceInUseException`.
+    pub fn is_resource_in_use_exception(&self) -> bool {
+        matches!(self, Self::ResourceInUseException(_))
+    }
     /// Returns `true` if the error kind is `SplitShardError::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(self, Self::ResourceNotFoundException(_))
+    }
+    /// Returns `true` if the error kind is `SplitShardError::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(self, Self::ValidationException(_))
     }
 }
 impl ::std::error::Error for SplitShardError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
             Self::AccessDeniedException(_inner) => ::std::option::Option::Some(_inner),
-            Self::ValidationException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidArgumentException(_inner) => ::std::option::Option::Some(_inner),
-            Self::ResourceInUseException(_inner) => ::std::option::Option::Some(_inner),
             Self::LimitExceededException(_inner) => ::std::option::Option::Some(_inner),
+            Self::ResourceInUseException(_inner) => ::std::option::Option::Some(_inner),
             Self::ResourceNotFoundException(_inner) => ::std::option::Option::Some(_inner),
+            Self::ValidationException(_inner) => ::std::option::Option::Some(_inner),
             Self::Unhandled(_inner) => ::std::option::Option::Some(&*_inner.source),
         }
     }
@@ -351,11 +351,11 @@ impl ::std::fmt::Display for SplitShardError {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         match self {
             Self::AccessDeniedException(_inner) => _inner.fmt(f),
-            Self::ValidationException(_inner) => _inner.fmt(f),
             Self::InvalidArgumentException(_inner) => _inner.fmt(f),
-            Self::ResourceInUseException(_inner) => _inner.fmt(f),
             Self::LimitExceededException(_inner) => _inner.fmt(f),
+            Self::ResourceInUseException(_inner) => _inner.fmt(f),
             Self::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            Self::ValidationException(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => {
                 if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self) {
                     write!(f, "unhandled error ({code})")
@@ -378,11 +378,11 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for SplitShardErr
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
             Self::AccessDeniedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::ValidationException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidArgumentException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::ResourceInUseException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::LimitExceededException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::ResourceInUseException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ResourceNotFoundException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::ValidationException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::Unhandled(_inner) => &_inner.meta,
         }
     }

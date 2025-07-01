@@ -17,6 +17,21 @@ pub fn de_get_shard_iterator_http_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
+        "AccessDeniedException" => crate::operation::get_shard_iterator::GetShardIteratorError::AccessDeniedException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::AccessDeniedExceptionBuilder::default();
+                output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::get_shard_iterator::GetShardIteratorError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "InternalFailureException" => crate::operation::get_shard_iterator::GetShardIteratorError::InternalFailureException({
             #[allow(unused_mut)]
             let mut tmp = {
@@ -32,12 +47,12 @@ pub fn de_get_shard_iterator_http_error(
             }
             tmp
         }),
-        "AccessDeniedException" => crate::operation::get_shard_iterator::GetShardIteratorError::AccessDeniedException({
+        "InvalidArgumentException" => crate::operation::get_shard_iterator::GetShardIteratorError::InvalidArgumentException({
             #[allow(unused_mut)]
             let mut tmp = {
                 #[allow(unused_mut)]
-                let mut output = crate::types::error::builders::AccessDeniedExceptionBuilder::default();
-                output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(_response_body, output)
+                let mut output = crate::types::error::builders::InvalidArgumentExceptionBuilder::default();
+                output = crate::protocol_serde::shape_invalid_argument_exception::de_invalid_argument_exception_json_err(_response_body, output)
                     .map_err(crate::operation::get_shard_iterator::GetShardIteratorError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
@@ -63,21 +78,6 @@ pub fn de_get_shard_iterator_http_error(
                 tmp
             })
         }
-        "InvalidArgumentException" => crate::operation::get_shard_iterator::GetShardIteratorError::InvalidArgumentException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::types::error::builders::InvalidArgumentExceptionBuilder::default();
-                output = crate::protocol_serde::shape_invalid_argument_exception::de_invalid_argument_exception_json_err(_response_body, output)
-                    .map_err(crate::operation::get_shard_iterator::GetShardIteratorError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
         "ResourceNotFoundException" => crate::operation::get_shard_iterator::GetShardIteratorError::ResourceNotFoundException({
             #[allow(unused_mut)]
             let mut tmp = {

@@ -33,12 +33,12 @@ pub fn de_stop_flow_execution_http_error(
             }
             tmp
         }),
-        "DependencyFailedException" => crate::operation::stop_flow_execution::StopFlowExecutionError::DependencyFailedException({
+        "BadGatewayException" => crate::operation::stop_flow_execution::StopFlowExecutionError::BadGatewayException({
             #[allow(unused_mut)]
             let mut tmp = {
                 #[allow(unused_mut)]
-                let mut output = crate::types::error::builders::DependencyFailedExceptionBuilder::default();
-                output = crate::protocol_serde::shape_dependency_failed_exception::de_dependency_failed_exception_json_err(_response_body, output)
+                let mut output = crate::types::error::builders::BadGatewayExceptionBuilder::default();
+                output = crate::protocol_serde::shape_bad_gateway_exception::de_bad_gateway_exception_json_err(_response_body, output)
                     .map_err(crate::operation::stop_flow_execution::StopFlowExecutionError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
@@ -48,12 +48,27 @@ pub fn de_stop_flow_execution_http_error(
             }
             tmp
         }),
-        "ValidationException" => crate::operation::stop_flow_execution::StopFlowExecutionError::ValidationException({
+        "ConflictException" => crate::operation::stop_flow_execution::StopFlowExecutionError::ConflictException({
             #[allow(unused_mut)]
             let mut tmp = {
                 #[allow(unused_mut)]
-                let mut output = crate::types::error::builders::ValidationExceptionBuilder::default();
-                output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(_response_body, output)
+                let mut output = crate::types::error::builders::ConflictExceptionBuilder::default();
+                output = crate::protocol_serde::shape_conflict_exception::de_conflict_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::stop_flow_execution::StopFlowExecutionError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "DependencyFailedException" => crate::operation::stop_flow_execution::StopFlowExecutionError::DependencyFailedException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::DependencyFailedExceptionBuilder::default();
+                output = crate::protocol_serde::shape_dependency_failed_exception::de_dependency_failed_exception_json_err(_response_body, output)
                     .map_err(crate::operation::stop_flow_execution::StopFlowExecutionError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
@@ -108,27 +123,12 @@ pub fn de_stop_flow_execution_http_error(
             }
             tmp
         }),
-        "BadGatewayException" => crate::operation::stop_flow_execution::StopFlowExecutionError::BadGatewayException({
+        "ValidationException" => crate::operation::stop_flow_execution::StopFlowExecutionError::ValidationException({
             #[allow(unused_mut)]
             let mut tmp = {
                 #[allow(unused_mut)]
-                let mut output = crate::types::error::builders::BadGatewayExceptionBuilder::default();
-                output = crate::protocol_serde::shape_bad_gateway_exception::de_bad_gateway_exception_json_err(_response_body, output)
-                    .map_err(crate::operation::stop_flow_execution::StopFlowExecutionError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "ConflictException" => crate::operation::stop_flow_execution::StopFlowExecutionError::ConflictException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::types::error::builders::ConflictExceptionBuilder::default();
-                output = crate::protocol_serde::shape_conflict_exception::de_conflict_exception_json_err(_response_body, output)
+                let mut output = crate::types::error::builders::ValidationExceptionBuilder::default();
+                output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(_response_body, output)
                     .map_err(crate::operation::stop_flow_execution::StopFlowExecutionError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()

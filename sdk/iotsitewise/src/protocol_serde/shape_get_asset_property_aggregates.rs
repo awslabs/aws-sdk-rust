@@ -20,6 +20,20 @@ pub fn de_get_asset_property_aggregates_http_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
+        "InternalFailureException" => crate::operation::get_asset_property_aggregates::GetAssetPropertyAggregatesError::InternalFailureException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::InternalFailureExceptionBuilder::default();
+                output = crate::protocol_serde::shape_internal_failure_exception::de_internal_failure_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::get_asset_property_aggregates::GetAssetPropertyAggregatesError::unhandled)?;
+                let output = output.meta(generic);
+                crate::serde_util::internal_failure_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::get_asset_property_aggregates::GetAssetPropertyAggregatesError::unhandled)?
+            };
+            tmp
+        }),
         "InvalidRequestException" => crate::operation::get_asset_property_aggregates::GetAssetPropertyAggregatesError::InvalidRequestException({
             #[allow(unused_mut)]
             let mut tmp = {
@@ -48,20 +62,6 @@ pub fn de_get_asset_property_aggregates_http_error(
             };
             tmp
         }),
-        "ThrottlingException" => crate::operation::get_asset_property_aggregates::GetAssetPropertyAggregatesError::ThrottlingException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::types::error::builders::ThrottlingExceptionBuilder::default();
-                output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(_response_body, output)
-                    .map_err(crate::operation::get_asset_property_aggregates::GetAssetPropertyAggregatesError::unhandled)?;
-                let output = output.meta(generic);
-                crate::serde_util::throttling_exception_correct_errors(output)
-                    .build()
-                    .map_err(crate::operation::get_asset_property_aggregates::GetAssetPropertyAggregatesError::unhandled)?
-            };
-            tmp
-        }),
         "ServiceUnavailableException" => {
             crate::operation::get_asset_property_aggregates::GetAssetPropertyAggregatesError::ServiceUnavailableException({
                 #[allow(unused_mut)]
@@ -79,15 +79,15 @@ pub fn de_get_asset_property_aggregates_http_error(
                 tmp
             })
         }
-        "InternalFailureException" => crate::operation::get_asset_property_aggregates::GetAssetPropertyAggregatesError::InternalFailureException({
+        "ThrottlingException" => crate::operation::get_asset_property_aggregates::GetAssetPropertyAggregatesError::ThrottlingException({
             #[allow(unused_mut)]
             let mut tmp = {
                 #[allow(unused_mut)]
-                let mut output = crate::types::error::builders::InternalFailureExceptionBuilder::default();
-                output = crate::protocol_serde::shape_internal_failure_exception::de_internal_failure_exception_json_err(_response_body, output)
+                let mut output = crate::types::error::builders::ThrottlingExceptionBuilder::default();
+                output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(_response_body, output)
                     .map_err(crate::operation::get_asset_property_aggregates::GetAssetPropertyAggregatesError::unhandled)?;
                 let output = output.meta(generic);
-                crate::serde_util::internal_failure_exception_correct_errors(output)
+                crate::serde_util::throttling_exception_correct_errors(output)
                     .build()
                     .map_err(crate::operation::get_asset_property_aggregates::GetAssetPropertyAggregatesError::unhandled)?
             };

@@ -6,7 +6,7 @@
 pub struct InputChannel {
     /// <p>The data source that is used to create the ML input channel.</p>
     pub data_source: ::std::option::Option<crate::types::InputChannelDataSource>,
-    /// <p>The ARN of the IAM role that Clean Rooms ML can assume to read the data referred to in the <code>dataSource</code> field the input channel.</p>
+    /// <p>The Amazon Resource Name (ARN) of the role used to run the query specified in the <code>dataSource</code> field of the input channel.</p>
     /// <p>Passing a role across AWS accounts is not allowed. If you pass a role that isn't in your account, you get an <code>AccessDeniedException</code> error.</p>
     pub role_arn: ::std::string::String,
 }
@@ -15,7 +15,7 @@ impl InputChannel {
     pub fn data_source(&self) -> ::std::option::Option<&crate::types::InputChannelDataSource> {
         self.data_source.as_ref()
     }
-    /// <p>The ARN of the IAM role that Clean Rooms ML can assume to read the data referred to in the <code>dataSource</code> field the input channel.</p>
+    /// <p>The Amazon Resource Name (ARN) of the role used to run the query specified in the <code>dataSource</code> field of the input channel.</p>
     /// <p>Passing a role across AWS accounts is not allowed. If you pass a role that isn't in your account, you get an <code>AccessDeniedException</code> error.</p>
     pub fn role_arn(&self) -> &str {
         use std::ops::Deref;
@@ -52,20 +52,20 @@ impl InputChannelBuilder {
     pub fn get_data_source(&self) -> &::std::option::Option<crate::types::InputChannelDataSource> {
         &self.data_source
     }
-    /// <p>The ARN of the IAM role that Clean Rooms ML can assume to read the data referred to in the <code>dataSource</code> field the input channel.</p>
+    /// <p>The Amazon Resource Name (ARN) of the role used to run the query specified in the <code>dataSource</code> field of the input channel.</p>
     /// <p>Passing a role across AWS accounts is not allowed. If you pass a role that isn't in your account, you get an <code>AccessDeniedException</code> error.</p>
     /// This field is required.
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ARN of the IAM role that Clean Rooms ML can assume to read the data referred to in the <code>dataSource</code> field the input channel.</p>
+    /// <p>The Amazon Resource Name (ARN) of the role used to run the query specified in the <code>dataSource</code> field of the input channel.</p>
     /// <p>Passing a role across AWS accounts is not allowed. If you pass a role that isn't in your account, you get an <code>AccessDeniedException</code> error.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
     }
-    /// <p>The ARN of the IAM role that Clean Rooms ML can assume to read the data referred to in the <code>dataSource</code> field the input channel.</p>
+    /// <p>The Amazon Resource Name (ARN) of the role used to run the query specified in the <code>dataSource</code> field of the input channel.</p>
     /// <p>Passing a role across AWS accounts is not allowed. If you pass a role that isn't in your account, you get an <code>AccessDeniedException</code> error.</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.role_arn

@@ -13,6 +13,8 @@ pub struct UpdateProjectInput {
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The glossary terms to be updated as part of the <code>UpdateProject</code> action.</p>
     pub glossary_terms: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>The ID of the domain unit.</p>
+    pub domain_unit_id: ::std::option::Option<::std::string::String>,
     /// <p>The environment deployment details of the project.</p>
     pub environment_deployment_details: ::std::option::Option<crate::types::EnvironmentDeploymentDetails>,
     /// <p>The user parameters of the project.</p>
@@ -43,6 +45,10 @@ impl UpdateProjectInput {
     pub fn glossary_terms(&self) -> &[::std::string::String] {
         self.glossary_terms.as_deref().unwrap_or_default()
     }
+    /// <p>The ID of the domain unit.</p>
+    pub fn domain_unit_id(&self) -> ::std::option::Option<&str> {
+        self.domain_unit_id.as_deref()
+    }
     /// <p>The environment deployment details of the project.</p>
     pub fn environment_deployment_details(&self) -> ::std::option::Option<&crate::types::EnvironmentDeploymentDetails> {
         self.environment_deployment_details.as_ref()
@@ -66,6 +72,7 @@ impl ::std::fmt::Debug for UpdateProjectInput {
         formatter.field("name", &"*** Sensitive Data Redacted ***");
         formatter.field("description", &"*** Sensitive Data Redacted ***");
         formatter.field("glossary_terms", &self.glossary_terms);
+        formatter.field("domain_unit_id", &self.domain_unit_id);
         formatter.field("environment_deployment_details", &self.environment_deployment_details);
         formatter.field("user_parameters", &self.user_parameters);
         formatter.field("project_profile_version", &self.project_profile_version);
@@ -88,6 +95,7 @@ pub struct UpdateProjectInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) glossary_terms: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) domain_unit_id: ::std::option::Option<::std::string::String>,
     pub(crate) environment_deployment_details: ::std::option::Option<crate::types::EnvironmentDeploymentDetails>,
     pub(crate) user_parameters: ::std::option::Option<::std::vec::Vec<crate::types::EnvironmentConfigurationUserParameter>>,
     pub(crate) project_profile_version: ::std::option::Option<::std::string::String>,
@@ -171,6 +179,20 @@ impl UpdateProjectInputBuilder {
     pub fn get_glossary_terms(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.glossary_terms
     }
+    /// <p>The ID of the domain unit.</p>
+    pub fn domain_unit_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.domain_unit_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ID of the domain unit.</p>
+    pub fn set_domain_unit_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.domain_unit_id = input;
+        self
+    }
+    /// <p>The ID of the domain unit.</p>
+    pub fn get_domain_unit_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_unit_id
+    }
     /// <p>The environment deployment details of the project.</p>
     pub fn environment_deployment_details(mut self, input: crate::types::EnvironmentDeploymentDetails) -> Self {
         self.environment_deployment_details = ::std::option::Option::Some(input);
@@ -229,6 +251,7 @@ impl UpdateProjectInputBuilder {
             name: self.name,
             description: self.description,
             glossary_terms: self.glossary_terms,
+            domain_unit_id: self.domain_unit_id,
             environment_deployment_details: self.environment_deployment_details,
             user_parameters: self.user_parameters,
             project_profile_version: self.project_profile_version,
@@ -243,6 +266,7 @@ impl ::std::fmt::Debug for UpdateProjectInputBuilder {
         formatter.field("name", &"*** Sensitive Data Redacted ***");
         formatter.field("description", &"*** Sensitive Data Redacted ***");
         formatter.field("glossary_terms", &self.glossary_terms);
+        formatter.field("domain_unit_id", &self.domain_unit_id);
         formatter.field("environment_deployment_details", &self.environment_deployment_details);
         formatter.field("user_parameters", &self.user_parameters);
         formatter.field("project_profile_version", &self.project_profile_version);

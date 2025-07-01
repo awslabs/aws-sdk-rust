@@ -274,16 +274,16 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for StartLiveTail
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum StartLiveTailError {
-    /// <p>The operation is not valid on the specified resource.</p>
-    InvalidOperationException(crate::types::error::InvalidOperationException),
-    /// <p>The specified resource does not exist.</p>
-    ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
     /// <p>You don't have sufficient permissions to perform this action.</p>
     AccessDeniedException(crate::types::error::AccessDeniedException),
+    /// <p>The operation is not valid on the specified resource.</p>
+    InvalidOperationException(crate::types::error::InvalidOperationException),
     /// <p>A parameter is specified incorrectly.</p>
     InvalidParameterException(crate::types::error::InvalidParameterException),
     /// <p>You have reached the maximum number of resources that can be created.</p>
     LimitExceededException(crate::types::error::LimitExceededException),
+    /// <p>The specified resource does not exist.</p>
+    ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
     /// <p>This exception is returned in a Live Tail stream when the Live Tail session times out. Live Tail sessions time out after three hours.</p>
     SessionTimeoutException(crate::types::error::SessionTimeoutException),
     /// <p>This exception is returned if an unknown error occurs during a Live Tail session.</p>
@@ -321,27 +321,23 @@ impl StartLiveTailError {
     ///
     pub fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
-            Self::InvalidOperationException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
-            Self::ResourceNotFoundException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::AccessDeniedException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::InvalidOperationException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidParameterException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::LimitExceededException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::ResourceNotFoundException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::SessionTimeoutException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::SessionStreamingException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::Unhandled(e) => &e.meta,
         }
     }
-    /// Returns `true` if the error kind is `StartLiveTailError::InvalidOperationException`.
-    pub fn is_invalid_operation_exception(&self) -> bool {
-        matches!(self, Self::InvalidOperationException(_))
-    }
-    /// Returns `true` if the error kind is `StartLiveTailError::ResourceNotFoundException`.
-    pub fn is_resource_not_found_exception(&self) -> bool {
-        matches!(self, Self::ResourceNotFoundException(_))
-    }
     /// Returns `true` if the error kind is `StartLiveTailError::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(self, Self::AccessDeniedException(_))
+    }
+    /// Returns `true` if the error kind is `StartLiveTailError::InvalidOperationException`.
+    pub fn is_invalid_operation_exception(&self) -> bool {
+        matches!(self, Self::InvalidOperationException(_))
     }
     /// Returns `true` if the error kind is `StartLiveTailError::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
@@ -350,6 +346,10 @@ impl StartLiveTailError {
     /// Returns `true` if the error kind is `StartLiveTailError::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(self, Self::LimitExceededException(_))
+    }
+    /// Returns `true` if the error kind is `StartLiveTailError::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(self, Self::ResourceNotFoundException(_))
     }
     /// Returns `true` if the error kind is `StartLiveTailError::SessionTimeoutException`.
     pub fn is_session_timeout_exception(&self) -> bool {
@@ -363,11 +363,11 @@ impl StartLiveTailError {
 impl ::std::error::Error for StartLiveTailError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
-            Self::InvalidOperationException(_inner) => ::std::option::Option::Some(_inner),
-            Self::ResourceNotFoundException(_inner) => ::std::option::Option::Some(_inner),
             Self::AccessDeniedException(_inner) => ::std::option::Option::Some(_inner),
+            Self::InvalidOperationException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidParameterException(_inner) => ::std::option::Option::Some(_inner),
             Self::LimitExceededException(_inner) => ::std::option::Option::Some(_inner),
+            Self::ResourceNotFoundException(_inner) => ::std::option::Option::Some(_inner),
             Self::SessionTimeoutException(_inner) => ::std::option::Option::Some(_inner),
             Self::SessionStreamingException(_inner) => ::std::option::Option::Some(_inner),
             Self::Unhandled(_inner) => ::std::option::Option::Some(&*_inner.source),
@@ -377,11 +377,11 @@ impl ::std::error::Error for StartLiveTailError {
 impl ::std::fmt::Display for StartLiveTailError {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         match self {
-            Self::InvalidOperationException(_inner) => _inner.fmt(f),
-            Self::ResourceNotFoundException(_inner) => _inner.fmt(f),
             Self::AccessDeniedException(_inner) => _inner.fmt(f),
+            Self::InvalidOperationException(_inner) => _inner.fmt(f),
             Self::InvalidParameterException(_inner) => _inner.fmt(f),
             Self::LimitExceededException(_inner) => _inner.fmt(f),
+            Self::ResourceNotFoundException(_inner) => _inner.fmt(f),
             Self::SessionTimeoutException(_inner) => _inner.fmt(f),
             Self::SessionStreamingException(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => {
@@ -405,11 +405,11 @@ impl ::aws_smithy_types::retry::ProvideErrorKind for StartLiveTailError {
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for StartLiveTailError {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
-            Self::InvalidOperationException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::ResourceNotFoundException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::AccessDeniedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::InvalidOperationException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidParameterException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::LimitExceededException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::ResourceNotFoundException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::SessionTimeoutException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::SessionStreamingException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::Unhandled(_inner) => &_inner.meta,

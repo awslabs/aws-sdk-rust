@@ -265,10 +265,10 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for DescribeLogSt
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum DescribeLogStreamsError {
-    /// <p>The specified resource does not exist.</p>
-    ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
     /// <p>A parameter is specified incorrectly.</p>
     InvalidParameterException(crate::types::error::InvalidParameterException),
+    /// <p>The specified resource does not exist.</p>
+    ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
     /// <p>The service cannot complete the request.</p>
     ServiceUnavailableException(crate::types::error::ServiceUnavailableException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
@@ -304,19 +304,19 @@ impl DescribeLogStreamsError {
     ///
     pub fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
-            Self::ResourceNotFoundException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidParameterException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::ResourceNotFoundException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ServiceUnavailableException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::Unhandled(e) => &e.meta,
         }
     }
-    /// Returns `true` if the error kind is `DescribeLogStreamsError::ResourceNotFoundException`.
-    pub fn is_resource_not_found_exception(&self) -> bool {
-        matches!(self, Self::ResourceNotFoundException(_))
-    }
     /// Returns `true` if the error kind is `DescribeLogStreamsError::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(self, Self::InvalidParameterException(_))
+    }
+    /// Returns `true` if the error kind is `DescribeLogStreamsError::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(self, Self::ResourceNotFoundException(_))
     }
     /// Returns `true` if the error kind is `DescribeLogStreamsError::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
@@ -326,8 +326,8 @@ impl DescribeLogStreamsError {
 impl ::std::error::Error for DescribeLogStreamsError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
-            Self::ResourceNotFoundException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidParameterException(_inner) => ::std::option::Option::Some(_inner),
+            Self::ResourceNotFoundException(_inner) => ::std::option::Option::Some(_inner),
             Self::ServiceUnavailableException(_inner) => ::std::option::Option::Some(_inner),
             Self::Unhandled(_inner) => ::std::option::Option::Some(&*_inner.source),
         }
@@ -336,8 +336,8 @@ impl ::std::error::Error for DescribeLogStreamsError {
 impl ::std::fmt::Display for DescribeLogStreamsError {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         match self {
-            Self::ResourceNotFoundException(_inner) => _inner.fmt(f),
             Self::InvalidParameterException(_inner) => _inner.fmt(f),
+            Self::ResourceNotFoundException(_inner) => _inner.fmt(f),
             Self::ServiceUnavailableException(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => {
                 if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self) {
@@ -360,8 +360,8 @@ impl ::aws_smithy_types::retry::ProvideErrorKind for DescribeLogStreamsError {
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for DescribeLogStreamsError {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
-            Self::ResourceNotFoundException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidParameterException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::ResourceNotFoundException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ServiceUnavailableException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::Unhandled(_inner) => &_inner.meta,
         }

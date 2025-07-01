@@ -7,6 +7,8 @@ pub struct GetTrainedModelInput {
     pub trained_model_arn: ::std::option::Option<::std::string::String>,
     /// <p>The membership ID of the member that created the trained model that you are interested in.</p>
     pub membership_identifier: ::std::option::Option<::std::string::String>,
+    /// <p>The version identifier of the trained model to retrieve. If not specified, the operation returns information about the latest version of the trained model.</p>
+    pub version_identifier: ::std::option::Option<::std::string::String>,
 }
 impl GetTrainedModelInput {
     /// <p>The Amazon Resource Name (ARN) of the trained model that you are interested in.</p>
@@ -16,6 +18,10 @@ impl GetTrainedModelInput {
     /// <p>The membership ID of the member that created the trained model that you are interested in.</p>
     pub fn membership_identifier(&self) -> ::std::option::Option<&str> {
         self.membership_identifier.as_deref()
+    }
+    /// <p>The version identifier of the trained model to retrieve. If not specified, the operation returns information about the latest version of the trained model.</p>
+    pub fn version_identifier(&self) -> ::std::option::Option<&str> {
+        self.version_identifier.as_deref()
     }
 }
 impl GetTrainedModelInput {
@@ -31,6 +37,7 @@ impl GetTrainedModelInput {
 pub struct GetTrainedModelInputBuilder {
     pub(crate) trained_model_arn: ::std::option::Option<::std::string::String>,
     pub(crate) membership_identifier: ::std::option::Option<::std::string::String>,
+    pub(crate) version_identifier: ::std::option::Option<::std::string::String>,
 }
 impl GetTrainedModelInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the trained model that you are interested in.</p>
@@ -63,6 +70,20 @@ impl GetTrainedModelInputBuilder {
     pub fn get_membership_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.membership_identifier
     }
+    /// <p>The version identifier of the trained model to retrieve. If not specified, the operation returns information about the latest version of the trained model.</p>
+    pub fn version_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.version_identifier = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The version identifier of the trained model to retrieve. If not specified, the operation returns information about the latest version of the trained model.</p>
+    pub fn set_version_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.version_identifier = input;
+        self
+    }
+    /// <p>The version identifier of the trained model to retrieve. If not specified, the operation returns information about the latest version of the trained model.</p>
+    pub fn get_version_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.version_identifier
+    }
     /// Consumes the builder and constructs a [`GetTrainedModelInput`](crate::operation::get_trained_model::GetTrainedModelInput).
     pub fn build(
         self,
@@ -70,6 +91,7 @@ impl GetTrainedModelInputBuilder {
         ::std::result::Result::Ok(crate::operation::get_trained_model::GetTrainedModelInput {
             trained_model_arn: self.trained_model_arn,
             membership_identifier: self.membership_identifier,
+            version_identifier: self.version_identifier,
         })
     }
 }

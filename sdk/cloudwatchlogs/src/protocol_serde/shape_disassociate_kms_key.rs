@@ -20,21 +20,6 @@ pub fn de_disassociate_kms_key_http_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ResourceNotFoundException" => crate::operation::disassociate_kms_key::DisassociateKmsKeyError::ResourceNotFoundException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
-                output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(_response_body, output)
-                    .map_err(crate::operation::disassociate_kms_key::DisassociateKmsKeyError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
         "InvalidParameterException" => crate::operation::disassociate_kms_key::DisassociateKmsKeyError::InvalidParameterException({
             #[allow(unused_mut)]
             let mut tmp = {
@@ -56,6 +41,21 @@ pub fn de_disassociate_kms_key_http_error(
                 #[allow(unused_mut)]
                 let mut output = crate::types::error::builders::OperationAbortedExceptionBuilder::default();
                 output = crate::protocol_serde::shape_operation_aborted_exception::de_operation_aborted_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::disassociate_kms_key::DisassociateKmsKeyError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ResourceNotFoundException" => crate::operation::disassociate_kms_key::DisassociateKmsKeyError::ResourceNotFoundException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
+                output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(_response_body, output)
                     .map_err(crate::operation::disassociate_kms_key::DisassociateKmsKeyError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()

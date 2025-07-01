@@ -32,12 +32,12 @@ pub fn de_delete_session_http_error(
             }
             tmp
         }),
-        "ValidationException" => crate::operation::delete_session::DeleteSessionError::ValidationException({
+        "ConflictException" => crate::operation::delete_session::DeleteSessionError::ConflictException({
             #[allow(unused_mut)]
             let mut tmp = {
                 #[allow(unused_mut)]
-                let mut output = crate::types::error::builders::ValidationExceptionBuilder::default();
-                output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(_response_body, output)
+                let mut output = crate::types::error::builders::ConflictExceptionBuilder::default();
+                output = crate::protocol_serde::shape_conflict_exception::de_conflict_exception_json_err(_response_body, output)
                     .map_err(crate::operation::delete_session::DeleteSessionError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
@@ -92,12 +92,12 @@ pub fn de_delete_session_http_error(
             }
             tmp
         }),
-        "ConflictException" => crate::operation::delete_session::DeleteSessionError::ConflictException({
+        "ValidationException" => crate::operation::delete_session::DeleteSessionError::ValidationException({
             #[allow(unused_mut)]
             let mut tmp = {
                 #[allow(unused_mut)]
-                let mut output = crate::types::error::builders::ConflictExceptionBuilder::default();
-                output = crate::protocol_serde::shape_conflict_exception::de_conflict_exception_json_err(_response_body, output)
+                let mut output = crate::types::error::builders::ValidationExceptionBuilder::default();
+                output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(_response_body, output)
                     .map_err(crate::operation::delete_session::DeleteSessionError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()

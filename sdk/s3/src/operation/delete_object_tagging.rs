@@ -320,7 +320,7 @@ mod delete_object_tagging_test {
         ::aws_smithy_protocol_test::assert_ok(::aws_smithy_protocol_test::validate_query_string(&http_request, expected_query_params));
         let body = http_request.body().bytes().expect("body should be strict");
         // No body.
-        ::pretty_assertions::assert_eq!(&body, &bytes::Bytes::new());
+        ::pretty_assertions::assert_eq!(&body, &::bytes::Bytes::new());
         let uri: ::http::Uri = http_request.uri().parse().expect("invalid URI sent");
         ::pretty_assertions::assert_eq!(http_request.method(), "DELETE", "method was incorrect");
         ::pretty_assertions::assert_eq!(uri.path(), "/my%20key.txt", "path was incorrect");
@@ -357,7 +357,7 @@ mod delete_object_tagging_test {
         ::aws_smithy_protocol_test::assert_ok(::aws_smithy_protocol_test::validate_query_string(&http_request, expected_query_params));
         let body = http_request.body().bytes().expect("body should be strict");
         // No body.
-        ::pretty_assertions::assert_eq!(&body, &bytes::Bytes::new());
+        ::pretty_assertions::assert_eq!(&body, &::bytes::Bytes::new());
         let uri: ::http::Uri = http_request.uri().parse().expect("invalid URI sent");
         ::pretty_assertions::assert_eq!(http_request.method(), "DELETE", "method was incorrect");
         ::pretty_assertions::assert_eq!(uri.path(), "/foo/bar/my%20key.txt", "path was incorrect");

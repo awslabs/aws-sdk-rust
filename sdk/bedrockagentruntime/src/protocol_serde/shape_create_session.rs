@@ -32,12 +32,12 @@ pub fn de_create_session_http_error(
             }
             tmp
         }),
-        "ValidationException" => crate::operation::create_session::CreateSessionError::ValidationException({
+        "ConflictException" => crate::operation::create_session::CreateSessionError::ConflictException({
             #[allow(unused_mut)]
             let mut tmp = {
                 #[allow(unused_mut)]
-                let mut output = crate::types::error::builders::ValidationExceptionBuilder::default();
-                output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(_response_body, output)
+                let mut output = crate::types::error::builders::ConflictExceptionBuilder::default();
+                output = crate::protocol_serde::shape_conflict_exception::de_conflict_exception_json_err(_response_body, output)
                     .map_err(crate::operation::create_session::CreateSessionError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
@@ -62,6 +62,24 @@ pub fn de_create_session_http_error(
             }
             tmp
         }),
+        "ServiceQuotaExceededException" => crate::operation::create_session::CreateSessionError::ServiceQuotaExceededException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ServiceQuotaExceededExceptionBuilder::default();
+                output = crate::protocol_serde::shape_service_quota_exceeded_exception::de_service_quota_exceeded_exception_json_err(
+                    _response_body,
+                    output,
+                )
+                .map_err(crate::operation::create_session::CreateSessionError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "ThrottlingException" => crate::operation::create_session::CreateSessionError::ThrottlingException({
             #[allow(unused_mut)]
             let mut tmp = {
@@ -77,31 +95,13 @@ pub fn de_create_session_http_error(
             }
             tmp
         }),
-        "ConflictException" => crate::operation::create_session::CreateSessionError::ConflictException({
+        "ValidationException" => crate::operation::create_session::CreateSessionError::ValidationException({
             #[allow(unused_mut)]
             let mut tmp = {
                 #[allow(unused_mut)]
-                let mut output = crate::types::error::builders::ConflictExceptionBuilder::default();
-                output = crate::protocol_serde::shape_conflict_exception::de_conflict_exception_json_err(_response_body, output)
+                let mut output = crate::types::error::builders::ValidationExceptionBuilder::default();
+                output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(_response_body, output)
                     .map_err(crate::operation::create_session::CreateSessionError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "ServiceQuotaExceededException" => crate::operation::create_session::CreateSessionError::ServiceQuotaExceededException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::types::error::builders::ServiceQuotaExceededExceptionBuilder::default();
-                output = crate::protocol_serde::shape_service_quota_exceeded_exception::de_service_quota_exceeded_exception_json_err(
-                    _response_body,
-                    output,
-                )
-                .map_err(crate::operation::create_session::CreateSessionError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
             };

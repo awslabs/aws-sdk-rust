@@ -21,6 +21,12 @@ pub fn ser_trained_models_configuration_policy(
         crate::protocol_serde::shape_metrics_configuration_policy::ser_metrics_configuration_policy(&mut object_6, var_5)?;
         object_6.finish();
     }
+    if let Some(var_7) = &input.max_artifact_size {
+        #[allow(unused_mut)]
+        let mut object_8 = object.key("maxArtifactSize").start_object();
+        crate::protocol_serde::shape_trained_model_artifact_max_size::ser_trained_model_artifact_max_size(&mut object_8, var_7)?;
+        object_8.finish();
+    }
     Ok(())
 }
 
@@ -47,6 +53,11 @@ where
                         "containerMetrics" => {
                             builder = builder.set_container_metrics(
                                 crate::protocol_serde::shape_metrics_configuration_policy::de_metrics_configuration_policy(tokens)?,
+                            );
+                        }
+                        "maxArtifactSize" => {
+                            builder = builder.set_max_artifact_size(
+                                crate::protocol_serde::shape_trained_model_artifact_max_size::de_trained_model_artifact_max_size(tokens)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

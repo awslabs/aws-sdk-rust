@@ -8,6 +8,24 @@ pub(crate) fn access_denied_exception_correct_errors(
     builder
 }
 
+pub(crate) fn conflict_exception_correct_errors(
+    mut builder: crate::types::error::builders::ConflictExceptionBuilder,
+) -> crate::types::error::builders::ConflictExceptionBuilder {
+    if builder.message.is_none() {
+        builder.message = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn internal_server_exception_correct_errors(
+    mut builder: crate::types::error::builders::InternalServerExceptionBuilder,
+) -> crate::types::error::builders::InternalServerExceptionBuilder {
+    if builder.message.is_none() {
+        builder.message = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn resource_not_found_exception_correct_errors(
     mut builder: crate::types::error::builders::ResourceNotFoundExceptionBuilder,
 ) -> crate::types::error::builders::ResourceNotFoundExceptionBuilder {
@@ -29,24 +47,6 @@ pub(crate) fn throttling_exception_correct_errors(
 pub(crate) fn validation_exception_correct_errors(
     mut builder: crate::types::error::builders::ValidationExceptionBuilder,
 ) -> crate::types::error::builders::ValidationExceptionBuilder {
-    if builder.message.is_none() {
-        builder.message = Some(Default::default())
-    }
-    builder
-}
-
-pub(crate) fn internal_server_exception_correct_errors(
-    mut builder: crate::types::error::builders::InternalServerExceptionBuilder,
-) -> crate::types::error::builders::InternalServerExceptionBuilder {
-    if builder.message.is_none() {
-        builder.message = Some(Default::default())
-    }
-    builder
-}
-
-pub(crate) fn conflict_exception_correct_errors(
-    mut builder: crate::types::error::builders::ConflictExceptionBuilder,
-) -> crate::types::error::builders::ConflictExceptionBuilder {
     if builder.message.is_none() {
         builder.message = Some(Default::default())
     }

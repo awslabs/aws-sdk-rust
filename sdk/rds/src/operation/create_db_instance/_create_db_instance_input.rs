@@ -466,13 +466,7 @@ pub struct CreateDbInstanceInput {
     /// </ul>
     pub port: ::std::option::Option<i32>,
     /// <p>Specifies whether the DB instance is a Multi-AZ deployment. You can't set the <code>AvailabilityZone</code> parameter if the DB instance is a Multi-AZ deployment.</p>
-    /// <p>This setting doesn't apply to the following DB instances:</p>
-    /// <ul>
-    /// <li>
-    /// <p>Amazon Aurora (DB instance Availability Zones (AZs) are managed by the DB cluster.)</p></li>
-    /// <li>
-    /// <p>RDS Custom</p></li>
-    /// </ul>
+    /// <p>This setting doesn't apply to Amazon Aurora because the DB instance Availability Zones (AZs) are managed by the DB cluster.</p>
     pub multi_az: ::std::option::Option<bool>,
     /// <p>The version number of the database engine to use.</p>
     /// <p>This setting doesn't apply to Amazon Aurora DB instances. The version number of the database engine the DB instance uses is managed by the DB cluster.</p>
@@ -1349,13 +1343,7 @@ impl CreateDbInstanceInput {
         self.port
     }
     /// <p>Specifies whether the DB instance is a Multi-AZ deployment. You can't set the <code>AvailabilityZone</code> parameter if the DB instance is a Multi-AZ deployment.</p>
-    /// <p>This setting doesn't apply to the following DB instances:</p>
-    /// <ul>
-    /// <li>
-    /// <p>Amazon Aurora (DB instance Availability Zones (AZs) are managed by the DB cluster.)</p></li>
-    /// <li>
-    /// <p>RDS Custom</p></li>
-    /// </ul>
+    /// <p>This setting doesn't apply to Amazon Aurora because the DB instance Availability Zones (AZs) are managed by the DB cluster.</p>
     pub fn multi_az(&self) -> ::std::option::Option<bool> {
         self.multi_az
     }
@@ -3441,37 +3429,19 @@ impl CreateDbInstanceInputBuilder {
         &self.port
     }
     /// <p>Specifies whether the DB instance is a Multi-AZ deployment. You can't set the <code>AvailabilityZone</code> parameter if the DB instance is a Multi-AZ deployment.</p>
-    /// <p>This setting doesn't apply to the following DB instances:</p>
-    /// <ul>
-    /// <li>
-    /// <p>Amazon Aurora (DB instance Availability Zones (AZs) are managed by the DB cluster.)</p></li>
-    /// <li>
-    /// <p>RDS Custom</p></li>
-    /// </ul>
+    /// <p>This setting doesn't apply to Amazon Aurora because the DB instance Availability Zones (AZs) are managed by the DB cluster.</p>
     pub fn multi_az(mut self, input: bool) -> Self {
         self.multi_az = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies whether the DB instance is a Multi-AZ deployment. You can't set the <code>AvailabilityZone</code> parameter if the DB instance is a Multi-AZ deployment.</p>
-    /// <p>This setting doesn't apply to the following DB instances:</p>
-    /// <ul>
-    /// <li>
-    /// <p>Amazon Aurora (DB instance Availability Zones (AZs) are managed by the DB cluster.)</p></li>
-    /// <li>
-    /// <p>RDS Custom</p></li>
-    /// </ul>
+    /// <p>This setting doesn't apply to Amazon Aurora because the DB instance Availability Zones (AZs) are managed by the DB cluster.</p>
     pub fn set_multi_az(mut self, input: ::std::option::Option<bool>) -> Self {
         self.multi_az = input;
         self
     }
     /// <p>Specifies whether the DB instance is a Multi-AZ deployment. You can't set the <code>AvailabilityZone</code> parameter if the DB instance is a Multi-AZ deployment.</p>
-    /// <p>This setting doesn't apply to the following DB instances:</p>
-    /// <ul>
-    /// <li>
-    /// <p>Amazon Aurora (DB instance Availability Zones (AZs) are managed by the DB cluster.)</p></li>
-    /// <li>
-    /// <p>RDS Custom</p></li>
-    /// </ul>
+    /// <p>This setting doesn't apply to Amazon Aurora because the DB instance Availability Zones (AZs) are managed by the DB cluster.</p>
     pub fn get_multi_az(&self) -> &::std::option::Option<bool> {
         &self.multi_az
     }

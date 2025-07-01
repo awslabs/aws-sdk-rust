@@ -29,13 +29,17 @@ pub use crate::types::_trained_model_export_output_configuration::TrainedModelEx
 
 pub use crate::types::_trained_model_export_receiver_member::TrainedModelExportReceiverMemberBuilder;
 
+pub use crate::types::_trained_model_summary::TrainedModelSummaryBuilder;
+
+pub use crate::types::_incremental_training_data_channel_output::IncrementalTrainingDataChannelOutputBuilder;
+
 pub use crate::types::_stopping_condition::StoppingConditionBuilder;
 
 pub use crate::types::_resource_config::ResourceConfigBuilder;
 
 pub use crate::types::_model_training_data_channel::ModelTrainingDataChannelBuilder;
 
-pub use crate::types::_trained_model_summary::TrainedModelSummaryBuilder;
+pub use crate::types::_incremental_training_data_channel::IncrementalTrainingDataChannelBuilder;
 
 pub use crate::types::_input_channel::InputChannelBuilder;
 
@@ -68,6 +72,8 @@ pub use crate::types::_trained_model_exports_configuration_policy::TrainedModelE
 pub use crate::types::_trained_model_exports_max_size::TrainedModelExportsMaxSizeBuilder;
 
 pub use crate::types::_trained_models_configuration_policy::TrainedModelsConfigurationPolicyBuilder;
+
+pub use crate::types::_trained_model_artifact_max_size::TrainedModelArtifactMaxSizeBuilder;
 
 pub use crate::types::_metrics_configuration_policy::MetricsConfigurationPolicyBuilder;
 

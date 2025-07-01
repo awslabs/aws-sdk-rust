@@ -90,11 +90,11 @@ impl From<crate::operation::delete_session::DeleteSessionError> for Error {
     fn from(err: crate::operation::delete_session::DeleteSessionError) -> Self {
         match err {
             crate::operation::delete_session::DeleteSessionError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::delete_session::DeleteSessionError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::delete_session::DeleteSessionError::InternalServerException(inner) => Error::InternalServerException(inner),
             crate::operation::delete_session::DeleteSessionError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::delete_session::DeleteSessionError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::delete_session::DeleteSessionError::ValidationException(inner) => Error::ValidationException(inner),
-            crate::operation::delete_session::DeleteSessionError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::operation::delete_session::DeleteSessionError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::delete_session::DeleteSessionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -117,10 +117,10 @@ impl From<crate::operation::get_session::GetSessionError> for Error {
     fn from(err: crate::operation::get_session::GetSessionError) -> Self {
         match err {
             crate::operation::get_session::GetSessionError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_session::GetSessionError::InternalServerException(inner) => Error::InternalServerException(inner),
             crate::operation::get_session::GetSessionError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::get_session::GetSessionError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::get_session::GetSessionError::ValidationException(inner) => Error::ValidationException(inner),
-            crate::operation::get_session::GetSessionError::InternalServerException(inner) => Error::InternalServerException(inner),
             crate::operation::get_session::GetSessionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -143,13 +143,13 @@ impl From<crate::operation::put_session::PutSessionError> for Error {
     fn from(err: crate::operation::put_session::PutSessionError) -> Self {
         match err {
             crate::operation::put_session::PutSessionError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::operation::put_session::PutSessionError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::operation::put_session::PutSessionError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::put_session::PutSessionError::BadGatewayException(inner) => Error::BadGatewayException(inner),
-            crate::operation::put_session::PutSessionError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::put_session::PutSessionError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::put_session::PutSessionError::DependencyFailedException(inner) => Error::DependencyFailedException(inner),
             crate::operation::put_session::PutSessionError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::operation::put_session::PutSessionError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::put_session::PutSessionError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::put_session::PutSessionError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::put_session::PutSessionError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::put_session::PutSessionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -172,13 +172,13 @@ impl From<crate::operation::recognize_text::RecognizeTextError> for Error {
     fn from(err: crate::operation::recognize_text::RecognizeTextError) -> Self {
         match err {
             crate::operation::recognize_text::RecognizeTextError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::operation::recognize_text::RecognizeTextError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::operation::recognize_text::RecognizeTextError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::recognize_text::RecognizeTextError::BadGatewayException(inner) => Error::BadGatewayException(inner),
-            crate::operation::recognize_text::RecognizeTextError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::recognize_text::RecognizeTextError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::recognize_text::RecognizeTextError::DependencyFailedException(inner) => Error::DependencyFailedException(inner),
             crate::operation::recognize_text::RecognizeTextError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::operation::recognize_text::RecognizeTextError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::recognize_text::RecognizeTextError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::recognize_text::RecognizeTextError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::recognize_text::RecognizeTextError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::recognize_text::RecognizeTextError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -201,17 +201,17 @@ impl From<crate::operation::recognize_utterance::RecognizeUtteranceError> for Er
     fn from(err: crate::operation::recognize_utterance::RecognizeUtteranceError) -> Self {
         match err {
             crate::operation::recognize_utterance::RecognizeUtteranceError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::operation::recognize_utterance::RecognizeUtteranceError::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::operation::recognize_utterance::RecognizeUtteranceError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::recognize_utterance::RecognizeUtteranceError::BadGatewayException(inner) => Error::BadGatewayException(inner),
-            crate::operation::recognize_utterance::RecognizeUtteranceError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::recognize_utterance::RecognizeUtteranceError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::recognize_utterance::RecognizeUtteranceError::DependencyFailedException(inner) => {
                 Error::DependencyFailedException(inner)
             }
             crate::operation::recognize_utterance::RecognizeUtteranceError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::operation::recognize_utterance::RecognizeUtteranceError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::recognize_utterance::RecognizeUtteranceError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::recognize_utterance::RecognizeUtteranceError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::recognize_utterance::RecognizeUtteranceError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::recognize_utterance::RecognizeUtteranceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }

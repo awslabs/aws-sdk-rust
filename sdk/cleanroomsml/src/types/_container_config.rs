@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ContainerConfig {
-    /// <p>The registry path of the docker image that contains the algorithm. Clean Rooms ML supports both <code>registry/repository\[:tag\]</code> and <code>registry/repositry\[@digest\]</code> image path formats. For more information about using images in Clean Rooms ML, see the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AlgorithmSpecification.html#sagemaker-Type-AlgorithmSpecification-TrainingImage">Sagemaker API reference</a>.</p>
+    /// <p>The registry path of the docker image that contains the algorithm. Clean Rooms ML currently only supports the <code>registry/repository\[:tag\]</code> image path format. For more information about using images in Clean Rooms ML, see the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AlgorithmSpecification.html#sagemaker-Type-AlgorithmSpecification-TrainingImage">Sagemaker API reference</a>.</p>
     pub image_uri: ::std::string::String,
     /// <p>The entrypoint script for a Docker container used to run a training job. This script takes precedence over the default train processing instructions. See How Amazon SageMaker Runs Your Training Image for additional information. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms-training-algo-dockerfile.html">How Sagemaker runs your training image</a>.</p>
     pub entrypoint: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -14,7 +14,7 @@ pub struct ContainerConfig {
     pub metric_definitions: ::std::option::Option<::std::vec::Vec<crate::types::MetricDefinition>>,
 }
 impl ContainerConfig {
-    /// <p>The registry path of the docker image that contains the algorithm. Clean Rooms ML supports both <code>registry/repository\[:tag\]</code> and <code>registry/repositry\[@digest\]</code> image path formats. For more information about using images in Clean Rooms ML, see the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AlgorithmSpecification.html#sagemaker-Type-AlgorithmSpecification-TrainingImage">Sagemaker API reference</a>.</p>
+    /// <p>The registry path of the docker image that contains the algorithm. Clean Rooms ML currently only supports the <code>registry/repository\[:tag\]</code> image path format. For more information about using images in Clean Rooms ML, see the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AlgorithmSpecification.html#sagemaker-Type-AlgorithmSpecification-TrainingImage">Sagemaker API reference</a>.</p>
     pub fn image_uri(&self) -> &str {
         use std::ops::Deref;
         self.image_uri.deref()
@@ -55,18 +55,18 @@ pub struct ContainerConfigBuilder {
     pub(crate) metric_definitions: ::std::option::Option<::std::vec::Vec<crate::types::MetricDefinition>>,
 }
 impl ContainerConfigBuilder {
-    /// <p>The registry path of the docker image that contains the algorithm. Clean Rooms ML supports both <code>registry/repository\[:tag\]</code> and <code>registry/repositry\[@digest\]</code> image path formats. For more information about using images in Clean Rooms ML, see the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AlgorithmSpecification.html#sagemaker-Type-AlgorithmSpecification-TrainingImage">Sagemaker API reference</a>.</p>
+    /// <p>The registry path of the docker image that contains the algorithm. Clean Rooms ML currently only supports the <code>registry/repository\[:tag\]</code> image path format. For more information about using images in Clean Rooms ML, see the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AlgorithmSpecification.html#sagemaker-Type-AlgorithmSpecification-TrainingImage">Sagemaker API reference</a>.</p>
     /// This field is required.
     pub fn image_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.image_uri = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The registry path of the docker image that contains the algorithm. Clean Rooms ML supports both <code>registry/repository\[:tag\]</code> and <code>registry/repositry\[@digest\]</code> image path formats. For more information about using images in Clean Rooms ML, see the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AlgorithmSpecification.html#sagemaker-Type-AlgorithmSpecification-TrainingImage">Sagemaker API reference</a>.</p>
+    /// <p>The registry path of the docker image that contains the algorithm. Clean Rooms ML currently only supports the <code>registry/repository\[:tag\]</code> image path format. For more information about using images in Clean Rooms ML, see the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AlgorithmSpecification.html#sagemaker-Type-AlgorithmSpecification-TrainingImage">Sagemaker API reference</a>.</p>
     pub fn set_image_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.image_uri = input;
         self
     }
-    /// <p>The registry path of the docker image that contains the algorithm. Clean Rooms ML supports both <code>registry/repository\[:tag\]</code> and <code>registry/repositry\[@digest\]</code> image path formats. For more information about using images in Clean Rooms ML, see the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AlgorithmSpecification.html#sagemaker-Type-AlgorithmSpecification-TrainingImage">Sagemaker API reference</a>.</p>
+    /// <p>The registry path of the docker image that contains the algorithm. Clean Rooms ML currently only supports the <code>registry/repository\[:tag\]</code> image path format. For more information about using images in Clean Rooms ML, see the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AlgorithmSpecification.html#sagemaker-Type-AlgorithmSpecification-TrainingImage">Sagemaker API reference</a>.</p>
     pub fn get_image_uri(&self) -> &::std::option::Option<::std::string::String> {
         &self.image_uri
     }

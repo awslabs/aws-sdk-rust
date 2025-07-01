@@ -413,3 +413,4 @@ The AWS SDK for Rust contains one crate for each AWS service, as well as [aws-co
 | Tax Settings | [aws-sdk-taxsettings](https://crates.io/crates/aws-sdk-taxsettings) ([docs](https://docs.rs/aws-sdk-taxsettings)) |
 | Timestream InfluxDB | [aws-sdk-timestreaminfluxdb](https://crates.io/crates/aws-sdk-timestreaminfluxdb) ([docs](https://docs.rs/aws-sdk-timestreaminfluxdb)) |
 | TrustedAdvisor Public API | [aws-sdk-trustedadvisor](https://crates.io/crates/aws-sdk-trustedadvisor) ([docs](https://docs.rs/aws-sdk-trustedadvisor)) |
+| odb | [aws-sdk-odb](https://crates.io/crates/aws-sdk-odb) ([docs](https://docs.rs/aws-sdk-odb)) |

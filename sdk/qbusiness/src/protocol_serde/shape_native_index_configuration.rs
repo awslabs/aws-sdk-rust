@@ -6,21 +6,27 @@ pub fn ser_native_index_configuration(
     {
         object.key("indexId").string(input.index_id.as_str());
     }
-    if let Some(var_1) = &input.boosting_override {
+    if let Some(var_1) = &input.version {
+        object.key("version").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_1).into()),
+        );
+    }
+    if let Some(var_2) = &input.boosting_override {
         #[allow(unused_mut)]
-        let mut object_2 = object.key("boostingOverride").start_object();
-        for (key_3, value_4) in var_1 {
+        let mut object_3 = object.key("boostingOverride").start_object();
+        for (key_4, value_5) in var_2 {
             {
                 #[allow(unused_mut)]
-                let mut object_5 = object_2.key(key_3.as_str()).start_object();
+                let mut object_6 = object_3.key(key_4.as_str()).start_object();
                 crate::protocol_serde::shape_document_attribute_boosting_configuration::ser_document_attribute_boosting_configuration(
-                    &mut object_5,
-                    value_4,
+                    &mut object_6,
+                    value_5,
                 )?;
-                object_5.finish();
+                object_6.finish();
             }
         }
-        object_2.finish();
+        object_3.finish();
     }
     Ok(())
 }
@@ -45,6 +51,13 @@ where
                                 builder = builder.set_index_id(
                                     ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                         .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
+                                );
+                            }
+                            "version" => {
+                                builder = builder.set_version(
+                                    ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                        .map(i64::try_from)
                                         .transpose()?,
                                 );
                             }

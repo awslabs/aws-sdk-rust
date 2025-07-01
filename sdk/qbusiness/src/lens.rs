@@ -29,6 +29,16 @@ pub(crate) fn reflens_list_attachments_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_chat_response_configurations_output_output_next_token(
+    input: &crate::operation::list_chat_response_configurations::ListChatResponseConfigurationsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_conversations_output_output_next_token(
     input: &crate::operation::list_conversations::ListConversationsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -207,6 +217,13 @@ pub(crate) fn lens_list_attachments_output_output_attachments(
     input: crate::operation::list_attachments::ListAttachmentsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::Attachment>> {
     let input = input.attachments?;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_chat_response_configurations_output_output_chat_response_configurations(
+    input: crate::operation::list_chat_response_configurations::ListChatResponseConfigurationsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::ChatResponseConfiguration>> {
+    let input = input.chat_response_configurations?;
     ::std::option::Option::Some(input)
 }
 

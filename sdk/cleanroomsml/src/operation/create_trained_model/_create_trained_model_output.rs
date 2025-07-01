@@ -5,6 +5,9 @@
 pub struct CreateTrainedModelOutput {
     /// <p>The Amazon Resource Name (ARN) of the trained model.</p>
     pub trained_model_arn: ::std::string::String,
+    /// <p>The unique version identifier assigned to the newly created trained model. This identifier can be used to reference this specific version of the trained model in subsequent operations such as inference jobs or incremental training.</p>
+    /// <p>The initial version identifier for the base version of the trained model is "NULL".</p>
+    pub version_identifier: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CreateTrainedModelOutput {
@@ -12,6 +15,11 @@ impl CreateTrainedModelOutput {
     pub fn trained_model_arn(&self) -> &str {
         use std::ops::Deref;
         self.trained_model_arn.deref()
+    }
+    /// <p>The unique version identifier assigned to the newly created trained model. This identifier can be used to reference this specific version of the trained model in subsequent operations such as inference jobs or incremental training.</p>
+    /// <p>The initial version identifier for the base version of the trained model is "NULL".</p>
+    pub fn version_identifier(&self) -> ::std::option::Option<&str> {
+        self.version_identifier.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateTrainedModelOutput {
@@ -31,6 +39,7 @@ impl CreateTrainedModelOutput {
 #[non_exhaustive]
 pub struct CreateTrainedModelOutputBuilder {
     pub(crate) trained_model_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) version_identifier: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CreateTrainedModelOutputBuilder {
@@ -48,6 +57,23 @@ impl CreateTrainedModelOutputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the trained model.</p>
     pub fn get_trained_model_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.trained_model_arn
+    }
+    /// <p>The unique version identifier assigned to the newly created trained model. This identifier can be used to reference this specific version of the trained model in subsequent operations such as inference jobs or incremental training.</p>
+    /// <p>The initial version identifier for the base version of the trained model is "NULL".</p>
+    pub fn version_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.version_identifier = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The unique version identifier assigned to the newly created trained model. This identifier can be used to reference this specific version of the trained model in subsequent operations such as inference jobs or incremental training.</p>
+    /// <p>The initial version identifier for the base version of the trained model is "NULL".</p>
+    pub fn set_version_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.version_identifier = input;
+        self
+    }
+    /// <p>The unique version identifier assigned to the newly created trained model. This identifier can be used to reference this specific version of the trained model in subsequent operations such as inference jobs or incremental training.</p>
+    /// <p>The initial version identifier for the base version of the trained model is "NULL".</p>
+    pub fn get_version_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.version_identifier
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
@@ -72,6 +98,7 @@ impl CreateTrainedModelOutputBuilder {
                     "trained_model_arn was not specified but it is required when building CreateTrainedModelOutput",
                 )
             })?,
+            version_identifier: self.version_identifier,
             _request_id: self._request_id,
         })
     }

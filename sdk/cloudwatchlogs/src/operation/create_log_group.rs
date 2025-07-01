@@ -264,10 +264,10 @@ pub enum CreateLogGroupError {
     LimitExceededException(crate::types::error::LimitExceededException),
     /// <p>Multiple concurrent requests to update the same resource were in conflict.</p>
     OperationAbortedException(crate::types::error::OperationAbortedException),
-    /// <p>The service cannot complete the request.</p>
-    ServiceUnavailableException(crate::types::error::ServiceUnavailableException),
     /// <p>The specified resource already exists.</p>
     ResourceAlreadyExistsException(crate::types::error::ResourceAlreadyExistsException),
+    /// <p>The service cannot complete the request.</p>
+    ServiceUnavailableException(crate::types::error::ServiceUnavailableException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \
     variable wildcard pattern and check `.code()`:
@@ -304,8 +304,8 @@ impl CreateLogGroupError {
             Self::InvalidParameterException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::LimitExceededException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::OperationAbortedException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
-            Self::ServiceUnavailableException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ResourceAlreadyExistsException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::ServiceUnavailableException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::Unhandled(e) => &e.meta,
         }
     }
@@ -321,13 +321,13 @@ impl CreateLogGroupError {
     pub fn is_operation_aborted_exception(&self) -> bool {
         matches!(self, Self::OperationAbortedException(_))
     }
-    /// Returns `true` if the error kind is `CreateLogGroupError::ServiceUnavailableException`.
-    pub fn is_service_unavailable_exception(&self) -> bool {
-        matches!(self, Self::ServiceUnavailableException(_))
-    }
     /// Returns `true` if the error kind is `CreateLogGroupError::ResourceAlreadyExistsException`.
     pub fn is_resource_already_exists_exception(&self) -> bool {
         matches!(self, Self::ResourceAlreadyExistsException(_))
+    }
+    /// Returns `true` if the error kind is `CreateLogGroupError::ServiceUnavailableException`.
+    pub fn is_service_unavailable_exception(&self) -> bool {
+        matches!(self, Self::ServiceUnavailableException(_))
     }
 }
 impl ::std::error::Error for CreateLogGroupError {
@@ -336,8 +336,8 @@ impl ::std::error::Error for CreateLogGroupError {
             Self::InvalidParameterException(_inner) => ::std::option::Option::Some(_inner),
             Self::LimitExceededException(_inner) => ::std::option::Option::Some(_inner),
             Self::OperationAbortedException(_inner) => ::std::option::Option::Some(_inner),
-            Self::ServiceUnavailableException(_inner) => ::std::option::Option::Some(_inner),
             Self::ResourceAlreadyExistsException(_inner) => ::std::option::Option::Some(_inner),
+            Self::ServiceUnavailableException(_inner) => ::std::option::Option::Some(_inner),
             Self::Unhandled(_inner) => ::std::option::Option::Some(&*_inner.source),
         }
     }
@@ -348,8 +348,8 @@ impl ::std::fmt::Display for CreateLogGroupError {
             Self::InvalidParameterException(_inner) => _inner.fmt(f),
             Self::LimitExceededException(_inner) => _inner.fmt(f),
             Self::OperationAbortedException(_inner) => _inner.fmt(f),
-            Self::ServiceUnavailableException(_inner) => _inner.fmt(f),
             Self::ResourceAlreadyExistsException(_inner) => _inner.fmt(f),
+            Self::ServiceUnavailableException(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => {
                 if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self) {
                     write!(f, "unhandled error ({code})")
@@ -374,8 +374,8 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for CreateLogGrou
             Self::InvalidParameterException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::LimitExceededException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::OperationAbortedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::ServiceUnavailableException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ResourceAlreadyExistsException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::ServiceUnavailableException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::Unhandled(_inner) => &_inner.meta,
         }
     }

@@ -267,21 +267,21 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ExecuteQueryE
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum ExecuteQueryError {
-    /// <p>The query timed out.</p>
-    QueryTimeoutException(crate::types::error::QueryTimeoutException),
-    /// <p>The request isn't valid. This can occur if your request contains malformed JSON or unsupported characters. Check your request and try again.</p>
-    InvalidRequestException(crate::types::error::InvalidRequestException),
-    /// <p>The validation failed for this query.</p>
-    ValidationException(crate::types::error::ValidationException),
     /// <p>Access is denied.</p>
     AccessDeniedException(crate::types::error::AccessDeniedException),
+    /// <p>IoT SiteWise can't process your request right now. Try again later.</p>
+    InternalFailureException(crate::types::error::InternalFailureException),
+    /// <p>The request isn't valid. This can occur if your request contains malformed JSON or unsupported characters. Check your request and try again.</p>
+    InvalidRequestException(crate::types::error::InvalidRequestException),
+    /// <p>The query timed out.</p>
+    QueryTimeoutException(crate::types::error::QueryTimeoutException),
+    /// <p>The requested service is unavailable.</p>
+    ServiceUnavailableException(crate::types::error::ServiceUnavailableException),
     /// <p>Your request exceeded a rate limit. For example, you might have exceeded the number of IoT SiteWise assets that can be created per second, the allowed number of messages per second, and so on.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     ThrottlingException(crate::types::error::ThrottlingException),
-    /// <p>The requested service is unavailable.</p>
-    ServiceUnavailableException(crate::types::error::ServiceUnavailableException),
-    /// <p>IoT SiteWise can't process your request right now. Try again later.</p>
-    InternalFailureException(crate::types::error::InternalFailureException),
+    /// <p>The validation failed for this query.</p>
+    ValidationException(crate::types::error::ValidationException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \
     variable wildcard pattern and check `.code()`:
@@ -315,55 +315,55 @@ impl ExecuteQueryError {
     ///
     pub fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
-            Self::QueryTimeoutException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
-            Self::InvalidRequestException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
-            Self::ValidationException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::AccessDeniedException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
-            Self::ThrottlingException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
-            Self::ServiceUnavailableException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InternalFailureException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::InvalidRequestException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::QueryTimeoutException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::ServiceUnavailableException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::ThrottlingException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::ValidationException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::Unhandled(e) => &e.meta,
         }
-    }
-    /// Returns `true` if the error kind is `ExecuteQueryError::QueryTimeoutException`.
-    pub fn is_query_timeout_exception(&self) -> bool {
-        matches!(self, Self::QueryTimeoutException(_))
-    }
-    /// Returns `true` if the error kind is `ExecuteQueryError::InvalidRequestException`.
-    pub fn is_invalid_request_exception(&self) -> bool {
-        matches!(self, Self::InvalidRequestException(_))
-    }
-    /// Returns `true` if the error kind is `ExecuteQueryError::ValidationException`.
-    pub fn is_validation_exception(&self) -> bool {
-        matches!(self, Self::ValidationException(_))
     }
     /// Returns `true` if the error kind is `ExecuteQueryError::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(self, Self::AccessDeniedException(_))
     }
-    /// Returns `true` if the error kind is `ExecuteQueryError::ThrottlingException`.
-    pub fn is_throttling_exception(&self) -> bool {
-        matches!(self, Self::ThrottlingException(_))
+    /// Returns `true` if the error kind is `ExecuteQueryError::InternalFailureException`.
+    pub fn is_internal_failure_exception(&self) -> bool {
+        matches!(self, Self::InternalFailureException(_))
+    }
+    /// Returns `true` if the error kind is `ExecuteQueryError::InvalidRequestException`.
+    pub fn is_invalid_request_exception(&self) -> bool {
+        matches!(self, Self::InvalidRequestException(_))
+    }
+    /// Returns `true` if the error kind is `ExecuteQueryError::QueryTimeoutException`.
+    pub fn is_query_timeout_exception(&self) -> bool {
+        matches!(self, Self::QueryTimeoutException(_))
     }
     /// Returns `true` if the error kind is `ExecuteQueryError::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(self, Self::ServiceUnavailableException(_))
     }
-    /// Returns `true` if the error kind is `ExecuteQueryError::InternalFailureException`.
-    pub fn is_internal_failure_exception(&self) -> bool {
-        matches!(self, Self::InternalFailureException(_))
+    /// Returns `true` if the error kind is `ExecuteQueryError::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(self, Self::ThrottlingException(_))
+    }
+    /// Returns `true` if the error kind is `ExecuteQueryError::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(self, Self::ValidationException(_))
     }
 }
 impl ::std::error::Error for ExecuteQueryError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
-            Self::QueryTimeoutException(_inner) => ::std::option::Option::Some(_inner),
-            Self::InvalidRequestException(_inner) => ::std::option::Option::Some(_inner),
-            Self::ValidationException(_inner) => ::std::option::Option::Some(_inner),
             Self::AccessDeniedException(_inner) => ::std::option::Option::Some(_inner),
-            Self::ThrottlingException(_inner) => ::std::option::Option::Some(_inner),
-            Self::ServiceUnavailableException(_inner) => ::std::option::Option::Some(_inner),
             Self::InternalFailureException(_inner) => ::std::option::Option::Some(_inner),
+            Self::InvalidRequestException(_inner) => ::std::option::Option::Some(_inner),
+            Self::QueryTimeoutException(_inner) => ::std::option::Option::Some(_inner),
+            Self::ServiceUnavailableException(_inner) => ::std::option::Option::Some(_inner),
+            Self::ThrottlingException(_inner) => ::std::option::Option::Some(_inner),
+            Self::ValidationException(_inner) => ::std::option::Option::Some(_inner),
             Self::Unhandled(_inner) => ::std::option::Option::Some(&*_inner.source),
         }
     }
@@ -371,13 +371,13 @@ impl ::std::error::Error for ExecuteQueryError {
 impl ::std::fmt::Display for ExecuteQueryError {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         match self {
-            Self::QueryTimeoutException(_inner) => _inner.fmt(f),
-            Self::InvalidRequestException(_inner) => _inner.fmt(f),
-            Self::ValidationException(_inner) => _inner.fmt(f),
             Self::AccessDeniedException(_inner) => _inner.fmt(f),
-            Self::ThrottlingException(_inner) => _inner.fmt(f),
-            Self::ServiceUnavailableException(_inner) => _inner.fmt(f),
             Self::InternalFailureException(_inner) => _inner.fmt(f),
+            Self::InvalidRequestException(_inner) => _inner.fmt(f),
+            Self::QueryTimeoutException(_inner) => _inner.fmt(f),
+            Self::ServiceUnavailableException(_inner) => _inner.fmt(f),
+            Self::ThrottlingException(_inner) => _inner.fmt(f),
+            Self::ValidationException(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => {
                 if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self) {
                     write!(f, "unhandled error ({code})")
@@ -399,13 +399,13 @@ impl ::aws_smithy_types::retry::ProvideErrorKind for ExecuteQueryError {
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for ExecuteQueryError {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
-            Self::QueryTimeoutException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::InvalidRequestException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::ValidationException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::AccessDeniedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::ThrottlingException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::ServiceUnavailableException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InternalFailureException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::InvalidRequestException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::QueryTimeoutException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::ServiceUnavailableException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::ThrottlingException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::ValidationException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::Unhandled(_inner) => &_inner.meta,
         }
     }

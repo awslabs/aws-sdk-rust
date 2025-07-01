@@ -79,6 +79,20 @@ pub fn de_create_ml_input_channel_http_error(
             };
             tmp
         }),
+        "ThrottlingException" => crate::operation::create_ml_input_channel::CreateMLInputChannelError::ThrottlingException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ThrottlingExceptionBuilder::default();
+                output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::create_ml_input_channel::CreateMLInputChannelError::unhandled)?;
+                let output = output.meta(generic);
+                crate::serde_util::throttling_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::create_ml_input_channel::CreateMLInputChannelError::unhandled)?
+            };
+            tmp
+        }),
         "ValidationException" => crate::operation::create_ml_input_channel::CreateMLInputChannelError::ValidationException({
             #[allow(unused_mut)]
             let mut tmp = {

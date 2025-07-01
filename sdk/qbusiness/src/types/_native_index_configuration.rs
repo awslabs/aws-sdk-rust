@@ -6,6 +6,21 @@
 pub struct NativeIndexConfiguration {
     /// <p>The identifier for the Amazon Q Business index.</p>
     pub index_id: ::std::string::String,
+    /// <p>A read-only field that specifies the version of the <code>NativeIndexConfiguration</code>.</p>
+    /// <p>Amazon Q Business introduces enhanced document retrieval capabilities in version 2 of <code>NativeIndexConfiguration</code>, focusing on streamlined metadata boosting that prioritizes recency and source relevance to deliver more accurate responses to your queries. Version 2 has the following differences from version 1:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Version 2 supports a single Date field (created_at OR last_updated_at) for recency boosting</p></li>
+    /// <li>
+    /// <p>Version 2 supports a single String field with an ordered list of up to 5 values</p></li>
+    /// <li>
+    /// <p>Version 2 introduces number-based boost levels (ONE, TWO) alongside the text-based levels</p></li>
+    /// <li>
+    /// <p>Version 2 allows specifying prioritization between Date and String fields</p></li>
+    /// <li>
+    /// <p>Version 2 maintains backward compatibility with existing configurations</p></li>
+    /// </ul>
+    pub version: ::std::option::Option<i64>,
     /// <p>Overrides the default boosts applied by Amazon Q Business to supported document attribute data types.</p>
     pub boosting_override:
         ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::DocumentAttributeBoostingConfiguration>>,
@@ -15,6 +30,23 @@ impl NativeIndexConfiguration {
     pub fn index_id(&self) -> &str {
         use std::ops::Deref;
         self.index_id.deref()
+    }
+    /// <p>A read-only field that specifies the version of the <code>NativeIndexConfiguration</code>.</p>
+    /// <p>Amazon Q Business introduces enhanced document retrieval capabilities in version 2 of <code>NativeIndexConfiguration</code>, focusing on streamlined metadata boosting that prioritizes recency and source relevance to deliver more accurate responses to your queries. Version 2 has the following differences from version 1:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Version 2 supports a single Date field (created_at OR last_updated_at) for recency boosting</p></li>
+    /// <li>
+    /// <p>Version 2 supports a single String field with an ordered list of up to 5 values</p></li>
+    /// <li>
+    /// <p>Version 2 introduces number-based boost levels (ONE, TWO) alongside the text-based levels</p></li>
+    /// <li>
+    /// <p>Version 2 allows specifying prioritization between Date and String fields</p></li>
+    /// <li>
+    /// <p>Version 2 maintains backward compatibility with existing configurations</p></li>
+    /// </ul>
+    pub fn version(&self) -> ::std::option::Option<i64> {
+        self.version
     }
     /// <p>Overrides the default boosts applied by Amazon Q Business to supported document attribute data types.</p>
     pub fn boosting_override(
@@ -35,6 +67,7 @@ impl NativeIndexConfiguration {
 #[non_exhaustive]
 pub struct NativeIndexConfigurationBuilder {
     pub(crate) index_id: ::std::option::Option<::std::string::String>,
+    pub(crate) version: ::std::option::Option<i64>,
     pub(crate) boosting_override:
         ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::DocumentAttributeBoostingConfiguration>>,
 }
@@ -53,6 +86,59 @@ impl NativeIndexConfigurationBuilder {
     /// <p>The identifier for the Amazon Q Business index.</p>
     pub fn get_index_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.index_id
+    }
+    /// <p>A read-only field that specifies the version of the <code>NativeIndexConfiguration</code>.</p>
+    /// <p>Amazon Q Business introduces enhanced document retrieval capabilities in version 2 of <code>NativeIndexConfiguration</code>, focusing on streamlined metadata boosting that prioritizes recency and source relevance to deliver more accurate responses to your queries. Version 2 has the following differences from version 1:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Version 2 supports a single Date field (created_at OR last_updated_at) for recency boosting</p></li>
+    /// <li>
+    /// <p>Version 2 supports a single String field with an ordered list of up to 5 values</p></li>
+    /// <li>
+    /// <p>Version 2 introduces number-based boost levels (ONE, TWO) alongside the text-based levels</p></li>
+    /// <li>
+    /// <p>Version 2 allows specifying prioritization between Date and String fields</p></li>
+    /// <li>
+    /// <p>Version 2 maintains backward compatibility with existing configurations</p></li>
+    /// </ul>
+    pub fn version(mut self, input: i64) -> Self {
+        self.version = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>A read-only field that specifies the version of the <code>NativeIndexConfiguration</code>.</p>
+    /// <p>Amazon Q Business introduces enhanced document retrieval capabilities in version 2 of <code>NativeIndexConfiguration</code>, focusing on streamlined metadata boosting that prioritizes recency and source relevance to deliver more accurate responses to your queries. Version 2 has the following differences from version 1:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Version 2 supports a single Date field (created_at OR last_updated_at) for recency boosting</p></li>
+    /// <li>
+    /// <p>Version 2 supports a single String field with an ordered list of up to 5 values</p></li>
+    /// <li>
+    /// <p>Version 2 introduces number-based boost levels (ONE, TWO) alongside the text-based levels</p></li>
+    /// <li>
+    /// <p>Version 2 allows specifying prioritization between Date and String fields</p></li>
+    /// <li>
+    /// <p>Version 2 maintains backward compatibility with existing configurations</p></li>
+    /// </ul>
+    pub fn set_version(mut self, input: ::std::option::Option<i64>) -> Self {
+        self.version = input;
+        self
+    }
+    /// <p>A read-only field that specifies the version of the <code>NativeIndexConfiguration</code>.</p>
+    /// <p>Amazon Q Business introduces enhanced document retrieval capabilities in version 2 of <code>NativeIndexConfiguration</code>, focusing on streamlined metadata boosting that prioritizes recency and source relevance to deliver more accurate responses to your queries. Version 2 has the following differences from version 1:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Version 2 supports a single Date field (created_at OR last_updated_at) for recency boosting</p></li>
+    /// <li>
+    /// <p>Version 2 supports a single String field with an ordered list of up to 5 values</p></li>
+    /// <li>
+    /// <p>Version 2 introduces number-based boost levels (ONE, TWO) alongside the text-based levels</p></li>
+    /// <li>
+    /// <p>Version 2 allows specifying prioritization between Date and String fields</p></li>
+    /// <li>
+    /// <p>Version 2 maintains backward compatibility with existing configurations</p></li>
+    /// </ul>
+    pub fn get_version(&self) -> &::std::option::Option<i64> {
+        &self.version
     }
     /// Adds a key-value pair to `boosting_override`.
     ///
@@ -94,6 +180,7 @@ impl NativeIndexConfigurationBuilder {
                     "index_id was not specified but it is required when building NativeIndexConfiguration",
                 )
             })?,
+            version: self.version,
             boosting_override: self.boosting_override,
         })
     }

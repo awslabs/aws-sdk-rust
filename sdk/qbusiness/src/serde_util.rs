@@ -101,6 +101,18 @@ pub(crate) fn license_not_found_exception_correct_errors(
     builder
 }
 
+pub(crate) fn create_chat_response_configuration_output_output_correct_errors(
+    mut builder: crate::operation::create_chat_response_configuration::builders::CreateChatResponseConfigurationOutputBuilder,
+) -> crate::operation::create_chat_response_configuration::builders::CreateChatResponseConfigurationOutputBuilder {
+    if builder.chat_response_configuration_id.is_none() {
+        builder.chat_response_configuration_id = Some(Default::default())
+    }
+    if builder.chat_response_configuration_arn.is_none() {
+        builder.chat_response_configuration_arn = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn create_data_accessor_output_output_correct_errors(
     mut builder: crate::operation::create_data_accessor::builders::CreateDataAccessorOutputBuilder,
 ) -> crate::operation::create_data_accessor::builders::CreateDataAccessorOutputBuilder {
@@ -179,9 +191,6 @@ pub(crate) fn custom_plugin_configuration_correct_errors(
     if builder.api_schema_type.is_none() {
         builder.api_schema_type = "no value was set".parse::<crate::types::ApiSchemaType>().ok()
     }
-    if builder.api_schema.is_none() {
-        builder.api_schema = Some(crate::types::ApiSchema::Unknown)
-    }
     builder
 }
 
@@ -259,6 +268,24 @@ pub(crate) fn basic_auth_configuration_correct_errors(
     }
     if builder.role_arn.is_none() {
         builder.role_arn = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn chat_response_configuration_correct_errors(
+    mut builder: crate::types::builders::ChatResponseConfigurationBuilder,
+) -> crate::types::builders::ChatResponseConfigurationBuilder {
+    if builder.chat_response_configuration_id.is_none() {
+        builder.chat_response_configuration_id = Some(Default::default())
+    }
+    if builder.chat_response_configuration_arn.is_none() {
+        builder.chat_response_configuration_arn = Some(Default::default())
+    }
+    if builder.display_name.is_none() {
+        builder.display_name = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::ChatResponseConfigurationStatus>().ok()
     }
     builder
 }

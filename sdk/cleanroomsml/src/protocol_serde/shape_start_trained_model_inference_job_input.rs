@@ -62,5 +62,8 @@ pub fn ser_start_trained_model_inference_job_input_input(
     if let Some(var_21) = &input.trained_model_arn {
         object.key("trainedModelArn").string(var_21.as_str());
     }
+    if let Some(var_22) = &input.trained_model_version_identifier {
+        object.key("trainedModelVersionIdentifier").string(var_22.as_str());
+    }
     Ok(())
 }

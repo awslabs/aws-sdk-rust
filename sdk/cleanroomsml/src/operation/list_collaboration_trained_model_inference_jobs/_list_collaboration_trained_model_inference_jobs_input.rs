@@ -11,6 +11,8 @@ pub struct ListCollaborationTrainedModelInferenceJobsInput {
     pub collaboration_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the trained model that was used to create the trained model inference jobs that you are interested in.</p>
     pub trained_model_arn: ::std::option::Option<::std::string::String>,
+    /// <p>The version identifier of the trained model to filter inference jobs by. When specified, only inference jobs that used this specific version of the trained model are returned.</p>
+    pub trained_model_version_identifier: ::std::option::Option<::std::string::String>,
 }
 impl ListCollaborationTrainedModelInferenceJobsInput {
     /// <p>The token value retrieved from a previous call to access the next page of results.</p>
@@ -29,6 +31,10 @@ impl ListCollaborationTrainedModelInferenceJobsInput {
     pub fn trained_model_arn(&self) -> ::std::option::Option<&str> {
         self.trained_model_arn.as_deref()
     }
+    /// <p>The version identifier of the trained model to filter inference jobs by. When specified, only inference jobs that used this specific version of the trained model are returned.</p>
+    pub fn trained_model_version_identifier(&self) -> ::std::option::Option<&str> {
+        self.trained_model_version_identifier.as_deref()
+    }
 }
 impl ListCollaborationTrainedModelInferenceJobsInput {
     /// Creates a new builder-style object to manufacture [`ListCollaborationTrainedModelInferenceJobsInput`](crate::operation::list_collaboration_trained_model_inference_jobs::ListCollaborationTrainedModelInferenceJobsInput).
@@ -46,6 +52,7 @@ pub struct ListCollaborationTrainedModelInferenceJobsInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) collaboration_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) trained_model_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) trained_model_version_identifier: ::std::option::Option<::std::string::String>,
 }
 impl ListCollaborationTrainedModelInferenceJobsInputBuilder {
     /// <p>The token value retrieved from a previous call to access the next page of results.</p>
@@ -105,6 +112,20 @@ impl ListCollaborationTrainedModelInferenceJobsInputBuilder {
     pub fn get_trained_model_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.trained_model_arn
     }
+    /// <p>The version identifier of the trained model to filter inference jobs by. When specified, only inference jobs that used this specific version of the trained model are returned.</p>
+    pub fn trained_model_version_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.trained_model_version_identifier = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The version identifier of the trained model to filter inference jobs by. When specified, only inference jobs that used this specific version of the trained model are returned.</p>
+    pub fn set_trained_model_version_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.trained_model_version_identifier = input;
+        self
+    }
+    /// <p>The version identifier of the trained model to filter inference jobs by. When specified, only inference jobs that used this specific version of the trained model are returned.</p>
+    pub fn get_trained_model_version_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.trained_model_version_identifier
+    }
     /// Consumes the builder and constructs a [`ListCollaborationTrainedModelInferenceJobsInput`](crate::operation::list_collaboration_trained_model_inference_jobs::ListCollaborationTrainedModelInferenceJobsInput).
     pub fn build(
         self,
@@ -118,6 +139,7 @@ impl ListCollaborationTrainedModelInferenceJobsInputBuilder {
                 max_results: self.max_results,
                 collaboration_identifier: self.collaboration_identifier,
                 trained_model_arn: self.trained_model_arn,
+                trained_model_version_identifier: self.trained_model_version_identifier,
             },
         )
     }

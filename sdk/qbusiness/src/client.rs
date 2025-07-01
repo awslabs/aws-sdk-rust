@@ -154,6 +154,8 @@ mod create_anonymous_web_experience_url;
 
 mod create_application;
 
+mod create_chat_response_configuration;
+
 mod create_data_accessor;
 
 mod create_data_source;
@@ -203,6 +205,8 @@ mod delete_attachment;
 
 mod delete_chat_controls_configuration;
 
+mod delete_chat_response_configuration;
+
 mod delete_conversation;
 
 mod delete_data_accessor;
@@ -227,6 +231,8 @@ mod get_application;
 
 mod get_chat_controls_configuration;
 
+mod get_chat_response_configuration;
+
 mod get_data_accessor;
 
 mod get_data_source;
@@ -250,6 +256,8 @@ mod get_web_experience;
 mod list_applications;
 
 mod list_attachments;
+
+mod list_chat_response_configurations;
 
 mod list_conversations;
 
@@ -300,6 +308,8 @@ mod untag_resource;
 mod update_application;
 
 mod update_chat_controls_configuration;
+
+mod update_chat_response_configuration;
 
 mod update_data_accessor;
 

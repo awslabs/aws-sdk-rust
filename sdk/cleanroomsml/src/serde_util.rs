@@ -26,6 +26,15 @@ pub(crate) fn resource_not_found_exception_correct_errors(
     builder
 }
 
+pub(crate) fn throttling_exception_correct_errors(
+    mut builder: crate::types::error::builders::ThrottlingExceptionBuilder,
+) -> crate::types::error::builders::ThrottlingExceptionBuilder {
+    if builder.message.is_none() {
+        builder.message = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn validation_exception_correct_errors(
     mut builder: crate::types::error::builders::ValidationExceptionBuilder,
 ) -> crate::types::error::builders::ValidationExceptionBuilder {
@@ -85,6 +94,15 @@ pub(crate) fn create_ml_input_channel_output_output_correct_errors(
 ) -> crate::operation::create_ml_input_channel::builders::CreateMlInputChannelOutputBuilder {
     if builder.ml_input_channel_arn.is_none() {
         builder.ml_input_channel_arn = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn internal_service_exception_correct_errors(
+    mut builder: crate::types::error::builders::InternalServiceExceptionBuilder,
+) -> crate::types::error::builders::InternalServiceExceptionBuilder {
+    if builder.message.is_none() {
+        builder.message = Some(Default::default())
     }
     builder
 }
@@ -639,6 +657,15 @@ pub(crate) fn list_trained_model_inference_jobs_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn list_trained_model_versions_output_output_correct_errors(
+    mut builder: crate::operation::list_trained_model_versions::builders::ListTrainedModelVersionsOutputBuilder,
+) -> crate::operation::list_trained_model_versions::builders::ListTrainedModelVersionsOutputBuilder {
+    if builder.trained_models.is_none() {
+        builder.trained_models = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn list_trained_models_output_output_correct_errors(
     mut builder: crate::operation::list_trained_models::builders::ListTrainedModelsOutputBuilder,
 ) -> crate::operation::list_trained_models::builders::ListTrainedModelsOutputBuilder {
@@ -1189,6 +1216,18 @@ pub(crate) fn destination_correct_errors(mut builder: crate::types::builders::De
     builder
 }
 
+pub(crate) fn incremental_training_data_channel_output_correct_errors(
+    mut builder: crate::types::builders::IncrementalTrainingDataChannelOutputBuilder,
+) -> crate::types::builders::IncrementalTrainingDataChannelOutputBuilder {
+    if builder.channel_name.is_none() {
+        builder.channel_name = Some(Default::default())
+    }
+    if builder.model_name.is_none() {
+        builder.model_name = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn ml_input_channel_summary_correct_errors(
     mut builder: crate::types::builders::MlInputChannelSummaryBuilder,
 ) -> crate::types::builders::MlInputChannelSummaryBuilder {
@@ -1434,6 +1473,18 @@ pub(crate) fn metrics_configuration_policy_correct_errors(
 ) -> crate::types::builders::MetricsConfigurationPolicyBuilder {
     if builder.noise_level.is_none() {
         builder.noise_level = "no value was set".parse::<crate::types::NoiseLevelType>().ok()
+    }
+    builder
+}
+
+pub(crate) fn trained_model_artifact_max_size_correct_errors(
+    mut builder: crate::types::builders::TrainedModelArtifactMaxSizeBuilder,
+) -> crate::types::builders::TrainedModelArtifactMaxSizeBuilder {
+    if builder.unit.is_none() {
+        builder.unit = "no value was set".parse::<crate::types::TrainedModelArtifactMaxSizeUnitType>().ok()
+    }
+    if builder.value.is_none() {
+        builder.value = Some(Default::default())
     }
     builder
 }

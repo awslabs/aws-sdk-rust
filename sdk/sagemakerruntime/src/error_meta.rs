@@ -104,11 +104,11 @@ impl From<crate::operation::invoke_endpoint::InvokeEndpointError> for Error {
     fn from(err: crate::operation::invoke_endpoint::InvokeEndpointError) -> Self {
         match err {
             crate::operation::invoke_endpoint::InvokeEndpointError::InternalDependencyException(inner) => Error::InternalDependencyException(inner),
-            crate::operation::invoke_endpoint::InvokeEndpointError::ModelNotReadyException(inner) => Error::ModelNotReadyException(inner),
             crate::operation::invoke_endpoint::InvokeEndpointError::InternalFailure(inner) => Error::InternalFailure(inner),
-            crate::operation::invoke_endpoint::InvokeEndpointError::ValidationError(inner) => Error::ValidationError(inner),
             crate::operation::invoke_endpoint::InvokeEndpointError::ModelError(inner) => Error::ModelError(inner),
+            crate::operation::invoke_endpoint::InvokeEndpointError::ModelNotReadyException(inner) => Error::ModelNotReadyException(inner),
             crate::operation::invoke_endpoint::InvokeEndpointError::ServiceUnavailable(inner) => Error::ServiceUnavailable(inner),
+            crate::operation::invoke_endpoint::InvokeEndpointError::ValidationError(inner) => Error::ValidationError(inner),
             crate::operation::invoke_endpoint::InvokeEndpointError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -131,8 +131,8 @@ impl From<crate::operation::invoke_endpoint_async::InvokeEndpointAsyncError> for
     fn from(err: crate::operation::invoke_endpoint_async::InvokeEndpointAsyncError) -> Self {
         match err {
             crate::operation::invoke_endpoint_async::InvokeEndpointAsyncError::InternalFailure(inner) => Error::InternalFailure(inner),
-            crate::operation::invoke_endpoint_async::InvokeEndpointAsyncError::ValidationError(inner) => Error::ValidationError(inner),
             crate::operation::invoke_endpoint_async::InvokeEndpointAsyncError::ServiceUnavailable(inner) => Error::ServiceUnavailable(inner),
+            crate::operation::invoke_endpoint_async::InvokeEndpointAsyncError::ValidationError(inner) => Error::ValidationError(inner),
             crate::operation::invoke_endpoint_async::InvokeEndpointAsyncError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }

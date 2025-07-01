@@ -41,6 +41,8 @@ pub(crate) mod shape_create_anonymous_web_experience_url;
 
 pub(crate) mod shape_create_application;
 
+pub(crate) mod shape_create_chat_response_configuration;
+
 pub(crate) mod shape_create_data_accessor;
 
 pub(crate) mod shape_create_data_source;
@@ -62,6 +64,8 @@ pub(crate) mod shape_delete_application;
 pub(crate) mod shape_delete_attachment;
 
 pub(crate) mod shape_delete_chat_controls_configuration;
+
+pub(crate) mod shape_delete_chat_response_configuration;
 
 pub(crate) mod shape_delete_conversation;
 
@@ -87,6 +91,8 @@ pub(crate) mod shape_get_application;
 
 pub(crate) mod shape_get_chat_controls_configuration;
 
+pub(crate) mod shape_get_chat_response_configuration;
+
 pub(crate) mod shape_get_data_accessor;
 
 pub(crate) mod shape_get_data_source;
@@ -110,6 +116,8 @@ pub(crate) mod shape_get_web_experience;
 pub(crate) mod shape_list_applications;
 
 pub(crate) mod shape_list_attachments;
+
+pub(crate) mod shape_list_chat_response_configurations;
 
 pub(crate) mod shape_list_conversations;
 
@@ -161,6 +169,8 @@ pub(crate) mod shape_update_application;
 
 pub(crate) mod shape_update_chat_controls_configuration;
 
+pub(crate) mod shape_update_chat_response_configuration;
+
 pub(crate) mod shape_update_data_accessor;
 
 pub(crate) mod shape_update_data_source;
@@ -205,6 +215,8 @@ pub(crate) mod shape_create_anonymous_web_experience_url_input;
 
 pub(crate) mod shape_create_application_input;
 
+pub(crate) mod shape_create_chat_response_configuration_input;
+
 pub(crate) mod shape_create_data_accessor_input;
 
 pub(crate) mod shape_create_data_source_input;
@@ -246,6 +258,8 @@ pub(crate) mod shape_throttling_exception;
 pub(crate) mod shape_update_application_input;
 
 pub(crate) mod shape_update_chat_controls_configuration_input;
+
+pub(crate) mod shape_update_chat_response_configuration_input;
 
 pub(crate) mod shape_update_data_accessor_input;
 
@@ -322,6 +336,10 @@ pub(crate) mod shape_blocked_phrases_configuration_update;
 pub(crate) mod shape_browser_extension_configuration;
 
 pub(crate) mod shape_chat_mode_configuration;
+
+pub(crate) mod shape_chat_response_configuration_detail;
+
+pub(crate) mod shape_chat_response_configurations;
 
 pub(crate) mod shape_client_ids_for_oidc;
 
@@ -411,6 +429,8 @@ pub(crate) mod shape_quick_sight_configuration;
 
 pub(crate) mod shape_relevant_content_list;
 
+pub(crate) mod shape_response_configuration;
+
 pub(crate) mod shape_retriever_configuration;
 
 pub(crate) mod shape_retrievers;
@@ -479,6 +499,8 @@ pub(crate) mod shape_blocked_phrases;
 
 pub(crate) mod shape_browser_extension_list;
 
+pub(crate) mod shape_chat_response_configuration;
+
 pub(crate) mod shape_conversation;
 
 pub(crate) mod shape_copy_from_source;
@@ -519,6 +541,8 @@ pub(crate) mod shape_inline_document_enrichment_configuration;
 
 pub(crate) mod shape_inline_document_enrichment_configurations;
 
+pub(crate) mod shape_instruction_collection;
+
 pub(crate) mod shape_kendra_index_configuration;
 
 pub(crate) mod shape_member_group;
@@ -544,6 +568,8 @@ pub(crate) mod shape_plugin_configuration;
 pub(crate) mod shape_plugin_type_metadata_summary;
 
 pub(crate) mod shape_relevant_content;
+
+pub(crate) mod shape_response_configurations;
 
 pub(crate) mod shape_retriever;
 

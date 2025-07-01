@@ -193,6 +193,12 @@ pub use crate::types::_user_alias::UserAlias;
 
 pub use crate::types::_subscription_details::SubscriptionDetails;
 
+pub use crate::types::_response_configuration::ResponseConfiguration;
+
+pub use crate::types::_instruction_collection::InstructionCollection;
+
+pub use crate::types::_response_configuration_type::ResponseConfigurationType;
+
 pub use crate::types::_hallucination_reduction_configuration::HallucinationReductionConfiguration;
 
 pub use crate::types::_hallucination_reduction_control::HallucinationReductionControl;
@@ -311,6 +317,10 @@ pub use crate::types::_data_source_sync_job_status::DataSourceSyncJobStatus;
 
 pub use crate::types::_conversation::Conversation;
 
+pub use crate::types::_chat_response_configuration::ChatResponseConfiguration;
+
+pub use crate::types::_chat_response_configuration_status::ChatResponseConfigurationStatus;
+
 pub use crate::types::_attachment::Attachment;
 
 pub use crate::types::_copy_from_source::CopyFromSource;
@@ -320,6 +330,8 @@ pub use crate::types::_conversation_source::ConversationSource;
 pub use crate::types::_group_status_detail::GroupStatusDetail;
 
 pub use crate::types::_group_status::GroupStatus;
+
+pub use crate::types::_chat_response_configuration_detail::ChatResponseConfigurationDetail;
 
 pub use crate::types::_applied_creator_mode_configuration::AppliedCreatorModeConfiguration;
 
@@ -511,6 +523,12 @@ mod _chat_mode_configuration;
 
 mod _chat_output_stream;
 
+mod _chat_response_configuration;
+
+mod _chat_response_configuration_detail;
+
+mod _chat_response_configuration_status;
+
 mod _configuration_event;
 
 mod _content_blocker_rule;
@@ -651,6 +669,8 @@ mod _index_type;
 
 mod _inline_document_enrichment_configuration;
 
+mod _instruction_collection;
+
 mod _kendra_index_configuration;
 
 mod _media_extraction_configuration;
@@ -730,6 +750,10 @@ mod _quick_sight_configuration;
 mod _read_access_type;
 
 mod _relevant_content;
+
+mod _response_configuration;
+
+mod _response_configuration_type;
 
 mod _response_scope;
 

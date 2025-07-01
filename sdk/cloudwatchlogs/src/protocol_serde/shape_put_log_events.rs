@@ -17,13 +17,14 @@ pub fn de_put_log_events_http_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ResourceNotFoundException" => crate::operation::put_log_events::PutLogEventsError::ResourceNotFoundException({
+        "DataAlreadyAcceptedException" => crate::operation::put_log_events::PutLogEventsError::DataAlreadyAcceptedException({
             #[allow(unused_mut)]
             let mut tmp = {
                 #[allow(unused_mut)]
-                let mut output = crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
-                output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(_response_body, output)
-                    .map_err(crate::operation::put_log_events::PutLogEventsError::unhandled)?;
+                let mut output = crate::types::error::builders::DataAlreadyAcceptedExceptionBuilder::default();
+                output =
+                    crate::protocol_serde::shape_data_already_accepted_exception::de_data_already_accepted_exception_json_err(_response_body, output)
+                        .map_err(crate::operation::put_log_events::PutLogEventsError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
             };
@@ -38,6 +39,39 @@ pub fn de_put_log_events_http_error(
                 #[allow(unused_mut)]
                 let mut output = crate::types::error::builders::InvalidParameterExceptionBuilder::default();
                 output = crate::protocol_serde::shape_invalid_parameter_exception::de_invalid_parameter_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::put_log_events::PutLogEventsError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "InvalidSequenceTokenException" => crate::operation::put_log_events::PutLogEventsError::InvalidSequenceTokenException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::InvalidSequenceTokenExceptionBuilder::default();
+                output = crate::protocol_serde::shape_invalid_sequence_token_exception::de_invalid_sequence_token_exception_json_err(
+                    _response_body,
+                    output,
+                )
+                .map_err(crate::operation::put_log_events::PutLogEventsError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ResourceNotFoundException" => crate::operation::put_log_events::PutLogEventsError::ResourceNotFoundException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
+                output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(_response_body, output)
                     .map_err(crate::operation::put_log_events::PutLogEventsError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
@@ -70,40 +104,6 @@ pub fn de_put_log_events_http_error(
                 let mut output = crate::types::error::builders::UnrecognizedClientExceptionBuilder::default();
                 output =
                     crate::protocol_serde::shape_unrecognized_client_exception::de_unrecognized_client_exception_json_err(_response_body, output)
-                        .map_err(crate::operation::put_log_events::PutLogEventsError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "InvalidSequenceTokenException" => crate::operation::put_log_events::PutLogEventsError::InvalidSequenceTokenException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::types::error::builders::InvalidSequenceTokenExceptionBuilder::default();
-                output = crate::protocol_serde::shape_invalid_sequence_token_exception::de_invalid_sequence_token_exception_json_err(
-                    _response_body,
-                    output,
-                )
-                .map_err(crate::operation::put_log_events::PutLogEventsError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "DataAlreadyAcceptedException" => crate::operation::put_log_events::PutLogEventsError::DataAlreadyAcceptedException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::types::error::builders::DataAlreadyAcceptedExceptionBuilder::default();
-                output =
-                    crate::protocol_serde::shape_data_already_accepted_exception::de_data_already_accepted_exception_json_err(_response_body, output)
                         .map_err(crate::operation::put_log_events::PutLogEventsError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()

@@ -7,6 +7,8 @@ pub struct GetCollaborationTrainedModelInput {
     pub trained_model_arn: ::std::option::Option<::std::string::String>,
     /// <p>The collaboration ID that contains the trained model that you want to return information about.</p>
     pub collaboration_identifier: ::std::option::Option<::std::string::String>,
+    /// <p>The version identifier of the trained model to retrieve. If not specified, the operation returns information about the latest version of the trained model.</p>
+    pub version_identifier: ::std::option::Option<::std::string::String>,
 }
 impl GetCollaborationTrainedModelInput {
     /// <p>The Amazon Resource Name (ARN) of the trained model that you want to return information about.</p>
@@ -16,6 +18,10 @@ impl GetCollaborationTrainedModelInput {
     /// <p>The collaboration ID that contains the trained model that you want to return information about.</p>
     pub fn collaboration_identifier(&self) -> ::std::option::Option<&str> {
         self.collaboration_identifier.as_deref()
+    }
+    /// <p>The version identifier of the trained model to retrieve. If not specified, the operation returns information about the latest version of the trained model.</p>
+    pub fn version_identifier(&self) -> ::std::option::Option<&str> {
+        self.version_identifier.as_deref()
     }
 }
 impl GetCollaborationTrainedModelInput {
@@ -31,6 +37,7 @@ impl GetCollaborationTrainedModelInput {
 pub struct GetCollaborationTrainedModelInputBuilder {
     pub(crate) trained_model_arn: ::std::option::Option<::std::string::String>,
     pub(crate) collaboration_identifier: ::std::option::Option<::std::string::String>,
+    pub(crate) version_identifier: ::std::option::Option<::std::string::String>,
 }
 impl GetCollaborationTrainedModelInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the trained model that you want to return information about.</p>
@@ -63,6 +70,20 @@ impl GetCollaborationTrainedModelInputBuilder {
     pub fn get_collaboration_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.collaboration_identifier
     }
+    /// <p>The version identifier of the trained model to retrieve. If not specified, the operation returns information about the latest version of the trained model.</p>
+    pub fn version_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.version_identifier = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The version identifier of the trained model to retrieve. If not specified, the operation returns information about the latest version of the trained model.</p>
+    pub fn set_version_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.version_identifier = input;
+        self
+    }
+    /// <p>The version identifier of the trained model to retrieve. If not specified, the operation returns information about the latest version of the trained model.</p>
+    pub fn get_version_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.version_identifier
+    }
     /// Consumes the builder and constructs a [`GetCollaborationTrainedModelInput`](crate::operation::get_collaboration_trained_model::GetCollaborationTrainedModelInput).
     pub fn build(
         self,
@@ -73,6 +94,7 @@ impl GetCollaborationTrainedModelInputBuilder {
         ::std::result::Result::Ok(crate::operation::get_collaboration_trained_model::GetCollaborationTrainedModelInput {
             trained_model_arn: self.trained_model_arn,
             collaboration_identifier: self.collaboration_identifier,
+            version_identifier: self.version_identifier,
         })
     }
 }

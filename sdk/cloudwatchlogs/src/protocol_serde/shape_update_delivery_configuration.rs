@@ -20,12 +20,12 @@ pub fn de_update_delivery_configuration_http_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ThrottlingException" => crate::operation::update_delivery_configuration::UpdateDeliveryConfigurationError::ThrottlingException({
+        "AccessDeniedException" => crate::operation::update_delivery_configuration::UpdateDeliveryConfigurationError::AccessDeniedException({
             #[allow(unused_mut)]
             let mut tmp = {
                 #[allow(unused_mut)]
-                let mut output = crate::types::error::builders::ThrottlingExceptionBuilder::default();
-                output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(_response_body, output)
+                let mut output = crate::types::error::builders::AccessDeniedExceptionBuilder::default();
+                output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(_response_body, output)
                     .map_err(crate::operation::update_delivery_configuration::UpdateDeliveryConfigurationError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
@@ -41,21 +41,6 @@ pub fn de_update_delivery_configuration_http_error(
                 #[allow(unused_mut)]
                 let mut output = crate::types::error::builders::ConflictExceptionBuilder::default();
                 output = crate::protocol_serde::shape_conflict_exception::de_conflict_exception_json_err(_response_body, output)
-                    .map_err(crate::operation::update_delivery_configuration::UpdateDeliveryConfigurationError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "ValidationException" => crate::operation::update_delivery_configuration::UpdateDeliveryConfigurationError::ValidationException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::types::error::builders::ValidationExceptionBuilder::default();
-                output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(_response_body, output)
                     .map_err(crate::operation::update_delivery_configuration::UpdateDeliveryConfigurationError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
@@ -83,21 +68,6 @@ pub fn de_update_delivery_configuration_http_error(
                 tmp
             })
         }
-        "AccessDeniedException" => crate::operation::update_delivery_configuration::UpdateDeliveryConfigurationError::AccessDeniedException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::types::error::builders::AccessDeniedExceptionBuilder::default();
-                output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(_response_body, output)
-                    .map_err(crate::operation::update_delivery_configuration::UpdateDeliveryConfigurationError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
         "ServiceUnavailableException" => {
             crate::operation::update_delivery_configuration::UpdateDeliveryConfigurationError::ServiceUnavailableException({
                 #[allow(unused_mut)]
@@ -116,6 +86,36 @@ pub fn de_update_delivery_configuration_http_error(
                 tmp
             })
         }
+        "ThrottlingException" => crate::operation::update_delivery_configuration::UpdateDeliveryConfigurationError::ThrottlingException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ThrottlingExceptionBuilder::default();
+                output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::update_delivery_configuration::UpdateDeliveryConfigurationError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ValidationException" => crate::operation::update_delivery_configuration::UpdateDeliveryConfigurationError::ValidationException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ValidationExceptionBuilder::default();
+                output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::update_delivery_configuration::UpdateDeliveryConfigurationError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::operation::update_delivery_configuration::UpdateDeliveryConfigurationError::generic(generic),
     })
 }

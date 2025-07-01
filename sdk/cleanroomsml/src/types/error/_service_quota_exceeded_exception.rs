@@ -6,7 +6,21 @@
 pub struct ServiceQuotaExceededException {
     #[allow(missing_docs)] // documentation missing in model
     pub message: ::std::string::String,
+    /// The name of the service quota limit that was exceeded
+    pub quota_name: ::std::option::Option<::std::string::String>,
+    /// The current limit on the service quota that was exceeded
+    pub quota_value: ::std::option::Option<f64>,
     pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
+}
+impl ServiceQuotaExceededException {
+    /// The name of the service quota limit that was exceeded
+    pub fn quota_name(&self) -> ::std::option::Option<&str> {
+        self.quota_name.as_deref()
+    }
+    /// The current limit on the service quota that was exceeded
+    pub fn quota_value(&self) -> ::std::option::Option<f64> {
+        self.quota_value
+    }
 }
 impl ServiceQuotaExceededException {
     /// Returns the error message.
@@ -47,6 +61,8 @@ impl ServiceQuotaExceededException {
 #[non_exhaustive]
 pub struct ServiceQuotaExceededExceptionBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
+    pub(crate) quota_name: ::std::option::Option<::std::string::String>,
+    pub(crate) quota_value: ::std::option::Option<f64>,
     meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
 }
 impl ServiceQuotaExceededExceptionBuilder {
@@ -64,6 +80,34 @@ impl ServiceQuotaExceededExceptionBuilder {
     #[allow(missing_docs)] // documentation missing in model
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
         &self.message
+    }
+    /// The name of the service quota limit that was exceeded
+    pub fn quota_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.quota_name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// The name of the service quota limit that was exceeded
+    pub fn set_quota_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.quota_name = input;
+        self
+    }
+    /// The name of the service quota limit that was exceeded
+    pub fn get_quota_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.quota_name
+    }
+    /// The current limit on the service quota that was exceeded
+    pub fn quota_value(mut self, input: f64) -> Self {
+        self.quota_value = ::std::option::Option::Some(input);
+        self
+    }
+    /// The current limit on the service quota that was exceeded
+    pub fn set_quota_value(mut self, input: ::std::option::Option<f64>) -> Self {
+        self.quota_value = input;
+        self
+    }
+    /// The current limit on the service quota that was exceeded
+    pub fn get_quota_value(&self) -> &::std::option::Option<f64> {
+        &self.quota_value
     }
     /// Sets error metadata
     pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {
@@ -89,6 +133,8 @@ impl ServiceQuotaExceededExceptionBuilder {
                     "message was not specified but it is required when building ServiceQuotaExceededException",
                 )
             })?,
+            quota_name: self.quota_name,
+            quota_value: self.quota_value,
             meta: self.meta.unwrap_or_default(),
         })
     }

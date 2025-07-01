@@ -98,14 +98,14 @@ impl From<crate::operation::create_invocation::CreateInvocationError> for Error 
     fn from(err: crate::operation::create_invocation::CreateInvocationError) -> Self {
         match err {
             crate::operation::create_invocation::CreateInvocationError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::operation::create_invocation::CreateInvocationError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::create_invocation::CreateInvocationError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::create_invocation::CreateInvocationError::InternalServerException(inner) => Error::InternalServerException(inner),
             crate::operation::create_invocation::CreateInvocationError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::operation::create_invocation::CreateInvocationError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::operation::create_invocation::CreateInvocationError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::create_invocation::CreateInvocationError::ServiceQuotaExceededException(inner) => {
                 Error::ServiceQuotaExceededException(inner)
             }
+            crate::operation::create_invocation::CreateInvocationError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::create_invocation::CreateInvocationError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::create_invocation::CreateInvocationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -128,11 +128,11 @@ impl From<crate::operation::create_session::CreateSessionError> for Error {
     fn from(err: crate::operation::create_session::CreateSessionError) -> Self {
         match err {
             crate::operation::create_session::CreateSessionError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::operation::create_session::CreateSessionError::ValidationException(inner) => Error::ValidationException(inner),
-            crate::operation::create_session::CreateSessionError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::operation::create_session::CreateSessionError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::create_session::CreateSessionError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::create_session::CreateSessionError::InternalServerException(inner) => Error::InternalServerException(inner),
             crate::operation::create_session::CreateSessionError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::operation::create_session::CreateSessionError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::create_session::CreateSessionError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::create_session::CreateSessionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -155,20 +155,20 @@ impl From<crate::operation::delete_agent_memory::DeleteAgentMemoryError> for Err
     fn from(err: crate::operation::delete_agent_memory::DeleteAgentMemoryError) -> Self {
         match err {
             crate::operation::delete_agent_memory::DeleteAgentMemoryError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::delete_agent_memory::DeleteAgentMemoryError::BadGatewayException(inner) => Error::BadGatewayException(inner),
+            crate::operation::delete_agent_memory::DeleteAgentMemoryError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::delete_agent_memory::DeleteAgentMemoryError::DependencyFailedException(inner) => {
                 Error::DependencyFailedException(inner)
             }
-            crate::operation::delete_agent_memory::DeleteAgentMemoryError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::delete_agent_memory::DeleteAgentMemoryError::InternalServerException(inner) => Error::InternalServerException(inner),
             crate::operation::delete_agent_memory::DeleteAgentMemoryError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }
-            crate::operation::delete_agent_memory::DeleteAgentMemoryError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::operation::delete_agent_memory::DeleteAgentMemoryError::BadGatewayException(inner) => Error::BadGatewayException(inner),
-            crate::operation::delete_agent_memory::DeleteAgentMemoryError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::delete_agent_memory::DeleteAgentMemoryError::ServiceQuotaExceededException(inner) => {
                 Error::ServiceQuotaExceededException(inner)
             }
+            crate::operation::delete_agent_memory::DeleteAgentMemoryError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::delete_agent_memory::DeleteAgentMemoryError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::delete_agent_memory::DeleteAgentMemoryError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -191,11 +191,11 @@ impl From<crate::operation::delete_session::DeleteSessionError> for Error {
     fn from(err: crate::operation::delete_session::DeleteSessionError) -> Self {
         match err {
             crate::operation::delete_session::DeleteSessionError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::operation::delete_session::DeleteSessionError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::delete_session::DeleteSessionError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::delete_session::DeleteSessionError::InternalServerException(inner) => Error::InternalServerException(inner),
             crate::operation::delete_session::DeleteSessionError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::delete_session::DeleteSessionError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::operation::delete_session::DeleteSessionError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::delete_session::DeleteSessionError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::delete_session::DeleteSessionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -218,11 +218,11 @@ impl From<crate::operation::end_session::EndSessionError> for Error {
     fn from(err: crate::operation::end_session::EndSessionError) -> Self {
         match err {
             crate::operation::end_session::EndSessionError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::operation::end_session::EndSessionError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::end_session::EndSessionError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::end_session::EndSessionError::InternalServerException(inner) => Error::InternalServerException(inner),
             crate::operation::end_session::EndSessionError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::end_session::EndSessionError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::operation::end_session::EndSessionError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::end_session::EndSessionError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::end_session::EndSessionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -245,14 +245,14 @@ impl From<crate::operation::generate_query::GenerateQueryError> for Error {
     fn from(err: crate::operation::generate_query::GenerateQueryError) -> Self {
         match err {
             crate::operation::generate_query::GenerateQueryError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::operation::generate_query::GenerateQueryError::DependencyFailedException(inner) => Error::DependencyFailedException(inner),
-            crate::operation::generate_query::GenerateQueryError::ValidationException(inner) => Error::ValidationException(inner),
-            crate::operation::generate_query::GenerateQueryError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::operation::generate_query::GenerateQueryError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::operation::generate_query::GenerateQueryError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::generate_query::GenerateQueryError::BadGatewayException(inner) => Error::BadGatewayException(inner),
             crate::operation::generate_query::GenerateQueryError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::generate_query::GenerateQueryError::DependencyFailedException(inner) => Error::DependencyFailedException(inner),
+            crate::operation::generate_query::GenerateQueryError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::generate_query::GenerateQueryError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::generate_query::GenerateQueryError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::operation::generate_query::GenerateQueryError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::generate_query::GenerateQueryError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::generate_query::GenerateQueryError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -275,16 +275,16 @@ impl From<crate::operation::get_agent_memory::GetAgentMemoryError> for Error {
     fn from(err: crate::operation::get_agent_memory::GetAgentMemoryError) -> Self {
         match err {
             crate::operation::get_agent_memory::GetAgentMemoryError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::operation::get_agent_memory::GetAgentMemoryError::DependencyFailedException(inner) => Error::DependencyFailedException(inner),
-            crate::operation::get_agent_memory::GetAgentMemoryError::ValidationException(inner) => Error::ValidationException(inner),
-            crate::operation::get_agent_memory::GetAgentMemoryError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::operation::get_agent_memory::GetAgentMemoryError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::operation::get_agent_memory::GetAgentMemoryError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::get_agent_memory::GetAgentMemoryError::BadGatewayException(inner) => Error::BadGatewayException(inner),
             crate::operation::get_agent_memory::GetAgentMemoryError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::get_agent_memory::GetAgentMemoryError::DependencyFailedException(inner) => Error::DependencyFailedException(inner),
+            crate::operation::get_agent_memory::GetAgentMemoryError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::get_agent_memory::GetAgentMemoryError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::get_agent_memory::GetAgentMemoryError::ServiceQuotaExceededException(inner) => {
                 Error::ServiceQuotaExceededException(inner)
             }
+            crate::operation::get_agent_memory::GetAgentMemoryError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_agent_memory::GetAgentMemoryError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::get_agent_memory::GetAgentMemoryError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -312,9 +312,6 @@ impl From<crate::operation::get_execution_flow_snapshot::GetExecutionFlowSnapsho
             crate::operation::get_execution_flow_snapshot::GetExecutionFlowSnapshotError::AccessDeniedException(inner) => {
                 Error::AccessDeniedException(inner)
             }
-            crate::operation::get_execution_flow_snapshot::GetExecutionFlowSnapshotError::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
             crate::operation::get_execution_flow_snapshot::GetExecutionFlowSnapshotError::InternalServerException(inner) => {
                 Error::InternalServerException(inner)
             }
@@ -323,6 +320,9 @@ impl From<crate::operation::get_execution_flow_snapshot::GetExecutionFlowSnapsho
             }
             crate::operation::get_execution_flow_snapshot::GetExecutionFlowSnapshotError::ThrottlingException(inner) => {
                 Error::ThrottlingException(inner)
+            }
+            crate::operation::get_execution_flow_snapshot::GetExecutionFlowSnapshotError::ValidationException(inner) => {
+                Error::ValidationException(inner)
             }
             crate::operation::get_execution_flow_snapshot::GetExecutionFlowSnapshotError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -346,10 +346,10 @@ impl From<crate::operation::get_flow_execution::GetFlowExecutionError> for Error
     fn from(err: crate::operation::get_flow_execution::GetFlowExecutionError) -> Self {
         match err {
             crate::operation::get_flow_execution::GetFlowExecutionError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::operation::get_flow_execution::GetFlowExecutionError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::get_flow_execution::GetFlowExecutionError::InternalServerException(inner) => Error::InternalServerException(inner),
             crate::operation::get_flow_execution::GetFlowExecutionError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::get_flow_execution::GetFlowExecutionError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_flow_execution::GetFlowExecutionError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::get_flow_execution::GetFlowExecutionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -372,12 +372,12 @@ impl From<crate::operation::get_invocation_step::GetInvocationStepError> for Err
     fn from(err: crate::operation::get_invocation_step::GetInvocationStepError) -> Self {
         match err {
             crate::operation::get_invocation_step::GetInvocationStepError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::operation::get_invocation_step::GetInvocationStepError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::get_invocation_step::GetInvocationStepError::InternalServerException(inner) => Error::InternalServerException(inner),
             crate::operation::get_invocation_step::GetInvocationStepError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }
             crate::operation::get_invocation_step::GetInvocationStepError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_invocation_step::GetInvocationStepError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::get_invocation_step::GetInvocationStepError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -400,10 +400,10 @@ impl From<crate::operation::get_session::GetSessionError> for Error {
     fn from(err: crate::operation::get_session::GetSessionError) -> Self {
         match err {
             crate::operation::get_session::GetSessionError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::operation::get_session::GetSessionError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::get_session::GetSessionError::InternalServerException(inner) => Error::InternalServerException(inner),
             crate::operation::get_session::GetSessionError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::get_session::GetSessionError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_session::GetSessionError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::get_session::GetSessionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -528,9 +528,6 @@ impl From<crate::operation::list_flow_execution_events::ListFlowExecutionEventsE
             crate::operation::list_flow_execution_events::ListFlowExecutionEventsError::AccessDeniedException(inner) => {
                 Error::AccessDeniedException(inner)
             }
-            crate::operation::list_flow_execution_events::ListFlowExecutionEventsError::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
             crate::operation::list_flow_execution_events::ListFlowExecutionEventsError::InternalServerException(inner) => {
                 Error::InternalServerException(inner)
             }
@@ -539,6 +536,9 @@ impl From<crate::operation::list_flow_execution_events::ListFlowExecutionEventsE
             }
             crate::operation::list_flow_execution_events::ListFlowExecutionEventsError::ThrottlingException(inner) => {
                 Error::ThrottlingException(inner)
+            }
+            crate::operation::list_flow_execution_events::ListFlowExecutionEventsError::ValidationException(inner) => {
+                Error::ValidationException(inner)
             }
             crate::operation::list_flow_execution_events::ListFlowExecutionEventsError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -562,12 +562,12 @@ impl From<crate::operation::list_flow_executions::ListFlowExecutionsError> for E
     fn from(err: crate::operation::list_flow_executions::ListFlowExecutionsError) -> Self {
         match err {
             crate::operation::list_flow_executions::ListFlowExecutionsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::operation::list_flow_executions::ListFlowExecutionsError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::list_flow_executions::ListFlowExecutionsError::InternalServerException(inner) => Error::InternalServerException(inner),
             crate::operation::list_flow_executions::ListFlowExecutionsError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }
             crate::operation::list_flow_executions::ListFlowExecutionsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_flow_executions::ListFlowExecutionsError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::list_flow_executions::ListFlowExecutionsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -590,10 +590,10 @@ impl From<crate::operation::list_invocations::ListInvocationsError> for Error {
     fn from(err: crate::operation::list_invocations::ListInvocationsError) -> Self {
         match err {
             crate::operation::list_invocations::ListInvocationsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::operation::list_invocations::ListInvocationsError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::list_invocations::ListInvocationsError::InternalServerException(inner) => Error::InternalServerException(inner),
             crate::operation::list_invocations::ListInvocationsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::list_invocations::ListInvocationsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_invocations::ListInvocationsError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::list_invocations::ListInvocationsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -616,7 +616,6 @@ impl From<crate::operation::list_invocation_steps::ListInvocationStepsError> for
     fn from(err: crate::operation::list_invocation_steps::ListInvocationStepsError) -> Self {
         match err {
             crate::operation::list_invocation_steps::ListInvocationStepsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::operation::list_invocation_steps::ListInvocationStepsError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::list_invocation_steps::ListInvocationStepsError::InternalServerException(inner) => {
                 Error::InternalServerException(inner)
             }
@@ -624,6 +623,7 @@ impl From<crate::operation::list_invocation_steps::ListInvocationStepsError> for
                 Error::ResourceNotFoundException(inner)
             }
             crate::operation::list_invocation_steps::ListInvocationStepsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_invocation_steps::ListInvocationStepsError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::list_invocation_steps::ListInvocationStepsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -646,9 +646,9 @@ impl From<crate::operation::list_sessions::ListSessionsError> for Error {
     fn from(err: crate::operation::list_sessions::ListSessionsError) -> Self {
         match err {
             crate::operation::list_sessions::ListSessionsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::operation::list_sessions::ListSessionsError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::list_sessions::ListSessionsError::InternalServerException(inner) => Error::InternalServerException(inner),
             crate::operation::list_sessions::ListSessionsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_sessions::ListSessionsError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::list_sessions::ListSessionsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -671,7 +671,6 @@ impl From<crate::operation::list_tags_for_resource::ListTagsForResourceError> fo
     fn from(err: crate::operation::list_tags_for_resource::ListTagsForResourceError) -> Self {
         match err {
             crate::operation::list_tags_for_resource::ListTagsForResourceError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::operation::list_tags_for_resource::ListTagsForResourceError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::list_tags_for_resource::ListTagsForResourceError::InternalServerException(inner) => {
                 Error::InternalServerException(inner)
             }
@@ -679,6 +678,7 @@ impl From<crate::operation::list_tags_for_resource::ListTagsForResourceError> fo
                 Error::ResourceNotFoundException(inner)
             }
             crate::operation::list_tags_for_resource::ListTagsForResourceError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::list_tags_for_resource::ListTagsForResourceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -728,16 +728,16 @@ impl From<crate::operation::put_invocation_step::PutInvocationStepError> for Err
     fn from(err: crate::operation::put_invocation_step::PutInvocationStepError) -> Self {
         match err {
             crate::operation::put_invocation_step::PutInvocationStepError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::operation::put_invocation_step::PutInvocationStepError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::put_invocation_step::PutInvocationStepError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::put_invocation_step::PutInvocationStepError::InternalServerException(inner) => Error::InternalServerException(inner),
             crate::operation::put_invocation_step::PutInvocationStepError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }
-            crate::operation::put_invocation_step::PutInvocationStepError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::operation::put_invocation_step::PutInvocationStepError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::put_invocation_step::PutInvocationStepError::ServiceQuotaExceededException(inner) => {
                 Error::ServiceQuotaExceededException(inner)
             }
+            crate::operation::put_invocation_step::PutInvocationStepError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::put_invocation_step::PutInvocationStepError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::put_invocation_step::PutInvocationStepError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -760,14 +760,14 @@ impl From<crate::operation::rerank::RerankError> for Error {
     fn from(err: crate::operation::rerank::RerankError) -> Self {
         match err {
             crate::operation::rerank::RerankError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::operation::rerank::RerankError::DependencyFailedException(inner) => Error::DependencyFailedException(inner),
-            crate::operation::rerank::RerankError::ValidationException(inner) => Error::ValidationException(inner),
-            crate::operation::rerank::RerankError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::operation::rerank::RerankError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::operation::rerank::RerankError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::rerank::RerankError::BadGatewayException(inner) => Error::BadGatewayException(inner),
             crate::operation::rerank::RerankError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::rerank::RerankError::DependencyFailedException(inner) => Error::DependencyFailedException(inner),
+            crate::operation::rerank::RerankError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::rerank::RerankError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::rerank::RerankError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::operation::rerank::RerankError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::rerank::RerankError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::rerank::RerankError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -790,14 +790,14 @@ impl From<crate::operation::retrieve::RetrieveError> for Error {
     fn from(err: crate::operation::retrieve::RetrieveError) -> Self {
         match err {
             crate::operation::retrieve::RetrieveError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::operation::retrieve::RetrieveError::DependencyFailedException(inner) => Error::DependencyFailedException(inner),
-            crate::operation::retrieve::RetrieveError::ValidationException(inner) => Error::ValidationException(inner),
-            crate::operation::retrieve::RetrieveError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::operation::retrieve::RetrieveError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::operation::retrieve::RetrieveError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::retrieve::RetrieveError::BadGatewayException(inner) => Error::BadGatewayException(inner),
             crate::operation::retrieve::RetrieveError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::retrieve::RetrieveError::DependencyFailedException(inner) => Error::DependencyFailedException(inner),
+            crate::operation::retrieve::RetrieveError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::retrieve::RetrieveError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::retrieve::RetrieveError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::operation::retrieve::RetrieveError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::retrieve::RetrieveError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::retrieve::RetrieveError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -820,22 +820,22 @@ impl From<crate::operation::retrieve_and_generate::RetrieveAndGenerateError> for
     fn from(err: crate::operation::retrieve_and_generate::RetrieveAndGenerateError) -> Self {
         match err {
             crate::operation::retrieve_and_generate::RetrieveAndGenerateError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::retrieve_and_generate::RetrieveAndGenerateError::BadGatewayException(inner) => Error::BadGatewayException(inner),
+            crate::operation::retrieve_and_generate::RetrieveAndGenerateError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::retrieve_and_generate::RetrieveAndGenerateError::DependencyFailedException(inner) => {
                 Error::DependencyFailedException(inner)
             }
-            crate::operation::retrieve_and_generate::RetrieveAndGenerateError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::retrieve_and_generate::RetrieveAndGenerateError::InternalServerException(inner) => {
                 Error::InternalServerException(inner)
             }
             crate::operation::retrieve_and_generate::RetrieveAndGenerateError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }
-            crate::operation::retrieve_and_generate::RetrieveAndGenerateError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::operation::retrieve_and_generate::RetrieveAndGenerateError::BadGatewayException(inner) => Error::BadGatewayException(inner),
-            crate::operation::retrieve_and_generate::RetrieveAndGenerateError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::retrieve_and_generate::RetrieveAndGenerateError::ServiceQuotaExceededException(inner) => {
                 Error::ServiceQuotaExceededException(inner)
             }
+            crate::operation::retrieve_and_generate::RetrieveAndGenerateError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::retrieve_and_generate::RetrieveAndGenerateError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::retrieve_and_generate::RetrieveAndGenerateError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -909,20 +909,20 @@ impl From<crate::operation::start_flow_execution::StartFlowExecutionError> for E
     fn from(err: crate::operation::start_flow_execution::StartFlowExecutionError) -> Self {
         match err {
             crate::operation::start_flow_execution::StartFlowExecutionError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::start_flow_execution::StartFlowExecutionError::BadGatewayException(inner) => Error::BadGatewayException(inner),
+            crate::operation::start_flow_execution::StartFlowExecutionError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::start_flow_execution::StartFlowExecutionError::DependencyFailedException(inner) => {
                 Error::DependencyFailedException(inner)
             }
-            crate::operation::start_flow_execution::StartFlowExecutionError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::start_flow_execution::StartFlowExecutionError::InternalServerException(inner) => Error::InternalServerException(inner),
             crate::operation::start_flow_execution::StartFlowExecutionError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }
-            crate::operation::start_flow_execution::StartFlowExecutionError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::operation::start_flow_execution::StartFlowExecutionError::BadGatewayException(inner) => Error::BadGatewayException(inner),
-            crate::operation::start_flow_execution::StartFlowExecutionError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::start_flow_execution::StartFlowExecutionError::ServiceQuotaExceededException(inner) => {
                 Error::ServiceQuotaExceededException(inner)
             }
+            crate::operation::start_flow_execution::StartFlowExecutionError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::start_flow_execution::StartFlowExecutionError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::start_flow_execution::StartFlowExecutionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -945,17 +945,17 @@ impl From<crate::operation::stop_flow_execution::StopFlowExecutionError> for Err
     fn from(err: crate::operation::stop_flow_execution::StopFlowExecutionError) -> Self {
         match err {
             crate::operation::stop_flow_execution::StopFlowExecutionError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::stop_flow_execution::StopFlowExecutionError::BadGatewayException(inner) => Error::BadGatewayException(inner),
+            crate::operation::stop_flow_execution::StopFlowExecutionError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::stop_flow_execution::StopFlowExecutionError::DependencyFailedException(inner) => {
                 Error::DependencyFailedException(inner)
             }
-            crate::operation::stop_flow_execution::StopFlowExecutionError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::stop_flow_execution::StopFlowExecutionError::InternalServerException(inner) => Error::InternalServerException(inner),
             crate::operation::stop_flow_execution::StopFlowExecutionError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }
             crate::operation::stop_flow_execution::StopFlowExecutionError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::operation::stop_flow_execution::StopFlowExecutionError::BadGatewayException(inner) => Error::BadGatewayException(inner),
-            crate::operation::stop_flow_execution::StopFlowExecutionError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::stop_flow_execution::StopFlowExecutionError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::stop_flow_execution::StopFlowExecutionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -978,11 +978,11 @@ impl From<crate::operation::tag_resource::TagResourceError> for Error {
     fn from(err: crate::operation::tag_resource::TagResourceError) -> Self {
         match err {
             crate::operation::tag_resource::TagResourceError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::operation::tag_resource::TagResourceError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::tag_resource::TagResourceError::InternalServerException(inner) => Error::InternalServerException(inner),
             crate::operation::tag_resource::TagResourceError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::operation::tag_resource::TagResourceError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::tag_resource::TagResourceError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::operation::tag_resource::TagResourceError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::tag_resource::TagResourceError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::tag_resource::TagResourceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -1005,10 +1005,10 @@ impl From<crate::operation::untag_resource::UntagResourceError> for Error {
     fn from(err: crate::operation::untag_resource::UntagResourceError) -> Self {
         match err {
             crate::operation::untag_resource::UntagResourceError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::operation::untag_resource::UntagResourceError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::untag_resource::UntagResourceError::InternalServerException(inner) => Error::InternalServerException(inner),
             crate::operation::untag_resource::UntagResourceError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::untag_resource::UntagResourceError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::untag_resource::UntagResourceError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::untag_resource::UntagResourceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -1031,11 +1031,11 @@ impl From<crate::operation::update_session::UpdateSessionError> for Error {
     fn from(err: crate::operation::update_session::UpdateSessionError) -> Self {
         match err {
             crate::operation::update_session::UpdateSessionError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::operation::update_session::UpdateSessionError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::update_session::UpdateSessionError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::update_session::UpdateSessionError::InternalServerException(inner) => Error::InternalServerException(inner),
             crate::operation::update_session::UpdateSessionError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::update_session::UpdateSessionError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::operation::update_session::UpdateSessionError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::update_session::UpdateSessionError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::update_session::UpdateSessionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }

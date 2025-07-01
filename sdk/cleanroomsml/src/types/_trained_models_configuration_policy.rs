@@ -8,6 +8,8 @@ pub struct TrainedModelsConfigurationPolicy {
     pub container_logs: ::std::option::Option<::std::vec::Vec<crate::types::LogsConfigurationPolicy>>,
     /// <p>The container for the metrics of the trained model.</p>
     pub container_metrics: ::std::option::Option<crate::types::MetricsConfigurationPolicy>,
+    /// <p>The maximum size limit for trained model artifacts as defined in the configuration policy. This setting helps enforce consistent size limits across trained models in the collaboration.</p>
+    pub max_artifact_size: ::std::option::Option<crate::types::TrainedModelArtifactMaxSize>,
 }
 impl TrainedModelsConfigurationPolicy {
     /// <p>The container for the logs of the trained model.</p>
@@ -19,6 +21,10 @@ impl TrainedModelsConfigurationPolicy {
     /// <p>The container for the metrics of the trained model.</p>
     pub fn container_metrics(&self) -> ::std::option::Option<&crate::types::MetricsConfigurationPolicy> {
         self.container_metrics.as_ref()
+    }
+    /// <p>The maximum size limit for trained model artifacts as defined in the configuration policy. This setting helps enforce consistent size limits across trained models in the collaboration.</p>
+    pub fn max_artifact_size(&self) -> ::std::option::Option<&crate::types::TrainedModelArtifactMaxSize> {
+        self.max_artifact_size.as_ref()
     }
 }
 impl TrainedModelsConfigurationPolicy {
@@ -34,6 +40,7 @@ impl TrainedModelsConfigurationPolicy {
 pub struct TrainedModelsConfigurationPolicyBuilder {
     pub(crate) container_logs: ::std::option::Option<::std::vec::Vec<crate::types::LogsConfigurationPolicy>>,
     pub(crate) container_metrics: ::std::option::Option<crate::types::MetricsConfigurationPolicy>,
+    pub(crate) max_artifact_size: ::std::option::Option<crate::types::TrainedModelArtifactMaxSize>,
 }
 impl TrainedModelsConfigurationPolicyBuilder {
     /// Appends an item to `container_logs`.
@@ -70,11 +77,26 @@ impl TrainedModelsConfigurationPolicyBuilder {
     pub fn get_container_metrics(&self) -> &::std::option::Option<crate::types::MetricsConfigurationPolicy> {
         &self.container_metrics
     }
+    /// <p>The maximum size limit for trained model artifacts as defined in the configuration policy. This setting helps enforce consistent size limits across trained models in the collaboration.</p>
+    pub fn max_artifact_size(mut self, input: crate::types::TrainedModelArtifactMaxSize) -> Self {
+        self.max_artifact_size = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The maximum size limit for trained model artifacts as defined in the configuration policy. This setting helps enforce consistent size limits across trained models in the collaboration.</p>
+    pub fn set_max_artifact_size(mut self, input: ::std::option::Option<crate::types::TrainedModelArtifactMaxSize>) -> Self {
+        self.max_artifact_size = input;
+        self
+    }
+    /// <p>The maximum size limit for trained model artifacts as defined in the configuration policy. This setting helps enforce consistent size limits across trained models in the collaboration.</p>
+    pub fn get_max_artifact_size(&self) -> &::std::option::Option<crate::types::TrainedModelArtifactMaxSize> {
+        &self.max_artifact_size
+    }
     /// Consumes the builder and constructs a [`TrainedModelsConfigurationPolicy`](crate::types::TrainedModelsConfigurationPolicy).
     pub fn build(self) -> crate::types::TrainedModelsConfigurationPolicy {
         crate::types::TrainedModelsConfigurationPolicy {
             container_logs: self.container_logs,
             container_metrics: self.container_metrics,
+            max_artifact_size: self.max_artifact_size,
         }
     }
 }

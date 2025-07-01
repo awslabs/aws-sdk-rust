@@ -60,7 +60,7 @@ version = "1.3.2"
 [dependencies.aws-smithy-http-client]
 path = "../aws-smithy-http-client"
 optional = true
-version = "1.0.5"
+version = "1.0.6"
 
 [dependencies.http-02x]
 package = "http"

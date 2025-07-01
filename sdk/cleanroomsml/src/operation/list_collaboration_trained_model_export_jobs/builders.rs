@@ -179,4 +179,18 @@ impl ListCollaborationTrainedModelExportJobsFluentBuilder {
     pub fn get_trained_model_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_trained_model_arn()
     }
+    /// <p>The version identifier of the trained model to filter export jobs by. When specified, only export jobs for this specific version of the trained model are returned.</p>
+    pub fn trained_model_version_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.trained_model_version_identifier(input.into());
+        self
+    }
+    /// <p>The version identifier of the trained model to filter export jobs by. When specified, only export jobs for this specific version of the trained model are returned.</p>
+    pub fn set_trained_model_version_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_trained_model_version_identifier(input);
+        self
+    }
+    /// <p>The version identifier of the trained model to filter export jobs by. When specified, only export jobs for this specific version of the trained model are returned.</p>
+    pub fn get_trained_model_version_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_trained_model_version_identifier()
+    }
 }

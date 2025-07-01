@@ -51,6 +51,20 @@ pub fn de_get_collaboration_trained_model_http_error(
                 tmp
             })
         }
+        "ThrottlingException" => crate::operation::get_collaboration_trained_model::GetCollaborationTrainedModelError::ThrottlingException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ThrottlingExceptionBuilder::default();
+                output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::get_collaboration_trained_model::GetCollaborationTrainedModelError::unhandled)?;
+                let output = output.meta(generic);
+                crate::serde_util::throttling_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::get_collaboration_trained_model::GetCollaborationTrainedModelError::unhandled)?
+            };
+            tmp
+        }),
         "ValidationException" => crate::operation::get_collaboration_trained_model::GetCollaborationTrainedModelError::ValidationException({
             #[allow(unused_mut)]
             let mut tmp = {
@@ -138,6 +152,11 @@ pub(crate) fn de_get_collaboration_trained_model(
                             .transpose()?,
                     );
                 }
+                "incrementalTrainingDataChannels" => {
+                    builder = builder.set_incremental_training_data_channels(
+                        crate::protocol_serde::shape_incremental_training_data_channels_output::de_incremental_training_data_channels_output(tokens)?,
+                    );
+                }
                 "logsStatus" => {
                     builder = builder.set_logs_status(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
@@ -210,11 +229,25 @@ pub(crate) fn de_get_collaboration_trained_model(
                             .transpose()?,
                     );
                 }
+                "trainingInputMode" => {
+                    builder = builder.set_training_input_mode(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| crate::types::TrainingInputMode::from(u.as_ref())))
+                            .transpose()?,
+                    );
+                }
                 "updateTime" => {
                     builder = builder.set_update_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                         tokens.next(),
                         ::aws_smithy_types::date_time::Format::DateTimeWithOffset,
                     )?);
+                }
+                "versionIdentifier" => {
+                    builder = builder.set_version_identifier(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

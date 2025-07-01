@@ -32,12 +32,12 @@ pub fn de_list_async_invokes_http_error(
             }
             tmp
         }),
-        "ThrottlingException" => crate::operation::list_async_invokes::ListAsyncInvokesError::ThrottlingException({
+        "InternalServerException" => crate::operation::list_async_invokes::ListAsyncInvokesError::InternalServerException({
             #[allow(unused_mut)]
             let mut tmp = {
                 #[allow(unused_mut)]
-                let mut output = crate::types::error::builders::ThrottlingExceptionBuilder::default();
-                output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(_response_body, output)
+                let mut output = crate::types::error::builders::InternalServerExceptionBuilder::default();
+                output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(_response_body, output)
                     .map_err(crate::operation::list_async_invokes::ListAsyncInvokesError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
@@ -47,12 +47,12 @@ pub fn de_list_async_invokes_http_error(
             }
             tmp
         }),
-        "InternalServerException" => crate::operation::list_async_invokes::ListAsyncInvokesError::InternalServerException({
+        "ThrottlingException" => crate::operation::list_async_invokes::ListAsyncInvokesError::ThrottlingException({
             #[allow(unused_mut)]
             let mut tmp = {
                 #[allow(unused_mut)]
-                let mut output = crate::types::error::builders::InternalServerExceptionBuilder::default();
-                output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(_response_body, output)
+                let mut output = crate::types::error::builders::ThrottlingExceptionBuilder::default();
+                output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(_response_body, output)
                     .map_err(crate::operation::list_async_invokes::ListAsyncInvokesError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()

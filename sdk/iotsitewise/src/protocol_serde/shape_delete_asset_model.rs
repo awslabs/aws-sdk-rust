@@ -17,6 +17,35 @@ pub fn de_delete_asset_model_http_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
+        "ConflictingOperationException" => crate::operation::delete_asset_model::DeleteAssetModelError::ConflictingOperationException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ConflictingOperationExceptionBuilder::default();
+                output =
+                    crate::protocol_serde::shape_conflicting_operation_exception::de_conflicting_operation_exception_json_err(_response_body, output)
+                        .map_err(crate::operation::delete_asset_model::DeleteAssetModelError::unhandled)?;
+                let output = output.meta(generic);
+                crate::serde_util::conflicting_operation_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::delete_asset_model::DeleteAssetModelError::unhandled)?
+            };
+            tmp
+        }),
+        "InternalFailureException" => crate::operation::delete_asset_model::DeleteAssetModelError::InternalFailureException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::InternalFailureExceptionBuilder::default();
+                output = crate::protocol_serde::shape_internal_failure_exception::de_internal_failure_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::delete_asset_model::DeleteAssetModelError::unhandled)?;
+                let output = output.meta(generic);
+                crate::serde_util::internal_failure_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::delete_asset_model::DeleteAssetModelError::unhandled)?
+            };
+            tmp
+        }),
         "InvalidRequestException" => crate::operation::delete_asset_model::DeleteAssetModelError::InvalidRequestException({
             #[allow(unused_mut)]
             let mut tmp = {
@@ -31,16 +60,16 @@ pub fn de_delete_asset_model_http_error(
             };
             tmp
         }),
-        "ConflictingOperationException" => crate::operation::delete_asset_model::DeleteAssetModelError::ConflictingOperationException({
+        "PreconditionFailedException" => crate::operation::delete_asset_model::DeleteAssetModelError::PreconditionFailedException({
             #[allow(unused_mut)]
             let mut tmp = {
                 #[allow(unused_mut)]
-                let mut output = crate::types::error::builders::ConflictingOperationExceptionBuilder::default();
+                let mut output = crate::types::error::builders::PreconditionFailedExceptionBuilder::default();
                 output =
-                    crate::protocol_serde::shape_conflicting_operation_exception::de_conflicting_operation_exception_json_err(_response_body, output)
+                    crate::protocol_serde::shape_precondition_failed_exception::de_precondition_failed_exception_json_err(_response_body, output)
                         .map_err(crate::operation::delete_asset_model::DeleteAssetModelError::unhandled)?;
                 let output = output.meta(generic);
-                crate::serde_util::conflicting_operation_exception_correct_errors(output)
+                crate::serde_util::precondition_failed_exception_correct_errors(output)
                     .build()
                     .map_err(crate::operation::delete_asset_model::DeleteAssetModelError::unhandled)?
             };
@@ -69,35 +98,6 @@ pub fn de_delete_asset_model_http_error(
                     .map_err(crate::operation::delete_asset_model::DeleteAssetModelError::unhandled)?;
                 let output = output.meta(generic);
                 crate::serde_util::throttling_exception_correct_errors(output)
-                    .build()
-                    .map_err(crate::operation::delete_asset_model::DeleteAssetModelError::unhandled)?
-            };
-            tmp
-        }),
-        "PreconditionFailedException" => crate::operation::delete_asset_model::DeleteAssetModelError::PreconditionFailedException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::types::error::builders::PreconditionFailedExceptionBuilder::default();
-                output =
-                    crate::protocol_serde::shape_precondition_failed_exception::de_precondition_failed_exception_json_err(_response_body, output)
-                        .map_err(crate::operation::delete_asset_model::DeleteAssetModelError::unhandled)?;
-                let output = output.meta(generic);
-                crate::serde_util::precondition_failed_exception_correct_errors(output)
-                    .build()
-                    .map_err(crate::operation::delete_asset_model::DeleteAssetModelError::unhandled)?
-            };
-            tmp
-        }),
-        "InternalFailureException" => crate::operation::delete_asset_model::DeleteAssetModelError::InternalFailureException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::types::error::builders::InternalFailureExceptionBuilder::default();
-                output = crate::protocol_serde::shape_internal_failure_exception::de_internal_failure_exception_json_err(_response_body, output)
-                    .map_err(crate::operation::delete_asset_model::DeleteAssetModelError::unhandled)?;
-                let output = output.meta(generic);
-                crate::serde_util::internal_failure_exception_correct_errors(output)
                     .build()
                     .map_err(crate::operation::delete_asset_model::DeleteAssetModelError::unhandled)?
             };

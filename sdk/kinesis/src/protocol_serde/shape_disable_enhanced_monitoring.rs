@@ -54,12 +54,12 @@ pub fn de_disable_enhanced_monitoring_http_error(
             }
             tmp
         }),
-        "ResourceInUseException" => crate::operation::disable_enhanced_monitoring::DisableEnhancedMonitoringError::ResourceInUseException({
+        "LimitExceededException" => crate::operation::disable_enhanced_monitoring::DisableEnhancedMonitoringError::LimitExceededException({
             #[allow(unused_mut)]
             let mut tmp = {
                 #[allow(unused_mut)]
-                let mut output = crate::types::error::builders::ResourceInUseExceptionBuilder::default();
-                output = crate::protocol_serde::shape_resource_in_use_exception::de_resource_in_use_exception_json_err(_response_body, output)
+                let mut output = crate::types::error::builders::LimitExceededExceptionBuilder::default();
+                output = crate::protocol_serde::shape_limit_exceeded_exception::de_limit_exceeded_exception_json_err(_response_body, output)
                     .map_err(crate::operation::disable_enhanced_monitoring::DisableEnhancedMonitoringError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
@@ -69,12 +69,12 @@ pub fn de_disable_enhanced_monitoring_http_error(
             }
             tmp
         }),
-        "LimitExceededException" => crate::operation::disable_enhanced_monitoring::DisableEnhancedMonitoringError::LimitExceededException({
+        "ResourceInUseException" => crate::operation::disable_enhanced_monitoring::DisableEnhancedMonitoringError::ResourceInUseException({
             #[allow(unused_mut)]
             let mut tmp = {
                 #[allow(unused_mut)]
-                let mut output = crate::types::error::builders::LimitExceededExceptionBuilder::default();
-                output = crate::protocol_serde::shape_limit_exceeded_exception::de_limit_exceeded_exception_json_err(_response_body, output)
+                let mut output = crate::types::error::builders::ResourceInUseExceptionBuilder::default();
+                output = crate::protocol_serde::shape_resource_in_use_exception::de_resource_in_use_exception_json_err(_response_body, output)
                     .map_err(crate::operation::disable_enhanced_monitoring::DisableEnhancedMonitoringError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()

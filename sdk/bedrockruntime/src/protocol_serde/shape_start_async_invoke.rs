@@ -32,6 +32,36 @@ pub fn de_start_async_invoke_http_error(
             }
             tmp
         }),
+        "ConflictException" => crate::operation::start_async_invoke::StartAsyncInvokeError::ConflictException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ConflictExceptionBuilder::default();
+                output = crate::protocol_serde::shape_conflict_exception::de_conflict_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::start_async_invoke::StartAsyncInvokeError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "InternalServerException" => crate::operation::start_async_invoke::StartAsyncInvokeError::InternalServerException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::InternalServerExceptionBuilder::default();
+                output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::start_async_invoke::StartAsyncInvokeError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "ResourceNotFoundException" => crate::operation::start_async_invoke::StartAsyncInvokeError::ResourceNotFoundException({
             #[allow(unused_mut)]
             let mut tmp = {
@@ -47,13 +77,16 @@ pub fn de_start_async_invoke_http_error(
             }
             tmp
         }),
-        "ThrottlingException" => crate::operation::start_async_invoke::StartAsyncInvokeError::ThrottlingException({
+        "ServiceQuotaExceededException" => crate::operation::start_async_invoke::StartAsyncInvokeError::ServiceQuotaExceededException({
             #[allow(unused_mut)]
             let mut tmp = {
                 #[allow(unused_mut)]
-                let mut output = crate::types::error::builders::ThrottlingExceptionBuilder::default();
-                output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(_response_body, output)
-                    .map_err(crate::operation::start_async_invoke::StartAsyncInvokeError::unhandled)?;
+                let mut output = crate::types::error::builders::ServiceQuotaExceededExceptionBuilder::default();
+                output = crate::protocol_serde::shape_service_quota_exceeded_exception::de_service_quota_exceeded_exception_json_err(
+                    _response_body,
+                    output,
+                )
+                .map_err(crate::operation::start_async_invoke::StartAsyncInvokeError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
             };
@@ -78,27 +111,12 @@ pub fn de_start_async_invoke_http_error(
             }
             tmp
         }),
-        "InternalServerException" => crate::operation::start_async_invoke::StartAsyncInvokeError::InternalServerException({
+        "ThrottlingException" => crate::operation::start_async_invoke::StartAsyncInvokeError::ThrottlingException({
             #[allow(unused_mut)]
             let mut tmp = {
                 #[allow(unused_mut)]
-                let mut output = crate::types::error::builders::InternalServerExceptionBuilder::default();
-                output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(_response_body, output)
-                    .map_err(crate::operation::start_async_invoke::StartAsyncInvokeError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "ConflictException" => crate::operation::start_async_invoke::StartAsyncInvokeError::ConflictException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::types::error::builders::ConflictExceptionBuilder::default();
-                output = crate::protocol_serde::shape_conflict_exception::de_conflict_exception_json_err(_response_body, output)
+                let mut output = crate::types::error::builders::ThrottlingExceptionBuilder::default();
+                output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(_response_body, output)
                     .map_err(crate::operation::start_async_invoke::StartAsyncInvokeError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
@@ -115,24 +133,6 @@ pub fn de_start_async_invoke_http_error(
                 let mut output = crate::types::error::builders::ValidationExceptionBuilder::default();
                 output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(_response_body, output)
                     .map_err(crate::operation::start_async_invoke::StartAsyncInvokeError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "ServiceQuotaExceededException" => crate::operation::start_async_invoke::StartAsyncInvokeError::ServiceQuotaExceededException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::types::error::builders::ServiceQuotaExceededExceptionBuilder::default();
-                output = crate::protocol_serde::shape_service_quota_exceeded_exception::de_service_quota_exceeded_exception_json_err(
-                    _response_body,
-                    output,
-                )
-                .map_err(crate::operation::start_async_invoke::StartAsyncInvokeError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
             };

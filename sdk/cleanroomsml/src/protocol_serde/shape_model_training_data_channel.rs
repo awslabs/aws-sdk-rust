@@ -9,6 +9,9 @@ pub fn ser_model_training_data_channel(
     {
         object.key("channelName").string(input.channel_name.as_str());
     }
+    {
+        object.key("s3DataDistributionType").string(input.s3_data_distribution_type.as_str());
+    }
     Ok(())
 }
 
@@ -38,6 +41,13 @@ where
                             builder = builder.set_channel_name(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "s3DataDistributionType" => {
+                            builder = builder.set_s3_data_distribution_type(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::S3DataDistributionType::from(u.as_ref())))
                                     .transpose()?,
                             );
                         }

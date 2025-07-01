@@ -255,14 +255,18 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for PutRecordEndp
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum PutRecordError {
+    /// <p>Specifies that you do not have the permissions required to perform this operation.</p>
+    AccessDeniedException(crate::types::error::AccessDeniedException),
     /// <p>The processing of the request failed because of an unknown error, exception, or failure.</p>
     InternalFailureException(crate::types::error::InternalFailureException),
+    /// <p>A specified parameter exceeds its restrictions, is not supported, or can't be used. For more information, see the returned message.</p>
+    InvalidArgumentException(crate::types::error::InvalidArgumentException),
     /// <p>The ciphertext references a key that doesn't exist or that you don't have access to.</p>
     KmsAccessDeniedException(crate::types::error::KmsAccessDeniedException),
     /// <p>The request was rejected because the specified customer master key (CMK) isn't enabled.</p>
     KmsDisabledException(crate::types::error::KmsDisabledException),
-    /// <p>Specifies that you do not have the permissions required to perform this operation.</p>
-    AccessDeniedException(crate::types::error::AccessDeniedException),
+    /// <p>The request was rejected because the state of the specified resource isn't valid for this request. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How Key State Affects Use of a Customer Master Key</a> in the <i>Amazon Web Services Key Management Service Developer Guide</i>.</p>
+    KmsInvalidStateException(crate::types::error::KmsInvalidStateException),
     /// <p>The request was rejected because the specified entity or resource can't be found.</p>
     KmsNotFoundException(crate::types::error::KmsNotFoundException),
     /// <p>The Amazon Web Services access key ID needs a subscription for the service.</p>
@@ -271,10 +275,6 @@ pub enum PutRecordError {
     KmsThrottlingException(crate::types::error::KmsThrottlingException),
     /// <p>The request rate for the stream is too high, or the requested data is too large for the available throughput. Reduce the frequency or size of your requests. For more information, see <a href="https://docs.aws.amazon.com/kinesis/latest/dev/service-sizes-and-limits.html">Streams Limits</a> in the <i>Amazon Kinesis Data Streams Developer Guide</i>, and <a href="https://docs.aws.amazon.com/general/latest/gr/api-retries.html">Error Retries and Exponential Backoff in Amazon Web Services</a> in the <i>Amazon Web Services General Reference</i>.</p>
     ProvisionedThroughputExceededException(crate::types::error::ProvisionedThroughputExceededException),
-    /// <p>A specified parameter exceeds its restrictions, is not supported, or can't be used. For more information, see the returned message.</p>
-    InvalidArgumentException(crate::types::error::InvalidArgumentException),
-    /// <p>The request was rejected because the state of the specified resource isn't valid for this request. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How Key State Affects Use of a Customer Master Key</a> in the <i>Amazon Web Services Key Management Service Developer Guide</i>.</p>
-    KmsInvalidStateException(crate::types::error::KmsInvalidStateException),
     /// <p>The requested resource could not be found. The stream might not be specified correctly.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
@@ -310,23 +310,31 @@ impl PutRecordError {
     ///
     pub fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
+            Self::AccessDeniedException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InternalFailureException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::InvalidArgumentException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::KmsAccessDeniedException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::KmsDisabledException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
-            Self::AccessDeniedException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::KmsInvalidStateException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::KmsNotFoundException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::KmsOptInRequired(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::KmsThrottlingException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ProvisionedThroughputExceededException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
-            Self::InvalidArgumentException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
-            Self::KmsInvalidStateException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ResourceNotFoundException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::Unhandled(e) => &e.meta,
         }
     }
+    /// Returns `true` if the error kind is `PutRecordError::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(self, Self::AccessDeniedException(_))
+    }
     /// Returns `true` if the error kind is `PutRecordError::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(self, Self::InternalFailureException(_))
+    }
+    /// Returns `true` if the error kind is `PutRecordError::InvalidArgumentException`.
+    pub fn is_invalid_argument_exception(&self) -> bool {
+        matches!(self, Self::InvalidArgumentException(_))
     }
     /// Returns `true` if the error kind is `PutRecordError::KmsAccessDeniedException`.
     pub fn is_kms_access_denied_exception(&self) -> bool {
@@ -336,9 +344,9 @@ impl PutRecordError {
     pub fn is_kms_disabled_exception(&self) -> bool {
         matches!(self, Self::KmsDisabledException(_))
     }
-    /// Returns `true` if the error kind is `PutRecordError::AccessDeniedException`.
-    pub fn is_access_denied_exception(&self) -> bool {
-        matches!(self, Self::AccessDeniedException(_))
+    /// Returns `true` if the error kind is `PutRecordError::KmsInvalidStateException`.
+    pub fn is_kms_invalid_state_exception(&self) -> bool {
+        matches!(self, Self::KmsInvalidStateException(_))
     }
     /// Returns `true` if the error kind is `PutRecordError::KmsNotFoundException`.
     pub fn is_kms_not_found_exception(&self) -> bool {
@@ -356,14 +364,6 @@ impl PutRecordError {
     pub fn is_provisioned_throughput_exceeded_exception(&self) -> bool {
         matches!(self, Self::ProvisionedThroughputExceededException(_))
     }
-    /// Returns `true` if the error kind is `PutRecordError::InvalidArgumentException`.
-    pub fn is_invalid_argument_exception(&self) -> bool {
-        matches!(self, Self::InvalidArgumentException(_))
-    }
-    /// Returns `true` if the error kind is `PutRecordError::KmsInvalidStateException`.
-    pub fn is_kms_invalid_state_exception(&self) -> bool {
-        matches!(self, Self::KmsInvalidStateException(_))
-    }
     /// Returns `true` if the error kind is `PutRecordError::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(self, Self::ResourceNotFoundException(_))
@@ -372,16 +372,16 @@ impl PutRecordError {
 impl ::std::error::Error for PutRecordError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
+            Self::AccessDeniedException(_inner) => ::std::option::Option::Some(_inner),
             Self::InternalFailureException(_inner) => ::std::option::Option::Some(_inner),
+            Self::InvalidArgumentException(_inner) => ::std::option::Option::Some(_inner),
             Self::KmsAccessDeniedException(_inner) => ::std::option::Option::Some(_inner),
             Self::KmsDisabledException(_inner) => ::std::option::Option::Some(_inner),
-            Self::AccessDeniedException(_inner) => ::std::option::Option::Some(_inner),
+            Self::KmsInvalidStateException(_inner) => ::std::option::Option::Some(_inner),
             Self::KmsNotFoundException(_inner) => ::std::option::Option::Some(_inner),
             Self::KmsOptInRequired(_inner) => ::std::option::Option::Some(_inner),
             Self::KmsThrottlingException(_inner) => ::std::option::Option::Some(_inner),
             Self::ProvisionedThroughputExceededException(_inner) => ::std::option::Option::Some(_inner),
-            Self::InvalidArgumentException(_inner) => ::std::option::Option::Some(_inner),
-            Self::KmsInvalidStateException(_inner) => ::std::option::Option::Some(_inner),
             Self::ResourceNotFoundException(_inner) => ::std::option::Option::Some(_inner),
             Self::Unhandled(_inner) => ::std::option::Option::Some(&*_inner.source),
         }
@@ -390,16 +390,16 @@ impl ::std::error::Error for PutRecordError {
 impl ::std::fmt::Display for PutRecordError {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         match self {
+            Self::AccessDeniedException(_inner) => _inner.fmt(f),
             Self::InternalFailureException(_inner) => _inner.fmt(f),
+            Self::InvalidArgumentException(_inner) => _inner.fmt(f),
             Self::KmsAccessDeniedException(_inner) => _inner.fmt(f),
             Self::KmsDisabledException(_inner) => _inner.fmt(f),
-            Self::AccessDeniedException(_inner) => _inner.fmt(f),
+            Self::KmsInvalidStateException(_inner) => _inner.fmt(f),
             Self::KmsNotFoundException(_inner) => _inner.fmt(f),
             Self::KmsOptInRequired(_inner) => _inner.fmt(f),
             Self::KmsThrottlingException(_inner) => _inner.fmt(f),
             Self::ProvisionedThroughputExceededException(_inner) => _inner.fmt(f),
-            Self::InvalidArgumentException(_inner) => _inner.fmt(f),
-            Self::KmsInvalidStateException(_inner) => _inner.fmt(f),
             Self::ResourceNotFoundException(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => {
                 if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self) {
@@ -422,16 +422,16 @@ impl ::aws_smithy_types::retry::ProvideErrorKind for PutRecordError {
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for PutRecordError {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
+            Self::AccessDeniedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InternalFailureException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::InvalidArgumentException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::KmsAccessDeniedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::KmsDisabledException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::AccessDeniedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::KmsInvalidStateException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::KmsNotFoundException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::KmsOptInRequired(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::KmsThrottlingException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ProvisionedThroughputExceededException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::InvalidArgumentException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::KmsInvalidStateException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ResourceNotFoundException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::Unhandled(_inner) => &_inner.meta,
         }

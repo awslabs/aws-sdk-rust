@@ -12,9 +12,14 @@
 /// ```text
 /// # let stringattributevalueboostinglevel = unimplemented!();
 /// match stringattributevalueboostinglevel {
+///     StringAttributeValueBoostingLevel::Five => { /* ... */ },
+///     StringAttributeValueBoostingLevel::Four => { /* ... */ },
 ///     StringAttributeValueBoostingLevel::High => { /* ... */ },
 ///     StringAttributeValueBoostingLevel::Low => { /* ... */ },
 ///     StringAttributeValueBoostingLevel::Medium => { /* ... */ },
+///     StringAttributeValueBoostingLevel::One => { /* ... */ },
+///     StringAttributeValueBoostingLevel::Three => { /* ... */ },
+///     StringAttributeValueBoostingLevel::Two => { /* ... */ },
 ///     StringAttributeValueBoostingLevel::VeryHigh => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -45,11 +50,21 @@
 )]
 pub enum StringAttributeValueBoostingLevel {
     #[allow(missing_docs)] // documentation missing in model
+    Five,
+    #[allow(missing_docs)] // documentation missing in model
+    Four,
+    #[allow(missing_docs)] // documentation missing in model
     High,
     #[allow(missing_docs)] // documentation missing in model
     Low,
     #[allow(missing_docs)] // documentation missing in model
     Medium,
+    #[allow(missing_docs)] // documentation missing in model
+    One,
+    #[allow(missing_docs)] // documentation missing in model
+    Three,
+    #[allow(missing_docs)] // documentation missing in model
+    Two,
     #[allow(missing_docs)] // documentation missing in model
     VeryHigh,
     /// `Unknown` contains new variants that have been added since this code was generated.
@@ -59,9 +74,14 @@ pub enum StringAttributeValueBoostingLevel {
 impl ::std::convert::From<&str> for StringAttributeValueBoostingLevel {
     fn from(s: &str) -> Self {
         match s {
+            "FIVE" => StringAttributeValueBoostingLevel::Five,
+            "FOUR" => StringAttributeValueBoostingLevel::Four,
             "HIGH" => StringAttributeValueBoostingLevel::High,
             "LOW" => StringAttributeValueBoostingLevel::Low,
             "MEDIUM" => StringAttributeValueBoostingLevel::Medium,
+            "ONE" => StringAttributeValueBoostingLevel::One,
+            "THREE" => StringAttributeValueBoostingLevel::Three,
+            "TWO" => StringAttributeValueBoostingLevel::Two,
             "VERY_HIGH" => StringAttributeValueBoostingLevel::VeryHigh,
             other => StringAttributeValueBoostingLevel::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -78,16 +98,21 @@ impl StringAttributeValueBoostingLevel {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            StringAttributeValueBoostingLevel::Five => "FIVE",
+            StringAttributeValueBoostingLevel::Four => "FOUR",
             StringAttributeValueBoostingLevel::High => "HIGH",
             StringAttributeValueBoostingLevel::Low => "LOW",
             StringAttributeValueBoostingLevel::Medium => "MEDIUM",
+            StringAttributeValueBoostingLevel::One => "ONE",
+            StringAttributeValueBoostingLevel::Three => "THREE",
+            StringAttributeValueBoostingLevel::Two => "TWO",
             StringAttributeValueBoostingLevel::VeryHigh => "VERY_HIGH",
             StringAttributeValueBoostingLevel::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["HIGH", "LOW", "MEDIUM", "VERY_HIGH"]
+        &["FIVE", "FOUR", "HIGH", "LOW", "MEDIUM", "ONE", "THREE", "TWO", "VERY_HIGH"]
     }
 }
 impl ::std::convert::AsRef<str> for StringAttributeValueBoostingLevel {
@@ -110,9 +135,14 @@ impl StringAttributeValueBoostingLevel {
 impl ::std::fmt::Display for StringAttributeValueBoostingLevel {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            StringAttributeValueBoostingLevel::Five => write!(f, "FIVE"),
+            StringAttributeValueBoostingLevel::Four => write!(f, "FOUR"),
             StringAttributeValueBoostingLevel::High => write!(f, "HIGH"),
             StringAttributeValueBoostingLevel::Low => write!(f, "LOW"),
             StringAttributeValueBoostingLevel::Medium => write!(f, "MEDIUM"),
+            StringAttributeValueBoostingLevel::One => write!(f, "ONE"),
+            StringAttributeValueBoostingLevel::Three => write!(f, "THREE"),
+            StringAttributeValueBoostingLevel::Two => write!(f, "TWO"),
             StringAttributeValueBoostingLevel::VeryHigh => write!(f, "VERY_HIGH"),
             StringAttributeValueBoostingLevel::Unknown(value) => write!(f, "{}", value),
         }

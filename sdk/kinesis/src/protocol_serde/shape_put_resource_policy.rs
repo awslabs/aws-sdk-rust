@@ -48,12 +48,12 @@ pub fn de_put_resource_policy_http_error(
             }
             tmp
         }),
-        "ResourceInUseException" => crate::operation::put_resource_policy::PutResourcePolicyError::ResourceInUseException({
+        "LimitExceededException" => crate::operation::put_resource_policy::PutResourcePolicyError::LimitExceededException({
             #[allow(unused_mut)]
             let mut tmp = {
                 #[allow(unused_mut)]
-                let mut output = crate::types::error::builders::ResourceInUseExceptionBuilder::default();
-                output = crate::protocol_serde::shape_resource_in_use_exception::de_resource_in_use_exception_json_err(_response_body, output)
+                let mut output = crate::types::error::builders::LimitExceededExceptionBuilder::default();
+                output = crate::protocol_serde::shape_limit_exceeded_exception::de_limit_exceeded_exception_json_err(_response_body, output)
                     .map_err(crate::operation::put_resource_policy::PutResourcePolicyError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
@@ -63,12 +63,12 @@ pub fn de_put_resource_policy_http_error(
             }
             tmp
         }),
-        "LimitExceededException" => crate::operation::put_resource_policy::PutResourcePolicyError::LimitExceededException({
+        "ResourceInUseException" => crate::operation::put_resource_policy::PutResourcePolicyError::ResourceInUseException({
             #[allow(unused_mut)]
             let mut tmp = {
                 #[allow(unused_mut)]
-                let mut output = crate::types::error::builders::LimitExceededExceptionBuilder::default();
-                output = crate::protocol_serde::shape_limit_exceeded_exception::de_limit_exceeded_exception_json_err(_response_body, output)
+                let mut output = crate::types::error::builders::ResourceInUseExceptionBuilder::default();
+                output = crate::protocol_serde::shape_resource_in_use_exception::de_resource_in_use_exception_json_err(_response_body, output)
                     .map_err(crate::operation::put_resource_policy::PutResourcePolicyError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()

@@ -32,12 +32,12 @@ pub fn de_get_async_invoke_http_error(
             }
             tmp
         }),
-        "ThrottlingException" => crate::operation::get_async_invoke::GetAsyncInvokeError::ThrottlingException({
+        "InternalServerException" => crate::operation::get_async_invoke::GetAsyncInvokeError::InternalServerException({
             #[allow(unused_mut)]
             let mut tmp = {
                 #[allow(unused_mut)]
-                let mut output = crate::types::error::builders::ThrottlingExceptionBuilder::default();
-                output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(_response_body, output)
+                let mut output = crate::types::error::builders::InternalServerExceptionBuilder::default();
+                output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(_response_body, output)
                     .map_err(crate::operation::get_async_invoke::GetAsyncInvokeError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
@@ -47,12 +47,12 @@ pub fn de_get_async_invoke_http_error(
             }
             tmp
         }),
-        "InternalServerException" => crate::operation::get_async_invoke::GetAsyncInvokeError::InternalServerException({
+        "ThrottlingException" => crate::operation::get_async_invoke::GetAsyncInvokeError::ThrottlingException({
             #[allow(unused_mut)]
             let mut tmp = {
                 #[allow(unused_mut)]
-                let mut output = crate::types::error::builders::InternalServerExceptionBuilder::default();
-                output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(_response_body, output)
+                let mut output = crate::types::error::builders::ThrottlingExceptionBuilder::default();
+                output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(_response_body, output)
                     .map_err(crate::operation::get_async_invoke::GetAsyncInvokeError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()

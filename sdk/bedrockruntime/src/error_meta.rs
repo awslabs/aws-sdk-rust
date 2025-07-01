@@ -106,13 +106,13 @@ impl From<crate::operation::apply_guardrail::ApplyGuardrailError> for Error {
     fn from(err: crate::operation::apply_guardrail::ApplyGuardrailError) -> Self {
         match err {
             crate::operation::apply_guardrail::ApplyGuardrailError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::operation::apply_guardrail::ApplyGuardrailError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::operation::apply_guardrail::ApplyGuardrailError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::apply_guardrail::ApplyGuardrailError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::operation::apply_guardrail::ApplyGuardrailError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::apply_guardrail::ApplyGuardrailError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::apply_guardrail::ApplyGuardrailError::ServiceQuotaExceededException(inner) => {
                 Error::ServiceQuotaExceededException(inner)
             }
+            crate::operation::apply_guardrail::ApplyGuardrailError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::apply_guardrail::ApplyGuardrailError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::apply_guardrail::ApplyGuardrailError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -134,15 +134,15 @@ where
 impl From<crate::operation::converse::ConverseError> for Error {
     fn from(err: crate::operation::converse::ConverseError) -> Self {
         match err {
-            crate::operation::converse::ConverseError::ModelTimeoutException(inner) => Error::ModelTimeoutException(inner),
             crate::operation::converse::ConverseError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::operation::converse::ConverseError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::operation::converse::ConverseError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::operation::converse::ConverseError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
             crate::operation::converse::ConverseError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::operation::converse::ConverseError::ValidationException(inner) => Error::ValidationException(inner),
-            crate::operation::converse::ConverseError::ModelNotReadyException(inner) => Error::ModelNotReadyException(inner),
             crate::operation::converse::ConverseError::ModelErrorException(inner) => Error::ModelErrorException(inner),
+            crate::operation::converse::ConverseError::ModelNotReadyException(inner) => Error::ModelNotReadyException(inner),
+            crate::operation::converse::ConverseError::ModelTimeoutException(inner) => Error::ModelTimeoutException(inner),
+            crate::operation::converse::ConverseError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::converse::ConverseError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::converse::ConverseError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::converse::ConverseError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::converse::ConverseError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -196,8 +196,8 @@ impl From<crate::operation::get_async_invoke::GetAsyncInvokeError> for Error {
     fn from(err: crate::operation::get_async_invoke::GetAsyncInvokeError) -> Self {
         match err {
             crate::operation::get_async_invoke::GetAsyncInvokeError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::operation::get_async_invoke::GetAsyncInvokeError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::get_async_invoke::GetAsyncInvokeError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::get_async_invoke::GetAsyncInvokeError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::get_async_invoke::GetAsyncInvokeError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::get_async_invoke::GetAsyncInvokeError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -220,16 +220,16 @@ where
 impl From<crate::operation::invoke_model::InvokeModelError> for Error {
     fn from(err: crate::operation::invoke_model::InvokeModelError) -> Self {
         match err {
-            crate::operation::invoke_model::InvokeModelError::ModelTimeoutException(inner) => Error::ModelTimeoutException(inner),
             crate::operation::invoke_model::InvokeModelError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::operation::invoke_model::InvokeModelError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::operation::invoke_model::InvokeModelError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::operation::invoke_model::InvokeModelError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
             crate::operation::invoke_model::InvokeModelError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::operation::invoke_model::InvokeModelError::ValidationException(inner) => Error::ValidationException(inner),
-            crate::operation::invoke_model::InvokeModelError::ModelNotReadyException(inner) => Error::ModelNotReadyException(inner),
             crate::operation::invoke_model::InvokeModelError::ModelErrorException(inner) => Error::ModelErrorException(inner),
+            crate::operation::invoke_model::InvokeModelError::ModelNotReadyException(inner) => Error::ModelNotReadyException(inner),
+            crate::operation::invoke_model::InvokeModelError::ModelTimeoutException(inner) => Error::ModelTimeoutException(inner),
+            crate::operation::invoke_model::InvokeModelError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::invoke_model::InvokeModelError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::operation::invoke_model::InvokeModelError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::invoke_model::InvokeModelError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::invoke_model::InvokeModelError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::invoke_model::InvokeModelError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -384,8 +384,8 @@ impl From<crate::operation::list_async_invokes::ListAsyncInvokesError> for Error
     fn from(err: crate::operation::list_async_invokes::ListAsyncInvokesError) -> Self {
         match err {
             crate::operation::list_async_invokes::ListAsyncInvokesError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::operation::list_async_invokes::ListAsyncInvokesError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::list_async_invokes::ListAsyncInvokesError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_async_invokes::ListAsyncInvokesError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::list_async_invokes::ListAsyncInvokesError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::list_async_invokes::ListAsyncInvokesError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -409,17 +409,17 @@ impl From<crate::operation::start_async_invoke::StartAsyncInvokeError> for Error
     fn from(err: crate::operation::start_async_invoke::StartAsyncInvokeError) -> Self {
         match err {
             crate::operation::start_async_invoke::StartAsyncInvokeError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::operation::start_async_invoke::StartAsyncInvokeError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::operation::start_async_invoke::StartAsyncInvokeError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::operation::start_async_invoke::StartAsyncInvokeError::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::operation::start_async_invoke::StartAsyncInvokeError::InternalServerException(inner) => Error::InternalServerException(inner),
             crate::operation::start_async_invoke::StartAsyncInvokeError::ConflictException(inner) => Error::ConflictException(inner),
-            crate::operation::start_async_invoke::StartAsyncInvokeError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::start_async_invoke::StartAsyncInvokeError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::start_async_invoke::StartAsyncInvokeError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::start_async_invoke::StartAsyncInvokeError::ServiceQuotaExceededException(inner) => {
                 Error::ServiceQuotaExceededException(inner)
             }
+            crate::operation::start_async_invoke::StartAsyncInvokeError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::operation::start_async_invoke::StartAsyncInvokeError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::start_async_invoke::StartAsyncInvokeError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::start_async_invoke::StartAsyncInvokeError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }

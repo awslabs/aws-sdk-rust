@@ -111,6 +111,10 @@ pub use crate::types::_user_alias::UserAliasBuilder;
 
 pub use crate::types::_subscription_details::SubscriptionDetailsBuilder;
 
+pub use crate::types::_response_configuration::ResponseConfigurationBuilder;
+
+pub use crate::types::_instruction_collection::InstructionCollectionBuilder;
+
 pub use crate::types::_hallucination_reduction_configuration::HallucinationReductionConfigurationBuilder;
 
 pub use crate::types::_creator_mode_configuration::CreatorModeConfigurationBuilder;
@@ -187,11 +191,15 @@ pub use crate::types::_data_source_sync_job_metrics::DataSourceSyncJobMetricsBui
 
 pub use crate::types::_conversation::ConversationBuilder;
 
+pub use crate::types::_chat_response_configuration::ChatResponseConfigurationBuilder;
+
 pub use crate::types::_attachment::AttachmentBuilder;
 
 pub use crate::types::_conversation_source::ConversationSourceBuilder;
 
 pub use crate::types::_group_status_detail::GroupStatusDetailBuilder;
+
+pub use crate::types::_chat_response_configuration_detail::ChatResponseConfigurationDetailBuilder;
 
 pub use crate::types::_applied_creator_mode_configuration::AppliedCreatorModeConfigurationBuilder;
 

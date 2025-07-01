@@ -3,6 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
+mod dns;
 mod timeout;
 /// TLS connector(s)
 pub mod tls;
@@ -400,7 +401,17 @@ fn downcast_error(err: BoxError) -> ConnectorError {
     // error classifications
     let err = match find_source::<hyper::Error>(err.as_ref()) {
         Some(hyper_error) => return to_connector_error(hyper_error)(err),
-        None => err,
+        None => match find_source::<hyper_util::client::legacy::Error>(err.as_ref()) {
+            Some(hyper_util_err) => {
+                if hyper_util_err.is_connect()
+                    || find_source::<std::io::Error>(hyper_util_err).is_some()
+                {
+                    return ConnectorError::io(err);
+                }
+                err
+            }
+            None => err,
+        },
     };
 
     // otherwise, we have no idea!
@@ -559,7 +570,6 @@ pub struct Builder<Tls = TlsUnset> {
 }
 
 cfg_tls! {
-    mod dns;
     use aws_smithy_runtime_api::client::dns::ResolveDns;
 
     impl ConnectorBuilder<TlsProviderSelected> {
@@ -757,6 +767,7 @@ mod test {
     use std::sync::Arc;
     use std::task::{Context, Poll};
 
+    use crate::client::timeout::test::NeverConnects;
     use aws_smithy_async::assert_elapsed;
     use aws_smithy_async::rt::sleep::TokioSleep;
     use aws_smithy_async::time::SystemTimeSource;
@@ -764,8 +775,6 @@ mod test {
     use http_1x::Uri;
     use hyper::rt::ReadBufCursor;
     use hyper_util::client::legacy::connect::Connected;
-
-    use crate::client::timeout::test::NeverConnects;
 
     use super::*;
 
@@ -961,6 +970,54 @@ mod test {
             "expected '{message}' to contain '{expected}'"
         );
         assert_elapsed!(now, Duration::from_secs(2));
+    }
+
+    #[cfg(not(windows))]
+    #[tokio::test]
+    async fn connection_refused_works() {
+        use crate::client::dns::HyperUtilResolver;
+        use aws_smithy_runtime_api::client::dns::{DnsFuture, ResolveDns};
+        use std::net::{IpAddr, Ipv4Addr};
+
+        #[derive(Debug, Clone, Default)]
+        struct TestResolver;
+        impl ResolveDns for TestResolver {
+            fn resolve_dns<'a>(&'a self, _name: &'a str) -> DnsFuture<'a> {
+                let localhost_v4 = IpAddr::V4(Ipv4Addr::new(127, 0, 0, 1));
+                DnsFuture::ready(Ok(vec![localhost_v4]))
+            }
+        }
+
+        let connector_settings = HttpConnectorSettings::builder()
+            .connect_timeout(Duration::from_secs(20))
+            .build();
+
+        let resolver = HyperUtilResolver {
+            resolver: TestResolver::default(),
+        };
+        let connector = Connector::builder().base_connector_with_resolver(resolver);
+
+        let hyper = Connector::builder()
+            .connector_settings(connector_settings)
+            .sleep_impl(SharedAsyncSleep::new(TokioSleep::new()))
+            .wrap_connector(connector)
+            .adapter;
+
+        let resp = hyper
+            .call(HttpRequest::get("http://static-uri:50227.com").unwrap())
+            .await
+            .unwrap_err();
+        assert!(
+            resp.is_io(),
+            "expected resp.is_io() to be true but it was false, resp == {:?}",
+            resp
+        );
+        let message = DisplayErrorContext(&resp).to_string();
+        let expected = "Connection refused";
+        assert!(
+            message.contains(expected),
+            "expected '{message}' to contain '{expected}'"
+        );
     }
 
     #[cfg(feature = "s2n-tls")]

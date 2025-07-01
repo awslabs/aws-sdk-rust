@@ -258,22 +258,22 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for PutLogEventsE
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum PutLogEventsError {
-    /// <p>The specified resource does not exist.</p>
-    ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
-    /// <p>A parameter is specified incorrectly.</p>
-    InvalidParameterException(crate::types::error::InvalidParameterException),
-    /// <p>The service cannot complete the request.</p>
-    ServiceUnavailableException(crate::types::error::ServiceUnavailableException),
-    /// <p>The most likely cause is an Amazon Web Services access key ID or secret key that's not valid.</p>
-    UnrecognizedClientException(crate::types::error::UnrecognizedClientException),
-    /// <p>The sequence token is not valid. You can get the correct sequence token in the <code>expectedSequenceToken</code> field in the <code>InvalidSequenceTokenException</code> message.</p><important>
-    /// <p><code>PutLogEvents</code> actions are now always accepted and never return <code>InvalidSequenceTokenException</code> regardless of receiving an invalid sequence token.</p>
-    /// </important>
-    InvalidSequenceTokenException(crate::types::error::InvalidSequenceTokenException),
     /// <p>The event was already logged.</p><important>
     /// <p><code>PutLogEvents</code> actions are now always accepted and never return <code>DataAlreadyAcceptedException</code> regardless of whether a given batch of log events has already been accepted.</p>
     /// </important>
     DataAlreadyAcceptedException(crate::types::error::DataAlreadyAcceptedException),
+    /// <p>A parameter is specified incorrectly.</p>
+    InvalidParameterException(crate::types::error::InvalidParameterException),
+    /// <p>The sequence token is not valid. You can get the correct sequence token in the <code>expectedSequenceToken</code> field in the <code>InvalidSequenceTokenException</code> message.</p><important>
+    /// <p><code>PutLogEvents</code> actions are now always accepted and never return <code>InvalidSequenceTokenException</code> regardless of receiving an invalid sequence token.</p>
+    /// </important>
+    InvalidSequenceTokenException(crate::types::error::InvalidSequenceTokenException),
+    /// <p>The specified resource does not exist.</p>
+    ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
+    /// <p>The service cannot complete the request.</p>
+    ServiceUnavailableException(crate::types::error::ServiceUnavailableException),
+    /// <p>The most likely cause is an Amazon Web Services access key ID or secret key that's not valid.</p>
+    UnrecognizedClientException(crate::types::error::UnrecognizedClientException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \
     variable wildcard pattern and check `.code()`:
@@ -307,22 +307,30 @@ impl PutLogEventsError {
     ///
     pub fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
-            Self::ResourceNotFoundException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::DataAlreadyAcceptedException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidParameterException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::InvalidSequenceTokenException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::ResourceNotFoundException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ServiceUnavailableException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::UnrecognizedClientException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
-            Self::InvalidSequenceTokenException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
-            Self::DataAlreadyAcceptedException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::Unhandled(e) => &e.meta,
         }
     }
-    /// Returns `true` if the error kind is `PutLogEventsError::ResourceNotFoundException`.
-    pub fn is_resource_not_found_exception(&self) -> bool {
-        matches!(self, Self::ResourceNotFoundException(_))
+    /// Returns `true` if the error kind is `PutLogEventsError::DataAlreadyAcceptedException`.
+    pub fn is_data_already_accepted_exception(&self) -> bool {
+        matches!(self, Self::DataAlreadyAcceptedException(_))
     }
     /// Returns `true` if the error kind is `PutLogEventsError::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(self, Self::InvalidParameterException(_))
+    }
+    /// Returns `true` if the error kind is `PutLogEventsError::InvalidSequenceTokenException`.
+    pub fn is_invalid_sequence_token_exception(&self) -> bool {
+        matches!(self, Self::InvalidSequenceTokenException(_))
+    }
+    /// Returns `true` if the error kind is `PutLogEventsError::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(self, Self::ResourceNotFoundException(_))
     }
     /// Returns `true` if the error kind is `PutLogEventsError::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
@@ -332,24 +340,16 @@ impl PutLogEventsError {
     pub fn is_unrecognized_client_exception(&self) -> bool {
         matches!(self, Self::UnrecognizedClientException(_))
     }
-    /// Returns `true` if the error kind is `PutLogEventsError::InvalidSequenceTokenException`.
-    pub fn is_invalid_sequence_token_exception(&self) -> bool {
-        matches!(self, Self::InvalidSequenceTokenException(_))
-    }
-    /// Returns `true` if the error kind is `PutLogEventsError::DataAlreadyAcceptedException`.
-    pub fn is_data_already_accepted_exception(&self) -> bool {
-        matches!(self, Self::DataAlreadyAcceptedException(_))
-    }
 }
 impl ::std::error::Error for PutLogEventsError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
-            Self::ResourceNotFoundException(_inner) => ::std::option::Option::Some(_inner),
+            Self::DataAlreadyAcceptedException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidParameterException(_inner) => ::std::option::Option::Some(_inner),
+            Self::InvalidSequenceTokenException(_inner) => ::std::option::Option::Some(_inner),
+            Self::ResourceNotFoundException(_inner) => ::std::option::Option::Some(_inner),
             Self::ServiceUnavailableException(_inner) => ::std::option::Option::Some(_inner),
             Self::UnrecognizedClientException(_inner) => ::std::option::Option::Some(_inner),
-            Self::InvalidSequenceTokenException(_inner) => ::std::option::Option::Some(_inner),
-            Self::DataAlreadyAcceptedException(_inner) => ::std::option::Option::Some(_inner),
             Self::Unhandled(_inner) => ::std::option::Option::Some(&*_inner.source),
         }
     }
@@ -357,12 +357,12 @@ impl ::std::error::Error for PutLogEventsError {
 impl ::std::fmt::Display for PutLogEventsError {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         match self {
-            Self::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            Self::DataAlreadyAcceptedException(_inner) => _inner.fmt(f),
             Self::InvalidParameterException(_inner) => _inner.fmt(f),
+            Self::InvalidSequenceTokenException(_inner) => _inner.fmt(f),
+            Self::ResourceNotFoundException(_inner) => _inner.fmt(f),
             Self::ServiceUnavailableException(_inner) => _inner.fmt(f),
             Self::UnrecognizedClientException(_inner) => _inner.fmt(f),
-            Self::InvalidSequenceTokenException(_inner) => _inner.fmt(f),
-            Self::DataAlreadyAcceptedException(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => {
                 if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self) {
                     write!(f, "unhandled error ({code})")
@@ -384,12 +384,12 @@ impl ::aws_smithy_types::retry::ProvideErrorKind for PutLogEventsError {
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for PutLogEventsError {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
-            Self::ResourceNotFoundException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::DataAlreadyAcceptedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidParameterException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::InvalidSequenceTokenException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::ResourceNotFoundException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ServiceUnavailableException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::UnrecognizedClientException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::InvalidSequenceTokenException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::DataAlreadyAcceptedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::Unhandled(_inner) => &_inner.meta,
         }
     }

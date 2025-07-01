@@ -7,18 +7,18 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StringAttributeBoostingConfiguration {
-    /// <p>Specifies how much a document attribute is boosted.</p>
+    /// <p>Specifies the priority tier ranking of boosting applied to document attributes. For version 2, this parameter indicates the relative ranking between boosted fields (ONE being highest priority, TWO being second highest, etc.) and determines the order in which attributes influence document ranking in search results. For version 1, this parameter specifies the boosting intensity. For version 2, boosting intensity (VERY HIGH, HIGH, MEDIUM, LOW, NONE) are not supported. Note that in version 2, you are not allowed to boost on only one field and make this value TWO.</p>
     pub boosting_level: crate::types::DocumentAttributeBoostingLevel,
-    /// <p>Specifies specific values of a <code>STRING</code> type document attribute being boosted.</p>
+    /// <p>Specifies specific values of a <code>STRING</code> type document attribute being boosted. When using <code>NativeIndexConfiguration</code> version 2, you can specify up to five values in order of priority.</p>
     pub attribute_value_boosting:
         ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::StringAttributeValueBoostingLevel>>,
 }
 impl StringAttributeBoostingConfiguration {
-    /// <p>Specifies how much a document attribute is boosted.</p>
+    /// <p>Specifies the priority tier ranking of boosting applied to document attributes. For version 2, this parameter indicates the relative ranking between boosted fields (ONE being highest priority, TWO being second highest, etc.) and determines the order in which attributes influence document ranking in search results. For version 1, this parameter specifies the boosting intensity. For version 2, boosting intensity (VERY HIGH, HIGH, MEDIUM, LOW, NONE) are not supported. Note that in version 2, you are not allowed to boost on only one field and make this value TWO.</p>
     pub fn boosting_level(&self) -> &crate::types::DocumentAttributeBoostingLevel {
         &self.boosting_level
     }
-    /// <p>Specifies specific values of a <code>STRING</code> type document attribute being boosted.</p>
+    /// <p>Specifies specific values of a <code>STRING</code> type document attribute being boosted. When using <code>NativeIndexConfiguration</code> version 2, you can specify up to five values in order of priority.</p>
     pub fn attribute_value_boosting(
         &self,
     ) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::StringAttributeValueBoostingLevel>> {
@@ -41,18 +41,18 @@ pub struct StringAttributeBoostingConfigurationBuilder {
         ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::StringAttributeValueBoostingLevel>>,
 }
 impl StringAttributeBoostingConfigurationBuilder {
-    /// <p>Specifies how much a document attribute is boosted.</p>
+    /// <p>Specifies the priority tier ranking of boosting applied to document attributes. For version 2, this parameter indicates the relative ranking between boosted fields (ONE being highest priority, TWO being second highest, etc.) and determines the order in which attributes influence document ranking in search results. For version 1, this parameter specifies the boosting intensity. For version 2, boosting intensity (VERY HIGH, HIGH, MEDIUM, LOW, NONE) are not supported. Note that in version 2, you are not allowed to boost on only one field and make this value TWO.</p>
     /// This field is required.
     pub fn boosting_level(mut self, input: crate::types::DocumentAttributeBoostingLevel) -> Self {
         self.boosting_level = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies how much a document attribute is boosted.</p>
+    /// <p>Specifies the priority tier ranking of boosting applied to document attributes. For version 2, this parameter indicates the relative ranking between boosted fields (ONE being highest priority, TWO being second highest, etc.) and determines the order in which attributes influence document ranking in search results. For version 1, this parameter specifies the boosting intensity. For version 2, boosting intensity (VERY HIGH, HIGH, MEDIUM, LOW, NONE) are not supported. Note that in version 2, you are not allowed to boost on only one field and make this value TWO.</p>
     pub fn set_boosting_level(mut self, input: ::std::option::Option<crate::types::DocumentAttributeBoostingLevel>) -> Self {
         self.boosting_level = input;
         self
     }
-    /// <p>Specifies how much a document attribute is boosted.</p>
+    /// <p>Specifies the priority tier ranking of boosting applied to document attributes. For version 2, this parameter indicates the relative ranking between boosted fields (ONE being highest priority, TWO being second highest, etc.) and determines the order in which attributes influence document ranking in search results. For version 1, this parameter specifies the boosting intensity. For version 2, boosting intensity (VERY HIGH, HIGH, MEDIUM, LOW, NONE) are not supported. Note that in version 2, you are not allowed to boost on only one field and make this value TWO.</p>
     pub fn get_boosting_level(&self) -> &::std::option::Option<crate::types::DocumentAttributeBoostingLevel> {
         &self.boosting_level
     }
@@ -60,7 +60,7 @@ impl StringAttributeBoostingConfigurationBuilder {
     ///
     /// To override the contents of this collection use [`set_attribute_value_boosting`](Self::set_attribute_value_boosting).
     ///
-    /// <p>Specifies specific values of a <code>STRING</code> type document attribute being boosted.</p>
+    /// <p>Specifies specific values of a <code>STRING</code> type document attribute being boosted. When using <code>NativeIndexConfiguration</code> version 2, you can specify up to five values in order of priority.</p>
     pub fn attribute_value_boosting(
         mut self,
         k: impl ::std::convert::Into<::std::string::String>,
@@ -71,7 +71,7 @@ impl StringAttributeBoostingConfigurationBuilder {
         self.attribute_value_boosting = ::std::option::Option::Some(hash_map);
         self
     }
-    /// <p>Specifies specific values of a <code>STRING</code> type document attribute being boosted.</p>
+    /// <p>Specifies specific values of a <code>STRING</code> type document attribute being boosted. When using <code>NativeIndexConfiguration</code> version 2, you can specify up to five values in order of priority.</p>
     pub fn set_attribute_value_boosting(
         mut self,
         input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::StringAttributeValueBoostingLevel>>,
@@ -79,7 +79,7 @@ impl StringAttributeBoostingConfigurationBuilder {
         self.attribute_value_boosting = input;
         self
     }
-    /// <p>Specifies specific values of a <code>STRING</code> type document attribute being boosted.</p>
+    /// <p>Specifies specific values of a <code>STRING</code> type document attribute being boosted. When using <code>NativeIndexConfiguration</code> version 2, you can specify up to five values in order of priority.</p>
     pub fn get_attribute_value_boosting(
         &self,
     ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::StringAttributeValueBoostingLevel>> {

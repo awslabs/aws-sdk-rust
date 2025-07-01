@@ -22,7 +22,7 @@ impl crate::operation::delete_trained_model_output::builders::DeleteTrainedModel
 }
 /// Fluent builder constructing a request to `DeleteTrainedModelOutput`.
 ///
-/// <p>Deletes the output of a trained model.</p>
+/// <p>Deletes the model artifacts stored by the service.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteTrainedModelOutputFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -135,5 +135,19 @@ impl DeleteTrainedModelOutputFluentBuilder {
     /// <p>The membership ID of the member that is deleting the trained model output.</p>
     pub fn get_membership_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_membership_identifier()
+    }
+    /// <p>The version identifier of the trained model to delete. If not specified, the operation will delete the base version of the trained model. When specified, only the particular version will be deleted.</p>
+    pub fn version_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.version_identifier(input.into());
+        self
+    }
+    /// <p>The version identifier of the trained model to delete. If not specified, the operation will delete the base version of the trained model. When specified, only the particular version will be deleted.</p>
+    pub fn set_version_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_version_identifier(input);
+        self
+    }
+    /// <p>The version identifier of the trained model to delete. If not specified, the operation will delete the base version of the trained model. When specified, only the particular version will be deleted.</p>
+    pub fn get_version_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_version_identifier()
     }
 }

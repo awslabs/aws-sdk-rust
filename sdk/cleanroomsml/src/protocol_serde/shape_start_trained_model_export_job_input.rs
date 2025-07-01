@@ -15,5 +15,8 @@ pub fn ser_start_trained_model_export_job_input_input(
         crate::protocol_serde::shape_trained_model_export_output_configuration::ser_trained_model_export_output_configuration(&mut object_4, var_3)?;
         object_4.finish();
     }
+    if let Some(var_5) = &input.trained_model_version_identifier {
+        object.key("trainedModelVersionIdentifier").string(var_5.as_str());
+    }
     Ok(())
 }

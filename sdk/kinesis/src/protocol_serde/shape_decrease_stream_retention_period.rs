@@ -52,12 +52,12 @@ pub fn de_decrease_stream_retention_period_http_error(
                 tmp
             })
         }
-        "ResourceInUseException" => crate::operation::decrease_stream_retention_period::DecreaseStreamRetentionPeriodError::ResourceInUseException({
+        "LimitExceededException" => crate::operation::decrease_stream_retention_period::DecreaseStreamRetentionPeriodError::LimitExceededException({
             #[allow(unused_mut)]
             let mut tmp = {
                 #[allow(unused_mut)]
-                let mut output = crate::types::error::builders::ResourceInUseExceptionBuilder::default();
-                output = crate::protocol_serde::shape_resource_in_use_exception::de_resource_in_use_exception_json_err(_response_body, output)
+                let mut output = crate::types::error::builders::LimitExceededExceptionBuilder::default();
+                output = crate::protocol_serde::shape_limit_exceeded_exception::de_limit_exceeded_exception_json_err(_response_body, output)
                     .map_err(crate::operation::decrease_stream_retention_period::DecreaseStreamRetentionPeriodError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
@@ -67,12 +67,12 @@ pub fn de_decrease_stream_retention_period_http_error(
             }
             tmp
         }),
-        "LimitExceededException" => crate::operation::decrease_stream_retention_period::DecreaseStreamRetentionPeriodError::LimitExceededException({
+        "ResourceInUseException" => crate::operation::decrease_stream_retention_period::DecreaseStreamRetentionPeriodError::ResourceInUseException({
             #[allow(unused_mut)]
             let mut tmp = {
                 #[allow(unused_mut)]
-                let mut output = crate::types::error::builders::LimitExceededExceptionBuilder::default();
-                output = crate::protocol_serde::shape_limit_exceeded_exception::de_limit_exceeded_exception_json_err(_response_body, output)
+                let mut output = crate::types::error::builders::ResourceInUseExceptionBuilder::default();
+                output = crate::protocol_serde::shape_resource_in_use_exception::de_resource_in_use_exception_json_err(_response_body, output)
                     .map_err(crate::operation::decrease_stream_retention_period::DecreaseStreamRetentionPeriodError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()

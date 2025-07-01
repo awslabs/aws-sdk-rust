@@ -227,23 +227,92 @@ impl CreateTrainedModelFluentBuilder {
         self.inner.get_stopping_condition()
     }
     ///
+    /// Appends an item to `incrementalTrainingDataChannels`.
+    ///
+    /// To override the contents of this collection use [`set_incremental_training_data_channels`](Self::set_incremental_training_data_channels).
+    ///
+    /// <p>Specifies the incremental training data channels for the trained model.</p>
+    /// <p>Incremental training allows you to create a new trained model with updates without retraining from scratch. You can specify up to one incremental training data channel that references a previously trained model and its version.</p>
+    /// <p>Limit: Maximum of 20 channels total (including both <code>incrementalTrainingDataChannels</code> and <code>dataChannels</code>).</p>
+    pub fn incremental_training_data_channels(mut self, input: crate::types::IncrementalTrainingDataChannel) -> Self {
+        self.inner = self.inner.incremental_training_data_channels(input);
+        self
+    }
+    /// <p>Specifies the incremental training data channels for the trained model.</p>
+    /// <p>Incremental training allows you to create a new trained model with updates without retraining from scratch. You can specify up to one incremental training data channel that references a previously trained model and its version.</p>
+    /// <p>Limit: Maximum of 20 channels total (including both <code>incrementalTrainingDataChannels</code> and <code>dataChannels</code>).</p>
+    pub fn set_incremental_training_data_channels(
+        mut self,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::IncrementalTrainingDataChannel>>,
+    ) -> Self {
+        self.inner = self.inner.set_incremental_training_data_channels(input);
+        self
+    }
+    /// <p>Specifies the incremental training data channels for the trained model.</p>
+    /// <p>Incremental training allows you to create a new trained model with updates without retraining from scratch. You can specify up to one incremental training data channel that references a previously trained model and its version.</p>
+    /// <p>Limit: Maximum of 20 channels total (including both <code>incrementalTrainingDataChannels</code> and <code>dataChannels</code>).</p>
+    pub fn get_incremental_training_data_channels(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::IncrementalTrainingDataChannel>> {
+        self.inner.get_incremental_training_data_channels()
+    }
+    ///
     /// Appends an item to `dataChannels`.
     ///
     /// To override the contents of this collection use [`set_data_channels`](Self::set_data_channels).
     ///
     /// <p>Defines the data channels that are used as input for the trained model request.</p>
+    /// <p>Limit: Maximum of 20 channels total (including both <code>dataChannels</code> and <code>incrementalTrainingDataChannels</code>).</p>
     pub fn data_channels(mut self, input: crate::types::ModelTrainingDataChannel) -> Self {
         self.inner = self.inner.data_channels(input);
         self
     }
     /// <p>Defines the data channels that are used as input for the trained model request.</p>
+    /// <p>Limit: Maximum of 20 channels total (including both <code>dataChannels</code> and <code>incrementalTrainingDataChannels</code>).</p>
     pub fn set_data_channels(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ModelTrainingDataChannel>>) -> Self {
         self.inner = self.inner.set_data_channels(input);
         self
     }
     /// <p>Defines the data channels that are used as input for the trained model request.</p>
+    /// <p>Limit: Maximum of 20 channels total (including both <code>dataChannels</code> and <code>incrementalTrainingDataChannels</code>).</p>
     pub fn get_data_channels(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ModelTrainingDataChannel>> {
         self.inner.get_data_channels()
+    }
+    /// <p>The input mode for accessing the training data. This parameter determines how the training data is made available to the training algorithm. Valid values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>File</code> - The training data is downloaded to the training instance and made available as files.</p></li>
+    /// <li>
+    /// <p><code>FastFile</code> - The training data is streamed directly from Amazon S3 to the training algorithm, providing faster access for large datasets.</p></li>
+    /// <li>
+    /// <p><code>Pipe</code> - The training data is streamed to the training algorithm using named pipes, which can improve performance for certain algorithms.</p></li>
+    /// </ul>
+    pub fn training_input_mode(mut self, input: crate::types::TrainingInputMode) -> Self {
+        self.inner = self.inner.training_input_mode(input);
+        self
+    }
+    /// <p>The input mode for accessing the training data. This parameter determines how the training data is made available to the training algorithm. Valid values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>File</code> - The training data is downloaded to the training instance and made available as files.</p></li>
+    /// <li>
+    /// <p><code>FastFile</code> - The training data is streamed directly from Amazon S3 to the training algorithm, providing faster access for large datasets.</p></li>
+    /// <li>
+    /// <p><code>Pipe</code> - The training data is streamed to the training algorithm using named pipes, which can improve performance for certain algorithms.</p></li>
+    /// </ul>
+    pub fn set_training_input_mode(mut self, input: ::std::option::Option<crate::types::TrainingInputMode>) -> Self {
+        self.inner = self.inner.set_training_input_mode(input);
+        self
+    }
+    /// <p>The input mode for accessing the training data. This parameter determines how the training data is made available to the training algorithm. Valid values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>File</code> - The training data is downloaded to the training instance and made available as files.</p></li>
+    /// <li>
+    /// <p><code>FastFile</code> - The training data is streamed directly from Amazon S3 to the training algorithm, providing faster access for large datasets.</p></li>
+    /// <li>
+    /// <p><code>Pipe</code> - The training data is streamed to the training algorithm using named pipes, which can improve performance for certain algorithms.</p></li>
+    /// </ul>
+    pub fn get_training_input_mode(&self) -> &::std::option::Option<crate::types::TrainingInputMode> {
+        self.inner.get_training_input_mode()
     }
     /// <p>The description of the trained model.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {

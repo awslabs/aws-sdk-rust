@@ -73,7 +73,6 @@ impl CustomPluginConfigurationBuilder {
         &self.api_schema_type
     }
     /// <p>Contains either details about the S3 object containing the OpenAPI schema for the action group or the JSON or YAML-formatted payload defining the schema.</p>
-    /// This field is required.
     pub fn api_schema(mut self, input: crate::types::ApiSchema) -> Self {
         self.api_schema = ::std::option::Option::Some(input);
         self

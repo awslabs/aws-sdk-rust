@@ -31,6 +31,20 @@ pub fn de_get_session_http_error(
             };
             tmp
         }),
+        "InternalServerException" => crate::operation::get_session::GetSessionError::InternalServerException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::InternalServerExceptionBuilder::default();
+                output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::get_session::GetSessionError::unhandled)?;
+                let output = output.meta(generic);
+                crate::serde_util::internal_server_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::get_session::GetSessionError::unhandled)?
+            };
+            tmp
+        }),
         "ResourceNotFoundException" => crate::operation::get_session::GetSessionError::ResourceNotFoundException({
             #[allow(unused_mut)]
             let mut tmp = {
@@ -68,20 +82,6 @@ pub fn de_get_session_http_error(
                     .map_err(crate::operation::get_session::GetSessionError::unhandled)?;
                 let output = output.meta(generic);
                 crate::serde_util::validation_exception_correct_errors(output)
-                    .build()
-                    .map_err(crate::operation::get_session::GetSessionError::unhandled)?
-            };
-            tmp
-        }),
-        "InternalServerException" => crate::operation::get_session::GetSessionError::InternalServerException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::types::error::builders::InternalServerExceptionBuilder::default();
-                output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(_response_body, output)
-                    .map_err(crate::operation::get_session::GetSessionError::unhandled)?;
-                let output = output.meta(generic);
-                crate::serde_util::internal_server_exception_correct_errors(output)
                     .build()
                     .map_err(crate::operation::get_session::GetSessionError::unhandled)?
             };

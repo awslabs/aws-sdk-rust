@@ -183,6 +183,20 @@ impl UpdateProjectFluentBuilder {
     pub fn get_glossary_terms(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_glossary_terms()
     }
+    /// <p>The ID of the domain unit.</p>
+    pub fn domain_unit_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.domain_unit_id(input.into());
+        self
+    }
+    /// <p>The ID of the domain unit.</p>
+    pub fn set_domain_unit_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_domain_unit_id(input);
+        self
+    }
+    /// <p>The ID of the domain unit.</p>
+    pub fn get_domain_unit_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_domain_unit_id()
+    }
     /// <p>The environment deployment details of the project.</p>
     pub fn environment_deployment_details(mut self, input: crate::types::EnvironmentDeploymentDetails) -> Self {
         self.inner = self.inner.environment_deployment_details(input);

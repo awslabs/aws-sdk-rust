@@ -288,19 +288,19 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for DeleteAssetMo
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum DeleteAssetModelError {
-    /// <p>The request isn't valid. This can occur if your request contains malformed JSON or unsupported characters. Check your request and try again.</p>
-    InvalidRequestException(crate::types::error::InvalidRequestException),
     /// <p>Your request has conflicting operations. This can occur if you're trying to perform more than one operation on the same resource at the same time.</p>
     ConflictingOperationException(crate::types::error::ConflictingOperationException),
+    /// <p>IoT SiteWise can't process your request right now. Try again later.</p>
+    InternalFailureException(crate::types::error::InternalFailureException),
+    /// <p>The request isn't valid. This can occur if your request contains malformed JSON or unsupported characters. Check your request and try again.</p>
+    InvalidRequestException(crate::types::error::InvalidRequestException),
+    /// <p>The precondition in one or more of the request-header fields evaluated to <code>FALSE</code>.</p>
+    PreconditionFailedException(crate::types::error::PreconditionFailedException),
     /// <p>The requested resource can't be found.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
     /// <p>Your request exceeded a rate limit. For example, you might have exceeded the number of IoT SiteWise assets that can be created per second, the allowed number of messages per second, and so on.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     ThrottlingException(crate::types::error::ThrottlingException),
-    /// <p>The precondition in one or more of the request-header fields evaluated to <code>FALSE</code>.</p>
-    PreconditionFailedException(crate::types::error::PreconditionFailedException),
-    /// <p>IoT SiteWise can't process your request right now. Try again later.</p>
-    InternalFailureException(crate::types::error::InternalFailureException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \
     variable wildcard pattern and check `.code()`:
@@ -334,22 +334,30 @@ impl DeleteAssetModelError {
     ///
     pub fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
-            Self::InvalidRequestException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ConflictingOperationException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::InternalFailureException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::InvalidRequestException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::PreconditionFailedException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ResourceNotFoundException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ThrottlingException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
-            Self::PreconditionFailedException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
-            Self::InternalFailureException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::Unhandled(e) => &e.meta,
         }
+    }
+    /// Returns `true` if the error kind is `DeleteAssetModelError::ConflictingOperationException`.
+    pub fn is_conflicting_operation_exception(&self) -> bool {
+        matches!(self, Self::ConflictingOperationException(_))
+    }
+    /// Returns `true` if the error kind is `DeleteAssetModelError::InternalFailureException`.
+    pub fn is_internal_failure_exception(&self) -> bool {
+        matches!(self, Self::InternalFailureException(_))
     }
     /// Returns `true` if the error kind is `DeleteAssetModelError::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(self, Self::InvalidRequestException(_))
     }
-    /// Returns `true` if the error kind is `DeleteAssetModelError::ConflictingOperationException`.
-    pub fn is_conflicting_operation_exception(&self) -> bool {
-        matches!(self, Self::ConflictingOperationException(_))
+    /// Returns `true` if the error kind is `DeleteAssetModelError::PreconditionFailedException`.
+    pub fn is_precondition_failed_exception(&self) -> bool {
+        matches!(self, Self::PreconditionFailedException(_))
     }
     /// Returns `true` if the error kind is `DeleteAssetModelError::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
@@ -359,24 +367,16 @@ impl DeleteAssetModelError {
     pub fn is_throttling_exception(&self) -> bool {
         matches!(self, Self::ThrottlingException(_))
     }
-    /// Returns `true` if the error kind is `DeleteAssetModelError::PreconditionFailedException`.
-    pub fn is_precondition_failed_exception(&self) -> bool {
-        matches!(self, Self::PreconditionFailedException(_))
-    }
-    /// Returns `true` if the error kind is `DeleteAssetModelError::InternalFailureException`.
-    pub fn is_internal_failure_exception(&self) -> bool {
-        matches!(self, Self::InternalFailureException(_))
-    }
 }
 impl ::std::error::Error for DeleteAssetModelError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
-            Self::InvalidRequestException(_inner) => ::std::option::Option::Some(_inner),
             Self::ConflictingOperationException(_inner) => ::std::option::Option::Some(_inner),
+            Self::InternalFailureException(_inner) => ::std::option::Option::Some(_inner),
+            Self::InvalidRequestException(_inner) => ::std::option::Option::Some(_inner),
+            Self::PreconditionFailedException(_inner) => ::std::option::Option::Some(_inner),
             Self::ResourceNotFoundException(_inner) => ::std::option::Option::Some(_inner),
             Self::ThrottlingException(_inner) => ::std::option::Option::Some(_inner),
-            Self::PreconditionFailedException(_inner) => ::std::option::Option::Some(_inner),
-            Self::InternalFailureException(_inner) => ::std::option::Option::Some(_inner),
             Self::Unhandled(_inner) => ::std::option::Option::Some(&*_inner.source),
         }
     }
@@ -384,12 +384,12 @@ impl ::std::error::Error for DeleteAssetModelError {
 impl ::std::fmt::Display for DeleteAssetModelError {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         match self {
-            Self::InvalidRequestException(_inner) => _inner.fmt(f),
             Self::ConflictingOperationException(_inner) => _inner.fmt(f),
+            Self::InternalFailureException(_inner) => _inner.fmt(f),
+            Self::InvalidRequestException(_inner) => _inner.fmt(f),
+            Self::PreconditionFailedException(_inner) => _inner.fmt(f),
             Self::ResourceNotFoundException(_inner) => _inner.fmt(f),
             Self::ThrottlingException(_inner) => _inner.fmt(f),
-            Self::PreconditionFailedException(_inner) => _inner.fmt(f),
-            Self::InternalFailureException(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => {
                 if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self) {
                     write!(f, "unhandled error ({code})")
@@ -411,12 +411,12 @@ impl ::aws_smithy_types::retry::ProvideErrorKind for DeleteAssetModelError {
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for DeleteAssetModelError {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
-            Self::InvalidRequestException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ConflictingOperationException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::InternalFailureException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::InvalidRequestException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::PreconditionFailedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ResourceNotFoundException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ThrottlingException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::PreconditionFailedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::InternalFailureException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::Unhandled(_inner) => &_inner.meta,
         }
     }

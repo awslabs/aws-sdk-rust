@@ -150,6 +150,20 @@ impl StartTrainedModelInferenceJobFluentBuilder {
     pub fn get_trained_model_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_trained_model_arn()
     }
+    /// <p>The version identifier of the trained model to use for inference. This specifies which version of the trained model should be used to generate predictions on the input data.</p>
+    pub fn trained_model_version_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.trained_model_version_identifier(input.into());
+        self
+    }
+    /// <p>The version identifier of the trained model to use for inference. This specifies which version of the trained model should be used to generate predictions on the input data.</p>
+    pub fn set_trained_model_version_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_trained_model_version_identifier(input);
+        self
+    }
+    /// <p>The version identifier of the trained model to use for inference. This specifies which version of the trained model should be used to generate predictions on the input data.</p>
+    pub fn get_trained_model_version_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_trained_model_version_identifier()
+    }
     /// <p>The Amazon Resource Name (ARN) of the configured model algorithm association that is used for this trained model inference job.</p>
     pub fn configured_model_algorithm_association_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.configured_model_algorithm_association_arn(input.into());

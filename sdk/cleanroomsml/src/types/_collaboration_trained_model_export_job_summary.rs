@@ -22,6 +22,8 @@ pub struct CollaborationTrainedModelExportJobSummary {
     pub creator_account_id: ::std::string::String,
     /// <p>The Amazon Resource Name (ARN) of the trained model that is being exported.</p>
     pub trained_model_arn: ::std::string::String,
+    /// <p>The version identifier of the trained model that was exported in this job.</p>
+    pub trained_model_version_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The membership ID of the member that created the trained model export job.</p>
     pub membership_identifier: ::std::string::String,
     /// <p>The collaboration ID of the collaboration that contains the trained model export job.</p>
@@ -67,6 +69,10 @@ impl CollaborationTrainedModelExportJobSummary {
         use std::ops::Deref;
         self.trained_model_arn.deref()
     }
+    /// <p>The version identifier of the trained model that was exported in this job.</p>
+    pub fn trained_model_version_identifier(&self) -> ::std::option::Option<&str> {
+        self.trained_model_version_identifier.as_deref()
+    }
     /// <p>The membership ID of the member that created the trained model export job.</p>
     pub fn membership_identifier(&self) -> &str {
         use std::ops::Deref;
@@ -98,6 +104,7 @@ pub struct CollaborationTrainedModelExportJobSummaryBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) creator_account_id: ::std::option::Option<::std::string::String>,
     pub(crate) trained_model_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) trained_model_version_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) membership_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) collaboration_identifier: ::std::option::Option<::std::string::String>,
 }
@@ -235,6 +242,20 @@ impl CollaborationTrainedModelExportJobSummaryBuilder {
     pub fn get_trained_model_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.trained_model_arn
     }
+    /// <p>The version identifier of the trained model that was exported in this job.</p>
+    pub fn trained_model_version_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.trained_model_version_identifier = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The version identifier of the trained model that was exported in this job.</p>
+    pub fn set_trained_model_version_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.trained_model_version_identifier = input;
+        self
+    }
+    /// <p>The version identifier of the trained model that was exported in this job.</p>
+    pub fn get_trained_model_version_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.trained_model_version_identifier
+    }
     /// <p>The membership ID of the member that created the trained model export job.</p>
     /// This field is required.
     pub fn membership_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -318,6 +339,7 @@ impl CollaborationTrainedModelExportJobSummaryBuilder {
                     "trained_model_arn was not specified but it is required when building CollaborationTrainedModelExportJobSummary",
                 )
             })?,
+            trained_model_version_identifier: self.trained_model_version_identifier,
             membership_identifier: self.membership_identifier.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "membership_identifier",

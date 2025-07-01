@@ -43,17 +43,25 @@ pub use crate::types::_trained_model_export_output_configuration::TrainedModelEx
 
 pub use crate::types::_trained_model_export_receiver_member::TrainedModelExportReceiverMember;
 
+pub use crate::types::_trained_model_summary::TrainedModelSummary;
+
+pub use crate::types::_trained_model_status::TrainedModelStatus;
+
+pub use crate::types::_incremental_training_data_channel_output::IncrementalTrainingDataChannelOutput;
+
 pub use crate::types::_stopping_condition::StoppingCondition;
+
+pub use crate::types::_training_input_mode::TrainingInputMode;
 
 pub use crate::types::_resource_config::ResourceConfig;
 
 pub use crate::types::_instance_type::InstanceType;
 
-pub use crate::types::_trained_model_status::TrainedModelStatus;
-
 pub use crate::types::_model_training_data_channel::ModelTrainingDataChannel;
 
-pub use crate::types::_trained_model_summary::TrainedModelSummary;
+pub use crate::types::_s3_data_distribution_type::S3DataDistributionType;
+
+pub use crate::types::_incremental_training_data_channel::IncrementalTrainingDataChannel;
 
 pub use crate::types::_ml_input_channel_status::MlInputChannelStatus;
 
@@ -100,6 +108,10 @@ pub use crate::types::_trained_model_exports_max_size::TrainedModelExportsMaxSiz
 pub use crate::types::_trained_model_exports_max_size_unit_type::TrainedModelExportsMaxSizeUnitType;
 
 pub use crate::types::_trained_models_configuration_policy::TrainedModelsConfigurationPolicy;
+
+pub use crate::types::_trained_model_artifact_max_size::TrainedModelArtifactMaxSize;
+
+pub use crate::types::_trained_model_artifact_max_size_unit_type::TrainedModelArtifactMaxSizeUnitType;
 
 pub use crate::types::_metrics_configuration_policy::MetricsConfigurationPolicy;
 
@@ -229,6 +241,10 @@ mod _destination;
 
 mod _glue_data_source;
 
+mod _incremental_training_data_channel;
+
+mod _incremental_training_data_channel_output;
+
 mod _inference_container_config;
 
 mod _inference_container_execution_parameters;
@@ -285,6 +301,8 @@ mod _resource_config;
 
 mod _s3_config_map;
 
+mod _s3_data_distribution_type;
+
 mod _shared_audience_metrics;
 
 mod _status_details;
@@ -292,6 +310,10 @@ mod _status_details;
 mod _stopping_condition;
 
 mod _tag_on_create_policy;
+
+mod _trained_model_artifact_max_size;
+
+mod _trained_model_artifact_max_size_unit_type;
 
 mod _trained_model_export_file_type;
 
@@ -326,6 +348,8 @@ mod _trained_models_configuration_policy;
 mod _training_dataset_status;
 
 mod _training_dataset_summary;
+
+mod _training_input_mode;
 
 mod _worker_compute_configuration;
 

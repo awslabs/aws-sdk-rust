@@ -8,6 +8,14 @@ pub struct ModelTrainingDataChannel {
     pub ml_input_channel_arn: ::std::string::String,
     /// <p>The name of the training data channel.</p>
     pub channel_name: ::std::string::String,
+    /// <p>Specifies how the training data stored in Amazon S3 should be distributed to training instances. This parameter controls the data distribution strategy for the training job:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>FullyReplicated</code> - The entire dataset is replicated on each training instance. This is suitable for smaller datasets and algorithms that require access to the complete dataset.</p></li>
+    /// <li>
+    /// <p><code>ShardedByS3Key</code> - The dataset is distributed across training instances based on Amazon S3 key names. This is suitable for larger datasets and distributed training scenarios where each instance processes a subset of the data.</p></li>
+    /// </ul>
+    pub s3_data_distribution_type: crate::types::S3DataDistributionType,
 }
 impl ModelTrainingDataChannel {
     /// <p>The Amazon Resource Name (ARN) of the ML input channel for this model training data channel.</p>
@@ -19,6 +27,16 @@ impl ModelTrainingDataChannel {
     pub fn channel_name(&self) -> &str {
         use std::ops::Deref;
         self.channel_name.deref()
+    }
+    /// <p>Specifies how the training data stored in Amazon S3 should be distributed to training instances. This parameter controls the data distribution strategy for the training job:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>FullyReplicated</code> - The entire dataset is replicated on each training instance. This is suitable for smaller datasets and algorithms that require access to the complete dataset.</p></li>
+    /// <li>
+    /// <p><code>ShardedByS3Key</code> - The dataset is distributed across training instances based on Amazon S3 key names. This is suitable for larger datasets and distributed training scenarios where each instance processes a subset of the data.</p></li>
+    /// </ul>
+    pub fn s3_data_distribution_type(&self) -> &crate::types::S3DataDistributionType {
+        &self.s3_data_distribution_type
     }
 }
 impl ModelTrainingDataChannel {
@@ -34,6 +52,7 @@ impl ModelTrainingDataChannel {
 pub struct ModelTrainingDataChannelBuilder {
     pub(crate) ml_input_channel_arn: ::std::option::Option<::std::string::String>,
     pub(crate) channel_name: ::std::option::Option<::std::string::String>,
+    pub(crate) s3_data_distribution_type: ::std::option::Option<crate::types::S3DataDistributionType>,
 }
 impl ModelTrainingDataChannelBuilder {
     /// <p>The Amazon Resource Name (ARN) of the ML input channel for this model training data channel.</p>
@@ -66,6 +85,38 @@ impl ModelTrainingDataChannelBuilder {
     pub fn get_channel_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.channel_name
     }
+    /// <p>Specifies how the training data stored in Amazon S3 should be distributed to training instances. This parameter controls the data distribution strategy for the training job:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>FullyReplicated</code> - The entire dataset is replicated on each training instance. This is suitable for smaller datasets and algorithms that require access to the complete dataset.</p></li>
+    /// <li>
+    /// <p><code>ShardedByS3Key</code> - The dataset is distributed across training instances based on Amazon S3 key names. This is suitable for larger datasets and distributed training scenarios where each instance processes a subset of the data.</p></li>
+    /// </ul>
+    pub fn s3_data_distribution_type(mut self, input: crate::types::S3DataDistributionType) -> Self {
+        self.s3_data_distribution_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies how the training data stored in Amazon S3 should be distributed to training instances. This parameter controls the data distribution strategy for the training job:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>FullyReplicated</code> - The entire dataset is replicated on each training instance. This is suitable for smaller datasets and algorithms that require access to the complete dataset.</p></li>
+    /// <li>
+    /// <p><code>ShardedByS3Key</code> - The dataset is distributed across training instances based on Amazon S3 key names. This is suitable for larger datasets and distributed training scenarios where each instance processes a subset of the data.</p></li>
+    /// </ul>
+    pub fn set_s3_data_distribution_type(mut self, input: ::std::option::Option<crate::types::S3DataDistributionType>) -> Self {
+        self.s3_data_distribution_type = input;
+        self
+    }
+    /// <p>Specifies how the training data stored in Amazon S3 should be distributed to training instances. This parameter controls the data distribution strategy for the training job:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>FullyReplicated</code> - The entire dataset is replicated on each training instance. This is suitable for smaller datasets and algorithms that require access to the complete dataset.</p></li>
+    /// <li>
+    /// <p><code>ShardedByS3Key</code> - The dataset is distributed across training instances based on Amazon S3 key names. This is suitable for larger datasets and distributed training scenarios where each instance processes a subset of the data.</p></li>
+    /// </ul>
+    pub fn get_s3_data_distribution_type(&self) -> &::std::option::Option<crate::types::S3DataDistributionType> {
+        &self.s3_data_distribution_type
+    }
     /// Consumes the builder and constructs a [`ModelTrainingDataChannel`](crate::types::ModelTrainingDataChannel).
     /// This method will fail if any of the following fields are not set:
     /// - [`ml_input_channel_arn`](crate::types::builders::ModelTrainingDataChannelBuilder::ml_input_channel_arn)
@@ -84,6 +135,11 @@ impl ModelTrainingDataChannelBuilder {
                     "channel_name was not specified but it is required when building ModelTrainingDataChannel",
                 )
             })?,
+            s3_data_distribution_type: self.s3_data_distribution_type.unwrap_or(
+                "FullyReplicated"
+                    .parse::<crate::types::S3DataDistributionType>()
+                    .expect("static value validated to member"),
+            ),
         })
     }
 }

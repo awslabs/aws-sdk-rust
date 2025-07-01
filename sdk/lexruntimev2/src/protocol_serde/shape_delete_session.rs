@@ -31,6 +31,34 @@ pub fn de_delete_session_http_error(
             };
             tmp
         }),
+        "ConflictException" => crate::operation::delete_session::DeleteSessionError::ConflictException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ConflictExceptionBuilder::default();
+                output = crate::protocol_serde::shape_conflict_exception::de_conflict_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::delete_session::DeleteSessionError::unhandled)?;
+                let output = output.meta(generic);
+                crate::serde_util::conflict_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::delete_session::DeleteSessionError::unhandled)?
+            };
+            tmp
+        }),
+        "InternalServerException" => crate::operation::delete_session::DeleteSessionError::InternalServerException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::InternalServerExceptionBuilder::default();
+                output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::delete_session::DeleteSessionError::unhandled)?;
+                let output = output.meta(generic);
+                crate::serde_util::internal_server_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::delete_session::DeleteSessionError::unhandled)?
+            };
+            tmp
+        }),
         "ResourceNotFoundException" => crate::operation::delete_session::DeleteSessionError::ResourceNotFoundException({
             #[allow(unused_mut)]
             let mut tmp = {
@@ -68,34 +96,6 @@ pub fn de_delete_session_http_error(
                     .map_err(crate::operation::delete_session::DeleteSessionError::unhandled)?;
                 let output = output.meta(generic);
                 crate::serde_util::validation_exception_correct_errors(output)
-                    .build()
-                    .map_err(crate::operation::delete_session::DeleteSessionError::unhandled)?
-            };
-            tmp
-        }),
-        "InternalServerException" => crate::operation::delete_session::DeleteSessionError::InternalServerException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::types::error::builders::InternalServerExceptionBuilder::default();
-                output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(_response_body, output)
-                    .map_err(crate::operation::delete_session::DeleteSessionError::unhandled)?;
-                let output = output.meta(generic);
-                crate::serde_util::internal_server_exception_correct_errors(output)
-                    .build()
-                    .map_err(crate::operation::delete_session::DeleteSessionError::unhandled)?
-            };
-            tmp
-        }),
-        "ConflictException" => crate::operation::delete_session::DeleteSessionError::ConflictException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::types::error::builders::ConflictExceptionBuilder::default();
-                output = crate::protocol_serde::shape_conflict_exception::de_conflict_exception_json_err(_response_body, output)
-                    .map_err(crate::operation::delete_session::DeleteSessionError::unhandled)?;
-                let output = output.meta(generic);
-                crate::serde_util::conflict_exception_correct_errors(output)
                     .build()
                     .map_err(crate::operation::delete_session::DeleteSessionError::unhandled)?
             };

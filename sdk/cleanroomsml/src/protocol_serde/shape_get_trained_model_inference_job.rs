@@ -51,6 +51,20 @@ pub fn de_get_trained_model_inference_job_http_error(
                 tmp
             })
         }
+        "ThrottlingException" => crate::operation::get_trained_model_inference_job::GetTrainedModelInferenceJobError::ThrottlingException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ThrottlingExceptionBuilder::default();
+                output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::get_trained_model_inference_job::GetTrainedModelInferenceJobError::unhandled)?;
+                let output = output.meta(generic);
+                crate::serde_util::throttling_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::get_trained_model_inference_job::GetTrainedModelInferenceJobError::unhandled)?
+            };
+            tmp
+        }),
         "ValidationException" => crate::operation::get_trained_model_inference_job::GetTrainedModelInferenceJobError::ValidationException({
             #[allow(unused_mut)]
             let mut tmp = {
@@ -227,6 +241,13 @@ pub(crate) fn de_get_trained_model_inference_job(
                 }
                 "trainedModelInferenceJobArn" => {
                     builder = builder.set_trained_model_inference_job_arn(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
+                "trainedModelVersionIdentifier" => {
+                    builder = builder.set_trained_model_version_identifier(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                             .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                             .transpose()?,

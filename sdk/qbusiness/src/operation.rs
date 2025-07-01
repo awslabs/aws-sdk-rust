@@ -28,6 +28,9 @@ pub mod create_anonymous_web_experience_url;
 /// Types for the `CreateApplication` operation.
 pub mod create_application;
 
+/// Types for the `CreateChatResponseConfiguration` operation.
+pub mod create_chat_response_configuration;
+
 /// Types for the `CreateDataAccessor` operation.
 pub mod create_data_accessor;
 
@@ -60,6 +63,9 @@ pub mod delete_attachment;
 
 /// Types for the `DeleteChatControlsConfiguration` operation.
 pub mod delete_chat_controls_configuration;
+
+/// Types for the `DeleteChatResponseConfiguration` operation.
+pub mod delete_chat_response_configuration;
 
 /// Types for the `DeleteConversation` operation.
 pub mod delete_conversation;
@@ -97,6 +103,9 @@ pub mod get_application;
 /// Types for the `GetChatControlsConfiguration` operation.
 pub mod get_chat_controls_configuration;
 
+/// Types for the `GetChatResponseConfiguration` operation.
+pub mod get_chat_response_configuration;
+
 /// Types for the `GetDataAccessor` operation.
 pub mod get_data_accessor;
 
@@ -132,6 +141,9 @@ pub mod list_applications;
 
 /// Types for the `ListAttachments` operation.
 pub mod list_attachments;
+
+/// Types for the `ListChatResponseConfigurations` operation.
+pub mod list_chat_response_configurations;
 
 /// Types for the `ListConversations` operation.
 pub mod list_conversations;
@@ -207,6 +219,9 @@ pub mod update_application;
 
 /// Types for the `UpdateChatControlsConfiguration` operation.
 pub mod update_chat_controls_configuration;
+
+/// Types for the `UpdateChatResponseConfiguration` operation.
+pub mod update_chat_response_configuration;
 
 /// Types for the `UpdateDataAccessor` operation.
 pub mod update_data_accessor;

@@ -48,6 +48,20 @@ pub fn de_create_trained_model_http_error(
             };
             tmp
         }),
+        "InternalServiceException" => crate::operation::create_trained_model::CreateTrainedModelError::InternalServiceException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::InternalServiceExceptionBuilder::default();
+                output = crate::protocol_serde::shape_internal_service_exception::de_internal_service_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::create_trained_model::CreateTrainedModelError::unhandled)?;
+                let output = output.meta(generic);
+                crate::serde_util::internal_service_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::create_trained_model::CreateTrainedModelError::unhandled)?
+            };
+            tmp
+        }),
         "ResourceNotFoundException" => crate::operation::create_trained_model::CreateTrainedModelError::ResourceNotFoundException({
             #[allow(unused_mut)]
             let mut tmp = {
@@ -74,6 +88,20 @@ pub fn de_create_trained_model_http_error(
                 .map_err(crate::operation::create_trained_model::CreateTrainedModelError::unhandled)?;
                 let output = output.meta(generic);
                 crate::serde_util::service_quota_exceeded_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::create_trained_model::CreateTrainedModelError::unhandled)?
+            };
+            tmp
+        }),
+        "ThrottlingException" => crate::operation::create_trained_model::CreateTrainedModelError::ThrottlingException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ThrottlingExceptionBuilder::default();
+                output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::create_trained_model::CreateTrainedModelError::unhandled)?;
+                let output = output.meta(generic);
+                crate::serde_util::throttling_exception_correct_errors(output)
                     .build()
                     .map_err(crate::operation::create_trained_model::CreateTrainedModelError::unhandled)?
             };
@@ -144,6 +172,13 @@ pub(crate) fn de_create_trained_model(
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "trainedModelArn" => {
                     builder = builder.set_trained_model_arn(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
+                "versionIdentifier" => {
+                    builder = builder.set_version_identifier(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                             .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                             .transpose()?,

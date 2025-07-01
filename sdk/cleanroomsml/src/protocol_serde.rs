@@ -117,6 +117,8 @@ pub(crate) mod shape_list_tags_for_resource;
 
 pub(crate) mod shape_list_trained_model_inference_jobs;
 
+pub(crate) mod shape_list_trained_model_versions;
+
 pub(crate) mod shape_list_trained_models;
 
 pub(crate) mod shape_list_training_datasets;
@@ -165,6 +167,8 @@ pub(crate) mod shape_create_trained_model_input;
 
 pub(crate) mod shape_create_training_dataset_input;
 
+pub(crate) mod shape_internal_service_exception;
+
 pub(crate) mod shape_put_configured_audience_model_policy_input;
 
 pub(crate) mod shape_put_ml_configuration_input;
@@ -182,6 +186,8 @@ pub(crate) mod shape_start_trained_model_export_job_input;
 pub(crate) mod shape_start_trained_model_inference_job_input;
 
 pub(crate) mod shape_tag_resource_input;
+
+pub(crate) mod shape_throttling_exception;
 
 pub(crate) mod shape_update_configured_audience_model_input;
 
@@ -230,6 +236,10 @@ pub(crate) mod shape_dataset_list;
 pub(crate) mod shape_environment;
 
 pub(crate) mod shape_hyper_parameters;
+
+pub(crate) mod shape_incremental_training_data_channel;
+
+pub(crate) mod shape_incremental_training_data_channels_output;
 
 pub(crate) mod shape_inference_container_config;
 
@@ -309,6 +319,8 @@ pub(crate) mod shape_dataset_input_config;
 
 pub(crate) mod shape_destination;
 
+pub(crate) mod shape_incremental_training_data_channel_output;
+
 pub(crate) mod shape_inference_receiver_member;
 
 pub(crate) mod shape_inference_receiver_members;
@@ -364,6 +376,8 @@ pub(crate) mod shape_logs_configuration_policy;
 pub(crate) mod shape_logs_configuration_policy_list;
 
 pub(crate) mod shape_metrics_configuration_policy;
+
+pub(crate) mod shape_trained_model_artifact_max_size;
 
 pub(crate) mod shape_trained_model_export_file_type_list;
 

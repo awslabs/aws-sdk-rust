@@ -136,4 +136,21 @@ impl CancelTrainedModelFluentBuilder {
     pub fn get_trained_model_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_trained_model_arn()
     }
+    /// <p>The version identifier of the trained model to cancel. This parameter allows you to specify which version of the trained model you want to cancel when multiple versions exist.</p>
+    /// <p>If <code>versionIdentifier</code> is not specified, the base model will be cancelled.</p>
+    pub fn version_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.version_identifier(input.into());
+        self
+    }
+    /// <p>The version identifier of the trained model to cancel. This parameter allows you to specify which version of the trained model you want to cancel when multiple versions exist.</p>
+    /// <p>If <code>versionIdentifier</code> is not specified, the base model will be cancelled.</p>
+    pub fn set_version_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_version_identifier(input);
+        self
+    }
+    /// <p>The version identifier of the trained model to cancel. This parameter allows you to specify which version of the trained model you want to cancel when multiple versions exist.</p>
+    /// <p>If <code>versionIdentifier</code> is not specified, the base model will be cancelled.</p>
+    pub fn get_version_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_version_identifier()
+    }
 }

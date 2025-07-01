@@ -4,11 +4,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InferenceContainerConfig {
-    /// <p>The registry path of the docker image that contains the inference algorithm. Clean Rooms ML supports both <code>registry/repository\[:tag\]</code> and <code>registry/repositry\[@digest\]</code> image path formats. For more information about using images in Clean Rooms ML, see the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AlgorithmSpecification.html#sagemaker-Type-AlgorithmSpecification-TrainingImage">Sagemaker API reference</a>.</p>
+    /// <p>The registry path of the docker image that contains the inference algorithm. Clean Rooms ML currently only supports the <code>registry/repository\[:tag\]</code> image path format. For more information about using images in Clean Rooms ML, see the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AlgorithmSpecification.html#sagemaker-Type-AlgorithmSpecification-TrainingImage">Sagemaker API reference</a>.</p>
     pub image_uri: ::std::string::String,
 }
 impl InferenceContainerConfig {
-    /// <p>The registry path of the docker image that contains the inference algorithm. Clean Rooms ML supports both <code>registry/repository\[:tag\]</code> and <code>registry/repositry\[@digest\]</code> image path formats. For more information about using images in Clean Rooms ML, see the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AlgorithmSpecification.html#sagemaker-Type-AlgorithmSpecification-TrainingImage">Sagemaker API reference</a>.</p>
+    /// <p>The registry path of the docker image that contains the inference algorithm. Clean Rooms ML currently only supports the <code>registry/repository\[:tag\]</code> image path format. For more information about using images in Clean Rooms ML, see the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AlgorithmSpecification.html#sagemaker-Type-AlgorithmSpecification-TrainingImage">Sagemaker API reference</a>.</p>
     pub fn image_uri(&self) -> &str {
         use std::ops::Deref;
         self.image_uri.deref()
@@ -28,18 +28,18 @@ pub struct InferenceContainerConfigBuilder {
     pub(crate) image_uri: ::std::option::Option<::std::string::String>,
 }
 impl InferenceContainerConfigBuilder {
-    /// <p>The registry path of the docker image that contains the inference algorithm. Clean Rooms ML supports both <code>registry/repository\[:tag\]</code> and <code>registry/repositry\[@digest\]</code> image path formats. For more information about using images in Clean Rooms ML, see the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AlgorithmSpecification.html#sagemaker-Type-AlgorithmSpecification-TrainingImage">Sagemaker API reference</a>.</p>
+    /// <p>The registry path of the docker image that contains the inference algorithm. Clean Rooms ML currently only supports the <code>registry/repository\[:tag\]</code> image path format. For more information about using images in Clean Rooms ML, see the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AlgorithmSpecification.html#sagemaker-Type-AlgorithmSpecification-TrainingImage">Sagemaker API reference</a>.</p>
     /// This field is required.
     pub fn image_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.image_uri = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The registry path of the docker image that contains the inference algorithm. Clean Rooms ML supports both <code>registry/repository\[:tag\]</code> and <code>registry/repositry\[@digest\]</code> image path formats. For more information about using images in Clean Rooms ML, see the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AlgorithmSpecification.html#sagemaker-Type-AlgorithmSpecification-TrainingImage">Sagemaker API reference</a>.</p>
+    /// <p>The registry path of the docker image that contains the inference algorithm. Clean Rooms ML currently only supports the <code>registry/repository\[:tag\]</code> image path format. For more information about using images in Clean Rooms ML, see the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AlgorithmSpecification.html#sagemaker-Type-AlgorithmSpecification-TrainingImage">Sagemaker API reference</a>.</p>
     pub fn set_image_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.image_uri = input;
         self
     }
-    /// <p>The registry path of the docker image that contains the inference algorithm. Clean Rooms ML supports both <code>registry/repository\[:tag\]</code> and <code>registry/repositry\[@digest\]</code> image path formats. For more information about using images in Clean Rooms ML, see the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AlgorithmSpecification.html#sagemaker-Type-AlgorithmSpecification-TrainingImage">Sagemaker API reference</a>.</p>
+    /// <p>The registry path of the docker image that contains the inference algorithm. Clean Rooms ML currently only supports the <code>registry/repository\[:tag\]</code> image path format. For more information about using images in Clean Rooms ML, see the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AlgorithmSpecification.html#sagemaker-Type-AlgorithmSpecification-TrainingImage">Sagemaker API reference</a>.</p>
     pub fn get_image_uri(&self) -> &::std::option::Option<::std::string::String> {
         &self.image_uri
     }

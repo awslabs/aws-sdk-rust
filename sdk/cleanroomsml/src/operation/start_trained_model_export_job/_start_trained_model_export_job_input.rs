@@ -7,6 +7,8 @@ pub struct StartTrainedModelExportJobInput {
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the trained model that you want to export.</p>
     pub trained_model_arn: ::std::option::Option<::std::string::String>,
+    /// <p>The version identifier of the trained model to export. This specifies which version of the trained model should be exported to the specified destination.</p>
+    pub trained_model_version_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The membership ID of the member that is receiving the exported trained model artifacts.</p>
     pub membership_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The output configuration information for the trained model export job.</p>
@@ -22,6 +24,10 @@ impl StartTrainedModelExportJobInput {
     /// <p>The Amazon Resource Name (ARN) of the trained model that you want to export.</p>
     pub fn trained_model_arn(&self) -> ::std::option::Option<&str> {
         self.trained_model_arn.as_deref()
+    }
+    /// <p>The version identifier of the trained model to export. This specifies which version of the trained model should be exported to the specified destination.</p>
+    pub fn trained_model_version_identifier(&self) -> ::std::option::Option<&str> {
+        self.trained_model_version_identifier.as_deref()
     }
     /// <p>The membership ID of the member that is receiving the exported trained model artifacts.</p>
     pub fn membership_identifier(&self) -> ::std::option::Option<&str> {
@@ -49,6 +55,7 @@ impl StartTrainedModelExportJobInput {
 pub struct StartTrainedModelExportJobInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) trained_model_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) trained_model_version_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) membership_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) output_configuration: ::std::option::Option<crate::types::TrainedModelExportOutputConfiguration>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
@@ -83,6 +90,20 @@ impl StartTrainedModelExportJobInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the trained model that you want to export.</p>
     pub fn get_trained_model_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.trained_model_arn
+    }
+    /// <p>The version identifier of the trained model to export. This specifies which version of the trained model should be exported to the specified destination.</p>
+    pub fn trained_model_version_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.trained_model_version_identifier = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The version identifier of the trained model to export. This specifies which version of the trained model should be exported to the specified destination.</p>
+    pub fn set_trained_model_version_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.trained_model_version_identifier = input;
+        self
+    }
+    /// <p>The version identifier of the trained model to export. This specifies which version of the trained model should be exported to the specified destination.</p>
+    pub fn get_trained_model_version_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.trained_model_version_identifier
     }
     /// <p>The membership ID of the member that is receiving the exported trained model artifacts.</p>
     /// This field is required.
@@ -138,6 +159,7 @@ impl StartTrainedModelExportJobInputBuilder {
         ::std::result::Result::Ok(crate::operation::start_trained_model_export_job::StartTrainedModelExportJobInput {
             name: self.name,
             trained_model_arn: self.trained_model_arn,
+            trained_model_version_identifier: self.trained_model_version_identifier,
             membership_identifier: self.membership_identifier,
             output_configuration: self.output_configuration,
             description: self.description,
