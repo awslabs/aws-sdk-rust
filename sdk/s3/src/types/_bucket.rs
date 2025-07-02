@@ -10,6 +10,10 @@ pub struct Bucket {
     pub creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p><code>BucketRegion</code> indicates the Amazon Web Services region where the bucket is located. If the request contains at least one valid parameter, it is included in the response.</p>
     pub bucket_region: ::std::option::Option<::std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) of the S3 bucket. ARNs uniquely identify Amazon Web Services resources across all of Amazon Web Services.</p><note>
+    /// <p>This parameter is only supported for S3 directory buckets. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-buckets-tagging.html">Using tags with directory buckets</a>.</p>
+    /// </note>
+    pub bucket_arn: ::std::option::Option<::std::string::String>,
 }
 impl Bucket {
     /// <p>The name of the bucket.</p>
@@ -23,6 +27,12 @@ impl Bucket {
     /// <p><code>BucketRegion</code> indicates the Amazon Web Services region where the bucket is located. If the request contains at least one valid parameter, it is included in the response.</p>
     pub fn bucket_region(&self) -> ::std::option::Option<&str> {
         self.bucket_region.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the S3 bucket. ARNs uniquely identify Amazon Web Services resources across all of Amazon Web Services.</p><note>
+    /// <p>This parameter is only supported for S3 directory buckets. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-buckets-tagging.html">Using tags with directory buckets</a>.</p>
+    /// </note>
+    pub fn bucket_arn(&self) -> ::std::option::Option<&str> {
+        self.bucket_arn.as_deref()
     }
 }
 impl Bucket {
@@ -39,6 +49,7 @@ pub struct BucketBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) bucket_region: ::std::option::Option<::std::string::String>,
+    pub(crate) bucket_arn: ::std::option::Option<::std::string::String>,
 }
 impl BucketBuilder {
     /// <p>The name of the bucket.</p>
@@ -83,12 +94,33 @@ impl BucketBuilder {
     pub fn get_bucket_region(&self) -> &::std::option::Option<::std::string::String> {
         &self.bucket_region
     }
+    /// <p>The Amazon Resource Name (ARN) of the S3 bucket. ARNs uniquely identify Amazon Web Services resources across all of Amazon Web Services.</p><note>
+    /// <p>This parameter is only supported for S3 directory buckets. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-buckets-tagging.html">Using tags with directory buckets</a>.</p>
+    /// </note>
+    pub fn bucket_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.bucket_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the S3 bucket. ARNs uniquely identify Amazon Web Services resources across all of Amazon Web Services.</p><note>
+    /// <p>This parameter is only supported for S3 directory buckets. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-buckets-tagging.html">Using tags with directory buckets</a>.</p>
+    /// </note>
+    pub fn set_bucket_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.bucket_arn = input;
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the S3 bucket. ARNs uniquely identify Amazon Web Services resources across all of Amazon Web Services.</p><note>
+    /// <p>This parameter is only supported for S3 directory buckets. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-buckets-tagging.html">Using tags with directory buckets</a>.</p>
+    /// </note>
+    pub fn get_bucket_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bucket_arn
+    }
     /// Consumes the builder and constructs a [`Bucket`](crate::types::Bucket).
     pub fn build(self) -> crate::types::Bucket {
         crate::types::Bucket {
             name: self.name,
             creation_date: self.creation_date,
             bucket_region: self.bucket_region,
+            bucket_arn: self.bucket_arn,
         }
     }
 }

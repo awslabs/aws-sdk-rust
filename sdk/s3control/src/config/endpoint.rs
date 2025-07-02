@@ -3317,9 +3317,263 @@ mod test {
         assert_eq!(format!("{}", error), "S3 Snow does not support DualStack")
     }
 
-    /// Access Point APIs on express bucket routed to s3express-control
+    /// Tagging on express bucket routed to s3express-control
     #[test]
     fn test_113() {
+        let params = crate::config::endpoint::Params::builder()
+            .resource_arn("arn:aws:s3express:us-east-1:871317572157:bucket/crachlintest--use1-az4--x-s3".to_string())
+            .account_id("871317572157".to_string())
+            .region("us-east-1".to_string())
+            .requires_account_id(true)
+            .use_dual_stack(false)
+            .use_fips(false)
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://s3express-control.us-east-1.amazonaws.com");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://s3express-control.us-east-1.amazonaws.com")
+                .property(
+                    "authSchemes",
+                    vec![{
+                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
+                        out.insert("name".to_string(), "sigv4".to_string().into());
+                        out.insert("signingName".to_string(), "s3express".to_string().into());
+                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
+                        out.insert("disableDoubleEncoding".to_string(), true.into());
+                        out
+                    }
+                    .into()]
+                )
+                .build()
+        );
+    }
+
+    /// Tagging on express ap routed to s3express-control
+    #[test]
+    fn test_114() {
+        let params = crate::config::endpoint::Params::builder()
+            .resource_arn("arn:aws:s3express:us-east-1:871317572157:accesspoint/crachlintest--use1-az4--xa-s3".to_string())
+            .account_id("871317572157".to_string())
+            .region("us-east-1".to_string())
+            .requires_account_id(true)
+            .use_dual_stack(false)
+            .use_fips(false)
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://s3express-control.us-east-1.amazonaws.com");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://s3express-control.us-east-1.amazonaws.com")
+                .property(
+                    "authSchemes",
+                    vec![{
+                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
+                        out.insert("name".to_string(), "sigv4".to_string().into());
+                        out.insert("signingName".to_string(), "s3express".to_string().into());
+                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
+                        out.insert("disableDoubleEncoding".to_string(), true.into());
+                        out
+                    }
+                    .into()]
+                )
+                .build()
+        );
+    }
+
+    /// Tagging on express bucket routed to s3express-control FIPS when FIPS enabled
+    #[test]
+    fn test_115() {
+        let params = crate::config::endpoint::Params::builder()
+            .resource_arn("arn:aws:s3express:us-east-1:871317572157:bucket/crachlintest--use1-az4--x-s3".to_string())
+            .account_id("871317572157".to_string())
+            .region("us-east-1".to_string())
+            .requires_account_id(true)
+            .use_dual_stack(false)
+            .use_fips(true)
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://s3express-control-fips.us-east-1.amazonaws.com");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://s3express-control-fips.us-east-1.amazonaws.com")
+                .property(
+                    "authSchemes",
+                    vec![{
+                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
+                        out.insert("name".to_string(), "sigv4".to_string().into());
+                        out.insert("signingName".to_string(), "s3express".to_string().into());
+                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
+                        out.insert("disableDoubleEncoding".to_string(), true.into());
+                        out
+                    }
+                    .into()]
+                )
+                .build()
+        );
+    }
+
+    /// Tagging on express bucket cn routed to s3express-control china endpoint
+    #[test]
+    fn test_116() {
+        let params = crate::config::endpoint::Params::builder()
+            .resource_arn("arn:aws-cn:s3express:cn-north-1:871317572157:bucket/crachlintest--use1-az4--x-s3".to_string())
+            .account_id("871317572157".to_string())
+            .region("cn-north-1".to_string())
+            .requires_account_id(true)
+            .use_dual_stack(false)
+            .use_fips(false)
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://s3express-control.cn-north-1.amazonaws.com.cn");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://s3express-control.cn-north-1.amazonaws.com.cn")
+                .property(
+                    "authSchemes",
+                    vec![{
+                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
+                        out.insert("name".to_string(), "sigv4".to_string().into());
+                        out.insert("signingName".to_string(), "s3express".to_string().into());
+                        out.insert("signingRegion".to_string(), "cn-north-1".to_string().into());
+                        out.insert("disableDoubleEncoding".to_string(), true.into());
+                        out
+                    }
+                    .into()]
+                )
+                .build()
+        );
+    }
+
+    /// Tagging on express bucket cn routed to s3express-control china endpoint with FIPS
+    #[test]
+    fn test_117() {
+        let params = crate::config::endpoint::Params::builder()
+            .resource_arn("arn:aws-cn:s3express:cn-north-1:871317572157:bucket/crachlintest--use1-az4--x-s3".to_string())
+            .account_id("871317572157".to_string())
+            .region("cn-north-1".to_string())
+            .requires_account_id(true)
+            .use_dual_stack(false)
+            .use_fips(true)
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let error = endpoint.expect_err(
+            "expected error: Partition does not support FIPS [Tagging on express bucket cn routed to s3express-control china endpoint with FIPS]",
+        );
+        assert_eq!(format!("{}", error), "Partition does not support FIPS")
+    }
+
+    /// Tagging on express bucket with custom endpoint routed to custom endpoint
+    #[test]
+    fn test_118() {
+        let params = crate::config::endpoint::Params::builder()
+            .resource_arn("arn:aws:s3express:us-east-1:871317572157:bucket/crachlintest--use1-az4--x-s3".to_string())
+            .endpoint("https://my-endpoint.express-control.s3.aws.dev".to_string())
+            .account_id("871317572157".to_string())
+            .region("us-east-1".to_string())
+            .requires_account_id(true)
+            .use_dual_stack(false)
+            .use_fips(false)
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://my-endpoint.express-control.s3.aws.dev");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://my-endpoint.express-control.s3.aws.dev")
+                .property(
+                    "authSchemes",
+                    vec![{
+                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
+                        out.insert("name".to_string(), "sigv4".to_string().into());
+                        out.insert("signingName".to_string(), "s3express".to_string().into());
+                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
+                        out.insert("disableDoubleEncoding".to_string(), true.into());
+                        out
+                    }
+                    .into()]
+                )
+                .build()
+        );
+    }
+
+    /// Tagging on express access point with custom endpoint routed to custom endpoint
+    #[test]
+    fn test_119() {
+        let params = crate::config::endpoint::Params::builder()
+            .resource_arn("arn:aws:s3express:us-east-1:871317572157:accesspoint/crachlintest--use1-az4--xa-s3".to_string())
+            .endpoint("https://my-endpoint.express-control.s3.aws.dev".to_string())
+            .account_id("871317572157".to_string())
+            .region("us-east-1".to_string())
+            .requires_account_id(true)
+            .use_dual_stack(false)
+            .use_fips(false)
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://my-endpoint.express-control.s3.aws.dev");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://my-endpoint.express-control.s3.aws.dev")
+                .property(
+                    "authSchemes",
+                    vec![{
+                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
+                        out.insert("name".to_string(), "sigv4".to_string().into());
+                        out.insert("signingName".to_string(), "s3express".to_string().into());
+                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
+                        out.insert("disableDoubleEncoding".to_string(), true.into());
+                        out
+                    }
+                    .into()]
+                )
+                .build()
+        );
+    }
+
+    /// Tagging on express bucket with dualstack and custom endpoint fails
+    #[test]
+    fn test_120() {
+        let params = crate::config::endpoint::Params::builder()
+            .resource_arn("arn:aws:s3express:us-east-1:871317572157:bucket/crachlintest--use1-az4--x-s3".to_string())
+            .endpoint("https://my-endpoint.express-control.s3.aws.dev".to_string())
+            .account_id("871317572157".to_string())
+            .region("us-east-1".to_string())
+            .requires_account_id(true)
+            .use_dual_stack(true)
+            .use_fips(false)
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let error = endpoint.expect_err("expected error: Invalid Configuration: DualStack and custom endpoint are not supported [Tagging on express bucket with dualstack and custom endpoint fails]");
+        assert_eq!(
+            format!("{}", error),
+            "Invalid Configuration: DualStack and custom endpoint are not supported"
+        )
+    }
+
+    /// Access Point APIs on express bucket routed to s3express-control
+    #[test]
+    fn test_121() {
         let params = crate::config::endpoint::Params::builder()
             .account_id("871317572157".to_string())
             .access_point_name("myaccesspoint--abcd-ab1--xa-s3".to_string())
@@ -3354,7 +3608,7 @@ mod test {
 
     /// Access Point APIs on express bucket routed to s3express-control for List
     #[test]
-    fn test_114() {
+    fn test_122() {
         let params = crate::config::endpoint::Params::builder()
             .account_id("871317572157".to_string())
             .region("us-east-1".to_string())
@@ -3389,7 +3643,7 @@ mod test {
 
     /// Access Point APIs on express bucket routed to s3express-control for FIPS
     #[test]
-    fn test_115() {
+    fn test_123() {
         let params = crate::config::endpoint::Params::builder()
             .account_id("871317572157".to_string())
             .access_point_name("myaccesspoint--abcd-ab1--xa-s3".to_string())
@@ -3424,7 +3678,7 @@ mod test {
 
     /// Access Point APIs on express bucket routed to s3express-control for FIPS for List
     #[test]
-    fn test_116() {
+    fn test_124() {
         let params = crate::config::endpoint::Params::builder()
             .account_id("871317572157".to_string())
             .region("us-east-1".to_string())
@@ -3459,7 +3713,7 @@ mod test {
 
     /// Access Point APIs on express bucket routed to s3express-control for china region
     #[test]
-    fn test_117() {
+    fn test_125() {
         let params = crate::config::endpoint::Params::builder()
             .access_point_name("myaccesspoint--abcd-ab1--xa-s3".to_string())
             .account_id("871317572157".to_string())
@@ -3494,7 +3748,7 @@ mod test {
 
     /// Access Point APIs on express bucket routed to s3express-control for china region for List
     #[test]
-    fn test_118() {
+    fn test_126() {
         let params = crate::config::endpoint::Params::builder()
             .account_id("871317572157".to_string())
             .region("cn-north-1".to_string())
@@ -3529,7 +3783,7 @@ mod test {
 
     /// Error when Access Point APIs on express bucket routed to s3express-control for china and FIPS
     #[test]
-    fn test_119() {
+    fn test_127() {
         let params = crate::config::endpoint::Params::builder()
             .account_id("871317572157".to_string())
             .region("cn-north-1".to_string())
@@ -3546,7 +3800,7 @@ mod test {
 
     /// Error Access Point APIs on express bucket routed to s3express-control invalid zone
     #[test]
-    fn test_120() {
+    fn test_128() {
         let params = crate::config::endpoint::Params::builder()
             .access_point_name("myaccesspoint-garbage-zone--xa-s3".to_string())
             .account_id("871317572157".to_string())
@@ -3564,7 +3818,7 @@ mod test {
 
     /// Access Point APIs on express bucket routed to custom endpoint if provided
     #[test]
-    fn test_121() {
+    fn test_129() {
         let params = crate::config::endpoint::Params::builder()
             .account_id("871317572157".to_string())
             .access_point_name("myaccesspoint--abcd-ab1--xa-s3".to_string())
@@ -3600,7 +3854,7 @@ mod test {
 
     /// Access Point APIs on express bucket routed to custom endpoint if provided for List
     #[test]
-    fn test_122() {
+    fn test_130() {
         let params = crate::config::endpoint::Params::builder()
             .account_id("871317572157".to_string())
             .region("us-east-1".to_string())
@@ -3636,7 +3890,7 @@ mod test {
 
     /// Error on Access Point APIs on express bucket for dual stack
     #[test]
-    fn test_123() {
+    fn test_131() {
         let params = crate::config::endpoint::Params::builder()
             .account_id("871317572157".to_string())
             .access_point_name("myaccesspoint--abcd-ab1--xa-s3".to_string())
@@ -3655,7 +3909,7 @@ mod test {
 
     /// Error Access Point APIs on express bucket for dual stack for List
     #[test]
-    fn test_124() {
+    fn test_132() {
         let params = crate::config::endpoint::Params::builder()
             .account_id("871317572157".to_string())
             .region("us-east-1".to_string())
@@ -3674,7 +3928,7 @@ mod test {
 
     /// Error on Access Point APIs on express bucket for custom endpoint and dual stack
     #[test]
-    fn test_125() {
+    fn test_133() {
         let params = crate::config::endpoint::Params::builder()
             .account_id("871317572157".to_string())
             .access_point_name("myaccesspoint--abcd-ab1--xa-s3".to_string())
@@ -3696,7 +3950,7 @@ mod test {
 
     /// Error Access Point APIs on express bucket for custom endpoint and dual stack for List
     #[test]
-    fn test_126() {
+    fn test_134() {
         let params = crate::config::endpoint::Params::builder()
             .account_id("871317572157".to_string())
             .region("us-east-1".to_string())
@@ -3807,6 +4061,8 @@ pub struct Params {
     pub(crate) access_point_name: ::std::option::Option<::std::string::String>,
     /// When an Access Point ARN is provided and this flag is enabled, the SDK MUST use the ARN's region when constructing the endpoint instead of the client's configured region.
     pub(crate) use_arn_region: ::std::option::Option<bool>,
+    /// The resource ARN included in the request.  Only set on TagResource, UntagResourceand ListTagsForResource
+    pub(crate) resource_arn: ::std::option::Option<::std::string::String>,
     /// Internal parameter to indicate whether S3Express operation should use control plane, (ex. ListDirectoryAccessPoints)
     pub(crate) use_s3_express_control_endpoint: ::std::option::Option<bool>,
 }
@@ -3855,6 +4111,10 @@ impl Params {
     pub fn use_arn_region(&self) -> ::std::option::Option<bool> {
         self.use_arn_region
     }
+    /// The resource ARN included in the request.  Only set on TagResource, UntagResourceand ListTagsForResource
+    pub fn resource_arn(&self) -> ::std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
     /// Internal parameter to indicate whether S3Express operation should use control plane, (ex. ListDirectoryAccessPoints)
     pub fn use_s3_express_control_endpoint(&self) -> ::std::option::Option<bool> {
         self.use_s3_express_control_endpoint
@@ -3874,6 +4134,7 @@ pub struct ParamsBuilder {
     bucket: ::std::option::Option<::std::string::String>,
     access_point_name: ::std::option::Option<::std::string::String>,
     use_arn_region: ::std::option::Option<bool>,
+    resource_arn: ::std::option::Option<::std::string::String>,
     use_s3_express_control_endpoint: ::std::option::Option<bool>,
 }
 impl ParamsBuilder {
@@ -3898,6 +4159,7 @@ impl ParamsBuilder {
                 bucket: self.bucket,
                 access_point_name: self.access_point_name,
                 use_arn_region: self.use_arn_region,
+                resource_arn: self.resource_arn,
                 use_s3_express_control_endpoint: self.use_s3_express_control_endpoint,
             },
         )
@@ -4054,6 +4316,21 @@ impl ParamsBuilder {
     /// When an Access Point ARN is provided and this flag is enabled, the SDK MUST use the ARN's region when constructing the endpoint instead of the client's configured region.
     pub fn set_use_arn_region(mut self, param: Option<bool>) -> Self {
         self.use_arn_region = param;
+        self
+    }
+    /// Sets the value for resource_arn
+    ///
+    /// The resource ARN included in the request.  Only set on TagResource, UntagResourceand ListTagsForResource
+    pub fn resource_arn(mut self, value: impl Into<::std::string::String>) -> Self {
+        self.resource_arn = Some(value.into());
+        self
+    }
+
+    /// Sets the value for resource_arn
+    ///
+    /// The resource ARN included in the request.  Only set on TagResource, UntagResourceand ListTagsForResource
+    pub fn set_resource_arn(mut self, param: Option<::std::string::String>) -> Self {
+        self.resource_arn = param;
         self
     }
     /// Sets the value for use_s3_express_control_endpoint

@@ -47,6 +47,19 @@ pub fn de_bucket(
                 builder = builder.set_bucket_region(var_3);
             }
             ,
+            s if s.matches("BucketArn") /* BucketArn com.amazonaws.s3#Bucket$BucketArn */ =>  {
+                let var_4 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_bucket_arn(var_4);
+            }
+            ,
             _ => {}
         }
     }

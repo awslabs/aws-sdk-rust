@@ -253,6 +253,13 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ListTagsForRe
                     .filter(|f| !AsRef::<str>::as_ref(f).trim().is_empty())
                     .ok_or_else(|| ::aws_smithy_types::error::operation::BuildError::missing_field("account_id", "A required field was not set"))?,
             ))
+            .set_resource_arn(Some(
+                _input
+                    .resource_arn
+                    .clone()
+                    .filter(|f| !AsRef::<str>::as_ref(f).trim().is_empty())
+                    .ok_or_else(|| ::aws_smithy_types::error::operation::BuildError::missing_field("resource_arn", "A required field was not set"))?,
+            ))
             .build()
             .map_err(|err| {
                 ::aws_smithy_runtime_api::client::interceptors::error::ContextAttachedError::new("endpoint params could not be built", err)

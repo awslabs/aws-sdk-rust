@@ -15,6 +15,13 @@ pub(crate) fn de_access_point_alias_header(
     }
 }
 
+pub(crate) fn de_bucket_arn_header(
+    header_map: &::aws_smithy_runtime_api::http::Headers,
+) -> ::std::result::Result<::std::option::Option<::std::string::String>, ::aws_smithy_http::header::ParseError> {
+    let headers = header_map.get_all("x-amz-bucket-arn");
+    ::aws_smithy_http::header::one_or_none(headers)
+}
+
 pub(crate) fn de_bucket_location_name_header(
     header_map: &::aws_smithy_runtime_api::http::Headers,
 ) -> ::std::result::Result<::std::option::Option<::std::string::String>, ::aws_smithy_http::header::ParseError> {

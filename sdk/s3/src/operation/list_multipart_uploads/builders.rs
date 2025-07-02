@@ -199,7 +199,8 @@ impl ListMultipartUploadsFluentBuilder {
         self.inner.get_bucket()
     }
     /// <p>Character you use to group keys.</p>
-    /// <p>All keys that contain the same string between the prefix, if specified, and the first occurrence of the delimiter after the prefix are grouped under a single result element, <code>CommonPrefixes</code>. If you don't specify the prefix parameter, then the substring starts at the beginning of the key. The keys that are grouped under <code>CommonPrefixes</code> result element are not returned elsewhere in the response.</p><note>
+    /// <p>All keys that contain the same string between the prefix, if specified, and the first occurrence of the delimiter after the prefix are grouped under a single result element, <code>CommonPrefixes</code>. If you don't specify the prefix parameter, then the substring starts at the beginning of the key. The keys that are grouped under <code>CommonPrefixes</code> result element are not returned elsewhere in the response.</p>
+    /// <p><code>CommonPrefixes</code> is filtered out from results if it is not lexicographically greater than the key-marker.</p><note>
     /// <p><b>Directory buckets</b> - For directory buckets, <code>/</code> is the only supported delimiter.</p>
     /// </note>
     pub fn delimiter(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -207,7 +208,8 @@ impl ListMultipartUploadsFluentBuilder {
         self
     }
     /// <p>Character you use to group keys.</p>
-    /// <p>All keys that contain the same string between the prefix, if specified, and the first occurrence of the delimiter after the prefix are grouped under a single result element, <code>CommonPrefixes</code>. If you don't specify the prefix parameter, then the substring starts at the beginning of the key. The keys that are grouped under <code>CommonPrefixes</code> result element are not returned elsewhere in the response.</p><note>
+    /// <p>All keys that contain the same string between the prefix, if specified, and the first occurrence of the delimiter after the prefix are grouped under a single result element, <code>CommonPrefixes</code>. If you don't specify the prefix parameter, then the substring starts at the beginning of the key. The keys that are grouped under <code>CommonPrefixes</code> result element are not returned elsewhere in the response.</p>
+    /// <p><code>CommonPrefixes</code> is filtered out from results if it is not lexicographically greater than the key-marker.</p><note>
     /// <p><b>Directory buckets</b> - For directory buckets, <code>/</code> is the only supported delimiter.</p>
     /// </note>
     pub fn set_delimiter(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -215,7 +217,8 @@ impl ListMultipartUploadsFluentBuilder {
         self
     }
     /// <p>Character you use to group keys.</p>
-    /// <p>All keys that contain the same string between the prefix, if specified, and the first occurrence of the delimiter after the prefix are grouped under a single result element, <code>CommonPrefixes</code>. If you don't specify the prefix parameter, then the substring starts at the beginning of the key. The keys that are grouped under <code>CommonPrefixes</code> result element are not returned elsewhere in the response.</p><note>
+    /// <p>All keys that contain the same string between the prefix, if specified, and the first occurrence of the delimiter after the prefix are grouped under a single result element, <code>CommonPrefixes</code>. If you don't specify the prefix parameter, then the substring starts at the beginning of the key. The keys that are grouped under <code>CommonPrefixes</code> result element are not returned elsewhere in the response.</p>
+    /// <p><code>CommonPrefixes</code> is filtered out from results if it is not lexicographically greater than the key-marker.</p><note>
     /// <p><b>Directory buckets</b> - For directory buckets, <code>/</code> is the only supported delimiter.</p>
     /// </note>
     pub fn get_delimiter(&self) -> &::std::option::Option<::std::string::String> {

@@ -5,7 +5,7 @@
 pub struct UntagResourceInput {
     /// <p>The Amazon Web Services account ID that owns the resource that you're trying to remove the tags from.</p>
     pub account_id: ::std::option::Option<::std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the S3 resource that you're trying to remove the tags from.</p>
+    /// <p>The Amazon Resource Name (ARN) of the S3 resource that you're removing tags from. The tagged resource can be a directory bucket, S3 Storage Lens group or S3 Access Grants instance, registered location, or grant.</p>
     pub resource_arn: ::std::option::Option<::std::string::String>,
     /// <p>The array of tag key-value pairs that you're trying to remove from of the S3 resource.</p>
     pub tag_keys: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -15,7 +15,7 @@ impl UntagResourceInput {
     pub fn account_id(&self) -> ::std::option::Option<&str> {
         self.account_id.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the S3 resource that you're trying to remove the tags from.</p>
+    /// <p>The Amazon Resource Name (ARN) of the S3 resource that you're removing tags from. The tagged resource can be a directory bucket, S3 Storage Lens group or S3 Access Grants instance, registered location, or grant.</p>
     pub fn resource_arn(&self) -> ::std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
@@ -57,18 +57,18 @@ impl UntagResourceInputBuilder {
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.account_id
     }
-    /// <p>The Amazon Resource Name (ARN) of the S3 resource that you're trying to remove the tags from.</p>
+    /// <p>The Amazon Resource Name (ARN) of the S3 resource that you're removing tags from. The tagged resource can be a directory bucket, S3 Storage Lens group or S3 Access Grants instance, registered location, or grant.</p>
     /// This field is required.
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the S3 resource that you're trying to remove the tags from.</p>
+    /// <p>The Amazon Resource Name (ARN) of the S3 resource that you're removing tags from. The tagged resource can be a directory bucket, S3 Storage Lens group or S3 Access Grants instance, registered location, or grant.</p>
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the S3 resource that you're trying to remove the tags from.</p>
+    /// <p>The Amazon Resource Name (ARN) of the S3 resource that you're removing tags from. The tagged resource can be a directory bucket, S3 Storage Lens group or S3 Access Grants instance, registered location, or grant.</p>
     pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_arn
     }

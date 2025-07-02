@@ -145,16 +145,19 @@ impl ListObjectVersionsFluentBuilder {
         self.inner.get_bucket()
     }
     /// <p>A delimiter is a character that you specify to group keys. All keys that contain the same string between the <code>prefix</code> and the first occurrence of the delimiter are grouped under a single result element in <code>CommonPrefixes</code>. These groups are counted as one result against the <code>max-keys</code> limitation. These keys are not returned elsewhere in the response.</p>
+    /// <p><code>CommonPrefixes</code> is filtered out from results if it is not lexicographically greater than the key-marker.</p>
     pub fn delimiter(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.delimiter(input.into());
         self
     }
     /// <p>A delimiter is a character that you specify to group keys. All keys that contain the same string between the <code>prefix</code> and the first occurrence of the delimiter are grouped under a single result element in <code>CommonPrefixes</code>. These groups are counted as one result against the <code>max-keys</code> limitation. These keys are not returned elsewhere in the response.</p>
+    /// <p><code>CommonPrefixes</code> is filtered out from results if it is not lexicographically greater than the key-marker.</p>
     pub fn set_delimiter(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_delimiter(input);
         self
     }
     /// <p>A delimiter is a character that you specify to group keys. All keys that contain the same string between the <code>prefix</code> and the first occurrence of the delimiter are grouped under a single result element in <code>CommonPrefixes</code>. These groups are counted as one result against the <code>max-keys</code> limitation. These keys are not returned elsewhere in the response.</p>
+    /// <p><code>CommonPrefixes</code> is filtered out from results if it is not lexicographically greater than the key-marker.</p>
     pub fn get_delimiter(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_delimiter()
     }

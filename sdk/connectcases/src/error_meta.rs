@@ -356,6 +356,32 @@ impl From<crate::operation::create_template::CreateTemplateError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_case::DeleteCaseError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_case::DeleteCaseError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_case::DeleteCaseError> for Error {
+    fn from(err: crate::operation::delete_case::DeleteCaseError) -> Self {
+        match err {
+            crate::operation::delete_case::DeleteCaseError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::delete_case::DeleteCaseError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::delete_case::DeleteCaseError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::delete_case::DeleteCaseError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::delete_case::DeleteCaseError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::delete_case::DeleteCaseError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_case_rule::DeleteCaseRuleError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -461,6 +487,34 @@ impl From<crate::operation::delete_layout::DeleteLayoutError> for Error {
             crate::operation::delete_layout::DeleteLayoutError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::delete_layout::DeleteLayoutError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::delete_layout::DeleteLayoutError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_related_item::DeleteRelatedItemError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_related_item::DeleteRelatedItemError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_related_item::DeleteRelatedItemError> for Error {
+    fn from(err: crate::operation::delete_related_item::DeleteRelatedItemError) -> Self {
+        match err {
+            crate::operation::delete_related_item::DeleteRelatedItemError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::delete_related_item::DeleteRelatedItemError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::delete_related_item::DeleteRelatedItemError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::delete_related_item::DeleteRelatedItemError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::delete_related_item::DeleteRelatedItemError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::delete_related_item::DeleteRelatedItemError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

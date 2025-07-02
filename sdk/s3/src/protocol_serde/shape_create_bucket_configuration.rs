@@ -17,6 +17,15 @@ pub fn ser_create_bucket_configuration(
         let inner_writer = scope.start_el("Bucket");
         crate::protocol_serde::shape_bucket_info::ser_bucket_info(var_3, inner_writer)?
     }
+    if let Some(var_4) = &input.tags {
+        let mut inner_writer = scope.start_el("Tags").finish();
+        for list_item_5 in var_4 {
+            {
+                let inner_writer = inner_writer.start_el("Tag");
+                crate::protocol_serde::shape_tag::ser_tag(list_item_5, inner_writer)?
+            }
+        }
+    }
     scope.finish();
     Ok(())
 }

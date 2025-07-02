@@ -9,7 +9,8 @@ pub struct ListObjectsV2Input {
     /// </note>
     /// <p><b>S3 on Outposts</b> - When you use this action with S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <code> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>. When you use this action with S3 on Outposts, the destination bucket must be the Outposts access point ARN or the access point alias. For more information about S3 on Outposts, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub bucket: ::std::option::Option<::std::string::String>,
-    /// <p>A delimiter is a character that you use to group keys.</p><note>
+    /// <p>A delimiter is a character that you use to group keys.</p>
+    /// <p><code>CommonPrefixes</code> is filtered out from results if it is not lexicographically greater than the <code>StartAfter</code> value.</p><note>
     /// <ul>
     /// <li>
     /// <p><b>Directory buckets</b> - For directory buckets, <code>/</code> is the only supported delimiter.</p></li>
@@ -58,7 +59,8 @@ impl ListObjectsV2Input {
     pub fn bucket(&self) -> ::std::option::Option<&str> {
         self.bucket.as_deref()
     }
-    /// <p>A delimiter is a character that you use to group keys.</p><note>
+    /// <p>A delimiter is a character that you use to group keys.</p>
+    /// <p><code>CommonPrefixes</code> is filtered out from results if it is not lexicographically greater than the <code>StartAfter</code> value.</p><note>
     /// <ul>
     /// <li>
     /// <p><b>Directory buckets</b> - For directory buckets, <code>/</code> is the only supported delimiter.</p></li>
@@ -171,7 +173,8 @@ impl ListObjectsV2InputBuilder {
     pub fn get_bucket(&self) -> &::std::option::Option<::std::string::String> {
         &self.bucket
     }
-    /// <p>A delimiter is a character that you use to group keys.</p><note>
+    /// <p>A delimiter is a character that you use to group keys.</p>
+    /// <p><code>CommonPrefixes</code> is filtered out from results if it is not lexicographically greater than the <code>StartAfter</code> value.</p><note>
     /// <ul>
     /// <li>
     /// <p><b>Directory buckets</b> - For directory buckets, <code>/</code> is the only supported delimiter.</p></li>
@@ -183,7 +186,8 @@ impl ListObjectsV2InputBuilder {
         self.delimiter = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A delimiter is a character that you use to group keys.</p><note>
+    /// <p>A delimiter is a character that you use to group keys.</p>
+    /// <p><code>CommonPrefixes</code> is filtered out from results if it is not lexicographically greater than the <code>StartAfter</code> value.</p><note>
     /// <ul>
     /// <li>
     /// <p><b>Directory buckets</b> - For directory buckets, <code>/</code> is the only supported delimiter.</p></li>
@@ -195,7 +199,8 @@ impl ListObjectsV2InputBuilder {
         self.delimiter = input;
         self
     }
-    /// <p>A delimiter is a character that you use to group keys.</p><note>
+    /// <p>A delimiter is a character that you use to group keys.</p>
+    /// <p><code>CommonPrefixes</code> is filtered out from results if it is not lexicographically greater than the <code>StartAfter</code> value.</p><note>
     /// <ul>
     /// <li>
     /// <p><b>Directory buckets</b> - For directory buckets, <code>/</code> is the only supported delimiter.</p></li>

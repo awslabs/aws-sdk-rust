@@ -19,7 +19,7 @@ pub struct CreateCustomerGatewayInput {
     /// <p>A name for the customer gateway device.</p>
     /// <p>Length Constraints: Up to 255 characters.</p>
     pub device_name: ::std::option::Option<::std::string::String>,
-    /// <p>IPv4 address for the customer gateway device's outside interface. The address must be static. If <code>OutsideIpAddressType</code> in your VPN connection options is set to <code>PrivateIpv4</code>, you can use an RFC6598 or RFC1918 private IPv4 address. If <code>OutsideIpAddressType</code> is set to <code>PublicIpv4</code>, you can use a public IPv4 address.</p>
+    /// <p>The IP address for the customer gateway device's outside interface. The address must be static. If <code>OutsideIpAddressType</code> in your VPN connection options is set to <code>PrivateIpv4</code>, you can use an RFC6598 or RFC1918 private IPv4 address. If <code>OutsideIpAddressType</code> is set to <code>Ipv6</code>, you can use an IPv6 address.</p>
     pub ip_address: ::std::option::Option<::std::string::String>,
     /// <p>For customer gateway devices that support BGP, specify the device's ASN. You must specify either <code>BgpAsn</code> or <code>BgpAsnExtended</code> when creating the customer gateway. If the ASN is larger than <code>2,147,483,647</code>, you must use <code>BgpAsnExtended</code>.</p>
     /// <p>Valid values: <code>2,147,483,648</code> to <code>4,294,967,295</code></p>
@@ -57,7 +57,7 @@ impl CreateCustomerGatewayInput {
     pub fn device_name(&self) -> ::std::option::Option<&str> {
         self.device_name.as_deref()
     }
-    /// <p>IPv4 address for the customer gateway device's outside interface. The address must be static. If <code>OutsideIpAddressType</code> in your VPN connection options is set to <code>PrivateIpv4</code>, you can use an RFC6598 or RFC1918 private IPv4 address. If <code>OutsideIpAddressType</code> is set to <code>PublicIpv4</code>, you can use a public IPv4 address.</p>
+    /// <p>The IP address for the customer gateway device's outside interface. The address must be static. If <code>OutsideIpAddressType</code> in your VPN connection options is set to <code>PrivateIpv4</code>, you can use an RFC6598 or RFC1918 private IPv4 address. If <code>OutsideIpAddressType</code> is set to <code>Ipv6</code>, you can use an IPv6 address.</p>
     pub fn ip_address(&self) -> ::std::option::Option<&str> {
         self.ip_address.as_deref()
     }
@@ -193,17 +193,17 @@ impl CreateCustomerGatewayInputBuilder {
     pub fn get_device_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.device_name
     }
-    /// <p>IPv4 address for the customer gateway device's outside interface. The address must be static. If <code>OutsideIpAddressType</code> in your VPN connection options is set to <code>PrivateIpv4</code>, you can use an RFC6598 or RFC1918 private IPv4 address. If <code>OutsideIpAddressType</code> is set to <code>PublicIpv4</code>, you can use a public IPv4 address.</p>
+    /// <p>The IP address for the customer gateway device's outside interface. The address must be static. If <code>OutsideIpAddressType</code> in your VPN connection options is set to <code>PrivateIpv4</code>, you can use an RFC6598 or RFC1918 private IPv4 address. If <code>OutsideIpAddressType</code> is set to <code>Ipv6</code>, you can use an IPv6 address.</p>
     pub fn ip_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ip_address = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>IPv4 address for the customer gateway device's outside interface. The address must be static. If <code>OutsideIpAddressType</code> in your VPN connection options is set to <code>PrivateIpv4</code>, you can use an RFC6598 or RFC1918 private IPv4 address. If <code>OutsideIpAddressType</code> is set to <code>PublicIpv4</code>, you can use a public IPv4 address.</p>
+    /// <p>The IP address for the customer gateway device's outside interface. The address must be static. If <code>OutsideIpAddressType</code> in your VPN connection options is set to <code>PrivateIpv4</code>, you can use an RFC6598 or RFC1918 private IPv4 address. If <code>OutsideIpAddressType</code> is set to <code>Ipv6</code>, you can use an IPv6 address.</p>
     pub fn set_ip_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ip_address = input;
         self
     }
-    /// <p>IPv4 address for the customer gateway device's outside interface. The address must be static. If <code>OutsideIpAddressType</code> in your VPN connection options is set to <code>PrivateIpv4</code>, you can use an RFC6598 or RFC1918 private IPv4 address. If <code>OutsideIpAddressType</code> is set to <code>PublicIpv4</code>, you can use a public IPv4 address.</p>
+    /// <p>The IP address for the customer gateway device's outside interface. The address must be static. If <code>OutsideIpAddressType</code> in your VPN connection options is set to <code>PrivateIpv4</code>, you can use an RFC6598 or RFC1918 private IPv4 address. If <code>OutsideIpAddressType</code> is set to <code>Ipv6</code>, you can use an IPv6 address.</p>
     pub fn get_ip_address(&self) -> &::std::option::Option<::std::string::String> {
         &self.ip_address
     }

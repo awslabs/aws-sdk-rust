@@ -5,6 +5,10 @@
 pub struct CreateBucketOutput {
     /// <p>A forward slash followed by the name of the bucket.</p>
     pub location: ::std::option::Option<::std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) of the S3 bucket. ARNs uniquely identify Amazon Web Services resources across all of Amazon Web Services.</p><note>
+    /// <p>This parameter is only supported for S3 directory buckets. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-buckets-tagging.html">Using tags with directory buckets</a>.</p>
+    /// </note>
+    pub bucket_arn: ::std::option::Option<::std::string::String>,
     _extended_request_id: Option<String>,
     _request_id: Option<String>,
 }
@@ -12,6 +16,12 @@ impl CreateBucketOutput {
     /// <p>A forward slash followed by the name of the bucket.</p>
     pub fn location(&self) -> ::std::option::Option<&str> {
         self.location.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the S3 bucket. ARNs uniquely identify Amazon Web Services resources across all of Amazon Web Services.</p><note>
+    /// <p>This parameter is only supported for S3 directory buckets. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-buckets-tagging.html">Using tags with directory buckets</a>.</p>
+    /// </note>
+    pub fn bucket_arn(&self) -> ::std::option::Option<&str> {
+        self.bucket_arn.as_deref()
     }
 }
 impl crate::s3_request_id::RequestIdExt for CreateBucketOutput {
@@ -36,6 +46,7 @@ impl CreateBucketOutput {
 #[non_exhaustive]
 pub struct CreateBucketOutputBuilder {
     pub(crate) location: ::std::option::Option<::std::string::String>,
+    pub(crate) bucket_arn: ::std::option::Option<::std::string::String>,
     _extended_request_id: Option<String>,
     _request_id: Option<String>,
 }
@@ -53,6 +64,26 @@ impl CreateBucketOutputBuilder {
     /// <p>A forward slash followed by the name of the bucket.</p>
     pub fn get_location(&self) -> &::std::option::Option<::std::string::String> {
         &self.location
+    }
+    /// <p>The Amazon Resource Name (ARN) of the S3 bucket. ARNs uniquely identify Amazon Web Services resources across all of Amazon Web Services.</p><note>
+    /// <p>This parameter is only supported for S3 directory buckets. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-buckets-tagging.html">Using tags with directory buckets</a>.</p>
+    /// </note>
+    pub fn bucket_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.bucket_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the S3 bucket. ARNs uniquely identify Amazon Web Services resources across all of Amazon Web Services.</p><note>
+    /// <p>This parameter is only supported for S3 directory buckets. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-buckets-tagging.html">Using tags with directory buckets</a>.</p>
+    /// </note>
+    pub fn set_bucket_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.bucket_arn = input;
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the S3 bucket. ARNs uniquely identify Amazon Web Services resources across all of Amazon Web Services.</p><note>
+    /// <p>This parameter is only supported for S3 directory buckets. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-buckets-tagging.html">Using tags with directory buckets</a>.</p>
+    /// </note>
+    pub fn get_bucket_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bucket_arn
     }
     pub(crate) fn _extended_request_id(mut self, extended_request_id: impl Into<String>) -> Self {
         self._extended_request_id = Some(extended_request_id.into());
@@ -76,6 +107,7 @@ impl CreateBucketOutputBuilder {
     pub fn build(self) -> crate::operation::create_bucket::CreateBucketOutput {
         crate::operation::create_bucket::CreateBucketOutput {
             location: self.location,
+            bucket_arn: self.bucket_arn,
             _extended_request_id: self._extended_request_id,
             _request_id: self._request_id,
         }

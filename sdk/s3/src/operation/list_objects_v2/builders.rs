@@ -190,7 +190,8 @@ impl ListObjectsV2FluentBuilder {
     pub fn get_bucket(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_bucket()
     }
-    /// <p>A delimiter is a character that you use to group keys.</p><note>
+    /// <p>A delimiter is a character that you use to group keys.</p>
+    /// <p><code>CommonPrefixes</code> is filtered out from results if it is not lexicographically greater than the <code>StartAfter</code> value.</p><note>
     /// <ul>
     /// <li>
     /// <p><b>Directory buckets</b> - For directory buckets, <code>/</code> is the only supported delimiter.</p></li>
@@ -202,7 +203,8 @@ impl ListObjectsV2FluentBuilder {
         self.inner = self.inner.delimiter(input.into());
         self
     }
-    /// <p>A delimiter is a character that you use to group keys.</p><note>
+    /// <p>A delimiter is a character that you use to group keys.</p>
+    /// <p><code>CommonPrefixes</code> is filtered out from results if it is not lexicographically greater than the <code>StartAfter</code> value.</p><note>
     /// <ul>
     /// <li>
     /// <p><b>Directory buckets</b> - For directory buckets, <code>/</code> is the only supported delimiter.</p></li>
@@ -214,7 +216,8 @@ impl ListObjectsV2FluentBuilder {
         self.inner = self.inner.set_delimiter(input);
         self
     }
-    /// <p>A delimiter is a character that you use to group keys.</p><note>
+    /// <p>A delimiter is a character that you use to group keys.</p>
+    /// <p><code>CommonPrefixes</code> is filtered out from results if it is not lexicographically greater than the <code>StartAfter</code> value.</p><note>
     /// <ul>
     /// <li>
     /// <p><b>Directory buckets</b> - For directory buckets, <code>/</code> is the only supported delimiter.</p></li>

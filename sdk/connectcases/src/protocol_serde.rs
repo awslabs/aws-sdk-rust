@@ -43,6 +43,8 @@ pub(crate) mod shape_create_related_item;
 
 pub(crate) mod shape_create_template;
 
+pub(crate) mod shape_delete_case;
+
 pub(crate) mod shape_delete_case_rule;
 
 pub(crate) mod shape_delete_domain;
@@ -50,6 +52,8 @@ pub(crate) mod shape_delete_domain;
 pub(crate) mod shape_delete_field;
 
 pub(crate) mod shape_delete_layout;
+
+pub(crate) mod shape_delete_related_item;
 
 pub(crate) mod shape_delete_template;
 

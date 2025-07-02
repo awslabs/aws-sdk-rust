@@ -2976,7 +2976,881 @@ async fn operation_input_test_put_bucket_versioning_85() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_create_access_point_86() {
+async fn operation_input_test_tag_resource_86() {
+    /* documentation: Tagging on express bucket routed to s3express-control */
+    /* builtIns: {
+        "AWS::Region": "us-east-1"
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_s3control::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
+        builder.build()
+    };
+    let client = aws_sdk_s3control::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .tag_resource()
+            .set_resource_arn(::std::option::Option::Some(
+                "arn:aws:s3express:us-east-1:871317572157:bucket/crachlintest--use1-az4--x-s3".to_owned()
+            ))
+            .set_account_id(::std::option::Option::Some("871317572157".to_owned()))
+            .set_tags(::std::option::Option::Some(vec![]))
+            .send()
+            .await
+    );
+    let req = rcvr.expect_request();
+    let uri = req.uri().to_string();
+    assert!(
+        uri.starts_with("https://s3express-control.us-east-1.amazonaws.com"),
+        "expected URI to start with `https://s3express-control.us-east-1.amazonaws.com` but it was `{}`",
+        uri
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_untag_resource_87() {
+    /* documentation: Tagging on express bucket routed to s3express-control */
+    /* builtIns: {
+        "AWS::Region": "us-east-1"
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_s3control::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
+        builder.build()
+    };
+    let client = aws_sdk_s3control::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .untag_resource()
+            .set_resource_arn(::std::option::Option::Some(
+                "arn:aws:s3express:us-east-1:871317572157:bucket/crachlintest--use1-az4--x-s3".to_owned()
+            ))
+            .set_account_id(::std::option::Option::Some("871317572157".to_owned()))
+            .set_tag_keys(::std::option::Option::Some(vec![]))
+            .send()
+            .await
+    );
+    let req = rcvr.expect_request();
+    let uri = req.uri().to_string();
+    assert!(
+        uri.starts_with("https://s3express-control.us-east-1.amazonaws.com"),
+        "expected URI to start with `https://s3express-control.us-east-1.amazonaws.com` but it was `{}`",
+        uri
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_list_tags_for_resource_88() {
+    /* documentation: Tagging on express bucket routed to s3express-control */
+    /* builtIns: {
+        "AWS::Region": "us-east-1"
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_s3control::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
+        builder.build()
+    };
+    let client = aws_sdk_s3control::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .list_tags_for_resource()
+            .set_resource_arn(::std::option::Option::Some(
+                "arn:aws:s3express:us-east-1:871317572157:bucket/crachlintest--use1-az4--x-s3".to_owned()
+            ))
+            .set_account_id(::std::option::Option::Some("871317572157".to_owned()))
+            .send()
+            .await
+    );
+    let req = rcvr.expect_request();
+    let uri = req.uri().to_string();
+    assert!(
+        uri.starts_with("https://s3express-control.us-east-1.amazonaws.com"),
+        "expected URI to start with `https://s3express-control.us-east-1.amazonaws.com` but it was `{}`",
+        uri
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_tag_resource_89() {
+    /* documentation: Tagging on express ap routed to s3express-control */
+    /* builtIns: {
+        "AWS::Region": "us-east-1"
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_s3control::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
+        builder.build()
+    };
+    let client = aws_sdk_s3control::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .tag_resource()
+            .set_resource_arn(::std::option::Option::Some(
+                "arn:aws:s3express:us-east-1:871317572157:accesspoint/crachlintest--use1-az4--xa-s3".to_owned()
+            ))
+            .set_account_id(::std::option::Option::Some("871317572157".to_owned()))
+            .set_tags(::std::option::Option::Some(vec![]))
+            .send()
+            .await
+    );
+    let req = rcvr.expect_request();
+    let uri = req.uri().to_string();
+    assert!(
+        uri.starts_with("https://s3express-control.us-east-1.amazonaws.com"),
+        "expected URI to start with `https://s3express-control.us-east-1.amazonaws.com` but it was `{}`",
+        uri
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_untag_resource_90() {
+    /* documentation: Tagging on express ap routed to s3express-control */
+    /* builtIns: {
+        "AWS::Region": "us-east-1"
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_s3control::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
+        builder.build()
+    };
+    let client = aws_sdk_s3control::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .untag_resource()
+            .set_resource_arn(::std::option::Option::Some(
+                "arn:aws:s3express:us-east-1:871317572157:accesspoint/crachlintest--use1-az4--xa-s3".to_owned()
+            ))
+            .set_account_id(::std::option::Option::Some("871317572157".to_owned()))
+            .set_tag_keys(::std::option::Option::Some(vec![]))
+            .send()
+            .await
+    );
+    let req = rcvr.expect_request();
+    let uri = req.uri().to_string();
+    assert!(
+        uri.starts_with("https://s3express-control.us-east-1.amazonaws.com"),
+        "expected URI to start with `https://s3express-control.us-east-1.amazonaws.com` but it was `{}`",
+        uri
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_list_tags_for_resource_91() {
+    /* documentation: Tagging on express ap routed to s3express-control */
+    /* builtIns: {
+        "AWS::Region": "us-east-1"
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_s3control::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
+        builder.build()
+    };
+    let client = aws_sdk_s3control::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .list_tags_for_resource()
+            .set_resource_arn(::std::option::Option::Some(
+                "arn:aws:s3express:us-east-1:871317572157:accesspoint/crachlintest--use1-az4--xa-s3".to_owned()
+            ))
+            .set_account_id(::std::option::Option::Some("871317572157".to_owned()))
+            .send()
+            .await
+    );
+    let req = rcvr.expect_request();
+    let uri = req.uri().to_string();
+    assert!(
+        uri.starts_with("https://s3express-control.us-east-1.amazonaws.com"),
+        "expected URI to start with `https://s3express-control.us-east-1.amazonaws.com` but it was `{}`",
+        uri
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_tag_resource_92() {
+    /* documentation: Tagging on express bucket routed to s3express-control FIPS when FIPS enabled */
+    /* builtIns: {
+        "AWS::Region": "us-east-1",
+        "AWS::UseFIPS": true
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_s3control::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
+        let builder = builder.use_fips(true);
+        builder.build()
+    };
+    let client = aws_sdk_s3control::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .tag_resource()
+            .set_resource_arn(::std::option::Option::Some(
+                "arn:aws:s3express:us-east-1:871317572157:bucket/crachlintest--use1-az4--x-s3".to_owned()
+            ))
+            .set_account_id(::std::option::Option::Some("871317572157".to_owned()))
+            .set_tags(::std::option::Option::Some(vec![]))
+            .send()
+            .await
+    );
+    let req = rcvr.expect_request();
+    let uri = req.uri().to_string();
+    assert!(
+        uri.starts_with("https://s3express-control-fips.us-east-1.amazonaws.com"),
+        "expected URI to start with `https://s3express-control-fips.us-east-1.amazonaws.com` but it was `{}`",
+        uri
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_untag_resource_93() {
+    /* documentation: Tagging on express bucket routed to s3express-control FIPS when FIPS enabled */
+    /* builtIns: {
+        "AWS::Region": "us-east-1",
+        "AWS::UseFIPS": true
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_s3control::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
+        let builder = builder.use_fips(true);
+        builder.build()
+    };
+    let client = aws_sdk_s3control::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .untag_resource()
+            .set_resource_arn(::std::option::Option::Some(
+                "arn:aws:s3express:us-east-1:871317572157:bucket/crachlintest--use1-az4--x-s3".to_owned()
+            ))
+            .set_account_id(::std::option::Option::Some("871317572157".to_owned()))
+            .set_tag_keys(::std::option::Option::Some(vec![]))
+            .send()
+            .await
+    );
+    let req = rcvr.expect_request();
+    let uri = req.uri().to_string();
+    assert!(
+        uri.starts_with("https://s3express-control-fips.us-east-1.amazonaws.com"),
+        "expected URI to start with `https://s3express-control-fips.us-east-1.amazonaws.com` but it was `{}`",
+        uri
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_list_tags_for_resource_94() {
+    /* documentation: Tagging on express bucket routed to s3express-control FIPS when FIPS enabled */
+    /* builtIns: {
+        "AWS::Region": "us-east-1",
+        "AWS::UseFIPS": true
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_s3control::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
+        let builder = builder.use_fips(true);
+        builder.build()
+    };
+    let client = aws_sdk_s3control::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .list_tags_for_resource()
+            .set_resource_arn(::std::option::Option::Some(
+                "arn:aws:s3express:us-east-1:871317572157:bucket/crachlintest--use1-az4--x-s3".to_owned()
+            ))
+            .set_account_id(::std::option::Option::Some("871317572157".to_owned()))
+            .send()
+            .await
+    );
+    let req = rcvr.expect_request();
+    let uri = req.uri().to_string();
+    assert!(
+        uri.starts_with("https://s3express-control-fips.us-east-1.amazonaws.com"),
+        "expected URI to start with `https://s3express-control-fips.us-east-1.amazonaws.com` but it was `{}`",
+        uri
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_tag_resource_95() {
+    /* documentation: Tagging on express bucket cn routed to s3express-control china endpoint */
+    /* builtIns: {
+        "AWS::Region": "cn-north-1"
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_s3control::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("cn-north-1"));
+        builder.build()
+    };
+    let client = aws_sdk_s3control::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .tag_resource()
+            .set_resource_arn(::std::option::Option::Some(
+                "arn:aws-cn:s3express:cn-north-1:871317572157:bucket/crachlintest--use1-az4--x-s3".to_owned()
+            ))
+            .set_account_id(::std::option::Option::Some("871317572157".to_owned()))
+            .set_tags(::std::option::Option::Some(vec![]))
+            .send()
+            .await
+    );
+    let req = rcvr.expect_request();
+    let uri = req.uri().to_string();
+    assert!(
+        uri.starts_with("https://s3express-control.cn-north-1.amazonaws.com.cn"),
+        "expected URI to start with `https://s3express-control.cn-north-1.amazonaws.com.cn` but it was `{}`",
+        uri
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_untag_resource_96() {
+    /* documentation: Tagging on express bucket cn routed to s3express-control china endpoint */
+    /* builtIns: {
+        "AWS::Region": "cn-north-1"
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_s3control::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("cn-north-1"));
+        builder.build()
+    };
+    let client = aws_sdk_s3control::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .untag_resource()
+            .set_resource_arn(::std::option::Option::Some(
+                "arn:aws-cn:s3express:cn-north-1:871317572157:bucket/crachlintest--use1-az4--x-s3".to_owned()
+            ))
+            .set_account_id(::std::option::Option::Some("871317572157".to_owned()))
+            .set_tag_keys(::std::option::Option::Some(vec![]))
+            .send()
+            .await
+    );
+    let req = rcvr.expect_request();
+    let uri = req.uri().to_string();
+    assert!(
+        uri.starts_with("https://s3express-control.cn-north-1.amazonaws.com.cn"),
+        "expected URI to start with `https://s3express-control.cn-north-1.amazonaws.com.cn` but it was `{}`",
+        uri
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_list_tags_for_resource_97() {
+    /* documentation: Tagging on express bucket cn routed to s3express-control china endpoint */
+    /* builtIns: {
+        "AWS::Region": "cn-north-1"
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_s3control::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("cn-north-1"));
+        builder.build()
+    };
+    let client = aws_sdk_s3control::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .list_tags_for_resource()
+            .set_resource_arn(::std::option::Option::Some(
+                "arn:aws-cn:s3express:cn-north-1:871317572157:bucket/crachlintest--use1-az4--x-s3".to_owned()
+            ))
+            .set_account_id(::std::option::Option::Some("871317572157".to_owned()))
+            .send()
+            .await
+    );
+    let req = rcvr.expect_request();
+    let uri = req.uri().to_string();
+    assert!(
+        uri.starts_with("https://s3express-control.cn-north-1.amazonaws.com.cn"),
+        "expected URI to start with `https://s3express-control.cn-north-1.amazonaws.com.cn` but it was `{}`",
+        uri
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_tag_resource_98() {
+    /* documentation: Tagging on express bucket cn routed to s3express-control china endpoint with FIPS */
+    /* builtIns: {
+        "AWS::Region": "cn-north-1",
+        "AWS::UseFIPS": true
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_s3control::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("cn-north-1"));
+        let builder = builder.use_fips(true);
+        builder.build()
+    };
+    let client = aws_sdk_s3control::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .tag_resource()
+            .set_resource_arn(::std::option::Option::Some(
+                "arn:aws-cn:s3express:cn-north-1:871317572157:bucket/crachlintest--use1-az4--x-s3".to_owned()
+            ))
+            .set_account_id(::std::option::Option::Some("871317572157".to_owned()))
+            .set_tags(::std::option::Option::Some(vec![]))
+            .send()
+            .await
+    );
+    rcvr.expect_no_request();
+    let error = _result.expect_err(
+        "expected error: Partition does not support FIPS [Tagging on express bucket cn routed to s3express-control china endpoint with FIPS]",
+    );
+    assert!(
+        format!("{:?}", error).contains("Partition does not support FIPS"),
+        "expected error to contain `Partition does not support FIPS` but it was {:?}",
+        error
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_untag_resource_99() {
+    /* documentation: Tagging on express bucket cn routed to s3express-control china endpoint with FIPS */
+    /* builtIns: {
+        "AWS::Region": "cn-north-1",
+        "AWS::UseFIPS": true
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_s3control::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("cn-north-1"));
+        let builder = builder.use_fips(true);
+        builder.build()
+    };
+    let client = aws_sdk_s3control::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .untag_resource()
+            .set_resource_arn(::std::option::Option::Some(
+                "arn:aws-cn:s3express:cn-north-1:871317572157:bucket/crachlintest--use1-az4--x-s3".to_owned()
+            ))
+            .set_account_id(::std::option::Option::Some("871317572157".to_owned()))
+            .set_tag_keys(::std::option::Option::Some(vec![]))
+            .send()
+            .await
+    );
+    rcvr.expect_no_request();
+    let error = _result.expect_err(
+        "expected error: Partition does not support FIPS [Tagging on express bucket cn routed to s3express-control china endpoint with FIPS]",
+    );
+    assert!(
+        format!("{:?}", error).contains("Partition does not support FIPS"),
+        "expected error to contain `Partition does not support FIPS` but it was {:?}",
+        error
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_list_tags_for_resource_100() {
+    /* documentation: Tagging on express bucket cn routed to s3express-control china endpoint with FIPS */
+    /* builtIns: {
+        "AWS::Region": "cn-north-1",
+        "AWS::UseFIPS": true
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_s3control::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("cn-north-1"));
+        let builder = builder.use_fips(true);
+        builder.build()
+    };
+    let client = aws_sdk_s3control::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .list_tags_for_resource()
+            .set_resource_arn(::std::option::Option::Some(
+                "arn:aws-cn:s3express:cn-north-1:871317572157:bucket/crachlintest--use1-az4--x-s3".to_owned()
+            ))
+            .set_account_id(::std::option::Option::Some("871317572157".to_owned()))
+            .send()
+            .await
+    );
+    rcvr.expect_no_request();
+    let error = _result.expect_err(
+        "expected error: Partition does not support FIPS [Tagging on express bucket cn routed to s3express-control china endpoint with FIPS]",
+    );
+    assert!(
+        format!("{:?}", error).contains("Partition does not support FIPS"),
+        "expected error to contain `Partition does not support FIPS` but it was {:?}",
+        error
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_tag_resource_101() {
+    /* documentation: Tagging on express bucket with custom endpoint routed to custom endpoint */
+    /* builtIns: {
+        "AWS::Region": "us-east-1",
+        "SDK::Endpoint": "https://my-endpoint.express-control.s3.aws.dev"
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_s3control::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
+        let builder = builder.endpoint_url("https://my-endpoint.express-control.s3.aws.dev");
+        builder.build()
+    };
+    let client = aws_sdk_s3control::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .tag_resource()
+            .set_resource_arn(::std::option::Option::Some(
+                "arn:aws:s3express:us-east-1:871317572157:bucket/crachlintest--use1-az4--x-s3".to_owned()
+            ))
+            .set_account_id(::std::option::Option::Some("871317572157".to_owned()))
+            .set_tags(::std::option::Option::Some(vec![]))
+            .send()
+            .await
+    );
+    let req = rcvr.expect_request();
+    let uri = req.uri().to_string();
+    assert!(
+        uri.starts_with("https://my-endpoint.express-control.s3.aws.dev"),
+        "expected URI to start with `https://my-endpoint.express-control.s3.aws.dev` but it was `{}`",
+        uri
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_untag_resource_102() {
+    /* documentation: Tagging on express bucket with custom endpoint routed to custom endpoint */
+    /* builtIns: {
+        "AWS::Region": "us-east-1",
+        "SDK::Endpoint": "https://my-endpoint.express-control.s3.aws.dev"
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_s3control::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
+        let builder = builder.endpoint_url("https://my-endpoint.express-control.s3.aws.dev");
+        builder.build()
+    };
+    let client = aws_sdk_s3control::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .untag_resource()
+            .set_resource_arn(::std::option::Option::Some(
+                "arn:aws:s3express:us-east-1:871317572157:bucket/crachlintest--use1-az4--x-s3".to_owned()
+            ))
+            .set_account_id(::std::option::Option::Some("871317572157".to_owned()))
+            .set_tag_keys(::std::option::Option::Some(vec![]))
+            .send()
+            .await
+    );
+    let req = rcvr.expect_request();
+    let uri = req.uri().to_string();
+    assert!(
+        uri.starts_with("https://my-endpoint.express-control.s3.aws.dev"),
+        "expected URI to start with `https://my-endpoint.express-control.s3.aws.dev` but it was `{}`",
+        uri
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_list_tags_for_resource_103() {
+    /* documentation: Tagging on express bucket with custom endpoint routed to custom endpoint */
+    /* builtIns: {
+        "AWS::Region": "us-east-1",
+        "SDK::Endpoint": "https://my-endpoint.express-control.s3.aws.dev"
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_s3control::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
+        let builder = builder.endpoint_url("https://my-endpoint.express-control.s3.aws.dev");
+        builder.build()
+    };
+    let client = aws_sdk_s3control::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .list_tags_for_resource()
+            .set_resource_arn(::std::option::Option::Some(
+                "arn:aws:s3express:us-east-1:871317572157:bucket/crachlintest--use1-az4--x-s3".to_owned()
+            ))
+            .set_account_id(::std::option::Option::Some("871317572157".to_owned()))
+            .send()
+            .await
+    );
+    let req = rcvr.expect_request();
+    let uri = req.uri().to_string();
+    assert!(
+        uri.starts_with("https://my-endpoint.express-control.s3.aws.dev"),
+        "expected URI to start with `https://my-endpoint.express-control.s3.aws.dev` but it was `{}`",
+        uri
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_tag_resource_104() {
+    /* documentation: Tagging on express access point with custom endpoint routed to custom endpoint */
+    /* builtIns: {
+        "AWS::Region": "us-east-1",
+        "SDK::Endpoint": "https://my-endpoint.express-control.s3.aws.dev"
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_s3control::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
+        let builder = builder.endpoint_url("https://my-endpoint.express-control.s3.aws.dev");
+        builder.build()
+    };
+    let client = aws_sdk_s3control::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .tag_resource()
+            .set_resource_arn(::std::option::Option::Some(
+                "arn:aws:s3express:us-east-1:871317572157:accesspoint/crachlintest--use1-az4--xa-s3".to_owned()
+            ))
+            .set_account_id(::std::option::Option::Some("871317572157".to_owned()))
+            .set_tags(::std::option::Option::Some(vec![]))
+            .send()
+            .await
+    );
+    let req = rcvr.expect_request();
+    let uri = req.uri().to_string();
+    assert!(
+        uri.starts_with("https://my-endpoint.express-control.s3.aws.dev"),
+        "expected URI to start with `https://my-endpoint.express-control.s3.aws.dev` but it was `{}`",
+        uri
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_untag_resource_105() {
+    /* documentation: Tagging on express access point with custom endpoint routed to custom endpoint */
+    /* builtIns: {
+        "AWS::Region": "us-east-1",
+        "SDK::Endpoint": "https://my-endpoint.express-control.s3.aws.dev"
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_s3control::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
+        let builder = builder.endpoint_url("https://my-endpoint.express-control.s3.aws.dev");
+        builder.build()
+    };
+    let client = aws_sdk_s3control::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .untag_resource()
+            .set_resource_arn(::std::option::Option::Some(
+                "arn:aws:s3express:us-east-1:871317572157:accesspoint/crachlintest--use1-az4--xa-s3".to_owned()
+            ))
+            .set_account_id(::std::option::Option::Some("871317572157".to_owned()))
+            .set_tag_keys(::std::option::Option::Some(vec![]))
+            .send()
+            .await
+    );
+    let req = rcvr.expect_request();
+    let uri = req.uri().to_string();
+    assert!(
+        uri.starts_with("https://my-endpoint.express-control.s3.aws.dev"),
+        "expected URI to start with `https://my-endpoint.express-control.s3.aws.dev` but it was `{}`",
+        uri
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_list_tags_for_resource_106() {
+    /* documentation: Tagging on express access point with custom endpoint routed to custom endpoint */
+    /* builtIns: {
+        "AWS::Region": "us-east-1",
+        "SDK::Endpoint": "https://my-endpoint.express-control.s3.aws.dev"
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_s3control::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
+        let builder = builder.endpoint_url("https://my-endpoint.express-control.s3.aws.dev");
+        builder.build()
+    };
+    let client = aws_sdk_s3control::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .list_tags_for_resource()
+            .set_resource_arn(::std::option::Option::Some(
+                "arn:aws:s3express:us-east-1:871317572157:accesspoint/crachlintest--use1-az4--xa-s3".to_owned()
+            ))
+            .set_account_id(::std::option::Option::Some("871317572157".to_owned()))
+            .send()
+            .await
+    );
+    let req = rcvr.expect_request();
+    let uri = req.uri().to_string();
+    assert!(
+        uri.starts_with("https://my-endpoint.express-control.s3.aws.dev"),
+        "expected URI to start with `https://my-endpoint.express-control.s3.aws.dev` but it was `{}`",
+        uri
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_tag_resource_107() {
+    /* documentation: Tagging on express bucket with dualstack and custom endpoint fails */
+    /* builtIns: {
+        "AWS::Region": "us-east-1",
+        "SDK::Endpoint": "https://my-endpoint.express-control.s3.aws.dev",
+        "AWS::UseDualStack": true
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_s3control::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
+        let builder = builder.endpoint_url("https://my-endpoint.express-control.s3.aws.dev");
+        let builder = builder.use_dual_stack(true);
+        builder.build()
+    };
+    let client = aws_sdk_s3control::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .tag_resource()
+            .set_resource_arn(::std::option::Option::Some(
+                "arn:aws:s3express:us-east-1:871317572157:bucket/crachlintest--use1-az4--x-s3".to_owned()
+            ))
+            .set_account_id(::std::option::Option::Some("871317572157".to_owned()))
+            .set_tags(::std::option::Option::Some(vec![]))
+            .send()
+            .await
+    );
+    rcvr.expect_no_request();
+    let error = _result.expect_err("expected error: Invalid Configuration: DualStack and custom endpoint are not supported [Tagging on express bucket with dualstack and custom endpoint fails]");
+    assert!(
+        format!("{:?}", error).contains("Invalid Configuration: DualStack and custom endpoint are not supported"),
+        "expected error to contain `Invalid Configuration: DualStack and custom endpoint are not supported` but it was {:?}",
+        error
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_untag_resource_108() {
+    /* documentation: Tagging on express bucket with dualstack and custom endpoint fails */
+    /* builtIns: {
+        "AWS::Region": "us-east-1",
+        "SDK::Endpoint": "https://my-endpoint.express-control.s3.aws.dev",
+        "AWS::UseDualStack": true
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_s3control::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
+        let builder = builder.endpoint_url("https://my-endpoint.express-control.s3.aws.dev");
+        let builder = builder.use_dual_stack(true);
+        builder.build()
+    };
+    let client = aws_sdk_s3control::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .untag_resource()
+            .set_resource_arn(::std::option::Option::Some(
+                "arn:aws:s3express:us-east-1:871317572157:bucket/crachlintest--use1-az4--x-s3".to_owned()
+            ))
+            .set_account_id(::std::option::Option::Some("871317572157".to_owned()))
+            .set_tag_keys(::std::option::Option::Some(vec![]))
+            .send()
+            .await
+    );
+    rcvr.expect_no_request();
+    let error = _result.expect_err("expected error: Invalid Configuration: DualStack and custom endpoint are not supported [Tagging on express bucket with dualstack and custom endpoint fails]");
+    assert!(
+        format!("{:?}", error).contains("Invalid Configuration: DualStack and custom endpoint are not supported"),
+        "expected error to contain `Invalid Configuration: DualStack and custom endpoint are not supported` but it was {:?}",
+        error
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_list_tags_for_resource_109() {
+    /* documentation: Tagging on express bucket with dualstack and custom endpoint fails */
+    /* builtIns: {
+        "AWS::Region": "us-east-1",
+        "SDK::Endpoint": "https://my-endpoint.express-control.s3.aws.dev",
+        "AWS::UseDualStack": true
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_s3control::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
+        let builder = builder.endpoint_url("https://my-endpoint.express-control.s3.aws.dev");
+        let builder = builder.use_dual_stack(true);
+        builder.build()
+    };
+    let client = aws_sdk_s3control::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .list_tags_for_resource()
+            .set_resource_arn(::std::option::Option::Some(
+                "arn:aws:s3express:us-east-1:871317572157:bucket/crachlintest--use1-az4--x-s3".to_owned()
+            ))
+            .set_account_id(::std::option::Option::Some("871317572157".to_owned()))
+            .send()
+            .await
+    );
+    rcvr.expect_no_request();
+    let error = _result.expect_err("expected error: Invalid Configuration: DualStack and custom endpoint are not supported [Tagging on express bucket with dualstack and custom endpoint fails]");
+    assert!(
+        format!("{:?}", error).contains("Invalid Configuration: DualStack and custom endpoint are not supported"),
+        "expected error to contain `Invalid Configuration: DualStack and custom endpoint are not supported` but it was {:?}",
+        error
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_create_access_point_110() {
     /* documentation: Access Point APIs on express bucket routed to s3express-control */
     /* builtIns: {
         "AWS::Region": "us-east-1"
@@ -3015,7 +3889,7 @@ async fn operation_input_test_create_access_point_86() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_get_access_point_87() {
+async fn operation_input_test_get_access_point_111() {
     /* documentation: Access Point APIs on express bucket routed to s3express-control */
     /* builtIns: {
         "AWS::Region": "us-east-1"
@@ -3047,7 +3921,7 @@ async fn operation_input_test_get_access_point_87() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_delete_access_point_88() {
+async fn operation_input_test_delete_access_point_112() {
     /* documentation: Access Point APIs on express bucket routed to s3express-control */
     /* builtIns: {
         "AWS::Region": "us-east-1"
@@ -3079,7 +3953,7 @@ async fn operation_input_test_delete_access_point_88() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_put_access_point_scope_89() {
+async fn operation_input_test_put_access_point_scope_113() {
     /* documentation: Access Point APIs on express bucket routed to s3express-control */
     /* builtIns: {
         "AWS::Region": "us-east-1"
@@ -3117,7 +3991,7 @@ async fn operation_input_test_put_access_point_scope_89() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_get_access_point_scope_90() {
+async fn operation_input_test_get_access_point_scope_114() {
     /* documentation: Access Point APIs on express bucket routed to s3express-control */
     /* builtIns: {
         "AWS::Region": "us-east-1"
@@ -3149,7 +4023,7 @@ async fn operation_input_test_get_access_point_scope_90() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_delete_access_point_scope_91() {
+async fn operation_input_test_delete_access_point_scope_115() {
     /* documentation: Access Point APIs on express bucket routed to s3express-control */
     /* builtIns: {
         "AWS::Region": "us-east-1"
@@ -3181,7 +4055,7 @@ async fn operation_input_test_delete_access_point_scope_91() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_put_access_point_policy_92() {
+async fn operation_input_test_put_access_point_policy_116() {
     /* documentation: Access Point APIs on express bucket routed to s3express-control */
     /* builtIns: {
         "AWS::Region": "us-east-1"
@@ -3214,7 +4088,7 @@ async fn operation_input_test_put_access_point_policy_92() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_get_access_point_policy_93() {
+async fn operation_input_test_get_access_point_policy_117() {
     /* documentation: Access Point APIs on express bucket routed to s3express-control */
     /* builtIns: {
         "AWS::Region": "us-east-1"
@@ -3246,7 +4120,7 @@ async fn operation_input_test_get_access_point_policy_93() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_delete_access_point_policy_94() {
+async fn operation_input_test_delete_access_point_policy_118() {
     /* documentation: Access Point APIs on express bucket routed to s3express-control */
     /* builtIns: {
         "AWS::Region": "us-east-1"
@@ -3278,7 +4152,7 @@ async fn operation_input_test_delete_access_point_policy_94() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_get_access_point_policy_status_95() {
+async fn operation_input_test_get_access_point_policy_status_119() {
     /* documentation: Access Point APIs on express bucket routed to s3express-control */
     /* builtIns: {
         "AWS::Region": "us-east-1"
@@ -3310,7 +4184,7 @@ async fn operation_input_test_get_access_point_policy_status_95() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_list_access_points_for_directory_buckets_96() {
+async fn operation_input_test_list_access_points_for_directory_buckets_120() {
     /* documentation: Access Point APIs on express bucket routed to s3express-control for List */
     /* builtIns: {
         "AWS::Region": "us-east-1"
@@ -3342,7 +4216,7 @@ async fn operation_input_test_list_access_points_for_directory_buckets_96() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_create_access_point_97() {
+async fn operation_input_test_create_access_point_121() {
     /* documentation: Access Point APIs on express bucket routed to s3express-control for FIPS */
     /* builtIns: {
         "AWS::Region": "us-east-1",
@@ -3383,7 +4257,7 @@ async fn operation_input_test_create_access_point_97() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_get_access_point_98() {
+async fn operation_input_test_get_access_point_122() {
     /* documentation: Access Point APIs on express bucket routed to s3express-control for FIPS */
     /* builtIns: {
         "AWS::Region": "us-east-1",
@@ -3417,7 +4291,7 @@ async fn operation_input_test_get_access_point_98() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_delete_access_point_99() {
+async fn operation_input_test_delete_access_point_123() {
     /* documentation: Access Point APIs on express bucket routed to s3express-control for FIPS */
     /* builtIns: {
         "AWS::Region": "us-east-1",
@@ -3451,7 +4325,7 @@ async fn operation_input_test_delete_access_point_99() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_put_access_point_scope_100() {
+async fn operation_input_test_put_access_point_scope_124() {
     /* documentation: Access Point APIs on express bucket routed to s3express-control for FIPS */
     /* builtIns: {
         "AWS::Region": "us-east-1",
@@ -3491,7 +4365,7 @@ async fn operation_input_test_put_access_point_scope_100() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_get_access_point_scope_101() {
+async fn operation_input_test_get_access_point_scope_125() {
     /* documentation: Access Point APIs on express bucket routed to s3express-control for FIPS */
     /* builtIns: {
         "AWS::Region": "us-east-1",
@@ -3525,7 +4399,7 @@ async fn operation_input_test_get_access_point_scope_101() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_delete_access_point_scope_102() {
+async fn operation_input_test_delete_access_point_scope_126() {
     /* documentation: Access Point APIs on express bucket routed to s3express-control for FIPS */
     /* builtIns: {
         "AWS::Region": "us-east-1",
@@ -3559,7 +4433,7 @@ async fn operation_input_test_delete_access_point_scope_102() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_put_access_point_policy_103() {
+async fn operation_input_test_put_access_point_policy_127() {
     /* documentation: Access Point APIs on express bucket routed to s3express-control for FIPS */
     /* builtIns: {
         "AWS::Region": "us-east-1",
@@ -3594,7 +4468,7 @@ async fn operation_input_test_put_access_point_policy_103() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_get_access_point_policy_104() {
+async fn operation_input_test_get_access_point_policy_128() {
     /* documentation: Access Point APIs on express bucket routed to s3express-control for FIPS */
     /* builtIns: {
         "AWS::Region": "us-east-1",
@@ -3628,7 +4502,7 @@ async fn operation_input_test_get_access_point_policy_104() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_delete_access_point_policy_105() {
+async fn operation_input_test_delete_access_point_policy_129() {
     /* documentation: Access Point APIs on express bucket routed to s3express-control for FIPS */
     /* builtIns: {
         "AWS::Region": "us-east-1",
@@ -3662,7 +4536,7 @@ async fn operation_input_test_delete_access_point_policy_105() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_get_access_point_policy_status_106() {
+async fn operation_input_test_get_access_point_policy_status_130() {
     /* documentation: Access Point APIs on express bucket routed to s3express-control for FIPS */
     /* builtIns: {
         "AWS::Region": "us-east-1",
@@ -3696,7 +4570,7 @@ async fn operation_input_test_get_access_point_policy_status_106() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_list_access_points_for_directory_buckets_107() {
+async fn operation_input_test_list_access_points_for_directory_buckets_131() {
     /* documentation: Access Point APIs on express bucket routed to s3express-control for FIPS for List */
     /* builtIns: {
         "AWS::Region": "us-east-1",
@@ -3730,7 +4604,7 @@ async fn operation_input_test_list_access_points_for_directory_buckets_107() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_create_access_point_108() {
+async fn operation_input_test_create_access_point_132() {
     /* documentation: Access Point APIs on express bucket routed to s3express-control for china region */
     /* builtIns: {
         "AWS::Region": "cn-north-1"
@@ -3769,7 +4643,7 @@ async fn operation_input_test_create_access_point_108() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_get_access_point_109() {
+async fn operation_input_test_get_access_point_133() {
     /* documentation: Access Point APIs on express bucket routed to s3express-control for china region */
     /* builtIns: {
         "AWS::Region": "cn-north-1"
@@ -3801,7 +4675,7 @@ async fn operation_input_test_get_access_point_109() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_delete_access_point_110() {
+async fn operation_input_test_delete_access_point_134() {
     /* documentation: Access Point APIs on express bucket routed to s3express-control for china region */
     /* builtIns: {
         "AWS::Region": "cn-north-1"
@@ -3833,7 +4707,7 @@ async fn operation_input_test_delete_access_point_110() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_put_access_point_scope_111() {
+async fn operation_input_test_put_access_point_scope_135() {
     /* documentation: Access Point APIs on express bucket routed to s3express-control for china region */
     /* builtIns: {
         "AWS::Region": "cn-north-1"
@@ -3871,7 +4745,7 @@ async fn operation_input_test_put_access_point_scope_111() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_get_access_point_scope_112() {
+async fn operation_input_test_get_access_point_scope_136() {
     /* documentation: Access Point APIs on express bucket routed to s3express-control for china region */
     /* builtIns: {
         "AWS::Region": "cn-north-1"
@@ -3903,7 +4777,7 @@ async fn operation_input_test_get_access_point_scope_112() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_delete_access_point_scope_113() {
+async fn operation_input_test_delete_access_point_scope_137() {
     /* documentation: Access Point APIs on express bucket routed to s3express-control for china region */
     /* builtIns: {
         "AWS::Region": "cn-north-1"
@@ -3935,7 +4809,7 @@ async fn operation_input_test_delete_access_point_scope_113() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_put_access_point_policy_114() {
+async fn operation_input_test_put_access_point_policy_138() {
     /* documentation: Access Point APIs on express bucket routed to s3express-control for china region */
     /* builtIns: {
         "AWS::Region": "cn-north-1"
@@ -3968,7 +4842,7 @@ async fn operation_input_test_put_access_point_policy_114() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_get_access_point_policy_115() {
+async fn operation_input_test_get_access_point_policy_139() {
     /* documentation: Access Point APIs on express bucket routed to s3express-control for china region */
     /* builtIns: {
         "AWS::Region": "cn-north-1"
@@ -4000,7 +4874,7 @@ async fn operation_input_test_get_access_point_policy_115() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_delete_access_point_policy_116() {
+async fn operation_input_test_delete_access_point_policy_140() {
     /* documentation: Access Point APIs on express bucket routed to s3express-control for china region */
     /* builtIns: {
         "AWS::Region": "cn-north-1"
@@ -4032,7 +4906,7 @@ async fn operation_input_test_delete_access_point_policy_116() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_get_access_point_policy_status_117() {
+async fn operation_input_test_get_access_point_policy_status_141() {
     /* documentation: Access Point APIs on express bucket routed to s3express-control for china region */
     /* builtIns: {
         "AWS::Region": "cn-north-1"
@@ -4064,7 +4938,7 @@ async fn operation_input_test_get_access_point_policy_status_117() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_list_access_points_for_directory_buckets_118() {
+async fn operation_input_test_list_access_points_for_directory_buckets_142() {
     /* documentation: Access Point APIs on express bucket routed to s3express-control for china region for List */
     /* builtIns: {
         "AWS::Region": "cn-north-1"
@@ -4096,7 +4970,7 @@ async fn operation_input_test_list_access_points_for_directory_buckets_118() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_create_access_point_119() {
+async fn operation_input_test_create_access_point_143() {
     /* documentation: Error when Access Point APIs on express bucket routed to s3express-control for china and FIPS */
     /* builtIns: {
         "AWS::Region": "cn-north-1",
@@ -4137,7 +5011,7 @@ async fn operation_input_test_create_access_point_119() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_get_access_point_120() {
+async fn operation_input_test_get_access_point_144() {
     /* documentation: Error when Access Point APIs on express bucket routed to s3express-control for china and FIPS */
     /* builtIns: {
         "AWS::Region": "cn-north-1",
@@ -4171,7 +5045,7 @@ async fn operation_input_test_get_access_point_120() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_delete_access_point_121() {
+async fn operation_input_test_delete_access_point_145() {
     /* documentation: Error when Access Point APIs on express bucket routed to s3express-control for china and FIPS */
     /* builtIns: {
         "AWS::Region": "cn-north-1",
@@ -4205,7 +5079,7 @@ async fn operation_input_test_delete_access_point_121() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_list_access_points_for_directory_buckets_122() {
+async fn operation_input_test_list_access_points_for_directory_buckets_146() {
     /* documentation: Error when Access Point APIs on express bucket routed to s3express-control for china and FIPS */
     /* builtIns: {
         "AWS::Region": "cn-north-1",
@@ -4239,7 +5113,7 @@ async fn operation_input_test_list_access_points_for_directory_buckets_122() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_put_access_point_scope_123() {
+async fn operation_input_test_put_access_point_scope_147() {
     /* documentation: Error when Access Point APIs on express bucket routed to s3express-control for china and FIPS */
     /* builtIns: {
         "AWS::Region": "cn-north-1",
@@ -4279,7 +5153,7 @@ async fn operation_input_test_put_access_point_scope_123() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_get_access_point_scope_124() {
+async fn operation_input_test_get_access_point_scope_148() {
     /* documentation: Error when Access Point APIs on express bucket routed to s3express-control for china and FIPS */
     /* builtIns: {
         "AWS::Region": "cn-north-1",
@@ -4313,7 +5187,7 @@ async fn operation_input_test_get_access_point_scope_124() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_delete_access_point_scope_125() {
+async fn operation_input_test_delete_access_point_scope_149() {
     /* documentation: Error when Access Point APIs on express bucket routed to s3express-control for china and FIPS */
     /* builtIns: {
         "AWS::Region": "cn-north-1",
@@ -4347,7 +5221,7 @@ async fn operation_input_test_delete_access_point_scope_125() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_put_access_point_policy_126() {
+async fn operation_input_test_put_access_point_policy_150() {
     /* documentation: Error when Access Point APIs on express bucket routed to s3express-control for china and FIPS */
     /* builtIns: {
         "AWS::Region": "cn-north-1",
@@ -4382,7 +5256,7 @@ async fn operation_input_test_put_access_point_policy_126() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_get_access_point_policy_127() {
+async fn operation_input_test_get_access_point_policy_151() {
     /* documentation: Error when Access Point APIs on express bucket routed to s3express-control for china and FIPS */
     /* builtIns: {
         "AWS::Region": "cn-north-1",
@@ -4416,7 +5290,7 @@ async fn operation_input_test_get_access_point_policy_127() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_delete_access_point_policy_128() {
+async fn operation_input_test_delete_access_point_policy_152() {
     /* documentation: Error when Access Point APIs on express bucket routed to s3express-control for china and FIPS */
     /* builtIns: {
         "AWS::Region": "cn-north-1",
@@ -4450,7 +5324,7 @@ async fn operation_input_test_delete_access_point_policy_128() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_get_access_point_policy_status_129() {
+async fn operation_input_test_get_access_point_policy_status_153() {
     /* documentation: Error when Access Point APIs on express bucket routed to s3express-control for china and FIPS */
     /* builtIns: {
         "AWS::Region": "cn-north-1",
@@ -4484,7 +5358,7 @@ async fn operation_input_test_get_access_point_policy_status_129() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_create_access_point_130() {
+async fn operation_input_test_create_access_point_154() {
     /* documentation: Error Access Point APIs on express bucket routed to s3express-control invalid zone */
     /* builtIns: {
         "AWS::Region": "us-east-1"
@@ -4523,7 +5397,7 @@ async fn operation_input_test_create_access_point_130() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_get_access_point_131() {
+async fn operation_input_test_get_access_point_155() {
     /* documentation: Error Access Point APIs on express bucket routed to s3express-control invalid zone */
     /* builtIns: {
         "AWS::Region": "us-east-1"
@@ -4555,7 +5429,7 @@ async fn operation_input_test_get_access_point_131() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_delete_access_point_132() {
+async fn operation_input_test_delete_access_point_156() {
     /* documentation: Error Access Point APIs on express bucket routed to s3express-control invalid zone */
     /* builtIns: {
         "AWS::Region": "us-east-1"
@@ -4587,7 +5461,7 @@ async fn operation_input_test_delete_access_point_132() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_put_access_point_scope_133() {
+async fn operation_input_test_put_access_point_scope_157() {
     /* documentation: Error Access Point APIs on express bucket routed to s3express-control invalid zone */
     /* builtIns: {
         "AWS::Region": "us-east-1"
@@ -4625,7 +5499,7 @@ async fn operation_input_test_put_access_point_scope_133() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_get_access_point_scope_134() {
+async fn operation_input_test_get_access_point_scope_158() {
     /* documentation: Error Access Point APIs on express bucket routed to s3express-control invalid zone */
     /* builtIns: {
         "AWS::Region": "us-east-1"
@@ -4657,7 +5531,7 @@ async fn operation_input_test_get_access_point_scope_134() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_delete_access_point_scope_135() {
+async fn operation_input_test_delete_access_point_scope_159() {
     /* documentation: Error Access Point APIs on express bucket routed to s3express-control invalid zone */
     /* builtIns: {
         "AWS::Region": "us-east-1"
@@ -4689,7 +5563,7 @@ async fn operation_input_test_delete_access_point_scope_135() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_put_access_point_policy_136() {
+async fn operation_input_test_put_access_point_policy_160() {
     /* documentation: Error Access Point APIs on express bucket routed to s3express-control invalid zone */
     /* builtIns: {
         "AWS::Region": "us-east-1"
@@ -4722,7 +5596,7 @@ async fn operation_input_test_put_access_point_policy_136() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_get_access_point_policy_137() {
+async fn operation_input_test_get_access_point_policy_161() {
     /* documentation: Error Access Point APIs on express bucket routed to s3express-control invalid zone */
     /* builtIns: {
         "AWS::Region": "us-east-1"
@@ -4754,7 +5628,7 @@ async fn operation_input_test_get_access_point_policy_137() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_delete_access_point_policy_138() {
+async fn operation_input_test_delete_access_point_policy_162() {
     /* documentation: Error Access Point APIs on express bucket routed to s3express-control invalid zone */
     /* builtIns: {
         "AWS::Region": "us-east-1"
@@ -4786,7 +5660,7 @@ async fn operation_input_test_delete_access_point_policy_138() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_get_access_point_policy_status_139() {
+async fn operation_input_test_get_access_point_policy_status_163() {
     /* documentation: Error Access Point APIs on express bucket routed to s3express-control invalid zone */
     /* builtIns: {
         "AWS::Region": "us-east-1"
@@ -4818,7 +5692,7 @@ async fn operation_input_test_get_access_point_policy_status_139() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_create_access_point_140() {
+async fn operation_input_test_create_access_point_164() {
     /* documentation: Access Point APIs on express bucket routed to custom endpoint if provided */
     /* builtIns: {
         "AWS::Region": "us-east-1",
@@ -4859,7 +5733,7 @@ async fn operation_input_test_create_access_point_140() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_get_access_point_141() {
+async fn operation_input_test_get_access_point_165() {
     /* documentation: Access Point APIs on express bucket routed to custom endpoint if provided */
     /* builtIns: {
         "AWS::Region": "us-east-1",
@@ -4893,7 +5767,7 @@ async fn operation_input_test_get_access_point_141() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_delete_access_point_142() {
+async fn operation_input_test_delete_access_point_166() {
     /* documentation: Access Point APIs on express bucket routed to custom endpoint if provided */
     /* builtIns: {
         "AWS::Region": "us-east-1",
@@ -4927,7 +5801,7 @@ async fn operation_input_test_delete_access_point_142() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_put_access_point_policy_143() {
+async fn operation_input_test_put_access_point_policy_167() {
     /* documentation: Access Point APIs on express bucket routed to custom endpoint if provided */
     /* builtIns: {
         "AWS::Region": "us-east-1",
@@ -4962,7 +5836,7 @@ async fn operation_input_test_put_access_point_policy_143() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_get_access_point_policy_144() {
+async fn operation_input_test_get_access_point_policy_168() {
     /* documentation: Access Point APIs on express bucket routed to custom endpoint if provided */
     /* builtIns: {
         "AWS::Region": "us-east-1",
@@ -4996,7 +5870,7 @@ async fn operation_input_test_get_access_point_policy_144() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_delete_access_point_policy_145() {
+async fn operation_input_test_delete_access_point_policy_169() {
     /* documentation: Access Point APIs on express bucket routed to custom endpoint if provided */
     /* builtIns: {
         "AWS::Region": "us-east-1",
@@ -5030,7 +5904,7 @@ async fn operation_input_test_delete_access_point_policy_145() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_get_access_point_policy_status_146() {
+async fn operation_input_test_get_access_point_policy_status_170() {
     /* documentation: Access Point APIs on express bucket routed to custom endpoint if provided */
     /* builtIns: {
         "AWS::Region": "us-east-1",
@@ -5064,7 +5938,7 @@ async fn operation_input_test_get_access_point_policy_status_146() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_list_access_points_for_directory_buckets_147() {
+async fn operation_input_test_list_access_points_for_directory_buckets_171() {
     /* documentation: Access Point APIs on express bucket routed to custom endpoint if provided for List */
     /* builtIns: {
         "AWS::Region": "us-east-1",
@@ -5098,7 +5972,7 @@ async fn operation_input_test_list_access_points_for_directory_buckets_147() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_create_access_point_148() {
+async fn operation_input_test_create_access_point_172() {
     /* documentation: Error on Access Point APIs on express bucket for dual stack */
     /* builtIns: {
         "AWS::Region": "us-east-1",
@@ -5140,7 +6014,7 @@ async fn operation_input_test_create_access_point_148() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_get_access_point_149() {
+async fn operation_input_test_get_access_point_173() {
     /* documentation: Error on Access Point APIs on express bucket for dual stack */
     /* builtIns: {
         "AWS::Region": "us-east-1",
@@ -5175,7 +6049,7 @@ async fn operation_input_test_get_access_point_149() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_delete_access_point_150() {
+async fn operation_input_test_delete_access_point_174() {
     /* documentation: Error on Access Point APIs on express bucket for dual stack */
     /* builtIns: {
         "AWS::Region": "us-east-1",
@@ -5210,7 +6084,7 @@ async fn operation_input_test_delete_access_point_150() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_put_access_point_policy_151() {
+async fn operation_input_test_put_access_point_policy_175() {
     /* documentation: Error on Access Point APIs on express bucket for dual stack */
     /* builtIns: {
         "AWS::Region": "us-east-1",
@@ -5246,7 +6120,7 @@ async fn operation_input_test_put_access_point_policy_151() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_get_access_point_policy_152() {
+async fn operation_input_test_get_access_point_policy_176() {
     /* documentation: Error on Access Point APIs on express bucket for dual stack */
     /* builtIns: {
         "AWS::Region": "us-east-1",
@@ -5281,7 +6155,7 @@ async fn operation_input_test_get_access_point_policy_152() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_delete_access_point_policy_153() {
+async fn operation_input_test_delete_access_point_policy_177() {
     /* documentation: Error on Access Point APIs on express bucket for dual stack */
     /* builtIns: {
         "AWS::Region": "us-east-1",
@@ -5316,7 +6190,7 @@ async fn operation_input_test_delete_access_point_policy_153() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_get_access_point_policy_status_154() {
+async fn operation_input_test_get_access_point_policy_status_178() {
     /* documentation: Error on Access Point APIs on express bucket for dual stack */
     /* builtIns: {
         "AWS::Region": "us-east-1",
@@ -5351,7 +6225,7 @@ async fn operation_input_test_get_access_point_policy_status_154() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_list_access_points_for_directory_buckets_155() {
+async fn operation_input_test_list_access_points_for_directory_buckets_179() {
     /* documentation: Error Access Point APIs on express bucket for dual stack for List */
     /* builtIns: {
         "AWS::Region": "us-east-1",
@@ -5386,7 +6260,7 @@ async fn operation_input_test_list_access_points_for_directory_buckets_155() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_create_access_point_156() {
+async fn operation_input_test_create_access_point_180() {
     /* documentation: Error on Access Point APIs on express bucket for custom endpoint and dual stack */
     /* builtIns: {
         "AWS::Region": "us-east-1",
@@ -5429,7 +6303,7 @@ async fn operation_input_test_create_access_point_156() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_get_access_point_157() {
+async fn operation_input_test_get_access_point_181() {
     /* documentation: Error on Access Point APIs on express bucket for custom endpoint and dual stack */
     /* builtIns: {
         "AWS::Region": "us-east-1",
@@ -5465,7 +6339,7 @@ async fn operation_input_test_get_access_point_157() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_delete_access_point_158() {
+async fn operation_input_test_delete_access_point_182() {
     /* documentation: Error on Access Point APIs on express bucket for custom endpoint and dual stack */
     /* builtIns: {
         "AWS::Region": "us-east-1",
@@ -5501,7 +6375,7 @@ async fn operation_input_test_delete_access_point_158() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_put_access_point_policy_159() {
+async fn operation_input_test_put_access_point_policy_183() {
     /* documentation: Error on Access Point APIs on express bucket for custom endpoint and dual stack */
     /* builtIns: {
         "AWS::Region": "us-east-1",
@@ -5538,7 +6412,7 @@ async fn operation_input_test_put_access_point_policy_159() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_get_access_point_policy_160() {
+async fn operation_input_test_get_access_point_policy_184() {
     /* documentation: Error on Access Point APIs on express bucket for custom endpoint and dual stack */
     /* builtIns: {
         "AWS::Region": "us-east-1",
@@ -5574,7 +6448,7 @@ async fn operation_input_test_get_access_point_policy_160() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_delete_access_point_policy_161() {
+async fn operation_input_test_delete_access_point_policy_185() {
     /* documentation: Error on Access Point APIs on express bucket for custom endpoint and dual stack */
     /* builtIns: {
         "AWS::Region": "us-east-1",
@@ -5610,7 +6484,7 @@ async fn operation_input_test_delete_access_point_policy_161() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_get_access_point_policy_status_162() {
+async fn operation_input_test_get_access_point_policy_status_186() {
     /* documentation: Error on Access Point APIs on express bucket for custom endpoint and dual stack */
     /* builtIns: {
         "AWS::Region": "us-east-1",
@@ -5646,7 +6520,7 @@ async fn operation_input_test_get_access_point_policy_status_162() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_list_access_points_for_directory_buckets_163() {
+async fn operation_input_test_list_access_points_for_directory_buckets_187() {
     /* documentation: Error Access Point APIs on express bucket for custom endpoint and dual stack for List */
     /* builtIns: {
         "AWS::Region": "us-east-1",

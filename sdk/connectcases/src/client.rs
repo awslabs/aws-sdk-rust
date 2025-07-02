@@ -183,6 +183,8 @@ mod create_template;
 /// ```
 pub mod customize;
 
+mod delete_case;
+
 mod delete_case_rule;
 
 mod delete_domain;
@@ -190,6 +192,8 @@ mod delete_domain;
 mod delete_field;
 
 mod delete_layout;
+
+mod delete_related_item;
 
 mod delete_template;
 

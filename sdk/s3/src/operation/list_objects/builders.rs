@@ -159,16 +159,19 @@ impl ListObjectsFluentBuilder {
         self.inner.get_bucket()
     }
     /// <p>A delimiter is a character that you use to group keys.</p>
+    /// <p><code>CommonPrefixes</code> is filtered out from results if it is not lexicographically greater than the key-marker.</p>
     pub fn delimiter(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.delimiter(input.into());
         self
     }
     /// <p>A delimiter is a character that you use to group keys.</p>
+    /// <p><code>CommonPrefixes</code> is filtered out from results if it is not lexicographically greater than the key-marker.</p>
     pub fn set_delimiter(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_delimiter(input);
         self
     }
     /// <p>A delimiter is a character that you use to group keys.</p>
+    /// <p><code>CommonPrefixes</code> is filtered out from results if it is not lexicographically greater than the key-marker.</p>
     pub fn get_delimiter(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_delimiter()
     }

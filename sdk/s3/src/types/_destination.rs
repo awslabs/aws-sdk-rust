@@ -10,6 +10,7 @@ pub struct Destination {
     pub account: ::std::option::Option<::std::string::String>,
     /// <p>The storage class to use when replicating objects, such as S3 Standard or reduced redundancy. By default, Amazon S3 uses the storage class of the source object to create the object replica.</p>
     /// <p>For valid values, see the <code>StorageClass</code> element of the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketPUTreplication.html">PUT Bucket replication</a> action in the <i>Amazon S3 API Reference</i>.</p>
+    /// <p><code>FSX_OPENZFS</code> is not an accepted value when replicating objects.</p>
     pub storage_class: ::std::option::Option<crate::types::StorageClass>,
     /// <p>Specify this only in a cross-account scenario (where source and destination bucket owners are not the same), and you want to change replica ownership to the Amazon Web Services account that owns the destination bucket. If this is not specified in the replication configuration, the replicas are owned by same Amazon Web Services account that owns the source object.</p>
     pub access_control_translation: ::std::option::Option<crate::types::AccessControlTranslation>,
@@ -32,6 +33,7 @@ impl Destination {
     }
     /// <p>The storage class to use when replicating objects, such as S3 Standard or reduced redundancy. By default, Amazon S3 uses the storage class of the source object to create the object replica.</p>
     /// <p>For valid values, see the <code>StorageClass</code> element of the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketPUTreplication.html">PUT Bucket replication</a> action in the <i>Amazon S3 API Reference</i>.</p>
+    /// <p><code>FSX_OPENZFS</code> is not an accepted value when replicating objects.</p>
     pub fn storage_class(&self) -> ::std::option::Option<&crate::types::StorageClass> {
         self.storage_class.as_ref()
     }
@@ -103,18 +105,21 @@ impl DestinationBuilder {
     }
     /// <p>The storage class to use when replicating objects, such as S3 Standard or reduced redundancy. By default, Amazon S3 uses the storage class of the source object to create the object replica.</p>
     /// <p>For valid values, see the <code>StorageClass</code> element of the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketPUTreplication.html">PUT Bucket replication</a> action in the <i>Amazon S3 API Reference</i>.</p>
+    /// <p><code>FSX_OPENZFS</code> is not an accepted value when replicating objects.</p>
     pub fn storage_class(mut self, input: crate::types::StorageClass) -> Self {
         self.storage_class = ::std::option::Option::Some(input);
         self
     }
     /// <p>The storage class to use when replicating objects, such as S3 Standard or reduced redundancy. By default, Amazon S3 uses the storage class of the source object to create the object replica.</p>
     /// <p>For valid values, see the <code>StorageClass</code> element of the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketPUTreplication.html">PUT Bucket replication</a> action in the <i>Amazon S3 API Reference</i>.</p>
+    /// <p><code>FSX_OPENZFS</code> is not an accepted value when replicating objects.</p>
     pub fn set_storage_class(mut self, input: ::std::option::Option<crate::types::StorageClass>) -> Self {
         self.storage_class = input;
         self
     }
     /// <p>The storage class to use when replicating objects, such as S3 Standard or reduced redundancy. By default, Amazon S3 uses the storage class of the source object to create the object replica.</p>
     /// <p>For valid values, see the <code>StorageClass</code> element of the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketPUTreplication.html">PUT Bucket replication</a> action in the <i>Amazon S3 API Reference</i>.</p>
+    /// <p><code>FSX_OPENZFS</code> is not an accepted value when replicating objects.</p>
     pub fn get_storage_class(&self) -> &::std::option::Option<crate::types::StorageClass> {
         &self.storage_class
     }

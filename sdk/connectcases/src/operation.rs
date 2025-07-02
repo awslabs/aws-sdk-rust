@@ -31,6 +31,9 @@ pub mod create_related_item;
 /// Types for the `CreateTemplate` operation.
 pub mod create_template;
 
+/// Types for the `DeleteCase` operation.
+pub mod delete_case;
+
 /// Types for the `DeleteCaseRule` operation.
 pub mod delete_case_rule;
 
@@ -42,6 +45,9 @@ pub mod delete_field;
 
 /// Types for the `DeleteLayout` operation.
 pub mod delete_layout;
+
+/// Types for the `DeleteRelatedItem` operation.
+pub mod delete_related_item;
 
 /// Types for the `DeleteTemplate` operation.
 pub mod delete_template;

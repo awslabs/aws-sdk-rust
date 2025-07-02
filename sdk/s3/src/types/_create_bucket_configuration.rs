@@ -19,6 +19,10 @@ pub struct CreateBucketConfiguration {
     /// <p>This functionality is only supported by directory buckets.</p>
     /// </note>
     pub bucket: ::std::option::Option<crate::types::BucketInfo>,
+    /// <p>An array of tags that you can apply to the bucket that you're creating. Tags are key-value pairs of metadata used to categorize and organize your buckets, track costs, and control access.</p><note>
+    /// <p>This parameter is only supported for S3 directory buckets. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-buckets-tagging.html">Using tags with directory buckets</a>.</p>
+    /// </note>
+    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateBucketConfiguration {
     /// <p>Specifies the Region where the bucket will be created. You might choose a Region to optimize latency, minimize costs, or address regulatory requirements. For example, if you reside in Europe, you will probably find it advantageous to create buckets in the Europe (Ireland) Region.</p>
@@ -42,6 +46,14 @@ impl CreateBucketConfiguration {
     pub fn bucket(&self) -> ::std::option::Option<&crate::types::BucketInfo> {
         self.bucket.as_ref()
     }
+    /// <p>An array of tags that you can apply to the bucket that you're creating. Tags are key-value pairs of metadata used to categorize and organize your buckets, track costs, and control access.</p><note>
+    /// <p>This parameter is only supported for S3 directory buckets. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-buckets-tagging.html">Using tags with directory buckets</a>.</p>
+    /// </note>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
+    }
 }
 impl CreateBucketConfiguration {
     /// Creates a new builder-style object to manufacture [`CreateBucketConfiguration`](crate::types::CreateBucketConfiguration).
@@ -57,6 +69,7 @@ pub struct CreateBucketConfigurationBuilder {
     pub(crate) location_constraint: ::std::option::Option<crate::types::BucketLocationConstraint>,
     pub(crate) location: ::std::option::Option<crate::types::LocationInfo>,
     pub(crate) bucket: ::std::option::Option<crate::types::BucketInfo>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateBucketConfigurationBuilder {
     /// <p>Specifies the Region where the bucket will be created. You might choose a Region to optimize latency, minimize costs, or address regulatory requirements. For example, if you reside in Europe, you will probably find it advantageous to create buckets in the Europe (Ireland) Region.</p>
@@ -128,12 +141,39 @@ impl CreateBucketConfigurationBuilder {
     pub fn get_bucket(&self) -> &::std::option::Option<crate::types::BucketInfo> {
         &self.bucket
     }
+    /// Appends an item to `tags`.
+    ///
+    /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+    ///
+    /// <p>An array of tags that you can apply to the bucket that you're creating. Tags are key-value pairs of metadata used to categorize and organize your buckets, track costs, and control access.</p><note>
+    /// <p>This parameter is only supported for S3 directory buckets. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-buckets-tagging.html">Using tags with directory buckets</a>.</p>
+    /// </note>
+    pub fn tags(mut self, input: crate::types::Tag) -> Self {
+        let mut v = self.tags.unwrap_or_default();
+        v.push(input);
+        self.tags = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>An array of tags that you can apply to the bucket that you're creating. Tags are key-value pairs of metadata used to categorize and organize your buckets, track costs, and control access.</p><note>
+    /// <p>This parameter is only supported for S3 directory buckets. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-buckets-tagging.html">Using tags with directory buckets</a>.</p>
+    /// </note>
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
+        self.tags = input;
+        self
+    }
+    /// <p>An array of tags that you can apply to the bucket that you're creating. Tags are key-value pairs of metadata used to categorize and organize your buckets, track costs, and control access.</p><note>
+    /// <p>This parameter is only supported for S3 directory buckets. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-buckets-tagging.html">Using tags with directory buckets</a>.</p>
+    /// </note>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
+    }
     /// Consumes the builder and constructs a [`CreateBucketConfiguration`](crate::types::CreateBucketConfiguration).
     pub fn build(self) -> crate::types::CreateBucketConfiguration {
         crate::types::CreateBucketConfiguration {
             location_constraint: self.location_constraint,
             location: self.location,
             bucket: self.bucket,
+            tags: self.tags,
         }
     }
 }

@@ -22,18 +22,38 @@ impl crate::operation::tag_resource::builders::TagResourceInputBuilder {
 }
 /// Fluent builder constructing a request to `TagResource`.
 ///
-/// <p>Creates a new Amazon Web Services resource tag or updates an existing resource tag. Each tag is a label consisting of a user-defined key and value. Tags can help you manage, identify, organize, search for, and filter resources. You can add up to 50 Amazon Web Services resource tags for each S3 resource.</p><note>
-/// <p>This operation is only supported for <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage-lens-groups.html">S3 Storage Lens groups</a> and for <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-grants-tagging.html">S3 Access Grants</a>. The tagged resource can be an S3 Storage Lens group or S3 Access Grants instance, registered location, or grant.</p>
+/// <p>Creates a new user-defined tag or updates an existing tag. Each tag is a label consisting of a key and value that is applied to your resource. Tags can help you organize, track costs for, and control access to your resources. You can add up to 50 Amazon Web Services resource tags for each S3 resource.</p><note>
+/// <p>This operation is only supported for the following Amazon S3 resource:</p>
+/// <ul>
+/// <li>
+/// <p><a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-buckets-tagging.html">Directory buckets</a></p></li>
+/// <li>
+/// <p><a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage-lens-groups.html">S3 Storage Lens groups</a></p></li>
+/// <li>
+/// <p><a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-grants-tagging.html">S3 Access Grants instances, registered locations, or grants</a>.</p></li>
+/// </ul>
 /// </note>
 /// <dl>
 /// <dt>
 /// Permissions
 /// </dt>
 /// <dd>
-/// <p>You must have the <code>s3:TagResource</code> permission to use this operation.</p>
+/// <p>For Storage Lens groups and S3 Access Grants, you must have the <code>s3:TagResource</code> permission to use this operation.</p>
+/// <p>For more information about the required Storage Lens Groups permissions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage_lens_iam_permissions.html#storage_lens_groups_permissions">Setting account permissions to use S3 Storage Lens groups</a>.</p>
+/// </dd>
+/// <dt>
+/// Directory bucket permissions
+/// </dt>
+/// <dd>
+/// <p>For directory buckets, you must have the <code>s3express:TagResource</code> permission to use this operation. For more information about directory buckets policies and permissions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-permissions.html">Identity and Access Management (IAM) for S3 Express One Zone</a> in the <i>Amazon S3 User Guide</i>.</p>
+/// </dd>
+/// <dt>
+/// HTTP Host header syntax
+/// </dt>
+/// <dd>
+/// <p><b>Directory buckets </b> - The HTTP Host header syntax is <code>s3express-control.<i>region</i>.amazonaws.com</code>.</p>
 /// </dd>
 /// </dl>
-/// <p>For more information about the required Storage Lens Groups permissions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage_lens_iam_permissions.html#storage_lens_groups_permissions">Setting account permissions to use S3 Storage Lens groups</a>.</p>
 /// <p>For information about S3 Tagging errors, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html#S3TaggingErrorCodeList">List of Amazon S3 Tagging error codes</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct TagResourceFluentBuilder {
@@ -134,17 +154,17 @@ impl TagResourceFluentBuilder {
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_account_id()
     }
-    /// <p>The Amazon Resource Name (ARN) of the S3 resource that you're trying to add tags to. The tagged resource can be an S3 Storage Lens group or S3 Access Grants instance, registered location, or grant.</p>
+    /// <p>The Amazon Resource Name (ARN) of the S3 resource that you're applying tags to. The tagged resource can be a directory bucket, S3 Storage Lens group or S3 Access Grants instance, registered location, or grant.</p>
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_arn(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the S3 resource that you're trying to add tags to. The tagged resource can be an S3 Storage Lens group or S3 Access Grants instance, registered location, or grant.</p>
+    /// <p>The Amazon Resource Name (ARN) of the S3 resource that you're applying tags to. The tagged resource can be a directory bucket, S3 Storage Lens group or S3 Access Grants instance, registered location, or grant.</p>
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_resource_arn(input);
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the S3 resource that you're trying to add tags to. The tagged resource can be an S3 Storage Lens group or S3 Access Grants instance, registered location, or grant.</p>
+    /// <p>The Amazon Resource Name (ARN) of the S3 resource that you're applying tags to. The tagged resource can be a directory bucket, S3 Storage Lens group or S3 Access Grants instance, registered location, or grant.</p>
     pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_resource_arn()
     }

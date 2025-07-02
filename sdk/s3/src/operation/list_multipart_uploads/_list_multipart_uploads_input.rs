@@ -11,7 +11,8 @@ pub struct ListMultipartUploadsInput {
     /// <p><b>S3 on Outposts</b> - When you use this action with S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <code> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>. When you use this action with S3 on Outposts, the destination bucket must be the Outposts access point ARN or the access point alias. For more information about S3 on Outposts, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub bucket: ::std::option::Option<::std::string::String>,
     /// <p>Character you use to group keys.</p>
-    /// <p>All keys that contain the same string between the prefix, if specified, and the first occurrence of the delimiter after the prefix are grouped under a single result element, <code>CommonPrefixes</code>. If you don't specify the prefix parameter, then the substring starts at the beginning of the key. The keys that are grouped under <code>CommonPrefixes</code> result element are not returned elsewhere in the response.</p><note>
+    /// <p>All keys that contain the same string between the prefix, if specified, and the first occurrence of the delimiter after the prefix are grouped under a single result element, <code>CommonPrefixes</code>. If you don't specify the prefix parameter, then the substring starts at the beginning of the key. The keys that are grouped under <code>CommonPrefixes</code> result element are not returned elsewhere in the response.</p>
+    /// <p><code>CommonPrefixes</code> is filtered out from results if it is not lexicographically greater than the key-marker.</p><note>
     /// <p><b>Directory buckets</b> - For directory buckets, <code>/</code> is the only supported delimiter.</p>
     /// </note>
     pub delimiter: ::std::option::Option<::std::string::String>,
@@ -59,7 +60,8 @@ impl ListMultipartUploadsInput {
         self.bucket.as_deref()
     }
     /// <p>Character you use to group keys.</p>
-    /// <p>All keys that contain the same string between the prefix, if specified, and the first occurrence of the delimiter after the prefix are grouped under a single result element, <code>CommonPrefixes</code>. If you don't specify the prefix parameter, then the substring starts at the beginning of the key. The keys that are grouped under <code>CommonPrefixes</code> result element are not returned elsewhere in the response.</p><note>
+    /// <p>All keys that contain the same string between the prefix, if specified, and the first occurrence of the delimiter after the prefix are grouped under a single result element, <code>CommonPrefixes</code>. If you don't specify the prefix parameter, then the substring starts at the beginning of the key. The keys that are grouped under <code>CommonPrefixes</code> result element are not returned elsewhere in the response.</p>
+    /// <p><code>CommonPrefixes</code> is filtered out from results if it is not lexicographically greater than the key-marker.</p><note>
     /// <p><b>Directory buckets</b> - For directory buckets, <code>/</code> is the only supported delimiter.</p>
     /// </note>
     pub fn delimiter(&self) -> ::std::option::Option<&str> {
@@ -165,7 +167,8 @@ impl ListMultipartUploadsInputBuilder {
         &self.bucket
     }
     /// <p>Character you use to group keys.</p>
-    /// <p>All keys that contain the same string between the prefix, if specified, and the first occurrence of the delimiter after the prefix are grouped under a single result element, <code>CommonPrefixes</code>. If you don't specify the prefix parameter, then the substring starts at the beginning of the key. The keys that are grouped under <code>CommonPrefixes</code> result element are not returned elsewhere in the response.</p><note>
+    /// <p>All keys that contain the same string between the prefix, if specified, and the first occurrence of the delimiter after the prefix are grouped under a single result element, <code>CommonPrefixes</code>. If you don't specify the prefix parameter, then the substring starts at the beginning of the key. The keys that are grouped under <code>CommonPrefixes</code> result element are not returned elsewhere in the response.</p>
+    /// <p><code>CommonPrefixes</code> is filtered out from results if it is not lexicographically greater than the key-marker.</p><note>
     /// <p><b>Directory buckets</b> - For directory buckets, <code>/</code> is the only supported delimiter.</p>
     /// </note>
     pub fn delimiter(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -173,7 +176,8 @@ impl ListMultipartUploadsInputBuilder {
         self
     }
     /// <p>Character you use to group keys.</p>
-    /// <p>All keys that contain the same string between the prefix, if specified, and the first occurrence of the delimiter after the prefix are grouped under a single result element, <code>CommonPrefixes</code>. If you don't specify the prefix parameter, then the substring starts at the beginning of the key. The keys that are grouped under <code>CommonPrefixes</code> result element are not returned elsewhere in the response.</p><note>
+    /// <p>All keys that contain the same string between the prefix, if specified, and the first occurrence of the delimiter after the prefix are grouped under a single result element, <code>CommonPrefixes</code>. If you don't specify the prefix parameter, then the substring starts at the beginning of the key. The keys that are grouped under <code>CommonPrefixes</code> result element are not returned elsewhere in the response.</p>
+    /// <p><code>CommonPrefixes</code> is filtered out from results if it is not lexicographically greater than the key-marker.</p><note>
     /// <p><b>Directory buckets</b> - For directory buckets, <code>/</code> is the only supported delimiter.</p>
     /// </note>
     pub fn set_delimiter(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -181,7 +185,8 @@ impl ListMultipartUploadsInputBuilder {
         self
     }
     /// <p>Character you use to group keys.</p>
-    /// <p>All keys that contain the same string between the prefix, if specified, and the first occurrence of the delimiter after the prefix are grouped under a single result element, <code>CommonPrefixes</code>. If you don't specify the prefix parameter, then the substring starts at the beginning of the key. The keys that are grouped under <code>CommonPrefixes</code> result element are not returned elsewhere in the response.</p><note>
+    /// <p>All keys that contain the same string between the prefix, if specified, and the first occurrence of the delimiter after the prefix are grouped under a single result element, <code>CommonPrefixes</code>. If you don't specify the prefix parameter, then the substring starts at the beginning of the key. The keys that are grouped under <code>CommonPrefixes</code> result element are not returned elsewhere in the response.</p>
+    /// <p><code>CommonPrefixes</code> is filtered out from results if it is not lexicographically greater than the key-marker.</p><note>
     /// <p><b>Directory buckets</b> - For directory buckets, <code>/</code> is the only supported delimiter.</p>
     /// </note>
     pub fn get_delimiter(&self) -> &::std::option::Option<::std::string::String> {

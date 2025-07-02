@@ -61,6 +61,11 @@ pub fn de_create_bucket_http_response(
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::create_bucket::builders::CreateBucketOutputBuilder::default();
+        output = output.set_bucket_arn(
+            crate::protocol_serde::shape_create_bucket_output::de_bucket_arn_header(_response_headers).map_err(|_| {
+                crate::operation::create_bucket::CreateBucketError::unhandled("Failed to parse BucketArn from header `x-amz-bucket-arn")
+            })?,
+        );
         output = output.set_location(
             crate::protocol_serde::shape_create_bucket_output::de_location_header(_response_headers)
                 .map_err(|_| crate::operation::create_bucket::CreateBucketError::unhandled("Failed to parse Location from header `Location"))?,

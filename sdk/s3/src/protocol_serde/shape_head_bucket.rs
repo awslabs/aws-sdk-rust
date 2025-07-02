@@ -51,6 +51,10 @@ pub fn de_head_bucket_http_response(
                 crate::operation::head_bucket::HeadBucketError::unhandled("Failed to parse AccessPointAlias from header `x-amz-access-point-alias")
             })?,
         );
+        output = output.set_bucket_arn(
+            crate::protocol_serde::shape_head_bucket_output::de_bucket_arn_header(_response_headers)
+                .map_err(|_| crate::operation::head_bucket::HeadBucketError::unhandled("Failed to parse BucketArn from header `x-amz-bucket-arn"))?,
+        );
         output = output.set_bucket_location_name(
             crate::protocol_serde::shape_head_bucket_output::de_bucket_location_name_header(_response_headers).map_err(|_| {
                 crate::operation::head_bucket::HeadBucketError::unhandled(

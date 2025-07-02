@@ -3,6 +3,10 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct HeadBucketOutput {
+    /// <p>The Amazon Resource Name (ARN) of the S3 bucket. ARNs uniquely identify Amazon Web Services resources across all of Amazon Web Services.</p><note>
+    /// <p>This parameter is only supported for S3 directory buckets. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-buckets-tagging.html">Using tags with directory buckets</a>.</p>
+    /// </note>
+    pub bucket_arn: ::std::option::Option<::std::string::String>,
     /// <p>The type of location where the bucket is created.</p><note>
     /// <p>This functionality is only supported by directory buckets.</p>
     /// </note>
@@ -22,6 +26,12 @@ pub struct HeadBucketOutput {
     _request_id: Option<String>,
 }
 impl HeadBucketOutput {
+    /// <p>The Amazon Resource Name (ARN) of the S3 bucket. ARNs uniquely identify Amazon Web Services resources across all of Amazon Web Services.</p><note>
+    /// <p>This parameter is only supported for S3 directory buckets. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-buckets-tagging.html">Using tags with directory buckets</a>.</p>
+    /// </note>
+    pub fn bucket_arn(&self) -> ::std::option::Option<&str> {
+        self.bucket_arn.as_deref()
+    }
     /// <p>The type of location where the bucket is created.</p><note>
     /// <p>This functionality is only supported by directory buckets.</p>
     /// </note>
@@ -67,6 +77,7 @@ impl HeadBucketOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 pub struct HeadBucketOutputBuilder {
+    pub(crate) bucket_arn: ::std::option::Option<::std::string::String>,
     pub(crate) bucket_location_type: ::std::option::Option<crate::types::LocationType>,
     pub(crate) bucket_location_name: ::std::option::Option<::std::string::String>,
     pub(crate) bucket_region: ::std::option::Option<::std::string::String>,
@@ -75,6 +86,26 @@ pub struct HeadBucketOutputBuilder {
     _request_id: Option<String>,
 }
 impl HeadBucketOutputBuilder {
+    /// <p>The Amazon Resource Name (ARN) of the S3 bucket. ARNs uniquely identify Amazon Web Services resources across all of Amazon Web Services.</p><note>
+    /// <p>This parameter is only supported for S3 directory buckets. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-buckets-tagging.html">Using tags with directory buckets</a>.</p>
+    /// </note>
+    pub fn bucket_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.bucket_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the S3 bucket. ARNs uniquely identify Amazon Web Services resources across all of Amazon Web Services.</p><note>
+    /// <p>This parameter is only supported for S3 directory buckets. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-buckets-tagging.html">Using tags with directory buckets</a>.</p>
+    /// </note>
+    pub fn set_bucket_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.bucket_arn = input;
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the S3 bucket. ARNs uniquely identify Amazon Web Services resources across all of Amazon Web Services.</p><note>
+    /// <p>This parameter is only supported for S3 directory buckets. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-buckets-tagging.html">Using tags with directory buckets</a>.</p>
+    /// </note>
+    pub fn get_bucket_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bucket_arn
+    }
     /// <p>The type of location where the bucket is created.</p><note>
     /// <p>This functionality is only supported by directory buckets.</p>
     /// </note>
@@ -173,6 +204,7 @@ impl HeadBucketOutputBuilder {
     /// Consumes the builder and constructs a [`HeadBucketOutput`](crate::operation::head_bucket::HeadBucketOutput).
     pub fn build(self) -> crate::operation::head_bucket::HeadBucketOutput {
         crate::operation::head_bucket::HeadBucketOutput {
+            bucket_arn: self.bucket_arn,
             bucket_location_type: self.bucket_location_type,
             bucket_location_name: self.bucket_location_name,
             bucket_region: self.bucket_region,
