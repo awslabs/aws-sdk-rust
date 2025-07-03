@@ -2657,6 +2657,10 @@ source_hash = '13cfa390989f34887585e1e7a771064dde887d5e73f901339aae0a6729b6b2d9'
 category = 'AwsRuntime'
 version = '0.0.0'
 source_hash = '069837e3ae4285e1f4ff081b890fad86819cb1e48519d4d45aae0e1970fe9ea4'
+
+[release]
+tag = 'release-2025-07-03'
+
 [release.crates]
 aws-sdk-customerprofiles = '1.81.0'
 aws-sdk-deadline = '1.65.0'
