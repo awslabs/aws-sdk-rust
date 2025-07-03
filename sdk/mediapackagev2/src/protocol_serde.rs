@@ -135,6 +135,8 @@ pub(crate) mod shape_create_hls_manifest_configuration;
 
 pub(crate) mod shape_create_low_latency_hls_manifest_configuration;
 
+pub(crate) mod shape_create_mss_manifest_configuration;
+
 pub(crate) mod shape_destination;
 
 pub(crate) mod shape_force_endpoint_error_configuration;
@@ -144,6 +146,8 @@ pub(crate) mod shape_get_dash_manifests;
 pub(crate) mod shape_get_hls_manifests;
 
 pub(crate) mod shape_get_low_latency_hls_manifests;
+
+pub(crate) mod shape_get_mss_manifests;
 
 pub(crate) mod shape_harvest_jobs_list;
 
@@ -188,6 +192,8 @@ pub(crate) mod shape_get_dash_manifest_configuration;
 pub(crate) mod shape_get_hls_manifest_configuration;
 
 pub(crate) mod shape_get_low_latency_hls_manifest_configuration;
+
+pub(crate) mod shape_get_mss_manifest_configuration;
 
 pub(crate) mod shape_harvest_job;
 
@@ -237,6 +243,8 @@ pub(crate) mod shape_list_hls_manifests;
 
 pub(crate) mod shape_list_low_latency_hls_manifests;
 
+pub(crate) mod shape_list_mss_manifests;
+
 pub(crate) mod shape_scte_filter_list;
 
 pub(crate) mod shape_speke_key_provider;
@@ -252,3 +260,5 @@ pub(crate) mod shape_list_dash_manifest_configuration;
 pub(crate) mod shape_list_hls_manifest_configuration;
 
 pub(crate) mod shape_list_low_latency_hls_manifest_configuration;
+
+pub(crate) mod shape_list_mss_manifest_configuration;

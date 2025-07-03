@@ -21,6 +21,13 @@ where
                                     .transpose()?,
                             );
                         }
+                        "RemoteAccess" => {
+                            builder = builder.set_remote_access(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::FeatureStatus::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
                         "SpaceStorageSettings" => {
                             builder = builder
                                 .set_space_storage_settings(crate::protocol_serde::shape_space_storage_settings::de_space_storage_settings(tokens)?);

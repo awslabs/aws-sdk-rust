@@ -79,6 +79,9 @@ where
                         "DashManifests" => {
                             builder = builder.set_dash_manifests(crate::protocol_serde::shape_list_dash_manifests::de_list_dash_manifests(tokens)?);
                         }
+                        "MssManifests" => {
+                            builder = builder.set_mss_manifests(crate::protocol_serde::shape_list_mss_manifests::de_list_mss_manifests(tokens)?);
+                        }
                         "ForceEndpointErrorConfiguration" => {
                             builder = builder.set_force_endpoint_error_configuration(
                                 crate::protocol_serde::shape_force_endpoint_error_configuration::de_force_endpoint_error_configuration(tokens)?,

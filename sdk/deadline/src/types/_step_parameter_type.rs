@@ -12,6 +12,7 @@
 /// ```text
 /// # let stepparametertype = unimplemented!();
 /// match stepparametertype {
+///     StepParameterType::ChunkInt => { /* ... */ },
 ///     StepParameterType::Float => { /* ... */ },
 ///     StepParameterType::Int => { /* ... */ },
 ///     StepParameterType::Path => { /* ... */ },
@@ -45,6 +46,8 @@
 )]
 pub enum StepParameterType {
     #[allow(missing_docs)] // documentation missing in model
+    ChunkInt,
+    #[allow(missing_docs)] // documentation missing in model
     Float,
     #[allow(missing_docs)] // documentation missing in model
     Int,
@@ -59,6 +62,7 @@ pub enum StepParameterType {
 impl ::std::convert::From<&str> for StepParameterType {
     fn from(s: &str) -> Self {
         match s {
+            "CHUNK_INT" => StepParameterType::ChunkInt,
             "FLOAT" => StepParameterType::Float,
             "INT" => StepParameterType::Int,
             "PATH" => StepParameterType::Path,
@@ -78,6 +82,7 @@ impl StepParameterType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            StepParameterType::ChunkInt => "CHUNK_INT",
             StepParameterType::Float => "FLOAT",
             StepParameterType::Int => "INT",
             StepParameterType::Path => "PATH",
@@ -87,7 +92,7 @@ impl StepParameterType {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["FLOAT", "INT", "PATH", "STRING"]
+        &["CHUNK_INT", "FLOAT", "INT", "PATH", "STRING"]
     }
 }
 impl ::std::convert::AsRef<str> for StepParameterType {
@@ -110,6 +115,7 @@ impl StepParameterType {
 impl ::std::fmt::Display for StepParameterType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            StepParameterType::ChunkInt => write!(f, "CHUNK_INT"),
             StepParameterType::Float => write!(f, "FLOAT"),
             StepParameterType::Int => write!(f, "INT"),
             StepParameterType::Path => write!(f, "PATH"),

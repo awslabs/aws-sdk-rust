@@ -32,6 +32,7 @@
 ///     VpcRegion::CnNorthwest1 => { /* ... */ },
 ///     VpcRegion::EuCentral1 => { /* ... */ },
 ///     VpcRegion::EuCentral2 => { /* ... */ },
+///     VpcRegion::EuIsoeWest1 => { /* ... */ },
 ///     VpcRegion::EuNorth1 => { /* ... */ },
 ///     VpcRegion::EuSouth1 => { /* ... */ },
 ///     VpcRegion::EuSouth2 => { /* ... */ },
@@ -123,6 +124,8 @@ pub enum VpcRegion {
     #[allow(missing_docs)] // documentation missing in model
     EuCentral2,
     #[allow(missing_docs)] // documentation missing in model
+    EuIsoeWest1,
+    #[allow(missing_docs)] // documentation missing in model
     EuNorth1,
     #[allow(missing_docs)] // documentation missing in model
     EuSouth1,
@@ -193,6 +196,7 @@ impl ::std::convert::From<&str> for VpcRegion {
             "cn-northwest-1" => VpcRegion::CnNorthwest1,
             "eu-central-1" => VpcRegion::EuCentral1,
             "eu-central-2" => VpcRegion::EuCentral2,
+            "eu-isoe-west-1" => VpcRegion::EuIsoeWest1,
             "eu-north-1" => VpcRegion::EuNorth1,
             "eu-south-1" => VpcRegion::EuSouth1,
             "eu-south-2" => VpcRegion::EuSouth2,
@@ -250,6 +254,7 @@ impl VpcRegion {
             VpcRegion::CnNorthwest1 => "cn-northwest-1",
             VpcRegion::EuCentral1 => "eu-central-1",
             VpcRegion::EuCentral2 => "eu-central-2",
+            VpcRegion::EuIsoeWest1 => "eu-isoe-west-1",
             VpcRegion::EuNorth1 => "eu-north-1",
             VpcRegion::EuSouth1 => "eu-south-1",
             VpcRegion::EuSouth2 => "eu-south-2",
@@ -298,6 +303,7 @@ impl VpcRegion {
             "cn-northwest-1",
             "eu-central-1",
             "eu-central-2",
+            "eu-isoe-west-1",
             "eu-north-1",
             "eu-south-1",
             "eu-south-2",
@@ -363,6 +369,7 @@ impl ::std::fmt::Display for VpcRegion {
             VpcRegion::CnNorthwest1 => write!(f, "cn-northwest-1"),
             VpcRegion::EuCentral1 => write!(f, "eu-central-1"),
             VpcRegion::EuCentral2 => write!(f, "eu-central-2"),
+            VpcRegion::EuIsoeWest1 => write!(f, "eu-isoe-west-1"),
             VpcRegion::EuNorth1 => write!(f, "eu-north-1"),
             VpcRegion::EuSouth1 => write!(f, "eu-south-1"),
             VpcRegion::EuSouth2 => write!(f, "eu-south-2"),

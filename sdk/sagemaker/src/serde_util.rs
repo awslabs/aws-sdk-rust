@@ -140,6 +140,15 @@ pub(crate) fn create_hub_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn create_hub_content_presigned_urls_output_output_correct_errors(
+    mut builder: crate::operation::create_hub_content_presigned_urls::builders::CreateHubContentPresignedUrlsOutputBuilder,
+) -> crate::operation::create_hub_content_presigned_urls::builders::CreateHubContentPresignedUrlsOutputBuilder {
+    if builder.authorized_url_configs.is_none() {
+        builder.authorized_url_configs = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn create_hub_content_reference_output_output_correct_errors(
     mut builder: crate::operation::create_hub_content_reference::builders::CreateHubContentReferenceOutputBuilder,
 ) -> crate::operation::create_hub_content_reference::builders::CreateHubContentReferenceOutputBuilder {

@@ -14,6 +14,8 @@ pub struct SecurityGroupVpcAssociation {
     pub state: ::std::option::Option<crate::types::SecurityGroupVpcAssociationState>,
     /// <p>The association's state reason.</p>
     pub state_reason: ::std::option::Option<::std::string::String>,
+    /// <p>The Amazon Web Services account ID of the owner of the security group.</p>
+    pub group_owner_id: ::std::option::Option<::std::string::String>,
 }
 impl SecurityGroupVpcAssociation {
     /// <p>The association's security group ID.</p>
@@ -36,6 +38,10 @@ impl SecurityGroupVpcAssociation {
     pub fn state_reason(&self) -> ::std::option::Option<&str> {
         self.state_reason.as_deref()
     }
+    /// <p>The Amazon Web Services account ID of the owner of the security group.</p>
+    pub fn group_owner_id(&self) -> ::std::option::Option<&str> {
+        self.group_owner_id.as_deref()
+    }
 }
 impl SecurityGroupVpcAssociation {
     /// Creates a new builder-style object to manufacture [`SecurityGroupVpcAssociation`](crate::types::SecurityGroupVpcAssociation).
@@ -53,6 +59,7 @@ pub struct SecurityGroupVpcAssociationBuilder {
     pub(crate) vpc_owner_id: ::std::option::Option<::std::string::String>,
     pub(crate) state: ::std::option::Option<crate::types::SecurityGroupVpcAssociationState>,
     pub(crate) state_reason: ::std::option::Option<::std::string::String>,
+    pub(crate) group_owner_id: ::std::option::Option<::std::string::String>,
 }
 impl SecurityGroupVpcAssociationBuilder {
     /// <p>The association's security group ID.</p>
@@ -125,6 +132,20 @@ impl SecurityGroupVpcAssociationBuilder {
     pub fn get_state_reason(&self) -> &::std::option::Option<::std::string::String> {
         &self.state_reason
     }
+    /// <p>The Amazon Web Services account ID of the owner of the security group.</p>
+    pub fn group_owner_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.group_owner_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Web Services account ID of the owner of the security group.</p>
+    pub fn set_group_owner_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.group_owner_id = input;
+        self
+    }
+    /// <p>The Amazon Web Services account ID of the owner of the security group.</p>
+    pub fn get_group_owner_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.group_owner_id
+    }
     /// Consumes the builder and constructs a [`SecurityGroupVpcAssociation`](crate::types::SecurityGroupVpcAssociation).
     pub fn build(self) -> crate::types::SecurityGroupVpcAssociation {
         crate::types::SecurityGroupVpcAssociation {
@@ -133,6 +154,7 @@ impl SecurityGroupVpcAssociationBuilder {
             vpc_owner_id: self.vpc_owner_id,
             state: self.state,
             state_reason: self.state_reason,
+            group_owner_id: self.group_owner_id,
         }
     }
 }

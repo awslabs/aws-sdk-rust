@@ -73,6 +73,19 @@ pub fn de_security_group_vpc_association(
                 builder = builder.set_state_reason(var_5);
             }
             ,
+            s if s.matches("groupOwnerId") /* GroupOwnerId com.amazonaws.ec2#SecurityGroupVpcAssociation$GroupOwnerId */ =>  {
+                let var_6 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_group_owner_id(var_6);
+            }
+            ,
             _ => {}
         }
     }

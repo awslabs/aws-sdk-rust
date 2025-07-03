@@ -23,6 +23,8 @@ pub struct UpdateOriginEndpointInput {
     pub low_latency_hls_manifests: ::std::option::Option<::std::vec::Vec<crate::types::CreateLowLatencyHlsManifestConfiguration>>,
     /// <p>A DASH manifest configuration.</p>
     pub dash_manifests: ::std::option::Option<::std::vec::Vec<crate::types::CreateDashManifestConfiguration>>,
+    /// <p>A list of Microsoft Smooth Streaming (MSS) manifest configurations to update for the origin endpoint. This replaces the existing MSS manifest configurations.</p>
+    pub mss_manifests: ::std::option::Option<::std::vec::Vec<crate::types::CreateMssManifestConfiguration>>,
     /// <p>The failover settings for the endpoint.</p>
     pub force_endpoint_error_configuration: ::std::option::Option<crate::types::ForceEndpointErrorConfiguration>,
     /// <p>The expected current Entity Tag (ETag) for the resource. If the specified ETag does not match the resource's current entity tag, the update request will be rejected.</p>
@@ -75,6 +77,12 @@ impl UpdateOriginEndpointInput {
     pub fn dash_manifests(&self) -> &[crate::types::CreateDashManifestConfiguration] {
         self.dash_manifests.as_deref().unwrap_or_default()
     }
+    /// <p>A list of Microsoft Smooth Streaming (MSS) manifest configurations to update for the origin endpoint. This replaces the existing MSS manifest configurations.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.mss_manifests.is_none()`.
+    pub fn mss_manifests(&self) -> &[crate::types::CreateMssManifestConfiguration] {
+        self.mss_manifests.as_deref().unwrap_or_default()
+    }
     /// <p>The failover settings for the endpoint.</p>
     pub fn force_endpoint_error_configuration(&self) -> ::std::option::Option<&crate::types::ForceEndpointErrorConfiguration> {
         self.force_endpoint_error_configuration.as_ref()
@@ -105,6 +113,7 @@ pub struct UpdateOriginEndpointInputBuilder {
     pub(crate) hls_manifests: ::std::option::Option<::std::vec::Vec<crate::types::CreateHlsManifestConfiguration>>,
     pub(crate) low_latency_hls_manifests: ::std::option::Option<::std::vec::Vec<crate::types::CreateLowLatencyHlsManifestConfiguration>>,
     pub(crate) dash_manifests: ::std::option::Option<::std::vec::Vec<crate::types::CreateDashManifestConfiguration>>,
+    pub(crate) mss_manifests: ::std::option::Option<::std::vec::Vec<crate::types::CreateMssManifestConfiguration>>,
     pub(crate) force_endpoint_error_configuration: ::std::option::Option<crate::types::ForceEndpointErrorConfiguration>,
     pub(crate) e_tag: ::std::option::Option<::std::string::String>,
 }
@@ -274,6 +283,26 @@ impl UpdateOriginEndpointInputBuilder {
     pub fn get_dash_manifests(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CreateDashManifestConfiguration>> {
         &self.dash_manifests
     }
+    /// Appends an item to `mss_manifests`.
+    ///
+    /// To override the contents of this collection use [`set_mss_manifests`](Self::set_mss_manifests).
+    ///
+    /// <p>A list of Microsoft Smooth Streaming (MSS) manifest configurations to update for the origin endpoint. This replaces the existing MSS manifest configurations.</p>
+    pub fn mss_manifests(mut self, input: crate::types::CreateMssManifestConfiguration) -> Self {
+        let mut v = self.mss_manifests.unwrap_or_default();
+        v.push(input);
+        self.mss_manifests = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>A list of Microsoft Smooth Streaming (MSS) manifest configurations to update for the origin endpoint. This replaces the existing MSS manifest configurations.</p>
+    pub fn set_mss_manifests(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CreateMssManifestConfiguration>>) -> Self {
+        self.mss_manifests = input;
+        self
+    }
+    /// <p>A list of Microsoft Smooth Streaming (MSS) manifest configurations to update for the origin endpoint. This replaces the existing MSS manifest configurations.</p>
+    pub fn get_mss_manifests(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CreateMssManifestConfiguration>> {
+        &self.mss_manifests
+    }
     /// <p>The failover settings for the endpoint.</p>
     pub fn force_endpoint_error_configuration(mut self, input: crate::types::ForceEndpointErrorConfiguration) -> Self {
         self.force_endpoint_error_configuration = ::std::option::Option::Some(input);
@@ -318,6 +347,7 @@ impl UpdateOriginEndpointInputBuilder {
             hls_manifests: self.hls_manifests,
             low_latency_hls_manifests: self.low_latency_hls_manifests,
             dash_manifests: self.dash_manifests,
+            mss_manifests: self.mss_manifests,
             force_endpoint_error_configuration: self.force_endpoint_error_configuration,
             e_tag: self.e_tag,
         })

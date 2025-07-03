@@ -63,6 +63,12 @@ pub mod password_data_available;
 /// Supporting types for the `security_group_exists` waiter.
 pub mod security_group_exists;
 
+/// Supporting types for the `security_group_vpc_association_associated` waiter.
+pub mod security_group_vpc_association_associated;
+
+/// Supporting types for the `security_group_vpc_association_disassociated` waiter.
+pub mod security_group_vpc_association_disassociated;
+
 /// Supporting types for the `snapshot_completed` waiter.
 pub mod snapshot_completed;
 

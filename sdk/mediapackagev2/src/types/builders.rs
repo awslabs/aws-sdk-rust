@@ -49,6 +49,8 @@ pub use crate::types::_filter_configuration::FilterConfigurationBuilder;
 
 pub use crate::types::_force_endpoint_error_configuration::ForceEndpointErrorConfigurationBuilder;
 
+pub use crate::types::_get_mss_manifest_configuration::GetMssManifestConfigurationBuilder;
+
 pub use crate::types::_get_low_latency_hls_manifest_configuration::GetLowLatencyHlsManifestConfigurationBuilder;
 
 pub use crate::types::_start_tag::StartTagBuilder;
@@ -69,6 +71,8 @@ pub use crate::types::_encryption_method::EncryptionMethodBuilder;
 
 pub use crate::types::_scte::ScteBuilder;
 
+pub use crate::types::_create_mss_manifest_configuration::CreateMssManifestConfigurationBuilder;
+
 pub use crate::types::_create_dash_manifest_configuration::CreateDashManifestConfigurationBuilder;
 
 pub use crate::types::_create_low_latency_hls_manifest_configuration::CreateLowLatencyHlsManifestConfigurationBuilder;
@@ -76,6 +80,8 @@ pub use crate::types::_create_low_latency_hls_manifest_configuration::CreateLowL
 pub use crate::types::_create_hls_manifest_configuration::CreateHlsManifestConfigurationBuilder;
 
 pub use crate::types::_origin_endpoint_list_configuration::OriginEndpointListConfigurationBuilder;
+
+pub use crate::types::_list_mss_manifest_configuration::ListMssManifestConfigurationBuilder;
 
 pub use crate::types::_list_dash_manifest_configuration::ListDashManifestConfigurationBuilder;
 

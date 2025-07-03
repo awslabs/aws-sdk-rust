@@ -209,6 +209,25 @@ pub(super) fn resolve_endpoint(
                     }
                 }
             }
+            if (partition_result.name()) == ("aws-eusc") {
+                if (*use_fips) == (false) {
+                    if (*use_dual_stack) == (false) {
+                        return Ok(::aws_smithy_types::endpoint::Endpoint::builder()
+                            .url("https://route53.amazonaws.eu".to_string())
+                            .property(
+                                "authSchemes",
+                                vec![::aws_smithy_types::Document::from({
+                                    let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
+                                    out.insert("name".to_string(), "sigv4".to_string().into());
+                                    out.insert("signingName".to_string(), "route53".to_string().into());
+                                    out.insert("signingRegion".to_string(), "eusc-de-east-1".to_string().into());
+                                    out
+                                })],
+                            )
+                            .build());
+                    }
+                }
+            }
             if (*use_fips) == (true) {
                 if (*use_dual_stack) == (true) {
                     if (true) == (partition_result.supports_fips()) {

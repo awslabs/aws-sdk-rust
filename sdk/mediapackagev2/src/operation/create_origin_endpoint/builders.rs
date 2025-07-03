@@ -280,6 +280,25 @@ impl CreateOriginEndpointFluentBuilder {
     pub fn get_dash_manifests(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CreateDashManifestConfiguration>> {
         self.inner.get_dash_manifests()
     }
+    ///
+    /// Appends an item to `MssManifests`.
+    ///
+    /// To override the contents of this collection use [`set_mss_manifests`](Self::set_mss_manifests).
+    ///
+    /// <p>A list of Microsoft Smooth Streaming (MSS) manifest configurations for the origin endpoint. You can configure multiple MSS manifests to provide different streaming experiences or to support different client requirements.</p>
+    pub fn mss_manifests(mut self, input: crate::types::CreateMssManifestConfiguration) -> Self {
+        self.inner = self.inner.mss_manifests(input);
+        self
+    }
+    /// <p>A list of Microsoft Smooth Streaming (MSS) manifest configurations for the origin endpoint. You can configure multiple MSS manifests to provide different streaming experiences or to support different client requirements.</p>
+    pub fn set_mss_manifests(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CreateMssManifestConfiguration>>) -> Self {
+        self.inner = self.inner.set_mss_manifests(input);
+        self
+    }
+    /// <p>A list of Microsoft Smooth Streaming (MSS) manifest configurations for the origin endpoint. You can configure multiple MSS manifests to provide different streaming experiences or to support different client requirements.</p>
+    pub fn get_mss_manifests(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CreateMssManifestConfiguration>> {
+        self.inner.get_mss_manifests()
+    }
     /// <p>The failover settings for the endpoint.</p>
     pub fn force_endpoint_error_configuration(mut self, input: crate::types::ForceEndpointErrorConfiguration) -> Self {
         self.inner = self.inner.force_endpoint_error_configuration(input);

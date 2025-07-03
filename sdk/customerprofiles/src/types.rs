@@ -151,6 +151,12 @@ pub use crate::types::_status::Status;
 
 pub use crate::types::_workflow_type::WorkflowType;
 
+pub use crate::types::_upload_job_item::UploadJobItem;
+
+pub use crate::types::_status_reason::StatusReason;
+
+pub use crate::types::_upload_job_status::UploadJobStatus;
+
 pub use crate::types::_segment_definition_item::SegmentDefinitionItem;
 
 pub use crate::types::_list_profile_object_type_template_item::ListProfileObjectTypeTemplateItem;
@@ -206,6 +212,8 @@ pub use crate::types::_appflow_integration_workflow_metrics::AppflowIntegrationW
 pub use crate::types::_workflow_attributes::WorkflowAttributes;
 
 pub use crate::types::_appflow_integration_workflow_attributes::AppflowIntegrationWorkflowAttributes;
+
+pub use crate::types::_results_summary::ResultsSummary;
 
 pub use crate::types::_match_type::MatchType;
 
@@ -507,6 +515,8 @@ mod _readiness;
 
 mod _readiness_status;
 
+mod _results_summary;
+
 mod _rule_based_matching_request;
 
 mod _rule_based_matching_response;
@@ -553,6 +563,8 @@ mod _statistic;
 
 mod _status;
 
+mod _status_reason;
+
 mod _string_dimension_type;
 
 mod _task;
@@ -572,6 +584,10 @@ mod _type_;
 mod _unit;
 
 mod _update_address;
+
+mod _upload_job_item;
+
+mod _upload_job_status;
 
 mod _value_range;
 

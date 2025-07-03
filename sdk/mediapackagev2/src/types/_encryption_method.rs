@@ -8,6 +8,8 @@ pub struct EncryptionMethod {
     pub ts_encryption_method: ::std::option::Option<crate::types::TsEncryptionMethod>,
     /// <p>The encryption method to use.</p>
     pub cmaf_encryption_method: ::std::option::Option<crate::types::CmafEncryptionMethod>,
+    /// <p>The encryption method used for Microsoft Smooth Streaming (MSS) content. This specifies how the MSS segments are encrypted to protect the content during delivery to client players.</p>
+    pub ism_encryption_method: ::std::option::Option<crate::types::IsmEncryptionMethod>,
 }
 impl EncryptionMethod {
     /// <p>The encryption method to use.</p>
@@ -17,6 +19,10 @@ impl EncryptionMethod {
     /// <p>The encryption method to use.</p>
     pub fn cmaf_encryption_method(&self) -> ::std::option::Option<&crate::types::CmafEncryptionMethod> {
         self.cmaf_encryption_method.as_ref()
+    }
+    /// <p>The encryption method used for Microsoft Smooth Streaming (MSS) content. This specifies how the MSS segments are encrypted to protect the content during delivery to client players.</p>
+    pub fn ism_encryption_method(&self) -> ::std::option::Option<&crate::types::IsmEncryptionMethod> {
+        self.ism_encryption_method.as_ref()
     }
 }
 impl EncryptionMethod {
@@ -32,6 +38,7 @@ impl EncryptionMethod {
 pub struct EncryptionMethodBuilder {
     pub(crate) ts_encryption_method: ::std::option::Option<crate::types::TsEncryptionMethod>,
     pub(crate) cmaf_encryption_method: ::std::option::Option<crate::types::CmafEncryptionMethod>,
+    pub(crate) ism_encryption_method: ::std::option::Option<crate::types::IsmEncryptionMethod>,
 }
 impl EncryptionMethodBuilder {
     /// <p>The encryption method to use.</p>
@@ -62,11 +69,26 @@ impl EncryptionMethodBuilder {
     pub fn get_cmaf_encryption_method(&self) -> &::std::option::Option<crate::types::CmafEncryptionMethod> {
         &self.cmaf_encryption_method
     }
+    /// <p>The encryption method used for Microsoft Smooth Streaming (MSS) content. This specifies how the MSS segments are encrypted to protect the content during delivery to client players.</p>
+    pub fn ism_encryption_method(mut self, input: crate::types::IsmEncryptionMethod) -> Self {
+        self.ism_encryption_method = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The encryption method used for Microsoft Smooth Streaming (MSS) content. This specifies how the MSS segments are encrypted to protect the content during delivery to client players.</p>
+    pub fn set_ism_encryption_method(mut self, input: ::std::option::Option<crate::types::IsmEncryptionMethod>) -> Self {
+        self.ism_encryption_method = input;
+        self
+    }
+    /// <p>The encryption method used for Microsoft Smooth Streaming (MSS) content. This specifies how the MSS segments are encrypted to protect the content during delivery to client players.</p>
+    pub fn get_ism_encryption_method(&self) -> &::std::option::Option<crate::types::IsmEncryptionMethod> {
+        &self.ism_encryption_method
+    }
     /// Consumes the builder and constructs a [`EncryptionMethod`](crate::types::EncryptionMethod).
     pub fn build(self) -> crate::types::EncryptionMethod {
         crate::types::EncryptionMethod {
             ts_encryption_method: self.ts_encryption_method,
             cmaf_encryption_method: self.cmaf_encryption_method,
+            ism_encryption_method: self.ism_encryption_method,
         }
     }
 }

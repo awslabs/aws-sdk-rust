@@ -487,6 +487,8 @@ pub(crate) mod shape_tags;
 
 pub(crate) mod shape_task_parameters;
 
+pub(crate) mod shape_task_run_manifest_properties_list_response;
+
 pub(crate) mod shape_task_run_status_counts;
 
 pub(crate) mod shape_task_search_summaries;
@@ -616,6 +618,10 @@ pub(crate) mod shape_storage_profile_summary;
 pub(crate) mod shape_sync_input_job_attachments_session_action_definition;
 
 pub(crate) mod shape_task_parameter_value;
+
+pub(crate) mod shape_task_run_manifest_properties_request;
+
+pub(crate) mod shape_task_run_manifest_properties_response;
 
 pub(crate) mod shape_task_run_session_action_definition;
 

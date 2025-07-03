@@ -19,6 +19,7 @@ impl super::Client {
     ///   - [`progress_message(Option<String>)`](crate::operation::get_session_action::GetSessionActionOutput::progress_message): <p>The message that communicates the progress of the session action.</p>
     ///   - [`definition(Option<SessionActionDefinition>)`](crate::operation::get_session_action::GetSessionActionOutput::definition): <p>The session action definition.</p>
     ///   - [`acquired_limits(Option<Vec::<AcquiredLimit>>)`](crate::operation::get_session_action::GetSessionActionOutput::acquired_limits): <p>The limits and their amounts acquired during a session action. If no limits were acquired during the session, this field isn't returned.</p>
+    ///   - [`manifests(Option<Vec::<TaskRunManifestPropertiesResponse>>)`](crate::operation::get_session_action::GetSessionActionOutput::manifests): <p>The list of manifest properties that describe file attachments for the task run.</p>
     /// - On failure, responds with [`SdkError<GetSessionActionError>`](crate::operation::get_session_action::GetSessionActionError)
     pub fn get_session_action(&self) -> crate::operation::get_session_action::builders::GetSessionActionFluentBuilder {
         crate::operation::get_session_action::builders::GetSessionActionFluentBuilder::new(self.handle.clone())

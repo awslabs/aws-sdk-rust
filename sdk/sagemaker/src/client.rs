@@ -297,6 +297,8 @@ mod create_flow_definition;
 
 mod create_hub;
 
+mod create_hub_content_presigned_urls;
+
 mod create_hub_content_reference;
 
 mod create_human_task_ui;
@@ -861,6 +863,8 @@ mod start_monitoring_schedule;
 mod start_notebook_instance;
 
 mod start_pipeline_execution;
+
+mod start_session;
 
 mod stop_auto_ml_job;
 

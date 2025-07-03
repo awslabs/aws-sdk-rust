@@ -184,6 +184,14 @@ pub trait Waiters {
     fn wait_until_network_interface_available(&self) -> crate::waiters::network_interface_available::NetworkInterfaceAvailableFluentBuilder;
     /// Wait for `security_group_exists`
     fn wait_until_security_group_exists(&self) -> crate::waiters::security_group_exists::SecurityGroupExistsFluentBuilder;
+    /// Wait for `security_group_vpc_association_associated`
+    fn wait_until_security_group_vpc_association_associated(
+        &self,
+    ) -> crate::waiters::security_group_vpc_association_associated::SecurityGroupVpcAssociationAssociatedFluentBuilder;
+    /// Wait for `security_group_vpc_association_disassociated`
+    fn wait_until_security_group_vpc_association_disassociated(
+        &self,
+    ) -> crate::waiters::security_group_vpc_association_disassociated::SecurityGroupVpcAssociationDisassociatedFluentBuilder;
     /// Wait for `snapshot_completed`
     fn wait_until_snapshot_completed(&self) -> crate::waiters::snapshot_completed::SnapshotCompletedFluentBuilder;
     /// Wait for `spot_instance_request_fulfilled`
@@ -281,6 +289,16 @@ impl Waiters for Client {
     }
     fn wait_until_security_group_exists(&self) -> crate::waiters::security_group_exists::SecurityGroupExistsFluentBuilder {
         crate::waiters::security_group_exists::SecurityGroupExistsFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_security_group_vpc_association_associated(
+        &self,
+    ) -> crate::waiters::security_group_vpc_association_associated::SecurityGroupVpcAssociationAssociatedFluentBuilder {
+        crate::waiters::security_group_vpc_association_associated::SecurityGroupVpcAssociationAssociatedFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_security_group_vpc_association_disassociated(
+        &self,
+    ) -> crate::waiters::security_group_vpc_association_disassociated::SecurityGroupVpcAssociationDisassociatedFluentBuilder {
+        crate::waiters::security_group_vpc_association_disassociated::SecurityGroupVpcAssociationDisassociatedFluentBuilder::new(self.handle.clone())
     }
     fn wait_until_snapshot_completed(&self) -> crate::waiters::snapshot_completed::SnapshotCompletedFluentBuilder {
         crate::waiters::snapshot_completed::SnapshotCompletedFluentBuilder::new(self.handle.clone())

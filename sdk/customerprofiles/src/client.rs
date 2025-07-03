@@ -162,6 +162,8 @@ mod create_segment_estimate;
 
 mod create_segment_snapshot;
 
+mod create_upload_job;
+
 /// Operation customization and supporting types.
 ///
 /// The underlying HTTP requests made during an operation can be customized
@@ -249,6 +251,10 @@ mod get_segment_snapshot;
 
 mod get_similar_profiles;
 
+mod get_upload_job;
+
+mod get_upload_job_path;
+
 mod get_workflow;
 
 mod get_workflow_steps;
@@ -287,6 +293,8 @@ mod list_segment_definitions;
 
 mod list_tags_for_resource;
 
+mod list_upload_jobs;
+
 mod list_workflows;
 
 mod merge_profiles;
@@ -298,6 +306,10 @@ mod put_profile_object;
 mod put_profile_object_type;
 
 mod search_profiles;
+
+mod start_upload_job;
+
+mod stop_upload_job;
 
 mod tag_resource;
 

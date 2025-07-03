@@ -89,6 +89,8 @@ pub use crate::types::_session_lifecycle_status::SessionLifecycleStatus;
 
 pub use crate::types::_session_action_summary::SessionActionSummary;
 
+pub use crate::types::_task_run_manifest_properties_response::TaskRunManifestPropertiesResponse;
+
 pub use crate::types::_session_action_definition_summary::SessionActionDefinitionSummary;
 
 pub use crate::types::_sync_input_job_attachments_session_action_definition_summary::SyncInputJobAttachmentsSessionActionDefinitionSummary;
@@ -232,6 +234,8 @@ pub use crate::types::_assigned_environment_exit_session_action_definition::Assi
 pub use crate::types::_assigned_environment_enter_session_action_definition::AssignedEnvironmentEnterSessionActionDefinition;
 
 pub use crate::types::_updated_session_action_info::UpdatedSessionActionInfo;
+
+pub use crate::types::_task_run_manifest_properties_request::TaskRunManifestPropertiesRequest;
 
 pub use crate::types::_completed_status::CompletedStatus;
 
@@ -684,6 +688,10 @@ mod _sync_input_job_attachments_session_action_definition_summary;
 mod _tag_propagation_mode;
 
 mod _task_parameter_value;
+
+mod _task_run_manifest_properties_request;
+
+mod _task_run_manifest_properties_response;
 
 mod _task_run_session_action_definition;
 

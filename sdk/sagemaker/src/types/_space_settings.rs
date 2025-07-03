@@ -27,6 +27,8 @@ pub struct SpaceSettings {
     pub space_managed_resources: ::std::option::Option<crate::types::FeatureStatus>,
     /// <p>A file system, created by you, that you assign to a space for an Amazon SageMaker AI Domain. Permitted users can access this file system in Amazon SageMaker AI Studio.</p>
     pub custom_file_systems: ::std::option::Option<::std::vec::Vec<crate::types::CustomFileSystem>>,
+    /// <p>A setting that enables or disables remote access for a SageMaker space. When enabled, this allows you to connect to the remote space from your local IDE.</p>
+    pub remote_access: ::std::option::Option<crate::types::FeatureStatus>,
 }
 impl SpaceSettings {
     /// <p>The JupyterServer app settings.</p>
@@ -70,6 +72,10 @@ impl SpaceSettings {
     pub fn custom_file_systems(&self) -> &[crate::types::CustomFileSystem] {
         self.custom_file_systems.as_deref().unwrap_or_default()
     }
+    /// <p>A setting that enables or disables remote access for a SageMaker space. When enabled, this allows you to connect to the remote space from your local IDE.</p>
+    pub fn remote_access(&self) -> ::std::option::Option<&crate::types::FeatureStatus> {
+        self.remote_access.as_ref()
+    }
 }
 impl SpaceSettings {
     /// Creates a new builder-style object to manufacture [`SpaceSettings`](crate::types::SpaceSettings).
@@ -90,6 +96,7 @@ pub struct SpaceSettingsBuilder {
     pub(crate) space_storage_settings: ::std::option::Option<crate::types::SpaceStorageSettings>,
     pub(crate) space_managed_resources: ::std::option::Option<crate::types::FeatureStatus>,
     pub(crate) custom_file_systems: ::std::option::Option<::std::vec::Vec<crate::types::CustomFileSystem>>,
+    pub(crate) remote_access: ::std::option::Option<crate::types::FeatureStatus>,
 }
 impl SpaceSettingsBuilder {
     /// <p>The JupyterServer app settings.</p>
@@ -231,6 +238,20 @@ impl SpaceSettingsBuilder {
     pub fn get_custom_file_systems(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CustomFileSystem>> {
         &self.custom_file_systems
     }
+    /// <p>A setting that enables or disables remote access for a SageMaker space. When enabled, this allows you to connect to the remote space from your local IDE.</p>
+    pub fn remote_access(mut self, input: crate::types::FeatureStatus) -> Self {
+        self.remote_access = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>A setting that enables or disables remote access for a SageMaker space. When enabled, this allows you to connect to the remote space from your local IDE.</p>
+    pub fn set_remote_access(mut self, input: ::std::option::Option<crate::types::FeatureStatus>) -> Self {
+        self.remote_access = input;
+        self
+    }
+    /// <p>A setting that enables or disables remote access for a SageMaker space. When enabled, this allows you to connect to the remote space from your local IDE.</p>
+    pub fn get_remote_access(&self) -> &::std::option::Option<crate::types::FeatureStatus> {
+        &self.remote_access
+    }
     /// Consumes the builder and constructs a [`SpaceSettings`](crate::types::SpaceSettings).
     pub fn build(self) -> crate::types::SpaceSettings {
         crate::types::SpaceSettings {
@@ -242,6 +263,7 @@ impl SpaceSettingsBuilder {
             space_storage_settings: self.space_storage_settings,
             space_managed_resources: self.space_managed_resources,
             custom_file_systems: self.custom_file_systems,
+            remote_access: self.remote_access,
         }
     }
 }

@@ -517,6 +517,18 @@ pub(crate) fn get_low_latency_hls_manifest_configuration_correct_errors(
     builder
 }
 
+pub(crate) fn get_mss_manifest_configuration_correct_errors(
+    mut builder: crate::types::builders::GetMssManifestConfigurationBuilder,
+) -> crate::types::builders::GetMssManifestConfigurationBuilder {
+    if builder.manifest_name.is_none() {
+        builder.manifest_name = Some(Default::default())
+    }
+    if builder.url.is_none() {
+        builder.url = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn harvest_job_correct_errors(mut builder: crate::types::builders::HarvestJobBuilder) -> crate::types::builders::HarvestJobBuilder {
     if builder.channel_group_name.is_none() {
         builder.channel_group_name = Some(Default::default())
@@ -691,6 +703,15 @@ pub(crate) fn list_hls_manifest_configuration_correct_errors(
 pub(crate) fn list_low_latency_hls_manifest_configuration_correct_errors(
     mut builder: crate::types::builders::ListLowLatencyHlsManifestConfigurationBuilder,
 ) -> crate::types::builders::ListLowLatencyHlsManifestConfigurationBuilder {
+    if builder.manifest_name.is_none() {
+        builder.manifest_name = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn list_mss_manifest_configuration_correct_errors(
+    mut builder: crate::types::builders::ListMssManifestConfigurationBuilder,
+) -> crate::types::builders::ListMssManifestConfigurationBuilder {
     if builder.manifest_name.is_none() {
         builder.manifest_name = Some(Default::default())
     }

@@ -18,6 +18,8 @@ pub struct UpdatedSessionActionInfo {
     pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The percentage completed.</p>
     pub progress_percent: ::std::option::Option<f32>,
+    /// <p>A list of output manifest properties reported by the worker agent, with each entry corresponding to a manifest property in the job.</p>
+    pub manifests: ::std::option::Option<::std::vec::Vec<crate::types::TaskRunManifestPropertiesRequest>>,
 }
 impl UpdatedSessionActionInfo {
     /// <p>The status of the session upon completion.</p>
@@ -48,6 +50,12 @@ impl UpdatedSessionActionInfo {
     pub fn progress_percent(&self) -> ::std::option::Option<f32> {
         self.progress_percent
     }
+    /// <p>A list of output manifest properties reported by the worker agent, with each entry corresponding to a manifest property in the job.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.manifests.is_none()`.
+    pub fn manifests(&self) -> &[crate::types::TaskRunManifestPropertiesRequest] {
+        self.manifests.as_deref().unwrap_or_default()
+    }
 }
 impl ::std::fmt::Debug for UpdatedSessionActionInfo {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -59,6 +67,7 @@ impl ::std::fmt::Debug for UpdatedSessionActionInfo {
         formatter.field("ended_at", &self.ended_at);
         formatter.field("updated_at", &self.updated_at);
         formatter.field("progress_percent", &self.progress_percent);
+        formatter.field("manifests", &self.manifests);
         formatter.finish()
     }
 }
@@ -80,6 +89,7 @@ pub struct UpdatedSessionActionInfoBuilder {
     pub(crate) ended_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) progress_percent: ::std::option::Option<f32>,
+    pub(crate) manifests: ::std::option::Option<::std::vec::Vec<crate::types::TaskRunManifestPropertiesRequest>>,
 }
 impl UpdatedSessionActionInfoBuilder {
     /// <p>The status of the session upon completion.</p>
@@ -180,6 +190,26 @@ impl UpdatedSessionActionInfoBuilder {
     pub fn get_progress_percent(&self) -> &::std::option::Option<f32> {
         &self.progress_percent
     }
+    /// Appends an item to `manifests`.
+    ///
+    /// To override the contents of this collection use [`set_manifests`](Self::set_manifests).
+    ///
+    /// <p>A list of output manifest properties reported by the worker agent, with each entry corresponding to a manifest property in the job.</p>
+    pub fn manifests(mut self, input: crate::types::TaskRunManifestPropertiesRequest) -> Self {
+        let mut v = self.manifests.unwrap_or_default();
+        v.push(input);
+        self.manifests = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>A list of output manifest properties reported by the worker agent, with each entry corresponding to a manifest property in the job.</p>
+    pub fn set_manifests(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TaskRunManifestPropertiesRequest>>) -> Self {
+        self.manifests = input;
+        self
+    }
+    /// <p>A list of output manifest properties reported by the worker agent, with each entry corresponding to a manifest property in the job.</p>
+    pub fn get_manifests(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TaskRunManifestPropertiesRequest>> {
+        &self.manifests
+    }
     /// Consumes the builder and constructs a [`UpdatedSessionActionInfo`](crate::types::UpdatedSessionActionInfo).
     pub fn build(self) -> crate::types::UpdatedSessionActionInfo {
         crate::types::UpdatedSessionActionInfo {
@@ -190,6 +220,7 @@ impl UpdatedSessionActionInfoBuilder {
             ended_at: self.ended_at,
             updated_at: self.updated_at,
             progress_percent: self.progress_percent,
+            manifests: self.manifests,
         }
     }
 }
@@ -203,6 +234,7 @@ impl ::std::fmt::Debug for UpdatedSessionActionInfoBuilder {
         formatter.field("ended_at", &self.ended_at);
         formatter.field("updated_at", &self.updated_at);
         formatter.field("progress_percent", &self.progress_percent);
+        formatter.field("manifests", &self.manifests);
         formatter.finish()
     }
 }

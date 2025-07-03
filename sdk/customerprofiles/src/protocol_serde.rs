@@ -49,6 +49,8 @@ pub(crate) mod shape_create_segment_estimate;
 
 pub(crate) mod shape_create_segment_snapshot;
 
+pub(crate) mod shape_create_upload_job;
+
 pub(crate) mod shape_delete_calculated_attribute_definition;
 
 pub(crate) mod shape_delete_domain;
@@ -109,6 +111,10 @@ pub(crate) mod shape_get_segment_snapshot;
 
 pub(crate) mod shape_get_similar_profiles;
 
+pub(crate) mod shape_get_upload_job;
+
+pub(crate) mod shape_get_upload_job_path;
+
 pub(crate) mod shape_get_workflow;
 
 pub(crate) mod shape_get_workflow_steps;
@@ -147,6 +153,8 @@ pub(crate) mod shape_list_segment_definitions;
 
 pub(crate) mod shape_list_tags_for_resource;
 
+pub(crate) mod shape_list_upload_jobs;
+
 pub(crate) mod shape_list_workflows;
 
 pub(crate) mod shape_merge_profiles;
@@ -158,6 +166,10 @@ pub(crate) mod shape_put_profile_object;
 pub(crate) mod shape_put_profile_object_type;
 
 pub(crate) mod shape_search_profiles;
+
+pub(crate) mod shape_start_upload_job;
+
+pub(crate) mod shape_stop_upload_job;
 
 pub(crate) mod shape_tag_resource;
 
@@ -210,6 +222,8 @@ pub(crate) mod shape_create_segment_definition_input;
 pub(crate) mod shape_create_segment_estimate_input;
 
 pub(crate) mod shape_create_segment_snapshot_input;
+
+pub(crate) mod shape_create_upload_job_input;
 
 pub(crate) mod shape_delete_integration_input;
 
@@ -369,6 +383,8 @@ pub(crate) mod shape_readiness;
 
 pub(crate) mod shape_request_value_list;
 
+pub(crate) mod shape_results_summary;
+
 pub(crate) mod shape_rule_based_matching_request;
 
 pub(crate) mod shape_rule_based_matching_response;
@@ -382,6 +398,8 @@ pub(crate) mod shape_segment_group_structure;
 pub(crate) mod shape_tag_map;
 
 pub(crate) mod shape_update_address;
+
+pub(crate) mod shape_upload_jobs_list;
 
 pub(crate) mod shape_workflow_attributes;
 
@@ -486,6 +504,8 @@ pub(crate) mod shape_task;
 pub(crate) mod shape_threshold;
 
 pub(crate) mod shape_trigger_config;
+
+pub(crate) mod shape_upload_job_item;
 
 pub(crate) mod shape_workflow_step_item;
 

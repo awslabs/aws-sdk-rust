@@ -11,6 +11,22 @@ pub struct Encryption {
     /// <p>The frequency (in seconds) of key changes for live workflows, in which content is streamed real time. The service retrieves content keys before the live content begins streaming, and then retrieves them as needed over the lifetime of the workflow. By default, key rotation is set to 300 seconds (5 minutes), the minimum rotation interval, which is equivalent to setting it to 300. If you don't enter an interval, content keys aren't rotated.</p>
     /// <p>The following example setting causes the service to rotate keys every thirty minutes: <code>1800</code></p>
     pub key_rotation_interval_seconds: ::std::option::Option<i32>,
+    /// <p>Excludes SEIG and SGPD boxes from segment metadata in CMAF containers.</p>
+    /// <p>When set to <code>true</code>, MediaPackage omits these DRM metadata boxes from CMAF segments, which can improve compatibility with certain devices and players that don't support these boxes.</p>
+    /// <p>Important considerations:</p>
+    /// <ul>
+    /// <li>
+    /// <p>This setting only affects CMAF container formats</p></li>
+    /// <li>
+    /// <p>Key rotation can still be handled through media playlist signaling</p></li>
+    /// <li>
+    /// <p>PSSH and TENC boxes remain unaffected</p></li>
+    /// <li>
+    /// <p>Default behavior is preserved when this setting is disabled</p></li>
+    /// </ul>
+    /// <p>Valid values: <code>true</code> | <code>false</code></p>
+    /// <p>Default: <code>false</code></p>
+    pub cmaf_exclude_segment_drm_metadata: ::std::option::Option<bool>,
     /// <p>The parameters for the SPEKE key provider.</p>
     pub speke_key_provider: ::std::option::Option<crate::types::SpekeKeyProvider>,
 }
@@ -27,6 +43,24 @@ impl Encryption {
     /// <p>The following example setting causes the service to rotate keys every thirty minutes: <code>1800</code></p>
     pub fn key_rotation_interval_seconds(&self) -> ::std::option::Option<i32> {
         self.key_rotation_interval_seconds
+    }
+    /// <p>Excludes SEIG and SGPD boxes from segment metadata in CMAF containers.</p>
+    /// <p>When set to <code>true</code>, MediaPackage omits these DRM metadata boxes from CMAF segments, which can improve compatibility with certain devices and players that don't support these boxes.</p>
+    /// <p>Important considerations:</p>
+    /// <ul>
+    /// <li>
+    /// <p>This setting only affects CMAF container formats</p></li>
+    /// <li>
+    /// <p>Key rotation can still be handled through media playlist signaling</p></li>
+    /// <li>
+    /// <p>PSSH and TENC boxes remain unaffected</p></li>
+    /// <li>
+    /// <p>Default behavior is preserved when this setting is disabled</p></li>
+    /// </ul>
+    /// <p>Valid values: <code>true</code> | <code>false</code></p>
+    /// <p>Default: <code>false</code></p>
+    pub fn cmaf_exclude_segment_drm_metadata(&self) -> ::std::option::Option<bool> {
+        self.cmaf_exclude_segment_drm_metadata
     }
     /// <p>The parameters for the SPEKE key provider.</p>
     pub fn speke_key_provider(&self) -> ::std::option::Option<&crate::types::SpekeKeyProvider> {
@@ -47,6 +81,7 @@ pub struct EncryptionBuilder {
     pub(crate) constant_initialization_vector: ::std::option::Option<::std::string::String>,
     pub(crate) encryption_method: ::std::option::Option<crate::types::EncryptionMethod>,
     pub(crate) key_rotation_interval_seconds: ::std::option::Option<i32>,
+    pub(crate) cmaf_exclude_segment_drm_metadata: ::std::option::Option<bool>,
     pub(crate) speke_key_provider: ::std::option::Option<crate::types::SpekeKeyProvider>,
 }
 impl EncryptionBuilder {
@@ -96,6 +131,62 @@ impl EncryptionBuilder {
     pub fn get_key_rotation_interval_seconds(&self) -> &::std::option::Option<i32> {
         &self.key_rotation_interval_seconds
     }
+    /// <p>Excludes SEIG and SGPD boxes from segment metadata in CMAF containers.</p>
+    /// <p>When set to <code>true</code>, MediaPackage omits these DRM metadata boxes from CMAF segments, which can improve compatibility with certain devices and players that don't support these boxes.</p>
+    /// <p>Important considerations:</p>
+    /// <ul>
+    /// <li>
+    /// <p>This setting only affects CMAF container formats</p></li>
+    /// <li>
+    /// <p>Key rotation can still be handled through media playlist signaling</p></li>
+    /// <li>
+    /// <p>PSSH and TENC boxes remain unaffected</p></li>
+    /// <li>
+    /// <p>Default behavior is preserved when this setting is disabled</p></li>
+    /// </ul>
+    /// <p>Valid values: <code>true</code> | <code>false</code></p>
+    /// <p>Default: <code>false</code></p>
+    pub fn cmaf_exclude_segment_drm_metadata(mut self, input: bool) -> Self {
+        self.cmaf_exclude_segment_drm_metadata = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Excludes SEIG and SGPD boxes from segment metadata in CMAF containers.</p>
+    /// <p>When set to <code>true</code>, MediaPackage omits these DRM metadata boxes from CMAF segments, which can improve compatibility with certain devices and players that don't support these boxes.</p>
+    /// <p>Important considerations:</p>
+    /// <ul>
+    /// <li>
+    /// <p>This setting only affects CMAF container formats</p></li>
+    /// <li>
+    /// <p>Key rotation can still be handled through media playlist signaling</p></li>
+    /// <li>
+    /// <p>PSSH and TENC boxes remain unaffected</p></li>
+    /// <li>
+    /// <p>Default behavior is preserved when this setting is disabled</p></li>
+    /// </ul>
+    /// <p>Valid values: <code>true</code> | <code>false</code></p>
+    /// <p>Default: <code>false</code></p>
+    pub fn set_cmaf_exclude_segment_drm_metadata(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.cmaf_exclude_segment_drm_metadata = input;
+        self
+    }
+    /// <p>Excludes SEIG and SGPD boxes from segment metadata in CMAF containers.</p>
+    /// <p>When set to <code>true</code>, MediaPackage omits these DRM metadata boxes from CMAF segments, which can improve compatibility with certain devices and players that don't support these boxes.</p>
+    /// <p>Important considerations:</p>
+    /// <ul>
+    /// <li>
+    /// <p>This setting only affects CMAF container formats</p></li>
+    /// <li>
+    /// <p>Key rotation can still be handled through media playlist signaling</p></li>
+    /// <li>
+    /// <p>PSSH and TENC boxes remain unaffected</p></li>
+    /// <li>
+    /// <p>Default behavior is preserved when this setting is disabled</p></li>
+    /// </ul>
+    /// <p>Valid values: <code>true</code> | <code>false</code></p>
+    /// <p>Default: <code>false</code></p>
+    pub fn get_cmaf_exclude_segment_drm_metadata(&self) -> &::std::option::Option<bool> {
+        &self.cmaf_exclude_segment_drm_metadata
+    }
     /// <p>The parameters for the SPEKE key provider.</p>
     /// This field is required.
     pub fn speke_key_provider(mut self, input: crate::types::SpekeKeyProvider) -> Self {
@@ -117,6 +208,7 @@ impl EncryptionBuilder {
             constant_initialization_vector: self.constant_initialization_vector,
             encryption_method: self.encryption_method,
             key_rotation_interval_seconds: self.key_rotation_interval_seconds,
+            cmaf_exclude_segment_drm_metadata: self.cmaf_exclude_segment_drm_metadata,
             speke_key_provider: self.speke_key_provider,
         }
     }

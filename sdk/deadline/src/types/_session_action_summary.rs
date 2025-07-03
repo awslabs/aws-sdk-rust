@@ -18,6 +18,8 @@ pub struct SessionActionSummary {
     pub progress_percent: ::std::option::Option<f32>,
     /// <p>The session action definition.</p>
     pub definition: ::std::option::Option<crate::types::SessionActionDefinitionSummary>,
+    /// <p>The list of manifest properties that describe file attachments for the task run.</p>
+    pub manifests: ::std::option::Option<::std::vec::Vec<crate::types::TaskRunManifestPropertiesResponse>>,
 }
 impl SessionActionSummary {
     /// <p>The session action ID.</p>
@@ -49,6 +51,12 @@ impl SessionActionSummary {
     pub fn definition(&self) -> ::std::option::Option<&crate::types::SessionActionDefinitionSummary> {
         self.definition.as_ref()
     }
+    /// <p>The list of manifest properties that describe file attachments for the task run.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.manifests.is_none()`.
+    pub fn manifests(&self) -> &[crate::types::TaskRunManifestPropertiesResponse] {
+        self.manifests.as_deref().unwrap_or_default()
+    }
 }
 impl SessionActionSummary {
     /// Creates a new builder-style object to manufacture [`SessionActionSummary`](crate::types::SessionActionSummary).
@@ -68,6 +76,7 @@ pub struct SessionActionSummaryBuilder {
     pub(crate) worker_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) progress_percent: ::std::option::Option<f32>,
     pub(crate) definition: ::std::option::Option<crate::types::SessionActionDefinitionSummary>,
+    pub(crate) manifests: ::std::option::Option<::std::vec::Vec<crate::types::TaskRunManifestPropertiesResponse>>,
 }
 impl SessionActionSummaryBuilder {
     /// <p>The session action ID.</p>
@@ -171,6 +180,26 @@ impl SessionActionSummaryBuilder {
     pub fn get_definition(&self) -> &::std::option::Option<crate::types::SessionActionDefinitionSummary> {
         &self.definition
     }
+    /// Appends an item to `manifests`.
+    ///
+    /// To override the contents of this collection use [`set_manifests`](Self::set_manifests).
+    ///
+    /// <p>The list of manifest properties that describe file attachments for the task run.</p>
+    pub fn manifests(mut self, input: crate::types::TaskRunManifestPropertiesResponse) -> Self {
+        let mut v = self.manifests.unwrap_or_default();
+        v.push(input);
+        self.manifests = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The list of manifest properties that describe file attachments for the task run.</p>
+    pub fn set_manifests(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TaskRunManifestPropertiesResponse>>) -> Self {
+        self.manifests = input;
+        self
+    }
+    /// <p>The list of manifest properties that describe file attachments for the task run.</p>
+    pub fn get_manifests(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TaskRunManifestPropertiesResponse>> {
+        &self.manifests
+    }
     /// Consumes the builder and constructs a [`SessionActionSummary`](crate::types::SessionActionSummary).
     /// This method will fail if any of the following fields are not set:
     /// - [`session_action_id`](crate::types::builders::SessionActionSummaryBuilder::session_action_id)
@@ -194,6 +223,7 @@ impl SessionActionSummaryBuilder {
             worker_updated_at: self.worker_updated_at,
             progress_percent: self.progress_percent,
             definition: self.definition,
+            manifests: self.manifests,
         })
     }
 }

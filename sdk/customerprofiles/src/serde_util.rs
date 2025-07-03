@@ -92,6 +92,15 @@ pub(crate) fn create_segment_snapshot_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn create_upload_job_output_output_correct_errors(
+    mut builder: crate::operation::create_upload_job::builders::CreateUploadJobOutputBuilder,
+) -> crate::operation::create_upload_job::builders::CreateUploadJobOutputBuilder {
+    if builder.job_id.is_none() {
+        builder.job_id = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn delete_domain_output_output_correct_errors(
     mut builder: crate::operation::delete_domain::builders::DeleteDomainOutputBuilder,
 ) -> crate::operation::delete_domain::builders::DeleteDomainOutputBuilder {
@@ -265,6 +274,15 @@ pub(crate) fn get_segment_snapshot_output_output_correct_errors(
     }
     if builder.data_format.is_none() {
         builder.data_format = "no value was set".parse::<crate::types::DataFormat>().ok()
+    }
+    builder
+}
+
+pub(crate) fn get_upload_job_path_output_output_correct_errors(
+    mut builder: crate::operation::get_upload_job_path::builders::GetUploadJobPathOutputBuilder,
+) -> crate::operation::get_upload_job_path::builders::GetUploadJobPathOutputBuilder {
+    if builder.url.is_none() {
+        builder.url = Some(Default::default())
     }
     builder
 }

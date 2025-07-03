@@ -69,6 +69,16 @@ pub(crate) fn reflens_list_segment_definitions_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_upload_jobs_output_output_next_token(
+    input: &crate::operation::list_upload_jobs::ListUploadJobsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn lens_get_similar_profiles_output_output_profile_ids(
     input: crate::operation::get_similar_profiles::GetSimilarProfilesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<::std::string::String>> {
@@ -114,6 +124,13 @@ pub(crate) fn lens_list_rule_based_matches_output_output_match_ids(
 pub(crate) fn lens_list_segment_definitions_output_output_items(
     input: crate::operation::list_segment_definitions::ListSegmentDefinitionsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::SegmentDefinitionItem>> {
+    let input = input.items?;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_upload_jobs_output_output_items(
+    input: crate::operation::list_upload_jobs::ListUploadJobsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::UploadJobItem>> {
     let input = input.items?;
     ::std::option::Option::Some(input)
 }

@@ -215,7 +215,6 @@ impl CreateDomainInputBuilder {
         &self.subnet_ids
     }
     /// <p>The ID of the Amazon Virtual Private Cloud (VPC) that the domain uses for communication.</p>
-    /// This field is required.
     pub fn vpc_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpc_id = ::std::option::Option::Some(input.into());
         self

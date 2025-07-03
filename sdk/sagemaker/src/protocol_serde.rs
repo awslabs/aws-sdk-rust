@@ -83,6 +83,8 @@ pub(crate) mod shape_create_flow_definition;
 
 pub(crate) mod shape_create_hub;
 
+pub(crate) mod shape_create_hub_content_presigned_urls;
+
 pub(crate) mod shape_create_hub_content_reference;
 
 pub(crate) mod shape_create_human_task_ui;
@@ -621,6 +623,8 @@ pub(crate) mod shape_start_notebook_instance;
 
 pub(crate) mod shape_start_pipeline_execution;
 
+pub(crate) mod shape_start_session;
+
 pub(crate) mod shape_stop_auto_ml_job;
 
 pub(crate) mod shape_stop_compilation_job;
@@ -806,6 +810,8 @@ pub(crate) mod shape_create_experiment_input;
 pub(crate) mod shape_create_feature_group_input;
 
 pub(crate) mod shape_create_flow_definition_input;
+
+pub(crate) mod shape_create_hub_content_presigned_urls_input;
 
 pub(crate) mod shape_create_hub_content_reference_input;
 
@@ -1347,6 +1353,8 @@ pub(crate) mod shape_start_notebook_instance_input;
 
 pub(crate) mod shape_start_pipeline_execution_input;
 
+pub(crate) mod shape_start_session_input;
+
 pub(crate) mod shape_stop_auto_ml_job_input;
 
 pub(crate) mod shape_stop_compilation_job_input;
@@ -1498,6 +1506,8 @@ pub(crate) mod shape_artifact_summaries;
 pub(crate) mod shape_association_summaries;
 
 pub(crate) mod shape_async_inference_config;
+
+pub(crate) mod shape_authorized_url_configs;
 
 pub(crate) mod shape_auto_ml_candidate;
 
@@ -1977,6 +1987,8 @@ pub(crate) mod shape_pipeline_experiment_config;
 
 pub(crate) mod shape_pipeline_summary_list;
 
+pub(crate) mod shape_presigned_url_access_config;
+
 pub(crate) mod shape_processing_environment_map;
 
 pub(crate) mod shape_processing_input;
@@ -2234,6 +2246,8 @@ pub(crate) mod shape_association_summary;
 pub(crate) mod shape_async_inference_client_config;
 
 pub(crate) mod shape_async_inference_output_config;
+
+pub(crate) mod shape_authorized_url;
 
 pub(crate) mod shape_auto_ml_candidate_generation_config;
 

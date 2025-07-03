@@ -25,6 +25,8 @@ pub struct GetSessionActionOutput {
     pub definition: ::std::option::Option<crate::types::SessionActionDefinition>,
     /// <p>The limits and their amounts acquired during a session action. If no limits were acquired during the session, this field isn't returned.</p>
     pub acquired_limits: ::std::option::Option<::std::vec::Vec<crate::types::AcquiredLimit>>,
+    /// <p>The list of manifest properties that describe file attachments for the task run.</p>
+    pub manifests: ::std::option::Option<::std::vec::Vec<crate::types::TaskRunManifestPropertiesResponse>>,
     _request_id: Option<String>,
 }
 impl GetSessionActionOutput {
@@ -76,6 +78,12 @@ impl GetSessionActionOutput {
     pub fn acquired_limits(&self) -> &[crate::types::AcquiredLimit] {
         self.acquired_limits.as_deref().unwrap_or_default()
     }
+    /// <p>The list of manifest properties that describe file attachments for the task run.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.manifests.is_none()`.
+    pub fn manifests(&self) -> &[crate::types::TaskRunManifestPropertiesResponse] {
+        self.manifests.as_deref().unwrap_or_default()
+    }
 }
 impl ::std::fmt::Debug for GetSessionActionOutput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -91,6 +99,7 @@ impl ::std::fmt::Debug for GetSessionActionOutput {
         formatter.field("progress_message", &"*** Sensitive Data Redacted ***");
         formatter.field("definition", &self.definition);
         formatter.field("acquired_limits", &self.acquired_limits);
+        formatter.field("manifests", &self.manifests);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }
@@ -122,6 +131,7 @@ pub struct GetSessionActionOutputBuilder {
     pub(crate) progress_message: ::std::option::Option<::std::string::String>,
     pub(crate) definition: ::std::option::Option<crate::types::SessionActionDefinition>,
     pub(crate) acquired_limits: ::std::option::Option<::std::vec::Vec<crate::types::AcquiredLimit>>,
+    pub(crate) manifests: ::std::option::Option<::std::vec::Vec<crate::types::TaskRunManifestPropertiesResponse>>,
     _request_id: Option<String>,
 }
 impl GetSessionActionOutputBuilder {
@@ -289,6 +299,26 @@ impl GetSessionActionOutputBuilder {
     pub fn get_acquired_limits(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AcquiredLimit>> {
         &self.acquired_limits
     }
+    /// Appends an item to `manifests`.
+    ///
+    /// To override the contents of this collection use [`set_manifests`](Self::set_manifests).
+    ///
+    /// <p>The list of manifest properties that describe file attachments for the task run.</p>
+    pub fn manifests(mut self, input: crate::types::TaskRunManifestPropertiesResponse) -> Self {
+        let mut v = self.manifests.unwrap_or_default();
+        v.push(input);
+        self.manifests = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The list of manifest properties that describe file attachments for the task run.</p>
+    pub fn set_manifests(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TaskRunManifestPropertiesResponse>>) -> Self {
+        self.manifests = input;
+        self
+    }
+    /// <p>The list of manifest properties that describe file attachments for the task run.</p>
+    pub fn get_manifests(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TaskRunManifestPropertiesResponse>> {
+        &self.manifests
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -333,6 +363,7 @@ impl GetSessionActionOutputBuilder {
             progress_message: self.progress_message,
             definition: self.definition,
             acquired_limits: self.acquired_limits,
+            manifests: self.manifests,
             _request_id: self._request_id,
         })
     }
@@ -351,6 +382,7 @@ impl ::std::fmt::Debug for GetSessionActionOutputBuilder {
         formatter.field("progress_message", &"*** Sensitive Data Redacted ***");
         formatter.field("definition", &self.definition);
         formatter.field("acquired_limits", &self.acquired_limits);
+        formatter.field("manifests", &self.manifests);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }

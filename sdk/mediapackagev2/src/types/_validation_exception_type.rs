@@ -14,6 +14,8 @@
 /// match validationexceptiontype {
 ///     ValidationExceptionType::CencIvIncompatible => { /* ... */ },
 ///     ValidationExceptionType::ClipStartTimeWithStartOrEnd => { /* ... */ },
+///     ValidationExceptionType::CmafContainerTypeWithMssManifest => { /* ... */ },
+///     ValidationExceptionType::CmafExcludeSegmentDrmMetadataIncompatibleContainerType => { /* ... */ },
 ///     ValidationExceptionType::ContainerTypeImmutable => { /* ... */ },
 ///     ValidationExceptionType::DashDvbAttributesWithoutDvbDashProfile => { /* ... */ },
 ///     ValidationExceptionType::DirectModeWithTimingSource => { /* ... */ },
@@ -22,6 +24,7 @@
 ///     ValidationExceptionType::EncryptionContractShared => { /* ... */ },
 ///     ValidationExceptionType::EncryptionContractUnencrypted => { /* ... */ },
 ///     ValidationExceptionType::EncryptionContractWithoutAudioRenditionIncompatible => { /* ... */ },
+///     ValidationExceptionType::EncryptionContractWithIsmContainerIncompatible => { /* ... */ },
 ///     ValidationExceptionType::EncryptionMethodContainerTypeMismatch => { /* ... */ },
 ///     ValidationExceptionType::EndTimeEarlierThanStartTime => { /* ... */ },
 ///     ValidationExceptionType::HarvestedManifestHasStartEndFilterConfiguration => { /* ... */ },
@@ -40,6 +43,11 @@
 ///     ValidationExceptionType::InvalidPolicy => { /* ... */ },
 ///     ValidationExceptionType::InvalidRoleArn => { /* ... */ },
 ///     ValidationExceptionType::InvalidTimeDelaySeconds => { /* ... */ },
+///     ValidationExceptionType::IsmContainerTypeWithDashManifest => { /* ... */ },
+///     ValidationExceptionType::IsmContainerTypeWithHlsManifest => { /* ... */ },
+///     ValidationExceptionType::IsmContainerTypeWithLlHlsManifest => { /* ... */ },
+///     ValidationExceptionType::IsmContainerTypeWithScte => { /* ... */ },
+///     ValidationExceptionType::IsmContainerWithKeyRotation => { /* ... */ },
 ///     ValidationExceptionType::ManifestDrmSystemsIncompatible => { /* ... */ },
 ///     ValidationExceptionType::ManifestNameCollision => { /* ... */ },
 ///     ValidationExceptionType::MemberDoesNotMatchPattern => { /* ... */ },
@@ -65,6 +73,7 @@
 ///     ValidationExceptionType::TimingSourceMissing => { /* ... */ },
 ///     ValidationExceptionType::TooManyInProgressHarvestJobs => { /* ... */ },
 ///     ValidationExceptionType::TsContainerTypeWithDashManifest => { /* ... */ },
+///     ValidationExceptionType::TsContainerTypeWithMssManifest => { /* ... */ },
 ///     ValidationExceptionType::UpdatePeriodSmallerThanSegmentDuration => { /* ... */ },
 ///     ValidationExceptionType::UrlInvalid => { /* ... */ },
 ///     ValidationExceptionType::UrlLinkLocalAddress => { /* ... */ },
@@ -108,6 +117,10 @@ pub enum ValidationExceptionType {
     #[allow(missing_docs)] // documentation missing in model
     ClipStartTimeWithStartOrEnd,
     #[allow(missing_docs)] // documentation missing in model
+    CmafContainerTypeWithMssManifest,
+    #[allow(missing_docs)] // documentation missing in model
+    CmafExcludeSegmentDrmMetadataIncompatibleContainerType,
+    #[allow(missing_docs)] // documentation missing in model
     ContainerTypeImmutable,
     #[allow(missing_docs)] // documentation missing in model
     DashDvbAttributesWithoutDvbDashProfile,
@@ -123,6 +136,8 @@ pub enum ValidationExceptionType {
     EncryptionContractUnencrypted,
     #[allow(missing_docs)] // documentation missing in model
     EncryptionContractWithoutAudioRenditionIncompatible,
+    #[allow(missing_docs)] // documentation missing in model
+    EncryptionContractWithIsmContainerIncompatible,
     #[allow(missing_docs)] // documentation missing in model
     EncryptionMethodContainerTypeMismatch,
     #[allow(missing_docs)] // documentation missing in model
@@ -159,6 +174,16 @@ pub enum ValidationExceptionType {
     InvalidRoleArn,
     #[allow(missing_docs)] // documentation missing in model
     InvalidTimeDelaySeconds,
+    #[allow(missing_docs)] // documentation missing in model
+    IsmContainerTypeWithDashManifest,
+    #[allow(missing_docs)] // documentation missing in model
+    IsmContainerTypeWithHlsManifest,
+    #[allow(missing_docs)] // documentation missing in model
+    IsmContainerTypeWithLlHlsManifest,
+    #[allow(missing_docs)] // documentation missing in model
+    IsmContainerTypeWithScte,
+    #[allow(missing_docs)] // documentation missing in model
+    IsmContainerWithKeyRotation,
     #[allow(missing_docs)] // documentation missing in model
     ManifestDrmSystemsIncompatible,
     #[allow(missing_docs)] // documentation missing in model
@@ -210,6 +235,8 @@ pub enum ValidationExceptionType {
     #[allow(missing_docs)] // documentation missing in model
     TsContainerTypeWithDashManifest,
     #[allow(missing_docs)] // documentation missing in model
+    TsContainerTypeWithMssManifest,
+    #[allow(missing_docs)] // documentation missing in model
     UpdatePeriodSmallerThanSegmentDuration,
     #[allow(missing_docs)] // documentation missing in model
     UrlInvalid,
@@ -238,6 +265,10 @@ impl ::std::convert::From<&str> for ValidationExceptionType {
         match s {
             "CENC_IV_INCOMPATIBLE" => ValidationExceptionType::CencIvIncompatible,
             "CLIP_START_TIME_WITH_START_OR_END" => ValidationExceptionType::ClipStartTimeWithStartOrEnd,
+            "CMAF_CONTAINER_TYPE_WITH_MSS_MANIFEST" => ValidationExceptionType::CmafContainerTypeWithMssManifest,
+            "CMAF_EXCLUDE_SEGMENT_DRM_METADATA_INCOMPATIBLE_CONTAINER_TYPE" => {
+                ValidationExceptionType::CmafExcludeSegmentDrmMetadataIncompatibleContainerType
+            }
             "CONTAINER_TYPE_IMMUTABLE" => ValidationExceptionType::ContainerTypeImmutable,
             "DASH_DVB_ATTRIBUTES_WITHOUT_DVB_DASH_PROFILE" => ValidationExceptionType::DashDvbAttributesWithoutDvbDashProfile,
             "DIRECT_MODE_WITH_TIMING_SOURCE" => ValidationExceptionType::DirectModeWithTimingSource,
@@ -248,6 +279,7 @@ impl ::std::convert::From<&str> for ValidationExceptionType {
             "ENCRYPTION_CONTRACT_WITHOUT_AUDIO_RENDITION_INCOMPATIBLE" => {
                 ValidationExceptionType::EncryptionContractWithoutAudioRenditionIncompatible
             }
+            "ENCRYPTION_CONTRACT_WITH_ISM_CONTAINER_INCOMPATIBLE" => ValidationExceptionType::EncryptionContractWithIsmContainerIncompatible,
             "ENCRYPTION_METHOD_CONTAINER_TYPE_MISMATCH" => ValidationExceptionType::EncryptionMethodContainerTypeMismatch,
             "END_TIME_EARLIER_THAN_START_TIME" => ValidationExceptionType::EndTimeEarlierThanStartTime,
             "HARVESTED_MANIFEST_HAS_START_END_FILTER_CONFIGURATION" => ValidationExceptionType::HarvestedManifestHasStartEndFilterConfiguration,
@@ -266,6 +298,11 @@ impl ::std::convert::From<&str> for ValidationExceptionType {
             "INVALID_POLICY" => ValidationExceptionType::InvalidPolicy,
             "INVALID_ROLE_ARN" => ValidationExceptionType::InvalidRoleArn,
             "INVALID_TIME_DELAY_SECONDS" => ValidationExceptionType::InvalidTimeDelaySeconds,
+            "ISM_CONTAINER_TYPE_WITH_DASH_MANIFEST" => ValidationExceptionType::IsmContainerTypeWithDashManifest,
+            "ISM_CONTAINER_TYPE_WITH_HLS_MANIFEST" => ValidationExceptionType::IsmContainerTypeWithHlsManifest,
+            "ISM_CONTAINER_TYPE_WITH_LL_HLS_MANIFEST" => ValidationExceptionType::IsmContainerTypeWithLlHlsManifest,
+            "ISM_CONTAINER_TYPE_WITH_SCTE" => ValidationExceptionType::IsmContainerTypeWithScte,
+            "ISM_CONTAINER_WITH_KEY_ROTATION" => ValidationExceptionType::IsmContainerWithKeyRotation,
             "MANIFEST_DRM_SYSTEMS_INCOMPATIBLE" => ValidationExceptionType::ManifestDrmSystemsIncompatible,
             "MANIFEST_NAME_COLLISION" => ValidationExceptionType::ManifestNameCollision,
             "MEMBER_DOES_NOT_MATCH_PATTERN" => ValidationExceptionType::MemberDoesNotMatchPattern,
@@ -293,6 +330,7 @@ impl ::std::convert::From<&str> for ValidationExceptionType {
             "TIMING_SOURCE_MISSING" => ValidationExceptionType::TimingSourceMissing,
             "TOO_MANY_IN_PROGRESS_HARVEST_JOBS" => ValidationExceptionType::TooManyInProgressHarvestJobs,
             "TS_CONTAINER_TYPE_WITH_DASH_MANIFEST" => ValidationExceptionType::TsContainerTypeWithDashManifest,
+            "TS_CONTAINER_TYPE_WITH_MSS_MANIFEST" => ValidationExceptionType::TsContainerTypeWithMssManifest,
             "UPDATE_PERIOD_SMALLER_THAN_SEGMENT_DURATION" => ValidationExceptionType::UpdatePeriodSmallerThanSegmentDuration,
             "URL_INVALID" => ValidationExceptionType::UrlInvalid,
             "URL_LINK_LOCAL_ADDRESS" => ValidationExceptionType::UrlLinkLocalAddress,
@@ -320,6 +358,10 @@ impl ValidationExceptionType {
         match self {
             ValidationExceptionType::CencIvIncompatible => "CENC_IV_INCOMPATIBLE",
             ValidationExceptionType::ClipStartTimeWithStartOrEnd => "CLIP_START_TIME_WITH_START_OR_END",
+            ValidationExceptionType::CmafContainerTypeWithMssManifest => "CMAF_CONTAINER_TYPE_WITH_MSS_MANIFEST",
+            ValidationExceptionType::CmafExcludeSegmentDrmMetadataIncompatibleContainerType => {
+                "CMAF_EXCLUDE_SEGMENT_DRM_METADATA_INCOMPATIBLE_CONTAINER_TYPE"
+            }
             ValidationExceptionType::ContainerTypeImmutable => "CONTAINER_TYPE_IMMUTABLE",
             ValidationExceptionType::DashDvbAttributesWithoutDvbDashProfile => "DASH_DVB_ATTRIBUTES_WITHOUT_DVB_DASH_PROFILE",
             ValidationExceptionType::DirectModeWithTimingSource => "DIRECT_MODE_WITH_TIMING_SOURCE",
@@ -330,6 +372,7 @@ impl ValidationExceptionType {
             ValidationExceptionType::EncryptionContractWithoutAudioRenditionIncompatible => {
                 "ENCRYPTION_CONTRACT_WITHOUT_AUDIO_RENDITION_INCOMPATIBLE"
             }
+            ValidationExceptionType::EncryptionContractWithIsmContainerIncompatible => "ENCRYPTION_CONTRACT_WITH_ISM_CONTAINER_INCOMPATIBLE",
             ValidationExceptionType::EncryptionMethodContainerTypeMismatch => "ENCRYPTION_METHOD_CONTAINER_TYPE_MISMATCH",
             ValidationExceptionType::EndTimeEarlierThanStartTime => "END_TIME_EARLIER_THAN_START_TIME",
             ValidationExceptionType::HarvestedManifestHasStartEndFilterConfiguration => "HARVESTED_MANIFEST_HAS_START_END_FILTER_CONFIGURATION",
@@ -348,6 +391,11 @@ impl ValidationExceptionType {
             ValidationExceptionType::InvalidPolicy => "INVALID_POLICY",
             ValidationExceptionType::InvalidRoleArn => "INVALID_ROLE_ARN",
             ValidationExceptionType::InvalidTimeDelaySeconds => "INVALID_TIME_DELAY_SECONDS",
+            ValidationExceptionType::IsmContainerTypeWithDashManifest => "ISM_CONTAINER_TYPE_WITH_DASH_MANIFEST",
+            ValidationExceptionType::IsmContainerTypeWithHlsManifest => "ISM_CONTAINER_TYPE_WITH_HLS_MANIFEST",
+            ValidationExceptionType::IsmContainerTypeWithLlHlsManifest => "ISM_CONTAINER_TYPE_WITH_LL_HLS_MANIFEST",
+            ValidationExceptionType::IsmContainerTypeWithScte => "ISM_CONTAINER_TYPE_WITH_SCTE",
+            ValidationExceptionType::IsmContainerWithKeyRotation => "ISM_CONTAINER_WITH_KEY_ROTATION",
             ValidationExceptionType::ManifestDrmSystemsIncompatible => "MANIFEST_DRM_SYSTEMS_INCOMPATIBLE",
             ValidationExceptionType::ManifestNameCollision => "MANIFEST_NAME_COLLISION",
             ValidationExceptionType::MemberDoesNotMatchPattern => "MEMBER_DOES_NOT_MATCH_PATTERN",
@@ -375,6 +423,7 @@ impl ValidationExceptionType {
             ValidationExceptionType::TimingSourceMissing => "TIMING_SOURCE_MISSING",
             ValidationExceptionType::TooManyInProgressHarvestJobs => "TOO_MANY_IN_PROGRESS_HARVEST_JOBS",
             ValidationExceptionType::TsContainerTypeWithDashManifest => "TS_CONTAINER_TYPE_WITH_DASH_MANIFEST",
+            ValidationExceptionType::TsContainerTypeWithMssManifest => "TS_CONTAINER_TYPE_WITH_MSS_MANIFEST",
             ValidationExceptionType::UpdatePeriodSmallerThanSegmentDuration => "UPDATE_PERIOD_SMALLER_THAN_SEGMENT_DURATION",
             ValidationExceptionType::UrlInvalid => "URL_INVALID",
             ValidationExceptionType::UrlLinkLocalAddress => "URL_LINK_LOCAL_ADDRESS",
@@ -393,6 +442,8 @@ impl ValidationExceptionType {
         &[
             "CENC_IV_INCOMPATIBLE",
             "CLIP_START_TIME_WITH_START_OR_END",
+            "CMAF_CONTAINER_TYPE_WITH_MSS_MANIFEST",
+            "CMAF_EXCLUDE_SEGMENT_DRM_METADATA_INCOMPATIBLE_CONTAINER_TYPE",
             "CONTAINER_TYPE_IMMUTABLE",
             "DASH_DVB_ATTRIBUTES_WITHOUT_DVB_DASH_PROFILE",
             "DIRECT_MODE_WITH_TIMING_SOURCE",
@@ -401,6 +452,7 @@ impl ValidationExceptionType {
             "ENCRYPTION_CONTRACT_SHARED",
             "ENCRYPTION_CONTRACT_UNENCRYPTED",
             "ENCRYPTION_CONTRACT_WITHOUT_AUDIO_RENDITION_INCOMPATIBLE",
+            "ENCRYPTION_CONTRACT_WITH_ISM_CONTAINER_INCOMPATIBLE",
             "ENCRYPTION_METHOD_CONTAINER_TYPE_MISMATCH",
             "END_TIME_EARLIER_THAN_START_TIME",
             "HARVESTED_MANIFEST_HAS_START_END_FILTER_CONFIGURATION",
@@ -419,6 +471,11 @@ impl ValidationExceptionType {
             "INVALID_POLICY",
             "INVALID_ROLE_ARN",
             "INVALID_TIME_DELAY_SECONDS",
+            "ISM_CONTAINER_TYPE_WITH_DASH_MANIFEST",
+            "ISM_CONTAINER_TYPE_WITH_HLS_MANIFEST",
+            "ISM_CONTAINER_TYPE_WITH_LL_HLS_MANIFEST",
+            "ISM_CONTAINER_TYPE_WITH_SCTE",
+            "ISM_CONTAINER_WITH_KEY_ROTATION",
             "MANIFEST_DRM_SYSTEMS_INCOMPATIBLE",
             "MANIFEST_NAME_COLLISION",
             "MEMBER_DOES_NOT_MATCH_PATTERN",
@@ -444,6 +501,7 @@ impl ValidationExceptionType {
             "TIMING_SOURCE_MISSING",
             "TOO_MANY_IN_PROGRESS_HARVEST_JOBS",
             "TS_CONTAINER_TYPE_WITH_DASH_MANIFEST",
+            "TS_CONTAINER_TYPE_WITH_MSS_MANIFEST",
             "UPDATE_PERIOD_SMALLER_THAN_SEGMENT_DURATION",
             "URL_INVALID",
             "URL_LINK_LOCAL_ADDRESS",
@@ -479,6 +537,10 @@ impl ::std::fmt::Display for ValidationExceptionType {
         match self {
             ValidationExceptionType::CencIvIncompatible => write!(f, "CENC_IV_INCOMPATIBLE"),
             ValidationExceptionType::ClipStartTimeWithStartOrEnd => write!(f, "CLIP_START_TIME_WITH_START_OR_END"),
+            ValidationExceptionType::CmafContainerTypeWithMssManifest => write!(f, "CMAF_CONTAINER_TYPE_WITH_MSS_MANIFEST"),
+            ValidationExceptionType::CmafExcludeSegmentDrmMetadataIncompatibleContainerType => {
+                write!(f, "CMAF_EXCLUDE_SEGMENT_DRM_METADATA_INCOMPATIBLE_CONTAINER_TYPE")
+            }
             ValidationExceptionType::ContainerTypeImmutable => write!(f, "CONTAINER_TYPE_IMMUTABLE"),
             ValidationExceptionType::DashDvbAttributesWithoutDvbDashProfile => write!(f, "DASH_DVB_ATTRIBUTES_WITHOUT_DVB_DASH_PROFILE"),
             ValidationExceptionType::DirectModeWithTimingSource => write!(f, "DIRECT_MODE_WITH_TIMING_SOURCE"),
@@ -488,6 +550,9 @@ impl ::std::fmt::Display for ValidationExceptionType {
             ValidationExceptionType::EncryptionContractUnencrypted => write!(f, "ENCRYPTION_CONTRACT_UNENCRYPTED"),
             ValidationExceptionType::EncryptionContractWithoutAudioRenditionIncompatible => {
                 write!(f, "ENCRYPTION_CONTRACT_WITHOUT_AUDIO_RENDITION_INCOMPATIBLE")
+            }
+            ValidationExceptionType::EncryptionContractWithIsmContainerIncompatible => {
+                write!(f, "ENCRYPTION_CONTRACT_WITH_ISM_CONTAINER_INCOMPATIBLE")
             }
             ValidationExceptionType::EncryptionMethodContainerTypeMismatch => write!(f, "ENCRYPTION_METHOD_CONTAINER_TYPE_MISMATCH"),
             ValidationExceptionType::EndTimeEarlierThanStartTime => write!(f, "END_TIME_EARLIER_THAN_START_TIME"),
@@ -509,6 +574,11 @@ impl ::std::fmt::Display for ValidationExceptionType {
             ValidationExceptionType::InvalidPolicy => write!(f, "INVALID_POLICY"),
             ValidationExceptionType::InvalidRoleArn => write!(f, "INVALID_ROLE_ARN"),
             ValidationExceptionType::InvalidTimeDelaySeconds => write!(f, "INVALID_TIME_DELAY_SECONDS"),
+            ValidationExceptionType::IsmContainerTypeWithDashManifest => write!(f, "ISM_CONTAINER_TYPE_WITH_DASH_MANIFEST"),
+            ValidationExceptionType::IsmContainerTypeWithHlsManifest => write!(f, "ISM_CONTAINER_TYPE_WITH_HLS_MANIFEST"),
+            ValidationExceptionType::IsmContainerTypeWithLlHlsManifest => write!(f, "ISM_CONTAINER_TYPE_WITH_LL_HLS_MANIFEST"),
+            ValidationExceptionType::IsmContainerTypeWithScte => write!(f, "ISM_CONTAINER_TYPE_WITH_SCTE"),
+            ValidationExceptionType::IsmContainerWithKeyRotation => write!(f, "ISM_CONTAINER_WITH_KEY_ROTATION"),
             ValidationExceptionType::ManifestDrmSystemsIncompatible => write!(f, "MANIFEST_DRM_SYSTEMS_INCOMPATIBLE"),
             ValidationExceptionType::ManifestNameCollision => write!(f, "MANIFEST_NAME_COLLISION"),
             ValidationExceptionType::MemberDoesNotMatchPattern => write!(f, "MEMBER_DOES_NOT_MATCH_PATTERN"),
@@ -540,6 +610,7 @@ impl ::std::fmt::Display for ValidationExceptionType {
             ValidationExceptionType::TimingSourceMissing => write!(f, "TIMING_SOURCE_MISSING"),
             ValidationExceptionType::TooManyInProgressHarvestJobs => write!(f, "TOO_MANY_IN_PROGRESS_HARVEST_JOBS"),
             ValidationExceptionType::TsContainerTypeWithDashManifest => write!(f, "TS_CONTAINER_TYPE_WITH_DASH_MANIFEST"),
+            ValidationExceptionType::TsContainerTypeWithMssManifest => write!(f, "TS_CONTAINER_TYPE_WITH_MSS_MANIFEST"),
             ValidationExceptionType::UpdatePeriodSmallerThanSegmentDuration => write!(f, "UPDATE_PERIOD_SMALLER_THAN_SEGMENT_DURATION"),
             ValidationExceptionType::UrlInvalid => write!(f, "URL_INVALID"),
             ValidationExceptionType::UrlLinkLocalAddress => write!(f, "URL_LINK_LOCAL_ADDRESS"),

@@ -152,6 +152,13 @@ pub(crate) fn de_get_session_action(
                         ::aws_smithy_types::date_time::Format::DateTimeWithOffset,
                     )?);
                 }
+                "manifests" => {
+                    builder = builder.set_manifests(
+                        crate::protocol_serde::shape_task_run_manifest_properties_list_response::de_task_run_manifest_properties_list_response(
+                            tokens,
+                        )?,
+                    );
+                }
                 "processExitCode" => {
                     builder = builder.set_process_exit_code(
                         ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?

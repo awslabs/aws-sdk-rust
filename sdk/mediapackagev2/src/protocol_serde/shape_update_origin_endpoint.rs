@@ -265,6 +265,9 @@ pub(crate) fn de_update_origin_endpoint(
                         ::aws_smithy_types::date_time::Format::EpochSeconds,
                     )?);
                 }
+                "MssManifests" => {
+                    builder = builder.set_mss_manifests(crate::protocol_serde::shape_get_mss_manifests::de_get_mss_manifests(tokens)?);
+                }
                 "OriginEndpointName" => {
                     builder = builder.set_origin_endpoint_name(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

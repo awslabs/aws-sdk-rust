@@ -2,12 +2,14 @@
 
 /// <p>The details of a task run in a session action.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct TaskRunSessionActionDefinitionSummary {
     /// <p>The task ID.</p>
     pub task_id: ::std::option::Option<::std::string::String>,
     /// <p>The step ID.</p>
     pub step_id: ::std::string::String,
+    /// <p>The parameters of a task run in a session action.</p>
+    pub parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::TaskParameterValue>>,
 }
 impl TaskRunSessionActionDefinitionSummary {
     /// <p>The task ID.</p>
@@ -19,6 +21,19 @@ impl TaskRunSessionActionDefinitionSummary {
         use std::ops::Deref;
         self.step_id.deref()
     }
+    /// <p>The parameters of a task run in a session action.</p>
+    pub fn parameters(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::TaskParameterValue>> {
+        self.parameters.as_ref()
+    }
+}
+impl ::std::fmt::Debug for TaskRunSessionActionDefinitionSummary {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("TaskRunSessionActionDefinitionSummary");
+        formatter.field("task_id", &self.task_id);
+        formatter.field("step_id", &self.step_id);
+        formatter.field("parameters", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
 }
 impl TaskRunSessionActionDefinitionSummary {
     /// Creates a new builder-style object to manufacture [`TaskRunSessionActionDefinitionSummary`](crate::types::TaskRunSessionActionDefinitionSummary).
@@ -28,11 +43,12 @@ impl TaskRunSessionActionDefinitionSummary {
 }
 
 /// A builder for [`TaskRunSessionActionDefinitionSummary`](crate::types::TaskRunSessionActionDefinitionSummary).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct TaskRunSessionActionDefinitionSummaryBuilder {
     pub(crate) task_id: ::std::option::Option<::std::string::String>,
     pub(crate) step_id: ::std::option::Option<::std::string::String>,
+    pub(crate) parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::TaskParameterValue>>,
 }
 impl TaskRunSessionActionDefinitionSummaryBuilder {
     /// <p>The task ID.</p>
@@ -64,6 +80,29 @@ impl TaskRunSessionActionDefinitionSummaryBuilder {
     pub fn get_step_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.step_id
     }
+    /// Adds a key-value pair to `parameters`.
+    ///
+    /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
+    ///
+    /// <p>The parameters of a task run in a session action.</p>
+    pub fn parameters(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::TaskParameterValue) -> Self {
+        let mut hash_map = self.parameters.unwrap_or_default();
+        hash_map.insert(k.into(), v);
+        self.parameters = ::std::option::Option::Some(hash_map);
+        self
+    }
+    /// <p>The parameters of a task run in a session action.</p>
+    pub fn set_parameters(
+        mut self,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::TaskParameterValue>>,
+    ) -> Self {
+        self.parameters = input;
+        self
+    }
+    /// <p>The parameters of a task run in a session action.</p>
+    pub fn get_parameters(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::TaskParameterValue>> {
+        &self.parameters
+    }
     /// Consumes the builder and constructs a [`TaskRunSessionActionDefinitionSummary`](crate::types::TaskRunSessionActionDefinitionSummary).
     /// This method will fail if any of the following fields are not set:
     /// - [`step_id`](crate::types::builders::TaskRunSessionActionDefinitionSummaryBuilder::step_id)
@@ -78,6 +117,16 @@ impl TaskRunSessionActionDefinitionSummaryBuilder {
                     "step_id was not specified but it is required when building TaskRunSessionActionDefinitionSummary",
                 )
             })?,
+            parameters: self.parameters,
         })
+    }
+}
+impl ::std::fmt::Debug for TaskRunSessionActionDefinitionSummaryBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("TaskRunSessionActionDefinitionSummaryBuilder");
+        formatter.field("task_id", &self.task_id);
+        formatter.field("step_id", &self.step_id);
+        formatter.field("parameters", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

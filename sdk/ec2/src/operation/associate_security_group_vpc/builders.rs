@@ -29,7 +29,7 @@ impl crate::operation::associate_security_group_vpc::builders::AssociateSecurity
 /// <li>
 /// <p>You can associate the security group with another VPC if your account owns the VPC or if the VPC was shared with you.</p></li>
 /// <li>
-/// <p>You must own the security group and the VPC that it was created in.</p></li>
+/// <p>You must own the security group.</p></li>
 /// <li>
 /// <p>You cannot use this feature with default security groups.</p></li>
 /// <li>

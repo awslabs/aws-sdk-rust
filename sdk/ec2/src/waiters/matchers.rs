@@ -1508,6 +1508,272 @@ pub(crate) fn match_describe_security_groups_f735c42a19b31c377(
     false
 }
 
+/// Matcher union: {"output":{"path":"SecurityGroupVpcAssociations[].State","expected":"associated","comparator":"allStringEquals"}}
+pub(crate) fn match_describe_security_group_vpc_associations_05a126fd150c44e3d(
+    _result: ::std::result::Result<
+        &crate::operation::describe_security_group_vpc_associations::DescribeSecurityGroupVpcAssociationsOutput,
+        &crate::operation::describe_security_group_vpc_associations::DescribeSecurityGroupVpcAssociationsError,
+    >,
+) -> bool {
+    fn path_traversal<'a>(
+        _output: &'a crate::operation::describe_security_group_vpc_associations::DescribeSecurityGroupVpcAssociationsOutput,
+    ) -> ::std::option::Option<::std::vec::Vec<&'a crate::types::SecurityGroupVpcAssociationState>> {
+        let _fld_1 = _output.security_group_vpc_associations.as_ref()?;
+        let _prj_3 = _fld_1
+            .iter()
+            .flat_map(|v| {
+                #[allow(clippy::let_and_return)]
+                fn map(_v: &crate::types::SecurityGroupVpcAssociation) -> ::std::option::Option<&crate::types::SecurityGroupVpcAssociationState> {
+                    let _fld_2 = _v.state.as_ref();
+                    _fld_2
+                }
+                map(v)
+            })
+            .collect::<::std::vec::Vec<_>>();
+        ::std::option::Option::Some(_prj_3)
+    }
+    _result
+        .as_ref()
+        .ok()
+        .and_then(|output| path_traversal(output))
+        .map(|value| {
+            !value.is_empty()
+                && value.iter().all(|value| {
+                    let _tmp_2 = value.as_str();
+                    let right = "associated";
+                    let _cmp_1 = _tmp_2 == right;
+                    _cmp_1
+                })
+        })
+        .unwrap_or_default()
+}
+
+/// Matcher union: {"output":{"path":"SecurityGroupVpcAssociations[].State","expected":"associating","comparator":"anyStringEquals"}}
+pub(crate) fn match_describe_security_group_vpc_associations_de185f5a68fb264b0(
+    _result: ::std::result::Result<
+        &crate::operation::describe_security_group_vpc_associations::DescribeSecurityGroupVpcAssociationsOutput,
+        &crate::operation::describe_security_group_vpc_associations::DescribeSecurityGroupVpcAssociationsError,
+    >,
+) -> bool {
+    fn path_traversal<'a>(
+        _output: &'a crate::operation::describe_security_group_vpc_associations::DescribeSecurityGroupVpcAssociationsOutput,
+    ) -> ::std::option::Option<::std::vec::Vec<&'a crate::types::SecurityGroupVpcAssociationState>> {
+        let _fld_1 = _output.security_group_vpc_associations.as_ref()?;
+        let _prj_3 = _fld_1
+            .iter()
+            .flat_map(|v| {
+                #[allow(clippy::let_and_return)]
+                fn map(_v: &crate::types::SecurityGroupVpcAssociation) -> ::std::option::Option<&crate::types::SecurityGroupVpcAssociationState> {
+                    let _fld_2 = _v.state.as_ref();
+                    _fld_2
+                }
+                map(v)
+            })
+            .collect::<::std::vec::Vec<_>>();
+        ::std::option::Option::Some(_prj_3)
+    }
+    _result
+        .as_ref()
+        .ok()
+        .and_then(|output| path_traversal(output))
+        .map(|value| {
+            value.iter().any(|value| {
+                let _tmp_2 = value.as_str();
+                let right = "associating";
+                let _cmp_1 = _tmp_2 == right;
+                _cmp_1
+            })
+        })
+        .unwrap_or_default()
+}
+
+/// Matcher union: {"output":{"path":"SecurityGroupVpcAssociations[].State","expected":"association-failed","comparator":"anyStringEquals"}}
+pub(crate) fn match_describe_security_group_vpc_associations_479ea6c443eaa25e7(
+    _result: ::std::result::Result<
+        &crate::operation::describe_security_group_vpc_associations::DescribeSecurityGroupVpcAssociationsOutput,
+        &crate::operation::describe_security_group_vpc_associations::DescribeSecurityGroupVpcAssociationsError,
+    >,
+) -> bool {
+    fn path_traversal<'a>(
+        _output: &'a crate::operation::describe_security_group_vpc_associations::DescribeSecurityGroupVpcAssociationsOutput,
+    ) -> ::std::option::Option<::std::vec::Vec<&'a crate::types::SecurityGroupVpcAssociationState>> {
+        let _fld_1 = _output.security_group_vpc_associations.as_ref()?;
+        let _prj_3 = _fld_1
+            .iter()
+            .flat_map(|v| {
+                #[allow(clippy::let_and_return)]
+                fn map(_v: &crate::types::SecurityGroupVpcAssociation) -> ::std::option::Option<&crate::types::SecurityGroupVpcAssociationState> {
+                    let _fld_2 = _v.state.as_ref();
+                    _fld_2
+                }
+                map(v)
+            })
+            .collect::<::std::vec::Vec<_>>();
+        ::std::option::Option::Some(_prj_3)
+    }
+    _result
+        .as_ref()
+        .ok()
+        .and_then(|output| path_traversal(output))
+        .map(|value| {
+            value.iter().any(|value| {
+                let _tmp_2 = value.as_str();
+                let right = "association-failed";
+                let _cmp_1 = _tmp_2 == right;
+                _cmp_1
+            })
+        })
+        .unwrap_or_default()
+}
+
+/// Matcher union: {"output":{"path":"SecurityGroupVpcAssociations[].State","expected":"disassociated","comparator":"allStringEquals"}}
+pub(crate) fn match_describe_security_group_vpc_associations_fbd4d7a53fc8bbc73(
+    _result: ::std::result::Result<
+        &crate::operation::describe_security_group_vpc_associations::DescribeSecurityGroupVpcAssociationsOutput,
+        &crate::operation::describe_security_group_vpc_associations::DescribeSecurityGroupVpcAssociationsError,
+    >,
+) -> bool {
+    fn path_traversal<'a>(
+        _output: &'a crate::operation::describe_security_group_vpc_associations::DescribeSecurityGroupVpcAssociationsOutput,
+    ) -> ::std::option::Option<::std::vec::Vec<&'a crate::types::SecurityGroupVpcAssociationState>> {
+        let _fld_1 = _output.security_group_vpc_associations.as_ref()?;
+        let _prj_3 = _fld_1
+            .iter()
+            .flat_map(|v| {
+                #[allow(clippy::let_and_return)]
+                fn map(_v: &crate::types::SecurityGroupVpcAssociation) -> ::std::option::Option<&crate::types::SecurityGroupVpcAssociationState> {
+                    let _fld_2 = _v.state.as_ref();
+                    _fld_2
+                }
+                map(v)
+            })
+            .collect::<::std::vec::Vec<_>>();
+        ::std::option::Option::Some(_prj_3)
+    }
+    _result
+        .as_ref()
+        .ok()
+        .and_then(|output| path_traversal(output))
+        .map(|value| {
+            !value.is_empty()
+                && value.iter().all(|value| {
+                    let _tmp_2 = value.as_str();
+                    let right = "disassociated";
+                    let _cmp_1 = _tmp_2 == right;
+                    _cmp_1
+                })
+        })
+        .unwrap_or_default()
+}
+
+/// Matcher union: {"output":{"path":"SecurityGroupVpcAssociations[].State","expected":"disassociating","comparator":"anyStringEquals"}}
+pub(crate) fn match_describe_security_group_vpc_associations_1e8485cf2019c71c7(
+    _result: ::std::result::Result<
+        &crate::operation::describe_security_group_vpc_associations::DescribeSecurityGroupVpcAssociationsOutput,
+        &crate::operation::describe_security_group_vpc_associations::DescribeSecurityGroupVpcAssociationsError,
+    >,
+) -> bool {
+    fn path_traversal<'a>(
+        _output: &'a crate::operation::describe_security_group_vpc_associations::DescribeSecurityGroupVpcAssociationsOutput,
+    ) -> ::std::option::Option<::std::vec::Vec<&'a crate::types::SecurityGroupVpcAssociationState>> {
+        let _fld_1 = _output.security_group_vpc_associations.as_ref()?;
+        let _prj_3 = _fld_1
+            .iter()
+            .flat_map(|v| {
+                #[allow(clippy::let_and_return)]
+                fn map(_v: &crate::types::SecurityGroupVpcAssociation) -> ::std::option::Option<&crate::types::SecurityGroupVpcAssociationState> {
+                    let _fld_2 = _v.state.as_ref();
+                    _fld_2
+                }
+                map(v)
+            })
+            .collect::<::std::vec::Vec<_>>();
+        ::std::option::Option::Some(_prj_3)
+    }
+    _result
+        .as_ref()
+        .ok()
+        .and_then(|output| path_traversal(output))
+        .map(|value| {
+            value.iter().any(|value| {
+                let _tmp_2 = value.as_str();
+                let right = "disassociating";
+                let _cmp_1 = _tmp_2 == right;
+                _cmp_1
+            })
+        })
+        .unwrap_or_default()
+}
+
+/// Matcher union: {"output":{"path":"SecurityGroupVpcAssociations[].State","expected":"disassociation-failed","comparator":"anyStringEquals"}}
+pub(crate) fn match_describe_security_group_vpc_associations_3dceeb9fd052c4973(
+    _result: ::std::result::Result<
+        &crate::operation::describe_security_group_vpc_associations::DescribeSecurityGroupVpcAssociationsOutput,
+        &crate::operation::describe_security_group_vpc_associations::DescribeSecurityGroupVpcAssociationsError,
+    >,
+) -> bool {
+    fn path_traversal<'a>(
+        _output: &'a crate::operation::describe_security_group_vpc_associations::DescribeSecurityGroupVpcAssociationsOutput,
+    ) -> ::std::option::Option<::std::vec::Vec<&'a crate::types::SecurityGroupVpcAssociationState>> {
+        let _fld_1 = _output.security_group_vpc_associations.as_ref()?;
+        let _prj_3 = _fld_1
+            .iter()
+            .flat_map(|v| {
+                #[allow(clippy::let_and_return)]
+                fn map(_v: &crate::types::SecurityGroupVpcAssociation) -> ::std::option::Option<&crate::types::SecurityGroupVpcAssociationState> {
+                    let _fld_2 = _v.state.as_ref();
+                    _fld_2
+                }
+                map(v)
+            })
+            .collect::<::std::vec::Vec<_>>();
+        ::std::option::Option::Some(_prj_3)
+    }
+    _result
+        .as_ref()
+        .ok()
+        .and_then(|output| path_traversal(output))
+        .map(|value| {
+            value.iter().any(|value| {
+                let _tmp_2 = value.as_str();
+                let right = "disassociation-failed";
+                let _cmp_1 = _tmp_2 == right;
+                _cmp_1
+            })
+        })
+        .unwrap_or_default()
+}
+
+/// Matcher union: {"output":{"path":"length(SecurityGroupVpcAssociations[]) == `0`","expected":"true","comparator":"booleanEquals"}}
+pub(crate) fn match_describe_security_group_vpc_associations_9eb23410274361fd5(
+    _result: ::std::result::Result<
+        &crate::operation::describe_security_group_vpc_associations::DescribeSecurityGroupVpcAssociationsOutput,
+        &crate::operation::describe_security_group_vpc_associations::DescribeSecurityGroupVpcAssociationsError,
+    >,
+) -> bool {
+    fn path_traversal<'a>(
+        _output: &'a crate::operation::describe_security_group_vpc_associations::DescribeSecurityGroupVpcAssociationsOutput,
+    ) -> ::std::option::Option<bool> {
+        let _fld_2 = _output.security_group_vpc_associations.as_ref()?;
+        let _ret_1 = _fld_2.len() as i64;
+        const _LIT_3: &f64 = &0.0;
+        let _tmp_5 = *_LIT_3;
+        let _tmp_6 = _tmp_5 as i64;
+        let _cmp_4 = _ret_1 == _tmp_6;
+        ::std::option::Option::Some(_cmp_4)
+    }
+    _result
+        .as_ref()
+        .ok()
+        .and_then(|output| path_traversal(output))
+        .map(|value| {
+            let right = true;
+            let _cmp_1 = value == right;
+            _cmp_1
+        })
+        .unwrap_or_default()
+}
+
 /// Matcher union: {"output":{"path":"Snapshots[].State","expected":"completed","comparator":"allStringEquals"}}
 pub(crate) fn match_describe_snapshots_a0b4c167203a8805f(
     _result: ::std::result::Result<

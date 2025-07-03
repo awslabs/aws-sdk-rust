@@ -34,5 +34,17 @@ pub fn ser_updated_session_action_info(
             ::aws_smithy_types::Number::Float((*var_7).into()),
         );
     }
+    if let Some(var_8) = &input.manifests {
+        let mut array_9 = object.key("manifests").start_array();
+        for item_10 in var_8 {
+            {
+                #[allow(unused_mut)]
+                let mut object_11 = array_9.value().start_object();
+                crate::protocol_serde::shape_task_run_manifest_properties_request::ser_task_run_manifest_properties_request(&mut object_11, item_10)?;
+                object_11.finish();
+            }
+        }
+        array_9.finish();
+    }
     Ok(())
 }

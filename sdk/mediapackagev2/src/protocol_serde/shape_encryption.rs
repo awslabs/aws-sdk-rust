@@ -31,6 +31,10 @@ where
                                     .transpose()?,
                             );
                         }
+                        "CmafExcludeSegmentDrmMetadata" => {
+                            builder = builder
+                                .set_cmaf_exclude_segment_drm_metadata(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                        }
                         "SpekeKeyProvider" => {
                             builder = builder.set_speke_key_provider(crate::protocol_serde::shape_speke_key_provider::de_speke_key_provider(tokens)?);
                         }
@@ -71,11 +75,14 @@ pub fn ser_encryption(
             ::aws_smithy_types::Number::NegInt((*var_4).into()),
         );
     }
-    if let Some(var_5) = &input.speke_key_provider {
+    if let Some(var_5) = &input.cmaf_exclude_segment_drm_metadata {
+        object.key("CmafExcludeSegmentDrmMetadata").boolean(*var_5);
+    }
+    if let Some(var_6) = &input.speke_key_provider {
         #[allow(unused_mut)]
-        let mut object_6 = object.key("SpekeKeyProvider").start_object();
-        crate::protocol_serde::shape_speke_key_provider::ser_speke_key_provider(&mut object_6, var_5)?;
-        object_6.finish();
+        let mut object_7 = object.key("SpekeKeyProvider").start_object();
+        crate::protocol_serde::shape_speke_key_provider::ser_speke_key_provider(&mut object_7, var_6)?;
+        object_7.finish();
     }
     Ok(())
 }

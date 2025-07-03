@@ -8,6 +8,8 @@ pub struct DescribeSecurityGroupVpcAssociationsInput {
     /// <li>
     /// <p><code>group-id</code>: The security group ID.</p></li>
     /// <li>
+    /// <p><code>group-owner-id</code>: The group owner ID.</p></li>
+    /// <li>
     /// <p><code>vpc-id</code>: The ID of the associated VPC.</p></li>
     /// <li>
     /// <p><code>vpc-owner-id</code>: The account ID of the VPC owner.</p></li>
@@ -31,6 +33,8 @@ impl DescribeSecurityGroupVpcAssociationsInput {
     /// <ul>
     /// <li>
     /// <p><code>group-id</code>: The security group ID.</p></li>
+    /// <li>
+    /// <p><code>group-owner-id</code>: The group owner ID.</p></li>
     /// <li>
     /// <p><code>vpc-id</code>: The ID of the associated VPC.</p></li>
     /// <li>
@@ -86,6 +90,8 @@ impl DescribeSecurityGroupVpcAssociationsInputBuilder {
     /// <li>
     /// <p><code>group-id</code>: The security group ID.</p></li>
     /// <li>
+    /// <p><code>group-owner-id</code>: The group owner ID.</p></li>
+    /// <li>
     /// <p><code>vpc-id</code>: The ID of the associated VPC.</p></li>
     /// <li>
     /// <p><code>vpc-owner-id</code>: The account ID of the VPC owner.</p></li>
@@ -107,6 +113,8 @@ impl DescribeSecurityGroupVpcAssociationsInputBuilder {
     /// <li>
     /// <p><code>group-id</code>: The security group ID.</p></li>
     /// <li>
+    /// <p><code>group-owner-id</code>: The group owner ID.</p></li>
+    /// <li>
     /// <p><code>vpc-id</code>: The ID of the associated VPC.</p></li>
     /// <li>
     /// <p><code>vpc-owner-id</code>: The account ID of the VPC owner.</p></li>
@@ -125,6 +133,8 @@ impl DescribeSecurityGroupVpcAssociationsInputBuilder {
     /// <ul>
     /// <li>
     /// <p><code>group-id</code>: The security group ID.</p></li>
+    /// <li>
+    /// <p><code>group-owner-id</code>: The group owner ID.</p></li>
     /// <li>
     /// <p><code>vpc-id</code>: The ID of the associated VPC.</p></li>
     /// <li>

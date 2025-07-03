@@ -1903,6 +1903,10 @@ pub use crate::types::_recommendation_job_output_config::RecommendationJobOutput
 
 pub use crate::types::_recommendation_job_compiled_output_config::RecommendationJobCompiledOutputConfig;
 
+pub use crate::types::_authorized_url::AuthorizedUrl;
+
+pub use crate::types::_presigned_url_access_config::PresignedUrlAccessConfig;
+
 pub use crate::types::_throughput_config::ThroughputConfig;
 
 pub use crate::types::_deployment_stage::DeploymentStage;
@@ -2012,6 +2016,8 @@ mod _athena_result_compression_type;
 mod _athena_result_format;
 
 mod _auth_mode;
+
+mod _authorized_url;
 
 mod _auto_ml_algorithm;
 
@@ -3226,6 +3232,8 @@ mod _pipeline_summary;
 mod _predefined_metric_specification;
 
 mod _preempt_team_tasks;
+
+mod _presigned_url_access_config;
 
 mod _priority_class;
 

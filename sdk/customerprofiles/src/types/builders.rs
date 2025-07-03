@@ -93,6 +93,8 @@ pub use crate::types::_field_source_profile_ids::FieldSourceProfileIdsBuilder;
 
 pub use crate::types::_list_workflows_item::ListWorkflowsItemBuilder;
 
+pub use crate::types::_upload_job_item::UploadJobItemBuilder;
+
 pub use crate::types::_segment_definition_item::SegmentDefinitionItemBuilder;
 
 pub use crate::types::_list_profile_object_type_template_item::ListProfileObjectTypeTemplateItemBuilder;
@@ -142,6 +144,8 @@ pub use crate::types::_appflow_integration_workflow_metrics::AppflowIntegrationW
 pub use crate::types::_workflow_attributes::WorkflowAttributesBuilder;
 
 pub use crate::types::_appflow_integration_workflow_attributes::AppflowIntegrationWorkflowAttributesBuilder;
+
+pub use crate::types::_results_summary::ResultsSummaryBuilder;
 
 pub use crate::types::_profile_query_failures::ProfileQueryFailuresBuilder;
 

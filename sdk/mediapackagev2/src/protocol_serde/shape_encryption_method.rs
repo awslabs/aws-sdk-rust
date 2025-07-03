@@ -28,6 +28,13 @@ where
                                     .transpose()?,
                             );
                         }
+                        "IsmEncryptionMethod" => {
+                            builder = builder.set_ism_encryption_method(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::IsmEncryptionMethod::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {
@@ -55,6 +62,9 @@ pub fn ser_encryption_method(
     }
     if let Some(var_2) = &input.cmaf_encryption_method {
         object.key("CmafEncryptionMethod").string(var_2.as_str());
+    }
+    if let Some(var_3) = &input.ism_encryption_method {
+        object.key("IsmEncryptionMethod").string(var_3.as_str());
     }
     Ok(())
 }

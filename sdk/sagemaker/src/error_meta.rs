@@ -781,6 +781,38 @@ impl From<crate::operation::create_hub::CreateHubError> for Error {
         }
     }
 }
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::create_hub_content_presigned_urls::CreateHubContentPresignedUrlsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::create_hub_content_presigned_urls::CreateHubContentPresignedUrlsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_hub_content_presigned_urls::CreateHubContentPresignedUrlsError> for Error {
+    fn from(err: crate::operation::create_hub_content_presigned_urls::CreateHubContentPresignedUrlsError) -> Self {
+        match err {
+            crate::operation::create_hub_content_presigned_urls::CreateHubContentPresignedUrlsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_hub_content_reference::CreateHubContentReferenceError, R>>
     for Error
 where
@@ -7521,6 +7553,29 @@ impl From<crate::operation::start_pipeline_execution::StartPipelineExecutionErro
             }
             crate::operation::start_pipeline_execution::StartPipelineExecutionError::ResourceNotFound(inner) => Error::ResourceNotFound(inner),
             crate::operation::start_pipeline_execution::StartPipelineExecutionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_session::StartSessionError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_session::StartSessionError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::start_session::StartSessionError> for Error {
+    fn from(err: crate::operation::start_session::StartSessionError) -> Self {
+        match err {
+            crate::operation::start_session::StartSessionError::ResourceLimitExceeded(inner) => Error::ResourceLimitExceeded(inner),
+            crate::operation::start_session::StartSessionError::ResourceNotFound(inner) => Error::ResourceNotFound(inner),
+            crate::operation::start_session::StartSessionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

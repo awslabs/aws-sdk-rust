@@ -77,6 +77,10 @@ pub use crate::types::_force_endpoint_error_configuration::ForceEndpointErrorCon
 
 pub use crate::types::_endpoint_error_condition::EndpointErrorCondition;
 
+pub use crate::types::_get_mss_manifest_configuration::GetMssManifestConfiguration;
+
+pub use crate::types::_mss_manifest_layout::MssManifestLayout;
+
 pub use crate::types::_get_low_latency_hls_manifest_configuration::GetLowLatencyHlsManifestConfiguration;
 
 pub use crate::types::_start_tag::StartTag;
@@ -103,6 +107,8 @@ pub use crate::types::_preset_speke20_audio::PresetSpeke20Audio;
 
 pub use crate::types::_encryption_method::EncryptionMethod;
 
+pub use crate::types::_ism_encryption_method::IsmEncryptionMethod;
+
 pub use crate::types::_cmaf_encryption_method::CmafEncryptionMethod;
 
 pub use crate::types::_ts_encryption_method::TsEncryptionMethod;
@@ -113,6 +119,8 @@ pub use crate::types::_scte_filter::ScteFilter;
 
 pub use crate::types::_container_type::ContainerType;
 
+pub use crate::types::_create_mss_manifest_configuration::CreateMssManifestConfiguration;
+
 pub use crate::types::_create_dash_manifest_configuration::CreateDashManifestConfiguration;
 
 pub use crate::types::_create_low_latency_hls_manifest_configuration::CreateLowLatencyHlsManifestConfiguration;
@@ -120,6 +128,8 @@ pub use crate::types::_create_low_latency_hls_manifest_configuration::CreateLowL
 pub use crate::types::_create_hls_manifest_configuration::CreateHlsManifestConfiguration;
 
 pub use crate::types::_origin_endpoint_list_configuration::OriginEndpointListConfiguration;
+
+pub use crate::types::_list_mss_manifest_configuration::ListMssManifestConfiguration;
 
 pub use crate::types::_list_dash_manifest_configuration::ListDashManifestConfiguration;
 
@@ -146,6 +156,8 @@ mod _create_dash_manifest_configuration;
 mod _create_hls_manifest_configuration;
 
 mod _create_low_latency_hls_manifest_configuration;
+
+mod _create_mss_manifest_configuration;
 
 mod _dash_base_url;
 
@@ -199,6 +211,8 @@ mod _get_hls_manifest_configuration;
 
 mod _get_low_latency_hls_manifest_configuration;
 
+mod _get_mss_manifest_configuration;
+
 mod _harvest_job;
 
 mod _harvest_job_status;
@@ -219,11 +233,17 @@ mod _input_switch_configuration;
 
 mod _input_type;
 
+mod _ism_encryption_method;
+
 mod _list_dash_manifest_configuration;
 
 mod _list_hls_manifest_configuration;
 
 mod _list_low_latency_hls_manifest_configuration;
+
+mod _list_mss_manifest_configuration;
+
+mod _mss_manifest_layout;
 
 mod _origin_endpoint_list_configuration;
 

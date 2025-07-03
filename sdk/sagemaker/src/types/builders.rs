@@ -1277,6 +1277,10 @@ pub use crate::types::_recommendation_job_output_config::RecommendationJobOutput
 
 pub use crate::types::_recommendation_job_compiled_output_config::RecommendationJobCompiledOutputConfigBuilder;
 
+pub use crate::types::_authorized_url::AuthorizedUrlBuilder;
+
+pub use crate::types::_presigned_url_access_config::PresignedUrlAccessConfigBuilder;
+
 pub use crate::types::_throughput_config::ThroughputConfigBuilder;
 
 pub use crate::types::_deployment_stage::DeploymentStageBuilder;

@@ -492,6 +492,32 @@ impl From<crate::operation::create_segment_snapshot::CreateSegmentSnapshotError>
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_upload_job::CreateUploadJobError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_upload_job::CreateUploadJobError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_upload_job::CreateUploadJobError> for Error {
+    fn from(err: crate::operation::create_upload_job::CreateUploadJobError) -> Self {
+        match err {
+            crate::operation::create_upload_job::CreateUploadJobError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::create_upload_job::CreateUploadJobError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::create_upload_job::CreateUploadJobError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::create_upload_job::CreateUploadJobError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::create_upload_job::CreateUploadJobError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::create_upload_job::CreateUploadJobError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R>
     From<
         ::aws_smithy_runtime_api::client::result::SdkError<
@@ -1446,6 +1472,58 @@ impl From<crate::operation::get_similar_profiles::GetSimilarProfilesError> for E
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_upload_job::GetUploadJobError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_upload_job::GetUploadJobError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_upload_job::GetUploadJobError> for Error {
+    fn from(err: crate::operation::get_upload_job::GetUploadJobError) -> Self {
+        match err {
+            crate::operation::get_upload_job::GetUploadJobError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_upload_job::GetUploadJobError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::get_upload_job::GetUploadJobError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::get_upload_job::GetUploadJobError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_upload_job::GetUploadJobError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_upload_job::GetUploadJobError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_upload_job_path::GetUploadJobPathError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_upload_job_path::GetUploadJobPathError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_upload_job_path::GetUploadJobPathError> for Error {
+    fn from(err: crate::operation::get_upload_job_path::GetUploadJobPathError) -> Self {
+        match err {
+            crate::operation::get_upload_job_path::GetUploadJobPathError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_upload_job_path::GetUploadJobPathError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::get_upload_job_path::GetUploadJobPathError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::get_upload_job_path::GetUploadJobPathError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_upload_job_path::GetUploadJobPathError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_upload_job_path::GetUploadJobPathError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_workflow::GetWorkflowError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -2090,6 +2168,32 @@ impl From<crate::operation::list_tags_for_resource::ListTagsForResourceError> fo
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_upload_jobs::ListUploadJobsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_upload_jobs::ListUploadJobsError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_upload_jobs::ListUploadJobsError> for Error {
+    fn from(err: crate::operation::list_upload_jobs::ListUploadJobsError) -> Self {
+        match err {
+            crate::operation::list_upload_jobs::ListUploadJobsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_upload_jobs::ListUploadJobsError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::list_upload_jobs::ListUploadJobsError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_upload_jobs::ListUploadJobsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::list_upload_jobs::ListUploadJobsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_upload_jobs::ListUploadJobsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_workflows::ListWorkflowsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -2248,6 +2352,58 @@ impl From<crate::operation::search_profiles::SearchProfilesError> for Error {
             crate::operation::search_profiles::SearchProfilesError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::search_profiles::SearchProfilesError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::search_profiles::SearchProfilesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_upload_job::StartUploadJobError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_upload_job::StartUploadJobError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::start_upload_job::StartUploadJobError> for Error {
+    fn from(err: crate::operation::start_upload_job::StartUploadJobError) -> Self {
+        match err {
+            crate::operation::start_upload_job::StartUploadJobError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::start_upload_job::StartUploadJobError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::start_upload_job::StartUploadJobError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::start_upload_job::StartUploadJobError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::start_upload_job::StartUploadJobError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::start_upload_job::StartUploadJobError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::stop_upload_job::StopUploadJobError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::stop_upload_job::StopUploadJobError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::stop_upload_job::StopUploadJobError> for Error {
+    fn from(err: crate::operation::stop_upload_job::StopUploadJobError) -> Self {
+        match err {
+            crate::operation::stop_upload_job::StopUploadJobError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::stop_upload_job::StopUploadJobError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::stop_upload_job::StopUploadJobError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::stop_upload_job::StopUploadJobError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::stop_upload_job::StopUploadJobError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::stop_upload_job::StopUploadJobError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

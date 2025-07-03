@@ -40,6 +40,9 @@ pub mod create_segment_estimate;
 /// Types for the `CreateSegmentSnapshot` operation.
 pub mod create_segment_snapshot;
 
+/// Types for the `CreateUploadJob` operation.
+pub mod create_upload_job;
+
 /// Types for the `DeleteCalculatedAttributeDefinition` operation.
 pub mod delete_calculated_attribute_definition;
 
@@ -130,6 +133,12 @@ pub mod get_segment_snapshot;
 /// Types for the `GetSimilarProfiles` operation.
 pub mod get_similar_profiles;
 
+/// Types for the `GetUploadJob` operation.
+pub mod get_upload_job;
+
+/// Types for the `GetUploadJobPath` operation.
+pub mod get_upload_job_path;
+
 /// Types for the `GetWorkflow` operation.
 pub mod get_workflow;
 
@@ -187,6 +196,9 @@ pub mod list_segment_definitions;
 /// Types for the `ListTagsForResource` operation.
 pub mod list_tags_for_resource;
 
+/// Types for the `ListUploadJobs` operation.
+pub mod list_upload_jobs;
+
 /// Types for the `ListWorkflows` operation.
 pub mod list_workflows;
 
@@ -204,6 +216,12 @@ pub mod put_profile_object_type;
 
 /// Types for the `SearchProfiles` operation.
 pub mod search_profiles;
+
+/// Types for the `StartUploadJob` operation.
+pub mod start_upload_job;
+
+/// Types for the `StopUploadJob` operation.
+pub mod stop_upload_job;
 
 /// Types for the `TagResource` operation.
 pub mod tag_resource;

@@ -51,6 +51,9 @@ pub fn ser_space_settings(
         }
         array_14.finish();
     }
+    if let Some(var_17) = &input.remote_access {
+        object.key("RemoteAccess").string(var_17.as_str());
+    }
     Ok(())
 }
 
@@ -110,6 +113,13 @@ where
                         "CustomFileSystems" => {
                             builder =
                                 builder.set_custom_file_systems(crate::protocol_serde::shape_custom_file_systems::de_custom_file_systems(tokens)?);
+                        }
+                        "RemoteAccess" => {
+                            builder = builder.set_remote_access(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::FeatureStatus::from(u.as_ref())))
+                                    .transpose()?,
+                            );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

@@ -91,6 +91,9 @@ pub mod create_flow_definition;
 /// Types for the `CreateHub` operation.
 pub mod create_hub;
 
+/// Types for the `CreateHubContentPresignedUrls` operation.
+pub mod create_hub_content_presigned_urls;
+
 /// Types for the `CreateHubContentReference` operation.
 pub mod create_hub_content_reference;
 
@@ -897,6 +900,9 @@ pub mod start_notebook_instance;
 
 /// Types for the `StartPipelineExecution` operation.
 pub mod start_pipeline_execution;
+
+/// Types for the `StartSession` operation.
+pub mod start_session;
 
 /// Types for the `StopAutoMLJob` operation.
 pub mod stop_auto_ml_job;

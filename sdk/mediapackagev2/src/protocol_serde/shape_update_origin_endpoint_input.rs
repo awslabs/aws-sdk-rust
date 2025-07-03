@@ -54,16 +54,28 @@ pub fn ser_update_origin_endpoint_input_input(
         }
         array_14.finish();
     }
-    if let Some(var_17) = &input.segment {
-        #[allow(unused_mut)]
-        let mut object_18 = object.key("Segment").start_object();
-        crate::protocol_serde::shape_segment::ser_segment(&mut object_18, var_17)?;
-        object_18.finish();
+    if let Some(var_17) = &input.mss_manifests {
+        let mut array_18 = object.key("MssManifests").start_array();
+        for item_19 in var_17 {
+            {
+                #[allow(unused_mut)]
+                let mut object_20 = array_18.value().start_object();
+                crate::protocol_serde::shape_create_mss_manifest_configuration::ser_create_mss_manifest_configuration(&mut object_20, item_19)?;
+                object_20.finish();
+            }
+        }
+        array_18.finish();
     }
-    if let Some(var_19) = &input.startover_window_seconds {
+    if let Some(var_21) = &input.segment {
+        #[allow(unused_mut)]
+        let mut object_22 = object.key("Segment").start_object();
+        crate::protocol_serde::shape_segment::ser_segment(&mut object_22, var_21)?;
+        object_22.finish();
+    }
+    if let Some(var_23) = &input.startover_window_seconds {
         object.key("StartoverWindowSeconds").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_19).into()),
+            ::aws_smithy_types::Number::NegInt((*var_23).into()),
         );
     }
     Ok(())

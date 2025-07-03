@@ -56,6 +56,11 @@ where
                                 crate::protocol_serde::shape_session_action_definition_summary::de_session_action_definition_summary(tokens)?,
                             );
                         }
+                        "manifests" => {
+                            builder = builder.set_manifests(
+                                    crate::protocol_serde::shape_task_run_manifest_properties_list_response::de_task_run_manifest_properties_list_response(tokens)?
+                                );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

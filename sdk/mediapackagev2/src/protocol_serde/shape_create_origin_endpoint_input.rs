@@ -54,30 +54,42 @@ pub fn ser_create_origin_endpoint_input_input(
         }
         array_14.finish();
     }
-    if let Some(var_17) = &input.origin_endpoint_name {
-        object.key("OriginEndpointName").string(var_17.as_str());
-    }
-    if let Some(var_18) = &input.segment {
-        #[allow(unused_mut)]
-        let mut object_19 = object.key("Segment").start_object();
-        crate::protocol_serde::shape_segment::ser_segment(&mut object_19, var_18)?;
-        object_19.finish();
-    }
-    if let Some(var_20) = &input.startover_window_seconds {
-        object.key("StartoverWindowSeconds").number(
-            #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_20).into()),
-        );
-    }
-    if let Some(var_21) = &input.tags {
-        #[allow(unused_mut)]
-        let mut object_22 = object.key("Tags").start_object();
-        for (key_23, value_24) in var_21 {
+    if let Some(var_17) = &input.mss_manifests {
+        let mut array_18 = object.key("MssManifests").start_array();
+        for item_19 in var_17 {
             {
-                object_22.key(key_23.as_str()).string(value_24.as_str());
+                #[allow(unused_mut)]
+                let mut object_20 = array_18.value().start_object();
+                crate::protocol_serde::shape_create_mss_manifest_configuration::ser_create_mss_manifest_configuration(&mut object_20, item_19)?;
+                object_20.finish();
             }
         }
-        object_22.finish();
+        array_18.finish();
+    }
+    if let Some(var_21) = &input.origin_endpoint_name {
+        object.key("OriginEndpointName").string(var_21.as_str());
+    }
+    if let Some(var_22) = &input.segment {
+        #[allow(unused_mut)]
+        let mut object_23 = object.key("Segment").start_object();
+        crate::protocol_serde::shape_segment::ser_segment(&mut object_23, var_22)?;
+        object_23.finish();
+    }
+    if let Some(var_24) = &input.startover_window_seconds {
+        object.key("StartoverWindowSeconds").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_24).into()),
+        );
+    }
+    if let Some(var_25) = &input.tags {
+        #[allow(unused_mut)]
+        let mut object_26 = object.key("Tags").start_object();
+        for (key_27, value_28) in var_25 {
+            {
+                object_26.key(key_27.as_str()).string(value_28.as_str());
+            }
+        }
+        object_26.finish();
     }
     Ok(())
 }
