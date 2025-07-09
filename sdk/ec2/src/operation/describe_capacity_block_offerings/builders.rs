@@ -22,7 +22,7 @@ impl crate::operation::describe_capacity_block_offerings::builders::DescribeCapa
 }
 /// Fluent builder constructing a request to `DescribeCapacityBlockOfferings`.
 ///
-/// <p>Describes Capacity Block offerings available for purchase in the Amazon Web Services Region that you're currently using. With Capacity Blocks, you purchase a specific instance type for a period of time.</p>
+/// <p>Describes Capacity Block offerings available for purchase in the Amazon Web Services Region that you're currently using. With Capacity Blocks, you can purchase a specific GPU instance type or EC2 UltraServer for a period of time.</p>
 /// <p>To search for an available Capacity Block offering, you specify a reservation duration and instance count.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeCapacityBlockOfferingsFluentBuilder {
@@ -226,5 +226,33 @@ impl DescribeCapacityBlockOfferingsFluentBuilder {
     /// <p>The maximum number of items to return for this request. To get the next page of items, make another request with the token returned in the output. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_results()
+    }
+    /// <p>The EC2 UltraServer type of the Capacity Block offerings.</p>
+    pub fn ultraserver_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.ultraserver_type(input.into());
+        self
+    }
+    /// <p>The EC2 UltraServer type of the Capacity Block offerings.</p>
+    pub fn set_ultraserver_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_ultraserver_type(input);
+        self
+    }
+    /// <p>The EC2 UltraServer type of the Capacity Block offerings.</p>
+    pub fn get_ultraserver_type(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_ultraserver_type()
+    }
+    /// <p>The number of EC2 UltraServers in the offerings.</p>
+    pub fn ultraserver_count(mut self, input: i32) -> Self {
+        self.inner = self.inner.ultraserver_count(input);
+        self
+    }
+    /// <p>The number of EC2 UltraServers in the offerings.</p>
+    pub fn set_ultraserver_count(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.inner = self.inner.set_ultraserver_count(input);
+        self
+    }
+    /// <p>The number of EC2 UltraServers in the offerings.</p>
+    pub fn get_ultraserver_count(&self) -> &::std::option::Option<i32> {
+        self.inner.get_ultraserver_count()
     }
 }

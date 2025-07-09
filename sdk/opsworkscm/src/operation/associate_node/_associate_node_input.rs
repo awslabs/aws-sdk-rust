@@ -13,7 +13,7 @@ pub struct AssociateNodeInput {
     /// <li>
     /// <p><code>CHEF_ORGANIZATION</code>: The Chef organization with which the node is associated. By default only one organization named <code>default</code> can exist.</p></li>
     /// <li>
-    /// <p><code>CHEF_NODE_PUBLIC_KEY</code>: A PEM-formatted public key. This key is required for the <code>chef-client</code> agent to access the Chef API.</p></li>
+    /// <p><code>CHEF_AUTOMATE_NODE_PUBLIC_KEY</code>: A PEM-formatted public key. This key is required for the <code>chef-client</code> agent to access the Chef API.</p></li>
     /// </ul>
     /// <p class="title"><b>Attributes accepted in a AssociateNode request for Puppet</b></p>
     /// <ul>
@@ -37,7 +37,7 @@ impl AssociateNodeInput {
     /// <li>
     /// <p><code>CHEF_ORGANIZATION</code>: The Chef organization with which the node is associated. By default only one organization named <code>default</code> can exist.</p></li>
     /// <li>
-    /// <p><code>CHEF_NODE_PUBLIC_KEY</code>: A PEM-formatted public key. This key is required for the <code>chef-client</code> agent to access the Chef API.</p></li>
+    /// <p><code>CHEF_AUTOMATE_NODE_PUBLIC_KEY</code>: A PEM-formatted public key. This key is required for the <code>chef-client</code> agent to access the Chef API.</p></li>
     /// </ul>
     /// <p class="title"><b>Attributes accepted in a AssociateNode request for Puppet</b></p>
     /// <ul>
@@ -106,7 +106,7 @@ impl AssociateNodeInputBuilder {
     /// <li>
     /// <p><code>CHEF_ORGANIZATION</code>: The Chef organization with which the node is associated. By default only one organization named <code>default</code> can exist.</p></li>
     /// <li>
-    /// <p><code>CHEF_NODE_PUBLIC_KEY</code>: A PEM-formatted public key. This key is required for the <code>chef-client</code> agent to access the Chef API.</p></li>
+    /// <p><code>CHEF_AUTOMATE_NODE_PUBLIC_KEY</code>: A PEM-formatted public key. This key is required for the <code>chef-client</code> agent to access the Chef API.</p></li>
     /// </ul>
     /// <p class="title"><b>Attributes accepted in a AssociateNode request for Puppet</b></p>
     /// <ul>
@@ -125,7 +125,7 @@ impl AssociateNodeInputBuilder {
     /// <li>
     /// <p><code>CHEF_ORGANIZATION</code>: The Chef organization with which the node is associated. By default only one organization named <code>default</code> can exist.</p></li>
     /// <li>
-    /// <p><code>CHEF_NODE_PUBLIC_KEY</code>: A PEM-formatted public key. This key is required for the <code>chef-client</code> agent to access the Chef API.</p></li>
+    /// <p><code>CHEF_AUTOMATE_NODE_PUBLIC_KEY</code>: A PEM-formatted public key. This key is required for the <code>chef-client</code> agent to access the Chef API.</p></li>
     /// </ul>
     /// <p class="title"><b>Attributes accepted in a AssociateNode request for Puppet</b></p>
     /// <ul>
@@ -142,7 +142,7 @@ impl AssociateNodeInputBuilder {
     /// <li>
     /// <p><code>CHEF_ORGANIZATION</code>: The Chef organization with which the node is associated. By default only one organization named <code>default</code> can exist.</p></li>
     /// <li>
-    /// <p><code>CHEF_NODE_PUBLIC_KEY</code>: A PEM-formatted public key. This key is required for the <code>chef-client</code> agent to access the Chef API.</p></li>
+    /// <p><code>CHEF_AUTOMATE_NODE_PUBLIC_KEY</code>: A PEM-formatted public key. This key is required for the <code>chef-client</code> agent to access the Chef API.</p></li>
     /// </ul>
     /// <p class="title"><b>Attributes accepted in a AssociateNode request for Puppet</b></p>
     /// <ul>

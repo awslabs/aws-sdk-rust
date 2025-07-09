@@ -18,18 +18,20 @@
 #![forbid(unsafe_code)]
 #![warn(missing_docs)]
 #![cfg_attr(docsrs, feature(doc_auto_cfg))]
-//! AWS OpsWorks for configuration management (CM) is a service that runs and manages configuration management servers. You can use AWS OpsWorks CM to create and manage AWS OpsWorks for Chef Automate and AWS OpsWorks for Puppet Enterprise servers, and add or remove nodes for the servers to manage.
+//! The OpsWorks services have reached end of life and have been disabled for both new and existing customers. We strongly recommend customers migrate their workloads to other solutions as soon as possible. If you have questions about migration, reach out to the Amazon Web ServicesSupport Team on [Amazon Web Services re:Post](https://repost.aws/) or through [Amazon Web Services Premium Support](https://aws.amazon.com/support).
+//!
+//! OpsWorks CM is a service that runs and manages configuration management servers. You can use OpsWorks CM to create and manage OpsWorks for Chef Automate and OpsWorks for Puppet Enterprise servers, and add or remove nodes for the servers to manage.
 //!
 //! __Glossary of terms__
-//!   - __Server__: A configuration management server that can be highly-available. The configuration management server runs on an Amazon Elastic Compute Cloud (EC2) instance, and may use various other AWS services, such as Amazon Relational Database Service (RDS) and Elastic Load Balancing. A server is a generic abstraction over the configuration manager that you want to use, much like Amazon RDS. In AWS OpsWorks CM, you do not start or stop servers. After you create servers, they continue to run until they are deleted.
+//!   - __Server__: A configuration management server that can be highly-available. The configuration management server runs on an Amazon Elastic Compute Cloud (EC2) instance, and may use various other Amazon Web Services services, such as Amazon Relational Database Service (RDS) and Elastic Load Balancing. A server is a generic abstraction over the configuration manager that you want to use, much like Amazon RDS. In OpsWorks CM, you do not start or stop servers. After you create servers, they continue to run until they are deleted.
 //!   - __Engine__: The engine is the specific configuration manager that you want to use. Valid values in this release include ChefAutomate and Puppet.
-//!   - __Backup__: This is an application-level backup of the data that the configuration manager stores. AWS OpsWorks CM creates an S3 bucket for backups when you launch the first server. A backup maintains a snapshot of a server's configuration-related attributes at the time the backup starts.
+//!   - __Backup__: This is an application-level backup of the data that the configuration manager stores. OpsWorks CM creates an S3 bucket for backups when you launch the first server. A backup maintains a snapshot of a server's configuration-related attributes at the time the backup starts.
 //!   - __Events__: Events are always related to a server. Events are written during server creation, when health checks run, when backups are created, when system maintenance is performed, etc. When you delete a server, the server's events are also deleted.
-//!   - __Account attributes__: Every account has attributes that are assigned in the AWS OpsWorks CM database. These attributes store information about configuration limits (servers, backups, etc.) and your customer account.
+//!   - __Account attributes__: Every account has attributes that are assigned in the OpsWorks CM database. These attributes store information about configuration limits (servers, backups, etc.) and your customer account.
 //!
 //! __Endpoints__
 //!
-//! AWS OpsWorks CM supports the following endpoints, all HTTPS. You must connect to one of the following endpoints. Your servers can only be accessed or managed within the endpoint in which they are created.
+//! OpsWorks CM supports the following endpoints, all HTTPS. You must connect to one of the following endpoints. Your servers can only be accessed or managed within the endpoint in which they are created.
 //!   - opsworks-cm.us-east-1.amazonaws.com
 //!   - opsworks-cm.us-east-2.amazonaws.com
 //!   - opsworks-cm.us-west-1.amazonaws.com
@@ -40,7 +42,7 @@
 //!   - opsworks-cm.eu-central-1.amazonaws.com
 //!   - opsworks-cm.eu-west-1.amazonaws.com
 //!
-//! For more information, see [AWS OpsWorks endpoints and quotas](https://docs.aws.amazon.com/general/latest/gr/opsworks-service.html) in the AWS General Reference.
+//! For more information, see [OpsWorks endpoints and quotas](https://docs.aws.amazon.com/general/latest/gr/opsworks-service.html) in the Amazon Web Services General Reference.
 //!
 //! __Throttling limits__
 //!
@@ -58,7 +60,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-//! aws-sdk-opsworkscm = "1.74.0"
+//! aws-sdk-opsworkscm = "1.74.1"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!

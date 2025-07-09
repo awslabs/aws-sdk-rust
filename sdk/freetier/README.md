@@ -7,7 +7,6 @@ Free Tier tracks your monthly usage data for all free tier offers that are assoc
 Service endpoint
 
 The Free Tier API provides the following endpoint:
-  - https://freetier.us-east-1.api.aws
 
 For more information, see [Using the Amazon Web Services Free Tier](https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-free-tier.html) in the _Billing User Guide_.
 
@@ -23,7 +22,7 @@ your project, add the following to your **Cargo.toml** file:
 ```toml
 [dependencies]
 aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-aws-sdk-freetier = "1.72.0"
+aws-sdk-freetier = "1.73.0"
 tokio = { version = "1", features = ["full"] }
 ```
 

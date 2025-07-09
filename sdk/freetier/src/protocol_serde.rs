@@ -23,7 +23,15 @@ pub fn parse_http_error_metadata(
     crate::json_errors::parse_error_metadata(response_body, response_headers)
 }
 
+pub(crate) mod shape_get_account_activity;
+
+pub(crate) mod shape_get_account_plan_state;
+
 pub(crate) mod shape_get_free_tier_usage;
+
+pub(crate) mod shape_list_account_activities;
+
+pub(crate) mod shape_upgrade_account_plan;
 
 pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
     if data.is_empty() {
@@ -33,17 +41,35 @@ pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
     }
 }
 
+pub(crate) mod shape_access_denied_exception;
+
+pub(crate) mod shape_get_account_activity_input;
+
 pub(crate) mod shape_get_free_tier_usage_input;
 
 pub(crate) mod shape_internal_server_exception;
 
+pub(crate) mod shape_list_account_activities_input;
+
+pub(crate) mod shape_resource_not_found_exception;
+
 pub(crate) mod shape_throttling_exception;
 
+pub(crate) mod shape_upgrade_account_plan_input;
+
 pub(crate) mod shape_validation_exception;
+
+pub(crate) mod shape_activities;
+
+pub(crate) mod shape_activity_reward;
 
 pub(crate) mod shape_expression;
 
 pub(crate) mod shape_free_tier_usages;
+
+pub(crate) mod shape_monetary_amount;
+
+pub(crate) mod shape_activity_summary;
 
 pub(crate) mod shape_dimension_values;
 

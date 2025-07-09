@@ -24,10 +24,10 @@ impl crate::operation::associate_node::builders::AssociateNodeInputBuilder {
 ///
 /// <p>Associates a new node with the server. For more information about how to disassociate a node, see <code>DisassociateNode</code>.</p>
 /// <p>On a Chef server: This command is an alternative to <code>knife bootstrap</code>.</p>
-/// <p>Example (Chef): <code>aws opsworks-cm associate-node --server-name <i>MyServer</i> --node-name <i>MyManagedNode</i> --engine-attributes "Name=<i>CHEF_ORGANIZATION</i>,Value=default" "Name=<i>CHEF_NODE_PUBLIC_KEY</i>,Value=<i>public-key-pem</i>"</code></p>
+/// <p>Example (Chef): <code>aws opsworks-cm associate-node --server-name <i>MyServer</i> --node-name <i>MyManagedNode</i> --engine-attributes "Name=<i>CHEF_ORGANIZATION</i>,Value=default" "Name=<i>CHEF_AUTOMATE_NODE_PUBLIC_KEY</i>,Value=<i>public-key-pem</i>"</code></p>
 /// <p>On a Puppet server, this command is an alternative to the <code>puppet cert sign</code> command that signs a Puppet node CSR.</p>
 /// <p>Example (Puppet): <code>aws opsworks-cm associate-node --server-name <i>MyServer</i> --node-name <i>MyManagedNode</i> --engine-attributes "Name=<i>PUPPET_NODE_CSR</i>,Value=<i>csr-pem</i>"</code></p>
-/// <p>A node can can only be associated with servers that are in a <code>HEALTHY</code> state. Otherwise, an <code>InvalidStateException</code> is thrown. A <code>ResourceNotFoundException</code> is thrown when the server does not exist. A <code>ValidationException</code> is raised when parameters of the request are not valid. The AssociateNode API call can be integrated into Auto Scaling configurations, AWS Cloudformation templates, or the user data of a server's instance.</p>
+/// <p>A node can can only be associated with servers that are in a <code>HEALTHY</code> state. Otherwise, an <code>InvalidStateException</code> is thrown. A <code>ResourceNotFoundException</code> is thrown when the server does not exist. A <code>ValidationException</code> is raised when parameters of the request are not valid. The AssociateNode API call can be integrated into Auto Scaling configurations, CloudFormation templates, or the user data of a server's instance.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AssociateNodeFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -152,7 +152,7 @@ impl AssociateNodeFluentBuilder {
     /// <li>
     /// <p><code>CHEF_ORGANIZATION</code>: The Chef organization with which the node is associated. By default only one organization named <code>default</code> can exist.</p></li>
     /// <li>
-    /// <p><code>CHEF_NODE_PUBLIC_KEY</code>: A PEM-formatted public key. This key is required for the <code>chef-client</code> agent to access the Chef API.</p></li>
+    /// <p><code>CHEF_AUTOMATE_NODE_PUBLIC_KEY</code>: A PEM-formatted public key. This key is required for the <code>chef-client</code> agent to access the Chef API.</p></li>
     /// </ul>
     /// <p class="title"><b>Attributes accepted in a AssociateNode request for Puppet</b></p>
     /// <ul>
@@ -169,7 +169,7 @@ impl AssociateNodeFluentBuilder {
     /// <li>
     /// <p><code>CHEF_ORGANIZATION</code>: The Chef organization with which the node is associated. By default only one organization named <code>default</code> can exist.</p></li>
     /// <li>
-    /// <p><code>CHEF_NODE_PUBLIC_KEY</code>: A PEM-formatted public key. This key is required for the <code>chef-client</code> agent to access the Chef API.</p></li>
+    /// <p><code>CHEF_AUTOMATE_NODE_PUBLIC_KEY</code>: A PEM-formatted public key. This key is required for the <code>chef-client</code> agent to access the Chef API.</p></li>
     /// </ul>
     /// <p class="title"><b>Attributes accepted in a AssociateNode request for Puppet</b></p>
     /// <ul>
@@ -186,7 +186,7 @@ impl AssociateNodeFluentBuilder {
     /// <li>
     /// <p><code>CHEF_ORGANIZATION</code>: The Chef organization with which the node is associated. By default only one organization named <code>default</code> can exist.</p></li>
     /// <li>
-    /// <p><code>CHEF_NODE_PUBLIC_KEY</code>: A PEM-formatted public key. This key is required for the <code>chef-client</code> agent to access the Chef API.</p></li>
+    /// <p><code>CHEF_AUTOMATE_NODE_PUBLIC_KEY</code>: A PEM-formatted public key. This key is required for the <code>chef-client</code> agent to access the Chef API.</p></li>
     /// </ul>
     /// <p class="title"><b>Attributes accepted in a AssociateNode request for Puppet</b></p>
     /// <ul>

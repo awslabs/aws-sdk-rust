@@ -22,7 +22,7 @@ impl crate::operation::describe_servers::builders::DescribeServersInputBuilder {
 }
 /// Fluent builder constructing a request to `DescribeServers`.
 ///
-/// <p>Lists all configuration management servers that are identified with your account. Only the stored results from Amazon DynamoDB are returned. AWS OpsWorks CM does not query other services.</p>
+/// <p>Lists all configuration management servers that are identified with your account. Only the stored results from Amazon DynamoDB are returned. OpsWorks CM does not query other services.</p>
 /// <p>This operation is synchronous.</p>
 /// <p>A <code>ResourceNotFoundException</code> is thrown when the server does not exist. A <code>ValidationException</code> is raised when parameters of the request are not valid.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

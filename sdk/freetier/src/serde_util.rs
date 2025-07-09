@@ -8,6 +8,15 @@ pub(crate) fn internal_server_exception_correct_errors(
     builder
 }
 
+pub(crate) fn resource_not_found_exception_correct_errors(
+    mut builder: crate::types::error::builders::ResourceNotFoundExceptionBuilder,
+) -> crate::types::error::builders::ResourceNotFoundExceptionBuilder {
+    if builder.message.is_none() {
+        builder.message = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn throttling_exception_correct_errors(
     mut builder: crate::types::error::builders::ThrottlingExceptionBuilder,
 ) -> crate::types::error::builders::ThrottlingExceptionBuilder {
@@ -26,11 +35,113 @@ pub(crate) fn validation_exception_correct_errors(
     builder
 }
 
+pub(crate) fn get_account_activity_output_output_correct_errors(
+    mut builder: crate::operation::get_account_activity::builders::GetAccountActivityOutputBuilder,
+) -> crate::operation::get_account_activity::builders::GetAccountActivityOutputBuilder {
+    if builder.activity_id.is_none() {
+        builder.activity_id = Some(Default::default())
+    }
+    if builder.title.is_none() {
+        builder.title = Some(Default::default())
+    }
+    if builder.description.is_none() {
+        builder.description = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::ActivityStatus>().ok()
+    }
+    if builder.instructions_url.is_none() {
+        builder.instructions_url = Some(Default::default())
+    }
+    if builder.reward.is_none() {
+        builder.reward = Some(crate::types::ActivityReward::Unknown)
+    }
+    builder
+}
+
+pub(crate) fn access_denied_exception_correct_errors(
+    mut builder: crate::types::error::builders::AccessDeniedExceptionBuilder,
+) -> crate::types::error::builders::AccessDeniedExceptionBuilder {
+    if builder.message.is_none() {
+        builder.message = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn get_account_plan_state_output_output_correct_errors(
+    mut builder: crate::operation::get_account_plan_state::builders::GetAccountPlanStateOutputBuilder,
+) -> crate::operation::get_account_plan_state::builders::GetAccountPlanStateOutputBuilder {
+    if builder.account_id.is_none() {
+        builder.account_id = Some(Default::default())
+    }
+    if builder.account_plan_type.is_none() {
+        builder.account_plan_type = "no value was set".parse::<crate::types::AccountPlanType>().ok()
+    }
+    if builder.account_plan_status.is_none() {
+        builder.account_plan_status = "no value was set".parse::<crate::types::AccountPlanStatus>().ok()
+    }
+    builder
+}
+
 pub(crate) fn get_free_tier_usage_output_output_correct_errors(
     mut builder: crate::operation::get_free_tier_usage::builders::GetFreeTierUsageOutputBuilder,
 ) -> crate::operation::get_free_tier_usage::builders::GetFreeTierUsageOutputBuilder {
     if builder.free_tier_usages.is_none() {
         builder.free_tier_usages = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn list_account_activities_output_output_correct_errors(
+    mut builder: crate::operation::list_account_activities::builders::ListAccountActivitiesOutputBuilder,
+) -> crate::operation::list_account_activities::builders::ListAccountActivitiesOutputBuilder {
+    if builder.activities.is_none() {
+        builder.activities = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn upgrade_account_plan_output_output_correct_errors(
+    mut builder: crate::operation::upgrade_account_plan::builders::UpgradeAccountPlanOutputBuilder,
+) -> crate::operation::upgrade_account_plan::builders::UpgradeAccountPlanOutputBuilder {
+    if builder.account_id.is_none() {
+        builder.account_id = Some(Default::default())
+    }
+    if builder.account_plan_type.is_none() {
+        builder.account_plan_type = "no value was set".parse::<crate::types::AccountPlanType>().ok()
+    }
+    if builder.account_plan_status.is_none() {
+        builder.account_plan_status = "no value was set".parse::<crate::types::AccountPlanStatus>().ok()
+    }
+    builder
+}
+
+pub(crate) fn monetary_amount_correct_errors(
+    mut builder: crate::types::builders::MonetaryAmountBuilder,
+) -> crate::types::builders::MonetaryAmountBuilder {
+    if builder.amount.is_none() {
+        builder.amount = Some(Default::default())
+    }
+    if builder.unit.is_none() {
+        builder.unit = "no value was set".parse::<crate::types::CurrencyCode>().ok()
+    }
+    builder
+}
+
+pub(crate) fn activity_summary_correct_errors(
+    mut builder: crate::types::builders::ActivitySummaryBuilder,
+) -> crate::types::builders::ActivitySummaryBuilder {
+    if builder.activity_id.is_none() {
+        builder.activity_id = Some(Default::default())
+    }
+    if builder.title.is_none() {
+        builder.title = Some(Default::default())
+    }
+    if builder.reward.is_none() {
+        builder.reward = Some(crate::types::ActivityReward::Unknown)
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::ActivityStatus>().ok()
     }
     builder
 }

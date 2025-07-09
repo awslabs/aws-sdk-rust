@@ -19,6 +19,10 @@ pub struct DescribeCapacityBlockOfferingsInput {
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of items to return for this request. To get the next page of items, make another request with the token returned in the output. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.</p>
     pub max_results: ::std::option::Option<i32>,
+    /// <p>The EC2 UltraServer type of the Capacity Block offerings.</p>
+    pub ultraserver_type: ::std::option::Option<::std::string::String>,
+    /// <p>The number of EC2 UltraServers in the offerings.</p>
+    pub ultraserver_count: ::std::option::Option<i32>,
 }
 impl DescribeCapacityBlockOfferingsInput {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -53,6 +57,14 @@ impl DescribeCapacityBlockOfferingsInput {
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
+    /// <p>The EC2 UltraServer type of the Capacity Block offerings.</p>
+    pub fn ultraserver_type(&self) -> ::std::option::Option<&str> {
+        self.ultraserver_type.as_deref()
+    }
+    /// <p>The number of EC2 UltraServers in the offerings.</p>
+    pub fn ultraserver_count(&self) -> ::std::option::Option<i32> {
+        self.ultraserver_count
+    }
 }
 impl DescribeCapacityBlockOfferingsInput {
     /// Creates a new builder-style object to manufacture [`DescribeCapacityBlockOfferingsInput`](crate::operation::describe_capacity_block_offerings::DescribeCapacityBlockOfferingsInput).
@@ -73,6 +85,8 @@ pub struct DescribeCapacityBlockOfferingsInputBuilder {
     pub(crate) capacity_duration_hours: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
+    pub(crate) ultraserver_type: ::std::option::Option<::std::string::String>,
+    pub(crate) ultraserver_count: ::std::option::Option<i32>,
 }
 impl DescribeCapacityBlockOfferingsInputBuilder {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -188,6 +202,34 @@ impl DescribeCapacityBlockOfferingsInputBuilder {
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
+    /// <p>The EC2 UltraServer type of the Capacity Block offerings.</p>
+    pub fn ultraserver_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.ultraserver_type = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The EC2 UltraServer type of the Capacity Block offerings.</p>
+    pub fn set_ultraserver_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.ultraserver_type = input;
+        self
+    }
+    /// <p>The EC2 UltraServer type of the Capacity Block offerings.</p>
+    pub fn get_ultraserver_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ultraserver_type
+    }
+    /// <p>The number of EC2 UltraServers in the offerings.</p>
+    pub fn ultraserver_count(mut self, input: i32) -> Self {
+        self.ultraserver_count = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The number of EC2 UltraServers in the offerings.</p>
+    pub fn set_ultraserver_count(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.ultraserver_count = input;
+        self
+    }
+    /// <p>The number of EC2 UltraServers in the offerings.</p>
+    pub fn get_ultraserver_count(&self) -> &::std::option::Option<i32> {
+        &self.ultraserver_count
+    }
     /// Consumes the builder and constructs a [`DescribeCapacityBlockOfferingsInput`](crate::operation::describe_capacity_block_offerings::DescribeCapacityBlockOfferingsInput).
     pub fn build(
         self,
@@ -204,6 +246,8 @@ impl DescribeCapacityBlockOfferingsInputBuilder {
             capacity_duration_hours: self.capacity_duration_hours,
             next_token: self.next_token,
             max_results: self.max_results,
+            ultraserver_type: self.ultraserver_type,
+            ultraserver_count: self.ultraserver_count,
         })
     }
 }

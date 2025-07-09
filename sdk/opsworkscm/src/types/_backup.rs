@@ -50,9 +50,9 @@ pub struct Backup {
     pub status_description: ::std::option::Option<::std::string::String>,
     /// <p>The subnet IDs that are obtained from the server when the backup is created.</p>
     pub subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>The version of AWS OpsWorks CM-specific tools that is obtained from the server when the backup is created.</p>
+    /// <p>The version of OpsWorks CM-specific tools that is obtained from the server when the backup is created.</p>
     pub tools_version: ::std::option::Option<::std::string::String>,
-    /// <p>The IAM user ARN of the requester for manual backups. This field is empty for automated backups.</p>
+    /// <p>The user ARN of the requester for manual backups. This field is empty for automated backups.</p>
     pub user_arn: ::std::option::Option<::std::string::String>,
 }
 impl Backup {
@@ -150,11 +150,11 @@ impl Backup {
     pub fn subnet_ids(&self) -> &[::std::string::String] {
         self.subnet_ids.as_deref().unwrap_or_default()
     }
-    /// <p>The version of AWS OpsWorks CM-specific tools that is obtained from the server when the backup is created.</p>
+    /// <p>The version of OpsWorks CM-specific tools that is obtained from the server when the backup is created.</p>
     pub fn tools_version(&self) -> ::std::option::Option<&str> {
         self.tools_version.as_deref()
     }
-    /// <p>The IAM user ARN of the requester for manual backups. This field is empty for automated backups.</p>
+    /// <p>The user ARN of the requester for manual backups. This field is empty for automated backups.</p>
     pub fn user_arn(&self) -> ::std::option::Option<&str> {
         self.user_arn.as_deref()
     }
@@ -522,31 +522,31 @@ impl BackupBuilder {
     pub fn get_subnet_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.subnet_ids
     }
-    /// <p>The version of AWS OpsWorks CM-specific tools that is obtained from the server when the backup is created.</p>
+    /// <p>The version of OpsWorks CM-specific tools that is obtained from the server when the backup is created.</p>
     pub fn tools_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.tools_version = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The version of AWS OpsWorks CM-specific tools that is obtained from the server when the backup is created.</p>
+    /// <p>The version of OpsWorks CM-specific tools that is obtained from the server when the backup is created.</p>
     pub fn set_tools_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.tools_version = input;
         self
     }
-    /// <p>The version of AWS OpsWorks CM-specific tools that is obtained from the server when the backup is created.</p>
+    /// <p>The version of OpsWorks CM-specific tools that is obtained from the server when the backup is created.</p>
     pub fn get_tools_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.tools_version
     }
-    /// <p>The IAM user ARN of the requester for manual backups. This field is empty for automated backups.</p>
+    /// <p>The user ARN of the requester for manual backups. This field is empty for automated backups.</p>
     pub fn user_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The IAM user ARN of the requester for manual backups. This field is empty for automated backups.</p>
+    /// <p>The user ARN of the requester for manual backups. This field is empty for automated backups.</p>
     pub fn set_user_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_arn = input;
         self
     }
-    /// <p>The IAM user ARN of the requester for manual backups. This field is empty for automated backups.</p>
+    /// <p>The user ARN of the requester for manual backups. This field is empty for automated backups.</p>
     pub fn get_user_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.user_arn
     }

@@ -12,6 +12,7 @@
 /// ```text
 /// # let resourcetype = unimplemented!();
 /// match resourcetype {
+///     ResourceType::CapacityBlock => { /* ... */ },
 ///     ResourceType::CapacityReservation => { /* ... */ },
 ///     ResourceType::CapacityReservationFleet => { /* ... */ },
 ///     ResourceType::CarrierGateway => { /* ... */ },
@@ -135,6 +136,8 @@
     ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum ResourceType {
+    #[allow(missing_docs)] // documentation missing in model
+    CapacityBlock,
     #[allow(missing_docs)] // documentation missing in model
     CapacityReservation,
     #[allow(missing_docs)] // documentation missing in model
@@ -332,6 +335,7 @@ pub enum ResourceType {
 impl ::std::convert::From<&str> for ResourceType {
     fn from(s: &str) -> Self {
         match s {
+            "capacity-block" => ResourceType::CapacityBlock,
             "capacity-reservation" => ResourceType::CapacityReservation,
             "capacity-reservation-fleet" => ResourceType::CapacityReservationFleet,
             "carrier-gateway" => ResourceType::CarrierGateway,
@@ -442,6 +446,7 @@ impl ResourceType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            ResourceType::CapacityBlock => "capacity-block",
             ResourceType::CapacityReservation => "capacity-reservation",
             ResourceType::CapacityReservationFleet => "capacity-reservation-fleet",
             ResourceType::CarrierGateway => "carrier-gateway",
@@ -543,6 +548,7 @@ impl ResourceType {
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
+            "capacity-block",
             "capacity-reservation",
             "capacity-reservation-fleet",
             "carrier-gateway",
@@ -661,6 +667,7 @@ impl ResourceType {
 impl ::std::fmt::Display for ResourceType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            ResourceType::CapacityBlock => write!(f, "capacity-block"),
             ResourceType::CapacityReservation => write!(f, "capacity-reservation"),
             ResourceType::CapacityReservationFleet => write!(f, "capacity-reservation-fleet"),
             ResourceType::CarrierGateway => write!(f, "carrier-gateway"),

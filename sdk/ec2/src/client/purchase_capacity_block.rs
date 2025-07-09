@@ -9,6 +9,7 @@ impl super::Client {
     ///   - [`instance_platform(CapacityReservationInstancePlatform)`](crate::operation::purchase_capacity_block::builders::PurchaseCapacityBlockFluentBuilder::instance_platform) / [`set_instance_platform(Option<CapacityReservationInstancePlatform>)`](crate::operation::purchase_capacity_block::builders::PurchaseCapacityBlockFluentBuilder::set_instance_platform):<br>required: **true**<br><p>The type of operating system for which to reserve capacity.</p><br>
     /// - On success, responds with [`PurchaseCapacityBlockOutput`](crate::operation::purchase_capacity_block::PurchaseCapacityBlockOutput) with field(s):
     ///   - [`capacity_reservation(Option<CapacityReservation>)`](crate::operation::purchase_capacity_block::PurchaseCapacityBlockOutput::capacity_reservation): <p>The Capacity Reservation.</p>
+    ///   - [`capacity_blocks(Option<Vec::<CapacityBlock>>)`](crate::operation::purchase_capacity_block::PurchaseCapacityBlockOutput::capacity_blocks): <p>The Capacity Block.</p>
     /// - On failure, responds with [`SdkError<PurchaseCapacityBlockError>`](crate::operation::purchase_capacity_block::PurchaseCapacityBlockError)
     pub fn purchase_capacity_block(&self) -> crate::operation::purchase_capacity_block::builders::PurchaseCapacityBlockFluentBuilder {
         crate::operation::purchase_capacity_block::builders::PurchaseCapacityBlockFluentBuilder::new(self.handle.clone())

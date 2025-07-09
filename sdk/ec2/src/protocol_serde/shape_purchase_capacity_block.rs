@@ -67,6 +67,16 @@ pub fn de_purchase_capacity_block(
                 builder = builder.set_capacity_reservation(var_1);
             }
             ,
+            s if s.matches("capacityBlockSet") /* CapacityBlocks com.amazonaws.ec2.synthetic#PurchaseCapacityBlockOutput$CapacityBlocks */ =>  {
+                let var_2 =
+                    Some(
+                        crate::protocol_serde::shape_capacity_block_set::de_capacity_block_set(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_capacity_blocks(var_2);
+            }
+            ,
             _ => {}
         }
     }

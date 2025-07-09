@@ -14,7 +14,7 @@ pub struct DescribeNodeAssociationStatusOutput {
     /// <p><code>IN_PROGRESS</code>: The association or disassociation is still in progress.</p></li>
     /// </ul>
     pub node_association_status: ::std::option::Option<crate::types::NodeAssociationStatus>,
-    /// <p>Attributes specific to the node association. In Puppet, the attibute PUPPET_NODE_CERT contains the signed certificate (the result of the CSR).</p>
+    /// <p>Attributes specific to the node association. In Puppet, the attribute PUPPET_NODE_CERT contains the signed certificate (the result of the CSR).</p>
     pub engine_attributes: ::std::option::Option<::std::vec::Vec<crate::types::EngineAttribute>>,
     _request_id: Option<String>,
 }
@@ -32,7 +32,7 @@ impl DescribeNodeAssociationStatusOutput {
     pub fn node_association_status(&self) -> ::std::option::Option<&crate::types::NodeAssociationStatus> {
         self.node_association_status.as_ref()
     }
-    /// <p>Attributes specific to the node association. In Puppet, the attibute PUPPET_NODE_CERT contains the signed certificate (the result of the CSR).</p>
+    /// <p>Attributes specific to the node association. In Puppet, the attribute PUPPET_NODE_CERT contains the signed certificate (the result of the CSR).</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.engine_attributes.is_none()`.
     pub fn engine_attributes(&self) -> &[crate::types::EngineAttribute] {
@@ -105,19 +105,19 @@ impl DescribeNodeAssociationStatusOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_engine_attributes`](Self::set_engine_attributes).
     ///
-    /// <p>Attributes specific to the node association. In Puppet, the attibute PUPPET_NODE_CERT contains the signed certificate (the result of the CSR).</p>
+    /// <p>Attributes specific to the node association. In Puppet, the attribute PUPPET_NODE_CERT contains the signed certificate (the result of the CSR).</p>
     pub fn engine_attributes(mut self, input: crate::types::EngineAttribute) -> Self {
         let mut v = self.engine_attributes.unwrap_or_default();
         v.push(input);
         self.engine_attributes = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Attributes specific to the node association. In Puppet, the attibute PUPPET_NODE_CERT contains the signed certificate (the result of the CSR).</p>
+    /// <p>Attributes specific to the node association. In Puppet, the attribute PUPPET_NODE_CERT contains the signed certificate (the result of the CSR).</p>
     pub fn set_engine_attributes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EngineAttribute>>) -> Self {
         self.engine_attributes = input;
         self
     }
-    /// <p>Attributes specific to the node association. In Puppet, the attibute PUPPET_NODE_CERT contains the signed certificate (the result of the CSR).</p>
+    /// <p>Attributes specific to the node association. In Puppet, the attribute PUPPET_NODE_CERT contains the signed certificate (the result of the CSR).</p>
     pub fn get_engine_attributes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EngineAttribute>> {
         &self.engine_attributes
     }

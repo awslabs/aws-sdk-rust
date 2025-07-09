@@ -343,6 +343,8 @@ pub use crate::types::_purchase::PurchaseBuilder;
 
 pub use crate::types::_capacity_block_extension::CapacityBlockExtensionBuilder;
 
+pub use crate::types::_capacity_block::CapacityBlockBuilder;
+
 pub use crate::types::_capacity_reservation::CapacityReservationBuilder;
 
 pub use crate::types::_capacity_reservation_commitment_info::CapacityReservationCommitmentInfoBuilder;
@@ -1438,6 +1440,10 @@ pub use crate::types::_fleet_capacity_reservation::FleetCapacityReservationBuild
 pub use crate::types::_capacity_reservation_billing_request::CapacityReservationBillingRequestBuilder;
 
 pub use crate::types::_capacity_reservation_info::CapacityReservationInfoBuilder;
+
+pub use crate::types::_capacity_block_status::CapacityBlockStatusBuilder;
+
+pub use crate::types::_capacity_reservation_status::CapacityReservationStatusBuilder;
 
 pub use crate::types::_capacity_block_offering::CapacityBlockOfferingBuilder;
 

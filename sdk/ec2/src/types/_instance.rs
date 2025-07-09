@@ -52,6 +52,10 @@ pub struct Instance {
     pub virtualization_type: ::std::option::Option<crate::types::VirtualizationType>,
     /// <p>The CPU options for the instance.</p>
     pub cpu_options: ::std::option::Option<crate::types::CpuOptions>,
+    /// <p>The ID of the Capacity Block.</p><note>
+    /// <p>For P5 instances, a Capacity Block ID refers to a group of instances. For Trn2u instances, a capacity block ID refers to an EC2 UltraServer.</p>
+    /// </note>
+    pub capacity_block_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the Capacity Reservation.</p>
     pub capacity_reservation_id: ::std::option::Option<::std::string::String>,
     /// <p>Information about the Capacity Reservation targeting option.</p>
@@ -236,6 +240,12 @@ impl Instance {
     /// <p>The CPU options for the instance.</p>
     pub fn cpu_options(&self) -> ::std::option::Option<&crate::types::CpuOptions> {
         self.cpu_options.as_ref()
+    }
+    /// <p>The ID of the Capacity Block.</p><note>
+    /// <p>For P5 instances, a Capacity Block ID refers to a group of instances. For Trn2u instances, a capacity block ID refers to an EC2 UltraServer.</p>
+    /// </note>
+    pub fn capacity_block_id(&self) -> ::std::option::Option<&str> {
+        self.capacity_block_id.as_deref()
     }
     /// <p>The ID of the Capacity Reservation.</p>
     pub fn capacity_reservation_id(&self) -> ::std::option::Option<&str> {
@@ -429,6 +439,7 @@ pub struct InstanceBuilder {
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     pub(crate) virtualization_type: ::std::option::Option<crate::types::VirtualizationType>,
     pub(crate) cpu_options: ::std::option::Option<crate::types::CpuOptions>,
+    pub(crate) capacity_block_id: ::std::option::Option<::std::string::String>,
     pub(crate) capacity_reservation_id: ::std::option::Option<::std::string::String>,
     pub(crate) capacity_reservation_specification: ::std::option::Option<crate::types::CapacityReservationSpecificationResponse>,
     pub(crate) hibernation_options: ::std::option::Option<crate::types::HibernationOptions>,
@@ -828,6 +839,26 @@ impl InstanceBuilder {
     /// <p>The CPU options for the instance.</p>
     pub fn get_cpu_options(&self) -> &::std::option::Option<crate::types::CpuOptions> {
         &self.cpu_options
+    }
+    /// <p>The ID of the Capacity Block.</p><note>
+    /// <p>For P5 instances, a Capacity Block ID refers to a group of instances. For Trn2u instances, a capacity block ID refers to an EC2 UltraServer.</p>
+    /// </note>
+    pub fn capacity_block_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.capacity_block_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ID of the Capacity Block.</p><note>
+    /// <p>For P5 instances, a Capacity Block ID refers to a group of instances. For Trn2u instances, a capacity block ID refers to an EC2 UltraServer.</p>
+    /// </note>
+    pub fn set_capacity_block_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.capacity_block_id = input;
+        self
+    }
+    /// <p>The ID of the Capacity Block.</p><note>
+    /// <p>For P5 instances, a Capacity Block ID refers to a group of instances. For Trn2u instances, a capacity block ID refers to an EC2 UltraServer.</p>
+    /// </note>
+    pub fn get_capacity_block_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.capacity_block_id
     }
     /// <p>The ID of the Capacity Reservation.</p>
     pub fn capacity_reservation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -1402,6 +1433,7 @@ impl InstanceBuilder {
             tags: self.tags,
             virtualization_type: self.virtualization_type,
             cpu_options: self.cpu_options,
+            capacity_block_id: self.capacity_block_id,
             capacity_reservation_id: self.capacity_reservation_id,
             capacity_reservation_specification: self.capacity_reservation_specification,
             hibernation_options: self.hibernation_options,

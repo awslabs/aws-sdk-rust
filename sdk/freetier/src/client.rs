@@ -59,14 +59,14 @@ pub(crate) struct Handle {
 /// # Using the `Client`
 ///
 /// A client has a function for every operation that can be performed by the service.
-/// For example, the [`GetFreeTierUsage`](crate::operation::get_free_tier_usage) operation has
-/// a [`Client::get_free_tier_usage`], function which returns a builder for that operation.
+/// For example, the [`GetAccountActivity`](crate::operation::get_account_activity) operation has
+/// a [`Client::get_account_activity`], function which returns a builder for that operation.
 /// The fluent builder ultimately has a `send()` function that returns an async future that
 /// returns a result, as illustrated below:
 ///
 /// ```rust,ignore
-/// let result = client.get_free_tier_usage()
-///     .next_token("example")
+/// let result = client.get_account_activity()
+///     .activity_id("example")
 ///     .send()
 ///     .await;
 /// ```
@@ -147,7 +147,7 @@ impl Client {
 /// # let client: aws_sdk_freetier::Client = unimplemented!();
 /// use ::http::header::{HeaderName, HeaderValue};
 ///
-/// let result = client.get_free_tier_usage()
+/// let result = client.get_account_activity()
 ///     .customize()
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
@@ -163,4 +163,12 @@ impl Client {
 /// ```
 pub mod customize;
 
+mod get_account_activity;
+
+mod get_account_plan_state;
+
 mod get_free_tier_usage;
+
+mod list_account_activities;
+
+mod upgrade_account_plan;

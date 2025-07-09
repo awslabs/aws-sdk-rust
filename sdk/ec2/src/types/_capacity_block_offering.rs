@@ -24,6 +24,10 @@ pub struct CapacityBlockOffering {
     pub currency_code: ::std::option::Option<::std::string::String>,
     /// <p>The tenancy of the Capacity Block.</p>
     pub tenancy: ::std::option::Option<crate::types::CapacityReservationTenancy>,
+    /// <p>The EC2 UltraServer type of the Capacity Block offering.</p>
+    pub ultraserver_type: ::std::option::Option<::std::string::String>,
+    /// <p>The number of EC2 UltraServers in the offering.</p>
+    pub ultraserver_count: ::std::option::Option<i32>,
     /// <p>The number of minutes (in addition to <code>capacityBlockDurationHours</code>) for the duration of the Capacity Block reservation. For example, if a Capacity Block starts at <b>08:55</b> and ends at <b>11:30</b>, the minutes field would be <b>35</b>.</p>
     pub capacity_block_duration_minutes: ::std::option::Option<i32>,
 }
@@ -68,6 +72,14 @@ impl CapacityBlockOffering {
     pub fn tenancy(&self) -> ::std::option::Option<&crate::types::CapacityReservationTenancy> {
         self.tenancy.as_ref()
     }
+    /// <p>The EC2 UltraServer type of the Capacity Block offering.</p>
+    pub fn ultraserver_type(&self) -> ::std::option::Option<&str> {
+        self.ultraserver_type.as_deref()
+    }
+    /// <p>The number of EC2 UltraServers in the offering.</p>
+    pub fn ultraserver_count(&self) -> ::std::option::Option<i32> {
+        self.ultraserver_count
+    }
     /// <p>The number of minutes (in addition to <code>capacityBlockDurationHours</code>) for the duration of the Capacity Block reservation. For example, if a Capacity Block starts at <b>08:55</b> and ends at <b>11:30</b>, the minutes field would be <b>35</b>.</p>
     pub fn capacity_block_duration_minutes(&self) -> ::std::option::Option<i32> {
         self.capacity_block_duration_minutes
@@ -94,6 +106,8 @@ pub struct CapacityBlockOfferingBuilder {
     pub(crate) upfront_fee: ::std::option::Option<::std::string::String>,
     pub(crate) currency_code: ::std::option::Option<::std::string::String>,
     pub(crate) tenancy: ::std::option::Option<crate::types::CapacityReservationTenancy>,
+    pub(crate) ultraserver_type: ::std::option::Option<::std::string::String>,
+    pub(crate) ultraserver_count: ::std::option::Option<i32>,
     pub(crate) capacity_block_duration_minutes: ::std::option::Option<i32>,
 }
 impl CapacityBlockOfferingBuilder {
@@ -237,6 +251,34 @@ impl CapacityBlockOfferingBuilder {
     pub fn get_tenancy(&self) -> &::std::option::Option<crate::types::CapacityReservationTenancy> {
         &self.tenancy
     }
+    /// <p>The EC2 UltraServer type of the Capacity Block offering.</p>
+    pub fn ultraserver_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.ultraserver_type = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The EC2 UltraServer type of the Capacity Block offering.</p>
+    pub fn set_ultraserver_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.ultraserver_type = input;
+        self
+    }
+    /// <p>The EC2 UltraServer type of the Capacity Block offering.</p>
+    pub fn get_ultraserver_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ultraserver_type
+    }
+    /// <p>The number of EC2 UltraServers in the offering.</p>
+    pub fn ultraserver_count(mut self, input: i32) -> Self {
+        self.ultraserver_count = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The number of EC2 UltraServers in the offering.</p>
+    pub fn set_ultraserver_count(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.ultraserver_count = input;
+        self
+    }
+    /// <p>The number of EC2 UltraServers in the offering.</p>
+    pub fn get_ultraserver_count(&self) -> &::std::option::Option<i32> {
+        &self.ultraserver_count
+    }
     /// <p>The number of minutes (in addition to <code>capacityBlockDurationHours</code>) for the duration of the Capacity Block reservation. For example, if a Capacity Block starts at <b>08:55</b> and ends at <b>11:30</b>, the minutes field would be <b>35</b>.</p>
     pub fn capacity_block_duration_minutes(mut self, input: i32) -> Self {
         self.capacity_block_duration_minutes = ::std::option::Option::Some(input);
@@ -264,6 +306,8 @@ impl CapacityBlockOfferingBuilder {
             upfront_fee: self.upfront_fee,
             currency_code: self.currency_code,
             tenancy: self.tenancy,
+            ultraserver_type: self.ultraserver_type,
+            ultraserver_count: self.ultraserver_count,
             capacity_block_duration_minutes: self.capacity_block_duration_minutes,
         }
     }

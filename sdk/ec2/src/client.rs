@@ -895,6 +895,10 @@ mod describe_capacity_block_extension_offerings;
 
 mod describe_capacity_block_offerings;
 
+mod describe_capacity_block_status;
+
+mod describe_capacity_blocks;
+
 mod describe_capacity_reservation_billing_requests;
 
 mod describe_capacity_reservation_fleets;

@@ -367,6 +367,19 @@ pub fn de_capacity_reservation(
                 builder = builder.set_delivery_preference(var_27);
             }
             ,
+            s if s.matches("capacityBlockId") /* CapacityBlockId com.amazonaws.ec2#CapacityReservation$CapacityBlockId */ =>  {
+                let var_28 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_capacity_block_id(var_28);
+            }
+            ,
             _ => {}
         }
     }

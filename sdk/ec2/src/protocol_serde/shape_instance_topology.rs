@@ -82,6 +82,19 @@ pub fn de_instance_topology(
                 builder = builder.set_zone_id(var_6);
             }
             ,
+            s if s.matches("capacityBlockId") /* CapacityBlockId com.amazonaws.ec2#InstanceTopology$CapacityBlockId */ =>  {
+                let var_7 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_capacity_block_id(var_7);
+            }
+            ,
             _ => {}
         }
     }

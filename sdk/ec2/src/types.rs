@@ -519,6 +519,10 @@ pub use crate::types::_capacity_block_extension::CapacityBlockExtension;
 
 pub use crate::types::_capacity_block_extension_status::CapacityBlockExtensionStatus;
 
+pub use crate::types::_capacity_block::CapacityBlock;
+
+pub use crate::types::_capacity_block_resource_state::CapacityBlockResourceState;
+
 pub use crate::types::_capacity_reservation::CapacityReservation;
 
 pub use crate::types::_capacity_reservation_delivery_preference::CapacityReservationDeliveryPreference;
@@ -2177,6 +2181,12 @@ pub use crate::types::_capacity_reservation_billing_request_status::CapacityRese
 
 pub use crate::types::_caller_role::CallerRole;
 
+pub use crate::types::_capacity_block_status::CapacityBlockStatus;
+
+pub use crate::types::_capacity_reservation_status::CapacityReservationStatus;
+
+pub use crate::types::_capacity_block_interconnect_status::CapacityBlockInterconnectStatus;
+
 pub use crate::types::_capacity_block_offering::CapacityBlockOffering;
 
 pub use crate::types::_capacity_block_extension_offering::CapacityBlockExtensionOffering;
@@ -2631,13 +2641,21 @@ mod _cancelled_spot_instance_request;
 
 mod _capacity_allocation;
 
+mod _capacity_block;
+
 mod _capacity_block_extension;
 
 mod _capacity_block_extension_offering;
 
 mod _capacity_block_extension_status;
 
+mod _capacity_block_interconnect_status;
+
 mod _capacity_block_offering;
+
+mod _capacity_block_resource_state;
+
+mod _capacity_block_status;
 
 mod _capacity_reservation;
 
@@ -2672,6 +2690,8 @@ mod _capacity_reservation_specification;
 mod _capacity_reservation_specification_response;
 
 mod _capacity_reservation_state;
+
+mod _capacity_reservation_status;
 
 mod _capacity_reservation_target;
 

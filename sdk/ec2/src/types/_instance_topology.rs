@@ -16,6 +16,8 @@ pub struct InstanceTopology {
     pub availability_zone: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the Availability Zone or Local Zone that the instance is in.</p>
     pub zone_id: ::std::option::Option<::std::string::String>,
+    /// <p>The ID of the Capacity Block. This parameter is only supported for Ultraserver instances and identifies instances within the Ultraserver domain.</p>
+    pub capacity_block_id: ::std::option::Option<::std::string::String>,
 }
 impl InstanceTopology {
     /// <p>The instance ID.</p>
@@ -44,6 +46,10 @@ impl InstanceTopology {
     pub fn zone_id(&self) -> ::std::option::Option<&str> {
         self.zone_id.as_deref()
     }
+    /// <p>The ID of the Capacity Block. This parameter is only supported for Ultraserver instances and identifies instances within the Ultraserver domain.</p>
+    pub fn capacity_block_id(&self) -> ::std::option::Option<&str> {
+        self.capacity_block_id.as_deref()
+    }
 }
 impl InstanceTopology {
     /// Creates a new builder-style object to manufacture [`InstanceTopology`](crate::types::InstanceTopology).
@@ -62,6 +68,7 @@ pub struct InstanceTopologyBuilder {
     pub(crate) network_nodes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) availability_zone: ::std::option::Option<::std::string::String>,
     pub(crate) zone_id: ::std::option::Option<::std::string::String>,
+    pub(crate) capacity_block_id: ::std::option::Option<::std::string::String>,
 }
 impl InstanceTopologyBuilder {
     /// <p>The instance ID.</p>
@@ -154,6 +161,20 @@ impl InstanceTopologyBuilder {
     pub fn get_zone_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.zone_id
     }
+    /// <p>The ID of the Capacity Block. This parameter is only supported for Ultraserver instances and identifies instances within the Ultraserver domain.</p>
+    pub fn capacity_block_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.capacity_block_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ID of the Capacity Block. This parameter is only supported for Ultraserver instances and identifies instances within the Ultraserver domain.</p>
+    pub fn set_capacity_block_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.capacity_block_id = input;
+        self
+    }
+    /// <p>The ID of the Capacity Block. This parameter is only supported for Ultraserver instances and identifies instances within the Ultraserver domain.</p>
+    pub fn get_capacity_block_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.capacity_block_id
+    }
     /// Consumes the builder and constructs a [`InstanceTopology`](crate::types::InstanceTopology).
     pub fn build(self) -> crate::types::InstanceTopology {
         crate::types::InstanceTopology {
@@ -163,6 +184,7 @@ impl InstanceTopologyBuilder {
             network_nodes: self.network_nodes,
             availability_zone: self.availability_zone,
             zone_id: self.zone_id,
+            capacity_block_id: self.capacity_block_id,
         }
     }
 }

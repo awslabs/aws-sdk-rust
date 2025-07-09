@@ -69,6 +69,26 @@ pub(crate) fn reflens_describe_capacity_block_offerings_output_output_next_token
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_describe_capacity_block_status_output_output_next_token(
+    input: &crate::operation::describe_capacity_block_status::DescribeCapacityBlockStatusOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_describe_capacity_blocks_output_output_next_token(
+    input: &crate::operation::describe_capacity_blocks::DescribeCapacityBlocksOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_describe_capacity_reservation_billing_requests_output_output_next_token(
     input: &crate::operation::describe_capacity_reservation_billing_requests::DescribeCapacityReservationBillingRequestsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -1535,6 +1555,20 @@ pub(crate) fn lens_describe_capacity_block_offerings_output_output_capacity_bloc
     input: crate::operation::describe_capacity_block_offerings::DescribeCapacityBlockOfferingsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::CapacityBlockOffering>> {
     let input = input.capacity_block_offerings?;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_describe_capacity_block_status_output_output_capacity_block_statuses(
+    input: crate::operation::describe_capacity_block_status::DescribeCapacityBlockStatusOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::CapacityBlockStatus>> {
+    let input = input.capacity_block_statuses?;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_describe_capacity_blocks_output_output_capacity_blocks(
+    input: crate::operation::describe_capacity_blocks::DescribeCapacityBlocksOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::CapacityBlock>> {
+    let input = input.capacity_blocks?;
     ::std::option::Option::Some(input)
 }
 

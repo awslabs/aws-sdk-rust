@@ -1035,6 +1035,14 @@ pub(crate) mod shape_describe_capacity_block_offerings;
 
 pub(crate) mod shape_describe_capacity_block_offerings_input;
 
+pub(crate) mod shape_describe_capacity_block_status;
+
+pub(crate) mod shape_describe_capacity_block_status_input;
+
+pub(crate) mod shape_describe_capacity_blocks;
+
+pub(crate) mod shape_describe_capacity_blocks_input;
+
 pub(crate) mod shape_describe_capacity_reservation_billing_requests;
 
 pub(crate) mod shape_describe_capacity_reservation_billing_requests_input;
@@ -3119,6 +3127,10 @@ pub(crate) mod shape_capacity_block_extension_set;
 
 pub(crate) mod shape_capacity_block_offering_set;
 
+pub(crate) mod shape_capacity_block_set;
+
+pub(crate) mod shape_capacity_block_status_set;
+
 pub(crate) mod shape_capacity_reservation;
 
 pub(crate) mod shape_capacity_reservation_billing_request_set;
@@ -4013,11 +4025,15 @@ pub(crate) mod shape_cancelled_spot_instance_request;
 
 pub(crate) mod shape_capacity_allocations;
 
+pub(crate) mod shape_capacity_block;
+
 pub(crate) mod shape_capacity_block_extension;
 
 pub(crate) mod shape_capacity_block_extension_offering;
 
 pub(crate) mod shape_capacity_block_offering;
+
+pub(crate) mod shape_capacity_block_status;
 
 pub(crate) mod shape_capacity_reservation_billing_request;
 
@@ -4587,9 +4603,13 @@ pub(crate) mod shape_cancel_spot_fleet_requests_error;
 
 pub(crate) mod shape_capacity_allocation;
 
+pub(crate) mod shape_capacity_reservation_id_set;
+
 pub(crate) mod shape_capacity_reservation_info;
 
 pub(crate) mod shape_capacity_reservation_specification_response;
+
+pub(crate) mod shape_capacity_reservation_status_set;
 
 pub(crate) mod shape_capacity_reservation_target_response;
 
@@ -4954,6 +4974,8 @@ pub(crate) mod shape_available_instance_capacity_list;
 pub(crate) mod shape_bandwidth_weighting_type_list;
 
 pub(crate) mod shape_capacity_reservation_options;
+
+pub(crate) mod shape_capacity_reservation_status;
 
 pub(crate) mod shape_cidr_block;
 

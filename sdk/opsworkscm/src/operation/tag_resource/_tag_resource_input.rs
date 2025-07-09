@@ -5,7 +5,7 @@
 pub struct TagResourceInput {
     /// <p>The Amazon Resource Number (ARN) of a resource to which you want to apply tags. For example, <code>arn:aws:opsworks-cm:us-west-2:123456789012:server/test-owcm-server/EXAMPLE-66b0-4196-8274-d1a2bEXAMPLE</code>.</p>
     pub resource_arn: ::std::option::Option<::std::string::String>,
-    /// <p>A map that contains tag keys and tag values to attach to AWS OpsWorks-CM servers or backups.</p>
+    /// <p>A map that contains tag keys and tag values to attach to OpsWorks CM servers or backups.</p>
     /// <ul>
     /// <li>
     /// <p>The key cannot be empty.</p></li>
@@ -16,7 +16,7 @@ pub struct TagResourceInput {
     /// <li>
     /// <p>Leading and trailing white spaces are trimmed from both the key and value.</p></li>
     /// <li>
-    /// <p>A maximum of 50 user-applied tags is allowed for any AWS OpsWorks-CM server or backup.</p></li>
+    /// <p>A maximum of 50 user-applied tags is allowed for any OpsWorks CM server or backup.</p></li>
     /// </ul>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
@@ -25,7 +25,7 @@ impl TagResourceInput {
     pub fn resource_arn(&self) -> ::std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
-    /// <p>A map that contains tag keys and tag values to attach to AWS OpsWorks-CM servers or backups.</p>
+    /// <p>A map that contains tag keys and tag values to attach to OpsWorks CM servers or backups.</p>
     /// <ul>
     /// <li>
     /// <p>The key cannot be empty.</p></li>
@@ -36,7 +36,7 @@ impl TagResourceInput {
     /// <li>
     /// <p>Leading and trailing white spaces are trimmed from both the key and value.</p></li>
     /// <li>
-    /// <p>A maximum of 50 user-applied tags is allowed for any AWS OpsWorks-CM server or backup.</p></li>
+    /// <p>A maximum of 50 user-applied tags is allowed for any OpsWorks CM server or backup.</p></li>
     /// </ul>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
@@ -78,7 +78,7 @@ impl TagResourceInputBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>A map that contains tag keys and tag values to attach to AWS OpsWorks-CM servers or backups.</p>
+    /// <p>A map that contains tag keys and tag values to attach to OpsWorks CM servers or backups.</p>
     /// <ul>
     /// <li>
     /// <p>The key cannot be empty.</p></li>
@@ -89,7 +89,7 @@ impl TagResourceInputBuilder {
     /// <li>
     /// <p>Leading and trailing white spaces are trimmed from both the key and value.</p></li>
     /// <li>
-    /// <p>A maximum of 50 user-applied tags is allowed for any AWS OpsWorks-CM server or backup.</p></li>
+    /// <p>A maximum of 50 user-applied tags is allowed for any OpsWorks CM server or backup.</p></li>
     /// </ul>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
@@ -97,7 +97,7 @@ impl TagResourceInputBuilder {
         self.tags = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A map that contains tag keys and tag values to attach to AWS OpsWorks-CM servers or backups.</p>
+    /// <p>A map that contains tag keys and tag values to attach to OpsWorks CM servers or backups.</p>
     /// <ul>
     /// <li>
     /// <p>The key cannot be empty.</p></li>
@@ -108,13 +108,13 @@ impl TagResourceInputBuilder {
     /// <li>
     /// <p>Leading and trailing white spaces are trimmed from both the key and value.</p></li>
     /// <li>
-    /// <p>A maximum of 50 user-applied tags is allowed for any AWS OpsWorks-CM server or backup.</p></li>
+    /// <p>A maximum of 50 user-applied tags is allowed for any OpsWorks CM server or backup.</p></li>
     /// </ul>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
-    /// <p>A map that contains tag keys and tag values to attach to AWS OpsWorks-CM servers or backups.</p>
+    /// <p>A map that contains tag keys and tag values to attach to OpsWorks CM servers or backups.</p>
     /// <ul>
     /// <li>
     /// <p>The key cannot be empty.</p></li>
@@ -125,7 +125,7 @@ impl TagResourceInputBuilder {
     /// <li>
     /// <p>Leading and trailing white spaces are trimmed from both the key and value.</p></li>
     /// <li>
-    /// <p>A maximum of 50 user-applied tags is allowed for any AWS OpsWorks-CM server or backup.</p></li>
+    /// <p>A maximum of 50 user-applied tags is allowed for any OpsWorks CM server or backup.</p></li>
     /// </ul>
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         &self.tags

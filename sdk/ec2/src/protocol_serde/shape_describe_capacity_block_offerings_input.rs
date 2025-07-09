@@ -54,6 +54,19 @@ pub fn ser_describe_capacity_block_offerings_input_input_input(
             ::aws_smithy_types::Number::NegInt((*var_16).into()),
         );
     }
+    #[allow(unused_mut)]
+    let mut scope_17 = writer.prefix("UltraserverType");
+    if let Some(var_18) = &input.ultraserver_type {
+        scope_17.string(var_18);
+    }
+    #[allow(unused_mut)]
+    let mut scope_19 = writer.prefix("UltraserverCount");
+    if let Some(var_20) = &input.ultraserver_count {
+        scope_19.number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_20).into()),
+        );
+    }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

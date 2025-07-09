@@ -100,6 +100,8 @@ pub struct CapacityReservation {
     pub commitment_info: ::std::option::Option<crate::types::CapacityReservationCommitmentInfo>,
     /// <p>The delivery method for a future-dated Capacity Reservation. <code>incremental</code> indicates that the requested capacity is delivered in addition to any running instances and reserved capacity that you have in your account at the requested date and time.</p>
     pub delivery_preference: ::std::option::Option<crate::types::CapacityReservationDeliveryPreference>,
+    /// <p>The ID of the Capacity Block.</p>
+    pub capacity_block_id: ::std::option::Option<::std::string::String>,
 }
 impl CapacityReservation {
     /// <p>The ID of the Capacity Reservation.</p>
@@ -256,6 +258,10 @@ impl CapacityReservation {
     pub fn delivery_preference(&self) -> ::std::option::Option<&crate::types::CapacityReservationDeliveryPreference> {
         self.delivery_preference.as_ref()
     }
+    /// <p>The ID of the Capacity Block.</p>
+    pub fn capacity_block_id(&self) -> ::std::option::Option<&str> {
+        self.capacity_block_id.as_deref()
+    }
 }
 impl CapacityReservation {
     /// Creates a new builder-style object to manufacture [`CapacityReservation`](crate::types::CapacityReservation).
@@ -295,6 +301,7 @@ pub struct CapacityReservationBuilder {
     pub(crate) unused_reservation_billing_owner_id: ::std::option::Option<::std::string::String>,
     pub(crate) commitment_info: ::std::option::Option<crate::types::CapacityReservationCommitmentInfo>,
     pub(crate) delivery_preference: ::std::option::Option<crate::types::CapacityReservationDeliveryPreference>,
+    pub(crate) capacity_block_id: ::std::option::Option<::std::string::String>,
 }
 impl CapacityReservationBuilder {
     /// <p>The ID of the Capacity Reservation.</p>
@@ -813,6 +820,20 @@ impl CapacityReservationBuilder {
     pub fn get_delivery_preference(&self) -> &::std::option::Option<crate::types::CapacityReservationDeliveryPreference> {
         &self.delivery_preference
     }
+    /// <p>The ID of the Capacity Block.</p>
+    pub fn capacity_block_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.capacity_block_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ID of the Capacity Block.</p>
+    pub fn set_capacity_block_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.capacity_block_id = input;
+        self
+    }
+    /// <p>The ID of the Capacity Block.</p>
+    pub fn get_capacity_block_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.capacity_block_id
+    }
     /// Consumes the builder and constructs a [`CapacityReservation`](crate::types::CapacityReservation).
     pub fn build(self) -> crate::types::CapacityReservation {
         crate::types::CapacityReservation {
@@ -843,6 +864,7 @@ impl CapacityReservationBuilder {
             unused_reservation_billing_owner_id: self.unused_reservation_billing_owner_id,
             commitment_info: self.commitment_info,
             delivery_preference: self.delivery_preference,
+            capacity_block_id: self.capacity_block_id,
         }
     }
 }

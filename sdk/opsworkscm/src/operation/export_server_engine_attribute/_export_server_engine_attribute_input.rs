@@ -12,7 +12,7 @@ pub struct ExportServerEngineAttributeInput {
     /// <li>
     /// <p><b>RunList</b> In Chef, a list of roles or recipes that are run in the specified order. In Puppet, this parameter is ignored.</p></li>
     /// <li>
-    /// <p><b>OrganizationName</b> In Chef, an organization name. AWS OpsWorks for Chef Automate always creates the organization <code>default</code>. In Puppet, this parameter is ignored.</p></li>
+    /// <p><b>OrganizationName</b> In Chef, an organization name. OpsWorks for Chef Automate always creates the organization <code>default</code>. In Puppet, this parameter is ignored.</p></li>
     /// <li>
     /// <p><b>NodeEnvironment</b> In Chef, a node environment (for example, development, staging, or one-box). In Puppet, this parameter is ignored.</p></li>
     /// <li>
@@ -34,7 +34,7 @@ impl ExportServerEngineAttributeInput {
     /// <li>
     /// <p><b>RunList</b> In Chef, a list of roles or recipes that are run in the specified order. In Puppet, this parameter is ignored.</p></li>
     /// <li>
-    /// <p><b>OrganizationName</b> In Chef, an organization name. AWS OpsWorks for Chef Automate always creates the organization <code>default</code>. In Puppet, this parameter is ignored.</p></li>
+    /// <p><b>OrganizationName</b> In Chef, an organization name. OpsWorks for Chef Automate always creates the organization <code>default</code>. In Puppet, this parameter is ignored.</p></li>
     /// <li>
     /// <p><b>NodeEnvironment</b> In Chef, a node environment (for example, development, staging, or one-box). In Puppet, this parameter is ignored.</p></li>
     /// <li>
@@ -101,7 +101,7 @@ impl ExportServerEngineAttributeInputBuilder {
     /// <li>
     /// <p><b>RunList</b> In Chef, a list of roles or recipes that are run in the specified order. In Puppet, this parameter is ignored.</p></li>
     /// <li>
-    /// <p><b>OrganizationName</b> In Chef, an organization name. AWS OpsWorks for Chef Automate always creates the organization <code>default</code>. In Puppet, this parameter is ignored.</p></li>
+    /// <p><b>OrganizationName</b> In Chef, an organization name. OpsWorks for Chef Automate always creates the organization <code>default</code>. In Puppet, this parameter is ignored.</p></li>
     /// <li>
     /// <p><b>NodeEnvironment</b> In Chef, a node environment (for example, development, staging, or one-box). In Puppet, this parameter is ignored.</p></li>
     /// <li>
@@ -118,7 +118,7 @@ impl ExportServerEngineAttributeInputBuilder {
     /// <li>
     /// <p><b>RunList</b> In Chef, a list of roles or recipes that are run in the specified order. In Puppet, this parameter is ignored.</p></li>
     /// <li>
-    /// <p><b>OrganizationName</b> In Chef, an organization name. AWS OpsWorks for Chef Automate always creates the organization <code>default</code>. In Puppet, this parameter is ignored.</p></li>
+    /// <p><b>OrganizationName</b> In Chef, an organization name. OpsWorks for Chef Automate always creates the organization <code>default</code>. In Puppet, this parameter is ignored.</p></li>
     /// <li>
     /// <p><b>NodeEnvironment</b> In Chef, a node environment (for example, development, staging, or one-box). In Puppet, this parameter is ignored.</p></li>
     /// <li>
@@ -133,7 +133,7 @@ impl ExportServerEngineAttributeInputBuilder {
     /// <li>
     /// <p><b>RunList</b> In Chef, a list of roles or recipes that are run in the specified order. In Puppet, this parameter is ignored.</p></li>
     /// <li>
-    /// <p><b>OrganizationName</b> In Chef, an organization name. AWS OpsWorks for Chef Automate always creates the organization <code>default</code>. In Puppet, this parameter is ignored.</p></li>
+    /// <p><b>OrganizationName</b> In Chef, an organization name. OpsWorks for Chef Automate always creates the organization <code>default</code>. In Puppet, this parameter is ignored.</p></li>
     /// <li>
     /// <p><b>NodeEnvironment</b> In Chef, a node environment (for example, development, staging, or one-box). In Puppet, this parameter is ignored.</p></li>
     /// <li>

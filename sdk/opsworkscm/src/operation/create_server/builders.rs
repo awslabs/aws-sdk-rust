@@ -25,9 +25,9 @@ impl crate::operation::create_server::builders::CreateServerInputBuilder {
 /// <p>Creates and immedately starts a new server. The server is ready to use when it is in the <code>HEALTHY</code> state. By default, you can create a maximum of 10 servers.</p>
 /// <p>This operation is asynchronous.</p>
 /// <p>A <code>LimitExceededException</code> is thrown when you have created the maximum number of servers (10). A <code>ResourceAlreadyExistsException</code> is thrown when a server with the same name already exists in the account. A <code>ResourceNotFoundException</code> is thrown when you specify a backup ID that is not valid or is for a backup that does not exist. A <code>ValidationException</code> is thrown when parameters of the request are not valid.</p>
-/// <p>If you do not specify a security group by adding the <code>SecurityGroupIds</code> parameter, AWS OpsWorks creates a new security group.</p>
-/// <p><i>Chef Automate:</i> The default security group opens the Chef server to the world on TCP port 443. If a KeyName is present, AWS OpsWorks enables SSH access. SSH is also open to the world on TCP port 22.</p>
-/// <p><i>Puppet Enterprise:</i> The default security group opens TCP ports 22, 443, 4433, 8140, 8142, 8143, and 8170. If a KeyName is present, AWS OpsWorks enables SSH access. SSH is also open to the world on TCP port 22.</p>
+/// <p>If you do not specify a security group by adding the <code>SecurityGroupIds</code> parameter, OpsWorks creates a new security group.</p>
+/// <p><i>Chef Automate:</i> The default security group opens the Chef server to the world on TCP port 443. If a KeyName is present, OpsWorks enables SSH access. SSH is also open to the world on TCP port 22.</p>
+/// <p><i>Puppet Enterprise:</i> The default security group opens TCP ports 22, 443, 4433, 8140, 8142, 8143, and 8170. If a KeyName is present, OpsWorks enables SSH access. SSH is also open to the world on TCP port 22.</p>
 /// <p>By default, your server is accessible from any IP address. We recommend that you update your security group rules to allow access from known IP addresses and address ranges only. To edit security group rules, open Security Groups in the navigation pane of the EC2 management console.</p>
 /// <p>To specify your own domain for a server, and provide your own self-signed or CA-signed certificate and private key, specify values for <code>CustomDomain</code>, <code>CustomCertificate</code>, and <code>CustomPrivateKey</code>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
@@ -330,45 +330,45 @@ impl CreateServerFluentBuilder {
     pub fn get_engine_attributes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EngineAttribute>> {
         self.inner.get_engine_attributes()
     }
-    /// <p>The number of automated backups that you want to keep. Whenever a new backup is created, AWS OpsWorks CM deletes the oldest backups if this number is exceeded. The default value is <code>1</code>.</p>
+    /// <p>The number of automated backups that you want to keep. Whenever a new backup is created, OpsWorks CM deletes the oldest backups if this number is exceeded. The default value is <code>1</code>.</p>
     pub fn backup_retention_count(mut self, input: i32) -> Self {
         self.inner = self.inner.backup_retention_count(input);
         self
     }
-    /// <p>The number of automated backups that you want to keep. Whenever a new backup is created, AWS OpsWorks CM deletes the oldest backups if this number is exceeded. The default value is <code>1</code>.</p>
+    /// <p>The number of automated backups that you want to keep. Whenever a new backup is created, OpsWorks CM deletes the oldest backups if this number is exceeded. The default value is <code>1</code>.</p>
     pub fn set_backup_retention_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_backup_retention_count(input);
         self
     }
-    /// <p>The number of automated backups that you want to keep. Whenever a new backup is created, AWS OpsWorks CM deletes the oldest backups if this number is exceeded. The default value is <code>1</code>.</p>
+    /// <p>The number of automated backups that you want to keep. Whenever a new backup is created, OpsWorks CM deletes the oldest backups if this number is exceeded. The default value is <code>1</code>.</p>
     pub fn get_backup_retention_count(&self) -> &::std::option::Option<i32> {
         self.inner.get_backup_retention_count()
     }
-    /// <p>The name of the server. The server name must be unique within your AWS account, within each region. Server names must start with a letter; then letters, numbers, or hyphens (-) are allowed, up to a maximum of 40 characters.</p>
+    /// <p>The name of the server. The server name must be unique within your Amazon Web Services account, within each region. Server names must start with a letter; then letters, numbers, or hyphens (-) are allowed, up to a maximum of 40 characters.</p>
     pub fn server_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.server_name(input.into());
         self
     }
-    /// <p>The name of the server. The server name must be unique within your AWS account, within each region. Server names must start with a letter; then letters, numbers, or hyphens (-) are allowed, up to a maximum of 40 characters.</p>
+    /// <p>The name of the server. The server name must be unique within your Amazon Web Services account, within each region. Server names must start with a letter; then letters, numbers, or hyphens (-) are allowed, up to a maximum of 40 characters.</p>
     pub fn set_server_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_server_name(input);
         self
     }
-    /// <p>The name of the server. The server name must be unique within your AWS account, within each region. Server names must start with a letter; then letters, numbers, or hyphens (-) are allowed, up to a maximum of 40 characters.</p>
+    /// <p>The name of the server. The server name must be unique within your Amazon Web Services account, within each region. Server names must start with a letter; then letters, numbers, or hyphens (-) are allowed, up to a maximum of 40 characters.</p>
     pub fn get_server_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_server_name()
     }
-    /// <p>The ARN of the instance profile that your Amazon EC2 instances use. Although the AWS OpsWorks console typically creates the instance profile for you, if you are using API commands instead, run the service-role-creation.yaml AWS CloudFormation template, located at https://s3.amazonaws.com/opsworks-cm-us-east-1-prod-default-assets/misc/opsworks-cm-roles.yaml. This template creates a CloudFormation stack that includes the instance profile you need.</p>
+    /// <p>The ARN of the instance profile that your Amazon EC2 instances use. The OpsWorks console typically creates the instance profile for you</p>
     pub fn instance_profile_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.instance_profile_arn(input.into());
         self
     }
-    /// <p>The ARN of the instance profile that your Amazon EC2 instances use. Although the AWS OpsWorks console typically creates the instance profile for you, if you are using API commands instead, run the service-role-creation.yaml AWS CloudFormation template, located at https://s3.amazonaws.com/opsworks-cm-us-east-1-prod-default-assets/misc/opsworks-cm-roles.yaml. This template creates a CloudFormation stack that includes the instance profile you need.</p>
+    /// <p>The ARN of the instance profile that your Amazon EC2 instances use. The OpsWorks console typically creates the instance profile for you</p>
     pub fn set_instance_profile_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_instance_profile_arn(input);
         self
     }
-    /// <p>The ARN of the instance profile that your Amazon EC2 instances use. Although the AWS OpsWorks console typically creates the instance profile for you, if you are using API commands instead, run the service-role-creation.yaml AWS CloudFormation template, located at https://s3.amazonaws.com/opsworks-cm-us-east-1-prod-default-assets/misc/opsworks-cm-roles.yaml. This template creates a CloudFormation stack that includes the instance profile you need.</p>
+    /// <p>The ARN of the instance profile that your Amazon EC2 instances use. The OpsWorks console typically creates the instance profile for you</p>
     pub fn get_instance_profile_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_instance_profile_arn()
     }
@@ -400,24 +400,24 @@ impl CreateServerFluentBuilder {
     pub fn get_key_pair(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_key_pair()
     }
-    /// <p>The start time for a one-hour period each week during which AWS OpsWorks CM performs maintenance on the instance. Valid values must be specified in the following format: <code>DDD:HH:MM</code>. <code>MM</code> must be specified as <code>00</code>. The specified time is in coordinated universal time (UTC). The default value is a random one-hour period on Tuesday, Wednesday, or Friday. See <code>TimeWindowDefinition</code> for more information.</p>
+    /// <p>The start time for a one-hour period each week during which OpsWorks CM performs maintenance on the instance. Valid values must be specified in the following format: <code>DDD:HH:MM</code>. <code>MM</code> must be specified as <code>00</code>. The specified time is in coordinated universal time (UTC). The default value is a random one-hour period on Tuesday, Wednesday, or Friday. See <code>TimeWindowDefinition</code> for more information.</p>
     /// <p><b>Example:</b> <code>Mon:08:00</code>, which represents a start time of every Monday at 08:00 UTC. (8:00 a.m.)</p>
     pub fn preferred_maintenance_window(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.preferred_maintenance_window(input.into());
         self
     }
-    /// <p>The start time for a one-hour period each week during which AWS OpsWorks CM performs maintenance on the instance. Valid values must be specified in the following format: <code>DDD:HH:MM</code>. <code>MM</code> must be specified as <code>00</code>. The specified time is in coordinated universal time (UTC). The default value is a random one-hour period on Tuesday, Wednesday, or Friday. See <code>TimeWindowDefinition</code> for more information.</p>
+    /// <p>The start time for a one-hour period each week during which OpsWorks CM performs maintenance on the instance. Valid values must be specified in the following format: <code>DDD:HH:MM</code>. <code>MM</code> must be specified as <code>00</code>. The specified time is in coordinated universal time (UTC). The default value is a random one-hour period on Tuesday, Wednesday, or Friday. See <code>TimeWindowDefinition</code> for more information.</p>
     /// <p><b>Example:</b> <code>Mon:08:00</code>, which represents a start time of every Monday at 08:00 UTC. (8:00 a.m.)</p>
     pub fn set_preferred_maintenance_window(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_preferred_maintenance_window(input);
         self
     }
-    /// <p>The start time for a one-hour period each week during which AWS OpsWorks CM performs maintenance on the instance. Valid values must be specified in the following format: <code>DDD:HH:MM</code>. <code>MM</code> must be specified as <code>00</code>. The specified time is in coordinated universal time (UTC). The default value is a random one-hour period on Tuesday, Wednesday, or Friday. See <code>TimeWindowDefinition</code> for more information.</p>
+    /// <p>The start time for a one-hour period each week during which OpsWorks CM performs maintenance on the instance. Valid values must be specified in the following format: <code>DDD:HH:MM</code>. <code>MM</code> must be specified as <code>00</code>. The specified time is in coordinated universal time (UTC). The default value is a random one-hour period on Tuesday, Wednesday, or Friday. See <code>TimeWindowDefinition</code> for more information.</p>
     /// <p><b>Example:</b> <code>Mon:08:00</code>, which represents a start time of every Monday at 08:00 UTC. (8:00 a.m.)</p>
     pub fn get_preferred_maintenance_window(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_preferred_maintenance_window()
     }
-    /// <p>The start time for a one-hour period during which AWS OpsWorks CM backs up application-level data on your server if automated backups are enabled. Valid values must be specified in one of the following formats:</p>
+    /// <p>The start time for a one-hour period during which OpsWorks CM backs up application-level data on your server if automated backups are enabled. Valid values must be specified in one of the following formats:</p>
     /// <ul>
     /// <li>
     /// <p><code>HH:MM</code> for daily backups</p></li>
@@ -431,7 +431,7 @@ impl CreateServerFluentBuilder {
         self.inner = self.inner.preferred_backup_window(input.into());
         self
     }
-    /// <p>The start time for a one-hour period during which AWS OpsWorks CM backs up application-level data on your server if automated backups are enabled. Valid values must be specified in one of the following formats:</p>
+    /// <p>The start time for a one-hour period during which OpsWorks CM backs up application-level data on your server if automated backups are enabled. Valid values must be specified in one of the following formats:</p>
     /// <ul>
     /// <li>
     /// <p><code>HH:MM</code> for daily backups</p></li>
@@ -445,7 +445,7 @@ impl CreateServerFluentBuilder {
         self.inner = self.inner.set_preferred_backup_window(input);
         self
     }
-    /// <p>The start time for a one-hour period during which AWS OpsWorks CM backs up application-level data on your server if automated backups are enabled. Valid values must be specified in one of the following formats:</p>
+    /// <p>The start time for a one-hour period during which OpsWorks CM backs up application-level data on your server if automated backups are enabled. Valid values must be specified in one of the following formats:</p>
     /// <ul>
     /// <li>
     /// <p><code>HH:MM</code> for daily backups</p></li>
@@ -464,33 +464,33 @@ impl CreateServerFluentBuilder {
     /// To override the contents of this collection use [`set_security_group_ids`](Self::set_security_group_ids).
     ///
     /// <p>A list of security group IDs to attach to the Amazon EC2 instance. If you add this parameter, the specified security groups must be within the VPC that is specified by <code>SubnetIds</code>.</p>
-    /// <p>If you do not specify this parameter, AWS OpsWorks CM creates one new security group that uses TCP ports 22 and 443, open to 0.0.0.0/0 (everyone).</p>
+    /// <p>If you do not specify this parameter, OpsWorks CM creates one new security group that uses TCP ports 22 and 443, open to 0.0.0.0/0 (everyone).</p>
     pub fn security_group_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.security_group_ids(input.into());
         self
     }
     /// <p>A list of security group IDs to attach to the Amazon EC2 instance. If you add this parameter, the specified security groups must be within the VPC that is specified by <code>SubnetIds</code>.</p>
-    /// <p>If you do not specify this parameter, AWS OpsWorks CM creates one new security group that uses TCP ports 22 and 443, open to 0.0.0.0/0 (everyone).</p>
+    /// <p>If you do not specify this parameter, OpsWorks CM creates one new security group that uses TCP ports 22 and 443, open to 0.0.0.0/0 (everyone).</p>
     pub fn set_security_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_security_group_ids(input);
         self
     }
     /// <p>A list of security group IDs to attach to the Amazon EC2 instance. If you add this parameter, the specified security groups must be within the VPC that is specified by <code>SubnetIds</code>.</p>
-    /// <p>If you do not specify this parameter, AWS OpsWorks CM creates one new security group that uses TCP ports 22 and 443, open to 0.0.0.0/0 (everyone).</p>
+    /// <p>If you do not specify this parameter, OpsWorks CM creates one new security group that uses TCP ports 22 and 443, open to 0.0.0.0/0 (everyone).</p>
     pub fn get_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_security_group_ids()
     }
-    /// <p>The service role that the AWS OpsWorks CM service backend uses to work with your account. Although the AWS OpsWorks management console typically creates the service role for you, if you are using the AWS CLI or API commands, run the service-role-creation.yaml AWS CloudFormation template, located at https://s3.amazonaws.com/opsworks-cm-us-east-1-prod-default-assets/misc/opsworks-cm-roles.yaml. This template creates a CloudFormation stack that includes the service role and instance profile that you need.</p>
+    /// <p>The service role that the OpsWorks CM service backend uses to work with your account.</p>
     pub fn service_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.service_role_arn(input.into());
         self
     }
-    /// <p>The service role that the AWS OpsWorks CM service backend uses to work with your account. Although the AWS OpsWorks management console typically creates the service role for you, if you are using the AWS CLI or API commands, run the service-role-creation.yaml AWS CloudFormation template, located at https://s3.amazonaws.com/opsworks-cm-us-east-1-prod-default-assets/misc/opsworks-cm-roles.yaml. This template creates a CloudFormation stack that includes the service role and instance profile that you need.</p>
+    /// <p>The service role that the OpsWorks CM service backend uses to work with your account.</p>
     pub fn set_service_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_service_role_arn(input);
         self
     }
-    /// <p>The service role that the AWS OpsWorks CM service backend uses to work with your account. Although the AWS OpsWorks management console typically creates the service role for you, if you are using the AWS CLI or API commands, run the service-role-creation.yaml AWS CloudFormation template, located at https://s3.amazonaws.com/opsworks-cm-us-east-1-prod-default-assets/misc/opsworks-cm-roles.yaml. This template creates a CloudFormation stack that includes the service role and instance profile that you need.</p>
+    /// <p>The service role that the OpsWorks CM service backend uses to work with your account.</p>
     pub fn get_service_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_service_role_arn()
     }
@@ -527,7 +527,7 @@ impl CreateServerFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>A map that contains tag keys and tag values to attach to an AWS OpsWorks for Chef Automate or AWS OpsWorks for Puppet Enterprise server.</p>
+    /// <p>A map that contains tag keys and tag values to attach to an OpsWorks for Chef Automate or OpsWorks for Puppet Enterprise server.</p>
     /// <ul>
     /// <li>
     /// <p>The key cannot be empty.</p></li>
@@ -536,15 +536,15 @@ impl CreateServerFluentBuilder {
     /// <li>
     /// <p>The value can be a maximum 255 characters, and contain only Unicode letters, numbers, or separators, or the following special characters: <code>+ - = . _ : / @</code></p></li>
     /// <li>
-    /// <p>Leading and trailing white spaces are trimmed from both the key and value.</p></li>
+    /// <p>Leading and trailing spaces are trimmed from both the key and value.</p></li>
     /// <li>
-    /// <p>A maximum of 50 user-applied tags is allowed for any AWS OpsWorks-CM server.</p></li>
+    /// <p>A maximum of 50 user-applied tags is allowed for any OpsWorks CM server.</p></li>
     /// </ul>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         self.inner = self.inner.tags(input);
         self
     }
-    /// <p>A map that contains tag keys and tag values to attach to an AWS OpsWorks for Chef Automate or AWS OpsWorks for Puppet Enterprise server.</p>
+    /// <p>A map that contains tag keys and tag values to attach to an OpsWorks for Chef Automate or OpsWorks for Puppet Enterprise server.</p>
     /// <ul>
     /// <li>
     /// <p>The key cannot be empty.</p></li>
@@ -553,15 +553,15 @@ impl CreateServerFluentBuilder {
     /// <li>
     /// <p>The value can be a maximum 255 characters, and contain only Unicode letters, numbers, or separators, or the following special characters: <code>+ - = . _ : / @</code></p></li>
     /// <li>
-    /// <p>Leading and trailing white spaces are trimmed from both the key and value.</p></li>
+    /// <p>Leading and trailing spaces are trimmed from both the key and value.</p></li>
     /// <li>
-    /// <p>A maximum of 50 user-applied tags is allowed for any AWS OpsWorks-CM server.</p></li>
+    /// <p>A maximum of 50 user-applied tags is allowed for any OpsWorks CM server.</p></li>
     /// </ul>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
-    /// <p>A map that contains tag keys and tag values to attach to an AWS OpsWorks for Chef Automate or AWS OpsWorks for Puppet Enterprise server.</p>
+    /// <p>A map that contains tag keys and tag values to attach to an OpsWorks for Chef Automate or OpsWorks for Puppet Enterprise server.</p>
     /// <ul>
     /// <li>
     /// <p>The key cannot be empty.</p></li>
@@ -570,24 +570,24 @@ impl CreateServerFluentBuilder {
     /// <li>
     /// <p>The value can be a maximum 255 characters, and contain only Unicode letters, numbers, or separators, or the following special characters: <code>+ - = . _ : / @</code></p></li>
     /// <li>
-    /// <p>Leading and trailing white spaces are trimmed from both the key and value.</p></li>
+    /// <p>Leading and trailing spaces are trimmed from both the key and value.</p></li>
     /// <li>
-    /// <p>A maximum of 50 user-applied tags is allowed for any AWS OpsWorks-CM server.</p></li>
+    /// <p>A maximum of 50 user-applied tags is allowed for any OpsWorks CM server.</p></li>
     /// </ul>
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         self.inner.get_tags()
     }
-    /// <p>If you specify this field, AWS OpsWorks CM creates the server by using the backup represented by BackupId.</p>
+    /// <p>If you specify this field, OpsWorks CM creates the server by using the backup represented by BackupId.</p>
     pub fn backup_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.backup_id(input.into());
         self
     }
-    /// <p>If you specify this field, AWS OpsWorks CM creates the server by using the backup represented by BackupId.</p>
+    /// <p>If you specify this field, OpsWorks CM creates the server by using the backup represented by BackupId.</p>
     pub fn set_backup_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_backup_id(input);
         self
     }
-    /// <p>If you specify this field, AWS OpsWorks CM creates the server by using the backup represented by BackupId.</p>
+    /// <p>If you specify this field, OpsWorks CM creates the server by using the backup represented by BackupId.</p>
     pub fn get_backup_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_backup_id()
     }

@@ -802,9 +802,9 @@ model_hash = '5ec7004d46e2bb30c8d974da3846e960c6d52a00307ee4cc8a62b95566a1fc84'
 
 [crates.aws-sdk-ec2]
 category = 'AwsSdk'
-version = '1.144.0'
-source_hash = 'f08aa9a04a6b39f34e9d1f20cbd081eb86e3a962eb34c79d073f5c6a9e48b5aa'
-model_hash = '36a619a9c7c2fd946806f4e92049e5cd3c67811f70d6420544a148c4abd80cd1'
+version = '1.145.0'
+source_hash = 'ba11a6bb1befe6d8919f111f7387ec73278c60791e7b99ef7930466750f6ba97'
+model_hash = '26e1b66eceade22019802da81cca6b0f232d4b2375f7a0f0ba67d52c2f9c72c2'
 
 [crates.aws-sdk-ec2instanceconnect]
 category = 'AwsSdk'
@@ -976,9 +976,9 @@ model_hash = '4a429ec61afe2d8f7f9acea01da3c7a57bc65443c0f93325600ae2cc58109084'
 
 [crates.aws-sdk-freetier]
 category = 'AwsSdk'
-version = '1.72.0'
-source_hash = '65beaea44c6552c76a3dbf0deadbe4f6cb64a3b942b25a4046ddc50ce9b8ad79'
-model_hash = '4a7fa6312753c4f167f61399f428b49f35283a29bf54f8c0c128ff96dac00471'
+version = '1.73.0'
+source_hash = '8c1e63b41240a552111ac5b588f56983e07d6ac44c8cd53f3ceeef8eef845d24'
+model_hash = '48da0c35dc61d58137710983be63ba0775e029cdfbb2547fe2f034c9b27fbd2a'
 
 [crates.aws-sdk-fsx]
 category = 'AwsSdk'
@@ -1714,9 +1714,9 @@ model_hash = '482612bd4d21e5fb4d55bb3da0b24cdea41341b4069255926a92f11dfc721901'
 
 [crates.aws-sdk-opsworkscm]
 category = 'AwsSdk'
-version = '1.74.0'
-source_hash = '50db0fab393b4d425c7b70b5f186ca6b004f8a7fffe9651d16bc8927fd8a81f2'
-model_hash = '94fae3de41f095f1626b2624ea61356b9e50a130845f08ed021b777cd63a0063'
+version = '1.74.1'
+source_hash = 'bc4b6b321f11c95f9858e209ec0add2b2173b2bac1d27899f0331e1c64f30fd8'
+model_hash = '4ab6c5ee6253d9bb9bfe9ae0098f43950c903b7a028ff79820ebd2dbf0118f93'
 
 [crates.aws-sdk-organizations]
 category = 'AwsSdk'
@@ -2657,14 +2657,7 @@ source_hash = '13cfa390989f34887585e1e7a771064dde887d5e73f901339aae0a6729b6b2d9'
 category = 'AwsRuntime'
 version = '0.0.0'
 source_hash = '069837e3ae4285e1f4ff081b890fad86819cb1e48519d4d45aae0e1970fe9ea4'
-
-[release]
-tag = 'release-2025-07-03'
-
 [release.crates]
-aws-sdk-customerprofiles = '1.81.0'
-aws-sdk-deadline = '1.65.0'
-aws-sdk-ec2 = '1.144.0'
-aws-sdk-mediapackagev2 = '1.83.0'
-aws-sdk-route53 = '1.84.0'
-aws-sdk-sagemaker = '1.139.0'
+aws-sdk-ec2 = '1.145.0'
+aws-sdk-freetier = '1.73.0'
+aws-sdk-opsworkscm = '1.74.1'

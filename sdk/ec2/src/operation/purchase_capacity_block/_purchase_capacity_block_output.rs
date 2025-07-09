@@ -5,12 +5,20 @@
 pub struct PurchaseCapacityBlockOutput {
     /// <p>The Capacity Reservation.</p>
     pub capacity_reservation: ::std::option::Option<crate::types::CapacityReservation>,
+    /// <p>The Capacity Block.</p>
+    pub capacity_blocks: ::std::option::Option<::std::vec::Vec<crate::types::CapacityBlock>>,
     _request_id: Option<String>,
 }
 impl PurchaseCapacityBlockOutput {
     /// <p>The Capacity Reservation.</p>
     pub fn capacity_reservation(&self) -> ::std::option::Option<&crate::types::CapacityReservation> {
         self.capacity_reservation.as_ref()
+    }
+    /// <p>The Capacity Block.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.capacity_blocks.is_none()`.
+    pub fn capacity_blocks(&self) -> &[crate::types::CapacityBlock] {
+        self.capacity_blocks.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for PurchaseCapacityBlockOutput {
@@ -30,6 +38,7 @@ impl PurchaseCapacityBlockOutput {
 #[non_exhaustive]
 pub struct PurchaseCapacityBlockOutputBuilder {
     pub(crate) capacity_reservation: ::std::option::Option<crate::types::CapacityReservation>,
+    pub(crate) capacity_blocks: ::std::option::Option<::std::vec::Vec<crate::types::CapacityBlock>>,
     _request_id: Option<String>,
 }
 impl PurchaseCapacityBlockOutputBuilder {
@@ -47,6 +56,26 @@ impl PurchaseCapacityBlockOutputBuilder {
     pub fn get_capacity_reservation(&self) -> &::std::option::Option<crate::types::CapacityReservation> {
         &self.capacity_reservation
     }
+    /// Appends an item to `capacity_blocks`.
+    ///
+    /// To override the contents of this collection use [`set_capacity_blocks`](Self::set_capacity_blocks).
+    ///
+    /// <p>The Capacity Block.</p>
+    pub fn capacity_blocks(mut self, input: crate::types::CapacityBlock) -> Self {
+        let mut v = self.capacity_blocks.unwrap_or_default();
+        v.push(input);
+        self.capacity_blocks = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The Capacity Block.</p>
+    pub fn set_capacity_blocks(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CapacityBlock>>) -> Self {
+        self.capacity_blocks = input;
+        self
+    }
+    /// <p>The Capacity Block.</p>
+    pub fn get_capacity_blocks(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CapacityBlock>> {
+        &self.capacity_blocks
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -60,6 +89,7 @@ impl PurchaseCapacityBlockOutputBuilder {
     pub fn build(self) -> crate::operation::purchase_capacity_block::PurchaseCapacityBlockOutput {
         crate::operation::purchase_capacity_block::PurchaseCapacityBlockOutput {
             capacity_reservation: self.capacity_reservation,
+            capacity_blocks: self.capacity_blocks,
             _request_id: self._request_id,
         }
     }

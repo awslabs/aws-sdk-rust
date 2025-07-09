@@ -22,7 +22,7 @@ impl crate::operation::describe_account_attributes::builders::DescribeAccountAtt
 }
 /// Fluent builder constructing a request to `DescribeAccountAttributes`.
 ///
-/// <p>Describes your OpsWorks-CM account attributes.</p>
+/// <p>Describes your OpsWorks CM account attributes.</p>
 /// <p>This operation is synchronous.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeAccountAttributesFluentBuilder {

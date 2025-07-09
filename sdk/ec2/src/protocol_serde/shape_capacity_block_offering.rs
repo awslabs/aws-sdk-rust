@@ -144,8 +144,36 @@ pub fn de_capacity_block_offering(
                 builder = builder.set_tenancy(var_10);
             }
             ,
-            s if s.matches("capacityBlockDurationMinutes") /* CapacityBlockDurationMinutes com.amazonaws.ec2#CapacityBlockOffering$CapacityBlockDurationMinutes */ =>  {
+            s if s.matches("ultraserverType") /* UltraserverType com.amazonaws.ec2#CapacityBlockOffering$UltraserverType */ =>  {
                 let var_11 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_ultraserver_type(var_11);
+            }
+            ,
+            s if s.matches("ultraserverCount") /* UltraserverCount com.amazonaws.ec2#CapacityBlockOffering$UltraserverCount */ =>  {
+                let var_12 =
+                    Some(
+                         {
+                            <i32 as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (integer: `com.amazonaws.ec2#BoxedInteger`)"))
+                        }
+                        ?
+                    )
+                ;
+                builder = builder.set_ultraserver_count(var_12);
+            }
+            ,
+            s if s.matches("capacityBlockDurationMinutes") /* CapacityBlockDurationMinutes com.amazonaws.ec2#CapacityBlockOffering$CapacityBlockDurationMinutes */ =>  {
+                let var_13 =
                     Some(
                          {
                             <i32 as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -156,7 +184,7 @@ pub fn de_capacity_block_offering(
                         ?
                     )
                 ;
-                builder = builder.set_capacity_block_duration_minutes(var_11);
+                builder = builder.set_capacity_block_duration_minutes(var_13);
             }
             ,
             _ => {}

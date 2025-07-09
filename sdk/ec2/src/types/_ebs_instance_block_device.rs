@@ -12,10 +12,10 @@ pub struct EbsInstanceBlockDevice {
     pub status: ::std::option::Option<crate::types::AttachmentStatus>,
     /// <p>The ID of the EBS volume.</p>
     pub volume_id: ::std::option::Option<::std::string::String>,
-    /// <p>The ARN of the Amazon ECS or Fargate task to which the volume is attached.</p>
+    /// <p>The ARN of the Amazon Web Services-managed resource to which the volume is attached.</p>
     pub associated_resource: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the Amazon Web Services account that owns the volume.</p>
-    /// <p>This parameter is returned only for volumes that are attached to Fargate tasks.</p>
+    /// <p>This parameter is returned only for volumes that are attached to Amazon Web Services-managed resources.</p>
     pub volume_owner_id: ::std::option::Option<::std::string::String>,
     /// <p>The service provider that manages the EBS volume.</p>
     pub operator: ::std::option::Option<crate::types::OperatorResponse>,
@@ -37,12 +37,12 @@ impl EbsInstanceBlockDevice {
     pub fn volume_id(&self) -> ::std::option::Option<&str> {
         self.volume_id.as_deref()
     }
-    /// <p>The ARN of the Amazon ECS or Fargate task to which the volume is attached.</p>
+    /// <p>The ARN of the Amazon Web Services-managed resource to which the volume is attached.</p>
     pub fn associated_resource(&self) -> ::std::option::Option<&str> {
         self.associated_resource.as_deref()
     }
     /// <p>The ID of the Amazon Web Services account that owns the volume.</p>
-    /// <p>This parameter is returned only for volumes that are attached to Fargate tasks.</p>
+    /// <p>This parameter is returned only for volumes that are attached to Amazon Web Services-managed resources.</p>
     pub fn volume_owner_id(&self) -> ::std::option::Option<&str> {
         self.volume_owner_id.as_deref()
     }
@@ -127,34 +127,34 @@ impl EbsInstanceBlockDeviceBuilder {
     pub fn get_volume_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.volume_id
     }
-    /// <p>The ARN of the Amazon ECS or Fargate task to which the volume is attached.</p>
+    /// <p>The ARN of the Amazon Web Services-managed resource to which the volume is attached.</p>
     pub fn associated_resource(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.associated_resource = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ARN of the Amazon ECS or Fargate task to which the volume is attached.</p>
+    /// <p>The ARN of the Amazon Web Services-managed resource to which the volume is attached.</p>
     pub fn set_associated_resource(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.associated_resource = input;
         self
     }
-    /// <p>The ARN of the Amazon ECS or Fargate task to which the volume is attached.</p>
+    /// <p>The ARN of the Amazon Web Services-managed resource to which the volume is attached.</p>
     pub fn get_associated_resource(&self) -> &::std::option::Option<::std::string::String> {
         &self.associated_resource
     }
     /// <p>The ID of the Amazon Web Services account that owns the volume.</p>
-    /// <p>This parameter is returned only for volumes that are attached to Fargate tasks.</p>
+    /// <p>This parameter is returned only for volumes that are attached to Amazon Web Services-managed resources.</p>
     pub fn volume_owner_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.volume_owner_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Amazon Web Services account that owns the volume.</p>
-    /// <p>This parameter is returned only for volumes that are attached to Fargate tasks.</p>
+    /// <p>This parameter is returned only for volumes that are attached to Amazon Web Services-managed resources.</p>
     pub fn set_volume_owner_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.volume_owner_id = input;
         self
     }
     /// <p>The ID of the Amazon Web Services account that owns the volume.</p>
-    /// <p>This parameter is returned only for volumes that are attached to Fargate tasks.</p>
+    /// <p>This parameter is returned only for volumes that are attached to Amazon Web Services-managed resources.</p>
     pub fn get_volume_owner_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.volume_owner_id
     }

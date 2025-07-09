@@ -9,9 +9,26 @@ pub(crate) fn reflens_get_free_tier_usage_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_account_activities_output_output_next_token(
+    input: &crate::operation::list_account_activities::ListAccountActivitiesOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn lens_get_free_tier_usage_output_output_free_tier_usages(
     input: crate::operation::get_free_tier_usage::GetFreeTierUsageOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::FreeTierUsage>> {
     let input = input.free_tier_usages;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_account_activities_output_output_activities(
+    input: crate::operation::list_account_activities::ListAccountActivitiesOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::ActivitySummary>> {
+    let input = input.activities;
     ::std::option::Option::Some(input)
 }

@@ -760,6 +760,12 @@ pub mod describe_capacity_block_extension_offerings;
 /// Types for the `DescribeCapacityBlockOfferings` operation.
 pub mod describe_capacity_block_offerings;
 
+/// Types for the `DescribeCapacityBlockStatus` operation.
+pub mod describe_capacity_block_status;
+
+/// Types for the `DescribeCapacityBlocks` operation.
+pub mod describe_capacity_blocks;
+
 /// Types for the `DescribeCapacityReservationBillingRequests` operation.
 pub mod describe_capacity_reservation_billing_requests;
 
