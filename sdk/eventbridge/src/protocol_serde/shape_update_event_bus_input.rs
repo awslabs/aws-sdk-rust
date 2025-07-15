@@ -18,5 +18,11 @@ pub fn ser_update_event_bus_input_input(
         crate::protocol_serde::shape_dead_letter_config::ser_dead_letter_config(&mut object_5, var_4)?;
         object_5.finish();
     }
+    if let Some(var_6) = &input.log_config {
+        #[allow(unused_mut)]
+        let mut object_7 = object.key("LogConfig").start_object();
+        crate::protocol_serde::shape_log_config::ser_log_config(&mut object_7, var_6)?;
+        object_7.finish();
+    }
     Ok(())
 }

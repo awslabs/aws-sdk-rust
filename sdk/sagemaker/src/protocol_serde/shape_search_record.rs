@@ -42,6 +42,9 @@ where
                         "PipelineExecution" => {
                             builder = builder.set_pipeline_execution(crate::protocol_serde::shape_pipeline_execution::de_pipeline_execution(tokens)?);
                         }
+                        "PipelineVersion" => {
+                            builder = builder.set_pipeline_version(crate::protocol_serde::shape_pipeline_version::de_pipeline_version(tokens)?);
+                        }
                         "FeatureGroup" => {
                             builder = builder.set_feature_group(crate::protocol_serde::shape_feature_group::de_feature_group(tokens)?);
                         }

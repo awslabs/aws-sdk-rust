@@ -20,7 +20,7 @@ pub struct AssociationSummary {
     pub destination_name: ::std::option::Option<::std::string::String>,
     /// <p>When the association was created.</p>
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
+    /// <p>Information about the user who created or modified a SageMaker resource.</p>
     pub created_by: ::std::option::Option<crate::types::UserContext>,
 }
 impl AssociationSummary {
@@ -56,7 +56,7 @@ impl AssociationSummary {
     pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
-    /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
+    /// <p>Information about the user who created or modified a SageMaker resource.</p>
     pub fn created_by(&self) -> ::std::option::Option<&crate::types::UserContext> {
         self.created_by.as_ref()
     }
@@ -195,17 +195,17 @@ impl AssociationSummaryBuilder {
     pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.creation_time
     }
-    /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
+    /// <p>Information about the user who created or modified a SageMaker resource.</p>
     pub fn created_by(mut self, input: crate::types::UserContext) -> Self {
         self.created_by = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
+    /// <p>Information about the user who created or modified a SageMaker resource.</p>
     pub fn set_created_by(mut self, input: ::std::option::Option<crate::types::UserContext>) -> Self {
         self.created_by = input;
         self
     }
-    /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
+    /// <p>Information about the user who created or modified a SageMaker resource.</p>
     pub fn get_created_by(&self) -> &::std::option::Option<crate::types::UserContext> {
         &self.created_by
     }

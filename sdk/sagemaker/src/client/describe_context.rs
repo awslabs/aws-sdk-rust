@@ -12,9 +12,9 @@ impl super::Client {
     ///   - [`description(Option<String>)`](crate::operation::describe_context::DescribeContextOutput::description): <p>The description of the context.</p>
     ///   - [`properties(Option<HashMap::<String, String>>)`](crate::operation::describe_context::DescribeContextOutput::properties): <p>A list of the context's properties.</p>
     ///   - [`creation_time(Option<DateTime>)`](crate::operation::describe_context::DescribeContextOutput::creation_time): <p>When the context was created.</p>
-    ///   - [`created_by(Option<UserContext>)`](crate::operation::describe_context::DescribeContextOutput::created_by): <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
+    ///   - [`created_by(Option<UserContext>)`](crate::operation::describe_context::DescribeContextOutput::created_by): <p>Information about the user who created or modified a SageMaker resource.</p>
     ///   - [`last_modified_time(Option<DateTime>)`](crate::operation::describe_context::DescribeContextOutput::last_modified_time): <p>When the context was last modified.</p>
-    ///   - [`last_modified_by(Option<UserContext>)`](crate::operation::describe_context::DescribeContextOutput::last_modified_by): <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
+    ///   - [`last_modified_by(Option<UserContext>)`](crate::operation::describe_context::DescribeContextOutput::last_modified_by): <p>Information about the user who created or modified a SageMaker resource.</p>
     ///   - [`lineage_group_arn(Option<String>)`](crate::operation::describe_context::DescribeContextOutput::lineage_group_arn): <p>The Amazon Resource Name (ARN) of the lineage group.</p>
     /// - On failure, responds with [`SdkError<DescribeContextError>`](crate::operation::describe_context::DescribeContextError)
     pub fn describe_context(&self) -> crate::operation::describe_context::builders::DescribeContextFluentBuilder {

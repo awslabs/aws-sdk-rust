@@ -19,6 +19,9 @@ where
                                     crate::protocol_serde::shape_natural_language_query_generation_options_output::de_natural_language_query_generation_options_output(tokens)?
                                 );
                         }
+                        "S3VectorsEngine" => {
+                            builder = builder.set_s3_vectors_engine(crate::protocol_serde::shape_s3_vectors_engine::de_s3_vectors_engine(tokens)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

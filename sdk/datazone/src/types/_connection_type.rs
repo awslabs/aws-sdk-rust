@@ -24,6 +24,7 @@
 ///     ConnectionType::Oracle => { /* ... */ },
 ///     ConnectionType::Postgresql => { /* ... */ },
 ///     ConnectionType::Redshift => { /* ... */ },
+///     ConnectionType::S3 => { /* ... */ },
 ///     ConnectionType::Saphana => { /* ... */ },
 ///     ConnectionType::Snowflake => { /* ... */ },
 ///     ConnectionType::Spark => { /* ... */ },
@@ -84,6 +85,8 @@ pub enum ConnectionType {
     #[allow(missing_docs)] // documentation missing in model
     Redshift,
     #[allow(missing_docs)] // documentation missing in model
+    S3,
+    #[allow(missing_docs)] // documentation missing in model
     Saphana,
     #[allow(missing_docs)] // documentation missing in model
     Snowflake,
@@ -116,6 +119,7 @@ impl ::std::convert::From<&str> for ConnectionType {
             "ORACLE" => ConnectionType::Oracle,
             "POSTGRESQL" => ConnectionType::Postgresql,
             "REDSHIFT" => ConnectionType::Redshift,
+            "S3" => ConnectionType::S3,
             "SAPHANA" => ConnectionType::Saphana,
             "SNOWFLAKE" => ConnectionType::Snowflake,
             "SPARK" => ConnectionType::Spark,
@@ -150,6 +154,7 @@ impl ConnectionType {
             ConnectionType::Oracle => "ORACLE",
             ConnectionType::Postgresql => "POSTGRESQL",
             ConnectionType::Redshift => "REDSHIFT",
+            ConnectionType::S3 => "S3",
             ConnectionType::Saphana => "SAPHANA",
             ConnectionType::Snowflake => "SNOWFLAKE",
             ConnectionType::Spark => "SPARK",
@@ -175,6 +180,7 @@ impl ConnectionType {
             "ORACLE",
             "POSTGRESQL",
             "REDSHIFT",
+            "S3",
             "SAPHANA",
             "SNOWFLAKE",
             "SPARK",
@@ -217,6 +223,7 @@ impl ::std::fmt::Display for ConnectionType {
             ConnectionType::Oracle => write!(f, "ORACLE"),
             ConnectionType::Postgresql => write!(f, "POSTGRESQL"),
             ConnectionType::Redshift => write!(f, "REDSHIFT"),
+            ConnectionType::S3 => write!(f, "S3"),
             ConnectionType::Saphana => write!(f, "SAPHANA"),
             ConnectionType::Snowflake => write!(f, "SNOWFLAKE"),
             ConnectionType::Spark => write!(f, "SPARK"),

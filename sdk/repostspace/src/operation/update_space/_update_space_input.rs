@@ -11,6 +11,8 @@ pub struct UpdateSpaceInput {
     pub tier: ::std::option::Option<crate::types::TierLevel>,
     /// <p>The IAM role that grants permissions to the private re:Post to convert unanswered questions into AWS support tickets.</p>
     pub role_arn: ::std::option::Option<::std::string::String>,
+    /// <p></p>
+    pub supported_email_domains: ::std::option::Option<crate::types::SupportedEmailDomainsParameters>,
 }
 impl UpdateSpaceInput {
     /// <p>The unique ID of this private re:Post.</p>
@@ -29,6 +31,10 @@ impl UpdateSpaceInput {
     pub fn role_arn(&self) -> ::std::option::Option<&str> {
         self.role_arn.as_deref()
     }
+    /// <p></p>
+    pub fn supported_email_domains(&self) -> ::std::option::Option<&crate::types::SupportedEmailDomainsParameters> {
+        self.supported_email_domains.as_ref()
+    }
 }
 impl ::std::fmt::Debug for UpdateSpaceInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -37,6 +43,7 @@ impl ::std::fmt::Debug for UpdateSpaceInput {
         formatter.field("description", &"*** Sensitive Data Redacted ***");
         formatter.field("tier", &self.tier);
         formatter.field("role_arn", &self.role_arn);
+        formatter.field("supported_email_domains", &self.supported_email_domains);
         formatter.finish()
     }
 }
@@ -55,6 +62,7 @@ pub struct UpdateSpaceInputBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) tier: ::std::option::Option<crate::types::TierLevel>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) supported_email_domains: ::std::option::Option<crate::types::SupportedEmailDomainsParameters>,
 }
 impl UpdateSpaceInputBuilder {
     /// <p>The unique ID of this private re:Post.</p>
@@ -114,6 +122,20 @@ impl UpdateSpaceInputBuilder {
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.role_arn
     }
+    /// <p></p>
+    pub fn supported_email_domains(mut self, input: crate::types::SupportedEmailDomainsParameters) -> Self {
+        self.supported_email_domains = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p></p>
+    pub fn set_supported_email_domains(mut self, input: ::std::option::Option<crate::types::SupportedEmailDomainsParameters>) -> Self {
+        self.supported_email_domains = input;
+        self
+    }
+    /// <p></p>
+    pub fn get_supported_email_domains(&self) -> &::std::option::Option<crate::types::SupportedEmailDomainsParameters> {
+        &self.supported_email_domains
+    }
     /// Consumes the builder and constructs a [`UpdateSpaceInput`](crate::operation::update_space::UpdateSpaceInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::update_space::UpdateSpaceInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_space::UpdateSpaceInput {
@@ -121,6 +143,7 @@ impl UpdateSpaceInputBuilder {
             description: self.description,
             tier: self.tier,
             role_arn: self.role_arn,
+            supported_email_domains: self.supported_email_domains,
         })
     }
 }
@@ -131,6 +154,7 @@ impl ::std::fmt::Debug for UpdateSpaceInputBuilder {
         formatter.field("description", &"*** Sensitive Data Redacted ***");
         formatter.field("tier", &self.tier);
         formatter.field("role_arn", &self.role_arn);
+        formatter.field("supported_email_domains", &self.supported_email_domains);
         formatter.finish()
     }
 }

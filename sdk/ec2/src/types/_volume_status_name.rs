@@ -12,6 +12,7 @@
 /// ```text
 /// # let volumestatusname = unimplemented!();
 /// match volumestatusname {
+///     VolumeStatusName::InitializationState => { /* ... */ },
 ///     VolumeStatusName::IoEnabled => { /* ... */ },
 ///     VolumeStatusName::IoPerformance => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -43,6 +44,8 @@
 )]
 pub enum VolumeStatusName {
     #[allow(missing_docs)] // documentation missing in model
+    InitializationState,
+    #[allow(missing_docs)] // documentation missing in model
     IoEnabled,
     #[allow(missing_docs)] // documentation missing in model
     IoPerformance,
@@ -53,6 +56,7 @@ pub enum VolumeStatusName {
 impl ::std::convert::From<&str> for VolumeStatusName {
     fn from(s: &str) -> Self {
         match s {
+            "initialization-state" => VolumeStatusName::InitializationState,
             "io-enabled" => VolumeStatusName::IoEnabled,
             "io-performance" => VolumeStatusName::IoPerformance,
             other => VolumeStatusName::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -70,6 +74,7 @@ impl VolumeStatusName {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            VolumeStatusName::InitializationState => "initialization-state",
             VolumeStatusName::IoEnabled => "io-enabled",
             VolumeStatusName::IoPerformance => "io-performance",
             VolumeStatusName::Unknown(value) => value.as_str(),
@@ -77,7 +82,7 @@ impl VolumeStatusName {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["io-enabled", "io-performance"]
+        &["initialization-state", "io-enabled", "io-performance"]
     }
 }
 impl ::std::convert::AsRef<str> for VolumeStatusName {
@@ -100,6 +105,7 @@ impl VolumeStatusName {
 impl ::std::fmt::Display for VolumeStatusName {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            VolumeStatusName::InitializationState => write!(f, "initialization-state"),
             VolumeStatusName::IoEnabled => write!(f, "io-enabled"),
             VolumeStatusName::IoPerformance => write!(f, "io-performance"),
             VolumeStatusName::Unknown(value) => write!(f, "{}", value),

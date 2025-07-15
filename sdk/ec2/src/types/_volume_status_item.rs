@@ -18,6 +18,10 @@ pub struct VolumeStatusItem {
     pub volume_status: ::std::option::Option<crate::types::VolumeStatusInfo>,
     /// <p>Information about the instances to which the volume is attached.</p>
     pub attachment_statuses: ::std::option::Option<::std::vec::Vec<crate::types::VolumeStatusAttachmentStatus>>,
+    /// <p>Information about the volume initialization. It can take up to 5 minutes for the volume initialization information to be updated.</p>
+    /// <p>Only available for volumes created from snapshots. Not available for empty volumes created without a snapshot.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/initalize-volume.html"> Initialize Amazon EBS volumes</a>.</p>
+    pub initialization_status_details: ::std::option::Option<crate::types::InitializationStatusDetails>,
     /// <p>The ID of the Availability Zone.</p>
     pub availability_zone_id: ::std::option::Option<::std::string::String>,
 }
@@ -56,6 +60,12 @@ impl VolumeStatusItem {
     pub fn attachment_statuses(&self) -> &[crate::types::VolumeStatusAttachmentStatus] {
         self.attachment_statuses.as_deref().unwrap_or_default()
     }
+    /// <p>Information about the volume initialization. It can take up to 5 minutes for the volume initialization information to be updated.</p>
+    /// <p>Only available for volumes created from snapshots. Not available for empty volumes created without a snapshot.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/initalize-volume.html"> Initialize Amazon EBS volumes</a>.</p>
+    pub fn initialization_status_details(&self) -> ::std::option::Option<&crate::types::InitializationStatusDetails> {
+        self.initialization_status_details.as_ref()
+    }
     /// <p>The ID of the Availability Zone.</p>
     pub fn availability_zone_id(&self) -> ::std::option::Option<&str> {
         self.availability_zone_id.as_deref()
@@ -79,6 +89,7 @@ pub struct VolumeStatusItemBuilder {
     pub(crate) volume_id: ::std::option::Option<::std::string::String>,
     pub(crate) volume_status: ::std::option::Option<crate::types::VolumeStatusInfo>,
     pub(crate) attachment_statuses: ::std::option::Option<::std::vec::Vec<crate::types::VolumeStatusAttachmentStatus>>,
+    pub(crate) initialization_status_details: ::std::option::Option<crate::types::InitializationStatusDetails>,
     pub(crate) availability_zone_id: ::std::option::Option<::std::string::String>,
 }
 impl VolumeStatusItemBuilder {
@@ -198,6 +209,26 @@ impl VolumeStatusItemBuilder {
     pub fn get_attachment_statuses(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::VolumeStatusAttachmentStatus>> {
         &self.attachment_statuses
     }
+    /// <p>Information about the volume initialization. It can take up to 5 minutes for the volume initialization information to be updated.</p>
+    /// <p>Only available for volumes created from snapshots. Not available for empty volumes created without a snapshot.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/initalize-volume.html"> Initialize Amazon EBS volumes</a>.</p>
+    pub fn initialization_status_details(mut self, input: crate::types::InitializationStatusDetails) -> Self {
+        self.initialization_status_details = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Information about the volume initialization. It can take up to 5 minutes for the volume initialization information to be updated.</p>
+    /// <p>Only available for volumes created from snapshots. Not available for empty volumes created without a snapshot.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/initalize-volume.html"> Initialize Amazon EBS volumes</a>.</p>
+    pub fn set_initialization_status_details(mut self, input: ::std::option::Option<crate::types::InitializationStatusDetails>) -> Self {
+        self.initialization_status_details = input;
+        self
+    }
+    /// <p>Information about the volume initialization. It can take up to 5 minutes for the volume initialization information to be updated.</p>
+    /// <p>Only available for volumes created from snapshots. Not available for empty volumes created without a snapshot.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/initalize-volume.html"> Initialize Amazon EBS volumes</a>.</p>
+    pub fn get_initialization_status_details(&self) -> &::std::option::Option<crate::types::InitializationStatusDetails> {
+        &self.initialization_status_details
+    }
     /// <p>The ID of the Availability Zone.</p>
     pub fn availability_zone_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.availability_zone_id = ::std::option::Option::Some(input.into());
@@ -222,6 +253,7 @@ impl VolumeStatusItemBuilder {
             volume_id: self.volume_id,
             volume_status: self.volume_status,
             attachment_statuses: self.attachment_statuses,
+            initialization_status_details: self.initialization_status_details,
             availability_zone_id: self.availability_zone_id,
         }
     }

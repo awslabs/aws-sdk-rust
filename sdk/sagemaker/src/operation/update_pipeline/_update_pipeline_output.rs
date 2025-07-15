@@ -5,12 +5,18 @@
 pub struct UpdatePipelineOutput {
     /// <p>The Amazon Resource Name (ARN) of the updated pipeline.</p>
     pub pipeline_arn: ::std::option::Option<::std::string::String>,
+    /// <p>The ID of the pipeline version.</p>
+    pub pipeline_version_id: ::std::option::Option<i64>,
     _request_id: Option<String>,
 }
 impl UpdatePipelineOutput {
     /// <p>The Amazon Resource Name (ARN) of the updated pipeline.</p>
     pub fn pipeline_arn(&self) -> ::std::option::Option<&str> {
         self.pipeline_arn.as_deref()
+    }
+    /// <p>The ID of the pipeline version.</p>
+    pub fn pipeline_version_id(&self) -> ::std::option::Option<i64> {
+        self.pipeline_version_id
     }
 }
 impl ::aws_types::request_id::RequestId for UpdatePipelineOutput {
@@ -30,6 +36,7 @@ impl UpdatePipelineOutput {
 #[non_exhaustive]
 pub struct UpdatePipelineOutputBuilder {
     pub(crate) pipeline_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) pipeline_version_id: ::std::option::Option<i64>,
     _request_id: Option<String>,
 }
 impl UpdatePipelineOutputBuilder {
@@ -47,6 +54,20 @@ impl UpdatePipelineOutputBuilder {
     pub fn get_pipeline_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.pipeline_arn
     }
+    /// <p>The ID of the pipeline version.</p>
+    pub fn pipeline_version_id(mut self, input: i64) -> Self {
+        self.pipeline_version_id = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ID of the pipeline version.</p>
+    pub fn set_pipeline_version_id(mut self, input: ::std::option::Option<i64>) -> Self {
+        self.pipeline_version_id = input;
+        self
+    }
+    /// <p>The ID of the pipeline version.</p>
+    pub fn get_pipeline_version_id(&self) -> &::std::option::Option<i64> {
+        &self.pipeline_version_id
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -60,6 +81,7 @@ impl UpdatePipelineOutputBuilder {
     pub fn build(self) -> crate::operation::update_pipeline::UpdatePipelineOutput {
         crate::operation::update_pipeline::UpdatePipelineOutput {
             pipeline_arn: self.pipeline_arn,
+            pipeline_version_id: self.pipeline_version_id,
             _request_id: self._request_id,
         }
     }

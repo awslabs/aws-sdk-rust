@@ -17,6 +17,8 @@ pub struct StartPipelineExecutionInput {
     pub parallelism_configuration: ::std::option::Option<crate::types::ParallelismConfiguration>,
     /// <p>The selective execution configuration applied to the pipeline run.</p>
     pub selective_execution_config: ::std::option::Option<crate::types::SelectiveExecutionConfig>,
+    /// <p>The ID of the pipeline version to start execution from.</p>
+    pub pipeline_version_id: ::std::option::Option<i64>,
 }
 impl StartPipelineExecutionInput {
     /// <p>The name or Amazon Resource Name (ARN) of the pipeline.</p>
@@ -49,6 +51,10 @@ impl StartPipelineExecutionInput {
     pub fn selective_execution_config(&self) -> ::std::option::Option<&crate::types::SelectiveExecutionConfig> {
         self.selective_execution_config.as_ref()
     }
+    /// <p>The ID of the pipeline version to start execution from.</p>
+    pub fn pipeline_version_id(&self) -> ::std::option::Option<i64> {
+        self.pipeline_version_id
+    }
 }
 impl StartPipelineExecutionInput {
     /// Creates a new builder-style object to manufacture [`StartPipelineExecutionInput`](crate::operation::start_pipeline_execution::StartPipelineExecutionInput).
@@ -68,6 +74,7 @@ pub struct StartPipelineExecutionInputBuilder {
     pub(crate) client_request_token: ::std::option::Option<::std::string::String>,
     pub(crate) parallelism_configuration: ::std::option::Option<crate::types::ParallelismConfiguration>,
     pub(crate) selective_execution_config: ::std::option::Option<crate::types::SelectiveExecutionConfig>,
+    pub(crate) pipeline_version_id: ::std::option::Option<i64>,
 }
 impl StartPipelineExecutionInputBuilder {
     /// <p>The name or Amazon Resource Name (ARN) of the pipeline.</p>
@@ -176,6 +183,20 @@ impl StartPipelineExecutionInputBuilder {
     pub fn get_selective_execution_config(&self) -> &::std::option::Option<crate::types::SelectiveExecutionConfig> {
         &self.selective_execution_config
     }
+    /// <p>The ID of the pipeline version to start execution from.</p>
+    pub fn pipeline_version_id(mut self, input: i64) -> Self {
+        self.pipeline_version_id = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ID of the pipeline version to start execution from.</p>
+    pub fn set_pipeline_version_id(mut self, input: ::std::option::Option<i64>) -> Self {
+        self.pipeline_version_id = input;
+        self
+    }
+    /// <p>The ID of the pipeline version to start execution from.</p>
+    pub fn get_pipeline_version_id(&self) -> &::std::option::Option<i64> {
+        &self.pipeline_version_id
+    }
     /// Consumes the builder and constructs a [`StartPipelineExecutionInput`](crate::operation::start_pipeline_execution::StartPipelineExecutionInput).
     pub fn build(
         self,
@@ -191,6 +212,7 @@ impl StartPipelineExecutionInputBuilder {
             client_request_token: self.client_request_token,
             parallelism_configuration: self.parallelism_configuration,
             selective_execution_config: self.selective_execution_config,
+            pipeline_version_id: self.pipeline_version_id,
         })
     }
 }

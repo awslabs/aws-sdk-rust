@@ -12,6 +12,7 @@ impl super::Client {
     ///   - [`parallelism_configuration(ParallelismConfiguration)`](crate::operation::update_pipeline::builders::UpdatePipelineFluentBuilder::parallelism_configuration) / [`set_parallelism_configuration(Option<ParallelismConfiguration>)`](crate::operation::update_pipeline::builders::UpdatePipelineFluentBuilder::set_parallelism_configuration):<br>required: **false**<br><p>If specified, it applies to all executions of this pipeline by default.</p><br>
     /// - On success, responds with [`UpdatePipelineOutput`](crate::operation::update_pipeline::UpdatePipelineOutput) with field(s):
     ///   - [`pipeline_arn(Option<String>)`](crate::operation::update_pipeline::UpdatePipelineOutput::pipeline_arn): <p>The Amazon Resource Name (ARN) of the updated pipeline.</p>
+    ///   - [`pipeline_version_id(Option<i64>)`](crate::operation::update_pipeline::UpdatePipelineOutput::pipeline_version_id): <p>The ID of the pipeline version.</p>
     /// - On failure, responds with [`SdkError<UpdatePipelineError>`](crate::operation::update_pipeline::UpdatePipelineError)
     pub fn update_pipeline(&self) -> crate::operation::update_pipeline::builders::UpdatePipelineFluentBuilder {
         crate::operation::update_pipeline::builders::UpdatePipelineFluentBuilder::new(self.handle.clone())

@@ -46,6 +46,12 @@ pub fn ser_connection_properties_input(
             crate::protocol_serde::shape_spark_glue_properties_input::ser_spark_glue_properties_input(&mut object_7, inner)?;
             object_7.finish();
         }
+        crate::types::ConnectionPropertiesInput::S3Properties(inner) => {
+            #[allow(unused_mut)]
+            let mut object_8 = object_8.key("s3Properties").start_object();
+            crate::protocol_serde::shape_s3_properties_input::ser_s3_properties_input(&mut object_8, inner)?;
+            object_8.finish();
+        }
         crate::types::ConnectionPropertiesInput::Unknown => {
             return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant(
                 "ConnectionPropertiesInput",

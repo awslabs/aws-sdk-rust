@@ -15,6 +15,8 @@ pub use crate::types::_service_registry::ServiceRegistry;
 
 pub use crate::types::_load_balancer::LoadBalancer;
 
+pub use crate::types::_advanced_configuration::AdvancedConfiguration;
+
 pub use crate::types::_network_configuration::NetworkConfiguration;
 
 pub use crate::types::_aws_vpc_configuration::AwsVpcConfiguration;
@@ -85,9 +87,21 @@ pub use crate::types::_timeout_configuration::TimeoutConfiguration;
 
 pub use crate::types::_service_connect_client_alias::ServiceConnectClientAlias;
 
+pub use crate::types::_service_connect_test_traffic_rules::ServiceConnectTestTrafficRules;
+
+pub use crate::types::_service_connect_test_traffic_header_rules::ServiceConnectTestTrafficHeaderRules;
+
+pub use crate::types::_service_connect_test_traffic_header_match_rules::ServiceConnectTestTrafficHeaderMatchRules;
+
 pub use crate::types::_deployment_rollout_state::DeploymentRolloutState;
 
 pub use crate::types::_deployment_configuration::DeploymentConfiguration;
+
+pub use crate::types::_deployment_lifecycle_hook::DeploymentLifecycleHook;
+
+pub use crate::types::_deployment_lifecycle_hook_stage::DeploymentLifecycleHookStage;
+
+pub use crate::types::_deployment_strategy::DeploymentStrategy;
 
 pub use crate::types::_deployment_alarms::DeploymentAlarms;
 
@@ -335,6 +349,10 @@ pub use crate::types::_service_field::ServiceField;
 
 pub use crate::types::_service_revision::ServiceRevision;
 
+pub use crate::types::_resolved_configuration::ResolvedConfiguration;
+
+pub use crate::types::_service_revision_load_balancer::ServiceRevisionLoadBalancer;
+
 pub use crate::types::_container_image::ContainerImage;
 
 pub use crate::types::_service_deployment::ServiceDeployment;
@@ -347,6 +365,8 @@ pub use crate::types::_service_deployment_circuit_breaker::ServiceDeploymentCirc
 
 pub use crate::types::_rollback::Rollback;
 
+pub use crate::types::_service_deployment_lifecycle_stage::ServiceDeploymentLifecycleStage;
+
 pub use crate::types::_service_revision_summary::ServiceRevisionSummary;
 
 pub use crate::types::_container_instance_field::ContainerInstanceField;
@@ -354,6 +374,8 @@ pub use crate::types::_container_instance_field::ContainerInstanceField;
 pub use crate::types::_cluster_field::ClusterField;
 
 pub use crate::types::_capacity_provider_field::CapacityProviderField;
+
+mod _advanced_configuration;
 
 mod _agent_update_status;
 
@@ -445,7 +467,13 @@ mod _deployment_controller_type;
 
 mod _deployment_ephemeral_storage;
 
+mod _deployment_lifecycle_hook;
+
+mod _deployment_lifecycle_hook_stage;
+
 mod _deployment_rollout_state;
+
+mod _deployment_strategy;
 
 mod _desired_status;
 
@@ -577,6 +605,8 @@ mod _proxy_configuration_type;
 
 mod _repository_credentials;
 
+mod _resolved_configuration;
+
 mod _resource;
 
 mod _resource_requirement;
@@ -607,6 +637,12 @@ mod _service_connect_service;
 
 mod _service_connect_service_resource;
 
+mod _service_connect_test_traffic_header_match_rules;
+
+mod _service_connect_test_traffic_header_rules;
+
+mod _service_connect_test_traffic_rules;
+
 mod _service_connect_tls_certificate_authority;
 
 mod _service_connect_tls_configuration;
@@ -618,6 +654,8 @@ mod _service_deployment_alarms;
 mod _service_deployment_brief;
 
 mod _service_deployment_circuit_breaker;
+
+mod _service_deployment_lifecycle_stage;
 
 mod _service_deployment_rollback_monitors_status;
 
@@ -632,6 +670,8 @@ mod _service_managed_ebs_volume_configuration;
 mod _service_registry;
 
 mod _service_revision;
+
+mod _service_revision_load_balancer;
 
 mod _service_revision_summary;
 

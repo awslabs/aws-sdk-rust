@@ -59,6 +59,8 @@ pub(crate) mod shape_trimmed_data_access_exception;
 
 pub(crate) mod shape_record_list;
 
+pub(crate) mod shape_shard_filter;
+
 pub(crate) mod shape_stream_description;
 
 pub(crate) mod shape_stream_list;

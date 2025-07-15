@@ -313,6 +313,8 @@ pub(crate) mod shape_event_bus_list;
 
 pub(crate) mod shape_event_source_list;
 
+pub(crate) mod shape_log_config;
+
 pub(crate) mod shape_partner_event_source_account_list;
 
 pub(crate) mod shape_partner_event_source_list;

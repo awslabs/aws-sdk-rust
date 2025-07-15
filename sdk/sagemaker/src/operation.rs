@@ -802,6 +802,9 @@ pub mod list_pipeline_executions;
 /// Types for the `ListPipelineParametersForExecution` operation.
 pub mod list_pipeline_parameters_for_execution;
 
+/// Types for the `ListPipelineVersions` operation.
+pub mod list_pipeline_versions;
+
 /// Types for the `ListPipelines` operation.
 pub mod list_pipelines;
 
@@ -1056,6 +1059,9 @@ pub mod update_pipeline;
 
 /// Types for the `UpdatePipelineExecution` operation.
 pub mod update_pipeline_execution;
+
+/// Types for the `UpdatePipelineVersion` operation.
+pub mod update_pipeline_version;
 
 /// Types for the `UpdateProject` operation.
 pub mod update_project;

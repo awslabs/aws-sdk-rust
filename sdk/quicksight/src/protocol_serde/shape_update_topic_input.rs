@@ -3,11 +3,17 @@ pub fn ser_update_topic_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_topic::UpdateTopicInput,
 ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
-    if let Some(var_1) = &input.topic {
+    if let Some(var_1) = &input.custom_instructions {
         #[allow(unused_mut)]
-        let mut object_2 = object.key("Topic").start_object();
-        crate::protocol_serde::shape_topic_details::ser_topic_details(&mut object_2, var_1)?;
+        let mut object_2 = object.key("CustomInstructions").start_object();
+        crate::protocol_serde::shape_custom_instructions::ser_custom_instructions(&mut object_2, var_1)?;
         object_2.finish();
+    }
+    if let Some(var_3) = &input.topic {
+        #[allow(unused_mut)]
+        let mut object_4 = object.key("Topic").start_object();
+        crate::protocol_serde::shape_topic_details::ser_topic_details(&mut object_4, var_3)?;
+        object_4.finish();
     }
     Ok(())
 }

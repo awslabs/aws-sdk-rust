@@ -17,6 +17,8 @@ pub use crate::types::_topic_schedule_type::TopicScheduleType;
 
 pub use crate::types::_resource_permission::ResourcePermission;
 
+pub use crate::types::_custom_instructions::CustomInstructions;
+
 pub use crate::types::_topic_details::TopicDetails;
 
 pub use crate::types::_topic_config_options::TopicConfigOptions;
@@ -2846,6 +2848,8 @@ mod _custom_content_visual;
 mod _custom_filter_configuration;
 
 mod _custom_filter_list_configuration;
+
+mod _custom_instructions;
 
 mod _custom_narrative_options;
 

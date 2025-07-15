@@ -124,6 +124,11 @@ where
                                     .transpose()?,
                             );
                         }
+                        "supportedEmailDomains" => {
+                            builder = builder.set_supported_email_domains(
+                                crate::protocol_serde::shape_supported_email_domains_status::de_supported_email_domains_status(tokens)?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

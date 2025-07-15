@@ -22,9 +22,9 @@ pub struct PipelineExecution {
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time that the pipeline execution was last modified.</p>
     pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
+    /// <p>Information about the user who created or modified a SageMaker resource.</p>
     pub created_by: ::std::option::Option<crate::types::UserContext>,
-    /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
+    /// <p>Information about the user who created or modified a SageMaker resource.</p>
     pub last_modified_by: ::std::option::Option<crate::types::UserContext>,
     /// <p>The parallelism configuration applied to the pipeline execution.</p>
     pub parallelism_configuration: ::std::option::Option<crate::types::ParallelismConfiguration>,
@@ -32,6 +32,10 @@ pub struct PipelineExecution {
     pub selective_execution_config: ::std::option::Option<crate::types::SelectiveExecutionConfig>,
     /// <p>Contains a list of pipeline parameters. This list can be empty.</p>
     pub pipeline_parameters: ::std::option::Option<::std::vec::Vec<crate::types::Parameter>>,
+    /// <p>The ID of the pipeline version that started this execution.</p>
+    pub pipeline_version_id: ::std::option::Option<i64>,
+    /// <p>The display name of the pipeline version that started this execution.</p>
+    pub pipeline_version_display_name: ::std::option::Option<::std::string::String>,
 }
 impl PipelineExecution {
     /// <p>The Amazon Resource Name (ARN) of the pipeline that was executed.</p>
@@ -70,11 +74,11 @@ impl PipelineExecution {
     pub fn last_modified_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
     }
-    /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
+    /// <p>Information about the user who created or modified a SageMaker resource.</p>
     pub fn created_by(&self) -> ::std::option::Option<&crate::types::UserContext> {
         self.created_by.as_ref()
     }
-    /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
+    /// <p>Information about the user who created or modified a SageMaker resource.</p>
     pub fn last_modified_by(&self) -> ::std::option::Option<&crate::types::UserContext> {
         self.last_modified_by.as_ref()
     }
@@ -91,6 +95,14 @@ impl PipelineExecution {
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.pipeline_parameters.is_none()`.
     pub fn pipeline_parameters(&self) -> &[crate::types::Parameter] {
         self.pipeline_parameters.as_deref().unwrap_or_default()
+    }
+    /// <p>The ID of the pipeline version that started this execution.</p>
+    pub fn pipeline_version_id(&self) -> ::std::option::Option<i64> {
+        self.pipeline_version_id
+    }
+    /// <p>The display name of the pipeline version that started this execution.</p>
+    pub fn pipeline_version_display_name(&self) -> ::std::option::Option<&str> {
+        self.pipeline_version_display_name.as_deref()
     }
 }
 impl PipelineExecution {
@@ -118,6 +130,8 @@ pub struct PipelineExecutionBuilder {
     pub(crate) parallelism_configuration: ::std::option::Option<crate::types::ParallelismConfiguration>,
     pub(crate) selective_execution_config: ::std::option::Option<crate::types::SelectiveExecutionConfig>,
     pub(crate) pipeline_parameters: ::std::option::Option<::std::vec::Vec<crate::types::Parameter>>,
+    pub(crate) pipeline_version_id: ::std::option::Option<i64>,
+    pub(crate) pipeline_version_display_name: ::std::option::Option<::std::string::String>,
 }
 impl PipelineExecutionBuilder {
     /// <p>The Amazon Resource Name (ARN) of the pipeline that was executed.</p>
@@ -246,31 +260,31 @@ impl PipelineExecutionBuilder {
     pub fn get_last_modified_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_modified_time
     }
-    /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
+    /// <p>Information about the user who created or modified a SageMaker resource.</p>
     pub fn created_by(mut self, input: crate::types::UserContext) -> Self {
         self.created_by = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
+    /// <p>Information about the user who created or modified a SageMaker resource.</p>
     pub fn set_created_by(mut self, input: ::std::option::Option<crate::types::UserContext>) -> Self {
         self.created_by = input;
         self
     }
-    /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
+    /// <p>Information about the user who created or modified a SageMaker resource.</p>
     pub fn get_created_by(&self) -> &::std::option::Option<crate::types::UserContext> {
         &self.created_by
     }
-    /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
+    /// <p>Information about the user who created or modified a SageMaker resource.</p>
     pub fn last_modified_by(mut self, input: crate::types::UserContext) -> Self {
         self.last_modified_by = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
+    /// <p>Information about the user who created or modified a SageMaker resource.</p>
     pub fn set_last_modified_by(mut self, input: ::std::option::Option<crate::types::UserContext>) -> Self {
         self.last_modified_by = input;
         self
     }
-    /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
+    /// <p>Information about the user who created or modified a SageMaker resource.</p>
     pub fn get_last_modified_by(&self) -> &::std::option::Option<crate::types::UserContext> {
         &self.last_modified_by
     }
@@ -322,6 +336,34 @@ impl PipelineExecutionBuilder {
     pub fn get_pipeline_parameters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Parameter>> {
         &self.pipeline_parameters
     }
+    /// <p>The ID of the pipeline version that started this execution.</p>
+    pub fn pipeline_version_id(mut self, input: i64) -> Self {
+        self.pipeline_version_id = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ID of the pipeline version that started this execution.</p>
+    pub fn set_pipeline_version_id(mut self, input: ::std::option::Option<i64>) -> Self {
+        self.pipeline_version_id = input;
+        self
+    }
+    /// <p>The ID of the pipeline version that started this execution.</p>
+    pub fn get_pipeline_version_id(&self) -> &::std::option::Option<i64> {
+        &self.pipeline_version_id
+    }
+    /// <p>The display name of the pipeline version that started this execution.</p>
+    pub fn pipeline_version_display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.pipeline_version_display_name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The display name of the pipeline version that started this execution.</p>
+    pub fn set_pipeline_version_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.pipeline_version_display_name = input;
+        self
+    }
+    /// <p>The display name of the pipeline version that started this execution.</p>
+    pub fn get_pipeline_version_display_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.pipeline_version_display_name
+    }
     /// Consumes the builder and constructs a [`PipelineExecution`](crate::types::PipelineExecution).
     pub fn build(self) -> crate::types::PipelineExecution {
         crate::types::PipelineExecution {
@@ -339,6 +381,8 @@ impl PipelineExecutionBuilder {
             parallelism_configuration: self.parallelism_configuration,
             selective_execution_config: self.selective_execution_config,
             pipeline_parameters: self.pipeline_parameters,
+            pipeline_version_id: self.pipeline_version_id,
+            pipeline_version_display_name: self.pipeline_version_display_name,
         }
     }
 }

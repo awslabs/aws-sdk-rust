@@ -18,9 +18,9 @@ impl super::Client {
     ///   - [`compute_quota_target(Option<ComputeQuotaTarget>)`](crate::operation::describe_compute_quota::DescribeComputeQuotaOutput::compute_quota_target): <p>The target entity to allocate compute resources to.</p>
     ///   - [`activation_state(Option<ActivationState>)`](crate::operation::describe_compute_quota::DescribeComputeQuotaOutput::activation_state): <p>The state of the compute allocation being described. Use to enable or disable compute allocation.</p> <p>Default is <code>Enabled</code>.</p>
     ///   - [`creation_time(Option<DateTime>)`](crate::operation::describe_compute_quota::DescribeComputeQuotaOutput::creation_time): <p>Creation time of the compute allocation configuration.</p>
-    ///   - [`created_by(Option<UserContext>)`](crate::operation::describe_compute_quota::DescribeComputeQuotaOutput::created_by): <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
+    ///   - [`created_by(Option<UserContext>)`](crate::operation::describe_compute_quota::DescribeComputeQuotaOutput::created_by): <p>Information about the user who created or modified a SageMaker resource.</p>
     ///   - [`last_modified_time(Option<DateTime>)`](crate::operation::describe_compute_quota::DescribeComputeQuotaOutput::last_modified_time): <p>Last modified time of the compute allocation configuration.</p>
-    ///   - [`last_modified_by(Option<UserContext>)`](crate::operation::describe_compute_quota::DescribeComputeQuotaOutput::last_modified_by): <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
+    ///   - [`last_modified_by(Option<UserContext>)`](crate::operation::describe_compute_quota::DescribeComputeQuotaOutput::last_modified_by): <p>Information about the user who created or modified a SageMaker resource.</p>
     /// - On failure, responds with [`SdkError<DescribeComputeQuotaError>`](crate::operation::describe_compute_quota::DescribeComputeQuotaError)
     pub fn describe_compute_quota(&self) -> crate::operation::describe_compute_quota::builders::DescribeComputeQuotaFluentBuilder {
         crate::operation::describe_compute_quota::builders::DescribeComputeQuotaFluentBuilder::new(self.handle.clone())

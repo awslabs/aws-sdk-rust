@@ -49,6 +49,10 @@ pub(crate) mod shape_create_bucket;
 
 pub(crate) mod shape_create_bucket_input;
 
+pub(crate) mod shape_create_bucket_metadata_configuration;
+
+pub(crate) mod shape_create_bucket_metadata_configuration_input;
+
 pub(crate) mod shape_create_bucket_metadata_table_configuration;
 
 pub(crate) mod shape_create_bucket_metadata_table_configuration_input;
@@ -70,6 +74,8 @@ pub(crate) mod shape_delete_bucket_intelligent_tiering_configuration;
 pub(crate) mod shape_delete_bucket_inventory_configuration;
 
 pub(crate) mod shape_delete_bucket_lifecycle;
+
+pub(crate) mod shape_delete_bucket_metadata_configuration;
 
 pub(crate) mod shape_delete_bucket_metadata_table_configuration;
 
@@ -114,6 +120,8 @@ pub(crate) mod shape_get_bucket_lifecycle_configuration;
 pub(crate) mod shape_get_bucket_location;
 
 pub(crate) mod shape_get_bucket_logging;
+
+pub(crate) mod shape_get_bucket_metadata_configuration;
 
 pub(crate) mod shape_get_bucket_metadata_table_configuration;
 
@@ -289,6 +297,14 @@ pub(crate) mod shape_restore_object_input;
 
 pub(crate) mod shape_select_object_content;
 
+pub(crate) mod shape_update_bucket_metadata_inventory_table_configuration;
+
+pub(crate) mod shape_update_bucket_metadata_inventory_table_configuration_input;
+
+pub(crate) mod shape_update_bucket_metadata_journal_table_configuration;
+
+pub(crate) mod shape_update_bucket_metadata_journal_table_configuration_input;
+
 pub(crate) mod shape_upload_part;
 
 pub(crate) mod shape_upload_part_copy;
@@ -334,6 +350,8 @@ pub(crate) mod shape_get_bucket_intelligent_tiering_configuration_output;
 pub(crate) mod shape_get_bucket_inventory_configuration_output;
 
 pub(crate) mod shape_get_bucket_lifecycle_configuration_output;
+
+pub(crate) mod shape_get_bucket_metadata_configuration_output;
 
 pub(crate) mod shape_get_bucket_metadata_table_configuration_output;
 
@@ -481,11 +499,17 @@ pub(crate) mod shape_intelligent_tiering_configuration;
 
 pub(crate) mod shape_inventory_configuration;
 
+pub(crate) mod shape_inventory_table_configuration_updates;
+
+pub(crate) mod shape_journal_table_configuration_updates;
+
 pub(crate) mod shape_lambda_function_configuration;
 
 pub(crate) mod shape_lifecycle_rule;
 
 pub(crate) mod shape_logging_enabled;
+
+pub(crate) mod shape_metadata_configuration;
 
 pub(crate) mod shape_metadata_table_configuration;
 
@@ -563,6 +587,8 @@ pub(crate) mod shape_csv_input;
 
 pub(crate) mod shape_csv_output;
 
+pub(crate) mod shape_get_bucket_metadata_configuration_result;
+
 pub(crate) mod shape_get_bucket_metadata_table_configuration_result;
 
 pub(crate) mod shape_glacier_job_parameters;
@@ -579,6 +605,10 @@ pub(crate) mod shape_inventory_optional_fields;
 
 pub(crate) mod shape_inventory_schedule;
 
+pub(crate) mod shape_inventory_table_configuration;
+
+pub(crate) mod shape_journal_table_configuration;
+
 pub(crate) mod shape_json_input;
 
 pub(crate) mod shape_json_output;
@@ -588,6 +618,8 @@ pub(crate) mod shape_lifecycle_expiration;
 pub(crate) mod shape_lifecycle_rule_filter;
 
 pub(crate) mod shape_location_info;
+
+pub(crate) mod shape_metadata_table_encryption_configuration;
 
 pub(crate) mod shape_metrics_filter;
 
@@ -610,6 +642,8 @@ pub(crate) mod shape_ownership_controls_rule;
 pub(crate) mod shape_policy_status;
 
 pub(crate) mod shape_progress_event;
+
+pub(crate) mod shape_record_expiration;
 
 pub(crate) mod shape_replication_rule;
 
@@ -659,6 +693,8 @@ pub(crate) mod shape_inventory_s3_bucket_destination;
 
 pub(crate) mod shape_lifecycle_rule_and_operator;
 
+pub(crate) mod shape_metadata_configuration_result;
+
 pub(crate) mod shape_metadata_table_configuration_result;
 
 pub(crate) mod shape_metrics_and_operator;
@@ -691,6 +727,8 @@ pub(crate) mod shape_access_control_translation;
 
 pub(crate) mod shape_analytics_export_destination;
 
+pub(crate) mod shape_destination_result;
+
 pub(crate) mod shape_encryption;
 
 pub(crate) mod shape_encryption_configuration;
@@ -698,6 +736,10 @@ pub(crate) mod shape_encryption_configuration;
 pub(crate) mod shape_filter_rule;
 
 pub(crate) mod shape_inventory_encryption;
+
+pub(crate) mod shape_inventory_table_configuration_result;
+
+pub(crate) mod shape_journal_table_configuration_result;
 
 pub(crate) mod shape_metadata_entry;
 

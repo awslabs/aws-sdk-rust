@@ -17,6 +17,8 @@ pub struct CreateSpaceInput {
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The IAM role that grants permissions to the private re:Post to convert unanswered questions into AWS support tickets.</p>
     pub role_arn: ::std::option::Option<::std::string::String>,
+    /// <p></p>
+    pub supported_email_domains: ::std::option::Option<crate::types::SupportedEmailDomainsParameters>,
 }
 impl CreateSpaceInput {
     /// <p>The name for the private re:Post. This must be unique in your account.</p>
@@ -47,6 +49,10 @@ impl CreateSpaceInput {
     pub fn role_arn(&self) -> ::std::option::Option<&str> {
         self.role_arn.as_deref()
     }
+    /// <p></p>
+    pub fn supported_email_domains(&self) -> ::std::option::Option<&crate::types::SupportedEmailDomainsParameters> {
+        self.supported_email_domains.as_ref()
+    }
 }
 impl ::std::fmt::Debug for CreateSpaceInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -58,6 +64,7 @@ impl ::std::fmt::Debug for CreateSpaceInput {
         formatter.field("user_kms_key", &self.user_kms_key);
         formatter.field("tags", &"*** Sensitive Data Redacted ***");
         formatter.field("role_arn", &self.role_arn);
+        formatter.field("supported_email_domains", &self.supported_email_domains);
         formatter.finish()
     }
 }
@@ -79,6 +86,7 @@ pub struct CreateSpaceInputBuilder {
     pub(crate) user_kms_key: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) supported_email_domains: ::std::option::Option<crate::types::SupportedEmailDomainsParameters>,
 }
 impl CreateSpaceInputBuilder {
     /// <p>The name for the private re:Post. This must be unique in your account.</p>
@@ -188,6 +196,20 @@ impl CreateSpaceInputBuilder {
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.role_arn
     }
+    /// <p></p>
+    pub fn supported_email_domains(mut self, input: crate::types::SupportedEmailDomainsParameters) -> Self {
+        self.supported_email_domains = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p></p>
+    pub fn set_supported_email_domains(mut self, input: ::std::option::Option<crate::types::SupportedEmailDomainsParameters>) -> Self {
+        self.supported_email_domains = input;
+        self
+    }
+    /// <p></p>
+    pub fn get_supported_email_domains(&self) -> &::std::option::Option<crate::types::SupportedEmailDomainsParameters> {
+        &self.supported_email_domains
+    }
     /// Consumes the builder and constructs a [`CreateSpaceInput`](crate::operation::create_space::CreateSpaceInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::create_space::CreateSpaceInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_space::CreateSpaceInput {
@@ -198,6 +220,7 @@ impl CreateSpaceInputBuilder {
             user_kms_key: self.user_kms_key,
             tags: self.tags,
             role_arn: self.role_arn,
+            supported_email_domains: self.supported_email_domains,
         })
     }
 }
@@ -211,6 +234,7 @@ impl ::std::fmt::Debug for CreateSpaceInputBuilder {
         formatter.field("user_kms_key", &self.user_kms_key);
         formatter.field("tags", &"*** Sensitive Data Redacted ***");
         formatter.field("role_arn", &self.role_arn);
+        formatter.field("supported_email_domains", &self.supported_email_domains);
         formatter.finish()
     }
 }

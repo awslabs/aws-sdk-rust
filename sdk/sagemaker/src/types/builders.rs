@@ -315,11 +315,17 @@ pub use crate::types::_scheduler_config::SchedulerConfigBuilder;
 
 pub use crate::types::_priority_class::PriorityClassBuilder;
 
-pub use crate::types::_cluster_instance_group_specification::ClusterInstanceGroupSpecificationBuilder;
+pub use crate::types::_cluster_restricted_instance_group_specification::ClusterRestrictedInstanceGroupSpecificationBuilder;
+
+pub use crate::types::_environment_config::EnvironmentConfigBuilder;
+
+pub use crate::types::_f_sx_lustre_config::FSxLustreConfigBuilder;
 
 pub use crate::types::_scheduled_update_config::ScheduledUpdateConfigBuilder;
 
 pub use crate::types::_cluster_ebs_volume_config::ClusterEbsVolumeConfigBuilder;
+
+pub use crate::types::_cluster_instance_group_specification::ClusterInstanceGroupSpecificationBuilder;
 
 pub use crate::types::_cluster_life_cycle_config::ClusterLifeCycleConfigBuilder;
 
@@ -522,6 +528,8 @@ pub use crate::types::_s3_storage_config::S3StorageConfigBuilder;
 pub use crate::types::_online_store_config::OnlineStoreConfigBuilder;
 
 pub use crate::types::_online_store_security_config::OnlineStoreSecurityConfigBuilder;
+
+pub use crate::types::_pipeline_version::PipelineVersionBuilder;
 
 pub use crate::types::_pipeline_execution::PipelineExecutionBuilder;
 
@@ -728,6 +736,8 @@ pub use crate::types::_resource_catalog::ResourceCatalogBuilder;
 pub use crate::types::_project_summary::ProjectSummaryBuilder;
 
 pub use crate::types::_processing_job_summary::ProcessingJobSummaryBuilder;
+
+pub use crate::types::_pipeline_version_summary::PipelineVersionSummaryBuilder;
 
 pub use crate::types::_pipeline_summary::PipelineSummaryBuilder;
 
@@ -1176,6 +1186,10 @@ pub use crate::types::_cluster_instance_placement::ClusterInstancePlacementBuild
 pub use crate::types::_cluster_orchestrator::ClusterOrchestratorBuilder;
 
 pub use crate::types::_cluster_orchestrator_eks_config::ClusterOrchestratorEksConfigBuilder;
+
+pub use crate::types::_cluster_restricted_instance_group_details::ClusterRestrictedInstanceGroupDetailsBuilder;
+
+pub use crate::types::_environment_config_details::EnvironmentConfigDetailsBuilder;
 
 pub use crate::types::_cluster_instance_group_details::ClusterInstanceGroupDetailsBuilder;
 

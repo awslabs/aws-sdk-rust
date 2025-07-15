@@ -439,7 +439,11 @@ pub use crate::types::_priority_class::PriorityClass;
 
 pub use crate::types::_cluster_node_recovery::ClusterNodeRecovery;
 
-pub use crate::types::_cluster_instance_group_specification::ClusterInstanceGroupSpecification;
+pub use crate::types::_cluster_restricted_instance_group_specification::ClusterRestrictedInstanceGroupSpecification;
+
+pub use crate::types::_environment_config::EnvironmentConfig;
+
+pub use crate::types::_f_sx_lustre_config::FSxLustreConfig;
 
 pub use crate::types::_scheduled_update_config::ScheduledUpdateConfig;
 
@@ -448,6 +452,8 @@ pub use crate::types::_deep_health_check_type::DeepHealthCheckType;
 pub use crate::types::_cluster_instance_storage_config::ClusterInstanceStorageConfig;
 
 pub use crate::types::_cluster_ebs_volume_config::ClusterEbsVolumeConfig;
+
+pub use crate::types::_cluster_instance_group_specification::ClusterInstanceGroupSpecification;
 
 pub use crate::types::_cluster_life_cycle_config::ClusterLifeCycleConfig;
 
@@ -739,11 +745,13 @@ pub use crate::types::_storage_type::StorageType;
 
 pub use crate::types::_online_store_security_config::OnlineStoreSecurityConfig;
 
+pub use crate::types::_pipeline_version::PipelineVersion;
+
+pub use crate::types::_pipeline_execution_status::PipelineExecutionStatus;
+
 pub use crate::types::_pipeline_execution::PipelineExecution;
 
 pub use crate::types::_pipeline_experiment_config::PipelineExperimentConfig;
-
-pub use crate::types::_pipeline_execution_status::PipelineExecutionStatus;
 
 pub use crate::types::_pipeline::Pipeline;
 
@@ -1056,6 +1064,8 @@ pub use crate::types::_project_sort_order::ProjectSortOrder;
 pub use crate::types::_project_sort_by::ProjectSortBy;
 
 pub use crate::types::_processing_job_summary::ProcessingJobSummary;
+
+pub use crate::types::_pipeline_version_summary::PipelineVersionSummary;
 
 pub use crate::types::_pipeline_summary::PipelineSummary;
 
@@ -1775,9 +1785,13 @@ pub use crate::types::_cluster_orchestrator::ClusterOrchestrator;
 
 pub use crate::types::_cluster_orchestrator_eks_config::ClusterOrchestratorEksConfig;
 
-pub use crate::types::_cluster_instance_group_details::ClusterInstanceGroupDetails;
+pub use crate::types::_cluster_restricted_instance_group_details::ClusterRestrictedInstanceGroupDetails;
+
+pub use crate::types::_environment_config_details::EnvironmentConfigDetails;
 
 pub use crate::types::_instance_group_status::InstanceGroupStatus;
+
+pub use crate::types::_cluster_instance_group_details::ClusterInstanceGroupDetails;
 
 pub use crate::types::_auto_ml_compute_config::AutoMlComputeConfig;
 
@@ -2231,6 +2245,10 @@ mod _cluster_orchestrator;
 
 mod _cluster_orchestrator_eks_config;
 
+mod _cluster_restricted_instance_group_details;
+
+mod _cluster_restricted_instance_group_specification;
+
 mod _cluster_scheduler_config_summary;
 
 mod _cluster_sort_by;
@@ -2487,6 +2505,10 @@ mod _endpoint_step_metadata;
 
 mod _endpoint_summary;
 
+mod _environment_config;
+
+mod _environment_config_details;
+
 mod _environment_parameter;
 
 mod _environment_parameter_ranges;
@@ -2508,6 +2530,8 @@ mod _experiment_summary;
 mod _explainability;
 
 mod _explainer_config;
+
+mod _f_sx_lustre_config;
 
 mod _f_sx_lustre_file_system;
 
@@ -3228,6 +3252,10 @@ mod _pipeline_experiment_config;
 mod _pipeline_status;
 
 mod _pipeline_summary;
+
+mod _pipeline_version;
+
+mod _pipeline_version_summary;
 
 mod _predefined_metric_specification;
 

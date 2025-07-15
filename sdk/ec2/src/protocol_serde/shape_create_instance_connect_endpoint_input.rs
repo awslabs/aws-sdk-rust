@@ -51,6 +51,11 @@ pub fn ser_create_instance_connect_endpoint_input_input_input(
             list_17.finish();
         }
     }
+    #[allow(unused_mut)]
+    let mut scope_19 = writer.prefix("IpAddressType");
+    if let Some(var_20) = &input.ip_address_type {
+        scope_19.string(var_20.as_str());
+    }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

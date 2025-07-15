@@ -116,7 +116,7 @@ impl StdError for AuthOrchestrationError {}
 
 pub(super) async fn resolve_identity(
     runtime_components: &RuntimeComponents,
-    cfg: &ConfigBag,
+    cfg: &mut ConfigBag,
 ) -> Result<(AuthSchemeId, Identity, Option<Endpoint>), BoxError> {
     let params = cfg
         .load::<AuthSchemeOptionResolverParams>()
@@ -135,7 +135,7 @@ pub(super) async fn resolve_identity(
     let mut explored = ExploredList::default();
 
     // Iterate over IDs of possibly-supported auth schemes
-    for auth_scheme_option in options {
+    for auth_scheme_option in &options {
         let scheme_id = auth_scheme_option.scheme_id();
         // For each ID, try to resolve the corresponding auth scheme.
         if let Some(auth_scheme) = runtime_components.auth_scheme(scheme_id) {
@@ -151,6 +151,10 @@ pub(super) async fn resolve_identity(
                         } else {
                             IdentityCache::no_cache()
                         };
+                        // Apply properties from the selected auth scheme option
+                        if let Some(properties) = auth_scheme_option.properties() {
+                            cfg.push_shared_layer(properties);
+                        }
                         let identity = identity_cache
                             .resolve_cached_identity(identity_resolver, runtime_components, cfg)
                             .await?;
@@ -471,9 +475,9 @@ mod tests {
             layer.store_put(AuthSchemeOptionResolverParams::new("doesntmatter"));
             layer.store_put(Endpoint::builder().url("dontcare").build());
             let layer = add_more_to_layer(layer);
-            let cfg = ConfigBag::of_layers(vec![layer]);
+            let mut cfg = ConfigBag::of_layers(vec![layer]);
 
-            let (scheme_id, identity, _) = resolve_identity(&runtime_components, &cfg)
+            let (scheme_id, identity, _) = resolve_identity(&runtime_components, &mut cfg)
                 .await
                 .expect("success");
 
@@ -527,9 +531,9 @@ mod tests {
             let (runtime_components, layer) =
                 config_with_identity(HTTP_BASIC_AUTH_SCHEME_ID, Login::new("a", "b", None));
             let layer = add_more_to_layer(layer);
-            let cfg = ConfigBag::of_layers(vec![layer]);
+            let mut cfg = ConfigBag::of_layers(vec![layer]);
 
-            let (scheme_id, identity, _) = resolve_identity(&runtime_components, &cfg)
+            let (scheme_id, identity, _) = resolve_identity(&runtime_components, &mut cfg)
                 .await
                 .expect("success");
             sign_request(&scheme_id, &identity, &mut ctx, &runtime_components, &cfg)
@@ -548,13 +552,13 @@ mod tests {
             let (runtime_components, layer) =
                 config_with_identity(HTTP_BEARER_AUTH_SCHEME_ID, Token::new("t", None));
             let layer = add_more_to_layer(layer);
-            let cfg = ConfigBag::of_layers(vec![layer]);
+            let mut cfg = ConfigBag::of_layers(vec![layer]);
             let mut ctx = InterceptorContext::new(Input::erase("doesnt-matter"));
             ctx.enter_serialization_phase();
             ctx.set_request(HttpRequest::empty());
             let _ = ctx.take_input();
             ctx.enter_before_transmit_phase();
-            let (scheme_id, identity, _) = resolve_identity(&runtime_components, &cfg)
+            let (scheme_id, identity, _) = resolve_identity(&runtime_components, &mut cfg)
                 .await
                 .expect("success");
             sign_request(&scheme_id, &identity, &mut ctx, &runtime_components, &cfg)
@@ -760,9 +764,9 @@ mod tests {
             layer.store_put(Endpoint::builder().url("dontcare").build());
             layer.store_put(AuthSchemeOptionResolverParams::new("doesntmatter"));
             let layer = add_more_to_layer(layer);
-            let config_bag = ConfigBag::of_layers(vec![layer]);
+            let mut config_bag = ConfigBag::of_layers(vec![layer]);
 
-            let (scheme_id, identity, _) = resolve_identity(&runtime_components, &config_bag)
+            let (scheme_id, identity, _) = resolve_identity(&runtime_components, &mut config_bag)
                 .await
                 .expect("success");
             sign_request(

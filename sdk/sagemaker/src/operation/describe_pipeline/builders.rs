@@ -122,4 +122,18 @@ impl DescribePipelineFluentBuilder {
     pub fn get_pipeline_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_pipeline_name()
     }
+    /// <p>The ID of the pipeline version to describe.</p>
+    pub fn pipeline_version_id(mut self, input: i64) -> Self {
+        self.inner = self.inner.pipeline_version_id(input);
+        self
+    }
+    /// <p>The ID of the pipeline version to describe.</p>
+    pub fn set_pipeline_version_id(mut self, input: ::std::option::Option<i64>) -> Self {
+        self.inner = self.inner.set_pipeline_version_id(input);
+        self
+    }
+    /// <p>The ID of the pipeline version to describe.</p>
+    pub fn get_pipeline_version_id(&self) -> &::std::option::Option<i64> {
+        self.inner.get_pipeline_version_id()
+    }
 }

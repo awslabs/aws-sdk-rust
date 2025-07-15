@@ -188,4 +188,18 @@ impl CreateTopicFluentBuilder {
     pub fn get_folder_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_folder_arns()
     }
+    /// <p>Custom instructions for the topic.</p>
+    pub fn custom_instructions(mut self, input: crate::types::CustomInstructions) -> Self {
+        self.inner = self.inner.custom_instructions(input);
+        self
+    }
+    /// <p>Custom instructions for the topic.</p>
+    pub fn set_custom_instructions(mut self, input: ::std::option::Option<crate::types::CustomInstructions>) -> Self {
+        self.inner = self.inner.set_custom_instructions(input);
+        self
+    }
+    /// <p>Custom instructions for the topic.</p>
+    pub fn get_custom_instructions(&self) -> &::std::option::Option<crate::types::CustomInstructions> {
+        self.inner.get_custom_instructions()
+    }
 }

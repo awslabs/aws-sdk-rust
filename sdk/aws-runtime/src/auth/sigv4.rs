@@ -3,11 +3,10 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-use crate::auth;
 use crate::auth::{
-    extract_endpoint_auth_scheme_signing_name, extract_endpoint_auth_scheme_signing_region,
-    PayloadSigningOverride, SigV4OperationSigningConfig, SigV4SessionTokenNameOverride,
-    SigV4SigningError,
+    self, extract_endpoint_auth_scheme_signing_name, extract_endpoint_auth_scheme_signing_options,
+    extract_endpoint_auth_scheme_signing_region, PayloadSigningOverride,
+    SigV4OperationSigningConfig, SigV4SessionTokenNameOverride, SigV4SigningError,
 };
 use aws_credential_types::Credentials;
 use aws_sigv4::http_request::{
@@ -132,12 +131,21 @@ impl SigV4Signer {
         let region = extract_endpoint_auth_scheme_signing_region(&auth_scheme_endpoint_config)?
             .or(config_bag.load::<SigningRegion>().cloned());
 
-        match (region, name) {
-            (None, None) => Ok(Cow::Borrowed(operation_config)),
-            (region, name) => {
+        let signing_options = extract_endpoint_auth_scheme_signing_options(
+            &auth_scheme_endpoint_config,
+            &operation_config.signing_options,
+        )?;
+
+        match (region, name, signing_options) {
+            (None, None, Cow::Borrowed(_)) => Ok(Cow::Borrowed(operation_config)),
+            (region, name, signing_options) => {
                 let mut operation_config = operation_config.clone();
                 operation_config.region = region.or(operation_config.region);
                 operation_config.name = name.or(operation_config.name);
+                operation_config.signing_options = match signing_options {
+                    Cow::Owned(opts) => opts,
+                    Cow::Borrowed(_) => operation_config.signing_options,
+                };
                 Ok(Cow::Owned(operation_config))
             }
         }

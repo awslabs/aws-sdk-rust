@@ -12,5 +12,11 @@ pub fn ser_aiml_options_input(
         )?;
         object_2.finish();
     }
+    if let Some(var_3) = &input.s3_vectors_engine {
+        #[allow(unused_mut)]
+        let mut object_4 = object.key("S3VectorsEngine").start_object();
+        crate::protocol_serde::shape_s3_vectors_engine::ser_s3_vectors_engine(&mut object_4, var_3)?;
+        object_4.finish();
+    }
     Ok(())
 }

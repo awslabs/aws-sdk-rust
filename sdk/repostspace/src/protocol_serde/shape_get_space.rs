@@ -130,6 +130,13 @@ pub(crate) fn de_get_space(
         match tokens.next().transpose()? {
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                "applicationArn" => {
+                    builder = builder.set_application_arn(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
                 "arn" => {
                     builder = builder.set_arn(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
@@ -187,6 +194,13 @@ pub(crate) fn de_get_space(
                 "groupAdmins" => {
                     builder = builder.set_group_admins(crate::protocol_serde::shape_group_admins::de_group_admins(tokens)?);
                 }
+                "identityStoreId" => {
+                    builder = builder.set_identity_store_id(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
                 "name" => {
                     builder = builder.set_name(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
@@ -223,6 +237,11 @@ pub(crate) fn de_get_space(
                         ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
                             .map(i64::try_from)
                             .transpose()?,
+                    );
+                }
+                "supportedEmailDomains" => {
+                    builder = builder.set_supported_email_domains(
+                        crate::protocol_serde::shape_supported_email_domains_status::de_supported_email_domains_status(tokens)?,
                     );
                 }
                 "tier" => {

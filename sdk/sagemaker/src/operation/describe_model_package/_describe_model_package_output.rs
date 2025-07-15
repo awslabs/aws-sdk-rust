@@ -29,7 +29,7 @@ pub struct DescribeModelPackageOutput {
     pub certify_for_marketplace: ::std::option::Option<bool>,
     /// <p>The approval status of the model package.</p>
     pub model_approval_status: ::std::option::Option<crate::types::ModelApprovalStatus>,
-    /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
+    /// <p>Information about the user who created or modified a SageMaker resource.</p>
     pub created_by: ::std::option::Option<crate::types::UserContext>,
     /// <p>Metadata properties of the tracking entity, trial, or trial component.</p>
     pub metadata_properties: ::std::option::Option<crate::types::MetadataProperties>,
@@ -37,7 +37,7 @@ pub struct DescribeModelPackageOutput {
     pub model_metrics: ::std::option::Option<crate::types::ModelMetrics>,
     /// <p>The last time that the model package was modified.</p>
     pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
+    /// <p>Information about the user who created or modified a SageMaker resource.</p>
     pub last_modified_by: ::std::option::Option<crate::types::UserContext>,
     /// <p>A description provided for the model approval.</p>
     pub approval_description: ::std::option::Option<::std::string::String>,
@@ -118,7 +118,7 @@ impl DescribeModelPackageOutput {
     pub fn model_approval_status(&self) -> ::std::option::Option<&crate::types::ModelApprovalStatus> {
         self.model_approval_status.as_ref()
     }
-    /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
+    /// <p>Information about the user who created or modified a SageMaker resource.</p>
     pub fn created_by(&self) -> ::std::option::Option<&crate::types::UserContext> {
         self.created_by.as_ref()
     }
@@ -134,7 +134,7 @@ impl DescribeModelPackageOutput {
     pub fn last_modified_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
     }
-    /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
+    /// <p>Information about the user who created or modified a SageMaker resource.</p>
     pub fn last_modified_by(&self) -> ::std::option::Option<&crate::types::UserContext> {
         self.last_modified_by.as_ref()
     }
@@ -425,17 +425,17 @@ impl DescribeModelPackageOutputBuilder {
     pub fn get_model_approval_status(&self) -> &::std::option::Option<crate::types::ModelApprovalStatus> {
         &self.model_approval_status
     }
-    /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
+    /// <p>Information about the user who created or modified a SageMaker resource.</p>
     pub fn created_by(mut self, input: crate::types::UserContext) -> Self {
         self.created_by = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
+    /// <p>Information about the user who created or modified a SageMaker resource.</p>
     pub fn set_created_by(mut self, input: ::std::option::Option<crate::types::UserContext>) -> Self {
         self.created_by = input;
         self
     }
-    /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
+    /// <p>Information about the user who created or modified a SageMaker resource.</p>
     pub fn get_created_by(&self) -> &::std::option::Option<crate::types::UserContext> {
         &self.created_by
     }
@@ -481,17 +481,17 @@ impl DescribeModelPackageOutputBuilder {
     pub fn get_last_modified_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_modified_time
     }
-    /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
+    /// <p>Information about the user who created or modified a SageMaker resource.</p>
     pub fn last_modified_by(mut self, input: crate::types::UserContext) -> Self {
         self.last_modified_by = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
+    /// <p>Information about the user who created or modified a SageMaker resource.</p>
     pub fn set_last_modified_by(mut self, input: ::std::option::Option<crate::types::UserContext>) -> Self {
         self.last_modified_by = input;
         self
     }
-    /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
+    /// <p>Information about the user who created or modified a SageMaker resource.</p>
     pub fn get_last_modified_by(&self) -> &::std::option::Option<crate::types::UserContext> {
         &self.last_modified_by
     }

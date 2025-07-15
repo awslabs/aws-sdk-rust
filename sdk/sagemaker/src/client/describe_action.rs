@@ -13,9 +13,9 @@ impl super::Client {
     ///   - [`status(Option<ActionStatus>)`](crate::operation::describe_action::DescribeActionOutput::status): <p>The status of the action.</p>
     ///   - [`properties(Option<HashMap::<String, String>>)`](crate::operation::describe_action::DescribeActionOutput::properties): <p>A list of the action's properties.</p>
     ///   - [`creation_time(Option<DateTime>)`](crate::operation::describe_action::DescribeActionOutput::creation_time): <p>When the action was created.</p>
-    ///   - [`created_by(Option<UserContext>)`](crate::operation::describe_action::DescribeActionOutput::created_by): <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
+    ///   - [`created_by(Option<UserContext>)`](crate::operation::describe_action::DescribeActionOutput::created_by): <p>Information about the user who created or modified a SageMaker resource.</p>
     ///   - [`last_modified_time(Option<DateTime>)`](crate::operation::describe_action::DescribeActionOutput::last_modified_time): <p>When the action was last modified.</p>
-    ///   - [`last_modified_by(Option<UserContext>)`](crate::operation::describe_action::DescribeActionOutput::last_modified_by): <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
+    ///   - [`last_modified_by(Option<UserContext>)`](crate::operation::describe_action::DescribeActionOutput::last_modified_by): <p>Information about the user who created or modified a SageMaker resource.</p>
     ///   - [`metadata_properties(Option<MetadataProperties>)`](crate::operation::describe_action::DescribeActionOutput::metadata_properties): <p>Metadata properties of the tracking entity, trial, or trial component.</p>
     ///   - [`lineage_group_arn(Option<String>)`](crate::operation::describe_action::DescribeActionOutput::lineage_group_arn): <p>The Amazon Resource Name (ARN) of the lineage group.</p>
     /// - On failure, responds with [`SdkError<DescribeActionError>`](crate::operation::describe_action::DescribeActionError)

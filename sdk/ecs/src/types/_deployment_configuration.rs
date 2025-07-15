@@ -43,6 +43,19 @@ pub struct DeploymentConfiguration {
     pub minimum_healthy_percent: ::std::option::Option<i32>,
     /// <p>Information about the CloudWatch alarms.</p>
     pub alarms: ::std::option::Option<crate::types::DeploymentAlarms>,
+    /// <p>The deployment strategy for the service. Choose from these valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>ROLLING</code> - When you create a service which uses the rolling update (<code>ROLLING</code>) deployment strategy, the Amazon ECS service scheduler replaces the currently running tasks with new tasks. The number of tasks that Amazon ECS adds or removes from the service during a rolling update is controlled by the service deployment configuration.</p></li>
+    /// <li>
+    /// <p><code>BLUE_GREEN</code> - A blue/green deployment strategy (<code>BLUE_GREEN</code>) is a release methodology that reduces downtime and risk by running two identical production environments called blue and green. With Amazon ECS blue/green deployments, you can validate new service revisions before directing production traffic to them. This approach provides a safer way to deploy changes with the ability to quickly roll back if needed.</p></li>
+    /// </ul>
+    pub strategy: ::std::option::Option<crate::types::DeploymentStrategy>,
+    /// <p>The duration when both blue and green service revisions are running simultaneously after the production traffic has shifted.</p>
+    /// <p>You must provide this parameter when you use the <code>BLUE_GREEN</code> deployment strategy.</p>
+    pub bake_time_in_minutes: ::std::option::Option<i32>,
+    /// <p>An array of deployment lifecycle hook objects to run custom logic at specific stages of the deployment lifecycle. These hooks allow you to run custom logic at key points during the deployment process.</p>
+    pub lifecycle_hooks: ::std::option::Option<::std::vec::Vec<crate::types::DeploymentLifecycleHook>>,
 }
 impl DeploymentConfiguration {
     /// <note>
@@ -92,6 +105,27 @@ impl DeploymentConfiguration {
     pub fn alarms(&self) -> ::std::option::Option<&crate::types::DeploymentAlarms> {
         self.alarms.as_ref()
     }
+    /// <p>The deployment strategy for the service. Choose from these valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>ROLLING</code> - When you create a service which uses the rolling update (<code>ROLLING</code>) deployment strategy, the Amazon ECS service scheduler replaces the currently running tasks with new tasks. The number of tasks that Amazon ECS adds or removes from the service during a rolling update is controlled by the service deployment configuration.</p></li>
+    /// <li>
+    /// <p><code>BLUE_GREEN</code> - A blue/green deployment strategy (<code>BLUE_GREEN</code>) is a release methodology that reduces downtime and risk by running two identical production environments called blue and green. With Amazon ECS blue/green deployments, you can validate new service revisions before directing production traffic to them. This approach provides a safer way to deploy changes with the ability to quickly roll back if needed.</p></li>
+    /// </ul>
+    pub fn strategy(&self) -> ::std::option::Option<&crate::types::DeploymentStrategy> {
+        self.strategy.as_ref()
+    }
+    /// <p>The duration when both blue and green service revisions are running simultaneously after the production traffic has shifted.</p>
+    /// <p>You must provide this parameter when you use the <code>BLUE_GREEN</code> deployment strategy.</p>
+    pub fn bake_time_in_minutes(&self) -> ::std::option::Option<i32> {
+        self.bake_time_in_minutes
+    }
+    /// <p>An array of deployment lifecycle hook objects to run custom logic at specific stages of the deployment lifecycle. These hooks allow you to run custom logic at key points during the deployment process.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.lifecycle_hooks.is_none()`.
+    pub fn lifecycle_hooks(&self) -> &[crate::types::DeploymentLifecycleHook] {
+        self.lifecycle_hooks.as_deref().unwrap_or_default()
+    }
 }
 impl DeploymentConfiguration {
     /// Creates a new builder-style object to manufacture [`DeploymentConfiguration`](crate::types::DeploymentConfiguration).
@@ -108,6 +142,9 @@ pub struct DeploymentConfigurationBuilder {
     pub(crate) maximum_percent: ::std::option::Option<i32>,
     pub(crate) minimum_healthy_percent: ::std::option::Option<i32>,
     pub(crate) alarms: ::std::option::Option<crate::types::DeploymentAlarms>,
+    pub(crate) strategy: ::std::option::Option<crate::types::DeploymentStrategy>,
+    pub(crate) bake_time_in_minutes: ::std::option::Option<i32>,
+    pub(crate) lifecycle_hooks: ::std::option::Option<::std::vec::Vec<crate::types::DeploymentLifecycleHook>>,
 }
 impl DeploymentConfigurationBuilder {
     /// <note>
@@ -259,6 +296,75 @@ impl DeploymentConfigurationBuilder {
     pub fn get_alarms(&self) -> &::std::option::Option<crate::types::DeploymentAlarms> {
         &self.alarms
     }
+    /// <p>The deployment strategy for the service. Choose from these valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>ROLLING</code> - When you create a service which uses the rolling update (<code>ROLLING</code>) deployment strategy, the Amazon ECS service scheduler replaces the currently running tasks with new tasks. The number of tasks that Amazon ECS adds or removes from the service during a rolling update is controlled by the service deployment configuration.</p></li>
+    /// <li>
+    /// <p><code>BLUE_GREEN</code> - A blue/green deployment strategy (<code>BLUE_GREEN</code>) is a release methodology that reduces downtime and risk by running two identical production environments called blue and green. With Amazon ECS blue/green deployments, you can validate new service revisions before directing production traffic to them. This approach provides a safer way to deploy changes with the ability to quickly roll back if needed.</p></li>
+    /// </ul>
+    pub fn strategy(mut self, input: crate::types::DeploymentStrategy) -> Self {
+        self.strategy = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The deployment strategy for the service. Choose from these valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>ROLLING</code> - When you create a service which uses the rolling update (<code>ROLLING</code>) deployment strategy, the Amazon ECS service scheduler replaces the currently running tasks with new tasks. The number of tasks that Amazon ECS adds or removes from the service during a rolling update is controlled by the service deployment configuration.</p></li>
+    /// <li>
+    /// <p><code>BLUE_GREEN</code> - A blue/green deployment strategy (<code>BLUE_GREEN</code>) is a release methodology that reduces downtime and risk by running two identical production environments called blue and green. With Amazon ECS blue/green deployments, you can validate new service revisions before directing production traffic to them. This approach provides a safer way to deploy changes with the ability to quickly roll back if needed.</p></li>
+    /// </ul>
+    pub fn set_strategy(mut self, input: ::std::option::Option<crate::types::DeploymentStrategy>) -> Self {
+        self.strategy = input;
+        self
+    }
+    /// <p>The deployment strategy for the service. Choose from these valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>ROLLING</code> - When you create a service which uses the rolling update (<code>ROLLING</code>) deployment strategy, the Amazon ECS service scheduler replaces the currently running tasks with new tasks. The number of tasks that Amazon ECS adds or removes from the service during a rolling update is controlled by the service deployment configuration.</p></li>
+    /// <li>
+    /// <p><code>BLUE_GREEN</code> - A blue/green deployment strategy (<code>BLUE_GREEN</code>) is a release methodology that reduces downtime and risk by running two identical production environments called blue and green. With Amazon ECS blue/green deployments, you can validate new service revisions before directing production traffic to them. This approach provides a safer way to deploy changes with the ability to quickly roll back if needed.</p></li>
+    /// </ul>
+    pub fn get_strategy(&self) -> &::std::option::Option<crate::types::DeploymentStrategy> {
+        &self.strategy
+    }
+    /// <p>The duration when both blue and green service revisions are running simultaneously after the production traffic has shifted.</p>
+    /// <p>You must provide this parameter when you use the <code>BLUE_GREEN</code> deployment strategy.</p>
+    pub fn bake_time_in_minutes(mut self, input: i32) -> Self {
+        self.bake_time_in_minutes = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The duration when both blue and green service revisions are running simultaneously after the production traffic has shifted.</p>
+    /// <p>You must provide this parameter when you use the <code>BLUE_GREEN</code> deployment strategy.</p>
+    pub fn set_bake_time_in_minutes(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.bake_time_in_minutes = input;
+        self
+    }
+    /// <p>The duration when both blue and green service revisions are running simultaneously after the production traffic has shifted.</p>
+    /// <p>You must provide this parameter when you use the <code>BLUE_GREEN</code> deployment strategy.</p>
+    pub fn get_bake_time_in_minutes(&self) -> &::std::option::Option<i32> {
+        &self.bake_time_in_minutes
+    }
+    /// Appends an item to `lifecycle_hooks`.
+    ///
+    /// To override the contents of this collection use [`set_lifecycle_hooks`](Self::set_lifecycle_hooks).
+    ///
+    /// <p>An array of deployment lifecycle hook objects to run custom logic at specific stages of the deployment lifecycle. These hooks allow you to run custom logic at key points during the deployment process.</p>
+    pub fn lifecycle_hooks(mut self, input: crate::types::DeploymentLifecycleHook) -> Self {
+        let mut v = self.lifecycle_hooks.unwrap_or_default();
+        v.push(input);
+        self.lifecycle_hooks = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>An array of deployment lifecycle hook objects to run custom logic at specific stages of the deployment lifecycle. These hooks allow you to run custom logic at key points during the deployment process.</p>
+    pub fn set_lifecycle_hooks(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DeploymentLifecycleHook>>) -> Self {
+        self.lifecycle_hooks = input;
+        self
+    }
+    /// <p>An array of deployment lifecycle hook objects to run custom logic at specific stages of the deployment lifecycle. These hooks allow you to run custom logic at key points during the deployment process.</p>
+    pub fn get_lifecycle_hooks(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DeploymentLifecycleHook>> {
+        &self.lifecycle_hooks
+    }
     /// Consumes the builder and constructs a [`DeploymentConfiguration`](crate::types::DeploymentConfiguration).
     pub fn build(self) -> crate::types::DeploymentConfiguration {
         crate::types::DeploymentConfiguration {
@@ -266,6 +372,9 @@ impl DeploymentConfigurationBuilder {
             maximum_percent: self.maximum_percent,
             minimum_healthy_percent: self.minimum_healthy_percent,
             alarms: self.alarms,
+            strategy: self.strategy,
+            bake_time_in_minutes: self.bake_time_in_minutes,
+            lifecycle_hooks: self.lifecycle_hooks,
         }
     }
 }

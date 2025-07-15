@@ -51,6 +51,8 @@ pub use crate::types::_knowledge_base::KnowledgeBaseBuilder;
 
 pub use crate::types::_storage_configuration::StorageConfigurationBuilder;
 
+pub use crate::types::_s3_vectors_configuration::S3VectorsConfigurationBuilder;
+
 pub use crate::types::_neptune_analytics_configuration::NeptuneAnalyticsConfigurationBuilder;
 
 pub use crate::types::_neptune_analytics_field_mapping::NeptuneAnalyticsFieldMappingBuilder;

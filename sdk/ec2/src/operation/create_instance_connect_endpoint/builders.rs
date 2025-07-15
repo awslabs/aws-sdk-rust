@@ -23,7 +23,7 @@ impl crate::operation::create_instance_connect_endpoint::builders::CreateInstanc
 /// Fluent builder constructing a request to `CreateInstanceConnectEndpoint`.
 ///
 /// <p>Creates an EC2 Instance Connect Endpoint.</p>
-/// <p>An EC2 Instance Connect Endpoint allows you to connect to an instance, without requiring the instance to have a public IPv4 address. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Connect-using-EC2-Instance-Connect-Endpoint.html">Connect to your instances using EC2 Instance Connect Endpoint</a> in the <i>Amazon EC2 User Guide</i>.</p>
+/// <p>An EC2 Instance Connect Endpoint allows you to connect to an instance, without requiring the instance to have a public IPv4 or public IPv6 address. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Connect-using-EC2-Instance-Connect-Endpoint.html">Connect to your instances using EC2 Instance Connect Endpoint</a> in the <i>Amazon EC2 User Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateInstanceConnectEndpointFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -162,7 +162,9 @@ impl CreateInstanceConnectEndpointFluentBuilder {
     /// <p><code>true</code> - Use the client IP address as the source.</p></li>
     /// <li>
     /// <p><code>false</code> - Use the network interface IP address as the source.</p></li>
-    /// </ul>
+    /// </ul><note>
+    /// <p><code>PreserveClientIp</code> is only supported on IPv4 EC2 Instance Connect Endpoints. To use <code>PreserveClientIp</code>, the value for <code>IpAddressType</code> must be <code>ipv4</code>.</p>
+    /// </note>
     /// <p>Default: <code>false</code></p>
     pub fn preserve_client_ip(mut self, input: bool) -> Self {
         self.inner = self.inner.preserve_client_ip(input);
@@ -174,7 +176,9 @@ impl CreateInstanceConnectEndpointFluentBuilder {
     /// <p><code>true</code> - Use the client IP address as the source.</p></li>
     /// <li>
     /// <p><code>false</code> - Use the network interface IP address as the source.</p></li>
-    /// </ul>
+    /// </ul><note>
+    /// <p><code>PreserveClientIp</code> is only supported on IPv4 EC2 Instance Connect Endpoints. To use <code>PreserveClientIp</code>, the value for <code>IpAddressType</code> must be <code>ipv4</code>.</p>
+    /// </note>
     /// <p>Default: <code>false</code></p>
     pub fn set_preserve_client_ip(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_preserve_client_ip(input);
@@ -186,7 +190,9 @@ impl CreateInstanceConnectEndpointFluentBuilder {
     /// <p><code>true</code> - Use the client IP address as the source.</p></li>
     /// <li>
     /// <p><code>false</code> - Use the network interface IP address as the source.</p></li>
-    /// </ul>
+    /// </ul><note>
+    /// <p><code>PreserveClientIp</code> is only supported on IPv4 EC2 Instance Connect Endpoints. To use <code>PreserveClientIp</code>, the value for <code>IpAddressType</code> must be <code>ipv4</code>.</p>
+    /// </note>
     /// <p>Default: <code>false</code></p>
     pub fn get_preserve_client_ip(&self) -> &::std::option::Option<bool> {
         self.inner.get_preserve_client_ip()
@@ -223,5 +229,52 @@ impl CreateInstanceConnectEndpointFluentBuilder {
     /// <p>The tags to apply to the EC2 Instance Connect Endpoint during creation.</p>
     pub fn get_tag_specifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
         self.inner.get_tag_specifications()
+    }
+    /// <p>The IP address type of the endpoint.</p>
+    /// <p>If no value is specified, the default value is determined by the IP address type of the subnet:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>dualstack</code> - If the subnet has both IPv4 and IPv6 CIDRs</p></li>
+    /// <li>
+    /// <p><code>ipv4</code> - If the subnet has only IPv4 CIDRs</p></li>
+    /// <li>
+    /// <p><code>ipv6</code> - If the subnet has only IPv6 CIDRs</p></li>
+    /// </ul><note>
+    /// <p><code>PreserveClientIp</code> is only supported on IPv4 EC2 Instance Connect Endpoints. To use <code>PreserveClientIp</code>, the value for <code>IpAddressType</code> must be <code>ipv4</code>.</p>
+    /// </note>
+    pub fn ip_address_type(mut self, input: crate::types::IpAddressType) -> Self {
+        self.inner = self.inner.ip_address_type(input);
+        self
+    }
+    /// <p>The IP address type of the endpoint.</p>
+    /// <p>If no value is specified, the default value is determined by the IP address type of the subnet:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>dualstack</code> - If the subnet has both IPv4 and IPv6 CIDRs</p></li>
+    /// <li>
+    /// <p><code>ipv4</code> - If the subnet has only IPv4 CIDRs</p></li>
+    /// <li>
+    /// <p><code>ipv6</code> - If the subnet has only IPv6 CIDRs</p></li>
+    /// </ul><note>
+    /// <p><code>PreserveClientIp</code> is only supported on IPv4 EC2 Instance Connect Endpoints. To use <code>PreserveClientIp</code>, the value for <code>IpAddressType</code> must be <code>ipv4</code>.</p>
+    /// </note>
+    pub fn set_ip_address_type(mut self, input: ::std::option::Option<crate::types::IpAddressType>) -> Self {
+        self.inner = self.inner.set_ip_address_type(input);
+        self
+    }
+    /// <p>The IP address type of the endpoint.</p>
+    /// <p>If no value is specified, the default value is determined by the IP address type of the subnet:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>dualstack</code> - If the subnet has both IPv4 and IPv6 CIDRs</p></li>
+    /// <li>
+    /// <p><code>ipv4</code> - If the subnet has only IPv4 CIDRs</p></li>
+    /// <li>
+    /// <p><code>ipv6</code> - If the subnet has only IPv6 CIDRs</p></li>
+    /// </ul><note>
+    /// <p><code>PreserveClientIp</code> is only supported on IPv4 EC2 Instance Connect Endpoints. To use <code>PreserveClientIp</code>, the value for <code>IpAddressType</code> must be <code>ipv4</code>.</p>
+    /// </note>
+    pub fn get_ip_address_type(&self) -> &::std::option::Option<crate::types::IpAddressType> {
+        self.inner.get_ip_address_type()
     }
 }

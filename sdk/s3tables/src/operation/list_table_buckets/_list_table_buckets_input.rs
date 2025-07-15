@@ -9,6 +9,8 @@ pub struct ListTableBucketsInput {
     pub continuation_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of table buckets to return in the list.</p>
     pub max_buckets: ::std::option::Option<i32>,
+    /// <p>The type of table buckets to filter by in the list.</p>
+    pub r#type: ::std::option::Option<crate::types::TableBucketType>,
 }
 impl ListTableBucketsInput {
     /// <p>The prefix of the table buckets.</p>
@@ -22,6 +24,10 @@ impl ListTableBucketsInput {
     /// <p>The maximum number of table buckets to return in the list.</p>
     pub fn max_buckets(&self) -> ::std::option::Option<i32> {
         self.max_buckets
+    }
+    /// <p>The type of table buckets to filter by in the list.</p>
+    pub fn r#type(&self) -> ::std::option::Option<&crate::types::TableBucketType> {
+        self.r#type.as_ref()
     }
 }
 impl ListTableBucketsInput {
@@ -38,6 +44,7 @@ pub struct ListTableBucketsInputBuilder {
     pub(crate) prefix: ::std::option::Option<::std::string::String>,
     pub(crate) continuation_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_buckets: ::std::option::Option<i32>,
+    pub(crate) r#type: ::std::option::Option<crate::types::TableBucketType>,
 }
 impl ListTableBucketsInputBuilder {
     /// <p>The prefix of the table buckets.</p>
@@ -82,6 +89,20 @@ impl ListTableBucketsInputBuilder {
     pub fn get_max_buckets(&self) -> &::std::option::Option<i32> {
         &self.max_buckets
     }
+    /// <p>The type of table buckets to filter by in the list.</p>
+    pub fn r#type(mut self, input: crate::types::TableBucketType) -> Self {
+        self.r#type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The type of table buckets to filter by in the list.</p>
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::TableBucketType>) -> Self {
+        self.r#type = input;
+        self
+    }
+    /// <p>The type of table buckets to filter by in the list.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::TableBucketType> {
+        &self.r#type
+    }
     /// Consumes the builder and constructs a [`ListTableBucketsInput`](crate::operation::list_table_buckets::ListTableBucketsInput).
     pub fn build(
         self,
@@ -90,6 +111,7 @@ impl ListTableBucketsInputBuilder {
             prefix: self.prefix,
             continuation_token: self.continuation_token,
             max_buckets: self.max_buckets,
+            r#type: self.r#type,
         })
     }
 }

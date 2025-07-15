@@ -53,11 +53,35 @@ pub(crate) fn validation_exception_correct_errors(
     builder
 }
 
+pub(crate) fn batch_add_channel_role_to_accessors_output_output_correct_errors(
+    mut builder: crate::operation::batch_add_channel_role_to_accessors::builders::BatchAddChannelRoleToAccessorsOutputBuilder,
+) -> crate::operation::batch_add_channel_role_to_accessors::builders::BatchAddChannelRoleToAccessorsOutputBuilder {
+    if builder.added_accessor_ids.is_none() {
+        builder.added_accessor_ids = Some(Default::default())
+    }
+    if builder.errors.is_none() {
+        builder.errors = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn batch_add_role_output_output_correct_errors(
     mut builder: crate::operation::batch_add_role::builders::BatchAddRoleOutputBuilder,
 ) -> crate::operation::batch_add_role::builders::BatchAddRoleOutputBuilder {
     if builder.added_accessor_ids.is_none() {
         builder.added_accessor_ids = Some(Default::default())
+    }
+    if builder.errors.is_none() {
+        builder.errors = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn batch_remove_channel_role_from_accessors_output_output_correct_errors(
+    mut builder: crate::operation::batch_remove_channel_role_from_accessors::builders::BatchRemoveChannelRoleFromAccessorsOutputBuilder,
+) -> crate::operation::batch_remove_channel_role_from_accessors::builders::BatchRemoveChannelRoleFromAccessorsOutputBuilder {
+    if builder.removed_accessor_ids.is_none() {
+        builder.removed_accessor_ids = Some(Default::default())
     }
     if builder.errors.is_none() {
         builder.errors = Some(Default::default())
@@ -113,11 +137,41 @@ pub(crate) fn service_quota_exceeded_exception_correct_errors(
     builder
 }
 
+pub(crate) fn create_channel_output_output_correct_errors(
+    mut builder: crate::operation::create_channel::builders::CreateChannelOutputBuilder,
+) -> crate::operation::create_channel::builders::CreateChannelOutputBuilder {
+    if builder.channel_id.is_none() {
+        builder.channel_id = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn create_space_output_output_correct_errors(
     mut builder: crate::operation::create_space::builders::CreateSpaceOutputBuilder,
 ) -> crate::operation::create_space::builders::CreateSpaceOutputBuilder {
     if builder.space_id.is_none() {
         builder.space_id = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn get_channel_output_output_correct_errors(
+    mut builder: crate::operation::get_channel::builders::GetChannelOutputBuilder,
+) -> crate::operation::get_channel::builders::GetChannelOutputBuilder {
+    if builder.space_id.is_none() {
+        builder.space_id = Some(Default::default())
+    }
+    if builder.channel_id.is_none() {
+        builder.channel_id = Some(Default::default())
+    }
+    if builder.channel_name.is_none() {
+        builder.channel_name = Some(Default::default())
+    }
+    if builder.create_date_time.is_none() {
+        builder.create_date_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.channel_status.is_none() {
+        builder.channel_status = "no value was set".parse::<crate::types::ChannelStatus>().ok()
     }
     builder
 }
@@ -164,6 +218,15 @@ pub(crate) fn get_space_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn list_channels_output_output_correct_errors(
+    mut builder: crate::operation::list_channels::builders::ListChannelsOutputBuilder,
+) -> crate::operation::list_channels::builders::ListChannelsOutputBuilder {
+    if builder.channels.is_none() {
+        builder.channels = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn list_spaces_output_output_correct_errors(
     mut builder: crate::operation::list_spaces::builders::ListSpacesOutputBuilder,
 ) -> crate::operation::list_spaces::builders::ListSpacesOutputBuilder {
@@ -182,6 +245,31 @@ pub(crate) fn batch_error_correct_errors(mut builder: crate::types::builders::Ba
     }
     if builder.message.is_none() {
         builder.message = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn channel_data_correct_errors(mut builder: crate::types::builders::ChannelDataBuilder) -> crate::types::builders::ChannelDataBuilder {
+    if builder.space_id.is_none() {
+        builder.space_id = Some(Default::default())
+    }
+    if builder.channel_id.is_none() {
+        builder.channel_id = Some(Default::default())
+    }
+    if builder.channel_name.is_none() {
+        builder.channel_name = Some(Default::default())
+    }
+    if builder.create_date_time.is_none() {
+        builder.create_date_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.channel_status.is_none() {
+        builder.channel_status = "no value was set".parse::<crate::types::ChannelStatus>().ok()
+    }
+    if builder.user_count.is_none() {
+        builder.user_count = Some(Default::default())
+    }
+    if builder.group_count.is_none() {
+        builder.group_count = Some(Default::default())
     }
     builder
 }

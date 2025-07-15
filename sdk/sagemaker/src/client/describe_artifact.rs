@@ -11,9 +11,9 @@ impl super::Client {
     ///   - [`artifact_type(Option<String>)`](crate::operation::describe_artifact::DescribeArtifactOutput::artifact_type): <p>The type of the artifact.</p>
     ///   - [`properties(Option<HashMap::<String, String>>)`](crate::operation::describe_artifact::DescribeArtifactOutput::properties): <p>A list of the artifact's properties.</p>
     ///   - [`creation_time(Option<DateTime>)`](crate::operation::describe_artifact::DescribeArtifactOutput::creation_time): <p>When the artifact was created.</p>
-    ///   - [`created_by(Option<UserContext>)`](crate::operation::describe_artifact::DescribeArtifactOutput::created_by): <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
+    ///   - [`created_by(Option<UserContext>)`](crate::operation::describe_artifact::DescribeArtifactOutput::created_by): <p>Information about the user who created or modified a SageMaker resource.</p>
     ///   - [`last_modified_time(Option<DateTime>)`](crate::operation::describe_artifact::DescribeArtifactOutput::last_modified_time): <p>When the artifact was last modified.</p>
-    ///   - [`last_modified_by(Option<UserContext>)`](crate::operation::describe_artifact::DescribeArtifactOutput::last_modified_by): <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
+    ///   - [`last_modified_by(Option<UserContext>)`](crate::operation::describe_artifact::DescribeArtifactOutput::last_modified_by): <p>Information about the user who created or modified a SageMaker resource.</p>
     ///   - [`metadata_properties(Option<MetadataProperties>)`](crate::operation::describe_artifact::DescribeArtifactOutput::metadata_properties): <p>Metadata properties of the tracking entity, trial, or trial component.</p>
     ///   - [`lineage_group_arn(Option<String>)`](crate::operation::describe_artifact::DescribeArtifactOutput::lineage_group_arn): <p>The Amazon Resource Name (ARN) of the lineage group.</p>
     /// - On failure, responds with [`SdkError<DescribeArtifactError>`](crate::operation::describe_artifact::DescribeArtifactError)

@@ -5,18 +5,43 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Filter {
     /// <p>The type of filter that you want to use.</p>
-    /// <p>Valid values are: <code>TERM_MATCH</code>. <code>TERM_MATCH</code> returns only products that match both the given filter field and the given value.</p>
+    /// <p>Valid values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>TERM_MATCH</code>: Returns only products that match both the given filter field and the given value.</p></li>
+    /// <li>
+    /// <p><code>EQUALS</code>: Returns products that have a field value exactly matching the provided value.</p></li>
+    /// <li>
+    /// <p><code>CONTAINS</code>: Returns products where the field value contains the provided value as a substring.</p></li>
+    /// <li>
+    /// <p><code>ANY_OF</code>: Returns products where the field value is any of the provided values.</p></li>
+    /// <li>
+    /// <p><code>NONE_OF</code>: Returns products where the field value is not any of the provided values.</p></li>
+    /// </ul>
     pub r#type: crate::types::FilterType,
     /// <p>The product metadata field that you want to filter on. You can filter by just the service code to see all products for a specific service, filter by just the attribute name to see a specific attribute for multiple services, or use both a service code and an attribute name to retrieve only products that match both fields.</p>
     /// <p>Valid values include: <code>ServiceCode</code>, and all attribute names</p>
     /// <p>For example, you can filter by the <code>AmazonEC2</code> service code and the <code>volumeType</code> attribute name to get the prices for only Amazon EC2 volumes.</p>
     pub field: ::std::string::String,
     /// <p>The service code or attribute value that you want to filter by. If you're filtering by service code this is the actual service code, such as <code>AmazonEC2</code>. If you're filtering by attribute name, this is the attribute value that you want the returned products to match, such as a <code>Provisioned IOPS</code> volume.</p>
+    /// <p>For <code>ANY_OF</code> and <code>NONE_OF</code> filter types, you can provide multiple values as a comma-separated string. For example, <code>t2.micro,t2.small,t2.medium</code> or <code>Compute optimized, GPU instance, Micro instances</code>.</p>
     pub value: ::std::string::String,
 }
 impl Filter {
     /// <p>The type of filter that you want to use.</p>
-    /// <p>Valid values are: <code>TERM_MATCH</code>. <code>TERM_MATCH</code> returns only products that match both the given filter field and the given value.</p>
+    /// <p>Valid values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>TERM_MATCH</code>: Returns only products that match both the given filter field and the given value.</p></li>
+    /// <li>
+    /// <p><code>EQUALS</code>: Returns products that have a field value exactly matching the provided value.</p></li>
+    /// <li>
+    /// <p><code>CONTAINS</code>: Returns products where the field value contains the provided value as a substring.</p></li>
+    /// <li>
+    /// <p><code>ANY_OF</code>: Returns products where the field value is any of the provided values.</p></li>
+    /// <li>
+    /// <p><code>NONE_OF</code>: Returns products where the field value is not any of the provided values.</p></li>
+    /// </ul>
     pub fn r#type(&self) -> &crate::types::FilterType {
         &self.r#type
     }
@@ -28,6 +53,7 @@ impl Filter {
         self.field.deref()
     }
     /// <p>The service code or attribute value that you want to filter by. If you're filtering by service code this is the actual service code, such as <code>AmazonEC2</code>. If you're filtering by attribute name, this is the attribute value that you want the returned products to match, such as a <code>Provisioned IOPS</code> volume.</p>
+    /// <p>For <code>ANY_OF</code> and <code>NONE_OF</code> filter types, you can provide multiple values as a comma-separated string. For example, <code>t2.micro,t2.small,t2.medium</code> or <code>Compute optimized, GPU instance, Micro instances</code>.</p>
     pub fn value(&self) -> &str {
         use std::ops::Deref;
         self.value.deref()
@@ -50,20 +76,56 @@ pub struct FilterBuilder {
 }
 impl FilterBuilder {
     /// <p>The type of filter that you want to use.</p>
-    /// <p>Valid values are: <code>TERM_MATCH</code>. <code>TERM_MATCH</code> returns only products that match both the given filter field and the given value.</p>
+    /// <p>Valid values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>TERM_MATCH</code>: Returns only products that match both the given filter field and the given value.</p></li>
+    /// <li>
+    /// <p><code>EQUALS</code>: Returns products that have a field value exactly matching the provided value.</p></li>
+    /// <li>
+    /// <p><code>CONTAINS</code>: Returns products where the field value contains the provided value as a substring.</p></li>
+    /// <li>
+    /// <p><code>ANY_OF</code>: Returns products where the field value is any of the provided values.</p></li>
+    /// <li>
+    /// <p><code>NONE_OF</code>: Returns products where the field value is not any of the provided values.</p></li>
+    /// </ul>
     /// This field is required.
     pub fn r#type(mut self, input: crate::types::FilterType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type of filter that you want to use.</p>
-    /// <p>Valid values are: <code>TERM_MATCH</code>. <code>TERM_MATCH</code> returns only products that match both the given filter field and the given value.</p>
+    /// <p>Valid values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>TERM_MATCH</code>: Returns only products that match both the given filter field and the given value.</p></li>
+    /// <li>
+    /// <p><code>EQUALS</code>: Returns products that have a field value exactly matching the provided value.</p></li>
+    /// <li>
+    /// <p><code>CONTAINS</code>: Returns products where the field value contains the provided value as a substring.</p></li>
+    /// <li>
+    /// <p><code>ANY_OF</code>: Returns products where the field value is any of the provided values.</p></li>
+    /// <li>
+    /// <p><code>NONE_OF</code>: Returns products where the field value is not any of the provided values.</p></li>
+    /// </ul>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::FilterType>) -> Self {
         self.r#type = input;
         self
     }
     /// <p>The type of filter that you want to use.</p>
-    /// <p>Valid values are: <code>TERM_MATCH</code>. <code>TERM_MATCH</code> returns only products that match both the given filter field and the given value.</p>
+    /// <p>Valid values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>TERM_MATCH</code>: Returns only products that match both the given filter field and the given value.</p></li>
+    /// <li>
+    /// <p><code>EQUALS</code>: Returns products that have a field value exactly matching the provided value.</p></li>
+    /// <li>
+    /// <p><code>CONTAINS</code>: Returns products where the field value contains the provided value as a substring.</p></li>
+    /// <li>
+    /// <p><code>ANY_OF</code>: Returns products where the field value is any of the provided values.</p></li>
+    /// <li>
+    /// <p><code>NONE_OF</code>: Returns products where the field value is not any of the provided values.</p></li>
+    /// </ul>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::FilterType> {
         &self.r#type
     }
@@ -89,17 +151,20 @@ impl FilterBuilder {
         &self.field
     }
     /// <p>The service code or attribute value that you want to filter by. If you're filtering by service code this is the actual service code, such as <code>AmazonEC2</code>. If you're filtering by attribute name, this is the attribute value that you want the returned products to match, such as a <code>Provisioned IOPS</code> volume.</p>
+    /// <p>For <code>ANY_OF</code> and <code>NONE_OF</code> filter types, you can provide multiple values as a comma-separated string. For example, <code>t2.micro,t2.small,t2.medium</code> or <code>Compute optimized, GPU instance, Micro instances</code>.</p>
     /// This field is required.
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.value = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The service code or attribute value that you want to filter by. If you're filtering by service code this is the actual service code, such as <code>AmazonEC2</code>. If you're filtering by attribute name, this is the attribute value that you want the returned products to match, such as a <code>Provisioned IOPS</code> volume.</p>
+    /// <p>For <code>ANY_OF</code> and <code>NONE_OF</code> filter types, you can provide multiple values as a comma-separated string. For example, <code>t2.micro,t2.small,t2.medium</code> or <code>Compute optimized, GPU instance, Micro instances</code>.</p>
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.value = input;
         self
     }
     /// <p>The service code or attribute value that you want to filter by. If you're filtering by service code this is the actual service code, such as <code>AmazonEC2</code>. If you're filtering by attribute name, this is the attribute value that you want the returned products to match, such as a <code>Provisioned IOPS</code> volume.</p>
+    /// <p>For <code>ANY_OF</code> and <code>NONE_OF</code> filter types, you can provide multiple values as a comma-separated string. For example, <code>t2.micro,t2.small,t2.medium</code> or <code>Compute optimized, GPU instance, Micro instances</code>.</p>
     pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
         &self.value
     }

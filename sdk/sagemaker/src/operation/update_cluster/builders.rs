@@ -141,6 +141,30 @@ impl UpdateClusterFluentBuilder {
     pub fn get_instance_groups(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ClusterInstanceGroupSpecification>> {
         self.inner.get_instance_groups()
     }
+    ///
+    /// Appends an item to `RestrictedInstanceGroups`.
+    ///
+    /// To override the contents of this collection use [`set_restricted_instance_groups`](Self::set_restricted_instance_groups).
+    ///
+    /// <p>The specialized instance groups for training models like Amazon Nova to be created in the SageMaker HyperPod cluster.</p>
+    pub fn restricted_instance_groups(mut self, input: crate::types::ClusterRestrictedInstanceGroupSpecification) -> Self {
+        self.inner = self.inner.restricted_instance_groups(input);
+        self
+    }
+    /// <p>The specialized instance groups for training models like Amazon Nova to be created in the SageMaker HyperPod cluster.</p>
+    pub fn set_restricted_instance_groups(
+        mut self,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ClusterRestrictedInstanceGroupSpecification>>,
+    ) -> Self {
+        self.inner = self.inner.set_restricted_instance_groups(input);
+        self
+    }
+    /// <p>The specialized instance groups for training models like Amazon Nova to be created in the SageMaker HyperPod cluster.</p>
+    pub fn get_restricted_instance_groups(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ClusterRestrictedInstanceGroupSpecification>> {
+        self.inner.get_restricted_instance_groups()
+    }
     /// <p>The node recovery mode to be applied to the SageMaker HyperPod cluster.</p>
     pub fn node_recovery(mut self, input: crate::types::ClusterNodeRecovery) -> Self {
         self.inner = self.inner.node_recovery(input);

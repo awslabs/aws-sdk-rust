@@ -15,11 +15,11 @@ pub struct DescribeArtifactOutput {
     pub properties: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>When the artifact was created.</p>
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
+    /// <p>Information about the user who created or modified a SageMaker resource.</p>
     pub created_by: ::std::option::Option<crate::types::UserContext>,
     /// <p>When the artifact was last modified.</p>
     pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
+    /// <p>Information about the user who created or modified a SageMaker resource.</p>
     pub last_modified_by: ::std::option::Option<crate::types::UserContext>,
     /// <p>Metadata properties of the tracking entity, trial, or trial component.</p>
     pub metadata_properties: ::std::option::Option<crate::types::MetadataProperties>,
@@ -52,7 +52,7 @@ impl DescribeArtifactOutput {
     pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
-    /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
+    /// <p>Information about the user who created or modified a SageMaker resource.</p>
     pub fn created_by(&self) -> ::std::option::Option<&crate::types::UserContext> {
         self.created_by.as_ref()
     }
@@ -60,7 +60,7 @@ impl DescribeArtifactOutput {
     pub fn last_modified_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
     }
-    /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
+    /// <p>Information about the user who created or modified a SageMaker resource.</p>
     pub fn last_modified_by(&self) -> ::std::option::Option<&crate::types::UserContext> {
         self.last_modified_by.as_ref()
     }
@@ -193,17 +193,17 @@ impl DescribeArtifactOutputBuilder {
     pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.creation_time
     }
-    /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
+    /// <p>Information about the user who created or modified a SageMaker resource.</p>
     pub fn created_by(mut self, input: crate::types::UserContext) -> Self {
         self.created_by = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
+    /// <p>Information about the user who created or modified a SageMaker resource.</p>
     pub fn set_created_by(mut self, input: ::std::option::Option<crate::types::UserContext>) -> Self {
         self.created_by = input;
         self
     }
-    /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
+    /// <p>Information about the user who created or modified a SageMaker resource.</p>
     pub fn get_created_by(&self) -> &::std::option::Option<crate::types::UserContext> {
         &self.created_by
     }
@@ -221,17 +221,17 @@ impl DescribeArtifactOutputBuilder {
     pub fn get_last_modified_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_modified_time
     }
-    /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
+    /// <p>Information about the user who created or modified a SageMaker resource.</p>
     pub fn last_modified_by(mut self, input: crate::types::UserContext) -> Self {
         self.last_modified_by = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
+    /// <p>Information about the user who created or modified a SageMaker resource.</p>
     pub fn set_last_modified_by(mut self, input: ::std::option::Option<crate::types::UserContext>) -> Self {
         self.last_modified_by = input;
         self
     }
-    /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
+    /// <p>Information about the user who created or modified a SageMaker resource.</p>
     pub fn get_last_modified_by(&self) -> &::std::option::Option<crate::types::UserContext> {
         &self.last_modified_by
     }

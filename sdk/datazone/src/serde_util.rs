@@ -2691,6 +2691,15 @@ pub(crate) fn row_filter_configuration_correct_errors(
     builder
 }
 
+pub(crate) fn s3_properties_output_correct_errors(
+    mut builder: crate::types::builders::S3PropertiesOutputBuilder,
+) -> crate::types::builders::S3PropertiesOutputBuilder {
+    if builder.s3_uri.is_none() {
+        builder.s3_uri = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn sage_maker_run_configuration_output_correct_errors(
     mut builder: crate::types::builders::SageMakerRunConfigurationOutputBuilder,
 ) -> crate::types::builders::SageMakerRunConfigurationOutputBuilder {

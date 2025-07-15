@@ -4,6 +4,7 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`pipeline_name(impl Into<String>)`](crate::operation::describe_pipeline::builders::DescribePipelineFluentBuilder::pipeline_name) / [`set_pipeline_name(Option<String>)`](crate::operation::describe_pipeline::builders::DescribePipelineFluentBuilder::set_pipeline_name):<br>required: **true**<br><p>The name or Amazon Resource Name (ARN) of the pipeline to describe.</p><br>
+    ///   - [`pipeline_version_id(i64)`](crate::operation::describe_pipeline::builders::DescribePipelineFluentBuilder::pipeline_version_id) / [`set_pipeline_version_id(Option<i64>)`](crate::operation::describe_pipeline::builders::DescribePipelineFluentBuilder::set_pipeline_version_id):<br>required: **false**<br><p>The ID of the pipeline version to describe.</p><br>
     /// - On success, responds with [`DescribePipelineOutput`](crate::operation::describe_pipeline::DescribePipelineOutput) with field(s):
     ///   - [`pipeline_arn(Option<String>)`](crate::operation::describe_pipeline::DescribePipelineOutput::pipeline_arn): <p>The Amazon Resource Name (ARN) of the pipeline.</p>
     ///   - [`pipeline_name(Option<String>)`](crate::operation::describe_pipeline::DescribePipelineOutput::pipeline_name): <p>The name of the pipeline.</p>
@@ -15,9 +16,11 @@ impl super::Client {
     ///   - [`creation_time(Option<DateTime>)`](crate::operation::describe_pipeline::DescribePipelineOutput::creation_time): <p>The time when the pipeline was created.</p>
     ///   - [`last_modified_time(Option<DateTime>)`](crate::operation::describe_pipeline::DescribePipelineOutput::last_modified_time): <p>The time when the pipeline was last modified.</p>
     ///   - [`last_run_time(Option<DateTime>)`](crate::operation::describe_pipeline::DescribePipelineOutput::last_run_time): <p>The time when the pipeline was last run.</p>
-    ///   - [`created_by(Option<UserContext>)`](crate::operation::describe_pipeline::DescribePipelineOutput::created_by): <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
-    ///   - [`last_modified_by(Option<UserContext>)`](crate::operation::describe_pipeline::DescribePipelineOutput::last_modified_by): <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
+    ///   - [`created_by(Option<UserContext>)`](crate::operation::describe_pipeline::DescribePipelineOutput::created_by): <p>Information about the user who created or modified a SageMaker resource.</p>
+    ///   - [`last_modified_by(Option<UserContext>)`](crate::operation::describe_pipeline::DescribePipelineOutput::last_modified_by): <p>Information about the user who created or modified a SageMaker resource.</p>
     ///   - [`parallelism_configuration(Option<ParallelismConfiguration>)`](crate::operation::describe_pipeline::DescribePipelineOutput::parallelism_configuration): <p>Lists the parallelism configuration applied to the pipeline.</p>
+    ///   - [`pipeline_version_display_name(Option<String>)`](crate::operation::describe_pipeline::DescribePipelineOutput::pipeline_version_display_name): <p>The display name of the pipeline version.</p>
+    ///   - [`pipeline_version_description(Option<String>)`](crate::operation::describe_pipeline::DescribePipelineOutput::pipeline_version_description): <p>The description of the pipeline version.</p>
     /// - On failure, responds with [`SdkError<DescribePipelineError>`](crate::operation::describe_pipeline::DescribePipelineError)
     pub fn describe_pipeline(&self) -> crate::operation::describe_pipeline::builders::DescribePipelineFluentBuilder {
         crate::operation::describe_pipeline::builders::DescribePipelineFluentBuilder::new(self.handle.clone())

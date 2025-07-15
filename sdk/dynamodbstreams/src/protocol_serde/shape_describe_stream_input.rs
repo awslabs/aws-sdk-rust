@@ -15,5 +15,11 @@ pub fn ser_describe_stream_input_input(
     if let Some(var_3) = &input.exclusive_start_shard_id {
         object.key("ExclusiveStartShardId").string(var_3.as_str());
     }
+    if let Some(var_4) = &input.shard_filter {
+        #[allow(unused_mut)]
+        let mut object_5 = object.key("ShardFilter").start_object();
+        crate::protocol_serde::shape_shard_filter::ser_shard_filter(&mut object_5, var_4)?;
+        object_5.finish();
+    }
     Ok(())
 }

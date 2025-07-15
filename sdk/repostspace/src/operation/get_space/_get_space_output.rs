@@ -15,6 +15,10 @@ pub struct GetSpaceOutput {
     pub configuration_status: crate::types::ConfigurationStatus,
     /// <p>The Identity Center identifier for the Application Instance.</p>
     pub client_id: ::std::string::String,
+    /// <p></p>
+    pub identity_store_id: ::std::option::Option<::std::string::String>,
+    /// <p></p>
+    pub application_arn: ::std::option::Option<::std::string::String>,
     /// <p>The description of the private re:Post.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The approval status of the custom subdomain.</p>
@@ -47,6 +51,8 @@ pub struct GetSpaceOutput {
     pub user_count: ::std::option::Option<i32>,
     /// <p>The content size of the private re:Post.</p>
     pub content_size: ::std::option::Option<i64>,
+    /// <p></p>
+    pub supported_email_domains: ::std::option::Option<crate::types::SupportedEmailDomainsStatus>,
     _request_id: Option<String>,
 }
 impl GetSpaceOutput {
@@ -78,6 +84,14 @@ impl GetSpaceOutput {
     pub fn client_id(&self) -> &str {
         use std::ops::Deref;
         self.client_id.deref()
+    }
+    /// <p></p>
+    pub fn identity_store_id(&self) -> ::std::option::Option<&str> {
+        self.identity_store_id.as_deref()
+    }
+    /// <p></p>
+    pub fn application_arn(&self) -> ::std::option::Option<&str> {
+        self.application_arn.as_deref()
     }
     /// <p>The description of the private re:Post.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
@@ -147,6 +161,10 @@ impl GetSpaceOutput {
     pub fn content_size(&self) -> ::std::option::Option<i64> {
         self.content_size
     }
+    /// <p></p>
+    pub fn supported_email_domains(&self) -> ::std::option::Option<&crate::types::SupportedEmailDomainsStatus> {
+        self.supported_email_domains.as_ref()
+    }
 }
 impl ::std::fmt::Debug for GetSpaceOutput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -157,6 +175,8 @@ impl ::std::fmt::Debug for GetSpaceOutput {
         formatter.field("status", &self.status);
         formatter.field("configuration_status", &self.configuration_status);
         formatter.field("client_id", &self.client_id);
+        formatter.field("identity_store_id", &self.identity_store_id);
+        formatter.field("application_arn", &self.application_arn);
         formatter.field("description", &"*** Sensitive Data Redacted ***");
         formatter.field("vanity_domain_status", &self.vanity_domain_status);
         formatter.field("vanity_domain", &self.vanity_domain);
@@ -172,6 +192,7 @@ impl ::std::fmt::Debug for GetSpaceOutput {
         formatter.field("user_kms_key", &self.user_kms_key);
         formatter.field("user_count", &self.user_count);
         formatter.field("content_size", &self.content_size);
+        formatter.field("supported_email_domains", &self.supported_email_domains);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }
@@ -198,6 +219,8 @@ pub struct GetSpaceOutputBuilder {
     pub(crate) status: ::std::option::Option<::std::string::String>,
     pub(crate) configuration_status: ::std::option::Option<crate::types::ConfigurationStatus>,
     pub(crate) client_id: ::std::option::Option<::std::string::String>,
+    pub(crate) identity_store_id: ::std::option::Option<::std::string::String>,
+    pub(crate) application_arn: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) vanity_domain_status: ::std::option::Option<crate::types::VanityDomainStatus>,
     pub(crate) vanity_domain: ::std::option::Option<::std::string::String>,
@@ -213,6 +236,7 @@ pub struct GetSpaceOutputBuilder {
     pub(crate) user_kms_key: ::std::option::Option<::std::string::String>,
     pub(crate) user_count: ::std::option::Option<i32>,
     pub(crate) content_size: ::std::option::Option<i64>,
+    pub(crate) supported_email_domains: ::std::option::Option<crate::types::SupportedEmailDomainsStatus>,
     _request_id: Option<String>,
 }
 impl GetSpaceOutputBuilder {
@@ -305,6 +329,34 @@ impl GetSpaceOutputBuilder {
     /// <p>The Identity Center identifier for the Application Instance.</p>
     pub fn get_client_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_id
+    }
+    /// <p></p>
+    pub fn identity_store_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.identity_store_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p></p>
+    pub fn set_identity_store_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.identity_store_id = input;
+        self
+    }
+    /// <p></p>
+    pub fn get_identity_store_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.identity_store_id
+    }
+    /// <p></p>
+    pub fn application_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.application_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p></p>
+    pub fn set_application_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.application_arn = input;
+        self
+    }
+    /// <p></p>
+    pub fn get_application_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_arn
     }
     /// <p>The description of the private re:Post.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -549,6 +601,20 @@ impl GetSpaceOutputBuilder {
     pub fn get_content_size(&self) -> &::std::option::Option<i64> {
         &self.content_size
     }
+    /// <p></p>
+    pub fn supported_email_domains(mut self, input: crate::types::SupportedEmailDomainsStatus) -> Self {
+        self.supported_email_domains = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p></p>
+    pub fn set_supported_email_domains(mut self, input: ::std::option::Option<crate::types::SupportedEmailDomainsStatus>) -> Self {
+        self.supported_email_domains = input;
+        self
+    }
+    /// <p></p>
+    pub fn get_supported_email_domains(&self) -> &::std::option::Option<crate::types::SupportedEmailDomainsStatus> {
+        &self.supported_email_domains
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -610,6 +676,8 @@ impl GetSpaceOutputBuilder {
                     "client_id was not specified but it is required when building GetSpaceOutput",
                 )
             })?,
+            identity_store_id: self.identity_store_id,
+            application_arn: self.application_arn,
             description: self.description,
             vanity_domain_status: self.vanity_domain_status.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
@@ -655,6 +723,7 @@ impl GetSpaceOutputBuilder {
             user_kms_key: self.user_kms_key,
             user_count: self.user_count,
             content_size: self.content_size,
+            supported_email_domains: self.supported_email_domains,
             _request_id: self._request_id,
         })
     }
@@ -668,6 +737,8 @@ impl ::std::fmt::Debug for GetSpaceOutputBuilder {
         formatter.field("status", &self.status);
         formatter.field("configuration_status", &self.configuration_status);
         formatter.field("client_id", &self.client_id);
+        formatter.field("identity_store_id", &self.identity_store_id);
+        formatter.field("application_arn", &self.application_arn);
         formatter.field("description", &"*** Sensitive Data Redacted ***");
         formatter.field("vanity_domain_status", &self.vanity_domain_status);
         formatter.field("vanity_domain", &self.vanity_domain);
@@ -683,6 +754,7 @@ impl ::std::fmt::Debug for GetSpaceOutputBuilder {
         formatter.field("user_kms_key", &self.user_kms_key);
         formatter.field("user_count", &self.user_count);
         formatter.field("content_size", &self.content_size);
+        formatter.field("supported_email_domains", &self.supported_email_domains);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }

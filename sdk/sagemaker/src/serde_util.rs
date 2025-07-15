@@ -6050,6 +6050,18 @@ pub(crate) fn efs_file_system_config_correct_errors(
     builder
 }
 
+pub(crate) fn f_sx_lustre_config_correct_errors(
+    mut builder: crate::types::builders::FSxLustreConfigBuilder,
+) -> crate::types::builders::FSxLustreConfigBuilder {
+    if builder.size_in_gib.is_none() {
+        builder.size_in_gib = Some(Default::default())
+    }
+    if builder.per_unit_storage_throughput.is_none() {
+        builder.per_unit_storage_throughput = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn f_sx_lustre_file_system_correct_errors(
     mut builder: crate::types::builders::FSxLustreFileSystemBuilder,
 ) -> crate::types::builders::FSxLustreFileSystemBuilder {

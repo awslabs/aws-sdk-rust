@@ -36,6 +36,8 @@ pub struct SpaceData {
     pub user_count: ::std::option::Option<i32>,
     /// <p>The content size of the private re:Post.</p>
     pub content_size: ::std::option::Option<i64>,
+    /// <p></p>
+    pub supported_email_domains: ::std::option::Option<crate::types::SupportedEmailDomainsStatus>,
 }
 impl SpaceData {
     /// <p>The unique ID of the private re:Post.</p>
@@ -108,6 +110,10 @@ impl SpaceData {
     pub fn content_size(&self) -> ::std::option::Option<i64> {
         self.content_size
     }
+    /// <p></p>
+    pub fn supported_email_domains(&self) -> ::std::option::Option<&crate::types::SupportedEmailDomainsStatus> {
+        self.supported_email_domains.as_ref()
+    }
 }
 impl ::std::fmt::Debug for SpaceData {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -128,6 +134,7 @@ impl ::std::fmt::Debug for SpaceData {
         formatter.field("user_kms_key", &self.user_kms_key);
         formatter.field("user_count", &self.user_count);
         formatter.field("content_size", &self.content_size);
+        formatter.field("supported_email_domains", &self.supported_email_domains);
         formatter.finish()
     }
 }
@@ -158,6 +165,7 @@ pub struct SpaceDataBuilder {
     pub(crate) user_kms_key: ::std::option::Option<::std::string::String>,
     pub(crate) user_count: ::std::option::Option<i32>,
     pub(crate) content_size: ::std::option::Option<i64>,
+    pub(crate) supported_email_domains: ::std::option::Option<crate::types::SupportedEmailDomainsStatus>,
 }
 impl SpaceDataBuilder {
     /// <p>The unique ID of the private re:Post.</p>
@@ -395,6 +403,20 @@ impl SpaceDataBuilder {
     pub fn get_content_size(&self) -> &::std::option::Option<i64> {
         &self.content_size
     }
+    /// <p></p>
+    pub fn supported_email_domains(mut self, input: crate::types::SupportedEmailDomainsStatus) -> Self {
+        self.supported_email_domains = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p></p>
+    pub fn set_supported_email_domains(mut self, input: ::std::option::Option<crate::types::SupportedEmailDomainsStatus>) -> Self {
+        self.supported_email_domains = input;
+        self
+    }
+    /// <p></p>
+    pub fn get_supported_email_domains(&self) -> &::std::option::Option<crate::types::SupportedEmailDomainsStatus> {
+        &self.supported_email_domains
+    }
     /// Consumes the builder and constructs a [`SpaceData`](crate::types::SpaceData).
     /// This method will fail if any of the following fields are not set:
     /// - [`space_id`](crate::types::builders::SpaceDataBuilder::space_id)
@@ -481,6 +503,7 @@ impl SpaceDataBuilder {
             user_kms_key: self.user_kms_key,
             user_count: self.user_count,
             content_size: self.content_size,
+            supported_email_domains: self.supported_email_domains,
         })
     }
 }
@@ -503,6 +526,7 @@ impl ::std::fmt::Debug for SpaceDataBuilder {
         formatter.field("user_kms_key", &self.user_kms_key);
         formatter.field("user_count", &self.user_count);
         formatter.field("content_size", &self.content_size);
+        formatter.field("supported_email_domains", &self.supported_email_domains);
         formatter.finish()
     }
 }

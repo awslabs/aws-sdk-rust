@@ -11,6 +11,7 @@ impl super::Client {
     ///   - [`topic(Option<TopicDetails>)`](crate::operation::describe_topic::DescribeTopicOutput::topic): <p>The definition of a topic.</p>
     ///   - [`request_id(Option<String>)`](crate::operation::describe_topic::DescribeTopicOutput::request_id): <p>The Amazon Web Services request ID for this operation.</p>
     ///   - [`status(i32)`](crate::operation::describe_topic::DescribeTopicOutput::status): <p>The HTTP status of the request.</p>
+    ///   - [`custom_instructions(Option<CustomInstructions>)`](crate::operation::describe_topic::DescribeTopicOutput::custom_instructions): <p>Custom instructions for the topic.</p>
     /// - On failure, responds with [`SdkError<DescribeTopicError>`](crate::operation::describe_topic::DescribeTopicError)
     pub fn describe_topic(&self) -> crate::operation::describe_topic::builders::DescribeTopicFluentBuilder {
         crate::operation::describe_topic::builders::DescribeTopicFluentBuilder::new(self.handle.clone())

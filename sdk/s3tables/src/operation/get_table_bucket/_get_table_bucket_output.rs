@@ -13,6 +13,8 @@ pub struct GetTableBucketOutput {
     pub created_at: ::aws_smithy_types::DateTime,
     /// <p>The unique identifier of the table bucket.</p>
     pub table_bucket_id: ::std::option::Option<::std::string::String>,
+    /// <p>The type of the table bucket.</p>
+    pub r#type: ::std::option::Option<crate::types::TableBucketType>,
     _request_id: Option<String>,
 }
 impl GetTableBucketOutput {
@@ -39,6 +41,10 @@ impl GetTableBucketOutput {
     pub fn table_bucket_id(&self) -> ::std::option::Option<&str> {
         self.table_bucket_id.as_deref()
     }
+    /// <p>The type of the table bucket.</p>
+    pub fn r#type(&self) -> ::std::option::Option<&crate::types::TableBucketType> {
+        self.r#type.as_ref()
+    }
 }
 impl ::aws_types::request_id::RequestId for GetTableBucketOutput {
     fn request_id(&self) -> Option<&str> {
@@ -61,6 +67,7 @@ pub struct GetTableBucketOutputBuilder {
     pub(crate) owner_account_id: ::std::option::Option<::std::string::String>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) table_bucket_id: ::std::option::Option<::std::string::String>,
+    pub(crate) r#type: ::std::option::Option<crate::types::TableBucketType>,
     _request_id: Option<String>,
 }
 impl GetTableBucketOutputBuilder {
@@ -138,6 +145,20 @@ impl GetTableBucketOutputBuilder {
     pub fn get_table_bucket_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.table_bucket_id
     }
+    /// <p>The type of the table bucket.</p>
+    pub fn r#type(mut self, input: crate::types::TableBucketType) -> Self {
+        self.r#type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The type of the table bucket.</p>
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::TableBucketType>) -> Self {
+        self.r#type = input;
+        self
+    }
+    /// <p>The type of the table bucket.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::TableBucketType> {
+        &self.r#type
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -182,6 +203,7 @@ impl GetTableBucketOutputBuilder {
                 )
             })?,
             table_bucket_id: self.table_bucket_id,
+            r#type: self.r#type,
             _request_id: self._request_id,
         })
     }

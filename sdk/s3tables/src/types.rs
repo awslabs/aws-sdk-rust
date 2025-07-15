@@ -47,6 +47,8 @@ pub use crate::types::_table_bucket_maintenance_type::TableBucketMaintenanceType
 
 pub use crate::types::_table_bucket_summary::TableBucketSummary;
 
+pub use crate::types::_table_bucket_type::TableBucketType;
+
 pub use crate::types::_namespace_summary::NamespaceSummary;
 
 mod _encryption_configuration;
@@ -82,6 +84,8 @@ mod _table_bucket_maintenance_settings;
 mod _table_bucket_maintenance_type;
 
 mod _table_bucket_summary;
+
+mod _table_bucket_type;
 
 mod _table_maintenance_configuration_value;
 

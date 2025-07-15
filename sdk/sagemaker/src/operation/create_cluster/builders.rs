@@ -141,6 +141,30 @@ impl CreateClusterFluentBuilder {
     pub fn get_instance_groups(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ClusterInstanceGroupSpecification>> {
         self.inner.get_instance_groups()
     }
+    ///
+    /// Appends an item to `RestrictedInstanceGroups`.
+    ///
+    /// To override the contents of this collection use [`set_restricted_instance_groups`](Self::set_restricted_instance_groups).
+    ///
+    /// <p>The specialized instance groups for training models like Amazon Nova to be created in the SageMaker HyperPod cluster.</p>
+    pub fn restricted_instance_groups(mut self, input: crate::types::ClusterRestrictedInstanceGroupSpecification) -> Self {
+        self.inner = self.inner.restricted_instance_groups(input);
+        self
+    }
+    /// <p>The specialized instance groups for training models like Amazon Nova to be created in the SageMaker HyperPod cluster.</p>
+    pub fn set_restricted_instance_groups(
+        mut self,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ClusterRestrictedInstanceGroupSpecification>>,
+    ) -> Self {
+        self.inner = self.inner.set_restricted_instance_groups(input);
+        self
+    }
+    /// <p>The specialized instance groups for training models like Amazon Nova to be created in the SageMaker HyperPod cluster.</p>
+    pub fn get_restricted_instance_groups(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ClusterRestrictedInstanceGroupSpecification>> {
+        self.inner.get_restricted_instance_groups()
+    }
     /// <p>Specifies the Amazon Virtual Private Cloud (VPC) that is associated with the Amazon SageMaker HyperPod cluster. You can control access to and from your resources by configuring your VPC. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/infrastructure-give-access.html">Give SageMaker access to resources in your Amazon VPC</a>.</p><note>
     /// <p>When your Amazon VPC and subnets support IPv6, network communications differ based on the cluster orchestration platform:</p>
     /// <ul>

@@ -129,6 +129,9 @@ pub(crate) fn de_describe_event_bus(
                             .transpose()?,
                     );
                 }
+                "LogConfig" => {
+                    builder = builder.set_log_config(crate::protocol_serde::shape_log_config::de_log_config(tokens)?);
+                }
                 "CreationTime" => {
                     builder = builder.set_creation_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                         tokens.next(),

@@ -14,6 +14,8 @@ pub enum ConnectionPropertiesInput {
     IamProperties(crate::types::IamPropertiesInput),
     /// <p>The Amazon Redshift properties of a connection.</p>
     RedshiftProperties(crate::types::RedshiftPropertiesInput),
+    /// <p>The Amazon S3 properties of a connection.</p>
+    S3Properties(crate::types::S3PropertiesInput),
     /// <p>The Spark EMR properties of a connection.</p>
     SparkEmrProperties(crate::types::SparkEmrPropertiesInput),
     /// <p>The Spark Amazon Web Services Glue properties of a connection.</p>
@@ -93,6 +95,19 @@ impl ConnectionPropertiesInput {
     /// Returns true if this is a [`RedshiftProperties`](crate::types::ConnectionPropertiesInput::RedshiftProperties).
     pub fn is_redshift_properties(&self) -> bool {
         self.as_redshift_properties().is_ok()
+    }
+    /// Tries to convert the enum instance into [`S3Properties`](crate::types::ConnectionPropertiesInput::S3Properties), extracting the inner [`S3PropertiesInput`](crate::types::S3PropertiesInput).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_s3_properties(&self) -> ::std::result::Result<&crate::types::S3PropertiesInput, &Self> {
+        if let ConnectionPropertiesInput::S3Properties(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`S3Properties`](crate::types::ConnectionPropertiesInput::S3Properties).
+    pub fn is_s3_properties(&self) -> bool {
+        self.as_s3_properties().is_ok()
     }
     /// Tries to convert the enum instance into [`SparkEmrProperties`](crate::types::ConnectionPropertiesInput::SparkEmrProperties), extracting the inner [`SparkEmrPropertiesInput`](crate::types::SparkEmrPropertiesInput).
     /// Returns `Err(&Self)` if it can't be converted.

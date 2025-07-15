@@ -59,7 +59,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-//! aws-sdk-ivsrealtime = "1.83.0"
+//! aws-sdk-ivsrealtime = "1.84.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!
@@ -212,8 +212,6 @@ pub mod primitives;
 
 /// Data structures used by operation inputs/outputs.
 pub mod types;
-
-mod auth_plugin;
 
 pub(crate) mod client_idempotency_token;
 

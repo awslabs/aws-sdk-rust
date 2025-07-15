@@ -229,6 +229,23 @@ impl CreateEventBusFluentBuilder {
     pub fn get_dead_letter_config(&self) -> &::std::option::Option<crate::types::DeadLetterConfig> {
         self.inner.get_dead_letter_config()
     }
+    /// <p>The logging configuration settings for the event bus.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/eb-event-bus-logs.html">Configuring logs for event buses</a> in the <i>EventBridge User Guide</i>.</p>
+    pub fn log_config(mut self, input: crate::types::LogConfig) -> Self {
+        self.inner = self.inner.log_config(input);
+        self
+    }
+    /// <p>The logging configuration settings for the event bus.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/eb-event-bus-logs.html">Configuring logs for event buses</a> in the <i>EventBridge User Guide</i>.</p>
+    pub fn set_log_config(mut self, input: ::std::option::Option<crate::types::LogConfig>) -> Self {
+        self.inner = self.inner.set_log_config(input);
+        self
+    }
+    /// <p>The logging configuration settings for the event bus.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/eb-event-bus-logs.html">Configuring logs for event buses</a> in the <i>EventBridge User Guide</i>.</p>
+    pub fn get_log_config(&self) -> &::std::option::Option<crate::types::LogConfig> {
+        self.inner.get_log_config()
+    }
     ///
     /// Appends an item to `Tags`.
     ///

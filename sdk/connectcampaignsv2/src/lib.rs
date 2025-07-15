@@ -32,7 +32,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-//! aws-sdk-connectcampaignsv2 = "1.26.0"
+//! aws-sdk-connectcampaignsv2 = "1.27.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!
@@ -185,8 +185,6 @@ pub mod primitives;
 
 /// Data structures used by operation inputs/outputs.
 pub mod types;
-
-mod auth_plugin;
 
 pub(crate) mod protocol_serde;
 

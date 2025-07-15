@@ -5,6 +5,8 @@ pub use crate::types::_topic_refresh_schedule::TopicRefreshScheduleBuilder;
 
 pub use crate::types::_resource_permission::ResourcePermissionBuilder;
 
+pub use crate::types::_custom_instructions::CustomInstructionsBuilder;
+
 pub use crate::types::_topic_details::TopicDetailsBuilder;
 
 pub use crate::types::_topic_config_options::TopicConfigOptionsBuilder;

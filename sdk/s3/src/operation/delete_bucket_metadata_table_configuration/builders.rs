@@ -22,7 +22,14 @@ impl crate::operation::delete_bucket_metadata_table_configuration::builders::Del
 }
 /// Fluent builder constructing a request to `DeleteBucketMetadataTableConfiguration`.
 ///
-/// <p>Deletes a metadata table configuration from a general purpose bucket. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/metadata-tables-overview.html">Accelerating data discovery with S3 Metadata</a> in the <i>Amazon S3 User Guide</i>.</p>
+/// <important>
+/// <p>We recommend that you delete your S3 Metadata configurations by using the V2 <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketMetadataTableConfiguration.html">DeleteBucketMetadataTableConfiguration</a> API operation. We no longer recommend using the V1 <code>DeleteBucketMetadataTableConfiguration</code> API operation.</p>
+/// <p>If you created your S3 Metadata configuration before July 15, 2025, we recommend that you delete and re-create your configuration by using <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateBucketMetadataConfiguration.html">CreateBucketMetadataConfiguration</a> so that you can expire journal table records and create a live inventory table.</p>
+/// </important>
+/// <p>Deletes a V1 S3 Metadata configuration from a general purpose bucket. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/metadata-tables-overview.html">Accelerating data discovery with S3 Metadata</a> in the <i>Amazon S3 User Guide</i>.</p><note>
+/// <p>You can use the V2 <code>DeleteBucketMetadataConfiguration</code> API operation with V1 or V2 metadata table configurations. However, if you try to use the V1 <code>DeleteBucketMetadataTableConfiguration</code> API operation with V2 configurations, you will receive an HTTP <code>405 Method Not Allowed</code> error.</p>
+/// <p>Make sure that you update your processes to use the new V2 API operations (<code>CreateBucketMetadataConfiguration</code>, <code>GetBucketMetadataConfiguration</code>, and <code>DeleteBucketMetadataConfiguration</code>) instead of the V1 API operations.</p>
+/// </note>
 /// <dl>
 /// <dt>
 /// Permissions

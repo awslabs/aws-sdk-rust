@@ -110,6 +110,10 @@ where
                                 crate::protocol_serde::shape_vpc_lattice_configurations::de_vpc_lattice_configurations(tokens)?,
                             );
                         }
+                        "resolvedConfiguration" => {
+                            builder = builder
+                                .set_resolved_configuration(crate::protocol_serde::shape_resolved_configuration::de_resolved_configuration(tokens)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

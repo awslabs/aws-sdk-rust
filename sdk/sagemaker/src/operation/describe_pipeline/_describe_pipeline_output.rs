@@ -23,12 +23,16 @@ pub struct DescribePipelineOutput {
     pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time when the pipeline was last run.</p>
     pub last_run_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
+    /// <p>Information about the user who created or modified a SageMaker resource.</p>
     pub created_by: ::std::option::Option<crate::types::UserContext>,
-    /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
+    /// <p>Information about the user who created or modified a SageMaker resource.</p>
     pub last_modified_by: ::std::option::Option<crate::types::UserContext>,
     /// <p>Lists the parallelism configuration applied to the pipeline.</p>
     pub parallelism_configuration: ::std::option::Option<crate::types::ParallelismConfiguration>,
+    /// <p>The display name of the pipeline version.</p>
+    pub pipeline_version_display_name: ::std::option::Option<::std::string::String>,
+    /// <p>The description of the pipeline version.</p>
+    pub pipeline_version_description: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DescribePipelineOutput {
@@ -72,17 +76,25 @@ impl DescribePipelineOutput {
     pub fn last_run_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_run_time.as_ref()
     }
-    /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
+    /// <p>Information about the user who created or modified a SageMaker resource.</p>
     pub fn created_by(&self) -> ::std::option::Option<&crate::types::UserContext> {
         self.created_by.as_ref()
     }
-    /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
+    /// <p>Information about the user who created or modified a SageMaker resource.</p>
     pub fn last_modified_by(&self) -> ::std::option::Option<&crate::types::UserContext> {
         self.last_modified_by.as_ref()
     }
     /// <p>Lists the parallelism configuration applied to the pipeline.</p>
     pub fn parallelism_configuration(&self) -> ::std::option::Option<&crate::types::ParallelismConfiguration> {
         self.parallelism_configuration.as_ref()
+    }
+    /// <p>The display name of the pipeline version.</p>
+    pub fn pipeline_version_display_name(&self) -> ::std::option::Option<&str> {
+        self.pipeline_version_display_name.as_deref()
+    }
+    /// <p>The description of the pipeline version.</p>
+    pub fn pipeline_version_description(&self) -> ::std::option::Option<&str> {
+        self.pipeline_version_description.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribePipelineOutput {
@@ -114,6 +126,8 @@ pub struct DescribePipelineOutputBuilder {
     pub(crate) created_by: ::std::option::Option<crate::types::UserContext>,
     pub(crate) last_modified_by: ::std::option::Option<crate::types::UserContext>,
     pub(crate) parallelism_configuration: ::std::option::Option<crate::types::ParallelismConfiguration>,
+    pub(crate) pipeline_version_display_name: ::std::option::Option<::std::string::String>,
+    pub(crate) pipeline_version_description: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DescribePipelineOutputBuilder {
@@ -257,31 +271,31 @@ impl DescribePipelineOutputBuilder {
     pub fn get_last_run_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_run_time
     }
-    /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
+    /// <p>Information about the user who created or modified a SageMaker resource.</p>
     pub fn created_by(mut self, input: crate::types::UserContext) -> Self {
         self.created_by = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
+    /// <p>Information about the user who created or modified a SageMaker resource.</p>
     pub fn set_created_by(mut self, input: ::std::option::Option<crate::types::UserContext>) -> Self {
         self.created_by = input;
         self
     }
-    /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
+    /// <p>Information about the user who created or modified a SageMaker resource.</p>
     pub fn get_created_by(&self) -> &::std::option::Option<crate::types::UserContext> {
         &self.created_by
     }
-    /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
+    /// <p>Information about the user who created or modified a SageMaker resource.</p>
     pub fn last_modified_by(mut self, input: crate::types::UserContext) -> Self {
         self.last_modified_by = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
+    /// <p>Information about the user who created or modified a SageMaker resource.</p>
     pub fn set_last_modified_by(mut self, input: ::std::option::Option<crate::types::UserContext>) -> Self {
         self.last_modified_by = input;
         self
     }
-    /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
+    /// <p>Information about the user who created or modified a SageMaker resource.</p>
     pub fn get_last_modified_by(&self) -> &::std::option::Option<crate::types::UserContext> {
         &self.last_modified_by
     }
@@ -298,6 +312,34 @@ impl DescribePipelineOutputBuilder {
     /// <p>Lists the parallelism configuration applied to the pipeline.</p>
     pub fn get_parallelism_configuration(&self) -> &::std::option::Option<crate::types::ParallelismConfiguration> {
         &self.parallelism_configuration
+    }
+    /// <p>The display name of the pipeline version.</p>
+    pub fn pipeline_version_display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.pipeline_version_display_name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The display name of the pipeline version.</p>
+    pub fn set_pipeline_version_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.pipeline_version_display_name = input;
+        self
+    }
+    /// <p>The display name of the pipeline version.</p>
+    pub fn get_pipeline_version_display_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.pipeline_version_display_name
+    }
+    /// <p>The description of the pipeline version.</p>
+    pub fn pipeline_version_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.pipeline_version_description = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The description of the pipeline version.</p>
+    pub fn set_pipeline_version_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.pipeline_version_description = input;
+        self
+    }
+    /// <p>The description of the pipeline version.</p>
+    pub fn get_pipeline_version_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.pipeline_version_description
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
@@ -324,6 +366,8 @@ impl DescribePipelineOutputBuilder {
             created_by: self.created_by,
             last_modified_by: self.last_modified_by,
             parallelism_configuration: self.parallelism_configuration,
+            pipeline_version_display_name: self.pipeline_version_display_name,
+            pipeline_version_description: self.pipeline_version_description,
             _request_id: self._request_id,
         }
     }

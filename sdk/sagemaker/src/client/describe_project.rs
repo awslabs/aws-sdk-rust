@@ -13,10 +13,10 @@ impl super::Client {
     ///   - [`service_catalog_provisioned_product_details(Option<ServiceCatalogProvisionedProductDetails>)`](crate::operation::describe_project::DescribeProjectOutput::service_catalog_provisioned_product_details): <p>Information about a provisioned service catalog product.</p>
     ///   - [`project_status(Option<ProjectStatus>)`](crate::operation::describe_project::DescribeProjectOutput::project_status): <p>The status of the project.</p>
     ///   - [`template_provider_details(Option<Vec::<TemplateProviderDetail>>)`](crate::operation::describe_project::DescribeProjectOutput::template_provider_details): <p>An array of template providers associated with the project.</p>
-    ///   - [`created_by(Option<UserContext>)`](crate::operation::describe_project::DescribeProjectOutput::created_by): <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
+    ///   - [`created_by(Option<UserContext>)`](crate::operation::describe_project::DescribeProjectOutput::created_by): <p>Information about the user who created or modified a SageMaker resource.</p>
     ///   - [`creation_time(Option<DateTime>)`](crate::operation::describe_project::DescribeProjectOutput::creation_time): <p>The time when the project was created.</p>
     ///   - [`last_modified_time(Option<DateTime>)`](crate::operation::describe_project::DescribeProjectOutput::last_modified_time): <p>The timestamp when project was last modified.</p>
-    ///   - [`last_modified_by(Option<UserContext>)`](crate::operation::describe_project::DescribeProjectOutput::last_modified_by): <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
+    ///   - [`last_modified_by(Option<UserContext>)`](crate::operation::describe_project::DescribeProjectOutput::last_modified_by): <p>Information about the user who created or modified a SageMaker resource.</p>
     /// - On failure, responds with [`SdkError<DescribeProjectError>`](crate::operation::describe_project::DescribeProjectError)
     pub fn describe_project(&self) -> crate::operation::describe_project::builders::DescribeProjectFluentBuilder {
         crate::operation::describe_project::builders::DescribeProjectFluentBuilder::new(self.handle.clone())

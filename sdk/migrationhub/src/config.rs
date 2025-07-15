@@ -54,6 +54,15 @@ impl Config {
     pub fn http_client(&self) -> Option<crate::config::SharedHttpClient> {
         self.runtime_components.http_client()
     }
+    /// Return the auth schemes configured on this service config
+    pub fn auth_schemes(&self) -> impl Iterator<Item = ::aws_smithy_runtime_api::client::auth::SharedAuthScheme> + '_ {
+        self.runtime_components.auth_schemes()
+    }
+
+    /// Return the auth scheme resolver configured on this service config
+    pub fn auth_scheme_resolver(&self) -> ::std::option::Option<::aws_smithy_runtime_api::client::auth::SharedAuthSchemeOptionResolver> {
+        self.runtime_components.auth_scheme_option_resolver()
+    }
     /// Returns the endpoint resolver.
     pub fn endpoint_resolver(&self) -> ::aws_smithy_runtime_api::client::endpoint::SharedEndpointResolver {
         self.runtime_components.endpoint_resolver().expect("resolver defaulted if not set")
@@ -257,6 +266,163 @@ impl Builder {
     /// ```
     pub fn set_http_client(&mut self, http_client: Option<crate::config::SharedHttpClient>) -> &mut Self {
         self.runtime_components.set_http_client(http_client);
+        self
+    }
+    /// Adds an auth scheme to the builder
+    ///
+    /// If `auth_scheme` has an existing [AuthSchemeId](aws_smithy_runtime_api::client::auth::AuthSchemeId) in the runtime, the current identity
+    /// resolver and signer for that scheme will be replaced by those from `auth_scheme`.
+    ///
+    /// _Important:_ When introducing a custom auth scheme, ensure you override either
+    /// [`Self::auth_scheme_resolver`] or [`Self::set_auth_scheme_resolver`]
+    /// so that the custom auth scheme is included in the list of resolved auth scheme options.
+    /// [The default auth scheme resolver](crate::config::auth::DefaultAuthSchemeResolver) will not recognize your custom auth scheme.
+    ///
+    /// # Examples
+    /// ```no_run
+    /// # use aws_smithy_runtime_api::{
+    /// #     box_error::BoxError,
+    /// #     client::{
+    /// #         auth::{
+    /// #             AuthScheme, AuthSchemeEndpointConfig, AuthSchemeId, AuthSchemeOption,
+    /// #             AuthSchemeOptionsFuture, Sign,
+    /// #         },
+    /// #         identity::{Identity, IdentityFuture, ResolveIdentity, SharedIdentityResolver},
+    /// #         orchestrator::HttpRequest,
+    /// #         runtime_components::{GetIdentityResolver, RuntimeComponents},
+    /// #   },
+    /// #   shared::IntoShared,
+    /// # };
+    /// # use aws_smithy_types::config_bag::ConfigBag;
+    /// // Auth scheme with customer identity resolver and signer
+    /// #[derive(Debug)]
+    /// struct CustomAuthScheme {
+    ///     id: AuthSchemeId,
+    ///     identity_resolver: SharedIdentityResolver,
+    ///     signer: CustomSigner,
+    /// }
+    /// impl Default for CustomAuthScheme {
+    ///     fn default() -> Self {
+    ///         Self {
+    ///             id: AuthSchemeId::new("custom"),
+    ///             identity_resolver: CustomIdentityResolver.into_shared(),
+    ///             signer: CustomSigner,
+    ///         }
+    ///     }
+    /// }
+    /// impl AuthScheme for CustomAuthScheme {
+    ///     fn scheme_id(&self) -> AuthSchemeId {
+    ///         self.id.clone()
+    ///     }
+    ///     fn identity_resolver(
+    ///         &self,
+    ///         _identity_resolvers: &dyn GetIdentityResolver,
+    ///     ) -> Option<SharedIdentityResolver> {
+    ///         Some(self.identity_resolver.clone())
+    ///     }
+    ///     fn signer(&self) -> &dyn Sign {
+    ///         &self.signer
+    ///     }
+    /// }
+    ///
+    /// #[derive(Debug, Default)]
+    /// struct CustomSigner;
+    /// impl Sign for CustomSigner {
+    ///     fn sign_http_request(
+    ///         &self,
+    ///         _request: &mut HttpRequest,
+    ///         _identity: &Identity,
+    ///         _auth_scheme_endpoint_config: AuthSchemeEndpointConfig<'_>,
+    ///         _runtime_components: &RuntimeComponents,
+    ///         _config_bag: &ConfigBag,
+    ///     ) -> Result<(), BoxError> {
+    ///         // --snip--
+    /// #      todo!()
+    ///     }
+    /// }
+    ///
+    /// #[derive(Debug)]
+    /// struct CustomIdentityResolver;
+    /// impl ResolveIdentity for CustomIdentityResolver {
+    ///     fn resolve_identity<'a>(
+    ///         &'a self,
+    ///         _runtime_components: &'a RuntimeComponents,
+    ///         _config_bag: &'a ConfigBag,
+    ///     ) -> IdentityFuture<'a> {
+    ///         // --snip--
+    /// #      todo!()
+    ///     }
+    /// }
+    ///
+    /// // Auth scheme resolver that favors `CustomAuthScheme`
+    /// #[derive(Debug)]
+    /// struct CustomAuthSchemeResolver;
+    /// impl aws_sdk_migrationhub::config::auth::ResolveAuthScheme for CustomAuthSchemeResolver {
+    ///     fn resolve_auth_scheme<'a>(
+    ///         &'a self,
+    ///         _params: &'a aws_sdk_migrationhub::config::auth::Params,
+    ///         _cfg: &'a ConfigBag,
+    ///         _runtime_components: &'a RuntimeComponents,
+    ///     ) -> AuthSchemeOptionsFuture<'a> {
+    ///         AuthSchemeOptionsFuture::ready(Ok(vec![AuthSchemeOption::from(AuthSchemeId::new(
+    ///             "custom",
+    ///         ))]))
+    ///     }
+    /// }
+    ///
+    /// let config = aws_sdk_migrationhub::Config::builder()
+    ///     .push_auth_scheme(CustomAuthScheme::default())
+    ///     .auth_scheme_resolver(CustomAuthSchemeResolver)
+    ///     // other configurations
+    ///     .build();
+    /// ```
+    pub fn push_auth_scheme(mut self, auth_scheme: impl ::aws_smithy_runtime_api::client::auth::AuthScheme + 'static) -> Self {
+        self.runtime_components.push_auth_scheme(auth_scheme);
+        self
+    }
+
+    /// Set the auth scheme resolver for the builder
+    ///
+    /// # Examples
+    /// ```no_run
+    /// # use aws_smithy_runtime_api::{
+    /// #     client::{
+    /// #         auth::AuthSchemeOptionsFuture,
+    /// #         runtime_components::RuntimeComponents,
+    /// #   },
+    /// # };
+    /// # use aws_smithy_types::config_bag::ConfigBag;
+    /// #[derive(Debug)]
+    /// struct CustomAuthSchemeResolver;
+    /// impl aws_sdk_migrationhub::config::auth::ResolveAuthScheme for CustomAuthSchemeResolver {
+    ///     fn resolve_auth_scheme<'a>(
+    ///         &'a self,
+    ///         _params: &'a aws_sdk_migrationhub::config::auth::Params,
+    ///         _cfg: &'a ConfigBag,
+    ///         _runtime_components: &'a RuntimeComponents,
+    ///     ) -> AuthSchemeOptionsFuture<'a> {
+    ///         // --snip--
+    /// #      todo!()
+    ///     }
+    /// }
+    ///
+    /// let config = aws_sdk_migrationhub::Config::builder()
+    ///     .auth_scheme_resolver(CustomAuthSchemeResolver)
+    ///     // other configurations
+    ///     .build();
+    /// ```
+    pub fn auth_scheme_resolver(mut self, auth_scheme_resolver: impl crate::config::auth::ResolveAuthScheme + 'static) -> Self {
+        self.set_auth_scheme_resolver(auth_scheme_resolver);
+        self
+    }
+
+    /// Set the auth scheme resolver for the builder
+    ///
+    /// # Examples
+    /// See an example for [`Self::auth_scheme_resolver`].
+    pub fn set_auth_scheme_resolver(&mut self, auth_scheme_resolver: impl crate::config::auth::ResolveAuthScheme + 'static) -> &mut Self {
+        self.runtime_components
+            .set_auth_scheme_option_resolver(::std::option::Option::Some(auth_scheme_resolver.into_shared_resolver()));
         self
     }
     /// Sets the endpoint resolver to use when making requests.
@@ -1122,7 +1288,11 @@ impl ServiceRuntimePlugin {
             ::std::option::Option::Some(cfg.freeze())
         };
         let mut runtime_components = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("ServiceRuntimePlugin");
-        runtime_components.set_endpoint_resolver(Some({
+        runtime_components.set_auth_scheme_option_resolver(::std::option::Option::Some({
+            use crate::config::auth::ResolveAuthScheme;
+            crate::config::auth::DefaultAuthSchemeResolver::default().into_shared_resolver()
+        }));
+        runtime_components.set_endpoint_resolver(::std::option::Option::Some({
             use crate::config::endpoint::ResolveEndpoint;
             crate::config::endpoint::DefaultResolver::new().into_shared_resolver()
         }));
@@ -1380,3 +1550,6 @@ pub mod retry;
 
 /// Timeout configuration.
 pub mod timeout;
+
+/// Types needed to configure auth scheme resolution.
+pub mod auth;

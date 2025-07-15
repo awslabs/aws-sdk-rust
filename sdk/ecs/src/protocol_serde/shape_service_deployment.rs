@@ -89,6 +89,13 @@ where
                                     .transpose()?,
                             );
                         }
+                        "lifecycleStage" => {
+                            builder = builder.set_lifecycle_stage(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::ServiceDeploymentLifecycleStage::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
                         "deploymentConfiguration" => {
                             builder = builder.set_deployment_configuration(
                                 crate::protocol_serde::shape_deployment_configuration::de_deployment_configuration(tokens)?,

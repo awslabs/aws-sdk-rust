@@ -27,6 +27,10 @@ pub use crate::types::_key_type::KeyType;
 
 pub use crate::types::_stream_status::StreamStatus;
 
+pub use crate::types::_shard_filter::ShardFilter;
+
+pub use crate::types::_shard_filter_type::ShardFilterType;
+
 mod _attribute_value;
 
 mod _identity;
@@ -42,6 +46,10 @@ mod _record;
 mod _sequence_number_range;
 
 mod _shard;
+
+mod _shard_filter;
+
+mod _shard_filter_type;
 
 mod _shard_iterator_type;
 

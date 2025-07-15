@@ -1495,6 +1495,10 @@ pub use crate::types::_vpc_attribute_name::VpcAttributeName;
 
 pub use crate::types::_volume_status_item::VolumeStatusItem;
 
+pub use crate::types::_initialization_status_details::InitializationStatusDetails;
+
+pub use crate::types::_initialization_type::InitializationType;
+
 pub use crate::types::_volume_status_attachment_status::VolumeStatusAttachmentStatus;
 
 pub use crate::types::_volume_status_info::VolumeStatusInfo;
@@ -3276,6 +3280,10 @@ mod _inference_accelerator_info;
 mod _inference_device_info;
 
 mod _inference_device_memory_info;
+
+mod _initialization_status_details;
+
+mod _initialization_type;
 
 mod _instance;
 

@@ -202,6 +202,40 @@ impl From<crate::operation::create_bucket::CreateBucketError> for Error {
 impl<R>
     From<
         ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::create_bucket_metadata_configuration::CreateBucketMetadataConfigurationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::create_bucket_metadata_configuration::CreateBucketMetadataConfigurationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_bucket_metadata_configuration::CreateBucketMetadataConfigurationError> for Error {
+    fn from(err: crate::operation::create_bucket_metadata_configuration::CreateBucketMetadataConfigurationError) -> Self {
+        match err {
+            crate::operation::create_bucket_metadata_configuration::CreateBucketMetadataConfigurationError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::create_bucket_metadata_table_configuration::CreateBucketMetadataTableConfigurationError,
             R,
         >,
@@ -465,6 +499,40 @@ impl From<crate::operation::delete_bucket_lifecycle::DeleteBucketLifecycleError>
     fn from(err: crate::operation::delete_bucket_lifecycle::DeleteBucketLifecycleError) -> Self {
         match err {
             crate::operation::delete_bucket_lifecycle::DeleteBucketLifecycleError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::delete_bucket_metadata_configuration::DeleteBucketMetadataConfigurationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::delete_bucket_metadata_configuration::DeleteBucketMetadataConfigurationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_bucket_metadata_configuration::DeleteBucketMetadataConfigurationError> for Error {
+    fn from(err: crate::operation::delete_bucket_metadata_configuration::DeleteBucketMetadataConfigurationError) -> Self {
+        match err {
+            crate::operation::delete_bucket_metadata_configuration::DeleteBucketMetadataConfigurationError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
         }
     }
 }
@@ -1001,6 +1069,38 @@ impl From<crate::operation::get_bucket_logging::GetBucketLoggingError> for Error
     fn from(err: crate::operation::get_bucket_logging::GetBucketLoggingError) -> Self {
         match err {
             crate::operation::get_bucket_logging::GetBucketLoggingError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_bucket_metadata_configuration::GetBucketMetadataConfigurationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_bucket_metadata_configuration::GetBucketMetadataConfigurationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_bucket_metadata_configuration::GetBucketMetadataConfigurationError> for Error {
+    fn from(err: crate::operation::get_bucket_metadata_configuration::GetBucketMetadataConfigurationError) -> Self {
+        match err {
+            crate::operation::get_bucket_metadata_configuration::GetBucketMetadataConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -2485,6 +2585,74 @@ impl From<crate::operation::select_object_content::SelectObjectContentError> for
     fn from(err: crate::operation::select_object_content::SelectObjectContentError) -> Self {
         match err {
             crate::operation::select_object_content::SelectObjectContentError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::update_bucket_metadata_inventory_table_configuration::UpdateBucketMetadataInventoryTableConfigurationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::update_bucket_metadata_inventory_table_configuration::UpdateBucketMetadataInventoryTableConfigurationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_bucket_metadata_inventory_table_configuration::UpdateBucketMetadataInventoryTableConfigurationError> for Error {
+    fn from(
+        err: crate::operation::update_bucket_metadata_inventory_table_configuration::UpdateBucketMetadataInventoryTableConfigurationError,
+    ) -> Self {
+        match err {
+            crate::operation::update_bucket_metadata_inventory_table_configuration::UpdateBucketMetadataInventoryTableConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::update_bucket_metadata_journal_table_configuration::UpdateBucketMetadataJournalTableConfigurationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::update_bucket_metadata_journal_table_configuration::UpdateBucketMetadataJournalTableConfigurationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_bucket_metadata_journal_table_configuration::UpdateBucketMetadataJournalTableConfigurationError> for Error {
+    fn from(err: crate::operation::update_bucket_metadata_journal_table_configuration::UpdateBucketMetadataJournalTableConfigurationError) -> Self {
+        match err {
+            crate::operation::update_bucket_metadata_journal_table_configuration::UpdateBucketMetadataJournalTableConfigurationError::Unhandled(
+                inner,
+            ) => Error::Unhandled(inner),
         }
     }
 }

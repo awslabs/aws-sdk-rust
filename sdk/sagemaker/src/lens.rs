@@ -609,6 +609,16 @@ pub(crate) fn reflens_list_pipeline_parameters_for_execution_output_output_next_
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_pipeline_versions_output_output_next_token(
+    input: &crate::operation::list_pipeline_versions::ListPipelineVersionsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_pipelines_output_output_next_token(
     input: &crate::operation::list_pipelines::ListPipelinesOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -1233,6 +1243,13 @@ pub(crate) fn lens_list_pipeline_parameters_for_execution_output_output_pipeline
     input: crate::operation::list_pipeline_parameters_for_execution::ListPipelineParametersForExecutionOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::Parameter>> {
     let input = input.pipeline_parameters?;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_pipeline_versions_output_output_pipeline_version_summaries(
+    input: crate::operation::list_pipeline_versions::ListPipelineVersionsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::PipelineVersionSummary>> {
+    let input = input.pipeline_version_summaries?;
     ::std::option::Option::Some(input)
 }
 

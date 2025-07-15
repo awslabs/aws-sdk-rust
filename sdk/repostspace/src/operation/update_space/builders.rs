@@ -164,4 +164,18 @@ impl UpdateSpaceFluentBuilder {
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_role_arn()
     }
+    /// <p></p>
+    pub fn supported_email_domains(mut self, input: crate::types::SupportedEmailDomainsParameters) -> Self {
+        self.inner = self.inner.supported_email_domains(input);
+        self
+    }
+    /// <p></p>
+    pub fn set_supported_email_domains(mut self, input: ::std::option::Option<crate::types::SupportedEmailDomainsParameters>) -> Self {
+        self.inner = self.inner.set_supported_email_domains(input);
+        self
+    }
+    /// <p></p>
+    pub fn get_supported_email_domains(&self) -> &::std::option::Option<crate::types::SupportedEmailDomainsParameters> {
+        self.inner.get_supported_email_domains()
+    }
 }

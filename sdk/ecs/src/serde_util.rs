@@ -349,3 +349,35 @@ pub(crate) fn service_connect_client_alias_correct_errors(
     }
     builder
 }
+
+pub(crate) fn service_connect_test_traffic_rules_correct_errors(
+    mut builder: crate::types::builders::ServiceConnectTestTrafficRulesBuilder,
+) -> crate::types::builders::ServiceConnectTestTrafficRulesBuilder {
+    if builder.header.is_none() {
+        builder.header = {
+            let builder = crate::types::builders::ServiceConnectTestTrafficHeaderRulesBuilder::default();
+            crate::serde_util::service_connect_test_traffic_header_rules_correct_errors(builder)
+                .build()
+                .ok()
+        }
+    }
+    builder
+}
+
+pub(crate) fn service_connect_test_traffic_header_rules_correct_errors(
+    mut builder: crate::types::builders::ServiceConnectTestTrafficHeaderRulesBuilder,
+) -> crate::types::builders::ServiceConnectTestTrafficHeaderRulesBuilder {
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn service_connect_test_traffic_header_match_rules_correct_errors(
+    mut builder: crate::types::builders::ServiceConnectTestTrafficHeaderMatchRulesBuilder,
+) -> crate::types::builders::ServiceConnectTestTrafficHeaderMatchRulesBuilder {
+    if builder.exact.is_none() {
+        builder.exact = Some(Default::default())
+    }
+    builder
+}

@@ -59,13 +59,13 @@ pub(crate) struct Handle {
 /// # Using the `Client`
 ///
 /// A client has a function for every operation that can be performed by the service.
-/// For example, the [`BatchAddRole`](crate::operation::batch_add_role) operation has
-/// a [`Client::batch_add_role`], function which returns a builder for that operation.
+/// For example, the [`BatchAddChannelRoleToAccessors`](crate::operation::batch_add_channel_role_to_accessors) operation has
+/// a [`Client::batch_add_channel_role_to_accessors`], function which returns a builder for that operation.
 /// The fluent builder ultimately has a `send()` function that returns an async future that
 /// returns a result, as illustrated below:
 ///
 /// ```rust,ignore
-/// let result = client.batch_add_role()
+/// let result = client.batch_add_channel_role_to_accessors()
 ///     .space_id("example")
 ///     .send()
 ///     .await;
@@ -74,6 +74,20 @@ pub(crate) struct Handle {
 /// The underlying HTTP requests that get made by this can be modified with the `customize_operation`
 /// function on the fluent builder. See the [`customize`](crate::client::customize) module for more
 /// information.
+/// # Waiters
+///
+/// This client provides `wait_until` methods behind the [`Waiters`](crate::client::Waiters) trait.
+/// To use them, simply import the trait, and then call one of the `wait_until` methods. This will
+/// return a waiter fluent builder that takes various parameters, which are documented on the builder
+/// type. Once parameters have been provided, the `wait` method can be called to initiate waiting.
+///
+/// For example, if there was a `wait_until_thing` method, it could look like:
+/// ```rust,ignore
+/// let result = client.wait_until_thing()
+///     .thing_id("someId")
+///     .wait(Duration::from_secs(120))
+///     .await;
+/// ```
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct Client {
     handle: ::std::sync::Arc<Handle>,
@@ -120,15 +134,45 @@ impl Client {
     }
 }
 
+///
+/// Waiter functions for the client.
+///
+/// Import this trait to get `wait_until` methods on the client.
+///
+pub trait Waiters {
+    /// Wait for `channel_created`
+    fn wait_until_channel_created(&self) -> crate::waiters::channel_created::ChannelCreatedFluentBuilder;
+    /// Wait for `channel_deleted`
+    fn wait_until_channel_deleted(&self) -> crate::waiters::channel_deleted::ChannelDeletedFluentBuilder;
+    /// Wait for `space_created`
+    fn wait_until_space_created(&self) -> crate::waiters::space_created::SpaceCreatedFluentBuilder;
+    /// Wait for `space_deleted`
+    fn wait_until_space_deleted(&self) -> crate::waiters::space_deleted::SpaceDeletedFluentBuilder;
+}
+impl Waiters for Client {
+    fn wait_until_channel_created(&self) -> crate::waiters::channel_created::ChannelCreatedFluentBuilder {
+        crate::waiters::channel_created::ChannelCreatedFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_channel_deleted(&self) -> crate::waiters::channel_deleted::ChannelDeletedFluentBuilder {
+        crate::waiters::channel_deleted::ChannelDeletedFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_space_created(&self) -> crate::waiters::space_created::SpaceCreatedFluentBuilder {
+        crate::waiters::space_created::SpaceCreatedFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_space_deleted(&self) -> crate::waiters::space_deleted::SpaceDeletedFluentBuilder {
+        crate::waiters::space_deleted::SpaceDeletedFluentBuilder::new(self.handle.clone())
+    }
+}
+
 impl Client {
     /// Creates a new client from an [SDK Config](::aws_types::sdk_config::SdkConfig).
     ///
     /// # Panics
     ///
     /// - This method will panic if the `sdk_config` is missing an async sleep implementation. If you experience this panic, set
-    ///     the `sleep_impl` on the Config passed into this function to fix it.
+    ///   the `sleep_impl` on the Config passed into this function to fix it.
     /// - This method will panic if the `sdk_config` is missing an HTTP connector. If you experience this panic, set the
-    ///     `http_connector` on the Config passed into this function to fix it.
+    ///   `http_connector` on the Config passed into this function to fix it.
     /// - This method will panic if no `BehaviorVersion` is provided. If you experience this panic, set `behavior_version` on the Config or enable the `behavior-version-latest` Cargo feature.
     #[track_caller]
     pub fn new(sdk_config: &::aws_types::sdk_config::SdkConfig) -> Self {
@@ -136,9 +180,15 @@ impl Client {
     }
 }
 
+mod batch_add_channel_role_to_accessors;
+
 mod batch_add_role;
 
+mod batch_remove_channel_role_from_accessors;
+
 mod batch_remove_role;
+
+mod create_channel;
 
 mod create_space;
 
@@ -153,7 +203,7 @@ mod create_space;
 /// # let client: aws_sdk_repostspace::Client = unimplemented!();
 /// use ::http::header::{HeaderName, HeaderValue};
 ///
-/// let result = client.batch_add_role()
+/// let result = client.batch_add_channel_role_to_accessors()
 ///     .customize()
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
@@ -173,7 +223,11 @@ mod delete_space;
 
 mod deregister_admin;
 
+mod get_channel;
+
 mod get_space;
+
+mod list_channels;
 
 mod list_spaces;
 
@@ -186,5 +240,7 @@ mod send_invites;
 mod tag_resource;
 
 mod untag_resource;
+
+mod update_channel;
 
 mod update_space;

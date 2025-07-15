@@ -553,6 +553,8 @@ pub(crate) mod shape_reserved_instance_offering;
 
 pub(crate) mod shape_s3_glue_data_catalog;
 
+pub(crate) mod shape_s3_vectors_engine;
+
 pub(crate) mod shape_saml_options_input;
 
 pub(crate) mod shape_security_lake_direct_query_data_source;

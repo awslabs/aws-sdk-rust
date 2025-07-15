@@ -16,6 +16,7 @@ use aws_smithy_types::config_bag::{ConfigBag, FrozenLayer, Layer, Storable, Stor
 use aws_smithy_types::Document;
 use aws_types::region::{Region, SigningRegion, SigningRegionSet};
 use aws_types::SigningName;
+use std::borrow::Cow;
 use std::error::Error as StdError;
 use std::fmt;
 use std::time::Duration;
@@ -142,6 +143,8 @@ pub struct SigV4OperationSigningConfig {
     pub signing_options: SigningOptions,
 }
 
+// TODO(AuthRefactoring): Consider implementing a dedicated struct, similar to `MergeTimeoutConfig`, that allows
+// us to implement a custom merge logic for `impl Store`, enabling fold-style merging of `SigV4OperationSigningConfig`.
 impl Storable for SigV4OperationSigningConfig {
     type Storer = StoreReplace<Self>;
 }
@@ -215,24 +218,65 @@ impl StdError for SigV4SigningError {}
 fn extract_endpoint_auth_scheme_signing_name(
     endpoint_config: &AuthSchemeEndpointConfig<'_>,
 ) -> Result<Option<SigningName>, SigV4SigningError> {
-    use SigV4SigningError::BadTypeInEndpointAuthSchemeConfig as UnexpectedType;
-
     match extract_field_from_endpoint_config("signingName", endpoint_config) {
         Some(Document::String(s)) => Ok(Some(SigningName::from(s.to_string()))),
         None => Ok(None),
-        _ => Err(UnexpectedType("signingName")),
+        _ => Err(SigV4SigningError::BadTypeInEndpointAuthSchemeConfig(
+            "signingName",
+        )),
     }
 }
 
 fn extract_endpoint_auth_scheme_signing_region(
     endpoint_config: &AuthSchemeEndpointConfig<'_>,
 ) -> Result<Option<SigningRegion>, SigV4SigningError> {
-    use SigV4SigningError::BadTypeInEndpointAuthSchemeConfig as UnexpectedType;
-
     match extract_field_from_endpoint_config("signingRegion", endpoint_config) {
         Some(Document::String(s)) => Ok(Some(SigningRegion::from(Region::new(s.clone())))),
         None => Ok(None),
-        _ => Err(UnexpectedType("signingRegion")),
+        _ => Err(SigV4SigningError::BadTypeInEndpointAuthSchemeConfig(
+            "signingRegion",
+        )),
+    }
+}
+
+// Extract `SigningOptions` from the given `AuthSchemeEndpointConfig`
+//
+// The implementation may need to be extended in the future to support additional fields
+// of the `authSchemes` endpoint list property.
+fn extract_endpoint_auth_scheme_signing_options<'a>(
+    endpoint_config: &AuthSchemeEndpointConfig<'_>,
+    signing_options: &'a SigningOptions,
+) -> Result<Cow<'a, SigningOptions>, SigV4SigningError> {
+    let double_uri_encode =
+        match extract_field_from_endpoint_config("disableDoubleEncoding", endpoint_config) {
+            Some(Document::Bool(b)) => Some(!b),
+            None => None,
+            _ => {
+                return Err(SigV4SigningError::BadTypeInEndpointAuthSchemeConfig(
+                    "disableDoubleEncoding",
+                ))
+            }
+        };
+    let normalize_uri_path =
+        match extract_field_from_endpoint_config("disableNormalizePath", endpoint_config) {
+            Some(Document::Bool(b)) => Some(!b),
+            None => None,
+            _ => {
+                return Err(SigV4SigningError::BadTypeInEndpointAuthSchemeConfig(
+                    "disableNormalizePath",
+                ))
+            }
+        };
+    match (double_uri_encode, normalize_uri_path) {
+        (None, None) => Ok(Cow::Borrowed(signing_options)),
+        (double_uri_encode, normalize_uri_path) => {
+            let mut signing_options = signing_options.clone();
+            signing_options.double_uri_encode =
+                double_uri_encode.unwrap_or(signing_options.double_uri_encode);
+            signing_options.normalize_uri_path =
+                normalize_uri_path.unwrap_or(signing_options.normalize_uri_path);
+            Ok(Cow::Owned(signing_options))
+        }
     }
 }
 

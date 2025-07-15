@@ -22,7 +22,7 @@ impl crate::operation::batch_remove_role::builders::BatchRemoveRoleInputBuilder 
 }
 /// Fluent builder constructing a request to `BatchRemoveRole`.
 ///
-/// <p>Remove role from multiple users or groups in a private re:Post.</p>
+/// <p>Remove a role from multiple users or groups in a private re:Post.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct BatchRemoveRoleFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

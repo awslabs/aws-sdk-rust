@@ -12,6 +12,10 @@
 /// ```text
 /// # let filtertype = unimplemented!();
 /// match filtertype {
+///     FilterType::AnyOf => { /* ... */ },
+///     FilterType::Contains => { /* ... */ },
+///     FilterType::Equals => { /* ... */ },
+///     FilterType::NoneOf => { /* ... */ },
 ///     FilterType::TermMatch => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -42,6 +46,14 @@
 )]
 pub enum FilterType {
     #[allow(missing_docs)] // documentation missing in model
+    AnyOf,
+    #[allow(missing_docs)] // documentation missing in model
+    Contains,
+    #[allow(missing_docs)] // documentation missing in model
+    Equals,
+    #[allow(missing_docs)] // documentation missing in model
+    NoneOf,
+    #[allow(missing_docs)] // documentation missing in model
     TermMatch,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
@@ -50,6 +62,10 @@ pub enum FilterType {
 impl ::std::convert::From<&str> for FilterType {
     fn from(s: &str) -> Self {
         match s {
+            "ANY_OF" => FilterType::AnyOf,
+            "CONTAINS" => FilterType::Contains,
+            "EQUALS" => FilterType::Equals,
+            "NONE_OF" => FilterType::NoneOf,
             "TERM_MATCH" => FilterType::TermMatch,
             other => FilterType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -66,13 +82,17 @@ impl FilterType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            FilterType::AnyOf => "ANY_OF",
+            FilterType::Contains => "CONTAINS",
+            FilterType::Equals => "EQUALS",
+            FilterType::NoneOf => "NONE_OF",
             FilterType::TermMatch => "TERM_MATCH",
             FilterType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["TERM_MATCH"]
+        &["ANY_OF", "CONTAINS", "EQUALS", "NONE_OF", "TERM_MATCH"]
     }
 }
 impl ::std::convert::AsRef<str> for FilterType {
@@ -95,6 +115,10 @@ impl FilterType {
 impl ::std::fmt::Display for FilterType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            FilterType::AnyOf => write!(f, "ANY_OF"),
+            FilterType::Contains => write!(f, "CONTAINS"),
+            FilterType::Equals => write!(f, "EQUALS"),
+            FilterType::NoneOf => write!(f, "NONE_OF"),
             FilterType::TermMatch => write!(f, "TERM_MATCH"),
             FilterType::Unknown(value) => write!(f, "{}", value),
         }

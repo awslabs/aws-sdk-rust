@@ -170,9 +170,9 @@ impl Client {
     /// # Panics
     ///
     /// - This method will panic if the `sdk_config` is missing an async sleep implementation. If you experience this panic, set
-    ///     the `sleep_impl` on the Config passed into this function to fix it.
+    ///   the `sleep_impl` on the Config passed into this function to fix it.
     /// - This method will panic if the `sdk_config` is missing an HTTP connector. If you experience this panic, set the
-    ///     `http_connector` on the Config passed into this function to fix it.
+    ///   `http_connector` on the Config passed into this function to fix it.
     /// - This method will panic if no `BehaviorVersion` is provided. If you experience this panic, set `behavior_version` on the Config or enable the `behavior-version-latest` Cargo feature.
     #[track_caller]
     pub fn new(sdk_config: &::aws_types::sdk_config::SdkConfig) -> Self {
@@ -187,6 +187,8 @@ mod complete_multipart_upload;
 mod copy_object;
 
 mod create_bucket;
+
+mod create_bucket_metadata_configuration;
 
 mod create_bucket_metadata_table_configuration;
 
@@ -235,6 +237,8 @@ mod delete_bucket_inventory_configuration;
 
 mod delete_bucket_lifecycle;
 
+mod delete_bucket_metadata_configuration;
+
 mod delete_bucket_metadata_table_configuration;
 
 mod delete_bucket_metrics_configuration;
@@ -276,6 +280,8 @@ mod get_bucket_lifecycle_configuration;
 mod get_bucket_location;
 
 mod get_bucket_logging;
+
+mod get_bucket_metadata_configuration;
 
 mod get_bucket_metadata_table_configuration;
 
@@ -398,6 +404,10 @@ mod rename_object;
 mod restore_object;
 
 mod select_object_content;
+
+mod update_bucket_metadata_inventory_table_configuration;
+
+mod update_bucket_metadata_journal_table_configuration;
 
 mod upload_part;
 

@@ -70,14 +70,7 @@ impl GetBucketEncryption {
         config_override: ::std::option::Option<crate::config::Builder>,
     ) -> ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugins {
         let mut runtime_plugins = client_runtime_plugins.with_operation_plugin(Self::new());
-        runtime_plugins = runtime_plugins.with_client_plugin(crate::endpoint_auth_plugin::EndpointBasedAuthOptionsPlugin::new(vec![
-            ::aws_runtime::auth::sigv4::SCHEME_ID,
-            #[cfg(feature = "sigv4a")]
-            {
-                ::aws_runtime::auth::sigv4a::SCHEME_ID
-            },
-            ::aws_smithy_runtime::client::auth::no_auth::NO_AUTH_SCHEME_ID,
-        ]));
+
         if let ::std::option::Option::Some(config_override) = config_override {
             for plugin in config_override.runtime_plugins.iter().cloned() {
                 runtime_plugins = runtime_plugins.with_operation_plugin(plugin);
@@ -103,7 +96,10 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for GetBuck
         ));
 
         cfg.store_put(::aws_smithy_runtime_api::client::auth::AuthSchemeOptionResolverParams::new(
-            ::aws_smithy_runtime_api::client::auth::static_resolver::StaticAuthSchemeOptionResolverParams::new(),
+            crate::config::auth::Params::builder()
+                .operation_name("GetBucketEncryption")
+                .build()
+                .expect("required fields set"),
         ));
 
         cfg.store_put(::aws_smithy_runtime_api::client::orchestrator::SensitiveOutput);

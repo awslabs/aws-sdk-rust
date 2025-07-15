@@ -7,6 +7,8 @@ pub struct UpdateClusterInput {
     pub cluster_name: ::std::option::Option<::std::string::String>,
     /// <p>Specify the instance groups to update.</p>
     pub instance_groups: ::std::option::Option<::std::vec::Vec<crate::types::ClusterInstanceGroupSpecification>>,
+    /// <p>The specialized instance groups for training models like Amazon Nova to be created in the SageMaker HyperPod cluster.</p>
+    pub restricted_instance_groups: ::std::option::Option<::std::vec::Vec<crate::types::ClusterRestrictedInstanceGroupSpecification>>,
     /// <p>The node recovery mode to be applied to the SageMaker HyperPod cluster.</p>
     pub node_recovery: ::std::option::Option<crate::types::ClusterNodeRecovery>,
     /// <p>Specify the names of the instance groups to delete. Use a single <code>,</code> as the separator between multiple names.</p>
@@ -22,6 +24,12 @@ impl UpdateClusterInput {
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.instance_groups.is_none()`.
     pub fn instance_groups(&self) -> &[crate::types::ClusterInstanceGroupSpecification] {
         self.instance_groups.as_deref().unwrap_or_default()
+    }
+    /// <p>The specialized instance groups for training models like Amazon Nova to be created in the SageMaker HyperPod cluster.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.restricted_instance_groups.is_none()`.
+    pub fn restricted_instance_groups(&self) -> &[crate::types::ClusterRestrictedInstanceGroupSpecification] {
+        self.restricted_instance_groups.as_deref().unwrap_or_default()
     }
     /// <p>The node recovery mode to be applied to the SageMaker HyperPod cluster.</p>
     pub fn node_recovery(&self) -> ::std::option::Option<&crate::types::ClusterNodeRecovery> {
@@ -47,6 +55,7 @@ impl UpdateClusterInput {
 pub struct UpdateClusterInputBuilder {
     pub(crate) cluster_name: ::std::option::Option<::std::string::String>,
     pub(crate) instance_groups: ::std::option::Option<::std::vec::Vec<crate::types::ClusterInstanceGroupSpecification>>,
+    pub(crate) restricted_instance_groups: ::std::option::Option<::std::vec::Vec<crate::types::ClusterRestrictedInstanceGroupSpecification>>,
     pub(crate) node_recovery: ::std::option::Option<crate::types::ClusterNodeRecovery>,
     pub(crate) instance_groups_to_delete: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
@@ -85,6 +94,31 @@ impl UpdateClusterInputBuilder {
     /// <p>Specify the instance groups to update.</p>
     pub fn get_instance_groups(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ClusterInstanceGroupSpecification>> {
         &self.instance_groups
+    }
+    /// Appends an item to `restricted_instance_groups`.
+    ///
+    /// To override the contents of this collection use [`set_restricted_instance_groups`](Self::set_restricted_instance_groups).
+    ///
+    /// <p>The specialized instance groups for training models like Amazon Nova to be created in the SageMaker HyperPod cluster.</p>
+    pub fn restricted_instance_groups(mut self, input: crate::types::ClusterRestrictedInstanceGroupSpecification) -> Self {
+        let mut v = self.restricted_instance_groups.unwrap_or_default();
+        v.push(input);
+        self.restricted_instance_groups = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The specialized instance groups for training models like Amazon Nova to be created in the SageMaker HyperPod cluster.</p>
+    pub fn set_restricted_instance_groups(
+        mut self,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ClusterRestrictedInstanceGroupSpecification>>,
+    ) -> Self {
+        self.restricted_instance_groups = input;
+        self
+    }
+    /// <p>The specialized instance groups for training models like Amazon Nova to be created in the SageMaker HyperPod cluster.</p>
+    pub fn get_restricted_instance_groups(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ClusterRestrictedInstanceGroupSpecification>> {
+        &self.restricted_instance_groups
     }
     /// <p>The node recovery mode to be applied to the SageMaker HyperPod cluster.</p>
     pub fn node_recovery(mut self, input: crate::types::ClusterNodeRecovery) -> Self {
@@ -127,6 +161,7 @@ impl UpdateClusterInputBuilder {
         ::std::result::Result::Ok(crate::operation::update_cluster::UpdateClusterInput {
             cluster_name: self.cluster_name,
             instance_groups: self.instance_groups,
+            restricted_instance_groups: self.restricted_instance_groups,
             node_recovery: self.node_recovery,
             instance_groups_to_delete: self.instance_groups_to_delete,
         })

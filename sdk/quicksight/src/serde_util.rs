@@ -81,6 +81,15 @@ pub(crate) fn brand_detail_correct_errors(mut builder: crate::types::builders::B
     builder
 }
 
+pub(crate) fn custom_instructions_correct_errors(
+    mut builder: crate::types::builders::CustomInstructionsBuilder,
+) -> crate::types::builders::CustomInstructionsBuilder {
+    if builder.custom_instructions_string.is_none() {
+        builder.custom_instructions_string = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn dashboard_version_definition_correct_errors(
     mut builder: crate::types::builders::DashboardVersionDefinitionBuilder,
 ) -> crate::types::builders::DashboardVersionDefinitionBuilder {

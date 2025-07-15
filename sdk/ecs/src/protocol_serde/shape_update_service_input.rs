@@ -81,68 +81,74 @@ pub fn ser_update_service_input_input(
             ::aws_smithy_types::Number::NegInt((*var_24).into()),
         );
     }
-    if let Some(var_25) = &input.enable_execute_command {
-        object.key("enableExecuteCommand").boolean(*var_25);
-    }
-    if let Some(var_26) = &input.enable_ecs_managed_tags {
-        object.key("enableECSManagedTags").boolean(*var_26);
-    }
-    if let Some(var_27) = &input.load_balancers {
-        let mut array_28 = object.key("loadBalancers").start_array();
-        for item_29 in var_27 {
-            {
-                #[allow(unused_mut)]
-                let mut object_30 = array_28.value().start_object();
-                crate::protocol_serde::shape_load_balancer::ser_load_balancer(&mut object_30, item_29)?;
-                object_30.finish();
-            }
-        }
-        array_28.finish();
-    }
-    if let Some(var_31) = &input.propagate_tags {
-        object.key("propagateTags").string(var_31.as_str());
-    }
-    if let Some(var_32) = &input.service_registries {
-        let mut array_33 = object.key("serviceRegistries").start_array();
-        for item_34 in var_32 {
-            {
-                #[allow(unused_mut)]
-                let mut object_35 = array_33.value().start_object();
-                crate::protocol_serde::shape_service_registry::ser_service_registry(&mut object_35, item_34)?;
-                object_35.finish();
-            }
-        }
-        array_33.finish();
-    }
-    if let Some(var_36) = &input.service_connect_configuration {
+    if let Some(var_25) = &input.deployment_controller {
         #[allow(unused_mut)]
-        let mut object_37 = object.key("serviceConnectConfiguration").start_object();
-        crate::protocol_serde::shape_service_connect_configuration::ser_service_connect_configuration(&mut object_37, var_36)?;
-        object_37.finish();
+        let mut object_26 = object.key("deploymentController").start_object();
+        crate::protocol_serde::shape_deployment_controller::ser_deployment_controller(&mut object_26, var_25)?;
+        object_26.finish();
     }
-    if let Some(var_38) = &input.volume_configurations {
-        let mut array_39 = object.key("volumeConfigurations").start_array();
-        for item_40 in var_38 {
+    if let Some(var_27) = &input.enable_execute_command {
+        object.key("enableExecuteCommand").boolean(*var_27);
+    }
+    if let Some(var_28) = &input.enable_ecs_managed_tags {
+        object.key("enableECSManagedTags").boolean(*var_28);
+    }
+    if let Some(var_29) = &input.load_balancers {
+        let mut array_30 = object.key("loadBalancers").start_array();
+        for item_31 in var_29 {
             {
                 #[allow(unused_mut)]
-                let mut object_41 = array_39.value().start_object();
-                crate::protocol_serde::shape_service_volume_configuration::ser_service_volume_configuration(&mut object_41, item_40)?;
-                object_41.finish();
+                let mut object_32 = array_30.value().start_object();
+                crate::protocol_serde::shape_load_balancer::ser_load_balancer(&mut object_32, item_31)?;
+                object_32.finish();
             }
         }
-        array_39.finish();
+        array_30.finish();
     }
-    if let Some(var_42) = &input.vpc_lattice_configurations {
-        let mut array_43 = object.key("vpcLatticeConfigurations").start_array();
-        for item_44 in var_42 {
+    if let Some(var_33) = &input.propagate_tags {
+        object.key("propagateTags").string(var_33.as_str());
+    }
+    if let Some(var_34) = &input.service_registries {
+        let mut array_35 = object.key("serviceRegistries").start_array();
+        for item_36 in var_34 {
             {
                 #[allow(unused_mut)]
-                let mut object_45 = array_43.value().start_object();
-                crate::protocol_serde::shape_vpc_lattice_configuration::ser_vpc_lattice_configuration(&mut object_45, item_44)?;
-                object_45.finish();
+                let mut object_37 = array_35.value().start_object();
+                crate::protocol_serde::shape_service_registry::ser_service_registry(&mut object_37, item_36)?;
+                object_37.finish();
             }
         }
-        array_43.finish();
+        array_35.finish();
+    }
+    if let Some(var_38) = &input.service_connect_configuration {
+        #[allow(unused_mut)]
+        let mut object_39 = object.key("serviceConnectConfiguration").start_object();
+        crate::protocol_serde::shape_service_connect_configuration::ser_service_connect_configuration(&mut object_39, var_38)?;
+        object_39.finish();
+    }
+    if let Some(var_40) = &input.volume_configurations {
+        let mut array_41 = object.key("volumeConfigurations").start_array();
+        for item_42 in var_40 {
+            {
+                #[allow(unused_mut)]
+                let mut object_43 = array_41.value().start_object();
+                crate::protocol_serde::shape_service_volume_configuration::ser_service_volume_configuration(&mut object_43, item_42)?;
+                object_43.finish();
+            }
+        }
+        array_41.finish();
+    }
+    if let Some(var_44) = &input.vpc_lattice_configurations {
+        let mut array_45 = object.key("vpcLatticeConfigurations").start_array();
+        for item_46 in var_44 {
+            {
+                #[allow(unused_mut)]
+                let mut object_47 = array_45.value().start_object();
+                crate::protocol_serde::shape_vpc_lattice_configuration::ser_vpc_lattice_configuration(&mut object_47, item_46)?;
+                object_47.finish();
+            }
+        }
+        array_45.finish();
     }
     Ok(())
 }

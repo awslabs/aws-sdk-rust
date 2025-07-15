@@ -999,6 +999,8 @@ pub use crate::types::_vpc_classic_link::VpcClassicLinkBuilder;
 
 pub use crate::types::_volume_status_item::VolumeStatusItemBuilder;
 
+pub use crate::types::_initialization_status_details::InitializationStatusDetailsBuilder;
+
 pub use crate::types::_volume_status_attachment_status::VolumeStatusAttachmentStatusBuilder;
 
 pub use crate::types::_volume_status_info::VolumeStatusInfoBuilder;

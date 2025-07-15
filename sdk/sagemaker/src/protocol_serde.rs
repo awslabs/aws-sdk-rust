@@ -557,6 +557,8 @@ pub(crate) mod shape_list_pipeline_executions;
 
 pub(crate) mod shape_list_pipeline_parameters_for_execution;
 
+pub(crate) mod shape_list_pipeline_versions;
+
 pub(crate) mod shape_list_pipelines;
 
 pub(crate) mod shape_list_processing_jobs;
@@ -726,6 +728,8 @@ pub(crate) mod shape_update_partner_app;
 pub(crate) mod shape_update_pipeline;
 
 pub(crate) mod shape_update_pipeline_execution;
+
+pub(crate) mod shape_update_pipeline_version;
 
 pub(crate) mod shape_update_project;
 
@@ -1281,6 +1285,8 @@ pub(crate) mod shape_list_pipeline_executions_input;
 
 pub(crate) mod shape_list_pipeline_parameters_for_execution_input;
 
+pub(crate) mod shape_list_pipeline_versions_input;
+
 pub(crate) mod shape_list_pipelines_input;
 
 pub(crate) mod shape_list_processing_jobs_input;
@@ -1457,6 +1463,8 @@ pub(crate) mod shape_update_pipeline_execution_input;
 
 pub(crate) mod shape_update_pipeline_input;
 
+pub(crate) mod shape_update_pipeline_version_input;
+
 pub(crate) mod shape_update_project_input;
 
 pub(crate) mod shape_update_space_input;
@@ -1566,6 +1574,10 @@ pub(crate) mod shape_cluster_node_ids;
 pub(crate) mod shape_cluster_node_summaries;
 
 pub(crate) mod shape_cluster_orchestrator;
+
+pub(crate) mod shape_cluster_restricted_instance_group_details_list;
+
+pub(crate) mod shape_cluster_restricted_instance_group_specification;
 
 pub(crate) mod shape_cluster_scheduler_config_summary_list;
 
@@ -1987,6 +1999,8 @@ pub(crate) mod shape_pipeline_experiment_config;
 
 pub(crate) mod shape_pipeline_summary_list;
 
+pub(crate) mod shape_pipeline_version_summary_list;
+
 pub(crate) mod shape_presigned_url_access_config;
 
 pub(crate) mod shape_processing_environment_map;
@@ -2317,6 +2331,8 @@ pub(crate) mod shape_cluster_node_summary;
 
 pub(crate) mod shape_cluster_orchestrator_eks_config;
 
+pub(crate) mod shape_cluster_restricted_instance_group_details;
+
 pub(crate) mod shape_cluster_scheduler_config_summary;
 
 pub(crate) mod shape_cluster_summary;
@@ -2424,6 +2440,8 @@ pub(crate) mod shape_endpoint_performance;
 pub(crate) mod shape_endpoint_summary;
 
 pub(crate) mod shape_endpoints;
+
+pub(crate) mod shape_environment_config;
 
 pub(crate) mod shape_environment_map;
 
@@ -2656,6 +2674,8 @@ pub(crate) mod shape_pipeline_execution_step;
 pub(crate) mod shape_pipeline_execution_summary;
 
 pub(crate) mod shape_pipeline_summary;
+
+pub(crate) mod shape_pipeline_version_summary;
 
 pub(crate) mod shape_priority_class;
 
@@ -2951,9 +2971,13 @@ pub(crate) mod shape_endpoint;
 
 pub(crate) mod shape_endpoint_output_configuration;
 
+pub(crate) mod shape_environment_config_details;
+
 pub(crate) mod shape_environment_parameter_ranges;
 
 pub(crate) mod shape_experiment;
+
+pub(crate) mod shape_f_sx_lustre_config;
 
 pub(crate) mod shape_f_sx_lustre_file_system;
 
@@ -3076,6 +3100,8 @@ pub(crate) mod shape_pipeline;
 pub(crate) mod shape_pipeline_execution;
 
 pub(crate) mod shape_pipeline_execution_step_metadata;
+
+pub(crate) mod shape_pipeline_version;
 
 pub(crate) mod shape_processing_feature_store_output;
 

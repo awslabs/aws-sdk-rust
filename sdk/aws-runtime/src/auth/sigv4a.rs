@@ -5,7 +5,7 @@
 
 use crate::auth::{
     apply_signing_instructions, extract_endpoint_auth_scheme_signing_name,
-    SigV4OperationSigningConfig, SigV4SigningError,
+    extract_endpoint_auth_scheme_signing_options, SigV4OperationSigningConfig, SigV4SigningError,
 };
 use aws_credential_types::Credentials;
 use aws_sigv4::http_request::{sign, SignableBody, SignableRequest, SigningSettings};
@@ -126,12 +126,21 @@ impl SigV4aSigner {
             extract_endpoint_auth_scheme_signing_region_set(&auth_scheme_endpoint_config)?
                 .or(config_bag.load::<SigningRegionSet>().cloned());
 
-        match (region_set, name) {
-            (None, None) => Ok(Cow::Borrowed(operation_config)),
-            (region_set, name) => {
+        let signing_options = extract_endpoint_auth_scheme_signing_options(
+            &auth_scheme_endpoint_config,
+            &operation_config.signing_options,
+        )?;
+
+        match (region_set, name, signing_options) {
+            (None, None, Cow::Borrowed(_)) => Ok(Cow::Borrowed(operation_config)),
+            (region_set, name, signing_options) => {
                 let mut operation_config = operation_config.clone();
                 operation_config.region_set = region_set.or(operation_config.region_set);
                 operation_config.name = name.or(operation_config.name);
+                operation_config.signing_options = match signing_options {
+                    Cow::Owned(opts) => opts,
+                    Cow::Borrowed(_) => operation_config.signing_options,
+                };
                 Ok(Cow::Owned(operation_config))
             }
         }

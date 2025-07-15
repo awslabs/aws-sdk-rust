@@ -22,6 +22,8 @@ pub struct LoadBalancer {
     pub container_name: ::std::option::Option<::std::string::String>,
     /// <p>The port on the container to associate with the load balancer. This port must correspond to a <code>containerPort</code> in the task definition the tasks in the service are using. For tasks that use the EC2 launch type, the container instance they're launched on must allow ingress traffic on the <code>hostPort</code> of the port mapping.</p>
     pub container_port: ::std::option::Option<i32>,
+    /// <p>The advanced settings for the load balancer used in blue/green deployments. Specify the alternate target group, listener rules, and IAM role required for traffic shifting during blue/green deployments.</p>
+    pub advanced_configuration: ::std::option::Option<crate::types::AdvancedConfiguration>,
 }
 impl LoadBalancer {
     /// <p>The full Amazon Resource Name (ARN) of the Elastic Load Balancing target group or groups associated with a service or task set.</p>
@@ -47,6 +49,10 @@ impl LoadBalancer {
     pub fn container_port(&self) -> ::std::option::Option<i32> {
         self.container_port
     }
+    /// <p>The advanced settings for the load balancer used in blue/green deployments. Specify the alternate target group, listener rules, and IAM role required for traffic shifting during blue/green deployments.</p>
+    pub fn advanced_configuration(&self) -> ::std::option::Option<&crate::types::AdvancedConfiguration> {
+        self.advanced_configuration.as_ref()
+    }
 }
 impl LoadBalancer {
     /// Creates a new builder-style object to manufacture [`LoadBalancer`](crate::types::LoadBalancer).
@@ -63,6 +69,7 @@ pub struct LoadBalancerBuilder {
     pub(crate) load_balancer_name: ::std::option::Option<::std::string::String>,
     pub(crate) container_name: ::std::option::Option<::std::string::String>,
     pub(crate) container_port: ::std::option::Option<i32>,
+    pub(crate) advanced_configuration: ::std::option::Option<crate::types::AdvancedConfiguration>,
 }
 impl LoadBalancerBuilder {
     /// <p>The full Amazon Resource Name (ARN) of the Elastic Load Balancing target group or groups associated with a service or task set.</p>
@@ -142,6 +149,20 @@ impl LoadBalancerBuilder {
     pub fn get_container_port(&self) -> &::std::option::Option<i32> {
         &self.container_port
     }
+    /// <p>The advanced settings for the load balancer used in blue/green deployments. Specify the alternate target group, listener rules, and IAM role required for traffic shifting during blue/green deployments.</p>
+    pub fn advanced_configuration(mut self, input: crate::types::AdvancedConfiguration) -> Self {
+        self.advanced_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The advanced settings for the load balancer used in blue/green deployments. Specify the alternate target group, listener rules, and IAM role required for traffic shifting during blue/green deployments.</p>
+    pub fn set_advanced_configuration(mut self, input: ::std::option::Option<crate::types::AdvancedConfiguration>) -> Self {
+        self.advanced_configuration = input;
+        self
+    }
+    /// <p>The advanced settings for the load balancer used in blue/green deployments. Specify the alternate target group, listener rules, and IAM role required for traffic shifting during blue/green deployments.</p>
+    pub fn get_advanced_configuration(&self) -> &::std::option::Option<crate::types::AdvancedConfiguration> {
+        &self.advanced_configuration
+    }
     /// Consumes the builder and constructs a [`LoadBalancer`](crate::types::LoadBalancer).
     pub fn build(self) -> crate::types::LoadBalancer {
         crate::types::LoadBalancer {
@@ -149,6 +170,7 @@ impl LoadBalancerBuilder {
             load_balancer_name: self.load_balancer_name,
             container_name: self.container_name,
             container_port: self.container_port,
+            advanced_configuration: self.advanced_configuration,
         }
     }
 }

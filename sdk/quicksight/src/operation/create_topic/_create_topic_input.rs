@@ -13,6 +13,8 @@ pub struct CreateTopicInput {
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The Folder ARN of the folder that you want the topic to reside in.</p>
     pub folder_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>Custom instructions for the topic.</p>
+    pub custom_instructions: ::std::option::Option<crate::types::CustomInstructions>,
 }
 impl CreateTopicInput {
     /// <p>The ID of the Amazon Web Services account that you want to create a topic in.</p>
@@ -39,6 +41,10 @@ impl CreateTopicInput {
     pub fn folder_arns(&self) -> &[::std::string::String] {
         self.folder_arns.as_deref().unwrap_or_default()
     }
+    /// <p>Custom instructions for the topic.</p>
+    pub fn custom_instructions(&self) -> ::std::option::Option<&crate::types::CustomInstructions> {
+        self.custom_instructions.as_ref()
+    }
 }
 impl CreateTopicInput {
     /// Creates a new builder-style object to manufacture [`CreateTopicInput`](crate::operation::create_topic::CreateTopicInput).
@@ -56,6 +62,7 @@ pub struct CreateTopicInputBuilder {
     pub(crate) topic: ::std::option::Option<crate::types::TopicDetails>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     pub(crate) folder_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) custom_instructions: ::std::option::Option<crate::types::CustomInstructions>,
 }
 impl CreateTopicInputBuilder {
     /// <p>The ID of the Amazon Web Services account that you want to create a topic in.</p>
@@ -143,6 +150,20 @@ impl CreateTopicInputBuilder {
     pub fn get_folder_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.folder_arns
     }
+    /// <p>Custom instructions for the topic.</p>
+    pub fn custom_instructions(mut self, input: crate::types::CustomInstructions) -> Self {
+        self.custom_instructions = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Custom instructions for the topic.</p>
+    pub fn set_custom_instructions(mut self, input: ::std::option::Option<crate::types::CustomInstructions>) -> Self {
+        self.custom_instructions = input;
+        self
+    }
+    /// <p>Custom instructions for the topic.</p>
+    pub fn get_custom_instructions(&self) -> &::std::option::Option<crate::types::CustomInstructions> {
+        &self.custom_instructions
+    }
     /// Consumes the builder and constructs a [`CreateTopicInput`](crate::operation::create_topic::CreateTopicInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::create_topic::CreateTopicInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_topic::CreateTopicInput {
@@ -151,6 +172,7 @@ impl CreateTopicInputBuilder {
             topic: self.topic,
             tags: self.tags,
             folder_arns: self.folder_arns,
+            custom_instructions: self.custom_instructions,
         })
     }
 }

@@ -17,6 +17,20 @@ pub use crate::types::_request_payer::RequestPayer;
 
 pub use crate::types::_checksum_algorithm::ChecksumAlgorithm;
 
+pub use crate::types::_journal_table_configuration_updates::JournalTableConfigurationUpdates;
+
+pub use crate::types::_record_expiration::RecordExpiration;
+
+pub use crate::types::_expiration_state::ExpirationState;
+
+pub use crate::types::_inventory_table_configuration_updates::InventoryTableConfigurationUpdates;
+
+pub use crate::types::_metadata_table_encryption_configuration::MetadataTableEncryptionConfiguration;
+
+pub use crate::types::_table_sse_algorithm::TableSseAlgorithm;
+
+pub use crate::types::_inventory_configuration_state::InventoryConfigurationState;
+
 pub use crate::types::_select_object_content_event_stream::SelectObjectContentEventStream;
 
 pub use crate::types::_end_event::EndEvent;
@@ -381,6 +395,18 @@ pub use crate::types::_metadata_table_configuration_result::MetadataTableConfigu
 
 pub use crate::types::_s3_tables_destination_result::S3TablesDestinationResult;
 
+pub use crate::types::_get_bucket_metadata_configuration_result::GetBucketMetadataConfigurationResult;
+
+pub use crate::types::_metadata_configuration_result::MetadataConfigurationResult;
+
+pub use crate::types::_inventory_table_configuration_result::InventoryTableConfigurationResult;
+
+pub use crate::types::_journal_table_configuration_result::JournalTableConfigurationResult;
+
+pub use crate::types::_destination_result::DestinationResult;
+
+pub use crate::types::_s3_tables_bucket_type::S3TablesBucketType;
+
 pub use crate::types::_bucket_location_constraint::BucketLocationConstraint;
 
 pub use crate::types::_error::Error;
@@ -398,6 +424,12 @@ pub use crate::types::_session_mode::SessionMode;
 pub use crate::types::_metadata_table_configuration::MetadataTableConfiguration;
 
 pub use crate::types::_s3_tables_destination::S3TablesDestination;
+
+pub use crate::types::_metadata_configuration::MetadataConfiguration;
+
+pub use crate::types::_inventory_table_configuration::InventoryTableConfiguration;
+
+pub use crate::types::_journal_table_configuration::JournalTableConfiguration;
 
 pub use crate::types::_create_bucket_configuration::CreateBucketConfiguration;
 
@@ -511,6 +543,8 @@ mod _deleted_object;
 
 mod _destination;
 
+mod _destination_result;
+
 mod _encoding_type;
 
 mod _encryption;
@@ -533,6 +567,8 @@ mod _existing_object_replication;
 
 mod _existing_object_replication_status;
 
+mod _expiration_state;
+
 mod _expiration_status;
 
 mod _expression_type;
@@ -542,6 +578,8 @@ mod _file_header_info;
 mod _filter_rule;
 
 mod _filter_rule_name;
+
+mod _get_bucket_metadata_configuration_result;
 
 mod _get_bucket_metadata_table_configuration_result;
 
@@ -571,6 +609,8 @@ mod _intelligent_tiering_status;
 
 mod _inventory_configuration;
 
+mod _inventory_configuration_state;
+
 mod _inventory_destination;
 
 mod _inventory_encryption;
@@ -588,6 +628,18 @@ mod _inventory_optional_field;
 mod _inventory_s3_bucket_destination;
 
 mod _inventory_schedule;
+
+mod _inventory_table_configuration;
+
+mod _inventory_table_configuration_result;
+
+mod _inventory_table_configuration_updates;
+
+mod _journal_table_configuration;
+
+mod _journal_table_configuration_result;
+
+mod _journal_table_configuration_updates;
 
 mod _json_input;
 
@@ -611,6 +663,10 @@ mod _location_type;
 
 mod _logging_enabled;
 
+mod _metadata_configuration;
+
+mod _metadata_configuration_result;
+
 mod _metadata_directive;
 
 mod _metadata_entry;
@@ -618,6 +674,8 @@ mod _metadata_entry;
 mod _metadata_table_configuration;
 
 mod _metadata_table_configuration_result;
+
+mod _metadata_table_encryption_configuration;
 
 mod _metrics;
 
@@ -717,6 +775,8 @@ mod _queue_configuration;
 
 mod _quote_fields;
 
+mod _record_expiration;
+
 mod _records_event;
 
 mod _redirect;
@@ -765,6 +825,8 @@ mod _s3_key_filter;
 
 mod _s3_location;
 
+mod _s3_tables_bucket_type;
+
 mod _s3_tables_destination;
 
 mod _s3_tables_destination_result;
@@ -810,6 +872,8 @@ mod _storage_class_analysis;
 mod _storage_class_analysis_data_export;
 
 mod _storage_class_analysis_schema_version;
+
+mod _table_sse_algorithm;
 
 mod _tag;
 

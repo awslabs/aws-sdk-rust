@@ -18,17 +18,32 @@ pub fn ser_update_cluster_input_input(
         }
         array_3.finish();
     }
-    if let Some(var_6) = &input.node_recovery {
-        object.key("NodeRecovery").string(var_6.as_str());
-    }
-    if let Some(var_7) = &input.instance_groups_to_delete {
-        let mut array_8 = object.key("InstanceGroupsToDelete").start_array();
-        for item_9 in var_7 {
+    if let Some(var_6) = &input.restricted_instance_groups {
+        let mut array_7 = object.key("RestrictedInstanceGroups").start_array();
+        for item_8 in var_6 {
             {
-                array_8.value().string(item_9.as_str());
+                #[allow(unused_mut)]
+                let mut object_9 = array_7.value().start_object();
+                crate::protocol_serde::shape_cluster_restricted_instance_group_specification::ser_cluster_restricted_instance_group_specification(
+                    &mut object_9,
+                    item_8,
+                )?;
+                object_9.finish();
             }
         }
-        array_8.finish();
+        array_7.finish();
+    }
+    if let Some(var_10) = &input.node_recovery {
+        object.key("NodeRecovery").string(var_10.as_str());
+    }
+    if let Some(var_11) = &input.instance_groups_to_delete {
+        let mut array_12 = object.key("InstanceGroupsToDelete").start_array();
+        for item_13 in var_11 {
+            {
+                array_12.value().string(item_13.as_str());
+            }
+        }
+        array_12.finish();
     }
     Ok(())
 }

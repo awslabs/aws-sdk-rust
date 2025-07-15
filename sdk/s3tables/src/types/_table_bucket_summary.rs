@@ -14,6 +14,8 @@ pub struct TableBucketSummary {
     pub created_at: ::aws_smithy_types::DateTime,
     /// <p>The system-assigned unique identifier for the table bucket.</p>
     pub table_bucket_id: ::std::option::Option<::std::string::String>,
+    /// <p>The type of the table bucket.</p>
+    pub r#type: ::std::option::Option<crate::types::TableBucketType>,
 }
 impl TableBucketSummary {
     /// <p>The Amazon Resource Name (ARN) of the table bucket.</p>
@@ -39,6 +41,10 @@ impl TableBucketSummary {
     pub fn table_bucket_id(&self) -> ::std::option::Option<&str> {
         self.table_bucket_id.as_deref()
     }
+    /// <p>The type of the table bucket.</p>
+    pub fn r#type(&self) -> ::std::option::Option<&crate::types::TableBucketType> {
+        self.r#type.as_ref()
+    }
 }
 impl TableBucketSummary {
     /// Creates a new builder-style object to manufacture [`TableBucketSummary`](crate::types::TableBucketSummary).
@@ -56,6 +62,7 @@ pub struct TableBucketSummaryBuilder {
     pub(crate) owner_account_id: ::std::option::Option<::std::string::String>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) table_bucket_id: ::std::option::Option<::std::string::String>,
+    pub(crate) r#type: ::std::option::Option<crate::types::TableBucketType>,
 }
 impl TableBucketSummaryBuilder {
     /// <p>The Amazon Resource Name (ARN) of the table bucket.</p>
@@ -132,6 +139,20 @@ impl TableBucketSummaryBuilder {
     pub fn get_table_bucket_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.table_bucket_id
     }
+    /// <p>The type of the table bucket.</p>
+    pub fn r#type(mut self, input: crate::types::TableBucketType) -> Self {
+        self.r#type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The type of the table bucket.</p>
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::TableBucketType>) -> Self {
+        self.r#type = input;
+        self
+    }
+    /// <p>The type of the table bucket.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::TableBucketType> {
+        &self.r#type
+    }
     /// Consumes the builder and constructs a [`TableBucketSummary`](crate::types::TableBucketSummary).
     /// This method will fail if any of the following fields are not set:
     /// - [`arn`](crate::types::builders::TableBucketSummaryBuilder::arn)
@@ -165,6 +186,7 @@ impl TableBucketSummaryBuilder {
                 )
             })?,
             table_bucket_id: self.table_bucket_id,
+            r#type: self.r#type,
         })
     }
 }

@@ -29,6 +29,8 @@ pub struct SearchRecord {
     pub pipeline: ::std::option::Option<crate::types::Pipeline>,
     /// <p>An execution of a pipeline.</p>
     pub pipeline_execution: ::std::option::Option<crate::types::PipelineExecution>,
+    /// <p>The version of the pipeline.</p>
+    pub pipeline_version: ::std::option::Option<crate::types::PipelineVersion>,
     /// <p>Amazon SageMaker Feature Store stores features in a collection called Feature Group. A Feature Group can be visualized as a table which has rows, with a unique identifier for each row where each column in the table is a feature. In principle, a Feature Group is composed of features and values per features.</p>
     pub feature_group: ::std::option::Option<crate::types::FeatureGroup>,
     /// <p>The feature metadata used to search through the features.</p>
@@ -86,6 +88,10 @@ impl SearchRecord {
     pub fn pipeline_execution(&self) -> ::std::option::Option<&crate::types::PipelineExecution> {
         self.pipeline_execution.as_ref()
     }
+    /// <p>The version of the pipeline.</p>
+    pub fn pipeline_version(&self) -> ::std::option::Option<&crate::types::PipelineVersion> {
+        self.pipeline_version.as_ref()
+    }
     /// <p>Amazon SageMaker Feature Store stores features in a collection called Feature Group. A Feature Group can be visualized as a table which has rows, with a unique identifier for each row where each column in the table is a feature. In principle, a Feature Group is composed of features and values per features.</p>
     pub fn feature_group(&self) -> ::std::option::Option<&crate::types::FeatureGroup> {
         self.feature_group.as_ref()
@@ -131,6 +137,7 @@ pub struct SearchRecordBuilder {
     pub(crate) model_package_group: ::std::option::Option<crate::types::ModelPackageGroup>,
     pub(crate) pipeline: ::std::option::Option<crate::types::Pipeline>,
     pub(crate) pipeline_execution: ::std::option::Option<crate::types::PipelineExecution>,
+    pub(crate) pipeline_version: ::std::option::Option<crate::types::PipelineVersion>,
     pub(crate) feature_group: ::std::option::Option<crate::types::FeatureGroup>,
     pub(crate) feature_metadata: ::std::option::Option<crate::types::FeatureMetadata>,
     pub(crate) project: ::std::option::Option<crate::types::Project>,
@@ -286,6 +293,20 @@ impl SearchRecordBuilder {
     pub fn get_pipeline_execution(&self) -> &::std::option::Option<crate::types::PipelineExecution> {
         &self.pipeline_execution
     }
+    /// <p>The version of the pipeline.</p>
+    pub fn pipeline_version(mut self, input: crate::types::PipelineVersion) -> Self {
+        self.pipeline_version = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The version of the pipeline.</p>
+    pub fn set_pipeline_version(mut self, input: ::std::option::Option<crate::types::PipelineVersion>) -> Self {
+        self.pipeline_version = input;
+        self
+    }
+    /// <p>The version of the pipeline.</p>
+    pub fn get_pipeline_version(&self) -> &::std::option::Option<crate::types::PipelineVersion> {
+        &self.pipeline_version
+    }
     /// <p>Amazon SageMaker Feature Store stores features in a collection called Feature Group. A Feature Group can be visualized as a table which has rows, with a unique identifier for each row where each column in the table is a feature. In principle, a Feature Group is composed of features and values per features.</p>
     pub fn feature_group(mut self, input: crate::types::FeatureGroup) -> Self {
         self.feature_group = ::std::option::Option::Some(input);
@@ -382,6 +403,7 @@ impl SearchRecordBuilder {
             model_package_group: self.model_package_group,
             pipeline: self.pipeline,
             pipeline_execution: self.pipeline_execution,
+            pipeline_version: self.pipeline_version,
             feature_group: self.feature_group,
             feature_metadata: self.feature_metadata,
             project: self.project,

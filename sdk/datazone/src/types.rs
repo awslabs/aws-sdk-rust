@@ -279,6 +279,10 @@ pub use crate::types::_connection_type::ConnectionType;
 
 pub use crate::types::_connection_properties_output::ConnectionPropertiesOutput;
 
+pub use crate::types::_s3_properties_output::S3PropertiesOutput;
+
+pub use crate::types::_connection_status::ConnectionStatus;
+
 pub use crate::types::_spark_glue_properties_output::SparkGluePropertiesOutput;
 
 pub use crate::types::_spark_glue_args::SparkGlueArgs;
@@ -290,8 +294,6 @@ pub use crate::types::_governance_type::GovernanceType;
 pub use crate::types::_username_password::UsernamePassword;
 
 pub use crate::types::_redshift_properties_output::RedshiftPropertiesOutput;
-
-pub use crate::types::_connection_status::ConnectionStatus;
 
 pub use crate::types::_redshift_lineage_sync_configuration_output::RedshiftLineageSyncConfigurationOutput;
 
@@ -338,6 +340,8 @@ pub use crate::types::_physical_connection_requirements::PhysicalConnectionRequi
 pub use crate::types::_aws_location::AwsLocation;
 
 pub use crate::types::_connection_properties_patch::ConnectionPropertiesPatch;
+
+pub use crate::types::_s3_properties_patch::S3PropertiesPatch;
 
 pub use crate::types::_spark_emr_properties_patch::SparkEmrPropertiesPatch;
 
@@ -656,6 +660,8 @@ pub use crate::types::_change_action::ChangeAction;
 pub use crate::types::_entity_type::EntityType;
 
 pub use crate::types::_connection_properties_input::ConnectionPropertiesInput;
+
+pub use crate::types::_s3_properties_input::S3PropertiesInput;
 
 pub use crate::types::_spark_glue_properties_input::SparkGluePropertiesInput;
 
@@ -1236,6 +1242,12 @@ mod _rule_target_type;
 mod _rule_type;
 
 mod _run_statistics_for_assets;
+
+mod _s3_properties_input;
+
+mod _s3_properties_output;
+
+mod _s3_properties_patch;
 
 mod _sage_maker_run_configuration_input;
 

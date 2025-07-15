@@ -30,7 +30,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-//! aws-sdk-s3 = "1.96.0"
+//! aws-sdk-s3 = "1.97.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!
@@ -200,8 +200,6 @@ pub mod types;
 
 pub(crate) mod client_idempotency_token;
 
-pub(crate) mod endpoint_auth_plugin;
-
 mod event_receiver;
 
 pub(crate) mod http_request_checksum;
@@ -227,6 +225,8 @@ mod s3_request_id;
 mod sdk_feature_tracker;
 
 mod serialization_settings;
+
+pub(crate) mod endpoint_auth;
 
 mod endpoint_lib;
 

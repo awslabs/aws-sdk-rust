@@ -40,13 +40,13 @@
 /// <ul>
 /// <li>
 /// <p>
-/// <b>ENABLED</b> - The <code>SkipUnavailable</code> setting is enabled
-/// for the connection.</p>
+/// <b>ENABLED</b> - The <code>SkipUnavailable</code> setting is
+/// enabled for the connection.</p>
 /// </li>
 /// <li>
 /// <p>
-/// <b>DISABLED</b> - The <code>SkipUnavailable</code> setting is disabled
-/// for the connection.</p>
+/// <b>DISABLED</b> - The <code>SkipUnavailable</code> setting is
+/// disabled for the connection.</p>
 /// </li>
 /// </ul>
 #[non_exhaustive]

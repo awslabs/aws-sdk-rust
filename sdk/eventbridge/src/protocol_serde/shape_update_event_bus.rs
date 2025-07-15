@@ -155,6 +155,9 @@ pub(crate) fn de_update_event_bus(
                 "DeadLetterConfig" => {
                     builder = builder.set_dead_letter_config(crate::protocol_serde::shape_dead_letter_config::de_dead_letter_config(tokens)?);
                 }
+                "LogConfig" => {
+                    builder = builder.set_log_config(crate::protocol_serde::shape_log_config::de_log_config(tokens)?);
+                }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },
             other => {

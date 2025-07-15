@@ -467,6 +467,8 @@ pub(crate) mod shape_s3_identifier;
 
 pub(crate) mod shape_s3_location;
 
+pub(crate) mod shape_s3_vectors_configuration;
+
 pub(crate) mod shape_salesforce_data_source_configuration;
 
 pub(crate) mod shape_session_summary_configuration;

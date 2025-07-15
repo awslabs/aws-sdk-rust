@@ -34,6 +34,12 @@ pub fn ser_connection_properties_patch(
             crate::protocol_serde::shape_spark_emr_properties_patch::ser_spark_emr_properties_patch(&mut object_5, inner)?;
             object_5.finish();
         }
+        crate::types::ConnectionPropertiesPatch::S3Properties(inner) => {
+            #[allow(unused_mut)]
+            let mut object_6 = object_5.key("s3Properties").start_object();
+            crate::protocol_serde::shape_s3_properties_patch::ser_s3_properties_patch(&mut object_6, inner)?;
+            object_6.finish();
+        }
         crate::types::ConnectionPropertiesPatch::Unknown => {
             return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant(
                 "ConnectionPropertiesPatch",

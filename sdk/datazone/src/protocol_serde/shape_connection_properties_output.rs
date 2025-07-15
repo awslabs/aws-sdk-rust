@@ -64,6 +64,11 @@ where
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'sparkGlueProperties' cannot be null")
                             })?,
                         )),
+                        "s3Properties" => Some(crate::types::ConnectionPropertiesOutput::S3Properties(
+                            crate::protocol_serde::shape_s3_properties_output::de_s3_properties_output(tokens)?.ok_or_else(|| {
+                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 's3Properties' cannot be null")
+                            })?,
+                        )),
                         _ => {
                             ::aws_smithy_json::deserialize::token::skip_value(tokens)?;
                             Some(crate::types::ConnectionPropertiesOutput::Unknown)

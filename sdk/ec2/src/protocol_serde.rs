@@ -4703,6 +4703,8 @@ pub(crate) mod shape_import_instance_volume_detail_set;
 
 pub(crate) mod shape_inference_accelerator_info;
 
+pub(crate) mod shape_initialization_status_details;
+
 pub(crate) mod shape_inside_cidr_blocks_string_list;
 
 pub(crate) mod shape_instance_count_list;

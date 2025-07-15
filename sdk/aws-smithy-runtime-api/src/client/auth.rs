@@ -54,6 +54,15 @@ impl AuthSchemeOption {
     }
 }
 
+impl From<AuthSchemeId> for AuthSchemeOption {
+    fn from(auth_scheme_id: AuthSchemeId) -> Self {
+        AuthSchemeOption::builder()
+            .scheme_id(auth_scheme_id)
+            .build()
+            .expect("required fields set")
+    }
+}
+
 /// Builder struct for [`AuthSchemeOption`]
 #[derive(Debug, Default)]
 pub struct AuthSchemeOptionBuilder {

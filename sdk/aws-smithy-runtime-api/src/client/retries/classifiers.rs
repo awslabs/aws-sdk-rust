@@ -16,10 +16,10 @@
 //! with a lower priority. The intention is that:
 //!
 //! 1. Generic classifiers that look at things like the HTTP error code run
-//!     first.
+//!    first.
 //! 2. More specific classifiers such as ones that check for certain error
-//!     messages are run **after** the generic classifiers. This gives them the
-//!     ability to override the actions set by the generic retry classifiers.
+//!    messages are run **after** the generic classifiers. This gives them the
+//!    ability to override the actions set by the generic retry classifiers.
 //!
 //! Put another way:
 //!

@@ -137,6 +137,9 @@ pub(crate) fn de_describe_topic(
                             .transpose()?,
                     );
                 }
+                "CustomInstructions" => {
+                    builder = builder.set_custom_instructions(crate::protocol_serde::shape_custom_instructions::de_custom_instructions(tokens)?);
+                }
                 "RequestId" => {
                     builder = builder.set_request_id(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

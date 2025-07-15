@@ -87,6 +87,8 @@ pub use crate::types::_knowledge_base_status::KnowledgeBaseStatus;
 
 pub use crate::types::_storage_configuration::StorageConfiguration;
 
+pub use crate::types::_s3_vectors_configuration::S3VectorsConfiguration;
+
 pub use crate::types::_neptune_analytics_configuration::NeptuneAnalyticsConfiguration;
 
 pub use crate::types::_neptune_analytics_field_mapping::NeptuneAnalyticsFieldMapping;
@@ -1096,6 +1098,8 @@ mod _s3_data_source_configuration;
 mod _s3_identifier;
 
 mod _s3_location;
+
+mod _s3_vectors_configuration;
 
 mod _salesforce_auth_type;
 

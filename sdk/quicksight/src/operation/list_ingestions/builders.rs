@@ -22,7 +22,7 @@ impl crate::operation::list_ingestions::builders::ListIngestionsInputBuilder {
 }
 /// Fluent builder constructing a request to `ListIngestions`.
 ///
-/// <p>Lists the history of SPICE ingestions for a dataset.</p>
+/// <p>Lists the history of SPICE ingestions for a dataset. Limited to 5 TPS per user and 25 TPS per account.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListIngestionsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

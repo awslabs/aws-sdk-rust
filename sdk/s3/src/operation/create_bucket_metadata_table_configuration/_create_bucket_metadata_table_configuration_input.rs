@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateBucketMetadataTableConfigurationInput {
-    /// <p>The general purpose bucket that you want to create the metadata table configuration in.</p>
+    /// <p>The general purpose bucket that you want to create the metadata table configuration for.</p>
     pub bucket: ::std::option::Option<::std::string::String>,
     /// <p>The <code>Content-MD5</code> header for the metadata table configuration.</p>
     pub content_md5: ::std::option::Option<::std::string::String>,
@@ -11,11 +11,11 @@ pub struct CreateBucketMetadataTableConfigurationInput {
     pub checksum_algorithm: ::std::option::Option<crate::types::ChecksumAlgorithm>,
     /// <p>The contents of your metadata table configuration.</p>
     pub metadata_table_configuration: ::std::option::Option<crate::types::MetadataTableConfiguration>,
-    /// <p>The expected owner of the general purpose bucket that contains your metadata table configuration.</p>
+    /// <p>The expected owner of the general purpose bucket that corresponds to your metadata table configuration.</p>
     pub expected_bucket_owner: ::std::option::Option<::std::string::String>,
 }
 impl CreateBucketMetadataTableConfigurationInput {
-    /// <p>The general purpose bucket that you want to create the metadata table configuration in.</p>
+    /// <p>The general purpose bucket that you want to create the metadata table configuration for.</p>
     pub fn bucket(&self) -> ::std::option::Option<&str> {
         self.bucket.as_deref()
     }
@@ -31,7 +31,7 @@ impl CreateBucketMetadataTableConfigurationInput {
     pub fn metadata_table_configuration(&self) -> ::std::option::Option<&crate::types::MetadataTableConfiguration> {
         self.metadata_table_configuration.as_ref()
     }
-    /// <p>The expected owner of the general purpose bucket that contains your metadata table configuration.</p>
+    /// <p>The expected owner of the general purpose bucket that corresponds to your metadata table configuration.</p>
     pub fn expected_bucket_owner(&self) -> ::std::option::Option<&str> {
         self.expected_bucket_owner.as_deref()
     }
@@ -54,18 +54,18 @@ pub struct CreateBucketMetadataTableConfigurationInputBuilder {
     pub(crate) expected_bucket_owner: ::std::option::Option<::std::string::String>,
 }
 impl CreateBucketMetadataTableConfigurationInputBuilder {
-    /// <p>The general purpose bucket that you want to create the metadata table configuration in.</p>
+    /// <p>The general purpose bucket that you want to create the metadata table configuration for.</p>
     /// This field is required.
     pub fn bucket(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bucket = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The general purpose bucket that you want to create the metadata table configuration in.</p>
+    /// <p>The general purpose bucket that you want to create the metadata table configuration for.</p>
     pub fn set_bucket(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.bucket = input;
         self
     }
-    /// <p>The general purpose bucket that you want to create the metadata table configuration in.</p>
+    /// <p>The general purpose bucket that you want to create the metadata table configuration for.</p>
     pub fn get_bucket(&self) -> &::std::option::Option<::std::string::String> {
         &self.bucket
     }
@@ -112,17 +112,17 @@ impl CreateBucketMetadataTableConfigurationInputBuilder {
     pub fn get_metadata_table_configuration(&self) -> &::std::option::Option<crate::types::MetadataTableConfiguration> {
         &self.metadata_table_configuration
     }
-    /// <p>The expected owner of the general purpose bucket that contains your metadata table configuration.</p>
+    /// <p>The expected owner of the general purpose bucket that corresponds to your metadata table configuration.</p>
     pub fn expected_bucket_owner(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.expected_bucket_owner = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The expected owner of the general purpose bucket that contains your metadata table configuration.</p>
+    /// <p>The expected owner of the general purpose bucket that corresponds to your metadata table configuration.</p>
     pub fn set_expected_bucket_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.expected_bucket_owner = input;
         self
     }
-    /// <p>The expected owner of the general purpose bucket that contains your metadata table configuration.</p>
+    /// <p>The expected owner of the general purpose bucket that corresponds to your metadata table configuration.</p>
     pub fn get_expected_bucket_owner(&self) -> &::std::option::Option<::std::string::String> {
         &self.expected_bucket_owner
     }

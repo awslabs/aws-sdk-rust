@@ -12,6 +12,12 @@ pub fn ser_service_connect_client_alias(
     if let Some(var_1) = &input.dns_name {
         object.key("dnsName").string(var_1.as_str());
     }
+    if let Some(var_2) = &input.test_traffic_rules {
+        #[allow(unused_mut)]
+        let mut object_3 = object.key("testTrafficRules").start_object();
+        crate::protocol_serde::shape_service_connect_test_traffic_rules::ser_service_connect_test_traffic_rules(&mut object_3, var_2)?;
+        object_3.finish();
+    }
     Ok(())
 }
 
@@ -42,6 +48,11 @@ where
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
+                            );
+                        }
+                        "testTrafficRules" => {
+                            builder = builder.set_test_traffic_rules(
+                                crate::protocol_serde::shape_service_connect_test_traffic_rules::de_service_connect_test_traffic_rules(tokens)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

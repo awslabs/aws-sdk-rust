@@ -6,11 +6,17 @@
 pub struct AimlOptionsInput {
     /// <p>Container for parameters required for natural language query generation on the specified domain.</p>
     pub natural_language_query_generation_options: ::std::option::Option<crate::types::NaturalLanguageQueryGenerationOptionsInput>,
+    /// <p>Container for parameters required to enable S3 vectors engine features on the specified domain.</p>
+    pub s3_vectors_engine: ::std::option::Option<crate::types::S3VectorsEngine>,
 }
 impl AimlOptionsInput {
     /// <p>Container for parameters required for natural language query generation on the specified domain.</p>
     pub fn natural_language_query_generation_options(&self) -> ::std::option::Option<&crate::types::NaturalLanguageQueryGenerationOptionsInput> {
         self.natural_language_query_generation_options.as_ref()
+    }
+    /// <p>Container for parameters required to enable S3 vectors engine features on the specified domain.</p>
+    pub fn s3_vectors_engine(&self) -> ::std::option::Option<&crate::types::S3VectorsEngine> {
+        self.s3_vectors_engine.as_ref()
     }
 }
 impl AimlOptionsInput {
@@ -25,6 +31,7 @@ impl AimlOptionsInput {
 #[non_exhaustive]
 pub struct AimlOptionsInputBuilder {
     pub(crate) natural_language_query_generation_options: ::std::option::Option<crate::types::NaturalLanguageQueryGenerationOptionsInput>,
+    pub(crate) s3_vectors_engine: ::std::option::Option<crate::types::S3VectorsEngine>,
 }
 impl AimlOptionsInputBuilder {
     /// <p>Container for parameters required for natural language query generation on the specified domain.</p>
@@ -44,10 +51,25 @@ impl AimlOptionsInputBuilder {
     pub fn get_natural_language_query_generation_options(&self) -> &::std::option::Option<crate::types::NaturalLanguageQueryGenerationOptionsInput> {
         &self.natural_language_query_generation_options
     }
+    /// <p>Container for parameters required to enable S3 vectors engine features on the specified domain.</p>
+    pub fn s3_vectors_engine(mut self, input: crate::types::S3VectorsEngine) -> Self {
+        self.s3_vectors_engine = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Container for parameters required to enable S3 vectors engine features on the specified domain.</p>
+    pub fn set_s3_vectors_engine(mut self, input: ::std::option::Option<crate::types::S3VectorsEngine>) -> Self {
+        self.s3_vectors_engine = input;
+        self
+    }
+    /// <p>Container for parameters required to enable S3 vectors engine features on the specified domain.</p>
+    pub fn get_s3_vectors_engine(&self) -> &::std::option::Option<crate::types::S3VectorsEngine> {
+        &self.s3_vectors_engine
+    }
     /// Consumes the builder and constructs a [`AimlOptionsInput`](crate::types::AimlOptionsInput).
     pub fn build(self) -> crate::types::AimlOptionsInput {
         crate::types::AimlOptionsInput {
             natural_language_query_generation_options: self.natural_language_query_generation_options,
+            s3_vectors_engine: self.s3_vectors_engine,
         }
     }
 }

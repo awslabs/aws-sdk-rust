@@ -197,6 +197,20 @@ pub fn de_ec2_instance_connect_endpoint(
                 builder = builder.set_tags(var_15);
             }
             ,
+            s if s.matches("ipAddressType") /* IpAddressType com.amazonaws.ec2#Ec2InstanceConnectEndpoint$IpAddressType */ =>  {
+                let var_16 =
+                    Some(
+                        Result::<crate::types::IpAddressType, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::IpAddressType::from(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_ip_address_type(var_16);
+            }
+            ,
             _ => {}
         }
     }

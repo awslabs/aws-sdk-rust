@@ -164,4 +164,18 @@ impl ListTableBucketsFluentBuilder {
     pub fn get_max_buckets(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_buckets()
     }
+    /// <p>The type of table buckets to filter by in the list.</p>
+    pub fn r#type(mut self, input: crate::types::TableBucketType) -> Self {
+        self.inner = self.inner.r#type(input);
+        self
+    }
+    /// <p>The type of table buckets to filter by in the list.</p>
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::TableBucketType>) -> Self {
+        self.inner = self.inner.set_type(input);
+        self
+    }
+    /// <p>The type of table buckets to filter by in the list.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::TableBucketType> {
+        self.inner.get_type()
+    }
 }

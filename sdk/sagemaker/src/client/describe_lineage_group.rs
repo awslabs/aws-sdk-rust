@@ -10,9 +10,9 @@ impl super::Client {
     ///   - [`display_name(Option<String>)`](crate::operation::describe_lineage_group::DescribeLineageGroupOutput::display_name): <p>The display name of the lineage group.</p>
     ///   - [`description(Option<String>)`](crate::operation::describe_lineage_group::DescribeLineageGroupOutput::description): <p>The description of the lineage group.</p>
     ///   - [`creation_time(Option<DateTime>)`](crate::operation::describe_lineage_group::DescribeLineageGroupOutput::creation_time): <p>The creation time of lineage group.</p>
-    ///   - [`created_by(Option<UserContext>)`](crate::operation::describe_lineage_group::DescribeLineageGroupOutput::created_by): <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
+    ///   - [`created_by(Option<UserContext>)`](crate::operation::describe_lineage_group::DescribeLineageGroupOutput::created_by): <p>Information about the user who created or modified a SageMaker resource.</p>
     ///   - [`last_modified_time(Option<DateTime>)`](crate::operation::describe_lineage_group::DescribeLineageGroupOutput::last_modified_time): <p>The last modified time of the lineage group.</p>
-    ///   - [`last_modified_by(Option<UserContext>)`](crate::operation::describe_lineage_group::DescribeLineageGroupOutput::last_modified_by): <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
+    ///   - [`last_modified_by(Option<UserContext>)`](crate::operation::describe_lineage_group::DescribeLineageGroupOutput::last_modified_by): <p>Information about the user who created or modified a SageMaker resource.</p>
     /// - On failure, responds with [`SdkError<DescribeLineageGroupError>`](crate::operation::describe_lineage_group::DescribeLineageGroupError)
     pub fn describe_lineage_group(&self) -> crate::operation::describe_lineage_group::builders::DescribeLineageGroupFluentBuilder {
         crate::operation::describe_lineage_group::builders::DescribeLineageGroupFluentBuilder::new(self.handle.clone())

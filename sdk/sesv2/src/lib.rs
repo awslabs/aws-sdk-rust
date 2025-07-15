@@ -34,7 +34,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-//! aws-sdk-sesv2 = "1.85.0"
+//! aws-sdk-sesv2 = "1.86.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!
@@ -188,13 +188,13 @@ pub mod primitives;
 /// Data structures used by operation inputs/outputs.
 pub mod types;
 
-pub(crate) mod endpoint_auth_plugin;
-
 pub(crate) mod protocol_serde;
 
 mod sdk_feature_tracker;
 
 mod serialization_settings;
+
+pub(crate) mod endpoint_auth;
 
 mod endpoint_lib;
 

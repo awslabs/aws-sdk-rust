@@ -55,6 +55,15 @@ impl Config {
     pub fn http_client(&self) -> Option<crate::config::SharedHttpClient> {
         self.runtime_components.http_client()
     }
+    /// Return the auth schemes configured on this service config
+    pub fn auth_schemes(&self) -> impl Iterator<Item = ::aws_smithy_runtime_api::client::auth::SharedAuthScheme> + '_ {
+        self.runtime_components.auth_schemes()
+    }
+
+    /// Return the auth scheme resolver configured on this service config
+    pub fn auth_scheme_resolver(&self) -> ::std::option::Option<::aws_smithy_runtime_api::client::auth::SharedAuthSchemeOptionResolver> {
+        self.runtime_components.auth_scheme_option_resolver()
+    }
 
     /// Returns the endpoint resolver.
     pub fn endpoint_resolver(&self) -> ::aws_smithy_runtime_api::client::endpoint::SharedEndpointResolver {
@@ -294,6 +303,163 @@ impl Builder {
     /// ```
     pub fn set_http_client(&mut self, http_client: Option<crate::config::SharedHttpClient>) -> &mut Self {
         self.runtime_components.set_http_client(http_client);
+        self
+    }
+    /// Adds an auth scheme to the builder
+    ///
+    /// If `auth_scheme` has an existing [AuthSchemeId](aws_smithy_runtime_api::client::auth::AuthSchemeId) in the runtime, the current identity
+    /// resolver and signer for that scheme will be replaced by those from `auth_scheme`.
+    ///
+    /// _Important:_ When introducing a custom auth scheme, ensure you override either
+    /// [`Self::auth_scheme_resolver`] or [`Self::set_auth_scheme_resolver`]
+    /// so that the custom auth scheme is included in the list of resolved auth scheme options.
+    /// [The default auth scheme resolver](crate::config::auth::DefaultAuthSchemeResolver) will not recognize your custom auth scheme.
+    ///
+    /// # Examples
+    /// ```no_run
+    /// # use aws_smithy_runtime_api::{
+    /// #     box_error::BoxError,
+    /// #     client::{
+    /// #         auth::{
+    /// #             AuthScheme, AuthSchemeEndpointConfig, AuthSchemeId, AuthSchemeOption,
+    /// #             AuthSchemeOptionsFuture, Sign,
+    /// #         },
+    /// #         identity::{Identity, IdentityFuture, ResolveIdentity, SharedIdentityResolver},
+    /// #         orchestrator::HttpRequest,
+    /// #         runtime_components::{GetIdentityResolver, RuntimeComponents},
+    /// #   },
+    /// #   shared::IntoShared,
+    /// # };
+    /// # use aws_smithy_types::config_bag::ConfigBag;
+    /// // Auth scheme with customer identity resolver and signer
+    /// #[derive(Debug)]
+    /// struct CustomAuthScheme {
+    ///     id: AuthSchemeId,
+    ///     identity_resolver: SharedIdentityResolver,
+    ///     signer: CustomSigner,
+    /// }
+    /// impl Default for CustomAuthScheme {
+    ///     fn default() -> Self {
+    ///         Self {
+    ///             id: AuthSchemeId::new("custom"),
+    ///             identity_resolver: CustomIdentityResolver.into_shared(),
+    ///             signer: CustomSigner,
+    ///         }
+    ///     }
+    /// }
+    /// impl AuthScheme for CustomAuthScheme {
+    ///     fn scheme_id(&self) -> AuthSchemeId {
+    ///         self.id.clone()
+    ///     }
+    ///     fn identity_resolver(
+    ///         &self,
+    ///         _identity_resolvers: &dyn GetIdentityResolver,
+    ///     ) -> Option<SharedIdentityResolver> {
+    ///         Some(self.identity_resolver.clone())
+    ///     }
+    ///     fn signer(&self) -> &dyn Sign {
+    ///         &self.signer
+    ///     }
+    /// }
+    ///
+    /// #[derive(Debug, Default)]
+    /// struct CustomSigner;
+    /// impl Sign for CustomSigner {
+    ///     fn sign_http_request(
+    ///         &self,
+    ///         _request: &mut HttpRequest,
+    ///         _identity: &Identity,
+    ///         _auth_scheme_endpoint_config: AuthSchemeEndpointConfig<'_>,
+    ///         _runtime_components: &RuntimeComponents,
+    ///         _config_bag: &ConfigBag,
+    ///     ) -> Result<(), BoxError> {
+    ///         // --snip--
+    /// #      todo!()
+    ///     }
+    /// }
+    ///
+    /// #[derive(Debug)]
+    /// struct CustomIdentityResolver;
+    /// impl ResolveIdentity for CustomIdentityResolver {
+    ///     fn resolve_identity<'a>(
+    ///         &'a self,
+    ///         _runtime_components: &'a RuntimeComponents,
+    ///         _config_bag: &'a ConfigBag,
+    ///     ) -> IdentityFuture<'a> {
+    ///         // --snip--
+    /// #      todo!()
+    ///     }
+    /// }
+    ///
+    /// // Auth scheme resolver that favors `CustomAuthScheme`
+    /// #[derive(Debug)]
+    /// struct CustomAuthSchemeResolver;
+    /// impl aws_sdk_s3::config::auth::ResolveAuthScheme for CustomAuthSchemeResolver {
+    ///     fn resolve_auth_scheme<'a>(
+    ///         &'a self,
+    ///         _params: &'a aws_sdk_s3::config::auth::Params,
+    ///         _cfg: &'a ConfigBag,
+    ///         _runtime_components: &'a RuntimeComponents,
+    ///     ) -> AuthSchemeOptionsFuture<'a> {
+    ///         AuthSchemeOptionsFuture::ready(Ok(vec![AuthSchemeOption::from(AuthSchemeId::new(
+    ///             "custom",
+    ///         ))]))
+    ///     }
+    /// }
+    ///
+    /// let config = aws_sdk_s3::Config::builder()
+    ///     .push_auth_scheme(CustomAuthScheme::default())
+    ///     .auth_scheme_resolver(CustomAuthSchemeResolver)
+    ///     // other configurations
+    ///     .build();
+    /// ```
+    pub fn push_auth_scheme(mut self, auth_scheme: impl ::aws_smithy_runtime_api::client::auth::AuthScheme + 'static) -> Self {
+        self.runtime_components.push_auth_scheme(auth_scheme);
+        self
+    }
+
+    /// Set the auth scheme resolver for the builder
+    ///
+    /// # Examples
+    /// ```no_run
+    /// # use aws_smithy_runtime_api::{
+    /// #     client::{
+    /// #         auth::AuthSchemeOptionsFuture,
+    /// #         runtime_components::RuntimeComponents,
+    /// #   },
+    /// # };
+    /// # use aws_smithy_types::config_bag::ConfigBag;
+    /// #[derive(Debug)]
+    /// struct CustomAuthSchemeResolver;
+    /// impl aws_sdk_s3::config::auth::ResolveAuthScheme for CustomAuthSchemeResolver {
+    ///     fn resolve_auth_scheme<'a>(
+    ///         &'a self,
+    ///         _params: &'a aws_sdk_s3::config::auth::Params,
+    ///         _cfg: &'a ConfigBag,
+    ///         _runtime_components: &'a RuntimeComponents,
+    ///     ) -> AuthSchemeOptionsFuture<'a> {
+    ///         // --snip--
+    /// #      todo!()
+    ///     }
+    /// }
+    ///
+    /// let config = aws_sdk_s3::Config::builder()
+    ///     .auth_scheme_resolver(CustomAuthSchemeResolver)
+    ///     // other configurations
+    ///     .build();
+    /// ```
+    pub fn auth_scheme_resolver(mut self, auth_scheme_resolver: impl crate::config::auth::ResolveAuthScheme + 'static) -> Self {
+        self.set_auth_scheme_resolver(auth_scheme_resolver);
+        self
+    }
+
+    /// Set the auth scheme resolver for the builder
+    ///
+    /// # Examples
+    /// See an example for [`Self::auth_scheme_resolver`].
+    pub fn set_auth_scheme_resolver(&mut self, auth_scheme_resolver: impl crate::config::auth::ResolveAuthScheme + 'static) -> &mut Self {
+        self.runtime_components
+            .set_auth_scheme_option_resolver(::std::option::Option::Some(auth_scheme_resolver.into_shared_resolver()));
         self
     }
     /// Forces this client to use path-style addressing for buckets.
@@ -974,6 +1140,24 @@ impl Builder {
         self.config.store_or_unset(app_name);
         self
     }
+    /// Sets the credentials provider for S3 Express One Zone
+    pub fn express_credentials_provider(mut self, credentials_provider: impl crate::config::ProvideCredentials + 'static) -> Self {
+        self.set_express_credentials_provider(::std::option::Option::Some(crate::config::SharedCredentialsProvider::new(
+            credentials_provider,
+        )));
+        self
+    }
+    /// Sets the credentials provider for S3 Express One Zone
+    pub fn set_express_credentials_provider(
+        &mut self,
+        credentials_provider: ::std::option::Option<crate::config::SharedCredentialsProvider>,
+    ) -> &mut Self {
+        if let ::std::option::Option::Some(credentials_provider) = credentials_provider {
+            self.runtime_components
+                .set_identity_resolver(crate::s3_express::auth::SCHEME_ID, credentials_provider);
+        }
+        self
+    }
     /// Overrides the default invocation ID generator.
     ///
     /// The invocation ID generator generates ID values for the `amz-sdk-invocation-id` header. By default, this will be a random UUID. Overriding it may be useful in tests that examine the HTTP request and need to be deterministic.
@@ -1098,24 +1282,6 @@ impl Builder {
             }
             self.runtime_components
                 .set_identity_resolver(::aws_runtime::auth::sigv4::SCHEME_ID, credentials_provider);
-        }
-        self
-    }
-    /// Sets the credentials provider for S3 Express One Zone
-    pub fn express_credentials_provider(mut self, credentials_provider: impl crate::config::ProvideCredentials + 'static) -> Self {
-        self.set_express_credentials_provider(::std::option::Option::Some(crate::config::SharedCredentialsProvider::new(
-            credentials_provider,
-        )));
-        self
-    }
-    /// Sets the credentials provider for S3 Express One Zone
-    pub fn set_express_credentials_provider(
-        &mut self,
-        credentials_provider: ::std::option::Option<crate::config::SharedCredentialsProvider>,
-    ) -> &mut Self {
-        if let ::std::option::Option::Some(credentials_provider) = credentials_provider {
-            self.runtime_components
-                .set_identity_resolver(crate::s3_express::auth::SCHEME_ID, credentials_provider);
         }
         self
     }
@@ -1270,7 +1436,11 @@ impl ServiceRuntimePlugin {
             ::std::option::Option::Some(cfg.freeze())
         };
         let mut runtime_components = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("ServiceRuntimePlugin");
-        runtime_components.set_endpoint_resolver(Some({
+        runtime_components.set_auth_scheme_option_resolver(::std::option::Option::Some({
+            use crate::config::auth::ResolveAuthScheme;
+            crate::config::auth::DefaultAuthSchemeResolver::default().into_shared_resolver()
+        }));
+        runtime_components.set_endpoint_resolver(::std::option::Option::Some({
             use crate::config::endpoint::ResolveEndpoint;
             crate::config::endpoint::DefaultResolver::new().into_shared_resolver()
         }));
@@ -1280,6 +1450,9 @@ impl ServiceRuntimePlugin {
         runtime_components.push_interceptor(::aws_runtime::service_clock_skew::ServiceClockSkewInterceptor::new());
         runtime_components.push_interceptor(::aws_runtime::request_info::RequestInfoInterceptor::new());
         runtime_components.push_interceptor(::aws_runtime::user_agent::UserAgentInterceptor::new());
+        runtime_components.push_auth_scheme(::aws_smithy_runtime_api::client::auth::SharedAuthScheme::new(
+            crate::s3_express::auth::S3ExpressAuthScheme::new(),
+        ));
         runtime_components.push_interceptor(::aws_runtime::invocation_id::InvocationIdInterceptor::new());
         runtime_components.push_interceptor(::aws_runtime::recursion_detection::RecursionDetectionInterceptor::new());
         runtime_components.push_auth_scheme(::aws_smithy_runtime_api::client::auth::SharedAuthScheme::new(
@@ -1291,9 +1464,6 @@ impl ServiceRuntimePlugin {
                 ::aws_runtime::auth::sigv4a::SigV4aAuthScheme::new(),
             ));
         }
-        runtime_components.push_auth_scheme(::aws_smithy_runtime_api::client::auth::SharedAuthScheme::new(
-            crate::s3_express::auth::S3ExpressAuthScheme::new(),
-        ));
         Self { config, runtime_components }
     }
 }
@@ -1378,13 +1548,6 @@ pub use ::aws_credential_types::Credentials;
 impl From<&::aws_types::sdk_config::SdkConfig> for Builder {
     fn from(input: &::aws_types::sdk_config::SdkConfig) -> Self {
         let mut builder = Builder::default();
-        builder.set_disable_s3_express_session_auth(input.service_config().and_then(|conf| {
-            let str_config = conf.load_config(service_config_key(
-                "AWS_S3_DISABLE_EXPRESS_SESSION_AUTH",
-                "s3_disable_express_session_auth",
-            ));
-            str_config.and_then(|it| it.parse::<bool>().ok())
-        }));
         builder.set_credentials_provider(input.credentials_provider());
         builder = builder.region(input.region().cloned());
         builder.set_request_checksum_calculation(input.request_checksum_calculation());
@@ -1420,6 +1583,13 @@ impl From<&::aws_types::sdk_config::SdkConfig> for Builder {
         if let Some(cache) = input.identity_cache() {
             builder.set_identity_cache(cache);
         }
+        builder.set_disable_s3_express_session_auth(input.service_config().and_then(|conf| {
+            let str_config = conf.load_config(service_config_key(
+                "AWS_S3_DISABLE_EXPRESS_SESSION_AUTH",
+                "s3_disable_express_session_auth",
+            ));
+            str_config.and_then(|it| it.parse::<bool>().ok())
+        }));
         builder.set_app_name(input.app_name().cloned());
 
         builder
@@ -1582,3 +1752,6 @@ pub mod retry;
 
 /// Timeout configuration.
 pub mod timeout;
+
+/// Types needed to configure auth scheme resolution.
+pub mod auth;

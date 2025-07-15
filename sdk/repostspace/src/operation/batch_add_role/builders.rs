@@ -22,7 +22,7 @@ impl crate::operation::batch_add_role::builders::BatchAddRoleInputBuilder {
 }
 /// Fluent builder constructing a request to `BatchAddRole`.
 ///
-/// <p>Add role to multiple users or groups in a private re:Post.</p>
+/// <p>Add a role to multiple users or groups in a private re:Post.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct BatchAddRoleFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

@@ -49,7 +49,6 @@ impl DescribeClusterNodeInputBuilder {
         &self.cluster_name
     }
     /// <p>The ID of the SageMaker HyperPod cluster node.</p>
-    /// This field is required.
     pub fn node_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.node_id = ::std::option::Option::Some(input.into());
         self

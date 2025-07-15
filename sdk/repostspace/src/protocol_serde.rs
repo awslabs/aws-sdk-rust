@@ -23,9 +23,15 @@ pub fn parse_http_error_metadata(
     crate::json_errors::parse_error_metadata(response_body, response_headers)
 }
 
+pub(crate) mod shape_batch_add_channel_role_to_accessors;
+
 pub(crate) mod shape_batch_add_role;
 
+pub(crate) mod shape_batch_remove_channel_role_from_accessors;
+
 pub(crate) mod shape_batch_remove_role;
+
+pub(crate) mod shape_create_channel;
 
 pub(crate) mod shape_create_space;
 
@@ -33,7 +39,11 @@ pub(crate) mod shape_delete_space;
 
 pub(crate) mod shape_deregister_admin;
 
+pub(crate) mod shape_get_channel;
+
 pub(crate) mod shape_get_space;
+
+pub(crate) mod shape_list_channels;
 
 pub(crate) mod shape_list_spaces;
 
@@ -47,6 +57,8 @@ pub(crate) mod shape_tag_resource;
 
 pub(crate) mod shape_untag_resource;
 
+pub(crate) mod shape_update_channel;
+
 pub(crate) mod shape_update_space;
 
 pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
@@ -59,11 +71,17 @@ pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
 
 pub(crate) mod shape_access_denied_exception;
 
+pub(crate) mod shape_batch_add_channel_role_to_accessors_input;
+
 pub(crate) mod shape_batch_add_role_input;
+
+pub(crate) mod shape_batch_remove_channel_role_from_accessors_input;
 
 pub(crate) mod shape_batch_remove_role_input;
 
 pub(crate) mod shape_conflict_exception;
+
+pub(crate) mod shape_create_channel_input;
 
 pub(crate) mod shape_create_space_input;
 
@@ -79,6 +97,8 @@ pub(crate) mod shape_tag_resource_input;
 
 pub(crate) mod shape_throttling_exception;
 
+pub(crate) mod shape_update_channel_input;
+
 pub(crate) mod shape_update_space_input;
 
 pub(crate) mod shape_validation_exception;
@@ -87,11 +107,19 @@ pub(crate) mod shape_accessor_id_list;
 
 pub(crate) mod shape_batch_error_list;
 
+pub(crate) mod shape_channel_roles;
+
+pub(crate) mod shape_channels_list;
+
 pub(crate) mod shape_group_admins;
 
 pub(crate) mod shape_roles;
 
 pub(crate) mod shape_spaces_list;
+
+pub(crate) mod shape_supported_email_domains_parameters;
+
+pub(crate) mod shape_supported_email_domains_status;
 
 pub(crate) mod shape_tags;
 
@@ -99,7 +127,13 @@ pub(crate) mod shape_user_admins;
 
 pub(crate) mod shape_validation_exception_field_list;
 
+pub(crate) mod shape_allowed_domains_list;
+
 pub(crate) mod shape_batch_error;
+
+pub(crate) mod shape_channel_data;
+
+pub(crate) mod shape_channel_role_list;
 
 pub(crate) mod shape_role_list;
 

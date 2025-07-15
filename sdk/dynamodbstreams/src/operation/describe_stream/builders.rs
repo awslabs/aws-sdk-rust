@@ -153,4 +153,18 @@ impl DescribeStreamFluentBuilder {
     pub fn get_exclusive_start_shard_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_exclusive_start_shard_id()
     }
+    /// <p>This optional field contains the filter definition for the <code>DescribeStream</code> API.</p>
+    pub fn shard_filter(mut self, input: crate::types::ShardFilter) -> Self {
+        self.inner = self.inner.shard_filter(input);
+        self
+    }
+    /// <p>This optional field contains the filter definition for the <code>DescribeStream</code> API.</p>
+    pub fn set_shard_filter(mut self, input: ::std::option::Option<crate::types::ShardFilter>) -> Self {
+        self.inner = self.inner.set_shard_filter(input);
+        self
+    }
+    /// <p>This optional field contains the filter definition for the <code>DescribeStream</code> API.</p>
+    pub fn get_shard_filter(&self) -> &::std::option::Option<crate::types::ShardFilter> {
+        self.inner.get_shard_filter()
+    }
 }

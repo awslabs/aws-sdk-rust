@@ -12,6 +12,8 @@ pub enum ConnectionPropertiesPatch {
     IamProperties(crate::types::IamPropertiesPatch),
     /// <p>The Amazon Redshift properties of a connection properties patch.</p>
     RedshiftProperties(crate::types::RedshiftPropertiesPatch),
+    /// <p>The Amazon S3 properties of a connection properties patch.</p>
+    S3Properties(crate::types::S3PropertiesPatch),
     /// <p>The Spark EMR properties of a connection properties patch.</p>
     SparkEmrProperties(crate::types::SparkEmrPropertiesPatch),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
@@ -76,6 +78,19 @@ impl ConnectionPropertiesPatch {
     /// Returns true if this is a [`RedshiftProperties`](crate::types::ConnectionPropertiesPatch::RedshiftProperties).
     pub fn is_redshift_properties(&self) -> bool {
         self.as_redshift_properties().is_ok()
+    }
+    /// Tries to convert the enum instance into [`S3Properties`](crate::types::ConnectionPropertiesPatch::S3Properties), extracting the inner [`S3PropertiesPatch`](crate::types::S3PropertiesPatch).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_s3_properties(&self) -> ::std::result::Result<&crate::types::S3PropertiesPatch, &Self> {
+        if let ConnectionPropertiesPatch::S3Properties(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`S3Properties`](crate::types::ConnectionPropertiesPatch::S3Properties).
+    pub fn is_s3_properties(&self) -> bool {
+        self.as_s3_properties().is_ok()
     }
     /// Tries to convert the enum instance into [`SparkEmrProperties`](crate::types::ConnectionPropertiesPatch::SparkEmrProperties), extracting the inner [`SparkEmrPropertiesPatch`](crate::types::SparkEmrPropertiesPatch).
     /// Returns `Err(&Self)` if it can't be converted.

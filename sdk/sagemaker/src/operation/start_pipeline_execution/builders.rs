@@ -211,4 +211,18 @@ impl StartPipelineExecutionFluentBuilder {
     pub fn get_selective_execution_config(&self) -> &::std::option::Option<crate::types::SelectiveExecutionConfig> {
         self.inner.get_selective_execution_config()
     }
+    /// <p>The ID of the pipeline version to start execution from.</p>
+    pub fn pipeline_version_id(mut self, input: i64) -> Self {
+        self.inner = self.inner.pipeline_version_id(input);
+        self
+    }
+    /// <p>The ID of the pipeline version to start execution from.</p>
+    pub fn set_pipeline_version_id(mut self, input: ::std::option::Option<i64>) -> Self {
+        self.inner = self.inner.set_pipeline_version_id(input);
+        self
+    }
+    /// <p>The ID of the pipeline version to start execution from.</p>
+    pub fn get_pipeline_version_id(&self) -> &::std::option::Option<i64> {
+        self.inner.get_pipeline_version_id()
+    }
 }

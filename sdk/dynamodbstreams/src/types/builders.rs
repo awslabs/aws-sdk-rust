@@ -14,3 +14,5 @@ pub use crate::types::_shard::ShardBuilder;
 pub use crate::types::_sequence_number_range::SequenceNumberRangeBuilder;
 
 pub use crate::types::_key_schema_element::KeySchemaElementBuilder;
+
+pub use crate::types::_shard_filter::ShardFilterBuilder;

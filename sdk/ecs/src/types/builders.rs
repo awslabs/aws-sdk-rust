@@ -11,6 +11,8 @@ pub use crate::types::_service_registry::ServiceRegistryBuilder;
 
 pub use crate::types::_load_balancer::LoadBalancerBuilder;
 
+pub use crate::types::_advanced_configuration::AdvancedConfigurationBuilder;
+
 pub use crate::types::_network_configuration::NetworkConfigurationBuilder;
 
 pub use crate::types::_aws_vpc_configuration::AwsVpcConfigurationBuilder;
@@ -59,7 +61,15 @@ pub use crate::types::_timeout_configuration::TimeoutConfigurationBuilder;
 
 pub use crate::types::_service_connect_client_alias::ServiceConnectClientAliasBuilder;
 
+pub use crate::types::_service_connect_test_traffic_rules::ServiceConnectTestTrafficRulesBuilder;
+
+pub use crate::types::_service_connect_test_traffic_header_rules::ServiceConnectTestTrafficHeaderRulesBuilder;
+
+pub use crate::types::_service_connect_test_traffic_header_match_rules::ServiceConnectTestTrafficHeaderMatchRulesBuilder;
+
 pub use crate::types::_deployment_configuration::DeploymentConfigurationBuilder;
+
+pub use crate::types::_deployment_lifecycle_hook::DeploymentLifecycleHookBuilder;
 
 pub use crate::types::_deployment_alarms::DeploymentAlarmsBuilder;
 
@@ -208,6 +218,10 @@ pub use crate::types::_created_at::CreatedAtBuilder;
 pub use crate::types::_session::SessionBuilder;
 
 pub use crate::types::_service_revision::ServiceRevisionBuilder;
+
+pub use crate::types::_resolved_configuration::ResolvedConfigurationBuilder;
+
+pub use crate::types::_service_revision_load_balancer::ServiceRevisionLoadBalancerBuilder;
 
 pub use crate::types::_container_image::ContainerImageBuilder;
 

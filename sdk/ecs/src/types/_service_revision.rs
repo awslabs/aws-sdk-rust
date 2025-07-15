@@ -42,6 +42,8 @@ pub struct ServiceRevision {
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The VPC Lattice configuration for the service revision.</p>
     pub vpc_lattice_configurations: ::std::option::Option<::std::vec::Vec<crate::types::VpcLatticeConfiguration>>,
+    /// <p>The resolved configuration for the service revision which contains the actual resources your service revision uses, such as which target groups serve traffic.</p>
+    pub resolved_configuration: ::std::option::Option<crate::types::ResolvedConfiguration>,
 }
 impl ServiceRevision {
     /// <p>The ARN of the service revision.</p>
@@ -129,6 +131,10 @@ impl ServiceRevision {
     pub fn vpc_lattice_configurations(&self) -> &[crate::types::VpcLatticeConfiguration] {
         self.vpc_lattice_configurations.as_deref().unwrap_or_default()
     }
+    /// <p>The resolved configuration for the service revision which contains the actual resources your service revision uses, such as which target groups serve traffic.</p>
+    pub fn resolved_configuration(&self) -> ::std::option::Option<&crate::types::ResolvedConfiguration> {
+        self.resolved_configuration.as_ref()
+    }
 }
 impl ServiceRevision {
     /// Creates a new builder-style object to manufacture [`ServiceRevision`](crate::types::ServiceRevision).
@@ -159,6 +165,7 @@ pub struct ServiceRevisionBuilder {
     pub(crate) fargate_ephemeral_storage: ::std::option::Option<crate::types::DeploymentEphemeralStorage>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) vpc_lattice_configurations: ::std::option::Option<::std::vec::Vec<crate::types::VpcLatticeConfiguration>>,
+    pub(crate) resolved_configuration: ::std::option::Option<crate::types::ResolvedConfiguration>,
 }
 impl ServiceRevisionBuilder {
     /// <p>The ARN of the service revision.</p>
@@ -455,6 +462,20 @@ impl ServiceRevisionBuilder {
     pub fn get_vpc_lattice_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::VpcLatticeConfiguration>> {
         &self.vpc_lattice_configurations
     }
+    /// <p>The resolved configuration for the service revision which contains the actual resources your service revision uses, such as which target groups serve traffic.</p>
+    pub fn resolved_configuration(mut self, input: crate::types::ResolvedConfiguration) -> Self {
+        self.resolved_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The resolved configuration for the service revision which contains the actual resources your service revision uses, such as which target groups serve traffic.</p>
+    pub fn set_resolved_configuration(mut self, input: ::std::option::Option<crate::types::ResolvedConfiguration>) -> Self {
+        self.resolved_configuration = input;
+        self
+    }
+    /// <p>The resolved configuration for the service revision which contains the actual resources your service revision uses, such as which target groups serve traffic.</p>
+    pub fn get_resolved_configuration(&self) -> &::std::option::Option<crate::types::ResolvedConfiguration> {
+        &self.resolved_configuration
+    }
     /// Consumes the builder and constructs a [`ServiceRevision`](crate::types::ServiceRevision).
     pub fn build(self) -> crate::types::ServiceRevision {
         crate::types::ServiceRevision {
@@ -476,6 +497,7 @@ impl ServiceRevisionBuilder {
             fargate_ephemeral_storage: self.fargate_ephemeral_storage,
             created_at: self.created_at,
             vpc_lattice_configurations: self.vpc_lattice_configurations,
+            resolved_configuration: self.resolved_configuration,
         }
     }
 }

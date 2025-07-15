@@ -3,35 +3,41 @@ pub fn ser_create_topic_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::create_topic::CreateTopicInput,
 ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
-    if let Some(var_1) = &input.folder_arns {
-        let mut array_2 = object.key("FolderArns").start_array();
-        for item_3 in var_1 {
+    if let Some(var_1) = &input.custom_instructions {
+        #[allow(unused_mut)]
+        let mut object_2 = object.key("CustomInstructions").start_object();
+        crate::protocol_serde::shape_custom_instructions::ser_custom_instructions(&mut object_2, var_1)?;
+        object_2.finish();
+    }
+    if let Some(var_3) = &input.folder_arns {
+        let mut array_4 = object.key("FolderArns").start_array();
+        for item_5 in var_3 {
             {
-                array_2.value().string(item_3.as_str());
+                array_4.value().string(item_5.as_str());
             }
         }
-        array_2.finish();
+        array_4.finish();
     }
-    if let Some(var_4) = &input.tags {
-        let mut array_5 = object.key("Tags").start_array();
-        for item_6 in var_4 {
+    if let Some(var_6) = &input.tags {
+        let mut array_7 = object.key("Tags").start_array();
+        for item_8 in var_6 {
             {
                 #[allow(unused_mut)]
-                let mut object_7 = array_5.value().start_object();
-                crate::protocol_serde::shape_tag::ser_tag(&mut object_7, item_6)?;
-                object_7.finish();
+                let mut object_9 = array_7.value().start_object();
+                crate::protocol_serde::shape_tag::ser_tag(&mut object_9, item_8)?;
+                object_9.finish();
             }
         }
-        array_5.finish();
+        array_7.finish();
     }
-    if let Some(var_8) = &input.topic {
+    if let Some(var_10) = &input.topic {
         #[allow(unused_mut)]
-        let mut object_9 = object.key("Topic").start_object();
-        crate::protocol_serde::shape_topic_details::ser_topic_details(&mut object_9, var_8)?;
-        object_9.finish();
+        let mut object_11 = object.key("Topic").start_object();
+        crate::protocol_serde::shape_topic_details::ser_topic_details(&mut object_11, var_10)?;
+        object_11.finish();
     }
-    if let Some(var_10) = &input.topic_id {
-        object.key("TopicId").string(var_10.as_str());
+    if let Some(var_12) = &input.topic_id {
+        object.key("TopicId").string(var_12.as_str());
     }
     Ok(())
 }

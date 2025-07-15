@@ -5,11 +5,17 @@
 pub struct DescribePipelineInput {
     /// <p>The name or Amazon Resource Name (ARN) of the pipeline to describe.</p>
     pub pipeline_name: ::std::option::Option<::std::string::String>,
+    /// <p>The ID of the pipeline version to describe.</p>
+    pub pipeline_version_id: ::std::option::Option<i64>,
 }
 impl DescribePipelineInput {
     /// <p>The name or Amazon Resource Name (ARN) of the pipeline to describe.</p>
     pub fn pipeline_name(&self) -> ::std::option::Option<&str> {
         self.pipeline_name.as_deref()
+    }
+    /// <p>The ID of the pipeline version to describe.</p>
+    pub fn pipeline_version_id(&self) -> ::std::option::Option<i64> {
+        self.pipeline_version_id
     }
 }
 impl DescribePipelineInput {
@@ -24,6 +30,7 @@ impl DescribePipelineInput {
 #[non_exhaustive]
 pub struct DescribePipelineInputBuilder {
     pub(crate) pipeline_name: ::std::option::Option<::std::string::String>,
+    pub(crate) pipeline_version_id: ::std::option::Option<i64>,
 }
 impl DescribePipelineInputBuilder {
     /// <p>The name or Amazon Resource Name (ARN) of the pipeline to describe.</p>
@@ -41,12 +48,27 @@ impl DescribePipelineInputBuilder {
     pub fn get_pipeline_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.pipeline_name
     }
+    /// <p>The ID of the pipeline version to describe.</p>
+    pub fn pipeline_version_id(mut self, input: i64) -> Self {
+        self.pipeline_version_id = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ID of the pipeline version to describe.</p>
+    pub fn set_pipeline_version_id(mut self, input: ::std::option::Option<i64>) -> Self {
+        self.pipeline_version_id = input;
+        self
+    }
+    /// <p>The ID of the pipeline version to describe.</p>
+    pub fn get_pipeline_version_id(&self) -> &::std::option::Option<i64> {
+        &self.pipeline_version_id
+    }
     /// Consumes the builder and constructs a [`DescribePipelineInput`](crate::operation::describe_pipeline::DescribePipelineInput).
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::describe_pipeline::DescribePipelineInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_pipeline::DescribePipelineInput {
             pipeline_name: self.pipeline_name,
+            pipeline_version_id: self.pipeline_version_id,
         })
     }
 }

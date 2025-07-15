@@ -13,6 +13,8 @@ pub struct ServiceConnectClientAlias {
     /// <p>If this parameter isn't specified, the default value of <code>discoveryName.namespace</code> is used. If the <code>discoveryName</code> isn't specified, the port mapping name from the task definition is used in <code>portName.namespace</code>.</p>
     /// <p>To avoid changing your applications in client Amazon ECS services, set this to the same name that the client application uses by default. For example, a few common names are <code>database</code>, <code>db</code>, or the lowercase name of a database, such as <code>mysql</code> or <code>redis</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html">Service Connect</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     pub dns_name: ::std::option::Option<::std::string::String>,
+    /// <p>The configuration for test traffic routing rules used during blue/green deployments with Amazon ECS Service Connect. This allows you to route a portion of traffic to the new service revision of your service for testing before shifting all production traffic.</p>
+    pub test_traffic_rules: ::std::option::Option<crate::types::ServiceConnectTestTrafficRules>,
 }
 impl ServiceConnectClientAlias {
     /// <p>The listening port number for the Service Connect proxy. This port is available inside of all of the tasks within the same namespace.</p>
@@ -25,6 +27,10 @@ impl ServiceConnectClientAlias {
     /// <p>To avoid changing your applications in client Amazon ECS services, set this to the same name that the client application uses by default. For example, a few common names are <code>database</code>, <code>db</code>, or the lowercase name of a database, such as <code>mysql</code> or <code>redis</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html">Service Connect</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     pub fn dns_name(&self) -> ::std::option::Option<&str> {
         self.dns_name.as_deref()
+    }
+    /// <p>The configuration for test traffic routing rules used during blue/green deployments with Amazon ECS Service Connect. This allows you to route a portion of traffic to the new service revision of your service for testing before shifting all production traffic.</p>
+    pub fn test_traffic_rules(&self) -> ::std::option::Option<&crate::types::ServiceConnectTestTrafficRules> {
+        self.test_traffic_rules.as_ref()
     }
 }
 impl ServiceConnectClientAlias {
@@ -40,6 +46,7 @@ impl ServiceConnectClientAlias {
 pub struct ServiceConnectClientAliasBuilder {
     pub(crate) port: ::std::option::Option<i32>,
     pub(crate) dns_name: ::std::option::Option<::std::string::String>,
+    pub(crate) test_traffic_rules: ::std::option::Option<crate::types::ServiceConnectTestTrafficRules>,
 }
 impl ServiceConnectClientAliasBuilder {
     /// <p>The listening port number for the Service Connect proxy. This port is available inside of all of the tasks within the same namespace.</p>
@@ -80,6 +87,20 @@ impl ServiceConnectClientAliasBuilder {
     pub fn get_dns_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.dns_name
     }
+    /// <p>The configuration for test traffic routing rules used during blue/green deployments with Amazon ECS Service Connect. This allows you to route a portion of traffic to the new service revision of your service for testing before shifting all production traffic.</p>
+    pub fn test_traffic_rules(mut self, input: crate::types::ServiceConnectTestTrafficRules) -> Self {
+        self.test_traffic_rules = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The configuration for test traffic routing rules used during blue/green deployments with Amazon ECS Service Connect. This allows you to route a portion of traffic to the new service revision of your service for testing before shifting all production traffic.</p>
+    pub fn set_test_traffic_rules(mut self, input: ::std::option::Option<crate::types::ServiceConnectTestTrafficRules>) -> Self {
+        self.test_traffic_rules = input;
+        self
+    }
+    /// <p>The configuration for test traffic routing rules used during blue/green deployments with Amazon ECS Service Connect. This allows you to route a portion of traffic to the new service revision of your service for testing before shifting all production traffic.</p>
+    pub fn get_test_traffic_rules(&self) -> &::std::option::Option<crate::types::ServiceConnectTestTrafficRules> {
+        &self.test_traffic_rules
+    }
     /// Consumes the builder and constructs a [`ServiceConnectClientAlias`](crate::types::ServiceConnectClientAlias).
     /// This method will fail if any of the following fields are not set:
     /// - [`port`](crate::types::builders::ServiceConnectClientAliasBuilder::port)
@@ -92,6 +113,7 @@ impl ServiceConnectClientAliasBuilder {
                 )
             })?,
             dns_name: self.dns_name,
+            test_traffic_rules: self.test_traffic_rules,
         })
     }
 }

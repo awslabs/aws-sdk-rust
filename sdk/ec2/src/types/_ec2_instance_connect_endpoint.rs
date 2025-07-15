@@ -16,7 +16,7 @@ pub struct Ec2InstanceConnectEndpoint {
     pub state_message: ::std::option::Option<::std::string::String>,
     /// <p>The DNS name of the EC2 Instance Connect Endpoint.</p>
     pub dns_name: ::std::option::Option<::std::string::String>,
-    /// <p></p>
+    /// <p>The Federal Information Processing Standards (FIPS) compliant DNS name of the EC2 Instance Connect Endpoint.</p>
     pub fips_dns_name: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the elastic network interface that Amazon EC2 automatically created when creating the EC2 Instance Connect Endpoint.</p>
     pub network_interface_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -41,6 +41,8 @@ pub struct Ec2InstanceConnectEndpoint {
     pub security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The tags assigned to the EC2 Instance Connect Endpoint.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    /// <p>The IP address type of the endpoint.</p>
+    pub ip_address_type: ::std::option::Option<crate::types::IpAddressType>,
 }
 impl Ec2InstanceConnectEndpoint {
     /// <p>The ID of the Amazon Web Services account that created the EC2 Instance Connect Endpoint.</p>
@@ -67,7 +69,7 @@ impl Ec2InstanceConnectEndpoint {
     pub fn dns_name(&self) -> ::std::option::Option<&str> {
         self.dns_name.as_deref()
     }
-    /// <p></p>
+    /// <p>The Federal Information Processing Standards (FIPS) compliant DNS name of the EC2 Instance Connect Endpoint.</p>
     pub fn fips_dns_name(&self) -> ::std::option::Option<&str> {
         self.fips_dns_name.as_deref()
     }
@@ -116,6 +118,10 @@ impl Ec2InstanceConnectEndpoint {
     pub fn tags(&self) -> &[crate::types::Tag] {
         self.tags.as_deref().unwrap_or_default()
     }
+    /// <p>The IP address type of the endpoint.</p>
+    pub fn ip_address_type(&self) -> ::std::option::Option<&crate::types::IpAddressType> {
+        self.ip_address_type.as_ref()
+    }
 }
 impl Ec2InstanceConnectEndpoint {
     /// Creates a new builder-style object to manufacture [`Ec2InstanceConnectEndpoint`](crate::types::Ec2InstanceConnectEndpoint).
@@ -143,6 +149,7 @@ pub struct Ec2InstanceConnectEndpointBuilder {
     pub(crate) preserve_client_ip: ::std::option::Option<bool>,
     pub(crate) security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) ip_address_type: ::std::option::Option<crate::types::IpAddressType>,
 }
 impl Ec2InstanceConnectEndpointBuilder {
     /// <p>The ID of the Amazon Web Services account that created the EC2 Instance Connect Endpoint.</p>
@@ -229,17 +236,17 @@ impl Ec2InstanceConnectEndpointBuilder {
     pub fn get_dns_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.dns_name
     }
-    /// <p></p>
+    /// <p>The Federal Information Processing Standards (FIPS) compliant DNS name of the EC2 Instance Connect Endpoint.</p>
     pub fn fips_dns_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.fips_dns_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p></p>
+    /// <p>The Federal Information Processing Standards (FIPS) compliant DNS name of the EC2 Instance Connect Endpoint.</p>
     pub fn set_fips_dns_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.fips_dns_name = input;
         self
     }
-    /// <p></p>
+    /// <p>The Federal Information Processing Standards (FIPS) compliant DNS name of the EC2 Instance Connect Endpoint.</p>
     pub fn get_fips_dns_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.fips_dns_name
     }
@@ -394,6 +401,20 @@ impl Ec2InstanceConnectEndpointBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         &self.tags
     }
+    /// <p>The IP address type of the endpoint.</p>
+    pub fn ip_address_type(mut self, input: crate::types::IpAddressType) -> Self {
+        self.ip_address_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The IP address type of the endpoint.</p>
+    pub fn set_ip_address_type(mut self, input: ::std::option::Option<crate::types::IpAddressType>) -> Self {
+        self.ip_address_type = input;
+        self
+    }
+    /// <p>The IP address type of the endpoint.</p>
+    pub fn get_ip_address_type(&self) -> &::std::option::Option<crate::types::IpAddressType> {
+        &self.ip_address_type
+    }
     /// Consumes the builder and constructs a [`Ec2InstanceConnectEndpoint`](crate::types::Ec2InstanceConnectEndpoint).
     pub fn build(self) -> crate::types::Ec2InstanceConnectEndpoint {
         crate::types::Ec2InstanceConnectEndpoint {
@@ -412,6 +433,7 @@ impl Ec2InstanceConnectEndpointBuilder {
             preserve_client_ip: self.preserve_client_ip,
             security_group_ids: self.security_group_ids,
             tags: self.tags,
+            ip_address_type: self.ip_address_type,
         }
     }
 }

@@ -17,6 +17,9 @@ pub struct DescribeEventBusOutput {
     pub dead_letter_config: ::std::option::Option<crate::types::DeadLetterConfig>,
     /// <p>The policy that enables the external account to send events to your account.</p>
     pub policy: ::std::option::Option<::std::string::String>,
+    /// <p>The logging configuration settings for the event bus.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/eb-event-bus-logs.html">Configuring logs for event buses</a> in the <i>EventBridge User Guide</i>.</p>
+    pub log_config: ::std::option::Option<crate::types::LogConfig>,
     /// <p>The time the event bus was created.</p>
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time the event bus was last modified.</p>
@@ -50,6 +53,11 @@ impl DescribeEventBusOutput {
     pub fn policy(&self) -> ::std::option::Option<&str> {
         self.policy.as_deref()
     }
+    /// <p>The logging configuration settings for the event bus.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/eb-event-bus-logs.html">Configuring logs for event buses</a> in the <i>EventBridge User Guide</i>.</p>
+    pub fn log_config(&self) -> ::std::option::Option<&crate::types::LogConfig> {
+        self.log_config.as_ref()
+    }
     /// <p>The time the event bus was created.</p>
     pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
@@ -81,6 +89,7 @@ pub struct DescribeEventBusOutputBuilder {
     pub(crate) kms_key_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) dead_letter_config: ::std::option::Option<crate::types::DeadLetterConfig>,
     pub(crate) policy: ::std::option::Option<::std::string::String>,
+    pub(crate) log_config: ::std::option::Option<crate::types::LogConfig>,
     pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
@@ -176,6 +185,23 @@ impl DescribeEventBusOutputBuilder {
     pub fn get_policy(&self) -> &::std::option::Option<::std::string::String> {
         &self.policy
     }
+    /// <p>The logging configuration settings for the event bus.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/eb-event-bus-logs.html">Configuring logs for event buses</a> in the <i>EventBridge User Guide</i>.</p>
+    pub fn log_config(mut self, input: crate::types::LogConfig) -> Self {
+        self.log_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The logging configuration settings for the event bus.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/eb-event-bus-logs.html">Configuring logs for event buses</a> in the <i>EventBridge User Guide</i>.</p>
+    pub fn set_log_config(mut self, input: ::std::option::Option<crate::types::LogConfig>) -> Self {
+        self.log_config = input;
+        self
+    }
+    /// <p>The logging configuration settings for the event bus.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/eb-event-bus-logs.html">Configuring logs for event buses</a> in the <i>EventBridge User Guide</i>.</p>
+    pub fn get_log_config(&self) -> &::std::option::Option<crate::types::LogConfig> {
+        &self.log_config
+    }
     /// <p>The time the event bus was created.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
@@ -222,6 +248,7 @@ impl DescribeEventBusOutputBuilder {
             kms_key_identifier: self.kms_key_identifier,
             dead_letter_config: self.dead_letter_config,
             policy: self.policy,
+            log_config: self.log_config,
             creation_time: self.creation_time,
             last_modified_time: self.last_modified_time,
             _request_id: self._request_id,

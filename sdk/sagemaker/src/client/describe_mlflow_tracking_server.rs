@@ -18,9 +18,9 @@ impl super::Client {
     ///   - [`weekly_maintenance_window_start(Option<String>)`](crate::operation::describe_mlflow_tracking_server::DescribeMlflowTrackingServerOutput::weekly_maintenance_window_start): <p>The day and time of the week when weekly maintenance occurs on the described tracking server.</p>
     ///   - [`automatic_model_registration(Option<bool>)`](crate::operation::describe_mlflow_tracking_server::DescribeMlflowTrackingServerOutput::automatic_model_registration): <p>Whether automatic registration of new MLflow models to the SageMaker Model Registry is enabled.</p>
     ///   - [`creation_time(Option<DateTime>)`](crate::operation::describe_mlflow_tracking_server::DescribeMlflowTrackingServerOutput::creation_time): <p>The timestamp of when the described MLflow Tracking Server was created.</p>
-    ///   - [`created_by(Option<UserContext>)`](crate::operation::describe_mlflow_tracking_server::DescribeMlflowTrackingServerOutput::created_by): <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
+    ///   - [`created_by(Option<UserContext>)`](crate::operation::describe_mlflow_tracking_server::DescribeMlflowTrackingServerOutput::created_by): <p>Information about the user who created or modified a SageMaker resource.</p>
     ///   - [`last_modified_time(Option<DateTime>)`](crate::operation::describe_mlflow_tracking_server::DescribeMlflowTrackingServerOutput::last_modified_time): <p>The timestamp of when the described MLflow Tracking Server was last modified.</p>
-    ///   - [`last_modified_by(Option<UserContext>)`](crate::operation::describe_mlflow_tracking_server::DescribeMlflowTrackingServerOutput::last_modified_by): <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
+    ///   - [`last_modified_by(Option<UserContext>)`](crate::operation::describe_mlflow_tracking_server::DescribeMlflowTrackingServerOutput::last_modified_by): <p>Information about the user who created or modified a SageMaker resource.</p>
     /// - On failure, responds with [`SdkError<DescribeMlflowTrackingServerError>`](crate::operation::describe_mlflow_tracking_server::DescribeMlflowTrackingServerError)
     pub fn describe_mlflow_tracking_server(
         &self,

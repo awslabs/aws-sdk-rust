@@ -63,6 +63,8 @@ pub use crate::types::_option_state::OptionState;
 
 pub use crate::types::_aiml_options_output::AimlOptionsOutput;
 
+pub use crate::types::_s3_vectors_engine::S3VectorsEngine;
+
 pub use crate::types::_natural_language_query_generation_options_output::NaturalLanguageQueryGenerationOptionsOutput;
 
 pub use crate::types::_natural_language_query_generation_current_state::NaturalLanguageQueryGenerationCurrentState;
@@ -678,6 +680,8 @@ mod _roles_key_id_c_option;
 mod _rollback_on_disable;
 
 mod _s3_glue_data_catalog;
+
+mod _s3_vectors_engine;
 
 mod _saml_idp;
 

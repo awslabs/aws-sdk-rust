@@ -449,6 +449,8 @@ pub(crate) mod shape_volume;
 
 pub(crate) mod shape_vpc_lattice_configuration;
 
+pub(crate) mod shape_advanced_configuration;
+
 pub(crate) mod shape_attachments;
 
 pub(crate) mod shape_aws_vpc_configuration;
@@ -478,6 +480,8 @@ pub(crate) mod shape_deployment_alarms;
 pub(crate) mod shape_deployment_circuit_breaker;
 
 pub(crate) mod shape_deployment_ephemeral_storage;
+
+pub(crate) mod shape_deployment_lifecycle_hook;
 
 pub(crate) mod shape_deployments;
 
@@ -577,6 +581,8 @@ pub(crate) mod shape_container_overrides;
 
 pub(crate) mod shape_deployment;
 
+pub(crate) mod shape_deployment_lifecycle_hook_list;
+
 pub(crate) mod shape_device;
 
 pub(crate) mod shape_ebs_tag_specification;
@@ -594,6 +600,8 @@ pub(crate) mod shape_instance_health_check_result_list;
 pub(crate) mod shape_kernel_capabilities;
 
 pub(crate) mod shape_proxy_configuration_properties;
+
+pub(crate) mod shape_resolved_configuration;
 
 pub(crate) mod shape_rollback;
 
@@ -657,13 +665,19 @@ pub(crate) mod shape_service_connect_service_list;
 
 pub(crate) mod shape_service_connect_service_resource_list;
 
+pub(crate) mod shape_service_connect_test_traffic_rules;
+
 pub(crate) mod shape_service_connect_tls_certificate_authority;
+
+pub(crate) mod shape_service_revision_load_balancers;
 
 pub(crate) mod shape_system_controls;
 
 pub(crate) mod shape_ulimit_list;
 
 pub(crate) mod shape_volume_from_list;
+
+pub(crate) mod shape_deployment_lifecycle_hook_stage_list;
 
 pub(crate) mod shape_devices_list;
 
@@ -679,6 +693,10 @@ pub(crate) mod shape_network_interface;
 
 pub(crate) mod shape_service_connect_service_resource;
 
+pub(crate) mod shape_service_connect_test_traffic_header_rules;
+
+pub(crate) mod shape_service_revision_load_balancer;
+
 pub(crate) mod shape_string_map;
 
 pub(crate) mod shape_tmpfs_list;
@@ -686,5 +704,7 @@ pub(crate) mod shape_tmpfs_list;
 pub(crate) mod shape_ebs_tag_specifications;
 
 pub(crate) mod shape_service_connect_client_alias_list;
+
+pub(crate) mod shape_service_connect_test_traffic_header_match_rules;
 
 pub(crate) mod shape_device_cgroup_permissions;

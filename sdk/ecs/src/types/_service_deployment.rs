@@ -36,6 +36,20 @@ pub struct ServiceDeployment {
     pub status: ::std::option::Option<crate::types::ServiceDeploymentStatus>,
     /// <p>Information about why the service deployment is in the current status. For example, the circuit breaker detected a failure.</p>
     pub status_reason: ::std::option::Option<::std::string::String>,
+    /// <p>The current lifecycle stage of the deployment. Possible values include:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>SCALE_UP_IN_PROGRESS</code> - Creating the new (green) tasks</p></li>
+    /// <li>
+    /// <p><code>TEST_TRAFFIC_SHIFT_IN_PROGRESS</code> - Shifting test traffic to the new (green) tasks</p></li>
+    /// <li>
+    /// <p><code>PRODUCTION_TRAFFIC_SHIFT_IN_PROGRESS</code> - Shifting production traffic to the new (green) tasks</p></li>
+    /// <li>
+    /// <p><code>BAKE_TIME_IN_PROGRESS</code> - The duration when both blue and green service revisions are running simultaneously after the production traffic has shifted</p></li>
+    /// <li>
+    /// <p><code>CLEAN_UP_IN_PROGRESS</code> - Stopping the old (blue) tasks</p></li>
+    /// </ul>
+    pub lifecycle_stage: ::std::option::Option<crate::types::ServiceDeploymentLifecycleStage>,
     /// <p>Optional deployment parameters that control how many tasks run during a deployment and the ordering of stopping and starting tasks.</p>
     pub deployment_configuration: ::std::option::Option<crate::types::DeploymentConfiguration>,
     /// <p>The rollback options the service deployment uses when the deployment fails.</p>
@@ -103,6 +117,22 @@ impl ServiceDeployment {
     pub fn status_reason(&self) -> ::std::option::Option<&str> {
         self.status_reason.as_deref()
     }
+    /// <p>The current lifecycle stage of the deployment. Possible values include:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>SCALE_UP_IN_PROGRESS</code> - Creating the new (green) tasks</p></li>
+    /// <li>
+    /// <p><code>TEST_TRAFFIC_SHIFT_IN_PROGRESS</code> - Shifting test traffic to the new (green) tasks</p></li>
+    /// <li>
+    /// <p><code>PRODUCTION_TRAFFIC_SHIFT_IN_PROGRESS</code> - Shifting production traffic to the new (green) tasks</p></li>
+    /// <li>
+    /// <p><code>BAKE_TIME_IN_PROGRESS</code> - The duration when both blue and green service revisions are running simultaneously after the production traffic has shifted</p></li>
+    /// <li>
+    /// <p><code>CLEAN_UP_IN_PROGRESS</code> - Stopping the old (blue) tasks</p></li>
+    /// </ul>
+    pub fn lifecycle_stage(&self) -> ::std::option::Option<&crate::types::ServiceDeploymentLifecycleStage> {
+        self.lifecycle_stage.as_ref()
+    }
     /// <p>Optional deployment parameters that control how many tasks run during a deployment and the ordering of stopping and starting tasks.</p>
     pub fn deployment_configuration(&self) -> ::std::option::Option<&crate::types::DeploymentConfiguration> {
         self.deployment_configuration.as_ref()
@@ -143,6 +173,7 @@ pub struct ServiceDeploymentBuilder {
     pub(crate) target_service_revision: ::std::option::Option<crate::types::ServiceRevisionSummary>,
     pub(crate) status: ::std::option::Option<crate::types::ServiceDeploymentStatus>,
     pub(crate) status_reason: ::std::option::Option<::std::string::String>,
+    pub(crate) lifecycle_stage: ::std::option::Option<crate::types::ServiceDeploymentLifecycleStage>,
     pub(crate) deployment_configuration: ::std::option::Option<crate::types::DeploymentConfiguration>,
     pub(crate) rollback: ::std::option::Option<crate::types::Rollback>,
     pub(crate) deployment_circuit_breaker: ::std::option::Option<crate::types::ServiceDeploymentCircuitBreaker>,
@@ -344,6 +375,56 @@ impl ServiceDeploymentBuilder {
     pub fn get_status_reason(&self) -> &::std::option::Option<::std::string::String> {
         &self.status_reason
     }
+    /// <p>The current lifecycle stage of the deployment. Possible values include:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>SCALE_UP_IN_PROGRESS</code> - Creating the new (green) tasks</p></li>
+    /// <li>
+    /// <p><code>TEST_TRAFFIC_SHIFT_IN_PROGRESS</code> - Shifting test traffic to the new (green) tasks</p></li>
+    /// <li>
+    /// <p><code>PRODUCTION_TRAFFIC_SHIFT_IN_PROGRESS</code> - Shifting production traffic to the new (green) tasks</p></li>
+    /// <li>
+    /// <p><code>BAKE_TIME_IN_PROGRESS</code> - The duration when both blue and green service revisions are running simultaneously after the production traffic has shifted</p></li>
+    /// <li>
+    /// <p><code>CLEAN_UP_IN_PROGRESS</code> - Stopping the old (blue) tasks</p></li>
+    /// </ul>
+    pub fn lifecycle_stage(mut self, input: crate::types::ServiceDeploymentLifecycleStage) -> Self {
+        self.lifecycle_stage = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The current lifecycle stage of the deployment. Possible values include:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>SCALE_UP_IN_PROGRESS</code> - Creating the new (green) tasks</p></li>
+    /// <li>
+    /// <p><code>TEST_TRAFFIC_SHIFT_IN_PROGRESS</code> - Shifting test traffic to the new (green) tasks</p></li>
+    /// <li>
+    /// <p><code>PRODUCTION_TRAFFIC_SHIFT_IN_PROGRESS</code> - Shifting production traffic to the new (green) tasks</p></li>
+    /// <li>
+    /// <p><code>BAKE_TIME_IN_PROGRESS</code> - The duration when both blue and green service revisions are running simultaneously after the production traffic has shifted</p></li>
+    /// <li>
+    /// <p><code>CLEAN_UP_IN_PROGRESS</code> - Stopping the old (blue) tasks</p></li>
+    /// </ul>
+    pub fn set_lifecycle_stage(mut self, input: ::std::option::Option<crate::types::ServiceDeploymentLifecycleStage>) -> Self {
+        self.lifecycle_stage = input;
+        self
+    }
+    /// <p>The current lifecycle stage of the deployment. Possible values include:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>SCALE_UP_IN_PROGRESS</code> - Creating the new (green) tasks</p></li>
+    /// <li>
+    /// <p><code>TEST_TRAFFIC_SHIFT_IN_PROGRESS</code> - Shifting test traffic to the new (green) tasks</p></li>
+    /// <li>
+    /// <p><code>PRODUCTION_TRAFFIC_SHIFT_IN_PROGRESS</code> - Shifting production traffic to the new (green) tasks</p></li>
+    /// <li>
+    /// <p><code>BAKE_TIME_IN_PROGRESS</code> - The duration when both blue and green service revisions are running simultaneously after the production traffic has shifted</p></li>
+    /// <li>
+    /// <p><code>CLEAN_UP_IN_PROGRESS</code> - Stopping the old (blue) tasks</p></li>
+    /// </ul>
+    pub fn get_lifecycle_stage(&self) -> &::std::option::Option<crate::types::ServiceDeploymentLifecycleStage> {
+        &self.lifecycle_stage
+    }
     /// <p>Optional deployment parameters that control how many tasks run during a deployment and the ordering of stopping and starting tasks.</p>
     pub fn deployment_configuration(mut self, input: crate::types::DeploymentConfiguration) -> Self {
         self.deployment_configuration = ::std::option::Option::Some(input);
@@ -415,6 +496,7 @@ impl ServiceDeploymentBuilder {
             target_service_revision: self.target_service_revision,
             status: self.status,
             status_reason: self.status_reason,
+            lifecycle_stage: self.lifecycle_stage,
             deployment_configuration: self.deployment_configuration,
             rollback: self.rollback,
             deployment_circuit_breaker: self.deployment_circuit_breaker,

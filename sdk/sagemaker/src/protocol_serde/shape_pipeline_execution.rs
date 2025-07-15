@@ -92,6 +92,20 @@ where
                         "PipelineParameters" => {
                             builder = builder.set_pipeline_parameters(crate::protocol_serde::shape_parameter_list::de_parameter_list(tokens)?);
                         }
+                        "PipelineVersionId" => {
+                            builder = builder.set_pipeline_version_id(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i64::try_from)
+                                    .transpose()?,
+                            );
+                        }
+                        "PipelineVersionDisplayName" => {
+                            builder = builder.set_pipeline_version_display_name(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

@@ -86,8 +86,18 @@ pub fn de_volume_status_item(
                 builder = builder.set_attachment_statuses(var_7);
             }
             ,
-            s if s.matches("availabilityZoneId") /* AvailabilityZoneId com.amazonaws.ec2#VolumeStatusItem$AvailabilityZoneId */ =>  {
+            s if s.matches("initializationStatusDetails") /* InitializationStatusDetails com.amazonaws.ec2#VolumeStatusItem$InitializationStatusDetails */ =>  {
                 let var_8 =
+                    Some(
+                        crate::protocol_serde::shape_initialization_status_details::de_initialization_status_details(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_initialization_status_details(var_8);
+            }
+            ,
+            s if s.matches("availabilityZoneId") /* AvailabilityZoneId com.amazonaws.ec2#VolumeStatusItem$AvailabilityZoneId */ =>  {
+                let var_9 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -96,7 +106,7 @@ pub fn de_volume_status_item(
                         ?
                     )
                 ;
-                builder = builder.set_availability_zone_id(var_8);
+                builder = builder.set_availability_zone_id(var_9);
             }
             ,
             _ => {}

@@ -15,6 +15,8 @@ pub struct DescribeClusterOutput {
     pub failure_message: ::std::option::Option<::std::string::String>,
     /// <p>The instance groups of the SageMaker HyperPod cluster.</p>
     pub instance_groups: ::std::option::Option<::std::vec::Vec<crate::types::ClusterInstanceGroupDetails>>,
+    /// <p>The specialized instance groups for training models like Amazon Nova to be created in the SageMaker HyperPod cluster.</p>
+    pub restricted_instance_groups: ::std::option::Option<::std::vec::Vec<crate::types::ClusterRestrictedInstanceGroupDetails>>,
     /// <p>Specifies an Amazon Virtual Private Cloud (VPC) that your SageMaker jobs, hosted models, and compute resources have access to. You can control access to and from your resources by configuring a VPC. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/infrastructure-give-access.html">Give SageMaker Access to Resources in your Amazon VPC</a>.</p>
     pub vpc_config: ::std::option::Option<crate::types::VpcConfig>,
     /// <p>The type of orchestrator used for the SageMaker HyperPod cluster.</p>
@@ -49,6 +51,12 @@ impl DescribeClusterOutput {
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.instance_groups.is_none()`.
     pub fn instance_groups(&self) -> &[crate::types::ClusterInstanceGroupDetails] {
         self.instance_groups.as_deref().unwrap_or_default()
+    }
+    /// <p>The specialized instance groups for training models like Amazon Nova to be created in the SageMaker HyperPod cluster.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.restricted_instance_groups.is_none()`.
+    pub fn restricted_instance_groups(&self) -> &[crate::types::ClusterRestrictedInstanceGroupDetails] {
+        self.restricted_instance_groups.as_deref().unwrap_or_default()
     }
     /// <p>Specifies an Amazon Virtual Private Cloud (VPC) that your SageMaker jobs, hosted models, and compute resources have access to. You can control access to and from your resources by configuring a VPC. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/infrastructure-give-access.html">Give SageMaker Access to Resources in your Amazon VPC</a>.</p>
     pub fn vpc_config(&self) -> ::std::option::Option<&crate::types::VpcConfig> {
@@ -85,6 +93,7 @@ pub struct DescribeClusterOutputBuilder {
     pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) failure_message: ::std::option::Option<::std::string::String>,
     pub(crate) instance_groups: ::std::option::Option<::std::vec::Vec<crate::types::ClusterInstanceGroupDetails>>,
+    pub(crate) restricted_instance_groups: ::std::option::Option<::std::vec::Vec<crate::types::ClusterRestrictedInstanceGroupDetails>>,
     pub(crate) vpc_config: ::std::option::Option<crate::types::VpcConfig>,
     pub(crate) orchestrator: ::std::option::Option<crate::types::ClusterOrchestrator>,
     pub(crate) node_recovery: ::std::option::Option<crate::types::ClusterNodeRecovery>,
@@ -183,6 +192,29 @@ impl DescribeClusterOutputBuilder {
     pub fn get_instance_groups(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ClusterInstanceGroupDetails>> {
         &self.instance_groups
     }
+    /// Appends an item to `restricted_instance_groups`.
+    ///
+    /// To override the contents of this collection use [`set_restricted_instance_groups`](Self::set_restricted_instance_groups).
+    ///
+    /// <p>The specialized instance groups for training models like Amazon Nova to be created in the SageMaker HyperPod cluster.</p>
+    pub fn restricted_instance_groups(mut self, input: crate::types::ClusterRestrictedInstanceGroupDetails) -> Self {
+        let mut v = self.restricted_instance_groups.unwrap_or_default();
+        v.push(input);
+        self.restricted_instance_groups = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The specialized instance groups for training models like Amazon Nova to be created in the SageMaker HyperPod cluster.</p>
+    pub fn set_restricted_instance_groups(
+        mut self,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ClusterRestrictedInstanceGroupDetails>>,
+    ) -> Self {
+        self.restricted_instance_groups = input;
+        self
+    }
+    /// <p>The specialized instance groups for training models like Amazon Nova to be created in the SageMaker HyperPod cluster.</p>
+    pub fn get_restricted_instance_groups(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ClusterRestrictedInstanceGroupDetails>> {
+        &self.restricted_instance_groups
+    }
     /// <p>Specifies an Amazon Virtual Private Cloud (VPC) that your SageMaker jobs, hosted models, and compute resources have access to. You can control access to and from your resources by configuring a VPC. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/infrastructure-give-access.html">Give SageMaker Access to Resources in your Amazon VPC</a>.</p>
     pub fn vpc_config(mut self, input: crate::types::VpcConfig) -> Self {
         self.vpc_config = ::std::option::Option::Some(input);
@@ -243,6 +275,7 @@ impl DescribeClusterOutputBuilder {
             creation_time: self.creation_time,
             failure_message: self.failure_message,
             instance_groups: self.instance_groups,
+            restricted_instance_groups: self.restricted_instance_groups,
             vpc_config: self.vpc_config,
             orchestrator: self.orchestrator,
             node_recovery: self.node_recovery,

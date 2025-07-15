@@ -20,7 +20,7 @@ libfuzzer-sys = "=0.4.7"
 
 [dependencies.aws-config]
 path = ".."
-version = "1.8.1"
+version = "1.8.2"
 
 [dependencies.aws-types]
 path = "../../../sdk/build/aws-sdk/sdk/aws-types"

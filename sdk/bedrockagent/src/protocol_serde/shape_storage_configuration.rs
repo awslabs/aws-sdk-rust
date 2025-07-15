@@ -48,6 +48,12 @@ pub fn ser_storage_configuration(
         crate::protocol_serde::shape_neptune_analytics_configuration::ser_neptune_analytics_configuration(&mut object_14, var_13)?;
         object_14.finish();
     }
+    if let Some(var_15) = &input.s3_vectors_configuration {
+        #[allow(unused_mut)]
+        let mut object_16 = object.key("s3VectorsConfiguration").start_object();
+        crate::protocol_serde::shape_s3_vectors_configuration::ser_s3_vectors_configuration(&mut object_16, var_15)?;
+        object_16.finish();
+    }
     Ok(())
 }
 
@@ -105,6 +111,11 @@ where
                         "neptuneAnalyticsConfiguration" => {
                             builder = builder.set_neptune_analytics_configuration(
                                 crate::protocol_serde::shape_neptune_analytics_configuration::de_neptune_analytics_configuration(tokens)?,
+                            );
+                        }
+                        "s3VectorsConfiguration" => {
+                            builder = builder.set_s3_vectors_configuration(
+                                crate::protocol_serde::shape_s3_vectors_configuration::de_s3_vectors_configuration(tokens)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

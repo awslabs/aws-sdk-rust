@@ -11,6 +11,8 @@ impl super::Client {
     ///   - [`status(String)`](crate::operation::get_space::GetSpaceOutput::status): <p>The creation or deletion status of the private re:Post.</p>
     ///   - [`configuration_status(ConfigurationStatus)`](crate::operation::get_space::GetSpaceOutput::configuration_status): <p>The configuration status of the private re:Post.</p>
     ///   - [`client_id(String)`](crate::operation::get_space::GetSpaceOutput::client_id): <p>The Identity Center identifier for the Application Instance.</p>
+    ///   - [`identity_store_id(Option<String>)`](crate::operation::get_space::GetSpaceOutput::identity_store_id): <p></p>
+    ///   - [`application_arn(Option<String>)`](crate::operation::get_space::GetSpaceOutput::application_arn): <p></p>
     ///   - [`description(Option<String>)`](crate::operation::get_space::GetSpaceOutput::description): <p>The description of the private re:Post.</p>
     ///   - [`vanity_domain_status(VanityDomainStatus)`](crate::operation::get_space::GetSpaceOutput::vanity_domain_status): <p>The approval status of the custom subdomain.</p>
     ///   - [`vanity_domain(String)`](crate::operation::get_space::GetSpaceOutput::vanity_domain): <p>The custom subdomain that you use to access your private re:Post. All custom subdomains must be approved by AWS before use.</p>
@@ -26,6 +28,7 @@ impl super::Client {
     ///   - [`user_kms_key(Option<String>)`](crate::operation::get_space::GetSpaceOutput::user_kms_key): <p>The custom AWS KMS key ARN that’s used for the AWS KMS encryption.</p>
     ///   - [`user_count(Option<i32>)`](crate::operation::get_space::GetSpaceOutput::user_count): <p>The number of users that have onboarded to the private re:Post.</p>
     ///   - [`content_size(Option<i64>)`](crate::operation::get_space::GetSpaceOutput::content_size): <p>The content size of the private re:Post.</p>
+    ///   - [`supported_email_domains(Option<SupportedEmailDomainsStatus>)`](crate::operation::get_space::GetSpaceOutput::supported_email_domains): <p></p>
     /// - On failure, responds with [`SdkError<GetSpaceError>`](crate::operation::get_space::GetSpaceError)
     pub fn get_space(&self) -> crate::operation::get_space::builders::GetSpaceFluentBuilder {
         crate::operation::get_space::builders::GetSpaceFluentBuilder::new(self.handle.clone())

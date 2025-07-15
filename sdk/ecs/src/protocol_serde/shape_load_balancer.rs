@@ -18,6 +18,12 @@ pub fn ser_load_balancer(
             ::aws_smithy_types::Number::NegInt((*var_4).into()),
         );
     }
+    if let Some(var_5) = &input.advanced_configuration {
+        #[allow(unused_mut)]
+        let mut object_6 = object.key("advancedConfiguration").start_object();
+        crate::protocol_serde::shape_advanced_configuration::ser_advanced_configuration(&mut object_6, var_5)?;
+        object_6.finish();
+    }
     Ok(())
 }
 
@@ -63,6 +69,10 @@ where
                                     .map(i32::try_from)
                                     .transpose()?,
                             );
+                        }
+                        "advancedConfiguration" => {
+                            builder = builder
+                                .set_advanced_configuration(crate::protocol_serde::shape_advanced_configuration::de_advanced_configuration(tokens)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

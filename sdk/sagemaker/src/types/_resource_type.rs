@@ -27,6 +27,7 @@
 ///     ResourceType::ModelPackageGroup => { /* ... */ },
 ///     ResourceType::Pipeline => { /* ... */ },
 ///     ResourceType::PipelineExecution => { /* ... */ },
+///     ResourceType::PipelineVersion => { /* ... */ },
 ///     ResourceType::Project => { /* ... */ },
 ///     ResourceType::TrainingJob => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -88,6 +89,8 @@ pub enum ResourceType {
     #[allow(missing_docs)] // documentation missing in model
     PipelineExecution,
     #[allow(missing_docs)] // documentation missing in model
+    PipelineVersion,
+    #[allow(missing_docs)] // documentation missing in model
     Project,
     #[allow(missing_docs)] // documentation missing in model
     TrainingJob,
@@ -113,6 +116,7 @@ impl ::std::convert::From<&str> for ResourceType {
             "ModelPackageGroup" => ResourceType::ModelPackageGroup,
             "Pipeline" => ResourceType::Pipeline,
             "PipelineExecution" => ResourceType::PipelineExecution,
+            "PipelineVersion" => ResourceType::PipelineVersion,
             "Project" => ResourceType::Project,
             "TrainingJob" => ResourceType::TrainingJob,
             other => ResourceType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -145,6 +149,7 @@ impl ResourceType {
             ResourceType::ModelPackageGroup => "ModelPackageGroup",
             ResourceType::Pipeline => "Pipeline",
             ResourceType::PipelineExecution => "PipelineExecution",
+            ResourceType::PipelineVersion => "PipelineVersion",
             ResourceType::Project => "Project",
             ResourceType::TrainingJob => "TrainingJob",
             ResourceType::Unknown(value) => value.as_str(),
@@ -168,6 +173,7 @@ impl ResourceType {
             "ModelPackageGroup",
             "Pipeline",
             "PipelineExecution",
+            "PipelineVersion",
             "Project",
             "TrainingJob",
         ]
@@ -208,6 +214,7 @@ impl ::std::fmt::Display for ResourceType {
             ResourceType::ModelPackageGroup => write!(f, "ModelPackageGroup"),
             ResourceType::Pipeline => write!(f, "Pipeline"),
             ResourceType::PipelineExecution => write!(f, "PipelineExecution"),
+            ResourceType::PipelineVersion => write!(f, "PipelineVersion"),
             ResourceType::Project => write!(f, "Project"),
             ResourceType::TrainingJob => write!(f, "TrainingJob"),
             ResourceType::Unknown(value) => write!(f, "{}", value),

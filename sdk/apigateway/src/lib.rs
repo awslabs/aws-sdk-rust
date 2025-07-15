@@ -32,7 +32,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-//! aws-sdk-apigateway = "1.77.0"
+//! aws-sdk-apigateway = "1.78.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!
@@ -187,8 +187,6 @@ pub mod primitives;
 pub mod types;
 
 mod apigateway_interceptors;
-
-mod auth_plugin;
 
 pub(crate) mod protocol_serde;
 

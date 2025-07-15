@@ -7,8 +7,8 @@ version = "0.1.0"
 publish = false
 
 [dependencies]
-aws-config= { version = "1.8.1", path = "../../../../sdk/aws-config", features = ["behavior-version-latest"] }
-aws-sdk-dynamodb= { version = "1.82.0", path = "../../../../sdk/dynamodb" }
+aws-config= { version = "1.8.2", path = "../../../../sdk/aws-config", features = ["behavior-version-latest"] }
+aws-sdk-dynamodb= { version = "1.83.0", path = "../../../../sdk/dynamodb" }
 
 [dependencies.clap]
 version = "4.4"

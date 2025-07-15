@@ -9,6 +9,8 @@ pub struct UpdateTopicInput {
     pub topic_id: ::std::option::Option<::std::string::String>,
     /// <p>The definition of the topic that you want to update.</p>
     pub topic: ::std::option::Option<crate::types::TopicDetails>,
+    /// <p>Custom instructions for the topic.</p>
+    pub custom_instructions: ::std::option::Option<crate::types::CustomInstructions>,
 }
 impl UpdateTopicInput {
     /// <p>The ID of the Amazon Web Services account that contains the topic that you want to update.</p>
@@ -22,6 +24,10 @@ impl UpdateTopicInput {
     /// <p>The definition of the topic that you want to update.</p>
     pub fn topic(&self) -> ::std::option::Option<&crate::types::TopicDetails> {
         self.topic.as_ref()
+    }
+    /// <p>Custom instructions for the topic.</p>
+    pub fn custom_instructions(&self) -> ::std::option::Option<&crate::types::CustomInstructions> {
+        self.custom_instructions.as_ref()
     }
 }
 impl UpdateTopicInput {
@@ -38,6 +44,7 @@ pub struct UpdateTopicInputBuilder {
     pub(crate) aws_account_id: ::std::option::Option<::std::string::String>,
     pub(crate) topic_id: ::std::option::Option<::std::string::String>,
     pub(crate) topic: ::std::option::Option<crate::types::TopicDetails>,
+    pub(crate) custom_instructions: ::std::option::Option<crate::types::CustomInstructions>,
 }
 impl UpdateTopicInputBuilder {
     /// <p>The ID of the Amazon Web Services account that contains the topic that you want to update.</p>
@@ -85,12 +92,27 @@ impl UpdateTopicInputBuilder {
     pub fn get_topic(&self) -> &::std::option::Option<crate::types::TopicDetails> {
         &self.topic
     }
+    /// <p>Custom instructions for the topic.</p>
+    pub fn custom_instructions(mut self, input: crate::types::CustomInstructions) -> Self {
+        self.custom_instructions = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Custom instructions for the topic.</p>
+    pub fn set_custom_instructions(mut self, input: ::std::option::Option<crate::types::CustomInstructions>) -> Self {
+        self.custom_instructions = input;
+        self
+    }
+    /// <p>Custom instructions for the topic.</p>
+    pub fn get_custom_instructions(&self) -> &::std::option::Option<crate::types::CustomInstructions> {
+        &self.custom_instructions
+    }
     /// Consumes the builder and constructs a [`UpdateTopicInput`](crate::operation::update_topic::UpdateTopicInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::update_topic::UpdateTopicInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_topic::UpdateTopicInput {
             aws_account_id: self.aws_account_id,
             topic_id: self.topic_id,
             topic: self.topic,
+            custom_instructions: self.custom_instructions,
         })
     }
 }

@@ -18,32 +18,47 @@ pub fn ser_create_cluster_input_input(
         }
         array_3.finish();
     }
-    if let Some(var_6) = &input.vpc_config {
-        #[allow(unused_mut)]
-        let mut object_7 = object.key("VpcConfig").start_object();
-        crate::protocol_serde::shape_vpc_config::ser_vpc_config(&mut object_7, var_6)?;
-        object_7.finish();
-    }
-    if let Some(var_8) = &input.tags {
-        let mut array_9 = object.key("Tags").start_array();
-        for item_10 in var_8 {
+    if let Some(var_6) = &input.restricted_instance_groups {
+        let mut array_7 = object.key("RestrictedInstanceGroups").start_array();
+        for item_8 in var_6 {
             {
                 #[allow(unused_mut)]
-                let mut object_11 = array_9.value().start_object();
-                crate::protocol_serde::shape_tag::ser_tag(&mut object_11, item_10)?;
-                object_11.finish();
+                let mut object_9 = array_7.value().start_object();
+                crate::protocol_serde::shape_cluster_restricted_instance_group_specification::ser_cluster_restricted_instance_group_specification(
+                    &mut object_9,
+                    item_8,
+                )?;
+                object_9.finish();
             }
         }
-        array_9.finish();
+        array_7.finish();
     }
-    if let Some(var_12) = &input.orchestrator {
+    if let Some(var_10) = &input.vpc_config {
         #[allow(unused_mut)]
-        let mut object_13 = object.key("Orchestrator").start_object();
-        crate::protocol_serde::shape_cluster_orchestrator::ser_cluster_orchestrator(&mut object_13, var_12)?;
-        object_13.finish();
+        let mut object_11 = object.key("VpcConfig").start_object();
+        crate::protocol_serde::shape_vpc_config::ser_vpc_config(&mut object_11, var_10)?;
+        object_11.finish();
     }
-    if let Some(var_14) = &input.node_recovery {
-        object.key("NodeRecovery").string(var_14.as_str());
+    if let Some(var_12) = &input.tags {
+        let mut array_13 = object.key("Tags").start_array();
+        for item_14 in var_12 {
+            {
+                #[allow(unused_mut)]
+                let mut object_15 = array_13.value().start_object();
+                crate::protocol_serde::shape_tag::ser_tag(&mut object_15, item_14)?;
+                object_15.finish();
+            }
+        }
+        array_13.finish();
+    }
+    if let Some(var_16) = &input.orchestrator {
+        #[allow(unused_mut)]
+        let mut object_17 = object.key("Orchestrator").start_object();
+        crate::protocol_serde::shape_cluster_orchestrator::ser_cluster_orchestrator(&mut object_17, var_16)?;
+        object_17.finish();
+    }
+    if let Some(var_18) = &input.node_recovery {
+        object.key("NodeRecovery").string(var_18.as_str());
     }
     Ok(())
 }

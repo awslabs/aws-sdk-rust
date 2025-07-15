@@ -110,17 +110,17 @@ impl DescribeTasksFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the task or tasks to describe. If you do not specify a cluster, the default cluster is assumed. This parameter is required. If you do not specify a value, the <code>default</code> cluster is used.</p>
+    /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the task or tasks to describe. If you do not specify a cluster, the default cluster is assumed. If you do not specify a value, the <code>default</code> cluster is used.</p>
     pub fn cluster(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.cluster(input.into());
         self
     }
-    /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the task or tasks to describe. If you do not specify a cluster, the default cluster is assumed. This parameter is required. If you do not specify a value, the <code>default</code> cluster is used.</p>
+    /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the task or tasks to describe. If you do not specify a cluster, the default cluster is assumed. If you do not specify a value, the <code>default</code> cluster is used.</p>
     pub fn set_cluster(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_cluster(input);
         self
     }
-    /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the task or tasks to describe. If you do not specify a cluster, the default cluster is assumed. This parameter is required. If you do not specify a value, the <code>default</code> cluster is used.</p>
+    /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the task or tasks to describe. If you do not specify a cluster, the default cluster is assumed. If you do not specify a value, the <code>default</code> cluster is used.</p>
     pub fn get_cluster(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_cluster()
     }

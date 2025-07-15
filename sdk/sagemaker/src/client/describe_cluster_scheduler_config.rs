@@ -16,9 +16,9 @@ impl super::Client {
     ///   - [`scheduler_config(Option<SchedulerConfig>)`](crate::operation::describe_cluster_scheduler_config::DescribeClusterSchedulerConfigOutput::scheduler_config): <p>Cluster policy configuration. This policy is used for task prioritization and fair-share allocation. This helps prioritize critical workloads and distributes idle compute across entities.</p>
     ///   - [`description(Option<String>)`](crate::operation::describe_cluster_scheduler_config::DescribeClusterSchedulerConfigOutput::description): <p>Description of the cluster policy.</p>
     ///   - [`creation_time(Option<DateTime>)`](crate::operation::describe_cluster_scheduler_config::DescribeClusterSchedulerConfigOutput::creation_time): <p>Creation time of the cluster policy.</p>
-    ///   - [`created_by(Option<UserContext>)`](crate::operation::describe_cluster_scheduler_config::DescribeClusterSchedulerConfigOutput::created_by): <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
+    ///   - [`created_by(Option<UserContext>)`](crate::operation::describe_cluster_scheduler_config::DescribeClusterSchedulerConfigOutput::created_by): <p>Information about the user who created or modified a SageMaker resource.</p>
     ///   - [`last_modified_time(Option<DateTime>)`](crate::operation::describe_cluster_scheduler_config::DescribeClusterSchedulerConfigOutput::last_modified_time): <p>Last modified time of the cluster policy.</p>
-    ///   - [`last_modified_by(Option<UserContext>)`](crate::operation::describe_cluster_scheduler_config::DescribeClusterSchedulerConfigOutput::last_modified_by): <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
+    ///   - [`last_modified_by(Option<UserContext>)`](crate::operation::describe_cluster_scheduler_config::DescribeClusterSchedulerConfigOutput::last_modified_by): <p>Information about the user who created or modified a SageMaker resource.</p>
     /// - On failure, responds with [`SdkError<DescribeClusterSchedulerConfigError>`](crate::operation::describe_cluster_scheduler_config::DescribeClusterSchedulerConfigError)
     pub fn describe_cluster_scheduler_config(
         &self,

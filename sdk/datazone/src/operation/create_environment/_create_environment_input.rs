@@ -167,7 +167,6 @@ impl CreateEnvironmentInputBuilder {
         &self.name
     }
     /// <p>The identifier of the environment profile that is used to create this Amazon DataZone environment.</p>
-    /// This field is required.
     pub fn environment_profile_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.environment_profile_identifier = ::std::option::Option::Some(input.into());
         self

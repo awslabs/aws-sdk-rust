@@ -207,6 +207,18 @@ pub(crate) fn topic_configuration_correct_errors(
     builder
 }
 
+pub(crate) fn get_bucket_metadata_configuration_result_correct_errors(
+    mut builder: crate::types::builders::GetBucketMetadataConfigurationResultBuilder,
+) -> crate::types::builders::GetBucketMetadataConfigurationResultBuilder {
+    if builder.metadata_configuration_result.is_none() {
+        builder.metadata_configuration_result = {
+            let builder = crate::types::builders::MetadataConfigurationResultBuilder::default();
+            Some(crate::serde_util::metadata_configuration_result_correct_errors(builder).build())
+        }
+    }
+    builder
+}
+
 pub(crate) fn get_bucket_metadata_table_configuration_result_correct_errors(
     mut builder: crate::types::builders::GetBucketMetadataTableConfigurationResultBuilder,
 ) -> crate::types::builders::GetBucketMetadataTableConfigurationResultBuilder {
@@ -331,6 +343,18 @@ pub(crate) fn inventory_s3_bucket_destination_correct_errors(
     builder
 }
 
+pub(crate) fn metadata_configuration_result_correct_errors(
+    mut builder: crate::types::builders::MetadataConfigurationResultBuilder,
+) -> crate::types::builders::MetadataConfigurationResultBuilder {
+    if builder.destination_result.is_none() {
+        builder.destination_result = {
+            let builder = crate::types::builders::DestinationResultBuilder::default();
+            Some(builder.build())
+        }
+    }
+    builder
+}
+
 pub(crate) fn metadata_table_configuration_result_correct_errors(
     mut builder: crate::types::builders::MetadataTableConfigurationResultBuilder,
 ) -> crate::types::builders::MetadataTableConfigurationResultBuilder {
@@ -410,6 +434,33 @@ pub(crate) fn existing_object_replication_correct_errors(
     builder
 }
 
+pub(crate) fn inventory_table_configuration_result_correct_errors(
+    mut builder: crate::types::builders::InventoryTableConfigurationResultBuilder,
+) -> crate::types::builders::InventoryTableConfigurationResultBuilder {
+    if builder.configuration_state.is_none() {
+        builder.configuration_state = "no value was set".parse::<crate::types::InventoryConfigurationState>().ok()
+    }
+    builder
+}
+
+pub(crate) fn journal_table_configuration_result_correct_errors(
+    mut builder: crate::types::builders::JournalTableConfigurationResultBuilder,
+) -> crate::types::builders::JournalTableConfigurationResultBuilder {
+    if builder.table_status.is_none() {
+        builder.table_status = Some(Default::default())
+    }
+    if builder.table_name.is_none() {
+        builder.table_name = Some(Default::default())
+    }
+    if builder.record_expiration.is_none() {
+        builder.record_expiration = {
+            let builder = crate::types::builders::RecordExpirationBuilder::default();
+            crate::serde_util::record_expiration_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
 pub(crate) fn s3_tables_destination_result_correct_errors(
     mut builder: crate::types::builders::S3TablesDestinationResultBuilder,
 ) -> crate::types::builders::S3TablesDestinationResultBuilder {
@@ -461,6 +512,15 @@ pub(crate) fn analytics_s3_bucket_destination_correct_errors(
 pub(crate) fn metrics_correct_errors(mut builder: crate::types::builders::MetricsBuilder) -> crate::types::builders::MetricsBuilder {
     if builder.status.is_none() {
         builder.status = "no value was set".parse::<crate::types::MetricsStatus>().ok()
+    }
+    builder
+}
+
+pub(crate) fn record_expiration_correct_errors(
+    mut builder: crate::types::builders::RecordExpirationBuilder,
+) -> crate::types::builders::RecordExpirationBuilder {
+    if builder.expiration.is_none() {
+        builder.expiration = "no value was set".parse::<crate::types::ExpirationState>().ok()
     }
     builder
 }

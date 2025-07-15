@@ -3,17 +3,17 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetBucketMetadataTableConfigurationInput {
-    /// <p>The general purpose bucket that contains the metadata table configuration that you want to retrieve.</p>
+    /// <p>The general purpose bucket that corresponds to the metadata table configuration that you want to retrieve.</p>
     pub bucket: ::std::option::Option<::std::string::String>,
-    /// <p>The expected owner of the general purpose bucket that you want to retrieve the metadata table configuration from.</p>
+    /// <p>The expected owner of the general purpose bucket that you want to retrieve the metadata table configuration for.</p>
     pub expected_bucket_owner: ::std::option::Option<::std::string::String>,
 }
 impl GetBucketMetadataTableConfigurationInput {
-    /// <p>The general purpose bucket that contains the metadata table configuration that you want to retrieve.</p>
+    /// <p>The general purpose bucket that corresponds to the metadata table configuration that you want to retrieve.</p>
     pub fn bucket(&self) -> ::std::option::Option<&str> {
         self.bucket.as_deref()
     }
-    /// <p>The expected owner of the general purpose bucket that you want to retrieve the metadata table configuration from.</p>
+    /// <p>The expected owner of the general purpose bucket that you want to retrieve the metadata table configuration for.</p>
     pub fn expected_bucket_owner(&self) -> ::std::option::Option<&str> {
         self.expected_bucket_owner.as_deref()
     }
@@ -33,32 +33,32 @@ pub struct GetBucketMetadataTableConfigurationInputBuilder {
     pub(crate) expected_bucket_owner: ::std::option::Option<::std::string::String>,
 }
 impl GetBucketMetadataTableConfigurationInputBuilder {
-    /// <p>The general purpose bucket that contains the metadata table configuration that you want to retrieve.</p>
+    /// <p>The general purpose bucket that corresponds to the metadata table configuration that you want to retrieve.</p>
     /// This field is required.
     pub fn bucket(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bucket = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The general purpose bucket that contains the metadata table configuration that you want to retrieve.</p>
+    /// <p>The general purpose bucket that corresponds to the metadata table configuration that you want to retrieve.</p>
     pub fn set_bucket(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.bucket = input;
         self
     }
-    /// <p>The general purpose bucket that contains the metadata table configuration that you want to retrieve.</p>
+    /// <p>The general purpose bucket that corresponds to the metadata table configuration that you want to retrieve.</p>
     pub fn get_bucket(&self) -> &::std::option::Option<::std::string::String> {
         &self.bucket
     }
-    /// <p>The expected owner of the general purpose bucket that you want to retrieve the metadata table configuration from.</p>
+    /// <p>The expected owner of the general purpose bucket that you want to retrieve the metadata table configuration for.</p>
     pub fn expected_bucket_owner(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.expected_bucket_owner = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The expected owner of the general purpose bucket that you want to retrieve the metadata table configuration from.</p>
+    /// <p>The expected owner of the general purpose bucket that you want to retrieve the metadata table configuration for.</p>
     pub fn set_expected_bucket_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.expected_bucket_owner = input;
         self
     }
-    /// <p>The expected owner of the general purpose bucket that you want to retrieve the metadata table configuration from.</p>
+    /// <p>The expected owner of the general purpose bucket that you want to retrieve the metadata table configuration for.</p>
     pub fn get_expected_bucket_owner(&self) -> &::std::option::Option<::std::string::String> {
         &self.expected_bucket_owner
     }

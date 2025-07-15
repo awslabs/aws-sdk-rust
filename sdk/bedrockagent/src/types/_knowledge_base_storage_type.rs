@@ -19,6 +19,7 @@
 ///     KnowledgeBaseStorageType::Pinecone => { /* ... */ },
 ///     KnowledgeBaseStorageType::Rds => { /* ... */ },
 ///     KnowledgeBaseStorageType::RedisEnterpriseCloud => { /* ... */ },
+///     KnowledgeBaseStorageType::S3Vectors => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -61,6 +62,8 @@ pub enum KnowledgeBaseStorageType {
     Rds,
     #[allow(missing_docs)] // documentation missing in model
     RedisEnterpriseCloud,
+    #[allow(missing_docs)] // documentation missing in model
+    S3Vectors,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -75,6 +78,7 @@ impl ::std::convert::From<&str> for KnowledgeBaseStorageType {
             "PINECONE" => KnowledgeBaseStorageType::Pinecone,
             "RDS" => KnowledgeBaseStorageType::Rds,
             "REDIS_ENTERPRISE_CLOUD" => KnowledgeBaseStorageType::RedisEnterpriseCloud,
+            "S3_VECTORS" => KnowledgeBaseStorageType::S3Vectors,
             other => KnowledgeBaseStorageType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -97,6 +101,7 @@ impl KnowledgeBaseStorageType {
             KnowledgeBaseStorageType::Pinecone => "PINECONE",
             KnowledgeBaseStorageType::Rds => "RDS",
             KnowledgeBaseStorageType::RedisEnterpriseCloud => "REDIS_ENTERPRISE_CLOUD",
+            KnowledgeBaseStorageType::S3Vectors => "S3_VECTORS",
             KnowledgeBaseStorageType::Unknown(value) => value.as_str(),
         }
     }
@@ -110,6 +115,7 @@ impl KnowledgeBaseStorageType {
             "PINECONE",
             "RDS",
             "REDIS_ENTERPRISE_CLOUD",
+            "S3_VECTORS",
         ]
     }
 }
@@ -140,6 +146,7 @@ impl ::std::fmt::Display for KnowledgeBaseStorageType {
             KnowledgeBaseStorageType::Pinecone => write!(f, "PINECONE"),
             KnowledgeBaseStorageType::Rds => write!(f, "RDS"),
             KnowledgeBaseStorageType::RedisEnterpriseCloud => write!(f, "REDIS_ENTERPRISE_CLOUD"),
+            KnowledgeBaseStorageType::S3Vectors => write!(f, "S3_VECTORS"),
             KnowledgeBaseStorageType::Unknown(value) => write!(f, "{}", value),
         }
     }

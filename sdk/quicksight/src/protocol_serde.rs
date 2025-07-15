@@ -723,6 +723,8 @@ pub(crate) mod shape_column_level_permission_rule;
 
 pub(crate) mod shape_create_topic_reviewed_answer;
 
+pub(crate) mod shape_custom_instructions;
+
 pub(crate) mod shape_custom_permissions;
 
 pub(crate) mod shape_custom_permissions_list;

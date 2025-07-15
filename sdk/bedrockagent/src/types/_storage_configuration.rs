@@ -20,6 +20,8 @@ pub struct StorageConfiguration {
     pub mongo_db_atlas_configuration: ::std::option::Option<crate::types::MongoDbAtlasConfiguration>,
     /// <p>Contains details about the Neptune Analytics configuration of the knowledge base in Amazon Neptune. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/knowledge-base-setup-neptune.html">Create a vector index in Amazon Neptune Analytics.</a>.</p>
     pub neptune_analytics_configuration: ::std::option::Option<crate::types::NeptuneAnalyticsConfiguration>,
+    /// <p>The configuration settings for storing knowledge base data using S3 vectors. This includes vector index information and S3 bucket details for vector storage.</p>
+    pub s3_vectors_configuration: ::std::option::Option<crate::types::S3VectorsConfiguration>,
 }
 impl StorageConfiguration {
     /// <p>The vector store service in which the knowledge base is stored.</p>
@@ -54,6 +56,10 @@ impl StorageConfiguration {
     pub fn neptune_analytics_configuration(&self) -> ::std::option::Option<&crate::types::NeptuneAnalyticsConfiguration> {
         self.neptune_analytics_configuration.as_ref()
     }
+    /// <p>The configuration settings for storing knowledge base data using S3 vectors. This includes vector index information and S3 bucket details for vector storage.</p>
+    pub fn s3_vectors_configuration(&self) -> ::std::option::Option<&crate::types::S3VectorsConfiguration> {
+        self.s3_vectors_configuration.as_ref()
+    }
 }
 impl StorageConfiguration {
     /// Creates a new builder-style object to manufacture [`StorageConfiguration`](crate::types::StorageConfiguration).
@@ -74,6 +80,7 @@ pub struct StorageConfigurationBuilder {
     pub(crate) rds_configuration: ::std::option::Option<crate::types::RdsConfiguration>,
     pub(crate) mongo_db_atlas_configuration: ::std::option::Option<crate::types::MongoDbAtlasConfiguration>,
     pub(crate) neptune_analytics_configuration: ::std::option::Option<crate::types::NeptuneAnalyticsConfiguration>,
+    pub(crate) s3_vectors_configuration: ::std::option::Option<crate::types::S3VectorsConfiguration>,
 }
 impl StorageConfigurationBuilder {
     /// <p>The vector store service in which the knowledge base is stored.</p>
@@ -192,6 +199,20 @@ impl StorageConfigurationBuilder {
     pub fn get_neptune_analytics_configuration(&self) -> &::std::option::Option<crate::types::NeptuneAnalyticsConfiguration> {
         &self.neptune_analytics_configuration
     }
+    /// <p>The configuration settings for storing knowledge base data using S3 vectors. This includes vector index information and S3 bucket details for vector storage.</p>
+    pub fn s3_vectors_configuration(mut self, input: crate::types::S3VectorsConfiguration) -> Self {
+        self.s3_vectors_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The configuration settings for storing knowledge base data using S3 vectors. This includes vector index information and S3 bucket details for vector storage.</p>
+    pub fn set_s3_vectors_configuration(mut self, input: ::std::option::Option<crate::types::S3VectorsConfiguration>) -> Self {
+        self.s3_vectors_configuration = input;
+        self
+    }
+    /// <p>The configuration settings for storing knowledge base data using S3 vectors. This includes vector index information and S3 bucket details for vector storage.</p>
+    pub fn get_s3_vectors_configuration(&self) -> &::std::option::Option<crate::types::S3VectorsConfiguration> {
+        &self.s3_vectors_configuration
+    }
     /// Consumes the builder and constructs a [`StorageConfiguration`](crate::types::StorageConfiguration).
     /// This method will fail if any of the following fields are not set:
     /// - [`r#type`](crate::types::builders::StorageConfigurationBuilder::type)
@@ -210,6 +231,7 @@ impl StorageConfigurationBuilder {
             rds_configuration: self.rds_configuration,
             mongo_db_atlas_configuration: self.mongo_db_atlas_configuration,
             neptune_analytics_configuration: self.neptune_analytics_configuration,
+            s3_vectors_configuration: self.s3_vectors_configuration,
         })
     }
 }

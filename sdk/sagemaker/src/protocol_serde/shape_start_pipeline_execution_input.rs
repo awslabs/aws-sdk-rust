@@ -39,5 +39,11 @@ pub fn ser_start_pipeline_execution_input_input(
         crate::protocol_serde::shape_selective_execution_config::ser_selective_execution_config(&mut object_12, var_11)?;
         object_12.finish();
     }
+    if let Some(var_13) = &input.pipeline_version_id {
+        object.key("PipelineVersionId").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_13).into()),
+        );
+    }
     Ok(())
 }

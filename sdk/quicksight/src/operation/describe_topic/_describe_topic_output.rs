@@ -13,6 +13,8 @@ pub struct DescribeTopicOutput {
     pub request_id: ::std::option::Option<::std::string::String>,
     /// <p>The HTTP status of the request.</p>
     pub status: i32,
+    /// <p>Custom instructions for the topic.</p>
+    pub custom_instructions: ::std::option::Option<crate::types::CustomInstructions>,
     _request_id: Option<String>,
 }
 impl DescribeTopicOutput {
@@ -36,6 +38,10 @@ impl DescribeTopicOutput {
     pub fn status(&self) -> i32 {
         self.status
     }
+    /// <p>Custom instructions for the topic.</p>
+    pub fn custom_instructions(&self) -> ::std::option::Option<&crate::types::CustomInstructions> {
+        self.custom_instructions.as_ref()
+    }
 }
 impl ::aws_types::request_id::RequestId for DescribeTopicOutput {
     fn request_id(&self) -> Option<&str> {
@@ -58,6 +64,7 @@ pub struct DescribeTopicOutputBuilder {
     pub(crate) topic: ::std::option::Option<crate::types::TopicDetails>,
     pub(crate) request_id: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<i32>,
+    pub(crate) custom_instructions: ::std::option::Option<crate::types::CustomInstructions>,
     _request_id: Option<String>,
 }
 impl DescribeTopicOutputBuilder {
@@ -131,6 +138,20 @@ impl DescribeTopicOutputBuilder {
     pub fn get_status(&self) -> &::std::option::Option<i32> {
         &self.status
     }
+    /// <p>Custom instructions for the topic.</p>
+    pub fn custom_instructions(mut self, input: crate::types::CustomInstructions) -> Self {
+        self.custom_instructions = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Custom instructions for the topic.</p>
+    pub fn set_custom_instructions(mut self, input: ::std::option::Option<crate::types::CustomInstructions>) -> Self {
+        self.custom_instructions = input;
+        self
+    }
+    /// <p>Custom instructions for the topic.</p>
+    pub fn get_custom_instructions(&self) -> &::std::option::Option<crate::types::CustomInstructions> {
+        &self.custom_instructions
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -148,6 +169,7 @@ impl DescribeTopicOutputBuilder {
             topic: self.topic,
             request_id: self.request_id,
             status: self.status.unwrap_or_default(),
+            custom_instructions: self.custom_instructions,
             _request_id: self._request_id,
         }
     }

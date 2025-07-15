@@ -50,7 +50,7 @@ pub mod error {
                 InvalidRetryMode { .. } => {
                     write!(f, "invalid retry configuration")
                 }
-                MaxAttemptsMustNotBeZero { .. } => {
+                MaxAttemptsMustNotBeZero => {
                     write!(f, "invalid configuration: It is invalid to set max attempts to 0. Unset it or set it to an integer greater than or equal to one.")
                 }
                 FailedToParseMaxAttempts { .. } => {
@@ -66,7 +66,7 @@ pub mod error {
             match &self.kind {
                 InvalidRetryMode { source, .. } => Some(source),
                 FailedToParseMaxAttempts { source, .. } => Some(source),
-                MaxAttemptsMustNotBeZero { .. } => None,
+                MaxAttemptsMustNotBeZero => None,
             }
         }
     }

@@ -416,6 +416,20 @@ impl UpdateServiceFluentBuilder {
     pub fn get_health_check_grace_period_seconds(&self) -> &::std::option::Option<i32> {
         self.inner.get_health_check_grace_period_seconds()
     }
+    /// <p>The deployment controller to use for the service.</p>
+    pub fn deployment_controller(mut self, input: crate::types::DeploymentController) -> Self {
+        self.inner = self.inner.deployment_controller(input);
+        self
+    }
+    /// <p>The deployment controller to use for the service.</p>
+    pub fn set_deployment_controller(mut self, input: ::std::option::Option<crate::types::DeploymentController>) -> Self {
+        self.inner = self.inner.set_deployment_controller(input);
+        self
+    }
+    /// <p>The deployment controller to use for the service.</p>
+    pub fn get_deployment_controller(&self) -> &::std::option::Option<crate::types::DeploymentController> {
+        self.inner.get_deployment_controller()
+    }
     /// <p>If <code>true</code>, this enables execute command functionality on all task containers.</p>
     /// <p>If you do not want to override the value that was set when the service was created, you can set this to <code>null</code> when performing this action.</p>
     pub fn enable_execute_command(mut self, input: bool) -> Self {

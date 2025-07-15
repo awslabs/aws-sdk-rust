@@ -94,7 +94,7 @@ pub struct CreateServiceInput {
     /// </ul>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>Specifies whether to turn on Amazon ECS managed tags for the tasks within the service. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging your Amazon ECS resources</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-    /// <p>When you use Amazon ECS managed tags, you need to set the <code>propagateTags</code> request parameter.</p>
+    /// <p>When you use Amazon ECS managed tags, you must set the <code>propagateTags</code> request parameter.</p>
     pub enable_ecs_managed_tags: ::std::option::Option<bool>,
     /// <p>Specifies whether to propagate the tags from the task definition to the task. If no value is specified, the tags aren't propagated. Tags can only be propagated to the task during task creation. To add tags to a task after task creation, use the <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_TagResource.html">TagResource</a> API action.</p>
     /// <p>You must set this to a value other than <code>NONE</code> when you use Cost Explorer. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/usage-reports.html">Amazon ECS usage reports</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
@@ -254,7 +254,7 @@ impl CreateServiceInput {
         self.tags.as_deref().unwrap_or_default()
     }
     /// <p>Specifies whether to turn on Amazon ECS managed tags for the tasks within the service. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging your Amazon ECS resources</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-    /// <p>When you use Amazon ECS managed tags, you need to set the <code>propagateTags</code> request parameter.</p>
+    /// <p>When you use Amazon ECS managed tags, you must set the <code>propagateTags</code> request parameter.</p>
     pub fn enable_ecs_managed_tags(&self) -> ::std::option::Option<bool> {
         self.enable_ecs_managed_tags
     }
@@ -796,19 +796,19 @@ impl CreateServiceInputBuilder {
         &self.tags
     }
     /// <p>Specifies whether to turn on Amazon ECS managed tags for the tasks within the service. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging your Amazon ECS resources</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-    /// <p>When you use Amazon ECS managed tags, you need to set the <code>propagateTags</code> request parameter.</p>
+    /// <p>When you use Amazon ECS managed tags, you must set the <code>propagateTags</code> request parameter.</p>
     pub fn enable_ecs_managed_tags(mut self, input: bool) -> Self {
         self.enable_ecs_managed_tags = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies whether to turn on Amazon ECS managed tags for the tasks within the service. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging your Amazon ECS resources</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-    /// <p>When you use Amazon ECS managed tags, you need to set the <code>propagateTags</code> request parameter.</p>
+    /// <p>When you use Amazon ECS managed tags, you must set the <code>propagateTags</code> request parameter.</p>
     pub fn set_enable_ecs_managed_tags(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enable_ecs_managed_tags = input;
         self
     }
     /// <p>Specifies whether to turn on Amazon ECS managed tags for the tasks within the service. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging your Amazon ECS resources</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-    /// <p>When you use Amazon ECS managed tags, you need to set the <code>propagateTags</code> request parameter.</p>
+    /// <p>When you use Amazon ECS managed tags, you must set the <code>propagateTags</code> request parameter.</p>
     pub fn get_enable_ecs_managed_tags(&self) -> &::std::option::Option<bool> {
         &self.enable_ecs_managed_tags
     }

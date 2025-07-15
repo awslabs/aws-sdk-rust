@@ -935,6 +935,12 @@ pub(crate) mod shape_row_filter_configuration;
 
 pub(crate) mod shape_rule_summary;
 
+pub(crate) mod shape_s3_properties_input;
+
+pub(crate) mod shape_s3_properties_output;
+
+pub(crate) mod shape_s3_properties_patch;
+
 pub(crate) mod shape_sage_maker_run_configuration_input;
 
 pub(crate) mod shape_sage_maker_run_configuration_output;

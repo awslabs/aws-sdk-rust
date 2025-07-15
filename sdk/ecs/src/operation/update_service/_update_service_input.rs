@@ -52,6 +52,8 @@ pub struct UpdateServiceInput {
     /// <p>The period of time, in seconds, that the Amazon ECS service scheduler ignores unhealthy Elastic Load Balancing, VPC Lattice, and container health checks after a task has first started. If you don't specify a health check grace period value, the default value of <code>0</code> is used. If you don't use any of the health checks, then <code>healthCheckGracePeriodSeconds</code> is unused.</p>
     /// <p>If your service's tasks take a while to start and respond to health checks, you can specify a health check grace period of up to 2,147,483,647 seconds (about 69 years). During that time, the Amazon ECS service scheduler ignores health check status. This grace period can prevent the service scheduler from marking tasks as unhealthy and stopping them before they have time to come up.</p>
     pub health_check_grace_period_seconds: ::std::option::Option<i32>,
+    /// <p>The deployment controller to use for the service.</p>
+    pub deployment_controller: ::std::option::Option<crate::types::DeploymentController>,
     /// <p>If <code>true</code>, this enables execute command functionality on all task containers.</p>
     /// <p>If you do not want to override the value that was set when the service was created, you can set this to <code>null</code> when performing this action.</p>
     pub enable_execute_command: ::std::option::Option<bool>,
@@ -169,6 +171,10 @@ impl UpdateServiceInput {
     pub fn health_check_grace_period_seconds(&self) -> ::std::option::Option<i32> {
         self.health_check_grace_period_seconds
     }
+    /// <p>The deployment controller to use for the service.</p>
+    pub fn deployment_controller(&self) -> ::std::option::Option<&crate::types::DeploymentController> {
+        self.deployment_controller.as_ref()
+    }
     /// <p>If <code>true</code>, this enables execute command functionality on all task containers.</p>
     /// <p>If you do not want to override the value that was set when the service was created, you can set this to <code>null</code> when performing this action.</p>
     pub fn enable_execute_command(&self) -> ::std::option::Option<bool> {
@@ -252,6 +258,7 @@ pub struct UpdateServiceInputBuilder {
     pub(crate) platform_version: ::std::option::Option<::std::string::String>,
     pub(crate) force_new_deployment: ::std::option::Option<bool>,
     pub(crate) health_check_grace_period_seconds: ::std::option::Option<i32>,
+    pub(crate) deployment_controller: ::std::option::Option<crate::types::DeploymentController>,
     pub(crate) enable_execute_command: ::std::option::Option<bool>,
     pub(crate) enable_ecs_managed_tags: ::std::option::Option<bool>,
     pub(crate) load_balancers: ::std::option::Option<::std::vec::Vec<crate::types::LoadBalancer>>,
@@ -535,6 +542,20 @@ impl UpdateServiceInputBuilder {
     pub fn get_health_check_grace_period_seconds(&self) -> &::std::option::Option<i32> {
         &self.health_check_grace_period_seconds
     }
+    /// <p>The deployment controller to use for the service.</p>
+    pub fn deployment_controller(mut self, input: crate::types::DeploymentController) -> Self {
+        self.deployment_controller = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The deployment controller to use for the service.</p>
+    pub fn set_deployment_controller(mut self, input: ::std::option::Option<crate::types::DeploymentController>) -> Self {
+        self.deployment_controller = input;
+        self
+    }
+    /// <p>The deployment controller to use for the service.</p>
+    pub fn get_deployment_controller(&self) -> &::std::option::Option<crate::types::DeploymentController> {
+        &self.deployment_controller
+    }
     /// <p>If <code>true</code>, this enables execute command functionality on all task containers.</p>
     /// <p>If you do not want to override the value that was set when the service was created, you can set this to <code>null</code> when performing this action.</p>
     pub fn enable_execute_command(mut self, input: bool) -> Self {
@@ -743,6 +764,7 @@ impl UpdateServiceInputBuilder {
             platform_version: self.platform_version,
             force_new_deployment: self.force_new_deployment,
             health_check_grace_period_seconds: self.health_check_grace_period_seconds,
+            deployment_controller: self.deployment_controller,
             enable_execute_command: self.enable_execute_command,
             enable_ecs_managed_tags: self.enable_ecs_managed_tags,
             load_balancers: self.load_balancers,

@@ -13,6 +13,9 @@ pub struct CreateEventBusOutput {
     /// <p>Configuration details of the Amazon SQS queue for EventBridge to use as a dead-letter queue (DLQ).</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-rule-event-delivery.html#eb-rule-dlq">Using dead-letter queues to process undelivered events</a> in the <i>EventBridge User Guide</i>.</p>
     pub dead_letter_config: ::std::option::Option<crate::types::DeadLetterConfig>,
+    /// <p>The logging configuration settings for the event bus.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/eb-event-bus-logs.html">Configuring logs for event buses</a> in the <i>EventBridge User Guide</i>.</p>
+    pub log_config: ::std::option::Option<crate::types::LogConfig>,
     _request_id: Option<String>,
 }
 impl CreateEventBusOutput {
@@ -33,6 +36,11 @@ impl CreateEventBusOutput {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-rule-event-delivery.html#eb-rule-dlq">Using dead-letter queues to process undelivered events</a> in the <i>EventBridge User Guide</i>.</p>
     pub fn dead_letter_config(&self) -> ::std::option::Option<&crate::types::DeadLetterConfig> {
         self.dead_letter_config.as_ref()
+    }
+    /// <p>The logging configuration settings for the event bus.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/eb-event-bus-logs.html">Configuring logs for event buses</a> in the <i>EventBridge User Guide</i>.</p>
+    pub fn log_config(&self) -> ::std::option::Option<&crate::types::LogConfig> {
+        self.log_config.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateEventBusOutput {
@@ -55,6 +63,7 @@ pub struct CreateEventBusOutputBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) kms_key_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) dead_letter_config: ::std::option::Option<crate::types::DeadLetterConfig>,
+    pub(crate) log_config: ::std::option::Option<crate::types::LogConfig>,
     _request_id: Option<String>,
 }
 impl CreateEventBusOutputBuilder {
@@ -120,6 +129,23 @@ impl CreateEventBusOutputBuilder {
     pub fn get_dead_letter_config(&self) -> &::std::option::Option<crate::types::DeadLetterConfig> {
         &self.dead_letter_config
     }
+    /// <p>The logging configuration settings for the event bus.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/eb-event-bus-logs.html">Configuring logs for event buses</a> in the <i>EventBridge User Guide</i>.</p>
+    pub fn log_config(mut self, input: crate::types::LogConfig) -> Self {
+        self.log_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The logging configuration settings for the event bus.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/eb-event-bus-logs.html">Configuring logs for event buses</a> in the <i>EventBridge User Guide</i>.</p>
+    pub fn set_log_config(mut self, input: ::std::option::Option<crate::types::LogConfig>) -> Self {
+        self.log_config = input;
+        self
+    }
+    /// <p>The logging configuration settings for the event bus.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/eb-event-bus-logs.html">Configuring logs for event buses</a> in the <i>EventBridge User Guide</i>.</p>
+    pub fn get_log_config(&self) -> &::std::option::Option<crate::types::LogConfig> {
+        &self.log_config
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -136,6 +162,7 @@ impl CreateEventBusOutputBuilder {
             description: self.description,
             kms_key_identifier: self.kms_key_identifier,
             dead_letter_config: self.dead_letter_config,
+            log_config: self.log_config,
             _request_id: self._request_id,
         }
     }

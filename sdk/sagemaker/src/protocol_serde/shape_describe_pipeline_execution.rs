@@ -161,6 +161,13 @@ pub(crate) fn de_describe_pipeline_execution(
                         crate::protocol_serde::shape_selective_execution_config::de_selective_execution_config(tokens)?,
                     );
                 }
+                "PipelineVersionId" => {
+                    builder = builder.set_pipeline_version_id(
+                        ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                            .map(i64::try_from)
+                            .transpose()?,
+                    );
+                }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },
             other => {

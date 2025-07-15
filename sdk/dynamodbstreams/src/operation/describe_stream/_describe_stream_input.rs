@@ -10,6 +10,8 @@ pub struct DescribeStreamInput {
     pub limit: ::std::option::Option<i32>,
     /// <p>The shard ID of the first item that this operation will evaluate. Use the value that was returned for <code>LastEvaluatedShardId</code> in the previous operation.</p>
     pub exclusive_start_shard_id: ::std::option::Option<::std::string::String>,
+    /// <p>This optional field contains the filter definition for the <code>DescribeStream</code> API.</p>
+    pub shard_filter: ::std::option::Option<crate::types::ShardFilter>,
 }
 impl DescribeStreamInput {
     /// <p>The Amazon Resource Name (ARN) for the stream.</p>
@@ -23,6 +25,10 @@ impl DescribeStreamInput {
     /// <p>The shard ID of the first item that this operation will evaluate. Use the value that was returned for <code>LastEvaluatedShardId</code> in the previous operation.</p>
     pub fn exclusive_start_shard_id(&self) -> ::std::option::Option<&str> {
         self.exclusive_start_shard_id.as_deref()
+    }
+    /// <p>This optional field contains the filter definition for the <code>DescribeStream</code> API.</p>
+    pub fn shard_filter(&self) -> ::std::option::Option<&crate::types::ShardFilter> {
+        self.shard_filter.as_ref()
     }
 }
 impl DescribeStreamInput {
@@ -39,6 +45,7 @@ pub struct DescribeStreamInputBuilder {
     pub(crate) stream_arn: ::std::option::Option<::std::string::String>,
     pub(crate) limit: ::std::option::Option<i32>,
     pub(crate) exclusive_start_shard_id: ::std::option::Option<::std::string::String>,
+    pub(crate) shard_filter: ::std::option::Option<crate::types::ShardFilter>,
 }
 impl DescribeStreamInputBuilder {
     /// <p>The Amazon Resource Name (ARN) for the stream.</p>
@@ -84,6 +91,20 @@ impl DescribeStreamInputBuilder {
     pub fn get_exclusive_start_shard_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.exclusive_start_shard_id
     }
+    /// <p>This optional field contains the filter definition for the <code>DescribeStream</code> API.</p>
+    pub fn shard_filter(mut self, input: crate::types::ShardFilter) -> Self {
+        self.shard_filter = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>This optional field contains the filter definition for the <code>DescribeStream</code> API.</p>
+    pub fn set_shard_filter(mut self, input: ::std::option::Option<crate::types::ShardFilter>) -> Self {
+        self.shard_filter = input;
+        self
+    }
+    /// <p>This optional field contains the filter definition for the <code>DescribeStream</code> API.</p>
+    pub fn get_shard_filter(&self) -> &::std::option::Option<crate::types::ShardFilter> {
+        &self.shard_filter
+    }
     /// Consumes the builder and constructs a [`DescribeStreamInput`](crate::operation::describe_stream::DescribeStreamInput).
     pub fn build(
         self,
@@ -92,6 +113,7 @@ impl DescribeStreamInputBuilder {
             stream_arn: self.stream_arn,
             limit: self.limit,
             exclusive_start_shard_id: self.exclusive_start_shard_id,
+            shard_filter: self.shard_filter,
         })
     }
 }

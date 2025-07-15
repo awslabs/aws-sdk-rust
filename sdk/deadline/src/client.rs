@@ -198,9 +198,9 @@ impl Client {
     /// # Panics
     ///
     /// - This method will panic if the `sdk_config` is missing an async sleep implementation. If you experience this panic, set
-    ///     the `sleep_impl` on the Config passed into this function to fix it.
+    ///   the `sleep_impl` on the Config passed into this function to fix it.
     /// - This method will panic if the `sdk_config` is missing an HTTP connector. If you experience this panic, set the
-    ///     `http_connector` on the Config passed into this function to fix it.
+    ///   `http_connector` on the Config passed into this function to fix it.
     /// - This method will panic if no `BehaviorVersion` is provided. If you experience this panic, set `behavior_version` on the Config or enable the `behavior-version-latest` Cargo feature.
     #[track_caller]
     pub fn new(sdk_config: &::aws_types::sdk_config::SdkConfig) -> Self {

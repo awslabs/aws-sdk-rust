@@ -27,6 +27,27 @@ pub fn ser_deployment_configuration(
         crate::protocol_serde::shape_deployment_alarms::ser_deployment_alarms(&mut object_6, var_5)?;
         object_6.finish();
     }
+    if let Some(var_7) = &input.strategy {
+        object.key("strategy").string(var_7.as_str());
+    }
+    if let Some(var_8) = &input.bake_time_in_minutes {
+        object.key("bakeTimeInMinutes").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_8).into()),
+        );
+    }
+    if let Some(var_9) = &input.lifecycle_hooks {
+        let mut array_10 = object.key("lifecycleHooks").start_array();
+        for item_11 in var_9 {
+            {
+                #[allow(unused_mut)]
+                let mut object_12 = array_10.value().start_object();
+                crate::protocol_serde::shape_deployment_lifecycle_hook::ser_deployment_lifecycle_hook(&mut object_12, item_11)?;
+                object_12.finish();
+            }
+        }
+        array_10.finish();
+    }
     Ok(())
 }
 
@@ -66,6 +87,25 @@ where
                         }
                         "alarms" => {
                             builder = builder.set_alarms(crate::protocol_serde::shape_deployment_alarms::de_deployment_alarms(tokens)?);
+                        }
+                        "strategy" => {
+                            builder = builder.set_strategy(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::DeploymentStrategy::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "bakeTimeInMinutes" => {
+                            builder = builder.set_bake_time_in_minutes(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
+                            );
+                        }
+                        "lifecycleHooks" => {
+                            builder = builder.set_lifecycle_hooks(
+                                crate::protocol_serde::shape_deployment_lifecycle_hook_list::de_deployment_lifecycle_hook_list(tokens)?,
+                            );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
