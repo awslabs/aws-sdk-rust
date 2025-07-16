@@ -3,8 +3,11 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
+use aws_sdk_s3::config::Region;
 use aws_sdk_s3::{Client, Config};
+use aws_smithy_http_client::test_util::capture_request;
 use aws_smithy_http_client::test_util::dvr::ReplayingClient;
+use aws_smithy_runtime::client::auth::no_auth::NO_AUTH_SCHEME_ID;
 use aws_smithy_runtime::test_util::capture_test_logs::capture_test_logs;
 
 #[tokio::test]
@@ -130,4 +133,30 @@ async fn get_object() {
         .relaxed_validate("application/xml")
         .await
         .unwrap();
+}
+
+#[tracing_test::traced_test]
+#[tokio::test]
+async fn no_auth_should_be_selected_when_no_credentials_is_configured() {
+    let (http_client, _) = capture_request(None);
+    let config = aws_config::from_env()
+        .http_client(http_client)
+        .region(Region::new("us-east-2"))
+        .no_credentials()
+        .load()
+        .await;
+
+    let client = Client::new(&config);
+    let _ = dbg!(
+        client
+            .list_objects_v2()
+            .bucket("doesnotmatter")
+            .send()
+            .await
+    );
+
+    assert!(logs_contain(&format!(
+        "resolving identity scheme_id=AuthSchemeId {{ scheme_id: \"{auth_scheme_id_str}\" }}",
+        auth_scheme_id_str = NO_AUTH_SCHEME_ID.inner(),
+    )));
 }

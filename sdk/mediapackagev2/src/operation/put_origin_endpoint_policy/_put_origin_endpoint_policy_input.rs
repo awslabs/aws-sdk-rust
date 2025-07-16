@@ -11,6 +11,9 @@ pub struct PutOriginEndpointPolicyInput {
     pub origin_endpoint_name: ::std::option::Option<::std::string::String>,
     /// <p>The policy to attach to the specified origin endpoint.</p>
     pub policy: ::std::option::Option<::std::string::String>,
+    /// <p>The settings for using authorization headers between the MediaPackage endpoint and your CDN.</p>
+    /// <p>For information about CDN authorization, see <a href="https://docs.aws.amazon.com/mediapackage/latest/userguide/cdn-auth.html">CDN authorization in Elemental MediaPackage</a> in the MediaPackage user guide.</p>
+    pub cdn_auth_configuration: ::std::option::Option<crate::types::CdnAuthConfiguration>,
 }
 impl PutOriginEndpointPolicyInput {
     /// <p>The name that describes the channel group. The name is the primary identifier for the channel group, and must be unique for your account in the AWS Region.</p>
@@ -29,6 +32,11 @@ impl PutOriginEndpointPolicyInput {
     pub fn policy(&self) -> ::std::option::Option<&str> {
         self.policy.as_deref()
     }
+    /// <p>The settings for using authorization headers between the MediaPackage endpoint and your CDN.</p>
+    /// <p>For information about CDN authorization, see <a href="https://docs.aws.amazon.com/mediapackage/latest/userguide/cdn-auth.html">CDN authorization in Elemental MediaPackage</a> in the MediaPackage user guide.</p>
+    pub fn cdn_auth_configuration(&self) -> ::std::option::Option<&crate::types::CdnAuthConfiguration> {
+        self.cdn_auth_configuration.as_ref()
+    }
 }
 impl PutOriginEndpointPolicyInput {
     /// Creates a new builder-style object to manufacture [`PutOriginEndpointPolicyInput`](crate::operation::put_origin_endpoint_policy::PutOriginEndpointPolicyInput).
@@ -45,6 +53,7 @@ pub struct PutOriginEndpointPolicyInputBuilder {
     pub(crate) channel_name: ::std::option::Option<::std::string::String>,
     pub(crate) origin_endpoint_name: ::std::option::Option<::std::string::String>,
     pub(crate) policy: ::std::option::Option<::std::string::String>,
+    pub(crate) cdn_auth_configuration: ::std::option::Option<crate::types::CdnAuthConfiguration>,
 }
 impl PutOriginEndpointPolicyInputBuilder {
     /// <p>The name that describes the channel group. The name is the primary identifier for the channel group, and must be unique for your account in the AWS Region.</p>
@@ -107,6 +116,23 @@ impl PutOriginEndpointPolicyInputBuilder {
     pub fn get_policy(&self) -> &::std::option::Option<::std::string::String> {
         &self.policy
     }
+    /// <p>The settings for using authorization headers between the MediaPackage endpoint and your CDN.</p>
+    /// <p>For information about CDN authorization, see <a href="https://docs.aws.amazon.com/mediapackage/latest/userguide/cdn-auth.html">CDN authorization in Elemental MediaPackage</a> in the MediaPackage user guide.</p>
+    pub fn cdn_auth_configuration(mut self, input: crate::types::CdnAuthConfiguration) -> Self {
+        self.cdn_auth_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The settings for using authorization headers between the MediaPackage endpoint and your CDN.</p>
+    /// <p>For information about CDN authorization, see <a href="https://docs.aws.amazon.com/mediapackage/latest/userguide/cdn-auth.html">CDN authorization in Elemental MediaPackage</a> in the MediaPackage user guide.</p>
+    pub fn set_cdn_auth_configuration(mut self, input: ::std::option::Option<crate::types::CdnAuthConfiguration>) -> Self {
+        self.cdn_auth_configuration = input;
+        self
+    }
+    /// <p>The settings for using authorization headers between the MediaPackage endpoint and your CDN.</p>
+    /// <p>For information about CDN authorization, see <a href="https://docs.aws.amazon.com/mediapackage/latest/userguide/cdn-auth.html">CDN authorization in Elemental MediaPackage</a> in the MediaPackage user guide.</p>
+    pub fn get_cdn_auth_configuration(&self) -> &::std::option::Option<crate::types::CdnAuthConfiguration> {
+        &self.cdn_auth_configuration
+    }
     /// Consumes the builder and constructs a [`PutOriginEndpointPolicyInput`](crate::operation::put_origin_endpoint_policy::PutOriginEndpointPolicyInput).
     pub fn build(
         self,
@@ -119,6 +145,7 @@ impl PutOriginEndpointPolicyInputBuilder {
             channel_name: self.channel_name,
             origin_endpoint_name: self.origin_endpoint_name,
             policy: self.policy,
+            cdn_auth_configuration: self.cdn_auth_configuration,
         })
     }
 }

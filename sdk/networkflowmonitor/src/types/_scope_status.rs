@@ -12,6 +12,8 @@
 /// ```text
 /// # let scopestatus = unimplemented!();
 /// match scopestatus {
+///     ScopeStatus::Deactivated => { /* ... */ },
+///     ScopeStatus::Deactivating => { /* ... */ },
 ///     ScopeStatus::Failed => { /* ... */ },
 ///     ScopeStatus::InProgress => { /* ... */ },
 ///     ScopeStatus::Succeeded => { /* ... */ },
@@ -44,6 +46,10 @@
 )]
 pub enum ScopeStatus {
     #[allow(missing_docs)] // documentation missing in model
+    Deactivated,
+    #[allow(missing_docs)] // documentation missing in model
+    Deactivating,
+    #[allow(missing_docs)] // documentation missing in model
     Failed,
     #[allow(missing_docs)] // documentation missing in model
     InProgress,
@@ -56,6 +62,8 @@ pub enum ScopeStatus {
 impl ::std::convert::From<&str> for ScopeStatus {
     fn from(s: &str) -> Self {
         match s {
+            "DEACTIVATED" => ScopeStatus::Deactivated,
+            "DEACTIVATING" => ScopeStatus::Deactivating,
             "FAILED" => ScopeStatus::Failed,
             "IN_PROGRESS" => ScopeStatus::InProgress,
             "SUCCEEDED" => ScopeStatus::Succeeded,
@@ -74,6 +82,8 @@ impl ScopeStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            ScopeStatus::Deactivated => "DEACTIVATED",
+            ScopeStatus::Deactivating => "DEACTIVATING",
             ScopeStatus::Failed => "FAILED",
             ScopeStatus::InProgress => "IN_PROGRESS",
             ScopeStatus::Succeeded => "SUCCEEDED",
@@ -82,7 +92,7 @@ impl ScopeStatus {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["FAILED", "IN_PROGRESS", "SUCCEEDED"]
+        &["DEACTIVATED", "DEACTIVATING", "FAILED", "IN_PROGRESS", "SUCCEEDED"]
     }
 }
 impl ::std::convert::AsRef<str> for ScopeStatus {
@@ -105,6 +115,8 @@ impl ScopeStatus {
 impl ::std::fmt::Display for ScopeStatus {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            ScopeStatus::Deactivated => write!(f, "DEACTIVATED"),
+            ScopeStatus::Deactivating => write!(f, "DEACTIVATING"),
             ScopeStatus::Failed => write!(f, "FAILED"),
             ScopeStatus::InProgress => write!(f, "IN_PROGRESS"),
             ScopeStatus::Succeeded => write!(f, "SUCCEEDED"),

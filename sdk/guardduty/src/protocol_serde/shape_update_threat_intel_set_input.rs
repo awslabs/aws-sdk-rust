@@ -6,11 +6,14 @@ pub fn ser_update_threat_intel_set_input_input(
     if let Some(var_1) = &input.activate {
         object.key("activate").boolean(*var_1);
     }
-    if let Some(var_2) = &input.location {
-        object.key("location").string(var_2.as_str());
+    if let Some(var_2) = &input.expected_bucket_owner {
+        object.key("expectedBucketOwner").string(var_2.as_str());
     }
-    if let Some(var_3) = &input.name {
-        object.key("name").string(var_3.as_str());
+    if let Some(var_3) = &input.location {
+        object.key("location").string(var_3.as_str());
+    }
+    if let Some(var_4) = &input.name {
+        object.key("name").string(var_4.as_str());
     }
     Ok(())
 }

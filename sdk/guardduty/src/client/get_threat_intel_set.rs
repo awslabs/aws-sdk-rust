@@ -11,6 +11,7 @@ impl super::Client {
     ///   - [`location(Option<String>)`](crate::operation::get_threat_intel_set::GetThreatIntelSetOutput::location): <p>The URI of the file that contains the ThreatIntelSet.</p>
     ///   - [`status(Option<ThreatIntelSetStatus>)`](crate::operation::get_threat_intel_set::GetThreatIntelSetOutput::status): <p>The status of threatIntelSet file uploaded.</p>
     ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::get_threat_intel_set::GetThreatIntelSetOutput::tags): <p>The tags of the threat list resource.</p>
+    ///   - [`expected_bucket_owner(Option<String>)`](crate::operation::get_threat_intel_set::GetThreatIntelSetOutput::expected_bucket_owner): <p>The Amazon Web Services account ID that owns the Amazon S3 bucket specified in the <b>location</b> parameter. This field appears in the response only if it was provided during ThreatIntelSet creation or update.</p>
     /// - On failure, responds with [`SdkError<GetThreatIntelSetError>`](crate::operation::get_threat_intel_set::GetThreatIntelSetError)
     pub fn get_threat_intel_set(&self) -> crate::operation::get_threat_intel_set::builders::GetThreatIntelSetFluentBuilder {
         crate::operation::get_threat_intel_set::builders::GetThreatIntelSetFluentBuilder::new(self.handle.clone())

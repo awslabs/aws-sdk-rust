@@ -13,7 +13,6 @@
 /// # let identifiertype = unimplemented!();
 /// match identifiertype {
 ///     IdentifierType::DevEui => { /* ... */ },
-///     IdentifierType::FuotaTaskId => { /* ... */ },
 ///     IdentifierType::GatewayEui => { /* ... */ },
 ///     IdentifierType::PartnerAccountId => { /* ... */ },
 ///     IdentifierType::WirelessDeviceId => { /* ... */ },
@@ -49,8 +48,6 @@ pub enum IdentifierType {
     #[allow(missing_docs)] // documentation missing in model
     DevEui,
     #[allow(missing_docs)] // documentation missing in model
-    FuotaTaskId,
-    #[allow(missing_docs)] // documentation missing in model
     GatewayEui,
     #[allow(missing_docs)] // documentation missing in model
     PartnerAccountId,
@@ -66,7 +63,6 @@ impl ::std::convert::From<&str> for IdentifierType {
     fn from(s: &str) -> Self {
         match s {
             "DevEui" => IdentifierType::DevEui,
-            "FuotaTaskId" => IdentifierType::FuotaTaskId,
             "GatewayEui" => IdentifierType::GatewayEui,
             "PartnerAccountId" => IdentifierType::PartnerAccountId,
             "WirelessDeviceId" => IdentifierType::WirelessDeviceId,
@@ -87,7 +83,6 @@ impl IdentifierType {
     pub fn as_str(&self) -> &str {
         match self {
             IdentifierType::DevEui => "DevEui",
-            IdentifierType::FuotaTaskId => "FuotaTaskId",
             IdentifierType::GatewayEui => "GatewayEui",
             IdentifierType::PartnerAccountId => "PartnerAccountId",
             IdentifierType::WirelessDeviceId => "WirelessDeviceId",
@@ -97,14 +92,7 @@ impl IdentifierType {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "DevEui",
-            "FuotaTaskId",
-            "GatewayEui",
-            "PartnerAccountId",
-            "WirelessDeviceId",
-            "WirelessGatewayId",
-        ]
+        &["DevEui", "GatewayEui", "PartnerAccountId", "WirelessDeviceId", "WirelessGatewayId"]
     }
 }
 impl ::std::convert::AsRef<str> for IdentifierType {
@@ -128,7 +116,6 @@ impl ::std::fmt::Display for IdentifierType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             IdentifierType::DevEui => write!(f, "DevEui"),
-            IdentifierType::FuotaTaskId => write!(f, "FuotaTaskId"),
             IdentifierType::GatewayEui => write!(f, "GatewayEui"),
             IdentifierType::PartnerAccountId => write!(f, "PartnerAccountId"),
             IdentifierType::WirelessDeviceId => write!(f, "WirelessDeviceId"),

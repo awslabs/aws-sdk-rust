@@ -10,6 +10,12 @@ pub struct ResourcePolicy {
     pub policy_document: ::std::option::Option<::std::string::String>,
     /// <p>Timestamp showing when this policy was last updated, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>.</p>
     pub last_updated_time: ::std::option::Option<i64>,
+    /// <p>Specifies scope of the resource policy. Valid values are ACCOUNT or RESOURCE.</p>
+    pub policy_scope: ::std::option::Option<crate::types::PolicyScope>,
+    /// <p>The ARN of the CloudWatch Logs resource to which the resource policy is attached. Only populated for resource-scoped policies.</p>
+    pub resource_arn: ::std::option::Option<::std::string::String>,
+    /// <p>The revision ID of the resource policy. Only populated for resource-scoped policies.</p>
+    pub revision_id: ::std::option::Option<::std::string::String>,
 }
 impl ResourcePolicy {
     /// <p>The name of the resource policy.</p>
@@ -23,6 +29,18 @@ impl ResourcePolicy {
     /// <p>Timestamp showing when this policy was last updated, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>.</p>
     pub fn last_updated_time(&self) -> ::std::option::Option<i64> {
         self.last_updated_time
+    }
+    /// <p>Specifies scope of the resource policy. Valid values are ACCOUNT or RESOURCE.</p>
+    pub fn policy_scope(&self) -> ::std::option::Option<&crate::types::PolicyScope> {
+        self.policy_scope.as_ref()
+    }
+    /// <p>The ARN of the CloudWatch Logs resource to which the resource policy is attached. Only populated for resource-scoped policies.</p>
+    pub fn resource_arn(&self) -> ::std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>The revision ID of the resource policy. Only populated for resource-scoped policies.</p>
+    pub fn revision_id(&self) -> ::std::option::Option<&str> {
+        self.revision_id.as_deref()
     }
 }
 impl ResourcePolicy {
@@ -39,6 +57,9 @@ pub struct ResourcePolicyBuilder {
     pub(crate) policy_name: ::std::option::Option<::std::string::String>,
     pub(crate) policy_document: ::std::option::Option<::std::string::String>,
     pub(crate) last_updated_time: ::std::option::Option<i64>,
+    pub(crate) policy_scope: ::std::option::Option<crate::types::PolicyScope>,
+    pub(crate) resource_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) revision_id: ::std::option::Option<::std::string::String>,
 }
 impl ResourcePolicyBuilder {
     /// <p>The name of the resource policy.</p>
@@ -83,12 +104,57 @@ impl ResourcePolicyBuilder {
     pub fn get_last_updated_time(&self) -> &::std::option::Option<i64> {
         &self.last_updated_time
     }
+    /// <p>Specifies scope of the resource policy. Valid values are ACCOUNT or RESOURCE.</p>
+    pub fn policy_scope(mut self, input: crate::types::PolicyScope) -> Self {
+        self.policy_scope = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies scope of the resource policy. Valid values are ACCOUNT or RESOURCE.</p>
+    pub fn set_policy_scope(mut self, input: ::std::option::Option<crate::types::PolicyScope>) -> Self {
+        self.policy_scope = input;
+        self
+    }
+    /// <p>Specifies scope of the resource policy. Valid values are ACCOUNT or RESOURCE.</p>
+    pub fn get_policy_scope(&self) -> &::std::option::Option<crate::types::PolicyScope> {
+        &self.policy_scope
+    }
+    /// <p>The ARN of the CloudWatch Logs resource to which the resource policy is attached. Only populated for resource-scoped policies.</p>
+    pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.resource_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ARN of the CloudWatch Logs resource to which the resource policy is attached. Only populated for resource-scoped policies.</p>
+    pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.resource_arn = input;
+        self
+    }
+    /// <p>The ARN of the CloudWatch Logs resource to which the resource policy is attached. Only populated for resource-scoped policies.</p>
+    pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_arn
+    }
+    /// <p>The revision ID of the resource policy. Only populated for resource-scoped policies.</p>
+    pub fn revision_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.revision_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The revision ID of the resource policy. Only populated for resource-scoped policies.</p>
+    pub fn set_revision_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.revision_id = input;
+        self
+    }
+    /// <p>The revision ID of the resource policy. Only populated for resource-scoped policies.</p>
+    pub fn get_revision_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.revision_id
+    }
     /// Consumes the builder and constructs a [`ResourcePolicy`](crate::types::ResourcePolicy).
     pub fn build(self) -> crate::types::ResourcePolicy {
         crate::types::ResourcePolicy {
             policy_name: self.policy_name,
             policy_document: self.policy_document,
             last_updated_time: self.last_updated_time,
+            policy_scope: self.policy_scope,
+            resource_arn: self.resource_arn,
+            revision_id: self.revision_id,
         }
     }
 }

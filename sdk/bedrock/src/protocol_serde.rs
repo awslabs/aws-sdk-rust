@@ -27,6 +27,8 @@ pub(crate) mod shape_batch_delete_evaluation_job;
 
 pub(crate) mod shape_create_custom_model;
 
+pub(crate) mod shape_create_custom_model_deployment;
+
 pub(crate) mod shape_create_evaluation_job;
 
 pub(crate) mod shape_create_foundation_model_agreement;
@@ -53,6 +55,8 @@ pub(crate) mod shape_create_provisioned_model_throughput;
 
 pub(crate) mod shape_delete_custom_model;
 
+pub(crate) mod shape_delete_custom_model_deployment;
+
 pub(crate) mod shape_delete_foundation_model_agreement;
 
 pub(crate) mod shape_delete_guardrail;
@@ -72,6 +76,8 @@ pub(crate) mod shape_delete_provisioned_model_throughput;
 pub(crate) mod shape_deregister_marketplace_model_endpoint;
 
 pub(crate) mod shape_get_custom_model;
+
+pub(crate) mod shape_get_custom_model_deployment;
 
 pub(crate) mod shape_get_evaluation_job;
 
@@ -102,6 +108,8 @@ pub(crate) mod shape_get_prompt_router;
 pub(crate) mod shape_get_provisioned_model_throughput;
 
 pub(crate) mod shape_get_use_case_for_model_access;
+
+pub(crate) mod shape_list_custom_model_deployments;
 
 pub(crate) mod shape_list_custom_models;
 
@@ -169,6 +177,8 @@ pub(crate) mod shape_batch_delete_evaluation_job_input;
 
 pub(crate) mod shape_conflict_exception;
 
+pub(crate) mod shape_create_custom_model_deployment_input;
+
 pub(crate) mod shape_create_custom_model_input;
 
 pub(crate) mod shape_create_evaluation_job_input;
@@ -234,6 +244,8 @@ pub(crate) mod shape_agreement_availability;
 pub(crate) mod shape_batch_delete_evaluation_job_errors;
 
 pub(crate) mod shape_batch_delete_evaluation_job_items;
+
+pub(crate) mod shape_custom_model_deployment_summary_list;
 
 pub(crate) mod shape_custom_model_summary_list;
 
@@ -354,6 +366,8 @@ pub(crate) mod shape_batch_delete_evaluation_job_error;
 pub(crate) mod shape_batch_delete_evaluation_job_item;
 
 pub(crate) mod shape_cloud_watch_config;
+
+pub(crate) mod shape_custom_model_deployment_summary;
 
 pub(crate) mod shape_custom_model_summary;
 

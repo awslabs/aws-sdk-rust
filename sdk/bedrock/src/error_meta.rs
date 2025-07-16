@@ -149,6 +149,55 @@ impl From<crate::operation::create_custom_model::CreateCustomModelError> for Err
         }
     }
 }
+impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_custom_model_deployment::CreateCustomModelDeploymentError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::create_custom_model_deployment::CreateCustomModelDeploymentError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_custom_model_deployment::CreateCustomModelDeploymentError> for Error {
+    fn from(err: crate::operation::create_custom_model_deployment::CreateCustomModelDeploymentError) -> Self {
+        match err {
+            crate::operation::create_custom_model_deployment::CreateCustomModelDeploymentError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::create_custom_model_deployment::CreateCustomModelDeploymentError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::create_custom_model_deployment::CreateCustomModelDeploymentError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::create_custom_model_deployment::CreateCustomModelDeploymentError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::create_custom_model_deployment::CreateCustomModelDeploymentError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::create_custom_model_deployment::CreateCustomModelDeploymentError::TooManyTagsException(inner) => {
+                Error::TooManyTagsException(inner)
+            }
+            crate::operation::create_custom_model_deployment::CreateCustomModelDeploymentError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::create_custom_model_deployment::CreateCustomModelDeploymentError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_evaluation_job::CreateEvaluationJobError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -671,6 +720,52 @@ impl From<crate::operation::delete_custom_model::DeleteCustomModelError> for Err
     }
 }
 impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_custom_model_deployment::DeleteCustomModelDeploymentError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::delete_custom_model_deployment::DeleteCustomModelDeploymentError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_custom_model_deployment::DeleteCustomModelDeploymentError> for Error {
+    fn from(err: crate::operation::delete_custom_model_deployment::DeleteCustomModelDeploymentError) -> Self {
+        match err {
+            crate::operation::delete_custom_model_deployment::DeleteCustomModelDeploymentError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::delete_custom_model_deployment::DeleteCustomModelDeploymentError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::delete_custom_model_deployment::DeleteCustomModelDeploymentError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::delete_custom_model_deployment::DeleteCustomModelDeploymentError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::delete_custom_model_deployment::DeleteCustomModelDeploymentError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::delete_custom_model_deployment::DeleteCustomModelDeploymentError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::delete_custom_model_deployment::DeleteCustomModelDeploymentError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
     From<
         ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::delete_foundation_model_agreement::DeleteFoundationModelAgreementError,
@@ -1048,6 +1143,45 @@ impl From<crate::operation::get_custom_model::GetCustomModelError> for Error {
             crate::operation::get_custom_model::GetCustomModelError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::get_custom_model::GetCustomModelError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::get_custom_model::GetCustomModelError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_custom_model_deployment::GetCustomModelDeploymentError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_custom_model_deployment::GetCustomModelDeploymentError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_custom_model_deployment::GetCustomModelDeploymentError> for Error {
+    fn from(err: crate::operation::get_custom_model_deployment::GetCustomModelDeploymentError) -> Self {
+        match err {
+            crate::operation::get_custom_model_deployment::GetCustomModelDeploymentError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::get_custom_model_deployment::GetCustomModelDeploymentError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::get_custom_model_deployment::GetCustomModelDeploymentError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_custom_model_deployment::GetCustomModelDeploymentError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::get_custom_model_deployment::GetCustomModelDeploymentError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::get_custom_model_deployment::GetCustomModelDeploymentError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1550,6 +1684,42 @@ impl From<crate::operation::get_use_case_for_model_access::GetUseCaseForModelAcc
                 Error::ValidationException(inner)
             }
             crate::operation::get_use_case_for_model_access::GetUseCaseForModelAccessError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_custom_model_deployments::ListCustomModelDeploymentsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_custom_model_deployments::ListCustomModelDeploymentsError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_custom_model_deployments::ListCustomModelDeploymentsError> for Error {
+    fn from(err: crate::operation::list_custom_model_deployments::ListCustomModelDeploymentsError) -> Self {
+        match err {
+            crate::operation::list_custom_model_deployments::ListCustomModelDeploymentsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::list_custom_model_deployments::ListCustomModelDeploymentsError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::list_custom_model_deployments::ListCustomModelDeploymentsError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::list_custom_model_deployments::ListCustomModelDeploymentsError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::list_custom_model_deployments::ListCustomModelDeploymentsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

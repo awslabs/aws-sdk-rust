@@ -88,3 +88,5 @@ pub use crate::types::_list_dash_manifest_configuration::ListDashManifestConfigu
 pub use crate::types::_list_low_latency_hls_manifest_configuration::ListLowLatencyHlsManifestConfigurationBuilder;
 
 pub use crate::types::_list_hls_manifest_configuration::ListHlsManifestConfigurationBuilder;
+
+pub use crate::types::_cdn_auth_configuration::CdnAuthConfigurationBuilder;

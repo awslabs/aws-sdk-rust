@@ -4,11 +4,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct CreateLocationObjectStorageInput {
-    /// <p>Specifies the domain name or IP version 4 (IPv4) address of the object storage server that your DataSync agent connects to.</p>
+    /// <p>Specifies the domain name or IP address (IPv4 or IPv6) of the object storage server that your DataSync agent connects to.</p>
     pub server_hostname: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the port that your object storage server accepts inbound network traffic on (for example, port 443).</p>
     pub server_port: ::std::option::Option<i32>,
-    /// <p>Specifies the protocol that your object storage server uses to communicate.</p>
+    /// <p>Specifies the protocol that your object storage server uses to communicate. If not specified, the default value is <code>HTTPS</code>.</p>
     pub server_protocol: ::std::option::Option<crate::types::ObjectStorageServerProtocol>,
     /// <p>Specifies the object prefix for your object storage server. If this is a source location, DataSync only copies objects with this prefix. If this is a destination location, DataSync writes all objects with this prefix.</p>
     pub subdirectory: ::std::option::Option<::std::string::String>,
@@ -16,7 +16,9 @@ pub struct CreateLocationObjectStorageInput {
     pub bucket_name: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the access key (for example, a user name) if credentials are required to authenticate with the object storage server.</p>
     pub access_key: ::std::option::Option<::std::string::String>,
-    /// <p>Specifies the secret key (for example, a password) if credentials are required to authenticate with the object storage server.</p>
+    /// <p>Specifies the secret key (for example, a password) if credentials are required to authenticate with the object storage server.</p><note>
+    /// <p>If you provide a secret using <code>SecretKey</code>, but do not provide secret configuration details using <code>CmkSecretConfig</code> or <code>CustomSecretConfig</code>, then DataSync stores the token using your Amazon Web Services account's Secrets Manager secret.</p>
+    /// </note>
     pub secret_key: ::std::option::Option<::std::string::String>,
     /// <p>(Optional) Specifies the Amazon Resource Names (ARNs) of the DataSync agents that can connect with your object storage system. If you are setting up an agentless cross-cloud transfer, you do not need to specify a value for this parameter.</p><note>
     /// <p>Make sure you configure this parameter correctly when you first create your storage location. You cannot add or remove agents from a storage location after you create it.</p>
@@ -50,7 +52,7 @@ pub struct CreateLocationObjectStorageInput {
     pub custom_secret_config: ::std::option::Option<crate::types::CustomSecretConfig>,
 }
 impl CreateLocationObjectStorageInput {
-    /// <p>Specifies the domain name or IP version 4 (IPv4) address of the object storage server that your DataSync agent connects to.</p>
+    /// <p>Specifies the domain name or IP address (IPv4 or IPv6) of the object storage server that your DataSync agent connects to.</p>
     pub fn server_hostname(&self) -> ::std::option::Option<&str> {
         self.server_hostname.as_deref()
     }
@@ -58,7 +60,7 @@ impl CreateLocationObjectStorageInput {
     pub fn server_port(&self) -> ::std::option::Option<i32> {
         self.server_port
     }
-    /// <p>Specifies the protocol that your object storage server uses to communicate.</p>
+    /// <p>Specifies the protocol that your object storage server uses to communicate. If not specified, the default value is <code>HTTPS</code>.</p>
     pub fn server_protocol(&self) -> ::std::option::Option<&crate::types::ObjectStorageServerProtocol> {
         self.server_protocol.as_ref()
     }
@@ -74,7 +76,9 @@ impl CreateLocationObjectStorageInput {
     pub fn access_key(&self) -> ::std::option::Option<&str> {
         self.access_key.as_deref()
     }
-    /// <p>Specifies the secret key (for example, a password) if credentials are required to authenticate with the object storage server.</p>
+    /// <p>Specifies the secret key (for example, a password) if credentials are required to authenticate with the object storage server.</p><note>
+    /// <p>If you provide a secret using <code>SecretKey</code>, but do not provide secret configuration details using <code>CmkSecretConfig</code> or <code>CustomSecretConfig</code>, then DataSync stores the token using your Amazon Web Services account's Secrets Manager secret.</p>
+    /// </note>
     pub fn secret_key(&self) -> ::std::option::Option<&str> {
         self.secret_key.as_deref()
     }
@@ -166,18 +170,18 @@ pub struct CreateLocationObjectStorageInputBuilder {
     pub(crate) custom_secret_config: ::std::option::Option<crate::types::CustomSecretConfig>,
 }
 impl CreateLocationObjectStorageInputBuilder {
-    /// <p>Specifies the domain name or IP version 4 (IPv4) address of the object storage server that your DataSync agent connects to.</p>
+    /// <p>Specifies the domain name or IP address (IPv4 or IPv6) of the object storage server that your DataSync agent connects to.</p>
     /// This field is required.
     pub fn server_hostname(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.server_hostname = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Specifies the domain name or IP version 4 (IPv4) address of the object storage server that your DataSync agent connects to.</p>
+    /// <p>Specifies the domain name or IP address (IPv4 or IPv6) of the object storage server that your DataSync agent connects to.</p>
     pub fn set_server_hostname(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.server_hostname = input;
         self
     }
-    /// <p>Specifies the domain name or IP version 4 (IPv4) address of the object storage server that your DataSync agent connects to.</p>
+    /// <p>Specifies the domain name or IP address (IPv4 or IPv6) of the object storage server that your DataSync agent connects to.</p>
     pub fn get_server_hostname(&self) -> &::std::option::Option<::std::string::String> {
         &self.server_hostname
     }
@@ -195,17 +199,17 @@ impl CreateLocationObjectStorageInputBuilder {
     pub fn get_server_port(&self) -> &::std::option::Option<i32> {
         &self.server_port
     }
-    /// <p>Specifies the protocol that your object storage server uses to communicate.</p>
+    /// <p>Specifies the protocol that your object storage server uses to communicate. If not specified, the default value is <code>HTTPS</code>.</p>
     pub fn server_protocol(mut self, input: crate::types::ObjectStorageServerProtocol) -> Self {
         self.server_protocol = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies the protocol that your object storage server uses to communicate.</p>
+    /// <p>Specifies the protocol that your object storage server uses to communicate. If not specified, the default value is <code>HTTPS</code>.</p>
     pub fn set_server_protocol(mut self, input: ::std::option::Option<crate::types::ObjectStorageServerProtocol>) -> Self {
         self.server_protocol = input;
         self
     }
-    /// <p>Specifies the protocol that your object storage server uses to communicate.</p>
+    /// <p>Specifies the protocol that your object storage server uses to communicate. If not specified, the default value is <code>HTTPS</code>.</p>
     pub fn get_server_protocol(&self) -> &::std::option::Option<crate::types::ObjectStorageServerProtocol> {
         &self.server_protocol
     }
@@ -252,17 +256,23 @@ impl CreateLocationObjectStorageInputBuilder {
     pub fn get_access_key(&self) -> &::std::option::Option<::std::string::String> {
         &self.access_key
     }
-    /// <p>Specifies the secret key (for example, a password) if credentials are required to authenticate with the object storage server.</p>
+    /// <p>Specifies the secret key (for example, a password) if credentials are required to authenticate with the object storage server.</p><note>
+    /// <p>If you provide a secret using <code>SecretKey</code>, but do not provide secret configuration details using <code>CmkSecretConfig</code> or <code>CustomSecretConfig</code>, then DataSync stores the token using your Amazon Web Services account's Secrets Manager secret.</p>
+    /// </note>
     pub fn secret_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.secret_key = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Specifies the secret key (for example, a password) if credentials are required to authenticate with the object storage server.</p>
+    /// <p>Specifies the secret key (for example, a password) if credentials are required to authenticate with the object storage server.</p><note>
+    /// <p>If you provide a secret using <code>SecretKey</code>, but do not provide secret configuration details using <code>CmkSecretConfig</code> or <code>CustomSecretConfig</code>, then DataSync stores the token using your Amazon Web Services account's Secrets Manager secret.</p>
+    /// </note>
     pub fn set_secret_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.secret_key = input;
         self
     }
-    /// <p>Specifies the secret key (for example, a password) if credentials are required to authenticate with the object storage server.</p>
+    /// <p>Specifies the secret key (for example, a password) if credentials are required to authenticate with the object storage server.</p><note>
+    /// <p>If you provide a secret using <code>SecretKey</code>, but do not provide secret configuration details using <code>CmkSecretConfig</code> or <code>CustomSecretConfig</code>, then DataSync stores the token using your Amazon Web Services account's Secrets Manager secret.</p>
+    /// </note>
     pub fn get_secret_key(&self) -> &::std::option::Option<::std::string::String> {
         &self.secret_key
     }

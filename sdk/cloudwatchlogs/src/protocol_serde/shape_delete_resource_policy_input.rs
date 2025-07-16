@@ -6,5 +6,11 @@ pub fn ser_delete_resource_policy_input_input(
     if let Some(var_1) = &input.policy_name {
         object.key("policyName").string(var_1.as_str());
     }
+    if let Some(var_2) = &input.resource_arn {
+        object.key("resourceArn").string(var_2.as_str());
+    }
+    if let Some(var_3) = &input.expected_revision_id {
+        object.key("expectedRevisionId").string(var_3.as_str());
+    }
     Ok(())
 }

@@ -7,14 +7,9 @@ pub struct CreateLocationSmbInput {
     /// <p>Specifies the name of the share exported by your SMB file server where DataSync will read or write data. You can include a subdirectory in the share path (for example, <code>/path/to/subdirectory</code>). Make sure that other SMB clients in your network can also mount this path.</p>
     /// <p>To copy all data in the subdirectory, DataSync must be able to mount the SMB share and access all of its data. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-smb-location.html#configuring-smb-permissions">Providing DataSync access to SMB file servers</a>.</p>
     pub subdirectory: ::std::option::Option<::std::string::String>,
-    /// <p>Specifies the domain name or IP address of the SMB file server that your DataSync agent connects to.</p>
-    /// <p>Remember the following when configuring this parameter:</p>
-    /// <ul>
-    /// <li>
-    /// <p>You can't specify an IP version 6 (IPv6) address.</p></li>
-    /// <li>
-    /// <p>If you're using Kerberos authentication, you must specify a domain name.</p></li>
-    /// </ul>
+    /// <p>Specifies the domain name or IP address (IPv4 or IPv6) of the SMB file server that your DataSync agent connects to.</p><note>
+    /// <p>If you're using Kerberos authentication, you must specify a domain name.</p>
+    /// </note>
     pub server_hostname: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the user that can mount and access the files, folders, and file metadata in your SMB file server. This parameter applies only if <code>AuthenticationType</code> is set to <code>NTLM</code>.</p>
     /// <p>For information about choosing a user with the right level of access for your transfer, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-smb-location.html#configuring-smb-permissions">Providing DataSync access to SMB file servers</a>.</p>
@@ -33,10 +28,10 @@ pub struct CreateLocationSmbInput {
     /// <p>Specifies the authentication protocol that DataSync uses to connect to your SMB file server. DataSync supports <code>NTLM</code> (default) and <code>KERBEROS</code> authentication.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-smb-location.html#configuring-smb-permissions">Providing DataSync access to SMB file servers</a>.</p>
     pub authentication_type: ::std::option::Option<crate::types::SmbAuthenticationType>,
-    /// <p>Specifies the IPv4 addresses for the DNS servers that your SMB file server belongs to. This parameter applies only if <code>AuthenticationType</code> is set to <code>KERBEROS</code>.</p>
+    /// <p>Specifies the IPv4 or IPv6 addresses for the DNS servers that your SMB file server belongs to. This parameter applies only if <code>AuthenticationType</code> is set to <code>KERBEROS</code>.</p>
     /// <p>If you have multiple domains in your environment, configuring this parameter makes sure that DataSync connects to the right SMB file server.</p>
     pub dns_ip_addresses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>Specifies a Kerberos prinicpal, which is an identity in your Kerberos realm that has permission to access the files, folders, and file metadata in your SMB file server.</p>
+    /// <p>Specifies a Kerberos principal, which is an identity in your Kerberos realm that has permission to access the files, folders, and file metadata in your SMB file server.</p>
     /// <p>A Kerberos principal might look like <code>HOST/kerberosuser@MYDOMAIN.ORG</code>.</p>
     /// <p>Principal names are case sensitive. Your DataSync task execution will fail if the principal that you specify for this parameter doesn’t exactly match the principal that you use to create the keytab file.</p>
     pub kerberos_principal: ::std::option::Option<::std::string::String>,
@@ -53,14 +48,9 @@ impl CreateLocationSmbInput {
     pub fn subdirectory(&self) -> ::std::option::Option<&str> {
         self.subdirectory.as_deref()
     }
-    /// <p>Specifies the domain name or IP address of the SMB file server that your DataSync agent connects to.</p>
-    /// <p>Remember the following when configuring this parameter:</p>
-    /// <ul>
-    /// <li>
-    /// <p>You can't specify an IP version 6 (IPv6) address.</p></li>
-    /// <li>
-    /// <p>If you're using Kerberos authentication, you must specify a domain name.</p></li>
-    /// </ul>
+    /// <p>Specifies the domain name or IP address (IPv4 or IPv6) of the SMB file server that your DataSync agent connects to.</p><note>
+    /// <p>If you're using Kerberos authentication, you must specify a domain name.</p>
+    /// </note>
     pub fn server_hostname(&self) -> ::std::option::Option<&str> {
         self.server_hostname.as_deref()
     }
@@ -99,14 +89,14 @@ impl CreateLocationSmbInput {
     pub fn authentication_type(&self) -> ::std::option::Option<&crate::types::SmbAuthenticationType> {
         self.authentication_type.as_ref()
     }
-    /// <p>Specifies the IPv4 addresses for the DNS servers that your SMB file server belongs to. This parameter applies only if <code>AuthenticationType</code> is set to <code>KERBEROS</code>.</p>
+    /// <p>Specifies the IPv4 or IPv6 addresses for the DNS servers that your SMB file server belongs to. This parameter applies only if <code>AuthenticationType</code> is set to <code>KERBEROS</code>.</p>
     /// <p>If you have multiple domains in your environment, configuring this parameter makes sure that DataSync connects to the right SMB file server.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.dns_ip_addresses.is_none()`.
     pub fn dns_ip_addresses(&self) -> &[::std::string::String] {
         self.dns_ip_addresses.as_deref().unwrap_or_default()
     }
-    /// <p>Specifies a Kerberos prinicpal, which is an identity in your Kerberos realm that has permission to access the files, folders, and file metadata in your SMB file server.</p>
+    /// <p>Specifies a Kerberos principal, which is an identity in your Kerberos realm that has permission to access the files, folders, and file metadata in your SMB file server.</p>
     /// <p>A Kerberos principal might look like <code>HOST/kerberosuser@MYDOMAIN.ORG</code>.</p>
     /// <p>Principal names are case sensitive. Your DataSync task execution will fail if the principal that you specify for this parameter doesn’t exactly match the principal that you use to create the keytab file.</p>
     pub fn kerberos_principal(&self) -> ::std::option::Option<&str> {
@@ -186,39 +176,24 @@ impl CreateLocationSmbInputBuilder {
     pub fn get_subdirectory(&self) -> &::std::option::Option<::std::string::String> {
         &self.subdirectory
     }
-    /// <p>Specifies the domain name or IP address of the SMB file server that your DataSync agent connects to.</p>
-    /// <p>Remember the following when configuring this parameter:</p>
-    /// <ul>
-    /// <li>
-    /// <p>You can't specify an IP version 6 (IPv6) address.</p></li>
-    /// <li>
-    /// <p>If you're using Kerberos authentication, you must specify a domain name.</p></li>
-    /// </ul>
+    /// <p>Specifies the domain name or IP address (IPv4 or IPv6) of the SMB file server that your DataSync agent connects to.</p><note>
+    /// <p>If you're using Kerberos authentication, you must specify a domain name.</p>
+    /// </note>
     /// This field is required.
     pub fn server_hostname(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.server_hostname = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Specifies the domain name or IP address of the SMB file server that your DataSync agent connects to.</p>
-    /// <p>Remember the following when configuring this parameter:</p>
-    /// <ul>
-    /// <li>
-    /// <p>You can't specify an IP version 6 (IPv6) address.</p></li>
-    /// <li>
-    /// <p>If you're using Kerberos authentication, you must specify a domain name.</p></li>
-    /// </ul>
+    /// <p>Specifies the domain name or IP address (IPv4 or IPv6) of the SMB file server that your DataSync agent connects to.</p><note>
+    /// <p>If you're using Kerberos authentication, you must specify a domain name.</p>
+    /// </note>
     pub fn set_server_hostname(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.server_hostname = input;
         self
     }
-    /// <p>Specifies the domain name or IP address of the SMB file server that your DataSync agent connects to.</p>
-    /// <p>Remember the following when configuring this parameter:</p>
-    /// <ul>
-    /// <li>
-    /// <p>You can't specify an IP version 6 (IPv6) address.</p></li>
-    /// <li>
-    /// <p>If you're using Kerberos authentication, you must specify a domain name.</p></li>
-    /// </ul>
+    /// <p>Specifies the domain name or IP address (IPv4 or IPv6) of the SMB file server that your DataSync agent connects to.</p><note>
+    /// <p>If you're using Kerberos authentication, you must specify a domain name.</p>
+    /// </note>
     pub fn get_server_hostname(&self) -> &::std::option::Option<::std::string::String> {
         &self.server_hostname
     }
@@ -345,7 +320,7 @@ impl CreateLocationSmbInputBuilder {
     ///
     /// To override the contents of this collection use [`set_dns_ip_addresses`](Self::set_dns_ip_addresses).
     ///
-    /// <p>Specifies the IPv4 addresses for the DNS servers that your SMB file server belongs to. This parameter applies only if <code>AuthenticationType</code> is set to <code>KERBEROS</code>.</p>
+    /// <p>Specifies the IPv4 or IPv6 addresses for the DNS servers that your SMB file server belongs to. This parameter applies only if <code>AuthenticationType</code> is set to <code>KERBEROS</code>.</p>
     /// <p>If you have multiple domains in your environment, configuring this parameter makes sure that DataSync connects to the right SMB file server.</p>
     pub fn dns_ip_addresses(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.dns_ip_addresses.unwrap_or_default();
@@ -353,32 +328,32 @@ impl CreateLocationSmbInputBuilder {
         self.dns_ip_addresses = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Specifies the IPv4 addresses for the DNS servers that your SMB file server belongs to. This parameter applies only if <code>AuthenticationType</code> is set to <code>KERBEROS</code>.</p>
+    /// <p>Specifies the IPv4 or IPv6 addresses for the DNS servers that your SMB file server belongs to. This parameter applies only if <code>AuthenticationType</code> is set to <code>KERBEROS</code>.</p>
     /// <p>If you have multiple domains in your environment, configuring this parameter makes sure that DataSync connects to the right SMB file server.</p>
     pub fn set_dns_ip_addresses(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.dns_ip_addresses = input;
         self
     }
-    /// <p>Specifies the IPv4 addresses for the DNS servers that your SMB file server belongs to. This parameter applies only if <code>AuthenticationType</code> is set to <code>KERBEROS</code>.</p>
+    /// <p>Specifies the IPv4 or IPv6 addresses for the DNS servers that your SMB file server belongs to. This parameter applies only if <code>AuthenticationType</code> is set to <code>KERBEROS</code>.</p>
     /// <p>If you have multiple domains in your environment, configuring this parameter makes sure that DataSync connects to the right SMB file server.</p>
     pub fn get_dns_ip_addresses(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.dns_ip_addresses
     }
-    /// <p>Specifies a Kerberos prinicpal, which is an identity in your Kerberos realm that has permission to access the files, folders, and file metadata in your SMB file server.</p>
+    /// <p>Specifies a Kerberos principal, which is an identity in your Kerberos realm that has permission to access the files, folders, and file metadata in your SMB file server.</p>
     /// <p>A Kerberos principal might look like <code>HOST/kerberosuser@MYDOMAIN.ORG</code>.</p>
     /// <p>Principal names are case sensitive. Your DataSync task execution will fail if the principal that you specify for this parameter doesn’t exactly match the principal that you use to create the keytab file.</p>
     pub fn kerberos_principal(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.kerberos_principal = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Specifies a Kerberos prinicpal, which is an identity in your Kerberos realm that has permission to access the files, folders, and file metadata in your SMB file server.</p>
+    /// <p>Specifies a Kerberos principal, which is an identity in your Kerberos realm that has permission to access the files, folders, and file metadata in your SMB file server.</p>
     /// <p>A Kerberos principal might look like <code>HOST/kerberosuser@MYDOMAIN.ORG</code>.</p>
     /// <p>Principal names are case sensitive. Your DataSync task execution will fail if the principal that you specify for this parameter doesn’t exactly match the principal that you use to create the keytab file.</p>
     pub fn set_kerberos_principal(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.kerberos_principal = input;
         self
     }
-    /// <p>Specifies a Kerberos prinicpal, which is an identity in your Kerberos realm that has permission to access the files, folders, and file metadata in your SMB file server.</p>
+    /// <p>Specifies a Kerberos principal, which is an identity in your Kerberos realm that has permission to access the files, folders, and file metadata in your SMB file server.</p>
     /// <p>A Kerberos principal might look like <code>HOST/kerberosuser@MYDOMAIN.ORG</code>.</p>
     /// <p>Principal names are case sensitive. Your DataSync task execution will fail if the principal that you specify for this parameter doesn’t exactly match the principal that you use to create the keytab file.</p>
     pub fn get_kerberos_principal(&self) -> &::std::option::Option<::std::string::String> {

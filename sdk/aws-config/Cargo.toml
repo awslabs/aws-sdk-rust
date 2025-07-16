@@ -40,7 +40,7 @@ fastrand = "2.3.0"
 [dependencies.aws-credential-types]
 path = "../aws-credential-types"
 features = ["test-util"]
-version = "1.2.3"
+version = "1.2.4"
 
 [dependencies.aws-runtime]
 path = "../aws-runtime"
@@ -49,7 +49,7 @@ version = "1.5.9"
 [dependencies.aws-sdk-sts]
 path = "../sts"
 default-features = false
-version = "1.77.0"
+version = "1.78.0"
 
 [dependencies.aws-smithy-async]
 path = "../aws-smithy-async"
@@ -96,7 +96,7 @@ version = "0.1"
 path = "../sso"
 default-features = false
 optional = true
-version = "1.75.0"
+version = "1.76.0"
 
 [dependencies.ring]
 version = "0.17.5"
@@ -114,7 +114,7 @@ optional = true
 path = "../ssooidc"
 default-features = false
 optional = true
-version = "1.76.0"
+version = "1.77.0"
 
 [dev-dependencies]
 tracing-test = "0.2.4"

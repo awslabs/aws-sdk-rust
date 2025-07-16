@@ -44,7 +44,7 @@ tracing = "0.1.40"
 
 [dependencies.aws-credential-types]
 path = "../aws-credential-types"
-version = "1.2.3"
+version = "1.2.4"
 
 [dependencies.aws-smithy-eventstream]
 path = "../aws-smithy-eventstream"
@@ -116,7 +116,7 @@ criterion = "0.5"
 [dev-dependencies.aws-credential-types]
 path = "../aws-credential-types"
 features = ["test-util", "hardcoded-credentials"]
-version = "1.2.3"
+version = "1.2.4"
 
 [dev-dependencies.aws-smithy-runtime-api]
 path = "../aws-smithy-runtime-api"

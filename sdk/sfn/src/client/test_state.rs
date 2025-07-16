@@ -14,7 +14,7 @@ impl super::Client {
     ///   - [`error(Option<String>)`](crate::operation::test_state::TestStateOutput::error): <p>The error returned when the execution of a state fails.</p>
     ///   - [`cause(Option<String>)`](crate::operation::test_state::TestStateOutput::cause): <p>A detailed explanation of the cause for the error when the execution of a state fails.</p>
     ///   - [`inspection_data(Option<InspectionData>)`](crate::operation::test_state::TestStateOutput::inspection_data): <p>Returns additional details about the state's execution, including its input and output data processing flow, and HTTP request and response information. The <code>inspectionLevel</code> request parameter specifies which details are returned.</p>
-    ///   - [`next_state(Option<String>)`](crate::operation::test_state::TestStateOutput::next_state): <p>The name of the next state to transition to. If you haven't defined a next state in your definition or if the execution of the state fails, this ﬁeld doesn't contain a value.</p>
+    ///   - [`next_state(Option<String>)`](crate::operation::test_state::TestStateOutput::next_state): <p>The name of the next state to transition to. If you haven't defined a next state in your definition or if the execution of the state fails, this field doesn't contain a value.</p>
     ///   - [`status(Option<TestExecutionStatus>)`](crate::operation::test_state::TestStateOutput::status): <p>The execution status of the state.</p>
     /// - On failure, responds with [`SdkError<TestStateError>`](crate::operation::test_state::TestStateError)
     pub fn test_state(&self) -> crate::operation::test_state::builders::TestStateFluentBuilder {

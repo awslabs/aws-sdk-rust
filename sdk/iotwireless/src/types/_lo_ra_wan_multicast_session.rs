@@ -10,7 +10,9 @@ pub struct LoRaWanMulticastSession {
     pub dl_freq: ::std::option::Option<i32>,
     /// <p>Timestamp of when the multicast group session is to start.</p>
     pub session_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>How long before a multicast group session is to timeout.</p>
+    /// <p>How long before a multicast group session is to timeout.</p><note>
+    /// <p>We recommend that you provide a timeout value that is a power-of-two (such as 64, 128, 256). If a non-power-of-two value is provided, it will automatically be rounded up to the next supported power-of-two within the allowed range.</p>
+    /// </note>
     pub session_timeout: ::std::option::Option<i32>,
     /// <p>The PingSlotPeriod value.</p>
     pub ping_slot_period: ::std::option::Option<i32>,
@@ -28,7 +30,9 @@ impl LoRaWanMulticastSession {
     pub fn session_start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.session_start_time.as_ref()
     }
-    /// <p>How long before a multicast group session is to timeout.</p>
+    /// <p>How long before a multicast group session is to timeout.</p><note>
+    /// <p>We recommend that you provide a timeout value that is a power-of-two (such as 64, 128, 256). If a non-power-of-two value is provided, it will automatically be rounded up to the next supported power-of-two within the allowed range.</p>
+    /// </note>
     pub fn session_timeout(&self) -> ::std::option::Option<i32> {
         self.session_timeout
     }
@@ -97,17 +101,23 @@ impl LoRaWanMulticastSessionBuilder {
     pub fn get_session_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.session_start_time
     }
-    /// <p>How long before a multicast group session is to timeout.</p>
+    /// <p>How long before a multicast group session is to timeout.</p><note>
+    /// <p>We recommend that you provide a timeout value that is a power-of-two (such as 64, 128, 256). If a non-power-of-two value is provided, it will automatically be rounded up to the next supported power-of-two within the allowed range.</p>
+    /// </note>
     pub fn session_timeout(mut self, input: i32) -> Self {
         self.session_timeout = ::std::option::Option::Some(input);
         self
     }
-    /// <p>How long before a multicast group session is to timeout.</p>
+    /// <p>How long before a multicast group session is to timeout.</p><note>
+    /// <p>We recommend that you provide a timeout value that is a power-of-two (such as 64, 128, 256). If a non-power-of-two value is provided, it will automatically be rounded up to the next supported power-of-two within the allowed range.</p>
+    /// </note>
     pub fn set_session_timeout(mut self, input: ::std::option::Option<i32>) -> Self {
         self.session_timeout = input;
         self
     }
-    /// <p>How long before a multicast group session is to timeout.</p>
+    /// <p>How long before a multicast group session is to timeout.</p><note>
+    /// <p>We recommend that you provide a timeout value that is a power-of-two (such as 64, 128, 256). If a non-power-of-two value is provided, it will automatically be rounded up to the next supported power-of-two within the allowed range.</p>
+    /// </note>
     pub fn get_session_timeout(&self) -> &::std::option::Option<i32> {
         &self.session_timeout
     }

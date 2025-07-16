@@ -7,6 +7,9 @@ pub mod batch_delete_evaluation_job;
 /// Types for the `CreateCustomModel` operation.
 pub mod create_custom_model;
 
+/// Types for the `CreateCustomModelDeployment` operation.
+pub mod create_custom_model_deployment;
+
 /// Types for the `CreateEvaluationJob` operation.
 pub mod create_evaluation_job;
 
@@ -46,6 +49,9 @@ pub mod create_provisioned_model_throughput;
 /// Types for the `DeleteCustomModel` operation.
 pub mod delete_custom_model;
 
+/// Types for the `DeleteCustomModelDeployment` operation.
+pub mod delete_custom_model_deployment;
+
 /// Types for the `DeleteFoundationModelAgreement` operation.
 pub mod delete_foundation_model_agreement;
 
@@ -75,6 +81,9 @@ pub mod deregister_marketplace_model_endpoint;
 
 /// Types for the `GetCustomModel` operation.
 pub mod get_custom_model;
+
+/// Types for the `GetCustomModelDeployment` operation.
+pub mod get_custom_model_deployment;
 
 /// Types for the `GetEvaluationJob` operation.
 pub mod get_evaluation_job;
@@ -120,6 +129,9 @@ pub mod get_provisioned_model_throughput;
 
 /// Types for the `GetUseCaseForModelAccess` operation.
 pub mod get_use_case_for_model_access;
+
+/// Types for the `ListCustomModelDeployments` operation.
+pub mod list_custom_model_deployments;
 
 /// Types for the `ListCustomModels` operation.
 pub mod list_custom_models;

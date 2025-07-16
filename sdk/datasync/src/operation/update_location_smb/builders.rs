@@ -140,38 +140,23 @@ impl UpdateLocationSmbFluentBuilder {
     pub fn get_subdirectory(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_subdirectory()
     }
-    /// <p>Specifies the domain name or IP address of the SMB file server that your DataSync agent connects to.</p>
-    /// <p>Remember the following when configuring this parameter:</p>
-    /// <ul>
-    /// <li>
-    /// <p>You can't specify an IP version 6 (IPv6) address.</p></li>
-    /// <li>
-    /// <p>If you're using Kerberos authentication, you must specify a domain name.</p></li>
-    /// </ul>
+    /// <p>Specifies the domain name or IP address (IPv4 or IPv6) of the SMB file server that your DataSync agent connects to.</p><note>
+    /// <p>If you're using Kerberos authentication, you must specify a domain name.</p>
+    /// </note>
     pub fn server_hostname(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.server_hostname(input.into());
         self
     }
-    /// <p>Specifies the domain name or IP address of the SMB file server that your DataSync agent connects to.</p>
-    /// <p>Remember the following when configuring this parameter:</p>
-    /// <ul>
-    /// <li>
-    /// <p>You can't specify an IP version 6 (IPv6) address.</p></li>
-    /// <li>
-    /// <p>If you're using Kerberos authentication, you must specify a domain name.</p></li>
-    /// </ul>
+    /// <p>Specifies the domain name or IP address (IPv4 or IPv6) of the SMB file server that your DataSync agent connects to.</p><note>
+    /// <p>If you're using Kerberos authentication, you must specify a domain name.</p>
+    /// </note>
     pub fn set_server_hostname(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_server_hostname(input);
         self
     }
-    /// <p>Specifies the domain name or IP address of the SMB file server that your DataSync agent connects to.</p>
-    /// <p>Remember the following when configuring this parameter:</p>
-    /// <ul>
-    /// <li>
-    /// <p>You can't specify an IP version 6 (IPv6) address.</p></li>
-    /// <li>
-    /// <p>If you're using Kerberos authentication, you must specify a domain name.</p></li>
-    /// </ul>
+    /// <p>Specifies the domain name or IP address (IPv4 or IPv6) of the SMB file server that your DataSync agent connects to.</p><note>
+    /// <p>If you're using Kerberos authentication, you must specify a domain name.</p>
+    /// </note>
     pub fn get_server_hostname(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_server_hostname()
     }
@@ -278,19 +263,19 @@ impl UpdateLocationSmbFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_dns_ip_addresses`](Self::set_dns_ip_addresses).
     ///
-    /// <p>Specifies the IPv4 addresses for the DNS servers that your SMB file server belongs to. This parameter applies only if <code>AuthenticationType</code> is set to <code>KERBEROS</code>.</p>
+    /// <p>Specifies the IP addresses (IPv4 or IPv6) for the DNS servers that your SMB file server belongs to. This parameter applies only if <code>AuthenticationType</code> is set to <code>KERBEROS</code>.</p>
     /// <p>If you have multiple domains in your environment, configuring this parameter makes sure that DataSync connects to the right SMB file server.</p>
     pub fn dns_ip_addresses(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.dns_ip_addresses(input.into());
         self
     }
-    /// <p>Specifies the IPv4 addresses for the DNS servers that your SMB file server belongs to. This parameter applies only if <code>AuthenticationType</code> is set to <code>KERBEROS</code>.</p>
+    /// <p>Specifies the IP addresses (IPv4 or IPv6) for the DNS servers that your SMB file server belongs to. This parameter applies only if <code>AuthenticationType</code> is set to <code>KERBEROS</code>.</p>
     /// <p>If you have multiple domains in your environment, configuring this parameter makes sure that DataSync connects to the right SMB file server.</p>
     pub fn set_dns_ip_addresses(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_dns_ip_addresses(input);
         self
     }
-    /// <p>Specifies the IPv4 addresses for the DNS servers that your SMB file server belongs to. This parameter applies only if <code>AuthenticationType</code> is set to <code>KERBEROS</code>.</p>
+    /// <p>Specifies the IP addresses (IPv4 or IPv6) for the DNS servers that your SMB file server belongs to. This parameter applies only if <code>AuthenticationType</code> is set to <code>KERBEROS</code>.</p>
     /// <p>If you have multiple domains in your environment, configuring this parameter makes sure that DataSync connects to the right SMB file server.</p>
     pub fn get_dns_ip_addresses(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_dns_ip_addresses()

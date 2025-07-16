@@ -122,4 +122,32 @@ impl DeleteResourcePolicyFluentBuilder {
     pub fn get_policy_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_policy_name()
     }
+    /// <p>The ARN of the CloudWatch Logs resource for which the resource policy needs to be deleted</p>
+    pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.resource_arn(input.into());
+        self
+    }
+    /// <p>The ARN of the CloudWatch Logs resource for which the resource policy needs to be deleted</p>
+    pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_resource_arn(input);
+        self
+    }
+    /// <p>The ARN of the CloudWatch Logs resource for which the resource policy needs to be deleted</p>
+    pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_resource_arn()
+    }
+    /// <p>The expected revision ID of the resource policy. Required when deleting a resource-scoped policy to prevent concurrent modifications.</p>
+    pub fn expected_revision_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.expected_revision_id(input.into());
+        self
+    }
+    /// <p>The expected revision ID of the resource policy. Required when deleting a resource-scoped policy to prevent concurrent modifications.</p>
+    pub fn set_expected_revision_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_expected_revision_id(input);
+        self
+    }
+    /// <p>The expected revision ID of the resource policy. Required when deleting a resource-scoped policy to prevent concurrent modifications.</p>
+    pub fn get_expected_revision_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_expected_revision_id()
+    }
 }

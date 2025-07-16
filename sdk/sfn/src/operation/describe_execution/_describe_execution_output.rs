@@ -19,7 +19,11 @@ pub struct DescribeExecutionOutput {
     /// <li>
     /// <p>special characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code></p></li>
     /// <li>
-    /// <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p></li>
+    /// <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>, <code>U+FFFE-FFFF</code>)</p></li>
+    /// <li>
+    /// <p>surrogates (<code>U+D800-DFFF</code>)</p></li>
+    /// <li>
+    /// <p>invalid characters (<code> U+10FFFF</code>)</p></li>
     /// </ul>
     /// <p>To enable logging with CloudWatch Logs, the name should only contain 0-9, A-Z, a-z, - and _.</p>
     pub name: ::std::option::Option<::std::string::String>,
@@ -39,7 +43,9 @@ pub struct DescribeExecutionOutput {
     pub output: ::std::option::Option<::std::string::String>,
     /// <p>Provides details about execution input or output.</p>
     pub output_details: ::std::option::Option<crate::types::CloudWatchEventsExecutionDataDetails>,
-    /// <p>The X-Ray trace header that was passed to the execution.</p>
+    /// <p>The X-Ray trace header that was passed to the execution.</p><note>
+    /// <p>For X-Ray traces, all Amazon Web Services services use the <code>X-Amzn-Trace-Id</code> header from the HTTP request. Using the header is the preferred mechanism to identify a trace. <code>StartExecution</code> and <code>StartSyncExecution</code> API operations can also use <code>traceHeader</code> from the body of the request payload. If <b>both</b> sources are provided, Step Functions will use the <b>header value</b> (preferred) over the value in the request body.</p>
+    /// </note>
     pub trace_header: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) that identifies a Map Run, which dispatched this execution.</p>
     pub map_run_arn: ::std::option::Option<::std::string::String>,
@@ -118,7 +124,11 @@ impl DescribeExecutionOutput {
     /// <li>
     /// <p>special characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code></p></li>
     /// <li>
-    /// <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p></li>
+    /// <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>, <code>U+FFFE-FFFF</code>)</p></li>
+    /// <li>
+    /// <p>surrogates (<code>U+D800-DFFF</code>)</p></li>
+    /// <li>
+    /// <p>invalid characters (<code> U+10FFFF</code>)</p></li>
     /// </ul>
     /// <p>To enable logging with CloudWatch Logs, the name should only contain 0-9, A-Z, a-z, - and _.</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
@@ -154,7 +164,9 @@ impl DescribeExecutionOutput {
     pub fn output_details(&self) -> ::std::option::Option<&crate::types::CloudWatchEventsExecutionDataDetails> {
         self.output_details.as_ref()
     }
-    /// <p>The X-Ray trace header that was passed to the execution.</p>
+    /// <p>The X-Ray trace header that was passed to the execution.</p><note>
+    /// <p>For X-Ray traces, all Amazon Web Services services use the <code>X-Amzn-Trace-Id</code> header from the HTTP request. Using the header is the preferred mechanism to identify a trace. <code>StartExecution</code> and <code>StartSyncExecution</code> API operations can also use <code>traceHeader</code> from the body of the request payload. If <b>both</b> sources are provided, Step Functions will use the <b>header value</b> (preferred) over the value in the request body.</p>
+    /// </note>
     pub fn trace_header(&self) -> ::std::option::Option<&str> {
         self.trace_header.as_deref()
     }
@@ -337,7 +349,11 @@ impl DescribeExecutionOutputBuilder {
     /// <li>
     /// <p>special characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code></p></li>
     /// <li>
-    /// <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p></li>
+    /// <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>, <code>U+FFFE-FFFF</code>)</p></li>
+    /// <li>
+    /// <p>surrogates (<code>U+D800-DFFF</code>)</p></li>
+    /// <li>
+    /// <p>invalid characters (<code> U+10FFFF</code>)</p></li>
     /// </ul>
     /// <p>To enable logging with CloudWatch Logs, the name should only contain 0-9, A-Z, a-z, - and _.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -356,7 +372,11 @@ impl DescribeExecutionOutputBuilder {
     /// <li>
     /// <p>special characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code></p></li>
     /// <li>
-    /// <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p></li>
+    /// <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>, <code>U+FFFE-FFFF</code>)</p></li>
+    /// <li>
+    /// <p>surrogates (<code>U+D800-DFFF</code>)</p></li>
+    /// <li>
+    /// <p>invalid characters (<code> U+10FFFF</code>)</p></li>
     /// </ul>
     /// <p>To enable logging with CloudWatch Logs, the name should only contain 0-9, A-Z, a-z, - and _.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -375,7 +395,11 @@ impl DescribeExecutionOutputBuilder {
     /// <li>
     /// <p>special characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code></p></li>
     /// <li>
-    /// <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p></li>
+    /// <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>, <code>U+FFFE-FFFF</code>)</p></li>
+    /// <li>
+    /// <p>surrogates (<code>U+D800-DFFF</code>)</p></li>
+    /// <li>
+    /// <p>invalid characters (<code> U+10FFFF</code>)</p></li>
     /// </ul>
     /// <p>To enable logging with CloudWatch Logs, the name should only contain 0-9, A-Z, a-z, - and _.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -487,17 +511,23 @@ impl DescribeExecutionOutputBuilder {
     pub fn get_output_details(&self) -> &::std::option::Option<crate::types::CloudWatchEventsExecutionDataDetails> {
         &self.output_details
     }
-    /// <p>The X-Ray trace header that was passed to the execution.</p>
+    /// <p>The X-Ray trace header that was passed to the execution.</p><note>
+    /// <p>For X-Ray traces, all Amazon Web Services services use the <code>X-Amzn-Trace-Id</code> header from the HTTP request. Using the header is the preferred mechanism to identify a trace. <code>StartExecution</code> and <code>StartSyncExecution</code> API operations can also use <code>traceHeader</code> from the body of the request payload. If <b>both</b> sources are provided, Step Functions will use the <b>header value</b> (preferred) over the value in the request body.</p>
+    /// </note>
     pub fn trace_header(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.trace_header = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The X-Ray trace header that was passed to the execution.</p>
+    /// <p>The X-Ray trace header that was passed to the execution.</p><note>
+    /// <p>For X-Ray traces, all Amazon Web Services services use the <code>X-Amzn-Trace-Id</code> header from the HTTP request. Using the header is the preferred mechanism to identify a trace. <code>StartExecution</code> and <code>StartSyncExecution</code> API operations can also use <code>traceHeader</code> from the body of the request payload. If <b>both</b> sources are provided, Step Functions will use the <b>header value</b> (preferred) over the value in the request body.</p>
+    /// </note>
     pub fn set_trace_header(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.trace_header = input;
         self
     }
-    /// <p>The X-Ray trace header that was passed to the execution.</p>
+    /// <p>The X-Ray trace header that was passed to the execution.</p><note>
+    /// <p>For X-Ray traces, all Amazon Web Services services use the <code>X-Amzn-Trace-Id</code> header from the HTTP request. Using the header is the preferred mechanism to identify a trace. <code>StartExecution</code> and <code>StartSyncExecution</code> API operations can also use <code>traceHeader</code> from the body of the request payload. If <b>both</b> sources are provided, Step Functions will use the <b>header value</b> (preferred) over the value in the request body.</p>
+    /// </note>
     pub fn get_trace_header(&self) -> &::std::option::Option<::std::string::String> {
         &self.trace_header
     }

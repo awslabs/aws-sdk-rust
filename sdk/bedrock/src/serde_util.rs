@@ -20,6 +20,15 @@ pub(crate) fn create_custom_model_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn create_custom_model_deployment_output_output_correct_errors(
+    mut builder: crate::operation::create_custom_model_deployment::builders::CreateCustomModelDeploymentOutputBuilder,
+) -> crate::operation::create_custom_model_deployment::builders::CreateCustomModelDeploymentOutputBuilder {
+    if builder.custom_model_deployment_arn.is_none() {
+        builder.custom_model_deployment_arn = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn create_evaluation_job_output_output_correct_errors(
     mut builder: crate::operation::create_evaluation_job::builders::CreateEvaluationJobOutputBuilder,
 ) -> crate::operation::create_evaluation_job::builders::CreateEvaluationJobOutputBuilder {
@@ -145,6 +154,27 @@ pub(crate) fn get_custom_model_output_output_correct_errors(
     }
     if builder.creation_time.is_none() {
         builder.creation_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
+pub(crate) fn get_custom_model_deployment_output_output_correct_errors(
+    mut builder: crate::operation::get_custom_model_deployment::builders::GetCustomModelDeploymentOutputBuilder,
+) -> crate::operation::get_custom_model_deployment::builders::GetCustomModelDeploymentOutputBuilder {
+    if builder.custom_model_deployment_arn.is_none() {
+        builder.custom_model_deployment_arn = Some(Default::default())
+    }
+    if builder.model_deployment_name.is_none() {
+        builder.model_deployment_name = Some(Default::default())
+    }
+    if builder.model_arn.is_none() {
+        builder.model_arn = Some(Default::default())
+    }
+    if builder.created_at.is_none() {
+        builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::CustomModelDeploymentStatus>().ok()
     }
     builder
 }
@@ -656,6 +686,27 @@ pub(crate) fn cloud_watch_config_correct_errors(
     }
     if builder.role_arn.is_none() {
         builder.role_arn = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn custom_model_deployment_summary_correct_errors(
+    mut builder: crate::types::builders::CustomModelDeploymentSummaryBuilder,
+) -> crate::types::builders::CustomModelDeploymentSummaryBuilder {
+    if builder.custom_model_deployment_arn.is_none() {
+        builder.custom_model_deployment_arn = Some(Default::default())
+    }
+    if builder.custom_model_deployment_name.is_none() {
+        builder.custom_model_deployment_name = Some(Default::default())
+    }
+    if builder.model_arn.is_none() {
+        builder.model_arn = Some(Default::default())
+    }
+    if builder.created_at.is_none() {
+        builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::CustomModelDeploymentStatus>().ok()
     }
     builder
 }

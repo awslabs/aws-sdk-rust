@@ -24,7 +24,7 @@ impl crate::operation::create_delivery::builders::CreateDeliveryInputBuilder {
 ///
 /// <p>Creates a <i>delivery</i>. A delivery is a connection between a logical <i>delivery source</i> and a logical <i>delivery destination</i> that you have already created.</p>
 /// <p>Only some Amazon Web Services services support being configured as a delivery source using this operation. These services are listed as <b>Supported \[V2 Permissions\]</b> in the table at <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/AWS-logs-and-resource-policy.html">Enabling logging from Amazon Web Services services.</a></p>
-/// <p>A delivery destination can represent a log group in CloudWatch Logs, an Amazon S3 bucket, or a delivery stream in Firehose.</p>
+/// <p>A delivery destination can represent a log group in CloudWatch Logs, an Amazon S3 bucket, a delivery stream in Firehose, or X-Ray.</p>
 /// <p>To configure logs delivery between a supported Amazon Web Services service and a destination, you must do the following:</p>
 /// <ul>
 /// <li>

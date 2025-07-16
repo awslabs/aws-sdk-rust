@@ -137,9 +137,13 @@ pub use crate::types::_list_low_latency_hls_manifest_configuration::ListLowLaten
 
 pub use crate::types::_list_hls_manifest_configuration::ListHlsManifestConfiguration;
 
+pub use crate::types::_cdn_auth_configuration::CdnAuthConfiguration;
+
 mod _ad_marker_dash;
 
 mod _ad_marker_hls;
+
+mod _cdn_auth_configuration;
 
 mod _channel_group_list_configuration;
 

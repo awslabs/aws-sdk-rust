@@ -269,6 +269,8 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for CreateIPSetEn
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum CreateIPSetError {
+    /// <p>An access denied exception object.</p>
+    AccessDeniedException(crate::types::error::AccessDeniedException),
     /// <p>A bad request exception object.</p>
     BadRequestException(crate::types::error::BadRequestException),
     /// <p>An internal server error exception object.</p>
@@ -306,10 +308,15 @@ impl CreateIPSetError {
     ///
     pub fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
+            Self::AccessDeniedException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::BadRequestException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InternalServerErrorException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::Unhandled(e) => &e.meta,
         }
+    }
+    /// Returns `true` if the error kind is `CreateIPSetError::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(self, Self::AccessDeniedException(_))
     }
     /// Returns `true` if the error kind is `CreateIPSetError::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
@@ -323,6 +330,7 @@ impl CreateIPSetError {
 impl ::std::error::Error for CreateIPSetError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
+            Self::AccessDeniedException(_inner) => ::std::option::Option::Some(_inner),
             Self::BadRequestException(_inner) => ::std::option::Option::Some(_inner),
             Self::InternalServerErrorException(_inner) => ::std::option::Option::Some(_inner),
             Self::Unhandled(_inner) => ::std::option::Option::Some(&*_inner.source),
@@ -332,6 +340,7 @@ impl ::std::error::Error for CreateIPSetError {
 impl ::std::fmt::Display for CreateIPSetError {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         match self {
+            Self::AccessDeniedException(_inner) => _inner.fmt(f),
             Self::BadRequestException(_inner) => _inner.fmt(f),
             Self::InternalServerErrorException(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => {
@@ -355,6 +364,7 @@ impl ::aws_smithy_types::retry::ProvideErrorKind for CreateIPSetError {
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for CreateIPSetError {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
+            Self::AccessDeniedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::BadRequestException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InternalServerErrorException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::Unhandled(_inner) => &_inner.meta,

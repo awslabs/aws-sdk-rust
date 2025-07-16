@@ -8,6 +8,8 @@ pub struct ListExecutionsInput {
     /// <p>You can also return a list of executions associated with a specific <a href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-state-machine-alias.html">alias</a> or <a href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-state-machine-version.html">version</a>, by specifying an alias ARN or a version ARN in the <code>stateMachineArn</code> parameter.</p>
     pub state_machine_arn: ::std::option::Option<::std::string::String>,
     /// <p>If specified, only list the executions whose current execution status matches the given filter.</p>
+    /// <p>If you provide a <code>PENDING_REDRIVE</code> statusFilter, you must specify <code>mapRunArn</code>. For more information, see <a href="https://docs.aws.amazon.com/step-functions/latest/dg/redrive-map-run.html#redrive-child-workflow-behavior">Child workflow execution redrive behaviour</a> in the <i>Step Functions Developer Guide</i>.</p>
+    /// <p>If you provide a stateMachineArn and a <code>PENDING_REDRIVE</code> statusFilter, the API returns a validation exception.</p>
     pub status_filter: ::std::option::Option<crate::types::ExecutionStatus>,
     /// <p>The maximum number of results that are returned per call. You can use <code>nextToken</code> to obtain further pages of results. The default is 100 and the maximum allowed page size is 1000. A value of 0 uses the default.</p>
     /// <p>This is only an upper limit. The actual number of results returned per call might be fewer than the specified maximum.</p>
@@ -31,6 +33,8 @@ impl ListExecutionsInput {
         self.state_machine_arn.as_deref()
     }
     /// <p>If specified, only list the executions whose current execution status matches the given filter.</p>
+    /// <p>If you provide a <code>PENDING_REDRIVE</code> statusFilter, you must specify <code>mapRunArn</code>. For more information, see <a href="https://docs.aws.amazon.com/step-functions/latest/dg/redrive-map-run.html#redrive-child-workflow-behavior">Child workflow execution redrive behaviour</a> in the <i>Step Functions Developer Guide</i>.</p>
+    /// <p>If you provide a stateMachineArn and a <code>PENDING_REDRIVE</code> statusFilter, the API returns a validation exception.</p>
     pub fn status_filter(&self) -> ::std::option::Option<&crate::types::ExecutionStatus> {
         self.status_filter.as_ref()
     }
@@ -96,16 +100,22 @@ impl ListExecutionsInputBuilder {
         &self.state_machine_arn
     }
     /// <p>If specified, only list the executions whose current execution status matches the given filter.</p>
+    /// <p>If you provide a <code>PENDING_REDRIVE</code> statusFilter, you must specify <code>mapRunArn</code>. For more information, see <a href="https://docs.aws.amazon.com/step-functions/latest/dg/redrive-map-run.html#redrive-child-workflow-behavior">Child workflow execution redrive behaviour</a> in the <i>Step Functions Developer Guide</i>.</p>
+    /// <p>If you provide a stateMachineArn and a <code>PENDING_REDRIVE</code> statusFilter, the API returns a validation exception.</p>
     pub fn status_filter(mut self, input: crate::types::ExecutionStatus) -> Self {
         self.status_filter = ::std::option::Option::Some(input);
         self
     }
     /// <p>If specified, only list the executions whose current execution status matches the given filter.</p>
+    /// <p>If you provide a <code>PENDING_REDRIVE</code> statusFilter, you must specify <code>mapRunArn</code>. For more information, see <a href="https://docs.aws.amazon.com/step-functions/latest/dg/redrive-map-run.html#redrive-child-workflow-behavior">Child workflow execution redrive behaviour</a> in the <i>Step Functions Developer Guide</i>.</p>
+    /// <p>If you provide a stateMachineArn and a <code>PENDING_REDRIVE</code> statusFilter, the API returns a validation exception.</p>
     pub fn set_status_filter(mut self, input: ::std::option::Option<crate::types::ExecutionStatus>) -> Self {
         self.status_filter = input;
         self
     }
     /// <p>If specified, only list the executions whose current execution status matches the given filter.</p>
+    /// <p>If you provide a <code>PENDING_REDRIVE</code> statusFilter, you must specify <code>mapRunArn</code>. For more information, see <a href="https://docs.aws.amazon.com/step-functions/latest/dg/redrive-map-run.html#redrive-child-workflow-behavior">Child workflow execution redrive behaviour</a> in the <i>Step Functions Developer Guide</i>.</p>
+    /// <p>If you provide a stateMachineArn and a <code>PENDING_REDRIVE</code> statusFilter, the API returns a validation exception.</p>
     pub fn get_status_filter(&self) -> &::std::option::Option<crate::types::ExecutionStatus> {
         &self.status_filter
     }

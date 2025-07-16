@@ -12,6 +12,10 @@ pub struct PutResourcePolicyInput {
     /// <p></p>
     /// <p><code>{ "Version": "2012-10-17", "Statement": \[ { "Sid": "Route53LogsToCloudWatchLogs", "Effect": "Allow", "Principal": { "Service": \[ "route53.amazonaws.com" \] }, "Action": "logs:PutLogEvents", "Resource": "logArn", "Condition": { "ArnLike": { "aws:SourceArn": "myRoute53ResourceArn" }, "StringEquals": { "aws:SourceAccount": "myAwsAccountId" } } } \] }</code></p>
     pub policy_document: ::std::option::Option<::std::string::String>,
+    /// <p>The ARN of the CloudWatch Logs resource to which the resource policy needs to be added or attached. Currently only supports LogGroup ARN.</p>
+    pub resource_arn: ::std::option::Option<::std::string::String>,
+    /// <p>The expected revision ID of the resource policy. Required when <code>resourceArn</code> is provided to prevent concurrent modifications. Use <code>null</code> when creating a resource policy for the first time.</p>
+    pub expected_revision_id: ::std::option::Option<::std::string::String>,
 }
 impl PutResourcePolicyInput {
     /// <p>Name of the new policy. This parameter is required.</p>
@@ -27,6 +31,14 @@ impl PutResourcePolicyInput {
     pub fn policy_document(&self) -> ::std::option::Option<&str> {
         self.policy_document.as_deref()
     }
+    /// <p>The ARN of the CloudWatch Logs resource to which the resource policy needs to be added or attached. Currently only supports LogGroup ARN.</p>
+    pub fn resource_arn(&self) -> ::std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>The expected revision ID of the resource policy. Required when <code>resourceArn</code> is provided to prevent concurrent modifications. Use <code>null</code> when creating a resource policy for the first time.</p>
+    pub fn expected_revision_id(&self) -> ::std::option::Option<&str> {
+        self.expected_revision_id.as_deref()
+    }
 }
 impl PutResourcePolicyInput {
     /// Creates a new builder-style object to manufacture [`PutResourcePolicyInput`](crate::operation::put_resource_policy::PutResourcePolicyInput).
@@ -41,6 +53,8 @@ impl PutResourcePolicyInput {
 pub struct PutResourcePolicyInputBuilder {
     pub(crate) policy_name: ::std::option::Option<::std::string::String>,
     pub(crate) policy_document: ::std::option::Option<::std::string::String>,
+    pub(crate) resource_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) expected_revision_id: ::std::option::Option<::std::string::String>,
 }
 impl PutResourcePolicyInputBuilder {
     /// <p>Name of the new policy. This parameter is required.</p>
@@ -86,6 +100,34 @@ impl PutResourcePolicyInputBuilder {
     pub fn get_policy_document(&self) -> &::std::option::Option<::std::string::String> {
         &self.policy_document
     }
+    /// <p>The ARN of the CloudWatch Logs resource to which the resource policy needs to be added or attached. Currently only supports LogGroup ARN.</p>
+    pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.resource_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ARN of the CloudWatch Logs resource to which the resource policy needs to be added or attached. Currently only supports LogGroup ARN.</p>
+    pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.resource_arn = input;
+        self
+    }
+    /// <p>The ARN of the CloudWatch Logs resource to which the resource policy needs to be added or attached. Currently only supports LogGroup ARN.</p>
+    pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_arn
+    }
+    /// <p>The expected revision ID of the resource policy. Required when <code>resourceArn</code> is provided to prevent concurrent modifications. Use <code>null</code> when creating a resource policy for the first time.</p>
+    pub fn expected_revision_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.expected_revision_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The expected revision ID of the resource policy. Required when <code>resourceArn</code> is provided to prevent concurrent modifications. Use <code>null</code> when creating a resource policy for the first time.</p>
+    pub fn set_expected_revision_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.expected_revision_id = input;
+        self
+    }
+    /// <p>The expected revision ID of the resource policy. Required when <code>resourceArn</code> is provided to prevent concurrent modifications. Use <code>null</code> when creating a resource policy for the first time.</p>
+    pub fn get_expected_revision_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.expected_revision_id
+    }
     /// Consumes the builder and constructs a [`PutResourcePolicyInput`](crate::operation::put_resource_policy::PutResourcePolicyInput).
     pub fn build(
         self,
@@ -93,6 +135,8 @@ impl PutResourcePolicyInputBuilder {
         ::std::result::Result::Ok(crate::operation::put_resource_policy::PutResourcePolicyInput {
             policy_name: self.policy_name,
             policy_document: self.policy_document,
+            resource_arn: self.resource_arn,
+            expected_revision_id: self.expected_revision_id,
         })
     }
 }

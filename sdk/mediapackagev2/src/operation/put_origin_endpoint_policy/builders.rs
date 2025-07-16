@@ -164,4 +164,21 @@ impl PutOriginEndpointPolicyFluentBuilder {
     pub fn get_policy(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_policy()
     }
+    /// <p>The settings for using authorization headers between the MediaPackage endpoint and your CDN.</p>
+    /// <p>For information about CDN authorization, see <a href="https://docs.aws.amazon.com/mediapackage/latest/userguide/cdn-auth.html">CDN authorization in Elemental MediaPackage</a> in the MediaPackage user guide.</p>
+    pub fn cdn_auth_configuration(mut self, input: crate::types::CdnAuthConfiguration) -> Self {
+        self.inner = self.inner.cdn_auth_configuration(input);
+        self
+    }
+    /// <p>The settings for using authorization headers between the MediaPackage endpoint and your CDN.</p>
+    /// <p>For information about CDN authorization, see <a href="https://docs.aws.amazon.com/mediapackage/latest/userguide/cdn-auth.html">CDN authorization in Elemental MediaPackage</a> in the MediaPackage user guide.</p>
+    pub fn set_cdn_auth_configuration(mut self, input: ::std::option::Option<crate::types::CdnAuthConfiguration>) -> Self {
+        self.inner = self.inner.set_cdn_auth_configuration(input);
+        self
+    }
+    /// <p>The settings for using authorization headers between the MediaPackage endpoint and your CDN.</p>
+    /// <p>For information about CDN authorization, see <a href="https://docs.aws.amazon.com/mediapackage/latest/userguide/cdn-auth.html">CDN authorization in Elemental MediaPackage</a> in the MediaPackage user guide.</p>
+    pub fn get_cdn_auth_configuration(&self) -> &::std::option::Option<crate::types::CdnAuthConfiguration> {
+        self.inner.get_cdn_auth_configuration()
+    }
 }

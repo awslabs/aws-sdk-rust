@@ -9,5 +9,11 @@ pub fn ser_put_resource_policy_input_input(
     if let Some(var_2) = &input.policy_document {
         object.key("policyDocument").string(var_2.as_str());
     }
+    if let Some(var_3) = &input.resource_arn {
+        object.key("resourceArn").string(var_3.as_str());
+    }
+    if let Some(var_4) = &input.expected_revision_id {
+        object.key("expectedRevisionId").string(var_4.as_str());
+    }
     Ok(())
 }

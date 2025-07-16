@@ -114,7 +114,6 @@ impl CreateTableInputBuilder {
         &self.name
     }
     /// <p>The <code>TableInput</code> object that defines the metadata table to create in the catalog.</p>
-    /// This field is required.
     pub fn table_input(mut self, input: crate::types::TableInput) -> Self {
         self.table_input = ::std::option::Option::Some(input);
         self

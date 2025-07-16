@@ -136,4 +136,32 @@ impl DescribeResourcePoliciesFluentBuilder {
     pub fn get_limit(&self) -> &::std::option::Option<i32> {
         self.inner.get_limit()
     }
+    /// <p>The ARN of the CloudWatch Logs resource for which to query the resource policy.</p>
+    pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.resource_arn(input.into());
+        self
+    }
+    /// <p>The ARN of the CloudWatch Logs resource for which to query the resource policy.</p>
+    pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_resource_arn(input);
+        self
+    }
+    /// <p>The ARN of the CloudWatch Logs resource for which to query the resource policy.</p>
+    pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_resource_arn()
+    }
+    /// <p>Specifies the scope of the resource policy. Valid values are <code>ACCOUNT</code> or <code>RESOURCE</code>. When not specified, defaults to <code>ACCOUNT</code>.</p>
+    pub fn policy_scope(mut self, input: crate::types::PolicyScope) -> Self {
+        self.inner = self.inner.policy_scope(input);
+        self
+    }
+    /// <p>Specifies the scope of the resource policy. Valid values are <code>ACCOUNT</code> or <code>RESOURCE</code>. When not specified, defaults to <code>ACCOUNT</code>.</p>
+    pub fn set_policy_scope(mut self, input: ::std::option::Option<crate::types::PolicyScope>) -> Self {
+        self.inner = self.inner.set_policy_scope(input);
+        self
+    }
+    /// <p>Specifies the scope of the resource policy. Valid values are <code>ACCOUNT</code> or <code>RESOURCE</code>. When not specified, defaults to <code>ACCOUNT</code>.</p>
+    pub fn get_policy_scope(&self) -> &::std::option::Option<crate::types::PolicyScope> {
+        self.inner.get_policy_scope()
+    }
 }

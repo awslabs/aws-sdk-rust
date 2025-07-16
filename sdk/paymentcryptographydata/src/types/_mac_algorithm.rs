@@ -13,6 +13,7 @@
 /// # let macalgorithm = unimplemented!();
 /// match macalgorithm {
 ///     MacAlgorithm::Cmac => { /* ... */ },
+///     MacAlgorithm::Hmac => { /* ... */ },
 ///     MacAlgorithm::HmacSha224 => { /* ... */ },
 ///     MacAlgorithm::HmacSha256 => { /* ... */ },
 ///     MacAlgorithm::HmacSha384 => { /* ... */ },
@@ -50,6 +51,8 @@ pub enum MacAlgorithm {
     #[allow(missing_docs)] // documentation missing in model
     Cmac,
     #[allow(missing_docs)] // documentation missing in model
+    Hmac,
+    #[allow(missing_docs)] // documentation missing in model
     HmacSha224,
     #[allow(missing_docs)] // documentation missing in model
     HmacSha256,
@@ -69,6 +72,7 @@ impl ::std::convert::From<&str> for MacAlgorithm {
     fn from(s: &str) -> Self {
         match s {
             "CMAC" => MacAlgorithm::Cmac,
+            "HMAC" => MacAlgorithm::Hmac,
             "HMAC_SHA224" => MacAlgorithm::HmacSha224,
             "HMAC_SHA256" => MacAlgorithm::HmacSha256,
             "HMAC_SHA384" => MacAlgorithm::HmacSha384,
@@ -91,6 +95,7 @@ impl MacAlgorithm {
     pub fn as_str(&self) -> &str {
         match self {
             MacAlgorithm::Cmac => "CMAC",
+            MacAlgorithm::Hmac => "HMAC",
             MacAlgorithm::HmacSha224 => "HMAC_SHA224",
             MacAlgorithm::HmacSha256 => "HMAC_SHA256",
             MacAlgorithm::HmacSha384 => "HMAC_SHA384",
@@ -104,6 +109,7 @@ impl MacAlgorithm {
     pub const fn values() -> &'static [&'static str] {
         &[
             "CMAC",
+            "HMAC",
             "HMAC_SHA224",
             "HMAC_SHA256",
             "HMAC_SHA384",
@@ -134,6 +140,7 @@ impl ::std::fmt::Display for MacAlgorithm {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             MacAlgorithm::Cmac => write!(f, "CMAC"),
+            MacAlgorithm::Hmac => write!(f, "HMAC"),
             MacAlgorithm::HmacSha224 => write!(f, "HMAC_SHA224"),
             MacAlgorithm::HmacSha256 => write!(f, "HMAC_SHA256"),
             MacAlgorithm::HmacSha384 => write!(f, "HMAC_SHA384"),

@@ -12,5 +12,11 @@ pub fn ser_describe_resource_policies_input_input(
             ::aws_smithy_types::Number::NegInt((*var_2).into()),
         );
     }
+    if let Some(var_3) = &input.resource_arn {
+        object.key("resourceArn").string(var_3.as_str());
+    }
+    if let Some(var_4) = &input.policy_scope {
+        object.key("policyScope").string(var_4.as_str());
+    }
     Ok(())
 }

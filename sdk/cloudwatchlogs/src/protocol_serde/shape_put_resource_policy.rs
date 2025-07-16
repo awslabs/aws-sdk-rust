@@ -48,6 +48,36 @@ pub fn de_put_resource_policy_http_error(
             }
             tmp
         }),
+        "OperationAbortedException" => crate::operation::put_resource_policy::PutResourcePolicyError::OperationAbortedException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::OperationAbortedExceptionBuilder::default();
+                output = crate::protocol_serde::shape_operation_aborted_exception::de_operation_aborted_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::put_resource_policy::PutResourcePolicyError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ResourceNotFoundException" => crate::operation::put_resource_policy::PutResourcePolicyError::ResourceNotFoundException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
+                output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::put_resource_policy::PutResourcePolicyError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "ServiceUnavailableException" => crate::operation::put_resource_policy::PutResourcePolicyError::ServiceUnavailableException({
             #[allow(unused_mut)]
             let mut tmp = {
@@ -111,6 +141,13 @@ pub(crate) fn de_put_resource_policy(
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "resourcePolicy" => {
                     builder = builder.set_resource_policy(crate::protocol_serde::shape_resource_policy::de_resource_policy(tokens)?);
+                }
+                "revisionId" => {
+                    builder = builder.set_revision_id(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

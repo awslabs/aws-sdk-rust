@@ -194,6 +194,8 @@ The AWS SDK for Rust contains one crate for each AWS service, as well as [aws-co
 | Amazon Augmented AI Runtime | [aws-sdk-sagemakera2iruntime](https://crates.io/crates/aws-sdk-sagemakera2iruntime) ([docs](https://docs.rs/aws-sdk-sagemakera2iruntime)) |
 | Amazon Aurora DSQL | [aws-sdk-dsql](https://crates.io/crates/aws-sdk-dsql) ([docs](https://docs.rs/aws-sdk-dsql)) |
 | Amazon Bedrock | [aws-sdk-bedrock](https://crates.io/crates/aws-sdk-bedrock) ([docs](https://docs.rs/aws-sdk-bedrock)) |
+| Amazon Bedrock Agent Core Control Plane Fronting Layer | [aws-sdk-bedrockagentcorecontrol](https://crates.io/crates/aws-sdk-bedrockagentcorecontrol) ([docs](https://docs.rs/aws-sdk-bedrockagentcorecontrol)) |
+| Amazon Bedrock AgentCore Data Plane Fronting Layer | [aws-sdk-bedrockagentcore](https://crates.io/crates/aws-sdk-bedrockagentcore) ([docs](https://docs.rs/aws-sdk-bedrockagentcore)) |
 | Amazon Bedrock Runtime | [aws-sdk-bedrockruntime](https://crates.io/crates/aws-sdk-bedrockruntime) ([docs](https://docs.rs/aws-sdk-bedrockruntime)) |
 | Amazon Chime | [aws-sdk-chime](https://crates.io/crates/aws-sdk-chime) ([docs](https://docs.rs/aws-sdk-chime)) |
 | Amazon Chime SDK Identity | [aws-sdk-chimesdkidentity](https://crates.io/crates/aws-sdk-chimesdkidentity) ([docs](https://docs.rs/aws-sdk-chimesdkidentity)) |

@@ -399,6 +399,10 @@ pub use crate::types::_custom_model_summary::CustomModelSummary;
 
 pub use crate::types::_model_status::ModelStatus;
 
+pub use crate::types::_custom_model_deployment_summary::CustomModelDeploymentSummary;
+
+pub use crate::types::_custom_model_deployment_status::CustomModelDeploymentStatus;
+
 pub use crate::types::_marketplace_model_endpoint::MarketplaceModelEndpoint;
 
 pub use crate::types::_endpoint_config::EndpointConfig;
@@ -442,6 +446,10 @@ mod _custom_metric_bedrock_evaluator_model;
 mod _custom_metric_definition;
 
 mod _custom_metric_evaluator_model_config;
+
+mod _custom_model_deployment_status;
+
+mod _custom_model_deployment_summary;
 
 mod _custom_model_summary;
 

@@ -810,6 +810,9 @@ impl From<crate::operation::delete_resource_policy::DeleteResourcePolicyError> f
             crate::operation::delete_resource_policy::DeleteResourcePolicyError::InvalidParameterException(inner) => {
                 Error::InvalidParameterException(inner)
             }
+            crate::operation::delete_resource_policy::DeleteResourcePolicyError::OperationAbortedException(inner) => {
+                Error::OperationAbortedException(inner)
+            }
             crate::operation::delete_resource_policy::DeleteResourcePolicyError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }
@@ -2438,6 +2441,12 @@ impl From<crate::operation::put_resource_policy::PutResourcePolicyError> for Err
                 Error::InvalidParameterException(inner)
             }
             crate::operation::put_resource_policy::PutResourcePolicyError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::put_resource_policy::PutResourcePolicyError::OperationAbortedException(inner) => {
+                Error::OperationAbortedException(inner)
+            }
+            crate::operation::put_resource_policy::PutResourcePolicyError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
             crate::operation::put_resource_policy::PutResourcePolicyError::ServiceUnavailableException(inner) => {
                 Error::ServiceUnavailableException(inner)
             }

@@ -125,6 +125,8 @@ pub(crate) mod shape_update_origin_endpoint_input;
 
 pub(crate) mod shape_validation_exception;
 
+pub(crate) mod shape_cdn_auth_configuration;
+
 pub(crate) mod shape_channel_groups_list;
 
 pub(crate) mod shape_channel_list;
@@ -166,6 +168,8 @@ pub(crate) mod shape_output_header_configuration;
 pub(crate) mod shape_segment;
 
 pub(crate) mod shape_tag_map;
+
+pub(crate) mod shape_cdn_identifier_secret_arns;
 
 pub(crate) mod shape_channel_group_list_configuration;
 

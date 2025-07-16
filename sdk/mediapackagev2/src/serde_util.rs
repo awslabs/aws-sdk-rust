@@ -414,6 +414,18 @@ pub(crate) fn harvester_schedule_configuration_correct_errors(
     builder
 }
 
+pub(crate) fn cdn_auth_configuration_correct_errors(
+    mut builder: crate::types::builders::CdnAuthConfigurationBuilder,
+) -> crate::types::builders::CdnAuthConfigurationBuilder {
+    if builder.cdn_identifier_secret_arns.is_none() {
+        builder.cdn_identifier_secret_arns = Some(Default::default())
+    }
+    if builder.secrets_role_arn.is_none() {
+        builder.secrets_role_arn = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn s3_destination_config_correct_errors(
     mut builder: crate::types::builders::S3DestinationConfigBuilder,
 ) -> crate::types::builders::S3DestinationConfigBuilder {

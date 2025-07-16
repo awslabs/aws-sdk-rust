@@ -276,7 +276,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for GetChannelEnd
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum GetChannelError {
-    /// <p>You don't have permissions to perform the requested operation. The user or role that is making the request must have at least one IAM permissions policy attached that grants the required permissions. For more information, see Access Management in the IAM User Guide.</p>
+    /// <p>Access is denied because either you don't have permissions to perform the requested operation or MediaPackage is getting throttling errors with CDN authorization. The user or role that is making the request must have at least one IAM permissions policy attached that grants the required permissions. For more information, see Access Management in the IAM User Guide. Or, if you're using CDN authorization, you will receive this exception if MediaPackage receives a throttling error from Secrets Manager.</p>
     AccessDeniedException(crate::types::error::AccessDeniedException),
     /// <p>Indicates that an error from the service occurred while trying to process a request.</p>
     InternalServerException(crate::types::error::InternalServerException),

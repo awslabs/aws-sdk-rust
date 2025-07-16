@@ -140,6 +140,8 @@ mod batch_delete_evaluation_job;
 
 mod create_custom_model;
 
+mod create_custom_model_deployment;
+
 mod create_evaluation_job;
 
 mod create_foundation_model_agreement;
@@ -193,6 +195,8 @@ pub mod customize;
 
 mod delete_custom_model;
 
+mod delete_custom_model_deployment;
+
 mod delete_foundation_model_agreement;
 
 mod delete_guardrail;
@@ -212,6 +216,8 @@ mod delete_provisioned_model_throughput;
 mod deregister_marketplace_model_endpoint;
 
 mod get_custom_model;
+
+mod get_custom_model_deployment;
 
 mod get_evaluation_job;
 
@@ -242,6 +248,8 @@ mod get_prompt_router;
 mod get_provisioned_model_throughput;
 
 mod get_use_case_for_model_access;
+
+mod list_custom_model_deployments;
 
 mod list_custom_models;
 

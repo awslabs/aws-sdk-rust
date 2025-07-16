@@ -251,7 +251,7 @@ impl CredentialsBuilder {
         self.account_id = account_id;
     }
 
-    /// Set provicer name for the builder.
+    /// Set provider name for the builder.
     pub fn provider_name(mut self, provider_name: &'static str) -> Self {
         self.provider_name = Some(provider_name);
         self

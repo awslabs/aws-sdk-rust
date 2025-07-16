@@ -5,12 +5,18 @@
 pub struct PutResourcePolicyOutput {
     /// <p>The new policy.</p>
     pub resource_policy: ::std::option::Option<crate::types::ResourcePolicy>,
+    /// <p>The revision ID of the created or updated resource policy. Only returned for resource-scoped policies.</p>
+    pub revision_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl PutResourcePolicyOutput {
     /// <p>The new policy.</p>
     pub fn resource_policy(&self) -> ::std::option::Option<&crate::types::ResourcePolicy> {
         self.resource_policy.as_ref()
+    }
+    /// <p>The revision ID of the created or updated resource policy. Only returned for resource-scoped policies.</p>
+    pub fn revision_id(&self) -> ::std::option::Option<&str> {
+        self.revision_id.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for PutResourcePolicyOutput {
@@ -30,6 +36,7 @@ impl PutResourcePolicyOutput {
 #[non_exhaustive]
 pub struct PutResourcePolicyOutputBuilder {
     pub(crate) resource_policy: ::std::option::Option<crate::types::ResourcePolicy>,
+    pub(crate) revision_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl PutResourcePolicyOutputBuilder {
@@ -47,6 +54,20 @@ impl PutResourcePolicyOutputBuilder {
     pub fn get_resource_policy(&self) -> &::std::option::Option<crate::types::ResourcePolicy> {
         &self.resource_policy
     }
+    /// <p>The revision ID of the created or updated resource policy. Only returned for resource-scoped policies.</p>
+    pub fn revision_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.revision_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The revision ID of the created or updated resource policy. Only returned for resource-scoped policies.</p>
+    pub fn set_revision_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.revision_id = input;
+        self
+    }
+    /// <p>The revision ID of the created or updated resource policy. Only returned for resource-scoped policies.</p>
+    pub fn get_revision_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.revision_id
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -60,6 +81,7 @@ impl PutResourcePolicyOutputBuilder {
     pub fn build(self) -> crate::operation::put_resource_policy::PutResourcePolicyOutput {
         crate::operation::put_resource_policy::PutResourcePolicyOutput {
             resource_policy: self.resource_policy,
+            revision_id: self.revision_id,
             _request_id: self._request_id,
         }
     }

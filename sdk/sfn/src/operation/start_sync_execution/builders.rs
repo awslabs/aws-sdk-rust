@@ -141,8 +141,8 @@ impl StartSyncExecutionFluentBuilder {
         self.inner.get_name()
     }
     /// <p>The string that contains the JSON input data for the execution, for example:</p>
-    /// <p><code>"input": "{\"first_name\" : \"test\"}"</code></p><note>
-    /// <p>If you don't include any JSON input data, you still must include the two braces, for example: <code>"input": "{}"</code></p>
+    /// <p><code>"{\"first_name\" : \"Tim\"}"</code></p><note>
+    /// <p>If you don't include any JSON input data, you still must include the two braces, for example: <code>"{}"</code></p>
     /// </note>
     /// <p>Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
     pub fn input(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -150,8 +150,8 @@ impl StartSyncExecutionFluentBuilder {
         self
     }
     /// <p>The string that contains the JSON input data for the execution, for example:</p>
-    /// <p><code>"input": "{\"first_name\" : \"test\"}"</code></p><note>
-    /// <p>If you don't include any JSON input data, you still must include the two braces, for example: <code>"input": "{}"</code></p>
+    /// <p><code>"{\"first_name\" : \"Tim\"}"</code></p><note>
+    /// <p>If you don't include any JSON input data, you still must include the two braces, for example: <code>"{}"</code></p>
     /// </note>
     /// <p>Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
     pub fn set_input(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -159,24 +159,30 @@ impl StartSyncExecutionFluentBuilder {
         self
     }
     /// <p>The string that contains the JSON input data for the execution, for example:</p>
-    /// <p><code>"input": "{\"first_name\" : \"test\"}"</code></p><note>
-    /// <p>If you don't include any JSON input data, you still must include the two braces, for example: <code>"input": "{}"</code></p>
+    /// <p><code>"{\"first_name\" : \"Tim\"}"</code></p><note>
+    /// <p>If you don't include any JSON input data, you still must include the two braces, for example: <code>"{}"</code></p>
     /// </note>
     /// <p>Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
     pub fn get_input(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_input()
     }
-    /// <p>Passes the X-Ray trace header. The trace header can also be passed in the request payload.</p>
+    /// <p>Passes the X-Ray trace header. The trace header can also be passed in the request payload.</p><note>
+    /// <p>For X-Ray traces, all Amazon Web Services services use the <code>X-Amzn-Trace-Id</code> header from the HTTP request. Using the header is the preferred mechanism to identify a trace. <code>StartExecution</code> and <code>StartSyncExecution</code> API operations can also use <code>traceHeader</code> from the body of the request payload. If <b>both</b> sources are provided, Step Functions will use the <b>header value</b> (preferred) over the value in the request body.</p>
+    /// </note>
     pub fn trace_header(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.trace_header(input.into());
         self
     }
-    /// <p>Passes the X-Ray trace header. The trace header can also be passed in the request payload.</p>
+    /// <p>Passes the X-Ray trace header. The trace header can also be passed in the request payload.</p><note>
+    /// <p>For X-Ray traces, all Amazon Web Services services use the <code>X-Amzn-Trace-Id</code> header from the HTTP request. Using the header is the preferred mechanism to identify a trace. <code>StartExecution</code> and <code>StartSyncExecution</code> API operations can also use <code>traceHeader</code> from the body of the request payload. If <b>both</b> sources are provided, Step Functions will use the <b>header value</b> (preferred) over the value in the request body.</p>
+    /// </note>
     pub fn set_trace_header(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_trace_header(input);
         self
     }
-    /// <p>Passes the X-Ray trace header. The trace header can also be passed in the request payload.</p>
+    /// <p>Passes the X-Ray trace header. The trace header can also be passed in the request payload.</p><note>
+    /// <p>For X-Ray traces, all Amazon Web Services services use the <code>X-Amzn-Trace-Id</code> header from the HTTP request. Using the header is the preferred mechanism to identify a trace. <code>StartExecution</code> and <code>StartSyncExecution</code> API operations can also use <code>traceHeader</code> from the body of the request payload. If <b>both</b> sources are provided, Step Functions will use the <b>header value</b> (preferred) over the value in the request body.</p>
+    /// </note>
     pub fn get_trace_header(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_trace_header()
     }

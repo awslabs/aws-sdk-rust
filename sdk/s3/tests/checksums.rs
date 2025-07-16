@@ -8,14 +8,30 @@
 use aws_config::SdkConfig;
 use aws_credential_types::provider::SharedCredentialsProvider;
 use aws_sdk_s3::config::{Credentials, Region, StalledStreamProtectionConfig};
+use aws_sdk_s3::operation::put_object::PutObjectOutput;
 use aws_sdk_s3::primitives::ByteStream;
 use aws_sdk_s3::types::ChecksumMode;
 use aws_sdk_s3::{operation::get_object::GetObjectOutput, types::ChecksumAlgorithm};
 use aws_sdk_s3::{Client, Config};
 use aws_smithy_http_client::test_util::{capture_request, ReplayEvent, StaticReplayClient};
+use aws_smithy_mocks::RuleMode;
+use aws_smithy_runtime_api::box_error::BoxError;
+use aws_smithy_runtime_api::client::http::{
+    HttpClient, HttpConnector, HttpConnectorFuture, HttpConnectorSettings, SharedHttpClient,
+    SharedHttpConnector,
+};
+use aws_smithy_runtime_api::client::interceptors::context::BeforeTransmitInterceptorContextRef;
+use aws_smithy_runtime_api::client::interceptors::Intercept;
+use aws_smithy_runtime_api::client::orchestrator::HttpRequest;
+use aws_smithy_runtime_api::client::runtime_components::RuntimeComponents;
+use aws_smithy_runtime_api::shared::IntoShared;
 use aws_smithy_types::body::SdkBody;
+use aws_smithy_types::config_bag::ConfigBag;
+use aws_smithy_types::retry::RetryConfig;
 use http_1x::header::AUTHORIZATION;
 use http_1x::{HeaderValue, Uri};
+use std::path::PathBuf;
+use std::sync::{Arc, Mutex};
 use std::time::{Duration, UNIX_EPOCH};
 use tracing_test::traced_test;
 
@@ -425,6 +441,335 @@ async fn test_response_checksum_ignores_invalid_base64() {
         match checksum_warning {
             Some(_) => Ok(()),
             None => Err("Checksum error was not issued".to_string()),
+        }
+    });
+}
+
+#[derive(Debug, Clone)]
+struct CaptureHttpClient {
+    inner: SharedHttpClient,
+    captured_requests: Arc<Mutex<Vec<CapturedRequest>>>,
+}
+
+impl CaptureHttpClient {
+    fn new() -> Self {
+        Self {
+            inner: aws_smithy_mocks::create_mock_http_client(),
+            captured_requests: Arc::new(Mutex::new(Vec::new())),
+        }
+    }
+
+    fn take_captured_requests(&self) -> Vec<CapturedRequest> {
+        let mut captured = self.captured_requests.lock().unwrap();
+        std::mem::take(&mut *captured)
+    }
+
+    fn attempt(&self) -> usize {
+        self.captured_requests.lock().unwrap().len() + 1
+    }
+}
+
+#[derive(Debug)]
+struct CaptureConnector {
+    inner: SharedHttpConnector,
+    captured_requests: Arc<Mutex<Vec<CapturedRequest>>>,
+}
+
+#[derive(Debug)]
+struct CapturedRequest {
+    headers: aws_smithy_runtime_api::http::Headers,
+    body: Result<http_body_util::Collected<bytes::Bytes>, BoxError>,
+}
+
+impl CapturedRequest {
+    fn headers(&self) -> &aws_smithy_runtime_api::http::Headers {
+        &self.headers
+    }
+}
+
+impl HttpConnector for CaptureConnector {
+    fn call(&self, request: HttpRequest) -> HttpConnectorFuture {
+        let captured_requests = self.captured_requests.clone();
+        let inner = self.inner.clone();
+        HttpConnectorFuture::new(async move {
+            let mut request = request;
+            // the body isn't read by the inner connector so it's safe to take it here
+            // we need to read it as if we were the actual server here and consume it to be able to
+            // test retry behavior of streaming bodies which must be read for checksums to be triggered
+            let body = request.take_body();
+
+            let output = http_body_util::BodyExt::collect(body)
+                .await
+                .map_err(|e| BoxError::from(e));
+            let captured = CapturedRequest {
+                headers: request.headers().clone(),
+                body: output,
+            };
+
+            {
+                let mut captured_requests = captured_requests.lock().unwrap();
+                captured_requests.push(captured);
+            }
+
+            inner.call(request).await
+        })
+    }
+}
+
+impl HttpClient for CaptureHttpClient {
+    fn http_connector(
+        &self,
+        settings: &HttpConnectorSettings,
+        components: &RuntimeComponents,
+    ) -> SharedHttpConnector {
+        let inner = self.inner.http_connector(settings, components);
+        let connector = CaptureConnector {
+            inner,
+            captured_requests: self.captured_requests.clone(),
+        };
+        connector.into_shared()
+    }
+}
+
+#[tokio::test]
+#[traced_test]
+async fn test_checksum_reuse_on_retry() {
+    let retry_rule = aws_smithy_mocks::mock!(aws_sdk_s3::Client::put_object)
+        .sequence()
+        .http_status(503, None)
+        .output(|| PutObjectOutput::builder().build())
+        .build();
+
+    let http_client = CaptureHttpClient::new();
+    let client = aws_smithy_mocks::mock_client!(
+        aws_sdk_s3,
+        RuleMode::Sequential,
+        &[retry_rule],
+        |client_builder| {
+            client_builder
+                .http_client(http_client.clone())
+                .retry_config(RetryConfig::standard().with_max_attempts(3))
+        }
+    );
+
+    let http_client_clone = http_client.clone();
+    let change_body = SdkBody::retryable(move || {
+        let current_attempt = http_client_clone.attempt();
+        tracing::info!("test body current attempt: {}", current_attempt);
+        match current_attempt {
+            1 => SdkBody::from("initial content"),
+            _ => SdkBody::from("retry content"),
+        }
+    });
+
+    let body = ByteStream::new(change_body);
+
+    let _res = client
+        .put_object()
+        .body(body)
+        .checksum_algorithm(ChecksumAlgorithm::Sha256)
+        .bucket("test-bucket")
+        .key("test.txt")
+        .send()
+        .await
+        .expect("request should succeed, despite the non-base64-decodable checksum");
+
+    let requests = http_client.take_captured_requests();
+    assert_eq!(2, requests.len());
+    let first_checksum = requests[0]
+        .headers()
+        .get("x-amz-checksum-sha256")
+        .expect("x-amz-checksum-sha256 header exists");
+
+    let second_checksum = requests[1]
+        .headers()
+        .get("x-amz-checksum-sha256")
+        .expect("x-amz-checksum-sha256 header exists");
+
+    let initial_content_checksum = "kWo/C8OkKOGhaPRAjfgs1bu4sIxtesVe/53/KYJRNN8=";
+    assert_eq!(initial_content_checksum, first_checksum);
+    assert_eq!(initial_content_checksum, second_checksum);
+}
+
+/// Swaps the file content on subsequent attempts
+#[derive(Debug)]
+struct ChangeBodyInterceptor {
+    http_client: CaptureHttpClient,
+    content_path: PathBuf,
+    retry_content: &'static str,
+}
+
+impl Intercept for ChangeBodyInterceptor {
+    fn name(&self) -> &'static str {
+        "ChangeBodyInterceptor"
+    }
+
+    fn read_before_attempt(
+        &self,
+        _context: &BeforeTransmitInterceptorContextRef<'_>,
+        _runtime_components: &RuntimeComponents,
+        _cfg: &mut ConfigBag,
+    ) -> Result<(), BoxError> {
+        if self.http_client.attempt() > 1 {
+            std::fs::write(self.content_path.as_path(), self.retry_content.as_bytes())
+                .expect("replace contents successful");
+        }
+        Ok(())
+    }
+}
+
+async fn run_checksum_reuse_streaming_request_test(
+    initial_content: &'static str,
+    retry_content: &'static str,
+    expected_checksum: &'static str,
+) {
+    let retry_rule = aws_smithy_mocks::mock!(aws_sdk_s3::Client::put_object)
+        .sequence()
+        .http_status(503, None)
+        .output(|| PutObjectOutput::builder().build())
+        .build();
+
+    let mut file = tempfile::NamedTempFile::new().unwrap();
+    let content_path = file.path().to_path_buf();
+    use std::io::Write;
+    file.write_all(initial_content.as_bytes()).unwrap();
+
+    let http_client = CaptureHttpClient::new();
+    let client = aws_smithy_mocks::mock_client!(
+        aws_sdk_s3,
+        RuleMode::Sequential,
+        &[retry_rule],
+        |client_builder| {
+            let change_body_interceptor = ChangeBodyInterceptor {
+                http_client: http_client.clone(),
+                content_path: content_path.clone(),
+                retry_content,
+            };
+            client_builder
+                .http_client(http_client.clone())
+                .retry_config(RetryConfig::standard().with_max_attempts(3))
+                .interceptor(change_body_interceptor)
+        }
+    );
+
+    let body = aws_sdk_s3::primitives::ByteStream::read_from()
+        .path(file.path())
+        .buffer_size(1024)
+        .build()
+        .await
+        .unwrap();
+
+    let _res = client
+        .put_object()
+        .body(body)
+        .checksum_algorithm(ChecksumAlgorithm::Sha256)
+        .bucket("test-bucket")
+        .key("test.txt")
+        .send()
+        .await
+        .expect("request should succeed, despite the non-base64-decodable checksum");
+
+    let mut requests = http_client.take_captured_requests();
+    assert_eq!(2, requests.len());
+
+    assert_streaming_request_checksum(
+        requests.remove(0),
+        "x-amz-checksum-sha256",
+        expected_checksum,
+    )
+    .await;
+    assert_streaming_request_checksum(
+        requests.remove(0),
+        "x-amz-checksum-sha256",
+        expected_checksum,
+    )
+    .await;
+}
+
+async fn assert_streaming_request_checksum(
+    request: CapturedRequest,
+    checksum_header_name: &'static str,
+    expected_checksum: &'static str,
+) {
+    let headers = request.headers();
+    let x_amz_content_sha256 = headers
+        .get("x-amz-content-sha256")
+        .expect("x-amz-content-sha256 header exists");
+    let x_amz_trailer = headers
+        .get("x-amz-trailer")
+        .expect("x-amz-trailer header exists");
+    let content_encoding = headers.get_all("Content-Encoding").collect::<Vec<_>>();
+
+    assert_eq!(
+        HeaderValue::from_static("STREAMING-UNSIGNED-PAYLOAD-TRAILER"),
+        x_amz_content_sha256,
+        "signing header is incorrect"
+    );
+    assert_eq!(
+        HeaderValue::from_static(checksum_header_name),
+        x_amz_trailer,
+        "x-amz-trailer is incorrect"
+    );
+
+    assert!(content_encoding.contains(&"aws-chunked"));
+    // let body = collect_body_into_string(request.take_body()).await;
+    let body = request.body.expect("body collected").to_bytes();
+    let body_str = bytes_utils::Str::try_from(body)
+        .expect("body is utf-8")
+        .to_string();
+    let actual_checksum =
+        extract_checksum_value(&body_str, checksum_header_name).expect("trailing checksum exists");
+    assert_eq!(actual_checksum, expected_checksum);
+}
+
+fn extract_checksum_value<'a, 'b>(input: &'a str, checksum_name: &'b str) -> Option<&'a str> {
+    input
+        .find(&format!("{}:", checksum_name))
+        .and_then(|start| {
+            let value_start = start + checksum_name.len() + 1;
+            input[value_start..]
+                .find("\r\n\r\n")
+                .map(|end| &input[value_start..value_start + end])
+        })
+}
+
+/// Test checksum is re-used for aws-chunked/streaming content when the content changes
+/// between retries but the content length differs
+///
+/// NOTE: Because we set the overall body size hint only once when the stream is constructed
+///       we end up throwing an error :696
+#[tokio::test]
+#[traced_test]
+#[should_panic(expected = "StreamLengthMismatch { actual: 13, expected: 15 }")]
+async fn test_checksum_reuse_on_retry_streaming_content_len_differs() {
+    run_checksum_reuse_streaming_request_test(
+        "initial content",
+        "retry content",
+        "kWo/C8OkKOGhaPRAjfgs1bu4sIxtesVe/53/KYJRNN8=",
+    )
+    .await;
+}
+
+/// Test checksum is re-used for aws-chunked/streaming content when the content changes
+/// between retries but the content length is the same
+#[tokio::test]
+#[traced_test]
+async fn test_checksum_reuse_on_retry_streaming_content_len_same() {
+    run_checksum_reuse_streaming_request_test(
+        "initial content",
+        "in1t1al content",
+        "kWo/C8OkKOGhaPRAjfgs1bu4sIxtesVe/53/KYJRNN8=",
+    )
+    .await;
+
+    logs_assert(|lines: &[&str]| {
+        let checksum_warning = lines.iter().find(|&&line| {
+            line.contains( r#"calculated checksum differs from cached checksum! cached={"x-amz-checksum-sha256": "kWo/C8OkKOGhaPRAjfgs1bu4sIxtesVe/53/KYJRNN8="} calculated={"x-amz-checksum-sha256": "pPv/1lYp3XTWCZXJWT1heRy9+ZQyPn99ZqMQn1MK3Bw="}"#)
+        });
+
+        match checksum_warning {
+            Some(_) => Ok(()),
+            None => Err("Checksum mismatch warning was not issued".to_string()),
         }
     });
 }

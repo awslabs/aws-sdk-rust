@@ -5,6 +5,7 @@
 
 //! Functionality for calculating the checksum of an HTTP body and emitting it as trailers.
 
+use super::ChecksumCache;
 use crate::http::HttpChecksum;
 
 use aws_smithy_http::header::append_merge_header_maps;
@@ -16,6 +17,7 @@ use pin_project_lite::pin_project;
 
 use std::pin::Pin;
 use std::task::{Context, Poll};
+use tracing::warn;
 
 pin_project! {
     /// A body-wrapper that will calculate the `InnerBody`'s checksum and emit it as a trailer.
@@ -23,6 +25,7 @@ pin_project! {
             #[pin]
             body: InnerBody,
             checksum: Option<Box<dyn HttpChecksum>>,
+            cache: Option<ChecksumCache>
     }
 }
 
@@ -32,6 +35,19 @@ impl ChecksumBody<SdkBody> {
         Self {
             body,
             checksum: Some(checksum),
+            cache: None,
+        }
+    }
+
+    /// Configure a cache for this body.
+    ///
+    /// When used across multiple requests (e.g. retries) a cached checksum previously
+    /// calculated will be favored if available.
+    pub fn with_cache(self, cache: ChecksumCache) -> Self {
+        Self {
+            body: self.body,
+            checksum: self.checksum,
+            cache: Some(cache),
         }
     }
 }
@@ -67,7 +83,21 @@ impl http_body::Body for ChecksumBody<SdkBody> {
 
         if let Poll::Ready(Ok(maybe_inner_trailers)) = poll_res {
             let checksum_headers = if let Some(checksum) = this.checksum.take() {
-                checksum.headers()
+                let calculated_headers = checksum.headers();
+
+                if let Some(cache) = this.cache {
+                    if let Some(cached_headers) = cache.get() {
+                        if cached_headers != calculated_headers {
+                            warn!(cached = ?cached_headers, calculated = ?calculated_headers, "calculated checksum differs from cached checksum!");
+                        }
+                        cached_headers
+                    } else {
+                        cache.set(calculated_headers.clone());
+                        calculated_headers
+                    }
+                } else {
+                    calculated_headers
+                }
             } else {
                 return Poll::Ready(Ok(None));
             };

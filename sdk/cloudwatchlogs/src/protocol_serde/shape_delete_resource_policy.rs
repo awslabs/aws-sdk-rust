@@ -35,6 +35,21 @@ pub fn de_delete_resource_policy_http_error(
             }
             tmp
         }),
+        "OperationAbortedException" => crate::operation::delete_resource_policy::DeleteResourcePolicyError::OperationAbortedException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::OperationAbortedExceptionBuilder::default();
+                output = crate::protocol_serde::shape_operation_aborted_exception::de_operation_aborted_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::delete_resource_policy::DeleteResourcePolicyError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "ResourceNotFoundException" => crate::operation::delete_resource_policy::DeleteResourcePolicyError::ResourceNotFoundException({
             #[allow(unused_mut)]
             let mut tmp = {

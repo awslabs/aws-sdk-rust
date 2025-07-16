@@ -5,11 +5,23 @@
 pub struct DeleteResourcePolicyInput {
     /// <p>The name of the policy to be revoked. This parameter is required.</p>
     pub policy_name: ::std::option::Option<::std::string::String>,
+    /// <p>The ARN of the CloudWatch Logs resource for which the resource policy needs to be deleted</p>
+    pub resource_arn: ::std::option::Option<::std::string::String>,
+    /// <p>The expected revision ID of the resource policy. Required when deleting a resource-scoped policy to prevent concurrent modifications.</p>
+    pub expected_revision_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteResourcePolicyInput {
     /// <p>The name of the policy to be revoked. This parameter is required.</p>
     pub fn policy_name(&self) -> ::std::option::Option<&str> {
         self.policy_name.as_deref()
+    }
+    /// <p>The ARN of the CloudWatch Logs resource for which the resource policy needs to be deleted</p>
+    pub fn resource_arn(&self) -> ::std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>The expected revision ID of the resource policy. Required when deleting a resource-scoped policy to prevent concurrent modifications.</p>
+    pub fn expected_revision_id(&self) -> ::std::option::Option<&str> {
+        self.expected_revision_id.as_deref()
     }
 }
 impl DeleteResourcePolicyInput {
@@ -24,6 +36,8 @@ impl DeleteResourcePolicyInput {
 #[non_exhaustive]
 pub struct DeleteResourcePolicyInputBuilder {
     pub(crate) policy_name: ::std::option::Option<::std::string::String>,
+    pub(crate) resource_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) expected_revision_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteResourcePolicyInputBuilder {
     /// <p>The name of the policy to be revoked. This parameter is required.</p>
@@ -40,6 +54,34 @@ impl DeleteResourcePolicyInputBuilder {
     pub fn get_policy_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.policy_name
     }
+    /// <p>The ARN of the CloudWatch Logs resource for which the resource policy needs to be deleted</p>
+    pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.resource_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ARN of the CloudWatch Logs resource for which the resource policy needs to be deleted</p>
+    pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.resource_arn = input;
+        self
+    }
+    /// <p>The ARN of the CloudWatch Logs resource for which the resource policy needs to be deleted</p>
+    pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_arn
+    }
+    /// <p>The expected revision ID of the resource policy. Required when deleting a resource-scoped policy to prevent concurrent modifications.</p>
+    pub fn expected_revision_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.expected_revision_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The expected revision ID of the resource policy. Required when deleting a resource-scoped policy to prevent concurrent modifications.</p>
+    pub fn set_expected_revision_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.expected_revision_id = input;
+        self
+    }
+    /// <p>The expected revision ID of the resource policy. Required when deleting a resource-scoped policy to prevent concurrent modifications.</p>
+    pub fn get_expected_revision_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.expected_revision_id
+    }
     /// Consumes the builder and constructs a [`DeleteResourcePolicyInput`](crate::operation::delete_resource_policy::DeleteResourcePolicyInput).
     pub fn build(
         self,
@@ -47,6 +89,8 @@ impl DeleteResourcePolicyInputBuilder {
     {
         ::std::result::Result::Ok(crate::operation::delete_resource_policy::DeleteResourcePolicyInput {
             policy_name: self.policy_name,
+            resource_arn: self.resource_arn,
+            expected_revision_id: self.expected_revision_id,
         })
     }
 }

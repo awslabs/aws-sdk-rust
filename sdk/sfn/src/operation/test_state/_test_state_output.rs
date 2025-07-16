@@ -11,7 +11,7 @@ pub struct TestStateOutput {
     pub cause: ::std::option::Option<::std::string::String>,
     /// <p>Returns additional details about the state's execution, including its input and output data processing flow, and HTTP request and response information. The <code>inspectionLevel</code> request parameter specifies which details are returned.</p>
     pub inspection_data: ::std::option::Option<crate::types::InspectionData>,
-    /// <p>The name of the next state to transition to. If you haven't defined a next state in your definition or if the execution of the state fails, this ﬁeld doesn't contain a value.</p>
+    /// <p>The name of the next state to transition to. If you haven't defined a next state in your definition or if the execution of the state fails, this field doesn't contain a value.</p>
     pub next_state: ::std::option::Option<::std::string::String>,
     /// <p>The execution status of the state.</p>
     pub status: ::std::option::Option<crate::types::TestExecutionStatus>,
@@ -34,7 +34,7 @@ impl TestStateOutput {
     pub fn inspection_data(&self) -> ::std::option::Option<&crate::types::InspectionData> {
         self.inspection_data.as_ref()
     }
-    /// <p>The name of the next state to transition to. If you haven't defined a next state in your definition or if the execution of the state fails, this ﬁeld doesn't contain a value.</p>
+    /// <p>The name of the next state to transition to. If you haven't defined a next state in your definition or if the execution of the state fails, this field doesn't contain a value.</p>
     pub fn next_state(&self) -> ::std::option::Option<&str> {
         self.next_state.as_deref()
     }
@@ -137,17 +137,17 @@ impl TestStateOutputBuilder {
     pub fn get_inspection_data(&self) -> &::std::option::Option<crate::types::InspectionData> {
         &self.inspection_data
     }
-    /// <p>The name of the next state to transition to. If you haven't defined a next state in your definition or if the execution of the state fails, this ﬁeld doesn't contain a value.</p>
+    /// <p>The name of the next state to transition to. If you haven't defined a next state in your definition or if the execution of the state fails, this field doesn't contain a value.</p>
     pub fn next_state(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_state = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the next state to transition to. If you haven't defined a next state in your definition or if the execution of the state fails, this ﬁeld doesn't contain a value.</p>
+    /// <p>The name of the next state to transition to. If you haven't defined a next state in your definition or if the execution of the state fails, this field doesn't contain a value.</p>
     pub fn set_next_state(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_state = input;
         self
     }
-    /// <p>The name of the next state to transition to. If you haven't defined a next state in your definition or if the execution of the state fails, this ﬁeld doesn't contain a value.</p>
+    /// <p>The name of the next state to transition to. If you haven't defined a next state in your definition or if the execution of the state fails, this field doesn't contain a value.</p>
     pub fn get_next_state(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_state
     }

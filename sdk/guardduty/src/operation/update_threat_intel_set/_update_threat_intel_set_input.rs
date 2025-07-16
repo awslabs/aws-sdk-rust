@@ -14,6 +14,8 @@ pub struct UpdateThreatIntelSetInput {
     pub location: ::std::option::Option<::std::string::String>,
     /// <p>The updated Boolean value that specifies whether the ThreateIntelSet is active or not.</p>
     pub activate: ::std::option::Option<bool>,
+    /// <p>The Amazon Web Services account ID that owns the Amazon S3 bucket specified in the <b>location</b> parameter.</p>
+    pub expected_bucket_owner: ::std::option::Option<::std::string::String>,
 }
 impl UpdateThreatIntelSetInput {
     /// <p>The detectorID that specifies the GuardDuty service whose ThreatIntelSet you want to update.</p>
@@ -37,6 +39,10 @@ impl UpdateThreatIntelSetInput {
     pub fn activate(&self) -> ::std::option::Option<bool> {
         self.activate
     }
+    /// <p>The Amazon Web Services account ID that owns the Amazon S3 bucket specified in the <b>location</b> parameter.</p>
+    pub fn expected_bucket_owner(&self) -> ::std::option::Option<&str> {
+        self.expected_bucket_owner.as_deref()
+    }
 }
 impl UpdateThreatIntelSetInput {
     /// Creates a new builder-style object to manufacture [`UpdateThreatIntelSetInput`](crate::operation::update_threat_intel_set::UpdateThreatIntelSetInput).
@@ -54,6 +60,7 @@ pub struct UpdateThreatIntelSetInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) location: ::std::option::Option<::std::string::String>,
     pub(crate) activate: ::std::option::Option<bool>,
+    pub(crate) expected_bucket_owner: ::std::option::Option<::std::string::String>,
 }
 impl UpdateThreatIntelSetInputBuilder {
     /// <p>The detectorID that specifies the GuardDuty service whose ThreatIntelSet you want to update.</p>
@@ -131,6 +138,20 @@ impl UpdateThreatIntelSetInputBuilder {
     pub fn get_activate(&self) -> &::std::option::Option<bool> {
         &self.activate
     }
+    /// <p>The Amazon Web Services account ID that owns the Amazon S3 bucket specified in the <b>location</b> parameter.</p>
+    pub fn expected_bucket_owner(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.expected_bucket_owner = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Web Services account ID that owns the Amazon S3 bucket specified in the <b>location</b> parameter.</p>
+    pub fn set_expected_bucket_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.expected_bucket_owner = input;
+        self
+    }
+    /// <p>The Amazon Web Services account ID that owns the Amazon S3 bucket specified in the <b>location</b> parameter.</p>
+    pub fn get_expected_bucket_owner(&self) -> &::std::option::Option<::std::string::String> {
+        &self.expected_bucket_owner
+    }
     /// Consumes the builder and constructs a [`UpdateThreatIntelSetInput`](crate::operation::update_threat_intel_set::UpdateThreatIntelSetInput).
     pub fn build(
         self,
@@ -142,6 +163,7 @@ impl UpdateThreatIntelSetInputBuilder {
             name: self.name,
             location: self.location,
             activate: self.activate,
+            expected_bucket_owner: self.expected_bucket_owner,
         })
     }
 }

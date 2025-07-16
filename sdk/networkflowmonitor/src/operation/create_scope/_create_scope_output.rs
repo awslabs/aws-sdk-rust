@@ -5,7 +5,8 @@
 pub struct CreateScopeOutput {
     /// <p>The identifier for the scope that includes the resources you want to get metrics for. A scope ID is an internally-generated identifier that includes all the resources for a specific root account.</p>
     pub scope_id: ::std::string::String,
-    /// <p>The status for a call to create a scope. The status can be one of the following: <code>SUCCEEDED</code>, <code>IN_PROGRESS</code>, or <code>FAILED</code>.</p>
+    /// <p>The status for a scope. The status can be one of the following: <code>SUCCEEDED</code>, <code>IN_PROGRESS</code>, <code>FAILED</code>, <code>DEACTIVATING</code>, or <code>DEACTIVATED</code>.</p>
+    /// <p>A status of <code>DEACTIVATING</code> means that you've requested a scope to be deactivated and Network Flow Monitor is in the process of deactivating the scope. A status of <code>DEACTIVATED</code> means that the deactivating process is complete.</p>
     pub status: crate::types::ScopeStatus,
     /// <p>The Amazon Resource Name (ARN) of the scope.</p>
     pub scope_arn: ::std::string::String,
@@ -19,7 +20,8 @@ impl CreateScopeOutput {
         use std::ops::Deref;
         self.scope_id.deref()
     }
-    /// <p>The status for a call to create a scope. The status can be one of the following: <code>SUCCEEDED</code>, <code>IN_PROGRESS</code>, or <code>FAILED</code>.</p>
+    /// <p>The status for a scope. The status can be one of the following: <code>SUCCEEDED</code>, <code>IN_PROGRESS</code>, <code>FAILED</code>, <code>DEACTIVATING</code>, or <code>DEACTIVATED</code>.</p>
+    /// <p>A status of <code>DEACTIVATING</code> means that you've requested a scope to be deactivated and Network Flow Monitor is in the process of deactivating the scope. A status of <code>DEACTIVATED</code> means that the deactivating process is complete.</p>
     pub fn status(&self) -> &crate::types::ScopeStatus {
         &self.status
     }
@@ -71,18 +73,21 @@ impl CreateScopeOutputBuilder {
     pub fn get_scope_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.scope_id
     }
-    /// <p>The status for a call to create a scope. The status can be one of the following: <code>SUCCEEDED</code>, <code>IN_PROGRESS</code>, or <code>FAILED</code>.</p>
+    /// <p>The status for a scope. The status can be one of the following: <code>SUCCEEDED</code>, <code>IN_PROGRESS</code>, <code>FAILED</code>, <code>DEACTIVATING</code>, or <code>DEACTIVATED</code>.</p>
+    /// <p>A status of <code>DEACTIVATING</code> means that you've requested a scope to be deactivated and Network Flow Monitor is in the process of deactivating the scope. A status of <code>DEACTIVATED</code> means that the deactivating process is complete.</p>
     /// This field is required.
     pub fn status(mut self, input: crate::types::ScopeStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The status for a call to create a scope. The status can be one of the following: <code>SUCCEEDED</code>, <code>IN_PROGRESS</code>, or <code>FAILED</code>.</p>
+    /// <p>The status for a scope. The status can be one of the following: <code>SUCCEEDED</code>, <code>IN_PROGRESS</code>, <code>FAILED</code>, <code>DEACTIVATING</code>, or <code>DEACTIVATED</code>.</p>
+    /// <p>A status of <code>DEACTIVATING</code> means that you've requested a scope to be deactivated and Network Flow Monitor is in the process of deactivating the scope. A status of <code>DEACTIVATED</code> means that the deactivating process is complete.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ScopeStatus>) -> Self {
         self.status = input;
         self
     }
-    /// <p>The status for a call to create a scope. The status can be one of the following: <code>SUCCEEDED</code>, <code>IN_PROGRESS</code>, or <code>FAILED</code>.</p>
+    /// <p>The status for a scope. The status can be one of the following: <code>SUCCEEDED</code>, <code>IN_PROGRESS</code>, <code>FAILED</code>, <code>DEACTIVATING</code>, or <code>DEACTIVATED</code>.</p>
+    /// <p>A status of <code>DEACTIVATING</code> means that you've requested a scope to be deactivated and Network Flow Monitor is in the process of deactivating the scope. A status of <code>DEACTIVATED</code> means that the deactivating process is complete.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::ScopeStatus> {
         &self.status
     }

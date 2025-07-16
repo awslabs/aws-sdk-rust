@@ -251,6 +251,8 @@ pub use crate::types::_batch_delete_evaluation_job_error::BatchDeleteEvaluationJ
 
 pub use crate::types::_custom_model_summary::CustomModelSummaryBuilder;
 
+pub use crate::types::_custom_model_deployment_summary::CustomModelDeploymentSummaryBuilder;
+
 pub use crate::types::_marketplace_model_endpoint::MarketplaceModelEndpointBuilder;
 
 pub use crate::types::_sage_maker_endpoint::SageMakerEndpointBuilder;

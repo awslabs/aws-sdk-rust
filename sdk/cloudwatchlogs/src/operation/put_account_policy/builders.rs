@@ -28,7 +28,7 @@ impl crate::operation::put_account_policy::builders::PutAccountPolicyInputBuilde
 /// <li>
 /// <p>To create a data protection policy, you must have the <code>logs:PutDataProtectionPolicy</code> and <code>logs:PutAccountPolicy</code> permissions.</p></li>
 /// <li>
-/// <p>To create a subscription filter policy, you must have the <code>logs:PutSubscriptionFilter</code> and <code>logs:PutccountPolicy</code> permissions.</p></li>
+/// <p>To create a subscription filter policy, you must have the <code>logs:PutSubscriptionFilter</code> and <code>logs:PutAccountPolicy</code> permissions.</p></li>
 /// <li>
 /// <p>To create a transformer policy, you must have the <code>logs:PutTransformer</code> and <code>logs:PutAccountPolicy</code> permissions.</p></li>
 /// <li>

@@ -7,7 +7,9 @@ pub struct UpdateWirelessDeviceInput {
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the new destination for the device.</p>
     pub destination_name: ::std::option::Option<::std::string::String>,
-    /// <p>The new name of the resource.</p>
+    /// <p>The new name of the resource.</p><note>
+    /// <p>The following special characters aren't accepted: <code>&lt;&gt;^#~$</code></p>
+    /// </note>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A new description of the resource.</p>
     pub description: ::std::option::Option<::std::string::String>,
@@ -25,7 +27,9 @@ impl UpdateWirelessDeviceInput {
     pub fn destination_name(&self) -> ::std::option::Option<&str> {
         self.destination_name.as_deref()
     }
-    /// <p>The new name of the resource.</p>
+    /// <p>The new name of the resource.</p><note>
+    /// <p>The following special characters aren't accepted: <code>&lt;&gt;^#~$</code></p>
+    /// </note>
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
@@ -90,17 +94,23 @@ impl UpdateWirelessDeviceInputBuilder {
     pub fn get_destination_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.destination_name
     }
-    /// <p>The new name of the resource.</p>
+    /// <p>The new name of the resource.</p><note>
+    /// <p>The following special characters aren't accepted: <code>&lt;&gt;^#~$</code></p>
+    /// </note>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The new name of the resource.</p>
+    /// <p>The new name of the resource.</p><note>
+    /// <p>The following special characters aren't accepted: <code>&lt;&gt;^#~$</code></p>
+    /// </note>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
-    /// <p>The new name of the resource.</p>
+    /// <p>The new name of the resource.</p><note>
+    /// <p>The following special characters aren't accepted: <code>&lt;&gt;^#~$</code></p>
+    /// </note>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }

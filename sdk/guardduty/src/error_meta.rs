@@ -207,6 +207,7 @@ where
 impl From<crate::operation::create_ip_set::CreateIPSetError> for Error {
     fn from(err: crate::operation::create_ip_set::CreateIPSetError) -> Self {
         match err {
+            crate::operation::create_ip_set::CreateIPSetError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::create_ip_set::CreateIPSetError::BadRequestException(inner) => Error::BadRequestException(inner),
             crate::operation::create_ip_set::CreateIPSetError::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
             crate::operation::create_ip_set::CreateIPSetError::Unhandled(inner) => Error::Unhandled(inner),
@@ -350,6 +351,7 @@ where
 impl From<crate::operation::create_threat_intel_set::CreateThreatIntelSetError> for Error {
     fn from(err: crate::operation::create_threat_intel_set::CreateThreatIntelSetError) -> Self {
         match err {
+            crate::operation::create_threat_intel_set::CreateThreatIntelSetError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::create_threat_intel_set::CreateThreatIntelSetError::BadRequestException(inner) => Error::BadRequestException(inner),
             crate::operation::create_threat_intel_set::CreateThreatIntelSetError::InternalServerErrorException(inner) => {
                 Error::InternalServerErrorException(inner)
@@ -1898,6 +1900,7 @@ where
 impl From<crate::operation::update_ip_set::UpdateIPSetError> for Error {
     fn from(err: crate::operation::update_ip_set::UpdateIPSetError) -> Self {
         match err {
+            crate::operation::update_ip_set::UpdateIPSetError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::update_ip_set::UpdateIPSetError::BadRequestException(inner) => Error::BadRequestException(inner),
             crate::operation::update_ip_set::UpdateIPSetError::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
             crate::operation::update_ip_set::UpdateIPSetError::Unhandled(inner) => Error::Unhandled(inner),
@@ -2088,6 +2091,7 @@ where
 impl From<crate::operation::update_threat_intel_set::UpdateThreatIntelSetError> for Error {
     fn from(err: crate::operation::update_threat_intel_set::UpdateThreatIntelSetError) -> Self {
         match err {
+            crate::operation::update_threat_intel_set::UpdateThreatIntelSetError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::update_threat_intel_set::UpdateThreatIntelSetError::BadRequestException(inner) => Error::BadRequestException(inner),
             crate::operation::update_threat_intel_set::UpdateThreatIntelSetError::InternalServerErrorException(inner) => {
                 Error::InternalServerErrorException(inner)

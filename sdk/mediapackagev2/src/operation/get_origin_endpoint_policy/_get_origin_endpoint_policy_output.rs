@@ -11,6 +11,9 @@ pub struct GetOriginEndpointPolicyOutput {
     pub origin_endpoint_name: ::std::string::String,
     /// <p>The policy assigned to the origin endpoint.</p>
     pub policy: ::std::string::String,
+    /// <p>The settings for using authorization headers between the MediaPackage endpoint and your CDN.</p>
+    /// <p>For information about CDN authorization, see <a href="https://docs.aws.amazon.com/mediapackage/latest/userguide/cdn-auth.html">CDN authorization in Elemental MediaPackage</a> in the MediaPackage user guide.</p>
+    pub cdn_auth_configuration: ::std::option::Option<crate::types::CdnAuthConfiguration>,
     _request_id: Option<String>,
 }
 impl GetOriginEndpointPolicyOutput {
@@ -34,6 +37,11 @@ impl GetOriginEndpointPolicyOutput {
         use std::ops::Deref;
         self.policy.deref()
     }
+    /// <p>The settings for using authorization headers between the MediaPackage endpoint and your CDN.</p>
+    /// <p>For information about CDN authorization, see <a href="https://docs.aws.amazon.com/mediapackage/latest/userguide/cdn-auth.html">CDN authorization in Elemental MediaPackage</a> in the MediaPackage user guide.</p>
+    pub fn cdn_auth_configuration(&self) -> ::std::option::Option<&crate::types::CdnAuthConfiguration> {
+        self.cdn_auth_configuration.as_ref()
+    }
 }
 impl ::aws_types::request_id::RequestId for GetOriginEndpointPolicyOutput {
     fn request_id(&self) -> Option<&str> {
@@ -55,6 +63,7 @@ pub struct GetOriginEndpointPolicyOutputBuilder {
     pub(crate) channel_name: ::std::option::Option<::std::string::String>,
     pub(crate) origin_endpoint_name: ::std::option::Option<::std::string::String>,
     pub(crate) policy: ::std::option::Option<::std::string::String>,
+    pub(crate) cdn_auth_configuration: ::std::option::Option<crate::types::CdnAuthConfiguration>,
     _request_id: Option<String>,
 }
 impl GetOriginEndpointPolicyOutputBuilder {
@@ -118,6 +127,23 @@ impl GetOriginEndpointPolicyOutputBuilder {
     pub fn get_policy(&self) -> &::std::option::Option<::std::string::String> {
         &self.policy
     }
+    /// <p>The settings for using authorization headers between the MediaPackage endpoint and your CDN.</p>
+    /// <p>For information about CDN authorization, see <a href="https://docs.aws.amazon.com/mediapackage/latest/userguide/cdn-auth.html">CDN authorization in Elemental MediaPackage</a> in the MediaPackage user guide.</p>
+    pub fn cdn_auth_configuration(mut self, input: crate::types::CdnAuthConfiguration) -> Self {
+        self.cdn_auth_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The settings for using authorization headers between the MediaPackage endpoint and your CDN.</p>
+    /// <p>For information about CDN authorization, see <a href="https://docs.aws.amazon.com/mediapackage/latest/userguide/cdn-auth.html">CDN authorization in Elemental MediaPackage</a> in the MediaPackage user guide.</p>
+    pub fn set_cdn_auth_configuration(mut self, input: ::std::option::Option<crate::types::CdnAuthConfiguration>) -> Self {
+        self.cdn_auth_configuration = input;
+        self
+    }
+    /// <p>The settings for using authorization headers between the MediaPackage endpoint and your CDN.</p>
+    /// <p>For information about CDN authorization, see <a href="https://docs.aws.amazon.com/mediapackage/latest/userguide/cdn-auth.html">CDN authorization in Elemental MediaPackage</a> in the MediaPackage user guide.</p>
+    pub fn get_cdn_auth_configuration(&self) -> &::std::option::Option<crate::types::CdnAuthConfiguration> {
+        &self.cdn_auth_configuration
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -164,6 +190,7 @@ impl GetOriginEndpointPolicyOutputBuilder {
                     "policy was not specified but it is required when building GetOriginEndpointPolicyOutput",
                 )
             })?,
+            cdn_auth_configuration: self.cdn_auth_configuration,
             _request_id: self._request_id,
         })
     }

@@ -29,7 +29,9 @@ pub struct StartSyncExecutionOutput {
     pub output: ::std::option::Option<::std::string::String>,
     /// <p>Provides details about execution input or output.</p>
     pub output_details: ::std::option::Option<crate::types::CloudWatchEventsExecutionDataDetails>,
-    /// <p>The X-Ray trace header that was passed to the execution.</p>
+    /// <p>The X-Ray trace header that was passed to the execution.</p><note>
+    /// <p>For X-Ray traces, all Amazon Web Services services use the <code>X-Amzn-Trace-Id</code> header from the HTTP request. Using the header is the preferred mechanism to identify a trace. <code>StartExecution</code> and <code>StartSyncExecution</code> API operations can also use <code>traceHeader</code> from the body of the request payload. If <b>both</b> sources are provided, Step Functions will use the <b>header value</b> (preferred) over the value in the request body.</p>
+    /// </note>
     pub trace_header: ::std::option::Option<::std::string::String>,
     /// <p>An object that describes workflow billing details, including billed duration and memory use.</p>
     pub billing_details: ::std::option::Option<crate::types::BillingDetails>,
@@ -87,7 +89,9 @@ impl StartSyncExecutionOutput {
     pub fn output_details(&self) -> ::std::option::Option<&crate::types::CloudWatchEventsExecutionDataDetails> {
         self.output_details.as_ref()
     }
-    /// <p>The X-Ray trace header that was passed to the execution.</p>
+    /// <p>The X-Ray trace header that was passed to the execution.</p><note>
+    /// <p>For X-Ray traces, all Amazon Web Services services use the <code>X-Amzn-Trace-Id</code> header from the HTTP request. Using the header is the preferred mechanism to identify a trace. <code>StartExecution</code> and <code>StartSyncExecution</code> API operations can also use <code>traceHeader</code> from the body of the request payload. If <b>both</b> sources are provided, Step Functions will use the <b>header value</b> (preferred) over the value in the request body.</p>
+    /// </note>
     pub fn trace_header(&self) -> ::std::option::Option<&str> {
         self.trace_header.as_deref()
     }
@@ -328,17 +332,23 @@ impl StartSyncExecutionOutputBuilder {
     pub fn get_output_details(&self) -> &::std::option::Option<crate::types::CloudWatchEventsExecutionDataDetails> {
         &self.output_details
     }
-    /// <p>The X-Ray trace header that was passed to the execution.</p>
+    /// <p>The X-Ray trace header that was passed to the execution.</p><note>
+    /// <p>For X-Ray traces, all Amazon Web Services services use the <code>X-Amzn-Trace-Id</code> header from the HTTP request. Using the header is the preferred mechanism to identify a trace. <code>StartExecution</code> and <code>StartSyncExecution</code> API operations can also use <code>traceHeader</code> from the body of the request payload. If <b>both</b> sources are provided, Step Functions will use the <b>header value</b> (preferred) over the value in the request body.</p>
+    /// </note>
     pub fn trace_header(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.trace_header = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The X-Ray trace header that was passed to the execution.</p>
+    /// <p>The X-Ray trace header that was passed to the execution.</p><note>
+    /// <p>For X-Ray traces, all Amazon Web Services services use the <code>X-Amzn-Trace-Id</code> header from the HTTP request. Using the header is the preferred mechanism to identify a trace. <code>StartExecution</code> and <code>StartSyncExecution</code> API operations can also use <code>traceHeader</code> from the body of the request payload. If <b>both</b> sources are provided, Step Functions will use the <b>header value</b> (preferred) over the value in the request body.</p>
+    /// </note>
     pub fn set_trace_header(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.trace_header = input;
         self
     }
-    /// <p>The X-Ray trace header that was passed to the execution.</p>
+    /// <p>The X-Ray trace header that was passed to the execution.</p><note>
+    /// <p>For X-Ray traces, all Amazon Web Services services use the <code>X-Amzn-Trace-Id</code> header from the HTTP request. Using the header is the preferred mechanism to identify a trace. <code>StartExecution</code> and <code>StartSyncExecution</code> API operations can also use <code>traceHeader</code> from the body of the request payload. If <b>both</b> sources are provided, Step Functions will use the <b>header value</b> (preferred) over the value in the request body.</p>
+    /// </note>
     pub fn get_trace_header(&self) -> &::std::option::Option<::std::string::String> {
         &self.trace_header
     }

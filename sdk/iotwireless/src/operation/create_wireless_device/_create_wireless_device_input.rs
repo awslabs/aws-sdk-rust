@@ -5,7 +5,9 @@
 pub struct CreateWirelessDeviceInput {
     /// <p>The wireless device type.</p>
     pub r#type: ::std::option::Option<crate::types::WirelessDeviceType>,
-    /// <p>The name of the new resource.</p>
+    /// <p>The name of the new resource.</p><note>
+    /// <p>The following special characters aren't accepted: <code>&lt;&gt;^#~$</code></p>
+    /// </note>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The description of the new resource.</p>
     pub description: ::std::option::Option<::std::string::String>,
@@ -27,7 +29,9 @@ impl CreateWirelessDeviceInput {
     pub fn r#type(&self) -> ::std::option::Option<&crate::types::WirelessDeviceType> {
         self.r#type.as_ref()
     }
-    /// <p>The name of the new resource.</p>
+    /// <p>The name of the new resource.</p><note>
+    /// <p>The following special characters aren't accepted: <code>&lt;&gt;^#~$</code></p>
+    /// </note>
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
@@ -99,17 +103,23 @@ impl CreateWirelessDeviceInputBuilder {
     pub fn get_type(&self) -> &::std::option::Option<crate::types::WirelessDeviceType> {
         &self.r#type
     }
-    /// <p>The name of the new resource.</p>
+    /// <p>The name of the new resource.</p><note>
+    /// <p>The following special characters aren't accepted: <code>&lt;&gt;^#~$</code></p>
+    /// </note>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the new resource.</p>
+    /// <p>The name of the new resource.</p><note>
+    /// <p>The following special characters aren't accepted: <code>&lt;&gt;^#~$</code></p>
+    /// </note>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
-    /// <p>The name of the new resource.</p>
+    /// <p>The name of the new resource.</p><note>
+    /// <p>The following special characters aren't accepted: <code>&lt;&gt;^#~$</code></p>
+    /// </note>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }

@@ -13,6 +13,8 @@ pub struct GetThreatIntelSetOutput {
     pub status: ::std::option::Option<crate::types::ThreatIntelSetStatus>,
     /// <p>The tags of the threat list resource.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    /// <p>The Amazon Web Services account ID that owns the Amazon S3 bucket specified in the <b>location</b> parameter. This field appears in the response only if it was provided during ThreatIntelSet creation or update.</p>
+    pub expected_bucket_owner: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetThreatIntelSetOutput {
@@ -36,6 +38,10 @@ impl GetThreatIntelSetOutput {
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
+    /// <p>The Amazon Web Services account ID that owns the Amazon S3 bucket specified in the <b>location</b> parameter. This field appears in the response only if it was provided during ThreatIntelSet creation or update.</p>
+    pub fn expected_bucket_owner(&self) -> ::std::option::Option<&str> {
+        self.expected_bucket_owner.as_deref()
+    }
 }
 impl ::aws_types::request_id::RequestId for GetThreatIntelSetOutput {
     fn request_id(&self) -> Option<&str> {
@@ -58,6 +64,7 @@ pub struct GetThreatIntelSetOutputBuilder {
     pub(crate) location: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::ThreatIntelSetStatus>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) expected_bucket_owner: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetThreatIntelSetOutputBuilder {
@@ -141,6 +148,20 @@ impl GetThreatIntelSetOutputBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
+    /// <p>The Amazon Web Services account ID that owns the Amazon S3 bucket specified in the <b>location</b> parameter. This field appears in the response only if it was provided during ThreatIntelSet creation or update.</p>
+    pub fn expected_bucket_owner(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.expected_bucket_owner = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Web Services account ID that owns the Amazon S3 bucket specified in the <b>location</b> parameter. This field appears in the response only if it was provided during ThreatIntelSet creation or update.</p>
+    pub fn set_expected_bucket_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.expected_bucket_owner = input;
+        self
+    }
+    /// <p>The Amazon Web Services account ID that owns the Amazon S3 bucket specified in the <b>location</b> parameter. This field appears in the response only if it was provided during ThreatIntelSet creation or update.</p>
+    pub fn get_expected_bucket_owner(&self) -> &::std::option::Option<::std::string::String> {
+        &self.expected_bucket_owner
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -158,6 +179,7 @@ impl GetThreatIntelSetOutputBuilder {
             location: self.location,
             status: self.status,
             tags: self.tags,
+            expected_bucket_owner: self.expected_bucket_owner,
             _request_id: self._request_id,
         }
     }

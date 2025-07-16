@@ -22,7 +22,7 @@ impl crate::operation::put_delivery_destination::builders::PutDeliveryDestinatio
 }
 /// Fluent builder constructing a request to `PutDeliveryDestination`.
 ///
-/// <p>Creates or updates a logical <i>delivery destination</i>. A delivery destination is an Amazon Web Services resource that represents an Amazon Web Services service that logs can be sent to. CloudWatch Logs, Amazon S3, and Firehose are supported as logs delivery destinations.</p>
+/// <p>Creates or updates a logical <i>delivery destination</i>. A delivery destination is an Amazon Web Services resource that represents an Amazon Web Services service that logs can be sent to. CloudWatch Logs, Amazon S3, and Firehose are supported as logs delivery destinations and X-Ray as the trace delivery destination.</p>
 /// <p>To configure logs delivery between a supported Amazon Web Services service and a destination, you must do the following:</p>
 /// <ul>
 /// <li>
@@ -150,19 +150,72 @@ impl PutDeliveryDestinationFluentBuilder {
     pub fn get_output_format(&self) -> &::std::option::Option<crate::types::OutputFormat> {
         self.inner.get_output_format()
     }
-    /// <p>A structure that contains the ARN of the Amazon Web Services resource that will receive the logs.</p>
+    /// <p>A structure that contains the ARN of the Amazon Web Services resource that will receive the logs.</p><note>
+    /// <p><code>deliveryDestinationConfiguration</code> is required for CloudWatch Logs, Amazon S3, Firehose log delivery destinations and not required for X-Ray trace delivery destinations. <code>deliveryDestinationType</code> is needed for X-Ray trace delivery destinations but not required for other logs delivery destinations.</p>
+    /// </note>
     pub fn delivery_destination_configuration(mut self, input: crate::types::DeliveryDestinationConfiguration) -> Self {
         self.inner = self.inner.delivery_destination_configuration(input);
         self
     }
-    /// <p>A structure that contains the ARN of the Amazon Web Services resource that will receive the logs.</p>
+    /// <p>A structure that contains the ARN of the Amazon Web Services resource that will receive the logs.</p><note>
+    /// <p><code>deliveryDestinationConfiguration</code> is required for CloudWatch Logs, Amazon S3, Firehose log delivery destinations and not required for X-Ray trace delivery destinations. <code>deliveryDestinationType</code> is needed for X-Ray trace delivery destinations but not required for other logs delivery destinations.</p>
+    /// </note>
     pub fn set_delivery_destination_configuration(mut self, input: ::std::option::Option<crate::types::DeliveryDestinationConfiguration>) -> Self {
         self.inner = self.inner.set_delivery_destination_configuration(input);
         self
     }
-    /// <p>A structure that contains the ARN of the Amazon Web Services resource that will receive the logs.</p>
+    /// <p>A structure that contains the ARN of the Amazon Web Services resource that will receive the logs.</p><note>
+    /// <p><code>deliveryDestinationConfiguration</code> is required for CloudWatch Logs, Amazon S3, Firehose log delivery destinations and not required for X-Ray trace delivery destinations. <code>deliveryDestinationType</code> is needed for X-Ray trace delivery destinations but not required for other logs delivery destinations.</p>
+    /// </note>
     pub fn get_delivery_destination_configuration(&self) -> &::std::option::Option<crate::types::DeliveryDestinationConfiguration> {
         self.inner.get_delivery_destination_configuration()
+    }
+    /// <p>The type of delivery destination. This parameter specifies the target service where log data will be delivered. Valid values include:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>S3</code> - Amazon S3 for long-term storage and analytics</p></li>
+    /// <li>
+    /// <p><code>CWL</code> - CloudWatch Logs for centralized log management</p></li>
+    /// <li>
+    /// <p><code>FH</code> - Amazon Kinesis Data Firehose for real-time data streaming</p></li>
+    /// <li>
+    /// <p><code>XRAY</code> - Amazon Web Services X-Ray for distributed tracing and application monitoring</p></li>
+    /// </ul>
+    /// <p>The delivery destination type determines the format and configuration options available for log delivery.</p>
+    pub fn delivery_destination_type(mut self, input: crate::types::DeliveryDestinationType) -> Self {
+        self.inner = self.inner.delivery_destination_type(input);
+        self
+    }
+    /// <p>The type of delivery destination. This parameter specifies the target service where log data will be delivered. Valid values include:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>S3</code> - Amazon S3 for long-term storage and analytics</p></li>
+    /// <li>
+    /// <p><code>CWL</code> - CloudWatch Logs for centralized log management</p></li>
+    /// <li>
+    /// <p><code>FH</code> - Amazon Kinesis Data Firehose for real-time data streaming</p></li>
+    /// <li>
+    /// <p><code>XRAY</code> - Amazon Web Services X-Ray for distributed tracing and application monitoring</p></li>
+    /// </ul>
+    /// <p>The delivery destination type determines the format and configuration options available for log delivery.</p>
+    pub fn set_delivery_destination_type(mut self, input: ::std::option::Option<crate::types::DeliveryDestinationType>) -> Self {
+        self.inner = self.inner.set_delivery_destination_type(input);
+        self
+    }
+    /// <p>The type of delivery destination. This parameter specifies the target service where log data will be delivered. Valid values include:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>S3</code> - Amazon S3 for long-term storage and analytics</p></li>
+    /// <li>
+    /// <p><code>CWL</code> - CloudWatch Logs for centralized log management</p></li>
+    /// <li>
+    /// <p><code>FH</code> - Amazon Kinesis Data Firehose for real-time data streaming</p></li>
+    /// <li>
+    /// <p><code>XRAY</code> - Amazon Web Services X-Ray for distributed tracing and application monitoring</p></li>
+    /// </ul>
+    /// <p>The delivery destination type determines the format and configuration options available for log delivery.</p>
+    pub fn get_delivery_destination_type(&self) -> &::std::option::Option<crate::types::DeliveryDestinationType> {
+        self.inner.get_delivery_destination_type()
     }
     ///
     /// Adds a key-value pair to `tags`.

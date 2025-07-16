@@ -32,7 +32,7 @@ pub struct Processor {
     /// <p>Use this parameter to include the <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatch-Logs-Transformation.html#CloudWatch-Logs-Transformation-parseRoute53"> parseRoute53</a> processor in your transformer.</p>
     /// <p>If you use this processor, it must be the first processor in your transformer.</p>
     pub parse_route53: ::std::option::Option<crate::types::ParseRoute53>,
-    /// <p>Use this processor to convert logs into Open Cybersecurity Schema Framework (OCSF) format</p>
+    /// <p>Use this parameter to convert logs into Open Cybersecurity Schema (OCSF) format.</p>
     pub parse_to_ocsf: ::std::option::Option<crate::types::ParseToOcsf>,
     /// <p>Use this parameter to include the <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatch-Logs-Transformation.html#CloudWatch-Logs-Transformation-parsePostGres"> parsePostGres</a> processor in your transformer.</p>
     /// <p>If you use this processor, it must be the first processor in your transformer.</p>
@@ -111,7 +111,7 @@ impl Processor {
     pub fn parse_route53(&self) -> ::std::option::Option<&crate::types::ParseRoute53> {
         self.parse_route53.as_ref()
     }
-    /// <p>Use this processor to convert logs into Open Cybersecurity Schema Framework (OCSF) format</p>
+    /// <p>Use this parameter to convert logs into Open Cybersecurity Schema (OCSF) format.</p>
     pub fn parse_to_ocsf(&self) -> ::std::option::Option<&crate::types::ParseToOcsf> {
         self.parse_to_ocsf.as_ref()
     }
@@ -379,17 +379,17 @@ impl ProcessorBuilder {
     pub fn get_parse_route53(&self) -> &::std::option::Option<crate::types::ParseRoute53> {
         &self.parse_route53
     }
-    /// <p>Use this processor to convert logs into Open Cybersecurity Schema Framework (OCSF) format</p>
+    /// <p>Use this parameter to convert logs into Open Cybersecurity Schema (OCSF) format.</p>
     pub fn parse_to_ocsf(mut self, input: crate::types::ParseToOcsf) -> Self {
         self.parse_to_ocsf = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Use this processor to convert logs into Open Cybersecurity Schema Framework (OCSF) format</p>
+    /// <p>Use this parameter to convert logs into Open Cybersecurity Schema (OCSF) format.</p>
     pub fn set_parse_to_ocsf(mut self, input: ::std::option::Option<crate::types::ParseToOcsf>) -> Self {
         self.parse_to_ocsf = input;
         self
     }
-    /// <p>Use this processor to convert logs into Open Cybersecurity Schema Framework (OCSF) format</p>
+    /// <p>Use this parameter to convert logs into Open Cybersecurity Schema (OCSF) format.</p>
     pub fn get_parse_to_ocsf(&self) -> &::std::option::Option<crate::types::ParseToOcsf> {
         &self.parse_to_ocsf
     }

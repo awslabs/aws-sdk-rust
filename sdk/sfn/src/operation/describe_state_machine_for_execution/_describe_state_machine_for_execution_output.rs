@@ -19,7 +19,7 @@ pub struct DescribeStateMachineForExecutionOutput {
     pub tracing_configuration: ::std::option::Option<crate::types::TracingConfiguration>,
     /// <p>The Amazon Resource Name (ARN) of the Map Run that started the child workflow execution. This field is returned only if the <code>executionArn</code> is a child workflow execution that was started by a Distributed Map state.</p>
     pub map_run_arn: ::std::option::Option<::std::string::String>,
-    /// <p>A user-defined or an auto-generated string that identifies a <code>Map</code> state. This ﬁeld is returned only if the <code>executionArn</code> is a child workflow execution that was started by a Distributed Map state.</p>
+    /// <p>A user-defined or an auto-generated string that identifies a <code>Map</code> state. This field is returned only if the <code>executionArn</code> is a child workflow execution that was started by a Distributed Map state.</p>
     pub label: ::std::option::Option<::std::string::String>,
     /// <p>The revision identifier for the state machine. The first revision ID when you create the state machine is null.</p>
     /// <p>Use the state machine <code>revisionId</code> parameter to compare the revision of a state machine with the configuration of the state machine used for executions without performing a diff of the properties, such as <code>definition</code> and <code>roleArn</code>.</p>
@@ -67,7 +67,7 @@ impl DescribeStateMachineForExecutionOutput {
     pub fn map_run_arn(&self) -> ::std::option::Option<&str> {
         self.map_run_arn.as_deref()
     }
-    /// <p>A user-defined or an auto-generated string that identifies a <code>Map</code> state. This ﬁeld is returned only if the <code>executionArn</code> is a child workflow execution that was started by a Distributed Map state.</p>
+    /// <p>A user-defined or an auto-generated string that identifies a <code>Map</code> state. This field is returned only if the <code>executionArn</code> is a child workflow execution that was started by a Distributed Map state.</p>
     pub fn label(&self) -> ::std::option::Option<&str> {
         self.label.as_deref()
     }
@@ -254,17 +254,17 @@ impl DescribeStateMachineForExecutionOutputBuilder {
     pub fn get_map_run_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.map_run_arn
     }
-    /// <p>A user-defined or an auto-generated string that identifies a <code>Map</code> state. This ﬁeld is returned only if the <code>executionArn</code> is a child workflow execution that was started by a Distributed Map state.</p>
+    /// <p>A user-defined or an auto-generated string that identifies a <code>Map</code> state. This field is returned only if the <code>executionArn</code> is a child workflow execution that was started by a Distributed Map state.</p>
     pub fn label(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.label = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A user-defined or an auto-generated string that identifies a <code>Map</code> state. This ﬁeld is returned only if the <code>executionArn</code> is a child workflow execution that was started by a Distributed Map state.</p>
+    /// <p>A user-defined or an auto-generated string that identifies a <code>Map</code> state. This field is returned only if the <code>executionArn</code> is a child workflow execution that was started by a Distributed Map state.</p>
     pub fn set_label(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.label = input;
         self
     }
-    /// <p>A user-defined or an auto-generated string that identifies a <code>Map</code> state. This ﬁeld is returned only if the <code>executionArn</code> is a child workflow execution that was started by a Distributed Map state.</p>
+    /// <p>A user-defined or an auto-generated string that identifies a <code>Map</code> state. This field is returned only if the <code>executionArn</code> is a child workflow execution that was started by a Distributed Map state.</p>
     pub fn get_label(&self) -> &::std::option::Option<::std::string::String> {
         &self.label
     }

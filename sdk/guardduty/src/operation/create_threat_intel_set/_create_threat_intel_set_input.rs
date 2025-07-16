@@ -18,6 +18,8 @@ pub struct CreateThreatIntelSetInput {
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>The tags to be added to a new threat list resource.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    /// <p>The Amazon Web Services account ID that owns the Amazon S3 bucket specified in the <b>location</b> parameter.</p>
+    pub expected_bucket_owner: ::std::option::Option<::std::string::String>,
 }
 impl CreateThreatIntelSetInput {
     /// <p>The unique ID of the detector of the GuardDuty account for which you want to create a <code>ThreatIntelSet</code>.</p>
@@ -49,6 +51,10 @@ impl CreateThreatIntelSetInput {
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
+    /// <p>The Amazon Web Services account ID that owns the Amazon S3 bucket specified in the <b>location</b> parameter.</p>
+    pub fn expected_bucket_owner(&self) -> ::std::option::Option<&str> {
+        self.expected_bucket_owner.as_deref()
+    }
 }
 impl CreateThreatIntelSetInput {
     /// Creates a new builder-style object to manufacture [`CreateThreatIntelSetInput`](crate::operation::create_threat_intel_set::CreateThreatIntelSetInput).
@@ -68,6 +74,7 @@ pub struct CreateThreatIntelSetInputBuilder {
     pub(crate) activate: ::std::option::Option<bool>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) expected_bucket_owner: ::std::option::Option<::std::string::String>,
 }
 impl CreateThreatIntelSetInputBuilder {
     /// <p>The unique ID of the detector of the GuardDuty account for which you want to create a <code>ThreatIntelSet</code>.</p>
@@ -182,6 +189,20 @@ impl CreateThreatIntelSetInputBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
+    /// <p>The Amazon Web Services account ID that owns the Amazon S3 bucket specified in the <b>location</b> parameter.</p>
+    pub fn expected_bucket_owner(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.expected_bucket_owner = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Web Services account ID that owns the Amazon S3 bucket specified in the <b>location</b> parameter.</p>
+    pub fn set_expected_bucket_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.expected_bucket_owner = input;
+        self
+    }
+    /// <p>The Amazon Web Services account ID that owns the Amazon S3 bucket specified in the <b>location</b> parameter.</p>
+    pub fn get_expected_bucket_owner(&self) -> &::std::option::Option<::std::string::String> {
+        &self.expected_bucket_owner
+    }
     /// Consumes the builder and constructs a [`CreateThreatIntelSetInput`](crate::operation::create_threat_intel_set::CreateThreatIntelSetInput).
     pub fn build(
         self,
@@ -195,6 +216,7 @@ impl CreateThreatIntelSetInputBuilder {
             activate: self.activate,
             client_token: self.client_token,
             tags: self.tags,
+            expected_bucket_owner: self.expected_bucket_owner,
         })
     }
 }

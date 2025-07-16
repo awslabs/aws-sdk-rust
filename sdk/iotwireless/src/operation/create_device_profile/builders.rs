@@ -108,17 +108,23 @@ impl CreateDeviceProfileFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The name of the new resource.</p>
+    /// <p>The name of the new resource.</p><note>
+    /// <p>The following special characters aren't accepted: <code>&lt;&gt;^#~$</code></p>
+    /// </note>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
         self
     }
-    /// <p>The name of the new resource.</p>
+    /// <p>The name of the new resource.</p><note>
+    /// <p>The following special characters aren't accepted: <code>&lt;&gt;^#~$</code></p>
+    /// </note>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
     }
-    /// <p>The name of the new resource.</p>
+    /// <p>The name of the new resource.</p><note>
+    /// <p>The following special characters aren't accepted: <code>&lt;&gt;^#~$</code></p>
+    /// </note>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_name()
     }

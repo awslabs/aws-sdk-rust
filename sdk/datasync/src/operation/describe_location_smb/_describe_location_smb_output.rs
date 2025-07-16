@@ -18,7 +18,7 @@ pub struct DescribeLocationSmbOutput {
     pub mount_options: ::std::option::Option<crate::types::SmbMountOptions>,
     /// <p>The time that the SMB location was created.</p>
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>The IPv4 addresses for the DNS servers that your SMB file server belongs to. This element applies only if <code>AuthenticationType</code> is set to <code>KERBEROS</code>.</p>
+    /// <p>The IPv4 or IPv6 addresses for the DNS servers that your SMB file server belongs to. This element applies only if <code>AuthenticationType</code> is set to <code>KERBEROS</code>.</p>
     pub dns_ip_addresses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The Kerberos principal that has permission to access the files, folders, and file metadata in your SMB file server.</p>
     pub kerberos_principal: ::std::option::Option<::std::string::String>,
@@ -57,7 +57,7 @@ impl DescribeLocationSmbOutput {
     pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
-    /// <p>The IPv4 addresses for the DNS servers that your SMB file server belongs to. This element applies only if <code>AuthenticationType</code> is set to <code>KERBEROS</code>.</p>
+    /// <p>The IPv4 or IPv6 addresses for the DNS servers that your SMB file server belongs to. This element applies only if <code>AuthenticationType</code> is set to <code>KERBEROS</code>.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.dns_ip_addresses.is_none()`.
     pub fn dns_ip_addresses(&self) -> &[::std::string::String] {
@@ -209,19 +209,19 @@ impl DescribeLocationSmbOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_dns_ip_addresses`](Self::set_dns_ip_addresses).
     ///
-    /// <p>The IPv4 addresses for the DNS servers that your SMB file server belongs to. This element applies only if <code>AuthenticationType</code> is set to <code>KERBEROS</code>.</p>
+    /// <p>The IPv4 or IPv6 addresses for the DNS servers that your SMB file server belongs to. This element applies only if <code>AuthenticationType</code> is set to <code>KERBEROS</code>.</p>
     pub fn dns_ip_addresses(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.dns_ip_addresses.unwrap_or_default();
         v.push(input.into());
         self.dns_ip_addresses = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The IPv4 addresses for the DNS servers that your SMB file server belongs to. This element applies only if <code>AuthenticationType</code> is set to <code>KERBEROS</code>.</p>
+    /// <p>The IPv4 or IPv6 addresses for the DNS servers that your SMB file server belongs to. This element applies only if <code>AuthenticationType</code> is set to <code>KERBEROS</code>.</p>
     pub fn set_dns_ip_addresses(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.dns_ip_addresses = input;
         self
     }
-    /// <p>The IPv4 addresses for the DNS servers that your SMB file server belongs to. This element applies only if <code>AuthenticationType</code> is set to <code>KERBEROS</code>.</p>
+    /// <p>The IPv4 or IPv6 addresses for the DNS servers that your SMB file server belongs to. This element applies only if <code>AuthenticationType</code> is set to <code>KERBEROS</code>.</p>
     pub fn get_dns_ip_addresses(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.dns_ip_addresses
     }

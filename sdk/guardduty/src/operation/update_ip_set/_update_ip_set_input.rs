@@ -14,6 +14,8 @@ pub struct UpdateIpSetInput {
     pub location: ::std::option::Option<::std::string::String>,
     /// <p>The updated Boolean value that specifies whether the IPSet is active or not.</p>
     pub activate: ::std::option::Option<bool>,
+    /// <p>The Amazon Web Services account ID that owns the Amazon S3 bucket specified in the <b>location</b> parameter.</p>
+    pub expected_bucket_owner: ::std::option::Option<::std::string::String>,
 }
 impl UpdateIpSetInput {
     /// <p>The detectorID that specifies the GuardDuty service whose IPSet you want to update.</p>
@@ -37,6 +39,10 @@ impl UpdateIpSetInput {
     pub fn activate(&self) -> ::std::option::Option<bool> {
         self.activate
     }
+    /// <p>The Amazon Web Services account ID that owns the Amazon S3 bucket specified in the <b>location</b> parameter.</p>
+    pub fn expected_bucket_owner(&self) -> ::std::option::Option<&str> {
+        self.expected_bucket_owner.as_deref()
+    }
 }
 impl UpdateIpSetInput {
     /// Creates a new builder-style object to manufacture [`UpdateIpSetInput`](crate::operation::update_ip_set::UpdateIpSetInput).
@@ -54,6 +60,7 @@ pub struct UpdateIpSetInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) location: ::std::option::Option<::std::string::String>,
     pub(crate) activate: ::std::option::Option<bool>,
+    pub(crate) expected_bucket_owner: ::std::option::Option<::std::string::String>,
 }
 impl UpdateIpSetInputBuilder {
     /// <p>The detectorID that specifies the GuardDuty service whose IPSet you want to update.</p>
@@ -131,6 +138,20 @@ impl UpdateIpSetInputBuilder {
     pub fn get_activate(&self) -> &::std::option::Option<bool> {
         &self.activate
     }
+    /// <p>The Amazon Web Services account ID that owns the Amazon S3 bucket specified in the <b>location</b> parameter.</p>
+    pub fn expected_bucket_owner(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.expected_bucket_owner = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Web Services account ID that owns the Amazon S3 bucket specified in the <b>location</b> parameter.</p>
+    pub fn set_expected_bucket_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.expected_bucket_owner = input;
+        self
+    }
+    /// <p>The Amazon Web Services account ID that owns the Amazon S3 bucket specified in the <b>location</b> parameter.</p>
+    pub fn get_expected_bucket_owner(&self) -> &::std::option::Option<::std::string::String> {
+        &self.expected_bucket_owner
+    }
     /// Consumes the builder and constructs a [`UpdateIpSetInput`](crate::operation::update_ip_set::UpdateIpSetInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::update_ip_set::UpdateIpSetInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_ip_set::UpdateIpSetInput {
@@ -139,6 +160,7 @@ impl UpdateIpSetInputBuilder {
             name: self.name,
             location: self.location,
             activate: self.activate,
+            expected_bucket_owner: self.expected_bucket_owner,
         })
     }
 }

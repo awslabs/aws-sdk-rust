@@ -12,21 +12,26 @@
 /// ```text
 /// # let validationexceptiontype = unimplemented!();
 /// match validationexceptiontype {
+///     ValidationExceptionType::BatchGetSecretValueDenied => { /* ... */ },
 ///     ValidationExceptionType::CencIvIncompatible => { /* ... */ },
 ///     ValidationExceptionType::ClipStartTimeWithStartOrEnd => { /* ... */ },
 ///     ValidationExceptionType::CmafContainerTypeWithMssManifest => { /* ... */ },
 ///     ValidationExceptionType::CmafExcludeSegmentDrmMetadataIncompatibleContainerType => { /* ... */ },
 ///     ValidationExceptionType::ContainerTypeImmutable => { /* ... */ },
 ///     ValidationExceptionType::DashDvbAttributesWithoutDvbDashProfile => { /* ... */ },
+///     ValidationExceptionType::DecryptSecretFailed => { /* ... */ },
+///     ValidationExceptionType::DescribeSecretDenied => { /* ... */ },
 ///     ValidationExceptionType::DirectModeWithTimingSource => { /* ... */ },
 ///     ValidationExceptionType::DrmSignalingMismatchSegmentEncryptionStatus => { /* ... */ },
 ///     ValidationExceptionType::DrmSystemsEncryptionMethodIncompatible => { /* ... */ },
+///     ValidationExceptionType::DuplicatedSecret => { /* ... */ },
 ///     ValidationExceptionType::EncryptionContractShared => { /* ... */ },
 ///     ValidationExceptionType::EncryptionContractUnencrypted => { /* ... */ },
 ///     ValidationExceptionType::EncryptionContractWithoutAudioRenditionIncompatible => { /* ... */ },
 ///     ValidationExceptionType::EncryptionContractWithIsmContainerIncompatible => { /* ... */ },
 ///     ValidationExceptionType::EncryptionMethodContainerTypeMismatch => { /* ... */ },
 ///     ValidationExceptionType::EndTimeEarlierThanStartTime => { /* ... */ },
+///     ValidationExceptionType::GetSecretValueDenied => { /* ... */ },
 ///     ValidationExceptionType::HarvestedManifestHasStartEndFilterConfiguration => { /* ... */ },
 ///     ValidationExceptionType::HarvestedManifestNotFoundOnEndpoint => { /* ... */ },
 ///     ValidationExceptionType::HarvestJobCustomerEndpointReadAccessDenied => { /* ... */ },
@@ -42,12 +47,17 @@
 ///     ValidationExceptionType::InvalidPaginationToken => { /* ... */ },
 ///     ValidationExceptionType::InvalidPolicy => { /* ... */ },
 ///     ValidationExceptionType::InvalidRoleArn => { /* ... */ },
+///     ValidationExceptionType::InvalidSecret => { /* ... */ },
+///     ValidationExceptionType::InvalidSecretFormat => { /* ... */ },
+///     ValidationExceptionType::InvalidSecretKey => { /* ... */ },
+///     ValidationExceptionType::InvalidSecretValue => { /* ... */ },
 ///     ValidationExceptionType::InvalidTimeDelaySeconds => { /* ... */ },
 ///     ValidationExceptionType::IsmContainerTypeWithDashManifest => { /* ... */ },
 ///     ValidationExceptionType::IsmContainerTypeWithHlsManifest => { /* ... */ },
 ///     ValidationExceptionType::IsmContainerTypeWithLlHlsManifest => { /* ... */ },
 ///     ValidationExceptionType::IsmContainerTypeWithScte => { /* ... */ },
 ///     ValidationExceptionType::IsmContainerWithKeyRotation => { /* ... */ },
+///     ValidationExceptionType::MalformedSecretArn => { /* ... */ },
 ///     ValidationExceptionType::ManifestDrmSystemsIncompatible => { /* ... */ },
 ///     ValidationExceptionType::ManifestNameCollision => { /* ... */ },
 ///     ValidationExceptionType::MemberDoesNotMatchPattern => { /* ... */ },
@@ -68,10 +78,15 @@
 ///     ValidationExceptionType::RoleArnInvalidFormat => { /* ... */ },
 ///     ValidationExceptionType::RoleArnLengthOutOfRange => { /* ... */ },
 ///     ValidationExceptionType::RoleArnNotAssumable => { /* ... */ },
+///     ValidationExceptionType::SecretArnResourceNotFound => { /* ... */ },
+///     ValidationExceptionType::SecretFromDifferentAccount => { /* ... */ },
+///     ValidationExceptionType::SecretFromDifferentRegion => { /* ... */ },
+///     ValidationExceptionType::SecretIsNotOneKeyValuePair => { /* ... */ },
 ///     ValidationExceptionType::SourceDisruptionsEnabledIncorrectly => { /* ... */ },
 ///     ValidationExceptionType::StartTagTimeOffsetInvalid => { /* ... */ },
 ///     ValidationExceptionType::TimingSourceMissing => { /* ... */ },
 ///     ValidationExceptionType::TooManyInProgressHarvestJobs => { /* ... */ },
+///     ValidationExceptionType::TooManySecrets => { /* ... */ },
 ///     ValidationExceptionType::TsContainerTypeWithDashManifest => { /* ... */ },
 ///     ValidationExceptionType::TsContainerTypeWithMssManifest => { /* ... */ },
 ///     ValidationExceptionType::UpdatePeriodSmallerThanSegmentDuration => { /* ... */ },
@@ -113,6 +128,8 @@
 )]
 pub enum ValidationExceptionType {
     #[allow(missing_docs)] // documentation missing in model
+    BatchGetSecretValueDenied,
+    #[allow(missing_docs)] // documentation missing in model
     CencIvIncompatible,
     #[allow(missing_docs)] // documentation missing in model
     ClipStartTimeWithStartOrEnd,
@@ -125,11 +142,17 @@ pub enum ValidationExceptionType {
     #[allow(missing_docs)] // documentation missing in model
     DashDvbAttributesWithoutDvbDashProfile,
     #[allow(missing_docs)] // documentation missing in model
+    DecryptSecretFailed,
+    #[allow(missing_docs)] // documentation missing in model
+    DescribeSecretDenied,
+    #[allow(missing_docs)] // documentation missing in model
     DirectModeWithTimingSource,
     #[allow(missing_docs)] // documentation missing in model
     DrmSignalingMismatchSegmentEncryptionStatus,
     #[allow(missing_docs)] // documentation missing in model
     DrmSystemsEncryptionMethodIncompatible,
+    #[allow(missing_docs)] // documentation missing in model
+    DuplicatedSecret,
     #[allow(missing_docs)] // documentation missing in model
     EncryptionContractShared,
     #[allow(missing_docs)] // documentation missing in model
@@ -142,6 +165,8 @@ pub enum ValidationExceptionType {
     EncryptionMethodContainerTypeMismatch,
     #[allow(missing_docs)] // documentation missing in model
     EndTimeEarlierThanStartTime,
+    #[allow(missing_docs)] // documentation missing in model
+    GetSecretValueDenied,
     #[allow(missing_docs)] // documentation missing in model
     HarvestedManifestHasStartEndFilterConfiguration,
     #[allow(missing_docs)] // documentation missing in model
@@ -173,6 +198,14 @@ pub enum ValidationExceptionType {
     #[allow(missing_docs)] // documentation missing in model
     InvalidRoleArn,
     #[allow(missing_docs)] // documentation missing in model
+    InvalidSecret,
+    #[allow(missing_docs)] // documentation missing in model
+    InvalidSecretFormat,
+    #[allow(missing_docs)] // documentation missing in model
+    InvalidSecretKey,
+    #[allow(missing_docs)] // documentation missing in model
+    InvalidSecretValue,
+    #[allow(missing_docs)] // documentation missing in model
     InvalidTimeDelaySeconds,
     #[allow(missing_docs)] // documentation missing in model
     IsmContainerTypeWithDashManifest,
@@ -184,6 +217,8 @@ pub enum ValidationExceptionType {
     IsmContainerTypeWithScte,
     #[allow(missing_docs)] // documentation missing in model
     IsmContainerWithKeyRotation,
+    #[allow(missing_docs)] // documentation missing in model
+    MalformedSecretArn,
     #[allow(missing_docs)] // documentation missing in model
     ManifestDrmSystemsIncompatible,
     #[allow(missing_docs)] // documentation missing in model
@@ -225,6 +260,14 @@ pub enum ValidationExceptionType {
     #[allow(missing_docs)] // documentation missing in model
     RoleArnNotAssumable,
     #[allow(missing_docs)] // documentation missing in model
+    SecretArnResourceNotFound,
+    #[allow(missing_docs)] // documentation missing in model
+    SecretFromDifferentAccount,
+    #[allow(missing_docs)] // documentation missing in model
+    SecretFromDifferentRegion,
+    #[allow(missing_docs)] // documentation missing in model
+    SecretIsNotOneKeyValuePair,
+    #[allow(missing_docs)] // documentation missing in model
     SourceDisruptionsEnabledIncorrectly,
     #[allow(missing_docs)] // documentation missing in model
     StartTagTimeOffsetInvalid,
@@ -232,6 +275,8 @@ pub enum ValidationExceptionType {
     TimingSourceMissing,
     #[allow(missing_docs)] // documentation missing in model
     TooManyInProgressHarvestJobs,
+    #[allow(missing_docs)] // documentation missing in model
+    TooManySecrets,
     #[allow(missing_docs)] // documentation missing in model
     TsContainerTypeWithDashManifest,
     #[allow(missing_docs)] // documentation missing in model
@@ -263,6 +308,7 @@ pub enum ValidationExceptionType {
 impl ::std::convert::From<&str> for ValidationExceptionType {
     fn from(s: &str) -> Self {
         match s {
+            "BATCH_GET_SECRET_VALUE_DENIED" => ValidationExceptionType::BatchGetSecretValueDenied,
             "CENC_IV_INCOMPATIBLE" => ValidationExceptionType::CencIvIncompatible,
             "CLIP_START_TIME_WITH_START_OR_END" => ValidationExceptionType::ClipStartTimeWithStartOrEnd,
             "CMAF_CONTAINER_TYPE_WITH_MSS_MANIFEST" => ValidationExceptionType::CmafContainerTypeWithMssManifest,
@@ -271,9 +317,12 @@ impl ::std::convert::From<&str> for ValidationExceptionType {
             }
             "CONTAINER_TYPE_IMMUTABLE" => ValidationExceptionType::ContainerTypeImmutable,
             "DASH_DVB_ATTRIBUTES_WITHOUT_DVB_DASH_PROFILE" => ValidationExceptionType::DashDvbAttributesWithoutDvbDashProfile,
+            "DECRYPT_SECRET_FAILED" => ValidationExceptionType::DecryptSecretFailed,
+            "DESCRIBE_SECRET_DENIED" => ValidationExceptionType::DescribeSecretDenied,
             "DIRECT_MODE_WITH_TIMING_SOURCE" => ValidationExceptionType::DirectModeWithTimingSource,
             "DRM_SIGNALING_MISMATCH_SEGMENT_ENCRYPTION_STATUS" => ValidationExceptionType::DrmSignalingMismatchSegmentEncryptionStatus,
             "DRM_SYSTEMS_ENCRYPTION_METHOD_INCOMPATIBLE" => ValidationExceptionType::DrmSystemsEncryptionMethodIncompatible,
+            "DUPLICATED_SECRET" => ValidationExceptionType::DuplicatedSecret,
             "ENCRYPTION_CONTRACT_SHARED" => ValidationExceptionType::EncryptionContractShared,
             "ENCRYPTION_CONTRACT_UNENCRYPTED" => ValidationExceptionType::EncryptionContractUnencrypted,
             "ENCRYPTION_CONTRACT_WITHOUT_AUDIO_RENDITION_INCOMPATIBLE" => {
@@ -282,6 +331,7 @@ impl ::std::convert::From<&str> for ValidationExceptionType {
             "ENCRYPTION_CONTRACT_WITH_ISM_CONTAINER_INCOMPATIBLE" => ValidationExceptionType::EncryptionContractWithIsmContainerIncompatible,
             "ENCRYPTION_METHOD_CONTAINER_TYPE_MISMATCH" => ValidationExceptionType::EncryptionMethodContainerTypeMismatch,
             "END_TIME_EARLIER_THAN_START_TIME" => ValidationExceptionType::EndTimeEarlierThanStartTime,
+            "GET_SECRET_VALUE_DENIED" => ValidationExceptionType::GetSecretValueDenied,
             "HARVESTED_MANIFEST_HAS_START_END_FILTER_CONFIGURATION" => ValidationExceptionType::HarvestedManifestHasStartEndFilterConfiguration,
             "HARVESTED_MANIFEST_NOT_FOUND_ON_ENDPOINT" => ValidationExceptionType::HarvestedManifestNotFoundOnEndpoint,
             "HARVEST_JOB_CUSTOMER_ENDPOINT_READ_ACCESS_DENIED" => ValidationExceptionType::HarvestJobCustomerEndpointReadAccessDenied,
@@ -297,12 +347,17 @@ impl ::std::convert::From<&str> for ValidationExceptionType {
             "INVALID_PAGINATION_TOKEN" => ValidationExceptionType::InvalidPaginationToken,
             "INVALID_POLICY" => ValidationExceptionType::InvalidPolicy,
             "INVALID_ROLE_ARN" => ValidationExceptionType::InvalidRoleArn,
+            "INVALID_SECRET" => ValidationExceptionType::InvalidSecret,
+            "INVALID_SECRET_FORMAT" => ValidationExceptionType::InvalidSecretFormat,
+            "INVALID_SECRET_KEY" => ValidationExceptionType::InvalidSecretKey,
+            "INVALID_SECRET_VALUE" => ValidationExceptionType::InvalidSecretValue,
             "INVALID_TIME_DELAY_SECONDS" => ValidationExceptionType::InvalidTimeDelaySeconds,
             "ISM_CONTAINER_TYPE_WITH_DASH_MANIFEST" => ValidationExceptionType::IsmContainerTypeWithDashManifest,
             "ISM_CONTAINER_TYPE_WITH_HLS_MANIFEST" => ValidationExceptionType::IsmContainerTypeWithHlsManifest,
             "ISM_CONTAINER_TYPE_WITH_LL_HLS_MANIFEST" => ValidationExceptionType::IsmContainerTypeWithLlHlsManifest,
             "ISM_CONTAINER_TYPE_WITH_SCTE" => ValidationExceptionType::IsmContainerTypeWithScte,
             "ISM_CONTAINER_WITH_KEY_ROTATION" => ValidationExceptionType::IsmContainerWithKeyRotation,
+            "MALFORMED_SECRET_ARN" => ValidationExceptionType::MalformedSecretArn,
             "MANIFEST_DRM_SYSTEMS_INCOMPATIBLE" => ValidationExceptionType::ManifestDrmSystemsIncompatible,
             "MANIFEST_NAME_COLLISION" => ValidationExceptionType::ManifestNameCollision,
             "MEMBER_DOES_NOT_MATCH_PATTERN" => ValidationExceptionType::MemberDoesNotMatchPattern,
@@ -325,10 +380,15 @@ impl ::std::convert::From<&str> for ValidationExceptionType {
             "ROLE_ARN_INVALID_FORMAT" => ValidationExceptionType::RoleArnInvalidFormat,
             "ROLE_ARN_LENGTH_OUT_OF_RANGE" => ValidationExceptionType::RoleArnLengthOutOfRange,
             "ROLE_ARN_NOT_ASSUMABLE" => ValidationExceptionType::RoleArnNotAssumable,
+            "SECRET_ARN_RESOURCE_NOT_FOUND" => ValidationExceptionType::SecretArnResourceNotFound,
+            "SECRET_FROM_DIFFERENT_ACCOUNT" => ValidationExceptionType::SecretFromDifferentAccount,
+            "SECRET_FROM_DIFFERENT_REGION" => ValidationExceptionType::SecretFromDifferentRegion,
+            "SECRET_IS_NOT_ONE_KEY_VALUE_PAIR" => ValidationExceptionType::SecretIsNotOneKeyValuePair,
             "SOURCE_DISRUPTIONS_ENABLED_INCORRECTLY" => ValidationExceptionType::SourceDisruptionsEnabledIncorrectly,
             "START_TAG_TIME_OFFSET_INVALID" => ValidationExceptionType::StartTagTimeOffsetInvalid,
             "TIMING_SOURCE_MISSING" => ValidationExceptionType::TimingSourceMissing,
             "TOO_MANY_IN_PROGRESS_HARVEST_JOBS" => ValidationExceptionType::TooManyInProgressHarvestJobs,
+            "TOO_MANY_SECRETS" => ValidationExceptionType::TooManySecrets,
             "TS_CONTAINER_TYPE_WITH_DASH_MANIFEST" => ValidationExceptionType::TsContainerTypeWithDashManifest,
             "TS_CONTAINER_TYPE_WITH_MSS_MANIFEST" => ValidationExceptionType::TsContainerTypeWithMssManifest,
             "UPDATE_PERIOD_SMALLER_THAN_SEGMENT_DURATION" => ValidationExceptionType::UpdatePeriodSmallerThanSegmentDuration,
@@ -356,6 +416,7 @@ impl ValidationExceptionType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            ValidationExceptionType::BatchGetSecretValueDenied => "BATCH_GET_SECRET_VALUE_DENIED",
             ValidationExceptionType::CencIvIncompatible => "CENC_IV_INCOMPATIBLE",
             ValidationExceptionType::ClipStartTimeWithStartOrEnd => "CLIP_START_TIME_WITH_START_OR_END",
             ValidationExceptionType::CmafContainerTypeWithMssManifest => "CMAF_CONTAINER_TYPE_WITH_MSS_MANIFEST",
@@ -364,9 +425,12 @@ impl ValidationExceptionType {
             }
             ValidationExceptionType::ContainerTypeImmutable => "CONTAINER_TYPE_IMMUTABLE",
             ValidationExceptionType::DashDvbAttributesWithoutDvbDashProfile => "DASH_DVB_ATTRIBUTES_WITHOUT_DVB_DASH_PROFILE",
+            ValidationExceptionType::DecryptSecretFailed => "DECRYPT_SECRET_FAILED",
+            ValidationExceptionType::DescribeSecretDenied => "DESCRIBE_SECRET_DENIED",
             ValidationExceptionType::DirectModeWithTimingSource => "DIRECT_MODE_WITH_TIMING_SOURCE",
             ValidationExceptionType::DrmSignalingMismatchSegmentEncryptionStatus => "DRM_SIGNALING_MISMATCH_SEGMENT_ENCRYPTION_STATUS",
             ValidationExceptionType::DrmSystemsEncryptionMethodIncompatible => "DRM_SYSTEMS_ENCRYPTION_METHOD_INCOMPATIBLE",
+            ValidationExceptionType::DuplicatedSecret => "DUPLICATED_SECRET",
             ValidationExceptionType::EncryptionContractShared => "ENCRYPTION_CONTRACT_SHARED",
             ValidationExceptionType::EncryptionContractUnencrypted => "ENCRYPTION_CONTRACT_UNENCRYPTED",
             ValidationExceptionType::EncryptionContractWithoutAudioRenditionIncompatible => {
@@ -375,6 +439,7 @@ impl ValidationExceptionType {
             ValidationExceptionType::EncryptionContractWithIsmContainerIncompatible => "ENCRYPTION_CONTRACT_WITH_ISM_CONTAINER_INCOMPATIBLE",
             ValidationExceptionType::EncryptionMethodContainerTypeMismatch => "ENCRYPTION_METHOD_CONTAINER_TYPE_MISMATCH",
             ValidationExceptionType::EndTimeEarlierThanStartTime => "END_TIME_EARLIER_THAN_START_TIME",
+            ValidationExceptionType::GetSecretValueDenied => "GET_SECRET_VALUE_DENIED",
             ValidationExceptionType::HarvestedManifestHasStartEndFilterConfiguration => "HARVESTED_MANIFEST_HAS_START_END_FILTER_CONFIGURATION",
             ValidationExceptionType::HarvestedManifestNotFoundOnEndpoint => "HARVESTED_MANIFEST_NOT_FOUND_ON_ENDPOINT",
             ValidationExceptionType::HarvestJobCustomerEndpointReadAccessDenied => "HARVEST_JOB_CUSTOMER_ENDPOINT_READ_ACCESS_DENIED",
@@ -390,12 +455,17 @@ impl ValidationExceptionType {
             ValidationExceptionType::InvalidPaginationToken => "INVALID_PAGINATION_TOKEN",
             ValidationExceptionType::InvalidPolicy => "INVALID_POLICY",
             ValidationExceptionType::InvalidRoleArn => "INVALID_ROLE_ARN",
+            ValidationExceptionType::InvalidSecret => "INVALID_SECRET",
+            ValidationExceptionType::InvalidSecretFormat => "INVALID_SECRET_FORMAT",
+            ValidationExceptionType::InvalidSecretKey => "INVALID_SECRET_KEY",
+            ValidationExceptionType::InvalidSecretValue => "INVALID_SECRET_VALUE",
             ValidationExceptionType::InvalidTimeDelaySeconds => "INVALID_TIME_DELAY_SECONDS",
             ValidationExceptionType::IsmContainerTypeWithDashManifest => "ISM_CONTAINER_TYPE_WITH_DASH_MANIFEST",
             ValidationExceptionType::IsmContainerTypeWithHlsManifest => "ISM_CONTAINER_TYPE_WITH_HLS_MANIFEST",
             ValidationExceptionType::IsmContainerTypeWithLlHlsManifest => "ISM_CONTAINER_TYPE_WITH_LL_HLS_MANIFEST",
             ValidationExceptionType::IsmContainerTypeWithScte => "ISM_CONTAINER_TYPE_WITH_SCTE",
             ValidationExceptionType::IsmContainerWithKeyRotation => "ISM_CONTAINER_WITH_KEY_ROTATION",
+            ValidationExceptionType::MalformedSecretArn => "MALFORMED_SECRET_ARN",
             ValidationExceptionType::ManifestDrmSystemsIncompatible => "MANIFEST_DRM_SYSTEMS_INCOMPATIBLE",
             ValidationExceptionType::ManifestNameCollision => "MANIFEST_NAME_COLLISION",
             ValidationExceptionType::MemberDoesNotMatchPattern => "MEMBER_DOES_NOT_MATCH_PATTERN",
@@ -418,10 +488,15 @@ impl ValidationExceptionType {
             ValidationExceptionType::RoleArnInvalidFormat => "ROLE_ARN_INVALID_FORMAT",
             ValidationExceptionType::RoleArnLengthOutOfRange => "ROLE_ARN_LENGTH_OUT_OF_RANGE",
             ValidationExceptionType::RoleArnNotAssumable => "ROLE_ARN_NOT_ASSUMABLE",
+            ValidationExceptionType::SecretArnResourceNotFound => "SECRET_ARN_RESOURCE_NOT_FOUND",
+            ValidationExceptionType::SecretFromDifferentAccount => "SECRET_FROM_DIFFERENT_ACCOUNT",
+            ValidationExceptionType::SecretFromDifferentRegion => "SECRET_FROM_DIFFERENT_REGION",
+            ValidationExceptionType::SecretIsNotOneKeyValuePair => "SECRET_IS_NOT_ONE_KEY_VALUE_PAIR",
             ValidationExceptionType::SourceDisruptionsEnabledIncorrectly => "SOURCE_DISRUPTIONS_ENABLED_INCORRECTLY",
             ValidationExceptionType::StartTagTimeOffsetInvalid => "START_TAG_TIME_OFFSET_INVALID",
             ValidationExceptionType::TimingSourceMissing => "TIMING_SOURCE_MISSING",
             ValidationExceptionType::TooManyInProgressHarvestJobs => "TOO_MANY_IN_PROGRESS_HARVEST_JOBS",
+            ValidationExceptionType::TooManySecrets => "TOO_MANY_SECRETS",
             ValidationExceptionType::TsContainerTypeWithDashManifest => "TS_CONTAINER_TYPE_WITH_DASH_MANIFEST",
             ValidationExceptionType::TsContainerTypeWithMssManifest => "TS_CONTAINER_TYPE_WITH_MSS_MANIFEST",
             ValidationExceptionType::UpdatePeriodSmallerThanSegmentDuration => "UPDATE_PERIOD_SMALLER_THAN_SEGMENT_DURATION",
@@ -440,21 +515,26 @@ impl ValidationExceptionType {
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
+            "BATCH_GET_SECRET_VALUE_DENIED",
             "CENC_IV_INCOMPATIBLE",
             "CLIP_START_TIME_WITH_START_OR_END",
             "CMAF_CONTAINER_TYPE_WITH_MSS_MANIFEST",
             "CMAF_EXCLUDE_SEGMENT_DRM_METADATA_INCOMPATIBLE_CONTAINER_TYPE",
             "CONTAINER_TYPE_IMMUTABLE",
             "DASH_DVB_ATTRIBUTES_WITHOUT_DVB_DASH_PROFILE",
+            "DECRYPT_SECRET_FAILED",
+            "DESCRIBE_SECRET_DENIED",
             "DIRECT_MODE_WITH_TIMING_SOURCE",
             "DRM_SIGNALING_MISMATCH_SEGMENT_ENCRYPTION_STATUS",
             "DRM_SYSTEMS_ENCRYPTION_METHOD_INCOMPATIBLE",
+            "DUPLICATED_SECRET",
             "ENCRYPTION_CONTRACT_SHARED",
             "ENCRYPTION_CONTRACT_UNENCRYPTED",
             "ENCRYPTION_CONTRACT_WITHOUT_AUDIO_RENDITION_INCOMPATIBLE",
             "ENCRYPTION_CONTRACT_WITH_ISM_CONTAINER_INCOMPATIBLE",
             "ENCRYPTION_METHOD_CONTAINER_TYPE_MISMATCH",
             "END_TIME_EARLIER_THAN_START_TIME",
+            "GET_SECRET_VALUE_DENIED",
             "HARVESTED_MANIFEST_HAS_START_END_FILTER_CONFIGURATION",
             "HARVESTED_MANIFEST_NOT_FOUND_ON_ENDPOINT",
             "HARVEST_JOB_CUSTOMER_ENDPOINT_READ_ACCESS_DENIED",
@@ -470,12 +550,17 @@ impl ValidationExceptionType {
             "INVALID_PAGINATION_TOKEN",
             "INVALID_POLICY",
             "INVALID_ROLE_ARN",
+            "INVALID_SECRET",
+            "INVALID_SECRET_FORMAT",
+            "INVALID_SECRET_KEY",
+            "INVALID_SECRET_VALUE",
             "INVALID_TIME_DELAY_SECONDS",
             "ISM_CONTAINER_TYPE_WITH_DASH_MANIFEST",
             "ISM_CONTAINER_TYPE_WITH_HLS_MANIFEST",
             "ISM_CONTAINER_TYPE_WITH_LL_HLS_MANIFEST",
             "ISM_CONTAINER_TYPE_WITH_SCTE",
             "ISM_CONTAINER_WITH_KEY_ROTATION",
+            "MALFORMED_SECRET_ARN",
             "MANIFEST_DRM_SYSTEMS_INCOMPATIBLE",
             "MANIFEST_NAME_COLLISION",
             "MEMBER_DOES_NOT_MATCH_PATTERN",
@@ -496,10 +581,15 @@ impl ValidationExceptionType {
             "ROLE_ARN_INVALID_FORMAT",
             "ROLE_ARN_LENGTH_OUT_OF_RANGE",
             "ROLE_ARN_NOT_ASSUMABLE",
+            "SECRET_ARN_RESOURCE_NOT_FOUND",
+            "SECRET_FROM_DIFFERENT_ACCOUNT",
+            "SECRET_FROM_DIFFERENT_REGION",
+            "SECRET_IS_NOT_ONE_KEY_VALUE_PAIR",
             "SOURCE_DISRUPTIONS_ENABLED_INCORRECTLY",
             "START_TAG_TIME_OFFSET_INVALID",
             "TIMING_SOURCE_MISSING",
             "TOO_MANY_IN_PROGRESS_HARVEST_JOBS",
+            "TOO_MANY_SECRETS",
             "TS_CONTAINER_TYPE_WITH_DASH_MANIFEST",
             "TS_CONTAINER_TYPE_WITH_MSS_MANIFEST",
             "UPDATE_PERIOD_SMALLER_THAN_SEGMENT_DURATION",
@@ -535,6 +625,7 @@ impl ValidationExceptionType {
 impl ::std::fmt::Display for ValidationExceptionType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            ValidationExceptionType::BatchGetSecretValueDenied => write!(f, "BATCH_GET_SECRET_VALUE_DENIED"),
             ValidationExceptionType::CencIvIncompatible => write!(f, "CENC_IV_INCOMPATIBLE"),
             ValidationExceptionType::ClipStartTimeWithStartOrEnd => write!(f, "CLIP_START_TIME_WITH_START_OR_END"),
             ValidationExceptionType::CmafContainerTypeWithMssManifest => write!(f, "CMAF_CONTAINER_TYPE_WITH_MSS_MANIFEST"),
@@ -543,9 +634,12 @@ impl ::std::fmt::Display for ValidationExceptionType {
             }
             ValidationExceptionType::ContainerTypeImmutable => write!(f, "CONTAINER_TYPE_IMMUTABLE"),
             ValidationExceptionType::DashDvbAttributesWithoutDvbDashProfile => write!(f, "DASH_DVB_ATTRIBUTES_WITHOUT_DVB_DASH_PROFILE"),
+            ValidationExceptionType::DecryptSecretFailed => write!(f, "DECRYPT_SECRET_FAILED"),
+            ValidationExceptionType::DescribeSecretDenied => write!(f, "DESCRIBE_SECRET_DENIED"),
             ValidationExceptionType::DirectModeWithTimingSource => write!(f, "DIRECT_MODE_WITH_TIMING_SOURCE"),
             ValidationExceptionType::DrmSignalingMismatchSegmentEncryptionStatus => write!(f, "DRM_SIGNALING_MISMATCH_SEGMENT_ENCRYPTION_STATUS"),
             ValidationExceptionType::DrmSystemsEncryptionMethodIncompatible => write!(f, "DRM_SYSTEMS_ENCRYPTION_METHOD_INCOMPATIBLE"),
+            ValidationExceptionType::DuplicatedSecret => write!(f, "DUPLICATED_SECRET"),
             ValidationExceptionType::EncryptionContractShared => write!(f, "ENCRYPTION_CONTRACT_SHARED"),
             ValidationExceptionType::EncryptionContractUnencrypted => write!(f, "ENCRYPTION_CONTRACT_UNENCRYPTED"),
             ValidationExceptionType::EncryptionContractWithoutAudioRenditionIncompatible => {
@@ -556,6 +650,7 @@ impl ::std::fmt::Display for ValidationExceptionType {
             }
             ValidationExceptionType::EncryptionMethodContainerTypeMismatch => write!(f, "ENCRYPTION_METHOD_CONTAINER_TYPE_MISMATCH"),
             ValidationExceptionType::EndTimeEarlierThanStartTime => write!(f, "END_TIME_EARLIER_THAN_START_TIME"),
+            ValidationExceptionType::GetSecretValueDenied => write!(f, "GET_SECRET_VALUE_DENIED"),
             ValidationExceptionType::HarvestedManifestHasStartEndFilterConfiguration => {
                 write!(f, "HARVESTED_MANIFEST_HAS_START_END_FILTER_CONFIGURATION")
             }
@@ -573,12 +668,17 @@ impl ::std::fmt::Display for ValidationExceptionType {
             ValidationExceptionType::InvalidPaginationToken => write!(f, "INVALID_PAGINATION_TOKEN"),
             ValidationExceptionType::InvalidPolicy => write!(f, "INVALID_POLICY"),
             ValidationExceptionType::InvalidRoleArn => write!(f, "INVALID_ROLE_ARN"),
+            ValidationExceptionType::InvalidSecret => write!(f, "INVALID_SECRET"),
+            ValidationExceptionType::InvalidSecretFormat => write!(f, "INVALID_SECRET_FORMAT"),
+            ValidationExceptionType::InvalidSecretKey => write!(f, "INVALID_SECRET_KEY"),
+            ValidationExceptionType::InvalidSecretValue => write!(f, "INVALID_SECRET_VALUE"),
             ValidationExceptionType::InvalidTimeDelaySeconds => write!(f, "INVALID_TIME_DELAY_SECONDS"),
             ValidationExceptionType::IsmContainerTypeWithDashManifest => write!(f, "ISM_CONTAINER_TYPE_WITH_DASH_MANIFEST"),
             ValidationExceptionType::IsmContainerTypeWithHlsManifest => write!(f, "ISM_CONTAINER_TYPE_WITH_HLS_MANIFEST"),
             ValidationExceptionType::IsmContainerTypeWithLlHlsManifest => write!(f, "ISM_CONTAINER_TYPE_WITH_LL_HLS_MANIFEST"),
             ValidationExceptionType::IsmContainerTypeWithScte => write!(f, "ISM_CONTAINER_TYPE_WITH_SCTE"),
             ValidationExceptionType::IsmContainerWithKeyRotation => write!(f, "ISM_CONTAINER_WITH_KEY_ROTATION"),
+            ValidationExceptionType::MalformedSecretArn => write!(f, "MALFORMED_SECRET_ARN"),
             ValidationExceptionType::ManifestDrmSystemsIncompatible => write!(f, "MANIFEST_DRM_SYSTEMS_INCOMPATIBLE"),
             ValidationExceptionType::ManifestNameCollision => write!(f, "MANIFEST_NAME_COLLISION"),
             ValidationExceptionType::MemberDoesNotMatchPattern => write!(f, "MEMBER_DOES_NOT_MATCH_PATTERN"),
@@ -605,10 +705,15 @@ impl ::std::fmt::Display for ValidationExceptionType {
             ValidationExceptionType::RoleArnInvalidFormat => write!(f, "ROLE_ARN_INVALID_FORMAT"),
             ValidationExceptionType::RoleArnLengthOutOfRange => write!(f, "ROLE_ARN_LENGTH_OUT_OF_RANGE"),
             ValidationExceptionType::RoleArnNotAssumable => write!(f, "ROLE_ARN_NOT_ASSUMABLE"),
+            ValidationExceptionType::SecretArnResourceNotFound => write!(f, "SECRET_ARN_RESOURCE_NOT_FOUND"),
+            ValidationExceptionType::SecretFromDifferentAccount => write!(f, "SECRET_FROM_DIFFERENT_ACCOUNT"),
+            ValidationExceptionType::SecretFromDifferentRegion => write!(f, "SECRET_FROM_DIFFERENT_REGION"),
+            ValidationExceptionType::SecretIsNotOneKeyValuePair => write!(f, "SECRET_IS_NOT_ONE_KEY_VALUE_PAIR"),
             ValidationExceptionType::SourceDisruptionsEnabledIncorrectly => write!(f, "SOURCE_DISRUPTIONS_ENABLED_INCORRECTLY"),
             ValidationExceptionType::StartTagTimeOffsetInvalid => write!(f, "START_TAG_TIME_OFFSET_INVALID"),
             ValidationExceptionType::TimingSourceMissing => write!(f, "TIMING_SOURCE_MISSING"),
             ValidationExceptionType::TooManyInProgressHarvestJobs => write!(f, "TOO_MANY_IN_PROGRESS_HARVEST_JOBS"),
+            ValidationExceptionType::TooManySecrets => write!(f, "TOO_MANY_SECRETS"),
             ValidationExceptionType::TsContainerTypeWithDashManifest => write!(f, "TS_CONTAINER_TYPE_WITH_DASH_MANIFEST"),
             ValidationExceptionType::TsContainerTypeWithMssManifest => write!(f, "TS_CONTAINER_TYPE_WITH_MSS_MANIFEST"),
             ValidationExceptionType::UpdatePeriodSmallerThanSegmentDuration => write!(f, "UPDATE_PERIOD_SMALLER_THAN_SEGMENT_DURATION"),

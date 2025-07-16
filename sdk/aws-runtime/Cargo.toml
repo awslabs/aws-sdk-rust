@@ -32,7 +32,7 @@ tracing = "0.1.40"
 
 [dependencies.aws-credential-types]
 path = "../aws-credential-types"
-version = "1.2.3"
+version = "1.2.4"
 
 [dependencies.aws-sigv4]
 path = "../aws-sigv4"
@@ -106,7 +106,7 @@ tracing-test = "0.2.4"
 [dev-dependencies.aws-credential-types]
 path = "../aws-credential-types"
 features = ["test-util"]
-version = "1.2.3"
+version = "1.2.4"
 
 [dev-dependencies.aws-smithy-async]
 path = "../aws-smithy-async"

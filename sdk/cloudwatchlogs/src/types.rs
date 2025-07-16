@@ -103,6 +103,8 @@ pub use crate::types::_distribution::Distribution;
 
 pub use crate::types::_resource_policy::ResourcePolicy;
 
+pub use crate::types::_policy_scope::PolicyScope;
+
 pub use crate::types::_metric_transformation::MetricTransformation;
 
 pub use crate::types::_standard_unit::StandardUnit;
@@ -410,6 +412,8 @@ mod _parse_waf;
 mod _pattern_token;
 
 mod _policy;
+
+mod _policy_scope;
 
 mod _policy_type;
 

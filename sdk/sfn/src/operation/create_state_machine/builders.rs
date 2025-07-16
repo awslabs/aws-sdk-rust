@@ -126,7 +126,11 @@ impl CreateStateMachineFluentBuilder {
     /// <li>
     /// <p>special characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code></p></li>
     /// <li>
-    /// <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p></li>
+    /// <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>, <code>U+FFFE-FFFF</code>)</p></li>
+    /// <li>
+    /// <p>surrogates (<code>U+D800-DFFF</code>)</p></li>
+    /// <li>
+    /// <p>invalid characters (<code> U+10FFFF</code>)</p></li>
     /// </ul>
     /// <p>To enable logging with CloudWatch Logs, the name should only contain 0-9, A-Z, a-z, - and _.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -145,7 +149,11 @@ impl CreateStateMachineFluentBuilder {
     /// <li>
     /// <p>special characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code></p></li>
     /// <li>
-    /// <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p></li>
+    /// <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>, <code>U+FFFE-FFFF</code>)</p></li>
+    /// <li>
+    /// <p>surrogates (<code>U+D800-DFFF</code>)</p></li>
+    /// <li>
+    /// <p>invalid characters (<code> U+10FFFF</code>)</p></li>
     /// </ul>
     /// <p>To enable logging with CloudWatch Logs, the name should only contain 0-9, A-Z, a-z, - and _.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -164,7 +172,11 @@ impl CreateStateMachineFluentBuilder {
     /// <li>
     /// <p>special characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code></p></li>
     /// <li>
-    /// <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p></li>
+    /// <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>, <code>U+FFFE-FFFF</code>)</p></li>
+    /// <li>
+    /// <p>surrogates (<code>U+D800-DFFF</code>)</p></li>
+    /// <li>
+    /// <p>invalid characters (<code> U+10FFFF</code>)</p></li>
     /// </ul>
     /// <p>To enable logging with CloudWatch Logs, the name should only contain 0-9, A-Z, a-z, - and _.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {

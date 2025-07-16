@@ -155,7 +155,7 @@ impl DescribeLogGroupsFluentBuilder {
     pub fn get_log_group_name_prefix(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_log_group_name_prefix()
     }
-    /// <p>If you specify a string for this parameter, the operation returns only log groups that have names that match the string based on a case-sensitive substring search. For example, if you specify <code>Foo</code>, log groups named <code>FooBar</code>, <code>aws/Foo</code>, and <code>GroupFoo</code> would match, but <code>foo</code>, <code>F/o/o</code> and <code>Froo</code> would not match.</p>
+    /// <p>If you specify a string for this parameter, the operation returns only log groups that have names that match the string based on a case-sensitive substring search. For example, if you specify <code>DataLogs</code>, log groups named <code>DataLogs</code>, <code>aws/DataLogs</code>, and <code>GroupDataLogs</code> would match, but <code>datalogs</code>, <code>Data/log/s</code> and <code>Groupdata</code> would not match.</p>
     /// <p>If you specify <code>logGroupNamePattern</code> in your request, then only <code>arn</code>, <code>creationTime</code>, and <code>logGroupName</code> are included in the response.</p><note>
     /// <p><code>logGroupNamePattern</code> and <code>logGroupNamePrefix</code> are mutually exclusive. Only one of these parameters can be passed.</p>
     /// </note>
@@ -163,7 +163,7 @@ impl DescribeLogGroupsFluentBuilder {
         self.inner = self.inner.log_group_name_pattern(input.into());
         self
     }
-    /// <p>If you specify a string for this parameter, the operation returns only log groups that have names that match the string based on a case-sensitive substring search. For example, if you specify <code>Foo</code>, log groups named <code>FooBar</code>, <code>aws/Foo</code>, and <code>GroupFoo</code> would match, but <code>foo</code>, <code>F/o/o</code> and <code>Froo</code> would not match.</p>
+    /// <p>If you specify a string for this parameter, the operation returns only log groups that have names that match the string based on a case-sensitive substring search. For example, if you specify <code>DataLogs</code>, log groups named <code>DataLogs</code>, <code>aws/DataLogs</code>, and <code>GroupDataLogs</code> would match, but <code>datalogs</code>, <code>Data/log/s</code> and <code>Groupdata</code> would not match.</p>
     /// <p>If you specify <code>logGroupNamePattern</code> in your request, then only <code>arn</code>, <code>creationTime</code>, and <code>logGroupName</code> are included in the response.</p><note>
     /// <p><code>logGroupNamePattern</code> and <code>logGroupNamePrefix</code> are mutually exclusive. Only one of these parameters can be passed.</p>
     /// </note>
@@ -171,7 +171,7 @@ impl DescribeLogGroupsFluentBuilder {
         self.inner = self.inner.set_log_group_name_pattern(input);
         self
     }
-    /// <p>If you specify a string for this parameter, the operation returns only log groups that have names that match the string based on a case-sensitive substring search. For example, if you specify <code>Foo</code>, log groups named <code>FooBar</code>, <code>aws/Foo</code>, and <code>GroupFoo</code> would match, but <code>foo</code>, <code>F/o/o</code> and <code>Froo</code> would not match.</p>
+    /// <p>If you specify a string for this parameter, the operation returns only log groups that have names that match the string based on a case-sensitive substring search. For example, if you specify <code>DataLogs</code>, log groups named <code>DataLogs</code>, <code>aws/DataLogs</code>, and <code>GroupDataLogs</code> would match, but <code>datalogs</code>, <code>Data/log/s</code> and <code>Groupdata</code> would not match.</p>
     /// <p>If you specify <code>logGroupNamePattern</code> in your request, then only <code>arn</code>, <code>creationTime</code>, and <code>logGroupName</code> are included in the response.</p><note>
     /// <p><code>logGroupNamePattern</code> and <code>logGroupNamePrefix</code> are mutually exclusive. Only one of these parameters can be passed.</p>
     /// </note>

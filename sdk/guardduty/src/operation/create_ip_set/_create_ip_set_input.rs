@@ -19,6 +19,8 @@ pub struct CreateIpSetInput {
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>The tags to be added to a new IP set resource.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    /// <p>The Amazon Web Services account ID that owns the Amazon S3 bucket specified in the <b>location</b> parameter.</p>
+    pub expected_bucket_owner: ::std::option::Option<::std::string::String>,
 }
 impl CreateIpSetInput {
     /// <p>The unique ID of the detector of the GuardDuty account for which you want to create an IPSet.</p>
@@ -51,6 +53,10 @@ impl CreateIpSetInput {
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
+    /// <p>The Amazon Web Services account ID that owns the Amazon S3 bucket specified in the <b>location</b> parameter.</p>
+    pub fn expected_bucket_owner(&self) -> ::std::option::Option<&str> {
+        self.expected_bucket_owner.as_deref()
+    }
 }
 impl CreateIpSetInput {
     /// Creates a new builder-style object to manufacture [`CreateIpSetInput`](crate::operation::create_ip_set::CreateIpSetInput).
@@ -70,6 +76,7 @@ pub struct CreateIpSetInputBuilder {
     pub(crate) activate: ::std::option::Option<bool>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) expected_bucket_owner: ::std::option::Option<::std::string::String>,
 }
 impl CreateIpSetInputBuilder {
     /// <p>The unique ID of the detector of the GuardDuty account for which you want to create an IPSet.</p>
@@ -187,6 +194,20 @@ impl CreateIpSetInputBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
+    /// <p>The Amazon Web Services account ID that owns the Amazon S3 bucket specified in the <b>location</b> parameter.</p>
+    pub fn expected_bucket_owner(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.expected_bucket_owner = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Web Services account ID that owns the Amazon S3 bucket specified in the <b>location</b> parameter.</p>
+    pub fn set_expected_bucket_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.expected_bucket_owner = input;
+        self
+    }
+    /// <p>The Amazon Web Services account ID that owns the Amazon S3 bucket specified in the <b>location</b> parameter.</p>
+    pub fn get_expected_bucket_owner(&self) -> &::std::option::Option<::std::string::String> {
+        &self.expected_bucket_owner
+    }
     /// Consumes the builder and constructs a [`CreateIpSetInput`](crate::operation::create_ip_set::CreateIpSetInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::create_ip_set::CreateIpSetInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_ip_set::CreateIpSetInput {
@@ -197,6 +218,7 @@ impl CreateIpSetInputBuilder {
             activate: self.activate,
             client_token: self.client_token,
             tags: self.tags,
+            expected_bucket_owner: self.expected_bucket_owner,
         })
     }
 }

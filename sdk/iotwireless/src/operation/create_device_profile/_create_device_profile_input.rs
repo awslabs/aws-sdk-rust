@@ -3,7 +3,9 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateDeviceProfileInput {
-    /// <p>The name of the new resource.</p>
+    /// <p>The name of the new resource.</p><note>
+    /// <p>The following special characters aren't accepted: <code>&lt;&gt;^#~$</code></p>
+    /// </note>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The device profile information to use to create the device profile.</p>
     pub lo_ra_wan: ::std::option::Option<crate::types::LoRaWanDeviceProfile>,
@@ -15,7 +17,9 @@ pub struct CreateDeviceProfileInput {
     pub sidewalk: ::std::option::Option<crate::types::SidewalkCreateDeviceProfile>,
 }
 impl CreateDeviceProfileInput {
-    /// <p>The name of the new resource.</p>
+    /// <p>The name of the new resource.</p><note>
+    /// <p>The following special characters aren't accepted: <code>&lt;&gt;^#~$</code></p>
+    /// </note>
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
@@ -56,17 +60,23 @@ pub struct CreateDeviceProfileInputBuilder {
     pub(crate) sidewalk: ::std::option::Option<crate::types::SidewalkCreateDeviceProfile>,
 }
 impl CreateDeviceProfileInputBuilder {
-    /// <p>The name of the new resource.</p>
+    /// <p>The name of the new resource.</p><note>
+    /// <p>The following special characters aren't accepted: <code>&lt;&gt;^#~$</code></p>
+    /// </note>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the new resource.</p>
+    /// <p>The name of the new resource.</p><note>
+    /// <p>The following special characters aren't accepted: <code>&lt;&gt;^#~$</code></p>
+    /// </note>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
-    /// <p>The name of the new resource.</p>
+    /// <p>The name of the new resource.</p><note>
+    /// <p>The following special characters aren't accepted: <code>&lt;&gt;^#~$</code></p>
+    /// </note>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }

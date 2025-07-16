@@ -11,6 +11,7 @@ impl super::Client {
     ///   - [`location(Option<String>)`](crate::operation::get_ip_set::GetIpSetOutput::location): <p>The URI of the file that contains the IPSet.</p>
     ///   - [`status(Option<IpSetStatus>)`](crate::operation::get_ip_set::GetIpSetOutput::status): <p>The status of IPSet file that was uploaded.</p>
     ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::get_ip_set::GetIpSetOutput::tags): <p>The tags of the IPSet resource.</p>
+    ///   - [`expected_bucket_owner(Option<String>)`](crate::operation::get_ip_set::GetIpSetOutput::expected_bucket_owner): <p>The Amazon Web Services account ID that owns the Amazon S3 bucket specified in the <b>location</b> parameter. This field appears in the response only if it was provided during IPSet creation or update.</p>
     /// - On failure, responds with [`SdkError<GetIPSetError>`](crate::operation::get_ip_set::GetIPSetError)
     pub fn get_ip_set(&self) -> crate::operation::get_ip_set::builders::GetIPSetFluentBuilder {
         crate::operation::get_ip_set::builders::GetIPSetFluentBuilder::new(self.handle.clone())

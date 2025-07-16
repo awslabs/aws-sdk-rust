@@ -165,17 +165,17 @@ impl UpdateLocationObjectStorageFluentBuilder {
     pub fn get_subdirectory(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_subdirectory()
     }
-    /// <p>Specifies the domain name or IP version 4 (IPv4) address of the object storage server that your DataSync agent connects to.</p>
+    /// <p>Specifies the domain name or IP address (IPv4 or IPv6) of the object storage server that your DataSync agent connects to.</p>
     pub fn server_hostname(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.server_hostname(input.into());
         self
     }
-    /// <p>Specifies the domain name or IP version 4 (IPv4) address of the object storage server that your DataSync agent connects to.</p>
+    /// <p>Specifies the domain name or IP address (IPv4 or IPv6) of the object storage server that your DataSync agent connects to.</p>
     pub fn set_server_hostname(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_server_hostname(input);
         self
     }
-    /// <p>Specifies the domain name or IP version 4 (IPv4) address of the object storage server that your DataSync agent connects to.</p>
+    /// <p>Specifies the domain name or IP address (IPv4 or IPv6) of the object storage server that your DataSync agent connects to.</p>
     pub fn get_server_hostname(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_server_hostname()
     }
@@ -193,17 +193,23 @@ impl UpdateLocationObjectStorageFluentBuilder {
     pub fn get_access_key(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_access_key()
     }
-    /// <p>Specifies the secret key (for example, a password) if credentials are required to authenticate with the object storage server.</p>
+    /// <p>Specifies the secret key (for example, a password) if credentials are required to authenticate with the object storage server.</p><note>
+    /// <p>If you provide a secret using <code>SecretKey</code>, but do not provide secret configuration details using <code>CmkSecretConfig</code> or <code>CustomSecretConfig</code>, then DataSync stores the token using your Amazon Web Services account's Secrets Manager secret.</p>
+    /// </note>
     pub fn secret_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.secret_key(input.into());
         self
     }
-    /// <p>Specifies the secret key (for example, a password) if credentials are required to authenticate with the object storage server.</p>
+    /// <p>Specifies the secret key (for example, a password) if credentials are required to authenticate with the object storage server.</p><note>
+    /// <p>If you provide a secret using <code>SecretKey</code>, but do not provide secret configuration details using <code>CmkSecretConfig</code> or <code>CustomSecretConfig</code>, then DataSync stores the token using your Amazon Web Services account's Secrets Manager secret.</p>
+    /// </note>
     pub fn set_secret_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_secret_key(input);
         self
     }
-    /// <p>Specifies the secret key (for example, a password) if credentials are required to authenticate with the object storage server.</p>
+    /// <p>Specifies the secret key (for example, a password) if credentials are required to authenticate with the object storage server.</p><note>
+    /// <p>If you provide a secret using <code>SecretKey</code>, but do not provide secret configuration details using <code>CmkSecretConfig</code> or <code>CustomSecretConfig</code>, then DataSync stores the token using your Amazon Web Services account's Secrets Manager secret.</p>
+    /// </note>
     pub fn get_secret_key(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_secret_key()
     }

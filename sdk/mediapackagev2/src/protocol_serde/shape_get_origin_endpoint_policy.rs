@@ -138,6 +138,10 @@ pub(crate) fn de_get_origin_endpoint_policy(
         match tokens.next().transpose()? {
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                "CdnAuthConfiguration" => {
+                    builder =
+                        builder.set_cdn_auth_configuration(crate::protocol_serde::shape_cdn_auth_configuration::de_cdn_auth_configuration(tokens)?);
+                }
                 "ChannelGroupName" => {
                     builder = builder.set_channel_group_name(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
