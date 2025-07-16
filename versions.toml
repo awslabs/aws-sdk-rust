@@ -2663,5 +2663,9 @@ source_hash = 'bfe54488e7b6049d72a6383d5b03bcb3448e9fe84ac2363775f0b8c22d935635'
 category = 'AwsRuntime'
 version = '0.0.0'
 source_hash = '7581e2c90ebb2b84dc1a89353651a8f020eae052ef4c14474acb5f86fa15f0e5'
+
+[release]
+tag = 'release-2025-07-16'
+
 [release.crates]
 aws-sdk-ecs = '1.88.0'
