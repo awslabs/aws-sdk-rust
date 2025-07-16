@@ -18,9 +18,6 @@ pub fn ser_deployment_lifecycle_hook(
         }
         array_4.finish();
     }
-    if let Some(var_6) = &input.hook_details {
-        object.key("hookDetails").document(var_6);
-    }
     Ok(())
 }
 
@@ -57,9 +54,6 @@ where
                             builder = builder.set_lifecycle_stages(
                                 crate::protocol_serde::shape_deployment_lifecycle_hook_stage_list::de_deployment_lifecycle_hook_stage_list(tokens)?,
                             );
-                        }
-                        "hookDetails" => {
-                            builder = builder.set_hook_details(Some(::aws_smithy_json::deserialize::token::expect_document(tokens)?));
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

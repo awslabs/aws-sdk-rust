@@ -6,9 +6,9 @@
 pub struct AdvancedConfiguration {
     /// <p>The Amazon Resource Name (ARN) of the alternate target group for Amazon ECS blue/green deployments.</p>
     pub alternate_target_group_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) that identifies the production listener rule for routing production traffic.</p>
+    /// <p>The Amazon Resource Name (ARN) that that identifies the production listener rule (in the case of an Application Load Balancer) or listener (in the case for an Network Load Balancer) for routing production traffic.</p>
     pub production_listener_rule: ::std::option::Option<::std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) that identifies the test listener rule or listener for routing test traffic.</p>
+    /// <p>The Amazon Resource Name (ARN) that identifies ) that identifies the test listener rule (in the case of an Application Load Balancer) or listener (in the case for an Network Load Balancer) for routing test traffic.</p>
     pub test_listener_rule: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the IAM role that grants Amazon ECS permission to call the Elastic Load Balancing APIs for you.</p>
     pub role_arn: ::std::option::Option<::std::string::String>,
@@ -18,11 +18,11 @@ impl AdvancedConfiguration {
     pub fn alternate_target_group_arn(&self) -> ::std::option::Option<&str> {
         self.alternate_target_group_arn.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) that identifies the production listener rule for routing production traffic.</p>
+    /// <p>The Amazon Resource Name (ARN) that that identifies the production listener rule (in the case of an Application Load Balancer) or listener (in the case for an Network Load Balancer) for routing production traffic.</p>
     pub fn production_listener_rule(&self) -> ::std::option::Option<&str> {
         self.production_listener_rule.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) that identifies the test listener rule or listener for routing test traffic.</p>
+    /// <p>The Amazon Resource Name (ARN) that identifies ) that identifies the test listener rule (in the case of an Application Load Balancer) or listener (in the case for an Network Load Balancer) for routing test traffic.</p>
     pub fn test_listener_rule(&self) -> ::std::option::Option<&str> {
         self.test_listener_rule.as_deref()
     }
@@ -62,31 +62,31 @@ impl AdvancedConfigurationBuilder {
     pub fn get_alternate_target_group_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.alternate_target_group_arn
     }
-    /// <p>The Amazon Resource Name (ARN) that identifies the production listener rule for routing production traffic.</p>
+    /// <p>The Amazon Resource Name (ARN) that that identifies the production listener rule (in the case of an Application Load Balancer) or listener (in the case for an Network Load Balancer) for routing production traffic.</p>
     pub fn production_listener_rule(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.production_listener_rule = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) that identifies the production listener rule for routing production traffic.</p>
+    /// <p>The Amazon Resource Name (ARN) that that identifies the production listener rule (in the case of an Application Load Balancer) or listener (in the case for an Network Load Balancer) for routing production traffic.</p>
     pub fn set_production_listener_rule(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.production_listener_rule = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) that identifies the production listener rule for routing production traffic.</p>
+    /// <p>The Amazon Resource Name (ARN) that that identifies the production listener rule (in the case of an Application Load Balancer) or listener (in the case for an Network Load Balancer) for routing production traffic.</p>
     pub fn get_production_listener_rule(&self) -> &::std::option::Option<::std::string::String> {
         &self.production_listener_rule
     }
-    /// <p>The Amazon Resource Name (ARN) that identifies the test listener rule or listener for routing test traffic.</p>
+    /// <p>The Amazon Resource Name (ARN) that identifies ) that identifies the test listener rule (in the case of an Application Load Balancer) or listener (in the case for an Network Load Balancer) for routing test traffic.</p>
     pub fn test_listener_rule(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.test_listener_rule = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) that identifies the test listener rule or listener for routing test traffic.</p>
+    /// <p>The Amazon Resource Name (ARN) that identifies ) that identifies the test listener rule (in the case of an Application Load Balancer) or listener (in the case for an Network Load Balancer) for routing test traffic.</p>
     pub fn set_test_listener_rule(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.test_listener_rule = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) that identifies the test listener rule or listener for routing test traffic.</p>
+    /// <p>The Amazon Resource Name (ARN) that identifies ) that identifies the test listener rule (in the case of an Application Load Balancer) or listener (in the case for an Network Load Balancer) for routing test traffic.</p>
     pub fn get_test_listener_rule(&self) -> &::std::option::Option<::std::string::String> {
         &self.test_listener_rule
     }
