@@ -17,6 +17,8 @@ pub use crate::types::_retry_config_input::RetryConfigInputBuilder;
 
 pub use crate::types::_canary_code_input::CanaryCodeInputBuilder;
 
+pub use crate::types::_dependency::DependencyBuilder;
+
 pub use crate::types::_dry_run_config_output::DryRunConfigOutputBuilder;
 
 pub use crate::types::_group_summary::GroupSummaryBuilder;

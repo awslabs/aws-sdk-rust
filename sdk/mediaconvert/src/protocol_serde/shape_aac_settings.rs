@@ -18,23 +18,38 @@ pub fn ser_aac_settings(
     if let Some(var_4) = &input.coding_mode {
         object.key("codingMode").string(var_4.as_str());
     }
-    if let Some(var_5) = &input.rate_control_mode {
-        object.key("rateControlMode").string(var_5.as_str());
+    if let Some(var_5) = &input.loudness_measurement_mode {
+        object.key("loudnessMeasurementMode").string(var_5.as_str());
     }
-    if let Some(var_6) = &input.raw_format {
-        object.key("rawFormat").string(var_6.as_str());
-    }
-    if let Some(var_7) = &input.sample_rate {
-        object.key("sampleRate").number(
+    if let Some(var_6) = &input.rap_interval {
+        object.key("rapInterval").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_7).into()),
+            ::aws_smithy_types::Number::NegInt((*var_6).into()),
         );
     }
-    if let Some(var_8) = &input.specification {
-        object.key("specification").string(var_8.as_str());
+    if let Some(var_7) = &input.rate_control_mode {
+        object.key("rateControlMode").string(var_7.as_str());
     }
-    if let Some(var_9) = &input.vbr_quality {
-        object.key("vbrQuality").string(var_9.as_str());
+    if let Some(var_8) = &input.raw_format {
+        object.key("rawFormat").string(var_8.as_str());
+    }
+    if let Some(var_9) = &input.sample_rate {
+        object.key("sampleRate").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_9).into()),
+        );
+    }
+    if let Some(var_10) = &input.specification {
+        object.key("specification").string(var_10.as_str());
+    }
+    if let Some(var_11) = &input.target_loudness_range {
+        object.key("targetLoudnessRange").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_11).into()),
+        );
+    }
+    if let Some(var_12) = &input.vbr_quality {
+        object.key("vbrQuality").string(var_12.as_str());
     }
     Ok(())
 }
@@ -85,6 +100,20 @@ where
                                     .transpose()?,
                             );
                         }
+                        "loudnessMeasurementMode" => {
+                            builder = builder.set_loudness_measurement_mode(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::AacLoudnessMeasurementMode::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "rapInterval" => {
+                            builder = builder.set_rap_interval(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
+                            );
+                        }
                         "rateControlMode" => {
                             builder = builder.set_rate_control_mode(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
@@ -110,6 +139,13 @@ where
                             builder = builder.set_specification(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| crate::types::AacSpecification::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "targetLoudnessRange" => {
+                            builder = builder.set_target_loudness_range(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
                                     .transpose()?,
                             );
                         }

@@ -28,6 +28,9 @@ where
                                     .transpose()?,
                             );
                         }
+                        "Dependencies" => {
+                            builder = builder.set_dependencies(crate::protocol_serde::shape_dependencies::de_dependencies(tokens)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

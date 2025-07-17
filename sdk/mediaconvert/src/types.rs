@@ -787,6 +787,8 @@ pub use crate::types::_aac_raw_format::AacRawFormat;
 
 pub use crate::types::_aac_rate_control_mode::AacRateControlMode;
 
+pub use crate::types::_aac_loudness_measurement_mode::AacLoudnessMeasurementMode;
+
 pub use crate::types::_aac_coding_mode::AacCodingMode;
 
 pub use crate::types::_aac_codec_profile::AacCodecProfile;
@@ -1290,6 +1292,8 @@ mod _aac_audio_description_broadcaster_mix;
 mod _aac_codec_profile;
 
 mod _aac_coding_mode;
+
+mod _aac_loudness_measurement_mode;
 
 mod _aac_rate_control_mode;
 

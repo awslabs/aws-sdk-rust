@@ -18,5 +18,17 @@ pub fn ser_canary_code_input(
     {
         object.key("Handler").string(input.handler.as_str());
     }
+    if let Some(var_5) = &input.dependencies {
+        let mut array_6 = object.key("Dependencies").start_array();
+        for item_7 in var_5 {
+            {
+                #[allow(unused_mut)]
+                let mut object_8 = array_6.value().start_object();
+                crate::protocol_serde::shape_dependency::ser_dependency(&mut object_8, item_7)?;
+                object_8.finish();
+            }
+        }
+        array_6.finish();
+    }
     Ok(())
 }

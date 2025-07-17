@@ -30,6 +30,9 @@ pub struct DistributionSummary {
     pub custom_error_responses: ::std::option::Option<crate::types::CustomErrorResponses>,
     /// <p>The comment originally specified when this distribution was created.</p>
     pub comment: ::std::string::String,
+    /// <note>
+    /// <p>This field only supports standard distributions. You can't specify this field for multi-tenant distributions. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-config-options.html#unsupported-saas">Unsupported features for SaaS Manager for Amazon CloudFront</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
+    /// </note>
     /// <p>A complex type that contains information about price class for this streaming distribution.</p>
     pub price_class: crate::types::PriceClass,
     /// <p>Whether the distribution is enabled to accept user requests for content.</p>
@@ -49,7 +52,7 @@ pub struct DistributionSummary {
     pub alias_icp_recordals: ::std::option::Option<::std::vec::Vec<crate::types::AliasIcpRecordal>>,
     /// <p>A Boolean that indicates whether this is a staging distribution. When this value is <code>true</code>, this is a staging distribution. When this value is <code>false</code>, this is not a staging distribution.</p>
     pub staging: bool,
-    /// <p>The connection mode to filter distributions by.</p>
+    /// <p>This field specifies whether the connection mode is through a standard distribution (direct) or a multi-tenant distribution with distribution tenants(tenant-only).</p>
     pub connection_mode: ::std::option::Option<crate::types::ConnectionMode>,
     /// <p>ID of the Anycast static IP list that is associated with the distribution.</p>
     pub anycast_ip_list_id: ::std::option::Option<::std::string::String>,
@@ -112,6 +115,9 @@ impl DistributionSummary {
         use std::ops::Deref;
         self.comment.deref()
     }
+    /// <note>
+    /// <p>This field only supports standard distributions. You can't specify this field for multi-tenant distributions. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-config-options.html#unsupported-saas">Unsupported features for SaaS Manager for Amazon CloudFront</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
+    /// </note>
     /// <p>A complex type that contains information about price class for this streaming distribution.</p>
     pub fn price_class(&self) -> &crate::types::PriceClass {
         &self.price_class
@@ -152,7 +158,7 @@ impl DistributionSummary {
     pub fn staging(&self) -> bool {
         self.staging
     }
-    /// <p>The connection mode to filter distributions by.</p>
+    /// <p>This field specifies whether the connection mode is through a standard distribution (direct) or a multi-tenant distribution with distribution tenants(tenant-only).</p>
     pub fn connection_mode(&self) -> ::std::option::Option<&crate::types::ConnectionMode> {
         self.connection_mode.as_ref()
     }
@@ -391,17 +397,26 @@ impl DistributionSummaryBuilder {
     pub fn get_comment(&self) -> &::std::option::Option<::std::string::String> {
         &self.comment
     }
+    /// <note>
+    /// <p>This field only supports standard distributions. You can't specify this field for multi-tenant distributions. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-config-options.html#unsupported-saas">Unsupported features for SaaS Manager for Amazon CloudFront</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
+    /// </note>
     /// <p>A complex type that contains information about price class for this streaming distribution.</p>
     /// This field is required.
     pub fn price_class(mut self, input: crate::types::PriceClass) -> Self {
         self.price_class = ::std::option::Option::Some(input);
         self
     }
+    /// <note>
+    /// <p>This field only supports standard distributions. You can't specify this field for multi-tenant distributions. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-config-options.html#unsupported-saas">Unsupported features for SaaS Manager for Amazon CloudFront</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
+    /// </note>
     /// <p>A complex type that contains information about price class for this streaming distribution.</p>
     pub fn set_price_class(mut self, input: ::std::option::Option<crate::types::PriceClass>) -> Self {
         self.price_class = input;
         self
     }
+    /// <note>
+    /// <p>This field only supports standard distributions. You can't specify this field for multi-tenant distributions. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-config-options.html#unsupported-saas">Unsupported features for SaaS Manager for Amazon CloudFront</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
+    /// </note>
     /// <p>A complex type that contains information about price class for this streaming distribution.</p>
     pub fn get_price_class(&self) -> &::std::option::Option<crate::types::PriceClass> {
         &self.price_class
@@ -534,17 +549,17 @@ impl DistributionSummaryBuilder {
     pub fn get_staging(&self) -> &::std::option::Option<bool> {
         &self.staging
     }
-    /// <p>The connection mode to filter distributions by.</p>
+    /// <p>This field specifies whether the connection mode is through a standard distribution (direct) or a multi-tenant distribution with distribution tenants(tenant-only).</p>
     pub fn connection_mode(mut self, input: crate::types::ConnectionMode) -> Self {
         self.connection_mode = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The connection mode to filter distributions by.</p>
+    /// <p>This field specifies whether the connection mode is through a standard distribution (direct) or a multi-tenant distribution with distribution tenants(tenant-only).</p>
     pub fn set_connection_mode(mut self, input: ::std::option::Option<crate::types::ConnectionMode>) -> Self {
         self.connection_mode = input;
         self
     }
-    /// <p>The connection mode to filter distributions by.</p>
+    /// <p>This field specifies whether the connection mode is through a standard distribution (direct) or a multi-tenant distribution with distribution tenants(tenant-only).</p>
     pub fn get_connection_mode(&self) -> &::std::option::Option<crate::types::ConnectionMode> {
         &self.connection_mode
     }

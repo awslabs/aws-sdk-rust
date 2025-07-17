@@ -8,6 +8,8 @@ pub struct ProtectedQueryInputParameters {
     pub sql_parameters: ::std::option::Option<crate::types::ProtectedQuerySqlParameters>,
     /// <p>Provides configuration information for the workers that will perform the protected query.</p>
     pub compute_configuration: ::std::option::Option<crate::types::ComputeConfiguration>,
+    /// <p>The format in which the query results should be returned. If not specified, defaults to <code>CSV</code>.</p>
+    pub result_format: crate::types::ResultFormat,
 }
 impl ProtectedQueryInputParameters {
     /// <p>The parameters for the SQL type Protected Query.</p>
@@ -18,12 +20,17 @@ impl ProtectedQueryInputParameters {
     pub fn compute_configuration(&self) -> ::std::option::Option<&crate::types::ComputeConfiguration> {
         self.compute_configuration.as_ref()
     }
+    /// <p>The format in which the query results should be returned. If not specified, defaults to <code>CSV</code>.</p>
+    pub fn result_format(&self) -> &crate::types::ResultFormat {
+        &self.result_format
+    }
 }
 impl ::std::fmt::Debug for ProtectedQueryInputParameters {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("ProtectedQueryInputParameters");
         formatter.field("sql_parameters", &"*** Sensitive Data Redacted ***");
         formatter.field("compute_configuration", &self.compute_configuration);
+        formatter.field("result_format", &self.result_format);
         formatter.finish()
     }
 }
@@ -40,6 +47,7 @@ impl ProtectedQueryInputParameters {
 pub struct ProtectedQueryInputParametersBuilder {
     pub(crate) sql_parameters: ::std::option::Option<crate::types::ProtectedQuerySqlParameters>,
     pub(crate) compute_configuration: ::std::option::Option<crate::types::ComputeConfiguration>,
+    pub(crate) result_format: ::std::option::Option<crate::types::ResultFormat>,
 }
 impl ProtectedQueryInputParametersBuilder {
     /// <p>The parameters for the SQL type Protected Query.</p>
@@ -71,11 +79,28 @@ impl ProtectedQueryInputParametersBuilder {
     pub fn get_compute_configuration(&self) -> &::std::option::Option<crate::types::ComputeConfiguration> {
         &self.compute_configuration
     }
+    /// <p>The format in which the query results should be returned. If not specified, defaults to <code>CSV</code>.</p>
+    pub fn result_format(mut self, input: crate::types::ResultFormat) -> Self {
+        self.result_format = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The format in which the query results should be returned. If not specified, defaults to <code>CSV</code>.</p>
+    pub fn set_result_format(mut self, input: ::std::option::Option<crate::types::ResultFormat>) -> Self {
+        self.result_format = input;
+        self
+    }
+    /// <p>The format in which the query results should be returned. If not specified, defaults to <code>CSV</code>.</p>
+    pub fn get_result_format(&self) -> &::std::option::Option<crate::types::ResultFormat> {
+        &self.result_format
+    }
     /// Consumes the builder and constructs a [`ProtectedQueryInputParameters`](crate::types::ProtectedQueryInputParameters).
     pub fn build(self) -> crate::types::ProtectedQueryInputParameters {
         crate::types::ProtectedQueryInputParameters {
             sql_parameters: self.sql_parameters,
             compute_configuration: self.compute_configuration,
+            result_format: self
+                .result_format
+                .unwrap_or("CSV".parse::<crate::types::ResultFormat>().expect("static value validated to member")),
         }
     }
 }
@@ -84,6 +109,7 @@ impl ::std::fmt::Debug for ProtectedQueryInputParametersBuilder {
         let mut formatter = f.debug_struct("ProtectedQueryInputParametersBuilder");
         formatter.field("sql_parameters", &"*** Sensitive Data Redacted ***");
         formatter.field("compute_configuration", &self.compute_configuration);
+        formatter.field("result_format", &self.result_format);
         formatter.finish()
     }
 }

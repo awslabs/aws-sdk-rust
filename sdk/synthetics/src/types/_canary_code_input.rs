@@ -22,6 +22,8 @@ pub struct CanaryCodeInput {
     pub zip_file: ::std::option::Option<::aws_smithy_types::Blob>,
     /// <p>The entry point to use for the source code when running the canary. For canaries that use the <code>syn-python-selenium-1.0</code> runtime or a <code>syn-nodejs.puppeteer</code> runtime earlier than <code>syn-nodejs.puppeteer-3.4</code>, the handler must be specified as <code> <i>fileName</i>.handler</code>. For <code>syn-python-selenium-1.1</code>, <code>syn-nodejs.puppeteer-3.4</code>, and later runtimes, the handler can be specified as <code> <i>fileName</i>.<i>functionName</i> </code>, or you can specify a folder where canary scripts reside as <code> <i>folder</i>/<i>fileName</i>.<i>functionName</i> </code>.</p>
     pub handler: ::std::string::String,
+    /// <p>A list of dependencies that should be used for running this canary. Specify the dependencies as a key-value pair, where the key is the type of dependency and the value is the dependency reference.</p>
+    pub dependencies: ::std::option::Option<::std::vec::Vec<crate::types::Dependency>>,
 }
 impl CanaryCodeInput {
     /// <p>If your canary script is located in Amazon S3, specify the bucket name here. Do not include <code>s3://</code> as the start of the bucket name.</p>
@@ -46,6 +48,12 @@ impl CanaryCodeInput {
         use std::ops::Deref;
         self.handler.deref()
     }
+    /// <p>A list of dependencies that should be used for running this canary. Specify the dependencies as a key-value pair, where the key is the type of dependency and the value is the dependency reference.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.dependencies.is_none()`.
+    pub fn dependencies(&self) -> &[crate::types::Dependency] {
+        self.dependencies.as_deref().unwrap_or_default()
+    }
 }
 impl CanaryCodeInput {
     /// Creates a new builder-style object to manufacture [`CanaryCodeInput`](crate::types::CanaryCodeInput).
@@ -63,6 +71,7 @@ pub struct CanaryCodeInputBuilder {
     pub(crate) s3_version: ::std::option::Option<::std::string::String>,
     pub(crate) zip_file: ::std::option::Option<::aws_smithy_types::Blob>,
     pub(crate) handler: ::std::option::Option<::std::string::String>,
+    pub(crate) dependencies: ::std::option::Option<::std::vec::Vec<crate::types::Dependency>>,
 }
 impl CanaryCodeInputBuilder {
     /// <p>If your canary script is located in Amazon S3, specify the bucket name here. Do not include <code>s3://</code> as the start of the bucket name.</p>
@@ -139,6 +148,26 @@ impl CanaryCodeInputBuilder {
     pub fn get_handler(&self) -> &::std::option::Option<::std::string::String> {
         &self.handler
     }
+    /// Appends an item to `dependencies`.
+    ///
+    /// To override the contents of this collection use [`set_dependencies`](Self::set_dependencies).
+    ///
+    /// <p>A list of dependencies that should be used for running this canary. Specify the dependencies as a key-value pair, where the key is the type of dependency and the value is the dependency reference.</p>
+    pub fn dependencies(mut self, input: crate::types::Dependency) -> Self {
+        let mut v = self.dependencies.unwrap_or_default();
+        v.push(input);
+        self.dependencies = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>A list of dependencies that should be used for running this canary. Specify the dependencies as a key-value pair, where the key is the type of dependency and the value is the dependency reference.</p>
+    pub fn set_dependencies(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Dependency>>) -> Self {
+        self.dependencies = input;
+        self
+    }
+    /// <p>A list of dependencies that should be used for running this canary. Specify the dependencies as a key-value pair, where the key is the type of dependency and the value is the dependency reference.</p>
+    pub fn get_dependencies(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Dependency>> {
+        &self.dependencies
+    }
     /// Consumes the builder and constructs a [`CanaryCodeInput`](crate::types::CanaryCodeInput).
     /// This method will fail if any of the following fields are not set:
     /// - [`handler`](crate::types::builders::CanaryCodeInputBuilder::handler)
@@ -154,6 +183,7 @@ impl CanaryCodeInputBuilder {
                     "handler was not specified but it is required when building CanaryCodeInput",
                 )
             })?,
+            dependencies: self.dependencies,
         })
     }
 }

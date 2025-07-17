@@ -7,3 +7,10 @@ pub(crate) fn base_screenshot_correct_errors(
     }
     builder
 }
+
+pub(crate) fn dependency_correct_errors(mut builder: crate::types::builders::DependencyBuilder) -> crate::types::builders::DependencyBuilder {
+    if builder.reference.is_none() {
+        builder.reference = Some(Default::default())
+    }
+    builder
+}

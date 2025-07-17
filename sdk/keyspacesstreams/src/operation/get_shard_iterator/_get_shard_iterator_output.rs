@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetShardIteratorOutput {
-    /// <p>The unique identifier for the shard iterator. This value is used in the <code>GetRecords</code> operation to retrieve data records from the specified shard. Each shard iterator expires 5 minutes after it is returned to the requester.</p>
+    /// <p>The unique identifier for the shard iterator. This value is used in the <code>GetRecords</code> operation to retrieve data records from the specified shard. Each shard iterator expires 15 minutes after it is returned to the requester.</p>
     pub shard_iterator: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetShardIteratorOutput {
-    /// <p>The unique identifier for the shard iterator. This value is used in the <code>GetRecords</code> operation to retrieve data records from the specified shard. Each shard iterator expires 5 minutes after it is returned to the requester.</p>
+    /// <p>The unique identifier for the shard iterator. This value is used in the <code>GetRecords</code> operation to retrieve data records from the specified shard. Each shard iterator expires 15 minutes after it is returned to the requester.</p>
     pub fn shard_iterator(&self) -> ::std::option::Option<&str> {
         self.shard_iterator.as_deref()
     }
@@ -33,17 +33,17 @@ pub struct GetShardIteratorOutputBuilder {
     _request_id: Option<String>,
 }
 impl GetShardIteratorOutputBuilder {
-    /// <p>The unique identifier for the shard iterator. This value is used in the <code>GetRecords</code> operation to retrieve data records from the specified shard. Each shard iterator expires 5 minutes after it is returned to the requester.</p>
+    /// <p>The unique identifier for the shard iterator. This value is used in the <code>GetRecords</code> operation to retrieve data records from the specified shard. Each shard iterator expires 15 minutes after it is returned to the requester.</p>
     pub fn shard_iterator(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.shard_iterator = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The unique identifier for the shard iterator. This value is used in the <code>GetRecords</code> operation to retrieve data records from the specified shard. Each shard iterator expires 5 minutes after it is returned to the requester.</p>
+    /// <p>The unique identifier for the shard iterator. This value is used in the <code>GetRecords</code> operation to retrieve data records from the specified shard. Each shard iterator expires 15 minutes after it is returned to the requester.</p>
     pub fn set_shard_iterator(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.shard_iterator = input;
         self
     }
-    /// <p>The unique identifier for the shard iterator. This value is used in the <code>GetRecords</code> operation to retrieve data records from the specified shard. Each shard iterator expires 5 minutes after it is returned to the requester.</p>
+    /// <p>The unique identifier for the shard iterator. This value is used in the <code>GetRecords</code> operation to retrieve data records from the specified shard. Each shard iterator expires 15 minutes after it is returned to the requester.</p>
     pub fn get_shard_iterator(&self) -> &::std::option::Option<::std::string::String> {
         &self.shard_iterator
     }

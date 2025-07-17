@@ -12,6 +12,10 @@ pub struct AacSettings {
     pub codec_profile: ::std::option::Option<crate::types::AacCodecProfile>,
     /// The Coding mode that you specify determines the number of audio channels and the audio channel layout metadata in your AAC output. Valid coding modes depend on the Rate control mode and Profile that you select. The following list shows the number of audio channels and channel layout for each coding mode. * 1.0 Audio Description (Receiver Mix): One channel, C. Includes audio description data from your stereo input. For more information see ETSI TS 101 154 Annex E. * 1.0 Mono: One channel, C. * 2.0 Stereo: Two channels, L, R. * 5.1 Surround: Six channels, C, L, R, Ls, Rs, LFE.
     pub coding_mode: ::std::option::Option<crate::types::AacCodingMode>,
+    /// Choose the loudness measurement mode for your audio content. For music or advertisements: We recommend that you keep the default value, Program. For speech or other content: We recommend that you choose Anchor. When you do, MediaConvert optimizes the loudness of your output for clarify by applying speech gates.
+    pub loudness_measurement_mode: ::std::option::Option<crate::types::AacLoudnessMeasurementMode>,
+    /// Specify the RAP (Random Access Point) interval for your xHE-AAC audio output. A RAP allows a decoder to decode audio data mid-stream, without the need to reference previous audio frames, and perform adaptive audio bitrate switching. To specify the RAP interval: Enter an integer from 2000 to 30000, in milliseconds. Smaller values allow for better seeking and more frequent stream switching, while large values improve compression efficiency. To have MediaConvert automatically determine the RAP interval: Leave blank.
+    pub rap_interval: ::std::option::Option<i32>,
     /// Specify the AAC rate control mode. For a constant bitrate: Choose CBR. Your AAC output bitrate will be equal to the value that you choose for Bitrate. For a variable bitrate: Choose VBR. Your AAC output bitrate will vary according to your audio content and the value that you choose for Bitrate quality.
     pub rate_control_mode: ::std::option::Option<crate::types::AacRateControlMode>,
     /// Enables LATM/LOAS AAC output. Note that if you use LATM/LOAS AAC in an output, you must choose "No container" for the output container.
@@ -20,6 +24,8 @@ pub struct AacSettings {
     pub sample_rate: ::std::option::Option<i32>,
     /// Use MPEG-2 AAC instead of MPEG-4 AAC audio for raw or MPEG-2 Transport Stream containers.
     pub specification: ::std::option::Option<crate::types::AacSpecification>,
+    /// Specify the xHE-AAC loudness target. Enter an integer from 6 to 16, representing "loudness units". For more information, see the following specification: Supplementary information for R 128 EBU Tech 3342-2023.
+    pub target_loudness_range: ::std::option::Option<i32>,
     /// Specify the quality of your variable bitrate (VBR) AAC audio. For a list of approximate VBR bitrates, see: https://docs.aws.amazon.com/mediaconvert/latest/ug/aac-support.html#aac_vbr
     pub vbr_quality: ::std::option::Option<crate::types::AacVbrQuality>,
 }
@@ -40,6 +46,14 @@ impl AacSettings {
     pub fn coding_mode(&self) -> ::std::option::Option<&crate::types::AacCodingMode> {
         self.coding_mode.as_ref()
     }
+    /// Choose the loudness measurement mode for your audio content. For music or advertisements: We recommend that you keep the default value, Program. For speech or other content: We recommend that you choose Anchor. When you do, MediaConvert optimizes the loudness of your output for clarify by applying speech gates.
+    pub fn loudness_measurement_mode(&self) -> ::std::option::Option<&crate::types::AacLoudnessMeasurementMode> {
+        self.loudness_measurement_mode.as_ref()
+    }
+    /// Specify the RAP (Random Access Point) interval for your xHE-AAC audio output. A RAP allows a decoder to decode audio data mid-stream, without the need to reference previous audio frames, and perform adaptive audio bitrate switching. To specify the RAP interval: Enter an integer from 2000 to 30000, in milliseconds. Smaller values allow for better seeking and more frequent stream switching, while large values improve compression efficiency. To have MediaConvert automatically determine the RAP interval: Leave blank.
+    pub fn rap_interval(&self) -> ::std::option::Option<i32> {
+        self.rap_interval
+    }
     /// Specify the AAC rate control mode. For a constant bitrate: Choose CBR. Your AAC output bitrate will be equal to the value that you choose for Bitrate. For a variable bitrate: Choose VBR. Your AAC output bitrate will vary according to your audio content and the value that you choose for Bitrate quality.
     pub fn rate_control_mode(&self) -> ::std::option::Option<&crate::types::AacRateControlMode> {
         self.rate_control_mode.as_ref()
@@ -55,6 +69,10 @@ impl AacSettings {
     /// Use MPEG-2 AAC instead of MPEG-4 AAC audio for raw or MPEG-2 Transport Stream containers.
     pub fn specification(&self) -> ::std::option::Option<&crate::types::AacSpecification> {
         self.specification.as_ref()
+    }
+    /// Specify the xHE-AAC loudness target. Enter an integer from 6 to 16, representing "loudness units". For more information, see the following specification: Supplementary information for R 128 EBU Tech 3342-2023.
+    pub fn target_loudness_range(&self) -> ::std::option::Option<i32> {
+        self.target_loudness_range
     }
     /// Specify the quality of your variable bitrate (VBR) AAC audio. For a list of approximate VBR bitrates, see: https://docs.aws.amazon.com/mediaconvert/latest/ug/aac-support.html#aac_vbr
     pub fn vbr_quality(&self) -> ::std::option::Option<&crate::types::AacVbrQuality> {
@@ -76,10 +94,13 @@ pub struct AacSettingsBuilder {
     pub(crate) bitrate: ::std::option::Option<i32>,
     pub(crate) codec_profile: ::std::option::Option<crate::types::AacCodecProfile>,
     pub(crate) coding_mode: ::std::option::Option<crate::types::AacCodingMode>,
+    pub(crate) loudness_measurement_mode: ::std::option::Option<crate::types::AacLoudnessMeasurementMode>,
+    pub(crate) rap_interval: ::std::option::Option<i32>,
     pub(crate) rate_control_mode: ::std::option::Option<crate::types::AacRateControlMode>,
     pub(crate) raw_format: ::std::option::Option<crate::types::AacRawFormat>,
     pub(crate) sample_rate: ::std::option::Option<i32>,
     pub(crate) specification: ::std::option::Option<crate::types::AacSpecification>,
+    pub(crate) target_loudness_range: ::std::option::Option<i32>,
     pub(crate) vbr_quality: ::std::option::Option<crate::types::AacVbrQuality>,
 }
 impl AacSettingsBuilder {
@@ -139,6 +160,34 @@ impl AacSettingsBuilder {
     pub fn get_coding_mode(&self) -> &::std::option::Option<crate::types::AacCodingMode> {
         &self.coding_mode
     }
+    /// Choose the loudness measurement mode for your audio content. For music or advertisements: We recommend that you keep the default value, Program. For speech or other content: We recommend that you choose Anchor. When you do, MediaConvert optimizes the loudness of your output for clarify by applying speech gates.
+    pub fn loudness_measurement_mode(mut self, input: crate::types::AacLoudnessMeasurementMode) -> Self {
+        self.loudness_measurement_mode = ::std::option::Option::Some(input);
+        self
+    }
+    /// Choose the loudness measurement mode for your audio content. For music or advertisements: We recommend that you keep the default value, Program. For speech or other content: We recommend that you choose Anchor. When you do, MediaConvert optimizes the loudness of your output for clarify by applying speech gates.
+    pub fn set_loudness_measurement_mode(mut self, input: ::std::option::Option<crate::types::AacLoudnessMeasurementMode>) -> Self {
+        self.loudness_measurement_mode = input;
+        self
+    }
+    /// Choose the loudness measurement mode for your audio content. For music or advertisements: We recommend that you keep the default value, Program. For speech or other content: We recommend that you choose Anchor. When you do, MediaConvert optimizes the loudness of your output for clarify by applying speech gates.
+    pub fn get_loudness_measurement_mode(&self) -> &::std::option::Option<crate::types::AacLoudnessMeasurementMode> {
+        &self.loudness_measurement_mode
+    }
+    /// Specify the RAP (Random Access Point) interval for your xHE-AAC audio output. A RAP allows a decoder to decode audio data mid-stream, without the need to reference previous audio frames, and perform adaptive audio bitrate switching. To specify the RAP interval: Enter an integer from 2000 to 30000, in milliseconds. Smaller values allow for better seeking and more frequent stream switching, while large values improve compression efficiency. To have MediaConvert automatically determine the RAP interval: Leave blank.
+    pub fn rap_interval(mut self, input: i32) -> Self {
+        self.rap_interval = ::std::option::Option::Some(input);
+        self
+    }
+    /// Specify the RAP (Random Access Point) interval for your xHE-AAC audio output. A RAP allows a decoder to decode audio data mid-stream, without the need to reference previous audio frames, and perform adaptive audio bitrate switching. To specify the RAP interval: Enter an integer from 2000 to 30000, in milliseconds. Smaller values allow for better seeking and more frequent stream switching, while large values improve compression efficiency. To have MediaConvert automatically determine the RAP interval: Leave blank.
+    pub fn set_rap_interval(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.rap_interval = input;
+        self
+    }
+    /// Specify the RAP (Random Access Point) interval for your xHE-AAC audio output. A RAP allows a decoder to decode audio data mid-stream, without the need to reference previous audio frames, and perform adaptive audio bitrate switching. To specify the RAP interval: Enter an integer from 2000 to 30000, in milliseconds. Smaller values allow for better seeking and more frequent stream switching, while large values improve compression efficiency. To have MediaConvert automatically determine the RAP interval: Leave blank.
+    pub fn get_rap_interval(&self) -> &::std::option::Option<i32> {
+        &self.rap_interval
+    }
     /// Specify the AAC rate control mode. For a constant bitrate: Choose CBR. Your AAC output bitrate will be equal to the value that you choose for Bitrate. For a variable bitrate: Choose VBR. Your AAC output bitrate will vary according to your audio content and the value that you choose for Bitrate quality.
     pub fn rate_control_mode(mut self, input: crate::types::AacRateControlMode) -> Self {
         self.rate_control_mode = ::std::option::Option::Some(input);
@@ -195,6 +244,20 @@ impl AacSettingsBuilder {
     pub fn get_specification(&self) -> &::std::option::Option<crate::types::AacSpecification> {
         &self.specification
     }
+    /// Specify the xHE-AAC loudness target. Enter an integer from 6 to 16, representing "loudness units". For more information, see the following specification: Supplementary information for R 128 EBU Tech 3342-2023.
+    pub fn target_loudness_range(mut self, input: i32) -> Self {
+        self.target_loudness_range = ::std::option::Option::Some(input);
+        self
+    }
+    /// Specify the xHE-AAC loudness target. Enter an integer from 6 to 16, representing "loudness units". For more information, see the following specification: Supplementary information for R 128 EBU Tech 3342-2023.
+    pub fn set_target_loudness_range(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.target_loudness_range = input;
+        self
+    }
+    /// Specify the xHE-AAC loudness target. Enter an integer from 6 to 16, representing "loudness units". For more information, see the following specification: Supplementary information for R 128 EBU Tech 3342-2023.
+    pub fn get_target_loudness_range(&self) -> &::std::option::Option<i32> {
+        &self.target_loudness_range
+    }
     /// Specify the quality of your variable bitrate (VBR) AAC audio. For a list of approximate VBR bitrates, see: https://docs.aws.amazon.com/mediaconvert/latest/ug/aac-support.html#aac_vbr
     pub fn vbr_quality(mut self, input: crate::types::AacVbrQuality) -> Self {
         self.vbr_quality = ::std::option::Option::Some(input);
@@ -216,10 +279,13 @@ impl AacSettingsBuilder {
             bitrate: self.bitrate,
             codec_profile: self.codec_profile,
             coding_mode: self.coding_mode,
+            loudness_measurement_mode: self.loudness_measurement_mode,
+            rap_interval: self.rap_interval,
             rate_control_mode: self.rate_control_mode,
             raw_format: self.raw_format,
             sample_rate: self.sample_rate,
             specification: self.specification,
+            target_loudness_range: self.target_loudness_range,
             vbr_quality: self.vbr_quality,
         }
     }

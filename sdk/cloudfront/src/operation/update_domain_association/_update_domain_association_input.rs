@@ -5,9 +5,9 @@
 pub struct UpdateDomainAssociationInput {
     /// <p>The domain to update.</p>
     pub domain: ::std::option::Option<::std::string::String>,
-    /// <p>The target distribution resource for the domain. You can specify either <code>DistributionId</code> or <code>DistributionTenantId</code>, but not both.</p>
+    /// <p>The target standard distribution or distribution tenant resource for the domain. You can specify either <code>DistributionId</code> or <code>DistributionTenantId</code>, but not both.</p>
     pub target_resource: ::std::option::Option<crate::types::DistributionResourceId>,
-    /// <p>The value of the <code>ETag</code> identifier for the distribution or distribution tenant that will be associated with the domain.</p>
+    /// <p>The value of the <code>ETag</code> identifier for the standard distribution or distribution tenant that will be associated with the domain.</p>
     pub if_match: ::std::option::Option<::std::string::String>,
 }
 impl UpdateDomainAssociationInput {
@@ -15,11 +15,11 @@ impl UpdateDomainAssociationInput {
     pub fn domain(&self) -> ::std::option::Option<&str> {
         self.domain.as_deref()
     }
-    /// <p>The target distribution resource for the domain. You can specify either <code>DistributionId</code> or <code>DistributionTenantId</code>, but not both.</p>
+    /// <p>The target standard distribution or distribution tenant resource for the domain. You can specify either <code>DistributionId</code> or <code>DistributionTenantId</code>, but not both.</p>
     pub fn target_resource(&self) -> ::std::option::Option<&crate::types::DistributionResourceId> {
         self.target_resource.as_ref()
     }
-    /// <p>The value of the <code>ETag</code> identifier for the distribution or distribution tenant that will be associated with the domain.</p>
+    /// <p>The value of the <code>ETag</code> identifier for the standard distribution or distribution tenant that will be associated with the domain.</p>
     pub fn if_match(&self) -> ::std::option::Option<&str> {
         self.if_match.as_deref()
     }
@@ -55,32 +55,32 @@ impl UpdateDomainAssociationInputBuilder {
     pub fn get_domain(&self) -> &::std::option::Option<::std::string::String> {
         &self.domain
     }
-    /// <p>The target distribution resource for the domain. You can specify either <code>DistributionId</code> or <code>DistributionTenantId</code>, but not both.</p>
+    /// <p>The target standard distribution or distribution tenant resource for the domain. You can specify either <code>DistributionId</code> or <code>DistributionTenantId</code>, but not both.</p>
     /// This field is required.
     pub fn target_resource(mut self, input: crate::types::DistributionResourceId) -> Self {
         self.target_resource = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The target distribution resource for the domain. You can specify either <code>DistributionId</code> or <code>DistributionTenantId</code>, but not both.</p>
+    /// <p>The target standard distribution or distribution tenant resource for the domain. You can specify either <code>DistributionId</code> or <code>DistributionTenantId</code>, but not both.</p>
     pub fn set_target_resource(mut self, input: ::std::option::Option<crate::types::DistributionResourceId>) -> Self {
         self.target_resource = input;
         self
     }
-    /// <p>The target distribution resource for the domain. You can specify either <code>DistributionId</code> or <code>DistributionTenantId</code>, but not both.</p>
+    /// <p>The target standard distribution or distribution tenant resource for the domain. You can specify either <code>DistributionId</code> or <code>DistributionTenantId</code>, but not both.</p>
     pub fn get_target_resource(&self) -> &::std::option::Option<crate::types::DistributionResourceId> {
         &self.target_resource
     }
-    /// <p>The value of the <code>ETag</code> identifier for the distribution or distribution tenant that will be associated with the domain.</p>
+    /// <p>The value of the <code>ETag</code> identifier for the standard distribution or distribution tenant that will be associated with the domain.</p>
     pub fn if_match(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.if_match = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The value of the <code>ETag</code> identifier for the distribution or distribution tenant that will be associated with the domain.</p>
+    /// <p>The value of the <code>ETag</code> identifier for the standard distribution or distribution tenant that will be associated with the domain.</p>
     pub fn set_if_match(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.if_match = input;
         self
     }
-    /// <p>The value of the <code>ETag</code> identifier for the distribution or distribution tenant that will be associated with the domain.</p>
+    /// <p>The value of the <code>ETag</code> identifier for the standard distribution or distribution tenant that will be associated with the domain.</p>
     pub fn get_if_match(&self) -> &::std::option::Option<::std::string::String> {
         &self.if_match
     }

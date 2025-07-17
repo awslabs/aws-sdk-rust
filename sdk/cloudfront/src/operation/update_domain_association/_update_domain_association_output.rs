@@ -7,7 +7,7 @@ pub struct UpdateDomainAssociationOutput {
     pub domain: ::std::option::Option<::std::string::String>,
     /// <p>The intended destination for the domain.</p>
     pub resource_id: ::std::option::Option<::std::string::String>,
-    /// <p>The current version of the target distribution or distribution tenant that was associated with the domain.</p>
+    /// <p>The current version of the target standard distribution or distribution tenant that was associated with the domain.</p>
     pub e_tag: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -20,7 +20,7 @@ impl UpdateDomainAssociationOutput {
     pub fn resource_id(&self) -> ::std::option::Option<&str> {
         self.resource_id.as_deref()
     }
-    /// <p>The current version of the target distribution or distribution tenant that was associated with the domain.</p>
+    /// <p>The current version of the target standard distribution or distribution tenant that was associated with the domain.</p>
     pub fn e_tag(&self) -> ::std::option::Option<&str> {
         self.e_tag.as_deref()
     }
@@ -75,17 +75,17 @@ impl UpdateDomainAssociationOutputBuilder {
     pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_id
     }
-    /// <p>The current version of the target distribution or distribution tenant that was associated with the domain.</p>
+    /// <p>The current version of the target standard distribution or distribution tenant that was associated with the domain.</p>
     pub fn e_tag(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.e_tag = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The current version of the target distribution or distribution tenant that was associated with the domain.</p>
+    /// <p>The current version of the target standard distribution or distribution tenant that was associated with the domain.</p>
     pub fn set_e_tag(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.e_tag = input;
         self
     }
-    /// <p>The current version of the target distribution or distribution tenant that was associated with the domain.</p>
+    /// <p>The current version of the target standard distribution or distribution tenant that was associated with the domain.</p>
     pub fn get_e_tag(&self) -> &::std::option::Option<::std::string::String> {
         &self.e_tag
     }

@@ -57,6 +57,14 @@ pub struct Image {
     /// <p>The Region of the source AMI.</p>
     /// <p>The Region only appears if the AMI was created using <code>CreateImage</code>, <code>CopyImage</code>, or <code>CreateRestoreImageTask</code>. The Region does not appear if the AMI was created using any other API. For some older AMIs, the Region might not be available. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/identify-source-ami-used-to-create-new-ami.html">Identify the source AMI used to create a new Amazon EC2 AMI</a> in the <i>Amazon EC2 User Guide</i>.</p>
     pub source_image_region: ::std::option::Option<::std::string::String>,
+    /// <p>Indicates whether the image is eligible for Amazon Web Services Free Tier.</p>
+    /// <ul>
+    /// <li>
+    /// <p>If <code>true</code>, the AMI is eligible for Free Tier and can be used to launch instances under the Free Tier limits.</p></li>
+    /// <li>
+    /// <p>If <code>false</code>, the AMI is not eligible for Free Tier.</p></li>
+    /// </ul>
+    pub free_tier_eligible: ::std::option::Option<bool>,
     /// <p>The ID of the AMI.</p>
     pub image_id: ::std::option::Option<::std::string::String>,
     /// <p>The location of the AMI.</p>
@@ -188,6 +196,16 @@ impl Image {
     pub fn source_image_region(&self) -> ::std::option::Option<&str> {
         self.source_image_region.as_deref()
     }
+    /// <p>Indicates whether the image is eligible for Amazon Web Services Free Tier.</p>
+    /// <ul>
+    /// <li>
+    /// <p>If <code>true</code>, the AMI is eligible for Free Tier and can be used to launch instances under the Free Tier limits.</p></li>
+    /// <li>
+    /// <p>If <code>false</code>, the AMI is not eligible for Free Tier.</p></li>
+    /// </ul>
+    pub fn free_tier_eligible(&self) -> ::std::option::Option<bool> {
+        self.free_tier_eligible
+    }
     /// <p>The ID of the AMI.</p>
     pub fn image_id(&self) -> ::std::option::Option<&str> {
         self.image_id.as_deref()
@@ -274,6 +292,7 @@ pub struct ImageBuilder {
     pub(crate) image_allowed: ::std::option::Option<bool>,
     pub(crate) source_image_id: ::std::option::Option<::std::string::String>,
     pub(crate) source_image_region: ::std::option::Option<::std::string::String>,
+    pub(crate) free_tier_eligible: ::std::option::Option<bool>,
     pub(crate) image_id: ::std::option::Option<::std::string::String>,
     pub(crate) image_location: ::std::option::Option<::std::string::String>,
     pub(crate) state: ::std::option::Option<crate::types::ImageState>,
@@ -651,6 +670,38 @@ impl ImageBuilder {
     pub fn get_source_image_region(&self) -> &::std::option::Option<::std::string::String> {
         &self.source_image_region
     }
+    /// <p>Indicates whether the image is eligible for Amazon Web Services Free Tier.</p>
+    /// <ul>
+    /// <li>
+    /// <p>If <code>true</code>, the AMI is eligible for Free Tier and can be used to launch instances under the Free Tier limits.</p></li>
+    /// <li>
+    /// <p>If <code>false</code>, the AMI is not eligible for Free Tier.</p></li>
+    /// </ul>
+    pub fn free_tier_eligible(mut self, input: bool) -> Self {
+        self.free_tier_eligible = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates whether the image is eligible for Amazon Web Services Free Tier.</p>
+    /// <ul>
+    /// <li>
+    /// <p>If <code>true</code>, the AMI is eligible for Free Tier and can be used to launch instances under the Free Tier limits.</p></li>
+    /// <li>
+    /// <p>If <code>false</code>, the AMI is not eligible for Free Tier.</p></li>
+    /// </ul>
+    pub fn set_free_tier_eligible(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.free_tier_eligible = input;
+        self
+    }
+    /// <p>Indicates whether the image is eligible for Amazon Web Services Free Tier.</p>
+    /// <ul>
+    /// <li>
+    /// <p>If <code>true</code>, the AMI is eligible for Free Tier and can be used to launch instances under the Free Tier limits.</p></li>
+    /// <li>
+    /// <p>If <code>false</code>, the AMI is not eligible for Free Tier.</p></li>
+    /// </ul>
+    pub fn get_free_tier_eligible(&self) -> &::std::option::Option<bool> {
+        &self.free_tier_eligible
+    }
     /// <p>The ID of the AMI.</p>
     pub fn image_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.image_id = ::std::option::Option::Some(input.into());
@@ -852,6 +903,7 @@ impl ImageBuilder {
             image_allowed: self.image_allowed,
             source_image_id: self.source_image_id,
             source_image_region: self.source_image_region,
+            free_tier_eligible: self.free_tier_eligible,
             image_id: self.image_id,
             image_location: self.image_location,
             state: self.state,

@@ -21,6 +21,10 @@ pub use crate::types::_retry_config_input::RetryConfigInput;
 
 pub use crate::types::_canary_code_input::CanaryCodeInput;
 
+pub use crate::types::_dependency::Dependency;
+
+pub use crate::types::_dependency_type::DependencyType;
+
 pub use crate::types::_dry_run_config_output::DryRunConfigOutput;
 
 pub use crate::types::_group_summary::GroupSummary;
@@ -116,6 +120,10 @@ mod _canary_state_reason_code;
 mod _canary_status;
 
 mod _canary_timeline;
+
+mod _dependency;
+
+mod _dependency_type;
 
 mod _dry_run_config_output;
 

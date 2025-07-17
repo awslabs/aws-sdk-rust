@@ -8,6 +8,8 @@ pub struct CanaryCodeOutput {
     pub source_location_arn: ::std::option::Option<::std::string::String>,
     /// <p>The entry point to use for the source code when running the canary.</p>
     pub handler: ::std::option::Option<::std::string::String>,
+    /// <p>A list of dependencies that are used for running this canary. The dependencies are specified as a key-value pair, where the key is the type of dependency and the value is the dependency reference.</p>
+    pub dependencies: ::std::option::Option<::std::vec::Vec<crate::types::Dependency>>,
 }
 impl CanaryCodeOutput {
     /// <p>The ARN of the Lambda layer where Synthetics stores the canary script code.</p>
@@ -17,6 +19,12 @@ impl CanaryCodeOutput {
     /// <p>The entry point to use for the source code when running the canary.</p>
     pub fn handler(&self) -> ::std::option::Option<&str> {
         self.handler.as_deref()
+    }
+    /// <p>A list of dependencies that are used for running this canary. The dependencies are specified as a key-value pair, where the key is the type of dependency and the value is the dependency reference.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.dependencies.is_none()`.
+    pub fn dependencies(&self) -> &[crate::types::Dependency] {
+        self.dependencies.as_deref().unwrap_or_default()
     }
 }
 impl CanaryCodeOutput {
@@ -32,6 +40,7 @@ impl CanaryCodeOutput {
 pub struct CanaryCodeOutputBuilder {
     pub(crate) source_location_arn: ::std::option::Option<::std::string::String>,
     pub(crate) handler: ::std::option::Option<::std::string::String>,
+    pub(crate) dependencies: ::std::option::Option<::std::vec::Vec<crate::types::Dependency>>,
 }
 impl CanaryCodeOutputBuilder {
     /// <p>The ARN of the Lambda layer where Synthetics stores the canary script code.</p>
@@ -62,11 +71,32 @@ impl CanaryCodeOutputBuilder {
     pub fn get_handler(&self) -> &::std::option::Option<::std::string::String> {
         &self.handler
     }
+    /// Appends an item to `dependencies`.
+    ///
+    /// To override the contents of this collection use [`set_dependencies`](Self::set_dependencies).
+    ///
+    /// <p>A list of dependencies that are used for running this canary. The dependencies are specified as a key-value pair, where the key is the type of dependency and the value is the dependency reference.</p>
+    pub fn dependencies(mut self, input: crate::types::Dependency) -> Self {
+        let mut v = self.dependencies.unwrap_or_default();
+        v.push(input);
+        self.dependencies = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>A list of dependencies that are used for running this canary. The dependencies are specified as a key-value pair, where the key is the type of dependency and the value is the dependency reference.</p>
+    pub fn set_dependencies(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Dependency>>) -> Self {
+        self.dependencies = input;
+        self
+    }
+    /// <p>A list of dependencies that are used for running this canary. The dependencies are specified as a key-value pair, where the key is the type of dependency and the value is the dependency reference.</p>
+    pub fn get_dependencies(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Dependency>> {
+        &self.dependencies
+    }
     /// Consumes the builder and constructs a [`CanaryCodeOutput`](crate::types::CanaryCodeOutput).
     pub fn build(self) -> crate::types::CanaryCodeOutput {
         crate::types::CanaryCodeOutput {
             source_location_arn: self.source_location_arn,
             handler: self.handler,
+            dependencies: self.dependencies,
         }
     }
 }

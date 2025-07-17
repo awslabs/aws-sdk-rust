@@ -71,6 +71,8 @@ pub use crate::types::_input_channel_data_source::InputChannelDataSource;
 
 pub use crate::types::_protected_query_input_parameters::ProtectedQueryInputParameters;
 
+pub use crate::types::_result_format::ResultFormat;
+
 pub use crate::types::_compute_configuration::ComputeConfiguration;
 
 pub use crate::types::_worker_compute_configuration::WorkerComputeConfiguration;
@@ -298,6 +300,8 @@ mod _protected_query_sql_parameters;
 mod _relevance_metric;
 
 mod _resource_config;
+
+mod _result_format;
 
 mod _s3_config_map;
 

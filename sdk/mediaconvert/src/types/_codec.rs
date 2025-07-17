@@ -21,6 +21,7 @@
 ///     Codec::Eac3 => { /* ... */ },
 ///     Codec::Flac => { /* ... */ },
 ///     Codec::Hevc => { /* ... */ },
+///     Codec::Jpeg2000 => { /* ... */ },
 ///     Codec::Mjpeg => { /* ... */ },
 ///     Codec::Mp3 => { /* ... */ },
 ///     Codec::Mp4V => { /* ... */ },
@@ -82,6 +83,8 @@ pub enum Codec {
     #[allow(missing_docs)] // documentation missing in model
     Hevc,
     #[allow(missing_docs)] // documentation missing in model
+    Jpeg2000,
+    #[allow(missing_docs)] // documentation missing in model
     Mjpeg,
     #[allow(missing_docs)] // documentation missing in model
     Mp3,
@@ -124,6 +127,7 @@ impl ::std::convert::From<&str> for Codec {
             "EAC3" => Codec::Eac3,
             "FLAC" => Codec::Flac,
             "HEVC" => Codec::Hevc,
+            "JPEG2000" => Codec::Jpeg2000,
             "MJPEG" => Codec::Mjpeg,
             "MP3" => Codec::Mp3,
             "MP4V" => Codec::Mp4V,
@@ -161,6 +165,7 @@ impl Codec {
             Codec::Eac3 => "EAC3",
             Codec::Flac => "FLAC",
             Codec::Hevc => "HEVC",
+            Codec::Jpeg2000 => "JPEG2000",
             Codec::Mjpeg => "MJPEG",
             Codec::Mp3 => "MP3",
             Codec::Mp4V => "MP4V",
@@ -180,8 +185,8 @@ impl Codec {
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "AAC", "AC3", "AV1", "AVC", "C608", "C708", "EAC3", "FLAC", "HEVC", "MJPEG", "MP3", "MP4V", "MPEG2", "OPUS", "PCM", "PRORES", "THEORA",
-            "UNKNOWN", "VORBIS", "VP8", "VP9", "WEBVTT",
+            "AAC", "AC3", "AV1", "AVC", "C608", "C708", "EAC3", "FLAC", "HEVC", "JPEG2000", "MJPEG", "MP3", "MP4V", "MPEG2", "OPUS", "PCM", "PRORES",
+            "THEORA", "UNKNOWN", "VORBIS", "VP8", "VP9", "WEBVTT",
         ]
     }
 }
@@ -214,6 +219,7 @@ impl ::std::fmt::Display for Codec {
             Codec::Eac3 => write!(f, "EAC3"),
             Codec::Flac => write!(f, "FLAC"),
             Codec::Hevc => write!(f, "HEVC"),
+            Codec::Jpeg2000 => write!(f, "JPEG2000"),
             Codec::Mjpeg => write!(f, "MJPEG"),
             Codec::Mp3 => write!(f, "MP3"),
             Codec::Mp4V => write!(f, "MP4V"),

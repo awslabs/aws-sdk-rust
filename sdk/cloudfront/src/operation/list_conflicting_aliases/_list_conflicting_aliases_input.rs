@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListConflictingAliasesInput {
-    /// <p>The ID of a distribution in your account that has an attached SSL/TLS certificate that includes the provided alias.</p>
+    /// <p>The ID of a standard distribution in your account that has an attached TLS certificate that includes the provided alias.</p>
     pub distribution_id: ::std::option::Option<::std::string::String>,
     /// <p>The alias (also called a CNAME) to search for conflicting aliases.</p>
     pub alias: ::std::option::Option<::std::string::String>,
@@ -13,7 +13,7 @@ pub struct ListConflictingAliasesInput {
     pub max_items: ::std::option::Option<i32>,
 }
 impl ListConflictingAliasesInput {
-    /// <p>The ID of a distribution in your account that has an attached SSL/TLS certificate that includes the provided alias.</p>
+    /// <p>The ID of a standard distribution in your account that has an attached TLS certificate that includes the provided alias.</p>
     pub fn distribution_id(&self) -> ::std::option::Option<&str> {
         self.distribution_id.as_deref()
     }
@@ -47,18 +47,18 @@ pub struct ListConflictingAliasesInputBuilder {
     pub(crate) max_items: ::std::option::Option<i32>,
 }
 impl ListConflictingAliasesInputBuilder {
-    /// <p>The ID of a distribution in your account that has an attached SSL/TLS certificate that includes the provided alias.</p>
+    /// <p>The ID of a standard distribution in your account that has an attached TLS certificate that includes the provided alias.</p>
     /// This field is required.
     pub fn distribution_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.distribution_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID of a distribution in your account that has an attached SSL/TLS certificate that includes the provided alias.</p>
+    /// <p>The ID of a standard distribution in your account that has an attached TLS certificate that includes the provided alias.</p>
     pub fn set_distribution_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.distribution_id = input;
         self
     }
-    /// <p>The ID of a distribution in your account that has an attached SSL/TLS certificate that includes the provided alias.</p>
+    /// <p>The ID of a standard distribution in your account that has an attached TLS certificate that includes the provided alias.</p>
     pub fn get_distribution_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.distribution_id
     }

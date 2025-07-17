@@ -55,6 +55,8 @@ pub struct DescribeImagesInput {
     /// <li>
     /// <p><code>ena-support</code> - A Boolean that indicates whether enhanced networking with ENA is enabled.</p></li>
     /// <li>
+    /// <p><code>free-tier-eligible</code> - A Boolean that indicates whether this image can be used under the Amazon Web Services Free Tier (<code>true</code> | <code>false</code>).</p></li>
+    /// <li>
     /// <p><code>hypervisor</code> - The hypervisor type (<code>ovm</code> | <code>xen</code>).</p></li>
     /// <li>
     /// <p><code>image-allowed</code> - A Boolean that indicates whether the image meets the criteria specified for Allowed AMIs.</p></li>
@@ -183,6 +185,8 @@ impl DescribeImagesInput {
     /// <p><code>description</code> - The description of the image (provided during image creation).</p></li>
     /// <li>
     /// <p><code>ena-support</code> - A Boolean that indicates whether enhanced networking with ENA is enabled.</p></li>
+    /// <li>
+    /// <p><code>free-tier-eligible</code> - A Boolean that indicates whether this image can be used under the Amazon Web Services Free Tier (<code>true</code> | <code>false</code>).</p></li>
     /// <li>
     /// <p><code>hypervisor</code> - The hypervisor type (<code>ovm</code> | <code>xen</code>).</p></li>
     /// <li>
@@ -460,6 +464,8 @@ impl DescribeImagesInputBuilder {
     /// <li>
     /// <p><code>ena-support</code> - A Boolean that indicates whether enhanced networking with ENA is enabled.</p></li>
     /// <li>
+    /// <p><code>free-tier-eligible</code> - A Boolean that indicates whether this image can be used under the Amazon Web Services Free Tier (<code>true</code> | <code>false</code>).</p></li>
+    /// <li>
     /// <p><code>hypervisor</code> - The hypervisor type (<code>ovm</code> | <code>xen</code>).</p></li>
     /// <li>
     /// <p><code>image-allowed</code> - A Boolean that indicates whether the image meets the criteria specified for Allowed AMIs.</p></li>
@@ -541,6 +547,8 @@ impl DescribeImagesInputBuilder {
     /// <li>
     /// <p><code>ena-support</code> - A Boolean that indicates whether enhanced networking with ENA is enabled.</p></li>
     /// <li>
+    /// <p><code>free-tier-eligible</code> - A Boolean that indicates whether this image can be used under the Amazon Web Services Free Tier (<code>true</code> | <code>false</code>).</p></li>
+    /// <li>
     /// <p><code>hypervisor</code> - The hypervisor type (<code>ovm</code> | <code>xen</code>).</p></li>
     /// <li>
     /// <p><code>image-allowed</code> - A Boolean that indicates whether the image meets the criteria specified for Allowed AMIs.</p></li>
@@ -619,6 +627,8 @@ impl DescribeImagesInputBuilder {
     /// <p><code>description</code> - The description of the image (provided during image creation).</p></li>
     /// <li>
     /// <p><code>ena-support</code> - A Boolean that indicates whether enhanced networking with ENA is enabled.</p></li>
+    /// <li>
+    /// <p><code>free-tier-eligible</code> - A Boolean that indicates whether this image can be used under the Amazon Web Services Free Tier (<code>true</code> | <code>false</code>).</p></li>
     /// <li>
     /// <p><code>hypervisor</code> - The hypervisor type (<code>ovm</code> | <code>xen</code>).</p></li>
     /// <li>

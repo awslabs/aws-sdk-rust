@@ -22,7 +22,12 @@ impl crate::operation::update_domain_association::builders::UpdateDomainAssociat
 }
 /// Fluent builder constructing a request to `UpdateDomainAssociation`.
 ///
-/// <p>Moves a domain from its current distribution or distribution tenant to another one.</p>
+/// <note>
+/// <p>We recommend that you use the <code>UpdateDomainAssociation</code> API operation to move a domain association, as it supports both standard distributions and distribution tenants. <a href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_AssociateAlias.html">AssociateAlias</a> performs similar checks but only supports standard distributions.</p>
+/// </note>
+/// <p>Moves a domain from its current standard distribution or distribution tenant to another one.</p>
+/// <p>You must first disable the source distribution (standard distribution or distribution tenant) and then separately call this operation to move the domain to another target distribution (standard distribution or distribution tenant).</p>
+/// <p>To use this operation, specify the domain and the ID of the target resource (standard distribution or distribution tenant). For more information, including how to set up the target resource, prerequisites that you must complete, and other restrictions, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/CNAMEs.html#alternate-domain-names-move">Moving an alternate domain name to a different standard distribution or distribution tenant</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateDomainAssociationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -122,31 +127,31 @@ impl UpdateDomainAssociationFluentBuilder {
     pub fn get_domain(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_domain()
     }
-    /// <p>The target distribution resource for the domain. You can specify either <code>DistributionId</code> or <code>DistributionTenantId</code>, but not both.</p>
+    /// <p>The target standard distribution or distribution tenant resource for the domain. You can specify either <code>DistributionId</code> or <code>DistributionTenantId</code>, but not both.</p>
     pub fn target_resource(mut self, input: crate::types::DistributionResourceId) -> Self {
         self.inner = self.inner.target_resource(input);
         self
     }
-    /// <p>The target distribution resource for the domain. You can specify either <code>DistributionId</code> or <code>DistributionTenantId</code>, but not both.</p>
+    /// <p>The target standard distribution or distribution tenant resource for the domain. You can specify either <code>DistributionId</code> or <code>DistributionTenantId</code>, but not both.</p>
     pub fn set_target_resource(mut self, input: ::std::option::Option<crate::types::DistributionResourceId>) -> Self {
         self.inner = self.inner.set_target_resource(input);
         self
     }
-    /// <p>The target distribution resource for the domain. You can specify either <code>DistributionId</code> or <code>DistributionTenantId</code>, but not both.</p>
+    /// <p>The target standard distribution or distribution tenant resource for the domain. You can specify either <code>DistributionId</code> or <code>DistributionTenantId</code>, but not both.</p>
     pub fn get_target_resource(&self) -> &::std::option::Option<crate::types::DistributionResourceId> {
         self.inner.get_target_resource()
     }
-    /// <p>The value of the <code>ETag</code> identifier for the distribution or distribution tenant that will be associated with the domain.</p>
+    /// <p>The value of the <code>ETag</code> identifier for the standard distribution or distribution tenant that will be associated with the domain.</p>
     pub fn if_match(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.if_match(input.into());
         self
     }
-    /// <p>The value of the <code>ETag</code> identifier for the distribution or distribution tenant that will be associated with the domain.</p>
+    /// <p>The value of the <code>ETag</code> identifier for the standard distribution or distribution tenant that will be associated with the domain.</p>
     pub fn set_if_match(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_if_match(input);
         self
     }
-    /// <p>The value of the <code>ETag</code> identifier for the distribution or distribution tenant that will be associated with the domain.</p>
+    /// <p>The value of the <code>ETag</code> identifier for the standard distribution or distribution tenant that will be associated with the domain.</p>
     pub fn get_if_match(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_if_match()
     }

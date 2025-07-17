@@ -15,6 +15,9 @@ pub fn ser_protected_query_input_parameters(
         crate::protocol_serde::shape_compute_configuration::ser_compute_configuration(&mut object_4, var_3)?;
         object_4.finish();
     }
+    {
+        object.key("resultFormat").string(input.result_format.as_str());
+    }
     Ok(())
 }
 
@@ -41,6 +44,13 @@ where
                         "computeConfiguration" => {
                             builder = builder
                                 .set_compute_configuration(crate::protocol_serde::shape_compute_configuration::de_compute_configuration(tokens)?);
+                        }
+                        "resultFormat" => {
+                            builder = builder.set_result_format(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::ResultFormat::from(u.as_ref())))
+                                    .transpose()?,
+                            );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

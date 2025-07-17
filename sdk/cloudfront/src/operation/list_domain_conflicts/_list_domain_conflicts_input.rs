@@ -5,7 +5,7 @@
 pub struct ListDomainConflictsInput {
     /// <p>The domain to check for conflicts.</p>
     pub domain: ::std::option::Option<::std::string::String>,
-    /// <p>The distribution resource identifier. This can be the distribution or distribution tenant that has a valid certificate, which covers the domain that you specify.</p>
+    /// <p>The distribution resource identifier. This can be the standard distribution or distribution tenant that has a valid certificate, which covers the domain that you specify.</p>
     pub domain_control_validation_resource: ::std::option::Option<crate::types::DistributionResourceId>,
     /// <p>The maximum number of domain conflicts to return.</p>
     pub max_items: ::std::option::Option<i32>,
@@ -17,7 +17,7 @@ impl ListDomainConflictsInput {
     pub fn domain(&self) -> ::std::option::Option<&str> {
         self.domain.as_deref()
     }
-    /// <p>The distribution resource identifier. This can be the distribution or distribution tenant that has a valid certificate, which covers the domain that you specify.</p>
+    /// <p>The distribution resource identifier. This can be the standard distribution or distribution tenant that has a valid certificate, which covers the domain that you specify.</p>
     pub fn domain_control_validation_resource(&self) -> ::std::option::Option<&crate::types::DistributionResourceId> {
         self.domain_control_validation_resource.as_ref()
     }
@@ -62,18 +62,18 @@ impl ListDomainConflictsInputBuilder {
     pub fn get_domain(&self) -> &::std::option::Option<::std::string::String> {
         &self.domain
     }
-    /// <p>The distribution resource identifier. This can be the distribution or distribution tenant that has a valid certificate, which covers the domain that you specify.</p>
+    /// <p>The distribution resource identifier. This can be the standard distribution or distribution tenant that has a valid certificate, which covers the domain that you specify.</p>
     /// This field is required.
     pub fn domain_control_validation_resource(mut self, input: crate::types::DistributionResourceId) -> Self {
         self.domain_control_validation_resource = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The distribution resource identifier. This can be the distribution or distribution tenant that has a valid certificate, which covers the domain that you specify.</p>
+    /// <p>The distribution resource identifier. This can be the standard distribution or distribution tenant that has a valid certificate, which covers the domain that you specify.</p>
     pub fn set_domain_control_validation_resource(mut self, input: ::std::option::Option<crate::types::DistributionResourceId>) -> Self {
         self.domain_control_validation_resource = input;
         self
     }
-    /// <p>The distribution resource identifier. This can be the distribution or distribution tenant that has a valid certificate, which covers the domain that you specify.</p>
+    /// <p>The distribution resource identifier. This can be the standard distribution or distribution tenant that has a valid certificate, which covers the domain that you specify.</p>
     pub fn get_domain_control_validation_resource(&self) -> &::std::option::Option<crate::types::DistributionResourceId> {
         &self.domain_control_validation_resource
     }
