@@ -357,6 +357,8 @@ pub use crate::types::_input::InputBuilder;
 
 pub use crate::types::_input_video_generator::InputVideoGeneratorBuilder;
 
+pub use crate::types::_input_tams_settings::InputTamsSettingsBuilder;
+
 pub use crate::types::_input_decryption_settings::InputDecryptionSettingsBuilder;
 
 pub use crate::types::_queue_transition::QueueTransitionBuilder;

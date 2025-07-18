@@ -8,13 +8,17 @@ pub struct PatchSource {
     pub name: ::std::string::String,
     /// <p>The specific operating system versions a patch repository applies to, such as "Ubuntu16.04", "AmazonLinux2016.09", "RedhatEnterpriseLinux7.2" or "Suse12.7". For lists of supported product values, see <code>PatchFilter</code>.</p>
     pub products: ::std::vec::Vec<::std::string::String>,
-    /// <p>The value of the yum repo configuration. For example:</p>
+    /// <p>The value of the repo configuration.</p>
+    /// <p><b>Example for yum repositories</b></p>
     /// <p><code>\[main\]</code></p>
     /// <p><code>name=MyCustomRepository</code></p>
     /// <p><code>baseurl=https://my-custom-repository</code></p>
-    /// <p><code>enabled=1</code></p><note>
-    /// <p>For information about other options available for your yum repository configuration, see <a href="https://man7.org/linux/man-pages/man5/dnf.conf.5.html">dnf.conf(5)</a>.</p>
-    /// </note>
+    /// <p><code>enabled=1</code></p>
+    /// <p>For information about other options available for your yum repository configuration, see <a href="https://man7.org/linux/man-pages/man5/dnf.conf.5.html">dnf.conf(5)</a> on the <i>man7.org</i> website.</p>
+    /// <p><b>Examples for Ubuntu Server and Debian Server</b></p>
+    /// <p><code>deb http://security.ubuntu.com/ubuntu jammy main</code></p>
+    /// <p><code>deb https://site.example.com/debian distribution component1 component2 component3</code></p>
+    /// <p>Repo information for Ubuntu Server repositories must be specifed in a single line. For more examples and information, see <a href="https://manpages.ubuntu.com/manpages/jammy/man5/sources.list.5.html">jammy (5) sources.list.5.gz</a> on the <i>Ubuntu Server Manuals</i> website and <a href="https://wiki.debian.org/SourcesList#sources.list_format">sources.list format</a> on the <i>Debian Wiki</i>.</p>
     pub configuration: ::std::string::String,
 }
 impl PatchSource {
@@ -28,13 +32,17 @@ impl PatchSource {
         use std::ops::Deref;
         self.products.deref()
     }
-    /// <p>The value of the yum repo configuration. For example:</p>
+    /// <p>The value of the repo configuration.</p>
+    /// <p><b>Example for yum repositories</b></p>
     /// <p><code>\[main\]</code></p>
     /// <p><code>name=MyCustomRepository</code></p>
     /// <p><code>baseurl=https://my-custom-repository</code></p>
-    /// <p><code>enabled=1</code></p><note>
-    /// <p>For information about other options available for your yum repository configuration, see <a href="https://man7.org/linux/man-pages/man5/dnf.conf.5.html">dnf.conf(5)</a>.</p>
-    /// </note>
+    /// <p><code>enabled=1</code></p>
+    /// <p>For information about other options available for your yum repository configuration, see <a href="https://man7.org/linux/man-pages/man5/dnf.conf.5.html">dnf.conf(5)</a> on the <i>man7.org</i> website.</p>
+    /// <p><b>Examples for Ubuntu Server and Debian Server</b></p>
+    /// <p><code>deb http://security.ubuntu.com/ubuntu jammy main</code></p>
+    /// <p><code>deb https://site.example.com/debian distribution component1 component2 component3</code></p>
+    /// <p>Repo information for Ubuntu Server repositories must be specifed in a single line. For more examples and information, see <a href="https://manpages.ubuntu.com/manpages/jammy/man5/sources.list.5.html">jammy (5) sources.list.5.gz</a> on the <i>Ubuntu Server Manuals</i> website and <a href="https://wiki.debian.org/SourcesList#sources.list_format">sources.list format</a> on the <i>Debian Wiki</i>.</p>
     pub fn configuration(&self) -> &str {
         use std::ops::Deref;
         self.configuration.deref()
@@ -100,36 +108,48 @@ impl PatchSourceBuilder {
     pub fn get_products(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.products
     }
-    /// <p>The value of the yum repo configuration. For example:</p>
+    /// <p>The value of the repo configuration.</p>
+    /// <p><b>Example for yum repositories</b></p>
     /// <p><code>\[main\]</code></p>
     /// <p><code>name=MyCustomRepository</code></p>
     /// <p><code>baseurl=https://my-custom-repository</code></p>
-    /// <p><code>enabled=1</code></p><note>
-    /// <p>For information about other options available for your yum repository configuration, see <a href="https://man7.org/linux/man-pages/man5/dnf.conf.5.html">dnf.conf(5)</a>.</p>
-    /// </note>
+    /// <p><code>enabled=1</code></p>
+    /// <p>For information about other options available for your yum repository configuration, see <a href="https://man7.org/linux/man-pages/man5/dnf.conf.5.html">dnf.conf(5)</a> on the <i>man7.org</i> website.</p>
+    /// <p><b>Examples for Ubuntu Server and Debian Server</b></p>
+    /// <p><code>deb http://security.ubuntu.com/ubuntu jammy main</code></p>
+    /// <p><code>deb https://site.example.com/debian distribution component1 component2 component3</code></p>
+    /// <p>Repo information for Ubuntu Server repositories must be specifed in a single line. For more examples and information, see <a href="https://manpages.ubuntu.com/manpages/jammy/man5/sources.list.5.html">jammy (5) sources.list.5.gz</a> on the <i>Ubuntu Server Manuals</i> website and <a href="https://wiki.debian.org/SourcesList#sources.list_format">sources.list format</a> on the <i>Debian Wiki</i>.</p>
     /// This field is required.
     pub fn configuration(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.configuration = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The value of the yum repo configuration. For example:</p>
+    /// <p>The value of the repo configuration.</p>
+    /// <p><b>Example for yum repositories</b></p>
     /// <p><code>\[main\]</code></p>
     /// <p><code>name=MyCustomRepository</code></p>
     /// <p><code>baseurl=https://my-custom-repository</code></p>
-    /// <p><code>enabled=1</code></p><note>
-    /// <p>For information about other options available for your yum repository configuration, see <a href="https://man7.org/linux/man-pages/man5/dnf.conf.5.html">dnf.conf(5)</a>.</p>
-    /// </note>
+    /// <p><code>enabled=1</code></p>
+    /// <p>For information about other options available for your yum repository configuration, see <a href="https://man7.org/linux/man-pages/man5/dnf.conf.5.html">dnf.conf(5)</a> on the <i>man7.org</i> website.</p>
+    /// <p><b>Examples for Ubuntu Server and Debian Server</b></p>
+    /// <p><code>deb http://security.ubuntu.com/ubuntu jammy main</code></p>
+    /// <p><code>deb https://site.example.com/debian distribution component1 component2 component3</code></p>
+    /// <p>Repo information for Ubuntu Server repositories must be specifed in a single line. For more examples and information, see <a href="https://manpages.ubuntu.com/manpages/jammy/man5/sources.list.5.html">jammy (5) sources.list.5.gz</a> on the <i>Ubuntu Server Manuals</i> website and <a href="https://wiki.debian.org/SourcesList#sources.list_format">sources.list format</a> on the <i>Debian Wiki</i>.</p>
     pub fn set_configuration(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.configuration = input;
         self
     }
-    /// <p>The value of the yum repo configuration. For example:</p>
+    /// <p>The value of the repo configuration.</p>
+    /// <p><b>Example for yum repositories</b></p>
     /// <p><code>\[main\]</code></p>
     /// <p><code>name=MyCustomRepository</code></p>
     /// <p><code>baseurl=https://my-custom-repository</code></p>
-    /// <p><code>enabled=1</code></p><note>
-    /// <p>For information about other options available for your yum repository configuration, see <a href="https://man7.org/linux/man-pages/man5/dnf.conf.5.html">dnf.conf(5)</a>.</p>
-    /// </note>
+    /// <p><code>enabled=1</code></p>
+    /// <p>For information about other options available for your yum repository configuration, see <a href="https://man7.org/linux/man-pages/man5/dnf.conf.5.html">dnf.conf(5)</a> on the <i>man7.org</i> website.</p>
+    /// <p><b>Examples for Ubuntu Server and Debian Server</b></p>
+    /// <p><code>deb http://security.ubuntu.com/ubuntu jammy main</code></p>
+    /// <p><code>deb https://site.example.com/debian distribution component1 component2 component3</code></p>
+    /// <p>Repo information for Ubuntu Server repositories must be specifed in a single line. For more examples and information, see <a href="https://manpages.ubuntu.com/manpages/jammy/man5/sources.list.5.html">jammy (5) sources.list.5.gz</a> on the <i>Ubuntu Server Manuals</i> website and <a href="https://wiki.debian.org/SourcesList#sources.list_format">sources.list format</a> on the <i>Debian Wiki</i>.</p>
     pub fn get_configuration(&self) -> &::std::option::Option<::std::string::String> {
         &self.configuration
     }

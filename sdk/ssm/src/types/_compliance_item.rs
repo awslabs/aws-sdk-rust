@@ -18,7 +18,9 @@ pub struct ComplianceItem {
     pub status: ::std::option::Option<crate::types::ComplianceStatus>,
     /// <p>The severity of the compliance status. Severity can be one of the following: Critical, High, Medium, Low, Informational, Unspecified.</p>
     pub severity: ::std::option::Option<crate::types::ComplianceSeverity>,
-    /// <p>A summary for the compliance item. The summary includes an execution ID, the execution type (for example, command), and the execution time.</p>
+    /// <p>A summary for the compliance item. The summary includes an execution ID, the execution type (for example, command), and the execution time.</p><important>
+    /// <p>For State Manager associations, the <code>ExecutionTime</code> value represents when the compliance status was captured and aggregated by the Systems Manager service, not necessarily when the underlying association was executed on the managed node. State Manager updates compliance status for all associations on an instance whenever any association executes, which means multiple associations may show the same execution time even if they were executed at different times.</p>
+    /// </important>
     pub execution_summary: ::std::option::Option<crate::types::ComplianceExecutionSummary>,
     /// <p>A "Key": "Value" tag combination for the compliance item.</p>
     pub details: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
@@ -52,7 +54,9 @@ impl ComplianceItem {
     pub fn severity(&self) -> ::std::option::Option<&crate::types::ComplianceSeverity> {
         self.severity.as_ref()
     }
-    /// <p>A summary for the compliance item. The summary includes an execution ID, the execution type (for example, command), and the execution time.</p>
+    /// <p>A summary for the compliance item. The summary includes an execution ID, the execution type (for example, command), and the execution time.</p><important>
+    /// <p>For State Manager associations, the <code>ExecutionTime</code> value represents when the compliance status was captured and aggregated by the Systems Manager service, not necessarily when the underlying association was executed on the managed node. State Manager updates compliance status for all associations on an instance whenever any association executes, which means multiple associations may show the same execution time even if they were executed at different times.</p>
+    /// </important>
     pub fn execution_summary(&self) -> ::std::option::Option<&crate::types::ComplianceExecutionSummary> {
         self.execution_summary.as_ref()
     }
@@ -181,17 +185,23 @@ impl ComplianceItemBuilder {
     pub fn get_severity(&self) -> &::std::option::Option<crate::types::ComplianceSeverity> {
         &self.severity
     }
-    /// <p>A summary for the compliance item. The summary includes an execution ID, the execution type (for example, command), and the execution time.</p>
+    /// <p>A summary for the compliance item. The summary includes an execution ID, the execution type (for example, command), and the execution time.</p><important>
+    /// <p>For State Manager associations, the <code>ExecutionTime</code> value represents when the compliance status was captured and aggregated by the Systems Manager service, not necessarily when the underlying association was executed on the managed node. State Manager updates compliance status for all associations on an instance whenever any association executes, which means multiple associations may show the same execution time even if they were executed at different times.</p>
+    /// </important>
     pub fn execution_summary(mut self, input: crate::types::ComplianceExecutionSummary) -> Self {
         self.execution_summary = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A summary for the compliance item. The summary includes an execution ID, the execution type (for example, command), and the execution time.</p>
+    /// <p>A summary for the compliance item. The summary includes an execution ID, the execution type (for example, command), and the execution time.</p><important>
+    /// <p>For State Manager associations, the <code>ExecutionTime</code> value represents when the compliance status was captured and aggregated by the Systems Manager service, not necessarily when the underlying association was executed on the managed node. State Manager updates compliance status for all associations on an instance whenever any association executes, which means multiple associations may show the same execution time even if they were executed at different times.</p>
+    /// </important>
     pub fn set_execution_summary(mut self, input: ::std::option::Option<crate::types::ComplianceExecutionSummary>) -> Self {
         self.execution_summary = input;
         self
     }
-    /// <p>A summary for the compliance item. The summary includes an execution ID, the execution type (for example, command), and the execution time.</p>
+    /// <p>A summary for the compliance item. The summary includes an execution ID, the execution type (for example, command), and the execution time.</p><important>
+    /// <p>For State Manager associations, the <code>ExecutionTime</code> value represents when the compliance status was captured and aggregated by the Systems Manager service, not necessarily when the underlying association was executed on the managed node. State Manager updates compliance status for all associations on an instance whenever any association executes, which means multiple associations may show the same execution time even if they were executed at different times.</p>
+    /// </important>
     pub fn get_execution_summary(&self) -> &::std::option::Option<crate::types::ComplianceExecutionSummary> {
         &self.execution_summary
     }

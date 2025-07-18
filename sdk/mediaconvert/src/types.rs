@@ -1215,6 +1215,10 @@ pub use crate::types::_input::Input;
 
 pub use crate::types::_input_video_generator::InputVideoGenerator;
 
+pub use crate::types::_input_tams_settings::InputTamsSettings;
+
+pub use crate::types::_tams_gap_handling::TamsGapHandling;
+
 pub use crate::types::_input_decryption_settings::InputDecryptionSettings;
 
 pub use crate::types::_decryption_mode::DecryptionMode;
@@ -2013,6 +2017,8 @@ mod _input_sample_range;
 
 mod _input_scan_type;
 
+mod _input_tams_settings;
+
 mod _input_template;
 
 mod _input_timecode_source;
@@ -2374,6 +2380,8 @@ mod _srt_style_passthrough;
 mod _static_key_provider;
 
 mod _status_update_interval;
+
+mod _tams_gap_handling;
 
 mod _teletext_destination_settings;
 

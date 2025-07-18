@@ -35,6 +35,8 @@ pub use crate::types::_asset_instance::AssetInstanceBuilder;
 
 pub use crate::types::_instance_type_item::InstanceTypeItemBuilder;
 
+pub use crate::types::_subscription::SubscriptionBuilder;
+
 pub use crate::types::_order::OrderBuilder;
 
 pub use crate::types::_line_item::LineItemBuilder;

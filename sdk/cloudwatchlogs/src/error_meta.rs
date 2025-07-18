@@ -11,6 +11,8 @@ pub enum Error {
     /// <p><code>PutLogEvents</code> actions are now always accepted and never return <code>DataAlreadyAcceptedException</code> regardless of whether a given batch of log events has already been accepted.</p>
     /// </important>
     DataAlreadyAcceptedException(crate::types::error::DataAlreadyAcceptedException),
+    /// <p>An internal error occurred during the streaming of log data. This exception is thrown when there's an issue with the internal streaming mechanism used by the GetLogObject operation.</p>
+    InternalStreamingException(crate::types::error::InternalStreamingException),
     /// <p>The operation is not valid on the specified resource.</p>
     InvalidOperationException(crate::types::error::InvalidOperationException),
     /// <p>A parameter is specified incorrectly.</p>
@@ -61,6 +63,7 @@ impl ::std::fmt::Display for Error {
             Error::AccessDeniedException(inner) => inner.fmt(f),
             Error::ConflictException(inner) => inner.fmt(f),
             Error::DataAlreadyAcceptedException(inner) => inner.fmt(f),
+            Error::InternalStreamingException(inner) => inner.fmt(f),
             Error::InvalidOperationException(inner) => inner.fmt(f),
             Error::InvalidParameterException(inner) => inner.fmt(f),
             Error::InvalidSequenceTokenException(inner) => inner.fmt(f),
@@ -101,6 +104,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
             Self::AccessDeniedException(inner) => inner.meta(),
             Self::ConflictException(inner) => inner.meta(),
             Self::DataAlreadyAcceptedException(inner) => inner.meta(),
+            Self::InternalStreamingException(inner) => inner.meta(),
             Self::InvalidOperationException(inner) => inner.meta(),
             Self::InvalidParameterException(inner) => inner.meta(),
             Self::InvalidSequenceTokenException(inner) => inner.meta(),
@@ -1779,6 +1783,33 @@ impl From<crate::operation::get_log_group_fields::GetLogGroupFieldsError> for Er
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_log_object::GetLogObjectError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_log_object::GetLogObjectError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_log_object::GetLogObjectError> for Error {
+    fn from(err: crate::operation::get_log_object::GetLogObjectError) -> Self {
+        match err {
+            crate::operation::get_log_object::GetLogObjectError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_log_object::GetLogObjectError::InvalidOperationException(inner) => Error::InvalidOperationException(inner),
+            crate::operation::get_log_object::GetLogObjectError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::get_log_object::GetLogObjectError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::get_log_object::GetLogObjectError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_log_object::GetLogObjectError::InternalStreamingException(inner) => Error::InternalStreamingException(inner),
+            crate::operation::get_log_object::GetLogObjectError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_log_record::GetLogRecordError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -2879,6 +2910,28 @@ impl From<crate::operation::update_log_anomaly_detector::UpdateLogAnomalyDetecto
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::types::error::GetLogObjectResponseStreamError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::types::error::GetLogObjectResponseStreamError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::types::error::GetLogObjectResponseStreamError> for Error {
+    fn from(err: crate::types::error::GetLogObjectResponseStreamError) -> Self {
+        match err {
+            crate::types::error::GetLogObjectResponseStreamError::InternalStreamingException(inner) => Error::InternalStreamingException(inner),
+            crate::types::error::GetLogObjectResponseStreamError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::types::error::StartLiveTailResponseStreamError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -2908,6 +2961,7 @@ impl ::std::error::Error for Error {
             Error::AccessDeniedException(inner) => inner.source(),
             Error::ConflictException(inner) => inner.source(),
             Error::DataAlreadyAcceptedException(inner) => inner.source(),
+            Error::InternalStreamingException(inner) => inner.source(),
             Error::InvalidOperationException(inner) => inner.source(),
             Error::InvalidParameterException(inner) => inner.source(),
             Error::InvalidSequenceTokenException(inner) => inner.source(),
@@ -2934,6 +2988,7 @@ impl ::aws_types::request_id::RequestId for Error {
             Self::AccessDeniedException(e) => e.request_id(),
             Self::ConflictException(e) => e.request_id(),
             Self::DataAlreadyAcceptedException(e) => e.request_id(),
+            Self::InternalStreamingException(e) => e.request_id(),
             Self::InvalidOperationException(e) => e.request_id(),
             Self::InvalidParameterException(e) => e.request_id(),
             Self::InvalidSequenceTokenException(e) => e.request_id(),

@@ -47,6 +47,8 @@ pub(crate) mod shape_get_order;
 
 pub(crate) mod shape_get_outpost;
 
+pub(crate) mod shape_get_outpost_billing_information;
+
 pub(crate) mod shape_get_outpost_instance_types;
 
 pub(crate) mod shape_get_outpost_supported_instance_types;
@@ -171,6 +173,8 @@ pub(crate) mod shape_site;
 
 pub(crate) mod shape_site_list_definition;
 
+pub(crate) mod shape_subscription_list;
+
 pub(crate) mod shape_tag_map;
 
 pub(crate) mod shape_account_id_list;
@@ -197,6 +201,8 @@ pub(crate) mod shape_line_item_list_definition;
 
 pub(crate) mod shape_order_summary;
 
+pub(crate) mod shape_subscription;
+
 pub(crate) mod shape_supported_storage_list;
 
 pub(crate) mod shape_supported_uplink_gbps_list_definition;
@@ -210,6 +216,8 @@ pub(crate) mod shape_ec2_capacity;
 pub(crate) mod shape_line_item;
 
 pub(crate) mod shape_line_item_status_counts;
+
+pub(crate) mod shape_order_id_list;
 
 pub(crate) mod shape_asset_instance_capacity_list;
 

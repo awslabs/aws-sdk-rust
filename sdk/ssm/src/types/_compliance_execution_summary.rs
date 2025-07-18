@@ -4,7 +4,9 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ComplianceExecutionSummary {
-    /// <p>The time the execution ran as a datetime object that is saved in the following format: <code>yyyy-MM-dd'T'HH:mm:ss'Z'</code></p>
+    /// <p>The time the execution ran as a datetime object that is saved in the following format: <code>yyyy-MM-dd'T'HH:mm:ss'Z'</code></p><important>
+    /// <p>For State Manager associations, this timestamp represents when the compliance status was captured and reported by the Systems Manager service, not when the underlying association was actually executed on the managed node. To track actual association execution times, use the <code>DescribeAssociationExecutionTargets</code> command or check the association execution history in the Systems Manager console.</p>
+    /// </important>
     pub execution_time: ::aws_smithy_types::DateTime,
     /// <p>An ID created by the system when <code>PutComplianceItems</code> was called. For example, <code>CommandID</code> is a valid execution ID. You can use this ID in subsequent calls.</p>
     pub execution_id: ::std::option::Option<::std::string::String>,
@@ -12,7 +14,9 @@ pub struct ComplianceExecutionSummary {
     pub execution_type: ::std::option::Option<::std::string::String>,
 }
 impl ComplianceExecutionSummary {
-    /// <p>The time the execution ran as a datetime object that is saved in the following format: <code>yyyy-MM-dd'T'HH:mm:ss'Z'</code></p>
+    /// <p>The time the execution ran as a datetime object that is saved in the following format: <code>yyyy-MM-dd'T'HH:mm:ss'Z'</code></p><important>
+    /// <p>For State Manager associations, this timestamp represents when the compliance status was captured and reported by the Systems Manager service, not when the underlying association was actually executed on the managed node. To track actual association execution times, use the <code>DescribeAssociationExecutionTargets</code> command or check the association execution history in the Systems Manager console.</p>
+    /// </important>
     pub fn execution_time(&self) -> &::aws_smithy_types::DateTime {
         &self.execution_time
     }
@@ -41,18 +45,24 @@ pub struct ComplianceExecutionSummaryBuilder {
     pub(crate) execution_type: ::std::option::Option<::std::string::String>,
 }
 impl ComplianceExecutionSummaryBuilder {
-    /// <p>The time the execution ran as a datetime object that is saved in the following format: <code>yyyy-MM-dd'T'HH:mm:ss'Z'</code></p>
+    /// <p>The time the execution ran as a datetime object that is saved in the following format: <code>yyyy-MM-dd'T'HH:mm:ss'Z'</code></p><important>
+    /// <p>For State Manager associations, this timestamp represents when the compliance status was captured and reported by the Systems Manager service, not when the underlying association was actually executed on the managed node. To track actual association execution times, use the <code>DescribeAssociationExecutionTargets</code> command or check the association execution history in the Systems Manager console.</p>
+    /// </important>
     /// This field is required.
     pub fn execution_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.execution_time = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The time the execution ran as a datetime object that is saved in the following format: <code>yyyy-MM-dd'T'HH:mm:ss'Z'</code></p>
+    /// <p>The time the execution ran as a datetime object that is saved in the following format: <code>yyyy-MM-dd'T'HH:mm:ss'Z'</code></p><important>
+    /// <p>For State Manager associations, this timestamp represents when the compliance status was captured and reported by the Systems Manager service, not when the underlying association was actually executed on the managed node. To track actual association execution times, use the <code>DescribeAssociationExecutionTargets</code> command or check the association execution history in the Systems Manager console.</p>
+    /// </important>
     pub fn set_execution_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.execution_time = input;
         self
     }
-    /// <p>The time the execution ran as a datetime object that is saved in the following format: <code>yyyy-MM-dd'T'HH:mm:ss'Z'</code></p>
+    /// <p>The time the execution ran as a datetime object that is saved in the following format: <code>yyyy-MM-dd'T'HH:mm:ss'Z'</code></p><important>
+    /// <p>For State Manager associations, this timestamp represents when the compliance status was captured and reported by the Systems Manager service, not when the underlying association was actually executed on the managed node. To track actual association execution times, use the <code>DescribeAssociationExecutionTargets</code> command or check the association execution history in the Systems Manager console.</p>
+    /// </important>
     pub fn get_execution_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.execution_time
     }

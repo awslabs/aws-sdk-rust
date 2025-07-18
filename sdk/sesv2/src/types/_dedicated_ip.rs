@@ -13,9 +13,17 @@ pub struct DedicatedIp {
     /// <p><code>IN_PROGRESS</code> – The IP address isn't ready to use because the dedicated IP warm-up process is ongoing.</p></li>
     /// <li>
     /// <p><code>DONE</code> – The dedicated IP warm-up process is complete, and the IP address is ready to use.</p></li>
+    /// <li>
+    /// <p><code>NOT_APPLICABLE</code> – The warm-up status doesn't apply to this IP address. This status is used for IP addresses in managed dedicated IP pools, where Amazon SES automatically handles the warm-up process.</p></li>
     /// </ul>
     pub warmup_status: crate::types::WarmupStatus,
-    /// <p>Indicates how complete the dedicated IP warm-up process is. When this value equals 1, the address has completed the warm-up process and is ready for use.</p>
+    /// <p>Indicates the progress of your dedicated IP warm-up:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>0-100</code> – For standard dedicated IP addresses, this shows the warm-up completion percentage. A value of 100 means the IP address is fully warmed up and ready for use.</p></li>
+    /// <li>
+    /// <p><code>-1</code> – Appears for IP addresses in managed dedicated pools where Amazon SES automatically handles the warm-up process, making the percentage not applicable.</p></li>
+    /// </ul>
     pub warmup_percentage: i32,
     /// <p>The name of the dedicated IP pool that the IP address is associated with.</p>
     pub pool_name: ::std::option::Option<::std::string::String>,
@@ -32,11 +40,19 @@ impl DedicatedIp {
     /// <p><code>IN_PROGRESS</code> – The IP address isn't ready to use because the dedicated IP warm-up process is ongoing.</p></li>
     /// <li>
     /// <p><code>DONE</code> – The dedicated IP warm-up process is complete, and the IP address is ready to use.</p></li>
+    /// <li>
+    /// <p><code>NOT_APPLICABLE</code> – The warm-up status doesn't apply to this IP address. This status is used for IP addresses in managed dedicated IP pools, where Amazon SES automatically handles the warm-up process.</p></li>
     /// </ul>
     pub fn warmup_status(&self) -> &crate::types::WarmupStatus {
         &self.warmup_status
     }
-    /// <p>Indicates how complete the dedicated IP warm-up process is. When this value equals 1, the address has completed the warm-up process and is ready for use.</p>
+    /// <p>Indicates the progress of your dedicated IP warm-up:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>0-100</code> – For standard dedicated IP addresses, this shows the warm-up completion percentage. A value of 100 means the IP address is fully warmed up and ready for use.</p></li>
+    /// <li>
+    /// <p><code>-1</code> – Appears for IP addresses in managed dedicated pools where Amazon SES automatically handles the warm-up process, making the percentage not applicable.</p></li>
+    /// </ul>
     pub fn warmup_percentage(&self) -> i32 {
         self.warmup_percentage
     }
@@ -83,6 +99,8 @@ impl DedicatedIpBuilder {
     /// <p><code>IN_PROGRESS</code> – The IP address isn't ready to use because the dedicated IP warm-up process is ongoing.</p></li>
     /// <li>
     /// <p><code>DONE</code> – The dedicated IP warm-up process is complete, and the IP address is ready to use.</p></li>
+    /// <li>
+    /// <p><code>NOT_APPLICABLE</code> – The warm-up status doesn't apply to this IP address. This status is used for IP addresses in managed dedicated IP pools, where Amazon SES automatically handles the warm-up process.</p></li>
     /// </ul>
     /// This field is required.
     pub fn warmup_status(mut self, input: crate::types::WarmupStatus) -> Self {
@@ -95,6 +113,8 @@ impl DedicatedIpBuilder {
     /// <p><code>IN_PROGRESS</code> – The IP address isn't ready to use because the dedicated IP warm-up process is ongoing.</p></li>
     /// <li>
     /// <p><code>DONE</code> – The dedicated IP warm-up process is complete, and the IP address is ready to use.</p></li>
+    /// <li>
+    /// <p><code>NOT_APPLICABLE</code> – The warm-up status doesn't apply to this IP address. This status is used for IP addresses in managed dedicated IP pools, where Amazon SES automatically handles the warm-up process.</p></li>
     /// </ul>
     pub fn set_warmup_status(mut self, input: ::std::option::Option<crate::types::WarmupStatus>) -> Self {
         self.warmup_status = input;
@@ -106,22 +126,42 @@ impl DedicatedIpBuilder {
     /// <p><code>IN_PROGRESS</code> – The IP address isn't ready to use because the dedicated IP warm-up process is ongoing.</p></li>
     /// <li>
     /// <p><code>DONE</code> – The dedicated IP warm-up process is complete, and the IP address is ready to use.</p></li>
+    /// <li>
+    /// <p><code>NOT_APPLICABLE</code> – The warm-up status doesn't apply to this IP address. This status is used for IP addresses in managed dedicated IP pools, where Amazon SES automatically handles the warm-up process.</p></li>
     /// </ul>
     pub fn get_warmup_status(&self) -> &::std::option::Option<crate::types::WarmupStatus> {
         &self.warmup_status
     }
-    /// <p>Indicates how complete the dedicated IP warm-up process is. When this value equals 1, the address has completed the warm-up process and is ready for use.</p>
+    /// <p>Indicates the progress of your dedicated IP warm-up:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>0-100</code> – For standard dedicated IP addresses, this shows the warm-up completion percentage. A value of 100 means the IP address is fully warmed up and ready for use.</p></li>
+    /// <li>
+    /// <p><code>-1</code> – Appears for IP addresses in managed dedicated pools where Amazon SES automatically handles the warm-up process, making the percentage not applicable.</p></li>
+    /// </ul>
     /// This field is required.
     pub fn warmup_percentage(mut self, input: i32) -> Self {
         self.warmup_percentage = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Indicates how complete the dedicated IP warm-up process is. When this value equals 1, the address has completed the warm-up process and is ready for use.</p>
+    /// <p>Indicates the progress of your dedicated IP warm-up:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>0-100</code> – For standard dedicated IP addresses, this shows the warm-up completion percentage. A value of 100 means the IP address is fully warmed up and ready for use.</p></li>
+    /// <li>
+    /// <p><code>-1</code> – Appears for IP addresses in managed dedicated pools where Amazon SES automatically handles the warm-up process, making the percentage not applicable.</p></li>
+    /// </ul>
     pub fn set_warmup_percentage(mut self, input: ::std::option::Option<i32>) -> Self {
         self.warmup_percentage = input;
         self
     }
-    /// <p>Indicates how complete the dedicated IP warm-up process is. When this value equals 1, the address has completed the warm-up process and is ready for use.</p>
+    /// <p>Indicates the progress of your dedicated IP warm-up:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>0-100</code> – For standard dedicated IP addresses, this shows the warm-up completion percentage. A value of 100 means the IP address is fully warmed up and ready for use.</p></li>
+    /// <li>
+    /// <p><code>-1</code> – Appears for IP addresses in managed dedicated pools where Amazon SES automatically handles the warm-up process, making the percentage not applicable.</p></li>
+    /// </ul>
     pub fn get_warmup_percentage(&self) -> &::std::option::Option<i32> {
         &self.warmup_percentage
     }

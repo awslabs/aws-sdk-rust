@@ -267,6 +267,8 @@ pub(crate) mod shape_input_clipping;
 
 pub(crate) mod shape_input_decryption_settings;
 
+pub(crate) mod shape_input_tams_settings;
+
 pub(crate) mod shape_input_video_generator;
 
 pub(crate) mod shape_list_of_audio_description;

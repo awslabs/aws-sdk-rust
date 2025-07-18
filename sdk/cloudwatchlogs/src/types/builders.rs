@@ -125,6 +125,8 @@ pub use crate::types::_query_statistics::QueryStatisticsBuilder;
 
 pub use crate::types::_result_field::ResultFieldBuilder;
 
+pub use crate::types::_fields_data::FieldsDataBuilder;
+
 pub use crate::types::_log_group_field::LogGroupFieldBuilder;
 
 pub use crate::types::_output_log_event::OutputLogEventBuilder;

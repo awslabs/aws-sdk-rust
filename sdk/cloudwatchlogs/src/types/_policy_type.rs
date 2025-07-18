@@ -14,6 +14,7 @@
 /// match policytype {
 ///     PolicyType::DataProtectionPolicy => { /* ... */ },
 ///     PolicyType::FieldIndexPolicy => { /* ... */ },
+///     PolicyType::MetricExtractionPolicy => { /* ... */ },
 ///     PolicyType::SubscriptionFilterPolicy => { /* ... */ },
 ///     PolicyType::TransformerPolicy => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -49,6 +50,8 @@ pub enum PolicyType {
     #[allow(missing_docs)] // documentation missing in model
     FieldIndexPolicy,
     #[allow(missing_docs)] // documentation missing in model
+    MetricExtractionPolicy,
+    #[allow(missing_docs)] // documentation missing in model
     SubscriptionFilterPolicy,
     #[allow(missing_docs)] // documentation missing in model
     TransformerPolicy,
@@ -61,6 +64,7 @@ impl ::std::convert::From<&str> for PolicyType {
         match s {
             "DATA_PROTECTION_POLICY" => PolicyType::DataProtectionPolicy,
             "FIELD_INDEX_POLICY" => PolicyType::FieldIndexPolicy,
+            "METRIC_EXTRACTION_POLICY" => PolicyType::MetricExtractionPolicy,
             "SUBSCRIPTION_FILTER_POLICY" => PolicyType::SubscriptionFilterPolicy,
             "TRANSFORMER_POLICY" => PolicyType::TransformerPolicy,
             other => PolicyType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -80,6 +84,7 @@ impl PolicyType {
         match self {
             PolicyType::DataProtectionPolicy => "DATA_PROTECTION_POLICY",
             PolicyType::FieldIndexPolicy => "FIELD_INDEX_POLICY",
+            PolicyType::MetricExtractionPolicy => "METRIC_EXTRACTION_POLICY",
             PolicyType::SubscriptionFilterPolicy => "SUBSCRIPTION_FILTER_POLICY",
             PolicyType::TransformerPolicy => "TRANSFORMER_POLICY",
             PolicyType::Unknown(value) => value.as_str(),
@@ -90,6 +95,7 @@ impl PolicyType {
         &[
             "DATA_PROTECTION_POLICY",
             "FIELD_INDEX_POLICY",
+            "METRIC_EXTRACTION_POLICY",
             "SUBSCRIPTION_FILTER_POLICY",
             "TRANSFORMER_POLICY",
         ]
@@ -117,6 +123,7 @@ impl ::std::fmt::Display for PolicyType {
         match self {
             PolicyType::DataProtectionPolicy => write!(f, "DATA_PROTECTION_POLICY"),
             PolicyType::FieldIndexPolicy => write!(f, "FIELD_INDEX_POLICY"),
+            PolicyType::MetricExtractionPolicy => write!(f, "METRIC_EXTRACTION_POLICY"),
             PolicyType::SubscriptionFilterPolicy => write!(f, "SUBSCRIPTION_FILTER_POLICY"),
             PolicyType::TransformerPolicy => write!(f, "TRANSFORMER_POLICY"),
             PolicyType::Unknown(value) => write!(f, "{}", value),

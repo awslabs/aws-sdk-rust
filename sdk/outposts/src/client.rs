@@ -187,6 +187,8 @@ mod get_order;
 
 mod get_outpost;
 
+mod get_outpost_billing_information;
+
 mod get_outpost_instance_types;
 
 mod get_outpost_supported_instance_types;

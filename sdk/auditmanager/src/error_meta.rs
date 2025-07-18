@@ -1738,6 +1738,9 @@ impl From<crate::operation::register_organization_admin_account::RegisterOrganiz
             crate::operation::register_organization_admin_account::RegisterOrganizationAdminAccountError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }
+            crate::operation::register_organization_admin_account::RegisterOrganizationAdminAccountError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
             crate::operation::register_organization_admin_account::RegisterOrganizationAdminAccountError::ValidationException(inner) => {
                 Error::ValidationException(inner)
             }

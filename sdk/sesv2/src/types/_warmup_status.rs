@@ -14,6 +14,7 @@
 /// match warmupstatus {
 ///     WarmupStatus::Done => { /* ... */ },
 ///     WarmupStatus::InProgress => { /* ... */ },
+///     WarmupStatus::NotApplicable => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -46,6 +47,8 @@ pub enum WarmupStatus {
     Done,
     #[allow(missing_docs)] // documentation missing in model
     InProgress,
+    #[allow(missing_docs)] // documentation missing in model
+    NotApplicable,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -55,6 +58,7 @@ impl ::std::convert::From<&str> for WarmupStatus {
         match s {
             "DONE" => WarmupStatus::Done,
             "IN_PROGRESS" => WarmupStatus::InProgress,
+            "NOT_APPLICABLE" => WarmupStatus::NotApplicable,
             other => WarmupStatus::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -72,12 +76,13 @@ impl WarmupStatus {
         match self {
             WarmupStatus::Done => "DONE",
             WarmupStatus::InProgress => "IN_PROGRESS",
+            WarmupStatus::NotApplicable => "NOT_APPLICABLE",
             WarmupStatus::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["DONE", "IN_PROGRESS"]
+        &["DONE", "IN_PROGRESS", "NOT_APPLICABLE"]
     }
 }
 impl ::std::convert::AsRef<str> for WarmupStatus {
@@ -102,6 +107,7 @@ impl ::std::fmt::Display for WarmupStatus {
         match self {
             WarmupStatus::Done => write!(f, "DONE"),
             WarmupStatus::InProgress => write!(f, "IN_PROGRESS"),
+            WarmupStatus::NotApplicable => write!(f, "NOT_APPLICABLE"),
             WarmupStatus::Unknown(value) => write!(f, "{}", value),
         }
     }
