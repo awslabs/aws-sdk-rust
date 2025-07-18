@@ -23,6 +23,7 @@ impl crate::operation::unlabel_parameter_version::builders::UnlabelParameterVers
 /// Fluent builder constructing a request to `UnlabelParameterVersion`.
 ///
 /// <p>Remove a label or labels from a parameter.</p>
+/// <p>Parameter names can't contain spaces. The service removes any spaces specified for the beginning or end of a parameter name. If the specified name for a parameter contains spaces between characters, the request fails with a <code>ValidationException</code> error.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UnlabelParameterVersionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

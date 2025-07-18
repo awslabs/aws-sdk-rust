@@ -290,6 +290,7 @@ where
 impl From<crate::operation::get_catalog_item::GetCatalogItemError> for Error {
     fn from(err: crate::operation::get_catalog_item::GetCatalogItemError) -> Self {
         match err {
+            crate::operation::get_catalog_item::GetCatalogItemError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::get_catalog_item::GetCatalogItemError::InternalServerException(inner) => Error::InternalServerException(inner),
             crate::operation::get_catalog_item::GetCatalogItemError::NotFoundException(inner) => Error::NotFoundException(inner),
             crate::operation::get_catalog_item::GetCatalogItemError::ValidationException(inner) => Error::ValidationException(inner),
@@ -368,6 +369,43 @@ impl From<crate::operation::get_outpost::GetOutpostError> for Error {
             crate::operation::get_outpost::GetOutpostError::NotFoundException(inner) => Error::NotFoundException(inner),
             crate::operation::get_outpost::GetOutpostError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::get_outpost::GetOutpostError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_outpost_billing_information::GetOutpostBillingInformationError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_outpost_billing_information::GetOutpostBillingInformationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_outpost_billing_information::GetOutpostBillingInformationError> for Error {
+    fn from(err: crate::operation::get_outpost_billing_information::GetOutpostBillingInformationError) -> Self {
+        match err {
+            crate::operation::get_outpost_billing_information::GetOutpostBillingInformationError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::get_outpost_billing_information::GetOutpostBillingInformationError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::get_outpost_billing_information::GetOutpostBillingInformationError::NotFoundException(inner) => {
+                Error::NotFoundException(inner)
+            }
+            crate::operation::get_outpost_billing_information::GetOutpostBillingInformationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -639,6 +677,7 @@ where
 impl From<crate::operation::list_catalog_items::ListCatalogItemsError> for Error {
     fn from(err: crate::operation::list_catalog_items::ListCatalogItemsError) -> Self {
         match err {
+            crate::operation::list_catalog_items::ListCatalogItemsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::list_catalog_items::ListCatalogItemsError::InternalServerException(inner) => Error::InternalServerException(inner),
             crate::operation::list_catalog_items::ListCatalogItemsError::NotFoundException(inner) => Error::NotFoundException(inner),
             crate::operation::list_catalog_items::ListCatalogItemsError::ValidationException(inner) => Error::ValidationException(inner),

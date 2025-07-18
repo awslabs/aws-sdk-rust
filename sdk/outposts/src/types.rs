@@ -85,6 +85,12 @@ pub use crate::types::_asset_instance::AssetInstance;
 
 pub use crate::types::_instance_type_item::InstanceTypeItem;
 
+pub use crate::types::_subscription::Subscription;
+
+pub use crate::types::_subscription_status::SubscriptionStatus;
+
+pub use crate::types::_subscription_type::SubscriptionType;
+
 pub use crate::types::_order::Order;
 
 pub use crate::types::_payment_term::PaymentTerm;
@@ -196,6 +202,12 @@ mod _shipment_carrier;
 mod _shipment_information;
 
 mod _site;
+
+mod _subscription;
+
+mod _subscription_status;
+
+mod _subscription_type;
 
 mod _supported_hardware_type;
 

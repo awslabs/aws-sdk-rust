@@ -177,6 +177,10 @@ pub use crate::types::_query_statistics::QueryStatistics;
 
 pub use crate::types::_result_field::ResultField;
 
+pub use crate::types::_get_log_object_response_stream::GetLogObjectResponseStream;
+
+pub use crate::types::_fields_data::FieldsData;
+
 pub use crate::types::_log_group_field::LogGroupField;
 
 pub use crate::types::_output_log_event::OutputLogEvent;
@@ -305,9 +309,13 @@ mod _export_task_status_code;
 
 mod _field_index;
 
+mod _fields_data;
+
 mod _filtered_log_event;
 
 mod _flattened_element;
+
+mod _get_log_object_response_stream;
 
 mod _grok;
 

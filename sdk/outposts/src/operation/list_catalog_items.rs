@@ -289,6 +289,8 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ListCatalogIt
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum ListCatalogItemsError {
+    /// <p>You do not have permission to perform this operation.</p>
+    AccessDeniedException(crate::types::error::AccessDeniedException),
     /// <p>An internal error has occurred.</p>
     InternalServerException(crate::types::error::InternalServerException),
     /// <p>The specified request is not valid.</p>
@@ -328,11 +330,16 @@ impl ListCatalogItemsError {
     ///
     pub fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
+            Self::AccessDeniedException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InternalServerException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::NotFoundException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ValidationException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::Unhandled(e) => &e.meta,
         }
+    }
+    /// Returns `true` if the error kind is `ListCatalogItemsError::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(self, Self::AccessDeniedException(_))
     }
     /// Returns `true` if the error kind is `ListCatalogItemsError::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
@@ -350,6 +357,7 @@ impl ListCatalogItemsError {
 impl ::std::error::Error for ListCatalogItemsError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
+            Self::AccessDeniedException(_inner) => ::std::option::Option::Some(_inner),
             Self::InternalServerException(_inner) => ::std::option::Option::Some(_inner),
             Self::NotFoundException(_inner) => ::std::option::Option::Some(_inner),
             Self::ValidationException(_inner) => ::std::option::Option::Some(_inner),
@@ -360,6 +368,7 @@ impl ::std::error::Error for ListCatalogItemsError {
 impl ::std::fmt::Display for ListCatalogItemsError {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         match self {
+            Self::AccessDeniedException(_inner) => _inner.fmt(f),
             Self::InternalServerException(_inner) => _inner.fmt(f),
             Self::NotFoundException(_inner) => _inner.fmt(f),
             Self::ValidationException(_inner) => _inner.fmt(f),
@@ -384,6 +393,7 @@ impl ::aws_smithy_types::retry::ProvideErrorKind for ListCatalogItemsError {
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for ListCatalogItemsError {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
+            Self::AccessDeniedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InternalServerException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::NotFoundException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ValidationException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),

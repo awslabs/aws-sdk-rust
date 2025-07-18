@@ -157,6 +157,9 @@ pub mod get_log_events;
 /// Types for the `GetLogGroupFields` operation.
 pub mod get_log_group_fields;
 
+/// Types for the `GetLogObject` operation.
+pub mod get_log_object;
+
 /// Types for the `GetLogRecord` operation.
 pub mod get_log_record;
 

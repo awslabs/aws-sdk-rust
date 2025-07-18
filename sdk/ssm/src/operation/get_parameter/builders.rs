@@ -22,7 +22,8 @@ impl crate::operation::get_parameter::builders::GetParameterInputBuilder {
 }
 /// Fluent builder constructing a request to `GetParameter`.
 ///
-/// <p>Get information about a single parameter by specifying the parameter name.</p><note>
+/// <p>Get information about a single parameter by specifying the parameter name.</p>
+/// <p>Parameter names can't contain spaces. The service removes any spaces specified for the beginning or end of a parameter name. If the specified name for a parameter contains spaces between characters, the request fails with a <code>ValidationException</code> error.</p><note>
 /// <p>To get information about more than one parameter at a time, use the <code>GetParameters</code> operation.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

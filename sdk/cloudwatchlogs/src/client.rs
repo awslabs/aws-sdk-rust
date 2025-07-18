@@ -267,6 +267,8 @@ mod get_log_events;
 
 mod get_log_group_fields;
 
+mod get_log_object;
+
 mod get_log_record;
 
 mod get_query_results;

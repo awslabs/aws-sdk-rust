@@ -35,4 +35,6 @@ pub use crate::types::error::_data_already_accepted_exception::DataAlreadyAccept
 
 pub use crate::types::error::_service_quota_exceeded_exception::ServiceQuotaExceededExceptionBuilder;
 
+pub use crate::types::error::_internal_streaming_exception::InternalStreamingExceptionBuilder;
+
 pub use crate::types::error::_resource_already_exists_exception::ResourceAlreadyExistsExceptionBuilder;

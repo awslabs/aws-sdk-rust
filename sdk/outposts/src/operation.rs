@@ -37,6 +37,9 @@ pub mod get_order;
 /// Types for the `GetOutpost` operation.
 pub mod get_outpost;
 
+/// Types for the `GetOutpostBillingInformation` operation.
+pub mod get_outpost_billing_information;
+
 /// Types for the `GetOutpostInstanceTypes` operation.
 pub mod get_outpost_instance_types;
 

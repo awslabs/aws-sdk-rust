@@ -6,7 +6,7 @@ This reference is intended to be used with the [Amazon Web Services Systems Mana
 
 __Related resources__
   - For information about each of the tools that comprise Systems Manager, see [Using Systems Manager tools](https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-tools.html) in the _Amazon Web Services Systems Manager User Guide_.
-  - For details about predefined runbooks for Automation, a tool in Amazon Web Services Systems Manager, see the _ [Systems Manager Automation runbook reference](https://docs.aws.amazon.com/systems-manager-automation-runbooks/latest/userguide/automation-runbook-reference.html) _.
+  - For details about predefined runbooks for Automation, a tool in Amazon Web Services Systems Manager, see the _ [Systems Manager Automation Runbook Reference](https://docs.aws.amazon.com/systems-manager-automation-runbooks/latest/userguide/automation-runbook-reference.html) _.
   - For information about AppConfig, a tool in Systems Manager, see the _ [AppConfig User Guide](https://docs.aws.amazon.com/appconfig/latest/userguide/) _ and the _ [AppConfig API Reference](https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/) _.
   - For information about Incident Manager, a tool in Systems Manager, see the _ [Systems Manager Incident Manager User Guide](https://docs.aws.amazon.com/incident-manager/latest/userguide/) _ and the _ [Systems Manager Incident Manager API Reference](https://docs.aws.amazon.com/incident-manager/latest/APIReference/) _.
 
@@ -22,7 +22,7 @@ your project, add the following to your **Cargo.toml** file:
 ```toml
 [dependencies]
 aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-aws-sdk-ssm = "1.85.0"
+aws-sdk-ssm = "1.85.1"
 tokio = { version = "1", features = ["full"] }
 ```
 

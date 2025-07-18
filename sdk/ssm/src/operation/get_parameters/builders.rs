@@ -25,6 +25,7 @@ impl crate::operation::get_parameters::builders::GetParametersInputBuilder {
 /// <p>Get information about one or more parameters by specifying multiple parameter names.</p><note>
 /// <p>To get information about a single parameter, you can use the <code>GetParameter</code> operation instead.</p>
 /// </note>
+/// <p>Parameter names can't contain spaces. The service removes any spaces specified for the beginning or end of a parameter name. If the specified name for a parameter contains spaces between characters, the request fails with a <code>ValidationException</code> error.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetParametersFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

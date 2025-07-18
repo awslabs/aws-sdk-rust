@@ -142,35 +142,41 @@ pub fn ser_input(
         }
         array_46.finish();
     }
-    if let Some(var_48) = &input.timecode_source {
-        object.key("timecodeSource").string(var_48.as_str());
-    }
-    if let Some(var_49) = &input.timecode_start {
-        object.key("timecodeStart").string(var_49.as_str());
-    }
-    if let Some(var_50) = &input.video_generator {
+    if let Some(var_48) = &input.tams_settings {
         #[allow(unused_mut)]
-        let mut object_51 = object.key("videoGenerator").start_object();
-        crate::protocol_serde::shape_input_video_generator::ser_input_video_generator(&mut object_51, var_50)?;
-        object_51.finish();
+        let mut object_49 = object.key("tamsSettings").start_object();
+        crate::protocol_serde::shape_input_tams_settings::ser_input_tams_settings(&mut object_49, var_48)?;
+        object_49.finish();
     }
-    if let Some(var_52) = &input.video_overlays {
-        let mut array_53 = object.key("videoOverlays").start_array();
-        for item_54 in var_52 {
+    if let Some(var_50) = &input.timecode_source {
+        object.key("timecodeSource").string(var_50.as_str());
+    }
+    if let Some(var_51) = &input.timecode_start {
+        object.key("timecodeStart").string(var_51.as_str());
+    }
+    if let Some(var_52) = &input.video_generator {
+        #[allow(unused_mut)]
+        let mut object_53 = object.key("videoGenerator").start_object();
+        crate::protocol_serde::shape_input_video_generator::ser_input_video_generator(&mut object_53, var_52)?;
+        object_53.finish();
+    }
+    if let Some(var_54) = &input.video_overlays {
+        let mut array_55 = object.key("videoOverlays").start_array();
+        for item_56 in var_54 {
             {
                 #[allow(unused_mut)]
-                let mut object_55 = array_53.value().start_object();
-                crate::protocol_serde::shape_video_overlay::ser_video_overlay(&mut object_55, item_54)?;
-                object_55.finish();
+                let mut object_57 = array_55.value().start_object();
+                crate::protocol_serde::shape_video_overlay::ser_video_overlay(&mut object_57, item_56)?;
+                object_57.finish();
             }
         }
-        array_53.finish();
+        array_55.finish();
     }
-    if let Some(var_56) = &input.video_selector {
+    if let Some(var_58) = &input.video_selector {
         #[allow(unused_mut)]
-        let mut object_57 = object.key("videoSelector").start_object();
-        crate::protocol_serde::shape_video_selector::ser_video_selector(&mut object_57, var_56)?;
-        object_57.finish();
+        let mut object_59 = object.key("videoSelector").start_object();
+        crate::protocol_serde::shape_video_selector::ser_video_selector(&mut object_59, var_58)?;
+        object_59.finish();
     }
     Ok(())
 }
@@ -307,6 +313,9 @@ where
                                     tokens,
                                 )?,
                             );
+                        }
+                        "tamsSettings" => {
+                            builder = builder.set_tams_settings(crate::protocol_serde::shape_input_tams_settings::de_input_tams_settings(tokens)?);
                         }
                         "timecodeSource" => {
                             builder = builder.set_timecode_source(

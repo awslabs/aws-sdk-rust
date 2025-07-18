@@ -41,6 +41,8 @@ impl crate::operation::label_parameter_version::builders::LabelParameterVersionI
 /// <p>Labels can contain letters (case sensitive), numbers, periods (.), hyphens (-), or underscores (_).</p></li>
 /// <li>
 /// <p>Labels can't begin with a number, "<code>aws</code>" or "<code>ssm</code>" (not case sensitive). If a label fails to meet these requirements, then the label isn't associated with a parameter and the system displays it in the list of InvalidLabels.</p></li>
+/// <li>
+/// <p>Parameter names can't contain spaces. The service removes any spaces specified for the beginning or end of a parameter name. If the specified name for a parameter contains spaces between characters, the request fails with a <code>ValidationException</code> error.</p></li>
 /// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct LabelParameterVersionFluentBuilder {

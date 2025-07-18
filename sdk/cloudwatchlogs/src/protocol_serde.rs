@@ -127,6 +127,8 @@ pub(crate) mod shape_get_log_events;
 
 pub(crate) mod shape_get_log_group_fields;
 
+pub(crate) mod shape_get_log_object;
+
 pub(crate) mod shape_get_log_record;
 
 pub(crate) mod shape_get_query_results;
@@ -321,11 +323,17 @@ pub(crate) mod shape_get_log_events_input;
 
 pub(crate) mod shape_get_log_group_fields_input;
 
+pub(crate) mod shape_get_log_object_input;
+
+pub(crate) mod shape_get_log_object_output;
+
 pub(crate) mod shape_get_log_record_input;
 
 pub(crate) mod shape_get_query_results_input;
 
 pub(crate) mod shape_get_transformer_input;
+
+pub(crate) mod shape_internal_streaming_exception;
 
 pub(crate) mod shape_invalid_operation_exception;
 
@@ -562,6 +570,8 @@ pub(crate) mod shape_delete_keys;
 pub(crate) mod shape_export_task;
 
 pub(crate) mod shape_field_index;
+
+pub(crate) mod shape_fields_data;
 
 pub(crate) mod shape_filtered_log_event;
 
